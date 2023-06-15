@@ -1,8 +1,5 @@
 import asyncio
-import html
 import ssl
-import sys
-import xmlrpc.client
 
 from img_transfer import *
 
@@ -51,32 +48,58 @@ def do_upload(md_path, dir_name, title):
         else:
             print('无需上传图片')
 
-
         print(title)
         print(md)
 
-        post = dict(description=md,
-                    title=title,
-                    categories="ai")
-
-        server.metaWeblog.newPost(
-            conf["blog_id"],
-            conf["username"],
-            conf["password"],
-            post,
-            conf["publish"]
+        post = dict(
+            description=md,
+            title=title,
+            categories=['[Markdown]'] + conf["categories"]
         )
+
+        try:
+            server.metaWeblog.newPost(
+                conf["blog_id"],
+                conf["username"],
+                conf["password"],
+                post,
+                conf["publish"]
+            )
+        except Exception as e:
+            # 处理其他异常情况： xmlrpc.client.Fault: <Fault 500: '相同标题的博文已存在'>
+            print(f"发生了异常：{e}")
 
         print(f"markdown上传成功, 博客标题为'{title}', 状态为'{'已发布' if conf['publish'] else '未发布'}', "
               f"分类为:{conf['categories']} 请到博客园后台查看")
 
 
+def list_files(directory):
+    """
+    获取目录下所有文件的绝对路径
+    """
+    files = []
+    for filename in os.listdir(directory):
+        path = os.path.abspath(os.path.join(directory, filename))
+        if os.path.isfile(path):
+            files.append(path)
+    return files
+
 
 if __name__ == '__main__':
     cancel_ssh_authentication()
 
-    md_path = '/home/me/tools/pycnblog/articles/12神经网络中的数学基础：梯度下降和反向传播.md'
-    dir_name = os.path.dirname(md_path)
-    title, _ = os.path.splitext(os.path.basename(md_path))  # 文件名作为博客标题
+    md_directory = '/home/me/tools/pycnblog/articles/'
+    file_list = list_files(md_directory)
 
-    do_upload(md_path, dir_name, title)
+    file_list = ['/home/me/tools/pycnblog/articles/AR技术的应用与未来.md']
+
+    for md_path in file_list:
+        dir_name = os.path.dirname(md_path)
+        title, _ = os.path.splitext(os.path.basename(md_path))  # 文件名作为博客标题
+        print(md_path)
+        do_upload(md_path, dir_name, title)
+
+        import time
+        print("Sleeping for 3 seconds...")
+        time.sleep(3)
+        print("Done sleeping.")
