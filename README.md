@@ -24,6 +24,8 @@ python3
 
 在config.yaml中，填写博客配置信息。
 
+MetabWeBlog的API地址更新了：https://rpc.cnblogs.com/metaweblog/你的用户名
+
 ```python
 blog_url: https: // rpc.cnblogs.com / metaweblog / testblog
 blog_id: "testblog"
