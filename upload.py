@@ -39,14 +39,14 @@ def do_upload(md_path, dir_name, title):
     with open(md_path, encoding='utf-8') as f:
         md = f.read()
         print(f'markdown读取成功:{md_path}')
-        local_images = find_md_img(md)
-
-        if local_images:  # 有本地图片，异步上传
-            asyncio.run(upload_tasks(local_images, dir_name))
-            image_mapping = dict(zip(local_images, net_images))
-            md = replace_md_img(md_path, image_mapping)
-        else:
-            print('无需上传图片')
+        # local_images = find_md_img(md)
+        #
+        # if local_images:  # 有本地图片，异步上传
+        #     asyncio.run(upload_tasks(local_images, dir_name))
+        #     image_mapping = dict(zip(local_images, net_images))
+        #     md = replace_md_img(md_path, image_mapping)
+        # else:
+        #     print('无需上传图片')
 
         print(title)
         print(md)
@@ -65,6 +65,13 @@ def do_upload(md_path, dir_name, title):
                 post,
                 conf["publish"]
             )
+
+            import time
+            print("Sleeping for 3 seconds...")
+            # 考虑到每分钟只能发20篇，也就是 60s/20=3s
+            time.sleep(3)
+            print("Done sleeping.")
+
         except Exception as e:
             # 处理其他异常情况： xmlrpc.client.Fault: <Fault 500: '相同标题的博文已存在'>
             print(f"发生了异常：{e}")
@@ -91,7 +98,8 @@ if __name__ == '__main__':
     md_directory = '/home/me/tools/pycnblog/articles/'
     file_list = list_files(md_directory)
 
-    file_list = ['/home/me/tools/pycnblog/articles/AR技术的应用与未来.md']
+    # For test:
+    # file_list = ['/home/me/tools/pycnblog/articles/AR技术的应用与未来.md']
 
     for md_path in file_list:
         dir_name = os.path.dirname(md_path)
@@ -99,7 +107,3 @@ if __name__ == '__main__':
         print(md_path)
         do_upload(md_path, dir_name, title)
 
-        import time
-        print("Sleeping for 3 seconds...")
-        time.sleep(3)
-        print("Done sleeping.")
