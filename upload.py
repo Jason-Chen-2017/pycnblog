@@ -95,11 +95,8 @@ def list_files(directory):
 if __name__ == '__main__':
     cancel_ssh_authentication()
 
-    md_directory = '/home/me/tools/pycnblog/articles/20230616'
+    md_directory = '/home/me/tools/pycnblog/articles/20230617'
     file_list = list_files(md_directory)
-
-    # For test:
-    # file_list = ['/home/me/tools/pycnblog/articles/AR技术的应用与未来.md']
 
     for md_path in file_list:
         dir_name = os.path.dirname(md_path)
