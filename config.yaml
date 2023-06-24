@@ -1,13 +1,13 @@
-blog_url: xxx
-blog_id: xxx
-username: xxx
-password: xxx
+blog_url: https://rpc.cnblogs.com/metaweblog/the-art-of-ai/
+blog_id: the-art-of-ai
+username: universsky
+password: A2D2734D71071D18CA7EDD89782E156B340D603434341CB26C17BBEA513272D8
 
 # 是否生成图片替换后本地文件,默认False关闭
 gen_network_file: False
 
 # 上传后是否发布，默认未发布，设置True为发布
-publish: False
+publish: True
 
 # 图片自定义显示格式，默认不设置
 # img_format: "<center><img src="{}" style="width:100%;" /></center>" 设置居中和宽度
@@ -18,4 +18,4 @@ img_format: ""
 #categories: c++
 #categories: c++,learn
 #categories:
-categories:
+categories: ai
