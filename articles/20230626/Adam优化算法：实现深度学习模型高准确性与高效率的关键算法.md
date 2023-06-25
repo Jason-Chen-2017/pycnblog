@@ -75,7 +75,7 @@ gradients = np.array([[0, 0, 0, 0, 0],
 
 # 调用优化器
 parameters, gradients = adam_optimizer(parameters, gradients)
-```
+
 ### 3.3 集成与测试
 
 在集成测试中，可以使用以下代码创建一个简单的深度学习模型：
@@ -97,7 +97,7 @@ model.compile(optimizer='adam',
 model.fit(x_train, y_train, epochs=10, batch_size=32)
 ```
 下面是训练过程的输出：
-```
+```less
 Epoch 0, Loss: 5.24000073 + 312.86000000
 Epoch 1, Loss: 3.99666681 + 285.73200000
 Epoch 2, Loss: 3.43333368 + 278.81766660
