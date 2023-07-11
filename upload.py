@@ -95,7 +95,7 @@ def list_files(directory):
 if __name__ == '__main__':
     cancel_ssh_authentication()
 
-    md_directory = '/home/me/tools/pycnblog/articles/20230620'
+    md_directory = '/home/me/tools/pycnblog/articles_good/20230627'
     file_list = list_files(md_directory)
 
     for md_path in file_list:
