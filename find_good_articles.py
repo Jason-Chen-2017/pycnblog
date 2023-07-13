@@ -24,7 +24,7 @@ def find_good(date):
                 line_count = len(lines)
 
             # 如果文章的长度>4000 and 行数大于150，则复制文件到目标目录
-            if length > 6000 and line_count > 180 and '结论与展望' in content:
+            if length > 6000 and line_count > 180:
                 target_path = os.path.join(target_directory, file_name)
                 shutil.copy(file_path, target_path)
 
@@ -50,7 +50,7 @@ def find_draft(date):
                 line_count = len(lines)
 
             # 如果文章的长度>4000 and 行数大于150，则复制文件到目标目录
-            if 3000 < length < 6000 and 100 < line_count < 180 and '结论与展望' in content:
+            if 3000 < length < 6000 and 100 < line_count < 180:
                 target_path = os.path.join(target_directory, file_name)
                 shutil.copy(file_path, target_path)
 
@@ -66,7 +66,7 @@ if __name__ == '__main__':
 
     # 存储过去5天的日期
     dates = []
-    for i in range(1, 6):
+    for i in range(0, 6):
         # 减去一天的时间间隔
         date = now - datetime.timedelta(days=i)
         # 格式化成yyyyMMdd
