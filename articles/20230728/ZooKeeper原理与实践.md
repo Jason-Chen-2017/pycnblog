@@ -1,0 +1,122 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+         
+ Apache Zookeeper 是由雅虎开源的一款基于 Paxos 协议的分布式协调服务框架。其目的是通过中心化的方式管理集群中节点的信息。Zookeeper 提供了高可用性，允许在服务器、网络设备、应用等环境中崩溃的情况下仍然能够保持数据一致性和运行状态。它支持 FIFO（First-In-First-Out，先进先出）和 EPOCH（乐观锁机制）两种基本的数据访问模式，并提供 watch（监听）功能来接收节点数据的变动通知，因此可以用来实现配置项的同步、状态信息的发布/订阅、集群管理等功能。
+         本文旨在通过分析 Zookeeper 的设计理念、协议及内部原理，以及在实际工作中运用到的最佳实践，详细阐述 Zookeeper 的工作原理。希望能够帮助读者快速掌握 Zookeeper 的工作机制和运用方法，并避免踩坑。
+         # 2.基本概念与术语
+         ## 2.1 基本概念
+         ### 2.1.1 分布式系统
+         在计算机科学中，分布式系统指通过网络将各个计算机系统连接成的系统。分布式系统中的所有节点都处于对等地位，彼此之间存在直接的通信，这些系统由于各自的位置独立性，因此，当某个节点出现故障时，不会影响到整个系统的运行。分布式系统通常由多台计算机组成，每个节点都包含不同的处理单元和存储器资源。节点之间的通信和协作依赖于共享资源的相互协调。典型的分布式系统包括数据库系统、文件系统、分布式计算系统、事务处理系统、消息队列系统、流媒体系统等。
+
+         ### 2.1.2 无单点故障
+         某个分布式系统在某一时刻仅有一个结点失败（或被其他故障所拖累），称之为该分布式系统为无单点故障。在一个分布式系统中不存在独霸一方的情况。通常，无单点故障是难以避免的，即使在一个非分布式系统中也存在类似的问题。例如，在电力系统中，当其中某个节点失效时，会造成整个系统无法正常工作。
+
+        ### 2.1.3 分布式存储
+        分布式存储系统，又称分布式文件系统（Distributed File System，DFS）。是一种在不同计算机上分布存储文件的方法。它主要用于海量数据集的存储、检索、分布式计算任务处理、云计算平台上的文件共享等。典型的分布式存储系统如 Hadoop、Spark、Hbase 等。
+        
+        ### 2.1.4 数据副本
+        数据副本（Data Replication）是指多个节点存有相同的数据副本，并且具有完全相同的内容。常用的数据副本机制有完全复制（All replication）、主从复制（Master-slave replication）、区域复制（Region replication）和环形复制（Ring replication）。
+        
+        ## 2.2 基本术语
+        ### 2.2.1 Master-Slave模型
+        Master-Slave模型，又称主从模型，是一个广泛使用的分布式系统架构。所有的节点都是平等的，主节点负责处理请求，而从节点则承担着备份的角色，只在需要的时候参加。主从模型最大的优点是实现简单、易于扩展。举例来说，Zookeeper 就是典型的 Master-Slave 模型，其中一个节点充当 Master 角色，其余节点均充当 Slave 角色。
+        
+        ### 2.2.2 Paxos协议
+        Paxos 协议，全称 “Practical Algorithm to Propose Concise Proofs of Selection”，是由 Leslie Lamport 提出的一种基于消息传递且具有容错特性的分布式共识算法。Paxos 将所有客户端提出的请求序列看做一次任务，按照严格的顺序，对每条消息进行编号，然后分派给当前的领导者（Proposal Leader）。如果当前领导者没有接受或拒绝过任何一条消息，那么他就会成为新的领导者。新领导者收集所有已知消息，通过投票表决产生一个结果。如果大家认可这个结果，就向大家宣布，否则重新选举下一个领导者。
+        
+        ### 2.2.3 GFS(Google File System)
+        GFS（Google 文件系统）是由 Google 公司开发的，属于分布式存储系统。它采用 master-slave 架构，有一个全局唯一的 Master 节点，管理着全局的文件元数据。GFS 通过自动数据冗余、负载均衡、命名空间、权限控制等机制实现数据安全、可靠性和可伸缩性。
+        
+        ### 2.2.4 Zab协议
+        Zab (Zookeeper Atomic Broadcast)，是 Zookeeper 中用于确保数据强一致性的一种协议。该协议是 Paxos 协议的一个变种，被设计用于更复杂的分布式系统中。在 Zab 中，主节点负责管理系统的状态，同时还负责处理客户端请求。客户端请求可以是读请求或者写请求，或者是设置 Watcher 监听特定路径上数据的变化。Zab 使用 TCP 端口进行通讯，默认端口号为 2181。Zab 有三种模式——独裁模式、恢复模式、广播模式。在恢复模式中，选举产生新的领导者；在广播模式中，将请求转换为事务日志，然后再发送给各个服务器执行。
+        
+        ## 2.3 目标与定义
+         本文档的目的是阐述 Zookeeper 的原理与使用方法，提供读者快速理解 Zookeeper 的工作原理和在实际项目中运用方法的指导。
+         
+         Zookeeper 是 Apache 基金会推出的开源的分布式协调服务，用于协调分布式应用。Zookeeper 以树型结构存储数据，使用 Paxos 算法保证数据一致性。Zookeeper 的目标是在分布式系统中解决以下三个问题：
+         
+         - 服务发现与注册：解决分布式系统中如何动态获取服务地址这一问题。
+         - 集群管理：解决分布式系统中各个节点之间如何同步协作的问题。
+         - 配置管理：解决分布式系统中各个节点配置信息的统一管理和同步问题。
+         
+         除此之外，Zookeeper 为分布式应用程序提供了很多优秀的特性，比如：
+         
+         - 高度可靠、可靠性高：一旦服务端响应，客户端即可认为调用成功，从而达到最终一致性。
+         - 顺序一致性：客户端发起请求后，将按顺序完成。
+         - 可重入性：幂等性，同样的请求一定返回相同的结果。
+         - 权限控制：细粒度的权限控制。
+         
+         # 3.工作原理
+         Zookeeper 是分布式协调服务，用于配置维护、域名解析、分布式锁和Leader选举。协调服务的工作流程一般分为两个阶段：选举阶段和主节点工作阶段。
+         
+         ## 3.1 选举阶段
+         Zookeeper 首先启动一系列的 Follower 进程，它们并不知道彼此的存在。在选举阶段，Leader 会等待一个投票数超过半数的 Quorum 集合。如果超时时间到了，才进入到下一轮竞争。
+         
+         当选举产生了一个新的 Leader 时，之前的 Leader 成为“孤儿”（Orphan），失去对 Zookeeper 服务的提供，而新 Leader 接替其角色。Follower 将接受新 Leader 的心跳包，确认自己的身份，加入到 Quorum 集合中。
+         
+        ![](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMy5hbWF6b25hd3MuY29tL2ltZy9pbWcvaS16aGphLWJvbWUvMjAxOC8wNC8yNSUyMTYxNzE1MTk3XzFfMmQzbzNtdl9jNTRfYmRkLWVhYzdkMzNmNzA5LnBuZw?x-oss-process=image/format,png)
+        
+        ## 3.2 主节点工作阶段
+        Leader 负责管理整个集群，它负责分配不同的任务给 Follower，并监控 Follower 节点的健康状况。客户端向 Zookeeper 写入数据时，首先会连接到 Leader，再由 Leader 将数据写入本地磁盘，再同步给 Followers，这样 Zookeeper 中的数据就得到了更新。
+         
+        如果 Leader 发生故障，Followers 会升级为 Observer 模式，并开始追随 Leader 的最新状态，因此仍然能够提供对外服务。当 Leader 重新恢复正常时，Observers 会向 Leader 反馈自己的状态，并转为 Follower，保证数据一致性。
+         
+       ![](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMy5hbWF6b25hd3MuY29tL2ltZy9pbWcvaS16aGphLWJvbWUvMjAxOC8wNC8yNSUyMTYxNzI3NjU4XzJwdDJxOWIxa181OXAxeElwZWlsMjliY3pvbTdmdHBxbXhfZmZtOHhmLzRlLnBuZw?x-oss-process=image/format,png)
+         
+        ### 3.2.1 客户端交互协议
+        Zookeeper 提供了一套完整的客户端接口，封装了底层的 TCP 传输协议，提供了一些方法来操作数据节点，包括 create()，delete()，exists()，getData()，setData()，getChildren()，和 getACL() 和 setACL()。
+         
+        ### 3.2.2 数据节点
+        每个数据节点都由两部分组成：数据实体和 Stat 对象。数据实体用于保存数据内容，Stat 对象用于记录数据属性，比如版本号，最后修改时间等。数据节点分为持久节点和临时节点，持久节点的数据将持久保存，而临时节点则在创建它的客户端连接断开时删除。数据节点可以使用其路径标识，路径分隔符为斜线“/”。
+         
+        ### 3.2.3 Watcher 事件通知
+        Zookeeper 支持 Watcher 机制，允许客户端监听指定节点的数据变更。一旦节点的数据发生变化，Zookeeper 都会向感兴趣的客户端发送通知，从而实现分布式数据的实时通知。
+         
+        ### 3.2.4 ACL（Access Control Lists）
+        Zookeeper 提供了一套完善的 ACL（Access Control List）机制，用于控制数据节点的访问权限。通过 ACL 可以控制对 Zookeeper 服务的访问权限，支持 IP 地址和身份验证密码两种方式。
+         
+        # 4. 应用场景
+        Zookeeper 适合用于很多的分布式系统中，包括 HDFS，HBase，Kafka，Storm 等。下面，将介绍几种 Zookeeper 的典型应用场景：
+
+        ### 4.1 服务发现与注册
+        在微服务架构下，服务数量众多，为了管理这些服务，需要有一个服务注册中心，每个服务定期向注册中心汇报自己的 IP 地址，端口号等信息。当调用者想要调用一个服务时，通过服务名查找对应的 IP 地址，并建立 TCP 连接，调用远程服务。
+         
+        服务发现主要利用 Zookeeper 来实现。在服务启动时，首先向 Zookeeper 上注册自己提供的服务，其他消费者就可以根据服务名找到相应的服务提供者。当提供者宕机时，Zookeeper 会收到通知，并通知消费者切换服务提供者。
+         
+        ### 4.2 集群管理
+        Zookeeper 也可以用于集群管理，比如 HDFS 的 namenode 和 datanode，HBase 的 HMaster 和 regionserver，Storm 的 Nimbus 和 Supervisor 等组件。集群管理可以用它来实现配置信息的同步，实现主备份的自动切换等。
+         
+        ### 4.3 命名服务
+        DNS 协议基于域名实现了主机名字到 IP 地址的解析过程。Zookeeper 可以实现一个类似的服务，给予客户端更灵活的命名服务。客户端可以通过指定特定的路径名来创建数据节点，然后为这个数据节点添加数据，并设置访问权限控制列表。服务消费者可以在 Zookeeper 上查询相关信息，根据名称来获取服务的地址。
+         
+        ### 4.4 集群策略
+        Zookeeper 也可以用于集群策略，比如 Apache Aurora 项目，它可以实现跨越多地域的弹性伸缩，实现应用的自动部署和回滚，以及负载均衡。Aurora 通过跟踪服务器的资源利用率、任务依赖关系和任务执行历史记录，结合机器学习和统计学习算法，通过自我修正的算法，自动调整服务器的资源分配。
+         
+        # 5. 未来发展方向
+         Zookeeper 发展的很快，它已经成为分布式系统中不可或缺的角色。但是，Zookeeper 仍然还有很多需要改进的地方，如：
+         
+         - 延迟：在高负载情况下，Zookeeper 的性能可能会受到影响。
+         - 可用性：当几个服务或节点故障时，Zookeeper 不保证可用性。
+         - 资源消耗：Zookeeper 对硬件的要求比较高，同时内存占用也较大。
+         
+         在未来的演进方向中，Zookeeper 可以考虑增加新功能，比如 Kafka 的 Consumer Group 消费者组机制，HDFS 的 NameNode HA 机制，HBase 的 Heterogeneous Storage Mechanism。
+     
+         此外，Zookeeper 还可以支持更多的编程语言，如 Java，C++，Python 和 Go。除了开发工具类应用之外，Zookeeper 还可以为各种各样的高级用例提供服务，如 Kubernetes，OpenStack，Dubbo 和 Etcd 等。
+         
+         # 6. 常见问题解答
+         ## 6.1 Zookeeper 可以用于哪些场景？
+         Zookeeper 可以用于许多场景，包括：
+         
+         - 配置管理：分布式环境下，应用程序的配置信息管理往往需要一个集中的协调和通知机制。Zookeeper 配合 etcd 或 Consul 等开源工具，可以实现配置的集中式管理。
+         - 命名服务：很多分布式系统都会涉及到服务注册和发现，包括统一的命名服务。Zookeeper 作为高性能的协调系统，可以提供一个统一的服务注册中心，用于各个服务或节点的服务发现。
+         - 软负载均衡：Apache Storm 项目使用 Zookeeper 实现了在一组服务器之间做软负载均衡。
+         - 分布式锁：在分布式系统中，为了防止不同进程、线程同时操作共享资源，往往需要使用分布式锁。Zookeeper 提供的 Distributed Locking 支持独占锁和共享锁，可以满足多种业务场景。
+         
+         ## 6.2 Zookeeper 如何保证数据一致性？
+         Zookeeper 使用 Paxos 算法实现了分布式数据一致性。客户端将数据写入到 Zookeeper 的一个叫做 proposal（提议）的事务日志中，每个 proposal 都有一个事务 ID 和值。当事务日志提交后，proposal 里面的值才会真正生效。客户端读取数据时，若 Zookeeper 本地没有缓存数据，则向 Leader 请求数据。Leader 会把数据更新在本地缓存后，返回给客户端。当有多个客户端读写同一个数据时，Zookeeper 会确保数据一致性。
+
+# 参考链接
+https://blog.csdn.net/weixin_44032793/article/details/108222382
+

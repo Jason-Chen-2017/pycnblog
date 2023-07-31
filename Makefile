@@ -3,3 +3,6 @@ run:
 
 find:
 	./find.sh
+
+md:
+	./curl_md.sh
