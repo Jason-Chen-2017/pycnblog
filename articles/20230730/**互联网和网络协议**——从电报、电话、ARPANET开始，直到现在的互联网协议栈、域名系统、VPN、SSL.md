@@ -24,7 +24,6 @@
 
 互联网协议族从底层到高层依次分为五层，每一层都有自己的职责，如下图所示。
 
-![image](https://img-blog.csdnimg.cn/20190703101144799.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjYzNDEyMw==,size_16,color_FFFFFF,t_70)
 
 1. 物理层：负责传输比特流，也就是将数据打包成电信号，并通过传输媒体发送出去。包括调制解调器、集线器、中继器、电缆等。
 2. 数据链路层：负责将比特流按照MAC地址封装成数据帧，并向另一端发送。包括网卡、网线、交换机等。
@@ -62,4 +61,3 @@ DNS是一套分布式数据库，主要有域名和IP地址映射关系。通过
 2. 用户数据报协议 UDP（User Datagram Protocol）。它是一种非面向连接的、不可靠的、基于数据报的传输层协议。它的优点是实时性高，减少网络拥塞，缺点是可能丢失数据。
 3. 超文本传输协议 HTTP（HyperText Transfer Protocol）。它是用于从WWW服务器传输超文本到本地浏览器的协议。它属于应用层协议，是WWW的基础。
 4. 文件传送协议 FTP（File Transfer Protocol）。它是用于在网络上传输文件的协议。它属于传输层协议，常用于下载、上传文件。
-

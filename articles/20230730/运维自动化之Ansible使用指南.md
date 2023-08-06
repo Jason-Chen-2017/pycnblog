@@ -150,4 +150,3 @@
         使用ansible命令时，必须使用 --inventory (-i) 参数指定Inventory的文件路径或主机列表，否则会报无法解析inventory的错误。
 
    
-

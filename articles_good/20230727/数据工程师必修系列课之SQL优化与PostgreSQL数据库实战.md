@@ -28,7 +28,6 @@
            使用apt-get安装PostgreSQL服务器：
              sudo apt-get update && sudo apt-get install postgresql
           #### Windows
-           下载PostgreSQL安装包，根据提示一步步安装即可。[点击进入下载页面](https://www.postgresql.org/download/)
           ## 6.1.2 配置PostgreSQL服务器参数
            配置文件一般位于/etc/postgresql/文件夹下。如安装包默认安装，配置文件为/etc/postgresql/9.x/main/postgresql.conf。
            打开该文件，根据需求调整以下参数：
@@ -63,7 +62,6 @@
 
           **注意**：请牢记新用户的用户名和密码，之后可能会用到。
 
-          有关PostgreSQL数据库授权的更多信息，请参考PostgreSQL官方文档：[PostgreSQL 用户和访问控制](https://www.postgresql.org/docs/current/user-manag.html)。
 
         # 7.第二章 SQL优化与PostgreSQL优化
           本章节主要介绍SQL优化和PostgreSQL数据库优化的方法。
@@ -399,4 +397,3 @@
          echo "/dev/mapper/pool-pgdata /data/pgsql xfs noatime 0 0" >> /etc/fstab
          echo "zfs set atime=off pool/pgdata" >> /etc/rc.local
          ```
-

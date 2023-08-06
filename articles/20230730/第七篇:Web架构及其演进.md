@@ -48,7 +48,6 @@
         网络社区是一个由互联网技术驱动的社交媒体，用户可以在这个平台上发表自己的言论，分享自己的想法。2006年，Facebook推出了一款名为FaceBook Timeline的应用，让用户可以发布一条动态，然后通过全局排序展示。这一事件引发了一场关于社交媒体架构的革命。网络社区的特点是实时性、低延迟、高度弹性，因此逐渐成为互联网企业的一个分支。
         
         图3-1显示了Web架构演变的历史。
-       ![image.png](https://cdn.nlark.com/yuque/0/2021/png/3719423/1621799549277-a3b38ab6-c62e-42ea-ae4d-bc49b6e18de9.png#align=left&display=inline&height=358&margin=%5Bobject%20Object%5D&name=image.png&originHeight=716&originWidth=1363&size=74818&status=done&style=none&width=681)
         
         从图中可以看出，Web架构经历了一个从静态网站到动态网站再到网络社区的飞跃，而随着互联网的发展，越来越多的人开始把目光转移到云计算和移动互联网的开发。而Web架构是云计算、移动互联网、区块链等新兴技术的基础。
         
@@ -56,7 +55,6 @@
         ## 4.1 网站运行流程
         当用户访问网站时，首先在浏览器中输入地址，然后服务器接受请求，将相应的内容返回给用户。整个过程中涉及到的环节如下图所示：
 
-       ![image.png](https://cdn.nlark.com/yuque/0/2021/png/3719423/1621800107109-a3e174f9-e904-4377-aa1f-dbbf7e1cb54e.png#align=left&display=inline&height=346&margin=%5Bobject%20Object%5D&name=image.png&originHeight=692&originWidth=1363&size=78408&status=done&style=none&width=681)
         
         - DNS解析：用户输入域名后，浏览器首先要解析域名服务器记录，确定该域名对应的IP地址。
         - 浏览器与服务器建立连接：用户输入地址后，浏览器通过TCP三次握手建立与服务器之间的连接，然后发送HTTP请求。
@@ -161,4 +159,3 @@
         
         ### 6.6 可用性
         在服务端架构出现故障、网络拥塞、系统升级时，Web架构的可用性会遇到各种问题。可用性需要保证应用在最短时间内，对用户请求作出响应，并不间断提供服务。
-

@@ -378,7 +378,6 @@
         ax.plot(x, y)                                      # 把坐标点画出来
         ax.set_title("y=x^2")                            # 设置 Title
 
-        fig.savefig('fig.png')                             # 保存图片到当前目录
         ```
 
         ## Seaborn
@@ -458,4 +457,3 @@
     plt.legend()                                              # 显示图例
     plt.show()
     ```
-

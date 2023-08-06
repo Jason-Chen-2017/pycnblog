@@ -36,7 +36,6 @@
          ## 3.1 AJAX的工作原理
             AJAX通过javascript脚本语言操纵XMLHttpRequest对象，向服务器发送HTTP请求，从而实现了网页的局部刷新。它的工作原理如下图所示：
 
-           ![](https://img-blog.csdnimg.cn/2020070910024677.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JlbGZpbGU=,size_16,color_FFFFFF,t_70#pic_center)
 
             1. 浏览器首先发送HTTP请求到服务器。
             2. 当浏览器收到服务器的响应时，如果响应头里包含Content-Type: text/html，则不会执行JavaScript；否则，JavaScript代码可以操作DOM文档。
@@ -53,7 +52,6 @@
 
             下图展示的是AJAX的流程：
 
-           ![](https://img-blog.csdnimg.cn/20200709100440640.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JlbGZpbGU=,size_16,color_FFFFFF,t_70#pic_center)
 
          ## 3.3 AJAX的操作方法
          　　AJAX的操作方法包括5个方面：
@@ -337,4 +335,3 @@
       　　4. DELETE请求：DELETE请求用于删除服务器资源。
       　　5. HEAD请求：HEAD请求与GET请求一样，只是不返回报文主体，用于获得报文首部。
       　　6. OPTIONS请求：OPTIONS请求用于检查服务器支持的HTTP方法。
-

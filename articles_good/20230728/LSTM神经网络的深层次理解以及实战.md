@@ -23,11 +23,9 @@
          ### 三种结构
          在LSTM网络的基本结构中，有一种是标准LSTM结构，有一种是混合LSTM结构，还有一种是门控的LSTM结构。下面分别介绍这三种结构。
          #### 标准LSTM结构
-            <div align=center><img src="https://upload-images.jianshu.io/upload_images/16991723-d226b5fdbe7dc1c4.png?imageMogr2/auto-orient/strip|imageView2/2/w/600" width = "600" height = "250"/></div>
             LSTM结构的基本单元包括输入门、遗忘门、输出门和输出结点。其中，输入门决定哪些数据需要进入到单元格里，遗忘门决定哪些需要遗忘，输出门决定是否要保留这个值，最后的输出结点负责给出预测值。下图展示了这一结构。
             
              
-             <div align=center><img src="https://upload-images.jianshu.io/upload_images/16991723-d62c6c1e06f8ce82.png?imageMogr2/auto-orient/strip|imageView2/2/w/600" width = "600" height = "250"/></div>
              
             LSTM结构的特点有：
             1. 有三个门（输入门、遗忘门、输出门）用来控制信息的流动和遗忘
@@ -42,7 +40,6 @@
          #### 混合LSTM结构
          　　混合LSTM结构是指既含有标准LSTM结构，又含有GRU结构的一种混合结构。在实际应用中，标准LSTM结构和GRU结构联合使用，可以更好地处理深层次依赖。如图所示。
 
-          <div align=center><img src="https://pic3.zhimg.com/80/v2-d59edaaab8cf44d24ff245a76ea4cccb_720w.jpg" width = "600" height = "250"/></div>
 
          ### 具体结构详解
 
@@ -75,7 +72,6 @@
          ## （2）门控的作用
          　　在标准LSTM中，门控机制是通过激活函数sigmoid来控制信息流动和遗忘的，sigmoid函数将输入压缩到0~1之间。但是sigmoid函数的输出会出现饱和区间，容易导致梯度消失或者梯度爆炸，所以需要引入一定的修正策略来解决这个问题。常用的方法有两种，一是逐元素sigmoid，二是结构化门控。结构化门控是指将sigmoid函数替换成一些能够有限控制信息流动的方式。例如，在LSTM网络中，使用门控的形式，控制更新门、遗忘门、输出门的打开率。这里，我们只讨论结构化门控的一种方式：门控线性单元（gating linear unit，GLU）。GLU使用两个线性变换来代替单个线性变换，其中一个线性变换用来计算门的输出，另一个线性变换用来计算非门的部分。GLU可以有效地解决sigmoid函数的饱和问题，提升LSTM的性能。
 
-          <div align=center><img src="https://pic2.zhimg.com/80/v2-d9b5c62b6d5b24f15096c52cd8f59c16_720w.jpg" width = "600" height = "250"/></div>
 
           ## （3）LSTM网络的优点与局限性
           #### 优点
@@ -166,7 +162,6 @@
             
             数据集来源：中文情感挖掘语料库 SEC-EMO。共计70万条微博评论，多分类问题。
             
-            下载地址：[http://www.nlpr.ia.ac.cn/databases/download/feature_data/SEC-EMO/index.html](http://www.nlpr.ia.ac.cn/databases/download/feature_data/SEC-EMO/index.html)。
             
             将数据集文件放入`./data`文件夹下，并设置当前路径。
             
@@ -253,7 +248,6 @@
             用模型训练数据，打印训练过程。
             
             ```python
-            plot_model(model, show_shapes=True, to_file='sentiment_analysis_model.png')
             ```
             
             可视化模型结构。
@@ -337,4 +331,3 @@ Confidence: {:.2f}%'.format(sentiment,prediction*100))
             ```
             
             输入测试评论，查看情感和置信度预测。
-

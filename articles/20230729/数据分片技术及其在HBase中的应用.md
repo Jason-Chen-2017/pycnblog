@@ -84,7 +84,6 @@
         ## 3.1 数据分片算法原理
         ### 3.1.1 Ketama算法
         Apache Cassandra使用的一致性哈希算法Ketama。该算法的工作流程如下图所示：
-       ![Ketama算法流程图](https://img-blog.csdnimg.cn/20200719160544880.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxOTUzMjk2,size_16,color_FFFFFF,t_70#pic_center)
 
         1. 将服务端维护一个环形结构的虚拟节点列表；
         2. 服务端根据客户端IP地址、进程ID或线程ID进行散列计算，并求得其在环形结构中位置；
@@ -217,4 +216,3 @@ public class Main {
            HBase提供多种编码类型，如前缀压缩、字典编码、Run Length Encoding、Diff编码等。如果编码类型选择错误，可能导致查询效率下降。因此，务必仔细阅读HBase官方文档，选择正确的编码类型。
         3. 查询条件优化
            在WHERE子句中添加查询条件是非常重要的。只有添加了过滤条件，才可以有效地避免扫描整个表，从而提升查询效率。例如，如果在WHERE子句中添加department='IT', 那么HBase只需要扫描相关的行，而不需要扫描整个表，从而提升查询效率。
-

@@ -33,7 +33,6 @@ DevOps (Development and Operations) 是一种新的软件开发方式，是指�
 ## 3.1 功能阀门模型
 功能阀门模型是一种基于功能矩阵的敏捷开发方法论，它能够根据业务目标和客户需求对软件功能进行拆分，并将其分配给不同的团队进行开发。
 
-![image](https://miansen.wang/assets/images/devops/1.jpg)
 
 
 功能阀门模型首先将所有的功能模块列举出来，按照重要程度和紧急度排序，然后根据优先级和资源约束分配到不同的团队进行开发，最后将所有开发完毕的模块组装成完整的系统。开发过程中，每个团队负责一个功能模块，团队成员熟悉该模块的所有相关信息和文档，并对自己的模块进行技术支持。当某个功能模块的开发完成之后，下个重要的功能模块便会启动。
@@ -43,7 +42,6 @@ DevOps (Development and Operations) 是一种新的软件开发方式，是指�
 ## 3.2 Lean 企业精益开发方法
 Lean 企业精益开发方法是美国西奥多·罗斯福于1991年提出的概念，是一种全面、系统的方式去实现企业的创新。其最主要的特点是反复验证，通过反馈循环的方式不断修正，把流程制度化，缩短开发周期。
 
-![image](https://miansen.wang/assets/images/devops/2.jpg)
 
 Lean 方法认为开发过程应该始终聚焦于关键任务，而不是一味地追求流程上的完美。其具体表现为：
 
@@ -59,7 +57,6 @@ Lean 方法认为开发过程应该始终聚焦于关键任务，而不是一味
 ## 3.3 DevSecOps 混合安全开发生命周期
 DevSecOps 是一种基于云计算、混合网络和安全防护的敏捷软件开发方式，其目标是在保持开发和运维工作流程同时，充分利用云计算平台的弹性伸缩、隔离功能和安全防护能力，提升研发部门的安全意识，并加强安全软件开发的流程管理和集成。
 
-![image](https://miansen.wang/assets/images/devops/3.jpg)
 
 DevSecOps 的软件开发流程是五个阶段的组合，包括 Secure 阶段、Develop 阶段、Secure & Integrate 阶段、Operate 阶段、Monitor 和 Governance 阶段。
 
@@ -80,7 +77,6 @@ DevSecOps 可以有效提升软件开发的效率、可靠性、安全性，降�
 ## 3.4 Docker容器技术
 Docker 是一种开源的容器虚拟化技术，它允许开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 或 Windows 操作系统上。容器属于轻量级虚拟化，因为它没有硬件依赖，而且它只是利用宿主机的内核来执行。通过 Docker，开发人员可以打包他们的应用以及依赖包，以及可以随意地将容器部署到独立的容器集群、云端或本地数据中心。
 
-![image](https://miansen.wang/assets/images/devops/4.jpg)
 
 容器技术有以下几种优势：
 
@@ -93,7 +89,6 @@ Docker 是一种开源的容器虚拟化技术，它允许开发者打包他们�
 ## 3.5 IaC Infrastructure as Code 基础设施即代码
 IaC（Infrastructure as Code） 是通过定义代码来描述服务器配置、网络设置、存储设备以及其他基础设施资源。通过使用配置文件，系统管理员可以快速、一致地部署和管理整个基础设施，而无需手动安装、配置和管理系统组件。IaC 提供了一个更容易理解和管理的软件界面，并减少了管理员操作错误的可能性。
 
-![image](https://miansen.wang/assets/images/devops/5.jpg)
 
 IaC 的理念与 Ansible 概念十分类似，都是以声明性的方式来定义目标节点的最终状态。IaC 将整个基础设施作为软件的一部分，可以使用版本控制、自动化脚本和可重复的测试，来减少手动部署带来的意外错误，提高管理效率。
 
@@ -102,7 +97,6 @@ IaC 的理念与 Ansible 概念十分类似，都是以声明性的方式来定�
 ## 3.6 Puppet 自动化运维工具
 Puppet 是一个自动化工具，它可以用来管理服务器上的应用和服务的部署、配置、监控和更新。Puppet 可以安装、卸载软件包，并且可以对服务进行管理、监控和控制，无论是在客户端还是服务器端。
 
-![image](https://miansen.wang/assets/images/devops/6.jpg)
 
 Puppet 可用来进行服务自动化、环境管理和基础设施管理。它可以定义一系列的资源，并管理这些资源的生命周期。Puppet 包含了一组资源类型，用于定义应用程序、文件、目录、用户和包。使用 Puppet 可以通过模板化的方式来创建资源，简化运维工作。
 
@@ -111,7 +105,6 @@ Puppet 可用来进行服务自动化、环境管理和基础设施管理。它�
 ## 3.7 Jenkins 持续集成工具
 Jenkins 是一个开源的持续集成和持续部署工具，它可以实现快速构建、测试和部署软件。它支持多种类型的项目，包括 Java、C++、PHP、Python、Ruby、Perl 等，并可以通过插件来扩展功能。Jenkins 可以与持续集成服务器集成，也可以运行于stand alone模式。
 
-![image](https://miansen.wang/assets/images/devops/7.jpg)
 
 Jenkins 可以进行自动化构建、单元测试、代码测试、集成测试、UI测试等。Jenkins 的持续集成特性可以实现代码的自动编译、自动化测试、自动发布和部署。Jenkins 插件可以扩展功能，支持 Maven、Ant、Subversion 等项目管理工具。
 
@@ -120,7 +113,6 @@ Jenkins 可以进行自动化构建、单元测试、代码测试、集成测试
 ## 3.8 Redhat OpenShift 云平台
 Redhat OpenShift 是红帽推出的一款开源的云平台，它支持基于 Kubernetes 的容器编排和集群管理。OpenShift 支持 Docker、Kubernetes、Marathon、Apache Mesos、Cloud Foundry、Tomcat、WildFly 等多种技术栈。
 
-![image](https://miansen.wang/assets/images/devops/8.jpg)
 
 OpenShift 的优势包括：
 
@@ -298,4 +290,3 @@ pipeline:
               -H 'Content-Type: application/json' \
               -d '{"name":"app","version":"${BUILD_NUMBER}", "group":"com.company"}'
 ```
-

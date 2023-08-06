@@ -8,7 +8,6 @@
          # 2.基本概念与术语
           ## 2.1.数据流传输流程
           数据流传输流程描述的是如何将源头到达的数据流经过多个中间设备再流动到目标地址。如下图所示：
-         ![数据流传输流程](https://img-blog.csdnimg.cn/20200914162158794.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNjA2NTYxNw==,size_16,color_FFFFFF,t_70#pic_center)
            - 源头: 数据源头，可以是磁盘文件、网络流量或其他外部数据源等。
            - 中间设备: 数据传输过程中的多个节点，比如路由器、交换机、负载均衡等。
            - 目标地址: 数据终点，最终被接受到的位置。
@@ -39,7 +38,6 @@
           - 边：连线的集合，连接在一起的两端的节点就称为该边的边缘。
           ### 3.1.1.Spout和Bolt
           图1展示了DAG中的两种主要的实体：Spout和Bolt。Spout负责产生数据流，Bolt则负责处理数据流。节点之间的连线表示了数据流的方向，即先生产的数据流向后处理的数据流。
-         ![Spout和Bolt示例图](https://img-blog.csdnimg.cn/20200914171419562.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNjA2NTYxNw==,size_16,color_FFFFFF,t_70#pic_center)
           1. Spout：Spout是一个无限循环的数据生成器。
           2. Bolt：Bolt接收到来自Spout的数据，并进行数据处理。
           3. Splitter：Splitter是一种特殊的Bolt，它接收来自同一父节点的数据并将其分成若干条线路，然后送往子节点。
@@ -50,7 +48,6 @@
           2. 局部视图：只展示局部的某些节点（节点之间的路径）。
           3. 深度优先搜索：通过递归的形式遍历DAG。
           下面是Spout-Bolt依赖关系的全局视图图。其中左半部分表示数据流的方向，右半部分表示数据流的流动。
-         ![](https://img-blog.csdnimg.cn/20200914173344866.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNjA2NTYxNw==,size_16,color_FFFFFF,t_70#pic_center)
           从图中可以看出，Spout可以产生数据，然后将其送往任意多个Bolt进行处理。Bolt还可以产生新的数据，随后再送往新的Bolt进行进一步的处理。这种依赖关系使得Storm可以实现高度并行化的处理能力。
           ### 3.2.1.Topology提交和运行
           Topology是用户提交到Storm集群中的计算逻辑单元，它包含了一系列的Spout和Bolt。用户可以通过不同的编程语言来编写Spout和Bolt的代码，然后通过命令行工具（如storm jar）来提交。当提交成功后，Storm集群会将用户提交的Topology调度到各个工作节点上。当某个工作节点上的某个Bolt失败时，Storm会自动将该Bolt所在的Topology下线，并重新调度，使得该Topology能够继续运行。
@@ -390,4 +387,3 @@
   1. 性能优化：目前，Storm的性能瓶颈主要集中在网络IO上。通过改善网络通信机制、压缩算法等方式，能够提升Storm的实时处理性能。
   2. 模块化：目前，Storm的功能模块较少，不能满足需求。因此，通过增加更多模块，例如定时调度模块、状态跟踪模块等，能够让Storm的功能更加强大灵活。
   3. 功能增强：目前，Storm仅支持简单的数据处理模型。除了数据的流动特性外，Storm还有很多其他特性需要进一步提升。例如：状态跟踪模块可以记录每个任务的状态变化情况；定时调度模块可以让用户指定任务执行的时间点；窗口处理模块可以处理数据流中时间窗口内的数据等。
-

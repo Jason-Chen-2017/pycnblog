@@ -36,8 +36,6 @@
 
          |   方法名    |                 算法描述                   |                           特点                           |              使用场景               |                             优点                             |                            缺点                            |             演示案例            | 参考文献                                                         |
          | :--------: | :---------------------------------------: | :----------------------------------------------------------: | :-------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :-------------------------: | :----------------------------------------------------------- |
-         |     l2     |       对损失函数加入权值衰减的正则化项        |      可以有效防止网络过拟合,减轻梯度消失/爆炸问题      |          一般在训练阶段使用          |                  可以一定程度抑制梯度震荡                  |                         需要事先设定超参                          |     回归问题     | [Deep Learning with PyTorch](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html#weight-decay)<br />[Improving neural networks by preventing co-adaptation of feature detectors](https://arxiv.org/abs/1207.0580)<br />[Reducing Overfitting in Deep Neural Networks by Weight Decay](http://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)<br /> |
-         |     do     |                随机让部分神经元失效                | 可防止过拟合,提高神经网络泛化能力,增强模型鲁棒性 |           一般在测试阶段使用           |                   增强模型鲁棒性,防止过拟合                    |                          参数设置复杂                           | 深度学习分类问题<br />文本情感分析 | [Dropout: A Simple Way to Prevent Neural Networks from Overfitting](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)<br />[Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning](https://arxiv.org/abs/1506.02142)<br />[Convolutional Neural Networks on Graphs with Fast Localized Spectral Filtering](https://arxiv.org/abs/1606.09375)<br /> |
          | Gradient Elimination |                     逐层剪枝                     |                        效果比L2更好                        | 有较好的效果但运算量较大,耗时长 |           可将小特征删除,降低过拟合风险,提升计算速度           | 需事先计算阈值,不能保证一定效果,需要人工控制剪枝的倍率等参数 | 深度学习分类问题<br />文本情感分析 |                                                              |
 
      2.2、tensorflow实现权值衰减
@@ -152,4 +150,3 @@
      2.20.7、Nginx架构及安装
      2.20.8、Apache架构及安装
      2.20.9、Apache与Nginx比较
-

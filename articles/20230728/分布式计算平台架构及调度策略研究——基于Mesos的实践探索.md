@@ -17,7 +17,6 @@
          
          Mesos的架构图如下所示：
          
-       ![](https://github.com/mxsmns/article-images/raw/master/%E7%BD%91%E7%BB%9C%E8%AE%A1%E7%AE%97%E5%B9%B3%E5%8F%B0/mesos-architecture.png)
 
          - Master：Master节点是整个Mesos集群的控制中心，负责资源管理和全局调度。每台机器只能有一个Master节点，但可以通过在启动时指定不同的端口启动多个独立的Master节点。
          - Agent：Agent是Mesos集群中工作节点，每个Agent节点都可以执行多个任务。Agent通过注册到Master上获取资源，并根据Master发送的任务信息进行任务调度。
@@ -424,4 +423,3 @@
          - 提供容错的框架。
          
          Mesos的应用场景广泛，但Mesos未来仍然有很大的发展空间。我们建议读者多多关注Mesos的发展方向，提升Mesos在产品研发和推广上的能力。
-

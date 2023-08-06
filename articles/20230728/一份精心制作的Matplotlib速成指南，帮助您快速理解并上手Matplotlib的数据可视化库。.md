@@ -8,7 +8,6 @@
          Matplotlib是一个基于NumPy数组构建的开源绘图库，用于创建2D和3D数据可视化。它是用纯Python编写的，其API简洁易用，能够满足复杂的静态和交互式图像生成需求。Matplotlib可以运行在Linux、OS X和Windows平台上，并可轻松嵌入到其他应用中。Matplotlib基于两个主要的模块：
          1. matplotlib.pyplot：是面向对象的接口，基于pyplot，我们可以创建各种图形，包括直方图、散点图、折线图、条形图等。
          2. matplotlib.backends：负责支持不同的输出格式，例如，Matplotlib可以直接输出多种文件格式如PNG、PDF、SVG、EPS、PostScript等。
-        ![](https://upload-images.jianshu.io/upload_images/7219996-d9c1b6edca02fd5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
          由以上图示可以看出，Matplotlib提供了四个主要功能模块：
          1. 绘图组件（Plotting Components）：该模块包含matplotlib.pyplot模块中的函数，用于创建各种类型的图形，如折线图、散点图、饼图等。
          2. 图形处理组件（Graphics Processing Components）：该模块包含用于优化图形渲染性能的函数，如仿射变换、投影转换等。
@@ -69,7 +68,6 @@
                 plt.show()
                ```
               代码执行后会生成一个折线图，如下图所示：
-             ![](https://upload-images.byteimg.com/upload_images/7219996-ebaa8cf1a11f8bc6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
               
               ### 散点图
               您可以通过plt.scatter()函数创建散点图，语法如下：
@@ -82,7 +80,6 @@
                 plt.show()
                ```
               执行上述代码会生成一个散点图，如下图所示：
-             ![](https://upload-images.byteimg.com/upload_images/7219996-1a6f9517a32e77bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
               
               ### 横坐标轴刻度线
               您可以通过plt.xticks()函数设置横坐标轴刻度线的值，语法如下：
@@ -96,7 +93,6 @@
                 plt.show()
                ```
               执行上述代码生成的图形如下图所示：
-             ![](https://upload-images.byteimg.com/upload_images/7219996-cfcbfb52ee6d0be6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
               
               ### 纵坐标轴刻度线
               您可以通过plt.yticks()函数设置纵坐标轴刻度线的值，语法如下：
@@ -110,7 +106,5 @@
                 plt.show()
                ```
               执行上述代码生成的图形如下图所示：
-             ![](https://upload-images.byteimg.com/upload_images/7219996-568d1e4fc8ccda45.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
           
          
-

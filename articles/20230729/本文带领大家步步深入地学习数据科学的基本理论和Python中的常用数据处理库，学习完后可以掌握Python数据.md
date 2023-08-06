@@ -142,6 +142,3 @@
       　　```
 
       　　for 和 while循环都需要配合range()函数使用，表示循环次数。执行结构如下图所示：
-
-  　　![control statements](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/ControlFlowStatements2.svg/1280px-ControlFlowStatements2.svg.png)<|im_sep|>
-

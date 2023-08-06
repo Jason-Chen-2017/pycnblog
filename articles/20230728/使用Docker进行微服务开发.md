@@ -345,4 +345,3 @@
         ### 检查应用是否正常
         
         使用浏览器访问http://localhost:8080/greeting，应该看到{"message": "Hello World!"}的输出结果。
-

@@ -115,4 +115,3 @@
         }
         ```
         上述代码通过 SqlSessionFactory 对象获取 SqlSession 对象，通过 SqlSession 对象来执行 SQL 操作。
-

@@ -469,4 +469,3 @@ XGROUP DELCONSUMER mystream groupname consumername
 不过，从公司运营的角度来看，两者还是有一些差异的。Memcached更多的应用在那些日益流行的CDN产品上，提供简单的缓存服务；而Redis则是应用在更复杂的企业级的应用系统中，用于存储持久化数据。
 
 因此，作为系统管理员和开发人员，我们应该选择哪一个数据库呢？对于较小的项目或个人学习，我建议优先选择Memcached；而对于企业级的生产应用系统，我建议优先选择Redis。
-

@@ -52,7 +52,6 @@
         
         当用户输入搜索关键字时，系统会对搜索词进行分词、去停用词等操作，生成包含所有关键词的查询语句。HBase会根据查询条件计算出所需Region的列表，然后分别读取这些Region中的数据，并合并最终的结果。如下图所示：
         
-       ![](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMy5hbWVnYWxlLmNuYW9vLmNvbS8yMzY3N2JiNTUtYTcyNi00YjYwLTkzMjItZWU3ZjgzZTQxYzI3?x-oss-process=image/format,png)
         
         1. 用户输入搜索关键字“武汉”，请求搜索服务；
         2. 搜索服务接收请求，解析关键字“武汉”；
@@ -232,4 +231,3 @@
         - `scan 'weibo_search'`查看`weibo_search`库表的所有数据，同时过滤出符合搜索条件的微博。
         
     通过精准检索，我们可以大幅提高微博搜索服务的响应速度，从而为用户提供更加准确和迅速的搜索结果。
-

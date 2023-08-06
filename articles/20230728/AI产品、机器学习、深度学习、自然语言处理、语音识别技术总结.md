@@ -54,4 +54,3 @@
 
 # 6.语音识别
 语音识别（Speech Recognition）是自动将声音转化为文本的过程，是自然语言处理的一部分。它可以在语音数据中提取语音特征，并借助这些特征进行语音识别。在语音识别中，通常使用短时傅立叶变换（Short Time Fourier Transform，STFT）和梅尔频谱系数（Mel Frequency Cepstral Coefficients，MFCC）来提取语音特征。语音识别的应用包括拼写检查、语音交互、命令控制、日常生活场景下的语音助手等。
-

@@ -28,7 +28,3 @@
           # 后记
           自我感觉写的不错，但没有人看，不知道啥时候能出版。。。好吧，希望我坚持下去吧。
           # 参考
-          [3.Hadoop权威指南](https://item.jd.com/12397504.html)
-          [廖雪峰Hadoop入门指南](https://www.liaoxuefeng.com/wiki/0614743586305929606dd18361248578c67b8067c8c017b000/)
-          [Hadoop: The Definitive Guide](https://www.amazon.cn/dp/B00BSJ3D1S/ref=sr_1_1?__mk_zhouhuan=mai&keywords=%E5%AE%8B%E9%A3%8E%E6%AF%95%E5%BA%A6hadoop+%E5%85%A8%E6%96%87%E4%BB%8B%E7%BB%8D&qid=1572274782&s=gateway&sr=8-1)
-

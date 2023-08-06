@@ -1,6 +1,9 @@
 import os
 import shutil
 
+# 定义正则表达式
+pattern = r'(.*外链图片转存中.*)|(.*\.png.*)|(.*\(https:\/\/.*)|.*(<img src=.*).*|(.*\(http:\/\/.*)'
+
 
 def find_good(date):
     global f, content
@@ -23,10 +26,11 @@ def find_good(date):
                 # 行数
                 line_count = len(lines)
 
-            # 如果文章的长度>4000 and 行数大于150，则复制文件到目标目录
-            if length > 6000 and line_count > 180:
-                target_path = os.path.join(target_directory, file_name)
-                shutil.copy(file_path, target_path)
+        # 如果文章的长度>4000 and 行数大于150，则复制文件到目标目录
+        if length > 6000 and line_count > 180:
+            target_path = os.path.join(target_directory, file_name)
+            shutil.copy(file_path, target_path)
+
 
 def find_draft(date):
     global f, content
@@ -43,7 +47,9 @@ def find_draft(date):
             file_path = os.path.join(source_directory, file_name)
             with open(file_path, 'r') as f:
                 lines = f.readlines()
+
                 content = ''.join(lines)
+
                 # 文章的长度
                 length = len(content)
                 # 行数
@@ -53,10 +59,6 @@ def find_draft(date):
             if 3000 < length < 6000 and 100 < line_count < 180:
                 target_path = os.path.join(target_directory, file_name)
                 shutil.copy(file_path, target_path)
-
-
-
-
 
 
 if __name__ == '__main__':

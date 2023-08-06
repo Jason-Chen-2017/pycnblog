@@ -145,4 +145,3 @@
           在上面的代码中，通过调用ExecutorService对象的invokeAll方法并传入一个List对象来批量提交任务，返回一个List<Future>对象。然后通过循环遍历Futures列表，取出每个任务的结果，最后关闭线程池。
           
           在ExecutorService对象上调用submit方法也能实现线程池的简单使用，但是该方法只能提交一个任务。如果要提交多个任务，建议使用invokeAll或invokeAny。另外，在结束线程池之前，一般需要调用shutdown方法，否则可能造成一些隐患。
-

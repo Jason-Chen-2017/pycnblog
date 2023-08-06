@@ -110,7 +110,5 @@
         plt.show()
         ```
         上面的代码第一行导入了numpy和matplotlib库，第二行定义了x轴、y轴的数据。第三行调用plt.bar()函数绘制条形图，第四行设置图例、标题等。最后两行调用plt.show()函数展示图形。
-       ![图片](https://img-blog.csdnimg.cn/20210706182915831.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzMyOTY3Mw==,size_16,color_FFFFFF,t_70#pic_center)
    
         
-

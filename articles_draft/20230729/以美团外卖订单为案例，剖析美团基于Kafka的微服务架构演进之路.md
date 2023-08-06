@@ -48,7 +48,6 @@
          #### 7. 事务
          Kafka从0.11版本开始引入了事务机制，可以确保消息的消费和生产都满足ACID的特性，即原子性(Atomicity)、一致性(Consistency)、隔离性(Isolation)、持久性(Durability)。
         ### 原理图
-       ![](https://img-blog.csdnimg.cn/20201025104604679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNjI3MzEzNw==,size_16,color_FFFFFF,t_70)
         上图展示了Kafka的基本原理，包括Producer、Consumer、Broker、Topic和Partition等概念。
 
         Producer就是消息的产生者，它将消息发布到指定的Topic中。一个Topic可以由多个Partition组成，每个Partition是一个有序的消息队列，同一个Topic中的消息会被发送到不同的Partition中。一个Broker可以处理多个Partition，因此它可以充当消息队列的角色。
@@ -120,4 +119,3 @@
      - 基于数据库的事件溯源：将事件数据和相关元数据存入MySQL数据库中，供外部工具进行查询。
      
      通过引入事件溯源功能，订单系统可以记录每次对订单数据做出的修改，并提供相应的查询接口，方便管理员进行数据追溯。
-

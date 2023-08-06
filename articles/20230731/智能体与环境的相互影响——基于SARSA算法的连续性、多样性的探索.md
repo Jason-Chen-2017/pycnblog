@@ -24,7 +24,6 @@
          
          Sarsa(State-Action-Reward-State-Action)算法是一种改进的Q-learning算法，它的原理是在每次迭代时，由当前状态$s_t$和动作$a_t$决定要执行的下一个动作$a'_t$，依据上述公式计算出来的Q值作为下一步$s'_t$的Q值。Sarsa算法的特点在于对动作值函数进行修正，使用当前的状态、动作以及奖励来预测下一步的动作。Sarsa算法在每次迭代的过程中，使用ε-greedy策略进行动作选择。Sarsa算法的算法流程如下图所示：
          
-        ![](http://latex.codecogs.com/gif.latex?%5Cbegin%7Bequation*%7D%0As_0%2Ca_0%2Cr_0%2Cs_%7Bt%2B1%7D%2Ca_%7Bt%2B1%7D%3DK%28s_0%29%5E%7BT-%7Ba_0%7D_%7Bk&plus;1%7D%7D%0Aa_%7Bt%2B1%7D%20%3D%20\pi_\epsilon(s_%7Bt%2B1%7D,%20Q%28s_%7Bt%2B1%7D,a)%0Aq_%7Bs_%7Bt%2B1%7D%2Ca_%7Bt%2B1%7D%7D%20%3D%20r_%7Bt%2B1%7D%20%2B%20\gamma%20Q_%7Bpi%7D%28s_%7Bt%2B1%7D%2C%20argmax_a%20Q%28s_%7Bt%2B1%7D%2Ca%29%29%0AQ_%7Bpi%7D%28s_%7Bt%2B1%7D%2Ca%29%20%3D%20Q_%7Bpi%7D%28s_%7Bt%2B1%7D%2C%20a%29%20&plus;%20\alpha%20[r_%7Bt%2B1%7D+\gamma\cdot Q_%7Bpi%7D%28s_%7Bt%2B1%7D%2C%20argmax_a%20Q%28s_%7Bt%2B1%7D%2Ca%29%20-    ext{Q}_%7Bpi%7D%28s_%7Bt%2B1%7D%2Ca_%7Bt%2B1%7D%29]%0A%5Cend%7Bequation*)
          
          上述公式中，$K(s_0)^T$为状态转移矩阵，$T$表示步长或更新次数。当$K(s_0)^T$不存在时，需要用替代方案来估计其值。
          # 3.算法原理和操作步骤
@@ -190,4 +189,3 @@ def sarsa(env, alpha=0.5, gamma=0.9, epsilons=[0.1]):
         
     return Q, history
 ```
-

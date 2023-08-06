@@ -60,7 +60,6 @@
          1. 架构概览
            1. KubeCarrier 集群架构图如下所示：
            
-          ![图片](https://img.serverlesscloud.cn/202173/1629074267380-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202021-08-15%20%E4%B8%8A%E5%8D%889.19.32.png)
            
            2. KubeCarrier 主要分为以下几个模块：
              1. Authentication/Authorization：权限验证、授权模块，通过RBAC机制来进行权限控制，同时集成OIDC/LDAP等外部认证方式。
@@ -210,4 +209,3 @@
              6. KubeCarrier 将监控数据、应用状态等实时呈现给用户，帮助用户了解集群中应用的运行情况，并及时采取相应的策略调整。
 
              此次中型企业的 Kubernetes 集群管理工作使得集群的管理更加自动化，降低了运维成本，提高了 Kubernetes 集群的管理效率。
-

@@ -41,7 +41,6 @@
           ### 数据流图（Data Flow Graph）
           TensorFlow基于数据流图的计算模型，整个深度学习模型的训练都可以看作是这样的一系列数据流图运算。数据流图中每个节点代表着运算（operator），每个边代表着数据流动（edge）。数据的流动方式有两种：“前向传播”和“反向传播”。前向传播是指从输入层开始，依次通过各个中间层运算，最后输出到输出层；反向传播则是根据代价函数对各个参数进行更新。
           下面是典型的数据流图示意图：
-         ![image](https://user-images.githubusercontent.com/47928375/118220485-d5aaea00-b4ac-11eb-9e6c-f747300b7a2a.png)
           
           TensorFlow使用的数据流图包括两个阶段：训练阶段（training phase）和推断阶段（inference phase）。训练阶段用于定义模型的参数和训练策略；推断阶段则用于计算模型对于输入数据的输出。不同于静态的硬件体系结构，TensorFlow将计算过程动态地分派给不同的设备（CPU、GPU、TPU），这样可以有效提高训练效率。
           TensorFlow还提供了多种调试工具，可以用于查看计算图，检查内存占用情况，以及分析运行时性能。
@@ -98,7 +97,6 @@
         ### 数据流图（Data Flow Graph）
         TensorFlow基于数据流图的计算模型，整个深度学习模型的训练都可以看作是这样的一系列数据流图运算。数据流图中每个节点代表着运算（operator），每个边代表着数据流动（edge）。数据的流动方式有两种：“前向传播”和“反向传播”。前向传播是指从输入层开始，依次通过各个中间层运算，最后输出到输出层；反向传播则是根据代价函数对各个参数进行更新。
         下面是典型的数据流图示意图：
-       ![image](https://user-images.githubusercontent.com/47928375/118220485-d5aaea00-b4ac-11eb-9e6c-f747300b7a2a.png)
         
         TensorFlow使用的数据流图包括两个阶段：训练阶段（training phase）和推断阶段（inference phase）。训练阶段用于定义模型的参数和训练策略；推断阶段则用于计算模型对于输入数据的输出。不同于静态的硬件体系结构，TensorFlow将计算过程动态地分派给不同的设备（CPU、GPU、TPU），这样可以有效提高训练效率。
         TensorFlow还提供了多种调试工具，可以用于查看计算图，检查内存占用情况，以及分析运行时性能。
@@ -443,4 +441,3 @@ type = panel
         c.NotebookApp.enable_mathjax = True
         c.NotebookApp.tornado_settings = {"headers": {"Content-Security-Policy": "frame-ancestors'self' *" }}
         ```
-

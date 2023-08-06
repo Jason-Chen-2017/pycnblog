@@ -169,4 +169,3 @@
     |status|enum('approved','pending','spam')||审核状态|
     |created_at|datetime||当前时间|创建时间|
     |updated_at|datetime||当前时间|更新时间|
-

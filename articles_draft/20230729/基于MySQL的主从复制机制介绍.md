@@ -10,7 +10,6 @@
          2.系统架构
          MySQL主从复制机制的体系结构如图所示：
 
-        ![](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWRfaW1hZ2VzLmppYW5zaHUuaW8vMjAxOS8xMC8yMV8xNjQwNTk4Nzg=/bAI9eg)
 
          Master: 主服务器，主要用来接收所有的更新命令，然后将这些命令发送给其它服务器上的Slaves进行执行。
 
@@ -45,7 +44,6 @@
      2.MySQL Replication Workflow
      下面我们通过一个具体的例子来学习一下MySQL主从复制的工作流程。假设有两台服务器A和B，Server A作为Master服务器，Server B作为Slave服务器。如下图所示：
 
-      <img src="https://img-blog.csdnimg.cn/20210706090935392.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzcyOTI4Mw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" width="60%">
 
 
      当Server A启动之后，会创建一个名为mysql-bin.000001的二进制日志文件。Server A上的数据库服务就会开始按照顺序地将更改日志保存至这个文件里。同时，Server A上的mysqld进程会开启一个内置的I/O线程，每隔一段时间就刷新一次该文件的缓存。另一方面，Server A上的mysqld进程会开启一个名为sql_relay的线程，用于读取服务器A上的binlog文件，并将其中的日志传送给Server B上的mysqld进程。
@@ -119,4 +117,3 @@
     本文简单介绍了MySQL主从复制的基本原理，并详细分析了主从复制的工作流程。其中，主从复制的核心原理是将Master服务器上所有的数据变动操作记录下来，并在Slave服务器上进行回放，达到数据一致性的目的。
 
     本文只是对MySQL主从复制的基本介绍，更详细的配置细节和操作技巧，还需要进一步研究。但是，基础知识掌握了，对于大多数使用MySQL的业务开发者来说，理解主从复制机制以及相关配置选项，都是很关键的。
-

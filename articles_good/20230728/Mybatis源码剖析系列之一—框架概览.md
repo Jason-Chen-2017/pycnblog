@@ -363,8 +363,3 @@
    ```
 
    在某些数据库系统中，column 名可能使用下划线分隔，比如 employee_name，如果不做任何处理 MyBatis 将无法正确映射到 EmployeeName 的属性上。
-
-
-
-
-

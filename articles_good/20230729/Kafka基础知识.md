@@ -44,7 +44,6 @@
 
         每个 kafka 服务实例都会和 zookeeper 集群保持长连接。kafka 的很多功能都依赖于 zookeeper 来保存元数据信息，比如 topics、partitions 的路由信息等。另外，当 broker 节点发生故障时，zookeeper 会检测到该节点不可用，并通知相应的 kafka 服务实例。
 
-        Zookeeper 的安装及配置可以参见官方文档：[http://zookeeper.apache.org/](http://zookeeper.apache.org/)
 
 
         ## 3.Kafka核心概念
@@ -436,4 +435,3 @@
     1. Transactional Producers: A transactional producer is an extension of the standard synchronous producer that provides support for transactions with exactly once delivery guarantee. The client application can use this feature by specifying a unique transactionalId during initialization. Upon successful initiation, all messages published under that transactionalId will be written atomically to all replicas before either committing or aborting the transaction. To ensure at-least-once delivery semantics, it is necessary to enable retries on the client side if the producer returns failures due to timeouts or other transient errors.
 
     2. Idempotent Consumers: An idempotent consumer is an extension of the basic Kafka consumer that enables users to specify what should happen when a consumer encounters duplicate messages. When enabled, duplicates are detected based on the combination of topic name, partition number, and message key. If a duplicate is encountered, one of three actions can be taken: discard the message, fail the consumer (default behavior), or invoke a user-defined callback function that handles the message according to specific business logic requirements. For example, a bank transfer processing application might use an idempotent consumer to handle duplicate transfers but rely on the ordering guarantees provided by Kafka's partitions to avoid double-spending issues.
-

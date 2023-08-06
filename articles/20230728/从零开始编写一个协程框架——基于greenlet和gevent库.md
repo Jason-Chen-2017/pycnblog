@@ -8,7 +8,6 @@
 首先，让我们回顾一下线程模型的组成结构。
 
 ## 线程模型的组成
-![线程模型](http://qn.huat.xyz/content/2019/04/08/%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B.png)
 
 1. 用户空间: 是指应用程序代码运行的地方，里面包含的是用户定义的函数和全局变量。
 2. 内核空间: 操作系统提供给每个进程的运行环境，里面包含各种资源，如内存空间、文件描述符、句柄、进程堆栈等。
@@ -50,4 +49,3 @@ Gevent和Greenlet都是python中的微线程库。其中，Greenlet是纤程库�
 Greenlet使用C扩展，是cpython实现的。Gevent使用c扩展，也是cpython实现的。两者都是为了解决gevent和greenlet。
 
 Gevent 和 greenlet 的不同之处在于，Gevent 是对 Greenlet 的封装，它提供了一个高级的 API 来利用 Greenlet 提供的并发性，并支持更多的异步 I/O 模型。Gevent 可以让程序员用同步的方式来编写程序，通过 gevent.spawn() 函数来启动一个协程，不需要使用回调函数，而是可以直接使用 yield from 语法。Gevent 对 IO 模型做了更好的封装，包括 Socket、SSL、WebSocket、XML-RPC、HTTP 请求等。Gevent 可以工作在 PyPy、CPython、Jython、IronPython、Stackless Python 中。
-

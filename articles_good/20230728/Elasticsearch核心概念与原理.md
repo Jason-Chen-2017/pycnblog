@@ -364,7 +364,6 @@
          
          pip install elasticsearch
          
-         有关API详情参考官方文档：[https://elasticsearch-py.readthedocs.io/en/master/](https://elasticsearch-py.readthedocs.io/en/master/)
          
         ``` python
         #!/usr/bin/env python
@@ -442,4 +441,3 @@
 
        }
        ```
-

@@ -539,4 +539,3 @@ employee1.give_raise(10000)
 print(employee1.salary)   # Output: 60000
 print(employee2.salary)   # Output: 60000
 ```
-

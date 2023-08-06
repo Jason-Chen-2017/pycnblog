@@ -332,4 +332,3 @@ class MyClass {
 		std::shared_ptr<T> mData;
 };
 ```
-

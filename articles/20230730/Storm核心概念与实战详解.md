@@ -106,4 +106,3 @@
          3.12 Security Features: 
             
            Storm supports both authentication and authorization mechanisms. Authentication involves verifying the identity of clients connecting to Storm and authorizing them to submit topology requests. Authorization controls what operations a client can perform within a topology, according to predefined roles. Storm has built-in security features that automatically encrypts communication between supervisors and tasks and authenticates incoming connections. It also allows administrators to restrict user permissions using ACL (Access Control List) configurations.
-

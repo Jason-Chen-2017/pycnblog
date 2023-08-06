@@ -15,7 +15,6 @@
          - **Object Storage Services:** 对象存储服务模块主要用来提供对象存储接口，如S3 API或Swift API。对象存储服务是分布式存储中的一种特殊形式，它不像块存储那样由存储设备直接提供持久化存储，而是在远端服务器上运行着对象存储代理，来处理客户端的请求，如上传、下载和删除文件。Rook通过Object Service Module支持多个对象存储服务，包括Ceph Object Gateway、Minio、Amazon S3、Google GCS、Apache Swift和华为OBS等。
          - **EdgeFS:** EdgeFS是一个面向微服务和边缘计算环境设计的开源分布式数据网格。Rook通过EdgeFS Module支持部署、管理和扩展EdgeFS集群。
 
-        ![](https://img.serverlesscloud.cn/202181/1629515907043-rook%E9%A1%B9%E7%9B%AE%E7%BB%84%E4%BB%B6%E5%9B%BE.png)
 
          ### 特色功能
 
@@ -178,7 +177,6 @@ Rook项目通过使用Kubernetes中的自定义资源Definition(CRD)机制，声
 4. Kubernetes通过该资源的spec来启动一个Operator的controller，通过调用Ceph Client library向Ceph Agent发送命令，创建一个新的Ceph集群。
 5. 管理员可以检查集群的状态、创建或删除池、文件系统等，通过CephDashboard查看集群的运行情况。
 
-![](https://img.serverlesscloud.cn/202181/1629515924393-%E5%AF%BC%E8%AE%BA%E6%96%87%E6%A1%A3%E5%9B%BE%E7%89%87.jpg)
 
 ## 3.2. 集群状态监控
 
@@ -408,4 +406,3 @@ Rook团队一直致力于确保Rook产品质量，包括高可用性、自动恢
 ## 6.1. Q：为什么要使用Rook？
 
 **A:** Rook项目是由CoreOS、RedHat、SUSE等著名公司和组织推出的开源项目，目标是为Kubernetes提供一种简单、可靠、一致的存储编排方案。Kubernetes已经成为容器编排领域的领头羊，越来越多的企业和组织选择将Kubernetes用于分布式存储的管理，但Kubernetes本身的存储编排仍然较为复杂，使用传统存储插件无法满足需求。Rook使用CRD模式，简化了分布式存储的部署、管理和扩展，使得分布式存储管理变得十分便捷和直观。
-

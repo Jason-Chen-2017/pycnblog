@@ -44,7 +44,6 @@
          
          微服务架构是一种服务设计模式，其中一个重要原则就是“单一职责”。所谓单一职责，就是一个模块只做好一件事。微服务架构将大型复杂系统划分为多个小型的服务，每个服务负责处理单一的业务功能。这样，当整个系统遇到升级或故障时，只需要升级或替换少量的服务即可，使得整体架构的稳定性大幅度提升。与传统的大型机架构相比，微服务架构可以更好地满足业务发展的需求。
         
-       ![微服务架构示意图](https://upload-images.jianshu.io/upload_images/1777925-c8d4f7e479b7a2aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
         ## 3.2 Kubernetes的概念
         
@@ -54,7 +53,6 @@
         
         Kubernetes集群通常由三个核心组件组成：Master节点和Node节点。Master节点负责管理集群，其包括API Server、Scheduler和Controller Manager；Node节点则用于运行容器化应用。
        
-![kubernetes架构图](https://upload-images.jianshu.io/upload_images/1777925-8c8401be3eccdcf2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
         Kubernetes集群中有两个角色：Master节点和Node节点。Master节点负责管理集群，其包括API Server、Scheduler和Controller Manager。API Server负责处理集群所有请求，包括对集群的CRUD、监控、权限控制等；Scheduler负责为新建的Pod分配Node节点，确保Pod能够顺利运行；Controller Manager负责运行控制器来实施监控、副本控制器等功能。Node节点则用于运行容器化应用，可以是物理机或虚拟机，也可以通过云平台提供的容器服务。
         
@@ -62,7 +60,6 @@
         
         Kubernetes的架构曾经历了几次演进。早期版本中，只有Master节点和Node节点，没有部署控制器；之后增加了运行控制器的机制，形成了新的架构模型。下面我们再回顾一下这张架构图，详细了解一下这次演进。
         
-       ![kubernetes架构图](https://upload-images.jianshu.io/upload_images/1777925-fb16bc42d93e0866.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
         
         **第一代Kubernetes架构**
         
@@ -261,4 +258,3 @@
          * 开发和运维效率：容器技术通过自动化、可重复使用的模板化配置和容器化组件，实现了一次开发，到处运行的效果；
 
          
-

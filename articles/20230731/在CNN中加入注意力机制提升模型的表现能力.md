@@ -9,7 +9,6 @@
       技术实现：从基本原理入手，我们可以先了解一下注意力机制的一些基本特点。
       从非局部感受野（Non-Local）可以看出，注意力机制的引入主要目的是为了解决这一问题，但是直观地说，如何在CNN中实现注意力机制呢？这里给出的一种方法就是“加权平均”或者“特征交互”的方法，即每个感受野的输出都是一个卷积核提取到的特征，我们可以通过学习得到不同的卷积核参数来使得不同的特征获得不同的重要程度，最后通过加权平均或者特征交互的方式得到最终的注意力结果。
       CNN+Attention的结构如下图所示：
-     ![img](https://pic4.zhimg.com/v2-fc5cf9a91c10e07b38d2f72bcce5fdcb_b.png)
       其中：
       - $X$ 是输入的图像，大小为 $(N     imes C_{in}     imes H_{in}     imes W_{in})$ ，其中N是batch size，C_{in}是输入通道数，H_{in}和W_{in}分别是高度和宽度。
       - $K$ 和 $Q$ 分别是两个中间层，大小分别为 $(N    imes C_{in}    imes HW_{q})$ 和 $(N    imes C_{in}    imes HW_{k})$ ，分别用于计算注意力权重和求和后的值。其中HW_{q}和HW_{k}是空间维度大小。
@@ -20,7 +19,6 @@
       其中，$E$ 为注意力权重矩阵， $a(\cdot)$ 是激活函数，一般为softmax函数； $\Z = A * V$ 是经过注意力计算的输出，也是最终的输出。
       基于这种Attention计算方式的优点是简单，模型参数少且易于训练；缺点则是只适用于序列数据，无法直接应用于图像数据。因此，作者提出了一种利用卷积神经网络进行特征学习，再引入注意力机制的更高级的注意力计算方式——CBAM (Convolutional Block Attention Module)。
       CBAM的思路是在每一个卷积层之后增加一个Channel Attention模块和Spatial Attention模块。其中，Channel Attention模块利用一个全局平均池化和一个1x1卷积来生成注意力权重，Spatial Attention模块则利用1x1卷积和3x3卷积来实现注意力学习。如下图所示：
-     ![img](https://pic3.zhimg.com/v2-4438edba18d9b72dc86d1fc192dbbcf5_b.png)
       Channel Attention模块：
       $$\mu_{    heta}(X)=GlobalAvgPooling(X)\\\sigma_{\phi}(X)=Sigmoid(F_{gate}(X))\\Z_{\hat{X}}=\sigma_{\phi}(\gamma_{\psi}(X)+\beta_{\psi}(X))\\\hat{X}_i=X_{[i]}$$
       Spatial Attention模块：
@@ -46,7 +44,6 @@
 
       **CNN+Attention的结构：**CNN+Attention的结构如下图所示：
       <div align="center">
-        <img src="./figures/Attention_Block.jpg" width="60%" height="60%">
       </div>
 
       此处使用1D的注意力机制。首先，在原始输入上施加一个注意力层（Attention Layer），该层将输入映射到一个向量中，该向量的每个元素对应于原始输入中的位置。该向量的注意力权重由注意力机制学习得到。然后，利用注意力权重与原始输入进行卷积操作，得到加权后的特征。最后，将加权后的特征送至FC层进行输出。
@@ -75,4 +72,3 @@
 
       Q:注意力机制中的注意力权重是如何计算的？
       A:注意力权重的计算有两种方式：一是全局平均池化（Global Average Pooling）; 二是加权求和（Weighted Sum）。由于卷积神经网络中的数据流是非线性的，因此我们不能采用传统的卷积操作。但是，通过注意力机制学习到的注意力权重依旧可以使用卷积操作来表示，这就引入了一个新的组件——特征交互（Feature Interaction）。特征交互的思想是学习到两层之间的特征相互作用，即某一层的某个特征对于另一层的某些特征具有显著影响。这样，在注意力计算过程中，我们就可以利用学习到的特征交互参数来更新注意力权重。
-

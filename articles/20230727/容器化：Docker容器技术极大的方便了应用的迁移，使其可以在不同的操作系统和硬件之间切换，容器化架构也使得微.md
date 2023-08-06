@@ -42,7 +42,6 @@
             - Docker客户端：作为Docker的用户，你只需要使用Docker客户端，通过简单的命令即可创建、运行、停止、删除容器，也可以查看镜像和容器信息。
             - Docker引擎：Docker引擎则是Docker的核心。它负责镜像管理、容器创建、启动、停止等生命周期管理。它是一个C/S结构，其中服务端与客户端通过HTTP协议通信。
             - Docker守护进程：Docker守护进程（daemon）是一个运行在后台的进程，它监听Docker API请求并管理Docker对象。它负责接收来自客户端的指令，并通过Docker引擎为容器提供相应的执行。
-           ![image.png](https://cdn.nlark.com/yuque/__latex/9d7ccca43f1dbcf5bf5c6b7d6fc7e6cb.png#height=135&width=172)
 
           2.Docker的命令详解
 
@@ -175,4 +174,3 @@
             当下还有很多技术瓶颈等待我们去突破，Docker和K8S只是目前技术的浮躁期，未来还有更多的挑战和机遇。
 
             最后，希望这篇文章能够对你有所启发，并给你带来一些启发。
-

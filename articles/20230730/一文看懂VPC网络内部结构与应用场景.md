@@ -8,7 +8,6 @@
          ## 2.1 VPC网络内部结构
          　　首先来看一下VPC网络的内部结构。如下图所示，VPC网络由两个部分构成——网络边界和路由功能。网络边界是用户自己管理的专用网络，其中包括VPC、Subnet、IGW（Internet Gateway）等资源；路由功能负责将流量从一个网络通过路由器传输到另一个网络，并使得不同网络之间的流量能够互通。
          
-       ![vpc_structure](https://img-blog.csdnimg.cn/20200507190715701.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNjQyMTU0Nw==,size_16,color_FFFFFF,t_70)
         在VPC网络内部，最重要的是VPC这个资源，它代表着用户自己管理的专用网络，也称之为虚拟网络。VPC由很多子网（Subnet）组成，每个子网都是一个私有网络。一个VPC内的子网之间可以通过各种方式相连，比如通过Internet Gateway相连，或者通过其他的VPC间的Peering Connection进行连接。而每个子网都有自己的路由表，用于确定发送到该子网的数据包应该如何转发，从而实现不同子网之间的流量互通。同时，每个子网还可以绑定相应的安全组，对其中的实例进行访问控制。
          
          
@@ -29,4 +28,3 @@
          
          5. 分布式数据库集群
          用户可以使用VPC网络在不同的可用区部署一组分布式数据库集群。通过VPC网络的跨越性，这种部署方式可以降低因区域间网络延迟造成的性能影响，提升整个系统的整体效率。
-

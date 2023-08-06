@@ -73,4 +73,3 @@ GoDaddy Domain Verification API 的主要功能如下：
 1. 简单易用的API调用: GoDaddy Domain Verification API 提供了RESTful API接口，可以简单快速地进行域名验证。
 2. 更多的验证方法: 除了域名验证之外，GoDaddy Domain Verification API还支持FTP验证、邮箱验证等多种验证方法。
 3. 安全可靠的服务: GoDaddy Domain Verification API 提供了安全可靠的服务，包括免费的域名验证、全球CDN节点部署、API服务调用认证等，助力您提升网站的安全性。
-

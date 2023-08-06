@@ -216,4 +216,3 @@ print(df.astype({'gender':'category'}))   #[Output]
 5                          168      62
                                             
 |[female]<|im_sep|>
-

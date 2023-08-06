@@ -79,7 +79,6 @@
 
 ECC 与 RSA 不同，它是一种离散对数难题（DLP）结构，它的安全性依赖于离散对数计算难度。ECDHE 算法又分为两步，第一步是 ECDH 密钥交换，第二步是签名和验证。首先，客户端选择椭圆曲线，并对其进行参数设定。然后，客户端和服务端分别生成私钥和公钥。之后，双方利用公钥进行密钥协商，生成临时的对称密钥，该密钥仅用来加密本次通信内容。最后，双方使用相同的私钥签名对话密钥，并交换各自的签名结果，以校验通信双方身份。
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Diffie_Hellman_%28Key_Exchange%29_with_ECDSA.svg/640px-Diffie_Hellman_%28Key_Exchange%29_with_ECDSA.svg.png" width=500>
 
 
 ## 3.2 Forward Secrecy
@@ -299,4 +298,3 @@ QUIC 现在支持扩展性，但是并不是所有的扩展都被广泛使用。
 2. **不支持路由或交换特定协议：** QUIC 只能在专用的 UDP 端口上运行，这会影响到多播、广播或 VPN 等场景下的互操作性。
 3. **缺乏公认的标准化：** QUIC 缺乏公认的标准化，这将阻碍其普及和部署。
 4. **支持的部署受限：** 由于 QUIC 只能在专用的 UDP 端口上运行，这意味着部署和维护 QUIC 协议栈将有限。
-

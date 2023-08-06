@@ -386,4 +386,3 @@ Additional text goes here.")
         gpr = gaussian_process.GaussianProcessRegressor() 
                                                        # initializing Gaussian process regression  
         ```
-

@@ -18,7 +18,6 @@
 
          ### 下载安装包
 
-         在官方网站上找到下载地址：[https://www.jetbrains.com/pycharm/download/](https://www.jetbrains.com/pycharm/download/) 。进入该页面后选择合适的版本下载并进行安装。
          
          ### 设置
 
@@ -49,6 +48,3 @@
          |Shift + Delete|删除光标后的字符|
          |Tab|代码补全或缩进|
          |Shift + Tab|代码向后缩进|
-
-         更多快捷键请参考[PyCharm快捷键列表](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)。
-

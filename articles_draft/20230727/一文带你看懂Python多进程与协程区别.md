@@ -53,8 +53,6 @@
         ## 4. Gevent和asyncio
         - **Greenlet**：协程的一种实现，可以在单核机器上模拟多核环境。
         - **Event Loop**：事件循环，是异步编程的关键。
-        - **Gevent**：[Gevent](http://www.gevent.org/)是基于greenlet和libev实现的事件驱动框架，可以自动管理greenlet以支持并发。
-        - **Asyncio**：[Asyncio](https://docs.python.org/zh-cn/3/library/asyncio.html)是Python3.4版本引入的标准库，它基于协程实现了异步IO，支持多种形式的并发。
     
         ## 5. 抢占式调度
         - **抢占式调度**（Preemptive Scheduling）：当发生硬件中断时，调度器会暂停当前正在运行的进程，保存上下文，并切换到另一个进程继续运行。
@@ -138,10 +136,5 @@
         
         从目前的发展情况来看，协程已经成为解决并发编程问题的利器。但是随着Python的发展，还有许多值得探索的方向。下面列出一些未来可能会出现的热点：
         
-        * **Rust async**：[Rust](https://www.rust-lang.org/)语言引入了[async/await](https://rust-lang.github.io/async-book/)语法，提供了异步编程的完整解决方案。
-        * **C++ coroutines**：[C++20](https://en.cppreference.com/w/cpp/compiler_support/coroutines)引入了协程支持，可以利用同步接口编写异步代码。
-        * **WebAssembly coroutines**：[Wasmtime](https://wasmtime.dev/)是一个用Rust编写的开源WebAssembly虚拟机，支持创建和管理协程。
-        * **GPU kernels**：[OpenCL](https://www.khronos.org/opencl/)、[CUDA](https://developer.nvidia.com/cuda-zone)、[Vulkan](https://www.khronos.org/vulkan/)等显卡接口支持并行编程模型，可以利用这些接口开发高性能的机器学习算法。
         
         在此处，我们做了一个比较全面的梳理，希望能帮助大家快速理解Python中的多进程、多线程和协程的区别。
-

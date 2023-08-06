@@ -39,7 +39,6 @@ Goroutine是一个轻量级线程，类似于微线程或者内核线程。它�
 Goroutine调度器负责管理所有的Goroutine，当某个Goroutine因为某种原因暂停时，调度器会挂起该Goroutine，重新安排其他正在运行的Goroutine运行。这种机制使得Goroutine可以在没有操作系统切换的情况下进行交替执行，从而提升程序的执行效率。
 
 Goroutine的调度原理如下图所示:
-![goroutine-scheduling](https://cdn.jsdelivr.net/gh/zionfuo/img/2021/07/goroutine-scheduling.png)
 
 如上图所示，调度器维护了一个可运行状态的Goroutine队列。当主线程需要创建一个新的Goroutine的时候，就会为这个Goroutine创建一个独立的栈空间，然后把这个Goroutine添加到可运行状态的Goroutine队列中。调度器会不断的从队列中取出一个Goroutine，并让其运行。当一个Goroutine退出或者完成时，调度器会销毁对应的栈空间。
 
@@ -463,4 +462,3 @@ func main() {
 4. 资源剥夺：当进程不能满足新的资源请求时，主动让出资源。
 
 Go语言标准库通过监控等待和定时唤醒的方式来检测死锁。当一个Goroutine持有互斥锁，而另一个Goroutine正在等待同一个互斥锁时，Go语言运行时会自动检测到死锁，并抛出异常。因此，在开发中，我们可以不必担心死锁问题，只需要确保我们的程序具备互斥锁的正确使用即可。
-

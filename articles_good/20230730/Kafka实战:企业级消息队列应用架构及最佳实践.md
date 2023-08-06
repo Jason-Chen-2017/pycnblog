@@ -21,7 +21,6 @@
 
          它提供高吞吐量、低延迟、可靠性和容错性。Kafka可以用于多个用例，如网站活动跟踪、用户行为日志、网络监控、在线交易执行等。Kafka通过一个分布式集群来存储、处理和转发消息，其中包括服务器集群、磁盘和 topics （主题）。每个topics可以看作是一个分类账本，记录发送到Kafka集群的每条消息。topics可以被细分成多个分区，使得不同消息集中的数据能够在多个brokers上分散。每个broker可以扩展到多台服务器上，以提高性能和可用性。
 
-        ![](https://kafka-1253868755.cos.ap-guangzhou.myqcloud.com/blog_img/20210902235342.png)
 
          ### 2.1.1 Apache ZooKeeper
 
@@ -47,7 +46,6 @@
 
         Kafka的架构分为三个角色——Broker、Producer、Consumer，如下图所示：
 
-       ![](https://kafka-1253868755.cos.ap-guangzhou.myqcloud.com/blog_img/20210903001120.png)
 
         **Broker**：消息代理服务器，负责消息的存储、转发、路由等功能；
 
@@ -63,13 +61,11 @@
 
         推模式就是当生产者产生消息后，直接推送给Kafka集群，不需要等到消费者真正请求消费。这种方式下，生产者和消费者之间就没有任何的耦合关系，生产者直接把消息放在Kafka上就可以了，而不需要担心消息的存储和读取。但是，这种方式也存在一些弊端，比如数据可能会重复发送（因为消费者可能只是暂时没来得及消费），消息发送效率比较低。
 
-       ![](https://kafka-1253868755.cos.ap-guangzhou.myqcloud.com/blog_img/20210903002702.png)
 
         #### 2.2.1.2 拉模式（Pull Model）
 
         另一种模式就是消费者主动去Kafka上拉取消息，这种方式可以充分利用Kafka集群的性能。当有新消息发布到Kafka上时，消费者会自动从Kafka拉取消息，然后消费完毕之后再次拉取，以此循环往复。这种模式可以有效降低消息积压，但是需要消费者有长期稳定的读取Kafka数据的需求。
 
-       ![](https://kafka-1253868755.cos.ap-guangzhou.myqcloud.com/blog_img/20210903003429.png)
 
         ### 2.2.2 集群架构
 
@@ -81,19 +77,16 @@
 
         共享集群架构指的是所有Kafka消费者、生产者都连接到同一套Kafka集群上。这种架构的优点是管理起来相对容易，缺点是难以应付突发的访问流量和消费者规模的急剧增长。一般来说，这种架构适用于小型公司和个人开发者。
 
-       ![](https://kafka-1253868755.cos.ap-guangzhou.myqcloud.com/blog_img/20210903004348.png)
 
         #### 2.2.2.2 独立集群架构
 
         独立集群架构指的是生产者和消费者连接到两个完全独立的集群上。生产者可以连接到任意一台服务器上的Kafka集群，消费者则只能连接到另外一台服务器上的集群。这种架构可以有效防止数据丢失或重复消费的问题。
 
-       ![](https://kafka-1253868755.cos.ap-guangzhou.myqcloud.com/blog_img/20210903004444.png)
 
         #### 2.2.2.3 混合集群架构
 
         混合集群架构指的是生产者和消费者连接到同一个集群，但生产者和消费者可以自由选择它们所在的机器。这种架构可以灵活应对各种集群规模和消费者的需求。
 
-       ![](https://kafka-1253868755.cos.ap-guangzhou.myqcloud.com/blog_img/20210903004626.png)
 
         ### 2.2.3 数据复制
 
@@ -179,7 +172,6 @@
 
         下面我们以一个电商网站为例，讲述一下基于Kafka的应用架构的设计过程。假设这个电商网站有两个业务功能，分别是订单模块和商品模块。订单模块负责用户下单流程的处理，商品模块负责商品展示、搜索等功能。
 
-       ![](https://kafka-1253868755.cos.ap-guangzhou.myqcloud.com/blog_img/20210903010232.png)
 
         上图是电商网站的系统架构图。为了满足低延迟的要求，电商网站需要做到以下几点优化：
 
@@ -187,7 +179,6 @@
 
         　　为了确保数据能在不同Server上分区，并且各Server上的数据分布均匀，需要将数据按照业务逻辑划分到不同的Topic上。例如，订单模块的数据可以放在“order” Topic上，商品模块的数据可以放在“product” Topic上。这样可以避免数据倾斜问题。
 
-          ![](https://kafka-1253868755.cos.ap-guangzhou.myqcloud.com/blog_img/20210903010406.png)
 
         2. Broker数量和分区数量
 
@@ -198,13 +189,11 @@
            为了加速消费，可以采用推（push）模式。即，Producer不直接将消息发布到Kafka，而是将消息缓存在本地。然后，在合适的时间（如每隔N秒或批量大小达到M时）提交到Kafka集群。这样可以尽早释放网络资源，避免数据堆积。
 
            
-          ![](https://kafka-1253868755.cos.ap-guangzhou.myqcloud.com/blog_img/20210903010548.png)
 
         4. 压缩编码
 
         　　为了减少网络流量和IO负载，需要选择合适的压缩编码。例如，可以采用LZ4压缩算法，提高数据压缩率。
 
-          ![](https://kafka-1253868755.cos.ap-guangzhou.myqcloud.com/blog_img/20210903010704.png)
 
         5. Producer端批量发送消息
 
@@ -212,7 +201,6 @@
 
            
 
-          ![](https://kafka-1253868755.cos.ap-guangzhou.myqcloud.com/blog_img/20210903010900.png)
 
         6. 设置合理的读写模式
 
@@ -232,21 +220,17 @@
 
         　　Kafka集群规模的扩大，必然会引入更多的瓶颈。为了避免这些瓶颈，可以根据实际环境进行集群规模的优化。例如，可以增加更多的服务器，提高集群的吞吐量。
 
-          ![](https://kafka-1253868755.cos.ap-guangzhou.myqcloud.com/blog_img/20210903011012.png)
 
         2. JVM调优
 
         　　Kafka是用Java开发的，因此JVM也是其性能瓶颈。在启动脚本中添加JVM参数，优化GC设置，提高Kafka的吞吐量。
 
-          ![](https://kafka-1253868755.cos.ap-guangzhou.myqcloud.com/blog_img/20210903011103.png)
 
         3. 操作系统调优
 
         　　操作系统调优可以改善网络、磁盘IO等性能瓶颈，提高Kafka的吞吐量。例如，开启Transparent Huge Page技术，使用NUMA技术，关闭SWAP等。
 
-          ![](https://kafka-1253868755.cos.ap-guangzhou.myqcloud.com/blog_img/20210903011156.png)
 
         ## 2.4 总结
 
         本文首先介绍了Apache Kafka的基本概念和架构，然后详细阐述了基于Kafka构建企业级应用的架构设计和优化方案，最后给出了一个电商网站的示例，介绍了Kafka在电商网站中的应用架构设计。最后，我们回顾了Kafka的设计目标、典型应用架构、优化方案和未来发展方向，并对这些知识做了一个综述。
-

@@ -217,4 +217,3 @@
          　　WebHDFS可以通过浏览器访问，URL地址类似于：http://namenodehost:port/webhdfs/v1/<path>?op=LISTSTATUS。其中，<path>表示文件路径。可以通过命令hdfs dfs –ls webhdfs://hostname:port/<path>查看HDFS中的文件。
           
          　　WebHDFS客户端有Java库、C++库、Python库、命令行工具、PowerShell脚本等。它们可以用于文件上传、下载、删除、重命名、列举等操作。
-

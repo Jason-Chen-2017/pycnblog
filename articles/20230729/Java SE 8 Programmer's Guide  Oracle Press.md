@@ -1,0 +1,61 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+         
+1. 为什么要写Java 8程序员指南？
+             在Java社区里，Java语言从最初的“Hello,World”程序到如今已经成为企业级开发语言的基础技术，其版本也经历了多个迭代，如Java 5，Java 7，Java 8。很多开发人员都有同样的疑问——Java 8中有哪些新特性和功能，应该如何实践，这些都是非常重要的问题。Java程序员应当了解一下Java 8的最新特性，提升自己的编程水平，所以才有了本书。
+             2. 作者简介
+                 本书作者为Suresh Jain，Oracle的首席软件工程师，也是OpenJDK项目的主要开发者之一，他自2001年起担任Oracle公司的软件工程师，曾在许多行业领域包括科技，金融，航空航天等有突出贡献。
+                 3. 购买方式
+                    购买地址：https://www.oracle.com/technetwork/java/javase/overview/index-jsp-138363.html
+                     4. 目录
+                            # 1. Java 8概览
+                                    Java 8（又称Java Platform, Enterprise Edition，下称Java SE 8）是一款面向对象的、高级的、功能丰富的编程语言。它是Java平台的一部分，拥有全新的语法和语义特征，并兼容于旧的代码。同时它还新增了许多特性，使得它成为用于构建健壮、可扩展和可维护的应用程序的绝佳选择。本章将对Java 8进行一个简要的概述。
+                                                                                                                                                                                                                                                                                      # 2. 安装JDK
+                                    JDK (Java Development Kit) 是用于开发基于Java的应用所需工具包，包括Java编译器(javac)、Java类库(rt.jar)、调试器(jdb)和其他相关工具。下载安装JDK后，就可以使用命令行或集成开发环境(IDE)运行Java程序了。本章将简单介绍如何下载并安装JDK。
+                                                                                                                                                                                                                                                                                                                                                                                # 3. Hello, World!
+                                    Java程序的入门程序通常叫做"Hello,World!"。本章通过一个简单的示例介绍如何用Java编写这个程序。
+                                                                                                                                                                                                                                                                                                                                                                # 4. 变量类型和关键字
+                                        Java是一种静态类型的语言，这意味着所有的变量都需要显式地声明其类型。本章对Java中的变量类型及关键字作一个详细的介绍。
+                                                                                                                                                                                                                                                                                                                                                                    # 5. 运算符和控制结构
+                                        本章介绍了Java提供的基本运算符和控制结构，例如条件语句if-else、循环语句for、while、do-while、switch和try-catch异常处理。
+                                                                                                                                                                                                                                                                                                                                                                             # 6. 字符串、数组、集合
+                                        本章介绍了Java中字符串、数组、集合的用法，包括创建对象、访问元素、遍历集合、排序和搜索等内容。
+                                                                                                                                                                                                                                                                                                                                                                          # 7. Lambda表达式和方法引用
+                                        本章介绍了Lambda表达式和方法引用的用法，可以帮助开发人员编写更简洁的代码，并提升代码的可读性。
+                                                                                                                                                                                                                                                                                                                                                                      # 8. 接口、注解和内部类
+                                        本章介绍了Java 8中的接口、注解和内部类的用法，包括创建接口和注解、继承接口、实现多接口、定义内部类、使用注解、访问权限控制、序列化和反序列化等内容。
+                                                                                                                                                                                                                                                                                                                                                                                             # 9. 可重复注解
+                                        本章介绍了可重复注解（Repeatable Annotation）的用法，可用于一次定义多个注解。
+                                                                                                                                                                                                                                                                                                                                                                              # 10. 模块系统
+                                        本章介绍了Java 9引入的模块系统，包括模块的声明、导出、打开、服务发现、使用模块化依赖管理等内容。
+                                                                                                                                                                                                                                                                                                                                                                           # 11. HTTP客户端
+                                        本章介绍了Java 9中的HttpClient API，可以用来执行HTTP请求、处理响应、支持SSL/TLS、保持连接、处理重定向等。
+                                                                                                                                                                                                                                                                                                                                                                                            # 12. JDBC和SQL
+                                        本章介绍了Java中的JDBC（Java Database Connectivity）API，以及Java数据库连接池HikariCP的用法，包括数据库连接、查询数据、更新数据、事务处理、JDBC参数绑定等。
+                                                                                                                                                                                                                                                                                                                                                                              # 13. NIO.2
+                                        本章介绍了Java 7引入的NIO（New Input/Output）2.0 API，包括文件通道、缓冲区、选择器等概念。
+                                                                                                                                                                                                                                                                                                                                                                                           # 14. JavaFX
+                                        本章介绍了JavaFX框架，包括FXML、CSS样式、布局、控件、事件处理和动画等内容。
+                                                                                                                                                                                                                                                                                                                                                                              # 15. Swing
+                                        本章介绍了Swing（Simple Windows Interface）组件，包括容器、控件、布局、事件处理、绘图、文档模型等内容。
+                                                                                                                                                                                                                                                                                                                                                                                         # 16. Garbage Collection
+                                        本章介绍了Java中的垃圾回收机制GC（Garbage Collection），包括标记清除、复制、标记整理、分代收集、并发回收等内容。
+                                                                                                                                                                                                                                                                                                                                                                                          # 17. Stream
+                                        本章介绍了Java 8引入的Stream API，以及Stream操作的各种操作符。
+                                                                                                                                                                                                                                                                                                                                                                            # 18. Date and Time
+                                        本章介绍了Java 8的Date Time API，包括LocalDate、LocalTime、LocalDateTime、Instant、ZoneId、Duration、Period等内容。
+                                                                                                                                                                                                                                                                                                                                                                                     # 19. Optional
+                                        本章介绍了Java 8的Optional类，是一个容器类，代表一个值存在或不存在，并且可以为空。
+                                                                                                                                                                                                                                                                                                                                                                                        # 20. Parallel Streams
+                                        本章介绍了Java 8引入的并行流（Parallel Streams）的用法，可以方便地并行执行Stream操作。
+                                                                                                                                                                                                                                                                                                                                                                                          # 21. CompletableFuture
+                                        本章介绍了Java 8引入的CompletableFuture类，提供了各种编排任务、组合结果、设置回调函数等功能。
+                                                                                                                                                                                                                                                                                                                                                                                               # 22. Reactive Programming
+                                        本章介绍了Reactive Programming的概念，包括异步非阻塞、观察者模式、Backpressure策略等内容。
+                                                                                                                                                                                                                                                                                                                                                                                                # 23. JVM Options
+                                        本章介绍了Java虚拟机（JVM）的参数选项，包括堆大小设置、GC算法选择、日志配置、监控与调试等内容。
+                                                                                                                                                                                                                                                                                                                                                                                                       # 24. Deployment
+                                        本章介绍了部署Java程序的方式，包括发布到Maven仓库、安装包生成、配置服务器、启动脚本等内容。
+                                                                         

@@ -355,4 +355,3 @@ console.log(book.getSummary(5)); // output: "The Catcher in the Rye by J.D. Sali
 ```
 
         此例中，book对象包含getSummary()方法，接收一个参数maxWords，用于指定最大输出字数。当maxWords为空或小于等于0时，默认设置为Infinity。getSummary()方法的作用是返回书籍的摘要。
-

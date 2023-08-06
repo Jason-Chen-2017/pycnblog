@@ -414,4 +414,3 @@
          ### Q: Elasticsearch 集群环境下数据是否安全吗？
          
          A: Elasticsearch 自身的数据安全性还是很难保证的。建议 Elasticsearch 集群采用 VPC 网络隔离，部署加密传输协议等安全措施。
-

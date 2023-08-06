@@ -27,7 +27,6 @@
          ### 简化容器编排
          Kubernetes 提供声明式配置，你可以通过编写 YAML 文件来描述应用期望的最终状态，然后让 Kubernetes 自动地按照您的要求去做。这样，就不再需要担心底层基础设施的变化导致服务无法正常访问的问题，而只需关注应用开发过程中的业务逻辑。
          
-        ![](https://cdn.jsdelivr.net/gh/mafulong/mdPic@vv1/v1/3.png)
          
          Kubernetes 还提供许多高级特性，如弹性伸缩、健康检查、自动滚动升级、动态 PersistentVolumeClaim 配置等，能够帮助你轻松应对负载增加或者减少的情况。通过这些高级特性，Kubernetes 将会帮助你更好地管理复杂的容器集群，提升资源利用率、降低成本和节省时间。
          
@@ -52,7 +51,6 @@
          ### 自动化日志处理
          Kubernetes 提供了对容器日志的自动采集、清洗、归档、查询等处理，帮助你更快、更全面地了解应用的运行状态。你可以通过集成开源日志采集工具 Fluentd 或 ELK Stack 来收集和分析日志，并设置告警规则来获取异常行为的通知。
          
-        ![](https://cdn.jsdelivr.net/gh/mafulong/mdPic@vv1/v1/2.png)
          
          ### 其他特性
          Kubernetes 拥有众多特性，如网络策略、Ingress、HPA （水平Pod自动伸缩）等，能够帮助你构建更加安全、可靠和可伸缩的应用平台。除此之外，Kubernetes 还有很多其它特性，比如支持 GPU、存储扩展、秘钥轮换、认证授权、可编程网关、自定义资源、控制面板扩展等。这些特性让 Kubernetes 更加适合用于大规模容器集群管理。
@@ -63,21 +61,18 @@
         - Control Plane 控制平面：由一组服务进程组成，它们一起协同工作来维护集群的健康，促进集群内各个对象间的相互作用来实现集群的功能。例如，控制平面包括 kube-apiserver、kube-scheduler、kube-controller-manager、etcd 等。
         - kubelet（Kubelet）：kubelet 是集群管理器的主要组件。它主要负责执行具体 pod 的生命周期，包括创建、启动、停止、监控等，并通过调用容器运行时接口与容器引擎通信。每个节点都应该运行 kubelet 。
 
-       ![](https://cdn.jsdelivr.net/gh/mafulong/mdPic@vv1/v1/7.png)
 
         ## 3.2 Node 节点
         Node 节点则是 Kubernetes 集群的计算资源所在位置。每个 Node 节点通常是一个虚拟或者物理的机器，它上面可以运行多个 pods ，即 Kubernetes 调度系统所需要的最小执行单元。Node 节点分为两类：
         - Worker 节点：主要负责运行pods 。一般来说，Worker 节点的数量要大于等于 CPU 核心数量。
         - Edge 节点：主要用于边缘计算场景，比如手机、路由器等设备，通常也会运行 containers 。
 
-       ![](https://cdn.jsdelivr.net/gh/mafulong/mdPic@vv1/v1/9.png)
         
         每个 Node 节点都应该包含一份 kubelet 配置文件，其中包括运行该节点的必要信息，如运行 Kubelet 的命令行参数、容器运行时、kubelet 运行时目录、pod 配置文件的存放路径等。
         
         ## 3.3 Namespace
         Namespace 是 Kubernetes 中用来解决跨域问题的方案。它主要用来实现多租户共享集群的需求。每个命名空间都会分配独立的资源，比如 Pod、Service 等，而且不同命名空间之间可以存在名称相同但实际上是不同的资源。Namespace 包含若干个全局唯一且短小的 DNS 子域。用户可以根据自己的需求创建新的 Namespace ，比如开发环境、测试环境、生产环境等。
 
-       ![](https://cdn.jsdelivr.net/gh/mafulong/mdPic@vv1/v1/8.png)
 
         ## 3.4 Label
         Label 是 Kubernetes 中用来给对象（比如 Pod、Service 等）打标签的机制。Label 可以用来筛选和查找资源，并且可以通过标签来控制对象的启停。比如，可以为某个服务的所有 Pod 添加一个标签 “app=myservice”，就可以通过 “app=myservice” 来查找这个服务对应的所有 Pod。Label 值需要遵循 DNS  label 规范。
@@ -167,7 +162,6 @@
    # 6.Kubernetes 的工作流程以及如何编写 YAML 文件
     Kubernetes 使用 YAML 文件来描述集群中资源的状态、属性、关系以及其他元数据。YAML 文件有助于描述对象内部的配置，包括 Labels、Annotations、Selectors、名称、服务名和端口等。
 
-   ![](https://cdn.jsdelivr.net/gh/mafulong/mdPic@vv1/v1/10.png)
 
     下面是一个 Deployment 的 YAML 文件示例：
     
@@ -275,7 +269,6 @@
     
     如下图所示，用户通过声明式配置 PersistentVolume 和 PersistentVolumeClaim 来申请和使用存储卷：
     
-   ![](https://cdn.jsdelivr.net/gh/mafulong/mdPic@vv1/v1/11.png)
     
     由于 Kubernetes 集群中可能有多个存储系统，因此 Kubernetes 还提供 Dynamic Provisioning（即按需动态提供存储）机制，以便为 Pod 自动申请和释放存储。Dynamic Provisioning 的核心思想是，当用户创建一个 PersistentVolumeClaim 时，Kubernetes 控制器根据用户的配置（比如 storage class）来自动创建相应的 PersistentVolume，并将其绑定到 PVC。这样，无需手动创建 PersistentVolume 并绑定到 PVC，用户就可以直接使用存储卷。
     
@@ -334,14 +327,12 @@ Kubernetes 集群故障排查需要熟悉集群日志、网络统计和性能剖
 - 添加新节点：向集群中添加新节点，并通过节点池进行管理。
 - 横向伸缩：通过水平扩展（添加 Pod 副本）或垂直扩展（增加节点配置）的方式，将 Pod 和节点横向扩展到集群中。
 
-![](https://cdn.jsdelivr.net/gh/mafulong/mdPic@vv1/v1/12.png)
 
 ## 13.2 集群缩容
 集群缩容包括两种方式：
 - 删除节点：从集群中删除某些节点，以释放资源。
 - 纵向缩容：通过垂直缩减（减少节点配置）或水平缩减（减少 Pod 副本）的方式，将 Pod 从集群中移除节点，缩减集群容量。
 
-![](https://cdn.jsdelivr.net/gh/mafulong/mdPic@vv1/v1/13.png)
 
 ## 13.3 应用发布和更新
 应用发布和更新可以分为以下三步：
@@ -349,7 +340,6 @@ Kubernetes 集群故障排查需要熟悉集群日志、网络统计和性能剖
 2. 生成镜像：使用 Dockerfile 构建镜像，并将其上传至镜像仓库或容器注册表。
 3. 部署应用：在 Kubernetes 中创建 Deployment 对象，指向刚才构建的镜像。
 
-![](https://cdn.jsdelivr.net/gh/mafulong/mdPic@vv1/v1/14.png)
 
 ## 13.4 应用回滚
 应用回滚就是将集群中的应用回滚到之前的版本。实现应用回滚的过程包括：
@@ -357,13 +347,9 @@ Kubernetes 集群故障排查需要熟悉集群日志、网络统计和性能剖
 2. 修改 Deployment 对象：修改 Deployment 对象，指向之前的某一版本的镜像。
 3. 执行回滚操作：执行回滚操作，将应用回滚到之前的版本。
 
-![](https://cdn.jsdelivr.net/gh/mafulong/mdPic@vv1/v1/15.png)
 
 ## 13.5 集群备份和迁移
 集群备份和迁移是将集群中的数据存档到远端存储或另一台机器上，以便灾难恢复或灾备需要时进行数据的迁移。实现集群备份和迁移的过程包括：
 1. 导出数据：导出集群中的数据，保存到文件或数据库中。
 2. 导入数据：将导出的数据导入到目标集群中。
 3. 配置灾难恢复：配置灾难恢复集群，包括备份存储、配置 HAProxy、KeepAlived、ETCD 集群等。
-
-![](https://cdn.jsdelivr.net/gh/mafulong/mdPic@vv1/v1/16.png)
-

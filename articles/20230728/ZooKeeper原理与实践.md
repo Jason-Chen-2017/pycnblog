@@ -56,14 +56,12 @@
          
          当选举产生了一个新的 Leader 时，之前的 Leader 成为“孤儿”（Orphan），失去对 Zookeeper 服务的提供，而新 Leader 接替其角色。Follower 将接受新 Leader 的心跳包，确认自己的身份，加入到 Quorum 集合中。
          
-        ![](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMy5hbWF6b25hd3MuY29tL2ltZy9pbWcvaS16aGphLWJvbWUvMjAxOC8wNC8yNSUyMTYxNzE1MTk3XzFfMmQzbzNtdl9jNTRfYmRkLWVhYzdkMzNmNzA5LnBuZw?x-oss-process=image/format,png)
         
         ## 3.2 主节点工作阶段
         Leader 负责管理整个集群，它负责分配不同的任务给 Follower，并监控 Follower 节点的健康状况。客户端向 Zookeeper 写入数据时，首先会连接到 Leader，再由 Leader 将数据写入本地磁盘，再同步给 Followers，这样 Zookeeper 中的数据就得到了更新。
          
         如果 Leader 发生故障，Followers 会升级为 Observer 模式，并开始追随 Leader 的最新状态，因此仍然能够提供对外服务。当 Leader 重新恢复正常时，Observers 会向 Leader 反馈自己的状态，并转为 Follower，保证数据一致性。
          
-       ![](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMy5hbWF6b25hd3MuY29tL2ltZy9pbWcvaS16aGphLWJvbWUvMjAxOC8wNC8yNSUyMTYxNzI3NjU4XzJwdDJxOWIxa181OXAxeElwZWlsMjliY3pvbTdmdHBxbXhfZmZtOHhmLzRlLnBuZw?x-oss-process=image/format,png)
          
         ### 3.2.1 客户端交互协议
         Zookeeper 提供了一套完整的客户端接口，封装了底层的 TCP 传输协议，提供了一些方法来操作数据节点，包括 create()，delete()，exists()，getData()，setData()，getChildren()，和 getACL() 和 setACL()。
@@ -119,4 +117,3 @@
 
 # 参考链接
 https://blog.csdn.net/weixin_44032793/article/details/108222382
-

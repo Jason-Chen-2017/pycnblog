@@ -31,7 +31,6 @@ plt.show()
 ```
          执行以上代码，即可在屏幕上看到生成的折线图，如图所示：
          
-        ![line chart](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy8wMzA0NjMzOTQzMDIzNjc4YmI4MmE2YzUyMjA4ZWNhNzZjNmQ5NjZjYTExYjgxNTQyMDczOS5wbmc?x-oss-process=image/format,png)
          
          此时，如果想要保存图片，则可以使用`plt.savefig()`函数。例如：
          
@@ -53,10 +52,7 @@ plt.title('Line Chart')
 plt.xlabel('X axis')
 plt.ylabel('Y axis')
 
-# 保存图片到当前目录下的"line_chart.jpg"文件
-plt.savefig("line_chart.jpg")
 ```
-         这样，生成的折线图就保存到了本地，图片文件名为“line_chart.jpg”。
          
          如果需要保存成矢量图，则可以使用`plt.savefig()`函数的`dpi`参数指定分辨率（越大越清晰），也可以使用matplotlib自带的矢量图转换器工具——Ghostscript或ImageMagick。例如：
          
@@ -132,7 +128,6 @@ plt.show()
 ```
          执行以上代码，可生成如下图表：
          
-        ![multi subplots](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy8wMzA0NjMzOTUwMDE1MTg5ZDZmYWU2NGUzYThmMjBlOWU3OGYxZWVkYTdhZTdmZTcwYi5wbmc?x-oss-process=image/format,png)
          
          可以看到，两个子图分别绘制了正弦和余弦曲线。其中，第一行的子图绘制了正弦曲线，第二行的子图绘制了余弦曲线。各个子图上的图例也设置了不同字号，通过`fontsize`参数设置。通过`plt.tight_layout()`函数自动调整子图间距，使得各个子图紧凑地排列在一块。
          
@@ -171,7 +166,6 @@ plt.show()
 ```
          执行以上代码，可生成如下图表：
          
-        ![customized plot](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy8wMzA0NjMzOTUxNDk0MzgyZWYyMWEzYTIyZWI1YmRjZDMxZTQwYTBiMS5wbmc?x-oss-process=image/format,png)
          
          可以看到，坐标轴范围被设置为(-4, 4)，y轴范围被设置为(-1.5, 1.5)。网格线样式为灰色虚线，透明度为0.7。x轴的主刻度间隔设置为1，y轴的次刻度间隔设置为自动识别。刻度文字的格式为黑色，字号为14。图表上只显示一条曲线，曲线颜色为蓝色。
          
@@ -224,7 +218,6 @@ plt.show()
 ```
          执行以上代码，可生成如下图表：
          
-        ![scatter plot](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy8wMzA0NjMzOTYwODEwOTk4NjlhMzJlNTBhNTdkMGQwNWZmNTAyMGM0My5wbmc?x-oss-process=image/format,png)
          
          从图表中可以看出，散点图中，每个点的位置由x和y坐标确定。散点图上的颜色由c参数指定的颜色决定，shape由marker参数指定的符号决定，大小由s参数指定的大小决定，边缘线颜色由edgecolors参数指定的颜色决定。散点图的坐标轴范围为(-3, 3)，各个刻度的间隔都设置为1。
          
@@ -261,7 +254,6 @@ plt.show()
 ```
          执行以上代码，可生成如下图表：
          
-        ![bar plot](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy8wMzA0NjMzOTYyNjg2OTMwMTJjYjk0YjQ1OWQzNmRiYjRkOTZmOGVjMi5wbmc?x-oss-process=image/format,png)
          
          柱状图中，每根柱子的长度代表对应变量的值，颜色由color参数指定的颜色决定。图例位置由bbox_to_anchor参数指定的位置决定，颜色由loc参数指定的位置决定。柱状图的坐标轴范围为(0, 2.5)，y轴范围为(0, 8)，各个刻度的间隔都设置为1，数字形式的刻度值为整数。
          
@@ -298,7 +290,6 @@ plt.show()
 ```
          执行以上代码，可生成如下图表：
          
-        ![histogram plot](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy8wMzA0NjMzOTYzODkzNzcxNDhiNDNiMGEyMmRmYmE4ZTc0NzZlYi5wbmc?x-oss-process=image/format,png)
          
          直方图中，每个柱子的高度代表对应变量的值落在该区间的概率密度，颜色由facecolor参数指定的颜色决定，透明度由alpha参数指定。图例位置由loc参数指定的位置决定，字号由fontsize参数指定。直方图的坐标轴范围为(-4, 4)，y轴范围为(0, 0.5)，各个刻度的间隔都设置为1。
          
@@ -329,7 +320,6 @@ plt.show()
 ```
          执行以上代码，可生成如下图表：
          
-        ![pie plot](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy8wMzA0NjMzOTYzOTE5MDU5ZDQyODA2YTFjNGFmOTEzNTE1NjZjNS5wbmc?x-oss-process=image/format,png)
          
          饼图中，圆的周长代表对应变量的比例，颜色由autopct参数指定的字符串决定，阴影由shadow参数指定。图例位置由loc参数指定的位置决定，字号由fontsize参数指定。饼图的中心位置设定为(0, 0)，半径为0.7，空白部分的颜色由fc参数指定。
          
@@ -376,10 +366,8 @@ plt.show()
 ```
          执行以上代码，可生成如下图表：
          
-        ![custom layout](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy8wMzA0NjMzOTcyMTYxMDY1ZDY4ZGFhNmY0NGRlMjFlZmI2NGMxZC5wbmc?x-oss-process=image/format,png)
          
          可以看到，使用GridSpec模块可以很方便地调整子图的位置关系。
          
          # 4.总结
           本文从Matplotlib库的介绍、Matplotlib及其基本用法、Pyplot模块的介绍、创建子图、配置坐标轴、其它常用绘图函数四个方面，详细介绍了Matplotlib的相关知识和应用方法。读者可以通过阅读本文，熟悉Matplotlib的基本用法和技巧，提升自己的编程能力。
-

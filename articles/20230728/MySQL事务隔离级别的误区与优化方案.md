@@ -26,7 +26,6 @@
          
          SQL标准定义了4种事务隔离级别，包括Read Uncommitted、Read Committed、Repeatable Read和Serializable等。MySQL默认采用的是Repeatable Read隔离级别。MySQL的InnoDB引擎支持多种类型的事务隔离级别，具体如下图所示。
          
-       ![图片描述](https://img-blog.csdnimg.cn/20210709140410563.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNDk5MzQ2Nw==,size_16,color_FFFFFF,t_70#pic_center)
         
          下面结合图和文字详细介绍一下MySQL的事务隔离级别。
          
@@ -139,4 +138,3 @@
 - **并发处理**：根据实际需求，进行并发处理。
 
 以上就是MySQL事务隔离级别的一般原理以及各个隔离级别下MySQL事务的特点以及对应的优化方法。读者也可以根据自己的业务场景和实际情况，进一步优化数据库事务隔离级别。
-

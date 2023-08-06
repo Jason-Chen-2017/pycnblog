@@ -17,7 +17,6 @@ Linux 提供了一组完善的 API 和系统调用，允许用户轻松创建独
 - 信号量（Semaphore）：用于控制对共享资源的访问；
 - 套接字（Socket）：用于不同主机上的进程间通信。
 
-![linux-ipc](https://www.kernel.org/doc/gorman/html/understand/understand_05.png)
 
 ## 2.2 术语
 ### 2.2.1 共享内存
@@ -374,4 +373,3 @@ sockobj.close()
 上述客户端程序首先创建了一个 TCP/IP 套接字，连接到指定的 IP 和端口号。然后，向服务器发送测试消息，接收服务器响应，并打印出来。最后关闭连接。
 
 通过使用套接字，进程之间可进行数据交换，使得通信变得更加灵活，且支持多种通信协议，如 TCP、UDP、SCTP、AF_UNIX 等。
-

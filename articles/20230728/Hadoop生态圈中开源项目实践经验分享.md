@@ -48,5 +48,3 @@
          
          下面的图片展示了我之前在京东云上的实习申请表。希望能帮到大家，谢谢大家！
          
-        ![](https://github.com/StevenPZChan/myimages/blob/main/img/jd.jpg?raw=true)
-

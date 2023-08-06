@@ -33,7 +33,6 @@
             - 六、懂得如何在分布式数据库中利用 AI 技术赋能业务场景。
          # 2.TiDB 分布式数据库的整体架构
          # 2.1 计算集群架构
-        TiDB 的计算集群由 PD（Placement Driver）模块和 TiKV 模块组成。PD 模块主要负责整个集群元信息的管理，包括 Region 的调度分配、副本集之间的合并和 Raft Log 的处理。TiKV 模块则负责数据的存取，通过 Distributed Transaction Coordinator (DC) 和 Store Gateway 提供访问接口。整个集群的架构如下图所示：![image](https://user-images.githubusercontent.com/79158736/147473246-e2d7d7be-ccaa-4f37-b20c-a1d2834fb6fd.png)
 
         在上图中，每台机器部署了一个 PD 实例和 n 个 TiKV 实例。每个 TiKV 实例负责数据的存储、Region 的分布和调度，其中 n 表示集群总节点数量。PD 将所有节点上的 Region 信息汇总，并通过 Raft 来保证数据的强一致性。整个 TiDB 集群的计算模块共分为三个部分，即 Placement Driver（PD），Transaction Coordinator（TC），以及 Distributed Key-Value Storage（TiKV）。
 
@@ -45,7 +44,6 @@
 
         在存储集群中，有两种类型的组件：KV 存储（TiKV）和磁盘存储（硬盘、SSD、网络存储等）。对于 TiKV 的写入操作，所有的请求都会直接路由到对应的 TiKV 节点，然后该节点会写入自己的本地存储。由于写入速度受限于网络带宽和 CPU 计算能力，所以建议每台 TiKV 节点的网络连接应尽可能短，单个节点的 CPU 核数也应该尽可能少，以便最大化利用网络资源。另外，TiKV 为避免出现单点故障，在部署多个节点时，推荐使用无中心架构模式。
 
-       ![image](https://user-images.githubusercontent.com/79158736/147473270-dd2dced7-ea1e-49ee-a3ba-cf125d288ca6.png)
 
         在上图中，存储集群的每个节点被称为一个 Replica（副本）。对于一个数据项，存储集群将其拆分为 n 个副本，其中 n 表示数据容灾等级。每个副本有不同的角色，比如 Leader，Follower，Observer，用于保障数据安全、可靠性和容错。Leader 负责处理客户端请求，Follower 接受 Leader 的命令，用于复制日志和提供读取服务；Observer 仅作为 Follower 的追随者，不参与任何提交协议和数据流动，只响应客户端的读请求。用户可以通过设置副本数量来控制数据容灾等级。
 
@@ -77,12 +75,10 @@
         TiDB 的高可用架构由 PD、TiKV、TiDB、监控系统等模块组成。其中，PD 实现了分布式协调服务，包括元信息管理、调度、容灾恢复等功能；TiKV 实现了分布式 KV 存储，通过并发控制和副本的限制来实现高可用；TiDB 实现了 MySQL 的接口层，包括 SQL 解析、优化、执行、缓存等；监控系统负责收集和展示集群运行时的各项指标，并通过报警和自动容灾机制来发现并处理异常。
 
         下图展示了 TiDB 的高可用架构。
-       ![image](https://user-images.githubusercontent.com/79158736/147473339-cebf5cf6-95d8-4b49-92b6-f5fafede7fc4.png)
         
         从图中可以看到，TiDB 的高可用架构分为 PD、TiKV、TiDB、监控系统四部分，并且各个部分之间通过 gRPC 进行通信。PD 有多个副本，它们通过选举产生一个 Leader，Leader 通过心跳检测和日志同步保持与其他节点的数据一致。TiKV 有多个副本，它们负责数据的副本管理，通过 Raft 协议实现数据一致性。TiDB 通过 MySQL 接口与上游应用程序进行交互，在 PD 处获取 Region 路由信息，通过 TiKV 获取数据和提交事务。监控系统负责收集和展示集群运行时的各项指标，通过 Prometheus + Grafana 实现。
         # 3.3 TiDB 分布式数据库的存储结构及如何利用存储的局部性提升查询性能
         # 3.3.1 Region
-        TiDB 在进行数据存储时，将不同业务线的数据隔离存储在不同的 Region 中。每个 Region 是一个独立的物理数据存储文件，通常包含多个数据页。其中，最上层的数据页是按照主键大小排列，并且每个数据页内按照固定长度排列。下层的索引数据页和中间数据页都是随机排列的。![image](https://user-images.githubusercontent.com/79158736/147473372-4adfc7cd-dbff-4a7c-af1f-b20df12db5d4.png)
 
         每个 Region 具备自己独特的编码方式，其中包括数据页的压缩、编码方式、排序规则等。不同的 Region 可以指定不同的副本数目，也可动态增加和减少副本。当数据更新时，TiDB 只需修改对应的 Region 即可，而不需要全局扫描所有 Region。
 
@@ -131,4 +127,3 @@
         在实际的业务场景中，TiDB 还可以应用于 AI 技术的赋能。例如，它可以在图像识别、智能助手、广告过滤等 AI 场景中发挥作用。AI 技术的学习过程往往是漫长的，而且不可预测的，它需要大规模的计算资源进行训练。
 
         To Be Continued...
-

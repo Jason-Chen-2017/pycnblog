@@ -41,7 +41,6 @@
          3. 守护进程:
              守护进程是一个运行在Linux主机上的后台进程，监听Docker API请求，实施所有的容器操作。
          
-        ![](https://img-blog.csdnimg.cn/20190317152252815.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkzNDkwNw==,size_16,color_FFFFFF,t_70)
 
          从上图可以看到，Docker客户端、镜像仓库、注册中心以及运行时，都是Docker架构的组成部分。
          
@@ -100,4 +99,3 @@
         # 4.具体代码实例和解释说明
         # 5.未来发展趋势与挑战
         # 6.附录常见问题与解答
-

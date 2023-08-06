@@ -128,7 +128,6 @@
           plt.ylabel('Prices ($)')
           plt.show()
           ```
-         ![](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9zYlN5bmdjQWZpa0RqcWdBcFcvVldVSzFsVFlaTUhTQVJuNEtlTHFaTnZNMDBETjhIYlBPTXlJeUprdDlTWThaWG4zOXFNSmREWFFNeEtiMEpCRFRXYlVLUzg?x-oss-process=image/format,png)
 
           从上图中可以看出，波士顿房价与房间数目之间存在显著的正相关关系，房间数越多，房价也越高。
 
@@ -210,4 +209,3 @@ Accuracy for Decision Tree:", accuracy_score(dt.predict(X_test), y_test))
           如果模型达到了比较理想的效果，就可以部署到生产环境中。在实际使用中，我们需要将数据集切分成训练集、验证集、测试集，然后用交叉验证法确定最佳超参数，再用测试集评估最终的模型效果。
 
           最后，感谢您的阅读，希望您能给我留下宝贵的意见和建议，共同促进数据分析技术的发展。
-

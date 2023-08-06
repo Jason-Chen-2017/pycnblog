@@ -25,7 +25,6 @@
          
          下图展示了Keras所包含的主要组件：
          
-        ![image](https://img-blog.csdnimg.cn/2020112609585632.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkzNDUxNw==,size_16,color_FFFFFF,t_70#pic_center)
          # 3.Keras安装及环境搭建
          ## 3.1 安装方法
          ```python
@@ -319,4 +318,3 @@
          深度学习模型的微调往往会带来超越使用基模型时的提升。Keras提供了多个API，用于帮助用户实现模型微调。
          ## 10.5 Keras更新频繁
          Keras经历了长时间的更新，最新版是2.3.1。随着新特性的加入和修正，旧版本的兼容性有时会遇到一些问题。这时候，Keras官方提供了文档网站，帮助用户迅速找到相应的文档。
-

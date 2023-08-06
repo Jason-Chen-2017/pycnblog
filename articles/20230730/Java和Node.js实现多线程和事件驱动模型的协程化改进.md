@@ -116,11 +116,9 @@
 
          下图展示了一个简单的事件循环过程：
 
-        ![](https://img-blog.csdnimg.cn/20210927004509168.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQyOTcxNw==,size_16,color_FFFFFF,t_70#pic_center)
 
          事件循环将所有的异步IO操作都转化成消息事件，并将它们推入事件队列中。主线程不断地检测事件队列，如果事件队列非空，则取出一个消息事件并将其推入执行栈，执行相应的回调函数，然后回到第四步。如果事件队列为空，则主线程进入睡眠状态，直到事件队列中有新的消息事件。
 
-        ![](https://img-blog.csdnimg.cn/20210927004541458.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQyOTcxNw==,size_16,color_FFFFFF,t_70#pic_center)
 
          此外，微任务队列也是事件循环的一个组成部分。微任务队列存储着一些微任务，当事件循环执行完一个宏任务（即一个消息事件处理之后）后，它就会执行微任务队列中的所有微任务，然后清空微任务队列。微任务队列中的微任务通常是一些类似于Promise的异步操作，可以将其放在微任务队列中以便稍后执行。
 
@@ -368,4 +366,3 @@
         4. 优化任务调度：任务调度是指将需要执行的任务按照一定的顺序排列，然后分配给线程执行。Node.js中的事件循环调度器可以有效地分配任务，但是仍然存在一些问题，比如任务饿死、任务执行效率低、线程安全问题等。因此，为了提升服务的效率，需要提升任务调度器的效率。
 
         本文作者介绍了Java和Node.js中基于事件驱动模型的多线程和协程化改进方案。希望通过文章的介绍，大家能够对基于事件驱动模型的多线程和协程化改进方案有更深入的理解。
-

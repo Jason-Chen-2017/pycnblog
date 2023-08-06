@@ -27,21 +27,18 @@
           
           用户级线程的特点是创建方便，易于使用；启动快，线程切换效率低下；适用于短期多任务环境，因为线程在用户态运行，无法利用操作系统提供的很多特性；不利于跨平台移植，因为不同操作系统的接口不一样。
           <div align="center">
-              <img src="/images/post/java_multithread/user-threads.png" width=400 height=400 />
           </div>
           <br><br>
           **内核级线程（Kernel-level Threads）**
           
           内核级线程的特点是直接运行在操作系统内核中，不受限于平台，系统调用灵活，启动速度快；适用于长期多任务环境，但创建、切换效率差；可实现高并发，支持许多操作系统特性，如共享内存，同步对象等。
           <div align="center">
-              <img src="/images/post/java_multithread/kernel-threads.png" width=400 height=400 />
           </div>
           <br><br>
           
           
           Java通过Thread类支持多线程编程模型，包括Thread类本身和一些扩展类。Thread类既可以表示一个线程，也可以作为父类创建子线程。如下图所示：<br>
           <div align="center">
-              <img src="/images/post/java_multithread/thread-class.png" width=600 height=400 />
           </div>
           <br><br>
           
@@ -224,4 +221,3 @@
         在这个示例代码中，InterruptibleTask线程每隔1秒打印一条消息，并休眠1秒钟。main函数启动InterruptibleTask线程，并睡眠2秒钟后，给该线程发送一个中断信号。在接收到中断信号后，线程打印一条信息，并重置中断信号。最后，main函数等待InterruptibleTask线程结束。
 
         通过对比示例代码和输出结果，可以看出，线程的中断信号是可以通过Thread.interrupt()方法来发送和接收的。但是，在并发编程中，要注意不要忘记恢复中断信号，尤其是在需要自己处理中断信号的情况下。
-

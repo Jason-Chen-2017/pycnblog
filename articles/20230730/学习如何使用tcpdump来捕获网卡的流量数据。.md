@@ -23,7 +23,6 @@
          ## 2.1 TCP/IP协议簇
          在TCP/IP协议簇中，传输控制协议/互联网协议（Transmission Control Protocol/Internet Protocol，缩写为TCP/IP）由一系列标准协议组成，包括网络层、互连层、应用层。在本文中，我们主要讨论的是应用层中的网络数据包分析工具——TCPdump。TCPdump 可以用来捕获通过网络发送或者接收的包，并显示它们的内容。它的工作方式如下图所示:
 
-         ![image.png](https://cdn.nlark.com/yuque/0/2019/png/274942/1553111793299-1c2a3ab3-d0b7-4e75-aaea-7cb1dbbf2f63.png)
 
          TCPdump 是基于 Berkeley Packet Filter 的命令行工具，可以运行在 Linux、macOS、Windows 操作系统上。它支持很多选项参数，如指定捕获哪个网卡、哪些端口、以及打印哪些详细信息。它的输出结果包括源地址、目的地址、传输层协议、包大小、时间戳、报头长度、报头内容等信息。
          
@@ -67,4 +66,3 @@
           6. 当两边连接成功后，服务器和客户机进程就可以开始通讯了。
 
           
-
