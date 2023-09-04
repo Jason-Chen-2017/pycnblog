@@ -1,0 +1,1 @@
+2. Understanding and Improving Stochastic Gradient Descent with Nesterov’s Accelerated Gradient  

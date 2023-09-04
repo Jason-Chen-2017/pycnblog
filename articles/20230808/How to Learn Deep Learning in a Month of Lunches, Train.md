@@ -1,0 +1,1 @@
+8. How to Learn Deep Learning in a Month of Lunches, Training, and Coffee 

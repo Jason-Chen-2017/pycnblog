@@ -1,0 +1,1 @@
+1. Unpaired Video-to-Video Translation with Cycle-Consistent Adversarial Networks (CVPR2017)

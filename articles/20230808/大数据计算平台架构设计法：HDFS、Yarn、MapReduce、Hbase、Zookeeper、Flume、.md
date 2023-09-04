@@ -1,0 +1,1 @@
+13. 大数据计算平台架构设计法：HDFS、Yarn、MapReduce、Hbase、Zookeeper、Flume、Sqoop、Kafka等。

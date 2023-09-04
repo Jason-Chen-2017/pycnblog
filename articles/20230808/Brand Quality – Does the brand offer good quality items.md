@@ -1,0 +1,1 @@
+1. Brand Quality – Does the brand offer good quality items? If yes, give higher weightage to this criterion.

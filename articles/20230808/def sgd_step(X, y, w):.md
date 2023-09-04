@@ -1,0 +1,1 @@
+def sgd_step(X, y, w):

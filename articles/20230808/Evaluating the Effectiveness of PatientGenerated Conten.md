@@ -1,0 +1,1 @@
+7. Evaluating the Effectiveness of Patient-Generated Content for Combating COVID-19 Misinformation during COVID-19 Pandemic

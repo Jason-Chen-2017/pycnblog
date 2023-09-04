@@ -1,0 +1,1 @@
+(8) 生成对抗网络GAN——GAN原理、概念、应用介绍 【Generative Adversarial Networks (GAN): Understanding the Fundamentals】

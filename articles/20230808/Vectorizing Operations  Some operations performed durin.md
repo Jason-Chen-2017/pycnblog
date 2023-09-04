@@ -1,0 +1,1 @@
+13. Vectorizing Operations - Some operations performed during forward propagation, such as matrix multiplication, dot product, softmax, etc., cannot be parallelized efficiently using GPUs because they involve iterating through individual elements. For better performance, we can vectorize these operations using modern programming languages like NumPy and TensorFlow. 

@@ -1,0 +1,1 @@
+2. Transfer learning with deep kernel learning and smoothed classifier probes (Chen et al., 2015)

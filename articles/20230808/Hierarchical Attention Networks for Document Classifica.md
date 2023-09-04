@@ -1,0 +1,1 @@
+3. Hierarchical Attention Networks for Document Classification with Keras

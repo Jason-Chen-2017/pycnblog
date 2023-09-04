@@ -1,0 +1,1 @@
+- Sentiment Analysis of Social Media Posts Using Word Embeddings and Naive Bayes Classifier

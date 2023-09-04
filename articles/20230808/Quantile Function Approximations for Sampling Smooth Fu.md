@@ -1,0 +1,1 @@
+Quantile Function Approximations for Sampling Smooth Functions

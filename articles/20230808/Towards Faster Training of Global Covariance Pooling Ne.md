@@ -1,0 +1,1 @@
+3. Towards Faster Training of Global Covariance Pooling Networks for Large-Scale Person Re-identification[3]

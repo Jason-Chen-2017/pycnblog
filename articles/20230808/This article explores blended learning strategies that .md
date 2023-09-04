@@ -1,0 +1,1 @@
+This article explores blended learning strategies that involve integration of various mediums into an online learning environment. Moreover, we examine three case studies of National Grassroots Organizations (NGOs) and universities integrating these strategies into their courses. These case studies serve as illustrations of successful examples of blended learning implementations.

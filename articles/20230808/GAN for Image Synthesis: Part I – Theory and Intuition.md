@@ -1,0 +1,1 @@
+6. GAN for Image Synthesis: Part I – Theory and Intuition

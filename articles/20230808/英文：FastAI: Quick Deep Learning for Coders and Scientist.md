@@ -1,0 +1,1 @@
+英文：FastAI: Quick Deep Learning for Coders and Scientists 

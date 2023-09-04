@@ -1,0 +1,1 @@
+1. Sentence-Level Convolutional Neural Networks for Text Classification (CNNs) with Dynamic Pooling (DPCNN)

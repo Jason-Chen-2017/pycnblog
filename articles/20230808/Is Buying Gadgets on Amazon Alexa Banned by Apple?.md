@@ -1,0 +1,1 @@
+9. Is Buying Gadgets on Amazon Alexa Banned by Apple?

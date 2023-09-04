@@ -1,0 +1,1 @@
+6. 「蒙特卡洛与MCMC方法」：介绍蒙特卡洛方法的基本概念、适用场景、Metropolis-Hastings采样、Gibbs抽样等；

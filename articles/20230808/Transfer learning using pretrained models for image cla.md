@@ -1,0 +1,1 @@
+6. Transfer learning using pre-trained models for image classification tasks

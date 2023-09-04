@@ -1,0 +1,1 @@
+def topsis(data, ideal):

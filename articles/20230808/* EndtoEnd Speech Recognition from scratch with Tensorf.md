@@ -1,0 +1,1 @@
+* End-to-End Speech Recognition from scratch with Tensorflow 2 and Kaldi

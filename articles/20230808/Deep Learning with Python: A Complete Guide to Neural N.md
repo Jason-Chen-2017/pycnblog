@@ -1,0 +1,1 @@
+2.Deep Learning with Python: A Complete Guide to Neural Networks and Applications in Data Science and Finance (Khan Academy)

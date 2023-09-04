@@ -1,0 +1,1 @@
+On the Difficulty of Training Neural Networks for Visual Recognition Tasks

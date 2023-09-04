@@ -1,0 +1,1 @@
+7. DCGAN: Deep Convolutional Generative Adversarial Networks with Limited Data

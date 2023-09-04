@@ -1,0 +1,1 @@
+23. Multi-modal Music Emotion Recognition with Feature Decomposition and Multi-Task Learning

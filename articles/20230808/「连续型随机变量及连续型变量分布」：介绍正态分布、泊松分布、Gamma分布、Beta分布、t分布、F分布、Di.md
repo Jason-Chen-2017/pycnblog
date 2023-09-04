@@ -1,0 +1,1 @@
+8. 「连续型随机变量及连续型变量分布」：介绍正态分布、泊松分布、Gamma分布、Beta分布、t分布、F分布、Dirichlet分布、Inverse gamma分布、Wigner Semicircle分布等；

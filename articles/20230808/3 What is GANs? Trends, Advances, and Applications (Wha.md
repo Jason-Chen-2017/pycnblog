@@ -1,0 +1,1 @@
+[3] What is GANs? Trends, Advances, and Applications (What are Generative Adversarial Networks, trends, advances, and applications?)

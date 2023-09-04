@@ -1,0 +1,1 @@
+ax.set_title('Synthetic Dataset')

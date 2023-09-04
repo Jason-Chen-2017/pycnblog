@@ -1,0 +1,1 @@
+10. Real World Applications: Visualizing Gender Biases in Computer Vision Systems, Using Deep Learning to Develop an Interpretable Algorithmic Trading Platform, Monitoring Air Pollution with IoT Devices and ML, Improving Finance Data Analytics With Deep Learning, and Building a Conversational Agent for Human-Robot Interaction. 

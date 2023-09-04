@@ -1,0 +1,1 @@
+4. Understanding and Using the Inverse Autoregressive Flow to Improve GANs

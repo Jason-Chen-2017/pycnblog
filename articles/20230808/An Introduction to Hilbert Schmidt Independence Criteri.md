@@ -1,0 +1,1 @@
+3. An Introduction to Hilbert Schmidt Independence Criterion and Its Application in Compressive Sensing, Peter Wang et al., IEEE Transactions on Signal Processing, Volume 66 (20), Page 854-867, DOI: 10.1109/TSP.2017.2777290

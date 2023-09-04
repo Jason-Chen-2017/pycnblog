@@ -1,0 +1,1 @@
+- Decentralized Identity Management for IoT Networks: An Overview of Architectures and Use Cases——区块链数字身份管理，其架构与应用；

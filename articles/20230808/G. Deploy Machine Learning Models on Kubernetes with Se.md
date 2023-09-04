@@ -1,0 +1,1 @@
+G. Deploy Machine Learning Models on Kubernetes with Seldon Core: In this post, I showcase how to deploy machine learning models on Kubernetes using seldon core, an open source platform built around Kubernetes and its API conventions.

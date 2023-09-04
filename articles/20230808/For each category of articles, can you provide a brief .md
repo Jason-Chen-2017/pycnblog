@@ -1,0 +1,1 @@
+2. For each category of articles, can you provide a brief overview of what type of topics they address? Also, can you suggest which bloggers might be suited to write such articles? 

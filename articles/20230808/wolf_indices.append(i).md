@@ -1,0 +1,1 @@
+            wolf_indices.append(i)

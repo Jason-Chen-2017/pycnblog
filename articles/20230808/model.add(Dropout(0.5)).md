@@ -1,0 +1,1 @@
+model.add(Dropout(0.5)) 

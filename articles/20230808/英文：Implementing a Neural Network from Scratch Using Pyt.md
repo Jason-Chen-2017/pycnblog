@@ -1,0 +1,1 @@
+英文：Implementing a Neural Network from Scratch Using Python

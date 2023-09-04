@@ -1,0 +1,1 @@
+8. A Gentle Introduction to Parametric Modelling in Computer Vision 

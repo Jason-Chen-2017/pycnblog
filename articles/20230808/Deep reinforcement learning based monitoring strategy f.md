@@ -1,0 +1,1 @@
+7. Deep reinforcement learning based monitoring strategy for efficient operation of smart greenhouses with multiple sensors. 

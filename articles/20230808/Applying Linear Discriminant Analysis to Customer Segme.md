@@ -1,0 +1,1 @@
+6. Applying Linear Discriminant Analysis to Customer Segmentation in Retail Stores  

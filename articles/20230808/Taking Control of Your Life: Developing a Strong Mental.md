@@ -1,0 +1,1 @@
+7. Taking Control of Your Life: Developing a Strong Mental Model to Thrive Independence

@@ -1,0 +1,1 @@
+3. The Elements of Statistical Learning (Hastie, Tibshirani, Friedman)

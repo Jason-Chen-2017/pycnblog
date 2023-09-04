@@ -1,0 +1,1 @@
+This article explains how to implement a basic natural language processing (NLP) model using Python and the Natural Language Toolkit (NLTK). The code is explained step by step with comments for better understanding.

@@ -1,0 +1,1 @@
+6. Keypoint Detection in Depth Images for Robotic Manipulation using a Multi-Stage Convolutional Neural Network

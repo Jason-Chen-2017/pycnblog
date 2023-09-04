@@ -1,0 +1,30 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+         
+
+Smart greenhouses are becoming more and more popular due to their low costs and ease of use. However, they still face challenges in terms of efficiency during operation. To address this issue, many researchers have proposed several methods such as active scheduling, intelligent control, and distributed control to improve the operation performance of greenhouses by optimizing various parameters, including lighting intensity and temperature. These techniques aim to minimize energy consumption and optimize the greenhouse output while satisfying user preferences. 
+
+However, these approaches usually rely on complex mathematical models that cannot be easily applied to real-world scenarios where greenhouses may contain a variety of heterogeneous environments and devices. Moreover, it is difficult to design an effective control policy that can adapt to different operating conditions quickly and flexibly. Therefore, we need to come up with a new approach that combines deep reinforcement learning (DRL) and optimization algorithms with historical data to provide accurate and reliable guidance to achieve optimal operation. 
+
+In this work, we propose a novel DRL-based monitoring strategy for efficient operation of smart greenhouses with multiple sensors. The proposed algorithm integrates multiple sensors into a neural network architecture and uses deep Q-network (DQN) as the underlying RL algorithm to learn a monitoring policy using only historical sensor readings. We evaluate our approach in a realistic greenhouse simulation environment and demonstrate that it can efficiently manage greenhouse resources and satisfy users' preferences within limited time constraints.
+
+2.相关工作
+The literature has shown that state-of-the-art machine learning (ML) techniques, such as deep neural networks (DNNs), convolutional neural networks (CNNs), and recurrent neural networks (RNNs), can significantly enhance the accuracy and reliability of predictive modeling tasks in operational settings. In recent years, there has been significant progress in applying ML algorithms in industrial operations management (OMS) applications. For example, in the field of forecasting stock prices, researches have developed various deep learning models to outperform traditional statistical models. Similarly, in the greenhouse automation domain, some works have explored deep reinforcement learning (DRL) methods to solve complex decision-making problems in dynamic environments. However, most existing works focus solely on specific tasks or domains and do not consider how to integrate multiple sensors into a unified framework for better decision making under variable operating conditions. 
+
+3.理论背景
+In this paper, we present a novel DRL-based monitoring strategy for efficient operation of smart greenhouses with multiple sensors. Our method leverages the power of deep reinforcement learning (DRL) algorithms by training an agent to learn a policy from historical sensor readings without any handcrafted features or expert knowledge. We also introduce a lightweight preprocessor layer to transform raw sensor measurements into high-level representations that are suitable for deep neural networks. This technique enables us to apply modern machine learning algorithms directly to process input signals from multiple sensors instead of manually engineering feature vectors or constructing complicated hierarchical architectures.
+
+To train our DQNs, we first collect a dataset of sensor observations over a period of time from each sensor node. Each observation includes both the current measurement value and its timestamp. We then preprocess these observations using a lightweight CNN-based preprocessor that extracts useful features from raw sensor measurements and produces a fixed size representation vector for each observation. Finally, we feed these preprocessed observations into a multi-layer perceptron (MLP) model to produce predicted actions.
+
+During training, we use prioritized experience replay (PER) to sample previous experiences with higher probability so that the agent learns to exploit the best actions at each step. Specifically, we set a priority level to each observation according to its reward signal. Based on this priority level, the agent selects which observation to replay next when sampling experiences from the buffer.
+
+After selecting an action, the agent updates its internal states through forward passes of the MLP model followed by backpropagation to compute the gradient of loss function. During inference, the agent samples actions from its learned policy distribution based on its estimated Q values derived from its MLP model.
+
+Our DQN agent can effectively handle large variations in ambient temperature, light intensity, and moisture levels by adjusting the thermal control strategy dynamically based on the predicted outcomes of future events. By combining multiple sensors and incorporating historical contextual information, our DQN agent can maintain a robust operation policy even under severe fluctuations in the system dynamics.
+
+4.实验分析
+We evaluated our proposed DRL-based monitoring strategy in a simulated greenhouse environment consisting of three main components: a heat source, a greenhouse bedroom, and a control center. The central control unit receives input from all three sensors, including a camera module that captures visual images of the greenhouse layout, and sends control commands to each device in the greenhouse.
+
+First, we trained an agent to learn a monitoring policy from historical sensor readings using deep Q-networks. Then, we evaluated the effectiveness of our monitoring policy in different situations. Table 1 shows the average mean absolute error (MAE) between predicted and actual light intensity, temperature, and humidity levels after two weeks of operation. Within one standard deviation of the reported reference values, our method achieves comparable performance compared to other established approaches, indicating its generalization ability.

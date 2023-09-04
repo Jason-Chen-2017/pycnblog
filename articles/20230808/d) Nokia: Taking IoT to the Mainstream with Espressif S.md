@@ -1,0 +1,1 @@
+d) Nokia: Taking IoT to the Mainstream with Espressif Systems

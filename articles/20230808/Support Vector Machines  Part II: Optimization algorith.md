@@ -1,0 +1,1 @@
+2. Support Vector Machines - Part II: Optimization algorithms, slack variables, and soft margin classification

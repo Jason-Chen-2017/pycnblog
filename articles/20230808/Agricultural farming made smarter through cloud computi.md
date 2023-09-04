@@ -1,0 +1,1 @@
+5. Agricultural farming made smarter through cloud computing: a systematic literature review. 

@@ -1,0 +1,1 @@
+6. Why data warehouses need columnar storage formats for better performance and scalability?

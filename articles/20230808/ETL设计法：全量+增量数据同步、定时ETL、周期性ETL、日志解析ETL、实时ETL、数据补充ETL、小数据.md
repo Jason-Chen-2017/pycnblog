@@ -1,0 +1,1 @@
+11. ETL设计法：全量+增量数据同步、定时ETL、周期性ETL、日志解析ETL、实时ETL、数据补充ETL、小数据ETL、容灾ETL、CDC ETL等。

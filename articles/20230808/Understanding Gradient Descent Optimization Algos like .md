@@ -1,0 +1,1 @@
+2. Understanding Gradient Descent Optimization Algos like Adam, AdaGrad & etc. 

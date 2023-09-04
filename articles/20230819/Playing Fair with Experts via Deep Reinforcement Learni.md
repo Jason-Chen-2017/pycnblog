@@ -1,0 +1,45 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+  
+  
+Fairness is an essential aspect of human-computer interaction (HCI) that involves ensuring that all users receive the same level of service from a system or application. One challenge for creating fair HCI systems and applications is to train them on data where individuals are not discriminated against because they belong to different groups. In this paper, we propose an approach called "Playing Fair" to address such challenges by training deep reinforcement learning agents that can learn to play games while playing fair. We focus on multiplayer games like chess and go, but our approach should be applicable to other game genres as well. 
+
+We introduce two novel components in our approach:
+
+1. A representation of the state space containing information about group memberships. The agent's policy takes into account these group memberships when making decisions. 
+
+2. An algorithmic bias correction mechanism that regresses over individual mistakes made during training. This allows us to remove biases introduced by existing algorithms that assign equal reward to actions taken by players who belong to different groups. 
+
+Experiments show that our approach outperforms several baselines and demonstrates significant advantages over current approaches for achieving fairness in these types of games. Our method provides a new approach for training AI models that can achieve high levels of fairness without requiring explicit annotations of group membership labels or fine-tuning of model hyperparameters. 
+
+In summary, we present an approach for training deep reinforcement learning agents that can learn to play fair multiplayer games by introducing a new component that considers player group memberships in their state representation. This approach removes biases introduced by traditional algorithms and improves performance on metrics related to equity, equality, and inclusion, particularly in games with complex rules and strategic decision-making processes. 
+
+# 2. 相关工作  
+
+Fairness has been studied extensively within machine learning. However, most prior work focuses on developing algorithms for measuring and mitigating unfairness within datasets. These techniques typically require manual annotation of sensitive attributes such as race, gender, age, etc., which is time-consuming and error-prone. On the other hand, prior work on fairness in HCI applies rule-based solutions that involve ranking inputs based on a set of heuristics, such as minimizing disparities between positive outcomes among people with similar backgrounds or providing equal access to features across groups. Despite their limitations, these methods provide limited value compared to automatic approaches that can adapt to changing contexts and recognize patterns across users automatically.
+
+Recently, deep reinforcement learning has emerged as a promising framework for solving challenging problems in artificial intelligence. It offers numerous benefits, including highly efficient computation, ability to handle continuous action spaces, and robustness to sparse rewards. However, it also faces many challenges, including lack of scalability to large state spaces and difficulty balancing exploration vs exploitation in complex environments. Additionally, it may struggle to properly balance social welfare, especially when used in settings where one group plays more efficiently than another.
+
+Existing works have proposed various mechanisms to alleviate these issues, such as curriculum learning, regularization techniques, attention mechanisms, or off-policy learning. However, none of these techniques consider group memberships explicitly and implicitly, and thus do not guarantee fairness under certain circumstances. Moreover, some recent works exploit behavior cloning instead of policy gradient algorithms to improve sample efficiency, but it still requires accurate ground truth labels to compute policies.
+
+In contrast, we propose a principled way of training deep reinforcement learning agents using only labeled examples, which ensures that the agent's policy does not degenerate due to irrelevant features or suboptimal exploration strategies. Moreover, we formulate the problem as a contextual bandit problem, allowing us to leverage existing RL algorithms that have proven effective in other domains. Finally, we apply a theoretical analysis to demonstrate how the agent's payoff depends on its policy parameters and group memberships. Overall, our approach provides a promising direction towards addressing fairness in realistic scenarios where multiple stakeholders contribute to the input dataset and the environment dynamics change dynamically over time.
+
+# 3. 基础概念与术语说明  
+
+## Group Membership Representation
+
+Let $G$ denote the set of groups and let $\mathcal{S}_i \subseteq \mathbb{R}^n_+$ be the observation space for group $i$. For each episode, the agent observes the joint state $(\mathbf{s}, (\pi(a_j|s)|j = 1,\dots,N))$, where $\mathbf{s}$ is a vector representing the state of the game, $\pi$ represents the policy function, and $N$ is the number of players. In general, there will be a subset of the players that belongs to each group, denoted by $\mathcal{I}_g \subseteq \{1,\dots, N\}$. Let $G_{\mathcal{I}_g}$ represent the group consisting of the players whose indices are given by $\mathcal{I}_g$. We assume that at any point in the game, all players belong to exactly one group. To incorporate group membership information into the state representation, we define a feature vector $f(\cdot)$ that maps each group to a unique vector in $\mathbb{R}^k$. Then, we update the agent's state representation to include both global observations and local representations for each group. Specifically, let $\mathbf{s}_{G_{\mathcal{I}_g}} \in R^{|\mathcal{I}_g| k}$, denote the local representation for group $G_{\mathcal{I}_g}$. We concatenate $\mathbf{s}_{G_{\mathcal{I}_g}}$ with $\mathbf{s}'$ to obtain the full state representation $\mathbf{s}$:
+$$\mathbf{s} = [\mathbf{s}', f(G_{\mathcal{I}_g})].$$ 
+The size of the state representation is $n + |G|k$, where $n$ is the dimensionality of the global observation space and $k$ is the dimensionality of the local representation for each group. Note that $f$ is assumed to be non-linear, meaning that $\mathbf{s}'$ contains redundant information that could potentially be learned through aggregation functions.
+
+## Algorithmic Bias Correction Mechanism
+
+To further enhance the quality of the generated trajectories, we introduce an algorithmic bias correction mechanism. This mechanism estimates the effects of treating different groups differently by computing corrections to the agent's estimated Q values based on observed mistakes made by different groups. Specifically, let $\mathcal{D}_{\text{train}}$ and $\mathcal{D}_{\text{test}}$ denote training and test sets of interactions, respectively. Each example $\mathbf{(s, a, r, s')}$ is labeled according to the group to which the player in state $s'$ belongs. Given a policy network $\pi_{\theta}(.|\mathbf{s}')$, we estimate the true Q value $Q^{\star}(s',a')$ obtained by executing the optimal policy $argmax_{a'} \pi_{\theta}(a'|\mathbf{s}')$. We then observe the actual Q value computed by the trained agent $Q_\theta(s',a')$, which can differ significantly from the true Q value if the agent makes mistakes that were not caused by its own choice. Using this difference, we estimate the effect of treating different groups differently. Specifically, we compute a correction term $\delta^g_{\mathcal{I}}(s')$ for each group $g$, defined as follows:
+$$\delta^g_{\mathcal{I}}(s')=\frac{E[\delta^{(l)}(s')|\mathcal{I}_g]}{Var[\delta^{(l)}(s')|\mathcal{I}_g]}$$
+where $\delta^{(l)}(s')$ represents the deviation of the agent's estimated Q value from the true Q value caused by players in group $\mathcal{I}_g$. Intuitively, the correction term measures the average percentage improvement in Q value that would result if the errors made by members of group $\mathcal{I}_g$ were corrected, averaged across multiple rounds of testing on independent samples of $\mathcal{D}_{\text{test}}$.
+
+We use this correction term to adjust the agent's estimated Q value before taking an action, so that it reflects what the agent should actually be doing under the specific combination of group memberships and errors that occurred in the past. Specifically, we modify the formula for selecting the next action to be:
+$$a = argmax_{a'}\left\{Q_\theta'(s',a')+\delta^g_{\mathcal{I}}\left[s'\right]\right\}$$
+where $Q_\theta'(s',a')$ represents the modified estimated Q value produced by the agent after accounting for the expected effects of treating different groups differently on the basis of previous mistakes. This modification reduces the agent's tendency to make unfair choices that benefit those from marginalized groups.

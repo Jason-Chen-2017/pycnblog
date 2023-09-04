@@ -1,0 +1,1 @@
+5. SQS vs. SNS: Choosing the Right Messaging Service for Your Microservices: SQS和SNS：微服务的正确消息传递机制

@@ -1,0 +1,1 @@
+3. TensorFlow For Machine Intelligence Applications (Packt Publishing)

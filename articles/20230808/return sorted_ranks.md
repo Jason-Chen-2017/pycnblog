@@ -1,0 +1,1 @@
+    return sorted_ranks

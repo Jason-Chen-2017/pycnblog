@@ -1,0 +1,1 @@
+3. Deep Learning for Vision Systems – Architecture and Training Techniques (Tutorial)

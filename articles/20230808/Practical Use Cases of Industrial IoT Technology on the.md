@@ -1,0 +1,1 @@
+17. Practical Use Cases of Industrial IoT Technology on the Edge - Rachel Ronson 

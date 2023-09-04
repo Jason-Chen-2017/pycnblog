@@ -1,0 +1,1 @@
+5. Insurance Company’s Role in Protecting Patient Confidentiality during COVID-19 Pandemic

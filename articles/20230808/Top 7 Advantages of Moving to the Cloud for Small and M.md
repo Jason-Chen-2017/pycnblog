@@ -1,0 +1,1 @@
+Top 7 Advantages of Moving to the Cloud for Small and Medium Sized Enterprises

@@ -1,0 +1,1 @@
+ My diverse set of experiences allows me to bring out the best in people, which makes me an exceptional resource for client interactions and collaborations. When meeting new challenges, I rely heavily on my interpersonal skills to come up with creative solutions that align with company objectives.   

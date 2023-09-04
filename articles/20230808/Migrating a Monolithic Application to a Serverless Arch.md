@@ -1,0 +1,1 @@
+8. Migrating a Monolithic Application to a Serverless Architecture on AWS: 将单体应用迁移至AWS无服务器架构

@@ -1,0 +1,1 @@
+5. Hugging Face - A framework for transfer learning in natural language processing tasks such as named entity recognition or sentiment analysis.

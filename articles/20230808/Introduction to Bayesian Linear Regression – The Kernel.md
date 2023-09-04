@@ -1,0 +1,1 @@
+6. Introduction to Bayesian Linear Regression – The Kernel Approach (贝叶斯线性回归概述——核方法求解)

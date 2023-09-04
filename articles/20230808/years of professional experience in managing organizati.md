@@ -1,0 +1,1 @@
+7 years of professional experience in managing organizations’ digital transformation efforts across multiple industries, ranging from e-commerce, retail, and manufacturing to banking and insurance. Previously held leadership roles at IBM and Deloitte Consulting. 

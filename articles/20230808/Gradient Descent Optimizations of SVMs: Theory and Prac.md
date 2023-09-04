@@ -1,0 +1,1 @@
+4. Gradient Descent Optimizations of SVMs: Theory and Practical Examples

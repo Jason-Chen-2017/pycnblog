@@ -1,0 +1,1 @@
+2. Microservices with Spring Cloud and Netflix OSS -Part II: Config Client 

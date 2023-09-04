@@ -1,0 +1,1 @@
+Based on these weights, we can now start implementing TOPSIS in Python to optimize the pricing strategy across different markets. Here's the code snippet:

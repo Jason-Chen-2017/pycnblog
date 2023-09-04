@@ -1,0 +1,1 @@
+1. Let's Talk About Game AI: Gathering Ideas from Artificial Intelligence Researchers

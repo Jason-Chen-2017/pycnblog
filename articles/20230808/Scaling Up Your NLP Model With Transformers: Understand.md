@@ -1,0 +1,1 @@
+3. Scaling Up Your NLP Model With Transformers: Understanding Self-Attention Mechanisms and BERT

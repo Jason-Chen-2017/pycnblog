@@ -1,0 +1,1 @@
+3. A Tutorial on Variational Autoencoder and its Applications in Natural Language Processing (with Code)

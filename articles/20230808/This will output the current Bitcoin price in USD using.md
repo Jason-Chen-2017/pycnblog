@@ -1,0 +1,1 @@
+This will output the current Bitcoin price in USD using CoinDesk API. If you want to get more information about other cryptocurrencies, simply change the URL accordingly. For instance, this can be modified as follows to get the price of Litecoin instead:

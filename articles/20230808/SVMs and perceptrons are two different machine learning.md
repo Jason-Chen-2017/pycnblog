@@ -1,0 +1,1 @@
+SVMs and perceptrons are two different machine learning algorithms that can be used for classification tasks. They both use a linear decision boundary to separate the input data into classes or labels. However, there are some key differences between them:

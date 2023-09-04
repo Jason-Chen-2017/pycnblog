@@ -1,0 +1,1 @@
+5. Introducing AdaGrad: Adaptive Subgradient Methods for Online Learning and Stochastic Optimization  

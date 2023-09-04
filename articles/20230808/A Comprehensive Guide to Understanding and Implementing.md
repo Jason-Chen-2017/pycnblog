@@ -1,0 +1,1 @@
+A Comprehensive Guide to Understanding and Implementing Convolutional Neural Networks in TensorFlow (with Python Code) - CNNs for Beginners

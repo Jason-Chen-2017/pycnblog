@@ -1,0 +1,1 @@
+3. Multi-Class SVMs - SVMs can classify data points into multiple classes without any changes to their architecture. This means you can easily apply it to multi-label classification or anomaly detection scenarios. 

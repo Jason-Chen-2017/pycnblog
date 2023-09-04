@@ -1,0 +1,1 @@
+27. Train Keras Models Faster with GPU Accelerators on Amazon EC2

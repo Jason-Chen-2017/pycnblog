@@ -1,0 +1,1 @@
+Global marketer with extensive experience in analyzing data to inform marketing decisions. 

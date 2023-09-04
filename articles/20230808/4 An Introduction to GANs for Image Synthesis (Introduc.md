@@ -1,0 +1,1 @@
+[4] An Introduction to GANs for Image Synthesis (Introduction to Generative Adversarial Networks for image synthesis)

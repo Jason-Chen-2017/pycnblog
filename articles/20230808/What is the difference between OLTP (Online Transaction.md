@@ -1,0 +1,1 @@
+4. What is the difference between OLTP (Online Transaction Processing) and OLAP (Online Analytical Processing)?

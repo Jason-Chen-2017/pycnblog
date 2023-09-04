@@ -1,0 +1,1 @@
+* Preserves the local structure of the data

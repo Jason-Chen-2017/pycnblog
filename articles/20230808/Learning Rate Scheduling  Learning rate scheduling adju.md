@@ -1,0 +1,1 @@
+10. Learning Rate Scheduling - Learning rate scheduling adjusts the step size of gradient descent based on the progress made so far. The higher the error rates, the slower we should decrease the learning rate, leading to faster convergence. Decreasing the learning rate early on can help to converge faster and prevent oscillations.   

@@ -1,0 +1,1 @@
+8. Nonlinear Component Analysis, Ming-Yu Guo et al., IEEE Transaction on Neural Networks and Learning Systems, Volume 29 (12) December 2016, Pages 4161-4174, DOI: 10.1109/TNNLS.2016.2611951

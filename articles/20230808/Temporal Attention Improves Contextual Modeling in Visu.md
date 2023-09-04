@@ -1,0 +1,1 @@
+Temporal Attention Improves Contextual Modeling in Visual Question Answering Tasks

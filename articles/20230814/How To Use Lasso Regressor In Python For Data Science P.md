@@ -1,0 +1,39 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+  
+
+Lasso regression (also known as L1 regularization) is a type of regression analysis that uses shrinkage or regularization to penalize large coefficients in order to improve prediction accuracy and interpretability. It has been widely used in various data science fields such as finance, biology, marketing and many others because it can automatically select the most important features while reducing model complexity and prevent overfitting problems. Despite its popularity, however, it remains a challenging algorithm to understand and use for beginners who are not familiar with its mathematical concepts. Therefore, this article will provide an introduction to Lasso regressions by explaining their basic concept and terminology, teaching step-by-step how to apply them using Python libraries such as scikit-learn and statsmodels, and present some practical examples of applying Lasso regression techniques in real-world applications such as predicting customer behavior based on online search queries.
+# 2.基本概念、术语
+## 2.1 Introduction
+In statistics and machine learning, Lasso regression, also called Lasso, is a technique for estimating sparse coefficients. The name "lasso" comes from the fact that the penalty term used in Lasso regression consists of absolute values of magnitudes of coefficients multiplied by different constants, so named because the constant factors act like tunnelling barriers that restrict the ability of a network to pass information between units.
+
+The goal of Lasso regression is to find a set of coefficient weights that can optimally combine several explanatory variables (independent variables) to minimize the difference between the predicted response variable and the true value. Mathematically speaking, given a matrix X containing n predictor variables and p feature variables (including the intercept), we want to estimate a vector w of p+1 elements, where each element represents the corresponding coefficient weight: 
+
+$$\hat{\beta} = \arg \min_{w}\frac{1}{2n}||y - Xw||^2_2 + ||\lambda||_1,$$
+
+where $\hat{\beta}$ denotes the estimated coefficient vector, $X$ is the design matrix, $y$ is the response vector, and $\lambda$ is the regularization parameter. The first part of the objective function is the ordinary least squares error loss function which measures the deviation between the predicted output and actual output. The second part is the sum of absolute values of individual coefficient weights, which acts as a sparsity penalty term to constrain the model's selection of features. As $\lambda$ increases, more and more coefficients are forced to zero. The larger the lambda parameter, the less important the model becomes towards having all coefficients equal to zero. Hence, the ultimate purpose of regularization is to simplify the model and avoid overfitting issues, which may arise when too much flexibility is allowed in the model without any need.
+
+We typically represent Lasso regression results using two types of graphs. Firstly, the standard plot of the fitted line vs. residual shows the overall performance of the model. However, it does not show whether the chosen features were relevant or irrelevant in contributing to the model's predictions. Secondly, we can calculate a stability score to quantify the strength of interactions among the selected features. This measure ranges from −∞ (worst possible score) to +∞ (best possible score). A positive score indicates that there exists significant interaction effects among the selected features; a negative score suggests little or no effect. Finally, we can examine the distribution of individual coefficient estimates after removing those with small absolute values to identify potential collinearities among them. Collinearity refers to the situation where two or more predictor variables have highly correlated effects on the response variable, leading to incorrect inference due to redundancy in the model. By analyzing these aspects of the model, we can make better decisions about selecting our final model and incorporating domain knowledge into it.
+
+## 2.2 Terminology
+### 2.2.1 Response Variable (Dependent Variable) y
+The response variable is the outcome or target variable that we want to forecast or analyze. It might be continuous or categorical depending on the problem at hand. If the target variable is binary, then logistic regression should be preferred instead of Lasso Regression since it is capable of producing probabilistic outputs and thus makes more sense in terms of statistical modeling. Binary classification problems also require special attention when it comes to handling class imbalance scenarios. In these cases, appropriate evaluation metrics must be employed, such as precision-recall curves or AUC-ROC curves, respectively, to evaluate both the quality of the model and the degree of class imbalance.
+
+### 2.2.2 Explanatory Variables (Independent Variables) X
+The explanatory variables or independent variables are the input variables that influence the response variable in some way. They include demographic characteristics, behavioural traits, psychological factors, linguistic cues, temporal trends, etc., whose effects can be examined through exploratory data analysis, correlation analysis, and causal inference methods. There are three main categories of explanatory variables:
+
+1. Continuous Variables: These variables can take on any numerical value within a certain range. Examples include age, income, temperature, etc.
+
+2. Categorical Variables: These variables can only take on discrete values. An example would be gender, race, occupation, etc.
+
+3. Interactions Between Continuous and Categorical Variables: These variables consist of combinations of multiple continuous and/or categorical variables. For instance, suppose one wants to predict sales based on the number of years of education, level of job satisfaction, city population, and professional skillset. Then, the three continuous variables could be age, proficiency levels, and population density, whereas the categorical variables would be educational attainment level, job satisfaction rating, and city size.
+
+### 2.2.3 Model Parameters β (Coefficient Vector)
+The model parameters are the weights assigned to the explanatory variables to explain the variation in the dependent variable. When performing linear regression, they are estimated using the Ordinary Least Squares (OLS) method, which involves minimizing the squared errors between the observed responses and the predicted ones. During Lasso regression, we add a new term to OLS that includes the sum of the absolute values of the weights of each explanatory variable. By doing so, the model becomes more conservative by shrinking the coefficients toward zero.
+
+### 2.2.4 Lambda Regularization Parameter
+The regularization parameter controls the tradeoff between fitting the training data well and being less susceptible to overfitting. It determines the amount of shrinkage applied to the coefficients during regularization. If the lambda value is too high, the resulting model may underfit the training data. Conversely, if the lambda value is too low, the model may overfit the data and perform poorly on test data.
+
+During the course of regularization, some coefficients may become exactly zero, effectively eliminating them from consideration in future calculations. Such coefficients correspond to the least important features in the context of Lasso regression, and can help interpret the nature of the relationship between the response variable and the explanatory variables.

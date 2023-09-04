@@ -1,0 +1,1 @@
+OpenStack、Apache CloudStack、Cloud Foundry、Kubernetes等都是云计算领域里常用的开源项目和软件系统，它们可以为用户快速部署、运维公有云平台、保障基础设施的稳定性，并提升资源利用率。

@@ -1,0 +1,40 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+  
+
+Graph Neural Networks (GNNs) are recently gaining popularity in a wide range of applications, including natural language processing and computer vision. GNNs have achieved promising performance on node classification tasks by learning the representations of nodes based on their structural neighborhoods, which can capture rich local patterns. However, there exists an open problem: how to efficiently train such complex models while keeping them scalable? In this article, we propose Hypergradient Descent (HD), a novel optimization method that combines hypergradients with stochastic gradient descent (SGD) to optimize GNN-based models. Specifically, HD explores both the space of parameter vectors and the space of graph structures to find effective solutions to the node classification task under the constraint of model capacity. Experiments demonstrate that HD outperforms existing state-of-the-art methods, especially when dealing with large graphs and high dimensional node features. We also conduct ablation studies to validate the effectiveness of different components of our proposed framework. Finally, we hope this article could provide insights into the design and implementation of HD for optimizing GNNs for node classification.
+
+# 2.相关工作
+Existing approaches to optimize GNNs typically focus on improving the training speed or reducing the memory usage. These works either use ad-hoc heuristics to search for suitable architectures or adopt conventional SGD algorithms with regularization techniques to optimize parameters. For example, some recent papers include Wide & Deep Learning [Li et al., 2016] and DropEdge [Wan et al., 2019], where they incorporate techniques like weight decay, dropout, and label smoothing into traditional SGD optimizers. Some other works address pruning techniques, like NetAdapt [Wu et al., 2018], to compress redundant information during training. Nevertheless, these methods mostly do not explicitly take advantage of the implicit geometry structure among nodes within the same graph. 
+
+In contrast, Hypergradient Descent (HD) is a newly proposed optimization algorithm that integrates hypergradients into stochastic gradient descent to optimize complex deep neural networks. It has been shown to be effective at optimizing GNNs for various tasks such as link prediction, node classification, and graph embedding. The core idea behind HD is to decompose the loss function of a GNN into two parts: the first part represents the distance between predicted scores and true labels, and the second part accounts for the curvature of the decision boundary learned by the GNN. Based on this decomposition, HD applies two updates iteratively over several epochs to generate new parameter values that minimize the total loss. 
+
+However, although HD has made great progress on solving problems related to GNNs, it still remains challenging to optimize complex models while keeping them scalable. Firstly, due to the exponential growth of model size and computational cost, GNN training becomes very expensive even for relatively small graphs. Secondly, hyperparameter tuning often requires manual exploration of hyperparameters combinations to find good trade-offs between efficiency, accuracy, and complexity. To solve these challenges, many researchers have started exploring multi-fidelity optimization methods to leverage multiple levels of representational fidelity and adaptively control the trade-off between computation and convergence rate. Other efforts aim to alleviate the curse of dimensionality by using low-rank or sparse matrices instead of dense ones to reduce the number of parameters. Yet, none of these attempts fully exploit the underlying geometry structure of graphs, which is crucial for efficient representation learning in GNNs. Hence, a better understanding of the relationship between GNNs and geometry is necessary to bridge the gap between theoretical analysis and practical applications.
+
+# 3.模型原理和推导
+## 3.1 Hypergradient Descent
+Hypergradient Descent (HD) combines hypergradients with stochastic gradient descent (SGD) to optimize GNN-based models for node classification. Unlike typical supervised machine learning settings, GNNs do not directly learn from labeled data but rather predict unlabeled instances based on topological relationships in input graphs. Therefore, HD addresses the node classification task by jointly optimizing a parameterized GNN $f_\theta$ and its associated hypernetwork $\psi$, whose goal is to estimate the gradients of the original loss function $L(y_i, f_\theta(x_i))$. More specifically, given a set of input graphs $G = \{g_j\}_{j=1}^m$ and their corresponding target labels $y = \{y_i\}_{i=1}^{N}$, the key idea of HD is to formulate a global objective function as follows:
+
+$$\min_{f_\theta} \max_{\psi}\mathbb{E}_{p(x,y)}[(1-\alpha)\mathcal{L}(y, f_\theta(x))+\alpha\Psi(\psi)(h(x))]\tag{1}$$
+
+where $\alpha>0$ controls the importance of the hypernetwork's contribution towards minimizing the overall loss. Here, $h:\mathcal{V} \rightarrow R^k$ is the feature extractor used to encode the inputs; $p(x, y)$ denotes the joint distribution over all pairs $(x, y) \sim p(G, y)$; $\mathcal{L}$ is a standard cross-entropy loss function commonly used for binary classification problems; and $\Psi$ is a non-parametric surrogate for the entropy term in Eq.(1). Note that in order to guarantee convergence, $\Psi$ must satisfy certain properties discussed later. The main challenge of optimizing Eq.(1) is finding appropriate values for $\theta$ and $\psi$, i.e., the weights and biases of the parameterized GNN. The update rule of HD is as follows:
+
+$$\theta^{(t+1)}=\theta^{(t)} - \eta^{(t)}\nabla_{\theta}\ell_{\phi}(f_{\theta}, h,\hat{\psi})+\gamma^{(t)}(I-r^{(\theta)})\lambda_{\theta}\tag{2}$$
+
+$$\psi^{(t+1)}=\psi^{(t)} + r^{(\psi)}\bigtriangledown_{\psi}\ell_{\phi}(f_{\theta}, h,\hat{\psi})\tag{3}$$
+
+Here, $\eta^{(t)}, \gamma^{(t)}, r^{(\theta)}, r^{(\psi)}$ are positive scalar variables that need to be tuned during training; $\lambda_{\theta}$ is a vector variable representing the sparsity penalty imposed on the parameters. 
+
+To derive Eqs.(2) and (3), let us consider the following auxiliary functions:
+
+$$\hat{\psi}(\psi)=\frac{-1}{2}\log|\det\sigma(\psi)|+\sum_{i,j}\frac{(h_{ij}-h_{ji})^2}{\sigma_{ij}^2}\tag{4}$$
+
+$$r^{(\theta)}_{ij}=h_{ij}\cdot (\psi^{-1}(\psi^{-1}(-A_{ij})))\cdot A_{ij}\tag{5}$$
+
+$$r^{(\psi)}_{ij}=(A_{ij}-A_{ji})\cdot ((\psi^{-1}(\psi^{-1}(-A_{ij}))))\cdot A_{ij}\tag{6}$$
+
+where $A_{ij}$ denotes the adjacency matrix of the graph, and $\sigma_{ij}^2=(h_{ij}-h_{ji})^2/\rho_{ij}$ is the rescaled variance of edge features $h_{ij}$ and $h_{ji}$. Equations (4)-(6) characterize the behavior of the hypernetwork $\psi$ in terms of its parameters $\psi$, hence they play a crucial role in determining the optimal choice of $\theta$ and $\psi$. By maximizing Eq.(1), we attempt to simultaneously minimize the expected loss across all input pairs $(x, y)$, while ensuring that the learned GNN exhibits interpretable and faithful embeddings. 
+
+The basic intuition behind HD lies in combining the explicit gradients of the network with those estimated through stochastic approximations to accelerate convergence. Specifically, since $\theta$ encodes both the topology and the feature representations of the graph, it naturally encourages the network to preserve important local geometric information without being too dependent on irrelevant details. On the other hand, $\psi$ takes care of handling the unknown geometry constraints arising from the input graphs by relying on a surrogate measure of the entropy of the probability distributions encoded by the GNN. By utilizing the indirect connections provided by the hypergraph, $\psi$ learns to balance the contributions of local and global structures to the final output, leading to more robust predictions. Overall, these factors ensure that HD finds meaningful solutions to the node classification task, whilst achieving significant improvements in performance compared to classic SGD-based approaches.

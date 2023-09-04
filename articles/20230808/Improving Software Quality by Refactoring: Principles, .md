@@ -1,0 +1,1 @@
+7. Improving Software Quality by Refactoring: Principles, Practices, and Patterns by Emily Tucker 

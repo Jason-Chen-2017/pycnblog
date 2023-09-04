@@ -1,0 +1,1 @@
+1. Define the criteria weights - assign weightage to each attribute based on its impact on objective function. 

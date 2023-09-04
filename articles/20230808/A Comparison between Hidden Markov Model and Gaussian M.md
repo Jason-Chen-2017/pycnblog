@@ -1,0 +1,1 @@
+13. A Comparison between Hidden Markov Model and Gaussian Mixture Model for Time Series Prediction

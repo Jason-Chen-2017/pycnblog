@@ -1,0 +1,1 @@
+            'visible': tf.Variable(tf.random_normal([num_visible, num_hidden])), 

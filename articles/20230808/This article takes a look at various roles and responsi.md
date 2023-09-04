@@ -1,0 +1,1 @@
+This article takes a look at various roles and responsibilities that Artificial Intelligence (AI) has in education and how it can transform educational practices. 

@@ -1,0 +1,1 @@
+An overview of tri-factorization techniques, including QR, SVD, NMF, and Tucker decompositions, as well as their applications to large scale data sets. 

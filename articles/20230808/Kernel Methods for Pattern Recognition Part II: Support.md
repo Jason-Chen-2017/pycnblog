@@ -1,0 +1,1 @@
+7. Kernel Methods for Pattern Recognition Part II: Support Vector Machines (April 24, 2013)

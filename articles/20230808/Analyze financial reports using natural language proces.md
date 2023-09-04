@@ -1,0 +1,1 @@
+6. Analyze financial reports using natural language processing techniques to make investment decisions

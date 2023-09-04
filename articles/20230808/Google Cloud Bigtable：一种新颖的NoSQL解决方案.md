@@ -1,0 +1,1 @@
+9. Google Cloud Bigtable：一种新颖的NoSQL解决方案

@@ -1,0 +1,1 @@
+9. Probabilistic Graphical Models: Bayesian Inference for Hidden Markov Models, Estimating parameters in Gaussian Mixture Models using EM algorithm, Solving robot localization problems using Bayes Net, Identifying spam emails using HMMs, and Understanding medical diagnoses using probabilistic graphical models.

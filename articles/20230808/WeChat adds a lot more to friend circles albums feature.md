@@ -1,0 +1,1 @@
+4.WeChat adds a lot more to friend circles albums feature 

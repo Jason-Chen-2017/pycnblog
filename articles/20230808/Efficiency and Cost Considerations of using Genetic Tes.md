@@ -1,0 +1,1 @@
+3. Efficiency and Cost Considerations of using Genetic Test kits for Medical Diagnosis

@@ -1,0 +1,1 @@
+4. Coders at Work: Reflections on the Craft of Programming by Mike McCullough 

@@ -1,0 +1,1 @@
+8. Acceleration Techniques for Fast Computation of Distance Maps using Level Set Methods

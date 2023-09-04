@@ -1,0 +1,1 @@
+An introduction to Principal Component Analysis (PCA) with a brief survey of its applications - This is a short, high-level introduction to PCA covering key ideas and terminology, as well as common applications and comparisons to other techniques. The goal is to provide enough background information without going into too much detail.

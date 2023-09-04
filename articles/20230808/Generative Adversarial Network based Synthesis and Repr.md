@@ -1,0 +1,1 @@
+Generative Adversarial Network based Synthesis and Representation of Complex Shapes using GRUs

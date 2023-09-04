@@ -1,0 +1,1 @@
+1. Identifying rare variants using personal genetic variation data and their association with clinical outcomes: Bayesian hierarchical models for disease-associated gene mutations

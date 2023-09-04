@@ -1,0 +1,1 @@
+4. Self-Attention Generative Adversarial Networks for Molecule Generation

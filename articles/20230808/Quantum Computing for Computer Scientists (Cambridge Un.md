@@ -1,0 +1,1 @@
+6. Quantum Computing for Computer Scientists (Cambridge University Press)

@@ -1,0 +1,1 @@
+2. Advanced Git Internals by Tomoyuki Nakamura 

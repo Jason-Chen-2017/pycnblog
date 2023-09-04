@@ -1,0 +1,1 @@
+(4) Batch Normalization：增加batch normalization层

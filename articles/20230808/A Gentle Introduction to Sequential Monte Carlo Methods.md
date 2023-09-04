@@ -1,0 +1,1 @@
+A Gentle Introduction to Sequential Monte Carlo Methods - This is a hands-on introduction to SMC algorithms by walking through the intuition behind them and implementing a simple example in Python. You'll learn about particle filtering, resampling, and smoothing, among other concepts.

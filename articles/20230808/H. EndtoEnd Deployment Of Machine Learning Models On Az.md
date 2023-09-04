@@ -1,0 +1,1 @@
+H. End-to-End Deployment Of Machine Learning Models On Azure Kubernetes Service (AKS): This tutorial explains how to deploy machine learning models on AKS using Docker images and provide instructions on how to create Azure resources needed to run the deployed model. 

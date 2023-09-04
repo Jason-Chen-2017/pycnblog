@@ -1,0 +1,1 @@
+Social media platforms are often used for communication between users, but recent social media manipulation campaigns showcased that fake news spread via social media platforms poses significant risks to society. Therefore, automated detection techniques are essential to curb these threats.

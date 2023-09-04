@@ -1,0 +1,1 @@
+Support Vector Regression: An alternative approach to regression analysis is support vector machines (SVMs). Similarly to SVMs, they learn a hyperplane that best separates the target variable from its associated features. But instead of predicting continuous outputs, SVR models attempt to find the value of the target variable given a set of predictor variables. 

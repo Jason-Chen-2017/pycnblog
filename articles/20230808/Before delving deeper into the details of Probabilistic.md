@@ -1,0 +1,1 @@
+Before delving deeper into the details of Probabilistic PCA, let's first understand some of the key concepts involved:

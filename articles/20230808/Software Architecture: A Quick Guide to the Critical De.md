@@ -1,0 +1,1 @@
+7. Software Architecture: A Quick Guide to the Critical Decisions

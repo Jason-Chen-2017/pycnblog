@@ -1,0 +1,1 @@
+    'Availability': -0.5,

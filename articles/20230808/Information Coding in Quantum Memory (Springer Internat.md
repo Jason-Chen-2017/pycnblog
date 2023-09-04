@@ -1,0 +1,1 @@
+3. Information Coding in Quantum Memory (Springer International Publishing)

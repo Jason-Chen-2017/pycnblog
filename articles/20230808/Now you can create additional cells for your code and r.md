@@ -1,0 +1,1 @@
+5. Now you can create additional cells for your code and run them directly inside the notebook. To add another cell below the current one, simply press Enter while the cursor is in the editor area.

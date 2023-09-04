@@ -1,0 +1,1 @@
+2. AI and Cognitive Biases: How Can We Understand and Overcome Them? (Bradfield Publishers)

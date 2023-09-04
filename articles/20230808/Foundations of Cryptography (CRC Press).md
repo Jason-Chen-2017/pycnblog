@@ -1,0 +1,1 @@
+8. Foundations of Cryptography (CRC Press)

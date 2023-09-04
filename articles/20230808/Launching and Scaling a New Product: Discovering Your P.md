@@ -1,0 +1,1 @@
+9. Launching and Scaling a New Product: Discovering Your Potential and Preparing to Make it a Reality

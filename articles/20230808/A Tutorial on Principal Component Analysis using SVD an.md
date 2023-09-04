@@ -1,0 +1,1 @@
+2. A Tutorial on Principal Component Analysis using SVD and its Applications in Machine Learning (利用 SVD 的主成分分析算法及其机器学习应用教程)

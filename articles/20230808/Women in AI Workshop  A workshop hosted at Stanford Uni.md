@@ -1,0 +1,1 @@
+10. Women in AI Workshop - A workshop hosted at Stanford University to discuss issues related to gender bias in word embeddings and counterfactual reasoning in machine learning systems. 

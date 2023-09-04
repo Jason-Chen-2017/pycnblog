@@ -1,0 +1,1 @@
+4. Modeling Stock Price Prediction Based on Sentiment Analysis of Twitter Posts

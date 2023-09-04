@@ -1,0 +1,1 @@
+3. AlphaZero: A Generalizable AI That Masters Chess, Shogi and Go through Self-Play (AlphaGo + RL)

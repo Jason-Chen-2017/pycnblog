@@ -1,0 +1,25 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+  
+
+Matrix completion (MC) refers to the problem of filling in missing values or zero entries in a matrix with known values. This is commonly used in applications such as recommender systems where we need to predict user preferences based on previously rated items. However, MC also has many other important applications in fields such as bioinformatics, medicine, finance, and physics. 
+
+In this paper, we will survey various learning methods that can be applied to solve the matrix completion problem in different domains. We will first review basic concepts and terminology related to matrix completion, including sparsity, low-rank approximation, imputation error, and recovery performance evaluation metrics. Then, we will cover popular algorithms and approaches for solving MC problems, including low-rank matrix factorization, deep learning techniques, graph neural networks, and ensemble learning models. Next, we will explore how these algorithms can be integrated into recommendation systems by using latent factors and collaborative filtering techniques. Finally, we will discuss future research directions and challenges in this field.
+# 2.基本概念术语说明
+## Sparsity
+Sparsity describes the property of a matrix having few nonzero elements compared to its total number of elements. In other words, it means that most of the elements in the matrix are zero. Mathematically, we denote the fraction of zeros in a matrix $M$ as $\rho(M)$ or $\text{sparsity}(M)$. For example, if every element in a $n\times n$ matrix $M$ except one is zero, then $\rho(M)=1-\frac{1}{n}$. 
+
+## Low-Rank Approximation
+Low-rank approximation refers to approximating a dense matrix $M$ with a rank-$k$ approximation $\hat{M}$ obtained by keeping only the top-$k$ singular vectors of $M$, i.e., the columns corresponding to the largest $k$ singular values of $M$. The goal of low-rank approximation is to reduce the computational complexity of several tasks such as matrix multiplication, matrix decomposition, and data visualization. It is widely used in recommender systems because it reduces the dimensionality of the feature space and allows us to capture important patterns in the data while ignoring noise. 
+
+We use notation $M \approx \hat{M}=\underbrace{\begin{bmatrix}\vec{u}_1 & \cdots & \vec{u}_k \\ \vdots & \ddots & \vdots \\ \vec{u}_n & \cdots & \vec{u}_{n_m}\end{bmatrix}}_{\text{$k$ left singular vectors}}, V^T= \begin{bmatrix}\vec{v}^1 & \cdots & \vec{v}^m\end{bmatrix}$ to represent the input matrix $M$ and the resulting approximation $\hat{M}$. Here, $\vec{u}_i$ are the left singular vectors of $M$, each of which corresponds to a single eigenvalue of the covariance matrix $\Sigma = MM^T$. The right singular vectors of $M$ ($V$) correspond to the eigenvectors of the correlation matrix $R = M^TM$, but we do not need them here. 
+
+The advantage of low-rank approximation over standard PCA is that it does not lose information from the original dataset, unlike traditional SVD-based methods like SVD++, NMF, and CUR. Additionally, low-rank matrices can be trained much faster than full rank ones, making them useful for large datasets. As a result, they have become a central tool in modern machine learning and statistical analysis.
+
+## Imputation Error
+Imputation error measures the difference between the original observed values and their predicted values after some form of imputation. There are two main types of imputation: mean substitution and regression imputation. Mean substitution replaces missing values with the average value of the entire column or row being imputed, whereas regression imputation uses an existing variable to predict the missing values based on the available variables. One way to evaluate imputation performance is to measure the root squared error between the actual and predicted values. Another common metric is RMSE, which takes the square root of the mean squared error. More advanced metrics include cross-validation score or area under curve (AUC).
+
+## Recovery Performance Evaluation Metrics
+Recovery performance evaluation metrics quantify how well the completed matrix recovers the true underlying structure or pattern of the incomplete data set. Some common metrics include normalized root mean squared error (NRMSE), symmetric KL divergence (SKLD), Frobenius norm (FNN), and pearson’s correlation coefficient (PCC). NRMSE penalizes high errors more heavily than RMSE, which makes it suitable for evaluating sparse matrices. SKLD compares the empirical distribution of the reconstructed matrix to the empirical distribution of the true matrix, which reflects the degree of similarity between the two. PCC calculates the linear correlation between the reconstructed matrix and the ground truth matrix, providing another perspective on the quality of the reconstruction.

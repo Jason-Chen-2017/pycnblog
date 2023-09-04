@@ -1,0 +1,1 @@
+Before we begin, please ensure that you have installed SSIS on your system and are familiar with basic programming concepts such as variables, conditional statements, loops, and exception handling. Additionally, make sure that you have access to an instance of SQL Server and an Excel file containing sample data.

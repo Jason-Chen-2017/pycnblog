@@ -1,0 +1,1 @@
+Learning to Paint Images using Convolutional Neural Networks with Latent Guides and Gradient Guidance

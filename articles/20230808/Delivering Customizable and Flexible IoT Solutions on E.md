@@ -1,0 +1,1 @@
+9. Delivering Customizable and Flexible IoT Solutions on Edge Devices - Arina Sanchez-Garcia

@@ -1,0 +1,1 @@
+7. Spring Cloud微服务实践之路——基础篇(七)：消息总线Spring Cloud Stream

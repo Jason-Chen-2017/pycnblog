@@ -1,0 +1,1 @@
+Note: This article shows advanced knowledge required for building and simulating complex robotic systems using ROS and Gazebo. Beginners may find it too complicated and time-consuming. However, if you have the necessary skills and patience, it is definitely worth reading!

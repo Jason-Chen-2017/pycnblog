@@ -1,0 +1,1 @@
+Creating a Smart Assistant for Car Manufacturers: Speech Recognition, Face Detection, and Text-to-Speech Technology 

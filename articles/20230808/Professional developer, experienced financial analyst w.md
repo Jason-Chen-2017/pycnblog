@@ -1,0 +1,1 @@
+Professional developer, experienced financial analyst with strong skills in technology operations. 

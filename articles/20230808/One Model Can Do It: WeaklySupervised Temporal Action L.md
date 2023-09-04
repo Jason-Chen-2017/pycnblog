@@ -1,0 +1,1 @@
+6. One Model Can Do It: Weakly-Supervised Temporal Action Localization with Uncertainty Estimation (TIP2019)

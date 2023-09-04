@@ -1,0 +1,1 @@
+6. Getting Started with DIY Smart Home Projects – Project Ideas and Risks

@@ -1,0 +1,1 @@
+2. Mastering Bitcoin and Other Cryptocurrencies: Programming the Open Blockchain

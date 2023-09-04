@@ -1,0 +1,33 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+  
+
+Obesity is a common health problem that can significantly affect the lives of individuals and their families. Although obesity has been recognized as one of the top five causes of death worldwide in recent years, it remains an under-diagnosed disease with no cure or prevention method. The elusive diagnosis of obesity could save millions of lives if we can identify the individuals who are most likely to be obese and develop personalized treatments for them.
+
+Populations genetics research has provided many solutions for identifying individuals at higher risk of obesity and developing better diet plans. However, existing methods often require extensive expertise from biologists and epidemiologists which may limit its widespread use by non-experts. Therefore, there is a need for new technologies that can automatically diagnose individuals at high risk of obesity without relying on biochemical tests and human experts. To address this challenge, we propose using population genetic analyses (PGA) to analyze large sets of DNA sequence data. We developed an algorithm called PGAOBE that combines statistical analysis techniques such as association testing, conditional probability, and machine learning algorithms to automatically detect individuals at high risk of obesity based on their DNA sequences alone.
+
+In this article, we will provide an overview of our approach and explain how we used PGA to identify individuals at high risk of obesity in the context of building better diet plans. Moreover, we will discuss potential challenges and limitations of our methodology and propose future directions for development. This study also provides a novel platform for applying advanced data mining tools and techniques for diseases related to obesity, opening up new opportunities for researchers interested in leveraging big data sources to improve obesity diagnosis. Overall, this work demonstrates the feasibility and practicality of applying PGA technology to diagnose individuals at high risk of obesity and generating personalized treatment plans for these individuals.
+
+# 2.Basic concepts and terms
+## 2.1.Population Genetics
+Population genetics refers to the study of the genetic makeup of a whole population rather than individual organisms. In other words, population genetics studies the alleles present in populations, including genes, allelic variants, recombination breakpoints, and inheritance patterns between individuals within a population. It involves three main steps:
+
+1. Analyze the genetic diversity among individuals in a population
+2. Determine the recombination rate and linkage disequilibrium (LD)
+3. Use the results of step 2 to estimate population-level properties such as mutation rates, drift, and selection coefficients.
+
+## 2.2.Association Analysis
+Association analysis is a powerful statistical technique for discovering associations between variables in large datasets. Association analysis can determine whether two measured quantitative variables have a causal relationship through analyzing the covariance between the two variables over a set of cases. If there is strong evidence of a significant correlation between the variables, then it suggests that changes in one variable tend to correlate with changes in the other variable.
+
+The most commonly used type of association analysis in population genetics is called GWAS, which stands for genome-wide association study. GWAS uses sequencing data generated from multiple individuals across a population to test for associations between different genetic markers (such as SNPs, copy numbers, or gene expression levels) and traits such as height, weight, blood pressure, and diseases like obesity. By comparing the effects of mutations on various phenotypes, scientists can identify loci that contribute significantly to certain diseases. Furthermore, they can use GWAS to study the genetic basis of complex diseases such as metabolic syndrome.
+
+Our proposed algorithm makes use of an extension of the traditional GWAS approach called conditional random fields (CRF). CRFs allow us to model the uncertainty of the observed genotype calls, allowing us to handle missing values and unusual variants. Additionally, CRFs enable us to account for inter-marker LD, which allows us to capture intra-population heterogeneity even when working only with a small number of samples from each population. Finally, our CRF implementation enables us to quickly compute the likelihood of a particular variant being associated with a trait, enabling us to prioritize variants for testing based on their potential impact on obesity.
+
+## 2.3.Machine Learning Algorithms
+Machine learning algorithms are computational models that learn to predict outcomes based on input data. One of the most popular types of machine learning algorithms used in population genetics is logistic regression, which estimates the probabilities of binary outcomes given predictor variables. Logistic regression has several advantages compared to linear regression: it can handle both continuous and categorical data; it can handle large amounts of data efficiently; and it produces well-calibrated probabilistic predictions. Our proposed algorithm employs logistic regression alongside a support vector classifier to classify individuals into those at low risk of obesity vs high risk of obesity.
+
+We further incorporate machine learning algorithms such as decision trees and random forests into our algorithm pipeline. Decision trees are useful for extracting meaningful features from complex datasets while random forests combine multiple decision trees to produce more accurate predictions. Random forests help to reduce overfitting due to irrelevant features, which occurs when a single tree learns too much about the training data and becomes too specialized and performs poorly on out-of-sample data.
+
+Overall, population genetics is transforming the field of medicine and biology, providing insights into fundamental questions such as why some people are obese, what factors contribute to obesity, and how to prevent or manage obesity. Our proposed algorithm, PGAOBE, automates the process of GWAS and classification, reducing the time and cost required to generate comprehensive risk stratification maps for populations. With improved diagnostic accuracy and personalized treatment plans, PGAOBE can play a crucial role in improving obesity management and promoting healthy living for millions of individuals around the world.

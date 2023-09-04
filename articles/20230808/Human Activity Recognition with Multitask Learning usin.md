@@ -1,0 +1,1 @@
+14. Human Activity Recognition with Multitask Learning using Wi-Fi Signals and Inertial Sensors

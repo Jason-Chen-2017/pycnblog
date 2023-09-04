@@ -1,0 +1,1 @@
+13. Navigating the Opportunities and Challenges of Green Energy Management at the Edge - Marie-Claude Sorge

@@ -1,0 +1,1 @@
+CNN(Convolutional Neural Network):卷积神经网络，是一个深度学习的前沿模型，是一种特定形式的神经网络。

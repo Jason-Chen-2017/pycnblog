@@ -1,0 +1,1 @@
+State Channels: Batching Off-Chain Transactions with Blockchain Smart Contracts

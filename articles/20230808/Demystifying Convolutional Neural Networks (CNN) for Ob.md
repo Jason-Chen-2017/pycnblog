@@ -1,0 +1,1 @@
+8. Demystifying Convolutional Neural Networks (CNN) for Object Recognition: Part I

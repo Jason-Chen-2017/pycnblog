@@ -1,0 +1,1 @@
+4. Introduction to sequence labeling for named entity recognition: This is an introduction to common methods and approaches for training and evaluating sequence labeling models for named entity recognition. It discusses the basic concepts of tagging sequences, types of taggers, and challenges associated with named entity recognition.

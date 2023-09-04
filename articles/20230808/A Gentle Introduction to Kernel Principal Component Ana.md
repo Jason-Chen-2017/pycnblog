@@ -1,0 +1,1 @@
+1. A Gentle Introduction to Kernel Principal Component Analysis and Its Applications in Finance (November 25, 2018)

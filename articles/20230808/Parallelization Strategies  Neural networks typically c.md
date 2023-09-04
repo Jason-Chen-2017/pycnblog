@@ -1,0 +1,1 @@
+18. Parallelization Strategies - Neural networks typically contain millions of parameters that require careful attention when parallelizing computations. Different strategies can be applied, including model partitioning, data parallelism, and parameter server architectures. 

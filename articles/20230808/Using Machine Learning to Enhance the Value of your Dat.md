@@ -1,0 +1,1 @@
+-"Using Machine Learning to Enhance the Value of your Data" - Mr. Brian Hollander, CTO, Analytics Company (Author)

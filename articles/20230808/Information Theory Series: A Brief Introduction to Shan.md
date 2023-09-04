@@ -1,0 +1,1 @@
+1. Information Theory Series: A Brief Introduction to Shannon’s Entropy and its Applications

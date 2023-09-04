@@ -1,0 +1,26 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+  
+
+Data science has become the essential skill for every professional in today’s world. It is one of the most transformative fields that are constantly evolving and changing as technology advances day by day. Every industry nowadays needs a data scientist who can use their analytical skills to make sense of large amounts of data generated through various sources such as social media, online transactions, sensors etc., to uncover insights that enable them to make better decisions. This book aims to provide a comprehensive guide on how to analyze big data using modern techniques and technologies. The reader will get insights into basic concepts related to data analytics, understand key algorithms used in data mining, implement them effectively, visualize results efficiently, identify potential issues, and finally apply the learnings towards solving real-world problems faced by businesses today. Moreover, with this book, we aim to empower readers with the necessary skills to leverage their data expertise and knowledge to build successful data-driven applications that impact millions or billions of people around the globe.
+
+In summary, this book provides an exhaustive overview of all aspects involved in analyzing big data from collecting and processing raw data to applying machine learning models to extract valuable insights that drive business outcomes. Additionally, it highlights important factors to consider when selecting appropriate tools and techniques for handling big data, including scalability, maintainability, security, and cost effectiveness. By the end of the book, the reader should have a deeper understanding of how to tackle complex problems in the field of data analysis.
+# 2.核心概念和术语
+This chapter presents fundamental terms and concepts related to data science and data engineering which are crucial for anyone looking to delve deep into big data analysis. 
+
+## 2.1 Big Data
+Big data refers to a collection of large volumes of structured and unstructured data that cannot be processed by traditional database systems due to size, velocity, or variety of formats. Big data commonly involves datasets that span multiple different sources, each containing tens of trillions of records, ranging from web traffic logs, sensor readings, medical images, text messages, financial transactions, and more. Big data requires new technologies, approaches, and architectures that can handle massive volumes, variable structure, high velocity, and varying formats. The goal is to gain insight into patterns, trends, and relationships across these datasets to discover actionable insights and improve decision making processes.
+
+## 2.2 Data Warehouse
+A data warehouse, also called enterprise data warehousing, stores structured and semi-structured data from multiple sources within a centralized location. It is typically optimized for querying large datasets quickly and providing consistent answers to ad hoc queries. It consists of several components such as an information schema, data storage, and ETL (extract, transform, load) pipelines. A data lake houses unstructured data and can serve as a foundation for building data science projects that require access to diverse types of data.
+
+## 2.3 Data Lake
+A data lake is a repository of raw data stored in its native format before being transformed into a dimensional or relational model for easier querying and analysis. It is often built upon open source frameworks like Hadoop Distributed File System (HDFS), Apache Hive, and AWS Glue. Its primary purpose is to store data in its original form, without any prior processing, enabling faster query times and improved accessibility to data. Additionally, it helps companies capture value out of past data to make better business decisions. For example, analysts might use data lakes to track user behavior over time and analyze the retail customer journey to recommend personalized offers based on what customers have done in the past.
+
+## 2.4 Batch Processing vs Stream Processing
+Batch processing and stream processing are two main forms of big data processing where data is analyzed at different scales. In batch processing, entire datasets are loaded onto a system at once, whereas in stream processing, data streams in continuously. Batch processing is used when large datasets need to be analyzed periodically while stream processing is suitable for interactive analysis, such as detecting fraudulent activities or predictive maintenance. 
+
+## 2.5 NoSQL Databases
+NoSQL databases are non-relational databases that offer flexible schemas and support dynamic data modeling. They are ideal for managing unstructured or semi-structured data, such as JSON documents, graph structures, and columnar tables. Examples include MongoDB, Cassandra, Couchbase, and Redis. These databases provide fast query performance and high availability compared to SQL databases, especially when dealing with large datasets. However, they may not offer ACID compliance and consistency guarantees, so careful design and monitoring of the application layers must be performed to ensure reliable data delivery.

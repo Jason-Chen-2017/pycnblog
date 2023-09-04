@@ -1,0 +1,1 @@
+* Handles complex relationships between variables better than standard PCA

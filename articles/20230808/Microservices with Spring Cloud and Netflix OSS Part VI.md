@@ -1,0 +1,1 @@
+7. Microservices with Spring Cloud and Netflix OSS -Part VII: Spring Cloud Stream Messaging for Integration Patterns

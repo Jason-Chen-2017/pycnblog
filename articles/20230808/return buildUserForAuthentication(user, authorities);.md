@@ -1,0 +1,1 @@
+            return buildUserForAuthentication(user, authorities);

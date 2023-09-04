@@ -1,0 +1,1 @@
+Text Detection and Recognition From Images using OpenCV and Tesseract OCR.

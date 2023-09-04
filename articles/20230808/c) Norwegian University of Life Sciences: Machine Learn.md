@@ -1,0 +1,1 @@
+c) Norwegian University of Life Sciences: Machine Learning Model for Predicting Future Temperatures

@@ -1,0 +1,1 @@
+4. Rank the alternatives accordingly - compare each alternative's normalized weighted distance score with all others and find out which one has the lowest score. Assign rank starting from 1 to n where n is number of alternatives.

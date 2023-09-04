@@ -1,0 +1,1 @@
+    drawBbox(frame, bbox)

@@ -1,0 +1,1 @@
+10. Beyond Kubernetes: How to Manage a Modern Data Platform Using Declarative Tools like Argo CD and Terraform

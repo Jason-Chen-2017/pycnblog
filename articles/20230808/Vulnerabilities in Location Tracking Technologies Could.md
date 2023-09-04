@@ -1,0 +1,1 @@
+7. Vulnerabilities in Location Tracking Technologies Could Lead to Accidents and Catastrophic Failures

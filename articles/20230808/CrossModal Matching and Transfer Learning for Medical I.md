@@ -1,0 +1,1 @@
+2. Cross-Modal Matching and Transfer Learning for Medical Image Segmentation (MICCAI2018)

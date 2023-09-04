@@ -1,0 +1,1 @@
+- 对比度变化 (Brightness and Contrast Adjustments)

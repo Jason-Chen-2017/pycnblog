@@ -1,0 +1,1 @@
+7. Real-time Keyword Spotting Using Fingerprint Template Matching With Fisher Kernels

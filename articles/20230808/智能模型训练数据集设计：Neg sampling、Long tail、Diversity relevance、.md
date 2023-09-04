@@ -1,0 +1,1 @@
+8. 智能模型训练数据集设计：Neg sampling、Long tail、Diversity relevance、Consistency and variability等。

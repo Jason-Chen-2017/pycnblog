@@ -1,0 +1,1 @@
+Understanding LSTM Networks: A Deep Dive into the Math of Learning and Forgetting Mechanisms

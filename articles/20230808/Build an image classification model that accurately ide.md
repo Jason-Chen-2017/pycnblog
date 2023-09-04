@@ -1,0 +1,1 @@
+9. Build an image classification model that accurately identifies objects and their categories in images by leveraging deep learning techniques

@@ -1,0 +1,1 @@
+while cap.isOpened():

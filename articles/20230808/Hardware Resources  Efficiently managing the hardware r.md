@@ -1,0 +1,1 @@
+2. Hardware Resources - Efficiently managing the hardware resources available is critical to building a high-performing deep learning model. Too little or too much hardware resource usage leads to slow training times and even worse results. 

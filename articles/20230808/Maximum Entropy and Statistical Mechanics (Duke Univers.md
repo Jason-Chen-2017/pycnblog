@@ -1,0 +1,1 @@
+2. Maximum Entropy and Statistical Mechanics (Duke University Press)

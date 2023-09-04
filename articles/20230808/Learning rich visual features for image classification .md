@@ -1,0 +1,1 @@
+3. Learning rich visual features for image classification using deep spatial autoencoders (Tan et al., 2016)

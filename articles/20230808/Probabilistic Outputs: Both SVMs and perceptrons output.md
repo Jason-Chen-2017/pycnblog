@@ -1,0 +1,1 @@
+2. Probabilistic Outputs: Both SVMs and perceptrons output a probability score indicating how likely it is that an instance belongs to each class. The probability estimate is obtained by applying a logistic function on the weighted sum of inputs passed through the model.

@@ -1,0 +1,1 @@
+6. On Improving Generalization Performance by using Regularization in VAEs

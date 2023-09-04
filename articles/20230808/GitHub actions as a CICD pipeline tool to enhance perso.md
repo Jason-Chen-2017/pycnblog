@@ -1,0 +1,1 @@
+GitHub actions as a CICD pipeline tool to enhance personal work flow. 

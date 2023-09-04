@@ -1,0 +1,1 @@
+1.How to be a Programmer: The Definitive Guide to Learning Programming Skills by David Lesh

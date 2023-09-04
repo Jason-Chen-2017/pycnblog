@@ -1,0 +1,1 @@
+4. Adventures in Building a Smart Factory with Intel's industrial gateways - Adam Shi

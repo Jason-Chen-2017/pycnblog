@@ -1,0 +1,1 @@
+7. LSTM Based Sequence Labeling for Named Entity Recognition in Bidirectional LSTM CRF Model

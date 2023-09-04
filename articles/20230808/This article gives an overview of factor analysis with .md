@@ -1,0 +1,1 @@
+This article gives an overview of factor analysis with examples using Python libraries such as scikit-learn and statsmodels in data science. The main takeaway is that factor analysis is useful when we have multivariate data which has hidden factors or latent variables that are unobservable. 

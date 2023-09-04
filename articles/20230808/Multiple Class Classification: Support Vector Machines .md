@@ -1,0 +1,1 @@
+5. Multiple Class Classification: Support Vector Machines (SVMs) can handle multiple binary and multi-class classification problems with relatively high accuracy rates.

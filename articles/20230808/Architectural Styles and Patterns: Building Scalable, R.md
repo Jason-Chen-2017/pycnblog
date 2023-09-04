@@ -1,0 +1,1 @@
+1. Architectural Styles and Patterns: Building Scalable, Resilient, and Maintainable Systems

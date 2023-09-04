@@ -1,0 +1,1 @@
+c) Johnson & Johnson: IoT in Healthcare: Three Examples of How Technology Is Affecting Healthcare Delivery

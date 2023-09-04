@@ -1,0 +1,1 @@
+b) British Petroleum: Protecting Cities from Disruptive Technologies like IoT

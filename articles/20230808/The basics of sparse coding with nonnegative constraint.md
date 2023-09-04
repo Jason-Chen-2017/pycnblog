@@ -1,0 +1,1 @@
+The basics of sparse coding with nonnegative constraints and its practical use cases such as signal recovery, compressed sensing, and bioinformatics. 

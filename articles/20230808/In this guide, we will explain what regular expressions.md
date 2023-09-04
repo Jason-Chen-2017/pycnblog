@@ -1,0 +1,1 @@
+In this guide, we will explain what regular expressions are and how they work. We will then go through practical examples of their use, including searching for emails, phone numbers, and IP addresses in text datasets. By the end of this guide, you should have a good grasp on regular expressions and know how to apply them in your own data science projects.

@@ -1,0 +1,1 @@
+Speeding Up Training by Memoization and Batching with TensorFlow

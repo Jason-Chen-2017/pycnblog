@@ -1,0 +1,1 @@
+8. Perform sentiment analysis using text mining tools such as NLTK or spaCy in Python to extract valuable insights from customer feedback

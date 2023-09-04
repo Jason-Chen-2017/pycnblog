@@ -1,0 +1,1 @@
+Data Transfer Pipelines in Amazon Athena – Best Practices for ETL Processes

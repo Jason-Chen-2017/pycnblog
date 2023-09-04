@@ -1,0 +1,1 @@
+Semantically Constrained Attention Generative Adversarial Networks (SCAN-GAN)

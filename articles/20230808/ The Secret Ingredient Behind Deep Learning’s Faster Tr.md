@@ -1,0 +1,1 @@
+- The Secret Ingredient Behind Deep Learning’s Faster Training Times: Batch Normalization

@@ -1,0 +1,1 @@
+4. Visual Geometry Group at Microsoft Research - Face Recognition using Convolutional Neural Networks (CNN) 

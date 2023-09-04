@@ -1,0 +1,20 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+  
+
+Cluster analysis is an unsupervised learning technique that involves grouping similar data points together based on their characteristics or features. Clustering algorithms aim to identify distinct groups within data sets and interpret them according to certain criteria such as similarity or co-occurrence. The number of clusters can significantly affect the performance of clustering models, particularly when dealing with high dimensional datasets. Identifying the optimal number of clusters is important for many applications including market segmentation, customer classification, and image recognition. However, determining the optimum number of clusters is not always straightforward especially if there are no prior knowledge about the underlying structure of the dataset. In this article, we will discuss how the elbow method can be used to determine the optimal number of clusters in a dataset without any prior knowledge. We also provide some tips and tricks for choosing an appropriate metric to evaluate cluster quality. Finally, we present some Python code examples that illustrate the use of the elbow method to select the optimal number of clusters. 
+
+# 2.基本概念和术语
+## 2.1 K-means Clustering
+
+## 2.2 Elbow Method
+The elbow method refers to the optimization approach where the value of a measure (such as variance) is plotted against different values of an attribute (such as the number of clusters). The idea behind the elbow method is to find the "elbow" point on the plot, which corresponds to the best choice of the number of clusters for a given dataset. Typically, the elbow point indicates the level at which adding additional clusters would only increase the cost function marginally, making it unlikely to result in better clustering results. There are multiple ways to define the distance metric used in the elbow method, but popular choices include total within-cluster sum of squares (WCSS), average within-cluster sum of squares (ASWCS), and total within-cluster silhouette scores (TSIC). One advantage of WCSS and ASWCS metrics is that they do not take the intrinsic dimensionality of the data into account, so they work well even for highly non-linearly separable datasets. On the other hand, TSIC takes the shape of the convex hull around the data points into account, resulting in a better estimation of the true global separation between clusters. Despite these differences, the elbow method remains a widely used tool for selecting the optimal number of clusters in various contexts, including finance, biology, and computer vision. 
+
+Here's a graphical representation of the elbow method:
+
+
+In the figure above, the x-axis represents the chosen number of clusters, while the y-axis represents either WCSS, ASWCS, or TSIC. When looking for the elbow point, start by guessing the possible numbers of clusters, say from 2 to 10, and compute the corresponding values of the chosen measure. Then, place markers on the graph at the intersection of consecutive line segments, representing potential regions of higher curvature. These regions correspond to suboptimal solutions that have been reached earlier than the global optimum. Next, discard the first region found and repeat the procedure until you reach the highest point on the curve, indicating the elbow point. This point usually marks the transition from smoothly increasing curvature towards plateau, where additional clusters do not contribute much benefit to the objective function anymore. Therefore, the ideal number of clusters should be closer to the elbow point.
+
+For example, consider a scenario where the goal is to group 10 data points into 4 clusters. Assume that our initial guess was that there were two clear groups of four points in space and two fuzzy groups of six points in space. Suppose that the elbow point happens to lie just below the second fuzzy group, which suggests that three clusters might perform better. Nevertheless, keep in mind that the optimal number of clusters depends on the specific context and nature of the problem being solved.

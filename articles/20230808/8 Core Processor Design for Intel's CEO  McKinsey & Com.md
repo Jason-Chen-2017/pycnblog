@@ -1,0 +1,1 @@
+4.8 Core Processor Design for Intel's CEO - McKinsey & Company Business Intelligence Newsroom

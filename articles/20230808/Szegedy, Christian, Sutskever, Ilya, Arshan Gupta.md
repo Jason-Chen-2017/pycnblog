@@ -1,0 +1,1 @@
+Szegedy, Christian, Sutskever, Ilya, Arshan Gupta

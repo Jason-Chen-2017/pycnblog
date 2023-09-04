@@ -1,0 +1,1 @@
+6. Deep Reinforcement Learning as a Tool for Model-Based Reinforcement Learning - NIPS 2018

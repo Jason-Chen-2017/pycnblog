@@ -1,0 +1,1 @@
+8. How Does Information Transfer Work? Part I – Definition and Three Types of Transmission Channels

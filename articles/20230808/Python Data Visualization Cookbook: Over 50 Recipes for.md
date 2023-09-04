@@ -1,0 +1,1 @@
+1. Python Data Visualization Cookbook: Over 50 Recipes for Effective Visualizations using Matplotlib, Seaborn, and Plotly 

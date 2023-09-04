@@ -1,0 +1,1 @@
+Translated by Google Translate Toolkit and edited for style and clarity.

@@ -1,0 +1,1 @@
+6. Gated Recurrent Unit (GRU) Implementation from Scratch Using NumPy and TensorFlow

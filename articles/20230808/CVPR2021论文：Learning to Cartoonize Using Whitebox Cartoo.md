@@ -1,0 +1,1 @@
+CVPR2021论文：Learning to Cartoonize Using White-box Cartoon Representations

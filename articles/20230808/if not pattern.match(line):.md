@@ -1,0 +1,1 @@
+        if not pattern.match(line):

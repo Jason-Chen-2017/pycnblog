@@ -1,0 +1,1 @@
+- Kubelet 主动向 APIServer 发送汇报当前节点上容器的资源使用情况。

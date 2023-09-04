@@ -1,0 +1,1 @@
+例如，在医疗领域，从 BERT 到 TinyBERT，以及蒸馏后的 TinyBERT 都取得了不错的结果。

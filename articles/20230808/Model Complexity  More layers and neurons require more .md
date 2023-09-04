@@ -1,0 +1,1 @@
+4. Model Complexity - More layers and neurons require more computational power and time to train the model. This means that larger models can easily become prohibitively expensive both in terms of storage and computing time. 

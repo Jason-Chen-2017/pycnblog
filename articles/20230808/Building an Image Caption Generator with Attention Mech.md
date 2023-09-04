@@ -1,0 +1,1 @@
+Building an Image Caption Generator with Attention Mechanism using PyTorch and LSTM Network Architecture – a Step-by-Step Tutorial

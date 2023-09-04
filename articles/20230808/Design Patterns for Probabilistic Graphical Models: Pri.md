@@ -1,0 +1,1 @@
+Design Patterns for Probabilistic Graphical Models: Principles and Practices - This is a thorough treatment of design patterns for building graphical models, focusing on specific issues related to uncertainty quantification and variational inference. The chapters include guidelines for choosing a suitable pattern and implementing it effectively.

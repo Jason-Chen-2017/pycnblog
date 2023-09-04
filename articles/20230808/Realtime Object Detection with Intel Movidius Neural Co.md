@@ -1,0 +1,1 @@
+Real-time Object Detection with Intel Movidius Neural Compute Stick 

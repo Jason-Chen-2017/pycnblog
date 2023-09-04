@@ -1,0 +1,1 @@
+10. What is the Role of Oracle RAC in Relational DBMS Architecture?

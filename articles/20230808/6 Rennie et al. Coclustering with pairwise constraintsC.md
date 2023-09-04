@@ -1,0 +1,1 @@
+[6] Rennie et al. Co-clustering with pairwise constraints[C]//Advances in neural information processing systems. 2008: 1667-1674.

@@ -1,0 +1,1 @@
+Linear Discriminant Analysis in Python with scikit-learn.

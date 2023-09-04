@@ -1,0 +1,1 @@
+Consumer behaviours are changing and evolving at an alarming pace. With the advent of digital marketing, chatbots, artificial intelligence (AI) and more, companies have unlocked new opportunities for better understanding customer needs and delivering personalized experiences across multiple touchpoints—whether on mobile devices or websites. 

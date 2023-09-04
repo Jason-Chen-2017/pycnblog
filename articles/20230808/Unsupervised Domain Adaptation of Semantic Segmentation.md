@@ -1,0 +1,1 @@
+12. Unsupervised Domain Adaptation of Semantic Segmentation with Multi-Modal GAN and Contrastive Learning

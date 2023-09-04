@@ -1,0 +1,1 @@
+------__No longer support scanning QR codes to view content! Please click on the link above to read or preview content.__------ 

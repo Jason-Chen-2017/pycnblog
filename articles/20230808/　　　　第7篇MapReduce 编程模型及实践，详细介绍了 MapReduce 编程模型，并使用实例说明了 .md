@@ -1,0 +1,1 @@
+　　　　第7篇“MapReduce 编程模型及实践”，详细介绍了 MapReduce 编程模型，并使用实例说明了 MapReduce 的实现方式。 

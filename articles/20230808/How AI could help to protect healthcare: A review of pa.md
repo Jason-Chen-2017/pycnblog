@@ -1,0 +1,1 @@
+How AI could help to protect healthcare: A review of patient-doctor communication technologies

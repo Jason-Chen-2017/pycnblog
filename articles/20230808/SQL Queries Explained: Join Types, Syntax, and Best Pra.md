@@ -1,0 +1,1 @@
+1. SQL Queries Explained: Join Types, Syntax, and Best Practices

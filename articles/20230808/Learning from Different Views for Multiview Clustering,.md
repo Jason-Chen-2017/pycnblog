@@ -1,0 +1,1 @@
+4. Learning from Different Views for Multi-view Clustering, Zhihao Yu et al., Pattern Recognition, Elsevier, Volume 75 (November 2016), Pages 218-231, ISBN 978-0-12-803340-5, DOI: 10.1016/j.patcog.2016.06.021

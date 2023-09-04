@@ -1,0 +1,1 @@
+A Comprehensive Evaluation of Text-to-Image Generation Methods on Chinese Artworks

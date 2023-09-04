@@ -1,0 +1,1 @@
+17. Lightweight Face Detection on Resource-Limited Devices using MobileNetV2

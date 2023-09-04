@@ -1,0 +1,1 @@
+2. Calculate the weighted distance between each alternative and ideal solution - calculate euclidean distance or any other suitable distance metric for each pair of alternative and ideal solution. Multiply the distance value with respective weights to get the weighted distance.

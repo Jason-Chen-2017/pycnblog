@@ -1,0 +1,1 @@
+            print("Epoch:", epoch, "Loss:", loss(X, y, w))

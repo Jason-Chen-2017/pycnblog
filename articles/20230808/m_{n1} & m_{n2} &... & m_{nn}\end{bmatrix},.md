@@ -1,0 +1,1 @@
+m_{n1} & m_{n2} &... & m_{nn}\end{bmatrix},

@@ -1,0 +1,1 @@
+10. Scaling Up Natural Language Processing Using GPU Accelerators and Neural Networks

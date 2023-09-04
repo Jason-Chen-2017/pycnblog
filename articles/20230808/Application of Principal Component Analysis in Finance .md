@@ -1,0 +1,1 @@
+3. Application of Principal Component Analysis in Finance and Healthcare Industry 

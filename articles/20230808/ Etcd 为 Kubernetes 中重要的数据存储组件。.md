@@ -1,0 +1,1 @@
+- Etcd 为 Kubernetes 中重要的数据存储组件。

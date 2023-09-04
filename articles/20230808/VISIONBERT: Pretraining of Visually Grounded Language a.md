@@ -1,0 +1,1 @@
+5. VISION-BERT: Pre-training of Visually Grounded Language and Vision for Vision-Language Tasks (arXiv)

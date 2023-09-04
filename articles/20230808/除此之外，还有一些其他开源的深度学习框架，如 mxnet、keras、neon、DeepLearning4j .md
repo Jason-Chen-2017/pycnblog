@@ -1,0 +1,1 @@
+除此之外，还有一些其他开源的深度学习框架，如 mxnet、keras、neon、DeepLearning4j 等。

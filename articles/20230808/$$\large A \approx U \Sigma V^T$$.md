@@ -1,0 +1,1 @@
+$$\large A \approx U \Sigma V^T$$

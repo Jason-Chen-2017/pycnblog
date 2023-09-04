@@ -1,0 +1,1 @@
+2. Generating insights from large datasets using SQL, Excel, Tableau

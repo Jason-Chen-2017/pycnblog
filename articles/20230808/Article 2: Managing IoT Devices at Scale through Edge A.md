@@ -1,0 +1,1 @@
+Article 2: Managing IoT Devices at Scale through Edge Analytics

@@ -1,0 +1,1 @@
+    sess.run(tf.global_variables_initializer())

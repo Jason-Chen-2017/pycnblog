@@ -1,0 +1,1 @@
+3. Thinking Like an AI: Understanding Human Decisions through the Lens of Reasoning Abilities

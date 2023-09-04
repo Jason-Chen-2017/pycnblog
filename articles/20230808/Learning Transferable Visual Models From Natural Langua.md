@@ -1,0 +1,1 @@
+4. Learning Transferable Visual Models From Natural Language Supervision[4]

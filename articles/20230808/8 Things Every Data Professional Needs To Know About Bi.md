@@ -1,0 +1,1 @@
+5. 8 Things Every Data Professional Needs To Know About Big Data Storage

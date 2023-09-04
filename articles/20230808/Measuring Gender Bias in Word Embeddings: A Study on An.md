@@ -1,0 +1,1 @@
+10. Measuring Gender Bias in Word Embeddings: A Study on Analogy Sets and Counterfactual Reasoning (Women in AI Workshop)

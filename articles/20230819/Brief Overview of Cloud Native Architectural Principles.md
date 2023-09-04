@@ -1,0 +1,55 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+  
+
+Cloud native computing refers to the approach to building and running applications that takes advantage of the capabilities of modern cloud-based platforms to deliver features quickly, reliably, and with low latency. It is a software development paradigm that enables organizations to build scalable solutions on an agile way using containers, microservices architecture, and serverless architectures. Here are some benefits of cloud native:
+
+1. Scalability - With cloud native design principles like containerization and service-oriented architecture, developers can scale their application horizontally or vertically by adding more resources as needed. This means faster delivery of new features, improved efficiency, and reduced costs for smaller companies.
+
+2. Agility - Developers can deploy updates to existing services without interrupting users. The use of continuous integration and deployment (CI/CD) pipelines allows teams to release new versions of their code frequently with confidence.
+
+3. Flexibility - Cloud native technologies enable organizations to choose the right tools for each need, making it easier to develop flexible and adaptable systems. For example, you could use different programming languages, databases, and middleware depending on your specific needs.
+
+4. Portability - Because cloud native platforms provide infrastructure-as-a-service (IaaS), they make it easy to move workloads between environments. This makes it possible for teams to collaborate more effectively across departments within an organization.
+
+5. Resilience - Cloud native architectures have built-in resiliency measures such as auto-scaling and self-healing mechanisms, which help protect applications from failures and ensure continuity of operations in case of disasters.
+
+6. Security - With cloud providers providing security features like identity and access management, network segmentation, encryption at rest and in transit, and intrusion detection and prevention, organizations can focus on developing secure and robust applications while minimizing risk.
+
+In summary, cloud native architectural principles aim to simplify the process of building scalable, reliable, and flexible distributed systems while leveraging the power of cloud computing technology. By applying these principles, organizations can accelerate time to market, increase productivity, reduce costs, and improve customer satisfaction. However, implementing them requires careful planning, training, and implementation across several layers of the organization including development, testing, operations, and compliance.
+
+This article provides an overview of core principles of cloud native architecture. We will cover four main areas: containers, microservices, serverless, and platform design patterns. Each area will be discussed briefly alongside best practices for building cloud-native apps and useful tips for maintaining quality control throughout the lifecycle of the app. 
+
+We hope this brief introduction helps readers understand the concept of cloud native architecture better and identify where they should start looking next when considering building cloud-native applications. If there are any questions or concerns about the content, please feel free to comment below!
+# 2.Basic Concepts and Terminology
+## Containers
+Containers are one of the key components of cloud native computing. They allow developers to package up an application with all of its dependencies into a lightweight unit called a container image, which can then be run anywhere – either on premises or in the public clouds. Containers isolate processes and enable resource sharing between applications, ensuring that each application runs independently and with minimal interference from others. While Docker has become the de facto standard for containerization, other container technologies like rkt, LXC, and Rocket also exist.
+
+A container consists of three essential parts: the container image, a runtime environment, and a set of instructions for how the container should be started. When you launch a container, you pass in the container image and specify certain parameters, such as what port to expose, how much memory to allocate, etc., which are used by the runtime environment to configure the container. Once launched, the container runs isolated from other containers and shares no hardware resources with the host system until explicitly allocated.
+
+The use of containers simplifies the creation, management, and deployment of applications because they remove the need to manually install dependencies or configure servers before deploying an application. Furthermore, container orchestration frameworks like Kubernetes provide a powerful toolset for managing containerized applications in production environments.
+
+One drawback of using containers is that they limit the types of problems that can be solved easily. In most cases, complex issues like concurrency and synchronization still require manual intervention, limiting the scope of potential solutions. Nonetheless, the vast majority of enterprise applications today are already designed and developed using containers, making the shift even more significant. 
+
+## Microservices
+Microservices is another key principle of cloud native computing. In contrast to monolithic applications, which typically include many moving parts spread across multiple tiers, microservices break down large applications into smaller, independent modules that communicate with each other over well-defined APIs. This approach promotes modularity, loose coupling, and high testability. Instead of building a single giant application, developers can build smaller modular pieces that can be deployed independently, scaled, and updated independently of other parts of the system. Additionally, microservices can leverage automation through continuous integration and deployment techniques, allowing changes to be rolled out swiftly and safely.
+
+Each microservice can be implemented using various programming languages and frameworks, enabling developers to choose the ones that suit their skill sets and preferences. Some popular choices include Java Spring Boot, Node.js Express, Python Flask, Ruby Rails, Golang Gin, and Rust Actix. There are also numerous third-party open source projects available, making it relatively simple to create custom microservices if necessary.
+
+Microservices also enable horizontal scaling, meaning that you can add additional instances of a service to handle increased load. This technique improves throughput and reduces response times for end users, as requests are automatically routed to the appropriate instance based on current workload. Another benefit of microservices is that they often implement request-driven asynchronous communication, which means that instead of blocking waiting for responses, individual microservices can asynchronously return results once they finish processing the request. This approach leads to better performance, responsiveness, and scalability.
+
+However, microservices introduce complexity in terms of managing deployments, monitoring, debugging, and other operational tasks that need to be addressed specifically for a distributed system. One common challenge is figuring out how to manage and monitor the flow of data amongst the different services, as well as dealing with cross-cutting concerns like authentication and authorization. Nevertheless, microservices offer substantial benefits in terms of flexibility, scalability, and maintainability compared to traditional monolithic applications.
+
+## Serverless Architecture
+Serverless computing describes the practice of offloading computationally intensive tasks from the developer's laptops or data centers and delegating them to fully managed cloud platforms. Essentially, serverless architecture allows developers to write code and forget about provisioning and managing servers. Rather than configuring and installing operating systems and webservers, developers simply upload their code and let the cloud provider take care of everything else. Additionally, serverless functions execute ephemerally, only executing when triggered by events like HTTP requests or database writes. This frees developers from worrying about scaling, patching, and security patches, reducing overall maintenance burden.
+
+While serverless architectures may seem scary at first glance, they do provide advantages for small to medium businesses who want to spend less time managing servers and more time focusing on writing business logic. They also enable greater autonomy and flexibility for developers, who don't need to worry about infrastructure details or having to deal with highly specialized skills like networking and security. Moreover, serverless functions are billed on a per-execution basis rather than being charged based on fixed periods of usage, further improving cost efficiencies. Finally, serverless architectures provide seamless integration with event-driven architectures, enabling developers to respond to external events instantly without needing to constantly poll the server.
+
+Overall, serverless architectures promise to significantly improve the speed and agility of software development, but also present unique challenges related to the need to provision and manage servers and the rapid expansion of the cloud platform. Despite these challenges, however, serverless computing is poised to revolutionize both industries and organizations alike, making it worth exploring further.
+
+## Platform Design Patterns
+Platform design patterns describe ways that cloud platforms can abstract away underlying infrastructure details so that developers can focus on solving business problems. Examples of commonly used platform design patterns include Service-Oriented Architecture (SOA) and Event-Driven Architecture (EDA). Both of these patterns rely on loosely coupled, composable microservices that interact with each other via well-defined APIs. SOA breaks down a monolithic application into separate, modular services that perform a specific task. EDA uses message brokers to connect services together and enable asynchronous communication, giving developers the ability to react to events in real-time without needing to wait for responses.
+
+Both SOA and EDA promote modularization and extensibility, as microservices can be added, removed, or modified without affecting other parts of the application. This approach enables teams to reuse code and resources more efficiently, leading to decreased total cost of ownership, improved velocity, and shorter feedback loops. Similarly, SOA and EDA help to address the problem of vendor lock-in by separating concerns like storage, networking, and security from application-specific logic, making it easier to switch vendors later if necessary. Overall, platform design patterns offer great benefits to developers, regardless of whether they are working in the cloud or on-premises.

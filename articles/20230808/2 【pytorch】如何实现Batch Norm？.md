@@ -1,0 +1,1 @@
+[2] 【pytorch】如何实现Batch Norm？  

@@ -1,0 +1,1 @@
+4. Object Recognition with Local Scale Features (Lecture Notes on Computer Science)

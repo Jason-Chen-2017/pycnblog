@@ -1,0 +1,1 @@
+    Remember that "AI is the new electricity"!

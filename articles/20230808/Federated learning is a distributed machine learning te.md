@@ -1,0 +1,1 @@
+Federated learning is a distributed machine learning technique where each participant learns from local data without sharing any sensitive information with others. This article provides an introduction to federated learning and outlines its advantages over centralized learning methods. 

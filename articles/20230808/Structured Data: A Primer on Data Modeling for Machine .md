@@ -1,0 +1,1 @@
+6.Structured Data: A Primer on Data Modeling for Machine Learning by Robin Petersen

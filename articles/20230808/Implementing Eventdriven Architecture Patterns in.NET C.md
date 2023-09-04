@@ -1,0 +1,1 @@
+Implementing Event-driven Architecture Patterns in.NET Core.

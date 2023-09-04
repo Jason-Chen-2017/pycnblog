@@ -1,0 +1,1 @@
+2. GANs Introduction and Implementation: A step-by-step guide with code

@@ -1,0 +1,1 @@
+d) Qorvo: IoT Platform Integration and Certification: Your Guide to the Latest Updates

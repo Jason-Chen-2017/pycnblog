@@ -1,0 +1,1 @@
+2. A Survey on Visual Question Answering: Methods and Evaluation Metrics

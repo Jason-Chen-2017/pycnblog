@@ -1,0 +1,1 @@
+e. Spatial Domain Filtering Using Wavelet Transform

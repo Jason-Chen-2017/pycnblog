@@ -1,0 +1,1 @@
+            This version features improved user experience and bug fixes as well as some new features such as support for Mermaid graphs, tag pages, math typesetting with MathJax etc. Please check out the README file to learn more about how to install or customize this theme.

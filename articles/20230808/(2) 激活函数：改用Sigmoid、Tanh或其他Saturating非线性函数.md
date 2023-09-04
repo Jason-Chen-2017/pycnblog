@@ -1,0 +1,1 @@
+(2) 激活函数：改用Sigmoid、Tanh或其他Saturating非线性函数

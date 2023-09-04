@@ -1,0 +1,1 @@
+Conditional Image Synthesis with Auxiliary Classifier GANs

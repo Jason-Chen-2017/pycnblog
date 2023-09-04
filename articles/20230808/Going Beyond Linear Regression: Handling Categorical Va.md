@@ -1,0 +1,1 @@
+5. Going Beyond Linear Regression: Handling Categorical Variables and Other Non-Linear Relationships with Tree Based Methods, Forecasting Time Series Data with RNNs or LSTMs, Clustering Images using CNNs and Autoencoders, Generating Fake News with GANs, and Implementing Online Algorithms with Exponential Mechanisms.

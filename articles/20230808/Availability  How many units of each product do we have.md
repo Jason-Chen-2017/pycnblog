@@ -1,0 +1,1 @@
+3. Availability - How many units of each product do we have available in stock? If we have sufficient inventory, give lower weightage to this criterion.

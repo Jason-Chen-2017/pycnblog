@@ -1,0 +1,1 @@
+15. Disrupting the Automotive Industry’s Monopoly on AI Powered Driver Assistance Systems - Julian Stollberg 

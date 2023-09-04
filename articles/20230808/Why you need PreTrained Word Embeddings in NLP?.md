@@ -1,0 +1,1 @@
+10. Why you need Pre-Trained Word Embeddings in NLP? 

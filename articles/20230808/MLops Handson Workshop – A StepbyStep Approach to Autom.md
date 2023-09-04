@@ -1,0 +1,1 @@
+26. MLops Hands-on Workshop – A Step-by-Step Approach to Automate Data Science Projects

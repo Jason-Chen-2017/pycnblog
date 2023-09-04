@@ -1,0 +1,1 @@
+8. 《训练BERT模型的注意事项》：Gotchas when training a custom BERT model: Data preprocessing techniques, hyperparameters tuning, and tips on fine-tuning

@@ -1,0 +1,1 @@
+            alive_indices.append(i)

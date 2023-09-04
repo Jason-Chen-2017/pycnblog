@@ -1,0 +1,1 @@
+3. 有Spark、Hive或Presto等大数据计算框架的使用经验；

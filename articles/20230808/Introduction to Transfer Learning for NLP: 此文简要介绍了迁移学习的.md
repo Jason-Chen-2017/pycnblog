@@ -1,0 +1,1 @@
+7. Introduction to Transfer Learning for NLP: 此文简要介绍了迁移学习的概念、发展历史以及应用。

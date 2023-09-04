@@ -1,0 +1,1 @@
+2.Why MicroSoft is developing Cortana Intelligence Suite? 

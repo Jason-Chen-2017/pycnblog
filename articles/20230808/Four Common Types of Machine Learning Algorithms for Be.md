@@ -1,0 +1,1 @@
+6. Four Common Types of Machine Learning Algorithms for Beginners 

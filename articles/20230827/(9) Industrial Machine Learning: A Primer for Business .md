@@ -1,0 +1,25 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+  
+
+Industrial machine learning (IML) is a subfield of artificial intelligence that involves developing algorithms and techniques to automatically learn from large amounts of data in complex environments such as industries or manufacturing processes. The field has gained significant attention over the past years because of its potential applications in various fields such as healthcare, finance, supply chain management, transportation, retail, and energy. However, it has also become more challenging due to several factors such as data privacy issues, model interpretability, and algorithm scalability. Therefore, this article provides an introduction on IML and how it can be used by business leaders to gain competitive advantage. 
+
+This primer aims to provide basic concepts, principles, and methods related to industrial machine learning for businesses with practical examples. It will cover fundamental knowledge such as data types, feature engineering, dataset splitting, evaluation metrics, hyperparameter tuning, and algorithm selection. Moreover, it will discuss best practices in applying IML at different stages of the product development lifecycle, including requirements gathering, design, implementation, validation, and deployment. Finally, we will highlight industry-specific challenges and opportunities for businesses using IML technologies. 
+
+By reading this primer, you will understand the significance of IML technology and its role in transforming businesses. You will be able to apply these ideas and techniques effectively to solve problems in your industry or area of expertise. Additionally, by being familiar with the latest advancements and research trends in the field, you will have a better understanding of the future of this emerging technology. Overall, this primer will help you take your business analytics skills to the next level by enabling you to use AI tools to make smarter decisions and improve operational efficiencies. 
+
+2.专栏简介
+The main objective of this column is to guide readers through the world of industrial machine learning so they can make informed and strategic decisions about their organization's IT strategy, build products faster, and reduce costs while increasing profitability. By providing a comprehensive framework for IML, this column seeks to create a bridge between technical experts and non-technical decision makers, giving them a clear overview of the key aspects involved in building and deploying successful IML solutions within organizations. In addition to presenting cutting-edge industry insights, our column offers hands-on tutorials, demos, and case studies that demonstrate real-world implementations of IML techniques within a variety of industries. Our goal is to promote collaboration between technical professionals and domain experts alike, fostering mutual benefit and accelerating the pace of technological progress.
+
+This primer is suitable for individuals who are interested in exploring industrial machine learning but do not necessarily possess extensive experience in software development, data science, or machine learning. This article assumes some familiarity with linear algebra, probability theory, statistics, and optimization techniques. We have included several links to relevant resources throughout the article to assist you in navigating the vast landscape of advanced machine learning topics. 
+
+3.作者简介
+<NAME> is an experienced manager with proven track record of delivering value through technological innovation. He holds a Bachelor’s degree in Computer Science and Engineering from Hanoi University of Science and Technology (HUST), Vietnam and an MBA in Finance & Banking from Harvard Business School. He worked for leading financial institutions such as JPMorgan Chase, Goldman Sachs, Royal Dutch Shell, Wells Fargo, and Barclays. 
+
+Shin first became involved with computer science when he was working in the banking sector. During his time there, he discovered a need for automated systems to optimize customer service operations, which led him to pursue master’s degrees in computer science and engineering. Shin then joined the Robotics Institute at Carnegie Mellon University as an assistant professor, where he developed state-of-the-art robotics algorithms for autonomous navigation tasks. 
+
+He co-founded Vyas Labs, a startup focused on leveraging deep learning techniques to develop next-generation robotics platforms. Since then, he has been involved in creating many innovative projects ranging from automotive assistance to personalized medicine. Currently, Shin leads his team at Red Hat, where he helps organizations adopt AI/ML technologies into their daily operations to enhance efficiency, accuracy, and revenue generation. 
+
+In his free time, Shin enjoys hiking, playing tennis, and watching movies.

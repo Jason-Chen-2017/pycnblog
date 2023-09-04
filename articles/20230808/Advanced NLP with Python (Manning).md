@@ -1,0 +1,1 @@
+4. Advanced NLP with Python (Manning)

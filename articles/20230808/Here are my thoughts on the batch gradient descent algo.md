@@ -1,0 +1,1 @@
+Here are my thoughts on the batch gradient descent algorithm and its applications in machine learning: 

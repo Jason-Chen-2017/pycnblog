@@ -1,0 +1,1 @@
+9. Efficient Dynamically Generated Class Activation Maps for Weakly Supervised Object Localization (ACMMM2018)

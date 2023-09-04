@@ -1,0 +1,1 @@
+2. Edge Computing: From Vision to Actionable Insights with MindSphere - Anna Nagel

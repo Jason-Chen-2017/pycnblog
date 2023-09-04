@@ -1,0 +1,1 @@
+10. Master algorithmic trading strategies to trade stocks effectively and efficiently using quantitative finance concepts, statistics, and technical indicators.

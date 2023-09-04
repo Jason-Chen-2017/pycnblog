@@ -1,0 +1,1 @@
+Step-by-step instructions and code illustrating how to build end-to-end machine learning solutions, from data preprocessing to hyperparameter tuning and interpreting results. Uses real-world datasets and algorithms to demonstrate core ML topics. Examples include linear regression, logistic regression, SVM, k-NN, decision trees, random forests, and neural networks. 

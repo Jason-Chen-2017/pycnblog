@@ -1,0 +1,1 @@
+Decentralized Identity Management for IoT Networks: An Overview of Architectures and Use Cases

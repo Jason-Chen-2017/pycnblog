@@ -1,0 +1,1 @@
+4. RNN、CNN、GAN、Attention、BERT

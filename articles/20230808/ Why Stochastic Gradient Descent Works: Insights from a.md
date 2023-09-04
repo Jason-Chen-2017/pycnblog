@@ -1,0 +1,1 @@
+- Why Stochastic Gradient Descent Works: Insights from a Simple Neural Network Implementation

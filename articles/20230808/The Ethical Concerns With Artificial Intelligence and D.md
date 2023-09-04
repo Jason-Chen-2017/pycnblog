@@ -1,0 +1,1 @@
+10. The Ethical Concerns With Artificial Intelligence and Data Use in Public Life Decisions 

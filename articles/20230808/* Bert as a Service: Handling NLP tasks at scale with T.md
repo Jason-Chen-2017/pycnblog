@@ -1,0 +1,1 @@
+* Bert as a Service: Handling NLP tasks at scale with Transformers and Hugging Face

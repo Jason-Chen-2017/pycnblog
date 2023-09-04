@@ -1,0 +1,1 @@
+"A Concise Introduction to Geometric Machine Learning"

@@ -1,0 +1,1 @@
+3. Towards Accurate Model Performance through Architecture Design: A Case Study in Medical Imaging Segmentation

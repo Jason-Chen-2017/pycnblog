@@ -1,0 +1,1 @@
+ More than 1 million bloggers worldwide read blogs every month according to Statista. If you're struggling with creating high-quality articles, please check out our tips on how to write great blog posts and increase engagement. We'll help you get started and provide you with suggestions for improving your content over time. 

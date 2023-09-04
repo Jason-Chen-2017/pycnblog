@@ -1,0 +1,1 @@
+In this tutorial, we'll learn how to build a named entity recognition system using Python's spaCy library. This system can identify and classify various types of entities like people, organizations, locations, etc., in a given piece of text. 

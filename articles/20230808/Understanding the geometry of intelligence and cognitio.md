@@ -1,0 +1,1 @@
+1. Understanding the geometry of intelligence and cognition by learning with VGG-Face 

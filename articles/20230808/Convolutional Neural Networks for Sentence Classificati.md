@@ -1,0 +1,1 @@
+Convolutional Neural Networks for Sentence Classification: A Case Study with NLP Applications

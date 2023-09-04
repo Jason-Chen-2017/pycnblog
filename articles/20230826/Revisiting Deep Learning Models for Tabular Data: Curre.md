@@ -1,0 +1,39 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+  
+
+Tabular data refers to structured or unstructured data that is organized into rows and columns with a fixed number of attributes per row or record. Examples include sales data, employee information, financial records, and weather data. Traditionally, deep learning models have been applied to tabular data by treating each attribute as an input feature and building a model that can learn complex relationships between the features and the target variable(s). However, there are many challenges in applying deep learning models to tabular data such as handling large amounts of data, dealing with missing values, and ensuring efficient training and inference speeds. In this article, we will discuss current best practices for applying deep learning models to tabular data and highlight common challenges and limitations. We will also provide examples of using different types of neural networks and optimization techniques to solve specific problems encountered in real-world applications. Finally, we will discuss future directions and research opportunities in machine learning for tabular data. 
+
+# 2.Basic Concepts and Terminology
+## 2.1 Types of Neural Networks
+Deep learning models for tabular data typically consist of several layers of feedforward neural networks (FFNN) connected together. The most commonly used FFNN architecture consists of multiple fully connected hidden layers with activation functions such as Rectified Linear Unit (ReLU), Tanh, Sigmoid, etc., followed by a final output layer with no activation function. Some other variations of FFNN architectures include convolutional neural networks (CNN) and recurrent neural networks (RNN). Here's how these various network types work on tabular data:
+
+1. Feedforward Neural Network (FFNN): This type of NN works well when we have a small amount of input features and relatively few nodes per layer. It has proven very effective at solving regression and classification tasks on tabular data, especially when the data contains more than one attribute. 
+
+2. Convolutional Neural Network (CNN): CNNs are ideal for image recognition tasks because they are designed specifically to process spatial data, which is naturally present in tabular data. They learn local patterns from pixel neighborhoods and can capture contextual dependencies within longer sequences of inputs.
+
+3. Recurrent Neural Network (RNN): RNNs are particularly useful for processing sequential data, such as time series or text. They learn temporal dependencies through feedback loops across the sequence and can handle varying lengths of input sequences.
+
+4. Transformers: Transformers are recently gaining popularity due to their ability to easily parallelize attention mechanisms and outperform similarly sized CNNs and RNNs on certain tasks like natural language processing (NLP).
+
+## 2.2 Optimization Techniques
+Training deep neural networks on tabular data requires careful consideration of hyperparameters such as batch size, learning rate, regularization parameters, and initialization methods. The choice of optimization technique also plays an important role, including gradient descent, stochastic gradient descent (SGD), adam optimizer, momentum, adaptive moment estimation (adam), etc. Each technique may require slightly different settings based on the nature of the problem, but they all converge towards lower error rates faster than vanilla SGD. By tuning the hyperparameters carefully and choosing appropriate optimization algorithms, we can obtain state-of-the-art results on many tabular datasets.
+
+In addition to the above, we need to consider the data sparsity pattern and imbalance in our dataset while training deep neural networks. One approach to deal with sparse data is to use embeddings instead of one-hot encoding for categorical variables, which reduces the dimensionality of the input space and allows the model to learn more robust representations. Another way to handle class imbalance is to oversample minority classes during training, which forces the model to balance the contributions of both dominant and rare classes. Both of these approaches can help improve generalization performance and reduce overfitting. 
+
+Lastly, another challenge faced in tabular data applications is dealing with concept drift, where the distribution of the input data changes over time due to external factors such as seasonality or product updates. To address this issue, we can employ domain adaptation techniques such as transfer learning or self-supervised pretraining, which enable the model to quickly adjust to new distributions without requiring extensive retraining. These techniques can greatly improve the accuracy and stability of the model over long periods of training.
+
+# 3.Core Algorithm and Operations
+Now let’s take a look at some key operations that are necessary for building successful deep learning models for tabular data:
+
+1. Handling Missing Values: Missing value imputation is essential to ensure accurate predictions even if the data has a significant percentage of missing values. There are several ways to handle missing values depending on the characteristics of the data and the goal of the prediction task. For example, mean/median imputation replaces missing values with the mean or median of the corresponding column, whereas forward fill/backward fill impute the last known valid value before or after the missing value, respectively. Other strategies such as KNN imputation can leverage nearest neighbors' values to impute missing values based on proximity.
+
+2. Feature Engineering: Feature engineering is an essential step in building an accurate deep learning model for tabular data. It involves transforming raw data into meaningful features that can be fed into the neural network. Common transformations include binning continuous variables into discrete bins, creating polynomial terms, and replacing categorical variables with one-hot encoded vectors or embedding vectors. While feature engineering is crucial for achieving high accuracy, it can also significantly increase the complexity of the model and lead to overfitting. Therefore, it’s important to experiment with different combinations of transformations to find the optimal solution.
+
+3. Outlier Detection and Removal: Anomaly detection is often a critical part of any anomaly-detection-based application, especially in finance and healthcare. Although traditional statistical measures such as z-scores and IQR might be sufficient for detecting outliers in some cases, recent advances in deep learning-based methods offer promising solutions for identifying extreme events in streaming data.
+
+4. Feature Scaling: Since deep neural networks perform better when the input features have similar scales, it’s important to scale them before applying the neural network. There are several scaling methods such as standardization, normalization, and logarithmic transformation. Standardization scales the data so that its mean is zero and its variance is one. Normalization scales the data so that its range is between 0 and 1. Logarithmic transformation transforms the data by taking the logarithm of each observation. Depending on the distribution of the data, either scaling method may be preferred.
+
+5. Validation Strategy: Cross validation is widely used to evaluate the performance of machine learning models. However, cross validation cannot reveal the underlying patterns and trends of the entire dataset, making it difficult to identify the best performing model. Instead, we should adopt a holdout set strategy, where a portion of the data is held back for testing and evaluation purposes. During training, we use the remaining data to train the model, and during evaluation, we use the test set to report metrics such as accuracy, precision, recall, F1 score, and AUC.

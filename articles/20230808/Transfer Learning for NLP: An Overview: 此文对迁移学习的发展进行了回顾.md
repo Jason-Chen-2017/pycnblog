@@ -1,0 +1,1 @@
+8. Transfer Learning for NLP: An Overview: 此文对迁移学习的发展进行了回顾，并给出了不同场景下的迁移学习策略。

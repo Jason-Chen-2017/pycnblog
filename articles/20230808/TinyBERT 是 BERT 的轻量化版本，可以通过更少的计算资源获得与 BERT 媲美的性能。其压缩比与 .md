@@ -1,0 +1,1 @@
+TinyBERT 是 BERT 的轻量化版本，可以通过更少的计算资源获得与 BERT 媲美的性能。其压缩比与 DistilBERT 接近，但效率更高。

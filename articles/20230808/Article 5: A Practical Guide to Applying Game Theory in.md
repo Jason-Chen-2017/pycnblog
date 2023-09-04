@@ -1,0 +1,1 @@
+Article 5: A Practical Guide to Applying Game Theory in Financial Markets

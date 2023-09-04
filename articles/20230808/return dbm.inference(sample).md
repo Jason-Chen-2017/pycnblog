@@ -1,0 +1,1 @@
+    return dbm.inference(sample)

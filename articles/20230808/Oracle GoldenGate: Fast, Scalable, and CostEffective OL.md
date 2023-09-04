@@ -1,0 +1,1 @@
+3. Oracle GoldenGate: Fast, Scalable, and Cost-Effective OLTP Transactions

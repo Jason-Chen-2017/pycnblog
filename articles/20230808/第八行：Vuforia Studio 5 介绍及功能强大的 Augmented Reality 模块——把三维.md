@@ -1,0 +1,1 @@
+第八行：Vuforia Studio 5 介绍及功能强大的 Augmented Reality 模块——把三维图像转化为二维图像

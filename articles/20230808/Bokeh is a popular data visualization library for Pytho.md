@@ -1,0 +1,1 @@
+Bokeh is a popular data visualization library for Python that allows us to create highly interactive visualizations easily. In this article, we will go over basic concepts behind Bokeh and its various components, including plots, glyphs, tools, and widgets. We will also dive into examples of creating interactive plots using real-world datasets.

@@ -1,0 +1,1 @@
+7. Incremental feature retraining and its application to crowd counting (Zheng et al., 2018)

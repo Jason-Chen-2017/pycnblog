@@ -1,0 +1,1 @@
+4. Customer Satisfaction - Do customers express satisfaction towards our service and products? Given a high rating, give higher weightage to this criterion.

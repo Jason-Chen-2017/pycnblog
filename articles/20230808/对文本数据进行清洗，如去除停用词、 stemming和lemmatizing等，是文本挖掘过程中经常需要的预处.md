@@ -1,0 +1,1 @@
+对文本数据进行清洗，如去除停用词、 stemming和lemmatizing等，是文本挖掘过程中经常需要的预处理操作。了解Python库pandas可以用来处理文本数据。

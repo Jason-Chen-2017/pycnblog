@@ -1,0 +1,1 @@
+7. Sequential Modeling of Temporal Data with LSTM Neural Networks: A Practical Guide

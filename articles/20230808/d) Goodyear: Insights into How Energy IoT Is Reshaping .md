@@ -1,0 +1,1 @@
+d) Goodyear: Insights into How Energy IoT Is Reshaping Our Lives and Communities

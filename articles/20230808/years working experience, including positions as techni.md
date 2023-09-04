@@ -1,0 +1,1 @@
+9 years working experience, including positions as technical director, investment banker, project manager, market researcher, business development specialist, and associate partner. 

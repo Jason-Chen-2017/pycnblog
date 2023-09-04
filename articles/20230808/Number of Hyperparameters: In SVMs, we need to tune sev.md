@@ -1,0 +1,1 @@
+1. Number of Hyperparameters: In SVMs, we need to tune several hyperparameters such as C (regularization parameter), kernel type, etc., while in perceptrons, only one weight vector needs to be learned. This makes SVM more flexible in terms of tuning hyperparameters but less prone to overfitting when dealing with small datasets.

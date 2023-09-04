@@ -1,0 +1,1 @@
+11. Understanding of recurrent neural networks (RNN) and its variants including GRUs and LSTMs

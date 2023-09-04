@@ -1,0 +1,1 @@
+Probabilistic Graphical Models for Machine Learning: An Introduction

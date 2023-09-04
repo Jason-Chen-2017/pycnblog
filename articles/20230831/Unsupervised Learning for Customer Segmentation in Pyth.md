@@ -1,0 +1,28 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+  
+
+Customer segmentation is a crucial task of marketing and analytics that involves the identification of different groups or clusters of customers based on their common characteristics or preferences. This article will discuss how to segment customers using unsupervised learning algorithm - k-means clustering technique in Python programming language. We will also learn about the various steps involved in performing this segmentation, including selecting the appropriate number of clusters, normalizing data, implementing k-means algorithm, evaluating the results and interpreting them. Finally, we will cover some tips and tricks while working with customer segments and take a look at future trends and challenges. Let’s get started! 
+
+# 2.概览
+## 2.1 Problem Statement
+Customer segmentation is a crucial part of many businesses who need to identify different types of customers from their database. It helps business owners understand the behavior of each group of customers better, which can lead to more targeted marketing campaigns, sales promotions, improved service levels and overall increase in revenue. To perform customer segmentation effectively, it requires expertise in data science, machine learning, statistics, and mathematics. However, in real life, finding an efficient way to segment customers may not be easy since identifying clusters of similar users manually is tedious and time-consuming. Thus, the use of unsupervised learning techniques has become increasingly popular among marketers and analysts as they are able to discover patterns and insights without any prescribed labels. In fact, research shows that 79% of all companies rely heavily on machine learning algorithms to achieve significant increases in revenue and profitability [1]. Furthermore, there are several well-known clustering algorithms such as k-means, hierarchical clustering, DBSCAN, etc., which make up the foundation of unsupervised learning methods used for customer segmentation.
+
+The main goal of this project is to implement a robust customer segmentation method using Python programming language and k-means clustering algorithm. The dataset used for this study contains information regarding customer demographics, purchase history, product preferences, ratings, reviews, and other relevant factors. Based on these features, we aim to create customer segments and analyze them to identify patterns and preferences of individual customers within each cluster. By analyzing the customer segments, we hope to gain valuable insight into the organization's target audience, improve the efficiency of marketing activities, optimize operations and maximize profits by focusing on specific needs and opportunities.
+
+In summary, our goal is to develop a customer segmentation model using unsupervised learning approach in Python that identifies distinct groups of customers based on their unique characteristics, attributes, behaviors, purchasing behaviors, preferences, and interaction with the brand. 
+
+## 2.2 Important Terminology and Concepts
+Before diving deeper into the actual project, let us first define some important terms and concepts. These concepts help in understanding the context of the problem statement and provide the necessary background knowledge required for successful implementation of the solution.
+
+1. **Unsupervised Learning**: Unsupervised learning refers to a type of machine learning whereby computers are trained on a dataset without labeled examples, resulting in models that can classify new data into similar groups or clusters without being explicitly instructed to do so. Essentially, this means that the algorithm learns to recognize patterns and relationships within the input data without any prior guidance or instructions. Popular unsupervised learning algorithms include k-means, hierarchical clustering, and DBSCAN. 
+
+2. **K-Means Clustering:** K-Means clustering is one of the most widely used unsupervised learning algorithms. The algorithm partitions the n observations (customers) into k clusters in which each observation belongs to the cluster with the nearest mean. Each mean defines a centroid, which represents the center of the cluster. In other words, the algorithm aims to partition the data points into k sets such that the sum of squared distances between the data points and their corresponding centroid is minimized.
+
+3. **Cluster Analysis:** Cluster analysis is a process of grouping together data points according to certain properties such as similarity and distance. It allows organizations to identify natural patterns and trends in large datasets, and enable decision making processes. For example, online retailers could use cluster analysis to determine which customers share common interests and generate personalized recommendations. Additionally, businesses can utilize cluster analysis to identify areas where competition is fierce, thus enabling them to focus resources towards developing strategies to address any potential threats.
+
+4. **Normalization:** Normalization is a process of scaling the values of numeric variables to a common scale that allows comparison across variables. It helps to ensure that each variable has equal importance in clustering calculations. One commonly employed normalization technique is StandardScaler, which scales the data set to have zero mean and unit variance. 
+
+5. **Silhouette Coefficient:** Silhouette coefficient measures the degree of separation between objects in a cluster. A high silhouette score indicates that samples in the cluster are very close to the neighboring clusters, whereas a low silhouette score indicates that the samples might have been assigned to the wrong cluster.

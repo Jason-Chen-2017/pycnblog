@@ -1,0 +1,1 @@
+Non-negative matrix factorization has become one of the most popular topic in recent years because of its wide range of applications in different fields like recommender systems, clustering, image and speech recognition, etc. In this blog post, I will give you a simple yet thorough understanding of how NMF works step by step.

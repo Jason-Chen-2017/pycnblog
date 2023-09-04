@@ -1,0 +1,1 @@
+8. When Algorithmic Transparency Fails Us All: Assessing the Consequences of Empowerment Technologies for Society

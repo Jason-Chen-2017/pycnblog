@@ -1,0 +1,1 @@
+Introduction to Generative Adversarial Networks with PyTorch

@@ -1,0 +1,1 @@
+                                  for i in range(len(role_list)) if role_list[i]])

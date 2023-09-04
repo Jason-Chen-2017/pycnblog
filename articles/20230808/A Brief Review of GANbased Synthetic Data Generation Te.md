@@ -1,0 +1,1 @@
+A Brief Review of GAN-based Synthetic Data Generation Techniques in Finance Applications

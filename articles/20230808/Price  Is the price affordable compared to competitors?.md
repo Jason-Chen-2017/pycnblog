@@ -1,0 +1,1 @@
+2. Price - Is the price affordable compared to competitors? Give higher weightage to this criterion if yes.

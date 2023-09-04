@@ -1,0 +1,1 @@
+-"Data Pipeline Architectures to Process Structured and Unstructured Data: An Overview" - Lester Lohman (Author)

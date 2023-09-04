@@ -1,0 +1,1 @@
+2. Data Architecture for Everyone Part 1: An Overview of the Data Architecture Process

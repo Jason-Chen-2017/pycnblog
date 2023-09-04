@@ -1,0 +1,1 @@
+4. Non-Linear Decision Boundaries: SVMs can also work with non-linear decision boundaries using various kernel functions which enable them to project the inputs into higher dimensional spaces where complex relationships can be modeled.

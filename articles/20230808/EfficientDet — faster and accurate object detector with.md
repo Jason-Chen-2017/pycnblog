@@ -1,0 +1,1 @@
+5. EfficientDet — faster and accurate object detector with wide range of parameters. 

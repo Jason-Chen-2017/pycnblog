@@ -1,0 +1,1 @@
+Applying Computer Vision Techniques for Object Detection and Segmentation on Satellite Imagery with OpenCV
