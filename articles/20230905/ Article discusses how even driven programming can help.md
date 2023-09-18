@@ -1,0 +1,21 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+  
+
+Software architecture is the fundamental structure of a system or organization that describes the way it works internally. It influences everything from development processes to maintenance efforts, which are often neglected in projects due to their complexity and cost. However, modern software engineering principles such as separation of concerns, loose coupling, and testability make it possible for developers to build more maintainable and scalable codebases through careful design and implementation practices. 
+
+This article discusses three important concepts related to software architecture: cohesion, coupling, and modularity. We will focus on how these concepts can be used effectively together to develop software that is easier to understand, modify, and extend over time while still being resistant to change. By applying these principles to our daily coding activities, we can turn them into tools that allow us to write clean, modular, extensible codebases that can scale easily with new requirements and stakeholders.
+
+2.什么是耦合？
+Cohesion refers to the level at which different parts of a module (such as classes) work together to perform a specific task. High levels of cohesion indicate that modules work closely together and have similar responsibilities. A low level of cohesion indicates that there is no clear distinction between what each part does, making it difficult to modify or reuse individual components. Good examples of high-cohesive modules include UI controllers, database access objects, and validation logic. On the other hand, poorly designed or written modules can lead to issues like interdependency and tight coupling, where changes may require many downstream modules to be updated. Therefore, keeping modules well-factored and loosely coupled reduces complexity and makes modifications easy.
+
+3.什么是耦合？
+Coupling is a measure of how much one piece of software relies on another component in order to function correctly. Loose coupling allows multiple pieces of software to communicate without requiring tight coupling between all components. This makes it easier to add features, fix bugs, and update software over time because only a small subset of the codebase needs to be modified when changing one component. Examples of loosely coupled modules include business logic modules that depend on data access objects but not vice versa, and network communication libraries that do not rely on underlying protocols or implementations. Tight coupling occurs when two components need to interact directly, causing additional complexity and delays in the process of modification. In this case, breaking up the coupled modules into smaller subsystems or introducing a message queue can improve overall system performance and reliability.
+
+4.什么是模块化？
+Modularization is an approach to building software by separating functionalities into independent modules that communicate via well-defined interfaces. The goal of modularizing software is to increase reusability, flexibility, and maintainability by simplifying the creation of new features, reducing redundancy, and promoting consistency across the codebase. Modularized software also helps prevent accidental dependencies between unrelated functionality that could cause problems down the line. Separation of concerns ensures that each module has clearly defined responsibility and can be developed independently, resulting in improved efficiency and productivity. 
+
+5.如何有效地运用模块化、耦合、关注点分离等概念来开发软件架构？
+Effective use of these concepts involves designing modules that are well factored, loosely coupled, and focused on one particular aspect of the system. Each module should encapsulate its own domain logic, state, behavior, and external interfaces, allowing others to use it in various contexts within the system. Coupling between modules should be kept minimal so that changes to one module don’t affect the rest of the system. Additionally, tests should be written for each module ensuring that it behaves correctly given predetermined inputs and expected outputs. By using these techniques, you can develop software that is easier to understand, modify, and extend over time while still being resistant to change. Overall, good software architecture requires a balanced mix of technical expertise, skills, and practices.

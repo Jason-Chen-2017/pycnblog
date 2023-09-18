@@ -1,0 +1,30 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+  
+
+Behavioral change is the process by which individuals and organizations become better at influencing behavior in others through social interaction. As a professional, you might be dealing with many challenges related to your work or personal life that could benefit from becoming more intentional in how you approach conversations with people you care about. In this article, I will present five rules for effective conversation-building as a person who wants to turn tough conversations into great partnerships. 
+
+We can categorize these rules into four main types: 
+## Rule 1: Focus on the other person's feelings
+The first rule states that we must focus on understanding what another person is feeling rather than relying solely on our own judgments when making decisions or responding to someone else’s words. This leads to more empathy and communication because it allows us to connect deeper with their emotions and experiences. By focusing on what they are feeling instead of judging them, we can create a stronger bond between ourselves and the other person.
+
+For example, if an acquaintance approaches me asking if my latest project has been successful, I would respond politely and not start preparing a response until after I have had some time to consider the situation together. After thinking about the question and having had a chance to explore the details myself, I may come to realize that the other person is grateful for the success of my project and apologize before saying anything positive. 
+
+In contrast, if I were simply telling the same story without considering whether the other person was truly thankful or just wanting to cheer up, my partner may feel threatened or unsafe. They may also take issue with my assumption that I am unwilling to listen or give constructive feedback. Instead of assuming, I should always be open to learning from others and listening actively to understand their perspective. 
+
+Rule #2: Provide concrete examples
+Another important aspect of effectively building a relationship is providing specific examples to illustrate points made during conversation. A clear and concise explanation often makes it easier for both parties to understand each other's ideas. To make sure the examples support the points being made, ensure that you demonstrate relevant contextual information such as dates, locations, issues, and personalities. It is critical to provide accurate information so that there is no misunderstanding about why certain actions were taken. For instance, avoid using ambiguous language like “I don't know” or stating something unrelated to the subject matter at hand.
+
+For example, if a friend asks me to explain my reasons for declining an offer to work for a company, I may use concrete examples such as being busy working on projects that require my attention, losing job opportunities due to family circumstances, and not having sufficient skills required for the position. These examples demonstrate why my decision might seem arbitrary or unreasonable to the other party. On the other hand, if I explained my reasons for accepting the offer and shared relevant data such as salary expectations, years of experience, education, and certifications, the other party may reevaluate their decision based on accuracy and provided contextual information.
+
+Rule #3: Listen attentively
+When we communicate with others, we often rely heavily on nonverbal cues such as body language, facial expressions, gestures, tone of voice, and posture. Although these cues may convey valuable information, we need to pay close attention to them while engaging in conversations. Listening carefully to all parts of the communication ensures that we fully understand each other and do not miss any crucial details. We should try to avoid overinterpreting the nonverbal cues, leaving out important details, and speaking too fast or too slow. If necessary, pause, ask questions, and repeat back what was said clearly to confirm understanding.
+
+For example, let's say I'm talking to a friend about a recent loss and share a photograph of myself with her. She tells me she knows exactly where I went last year but cannot remember any details. During the conversation, I ask for clarification and wait patiently to hear what she says. When she finally nods and gives me details, I ask for further clarity. Then I check the photographs to see if I am still recognizable. If needed, I'll contact the police or seek assistance from family members. All along, I remain very attentive and listen to everything being said.
+
+Rule #4: Use emotional intelligence
+Emotional intelligence refers to the ability to recognize and manage emotions in order to be a better listener, communicator, and leader. Emotions play a significant role in shaping our perspectives and behaviors, which requires us to develop techniques for managing and understanding them. Becoming aware of our emotions and being able to identify triggers or indicators of negative or positive sentiments can help us build more resilient relationships and lead to greater engagement with others. Eight factors contribute to emotional intelligence, including self-awareness, ability to monitor emotions, developing strategies for coping with stress, empathizing with others, connecting with intuition, problem-solving abilities, and adapting to changing situations.
+
+To practice emotional intelligence, it's essential to continuously assess yourself and evaluate your current strengths and weaknesses. Identify areas where you struggle and devise ways to improve your performance. Additionally, regularly reflect on your past successes and failures to learn from them. Finally, seek out resources online to learn more about emotional intelligence, practical techniques, and tools for managing emotional wellbeing.

@@ -1,0 +1,13 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+  
+
+Conversational recommender systems are the most advanced recommendation technologies that can provide recommendations in real time and interactive way through conversational interfaces such as chatbots or voice assistants. They offer more personalized content to users based on their needs and preferences expressed in natural language text. However, existing conversational recommenders usually rely heavily on rule-based models or collaborative filtering techniques without using pre-trained language models like BERT. In this work, we propose a new approach for improving conversational recommender systems by leveraging pre-trained language models such as GPT-2, RoBERTa, DistilBERT etc., which is able to understand both semantics and context of user input in real-time. Specifically, we first fine-tune selected pre-trained language models on user utterances to learn the features specific to conversational recommendation tasks, including sentiment analysis, topic modeling, named entity recognition, and summarization. We then build a novel neural conversation model that integrates these learned features into an attention mechanism alongside with other attributes provided by the original user utterance embedding representation. Finally, our proposed method achieves significant improvements over strong baselines on benchmark datasets, indicating its effectiveness for practical applications of conversational recommendation.
+在推荐系统中，基于对话的推荐系统是最先进的一种推荐技术，它能够实时、互动地向用户提供基于自然语言文本的推荐。这些系统根据用户所表达的需求和偏好提供更加个性化的内容。但是，现有的基于对话的推荐器通常依赖于规则型模型或协同过滤方法，而缺少了预训练语言模型（如BERT）等。本文提出了一种新的方法，通过利用诸如GPT-2、RoBERTa、DistilBERT等预训练语言模型，使得基于对话的推荐系统能够更好的理解用户输入中的意义和上下文。具体来说，我们首先用用户的对话数据微调了几个选择的预训练模型，学习到针对对话推荐任务特定的特征，包括情感分析、主题建模、命名实体识别和摘要生成。然后，我们建立了一个具有新颖特征集成机制的神经对话模型，将这些学习到的特征融合进原始用户语句表示中。最后，我们的方法在一些基准数据集上取得显著的改善，证明其对于实际应用中的对话推荐效果具有可行性。
+# 2.相关工作
+目前，主流的基于对话的推荐系统都大多采用信息检索方法，即对用户的查询进行匹配、排序、展示。因此，为了从海量数据中找到有效的信息，这些方法往往需要收集大量的训练数据，耗费大量的资源和时间。而且，往往只能通过机器学习的方式，或依赖于规则集的方式解决大部分的问题。
+另一方面，现有的很多研究都是基于预训练语言模型的对话推荐模型，它们通过对用户的输入进行编码得到句子嵌入表示，再将其输入到推荐系统中进行推荐。其中最典型的模型便是BERT。但是，这些模型已经在各个领域取得了不错的成果，但是它们往往过于复杂且计算量巨大，不能直接用于真正的生产环境。另外，在处理长文本的情况下，这些模型也存在性能瓶颈。因此，如何提高对话推荐系统的效率一直是一个重要的问题。
+另外一个值得注意的研究方向是将机器学习和深度学习结合起来，构建能够像人一样对话的机器人。近年来，深度学习和语音合成技术极大的推动了这一领域的快速发展。但是，这项技术仍处于起步阶段，其模型并没有完全掌握到用户对话数据的含义。虽然基于深度学习的模型可以得到很好的效果，但其对于特定类型的对话还是欠缺考虑。最近，Google提出的TAPAS (Table-Aware Pre-Trained Abstractive Summarization for Task-Oriented Dialogue State Tracking)便是这种尝试的代表性工作。
+总之，以上研究的目标都是要通过自动化的方式，改善对话推荐系统的效率。尽管这样的研究已经取得了丰硕的成果，但仍有很多未知的地方，需要持续的探索。

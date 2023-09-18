@@ -1,0 +1,71 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+  
+
+Privacy preserving machine learning (PPML) is a new research area that focuses on developing secure and privacy-preserving techniques for training machine learning models while protecting the data subjects' privacy. PPML has emerged as a promising field in recent years due to its widespread use cases such as healthcare, finance, and e-commerce. The rapid growth of this technology industry also creates tremendous opportunities and challenges for both researchers and developers. This article provides an overview of PPML by introducing related concepts and technologies, discussing how it applies to different applications areas, highlighting core algorithmic principles, and outlining future directions.
+
+This paper will cover several major topics, including:
+
+1. Introduction - An introduction to PPML
+2. Terminology - Definition and explanation of PPML terms and concepts
+3. Core Algorithms - Discussion about fundamental algorithms used in PPML
+4. Practical Applications - Demonstration of practical implementation using open source tools and frameworks
+5. Security Considerations - A discussion of security aspects to be considered during the development process
+6. Privacy Implications - Explanation of possible consequences and implications of privacy protection mechanisms 
+7. Conclusion - Summary and suggestions for further research. 
+
+To better understand each topic, we will provide examples from various application domains including image recognition, natural language processing, fraud detection, and medical diagnoses. We hope this comprehensive review helps readers gain a deep understanding of this cutting-edge technology and inspires them to apply their expertise in building robust solutions with improved privacy protections. By sharing our knowledge and experience, we aim to advance the state-of-the-art in private AI research and ensure the long-term viability of these technologies within organizations worldwide.
+
+
+# 2.相关术语及定义
+Privacy preserving machine learning involves a variety of methods and technologies that aim to train machine learning models while ensuring the privacy of individuals involved in the training process. Some common definitions and terminology are provided below: 
+
+1. Data Subject: The individual whose data is being analyzed or processed by the system.
+2. Model Owner: The owner of the model who controls access to sensitive data and may have legal or contractual obligations to keep data confidential.
+3. Training Dataset: The dataset used for training the machine learning model.
+4. Trusted Third Party (TTP): An entity that can attest to the accuracy and integrity of the trained model but cannot directly obtain any information from the data subject's perspective.
+5. Aggregated Queries: A query made by multiple users, which allows them to collectively share their input without revealing their identities.
+6. Secure Aggregation: Methods for aggregating multiple inputs into one final output without compromising the privacy of individual parties.
+7. Differential Privacy: A mathematical mechanism that ensures that no single person's contribution adds significantly to the overall statistics.
+8. Virtual Private Cloud (VPC): A cloud computing environment that uses encryption protocols to protect user data stored within virtual machines.
+9. Gradient/Backpropagation Protecion Techniques: Techniques that leverage existing backpropagation techniques to enhance the privacy guarantees of machine learning models.
+10. Deep Neural Network Embedding: Methods for obfuscating sensitive data such as names, addresses, credit card numbers, etc., prior to training a neural network.  
+11. Saliency Map Analysis: Analyzing gradients generated during training to identify regions where changes in prediction error occur.  
+12. Mixture-based Models: Statistical models that blend predictions from multiple models to improve overall accuracy and reduce variance.  
+
+# 3.核心算法原理与详细讲解 
+The key idea behind privacy preserving machine learning (PPML) is to develop algorithms that preserve data subjects' privacy when they interact with the model owner. Two primary approaches exist in this domain: differential privacy and gradient/backpropagation protection. Both of these techniques rely on adding noise to the gradients computed during model training and enable the system to learn more robust models while still maintaining privacy protections. 
+
+Differential privacy is a statistical technique that aims to address two main concerns associated with machine learning systems: scalability and privacy loss. Scalability refers to the ability of the system to handle large amounts of data, while privacy loss refers to the amount of identifying information revealed by the model based on individual differences. Differential privacy achieves this balance by providing a privacy guarantee through probabilistic bounds on the deviation of the average model response from the true value. To achieve this level of privacy, some additional conditions must be satisfied: the dataset should not contain any direct identifiers; samples drawn from the dataset should be randomized before use; and sufficient noise should be added to the gradients during training. 
+
+Gradient/backpropagation protection techniques aim to extend traditional backpropagation algorithms to protect data subjects' privacy. These techniques leverage the sensitivity of individual gradients to identify those that correspond to potentially sensitive features like personal information or names. They then modify the backward propagation step to mask these gradients so that they do not contribute significantly to the ultimate update to the model parameters. One popular method is to randomly zero-out some of the weights in the network, thus preventing them from contributing to any gradient updates. Another approach is to perturb the values of some neurons throughout training to break any patterns learned by the model. 
+
+In addition to these core privacy protection techniques, other techniques such as deep neural network embedding and saliency map analysis help to protect privacy even further. Deep neural network embedding reduces the risk of attacks against the underlying neural networks by encrypting sensitive data such as names, addresses, and social security numbers prior to training. The resulting embeddings can then be aggregated using secure aggregation techniques to produce a final output that retains all desired levels of privacy. Finally, saliency map analysis identifies regions of the input space where the most salient features influence the model's decision making. These techniques allow the model designer to carefully select which parts of the data to consider and whether to disclose it to others. 
+
+All of these techniques work together to create a powerful combination that enables the system to learn more accurate and useful models while protecting the privacy of data subjects. Overall, PPML offers unique insights into the design of machine learning systems and opens up new possibilities for improving security and privacy while reducing bias and fairness concerns across domains. 
+
+
+# 4.具体应用实例及解释说明
+Below we present several examples of practical implementations using PPML techniques. Each example demonstrates a different application domain using a range of ML algorithms and techniques. 
+
+1. Medical Diagnosis: In medicine, a number of diagnostic tests are routinely conducted to detect diseases such as cancer and heart disease. With increased availability of cheaper tests and effective treatments, it becomes critical to develop high quality diagnosis models that can accurately diagnose patients. However, collecting detailed demographics such as patient history, family histories, and genetic information makes it difficult to maintain privacy protections. In this scenario, differential privacy techniques can be used to aggregate raw data collected from numerous patients, enabling the creation of a highly accurate diagnosis model without compromising individual privacy. Additionally, advanced treatment plans can be developed using real-time feedback loops with the TTP who can assess the accuracy of the diagnosis model.  
+
+2. Fraud Detection: Online payment services typically store sensitive financial information such as customer details, transaction history, and billing information. As such, it is essential to develop efficient fraud detection models while ensuring the privacy of customers. In this case, differential privacy techniques can be used to aggregate transactions belonging to multiple customers, allowing the creation of a highly accurate model that does not compromise individual privacy. Moreover, data sharding and secure aggregation techniques can be applied to limit the risk of unauthorized access to the sensitive data.   
+
+3. Image Recognition: Computer vision and image processing tasks involve analyzing visual patterns and interactions between objects. While deep learning techniques have been proven successful in many computer vision applications, they suffer from significant drawbacks such as overfitting, lack of explainability, and lack of transparency. It is important to develop transparent models that can explain why they make certain decisions and can support interventions such as retraining the model to adapt to changing circumstances. Therefore, deep neural network embedding techniques can be used to encode sensitive data such as faces, license plates, and drivers’ license numbers prior to training. The resulting encodings can then be securely aggregated using secure aggregation techniques to produce a final output that maintains all desired levels of privacy. Furthermore, saliency maps can be employed to analyze the importance of each pixel in determining the class label of an image, enabling the identification of potential sources of biased or biased data.  
+
+4. Natural Language Processing: Web search engines, chatbots, and speech recognition technologies face increasing demand for more accurate responses and automation. Despite the rise of deep learning techniques in NLP, there remains a need for developing human-like intelligence and ensuring privacy. In this case, differential privacy can be used to aggregate queries from multiple users and protect the privacy of their individual inputs. Moreover, mixtures-based models can be combined with a voting scheme to formulate a holistic view of the user's intentions, further limiting the risk of exposing sensitive information. Lastly, distributed neural networks can be leveraged to build parallel models that can generate alternative outputs to increase diversity and explore the full spectrum of possible answers. 
+
+
+# 5.安全考虑点与隐私影响分析
+One of the primary goals of privacy preserving machine learning is to create secure and privacy-preserving models that do not compromise individual privacy. When evaluating these models, security experts and ethicists should take into account several factors such as accuracy, utility, and privacy risks. Here are some general guidelines: 
+
+1. Accuracy: Ensuring that the model performs well enough to satisfy the needs of the intended task requires careful selection of hyperparameters, regularization techniques, and feature engineering steps. Moreover, metrics such as precision, recall, and F1 score should be taken into consideration to measure the performance of the model and evaluate its effectiveness. 
+
+2. Utility: Utilizing public datasets can introduce biases into the model, leading to lower accuracies and reduced interpretability. For instance, if a particular group is underrepresented in the training set compared to the test set, a model trained on that subset might perform poorly on other groups. Similarly, techniques such as active learning and semi-supervised learning can help deal with imbalanced datasets, but come at the cost of privacy and utility tradeoffs. 
+
+3. Privacy Risks: There are several types of privacy risks that need to be considered when considering the deployment of PPML systems: Privacy Leakage: Includes breaches of user data that result in harm to individuals or organizations. Other forms include indirect leaks caused by errors in model construction, training, or testing. Evasion Attacks: Exploiting vulnerabilities in the software or hardware infrastructure to extract sensitive information such as passwords, keys, or other secrets from memory. Physical Access Attacks: Gaining physical access to servers hosting PPML models could expose the data subjects' data. Repudiation Attacks: Using synthetic data to attack machine learning models and pretending to be trustworthy would constitute repudiation attacks. 
+
+4. Privacy Implications: The impact of implementing privacy-preserving machine learning systems can vary widely depending on the context and purpose of the use case. However, here are some general considerations: Personal Information: Collecting and storing personal information such as name, gender, age, race, religion, occupation, and marital status poses a serious privacy concern. Protecting sensitive information such as health records, biometric data, and IP addresses require special care. Use Cases: Prioritize use cases where necessary or beneficial to individuals rather than causing undue burdens on society. Ensure proper monitoring and enforcement policies to ensure compliance with relevant laws and regulations. Continuously Improve Privacy Protections: Always strive to continuously improve and optimize the privacy protection measures implemented in the system to minimize the risks associated with data breaches. Increase Interdisciplinary Collaboration: Working closely with technical, policy, and law professionals can help establish best practices and align stakeholders around shared responsibilities. Establish Trust Fundamentals: Setting aside resources to investigate and mitigate identified threats and concerns, empowering trusted third parties to act as a watchdog for the deployed solution can help create a safer ecosystem.

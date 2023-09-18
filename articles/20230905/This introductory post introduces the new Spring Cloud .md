@@ -1,0 +1,28 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+  
+
+Spring Cloud Function is a framework for building lightweight event-driven functions that run on top of Spring Boot or any other Java runtime. It enables users to write functions in a familiar programming model, without the need to deal with serverless infrastructure details like containers, virtual machines, or cluster management. The framework provides support for different programming models including imperative (through annotations), functional (through Lambda expressions) and reactive (through Project Reactor's Flux/Mono API). In this blog post, we will introduce Spring Cloud Function by comparing it to existing enterprise integration frameworks such as Spring Integration and Enterprise Service Bus. We will also go through examples and explain each feature using clear language and diagrams. Finally, we will discuss the future directions and challenges of this exciting new framework.
+# 2.相关术语与概念
+Before diving into the technical content of our article, let’s briefly define some key concepts and terms:
+
+1. Message-driven architecture - A message-driven architecture consists of two parts: messaging middleware and applications that produce and consume messages. Messaging middleware handles communication between applications via a message broker, which typically implements a publish-subscribe pattern. Applications can send messages to one another directly, but more commonly they use messaging middleware to communicate asynchronously. Messages are generally formatted in a predefined format such as JSON or XML, making it easier to work with them programmatically.
+
+2. Traditional enterprise integration solutions - Traditional enterprise integration solutions include Spring Integration and Oracle SOA Suite. These solutions provide developers with an easy way to integrate applications across multiple technologies and platforms using message-oriented middleware. They enable developers to create complex integrations involving routing, transformation, aggregation, and error handling logic. However, these solutions require deep expertise in enterprise integration patterns and design principles, as well as understanding various transport protocols, message formats, and data stores used by the underlying middleware components.
+
+3. Serverless computing - Serverless computing refers to a cloud-computing execution model where the cloud provider dynamically manages the allocation and provisioning of resources required by the application code, and removes the burden of maintaining and operating servers. Developers no longer have to provision, patch, upgrade, or maintain servers, letting them focus on writing code and business logic. Instead, they only pay for the compute time consumed by their code when it runs. With serverless computing, developers build microservices-based applications that execute function-as-a-service (FaaS) architectures using specialized serverless functions provided by cloud providers. FaaS allows developers to avoid managing servers and instead rely on cloud providers' auto-scaling features.
+
+4. Spring Cloud Function - Spring Cloud Function is a project within the Spring portfolio that makes it easy to write small, single-purpose functions that can be easily deployed and scaled without worrying about the underlying server infrastructure. It provides support for several programming models such as imperative, functional, and reactive programming, making it ideal for implementing message processing workflows that interact with external systems. Functions can be implemented using standard Java classes, lambdas, or methods annotated with specific triggers or events. Additionally, Spring Cloud Function simplifies the process of connecting functions to other services like databases, message brokers, and APIs.
+
+# 3.Spring Cloud Function与Spring Integration的区别
+In summary, Spring Cloud Function is not a replacement for traditional enterprise integration frameworks like Spring Integration or Oracle SOA Suite, but rather a simpler alternative that focuses on enabling quick development and deployment of small, standalone functions. Here are some differences between Spring Cloud Function and Spring Integration:
+
+1. Simplicity – Spring Cloud Function aims to make it simple to write event-driven functions without having to understand the underlying complexity of messaging middleware or serverless infrastructure. To do so, it uses a simplified programming model based on lambda expressions and streams.
+
+2. Flexibility – While Spring Integration supports a wide range of programming models, such as HTTP, RabbitMQ, JDBC, JMS, and AWS Lambda, Spring Cloud Function only provides support for functions written in Java or Kotlin. Additional languages could potentially be supported by third party libraries that provide bindings to popular scripting languages like JavaScript, Python, and Ruby.
+
+3. Ease of use – When compared to Spring Integration, Spring Cloud Function has less configuration options since it doesn't require explicit connection configurations for message brokers, databases, etc. It requires a minimum amount of boilerplate code to get started, although additional tools like IDE plugins may help reduce the overhead.
+
+Ultimately, both Spring Integration and Spring Cloud Function offer similar capabilities but differ in approach. Spring Cloud Function simplifies the developer experience while still providing powerful integration features like stream processing and pub/sub functionality.

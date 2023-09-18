@@ -1,0 +1,41 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+  
+
+## Chatbots: What and Why?
+Chatbots are a type of intelligent digital assistants that can provide instant assistance or respond to user queries in real-time. They have become increasingly popular over the past few years because they offer users more convenient ways to access information and services without having to interact with an agent. There are several chatbot frameworks available today including Facebook Messenger, WhatsApp, Skype, and many others. But one of the most popular is Microsoft’s Bot Framework.
+Microsoft Bot Framework is an open-source framework for building conversational applications using natural language processing (NLP), machine learning, and artificial intelligence (AI). It allows developers to build bots that communicate through various communication channels such as text, speech, email, and so on. The Bot Framework provides tools for developing NLP models, managing conversation flows, integrating with data sources, and publishing your bot to multiple channels. Bots built using Bot Framework can be deployed either on-premise or cloud based, making it easier to integrate into existing enterprise systems and workflows.
+In this article, we will explore how you can create your first chatbot using Microsoft Bot Framework step by step. We will start from scratch and end up creating a basic echo bot that repeats what the user says back to them. During our journey, we will learn about the core concepts and terminology used in chatbot development, as well as see some code examples. At the end, we will discuss potential future directions for further advancements in chatbot development using Microsoft Bot Framework. Let's get started!
+## Prerequisites
+Before starting this tutorial, make sure you have the following prerequisites:
+
+1. A modern web browser (e.g., Chrome, Firefox)
+2. Visual Studio Code installed on your computer (optional but recommended)
+3. Node.js and npm installed on your system
+4. An Azure subscription where you have permissions to create resources (i.e., Azure Web App Service and Azure Bot Service registration) 
+5. Knowledge of JavaScript, HTML, CSS, REST API, JSON, and related technologies
+This tutorial assumes that you are familiar with JavaScript, Node.js, and some other programming languages. If not, don't worry, I'll explain everything you need to know throughout the article. So let's dive right into it!
+
+# 2.Basic Concepts & Terminology
+## Natural Language Processing (NLP): Understanding human language
+When humans interact with machines, it is often difficult for them to understand each other when they use natural language. As a result, developers need to develop algorithms that recognize the meaning and intent of human language and convert it into machine-readable form. This process is known as Natural Language Processing (NLP). One way to achieve this is by breaking down the input sentence into smaller parts called tokens. Tokens usually represent words, phrases, and other meaningful units like punctuation marks, numbers, and special characters. These tokens can then be combined to form sentences, paragraphs, or even entire documents depending on the context of the original input. Here are some common terms used in NLP:
+- Tokenization: Splitting an input string into individual meaningful units called tokens.
+- Stemming: Removing affixes from words to obtain their base forms, which helps to reduce redundancy in the vocabulary and improve efficiency of search.
+- Lemmatization: Similar to stemming, lemmatization converts words to their root form instead of removing prefixes or suffixes. However, unlike stemming, it returns valid English words rather than inflected ones.
+- Part-of-speech tagging: Assigning semantic roles to each token based on its position, function, and usage within a sentence.
+- Dependency parsing: Extracting relationships between different tokens based on the syntactic structure of the sentence.
+Now that we understand the basics of NLP, let's move on to the next part of our journey - Building Chatbots
+## Conversational AI: Communication Between Users and Agents
+The core idea behind chatbots is to mimic the way people talk to each other. When we want to ask a question, we do not directly speak to an expert; instead, we engage in a conversation with a virtual assistant who answers our query or explains something. In order to accomplish this task, chatbots need to have the ability to understand natural language and generate responses in a way that feels natural and personable. To achieve this goal, chatbots rely heavily on Artificial Intelligence (AI) techniques like Machine Learning (ML). Machine learning models learn patterns from large amounts of training data and allow them to make predictions on new data points. Examples of ML tasks include image recognition, sentiment analysis, and speech recognition.
+However, chatbots also require an additional layer of interaction called Dialog Management. Dialog management involves coordinating the interactions between the user and the chatbot, ensuring smooth execution of conversations and delivering appropriate responses at any given time. To manage these interactions, dialog managers use techniques like Multi-Turn Dialogue Tracking and Slot Filling.
+### Dialog Flow: Defining the Interaction Path
+Dialog flow defines the sequence of interactions that take place between the user and the chatbot. Each turn consists of a user message, followed by a response from the chatbot, which may involve asking follow-up questions, presenting options for the user to choose from, or simply repeating the previous message. Here's an example of a simple dialogue flow:
+In this scenario, the user asks "What are your favorite hobbies?" and the chatbot responds with "I enjoy playing video games and reading books." Then, the user chooses to say "Do you have pets?" and the chatbot responds with "Yes, my dog Max is very fierce!" Finally, the user asks "Where were you born?" and the chatbot confirms his answer with "I was born in Seattle, WA.". Overall, the chatbot has effectively achieved a conversational experience for the user by providing personalized recommendations, greeting the user according to his preferences, and avoiding repetitive messages.
+### Intent Recognition: Identifying User Goals and Intention
+Intent recognition refers to identifying the purpose or goals behind the user's request or utterance. The main challenge here is to define clear, concise, and non-ambiguous intents that can trigger specific actions within the chatbot. For instance, if the user wants to check the weather, there might be separate intents for checking current conditions, forecasts, or schedules. On the other hand, if the user asks for help, the chatbot should be able to identify whether it needs to redirect the user to a support agent or provide general guidance.
+To train a chatbot model for intent recognition, we typically use labeled datasets containing both sample inputs and expected outputs. These datasets must be annotated to indicate the intention of each input, enabling the model to learn to map inputs to output labels. Once trained, the chatbot model can predict the intended action based on new input samples provided by the user.
+### Entities: Discovering Information from User Utterances
+Entities refer to nouns and other named entities found within the user's utterance. Unlike intents, entities capture only partial aspects of the user's utterance, which makes them ideal for extracting relevant information needed to fulfill user requests. Entity recognition involves identifying important details mentioned in the user's input and associating them with predefined entity types. Common entity types include names, locations, times, quantities, and prices. Once identified, the extracted entities can be stored alongside the corresponding user input or passed to another service for additional processing.
+Overall, conversational AI involves several subsystems working together to provide seamless, natural, and efficient communication between users and agents. Developing robust chatbots requires a combination of NLP, ML, and Dialog Management techniques, all of which are essential components of successful chatbot development.

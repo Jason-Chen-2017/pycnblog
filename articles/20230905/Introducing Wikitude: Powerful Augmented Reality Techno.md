@@ -1,0 +1,21 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+  
+
+Augmented reality (AR) is the use of computer technology to overlay digital or virtual objects onto the real world in order to provide a compelling and engaging experience for users. With AR devices such as Google's Cardboard, Apple's Airborne VR, and Samsung Gear VR now widely available, companies are rushing towards developing innovative AR applications that can take advantage of these technologies to create truly immersive and interactive experiences. However, building an AR application requires expertise in both programming languages such as Unity or Unreal Engine along with knowledge about 3D modeling and rendering techniques, all of which require extensive training time for even experienced programmers. 
+
+To simplify the process for developers who do not have advanced technical skills, many platforms such as Vuforia, Cesium, Three.js, and Babylon.js offer pre-built libraries and components that make development much faster. However, these platforms may limit the types of AR functionality they can support compared to using native SDKs provided by specific hardware vendors or software manufacturers.
+
+Wikitude is a leading provider of AR development tools and services focused on creating high quality, customizable augmented reality apps without requiring specialized technical expertise. The company has been working on its platform since 2012 and currently boasts over 2 million active customers. Its flagship product, Wikitude Studio, provides everything you need to start creating your own AR apps from scratch including out-of-the-box UI elements, engine configuration options, plugin architecture, and built-in editor that simplifies the creation process. Additionally, Wikitude offers SDKs for iOS, Android, Windows Phone, and Tizen, making it easy for developers to integrate into their existing mobile app development workflows. These SDKs also include full documentation and tutorials to help developers get started quickly. Furthermore, Wikitude offers consulting and support services to assist developers with troubleshooting issues and integrating third-party plugins. Overall, Wikitude is a well-established leader in providing AR development tools and services that allow developers to focus more on their core competencies rather than reinventing the wheel every time they want to create an AR app.
+
+In conclusion, Wikitude offers a powerful and versatile set of tools and resources that make it easier for developers to create powerful, high quality augmented reality apps without having to spend months or years learning complex technologies and architectures. While there is still significant room for improvement in terms of user interface design, performance, and stability, Wikitude's ease of use, scalability, and reliable service delivery demonstrate how committed the company is to delivering great value to its customers. Therefore, I believe that Wikitude should be praised for introducing a valuable new tool and approach to the marketplace of augmented reality development tools. It could significantly benefit the growth and success of the augmented reality industry as we head into the future. Good luck in advancing the state of AR development in the next few years!
+# 2. 基本概念、术语及定义
+Augmented reality (AR) 是通过电脑技术将数字或虚拟对象叠加到现实世界中，以提供令人信服和刺激的用户体验的方式。随着如今众多 AR 设备（如谷歌的卡巴尔盒子，苹果的空中交通模拟器，三星的手持 VR）的普及，公司正努力开发具有创新性的 AR 应用，利用这些技术带来真正沉浸式的、互动性的体验。然而，创建 AR 应用需要具有多种编程语言方面的专业技能——如 Unity 或 Unreal Engine——以及 3D 模型制作和渲染技术的知识，这对不熟悉这一领域的程序员来说都十分繁琐。
+
+为了降低对于高级技术人员的需求，许多平台（如 Vuforia、Cesium、Three.js 和 Babylon.js）提供了现成的库和组件，可以使开发速度显著提升。然而，这些平台往往会受到特定硬件厂商或软件制造商提供的原生 SDK 的限制，限制了其支持的 AR 功能类型。
+
+Wikitude 是一家提供高端 AR 开发工具和服务的领先者。该公司于 2012 年开始致力于推出自己的 Augmented Reality 平台。目前其产品线中有超过 2 亿活跃用户。其旗舰产品——Wikitude Studio——无论从外观、功能还是定价上都非常值得信赖。其提供了从零开始建立 AR 应用程序所需的一切，包括现成的 UI 元素、引擎配置选项、插件架构，还内置了一款编辑器，使创建过程变得简单易懂。除此之外，Wikitude 提供了针对 iOS、Android、Windows Phone 和 Tizen 的 SDK，使开发者可以轻松集成到他们现有的移动应用程序开发流程中。SDK 还配备完整的文档和教程，让开发者能够快速入门。另外，Wikitude 提供咨询和支持服务，帮助开发者解决疑难杂症，并整合第三方插件。总之，Wikitude 是一个坚持打造顶尖 AR 开发工具和服务的行业领导者。
+
+综上，Wikitude 提供了一系列强大的工具和资源，开发者无需花费数月或几年的时间去学习复杂的技术架构，就可以轻松地构建出功能卓越、质量出众的 AR 应用程序。尽管在用户界面设计、性能和稳定性等方面仍存在不少优化空间，但 Wikitude 为用户提供了便利、可扩展性和可靠的服务交付，充分证明了公司对客户的忠诚，表示应当欣慰地宣布对 Wikitude 的赞美。因此，我相信，赞美 Wikitude 应该成为推动 AR 开发领域向前迈进的重要动力。它对下一个五年的 AR 发展一定会产生巨大的影响。祝愿 Wikitude 一帆风顺！
