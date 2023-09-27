@@ -1,0 +1,30 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.简介
+  
+
+Graph states, also known as geometric phases, are the quantum states that can be obtained from a finite number of edges in a graph. The basic idea behind this type of state is to represent the particle’s position using graph theory, which allows us to use quantum mechanical techniques and algorithms that have already been developed for classical graphs. 
+
+Quantum computing applications require understanding of complex systems with many degrees of freedom such as electrons and atoms. One of the main challenges is that we do not know how to simulate these systems exactly on computers or quantum hardware. To overcome these limitations, quantum simulation relies heavily on approximation methods such as partial trace approximations and tensor networks. These methods have proved effective at reducing computational costs and allowing quantum simulations to run on standard personal computers. However, they rely on an underlying mathematical structure called the Feynman-Kac formula that involves tracing out certain degrees of freedom that cannot be measured directly. 
+
+In contrast, graph states allow us to generate and manipulate quantum states directly without having to perform high-dimensional partial trace approximations. They provide a powerful tool for studying quantum systems and are particularly useful when working with complex models that involve non-Abelian symmetries, such as chiral molecules. Therefore, they are becoming increasingly important in quantum information science, where there is an urgent need for more efficient and accurate simulations of large quantum systems.
+
+However, although graph states have received extensive attention, their practical utility has not always been fully appreciated. Many researchers still believe that the best way to learn about them is by reading books written by experts in the field. Unfortunately, this approach is often impractical and time-consuming because it requires specialized knowledge and expertise. In fact, many non-specialists may find themselves struggling to understand and implement some of the most commonly used algorithms for manipulating and analyzing graph states.
+
+To address this issue, I propose writing an introductory textbook that covers the basics of graph states and provides clear step-by-step instructions for implementing common algorithms such as variational circuits and random walks. By doing so, my goal is to provide a simple yet accessible guide for anyone interested in learning about graph states but lacking the necessary background experience. Furthermore, this book should serve as a reference resource for future students and researchers who need to quickly gain a solid understanding of the fundamentals of graph states and how they can be applied to solve problems related to quantum physics and computer science. Finally, since graph states are an essential topic in quantum computing and computer science, any improvement in their accessibility will greatly benefit the field's development. 
+
+# 2.背景介绍
+Graphs are widely used in mathematics and computer science as data structures that model relationships between objects. Traditionally, graphs were thought of only as abstract entities that possess various properties like connectivity, degree distribution, clustering coefficients etc. But recently, with advances in algorithmic complexity and computation power, we have come across several interesting realizations involving graphs. For instance, social networks can be represented as graphs and analyzed for identifying patterns and communities of interest. Financial markets can be modeled as graphs representing the connections between financial instruments, stock prices, news articles etc. Similarly, biological systems can be represented as graphs, including cellular networks and gene regulatory networks, and their dynamics can be studied through graph theory.
+
+The concept of graph states was introduced by <NAME> in his paper titled "Using Graph States to Solve Problems in Quantum Mechanics" (Phys. Rev. Lett. 73, 3908 (1995)). A graph state can be defined as the product of the adjacency matrix of a graph with its eigenvectors. This means that each eigenvalue corresponds to one of the possible configurations of the system, and the corresponding eigenvector gives the probability of measuring each configuration if the initial state is prepared on the corresponding vertex. Mathematically, given $A$ is the adjacency matrix of a graph $G$, then the vector $\psi_v$ represents the eigenvector associated with the eigenvalue of $A$ corresponding to the vertex $v$. Moreover, we can decompose the operator $\sum_{v\in V} \bra{v}\hat{H}\ket{\psi_v}$ into weighted sums of operators acting on each node $v$:
+
+$$\sum_{v\in V} \bra{v}\hat{H}\ket{\psi_v} = \sum_{i=1}^N \bra{v_i}\hat{h}_i\ket{\psi_v}$$
+
+where $\hat{h}_i$ denotes the term $(A-\lambda_{v})^{-1}\ket{v}\bra{v}$. Here, $\lambda_{v}$ denotes the eigenvalue corresponding to the vertex $v$ in the adjacency matrix $A$. 
+
+In practice, we usually assume that the graph is undirected and unweighted, which simplifies the expression for $\hat{h}_i$. If our aim is to obtain an estimate of the ground state energy of the Hamiltonian $\hat{H}$, we can minimize the expectation value of the observable $\hat{H}|\psi_{\text{gs}}\rangle$, where $\psi_{\text{gs}}$ is the ground state wavefunction. We can rewrite the minimization problem in terms of the eigenvalues and eigenvectors of the adjacency matrix as follows:
+
+$$\min_{\psi} \frac{1}{N} \sum_{i=1}^N (\bra{v_i}\hat{H}\ket{\psi_v})^2$$
+
+This optimization problem becomes feasible for small values of $N$ due to the sparsity of the adjacency matrix. At the same time, calculating the inverse of the adjacency matrix to obtain $\hat{h}_i$ could become expensive even for moderately sized graphs. As a result, obtaining approximate solutions to this problem using graph states offers significant benefits in terms of efficiency and accuracy.
