@@ -8,8 +8,8 @@ pattern = r'(.*外链图片转存中.*)|(.*\.png.*)|(.*\(https:\/\/.*)|.*(<img s
 def find_good(date):
     global f, content
     # 定义原始目录和目标目录
-    source_directory = f'/home/me/tools/pycnblog/articles/{date}'
-    target_directory = f'/home/me/tools/pycnblog/articles_good/{date}'
+    source_directory = f'/Users/bytedance/code/pycnblog/articles/{date}'
+    target_directory = f'/Users/bytedance/code/pycnblog/articles_good/{date}'
     # 创建目标目录
     os.makedirs(target_directory, exist_ok=True)
     # 遍历原始目录中的所有文件
@@ -35,8 +35,8 @@ def find_good(date):
 def find_draft(date):
     global f, content
     # 定义原始目录和目标目录
-    source_directory = f'/home/me/tools/pycnblog/articles/{date}'
-    target_directory = f'/home/me/tools/pycnblog/articles_draft/{date}'
+    source_directory = f'/Users/bytedance/code/pycnblog/articles/{date}'
+    target_directory = f'/Users/bytedance/code/pycnblog/articles_draft/{date}'
     # 创建目标目录
     os.makedirs(target_directory, exist_ok=True)
     # 遍历原始目录中的所有文件

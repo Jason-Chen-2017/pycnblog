@@ -4,116 +4,115 @@
 # 1.简介
   
 
-企业应用集成（Enterprise Application Integration）简称 EAI，它是一种将不同应用程序、系统之间的数据流动整合到一起的技术。其目标是建立一个集成环境，使各个应用能够更有效地通信、协作和共享信息。EAI包括企业服务总线（ESB）、消息集成、文件交换、业务规则引擎、数据转换、Web 服务等。EAI 的核心是基于 XML/SOAP、HTTP、JMS 等标准协议实现应用间的集成。企业通常要在不同的 IT 系统中实现各种功能，如 HR 管理、财务管理、采购订单处理等。这些 IT 系统之间的互联网通讯是通过应用服务器进行的，当某些流程或事件发生时，系统间的信息需要实时同步、传递。
-
-ESB 是企业应用集成的关键组件之一。EAI 主要解决的是异构系统、网络、协议等问题。ESB 可以定义、维护和管理应用程序之间的通信规则，并提供完整的业务事务支持。基于 ESB 的集成可以降低各个系统开发人员的工作压力，提高工作效率。应用服务器可以使用 ESB 作为通信代理，从而支持异构系统之间的通信。另外，ESB 可用来对传入和传出的消息进行安全控制，并提供异常检测和跟踪。
-
-本文主要讨论企业应用集成的 ESB 技术。作者首先介绍了什么是 ESB 和 EAI。接着介绍了 ESB 组件及其作用。最后，作者阐述了 ESB 的优点和局限性，并给出一些实际案例分析。
-
+企业应用集成(Enterprise Application Integration)是一个综合性的计算机系统集成技术，涵盖了从需求分析、设计、开发到测试、部署、运行、维护和监控等各个环节。企业应用集成旨在打通业务数据之间的界限，把复杂的多源异构数据转换、整合到一起，实现信息共享、协作、流程控制、业务规则等功能。常用的企业应用集成工具包括EAI（Enterprise Application Integration）产品、SOA（Service-Oriented Architecture）框架、BPEL（Business Process Execution Language）规范以及BPM（Business Process Management）流程管理软件等。除此之外，还有信息通信技术(ICT)体系中，例如电子商务、物联网、智慧城市、大数据等领域的专用集成系统，以及供应链管理、人力资源管理等行业的制造系统等。
+而企业服务总线(Enterprise Service Bus)，即ESB（Enterprise Service Bus），作为一种运行于企业内部的集成消息传递中间件，主要用于支持多种异构系统间的数据交换和集成。根据其作用范围，ESB又可分为以下三种类型：面向企业应用的ESB，面向组织内各业务线的ESB，以及面向第三方系统的ESB。在实际应用中，企业一般都会选择ESB作为统一的数据交换、数据转换、业务规则执行以及上下游系统调用的集成平台。同时，由于ESB的易用性和高性能，目前越来越多的企业采用ESB来进行企业应用集成，促进业务系统之间的交流互动。因此，理解并掌握ESB是非常重要的。
+本系列教程将详细讲述企业应用集成与ESB的基础知识、核心机制、核心算法和操作方法、常用组件和开源框架、开源项目及其应用场景等。希望通过系列教程帮助读者理解并掌握企业应用集成相关的核心技术，提升自己的职业技能水平。希望大家多多参与讨论！欢迎投稿或建议！
 # 2.基本概念术语说明
-## 2.1 EAI 概念
-EAI（Enterprise Application Integration），即企业应用集成，是一个重要的计算机技术领域，它利用互联网、数据库、业务流程工具和消息中间件等技术，把企业应用程序、数据库和其他异构系统相连接起来。它的核心目的是为了建立一个集成环境，使各个应用能够更有效地通信、协作和共享信息。EAI 的四个主要对象是应用、数据、消息、设备，其中应用指运行在企业网络上面的应用程序；数据指存储在数据库中的各种信息；消息指应用间的通信；设备指运行在企业内部和外部的各种硬件。EAI 通过服务总线（Service Bus，也称为企业服务总线）、消息交换、文件传输、业务规则引擎、数据转换、Web 服务等技术，实现应用之间的集成。
+## 2.1 EAI与ESB
+EAI，即企业应用程序集成。是指通过硬件和软件技术提供企业应用程序之间、各种设备与系统之间以及信息资源之间的数据交换、数据格式转换、业务规则执行、系统集成以及应用协同工作的一种技术手段。通常情况下，EAI以中间件形式存在于企业网络边缘，并被分布式应用到各个部门或系统中，以实现信息的共享、协调、处理和分析。由于EAI的广泛运用，它已经成为当前集成应用的主流方式。
 
-EAI 包括三个主要子系统：集成网关（Integration Gateway）、消息路由器（Message Router）、应用服务器（Application Server）。集成网关用于接收各种异构系统的数据和消息，将它们转换为标准格式；消息路由器负责将来自不同系统的请求映射到相应的业务流程或服务上，并向客户返回响应结果；应用服务器则提供了一个框架，使开发者可以快速创建新应用，并且可以访问各种接口和服务。此外，还有相关的集成模式和开发框架。
+ESB，即企业服务总线。是指一种运行于企业内部的集成消息传递中间件，主要用于支持多种异构系统间的数据交换和集成。根据其作用范围，ESB又可分为以下三种类型：面向企业应用的ESB，面向组织内各业务线的ESB，以及面向第三方系统的ESB。其中，面向企业应用的ESB，通常由IT部门负责，它封装企业应用所需要的各种接口和服务，包括基于Web的应用接口、基于消息的业务事件、基于XML的业务数据等；面向组织内各业务线的ESB，则以标准化的方式为各业务线提供服务，比如HR信息系统、客户关系管理系统、财务管理系统等；而面向第三方系统的ESB，则以开放的接口规范为第三方系统提供服务，包括金融支付、电子政务、政务数据等。
 
-## 2.2 ESB（Enterprise Service Bus）概述
-企业服务总线（ESB）是一个由多个服务组成的分布式计算和通信层。ESB 通常部署在企业级的应用程序和中间件中，承载着整个组织的所有服务调用和信息流通，具有以下几个主要特性：
+基于这一定义，可以看出，EAI是以软件和硬件为基础，而ESB则是以应用系统为核心，扩展其应用范围，最终达到整合多个应用系统以及外部系统的目的。两者都是集成应用的一个新途径，二者可以结合起来构建更大的整体解决方案。
 
-1. 集成：ESB 通过封装来自不同系统的消息、指令和数据，通过统一的接口进行数据交换，实现信息的可靠、一致和共享。
+## 2.2 消息中间件
+消息中间件（Message Broker），也称为消息代理服务器（MQ Broker）。是指用于集中存储和转发消息的一台或多台计算机上的应用程序。它利用高效可靠的消息队列特性，来实现跨越不同应用程序、网络和平台的异步通信。消息中间件通常被用来建立健壮、松耦合的、可伸缩的企业应用系统。目前，最流行的消息中间件有Active MQ、Rabbit MQ、Kafka等。
 
-2. 复用：ESB 提供了面向服务的开发模型，使得开发者只需要关注自己的应用逻辑，不需要关注底层的通信细节，从而提升应用的易用性。
+## 2.3 EAI与ESB区别与联系
+EAI与ESB最大的不同点在于目标与职责的定位。EAI侧重于整合应用程序，包括其内部结构、功能、数据等，目的是为了实现业务信息的共享、协作、处理和分析。ESB，即企业服务总线，是用来帮助企业连接、管理和集成现有业务系统、互联网服务以及第三方系统的系统集成工具。它以中心化的方式管理所有这些系统，通过集成、路由、转换和过滤等方式，将它们连成一个逻辑整体，共同完成业务需求。由于其整合系统的特性，ESB也被称为“企业集成核心”。
 
-3. 安全：ESB 支持多种安全机制，包括认证、授权、加密等，确保信息的传输过程安全。
-
-4. 性能：由于采用异步通信方式，ESB 提高了系统的吞吐量和处理能力。同时，ESB 支持缓存和持久化功能，增强系统的容错能力。
-
-## 2.3 ESB 组件
-ESB 有很多组件，分别如下所示：
-
-1. 网关：网关是ESB的入口，负责接受不同消息的输入，把它们转换为标准格式并发送至下一步处理。网关分为前端网关和后端网关两种类型，前端网关处理的是企业内部的消息，后端网关处理的是外部的消息。
-
-2. 消息路由器：消息路由器负责根据配置的路由规则，匹配消息，将消息转发到指定的目标。
-
-3. 处理器：处理器接收来自消息队列、磁盘或内存等数据的输入，经过验证、转换、过滤、路由等过程，再把处理后的结果放置于输出消息队列、数据库或文件中。
-
-4. 监控：监控模块监控ESB运行状态，包括消息的实时收发情况、系统资源占用情况、错误日志、系统性能指标等。
-
-5. 安全：安全模块实现消息的加密、签名、数字身份认证、授权等安全功能。
-
-6. 集成开发环境：IDE是ESB的集成开发环境，方便开发人员创建新应用。
-
-7. API：API模块为ESB提供了基于XML/RPC的远程调用接口，使得外部系统可以访问ESB的服务。
+另外，EAI关注业务层面的集成，以满足业务需求；而ESB以系统为中心，以接口为纽带，帮助企业更好地连接各系统，实现信息共享、协作、流程控制、业务规则等功能。因此，EAI与ESB也是密不可分的两个部分。
 
 # 3.核心算法原理和具体操作步骤以及数学公式讲解
-## 3.1 文件传送协议FTP
-文件传送协议（File Transfer Protocol，FTP）是一个用于在网络上传输文件的协议。FTP 使用 TCP/IP 作为基础传输协议，规定了用户怎样登陆服务器、浏览目录结构、上传下载文件、更改权限等。
+## 3.1 数据准备
+假设有一个消息队列接收邮件消息，消息队列的接收协议采用HTTP。假设前端用户提交了登录请求，数据如下图所示:
 
-### 3.1.1 FTP 命令列表
-#### 登录命令
-语法：
 ```
-USER <username>      //指定用户名
-PASS <password>      //指定密码
-QUIT                //退出FTP
-```
+GET /mail/login?username=admin&password=<PASSWORD> HTTP/1.1
+Host: mailserver.com
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User:?1
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: JSESSIONID=F52E8DCAF1ACDDAB3DEBEC0DA5D07F2C;
 
-#### 目录浏览命令
-语法：
-```
-CWD <directory path> //切换当前目录至 directory path 指定的路径
-LIST [<wildcard>]   //显示指定目录的内容，wildcard 为通配符
-PWD                 //打印当前所在目录的完整路径
 ```
 
-#### 文件传输命令
-语法：
-```
-TYPE I              //设置文件类型为二进制 (IMAGE)
-PUT        //上传本地文件  至服务器
-GET <remote filename>//下载服务器的文件 <remote filename> 至本地
-RETR      //下载服务器的文件  至本地
-STOR      //上传本地文件  至服务器
-DELE      //删除服务器上的文件 
-RNFR      //指定要重命名的源文件名
-RNTO newfilename    //指定新的文件名
-```
+接下来，假设后端服务解析上述请求，获得用户名和密码，进行验证，若验证成功，则返回一个session id，如JSESSIONID=F52E8DCAF1ACDDAB3DEBEC0DA5D07F2C。后端服务生成响应头部，并将JSESSIONID写入到响应头中。
 
-#### 更改权限命令
-语法：
 ```
-SITE CHMOD [mode] <remote file name> //改变远程文件权限 (mode 为 r=4，w=2，x=1 的组合)
-SITE UTIME [access time] [modify time] <remote file name> //修改远程文件的时间戳 (单位: 毫秒)
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 26 Aug 2020 03:23:57 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+Keep-Alive: timeout=60
+Set-Cookie: JSESSIONID=F52E8DCAF1ACDDAB3DEBEC0DA5D07F2C; Path=/
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 3600
+
 ```
 
-## 3.2 JMS规范
-Java 消息服务（Java Messaging Service，JMS）是 Java 平台的一项服务，允许分布式系统之间进行消息通信。JMS 规范定义了一套标准的 API，它提供了创建、发送、接收和读取消息的功能。JMS 以主题和队列两种消息模型为主，主题一般用于系统间广播通知；而队列一般用于点对点的消息通信。
+然后，客户端得到响应后，保存相应的cookie信息。
 
-### 3.2.1 JMS 消费者模型
-消费者模型是 JMS 中的消息接收模式。消费者订阅主题或者队列，并接收消息。JMS 消费者模型依赖监听器（Listener），监听主题或者队列是否有消息。当接收到消息时，监听器触发回调函数，通知生产者发布消息。
+## 3.2 请求转发
+现在，前端用户可以正常访问后端系统，如果后端系统需要访问其他的系统，就需要用到消息队列。消息队列接收到的请求应该由ESB进行转发，而不应该直接由前端用户发送到后端服务。这样做的好处在于，可以缓解前端用户与后端服务的耦合，增强服务的可用性，并且还可以降低后端系统的压力。
 
-#### 主题订阅
-语法：
+当前端用户访问后端服务时，首先检查本地是否存在cookie信息，如果没有，则向服务器请求登录信息。登录成功后，获取到session id，并保存到浏览器中。此时，前端用户的请求会先经过消息队列的转发，再到达后端服务。
+
+之后，前端用户可以继续正常访问后端服务。
+
 ```
-session.createDurableSubscriber(destination, subscriptionName);
+POST http://localhost:8080/project_webservice HTTP/1.1
+Host: localhost:8080
+Connection: keep-alive
+Content-Length: 28
+sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="90"
+Content-Type: text/xml; charset=UTF-8
+Accept: */*
+Origin: http://localhost:8080
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
+sec-ch-ua-mobile:?0
+sec-fetch-site: same-origin
+sec-fetch-mode: cors
+sec-fetch-dest: empty
+Referer: http://localhost:8080/index.jsp
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:mycompany">
+   <soapenv:Header/>
+      <soapenv:Body>
+         <urn:sayHello/>
+      </soapenv:Body>
+</soapenv:Envelope>
 ```
 
-#### 队列消费者
-语法：
+如上图所示，前端用户向后端服务发送了一个SOAP请求。消息队列收到该请求后，判断该请求不需要转发。而是直接转发给后端服务进行处理。
+
+## 3.3 业务规则执行
+假设后端服务接收到了该请求。后端服务解析请求，发现这是一条查询任务，即需要根据某些条件检索数据库中的记录。然后，先从缓存中查找数据，缓存中没有该条记录，则查询数据库。若数据库中也没有该条记录，则返回错误信息。若查询到一条或多条记录，则对结果进行排序，分页显示，并返回响应信息。最后，将查询结果返回给前端用户。
+
 ```
-messageConsumer = session.createConsumer(queue);
+GET /queryDataByCondition?name=abc&age=18 HTTP/1.1
+Host: www.example.com
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User:?1
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: JSESSIONID=F52E8DCAF1ACDDAB3DEBEC0DA5D07F2C; 
+
 ```
 
-### 3.2.2 JMS 事务
-JMS 事务（Transaction）是指业务处理过程中的一个原子操作单元。事务的特性是原子性、一致性、隔离性、持久性。事务可以保证在不同系统中的数据一致性，并确保数据的完整性。JMS 事务是在两阶段提交（Two-Phase Commit，2PC）模式下完成的。
-
-### 3.2.3 JMS 消息确认模式
-确认模式（Acknowledgement Mode）是 JMS 中消息传递过程中用于确认接收到的消息的策略。消息确认模式共有三种：自动确认、客户端确认和手动确认。
-
-#### 自动确认模式
-自动确认模式意味着在接收到消息后，JMS Provider 会立刻将消息标记为已收到，然后继续向下执行。在这种模式下，如果出现意外错误导致消息丢失，就会造成消息重复消费的问题。因此，建议不要在自动确认模式下进行长时间运行的业务流程。
-
-#### 客户端确认模式
-客户端确认模式要求 JMS Client 在接收到消息后，才向 JMS Provider 确认消息已收到。客户端程序必须捕获 javax.jms.JMSException，并调用 Message.acknowledge() 方法来确认消息。这样做的好处是，可以减少因网络问题导致的确认延迟，并提供更加精确的确认方式。
-
-#### 手动确认模式
-手动确认模式最灵活，也是最复杂的确认模式。在该模式下，JMS Provider 只负责保存已收到但尚未确认的消息。只有在确认消息时，才会真正从队列中移除消息。手动确认模式可以在同一个会话内实现任意数量的消息确认。但是，手动确认模式要求编写更多的代码，且容易出错。
+至此，EAI与ESB均已完成请求的转发、业务规则的执行。但随着业务的发展，ESB可能面临新的挑战。特别是在大规模分布式应用的架构下，如何让ESB更加智能、灵活、高效？
