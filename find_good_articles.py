@@ -77,5 +77,12 @@ if __name__ == '__main__':
         dates.append(date_str)
 
     for d in dates:
-        find_good(d)
-        find_draft(d)
+        try:
+            find_good(d)
+        except Exception as e:
+            print(f"Error occurred while finding good: {e}")
+
+        try:
+            find_draft(d)
+        except Exception as e:
+            print(f"Error occurred while finding draft: {e}")
