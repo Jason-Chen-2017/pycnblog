@@ -1,0 +1,22 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.背景介绍
+
+
+The problem of generating natural language descriptions from images is an important task in computer vision and artificial intelligence (AI). With the development of deep learning techniques such as convolutional neural networks (CNNs) and long short-term memory (LSTM), many recent works have been proposed to generate image captions that can be easily understood by humans. The main idea behind these models is to learn the patterns between different parts of an image and use them to generate captions about what is happening in the picture. However, current approaches mostly rely on pre-trained CNNs or LSTMs trained on large-scale datasets without fine-tuning on specific tasks, leading to suboptimal performance on specialized tasks like object recognition or action classification. In this work, we propose a novel end-to-end approach to generate image captions using only CNNs and attention mechanisms called attentional convolutional networks (ACNs). ACNs are inspired by classical transformers architectures where they operate on sequences of vectors rather than just single vectors. We also incorporate spatial features into our model to capture the contextual information across multiple regions of an image. Additionally, we introduce a special attention module named "multihead self-attention" which enables the network to focus on relevant parts of an image while ignoring irrelevant ones. Our experiments show that our ACN architecture significantly outperforms state-of-the-art methods on popular benchmark datasets including MSCOCO, Flickr30k, and ImageNet-CocoCaptions. Furthermore, we demonstrate how to combine several different modules together to create more powerful models with better accuracy. Finally, we provide insights into how the attention mechanism works and why it improves image captioning performance compared to recurrent neural networks (RNNs).
+
+In summary, the key contributions of our paper are:
+- We present a new approach to image captioning that uses only CNNs and attention mechanisms. 
+- Our approach offers significant advantages over conventional approaches due to its simplicity and efficiency.
+- We provide insights into how the attention mechanism works and discuss its implications for future research directions.
+# 2. Core Concepts and Connections
+We define two core concepts related to our approach - Convoluational Attention Module (CAM) and Multihead Self-Attention (MHA). CAM is responsible for identifying important regions of an image and providing relevant information that helps the model generate accurate captions. MHA is used to integrate contextual information across multiple regions and enable the model to focus on relevant parts of an image. Here's how these two concepts connect to form our overall model.
+
+
+Our model consists of three main components - input processing layers, feature extraction layers, and output prediction layers. Input processing layers convert raw inputs such as images to suitable formats that can be processed by subsequent layers. For example, ResNets or VGGs can be used as the backbone network for our model to extract high-level features such as low-level filters and early activations. These extracted features serve as the initial input to the next layer - feature extraction layers. In feature extraction layers, we apply multi-head self-attention (MHA) and convoluational attention module (CAM) on each region of the image. Each region represents one word in the generated sentence, similar to RNNs. After applying the MHA and CAM operations, the resulting representations are fed through fully connected layers to predict the final sentence representation. During training time, we optimize the loss function based on predicted vs actual sentences. At test time, we feed the image to the model and obtain the corresponding sentence. 
+
+The following figure shows the detailed connections among various modules within the model:
+
+
+Overall, we aim at generating natural language descriptions from images using only CNNs and attention mechanisms. The attention mechanism enables us to focus on relevant regions of an image and infer useful information about what's happening in the picture. On top of traditional CNNs and LSTMs, we build a lightweight framework consisting of several different modules that help to improve the overall performance of our model. We hope that our paper will inspire further research on efficient and robust image captioning systems.
