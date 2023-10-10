@@ -1,0 +1,27 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.背景介绍
+
+
+Big data is becoming increasingly important as more and more datasets are collected in various fields such as social media, IoT devices, web traffic logs etc., due to the explosive growth of internet-based businesses and applications. Despite significant advances in machine learning techniques, which can handle big data effectively, there has been limited research on using Convolutional Neural Networks (CNN) for processing large volumes of raw data. This survey article aims to provide a comprehensive overview of convolutional neural networks for big data by reviewing relevant works from different domains including image recognition, natural language processing, time series analysis, recommendation systems, graph analytics, and healthcare applications. Furthermore, this survey presents state-of-the-art architectures, training methods, evaluation metrics, and potential issues for applying CNNs for big data. Finally, it provides practical guidance for building real-world applications of deep learning technologies for big data with examples from major companies such as Google, Facebook, and Amazon. The proposed paper is targeted at both computer science students and practitioners who are interested in applying CNNs for big data in their work and projects.
+# 2.核心概念与联系
+Convolutional Neural Network (CNN), also known as ConvNet or Deep Learning models, have emerged as powerful tools for analyzing and understanding complex data patterns that appear in various application areas such as image recognition, natural language processing, speech recognition, and time series prediction. In recent years, several works have addressed the scalability, efficiency, and generalization abilities of these advanced deep learning techniques applied to big data sets. 
+
+In this section, we will briefly review some key concepts and terminology associated with CNNs for big data.
+
+## Architecture
+The basic architecture of a typical CNN consists of multiple layers of filter banks followed by fully connected layers that perform classification or regression tasks based on learned features extracted from input images. Each layer of filter bank extracts local features from input data through convolution operations, while pooling layers downsample the output of each filter bank to reduce its dimensionality and reduce computational complexity.
+
+To handle the vast amounts of raw data that may be present in big data scenarios, modern CNNs typically use multi-scale feature extraction through parallel branches, where individual filter banks process different parts of the input data at different scales. 
+
+## Training Methods
+Training CNNs requires a combination of supervised and unsupervised learning techniques. Supervised learning involves providing labeled training samples to learn how to classify objects into predefined categories, while unsupervised learning allows the model to discover latent patterns hidden within the data without any prior knowledge of the class labels. Popular optimization algorithms used for training include stochastic gradient descent (SGD), Adam, Adagrad, and RMSprop, among others. Additionally, hyperparameter tuning strategies like random search and grid search can be employed to fine-tune the performance of trained models.
+
+One common issue when training CNNs for big data is overfitting, where the model learns the noise in the training set instead of capturing underlying patterns that can generalize well to new, unseen data. Regularization techniques such as dropout and early stopping can help prevent this issue by reducing the complexity of the model during training and monitoring the validation loss during model selection.
+
+## Evaluation Metrics
+Evaluating the performance of a CNN model depends on several factors such as accuracy, speed, memory usage, and resource requirements. Common evaluation metrics include accuracy, precision, recall, F1 score, ROC curve, PR curve, confusion matrix, and cost-sensitive error rate. To assess the robustness of the model across different environments and data distributions, different evaluation protocols like cross-validation, leave-one-out, and k-fold cross-validation should be used. Lastly, model interpretability techniques like visualizing filters or attention maps can further elucidate the inner working of the model.
+
+## Potential Issues
+There are several potential challenges in applying CNNs for big data, including hardware limitations, data storage and access bottlenecks, heterogeneous computing resources, and noisy training data. One notable challenge is overfitting, which occurs when the model fits the idiosyncrasies of the training dataset rather than the underlying generative pattern. To address this issue, regularization techniques like dropout and weight decay can be used to control the complexity of the model during training. Another issue is vanishing gradients, which can occur if the inputs to intermediate layers become too small or if the network converges towards a point of low activation values. Techniques like batch normalization or adaptive learning rates can help mitigate these issues. Moreover, more specialized GPU accelerators can significantly improve the computation speed of CNNs compared to CPU-based implementations.

@@ -1,0 +1,68 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.背景介绍
+
+
+Usability testing (UT) is a technique used in software development to evaluate the usability of an application or product by testing it on real users’ scenarios and tasks. This involves observing users using the system under various conditions such as time constraints, technical limitations, user fatigue, etc., and analyzing their responses, actions, reactions, errors, and mistakes they make while interacting with the system. It is crucial for developers to design the interface of the application with consideration towards its usability. However, achieving high levels of usability can be challenging since not all aspects of software usability are readily visible. Therefore, effective UT strategies are necessary in order to ensure that applications meet or exceed industry standards and satisfy user needs. 
+
+The Handbook of Usability Testing Techniques (HUTT) presents several techniques designed to improve the process of performing and evaluating usability tests. The HUTT provides a comprehensive overview of various usability testing methods and tools that can help designers and developers create more usable products. Each chapter covers a specific topic related to usability testing, including preparing test cases, conducting user interviews, creating personas, defining goals and objectives, conducting surveys, and implementing iterative testing cycles. Additionally, HUTT also includes resources and references for further reading and learning.
+
+This handbook will provide valuable insights into how to apply different usability testing techniques to your projects, empowering you to create better products that people love to use.
+
+In this article, we will focus on covering some common usability testing techniques, including cognitive walkthroughs, heuristic evaluations, wireframes, prototypes, and A/B testing. We will then discuss how these techniques can benefit project management and development teams, fostering collaboration and teamwork. In addition, we will present tips and best practices for selecting the right type of usability testing method based on the complexity of the project and the size and scope of the test subjects. Finally, we will highlight key considerations when executing usability tests and sharing results effectively with stakeholders. 
+
+
+# 2.核心概念与联系
+## Cognitive Walkthroughs: 
+Cognitive walkthroughs involve observing participants complete a task step-by-step without any assistance or guidance from the designer or developer. Participants interact directly with the application and follow each step along until completion, but they do not receive instructions or feedback during the process. Instead, the participant must infer what is being asked of them through intuition, memory recall, or physical effort. By following participants' steps closely and observing them work through the problem space, cognitive walkthroughs provide a critical assessment of usability issues that may not surface otherwise. 
+
+## Heuristic Evaluations: 
+Heuristic evaluations assess whether a design follows standard principles or patterns that promote usability and learnability. They typically examine individual elements of the interface, such as text sizes, fonts, colors, layouts, icons, and buttons, rather than entire pages or sections. These types of evaluations often include guidelines like ensuring consistency in layout and content across multiple views or screens. While useful at identifying basic usability issues, heuristic evaluation alone cannot fully determine if a product meets the highest level of accessibility requirements or fulfills other design criteria required by regulatory bodies.
+
+## Wireframes: 
+Wireframes offer a low-fidelity representation of the application's visual layout, which allows users to see the hierarchy, organization, and flow of information on the screen. They serve as a starting point for further refinement and iteration before turning them into interactive mockups or prototypes. Wireframing should be done collaboratively between designers, developers, and subject matter experts. Without clear communication amongst these groups, changes could go unchecked and delay implementation significantly. To address this gap, agile frameworks and rapid prototyping tools have become popular choices for quick turnaround times.
+
+## Prototypes: 
+Prototypes are digital representations of an application's user interfaces that simulate various scenarios and interactions. They allow designers to explore new ideas and concepts quickly, providing a way to visualize potential solutions without committing to full development efforts. Within the context of usability testing, prototypes can be especially helpful for exploring potential improvements to existing features or troubleshooting complex problems. When implemented correctly, prototypes can greatly accelerate development speed by allowing developers to incorporate early feedback from users and shaping the final solution accordingly.
+
+## A/B Testing: 
+A/B testing refers to comparing two versions of a web page or mobile app to measure the impact of certain changes on user engagement, retention rates, customer satisfaction, and conversion rates. Commonly used variants of a website or application are compared to understand the perceived benefits and challenges associated with making small tweaks or introducing new features. Through careful analysis of the data collected from these experiments, businesses can identify areas where there is room for improvement and prioritize updates accordingly.
+
+# 3.核心算法原理和具体操作步骤以及数学模型公式详细讲解
+## Preparing Test Cases:
+To develop a thorough understanding of the target audience and the intended functionality of the system under test, test cases need to be written that cover all major functions, error messages, edge cases, and normal usage scenarios. Furthermore, research needs to be conducted to define the most important factors influencing the overall success rate of the application, such as navigational efficiency, ease of use, and adaptability. Once the test case plan is established, testers should break down the plan into smaller, more manageable parts so that they can test them efficiently and accurately within a reasonable amount of time.
+
+Test case writing requires expertise in user experience design, interaction design, and information architecture. Good test cases should clearly articulate the purpose and expectations of the user, stress both positive and negative outcomes, and validate assumptions made about the system behavior. Test cases should also detail the environment in which the test will occur, including the hardware, operating system, browser version, and location.
+
+After creating the list of test cases, the next stage is to prioritize them according to business value, risk, and difficulty. Prioritization helps testers eliminate unnecessary tests, prevent oversaturating the testing team, and ensures that high priority items get tested first. Furthermore, test case creation should be part of an iterative process that includes regular reviews and adjustments to handle unexpected situations or changes in requirements.
+
+## Conducting User Interviews:
+User interviews play a crucial role in gathering input from the target audience and developers alike. Completing informal user interviews with users helps uncover insights that would not come up in formal testing sessions. They also give stakeholders a chance to provide feedback and suggestions that can influence future iterations of the product. Despite the many challenges involved in conducting user interviews, they are essential components of any successful usability test. Here are some things to keep in mind when planning for user interviews:
+
+1. Schedule Interviews: Depending on the project scale, length of development cycle, and resource availability, user interviews should be scheduled throughout the whole project lifecycle. Regular check-ins with stakeholders are essential to ensure that scheduling conflicts are avoided and test objectives are met.
+2. Choose Appropriate Methods: There are several different approaches to conducting user interviews depending on the nature of the project and the desired outcome. Research has shown that moderated and non-moderated interview styles produce very different results, so the choice of method should depend on the specific situation and the resulting report. For example, one approach could be to collect qualitative data from the participants using a semi-structured format, while another could be to capture quantitative data via observation and questionnaires. 
+3. Choose Target Population: Identifying and involving only relevant stakeholders is vital to ensure valid results and avoid bias. Consider targeting end-users, customers, salespeople, decision-makers, managers, or others who might be interested in participating in the study. 
+4. Plan Room And Set Up Equipment: Before the interviews begin, it is important to select a suitable venue and set up proper equipment such as a microphone, camera, notes, and timer. Unbiased questions, clear instructions, and good posture can also help increase participation rates.  
+
+Once the interview protocol has been finalized, user researchers should carefully prepare for the session. Ensuring a safe environment, sanitizing hands, and addressing any initial concerns regarding participant comfort can help ensure a smooth, professional interview experience.
+
+## Creating Personas:
+Personas are fictional characters that represent real-world users based on their characteristics, behaviors, attitudes, and goals. Aspects of a persona include age, education, gender, ethnicity, income, occupation, and technology preferences. Personas should be created with the objective of generating insights and helping guide decisions around design and testing. By doing so, personas act as a lens through which to view users and identify gaps in the current design that may affect usability.
+
+Creating personas requires extensive knowledge and skill in user research, communications, and marketing. First, domain experts should speak with stakeholders to gain a deeper understanding of the target population. Then, they can analyze data from previous user interviews to extract unique perspectives. Lastly, market research should be conducted to obtain insights into brand loyalty and emotional responses to the product. 
+
+After developing personas, the next step is to assign roles and motivations to each character, grouping them together based on similar goals, values, and experiences. Developing personas also enables designers to establish empathy with realistic scenarios and reflect on the ways that different demographics interact with the application.
+
+## Defining Goals and Objectives:
+Before beginning the actual testing session, testers should clearly define the goal and objectives of the usability testing process. This includes setting measurable metrics that indicate the degree of success achieved during the testing phase. For instance, performance indicators such as time taken to complete tasks, error rate reduction, increased clicks, increased purchases, improved satisfaction scores, and decreased bounce rates can be employed as metrics. Key goals and objectives should be reviewed and updated frequently as priorities change and new findings emerge.
+
+## Conducting Surveys:
+Surveys provide valuable insight into psychological traits, attitudes, and behaviors of users, and can assist with predicting user preferences and needs. Testers should consider utilizing surveys to acquire information about users’ opinions, perceptions, behaviors, and concerns relating to the product or service under test. During the survey period, testers should focus on building rapport with participants, asking open-ended questions, and listening attentively to feedback provided by the respondents.
+
+During the survey, testers should ask questions that are relevant, constructive, and concise. Avoid overwhelming the respondents with too much information or questions, and tailor the questions to fit the specific purposes of the survey. It is essential to maintain confidentiality, complying with local privacy laws, and adhere to ethical guidelines.
+
+## Implementing Iterative Testing Cycles:
+Iterative testing cycles are essential components of usability testing because they enable continuous improvements and validation. Typically, testing takes place in three phases: prototype testing, evaluation, and final delivery. The prototype testing phase involves creating a working model of the application to test core functionalities, navigation paths, and UI design elements. Evaluation involves analyzing the prototype and documenting any issues found during the testing process. Based on the feedback received, designers revise the prototype and repeat the testing process until all bugs and defects are eliminated. Finally, the final deliverables include documentation, reports, and recommendations for improving the application.
+
+Testing activities should be carried out frequently and iteratively to minimize waste and maximize quality. Using a combination of traditional manual testing techniques, automated scripts, and controlled experiments can enhance the efficiency and effectiveness of usability testing. Additionally, using lightweight testing processes and applying modular design principles can help designers and developers focus on testing the essentials, saving time and money.
