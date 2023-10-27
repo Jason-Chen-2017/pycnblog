@@ -1,0 +1,59 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.背景介绍
+
+
+This article will be about what a game engine is and how it helps us create games and other multimedia applications that use computer graphics for rendering and animation. We'll start by discussing different types of engines and then move on to defining what makes up a typical game engine architecture and its components. 
+
+# The Invention of Video Games
+Modern gaming has been an enormous industry revolution since the invention of video games in the late 1970s. It's no surprise that the development of video games has impacted many aspects of our lives from entertainment to education to healthcare. 
+
+Early video games were simple games such as pong or Tetris where there was no character creation and only one player. As technology improved and more complex games started being developed, they took on a more interactive and engaging role by incorporating richer gameplay experiences with characters, weapons, vehicles and levels. These new games have changed the way people interact with computers and embody their ideas beyond just playing them.
+
+Today, the popular genre of video games includes shooters like Call of Duty, action-adventure games like Grand Theft Auto V, real-time strategy games like Warhammer 40K: Battle for Middle Earth and simulations like Star Wars Galaxy Faraway. Almost every day we are faced with billions of hours spent on social media, online gaming platforms, and streaming services.
+
+As the world becomes increasingly connected and digitized, the demand for virtual reality and augmented reality games increases rapidly. While these games still require high-tech hardware and specialized software, they offer immersive environments and an entirely new experience for players compared to traditional gaming.
+
+In summary, the first recorded instance of human communication before written language originated around 1930 when Archimedes sent his message using signs with raised arms across the sky above Mt. Kilimanjaro. Since then, humans have continued to communicate through various mediums including writing, drama, painting, music, poetry, etc. Today, the internet offers a unique opportunity for people to share knowledge and communicate with each other via videos, photos, audio files, and text messages. The rise of digital culture has transformed the face of modern life significantly. Many industries such as education, entertainment, transportation, retail, financial services, manufacturing, and healthcare are heavily dependent upon the advancements in technology to remain competitive. This industry requires highly skilled professionals who can design, develop, maintain and support complex systems that support the production, distribution, and consumption of goods and services. Therefore, game engines are essential tools for creating content such as games and multimedia applications. 
+
+# Types of Game Engines
+Game engines come in several shapes and sizes depending on the level of detail required, from full-featured engines designed for building entire worlds and simulators to small lightweight engines that provide basic graphics functionality to help developers quickly prototype their projects. Some common categories of game engines include:
+
+- **Standalone Game Engines:** These are standalone programs that run directly on a user's system and usually allow users to create and play individual games without requiring any external dependencies or plugins. Popular examples of standalone game engines include Unreal Engine 4, Unity, CryEngine, and Source.
+
+- **Multiplayer/Online Game Engines:** These engines enable multiple players to connect over the internet to collaborate on a shared gameworld or build virtual teams for team-based multiplayer games. Popular examples of multiplayer/online game engines include Unturned, Project Altis, and Garry's Mod.
+
+- **Framework-Based Game Engines:** Framework-based engines utilize prebuilt libraries and frameworks such as OpenGL or DirectX to render scenes and graphics. They provide a platform-independent interface for developers to access low-level graphics functions and simplify the process of developing games. Popular examples of framework-based game engines include Unity, Unreal Engine, Cocos2d-x, and Phaser.
+
+- **Customizable Game Engines:** Customizable engines offer complete control over the underlying code and algorithms used to render and animate objects within a scene. Developers may modify existing features or add new ones based on specific needs or preferences. Examples of customizable game engines include Construct 2, Haxeflixel, and Godot.
+
+Overall, there are many factors that go into deciding which type of game engine to choose. Some considerations to keep in mind include the size and scope of your project, the complexity and scale of your art assets, performance requirements, and the availability of documentation, tutorials, and community resources. However, the main focus should always be on producing great quality games and providing a positive customer experience.
+
+# Typical Game Engine Architecture and Components
+Now let's take a look at some key concepts related to game engines and define what makes up a typical game engine architecture and its components. 
+
+## 1. Hardware Abstraction Layer
+The hardware abstraction layer provides a standard interface between game engine code and the actual graphics processing unit (GPU) or CPU cores of the host device. The goal of this layer is to isolate the game engine from platform-specific details and ensure consistent behavior across all supported devices. To achieve this, the layer typically consists of a set of APIs and abstractions for handling window management, input, file I/O, threading, resource loading, shader compilation, and so on. By abstracting away the underlying graphics API, game engines can work across multiple operating systems and GPU vendors with minimal effort.
+
+A good example of a hardware abstraction layer is the Open Graphics Library (OpenGL), which defines a cross-platform application programming interface (API) for rendering 2D and 3D graphics primitives. When you write OpenGL code, you don't need to worry about whether your target platform supports legacy rendering contexts, wide color gamut displays, or multi-sampled anti-aliasing. Instead, you can simply call the same drawing commands regardless of the platform or driver. Additionally, OpenGL itself is vendor-neutral, making it easier to port your code to different GPUs and drivers later on. Overall, OpenGL is widely recognized as the most portable and versatile graphics API available today.
+
+## 2. Game Object System
+The game object system handles the overall organization of game entities, logic flow, and rendering. Its primary purpose is to manage the relationships between the different parts of a game's environment, allowing developers to easily manipulate objects, store data, and apply behaviors to them. A game engine typically includes a hierarchy of game objects representing physical or logical elements in the game world, such as enemies, obstacles, walls, or characters. Each object contains state information such as position, velocity, orientation, and physics properties, as well as methods for performing actions such as movement, interaction, or damage. The object system also manages object updates, collisions, and rendering pipelines, ensuring that changes to the game world are reflected accurately in real-time.
+
+An important aspect of the game object system is the ability to handle dynamic content, meaning that objects can be created, destroyed, or modified during runtime without interrupting the game's flow. This feature is crucial for many game mechanics such as bullet hell, minigames, or boss fights. To do this, the object system must provide efficient mechanisms for creating, deleting, and updating objects while minimizing memory usage and frame rate issues. Furthermore, the system must enforce consistency across all objects and prevent unexpected behaviors due to race conditions or unsynchronized threads. An example of a popular library that implements a game object system is Unreal Engine 4's blueprints system.
+
+## 3. Rendering Pipeline
+The rendering pipeline controls the sequence of operations performed by the graphics card to convert geometric models into images displayed on screen. At a high level, the pipeline involves three main steps: geometry setup, rasterization, and shading. The geometry setup stage takes model data stored in memory and transforms it into a format suitable for the graphics card to process. Rasterization converts the resulting 3D polygons into pixels on the screen, while shading applies lighting effects and material properties to the final image. The result of the pipeline is typically saved to a display buffer, but some engines may perform additional postprocessing steps, such as antialiasing, depth of field, motion blur, or global illumination.
+
+To improve performance, game engines often optimize the rendering pipeline by caching commonly used objects and reducing draw calls whenever possible. For example, static objects may be drawn once instead of each time they're encountered in the scene, which can greatly reduce overhead and improve rendering times. Similarly, shaders may be compiled ahead of time to avoid the costly preprocessing step at runtime, further improving performance. Other techniques include frustum culling, LOD (level of detail) switching, and tessellation, which are used to speed up polygon rendering and reduce fillrate costs.
+
+Another important component of the rendering pipeline is shadow mapping, which uses texture-based shadows to simulate the appearance of real-world shadows cast by objects in the scene. Shadow maps can be generated at runtime or loaded from disk, depending on the efficiency and accuracy needed for a given scenario. Additionally, techniques such as shadow acne mitigation and cascade splits can be employed to minimize artifacts caused by overlapping cascades. Finally, early z-prepass techniques such as deferred shading or forward rendering can be used to reduce the number of pixels rendered per-object, further improving performance and visual fidelity.
+
+## 4. Physics and Collision Detection
+Physics and collision detection components handle the simulation and analysis of physical phenomena such as gravity, fluid dynamics, and collision response. During gameplay, these components combine with the game object system to produce accurate results and natural gameplay interactions. Common examples of physically-based simulation include air resistance, slippery surfaces, bounciness, and drag forces, while collision detection algorithms analyze the shape of objects and predict their future positions based on simulated forces acting on them.
+
+Although much research has gone into optimizing collision detection algorithms to reduce lag and improve stability, the challenge remains that fast moving objects can sometimes tunnel through solid objects, leading to unpredictable behavior and instability. To address this issue, recent advancements in simulation techniques such as PhysX, Bullet, or Box2D can greatly accelerate collision detection even on lower-end hardware.
+
+## Conclusion
+In conclusion, understanding the fundamentals behind game engines can give us a better idea of what goes into creating a successful game. In Part 2 of this series, we'll discuss the core algorithmic principles involved in implementing a 3D graphics engine, starting with basic linear algebra and numerical integration.
