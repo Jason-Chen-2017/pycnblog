@@ -1,0 +1,57 @@
+
+作者：禅与计算机程序设计艺术                    
+
+# 1.背景介绍
+
+
+Contextual embeddings refer to the technique of representing words and sentences in a continuous vector space where similar words have similar representations and dissimilar ones have different representations. These word embeddings can be used for various natural language processing (NLP) tasks such as text classification, sentiment analysis, machine translation, named entity recognition, question answering, etc. 
+
+The key advantage of using contextual embeddings over traditional bag-of-words or one-hot encoding is that it captures the meaning of each word based on its use in a sentence rather than just considering its frequency occurrence in the corpus. This enables NLP models to better capture complex relationships between words within a sentence, such as those arising from syntax or semantics, leading to improved performance over models trained on purely frequency-based representations.
+
+However, even with these advantages, many NLP tasks still require careful design of features and architectures because of their complexity. Therefore, there has been a lot of research towards making contextual embeddings more efficient by reducing the size of the embedding vectors while maintaining most of the semantic information.
+
+In this article, we will first explore the basics of what contextual embeddings are and why they are useful for natural language processing tasks. Then, we will focus our attention on two main types of contextual embeddings – static and dynamic. We will then discuss how these embeddings interact with each other in a deep neural network architecture and present some example applications of them in NLP tasks. Finally, we will provide an outlook on future trends and challenges in the field of contextual embeddings and highlight some open problems. 
+# 2.核心概念与联系
+## Word embeddings
+Word embeddings represent individual tokens (e.g., words, phrases, or characters) in a continuous vector space where similar tokens are closer together and dissimilar tokens farther apart. The mapping between words and corresponding vectors is learned from large corpora of text data, which allows for capturing the meaning and contextual relationships between words. They have been shown to perform well across a variety of natural language processing tasks including text classification, sentiment analysis, machine translation, named entity recognition, and question answering.
+
+Given a sequence of words $w = [w_1, w_2,..., w_T]$, the average of their corresponding word embeddings gives us a representation of the entire sequence:
+
+$$\overline{w} = \frac{1}{T}\sum_{t=1}^{T} E(w_t),$$
+
+where $E$ represents the word embedding function. By averaging the embeddings, we take into account the fact that multiple occurrences of the same word may contribute differently depending on the position of the word within the sentence. However, if we simply concatenate all the embeddings in order without any weighting or normalization, we end up with a single dense vector that does not necessarily reflect the overall meaning of the input sentence.
+
+To address this issue, we need a way to combine the information captured by multiple embeddings at different positions within the sequence into a single compact representation that captures both global and local aspects of the sentence. One approach to achieve this is called a weighted sum of embeddings where we assign different weights to different subsequences of the sentence. For example, if we want to give higher importance to the last few words of the sequence, we can assign larger weights to the final words. This leads to a weighted sum of embeddings that combines the best of both worlds: it accurately captures the global structure of the sentence while also taking into account the specificities of each individual word.
+
+Another popular variant of the weighted sum approach is called LSTM (Long Short-Term Memory) networks. These models leverage both long-term dependencies in the input sequence and short-term memory effects of neurons within layers to produce accurate results in natural language processing tasks like speech recognition and language modeling. In contrast to traditional feedforward neural networks, LSTMs maintain an internal state that captures the history of previous inputs and allow the model to learn temporal patterns in sequences. As a result, LSTMs typically perform better on sequence-based tasks compared to CNNs or RNNs when applied to natural language processing tasks.
+
+Overall, the word embeddings and their variants form the basis for modern approaches to NLP and have made significant progress in improving task accuracy.
+## Static vs Dynamic embeddings
+We now turn our attention to the type of embeddings commonly used in practice – static and dynamic embeddings. Both of these types consist of a mapping between tokens (e.g., words, phrases, or characters) and vectors, but differ in their learning dynamics and how they handle contexts. Let's start by understanding what constitutes a "static" embedding.
+
+### Static embeddings
+Static embeddings encode the distributional properties of words directly in the vectors themselves. In other words, they assume that the vectors contain enough information about the meaning and relationships between words to infer the correct meaning of any given token based solely on its vector representation. In practice, this means that the values in the embedding matrix cannot change during training, and they must be initialized randomly or learned jointly with the rest of the parameters of the neural network architecture. Examples of static embedding methods include GloVe, Word2Vec, and fastText.
+
+One advantage of static embeddings is their simplicity and speed. Since they don't rely on external resources or pre-trained models, they can quickly be trained and fine-tuned on small datasets or personalized for a particular domain. Another advantage is that they often capture important linguistic insights such as polysemy, homonymy, and analogy grouping, making them effective at handling noisy or unstructured text data. Despite these benefits, however, the static nature of these embeddings makes them impractical for tasks such as machine translation since it would require retraining the system every time the source or target languages change.
+
+Finally, although static embeddings were initially developed primarily for English language texts, recent works have demonstrated their ability to generalize beyond monolingual settings. Some examples of cross-lingual embedding methods include multilingual BERT (mBERT) and XLM-RoBERTa.
+
+### Dynamic embeddings
+On the other hand, dynamic embeddings train a separate model to predict the next token in the sequence based on the preceding sequence of tokens. Unlike static embeddings, they do not assume that the vectors contain any direct information about the relationships between words, and instead try to reconstruct the context around the current word based on its surrounding neighbors. The intuition behind this approach is that humans naturally create new words by combining parts of existing words and therefore the likelihood of seeing a given token depends heavily on the adjacent tokens in the sequence.
+
+Dynamic embeddings make use of recurrent neural networks (RNNs) or transformers (transfomer networks) to model sequential patterns in the data. Traditional RNNs process the sequence in a forward direction and attempt to predict the next token given the past context, while transformer networks apply self-attention mechanisms to extract relevant information from the input sequence. By creating a feedback loop between these components, dynamic embeddings are able to effectively generate novel output sequences that capture the full meanings of the input text.
+
+Examples of dynamic embedding methods include ELMo, BERT, RoBERTa, and ULMFit. Each method offers distinct advantages and limitations, but in general, dynamic embeddings are currently preferred for natural language processing tasks due to their flexibility and robustness. Although they may not offer as strong guarantees of interpretability or comparative strength against fixed embeddings, they are becoming increasingly popular due to their relative ease of training and deployment.
+
+## Interactions among embeddings
+So far, we have discussed static and dynamic embeddings and focused our attention on how they work individually. Now let's consider how they interact with each other in a deep neural network architecture. Specifically, we will describe how static embeddings influence the hidden states of the neural network, how they interact with variable length sequences, and finally, how they can be combined with dynamic embeddings for improved performance.
+
+Let's begin with the case of incorporating only static embeddings into a neural network. One common pattern is to concatenate the static embedding of a given token alongside its original embedding obtained through standard techniques such as one-hot encoding or positional encoding. This produces a longer sequence of concatenated vectors, which is fed into a fully connected layer followed by dropout regularization. The resulting vector serves as input to the subsequent layers of the network, allowing it to capture the combination of syntax and semantics of the input sequence.
+
+The downside of this simple approach is that it treats all tokens equally, neglecting the varying distributions of real-world words within the vocabulary. To alleviate this, we can use clustering algorithms to group similar words together and construct categorical variables indicating their membership in a certain cluster. While effective in many cases, clustering algorithms alone cannot completely replace traditional feature engineering steps such as TF-IDF, so further improvements might still be necessary.
+
+Another option is to train separate models for each distinct category, adjusting their initialization accordingly. Alternatively, we could add an additional linear layer onto top of the concatenated static embeddings that learns weights for each category based on a softmax activation function, enabling the network to selectively attend to specific clusters based on their contribution to the prediction.
+
+For variable length sequences, the simplest solution is to mask out the padding tokens before passing the sequence to the neural network. We can accomplish this either by padding the sequence dynamically to ensure that its length matches a predetermined maximum length, or by explicitly setting the padding value to zero and ignoring it during training. Masking also helps prevent the neural network from relying too heavily on the ordering of the input sequence, which can impact its ability to learn meaningful interactions between tokens.
+
+As for combining static and dynamic embeddings, we can choose either concatenation or addition strategies depending on whether we want to treat the embeddings as independent or related entities. Concatenation involves adding the static and dynamic embeddings as additional dimensions of the same input tensor, whereas addition involves adding their outputs elementwise. Depending on the downstream task, we might prefer one over the other, especially when working with long sequences or dealing with multi-task learning scenarios.
