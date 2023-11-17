@@ -3,456 +3,438 @@
 # 1.背景介绍
 
 
-React、Vue等前端JavaScript框架一直吸引着开发者的青睐，其优秀的性能表现和丰富的组件库，无疑让很多前端开发者和企业的产品研发团队受益匪浅。但随之而来的就是服务端渲染（SSR）的问题——React、Vue等JS框架只能在浏览器环境中运行，服务端无法识别并处理标记语言，因此在服务端渲染之前需要将HTML页面序列化成字符串、保存到数据库或者缓存中供后续客户端访问。然而，当初看到这一切如此简单粗暴，有些开发者心生畏惧和恐惧，觉得JS只是将HTML页面“翻译”成一个可显示的视图层，跟PHP一样，没有真正解决前端页面性能优化和SEO难题。
+## Node.js简介
+Node.js是一个基于Chrome V8引擎的JavaScript运行时环境，它是单线程、事件驱动、异步I/O模型的JavaScript runtime。它的包管理器npm，一个强大的第三方模块生态系统，已成为JavaScript开发者不可或缺的工具。
+## 服务端渲染（Server-Side Rendering）概念及其意义
+服务端渲染是一种将页面生成HTML、CSS、JavaScript并发送到浏览器的技术。它最早起源于Facebook的React框架。它使得网页在第一次请求时就呈现完整的内容，而无需依赖于客户端JavaScript。因此，它可以为用户提供更快的渲染速度，同时也提高了SEO效果。但是，它的实现却需要服务端和客户端一起参与工作，相比纯前端的单页应用，增加了服务器的负担。
 
-虽然服务端渲染可以提升用户体验，但确实也带来了新的挑战——复杂度增大、资源占用增加、维护难度加大。不仅如此，还引入了诸多新问题：渲染效率低、渲染错误率高、部署难度高、开发调试困难等等。那么如何设计一个能有效降低这些问题的服务端渲染框架呢？
+## 为什么要服务端渲染？
+由于服务端渲染技术的出现，让许多网站都从完全静态的网站过渡到了完全动态的网站。前后端分离的架构带来了许多好处，包括降低了开发难度、提升了开发效率、减少了维护成本、可伸缩性更高等等。但这种架构也引入了新的问题——性能。如果页面内容包含大量的动态数据，那么传统的渲染方式会花费更多的时间用于数据的处理，导致响应时间变慢。而且，许多搜索引擎仍然只认识到Web页上显示的内容，对于网站的结构和功能没有太大影响。因此，服务端渲染技术应运而生。通过预先将页面内容渲染成静态的HTML文件，再将其直接发送给用户，这样就可以保证用户在访问页面时看到的是最新的内容，并且无需等待JavaScript脚本的执行，提升了用户体验。
 
-在本文中，我们就借助Node.js进行服务端渲染的探索，探讨如何基于Express、Koa或其他流行Web框架，实现完整的服务端渲染流程，为开发者提供更高效和全面的服务端渲染方案。希望通过阅读本文，开发者能够掌握服务端渲染的基本概念和原理，并针对自身需求制定合适的服务端渲染策略。
+## 服务端渲染的优点
+### 提升性能
+服务端渲染能够快速响应用户请求，将大量的数据库查询转移至服务端，避免了客户端与服务器之间的通信，减轻了服务器负担，提升了用户体验。除此之外，还能有效防止DDoS攻击和其他安全风险。另外，服务端渲染还能通过缓存优化用户访问，加快响应速度，提升用户感知。
+
+### 降低开发难度
+服务端渲染可以将前端人员从复杂的前端技术栈中解放出来，只需要专注于后端的开发即可。同时，前端工程师也可以利用一些模版语言或模板引擎快速地生成页面内容，减少开发时间。
+
+### SEO效果显著
+许多网站采用服务端渲染之后，搜索引擎开始抓取页面上的内容，而不是使用原始的动态网页，因此，有利于提升SEO效果。例如，通过服务端渲染，可以将非结构化的数据，如FAQ内容、新闻列表等，生成索引，方便搜索引擎收录、展示。
+
+### 可扩展性更高
+服务端渲染的架构可以横向扩展，不受硬件限制。因此，服务端渲染能更好地满足多样化的业务需求。例如，可以根据网站流量，动态调整服务节点数量，提高网站整体的容量和响应速度。
 
 # 2.核心概念与联系
-## 2.1 服务端渲染(Server-Side Rendering)
-服务器端渲染(Server-Side Rendering，简称SSR)，是指在请求响应过程中，由服务器直接生成HTML页面的技术。传统的前端应用都是单页应用(SPA)，也就是只有一个主页面，所有的路由都在同一个页面上完成。但是，随着互联网的发展，越来越多的网站已经转向多页应用，甚至是多终端应用。为了更好的满足用户需求，服务器端渲染便成为网站的一个重要组成部分。
+## 渲染（Rendering）
+渲染（Rendering）指的是将数据转换成输出结果的过程。按照编程领域的标准，渲染通常有两种类型：
 
-服务端渲染的主要目的是为了使初始页面加载时间更短、用户的反应速度更快、搜索引擎更容易抓取页面信息、节省后端运维成本、提升搜索排名。它的核心原理是把创建、编译、渲染DOM元素的过程从浏览器端移至服务器端执行，然后把渲染结果返回给浏览器。这意味着，首屏加载的时间会显著缩短，用户的交互体验也得到明显改善。而且，由于浏览器只能解析经过预处理的HTML文件，因此不能发挥作用。
+1. Static Rendering(静态渲染)
 
-尽管服务器端渲染已经成为一种主流技术，但实际情况却并非每个人都十分了解它。事实上，服务端渲染和单页应用架构不同，前者是一种完全不同的架构模式，与SPA相比，其最大的特点在于，所有的路由都要由服务器端完成，而不是在浏览器端由前端JavaScript负责切换页面。
+   在静态渲染下，所有的页面内容都是由服务端生成的，然后发送给浏览器。一般情况下，这种方式对服务器压力较小，速度也较快，适合大量静态页面的渲染。
 
-另一方面，对于那些使用服务器端渲染的团队来说，他们往往会遇到如下几个问题：
+2. Server-side Rendering (SSR)
+   
+   在SSR下，服务器会把渲染好的页面返回给客户端，客户端直接加载渲染好的页面，不需要再发送HTTP请求。这样，在访问每个页面时，就不需要额外的HTTP请求，加载速度可以得到提升。但是，由于服务器需要先渲染出整个页面，因此首次打开页面时，需要更长的加载时间。
 
-1. SEO问题：由于所有页面都由服务器端渲染，因此搜索引擎可能无法正确索引页面信息，导致排名不靠谱。
-2. 复杂性问题：服务端渲染必然会涉及更多的代码逻辑，使得开发和维护变得更加困难，并且不可避免地引入性能问题。
-3. 部署问题：由于部署环境不再是纯粹的浏览器环境，因此配置Node环境、下载npm依赖包、调试工具、处理服务器环境等等都会成为一个繁琐且耗时的任务。
-4. 渲染错误率高：由于所有页面都由服务器端渲染，因此可能会出现渲染错误，影响用户体验。
+## 技术栈
+服务端渲染技术栈主要包括以下几个部分：
 
-## 2.2 Node.js
-Node.js是一个基于Chrome V8引擎的JavaScript运行环境。它的事件驱动、非阻塞I/O模型、异步编程接口等特性使得它非常适合编写服务器端应用程序。服务端JavaScript运行在Node.js环境下，也可以使用NPM包管理器安装各种第三方模块，以及Express、Koa等Web框架构建HTTP服务器和API。
+* 模板（Template）
 
-Node.js支持服务端渲染的核心是异步I/O、事件循环和JavaScript运行时，包括V8 JavaScript引擎。它对内存管理、垃圾回收机制也有比较高的要求。因此，服务器端渲染框架必须具备较强的并发处理能力，可以在高并发情况下保持稳定的响应时间。
+* 数据获取（Data fetching）
 
-## 2.3 Express
-Express是Node.js中的一个轻量级Web应用框架，基于connect模块实现HTTP服务器功能。Express通过中间件机制，可以方便地添加HTTP请求处理的中间件、路由处理函数和模板渲染函数等。因此，Express可以帮助我们快速地搭建服务端渲染的HTTP服务器。
+* 路由（Routing）
 
-## 2.4 Koa
-Koa是基于ES6的新型Web框架，它是Express的升级版本。Koa继承了Express的所有特性，同时兼容ES7 async/await 语法，提供了更简洁易读的API。Koa是一个轻量级的Web框架，与Express具有相同的功能。
+* 数据流（Data flow）
+
+* 状态管理（State management）
+
+* 本地存储（Local storage）
+
+* 服务端初始化（Server side initialization）
+
+* Webpack Bundling and Code Splitting
+
+* 配置管理（Configuration Management）
+
+## SSR框架选型建议
+一般来说，在构建服务端渲染项目时，我们推荐使用以下三种框架：
+
+1. React + Next.js
+
+2. Vue + Nuxt.js
+
+3. Angular + Angular Universal
+
+React + Next.js 是目前使用最广泛的服务端渲染框架，因为它非常符合当前流行的React技术栈，拥有庞大的社区支持，同时也支持TypeScript。Next.js还内置了API Routes，帮助开发者更方便地编写API接口，同时还集成了其他常用插件，比如图片优化、PWA支持等，这些特性可以极大地提升开发效率。
+
+Vue + Nuxt.js 则是另一款非常受欢迎的服务端渲染框架，它也是使用TypeScript开发的，同时也提供了Vuex状态管理机制。Nuxt.js也提供了很多插件，包括PWA支持、SPA模式部署等。总而言之，Vue + Nuxt.js是比较符合要求的选择。
+
+Angular + Angular Universal 则是Angular官方推出的服务端渲染框架，它可以把Angular项目编译为服务端渲染版本，以达到同构的效果。与其它两种框架不同，Angular + Angular Universal 只支持渲染HTML页面，不能执行后端的逻辑，因此只能作为纯前端的SPA（Single Page Application）使用。不过，由于它是官方推出的框架，它的文档质量也比较高。
+
+综合以上三个服务端渲染框架的特点和使用范围，我们可以得出以下建议：
+
+1. 如果刚接触React或者Angular，建议优先考虑使用React + Next.js 或 Angular + Angular Universal。
+
+2. 如果有一定经验且熟悉React技术栈，建议使用React + Next.js，因为它更贴近React的开发模式。
+
+3. 如果对性能要求不是很苛刻，并且追求更快的响应速度，建议使用Vue + Nuxt.js 或 React + Next.js，毕竟它们的渲染速度都比较快。
+
+4. 如果对Angular有丰富的使用经验，并且想尝试一下服务端渲染，可以使用Angular + Angular Universal。
 
 # 3.核心算法原理和具体操作步骤以及数学模型公式详细讲解
+## 服务端渲染的基本原理
+服务端渲染（Server-Side Rendering，简称SSR），是一种将页面生成HTML、CSS、JavaScript并发送到浏览器的技术。它的目的是为了加快初始加载速度，并提升用户的访问体验。在实际实现过程中，服务端渲染会由服务器将已经渲染好的HTML、CSS、JavaScript等资源发送给浏览器，浏览器直接渲染页面，无需进行额外的HTTP请求。
 
-## 3.1 模板渲染
-服务端渲染框架的核心工作其实就是模版渲染。前端应用通常采用MVC或MVP架构模式，即Model-View-Controller或Model-View-Presenter，其中Controller负责处理业务逻辑，Model存储数据，View则负责呈现最终的界面。服务端渲染框架也是遵循这种架构模式，首先，我们需要定义好路由规则，指定哪个URL对应哪个Controller的处理方法；然后，我们通过Controller的方法获取必要的数据，将它们填充到模板文件中，生成HTML字符串作为响应返回给浏览器。最后，浏览器接收到HTML字符串后，会逐步解析和渲染，呈现出完整的页面。
+其基本流程如下图所示：
 
-模板渲染可以分为两大类：渲染引擎和前端框架。一般来说，渲染引擎负责解析HTML模板，并将模板中的变量替换成实际值；前端框架则负责与渲染引擎结合，控制整个页面的渲染流程，包括获取数据、填充模板、组织结构、更新样式等。常用的渲染引擎有Jade、Twig、Nunjucks等，前端框架包括React、Angular、Ember、Vue等。
+简单来说，首先，服务端会解析并生成对应的HTML文件；然后，通过浏览器发送HTTP请求，下载HTML文件；浏览器会解析HTML文件，并对页面进行渲染，并将渲染后的页面呈现给用户。
 
-## 3.2 数据获取
-数据的获取一般通过HTTP请求的方式来实现，Express中的req对象代表当前请求对象，res对象代表当前响应对象，可以通过req对象的属性和方法获取请求参数、cookies、headers、session等信息。Node.js内置的URL库可以用于解析和构造URL，可以用它来构建统一格式的REST API。
+虽然服务端渲染能够提升用户体验，但同时也引入了新的问题——传输效率。在每次HTTP请求时都需要传输完整的HTML文件，会大大增加传输的消耗，尤其是在移动网络环境下，这样的情况非常普遍。因此，服务端渲染的出现意味着技术革命。
 
-获取数据的方法有两种：同步方法和异步方法。同步方法是在请求过程中阻塞等待数据返回，直到超时、网络错误等；异步方法则是在请求发起后立即返回，并通过回调函数或Promise等方式获得返回结果。Express中可以使用async/await、callback函数或者Promise等方式进行异步数据获取。
+## 服务端渲染的优势
+服务端渲染（Server-Side Rendering，简称SSR）具有以下优势：
 
-## 3.3 DOM渲染
-DOM渲染的目标是把数据填充到模板中生成的HTML字符串中，并将HTML字符串返回给浏览器。通常我们可以使用模板引擎库来完成DOM渲染。模板引擎将数据与模板文件绑定起来，根据模板文件的结构和语法规则，动态生成HTML字符串。
+1. 更好的SEO效果
 
-具体的渲染流程如下图所示：
+   服务端渲染可以把页面的内容渲染成静态的HTML文件，然后直接发送给用户，这样就可以保证用户在访问页面时看到的是最新的内容，并且无需等待JavaScript脚本的执行，提升了用户体验。
 
+2. 减少网络请求
 
-## 3.4 模板引擎
-模板引擎是实现服务端渲染的关键环节，它负责将数据映射到HTML模板中生成最终的HTML页面。前端框架主要做的事情就是选择合适的模板引擎，并调用模板引擎的接口生成相应的HTML字符串。常见的模板引擎有Mustache、Handlebars、Jinja2、Pug等。
+   通过服务端渲染，可以把页面的内容生成静态的HTML，再直接发送给用户，省去了浏览器发起HTTP请求的麻烦，直接将渲染好的页面呈现给用户。这样，可以减少浏览器与服务器之间的HTTP请求次数，提高页面的加载速度，改善用户体验。
 
-## 3.5 CSS加载和处理
-CSS是制作美观、流动、动态的网页的基石。CSS样式表通常保存在外部文件中，通过链接标签<link>引用，并使用@import指令导入其它样式表。CSS的加载和处理是浏览器渲染页面的关键环节，服务端渲染框架也需要考虑到这一点。
+3. 更高的性能
 
-通常，服务端渲染框架可以通过如下方式来加载CSS文件：
+   服务端渲染能够快速响应用户请求，将大量的数据库查询转移至服务端，避免了客户端与服务器之间的通信，减轻了服务器负担，提升了用户体验。除此之外，还能有效防止DDoS攻击和其他安全风险。
 
-```javascript
-function loadCSSFile(fileUrl) {
-  return new Promise((resolve, reject) => {
-    const link = document.createElement('link');
-    link.href = fileUrl;
-    link.rel ='stylesheet';
+4. 可扩展性更强
 
-    link.onload = resolve;
-    link.onerror = () => reject(`Failed to load ${fileUrl}`);
+   服务端渲染的架构可以横向扩展，不受硬件限制。因此，服务端渲染能更好地满足多样化的业务需求。例如，可以根据网站流量，动态调整服务节点数量，提高网站整体的容量和响应速度。
 
-    document.head.appendChild(link);
-  });
-}
-```
+5. 更易于维护
 
-该函数通过创建一个link标签并设置相关属性，然后追加到head标签中，实现CSS文件的异步加载。CSS加载完成后，可以通过innerHTML属性将CSS文本插入到<style></style>标签中，再插入到document对象中，这样就可以应用到页面上了。
+   服务端渲染将页面的内容生成静态的HTML，一旦发生变化，都需要重新生成，不像传统的MVC模式需要重新编译打包，因此，修改起来更加灵活、方便，更易于维护。
 
-CSS的预处理器可以帮助我们编写更简洁的CSS代码，例如LESS、SASS、Stylus等。预处理器会将原始CSS代码转换成编译后的CSS代码，并自动生成source map文件，方便开发人员定位错误。
+## 服务端渲染的局限性
+虽然服务端渲染具有诸多优势，但它也存在一些局限性：
 
-## 3.6 JS加载和执行
-JavaScript代码同样是页面展示的重要组成部分。JavaScript文件需要和HTML文件放在同一个域下才能被正常加载和执行，否则会产生跨域问题。因此，服务端渲染框架需要考虑这个因素，防止脚本注入攻击和信息泄露。
+1. 服务器资源占用
 
-常见的加载和执行策略有三种：内嵌、外链、按需加载。内嵌策略就是将JavaScript代码直接写入到HTML页面中，通过script标签加载并执行；外链策略就是通过script标签设置src属性，将JavaScript文件从远程服务器下载下来，再加载并执行；按需加载策略则是在第一次加载页面时，只加载部分脚本文件，当用户触发特定事件或交互时，再加载额外的脚本文件。
+   服务端渲染会在服务器上生成页面，对服务器的资源消耗较大。当服务器资源紧张时，可能无法支持大量的并发请求。
 
-按需加载一般通过异步加载的方式实现，比如使用webpack打包工具，将各个模块分离成多个文件，并分别输出到不同路径。在异步加载的基础上，我们还可以结合浏览器的缓存机制，只下载最新的脚本文件，避免每次请求都走网络。
+2. 学习曲线陡峭
+
+   相比纯前端的单页应用，服务端渲染需要涉及更多的知识储备，包括Web开发技术、Node.js、Express、MongoDB、webpack等。所以，开发者需要投入更多的精力，才能掌握服务端渲染的技术。
+
+3. 调试困难
+
+   服务端渲染所依赖的语言运行环境、第三方库版本、开发工具链都比较复杂，导致调试比较困难。
+
+4. 更新频繁的静态页面可能会造成缓存问题
+
+   服务端渲染的页面更新频率一般较低，但如果频繁更新，可能就会导致用户缓存失效，进而影响用户体验。
 
 # 4.具体代码实例和详细解释说明
-
-下面，我们以Node.js+Express+Vue为例，阐述一下服务端渲染的流程，以及一些具体的例子。
-
-## 4.1 安装依赖
-首先，我们需要安装相关依赖。这里，我假设读者已经具备以下的知识背景：
-
-- HTML、CSS、JavaScript基础语法
-- Node.js和Express的使用
-- Vue.js的使用
-
-如果读者还不太熟悉上述技术，建议先阅读相关文档学习相关技术栈的基本用法。
-
-Express是Node.js中的一个轻量级Web应用框架，可以通过npm安装：
-
+## 安装必要依赖
 ```bash
-npm install express --save
+npm i express mongoose react next react-dom body-parser --save
 ```
 
-Vue.js是一个渐进式的MVVM JavaScript框架，可以通过npm安装：
-
-```bash
-npm install vue --save
+```json
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.7",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  }
 ```
 
-接着，我们需要安装Webpack、Babel以及相关Loader和Plugin。Webpack是打包工具，用来编译和打包资源文件。Babel是一个JavaScript编译器，用来将ECMAScript 2015+版本的代码编译为向后兼容的版本。Loader用于加载非JavaScript文件，比如Vue组件、CSS样式表、图片文件等；Plugin用于扩展Webpack功能，比如自动压缩代码、分离CSS文件等。
+1. Express: 一款基于Node.js平台的应用层web框架
+2. Mongoose: MongoDB对象建模工具
+3. Next.js: 基于React的服务端渲染框架
+4. React: 用于构建用户界面的JS库
+5. ReactDOM: 将组件渲染为DOM元素的库
 
-```bash
-npm i -D webpack webpack-cli babel-loader @babel/core @babel/preset-env css-loader style-loader url-loader html-webpack-plugin clean-webpack-plugin mini-css-extract-plugin copy-webpack-plugin
+## 创建项目目录结构
+```
+├── client                # Next.js项目
+│   ├── pages             # 路由配置
+│       └── index.js      # 默认首页
+├── server                # Express项目
+│   ├── controllers        # 控制器文件夹
+│   │   ├── article.js    # 文章控制器
+│   │   └── user.js       # 用户控制器
+│   ├── models             # 模型文件夹
+│   │   ├── article.js    # 文章模型
+│   │   └── user.js       # 用户模型
+│   ├── routes             # 路由文件夹
+│   │   ├── article.js    # 文章路由
+│   │   └── user.js       # 用户路由
+│   ├── utils              # 工具文件夹
+│   │   └── middleware.js # 中间件函数
+│   ├── views              # 模板文件夹
+│   │   └── layout.html   # 布局模板
+│   ├── app.js             # 应用启动文件
+│   ├── package.json       # 依赖配置文件
+└── README.md             # 项目说明
 ```
 
-以上命令会安装Webpack、Webpack CLI、Babel Loader、Babel Core和Preset Env、CSS Loader、Style Loader、URL Loader、HTML Webpack Plugin、Clean Webpack Plugin、Mini CSS Extract Plugin、Copy Webpack Plugin等相关依赖。
-
-## 4.2 创建项目结构
-首先，我们需要创建项目文件夹，然后按照以下目录结构创建文件：
-
-```
-├── build                     # Webpack配置文件夹
-│   ├── build.config.js       # Webpack打包配置
-│   ├── index.js              # Webpack入口文件
-│   └── utils                 # 辅助工具文件夹
-│       └── template.html     # 模板文件
-├── dist                      # Webpack输出文件夹
-├── src                       # 源码文件夹
-│   ├── components            # 组件文件夹
-│   ├── router                # 路由文件夹
-│   ├── store                 # Vuex状态管理文件夹
-│   ├── views                 # 视图文件夹
-│   │   └── Index.vue         # 首页视图
-│   └── App.vue               # 根组件
-└── package.json              # 包管理文件
-```
-
-## 4.3 配置Webpack
-首先，我们需要配置Webpack的打包入口文件`build/index.js`，主要是为了生成对应的HTML文件。这里，我们可以参考官方文档，修改其中的配置项，如publicPath、filename等：
+## 配置Webpack
+创建webpack.config.js文件，内容如下：
 
 ```javascript
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // 清除dist文件夹
-const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // 提取CSS到独立文件
 
-module.exports = (env) => ({
-  mode: env === 'production'? 'production' : 'development',
-  entry: './src/main.js',
+module.exports = {
+  entry: './client/pages/_app', // 项目入口文件
+  target: 'node',
+  mode: process.env.NODE_ENV || 'development',
   output: {
-    filename: '[name].[contenthash].bundle.js',
-    path: path.resolve(__dirname, '../dist'),
-    publicPath: '/',
+    libraryTarget: 'commonjs2', // commonjs规范输出
+    filename:'server.js' // 输出文件名
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: ['babel-loader']
       },
       {
         test: /\.css$/,
-        use: [{ loader: MiniCssExtractPlugin.loader }, 'css-loader'],
+        loader: 'null-loader' // 不处理样式文件
       },
       {
+        test: /\.less$/,
         use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192, // 小于等于8KB的图片用base64编码，大于8KB的图片会被拷贝到output文件夹
-              name: '[name].[ext]',
-            },
-          },
-        ],
+          'isomorphic-style-loader',
+          'css-loader?url=false',
+          'less-loader'
+        ]
       },
-    ],
+      {
+        use: [{
+            loader: 'file-loader',
+            options: {}
+          }]
+      }
+    ]
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      inject: true, // 是否将js文件注入到html
-      chunksSortMode:'manual', // 手动排序引入js文件
-      template: `${__dirname}/../src/views/template.html`, // 模板文件路径
-      minify: false, // 是否压缩html
-    }),
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
-    }),
-    new CleanWebpackPlugin(), // 自动清空dist文件夹
-  ],
-});
+  resolve: {
+    extensions: ['.js', '.jsx'],
+    alias: {
+      '@': path.resolve(__dirname, 'client') // 设置别名
+    }
+  }
+};
 ```
 
-然后，我们需要配置Webpack的打包出口文件`package.json`。在scripts中新增一条命令，用以启动Webpack打包：
+## 配置Babel
+创建.babelrc文件，内容如下：
 
 ```json
-"scripts": {
-  "dev": "webpack serve", // 启动开发模式
-  "build": "webpack --mode production", // 启动生产模式打包
-  "start": "node server.js" // 执行服务器
-},
-```
-
-## 4.4 添加路由
-我们需要在`src/router/index.js`文件中添加路由规则：
-
-```javascript
-import Vue from 'vue';
-import Router from 'vue-router';
-
-// 安装路由插件
-Vue.use(Router);
-
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Index',
-      component: () => import('@/views/Index.vue'),
-    },
-    {
-      path: '/about',
-      name: 'About',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ '@/views/About.vue'),
-    },
-  ],
-});
-```
-
-## 4.5 添加首页视图
-我们需要在`src/views/Index.vue`文件中编写首页视图：
-
-```html
-<template>
-  <div class="container">
-    <h1>{{ message }}</h1>
-    <p>Welcome to your Server-Side Rendered Vue Application!</p>
-    <router-link to="/about">Go to About</router-link>
-  </div>
-</template>
-
-<script>
-export default {
-  data() {
-    return {
-      message: 'Hello World!',
-    };
-  },
-};
-</script>
-
-<!-- Add "scoped" attribute to limit styles to this component only -->
-<style scoped>
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-}
-</style>
-```
-
-## 4.6 添加关于页面
-我们需要在`src/views/About.vue`文件中编写关于页面：
-
-```html
-<template>
-  <div class="container">
-    <h1>About Page</h1>
-    <p>This application uses SSR with Vue and Express.</p>
-  </div>
-</template>
-
-<script>
-export default {};
-</script>
-
-<!-- Add "scoped" attribute to limit styles to this component only -->
-<style scoped>
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-}
-</style>
-```
-
-## 4.7 添加根组件
-我们需要在`src/App.vue`文件中编写根组件：
-
-```html
-<template>
-  <div id="app">
-    <router-view />
-  </div>
-</template>
-
-<script>
-export default {};
-</script>
-
-<!-- Add "scoped" attribute to limit styles to this component only -->
-<style lang="scss"></style>
-```
-
-## 4.8 添加静态资源文件
-我们需要添加静态资源文件，比如图片、字体等。为了避免路径的复杂化，可以将静态资源文件复制到输出文件夹，并在模板文件中引用。
-
-在`build/utils/copy-webpack-plugin.js`文件中，我们可以编写复制静态资源文件的插件：
-
-```javascript
-const CopyPlugin = require('copy-webpack-plugin');
-
-class CopyResourcePlugin {
-  apply(compiler) {
-    compiler.hooks.afterPlugins.tap('CopyResourcePlugin', (compilation) => {
-      compilation.plugins.push(new CopyPlugin([{ from: './static/', to: '' }], {}));
-    });
-  }
-}
-
-module.exports = CopyResourcePlugin;
-```
-
-在`build/utils/rules.js`文件中，我们可以添加静态资源文件的规则：
-
-```javascript
 {
-  test: /\.(eot|ttf|woff|woff2|svg)$/,
-  type: 'asset/resource',
-  generator: {
-    filename: 'assets/[name][ext]',
-  },
-},
-```
-
-之后，我们需要在`build/build.config.js`文件中配置以上插件：
-
-```javascript
-...
-const CopyResourcePlugin = require('../utils/copy-webpack-plugin');
-
-module.exports = (env) => ({
- ...
-  module: {
-    rules: [
-     ...
-      {
-        test: /\.(eot|ttf|woff|woff2|svg)$/,
-        type: 'asset/resource',
-        generator: {
-          filename: 'assets/[name][ext]',
-        },
-      },
-    ],
-  },
-  plugins: [
-   ...
-    new CopyResourcePlugin(),
-  ]
-})
-```
-
-## 4.9 启动服务
-为了让项目跑起来，我们需要在根目录下新建一个`server.js`文件，它的内容如下：
-
-```javascript
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 3000;
-
-if (process.env.NODE_ENV!== 'production') {
-  const webpackDevMiddleware = require('webpack-dev-middleware');
-  const webpackHotMiddleware = require('webpack-hot-middleware');
-  const config = require('./build/webpack.dev.conf')(process.env);
-
-  app.use(webpackDevMiddleware(compiler, {
-    publicPath: '/',
-    stats: { colors: true },
-  }));
-  app.use(webpackHotMiddleware(compiler));
-} else {
-  const staticFilesMiddleware = express.static(`${__dirname}/../dist`);
-  app.use('/', staticFilesMiddleware);
+  "presets": ["@babel/preset-env"],
+  "plugins": [["@babel/plugin-transform-runtime"]]
 }
+```
 
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}/`);
+## 创建路由文件
+创建routes/user.js文件，内容如下：
+
+```javascript
+import User from '../models/User';
+
+export const createUser = async (req, res) => {
+  try {
+    const newUser = await User.create({...req.body });
+
+    res.status(201).send(newUser);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+};
+
+export const getUsers = async (_, res) => {
+  try {
+    const users = await User.find();
+
+    res.status(200).send(users);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+};
+```
+
+## 创建控制器文件
+创建controllers/user.js文件，内容如下：
+
+```javascript
+import User from '../../models/User';
+
+export const getAllUsers = async () => {
+  return await User.find({});
+};
+```
+
+## 使用Router创建接口路由
+创建routes/index.js文件，内容如下：
+
+```javascript
+import Router from 'koa-router';
+import userCtrl from './user';
+
+const router = new Router();
+
+// User API Routes
+router.post('/api/v1/users', userCtrl.createUser);
+router.get('/api/v1/users', userCtrl.getUsers);
+
+export default router;
+```
+
+## 创建Mongoose Schema
+创建models/User.js文件，内容如下：
+
+```javascript
+import mongoose from'mongoose';
+
+const UserSchema = new mongoose.Schema({
+  name: String,
+  email: { type: String, unique: true, required: true },
+  passwordHash: String
+});
+
+const UserModel = mongoose.model('User', UserSchema);
+
+export default UserModel;
+```
+
+## 创建应用启动文件
+创建app.js文件，内容如下：
+
+```javascript
+const Koa = require('koa');
+const serve = require('koa-static');
+const mount = require('koa-mount');
+const bodyParser = require('koa-bodyparser');
+const next = require('next');
+const cors = require('@koa/cors');
+
+const dev = process.env.NODE_ENV!== 'production';
+const app = next({ dev });
+const handle = app.getRequestHandler();
+
+// Serve static files
+app.use(serve('./client'));
+
+// Handle requests for specific file types using Next.js
+app.get('*', ctx => handle(ctx.req, ctx.res));
+
+const PORT = parseInt(process.env.PORT, 10) || 3000;
+const server = new Koa();
+
+// Middleware configuration
+server.use(bodyParser());
+server.use(cors());
+
+// Mount the Next.js application into a route at "/api/*" to enable API endpoints
+server.use(mount('/api', app));
+
+server.listen(PORT, err => {
+  if (err) throw err;
+
+  console.log(`> Ready on http://localhost:${PORT}`);
 });
 ```
 
-该文件会判断是否处于开发模式还是生产模式，分别使用不同的中间件来提供服务。在开发模式下，Webpack会将开发环境的资源文件提供给Express，利用热重载特性可以快速迭代源码；在生产模式下，Express会托管打包后的静态文件。
+## 创建首页页面
+创建client/pages/index.js文件，内容如下：
 
-接下来，我们运行以下命令即可启动服务：
+```javascript
+import Head from 'next/head';
+import Link from 'next/link';
 
-```bash
-npm run dev
+function IndexPage() {
+  return (
+    <div className="container">
+      <Head>
+        <title>My Blog</title>
+        <meta name="description" content="My blog website description" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <h1>Welcome to my blog!</h1>
+
+      <Link href="/about">
+        <a>Go to about page</a>
+      </Link>
+    </div>
+  );
+}
+
+export default IndexPage;
 ```
 
-## 4.10 测试服务
-打开浏览器，访问http://localhost:3000，可以看到首页视图。点击“Go to About”，可以跳转到关于页面。刷新页面，可以看到首页视图不断变化。说明服务端渲染成功。
+## 创建关于页面
+创建client/pages/about.js文件，内容如下：
 
-# 5.未来发展趋势与挑战
+```javascript
+import Head from 'next/head';
 
-## 5.1 高性能渲染
-目前，服务端渲染的性能仍然存在很大的优化空间。相比于传统的CSR(Client Side Render)模式，SSR模式有以下优势：
+function AboutPage() {
+  return (
+    <div className="container">
+      <Head>
+        <title>About - My Blog</title>
+        <meta name="description" content="About me page of my blog" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-1. 更快的首屏时间：无需等待浏览器下载和解析JavaScript，直接返回渲染后的HTML，保证用户第一时间看到完整的页面，缩短白屏时间。
-2. 更好的SEO：由于浏览器直接渲染了HTML，搜索引擎可以直接抓取页面内容，提升搜索排名。
-3. 减少服务器压力：服务器只需要发送一份渲染好的HTML页面，不需要生成和传输多份静态资源。
+      <h1>About Me</h1>
+      <p>This is an example about page.</p>
+    </div>
+  );
+}
 
-因此，服务端渲染正在成为越来越多前端工程师和企业追求的新标准。不过，它的实现仍然有许多挑战：
+export default AboutPage;
+```
 
-1. 渲染效率低：由于浏览器只能解析经过预处理的HTML文件，因此渲染效率仍然有待提高。
-2. 长期维护难度增加：服务端渲染框架需要频繁发布补丁版本，确保框架的健壮性。
-3. 部署困难：部署环境不再是纯粹的浏览器环境，部署Node环境、下载npm依赖包、调试工具、处理服务器环境等等都会成为一个繁琐且耗时的任务。
+## 添加样式文件
+创建client/pages/_app.js文件，内容如下：
 
-因此，未来，服务端渲染的发展方向还有很长的路要走。我们期待着服务端渲染的技术突破，以及基于Node.js的服务端渲染框架持续快速发展。
+```javascript
+import '../styles/globals.css';
 
-## 5.2 技术选型
-目前，基于Node.js的服务端渲染框架主要有三个代表：Express、Koa和Next.js。它们各有千秋，各有特色，读者可以根据自己的需求进行选择。
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />;
+}
 
-### Express
-Express是一个基于Node.js的Web应用框架，其主要特点是轻量、快速、简洁。它非常适合构建小型Web站点，尤其是中小型后台应用。使用Express，我们可以快速地搭建服务端渲染的HTTP服务器，并使用模板引擎如Jade、Pug等进行渲染。
+export default MyApp;
+```
 
-Express的一些典型使用场景如下：
+创建client/styles/globals.css文件，内容如下：
 
-- 使用中间件提供路由和HTTP功能
-- 将React等前端框架集成到服务端
-- 通过RESTful API提供数据接口
+```css
+/* Add global styles here */
 
-### Koa
-Koa是Express框架的最新版本，它提供了更加简洁、易读的API。它是另一个基于Node.js的Web应用框架，受到了Express框架的影响，因此，它的开发者们承诺和Koa社区分享开发经验。与Express相比，Koa具有更加符合async/await语法的异步编程风格。
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
-Koa的一些典型使用场景如下：
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+```
 
-- 在API服务中替代Express的connect模块
-- 对ES2017+支持更佳
-- 支持TypeScript
+## 启动项目
+在终端运行`npm run build`，编译项目。
 
-### Next.js
-Next.js是一个基于React的服务端渲染框架，它集成了Webpack和React，可以为创建服务器端渲染的应用提供极佳的开发体验。它使用React Router来实现路由，并内置支持异步数据获取和数据预取。除了React外，Next.js还内置了CSS-in-JS库Styled Components，可以方便地编写可维护的CSS。
+在终端运行`npm run start`，启动项目。
 
-Next.js的一些典型使用场景如下：
-
-- 可以与Create React App一起使用，提供零配置开发环境
-- 以serverless方式部署，可以免费托管到云平台上
-- 为自定义路由提供API支持
-
-综上所述，基于Node.js的服务端渲染框架还有许多值得探索的地方，包括如何平衡开发效率、性能、可维护性、SEO等方面，还需要进一步努力提升。
+浏览器打开`http://localhost:3000/`，查看首页内容。

@@ -3,226 +3,273 @@
 # 1.背景介绍
 
 
+## 1.1 什么是OAuth2.0？
+> OAuth (Open Authorization) 是一种基于OAuth2.0规范的授权框架。其主要目的是允许第三方应用访问受保护资源，而无需知道用户的密码或密钥。它使得不同的应用能分享用户数据，共同完成任务。
 
-在信息社会中，数字化已经成为社会发展的主导力量。人们生活中各种服务如电子商务、网络购物、社交媒体等都离不开数字化平台的支持。如何让用户更加安全地在这些平台上进行各种事务呢？
+## 1.2 为什么要使用OAuth2.0？
+- 提升用户体验——用户只需要登录一次就可以访问多个应用的数据；
+- 减少认证流程——用户无需再次输入用户名、密码，直接就可获得权限；
+- 降低成本——第三方应用可直接获取用户的敏感数据；
+- 提高安全性——通过OAuth2.0可以确保用户数据的安全。
 
-目前，业界主要通过两种方式解决用户在数字化平台上的安全问题。一种是利用密码管理器存储用户的账户信息并采用双因素验证的方式进行验证；另一种是借助第三方认证提供商如QQ登录、微信登录等进行身份认证。然而，这种方法存在着一些问题。首先，用户必须记住复杂的密码或者通过短信或邮件来获取动态口令；其次，由于第三方认证提供商往往会收集和保存用户的个人信息，如手机号码、邮箱地址、姓名、生日等，用户隐私得不到保障；最后，这些第三方认证提供商一般都具有自己的访问控制策略，并且容易受到攻击者的入侵和破坏。
+## 1.3 OAuth2.0由哪些角色构成？
+- Resource Owner（资源拥有者）：能够控制共享的资源的用户；
+- Client（客户端）：OAuth2.0的终端客户，如网站、APP、桌面程序等；
+- Authorization Server（授权服务器）：颁发令牌并验证令牌；
+- Resource Server（资源服务器）：验证令牌并提供受保护资源；
 
-基于以上原因，业界提出了一种新的技术方案——开放平台身份认证（OpenID Connect）协议和授权（OAuth2.0）。该方案将身份认证过程从应用内集成到第三方服务提供商那里，为用户提供了更加方便、安全的登录和权限管理能力。
-
-本文将对OpenID Connect和OAuth2.0协议进行详细介绍，并以微软Azure Active Directory作为例子，阐述其背后的理论知识和实际应用。
+## 1.4 OAuth2.0与其他授权机制有何不同？
+- OAuth2.0是目前最流行的授权模式；
+- 支持多种方式的认证机制，包括密码方式、MAC方式、表单提交方式等；
+- 可以支持委托授权，即子用户代理给其他人进行认证。
 
 # 2.核心概念与联系
-## OpenID Connect和OAuth2.0
-OpenID Connect (OIDC)是一个标识层协议，它建立在 OAuth2.0基础上，它允许客户端向 OAuth2.0 服务器请求身份验证，并获取关于用户的信息，例如用户名、邮箱、联系方式等。同时还可以用 OIDC 协议在不同 OAuth2.0 提供者之间共享凭据，进一步提高可用性。
+## 2.1 用户信息与权限
+OAuth2.0定义了四种角色——Resource Owner（资源拥有者），Client（客户端），Authorization Server（授权服务器），Resource Server（资源服务器）。每个角色都包含对应的实体，它们之间存在如下关系：
 
-而OAuth2.0是一个授权层协议，它允许用户授予第三方应用访问他们在某一网站上存储的资源（如照片、视频、联系人列表等）的权限，而无需将用户名和密码暴露给第三方应用。OAuth2.0共分为四步：
+- 用户向资源拥有者申请授权，资源拥有者同意后，授权服务器颁发一个token给客户端；
+- 客户端通过token获取资源，并请求资源服务器获取相应资源；
+- 资源服务器验证客户端的token，并返回相关资源。
 
-1. 客户端向认证服务器申请授权码；
-2. 认证服务器验证客户端的身份并颁发授权码；
-3. 客户端通过授权码换取访问令牌；
-4. 客户端通过访问令牌访问资源。
+资源拥有者（User）：指最终用户。可能是一个普通人也可能是一个组织或机构。资源拥有者向授权服务器（Auth server）索要权限，授权服务器根据资源拥有者的权限确定该用户是否被授权访问指定资源。例如，一个公司的员工可以申请访问企业内共享的文件，而授权服务器将确认员工是否具有访问权限。
 
-总之，OAuth2.0的作用就是用来授权第三方应用访问网站的资源。
+客户端（Client）：代表授权服务器提供服务的应用或者Web API。客户端需要向授权服务器申请权限，然后通过授权服务器获取token，进而访问资源服务器的资源。例如，某个移动App需要访问企业内共享的文件，则需要先向授权服务器申请权限，授权服务器将提供token给App，App通过token访问资源服务器获取所需文件。
 
-## Azure Active Directory
-Microsoft Azure Active Directory (AAD) 是 Microsoft 的一项服务，可帮助组织在云中轻松创建、维护和管理标识。它包括以下功能：
+授权服务器（Authorization Server）：存储着用户的账户和权限信息。当用户授予某客户端权限时，授权服务器会颁发一个token，客户端可以使用这个token来访问资源服务器的资源。授权服务器还负责对访问请求进行授权，确保用户在客户端应用中的每一次操作都是合法的。例如，授权服务器可以在用户注册时对用户的权限进行审核，从而保证用户的信息不会泄露。
 
-- 用户和组管理：让你可以快速设置和管理你的组织中的用户和组。
-- 应用程序管理：可以使用 AAD 来注册、配置和开发应用程序，并分配权限给需要访问特定资源的人员。
-- 设备管理：使用 AAD 可以管理和保护组织的数据和应用程序访问权限，从而确保只有经过授权的设备才能访问数据。
-- 条件访问：使用 AAD 可根据访问要求自动执行多重身份验证、阻止未经授权的访问、强制执行公司政策等操作。
-- 目录同步：可以使用 AAD 将本地目录中的用户帐户同步到云中。
-- 单一登录：可以通过 AAD 为组织的应用程序提供统一的登录。
+资源服务器（Resource Server）：存储着受保护资源，并提供用于授权访问这些资源的API接口。资源服务器验证客户端的token，并返回相关资源。例如，某个App想要访问企业内共享的文件，则需要先向资源服务器申请token，资源服务器会检查授权凭证，然后返回共享文件的URL地址。
 
-本文将围绕 AAD 和 OpenID Connect/OAuth2.0协议进行介绍。
+## 2.2 请求流程
+下面描述一下OAuth2.0的请求流程：
+
+1. 用户访问客户端，选择登录；
+2. 客户端跳转到授权服务器的认证页面，要求用户登录；
+3. 授权服务器检查用户的账号和密码，确认身份后返回授权页面；
+4. 用户选择允许客户端访问特定资源；
+5. 客户端向授权服务器请求访问令牌；
+6. 授权服务器生成访问令牌并发送给客户端；
+7. 客户端将访问令牌发送给资源服务器，请求资源；
+8. 资源服务器验证访问令牌，确认客户端的身份并返回资源。
+
+
+## 2.3 四种 grant type
+OAuth2.0定义了四种 grant type，分别对应客户端的不同的场景：
+
+1. authorization code grant type(授权码模式):适用于需要用户端交互的场景，例如：手机QQ邮箱微博微信。用户浏览器打开授权服务器的认证页面，输入自己的用户名密码，点击同意后，授权服务器生成授权码并发给客户端，客户端收到授权码，通过授权码换取访问令牌。
+
+2. implicit grant type(隐式授权模式):适用于不需要用户交互的场景，例如：JS App中登录。客户端向授权服务器请求访问令牌，如果用户已授权，则直接返回访问令牌，否则返回错误码。
+
+3. resource owner password credentials grant type(密码模式):适用于必须使用用户名和密码才能获取访问令牌的场景，例如：命令行工具。客户端向授权服务器发送自己的client id和secret，用户名和密码，授权服务器验证密码正确后返回访问令牌。
+
+4. client credentials grant type(客户端模式):适用于需要请求的资源不涉及用户信息，例如：爬虫机器人。客户端向授权服务器请求访问令牌，授权服务器返回访问令标，客户端使用此访问令牌获取资源。
 
 # 3.核心算法原理和具体操作步骤以及数学模型公式详细讲解
+## 3.1 授权码模式详解
+### 3.1.1 特点
+- 向第三方应用程序请求授权；
+- 客户端收到授权码，将授权码发送给授权服务器；
+- 授权服务器返回访问令牌。
 
-## 3.1 OpenID Connect
-### 3.1.1 概念
-OpenID Connect (OIDC)是一个标识层协议，它建立在 OAuth2.0 基础上，它定义了一套简单而灵活的协议，用于用户认证。通过 OpenID Connect ，客户端可以向授权服务器请求用户的标识信息。
+### 3.1.2 操作步骤
+1. 用户选择登录客户端；
+2. 客户端将用户重定向至授权服务器的授权页，请求用户提供用户名和密码；
+3. 如果用户成功登录，则授权服务器会生成授权码，并显示给客户端；
+4. 客户端将授权码发送给授权服务器，请求获得访问令牌；
+5. 授权服务器核对授权码，如果授权码有效，则生成访问令牌并发给客户端；
+6. 客户端使用访问令牌获取受保护资源。
 
-### 3.1.2 特点
-OpenID Connect 是 OAuth2.0 的一个扩展协议。它规范了如何建立信任关系并获得安全的用户身份认证。其特点如下：
-
-1. 使用 JWT (JSON Web Tokens) 作为令牌格式；
-2. 支持声明发现；
-3. 增强的密钥管理；
-4. 更好的错误处理；
-5. 跨域支持。
-
-### 3.1.3 授权流程
-
-
-- 客户端（Client）使用 OIDC Discovery 发起元数据请求，以获知服务端配置信息。
-- 用户访问客户端并点击登录按钮。
-- 客户端发送包含认证请求参数的请求至认证服务器。
-- 认证服务器确认用户身份并发行授权码。
-- 客户端发送包含授权码的请求至客户端配置指定的回调 URL 。
-- 客户端解析授权码并发出访问令牌。
-- 客户端可使用访问令牌访问保护的资源。
-
-### 3.1.4 工作模式
-OpenID Connect 支持多种工作模式。其中最常用的两种模式分别是：
-
-- Authorization Code Flow: 授权码流模式（又称为“服务器授权”），适用于浏览器和原生应用等非公开客户端。
-- Implicit Flow: 隐式流模式，适用于移动应用、JavaScript 客户端等。
-
-### 3.1.5 角色与职责
-OpenID Connect 有三种角色：
-
-1. Relying Party (RP): 客户端，即要获取用户标识的应用。
-2. Resource Owner (RO): 资源拥有者，即提供被保护资源的用户。
-3. Identity Provider (IdP): 身份提供者，负责认证用户的标识信息并向 RP 发行令牌。
+### 3.1.3 数学模型公式
+授权码模式的数学模型公式如下：
 
 
-RP 需要向 IdP 请求授权码，IdP 验证用户身份并生成授权码。RP 通过认证请求参数告知 IdP 本身的身份，IdP 以此判断是否颁发授权码。
+- n:第三方客户端数量；
+- m:认证服务器的最大QPS；
+- L:登录页面响应时间；
+- T:授权服务器访问认证服务器的时间；
+- C:认证服务器的最大并发连接数；
+- R:资源服务器的QPS；
+- S:资源服务器的响应时间。
 
-当用户完成身份验证后，IdP 会把用户的身份和授权范围一起作为授权码发送给 RP。RP 使用授权码向 IdP 申请访问令牌。IdP 根据接收到的信息和授权码核实用户的身份，然后生成访问令牌发给 RP。
+### 3.1.4 优缺点
+#### 3.1.4.1 优点
+- 使用简单；
+- 在各个方面的性能表现优秀；
+- 不需要客户端存储私钥，防止了泄露。
 
-当 RP 获取访问令牌后，即可代表用户向 RP 的资源请求数据。
+#### 3.1.4.2 缺点
+- 授权码容易泄漏，导致授权服务器被滥用；
+- 必须依赖前端JavaScript脚本，无法在某些客户端上运行；
+- 暂不支持PKCE (Proof Key for Code Exchange)。
 
-## 3.2 OAuth2.0
+## 3.2 隐式授权模式详解
+### 3.2.1 特点
+- 只需要向第三方应用程序请求访问令牌；
+- 客户端可以直接通过返回的token获取资源。
 
-### 3.2.1 概念
-OAuth2.0是一个授权层协议，它允许用户授予第三方应用访问他们在某一网站上存储的资源（如照片、视频、联系人列表等）的权限，而无需将用户名和密码暴露给第三方应用。OAuth2.0共分为四步：
+### 3.2.2 操作步骤
+1. 用户选择登录客户端；
+2. 客户端将用户重定向至授权服务器的授权页，请求用户提供用户名和密码；
+3. 如果用户成功登录，则授权服务器会生成访问令牌，并显示给客户端；
+4. 客户端使用访问令牌获取受保护资源。
 
-1. 客户端向认证服务器申请授权码；
-2. 认证服务器验证客户端的身份并颁发授权码；
-3. 客户端通过授权码换取访问令牌；
-4. 客户端通过访问令牌访问资源。
-
-### 3.2.2 特点
-OAuth2.0 拥有丰富的特性，其优点如下：
-
-1. 对客户端的高度抽象，使得客户端可以忽略认证及授权的底层细节，应用只需关注业务逻辑；
-2. 自包含的授权框架，简化了授权的流程，提升了易用性；
-3. 标准化的授权流程，使得不同的公司可以相互兼容；
-4. 能够充分利用现有的认证系统，降低实现难度；
-5. 能够与第三方的其他服务进行集成，提升整体的安全性。
-
-### 3.2.3 授权流程
-
-
-OAuth2.0 的授权流程与 OpenID Connect 非常类似。但两者有几个关键差异：
-
-1. OpenID Connect 在授权码流模式下，提供了一个完整的链路；
-2. OAuth2.0 的授权码模式，仅仅产生了一次交互；
-3. OAuth2.0 的访问令牌包含更多的信息，包括过期时间、作用域、受众、身份认证场景等。
-
-### 3.2.4 角色与职责
-OAuth2.0 有四种角色：
-
-1. Client: 客户端，即要获取用户标识的应用。
-2. Resource Server: 资源服务器，即提供资源的服务器。
-3. Authorization Server: 授权服务器，即认证和发放访问令牌的服务器。
-4. User Agent: 用户代理，通常是浏览器，但也可以是其他客户端（如原生应用）。
-
-在 OAuth2.0 中，RP 只能向 AS 获取访问令牌，AS 负责认证用户的合法性并为 RP 生成访问令牌。
-
-AS 与 RO 一同协作来获取用户的授权。当用户接受授权后，AS 会向 RO 颁发访问令牌，此时 RO 和 AS 之间的通信结束，且访问令牌只能被对应的 RP 所使用。
+### 3.2.3 数学模型公式
+隐式授权模式的数学模型公式如下：
 
 
-## 3.3 Azure AD 中的应用注册、配置、管理与访问控制
+- n:第三方客户端数量；
+- m:认证服务器的最大QPS；
+- L:登录页面响应时间；
+- T:授权服务器访问认证服务器的时间；
+- C:认证服务器的最大并发连接数；
+- R:资源服务器的QPS；
+- S:资源服务器的响应时间。
 
-### 3.3.1 应用注册
-Azure AD 中的应用注册指的是向 Azure AD 租户注册应用，创建一个唯一的应用 ID，并定义应用属性、作用域、重定向 URI 等。注册之后，Azure AD 会生成一个唯一的客户端 ID 和秘钥，供应用使用。应用可以使用客户端 ID 和秘钥向 Azure AD 的 token endpoint（/common 或 /{tenant}/oauth2/v2.0/token）发送请求，获取 access tokens。
+### 3.2.4 优缺点
+#### 3.2.4.1 优点
+- 无需前端 JavaScript 编程，易于实现；
+- 能够在各种客户端上运行；
+- 不需要存储私钥，安全性较高。
 
-在应用注册过程中，你可以指定应用的名称、网站 URL、重定向 URI、所属的目录（tenant）、允许的认证类型（如 web、native、mobile、service），以及对 API 的访问权限（如 Microsoft Graph、自定义 API）。
+#### 3.2.4.2 缺点
+- 当授权服务器发生错误时，客户端不能提示用户重新进行授权；
+- 由于没有用户交互过程，安全性可能低于授权码模式。
 
-在应用注册完毕后，你可以访问“概览”选项卡查看应用的详细信息，如客户端 ID、秘钥和启用状态。你还可以在“Certificates & secrets”选项卡管理应用的机密信息，如客户端密码、签名密钥、证书等。
+## 3.3 密码模式详解
+### 3.3.1 特点
+- 客户端使用HTTP Basic Authentication的Header字段向授权服务器请求访问令牌；
+- 授权服务器验证客户端的身份，验证成功后生成访问令牌。
 
-### 3.3.2 配置
-Azure AD 提供了许多选项来配置应用，例如，你可以启用或禁用令牌加密、指定刷新令牌的有效期限、选择“访问面板”上的显示风格等。你还可以访问“API permissions”选项卡，配置应用的权限，例如，指定可使用的资源（如 Microsoft Graph、自定义 API）、授予的权限（如读、写、委托）、委派的权限等。
+### 3.3.2 操作步骤
+1. 客户端向授权服务器发送HTTP请求，携带Basic Auth header；
+2. 授权服务器验证客户端身份，如果验证成功，则生成访问令牌，并发给客户端。
 
-### 3.3.3 管理与访问控制
-在 Azure AD 中，你可以访问“Users and groups”选项卡，添加、删除、编辑用户和组。你可以管理某个组的成员身份，为每个用户分配角色。你还可以访问“Enterprise applications”选项卡，查看所有已注册的应用的列表，并禁用不需要的应用。
+### 3.3.3 数学模型公式
+密码模式的数学模型公式如下：
 
-你可以通过 Azure AD 的条件访问规则来控制应用的访问权限，例如，限制特定 IP 地址、要求多重身份验证等。你可以访问“Sign-in logs”选项卡，查看针对应用的所有登录事件。
+
+- n:第三方客户端数量；
+- m:认证服务器的最大QPS；
+- L:登录页面响应时间；
+- T:授权服务器访问认证服务器的时间；
+- C:认证服务器的最大并发连接数；
+- R:资源服务器的QPS；
+- S:资源服务器的响应时间。
+
+### 3.3.4 优缺点
+#### 3.3.4.1 优点
+- 适合于内部系统之间的通信，无需第三方应用的介入；
+- 避免了授权码模式的交互过程，安全性高。
+
+#### 3.3.4.2 缺点
+- 用户名密码在网络上传输，容易遭遇中间人攻击；
+- 需要客户端将用户名密码传输给第三方应用。
+
+## 3.4 客户端模式详解
+### 3.4.1 特点
+- 客户端只能访问自己的资源；
+- 通过客户端的秘钥获得访问令牌。
+
+### 3.4.2 操作步骤
+1. 客户端向授权服务器发送请求，携带客户端ID和客户端密钥；
+2. 授权服务器核对客户端ID和客户端密钥，确认合法后生成访问令牌，发给客户端。
+
+### 3.4.3 数学模型公式
+客户端模式的数学模型公式如下：
+
+
+- n:第三方客户端数量；
+- m:认证服务器的最大QPS；
+- L:登录页面响应时间；
+- T:授权服务器访问认证服务器的时间；
+- C:认证服务器的最大并发连接数；
+- R:资源服务器的QPS；
+- S:资源服务器的响应时间。
+
+### 3.4.4 优缺点
+#### 3.4.4.1 优点
+- 客户端无需参与用户授权，安全性更高；
+- 客户端无需自己处理用户的用户名密码，避免了安全漏洞；
+- 有利于对接第三方平台，提升产品的整体体验。
+
+#### 3.4.4.2 缺点
+- 资源受限，无法访问第三方平台；
+- 资源服务器需要存储客户端的密钥，增加了安全风险。
 
 # 4.具体代码实例和详细解释说明
-接下来，我们将以示例中的 Microsoft Graph 为例，详细描述 OAuth2.0 和 OpenID Connect 的具体操作步骤和代码实现。假设我们的应用要调用 Microsoft Graph API 来查询用户的邮箱地址，步骤如下：
-
-1. 创建应用注册并配置权限：在 Azure AD 中，创建一个应用注册，并在应用权限中指定“Microsoft Graph”。
-2. 使用 MSAL 库：MSAL 库是用于帮助调用 OAuth2.0 和 OpenID Connect 的工具包。安装 MSAL 库并配置其客户端信息，使用 MSAL 库获取 OAuth2.0 和 OpenID Connect 令牌。
-3. 使用 OAuth2.0 和 OpenID Connect 令牌调用 Microsoft Graph API：使用令牌向 Microsoft Graph API 发送请求。
-4. 解析 Microsoft Graph 返回的 JSON 数据：解析 Microsoft Graph 返回的 JSON 数据，并处理结果。
-5. 测试应用：运行测试脚本，确认应用正常运行。
-
-这里我们以 Python SDK （microsoft-authentication-library-for-python）的案例进行演示。
-
-## 4.1 安装和导入依赖包
-
+## 4.1 Python Flask示例
 ```python
-pip install azure-identity
-pip install msal
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+
+@app.route('/login', methods=['POST'])
+def login():
+    # TODO: 校验用户名和密码
+    username = request.json['username']
+    password = request.json['password']
+
+    if not check_user_authenticity(username, password):
+        return jsonify({'code': 'failed','message': 'Invalid username or password.'})
+    
+    access_token = create_access_token()
+
+    return jsonify({
+        'code':'success', 
+        'data': {
+            'access_token': access_token
+        }
+    })
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
 ```
 
-```python
-import requests
-from msal import ConfidentialClientApplication
-from azure.identity import ClientSecretCredential
+以上为Python Flask Web应用的代码，其中`/login`路由采用密码模式，当接收到POST请求时，校验用户名和密码，如果成功，生成访问令牌并返回；否则，返回失败消息。为了简化代码，这里省略了校验函数`check_user_authenticity`，令牌生成函数`create_access_token`。
+
+## 4.2 Spring Security示例
+```java
+import org.springframework.security.authentication.*;
+import org.springframework.security.core.*;
+import org.springframework.stereotype.*;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+public class LoginController {
+
+    @RequestMapping("/login")
+    public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody User user){
+
+        // TODO: Validate the user authentication
+
+        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
+                user.getUsername(), 
+                user.getPassword());
+        
+        String accessToken = JWT.create().withSubject("admin").sign(Algorithm.HMAC256("secret"));
+
+        Authentication authResult = new AuthenticationBuilder()
+                                           .authenticated(true)
+                                           .principal(new CustomUserDetails())
+                                           .authorities(AuthoritiesConstants.ADMIN)
+                                           .credentials("")
+                                           .build();
+
+        return ResponseEntity.ok(AuthenticationResponse.builder()
+                                       .accessToken(accessToken)
+                                       .expiryTime(System.currentTimeMillis()+3600*1000)
+                                       .authentication(authResult).build());
+    }
+    
+}
 ```
 
-## 4.2 设置应用信息
+以上为Spring Security RESTful API的代码，其中`/login`路由采用密码模式，当接收到POST请求时，首先校验用户名和密码，若成功，生成JWT格式的访问令牌，同时创建一个自定义的`Authentication`，并添加到响应对象中，返回给客户端；否则，返回失败消息。为了简化代码，这里省略了用户校验逻辑，并假设`CustomUserDetails`类可以获得当前登录用户的相关信息。
 
-```python
-CLIENT_ID = "your client id"
-TENANT_ID = "your tenant id"
-CLIENT_SECRET = "your client secret"
-SCOPE = ["user.read"] # for example, if you want to read user's email address from Microsoft Graph API
-REDIRECT_URI = "http://localhost"
-```
+# 5.未来发展趋势与挑战
+OAuth2.0作为目前最流行的授权模式，随着其普及率的增长，越来越多的人开始意识到安全问题。未来可能会出现以下一些问题：
 
-## 4.3 获取 OAuth2.0 和 OpenID Connect 令牌
-
-### 4.3.1 获取 OAuth2.0 令牌
-
-MSAL 库提供了几种获取 OAuth2.0 令牌的方法，这里我们采用 confidential 客户端方法来获取令牌。
-
-```python
-app = ConfidentialClientApplication(
-    CLIENT_ID, authority=f'https://login.microsoftonline.com/{TENANT_ID}',
-    client_credential=CLIENT_SECRET
-)
-
-result = app.acquire_token_silent(SCOPES, account=None)
-
-if not result:
-    print("No suitable token exists in cache. Let's get a new one from AAD.")
-    result = app.acquire_token_for_client(scopes=SCOPES)
-
-if "access_token" in result:
-    # Call graph using the access token
-    headers = {'Authorization': 'Bearer'+ result['access_token']}
-    response = requests.get('https://graph.microsoft.com/v1.0/me', headers=headers)
-    data = response.json()
-    print(data["mail"])
-else:
-    print(result.get("error"))
-    print(result.get("error_description"))
-    print(result.get("correlation_id")) 
-```
-
-### 4.3.2 获取 OpenID Connect 令牌
-
-Azure Identity 模块提供了几个便利的函数来获取和缓存 OpenID Connect 令牌。
-
-```python
-cred = ClientSecretCredential(
-        TENANT_ID, 
-        CLIENT_ID, 
-        CLIENT_SECRET, 
-    )
-
-token = cred.get_token(*SCOPE)[0] 
-
-print(token.token)
-```
-
-使用 MSAL 和 Azure Identity 可以很方便地获取 OAuth2.0 和 OpenID Connect 令牌。建议优先采用 Azure Identity 的接口，因为它有默认的缓存机制来优化性能。
-
-## 4.4 测试应用
-
-最后，运行测试脚本，确认应用正常运行。
+1. 权限过渡问题——授权服务器应该严格限制客户端对于资源的访问范围，并且可以逐步释放权限；
+2. 隐私泄露——用户数据应该加密传输，不能泄露给无关方；
+3. PKCE (Proof Key for Code Exchange)支持——该标准正在制定中，用来增加授权码模式的安全性。
