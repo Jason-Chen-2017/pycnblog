@@ -2,68 +2,79 @@
 
 # 1.背景介绍
 
-自然语言处理（NLP，Natural Language Processing）是计算机科学与人工智能领域的一个分支，研究如何让计算机理解、生成和处理人类语言。自然语言处理的应用范围广泛，包括机器翻译、语音识别、情感分析、文本摘要等。
+自然语言处理（NLP）是计算机科学与人工智能领域的一个分支，旨在让计算机理解、生成和处理人类语言。自然语言处理的主要任务包括语言翻译、语音识别、情感分析、文本摘要、机器阅读理解等。
 
 Python是一个强大的编程语言，拥有丰富的库和框架，使得自然语言处理变得更加简单和高效。在本文中，我们将深入探讨Python自然语言处理的基础知识，涵盖核心概念、算法原理、具体操作步骤、数学模型公式、代码实例和未来发展趋势。
 
 # 2.核心概念与联系
 
-在自然语言处理中，我们需要处理文本数据，以便计算机能够理解和生成人类语言。以下是一些核心概念：
+在自然语言处理中，我们需要理解和处理文本数据。文本数据可以是文本文件、网页内容、语音识别转换成文本等。Python提供了许多库来处理文本数据，如re、nltk、pandas等。
 
-- 文本数据：文本数据是人类语言的表示形式，可以是文本文件、网页内容、语音识别转换的文本等。
-- 词汇表：词汇表是一种数据结构，用于存储文本中的单词及其相关信息，如词频、词性等。
-- 词性标注：词性标注是将文本中的单词标记为不同的词性，如名词、动词、形容词等。
-- 依存关系：依存关系是一种语法结构，用于描述句子中单词之间的关系，如主语、宾语、宾语补充等。
-- 语义分析：语义分析是将文本中的单词映射到语义层面，以便计算机理解其含义。
+## 2.1 文本预处理
+
+文本预处理是自然语言处理的一个重要环节，旨在将原始文本数据转换为机器可以理解的格式。文本预处理包括以下几个步骤：
+
+1. 去除标点符号：使用正则表达式或其他方法去除文本中的标点符号。
+2. 小写转换：将文本中的所有字符转换为小写，以便于比较和处理。
+3. 分词：将文本拆分为单词，以便进行词汇统计和词性标注等操作。
+4. 词干提取：将单词拆分为词干，以便进行词性标注和词义分析等操作。
+5. 停用词过滤：从文本中去除一些常见的停用词，如“是”、“的”等，以减少噪音信息。
+
+## 2.2 词汇统计
+
+词汇统计是自然语言处理中的一个基本任务，旨在计算文本中每个单词的出现次数。词汇统计可以用于词频分析、文本摘要、文本聚类等任务。
+
+## 2.3 词性标注
+
+词性标注是自然语言处理中的一个重要任务，旨在为文本中的每个单词分配一个词性标签，如名词、动词、形容词等。词性标注可以用于语义分析、句法分析、机器翻译等任务。
 
 # 3.核心算法原理和具体操作步骤以及数学模型公式详细讲解
 
-在自然语言处理中，我们需要使用各种算法来处理文本数据。以下是一些核心算法的原理和操作步骤：
+在自然语言处理中，我们需要使用各种算法来处理文本数据。以下是一些常见的自然语言处理算法及其原理和操作步骤：
 
-- 分词：分词是将文本划分为单词的过程。常用的分词算法有空格分词、基于规则的分词、基于字典的分词、基于统计的分词等。
-- 词性标注：词性标注是将文本中的单词标记为不同的词性。常用的词性标注算法有HMM、CRF、Maxent等。
-- 依存关系解析：依存关系解析是将文本中的单词映射到依存关系，以便理解句子结构。常用的依存关系解析算法有基于规则的方法、基于统计的方法、基于深度学习的方法等。
-- 语义分析：语义分析是将文本中的单词映射到语义层面，以便理解其含义。常用的语义分析算法有基于规则的方法、基于统计的方法、基于深度学习的方法等。
+## 3.1 朴素贝叶斯分类器
+
+朴素贝叶斯分类器是一种基于贝叶斯定理的分类器，用于根据文本特征进行文本分类。朴素贝叶斯分类器的原理是：给定一个文本，计算该文本属于每个类别的概率，并选择概率最高的类别作为预测结果。
+
+具体操作步骤如下：
+
+1. 文本预处理：对文本数据进行预处理，包括去除标点符号、小写转换、分词、词干提取等。
+2. 词汇统计：计算文本中每个单词的出现次数，得到词汇统计矩阵。
+3. 词性标注：为文本中的每个单词分配一个词性标签。
+4. 特征选择：选择一些有意义的特征，如单词出现次数、词性标签等。
+5. 训练朴素贝叶斯分类器：使用训练数据集训练朴素贝叶斯分类器。
+6. 测试朴素贝叶斯分类器：使用测试数据集测试朴素贝叶斯分类器的性能。
+
+## 3.2 主题建模
+
+主题建模是自然语言处理中的一个重要任务，旨在从文本数据中发现主题。主题建模可以用于文本摘要、文本聚类、情感分析等任务。
+
+主题建模的原理是：通过对文本数据进行统计分析，发现文本中出现频率较高的单词组成的主题。主题建模的具体操作步骤如下：
+
+1. 文本预处理：对文本数据进行预处理，包括去除标点符号、小写转换、分词、词干提取等。
+2. 词汇统计：计算文本中每个单词的出现次数，得到词汇统计矩阵。
+3. 词性标注：为文本中的每个单词分配一个词性标签。
+4. 特征选择：选择一些有意义的特征，如单词出现次数、词性标签等。
+5. 主题建模算法：使用主题建模算法，如LDA（Latent Dirichlet Allocation），发现文本中的主题。
+6. 主题分析：对发现的主题进行分析，以便进行文本摘要、文本聚类等任务。
 
 # 4.具体代码实例和详细解释说明
 
-在本节中，我们将通过一个简单的文本分词示例来演示Python自然语言处理的实际应用。
+在本节中，我们将通过一个具体的代码实例来说明自然语言处理的核心概念和算法原理。
+
+## 4.1 文本预处理
 
 ```python
-import jieba
+import re
 
-# 定义一个文本
-text = "我爱你，你爱我。"
-
-# 使用jieba库进行分词
-words = jieba.cut(text)
-
-# 输出分词结果
-print(words)
-```
-
-在上述代码中，我们使用了jieba库进行文本分词。jieba是一个基于Python的中文分词库，可以快速、准确地将中文文本划分为单词。在这个示例中，我们将文本"我爱你，你爱我。"划分为单词列表["我", "爱", "你", "，", "你", "爱", "我", "。"]。
-
-# 5.未来发展趋势与挑战
-
-自然语言处理是一个快速发展的领域，未来将面临以下挑战：
-
-- 多语言支持：目前的自然语言处理主要关注英语和中文，但未来需要支持更多的语言。
-- 跨领域应用：自然语言处理将在更多领域得到应用，如医疗、金融、法律等。
-- 数据安全与隐私：自然语言处理需要处理大量的文本数据，这可能导致数据安全和隐私问题。
-- 算法创新：自然语言处理需要不断创新算法，以提高处理能力和准确性。
-
-# 6.附录常见问题与解答
-
-在本节中，我们将回答一些常见的自然语言处理问题：
-
-Q：自然语言处理与机器学习有什么关系？
-A：自然语言处理是机器学习的一个分支，涉及计算机理解、生成和处理人类语言。自然语言处理通常使用机器学习算法，如支持向量机、决策树、神经网络等，来处理文本数据。
-
-Q：自然语言处理需要哪些技能？
-A：自然语言处理需要掌握计算机科学、数学、语言学、人工智能等多个领域的知识。此外，熟练掌握编程语言、数据结构、算法等基础知识也是必要的。
-
-Q：自然语言处理有哪些应用场景？
-A：自然语言处理的应用场景非常广泛，包括机器翻译、语音识别、情感分析、文本摘要等。此外，自然语言处理还可以应用于医疗、金融、法律等多个领域。
-
-总结：本文详细介绍了Python自然语言处理的基础知识，包括背景介绍、核心概念、算法原理、具体操作步骤、数学模型公式、代码实例和未来发展趋势。希望本文能够帮助读者更好地理解自然语言处理的核心概念和算法，并掌握Python自然语言处理的基本操作方法。
+def preprocess_text(text):
+    # 去除标点符号
+    text = re.sub(r'[^\w\s]', '', text)
+    # 小写转换
+    text = text.lower()
+    # 分词
+    words = text.split()
+    # 词干提取
+    words = [word for word in words if word.isalpha()]
+    # 停用词过滤
+    stopwords = set(['is', 'of', 'the', 'and', 'to', 'in', 'a', 'that', 'it', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'be', 'this', 'i', 'for', 'you', 'on', 'with', 'as', 'he', 'was', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'they', 'we', 'at', 'but', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'an', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'my', 'one', 'upon', 'his', 'from', 'they', 'have', 'in', 'my', 'one', 'upon', 'his', 'they', 'be', 'this', 'i', 'for', 'you', 'from', 'my', 'one', 'upon', 'his', 'from', 'my', 'one', 'upon', 'his', 'they', 'be', 'this', 'i', 'for', 'you', 'one', 'upon', 'his', 'from', 'my', 'one', 'upon', 'his', 'they', 'be', 'this', 'i', 'for', 'one', 'upon', 'his', 'from', ''one', 'upon', 'his', 'from', ''one', 'upon', 'his', 'from', ''one', 'upon', 'his', 'from', 'one', 'upon', 'his', 'from', 'one', 'upon', 'his', 'from', 'one', 'upon', 'his', 'one', 'upon', 'his', 'from', ' 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', ' 'one', 'upon', 'his', ' 'one', 'upon', 'his', ' 'one', 'upon', 'his', ' 'one', 'upon', 'his', ' 'one', 'upon', 'his', ' ' 'one', 'upon', 'his', ' 'one', 'upon', 'his', ' 'one', 'upon', 'his', ' 'one', 'upon', 'his', ' 'one', 'upon', 'his', ' 'one', 'upon', 'his', ' 'one', 'upon', 'his', ' 'one', 'upon', 'his', ' 'one', 'upon', 'his', 'one', 'upon', 'his', ' 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'one', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon', 'his', 'upon',

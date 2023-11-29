@@ -9,3 +9,9 @@ md:
 
 write:
 	./write_blog.sh
+
+title:
+	./auto_title.sh
+
+gitc:
+	./git_commit.sh
