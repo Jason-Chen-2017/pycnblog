@@ -9,4 +9,3 @@ git add *
 # 提交更改到仓库
 git commit -m "$msg"
 
-git push origin master

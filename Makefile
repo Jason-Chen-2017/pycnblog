@@ -15,3 +15,6 @@ title:
 
 gitc:
 	./git_commit.sh
+
+auto:
+	./auto_make.sh
