@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
-make md
+
+make m
+
 sleep 7
-make find
+
+make f
+
 sleep 7
-make gitc
+
+make g

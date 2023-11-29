@@ -1,20 +1,17 @@
-run:
-	./run.sh
-
-find:
+f:
 	./find.sh
 
-md:
+m:
 	./curl_md.sh
 
-write:
+w:
 	./write_blog.sh
 
-title:
+t:
 	./auto_title.sh
 
-gitc:
+g:
 	./git_commit.sh
 
-auto:
+a:
 	./auto_make.sh
