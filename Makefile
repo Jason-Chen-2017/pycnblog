@@ -15,3 +15,6 @@ g:
 
 a:
 	./auto_make.sh
+
+o:
+	./loop_auto_make.sh
