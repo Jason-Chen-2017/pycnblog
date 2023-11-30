@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
-
 make m
-
-sleep 7
-
+sleep 10
 make f
-
-sleep 7
-
 make g
