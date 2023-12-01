@@ -9,5 +9,6 @@ for i in {1..30}; do
     # 执行curl命令
     curl -X GET "$URL" -H "Request-Origion:SwaggerBootstrapUi" -H "accept:*/*"
     # 暂停x秒钟
-    sleep 7
+    random_number=$((RANDOM % 3 + 1))
+    sleep $random_number
 done
