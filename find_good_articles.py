@@ -77,10 +77,10 @@ if __name__ == '__main__':
     # 获取当前日期
     now = datetime.datetime.today()
 
-    # 存储过去5天的日期
+    # 存储i天的日期； i=0 即为当天。
     dates = []
-    for i in range(0, 6):
-        # 减去一天的时间间隔
+    for i in range(0, 1):
+        # 减去i天的时间间隔
         date = now - datetime.timedelta(days=i)
         # 格式化成yyyyMMdd
         date_str = date.strftime('%Y%m%d')
