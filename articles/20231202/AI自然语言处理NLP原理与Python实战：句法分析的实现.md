@@ -2,164 +2,167 @@
 
 # 1.背景介绍
 
-自然语言处理（Natural Language Processing，NLP）是人工智能（Artificial Intelligence，AI）领域的一个重要分支，旨在让计算机理解、生成和处理人类语言。句法分析（Syntax Analysis）是NLP的一个重要子领域，旨在识别句子中的词汇和词性，以及它们之间的语法关系。
+自然语言处理（Natural Language Processing，NLP）是人工智能（Artificial Intelligence，AI）领域的一个重要分支，旨在让计算机理解、生成和处理人类语言。句法分析（Syntax Analysis）是NLP的一个重要子领域，旨在识别句子中的词汇和词性，以及它们之间的句法关系。
 
 在本文中，我们将探讨句法分析的核心概念、算法原理、具体操作步骤以及数学模型公式。我们还将通过具体的Python代码实例来说明句法分析的实现。最后，我们将讨论句法分析的未来发展趋势和挑战。
 
 # 2.核心概念与联系
 
-在句法分析中，我们需要了解以下几个核心概念：
+在句法分析中，我们主要关注以下几个核心概念：
 
-1. **词汇（Vocabulary）**：句法分析中的词汇包括所有可能出现在句子中的词。这些词可以是单词、短语或其他语言元素。
+1. **词汇（Vocabulary）**：句法分析中的词汇包括所有可能出现在句子中的单词。这些单词可以是英语中的单词、词性标签或者其他特定于语言的标记。
 
-2. **词性（Part of Speech，POS）**：词性是一个词在句子中的语法角色。例如，一个词可以是名词（noun）、动词（verb）、形容词（adjective）、代词（pronoun）等。
+2. **词性（Part-of-Speech，POS）**：词性是一个单词在句子中的类别，例如名词、动词、形容词等。词性标签可以帮助我们理解句子的结构和意义。
 
-3. **句法规则（Syntax Rules）**：句法规则是一组规则，用于描述句子中词汇和词性之间的语法关系。这些规则可以是固定的，也可以是基于统计的。
+3. **句法关系（Syntactic Relations）**：句法关系是指一个词在句子中与其他词之间的关系。例如，主语与动词之间的关系、宾语与动词之间的关系等。
 
-4. **语法树（Syntax Tree）**：语法树是一个树状结构，用于表示句子中的词汇和词性之间的语法关系。每个节点在树中表示一个词，每个边表示一个语法关系。
+4. **句法规则（Syntax Rules）**：句法规则是一种描述句子结构的规则，它们可以帮助我们理解如何将词汇组合成句子。
 
-5. **依存关系（Dependency Relations）**：依存关系是一个词与其他词之间的语法关系。例如，一个动词可能与其主语和宾语之间存在依存关系。
+5. **句法分析器（Syntax Analyzer）**：句法分析器是一个程序，它可以根据给定的句子和句法规则来识别词汇、词性和句法关系。
 
 # 3.核心算法原理和具体操作步骤以及数学模型公式详细讲解
 
-句法分析的核心算法原理包括：
+句法分析的核心算法原理主要包括：
 
-1. **词汇标记（Tokenization）**：将输入文本划分为词汇的过程。这可以通过空格、标点符号等来划分。
+1. **词汇标记（Tokenization）**：将输入文本划分为单词或词性标签的过程。
 
-2. **词性标注（Part-of-Speech Tagging）**：为每个词汇分配词性的过程。这可以通过规则引擎、统计方法或深度学习方法来实现。
+2. **词性标注（Part-of-Speech Tagging）**：根据给定的句子，为每个词分配适当的词性标签。
 
-3. **语法规则应用（Applying Syntax Rules）**：根据语法规则，识别句子中词汇和词性之间的语法关系的过程。这可以通过规则引擎、统计方法或深度学习方法来实现。
+3. **句法规则应用（Applying Syntax Rules）**：根据句法规则，将词汇组合成句子。
 
-4. **语法树构建（Building Syntax Tree）**：根据语法规则和应用的结果，构建句子中词汇和词性之间的语法树的过程。
+4. **句法关系识别（Syntactic Relation Detection）**：识别句子中的句法关系。
 
-5. **依存关系解析（Dependency Parsing）**：识别句子中每个词与其他词之间的依存关系的过程。这可以通过规则引擎、统计方法或深度学习方法来实现。
+以下是具体的操作步骤：
 
-在具体操作步骤中，我们需要遵循以下步骤：
+1. 首先，我们需要将输入文本划分为单词或词性标签。这可以通过使用空格、标点符号等来划分。
 
-1. 读取输入文本。
-2. 对文本进行词汇标记。
-3. 对标记的词汇进行词性标注。
-4. 根据语法规则应用语法规则。
-5. 构建语法树。
-6. 解析依存关系。
-7. 输出结果。
+2. 接下来，我们需要为每个词分配适当的词性标签。这可以通过使用词性标签器来实现。
 
-数学模型公式详细讲解：
+3. 然后，我们需要根据句法规则将词汇组合成句子。这可以通过使用句法规则引擎来实现。
 
-1. **词性标注**：词性标注可以通过以下公式来表示：
+4. 最后，我们需要识别句子中的句法关系。这可以通过使用句法关系识别器来实现。
+
+以下是数学模型公式的详细讲解：
+
+1. **词汇标记（Tokenization）**：
 
 $$
-P(t_i|w_1, w_2, ..., w_n) = \frac{exp(\sum_{j=1}^{n} log(P(t_i|w_j))}{Z}
+T = \{t_1, t_2, ..., t_n\}
 $$
 
-其中，$t_i$ 是第 $i$ 个词的词性标签，$w_1, w_2, ..., w_n$ 是句子中的所有词汇，$P(t_i|w_j)$ 是第 $i$ 个词的词性概率，$Z$ 是归一化因子。
+其中，$T$ 是一个包含所有单词或词性标签的集合，$t_i$ 是集合中的第 $i$ 个元素。
 
-2. **语法规则应用**：语法规则应用可以通过以下公式来表示：
-
-$$
-P(s|w_1, w_2, ..., w_n) = \frac{exp(\sum_{i=1}^{n} log(P(s|w_i))}{Z}
-$$
-
-其中，$s$ 是句子的语法结构，$w_1, w_2, ..., w_n$ 是句子中的所有词汇，$P(s|w_i)$ 是第 $i$ 个词的语法概率，$Z$ 是归一化因子。
-
-3. **语法树构建**：语法树构建可以通过以下公式来表示：
+2. **词性标注（Part-of-Speech Tagging）**：
 
 $$
-T = \arg \max_{t \in T} P(t|w_1, w_2, ..., w_n)
+P = \{p_1, p_2, ..., p_n\}
 $$
 
-其中，$T$ 是句子的语法树，$t$ 是所有可能的语法树，$P(t|w_1, w_2, ..., w_n)$ 是第 $i$ 个词的语法概率。
+其中，$P$ 是一个包含所有词性标签的集合，$p_i$ 是集合中的第 $i$ 个元素。
 
-4. **依存关系解析**：依存关系解析可以通过以下公式来表示：
+3. **句法规则应用（Applying Syntax Rules）**：
 
 $$
-D = \arg \max_{d \in D} P(d|s)
+S = \{s_1, s_2, ..., s_n\}
 $$
 
-其中，$D$ 是句子的依存关系，$d$ 是所有可能的依存关系，$P(d|s)$ 是依存关系的概率。
+其中，$S$ 是一个包含所有句法规则的集合，$s_i$ 是集合中的第 $i$ 个元素。
+
+4. **句法关系识别（Syntactic Relation Detection）**：
+
+$$
+R = \{r_1, r_2, ..., r_n\}
+$$
+
+其中，$R$ 是一个包含所有句法关系的集合，$r_i$ 是集合中的第 $i$ 个元素。
 
 # 4.具体代码实例和详细解释说明
 
-在本节中，我们将通过一个简单的Python代码实例来说明句法分析的实现。我们将使用NLTK（Natural Language Toolkit）库来进行词汇标记、词性标注、语法规则应用和语法树构建。我们还将使用Stanford NLP库来进行依存关系解析。
-
-首先，我们需要安装NLTK和Stanford NLP库：
-
-```python
-pip install nltk
-pip install stanfordnlp
-```
-
-然后，我们可以使用以下代码来实现句法分析：
+以下是一个具体的Python代码实例，用于实现句法分析：
 
 ```python
 import nltk
-from nltk import pos_tag
-from nltk import parse
-from nltk.tree import Tree
-from stanfordnlp.server import CoreNLPClient
+from nltk.tokenize import word_tokenize
+from nltk.tag import pos_tag
+from nltk.parse import chunk
 
-# 读取输入文本
-input_text = "I love programming."
+# 输入文本
+text = "I love programming."
 
-# 对文本进行词汇标记
-tokens = nltk.word_tokenize(input_text)
+# 词汇标记
+tokens = word_tokenize(text)
 
-# 对标记的词汇进行词性标注
-tagged_tokens = pos_tag(tokens)
+# 词性标注
+tagged = pos_tag(tokens)
 
-# 根据语法规则应用语法规则
-tree = parse(tagged_tokens, grammar='english-pcfg.json')
-
-# 构建语法树
-root = tree.root()
-syntax_tree = Tree.fromstring(root.to_string())
-
-# 解析依存关系
-client = CoreNLPClient('http://localhost:9000')
-dependency_parse = client.annotate(input_text, properties={"annotators": "tokenize,ssplit,pos,lemma,parse,depparse"})
-dependency_parse = dependency_parse['sentences'][0]['parse']
-
-# 输出结果
-print("Syntax Tree:", syntax_tree)
-print("Dependency Parse:", dependency_parse)
-```
-
-在上述代码中，我们首先读取输入文本，然后对文本进行词汇标记。接着，我们对标记的词汇进行词性标注。然后，我们根据语法规则应用语法规则，并构建语法树。最后，我们解析依存关系并输出结果。
-
-# 5.未来发展趋势与挑战
-
-未来，句法分析的发展趋势将会涉及以下几个方面：
-
-1. **深度学习**：深度学习方法将会成为句法分析的主要技术，因为它可以自动学习语法规则，并且在处理大规模数据时具有更高的准确性。
-
-2. **跨语言**：句法分析将会拓展到更多语言，以满足全球化的需求。
-
-3. **实时性**：句法分析将会更加实时，以满足实时语言处理的需求。
-
-4. **个性化**：句法分析将会更加个性化，以满足不同用户的需求。
-
-5. **多模态**：句法分析将会拓展到多模态，如图像、音频等，以满足多模态语言处理的需求。
-
-挑战包括：
-
-1. **数据不足**：句法分析需要大量的语料库来训练模型，但是语料库的收集和标注是一个昂贵的过程。
-
-2. **语言变化**：语言是动态的，因此句法分析需要不断更新其模型以适应新的语言变化。
-
-3. **多样性**：不同的语言和文化可能具有不同的语法规则，因此句法分析需要处理语言的多样性。
-
-# 6.附录常见问题与解答
-
-1. **问题：如何选择合适的语法规则？**
-
-   答：选择合适的语法规则取决于需要处理的语言和文本类型。可以选择基于规则引擎的方法，如NLTK的PCFG规则，或者基于统计的方法，如Hidden Markov Model（HMM），或者基于深度学习的方法，如Recurrent Neural Network（RNN）。
-
-2. **问题：如何处理不规范的文本？**
-
-   答：不规范的文本可能会导致句法分析的准确性下降。可以使用预处理步骤，如去除标点符号、小写转换、词汇拆分等，来处理不规范的文本。
-
-3. **问题：如何评估句法分析的性能？**
-
-   答：可以使用标准的NLP评估指标，如准确率、召回率、F1分数等，来评估句法分析的性能。
-
-在本文中，我们详细介绍了句法分析的背景、核心概念、算法原理、具体操作步骤以及数学模型公式。我们还通过一个Python代码实例来说明句法分析的实现。最后，我们讨论了句法分析的未来发展趋势和挑战。希望这篇文章对您有所帮助。
+# 句法分析
+tree = chunk(tagged, r"""
+    {<NP: {<DT|PRP\$|CD|JJ|NN.*>+}>}
+    | {<VP: {<VB.*> <NP>}>}
+    | {<VP: {<VB.*> <NP> <PP>}>}
+    | {<PP: {<IN> <NP>}>}
+    | {<NP: {<JJ> <NN.*>}>}
+    | {<NP: {<DT|PRP\$|CD|JJ|NN.*>}>}
+    | {<VP: {<VB.*> <NP: {<PRP\$> <NN.*>}>}>}
+    | {<VP: {<VB.*> <NP: {<PRP\$> <NN.*> <PP>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <JJ> <NN.*>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <JJ> <NN.*> <PP>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP> <PP> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP>}>}>}>}>}>}>}
+    | {<VP: {<VB.*> <NP: {<DT|PRP\$|CD> <NN.*> <PP: {<IN> <NP: {<DT|PRP\$|CD|JJ|NN.*> <NP: {<DT|PRP\$|CD

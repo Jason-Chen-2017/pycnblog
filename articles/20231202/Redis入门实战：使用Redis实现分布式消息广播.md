@@ -2,150 +2,180 @@
 
 # 1.背景介绍
 
-Redis是一个开源的高性能key-value存储系统，它支持数据的持久化，可基于内存（in-memory）进行操作。Redis 是一个开源的使用 ANSI C 语言编写、遵循 BSD 协议的高性能的键值对(key-value)存储数据库，并提供多种语言的 API。Redis 可以在一个数据库中同时存储字符串值(string)、哈希(hash)、列表(list)、集合(sets)和有序集合(sorted sets)等类型的数据。
+Redis是一个开源的高性能key-value存储系统，它支持数据的持久化，备份，重plication，集群等特性。Redis的核心特点是在保证数据的原子性和一致性的前提下，提供最低的延迟。Redis 支持的数据类型包括字符串(string)、哈希(hash)、列表(list)、集合(sets)和有序集合(sorted sets)等。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能key-value数据库，服务器原生支持数据持久化，高级调用API支持多种语言（Redis客户端），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift和Perl。
+Redis 是一个非关系型数据库，它的数据结构简单，性能出色，适合做缓存。Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的key-value类型的数据，Redis还支持字符串(string)、列表(list)、集合(sets)和有序集合(sorted sets)等数据类型。
+Redis 支持数据的备份，即 master-slave 模式的数据备份。Redis 支持数据的分片，即将一个数据集划分成多个部分，每个部分存储在不同的 Redis 实例上，这样可以实现数据的分布式存储和读写。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的复制，即 master-slave 模式的数据复制。Redis 支持数据的集中管理，即可以通过 Redis 客户端工具来管理 Redis 数据。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的加密，即将数据加密后存储在 Redis 中，这样可以保证数据的安全性。Redis 支持数据的压缩，即将数据压缩后存储在 Redis 中，这样可以节省存储空间。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的分区，即将一个数据集划分成多个部分，每个部分存储在不同的 Redis 实例上，这样可以实现数据的分布式存储和读写。Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这们可以保证数据的一致性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进为使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进为使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进为使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD licensed）、跨平台（Cross-platform）的高性能 key-value 数据库。服务器原生支持数据持久化，高级调用 API 支持多种语言（Redis clients），包括：C、Java、PHP、Python、Ruby、Go、Node.js、C#、Objective-C、R、Swift 和 Perl。
+Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进为使用。除了简单的 key-value 类型的数据，Redis 还支持字符串 (string)、列表 (list)、集合 (sets) 和有序集合 (sorted sets) 等数据类型。
+Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。
 
-Redis 是一个使用 ANSI C 语
+Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。
+
+Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。
+
+Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。
+
+Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。
+
+Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。
+
+Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。
+
+Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。
+
+Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。
+
+Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。
+
+Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。
+
+Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。
+
+Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。
+
+Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证数据的空间效率。Redis 支持数据的自动分区，即当数据量增加时，Redis 会自动分区数据，这样可以保证数据的可用性。
+
+Redis 支持数据的自动扩展，即当数据量增加时，Redis 会自动扩展内存空间，这样可以保证数据的可用性。Redis 支持数据的自动删除，即当数据过期时，Redis 会自动删除数据，这样可以保证数据的清洁。
+
+Redis 支持数据的自动备份，即当数据发生变化时，Redis 会自动备份数据，这样可以保证数据的安全性。Redis 支持数据的自动复制，即当数据发生变化时，Redis 会自动复制数据，这样可以保证数据的一致性。
+
+Redis 支持数据的自动加密，即当数据发生变化时，Redis 会自动加密数据，这样可以保证数据的安全性。Redis 支持数据的自动压缩，即当数据发生变化时，Redis 会自动压缩数据，这样可以保证
