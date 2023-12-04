@@ -79,7 +79,7 @@ if __name__ == '__main__':
 
     # 存储i天的日期； i=0 即为当天。
     dates = []
-    for i in range(0, 1):
+    for i in range(0, 2):
         # 减去i天的时间间隔
         date = now - datetime.timedelta(days=i)
         # 格式化成yyyyMMdd
