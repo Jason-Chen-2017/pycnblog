@@ -1,0 +1,36 @@
+                 
+
+# 1.背景介绍
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Redis 是一个高性能的 key-value 存储系统，它支持数据的持久化，可以基于内存（Redis）或磁盘（Redis-Persistent）。Redis 提供了多种语言的 API，如 Ruby、Python、Java、C、C++、PHP、Node.js、Go、Objective-C、C#、Perl、Lua、R、Swift 和 Elixir。Redis 还支持 Pub/Sub、Lua 脚本、监视（Watch）、事务（Transactions）和特定的数据结构。Redis 是一个使用 ANSI C 语言编写的、遵循 BSD 协议的开源软件（
