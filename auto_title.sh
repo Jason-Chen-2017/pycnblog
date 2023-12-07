@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+
+# auto_aigc
+curl -X GET "http://127.0.0.1:9000/api/ai/auto_aigc" -H  "Request-Origion:SwaggerBootstrapUi" -H  "accept:*/*"
+
+# auto_title
 # 目标URL: curl -X GET "http://127.0.0.1:9000/api/ai/auto_title" -H "Request-Origion:SwaggerBootstrapUi" -H "accept:*/*"
 URL="http://127.0.0.1:9000/api/ai/auto_title"
 # 循环执行100次
