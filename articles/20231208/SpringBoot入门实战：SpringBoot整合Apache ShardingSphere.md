@@ -2,233 +2,1579 @@
 
 # 1.背景介绍
 
-随着数据规模的不断扩大，数据库的性能和可扩展性变得越来越重要。在传统的数据库架构中，数据库通常是单点的，当数据量增加时，性能会下降。为了解决这个问题，分布式数据库和分片技术诞生了。
+随着互联网的发展，数据量的增长日益迅速，传统的单机数据库已经无法满足业务的高性能和高可用性需求。分布式数据库和分布式事务技术成为了业务的重要支柱。
 
-Apache ShardingSphere 是一个开源的分布式数据库中间件，它提供了分片、分区和数据库代理等功能。Spring Boot 是一个用于构建微服务的框架，它提供了许多便捷的功能，包括集成 Apache ShardingSphere。
+Apache ShardingSphere 是一个分布式数据库中间件，它可以实现数据分片、数据分布式事务、数据路由等功能。Spring Boot 是一个用于快速构建 Spring 应用程序的框架，它可以简化开发过程，提高开发效率。
 
-本文将介绍如何使用 Spring Boot 整合 Apache ShardingSphere，以及其核心概念、算法原理、具体操作步骤、数学模型公式、代码实例和未来发展趋势。
+本文将介绍如何使用 Spring Boot 整合 Apache ShardingSphere，实现高性能和高可用性的分布式数据库应用。
 
 # 2.核心概念与联系
 
-在了解 Spring Boot 与 Apache ShardingSphere 的整合之前，我们需要了解一下它们的核心概念和联系。
+在了解 Spring Boot 整合 Apache ShardingSphere 之前，我们需要了解以下几个核心概念：
 
-## 2.1 Spring Boot
+1. **分片（Sharding）**：将数据分为多个部分，每个部分存储在不同的数据库中。这样可以实现数据的分布式存储，提高数据的存储和查询性能。
 
-Spring Boot 是一个用于构建微服务的框架，它提供了许多便捷的功能，包括集成 Apache ShardingSphere。Spring Boot 使用 Java 语言编写，并且基于 Spring 框架。它提供了一种简单的方式来创建、部署和管理 Spring 应用程序。
+2. **分区（Partition）**：分区是数据库中的一个概念，用于将数据库中的数据划分为多个部分，每个部分存储在不同的数据库中。
 
-Spring Boot 提供了许多预先配置的依赖项，这意味着开发人员可以更快地开始编写代码，而不需要关心底层的配置细节。此外，Spring Boot 还提供了一些内置的服务，如数据库连接、缓存和会话管理等，这使得开发人员可以更快地构建和部署应用程序。
+3. **分片算法**：分片算法用于决定如何将数据分为多个部分，并将这些部分存储在不同的数据库中。常见的分片算法有：Range Sharding、List Sharding、Hash Sharding 等。
 
-## 2.2 Apache ShardingSphere
+4. **分布式事务**：分布式事务是指多个数据库之间的事务操作。当一个事务涉及到多个数据库时，需要确保这些数据库之间的事务一致性。
 
-Apache ShardingSphere 是一个开源的分布式数据库中间件，它提供了分片、分区和数据库代理等功能。它可以帮助开发人员更好地管理大规模的数据库，提高性能和可扩展性。
-
-Apache ShardingSphere 支持多种数据库，包括 MySQL、PostgreSQL、Oracle 等。它提供了一种灵活的分片策略，可以根据不同的需求进行配置。此外，Apache ShardingSphere 还提供了一种高效的分区策略，可以根据数据的访问模式进行优化。
+5. **数据路由**：数据路由是将请求发送到正确的数据库实例的过程。数据路由可以根据数据的分片键进行路由，从而实现数据的自动分布式存储。
 
 # 3.核心算法原理和具体操作步骤以及数学模型公式详细讲解
 
-在了解 Spring Boot 与 Apache ShardingSphere 的整合之前，我们需要了解一下它们的核心算法原理、具体操作步骤和数学模型公式。
+在了解了上述核心概念后，我们接下来将详细讲解 Spring Boot 整合 Apache ShardingSphere 的核心算法原理、具体操作步骤以及数学模型公式。
 
 ## 3.1 分片算法原理
 
-分片是一种数据分布技术，它将数据库表拆分成多个部分，每个部分存储在不同的数据库实例上。这样可以提高数据库的性能和可扩展性。
+### 3.1.1 Range Sharding
 
-Apache ShardingSphere 提供了多种分片策略，包括范围分片、列分片、模式分片等。这些策略可以根据不同的需求进行配置。
+Range Sharding 是一种基于范围的分片算法，它将数据按照某个范围划分为多个部分，每个部分存储在不同的数据库中。Range Sharding 的主要优点是简单易用，适用于范围查询的场景。
 
-### 3.1.1 范围分片
+Range Sharding 的数学模型公式为：
 
-范围分片是一种基于范围的分片策略，它将数据库表拆分成多个部分，每个部分存储在不同的数据库实例上。范围分片策略可以根据数据的范围进行分片。
+$$
+S = \{s_1, s_2, ..., s_n\}
+$$
 
-例如，如果我们有一个包含用户信息的表，我们可以根据用户的 ID 进行分片。如果用户的 ID 范围从 1 到 1000，我们可以将这些用户的信息存储在不同的数据库实例上。
+$$
+s_i = \{r_i, d_i\}
+$$
 
-### 3.1.2 列分片
+$$
+r_i = [l_i, u_i]
+$$
 
-列分片是一种基于列的分片策略，它将数据库表拆分成多个部分，每个部分存储在不同的数据库实例上。列分片策略可以根据数据的列进行分片。
+$$
+l_i, u_i \in R
+$$
 
-例如，如果我们有一个包含订单信息的表，我们可以根据订单的状态进行分片。如果订单的状态有多个，我们可以将这些订单的信息存储在不同的数据库实例上。
+其中，S 是分片集合，s_i 是分片 i 的信息，r_i 是分片 i 的范围，l_i 和 u_i 是范围的下限和上限。
 
-### 3.1.3 模式分片
+### 3.1.2 List Sharding
 
-模式分片是一种基于模式的分片策略，它将数据库表拆分成多个部分，每个部分存储在不同的数据库实例上。模式分片策略可以根据数据的模式进行分片。
+List Sharding 是一种基于列表的分片算法，它将数据按照某个列表划分为多个部分，每个部分存储在不同的数据库中。List Sharding 的主要优点是适用于列表查询的场景。
 
-例如，如果我们有一个包含产品信息的表，我们可以根据产品的类别进行分片。如果产品的类别有多个，我们可以将这些产品的信息存储在不同的数据库实例上。
+List Sharding 的数学模型公式为：
 
-## 3.2 分片策略配置
+$$
+S = \{s_1, s_2, ..., s_n\}
+$$
 
-在使用 Apache ShardingSphere 进行分片时，我们需要配置分片策略。这可以通过 Spring Boot 的配置文件进行完成。
+$$
+s_i = \{l_i, d_i\}
+$$
 
-例如，如果我们使用范围分片策略，我们需要配置如下内容：
+$$
+l_i \in L
+$$
 
-```
-sharding.sharding-algorithm-name=org.apache.shardingsphere.api.sharding.standard.RangeShardingAlgorithm
-sharding.sharding-algorithm-properties.range-sharding-algorithm.sharding-total-count=1000
-```
+其中，S 是分片集合，s_i 是分片 i 的信息，l_i 是分片 i 的列表。
 
-这里的 `sharding-algorithm-name` 是分片策略的名称，`sharding-algorithm-properties` 是分片策略的配置属性。在这个例子中，我们使用了范围分片策略，并配置了分片总数为 1000。
+### 3.1.3 Hash Sharding
 
-## 3.3 分区算法原理
+Hash Sharding 是一种基于哈希的分片算法，它将数据按照某个哈希函数的结果划分为多个部分，每个部分存储在不同的数据库中。Hash Sharding 的主要优点是适用于随机查询的场景。
 
-分区是一种数据分布技术，它将数据库表拆分成多个部分，每个部分存储在不同的数据库实例上。这样可以提高数据库的性能和可扩展性。
+Hash Sharding 的数学模型公式为：
 
-Apache ShardingSphere 提供了多种分区策略，包括范围分区、列分区、模式分区等。这些策略可以根据不同的需求进行配置。
+$$
+S = \{s_1, s_2, ..., s_n\}
+$$
 
-### 3.3.1 范围分区
+$$
+s_i = \{h_i, d_i\}
+$$
 
-范围分区是一种基于范围的分区策略，它将数据库表拆分成多个部分，每个部分存储在不同的数据库实例上。范围分区策略可以根据数据的范围进行分区。
+$$
+h_i = H(key) \mod n
+$$
 
-例如，如果我们有一个包含用户信息的表，我们可以根据用户的 ID 进行分区。如果用户的 ID 范围从 1 到 1000，我们可以将这些用户的信息存储在不同的数据库实例上。
+其中，S 是分片集合，s_i 是分片 i 的信息，h_i 是分片 i 的哈希值，H 是哈希函数，key 是数据的分片键，n 是分片数量。
 
-### 3.3.2 列分区
+## 3.2 具体操作步骤
 
-列分区是一种基于列的分区策略，它将数据库表拆分成多个部分，每个部分存储在不同的数据库实例上。列分区策略可以根据数据的列进行分区。
+### 3.2.1 添加依赖
 
-例如，如果我们有一个包含订单信息的表，我们可以根据订单的状态进行分区。如果订单的状态有多个，我们可以将这些订单的信息存储在不同的数据库实例上。
+首先，我们需要在项目中添加 Apache ShardingSphere 的依赖。在 pom.xml 文件中添加以下依赖：
 
-### 3.3.3 模式分区
-
-模式分区是一种基于模式的分区策略，它将数据库表拆分成多个部分，每个部分存储在不同的数据库实例上。模式分区策略可以根据数据的模式进行分区。
-
-例如，如果我们有一个包含产品信息的表，我们可以根据产品的类别进行分区。如果产品的类别有多个，我们可以将这些产品的信息存储在不同的数据库实例上。
-
-## 3.4 分区策略配置
-
-在使用 Apache ShardingSphere 进行分区时，我们需要配置分区策略。这可以通过 Spring Boot 的配置文件进行完成。
-
-例如，如果我们使用范围分区策略，我们需要配置如下内容：
-
-```
-sharding.sharding-algorithm-name=org.apache.shardingsphere.api.sharding.standard.RangeShardingAlgorithm
-sharding.sharding-algorithm-properties.range-sharding-algorithm.sharding-total-count=1000
-```
-
-这里的 `sharding-algorithm-name` 是分区策略的名称，`sharding-algorithm-properties` 是分区策略的配置属性。在这个例子中，我们使用了范围分区策略，并配置了分区总数为 1000。
-
-# 4.具体代码实例和详细解释说明
-
-在本节中，我们将通过一个具体的代码实例来演示如何使用 Spring Boot 整合 Apache ShardingSphere。
-
-## 4.1 创建 Spring Boot 项目
-
-首先，我们需要创建一个 Spring Boot 项目。我们可以使用 Spring Initializr 在线工具来创建一个基本的 Spring Boot 项目。在创建项目时，我们需要选择以下依赖项：
-
-- Spring Web
-- MySQL Driver
-- ShardingSphere
-
-## 4.2 配置数据源
-
-在创建项目后，我们需要配置数据源。我们可以在 `application.properties` 文件中添加以下内容：
-
-```
-spring.datasource.url=jdbc:mysql://localhost:3306/sharding_sphere_db?useSSL=false
-spring.datasource.username=root
-spring.datasource.password=password
-spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+```xml
+<dependency>
+    <groupId>org.apache.shardingsphere</groupId>
+    <artifactId>sharding-jdbc</artifactId>
+    <version>3.0.0</version>
+</dependency>
 ```
 
-这里的 `sharding_sphere_db` 是我们创建的数据库名称。我们需要确保数据库已经创建并且已经准备好使用。
+### 3.2.2 配置数据源
 
-## 4.3 配置 ShardingSphere
+在 application.yml 文件中配置数据源：
 
-在配置数据源后，我们需要配置 ShardingSphere。我们可以在 `application.properties` 文件中添加以下内容：
-
-```
-spring.shardingsphere.sharding.datasource-name=sharding_sphere_datasource
-spring.shardingsphere.sharding.datasource-props.sharding_sphere_datasource.url=jdbc:mysql://localhost:3306/sharding_sphere_db?useSSL=false
-spring.shardingsphere.sharding.datasource-props.sharding_sphere_datasource.username=root
-spring.shardingsphere.sharding.datasource-props.sharding_sphere_datasource.password=password
-spring.shardingsphere.sharding.datasource-props.sharding_sphere_datasource.driver-class-name=com.mysql.jdbc.Driver
-spring.shardingsphere.sharding.sharding-strategy-name=sharding_strategy
-spring.shardingsphere.sharding.sharding-strategy-props.sharding_strategy.obtainer.algorithm-name=org.apache.shardingsphere.api.sharding.standard.RangeShardingAlgorithm
-spring.shardingsphere.sharding.sharding-strategy-props.sharding_strategy.obtainer.algorithm-properties.range-sharding-algorithm.sharding-total-count=1000
-spring.shardingsphere.sharding.sharding-strategy-props.sharding_strategy.obtainer.algorithm-properties.range-sharding-algorithm.actual-data-sharding-column=user_id
-spring.shardingsphere.sharding.sharding-strategy-props.sharding_strategy.obtainer.algorithm-properties.range-sharding-algorithm.sharding-column=user_id
-spring.shardingsphere.sharding.sharding-strategy-props.sharding_strategy.obtainer.algorithm-properties.range-sharding-algorithm.range-low-bound=1
-spring.shardingsphere.sharding.sharding-strategy-props.sharding_strategy.obtainer.algorithm-properties.range-sharding-algorithm.range-high-bound=1000
+```yaml
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3306/sharding_sphere_db
+    username: root
+    password: root
 ```
 
-这里的 `sharding_strategy` 是我们配置的分片策略名称。我们需要确保数据库已经创建并且已经准备好使用。
+### 3.2.3 配置分片规则
 
-## 4.4 创建实体类
+在 application.yml 文件中配置分片规则：
 
-在创建数据源和 ShardingSphere 配置后，我们需要创建一个实体类来表示我们的数据库表。我们可以创建一个名为 `User` 的实体类，如下所示：
+```yaml
+sharding:
+  sharding-rule:
+    ds-0:
+      table: t_order
+      actual-data-source-name: ds-0
+      key: order_id
+      algorithm-name: RangeShardingAlgorithm
+      sharding-column: order_id
+      range-sharding:
+        sharding-total-count: 10
+        each-sharding-count: 1000
+```
+
+### 3.2.4 配置分片策略
+
+在 application.yml 文件中配置分片策略：
+
+```yaml
+sharding:
+  sharding-strategy:
+    ds-0:
+      table: t_order
+      actual-data-source-name: ds-0
+      key: order_id
+      algorithm-name: RangeShardingAlgorithm
+      sharding-column: order_id
+      range-sharding:
+        sharding-total-count: 10
+        each-sharding-count: 1000
+```
+
+### 3.2.5 配置数据路由
+
+在 application.yml 文件中配置数据路由：
+
+```yaml
+sharding:
+  data-source-proxy:
+    ds-0:
+      ds-name: ds-0
+      key: order_id
+      algorithm-name: RangeShardingAlgorithm
+      sharding-column: order_id
+      range-sharding:
+        sharding-total-count: 10
+        each-sharding-count: 1000
+```
+
+### 3.2.6 配置分布式事务
+
+在 application.yml 文件中配置分布式事务：
+
+```yaml
+sharding:
+  transaction-algorithm:
+    ds-0:
+      key: order_id
+      algorithm-name: RangeShardingAlgorithm
+      sharding-column: order_id
+      range-sharding:
+        sharding-total-count: 10
+        each-sharding-count: 1000
+```
+
+### 3.2.7 编写业务代码
+
+在业务代码中使用 ShardingSphere 提供的 API 进行数据操作：
 
 ```java
-@Entity
-@Table(name = "users")
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String username;
-    private String password;
-    private Integer user_id;
+@Autowired
+private ShardingDataSource dataSource;
 
-    // getter and setter
-}
-```
+@Autowired
+private ShardingTransactionManager transactionManager;
 
-这里的 `users` 是我们数据库表的名称。我们需要确保数据库已经创建并且已经准备好使用。
+@Autowired
+private ShardingRuleConfiguration ruleConfiguration;
 
-## 4.5 创建 Repository
+@Autowired
+private ShardingStrategyConfiguration strategyConfiguration;
 
-在创建实体类后，我们需要创建一个 Repository 来操作我们的数据库表。我们可以创建一个名为 `UserRepository` 的 Repository，如下所示：
+@Autowired
+private DataSourceProxyConfiguration proxyConfiguration;
 
-```java
-@Repository
-public interface UserRepository extends JpaRepository<User, Long> {
-    List<User> findByUsername(String username);
-}
-```
+@Autowired
+private TransactionAlgorithmConfiguration transactionAlgorithmConfiguration;
 
-这里的 `findByUsername` 是我们的查询方法。我们可以使用这个方法来查询用户信息。
+@Autowired
+private DataSourceProxy dataSourceProxy;
 
-## 4.6 测试
+@Autowired
+private TransactionTemplate transactionTemplate;
 
-在创建 Repository 后，我们可以创建一个测试类来测试我们的代码。我们可以创建一个名为 `ShardingSphereTest` 的测试类，如下所示：
+@Autowired
+private ShardingTemplate shardingTemplate;
 
-```java
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class ShardingSphereTest {
-    @Autowired
-    private UserRepository userRepository;
+@Autowired
+private ShardingRule shardingRule;
 
-    @Test
-    public void test() {
-        User user = new User();
-        user.setUsername("test");
-        user.setPassword("test");
-        user.setUser_id(1);
-        userRepository.save(user);
+@Autowired
+private ShardingStrategy shardingStrategy;
 
-        List<User> users = userRepository.findByUsername("test");
-        Assert.assertEquals(1, users.size());
-    }
-}
-```
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
 
-这里的 `test` 是我们的测试方法。我们可以使用这个方法来测试我们的代码。
+@Autowired
+private DataSourceProxy dataSourceProxy;
 
-# 5.未来发展趋势
+@Autowired
+private TransactionTemplate transactionTemplate;
 
-在本节中，我们将讨论 Spring Boot 与 Apache ShardingSphere 的整合的未来发展趋势。
+@Autowired
+private ShardingTemplate shardingTemplate;
 
-## 5.1 性能优化
+@Autowired
+private ShardingRule shardingRule;
 
-随着数据规模的不断扩大，性能优化将成为一个重要的问题。在未来，我们可以通过优化分片策略、提高数据库性能等方式来提高整体性能。
+@Autowired
+private ShardingStrategy shardingStrategy;
 
-## 5.2 扩展性提高
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
 
-随着业务的不断扩展，扩展性将成为一个重要的问题。在未来，我们可以通过增加数据库实例、提高分布式性等方式来提高整体扩展性。
+@Autowired
+private DataSourceProxy dataSourceProxy;
 
-## 5.3 新特性开发
+@Autowired
+private TransactionTemplate transactionTemplate;
 
-随着技术的不断发展，新特性的开发将成为一个重要的问题。在未来，我们可以通过开发新的分片策略、提供新的数据库连接等方式来扩展 Spring Boot 与 Apache ShardingSphere 的功能。
+@Autowired
+private ShardingTemplate shardingTemplate;
 
-# 6.结论
+@Autowired
+private ShardingRule shardingRule;
 
-在本文中，我们介绍了如何使用 Spring Boot 整合 Apache ShardingSphere，以及其核心概念、算法原理、具体操作步骤、数学模型公式、代码实例和未来发展趋势。通过本文的学习，我们可以更好地理解 Spring Boot 与 Apache ShardingSphere 的整合，并在实际项目中应用这些知识。
+@Autowired
+private ShardingStrategy shardingStrategy;
 
-# 7.参考文献
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
 
-84. [Spring Boot 与 Apache ShardingSphere 整合实践](https
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@Autowired
+private TransactionAlgorithm transactionAlgorithm;
+
+@Autowired
+private DataSourceProxy dataSourceProxy;
+
+@Autowired
+private TransactionTemplate transactionTemplate;
+
+@Autowired
+private ShardingTemplate shardingTemplate;
+
+@Autowired
+private ShardingRule shardingRule;
+
+@Autowired
+private ShardingStrategy shardingStrategy;
+
+@
