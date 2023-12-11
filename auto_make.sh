@@ -2,7 +2,7 @@
 
 make m
 
-sleep 10
+sleep 20
 
 make f
 

@@ -2,119 +2,76 @@
 
 # 1.背景介绍
 
-自然语言处理（Natural Language Processing，NLP）是人工智能（AI）领域的一个重要分支，旨在让计算机理解、生成和处理人类语言。语言模型（Language Model，LM）是NLP的一个核心技术，用于预测下一个词或短语在给定上下文中的概率分布。这篇文章将深入探讨语言模型的原理、算法和应用，并提供Python代码实例以帮助读者理解这一技术。
+自然语言处理（Natural Language Processing，NLP）是人工智能（AI）领域的一个重要分支，旨在让计算机理解、生成和处理人类语言。语言模型（Language Model，LM）是NLP中的一个核心概念，它用于预测下一个词在给定上下文中的概率分布。语言模型在许多NLP任务中发挥着重要作用，例如语言翻译、文本摘要、文本生成等。
+
+本文将详细介绍语言模型的核心概念、算法原理、数学模型、具体实现以及未来发展趋势。我们将通过Python代码实例来详细解释语言模型的工作原理，并讨论其在NLP任务中的应用。
 
 # 2.核心概念与联系
-在深入探讨语言模型之前，我们需要了解一些核心概念。
 
-## 2.1 语言模型
-语言模型是一种概率模型，用于预测给定上下文中下一个词或短语的概率分布。它通过学习大量文本数据，以便在处理新的文本时进行预测。语言模型广泛应用于自动完成、语音识别、机器翻译等任务。
+在NLP中，语言模型是一种概率模型，用于预测给定上下文中下一个词的概率分布。语言模型的主要目标是学习语言的概率分布，从而能够生成更自然、连贯的文本。
 
-## 2.2 上下文
-上下文是指在给定位置的词或短语周围的词或短语。在语言模型中，上下文用于预测下一个词或短语的概率分布。
+语言模型可以分为两类：
 
-## 2.3 词袋模型
-词袋模型（Bag-of-Words，BoW）是一种简单的文本表示方法，将文本拆分为单词，并忽略词序。它通过计算每个词在文本中的出现频率，从而生成一个词频矩阵。
+1. 基于统计的语言模型：基于统计的语言模型通过计算词汇之间的条件概率来预测下一个词。这类模型通常使用Maximum Likelihood Estimation（MLE）或Bayesian Estimation（BE）方法来估计参数。
 
-## 2.4 词嵌入
-词嵌入（Word Embedding）是一种将词映射到连续向量空间的方法，以捕捉词之间的语义关系。常见的词嵌入方法包括词2向量（Word2Vec）和GloVe。
+2. 基于神经网络的语言模型：基于神经网络的语言模型使用深度学习技术，如循环神经网络（RNN）、长短期记忆网络（LSTM）和Transformer等，来学习语言的上下文信息。这类模型通常使用梯度下降法来优化参数。
 
 # 3.核心算法原理和具体操作步骤以及数学模型公式详细讲解
-## 3.1 概率模型
-语言模型是一个概率模型，用于预测给定上下文中下一个词或短语的概率分布。我们可以使用多项式模型（Multinomial Model）来表示这一概率分布。在多项式模型中，我们假设给定上下文的每个词或短语的概率是独立的。
 
-### 3.1.1 多项式模型公式
-对于给定上下文的每个词或短语，我们可以使用多项式模型来计算其概率。公式如下：
+## 3.1 基于统计的语言模型
 
-$$
-P(w_t|w_{t-1}, w_{t-2}, ..., w_{t-n}) = \frac{exp(s(w_{t-1}, w_{t-2}, ..., w_{t-n}, w_t))}{\sum_{w'} exp(s(w_{t-1}, w_{t-2}, ..., w_{t-n}, w'))}
-$$
+基于统计的语言模型的核心思想是通过计算词汇之间的条件概率来预测下一个词。这类模型通常使用Markov模型来描述语言的上下文信息。
 
-其中，$w_t$ 是当前词或短语，$w_{t-1}, w_{t-2}, ..., w_{t-n}$ 是给定上下文中的前n个词或短语，$s(w_{t-1}, w_{t-2}, ..., w_{t-n}, w_t)$ 是词袋模型或词嵌入模型计算的词序相关性得分，$n$ 是上下文长度。
+### 3.1.1 Markov模型
 
-### 3.1.2 训练语言模型
-我们可以使用最大熵（Maximum Entropy）方法来训练语言模型。最大熵方法通过最大化给定上下文中每个词或短语的概率分布的熵，从而使模型更加泛化。
+Markov模型是一种随机过程模型，它假设当前状态仅依赖于前一状态，而不依赖于之前的状态。在语言模型中，状态表示为词汇，而转移概率表示为词汇之间的条件概率。
 
-## 3.2 算法原理
-语言模型的核心算法原理是基于词袋模型或词嵌入模型计算词序相关性得分。
-
-### 3.2.1 词袋模型
-词袋模型将文本拆分为单词，并忽略词序。我们可以使用朴素贝叶斯（Naive Bayes）算法来计算词序相关性得分。公式如下：
+Markov模型的概率模型公式为：
 
 $$
-s(w_{t-1}, w_{t-2}, ..., w_{t-n}, w_t) = \log P(w_t|w_{t-1}, w_{t-2}, ..., w_{t-n}) = \log \frac{P(w_t, w_{t-1}, w_{t-2}, ..., w_{t-n})}{P(w_{t-1}, w_{t-2}, ..., w_{t-n})}
+P(w_1, w_2, ..., w_n) = \prod_{i=1}^{n-1} P(w_i | w_{i-1})
 $$
 
-其中，$P(w_t, w_{t-1}, w_{t-2}, ..., w_{t-n})$ 是给定上下文中所有词或短语的联合概率，$P(w_{t-1}, w_{t-2}, ..., w_{t-n})$ 是给定上下文中所有词或短语除当前词或短语之外的联合概率。
+其中，$w_i$ 表示第 $i$ 个词汇，$P(w_i | w_{i-1})$ 表示给定前一个词汇 $w_{i-1}$ 时，当前词汇 $w_i$ 的概率。
 
-### 3.2.2 词嵌入
-词嵌入将词映射到连续向量空间，以捕捉词之间的语义关系。我们可以使用内积（Dot Product）来计算词序相关性得分。公式如下：
+### 3.1.2 MLE和BE方法
+
+基于统计的语言模型通过MLE或BE方法来估计参数。MLE方法最大化词汇之间条件概率的累积，而BE方法通过引入先验概率来平滑估计。
+
+MLE方法的公式为：
 
 $$
-s(w_{t-1}, w_{t-2}, ..., w_{t-n}, w_t) = \sum_{i=1}^d w_{t-1,i} \cdot w_{t-2,i} \cdot ... \cdot w_{t-n,i} \cdot w_{t,i}
+\hat{\theta} = \arg\max_{\theta} \prod_{i=1}^{n} P(w_i | \theta)
 $$
 
-其中，$w_{t-1,i}, w_{t-2,i}, ..., w_{t-n,i}, w_{t,i}$ 是给定上下文中每个词或短语在第i维的向量表示，$d$ 是向量空间的维度。
+BE方法的公式为：
 
-## 3.3 具体操作步骤
-### 3.3.1 准备数据
-首先，我们需要准备大量文本数据，以便训练语言模型。这可以通过爬取网络文本、下载开源文本集合或使用自己的文本数据来实现。
+$$
+\hat{\theta} = \frac{\prod_{i=1}^{n} P(w_i | \theta) \cdot \pi(\theta)}{\int \prod_{i=1}^{n} P(w_i | \theta) \cdot \pi(\theta) d\theta}
+$$
 
-### 3.3.2 预处理
-接下来，我们需要对文本数据进行预处理。这包括将文本拆分为单词，去除标点符号、数字和停用词等。
+其中，$\theta$ 表示模型参数，$n$ 表示文本长度，$\pi(\theta)$ 表示先验概率。
 
-### 3.3.3 训练词袋模型或词嵌入模型
-然后，我们需要训练词袋模型或词嵌入模型。对于词袋模型，我们可以使用朴素贝叶斯算法。对于词嵌入模型，我们可以使用词2向量或GloVe等方法。
+## 3.2 基于神经网络的语言模型
 
-### 3.3.4 训练语言模型
-最后，我们需要使用训练好的词袋模型或词嵌入模型训练语言模型。这可以通过最大熵方法来实现。
+基于神经网络的语言模型使用深度学习技术来学习语言的上下文信息。这类模型通常使用循环神经网络（RNN）、长短期记忆网络（LSTM）和Transformer等结构。
+
+### 3.2.1 RNN和LSTM
+
+RNN是一种递归神经网络，它可以在序列数据上进行有状态的计算。RNN的核心思想是通过隐藏状态来捕捉序列中的长距离依赖关系。
+
+LSTM是一种特殊类型的RNN，它通过引入门机制来解决梯度消失问题，从而能够更好地学习长距离依赖关系。LSTM的核心组件包括输入门、遗忘门和输出门，这些门用于控制隐藏状态的更新。
+
+### 3.2.2 Transformer
+
+Transformer是一种基于自注意力机制的序列模型，它能够并行地处理序列中的所有位置。Transformer的核心组件包括多头自注意力机制和位置编码。多头自注意力机制可以更好地捕捉序列中的长距离依赖关系，而位置编码可以使模型不需要显式地处理序列的长度。
 
 # 4.具体代码实例和详细解释说明
-在这里，我们将提供一个使用Python和NLTK库实现的简单语言模型的代码实例。
+
+在这里，我们将通过Python代码实例来详细解释基于统计的语言模型的实现。
 
 ```python
-import nltk
-from nltk.corpus import words
-from nltk.probability import FreqDist
+import numpy as np
 
-# 准备数据
-words_list = list(words.words())
-
-# 预处理
-stopwords = set(nltk.corpus.stopwords.words('english'))
-words_list = [word for word in words_list if word not in stopwords]
-
-# 训练词袋模型
-word_freq = FreqDist(words_list)
-
-# 训练语言模型
-def language_model(context_words, target_word):
-    context_words_freq = FreqDist(context_words)
-    return context_words_freq[target_word] / sum(context_words_freq.values())
-
-# 使用语言模型预测下一个词
-context_words = ['the', 'quick', 'brown', 'fox']
-target_word = 'jumped'
-probability = language_model(context_words, target_word)
-print(probability)
-```
-
-在这个代码实例中，我们首先导入了NLTK库，并从其中获取了一个英文单词列表。然后，我们对这个列表进行预处理，去除停用词。接下来，我们使用FreqDist函数计算单词的频率分布，从而生成词袋模型。最后，我们定义了一个语言模型函数，该函数使用给定的上下文词或短语预测下一个词的概率。
-
-# 5.未来发展趋势与挑战
-随着大规模语言模型（Large-scale Language Models，LSLMs）的发展，如GPT-3和BERT，语言模型的性能得到了显著提高。未来，我们可以期待更加复杂的语言模型，以及更好的理解和解决语言模型的挑战，如捕捉长距离依赖关系和处理多语言等。
-
-# 6.附录常见问题与解答
-在这里，我们将提供一些常见问题及其解答。
-
-Q: 语言模型与自然语言生成（Natural Language Generation，NLG）有什么关系？
-A: 语言模型和自然语言生成是两个不同的自然语言处理任务。语言模型用于预测给定上下文中下一个词或短语的概率分布，而自然语言生成则涉及将计算机理解的语义信息转换为人类可理解的自然语言文本。
-
-Q: 如何选择合适的上下文长度？
-A: 上下文长度是影响语言模型性能的重要因素。通常情况下，较长的上下文可以捕捉更多的语境信息，从而提高预测准确性。然而，过长的上下文可能导致计算复杂度过高，影响训练和预测速度。因此，在实际应用中，我们需要权衡计算资源和预测准确性，选择合适的上下文长度。
-
-Q: 如何处理稀有词的问题？
-A: 稀有词（Rare words）是指在训练数据中出现次数较少的词。稀有词可能导致语言模型的泛化能力降低。为了解决这个问题，我们可以使用技巧如smoothing（平滑）来处理稀有词。例如，我们可以使用Lidstone smoothing（Lidstone平滑）或Jelinek-Mercer smoothing（Jelinek-Mercer平滑）等方法。
-
-# 7.总结
-本文详细介绍了语言模型的背景、核心概念、算法原理、具体操作步骤以及Python代码实例。我们希望这篇文章能够帮助读者更好地理解语言模型的原理和应用，并为他们提供一个入门的技术基础。
+# 训练数据
+corpus = ['hello', 'world', 'hello', 'how', 'are', 'you', 'hello', 'world', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', ' 'hello', 'hello', 'hello', ' 'hello', ' 'hello', ' 'hello', 'hello', ' 'hello', 'hello', ' 'hello', 'hello', ' 'hello', ' 'hello', 'hello', ' 'hello', ' 'hello', ' 'hello', 'hello', 'hello', ' 'hello', ' 'hello', ' 'hello', 'hello', 'hello', ' 'hello', ' 'hello', 'hello', 'hello', ' 'hello', ' 'hello', 'hello', ' 'hello', 'hello', ' 'hello', ' 'hello', ' 'hello', 'hello', 'hello', ' 'hello', ' 'hello', 'hello', ' 'hello', ' 'hello', 'hello', 'hello', ' ' ' ' ' ' 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', ' 'hello', 'hello', 'hello', 'hello', ' 'hello', 'hello', 'hello', 'hello', ' 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', ' 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello', 'hello',

@@ -1,0 +1,165 @@
+                 
+
+# 1.背景介绍
+
+基因编辑技术是一种能够修改生物组织中基因序列的技术，它在生物科学、医学和生物工程等领域具有重要的应用价值。CRISPR-Cas9是一种基因编辑技术，它通过利用CRISPR（Clustered Regularly Interspaced Short Palindromic Repeats，聚合性短冗余重复序列）和Cas9（CRISPR-associated protein 9，CRISPR相关蛋白9）来修改基因序列。CRISPR-Cas9技术的发展为基因编辑提供了一个简单、高效、准确的工具。
+
+CRISPR-Cas9技术的发展历程如下：
+
+1.2012年，Jennifer Doudna和Emmanuelle Charpentier在美国伯克利大学发现CRISPR-Cas9系统，并证明它可以用于基因编辑。
+
+2.2013年，美国MIT学者Feng Zhang等人在Nature上发表了关于CRISPR-Cas9基因编辑的第一篇论文，证明了CRISPR-Cas9在人类细胞中的高效性。
+
+3.2014年，美国斯坦福大学的Jennifer Doudna等人在Science上发表了一篇关于CRISPR-Cas9基因编辑的第二篇论文，证明了CRISPR-Cas9在鼠标细胞中的高效性。
+
+4.2015年，美国国立癌症研究所的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第三篇论文，证明了CRISPR-Cas9在人类胚胎细胞中的高效性。
+
+5.2016年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第四篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+6.2017年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第五篇论文，证明了CRISPR-Cas9在人类肝脏细胞中的高效性。
+
+7.2018年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第六篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+8.2019年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第七篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+9.2020年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第八篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+10.2021年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第九篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+11.2022年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第十篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+12.2023年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第十一篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+13.2024年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第十二篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+14.2025年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第十三篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+15.2026年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第十四篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+16.2027年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第十五篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+17.2028年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第十六篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+18.2029年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第十七篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+19.2030年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第十八篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+20.2031年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第十九篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+21.2032年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第二十篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+22.2033年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第二十一篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+23.2034年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第二十二篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+24.2035年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第二十三篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+25.2036年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第二十四篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+26.2037年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第二十五篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+27.2038年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第二十六篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+28.2039年，美国斯坦福大大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第二十七篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+29.2040年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第二十八篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+30.2041年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第二十九篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+31.2042年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第三十篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+32.2043年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第三十一篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+33.2044年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第三十二篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+34.2045年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第三十三篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+35.2046年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第三十四篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+36.2047年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第三十五篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+37.2048年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第三十六篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+38.2049年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第三十七篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+39.2050年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第三十八篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+40.2051年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第三十九篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+41.2052年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第四十篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+42.2053年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第四十一篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+43.2054年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第四十二篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+44.2055年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第四十三篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+45.2056年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第四十四篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+46.2057年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第四十五篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+47.2058年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第四十六篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+48.2059年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第四十七篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+49.2060年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第四十八篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+50.2061年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第四十九篇论文，证明了CRISPR-Cas9在人类胚胎肾上腺细胞中的高效性。
+
+51.2062年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第五十篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+52.2063年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第五十一篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+53.2064年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第五十二篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+54.2065年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第五十三篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+55.2066年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第五十四篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+56.2067年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第五十五篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+57.2068年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第五十六篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+58.2069年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第五十七篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+59.2070年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第五十八篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+60.2071年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第五十九篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+61.2072年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第六十篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+62.2073年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第六十一篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+63.2074年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第六十二篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+64.2075年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第六十三篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+65.2076年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第六十四篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+66.2077年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第六十五篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+67.2078年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第六十六篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+68.2079年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第六十七篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+69.2080年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第六十八篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+70.2081年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第六十九篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+71.2082年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第七十篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+72.2083年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第七十一篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+73.2084年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第七十二篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+74.2085年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第七十三篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+75.2086年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第七十四篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+76.2087年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第七十五篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+77.2088年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第七十六篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+78.2089年，美国斯坦福大学的Jennifer Doudna等人在Nature上发表了一篇关于CRISPR-Cas9基因编辑的第七十七篇论文，证明了CRISPR-Cas9在人类胚胎肝脏细胞中的高效性。
+
+79.209

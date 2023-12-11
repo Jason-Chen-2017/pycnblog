@@ -2,278 +2,250 @@
 
 # 1.背景介绍
 
-随着互联网的发展，数据的存储和处理变得越来越复杂。传统的关系型数据库已经无法满足这些复杂的需求。Elasticsearch 是一个基于 Lucene 的搜索和分析引擎，它可以帮助我们更高效地存储、查询和分析大量的数据。
+Elasticsearch是一个开源的分布式、实时、可扩展的搜索和分析引擎，基于Apache Lucene的搜索核心，它是目前最强大的搜索引擎之一。Elasticsearch是NoSQL类型的搜索引擎，它是一个基于RESTful API的搜索和分析引擎，用于实时搜索和分析大规模的结构化和非结构化数据。
 
-Spring Boot 是 Spring 生态系统的一个子集，它提供了一种简单的方法来创建基于 Spring 的应用程序。Spring Boot 整合 Elasticsearch 可以让我们更轻松地将 Elasticsearch 与 Spring 应用程序集成。
+Spring Boot是Spring框架的一部分，它提供了一种简单的方法来创建基于Spring的应用程序，同时提供了许多基于Spring的功能的默认配置。Spring Boot使开发人员能够快速创建独立的Spring应用程序，而无需编写大量的XML配置文件。
 
-在本文中，我们将讨论 Spring Boot 与 Elasticsearch 的整合，以及如何使用 Spring Boot 进行 Elasticsearch 的配置和操作。
+在本文中，我们将介绍如何使用Spring Boot整合Elasticsearch，以便在Spring Boot应用程序中进行实时搜索和分析。
 
 # 2.核心概念与联系
 
-## 2.1 Spring Boot
+在本节中，我们将介绍以下核心概念：
 
-Spring Boot 是一个用于构建原生类型的 Spring 应用程序的框架。它提供了一种简单的方法来创建、配置和运行 Spring 应用程序。Spring Boot 的目标是减少开发人员在开发和部署 Spring 应用程序时所需的时间和精力。
+- Elasticsearch
+- Spring Boot
+- Spring Data Elasticsearch
 
-Spring Boot 提供了许多内置的功能，如数据源配置、缓存管理、安全性、Web 服务等。这些功能使得开发人员可以更快地开发和部署应用程序。
+## 2.1 Elasticsearch
 
-## 2.2 Elasticsearch
+Elasticsearch是一个开源的分布式、实时、可扩展的搜索和分析引擎，基于Apache Lucene的搜索核心。它是目前最强大的搜索引擎之一。Elasticsearch是NoSQL类型的搜索引擎，它是一个基于RESTful API的搜索和分析引擎，用于实时搜索和分析大规模的结构化和非结构化数据。
 
-Elasticsearch 是一个基于 Lucene 的搜索和分析引擎。它可以帮助我们更高效地存储、查询和分析大量的数据。Elasticsearch 是一个分布式、可扩展的搜索和分析引擎，它可以处理大量数据并提供快速的查询性能。
+Elasticsearch的核心功能包括：
 
-Elasticsearch 提供了许多功能，如文本分析、全文搜索、聚合分析、数据分析等。这些功能使得 Elasticsearch 可以用于各种应用场景，如日志分析、搜索引擎、实时分析等。
+- 分布式：Elasticsearch是一个分布式的搜索引擎，可以在多个节点上运行，以实现高可用性和扩展性。
+- 实时：Elasticsearch可以实时索引和查询数据，无需等待索引过程完成。
+- 可扩展：Elasticsearch可以扩展到多个节点，以实现高性能和高可用性。
+- 搜索：Elasticsearch提供了强大的搜索功能，包括全文搜索、过滤搜索、排序等。
+- 分析：Elasticsearch提供了许多内置的分析功能，如聚合、统计、计算等。
+
+## 2.2 Spring Boot
+
+Spring Boot是Spring框架的一部分，它提供了一种简单的方法来创建基于Spring的应用程序，同时提供了许多基于Spring的功能的默认配置。Spring Boot使开发人员能够快速创建独立的Spring应用程序，而无需编写大量的XML配置文件。
+
+Spring Boot的核心功能包括：
+
+- 自动配置：Spring Boot提供了许多自动配置，以便快速创建Spring应用程序。
+- 依赖管理：Spring Boot提供了依赖管理功能，以便快速添加依赖项。
+- 嵌入式服务器：Spring Boot提供了嵌入式服务器功能，以便快速启动Spring应用程序。
+- 健康检查：Spring Boot提供了健康检查功能，以便快速检查Spring应用程序的状态。
+- 监控：Spring Boot提供了监控功能，以便快速监控Spring应用程序的性能。
+
+## 2.3 Spring Data Elasticsearch
+
+Spring Data Elasticsearch是Spring Data项目的一部分，它提供了一个简单的API，以便在Spring应用程序中使用Elasticsearch。Spring Data Elasticsearch使用Spring Data的抽象层，以便在Spring应用程序中使用Elasticsearch的功能。
+
+Spring Data Elasticsearch的核心功能包括：
+
+- 查询：Spring Data Elasticsearch提供了查询功能，以便在Spring应用程序中查询Elasticsearch数据。
+- 索引：Spring Data Elasticsearch提供了索引功能，以便在Spring应用程序中索引Elasticsearch数据。
+- 映射：Spring Data Elasticsearch提供了映射功能，以便在Spring应用程序中映射Elasticsearch数据。
+- 操作：Spring Data Elasticsearch提供了操作功能，以便在Spring应用程序中操作Elasticsearch数据。
 
 # 3.核心算法原理和具体操作步骤以及数学模型公式详细讲解
 
-在本节中，我们将详细讲解 Elasticsearch 的核心算法原理、具体操作步骤以及数学模型公式。
+在本节中，我们将详细讲解Elasticsearch的核心算法原理、具体操作步骤以及数学模型公式。
 
-## 3.1 Elasticsearch 的核心算法原理
+## 3.1 Elasticsearch的核心算法原理
 
-Elasticsearch 的核心算法原理包括以下几个方面：
+Elasticsearch的核心算法原理包括：
 
-### 3.1.1 索引和查询
+- 分词：Elasticsearch将文本分解为单词，以便进行搜索。
+- 分析：Elasticsearch对文本进行分析，以便进行搜索。
+- 索引：Elasticsearch将文档存储到索引中，以便进行搜索。
+- 查询：Elasticsearch从索引中查询文档，以便进行搜索。
+- 排序：Elasticsearch对查询结果进行排序，以便进行搜索。
+- 聚合：Elasticsearch对查询结果进行聚合，以便进行搜索。
 
-Elasticsearch 使用 B-树结构来存储文档。当我们向 Elasticsearch 添加一个新的文档时，它会将这个文档存储在 B-树中。当我们查询一个文档时，Elasticsearch 会使用 B-树来查找这个文档。
+## 3.2 Elasticsearch的具体操作步骤
 
-### 3.1.2 分析
+Elasticsearch的具体操作步骤包括：
 
-Elasticsearch 提供了许多内置的分析器，如标记分析器、词干分析器、词频分析器等。当我们将文本文档添加到 Elasticsearch 时，我们可以使用这些分析器来分析文本。
+1. 创建索引：创建一个索引，以便存储文档。
+2. 添加文档：添加文档到索引中，以便进行搜索。
+3. 查询文档：查询文档，以便进行搜索。
+4. 更新文档：更新文档，以便进行搜索。
+5. 删除文档：删除文档，以便进行搜索。
 
-### 3.1.3 聚合分析
+## 3.3 Elasticsearch的数学模型公式
 
-Elasticsearch 提供了许多内置的聚合分析器，如桶聚合、统计聚合、最大值聚合、最小值聚合等。当我们查询一个文档时，我们可以使用这些聚合分析器来分析文档。
+Elasticsearch的数学模型公式包括：
 
-## 3.2 Elasticsearch 的具体操作步骤
-
-Elasticsearch 的具体操作步骤包括以下几个方面：
-
-### 3.2.1 添加文档
-
-当我们向 Elasticsearch 添加一个新的文档时，我们需要使用 PUT 方法来添加这个文档。当我们添加一个新的文档时，我们需要提供文档的 ID、类型和内容。
-
-### 3.2.2 查询文档
-
-当我们查询一个文档时，我们需要使用 GET 方法来查询这个文档。当我们查询一个文档时，我们需要提供文档的 ID、类型和内容。
-
-### 3.2.3 更新文档
-
-当我们更新一个文档时，我们需要使用 PUT 方法来更新这个文档。当我们更新一个文档时，我们需要提供文档的 ID、类型和内容。
-
-### 3.2.4 删除文档
-
-当我们删除一个文档时，我们需要使用 DELETE 方法来删除这个文档。当我们删除一个文档时，我们需要提供文档的 ID、类型和内容。
-
-## 3.3 Elasticsearch 的数学模型公式详细讲解
-
-Elasticsearch 的数学模型公式详细讲解包括以下几个方面：
-
-### 3.3.1 文档的 ID
-
-文档的 ID 是一个唯一的标识符，用于标识一个文档。文档的 ID 可以是一个字符串、整数或浮点数。
-
-### 3.3.2 文档的类型
-
-文档的类型是一个用于标识一个文档的类型。文档的类型可以是一个字符串、整数或浮点数。
-
-### 3.3.3 文档的内容
-
-文档的内容是一个 JSON 对象，用于存储文档的数据。文档的内容可以包含任意数量的键值对。
+- 分词：Elasticsearch将文本分解为单词，以便进行搜索。数学模型公式为：$$ f(x) = \sum_{i=1}^{n} w_i \cdot l_i $$
+- 分析：Elasticsearch对文本进行分析，以便进行搜索。数学模型公式为：$$ g(x) = \prod_{i=1}^{n} a_i $$
+- 索引：Elasticsearch将文档存储到索引中，以便进行搜索。数学模型公式为：$$ h(x) = \int_{a}^{b} f(x) dx $$
+- 查询：Elasticsearch从索引中查询文档，以便进行搜索。数学模型公式为：$$ i(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2 \sigma^2}} $$
+- 排序：Elasticsearch对查询结果进行排序，以便进行搜索。数学模型公式为：$$ j(x) = \frac{1}{1 + e^{-(x-\theta)}} $$
+- 聚合：Elasticsearch对查询结果进行聚合，以便进行搜索。数学模型公式为：$$ k(x) = \frac{1}{n} \sum_{i=1}^{n} x_i $$
 
 # 4.具体代码实例和详细解释说明
 
-在本节中，我们将提供一个具体的代码实例，并详细解释其中的每个步骤。
+在本节中，我们将通过一个具体的代码实例来详细解释Spring Boot整合Elasticsearch的具体操作步骤。
+
+## 4.1 创建索引
+
+首先，我们需要创建一个索引，以便存储文档。我们可以使用以下代码来创建一个索引：
 
 ```java
-import org.elasticsearch.client.RestHighLevelClient;
-import org.elasticsearch.common.settings.Settings;
-import org.elasticsearch.common.transport.TransportAddress;
-import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.index.reindex.BulkByScrollResponse;
-import org.elasticsearch.index.reindex.UpdateByQueryRequest;
-import org.elasticsearch.search.SearchHit;
-import org.elasticsearch.search.SearchHits;
-import org.elasticsearch.search.builder.SearchSourceBuilder;
-import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
-import org.elasticsearch.search.fetch.subphase.highlight.HighlightField;
-import org.elasticsearch.transport.client.PreBuiltTransportClient;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+@Configuration
+@EnableElasticsearchRepositories(basePackages = "com.example.demo.repository")
+public class ElasticsearchConfig {
+    @Bean
+    public RestHighLevelClient client() {
+        return new RestHighLevelClient(
+                RestClient.builder(
+                        new HttpHost("localhost", 9200, "http")
+                )
+        );
+    }
+}
+```
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+在上述代码中，我们创建了一个ElasticsearchConfig类，并使用@Configuration注解来标记它为一个配置类。我们还使用@EnableElasticsearchRepositories注解来启用Elasticsearch存储库功能，并指定存储库的基础包。
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class ElasticsearchTest {
+接下来，我们使用@Bean注解来创建一个RestHighLevelClient实例，并使用RestClient.builder()方法来配置客户端的连接信息。
 
+## 4.2 添加文档
+
+接下来，我们需要添加文档到索引中，以便进行搜索。我们可以使用以下代码来添加文档：
+
+```java
+@Repository
+public class DocumentRepository {
     @Autowired
     private RestHighLevelClient client;
 
-    @Test
-    public void testIndex() throws IOException {
-        Settings settings = Settings.builder()
-                .put("cluster.name", "elasticsearch")
-                .put("client.transport.ignore_cluster_name", true)
-                .build();
-        client.cluster().health(settings);
-        client.admin().cluster().prepareState().execute().actionGet();
-        client.admin().indices().prepareCreate("test_index").setSettings(settings).execute().actionGet();
-
-        client.index(
-                new org.elasticsearch.index.IndexRequest()
-                        .index("test_index")
-                        .type("test_type")
-                        .id("1")
-                        .source(
-                                Map.of(
-                                        "name", "John Doe",
-                                        "age", 30
-                                )
-                        )
-        );
-    }
-
-    @Test
-    public void testSearch() throws IOException {
-        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
-        searchSourceBuilder.query(QueryBuilders.matchQuery("name", "John Doe"));
-        SearchHit[] searchHits = client.search(
-                searchSourceBuilder.toString(),
-                SearchSourceBuilder.class
-        ).getHits().getHits();
-        for (SearchHit searchHit : searchHits) {
-            System.out.println(searchHit.getSourceAsString());
-        }
-    }
-
-    @Test
-    public void testUpdate() throws IOException {
-        UpdateByQueryRequest updateByQueryRequest = new UpdateByQueryRequest();
-        updateByQueryRequest.setQuery(QueryBuilders.matchQuery("name", "John Doe"));
-        updateByQueryRequest.setScript(new org.elasticsearch.script.Script(
-                "ctx._source.age = 35;"
-        ));
-        BulkByScrollResponse bulkByScrollResponse = client.updateByQuery(
-                updateByQueryRequest
-        );
-    }
-
-    @Test
-    public void testHighlight() throws IOException {
-        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
-        searchSourceBuilder.query(QueryBuilders.matchQuery("name", "John Doe"));
-        searchSourceBuilder.highlighter(new HighlightBuilder.HighlightBuilder()
-                .field("name")
-                .preTags("<b>")
-                .postTags("</b>")
-        );
-        SearchHits searchHits = client.search(
-                searchSourceBuilder.toString(),
-                SearchSourceBuilder.class
-        ).getHits();
-        for (SearchHit searchHit : searchHits) {
-            HighlightField highlightField = searchHit.getHighlightFields().get("name");
-            System.out.println(highlightField[0].toString());
-        }
+    public void index(Document document) throws IOException {
+        IndexRequest indexRequest = new IndexRequest("documents");
+        indexRequest.id(document.getId());
+        indexRequest.source(document);
+        IndexResponse indexResponse = client.index(indexRequest);
+        System.out.println("Indexed document with ID: " + indexResponse.getId());
     }
 }
 ```
 
-在这个代码实例中，我们首先创建了一个 RestHighLevelClient 对象，然后使用这个对象来创建一个 Elasticsearch 索引、查询、更新和高亮的示例。
+在上述代码中，我们创建了一个DocumentRepository类，并使用@Repository注解来标记它为一个存储库类。我们还使用@Autowired注解来自动注入RestHighLevelClient实例。
 
-首先，我们创建了一个 Elasticsearch 索引，并将一个文档添加到这个索引中。然后，我们查询了这个文档。接着，我们更新了这个文档。最后，我们使用高亮功能来查询这个文档。
+接下来，我们使用IndexRequest类来创建一个索引请求，并设置索引名称、文档ID和文档内容。最后，我们使用client.index()方法来发送索引请求，并输出索引结果。
+
+## 4.3 查询文档
+
+最后，我们需要查询文档，以便进行搜索。我们可以使用以下代码来查询文档：
+
+```java
+@Service
+public class DocumentService {
+    @Autowired
+    private DocumentRepository documentRepository;
+
+    public Document findById(Long id) throws IOException {
+        SearchRequest searchRequest = new SearchRequest("documents");
+        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+        searchSourceBuilder.query(
+                QueryBuilders.termQuery("id", id)
+        );
+        searchRequest.source(searchSourceBuilder);
+        SearchResponse searchResponse = documentRepository.client.search(searchRequest);
+        SearchHit[] searchHits = searchResponse.getHits().getHits();
+        if (searchHits.length > 0) {
+            return new ObjectMapper().readValue(searchHits[0].getSourceAsString(), Document.class);
+        }
+        return null;
+    }
+}
+```
+
+在上述代码中，我们创建了一个DocumentService类，并使用@Service注解来标记它为一个服务类。我们还使用@Autowired注解来自动注入DocumentRepository实例。
+
+接下来，我们使用SearchRequest类来创建一个搜索请求，并设置索引名称。我们还使用SearchSourceBuilder类来创建一个搜索源，并设置查询条件。最后，我们使用documentRepository.client.search()方法来发送搜索请求，并解析搜索结果。
 
 # 5.未来发展趋势与挑战
 
-Elasticsearch 的未来发展趋势与挑战包括以下几个方面：
+在本节中，我们将讨论Spring Boot整合Elasticsearch的未来发展趋势与挑战。
 
-### 5.1 更高的性能
+## 5.1 未来发展趋势
 
-Elasticsearch 的性能是其主要优势之一。但是，随着数据量的增加，Elasticsearch 的性能可能会受到影响。因此，未来的发展方向是提高 Elasticsearch 的性能，以便更好地处理大量数据。
+- 更好的集成：Spring Boot整合Elasticsearch的未来趋势是提供更好的集成，以便更简单地使用Elasticsearch功能。
+- 更强大的功能：Spring Boot整合Elasticsearch的未来趋势是提供更强大的功能，以便更好地满足开发人员的需求。
+- 更好的性能：Spring Boot整合Elasticsearch的未来趋势是提供更好的性能，以便更快地进行搜索和分析。
 
-### 5.2 更好的可扩展性
+## 5.2 挑战
 
-Elasticsearch 的可扩展性是其主要优势之一。但是，随着数据量的增加，Elasticsearch 的可扩展性可能会受到影响。因此，未来的发展方向是提高 Elasticsearch 的可扩展性，以便更好地处理大量数据。
-
-### 5.3 更强大的功能
-
-Elasticsearch 的功能是其主要优势之一。但是，随着数据量的增加，Elasticsearch 的功能可能会受到影响。因此，未来的发展方向是提高 Elasticsearch 的功能，以便更好地处理大量数据。
-
-### 5.4 更好的安全性
-
-Elasticsearch 的安全性是其主要优势之一。但是，随着数据量的增加，Elasticsearch 的安全性可能会受到影响。因此，未来的发展方向是提高 Elasticsearch 的安全性，以便更好地保护数据。
+- 兼容性问题：Spring Boot整合Elasticsearch的挑战是解决兼容性问题，以便在不同环境下正常运行。
+- 性能问题：Spring Boot整合Elasticsearch的挑战是解决性能问题，以便更快地进行搜索和分析。
+- 安全问题：Spring Boot整合Elasticsearch的挑战是解决安全问题，以便保护数据的安全性。
 
 # 6.附录常见问题与解答
 
-在本节中，我们将提供一些常见问题的解答。
+在本节中，我们将回答一些常见问题。
 
-### Q1：如何添加文档到 Elasticsearch？
+## Q1：如何创建索引？
 
-A1：要添加文档到 Elasticsearch，你需要使用 PUT 方法。例如，要添加一个名为 "John Doe" 的人的文档，你可以使用以下代码：
-
-```java
-client.index(
-        new org.elasticsearch.index.IndexRequest()
-                .index("test_index")
-                .type("test_type")
-                .id("1")
-                .source(
-                        Map.of(
-                                "name", "John Doe",
-                                "age", 30
-                        )
-                )
-);
-```
-
-### Q2：如何查询文档从 Elasticsearch？
-
-A2：要查询文档从 Elasticsearch，你需要使用 GET 方法。例如，要查询一个名为 "John Doe" 的人的文档，你可以使用以下代码：
+A1：我们可以使用以下代码来创建一个索引：
 
 ```java
-SearchHit[] searchHits = client.search(
-        searchSourceBuilder.toString(),
-        SearchSourceBuilder.class
-).getHits().getHits();
-for (SearchHit searchHit : searchHits) {
-    System.out.println(searchHit.getSourceAsString());
+@Repository
+public class DocumentRepository {
+    @Autowired
+    private RestHighLevelClient client;
+
+    public void index(Document document) throws IOException {
+        IndexRequest indexRequest = new IndexRequest("documents");
+        indexRequest.id(document.getId());
+        indexRequest.source(document);
+        IndexResponse indexResponse = client.index(indexRequest);
+        System.out.println("Indexed document with ID: " + indexResponse.getId());
+    }
 }
 ```
 
-### Q3：如何更新文档到 Elasticsearch？
+在上述代码中，我们创建了一个DocumentRepository类，并使用@Repository注解来标记它为一个存储库类。我们还使用@Autowired注解来自动注入RestHighLevelClient实例。
 
-A3：要更新文档到 Elasticsearch，你需要使用 PUT 方法。例如，要更新一个名为 "John Doe" 的人的文档，你可以使用以下代码：
+接下来，我们使用IndexRequest类来创建一个索引请求，并设置索引名称、文档ID和文档内容。最后，我们使用client.index()方法来发送索引请求，并输出索引结果。
 
-```java
-UpdateByQueryRequest updateByQueryRequest = new UpdateByQueryRequest();
-updateByQueryRequest.setQuery(QueryBuilders.matchQuery("name", "John Doe"));
-updateByQueryRequest.setScript(new org.elasticsearch.script.Script(
-        "ctx._source.age = 35;"
-));
-BulkByScrollResponse bulkByScrollResponse = client.updateByQuery(
-        updateByQueryRequest
-);
-```
+## Q2：如何查询文档？
 
-### Q4：如何高亮文档从 Elasticsearch？
-
-A4：要高亮文档从 Elasticsearch，你需要使用 GET 方法。例如，要高亮一个名为 "John Doe" 的人的文档，你可以使用以下代码：
+A2：我们可以使用以下代码来查询文档：
 
 ```java
-SearchHit[] searchHits = client.search(
-        searchSourceBuilder.toString(),
-        SearchSourceBuilder.class
-).getHits().getHits();
-for (SearchHit searchHit : searchHits) {
-    HighlightField highlightField = searchHit.getHighlightFields().get("name");
-    System.out.println(highlightField[0].toString());
+@Service
+public class DocumentService {
+    @Autowired
+    private DocumentRepository documentRepository;
+
+    public Document findById(Long id) throws IOException {
+        SearchRequest searchRequest = new SearchRequest("documents");
+        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+        searchSourceBuilder.query(
+                QueryBuilders.termQuery("id", id)
+        );
+        searchRequest.source(searchSourceBuilder);
+        SearchResponse searchResponse = documentRepository.client.search(searchRequest);
+        SearchHit[] searchHits = searchResponse.getHits().getHits();
+        if (searchHits.length > 0) {
+            return new ObjectMapper().readValue(searchHits[0].getSourceAsString(), Document.class);
+        }
+        return null;
+    }
 }
 ```
 
-# 结论
+在上述代码中，我们创建了一个DocumentService类，并使用@Service注解来标记它为一个服务类。我们还使用@Autowired注解来自动注入DocumentRepository实例。
 
-在本文中，我们详细讲解了 Spring Boot 与 Elasticsearch 的整合，以及如何使用 Spring Boot 进行 Elasticsearch 的配置和操作。我们希望这篇文章对你有所帮助。如果你有任何问题或建议，请随时联系我们。
+接下来，我们使用SearchRequest类来创建一个搜索请求，并设置索引名称。我们还使用SearchSourceBuilder类来创建一个搜索源，并设置查询条件。最后，我们使用documentRepository.client.search()方法来发送搜索请求，并解析搜索结果。
+
+# 参考文献
+
+1. Elasticsearch官方文档：https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
+2. Spring Boot官方文档：https://spring.io/projects/spring-boot
+3. Spring Data Elasticsearch官方文档：https://docs.spring.io/spring-data/elasticsearch/docs/current/reference/html/

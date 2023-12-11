@@ -2,158 +2,138 @@
 
 # 1.背景介绍
 
-Redis是一个开源的高性能的key-value存储系统，它支持数据的持久化，可基于内存（in-memory）进行操作。Redis 是一个开源的使用 ANSI C 语言编写、遵循 BSD 协议的高性能 key-value 数据库，并提供多种语言的 API。Redis 可以在一个数据库中同时存储字符串、哈希、列表、集合和有序集合这几种类型的数据。
+Redis（Remote Dictionary Server）是一个开源的高性能key-value存储系统，由Salvatore Sanfilippo开发。Redis支持数据的持久化， Both key and values support data types like strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, and geospatial indexes with radius queries。Redis 提供多种语言的 API。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 和 Memcached 的主要区别在于 Redis 不仅仅支持键值对存储，还提供了字符串（string）、列表（list）、集合（sets）、有序集合（sorted sets）等数据结构的存储。此外，Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD 许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD 许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD 许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD 许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD 许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD 许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD 许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD 许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD 许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD 许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD 许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD 许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD 许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD 许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD 许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD 许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD 许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD 许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD 许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD 许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD 许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 是一个使用 ANSI C 语言编写的开源（BSD许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
+Redis 是一个使用 ANSI C 语言编写、遵循 BSD 协议的开源软件（源代码开放）。Redis 支持网络、可插拔、高性能的 key-value 存储。它通过 Redis Persistence 模式（Redis 持久化）来提供数据的持久化。Redis 通过提供多种语言的 API 来提供数据的可插拔性。
 
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
-
-Redis 是一个使用 ANSI C 语言编写的开源（BSD许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
-
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
-
-Redis 是一个使用 ANSI C 语言编写的开源（BSD许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
-
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
-
-Redis 是一个使用 ANSI C 语言编写的开源（BSD许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
-
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
-
-Redis 是一个使用 ANSI C 语言编写的开源（BSD许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
-
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另外，Redis 还通过提供多种形式的键（key）和值（value）操作命令来实现各种不同的数据结构。
-
-Redis 是一个使用 ANSI C 语言编写的开源（BSD许可）、跨平台（Windows，Linux，Mac OS X，UNIX 等）的高性能 key-value 数据库。在一个数据库中（也称为实例）可以同时存储字符串（string）、哈希（hash）、列表（list）、集合（sets）和有序集合（sorted sets）这几种类型的数据。
-
-Redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。另
+Redis 是一个使用 ANSI C 语
