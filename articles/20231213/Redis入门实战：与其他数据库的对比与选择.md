@@ -1,0 +1,201 @@
+                 
+
+# 1.背景介绍
+
+Redis（Remote Dictionary Server）是一个开源的高性能key-value存储系统，由Salvatore Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvatore Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvatore Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvatore Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvatore Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvatore Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvatore Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvatore Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvatore Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvatore Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvatore Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvatore Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvatore Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvatore Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvatore Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvative Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvative Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvative Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvative Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvative Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvative Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvative Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvative Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvative Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvative Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvative Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvative Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvative Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvative Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvative Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvative Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvative Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以恢复起来。Redis 不仅仅支持简单的key-value类型的数据，同时还简单的列表、集合、有序集合等数据结构的存储。
+
+Redis支持数据的备份，即master-slave模式的数据备份。同时还支持集群的部署，使多个Redis服务器组成一个更大的数据集群。
+
+Redis 和Memcached的最大区别是Redis支持持久性，可以将内存中的数据保存在磁盘中，即使没有Redis的进程还能够将数据保存在磁盘中。而Memcached是内存型数据库，数据丢失的风险很大。
+
+Redis 是一个开源的高性能key-value存储系统，由Salvative Sanfilippo开发。它支持数据的持久化，可以将内存中的数据保存在磁盘
