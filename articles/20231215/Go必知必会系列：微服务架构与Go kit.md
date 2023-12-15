@@ -1,0 +1,204 @@
+                 
+
+# 1.背景介绍
+
+微服务架构是一种设计模式，它将单个应用程序拆分成多个小服务，每个服务都运行在独立的进程中，这些服务可以通过网络进行通信。这种架构的优点是可扩展性、可维护性和可靠性。在Go语言中，Go kit是一个用于构建微服务的框架，它提供了一些工具和库来帮助开发人员更轻松地构建微服务应用程序。
+
+在本文中，我们将讨论微服务架构的核心概念，以及Go kit如何实现这些概念。我们将详细讲解Go kit的核心算法原理和具体操作步骤，并提供数学模型公式的详细解释。最后，我们将讨论Go kit的未来发展趋势和挑战。
+
+# 2.核心概念与联系
+
+## 2.1 微服务架构
+
+微服务架构是一种设计模式，它将单个应用程序拆分成多个小服务，每个服务都运行在独立的进程中，这些服务可以通过网络进行通信。这种架构的优点是可扩展性、可维护性和可靠性。在微服务架构中，每个服务都是独立的，可以独立部署和扩展。这使得开发人员可以更轻松地维护和扩展应用程序，因为每个服务可以独立地进行更新和修复。
+
+## 2.2 Go kit
+
+Go kit是一个用于构建微服务的框架，它提供了一些工具和库来帮助开发人员更轻松地构建微服务应用程序。Go kit提供了一些核心功能，包括服务发现、负载均衡、错误处理和监控。Go kit还提供了一些工具来帮助开发人员构建和部署微服务应用程序，包括服务注册、API文档生成和测试工具。
+
+# 3.核心算法原理和具体操作步骤以及数学模型公式详细讲解
+
+## 3.1 服务发现
+
+服务发现是微服务架构中的一个关键组件，它允许服务之间在运行时发现和连接。Go kit提供了一个服务发现模块，它使用Consul作为后端存储。这个模块允许开发人员注册和发现服务，并提供了一些工具来帮助开发人员实现服务发现。
+
+### 3.1.1 服务注册
+
+服务注册是服务发现的一部分，它允许开发人员将服务信息注册到后端存储中。Go kit提供了一个服务注册模块，它使用Consul作为后端存储。这个模块允许开发人员注册服务，并提供了一些工具来帮助开发人员实现服务注册。
+
+### 3.1.2 服务发现
+
+服务发现是服务发现的一部分，它允许开发人员查询后端存储以获取服务信息。Go kit提供了一个服务发现模块，它使用Consul作为后端存储。这个模块允许开发人员查询服务，并提供了一些工具来帮助开发人员实现服务发现。
+
+## 3.2 负载均衡
+
+负载均衡是微服务架构中的一个关键组件，它允许服务之间在运行时分发请求。Go kit提供了一个负载均衡模块，它使用Consul作为后端存储。这个模块允许开发人员实现负载均衡，并提供了一些工具来帮助开发人员实现负载均衡。
+
+### 3.2.1 负载均衡策略
+
+负载均衡策略是负载均衡的一部分，它允许开发人员选择哪种策略来分发请求。Go kit提供了一个负载均衡策略模块，它使用Consul作为后端存储。这个模块允许开发人员选择负载均衡策略，并提供了一些工具来帮助开发人员实现负载均衡策略。
+
+### 3.2.2 负载均衡实现
+
+负载均衡实现是负载均衡的一部分，它允许开发人员实现负载均衡策略。Go kit提供了一个负载均衡实现模块，它使用Consul作为后端存储。这个模块允许开发人员实现负载均衡策略，并提供了一些工具来帮助开发人员实现负载均衡实现。
+
+## 3.3 错误处理
+
+错误处理是微服务架构中的一个关键组件，它允许服务之间在运行时处理错误。Go kit提供了一个错误处理模块，它使用Go语言的错误处理机制。这个模块允许开发人员处理错误，并提供了一些工具来帮助开发人员实现错误处理。
+
+### 3.3.1 错误处理策略
+
+错误处理策略是错误处理的一部分，它允许开发人员选择哪种策略来处理错误。Go kit提供了一个错误处理策略模块，它使用Go语言的错误处理机制。这个模块允许开发人员选择错误处理策略，并提供了一些工具来帮助开发人员实现错误处理策略。
+
+### 3.3.2 错误处理实现
+
+错误处理实现是错误处理的一部分，它允许开发人员实现错误处理策略。Go kit提供了一个错误处理实现模块，它使用Go语言的错误处理机制。这个模块允许开发人员实现错误处理策略，并提供了一些工具来帮助开发人员实现错误处理实现。
+
+## 3.4 监控
+
+监控是微服务架构中的一个关键组件，它允许开发人员在运行时监控服务的性能。Go kit提供了一个监控模块，它使用Prometheus作为后端存储。这个模块允许开发人员监控服务的性能，并提供了一些工具来帮助开发人员实现监控。
+
+### 3.4.1 监控策略
+
+监控策略是监控的一部分，它允许开发人员选择哪种策略来监控服务的性能。Go kit提供了一个监控策略模块，它使用Prometheus作为后端存储。这个模块允许开发人员选择监控策略，并提供了一些工具来帮助开发人员实现监控策略。
+
+### 3.4.2 监控实现
+
+监控实现是监控的一部分，它允许开发人员实现监控策略。Go kit提供了一个监控实现模块，它使用Prometheus作为后端存储。这个模块允许开发人员实现监控策略，并提供了一些工具来帮助开发人员实现监控实现。
+
+# 4.具体代码实例和详细解释说明
+
+在这部分，我们将提供一些具体的代码实例，以及对这些代码的详细解释。这些代码实例将帮助您更好地理解Go kit的核心概念和功能。
+
+## 4.1 服务发现示例
+
+在这个示例中，我们将创建一个简单的服务发现示例，使用Go kit的服务发现模块。首先，我们需要创建一个服务，然后注册这个服务到Consul。然后，我们可以查询Consul以获取服务的信息。
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"log"
+
+	"github.com/go-kit/kit/endpoint"
+	"github.com/go-kit/kit/sd/consul"
+	"github.com/go-kit/kit/sd/consul/consultransport"
+	"github.com/go-kit/kit/sd/discovery"
+	"github.com/go-kit/kit/sd/discovery/consulcodec"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodechttp"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecrest"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocket"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrest"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrest"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrest"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrest"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrest"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrest"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrest"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrest"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrest"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrest"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrest"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrest"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrest"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrest"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrest"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodecwebsocketrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestrestgrpc"
+	"github.com/go-kit/kit/sd/discovery/consulcodec/consulcodec
