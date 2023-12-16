@@ -2,123 +2,558 @@
 
 # 1.背景介绍
 
-随着互联网的发展，数据的存储和处理变得越来越重要。分布式数据库在这个背景下扮演着关键的角色。Apache Cassandra是一个分布式数据库，它的设计目标是为高可用性、高性能和线性扩展性提供支持。在这篇文章中，我们将讨论如何使用Apache Cassandra构建高可用的分布式数据库，并深入探讨其核心概念、算法原理、具体操作步骤和数学模型公式。
+在当今的大数据时代，数据量不断增长，传统的关系型数据库已经无法满足高性能和高可用性的需求。分布式数据库技术成为了解决这些问题的重要手段。Apache Cassandra 是一个分布式的NoSQL数据库，它具有高性能、高可用性和线性扩展性等特点，适用于大规模数据处理和存储。
 
-# 2.核心概念与联系
+本文将从以下几个方面进行阐述：
 
-在了解Apache Cassandra的核心概念之前，我们需要了解一些基本概念：
+1. 背景介绍
+2. 核心概念与联系
+3. 核心算法原理和具体操作步骤以及数学模型公式详细讲解
+4. 具体代码实例和详细解释说明
+5. 未来发展趋势与挑战
+6. 附录常见问题与解答
 
-- **分布式数据库**：分布式数据库是一种将数据存储在多个服务器上的数据库系统，这些服务器可以位于不同的地理位置。这种设计可以提高数据库的可用性、性能和扩展性。
+## 1.1 背景介绍
 
-- **数据模型**：数据模型是用于描述数据结构和数据关系的抽象。Apache Cassandra使用一种称为“列式存储”的数据模型，它允许数据以列的形式存储，从而提高查询性能。
+### 1.1.1 NoSQL数据库的发展
 
-- **一致性**：一致性是指数据库中的所有复制副本都保持一致的概念。Apache Cassandra支持多种一致性级别，包括一致性、每写一次、每写N次和弱一致性。
+随着互联网和大数据时代的到来，传统的关系型数据库（RDBMS）面临着巨大的挑战。关系型数据库的性能和可扩展性受到了严重限制，因此出现了NoSQL数据库。NoSQL数据库的核心特点是灵活性、可扩展性和性能。NoSQL数据库可以根据数据的不同特征选择不同的数据模型，如键值存储（Key-Value Store）、文档型数据库（Document-Oriented Database）、列式存储（Column-Oriented Database）和图形数据库（Graph Database）等。
 
-- **分区**：分区是将数据库划分为多个部分的过程。Apache Cassandra使用哈希函数对数据进行分区，从而实现数据的平衡分布。
+### 1.1.2 Apache Cassandra的诞生
 
-- **复制**：复制是将数据库中的数据复制到多个服务器上的过程。Apache Cassandra支持多种复制策略，包括简单复制、轮询复制、加权轮询复制和范围复制。
+Apache Cassandra是一个分布式的NoSQL数据库，由Facebook开发并于2008年开源。Cassandra的设计目标是为高性能、高可用性和线性扩展性提供解决方案。Cassandra采用了分布式一致性哈希算法（Distributed Consistent Hashing）来实现数据的分布式存储，从而实现高性能和高可用性。
 
-# 3.核心算法原理和具体操作步骤以及数学模型公式详细讲解
+### 1.1.3 Cassandra的应用场景
 
-在这一部分，我们将详细讲解Apache Cassandra的核心算法原理、具体操作步骤和数学模型公式。
+Cassandra适用于大规模数据处理和存储的场景，如实时数据处理、日志存储、时间序列数据存储等。例如，Twitter 使用 Cassandra 存储实时流数据，Netflix 使用 Cassandra 存储电影和电视节目信息，以及用户观看记录等。
 
-## 3.1 数据模型
+## 1.2 核心概念与联系
 
-Apache Cassandra使用一种称为“列式存储”的数据模型，它允许数据以列的形式存储，从而提高查询性能。列式存储的主要特点是：
+### 1.2.1 数据模型
 
-- **列压缩**：列式存储通过将相同类型的列存储在一起，并对其进行压缩，从而减少存储空间和提高查询性能。
+Cassandra采用了列式存储（Column-Oriented Storage）数据模型，这种数据模型将数据按列存储，而不是行存储。列式存储可以减少磁盘I/O，提高查询性能。
 
-- **行键**：列式存储使用行键来标识数据库中的每一行。行键是唯一的，并且可以包含多个列。
+### 1.2.2 数据分区
 
-- **列族**：列式存储将数据分为多个列族，每个列族包含一组相关的列。列族是数据库中的一种逻辑分区，可以用于实现数据的分布式存储和查询。
+Cassandra通过分区（Partitioning）将数据划分为多个分区，每个分区存储在不同的节点上。分区键（Partition Key）是将数据分布到不同节点上的关键因素。通过分区，Cassandra可以实现数据的平衡分布和高可用性。
 
-## 3.2 分区
+### 1.2.3 复制和一致性
 
-Apache Cassandra使用哈希函数对数据进行分区，从而实现数据的平衡分布。哈希函数将数据的键映射到一个或多个分区的范围内。分区的主要特点是：
+Cassandra通过复制（Replication）实现数据的高可用性和容错。Cassandra支持多种一致性级别，如ONE、QUORUM、ALL等。一致性级别决定了多少节点需要同意数据更新才能确认更新成功。
 
-- **数据平衡**：通过使用哈希函数对数据进行分区，可以实现数据在多个服务器上的平衡分布，从而提高数据库的性能和可用性。
+### 1.2.4 数据中心和节点
 
-- **数据分区**：分区可以将数据库中的数据划分为多个部分，从而实现数据的分布式存储和查询。
+Cassandra的数据中心（Data Center）是一个或多个互连的网络节点集合。数据中心中的每个节点（Node）存储部分数据。通过将数据分布在多个节点上，Cassandra实现了数据的高可用性和负载均衡。
 
-## 3.3 复制
+## 1.3 核心算法原理和具体操作步骤以及数学模型公式详细讲解
 
-Apache Cassandra支持多种复制策略，包括简单复制、轮询复制、加权轮询复制和范围复制。复制的主要目的是为了实现数据的高可用性和容错性。复制策略的主要特点是：
+### 1.3.1 分布式一致性哈希算法
 
-- **数据复制**：复制策略可以将数据库中的数据复制到多个服务器上，从而实现数据的高可用性和容错性。
+Cassandra使用分布式一致性哈希算法（Distributed Consistent Hashing）来实现数据的分布式存储。分布式一致性哈希算法可以将一个大的哈希环分成多个小的哈希环，每个小哈希环对应一个数据中心。通过这种方式，Cassandra可以在多个数据中心之间平衡数据分布。
 
-- **数据一致性**：复制策略可以实现数据库中的所有复制副本都保持一致的目标。不同的一致性级别可以根据需要选择。
+分布式一致性哈希算法的主要步骤如下：
 
-## 3.4 查询
+1. 将所有的数据节点（包括数据中心和节点）加入到一个大的哈希环中。
+2. 将数据按照哈希值分布在哈希环中。
+3. 当获取数据时，通过计算数据的哈希值并在哈希环中寻找对应的节点。
 
-Apache Cassandra支持多种查询类型，包括点查询、列查询和范围查询。查询的主要目的是为了实现数据的高性能查询。查询策略的主要特点是：
+### 1.3.2 数据复制和一致性
 
-- **数据查询**：查询策略可以用于实现数据库中的高性能查询。不同的查询类型可以根据需要选择。
+Cassandra支持多种一致性级别，如ONE、QUORUM、ALL等。这些一致性级别决定了多少节点需要同意数据更新才能确认更新成功。例如，QUORUM一致性级别需要多数节点同意数据更新，ALL一致性级别需要所有节点同意数据更新。
 
-- **查询优化**：查询策略可以实现查询的优化，从而提高查询性能。
+Cassandra的复制和一致性算法如下：
 
-# 4.具体代码实例和详细解释说明
+1. 当写入数据时，Cassandra会将数据复制到多个节点上。
+2. 当读取数据时，Cassandra会从多个节点获取数据。
+3. 当数据更新时，Cassandra会根据一致性级别确定需要多少节点同意更新。
 
-在这一部分，我们将通过一个具体的代码实例来详细解释Apache Cassandra的使用方法。
+### 1.3.3 数据中心和节点
 
-首先，我们需要安装Apache Cassandra。可以通过以下命令安装：
+Cassandra的数据中心和节点之间的关系可以用图形表示。数据中心之间通过网络互连，每个节点存储部分数据。通过将数据分布在多个节点上，Cassandra实现了数据的高可用性和负载均衡。
 
-```
-sudo apt-get install cassandra
-```
+数据中心和节点之间的关系可以用以下公式表示：
 
-接下来，我们需要创建一个新的键空间：
+$$
+G(V,E)
+$$
 
-```
-cqlsh> CREATE KEYSPACE my_keyspace WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'};
-```
+其中，$G$ 是图形，$V$ 是顶点（数据中心和节点），$E$ 是边（网络互连）。
 
-然后，我们可以在键空间中创建一个新的表：
+## 1.4 具体代码实例和详细解释说明
 
-```
-cqlsh:my_keyspace> CREATE TABLE users (id UUID PRIMARY KEY, name text, age int);
-```
+### 1.4.1 安装和配置
 
-接下来，我们可以插入一些数据：
-
-```
-cqlsh:my_keyspace> INSERT INTO users (id, name, age) VALUES (uuid(), 'John Doe', 30);
-cqlsh:my_keyspace> INSERT INTO users (id, name, age) VALUES (uuid(), 'Jane Smith', 25);
-```
-
-最后，我们可以查询数据：
+首先，安装Cassandra：
 
 ```
-cqlsh:my_keyspace> SELECT * FROM users WHERE name = 'John Doe';
+wget https://downloads.apache.org/cassandra/3.11/cassandra-3.11.5/apache-cassandra-3.11.5-bin.tar.gz
+tar -xzvf apache-cassandra-3.11.5-bin.tar.gz
 ```
 
-# 5.未来发展趋势与挑战
+然后，配置Cassandra的配置文件`conf/cassandra.yaml`：
 
-在这一部分，我们将讨论Apache Cassandra的未来发展趋势和挑战。
+```yaml
+cluster_name: 'TestCluster'
+glossary_file: 'conf/glossary'
 
-- **大数据处理**：随着大数据的发展，Apache Cassandra需要面对更大的数据量和更高的性能要求。这将需要对算法和数据结构进行优化，以及对分布式系统的设计进行改进。
+# Listen for client connections on this IP address.
+rpc_address: 127.0.0.1
 
-- **多核处理器**：多核处理器的发展将对Apache Cassandra的性能产生重要影响。这将需要对数据库的设计进行改进，以便更好地利用多核处理器的优势。
+# Seed nodes are the initial nodes a new client should connect to.
+# Seed nodes are used by the gossip protocol to bootstrap the discovery
+# of the cluster.
+#
+# Seed nodes should be chosen such that if any one of them is down,
+# clients can still discover the cluster. For example, if you have a
+# three-node cluster, you should list all three nodes here.
 
-- **云计算**：云计算的发展将对Apache Cassandra的部署和管理产生重要影响。这将需要对数据库的设计进行改进，以便更好地适应云计算环境。
+seed_provider:
+  - class_name: org.apache.cassandra.locator.SimpleSeedProvider
+    parameters:
+      - seeds: "127.0.0.1"
 
-- **安全性**：随着数据的敏感性增加，Apache Cassandra需要面对更高的安全性要求。这将需要对数据库的设计进行改进，以便更好地保护数据的安全性。
+# The listen_interface is the network interface to listen on.
+listen_interface: any
 
-# 6.附录常见问题与解答
+# The rpc_port is the port to listen on for client connections.
+rpc_port: 9042
 
-在这一部分，我们将解答一些常见问题：
+# The native_transport_port is the port to listen on for inter-node communication.
+native_transport_port: 9160
 
-- **Q：Apache Cassandra如何实现高可用性？**
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default data center name.
+#
+# The data center is a logical grouping of nodes that share a common network topology
+# and consistency guarantees.  See the Operational Guide for more information.
+data_center: datacenter1
 
-  A：Apache Cassandra实现高可用性通过数据的复制和分区来实现。数据的复制可以将数据库中的数据复制到多个服务器上，从而实现数据的高可用性和容错性。数据的分区可以将数据库中的数据划分为多个部分，从而实现数据的分布式存储和查询。
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default local data center name.
+#
+# The local data center is the data center that this node believes itself to be
+# a part of.  See the Operational Guide for more information.
+local_data_center: dc1
 
-- **Q：Apache Cassandra如何实现高性能？**
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default hinted handoff port.
+#
+# Hinted handoffs allow clients to continue operations in the event of a network
+# partition.  See the Operational Guide for more information.
+hinted_handoff_port: 7000
 
-  A：Apache Cassandra实现高性能通过数据的列式存储和查询来实现。数据的列式存储可以将数据以列的形式存储，从而提高查询性能。数据的查询可以用于实现数据库中的高性能查询。
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default commit log synchronous interval
+# in milliseconds.
+#
+# The commit log synchronous interval is the interval at which the commit log is
+# flushed to disk.  See the Operational Guide for more information.
+commitlog_sync_period_in_ms: 10000
 
-- **Q：Apache Cassandra如何实现线性扩展性？**
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default commit log time window in
+# milliseconds.
+#
+# The commit log time window is the maximum amount of time that the commit log
+# will be kept around for recovery purposes.  See the Operational Guide for more
+# information.
+commitlog_timeout_in_ms: 600000
 
-  A：Apache Cassandra实现线性扩展性通过数据的分区和复制来实现。数据的分区可以将数据库中的数据划分为多个部分，从而实现数据的分布式存储和查询。数据的复制可以将数据库中的数据复制到多个服务器上，从而实现数据的高可用性和容错性。
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default compaction straggler timeout in
+# milliseconds.
+#
+# The compaction straggler timeout is the amount of time to wait for a straggler
+# compaction to complete before aborting it.  See the Operational Guide for more
+# information.
+compaction_straggler_timeout_in_ms: 900000
 
-# 结论
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default compaction throttle period in
+# milliseconds.
+#
+# The compaction throttle period is the period over which compactions are
+# throttled.  See the Operational Guide for more information.
+compaction_throttle_period_in_ms: 1000
 
-在这篇文章中，我们深入探讨了如何使用Apache Cassandra构建高可用的分布式数据库。我们讨论了Apache Cassandra的背景、核心概念、算法原理、具体操作步骤和数学模型公式。我们通过一个具体的代码实例来详细解释Apache Cassandra的使用方法。最后，我们讨论了Apache Cassandra的未来发展趋势和挑战。希望这篇文章对您有所帮助。
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default compaction initial delay in
+# milliseconds.
+#
+# The compaction initial delay is the initial delay before starting compactions.
+# See the Operational Guide for more information.
+compaction_initial_delay_in_ms: 5000
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default compaction batch size in
+# megabytes.
+#
+# The compaction batch size is the maximum amount of data to process in a single
+# compaction.  See the Operational Guide for more information.
+compaction_batch_size_mb: 32
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default compaction throughput limit in
+# megabytes per second.
+#
+# The compaction throughput limit is the maximum rate at which compactions are
+# allowed to run.  See the Operational Guide for more information.
+compaction_throughput_limit_in_mb_per_sec: 16
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default compaction concurrency limit.
+#
+# The compaction concurrency limit is the maximum number of concurrent compactions
+# allowed.  See the Operational Guide for more information.
+compaction_concurrency_limit: 32
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default compaction concurrent delay in
+# milliseconds.
+#
+# The compaction concurrent delay is the delay between starting concurrent
+# compactions.  See the Operational Guide for more information.
+compaction_concurrent_delay_in_ms: 500
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default compaction concurrent delay
+# jitter in milliseconds.
+#
+# The compaction concurrent delay jitter is the jitter applied to the
+# compaction concurrent delay.  See the Operational Guide for more information.
+compaction_concurrent_delay_jitter_in_ms: 100
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default compaction concurrent delay
+# exponential backoff in milliseconds.
+#
+# The compaction concurrent delay exponential backoff is the exponential backoff
+# applied to the compaction concurrent delay.  See the Operational Guide for more
+# information.
+compaction_concurrent_delay_exponential_backoff_in_ms: 100
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default compaction concurrent delay
+# multiplier.
+#
+# The compaction concurrent delay multiplier is the multiplier applied to the
+# compaction concurrent delay.  See the Operational Guide for more information.
+compaction_concurrent_delay_multiplier: 1.0
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default compaction concurrency limit
+# multiplier.
+#
+# The compaction concurrency limit multiplier is the multiplier applied to the
+# compaction concurrency limit.  See the Operational Guide for more information.
+compaction_concurrency_limit_multiplier: 1.0
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default compaction concurrency limit
+# multiplier for large partitions.
+#
+# The compaction concurrency limit multiplier for large partitions is the
+# multiplier applied to the compaction concurrency limit for large partitions.
+# See the Operational Guide for more information.
+compaction_concurrency_limit_multiplier_large_partitions: 1.0
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default compaction pause interval in
+# milliseconds.
+#
+# The compaction pause interval is the interval at which compactions are
+# paused.  See the Operational Guide for more information.
+compaction_pause_interval_in_ms: 5000
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default compaction pause probability.
+#
+# The compaction pause probability is the probability at which compactions
+# are paused.  See the Operational Guide for more information.
+compaction_pause_probability: 0.05
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default compaction pause jitter in
+# milliseconds.
+#
+# The compaction pause jitter is the jitter applied to the compaction pause
+# interval.  See the Operational Guide for more information.
+compaction_pause_jitter_in_ms: 100
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default compaction pause exponential
+# backoff in milliseconds.
+#
+# The compaction pause exponential backoff is the exponential backoff applied
+# to the compaction pause interval.  See the Operational Guide for more information.
+compaction_pause_exponential_backoff_in_ms: 100
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default compaction pause multiplier.
+#
+# The compaction pause multiplier is the multiplier applied to the compaction
+# pause interval.  See the Operational Guide for more information.
+compaction_pause_multiplier: 1.0
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default compaction pause multiplier for
+# large partitions.
+#
+# The compaction pause multiplier for large partitions is the multiplier
+# applied to the compaction pause interval for large partitions.  See the
+# Operational Guide for more information.
+compaction_pause_multiplier_large_partitions: 1.0
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default compaction pause probability
+# for large partitions.
+#
+# The compaction pause probability for large partitions is the probability at
+# which compactions are paused for large partitions.  See the Operational Guide
+# for more information.
+compaction_pause_probability_large_partitions: 0.05
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable flush warning threshold
+# in megabytes.
+#
+# The memtable flush warning threshold is the threshold at which a warning is
+# issued for memtable flushes.  See the Operational Guide for more information.
+memtable_flush_warning_threshold_in_mb: 512
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable flush write warning
+# threshold in megabytes.
+#
+# The memtable flush write warning threshold is the threshold at which a warning
+# is issued for memtable flushes to disk.  See the Operational Guide for more
+# information.
+memtable_flush_write_warning_threshold_in_mb: 1024
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable flush warning interval
+# in milliseconds.
+#
+# The memtable flush warning interval is the interval at which warnings are
+# issued for memtable flushes.  See the Operational Guide for more information.
+memtable_flush_warning_interval_in_ms: 60000
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable flush write warning
+# interval in milliseconds.
+#
+# The memtable flush write warning interval is the interval at which warnings
+# are issued for memtable flushes to disk.  See the Operational Guide for more
+# information.
+memtable_flush_write_warning_interval_in_ms: 60000
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable flush write warning
+# interval multiplier.
+#
+# The memtable flush write warning interval multiplier is the multiplier
+# applied to the memtable flush write warning interval.  See the Operational
+# Guide for more information.
+memtable_flush_write_warning_interval_multiplier: 1.0
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable flush write warning
+# interval jitter in milliseconds.
+#
+# The memtable flush write warning interval jitter is the jitter applied to
+# the memtable flush write warning interval.  See the Operational Guide for more
+# information.
+memtable_flush_write_warning_interval_jitter_in_ms: 100
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable flush write warning
+# interval exponential backoff in milliseconds.
+#
+# The memtable flush write warning interval exponential backoff is the exponential
+# backoff applied to the memtable flush write warning interval.  See the Operational
+# Guide for more information.
+memtable_flush_write_warning_interval_exponential_backoff_in_ms: 100
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable flush write warning
+# interval multiplier for large partitions.
+#
+# The memtable flush write warning interval multiplier for large partitions is
+# the multiplier applied to the memtable flush write warning interval for large
+# partitions.  See the Operational Guide for more information.
+memtable_flush_write_warning_interval_multiplier_large_partitions: 1.0
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable_flush_writers setting.
+#
+# The memtable_flush_writers setting is the number of background threads
+# responsible for flushing memtables to disk.  See the Operational Guide for more
+# information.
+memtable_flush_writers: 4
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable_flush_queue_size setting.
+#
+# The memtable_flush_queue_size setting is the size of the queue for flushing
+# memtables to disk.  See the Operational Guide for more information.
+memtable_flush_queue_size: 16
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable_flush_queue_max_pending
+# setting.
+#
+# The memtable_flush_queue_max_pending setting is the maximum number of
+# memtable flushes that can be pending at any given time.  See the Operational
+# Guide for more information.
+memtable_flush_queue_max_pending: 8
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable_flush_spill_threshold
+# setting.
+#
+# The memtable_flush_spill_threshold setting is the threshold at which a
+# memtable flush is initiated due to spilling.  See the Operational Guide for more
+# information.
+memtable_flush_spill_threshold: 0.75
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable_flush_spill_limit
+# setting.
+#
+# The memtable_flush_spill_limit setting is the maximum amount of data that can
+# be spilled to disk for a single memtable flush.  See the Operational Guide for more
+# information.
+memtable_flush_spill_limit: 50
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable_flush_spill_limit_percent
+# setting.
+#
+# The memtable_flush_spill_limit_percent setting is the maximum percentage of
+# data that can be spilled to disk for a single memtable flush.  See the Operational
+# Guide for more information.
+memtable_flush_spill_limit_percent: 0.5
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable_flush_spill_limit_multiplier
+# setting.
+#
+# The memtable_flush_spill_limit_multiplier setting is the multiplier applied to
+# the memtable_flush_spill_limit.  See the Operational Guide for more information.
+memtable_flush_spill_limit_multiplier: 1.0
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable_flush_spill_limit_multiplier_large_partitions
+# setting.
+#
+# The memtable_flush_spill_limit_multiplier_large_partitions setting is the
+# multiplier applied to the memtable_flush_spill_limit for large partitions.  See
+# the Operational Guide for more information.
+memtable_flush_spill_limit_multiplier_large_partitions: 1.0
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable_flush_spill_limit_in_mb
+# setting.
+#
+# The memtable_flush_spill_limit_in_mb setting is the memtable_flush_spill_limit
+# converted to megabytes.  See the Operational Guide for more information.
+memtable_flush_spill_limit_in_mb: 50
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable_flush_spill_limit_in_mb_percent
+# setting.
+#
+# The memtable_flush_spill_limit_in_mb_percent setting is the memtable_flush_spill_limit
+# converted to a percentage of megabytes.  See the Operational Guide for more
+# information.
+memtable_flush_spill_limit_in_mb_percent: 0.5
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable_flush_spill_limit_multiplier_in_mb
+# setting.
+#
+# The memtable_flush_spill_limit_multiplier_in_mb setting is the multiplier
+# applied to the memtable_flush_spill_limit_in_mb.  See the Operational Guide
+# for more information.
+memtable_flush_spill_limit_multiplier_in_mb: 1.0
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable_flush_spill_limit_multiplier_large_partitions_in_mb
+# setting.
+#
+# The memtable_flush_spill_limit_multiplier_large_partitions_in_mb setting is the
+# multiplier applied to the memtable_flush_spill_limit_in_mb for large partitions.
+# See the Operational Guide for more information.
+memtable_flush_spill_limit_multiplier_large_partitions_in_mb: 1.0
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable_flush_spill_limit_in_mb_large_partitions
+# setting.
+#
+# The memtable_flush_spill_limit_in_mb_large_partitions setting is the memtable_flush_spill_limit
+# converted to megabytes for large partitions.  See the Operational Guide for more
+# information.
+memtable_flush_spill_limit_in_mb_large_partitions: 50
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable_flush_spill_limit_in_mb_percent_large_partitions
+# setting.
+#
+# The memtable_flush_spill_limit_in_mb_percent_large_partitions setting is the memtable_flush_spill_limit
+# converted to a percentage of megabytes for large partitions.  See the Operational
+# Guide for more information.
+memtable_flush_spill_limit_in_mb_percent_large_partitions: 0.5
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable_flush_spill_limit_multiplier_in_mb_large_partitions
+# setting.
+#
+# The memtable_flush_spill_limit_multiplier_in_mb_large_partitions setting is the
+# multiplier applied to the memtable_flush_spill_limit_in_mb_large_partitions.  See
+# the Operational Guide for more information.
+memtable_flush_spill_limit_multiplier_in_mb_large_partitions: 1.0
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable_flush_spill_limit_in_mb_large_partitions_multiplier
+# setting.
+#
+# The memtable_flush_spill_limit_in_mb_large_partitions_multiplier setting is the
+# multiplier applied to the memtable_flush_spill_limit_in_mb_large_partitions.  See
+# the Operational Guide for more information.
+memtable_flush_spill_limit_in_mb_large_partitions_multiplier: 1.0
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable_flush_spill_limit_in_mb_large_partitions_percent
+# setting.
+#
+# The memtable_flush_spill_limit_in_mb_large_partitions_percent setting is the memtable_flush_spill_limit
+# converted to a percentage of megabytes for large partitions.  See the Operational
+# Guide for more information.
+memtable_flush_spill_limit_in_mb_large_partitions_percent: 0.5
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable_flush_spill_limit_in_mb_large_partitions_percent_multiplier
+# setting.
+#
+# The memtable_flush_spill_limit_in_mb_large_partitions_percent_multiplier setting is the
+# multiplier applied to the memtable_flush_spill_limit_in_mb_large_partitions_percent.  See
+# the Operational Guide for more information.
+memtable_flush_spill_limit_in_mb_large_partitions_percent_multiplier: 1.0
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable_flush_spill_limit_in_mb_large_partitions_percent_multiplier_large_partitions
+# setting.
+#
+# The memtable_flush_spill_limit_in_mb_large_partitions_percent_multiplier_large_partitions setting is the
+# multiplier applied to the memtable_flush_spill_limit_in_mb_large_partitions_percent for large partitions.
+# See the Operational Guide for more information.
+memtable_flush_spill_limit_in_mb_large_partitions_percent_multiplier_large_partitions: 1.0
+
+# The suggestion is to leave this at the default unless you have a specific
+# need to change it.  This value is the default memtable_flush_spill_limit_in_mb_large_partitions_percent_multiplier_large_partitions_multiplier
+# setting.
+#
+# The memtable_flush_spill_limit_in_mb_large_partitions_percent_multiplier_large_partitions_multiplier setting is the
+# multiplier applied to the memtable_flush_spill_limit_in_mb_large_partitions_percent_multiplier_large_partitions.  See
+# the Operational Guide for more information.
+memtable_flush_spill_limit_in_mb_large_partitions_percent_multiplier_large_partitions_multiplier: 1.0
