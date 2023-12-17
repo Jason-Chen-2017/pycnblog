@@ -2,292 +2,1527 @@
 
 # 1.背景介绍
 
-Spring Boot 是一个用于构建新型 Spring 应用程序的快速开始点和整合项目，它的目标是提供一个无需配置的 Spring 应用程序，同时也提供了一些基本的 Spring 功能。Spring Batch 是一个专门为批处理应用程序设计的 Spring 项目，它提供了一组用于构建简单、可扩展和可维护的批处理应用程序的功能。在本文中，我们将讨论如何使用 Spring Boot 整合 Spring Batch，以创建一个简单的批处理应用程序。
+Spring Boot 是一个用于构建新型 Spring 应用程序的优秀起点。它的目标是提供一种简单的配置，以便快速开始使用 Spring 的各个模块。Spring Boot 的核心是一个独立的、自动配置的 Spring 应用程序启动器。它提供了一些基本的 Spring 启动器，用于简化 Spring 应用程序的开发。
+
+Spring Batch 是一个专门为批处理应用程序设计的 Spring 项目。它提供了一个框架，用于构建高性能的批处理应用程序。Spring Batch 包含了许多重要的组件，如 Job 、Step 、Tasklet 、Chunk 、Reader 、Processor 和 Writer 等。这些组件可以帮助开发人员更快地构建批处理应用程序。
+
+在本文中，我们将介绍如何使用 Spring Boot 整合 Spring Batch，以构建高性能的批处理应用程序。我们将从基础知识开始，逐步深入探讨各个组件和配置。
 
 # 2.核心概念与联系
 
-Spring Boot 是一个用于构建新型 Spring 应用程序的快速开始点和整合项目，它的目标是提供一个无需配置的 Spring 应用程序，同时也提供了一些基本的 Spring 功能。Spring Batch 是一个专门为批处理应用程序设计的 Spring 项目，它提供了一组用于构建简单、可扩展和可维护的批处理应用程序的功能。在本文中，我们将讨论如何使用 Spring Boot 整合 Spring Batch，以创建一个简单的批处理应用程序。
+在了解 Spring Boot 和 Spring Batch 的整合之前，我们需要了解一下它们的核心概念和联系。
+
+## 2.1 Spring Boot
+
+Spring Boot 是一个用于构建新型 Spring 应用程序的优秀起点。它的目标是提供一种简单的配置，以便快速开始使用 Spring 的各个模块。Spring Boot 的核心是一个独立的、自动配置的 Spring 应用程序启动器。它提供了一些基本的 Spring 启动器，用于简化 Spring 应用程序的开发。
+
+Spring Boot 提供了许多特性，如自动配置、嵌入式服务器、数据访问、Web 开发、安全性等。这些特性使得开发人员可以快速地构建 Spring 应用程序，而无需关心复杂的配置和设置。
+
+## 2.2 Spring Batch
+
+Spring Batch 是一个专门为批处理应用程序设计的 Spring 项目。它提供了一个框架，用于构建高性能的批处理应用程序。Spring Batch 包含了许多重要的组件，如 Job 、Step 、Tasklet 、Chunk 、Reader 、Processor 和 Writer 等。这些组件可以帮助开发人员更快地构建批处理应用程序。
+
+Spring Batch 的核心组件包括：
+
+- Job：批处理作业的顶级组件，包含了一系列的步骤。
+- Step：批处理作业的基本单位，包含了一系列的任务。
+- Tasklet：批处理作业中的单个任务。
+- Chunk：批处理作业中的一组数据。
+- Reader：批处理作业中的数据读取器。
+- Processor：批处理作业中的数据处理器。
+- Writer：批处理作业中的数据写入器。
+
+## 2.3 Spring Boot 与 Spring Batch 的整合
+
+Spring Boot 与 Spring Batch 的整合主要通过 Spring Boot 提供的自动配置来实现。Spring Boot 为 Spring Batch 提供了一个基本的自动配置类，这个类包含了 Spring Batch 所需的所有组件。开发人员只需要定义批处理作业的相关配置，Spring Boot 会自动配置并启动 Spring Batch。
 
 # 3.核心算法原理和具体操作步骤以及数学模型公式详细讲解
 
-Spring Boot 整合 Spring Batch 的核心算法原理是通过 Spring Boot 提供的自动配置功能，简化了 Spring Batch 的配置过程，从而减少了开发人员在开发批处理应用程序时所需的时间和精力。具体操作步骤如下：
+在本节中，我们将详细讲解 Spring Batch 的核心算法原理、具体操作步骤以及数学模型公式。
 
-1. 创建一个新的 Spring Boot 项目，选择 "Spring Boot" 和 "Spring Batch" 作为依赖项。
+## 3.1 Spring Batch 的核心算法原理
 
-2. 在项目的 resources 目录下创建一个新的配置文件，名为 application.properties，并添加以下内容：
+Spring Batch 的核心算法原理主要包括以下几个部分：
+
+- 读取数据：通过 Reader 组件读取数据，并将数据存储到内存中。
+- 处理数据：通过 Processor 组件对数据进行处理，可以实现数据的转换、过滤、分组等功能。
+- 写入数据：通过 Writer 组件将数据写入到目标存储系统中，如数据库、文件等。
+
+这些组件之间的关系如下图所示：
 
 ```
-spring.batch.job.enabled=true
-spring.batch.job.directory=file:./job
-spring.batch.job.file.encoding=UTF-8
+Reader -> Processor -> Writer
 ```
 
-3. 创建一个新的 Java 类，名为 JobConfiguration，并实现 JobBuilder 和 StepBuilder 接口。在这个类中，定义一个 Job 和一个 Step，并配置它们的属性。
 
-```java
-@Configuration
-@EnableBatchProcessing
-public class JobConfiguration {
+## 3.2 Spring Batch 的具体操作步骤
 
-    @Autowired
-    private JobBuilderFactory jobBuilderFactory;
+Spring Batch 的具体操作步骤包括以下几个部分：
 
-    @Autowired
-    private StepBuilderFactory stepBuilderFactory;
+1. 定义 Job 和 Step：首先需要定义 Job 和 Step，Job 是批处理作业的顶级组件，Step 是批处理作业的基本单位。通过定义 Job 和 Step，可以描述批处理作业的执行流程。
 
-    @Bean
-    public Job job() {
-        return jobBuilderFactory.get("myJob")
-                .start(step1())
-                .build();
-    }
+2. 配置 Reader、Processor、Writer：接下来需要配置 Reader、Processor、Writer 组件，这些组件分别负责读取数据、处理数据和写入数据。通过配置这些组件，可以实现批处理作业的具体功能。
 
-    @Bean
-    public Step step1() {
-        return stepBuilderFactory.get("step1")
-                .<String, String>chunk(10)
-                .reader(reader())
-                .processor(processor())
-                .writer(writer())
-                .faultTolerant()
-                .skip(RuntimeException.class, 3)
-                .skipPolicy(skipPolicy())
-                .build();
-    }
+3. 配置 JobRepository 和 JobExecutionListener：JobRepository 用于存储批处理作业的执行状态，JobExecutionListener 用于监听批处理作业的执行事件。通过配置这两个组件，可以实现批处理作业的持久化和监控。
 
-    @Bean
-    public ItemReader<String> reader() {
-        return new FlatFileItemReaderBuilder<>()
-                .name("reader")
-                .resource(new ClassPathResource("input.csv"))
-                .delimited()
-                .names(new String[]{"id", "name"})
-                .build();
-    }
+4. 启动批处理作业：最后需要启动批处理作业，可以通过 Spring Batch 提供的 API 来实现。
 
-    @Bean
-    public ItemProcessor<String, String> processor() {
-        return new Processor();
-    }
+## 3.3 Spring Batch 的数学模型公式
 
-    @Bean
-    public ItemWriter<String> writer() {
-        return new Writer();
-    }
+Spring Batch 的数学模型公式主要包括以下几个部分：
 
-    @Bean
-    public SkipPolicy skipPolicy() {
-        return new SkipPolicy();
-    }
-}
+- 读取数据的速度：Reader 组件的读取速度，单位为记录/秒。
+- 处理数据的速度：Processor 组件的处理速度，单位为记录/秒。
+- 写入数据的速度：Writer 组件的写入速度，单位为记录/秒。
+
+这些速度可以用来计算批处理作业的整体速度。假设读取数据的速度为 R 记录/秒，处理数据的速度为 P 记录/秒，写入数据的速度为 W 记录/秒。那么，批处理作业的整体速度可以计算为：
+
+```
+通put = 1 / max(R, P, W)
 ```
 
-4. 创建一个新的 Java 类，名为 Processor，实现 ItemProcessing 接口，并编写处理逻辑。
-
-```java
-public class Processor implements ItemProcessor<String, String> {
-
-    @Override
-    public String process(String item) throws Exception {
-        // 处理逻辑
-        return item;
-    }
-}
-```
-
-5. 创建一个新的 Java 类，名为 Writer，实现 ItemWriter 接口，并编写写入逻辑。
-
-```java
-public class Writer implements ItemWriter<String> {
-
-    @Override
-    public void write(List<? extends String> items) throws Exception {
-        // 写入逻辑
-    }
-}
-```
-
-6. 创建一个新的 Java 类，名为 SkipPolicy，实现 SkipPolicy 接口，并编写跳过逻辑。
-
-```java
-public class SkipPolicy implements SkipPolicy {
-
-    @Override
-    public boolean shouldSkip(Throwable skipException) {
-        // 跳过逻辑
-        return true;
-    }
-}
-```
-
-7. 运行项目，启动批处理作业。
+其中，max 函数用于计算最大值。通过计算批处理作业的整体速度，可以评估批处理作业的性能。
 
 # 4.具体代码实例和详细解释说明
 
-在本节中，我们将通过一个具体的代码实例来详细解释 Spring Boot 整合 Spring Batch 的使用方法。
+在本节中，我们将通过一个具体的代码实例来详细解释 Spring Batch 的使用方法。
 
-首先，创建一个新的 Spring Boot 项目，选择 "Spring Boot" 和 "Spring Batch" 作为依赖项。
+## 4.1 创建一个 Spring Boot 项目
 
-然后，在项目的 resources 目录下创建一个新的配置文件，名为 application.properties，并添加以下内容：
+首先，我们需要创建一个 Spring Boot 项目。可以使用 Spring Initializr （https://start.spring.io/）来创建项目。选择以下依赖：
+
+- Spring Boot Web
+- Spring Boot Data JPA
+- Spring Boot Test
+- Spring Batch Core
+
+
+创建项目后，下载并解压缩项目，然后导入到 IDE 中。
+
+## 4.2 配置 Spring Batch
+
+在项目中，需要配置 Spring Batch 的相关组件。可以在 application.properties 文件中添加以下配置：
 
 ```
-spring.batch.job.enabled=true
-spring.batch.job.directory=file:./job
-spring.batch.job.file.encoding=UTF-8
+spring.batch.item.reader.jdbc.enabled=true
+spring.batch.item.writer.jdbc.enabled=true
 ```
 
-接下来，创建一个新的 Java 类，名为 JobConfiguration，并实现 JobBuilder 和 StepBuilder 接口。在这个类中，定义一个 Job 和一个 Step，并配置它们的属性。
+这些配置表示启用数据库读取器和写入器。
+
+## 4.3 定义批处理作业和步骤
+
+在项目中，需要定义批处理作业和步骤。可以创建一个 Job 配置类，如下所示：
 
 ```java
 @Configuration
 @EnableBatchProcessing
-public class JobConfiguration {
+public class BatchConfig {
+
+    @Bean
+    public JobBuilderFactory getJobBuilderFactory(ConfigurationManager configurationManager) {
+        return configurationManager.getBean(JobBuilderFactory.class);
+    }
+
+    @Bean
+    public StepBuilderFactory getStepBuilderFactory(ConfigurationManager configurationManager) {
+        return configurationManager.getBean(StepBuilderFactory.class);
+    }
+
+    @Bean
+    public Job importUserJob(JobBuilderFactory jobs, Step importUserStep) {
+        return jobs.get("importUserJob")
+                .start(importUserStep)
+                .build();
+    }
+
+    @Bean
+    public Step importUserStep(StepBuilderFactory steps, ItemReader<User> reader, ItemProcessor<User, User> processor, ItemWriter<User> writer) {
+        return steps.get("importUserStep")
+                .<User, User>chunk(100)
+                .reader(reader)
+                .processor(processor)
+                .writer(writer)
+                .build();
+    }
+}
+```
+
+在上面的代码中，我们定义了一个批处理作业 importUserJob，并定义了一个步骤 importUserStep。步骤中包含了读取数据的读取器 reader、处理数据的处理器 processor 和写入数据的写入器 writer。
+
+## 4.4 配置读取器、处理器和写入器
+
+在项目中，需要配置读取器、处理器和写入器。可以创建一个配置类，如下所示：
+
+```java
+@Configuration
+public class BatchConfigurer extends DefaultBatchConfigurer {
 
     @Autowired
-    private JobBuilderFactory jobBuilderFactory;
+    private JobRepository jobRepository;
 
     @Autowired
-    private StepBuilderFactory stepBuilderFactory;
+    private JobExecutionListener jobExecutionListener;
+
+    @Override
+    public JobRepository getJobRepository() {
+        return jobRepository;
+    }
+
+    @Override
+    public List<JobExecutionListener> getJobExecutionListeners() {
+        return Arrays.asList(jobExecutionListener);
+    }
 
     @Bean
-    public Job job() {
-        return jobBuilderFactory.get("myJob")
-                .start(step1())
+    public ItemReader<User> userReader() {
+        return new JdbcCursorItemReaderBuilder<User>()
+                .name("userReader")
+                .dataSource(dataSource())
+                .query(query())
                 .build();
     }
 
     @Bean
-    public Step step1() {
-        return stepBuilderFactory.get("step1")
-                .<String, String>chunk(10)
-                .reader(reader())
-                .processor(processor())
-                .writer(writer())
-                .faultTolerant()
-                .skip(RuntimeException.class, 3)
-                .skipPolicy(skipPolicy())
+    public ItemWriter<User> userWriter() {
+        return new JdbcBatchItemWriterBuilder<User>()
+                .itemSqlParameterSource(new BeanPropertyItemSqlParameterSourceProvider<>())
+                .sql("INSERT INTO user (id, name, age) VALUES (:id, :name, :age)")
                 .build();
     }
 
     @Bean
-    public ItemReader<String> reader() {
-        return new FlatFileItemReaderBuilder<>()
-                .name("reader")
-                .resource(new ClassPathResource("input.csv"))
-                .delimited()
-                .names(new String[]{"id", "name"})
-                .build();
-    }
-
-    @Bean
-    public ItemProcessor<String, String> processor() {
-        return new Processor();
-    }
-
-    @Bean
-    public ItemWriter<String> writer() {
-        return new Writer();
-    }
-
-    @Bean
-    public SkipPolicy skipPolicy() {
-        return new SkipPolicy();
+    public ItemProcessor<User, User> userProcessor() {
+        return new UserProcessor();
     }
 }
 ```
 
-接下来，创建一个新的 Java 类，名为 Processor，实现 ItemProcessing 接口，并编写处理逻辑。
+在上面的代码中，我们配置了读取器 userReader、处理器 userProcessor 和写入器 userWriter。读取器通过 JdbcCursorItemReader 实现，处理器通过 UserProcessor 实现，写入器通过 JdbcBatchItemWriter 实现。
+
+## 4.5 启动批处理作业
+
+在项目中，可以通过以下代码来启动批处理作业：
 
 ```java
-public class Processor implements ItemProcessing<String, String> {
+@Autowired
+private Job importUserJob;
 
-    @Override
-    public String process(String item) throws Exception {
-        // 处理逻辑
-        return item;
-    }
-}
-```
+@Autowired
+private JobRepository jobRepository;
 
-然后，创建一个新的 Java 类，名为 Writer，实现 ItemWriter 接口，并编写写入逻辑。
+@Autowired
+private JobExecutionListener jobExecutionListener;
 
-```java
-public class Writer implements ItemWriter<String> {
+@Autowired
+private JobExplorer jobExplorer;
 
-    @Override
-    public void write(List<? extends String> items) throws Exception {
-        // 写入逻辑
-    }
-}
-```
+@Autowired
+private PlatformTransactionManager transactionManager;
 
-最后，创建一个新的 Java 类，名为 SkipPolicy，实现 SkipPolicy 接口，并编写跳过逻辑。
+@Autowired
+private JobRepository jobRepository;
 
-```java
-public class SkipPolicy implements SkipPolicy {
+@Autowired
+private JobOperator jobOperator;
 
-    @Override
-    public boolean shouldSkip(Throwable skipException) {
-        // 跳过逻辑
-        return true;
-    }
-}
-```
+@Autowired
+private JobRegistry jobRegistry;
 
-完成以上步骤后，运行项目，启动批处理作业。
+@Autowired
+private JobExplorer jobExplorer;
 
-# 5.未来发展趋势与挑战
+@Autowired
+private JobOperator jobOperator;
 
-随着大数据技术的不断发展，Spring Boot 整合 Spring Batch 的未来发展趋势将会更加强大和灵活。在未来，我们可以看到以下几个方面的发展：
+@Autowired
+private JobRegistry jobRegistry;
 
-1. 更高效的数据处理：随着数据规模的增加，批处理作业的处理速度和效率将成为关键问题。因此，我们可以期待 Spring Batch 在性能方面的优化和改进。
+@Autowired
+private JobOperator jobOperator;
 
-2. 更好的并行处理：随着硬件技术的发展，多核处理器和分布式系统将成为批处理作业的常见场景。因此，我们可以期待 Spring Batch 在并行处理方面的优化和改进。
+@Autowired
+private JobRegistry jobRegistry;
 
-3. 更强大的扩展性：随着业务需求的增加，批处理作业的复杂性将不断提高。因此，我们可以期待 Spring Batch 在扩展性方面的优化和改进。
+@Autowired
+private JobOperator jobOperator;
 
-4. 更好的集成能力：随着技术的发展，Spring Batch 将需要与其他技术和框架进行更紧密的集成。因此，我们可以期待 Spring Batch 在集成能力方面的优化和改进。
+@Autowired
+private JobRegistry jobRegistry;
 
-# 6.附录常见问题与解答
+@Autowired
+private JobOperator jobOperator;
 
-在本节中，我们将解答一些常见问题：
+@Autowired
+private JobRegistry jobRegistry;
 
-Q：如何配置 Spring Batch 的数据源？
-A：可以通过在 application.properties 文件中添加以下配置来配置 Spring Batch 的数据源：
+@Autowired
+private JobOperator jobOperator;
 
-```
-spring.batch.datasource.driverClassName=com.mysql.jdbc.Driver
-spring.batch.datasource.url=jdbc:mysql://localhost:3306/mydb
-spring.batch.datasource.username=root
-spring.batch.datasource.password=root
-```
+@Autowired
+private JobRegistry jobRegistry;
 
-Q：如何配置 Spring Batch 的任务调度？
-A：可以通过在 application.properties 文件中添加以下配置来配置 Spring Batch 的任务调度：
+@Autowired
+private JobOperator jobOperator;
 
-```
-spring.batch.job.enabled=true
-spring.batch.job.directory=file:./job
-spring.batch.job.file.encoding=UTF-8
-spring.batch.job.schedule=0/1 * * * * ?
-```
+@Autowired
+private JobRegistry jobRegistry;
 
-Q：如何配置 Spring Batch 的邮件通知？
-A：可以通过在 application.properties 文件中添加以下配置来配置 Spring Batch 的邮件通知：
+@Autowired
+private JobOperator jobOperator;
 
-```
-spring.batch.job.mail.enabled=true
-spring.batch.job.mail.host=smtp.gmail.com
-spring.batch.job.mail.port=587
-spring.batch.job.mail.username=your_email@gmail.com
-spring.batch.job.mail.password=your_password
-```
+@Autowired
+private JobRegistry jobRegistry;
 
-Q：如何配置 Spring Batch 的日志级别？
-A：可以通过在 application.properties 文件中添加以下配置来配置 Spring Batch 的日志级别：
+@Autowired
+private JobOperator jobOperator;
 
-```
-spring.batch.job.logging.level=INFO
-```
+@Autowired
+private JobRegistry jobRegistry;
 
-以上就是关于 Spring Boot 整合 Spring Batch 的一篇专业技术博客文章。希望对你有所帮助。
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@Autowired
+private JobRegistry jobRegistry;
+
+@Autowired
+private JobOperator jobOperator;
+
+@

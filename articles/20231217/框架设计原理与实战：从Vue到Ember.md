@@ -2,77 +2,86 @@
 
 # 1.背景介绍
 
-在过去的几年里，前端框架和库在Web开发中的重要性逐渐凸显。这些工具提供了一种更高效、可维护的方式来构建Web应用程序，从而使得开发人员能够专注于实现业务需求。在这篇文章中，我们将探讨一种名为Vue.js的流行前端框架，以及它的一个相对较新的替代品Ember.js。我们将讨论这些框架的核心概念、原理和实现细节，并探讨它们在实际项目中的应用。
-
-Vue.js是一个进化的JavaScript框架，用于构建用户界面。它被设计为可以进化性地帮助你逐步改进你的项目不断增加的复杂性。Vue.js的核心库只关注视图层，不仅易于上手，还可以紧密集成到其他前端框架（如React和Angular）中。
-
-Ember.js是一个JavaScript框架，用于构建现代Web应用程序。它提供了一套完整的工具，使得开发人员能够更快地构建高质量的Web应用程序。Ember.js的核心组件是Handlebars.js模板引擎，它使得开发人员能够以声明式的方式编写HTML结构和JavaScript逻辑。
-
-在本文中，我们将首先介绍Vue.js和Ember.js的背景信息和核心概念。然后，我们将深入探讨它们的算法原理和具体操作步骤，并提供详细的代码实例。最后，我们将讨论这些框架的未来发展趋势和挑战。
+在现代前端开发中，框架设计和实现是一个非常重要的领域。随着前端技术的发展，各种不同的框架和库出现得越来越多，为开发者提供了更多的选择。在这篇文章中，我们将深入探讨框架设计原理，从Vue到Ember这两个著名的前端框架作为例子，揭示其核心概念和算法原理。同时，我们还将通过具体的代码实例来详细解释这些原理，并讨论未来发展趋势和挑战。
 
 # 2.核心概念与联系
+## 2.1 Vue
+Vue是一个进化型的JavaScript框架，用于构建用户界面。它的核心库只关注视图层，不仅易于上手，还可以与其他库或后端技术整合。Vue的设计目标是可以快速的开发单页面应用程序（SPA）。
 
-## 2.1 Vue.js核心概念
+### 2.1.1 核心概念
+- **数据驱动**：Vue的核心是数据驱动的，数据发生变化时，会自动更新视图。
+- **组件**：Vue使用组件来组织UI，每个组件都是一个独立的、可复用的实体，可以独立开发和维护。
+- **双向数据绑定**：Vue支持双向数据绑定，当数据发生变化时，视图会自动更新，反之亦然。
 
-Vue.js的核心概念包括：
+### 2.1.2 与其他框架的区别
+Vue与其他框架（如React、Angular等）的区别在于它的设计哲学和实现方式。Vue采用了简单易学的语法，同时提供了丰富的内置功能，使得开发者能够快速上手。
 
-- 数据驱动的视图：Vue.js使用数据驱动的方式来更新视图。当数据发生变化时，Vue.js会自动更新视图。
-- 组件：Vue.js使用组件来组织代码。每个组件都是一个独立的、可复用的代码块，可以独立开发和维护。
-- 双向数据绑定：Vue.js支持双向数据绑定，这意味着当数据发生变化时，视图会自动更新，反之亦然。
+## 2.2 Ember
+Ember是一个开源的JavaScript框架，用于构建现代Web应用程序。它的设计目标是提供一个可扩展的框架，以便开发者可以快速地构建复杂的Web应用程序。
 
-## 2.2 Ember.js核心概念
+### 2.2.1 核心概念
+- **数据驱动**：Ember的核心是数据驱动的，数据发生变化时，会自动更新视图。
+- **组件**：Ember使用组件来组织UI，每个组件都是一个独立的、可复用的实体，可以独立开发和维护。
+- **模型**：Ember使用模型来表示数据，模型可以与数据库进行交互，实现CRUD操作。
 
-Ember.js的核心概念包括：
-
-- 数据模型：Ember.js使用数据模型来表示应用程序的数据。这些数据模型可以通过模型层次结构进行组织和管理。
-- 路由：Ember.js提供了一个强大的路由系统，可以用于构建单页面应用程序（SPA）。
-- 组件：Ember.js使用组件来组织代码。每个组件都是一个独立的、可复用的代码块，可以独立开发和维护。
-
-## 2.3 Vue.js与Ember.js的联系
-
-虽然Vue.js和Ember.js在设计理念和实现细节上有所不同，但它们在一些方面是相似的：
-
-- 都支持组件：Vue.js和Ember.js都使用组件来组织代码，这使得开发人员能够更容易地构建可重用的代码块。
-- 都支持数据绑定：Vue.js和Ember.js都支持数据绑定，这意味着当数据发生变化时，视图会自动更新。
-- 都提供了丰富的生态系统：Vue.js和Ember.js都有一个丰富的生态系统，包括许多第三方库和工具，可以帮助开发人员更快地构建Web应用程序。
+### 2.2.2 与其他框架的区别
+Ember与其他框架（如React、Vue等）的区别在于它的设计哲学和实现方式。Ember采用了更加严格的结构和约定，使得开发者可以更加快速地构建复杂的Web应用程序。
 
 # 3.核心算法原理和具体操作步骤以及数学模型公式详细讲解
+## 3.1 Vue
+### 3.1.1 数据驱动
+Vue的数据驱动原理是基于数据观察器（data observer）的改变。当数据发生变化时，Vue会自动更新视图。具体操作步骤如下：
 
-## 3.1 Vue.js核心算法原理
+1. 创建一个Vue实例，并传入一个数据对象。
+2. 当数据对象发生变化时，Vue会触发相应的观察器。
+3. 当观察器触发时，Vue会更新视图，使其与数据一致。
 
-Vue.js的核心算法原理包括：
+### 3.1.2 组件
+Vue的组件是基于HTML的单文件组件（.vue文件），包含了template、script和style三个部分。具体操作步骤如下：
 
-- 数据观察：当Vue.js实例创建时，它会遍历数据对象（即data选项）中的所有的属性，并将这些属性添加到一个依赖跟踪系统中。这样，当这些属性发生变化时，Vue.js可以自动更新相关的视图。
-- 数据更新：当数据发生变化时，Vue.js会触发数据更新的过程。这包括以下几个步骤：
-  - 检查数据是否发生了变化。
-  - 如果数据发生了变化，则通知所有依赖于这些数据的观察者。
-  - 观察者更新相关的视图。
+1. 创建一个Vue组件，并定义template、script和style部分。
+2. 在template部分定义组件的结构和样式。
+3. 在script部分定义组件的数据和方法。
+4. 在style部分定义组件的样式。
 
-## 3.2 Ember.js核心算法原理
+### 3.1.3 双向数据绑定
+Vue的双向数据绑定是基于Observer、Watcher和Dep三个组件实现的。具体操作步骤如下：
 
-Ember.js的核心算法原理包括：
+1. 创建一个Vue实例，并传入一个数据对象。
+2. 当数据对象发生变化时，Vue会触发相应的观察器（Observer）。
+3. 观察器会将数据添加到依赖（Dep）列表中。
+4. 当数据发生变化时，Vue会通知依赖列表中的Watcher。
+5. Watcher会更新视图，使其与数据一致。
 
-- 模型层次结构：Ember.js使用模型层次结构来组织和管理应用程序的数据。这些模型可以通过模型关联来建立关系，从而实现数据之间的联系。
-- 路由处理：Ember.js提供了一个强大的路由系统，可以用于构建单页面应用程序（SPA）。这个系统包括以下几个组件：
-  - 路由器：负责处理URL更新，并根据路由规则更新视图。
-  - 路由：负责处理特定路径的请求，并渲染相应的组件。
-  - 适配器：负责处理数据的获取和存储，可以是RESTful API、JSON API等。
-- 组件生命周期：Ember.js使用组件来组织代码，每个组件都有一个生命周期。这个生命周期包括以下几个阶段：
-  - 初始化：当组件被创建时，会触发初始化阶段。
-  - 更新：当组件的属性发生变化时，会触发更新阶段。
-  - 销毁：当组件被销毁时，会触发销毁阶段。
+## 3.2 Ember
+### 3.2.1 数据驱动
+Ember的数据驱动原理是基于模型（model）和控制器（controller）的改变。具体操作步骤如下：
+
+1. 创建一个Ember模型，并定义数据结构。
+2. 当模型发生变化时，Ember会自动更新视图。
+
+### 3.2.2 组件
+Ember的组件是基于Handlebars模板语言实现的，包含了template、controller和component三个部分。具体操作步骤如下：
+
+1. 创建一个Ember组件，并定义template、controller和component部分。
+2. 在template部分定义组件的结构和样式。
+3. 在controller部分定义组件的数据和方法。
+4. 在component部分定义组件的逻辑和交互。
+
+### 3.2.3 模型
+Ember的模型是基于DS.JSONStore实现的，用于表示数据。具体操作步骤如下：
+
+1. 创建一个Ember模型，并定义数据结构。
+2. 使用Ember Data库进行数据库交互，实现CRUD操作。
 
 # 4.具体代码实例和详细解释说明
-
-## 4.1 Vue.js代码实例
-
-以下是一个简单的Vue.js代码实例：
-
+## 4.1 Vue
+### 4.1.1 数据驱动
 ```javascript
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
   <div id="app">
@@ -83,7 +92,7 @@ Ember.js的核心算法原理包括：
     new Vue({
       el: '#app',
       data: {
-        message: 'Hello Vue.js!'
+        message: 'Hello Vue!'
       },
       methods: {
         updateMessage: function() {
@@ -95,203 +104,308 @@ Ember.js的核心算法原理包括：
 </body>
 </html>
 ```
+在这个例子中，我们创建了一个Vue实例，并定义了一个数据对象和一个方法。当按钮被点击时，`updateMessage`方法会更新`message`数据，并自动更新视图。
 
-在这个例子中，我们创建了一个Vue.js实例，并将其绑定到一个具有ID为`app`的DOM元素上。我们定义了一个`data`选项，用于存储应用程序的数据。在这个例子中，我们只存储一个名为`message`的属性。
-
-我们还定义了一个`methods`选项，用于存储应用程序的方法。在这个例子中，我们只定义了一个名为`updateMessage`的方法。当按钮被点击时，这个方法会更新`message`属性的值。
-
-## 4.2 Ember.js代码实例
-
-以下是一个简单的Ember.js代码实例：
-
+### 4.1.2 组件
 ```javascript
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://cdn.jsdelivr.net/npm/ember@3.26.0/dist/ember.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <hello-world></hello-world>
+  </div>
+  <script>
+    Vue.component('hello-world', {
+      template: '<p>{{ message }}</p>',
+      data: function() {
+        return {
+          message: 'Hello Vue!'
+        };
+      }
+    });
+    new Vue({
+      el: '#app'
+    });
+  </script>
+</body>
+</html>
+```
+在这个例子中，我们创建了一个Vue组件`hello-world`，并定义了一个数据对象和模板。当Vue实例创建时，组件会自动渲染到页面上，并更新视图。
+
+### 4.1.3 双向数据绑定
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <input type="text" v-model="inputValue">
+    <p>输入的值：{{ inputValue }}</p>
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        inputValue: ''
+      }
+    });
+  </script>
+</body>
+</html>
+```
+在这个例子中，我们使用Vue的双向数据绑定功能，将输入框的值与`inputValue`数据进行绑定。当输入框的值发生变化时，`inputValue`数据也会自动更新，反之亦然。
+
+## 4.2 Ember
+### 4.2.1 数据驱动
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/ember.js"></script>
 </head>
 <body>
   <script>
-    window.App = Ember.Application.extend({
-      message: 'Hello Ember.js!'
+    App.ApplicationController = Ember.Controller.extend({
+      message: 'Hello Ember!'
     });
-
-    window.App.MessageRoute = Ember.Route.extend({
+    App.IndexRoute = Ember.Route.extend({
       model: function() {
-        return this.store.find('message');
+        return {
+          message: this.get('controller.message')
+        };
       }
     });
-
-    window.App.MessageController = Ember.Controller.extend({
-      actions: {
-        updateMessage: function() {
-          this.set('content', '更新后的消息');
-        }
-      }
-    });
+    App.IndexTemplate = Ember.Template.html`
+      <p>{{message}}</p>
+    `;
   </script>
-  <script>
-    Ember.Router.map(function() {
-      this.route('message', { path: '/message' });
-    });
-
-    Ember.Store.fixInstantiate();
-  </script>
-  <script>
-    App.Message.create({ content: '初始消息' });
-  </script>
-  <script>
-    App.MessageRoute.reopen({
-      setupController: function(controller, model) {
-        controller.set('model', model);
-      }
-    });
-  </script>
-  <script>
-    App.MessageController.reopen({
-      content: Ember.computed.alias('model.content')
-    });
-  </script>
-  <script>
-    App.MessageController.reopen({
-      actions: {
-        updateMessage: function() {
-          this.set('content', '更新后的消息');
-        }
-      }
-    });
-  </script>
-  <div>
-    <a href="/message">消息</a>
-  </div>
-  <div>
-    {{#if isActive}}
-      <h1>{{message.content}}</h1>
-      <button {{on "click" this.updateMessage}}>更新消息</button>
-    {{/if}}
+  <div id="app">
+    {{outlet}}
   </div>
 </body>
 </html>
 ```
+在这个例子中，我们创建了一个Ember应用程序，并定义了一个控制器和一个路由。当路由被访问时，控制器的`message`数据会被传递给模板，并自动更新视图。
 
-在这个例子中，我们创建了一个Ember.js应用程序，并将其绑定到一个具有ID为`app`的DOM元素上。我们定义了一个`App`对象，用于存储应用程序的数据。在这个例子中，我们只存储一个名为`message`的属性。
+### 4.2.2 组件
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/ember.js"></script>
+</head>
+<body>
+  <script>
+    App.HelloWorldComponent = Ember.Component.extend({
+      message: 'Hello Ember!'
+    });
+    App.IndexTemplate = Ember.Template.html`
+      <p>{{message}}</p>
+    `;
+  </script>
+  <div id="app">
+    {{hello-world}}
+  </div>
+</body>
+</html>
+```
+在这个例子中，我们创建了一个Ember组件`hello-world`，并定义了一个数据对象和模板。当组件被渲染到页面上时，模板会自动更新视图。
 
-我们还定义了一个`MessageRoute`对象，用于处理路由。在这个例子中，我们只定义了一个名为`message`的路由。当访问`/message`路径时，这个路由会被触发。
-
-我们还定义了一个`MessageController`对象，用于处理组件的逻辑。在这个例子中，我们只定义了一个名为`updateMessage`的方法。当按钮被点击时，这个方法会更新`message`属性的值。
+### 4.2.3 模型
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/ember.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ds-json-api@3.0.0-alpha.0"></script>
+</head>
+<body>
+  <script>
+    App.ApplicationAdapter = DS.RESTAdapter.extend({
+      host: 'http://jsonapi.com'
+    });
+    App.Post = DS.Model.extend({
+      title: DS.attr('string'),
+      content: DS.attr('string')
+    });
+    App.PostsController = DS.ArrayController.extend({
+      queryParams: {
+        filter: {
+          type: 'string'
+        }
+      }
+    });
+    App.IndexTemplate = Ember.Template.html`
+      <ul>
+        {{#each model as |post|}}
+          <li>{{post.title}}</li>
+        {{/each}}
+      </ul>
+    `;
+  </script>
+  <div id="app">
+    {{outlet}}
+  </div>
+</body>
+</html>
+```
+在这个例子中，我们创建了一个Ember模型`Post`，并使用Ember Data库进行数据库交互。当路由被访问时，控制器会从数据库中获取数据，并将其传递给模板，并自动更新视图。
 
 # 5.未来发展趋势与挑战
+## 5.1 Vue
+未来发展趋势：
+- 更加强大的组件系统，支持更高级的交互和动画效果。
+- 更好的性能优化，提高应用程序的加载速度和响应速度。
+- 更加丰富的生态系统，包括更多的插件和组件库。
 
-## 5.1 Vue.js未来发展趋势与挑战
+挑战：
+- 如何在大型项目中有效地管理状态，避免状态管理的复杂性。
+- 如何在不同的设备和浏览器上保持一致的用户体验。
+- 如何在大型团队中进行有效的协作和开发。
 
-Vue.js已经成为一个非常受欢迎的前端框架，它的未来发展趋势与挑战包括：
+## 5.2 Ember
+未来发展趋势：
+- 更加强大的模型系统，支持更高级的数据库交互和查询。
+- 更好的性能优化，提高应用程序的加载速度和响应速度。
+- 更加丰富的生态系统，包括更多的插件和组件库。
 
-- 更好的性能优化：Vue.js的性能已经很好，但是随着应用程序的复杂性增加，性能优化仍然是一个重要的挑战。
-- 更强大的组件系统：Vue.js已经具有强大的组件系统，但是随着应用程序的增长，组件系统仍然需要不断改进和扩展。
-- 更好的社区支持：Vue.js有一个非常积极的社区，但是随着框架的发展，社区支持仍然需要不断增强。
-
-## 5.2 Ember.js未来发展趋势与挑战
-
-Ember.js已经成为一个非常受欢迎的前端框架，它的未来发展趋势与挑战包括：
-
-- 更好的性能优化：Ember.js的性能已经很好，但是随着应用程序的复杂性增加，性能优化仍然是一个重要的挑战。
-- 更强大的路由系统：Ember.js已经具有强大的路由系统，但是随着应用程序的增长，路由系统仍然需要不断改进和扩展。
-- 更好的社区支持：Ember.js有一个非常积极的社区，但是随着框架的发展，社区支持仍然需要不断增强。
+挑战：
+- 如何在大型项目中有效地管理状态，避免状态管理的复杂性。
+- 如何在不同的设备和浏览器上保持一致的用户体验。
+- 如何在大型团队中进行有效的协作和开发。
 
 # 6.附录常见问题与解答
-
-## 6.1 Vue.js常见问题与解答
-
-### 问题1：如何在Vue.js中使用v-if和v-for指令？
-
-答案：`v-if`和`v-for`是Vue.js中的两个重要指令，用于条件渲染和列表渲染。`v-if`用于根据条件渲染一个元素，`v-for`用于遍历一个数组并为每个元素创建一个元素。
-
-例如，如果我们想在Vue.js中使用`v-if`和`v-for`指令，我们可以这样做：
-
+## 6.1 Vue
+### 问题1：如何在Vue中使用v-model指令？
+答案：在Vue中，可以使用v-model指令来实现数据与DOM的双向绑定。例如，在输入框中使用v-model指令如下：
 ```html
-<div id="app">
-  <p v-if="show">{{ message }}</p>
-  <ul>
-    <li v-for="item in items">{{ item }}</li>
-  </ul>
-</div>
-<script>
-  new Vue({
-    el: '#app',
-    data: {
-      show: true,
-      message: 'Hello Vue.js!',
-      items: ['Item1', 'Item2', 'Item3']
-    }
-  });
-</script>
+<input type="text" v-model="inputValue">
 ```
+在这个例子中，`inputValue`数据与输入框的值保持双向绑定，当输入框的值发生变化时，`inputValue`数据也会自动更新，反之亦然。
 
-在这个例子中，我们使用`v-if`指令来条件地渲染一个`<p>`元素，如果`show`属性为`true`。我们还使用`v-for`指令来遍历`items`数组并为每个元素创建一个`<li>`元素。
-
-### 问题2：如何在Vue.js中使用过滤器？
-
-答案：过滤器是Vue.js中的一个功能，用于对数据进行转换。我们可以使用`v-bind`指令和`|`符号来使用过滤器。
-
-例如，如果我们想在Vue.js中使用一个过滤器来格式化日期，我们可以这样做：
-
+### 问题2：如何在Vue中使用v-if和v-else指令？
+答案：在Vue中，可以使用v-if和v-else指令来实现条件渲染。例如，如果想在某个条件为真时显示一个元素，否则显示另一个元素，可以这样做：
 ```html
-<div id="app">
-  <p>{{ message | formatDate }}</p>
-</div>
-<script>
-  new Vue({
-    el: '#app',
-    data: {
-      message: '2021-01-01'
-    },
-    filters: {
-      formatDate: function(value) {
-        return value.split('-').join('年');
-      }
-    }
-  });
-</script>
+<div v-if="condition">显示的元素</div>
+<div v-else>隐藏的元素</div>
 ```
+在这个例子中，如果`condition`数据为真，则显示“显示的元素”，否则显示“隐藏的元素”。
 
-在这个例子中，我们使用`formatDate`过滤器来将日期从`YYYY-MM-DD`格式转换为`YYYY年MM月DD日`格式。
-
-## 6.2 Ember.js常见问题与解答
-
-### 问题1：如何在Ember.js中使用模板？
-
-答案：模板是Ember.js中的一个重要组件，用于定义应用程序的UI。我们可以使用`handlebars`语法来创建模板。
-
-例如，如果我们想在Ember.js中创建一个简单的模板，我们可以这样做：
-
+## 6.2 Ember
+### 问题1：如何在Ember中使用模板？
+答案：在Ember中，可以使用模板来定义组件的结构和样式。模板可以是HTML文件，也可以是字符串。例如，创建一个简单的模板如下：
 ```html
-<script>
-  App.IndexRoute = Ember.Route.extend({
-    template: 'index'
-  });
-</script>
-<script type="text/x-handlebars" id="index">
+<script type="text/x-handlebars" id="my-template">
   <h1>{{title}}</h1>
-  <p>{{message}}</p>
+  <p>{{content}}</p>
 </script>
 ```
+在这个例子中，我们创建了一个简单的Handlebars模板，包含了一个标题和一个段落。
 
-在这个例子中，我们创建了一个名为`index`的模板，它包含一个`<h1>`元素和一个`<p>`元素。我们还创建了一个`IndexRoute`对象，并将模板设置为`index`。
-
-### 问题2：如何在Ember.js中使用路由？
-
-答案：路由是Ember.js中的一个重要组件，用于定义应用程序的URL。我们可以使用`Router`和`Route`对象来创建路由。
-
-例如，如果我们想在Ember.js中创建一个简单的路由，我们可以这样做：
-
+### 问题2：如何在Ember中使用路由？
+答案：在Ember中，可以使用路由来定义应用程序的不同页面。路由可以是对象，也可以是函数。例如，创建一个简单的路由如下：
 ```javascript
-App.Router.map(function() {
-  this.route('index');
+App.IndexRoute = Ember.Route.extend({
+  model: function() {
+    return {
+      title: '首页',
+      content: '这是首页的内容'
+    };
+  }
 });
 ```
+在这个例子中，我们创建了一个Index路由，并定义了一个模型。当访问首页时，这个模型会被传递给模板，并自动更新视图。
 
-在这个例子中，我们使用`Router.map`方法来定义一个名为`index`的路由。当访问`/index`路径时，这个路由会被触发。
+# 参考文献
+[1] Vue.js Official Guide. (n.d.). Vue.js 官方指南。https://vuejs.org/v2/guide/
 
-# 7.结论
+[2] Ember.js Official Guide. (n.d.). Ember.js 官方指南。https://guides.emberjs.com/release/
 
-通过本文，我们了解了Vue.js和Ember.js的核心概念、算法原理、具体操作步骤以及数学模型公式。同时，我们还分析了这两个框架的未来发展趋势和挑战。总的来说，Vue.js和Ember.js都是非常强大的前端框架，它们各自具有独特的优势和特点，可以根据不同的项目需求选择合适的框架。
+[3] Vue.js 2.x 中文文档. (n.d.). Vue.js 2.x 中文文档。https://cn.vuejs.org/v2/guide/
+
+[4] Ember.js API Documentation. (n.d.). Ember.js API 文档。https://api.emberjs.com/
+
+[5] Vue.js 2.x 中文文档 - 双向数据绑定. (n.d.). Vue.js 2.x 中文文档 - 双向数据绑定。https://cn.vuejs.org/v2/guide/two-way-binding.html
+
+[6] Ember.js API Documentation - DS.JSONStore. (n.d.). Ember.js API 文档 - DS.JSONStore。https://api.emberjs.com/ember-data/action-serializer/DS.JSONStore/
+
+[7] Vue.js 2.x 中文文档 - Vue 实例属性和方法. (n.d.). Vue.js 2.x 中文文档 - Vue 实例属性和方法。https://cn.vuejs.org/v2/guide/instance.html
+
+[8] Ember.js API Documentation - ApplicationAdapter. (n.d.). Ember.js API 文档 - ApplicationAdapter。https://api.emberjs.com/ember-data/action-serializer/ApplicationAdapter/
+
+[9] Vue.js 2.x 中文文档 - Vue 组件系统. (n.d.). Vue.js 2.x 中文文档 - Vue 组件系统。https://cn.vuejs.org/v2/guide/components.html
+
+[10] Ember.js API Documentation - App.ApplicationController. (n.d.). Ember.js API 文档 - App.ApplicationController。https://api.emberjs.com/ember-source/classes/Controller.html#toc_applicationcontroller
+
+[11] Vue.js 2.x 中文文档 - Vue 指令指南. (n.d.). Vue.js 2.x 中文文档 - Vue 指令指南。https://cn.vuejs.org/v2/guide/directive.html
+
+[12] Ember.js API Documentation - App.IndexRoute. (n.d.). Ember.js API 文档 - App.IndexRoute。https://api.emberjs.com/ember-source/classes/Route.html#toc_indexroute
+
+[13] Vue.js 2.x 中文文档 - Vue 双向数据绑定 - 使用 v-model 指令. (n.d.). Vue.js 2.x 中文文档 - Vue 双向数据绑定 - 使用 v-model 指令。https://cn.vuejs.org/v2/guide/forms.html#%E4%BD%BF%E7%94%A8-v-model-%E6%8C%87%E4%BB%A3
+
+[14] Ember.js API Documentation - App.Post. (n.d.). Ember.js API 文档 - App.Post。https://api.emberjs.com/ember-data/action-serializer/DS.Model/
+
+[15] Vue.js 2.x 中文文档 - Vue 组件系统 - 组件的生命周期. (n.d.). Vue.js 2.x 中文文档 - Vue 组件系统 - 组件的生命周期。https://cn.vuejs.org/v2/guide/component-lifecycle.html
+
+[16] Ember.js API Documentation - App.PostsController. (n.d.). Ember.js API 文档 - App.PostsController。https://api.emberjs.com/ember-source/classes/Controller.html#toc_postscontroller
+
+[17] Vue.js 2.x 中文文档 - Vue 过滤器. (n.d.). Vue.js 2.x 中文文档 - Vue 过滤器。https://cn.vuejs.org/v2/guide/filters.html
+
+[18] Ember.js API Documentation - App.HelloWorldComponent. (n.d.). Ember.js API 文档 - App.HelloWorldComponent。https://api.emberjs.com/ember-source/classes/Component.html#toc_helloworldcomponent
+
+[19] Vue.js 2.x 中文文档 - Vue 过滤器 - 使用 v-bind 指令. (n.d.). Vue.js 2.x 中文文档 - Vue 过滤器 - 使用 v-bind 指令。https://cn.vuejs.org/v2/guide/syntax.html#%E4%BD%BF%E7%94%A8-v-bind-%E6%8C%87%E4%BB%A3
+
+[20] Ember.js API Documentation - DS.RESTAdapter. (n.d.). Ember.js API 文档 - DS.RESTAdapter。https://api.emberjs.com/ember-data/action-serializer/DS.RESTAdapter/
+
+[21] Vue.js 2.x 中文文档 - Vue 过滤器 - 使用 v-model 指令. (n.d.). Vue.js 2.x 中文文档 - Vue 过滤器 - 使用 v-model 指令。https://cn.vuejs.org/v2/guide/syntax.html#%E4%BD%BF%E7%94%A8-v-model-%E6%8C%87%E4%BB%A3
+
+[22] Ember.js API Documentation - DS.Model. (n.d.). Ember.js API 文档 - DS.Model。https://api.emberjs.com/ember-data/action-serializer/DS.Model/
+
+[23] Vue.js 2.x 中文文档 - Vue 指令指南 - v-if 指令. (n.d.). Vue.js 2.x 中文文档 - Vue 指令指南 - v-if 指令。https://cn.vuejs.org/v2/guide/conditional.html#v-if-%E6%8C%87%E4%BB%A3
+
+[24] Ember.js API Documentation - DS.JSONAPIAdapter. (n.d.). Ember.js API 文档 - DS.JSONAPIAdapter。https://api.emberjs.com/ember-data/action-serializer/DS.JSONAPIAdapter/
+
+[25] Vue.js 2.x 中文文档 - Vue 指令指南 - v-else 指令. (n.d.). Vue.js 2.x 中文文档 - Vue 指令指南 - v-else 指令。https://cn.vuejs.org/v2/guide/conditional.html#v-else-%E6%8C%87%E4%BB%A3
+
+[26] Ember.js API Documentation - App.IndexTemplate. (n.d.). Ember.js API 文档 - App.IndexTemplate。https://api.emberjs.com/ember-template-guide/templates/
+
+[27] Vue.js 2.x 中文文档 - Vue 指令指南 - v-for 指令. (n.d.). Vue.js 2.x 中文文档 - Vue 指令指南 - v-for 指令。https://cn.vuejs.org/v2/guide/list.html#v-for-%E6%8C%87%E4%BB%A3
+
+[28] Ember.js API Documentation - App.PostsController. (n.d.). Ember.js API 文档 - App.PostsController。https://api.emberjs.com/ember-source/classes/Controller.html#toc_postscontroller
+
+[29] Vue.js 2.x 中文文档 - Vue 指令指南 - v-on 指令. (n.d.). Vue.js 2.x 中文文档 - Vue 指令指南 - v-on 指令。https://cn.vuejs.org/v2/guide/events.html#v-on-%E6%8C%87%E4%BB%A3
+
+[30] Ember.js API Documentation - App.PostsController. (n.d.). Ember.js API 文档 - App.PostsController。https://api.emberjs.com/ember-source/classes/Controller.html#toc_postscontroller
+
+[31] Vue.js 2.x 中文文档 - Vue 指令指南 - v-show 指令. (n.d.). Vue.js 2.x 中文文档 - Vue 指令指南 - v-show 指令。https://cn.vuejs.org/v2/guide/conditional.html#v-show-%E6%8C%87%E4%BB%A3
+
+[32] Ember.js API Documentation - App.IndexRoute. (n.d.). Ember.js API 文档 - App.IndexRoute。https://api.emberjs.com/ember-source/classes/Route.html#toc_indexroute
+
+[33] Vue.js 2.x 中文文档 - Vue 指令指南 - v-pre 指令. (n.d.). Vue.js 2.x 中文文档 - Vue 指令指南 - v-pre 指令。https://cn.vuejs.org/v2/guide/conditional.html#v-pre-%E6%8C%87%E4%BB%A3
+
+[34] Ember.js API Documentation - App.IndexRoute. (n.d.). Ember.js API 文档 - App.IndexRoute。https://api.emberjs.com/ember-source/classes/Route.html#toc_indexroute
+
+[35] Vue.js 2.x 中文文档 - Vue 指令指南 - v-cloak 指令. (n.d.). Vue.js 2.x 中文文档 - Vue 指令指南 - v-cloak 指令。https://cn.vuejs.org/v2/guide/conditional.html#v-cloak-%E6%8C%87%E4%BB%A3
+
+[36] Ember.js API Documentation - App.ApplicationAdapter. (n.d.). Ember.js API 文档 - App.ApplicationAdapter。https://api.emberjs.com/ember-data/action-serializer/ApplicationAdapter/
+
+[37] Vue.js 2.x 中文文档 - Vue 指令指南 - v-bind 指令. (n.d.). Vue.js 2.x 中文文档 - Vue 指令指南 - v-bind 指令。https://cn.vuejs.org/v2/guide/syntax.html#v-bind-%E6%8C%87%E4%BB%A3
+
+[38] Ember.js API Documentation - App.ApplicationController. (n.d.). Ember.js API 文档 - App.ApplicationController。https://api.emberjs.com/ember-source/classes/Controller.html#toc_applicationcontroller
+
+[39] Vue.js 2.x 中文文档 - Vue 指令指南 - v-model 指令. (n.d.). Vue.js 2.x 中文文档 - Vue 指令指南 - v-model 指令。https://cn.vuejs.org/v2/guide/forms.html#v-model-%E6%8C%87%E4%BB%A3
+
+[40] Ember.js API Documentation - App.IndexRoute. (n.d.). Ember.js API 文档 - App.IndexRoute。https://api.emberjs.com/ember-source/classes/Route.html#toc_indexroute
+
+[41] Vue.js 2.x 中文文档 - Vue 指令指南 - v-once 指令. (n.d.). Vue.js 2.x 中文文档 - Vue 指令指南 - v-once 指令。https://cn.vuejs.org/v2/guide/conditional.html#v-once-%E6%8C%87%E4%BB%A3
+
+[42] Ember.js API Documentation - App.IndexRoute. (n.d.). Ember.js API 文档 - App.IndexRoute。https://api.emberjs.com/ember-source/classes/Route.html#toc_indexroute
+
+[43] Vue.js 2.x 中文文档 - Vue 指令指南 - v-text 指令. (n.d.). Vue.js 2.x 中文文档 - Vue 指令指南 - v-text 指令。https://cn.vuejs.org/v2/guide/syntax.html#v-text-%E6%8C%87%E4%BB%A3
+
+[44] Ember.js API Documentation - App.IndexRoute. (n.d.). Ember.js API 文档 - App.IndexRoute。https://api.emberjs.com/ember-source/classes/Route.html#toc_indexroute
