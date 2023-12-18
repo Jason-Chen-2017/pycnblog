@@ -2,158 +2,510 @@
 
 # 1.背景介绍
 
-人工智能（Artificial Intelligence, AI）和机器学习（Machine Learning, ML）是近年来最热门的技术领域之一，它们正在改变我们的生活和工作方式。强化学习（Reinforcement Learning, RL）是一种机器学习技术，它使机器可以通过与环境的互动来学习，以便取得最佳的行为。
-
-概率论和统计学在人工智能和机器学习领域中发挥着关键作用，它们为我们提供了一种数学模型，用于描述和预测不确定性的现象。在这篇文章中，我们将探讨概率论在强化学习中的高级应用，并通过Python实战来详细讲解其核心算法原理和具体操作步骤。
+强化学习（Reinforcement Learning, RL）是一种人工智能技术，它旨在让计算机代理通过与环境的互动来学习如何做出最佳的决策。在强化学习中，概率论和统计学起着至关重要的作用。这篇文章将介绍概率论在强化学习中的高级应用，涵盖了核心概念、算法原理、具体操作步骤、数学模型公式、代码实例以及未来发展趋势与挑战。
 
 # 2.核心概念与联系
 
-## 2.1概率论基础
+概率论是数学的一个分支，用于描述不确定性和随机性。在强化学习中，概率论用于描述状态转移、动作选择和奖励获得等过程。强化学习的主要组成部分包括代理、环境、动作、状态和奖励。代理是一个可以学习和做出决策的实体，环境是代理与其互动的实体，动作是代理在环境中执行的操作，状态是环境在特定时刻的描述，奖励是代理在环境中获得的反馈信号。
 
-概率论是一门数学分支，用于描述和分析不确定性现象。概率可以理解为事件发生的可能性，它的范围为[0, 1]，其中0表示事件不可能发生，1表示事件必然发生。
+在强化学习中，概率论和统计学的核心概念包括：
 
-### 2.1.1概率模型
-
-概率模型是概率论中的基本概念，它描述了一个随机事件发生的概率分布。常见的概率模型有泊松分布、指数分布、均匀分布、二项分布等。
-
-### 2.1.2条件概率和独立性
-
-条件概率是一个事件发生的概率，给定另一个事件已发生。独立性是两个事件发生的概率的乘积等于它们的积，即P(A∩B) = P(A)P(B)。
-
-### 2.1.3随机变量和概率密度函数
-
-随机变量是一个数值函数，它将一个随机事件映射到一个数值域。概率密度函数是一个随机变量的概率分布函数的连续版本，它描述了随机变量在某个范围内取值的概率。
-
-## 2.2强化学习基础
-
-强化学习是一种机器学习技术，它使机器可以通过与环境的互动来学习，以便取得最佳的行为。强化学习中的主要组成部分包括状态、动作、奖励、策略和值函数。
-
-### 2.2.1状态
-
-状态是强化学习环境中的一个时刻，它描述了环境的当前状态。状态可以是数字、字符串或其他类型的数据。
-
-### 2.2.2动作
-
-动作是强化学习环境中可以采取的行为。动作可以是数字、字符串或其他类型的数据。
-
-### 2.2.3奖励
-
-奖励是强化学习环境中的一个信号，它用于评估机器人的行为。奖励可以是正数、负数或零。
-
-### 2.2.4策略
-
-策略是强化学习环境中的一个规则，它用于决定在给定状态下采取哪个动作。策略可以是确定性的（即在给定状态下只采取一个动作）或随机的（即在给定状态下采取多个动作，每个动作的概率相同或不同）。
-
-### 2.2.5值函数
-
-值函数是强化学习环境中的一个函数，它用于评估给定状态下策略的总体性能。值函数可以是期望值函数（即给定状态下策略的期望奖励）或累积奖励函数（即给定状态下策略的累积奖励）。
+1.概率空间：概率空间是一个包含所有可能的事件的集合，以及每个事件的概率。
+2.随机变量：随机变量是一个取值在某个概率空间上的函数。
+3.条件概率：条件概率是一个事件发生的概率，给定另一个事件已经发生。
+4.独立性：两个事件独立，当一个事件发生时，不会改变另一个事件的发生概率。
+5.期望：期望是随机变量的数学期望，表示随机变量的平均值。
+6.方差：方差是随机变量的一种度量，用于描述随机变量的离散程度。
 
 # 3.核心算法原理和具体操作步骤以及数学模型公式详细讲解
 
-## 3.1蒙特卡洛方法
+在强化学习中，概率论在多个算法中发挥着重要作用。以下是一些常见的算法及其原理和公式：
 
-蒙特卡洛方法是一种基于随机样本的数值计算方法，它可以用于估计概率论中的各种参数。在强化学习中，蒙特卡洛方法主要用于估计值函数和策略梯度。
+1.蒙特卡洛方法：蒙特卡洛方法是一种通过随机样本估计不确定性的方法。在强化学习中，蒙特卡洛方法用于估计值函数、策略梯度等。
 
-### 3.1.1值迭代
+公式：$$
+V(s) = \mathbb{E}_{\tau \sim P} \left[ \sum_{t=0}^{\infty} \gamma^t r_{t+1} | s_0 = s \right]
+$$
 
-值迭代是一种基于蒙特卡洛方法的强化学习算法，它用于估计给定状态下策略的值函数。值迭代的主要步骤如下：
+$$
+\nabla_{\theta} J(\theta) = \mathbb{E}_{\tau \sim P} \left[ \sum_{t=0}^{T} \gamma^t \nabla_{\theta} \log \pi_{\theta}(a_t | s_t) Q(s_t, a_t) \right]
+$$
 
-1. 初始化值函数为零。
-2. 对于每个状态，采样随机动作。
-3. 对于每个动作，计算期望奖励。
-4. 更新值函数。
-5. 重复步骤2-4，直到收敛。
+2.模型预测控制（Model Predictive Control, MPC）：模型预测控制是一种基于模型预测的控制方法，在强化学习中用于优化动作选择。
 
-### 3.1.2策略梯度
+公式：$$
+\arg \max_{u(t)} \int_{t=0}^{\infty} e^{-\beta t} \sum_{s,a} \gamma^t p(s_t=s, a_t=a|u) V(s,a) dt
+$$
 
-策略梯度是一种基于蒙特卡洛方法的强化学习算法，它用于优化给定策略的值函数。策略梯度的主要步骤如下：
+3.动态规划（Dynamic Programming, DP）：动态规划是一种通过递归地求解状态值函数来求解最优策略的方法。在强化学习中，动态规划包括值迭代（Value Iteration）和策略迭代（Policy Iteration）。
 
-1. 初始化策略参数。
-2. 对于每个时刻，采样随机动作。
-3. 对于每个动作，计算期望奖励。
-4. 更新策略参数。
-5. 重复步骤2-4，直到收敛。
+公式：$$
+V^{*}(s) = \max_{a} \left\{ \sum_{s'} p(s'|s,a) \left[ R(s,a) + \gamma V^{*}(s') \right] \right\}
+$$
 
-## 3.2模拟辅助学习
+4.策略梯度（Policy Gradient, PG）：策略梯度是一种直接优化策略的方法，不需要求解状态值函数。在强化学习中，策略梯度包括随机搜索（Random Search）、重启（Restart）和策略梯度梯度下降（Policy Gradient Descent）。
 
-模拟辅助学习是一种基于模拟的强化学习算法，它结合了蒙特卡洛方法和模拟辅助学习。模拟辅助学习的主要步骤如下：
-
-1. 初始化值函数为零。
-2. 对于每个状态，采样随机动作。
-3. 对于每个动作，计算期望奖励。
-4. 更新值函数。
-5. 对于每个策略参数，计算策略梯度。
-6. 更新策略参数。
-7. 重复步骤2-6，直到收敛。
+公式：$$
+\nabla_{\theta} J(\theta) = \mathbb{E}_{\tau \sim P} \left[ \sum_{t=0}^{T} \gamma^t \nabla_{\theta} \log \pi_{\theta}(a_t | s_t) Q(s_t, a_t) \right]
+$$
 
 # 4.具体代码实例和详细解释说明
 
-在这里，我们将通过一个简单的强化学习示例来展示如何使用Python实现上述算法。我们将实现一个Q-learning算法，用于学习一个简单的环境：一个有四个状态和两个动作的环境。
+在本节中，我们将介绍一个基于策略梯度的强化学习算法的具体代码实例。我们将使用Python和Gym库实现一个简单的CartPole环境。
 
 ```python
+import gym
 import numpy as np
+import random
 
-# 定义环境
-class Environment:
-    def __init__(self):
-        self.states = ['S1', 'S2', 'S3', 'S4']
-        self.actions = ['A1', 'A2']
-        self.rewards = {('S1', 'A1'): 0, ('S1', 'A2'): -1, ('S2', 'A1'): -1, ('S2', 'A2'): 0,
-                        ('S3', 'A1'): -1, ('S3', 'A2'): 0, ('S4', 'A1'): 0, ('S4', 'A2'): -1}
+# 初始化环境
+env = gym.make('CartPole-v1')
 
-    def step(self, state, action):
-        if action == 'A1':
-            next_state = self.states[(self.states.index(state) + 1) % len(self.states)]
-        else:
-            next_state = self.states[(self.states.index(state) + 3) % len(self.states)]
-        return next_state, self.rewards[(state, action)], 0
+# 设置超参数
+num_episodes = 1000
+num_steps = 100
+action_space = env.action_space
+state_space = env.observation_space
 
-# 定义Q-learning算法
-def q_learning(environment, episodes, learning_rate, discount_factor):
-    q_table = np.zeros((len(environment.states), len(environment.actions)))
-    for episode in range(episodes):
-        state = np.random.choice(environment.states)
-        for t in range(100):
-            action = np.random.choice(environment.actions)
-            next_state, reward, _ = environment.step(state, action)
-            q_table[state, action] = (1 - learning_rate) * q_table[state, action] + learning_rate * (reward + discount_factor * np.max(q_table[next_state]))
-            state = next_state
-    return q_table
+# 定义策略
+def policy(state):
+    return action_space.sample()
 
-# 实例化环境和算法
-environment = Environment()
-q_table = q_learning(environment, 1000, 0.5, 0.9)
+# 定义奖励函数
+def reward(state, action, next_state, done):
+    if done:
+        return -100
+    else:
+        return 1
 
-# 打印Q值表格
-print(q_table)
-```
+# 训练策略梯度算法
+for episode in range(num_episodes):
+    state = env.reset()
+    done = False
+    total_reward = 0
 
-# 5.未来发展趋势与挑战
+    while not done and num_steps > 0:
+        action = policy(state)
+        next_state, reward, done, _ = env.step(action)
+        total_reward += reward
+        num_steps -= 1
+        state = next_state
 
-随着人工智能技术的不断发展，概率论和统计学在强化学习中的应用将会更加广泛。未来的挑战包括：
+    # 更新策略
+    gradient = np.zeros(action_space.shape)
+    for step in range(num_steps):
+        for episode in range(num_episodes):
+            state = env.reset()
+            done = False
 
-1. 如何处理高维和连续状态和动作空间？
-2. 如何处理部分观测环境？
-3. 如何处理多代理互动的环境？
-4. 如何处理不确定性和动态环境？
+            while not done:
+                action = np.argmax([policy(state), gradient])
+                state, reward, done, _ = env.step(action)
 
-为了解决这些挑战，我们需要发展新的算法和模型，以及更有效地利用大数据和机器学习技术。
+            gradient += reward * state
 
-# 6.附录常见问题与解答
-
-在这里，我们将列出一些常见问题及其解答：
-
-1. Q-learning和深度Q-learning的区别？
-答：Q-learning是一种基于表格的方法，而深度Q-learning是一种基于神经网络的方法。深度Q-learning可以处理高维和连续状态和动作空间，但需要更多的计算资源。
-
-2. 如何选择学习率和折扣因子？
-答：学习率和折扣因子通常通过交叉验证来选择。可以尝试不同的值，并根据性能来选择最佳值。
-
-3. 如何处理稀疏奖励？
-答：稀疏奖励可能导致算法收敛缓慢。可以尝试使用更复杂的奖励函数，或者使用其他强化学习算法，如Actor-Critic。
-
-4. 如何处理多代理互动的环境？
-答：多代理互动的环境需要使用多代理强化学习算法，如Multi-Agent Q-learning或者Multi-Agent Actor-Critic。
-
-5. 如何处理不确定性和动态环境？
-答：不确定性和动态环境可以通过使用模型无关的强化学习算法来处理，如Model-Free Reinforcement Learning或者Model-Agnostic Meta-Learning。
+    # 更新策略
+    policy_gradient = np.mean(gradient / num_episodes)
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np.clip(policy_gradient, -1, 1)
+    policy_gradient *= 0.01
+    policy_gradient += policy_gradient
+    policy_gradient = np

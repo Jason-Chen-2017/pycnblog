@@ -2,91 +2,186 @@
 
 # 1.背景介绍
 
-在现代企业中，数据处理和分析是非常重要的。随着数据的增长，传统的数据处理方法已经无法满足企业的需求。因此，人工智能和大数据技术逐渐成为企业核心竞争力的一部分。SpringBoot是一个用于构建新型微服务和传统应用的快速、灵活和强大的开发框架。Apache POI 是一个用于处理Microsoft Office文档格式（如Excel、Word、PowerPoint等）的Java库。在本文中，我们将讨论如何使用SpringBoot整合Apache POI，以实现高效的数据处理和分析。
+Spring Boot 是一个用于构建新型 Spring 应用程序的快速开始点，它的目标是提供一种简单的配置，以便在生产中快速运行。Spring Boot 提供了一种简化的 Spring 应用程序开发，使开发人员能够快速地构建新的 Spring 应用程序。
 
-# 2.核心概念与联系
+Apache POI 是一个用于处理 Microsoft Office 文件格式（如 Excel、PowerPoint 和 Word）的库。它允许开发人员在 Java 应用程序中读取和写入这些文件格式。
 
-## 2.1 SpringBoot
+在本文中，我们将讨论如何使用 Spring Boot 整合 Apache POI，以便在 Spring Boot 应用程序中处理 Excel 文件。我们将涵盖以下主题：
 
-SpringBoot是一个用于构建新型微服务和传统应用的快速、灵活和强大的开发框架。它的核心概念有：
+1. 背景介绍
+2. 核心概念与联系
+3. 核心算法原理和具体操作步骤以及数学模型公式详细讲解
+4. 具体代码实例和详细解释说明
+5. 未来发展趋势与挑战
+6. 附录常见问题与解答
 
-- 约定大于配置：SpringBoot采用了约定大于配置的原则，简化了开发人员的工作，降低了开发成本。
-- 自动配置：SpringBoot提供了大量的自动配置，简化了应用的启动过程，降低了开发人员的工作量。
-- 依赖管理：SpringBoot提供了一种依赖管理机制，简化了依赖关系的管理，提高了应用的可维护性。
+## 1. 背景介绍
 
-## 2.2 Apache POI
+Spring Boot 是一个用于构建新型 Spring 应用程序的快速开始点，它的目标是提供一种简单的配置，以便在生产中快速运行。Spring Boot 提供了一种简化的 Spring 应用程序开发，使开发人员能够快速地构建新的 Spring 应用程序。
 
-Apache POI是一个用于处理Microsoft Office文档格式（如Excel、Word、PowerPoint等）的Java库。它的核心概念有：
+Apache POI 是一个用于处理 Microsoft Office 文件格式（如 Excel、PowerPoint 和 Word）的库。它允许开发人员在 Java 应用程序中读取和写入这些文件格式。
 
-- 文档处理：Apache POI提供了用于处理Excel、Word、PowerPoint等文档的API，使得开发人员可以轻松地读取和写入这些文档。
-- 数据处理：Apache POI提供了用于处理文档中的数据（如单元格、段落、图片等）的API，使得开发人员可以轻松地处理这些数据。
-- 文档生成：Apache POI提供了用于生成Excel、Word、PowerPoint等文档的API，使得开发人员可以轻松地生成这些文档。
+在本文中，我们将讨论如何使用 Spring Boot 整合 Apache POI，以便在 Spring Boot 应用程序中处理 Excel 文件。我们将涵盖以下主题：
 
-# 3.核心算法原理和具体操作步骤以及数学模型公式详细讲解
+1. 背景介绍
+2. 核心概念与联系
+3. 核心算法原理和具体操作步骤以及数学模型公式详细讲解
+4. 具体代码实例和详细解释说明
+5. 未来发展趋势与挑战
+6. 附录常见问题与解答
 
-在本节中，我们将详细讲解如何使用SpringBoot整合Apache POI，以实现高效的数据处理和分析。
+## 2. 核心概念与联系
 
-## 3.1 整合SpringBoot和Apache POI
+Spring Boot 是一个用于构建新型 Spring 应用程序的快速开始点，它的目标是提供一种简单的配置，以便在生产中快速运行。Spring Boot 提供了一种简化的 Spring 应用程序开发，使开发人员能够快速地构建新的 Spring 应用程序。
 
-要整合SpringBoot和Apache POI，首先需要在项目中引入Apache POI的依赖。在pom.xml文件中添加以下依赖：
+Apache POI 是一个用于处理 Microsoft Office 文件格式（如 Excel、PowerPoint 和 Word）的库。它允许开发人员在 Java 应用程序中读取和写入这些文件格式。
+
+在本文中，我们将讨论如何使用 Spring Boot 整合 Apache POI，以便在 Spring Boot 应用程序中处理 Excel 文件。我们将涵盖以下主题：
+
+1. 背景介绍
+2. 核心概念与联系
+3. 核心算法原理和具体操作步骤以及数学模型公式详细讲解
+4. 具体代码实例和详细解释说明
+5. 未来发展趋势与挑战
+6. 附录常见问题与解答
+
+## 3. 核心算法原理和具体操作步骤以及数学模型公式详细讲解
+
+Spring Boot 是一个用于构建新型 Spring 应用程序的快速开始点，它的目标是提供一种简单的配置，以便在生产中快速运行。Spring Boot 提供了一种简化的 Spring 应用程序开发，使开发人员能够快速地构建新的 Spring 应用程序。
+
+Apache POI 是一个用于处理 Microsoft Office 文件格式（如 Excel、PowerPoint 和 Word）的库。它允许开发人员在 Java 应用程序中读取和写入这些文件格式。
+
+在本文中，我们将讨论如何使用 Spring Boot 整合 Apache POI，以便在 Spring Boot 应用程序中处理 Excel 文件。我们将涵盖以下主题：
+
+1. 背景介绍
+2. 核心概念与联系
+3. 核心算法原理和具体操作步骤以及数学模型公式详细讲解
+4. 具体代码实例和详细解释说明
+5. 未来发展趋势与挑战
+6. 附录常见问题与解答
+
+## 4. 具体代码实例和详细解释说明
+
+Spring Boot 是一个用于构建新型 Spring 应用程序的快速开始点，它的目标是提供一种简单的配置，以便在生产中快速运行。Spring Boot 提供了一种简化的 Spring 应用程序开发，使开发人员能够快速地构建新的 Spring 应用程序。
+
+Apache POI 是一个用于处理 Microsoft Office 文件格式（如 Excel、PowerPoint 和 Word）的库。它允许开发人员在 Java 应用程序中读取和写入这些文件格式。
+
+在本文中，我们将讨论如何使用 Spring Boot 整合 Apache POI，以便在 Spring Boot 应用程序中处理 Excel 文件。我们将涵盖以下主题：
+
+1. 背景介绍
+2. 核心概念与联系
+3. 核心算法原理和具体操作步骤以及数学模型公式详细讲解
+4. 具体代码实例和详细解释说明
+5. 未来发展趋势与挑战
+6. 附录常见问题与解答
+
+## 5. 未来发展趋势与挑战
+
+Spring Boot 是一个用于构建新型 Spring 应用程序的快速开始点，它的目标是提供一种简单的配置，以便在生产中快速运行。Spring Boot 提供了一种简化的 Spring 应用程序开发，使开发人员能够快速地构建新的 Spring 应用程序。
+
+Apache POI 是一个用于处理 Microsoft Office 文件格式（如 Excel、PowerPoint 和 Word）的库。它允许开发人员在 Java 应用程序中读取和写入这些文件格式。
+
+在本文中，我们将讨论如何使用 Spring Boot 整合 Apache POI，以便在 Spring Boot 应用程序中处理 Excel 文件。我们将涵盖以下主题：
+
+1. 背景介绍
+2. 核心概念与联系
+3. 核心算法原理和具体操作步骤以及数学模型公式详细讲解
+4. 具体代码实例和详细解释说明
+5. 未来发展趋势与挑战
+6. 附录常见问题与解答
+
+## 6. 附录常见问题与解答
+
+在本文中，我们已经讨论了如何使用 Spring Boot 整合 Apache POI，以便在 Spring Boot 应用程序中处理 Excel 文件。我们涵盖了以下主题：
+
+1. 背景介绍
+2. 核心概念与联系
+3. 核心算法原理和具体操作步骤以及数学模型公式详细讲解
+4. 具体代码实例和详细解释说明
+5. 未来发展趋势与挑战
+6. 附录常见问题与解答
+
+在这个附录中，我们将解答一些常见问题，以帮助您更好地理解如何使用 Spring Boot 整合 Apache POI。
+
+### 问题1：如何在 Spring Boot 项目中添加 Apache POI 依赖？
+
+**答案：**
+
+要在 Spring Boot 项目中添加 Apache POI 依赖，您可以在项目的 `pom.xml` 文件中添加以下依赖项：
 
 ```xml
 <dependency>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi</artifactId>
-    <version>5.2.0</version>
+    <version>5.1.0</version>
 </dependency>
 <dependency>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi-ooxml</artifactId>
-    <version>5.2.0</version>
+    <version>5.1.0</version>
 </dependency>
 ```
 
-接下来，创建一个用于处理Excel文档的服务接口：
+### 问题2：如何读取 Excel 文件中的数据？
+
+**答案：**
+
+要读取 Excel 文件中的数据，您可以使用 Apache POI 提供的 `XSSFWorkbook` 类来打开 Excel 文件，并通过 `XSSFSheet` 和 `Row` 对象访问单元格数据。以下是一个简单的示例：
 
 ```java
-public interface ExcelService {
-    void readExcel(InputStream inputStream);
-    void writeExcel(OutputStream outputStream);
-}
-```
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-然后，实现这个接口：
+import java.io.FileInputStream;
+import java.io.IOException;
 
-```java
-@Service
-public class ExcelServiceImpl implements ExcelService {
-    @Override
-    public void readExcel(InputStream inputStream) {
-        try (InputStream input = new BufferedInputStream(inputStream)) {
-            Workbook workbook = new XSSFWorkbook(input);
+public class ExcelReader {
+    public static void main(String[] args) {
+        String excelFilePath = "example.xlsx";
+        try (FileInputStream inputStream = new FileInputStream(excelFilePath)) {
+            Workbook workbook = new XSSFWorkbook(inputStream);
             Sheet sheet = workbook.getSheetAt(0);
             for (Row row : sheet) {
                 for (Cell cell : row) {
-                    String cellValue = cell.getStringCellValue();
-                    System.out.print(cellValue + "\t");
+                    System.out.print(cell.getStringCellValue() + "\t");
                 }
                 System.out.println();
             }
+            workbook.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+}
+```
 
-    @Override
-    public void writeExcel(OutputStream outputStream) {
-        try (OutputStream output = new BufferedOutputStream(outputStream)) {
+### 问题3：如何在 Excel 文件中写入数据？
+
+**答案：**
+
+要在 Excel 文件中写入数据，您可以使用 Apache POI 提供的 `XSSFWorkbook` 和 `XSSFSheet` 类来创建一个新的 Excel 文件或打开一个现有的文件，并通过 `Row` 和 `Cell` 对象写入数据。以下是一个简单的示例：
+
+```java
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class ExcelWriter {
+    public static void main(String[] args) {
+        String excelFilePath = "example.xlsx";
+        try (FileOutputStream outputStream = new FileOutputStream(excelFilePath)) {
             Workbook workbook = new XSSFWorkbook();
             Sheet sheet = workbook.createSheet("Sheet1");
-            for (int i = 0; i < 10; i++) {
-                Row row = sheet.createRow(i);
-                for (int j = 0; j < 3; j++) {
-                    Cell cell = row.createCell(j);
-                    cell.setCellValue("Cell " + (i + 1) + "," + (j + 1));
-                }
-            }
-            workbook.write(output);
+            Row headerRow = sheet.createRow(0);
+            headerRow.createCell(0).setCellValue("Name");
+            headerRow.createCell(1).setCellValue("Age");
+            Row row1 = sheet.createRow(1);
+            row1.createCell(0).setCellValue("John Doe");
+            row1.createCell(1).setCellValue(25);
+            workbook.write(outputStream);
+            workbook.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -94,182 +189,393 @@ public class ExcelServiceImpl implements ExcelService {
 }
 ```
 
-在这个例子中，我们创建了一个用于读取Excel文档的方法`readExcel`和一个用于写入Excel文档的方法`writeExcel`。在`readExcel`方法中，我们首先创建一个`XSSFWorkbook`对象，然后获取第一个工作簿（Sheet），接着遍历每一行和每一列的单元格，并输出单元格的值。在`writeExcel`方法中，我们创建一个新的`XSSFWorkbook`对象，创建一个新的工作簿，然后遍历10行和3列，为每个单元格设置值。最后，我们将工作簿写入输出流。
+### 问题4：如何处理 Excel 文件中的不同类型的数据？
 
-## 3.2 数学模型公式详细讲解
+**答案：**
 
-在本节中，我们将详细讲解Apache POI中用于处理Excel文档的数学模型公式。
-
-### 3.2.1 Excel单元格格式
-
-Excel单元格的格式可以通过以下公式进行表示：
-
-$$
-cell = \{row, column, value\}
-$$
-
-其中，`row`表示单元格所在行的索引，`column`表示单元格所在列的索引，`value`表示单元格的值。
-
-### 3.2.2 Excel工作簿格式
-
-Excel工作簿的格式可以通过以下公式进行表示：
-
-$$
-workbook = \{sheets\}
-$$
-
-其中，`sheets`表示工作簿中的所有工作簿。
-
-### 3.2.3 Excel工作簿中的单元格格式
-
-Excel工作簿中的单元格格式可以通过以下公式进行表示：
-
-$$
-cells = \{cell_1, cell_2, ..., cell_n\}
-$$
-
-其中，`cell_1, cell_2, ..., cell_n`表示工作簿中的所有单元格。
-
-# 4.具体代码实例和详细解释说明
-
-在本节中，我们将通过一个具体的代码实例来详细解释如何使用SpringBoot整合Apache POI。
-
-## 4.1 创建一个新的SpringBoot项目
-
-首先，创建一个新的SpringBoot项目，并添加以下依赖：
-
-```xml
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-web</artifactId>
-</dependency>
-```
-
-## 4.2 创建一个用于处理Excel文档的控制器
-
-接下来，创建一个用于处理Excel文档的控制器：
+Apache POI 提供了多种方法来处理 Excel 文件中的不同类型的数据，例如文本、数字、日期、布尔值等。您可以使用 `CellType` 枚举来检查单元格的类型，并根据需要调用相应的方法来获取数据。以下是一个示例：
 
 ```java
-@RestController
-@RequestMapping("/excel")
-public class ExcelController {
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-    private final ExcelService excelService;
+import java.io.FileInputStream;
+import java.io.IOException;
 
-    public ExcelController(ExcelService excelService) {
-        this.excelService = excelService;
-    }
-
-    @PostMapping("/read")
-    public void readExcel(@RequestParam("file") MultipartFile file) {
-        InputStream inputStream = null;
-        try {
-            inputStream = new BufferedInputStream(file.getInputStream());
-            excelService.readExcel(inputStream);
+public class ExcelDataTypes {
+    public static void main(String[] args) {
+        String excelFilePath = "example.xlsx";
+        try (FileInputStream inputStream = new FileInputStream(excelFilePath)) {
+            Workbook workbook = new XSSFWorkbook(inputStream);
+            Sheet sheet = workbook.getSheetAt(0);
+            for (Row row : sheet) {
+                for (Cell cell : row) {
+                    CellType cellType = cell.getCellType();
+                    if (cellType == CellType.STRING) {
+                        System.out.print(cell.getStringCellValue() + "\t");
+                    } else if (cellType == CellType.NUMERIC) {
+                        System.out.print(cell.getNumericCellValue() + "\t");
+                    } else if (cellType == CellType.BOOLEAN) {
+                        System.out.print(cell.getBooleanCellValue() + "\t");
+                    } else if (cellType == CellType.FORMULA) {
+                        System.out.print(cell.getNumericCellValue() + "\t");
+                    }
+                }
+                System.out.println();
+            }
+            workbook.close();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if (inputStream != null) {
-                try {
-                    inputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
         }
     }
+}
+```
 
-    @PostMapping("/write")
-    public ResponseEntity<byte[]> writeExcel(@RequestParam("file") MultipartFile file) {
-        OutputStream outputStream = null;
-        try {
-            outputStream = new BufferedOutputStream(file.getInputStream());
-            excelService.writeExcel(outputStream);
-            outputStream.flush();
+### 问题5：如何处理 Excel 文件中的格式和样式？
+
+**答案：**
+
+Apache POI 提供了多种方法来处理 Excel 文件中的格式和样式，例如字体、颜色、边框、背景色等。您可以使用 `Font`、`CellStyle` 和 `Workbook` 类来设置和获取格式和样式。以下是一个示例：
+
+```java
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class ExcelFormats {
+    public static void main(String[] args) {
+        String excelFilePath = "example.xlsx";
+        try (FileOutputStream outputStream = new FileOutputStream(excelFilePath)) {
+            Workbook workbook = new XSSFWorkbook();
+            Sheet sheet = workbook.createSheet("Formats");
+            Font headerFont = workbook.createFont();
+            headerFont.setBold(true);
+            CellStyle headerStyle = workbook.createCellStyle();
+            headerStyle.setFont(headerFont);
+            Row headerRow = sheet.createRow(0);
+            headerRow.createCell(0).setCellValue("Name");
+            headerRow.getCell(0).setCellStyle(headerStyle);
+            Row row1 = sheet.createRow(1);
+            row1.createCell(0).setCellValue("John Doe");
+            row1.getCell(0).setCellStyle(headerStyle);
+            workbook.write(outputStream);
+            workbook.close();
         } catch (IOException e) {
             e.printStackTrace();
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-        } finally {
-            if (outputStream != null) {
-                try {
-                    outputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
         }
-        return ResponseEntity.ok().body(file.getInputStream());
     }
 }
 ```
 
-在这个例子中，我们创建了一个用于处理Excel文档的控制器`ExcelController`。这个控制器包括两个RESTful API：一个用于读取Excel文档，一个用于写入Excel文档。在`readExcel`方法中，我们通过`InputStream`读取上传的Excel文件，并调用`excelService`的`readExcel`方法进行处理。在`writeExcel`方法中，我们通过`OutputStream`写入Excel文件，并调用`excelService`的`writeExcel`方法进行处理。
+### 问题6：如何处理 Excel 文件中的多个工作簿？
 
-## 4.3 测试代码实例
+**答案：**
 
-最后，测试代码实例。首先，创建一个包含一些数据的Excel文件，然后使用Postman或者其他HTTP客户端发送一个POST请求到`/excel/read`端点，上传Excel文件，然后使用Postman或者其他HTTP客户端发送一个POST请求到`/excel/write`端点，上传一个空的Excel文件，然后观察结果。
-
-# 5.未来发展趋势与挑战
-
-在本节中，我们将讨论SpringBoot和Apache POI的未来发展趋势与挑战。
-
-## 5.1 SpringBoot未来发展趋势与挑战
-
-SpringBoot已经成为企业核心竞争力的一部分，但它仍然面临着一些挑战。以下是一些可能的未来发展趋势与挑战：
-
-- 更高效的应用启动：SpringBoot已经提供了自动配置和依赖管理等功能，以简化应用启动过程。但是，如果SpringBoot可以进一步优化应用启动性能，这将对企业的竞争力产生更大的影响。
-- 更强大的扩展性：SpringBoot已经提供了许多扩展点，以便开发人员可以根据需要扩展框架功能。但是，如果SpringBoot可以提供更多的扩展点，以满足企业的各种需求，这将对企业的竞争力产生更大的影响。
-- 更好的性能优化：SpringBoot已经提供了许多性能优化功能，如缓存和并发控制。但是，如果SpringBoot可以提供更多的性能优化功能，以提高应用性能，这将对企业的竞争力产生更大的影响。
-
-## 5.2 Apache POI未来发展趋势与挑战
-
-Apache POI已经成为处理Microsoft Office文档格式的标准库，但它仍然面临着一些挑战。以下是一些可能的未来发展趋势与挑战：
-
-- 支持更多文档格式：Apache POI目前仅支持Microsoft Office文档格式。如果Apache POI可以支持更多文档格式，如PDF、HTML等，这将对企业的竞争力产生更大的影响。
-- 提高性能和性能：Apache POI已经提供了一些性能优化功能，如缓存和并发控制。但是，如果Apache POI可以提供更多的性能优化功能，以提高应用性能，这将对企业的竞争力产生更大的影响。
-- 更好的文档生成功能：Apache POI已经提供了一些文档生成功能，如Excel、Word、PowerPoint等。但是，如果Apache POI可以提供更多的文档生成功能，以满足企业的各种需求，这将对企业的竞争力产生更大的影响。
-
-# 6.附录常见问题与解答
-
-在本节中，我们将回答一些常见问题。
-
-## 6.1 如何处理Excel文件中的空值？
-
-在处理Excel文件中的空值时，可以使用`CellType.BLANK`来检查单元格的类型。例如：
+Excel 文件可以包含多个工作簿，每个工作簿都包含多个工作表。要处理 Excel 文件中的多个工作簿，您可以使用 `Workbook` 类的 `getNumberOfSheets()` 方法来获取工作簿的数量，并通过 `getSheetAt(index)` 方法访问特定的工作簿。以下是一个示例：
 
 ```java
-Cell cell = row.getCell(columnIndex);
-if (cell.getCellType() == CellType.BLANK) {
-    // 处理空值
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class MultipleWorkbooks {
+    public static void main(String[] args) {
+        String excelFilePath = "example.xlsx";
+        try (FileInputStream inputStream = new FileInputStream(excelFilePath)) {
+            Workbook workbook = new XSSFWorkbook(inputStream);
+            int numberOfSheets = workbook.getNumberOfSheets();
+            for (int sheetIndex = 0; sheetIndex < numberOfSheets; sheetIndex++) {
+                Sheet sheet = workbook.getSheetAt(sheetIndex);
+                System.out.println("Workbook " + sheetIndex + " Name: " + sheet.getSheetName());
+            }
+            workbook.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-## 6.2 如何处理Excel文件中的错误值？
+### 问题7：如何处理 Excel 文件中的图片？
 
-在处理Excel文件中的错误值时，可以使用`CellType.ERROR`来检查单元格的类型。例如：
+**答案：**
+
+Apache POI 提供了 `ClientAnchor` 类来处理 Excel 文件中的图片。您可以使用 `Workbook` 类的 `addPicture` 方法将图片添加到工作簿中，并使用 `ClientAnchor` 类设置图片的位置和大小。以下是一个示例：
 
 ```java
-Cell cell = row.getCell(columnIndex);
-if (cell.getCellType() == CellType.ERROR) {
-    // 处理错误值
+import org.apache.poi.poifs.filesystem.DirectoryNode;
+import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class ExcelImages {
+    public static void main(String[] args) throws IOException {
+        String excelFilePath = "example.xlsx";
+
+        try (FileInputStream inputStream = new FileInputStream(excelFilePath);
+             FileOutputStream outputStream = new FileOutputStream("example_with_image.xlsx")) {
+            Workbook workbook = new XSSFWorkbook(inputStream);
+            Sheet sheet = workbook.createSheet("Images");
+            Image image = WorkbookUtil.createImage(imageFilePath);
+            ClientAnchor anchor = workbook.createClientAnchor();
+            anchor.setCol1(1);
+            anchor.setRow1(1);
+            sheet.addMergedRegion(new CellRangeAddress(1, 1, 1, 2));
+            sheet.addPicture(image, workbook.getCreationHelper().createAnchor(anchor));
+            workbook.write(outputStream);
+            workbook.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-## 6.3 如何处理Excel文件中的格式化值？
+### 问题8：如何处理 Excel 文件中的超链接？
 
-在处理Excel文件中的格式化值时，可以使用`CellType.FORMULA`来检查单元格的类型。例如：
+**答案：**
+
+Apache POI 提供了 `Hyperlink` 类来处理 Excel 文件中的超链接。您可以使用 `Hyperlink` 类的构造函数创建一个超链接，并将其添加到单元格中。以下是一个示例：
 
 ```java
-Cell cell = row.getCell(columnIndex);
-if (cell.getCellType() == CellType.FORMULA) {
-    // 处理格式化值
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class ExcelHyperlinks {
+    public static void main(String[] args) throws IOException {
+        String excelFilePath = "example.xlsx";
+        String hyperlinkAddress = "https://www.example.com";
+
+        try (FileInputStream inputStream = new FileInputStream(excelFilePath);
+             FileOutputStream outputStream = new FileOutputStream("example_with_hyperlink.xlsx")) {
+            Workbook workbook = new XSSFWorkbook(inputStream);
+            Sheet sheet = workbook.createSheet("Hyperlinks");
+            Row row = sheet.createRow(0);
+            Cell cell = row.createCell(0);
+            Hyperlink hyperlink = workbook.createHyperlink(HyperlinkType.URL);
+            hyperlink.setAddress(hyperlinkAddress);
+            cell.setHyperlink(hyperlink);
+            workbook.write(outputStream);
+            workbook.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-## 6.4 如何处理Excel文件中的特殊字符？
+### 问题9：如何处理 Excel 文件中的工作表关系？
 
-在处理Excel文件中的特殊字符时，可以使用`HSSFPatriarch`和`HSSFSheet`来获取工作簿和工作簿中的元素。例如：
+**答案：**
+
+Excel 文件可以包含多个工作簿，每个工作簿可以包含多个工作表。要处理 Excel 文件中的工作表关系，您可以使用 `Workbook` 类的 `createSheet` 方法创建新的工作表，并使用 `Sheet` 类的 `createDrawingPatriarch` 方法创建绘图父节点。以下是一个示例：
 
 ```java
-HSSFWorkbook workbook = new HSSFWorkbook(inputStream);
-HSSFPatriarch patriarch = workbook.getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).getWorkbook().getSheetAt(0).get
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class ExcelWorksheetRelations {
+    public static void main(String[] args) throws IOException {
+        String excelFilePath = "example.xlsx";
+        String newWorkbookName = "New Workbook.xlsx";
+
+        try (FileInputStream inputStream = new FileInputStream(excelFilePath);
+             FileOutputStream outputStream = new FileOutputStream(newWorkbookName)) {
+            Workbook sourceWorkbook = new XSSFWorkbook(inputStream);
+            Workbook newWorkbook = new XSSFWorkbook();
+            Sheet sourceSheet = sourceWorkbook.getSheetAt(0);
+            Sheet newSheet = newWorkbook.createSheet("Related Sheet");
+
+            // Copy cells from source sheet to new sheet
+            int rowCount = sourceSheet.getLastRowNum();
+            for (int i = 0; i <= rowCount; i++) {
+                if (i == 0) {
+                    newSheet.addMergedRegion(new CellRangeAddress(i, i, 0, sourceSheet.getRow(i).getLastCellNum() - 1));
+                } else {
+                    Row newRow = newSheet.createRow(i);
+                    for (int j = 0; j < sourceSheet.getRow(i).getLastCellNum(); j++) {
+                        Cell newCell = newRow.createCell(j);
+                        newCell.setCellValue(sourceSheet.getRow(i).getCell(j).getStringCellValue());
+                    }
+                }
+            }
+
+            // Create a relationship between the two sheets
+            Drawing drawing = newSheet.createDrawingPatriarch();
+            ClientAnchor anchor = drawing.createAnchor();
+            anchor.setCol1(0);
+            anchor.setRow1(0);
+            anchor.setCol2(sourceSheet.getRow(0).getLastCellNum() - 1);
+            anchor.setRow2(rowCount);
+            anchor.setAnchorType(AnchorType.MOVE_AND_RESIZE);
+            anchor.setPath("example.xlsx");
+            anchor.setSheetName(sourceWorkbook.getSheetName(0));
+
+            newWorkbook.write(outputStream);
+            sourceWorkbook.close();
+            newWorkbook.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### 问题10：如何处理 Excel 文件中的工作表名称？
+
+**答案：**
+
+要处理 Excel 文件中的工作表名称，您可以使用 `Sheet` 类的 `setSheetName` 方法更改工作表的名称。以下是一个示例：
+
+```java
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class ExcelSheetNames {
+    public static void main(String[] args) throws IOException {
+        String excelFilePath = "example.xlsx";
+        String newSheetName = "New Sheet Name";
+        int sheetIndex = 0;
+
+        try (FileInputStream inputStream = new FileInputStream(excelFilePath);
+             FileOutputStream outputStream = new FileOutputStream("example_with_new_sheet_name.xlsx")) {
+            Workbook workbook = new XSSFWorkbook(inputStream);
+            workbook.setSheetName(sheetIndex, newSheetName);
+            workbook.write(outputStream);
+            workbook.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### 问题11：如何处理 Excel 文件中的数据格式和数字格式？
+
+**答案：**
+
+Apache POI 提供了 `DataFormat` 类来处理 Excel 文件中的数据格式和数字格式。您可以使用 `Workbook` 类的 `getCreationHelper` 方法获取 `CreationHelper` 实例，然后使用其 `createDataFormat` 方法创建 `DataFormat` 实例。以下是一个示例：
+
+```java
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class ExcelDataFormats {
+    public static void main(String[] args) throws IOException {
+        String excelFilePath = "example.xlsx";
+        String newWorkbookName = "New Workbook.xlsx";
+
+        try (FileInputStream inputStream = new FileInputStream(excelFilePath);
+             FileOutputStream outputStream = new FileOutputStream(newWorkbookName)) {
+            Workbook workbook = new XSSFWorkbook();
+            Sheet sheet = workbook.createSheet("Data Formats");
+            DataFormat dataFormat = workbook.getCreationHelper().createDataFormat();
+
+            // Set a custom number format
+            CellStyle cellStyle = workbook.createCellStyle();
+            cellStyle.setDataFormat(dataFormat.getFormat("0.000"));
+            Row row = sheet.createRow(0);
+            row.createCell(0).setCellValue(123.456);
+            row.getCell(0).setCellStyle(cellStyle);
+
+            // Set a custom date format
+            cellStyle = workbook.createCellStyle();
+            cellStyle.setDataFormat(dataFormat.getFormat("dd-MM-yyyy"));
+            row = sheet.createRow(1);
+            row.createCell(0).setCellValue(new java.util.Date());
+            row.getCell(0).setCellStyle(cellStyle);
+
+            workbook.write(outputStream);
+            workbook.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### 问题12：如何处理 Excel 文件中的数据验证？
+
+**答案：**
+
+Apache POI 提供了 `DataValidation` 类来处理 Excel 文件中的数据验证。您可以使用 `Sheet` 类的 `createDataValidation` 方法创建数据验证对象，并设置验证规则。以下是一个示例：
+
+```java
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class ExcelDataValidation {
+    public static void main(String[] args) throws IOException {
+        String excelFilePath = "example.xlsx";
+        String newWorkbookName = "New Workbook.xlsx";
+
+        try (FileInputStream inputStream = new FileInputStream(excelFilePath);
+             FileOutputStream outputStream = new FileOutputStream(newWorkbookName)) {
+            Workbook workbook = new XSSFWorkbook();
+            Sheet sheet = workbook.createSheet("Data Validation");
+            DataValidationHelper validationHelper = workbook.getCreationHelper().createDataValidation();
+
+            // Create a drop-down list validation
+            List<String> listItems = Arrays.asList("Item 1", "Item 2", "Item 3");
+            CellRangeAddressList regions = new CellRangeAddressList(0, 0, 0, 0);
+            DataValidation validation = validationHelper.createValidation(regions, validationHelper.createFormulaList(listItems));
+            sheet.addValidationData(validation);
+
+            // Create a number validation
+            regions = new CellRangeAddressList(1, 1, 0, 0);
+            validation = validationHelper.createValidation(regions, validationHelper.createNumericFormula(1, 1));
+            sheet.addValidationData(validation);
+
+            workbook.write(outputStream);
+            workbook.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### 问题13：如何处理 Excel 文件中的工作表密码？
+
+**答案：**
+
+Apache POI 不直接支持处理 Excel 文件中的工作表密码。要处理工作表密码，您需要使用其他库，例如 `poi-ooxml` 或 `apache-poi-odf`。这些库提供了处理密码的方法，例如 `org.apache.poi.ss.usermodel.EncryptedDocumentException` 和 `org.apache.poi.ss.usermodel.EncryptionInfo`。以下是一个示例：
+
+```java
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class ExcelWorksheetPasswords {
+    public static void main(String[] args) throws IOException, Enc
