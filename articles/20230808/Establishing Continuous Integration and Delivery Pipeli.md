@@ -1,1 +1,0 @@
-36. Establishing Continuous Integration and Delivery Pipeline with Jenkins on AWS

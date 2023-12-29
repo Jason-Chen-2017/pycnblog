@@ -1,1 +1,0 @@
-F. Build Your First Docker Compose File For Your Machine Learning Application: In this tutorial, we’ll build our first Docker compose file for a machine learning application that includes a web server, database, and machine learning algorithm. 

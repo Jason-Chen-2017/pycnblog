@@ -1,1 +1,0 @@
-    for i in range(len(role_list)):

@@ -1,1 +1,0 @@
-3. Characterization and Classification of Level Set-based Smooth Functions with Application to Optimal Power Flow Analysis

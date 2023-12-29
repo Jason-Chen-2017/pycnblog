@@ -1,1 +1,0 @@
-6. Transfer Learning for Fashion Recommendation

@@ -1,1 +1,0 @@
-Introduction to Apache Kafka Messaging System

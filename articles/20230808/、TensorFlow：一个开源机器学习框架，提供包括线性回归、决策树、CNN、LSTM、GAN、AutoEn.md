@@ -1,1 +1,0 @@
-4、TensorFlow：一个开源机器学习框架，提供包括线性回归、决策树、CNN、LSTM、GAN、AutoEncoder等模型；

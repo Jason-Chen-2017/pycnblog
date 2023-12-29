@@ -1,1 +1,0 @@
-6. Adaptive Learning Platform with a Self-Regulated Curriculum for Beneficiary Groups During COVID-19 Pandemic

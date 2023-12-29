@@ -1,1 +1,0 @@
-12. Cybersecurity at the Edge: Understanding the Future of IoT Security and Its Implications on Distributed Intelligence - Catherine Williams

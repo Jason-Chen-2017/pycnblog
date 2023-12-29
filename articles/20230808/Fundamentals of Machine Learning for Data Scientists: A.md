@@ -1,1 +1,0 @@
-5. Fundamentals of Machine Learning for Data Scientists: An Introduction to the Math Behind Neural Networks and Deep Learning Algorithms

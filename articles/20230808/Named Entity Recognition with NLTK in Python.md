@@ -1,1 +1,0 @@
-Named Entity Recognition with NLTK in Python

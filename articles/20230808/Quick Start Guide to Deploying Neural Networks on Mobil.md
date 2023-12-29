@@ -1,1 +1,0 @@
-5. Quick Start Guide to Deploying Neural Networks on Mobile Devices Using Tensorflow Lite

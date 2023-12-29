@@ -1,1 +1,0 @@
-Building a Simple Recommender System: Collaborative Filtering vs Content Based Recommendation 

@@ -1,1 +1,0 @@
-	• Silhouette Coefficient，轮廓系数。Silhouette Coefficient衡量样本点与其他同簇的数据点之间的最大平均距离以及样本点与其自己簇内的平均距离的比值，从-1到1，取值为1表示两个簇完全重合，-1表示两个簇完全分开。较高的值说明聚类效果好；但一般情况下不能单纯用Silhouette Coefficient来判断聚类效果。

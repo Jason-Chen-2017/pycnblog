@@ -1,1 +1,0 @@
-Building an Image Captioning Model with CNN-RNN Architecture in Tensorflow

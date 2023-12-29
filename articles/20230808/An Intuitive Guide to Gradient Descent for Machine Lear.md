@@ -1,1 +1,0 @@
-An Intuitive Guide to Gradient Descent for Machine Learning.

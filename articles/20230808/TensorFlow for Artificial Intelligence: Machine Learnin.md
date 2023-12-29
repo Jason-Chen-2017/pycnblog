@@ -1,1 +1,0 @@
-3. TensorFlow for Artificial Intelligence: Machine Learning and Deep Learning Algorithms with Python Code 

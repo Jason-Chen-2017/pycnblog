@@ -1,1 +1,0 @@
-9. 有Apache Airflow、KubeFlow、KubeSphere等开源项目的使用经验。

@@ -1,1 +1,0 @@
-Image Captioning with Key-Value Memories

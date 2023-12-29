@@ -1,1 +1,0 @@
-Microsoft’s Project Codex: A Smart Assistive Technology To Empower Everyday People With Complex Disabilities

@@ -1,1 +1,0 @@
-3. An Introduction To SGD With Momentum And Nesterov Acceleration  

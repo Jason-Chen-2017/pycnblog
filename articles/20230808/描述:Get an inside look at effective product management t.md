@@ -1,1 +1,0 @@
-描述:Get an inside look at effective product management through an approachable, real-world lens. This guide covers everything from defining goals and objectives to planning, execution, measurement, and evaluation. You'll also find out why it matters to have a strong foundation of product knowledge. 

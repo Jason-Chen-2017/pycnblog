@@ -1,1 +1,0 @@
-3. **Linear Regression with Numpy**: Same as above but includes the use of numpy libraries for linear algebra operations.

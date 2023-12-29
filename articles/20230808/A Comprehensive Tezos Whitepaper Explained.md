@@ -1,1 +1,0 @@
-A Comprehensive Tezos Whitepaper Explained

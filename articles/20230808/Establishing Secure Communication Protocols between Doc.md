@@ -1,1 +1,0 @@
-1. Establishing Secure Communication Protocols between Doctors and Insurance Companies during COVID-19 Pandemic

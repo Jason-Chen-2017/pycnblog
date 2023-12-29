@@ -1,1 +1,0 @@
-Kangkang Zhou: Using Convolutional Neural Network to Analyze Multi-Type Clinical Documents.

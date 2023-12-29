@@ -1,1 +1,0 @@
-金融容器化: Why Banking Needs Containers in the Cloud?

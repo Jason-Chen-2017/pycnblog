@@ -1,1 +1,0 @@
-2. How To Build an Automatic Speech Recognition System: Step by Step Guide

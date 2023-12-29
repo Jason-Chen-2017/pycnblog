@@ -1,1 +1,0 @@
-2. Life of an EMR Programmer: Building a Healthcare App from Scratch

@@ -1,1 +1,0 @@
-Data driven creative thinking using machine learning. 

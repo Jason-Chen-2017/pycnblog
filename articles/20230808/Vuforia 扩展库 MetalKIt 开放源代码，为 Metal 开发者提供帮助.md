@@ -1,1 +1,0 @@
-Vuforia 扩展库 MetalKIt 开放源代码，为 Metal 开发者提供帮助

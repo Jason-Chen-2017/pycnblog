@@ -1,1 +1,0 @@
-UI自动化测试初探——Selenium IDE

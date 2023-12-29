@@ -1,1 +1,0 @@
-2.How to Master the Fundamentals of Coding: Learn to Code from Zero to Hero in Python or JavaScript - Level up Your Coding Skills by Sean Carroll

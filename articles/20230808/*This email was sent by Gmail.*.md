@@ -1,1 +1,0 @@
-*This email was sent by Gmail.*

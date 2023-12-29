@@ -1,1 +1,0 @@
-5. Training Time - While larger models may need longer training times, smaller models trained for fewer iterations still result in decent accuracy. Hence, finding the right balance between model size and training time is necessary to achieve optimal performance. 

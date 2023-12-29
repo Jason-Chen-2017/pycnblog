@@ -1,1 +1,0 @@
-a) Nikon: The Perfect Camera Set for Everyday Use in the IoT Age

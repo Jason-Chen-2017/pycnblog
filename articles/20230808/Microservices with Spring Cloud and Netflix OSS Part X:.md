@@ -1,1 +1,0 @@
-10. Microservices with Spring Cloud and Netflix OSS -Part X: Conclusion and Further Reading

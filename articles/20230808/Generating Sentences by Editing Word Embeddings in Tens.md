@@ -1,1 +1,0 @@
-Generating Sentences by Editing Word Embeddings in TensorFlow

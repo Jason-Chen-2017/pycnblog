@@ -1,1 +1,0 @@
-1. Efficient and Cost-effective Computation Offloading on Fog-to-Cloud Gateway Networks: From Theory to Practice

@@ -1,1 +1,0 @@
-Going Deeper with Convolutional Netowrks

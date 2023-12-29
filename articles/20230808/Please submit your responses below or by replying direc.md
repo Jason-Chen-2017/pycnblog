@@ -1,1 +1,0 @@
-Please submit your responses below or by replying directly to this email. Thank you!

@@ -1,1 +1,0 @@
-- Pod：Pod 是 Kubernetes 中最小的单位，也是 Kubernetes 管理的一个基本单元。Pod 中封装了一个或多个容器，共享网络命名空间和IPC命名空间，并且可以通过Labels和Selectors来定义元数据。Pod 是由一组具有相同 LivenessProbe 和 ReadinessProbe 的容器构成，并且共享资源和存储卷，从而实现可靠的网络交互和持久化存储。 

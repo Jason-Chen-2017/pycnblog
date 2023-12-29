@@ -1,1 +1,0 @@
-OpenAI’s GPT-3: Mastering Long-Term Memory and Reasoning Power 

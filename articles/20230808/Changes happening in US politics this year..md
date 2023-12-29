@@ -1,1 +1,0 @@
-Changes happening in US politics this year. 

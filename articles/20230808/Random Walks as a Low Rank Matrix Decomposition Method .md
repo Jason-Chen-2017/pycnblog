@@ -1,1 +1,0 @@
-Random Walks as a Low Rank Matrix Decomposition Method for Graph Embedding 

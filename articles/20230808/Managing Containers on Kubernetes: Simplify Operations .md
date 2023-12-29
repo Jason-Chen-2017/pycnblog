@@ -1,1 +1,0 @@
-Managing Containers on Kubernetes: Simplify Operations and Accelerate Delivery

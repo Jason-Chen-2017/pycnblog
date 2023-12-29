@@ -1,1 +1,0 @@
-Encoder layer实际上就是一个完整的编码器层，它包含了Embedding层、Positional Encoding层、Self Attention层、Feed Forward层四个部分。

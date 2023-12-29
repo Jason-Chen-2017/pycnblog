@@ -1,1 +1,0 @@
-6. Docker Essentials: A Developer-Focused Guide

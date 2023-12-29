@@ -1,1 +1,0 @@
-Structured Prediction in NLP: Probabilistic Graphical Models vs Conditional Random Fields

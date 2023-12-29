@@ -1,1 +1,0 @@
-Mastering Elasticsearch for Beginners: Understand and Implement Product Search Engine

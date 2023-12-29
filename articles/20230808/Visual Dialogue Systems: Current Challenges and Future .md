@@ -1,1 +1,0 @@
-9. Visual Dialogue Systems: Current Challenges and Future Directions

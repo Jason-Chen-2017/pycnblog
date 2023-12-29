@@ -1,1 +1,0 @@
-A Probabilistic View of Matrix Factorization: Finding Structure in NLP, Image Processing, and more

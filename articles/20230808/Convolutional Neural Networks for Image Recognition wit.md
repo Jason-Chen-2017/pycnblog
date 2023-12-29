@@ -1,1 +1,0 @@
-14. Convolutional Neural Networks for Image Recognition with Keras

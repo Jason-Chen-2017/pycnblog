@@ -1,1 +1,0 @@
-4. 【数值分析】复变函数及其求导和积分 - Derivatives and Integrals of Bivariate Functions

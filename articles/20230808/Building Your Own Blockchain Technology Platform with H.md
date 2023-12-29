@@ -1,1 +1,0 @@
-Building Your Own Blockchain Technology Platform with Hyperledger Fabric SDK

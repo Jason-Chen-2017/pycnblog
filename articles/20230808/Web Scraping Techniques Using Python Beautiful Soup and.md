@@ -1,1 +1,0 @@
-8.Web Scraping Techniques Using Python Beautiful Soup and Requests Libraries

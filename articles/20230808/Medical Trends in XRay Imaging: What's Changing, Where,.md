@@ -1,1 +1,0 @@
-5. Medical Trends in X-Ray Imaging: What's Changing, Where, and How Can We Prepare?

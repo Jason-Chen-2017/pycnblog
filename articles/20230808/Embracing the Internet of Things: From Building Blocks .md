@@ -1,1 +1,0 @@
-2.Embracing the Internet of Things: From Building Blocks to Innovative Applications with 5G Technologies 

@@ -1,1 +1,0 @@
-Rethinking Visual Recognition: Improved Model Structures and Training Techniques

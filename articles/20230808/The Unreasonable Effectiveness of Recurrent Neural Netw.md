@@ -1,1 +1,0 @@
-6. The Unreasonable Effectiveness of Recurrent Neural Networks

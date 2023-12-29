@@ -1,1 +1,0 @@
-8. Using MLOps to Scale Agile Development and Deployment

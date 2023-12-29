@@ -1,1 +1,0 @@
-10.“State-of-the-art Natural Language Generation Techniques” by Chollet et al

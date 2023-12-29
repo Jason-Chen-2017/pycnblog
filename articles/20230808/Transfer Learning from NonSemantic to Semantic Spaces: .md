@@ -1,1 +1,0 @@
-5. Transfer Learning from Non-Semantic to Semantic Spaces: A Comprehensive Survey of Methods and Trends

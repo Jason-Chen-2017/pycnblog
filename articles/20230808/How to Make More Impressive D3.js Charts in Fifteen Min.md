@@ -1,1 +1,0 @@
-2. How to Make More Impressive D3.js Charts in Fifteen Minutes or Less

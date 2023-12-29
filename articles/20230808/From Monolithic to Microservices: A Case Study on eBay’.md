@@ -1,1 +1,0 @@
-8. From Monolithic to Microservices: A Case Study on eBay’s Move from Databases to Distributed Systems

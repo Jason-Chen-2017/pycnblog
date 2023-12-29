@@ -1,1 +1,0 @@
-2. Redesigning Electronic Health Records: The FDA's Approach to Applying Modern Technologies

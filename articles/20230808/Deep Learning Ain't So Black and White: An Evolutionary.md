@@ -1,1 +1,0 @@
-1. Deep Learning Ain't So Black and White: An Evolutionary Perspective on Visual Representation Learning 

@@ -1,1 +1,0 @@
-10. Enhancing Energy Efficiency in your Microgrid by Integrating IoT Technology - Thomas Lumsdenburger

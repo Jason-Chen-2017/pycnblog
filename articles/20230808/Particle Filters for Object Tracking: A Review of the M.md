@@ -1,1 +1,0 @@
-Particle Filters for Object Tracking: A Review of the Methods and Applications 

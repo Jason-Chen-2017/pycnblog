@@ -1,1 +1,0 @@
-7. Robust Bayesian Inference with Inverse-Gamma Prior for Robust Regression

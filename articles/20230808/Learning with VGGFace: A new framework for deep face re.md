@@ -1,1 +1,0 @@
-2. Learning with VGG-Face: A new framework for deep face recognition 

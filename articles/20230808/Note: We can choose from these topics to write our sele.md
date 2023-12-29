@@ -1,1 +1,0 @@
-Note: We can choose from these topics to write our selections:

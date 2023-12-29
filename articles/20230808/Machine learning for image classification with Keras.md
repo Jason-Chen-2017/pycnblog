@@ -1,1 +1,0 @@
-5. Machine learning for image classification with Keras

@@ -1,1 +1,0 @@
-Proof-of-Stake vs. Proof-of-Work: What’s the Big Deal?

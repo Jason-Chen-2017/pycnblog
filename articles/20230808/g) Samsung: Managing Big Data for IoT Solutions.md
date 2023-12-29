@@ -1,1 +1,0 @@
-g) Samsung: Managing Big Data for IoT Solutions

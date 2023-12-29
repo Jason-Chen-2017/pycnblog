@@ -1,1 +1,0 @@
-AlphaGo: The Surprisingly Stupid Computer That Just Mastered Chess and Go

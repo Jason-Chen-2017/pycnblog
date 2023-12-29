@@ -1,1 +1,0 @@
-a) Google: The Rise of Edge Computing and its Impact on the IoT

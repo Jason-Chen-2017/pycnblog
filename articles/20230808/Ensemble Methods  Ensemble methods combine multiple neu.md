@@ -1,1 +1,0 @@
-16. Ensemble Methods - Ensemble methods combine multiple neural networks to improve accuracy and reduce variance. There are different types of ensemble methods like bagging, boosting, stacking, and voting, which can improve the accuracy of the model. Stacking combines multiple models to generate a final prediction by combining their individual predictions. 

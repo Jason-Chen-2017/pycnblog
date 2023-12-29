@@ -1,1 +1,0 @@
-目前，大部分深度学习框架已经支持深度玻尔兹曼机的建模。例如，TensorFlow、PyTorch、Keras等深度学习框架都提供了相应的API接口。下面，我们以TensorFlow为例，演示一下如何使用TensorFlow实现深度玻尔兹曼机的建模、训练、推断。

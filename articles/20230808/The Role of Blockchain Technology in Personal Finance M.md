@@ -1,1 +1,0 @@
-The Role of Blockchain Technology in Personal Finance Management

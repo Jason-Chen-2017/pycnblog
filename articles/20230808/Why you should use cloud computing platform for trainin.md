@@ -1,1 +1,0 @@
-17. Why you should use cloud computing platform for training your machine learning models?

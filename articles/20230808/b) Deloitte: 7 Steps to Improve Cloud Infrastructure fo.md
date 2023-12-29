@@ -1,1 +1,0 @@
-b) Deloitte: 7 Steps to Improve Cloud Infrastructure for IoT Security

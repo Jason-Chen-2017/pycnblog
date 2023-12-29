@@ -1,1 +1,0 @@
-Neural Network Design with Latent Factors: Exploring the Relationship between Node Connectivity and Hidden Layers in Neural Networks

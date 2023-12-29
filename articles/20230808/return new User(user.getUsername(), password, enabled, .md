@@ -1,1 +1,0 @@
-        return new User(user.getUsername(), password, enabled, accountNonExpired,

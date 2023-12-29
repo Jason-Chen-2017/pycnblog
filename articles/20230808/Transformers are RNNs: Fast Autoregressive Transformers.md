@@ -1,1 +1,0 @@
-Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention

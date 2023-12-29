@@ -1,1 +1,0 @@
-Mastering the Fundamentals of Deep Learning Algorithms in Python

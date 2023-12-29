@@ -1,1 +1,0 @@
-        del role_list[i]

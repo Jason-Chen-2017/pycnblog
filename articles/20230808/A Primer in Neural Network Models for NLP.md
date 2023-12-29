@@ -1,1 +1,0 @@
-2. A Primer in Neural Network Models for NLP

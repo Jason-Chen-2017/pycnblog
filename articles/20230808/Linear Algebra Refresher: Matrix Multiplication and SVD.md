@@ -1,1 +1,0 @@
-3. Linear Algebra Refresher: Matrix Multiplication and SVD in PyTorch

@@ -1,1 +1,0 @@
-19. Securing Artificial Intelligence Infrastructure at the Edge: Threats, Strategies, and Approaches - Julia Gray  

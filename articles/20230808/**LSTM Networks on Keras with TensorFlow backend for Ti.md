@@ -1,1 +1,0 @@
-8. **LSTM Networks on Keras with TensorFlow backend for Time Series Forecasting**: This article demonstrates how to implement Long Short Term Memory (LSTM) networks on Keras with TensorFlow backend for forecasting time series data.

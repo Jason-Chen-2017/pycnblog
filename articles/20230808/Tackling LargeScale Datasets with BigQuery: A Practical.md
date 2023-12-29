@@ -1,1 +1,0 @@
-7. Tackling Large-Scale Datasets with BigQuery: A Practical Guide

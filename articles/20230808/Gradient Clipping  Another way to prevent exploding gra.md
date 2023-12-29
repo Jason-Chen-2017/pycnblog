@@ -1,1 +1,0 @@
-8. Gradient Clipping - Another way to prevent exploding gradients is to clip them within a certain range. When the absolute value of a gradient exceeds this limit, it is scaled down proportionally to keep the magnitude under control. This reduces the risk of vanishing or exploding gradients. 

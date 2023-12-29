@@ -1,1 +1,0 @@
-Effective Visual Tracking with Multiple Object Candidates

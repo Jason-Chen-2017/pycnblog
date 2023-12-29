@@ -1,1 +1,0 @@
-10. Cooperative Transportation Using Multi-agent Reinforcement Learning in Real-time Simulation Environment

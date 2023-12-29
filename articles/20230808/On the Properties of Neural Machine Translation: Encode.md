@@ -1,1 +1,0 @@
-On the Properties of Neural Machine Translation: Encoder–Decoder Approaches

@@ -1,1 +1,0 @@
-3. Introducing Pachyderm: An Open Source Platform for Continuous Data Science

@@ -1,1 +1,0 @@
-Copyright © 2019 Machine Hearing. All rights reserved. 

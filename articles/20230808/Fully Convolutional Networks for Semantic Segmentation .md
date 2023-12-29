@@ -1,1 +1,0 @@
-Fully Convolutional Networks for Semantic Segmentation with Large-Scale Datasets

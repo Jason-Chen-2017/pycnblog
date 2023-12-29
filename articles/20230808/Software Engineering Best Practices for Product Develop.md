@@ -1,1 +1,0 @@
-Software Engineering Best Practices for Product Development.

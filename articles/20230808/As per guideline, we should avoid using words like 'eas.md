@@ -1,1 +1,0 @@
-2. As per guideline, we should avoid using words like 'easy' and'step-by-step'. 

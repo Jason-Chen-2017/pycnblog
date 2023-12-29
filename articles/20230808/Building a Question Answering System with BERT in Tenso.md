@@ -1,1 +1,0 @@
-2. Building a Question Answering System with BERT in Tensorflow 2.0

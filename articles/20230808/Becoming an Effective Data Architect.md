@@ -1,1 +1,0 @@
-4. Becoming an Effective Data Architect

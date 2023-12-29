@@ -1,1 +1,0 @@
-    if role_list[i] is None:

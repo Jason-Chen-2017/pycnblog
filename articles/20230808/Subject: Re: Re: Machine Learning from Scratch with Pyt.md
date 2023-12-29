@@ -1,1 +1,0 @@
-Subject: Re: [Re: "Machine Learning from Scratch with Python and TensorFlow 2.0" Course Comments] Reply to Your Commentary -  Article Selection

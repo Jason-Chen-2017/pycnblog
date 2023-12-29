@@ -1,1 +1,0 @@
-3. SVMs with Kernel Functions: An Introduction to the math behind support vector machines (Part III)

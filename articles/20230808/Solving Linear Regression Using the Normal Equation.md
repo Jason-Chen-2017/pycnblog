@@ -1,1 +1,0 @@
-Solving Linear Regression Using the Normal Equation

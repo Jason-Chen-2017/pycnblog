@@ -1,1 +1,0 @@
-Database Performance Optimization in MySQL.

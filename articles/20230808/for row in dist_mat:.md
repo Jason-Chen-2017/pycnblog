@@ -1,1 +1,0 @@
-    for row in dist_mat:

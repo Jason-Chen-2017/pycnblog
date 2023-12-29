@@ -1,1 +1,0 @@
-18. Taking the Edge of Life: Applying Machine Learning to Autonomous Vehicles with Drones - Ross Jones 

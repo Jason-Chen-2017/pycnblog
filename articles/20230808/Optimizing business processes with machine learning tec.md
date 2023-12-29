@@ -1,1 +1,0 @@
-6. Optimizing business processes with machine learning techniques

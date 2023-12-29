@@ -1,1 +1,0 @@
-Deep neural networks are powerful function approximators but can they be universal?

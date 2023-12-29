@@ -1,1 +1,0 @@
-5. A Hands-On Guide To Transfer Learning With Keras

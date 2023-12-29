@@ -1,1 +1,0 @@
-4. An Illustrated Guide to Convolutional Neural Networks

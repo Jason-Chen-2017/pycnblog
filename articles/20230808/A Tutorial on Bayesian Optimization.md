@@ -1,1 +1,0 @@
-1. A Tutorial on Bayesian Optimization

@@ -1,1 +1,0 @@
-R-net: An End-to-End Neural Model for Relation Extraction

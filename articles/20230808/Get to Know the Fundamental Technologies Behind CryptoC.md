@@ -1,1 +1,0 @@
-Get to Know the Fundamental Technologies Behind Crypto-Currencies

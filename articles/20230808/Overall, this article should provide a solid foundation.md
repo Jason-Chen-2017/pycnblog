@@ -1,1 +1,0 @@
-Overall, this article should provide a solid foundation in understanding how to create high-quality interactive visualizations using Bokeh, and give developers the necessary knowledge and skills to continue their journey of data visualization using Python.

@@ -1,1 +1,0 @@
-Manifold Learning for Nonlinear Dimensionality Reduction

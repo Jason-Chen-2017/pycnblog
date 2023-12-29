@@ -1,1 +1,0 @@
-1. What is the Difference Between Proximity and Location Privacy in Mobile Devices?

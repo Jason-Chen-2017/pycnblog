@@ -1,1 +1,0 @@
-    def inference(self, x):

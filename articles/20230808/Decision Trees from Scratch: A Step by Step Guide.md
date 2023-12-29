@@ -1,1 +1,0 @@
-10. Decision Trees from Scratch: A Step by Step Guide

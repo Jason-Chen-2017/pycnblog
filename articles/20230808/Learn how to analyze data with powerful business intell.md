@@ -1,1 +1,0 @@
-Learn how to analyze data with powerful business intelligence tools and techniques using R and Tableau. This article will guide you through the process of exploratory data analysis (EDA), clustering, and visualization with help from real-world examples. You'll also learn about data cleaning and transformation techniques such as imputation and normalization.

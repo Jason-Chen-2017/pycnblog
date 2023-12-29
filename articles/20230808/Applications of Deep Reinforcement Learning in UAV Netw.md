@@ -1,1 +1,0 @@
-6. Applications of Deep Reinforcement Learning in UAV Network Management. 

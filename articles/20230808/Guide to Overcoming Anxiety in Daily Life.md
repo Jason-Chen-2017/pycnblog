@@ -1,1 +1,0 @@
-7. Guide to Overcoming Anxiety in Daily Life

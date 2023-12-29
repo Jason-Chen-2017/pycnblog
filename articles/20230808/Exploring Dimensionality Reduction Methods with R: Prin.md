@@ -1,1 +1,0 @@
-8. Exploring Dimensionality Reduction Methods with R: Principle Components Analysis (PCA), Latent Semantic Analysis (LSA), and t-Distributed Stochastic Neighbor Embedding (t-SNE). 

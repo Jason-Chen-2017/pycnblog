@@ -1,1 +1,0 @@
-14. Docker + Kubernetes 简明入门

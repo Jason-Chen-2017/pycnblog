@@ -1,1 +1,0 @@
-*Please contact the sender directly regarding any suspicious activity.*

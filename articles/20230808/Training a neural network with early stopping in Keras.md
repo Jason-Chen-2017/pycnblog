@@ -1,1 +1,0 @@
-8. Training a neural network with early stopping in Keras

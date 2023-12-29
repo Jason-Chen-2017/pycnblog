@@ -1,1 +1,0 @@
-3. Transfer Learning in Computer Vision: An Illustrated Guide

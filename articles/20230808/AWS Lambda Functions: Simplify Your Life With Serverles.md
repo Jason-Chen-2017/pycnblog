@@ -1,1 +1,0 @@
-25. AWS Lambda Functions: Simplify Your Life With Serverless Computing!

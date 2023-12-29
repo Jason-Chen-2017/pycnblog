@@ -1,1 +1,0 @@
-5. A Simple Guide to Implementing an RNN in Python using Keras API

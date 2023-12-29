@@ -1,1 +1,0 @@
-In this guide, we will introduce you to the basics of TensorFlow and show you how to build your first neural network using TF 2.0. We will also walk you through some of the core concepts involved in building and training neural networks, including tensors, variables, gradients, and optimizers.

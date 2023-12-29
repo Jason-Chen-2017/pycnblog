@@ -1,1 +1,0 @@
-Feature Visualization: Visualizing the Inner Workings of Convolutional Networks (Feature Visualization: Visualizing the Inner Workings of Convolutional Networks)

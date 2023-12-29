@@ -1,1 +1,0 @@
-6. How Can Machine Learning Predict Stock Market Moves?

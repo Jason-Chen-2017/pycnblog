@@ -1,1 +1,0 @@
-10. Thinking Fast and Slow (Jossey-Bass)

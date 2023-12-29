@@ -1,1 +1,0 @@
-1. Product Designer Interviews: An Interview Guide for Beginners

@@ -1,1 +1,0 @@
-4. Run the first cell to confirm if everything is working fine. If there are any issues, try restarting the runtime and running the first cell again.

@@ -1,1 +1,0 @@
-1. Leadership and Teamwork in an Agile World: Building a Better Culture

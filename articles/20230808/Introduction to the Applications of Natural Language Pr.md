@@ -1,1 +1,0 @@
-8. Introduction to the Applications of Natural Language Processing (NLP) on Images Using Convolutional Neural Networks (CNNs)

@@ -1,1 +1,0 @@
-5. Analyzing Industrial Strategy through Blockchain "Three-D" Modeling

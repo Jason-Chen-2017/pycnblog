@@ -1,1 +1,0 @@
-7. How to Build a Continuous Integration Pipeline with Jenkins 

@@ -1,1 +1,0 @@
-【9】Word Embeddings for Natural Language Processing (NLP): A Brief Review

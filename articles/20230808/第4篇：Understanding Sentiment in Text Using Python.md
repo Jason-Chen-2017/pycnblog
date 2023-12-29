@@ -1,1 +1,0 @@
-第4篇：Understanding Sentiment in Text Using Python

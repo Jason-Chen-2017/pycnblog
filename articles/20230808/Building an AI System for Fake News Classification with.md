@@ -1,1 +1,0 @@
-2. Building an AI System for Fake News Classification with Tensorflow and Scikit Learn; 

@@ -1,1 +1,0 @@
-2. Autonomous Vehicle Platooning with Multi-Agent Reinforcement Learning

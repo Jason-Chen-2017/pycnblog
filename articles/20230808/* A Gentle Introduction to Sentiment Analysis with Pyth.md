@@ -1,1 +1,0 @@
-* A Gentle Introduction to Sentiment Analysis with Python and TextBlob Library

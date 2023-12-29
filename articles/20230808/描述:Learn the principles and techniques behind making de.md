@@ -1,1 +1,0 @@
-描述:Learn the principles and techniques behind making decisions in complex situations that require multiple approaches. Explore ways of prioritizing options, balancing competing interests, using trade-offs to achieve consensus, identifying stakeholders, evaluating alternatives based on factors such as cost, benefit, risk, feasibility, etc., and more.

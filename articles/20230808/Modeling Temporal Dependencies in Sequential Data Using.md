@@ -1,1 +1,0 @@
-Modeling Temporal Dependencies in Sequential Data Using Recurrent Neural Networks

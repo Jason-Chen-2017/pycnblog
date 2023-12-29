@@ -1,1 +1,0 @@
-10. Training Neural Network Architectures using Genetic Algorithms. 

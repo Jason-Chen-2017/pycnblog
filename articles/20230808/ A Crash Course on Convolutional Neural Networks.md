@@ -1,1 +1,0 @@
-- A Crash Course on Convolutional Neural Networks

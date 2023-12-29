@@ -1,1 +1,0 @@
-【1】潜在因子分析 (Latent Factor Analysis) 

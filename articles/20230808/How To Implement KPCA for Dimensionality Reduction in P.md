@@ -1,1 +1,0 @@
-4. How To Implement KPCA for Dimensionality Reduction in Python? (如何在 Python 中实现 KPCA 以进行降维)

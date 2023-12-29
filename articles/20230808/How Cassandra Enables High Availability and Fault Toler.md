@@ -1,1 +1,0 @@
-How Cassandra Enables High Availability and Fault Tolerance.

@@ -1,1 +1,0 @@
-3. Multi-Dimensional Scaling (MDS) - A Brief Introduction and Implementation

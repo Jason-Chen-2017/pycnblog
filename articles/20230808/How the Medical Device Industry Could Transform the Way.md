@@ -1,1 +1,0 @@
-7. How the Medical Device Industry Could Transform the Way We Think About Healthcare in the Future

@@ -1,1 +1,0 @@
-1. Adapting weakly supervised models to novel domains by transferring across representations (Fawaz et al., 2019)

@@ -1,1 +1,0 @@
-* Mastering PyTorch for Computer Vision by Implementing Advanced Algorithms

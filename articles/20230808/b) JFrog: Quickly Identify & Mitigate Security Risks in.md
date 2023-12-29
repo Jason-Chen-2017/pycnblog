@@ -1,1 +1,0 @@
-b) JFrog: Quickly Identify & Mitigate Security Risks in the IoT Ecosystem

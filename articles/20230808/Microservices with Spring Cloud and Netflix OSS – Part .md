@@ -1,1 +1,0 @@
-1. Microservices with Spring Cloud and Netflix OSS – Part I: Eureka Server

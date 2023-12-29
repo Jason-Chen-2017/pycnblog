@@ -1,1 +1,0 @@
-7. Image Captioning with Visual Attention for VQA in Scene Understanding

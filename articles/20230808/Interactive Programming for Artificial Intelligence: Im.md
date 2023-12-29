@@ -1,1 +1,0 @@
-3. Interactive Programming for Artificial Intelligence: Implementing Search Algorithms

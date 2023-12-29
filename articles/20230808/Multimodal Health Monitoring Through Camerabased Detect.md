@@ -1,1 +1,0 @@
-1. Multi-modal Health Monitoring Through Camera-based Detection and Segmentation on Android Devices

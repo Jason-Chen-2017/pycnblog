@@ -1,1 +1,0 @@
-(2) Linux命令快速入门指南【Linux Commands Quick Reference Guide】

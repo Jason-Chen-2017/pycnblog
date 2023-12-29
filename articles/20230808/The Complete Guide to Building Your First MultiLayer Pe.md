@@ -1,1 +1,0 @@
-The Complete Guide to Building Your First Multi-Layer Perceptron (MLP) in Python

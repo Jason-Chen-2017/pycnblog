@@ -1,1 +1,0 @@
-第八篇博文:Training Large-Scale Deep Convolutional Neural Networks Using Cloud TPU

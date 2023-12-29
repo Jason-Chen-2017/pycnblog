@@ -1,1 +1,0 @@
-3. Deep Learning For Beginners: Solving Regression Problems With Neural Networks

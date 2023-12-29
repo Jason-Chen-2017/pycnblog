@@ -1,1 +1,0 @@
-e) Barclays: How Personalised Finance Is Shaping the Future of IoT

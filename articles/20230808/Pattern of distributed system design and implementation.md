@@ -1,1 +1,0 @@
-Pattern of distributed system design and implementation. 

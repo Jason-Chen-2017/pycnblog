@@ -1,1 +1,0 @@
-Sentiment Analysis with TextBlob in Python.

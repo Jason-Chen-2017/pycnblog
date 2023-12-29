@@ -1,1 +1,0 @@
-Supervised, Unsupervised, and Reinforcement Learning

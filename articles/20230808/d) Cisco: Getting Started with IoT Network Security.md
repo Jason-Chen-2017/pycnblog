@@ -1,1 +1,0 @@
-d) Cisco: Getting Started with IoT Network Security

@@ -1,1 +1,0 @@
-Neural Style Transfer with Tensorflow and Python

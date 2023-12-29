@@ -1,1 +1,0 @@
-Training Large Language Models in Transformers by Repetition Penalty Regularization.

@@ -1,1 +1,0 @@
-6. Using K-Nearest Neighbors Algorithm to Classify Iris Flowers Dataset

@@ -1,1 +1,0 @@
-2. Object Detection with YOLO and OpenCV in Python

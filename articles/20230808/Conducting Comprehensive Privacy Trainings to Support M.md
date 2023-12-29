@@ -1,1 +1,0 @@
-6. Conducting Comprehensive Privacy Trainings to Support Medical Staff in Understanding Data Protection Law and Guidance during COVID-19 Pandemic

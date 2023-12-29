@@ -1,1 +1,0 @@
-e) Accenture: 5 Greatest Innovations in IoT Technology Since COVID-19

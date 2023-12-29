@@ -1,1 +1,0 @@
-1.MicroSoft announces new search engine Nike for US users 

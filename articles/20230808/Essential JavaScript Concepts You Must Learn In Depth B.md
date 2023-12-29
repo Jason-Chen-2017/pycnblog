@@ -1,1 +1,0 @@
-8. Essential JavaScript Concepts You Must Learn In Depth Before Proceeding

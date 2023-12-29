@@ -1,1 +1,0 @@
-I also suggest you to refer to related resources from your country or region such as scholarly journals and online communities, focusing on recent, popular, and interesting research and practice experience sharing. Good luck writing! 

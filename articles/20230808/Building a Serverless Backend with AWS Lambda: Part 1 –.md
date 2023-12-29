@@ -1,1 +1,0 @@
-5. Building a Serverless Backend with AWS Lambda: Part 1 – Architecture and Implementation

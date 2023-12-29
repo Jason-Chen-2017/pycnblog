@@ -1,1 +1,0 @@
-    'Customer Satisfaction': +0.5

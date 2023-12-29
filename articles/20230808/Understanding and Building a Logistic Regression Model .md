@@ -1,1 +1,0 @@
-6.Understanding and Building a Logistic Regression Model in R

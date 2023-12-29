@@ -1,1 +1,0 @@
-描述:Find out what developers really need from a company, not just what they want to hear. Discuss realistic priorities and requirements for a successful company culture, and identify key areas where tech talent is needed the most. Learn which skills are crucial, and whether dev-ops specialists should be included in the mix. 

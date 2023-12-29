@@ -1,1 +1,0 @@
-10. Streaming Video Analysis using AWS Rekognition & Kinesis Video Streams: 通过AWS Rekognition 和Kinesis Video Streams分析视频流数据。

@@ -1,1 +1,0 @@
-Actor-Critic算法 是一种离散策略学习方法。它将智能体看作是一个有观察者的actor，环境看作是智能体与其他智能体或环境互动的environment。通过最大化actor对环境的预期收益来选择行为，即选择最优的策略。其中，actor负责根据状态s决定行为a，而critic则依据a-s-r对比值来评估actor的行为。总结来说，actor-critic算法包括两部分：Actor和Critic。

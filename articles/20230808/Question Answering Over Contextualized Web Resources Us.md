@@ -1,1 +1,0 @@
-4. Question Answering Over Contextualized Web Resources Using Bidirectional LSTMs and Large Word Vector Spaces

@@ -1,1 +1,0 @@
-Image Classification with Keras and Transfer Learning.

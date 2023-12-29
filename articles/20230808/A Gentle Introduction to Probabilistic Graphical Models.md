@@ -1,1 +1,0 @@
-A Gentle Introduction to Probabilistic Graphical Models

@@ -1,1 +1,0 @@
-b. Histogram Equalization

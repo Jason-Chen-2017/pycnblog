@@ -1,1 +1,0 @@
-5、从零开始实现深度神经网络 (Implementing Deep Neural Networks from Scratch)

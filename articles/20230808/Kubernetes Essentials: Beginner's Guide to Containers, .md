@@ -1,1 +1,0 @@
-1. Kubernetes Essentials: Beginner's Guide to Containers, Clusters, and Microservices

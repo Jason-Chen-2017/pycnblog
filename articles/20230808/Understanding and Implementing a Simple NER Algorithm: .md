@@ -1,1 +1,0 @@
-3. Understanding and Implementing a Simple NER Algorithm: In this post, we learn about the basic components of a named entity recognition system and implement a simple algorithm for tokenizing input texts and labeling them according to predefined categories. Finally, we compare our implementation against existing state-of-the-art libraries like spaCy and Stanford CoreNLP.

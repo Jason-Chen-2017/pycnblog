@@ -1,1 +1,0 @@
-5. Introduction to Graphical Models and Probabilistic Reasoning (MIT Press)

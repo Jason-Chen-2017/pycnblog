@@ -1,1 +1,0 @@
-4. A Quick Guide to Understanding Artificial Intelligence in Medical Diagnostics

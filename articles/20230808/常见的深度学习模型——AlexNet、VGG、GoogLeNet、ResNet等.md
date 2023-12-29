@@ -1,1 +1,0 @@
-26. 常见的深度学习模型——AlexNet、VGG、GoogLeNet、ResNet等

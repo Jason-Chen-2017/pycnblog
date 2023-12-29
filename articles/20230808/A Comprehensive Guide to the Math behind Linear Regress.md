@@ -1,1 +1,0 @@
-A Comprehensive Guide to the Math behind Linear Regression

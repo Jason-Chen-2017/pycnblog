@@ -1,1 +1,0 @@
-- An Introduction to Token Curated Registries: Improving User Experience through Trustlessness and Scalability——代币管理的介绍；

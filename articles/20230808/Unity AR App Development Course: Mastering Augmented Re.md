@@ -1,1 +1,0 @@
-2. Unity AR App Development Course: Mastering Augmented Reality for Beginners - September 3rd, 2019 by The Chief Engineer

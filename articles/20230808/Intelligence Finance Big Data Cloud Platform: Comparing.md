@@ -1,1 +1,0 @@
-1. Intelligence Finance Big Data Cloud Platform: Comparing Open Source Encryption Algorithms and Open Source Machine Learning Frameworks

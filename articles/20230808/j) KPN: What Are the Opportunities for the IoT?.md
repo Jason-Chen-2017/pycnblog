@@ -1,1 +1,0 @@
-j) KPN: What Are the Opportunities for the IoT?

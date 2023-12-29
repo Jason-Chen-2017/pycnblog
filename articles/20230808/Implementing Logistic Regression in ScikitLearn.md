@@ -1,1 +1,0 @@
-8.Implementing Logistic Regression in Scikit-Learn

@@ -1,1 +1,0 @@
-7. Visual Perception: A Top-Down Approach (Cengage Learning)

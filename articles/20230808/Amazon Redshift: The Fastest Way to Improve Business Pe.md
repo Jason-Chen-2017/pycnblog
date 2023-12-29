@@ -1,1 +1,0 @@
-Amazon Redshift: The Fastest Way to Improve Business Performance with Big Data

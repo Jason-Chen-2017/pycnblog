@@ -1,1 +1,0 @@
-Attention-Based Convolutional Neural Network for Semantic Segmentation in Remote Sensing Images

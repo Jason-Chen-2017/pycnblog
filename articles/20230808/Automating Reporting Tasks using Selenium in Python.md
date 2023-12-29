@@ -1,1 +1,0 @@
-8. Automating Reporting Tasks using Selenium in Python

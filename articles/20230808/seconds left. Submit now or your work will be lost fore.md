@@ -1,1 +1,0 @@
-76 seconds left. Submit now or your work will be lost forever. The deadline is March 17th at midnight PST. You have 3 attempts remaining. Before you submit, make sure to check that all required fields are filled out correctly and there are no spelling mistakes. If there are any questions, please ask them in the Comments section below. Good luck! 

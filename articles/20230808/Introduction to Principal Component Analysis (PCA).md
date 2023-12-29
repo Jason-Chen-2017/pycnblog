@@ -1,1 +1,0 @@
-1. Introduction to Principal Component Analysis (PCA)

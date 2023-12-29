@@ -1,1 +1,0 @@
-Kubernetes 是 Google、Red Hat、CoreOS、IBM、微软等多家公司联合推出的开源容器编排调度系统。其主要特征如下：

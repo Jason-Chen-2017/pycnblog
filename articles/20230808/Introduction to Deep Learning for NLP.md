@@ -1,1 +1,0 @@
-2. Introduction to Deep Learning for NLP

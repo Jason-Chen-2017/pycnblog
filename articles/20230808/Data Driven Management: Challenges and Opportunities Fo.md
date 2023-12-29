@@ -1,1 +1,0 @@
-6. 《Data Driven Management: Challenges and Opportunities For Organizations》

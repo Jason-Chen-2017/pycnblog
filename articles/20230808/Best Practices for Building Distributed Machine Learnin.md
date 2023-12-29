@@ -1,1 +1,0 @@
-6. Best Practices for Building Distributed Machine Learning Systems with Apache Spark

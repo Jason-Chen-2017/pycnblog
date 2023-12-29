@@ -1,1 +1,0 @@
-        for j in range(total_batch):

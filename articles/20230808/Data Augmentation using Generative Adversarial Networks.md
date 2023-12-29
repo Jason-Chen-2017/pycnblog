@@ -1,1 +1,0 @@
-Data Augmentation using Generative Adversarial Networks

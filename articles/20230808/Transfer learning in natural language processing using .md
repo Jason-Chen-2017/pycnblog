@@ -1,1 +1,0 @@
-7. Transfer learning in natural language processing using pre-trained word embeddings and BERT

@@ -1,1 +1,0 @@
-5. NumPy简介：让你眼前一亮的科学计算库 - A Quick Intro to the Powerful Scientific Computing Library NumPy

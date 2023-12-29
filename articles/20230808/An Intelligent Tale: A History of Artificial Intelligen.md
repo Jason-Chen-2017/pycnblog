@@ -1,1 +1,0 @@
-1. An Intelligent Tale: A History of Artificial Intelligence (AI) and How it is Transforming our World

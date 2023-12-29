@@ -1,1 +1,0 @@
-4. Introduction to the Actor-Critic Model in Reinforcement Learning

@@ -1,1 +1,0 @@
-Optimizing Memory Usage With PostgreSQL Indexes And Aggregates

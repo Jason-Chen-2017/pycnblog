@@ -1,1 +1,0 @@
-Elasticsearch Essentials: Core Concepts, APIs and Architecture

@@ -1,1 +1,0 @@
-2. Natural Language Generation: Techniques, Tools, and Approaches (Morgan Kaufmann)

@@ -1,1 +1,0 @@
-【6】Deep Learning for Computer Vision: A Quick Guide for Beginners

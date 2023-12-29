@@ -1,1 +1,0 @@
-7. Understanding Transfer Learning for Computer Vision Applications

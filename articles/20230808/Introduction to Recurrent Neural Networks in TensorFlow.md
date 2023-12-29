@@ -1,1 +1,0 @@
-Introduction to Recurrent Neural Networks in TensorFlow. Part I - RNNs

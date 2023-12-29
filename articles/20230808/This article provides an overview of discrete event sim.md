@@ -1,1 +1,0 @@
-This article provides an overview of discrete event simulation (DES), including the main components such as events, states, resources, and decision-making models. It also discusses various applications of DES in healthcare, ranging from clinical trials to resource allocation and patient flow management.

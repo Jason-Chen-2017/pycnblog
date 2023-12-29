@@ -1,1 +1,0 @@
-   matrices decompose into users and items latent factors. recommendation systems focus on using these latent factors to recommend products or services to a user based on their past behavior. the popularization of matrix decomposition techniques in recommender systems is due to their ability to handle large datasets and exploit sparsity. 

@@ -1,1 +1,0 @@
-2. How the Mobile VR Application Handover Experience Impacts User Engagement and Retention Rate in Gaming

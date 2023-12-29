@@ -1,1 +1,0 @@
-Machine Learning Cheat Sheet: Python Edition

@@ -1,1 +1,0 @@
-15. Creating Timelapse Video Maps with Point Cloud Data in Google Earth Engine  

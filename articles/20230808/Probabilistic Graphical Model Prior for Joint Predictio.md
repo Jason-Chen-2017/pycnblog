@@ -1,1 +1,0 @@
-27. Probabilistic Graphical Model Prior for Joint Prediction of Interaction and Functionality in Neuron Systems

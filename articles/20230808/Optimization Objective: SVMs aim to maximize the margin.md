@@ -1,1 +1,0 @@
-3. Optimization Objective: SVMs aim to maximize the margin between the separating hyperplane and the closest training instances, whereas perceptrons minimize their error rate. 

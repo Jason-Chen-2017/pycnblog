@@ -1,1 +1,0 @@
-Pruning Filters for Efficient CNNs

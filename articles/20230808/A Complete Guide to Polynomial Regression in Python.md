@@ -1,1 +1,0 @@
-A Complete Guide to Polynomial Regression in Python

@@ -1,1 +1,0 @@
-8. Building Visual Question Answering Systems using CNN and PyTorch

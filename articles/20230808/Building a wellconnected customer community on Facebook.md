@@ -1,1 +1,0 @@
-Building a well-connected customer community on Facebook not only helps establish credibility as a trusted source but also creates valuable relationships with existing customers and new ones alike. One way to build this community involves integrating content, providing support, and offering discounts and benefits. 

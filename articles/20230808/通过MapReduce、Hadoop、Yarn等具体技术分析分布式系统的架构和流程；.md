@@ -1,1 +1,0 @@
-2. 通过MapReduce、Hadoop、Yarn等具体技术分析分布式系统的架构和流程；

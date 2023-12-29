@@ -1,1 +1,0 @@
-7. Deep Learning from Scratch

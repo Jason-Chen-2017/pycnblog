@@ -1,1 +1,0 @@
-Reinforcement Learning from Scratch: Upper Confidence Bound Method Implementation with OpenAI Gym and Python

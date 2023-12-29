@@ -1,1 +1,0 @@
-Jeddah, Kingdom of Saudi Arabia

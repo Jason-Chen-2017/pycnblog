@@ -1,1 +1,0 @@
-9. Scaling Out PostgreSQL with Docker Containers

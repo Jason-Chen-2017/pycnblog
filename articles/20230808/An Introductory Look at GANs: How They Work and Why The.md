@@ -1,1 +1,0 @@
-An Introductory Look at GANs: How They Work and Why They Matter

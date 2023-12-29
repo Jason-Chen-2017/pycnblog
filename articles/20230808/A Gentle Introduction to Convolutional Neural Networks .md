@@ -1,1 +1,0 @@
-7. A Gentle Introduction to Convolutional Neural Networks for NLP 

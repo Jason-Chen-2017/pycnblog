@@ -1,1 +1,0 @@
-18. Building A Simple Image Classifier With Deep Learning In Python Using Keras And TensorFlow

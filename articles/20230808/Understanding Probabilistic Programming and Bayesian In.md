@@ -1,1 +1,0 @@
-Understanding Probabilistic Programming and Bayesian Inference for Machine Learning

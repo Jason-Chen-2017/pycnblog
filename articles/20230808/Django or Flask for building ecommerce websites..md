@@ -1,1 +1,0 @@
-Django or Flask for building e-commerce websites. 

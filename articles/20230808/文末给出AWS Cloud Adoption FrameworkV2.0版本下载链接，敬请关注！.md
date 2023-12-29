@@ -1,1 +1,0 @@
-文末给出《AWS Cloud Adoption Framework》V2.0版本下载链接，敬请关注！ 

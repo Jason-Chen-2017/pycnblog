@@ -1,1 +1,0 @@
-8.5G Systems Architecture: Advanced Concepts, Challenges and Opportunities 

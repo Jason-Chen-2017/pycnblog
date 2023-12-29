@@ -1,1 +1,0 @@
-10. Delivering Self-Driving Cars On Time And In Style: Requirements Gathering, Design Principles, and Strategies

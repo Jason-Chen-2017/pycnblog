@@ -1,1 +1,0 @@
-"Bringing Robotics into Industrial Automation with Neural Networks" by Computerphile

@@ -1,1 +1,0 @@
-Understanding Natural Language Processing (NLP) Fundamentals.

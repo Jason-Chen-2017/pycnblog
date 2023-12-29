@@ -1,1 +1,0 @@
-5. Making AI Real: Understanding and Designing Human-Centered Machine Learning Systems (Morgan Kaufmann)

@@ -1,1 +1,0 @@
-7. Self-Supervised Monocular Depth Estimation Using Multi-View Consistency and a Dual-Stream Network (CVPR2019)

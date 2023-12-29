@@ -1,1 +1,0 @@
-4. Using Fargate in Amazon ECS to Run Containers at Scale: 使用Fargate在Amazon ECS上运行容器的扩展性

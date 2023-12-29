@@ -1,1 +1,0 @@
-第十条: 深度学习从入门到炼丹有哪些建议？ Deep Learning - Anatomy and Physiology of Neural Networks (Tutorial) 

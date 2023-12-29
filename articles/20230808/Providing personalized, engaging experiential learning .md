@@ -1,1 +1,0 @@
-8. Providing personalized, engaging experiential learning experiences with an AI powered mobile app for kids on a daily basis using TensorFlow Lite and Google Cloud Platform

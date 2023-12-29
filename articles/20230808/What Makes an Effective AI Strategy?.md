@@ -1,1 +1,0 @@
-《What Makes an Effective AI Strategy?》

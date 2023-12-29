@@ -1,1 +1,0 @@
-print("Top Markets by TOPSIS:")

@@ -1,1 +1,0 @@
-d. Frequency Domain Filtering Using Fourier Transform

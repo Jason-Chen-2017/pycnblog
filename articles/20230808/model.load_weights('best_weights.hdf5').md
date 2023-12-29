@@ -1,1 +1,0 @@
-model.load_weights('best_weights.hdf5')

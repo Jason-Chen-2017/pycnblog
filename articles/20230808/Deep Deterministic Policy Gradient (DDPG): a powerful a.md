@@ -1,1 +1,0 @@
-9. Deep Deterministic Policy Gradient (DDPG): a powerful algorithm that solves many RL problems (policy gradient methods + DQN combination)

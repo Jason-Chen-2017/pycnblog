@@ -1,1 +1,0 @@
-8. Algorithmic Game Theory (Cambridge University Press)

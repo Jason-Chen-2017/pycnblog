@@ -1,1 +1,0 @@
-5. End-to-End Sequence Labeling for Named Entity Recognition using TensorFlow (BiLSTM + CRF)

@@ -1,1 +1,0 @@
-8. A beginner's guide to AWS Lambda Function 

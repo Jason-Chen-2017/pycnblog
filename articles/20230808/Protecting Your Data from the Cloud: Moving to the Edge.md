@@ -1,1 +1,0 @@
-6. Protecting Your Data from the Cloud: Moving to the Edge Using Intel's Industrial Gateway - Kate Brewer

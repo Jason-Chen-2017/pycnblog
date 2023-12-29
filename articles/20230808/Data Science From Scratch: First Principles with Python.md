@@ -1,1 +1,0 @@
-Data Science From Scratch: First Principles with Python (Statistics & Mathematics for Data Science)

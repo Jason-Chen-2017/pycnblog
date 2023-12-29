@@ -1,1 +1,0 @@
-    Policy Gradient算法是Deep Reinforcement Learning的基础性方法之一。其特点是在连续动作空间下，通过求取动作概率的期望来完成策略梯度的反向传播。

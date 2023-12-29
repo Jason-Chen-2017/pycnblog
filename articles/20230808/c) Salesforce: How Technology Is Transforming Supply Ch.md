@@ -1,1 +1,0 @@
-c) Salesforce: How Technology Is Transforming Supply Chain Management in the IoT Age

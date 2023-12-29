@@ -1,1 +1,0 @@
-6. Why is Interactive Data Visualization So Important?

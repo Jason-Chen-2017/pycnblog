@@ -1,1 +1,0 @@
-On The Intersection Of Language And Vision For Robotic Object Manipulation (On The Intersection Of Language And Vision For Robotic Object Manipulation)

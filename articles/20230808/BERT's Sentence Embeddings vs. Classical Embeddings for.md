@@ -1,1 +1,0 @@
-BERT's Sentence Embeddings vs. Classical Embeddings for Text Similarity

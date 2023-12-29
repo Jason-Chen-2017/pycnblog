@@ -1,1 +1,0 @@
-The Loss Surfaces of Multilayer Networks (Loss Surfaces of Multilayer Networks)

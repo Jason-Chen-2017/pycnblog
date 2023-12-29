@@ -1,1 +1,0 @@
-d) Telefonica: 8 Important Trends to Watch for in IoT Operations

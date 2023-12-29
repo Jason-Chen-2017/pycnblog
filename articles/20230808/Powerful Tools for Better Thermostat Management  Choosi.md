@@ -1,1 +1,0 @@
-8. Powerful Tools for Better Thermostat Management - Choosing the Right Thermostat Technology is Important for a Healthy Home

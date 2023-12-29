@@ -1,1 +1,0 @@
-A. TensorFlow Serving with Docker: How to serve machine learning models in production and how to deploy it using Docker containerization technique?

@@ -1,1 +1,0 @@
-3. A Comprehensive Guide to Using Tableau Public as a Data Analyst

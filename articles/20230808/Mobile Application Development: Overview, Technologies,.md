@@ -1,1 +1,0 @@
-8. Mobile Application Development: Overview, Technologies, and Tools

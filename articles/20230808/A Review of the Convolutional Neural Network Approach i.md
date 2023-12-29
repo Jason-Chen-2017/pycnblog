@@ -1,1 +1,0 @@
-A Review of the Convolutional Neural Network Approach in Natural Language Processing

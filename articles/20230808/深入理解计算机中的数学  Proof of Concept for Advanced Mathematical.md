@@ -1,1 +1,0 @@
-1. 深入理解计算机中的数学 - Proof of Concept for Advanced Mathematical Functions in Computer Architecture

@@ -1,1 +1,0 @@
-Semi-Supervised Knowledge Transfer for Cross-View Geo-Localization

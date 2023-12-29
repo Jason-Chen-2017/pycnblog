@@ -1,1 +1,0 @@
-4.Logistic Regression for Beginners: A Step-by-Step Guide

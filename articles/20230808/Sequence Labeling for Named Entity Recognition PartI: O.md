@@ -1,1 +1,0 @@
-4. Sequence Labeling for Named Entity Recognition Part-I: Overview of Tagging Techniques

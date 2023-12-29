@@ -1,1 +1,0 @@
-4. Mastering the game of Go without human knowledge using Deep Neural Networks and Reinforcement Learning (AlphaGo + RL)

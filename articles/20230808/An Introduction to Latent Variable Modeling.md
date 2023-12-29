@@ -1,1 +1,0 @@
-3. An Introduction to Latent Variable Modeling

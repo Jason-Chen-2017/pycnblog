@@ -1,1 +1,0 @@
-a) IBM: How AI is Changing the Internet of Things

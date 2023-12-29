@@ -1,1 +1,0 @@
-Content Based Recommendations with SciKit-Learn.

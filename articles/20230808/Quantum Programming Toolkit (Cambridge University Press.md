@@ -1,1 +1,0 @@
-5. Quantum Programming Toolkit (Cambridge University Press)

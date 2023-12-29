@@ -1,1 +1,0 @@
-3. Data Architecture for Everyone Part 2: Key Design Considerations for Data Systems

@@ -1,1 +1,0 @@
-7. Basic Concepts in Quantum Mechanics and Cryptography: An Interactive Approach

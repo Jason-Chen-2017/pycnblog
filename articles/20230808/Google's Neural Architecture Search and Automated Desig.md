@@ -1,1 +1,0 @@
-4. Google's Neural Architecture Search and Automated Design is Ready to Scale Up for All Applications

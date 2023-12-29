@@ -1,1 +1,0 @@
-An Overview of Kernel Methods for Machine Learning with Applications in Finance and Bioinformatics.

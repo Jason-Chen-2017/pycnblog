@@ -1,1 +1,0 @@
-I apologize for the delay in response. I appreciate your interest and efforts to contribute towards this initiative. However, due to the limited number of reviewers available at the moment, it may take some time before we can review all the suggested articles or even select a few that are relevant. 

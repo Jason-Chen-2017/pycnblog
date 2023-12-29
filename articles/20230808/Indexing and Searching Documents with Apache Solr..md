@@ -1,1 +1,0 @@
-Indexing and Searching Documents with Apache Solr.

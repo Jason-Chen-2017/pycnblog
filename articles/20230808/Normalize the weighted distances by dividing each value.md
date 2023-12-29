@@ -1,1 +1,0 @@
-3. Normalize the weighted distances by dividing each value with the total sum of absolute weighted distances.

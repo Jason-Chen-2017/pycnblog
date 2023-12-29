@@ -1,1 +1,0 @@
-c) GE Digital: Best Practices for Conducting Effective IoT Maintenance and Support

@@ -1,1 +1,0 @@
-Face Detection with Python and OpenCV

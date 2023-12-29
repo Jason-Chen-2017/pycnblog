@@ -1,1 +1,0 @@
-10. How to build an end-to-end data pipeline using open source tools such as Kafka Connect and Hadoop

@@ -1,1 +1,0 @@
-NLU(Natural Language Understanding):自然语言理解，就是让计算机理解并完成人类的日常语言表达，包括语音识别、翻译、意图识别、知识抽取等功能。

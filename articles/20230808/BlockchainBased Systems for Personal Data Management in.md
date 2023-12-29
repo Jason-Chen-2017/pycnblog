@@ -1,1 +1,0 @@
-Blockchain-Based Systems for Personal Data Management in Healthcare Industry

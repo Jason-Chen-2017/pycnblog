@@ -1,1 +1,0 @@
-8. Design Principles and Best Practices of Distributed Database Management System TiDB

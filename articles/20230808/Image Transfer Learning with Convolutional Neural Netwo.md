@@ -1,1 +1,0 @@
-6. Image Transfer Learning with Convolutional Neural Networks (CNN) and Domain Adaptation

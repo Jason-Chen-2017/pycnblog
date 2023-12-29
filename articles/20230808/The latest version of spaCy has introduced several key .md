@@ -1,1 +1,0 @@
-The latest version of spaCy has introduced several key features such as speed, scalability, and performance improvements that enable it to handle larger volumes of text more efficiently. In this blog post, you will get an overview of these updates and learn how to take advantage of them in your own projects.

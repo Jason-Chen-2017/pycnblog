@@ -1,1 +1,0 @@
-3. SVM and Logistic Regression from scratch in Python 

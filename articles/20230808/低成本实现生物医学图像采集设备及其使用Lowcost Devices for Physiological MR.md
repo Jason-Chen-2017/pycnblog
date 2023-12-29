@@ -1,1 +1,0 @@
-低成本实现生物医学图像采集设备及其使用Low-cost Devices for Physiological MRI Acquisition and Use

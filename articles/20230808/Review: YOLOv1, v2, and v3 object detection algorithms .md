@@ -1,1 +1,0 @@
-3. Review: YOLOv1, v2, and v3 object detection algorithms compared 

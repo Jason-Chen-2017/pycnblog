@@ -1,1 +1,0 @@
-5. Effective Debugging: 66 Specific Methods for Finding and Fixing Bugs by Shawn Wang 

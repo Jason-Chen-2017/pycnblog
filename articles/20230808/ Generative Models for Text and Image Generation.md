@@ -1,1 +1,0 @@
-- Generative Models for Text and Image Generation

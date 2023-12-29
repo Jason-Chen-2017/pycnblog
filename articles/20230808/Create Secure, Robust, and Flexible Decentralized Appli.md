@@ -1,1 +1,0 @@
-Create Secure, Robust, and Flexible Decentralized Applications with Solidity Programming Language

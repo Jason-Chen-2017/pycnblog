@@ -1,1 +1,0 @@
-3. Improving Network Intrusion Detection with Feature Selection and Fisher Vectors

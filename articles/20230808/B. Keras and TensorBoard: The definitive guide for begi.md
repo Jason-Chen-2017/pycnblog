@@ -1,1 +1,0 @@
-B. Keras and TensorBoard: The definitive guide for beginners

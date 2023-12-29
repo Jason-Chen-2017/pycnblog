@@ -1,1 +1,0 @@
-7. Understanding Convolutional Neural Networks (CNN) for Image Classification

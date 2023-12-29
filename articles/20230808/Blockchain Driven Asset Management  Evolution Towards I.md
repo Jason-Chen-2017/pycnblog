@@ -1,1 +1,0 @@
-Blockchain Driven Asset Management - Evolution Towards Interoperability and Scalability

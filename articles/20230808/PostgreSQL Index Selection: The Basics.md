@@ -1,1 +1,0 @@
-9.《PostgreSQL Index Selection: The Basics》

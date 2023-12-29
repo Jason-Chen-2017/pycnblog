@@ -1,1 +1,0 @@
-10+ years of experience in international marketing communications, having worked for various companies such as Apple, IBM, Microsoft, and Nokia. Experience includes market research, industry insights, competitive analysis, consumer behavior analysis, pricing strategy, and content creation. 

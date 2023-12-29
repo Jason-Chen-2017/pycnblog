@@ -1,1 +1,0 @@
-- A Review on the Applications of Convolutional Neural Networks in Medical Image Analysis[6]

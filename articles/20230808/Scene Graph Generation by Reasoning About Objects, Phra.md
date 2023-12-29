@@ -1,1 +1,0 @@
-Scene Graph Generation by Reasoning About Objects, Phrases and Relations in a Scene

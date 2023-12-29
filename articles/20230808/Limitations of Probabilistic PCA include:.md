@@ -1,1 +1,0 @@
-Limitations of Probabilistic PCA include:

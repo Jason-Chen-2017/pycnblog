@@ -1,1 +1,0 @@
--"Introduction to ELT (Extract, Load, Transform)" - Practitioner, Business Intelligence Platform (Author)

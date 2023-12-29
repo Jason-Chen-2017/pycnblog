@@ -1,1 +1,0 @@
-9. Speaker Identification using Neural Networks based on Fisher Discriminant Analysis

@@ -1,1 +1,0 @@
-7. Python Basics – An Introduction for Beginners

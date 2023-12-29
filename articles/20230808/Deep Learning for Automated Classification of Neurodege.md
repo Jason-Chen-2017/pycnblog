@@ -1,1 +1,0 @@
-4. Deep Learning for Automated Classification of Neurodegenerative Diseases

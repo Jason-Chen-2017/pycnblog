@@ -1,1 +1,0 @@
-3. A Visual Explanation of Logistic Regression

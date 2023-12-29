@@ -1,1 +1,0 @@
-Flying Pilots, Guitarists and Composer Trainers: A Tale of Two Disciplines

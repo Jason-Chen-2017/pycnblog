@@ -1,1 +1,0 @@
-7. Building Scalable Data Pipelines at Scale With Apache Airflow

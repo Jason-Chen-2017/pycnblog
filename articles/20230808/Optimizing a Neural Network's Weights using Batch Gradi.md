@@ -1,1 +1,0 @@
-Optimizing a Neural Network's Weights using Batch Gradient Descent

@@ -1,1 +1,0 @@
-8. Definition and Transmission Channel Types: Definitons and Tranmission Channel Types in Information Transfer

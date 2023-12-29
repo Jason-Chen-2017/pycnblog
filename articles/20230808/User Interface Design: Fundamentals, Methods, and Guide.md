@@ -1,1 +1,0 @@
-6. User Interface Design: Fundamentals, Methods, and Guidelines

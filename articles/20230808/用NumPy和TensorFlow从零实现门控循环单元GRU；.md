@@ -1,1 +1,0 @@
-6. 用NumPy和TensorFlow从零实现门控循环单元GRU；

@@ -1,1 +1,0 @@
-9. Bitcoin vs Ether: Which Is Better for Newbies?

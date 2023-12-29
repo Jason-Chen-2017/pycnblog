@@ -1,1 +1,0 @@
-6. Building a Chatbot From Scratch using PyTorch and Tensorflow: Part I - Developing an Intelligent Assistant

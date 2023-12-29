@@ -1,1 +1,0 @@
-How Bitcoin Works: A Beginner’s Guide to the Technology that Powers Money

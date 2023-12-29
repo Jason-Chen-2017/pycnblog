@@ -1,1 +1,0 @@
-42. All You Need to Know About Log4j Vulnerabilities and Mitigation Strategies

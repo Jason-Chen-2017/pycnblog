@@ -1,1 +1,0 @@
-2. Inverse Reinforcement Learning: Learn skills from humans rather than machines. 

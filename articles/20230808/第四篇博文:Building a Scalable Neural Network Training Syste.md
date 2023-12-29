@@ -1,1 +1,0 @@
-第四篇博文:Building a Scalable Neural Network Training System using Distributed Computing

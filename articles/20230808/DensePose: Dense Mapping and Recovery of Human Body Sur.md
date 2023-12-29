@@ -1,1 +1,0 @@
-DensePose: Dense Mapping and Recovery of Human Body Surface Shapes (DensePose: Dense Mapping and Recovery of Human Body Surface Shapes)

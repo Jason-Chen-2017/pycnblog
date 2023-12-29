@@ -1,1 +1,0 @@
-RUN apk add --no-cache go musl-dev git

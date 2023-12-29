@@ -1,1 +1,0 @@
-Data visualization tools have been proven to be very effective in understanding relationships between variables and conveying critical information to decision makers. When working with big datasets, interactive visualizations are key to quickly identifying patterns and outliers, leading to better insights and improved decision-making.

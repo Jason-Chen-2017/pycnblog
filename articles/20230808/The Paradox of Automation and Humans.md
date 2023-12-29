@@ -1,1 +1,0 @@
-2. The Paradox of Automation and Humans

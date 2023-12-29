@@ -1,1 +1,0 @@
-3. "A Survey on Deep Learning and Applications in Brain Computer Interfacing"

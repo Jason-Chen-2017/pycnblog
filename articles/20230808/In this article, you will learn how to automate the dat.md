@@ -1,1 +1,0 @@
-In this article, you will learn how to automate the data cleaning process using pandas and open refine by creating scripts that can automatically detect and correct errors in raw data. This tool is ideal when dealing with large datasets where manual data cleaning could take several days or even weeks to complete. 

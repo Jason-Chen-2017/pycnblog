@@ -1,1 +1,0 @@
-A Gentle Introduction to Recurrent Neural Networks (RNN) - Machine Learning Mastery

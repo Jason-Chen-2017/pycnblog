@@ -1,1 +1,0 @@
-12. Data Augmentation Techniques for improving accuracy of CNN based image recognition model

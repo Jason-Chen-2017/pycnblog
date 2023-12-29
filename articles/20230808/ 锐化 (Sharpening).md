@@ -1,1 +1,0 @@
-- 锐化 (Sharpening)

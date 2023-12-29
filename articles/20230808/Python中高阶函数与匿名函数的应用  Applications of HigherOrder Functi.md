@@ -1,1 +1,0 @@
-2. Python中高阶函数与匿名函数的应用 - Applications of Higher-Order Functions and Anonymous Functions in Python

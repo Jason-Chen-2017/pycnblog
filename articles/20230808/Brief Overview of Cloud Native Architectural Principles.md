@@ -1,1 +1,0 @@
-40. Brief Overview of Cloud Native Architectural Principles

@@ -1,1 +1,0 @@
-Finally, as a person who loves to learn and challenge myself, I take pride in being transparent and open in all my interactions. This helps me build trust and credibility among colleagues, partners, and customers alike.   

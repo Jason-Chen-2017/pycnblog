@@ -1,1 +1,0 @@
-英文：How to Train an Image Classifier using Transfer Learning and TensorFlow's Inception V3

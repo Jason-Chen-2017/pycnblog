@@ -1,1 +1,0 @@
-D. Solving Problems Using Deep Learning Techniques

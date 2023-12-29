@@ -1,1 +1,0 @@
-(5) 命令行终端学习教程与常用命令速查表【Command Line Essentials — The Complete Command Line Crash Course for Beginners】

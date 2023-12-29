@@ -1,1 +1,0 @@
-面向资源限制场景下的语义分割方法综述Understanding Semantic Segmentation with Limited Resources for Medical Imaging

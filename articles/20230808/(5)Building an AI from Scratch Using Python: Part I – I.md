@@ -1,1 +1,0 @@
-(5)“Building an AI from Scratch Using Python: Part I – Introduction and Requirements”

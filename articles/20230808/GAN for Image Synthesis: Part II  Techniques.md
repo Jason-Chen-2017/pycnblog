@@ -1,1 +1,0 @@
-7. GAN for Image Synthesis: Part II - Techniques

@@ -1,1 +1,0 @@
-16. End-to-End Secure Supply Chain Management using IoT and Blockchain Technology - Juho Vepsäläinen  

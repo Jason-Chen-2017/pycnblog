@@ -1,1 +1,0 @@
-第八条: 分布式系统设计模式及其实现 Patterns of Distributed Systems Design and Implementation 

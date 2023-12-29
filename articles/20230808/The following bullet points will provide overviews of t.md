@@ -1,1 +1,0 @@
-2. The following bullet points will provide overviews of the types of articles contained within the relevant categories:

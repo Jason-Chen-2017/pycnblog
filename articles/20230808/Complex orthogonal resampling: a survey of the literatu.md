@@ -1,1 +1,0 @@
-2. Complex orthogonal resampling: a survey of the literature with emphasis on sparse recovery problems, Baptiste Bellec, Cahier des Sciences du Numérique, September 2018, ISSN 2001-030X, DOI: 10.1016/j.csda.2018.04.005

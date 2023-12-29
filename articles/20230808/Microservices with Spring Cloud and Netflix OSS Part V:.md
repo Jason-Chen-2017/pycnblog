@@ -1,1 +1,0 @@
-5. Microservices with Spring Cloud and Netflix OSS -Part V: Hystrix Circuit Breaker to Handle Failures

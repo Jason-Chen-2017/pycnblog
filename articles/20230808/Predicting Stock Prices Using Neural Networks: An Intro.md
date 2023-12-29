@@ -1,1 +1,0 @@
-9. Predicting Stock Prices Using Neural Networks: An Introductory Guide 

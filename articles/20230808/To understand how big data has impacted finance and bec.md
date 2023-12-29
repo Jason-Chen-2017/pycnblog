@@ -1,1 +1,0 @@
-To understand how big data has impacted finance and become a disruptive force, we need to start with understanding what financial firms are doing today. This book is an in-depth review of the history of financial services companies, covering their development from trading companies like Goldman Sachs and Schwab to digital platforms like Robinhood and Vanguard. 

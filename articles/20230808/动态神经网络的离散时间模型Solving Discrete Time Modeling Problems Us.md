@@ -1,1 +1,0 @@
-动态神经网络的离散时间模型Solving Discrete Time Modeling Problems Using Dynamic Neural Networks 

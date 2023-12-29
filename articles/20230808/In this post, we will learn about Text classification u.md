@@ -1,1 +1,0 @@
-In this post, we will learn about Text classification using Natural Language Toolkit (NLTK) in python. We will also discuss some common approaches and algorithms used for text classification.

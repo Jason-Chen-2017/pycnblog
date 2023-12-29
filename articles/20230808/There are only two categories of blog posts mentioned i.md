@@ -1,1 +1,0 @@
-1. There are only two categories of blog posts mentioned in this article titled "multi-task learning" and "transfer learning". Is there anything else we should cover as well? 

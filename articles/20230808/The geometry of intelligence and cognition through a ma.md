@@ -1,1 +1,0 @@
-3. The geometry of intelligence and cognition through a machine that can learn from experience 

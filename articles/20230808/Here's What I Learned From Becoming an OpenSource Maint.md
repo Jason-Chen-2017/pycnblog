@@ -1,1 +1,0 @@
-35. Here's What I Learned From Becoming an Open-Source Maintainer

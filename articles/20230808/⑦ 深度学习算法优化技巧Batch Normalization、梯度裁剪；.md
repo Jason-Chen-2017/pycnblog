@@ -1,1 +1,0 @@
-⑦ 深度学习算法优化技巧-《Batch Normalization》、《梯度裁剪》；

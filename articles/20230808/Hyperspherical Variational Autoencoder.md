@@ -1,1 +1,0 @@
-Hyperspherical Variational Autoencoder

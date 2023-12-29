@@ -1,1 +1,0 @@
-3. Type %tensorflow_version 2.x into the first cell (this line sets the version of TensorFlow used by Colab).

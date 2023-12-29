@@ -1,1 +1,0 @@
-8. Radical Candor: Ten Keys to Producing Good Code that Lasts by Jessica Rose 

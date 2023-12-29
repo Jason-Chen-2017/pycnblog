@@ -1,1 +1,0 @@
-9. Understanding Mental Illness: Different Types, Symptoms, and Treatments

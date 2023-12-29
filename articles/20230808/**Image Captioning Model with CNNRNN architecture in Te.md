@@ -1,1 +1,0 @@
-5. **Image Captioning Model with CNN-RNN architecture in Tensorflow**: This article shows how to build an image captioning model using convolutional neural networks (CNNs) followed by recurrent neural networks (RNNs). CNNs learn spatial features while RNNs learn temporal patterns.

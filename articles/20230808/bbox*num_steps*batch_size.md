@@ -1,1 +1,0 @@
-            [[bbox]*num_steps]*batch_size

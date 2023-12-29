@@ -1,1 +1,0 @@
-10. Towards Visual Transformer Networks: A General Approach to Understanding Image Representations

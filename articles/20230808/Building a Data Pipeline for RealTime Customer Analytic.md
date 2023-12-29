@@ -1,1 +1,0 @@
-1. Building a Data Pipeline for Real-Time Customer Analytics with Amazon Kinesis and AWS Lambda: 数据管道实时客户分析Amazon Kinesis和AWS Lambda

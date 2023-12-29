@@ -1,1 +1,0 @@
-     Wish you a happy and successful learning journey!    

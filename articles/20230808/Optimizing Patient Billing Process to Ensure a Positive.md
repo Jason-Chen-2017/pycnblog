@@ -1,1 +1,0 @@
-2. Optimizing Patient Billing Process to Ensure a Positive Financial Outcome for All Patients during COVID-19 Pandemic

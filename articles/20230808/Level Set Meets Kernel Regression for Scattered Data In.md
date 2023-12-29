@@ -1,1 +1,0 @@
-9. Level Set Meets Kernel Regression for Scattered Data Interpolation and Prediction

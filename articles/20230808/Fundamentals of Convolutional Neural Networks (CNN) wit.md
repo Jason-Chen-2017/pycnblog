@@ -1,1 +1,0 @@
-1. Fundamentals of Convolutional Neural Networks (CNN) with Keras 

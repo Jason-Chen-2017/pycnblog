@@ -1,1 +1,0 @@
-Indoor air quality monitoring is essential in achieving optimal indoor air quality levels which is one of the key concerns for occupants and healthcare professionals alike. This article highlights exciting new technologies like Bluetooth Low Energy (BLE) sensor networks and wireless mesh networking that can be used for indoor air quality monitoring and control. 

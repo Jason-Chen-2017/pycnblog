@@ -1,1 +1,0 @@
-6. Speech processing with transformer networks: The Past, Present, and Future of Automatic Speech Recognition Systems

@@ -1,1 +1,0 @@
-4. Why Should You Learn Machine Learning For Artists? 

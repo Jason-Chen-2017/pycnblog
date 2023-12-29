@@ -1,1 +1,0 @@
-8.现代CNN架构概览：ResNet、VGG、Inception、Mobile Net和ShuffleNet

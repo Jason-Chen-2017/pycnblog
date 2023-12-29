@@ -1,1 +1,0 @@
-H. Building a Multi-Layer Perceptron (MLP) in TensorFlow

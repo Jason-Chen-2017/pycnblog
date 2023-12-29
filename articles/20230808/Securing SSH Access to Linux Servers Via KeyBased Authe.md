@@ -1,1 +1,0 @@
-38. Securing SSH Access to Linux Servers Via Key-Based Authentication

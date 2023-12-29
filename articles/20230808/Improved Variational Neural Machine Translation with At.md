@@ -1,1 +1,0 @@
-9. Improved Variational Neural Machine Translation with Attention-Based Encoder-Decoder Architecture

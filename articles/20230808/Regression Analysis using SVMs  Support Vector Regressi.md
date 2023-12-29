@@ -1,1 +1,0 @@
-4. Regression Analysis using SVMs - Support Vector Regression (SVR) provides an alternative method to perform regression analysis based on SVMs. It involves finding a hyperplane that best fits a set of training examples, rather than attempting to approximate the true relationship underlying the data. 

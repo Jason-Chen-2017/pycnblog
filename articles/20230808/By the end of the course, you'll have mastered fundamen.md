@@ -1,1 +1,0 @@
-By the end of the course, you'll have mastered fundamental concepts in data manipulation, visualization, and modeling using Python libraries such as NumPy, pandas, matplotlib, seaborn, and scikit-learn.

@@ -1,1 +1,0 @@
-5. A Comprehensive Review of Inverse Document Frequency (IDF) Measures for Machine Learning Text Analysis [8]

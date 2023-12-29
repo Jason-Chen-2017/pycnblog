@@ -1,1 +1,0 @@
-Architectural Styles and the Design of Network-based Software Architectures: CQRS and Event Sourcing patterns

@@ -1,1 +1,0 @@
-8. Advice on Starting a Tech Career as an AI Researcher

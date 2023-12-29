@@ -1,1 +1,0 @@
-Understanding Cross-Validation in Practice: Strategies for Choosing Folds, Sampling, and Metrics 

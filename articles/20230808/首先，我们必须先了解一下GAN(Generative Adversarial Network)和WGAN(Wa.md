@@ -1,1 +1,0 @@
-首先，我们必须先了解一下GAN(Generative Adversarial Network)和WGAN(Wasserstein GAN)。

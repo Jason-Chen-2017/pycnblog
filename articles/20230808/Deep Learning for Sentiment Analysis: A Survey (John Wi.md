@@ -1,1 +1,0 @@
-4. Deep Learning for Sentiment Analysis: A Survey (John Wiley & Sons)

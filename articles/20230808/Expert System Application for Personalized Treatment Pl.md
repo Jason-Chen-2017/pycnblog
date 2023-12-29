@@ -1,1 +1,0 @@
-8. Expert System Application for Personalized Treatment Planning in Healthcare

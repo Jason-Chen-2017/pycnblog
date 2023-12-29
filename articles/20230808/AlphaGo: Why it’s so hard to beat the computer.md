@@ -1,1 +1,0 @@
-《AlphaGo: Why it’s so hard to beat the computer》

@@ -1,1 +1,0 @@
-2. Ethereum Using Zero Knowledge Proofs for Anonymousity - How to Build an Encrypted Currency from Scratch? 

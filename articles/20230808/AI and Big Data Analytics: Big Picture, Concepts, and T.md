@@ -1,1 +1,0 @@
-10. AI and Big Data Analytics: Big Picture, Concepts, and Techniques

@@ -1,1 +1,0 @@
-14. Optimizing Customer Experience Through Remote Access to Microgrids: The IoT Way Forward - Peter Hayden

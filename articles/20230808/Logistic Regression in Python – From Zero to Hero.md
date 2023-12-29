@@ -1,1 +1,0 @@
-7.Logistic Regression in Python – From Zero to Hero

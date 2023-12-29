@@ -1,1 +1,0 @@
-1. Principal Component Analysis: A Short Tutorial with Applications in Finance and Econometrics

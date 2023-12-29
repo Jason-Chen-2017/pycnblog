@@ -1,1 +1,0 @@
-Python Programming for Data Science: Getting Started with Pandas and NumPy Libraries.

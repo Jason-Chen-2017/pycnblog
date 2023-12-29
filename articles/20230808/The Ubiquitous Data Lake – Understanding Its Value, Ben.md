@@ -1,1 +1,0 @@
-1. The Ubiquitous Data Lake – Understanding Its Value, Benefits, and Challenges

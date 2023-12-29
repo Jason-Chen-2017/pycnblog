@@ -1,1 +1,0 @@
-The Promise of Blockchain and Smart Contracts for Artificial Intelligence

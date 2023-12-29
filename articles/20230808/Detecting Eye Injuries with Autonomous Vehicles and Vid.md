@@ -1,1 +1,0 @@
-5. Detecting Eye Injuries with Autonomous Vehicles and Video Analytics

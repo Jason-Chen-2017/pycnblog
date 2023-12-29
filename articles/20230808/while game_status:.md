@@ -1,1 +1,0 @@
-while game_status:

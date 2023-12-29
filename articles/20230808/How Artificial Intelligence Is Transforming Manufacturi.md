@@ -1,1 +1,0 @@
-"How Artificial Intelligence Is Transforming Manufacturing" by Inventiva

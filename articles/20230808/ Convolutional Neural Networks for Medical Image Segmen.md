@@ -1,1 +1,0 @@
-- Convolutional Neural Networks for Medical Image Segmentation Using Depthwise Separable Convolutions and Deconvolutions[5]

@@ -1,1 +1,0 @@
-英文：Docker Essentials: A Developer-Friendly Guide

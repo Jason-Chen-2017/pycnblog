@@ -1,1 +1,0 @@
-[1] Adversarial Networks and Generative Models: A Survey (Survey of Adversarial Neural Networks and Generative Models)

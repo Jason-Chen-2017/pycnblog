@@ -1,1 +1,0 @@
-2. From AI to Big Data - A Roadmap towards Building an Industrial AI Platform

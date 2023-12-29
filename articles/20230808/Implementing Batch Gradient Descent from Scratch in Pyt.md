@@ -1,1 +1,0 @@
-Implementing Batch Gradient Descent from Scratch in Python

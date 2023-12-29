@@ -1,1 +1,0 @@
-8. Applying GANs to Fashion Photography

@@ -1,1 +1,0 @@
-* CLIP: Connecting Text and Images

@@ -1,1 +1,0 @@
-7. Different types of integrations in data warehousing projects: Synchonous vs Asynchronous

@@ -1,1 +1,0 @@
-融合空间信息和局部特征的OCR方法An OCR Method Combining Spatial Information and Local Features 

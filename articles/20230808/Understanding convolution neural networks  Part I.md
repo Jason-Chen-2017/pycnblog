@@ -1,1 +1,0 @@
-6. Understanding convolution neural networks - Part I

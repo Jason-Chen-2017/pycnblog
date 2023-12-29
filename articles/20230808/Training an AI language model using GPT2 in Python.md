@@ -1,1 +1,0 @@
-Training an AI language model using GPT-2 in Python

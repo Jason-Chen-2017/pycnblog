@@ -1,1 +1,0 @@
-2. The Benefits of Smart Home Automation - Introducing the Future of the Internet of Things (IoT)

@@ -1,1 +1,0 @@
-Cloud Native Application Development: Principles, Patterns, and Practices

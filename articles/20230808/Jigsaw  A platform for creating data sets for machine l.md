@@ -1,1 +1,0 @@
-3. Jigsaw - A platform for creating data sets for machine learning algorithms through crowdsourcing.

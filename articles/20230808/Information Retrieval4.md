@@ -1,1 +1,0 @@
-1. Information Retrieval[4]

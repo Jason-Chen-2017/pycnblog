@@ -1,1 +1,0 @@
-5. The Science of Data Visualization: A Primer on the Fundamentals, Tools, and Techniques Used by Professional Graphic Designers and Analysts

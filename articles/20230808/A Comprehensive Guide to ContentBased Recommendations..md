@@ -1,1 +1,0 @@
-A Comprehensive Guide to Content-Based Recommendations.

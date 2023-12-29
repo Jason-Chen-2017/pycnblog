@@ -1,1 +1,0 @@
-6. Overview of RMSprop and Adagrad  

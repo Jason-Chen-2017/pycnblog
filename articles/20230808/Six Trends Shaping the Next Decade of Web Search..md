@@ -1,1 +1,0 @@
-Six Trends Shaping the Next Decade of Web Search.

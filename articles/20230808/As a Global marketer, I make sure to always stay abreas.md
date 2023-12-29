@@ -1,1 +1,0 @@
-As a Global marketer, I make sure to always stay abreast of the latest market trends, news, and emerging technologies. By continually researching and identifying opportunities, I ensure that our businesses remain one step ahead of the competition. 

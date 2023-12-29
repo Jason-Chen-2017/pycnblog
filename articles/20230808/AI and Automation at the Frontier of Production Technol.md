@@ -1,1 +1,0 @@
-"AI and Automation at the Frontier of Production Technology" by Moore & Company

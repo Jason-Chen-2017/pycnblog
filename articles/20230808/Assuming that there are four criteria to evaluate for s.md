@@ -1,1 +1,0 @@
-Assuming that there are four criteria to evaluate for selecting the pricing strategy, we can define weights for each criterion based on our understanding of the effect they have on sales and profits. Criteria could include following:

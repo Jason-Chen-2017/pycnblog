@@ -1,1 +1,0 @@
-4. Transferring Knowledge from the Visually-Impaired to the Blind via Attention-based Autoencoders

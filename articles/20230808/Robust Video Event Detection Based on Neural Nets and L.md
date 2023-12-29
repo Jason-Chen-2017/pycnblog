@@ -1,1 +1,0 @@
-10. Robust Video Event Detection Based on Neural Nets and LSTM (ICIP2019)

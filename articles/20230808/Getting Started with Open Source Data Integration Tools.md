@@ -1,1 +1,0 @@
--"Getting Started with Open Source Data Integration Tools" - Developer Advocate, Cloudera (Author)

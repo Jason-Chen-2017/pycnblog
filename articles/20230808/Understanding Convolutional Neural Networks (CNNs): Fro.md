@@ -1,1 +1,0 @@
-4. Understanding Convolutional Neural Networks (CNNs): From theory to practice 

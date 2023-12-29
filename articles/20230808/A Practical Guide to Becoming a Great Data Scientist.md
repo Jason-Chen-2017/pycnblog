@@ -1,1 +1,0 @@
-A Practical Guide to Becoming a Great Data Scientist

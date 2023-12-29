@@ -1,1 +1,0 @@
-Making a Cat Detector with Convolutional Neural Networks

@@ -1,1 +1,0 @@
-Blockchain Based Supply Chain Optimization: Challenges and Opportunities

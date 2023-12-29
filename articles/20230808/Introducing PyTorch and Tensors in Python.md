@@ -1,1 +1,0 @@
-1. Introducing PyTorch and Tensors in Python

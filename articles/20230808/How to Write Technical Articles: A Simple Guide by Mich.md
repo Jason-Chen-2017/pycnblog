@@ -1,1 +1,0 @@
-How to Write Technical Articles: A Simple Guide by Michael Overstreet 

@@ -1,1 +1,0 @@
-3. Understanding Recommender Systems Blog Posts from Practitioners

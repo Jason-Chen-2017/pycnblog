@@ -1,1 +1,0 @@
-3. Inferential Statistics with Linear Regression and Factor Analysis - An Introductory Guide to Statistical Learning (线性回归和因子分析的推论统计入门指南)

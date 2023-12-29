@@ -1,1 +1,0 @@
-行人检测与轨迹估计Person Detection and Trajectory Estimation using CNN

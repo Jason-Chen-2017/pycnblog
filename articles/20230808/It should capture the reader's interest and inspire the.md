@@ -1,1 +1,0 @@
-1. It should capture the reader's interest and inspire them to read further. 

@@ -1,1 +1,0 @@
-This means that each observation is normally distributed around the predicted value of the latent variable evaluated at its corresponding input point, with variance equal to σ^2. Therefore, a GP defines a non-parametric probabilistic model of the data that accounts for uncertainties and dependencies between the observations. 

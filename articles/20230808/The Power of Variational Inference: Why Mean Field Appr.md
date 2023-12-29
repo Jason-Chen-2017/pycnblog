@@ -1,1 +1,0 @@
-7. The Power of Variational Inference: Why Mean Field Approximation Matters More Than You Think

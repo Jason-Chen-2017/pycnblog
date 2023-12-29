@@ -1,1 +1,0 @@
-Bayesian Inference in Graphical Models: A Tutorial with Examples in R

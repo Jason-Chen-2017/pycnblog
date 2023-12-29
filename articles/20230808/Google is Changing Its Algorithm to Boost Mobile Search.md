@@ -1,1 +1,0 @@
-Google is Changing Its Algorithm to Boost Mobile Search.

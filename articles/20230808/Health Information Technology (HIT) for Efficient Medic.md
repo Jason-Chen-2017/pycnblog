@@ -1,1 +1,0 @@
-10. Health Information Technology (HIT) for Efficient Medical Record Management and Access Control: A Survey

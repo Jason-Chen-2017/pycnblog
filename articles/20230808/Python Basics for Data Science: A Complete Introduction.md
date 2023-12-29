@@ -1,1 +1,0 @@
-3.Python Basics for Data Science: A Complete Introduction to NumPy, Pandas, Matplotlib, Seaborn & Scikit-learn

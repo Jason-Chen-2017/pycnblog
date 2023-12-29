@@ -1,1 +1,0 @@
-Send us your articles in exchange for free consultations! We will send you an article summary after reading it so that we can suggest other related articles that may interest you.

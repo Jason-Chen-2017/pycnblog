@@ -1,1 +1,0 @@
-1. Text Summarization with GPT-2 and PyTorch (OpenAI)

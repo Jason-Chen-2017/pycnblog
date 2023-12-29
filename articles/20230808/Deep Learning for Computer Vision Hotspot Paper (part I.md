@@ -1,1 +1,0 @@
-Deep Learning for Computer Vision Hotspot Paper (part I)

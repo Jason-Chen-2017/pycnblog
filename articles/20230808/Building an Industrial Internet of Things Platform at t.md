@@ -1,1 +1,0 @@
-3. Building an Industrial Internet of Things Platform at the Edge - Mike Cohen

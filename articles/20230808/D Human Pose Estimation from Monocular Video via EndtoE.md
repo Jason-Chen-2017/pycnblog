@@ -1,1 +1,0 @@
-3D Human Pose Estimation from Monocular Video via End-to-End Optimization (3D Human Pose Estimation from Monocular Video via End-to-End Optimization)

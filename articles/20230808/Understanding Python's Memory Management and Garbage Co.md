@@ -1,1 +1,0 @@
-3. Understanding Python's Memory Management and Garbage Collection

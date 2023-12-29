@@ -1,1 +1,0 @@
-8. PyTorch Tutorial for Image Classification with CIFAR10 Dataset 

@@ -1,1 +1,0 @@
-8. Designing training data sets for intelligent models: Negative sampling, long-tail problem, diversity relevance, consistency and variability, etc. 

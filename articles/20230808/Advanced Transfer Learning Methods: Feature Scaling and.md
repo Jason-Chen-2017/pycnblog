@@ -1,1 +1,0 @@
-8. Advanced Transfer Learning Methods: Feature Scaling and Fine-tuning

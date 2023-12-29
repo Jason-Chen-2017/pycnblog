@@ -1,1 +1,0 @@
-6. Building Your Personal Brand as a Doctor or a Researcher

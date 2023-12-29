@@ -1,1 +1,0 @@
-6. An Introduction to Genetic Programming: Foundations and Applications

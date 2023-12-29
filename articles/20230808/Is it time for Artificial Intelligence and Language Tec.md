@@ -1,1 +1,0 @@
-4. Is it time for Artificial Intelligence and Language Technology (AI&LT) to merge? 人工智能和语言技术是否该融合？

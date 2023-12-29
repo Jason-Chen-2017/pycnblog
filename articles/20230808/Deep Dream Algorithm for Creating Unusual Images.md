@@ -1,1 +1,0 @@
-5. Deep Dream Algorithm for Creating Unusual Images

@@ -1,1 +1,0 @@
-5. A Tale of Two Emojis: the Hidden Creativity in Emoji Use and NLP Applications：两个表情的故事：emoji使用的隐藏创造力及其NLP应用

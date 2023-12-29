@@ -1,1 +1,0 @@
-4. GDPR Compliance in the Era of Artificial Intelligence

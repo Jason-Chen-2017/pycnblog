@@ -1,1 +1,0 @@
-2. Git Internals: Planning, Implementation, and Operations

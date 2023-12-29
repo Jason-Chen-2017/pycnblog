@@ -1,1 +1,0 @@
-11. Streamlining Operations at the Edge: Designing Systems That Scale Dynamically with Edge Computing Technologies - Jennifer Boyd

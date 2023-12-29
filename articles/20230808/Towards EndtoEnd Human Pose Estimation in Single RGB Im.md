@@ -1,1 +1,0 @@
-7. Towards End-to-End Human Pose Estimation in Single RGB Images with Direct Part Connection

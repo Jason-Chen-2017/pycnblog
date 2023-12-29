@@ -1,1 +1,0 @@
-Step 4: Design the Load Phase

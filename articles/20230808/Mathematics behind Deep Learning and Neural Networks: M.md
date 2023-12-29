@@ -1,1 +1,0 @@
-5. Mathematics behind Deep Learning and Neural Networks: Mathematics behind Deep Learning and Neural Networks for Data Science Professionals

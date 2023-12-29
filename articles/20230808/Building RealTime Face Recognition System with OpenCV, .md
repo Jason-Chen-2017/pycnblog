@@ -1,1 +1,0 @@
-31. Building Real-Time Face Recognition System with OpenCV, Flask, and Redis

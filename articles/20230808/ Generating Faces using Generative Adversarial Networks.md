@@ -1,1 +1,0 @@
-- Generating Faces using Generative Adversarial Networks in PyTorch

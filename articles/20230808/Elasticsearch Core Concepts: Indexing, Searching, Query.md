@@ -1,1 +1,0 @@
-Elasticsearch Core Concepts: Indexing, Searching, Query DSL, and Mapping

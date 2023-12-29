@@ -1,1 +1,0 @@
-5. What Is OpenAI Gym? Exploring a toolkit to train AI models in an easy way (deep reinforcement learning + machine learning)

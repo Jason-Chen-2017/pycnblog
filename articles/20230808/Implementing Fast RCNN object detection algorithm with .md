@@ -1,1 +1,0 @@
-Implementing Fast RCNN object detection algorithm with PyTorch

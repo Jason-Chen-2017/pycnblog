@@ -1,1 +1,0 @@
-《Hyperledger Fabric——区块链底层技术详解》详细介绍了 Hyperledger Fabric 的关键特性、架构设计、实现细节和开源社区发展，为开发人员和架构师提供进一步技术支持。

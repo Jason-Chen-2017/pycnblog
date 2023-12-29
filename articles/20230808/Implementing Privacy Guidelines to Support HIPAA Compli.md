@@ -1,1 +1,0 @@
-3. Implementing Privacy Guidelines to Support HIPAA Compliance under the COVID-19 Pandemic

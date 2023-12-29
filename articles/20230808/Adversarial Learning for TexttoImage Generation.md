@@ -1,1 +1,0 @@
-Adversarial Learning for Text-to-Image Generation

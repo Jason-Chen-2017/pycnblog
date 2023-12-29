@@ -1,1 +1,0 @@
-2.The Future of IoT and Edge Computing With Intel Quark, Arm, and NXP Semiconductors – Towards Data Science Blog

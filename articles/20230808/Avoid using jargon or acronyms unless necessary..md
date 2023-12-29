@@ -1,1 +1,0 @@
-3. Avoid using jargon or acronyms unless necessary. 

@@ -1,1 +1,0 @@
-How to Build a Handwritten Digit Classifier Using MNIST Dataset and Keras Library in Python

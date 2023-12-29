@@ -1,1 +1,0 @@
-Working With PostgreSQL Arrays In SQL

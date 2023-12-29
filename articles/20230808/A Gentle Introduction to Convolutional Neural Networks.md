@@ -1,1 +1,0 @@
-10. A Gentle Introduction to Convolutional Neural Networks

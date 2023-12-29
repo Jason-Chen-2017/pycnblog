@@ -1,1 +1,0 @@
-Computing Mass and Center of Gravity Using Python.

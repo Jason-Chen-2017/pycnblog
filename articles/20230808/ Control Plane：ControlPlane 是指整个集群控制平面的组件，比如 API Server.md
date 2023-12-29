@@ -1,1 +1,0 @@
-- Control Plane：ControlPlane 是指整个集群控制平面的组件，比如 API Server、Scheduler 和 Controller Manager；

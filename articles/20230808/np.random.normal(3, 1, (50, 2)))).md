@@ -1,1 +1,0 @@
-                    np.random.normal(-3, 1, (50, 2))))

@@ -1,1 +1,0 @@
-4. Quantum Computing Basics for Developers

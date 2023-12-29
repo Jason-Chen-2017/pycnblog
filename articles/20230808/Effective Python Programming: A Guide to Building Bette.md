@@ -1,1 +1,0 @@
-7. Effective Python Programming: A Guide to Building Better Code with Simplicity 

@@ -1,1 +1,0 @@
-3. How to Build an AI System for Medical Diagnosis

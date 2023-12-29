@@ -1,1 +1,0 @@
-OpenGL Programming Guide for Absolute Beginners.

@@ -1,1 +1,0 @@
-Prometheus 是 Google Cloud Native Computing Foundation (CNCF) 基金会孵化的开源项目之一,它是一个高性能、可扩展的、万物皆可监测的系统。本书从 Prometheus 的架构原理、核心组件、功能特性和使用场景四个方面阐述 Prometheus 技术原理。

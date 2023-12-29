@@ -1,1 +1,0 @@
-2. Best Practices for MongoDB Schema Design

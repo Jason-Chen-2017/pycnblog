@@ -1,1 +1,0 @@
-Neural Sentence Ordering with Recurrent and Convolutional Neural Networks

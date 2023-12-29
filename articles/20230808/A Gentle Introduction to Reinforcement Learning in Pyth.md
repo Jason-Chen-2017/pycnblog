@@ -1,1 +1,0 @@
-15. A Gentle Introduction to Reinforcement Learning in Python

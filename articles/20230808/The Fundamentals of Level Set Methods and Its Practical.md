@@ -1,1 +1,0 @@
-5. The Fundamentals of Level Set Methods and Its Practical Use

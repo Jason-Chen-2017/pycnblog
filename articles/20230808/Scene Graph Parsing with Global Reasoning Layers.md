@@ -1,1 +1,0 @@
-Scene Graph Parsing with Global Reasoning Layers

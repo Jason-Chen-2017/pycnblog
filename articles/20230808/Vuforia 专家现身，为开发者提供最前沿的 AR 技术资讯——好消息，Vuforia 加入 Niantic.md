@@ -1,1 +1,0 @@
-Vuforia 专家现身，为开发者提供最前沿的 AR 技术资讯——好消息，Vuforia 加入 Niantic

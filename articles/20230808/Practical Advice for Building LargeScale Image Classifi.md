@@ -1,1 +1,0 @@
-Practical Advice for Building Large-Scale Image Classifiers 

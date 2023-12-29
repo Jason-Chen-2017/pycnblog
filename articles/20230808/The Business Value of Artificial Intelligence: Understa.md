@@ -1,1 +1,0 @@
-6.The Business Value of Artificial Intelligence: Understanding the Role of AI in Modern Applications

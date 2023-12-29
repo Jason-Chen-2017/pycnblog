@@ -1,1 +1,0 @@
-6、深度学习笔记：手写数字识别 (Deep Learning Notes: Handwriting Digit Recognition)

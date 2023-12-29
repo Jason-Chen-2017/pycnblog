@@ -1,1 +1,0 @@
-(3)Text Understanding from Scratch with InferSent by Parisotto and Belinkov

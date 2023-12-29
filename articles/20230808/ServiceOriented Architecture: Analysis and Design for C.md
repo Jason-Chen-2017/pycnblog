@@ -1,1 +1,0 @@
-2. Service-Oriented Architecture: Analysis and Design for Complex Distributed Systems

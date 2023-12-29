@@ -1,1 +1,0 @@
-10. Why do we need a learning rate scheduler? Key challenges and approaches towards solving them  

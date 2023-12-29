@@ -1,1 +1,0 @@
-21. Multi-Head Selection for Simultaneous Machine Translation: The Case of English-Vietnamese

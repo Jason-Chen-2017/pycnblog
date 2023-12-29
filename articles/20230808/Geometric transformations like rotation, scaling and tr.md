@@ -1,1 +1,0 @@
-1. Geometric transformations like rotation, scaling and translation

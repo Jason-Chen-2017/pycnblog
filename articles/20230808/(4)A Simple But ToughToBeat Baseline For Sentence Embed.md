@@ -1,1 +1,0 @@
-(4)A Simple But Tough-To-Beat Baseline For Sentence Embeddings by Zhang and Gardner

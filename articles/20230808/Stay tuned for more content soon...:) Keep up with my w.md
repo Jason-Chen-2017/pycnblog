@@ -1,1 +1,0 @@
-Stay tuned for more content soon...:) Keep up with my work and follow me on Medium, Twitter, Instagram, and Facebook for daily insights on latest technology advancements and business opportunities. Feel free to connect with me on any of those platforms too! 

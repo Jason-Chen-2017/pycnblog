@@ -1,1 +1,0 @@
-9. Understanding code used to train models: Loss functions, optimizers, hyperparameters, learning rate schedulers, regularization techniques, etc. 

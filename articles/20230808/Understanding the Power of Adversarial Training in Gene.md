@@ -1,1 +1,0 @@
-1. Understanding the Power of Adversarial Training in Generative Neural Networks

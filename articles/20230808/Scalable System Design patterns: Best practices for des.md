@@ -1,1 +1,0 @@
-4. Scalable System Design patterns: Best practices for designing scalable web services

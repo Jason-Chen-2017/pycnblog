@@ -1,1 +1,0 @@
-Dropout Training Can Accelerate Feature Selection in Deep Neural Networks

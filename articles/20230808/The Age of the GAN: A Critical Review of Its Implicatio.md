@@ -1,1 +1,0 @@
-6. The Age of the GAN: A Critical Review of Its Implications for Art, Music, Science, and Technology

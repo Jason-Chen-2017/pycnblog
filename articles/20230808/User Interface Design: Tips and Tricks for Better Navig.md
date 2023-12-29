@@ -1,1 +1,0 @@
-5. User Interface Design: Tips and Tricks for Better Navigation and Visibility

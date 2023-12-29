@@ -1,1 +1,0 @@
-[4] Zhou et al. Deep belief networks for semantic indexing[C]//Proceedings of the Twenty-First International Conference on Artificial Intelligence and Statistics. PMLR, 2008: 736-743.

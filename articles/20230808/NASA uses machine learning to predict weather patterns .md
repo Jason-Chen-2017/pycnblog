@@ -1,1 +1,0 @@
-6. NASA uses machine learning to predict weather patterns on mars

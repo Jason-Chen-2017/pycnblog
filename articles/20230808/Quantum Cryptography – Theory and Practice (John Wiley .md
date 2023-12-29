@@ -1,1 +1,0 @@
-4. Quantum Cryptography – Theory and Practice (John Wiley & Sons)

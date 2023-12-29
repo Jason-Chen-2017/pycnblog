@@ -1,1 +1,0 @@
-1. Deep transfer learning with conditional adversarial networks (Zhang et al., 2018)

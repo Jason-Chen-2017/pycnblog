@@ -1,1 +1,0 @@
-DevOps 7. Designing Your Data Infrastructure For Microservices With Amazon Aurora

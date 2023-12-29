@@ -1,1 +1,0 @@
-6. Speech Recognition using Deep Learning in Python (Tutorials Point)

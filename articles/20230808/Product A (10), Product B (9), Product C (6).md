@@ -1,1 +1,0 @@
-            Product A (10), Product B (9), Product C (6)

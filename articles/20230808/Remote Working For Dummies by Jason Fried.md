@@ -1,1 +1,0 @@
-9. Remote Working For Dummies by Jason Fried 

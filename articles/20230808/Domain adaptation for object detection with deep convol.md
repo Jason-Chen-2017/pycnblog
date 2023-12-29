@@ -1,1 +1,0 @@
-4. Domain adaptation for object detection with deep convolutional generative adversarial networks (Bertinetto et al., 2017)

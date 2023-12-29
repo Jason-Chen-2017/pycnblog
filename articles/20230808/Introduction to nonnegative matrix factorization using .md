@@ -1,1 +1,0 @@
-Introduction to nonnegative matrix factorization using deep learning techniques with an application in image processing. 

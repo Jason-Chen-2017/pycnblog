@@ -1,1 +1,0 @@
-(10)Recurrent Highway Networks for Visual Question Answering by Wu et al.

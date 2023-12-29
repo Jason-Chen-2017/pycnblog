@@ -1,1 +1,0 @@
-17. Awesome Python: How to Get Started and Where to Go Next

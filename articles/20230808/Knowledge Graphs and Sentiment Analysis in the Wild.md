@@ -1,1 +1,0 @@
-23. Knowledge Graphs and Sentiment Analysis in the Wild

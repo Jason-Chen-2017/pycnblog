@@ -1,1 +1,0 @@
-Cosmos Hub 3: Staking Delegation as a Service Solution

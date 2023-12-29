@@ -1,1 +1,0 @@
-10. EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks

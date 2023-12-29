@@ -1,1 +1,0 @@
-5.Exploring Math for Beginners: A Step-by-Step Introduction to Mathematics Education by Martin Scheidegger

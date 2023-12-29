@@ -1,1 +1,0 @@
-Introduction to Blockchain Technologies: From Distributed Ledger Technology to Cryptographic Currency

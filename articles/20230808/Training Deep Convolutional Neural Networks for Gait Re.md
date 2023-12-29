@@ -1,1 +1,0 @@
-8. Training Deep Convolutional Neural Networks for Gait Recognition Using Reinforcement Learning. 

@@ -1,1 +1,0 @@
-a) Samsung: Designing Human-Machine Collaboration in Smart Environments

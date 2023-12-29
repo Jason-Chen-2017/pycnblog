@@ -1,1 +1,0 @@
-●How to Build a Virtual Assistant using Python and Q-learning

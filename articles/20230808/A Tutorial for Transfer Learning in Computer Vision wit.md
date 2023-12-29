@@ -1,1 +1,0 @@
-3. A Tutorial for Transfer Learning in Computer Vision with PyTorch; 

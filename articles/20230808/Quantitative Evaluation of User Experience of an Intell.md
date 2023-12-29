@@ -1,1 +1,0 @@
-18. Quantitative Evaluation of User Experience of an Intelligent Virtual Assistant using Fuzzy Logic and Neural Networks

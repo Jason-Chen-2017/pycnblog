@@ -1,1 +1,0 @@
-2. Understanding Convolutional Neural Network with PyTorch

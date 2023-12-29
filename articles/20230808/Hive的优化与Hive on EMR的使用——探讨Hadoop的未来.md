@@ -1,1 +1,0 @@
-7. Hive的优化与Hive on EMR的使用——探讨Hadoop的未来

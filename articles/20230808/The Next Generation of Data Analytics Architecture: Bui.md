@@ -1,1 +1,0 @@
-6. The Next Generation of Data Analytics Architecture: Building an AI Pipeline on Cloud Infrastructure

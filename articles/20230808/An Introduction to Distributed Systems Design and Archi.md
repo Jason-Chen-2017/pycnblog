@@ -1,1 +1,0 @@
-An Introduction to Distributed Systems Design and Architecture using Apache Kafka

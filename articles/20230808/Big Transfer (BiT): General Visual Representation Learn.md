@@ -1,1 +1,0 @@
-Big Transfer (BiT): General Visual Representation Learning

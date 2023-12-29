@@ -1,1 +1,0 @@
-8 Reasons why Blockchain Needs a New Standard Attestation Procedure 

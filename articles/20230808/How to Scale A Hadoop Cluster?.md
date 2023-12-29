@@ -1,1 +1,0 @@
-9. How to Scale A Hadoop Cluster?

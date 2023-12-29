@@ -1,1 +1,0 @@
-《Grokking Deep Learning》

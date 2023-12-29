@@ -1,1 +1,0 @@
-6. Getting Started with Reinforcement Learning in Python

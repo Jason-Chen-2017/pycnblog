@@ -1,1 +1,0 @@
-6. An Introduction to Hyperledger Fabric: Part 1 - Architecture Overview

@@ -1,1 +1,0 @@
-Building a Smart Garbage Collector with Raspberry Pi and Tensorflow.js

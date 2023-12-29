@@ -1,1 +1,0 @@
-3. A Gentle Introduction to Neural Networks

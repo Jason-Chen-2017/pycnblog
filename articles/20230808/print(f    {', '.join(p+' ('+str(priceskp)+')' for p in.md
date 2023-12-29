@@ -1,1 +1,0 @@
-    print(f"    {', '.join([p+' ('+str(prices[k][p])+')' for p in products])}")

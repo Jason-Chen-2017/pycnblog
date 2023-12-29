@@ -1,1 +1,0 @@
-Gradient Descent Optimization Algorithms: A Visual Summary

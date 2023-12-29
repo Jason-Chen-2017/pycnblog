@@ -1,1 +1,0 @@
-2.From Zero to Hero in Recommendation Systems: An Introduction (Eric Chien)

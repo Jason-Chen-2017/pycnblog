@@ -1,1 +1,0 @@
-9.“Scaling Laws in NLP: A Roadmap” by Bayerl et al

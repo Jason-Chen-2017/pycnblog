@@ -1,1 +1,0 @@
-8、Bayesian Deep Learning: A Systematic Introduction with Examples from Physics, Chemistry, Computer Vision, Finance, and Medical Imaging (2021)

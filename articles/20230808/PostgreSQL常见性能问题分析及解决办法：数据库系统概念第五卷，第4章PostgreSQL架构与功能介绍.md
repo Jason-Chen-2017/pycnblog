@@ -1,1 +1,0 @@
-5.PostgreSQL常见性能问题分析及解决办法：《数据库系统概念》第五卷，第4章“PostgreSQL架构与功能介绍”“PostgreSQL系统监控与性能优化”。 

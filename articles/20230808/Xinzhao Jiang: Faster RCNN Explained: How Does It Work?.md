@@ -1,1 +1,0 @@
-Xinzhao Jiang: Faster R-CNN Explained: How Does It Work?

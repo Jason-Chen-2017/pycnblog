@@ -1,1 +1,0 @@
-Revisiting Zero-shot Text Classification: Are Labels Still Necessary?

@@ -1,1 +1,0 @@
-- Author(s): Vaswani, Shazeer, Parmar, Jones, Gomez, and Al, 2017.

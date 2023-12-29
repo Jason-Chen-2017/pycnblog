@@ -1,1 +1,0 @@
-2.《How to Tune PostgreSQL Parameters for Better Performance》

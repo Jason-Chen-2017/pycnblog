@@ -1,1 +1,0 @@
-2.OpenAI Gym：是一个强化学习的工具包，可以让机器学习研究人员快速开发和比较各种强化学习算法。目前已支持的环境包括 Atari 游戏、Classical Control、Box2D、Robotics、Toy Text、MuJoCo 物理引擎、Atari 游戏、RoboCup soccer 机器人等。

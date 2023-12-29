@@ -1,1 +1,0 @@
-This article covers various natural light sources such as sunlight, shade trees, dappled lighting, and natural ventilation systems. It explains why each type of natural light source offers unique advantages over traditional artificial lighting methods while also detailing steps to implement these solutions in your home.

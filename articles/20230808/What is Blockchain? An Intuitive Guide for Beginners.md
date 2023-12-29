@@ -1,1 +1,0 @@
-1. What is Blockchain? An Intuitive Guide for Beginners

@@ -1,1 +1,0 @@
-2.K折交叉验证(Cross-Validation)方法详解及其在Scikit-learn中的应用。

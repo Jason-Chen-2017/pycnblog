@@ -1,1 +1,0 @@
-2. Building Intelligent Products with Machine Learning: An Introductory Guide to Deep Learning Algorithms in Product Development 

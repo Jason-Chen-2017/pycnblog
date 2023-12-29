@@ -1,1 +1,0 @@
-Object Detection with YOLOv3 in PyTorch

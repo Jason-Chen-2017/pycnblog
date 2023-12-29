@@ -1,1 +1,0 @@
-7. Practical Evaluation of Data Augmentation Strategies for Object Detection[7]

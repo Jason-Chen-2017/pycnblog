@@ -1,1 +1,0 @@
-3. 《BERT的数学原理》：The Math of BERT — Understanding How to Efficiently Compute Attention and Transformers in NLP Applications

@@ -1,1 +1,0 @@
-The following sections will cover the main ideas behind Probabilistic PCA, explain its mathematical formulation, demonstrate its application on different problems, and outline some potential extensions and future research directions.

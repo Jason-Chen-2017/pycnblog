@@ -1,1 +1,0 @@
-4. Understanding LSTM Networks – A Modern Approach

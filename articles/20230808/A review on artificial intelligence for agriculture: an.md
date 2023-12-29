@@ -1,1 +1,0 @@
-1. A review on artificial intelligence for agriculture: an overview of the state-of-the-art and future directions. 

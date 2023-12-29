@@ -1,1 +1,0 @@
-* DALL·E: Creating Images from Text

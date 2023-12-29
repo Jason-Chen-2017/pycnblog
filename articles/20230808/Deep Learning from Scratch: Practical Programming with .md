@@ -1,1 +1,0 @@
-9. Deep Learning from Scratch: Practical Programming with Python

@@ -1,1 +1,0 @@
-5. 《BERT模型进阶——语言模型的设计与调优》：A Primer in BERT’s Inner Workings: The Theory Behind the Transfer Learning Strategy 

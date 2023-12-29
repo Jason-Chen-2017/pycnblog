@@ -1,1 +1,0 @@
-6. **Implementing Batch Gradient Descent from scratch in python**: An example implementation of batch gradient descent in Python without the use of any external library or package.

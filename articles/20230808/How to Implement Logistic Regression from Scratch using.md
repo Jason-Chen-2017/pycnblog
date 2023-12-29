@@ -1,1 +1,0 @@
-3.How to Implement Logistic Regression from Scratch using Python

@@ -1,1 +1,0 @@
-Dual-stream CNN for Human Action Recognition via Unsupervised Domain Adaptation

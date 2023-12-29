@@ -1,1 +1,0 @@
-10. Adapting a DenseNet Model for the Task of Multimodal Sentiment Analysis

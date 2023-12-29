@@ -1,1 +1,0 @@
-* Retains all relevant information about the data

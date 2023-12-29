@@ -1,1 +1,0 @@
-6. Naive Bayes和Logistic Regression算法

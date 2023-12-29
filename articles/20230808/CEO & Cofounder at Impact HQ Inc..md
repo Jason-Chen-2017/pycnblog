@@ -1,1 +1,0 @@
-CEO & Co-founder at Impact HQ Inc. 

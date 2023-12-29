@@ -1,1 +1,0 @@
-Transfer Learning with Pre-Trained Convolutional Neural Networks

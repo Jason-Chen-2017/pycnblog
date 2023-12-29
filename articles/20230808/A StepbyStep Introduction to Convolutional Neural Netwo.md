@@ -1,1 +1,0 @@
-A Step-by-Step Introduction to Convolutional Neural Networks (CNNs) for Image Classification

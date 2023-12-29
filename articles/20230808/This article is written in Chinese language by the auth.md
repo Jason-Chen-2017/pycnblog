@@ -1,1 +1,0 @@
-This article is written in Chinese language by the author of this post. It contains some good information on deep learning and blockchain technology topics that can be read by anyone interested in these fields. Good luck with your reading! Hope it helps! 

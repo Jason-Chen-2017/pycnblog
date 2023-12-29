@@ -1,1 +1,0 @@
-18. Understanding Self-Attention mechanism in transformer-based models

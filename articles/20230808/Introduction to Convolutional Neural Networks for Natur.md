@@ -1,1 +1,0 @@
-5. Introduction to Convolutional Neural Networks for Natural Language Processing (CNN-NLP)

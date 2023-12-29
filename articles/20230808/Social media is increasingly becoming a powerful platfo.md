@@ -1,1 +1,0 @@
-Social media is increasingly becoming a powerful platform for businesses to connect with customers and generate leads and sales. Here are six effective strategies for using social media effectively to improve your ecommerce success. 

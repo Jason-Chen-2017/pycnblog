@@ -1,1 +1,0 @@
-A concise guide on latent variable models including principal component analysis (PCA), factor analysis, linear discriminant analysis (LDA), autoregressive model, and time series model. Includes derivations for each technique and comparison between them. 

@@ -1,1 +1,0 @@
-34. Video Summarization with Joint Videoscoring and Sequencescoping Attention Mechanisms

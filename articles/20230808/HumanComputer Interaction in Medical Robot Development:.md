@@ -1,1 +1,0 @@
-3. Human-Computer Interaction in Medical Robot Development: Lessons Learned from Industry Perspective

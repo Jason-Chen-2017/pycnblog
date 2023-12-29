@@ -1,1 +1,0 @@
-5. 在Python中使用Keras API实现递归神经网络RNN；

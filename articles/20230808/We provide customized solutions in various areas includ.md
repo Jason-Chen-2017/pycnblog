@@ -1,1 +1,0 @@
-We provide customized solutions in various areas including machine learning, data science, artificial intelligence, deep learning, natural language processing, and software development. Our mission is to apply our expertise to transform businesses and organizations through better decision making, increased efficiency, improved outcomes, and improved customer experiences. 

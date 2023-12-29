@@ -1,1 +1,0 @@
-6. Multi-objective optimization framework for maximizing yield while minimizing environmental impact of cultivated crops. 

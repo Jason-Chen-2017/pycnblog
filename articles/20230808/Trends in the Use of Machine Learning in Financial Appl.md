@@ -1,1 +1,0 @@
-4. Trends in the Use of Machine Learning in Financial Applications 

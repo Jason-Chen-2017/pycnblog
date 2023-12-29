@@ -1,1 +1,0 @@
-6. Adversarial Attacks on Neural Networks with ResNet as Defense

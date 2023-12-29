@@ -1,1 +1,0 @@
-10. Cloud Native Databases: A Survey and Vision for the Future of Database Management Systems

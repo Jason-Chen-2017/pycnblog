@@ -1,1 +1,0 @@
-9. Multi-agent Reinforcement Learning based Energy Management System for Connected Microgrids. 

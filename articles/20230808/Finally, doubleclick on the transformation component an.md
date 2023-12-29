@@ -1,1 +1,0 @@
-Finally, double-click on the transformation component and navigate to the Output screen. Rename the output schema as per the requirement of the rest of the processing phases.

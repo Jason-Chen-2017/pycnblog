@@ -1,1 +1,0 @@
-A No-Nonsense Guide to Math Behind Neural Networks Part 2: Backpropagation and Other Techniques 

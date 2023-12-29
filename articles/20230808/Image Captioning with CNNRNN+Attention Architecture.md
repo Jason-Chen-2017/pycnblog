@@ -1,1 +1,0 @@
-6. Image Captioning with CNN-RNN+Attention Architecture

@@ -1,1 +1,0 @@
-        dead_people.add(target_index)

@@ -1,1 +1,0 @@
-1. Deep Learning by Nestorov: A Proposed Solution to the Vanishing Gradient Problem in Neural Networks  

@@ -1,1 +1,0 @@
-24.8 Ways to Get Started with Machine Learning Algorithm: A Systematic Approach 

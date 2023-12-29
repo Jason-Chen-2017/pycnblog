@@ -1,1 +1,0 @@
-14. Linux下搭建Nginx+Uwsgi+Flask服务器

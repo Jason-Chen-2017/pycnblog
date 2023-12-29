@@ -1,1 +1,0 @@
-arXiv preprint arXiv:1512.03385, 2015

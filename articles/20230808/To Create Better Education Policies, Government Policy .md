@@ -1,1 +1,0 @@
-6. To Create Better Education Policies, Government Policy Should Focus on Enhancing Student Performance Rather Than Costs

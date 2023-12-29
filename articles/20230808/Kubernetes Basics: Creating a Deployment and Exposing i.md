@@ -1,1 +1,0 @@
-Kubernetes Basics: Creating a Deployment and Exposing it via Load Balancer

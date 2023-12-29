@@ -1,1 +1,0 @@
-6. Sequence Labeling with Multi-Task Learning in TensorFlow

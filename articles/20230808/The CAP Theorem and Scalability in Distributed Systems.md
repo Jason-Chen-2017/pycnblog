@@ -1,1 +1,0 @@
-5. The CAP Theorem and Scalability in Distributed Systems

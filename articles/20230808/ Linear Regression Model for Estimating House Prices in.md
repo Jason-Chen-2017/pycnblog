@@ -1,1 +1,0 @@
-- Linear Regression Model for Estimating House Prices in Python

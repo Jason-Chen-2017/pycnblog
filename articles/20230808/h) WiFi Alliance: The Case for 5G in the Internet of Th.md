@@ -1,1 +1,0 @@
-h) Wi-Fi Alliance: The Case for 5G in the Internet of Things

@@ -1,1 +1,0 @@
-3. Top Trends in AI for Personal Care, Fitness and Beauty

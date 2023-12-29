@@ -1,1 +1,0 @@
-- Master：Master 主要负责集群的控制、协调以及策略执行方面。Master 分为两类角色，分别是 API Server、Controller Manager 和 Scheduler。API Server 提供了资源对象的存储、查询和校验接口，并对外提供 RESTful API 服务；Controller Manager 是一个独立的进程，通过监听 API Server 上的事件变化，根据自身的算法实施相应的操作，比如创建、删除或修改资源对象等；Scheduler 在调度的时候会考虑到硬件资源、Pod QoS、预期的副本数、亲和性规则、反亲和性规则等因素，选择一个最优的位置进行部署。 

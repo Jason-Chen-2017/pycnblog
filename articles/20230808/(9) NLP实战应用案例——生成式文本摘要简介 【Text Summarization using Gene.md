@@ -1,1 +1,0 @@
-(9) NLP实战应用案例——生成式文本摘要简介 【Text Summarization using Generative Adversarial Networks (GANs)]

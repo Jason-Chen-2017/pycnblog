@@ -1,1 +1,0 @@
-2. Quantitative assessment of machine learning algorithms for improving crop quality in smart greenhouses. 

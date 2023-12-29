@@ -1,1 +1,0 @@
-7、CNN：从入门到炼成 (Convolutional Neural Networks: From Beginner to Proficiency)

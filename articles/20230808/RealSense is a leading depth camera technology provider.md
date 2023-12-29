@@ -1,1 +1,0 @@
-RealSense is a leading depth camera technology provider that offers affordability, high accuracy, and real-time performance. This article explores the basics of RealSense technology, including the software stack and hardware architecture. We will also demonstrate how rapid prototyping can save time and effort when building new products or demonstrations.

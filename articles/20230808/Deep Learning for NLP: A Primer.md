@@ -1,1 +1,0 @@
-1. Deep Learning for NLP: A Primer

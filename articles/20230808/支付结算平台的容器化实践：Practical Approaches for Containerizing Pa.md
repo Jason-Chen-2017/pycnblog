@@ -1,1 +1,0 @@
-支付结算平台的容器化实践：Practical Approaches for Containerizing Payment Settlement Platforms

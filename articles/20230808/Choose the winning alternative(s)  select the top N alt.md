@@ -1,1 +1,0 @@
-5. Choose the winning alternative(s) - select the top N alternatives having smallest ranks. These alternatives are the winner(s) according to TOPSIS methodology. 

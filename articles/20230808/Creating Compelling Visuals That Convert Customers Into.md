@@ -1,1 +1,0 @@
-7. Creating Compelling Visuals That Convert Customers Into Loyal Fans 

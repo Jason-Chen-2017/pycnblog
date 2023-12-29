@@ -1,1 +1,0 @@
-6. Benefits of Open Source in Medicine: Alignment with Ethical and Social Norms and Efficiency in Productivity

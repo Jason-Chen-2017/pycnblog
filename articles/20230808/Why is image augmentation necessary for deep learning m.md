@@ -1,1 +1,0 @@
-2. Why is image augmentation necessary for deep learning models training?

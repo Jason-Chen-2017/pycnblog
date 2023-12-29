@@ -1,1 +1,0 @@
-2. Breast Cancer Classification Using Genetic Algorithms

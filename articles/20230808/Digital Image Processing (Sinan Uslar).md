@@ -1,1 +1,0 @@
-8. Digital Image Processing (Sinan Uslar)

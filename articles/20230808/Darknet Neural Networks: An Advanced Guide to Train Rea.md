@@ -1,1 +1,0 @@
-8. Darknet Neural Networks: An Advanced Guide to Train Realtime Object Detectors

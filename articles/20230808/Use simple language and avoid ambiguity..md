@@ -1,1 +1,0 @@
-4. Use simple language and avoid ambiguity. 

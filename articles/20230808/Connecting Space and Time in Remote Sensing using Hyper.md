@@ -1,1 +1,0 @@
-16. Connecting Space and Time in Remote Sensing using Hyperspectral Imaging 

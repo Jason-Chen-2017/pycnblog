@@ -1,1 +1,0 @@
-Developing Web Applications with Flask and MongoDB: Build a Blog Application to Learn More About Flask Framework and MongoDB Database.

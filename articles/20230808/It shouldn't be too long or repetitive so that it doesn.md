@@ -1,1 +1,0 @@
-2. It shouldn't be too long or repetitive so that it doesn't overwhelm the reader. 

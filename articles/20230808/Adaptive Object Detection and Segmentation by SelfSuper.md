@@ -1,1 +1,0 @@
-Adaptive Object Detection and Segmentation by Self-Supervised Learning (Adaptive Object Detection and Segmentation by Self-Supervised Learning)

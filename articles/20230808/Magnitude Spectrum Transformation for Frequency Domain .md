@@ -1,1 +1,0 @@
-4. Magnitude Spectrum Transformation for Frequency Domain Filtering 

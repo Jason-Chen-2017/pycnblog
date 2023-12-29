@@ -1,1 +1,0 @@
-DiscoGAN: Generating and Discriminating Non-Paired Data in the Wild

@@ -1,1 +1,0 @@
-7. An Overview of Factor Analysis Technique 

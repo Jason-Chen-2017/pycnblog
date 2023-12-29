@@ -1,1 +1,0 @@
-10. Visual Question Answering with Attention-based Multi-Task Learning and Knowledge Distillation

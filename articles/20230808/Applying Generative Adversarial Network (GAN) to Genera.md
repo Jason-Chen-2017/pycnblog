@@ -1,1 +1,0 @@
-10. Applying Generative Adversarial Network (GAN) to Generate Faces

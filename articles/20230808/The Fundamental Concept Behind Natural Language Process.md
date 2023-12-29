@@ -1,1 +1,0 @@
-4. The Fundamental Concept Behind Natural Language Processing – Bag of Words Approach 

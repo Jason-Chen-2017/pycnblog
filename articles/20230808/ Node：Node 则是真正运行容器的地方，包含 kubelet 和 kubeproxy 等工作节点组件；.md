@@ -1,1 +1,0 @@
-- Node：Node 则是真正运行容器的地方，包含 kubelet 和 kube-proxy 等工作节点组件；

@@ -1,1 +1,0 @@
-[8] Wasserstein-GAN: A Better Alternative to MMD-GAN (Wasserstein-GAN: a better alternative to mmd-gan)

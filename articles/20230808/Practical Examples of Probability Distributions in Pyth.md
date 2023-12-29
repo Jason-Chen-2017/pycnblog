@@ -1,1 +1,0 @@
-Practical Examples of Probability Distributions in Python

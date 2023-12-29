@@ -1,1 +1,0 @@
-2014年，Hinton、Sermanet、LeCun提出了ZFNet的概念。它是AlexNet的后继者，使用残差网络构建深度网络。

@@ -1,1 +1,0 @@
-model.add(TimeDistributed(Flatten())) 

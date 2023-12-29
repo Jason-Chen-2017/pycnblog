@@ -1,1 +1,0 @@
-Panoptic Segmentation (Panoptic Segmentation)

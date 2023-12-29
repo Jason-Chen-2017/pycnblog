@@ -1,1 +1,0 @@
-1. CVPR 2019: ImageNet Classification with Deep Convolutional Neural Networks (DeCaffeination) 

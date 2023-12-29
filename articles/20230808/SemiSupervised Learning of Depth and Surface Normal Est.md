@@ -1,1 +1,0 @@
-10. Semi-Supervised Learning of Depth and Surface Normal Estimation from Monocular Videos using a Multi-task Network

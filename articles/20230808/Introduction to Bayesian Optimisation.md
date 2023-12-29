@@ -1,1 +1,0 @@
-5. Introduction to Bayesian Optimisation

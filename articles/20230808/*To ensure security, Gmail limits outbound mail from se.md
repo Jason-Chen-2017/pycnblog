@@ -1,1 +1,0 @@
-*To ensure security, Gmail limits outbound mail from servers outside the organization.*

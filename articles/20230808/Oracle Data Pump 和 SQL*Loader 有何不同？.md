@@ -1,1 +1,0 @@
-8. Oracle Data Pump 和 SQL*Loader 有何不同？ 

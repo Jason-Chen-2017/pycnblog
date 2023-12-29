@@ -1,1 +1,0 @@
-4. Building APIs with AWS Lambda, API Gateway and Amazon DynamoDB

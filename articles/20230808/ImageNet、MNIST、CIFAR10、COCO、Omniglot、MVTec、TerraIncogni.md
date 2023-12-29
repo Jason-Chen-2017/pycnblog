@@ -1,1 +1,0 @@
-5. ImageNet、MNIST、CIFAR-10、COCO、Omniglot、MVTec、TerraIncognita

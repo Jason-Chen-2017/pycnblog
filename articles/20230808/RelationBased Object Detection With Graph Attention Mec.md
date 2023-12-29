@@ -1,1 +1,0 @@
-8. Relation-Based Object Detection With Graph Attention Mechanisms

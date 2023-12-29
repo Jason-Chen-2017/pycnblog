@@ -1,1 +1,0 @@
-3. Service Oriented Architecture and Microservices: Vision, Practice, and Challenges

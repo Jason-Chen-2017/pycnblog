@@ -1,1 +1,0 @@
-5. Performance Analysis and Optimization of C++ Programs: Memory Management, Multithreading, and Algorithmic Optimizations

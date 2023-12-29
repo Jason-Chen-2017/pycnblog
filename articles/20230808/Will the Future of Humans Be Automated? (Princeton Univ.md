@@ -1,1 +1,0 @@
-8. Will the Future of Humans Be Automated? (Princeton University Press)

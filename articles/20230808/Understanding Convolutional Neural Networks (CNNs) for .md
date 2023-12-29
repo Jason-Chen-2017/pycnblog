@@ -1,1 +1,0 @@
-Understanding Convolutional Neural Networks (CNNs) for NLP

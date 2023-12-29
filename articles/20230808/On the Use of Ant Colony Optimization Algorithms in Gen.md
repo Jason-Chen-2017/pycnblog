@@ -1,1 +1,0 @@
-6. On the Use of Ant Colony Optimization Algorithms in Genetic Programming

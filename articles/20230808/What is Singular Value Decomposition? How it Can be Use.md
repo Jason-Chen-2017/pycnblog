@@ -1,1 +1,0 @@
-5. What is Singular Value Decomposition? How it Can be Used to Identify Topics in Text Data? 

@@ -1,1 +1,0 @@
-Black Box Optimisation With Bayesian Methods in Python

@@ -1,1 +1,0 @@
-I hope that helps! Let me know if you have any further questions. Good luck with your writing projects! 

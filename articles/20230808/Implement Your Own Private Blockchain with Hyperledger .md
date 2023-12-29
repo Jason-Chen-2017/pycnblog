@@ -1,1 +1,0 @@
-10. Implement Your Own Private Blockchain with Hyperledger Fabric – Tutorial (with Code Samples) 

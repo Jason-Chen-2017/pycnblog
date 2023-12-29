@@ -1,1 +1,0 @@
-2. Open Source Intelligence: The Untold Story of Hacking Organizations

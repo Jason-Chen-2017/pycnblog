@@ -1,1 +1,0 @@
-8. Unsupervised feature selection with kernel principal component analysis (利用核主成分分析的无监督特征选择)

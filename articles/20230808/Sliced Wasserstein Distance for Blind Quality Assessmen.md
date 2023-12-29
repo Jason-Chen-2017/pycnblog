@@ -1,1 +1,0 @@
-Sliced Wasserstein Distance for Blind Quality Assessment

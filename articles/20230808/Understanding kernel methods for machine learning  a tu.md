@@ -1,1 +1,0 @@
-5. Understanding kernel methods for machine learning - a tutorial with applications to natural language processing and computer vision (机器学习中的核方法原理与应用)

@@ -1,1 +1,0 @@
-- Explaining the Power of Randomized Optimization in Deep Learning

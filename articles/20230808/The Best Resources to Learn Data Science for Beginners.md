@@ -1,1 +1,0 @@
-4. The Best Resources to Learn Data Science for Beginners 

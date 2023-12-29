@@ -1,1 +1,0 @@
-Implementing Gaussian Processes for Machine Learning.

@@ -1,1 +1,0 @@
-Thank you very much for taking the time to review our ideas. We're happy to see that some of your recommendations are already included as part of our suggestions, which is truly inspiring. 

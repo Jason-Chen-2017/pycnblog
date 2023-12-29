@@ -1,1 +1,0 @@
-5. Reimagining the Data Warehouse: Lessons Learned from the Apache Hive Project

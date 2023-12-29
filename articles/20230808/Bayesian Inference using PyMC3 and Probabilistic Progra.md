@@ -1,1 +1,0 @@
-4. Bayesian Inference using PyMC3 and Probabilistic Programming in Python

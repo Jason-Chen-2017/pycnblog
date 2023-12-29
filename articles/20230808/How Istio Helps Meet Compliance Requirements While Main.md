@@ -1,1 +1,0 @@
-6. How Istio Helps Meet Compliance Requirements While Maintaining Security in a Distributed Environment

@@ -1,1 +1,0 @@
-LSTM(Long Short-Term Memory):一种循环神经网络类型，是一种特殊的RNN(Recurrent Neural Network)。

@@ -1,1 +1,0 @@
-●Real-Time Data Collection and Processing with Raspberry Pi and Arduino for Visual Inspection Robotics

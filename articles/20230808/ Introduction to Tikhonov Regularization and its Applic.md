@@ -1,1 +1,0 @@
-- Introduction to Tikhonov Regularization and its Application to Face Recognition Systems

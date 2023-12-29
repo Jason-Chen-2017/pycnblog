@@ -1,1 +1,0 @@
-The K-Means clustering algorithm works by partitioning n observations into k clusters iteratively. At each iteration, the algorithm assigns each observation to the nearest centroid found so far, creating k new centroids. The algorithm repeats these assignments until convergence or a specified maximum number of iterations has been reached. 

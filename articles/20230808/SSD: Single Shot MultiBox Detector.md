@@ -1,1 +1,0 @@
-9. SSD: Single Shot MultiBox Detector

@@ -1,1 +1,0 @@
-7. Utterance-Level Acoustic Feature Fusion for Accurate ASR System Combination (IEEE2018)

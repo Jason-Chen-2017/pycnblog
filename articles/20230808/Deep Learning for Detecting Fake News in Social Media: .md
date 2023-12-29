@@ -1,1 +1,0 @@
-2. Deep Learning for Detecting Fake News in Social Media: A Survey of Methods and Techniques

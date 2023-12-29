@@ -1,1 +1,0 @@
-出品方：Cambridge Centre for Science, Technology and Innovation (CSTI), UK; John von Neumann Institute for Computing and Mathematics (JICM), Germany; Princeton Plasma Physics Laboratory (PPPL), USA; McMaster University, Canada

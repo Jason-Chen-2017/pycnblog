@@ -1,1 +1,0 @@
-F. Reinforcement Learning from Scratch

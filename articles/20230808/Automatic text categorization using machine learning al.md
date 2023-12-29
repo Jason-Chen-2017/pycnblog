@@ -1,1 +1,0 @@
-4. Automatic text categorization using machine learning algorithms [7]

@@ -1,1 +1,0 @@
-5. How to migrate databases to cloud-based distributed systems with ease?

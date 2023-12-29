@@ -1,1 +1,0 @@
-4. Amazon Kinesis: When Should I Use It?

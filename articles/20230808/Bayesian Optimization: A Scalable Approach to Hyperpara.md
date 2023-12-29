@@ -1,1 +1,0 @@
-6. Bayesian Optimization: A Scalable Approach to Hyperparameter Optimization

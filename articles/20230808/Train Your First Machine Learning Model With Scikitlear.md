@@ -1,1 +1,0 @@
-2. Train Your First Machine Learning Model With Scikit-learn and Keras

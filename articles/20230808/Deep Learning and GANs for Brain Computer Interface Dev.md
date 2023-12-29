@@ -1,1 +1,0 @@
-2. "Deep Learning and GANs for Brain Computer Interface Development"

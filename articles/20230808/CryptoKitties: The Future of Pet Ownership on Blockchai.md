@@ -1,1 +1,0 @@
-CryptoKitties: The Future of Pet Ownership on Blockchain

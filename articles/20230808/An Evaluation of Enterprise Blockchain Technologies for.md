@@ -1,1 +1,0 @@
-6. An Evaluation of Enterprise Blockchain Technologies for Use in Healthcare

@@ -1,1 +1,0 @@
-14. How to perform transfer learning from a pre-trained BERT model for text classification task?

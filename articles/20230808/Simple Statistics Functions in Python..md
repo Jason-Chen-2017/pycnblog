@@ -1,1 +1,0 @@
-Simple Statistics Functions in Python.

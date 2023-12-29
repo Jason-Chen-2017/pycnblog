@@ -1,1 +1,0 @@
-1. A SVM tutorial in Python for machine learning (part I): Introduction and theory

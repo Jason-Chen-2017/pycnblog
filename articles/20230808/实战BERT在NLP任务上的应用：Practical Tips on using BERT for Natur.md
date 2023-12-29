@@ -1,1 +1,0 @@
-4. 《实战BERT在NLP任务上的应用》：Practical Tips on using BERT for Natural Language Processing Tasks

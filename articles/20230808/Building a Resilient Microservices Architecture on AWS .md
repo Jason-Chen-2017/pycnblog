@@ -1,1 +1,0 @@
-5. Building a Resilient Microservices Architecture on AWS using Amazon EKS

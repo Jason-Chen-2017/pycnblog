@@ -1,1 +1,0 @@
-9. Geometric Intelligence Using Graph Convolutional Network 

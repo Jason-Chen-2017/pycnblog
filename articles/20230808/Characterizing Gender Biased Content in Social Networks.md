@@ -1,1 +1,0 @@
-3. Characterizing Gender Biased Content in Social Networks Using Knowledge Graphs and Word Embeddings

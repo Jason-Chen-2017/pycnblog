@@ -1,1 +1,0 @@
-Understanding Probabilistic Graphical Modeling for Deep Learning

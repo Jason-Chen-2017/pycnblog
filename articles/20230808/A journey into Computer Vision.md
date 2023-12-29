@@ -1,1 +1,0 @@
-2.《A journey into Computer Vision》

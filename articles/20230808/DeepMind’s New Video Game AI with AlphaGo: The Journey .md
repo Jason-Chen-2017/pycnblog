@@ -1,1 +1,0 @@
-DeepMind’s New Video Game AI with AlphaGo: The Journey So Far 

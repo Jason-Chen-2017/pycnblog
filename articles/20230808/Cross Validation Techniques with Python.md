@@ -1,1 +1,0 @@
-6. Cross Validation Techniques with Python 

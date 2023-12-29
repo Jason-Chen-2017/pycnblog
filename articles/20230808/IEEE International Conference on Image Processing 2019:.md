@@ -1,1 +1,0 @@
-3. IEEE International Conference on Image Processing 2019: Deblurring Using a Residual U-Net Model (UNet-Deblurring) 

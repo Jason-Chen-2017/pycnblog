@@ -1,1 +1,0 @@
-6. Wavelet Transforms and Level Sets in Medical Imaging

@@ -1,1 +1,0 @@
-2. Text Categorization with TfidfVectorizer in Python [3]

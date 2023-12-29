@@ -1,1 +1,0 @@
-7. The Kalman Filter Algorithm in Depth – Part I

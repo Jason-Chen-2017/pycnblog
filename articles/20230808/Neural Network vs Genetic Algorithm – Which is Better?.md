@@ -1,1 +1,0 @@
-6.Neural Network vs Genetic Algorithm – Which is Better?

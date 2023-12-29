@@ -1,1 +1,0 @@
-6. Tensorflow Projects: Advanced Natural Language Processing (Packt Publishing)

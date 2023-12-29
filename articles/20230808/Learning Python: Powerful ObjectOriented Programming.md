@@ -1,1 +1,0 @@
-10. Learning Python: Powerful Object-Oriented Programming

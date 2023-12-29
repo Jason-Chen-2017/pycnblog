@@ -1,1 +1,0 @@
-15. Simple Steps to Create a Beautiful Resume

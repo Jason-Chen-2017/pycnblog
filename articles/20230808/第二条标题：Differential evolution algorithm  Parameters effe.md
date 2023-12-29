@@ -1,1 +1,0 @@
-第二条标题："Differential evolution algorithm - Parameters effectiveness of DE"

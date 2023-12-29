@@ -1,1 +1,0 @@
-2. On Approximation Algorithms for Solving Parametric Optimization Problems Using Level Set Evolution 

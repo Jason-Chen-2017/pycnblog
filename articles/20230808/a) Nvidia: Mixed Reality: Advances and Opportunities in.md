@@ -1,1 +1,0 @@
-a) Nvidia: Mixed Reality: Advances and Opportunities in Urban Design

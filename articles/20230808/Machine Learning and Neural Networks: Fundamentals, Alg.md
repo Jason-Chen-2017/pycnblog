@@ -1,1 +1,0 @@
-5. Machine Learning and Neural Networks: Fundamentals, Algorithms, and Frameworks

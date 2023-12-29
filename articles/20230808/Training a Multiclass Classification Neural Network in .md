@@ -1,1 +1,0 @@
-10. Training a Multi-class Classification Neural Network in Keras

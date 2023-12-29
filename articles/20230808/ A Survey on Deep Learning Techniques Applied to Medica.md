@@ -1,1 +1,0 @@
-- A Survey on Deep Learning Techniques Applied to Medical Images with an Emphasis on CNN[7]

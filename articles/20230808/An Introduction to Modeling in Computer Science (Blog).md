@@ -1,1 +1,0 @@
-2. An Introduction to Modeling in Computer Science (Blog)

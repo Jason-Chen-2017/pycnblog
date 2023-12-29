@@ -1,1 +1,0 @@
-大数据海量影像数据的研究综述Big Data Approach to Analyze Massive Volumetric Medical Images

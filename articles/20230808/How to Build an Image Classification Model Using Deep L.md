@@ -1,1 +1,0 @@
-2.How to Build an Image Classification Model Using Deep Learning with Keras on TensorFlow

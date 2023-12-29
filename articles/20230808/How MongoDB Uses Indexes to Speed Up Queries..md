@@ -1,1 +1,0 @@
-How MongoDB Uses Indexes to Speed Up Queries.

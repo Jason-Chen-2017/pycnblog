@@ -1,1 +1,0 @@
-4. Optimizing Neural Network Structure with Genetic Algorithms for Convolutional Neural Networks

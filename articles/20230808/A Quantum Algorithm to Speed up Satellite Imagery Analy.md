@@ -1,1 +1,0 @@
-A Quantum Algorithm to Speed up Satellite Imagery Analysis

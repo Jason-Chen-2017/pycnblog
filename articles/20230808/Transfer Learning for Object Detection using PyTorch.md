@@ -1,1 +1,0 @@
-5. Transfer Learning for Object Detection using PyTorch

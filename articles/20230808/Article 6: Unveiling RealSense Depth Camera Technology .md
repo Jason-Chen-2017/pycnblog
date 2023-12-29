@@ -1,1 +1,0 @@
-Article 6: Unveiling RealSense Depth Camera Technology – From the Basics to Rapid Prototyping

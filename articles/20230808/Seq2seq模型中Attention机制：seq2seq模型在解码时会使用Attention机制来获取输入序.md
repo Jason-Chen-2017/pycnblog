@@ -1,1 +1,0 @@
-4. Seq2seq模型中Attention机制：seq2seq模型在解码时会使用Attention机制来获取输入序列中各个位置的重要性，并根据重要性调整模型的输出结果。

@@ -1,1 +1,0 @@
-Using Cryptocurrency for Accreditation and Identity Verification

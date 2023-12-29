@@ -1,1 +1,0 @@
-5.Python Programming for Beginners – Getting Started with Variables and Print Statements

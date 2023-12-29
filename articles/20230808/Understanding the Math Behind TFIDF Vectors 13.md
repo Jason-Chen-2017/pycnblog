@@ -1,1 +1,0 @@
-10. Understanding the Math Behind TF-IDF Vectors [13]

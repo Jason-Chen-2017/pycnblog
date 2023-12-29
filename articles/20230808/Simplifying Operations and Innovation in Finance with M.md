@@ -1,1 +1,0 @@
-10. Simplifying Operations and Innovation in Finance with Managed Services

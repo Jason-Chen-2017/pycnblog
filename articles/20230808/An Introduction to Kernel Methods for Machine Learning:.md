@@ -1,1 +1,0 @@
-2. An Introduction to Kernel Methods for Machine Learning: Understanding the Core Concepts and Applications of SVM with Gaussian Processes (September 6, 2017)

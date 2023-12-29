@@ -1,1 +1,0 @@
- Join us to learn more about open source and how it helps our community and businesses succeed. 

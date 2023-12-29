@@ -1,1 +1,0 @@
-Understanding How Convolutional Neural Networks Work For Facial Recognition.

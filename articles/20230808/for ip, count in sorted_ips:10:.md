@@ -1,1 +1,0 @@
-for ip, count in sorted_ips[:10]:

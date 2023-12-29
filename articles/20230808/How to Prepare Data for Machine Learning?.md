@@ -1,1 +1,0 @@
-2. How to Prepare Data for Machine Learning? 

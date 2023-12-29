@@ -1,1 +1,0 @@
-- Graph Partitioning Using Minimum Cut Approach in Python

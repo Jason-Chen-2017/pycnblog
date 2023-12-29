@@ -1,1 +1,0 @@
-7. Recommender system architecture components: Embedding layer, retrieval layer, ranking layer, evaluation layer, optimization layer, etc. 

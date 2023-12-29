@@ -1,1 +1,0 @@
-Graph Convolutional Neural Networks with convolutional neural network filters as regularizers

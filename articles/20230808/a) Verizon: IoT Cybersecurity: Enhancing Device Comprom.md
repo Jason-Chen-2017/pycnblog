@@ -1,1 +1,0 @@
-a) Verizon: IoT Cybersecurity: Enhancing Device Compromise Prevention Capabilities

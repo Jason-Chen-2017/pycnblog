@@ -1,1 +1,0 @@
-Automatic Open-World Recognition with Weak Supervision

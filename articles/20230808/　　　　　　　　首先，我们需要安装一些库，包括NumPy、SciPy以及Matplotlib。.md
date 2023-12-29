@@ -1,1 +1,0 @@
-　　　　　　　　首先，我们需要安装一些库，包括NumPy、SciPy以及Matplotlib。

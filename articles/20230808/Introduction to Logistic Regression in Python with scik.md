@@ -1,1 +1,0 @@
-Introduction to Logistic Regression in Python with scikit-learn.

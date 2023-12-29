@@ -1,1 +1,0 @@
-7. 深度学习硬件加速：NVIDIA FairScale 正式发布

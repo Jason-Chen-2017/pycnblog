@@ -1,1 +1,0 @@
-CS 294-112: Intro to Reinforcement Learning (Stanford University)

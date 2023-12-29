@@ -1,1 +1,0 @@
-6.“DeepSpeed: Making training faster on modern hardware” by Sanghyun Woo et al

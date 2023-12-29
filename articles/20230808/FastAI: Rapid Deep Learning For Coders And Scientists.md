@@ -1,1 +1,0 @@
-9. FastAI: Rapid Deep Learning For Coders And Scientists 

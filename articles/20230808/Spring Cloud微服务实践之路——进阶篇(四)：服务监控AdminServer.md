@@ -1,1 +1,0 @@
-4. Spring Cloud微服务实践之路——进阶篇(四)：服务监控AdminServer

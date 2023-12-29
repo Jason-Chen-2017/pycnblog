@@ -1,1 +1,0 @@
-11. Bringing Big Data Management to the Edge with Containerization and Kubernetes (Part 1)

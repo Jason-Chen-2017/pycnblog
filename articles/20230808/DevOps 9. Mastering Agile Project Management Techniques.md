@@ -1,1 +1,0 @@
-DevOps 9. Mastering Agile Project Management Techniques with Scrum Methodology

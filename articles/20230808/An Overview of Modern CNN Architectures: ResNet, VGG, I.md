@@ -1,1 +1,0 @@
-8.An Overview of Modern CNN Architectures: ResNet, VGG, Inception, Mobile Net, and ShuffleNet

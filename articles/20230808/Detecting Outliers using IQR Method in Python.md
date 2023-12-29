@@ -1,1 +1,0 @@
-3. Detecting Outliers using IQR Method in Python 

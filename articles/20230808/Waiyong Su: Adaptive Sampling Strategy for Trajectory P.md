@@ -1,1 +1,0 @@
-Waiyong Su: Adaptive Sampling Strategy for Trajectory Prediction Under Restricted Density Constraints.

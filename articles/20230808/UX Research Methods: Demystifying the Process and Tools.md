@@ -1,1 +1,0 @@
-6. UX Research Methods: Demystifying the Process and Tools

@@ -1,1 +1,0 @@
-6. Introduction to Hadoop Ecosystem for Data Science

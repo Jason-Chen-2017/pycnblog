@@ -1,1 +1,0 @@
-• 《Smart Traffic Management for Connected Vehicles and Bicycles: A Systematic Approach》

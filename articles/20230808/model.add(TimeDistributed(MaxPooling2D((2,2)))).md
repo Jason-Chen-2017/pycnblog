@@ -1,1 +1,0 @@
-model.add(TimeDistributed(MaxPooling2D((2,2)))) 

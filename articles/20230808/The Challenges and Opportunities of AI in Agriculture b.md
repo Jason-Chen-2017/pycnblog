@@ -1,1 +1,0 @@
-"The Challenges and Opportunities of AI in Agriculture" by The Farm Insight

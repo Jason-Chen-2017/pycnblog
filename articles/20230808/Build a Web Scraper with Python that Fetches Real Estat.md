@@ -1,1 +1,0 @@
-8.Build a Web Scraper with Python that Fetches Real Estate Prices

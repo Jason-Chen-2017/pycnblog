@@ -1,1 +1,0 @@
-3. Building an Image Classifier Using PyTorch - Part 1: Introduction and Loading Data 

@@ -1,1 +1,0 @@
-2. Optimization methods to improve model effectiveness: Data augmentation, regularization, cross validation, Dropout, early stopping, etc. 

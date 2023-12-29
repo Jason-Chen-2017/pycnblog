@@ -1,1 +1,0 @@
-print("Total number of frames:", len(frames))

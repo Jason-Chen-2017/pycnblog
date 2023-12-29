@@ -1,1 +1,0 @@
-3. Testing and Quality Assurance: Principles, Technologies, and Tools

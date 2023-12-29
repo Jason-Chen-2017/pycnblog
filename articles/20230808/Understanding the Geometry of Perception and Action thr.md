@@ -1,1 +1,0 @@
-10. Understanding the Geometry of Perception and Action through Data-driven Models 

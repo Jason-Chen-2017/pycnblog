@@ -1,1 +1,0 @@
-Rethinking the Architecture of Classifier and Representation for Facial Landmark Localization

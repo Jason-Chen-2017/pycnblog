@@ -1,1 +1,0 @@
-1. 管理者的思考方式(Managers' Thoughtfulness of Approach)

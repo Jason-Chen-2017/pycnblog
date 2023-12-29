@@ -1,1 +1,0 @@
-2. Apache Hive Essentials: Developing Distributed Data Lakes With Apache Hive

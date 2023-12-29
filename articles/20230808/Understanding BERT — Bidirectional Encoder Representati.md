@@ -1,1 +1,0 @@
-7.Understanding BERT — Bidirectional Encoder Representations from Transformers

@@ -1,1 +1,0 @@
-for r, b in enumerate(sorted_ranks[:2]):

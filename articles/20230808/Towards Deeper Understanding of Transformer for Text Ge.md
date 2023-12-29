@@ -1,1 +1,0 @@
-5. Towards Deeper Understanding of Transformer for Text Generation

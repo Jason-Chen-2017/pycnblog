@@ -1,1 +1,0 @@
-Python Programming for Beginners - Learn the Basics of Computer Science in Easy Steps!

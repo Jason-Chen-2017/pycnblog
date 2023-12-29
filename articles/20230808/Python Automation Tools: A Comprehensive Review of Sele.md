@@ -1,1 +1,0 @@
-4.Python Automation Tools: A Comprehensive Review of Selenium WebDriver, Beautiful Soup, and Scrapy

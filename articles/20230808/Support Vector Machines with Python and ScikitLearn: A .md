@@ -1,1 +1,0 @@
-8. Support Vector Machines with Python and Scikit-Learn: A Step by Step Introduction to SVMs

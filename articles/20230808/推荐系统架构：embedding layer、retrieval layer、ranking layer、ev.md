@@ -1,1 +1,0 @@
-7. 推荐系统架构：embedding layer、retrieval layer、ranking layer、evaluation layer、optimization layer等。

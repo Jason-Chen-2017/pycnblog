@@ -1,1 +1,0 @@
-3. Image Segmentation using U-Net

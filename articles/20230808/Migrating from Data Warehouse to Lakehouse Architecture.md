@@ -1,1 +1,0 @@
-Migrating from Data Warehouse to Lakehouse Architecture: The Ultimate Guide

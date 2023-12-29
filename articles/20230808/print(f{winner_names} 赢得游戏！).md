@@ -1,1 +1,0 @@
-        print(f"{winner_names} 赢得游戏！")

@@ -1,1 +1,0 @@
-Mastering Apache Kafka for Developers: Zero to Mastery Series

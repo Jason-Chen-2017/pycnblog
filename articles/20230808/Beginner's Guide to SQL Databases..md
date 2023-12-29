@@ -1,1 +1,0 @@
-Beginner's Guide to SQL Databases.

@@ -1,1 +1,0 @@
-7. Efficient Backprop Through Time: What It Does and How to Improve it  

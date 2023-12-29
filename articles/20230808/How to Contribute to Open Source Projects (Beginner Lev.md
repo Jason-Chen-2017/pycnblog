@@ -1,1 +1,0 @@
-7. How to Contribute to Open Source Projects (Beginner Level)

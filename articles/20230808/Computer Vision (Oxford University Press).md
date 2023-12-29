@@ -1,1 +1,0 @@
-1. Computer Vision (Oxford University Press)

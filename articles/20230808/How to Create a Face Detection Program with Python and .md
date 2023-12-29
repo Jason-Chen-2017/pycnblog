@@ -1,1 +1,0 @@
-How to Create a Face Detection Program with Python and OpenCV.

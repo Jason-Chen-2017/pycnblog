@@ -1,1 +1,0 @@
-1. Introduction to Named Entity Recognition(NER): An overview of techniques used to identify different entities within text data and their corresponding tags. This blog covers four main topics including concept definitions, popular NER libraries, evaluation metrics, and various approaches for NER tasks.

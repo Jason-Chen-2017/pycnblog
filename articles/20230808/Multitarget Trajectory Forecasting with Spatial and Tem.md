@@ -1,1 +1,0 @@
-19. Multi-target Trajectory Forecasting with Spatial and Temporal Features via Transformer Network and Graph Neural Network

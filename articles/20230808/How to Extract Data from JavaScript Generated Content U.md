@@ -1,1 +1,0 @@
-6.How to Extract Data from JavaScript Generated Content Using Python

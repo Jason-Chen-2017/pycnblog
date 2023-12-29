@@ -1,1 +1,0 @@
-关键字：Hive、大数据处理、数据仓库、OLAPCUBE、OLAPDBMS

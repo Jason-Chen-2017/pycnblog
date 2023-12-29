@@ -1,1 +1,0 @@
-8. Blockchain Technology in Healthcare: Securing Patient Data, Identity Management and Payment Networks

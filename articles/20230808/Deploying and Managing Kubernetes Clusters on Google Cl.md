@@ -1,1 +1,0 @@
-2. Deploying and Managing Kubernetes Clusters on Google Cloud Platform

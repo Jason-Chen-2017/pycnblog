@@ -1,1 +1,0 @@
-10. Energy-Based Active Contour Models for Image Segmentation and Object Boundary Detection

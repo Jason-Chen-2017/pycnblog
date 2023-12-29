@@ -1,1 +1,0 @@
-3. Deep Learning with PyTorch: Quick Start guide (Manning Publications)

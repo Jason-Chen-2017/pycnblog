@@ -1,1 +1,0 @@
-Security Guidelines for IT Professionals and Information Security Managers

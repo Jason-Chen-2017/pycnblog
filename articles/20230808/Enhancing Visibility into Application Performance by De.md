@@ -1,1 +1,0 @@
-7. Enhancing Visibility into Application Performance by Deploying Prometheus and Grafana in Kubernetes

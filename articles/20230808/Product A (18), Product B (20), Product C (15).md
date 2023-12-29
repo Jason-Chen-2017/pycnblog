@@ -1,1 +1,0 @@
-            Product A (18), Product B (20), Product C (15)

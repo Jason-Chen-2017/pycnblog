@@ -1,1 +1,0 @@
-8.Getting Started with TensorFlow 2.0: A Step-by-Step Guide for Beginners

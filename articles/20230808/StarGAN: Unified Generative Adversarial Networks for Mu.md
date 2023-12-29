@@ -1,1 +1,0 @@
-StarGAN: Unified Generative Adversarial Networks for Multi-domain Image-to-image Translation

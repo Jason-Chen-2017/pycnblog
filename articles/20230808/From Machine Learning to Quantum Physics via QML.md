@@ -1,1 +1,0 @@
-From Machine Learning to Quantum Physics via QML

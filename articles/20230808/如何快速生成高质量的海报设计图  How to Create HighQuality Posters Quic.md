@@ -1,1 +1,0 @@
-8. 如何快速生成高质量的海报设计图 - How to Create High-Quality Posters Quickly

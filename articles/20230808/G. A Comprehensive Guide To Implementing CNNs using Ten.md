@@ -1,1 +1,0 @@
-G. A Comprehensive Guide To Implementing CNNs using TensorFlow 2.0

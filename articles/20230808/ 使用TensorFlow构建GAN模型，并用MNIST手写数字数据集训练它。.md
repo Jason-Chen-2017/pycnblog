@@ -1,1 +1,0 @@
-- 使用TensorFlow构建GAN模型，并用MNIST手写数字数据集训练它。

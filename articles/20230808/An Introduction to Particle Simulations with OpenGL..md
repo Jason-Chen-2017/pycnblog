@@ -1,1 +1,0 @@
-An Introduction to Particle Simulations with OpenGL.

@@ -1,1 +1,0 @@
-7. 有Hadoop、Spark、Flink等大数据计算平台的使用经验；

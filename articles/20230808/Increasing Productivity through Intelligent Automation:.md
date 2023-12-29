@@ -1,1 +1,0 @@
-8. Increasing Productivity through Intelligent Automation: How Machine Learning Techniques are Revolutionizing Manufacturing - Sarah Shevlin

@@ -1,1 +1,0 @@
-Batch Gradient Descent Algorithm

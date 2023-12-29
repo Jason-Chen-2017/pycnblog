@@ -1,1 +1,0 @@
-11. Dimensionality Reduction via Geodesic Flow on Manifolds 

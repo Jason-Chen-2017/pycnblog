@@ -1,1 +1,0 @@
-        return tf.matmul(h, self.weights['hidden']) 

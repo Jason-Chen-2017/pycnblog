@@ -1,1 +1,0 @@
-The Mathematics Behind Logistic Regression: Part 1 - The Sigmoid Function

@@ -1,1 +1,0 @@
-7种常见数据集选择指南：ImageNet、MNIST、CIFAR-10、COCO、Omniglot、MVTec、TerraIncognita

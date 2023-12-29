@@ -1,1 +1,0 @@
-2. A Comprehensive Guide to Mastering Excel: An Easy to Follow Methodology

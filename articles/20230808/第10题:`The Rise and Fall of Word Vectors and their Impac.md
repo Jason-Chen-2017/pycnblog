@@ -1,1 +1,0 @@
-第10题:`The Rise and Fall of Word Vectors and their Impact on NLP`

@@ -1,1 +1,0 @@
-4. Rethinking the inception architecture for computer vision (Szegedy et al., 2015)

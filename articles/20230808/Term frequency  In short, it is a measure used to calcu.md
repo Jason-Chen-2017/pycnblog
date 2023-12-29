@@ -1,1 +1,0 @@
-Term frequency - In short, it is a measure used to calculate how often a word appears within a document or corpus.[1] It can be calculated as follows:

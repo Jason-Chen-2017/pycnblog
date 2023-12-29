@@ -1,1 +1,0 @@
-Vuforia & Niantic 联手打造出全新的虚拟现实游戏平台——PlayStation VR

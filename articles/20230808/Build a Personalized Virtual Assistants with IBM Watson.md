@@ -1,1 +1,0 @@
-Build a Personalized Virtual Assistants with IBM Watson Assistant 

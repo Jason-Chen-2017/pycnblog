@@ -1,1 +1,0 @@
-6.《深度学习》 - Ian Goodfellow、Andrew Ng

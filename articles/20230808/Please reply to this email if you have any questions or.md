@@ -1,1 +1,0 @@
-Please reply to this email if you have any questions or concerns about our service. 

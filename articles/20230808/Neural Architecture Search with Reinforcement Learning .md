@@ -1,1 +1,0 @@
-2. Neural Architecture Search with Reinforcement Learning and Bayesian Optimization (Google Brain)

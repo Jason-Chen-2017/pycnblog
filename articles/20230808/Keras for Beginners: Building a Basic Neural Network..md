@@ -1,1 +1,0 @@
-Keras for Beginners: Building a Basic Neural Network.

@@ -1,1 +1,0 @@
--"Why use DataOps instead of DevOps for modern data analytics teams? " - Devlin Smith (Author)

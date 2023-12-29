@@ -1,1 +1,0 @@
-Introduction to Music Generation with LSTMs and Keras: From MIDI Files to Music Sheets 

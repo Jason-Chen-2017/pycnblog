@@ -1,1 +1,0 @@
-5. Solving Real-World IoT Challenges with Bosch Rexroth's EMS - David Smith

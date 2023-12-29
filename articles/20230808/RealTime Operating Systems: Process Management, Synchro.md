@@ -1,1 +1,0 @@
-6. Real-Time Operating Systems: Process Management, Synchronization, and Scheduling

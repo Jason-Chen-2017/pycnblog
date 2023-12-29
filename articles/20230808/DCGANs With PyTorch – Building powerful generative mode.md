@@ -1,1 +1,0 @@
-3. DCGANs With PyTorch – Building powerful generative models without any expertise on deep learning

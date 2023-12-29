@@ -1,1 +1,0 @@
-10.Grokking deep learning by Ilya Sutskever

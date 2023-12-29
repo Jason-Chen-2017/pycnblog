@@ -1,1 +1,0 @@
-2. What is GAN? - A Complete Guide with Applications in Deep Learning

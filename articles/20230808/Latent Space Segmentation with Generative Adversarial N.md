@@ -1,1 +1,0 @@
-8. Latent Space Segmentation with Generative Adversarial Networks

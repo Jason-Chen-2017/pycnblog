@@ -1,1 +1,0 @@
-4. Advanced Topics in Database Systems: Scheduling, Recovery, and Query Optimization

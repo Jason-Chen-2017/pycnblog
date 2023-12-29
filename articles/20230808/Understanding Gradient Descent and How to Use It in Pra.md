@@ -1,1 +1,0 @@
-2. Understanding Gradient Descent and How to Use It in Practice

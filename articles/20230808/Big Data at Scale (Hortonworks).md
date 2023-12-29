@@ -1,1 +1,0 @@
-7.Big Data at Scale (Hortonworks)

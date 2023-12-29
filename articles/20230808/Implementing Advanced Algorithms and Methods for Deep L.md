@@ -1,1 +1,0 @@
-Implementing Advanced Algorithms and Methods for Deep Learning

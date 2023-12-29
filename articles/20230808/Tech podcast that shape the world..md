@@ -1,1 +1,0 @@
-Tech podcast that shape the world. 

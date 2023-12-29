@@ -1,1 +1,0 @@
-- Container Runtime：ContainerRuntime 是 Kubernetes 中用来管理镜像和运行容器的组件，目前支持 Docker 和 rkt 两种运行时；

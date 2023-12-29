@@ -1,1 +1,0 @@
-4. PostgreSQL Essentials: The Definitive Guide

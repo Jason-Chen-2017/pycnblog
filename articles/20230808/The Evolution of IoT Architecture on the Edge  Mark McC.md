@@ -1,1 +1,0 @@
-7. The Evolution of IoT Architecture on the Edge - Mark McCormick

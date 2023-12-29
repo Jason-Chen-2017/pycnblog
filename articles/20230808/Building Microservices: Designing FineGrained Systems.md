@@ -1,1 +1,0 @@
-6. Building Microservices: Designing Fine-Grained Systems

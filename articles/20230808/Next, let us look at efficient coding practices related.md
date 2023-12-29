@@ -1,1 +1,0 @@
-Next, let us look at efficient coding practices related to implementing deep learning models. 

@@ -1,1 +1,0 @@
-Particle filters – a tutorial for robot navigation and path planning

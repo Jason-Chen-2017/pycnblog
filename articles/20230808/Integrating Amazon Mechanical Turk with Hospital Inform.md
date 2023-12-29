@@ -1,1 +1,0 @@
-10. Integrating Amazon Mechanical Turk with Hospital Information Systems for Homogeneous Workforce Support.

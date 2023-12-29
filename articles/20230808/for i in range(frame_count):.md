@@ -1,1 +1,0 @@
-for i in range(frame_count):

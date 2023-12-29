@@ -1,1 +1,0 @@
-What is Black-Box Optimisation? A Comprehensive Guide to its Implementation using Python

@@ -1,1 +1,0 @@
-Generative Adversarial Nets in Action

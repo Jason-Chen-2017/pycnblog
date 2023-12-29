@@ -1,1 +1,0 @@
-3. Software Libraries - Various software libraries have been developed over years to make building deep learning models easier. They provide optimized functions and reduce code complexity. But choosing the best library for each task remains challenging due to differences in functionality, performance, and features. 

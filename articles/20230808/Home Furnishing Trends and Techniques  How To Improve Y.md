@@ -1,1 +1,0 @@
-1. Home Furnishing Trends and Techniques - How To Improve Your Home's Lighting and Design

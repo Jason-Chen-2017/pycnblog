@@ -1,1 +1,0 @@
-9. Image Processing with OpenCV in Python (DataSciencePlus)

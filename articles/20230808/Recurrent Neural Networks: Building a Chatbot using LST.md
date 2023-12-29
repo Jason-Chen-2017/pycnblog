@@ -1,1 +1,0 @@
-7. Recurrent Neural Networks: Building a Chatbot using LSTM, Performing sentiment analysis using LSTM-based models, Creating music using LSTM-based models, Classifying real-time stock market data using LSTM-RNNs, and Building a language model with LSTM-RNNs.

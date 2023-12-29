@@ -1,1 +1,0 @@
-7. Why PCA is not always the best choice of dimension reduction technique in real-world problems? (为什么真实世界的问题中 PCA 不总是最佳的降维技术？)

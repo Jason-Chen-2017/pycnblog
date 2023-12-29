@@ -1,1 +1,0 @@
-4. Microservices with Spring Cloud and Netflix OSS -Part IV: Feign Client for Declarative Rest Calls

@@ -1,1 +1,0 @@
-- 平移 (Translation)

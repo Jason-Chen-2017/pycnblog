@@ -1,1 +1,0 @@
-Understanding Convolutional Neural Network for Scene Recognition (Understanding Convolutional Neural Network for Scene Recognition)

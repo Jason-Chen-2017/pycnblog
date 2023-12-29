@@ -1,1 +1,0 @@
-Using GANs for Musical Style Transfer.

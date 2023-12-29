@@ -1,1 +1,0 @@
-Memory-Efficient Low-Precision ConvNet Training on Resource-Limited Devices using Differential Programming

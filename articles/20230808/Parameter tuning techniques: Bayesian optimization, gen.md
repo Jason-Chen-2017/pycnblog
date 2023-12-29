@@ -1,1 +1,0 @@
-3. Parameter tuning techniques: Bayesian optimization, genetic algorithm, simulated annealing, etc. 

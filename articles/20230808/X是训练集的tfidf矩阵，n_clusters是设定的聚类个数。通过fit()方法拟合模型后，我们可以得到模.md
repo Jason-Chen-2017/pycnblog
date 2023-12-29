@@ -1,1 +1,0 @@
-   X是训练集的tf-idf矩阵，n_clusters是设定的聚类个数。通过fit()方法拟合模型后，我们可以得到模型聚类标签labels，以及簇质心centroids。其中，centroids是一个形状为(n_clusters, n_features)的数组，代表每个聚类中心。

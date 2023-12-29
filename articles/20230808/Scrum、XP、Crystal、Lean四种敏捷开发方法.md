@@ -1,1 +1,0 @@
-2.Scrum、XP、Crystal、Lean四种敏捷开发方法

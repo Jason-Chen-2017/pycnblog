@@ -1,1 +1,0 @@
-12. Interpretable Representations of Egocentric Activities using Dynamic Graph CNN 

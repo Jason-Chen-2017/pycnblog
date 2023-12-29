@@ -1,1 +1,0 @@
-7. Augmented Reality in Mobile Game Development - May 11th, 2019 by Developer Advocate at Google

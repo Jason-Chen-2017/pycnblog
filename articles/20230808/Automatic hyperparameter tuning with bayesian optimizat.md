@@ -1,1 +1,0 @@
-7. Automatic hyperparameter tuning with bayesian optimization in python

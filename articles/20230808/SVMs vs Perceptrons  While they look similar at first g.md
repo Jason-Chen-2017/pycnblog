@@ -1,1 +1,0 @@
-1. SVMs vs Perceptrons - While they look similar at first glance, they have very different optimization objectives and formulations of the problem. Understanding the difference will help you choose the right algorithm depending on your dataset properties.

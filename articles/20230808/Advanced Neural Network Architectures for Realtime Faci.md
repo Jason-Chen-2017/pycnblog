@@ -1,1 +1,0 @@
-6. Advanced Neural Network Architectures for Real-time Facial Expression Recognition

@@ -1,1 +1,0 @@
-2、人工智能简史 (A Brief History of Artificial Intelligence)

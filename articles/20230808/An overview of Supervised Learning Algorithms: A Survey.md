@@ -1,1 +1,0 @@
-1. An overview of Supervised Learning Algorithms: A Survey with Examples in Python 

@@ -1,1 +1,0 @@
-28. Identifying Duplicate Bug Reports through Code Reviews using Neural Networks and Embedding Features

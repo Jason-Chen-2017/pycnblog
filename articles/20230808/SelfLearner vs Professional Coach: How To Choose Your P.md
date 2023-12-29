@@ -1,1 +1,0 @@
-3. Self-Learner vs Professional Coach: How To Choose Your Path Forward

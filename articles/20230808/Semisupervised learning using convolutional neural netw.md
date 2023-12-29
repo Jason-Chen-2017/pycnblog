@@ -1,1 +1,0 @@
-Semi-supervised learning using convolutional neural networks for object detection 

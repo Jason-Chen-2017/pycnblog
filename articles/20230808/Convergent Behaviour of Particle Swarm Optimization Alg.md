@@ -1,1 +1,0 @@
-9. Convergent Behaviour of Particle Swarm Optimization Algorithm in Continuous Domain

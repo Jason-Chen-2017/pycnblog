@@ -1,1 +1,0 @@
-服务架构的定义: 服务架构(Service Architecture), 是SOA(面向服务的体系结构)的一个子集, 是SOA的一种实现方式。

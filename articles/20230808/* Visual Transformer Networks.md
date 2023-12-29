@@ -1,1 +1,0 @@
-* Visual Transformer Networks

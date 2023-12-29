@@ -1,1 +1,0 @@
-* Accelerating Deep Learning Training on GPUs Using Distributed Training

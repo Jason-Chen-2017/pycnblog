@@ -1,1 +1,0 @@
-10. Succession Plan for Successful Leadership Development By Marcus Watt 

@@ -1,1 +1,0 @@
-Densely Connected Convolutional Networks

@@ -1,1 +1,0 @@
-DevOps 8. The Importance of Continuously Testing Software for Security Vulnerabilities

@@ -1,1 +1,0 @@
-3. Background: Prior Knowledge and Gaussian Processes

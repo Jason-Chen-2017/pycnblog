@@ -1,1 +1,0 @@
-[5] Understanding the Power of Adversarial Training in GANs (Understanding the power of adversarial training in generative adversarial networks)

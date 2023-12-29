@@ -1,1 +1,0 @@
-6. Introduction to Online Learning Algorithms: Maximum Margin Reclassification and Least Mean Square Estimation

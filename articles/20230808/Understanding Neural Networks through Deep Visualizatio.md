@@ -1,1 +1,0 @@
-3. Understanding Neural Networks through Deep Visualization

@@ -1,1 +1,0 @@
-1. An Introduction to Statistical Analysis with R: A Tutorial for Beginners

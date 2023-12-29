@@ -1,1 +1,0 @@
-a) Microsoft: Open sourcing Microsoft Azure’s mission statement and values

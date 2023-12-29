@@ -1,1 +1,0 @@
-13. From Panoramas to Points of Interest using Supervised Learning with Street View Imagery 

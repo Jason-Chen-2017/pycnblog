@@ -1,1 +1,0 @@
-1. 开源库：目前，AI领域常用的开源库、框架或工具包括TensorFlow、PyTorch、Scikit-learn、Keras、MXNet等。这些开源项目在社区的推广下，逐渐形成了众多深厚的技术积淀。

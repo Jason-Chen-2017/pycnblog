@@ -1,1 +1,0 @@
-5. Spatiotemporal Semantic Segmentation with Graph Convolutional Networks

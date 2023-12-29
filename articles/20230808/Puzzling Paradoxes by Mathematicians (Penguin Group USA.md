@@ -1,1 +1,0 @@
-9. Puzzling Paradoxes by Mathematicians (Penguin Group USA Inc.)

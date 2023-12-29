@@ -1,1 +1,0 @@
-4. Why We Need a Blockchain-Based Smart Contract System

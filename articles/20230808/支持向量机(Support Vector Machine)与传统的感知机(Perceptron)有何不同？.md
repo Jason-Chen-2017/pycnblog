@@ -1,1 +1,0 @@
-支持向量机(Support Vector Machine)与传统的感知机(Perceptron)有何不同？

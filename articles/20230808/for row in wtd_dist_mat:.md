@@ -1,1 +1,0 @@
-    for row in wtd_dist_mat:

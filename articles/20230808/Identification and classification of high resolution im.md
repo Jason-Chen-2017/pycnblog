@@ -1,1 +1,0 @@
-3. Identification and classification of high resolution imagery using deep convolutional neural networks for agricultural applications. 

@@ -1,1 +1,0 @@
-24. From Zero to Hero: Building a Spelling Corrector App with Deep Learning

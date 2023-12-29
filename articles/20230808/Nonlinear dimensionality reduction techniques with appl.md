@@ -1,1 +1,0 @@
-8. Nonlinear dimensionality reduction techniques with applications using python scikit learn and tensorflow

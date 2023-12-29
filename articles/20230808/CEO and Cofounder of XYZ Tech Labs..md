@@ -1,1 +1,0 @@
-CEO and Co-founder of XYZ Tech Labs. 

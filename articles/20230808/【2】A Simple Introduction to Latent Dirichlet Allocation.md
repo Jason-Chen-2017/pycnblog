@@ -1,1 +1,0 @@
-【2】A Simple Introduction to Latent Dirichlet Allocation
