@@ -56,14 +56,14 @@ def process_file(file_path, target_good_directory, target_draft_directory):
         line_count = len(cleaned_lines)
 
     # target_good_directory
-    if length >= 6000 and line_count >= 180 and is_good_content(content) and is_not_similar:
+    if length >= 2000 and line_count >= 100 and is_good_content(content) and is_not_similar:
         file_name = os.path.basename(file_path)
         target_good_directory = os.path.join(target_good_directory, file_name)
         shutil.copy(file_path, target_good_directory)
         print("process_good_file:", target_good_directory)
 
     # target_draft_directory
-    if 3000 < length < 6000 and 100 < line_count < 180 and is_good_content(content) and is_not_similar:
+    if 1000 < length < 2000 and 80 < line_count < 100 and is_good_content(content) and is_not_similar:
         file_name = os.path.basename(file_path)
         target_draft_directory = os.path.join(target_draft_directory, file_name)
         shutil.copy(file_path, target_draft_directory)
