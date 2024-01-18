@@ -27,13 +27,13 @@ def is_good_content(content):
     keywords = [
         # "$$",
         "```",
-        # "背景介绍",
-        # "核心概念与联系",
-        # "核心算法原理和具体操作步骤以及数学模型公式详细讲解",
-        # "具体最佳实践：代码实例和详细解释说明",
-        # "实际应用场景",
-        # "工具和资源推荐",
-        # "总结：未来发展趋势与挑战",
+        "背景介绍",
+        "核心概念与联系",
+        "核心算法原理",
+        "代码实例",
+        "实际应用场景",
+        "工具和资源推荐",
+        "未来发展趋势与挑战",
     ]
 
     for keyword in keywords:
@@ -56,14 +56,14 @@ def process_file(file_path, target_good_directory, target_draft_directory):
         line_count = len(cleaned_lines)
 
     # target_good_directory
-    if length >= 2000 and line_count >= 100 and is_good_content(content) and is_not_similar:
+    if length >= 2500 and line_count >= 100 and is_good_content(content) and is_not_similar:
         file_name = os.path.basename(file_path)
         target_good_directory = os.path.join(target_good_directory, file_name)
         shutil.copy(file_path, target_good_directory)
         print("process_good_file:", target_good_directory)
 
     # target_draft_directory
-    if 1000 < length < 2000 and 80 < line_count < 100 and is_good_content(content) and is_not_similar:
+    if 2000 < length < 2500 and 80 < line_count < 100 and is_good_content(content) and is_not_similar:
         file_name = os.path.basename(file_path)
         target_draft_directory = os.path.join(target_draft_directory, file_name)
         shutil.copy(file_path, target_draft_directory)
