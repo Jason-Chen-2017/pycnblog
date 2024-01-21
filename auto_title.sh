@@ -4,8 +4,10 @@
 # 目标URL: curl -X GET "http://127.0.0.1:9000/api/ai/auto_title" -H "Request-Origion:SwaggerBootstrapUi" -H "accept:*/*"
 auto_title="http://127.0.0.1:9000/api/ai/auto_title"
 auto_aigc="http://127.0.0.1:9000/api/ai/auto_aigc"
-# 循环执行100次
-for i in {1..10}; do
+
+# 循环执行
+while true
+do
 
     # 打印序号和时间戳
     echo "Auto Title Request $i at $(date +%Y-%m-%d_%H:%M:%S)"
@@ -17,7 +19,7 @@ for i in {1..10}; do
     # auto_aigc
     curl -X GET "$auto_aigc" -H  "Request-Origion:SwaggerBootstrapUi" -H  "accept:*/*"
 
-    # 暂停1秒钟
-    sleep 1
+    # 暂停n秒钟
+    sleep 3600
 
 done
