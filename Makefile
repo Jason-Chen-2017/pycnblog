@@ -8,6 +8,9 @@ g:
 w:
 	./write_blog.sh &
 
+w3:
+	./write_blog30.sh &
+
 t:
 	./auto_title.sh &
 
