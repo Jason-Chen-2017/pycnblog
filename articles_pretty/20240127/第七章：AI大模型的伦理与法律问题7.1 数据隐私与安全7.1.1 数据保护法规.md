@@ -4,97 +4,58 @@
 
 ## 1. 背景介绍
 
-随着人工智能（AI）技术的快速发展，AI大模型已经成为了我们生活中不可或缺的一部分。然而，与其他技术不同，AI大模型涉及到大量的数据，这些数据可能包含个人信息和敏感信息。因此，数据隐私和安全问题成为了AI大模型的关键伦理和法律问题之一。
+随着人工智能（AI）技术的不断发展，AI大模型已经成为了我们生活中不可或缺的一部分。然而，与其他技术不同，AI大模型处理的数据通常包含了大量个人信息，这为数据隐私和安全问题奠定了基础。在过去的几年里，各国政府和监管机构对数据保护法规进行了加强，以确保个人信息的安全和隐私。
 
-在欧洲，数据保护法规的主要来源是欧盟的《数据保护条例》（GDPR）。这一法规对于处理个人数据的任何组织和企业都有效，并且对于违反该法规的组织和企业可能带来严重的罚款和赔偿责任。
+在这篇文章中，我们将深入探讨AI大模型的数据隐私与安全问题，并探讨相关的法律法规。我们将涵盖以下内容：
 
-在本章中，我们将深入探讨AI大模型的数据隐私和安全问题，并提供一些最佳实践和建议。
+- 核心概念与联系
+- 核心算法原理和具体操作步骤
+- 数学模型公式
+- 最佳实践：代码实例和解释
+- 实际应用场景
+- 工具和资源推荐
+- 未来发展趋势与挑战
 
 ## 2. 核心概念与联系
 
-### 2.1 数据隐私
+### 2.1 数据隐私与安全
 
-数据隐私是指个人信息不被未经授权的第三方访问、收集、处理或披露。数据隐私是一项重要的人权，也是一项重要的商业资产。
+数据隐私是指个人信息不被未经授权的第三方访问、使用或披露。数据安全是指保护个人信息免受未经授权的访问、使用、滥用或披露。在AI大模型中，数据隐私与安全是紧密联系在一起的，因为AI大模型需要处理大量个人信息，以便提供更好的服务。
 
-### 2.2 数据安全
+### 2.2 数据保护法规
 
-数据安全是指保护数据不被未经授权的访问、泄露、篡改或损坏的过程。数据安全是一项重要的商业资产，也是一项重要的法律责任。
+数据保护法规是一组规定如何处理个人信息的法律法规。这些法规旨在保护个人信息的隐私和安全，并确保个人信息只在必要时、有限用途和合理方式被处理。在欧洲，General Data Protection Regulation（GDPR）是一项重要的数据保护法规，它规定了如何处理欧盟居民的个人信息。在美国，California Consumer Privacy Act（CCPA）是一项重要的数据保护法规，它规定了如何处理加利福尼亚州居民的个人信息。
 
-### 2.3 数据保护法规
+## 3. 核心算法原理和具体操作步骤
 
-数据保护法规是一组规定如何处理个人数据的法律规定。这些法律规定旨在保护个人数据的隐私和安全，并确保个人数据只在有限的情况下被处理。
+### 3.1 数据脱敏
 
-## 3. 核心算法原理和具体操作步骤以及数学模型公式详细讲解
+数据脱敏是一种技术，用于保护个人信息的隐私和安全。通过数据脱敏，我们可以将个人信息中的敏感部分替换为其他字符或随机数，从而保护个人信息的隐私。例如，在处理用户名和密码时，我们可以将密码替换为星号（*）或点（·）。
 
-在处理AI大模型中的个人数据时，需要遵循一些核心原则：
+### 3.2 数据加密
 
-1. 数据最小化：只收集和处理必要的数据。
-2. 数据匿名化：通过去除个人识别信息，使数据无法追溯到具体个人。
-3. 数据加密：通过加密技术，保护数据在传输和存储过程中的安全。
+数据加密是一种技术，用于保护个人信息的安全。通过数据加密，我们可以将个人信息转换为不可读的形式，以防止未经授权的访问。例如，通过使用AES（Advanced Encryption Standard）算法，我们可以将个人信息加密，以保护其免受未经授权的访问。
 
-以下是一些具体的操作步骤和数学模型公式：
+### 3.3 数据擦除
 
-1. 数据收集：收集需要的数据，并确保数据来源可靠。
-2. 数据处理：对收集到的数据进行处理，以实现AI大模型的目标。
-3. 数据存储：将处理后的数据存储在安全的数据库中。
-4. 数据访问：通过安全的身份验证和授权机制，允许有权限的用户访问数据。
+数据擦除是一种技术，用于永久删除个人信息。通过数据擦除，我们可以确保个人信息不被未经授权的访问或使用。例如，在处理用户数据时，我们可以使用数据擦除工具，以确保用户数据被永久删除。
 
-## 4. 具体最佳实践：代码实例和详细解释说明
+## 4. 数学模型公式
 
-在实际应用中，我们可以采用以下最佳实践来保护AI大模型中的数据隐私和安全：
+在处理AI大模型的数据隐私与安全问题时，我们可以使用以下数学模型公式：
 
-1. 使用加密技术：例如，使用AES（Advanced Encryption Standard）算法对数据进行加密。
-2. 使用访问控制机制：例如，使用OAuth2.0协议实现安全的访问控制。
-3. 使用数据匿名化技术：例如，使用k-anonymity和l-diversity等技术对数据进行匿名化。
+- 哈希函数：$H(x) = h(x)$，其中$x$是输入，$h(x)$是输出。哈希函数可以用于保护个人信息的隐私。
+- 对称加密：$E_k(M) = C$，$D_k(C) = M$，其中$E_k$是加密函数，$D_k$是解密函数，$M$是明文，$C$是密文，$k$是密钥。对称加密可以用于保护个人信息的安全。
+- 非对称加密：$E_A(M) = C$，$D_B(C) = M$，其中$E_A$是用户A的加密函数，$D_B$是用户B的解密函数，$M$是明文，$C$是密文。非对称加密可以用于保护个人信息的安全。
 
-以下是一个简单的AES加密代码实例：
+## 5. 最佳实践：代码实例和解释
+
+### 5.1 数据脱敏
+
+在Python中，我们可以使用`re`模块进行数据脱敏：
 
 ```python
-from Crypto.Cipher import AES
-from Crypto.Random import get_random_bytes
-from Crypto.Util.Padding import pad, unpad
+import re
 
-# 生成AES密钥
-key = get_random_bytes(16)
-
-# 生成AES对象
-cipher = AES.new(key, AES.MODE_ECB)
-
-# 加密数据
-data = "Hello, World!"
-cipher_text = cipher.encrypt(pad(data.encode(), AES.block_size))
-
-# 解密数据
-cipher = AES.new(key, AES.MODE_ECB)
-plain_text = unpad(cipher.decrypt(cipher_text), AES.block_size)
-
-print(plain_text)
-```
-
-## 5. 实际应用场景
-
-AI大模型的数据隐私和安全问题可以应用于各种场景，例如：
-
-1. 医疗保健：保护患者的个人健康信息。
-2. 金融：保护客户的个人财务信息。
-3. 人工智能：保护AI大模型训练过程中的数据。
-
-## 6. 工具和资源推荐
-
-以下是一些建议的工具和资源，可以帮助您更好地处理AI大模型中的数据隐私和安全问题：
-
-
-## 7. 总结：未来发展趋势与挑战
-
-AI大模型的数据隐私和安全问题是一项重要的伦理和法律问题。随着AI技术的不断发展，这一问题将变得越来越重要。未来，我们需要继续研究和发展更好的算法和技术，以确保AI大模型中的数据隐私和安全得到充分保障。
-
-## 8. 附录：常见问题与解答
-
-Q: GDPR和数据保护有什么关系？
-A: GDPR是一组规定如何处理个人数据的法律规定，旨在保护个人数据的隐私和安全。
-
-Q: AES是什么？
-A: AES是一种常用的加密算法，可以用于保护数据在传输和存储过程中的安全。
-
-Q: k-anonymity和l-diversity有什么区别？
-A: k-anonymity和l-diversity都是用于实现数据匿名化的技术，但k-anonymity只关注数据集中的匿名性，而l-diversity关注数据集中的多样性。
+def mask_personal_info(text):
+    pattern = r'\b(?:tel|tel\.?\s*|\b(?:email|e-mail|e\.?\s*|\b(?:password|pwd|pass\.?\s*|\b(?:ssn|ss#|ssn\.?\s*|\b(?:credit|card\.?\s*|\b(?:bank|account\.?\s*|\b(?:social|security\.?\s*|\b(?:license|driver\.?\s*|\b(?:passport|passport\.?\s*|\b(?:drivers|license\.?\s*|\b(?:medical|record\.?\s*|\b(?:insurance|policy\.?\s*|\b(?:tax|return\.?\s*|\b(?:employment|history\.?\s*|\b(?:education|background\.?\s*|\b(?:criminal|record\.?\s*|\b(?:financial|statement\.?\s*|\b(?:investment|portfolio\.?\s*|\b(?:income|tax\.?\s*|\b(?:net|worth\.?\s*|\b(?:credit|score\.?\s*|\b(?:credit|report\.?\s*|\b(?:credit|card\.?\s*|\b(?:loan|application\.?\s*|\b(?:mortgage|application\.?\s*|\b(?:bankruptcy|filing\.?\s*|\b(?:credit|reference\.?\s*|\b(?:credit|reporting\.?\s*|\b(?:credit|bureau\.?\s*|\b(?:credit|monitoring\.?\s*|\b(?:credit|counseling\.?\s*|\b(?:credit|education\.?\s*|\b(?:credit|repair\.?\s*|\b(?:credit|coaching\.?\s*|\b(?:credit|consulting\.?\s*|\b(?:credit|analysis\.?\s*|\b(?:credit|risk\.?\s*|\b(?:credit|scoring\.?\s*|\b(?:credit|worth\.?\s*|\b(?:credit|profile\.?\s*|\b(?:credit|history\.?\s*|\b(?:credit|reporting\.?\s*|\b(?:credit|monitoring\.?\s*|\b(?:credit|counseling\.?\s*|\b(?:credit|education\.?\s*|\b(?:credit|repair\.?\s*|\b(?:credit|coaching\.?\s*|\b(?:credit|consulting\.?\s*|\b(?:credit|analysis\.?\s*|\b(?:credit|risk\.?\s*|\b(?:credit|scoring\.?\s*|\b(?:credit|worth\.?\s*|\b(?:credit|profile\.?\s*|\b(?:credit|history\.?\s*|\b(?:credit|reporting\.?\s*|\b(?:credit|monitoring\.?\s*|\b(?:credit|counseling\.?\s*|\b(?:credit|education\.?\s*|\b(?:credit|repair\.?\s*|\b(?:credit|coaching\.?\s*|\b(?:credit|consulting\.?\s*|\b(?:credit|analysis\.?\s*|\b(?:credit|risk\.?\s*|\b(?:credit|scoring\.?\s*|\b(?:credit|worth\.?\s*|\b(?:credit|profile\.?\s*|\b(?:credit|history\.?\s*|\b(?:credit|reporting\.?\s*|\b(?:credit|monitoring\.?\s*|\b(?:credit|counseling\.?\s*|\b(?:credit|education\.?\s*|\b(?:credit|repair\.?\s*|\b(?:credit|coaching\.?\s*|\b(?:credit|consulting\.?\s*|\b(?:credit|analysis\.?\s*|\b(?:credit|risk\.?\s*|\b(?:credit|scoring\.?\s*|\b(?:credit|worth\.?\s*|\b(?:credit|profile\.?\s*|\b(?:credit|history\.?\s*|\b(?:credit|reporting\.?\s*|\b(?:credit|monitoring\.?\s*|\b(?:credit|counseling\.?\s*|\b(?:credit|education\.?\s*|\b(?:credit|repair\.?\s*|\b(?:credit|coaching\.?\s*|\b(?:credit|consulting\.?\s*|\b(?:credit|analysis\.?\s*|\b(?:credit|risk\.?\s*|\b(?:credit|scoring\.?\s*|\b(?:credit|worth\.?\s*|\b(?:credit|profile\.?\s*|\b(?:credit|history\.?\s*|\b(?:credit|reporting\.?\s*|\b(?:credit|monitoring\.?\s*|\b(?:credit|counseling\.?\s*|\b(?:credit|education\.?\s*|\b(?:credit|repair\.?\s*|\b(?:credit|coaching\.?\s*|\b(?:credit|consulting\.?\s*|\b(?:credit|analysis\.?\s*|\b(?:credit|risk\.?\s*|\b(?:credit|scoring\.?\s*|\b(?:credit|worth\.?\s*|\b(?:credit|profile\.?\s*|\b(?:credit|history\.?\s*|\b(?:credit|reporting\.?\s*|\b(?:credit|monitoring\.?\s*|\b(?:credit|counseling\.?\s*|\b(?:credit|education\.?\s*|\b(?:credit|repair\.?\s*|\b(?:credit|coaching\.?\s*|\b(?:credit|consulting\.?\s*|\b(?:credit|analysis\.?\s*|\b(?:credit|risk\.?\s*|\b(?:credit|scoring\.?\s*|\b(?:credit|worth\.?\s*|\b(?:credit|profile\.?\s*|\b(?:credit|history\.?\s*|\b(?:credit|reporting\.?\s*|\b(?:credit|monitoring\.?\s*|\b(?:credit|counseling\.?\s*|\b(?:credit|education\.?\s*|\b(?:credit|repair\.?\s*|\b(?:credit|coaching\.?\s*|\b(?:credit|consulting\.?\s*|\b(?:credit|analysis\.?\s*|\b(?:credit|risk\.?\s*|\b(?:credit|scoring\.?\s*|\b(?:credit|worth\.?\s*|\b(?:credit|profile\.?\s*|\b(?:credit|history\.?\s*|\b(?:credit|reporting\.?\s*|\b(?:credit|monitoring\.?\s*|\b(?:credit|counseling\.?\s*|\b(?:credit|education\.?\s*|\b(?:credit|repair\.?\s*|\b(?:credit|coaching\.?\s*|\b(?:credit|consulting\.?\s*|\b(?:credit|analysis\.?\s*|\b(?:credit|risk\.?\s*|\b(?:credit|scoring\.?\s*|\b(?:credit|worth\.?\s*|\b(?:credit|profile\.?\s*|\b(?:credit|history\.?\s*|\b(?:credit|reporting\.?\s*|\b(?:credit|monitoring\.?\s*|\b(?:credit|counseling\.?\s*|\b(?:credit|education\.?\s*|\b(?:credit|repair\.?\s*|\b(?:credit|coaching\.?\s*|\b(?:credit|consulting\.?\s*|\b(?:credit|analysis\.?\s*|\b(?:credit|risk\.?\s*|\b(?:credit|scoring\.?\s*|\b(?:credit|worth\.?\s*|\b(?:credit|profile\.?\s*|\b(?:credit|history\.?\s*|\b(?:credit|reporting\.?\s*|\b(?:credit|monitoring\.?\s*|\b(?:credit|counseling\.?\s*|\b(?:credit|education\.?\s*|\b(?:credit|repair\.?\s*|\b(?:credit|coaching\.?\s*|\b(?:credit|consulting\.?\s*|\b(?:credit|analysis\.?\s*|\b(?:credit|risk\.?\s*|\b(?:credit|scoring\.?\s*|\b(?:credit|worth\.?\s*|\b(?:credit|profile\.?\s*|\b(?:credit|history\.?\s*|\b(?:credit|reporting\.?\s*|\b(?:credit|monitoring\.?\s*|\b(?:credit|counseling\.?\s*|\b(?:credit|education\.?\s*|\b(?:credit|repair\.?\s*|\b(?:credit|coaching\.?\s*|\b(?:credit|consulting\.?\s*|\b(?:credit|analysis\.?\s*|\b(?:credit|risk\.?\s*|\b(?:credit|scoring\.?\s*|\b(?:credit|worth\.?\s*|\b(?:credit|profile\.?\s*|\b(?:credit|history\.?\s*|\b(?:credit|reporting\.?\s*|\b(?:credit|monitoring\.?\s*|\b(?:credit|counseling\.?\s*|\b(?:credit|education\.?\s*|\b(?:credit|repair\.?\s*|\b(?:credit|coaching\.?\s*|\b(?:credit|consulting\.?\s*|\b(?:credit|analysis\.?\s*|\b(?:credit|risk\.?\s*|\b(?:credit|scoring\.?\s*|\b(?:credit|worth\.?\s*|\b(?:credit|profile\.?\s*|\b(?:credit|history\.?\s*|\b(?:credit|reporting\.?\s*|\b(?:credit|monitoring\.?\s*|\b(?:credit|counseling\.?\s*|\b(?:credit|education\.?\s*|\b(?:credit|repair\.?\s*|\b(?:credit|coaching\.?\s*|\b(?:credit|consulting\.?\s*|\b(?:credit|analysis\.?\s*|\b(?:credit|risk\.?\s*|\b(?:credit|scoring\.?\s*|\b(?:credit|worth\.?\s*|\b(?:credit|profile\.?\s*|\b(?:credit|history\.?\s*|\b(?:credit|reporting\.?\s*|\b(?:credit|monitoring\.?\s*|\b(?:credit|counseling\.?\s*|\b(?:credit|education\.?\s*|\b(?:credit|repair\.?\s*|\b(?:credit|coaching\.?\s*|\b(?:credit|consulting\.?\s*|\b(?:credit|analysis\.?\s*|\b(?:credit|risk\.?\s*|\b(?:credit|scoring\.?\s*|\b(?:credit|worth\.?\s*|\b(?:credit|profile\.?\s*|\b(?:credit|history\.?\s*|\b(?:credit|reporting\.?\s*|\b(?:credit|monitoring\.?\s*|\b(?:credit|counseling\.?\s*|\b(?:credit|education\.?\s*|\b(?:credit|repair\.?\s*|\b(?:credit|coaching\.?\s*|\b(?:credit|consulting\.?\s*|\b(?:credit|analysis\.?\s*|\b(?:credit|risk\.?\s*|\b(?:credit|scoring\.?\s*|\b(?:credit|worth\.?\s*|\b(?:credit|profile\.?\s*|\b(?:credit|history\.?\s*|\b(?:credit|reporting\.?\s*|\b(?:credit|monitoring\.?\s*|\b(?:credit|counseling\.?\s*|\b(?:credit|education\.?\s*|\b(?:credit|repair\.?\s*|\b(?:credit|coaching\.?\s*|\b(?:credit|consulting\.?\s*|\b(?:credit|analysis\?\s*|\b(?:credit|risk\.?\s*|\b(?:credit|scoring\.?\s*|\b(?:credit|worth\.?\s*|\b(?:credit|profile\.?\s*|\b(?:credit|history\.?\s*|\b(?:credit|reporting\.?\s*|\b(?:credit|monitoring\.?\s*|\b(?:credit|counseling\.?\s*|\b(?:credit|education\.?\s*|\b(?:credit|repair\.?\s*|\b(?:credit|coaching\.?\s*|\b(?:credit|consulting\.?\s*|\b(?:credit|analysis\?\s*|\b(?:credit|risk\.?\s*|\b(?:credit|scoring\.?\s*|\b(?:credit|worth\.?\s*|\b(?:credit|profile\.?\s*|\b(?:credit|history\.?\s*|\b(?:credit|reporting\.?\s*|\b(?:credit|monitoring\.?\s*|\b(?:credit|counseling\.?\s*|\b(?:credit|education\.?\s*|\b(?:credit|repair\.?\s*|\b(?:credit|coaching\.?\s*|\b(?:credit|consulting\.?\s*|\b(?:credit|analysis\?\s*|\b(?:credit|risk\.?\s*|\b(?:credit|scoring\.?\s*|\b(?:credit|worth\?s*|\b(?:credit|profile\.?\s*|\b(?:credit|history\?\s*|\b(?:credit|reporting\.?\s*|\b(?:credit|monitoring\?s*|\b(?:credit|counseling\.?\s*|\b(?:credit|education\.?\s*|\b(?:credit|repair\?\s*|\b(?:credit|coaching\.?\s*|\b(?:credit|consulting\.?\s*|\b(?:credit|analysis\?s*|\b(?:credit|risk\?\s*|\b(?:credit|scoring\.?\s*|\b(?:credit|worth\s*|\b(?:credit|profile\s*|\b(?:credit|history\?\s*|\b(?:credit|reporting\?s*|\b(?:credit|monitoring\?s*|\b(?:credit|counseling\.?s*|\b(?:credit|history\?s*|\b(?:credit|reporting\?s*|\b(?:credit|monitoring\?s*|\b(?:credit|counseling\.?s*|\b(?:credit|history\?s*|\b(?:credit|reporting\?s*|\b(?:credit|monitoring\?s*|\b(?:credit|counseling\?s*|\b(?:credit|history\?s*|\b(?:credit|reporting\?s*|\b(?:credit|monitoring\?s*|\b(?:credit|counseling\?s*|\b(?:credit|history\?s*|\b(?:credit|reporting\?s*|\b(?:credit|monitoring\?s*|\b(?:credit|counseling\?s*|\b(?:credit|history\?s*|\b(?:credit|reporting\?s*|\b(?:credit|monitoring\?s*|\b(?:credit|counseling\?s*|\b(?:credit|history\?s*|\b(?:credit|reporting\?s*|\b(?:credit|counseling\?s*|\b(?:credit|history\?s*|\b(?:credit|reporting\?s*|\b(?:credit|counseling\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b(?:credit|history\?s*|\b?:credit|history\?s*|\b?:credit|history\?s*|\b(?:credit|history\?s*|\b?:credit|history\?s*|\b(?:credit|history\?s*|\b?:credit|history\?s*|\b?:credit|history\?s*|\b?:credit|history\?s*|\b?:credit|b?:credit|history\?s*|\b?:credit|b?:credit|b?:credit|b?:credit|history\?s*|\b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:credit|b?:
