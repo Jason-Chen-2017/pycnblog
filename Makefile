@@ -2,6 +2,10 @@ f:
 	./find.sh
 m:
 	./curl_md.sh
+
+mc:
+	./curl_md_mac.sh
+
 g:
 	./git_commit.sh
 
