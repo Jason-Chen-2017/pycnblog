@@ -1,0 +1,475 @@
+                 
+
+# 1.背景介绍
+
+MyBatis是一款流行的Java数据库访问框架，它支持SQL映射和动态SQL，使得开发者可以更加简洁地编写数据库操作代码。在MyBatis中，事务处理和隔离级别是非常重要的概念，因为它们直接影响数据库操作的正确性和一致性。在本文中，我们将深入探讨MyBatis的数据库事务与隔离级别，并提供实用的最佳实践和代码示例。
+
+## 1. 背景介绍
+
+事务是数据库操作的基本单位，它包含一系列的数据库操作，要么全部成功执行，要么全部失败回滚。隔离级别是数据库中的一种隔离策略，它定义了在并发环境下，多个事务之间如何进行数据访问和修改。MyBatis支持多种事务管理方式，例如基于Spring的事务管理、基于JDBC的事务管理等。在MyBatis中，可以通过配置文件和代码来设置事务的隔离级别。
+
+## 2. 核心概念与联系
+
+### 2.1 事务
+
+事务包含以下几个特征：
+
+- 原子性：事务中的所有操作要么全部成功执行，要么全部失败回滚。
+- 一致性：事务执行后，数据库的状态必须满足一定的约束条件。
+- 隔离性：并发执行的事务之间不能互相干扰。
+- 持久性：事务提交后，数据库中的数据修改必须持久化存储。
+
+### 2.2 隔离级别
+
+隔离级别是数据库中的一种隔离策略，它定义了在并发环境下，多个事务之间如何进行数据访问和修改。常见的隔离级别有：
+
+- 读未提交（Read Uncommitted）：允许读取未提交的数据。
+- 已提交读（Committed Read）：只能读取已提交的数据。
+- 可重复读（Repeatable Read）：在同一事务内，多次读取同一数据时，结果必须一致。
+- 可串行化（Serializable）：完全隔离，禁止并发执行。
+
+## 3. 核心算法原理和具体操作步骤以及数学模型公式详细讲解
+
+在MyBatis中，事务管理主要依赖于底层的数据库驱动和连接池。MyBatis支持基于Spring的事务管理、基于JDBC的事务管理等多种方式。下面我们将详细讲解MyBatis的事务管理算法原理和具体操作步骤。
+
+### 3.1 基于JDBC的事务管理
+
+MyBatis支持基于JDBC的事务管理，通过配置文件和代码来设置事务的隔离级别。以下是基于JDBC的事务管理的具体操作步骤：
+
+1. 在MyBatis配置文件中，设置事务管理类型为JDBC：
+
+```xml
+<transactionManager type="JDBC"/>
+```
+
+2. 在数据源配置中，设置事务隔离级别：
+
+```xml
+<dataSource type="POOLED">
+  <property name="driver" value="com.mysql.jdbc.Driver"/>
+  <property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>
+  <property name="username" value="root"/>
+  <property name="password" value="root"/>
+  <property name="initialSize" value="5"/>
+  <property name="maxActive" value="10"/>
+  <property name="minIdle" value="1"/>
+  <property name="maxWait" value="10000"/>
+  <property name="timeBetweenEvictionRunsMillis" value="60000"/>
+  <property name="minEvictableIdleTimeMillis" value="300000"/>
+  <property name="testOnBorrow" value="true"/>
+  <property name="testWhileIdle" value="true"/>
+  <property name="validationQuery" value="SELECT 1"/>
+  <property name="validationInterval" value="30000"/>
+  <property name="defaultAutoCommit" value="false"/>
+  <property name="isolateConnections" value="true"/>
+  <property name="removeAbandoned" value="true"/>
+  <property name="removeAbandonedTimeout" value="60"/>
+  <property name="minConnectionSize" value="5"/>
+  <property name="maxConnectionSize" value="20"/>
+  <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/mybatis"/>
+  <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+  <property name="poolPreparedStatements" value="true"/>
+  <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
+  <property name="useLocalSessionState" value="true"/>
+  <property name="useLocalTransactionState" value="true"/>
+  <property name="rewriteBatchedStatements" value="true"/>
+  <property name="cachePrepStmts" value="true"/>
+  <property name="prepStmtCacheSize" value="250"/>
+  <property name="prepStmtCacheSqlLimit" value="2048"/>
+  <property name="useServerPrepStmts" value="true"/>
+  <property name="maxServerPreparedStatementCount" value="1000"/>
+  <property name="maintainTimeStats" value="false"/>
+  <property name="cacheResultSetMetadata" value="true"/>
+  <property name="cacheServerConfiguration" value="true"/>
+  <property name="elideSetAutoCommits" value="true"/>
+  <property name="mergeQueryResults" value="true"/>
+  <property name="queryTimeout" value="0"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name="useLocalTransactionState" value="false"/>
+  <property name=""
