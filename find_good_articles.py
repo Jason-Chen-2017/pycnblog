@@ -32,7 +32,7 @@ def is_good_content(content):
         "核心算法原理",
         "代码实例",
         "实际应用场景",
-        "工具和资源推荐",
+        "工具和资源",
         "未来发展趋势与挑战",
     ]
 
@@ -49,21 +49,21 @@ def process_file(file_path, target_good_directory, target_draft_directory):
         cleaned_lines = [line.strip() for line in lines if line.strip()]
         content = '\n'.join(cleaned_lines)
 
-        sim_count = check_similarity(content)
-        is_not_similar = sim_count < 600
+        # sim_count = check_similarity(content)
+        # is_not_similar = sim_count < 600
 
         length = len(content)
         line_count = len(cleaned_lines)
 
     # target_good_directory
-    if length >= 2500 and line_count >= 100 and is_good_content(content) and is_not_similar:
+    if length >= 2500 and line_count >= 100 and is_good_content(content):
         file_name = os.path.basename(file_path)
         target_good_directory = os.path.join(target_good_directory, file_name)
         shutil.copy(file_path, target_good_directory)
         print("process_good_file:", target_good_directory)
 
     # target_draft_directory
-    if 2000 < length < 2500 and 80 < line_count < 100 and is_good_content(content) and is_not_similar:
+    if 2000 < length < 2500 and 80 < line_count < 100 and is_good_content(content):
         file_name = os.path.basename(file_path)
         target_draft_directory = os.path.join(target_draft_directory, file_name)
         shutil.copy(file_path, target_draft_directory)
