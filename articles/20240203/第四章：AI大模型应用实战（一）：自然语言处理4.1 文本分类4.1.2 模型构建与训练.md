@@ -2,4 +2,10 @@
 
 # 1.背景介绍
 
-fourth chapter: AI large model application practice (one): natural language processing - 4.1 text classification -
+AI大模型已经成为当今自然语言处理（NLP）领域的重要组成部分。在本章中，我们将探讨如何使用AI大模型进行文本分类。文本分类是NLP中的一个基本任务，它涉及将文本文档分类到预定义的类别中。
+
+## 4.1 文本分类
+
+### 4.1.1 背景介绍
+
+随着互联网的普及和信息爆
