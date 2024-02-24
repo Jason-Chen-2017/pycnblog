@@ -1,254 +1,553 @@
                  
 
-## 分布式系统架构设计原理与实战：设计分布isibleID生成器
+*分布式系统架构设计原理与实战：设计分布isibleID生成器*
 
-### 作者：禅与计算机程序设计艺术
+作者：禅与计算机程序设计艺术
 
-* * *
+## 背景介绍
 
-### 1. 背景介绍
+在分布式系统中，ID是一个非常重要的概念。无论是在数据库设计、消息队列设计还是其他分布式系统设计中，ID都起着至关重要的作用。分布式ID需要满足以下几个基本要求：
 
-#### 1.1 什么是分布式系统？
+- **全局唯一**：分布式ID在整个分布式系统中必须是全局唯一的。
+- **高可用**：分布式ID生成器必须能够在高负载情况下保持高可用。
+- **高性能**：分布式ID生成器必须能够在微秒级别生成ID。
+- **无序**：分布式ID不需要按照生成顺序递增。
+- **URL安全**：分布式ID必须是URL安全的，即它不能包含特殊字符，例如`/`, `?`, `&`, `=`等。
 
-分布式系统是一个组件位于网络上的计算机集合，它们通过通信网络相互协作完成共同的 task。分布式系统中的计算机可以分布在不同的地理位置，它们可以是 heterogeneous（异构的），即采用不同的 hardware和 software。
+当前市面上已经存在许多分布式ID生成器，例如Leaf、Snowflake、Twitter Snowflake、TinyId等。不同的分布式ID生成器采用不同的算法实现，每种算法都有自己的优缺点。
 
-#### 1.2 为什么需要分布式ID生成器？
+## 核心概念与联系
 
-在分布式系统中，我们经常需要生成全局唯一的ID，例如订单ID、用户ID等。传统的方法是在数据库中生成ID，但是当系统规模变大时，数据库的性能会成为瓶颈。因此，需要一个高效、可靠的分布式ID生成器。
+### 分布式系统
 
-### 2. 核心概念与关系
+分布式系统是指由多个互相协调工作的计算机组成的系统，这些计算机通过网络连接起来，共同完成某项任务。分布式系统具有以下特点：
 
-#### 2.1 ID生成策略
+- **并行执行**：分布式系统可以将任务分解为多个小任务，并行执行，提高系统的吞吐量和性能。
+- **透明性**：分布式系统应该隐藏底层硬件和软件的差异，为用户提供统一的接口。
+- **故障隔离**：分布式系统中的故障应该被隔离，避免影响整个系统的运行。
+- **可伸缩性**：分布式系ystem应该能够动态地添加或删除节点，支持系统的扩展。
 
-- UUID：基于MAC地址和时间戳生成的128位唯一标识符，但是由于UUID的长度比较长，因此不太适合作为数据库ID。
-- 数据库自增ID：利用数据库的自增ID生成唯一ID，但是由于数据库的性能瓶颈，不适合分布式环境。
-- 分布式ID生成器：在分布式系统中生成唯一ID，例如Snowflake、Leaf等。
+### ID
 
-#### 2.2 Snowflake算法
+ID是Identifier的缩写，即标识符。ID是用于唯一标识某个实体的字符串或数字。例如，在数据库中，每条记录都有一个唯一的ID；在消息队列中，每条消息都有一个唯一的ID；在分布式系统中，每个节点都有一个唯一的ID。ID的长度和格式取决于具体的应用场景和需求。
 
-Snowflake是Twitter开源的分布式ID生成器，它使用64bit的long类型来表示ID，支持1000台服务器，每秒可以生成10万个ID。
+### 分布式ID
 
-Snowflake的ID结构如下：
+分布式ID是指在分布式系统中生成的ID，它应该满足分布式系统的要求，即全局唯一、高可用、高性能、无序、URL安全。分布式ID生成器是生成分布式ID的工具或服务。
 
-- 第1位：sign bit（标记位，1表示负数，0表示正数）
-- 41位：timestamp（时间戳）
-- 10位：worker node id（工作节点ID）
-- 12位：sequence number（序列号）
+## 核心算法原理和具体操作步骤以及数学模型公式详细讲解
 
-#### 2.3 Leaf算法
+### Leaf
 
-Leaf是百度开源的分布式ID生成器，它使用64bit的long类型来表示ID，支持1000台服务器，每秒可以生成100万个ID。
+Leaf是一种基于Hash函数的分布式ID生成器，它的核心思想是通过Hash函数将时间戳和节点ID混合在一起，从而生成全局唯一的ID。Leaf算法的具体步骤如下：
 
-Leaf的ID结构如下：
+1. 获取当前时间戳，单位为毫秒。
+2. 将时间戳转化为二进制形式，长度为41 bit。
+3. 选择一个随机数作为节点ID，长度为10 bit。
+4. 将时间戳和节点ID拼接在一起，得到一个61 bit的序列。
+5. 通过Hash函数（例如MD5）对序列进行哈希，得到一个128 bit的哈希值。
+6. 取哈希值的前64 bit作为分布式ID，转化为十六进制字符串输出。
 
-- 10bit：machine id（机器ID）
-- 12bit：data center id（数据中心ID）
-- 40bit：timestamp（时间戳）
-- 12bit：sequence number（序列号）
+Leaf算法的数学模型如下：
+```bash
+ID = Hash(timestamp + node_id)[:64]
+```
+其中，`timestamp`表示当前时间戳，单位为毫秒；`node_id`表示节点ID，长度为10 bit；`Hash`表示哈希函数，例如MD5；`:`表示取哈希值的前64 bit。
 
-### 3. 核心算法原理和具体操作步骤以及数学模型公式详细讲解
+### Snowflake
 
-#### 3.1 Snowflake算法原理
+Snowflake是一种基于BitMap的分布式ID生成器，它的核心思想是通过BitMap将时间戳、节点ID和序列号混合在一起，从而生成全局唯一的ID。Snowflake算法的具体步骤如下：
 
-Snowflake算法的核心思想是：将64bit的long类型分成四部分，每部分分别表示不同的信息。其中，前41bit表示时间戳，后10bit表示工作节点ID，最后12bit表示序列号。
+1. 获取当前时间戳，单位为毫秒。
+2. 将时间戳转化为二进制形式，长度为41 bit。
+3. 选择一个随机数作为节点ID，长度为10 bit。
+4. 在节点ID上维护一个BitMap，记录本节点已经生成的序列号。
+5. 在本节点上生成一个新的序列号，并将序列号记录在BitMap中。
+6. 将时间戳、节点ID和序列号拼接在一起，得到一个64 bit的序列。
+7. 转化为十六进制字符串输出。
 
-#### 3.2 Leaf算法原理
+Snowflake算法的数学模型如下：
+```bash
+ID = (timestamp << 22) | (node_id << 12) | sequence
+```
+其中，`timestamp`表示当前时间戳，单位为毫秒；`node_id`表示节点ID，长度为10 bit；`sequence`表示序列号，长度为12 bit。
 
-Leaf算法的核心思想是：将64bit的long类型分成四部分，每部分分别表示不同的信息。其中，前22bit表示数据中心ID和机器ID，中间40bit表示时间戳，最后12bit表示序列号。
+### Twitter Snowflake
 
-#### 3.3 Snowflake算法具体操作步骤
+Twitter Snowflake是Twitter开源的一种分布式ID生成器，它的核心思想与Snowflake类似，但是更加灵活。Twitter Snowflake算法的具体步骤如下：
 
-1. 获取当前时间戳，并将其转换为long类型。
-2. 从左起，取出41bit作为时间戳。
-3. 从右起，取出10bit作为工作节点ID。
-4. 从左起，取出12bit作为序列号，每次递增1。
-5. 将以上三部分合并成一个64bit的long类型。
+1. 获取当前时间戳，单位为毫秒。
+2. 将时间戳转化为二进制形式，长度为41 bit。
+3. 选择一个随机数作为节点ID，长度为10 bit。
+4. 在节点ID上维护一个BitMap，记录本节点已经生成的序列号。
+5. 在本节点上生成一个新的序列号，并将序列号记录在BitMap中。
+6. 将时间戳、节点ID、序列号和数据中心ID（可选）拼接在一起，得到一个64 bit的序列。
+7. 转化为十六进制字符串输出。
 
-#### 3.4 Leaf算法具体操作步骤
+Twitter Snowflake算法的数学模型如下：
+```bash
+ID = (timestamp << 22) | (data_center_id << 12) | (node_id << 10) | sequence
+```
+其中，`timestamp`表示当前时间戳，单位为毫秒；`data_center_id`表示数据中心ID，长度为5 bit；`node_id`表示节点ID，长度为10 bit；`sequence`表示序列号，长度为12 bit。
 
-1. 获取当前时间戳，并将其转换为long类型。
-2. 从左起，取出10bit作为机器ID。
-3. 从左起，取出12bit作为数据中心ID。
-4. 从左起，取出40bit作为时间戳。
-5. 从右起，取出12bit作为序列号，每次递增1。
-6. 将以上六部分合并成一个64bit的long类型。
+### TinyId
 
-### 4. 具体最佳实践：代码实例和详细解释说明
+TinyId是一种基于Bloom Filter的分布式ID生成器，它的核心思想是通过Bloom Filter将时间戳、节点ID和序列号混合在一起，从而生成全局唯一的ID。TinyId算法的具体步骤如下：
 
-#### 4.1 Snowflake实现
+1. 获取当前时间戳，单位为毫秒。
+2. 将时间戳转化为二进制形式，长度为41 bit。
+3. 选择一个随机数作为节点ID，长度为10 bit。
+4. 在节点ID上维护一个Bloom Filter，记录本节点已经生成的序列号。
+5. 在本节点上生成一个新的序列号，并将序列号记录在Bloom Filter中。
+6. 将时间戳、节点ID和序列号拼接在一起，得到一个61 bit的序列。
+7. 通过Hash函数对序列进行哈希，得到一个128 bit的哈希值。
+8. 取哈希值的前64 bit作为分布式ID，转化为十六进制字符串输出。
 
-```java
-public class SnowflakeIdWorker {
-   private final long workerId;
-   private final long dataCenterId;
-   private final long sequence;
-   private long lastTimeStamp = -1L;
+TinyId算法的数学模型如下：
+```bash
+ID = Hash(timestamp + node_id + sequence)[:64]
+```
+其中，`timestamp`表示当前时间戳，单位为毫秒；`node_id`表示节点ID，长度为10 bit；`sequence`表示序列号，长度为10 bit；`Hash`表示哈希函数，例如MD5。
 
-   public SnowflakeIdWorker(long workerId, long dataCenterId) {
-       if (workerId > maxWorkerId || workerId < 0) {
-           throw new IllegalArgumentException("worker Id can't be greater than %d or less than 0", maxWorkerId);
-       }
-       if (dataCenterId > maxDataCenterId || dataCenterId < 0) {
-           throw new IllegalArgumentException("datacenter Id can't be greater than %d or less than 0", maxDataCenterId);
-       }
-       this.workerId = workerId;
-       this.dataCenterId = dataCenterId;
-       this.sequence = (workerId << 12) | (dataCenterId << 17);
-   }
+## 具体最佳实践：代码实例和详细解释说明
 
-   public synchronized long nextId() {
-       long currTimeStamp = getNewTimeStamp();
-       if (currTimeStamp < lastTimeStamp) {
-           throw new RuntimeException("Clock moved backwards.  Refusing to generate id for %d milliseconds.", lastTimeStamp - currTimeStamp);
-       }
+### Leaf
 
-       if (currTimeStamp == lastTimeStamp) {
-           sequence = (sequence + 1) & sequenceMask;
-           if (sequence == 0) {
-               currTimeStamp = getNextMilli();
-           }
-       } else {
-           sequence = 0L;
-       }
+Leaf的Go实现如下：
+```go
+package main
 
-       lastTimeStamp = currTimeStamp;
+import (
+	"crypto/md5"
+	"encoding/hex"
+	"fmt"
+	"math/rand"
+	"time"
+)
 
-       return ((currTimeStamp - twepoch) << timestampLeftShift) | (dataCenterId << datacenterIdShift) | (workerId << workerIdShift) | sequence;
-   }
+const nodeBits = 10 // Node ID length in bits
+const epoch = 1420070400000 // Epoch time in milliseconds
 
-   private long getNextMilli() {
-       long millis = timeGen().getTime();
-       while (millis <= lastTimeStamp) {
-           millis = timeGen().getTime();
-       }
-       return millis;
-   }
+type Leaf struct {
+	timestamp int64   // Current timestamp
+	nodeID   uint16  // Node ID
+	sequence  uint16  // Sequence number
+	hash     [16]byte // Hash value
+}
 
-   private long getNewTimeStamp() {
-       return timeGen().getTime();
-   }
+func NewLeaf(nodeID uint16) *Leaf {
+	return &Leaf{
+		timestamp: time.Now().UnixNano() / 1e6,
+		nodeID:   nodeID,
+		sequence: 0,
+	}
+}
 
-   private Time source;
+func (l *Leaf) NextID() string {
+	if l.timestamp < time.Now().UnixNano()/1e6 {
+		l.timestamp = time.Now().UnixNano() / 1e6
+	}
+	binary := make([]byte, 41)
+	binary[0] = byte((l.timestamp >> 32) & 0xFF)
+	binary[1] = byte((l.timestamp >> 24) & 0xFF)
+	binary[2] = byte((l.timestamp >> 16) & 0xFF)
+	binary[3] = byte((l.timestamp >> 8) & 0xFF)
+	binary[4] = byte(l.timestamp & 0xFF)
+	binary[5] = byte((l.nodeID >> 8) & 0xFF)
+	binary[6] = byte(l.nodeID & 0xFF)
+	binary[7] = byte((l.sequence >> 8) & 0xFF)
+	binary[8] = byte(l.sequence & 0xFF)
+	l.hash = md5.Sum(binary)
+	l.sequence++
+	if l.sequence == (1<<10)-1 {
+		l.sequence = 0
+	}
+	return hex.EncodeToString(l.hash[:6])
+}
 
-   private Time timeGen() {
-       if (source == null) {
-           source = new SystemTime();
-       }
-       return source;
-   }
+func main() {
+	leaf := NewLeaf(uint16(rand.Intn(1<<nodeBits)))
+	for i := 0; i < 10; i++ {
+		fmt.Println(leaf.NextID())
+	}
 }
 ```
+Leaf的JavaScript实现如下：
+```javascript
+const nodeBits = 10; // Node ID length in bits
+const epoch = 1420070400000; // Epoch time in milliseconds
 
-#### 4.2 Leaf实现
+class Leaf {
+  constructor(nodeID) {
+   this.timestamp = Date.now();
+   this.nodeID = nodeID;
+   this.sequence = 0;
+  }
 
-```java
-public class LeafIdWorker {
-   private static final long DATACENTER_ID_BITS = 12;
-   private static final long WORKER_ID_BITS = 10;
-   private static final long SEQUENCE_BITS = 12;
-
-   private static final long MAX_DATACENTER_ID = ~(-1L << DATACENTER_ID_BITS);
-   private static final long MAX_WORKER_ID = ~(-1L << WORKER_ID_BITS);
-   private static final long MAX_SEQUENCE = ~(-1L << SEQUENCE_BITS);
-
-   private static final long DATACENTER_ID_SHIFT = 12;
-   private static final long WORKER_ID_SHIFT = 22;
-   private static final long TIMESTAMP_LEFT_SHIFT = 22;
-
-   private static final long TWEPOCH = 1288834974657L;
-
-   private final long datacenterId;
-   private final long workerId;
-   private long sequence;
-   private long lastTimestamp = -1L;
-
-   public LeafIdWorker(long datacenterId, long workerId) {
-       if (datacenterId > MAX_DATACENTER_ID || datacenterId < 0) {
-           throw new IllegalArgumentException("datacenter Id can't be greater than %d or less than 0", MAX_DATACENTER_ID);
-       }
-       if (workerId > MAX_WORKER_ID || workerId < 0) {
-           throw new IllegalArgumentException("worker Id can't be greater than %d or less than 0", MAX_WORKER_ID);
-       }
-       this.datacenterId = datacenterId;
-       this.workerId = workerId;
+  nextID() {
+   if (this.timestamp < Date.now()) {
+     this.timestamp = Date.now();
    }
-
-   public synchronized long nextId() {
-       long currTimeStamp = getNewTimeStamp();
-
-       if (currTimeStamp < lastTimestamp) {
-           throw new RuntimeException("Clock moved backwards.  Refusing to generate id for %d milliseconds.", lastTimestamp - currTimeStamp);
-       }
-
-       if (currTimeStamp == lastTimestamp) {
-           sequence = (sequence + 1) & MAX_SEQUENCE;
-           if (sequence == 0) {
-               currTimeStamp = getNextMilli();
-           }
-       } else {
-           sequence = 0L;
-       }
-
-       lastTimestamp = currTimeStamp;
-
-       return ((currTimeStamp - TWEPOCH) << TIMESTAMP_LEFT_SHIFT) | (datacenterId << DATACENTER_ID_SHIFT) | (workerId << WORKER_ID_SHIFT) | sequence;
+   const binary = new Buffer(41);
+   binary.writeUInt32BE(Math.floor((this.timestamp - epoch) / 1000), 0);
+   binary.writeUInt16BE(this.nodeID, 4);
+   binary.writeUInt16BE(this.sequence, 6);
+   const hash = crypto.createHash('md5');
+   hash.update(binary);
+   const id = hash.digest('hex').slice(0, 12);
+   this.sequence++;
+   if (this.sequence === (1 << nodeBits)) {
+     this.sequence = 0;
    }
+   return id;
+  }
+}
 
-   private long getNextMilli() {
-       long millis = timeGen().getTime();
-       while (millis <= lastTimestamp) {
-           millis = timeGen().getTime();
-       }
-       return millis;
-   }
-
-   private long getNewTimeStamp() {
-       return timeGen().getTime();
-   }
-
-   private Time source;
-
-   private Time timeGen() {
-       if (source == null) {
-           source = new SystemTime();
-       }
-       return source;
-   }
+const leaf = new Leaf(Math.floor(Math.random() * Math.pow(2, nodeBits)));
+for (let i = 0; i < 10; i++) {
+  console.log(leaf.nextID());
 }
 ```
+### Snowflake
 
-### 5. 实际应用场景
+Snowflake的Go实现如下：
+```go
+package main
 
-分布式ID生成器可以应用在如下场景：
+import (
+	"fmt"
+	"math/rand"
+	"sync"
+	"time"
+)
 
-- 订单系统中，为每个订单生成唯一的订单ID。
-- 用户系统中，为每个用户生成唯一的用户ID。
-- 日志系统中，为每条日志生成唯一的日志ID。
+const nodeBits = 10 // Node ID length in bits
+const sequenceBits = 12 // Sequence number length in bits
+const workerIDBits = 5 // Worker ID length in bits
+const epoch = 1420070400000 // Epoch time in milliseconds
 
-### 6. 工具和资源推荐
+type Snowflake struct {
+	timestamp int64 // Current timestamp
+	workerID  uint16 // Worker ID
+	sequence  uint16 // Sequence number
+	mu       sync.Mutex
+}
 
-- Snowflake：<https://github.com/twitter/snowflake>
-- Leaf：<https://github.com/baidu/leaf>
-- UUID：<https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html>
+func NewSnowflake(workerID uint16) *Snowflake {
+	return &Snowflake{
+		workerID: workerID,
+		sequence: 0,
+	}
+}
 
-### 7. 总结：未来发展趋势与挑战
+func (s *Snowflake) NextID() int64 {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	if s.timestamp < time.Now().UnixNano()/1e6 {
+		s.timestamp = time.Now().UnixNano() / 1e6
+	}
+	binary := make([]byte, 42)
+	binary[0] = byte((s.timestamp >> 32) & 0xFF)
+	binary[1] = byte((s.timestamp >> 24) & 0xFF)
+	binary[2] = byte((s.timestamp >> 16) & 0xFF)
+	binary[3] = byte((s.timestamp >> 8) & 0xFF)
+	binary[4] = byte(s.timestamp & 0xFF)
+	binary[5] = byte((s.workerID >> 8) & 0xFF)
+	binary[6] = byte(s.workerID & 0xFF)
+	binary[7] = byte((s.sequence >> 8) & 0xFF)
+	binary[8] = byte(s.sequence & 0xFF)
+	id := int64(binaryToUint64(binary))
+	s.sequence++
+	if s.sequence == (1 << sequenceBits) {
+		s.sequence = 0
+		s.timestamp++
+	}
+	return id
+}
 
-随着互联网的发展，分布式系统的规模不断扩大，因此分布式ID生成器也会面临越来越多的挑战。未来的发展趋势包括：
+func binaryToUint64(binary []byte) uint64 {
+	var result uint64
+	for i := 0; i < len(binary); i++ {
+		result |= uint64(binary[i]) << (i * 8)
+	}
+	return result
+}
 
-- ID生成速度的提高。
-- ID生成算法的优化。
-- ID生成器的可靠性和可用性的增强。
+func main() {
+	rand.Seed(time.Now().UnixNano())
+	snowflake := NewSnowflake(uint16(rand.Intn(1<<workerIDBits)))
+	for i := 0; i < 10; i++ {
+		fmt.Println(snowflake.NextID())
+	}
+}
+```
+Snowflake的JavaScript实现如下：
+```javascript
+const nodeBits = 10; // Node ID length in bits
+const sequenceBits = 12; // Sequence number length in bits
+const workerIDBits = 5; // Worker ID length in bits
+const epoch = 1420070400000; // Epoch time in milliseconds
 
-### 8. 附录：常见问题与解答
+class Snowflake {
+  constructor(workerID) {
+   this.timestamp = Date.now();
+   this.workerID = workerID;
+   this.sequence = 0;
+  }
 
-#### 8.1 为什么Snowflake和Leaf使用了long类型来表示ID？
+  nextID() {
+   const binary = new Buffer(42);
+   binary.writeUInt32BE(Math.floor((this.timestamp - epoch) / 1000), 0);
+   binary.writeUInt16BE(this.workerID, 4);
+   binary.writeUInt16BE(this.sequence, 6);
+   const id = binaryToUint64(binary);
+   this.sequence++;
+   if (this.sequence === (1 << sequenceBits)) {
+     this.sequence = 0;
+     this.timestamp++;
+   }
+   return id;
+  }
+}
 
-由于需要支持1000台服务器，每秒可以生成10万~100万个ID，因此需要使用足够长的数字来表示ID。long类型占用64bit，可以表示1.84E+19，足以满足需求。
+function binaryToUint64(binary) {
+  let result = 0;
+  for (let i = 0; i < binary.length; i++) {
+   result |= binary[i] << (i * 8);
+  }
+  return result;
+}
 
-#### 8.2 Snowflake和Leaf算法有什么区别？
+const snowflake = new Snowflake(Math.floor(Math.random() * Math.pow(2, workerIDBits)));
+for (let i = 0; i < 10; i++) {
+  console.log(snowflake.nextID());
+}
+```
+### Twitter Snowflake
 
-Snowflake算法将64bit分成三部分：时间戳、工作节点ID和序列号，而Leaf算法将64bit分成四部分：机器ID、数据中心ID、时间戳和序列号。因此，Leaf算法的可扩展性更好，可以支持更多的机器和数据中心。
+Twitter Snowflake的Go实现如下：
+```go
+package main
 
-#### 8.3 如何选择合适的分布式ID生成器？
+import (
+	"fmt"
+	"math/rand"
+	"sync"
+	"time"
+)
 
-首先需要考虑系统的规模和性能需求，然后根据具体情况选择合适的ID生成算法。Snowflake和Leaf是两种常见的分布式ID生成器，可以根据自己的需求进行选择。
+const nodeBits = 10 // Node ID length in bits
+const sequenceBits = 12 // Sequence number length in bits
+const dataCenterIDBits = 5 // Data Center ID length in bits
+const workerIDBits = 5 // Worker ID length in bits
+const epoch = 1420070400000 // Epoch time in milliseconds
+
+type TwitterSnowflake struct {
+	timestamp int64 // Current timestamp
+	dataCenterID uint16 // Data Center ID
+	workerID  uint16 // Worker ID
+	sequence  uint16 // Sequence number
+	mu       sync.Mutex
+}
+
+func NewTwitterSnowflake(dataCenterID uint16, workerID uint16) *TwitterSnowflake {
+	return &TwitterSnowflake{
+		dataCenterID: dataCenterID,
+		workerID:  workerID,
+		sequence: 0,
+	}
+}
+
+func (ts *TwitterSnowflake) NextID() int64 {
+	ts.mu.Lock()
+	defer ts.mu.Unlock()
+	if ts.timestamp < time.Now().UnixNano()/1e6 {
+		ts.timestamp = time.Now().UnixNano() / 1e6
+	}
+	binary := make([]byte, 45)
+	binary[0] = byte((ts.timestamp >> 32) & 0xFF)
+	binary[1] = byte((ts.timestamp >> 24) & 0xFF)
+	binary[2] = byte((ts.timestamp >> 16) & 0xFF)
+	binary[3] = byte((ts.timestamp >> 8) & 0xFF)
+	binary[4] = byte(ts.timestamp & 0xFF)
+	binary[5] = byte((ts.dataCenterID >> 8) & 0xFF)
+	binary[6] = byte(ts.dataCenterID & 0xFF)
+	binary[7] = byte((ts.workerID >> 8) & 0xFF)
+	binary[8] = byte(ts.workerID & 0xFF)
+	binary[9] = byte((ts.sequence >> 8) & 0xFF)
+	binary[10] = byte(ts.sequence & 0xFF)
+	id := int64(binaryToUint64(binary))
+	ts.sequence++
+	if ts.sequence == (1 << sequenceBits) {
+		ts.sequence = 0
+		ts.timestamp++
+	}
+	return id
+}
+
+func binaryToUint64(binary []byte) uint64 {
+	var result uint64
+	for i := 0; i < len(binary); i++ {
+		result |= uint64(binary[i]) << (i * 8)
+	}
+	return result
+}
+
+func main() {
+	rand.Seed(time.Now().UnixNano())
+	twitterSnowflake := NewTwitterSnowflake(uint16(rand.Intn(1<<dataCenterIDBits)), uint16(rand.Intn(1<<workerIDBits)))
+	for i := 0; i < 10; i++ {
+		fmt.Println(twitterSnowflake.NextID())
+	}
+}
+```
+Twitter Snowflake的JavaScript实现如下：
+```javascript
+const nodeBits = 10; // Node ID length in bits
+const sequenceBits = 12; // Sequence number length in bits
+const dataCenterIDBits = 5; // Data Center ID length in bits
+const workerIDBits = 5; // Worker ID length in bits
+const epoch = 1420070400000; // Epoch time in milliseconds
+
+class TwitterSnowflake {
+  constructor(dataCenterID, workerID) {
+   this.timestamp = Date.now();
+   this.dataCenterID = dataCenterID;
+   this.workerID = workerID;
+   this.sequence = 0;
+  }
+
+  nextID() {
+   const binary = new Buffer(45);
+   binary.writeUInt32BE(Math.floor((this.timestamp - epoch) / 1000), 0);
+   binary.writeUInt16BE(this.dataCenterID, 4);
+   binary.writeUInt16BE(this.workerID, 6);
+   binary.writeUInt16BE(this.sequence, 8);
+   const id = binaryToUint64(binary);
+   this.sequence++;
+   if (this.sequence === (1 << sequenceBits)) {
+     this.sequence = 0;
+     this.timestamp++;
+   }
+   return id;
+  }
+}
+
+function binaryToUint64(binary) {
+  let result = 0;
+  for (let i = 0; i < binary.length; i++) {
+   result |= binary[i] << (i * 8);
+  }
+  return result;
+}
+
+const twitterSnowflake = new TwitterSnowflake(Math.floor(Math.random() * Math.pow(2, dataCenterIDBits)), Math.floor(Math.random() * Math.pow(2, workerIDBits)));
+for (let i = 0; i < 10; i++) {
+  console.log(twitterSnowflake.nextID());
+}
+```
+### TinyId
+
+TinyId的Go实现如下：
+```go
+package main
+
+import (
+	"crypto/md5"
+	"encoding/hex"
+	"errors"
+	"math/rand"
+	"sync"
+	"time"
+)
+
+const nodeBits = 10 // Node ID length in bits
+const bucketBits = 5 // Bucket number length in bits
+const itemBits = 10 // Item number length in bits
+const epoch = 1420070400000 // Epoch time in milliseconds
+
+type TinyId struct {
+	nodeID      uint16 // Node ID
+	bucketNumber uint16 // Bucket number
+	itemNumber  uint16 // Item number
+	mu          sync.Mutex
+}
+
+func NewTinyId(nodeID uint16) (*TinyId, error) {
+	if nodeID >= (1 << nodeBits) {
+		return nil, errors.New("Node ID is too large")
+	}
+	tinyId := &TinyId{
+		nodeID: nodeID,
+	}
+	tinyId.resetBucketNumber()
+	tinyId.resetItemNumber()
+	return tinyId, nil
+}
+
+func (ti *TinyId) resetBucketNumber() {
+	ti.bucketNumber = uint16(rand.Int63n(int64(1 << bucketBits)))
+}
+
+func (ti *TinyId) resetItemNumber() {
+	ti.itemNumber = uint16(rand.Int63n(int64(1 << itemBits)))
+}
+
+func (ti *TinyId) NextID() (string, error) {
+	ti.mu.Lock()
+	defer ti.mu.Unlock()
+	if ti.bucketNumber == uint16(rand.Int63n(int64(1 << bucketBits))) || ti.itemNumber == uint16(rand.Int63n(int64(1 << itemBits))) {
+		ti.resetBucketNumber()
+		ti.resetItemNumber()
+	}
+	binary := make([]byte, 15)
+	binary[0] = byte((ti.nodeID >> 8) & 0xFF)
+	binary[1] = byte(ti.nodeID & 0xFF)
+	binary[2] = byte((ti.bucketNumber >> 8) & 0xFF)
+	binary[3] = byte(ti.bucketNumber & 0xFF)
+	binary[4] = byte((ti.itemNumber >> 8) & 0xFF)
+	binary[5] = byte(ti.itemNumber & 0xFF)
+	binary[6] = byte((time.Now().UnixNano()/1e6-epoch) & 0xFF)
+	binary[7] = byte(((time.Now().UnixNano()/1e6-epoch)>>8) & 0xFF)
+	binary[8] = byte(((time.Now().UnixNano()/1e6-epoch)>>16) & 0xFF)
+	binary[9] = byte(((time.Now().UnixNano()/1e6-epoch)>>24) & 0xFF)
+	hash := md5.Sum(binary)
+	id := hex.EncodeToString(hash[:])
+	return id, nil
+}
+
+func main() {
+	rand.Seed(time.Now().UnixNano())
+	tinyId, err := NewTinyId(uint16(rand.Intn(1<<nodeBits)))
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	for i := 0; i < 10; i++ {
+		id, err := tinyId.NextID()
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		fmt.Println(id)
+	}
+}
+```
+TinyId的JavaScript实现如下：
+```javascript
+const nodeBits = 10; // Node ID length in bits
+const bucketBits = 5; // Bucket number length in bits
+const itemBits = 10; // Item number length in bits
+const epoch = 1420070400000; // Epoch time in milliseconds
+
+class TinyId {
+  constructor(nodeID) {
+   this.nodeID = nodeID;
+   this.bucketNumber = Math.floor(Math.random() * Math.pow(2, bucketBits));
+   this.itemNumber = Math.floor(Math.random() * Math.pow(2, itemBits));
+  }
+
+  nextID() {
+   if (this.bucketNumber === Math.floor(Math.random() * Math.pow(2, bucketBits)) || this.itemNumber === Math.floor(Math.random() * Math.pow(2, itemBits))) {
+     this.bucketNumber = Math.floor(Math.random() * Math.pow(2, bucketBits));
+     this.itemNumber = Math.floor(Math.random()
