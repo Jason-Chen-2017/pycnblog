@@ -21,5 +21,8 @@ t:
 a:
 	./auto_make.sh &
 
+amc:
+	./auto_make_mc.sh &
+
 h:
 	./human_make.sh &
