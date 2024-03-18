@@ -1,322 +1,247 @@
                  
 
-**强化学习：让AI学会自主决策**
+强化学习(Reinforcement Learning, RL)是一种机器学习范式，它的核心思想是通过与环境交互，从反馈中学习并采取最优的动作来达到某个目标。强化学习的目标不是直接学习输入到输出的映射关系，而是学会在环境中采取最适当的行动。
 
-作者：禅与计算机程序设计艺术
-=========================
-
-## 背景介绍
+## 1. 背景介绍
 
 ### 1.1 什么是强化学习？
 
-强化学习(Reinforcement Learning, RL)是机器学习的一个分支，它通过与环境交互，从错误和成功中学习，并最终形成优秀的策略。强化学习和监督学习(Supervised Learning)以及无监督学习(Unsupervised Learning)有很大的区别。监督学习需要有大量的带标签的训练数据，而无监督学习则没有明确的目标函数。强化学习 agent 通过与环境的交互来学习并获得 reward，agent 的目标是最大化 cumulative reward。
+强化学习是一种机器学习范式，它的核心思想是通过与环境交互，从反馈中学习并采取最优的动作来达到某个目标。强化学习的目标不是直接学习输入到输出的映射关系，而是学会在环境中采取最适当的行动。
 
-### 1.2 强化学习的应用
+### 1.2 强化学习与其他机器学习范式的区别
 
-强化学习已经被广泛应用于游戏、自动驾驶、机器人、金融等领域。例如，DeepMind 的 AlphaGo 就是利用强化学习击败世界冠军的。AlphaStar 也是通过强化学星的方式击败了全球顶尖的 StarCraft II 玩家。在自动驾驶领域，强化学习也被广泛应用，因为它能够让车辆在复杂的道路环境中做出正确的决策。
+强化学习与监督学习和非监督学习的区别在于：
 
-## 核心概念与联系
+- 监督学习：输入和输出之间存在确定的关系，即给定输入，就能确定输出。
+- 非监督学习：没有明确的输入输出关系，需要根据数据的统计特征学习输出。
+- 强化学习：通过与环境交互获取反馈，并根据反馈调整行为，最终达到某个目标。
+
+## 2. 核心概念与联系
 
 ### 2.1 基本概念
 
-* Agent：能够观察环境并采取行动的智能体。
-* Environment：agent 所处的环境。
-* State：环境的某个状态。
-* Action：agent 在当前状态下可以执行的操作。
-* Policy：agent 决定在每个状态下采取哪个操作的规则。
-* Value Function：评估某个状态的 goodness 的函数。
-* Reward：agent 在当前状态下获得的 immediate reward。
+- 智能体（Agent）：一个能够观察环境并采取行动的系统。
+- 环境（Environment）：智能体所处的世界。
+- 状态（State）：环境在某一时刻的描述。
+- 动作（Action）：智能体在某一状态下的选择。
+- 奖励（Reward）：智能体采取某一动作后所获得的反馈。
+- 政策（Policy）：智能体在每个状态下采取哪个动作的规则。
 
-### 2.2 马尔可夫过程
+### 2.2 马尔科夫决策过程(Markov Decision Process, MDP)
 
-强化学习中的状态转移是一个马尔可夫过程。马尔可夫过程(Markov Process)是一个随机过程，满足如下特征：
+MDP是强化学习中常用的数学模型，它包括五个元素：S, A, P, R, γ。
 
-$$P(s_{t+1}|s_t, a_t, s_{t-1}, ..., s_1, a_1)=P(s_{t+1}|s_t,a_t)$$
+- S：状态集合。
+- A：动作集合。
+- P：转移概率，即从当前状态s和当前动作a转移到下一个状态s'的概率。
+- R：奖励函数，即从当前状态s和当前动作a转移到下一个状态s'时所获得的奖励。
+- γ：折扣因子，表示未来奖励的重要性，通常取值在[0, 1]之间。
 
-即给定当前状态和动作，未来状态只依赖于当前状态和动作，不再依赖于历史状态和动作。
+### 2.3 Q-learning和SARSA算法
 
-### 2.3 马尔可夫决策过程
+Q-learning和SARSA算法是两种常用的强化学习算法，它们的区别在于更新Q值的方式。
 
-强化学习中的问题可以表示为一个马尔可夫决策过程(Markov Decision Process, MDP)。MDP 由五元组 $(S,A,P,R,\gamma)$ 描述：
+- Q-learning：Q-learning算法通过估计Q值来学习最优的政策，它是离线学习算法，即不需要与环境进行交互。
+- SARSA：SARSA算法是在线学习算法，它需要与环境进行交互，并在每一步都更新Q值。
 
-* $S$：状态空间。
-* $A$：动作空间。
-* $P(s'|s,a)$：给定状态 $s$ 和动作 $a$ 时，到达状态 $s'$ 的概率。
-* $R(s,a,s')$：给定状态 $s$ 和动作 $a$ 时，到达状态 $s'$ 时的 immediate reward。
-* $\gamma \in [0,1]$：discount factor。
+## 3. 核心算法原理和具体操作步骤以及数学模型公式详细讲解
 
-### 2.4 Bellman Equation
+### 3.1 Q-learning算法
 
-Bellman Equation 是强化学习中一个非常重要的概念。Bellman Equation 描述了 value function 的递归关系。对于 given policy $\pi$，state-value function $V^{\pi}(s)$ 的 Bellman Equation 为：
+Q-learning算法的核心思想是通过迭代估计Q值来学习最优的策略。Q值表示在某个状态下采取某个动作所能获得的期望 cumulative reward。
 
-$$V^{\pi}(s)=\sum_{a}\pi(a|s)\sum_{s',r}p(s',r|s,a)[r+\gamma V^{\pi}(s')]$$
+Q-learning算法的具体操作步骤如下：
 
-对于 action-value function $Q^{\pi}(s,a)$，Bellman Equation 为：
+1. 初始化Q值矩阵Q(s, a)。
+2. 在每个时间步t，智能体观测到当前状态st，并从Q值矩阵中选择动作at。
+3. 智能体采取动作at，并转移到下一个状态st+1，同时获得奖励rt。
+4. 更新Q值：Q(st, at)=rt+γmaxaQ(st+1, a)。
+5. 重复 steps 2-4，直到学习完成。
 
-$$Q^{\pi}(s,a)=\sum_{s',r}p(s',r|s,a)[r+\gamma\sum_{a'} \pi(a'|s') Q^{\pi}(s',a')]$$
+Q-learning算法的数学模型如下：
 
-## 核心算法原理和具体操作步骤以及数学模型公式详细讲解
+$$
+Q(s,a) \leftarrow Q(s,a) + \alpha [r + \gamma max\_a' Q(s', a') - Q(s,a)]
+$$
 
-### 3.1 Value Iteration
+其中：
 
-Value Iteration 是一种基本的强化学习算法。Value Iteration 的核心思想是迭代地更新 state-value function $V(s)$。Value Iteration 算法如下：
+- Q(s, a)：Q值，表示在状态s下采取动作a的预期奖励。
+- α：学习率，表示新信息对旧信息的影响力。
+- r：实际奖励。
+- γ：折扣因子，表示未来奖励的重要性。
 
-1. Initialize $V_0(s)$ for all $s \in S$.
-2. For each iteration $i$, do:
-	* For each $s \in S$, compute $V_{i+1}(s)$ using the following equation: $$V_{i+1}(s)=\max_a \sum_{s',r} p(s',r|s,a)[r+\gamma V_i(s')]$$
-	* If $|V_{i+1}(s)-V_i(s)| < \epsilon$ for all $s \in S$, then stop and return the optimal policy $\pi^*(s)=\arg\max_a \sum_{s',r} p(s',r|s,a)[r+\gamma V_{i+1}(s')]$; otherwise, continue to the next iteration.
+### 3.2 SARSA算法
 
-### 3.2 Policy Iteration
+SARSA算法的核心思想是在每一步都更新Q值，从而学习最优的策略。
 
-Policy Iteration 也是一种基本的强化学习算法。Policy Iteration 的核心思想是 alternating between policy evaluation and policy improvement. Policy Iteration 算法如下：
+SARSA算法的具体操作步骤如下：
 
-1. Initialize a random policy $\pi_0$.
-2. For each iteration $i$, do:
-	* Policy Evaluation: Compute the state-value function $V^{\pi_i}$ using the following equation: $$V^{\pi_i}(s)=\sum_{a}\pi_i(a|s)\sum_{s',r}p(s',r|s,a)[r+\gamma V^{\pi_i}(s')]$$
-	* Policy Improvement: Update the policy using the following equation: $$\pi_{i+1}(s)=\arg\max_a \sum_{s',r} p(s',r|s,a)[r+\gamma V^{\pi_i}(s')]$$
-	* If $\pi_{i+1}=\pi_i$, then stop and return the optimal policy $\pi^*=\pi_{i+1}$; otherwise, continue to the next iteration.
+1. 初始化Q值矩阵Q(s, a)。
+2. 在每个时间步t，智能体观测到当前状态st，并从Q值矩阵中选择动作at。
+3. 智能体采取动作at，并转移到下一个状态st+1，同时获得奖励rt。
+4. 更新Q值：Q(st, at)=rt+γQ(st+1, at+1)。
+5. 重复 steps 2-4，直到学习完成。
 
-### 3.3 Q-Learning
+SARSA算法的数学模型如下：
 
-Q-Learning 是一种值函数的方法，其目标是学习出 action-value function $Q(s,a)$。Q-Learning 算法如下：
+$$
+Q(s,a) \leftarrow Q(s,a) + \alpha [r + \gamma Q(s', a') - Q(s,a)]
+$$
 
-1. Initialize $Q(s,a)$ for all $s \in S$ and $a \in A$.
-2. For each episode:
-	* Initialize the state $s_0$.
-	* For each time step $t$:
-		+ Choose an action $a_t$ based on the current state $s_t$ and the action-value function $Q(s_t,a)$.
-		+ Take the action $a_t$ and observe the reward $r_t$ and the new state $s_{t+1}$.
-		+ Update the action-value function using the following equation: $$Q(s_t,a_t)=Q(s_t,a_t)+\alpha[r_t+\gamma \max_{a'}Q(s_{t+1},a')-Q(s_t,a_t)]$$
-		+ Set $s_t=s_{t+1}$.
+其中：
 
-### 3.4 Deep Q-Network (DQN)
+- Q(s, a)：Q值，表示在状态s下采取动作a的预期奖励。
+- α：学习率，表示新信息对旧信息的影响力。
+- r：实际奖励。
+- γ：折扣因子，表示未来奖励的重要性。
 
-Deep Q-Network (DQN) 是一种结合深度学习和 Q-Learning 的强化学习算法。DQN 使用 CNN 来近似 action-value function $Q(s,a;\theta)$, 其中 $\theta$ 是 CNN 的参数。DQN 算法如下：
+## 4. 具体最佳实践：代码实例和详细解释说明
 
-1. Initialize the CNN $Q(s,a;\theta)$ with random weights.
-2. Initialize the target network $Q'(s,a;\theta')$ with the same architecture as $Q(s,a;\theta)$, but with different parameters.
-3. For each iteration $i$:
-	* For each time step $t$:
-		+ Choose an action $a_t$ based on the current state $s_t$ and the action-value function $Q(s_t,a;\theta)$.
-		+ Take the action $a_t$ and observe the reward $r_t$ and the new state $s_{t+1}$.
-		+ Store the transition $(s_t,a_t,r_t,s_{t+1})$ in the replay buffer.
-		+ Sample a minibatch of transitions from the replay buffer.
-		+ Compute the target $y_j=r_j+\gamma \max_{a'} Q'(s_{j+1},a';\theta')$ for each transition $(s_j,a_j,r_j,s_{j+1})$.
-		+ Update the CNN using the following loss function: $$L(\theta)=\frac{1}{N}\sum_j [y_j-Q(s_j,a_j;\theta)]^2$$
-		+ Every certain number of iterations, update the target network by setting $\theta'=\theta$.
-
-## 具体最佳实践：代码实例和详细解释说明
-
-### 4.1 Value Iteration
-
-Value Iteration 的 Python 代码实现如下：
+以下是一个简单的Q-learning算法实现：
 
 ```python
 import numpy as np
 
-def value\_iteration(mdp, epsilon=0.001):
-"""
-Value Iteration algorithm for MDP.
+# 定义环境
+class Environment:
+   def __init__(self):
+       self.state = 0
 
-Args:
-mdp (MDP): An instance of MDP class.
-epsilon (float): Threshold for convergence.
+   def observe(self):
+       return self.state
 
-Returns:
-policy (dict): A dict mapping from state to action.
+   def take_action(self, action):
+       if action == 0:
+           self.state += 1
+           if self.state > 3:
+               self.state = 0
+           return 1
+       else:
+           self.state -= 1
+           if self.state < 0:
+               self.state = 3
+           return -1
 
-"""
-# Initialize state-value function.
-V = {s: 0 for s in mdp.states}
+# 定义Q-learning算法
+class QLearning:
+   def __init__(self, env, alpha=0.5, gamma=0.9):
+       self.env = env
+       self.Q = np.zeros([env.observable_states(), env.actions()])
+       self.alpha = alpha
+       self.gamma = gamma
 
-# Loop until convergence.
-while True:
-# Compute the max action-value for each state.
-delta = 0
-for s in mdp.states:
-v = V[s]
-a\_values = []
-for a in mdp.actions[s]:
-p, r, s\_p = mdp.transition(s, a)
-v\_p = sum([p[s\_p]\*(r + gamma\*V[s\_p]) for s\_p in mdp.states])
-a\_values.append(v\_p)
-max\_a\_value = max(a\_values)
-if abs(max\_a\_value - v) > delta:
-delta = abs(max\_a\_value - v)
-V[s] = max\_a\_value
-else:
-break
+   def observable_states(self):
+       states = []
+       for i in range(self.env.observable_steps()):
+           states.append(self.env.observe())
+       return states
 
-# Convert state-value function to policy.
-policy = {s: np.argmax([a\_values[i] for i in range(len(a\_values))]) for s in mdp.states}
+   def actions(self):
+       return len(self.env.possible_actions())
 
-# Check if converged.
-if delta < epsilon:
-return policy
-```
+   def update_Q(self, state, action, new_state, reward):
+       old_Q = self.Q[state][action]
+       new_Q = (1 - self.alpha) * old_Q + self.alpha * (reward + self.gamma * np.max(self.Q[new_state]))
+       self.Q[state][action] = new_Q
 
-### 4.2 Q-Learning
+   def train(self, episodes=1000):
+       for episode in range(episodes):
+           state = self.env.observe()
+           done = False
+           while not done:
+               # 选择动作
+               action = np.argmax(self.Q[state])
+               # 执行动作并获取反馈
+               new_state, reward, done = self.env.take_action(action)
+               # 更新Q值
+               self.update_Q(state, action, new_state, reward)
+               # 更新状态
+               state = new_state
 
-Q-Learning 的 Python 代码实现如下：
+# 训练Q-learning算法
+env = Environment()
+ql = QLearning(env)
+ql.train()
 
-```python
-import random
-
-def q\_learning(env, alpha=0.5, gamma=0.9, epsilon=0.1, num\_episodes=10000):
-"""
-Q-Learning algorithm for MDP.
-
-Args:
-env (gym.Env): An instance of OpenAI Gym environment.
-alpha (float): Learning rate.
-gamma (float): Discount factor.
-epsilon (float): Exploration probability.
-num\_episodes (int): Number of episodes.
-
-Returns:
-q\_table (dict): A dict mapping from (state, action) to Q-value.
-
-"""
-# Initialize Q-table.
-q\_table = {(s, a): 0 for s in env.observation\_space for a in env.action\_space}
-
-# Loop over episodes.
-for episode in range(num\_episodes):
-# Initialize the state.
-state = env.reset()
+# 测试Q-learning算法
+state = env.observe()
 done = False
-
-# Loop over steps within each episode.
 while not done:
-# Choose an action based on epsilon-greedy policy.
-if random.random() < epsilon:
-action = env.action\_space.sample()
-else:
-action = max((q\_table[(state, a)] for a in env.action\_space), key=lambda x:x[1])[0]
-
-# Take the action and get the next state and reward.
-next\_state, reward, done, _ = env.step(action)
-
-# Update the Q-value.
-q\_table[(state, action)] += alpha * (reward + gamma \* max(q\_table[(next\_state, a)] for a in env.action\_space) - q\_table[(state, action)])
-
-# Update the current state.
-state = next\_state
-
-# Return the learned Q-table.
-return q\_table
+   action = np.argmax(ql.Q[state])
+   new_state, reward, done = env.take_action(action)
+   print("state:", state, "action:", action, "reward:", reward, "new_state:", new_state)
+   state = new_state
 ```
 
-### 4.3 Deep Q-Network (DQN)
+## 5. 实际应用场景
 
-Deep Q-Network (DQN) 的 TensorFlow 代码实现如下：
+强化学习有很多实际应用场景，包括但不限于：
 
-```python
-import tensorflow as tf
-import gym
+- 游戏AI：例如 AlphaGo、Dota2等。
+- 自动驾驶：例如 Tesla、Waymo等。
+- 金融：例如股票投资、风控等。
+- 医疗保健：例如精准治疗、药物研发等。
 
-class DQN(object):
-def __init__(self, input\_shape, nb\_actions, learning\_rate=0.001):
-self.input\_shape = input\_shape
-self.nb\_actions = nb\_actions
-self.learning\_rate = learning\_rate
-self.model = self.build\_model()
-self.target\_model = self.build\_model()
+## 6. 工具和资源推荐
 
-def build\_model(self):
-inputs = tf.placeholder(tf.float32, shape=(None,)+self.input\_shape)
-fc1 = tf.layers.dense(inputs, 64, activation=tf.nn.relu)
-fc2 = tf.layers.dense(fc1, 64, activation=tf.nn.relu)
-outputs = tf.layers.dense(fc2, self.nb\_actions)
-return outputs
+- OpenAI Gym：一个强化学习环境。
+- TensorFlow Agents：Google开源的强化学习库。
+- Stable Baselines：一套可靠的强化学习算法实现。
+- RLlib：Facebook开源的强化学习库。
 
-def train(self, states, actions, rewards, next\_states, dones, target\_update\_freq=100):
-# Reshape inputs.
-states = np.array(states).reshape(-1,)+self.input\_shape)
-next\_states = np.array(next\_states).reshape(-1,)+self.input\_shape)
+## 7. 总结：未来发展趋势与挑战
 
-# Compute targets.
-targets = rewards + (1-dones)*self.gamma*np.amax(self.target\_model.predict(next\_states), axis=-1)
+强化学习正在快速发展，未来的发展趋势包括：
 
-# Train model.
-with tf.Session() as sess:
-sess.run(tf.global\_variables\_initializer())
-optimizer = tf.train.AdamOptimizer(self.learning\_rate)
-loss\_op = tf.reduce\_mean(tf.square(targets - self.model.predict(states)))
-grads\_and\_vars = optimizer.compute\_gradients(loss\_op)
-train\_op = optimizer.apply\_gradients(grads\_and\_vars)
-for i in range(100):
-sess.run(train\_op, feed\_dict={inputs: states})
+- 深度强化学习：将深度学习和强化学习结合起来，提高学习效率和性能。
+- 联邦学习：分布式学习，提高数据利用率和安全性。
+- 模仿学习：通过观察人类或其他智能体的行为学习新技能。
 
-# Update target network.
-if i % target\_update\_freq == 0:
-self.target\_model.set\_weights(self.model.get\_weights())
+同时，强化学习也面临着一些挑战，包括：
 
-def predict(self, state):
-return self.model.predict(state.reshape(1,)+self.input\_shape))
+- 样本效率低：强化学习需要大量的样本才能学习到有用的知识。
+- 环境复杂性高：当环境变得越来越复杂时，学习变得越来越困难。
+- 探索与利用的困境：强化学习需要在探索新的知识和利用已知知识之间进行平衡。
 
-if **name** == "**main**":
-env = gym.make("CartPole-v0")
-dqn = DQN(env.observation\_space.shape, env.action\_space.n)
-num\_episodes = 1000
-total\_rewards = []
-for episode in range(num\_episodes):
-state = env.reset()
-total\_reward = 0
-while True:
-action = dqn.predict(state)
-next\_state, reward, done, _ = env.step(action)
-dqn.train(state, action, reward, next\_state, done)
-total\_reward += reward
-if done:
-break
-state = next\_state
-total\_rewards.append(total\_reward)
-print("Episode %d: Total reward %f" % (episode+1, total\_reward))
-print("Average reward:", np.mean(total\_rewards[-100:]))
-```
+## 8. 附录：常见问题与解答
 
-## 实际应用场景
+### 8.1 什么是强化学习？
 
-强化学习已经被广泛应用于游戏、自动驾驶、机器人、金融等领域。在游戏领域，强化学习算法已经击败了世界冠军级别的棋手和 GO 选手。在自动驾驶领域，强化学习算法能够让车辆在复杂的道路环境中做出正确的决策。在机器人领域，强化学习算法能够让机器人学会如何完成复杂的任务，例如走过障碍或抓取物体。在金融领域，强化学习算法能够帮助投资者做出正确的投资决策。
+强化学习是一种机器学习范式，它的核心思想是通过与环境交互获取反馈，并根据反馈调整行为，最终达到某个目标。
 
-## 工具和资源推荐
+### 8.2 强化学习与其他机器学习范式的区别？
 
-* OpenAI Gym: <https://gym.openai.com/>
-* TensorFlow: <https://www.tensorflow.org/>
-* PyTorch: <https://pytorch.org/>
-* Stable Baselines: <https://stable-baselines.readthedocs.io/en/master/>
-* RLlib: <https://docs.ray.io/en/latest/rllib.html>
+强化学习与监督学习和非监督学习的区别在于：
 
-## 总结：未来发展趋势与挑战
+- 监督学习：输入和输出之间存在确定的关系，即给定输入，就能确定输出。
+- 非监督学习：没有明确的输入输出关系，需要根据数据的统计特征学习输出。
+- 强化学习：通过与环境交互获取反馈，并根据反馈调整行为，最终达到某个目标。
 
-强化学习是一个非常激动人心的研究领域，它有很多潜在的应用场景。然而，强化学习也面临着许多挑战。其中一些挑战包括：
+### 8.3 强化学习中的基本概念是什么？
 
-* 样本效率问题：许多强化学习算法需要大量的交互数据，这在实际应用中是不可行的。
-* 环境的复杂性：许多现实世界的环境是高维且连续的，这使得强化学习算法难以处理。
-* 探索 vs 利用 tradeoff：强化学习算法必须在探索新的状态和利用已知状态之间进行平衡。
-* 多智能体问题：许多现实世界的环境包含多个智能体，这使得强化学习算法更加复杂。
+基本概念包括：
 
-未来，我们希望看到更有效的强化学习算法，这些算法可以应对高维、连续的环境，并且具有良好的样本效率。此外，我们还希望看到更多的应用场景，例如自适应系统、智能健康和智能教育。
+- 智能体（Agent）：一个能够观察环境并采取行动的系统。
+- 环境（Environment）：智能体所处的世界。
+- 状态（State）：环境在某一时刻的描述。
+- 动作（Action）：智能体在某一状态下的选择。
+- 奖励（Reward）：智能体采取某一动作后所获得的反馈。
+- 政策（Policy）：智能体在每个状态下采取哪个动作的规则。
 
-## 附录：常见问题与解答
+### 8.4 马尔科夫决策过程(Markov Decision Process, MDP)是什么？
 
-### Q: 为什么强化学习称为强化学习？
+MDP是强化学习中常用的数学模型，它包括五个元素：S, A, P, R, γ。
 
-A: 因为强化学习通过与环境交互来学习，而不是像监督学习那样需要带标签的训练数据。
+- S：状态集合。
+- A：动作集合。
+- P：转移概率，即从当前状态s和当前动作a转移到下一个状态s'的概率。
+- R：奖励函数，即从当前状态s和当前动作a转移到下一个状态s'时所获得的奖励。
+- γ：折扣因子，表示未来奖励的重要性，通常取值在[0, 1]之间。
 
-### Q: 强化学习与监督学习有什么区别？
+### 8.5 Q-learning和SARSA算法的区别是什么？
 
-A: 强化学习通过与环境交互来学习，而监督学习需要带标签的训练数据。
+Q-learning和SARSA算法的区别在于更新Q值的方式。
 
-### Q: 强化学习与无监督学习有什么区别？
-
-A: 强化学习通过与环境交互来学习，而无监督学习没有明确的目标函数。
-
-### Q: 什么是马尔可夫决策过程？
-
-A: 马尔可夫决策过程是一个随机过程，满足如下特征：P(st+1|st, at, st−1, ..., s1, a1)=P(st+1|st,at)。
-
-### Q: 什么是 Bellman Equation？
-
-A: Bellman Equation 描述了 value function 的递归关系。
+- Q-learning：Q-learning算法通过估计Q值来学习最优的政策，它是离线学习算法，即不需要与环境进行交互。
+- SARSA：SARSA算法是在线学习算法，它需要与环境进行交互，并在每一步都更新Q值。
