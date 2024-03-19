@@ -28,12 +28,19 @@ def is_good_content(content):
         # "$$",
         "```",
         "背景介绍",
+        "Background Introduction",
         "核心概念与联系",
+        "Core Concepts",
         "核心算法原理",
+        "Core Algorithms",
         "代码实例",
+        "Best Practices",
         "实际应用场景",
+        "Real-World Applications",
         "工具和资源",
+        "Tools and Resources",
         "未来发展趋势与挑战",
+        "Summary and Future Developments",
     ]
 
     for keyword in keywords:
