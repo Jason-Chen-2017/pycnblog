@@ -12,6 +12,9 @@ g:
 w:
 	./write_blog.sh &
 
+w1:
+	./write_blog1.sh &
+
 w3:
 	./write_blog30.sh &
 
