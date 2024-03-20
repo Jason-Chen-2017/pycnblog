@@ -36,11 +36,30 @@ def is_good_content(content):
         "未来发展趋势与挑战",
     ]
 
+    keywords2 = [
+        # "$$",
+        "```",
+        "Background Introduction",
+        "Core Concepts",
+        "Core Algorithms",
+        "Best Practices",
+        "Real-World Applications",
+        "Tools and Resources",
+        "Summary and Future Developments",
+    ]
+
+    flag1 = True
+    flag2 = True
+
     for keyword in keywords:
         if keyword not in content:
-            return False
+            flag1 = False
 
-    return True
+    for keyword in keywords2:
+        if keyword not in content:
+            flag2 = False
+
+    return flag1 or flag2
 
 
 def process_file(file_path, target_good_directory, target_draft_directory):
