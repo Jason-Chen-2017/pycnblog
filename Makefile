@@ -15,6 +15,9 @@ w:
 w1:
 	./write_blog1.sh &
 
+wr:
+	./write_blog_rand.sh &
+
 w3:
 	./write_blog30.sh &
 
