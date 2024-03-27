@@ -1,5 +1,9 @@
 f:
 	./find.sh
+
+fm:
+	./find_mac.sh
+
 m:
 	./curl_md.sh
 
