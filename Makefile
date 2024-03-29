@@ -1,7 +1,7 @@
 f:
 	./find.sh
 
-fm:
+fc:
 	./find_mac.sh
 
 m:
