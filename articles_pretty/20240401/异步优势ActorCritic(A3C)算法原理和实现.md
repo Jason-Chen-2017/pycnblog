@@ -181,7 +181,9 @@ A3C算法广泛应用于各种强化学习任务中,例如:
 
 4. **Ray**: 一个分布式计算框架,可以用于实现并行的A3C算法。
 
+5. **A3C算法论文**: [Asynchronous Methods for Deep Reinforcement Learning](https://arxiv.org/abs/1602.01783)
 
+6. **A3C算法教程**: [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
 
 通过使用这些工具和学习这些资源,可以更好地理解和实践A3C算法。
 

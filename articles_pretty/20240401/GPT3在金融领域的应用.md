@@ -94,6 +94,7 @@ GPT-3在金融领域的应用场景主要包括以下几个方面:
 
 ## 6. 工具和资源推荐
 
+在实践中使用GPT-3,需要依赖于OpenAI提供的API服务。开发者可以前往OpenAI的官网(https://openai.com/)注册账户并申请API密钥。除此之外,也有一些第三方工具可以辅助GPT-3在金融领域的应用,例如:
 
 1. Anthropic's Claude: 一款基于GPT-3的对话式AI助手,可用于客户服务、投资建议等场景
 2. Hugging Face Transformers: 一个强大的自然语言处理库,提供了丰富的预训练模型供开发者使用

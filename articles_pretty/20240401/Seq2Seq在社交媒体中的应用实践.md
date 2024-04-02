@@ -157,6 +157,7 @@ Seq2Seq模型在社交媒体数据分析中的应用场景包括但不限于:
 
 1. **深度学习框架**:PyTorch、TensorFlow/Keras等,提供Seq2Seq模型的基本实现。
 2. **预训练模型**:如GPT-2、BERT等语言模型,可以作为Encoder/Decoder的初始化,提高模型性能。
+3. **数据集**:Twitter、Weibo等社交媒体平台公开的数据集,如 [SemEval-2017 Task 4: Sentiment Analysis in Twitter](https://alt.qcri.org/semeval2017/task4/)、[LCQMC: A Large-scale Chinese Question Matching Corpus](http://icrc.hitsz.edu.cn/Article/show/171.html)。
 4. **评估指标**:如BLEU、METEOR、ROUGE等自然语言处理常用的序列到序列任务评估指标。
 5. **可视化工具**:Tensorboard、Weights&Biases等,用于模型训练过程的可视化和分析。
 

@@ -134,6 +134,7 @@ $$L_D = -\mathbb{E}_{x_{real}}[\log D(x_{real};\theta_D)] - \mathbb{E}_{x_{fake}
 
 下图展示了训练过程中生成器G生成的部分手写数字图像:
 
+![generated_digits](https://via.placeholder.com/600x400)
 
 可以看到,最终生成的手写数字图像已经非常逼真,基本无法与真实图像区分。这就是将强化学习应用到对抗性学习中的成果。
 

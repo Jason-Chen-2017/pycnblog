@@ -29,6 +29,7 @@
 
 基本的 RNN 模型可以用下图表示:
 
+![Basic RNN Model](https://latex.codecogs.com/svg.image?\begin{align*}
 &\mathbf{h}_t=\sigma(\mathbf{W}_{hh}\mathbf{h}_{t-1}&+\mathbf{W}_{xh}\mathbf{x}_t&+\mathbf{b}_h)\\
 &\mathbf{y}_t=\sigma(\mathbf{W}_{hy}\mathbf{h}_t&+\mathbf{b}_y)
 \end{align*})

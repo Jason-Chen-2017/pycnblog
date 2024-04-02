@@ -123,6 +123,9 @@
 
 - 《大数据可视化实战》
 - 《数据可视化之美》
+- [Tableau官方培训视频](https://www.tableau.com/learn/training)
+- [Echarts官方文档](https://echarts.apache.org/zh/index.html)
+- [D3.js官方教程](https://d3js.org/)
 
 通过学习和实践这些工具和资源,相信您一定能够掌握大数据可视化的核心技术,并运用到实际工作中。
 

@@ -57,6 +57,7 @@ import matplotlib.pyplot as plt
 model = tf.keras.applications.VGG16(weights='imagenet', include_top=True)
 
 # 输入样本
+img = tf.keras.preprocessing.image.load_img('test_image.jpg', target_size=(224, 224))
 x = tf.keras.preprocessing.image.img_to_array(img)
 x = np.expand_dims(x, axis=0)
 x = tf.keras.applications.vgg16.preprocess_input(x)

@@ -39,6 +39,7 @@ from sklearn.cluster import KMeans
 from PIL import Image
 
 # 读取图像
+img = Image.open('example.jpg')
 data = np.array(img)
 h, w, c = data.shape
 data_2d = data.reshape(h*w, c)
@@ -51,6 +52,7 @@ centers = kmeans.cluster_centers_
 # 将分割结果映射回原图像
 segmented_image = centers[labels].reshape(h, w, c)
 segmented_image = np.uint8(segmented_image)
+Image.fromarray(segmented_image).save('segmented_image.jpg')
 ```
 
 在这个示例中,我们首先读取一张图像,并将其转换为二维数据矩阵。然后使用scikit-learn库中的KMeans类应用K-Means算法,将图像分割为4个区域。最后,将分割结果映射回原图像,并保存分割后的图像。

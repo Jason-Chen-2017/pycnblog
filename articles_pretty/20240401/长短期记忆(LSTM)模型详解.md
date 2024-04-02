@@ -81,6 +81,8 @@ LSTM凭借其强大的序列建模能力,在上述应用场景中都取得了出
 
 - PyTorch:一个功能强大的开源机器学习库,提供了LSTM等常用深度学习模块的实现。
 - TensorFlow:另一个广受欢迎的开源机器学习库,同样支持LSTM模型的构建。
+- [《深度学习》](https://www.deeplearningbook.org/):Ian Goodfellow等人编写的经典深度学习教材,详细介绍了LSTM的原理和应用。
+- [LSTM tutorial](https://colah.github.io/posts/2015-08-Understanding-LSTMs/):一篇优秀的LSTM原理讲解文章,通俗易懂。
 
 ## 7. 总结:未来发展趋势与挑战
 

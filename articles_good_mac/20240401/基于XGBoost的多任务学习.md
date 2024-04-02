@@ -142,6 +142,9 @@ print(f'Age MSE: {age_mse:.4f}, Income MSE: {income_mse:.4f}')
    - 一个基于scikit-learn的多任务学习扩展库:https://github.com/ogrisel/scikit-learn-multitask
    - 提供了多种多任务学习算法的实现,包括共享特征表示、共享树结构等方法。
 3. 论文和教程:
+   - "A Survey on Multi-Task Learning":[https://arxiv.org/abs/1707.08114](https://arxiv.org/abs/1707.08114)
+   - "XGBoost: A Scalable Tree Boosting System":[https://arxiv.org/abs/1603.02754](https://arxiv.org/abs/1603.02754)
+   - "An Introduction to Multi-Task Learning and Transfer Learning":[https://www.youtube.com/watch?v=5NU1fswYXew](https://www.youtube.com/watch?v=5NU1fswYXew)
 
 通过学习和使用这些工具和资源,相信大家一定能够掌握基于XGBoost的多任务学习技术,并在实际项目中发挥其强大的应用价值。
 

@@ -169,6 +169,8 @@ def triangulate_points(kp1, kp2, R, t, K):
     return pts3d
     
 # 测试代码
+img1 = cv2.imread('image1.jpg')
+img2 = cv2.imread('image2.jpg')
 
 # 相机内参
 K = np.array([[1000, 0, 320], 

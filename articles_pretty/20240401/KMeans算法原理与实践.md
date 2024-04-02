@@ -34,6 +34,7 @@ K-Means算法的具体步骤如下:
 
 整个算法过程如下图所示:
 
+![K-Means算法流程图](https://upload.wikimedia.org/wikipedia/commons/e/ea/K-Means_Clustering_Example_Animation.gif)
 
 ## 4. 数学模型和公式详细讲解
 

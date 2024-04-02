@@ -157,6 +157,7 @@ Q-Learning算法在区块链系统中的应用场景包括但不限于:
 3. **PyTorch**: 另一个流行的开源机器学习框架,同样支持强化学习算法的实现。
 4. **Blockchain-Gym**: 一个基于OpenAI Gym的区块链环境模拟器,可用于测试Q-Learning等算法在区块链中的应用。
 5. **Blockchain Q-Learning**: 一个基于TensorFlow的Q-Learning在区块链中应用的开源实现。
+6. **论文**: [Reinforcement Learning for Blockchain: A Survey](https://arxiv.org/abs/2002.06285)、[A Survey of Reinforcement Learning Methods for Blockchain](https://www.mdpi.com/2076-3417/10/14/4994)等论文提供了更多相关研究成果。
 
 ## 7. 总结：未来发展趋势与挑战
 

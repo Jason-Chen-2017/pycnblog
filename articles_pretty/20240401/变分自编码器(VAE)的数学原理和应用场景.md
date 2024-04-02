@@ -107,8 +107,14 @@ VAE 在众多领域都有广泛的应用,包括但不限于:
 ## 7. 工具和资源推荐
 
 1. VAE 相关论文:
+   - [Auto-Encoding Variational Bayes](https://arxiv.org/abs/1312.6114)
+   - [Tutorial on Variational Autoencoders](https://arxiv.org/abs/1606.05908)
 2. VAE 开源实现:
+   - [PyTorch 实现](https://github.com/pytorch/examples/tree/master/vae)
+   - [TensorFlow 实现](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/tutorials/generative/variational_autoencoder.py)
 3. VAE 相关课程和教程:
+   - [CS231n 课程中的 VAE 讲解](https://cs231n.github.io/generative-models/)
+   - [Deep Learning 书籍中的 VAE 章节](https://www.deeplearningbook.org/contents/generative_models.html)
 
 ## 8. 总结:未来发展趋势与挑战
 

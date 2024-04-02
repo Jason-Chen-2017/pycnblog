@@ -36,6 +36,7 @@ Stacking集成的具体算法步骤如下:
 
 整个过程如下图所示:
 
+![Stacking集成模型算法流程](https://latex.codecogs.com/svg.image?\begin{align*}
 &\text{Step 1: 划分数据集} \\
 &\text{Step 2: 训练基学习器} \\
 &\text{Step 3: 基学习器预测} \\
@@ -142,6 +143,8 @@ Stacking集成模型凭借其出色的泛化能力和鲁棒性,在各类实际�
 2. LightGBM:一种高效的基于树的集成学习算法,可作为Stacking集成的基学习器。
 3. XGBoost:另一种高性能的树模型集成库,同样可作为Stacking的基学习器。
 4. Optuna:一个强大的超参数优化框架,可用于调优Stacking集成模型的超参数。
+5. [Stacking Ensemble Methods](https://www.kaggle.com/code/serigne/stacking-ensemble-methods/notebook):Kaggle上一篇详细介绍Stacking集成的优秀笔记本。
+6. [An Introduction to Stacking in Machine Learning](https://towardsdatascience.com/an-introduction-to-stacking-in-machine-learning-70b3bfaedea2):一篇通俗易懂的Stacking集成入门文章。
 
 通过学习和使用这些工具和资源,可以更好地理解和应用Stacking集成模型,提升机器学习项目的性能。
 

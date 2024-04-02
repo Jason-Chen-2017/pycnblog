@@ -93,10 +93,15 @@ FastText在医疗诊断中的应用场景主要包括:
 
 在使用FastText进行医疗诊断应用时,可以参考以下工具和资源:
 
+1. **FastText库**:Facebook开源的FastText库,提供了训练和使用FastText模型的Python接口。[https://fasttext.cc/](https://fasttext.cc/)
 
+2. **医疗NLP数据集**:包括MIMIC-III、i2b2等常用的医疗文本数据集,可以用于训练和评估FastText模型。[https://physionet.org/](https://physionet.org/)
 
+3. **医疗术语词典**:如UMLS、ICD-10等医疗术语词典,可以用于病历文本的预处理和特征工程。[https://www.nlm.nih.gov/research/umls/](https://www.nlm.nih.gov/research/umls/)
 
+4. **医疗NLP教程**:Kaggle和Medium上有丰富的医疗NLP教程,介绍了如何将FastText应用于医疗诊断等场景。[https://www.kaggle.com/](https://www.kaggle.com/) [https://medium.com/](https://medium.com/)
 
+5. **医疗AI开源项目**:GitHub上有许多基于FastText的医疗AI开源项目,可以参考学习。[https://github.com/](https://github.com/)
 
 通过合理利用这些工具和资源,可以大大加快FastText在医疗诊断中的应用开发进度。
 

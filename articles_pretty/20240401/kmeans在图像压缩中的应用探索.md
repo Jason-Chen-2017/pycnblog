@@ -48,6 +48,7 @@ from sklearn.cluster import KMeans
 from PIL import Image
 
 # 读取原始图像
+img = Image.open('original_image.jpg')
 X = np.array(img)
 
 # 对图像进行k-means聚类压缩
@@ -60,6 +61,7 @@ compressed_img = compressed_img.astype(np.uint8)
 
 # 保存压缩后的图像
 compressed_image = Image.fromarray(compressed_img)
+compressed_image.save('compressed_image.jpg')
 ```
 
 在这个例子中,我们首先读取原始图像,然后使用scikit-learn库中的KMeans类对图像进行k-means聚类,设定聚类数量为16。聚类完成后,我们将原图像中的每个像素点替换为其所属聚类中心的值,得到压缩后的图像。最后,我们将压缩后的图像保存到磁盘。

@@ -103,8 +103,14 @@ $$\mathcal{L} = \sum_{n=1}^N \log P(\mathbf{Y}^{(n)}|\mathbf{X}^{(n)})$$
 以下是一些在实践中非常有用的工具和资源:
 
 1. **开源框架**:
+   - [DeepSpeech](https://github.com/mozilla/DeepSpeech): 由Mozilla开源的基于RNN的端到端语音识别系统。
+   - [ESPnet](https://github.com/espnet/espnet): 由日本研究人员开发的语音和自然语言处理工具包。
 2. **数据集**:
+   - [LibriSpeech](http://www.openslr.org/12/): 一个大规模的英文语音-文字对数据集。
+   - [CommonVoice](https://commonvoice.mozilla.org/en): 由Mozilla维护的多语种语音数据集。
 3. **教程和论文**:
+   - [Speech Recognition with RNNs](https://towardsdatascience.com/speech-recognition-with-rnns-d27c21b18e86): 一篇通俗易懂的RNN语音识别教程。
+   - [Attention-Based Models for Speech Recognition](https://arxiv.org/abs/1506.07503): 一篇经典的基于注意力机制的语音识别论文。
 
 ## 7. 总结与展望
 

@@ -130,6 +130,9 @@ XGBoost回归模型广泛应用于各种回归预测任务中,包括但不限于
 2. **Scikit-learn XGBoost API文档**: https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.XGBRegressor.html
 3. **XGBoost GitHub仓库**: https://github.com/dmlc/xgboost
 4. **XGBoost相关教程和博客**: 
+   - [XGBoost入门教程](https://www.analyticsvidhya.com/blog/2016/01/xgboost-algorithm-easy-steps/)
+   - [XGBoost参数调优指南](https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-tuning-xgboost-with-codes-python/)
+   - [使用XGBoost进行回归任务](https://towardsdatascience.com/regression-using-xgboost-c6cd57d5d6c)
 5. **相关书籍**:
    - 《Hands-On Gradient Boosting with XGBoost and Scikit-Learn》
    - 《XGBoost Cookbook》

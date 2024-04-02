@@ -97,6 +97,7 @@ FastText是Facebook AI Research团队开源的一个自然语言处理库,提供
 4. **FastText教程和示例**:https://github.com/facebookresearch/fastText/tree/master/examples
 5. **FastText论文**:Bojanowski P, Grave E, Joulin A, et al. Enriching Word Vectors with Subword Information[J]. Transactions of the Association for Computational Linguistics, 2017, 5: 135-146.
 
+此外,在工业制造领域,也有一些开源的数据集和模型可供参考,如[工业故障诊断数据集](https://github.com/Intelligent-Fault-Diagnosis/Industrial-Fault-Diagnosis-Dataset)和[工业安全事故报告分类模型](https://github.com/industrial-safety-analytics/industrial-safety-report-classification)等。
 
 ## 7. 总结：未来发展趋势与挑战
 

@@ -44,6 +44,7 @@ FastText模型的整体结构如图1所示。它由三个主要部分组成:
 2. 隐藏层:利用字符n-gram信息学习词语的向量表示。
 3. 输出层:预测目标,如文本分类、情感分析等。
 
+![FastText Model Structure](https://i.imgur.com/YQHhbzY.png)
 
 **Figure 1: FastText Model Structure**
 

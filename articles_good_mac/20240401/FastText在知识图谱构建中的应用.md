@@ -190,9 +190,13 @@ FastText在知识图谱构建中的应用主要体现在以下几个方面:
 
 ## 6. 工具和资源推荐
 
+1. **FastText预训练模型**:Facebook AI Research提供了多种语言的预训练FastText模型,可以直接下载使用。[链接](https://fasttext.cc/docs/en/pretrained-vectors.html)
 
+2. **spaCy中文分词模型**:spaCy提供了多种语言的预训练分词模型,包括中文。[链接](https://spacy.io/models/zh)
 
+3. **知识图谱构建工具**:PyKG2Vec是一个基于Python的知识图谱构建和推理工具,支持多种知识图谱模型。[链接](https://github.com/Sujit-O/pykg2vec)
 
+4. **知识图谱可视化工具**:Neo4j是一款功能强大的图形数据库,可用于构建和可视化知识图谱。[链接](https://neo4j.com/)
 
 5. **知识图谱数据集**:Freebase、Wikidata等是常用的开放知识图谱数据集,可用于研究和实践。
 

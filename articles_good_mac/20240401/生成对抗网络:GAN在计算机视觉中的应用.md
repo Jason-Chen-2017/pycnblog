@@ -174,6 +174,9 @@ GAN在计算机视觉领域有着广泛的应用,包括但不限于:
 ## 6. 工具和资源推荐
 
 1. **开源框架**: TensorFlow、PyTorch、Keras 等深度学习框架都提供了GAN相关的实现。
+2. **论文和教程**: [Generative Adversarial Nets](https://arxiv.org/abs/1406.2661)、[A Beginner's Guide to Generative Adversarial Networks (GANs)](https://www.analyticsvidhya.com/blog/2017/06/introductory-generative-adversarial-networks-gans/)、[CS231n GAN Assignment](http://cs231n.github.io/assignments2019/assignment3/) 等。
+3. **开源项目**: [tensorflow-generative-model-collections](https://github.com/hwalsuklee/tensorflow-generative-model-collections)、[awesome-gans](https://github.com/nightrome/really-awesome-gan)、[stylegan2-pytorch](https://github.com/rosinality/stylegan2-pytorch) 等。
+4. **在线演示**: [GAN Playground](https://reiinakano.github.io/gan-playground/)、[GAN Lab](https://poloclub.github.io/ganlab/) 等交互式在线 GAN 演示。
 
 ## 7. 总结: 未来发展趋势与挑战
 

@@ -139,6 +139,8 @@ XGBoost作为一种强大的机器学习算法,已经被广泛应用于各种领
 3. **Scikit-Learn中的XGBoost接口**:https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.XGBClassifier.html
 4. **XGBoost原理和实践视频教程**:https://www.bilibili.com/video/BV1Wf4y1T7JN
 5. **XGBoost相关论文**:
+   - [XGBoost: A Scalable Tree Boosting System](https://arxiv.org/abs/1603.02754)
+   - [Scalable and Accurate Deep Learning with Electronic Health Records](https://www.nature.com/articles/s41746-018-0029-1)
 
 以上资源可以帮助读者深入了解XGBoost的原理、API使用以及实际应用案例。
 

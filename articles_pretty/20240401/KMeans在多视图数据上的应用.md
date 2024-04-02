@@ -165,6 +165,8 @@ print(f"NMI score: {nmi:.3f}")
 针对多视图聚类的研究和应用,以下是一些常用的工具和资源推荐:
 
 1. **scikit-learn**: 这是一个非常流行的Python机器学习库,其中包含了K-Means等经典聚类算法的实现。
+2. **MVKM**: 这是一个基于MATLAB的多视图K-Means算法的开源实现,可以在GitHub上找到[链接](https://github.com/jingyangcarl/MVKM)。
+3. **MultiViewClustering**: 这是一个基于Python的多视图聚类算法的开源库,包含多种多视图聚类方法的实现[链接](https://github.com/Nicholasli1995/MultiViewClustering)。
 4. **论文**: 关于多视图聚类的相关论文可以在顶级会议和期刊如ICML、NIPS、TPAMI等上找到,例如[1]中提出的MultiView K-Means算法。
 
 ## 7. 总结：未来发展趋势与挑战

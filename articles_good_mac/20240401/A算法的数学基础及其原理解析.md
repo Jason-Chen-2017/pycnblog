@@ -151,10 +151,17 @@ A*算法广泛应用于以下场景:
 ## 7. 工具和资源推荐
 
 1. **Python 库**:
+   - [NetworkX](https://networkx.github.io/): 一个用于创建、操作和研究结构、动态和功能的复杂网络的Python库
+   - [scikit-learn](https://scikit-learn.org/stable/): 一个用于机器学习的Python库,包含了A*算法的实现
 
 2. **算法可视化工具**:
+   - [VisuAlgo](https://visualgo.net/en): 一个在线的数据结构和算法可视化工具
+   - [PathFinding.js](https://qiao.github.io/PathFinding.js/visual/): 一个基于JavaScript的路径搜索算法可视化工具
 
 3. **学习资源**:
+   - [《人工智能:一种现代方法》](https://www.amazon.cn/dp/B00P8A895G): 经典人工智能教材,包含A*算法的详细介绍
+   - [《算法导论》](https://www.amazon.cn/dp/B00AK7BYJY): 经典算法教材,涵盖了A*算法的理论基础
+   - [《A* 算法详解及Python实现》](https://zhuanlan.zhihu.com/p/31820379): 一篇详细讲解A*算法原理和Python实现的文章
 
 ## 8. 总结:未来发展趋势与挑战
 

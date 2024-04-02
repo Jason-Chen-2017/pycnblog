@@ -168,5 +168,8 @@ GBDT算法因其强大的性能和versatility,被广泛应用于各种机器学�
 4. **TensorFlow Boosted Trees**:TensorFlow也提供了GBDT的实现,集成到其强大的深度学习框架中,为GBDT提供了更多的扩展能力。
 
 5. **GBDT相关论文**:
+   - [Greedy Function Approximation: A Gradient Boosting Machine](https://www.semanticscholar.org/paper/Greedy-Function-Approximation%3A-A-Gradient-Boosting-Friedman/0a4a4a6b0d36c5d251c7e6cfc096c58c4c1a15f9)
+   - [XGBoost: A Scalable Tree Boosting System](https://www.semanticscholar.org/paper/XGBoost%3A-A-Scalable-Tree-Boosting-System-Chen-Guestrin/0846a66114f55b246d68f05aecc3e58e3c8d6b05)
+   - [LightGBM: A Highly Efficient Gradient Boosting Decision Tree](https://papers.nips.cc/paper/6907-lightgbm-a-highly-efficient-gradient-boosting-decision-tree.pdf)
 
 通过学习和使用这些工具和资源,相信您一定能够深入理解和掌握GBDT算法的

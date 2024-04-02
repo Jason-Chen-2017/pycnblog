@@ -36,7 +36,9 @@ GANs的核心思想是利用生成器和判别器之间的对抗博弈,通过训
 
 GAN的基本框架如下图所示:
 
+![GAN架构图](https://latex.codecogs.com/svg.image?\begin{figure}
 \centering
+\includegraphics[width=0.6\textwidth]{gan_architecture.png}
 \caption{GAN架构图}
 \end{figure})
 

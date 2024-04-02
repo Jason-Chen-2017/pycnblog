@@ -37,6 +37,7 @@ feature_extractor = ViTFeatureExtractor.from_pretrained('nlpconnect/vit-gpt2-ima
 tokenizer = AutoTokenizer.from_pretrained('nlpconnect/vit-gpt2-image-captioning')
 
 # 输入图像并生成描述
+image = Image.open('example_image.jpg')
 pixel_values = feature_extractor(images=image, return_tensors='pt').pixel_values
 
 # 生成文本描述

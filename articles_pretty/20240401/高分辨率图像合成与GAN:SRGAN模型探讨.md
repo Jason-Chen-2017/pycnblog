@@ -28,6 +28,7 @@ SRGAN是一种基于生成对抗网络的超分辨率重建模型,由Johnson et 
 
 SRGAN的网络结构如图1所示,主要包括生成器网络和判别器网络两个部分:
 
+![SRGAN网络结构](https://i.imgur.com/BVj7Zq7.png)
 
 *图1. SRGAN网络结构*
 

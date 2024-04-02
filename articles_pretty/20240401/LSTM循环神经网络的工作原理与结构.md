@@ -106,6 +106,10 @@ LSTM的独特优势使其成为处理序列数据的首选模型之一,在上述
 
 学习和使用LSTM,可以参考以下工具和资源:
 
+1. **PyTorch**: 一个功能强大的深度学习框架,提供了LSTM的实现。[官网](https://pytorch.org/)
+2. **TensorFlow**: 另一个广泛使用的深度学习框架,也支持LSTM。[官网](https://www.tensorflow.org/)
+3. **Keras**: 一个高级神经网络API,可以方便地构建LSTM模型。[官网](https://keras.io/)
+4. **CS231n**: 斯坦福大学的深度学习课程,其中有专门讲解LSTM的内容。[课程网站](http://cs231n.github.io/)
 5. **论文**: LSTM的相关论文,如"Long Short-Term Memory"(1997)和"On the Properties of Neural Machine Translation: Encoder-Decoder Approaches"(2014)。
 
 这些工具和资源可以帮助你更好地理解和应用LSTM网络。
