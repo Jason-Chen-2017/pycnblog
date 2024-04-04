@@ -25,7 +25,7 @@ def is_good_content(content):
 
     # 包含关键字：$$ 表示有公式，```表示有代码
     keywords = [
-        # "$$",
+        "$",
         "```",
         "背景介绍",
         "核心概念与联系",
@@ -36,7 +36,7 @@ def is_good_content(content):
     ]
 
     keywords2 = [
-        # "$$",
+        "$",
         "```",
         "Background Introduction",
         "Core Concepts",
