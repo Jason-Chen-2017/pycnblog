@@ -25,18 +25,19 @@ def is_good_content(content):
 
     # 包含关键字：$$ 表示有公式，```表示有代码
     keywords = [
-        # "$$",
+        "$",
         "```",
         "背景介绍",
         "核心概念与联系",
         "核心算法原理",
-        "代码实例",
+        "数学模型和公式",
+        "项目实践",
         "实际应用场景",
         "工具和资源",
     ]
 
     keywords2 = [
-        # "$$",
+        "$",
         "```",
         "Background Introduction",
         "Core Concepts",
@@ -73,14 +74,14 @@ def process_file(file_path, target_good_directory, target_draft_directory):
         line_count = len(cleaned_lines)
 
     # target_good_directory
-    if length >= 2500 and line_count >= 100 and is_good_content(content):
+    if (length >= 5000 or line_count >= 100) and is_good_content(content):
         file_name = os.path.basename(file_path)
         target_good_directory = os.path.join(target_good_directory, file_name)
         shutil.copy(file_path, target_good_directory)
         print("process_good_file:", target_good_directory)
 
     # target_draft_directory
-    if 2000 < length < 2500 and 80 < line_count < 100 and is_good_content(content):
+    if (3000 < length < 5000 or 80 < line_count < 100) and is_good_content(content):
         file_name = os.path.basename(file_path)
         target_draft_directory = os.path.join(target_draft_directory, file_name)
         shutil.copy(file_path, target_draft_directory)
