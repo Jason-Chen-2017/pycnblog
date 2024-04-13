@@ -13,6 +13,9 @@ mc:
 g:
 	./git_commit.sh
 
+gu:
+	./git_commit_ubuntu.sh
+
 w:
 	./write_blog.sh &
 
