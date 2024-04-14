@@ -32,7 +32,7 @@ def is_good_content(content):
         "核心算法原理",
         "代码实例",
         "实际应用场景",
-        "工具和资源",
+        # "工具和资源",
     ]
 
     keywords2 = [
@@ -43,7 +43,7 @@ def is_good_content(content):
         "Core Algorithms",
         "Best Practices",
         "Real-World Applications",
-        "Tools and Resources",
+        # "Tools and Resources",
     ]
 
     flag1 = True

@@ -13,6 +13,9 @@ mc:
 g:
 	./git_commit.sh
 
+gm:
+	./git_commit_mac.sh
+
 w:
 	./write_blog.sh &
 
