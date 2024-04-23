@@ -235,4 +235,4 @@ for episode in range(1000):
 
 Q-learning算法在智能家居领域有着广泛的应用前景:
 
-## 6.1 温{"msg_type":"generate_answer_finish"}
+## 6.1 温

@@ -135,4 +135,3 @@ AI在节能减排中的应用正在快速发展，未来有着广阔的应用前
 ### 问题5：AI在节能减排中的应用有哪些工具和资源可以使用？
 
 答：在进行AI的节能减排应用时，我们可以使用Tensorflow、OpenAI Gym、Scikit-learn、Pandas和Matplotlib等工具和资源。
-{"msg_type":"generate_answer_finish"}

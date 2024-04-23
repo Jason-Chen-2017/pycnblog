@@ -227,4 +227,4 @@ class TransformerDecoder(nn.Module):
 
     def forward(self, tgt, memory):
         tgt = self.positional_encoding(tgt)
-        output = self.{"msg_type":"generate_answer_finish"}
+        output = self.

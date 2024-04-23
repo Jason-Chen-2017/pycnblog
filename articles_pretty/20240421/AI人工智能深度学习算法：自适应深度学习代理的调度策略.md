@@ -201,4 +201,4 @@ class DLSchedulingEnv(MultiAgentEnv):
 
 这个环境模拟器实现了以下功能:
 
-- `__init__`: 初始化环境,包括代{"msg_type":"generate_answer_finish"}
+- `__init__`: 初始化环境,包括代

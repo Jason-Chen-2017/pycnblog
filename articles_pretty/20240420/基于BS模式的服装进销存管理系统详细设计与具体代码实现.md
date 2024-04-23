@@ -205,4 +205,4 @@ function createOrder() {
 
 ### 8.3 问题三：如何保障系统的安全？
 
-答：系统的安全可以通过多种方式进行保障，如数据加密、使用HTTPS协议、防止SQL注入、设置权限控制等。{"msg_type":"generate_answer_finish"}
+答：系统的安全可以通过多种方式进行保障，如数据加密、使用HTTPS协议、防止SQL注入、设置权限控制等。

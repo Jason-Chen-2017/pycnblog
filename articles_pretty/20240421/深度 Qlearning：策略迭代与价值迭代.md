@@ -155,4 +155,4 @@ $$\pi^*(s) = \arg\max_a Q^*(s, a)$$
 
 最优 Q 函数 $Q^*$ 满足贝尔曼最优方程:
 
-$${"msg_type":"generate_answer_finish"}
+$$

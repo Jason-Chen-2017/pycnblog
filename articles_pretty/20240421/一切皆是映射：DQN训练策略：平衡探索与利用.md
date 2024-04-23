@@ -191,4 +191,4 @@ class QNetwork(nn.Module):
         self.fc1 = nn.Linear(state_dim, 64)
         self.fc2 = nn.Linear(64, action_dim)
 
-    def forward({"msg_type":"generate_answer_finish"}
+    def forward(

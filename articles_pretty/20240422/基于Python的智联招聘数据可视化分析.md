@@ -248,4 +248,4 @@ data = pd.read_csv('job_data.csv')
 data = data.dropna(subset=['salary'])  # 删除薪资缺失的记录
 
 # 异常值处理
-data = data[data['salary'].str.contains('-')]  # 删除薪资范围的{"msg_type":"generate_answer_finish"}
+data = data[data['salary'].str.contains('-')]  # 删除薪资范围的

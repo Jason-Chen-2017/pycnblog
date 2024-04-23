@@ -98,4 +98,4 @@ A: SSM框架集成度高，易于开发和维护，可以有效地提高开发�
 
 Q: 如何实现用户认证和权限管理？
 
-A: 我们将使用Spring Security来实现用户认证和权限管理。{"msg_type":"generate_answer_finish"}
+A: 我们将使用Spring Security来实现用户认证和权限管理。

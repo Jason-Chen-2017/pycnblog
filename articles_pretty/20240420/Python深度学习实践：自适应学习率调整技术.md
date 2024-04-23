@@ -220,4 +220,4 @@ $$\hat{m}_{i,t} = \frac{m_{i,t}}{1-\beta_1^t}$$
 
 $\beta_1$是一阶矩估计的指数衰减率,通常设置为0.9。
 
-- $\hat{v}_{i,t}$是二阶矩估计,用于{"msg_type":"generate_answer_finish"}
+- $\hat{v}_{i,t}$是二阶矩估计,用于

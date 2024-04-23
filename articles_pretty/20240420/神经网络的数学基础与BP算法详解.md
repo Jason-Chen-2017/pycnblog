@@ -231,4 +231,4 @@ for epoch in range(10):
             running_loss = 0.0
 ```
 
-我们对神经网络进行10个epoch的训练。在每个epoch中,我们遍历训练集中的所有小批量数据,计算网络输出与标签之间的损失,{"msg_type":"generate_answer_finish"}
+我们对神经网络进行10个epoch的训练。在每个epoch中,我们遍历训练集中的所有小批量数据,计算网络输出与标签之间的损失,

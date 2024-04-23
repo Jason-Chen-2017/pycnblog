@@ -257,4 +257,4 @@ SpringBoot 的主要特点包括:
 
    方差和标准差用于衡量数据的离散程度,公式如下:
 
-   $$s^2 = \frac{1}{n}\sum_{i={"msg_type":"generate_answer_finish"}
+   $$s^2 = \frac{1}{n}\sum_{i=

@@ -196,4 +196,4 @@ for t in range(1, len(data)):
 
 ### 9.1深度学习和深度强化学习有什么区别？
 
-深度学习是一种{"msg_type":"generate_answer_finish"}
+深度学习是一种

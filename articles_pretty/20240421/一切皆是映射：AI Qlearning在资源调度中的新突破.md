@@ -105,4 +105,4 @@ Q: Q-learning如何选择动作？
 A: Q-learning通常使用一个epsilon-greedy策略来选择动作。这是一个探索和利用之间的平衡。以一定的概率选择随机动作进行探索，以一定的概率选择当前最优动作进行利用。
 
 Q: Q-learning如何处理连续的状态空间和动作空间？
-A: Q-learning本身不能直接处理连续的状态空间和动作空间。为了处理这些问题，我们可以使用离散化或函数逼近方法，如深度Q网络(DQN)和Actor-Critic方法。{"msg_type":"generate_answer_finish"}
+A: Q-learning本身不能直接处理连续的状态空间和动作空间。为了处理这些问题，我们可以使用离散化或函数逼近方法，如深度Q网络(DQN)和Actor-Critic方法。

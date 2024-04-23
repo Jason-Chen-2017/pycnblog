@@ -231,4 +231,4 @@ print(model.get_cpd('Sprinkler').to_factor().sum(('Rain', 'Cloudy'), (0, 1)))
 
 ## 6.实际应用场景
 
-贝叶斯网络在许多实际应用领域发{"msg_type":"generate_answer_finish"}
+贝叶斯网络在许多实际应用领域发

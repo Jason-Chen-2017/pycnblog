@@ -163,4 +163,4 @@ $$L_j = \left(y_j - Q(s_j, a_j; \theta)\right)^2 \cdot \frac{1}{N \cdot p_j}$$
 
 其中 $N$ 是批次大小。这样可以确保梯度的无偏性,即:
 
-$$\mathbb{E}_{j \sim p_j}\left[\frac{\partial{"msg_type":"generate_answer_finish"}
+$$\mathbb{E}_{j \sim p_j}\left[\frac{\partial

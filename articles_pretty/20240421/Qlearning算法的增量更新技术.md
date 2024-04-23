@@ -139,4 +139,4 @@ Q-learning算法的主要优点包括:
 
 然而,Q-learning算法也存在一些缺点和挑战:
 
-- 需要维护一个巨大的Q表,存储所有状态-行为对的Q值,当状态空间和行为空间很大时,会导致维数灾难(Curse of Dimension{"msg_type":"generate_answer_finish"}
+- 需要维护一个巨大的Q表,存储所有状态-行为对的Q值,当状态空间和行为空间很大时,会导致维数灾难(Curse of Dimension

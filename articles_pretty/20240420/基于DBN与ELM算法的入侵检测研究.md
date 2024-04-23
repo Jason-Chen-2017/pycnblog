@@ -207,4 +207,4 @@ class RBM(object):
         # 使用对比分歧算法训练RBM
         ...
         
-# 定义DBN{"msg_type":"generate_answer_finish"}
+# 定义DBN

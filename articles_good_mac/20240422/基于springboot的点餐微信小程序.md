@@ -381,4 +381,4 @@ wx.key=YOUR_API_KEY
 - 慕课网视频教程: https://www.imooc.com/
 - GitHub上的开源项目: https://github.com/
 
-## 8. 总结:{"msg_type":"generate_answer_finish"}
+## 8. 总结:

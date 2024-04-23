@@ -236,4 +236,4 @@ class ScheduleViewModel @ViewModelInject constructor(
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/generate_schedule_button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_{"msg_type":"generate_answer_finish"}
+        android:layout_height="wrap_

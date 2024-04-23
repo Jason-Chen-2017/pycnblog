@@ -155,4 +155,4 @@ A：对于环境的动态性和不确定性，我们可以使用模型预测控�
 
 Q：AI智能体如何保证电力系统的安全和可靠性？
 
-A：对于电力系统的安全和可靠性，我们可以使用安全强化学习（Safe Reinforcement Learning，SRL）或者约束强化学习（Constrained Reinforcement Learning，CRL）等方法，通过将安全和可靠性作为约束条件，来保证AI智能体的行动不会导致电力系统的不安全或不可靠。{"msg_type":"generate_answer_finish"}
+A：对于电力系统的安全和可靠性，我们可以使用安全强化学习（Safe Reinforcement Learning，SRL）或者约束强化学习（Constrained Reinforcement Learning，CRL）等方法，通过将安全和可靠性作为约束条件，来保证AI智能体的行动不会导致电力系统的不安全或不可靠。

@@ -250,4 +250,4 @@ for episode in range(10000):
         - 执行动作,获得新状态和奖励
         - 存储(s,a,r,s',done)转换到经验回放池
         - 从经验回放池采样批次
-        - 计算{"msg_type":"generate_answer_finish"}
+        - 计算

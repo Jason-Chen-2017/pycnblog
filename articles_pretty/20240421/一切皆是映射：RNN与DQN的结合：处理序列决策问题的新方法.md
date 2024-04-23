@@ -163,4 +163,4 @@ class SequenceEnv:
         
     def reset(self):
         self.obs = np.random.randint(2, size=self.max_len)
-        self.t = {"msg_type":"generate_answer_finish"}
+        self.t = 

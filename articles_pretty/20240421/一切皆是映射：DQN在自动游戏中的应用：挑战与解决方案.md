@@ -233,4 +233,4 @@ from collections import deque, namedtuple
 
 ```python
 class QNetwork(nn.Module):
-    def __init__(self, state_dim, action_dim, hidden_{"msg_type":"generate_answer_finish"}
+    def __init__(self, state_dim, action_dim, hidden_

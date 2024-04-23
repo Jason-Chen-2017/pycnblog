@@ -161,4 +161,4 @@ $$\boldsymbol{h}_t = \boldsymbol{o}_t \odot \tanh(\boldsymbol{c}_t)$$
 
 GRU的核心计算过程为:
 
-$$\boldsymbol{z}_t = \sigma(\boldsymbol{W}_{xz}\bol{"msg_type":"generate_answer_finish"}
+$$\boldsymbol{z}_t = \sigma(\boldsymbol{W}_{xz}\bol

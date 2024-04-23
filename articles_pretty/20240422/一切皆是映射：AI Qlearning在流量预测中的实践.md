@@ -175,4 +175,4 @@ $$y_j = r_j + \gamma \max_{a'} Q(s_{j+1}, a'; \theta^-)$$
 
 ## 4.4 损失函数
 
-在训练 Q-网络时,我们的目标是使网络输出的 Q 值 $Q(s_j, a_j; \theta)$ 尽可能接近目标 Q 值 $y_j$。因此,我{"msg_type":"generate_answer_finish"}
+在训练 Q-网络时,我们的目标是使网络输出的 Q 值 $Q(s_j, a_j; \theta)$ 尽可能接近目标 Q 值 $y_j$。因此,我

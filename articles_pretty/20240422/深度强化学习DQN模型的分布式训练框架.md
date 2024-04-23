@@ -212,4 +212,4 @@ A:这取决于你的问题具体是什么。不同的深度强化学习算法有
 
 Q:我应该如何开始学习深度强化学习？
 
-A:我推荐首先阅读Sutton和Barto的《Reinforcement Learning: An Introduction》来了解强化学习的基本概念。然后，你可以阅读DeepMind的Nature论文《Playing Atari with Deep Reinforcement Learning》和《Human-level control through deep reinforcement learning》，了解深度强化学习的基本思想。此外，OpenAI Gym是一个很好的平台，你可以在上面实践和测试你的算法。{"msg_type":"generate_answer_finish"}
+A:我推荐首先阅读Sutton和Barto的《Reinforcement Learning: An Introduction》来了解强化学习的基本概念。然后，你可以阅读DeepMind的Nature论文《Playing Atari with Deep Reinforcement Learning》和《Human-level control through deep reinforcement learning》，了解深度强化学习的基本思想。此外，OpenAI Gym是一个很好的平台，你可以在上面实践和测试你的算法。

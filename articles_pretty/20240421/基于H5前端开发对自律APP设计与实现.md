@@ -403,4 +403,4 @@ function handleState() {
 }
 ```
 
-例如，我们可以使用优化模型来实现APP的自我调整和自我优化功能。我们可以定义一个优化函数{"msg_type":"generate_answer_finish"}
+例如，我们可以使用优化模型来实现APP的自我调整和自我优化功能。我们可以定义一个优化函数

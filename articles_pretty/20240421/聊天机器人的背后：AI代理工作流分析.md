@@ -132,4 +132,4 @@ print(prediction)
 
 3. **问：我可以自己开发一个聊天机器人吗？**
 
-答：当然可以。现在有很多工具和资源可以帮助你开发聊天机器人，例如Python、TensorFlow、Dialogflow等。{"msg_type":"generate_answer_finish"}
+答：当然可以。现在有很多工具和资源可以帮助你开发聊天机器人，例如Python、TensorFlow、Dialogflow等。

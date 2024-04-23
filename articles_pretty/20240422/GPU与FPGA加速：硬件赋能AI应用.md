@@ -236,4 +236,4 @@ module rnn_cell (
 
     // 权重和偏置常量
     parameter [15:0] W_ih = 16'h0123;
-    parameter [15:0]{"msg_type":"generate_answer_finish"}
+    parameter [15:0]

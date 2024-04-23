@@ -156,4 +156,4 @@ Q-Learning算法通过迭代更新,估计出最优行为价值函数$Q^*(s, a)$:
 
 $$
 Q^*(s, a) = r(s, a) + \gamma\max_{a'}Q^*(s', a')
-$${"msg_type":"generate_answer_finish"}
+$$

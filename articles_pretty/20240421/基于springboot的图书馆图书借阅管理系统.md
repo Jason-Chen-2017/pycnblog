@@ -258,4 +258,4 @@ public class Borrow {
 
 ```java
 @Service
-public class Bor{"msg_type":"generate_answer_finish"}
+public class Bor

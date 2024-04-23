@@ -83,4 +83,4 @@ Q: Schur 分解和特征分解有什么区别？
 A: 特征分解只适用于对角化的矩阵，而 Schur 分解适用于所有的方阵。特别是对于非正常矩阵，Schur 分解比特征分解更为稳定和有效。
 
 Q: 如何在 Python 中计算 Schur 分解？
-A: 在 Python 的 Scipy 库中，linalg 模块提供了 schur 函数可以用于计算 Schur 分解。{"msg_type":"generate_answer_finish"}
+A: 在 Python 的 Scipy 库中，linalg 模块提供了 schur 函数可以用于计算 Schur 分解。

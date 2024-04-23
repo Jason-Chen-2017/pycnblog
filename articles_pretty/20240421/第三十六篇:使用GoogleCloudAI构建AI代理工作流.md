@@ -208,4 +208,4 @@ Google Cloud SDK是Google开发的一种开发工具包，它包含了各种命�
 
 ### 8.5 如何在Google Cloud AI上部署AI代理工作流？
 
-你可以使用Google Cloud AI提供的部署工具进行部署。你需要将AI代理工作流部署到生产环境中，让它开始为你服务。{"msg_type":"generate_answer_finish"}
+你可以使用Google Cloud AI提供的部署工具进行部署。你需要将AI代理工作流部署到生产环境中，让它开始为你服务。

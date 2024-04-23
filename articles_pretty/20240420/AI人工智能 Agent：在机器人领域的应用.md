@@ -243,4 +243,4 @@ CNN广泛应用于目标检测、图像分类、语义分割等计算机视觉�
 $$
 \begin{aligned}
 \min_G V(D, G) &= \mathbb{E}_{\boldsymbol{x} \sim p_\text{data}(\boldsymbol{x})}[\log D(\boldsymbol{x})] + \mathbb{E}_{\boldsymbol{z} \sim p_\boldsymbol{z}(\boldsymbol{z})}[\log(1 - D(G(\boldsymbol{z})))] \\
-\min_D V(D, G) &= \mathbb{E}_{\boldsymbol{"msg_type":"generate_answer_finish"}
+\min_D V(D, G) &= \mathbb{E}_{\boldsymbol

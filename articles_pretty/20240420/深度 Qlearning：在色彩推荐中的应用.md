@@ -154,4 +154,4 @@ def get_user_rating(color_scheme, state):
 
 ### 5.2 定义深度 Q 网络
 
-接下来,我们定义深度 Q 网络,用于近似 Q 函数。在这个示{"msg_type":"generate_answer_finish"}
+接下来,我们定义深度 Q 网络,用于近似 Q 函数。在这个示

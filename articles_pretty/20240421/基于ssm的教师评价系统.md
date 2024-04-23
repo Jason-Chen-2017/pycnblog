@@ -252,4 +252,4 @@ Q: SSM框架和Spring Boot有什么区别？
 A: Spring Boot是Spring的一种简化配置的方式，它可以自动配置Spring应用。相比SSM框架，Spring Boot可以大大简化开发和部署流程，但是对底层技术的控制程度不如SSM框架。
 
 Q: 如何选择SSM框架和Spring Boot？
-A: 如果你希望有更大的控制程度，更好地理解底层技术，那么可以选择SSM框架。如果你希望快速开发并部署应用，那么可以选择Spring Boot。{"msg_type":"generate_answer_finish"}
+A: 如果你希望有更大的控制程度，更好地理解底层技术，那么可以选择SSM框架。如果你希望快速开发并部署应用，那么可以选择Spring Boot。

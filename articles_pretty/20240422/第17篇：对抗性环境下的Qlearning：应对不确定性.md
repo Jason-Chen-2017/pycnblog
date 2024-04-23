@@ -141,4 +141,4 @@ $$
 Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a') - \beta Q(s, a)]
 $$
 
-在这个公式中，$\beta$表示对抗因子，可以用来表示环境的不确定性。{"msg_type":"generate_answer_finish"}
+在这个公式中，$\beta$表示对抗因子，可以用来表示环境的不确定性。

@@ -205,4 +205,4 @@ m_{31} & m_{32} & m_{33} & t_z \\
 \end{bmatrix}
 $$
 
-其中$m_{ij}$描述旋转和缩放变换,${"msg_type":"generate_answer_finish"}
+其中$m_{ij}$描述旋转和缩放变换,$

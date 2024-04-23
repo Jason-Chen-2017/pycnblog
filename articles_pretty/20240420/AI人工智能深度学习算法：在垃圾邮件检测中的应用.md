@@ -158,4 +158,4 @@ $$p(C|w_t;\theta)=\prod_{w_c\in C}p(w_c|w_t;\theta)=\prod_{w_c\in C}\frac{e^{v_{
 
 通过最大化目标函数 $J(\theta)$,我们可以获得能够很好地刻画词与词之间语义关系的词嵌入向量。这些词嵌入向量将作为深度学习模型的输入,为模型提供有意义的语义表示。
 
-## 4.2 卷积{"msg_type":"generate_answer_finish"}
+## 4.2 卷积

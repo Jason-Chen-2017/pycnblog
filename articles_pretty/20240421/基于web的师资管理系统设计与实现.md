@@ -359,4 +359,4 @@ course_assignment(max_workloads, course_workloads)
 
 - 学生信息系统
 - 教务管理系统
-- 财务管{"msg_type":"generate_answer_finish"}
+- 财务管

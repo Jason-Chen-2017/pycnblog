@@ -89,4 +89,4 @@ Q: 我需要了解哪些知识才能实现一个智慧园艺监控系统？
 A: 你需要了解MQTT协议、RESTful API、Python编程，以及一些基础的园艺知识。
 
 Q: 我可以在哪里找到更多的资源学习？
-A: 你可以在网上找到很多关于MQTT协议、RESTful API和Python编程的教程和文档。此外，一些开源项目也可以为你提供实践经验。{"msg_type":"generate_answer_finish"}
+A: 你可以在网上找到很多关于MQTT协议、RESTful API和Python编程的教程和文档。此外，一些开源项目也可以为你提供实践经验。

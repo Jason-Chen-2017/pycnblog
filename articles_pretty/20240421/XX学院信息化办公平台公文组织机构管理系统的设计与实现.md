@@ -256,4 +256,4 @@ public void publishDocument(Document doc) {
 - `Organization`: 机构实体类,表示组织机构的层级关系。
 - `Employee`: 员工实体类,包含员工的个人信息和所属机构。
 - `Role`: 角色实体类,定义系统中不同的角色及其权限。
-- `OrganizationService`: 组织机构管理服务,提供{"msg_type":"generate_answer_finish"}
+- `OrganizationService`: 组织机构管理服务,提供

@@ -222,4 +222,4 @@ public class SqlInjectionScanner implements VulnScanner {
         String url = target.getUrl();
         
         // 构造测试用例
-        List<String> testCases{"msg_type":"generate_answer_finish"}
+        List<String> testCases

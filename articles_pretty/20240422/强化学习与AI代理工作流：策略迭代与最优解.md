@@ -150,4 +150,4 @@ $$\begin{aligned}
 V^\pi(s) &= \mathbb{E}_\pi \left[ R_{t+1} + \gamma V^\pi(S_{t+1}) | S_t = s \right] \\
          &= \sum_{a \in \mathcal{A}} \pi(a|s) \left( \mathcal{R}_s^a + \gamma \sum_{s' \in \mathcal{S}} \mathcal{P}_{ss'}^a V^\pi(s') \right) \\
 Q^\pi(s, a) &= \mathbb{E}_\pi \left[ R_{t+1} + \gamma \mathbb{E}_{s' \sim \mathcal{P}_{ss'}^a} \left[ V^\pi(s') \right] | S_t = s, A_t = a \right] \\
-            &= \mathcal{R}_s^a + \gamma \sum_{s' \in \mathcal{S{"msg_type":"generate_answer_finish"}
+            &= \mathcal{R}_s^a + \gamma \sum_{s' \in \mathcal{S

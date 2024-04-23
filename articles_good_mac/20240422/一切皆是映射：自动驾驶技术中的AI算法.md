@@ -176,4 +176,4 @@ model = fasterrcnn_resnet50_fpn(pretrained=True)
 
 ## 5.3 模型训练
 
-接下来,我们定义模型的训练过程:{"msg_type":"generate_answer_finish"}
+接下来,我们定义模型的训练过程:

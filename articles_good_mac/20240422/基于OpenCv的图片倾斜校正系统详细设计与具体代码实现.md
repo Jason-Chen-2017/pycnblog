@@ -225,4 +225,4 @@ def rotate_image(img, angle):
 
     M = np.float32([[cos, sin, (w - new_w * cos) / 2],
                     [-sin, cos, (h - new_h * cos) / 2]])
-    rotated = cv{"msg_type":"generate_answer_finish"}
+    rotated = cv

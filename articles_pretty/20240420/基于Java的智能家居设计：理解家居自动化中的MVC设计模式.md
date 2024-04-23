@@ -278,4 +278,4 @@ public class DeviceController {
 
 ### 6.3 远程控制
 
-通过智能手机应用程序或网页界面,用户可以{"msg_type":"generate_answer_finish"}
+通过智能手机应用程序或网页界面,用户可以

@@ -176,4 +176,4 @@ $$\min_w F(w) = \sum_{k=1}^N \frac{|\mathcal{D}_k|}{|\mathcal{D}|} F_k(w)$$
 
 $$w^{t+1} = w^t - \eta \sum_{k=1}^N \frac{|\mathcal{D}_k|}{|\mathcal{D}|} \Delta w_k^t$$
 
-其中 $\eta$ {"msg_type":"generate_answer_finish"}
+其中 $\eta$ 

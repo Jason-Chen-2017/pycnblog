@@ -80,4 +80,4 @@ Q: Reptile算法和Gradient Descent有什么区别？
 A: Reptile算法是一种基于Gradient Descent的算法，它在每次迭代时都会对参数进行一次Gradient Descent，然后将结果映射回参数空间。这使得Reptile算法能够更快地找到一个对所有任务都有较好表现的参数。
 
 Q: Reptile算法适用于所有的神经网络吗？
-A: Reptile算法理论上可以应用于所有的神经网络，但是在实际应用中，我们可能需要根据特定的任务和神经网络结构对算法进行一些调整。{"msg_type":"generate_answer_finish"}
+A: Reptile算法理论上可以应用于所有的神经网络，但是在实际应用中，我们可能需要根据特定的任务和神经网络结构对算法进行一些调整。

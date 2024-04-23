@@ -275,4 +275,4 @@ public class HouseController {
 4. 建立积分机制,鼓励用户主动分享房源信息。
 5. 与其他房地产相关网站建立联盟,实现信息共享。
 
-### 8.3 如何评估房地产项目的投资{"msg_type":"generate_answer_finish"}
+### 8.3 如何评估房地产项目的投资

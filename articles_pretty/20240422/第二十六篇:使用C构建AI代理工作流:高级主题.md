@@ -253,4 +253,4 @@ $$
 ```
 函数 SMO(X, y, C, tol, max_passes):
     n = X.shape[0]  # 样本数量
-    alpha = zeros({"msg_type":"generate_answer_finish"}
+    alpha = zeros(

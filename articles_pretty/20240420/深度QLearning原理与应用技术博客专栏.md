@@ -48,4 +48,4 @@ $$Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha \left[ r_t + \gamma \max_{a'} Q(s_
 
 $$L(\theta) = \mathbb{E}_{(s, a, r, s') \sim D} \left[ \left( r + \gamma \max_{a'} Q(s', a'; \theta^-) - Q(s, a; \theta) \right)^2 \right]$$
 
-其中$\theta$是网络参数,$\theta^-$是目标网络参数(Target Network),D是经验回放池(Experience Replay)。{"msg_type":"generate_answer_finish"}
+其中$\theta$是网络参数,$\theta^-$是目标网络参数(Target Network),D是经验回放池(Experience Replay)。

@@ -191,4 +191,4 @@ $$Q(s_t,a_t) \leftarrow Q(s_t,a_t) + \alpha[y_t - Q(s_t,a_t)]$$
 
 证明的基本思路是:将Q-learning的更新过程看作一个随机迭代过程,利用随机逼近理论(Stochastic Approximation Theory),证明该过程是收敛的,并且收敛到最优Q函数。
 
-具体的证明过程较为复杂,有兴趣{"msg_type":"generate_answer_finish"}
+具体的证明过程较为复杂,有兴趣

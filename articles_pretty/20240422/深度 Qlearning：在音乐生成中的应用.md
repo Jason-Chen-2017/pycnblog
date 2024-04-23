@@ -178,4 +178,4 @@ for episode in range(num_episodes):
         states, actions, rewards, next_states, dones = replay_buffer.sample(batch_size)
         
         # 计算目标Q值
-        target_q_{"msg_type":"generate_answer_finish"}
+        target_q_

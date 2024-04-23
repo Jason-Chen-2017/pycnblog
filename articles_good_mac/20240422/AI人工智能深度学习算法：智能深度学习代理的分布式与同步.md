@@ -202,4 +202,4 @@ for epoch in range(num_epochs):
 - **TensorFlow**: 谷歌开源的深度学习框架,支持数据并行和模型并行,提供了分布式策略APIs。
 - **PyTorch**: 元论据人工智能研究所开源的深度学习框架,支持分布式数据并行和模型并行。
 - **PaddlePaddle**: 百度开源的深度学习框架,提供FleetX分布式训练引擎。
-- **Apache MXNet**: 支持多种{"msg_type":"generate_answer_finish"}
+- **Apache MXNet**: 支持多种

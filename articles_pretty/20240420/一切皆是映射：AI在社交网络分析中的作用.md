@@ -177,4 +177,4 @@ $$P(v_o|v_i;\theta)=\frac{\exp(v_o^\top v_i)}{\sum_{w\in V}\exp(w^\top v_i)}$$
 
 为了提高计算效率,DeepWalk使用了负采样(Negative Sampling)技术。具体来说,对于每个正样本$(v_i,v_o)$,我们从噪声分布$P_n(w)$中采样$k$个负样本$\{w_1,\dots,w_k\}$,然后最大化如下目标函数:
 
-$$\max_{\theta}\sum_{i{"msg_type":"generate_answer_finish"}
+$$\max_{\theta}\sum_{i

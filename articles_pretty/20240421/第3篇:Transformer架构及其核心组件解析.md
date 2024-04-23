@@ -211,4 +211,4 @@ $$
 
 ### 4.3 位置编码(Positional Encoding)
 
-由于Transformer模型没有递归结构,因此需要一种机制来捕捉序列中元素的位置信息。Transformer使用了位置{"msg_type":"generate_answer_finish"}
+由于Transformer模型没有递归结构,因此需要一种机制来捕捉序列中元素的位置信息。Transformer使用了位置

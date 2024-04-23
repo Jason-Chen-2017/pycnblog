@@ -345,4 +345,4 @@ public class GatewaySocketClient {
     // 发送控制指令到网关
     public void sendCommand(String command) {
         session.getAsyncRemote().sendText(command);
-    {"msg_type":"generate_answer_finish"}
+    

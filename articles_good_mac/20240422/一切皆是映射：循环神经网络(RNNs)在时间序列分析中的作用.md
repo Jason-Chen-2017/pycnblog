@@ -199,4 +199,4 @@ class RNNModel(nn.Module):
 
 ```python
 def train(model, x, y, epochs=100, lr=0.01):
-    optimizer = torch.optim.Adam(model.parameters{"msg_type":"generate_answer_finish"}
+    optimizer = torch.optim.Adam(model.parameters

@@ -277,4 +277,4 @@ void sendDataToServer() {
 
 - D1 MINI开发板
 - PM2.5/PM10传感器模块(如Plantower PMS7003)
-- 0.96英{"msg_type":"generate_answer_finish"}
+- 0.96英

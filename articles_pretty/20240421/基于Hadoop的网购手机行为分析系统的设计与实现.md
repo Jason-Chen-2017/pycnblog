@@ -98,4 +98,4 @@ public class PurchaseCount {
 
 2.问题：MapReduce是如何工作的？
 
-答：MapReduce是Hadoop的核心算法，它由两个阶段组成：Map阶段和Reduce阶段。Map阶段负责处理输入数据，生成一系列的键值对；Reduce阶段则处理Map阶段生成的键值对，生成最后的结果。{"msg_type":"generate_answer_finish"}
+答：MapReduce是Hadoop的核心算法，它由两个阶段组成：Map阶段和Reduce阶段。Map阶段负责处理输入数据，生成一系列的键值对；Reduce阶段则处理Map阶段生成的键值对，生成最后的结果。

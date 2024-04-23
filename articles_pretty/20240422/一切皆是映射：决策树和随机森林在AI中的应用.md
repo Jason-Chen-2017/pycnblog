@@ -218,4 +218,4 @@ rf_clf.fit(X_train, y_train)
 # 在测试集上评估模型
 y_pred = rf_clf.predict(X_test)
 rf_accuracy = accuracy_score(y_test, y_pred)
-print(f{"msg_type":"generate_answer_finish"}
+print(f

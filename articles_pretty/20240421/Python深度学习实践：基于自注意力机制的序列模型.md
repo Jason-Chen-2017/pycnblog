@@ -64,4 +64,4 @@ import torch.nn as nn
 import torch.nn.functional as F
 ```
 
-然后，我们定义自注意力网络的类：{"msg_type":"generate_answer_finish"}
+然后，我们定义自注意力网络的类：

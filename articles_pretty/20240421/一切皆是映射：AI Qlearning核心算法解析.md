@@ -205,4 +205,4 @@ Q-learning算法由于其简单高效的特点,在许多实际应用领域都有
 
 - **OpenAI Gym**: 一个开源的强化学习研究平台,提供了多种经典控制环境。
 - **Stable Baselines**: 一个基于PyTorch和TensorFlow的强化学习算法库。
-- **Ray RLlib**: 一个高性能的分布式强化学习库{"msg_type":"generate_answer_finish"}
+- **Ray RLlib**: 一个高性能的分布式强化学习库

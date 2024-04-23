@@ -142,4 +142,4 @@ K_s = \begin{pmatrix}
 $$
 
 $$
-K_t = \begin{pmatrix{"msg_type":"generate_answer_finish"}
+K_t = \begin{pmatrix

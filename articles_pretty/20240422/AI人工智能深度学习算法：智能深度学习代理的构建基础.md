@@ -126,4 +126,4 @@ $$\boldsymbol{A}^{[l]}=\max\limits_{(i,j)\in\Omega}\boldsymbol{Z}_{i,j}^{[l]}$$
 $$\boldsymbol{h}^{(t)} = f_W(\boldsymbol{x}^{(t)}, \boldsymbol{h}^{(t-1)})$$
 $$\boldsymbol{y}^{(t)} = g(\boldsymbol{h}^{(t)})$$
 
-其中 $f_W$ 为循环单元的状态{"msg_type":"generate_answer_finish"}
+其中 $f_W$ 为循环单元的状态

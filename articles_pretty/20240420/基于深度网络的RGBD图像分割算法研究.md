@@ -183,4 +183,4 @@ class ResNetRGBDDecoder(nn.Module):
         x = self.relu(self.bn4(self.conv4(x4)))
         x = self.deconv1(x)
         x = torch.cat((x, x3), dim=1)
-        x = self.relu(self.{"msg_type":"generate_answer_finish"}
+        x = self.relu(self.

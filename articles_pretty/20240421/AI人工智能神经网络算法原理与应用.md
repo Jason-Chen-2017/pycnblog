@@ -147,4 +147,4 @@ class Net(nn.Module):
         return x
 
 # 加载MNIST数据集
-transform = transforms.Compose([transforms{"msg_type":"generate_answer_finish"}
+transform = transforms.Compose([transforms

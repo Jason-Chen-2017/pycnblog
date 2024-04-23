@@ -239,4 +239,4 @@ print(f"Random Forest Regression RMSE: {rmse_rfr:.3f}")
 ### 5.2 需求预测
 
 - 预测商品的未来销量,优化供应链管理
-- 电力负荷预测,合理调度{"msg_type":"generate_answer_finish"}
+- 电力负荷预测,合理调度

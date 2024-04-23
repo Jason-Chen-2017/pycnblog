@@ -341,4 +341,4 @@ pie.render("topic_distribution_pie.html")
 
 第二个是饼图,以扇形的形式展示了各个领域问题数量的占比情况。
 
-这{"msg_type":"generate_answer_finish"}
+这

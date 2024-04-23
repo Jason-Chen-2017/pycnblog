@@ -198,4 +198,4 @@ def dqn(env, buffer, eval_net, target_net, optimizer, num_episodes, batch_size, 
                 target_q_values = rewards + (1 - dones) * gamma * next_q_values
 
                 # 计算预测Q值
-                q_values = eval_net({"msg_type":"generate_answer_finish"}
+                q_values = eval_net(

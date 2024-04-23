@@ -90,4 +90,4 @@ model.fit(train_X, train_Y, epochs=3, validation_data=val_data)
 4. Q：如何评估聊天机器人的性能？  
    A：聊天机器人的性能可以从多个方面评估，如响应的准确性，响应的自然性，对话的连贯性等。
 
-以上就是关于"Python深度学习实践：基于深度学习的个性化聊天机器人"的全部内容，希望对大家有所帮助。{"msg_type":"generate_answer_finish"}
+以上就是关于"Python深度学习实践：基于深度学习的个性化聊天机器人"的全部内容，希望对大家有所帮助。

@@ -198,4 +198,4 @@ def select_action(state):
     eps_threshold = EPS_END + (EPS_START - EPS_END) * \
         np.exp(-1. * steps_done / EPS_DECAY)
     steps_done += 1
-    {"msg_type":"generate_answer_finish"}
+    

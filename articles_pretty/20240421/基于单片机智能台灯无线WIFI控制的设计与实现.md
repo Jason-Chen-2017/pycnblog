@@ -211,4 +211,4 @@ $$
 - 光线传感器(光敏电阻),通过ADC与单片机连接
 - LED台灯,通过PWM控制亮度
 
-### 5.{"msg_type":"generate_answer_finish"}
+### 5.

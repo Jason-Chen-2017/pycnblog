@@ -236,4 +236,4 @@ def optimize_model(model, target, optimizer, memory, batch_size):
     # 计算Q值和目标Q值
     q_values = model(states).gather(1, actions.unsqueeze(1)).squeeze(1)
     next_q_values = target(next_states).max(1)[0]
-    target_q_values = rewards{"msg_type":"generate_answer_finish"}
+    target_q_values = rewards

@@ -148,4 +148,4 @@ A：NLP可应用的领域非常广泛，包括搜索引擎、智能助手、社�
 
 Q：如何入门NLP？
 
-A：你可以从学习Python的NLP库开始，如NLTK、Gensim、spaCy等。同时，阅读一些相关的书籍，如《深度学习的自然语言处理》也是非常有帮助的。{"msg_type":"generate_answer_finish"}
+A：你可以从学习Python的NLP库开始，如NLTK、Gensim、spaCy等。同时，阅读一些相关的书籍，如《深度学习的自然语言处理》也是非常有帮助的。

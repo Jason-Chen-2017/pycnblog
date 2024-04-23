@@ -269,4 +269,4 @@ plt.legend(['Original', 'ARIMA Model'])
 plt.show()
 
 # 绘制预测结果
-forecast_series = pd{"msg_type":"generate_answer_finish"}
+forecast_series = pd

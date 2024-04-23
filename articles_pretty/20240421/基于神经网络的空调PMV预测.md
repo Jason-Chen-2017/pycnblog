@@ -140,4 +140,4 @@ from keras.layers import Dense
 from keras.optimizers import Adam
 ```
 
-我们导入了NumPy用于数值计算,Pandas用于数据处理,Scikit-learn用于数据预处理和划分训练测试集,以及Keras用于{"msg_type":"generate_answer_finish"}
+我们导入了NumPy用于数值计算,Pandas用于数据处理,Scikit-learn用于数据预处理和划分训练测试集,以及Keras用于

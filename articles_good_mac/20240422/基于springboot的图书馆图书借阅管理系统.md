@@ -262,4 +262,4 @@ public interface ReaderRepository extends JpaRepository<Reader, Long> {
     Reader findByEmail(String email);
 }
 
-// Bor{"msg_type":"generate_answer_finish"}
+// Bor

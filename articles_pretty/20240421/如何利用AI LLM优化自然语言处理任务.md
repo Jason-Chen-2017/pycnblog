@@ -103,4 +103,4 @@ for i in range(5):
 
 ### 问题3：我需要多少数据来训练我的模型？
 
-答：这取决于你的任务和模型。一般来说，你需要尽可能多的数据。你可以从公开的数据集开始，如Wikipedia、Common Crawl等。{"msg_type":"generate_answer_finish"}
+答：这取决于你的任务和模型。一般来说，你需要尽可能多的数据。你可以从公开的数据集开始，如Wikipedia、Common Crawl等。

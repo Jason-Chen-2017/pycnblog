@@ -154,4 +154,4 @@ A3：Transformer模型可以使用深度学习框架如PyTorch或TensorFlow来�
 
 **Q4：Transformer模型面临哪些挑战？**
 
-A4：Transformer模型面临的挑战主要有数据的隐私保护、数据的高维度和稀疏性、以及模型的精度和可解释性等。这些挑战需要通过技术创新和算法改进来解决。{"msg_type":"generate_answer_finish"}
+A4：Transformer模型面临的挑战主要有数据的隐私保护、数据的高维度和稀疏性、以及模型的精度和可解释性等。这些挑战需要通过技术创新和算法改进来解决。

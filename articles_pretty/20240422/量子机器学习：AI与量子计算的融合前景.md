@@ -177,4 +177,4 @@ QPE算法的空间复杂度为$O(n + \log N)$,其中$n$为寄存器的比特数,
 
 下面是一个使用QPE算法计算$U = RZ(\theta)$的特征值的示例,其中$RZ(\theta)$是一个相位移门:
 
-```python{"msg_type":"generate_answer_finish"}
+```python

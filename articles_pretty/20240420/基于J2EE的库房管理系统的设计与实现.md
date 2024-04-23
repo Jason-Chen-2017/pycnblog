@@ -312,4 +312,4 @@ try (Connection conn = DriverManager.getConnection(url, username, password)) {
 
 DevOps实践和持续交付/持续部署将成为软件交付的标准模式。J2EE应用的构建、测试和部署流程需要与DevOps工具链深度整合。
 
-### 8.3 大数据和人工{"msg_type":"generate_answer_finish"}
+### 8.3 大数据和人工

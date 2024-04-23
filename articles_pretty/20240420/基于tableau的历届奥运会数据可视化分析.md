@@ -148,4 +148,4 @@ A4: 在Tableau中，你可以通过设置数据刷新的策略来更新数据。
 
 ### Q5: 如何分享Tableau的可视化结果？
 
-A5: 在Tableau中，你可以通过多种方式来分享你的可视化结果。你可以将工作表或仪表板导出为图片、PDF或Tableau工作簿，然后通过电子邮件、社交媒体等方式分享。你还可以将工作表或仪表板发布到Tableau Server或Tableau Online，然后通过链接或嵌入代码的方式分享。{"msg_type":"generate_answer_finish"}
+A5: 在Tableau中，你可以通过多种方式来分享你的可视化结果。你可以将工作表或仪表板导出为图片、PDF或Tableau工作簿，然后通过电子邮件、社交媒体等方式分享。你还可以将工作表或仪表板发布到Tableau Server或Tableau Online，然后通过链接或嵌入代码的方式分享。

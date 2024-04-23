@@ -194,4 +194,4 @@ class DQNAgent:
 ```python
 env = gym.make('Pong-v0')
 state_size = env.observation_space.shape[0]
-action_size ={"msg_type":"generate_answer_finish"}
+action_size =

@@ -164,4 +164,4 @@ class DQN(nn.Module):
         super(DQN, self).__init__()
         self.fc1 = nn.Linear(state_dim, 128)
         self.fc2 = nn.Linear(128, 128)
-        self.fc3 = nn.Linear(128, action_dim){"msg_type":"generate_answer_finish"}
+        self.fc3 = nn.Linear(128, action_dim)

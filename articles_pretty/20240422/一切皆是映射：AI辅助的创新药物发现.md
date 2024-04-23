@@ -231,4 +231,4 @@ $$
 \max_{\mathbf{u}_1,\ldots,\mathbf{u}_d} \sum_{j=1}^{d}\text{Var}(\mathbf{u}_j^T\mathbf{X})
 $$
 
-其中,\mathbf{X}是数据矩阵,{"msg_type":"generate_answer_finish"}
+其中,\mathbf{X}是数据矩阵,

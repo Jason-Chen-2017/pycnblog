@@ -243,4 +243,4 @@ def update_theta(samples, alpha, gamma):
             q_target = 0.0
         else:
             q_values = [q_func(next_state, a, theta) for a in range(env.action_space.n)]
-            {"msg_type":"generate_answer_finish"}
+            

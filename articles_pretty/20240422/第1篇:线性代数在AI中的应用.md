@@ -127,4 +127,4 @@ print(eigenvectors)
 
 ### 9.3 如何在Python中进行矩阵运算？
 
-在Python中，我们可以使用NumPy库来进行矩阵运算。NumPy提供了一系列的函数，用于创建和操作矩阵，以及进行矩阵的基本运算，包括加法、减法、乘法等。{"msg_type":"generate_answer_finish"}
+在Python中，我们可以使用NumPy库来进行矩阵运算。NumPy提供了一系列的函数，用于创建和操作矩阵，以及进行矩阵的基本运算，包括加法、减法、乘法等。

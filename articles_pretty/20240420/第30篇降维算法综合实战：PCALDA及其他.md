@@ -152,4 +152,4 @@ $$J(\mathbf{w}) = \frac{\mathbf{w}^T\mathbf{S}_b\mathbf{w}}{\mathbf{w}^T\mathbf{
 
 **优点**:
 
-- 考虑了数据的类别信息,投影后的低维空间对分{"msg_type":"generate_answer_finish"}
+- 考虑了数据的类别信息,投影后的低维空间对分

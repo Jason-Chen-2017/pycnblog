@@ -261,4 +261,4 @@ class TransformerDialogueModel(nn.Module):
         return self.out_proj(output)
 ```
 
-在这个模{"msg_type":"generate_answer_finish"}
+在这个模

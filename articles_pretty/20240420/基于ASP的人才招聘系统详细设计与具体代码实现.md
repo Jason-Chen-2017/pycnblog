@@ -307,4 +307,4 @@ public class TfIdfSimilarity
 
 通过智能匹配算法,系统可以快速从海量简历中筛选出合适的候选人,节省大量人力。同时,集中式的数据管理使得招聘经理可以方便地追踪和分析整个过程。
 
-## 6.2 中小{"msg_type":"generate_answer_finish"}
+## 6.2 中小

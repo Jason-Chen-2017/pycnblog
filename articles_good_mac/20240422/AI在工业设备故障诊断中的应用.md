@@ -295,4 +295,4 @@ lr.fit(X_train, y_train)
 
 # 评估模型
 y_pred = lr.predict(X_test)
-acc = accuracy_score(y_test,{"msg_type":"generate_answer_finish"}
+acc = accuracy_score(y_test,

@@ -183,4 +183,4 @@ $$V^{\pi}(s_t) = \mathbb{E}_{a_t \sim \pi} \left[Q^{\pi}(s_t,a_t) - \alpha \log 
 
 根据Bellman方程,软状态值函数也可以写成:
 
-$$V^{\pi}(s_t) = \mathbb{E}_{a_t \sim \pi, s_{t+1} \sim p} \left[{"msg_type":"generate_answer_finish"}
+$$V^{\pi}(s_t) = \mathbb{E}_{a_t \sim \pi, s_{t+1} \sim p} \left[

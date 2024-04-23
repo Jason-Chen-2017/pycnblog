@@ -155,4 +155,4 @@ $$
 
 ## 4.项目实践:代码实例和详细解释说明
 
-在这一节中,我们将使用Python和PyTorch深度学习框架,实现一个简化版本的Transformer编{"msg_type":"generate_answer_finish"}
+在这一节中,我们将使用Python和PyTorch深度学习框架,实现一个简化版本的Transformer编

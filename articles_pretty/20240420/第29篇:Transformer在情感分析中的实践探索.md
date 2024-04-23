@@ -150,4 +150,4 @@ $$
 3.1 & 3.6 \\
 0.7 & 0.8
 \end{bmatrix}, \quad
-\boldsymbol{K} = \boldsymbol{X}\boldsymbol{W}^K = \begin{"msg_type":"generate_answer_finish"}
+\boldsymbol{K} = \boldsymbol{X}\boldsymbol{W}^K = \begin

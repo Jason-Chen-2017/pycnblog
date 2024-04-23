@@ -200,4 +200,4 @@ ssm框架作为一种常用的Web开发框架，具有高效、稳定、易维�
 
 3. **Q: ssm框架和其他框架，如Spring Boot、Spring Cloud等有什么区别？**
    
-   A: ssm框架和Spring Boot、Spring Cloud等框架都是基于Spring框架的Web开发框架，但是他们各有侧重点。ssm框架侧重于提供一种基础的、明确的架构设计；Spring Boot侧重于简化Spring应用的初始搭建以及开发过程；Spring Cloud侧重于提供一种在分布式系统（如配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、领导选举、分布式会话、集群状态）的解决方案。{"msg_type":"generate_answer_finish"}
+   A: ssm框架和Spring Boot、Spring Cloud等框架都是基于Spring框架的Web开发框架，但是他们各有侧重点。ssm框架侧重于提供一种基础的、明确的架构设计；Spring Boot侧重于简化Spring应用的初始搭建以及开发过程；Spring Cloud侧重于提供一种在分布式系统（如配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、领导选举、分布式会话、集群状态）的解决方案。

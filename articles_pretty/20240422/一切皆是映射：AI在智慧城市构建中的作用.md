@@ -148,4 +148,4 @@ test_data = traffic_data[traffic_data['date'] >= '2022-01-01']
 # 构建输入特征和标签
 feature_cols = ['hour', 'weekday_0', 'weekday_1', ..., 'traffic_volume_lag3']
 X_train = train_data[feature_cols]
-y_train = train_data['traffic_{"msg_type":"generate_answer_finish"}
+y_train = train_data['traffic_

@@ -115,4 +115,3 @@ A: 在SpringBoot中，我们可以使用JPA来实现出价功能。具体方法�
 
 **Q: 如何在SpringBoot中实现成交功能？**
 A: 在SpringBoot中，我们可以使用JPA来实现成交功能。具体方法是在`AuctionController`中定义一个成交方法，这个方法首先根据商品ID获取所有的出价，然后找出最高的出价，并将其标记为成交。
-{"msg_type":"generate_answer_finish"}

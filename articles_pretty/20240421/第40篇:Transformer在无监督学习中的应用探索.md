@@ -181,4 +181,4 @@ class TransformerForMaskedLM(nn.Module):
         mlm_logits = self.mlm_head(sequence_output)
         
         mlm_loss_fct = nn.CrossEntropyLoss()
-        mlm_loss = mlm_loss_fct{"msg_type":"generate_answer_finish"}
+        mlm_loss = mlm_loss_fct

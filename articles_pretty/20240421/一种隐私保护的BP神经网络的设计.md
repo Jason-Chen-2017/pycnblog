@@ -242,4 +242,4 @@ for epoch in range(100):
     
     # 反向传播
     delta2_encrypted = [a2 - public_key.encrypt(y) for a2, y in zip(a2_encrypted, y_train)]
-    delta1_encrypted = [sum(d2 {"msg_type":"generate_answer_finish"}
+    delta1_encrypted = [sum(d2 

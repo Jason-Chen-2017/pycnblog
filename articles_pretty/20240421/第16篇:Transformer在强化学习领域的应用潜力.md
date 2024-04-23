@@ -131,4 +131,4 @@ $$
 
 2. **注意力分数计算**:
    
-   计算查询 $\mathbf{Q}$ 与所有键 $\mathbf{K}$ 的点积,得到一个 {"msg_type":"generate_answer_finish"}
+   计算查询 $\mathbf{Q}$ 与所有键 $\mathbf{K}$ 的点积,得到一个 

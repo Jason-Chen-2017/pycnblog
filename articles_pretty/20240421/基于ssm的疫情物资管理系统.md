@@ -265,4 +265,4 @@ public interface ItemMapper {
 <mapper namespace="com.example.dao.ItemMapper">
     <resultMap id="ItemResultMap" type="com.example.model.Item">
         <id property="id" column="id"/>
-        <result property="name" column="name"/>{"msg_type":"generate_answer_finish"}
+        <result property="name" column="name"/>

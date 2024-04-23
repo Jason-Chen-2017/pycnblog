@@ -220,4 +220,4 @@ def step(state, action):
     
     return new_state, reward, done
 
-# 定义epsilon-greedy策{"msg_type":"generate_answer_finish"}
+# 定义epsilon-greedy策

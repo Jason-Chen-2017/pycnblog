@@ -195,4 +195,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .csrf().disable()
             .authorizeRequests()
             .antMatchers("/api/auth/**").permitAll()
-            .{"msg_type":"generate_answer_finish"}
+            .

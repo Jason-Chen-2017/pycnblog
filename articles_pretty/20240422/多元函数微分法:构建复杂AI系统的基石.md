@@ -198,4 +198,4 @@ print(f"最小值点: ({x_min:.4f}, {y_min:.4f})")
 print(f"最小值: {f(x_min, y_min):.4f}")
 ```
 
-在这个示例中,我们首先定义了目标函数$f(x, y)$和它的梯度$\{"msg_type":"generate_answer_finish"}
+在这个示例中,我们首先定义了目标函数$f(x, y)$和它的梯度$\

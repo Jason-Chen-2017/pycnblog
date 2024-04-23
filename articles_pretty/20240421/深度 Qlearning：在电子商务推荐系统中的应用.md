@@ -119,4 +119,4 @@ A2: 深度Q-learning的训练过程包括以下几个步骤：在环境中执行
 
 ### Q3: 深度Q-learning可以应用于哪些领域？
 
-A3: 深度Q-learning可以应用于许多领域，如电子商务推荐系统、自动驾驶、游戏、机器人、医疗等。{"msg_type":"generate_answer_finish"}
+A3: 深度Q-learning可以应用于许多领域，如电子商务推荐系统、自动驾驶、游戏、机器人、医疗等。

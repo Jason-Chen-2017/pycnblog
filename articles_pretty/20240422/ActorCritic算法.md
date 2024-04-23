@@ -211,4 +211,4 @@ Actor-Critic算法在许多实际应用场景中发挥着重要作用,例如:
 
 4. **论文和文献**:
     - "Reinforcement Learning: An Introduction" by Richard S. Sutton and Andrew G. Barto
-    - "Deep Reinforcement Learning Hands-On" by Maxim Lapan{"msg_type":"generate_answer_finish"}
+    - "Deep Reinforcement Learning Hands-On" by Maxim Lapan

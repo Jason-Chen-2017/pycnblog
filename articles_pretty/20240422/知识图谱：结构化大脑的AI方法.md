@@ -186,4 +186,4 @@ headEntity  relation    tailEntity
 
 ### 5.3 定义知识图谱
 
-接下来,我们定义知识图谱的模式{"msg_type":"generate_answer_finish"}
+接下来,我们定义知识图谱的模式

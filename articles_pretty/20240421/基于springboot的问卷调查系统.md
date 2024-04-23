@@ -111,4 +111,4 @@ public class QuestionnaireController {
 
 3. **Q: 如何处理大量的问卷数据？**
 
-   A: 可以使用数据库管理系统，如MySQL，来存储和处理大量的问卷数据。另外，还可以使用数据分析工具，如R，Python等，来分析数据，挖掘出有价值的信息。{"msg_type":"generate_answer_finish"}
+   A: 可以使用数据库管理系统，如MySQL，来存储和处理大量的问卷数据。另外，还可以使用数据分析工具，如R，Python等，来分析数据，挖掘出有价值的信息。

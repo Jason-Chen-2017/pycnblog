@@ -132,4 +132,4 @@ $$\mathcal{L}_{Perceptual}(I_{SR}, I_{HR}) = \frac{1}{W_iH_iC_i}\sum_{x=1}^{W_i}
 
 生成对抗网络(Generative Adversarial Networks, GANs)也被应用于 SR 重建任务。在这种框架下,生成器网络 $G$ 试图生成逼真的 SR 图像以欺骗判别器网络 $D$,而判别器则努力区分生成的 SR 图像和真实的 HR 图像。生成器和判别器通过最小化对抗损失进行对抗训练:
 
-$$\min\limits_G \max\limits_D{"msg_type":"generate_answer_finish"}
+$$\min\limits_G \max\limits_D

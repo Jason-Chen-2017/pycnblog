@@ -57,4 +57,4 @@ $$ \max \sigma^2(t) = \max [\omega_1(t)\omega_2(t)[\mu_1(t) - \mu_2(t)]^2] $$
 
 8.附录：常见问题与解答
 
-(由于字数限制，这部分内容将在后续提供){"msg_type":"generate_answer_finish"}
+(由于字数限制，这部分内容将在后续提供)

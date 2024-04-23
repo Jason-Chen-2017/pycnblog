@@ -229,4 +229,4 @@ class QLearningAgent:
         self.Q[key] = (1 - self.alpha) * self.Q.get(key, 0.0) + self.alpha * (reward + self.gamma * next_max_Q)
         
     def get_action(self, state):
-        if random.random() < self.{"msg_type":"generate_answer_finish"}
+        if random.random() < self.

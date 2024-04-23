@@ -130,4 +130,4 @@ Transformer采用了编码器-解码器架构,用于序列到序列的建模任�
 
 4. 多头交叉注意力子层:对 $\boldsymbol{Z}^1$ 应用多头交叉注意力,关注编码器的输出 $\boldsymbol{Z}^{N+1}$,得到 $\boldsymbol{Z}^2$:
 
-   $$\boldsymbol{Z}^2 = \text{MultiHeadAttention}(\boldsymbol{Z}^1, \boldsymbol{Z}^{N+1}, \boldsymbol{Z{"msg_type":"generate_answer_finish"}
+   $$\boldsymbol{Z}^2 = \text{MultiHeadAttention}(\boldsymbol{Z}^1, \boldsymbol{Z}^{N+1}, \boldsymbol{Z

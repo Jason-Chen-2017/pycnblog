@@ -175,4 +175,4 @@ class Client:
         self.test_samples = test_samples  # 测试数据
         self.model = model  # 模型
         self.optimizer = torch.optim.SGD(self.model.parameters(), lr=0.01)  # 优化器
-        self.num_samples = len(self.train{"msg_type":"generate_answer_finish"}
+        self.num_samples = len(self.train

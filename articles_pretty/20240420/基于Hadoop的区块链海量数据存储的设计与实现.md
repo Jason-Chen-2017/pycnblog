@@ -100,4 +100,4 @@ public class CountReducer extends Reducer<Text, IntWritable, Text, IntWritable> 
 - 答：我们可以通过优化MapReduce算法，提高数据处理的效率。例如，我们可以通过合理的分区策略，减少网络传输的开销。
 
 - 问：如何处理实时的区块链数据？
-- 答：我们可以使用流处理框架，如Apache Storm或Apache Flink，处理实时的区块链数据。{"msg_type":"generate_answer_finish"}
+- 答：我们可以使用流处理框架，如Apache Storm或Apache Flink，处理实时的区块链数据。

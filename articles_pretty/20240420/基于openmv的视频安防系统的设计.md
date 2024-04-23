@@ -81,4 +81,4 @@ Q: OpenMV支持哪些图像处理算法？
 A: OpenMV支持各种基于OpenCV的图像处理算法，包括边缘检测、直线检测、圆检测、颜色跟踪、二维码识别等。
 
 Q: OpenMV的开发语言是什么？
-A: OpenMV的开发语言是Python，这使得编程更加简单和方便。{"msg_type":"generate_answer_finish"}
+A: OpenMV的开发语言是Python，这使得编程更加简单和方便。

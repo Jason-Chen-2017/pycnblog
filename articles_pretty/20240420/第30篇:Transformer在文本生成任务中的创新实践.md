@@ -92,4 +92,4 @@ OpenNMT是一个开源的神经网络机器翻译系统，其中包含了Transfo
 ### 8.3 是否有开源的Transformer模型实现？
 有的，例如OpenNMT和Hugging Face的Transformers库都提供了开源的Transformer模型实现。
 
-谢谢阅读，希望这篇文章能帮助你更好地理解和使用Transformer模型。{"msg_type":"generate_answer_finish"}
+谢谢阅读，希望这篇文章能帮助你更好地理解和使用Transformer模型。

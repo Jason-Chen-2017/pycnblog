@@ -180,4 +180,4 @@ def maml_meta_update(meta_model, tasks, alpha, beta):
             support_preds = model(support_data)
             support_loss = nn.CrossEntropyLoss()(support_preds, support_labels)
             updated_params = maml_update(model, support_loss, alpha)
-            model.load_state_dict{"msg_type":"generate_answer_finish"}
+            model.load_state_dict

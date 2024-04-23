@@ -92,4 +92,4 @@ A: Transformer模型的主要优点是能够处理长距离依赖问题，且计
 A: 自注意力机制通过计算序列中每个元素与其他所有元素的相关性，然后根据这些相关性对元素进行加权求和，从而得到新的表示。
 
 ### Q: 如何使用PyTorch实现Transformer模型？
-A: PyTorch提供了一套完整的Transformer模型实现，包括自注意力、编码器、解码器等模块。你可以直接使用这些模块来构建自己的Transformer模型。{"msg_type":"generate_answer_finish"}
+A: PyTorch提供了一套完整的Transformer模型实现，包括自注意力、编码器、解码器等模块。你可以直接使用这些模块来构建自己的Transformer模型。

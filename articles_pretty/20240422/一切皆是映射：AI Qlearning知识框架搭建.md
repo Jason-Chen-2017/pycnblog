@@ -117,4 +117,3 @@ A: 折扣因子$\gamma$用来调节未来奖励的重要程度。如果$\gamma$�
 
 Q: Q-learning如何选择行动？
 A: Q-learning通常使用贪婪策略来选择行动，即在每一状态下，选择可以获得最大Q值的行动。为了增加探索新状态的可能性，我们可以加入一些随机性，如$\varepsilon$-贪婪策略，即以$1-\varepsilon$的概率选择最优行动，以$\varepsilon$的概率随机选择行动。
-{"msg_type":"generate_answer_finish"}

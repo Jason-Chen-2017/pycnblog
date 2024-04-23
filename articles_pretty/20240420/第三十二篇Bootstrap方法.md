@@ -210,4 +210,4 @@ Bootstrap 方法具有以下主要优势:
 
 尽管 Bootstrap 方法具有诸多优势,但它也面临一些挑战和局限性:
 
-- 计算代价:{"msg_type":"generate_answer_finish"}
+- 计算代价:

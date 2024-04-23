@@ -228,4 +228,4 @@ $$p(x|\lambda) = \sum_{m=1}^{M}c_m\mathcal{N}(x|\mu_m,\Sigma_m)$$
 - $c_m$是第$m$个混合成分的权重,满足$\sum_{m=1}^{M}c_m=1$
 - $\mathcal{N}(x|\mu_m,\Sigma_m)$是第$m$个混合成分的高斯密度函数,定义为:
 
-$$\mathcal{N}(x|\mu_m,\Sigma_m) = \frac{1}{(2\pi)^{D/2}|\Sigma_m|^{1/2}}\exp\left(-\frac{1}{2}(x-\mu_m)^{"msg_type":"generate_answer_finish"}
+$$\mathcal{N}(x|\mu_m,\Sigma_m) = \frac{1}{(2\pi)^{D/2}|\Sigma_m|^{1/2}}\exp\left(-\frac{1}{2}(x-\mu_m)^

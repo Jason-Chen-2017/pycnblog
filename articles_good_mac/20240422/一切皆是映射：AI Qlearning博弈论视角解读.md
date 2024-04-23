@@ -235,4 +235,4 @@ Q-Learning可应用于数据中心、电网等资源管理系统,动态调度资
 ## 7.3 书籍
 
 - 《强化学习导论》(Richard S. Sutton & Andrew G. Barto)
--{"msg_type":"generate_answer_finish"}
+-

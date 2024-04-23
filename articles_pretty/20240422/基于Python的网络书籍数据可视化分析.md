@@ -111,4 +111,4 @@ A: 在Matplotlib和Seaborn中，我们可以使用各种函数来修改图表的
 Q: 如何在Python中进行数据爬取？
 A: 在Python中，我们可以使用requests库来进行网络请求，使用BeautifulSoup库来解析HTML文档。
 
-希望这篇文章能够对您使用Python进行网络书籍数据的可视化分析有所帮助。如果您有任何问题或建议，欢迎留言讨论。{"msg_type":"generate_answer_finish"}
+希望这篇文章能够对您使用Python进行网络书籍数据的可视化分析有所帮助。如果您有任何问题或建议，欢迎留言讨论。

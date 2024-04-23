@@ -146,4 +146,4 @@ $$L(\theta) = \mathbb{E}_{(s,a,r,s')\sim U(D)}\left[\left(r + \gamma \max_{a'} Q
 
 那么,$\max_{a'} Q(s',a';\theta^-) = \max(5.0, 3.0, 4.5) = 5.0$,即目标网络认为在状态$s'$下执行最优动作能获得的期望累积折现奖励为5.0。
 
-现在,假设评估网络$Q(s,a;\theta)$对状态-动作对$(s,a)$的Q值估计为3.5,即$Q(s,a;\theta) = {"msg_type":"generate_answer_finish"}
+现在,假设评估网络$Q(s,a;\theta)$对状态-动作对$(s,a)$的Q值估计为3.5,即$Q(s,a;\theta) = 

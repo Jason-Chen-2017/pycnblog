@@ -284,4 +284,4 @@ print(f'均方误差(MSE): {mse:.2f}')
 print(f'决定系数(R^2): {r2:.2f}')
 ```
 
-通过这个项目,{"msg_type":"generate_answer_finish"}
+通过这个项目,

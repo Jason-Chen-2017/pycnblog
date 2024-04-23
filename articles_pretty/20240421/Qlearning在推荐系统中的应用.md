@@ -227,4 +227,4 @@ class QLearningAgent:
         
     def update_replay_buffer(self, state, action, reward, next_state):
         self.replay_buffer.append((state, action, reward, next_state))
-        {"msg_type":"generate_answer_finish"}
+        

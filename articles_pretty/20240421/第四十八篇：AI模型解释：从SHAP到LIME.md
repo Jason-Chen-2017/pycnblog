@@ -246,4 +246,4 @@ print(f'Accuracy: {accuracy:.2f}')
 import shap
 
 # 计算SHAP值
-explainer = shap.TreeExplainer({"msg_type":"generate_answer_finish"}
+explainer = shap.TreeExplainer(

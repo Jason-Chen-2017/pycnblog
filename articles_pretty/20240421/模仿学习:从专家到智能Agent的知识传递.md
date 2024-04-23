@@ -177,4 +177,4 @@ class PolicyNet(nn.Module):
         return x
 
 # 训练行为克隆模型
-policy_net = PolicyNet(env.observation_space.shape[0], env{"msg_type":"generate_answer_finish"}
+policy_net = PolicyNet(env.observation_space.shape[0], env

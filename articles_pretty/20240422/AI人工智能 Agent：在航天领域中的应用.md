@@ -123,4 +123,4 @@ A: 强化学习是一种机器学习方法，让机器通过与环境的交互�
 
 Q: 我应该如何开始学习强化学习？
 
-A: 你可以从阅读Sutton and Barto的《Reinforcement Learning: An Introduction》开始，然后可以使用OpenAI Gym来实践你学到的知识。{"msg_type":"generate_answer_finish"}
+A: 你可以从阅读Sutton and Barto的《Reinforcement Learning: An Introduction》开始，然后可以使用OpenAI Gym来实践你学到的知识。

@@ -114,4 +114,4 @@ Q: 我应该使用什么IDE来开发SpringBoot项目？
 A: IntelliJ IDEA是一个强大的Java IDE，它有很多强大的功能，如代码提示、自动完成、重构等，可以大大提高你的开发效率。
 
 Q: 如何实现用户注册功能？
-A: 你可以通过创建一个UserController类来处理用户相关的请求，在UserController类中，你可以定义一个处理POST请求的register方法，该方法接收一个User对象，然后调用UserService的save方法将用户信息保存到数据库中，最后跳转到登录页面。{"msg_type":"generate_answer_finish"}
+A: 你可以通过创建一个UserController类来处理用户相关的请求，在UserController类中，你可以定义一个处理POST请求的register方法，该方法接收一个User对象，然后调用UserService的save方法将用户信息保存到数据库中，最后跳转到登录页面。

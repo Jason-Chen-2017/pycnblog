@@ -232,4 +232,4 @@ class DQNAgent:
 env = gym.make('CartPole-v1')
 state_dim = env.observation_space.shape[0]
 action_dim = env.action_space.n
-agent = DQNAgent(state_{"msg_type":"generate_answer_finish"}
+agent = DQNAgent(state_

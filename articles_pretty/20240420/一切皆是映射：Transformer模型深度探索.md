@@ -156,4 +156,4 @@ $$\begin{aligned}
 自注意力机制的计算过程可以用以下公式表示:
 
 $$\begin{aligned}
-q_i &= x_iW^Q, \quad k_i = x_iW^K, \quad v_{"msg_type":"generate_answer_finish"}
+q_i &= x_iW^Q, \quad k_i = x_iW^K, \quad v_

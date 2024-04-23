@@ -195,4 +195,4 @@ $$Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha[r_t + \gamma \max_a Q(s_{t+1}, a) 
                    &= -0.1
    \end{aligned}$$
 
-5. 以此类推,在该episode结束后,Q((0,0), (0,1)) = -0.1 * 0.9^4 * 100 ={"msg_type":"generate_answer_finish"}
+5. 以此类推,在该episode结束后,Q((0,0), (0,1)) = -0.1 * 0.9^4 * 100 =

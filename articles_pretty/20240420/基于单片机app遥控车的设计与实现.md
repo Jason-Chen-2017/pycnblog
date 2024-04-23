@@ -345,4 +345,4 @@ public class ControlActivity extends AppCompatActivity {
 
 #### 7.1.4 新型硬件
 
-新型传感器、执行器、通信模块等硬件的出现,将为{"msg_type":"generate_answer_finish"}
+新型传感器、执行器、通信模块等硬件的出现,将为

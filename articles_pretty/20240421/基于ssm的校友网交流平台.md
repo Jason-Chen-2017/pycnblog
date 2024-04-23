@@ -327,4 +327,4 @@ public class UserServiceImpl implements UserService {
     @Override
     public void register(User user) {
         // 密码加密
-        String encodedPassword = passwordEncoder.encode(user.get{"msg_type":"generate_answer_finish"}
+        String encodedPassword = passwordEncoder.encode(user.get

@@ -164,4 +164,4 @@ $$Q(s, a) = \mathbb{E}_\pi\left[\sum_{t=0}^\infty \gamma^t R(s_t, a_t) | s_0 = s
 
 Q函数满足Bellman方程:
 
-$$Q(s, a) = \mathbb{E}_{s' \sim P(\cd{"msg_type":"generate_answer_finish"}
+$$Q(s, a) = \mathbb{E}_{s' \sim P(\cd

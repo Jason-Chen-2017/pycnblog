@@ -152,4 +152,4 @@ $$
 
 其中 $\hat{\mu}_{t-1}(a)$ 是行为 $a$ 在时间 $t-1$ 时的经验均值回报, $N_t(a)$ 是行为 $a$ 被选择的次数, $\beta > 0$ 是一个控制置信水平的超参数。
 
-我们采用一种基于 UCB 的策略,在每个时间步 $t$ 选择 $a_t = \arg\max_a U_t(a)$。可以证明,对于任意的 $\delta \in (0, 1)$,如果选择 $\beta = \sqrt{2 \ln(1/\delta)}$,那么以概率至少 $1-\delta$,对所有的 $a{"msg_type":"generate_answer_finish"}
+我们采用一种基于 UCB 的策略,在每个时间步 $t$ 选择 $a_t = \arg\max_a U_t(a)$。可以证明,对于任意的 $\delta \in (0, 1)$,如果选择 $\beta = \sqrt{2 \ln(1/\delta)}$,那么以概率至少 $1-\delta$,对所有的 $a

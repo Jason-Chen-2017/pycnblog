@@ -140,4 +140,4 @@ public List<Message> search(@RequestParam String keyword) {
 
 **问题5：我如何删除我的信息？**
 
-答：你需要先登录，然后在你发布的信息下，你会看到一个删除按钮，点击它就可以删除你的信息。{"msg_type":"generate_answer_finish"}
+答：你需要先登录，然后在你发布的信息下，你会看到一个删除按钮，点击它就可以删除你的信息。

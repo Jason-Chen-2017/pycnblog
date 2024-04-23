@@ -83,4 +83,4 @@ DQN虽然在强化学习中取得了显著的成果，但同时也面临着许�
 DQN有许多改进版本，例如Double DQN、Dueling DQN、Prioritized Experience Replay等，它们在原有的DQN基础上，通过不同的方法改进了性能。
 
 ### 8.3 DQN适用于所有的强化学习问题吗？
-DQN主要适用于具有离散行动空间、连续状态空间的问题，对于连续行动空间的问题，DQN可能无法直接应用，需要结合其他方法，例如Actor-Critic方法。{"msg_type":"generate_answer_finish"}
+DQN主要适用于具有离散行动空间、连续状态空间的问题，对于连续行动空间的问题，DQN可能无法直接应用，需要结合其他方法，例如Actor-Critic方法。

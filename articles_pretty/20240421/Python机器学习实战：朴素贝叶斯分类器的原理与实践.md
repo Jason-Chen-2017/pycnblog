@@ -219,4 +219,4 @@ Accuracy: 0.97
 
 ### 6.1 文本分类
 
-朴素贝叶斯分类{"msg_type":"generate_answer_finish"}
+朴素贝叶斯分类

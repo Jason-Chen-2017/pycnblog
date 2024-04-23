@@ -149,4 +149,4 @@ $$L(\theta) = \mathbb{E}_{(s, a, r, s')} \left[ \left( r + \gamma \max_{a'} Q(s'
 
 为了解决这一问题,DoubleDQN算法将选择动作和评估动作的过程分开,使用两个独立的Q网络:
 
-1. **在线网络(Online Network)**: 用于选择动作,即$\arg\max{"msg_type":"generate_answer_finish"}
+1. **在线网络(Online Network)**: 用于选择动作,即$\arg\max

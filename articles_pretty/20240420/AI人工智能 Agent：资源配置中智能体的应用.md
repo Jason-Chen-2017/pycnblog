@@ -152,4 +152,4 @@ $$
 
 这里我们提供一个使用PyTorch实现的DDPG算法示例,应用于经典的CartPole环境。完整代码可以在[这里](https://github.com/csdnlxp/rl-code/tree/main/ddpg)找到。
 
-## 5.1 环境和模型定义{"msg_type":"generate_answer_finish"}
+## 5.1 环境和模型定义

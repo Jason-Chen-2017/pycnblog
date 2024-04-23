@@ -124,4 +124,4 @@ Transformer是一个新型的深度学习模型结构，其主要由自注意力
 
 ### 8.3 Transformer和元学习有什么联系？
 
-元学习的快速适应新任务的特性使其成为了Transformer模型的一个理想伙伴。Transformer可以处理各种序列任务，而元学习可以帮助Transformer快速适应这些任务，提高其性能。{"msg_type":"generate_answer_finish"}
+元学习的快速适应新任务的特性使其成为了Transformer模型的一个理想伙伴。Transformer可以处理各种序列任务，而元学习可以帮助Transformer快速适应这些任务，提高其性能。

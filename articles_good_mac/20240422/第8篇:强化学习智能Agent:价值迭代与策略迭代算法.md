@@ -219,4 +219,4 @@ if __name__ == "__main__":
 ```
 Value Table:
 [[ 0.81  0.73  0.64  0.55]
- [ 0.{"msg_type":"generate_answer_finish"}
+ [ 0.

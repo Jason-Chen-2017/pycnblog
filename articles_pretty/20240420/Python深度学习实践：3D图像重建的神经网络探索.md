@@ -145,4 +145,4 @@ $$f^{(k+1)} = f^{(k)} + \alpha \mathcal{P}^\top(g - \mathcal{P}f^{(k)})$$
 
 ### 4.1 加载CT数据集
 
-我们使用MONAI提供的内置数据集,该数据{"msg_type":"generate_answer_finish"}
+我们使用MONAI提供的内置数据集,该数据

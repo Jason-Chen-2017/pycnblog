@@ -190,4 +190,4 @@ mse = mean_squared_error(y_test, y_pred)
 print(f'Mean Squared Error: {mse:.2f}')
 ```
 
-我们使用均方误差(MSE)作为评估指标,在测试集上评估模型{"msg_type":"generate_answer_finish"}
+我们使用均方误差(MSE)作为评估指标,在测试集上评估模型

@@ -220,4 +220,4 @@ outputs = trainer.model(**inputs)
 predictions = outputs.logits.argmax(-1)
 
 if predictions[0] == 1:
-    {"msg_type":"generate_answer_finish"}
+    

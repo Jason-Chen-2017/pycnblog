@@ -173,4 +173,4 @@ $$\theta \leftarrow \theta + \alpha \left(y - Q(s, a; \theta)\right) \nabla_\the
 
 我们使用一个两层的全连接神经网络作为Q网络,输入是当前状态,输出是对应四个动作的Q值。同时,我们初始化一个相同的目标网络Q'。
 
-在训练的每一步,我{"msg_type":"generate_answer_finish"}
+在训练的每一步,我

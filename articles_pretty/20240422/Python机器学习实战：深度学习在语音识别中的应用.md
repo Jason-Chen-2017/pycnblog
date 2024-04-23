@@ -180,4 +180,4 @@ $$
 
 其中$\boldsymbol{y}$是联合网络在每个时间步的输出,表示对应标签的概率分布;$\boldsymbol{c}$是期望的标注序列;$\mathcal{B}^{-1}(\boldsymbol{c})$表示通过去除重复的空白标签而从$\boldsymbol{c}$能够导出的所有路径的集合;$\mathcal{Y}^*$表示所有可能的标注序列。
 
-训练时,我们需要最小化RNN-Transducer损失函数,使得模型输出的概率分布$\boldsymbol{y}$与期望的标注序列$\bolds{"msg_type":"generate_answer_finish"}
+训练时,我们需要最小化RNN-Transducer损失函数,使得模型输出的概率分布$\boldsymbol{y}$与期望的标注序列$\bolds

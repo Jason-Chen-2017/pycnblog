@@ -157,4 +157,4 @@ preds = bst.predict(dtest)
 
 4. **Q: 如何评估恶意URL检测的效果？**
 
-   A: 通常，我们会使用一些评价指标，如精度、召回率、F1值等，来评估检测的效果。{"msg_type":"generate_answer_finish"}
+   A: 通常，我们会使用一些评价指标，如精度、召回率、F1值等，来评估检测的效果。

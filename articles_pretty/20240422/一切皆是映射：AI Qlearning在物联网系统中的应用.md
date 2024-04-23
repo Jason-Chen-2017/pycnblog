@@ -235,4 +235,4 @@ Q-learning在高维状态空间下会遇到维数灾难的问题。常见的解�
 ### 9.3 Q-learning如何处理连续动作空间?
 传统的Q-learning只能处理离散动作空间。对于连续动作空间,可以采用Actor-Critic架构,使用策略梯度算法优化Actor网络,同时使用Q-learning优化Critic网络。
 
-### 9.{"msg_type":"generate_answer_finish"}
+### 9.

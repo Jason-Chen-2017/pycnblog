@@ -160,4 +160,4 @@ F1值是精确度和召回率的调和平均值，计算公式为 $F1 = \frac{2 
 
 4. **AUC-ROC是什么？**
 
-AUC-ROC是一种评估分类模型在各种阈值下表现的指标，AUC(Area Under Curve)计算的是ROC(Receiver Operating Characteristic)曲线下的面积。{"msg_type":"generate_answer_finish"}
+AUC-ROC是一种评估分类模型在各种阈值下表现的指标，AUC(Area Under Curve)计算的是ROC(Receiver Operating Characteristic)曲线下的面积。

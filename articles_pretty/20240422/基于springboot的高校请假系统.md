@@ -104,4 +104,4 @@ public class LeaveController {
 
    A: 你可以在系统中设置一些可配置的规则，如请假时间的计算方式、审批人的选择等，以适应不同学校的需求。
 
-希望这篇文章能帮助你理解如何使用Spring Boot构建高校请假系统，如果你有任何问题，欢迎在评论区留言。{"msg_type":"generate_answer_finish"}
+希望这篇文章能帮助你理解如何使用Spring Boot构建高校请假系统，如果你有任何问题，欢迎在评论区留言。

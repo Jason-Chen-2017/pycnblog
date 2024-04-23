@@ -86,4 +86,4 @@ $$ \theta \leftarrow \theta - \alpha \nabla_\theta L$$
 
 （在此省略具体的问题和答案）
 
-一切尽在不言中，就这样，让我们一起探索这个充满挑战和机遇的新世界吧！{"msg_type":"generate_answer_finish"}
+一切尽在不言中，就这样，让我们一起探索这个充满挑战和机遇的新世界吧！

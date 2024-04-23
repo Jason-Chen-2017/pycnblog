@@ -231,4 +231,4 @@ data_dir = 'data/cifar10'
 image_datasets = {x: datasets.CIFAR10(data_dir, train=(x=='train'), 
                                       transform=data_transforms[x])
                   for x in ['train', 'val']}
-dataloaders = {x: torch.{"msg_type":"generate_answer_finish"}
+dataloaders = {x: torch.

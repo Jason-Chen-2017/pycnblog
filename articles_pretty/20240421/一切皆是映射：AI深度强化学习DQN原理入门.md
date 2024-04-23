@@ -207,4 +207,4 @@ for episode in range(1000):
         action = agent.get_action(state, epsilon)
         next_state, reward, done, _ = env.step(action)
         agent.store_transition(state, action, reward, next_state, done)
-        {"msg_type":"generate_answer_finish"}
+        

@@ -223,4 +223,4 @@ def train(epochs, sample_interval=400):
     )
     
     # 训练循环
-    for epoch in range{"msg_type":"generate_answer_finish"}
+    for epoch in range

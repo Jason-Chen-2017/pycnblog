@@ -183,4 +183,4 @@ print("transformed shape:", X_sfm.shape)
 
 **问题1：特征选择与特征工程有什么区别？**
 
-答：特征选择与特征工程是机器学习中处理特征的两种{"msg_type":"generate_answer_finish"}
+答：特征选择与特征工程是机器学习中处理特征的两种

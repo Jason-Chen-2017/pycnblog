@@ -92,4 +92,4 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 答：你可以使用数据增强、迁移学习等技术，减少对数据量的需求。
 
 - 问：深度学习需要很强的计算资源，如果我没有那么多资源怎么办？
-答：你可以使用云计算资源，或者使用更轻量级的模型。{"msg_type":"generate_answer_finish"}
+答：你可以使用云计算资源，或者使用更轻量级的模型。

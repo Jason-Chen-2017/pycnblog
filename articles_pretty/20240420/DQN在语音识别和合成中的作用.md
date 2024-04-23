@@ -261,4 +261,4 @@ DQN算法在语音识别和合成领域有着广泛的应用前景:
 
 - LibriSpeech: 包含1000小时英语语音数据
 - VoxCeleb: 包含数万个说话人的语音数据
-- LJSpeech: 单个说话人的高质量英语语音数据{"msg_type":"generate_answer_finish"}
+- LJSpeech: 单个说话人的高质量英语语音数据

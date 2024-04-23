@@ -197,4 +197,4 @@ class QLearning:
 在`train`函数中,我们通过不断与环境互动并应用Q-Learning更新规则,来更新Q表格。最终,根据Q表格中的最大值,我们可以得到最优策略。
 
 ## 5.4 运行示例
-现在,我们可以创建一个`GridWorld`环境和`QLearning`智能体,并进{"msg_type":"generate_answer_finish"}
+现在,我们可以创建一个`GridWorld`环境和`QLearning`智能体,并进

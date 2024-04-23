@@ -170,4 +170,4 @@ y_seqs = []
 for i in range(len(X) - seq_length):
     X_seq = X[i:i+seq_length]
     y_seq = X[i+seq_length]
-    {"msg_type":"generate_answer_finish"}
+    

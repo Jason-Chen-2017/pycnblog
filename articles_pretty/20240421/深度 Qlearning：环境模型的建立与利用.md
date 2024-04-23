@@ -191,4 +191,4 @@ class DQNAgent:
         if self.epsilon > self.epsilon_min:
             self.epsilon *= self.epsilon_decay
         if self.update_count % 10 == 0:
-            self.target_net.load{"msg_type":"generate_answer_finish"}
+            self.target_net.load

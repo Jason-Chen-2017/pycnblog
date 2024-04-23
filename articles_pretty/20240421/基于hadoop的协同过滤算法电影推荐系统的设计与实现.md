@@ -240,4 +240,4 @@ public class SimilarityReducer extends Reducer<PairWritable, VectorWritable, Pai
 }
 ```
 
-在`reduce`方法中,我们首先计算每个用户的平均评分,然后构建评分向量。接着{"msg_type":"generate_answer_finish"}
+在`reduce`方法中,我们首先计算每个用户的平均评分,然后构建评分向量。接着

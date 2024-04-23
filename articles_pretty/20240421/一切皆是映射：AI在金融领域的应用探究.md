@@ -203,4 +203,4 @@ $$
 (2) 对 $m = 1, 2, \ldots, M$:
     - 计算残差 $r_{mi} = -\frac{\partial L(y_i, F_{m-1}(x_i))}{\partial F_{m-1}(x_i)}$
     - 对残差 $r_{mi}$ 拟合一个回归树,得到 $h_m(x)$
-    - 更新 {"msg_type":"generate_answer_finish"}
+    - 更新 

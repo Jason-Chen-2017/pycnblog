@@ -151,4 +151,4 @@ A: DQN的主要挑战包括如何处理连续动作空间、如何处理部分�
 
 **Q: DQN有哪些改进版本？**
 
-A: DQN有许多改进版本，如Double DQN、Dueling DQN、Prioritized Experience Replay等。这些改进版本主要是为了解决DQN的一些问题，如过高估计、样本效率低等。{"msg_type":"generate_answer_finish"}
+A: DQN有许多改进版本，如Double DQN、Dueling DQN、Prioritized Experience Replay等。这些改进版本主要是为了解决DQN的一些问题，如过高估计、样本效率低等。

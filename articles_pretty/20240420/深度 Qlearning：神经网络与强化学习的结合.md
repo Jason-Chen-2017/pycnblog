@@ -145,4 +145,4 @@ $$L(\theta) = \mathbb{E}_{(s_j, a_j, r_j, s_{j+1}) \sim D}\left[(y_j - Q(s_j, a_
 
 ## 4.3 $\epsilon$-贪婪策略(Epsilon-Greedy Policy)
 
-在深度 Q-Learning 算法中,我们需要一个策略来选择行为。一种常用的策略是 $\epsilon$-{"msg_type":"generate_answer_finish"}
+在深度 Q-Learning 算法中,我们需要一个策略来选择行为。一种常用的策略是 $\epsilon$-

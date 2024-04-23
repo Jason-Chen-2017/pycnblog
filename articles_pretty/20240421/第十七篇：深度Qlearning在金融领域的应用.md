@@ -180,4 +180,4 @@ class TradingEnv(gym.Env):
             self.stock = 0
         
         obs, reward, done, info = self.env.step(0)
-        reward = self.cash + self.stock * self.stock_price - 1000{"msg_type":"generate_answer_finish"}
+        reward = self.cash + self.stock * self.stock_price - 1000

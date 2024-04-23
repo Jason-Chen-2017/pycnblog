@@ -162,4 +162,4 @@ image_encoder.fc = nn.Identity()  # 去掉最后一层全连接层
 text_encoder = BertModel.from_pretrained('bert-base-uncased')
 ```
 
-## 5.3 多模态对比学{"msg_type":"generate_answer_finish"}
+## 5.3 多模态对比学

@@ -112,4 +112,4 @@ Set conn=Nothing
 答：ASP支持多种数据库，包括Access、SQL Server、MySQL等。
 
 ### 8.3 问：如何提高ASP网站的性能？
-答：有很多方法可以提高ASP网站的性能，如优化数据库查询、减少服务器端的计算量等。{"msg_type":"generate_answer_finish"}
+答：有很多方法可以提高ASP网站的性能，如优化数据库查询、减少服务器端的计算量等。

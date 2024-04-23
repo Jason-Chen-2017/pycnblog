@@ -132,4 +132,4 @@ $$Q(s, a) = \mathbb{E}_{s'}\left[r + \gamma \max_{a'} Q(s', a') | s, a\right]$$
 
 在起点状态$ s_0 $下,如果选择向右移动的行动$ a_0 $,那么$ Q(s_0, a_0) $的计算过程如下:
 
-1. 执行行动$ a_0 $后,智能体转{"msg_type":"generate_answer_finish"}
+1. 执行行动$ a_0 $后,智能体转

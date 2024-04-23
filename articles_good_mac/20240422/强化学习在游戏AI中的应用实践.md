@@ -213,4 +213,4 @@ TARGET_UPDATE = 10000
 # 初始化Q网络和目标Q网络
 policy_net = QNetwork().to(device)
 target_net = QNetwork().to(device)
-target_net.load{"msg_type":"generate_answer_finish"}
+target_net.load

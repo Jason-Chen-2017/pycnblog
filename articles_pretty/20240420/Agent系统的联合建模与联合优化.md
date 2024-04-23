@@ -111,4 +111,4 @@ Agent系统的联合建模与联合优化是一个非常有前景的研究领域
 
 **问：有哪些工具可以用来进行Agent系统的联合建模与联合优化？**
 
-答：我推荐Python、TensorFlow和OpenAI Gym等工具，它们都是非常强大的机器学习和人工智能工具。{"msg_type":"generate_answer_finish"}
+答：我推荐Python、TensorFlow和OpenAI Gym等工具，它们都是非常强大的机器学习和人工智能工具。

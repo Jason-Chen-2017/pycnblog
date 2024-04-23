@@ -153,4 +153,4 @@ A：我们可以使用Postman这样的API测试工具来测试RESTful API。在P
 
 ### Q：如何优化RESTful API的性能？
 
-A：优化RESTful API的性能有很多方法，例如使用缓存、减少数据库查询次数、使用HTTP/2等。{"msg_type":"generate_answer_finish"}
+A：优化RESTful API的性能有很多方法，例如使用缓存、减少数据库查询次数、使用HTTP/2等。

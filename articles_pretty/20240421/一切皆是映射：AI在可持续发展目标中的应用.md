@@ -167,4 +167,4 @@ $$V^{\pi}(s) = \mathbb{E}_{\pi}\left[ G_t | s_t = s \right]$$
 
 图神经网络(Graph Neural Network, GNN)是一种将神经网络应用于图结构数据的深度学习模型。在可持续发展领域,GNN可用于对复杂的网络系统(如交通网络、供应链网络等)进行建模和优化。
 
-给定一个图$\mathcal{G} = (\mathcal{V}, \mathcal{E})$,其中$\mathcal{V}$是节点集合,$\math{"msg_type":"generate_answer_finish"}
+给定一个图$\mathcal{G} = (\mathcal{V}, \mathcal{E})$,其中$\mathcal{V}$是节点集合,$\math

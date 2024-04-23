@@ -212,4 +212,4 @@ VLFeat是一个开源的计算机视觉算法库,包含了SIFT等多种特征检
 
 1. 针对人体关键点,设计更加高效的检测和跟踪算法,减少计算量。
 2. 结合其他特征,如HOG(Histogram of Oriented Gradients,方向梯度直方图)等,提高对人体动作的描述能力。
-3. 使用深度学习技术训练端到端{"msg_type":"generate_answer_finish"}
+3. 使用深度学习技术训练端到端

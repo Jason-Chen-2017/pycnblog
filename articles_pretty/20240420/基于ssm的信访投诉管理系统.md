@@ -313,4 +313,4 @@ public class ProcessServiceImpl implements ProcessService {
         
         ProcessInfo processInfo = new ProcessInfo();
         processInfo.setComplaintId(complaintId);
-        processInfo{"msg_type":"generate_answer_finish"}
+        processInfo

@@ -258,4 +258,4 @@ print(f'Test Accuracy: {100 * correct / total:.2f}%')
 
 ## 6. 实际应用场景
 
-卷积神经网络在计算机视觉领域有着广泛的应用{"msg_type":"generate_answer_finish"}
+卷积神经网络在计算机视觉领域有着广泛的应用

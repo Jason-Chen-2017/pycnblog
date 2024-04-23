@@ -154,4 +154,4 @@ print('The optimal temperature for air conditioner is:', prediction[0])
 3. Q: 如何开发一个智能Agent？
    A: 开发一个智能Agent需要一些编程知识和机器学习知识。你可以选择一种编程语言，如Python，然后使用一些机器学习库，如scikit-learn，来开发你的智能Agent。
 
-总的来说，智能Agent在智能家居领域有着广泛的应用前景。通过理解智能Agent的工作原理，我们可以更好地利用智能Agent，来改善我们的生活。{"msg_type":"generate_answer_finish"}
+总的来说，智能Agent在智能家居领域有着广泛的应用前景。通过理解智能Agent的工作原理，我们可以更好地利用智能Agent，来改善我们的生活。

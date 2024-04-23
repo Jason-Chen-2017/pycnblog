@@ -185,4 +185,4 @@ $$h_t=(1-z_t)\odot h_{t-1}+z_t\odot\tilde{h}_t$$
 $$\begin{aligned}
 e_i&=v_a^{\top}\tanh(W_aq_i+W_ak_i)\\
 \alpha_i&=\frac{\exp(e_i)}{\sum_{j=1}^{n}\exp(e_j)}
-\end{{"msg_type":"generate_answer_finish"}
+\end{

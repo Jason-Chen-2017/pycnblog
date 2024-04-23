@@ -242,4 +242,4 @@ A：在pandas中，我们可以使用dropna方法删除含有缺失值的行，�
 
 Q：matplotlib和seaborn有什么区别？
 
-A：matplotlib是一个基础的数据可视化库，提供了丰富的图形类型和样式选项。seaborn是基于matplotlib的数据可视化库，提供了更多的图形样式，更适合统计数据可视化。{"msg_type":"generate_answer_finish"}
+A：matplotlib是一个基础的数据可视化库，提供了丰富的图形类型和样式选项。seaborn是基于matplotlib的数据可视化库，提供了更多的图形样式，更适合统计数据可视化。

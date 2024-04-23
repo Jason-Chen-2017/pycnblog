@@ -148,4 +148,4 @@ AI代理已经成为我们日常生活的一部分，而Rasa作为一个开源�
 
 #### 我可以如何贡献到Rasa的开发中?
 
-你可以通过在GitHub上提交pull request或issue来参与到Rasa的开发中。同时，Rasa的社区论坛也是一个分享你的想法和经验的好地方。{"msg_type":"generate_answer_finish"}
+你可以通过在GitHub上提交pull request或issue来参与到Rasa的开发中。同时，Rasa的社区论坛也是一个分享你的想法和经验的好地方。

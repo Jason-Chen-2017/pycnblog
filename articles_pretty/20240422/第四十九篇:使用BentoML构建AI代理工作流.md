@@ -173,4 +173,3 @@ bentoml containerize MyService:latest -t my_service:latest
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/bentoml/BentoML/master/kubernetes/bento-nginx-deployment.yaml
 ```
-{"msg_type":"generate_answer_finish"}

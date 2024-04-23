@@ -255,4 +255,4 @@ def customer_service(query):
     resp = requests.post(url, json={'text': query})
     prediction = resp.json()
     
-    # 根据预测结果查询知识库并{"msg_type":"generate_answer_finish"}
+    # 根据预测结果查询知识库并

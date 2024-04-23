@@ -186,4 +186,4 @@ y = housing.target
 
 ### 5.2 数据探索和预处理
 
-在构建模型之前,我们需要{"msg_type":"generate_answer_finish"}
+在构建模型之前,我们需要

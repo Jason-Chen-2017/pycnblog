@@ -242,4 +242,4 @@ def weather_expert(request):
     return response
 
 def travel_expert(request):
-    #{"msg_type":"generate_answer_finish"}
+    #

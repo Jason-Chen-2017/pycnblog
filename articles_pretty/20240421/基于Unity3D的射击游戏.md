@@ -112,4 +112,4 @@ Unity3D主要支持C#编程语言，此外也支持JavaScript和Boo。
 
 ### 8.3 Unity3D的学习资源推荐？
 
-可以参考Unity的官方文档和教程，以及大量的在线教程和书籍。此外，Unity的社区也非常活跃，可以从中得到许多帮助。{"msg_type":"generate_answer_finish"}
+可以参考Unity的官方文档和教程，以及大量的在线教程和书籍。此外，Unity的社区也非常活跃，可以从中得到许多帮助。

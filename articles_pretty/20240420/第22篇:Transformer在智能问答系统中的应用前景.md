@@ -168,4 +168,4 @@ A: Transformer模型需要大量的计算资源。例如，训练BERT模型需�
 
 **Q: Transformer模型在哪些任务上表现良好？**
 
-A: Transformer模型在许多NLP任务上都表现良好，包括机器翻译、文本分类、情感分析和智能问答等。{"msg_type":"generate_answer_finish"}
+A: Transformer模型在许多NLP任务上都表现良好，包括机器翻译、文本分类、情感分析和智能问答等。

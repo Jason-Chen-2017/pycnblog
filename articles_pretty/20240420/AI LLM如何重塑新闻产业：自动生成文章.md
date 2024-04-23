@@ -216,4 +216,4 @@ print(news_article)
 
 # 6. 实际应用场景
 
-AI辅助新闻生成技{"msg_type":"generate_answer_finish"}
+AI辅助新闻生成技

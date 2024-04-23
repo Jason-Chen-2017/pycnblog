@@ -171,4 +171,4 @@ GNN模型可以端到端地从原始图数据中学习节点表示,并应用于�
         $$\mathbf{h}_v^{(k)} = \sigma\left(W^{(k)} \cdot \mathrm{AGGREGATE}^{(k)}(\{\mathbf{h}_u^{(k-1)}, \forall u \in \mathcal{N}(v)\})\right)$$
         
         - $\mathbf{h}_v^{(k)}$ 为节点 $v$ 在第 $k$ 层的embedding
-        - $\mathrm{AGGREGATE}$ 为邻居特征向量的{"msg_type":"generate_answer_finish"}
+        - $\mathrm{AGGREGATE}$ 为邻居特征向量的

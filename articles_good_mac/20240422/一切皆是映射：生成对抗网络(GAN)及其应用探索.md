@@ -223,4 +223,4 @@ for epoch in range(n_epochs):
         z = torch.randn(real_imgs.size(0), latent_dim)
         fake_imgs = generator(z)
         fake_validity = discriminator(fake_imgs)
-        g_{"msg_type":"generate_answer_finish"}
+        g_

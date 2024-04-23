@@ -330,4 +330,4 @@ export default {
 
 ## 6.实际应用场景
 
-基于{"msg_type":"generate_answer_finish"}
+基于

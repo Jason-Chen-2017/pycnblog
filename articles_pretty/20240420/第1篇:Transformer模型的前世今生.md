@@ -173,4 +173,4 @@ Transformer模型自从提出以来，在自然语言处理领域取得了巨大
 
 4. 问：如何实现Transformer模型？
 
-答：Transformer模型可以使用深度学习框架（如PyTorch或TensorFlow）来实现。你可以使用这些框架提供的模型和工具，或者自己从头开始编写代码。具体的实现步骤和代码可以参考上文的实践部分。{"msg_type":"generate_answer_finish"}
+答：Transformer模型可以使用深度学习框架（如PyTorch或TensorFlow）来实现。你可以使用这些框架提供的模型和工具，或者自己从头开始编写代码。具体的实现步骤和代码可以参考上文的实践部分。

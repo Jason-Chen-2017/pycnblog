@@ -217,4 +217,4 @@ A: DQN的参数包括神经网络的参数和强化学习的参数。神经网�
 
 ### Q: DQN有哪些改进版本？
 
-A: DQN有许多改进版本，如Double DQN、Dueling DQN、Prioritized Experience Replay等，它们在原有的DQN基础上，引入了新的思想或者技术，以解决DQN的一些问题，提高性能。{"msg_type":"generate_answer_finish"}
+A: DQN有许多改进版本，如Double DQN、Dueling DQN、Prioritized Experience Replay等，它们在原有的DQN基础上，引入了新的思想或者技术，以解决DQN的一些问题，提高性能。

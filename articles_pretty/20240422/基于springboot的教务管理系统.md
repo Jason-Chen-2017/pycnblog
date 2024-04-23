@@ -161,4 +161,4 @@ public class CourseSchedulingService {
 
 $$
 \begin{aligned}
-\max \quad & \sum_{i=1}^{n} \sum_{j=1}^{m} \sum_{k=1}^{t{"msg_type":"generate_answer_finish"}
+\max \quad & \sum_{i=1}^{n} \sum_{j=1}^{m} \sum_{k=1}^{t

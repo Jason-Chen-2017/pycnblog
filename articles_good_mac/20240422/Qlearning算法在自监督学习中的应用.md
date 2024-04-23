@@ -197,4 +197,4 @@ class DQNAgent:
             return np.random.randint(action_dim)
         else:
             state = torch.FloatTensor(np.float32(state)).unsqueeze(0)
-            q_value = self{"msg_type":"generate_answer_finish"}
+            q_value = self

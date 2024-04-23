@@ -172,4 +172,4 @@ reader.close();
 
 3. **问题：Lucene支持哪些语言的文档检索？**
 
-答：Lucene支持多种语言的文档检索，包括英语、中文、法语、德语等。通过使用合适的分词器，Lucene可以处理任何语言的文档。{"msg_type":"generate_answer_finish"}
+答：Lucene支持多种语言的文档检索，包括英语、中文、法语、德语等。通过使用合适的分词器，Lucene可以处理任何语言的文档。

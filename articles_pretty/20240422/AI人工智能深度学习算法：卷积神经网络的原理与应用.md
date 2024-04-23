@@ -219,4 +219,4 @@ print('Accuracy on test set: %d %%' % (100 * correct / total))
 
 上述代码的关键步骤说明如下:
 
-1. 定义卷积神经网络模型{"msg_type":"generate_answer_finish"}
+1. 定义卷积神经网络模型

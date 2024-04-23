@@ -239,4 +239,4 @@ print(f'Extracted watermark: {extracted_wm:x}')
 
 1. **视频版权保护**
    
-   通过在视频中嵌入版权信息,可以有效{"msg_type":"generate_answer_finish"}
+   通过在视频中嵌入版权信息,可以有效

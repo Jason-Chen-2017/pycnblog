@@ -227,4 +227,4 @@ for episode in range(num_episodes):
 
 ### 7.2 强化学习库
 
-- Stable Baselines: 一个基于 {"msg_type":"generate_answer_finish"}
+- Stable Baselines: 一个基于 

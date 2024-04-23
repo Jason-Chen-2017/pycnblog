@@ -239,4 +239,4 @@ $$\Delta = \frac{W_{\max} - W_{\min}}{L-1}$$
 
 将$\Delta$代入上式,得到$c_i$的表达式:
 
-$${"msg_type":"generate_answer_finish"}
+$$

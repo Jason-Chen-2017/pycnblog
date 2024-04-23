@@ -271,4 +271,4 @@ const Diagnosis = () => {
           <h3>Diagnosis Result</h3>
           <p>Insomnia Type: {diagnosis.type}</p>
           <p>Severity: {diagnosis.severity}</p>
-        {"msg_type":"generate_answer_finish"}
+        

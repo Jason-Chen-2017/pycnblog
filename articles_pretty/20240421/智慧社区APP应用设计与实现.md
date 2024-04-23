@@ -216,4 +216,4 @@ $$f(n)=\begin{cases}
 首先,我们需要对新闻数据进行预处理,提取出标题和正文的特征向量。这里我们使用TF-IDF作为特征提取方法。
 
 ```python
-from sklearn.feature_extraction.text{"msg_type":"generate_answer_finish"}
+from sklearn.feature_extraction.text

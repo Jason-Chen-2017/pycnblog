@@ -103,4 +103,4 @@ A: Transformer模型通过引入位置编码（Positional Encoding）的方式�
 
 Q: Transformer模型的计算复杂度如何？
 
-A: 在Transformer模型中，自注意力机制的计算复杂度是O(n^2)，其中n是序列长度。因此，对于非常长的序列，Transformer模型的处理效率会有所下降。不过，对于大部分NLP任务来说，这个计算复杂度是可以接受的。{"msg_type":"generate_answer_finish"}
+A: 在Transformer模型中，自注意力机制的计算复杂度是O(n^2)，其中n是序列长度。因此，对于非常长的序列，Transformer模型的处理效率会有所下降。不过，对于大部分NLP任务来说，这个计算复杂度是可以接受的。

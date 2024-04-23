@@ -296,4 +296,4 @@ public interface OrderService {
 }
 ```
 
-其中,`OrderDTO`是一个数据传输对象,用于在表现层和服{"msg_type":"generate_answer_finish"}
+其中,`OrderDTO`是一个数据传输对象,用于在表现层和服

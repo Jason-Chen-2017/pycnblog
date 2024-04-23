@@ -142,4 +142,4 @@ for i_episode in range(200):
    A: 有很多，例如Double DQN，Dueling DQN，Prioritized Experience Replay等，这些都是为了解决DQN的一些问题，如过估计，价值分布的不均匀等。
 
 3. Q: DQN适用于所有的强化学习问题吗？
-   A: 不是。DQN主要适用于离散和低维度的动作空间。对于连续和高维度的动作空间，可能需要用到其他的算法，如DDPG，TRPO等。{"msg_type":"generate_answer_finish"}
+   A: 不是。DQN主要适用于离散和低维度的动作空间。对于连续和高维度的动作空间，可能需要用到其他的算法，如DDPG，TRPO等。

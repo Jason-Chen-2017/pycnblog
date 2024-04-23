@@ -231,4 +231,4 @@ $$
 J = -\log(0.776) = 0.254
 $$
 
-对$\{"msg_type":"generate_answer_finish"}
+对$\

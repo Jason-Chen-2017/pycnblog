@@ -340,4 +340,4 @@ public class NewsServiceImpl implements NewsService {
 
 ### 8.2 容器化和云原生
 
-容器技术(如Docker)和云原生架构(如Kubernetes)将成为未来系统部署和运维的主流{"msg_type":"generate_answer_finish"}
+容器技术(如Docker)和云原生架构(如Kubernetes)将成为未来系统部署和运维的主流

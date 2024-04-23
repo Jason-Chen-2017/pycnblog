@@ -235,4 +235,4 @@ def tutor_matching(parent_demand, tutor_conditions, weights, top_k=3):
         similarity = weighted_cosine_similarity(np.array(parent_vector),
                                                 np.array(tutor_vector),
                                                 weights)
-        {"msg_type":"generate_answer_finish"}
+        

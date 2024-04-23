@@ -202,4 +202,4 @@ doc = nlp(text)
 # 打印命名实体
 print("Named Entities:")
 for ent in doc.ents:
-    print(f"{{"msg_type":"generate_answer_finish"}
+    print(f"{

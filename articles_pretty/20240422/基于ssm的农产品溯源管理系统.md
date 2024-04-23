@@ -256,4 +256,4 @@ public class ProductService {
     // 生成溯源码
     private String generateTraceCode(Product product) {
         String prefix = product.getName().substring(0, 2).toUpperCase();
-        int year = Calendar.getInstance().get(Calendar.YEAR) % {"msg_type":"generate_answer_finish"}
+        int year = Calendar.getInstance().get(Calendar.YEAR) % 

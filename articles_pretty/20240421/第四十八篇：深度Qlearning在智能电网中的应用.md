@@ -237,4 +237,4 @@ class DQNAgent:
             if episode % target_update_freq == 0:
                 self.update_target_net()
 
-            print(f"Episode {episode}, Total Reward: {total_reward}"){"msg_type":"generate_answer_finish"}
+            print(f"Episode {episode}, Total Reward: {total_reward}")

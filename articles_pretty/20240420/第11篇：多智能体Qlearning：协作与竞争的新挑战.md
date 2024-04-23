@@ -212,4 +212,4 @@ class MultiAgentQLearning:
                 rewards = self.env.step(actions)
 
                 for i in range(self.num_agents):
-                    target = rewards[i] +{"msg_type":"generate_answer_finish"}
+                    target = rewards[i] +

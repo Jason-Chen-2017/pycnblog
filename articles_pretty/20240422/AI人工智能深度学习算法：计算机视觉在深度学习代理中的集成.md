@@ -257,4 +257,4 @@ YOLACT的速度明显快于Mask R-CNN,但精度略低。
 卷积运算是CNN的核心计算单元,用于提取输入特征图的局部特征。卷积运算的数学表达式为:
 
 $$
-y_{i,j}^l = \sum_{m}\sum_{n}w_{m,n}^l \cd{"msg_type":"generate_answer_finish"}
+y_{i,j}^l = \sum_{m}\sum_{n}w_{m,n}^l \cd

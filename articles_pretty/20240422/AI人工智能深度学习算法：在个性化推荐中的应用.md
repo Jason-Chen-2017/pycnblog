@@ -189,4 +189,4 @@ $$\boldsymbol{h}_t = \tanh\left(\boldsymbol{W}_{hh}\boldsymbol{h}_{t-1} + \bolds
 
 其中 $\boldsymbol{W}_{hh}$、$\boldsymbol{W}_{xh}$ 和 $\boldsymbol{b}_h$ 分别是隐藏层权重矩阵、输入权重矩阵和偏置向量。
 
-在个性化推荐中,RNN 常用于对用{"msg_type":"generate_answer_finish"}
+在个性化推荐中,RNN 常用于对用

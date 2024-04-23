@@ -187,4 +187,4 @@ class DQNAgent:
         self.memory = ReplayBuffer(buffer_size)
 
     def select_action(self, state):
-        if np.random.rand() < self.epsilon{"msg_type":"generate_answer_finish"}
+        if np.random.rand() < self.epsilon

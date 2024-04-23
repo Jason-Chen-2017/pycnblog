@@ -243,4 +243,4 @@ def RRT(start, goal, env):
         x_new = steer(x_nearest, x_rand)
         if collision_free(x_new, env):
             tree.add_node(x_new, x_nearest)
-    return get_path(tree{"msg_type":"generate_answer_finish"}
+    return get_path(tree

@@ -125,4 +125,4 @@ class ChatBot(keras.Model):
    
 5. **问：自然语言交互Agent面临哪些挑战？**
    
-   答：自然语言交互Agent面临的挑战包括如何处理模糊的语言，如何理解用户的意图，如何处理多模态的输入等。{"msg_type":"generate_answer_finish"}
+   答：自然语言交互Agent面临的挑战包括如何处理模糊的语言，如何理解用户的意图，如何处理多模态的输入等。

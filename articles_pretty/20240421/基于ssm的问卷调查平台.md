@@ -232,4 +232,4 @@ $$\begin{aligned}
 - `answer`: 存储用户的答案
 - `user`: 存储注册用户信息
 
-其中,`answer`表与`survey`、`{"msg_type":"generate_answer_finish"}
+其中,`answer`表与`survey`、`

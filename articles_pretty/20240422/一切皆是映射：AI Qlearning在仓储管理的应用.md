@@ -212,4 +212,4 @@ for episode in range(1000):
         if random.uniform(0, 1) < EPSILON:
             action = random.choice(RESTOCK_AMOUNTS)  # 探索
         else:
-            action = np.argmax(Q_table{"msg_type":"generate_answer_finish"}
+            action = np.argmax(Q_table

@@ -186,4 +186,4 @@ CREATE TABLE `rental` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `item_id` (`item_id`),
-  CONSTRAINT `rental_ibfk_1` FOREIGN KEY (`user{"msg_type":"generate_answer_finish"}
+  CONSTRAINT `rental_ibfk_1` FOREIGN KEY (`user

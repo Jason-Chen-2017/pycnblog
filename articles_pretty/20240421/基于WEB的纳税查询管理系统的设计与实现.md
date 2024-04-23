@@ -273,4 +273,4 @@ public ResponseEntity<String> declareIndividualIncomeTax(
     }
     
     // 计算应纳税额
-    BigDecimal taxAmount{"msg_type":"generate_answer_finish"}
+    BigDecimal taxAmount

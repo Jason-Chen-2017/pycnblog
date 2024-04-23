@@ -331,4 +331,4 @@ public class RoomController {
             <th>房型</th>
             <th>状态</th>
             <th>当前入住客人</th>
-            <th>操作{"msg_type":"generate_answer_finish"}
+            <th>操作

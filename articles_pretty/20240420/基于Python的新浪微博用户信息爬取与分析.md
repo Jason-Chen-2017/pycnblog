@@ -83,4 +83,4 @@ with open('weibo_user_info.txt', 'w') as f:
    A: 可以使用多线程或多进程，也可以使用异步IO。还可以使用分布式爬虫，将任务分散到多台计算机上执行。
 
 3. Q: 如何处理抓取到的数据？
-   A: 可以使用数据库存储数据，也可以使用数据处理库如Pandas进行数据分析。{"msg_type":"generate_answer_finish"}
+   A: 可以使用数据库存储数据，也可以使用数据处理库如Pandas进行数据分析。

@@ -256,4 +256,4 @@ print(f"Test Accuracy: {100 * correct / total:.2f}%")
 通过深度学习分析RNA测序数据,研究基因表达调控机制,鉴定差异表达基因,为疾病诊断和药物开发提供线索。
 
 ### 6.3 蛋白质结构与功能预测
-基于深度学习从蛋白质序列{"msg_type":"generate_answer_finish"}
+基于深度学习从蛋白质序列

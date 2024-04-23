@@ -181,4 +181,4 @@ def on_message(client, userdata, msg):
     print(f"Received message: {msg.payload.decode()} on topic {msg.topic}")
 
 # 创建MQTT客户端实例
-client = mqtt.Client{"msg_type":"generate_answer_finish"}
+client = mqtt.Client

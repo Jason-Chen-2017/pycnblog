@@ -211,4 +211,4 @@ class RBM(object):
 class DBN(object):
     def __init__(self, visible_dim, hidden_dims):
         self.visible_dim = visible_dim
-        self.hidden_dims ={"msg_type":"generate_answer_finish"}
+        self.hidden_dims =

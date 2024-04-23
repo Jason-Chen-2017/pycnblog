@@ -264,4 +264,4 @@ CREATE TABLE knowledge_article (
     title VARCHAR(255) NOT NULL,
     content TEXT NOT NULL,
     author_id INT NOT NULL,
-    {"msg_type":"generate_answer_finish"}
+    

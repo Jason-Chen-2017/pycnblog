@@ -190,4 +190,4 @@ import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
 
-env = gym.make('{"msg_type":"generate_answer_finish"}
+env = gym.make('

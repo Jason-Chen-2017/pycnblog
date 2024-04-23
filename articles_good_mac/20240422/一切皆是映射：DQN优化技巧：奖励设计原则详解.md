@@ -183,4 +183,4 @@ class DQNAgent:
         self.buffer_size = buffer_size
 
         self.q_net = QNetwork()
-        self.target{"msg_type":"generate_answer_finish"}
+        self.target

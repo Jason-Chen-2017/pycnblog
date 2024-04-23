@@ -119,4 +119,4 @@ public ResponseEntity<?> register(@RequestBody User user) {
 
    **解答**：我们可以使用Flyway或者Liquibase来进行数据库的迁移。
 
-以上就是关于“基于Spring Boot的网络文学交流分享平台”的全部内容，希望对您有所帮助。如果您有任何问题或者建议，欢迎在下面的评论区留言。{"msg_type":"generate_answer_finish"}
+以上就是关于“基于Spring Boot的网络文学交流分享平台”的全部内容，希望对您有所帮助。如果您有任何问题或者建议，欢迎在下面的评论区留言。

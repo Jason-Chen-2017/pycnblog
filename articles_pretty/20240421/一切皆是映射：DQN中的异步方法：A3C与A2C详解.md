@@ -180,4 +180,4 @@ class ValueNet(nn.Module):
 
     def forward(self, x):
         x = F.relu(self.fc1(x))
-        state_value = self.fc{"msg_type":"generate_answer_finish"}
+        state_value = self.fc

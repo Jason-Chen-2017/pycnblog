@@ -123,4 +123,4 @@ class SelfAttention(tf.keras.layers.Layer):
 答：自注意力机制具有计算效率高、可并行化、能够捕捉长程依赖关系等优点。
 
 4. **问：Transformer模型在哪些应用场景中表现优秀？**
-答：Transformer模型在机器翻译、文本分类、情感分析、命名实体识别等NLP任务中都表现出优异的性能，还被应用到了语音识别、图像识别等其他领域。{"msg_type":"generate_answer_finish"}
+答：Transformer模型在机器翻译、文本分类、情感分析、命名实体识别等NLP任务中都表现出优异的性能，还被应用到了语音识别、图像识别等其他领域。

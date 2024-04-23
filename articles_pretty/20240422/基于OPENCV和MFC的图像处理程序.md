@@ -205,4 +205,4 @@ OpenCV和MFC的结合，可以在很多实际应用场景中发挥作用。例�
    答：可以使用CDC类和CBitmap类创建一个Bitmap对象，然后将图像数据绘制到Bitmap对象上，最后将Bitmap对象绘制到Picture Control的DC上。
 
 4. 问题：如何提高图像处理的速度？
-   答：可以使用OpenCV的GPU模块，利用GPU的并行计算能力来提高图像处理的速度。同时，也可以优化算法，减少不必要的计算。{"msg_type":"generate_answer_finish"}
+   答：可以使用OpenCV的GPU模块，利用GPU的并行计算能力来提高图像处理的速度。同时，也可以优化算法，减少不必要的计算。

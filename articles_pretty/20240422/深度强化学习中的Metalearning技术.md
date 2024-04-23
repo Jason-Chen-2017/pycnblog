@@ -166,4 +166,4 @@ L2O算法的具体步骤如下:
 2. 初始化一个参数向量$\phi_0$,作为优化的初始解。
 3. 对于$t=1,2,\dots,T$:
     - 使用当前参数$\phi_{t-1}$,在支持任务$\mathcal{T}^{tr}$上计算损失$\mathcal{L}_{\mathcal{T}^{tr}}(\phi_{t-1})$。
-    - 使用可学习的优化策略网络$f_\theta$,根据{"msg_type":"generate_answer_finish"}
+    - 使用可学习的优化策略网络$f_\theta$,根据

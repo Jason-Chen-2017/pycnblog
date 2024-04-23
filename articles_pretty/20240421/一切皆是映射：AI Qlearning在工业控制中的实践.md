@@ -178,4 +178,4 @@ class QNetwork(nn.Module):
         return self.fc2(x)
 
 q_network = QNetwork(env.observation_space.shape[0], env.action_space.n)
-optimizer = optim.Adam(q_network.parameters(),{"msg_type":"generate_answer_finish"}
+optimizer = optim.Adam(q_network.parameters(),

@@ -80,4 +80,4 @@ Spring Boot支持多种关系型数据库，如MySQL、Oracle、PostgreSQL等，
 
 ### 8.3 如何在Spring Boot中进行数据验证？
 
-在Spring Boot中，我们可以通过JPA的@Valid注解以及Hibernate Validator来进行数据验证。{"msg_type":"generate_answer_finish"}
+在Spring Boot中，我们可以通过JPA的@Valid注解以及Hibernate Validator来进行数据验证。

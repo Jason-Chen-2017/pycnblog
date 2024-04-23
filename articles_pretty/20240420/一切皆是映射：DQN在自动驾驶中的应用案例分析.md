@@ -263,4 +263,4 @@ for episode in range(num_episodes):
         if steps_done % TARGET_UPDATE == 0:
             target_net.load_state_dict(policy_net.state_dict())
             
-    episode_durations.append(t + 1{"msg_type":"generate_answer_finish"}
+    episode_durations.append(t + 1

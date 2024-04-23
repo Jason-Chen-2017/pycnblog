@@ -240,4 +240,4 @@ class ModelServer(SeldonComponent):
 
 在`__init__`方法中,我们加载了之前保存的模型文件。`predict`方法则实现了模型的预测逻辑,它接收一个NumPy数组作为输入,并返回模型的预测结果。
 
-接下来,我们创建一个`requirements.txt`文件,列出模型所需的Python依赖库:{"msg_type":"generate_answer_finish"}
+接下来,我们创建一个`requirements.txt`文件,列出模型所需的Python依赖库:

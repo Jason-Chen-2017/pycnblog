@@ -176,4 +176,4 @@ for state in states:
 
 4. `q_learning`函数实现了Q-learning算法。我们初始化一个Q值表,然后进行多次迭代。在每次迭代中,我们根据当前状态和$\epsilon$-贪婪策略选择一个行为,执行该行为,观察下一个状态和即时奖励,并根据更新公式更新相应的Q值。
 
-5.{"msg_type":"generate_answer_finish"}
+5.

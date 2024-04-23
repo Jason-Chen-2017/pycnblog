@@ -282,4 +282,4 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 ```
 
-在上面的代码中,我们首先创建一个Flask应用程序实例。然后,我们使用`joblib.load`函数加载{"msg_type":"generate_answer_finish"}
+在上面的代码中,我们首先创建一个Flask应用程序实例。然后,我们使用`joblib.load`函数加载

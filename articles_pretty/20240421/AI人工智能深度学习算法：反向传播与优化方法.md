@@ -151,4 +151,4 @@ $$
 梯度下降是最基本的优化算法,它根据计算得到的梯度,沿着梯度的反方向对参数进行更新:
 
 $$
-\theta \leftarrow \{"msg_type":"generate_answer_finish"}
+\theta \leftarrow \

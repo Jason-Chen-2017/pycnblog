@@ -231,4 +231,4 @@ for epoch in range(n_epochs):
         # 训练生成器
         z = torch.randn(real_imgs.size(0), z_dim)
         g_optimizer.zero_grad()
-        fake_imgs = generator(z){"msg_type":"generate_answer_finish"}
+        fake_imgs = generator(z)

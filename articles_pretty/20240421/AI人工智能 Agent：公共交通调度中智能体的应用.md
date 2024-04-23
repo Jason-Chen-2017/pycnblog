@@ -125,4 +125,4 @@ A: 强化学习是一种让智能体通过与环境的交互来学习最优行�
 
 Q: 公共交通调度问题可以用什么算法来解决？
 
-A: 公共交通调度问题可以使用强化学习或深度强化学习来解决，具体的算法有Q-Learning、Sarsa、DQN、DDPG等。{"msg_type":"generate_answer_finish"}
+A: 公共交通调度问题可以使用强化学习或深度强化学习来解决，具体的算法有Q-Learning、Sarsa、DQN、DDPG等。

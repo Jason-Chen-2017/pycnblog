@@ -206,4 +206,4 @@ def q_learning(max_episodes, max_steps, alpha, epsilon):
             # 执行行为
             next_state, reward = step(state, action)
             
-            # 更新Q{"msg_type":"generate_answer_finish"}
+            # 更新Q

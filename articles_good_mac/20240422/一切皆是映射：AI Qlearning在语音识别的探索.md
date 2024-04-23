@@ -241,4 +241,4 @@ for state in test_data:
 
 # 6. 实际应用场景
 
-Q{"msg_type":"generate_answer_finish"}
+Q

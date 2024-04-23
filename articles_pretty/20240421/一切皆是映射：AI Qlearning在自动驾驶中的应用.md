@@ -93,4 +93,4 @@ Q: Q-learning如何保证安全性？
 A: Q-learning可以通过设计合适的奖励函数来保证安全性，例如对危险行为进行严重惩罚。
 
 Q: Q-learning的学习效率如何？  
-A: Q-learning的学习效率可能较低，因为它需要许多次的试错才能学习到最优策略。然而，通过引入如经验回放、目标网络等技巧，可以提高Q-learning的学习效率。{"msg_type":"generate_answer_finish"}
+A: Q-learning的学习效率可能较低，因为它需要许多次的试错才能学习到最优策略。然而，通过引入如经验回放、目标网络等技巧，可以提高Q-learning的学习效率。

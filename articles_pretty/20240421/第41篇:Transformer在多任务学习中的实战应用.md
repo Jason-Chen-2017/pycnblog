@@ -171,4 +171,4 @@ class TransformerEncoder(nn.Module):
         
         src = self.dropout((self.tok_embedding(src) * self.scale) + self.pos_embedding(pos))
         
-        # src = [batch_size, src_len, hid_dim]{"msg_type":"generate_answer_finish"}
+        # src = [batch_size, src_len, hid_dim]

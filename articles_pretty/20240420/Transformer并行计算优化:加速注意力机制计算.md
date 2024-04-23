@@ -117,4 +117,4 @@ $$\text{Attention}(\boldsymbol{q}, \boldsymbol{K}, \boldsymbol{V}) = \text{softm
 
 2. 应用Softmax函数:$\boldsymbol{\alpha} = \text{softmax}\left(\frac{\boldsymbol{q}\boldsymbol{K}^\top}{\sqrt{3}}\right) = \begin{bmatrix} 0.3333 & 0.6667 \\ 0.3333 & 0.6667 \\ 0.3333 & 0.6667 \end{bmatrix}$
 
-3. 计算加权和:$\text{Attention}(\boldsym{"msg_type":"generate_answer_finish"}
+3. 计算加权和:$\text{Attention}(\boldsym

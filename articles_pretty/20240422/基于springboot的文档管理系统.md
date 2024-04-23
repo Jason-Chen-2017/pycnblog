@@ -246,4 +246,4 @@ public interface DocumentVersionRepository extends JpaRepository<DocumentVersion
 
 ```java
 @Service
-public class DocumentServiceImpl{"msg_type":"generate_answer_finish"}
+public class DocumentServiceImpl

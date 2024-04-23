@@ -307,4 +307,4 @@ while True:
    - 将当前图像通过WiFi传输到远程设备
    - 等待一段时间,进入下一帧
 
-### {"msg_type":"generate_answer_finish"}
+### 

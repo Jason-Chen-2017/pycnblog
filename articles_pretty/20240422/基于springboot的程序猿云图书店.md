@@ -140,4 +140,4 @@ Springboot是一个开源的Java框架，用于创建独立的、基于Spring的
 
 ### 8.3 我如何部署我的Springboot应用？
 
-你可以使用各种方法来部署你的Springboot应用，包括传统的物理服务器，虚拟化服务器，以及云服务等。在我们的项目中，我们使用了Docker进行容器化部署。{"msg_type":"generate_answer_finish"}
+你可以使用各种方法来部署你的Springboot应用，包括传统的物理服务器，虚拟化服务器，以及云服务等。在我们的项目中，我们使用了Docker进行容器化部署。

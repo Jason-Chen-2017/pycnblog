@@ -215,4 +215,4 @@ public class ServicePersonController {
 
 5. 问题：SpringBoot怎么实现定时任务？
 
-答：SpringBoot提供了对Spring Task的支持，可以通过在方法上使用@Scheduled注解来定义一个定时任务。然后在启动类上使用@EnableScheduling注解来启用定时任务的功能。{"msg_type":"generate_answer_finish"}
+答：SpringBoot提供了对Spring Task的支持，可以通过在方法上使用@Scheduled注解来定义一个定时任务。然后在启动类上使用@EnableScheduling注解来启用定时任务的功能。

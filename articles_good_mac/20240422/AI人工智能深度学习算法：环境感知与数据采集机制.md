@@ -197,4 +197,4 @@ for d in trackers:
     cv2.putText(frame, str(id), (x1, y1 - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
 ```
 
-我们首先创建一个SORT跟踪器实例。在每一帧,我们将检测结果转换为SORT所需的格式,并调用`update`方法进行跟踪。该方法会返回当前帧中所有目标的边界框和ID。最后,我们在原始帧{"msg_type":"generate_answer_finish"}
+我们首先创建一个SORT跟踪器实例。在每一帧,我们将检测结果转换为SORT所需的格式,并调用`update`方法进行跟踪。该方法会返回当前帧中所有目标的边界框和ID。最后,我们在原始帧

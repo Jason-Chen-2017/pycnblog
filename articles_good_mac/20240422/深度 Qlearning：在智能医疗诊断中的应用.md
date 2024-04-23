@@ -214,4 +214,4 @@ for episode in range(num_episodes):
 ### 6.1 辅助诊断系统
 将深度Q学习集成到辅助诊断系统中,根据患者的症状和检查结果,提供最优的诊断建议和后续检查项目。这可以减轻医生的工作负担,提高诊断质量。
 
-### 6.2 罕{"msg_type":"generate_answer_finish"}
+### 6.2 罕

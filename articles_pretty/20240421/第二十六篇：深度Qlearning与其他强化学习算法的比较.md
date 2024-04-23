@@ -180,4 +180,4 @@ class DQN(nn.Module):
 # 定义经验回放池
 class ReplayBuffer:
     def __init__(self, capacity):
-        self.buffer = collections.deque(maxlen{"msg_type":"generate_answer_finish"}
+        self.buffer = collections.deque(maxlen

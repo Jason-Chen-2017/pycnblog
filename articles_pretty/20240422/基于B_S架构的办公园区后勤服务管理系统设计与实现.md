@@ -304,4 +304,4 @@ public class SchedulingAlgorithm {
 
 `calculateCost`方法实现了调度成本计算公式,其中`C1`、`C2`、`C3`分别为价格、距离和时间权重。距离计算由`calculateDistance`方法给出(这里进行了简化,返回常量1)。
 
-最后,算法遍历排序后的资源列表,对于每种资源,{"msg_type":"generate_answer_finish"}
+最后,算法遍历排序后的资源列表,对于每种资源,

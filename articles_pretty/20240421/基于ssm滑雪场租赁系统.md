@@ -361,4 +361,4 @@ public Result getRevenue(Date startTime, Date endTime){
 Spring Boot可以极大地简化Spring应用的开发,它提供了:
 
 - 自动配置: 根据classpath自动配置所需的Bean
-- 内嵌容器: 内{"msg_type":"generate_answer_finish"}
+- 内嵌容器: 内

@@ -176,4 +176,4 @@ def xavier_init(shape):
 ### 6.1 深度学习框架
 
 - PyTorch: https://pytorch.org/
-- TensorFlow:{"msg_type":"generate_answer_finish"}
+- TensorFlow:

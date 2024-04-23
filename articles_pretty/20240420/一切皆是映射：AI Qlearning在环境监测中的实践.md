@@ -228,4 +228,4 @@ class QLearning:
 
         # 初始化Q表格
         self.q_table = {}
-        for row in range(env{"msg_type":"generate_answer_finish"}
+        for row in range(env

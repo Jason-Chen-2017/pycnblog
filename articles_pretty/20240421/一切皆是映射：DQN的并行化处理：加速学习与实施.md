@@ -133,4 +133,4 @@ $$L(\theta) = \mathbb{E}_{(s,a,r,s')\sim D}\left[\left(Q(s,a;\theta) - \left(r +
 
 - $Q(s,a;\theta)$是在线Q网络根据当前状态s和行为a输出的Q值估计
 - $r$是执行行为a后获得的即时奖励
-- $\gamma$是折现因子,控制未来奖励的重要程度,通常取值{"msg_type":"generate_answer_finish"}
+- $\gamma$是折现因子,控制未来奖励的重要程度,通常取值

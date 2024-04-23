@@ -151,4 +151,4 @@ print('Test accuracy:', score[1])
 
 2. 迁移学习适用于所有的机器学习任务吗？
 
-不一定。{"msg_type":"generate_answer_finish"}
+不一定。

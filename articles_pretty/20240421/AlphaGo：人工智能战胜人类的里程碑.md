@@ -142,4 +142,4 @@ A：AlphaGo Zero是AlphaGo的升级版，它去掉了依赖于人类棋谱的监
 
 **Q：AlphaGo能在其他游戏上获得相同的成功吗？**
 
-A：AlphaGo的方法已经被证明在围棋以外的其他游戏上也很有效，例如中国象棋、将棋等。最近，DeepMind的AlphaZero甚至在国际象棋、将棋和围棋上都取得了超越人类的表现。{"msg_type":"generate_answer_finish"}
+A：AlphaGo的方法已经被证明在围棋以外的其他游戏上也很有效，例如中国象棋、将棋等。最近，DeepMind的AlphaZero甚至在国际象棋、将棋和围棋上都取得了超越人类的表现。

@@ -210,4 +210,4 @@ class ContrastiveStateEncoder(nn.Module):
         return self.encoder(state)
 
 # 训练对比学习编码器
-encoder = ContrastiveStateEncoder(state_dim, latent_{"msg_type":"generate_answer_finish"}
+encoder = ContrastiveStateEncoder(state_dim, latent_

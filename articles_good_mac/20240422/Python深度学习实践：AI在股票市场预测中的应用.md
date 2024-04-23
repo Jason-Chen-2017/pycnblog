@@ -178,4 +178,4 @@ test_data = data_scaled[train_size+val_size:]
 ```
 
 ### 5.5 模型构建
-构建一个LSTM模型用于股{"msg_type":"generate_answer_finish"}
+构建一个LSTM模型用于股

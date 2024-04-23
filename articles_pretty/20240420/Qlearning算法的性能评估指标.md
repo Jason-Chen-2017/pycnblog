@@ -155,4 +155,4 @@ A: Q-learning算法和深度学习可以结合形成深度Q学习。在深度Q�
 
 Q: Q-learning算法如何处理连续状态和动作？
 
-A: Q-learning算法原生不支持连续状态和动作，但是可以通过离散化或者函数逼近等方法进行处理。{"msg_type":"generate_answer_finish"}
+A: Q-learning算法原生不支持连续状态和动作，但是可以通过离散化或者函数逼近等方法进行处理。

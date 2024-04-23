@@ -150,4 +150,4 @@ from collections import deque, namedtuple
 from itertools import count
 
 # 定义经验转移
-Transition = namedtuple('Transition', ('state', 'action', 'reward', {"msg_type":"generate_answer_finish"}
+Transition = namedtuple('Transition', ('state', 'action', 'reward', 

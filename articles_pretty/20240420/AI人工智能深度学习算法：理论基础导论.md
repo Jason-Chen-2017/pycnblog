@@ -133,4 +133,4 @@ $$\frac{\partial z_{l+1}}{\partial z_l} = W_{l+1}^T\text{diag}(\phi'(z_{l+1}))$$
 
 设输入特征图为$X\in\mathbb{R}^{C\times H\times W}$,卷积核为$K\in\mathbb{R}^{C\times K_H\times K_W}$,输出特征图为$Y\in\mathbb{R}^{C'\times H'\times W'}$。卷积运算可以表示为:
 
-$$Y(c',i',j') = \sum_{c=1}^C\sum_{k_h=1}^{K_H}\sum_{k_w=1}^{K_W{"msg_type":"generate_answer_finish"}
+$$Y(c',i',j') = \sum_{c=1}^C\sum_{k_h=1}^{K_H}\sum_{k_w=1}^{K_W

@@ -122,4 +122,4 @@ $$
 \begin{aligned}
 \boldsymbol{f}_t &= \sigma\left(\boldsymbol{W}_f\boldsymbol{x}_t + \boldsymbol{U}_f\boldsymbol{h}_{t-1} + \boldsymbol{b}_f\right)\\
 \boldsymbol{i}_t &= \sigma\left(\boldsymbol{W}_i\boldsymbol{x}_t + \boldsymbol{U}_i\boldsymbol{h}_{t-1} + \boldsymbol{b}_i\right)\\
-\boldsymbol{o}_t &= \sigma\left(\boldsymbol{W}_o\boldsymbol{x}_t + \boldsymbol{U}_o\boldsymbol{h}_{t-1{"msg_type":"generate_answer_finish"}
+\boldsymbol{o}_t &= \sigma\left(\boldsymbol{W}_o\boldsymbol{x}_t + \boldsymbol{U}_o\boldsymbol{h}_{t-1

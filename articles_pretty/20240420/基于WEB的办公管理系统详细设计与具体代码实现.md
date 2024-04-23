@@ -217,4 +217,4 @@ $$
 
 ### 4.1.2 Hirschberg算法
 
-Hirschberg算法是一种基于分治思{"msg_type":"generate_answer_finish"}
+Hirschberg算法是一种基于分治思

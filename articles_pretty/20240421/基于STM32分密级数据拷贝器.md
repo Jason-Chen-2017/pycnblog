@@ -253,4 +253,4 @@ void GenerateUserKey(uint8_t* user_key, uint32_t user_id)
     RNG_HandleTypeDef hrng;
     hrng.Instance = RNG;
     HAL_RNG_Init(&hrng);
-    HAL_{"msg_type":"generate_answer_finish"}
+    HAL_

@@ -239,4 +239,4 @@ def preprocess_observation(obs):
 ```python
 import tensorflow as tf
 
-inputs = tf.placeholder(tf.float32{"msg_type":"generate_answer_finish"}
+inputs = tf.placeholder(tf.float32

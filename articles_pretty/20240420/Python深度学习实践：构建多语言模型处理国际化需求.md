@@ -193,4 +193,4 @@ import torch.nn as nn
 class TransformerEncoder(nn.Module):
     # 编码器实现...
 
-class TransformerDecoder(nn{"msg_type":"generate_answer_finish"}
+class TransformerDecoder(nn

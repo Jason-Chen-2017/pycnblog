@@ -252,4 +252,4 @@ Q: 深度Q-learning如何选择行动？
 A: 深度Q-learning通常使用贪婪策略来选择行动。也就是说，深度Q-learning会选择当前状态下Q值最大的行动。然而，为了探索，深度Q-learning有时也会选择随机的行动。
 
 Q: 深度Q-learning如何更新Q值？
-A: 深度Q-learning使用神经网络来估计Q值，然后根据新的回馈和新的状态来{"msg_type":"generate_answer_finish"}
+A: 深度Q-learning使用神经网络来估计Q值，然后根据新的回馈和新的状态来

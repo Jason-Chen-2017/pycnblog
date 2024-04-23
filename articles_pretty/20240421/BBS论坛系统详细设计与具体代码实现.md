@@ -206,4 +206,4 @@ SQL注入是一种常见的网络攻击手段，攻击者通过在输入中插�
 
 ### 8.2 如何防止XSS攻击？
 
-XSS攻击是一种常见的网络攻击手段，攻击者通过在输入中插入恶意的JavaScript代码，来{"msg_type":"generate_answer_finish"}
+XSS攻击是一种常见的网络攻击手段，攻击者通过在输入中插入恶意的JavaScript代码，来

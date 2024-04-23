@@ -230,4 +230,4 @@ public class PlayerController : MonoBehaviour
 
 2. **游戏化教育和培训**:将跑酷游戏的机制应用于教育和培训领域,可以提高学习者的参与度和动机。例如,设计一款以逃生为主题的跑酷游戏,可以用于消防安全培训。
 
-3. **虚拟现实(V{"msg_type":"generate_answer_finish"}
+3. **虚拟现实(V

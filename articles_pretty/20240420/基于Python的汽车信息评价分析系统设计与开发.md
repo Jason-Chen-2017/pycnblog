@@ -179,4 +179,4 @@ def preprocess_text(text):
     return ' '.join(tokens)
 
 # 示例用法
-review_text = "This car has an amazing engine performance{"msg_type":"generate_answer_finish"}
+review_text = "This car has an amazing engine performance

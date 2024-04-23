@@ -95,4 +95,4 @@ A2：如果你只是作为用户使用这个系统，那么你并不需要任何
 
 ### Q3：我可以在哪里学习相关的知识？
 
-A3：你可以在网上找到许多关于Python编程、MQTT协议和RESTful API的教程和资料。例如，Python的官方网站提供了详细的文档和教程，MQTT协议的官方网站提供了详细的规范和教程，而对于RESTful API，你可以在网上找到许多教程和例子。{"msg_type":"generate_answer_finish"}
+A3：你可以在网上找到许多关于Python编程、MQTT协议和RESTful API的教程和资料。例如，Python的官方网站提供了详细的文档和教程，MQTT协议的官方网站提供了详细的规范和教程，而对于RESTful API，你可以在网上找到许多教程和例子。

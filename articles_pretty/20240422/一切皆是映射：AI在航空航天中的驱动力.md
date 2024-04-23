@@ -255,4 +255,4 @@ $$S(i,j) = (X*K)(i,j) = \sum_{m}\sum_{n}X(i+m,j+n)K(m,n)$$
 
 ### 4.2.2 循环神经网络
 
-循环神经网络(RNN)是一种处理序列数据{"msg_type":"generate_answer_finish"}
+循环神经网络(RNN)是一种处理序列数据

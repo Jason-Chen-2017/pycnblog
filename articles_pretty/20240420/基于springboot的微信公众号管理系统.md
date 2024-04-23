@@ -84,4 +84,4 @@ public class AesEncryptUtils {
 
 **问：如何测试微信公众号管理系统？**
 
-答：你可以使用微信公众平台提供的测试公众号，或者使用第三方的微信测试工具。{"msg_type":"generate_answer_finish"}
+答：你可以使用微信公众平台提供的测试公众号，或者使用第三方的微信测试工具。

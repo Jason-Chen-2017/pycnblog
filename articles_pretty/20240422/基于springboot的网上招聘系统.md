@@ -261,4 +261,4 @@ public class NotificationService {
     private RuleSet rulesForNotifications;
 
     public void sendNotifications(Object fact) {
-        List<Action> actions = rulesForNotifications.getActions(fact);{"msg_type":"generate_answer_finish"}
+        List<Action> actions = rulesForNotifications.getActions(fact);

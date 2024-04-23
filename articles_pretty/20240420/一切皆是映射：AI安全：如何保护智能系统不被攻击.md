@@ -175,4 +175,4 @@ def fgsm_attack(image, epsilon, data_grad):
     # Create the perturbed image by adjusting each pixel of the input image
     perturbed_image = image + epsilon*sign_data_grad
     # Adding clipping to maintain [0,1] range
-    perturbed_image = torch.cl{"msg_type":"generate_answer_finish"}
+    perturbed_image = torch.cl

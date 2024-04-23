@@ -150,4 +150,4 @@ class RadarDataset(Dataset):
         self.files = sorted(os.listdir(data_dir))
 
     def __len__(self):
-        return len({"msg_type":"generate_answer_finish"}
+        return len(

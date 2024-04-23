@@ -152,4 +152,4 @@ ECharts 的核心原理包括:
 
 1. **数据源 (Data Source)**: 连接各种数据源,如关系数据库、OLAP 数据库、XML 文件等。
 2. **报表设计 (Report Design)**: 使用可视化设计工具或 XML 定义报表的布局和样式。
-3. **报表填充 (Report Filling)**: 将数据{"msg_type":"generate_answer_finish"}
+3. **报表填充 (Report Filling)**: 将数据

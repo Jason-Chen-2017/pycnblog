@@ -191,4 +191,4 @@ $$
 
 **举例说明**:
 
-假设我们有一个一维{"msg_type":"generate_answer_finish"}
+假设我们有一个一维

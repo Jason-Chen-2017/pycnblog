@@ -215,4 +215,4 @@ print(f"基于项目的预测评分: {prediction}")  # 4.67
 
 ## 5. 项目实践:代码实例和详细解释说明
 
-在本节中,我们将使用{"msg_type":"generate_answer_finish"}
+在本节中,我们将使用

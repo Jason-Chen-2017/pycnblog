@@ -205,4 +205,4 @@ $$\tilde{e} = \frac{e}{\sqrt{d_k}}$$
 
 3. 对缩放后的注意力分数向量应用softmax函数,得到注意力权重向量$\alpha$:
 
-$$\alpha = \text{softmax}(\tilde{e}) = \left(\frac{e^{\tilde{e}_{"msg_type":"generate_answer_finish"}
+$$\alpha = \text{softmax}(\tilde{e}) = \left(\frac{e^{\tilde{e}_

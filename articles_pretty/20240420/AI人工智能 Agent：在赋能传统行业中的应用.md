@@ -76,4 +76,3 @@ AI在赋能传统行业的过程中，有着巨大的潜力和广阔的前景。
 
 5. 问：有哪些工具和资源可以帮助我学习AI？
 答：TensorFlow和PyTorch等深度学习框架，Google Cloud和Amazon AWS等云计算平台，Coursera和edX等在线教育平台都是很好的学习资源。
-{"msg_type":"generate_answer_finish"}

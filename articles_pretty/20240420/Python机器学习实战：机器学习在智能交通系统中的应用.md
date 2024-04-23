@@ -178,4 +178,4 @@ $$\delta^{(l)} = ((w^{(l+1)})^T\delta^{(l+1)}) \odot f'(z^{(l)})$$
 $$\frac{\partial C}{\partial w^{(l)}} = \delta^{(l)}(a^{(l-1)})^T$$
 $$\frac{\partial C}{\partial b^{(l)}} = \delta^{(l)}$$
 
-其中，$C$是损失函数，$\delta^{(l)}$是{"msg_type":"generate_answer_finish"}
+其中，$C$是损失函数，$\delta^{(l)}$是

@@ -162,4 +162,4 @@ A: 我们可以使用OpenCV来读取视频流，然后使用YOLOv5的模型进�
 
 **Q: 如果我没有GPU，能否训练YOLOv5的模型？**
 
-A: 可以的，但是训练速度会比较慢。如果没有GPU，我们可以使用Google Colab，它提供了免费的GPU计算资源。{"msg_type":"generate_answer_finish"}
+A: 可以的，但是训练速度会比较慢。如果没有GPU，我们可以使用Google Colab，它提供了免费的GPU计算资源。

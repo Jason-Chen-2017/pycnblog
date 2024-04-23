@@ -417,4 +417,4 @@ public class OrderItem {
 
 #### 4.4.2 Repository接口
 
-`com.example.agriecommerce{"msg_type":"generate_answer_finish"}
+`com.example.agriecommerce

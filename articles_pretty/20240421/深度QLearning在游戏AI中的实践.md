@@ -227,4 +227,4 @@ class DQNAgent:
         done_batch = torch.tensor(np.float32(done_batch), dtype=torch.float32).to(self.device)
         
         q_values = self.q_net(state_batch).gather(1, action_batch)
-        next_q_values = self.target{"msg_type":"generate_answer_finish"}
+        next_q_values = self.target

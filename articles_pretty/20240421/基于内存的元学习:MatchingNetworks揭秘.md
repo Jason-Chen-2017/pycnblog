@@ -64,4 +64,4 @@ $$
 \hat{y} = \sum_{i=1}^n a(x, x_i) y_i
 $$
 
-这就是Matching Networks的核心算法。{"msg_type":"generate_answer_finish"}
+这就是Matching Networks的核心算法。

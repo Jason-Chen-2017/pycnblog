@@ -167,4 +167,4 @@ class DQNAgent:
         states = torch.tensor(states, dtype=torch.float32).to(self.device)
         actions = torch.tensor(actions, dtype=torch.int64).unsqueeze(1).to(self.device)
         rewards = torch.tensor(rewards, dtype=torch.float32).unsqueeze(1).to(self.device)
-        next_states = torch.tensor(next_states{"msg_type":"generate_answer_finish"}
+        next_states = torch.tensor(next_states

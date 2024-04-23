@@ -151,4 +151,4 @@ $$
 假设经过训练,我们得到了生成器 $G$ 和判别器 $D$。对于输入 $\tilde{h}_5$,生成器 $G$ 将其解码为合成数据序列:
 
 $$
-\tilde{X} = G(\tilde{h}_5) = (0.4, -0{"msg_type":"generate_answer_finish"}
+\tilde{X} = G(\tilde{h}_5) = (0.4, -0

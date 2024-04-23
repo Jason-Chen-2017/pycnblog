@@ -184,4 +184,4 @@ embedding_matrix = ...  # 加载预训练的词向量
 
 ```python
 from keras.models import Sequential
-from keras.layers import{"msg_type":"generate_answer_finish"}
+from keras.layers import

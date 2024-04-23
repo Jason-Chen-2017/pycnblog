@@ -203,4 +203,4 @@ def select_action(state):
     steps_done += 1
     if sample > eps_threshold:
         with torch.no_grad():
-            return policy_net(state).max({"msg_type":"generate_answer_finish"}
+            return policy_net(state).max(

@@ -241,4 +241,4 @@ public class GeocodingController {
         return geocoderService.geocode(address);
     }
 }
-```{"msg_type":"generate_answer_finish"}
+```

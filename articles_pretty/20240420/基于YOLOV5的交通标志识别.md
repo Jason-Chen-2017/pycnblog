@@ -245,4 +245,4 @@ model = YOLOv5(nc=num_classes)
 optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9, weight_decay=5e-4)
 criterion = YOLOLoss()
 
-# 训练循{"msg_type":"generate_answer_finish"}
+# 训练循

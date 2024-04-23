@@ -158,4 +158,4 @@ class ResidualDenseBlock(nn.Module):
         self.scale_ratio = scale_ratio
     
     def forward(self, x):
-        x1 = self.lrelu(self.conv1(x)){"msg_type":"generate_answer_finish"}
+        x1 = self.lrelu(self.conv1(x))

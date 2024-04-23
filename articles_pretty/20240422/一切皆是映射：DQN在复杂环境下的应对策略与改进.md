@@ -97,4 +97,4 @@ Q: 如何改进DQN？
 A: 可以通过Double DQN、Dueling DQN、Prioritized Experience Replay等策略来改进DQN。
 
 Q: DQN适用于什么类型的问题？
-A: DQN主要适用于具有连续状态空间和离散动作空间的问题。{"msg_type":"generate_answer_finish"}
+A: DQN主要适用于具有连续状态空间和离散动作空间的问题。

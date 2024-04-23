@@ -230,4 +230,4 @@ class Agent:
         with torch.no_grad():
             q_values = self.model(history_tensor.unsqueeze(0), intent_tensor.unsqueeze(0))
 
-        if np.random.random() {"msg_type":"generate_answer_finish"}
+        if np.random.random() 

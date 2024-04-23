@@ -129,4 +129,4 @@ $$Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha \left[ r_t + \gamma \max_{a} Q(s_{
 
 在时刻 $t$,智能体处于状态 $s_t$,执行行为 $a_t$ 生成了一个新词,获得了奖励 $r_t$,并转移到了新状态 $s_{t+1}$。根据上述更新规则,我们可以更新 $Q(s_t, a_t)$ 的估计值:
 
-$$Q(s_t, a_t{"msg_type":"generate_answer_finish"}
+$$Q(s_t, a_t

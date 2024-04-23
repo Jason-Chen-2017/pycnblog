@@ -251,4 +251,4 @@ class DQNAgent:
         state = torch.tensor(state, dtype=torch.float32)
         next_state = torch.tensor(next_state, dtype=torch.float32)
         action = torch.tensor([action], dtype=torch.int64)
-        reward = torch{"msg_type":"generate_answer_finish"}
+        reward = torch

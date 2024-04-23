@@ -82,4 +82,4 @@ Spring Boot具有简单，快速，强大等特点，可以极大的提高开发
 ### 9.2 如何学习Spring Boot？
 推荐阅读Spring Boot的官方文档，或者参加相关的在线课程进行学习。
 
-总的来说，基于Spring Boot的停车场管理系统是一种高效，灵活，易用的解决方案，值得在实际项目中广泛应用。{"msg_type":"generate_answer_finish"}
+总的来说，基于Spring Boot的停车场管理系统是一种高效，灵活，易用的解决方案，值得在实际项目中广泛应用。

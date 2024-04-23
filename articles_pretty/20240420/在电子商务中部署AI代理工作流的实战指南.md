@@ -259,4 +259,4 @@ def process_order(order):
 
 ### 9.1 如何选择合适的算法？
 
-选择合适的算法主要取决于你的数据和任务{"msg_type":"generate_answer_finish"}
+选择合适的算法主要取决于你的数据和任务

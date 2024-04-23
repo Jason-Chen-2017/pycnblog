@@ -225,4 +225,4 @@ Code table: {'h': '111', 'e': '101', 'l': '000', 'o': '001', ' ': '011', 'r': '0
 - Journal of Information Theory and Applications
 - Problems of Information Transmission
 
-## 8{"msg_type":"generate_answer_finish"}
+## 8

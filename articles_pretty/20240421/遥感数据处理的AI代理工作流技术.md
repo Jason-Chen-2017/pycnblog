@@ -108,4 +108,4 @@ test_loss, test_acc = model.evaluate(test_features,  test_labels, verbose=2)
    A：我们的技术主要依赖于GPU进行计算，因此需要一台配备了高性能GPU的计算机。
 
 3. Q：遥感数据处理的AI代理工作流技术需要多长时间才能处理一张遥感图像？
-   A：这主要取决于遥感图像的大小和复杂度，以及计算机的性能。一般来说，处理一张遥感图像可能需要几分钟到几小时不等。{"msg_type":"generate_answer_finish"}
+   A：这主要取决于遥感图像的大小和复杂度，以及计算机的性能。一般来说，处理一张遥感图像可能需要几分钟到几小时不等。

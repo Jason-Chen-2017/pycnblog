@@ -205,4 +205,4 @@ AI Agent作为人工智能的一种重要形式，有着广阔的应用前景和
 
 ### 8.3 问题：AI Agent能做什么？
 
-答：AI Agent可以做许{"msg_type":"generate_answer_finish"}
+答：AI Agent可以做许

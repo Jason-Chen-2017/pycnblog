@@ -217,4 +217,4 @@ def spectral_clustering(X, k, sigma=1.0):
 
 2. **如何确定最佳聚类数K?**
 
-常用的方法包括肘部法则、轮廓系数{"msg_type":"generate_answer_finish"}
+常用的方法包括肘部法则、轮廓系数

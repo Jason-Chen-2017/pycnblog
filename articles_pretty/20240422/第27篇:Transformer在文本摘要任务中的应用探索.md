@@ -137,4 +137,4 @@ A: 参数的选择需要根据具体的任务和数据进行，一般来说，�
 
 Q: Transformer模型有什么缺点？
 
-A: Transformer模型的主要缺点是计算量大，训练时间长，需要大量的数据和计算资源。此外，Transformer模型的解释性不强，有时候我们很难理解模型的行为。{"msg_type":"generate_answer_finish"}
+A: Transformer模型的主要缺点是计算量大，训练时间长，需要大量的数据和计算资源。此外，Transformer模型的解释性不强，有时候我们很难理解模型的行为。

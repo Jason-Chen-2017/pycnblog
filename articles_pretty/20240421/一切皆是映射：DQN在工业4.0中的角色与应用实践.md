@@ -175,4 +175,4 @@ class QNetwork(nn.Module):
 
     def forward(self, x):
         x = torch.relu(self.fc1(x))
-        x = torch.relu(self.fc2(x)){"msg_type":"generate_answer_finish"}
+        x = torch.relu(self.fc2(x))

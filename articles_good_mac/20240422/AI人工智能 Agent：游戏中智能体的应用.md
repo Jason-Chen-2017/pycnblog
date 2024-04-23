@@ -255,4 +255,4 @@ class ChaseState(State):
 
 class AttackState(State):
     def entry_actions(self):
-        print("Entering Attack state{"msg_type":"generate_answer_finish"}
+        print("Entering Attack state

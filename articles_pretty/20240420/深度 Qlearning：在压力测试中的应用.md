@@ -145,4 +145,4 @@ $$
 
 - $\alpha$ 是学习率,控制了每次更新的幅度。
 - $r$ 是执行行为 $a$ 后获得的即时奖励。
-- $\gamma$ 是折扣因子,用于权衡即时{"msg_type":"generate_answer_finish"}
+- $\gamma$ 是折扣因子,用于权衡即时

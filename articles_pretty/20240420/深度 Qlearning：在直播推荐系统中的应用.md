@@ -174,4 +174,4 @@ $$L(\theta) = \mathbb{E}_{(\mathbf{s}_t,a_t,r_t,\mathbf{s}_{t+1})\sim D}\left[ \
 
 其中$\theta^-$是目标Q网络的参数,用于估计$\max_{a'}Q(\mathbf{s}_{t+1},a';\theta^-)$,从而使训练更加稳定。$D$是经验回放池,从中采样$(\mathbf{s}_t,a_t,r_t,\mathbf{s}_{t+1})$数据进行训练。
 
-通过不断迭代上述过程,Q网络的参数$\theta$就能够逼近最优Q函数,从而得到最优{"msg_type":"generate_answer_finish"}
+通过不断迭代上述过程,Q网络的参数$\theta$就能够逼近最优Q函数,从而得到最优

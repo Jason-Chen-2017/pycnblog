@@ -177,4 +177,4 @@ import tensorflow as tf
 converter = tf.lite.TFLiteConverter.from_keras_model(model)
 tflite_model = converter.convert()
 
-# 保存Tensor{"msg_type":"generate_answer_finish"}
+# 保存Tensor

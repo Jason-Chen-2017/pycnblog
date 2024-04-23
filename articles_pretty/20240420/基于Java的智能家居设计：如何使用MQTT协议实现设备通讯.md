@@ -113,4 +113,3 @@ client.subscribe("home/light");
    A: 可以通过SSL/TLS加密，以及用户名和密码的方式，保障MQTT协议的通讯安全。
 
 希望本文能够帮助你理解如何使用Java和MQTT协议实现智能家居设备的通讯。如果你有任何问题或建议，欢迎留言。
-{"msg_type":"generate_answer_finish"}

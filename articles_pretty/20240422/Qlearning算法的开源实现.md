@@ -104,4 +104,4 @@ Q-learning是一个表格型的学习算法，而Deep Q-learning则是将神经�
 学习率和折扣因子的选择通常需要通过实验来确定，一般来说，学习率可以设置为0.1左右，折扣因子可以设置为0.9左右。
 
 ### 9.3 Q-learning算法收敛的条件是什么？
-Q-learning算法的收敛性主要取决于两个条件：一是所有的状态-动作对都必须无限次地被访问到，二是学习率要满足一定的条件，例如 $\sum_{t=1}^{\infty}\alpha_t=\infty$ 和 $\sum_{t=1}^{\infty}\alpha_t^2<\infty$。{"msg_type":"generate_answer_finish"}
+Q-learning算法的收敛性主要取决于两个条件：一是所有的状态-动作对都必须无限次地被访问到，二是学习率要满足一定的条件，例如 $\sum_{t=1}^{\infty}\alpha_t=\infty$ 和 $\sum_{t=1}^{\infty}\alpha_t^2<\infty$。

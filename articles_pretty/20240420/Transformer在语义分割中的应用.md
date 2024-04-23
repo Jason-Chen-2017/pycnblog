@@ -41,4 +41,4 @@ $$
 Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V
 $$
 
-其中，$Q$, $K$, $V$分别是查询（Query），键（Key），值（Value），$d_k$是键的维度。{"msg_type":"generate_answer_finish"}
+其中，$Q$, $K$, $V$分别是查询（Query），键（Key），值（Value），$d_k$是键的维度。

@@ -222,4 +222,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 ### 9.3 如何保证系统的安全性？
 
-保证系统安全性的方法有很多。例如，你可以通过使用HTTPS协议、加密敏感数据、采用安全的编程实践等方法来保证系统的安全性。{"msg_type":"generate_answer_finish"}
+保证系统安全性的方法有很多。例如，你可以通过使用HTTPS协议、加密敏感数据、采用安全的编程实践等方法来保证系统的安全性。

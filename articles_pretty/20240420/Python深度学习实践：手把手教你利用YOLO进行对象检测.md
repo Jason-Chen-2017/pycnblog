@@ -176,4 +176,4 @@ YOLO的准确度虽然稍低于一些最先进的对象检测算法，如Faster 
 
 ### 9.3 YOLO可以在CPU上运行吗？
 
-是的，YOLO可以在CPU上运行，但是，由于YOLO需要大量的计算，因此在CPU上运行可能会比较慢。如果你需要在实时系统中使用YOLO，最好是在GPU上运行。{"msg_type":"generate_answer_finish"}
+是的，YOLO可以在CPU上运行，但是，由于YOLO需要大量的计算，因此在CPU上运行可能会比较慢。如果你需要在实时系统中使用YOLO，最好是在GPU上运行。

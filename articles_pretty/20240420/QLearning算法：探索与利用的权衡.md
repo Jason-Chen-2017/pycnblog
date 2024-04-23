@@ -168,4 +168,4 @@ for episode in range(NUM_EPISODES):
         else:
             action = ACTIONS[np.argmax(Q[STATES.index(state)])]
         
-        # 执行行为并获取下一状态和{"msg_type":"generate_answer_finish"}
+        # 执行行为并获取下一状态和

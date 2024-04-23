@@ -191,4 +191,4 @@ class VisionModel(nn.Module):
 model = VisionModel()
 
 # 量化配置
-qconfig = get_default_qconfig('fb{"msg_type":"generate_answer_finish"}
+qconfig = get_default_qconfig('fb

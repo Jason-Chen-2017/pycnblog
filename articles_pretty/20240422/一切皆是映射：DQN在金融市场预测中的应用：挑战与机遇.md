@@ -224,4 +224,4 @@ class DQNAgent:
         # 计算损失并优化
         loss = nn.MSELoss()(q_values, targets)
         self.qnetwork.optimizer.zero_grad()
-        loss.backward(){"msg_type":"generate_answer_finish"}
+        loss.backward()

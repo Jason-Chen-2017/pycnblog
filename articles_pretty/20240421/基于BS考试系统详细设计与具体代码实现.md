@@ -320,4 +320,4 @@ def check_answer_plagiarism(answer, ref_answers):
         sim = semantic_similarity(answer, ref)
         max_sim = max(max_sim, sim)
     
-    # 若最大相似度超过阈值,则{"msg_type":"generate_answer_finish"}
+    # 若最大相似度超过阈值,则

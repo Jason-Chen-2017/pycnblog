@@ -205,4 +205,4 @@ class Agent:
 
 4. **问：实现自主学习代理需要哪些工具和资源？**
 
-   答：实现自主学习代理可能会用到的工具和资源包括Python、PyTorch和OpenAI Gym等。{"msg_type":"generate_answer_finish"}
+   答：实现自主学习代理可能会用到的工具和资源包括Python、PyTorch和OpenAI Gym等。

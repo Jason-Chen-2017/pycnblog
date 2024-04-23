@@ -179,4 +179,4 @@ $$\text{Loss} = \mathbb{E}_{(s,a,r,s')\sim D}[(y - Q(s,a;\theta))^2]$$
             5. 计算目标Q值y:
                 $$y = r + \gamma \max_{a'}Q(s',a';\theta^-)$$
             6. 计算损失函数Loss,并使用优化算法更新网络参数θ
-            7. 每隔1000步,将θ复制给θ{"msg_type":"generate_answer_finish"}
+            7. 每隔1000步,将θ复制给θ

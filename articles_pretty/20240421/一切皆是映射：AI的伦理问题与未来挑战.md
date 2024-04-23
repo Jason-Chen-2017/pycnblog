@@ -202,4 +202,4 @@ $$\text{price} = \theta_0 + \theta_1\text{area}$$
 
 $$J(\theta_0, \theta_1) = \frac{1}{2m}\sum_{i=1}^m(h_\theta(x^{(i)}) - y^{(i)})^2$$
 
-其中$m$是训练样本的数量,$h_\theta(x^{(i)})$是对于第$i$个样本,$x^{({"msg_type":"generate_answer_finish"}
+其中$m$是训练样本的数量,$h_\theta(x^{(i)})$是对于第$i$个样本,$x^{(

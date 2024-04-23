@@ -236,4 +236,4 @@ for episode in range(1000):
 2. 定义经验回放池ReplayBuffer,用于存储经验元组。
 3. 定义DQNAgent类,包含以下主要方法:
     - `select_action`: 根据ε-贪婪策略选择行为。
-    - `update`: 从经验回放池中采样{"msg_type":"generate_answer_finish"}
+    - `update`: 从经验回放池中采样

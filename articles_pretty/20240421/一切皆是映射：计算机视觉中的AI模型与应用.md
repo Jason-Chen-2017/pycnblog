@@ -211,4 +211,4 @@ Keras是一个开源的深度学习框架，由Google的工程师François Choll
    A: 提高神经网络的性能有很多方法，如增加网络的深度、宽度，使用更复杂的优化算法，调整学习率等。
 
 4. Q: 如何选择深度学习框架？
-   A: 选择深度学习框架需要考虑很多因素，如易用性、灵活性、效率、社区支持等。PyTorch和TensorFlow是两个非常好的选择。{"msg_type":"generate_answer_finish"}
+   A: 选择深度学习框架需要考虑很多因素，如易用性、灵活性、效率、社区支持等。PyTorch和TensorFlow是两个非常好的选择。

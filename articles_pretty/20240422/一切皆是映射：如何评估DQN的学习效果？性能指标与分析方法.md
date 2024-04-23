@@ -223,4 +223,4 @@ def dqn(env, buffer, q_net, target_net, optimizer, num_episodes=2000, max_steps=
         loss = 0
 
         for step in range(max_steps):
-            action = epsilon_greedy{"msg_type":"generate_answer_finish"}
+            action = epsilon_greedy

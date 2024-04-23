@@ -311,4 +311,4 @@ public class PostService {
 
 ```java
 @Service
-public class SearchService {{"msg_type":"generate_answer_finish"}
+public class SearchService {

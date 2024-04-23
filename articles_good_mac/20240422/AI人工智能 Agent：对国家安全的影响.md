@@ -211,4 +211,4 @@ if __name__ == '__main__':
 
 1. 导入必要的库,包括OpenCV用于图像处理,以及一个目标检测模型`DetectorAPI`。
 
-2.{"msg_type":"generate_answer_finish"}
+2.

@@ -285,4 +285,4 @@ while True:
         landmarks = landmark_predictor(gray, face)
         
         # 获取左眼和右眼的关键点
-        {"msg_type":"generate_answer_finish"}
+        

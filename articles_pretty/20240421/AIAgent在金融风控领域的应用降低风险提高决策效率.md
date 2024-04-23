@@ -191,4 +191,4 @@ $$J(w,b) = -\ell(w,b) + \frac{\lambda}{2}\|w\|_2^2$$
 
 ### 4.1.2 实例分析
 
-假设我们有如下{"msg_type":"generate_answer_finish"}
+假设我们有如下

@@ -198,4 +198,4 @@ y_k=y_{k-1}+\Delta s_k \sin(\theta_{k-1}+\frac{\Delta \theta_k}{2})\\
 
 将$ \Delta s_k $和$ \Delta \theta_k $代入上述公式,就可以递推计算出时刻k的位姿估计值$ (x_k,y_k,\theta_k) $。
 
-需要注意的是,里程计定位存在累计误差,因此通常需要与其他传感器信息(如IMU、视觉等)融合,以获得更精确的位姿估{"msg_type":"generate_answer_finish"}
+需要注意的是,里程计定位存在累计误差,因此通常需要与其他传感器信息(如IMU、视觉等)融合,以获得更精确的位姿估

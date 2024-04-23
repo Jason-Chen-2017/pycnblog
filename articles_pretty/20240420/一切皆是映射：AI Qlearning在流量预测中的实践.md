@@ -131,4 +131,4 @@ A: 不，Q-learning主要适用于状态和行动均为离散的问题。对于�
 
 Q: 如何选择Q-learning的参数？
 
-A: Q-learning的参数包括学习率、折扣因子和ε-greedy策略的参数。这些参数的选择需要根据具体问题来调整，通常通过实验来确定最优的参数值。{"msg_type":"generate_answer_finish"}
+A: Q-learning的参数包括学习率、折扣因子和ε-greedy策略的参数。这些参数的选择需要根据具体问题来调整，通常通过实验来确定最优的参数值。

@@ -76,4 +76,4 @@ Spring Boot的网上招聘系统有着广泛的应用场景。
 
 ### 9.3. 如何进行系统的扩展？
 
-以上就是我对基于Spring Boot的网上招聘系统的全面解析，希望对大家有所帮助。{"msg_type":"generate_answer_finish"}
+以上就是我对基于Spring Boot的网上招聘系统的全面解析，希望对大家有所帮助。

@@ -217,4 +217,4 @@ A house with area 1800 sq.ft, predicted price: $460000.00
 3. 创建线性回归模型实例
 4. 调用 `fit()` 方法,使用训练数据拟合模型
 5. 打印模型参数 theta_0(intercept) 和 theta_1(coefficient)
-6.{"msg_type":"generate_answer_finish"}
+6.

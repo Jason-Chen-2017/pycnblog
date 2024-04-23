@@ -77,4 +77,4 @@ from torch.autograd import Variable
 
 ## 8.附录：常见问题与解答
 
-这一节将回答一些关于深度强化学习和DQN的常见问题。{"msg_type":"generate_answer_finish"}
+这一节将回答一些关于深度强化学习和DQN的常见问题。

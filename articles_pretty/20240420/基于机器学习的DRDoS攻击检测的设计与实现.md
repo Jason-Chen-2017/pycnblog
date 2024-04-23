@@ -202,4 +202,4 @@ print(classification_report(y_test, y_pred))
 
 4. **Q：如何评估模型的性能？**
 
-   A：评估模型性能的方法有很多，如准确率、召回率、F1值、AUC等。选择哪种方法取决于具体的任务和需求。{"msg_type":"generate_answer_finish"}
+   A：评估模型性能的方法有很多，如准确率、召回率、F1值、AUC等。选择哪种方法取决于具体的任务和需求。

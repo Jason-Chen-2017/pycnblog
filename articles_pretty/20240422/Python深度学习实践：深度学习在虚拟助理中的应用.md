@@ -130,4 +130,4 @@ $$\boldsymbol{h}_t = \tanh(\boldsymbol{W}_{hx}\boldsymbol{x}_t + \boldsymbol{W}_
 
 LSTM是RNN的一种变体,它通过引入门控机制和记忆单元,能够更好地捕捉长期依赖关系,有效解决了传统RNN在训练过程中的梯度消失和梯度爆炸问题。
 
-对于一个长度为 $T$ 的输入序列 $\boldsymbol{x} = (x_1, x_2, \ldots, x_T)$,在时间步 $t$ 时,LSTM的隐藏状态 $\boldsymbol{h}_t$ 和记忆单元 $\boldsymbol{c}_t$ 由以下公式计算得{"msg_type":"generate_answer_finish"}
+对于一个长度为 $T$ 的输入序列 $\boldsymbol{x} = (x_1, x_2, \ldots, x_T)$,在时间步 $t$ 时,LSTM的隐藏状态 $\boldsymbol{h}_t$ 和记忆单元 $\boldsymbol{c}_t$ 由以下公式计算得

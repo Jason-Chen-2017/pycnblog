@@ -55,4 +55,4 @@ $$\min_\theta \mathbb{E}[(Q(s,a;\theta) - (r + \gamma \max_{a'}Q(s',a';\theta^-)
 5. 从经验回放缓冲区中随机抽取一批转换，更新网络参数$\theta$，使得预测值和目标值的均方误差最小。
 6. 每隔一段时间，更新目标网络的参数$\theta^-$。
 
-以上就是深度Q-learning的核心算法原理和具体操作步骤。在下一节，我们将通过数学模型和公式详细讲解深度Q-learning的理论基础。{"msg_type":"generate_answer_finish"}
+以上就是深度Q-learning的核心算法原理和具体操作步骤。在下一节，我们将通过数学模型和公式详细讲解深度Q-learning的理论基础。

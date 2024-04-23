@@ -173,4 +173,4 @@ $$
 
 $$L(\theta_t) = \mathbb{E}_{(s, a, r, s')} \left[ \left( r + \gamma \max_{a'} Q(s', a'; \theta_t^-) - Q(s, a; \theta_t) \right)^2 \right]$$
 
-其中 $\theta_t^-$ 是一个目标网络的权重,用于估计 $\max_{a'} Q(s', a')$ 以保持训练稳定性。目标网络的权重 $\theta^-$ 会每隔一定步数用主网络 $\theta$ 的权重来更{"msg_type":"generate_answer_finish"}
+其中 $\theta_t^-$ 是一个目标网络的权重,用于估计 $\max_{a'} Q(s', a')$ 以保持训练稳定性。目标网络的权重 $\theta^-$ 会每隔一定步数用主网络 $\theta$ 的权重来更

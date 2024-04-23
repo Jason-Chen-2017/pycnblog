@@ -156,4 +156,4 @@ Transformer模型已经在NLP领域取得了巨大的成功，但仍然有许多
 
 - **问：如何理解Self-Attention机制？**
 
-答：简单来说，Self-Attention是一种允许模型在同一序列的不同位置之间关联不同的权重的方法。这使得模型能够更好地理解序列中的依赖关系。{"msg_type":"generate_answer_finish"}
+答：简单来说，Self-Attention是一种允许模型在同一序列的不同位置之间关联不同的权重的方法。这使得模型能够更好地理解序列中的依赖关系。

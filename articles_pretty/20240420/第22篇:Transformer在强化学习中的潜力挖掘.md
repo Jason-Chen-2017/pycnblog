@@ -155,4 +155,4 @@ class GridWorld:
             done = False
 
         self.agent_pos = new_pos
-        return new_pos,{"msg_type":"generate_answer_finish"}
+        return new_pos,

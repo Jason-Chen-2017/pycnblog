@@ -134,4 +134,4 @@ public class PropertyServiceImpl implements PropertyService {
 
 答：是的，开发小区物业管理系统需要一定的数据库知识，你需要了解如何设计数据库，如何操作数据库等。
 
-以上就是我关于"基于SSM的小区物业管理系统"的全部内容，希望能够对你有所帮助。{"msg_type":"generate_answer_finish"}
+以上就是我关于"基于SSM的小区物业管理系统"的全部内容，希望能够对你有所帮助。

@@ -132,4 +132,4 @@ $$a_{1,9} = \text{softmax}\left(\frac{12.48}{\sqrt{4}}\right) = 0.035$$
 
 最后,我们计算注意力输出 $O$,它是值的加权和,其中权重由注意力权重矩阵 $A$ 确定:
 
-$$o_1 = \sum_{j=1{"msg_type":"generate_answer_finish"}
+$$o_1 = \sum_{j=1

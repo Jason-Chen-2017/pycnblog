@@ -158,4 +158,4 @@ class Transformer(nn.Module):
         return self.out(output)
 ```
 
-上面是PyTorch中实现Transformer的核心代码。我们来详细解释一下它的工作原理和计算过程{"msg_type":"generate_answer_finish"}
+上面是PyTorch中实现Transformer的核心代码。我们来详细解释一下它的工作原理和计算过程

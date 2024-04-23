@@ -261,4 +261,4 @@ public interface AccountMapper {
 </mapper>
 ```
 
-在映射文件中,我们定义了各种SQL语句,用于执行增删改查操作。MyB{"msg_type":"generate_answer_finish"}
+在映射文件中,我们定义了各种SQL语句,用于执行增删改查操作。MyB

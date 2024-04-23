@@ -256,4 +256,4 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 early_stop = EarlyStopping(monitor='val_loss', patience=2)
 
 # 训练模型
-model.fit(X_train, y_train, validation_data=(X_test, y_test{"msg_type":"generate_answer_finish"}
+model.fit(X_train, y_train, validation_data=(X_test, y_test

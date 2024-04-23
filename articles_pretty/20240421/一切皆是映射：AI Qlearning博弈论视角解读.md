@@ -229,4 +229,4 @@ class QLearning:
         
     def train(self, num_episodes):
         for episode in range(num_episodes):
-            state = self.{"msg_type":"generate_answer_finish"}
+            state = self.

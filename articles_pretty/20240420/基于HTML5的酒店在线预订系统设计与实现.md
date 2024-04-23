@@ -162,4 +162,4 @@ $$r=\frac{(4-3)(5-3.6)+(5-3)(4-3.6)+...}{2.35\times2.07}=\frac{0.98}{4.87}\appro
 
 假设我们要为用户$u$推荐酒店,已知用户$u$的最近邻用户集合为$N(u)$,对于任意一家未评分的酒店$i$,我们可以用下面的公式预测用户$u$对它的评分:
 
-$$p_{u,i}=\bar{r}_u+\frac{\sum\limits_{v\in N(u)}sim(u,v)(r_{v,i{"msg_type":"generate_answer_finish"}
+$$p_{u,i}=\bar{r}_u+\frac{\sum\limits_{v\in N(u)}sim(u,v)(r_{v,i

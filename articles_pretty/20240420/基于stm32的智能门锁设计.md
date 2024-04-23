@@ -252,4 +252,4 @@ $$
 - AS608 指纹识别模块
 - ESP8266 WIFI 模块
 - 电机驱动模块
-- 锁{"msg_type":"generate_answer_finish"}
+- 锁

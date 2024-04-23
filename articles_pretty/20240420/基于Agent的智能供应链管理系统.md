@@ -252,4 +252,4 @@ def solve_transportation_problem(costs, supplies, demands):
 
 基于Agent的智能供应链管理系统可以应用于多个领域,包括但不限于:
 
-### 6.1 制{"msg_type":"generate_answer_finish"}
+### 6.1 制

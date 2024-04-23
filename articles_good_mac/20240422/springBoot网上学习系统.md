@@ -200,4 +200,4 @@ online-learning-system
 
 ### 4.3 实体类示例
 
-下面是一个简{"msg_type":"generate_answer_finish"}
+下面是一个简

@@ -141,4 +141,4 @@ $$
 (X * W)(1, 1) = 1 \times 1 + 2 \times 3 + 4 \times 2 + 5 \times 4 = 35
 $$
 
-通过在输入特征图上滑动卷积核,我们可以得到一个$2 \times 2{"msg_type":"generate_answer_finish"}
+通过在输入特征图上滑动卷积核,我们可以得到一个$2 \times 2

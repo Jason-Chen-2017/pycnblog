@@ -197,4 +197,4 @@ transition_model = {...}  # 根据知识点先修关系定义状态转移概率
 reward_model = {...}  # 根据学习效率定义奖励函数
 
 # 求解MDP,获取最优策略
-mdp_solver = mdp.{"msg_type":"generate_answer_finish"}
+mdp_solver = mdp.

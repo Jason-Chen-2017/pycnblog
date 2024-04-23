@@ -169,4 +169,4 @@ Keras是一个基于TensorFlow的高级深度学习框架，可以方便地创�
 OpenAI Gym是一个提供了各种环境的强化学习库，可以用来训练和测试AI智能体。
 
 ### 7.5 Google Colab
-Google Colab是一个提供了免费GPU的在线{"msg_type":"generate_answer_finish"}
+Google Colab是一个提供了免费GPU的在线

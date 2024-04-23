@@ -223,4 +223,4 @@ $$
 2. 对于每个子空间,计算 Scaled Dot-Product Attention:
 
 $$
-\text{head}_i = \text{Attention}(\{"msg_type":"generate_answer_finish"}
+\text{head}_i = \text{Attention}(\

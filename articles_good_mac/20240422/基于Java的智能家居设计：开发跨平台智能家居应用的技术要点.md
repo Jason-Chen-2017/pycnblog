@@ -257,4 +257,4 @@ TextArea statusText = new TextArea();
 statusText.setEditable(false);
 grid.add(statusText, 1, 0);
 
-Button ligh{"msg_type":"generate_answer_finish"}
+Button ligh

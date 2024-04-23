@@ -220,4 +220,4 @@ CNN在图像识别领域有着广泛的应用,包括但不限于以下场景:
 
 ### 6.1 手写字符识别
 
-MNIST手写数字识别是CNN最经典的应用之{"msg_type":"generate_answer_finish"}
+MNIST手写数字识别是CNN最经典的应用之

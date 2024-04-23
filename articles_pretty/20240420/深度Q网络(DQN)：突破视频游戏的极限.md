@@ -97,4 +97,4 @@ A: DQN的一些主要缺点包括对超参数的选择非常敏感，训练过�
 
 **Q: 我可以在哪里找到更多关于DQN的资源？**
 
-A: 你可以参考本文的第六部分，那里列出了一些有用的资源，包括DQN的原始论文、OpenAI Gym库、TensorFlow和Keras库，以及一些相关的书籍。{"msg_type":"generate_answer_finish"}
+A: 你可以参考本文的第六部分，那里列出了一些有用的资源，包括DQN的原始论文、OpenAI Gym库、TensorFlow和Keras库，以及一些相关的书籍。

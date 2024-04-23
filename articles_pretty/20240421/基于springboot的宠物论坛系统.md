@@ -126,4 +126,4 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 
 我们可以将 Spring Boot 项目打包成一个 JAR 文件，然后在任何支持 Java 的环境中运行这个 JAR 文件。
 
-这就是我们如何使用 Spring Boot 来构建一个宠物论坛系统的全过程。希望这篇文章能够帮助你理解 Spring Boot 的基本概念和使用方式，以及如何用它来构建一个实用的论坛系统。{"msg_type":"generate_answer_finish"}
+这就是我们如何使用 Spring Boot 来构建一个宠物论坛系统的全过程。希望这篇文章能够帮助你理解 Spring Boot 的基本概念和使用方式，以及如何用它来构建一个实用的论坛系统。

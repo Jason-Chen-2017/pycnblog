@@ -195,4 +195,4 @@ class DQNAgent:
             return
 
         transitions = np.random.choice(self.replay_buffer, size=self.batch_size)
-        batch = [np.stack(transition[:{"msg_type":"generate_answer_finish"}
+        batch = [np.stack(transition[:

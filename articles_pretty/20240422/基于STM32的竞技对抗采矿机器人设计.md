@@ -329,4 +329,4 @@ def detect(frame):
     nms_threshold = 0.4
     
     for out in outs:
-        for{"msg_type":"generate_answer_finish"}
+        for

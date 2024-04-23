@@ -196,4 +196,4 @@ def optimize_model(env, num_episodes, batch_size, gamma, epsilon, epsilon_decay)
             states = torch.from_numpy(states).float()
             actions = torch.from_numpy(actions).long()
             rewards = torch.from_numpy(rewards).float()
-            next_states = torch.from_numpy(next_states).float(){"msg_type":"generate_answer_finish"}
+            next_states = torch.from_numpy(next_states).float()

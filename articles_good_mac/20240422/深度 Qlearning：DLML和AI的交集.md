@@ -190,4 +190,4 @@ for episode in range(1000):
     done = False
     total_reward = 0
 
-    while not done:{"msg_type":"generate_answer_finish"}
+    while not done:

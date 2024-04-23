@@ -211,4 +211,4 @@ A: DCGAN可以生成各种大小的图像，但由于计算资源的限制，通
 
 Q: 如何评价DCGAN生成的图像质量？
 
-A: 通常使用一些定量的评价指标，如Inception Score、FID等，但最终还需要人的主观评价。{"msg_type":"generate_answer_finish"}
+A: 通常使用一些定量的评价指标，如Inception Score、FID等，但最终还需要人的主观评价。

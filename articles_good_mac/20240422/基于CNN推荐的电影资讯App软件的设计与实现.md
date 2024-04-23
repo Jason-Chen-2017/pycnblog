@@ -274,4 +274,4 @@ torch.save(model.state_dict(), 'movie_recommender.pth')
 - 初始化模型、损失函数和优化器
 - 进行10个epoch的训练
 - 每个batch计算前向传播的损失,并进行反向传播更新模型参数
-- 打印每个epoch的平{"msg_type":"generate_answer_finish"}
+- 打印每个epoch的平

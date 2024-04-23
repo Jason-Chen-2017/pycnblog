@@ -150,4 +150,4 @@ $$\mathbf{Y}_{i,j} = \max_{m,n=0}^{k-1}\mathbf{X}_{i\cdot k+m,j\cdot k+n}$$
 
 循环神经网络(RNN)是一种专门用于处理序列数据(如文本、语音等)的神经网络,它通过引入循环连接来捕获序列中的长期依赖关系。
 
-#### 4.3.1 RNN 基{"msg_type":"generate_answer_finish"}
+#### 4.3.1 RNN 基

@@ -232,4 +232,4 @@ shap.image_plot(shap_values, img_tensor)
 
 ### 6.5 自动驾驶
 
-在自动驾驶系统中,可视化和解释技{"msg_type":"generate_answer_finish"}
+在自动驾驶系统中,可视化和解释技

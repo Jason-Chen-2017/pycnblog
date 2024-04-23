@@ -306,4 +306,4 @@ public class StudentController {
 - SpringMVC: 实现Web层的请求处理和视图渲染。
 - MyBatis: 用于数据持久化操作。
 - Apache Shiro: 提供安全认证和授权功能。
-- Lombok{"msg_type":"generate_answer_finish"}
+- Lombok

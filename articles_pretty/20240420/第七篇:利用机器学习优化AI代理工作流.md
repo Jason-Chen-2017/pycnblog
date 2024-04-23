@@ -235,4 +235,4 @@ $$y_t = g(s_t, \sum_{i=1}^n \alpha_{t,i}h_i)$$
 #### 4.2.1 Q-Learning
 Q-Learning是强化学习中的一种经典算法,用于估计在给定状态 $s$ 采取行动 $a$ 后的长期回报(Q值)。在DQN中,Q函数由神经网络 $Q(s,a;\theta)$ 来近似,其参数 $\theta$ 通过最小化下式的均方损失来训练:
 
-$$L(\theta) = \mathbb{E}_{(s,a,r,s')\sim D}\left[ \left(r + \gamma \max_{a'} Q(s',a';\theta^-) - Q(s{"msg_type":"generate_answer_finish"}
+$$L(\theta) = \mathbb{E}_{(s,a,r,s')\sim D}\left[ \left(r + \gamma \max_{a'} Q(s',a';\theta^-) - Q(s

@@ -279,4 +279,4 @@ $$
 \mu_{pq} = \sum_{x=0}^{W-1} \sum_{y=0}^{H-1} (x - \bar{x})^p (y - \bar{y})^q I(x,y)
 $$
 
-### 4.3 {"msg_type":"generate_answer_finish"}
+### 4.3 

@@ -247,4 +247,4 @@ y_calibrated = polyval(p, x_new);
 % 示例用法
 x_new = 75;  % 需要校准的输入值
 y_cal = polyval(p, x_new);
-fprintf('校准后{"msg_type":"generate_answer_finish"}
+fprintf('校准后

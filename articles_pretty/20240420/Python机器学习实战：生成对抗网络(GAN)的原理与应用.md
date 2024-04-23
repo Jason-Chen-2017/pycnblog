@@ -176,4 +176,4 @@ class Generator(nn.Module):
         return self.main(z).view(-1, 1, 28, 28)
 
 # 判别器网络
-class Discriminator(nn.{"msg_type":"generate_answer_finish"}
+class Discriminator(nn.

@@ -99,4 +99,4 @@ public class Course {
 
 在处理数据的并发访问时，我们可以使用数据库的事务管理功能，确保数据的一致性和完整性。
 
-这就是我对于"基于Spring Boot的教务管理系统"的全面深入分析，希望对你有所帮助。{"msg_type":"generate_answer_finish"}
+这就是我对于"基于Spring Boot的教务管理系统"的全面深入分析，希望对你有所帮助。

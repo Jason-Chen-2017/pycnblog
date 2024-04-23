@@ -162,4 +162,4 @@ public class EducationSystem {
 - 问题4：我可以删除我已经选的课程吗？
   - 答案：是的，你可以在系统中删除你已经选的课程。
 
-以上就是我们关于"基于SpringBoot的教务管理系统"的全部内容，希望对你有所帮助。{"msg_type":"generate_answer_finish"}
+以上就是我们关于"基于SpringBoot的教务管理系统"的全部内容，希望对你有所帮助。

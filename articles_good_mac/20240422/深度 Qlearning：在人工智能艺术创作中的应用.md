@@ -165,4 +165,4 @@ A: 在艺术创作中，深度Q-learning可以被用来模仿人类艺术家的�
 
 **Q: 我应该如何开始学习深度Q-learning？**
 
-A: 你可以从阅读相关论文和教程开始。然后，你可以尝试使用一些开源库，如TensorFlow和OpenAI Gym，来实践和提高你的技能。{"msg_type":"generate_answer_finish"}
+A: 你可以从阅读相关论文和教程开始。然后，你可以尝试使用一些开源库，如TensorFlow和OpenAI Gym，来实践和提高你的技能。

@@ -291,4 +291,4 @@ public class OrderStateMachine {
 
 从订单中获取收货人姓名、地址、联系方式等信息。
 
-2. **选择发货方式**{"msg_type":"generate_answer_finish"}
+2. **选择发货方式**

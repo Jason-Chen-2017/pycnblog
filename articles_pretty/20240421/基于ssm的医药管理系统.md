@@ -329,4 +329,4 @@ public class InventoryController {
 
 ### 6.3 药品批发商
 
-对于药品批发商,医药管理{"msg_type":"generate_answer_finish"}
+对于药品批发商,医药管理

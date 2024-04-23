@@ -242,4 +242,4 @@ class ScaledDotProductAttention(nn.Module):
 
 这个类实现了缩放点积注意力机制,它接受查询(query)、键(key)和值(value)张量作为输入,并返回注意力输出和注意力概率张量。
 
-- `forward`函数首先计算查询和键的点积,并对其进行缩放,{"msg_type":"generate_answer_finish"}
+- `forward`函数首先计算查询和键的点积,并对其进行缩放,

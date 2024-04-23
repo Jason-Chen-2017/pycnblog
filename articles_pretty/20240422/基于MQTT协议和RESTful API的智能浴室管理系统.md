@@ -197,4 +197,4 @@ sudo systemctl start mosquitto
 
 ### 5.2.2 MQTT客户端
 
-下面是一个Python MQTT客户端的示例代码,它订阅了主题"bathroom/temperature"并打{"msg_type":"generate_answer_finish"}
+下面是一个Python MQTT客户端的示例代码,它订阅了主题"bathroom/temperature"并打

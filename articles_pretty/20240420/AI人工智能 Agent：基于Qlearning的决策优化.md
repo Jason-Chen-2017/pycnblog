@@ -92,4 +92,4 @@ A: Q-learning通常使用ε-greedy策略来选择行动。即以一定的概率�
 
 ### Q: Q-learning有哪些改进的方法？
 
-A: 有许多方法可以改进Q-learning，例如使用函数逼近来处理大的状态空间，使用经验重播来提高学习的稳定性，使用双Q-learning来减少过度估计等。{"msg_type":"generate_answer_finish"}
+A: 有许多方法可以改进Q-learning，例如使用函数逼近来处理大的状态空间，使用经验重播来提高学习的稳定性，使用双Q-learning来减少过度估计等。

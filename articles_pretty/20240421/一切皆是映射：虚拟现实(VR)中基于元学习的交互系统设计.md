@@ -149,4 +149,4 @@ $$\phi \leftarrow \phi - \beta \nabla_\phi \sum_{(x,y) \in \mathcal{D}_i^{val}} 
 
 元梯度下降算法是基于优化的元学习的一种简化版本。它将梯度下降的更新规则参数化,并通过元学习来优化这些参数。
 
-我们定义一个主模型 $f_\theta$,其中 $\theta$ 是模型参数。同时,我们定义{"msg_type":"generate_answer_finish"}
+我们定义一个主模型 $f_\theta$,其中 $\theta$ 是模型参数。同时,我们定义

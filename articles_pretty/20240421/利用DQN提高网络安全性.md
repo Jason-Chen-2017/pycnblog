@@ -230,4 +230,4 @@ class DQNAgent:
         
         # 计算目标Q值
         next_q_values = self.target_q_net(next_states).detach().max(1)[0]
-        target_q_{"msg_type":"generate_answer_finish"}
+        target_q_

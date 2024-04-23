@@ -201,4 +201,4 @@ A: 量子版的Q-learning是一种将Q-learning的学习过程量子化的算法
 
 **Q: 量子版的Q-learning有什么用？**
 
-A: 尽管量子版的Q-learning目前还处于理论研究阶段，但是它有可能在未来的量子计算机上得到应用。{"msg_type":"generate_answer_finish"}
+A: 尽管量子版的Q-learning目前还处于理论研究阶段，但是它有可能在未来的量子计算机上得到应用。

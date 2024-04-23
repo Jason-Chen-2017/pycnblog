@@ -320,4 +320,4 @@ print('Test accuracy:', score[1])
 - 图像分类: 识别图像中的物体类别
 - 目标检测: 定位图像中的目标物体并识别类别
 - 语义分割: 对图像中的每个像素进行分类
-- 视频分析: {"msg_type":"generate_answer_finish"}
+- 视频分析: 

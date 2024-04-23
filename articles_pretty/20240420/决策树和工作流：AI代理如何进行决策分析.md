@@ -212,4 +212,4 @@ from datetime import datetime
 
 # 定义工作流函数
 def load_data():
-    # 加载客户数据{"msg_type":"generate_answer_finish"}
+    # 加载客户数据

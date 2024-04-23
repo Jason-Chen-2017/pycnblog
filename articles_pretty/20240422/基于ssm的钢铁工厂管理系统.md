@@ -277,4 +277,4 @@ public class PurchaseOrderServiceImpl implements PurchaseOrderService {
         
         // 调用物料需求计划算法计算采购数量和交期
         order.setQuantity(mrpAlgorithm(order.getMaterialName()));
-        order.setDe{"msg_type":"generate_answer_finish"}
+        order.setDe

@@ -49,4 +49,4 @@ $$L(\theta) = \mathbb{E}[(r + \gamma \max_{a'} Q(s', a'; \theta^-) - Q(s, a; \th
 
 $$\theta_g = \frac{1}{N} \sum_{i=1}^N \theta_i$$
 
-其中，$\theta_g$ 是全局参数，$\theta_i$ 是第 $i$ 个模型的参数，$N$ 是模型的数量。{"msg_type":"generate_answer_finish"}
+其中，$\theta_g$ 是全局参数，$\theta_i$ 是第 $i$ 个模型的参数，$N$ 是模型的数量。

@@ -191,4 +191,4 @@ for episode in range(1000):
         action = dqn.act(state)
         next_state, reward, done, _ = env.step(action)
         dqn.store(state, action, reward, next_state)
-        state = next_state{"msg_type":"generate_answer_finish"}
+        state = next_state

@@ -262,4 +262,4 @@ AI Agent可用于工厂车间的智能调度、设备预测维护等,提高生�
 
 AI Agent可以对患者生理数据进行分析,辅助医生诊断疾病,甚至提供智能治疗方案。
 
-## 7.{"msg_type":"generate_answer_finish"}
+## 7.

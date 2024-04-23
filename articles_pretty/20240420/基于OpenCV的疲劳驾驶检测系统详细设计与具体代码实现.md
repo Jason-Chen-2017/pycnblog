@@ -219,4 +219,4 @@ $$\begin{array}{cl}
 \text{s.t.}&y_i(w^Tx_i+b)\geqslant1,i=1,2,...,N
 \end{array}$$
 
-其中$w$为超平面的法向量,$b$为超平面的截距,$x_i{"msg_type":"generate_answer_finish"}
+其中$w$为超平面的法向量,$b$为超平面的截距,$x_i

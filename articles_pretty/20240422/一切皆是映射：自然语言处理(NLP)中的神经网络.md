@@ -208,4 +208,4 @@ model.fit(train_data, train_labels,
 
 4. **Q: 我应该如何选择神经网络的架构？**
 
-   A: 神经网络的架构（例如层数，每层的节点数等）通常需要通过实{"msg_type":"generate_answer_finish"}
+   A: 神经网络的架构（例如层数，每层的节点数等）通常需要通过实

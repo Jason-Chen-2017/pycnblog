@@ -232,4 +232,4 @@ export function decomposeGoal(mainGoal) {
     '每周锻炼3次,每次1小时',
     '每天摄入热量不超过1800卡路里',
     '每周记录体重变化',
-    '每月复习减重知识'{"msg_type":"generate_answer_finish"}
+    '每月复习减重知识'

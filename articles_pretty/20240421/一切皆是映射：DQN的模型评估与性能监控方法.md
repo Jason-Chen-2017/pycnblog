@@ -119,4 +119,4 @@ DQN原始的版本并不直接支持连续的动作空间，但其变种如DDPG�
 这取决于许多因素，如任务的复杂性、神经网络的大小、计算资源等。在一些复杂的任务上，DQN的训练可能需要几天到几周的时间。
 
 ### 9.4 DQN有哪些常见的改进版本？
-DQN有许多改进的版本，如Double DQN、Dueling DQN、Prioritized Experience Replay等，这些版本在原始的DQN基础上，通过引入新的思想和技术，进一步提高了性能。{"msg_type":"generate_answer_finish"}
+DQN有许多改进的版本，如Double DQN、Dueling DQN、Prioritized Experience Replay等，这些版本在原始的DQN基础上，通过引入新的思想和技术，进一步提高了性能。
