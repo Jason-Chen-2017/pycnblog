@@ -89,4 +89,4 @@ class MultiHeadAttention(nn.Module):
         self.n_head = n_head
         
         # 线性变换矩阵
-        self.W_Q = nn.Linear{"msg_type":"generate_answer_finish"}
+        self.W_Q = nn.Linear

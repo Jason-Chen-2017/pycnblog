@@ -194,4 +194,3 @@ agent = DQNAgent(state_size, action_size)
 *   **累积奖励**: 智能体在一段时间内获得的总奖励。
 *   **平均奖励**: 每一步获得的平均奖励。
 *   **成功率**: 智能体完成任务的比例。
-{"msg_type":"generate_answer_finish"}

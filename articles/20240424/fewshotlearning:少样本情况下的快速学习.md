@@ -54,4 +54,3 @@ p(y=k|x) = \frac{exp(-d(f_\phi(x), c_k))}{\sum_{k'} exp(-d(f_\phi(x), c_{k'}))}
 $$
 
 其中，$x$ 表示一个样本，$y$ 表示该样本的类别，$f_\phi(x)$ 表示 $x$ 的 embedding 向量，$c_k$ 表示类别 $k$ 的原型向量，$d$ 表示距离函数 (例如欧氏距离)。 
-{"msg_type":"generate_answer_finish"}

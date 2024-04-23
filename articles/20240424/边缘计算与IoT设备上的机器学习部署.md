@@ -198,4 +198,3 @@ output_data = interpreter.get_tensor(output_details[0]['index'])
 *   使用模型压缩技术。
 *   选择轻量级的机器学习算法。
 *   使用云端资源进行辅助计算。
-{"msg_type":"generate_answer_finish"}

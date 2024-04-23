@@ -219,4 +219,3 @@ shap.force_plot(explainer.expected_value, shap_values, text)
 ### 8.4 模型可解释性的未来发展趋势是什么？
 
 模型可解释性的未来发展趋势包括更加通用的可解释性技术、与人类认知相结合以及可解释性作为模型设计的一部分。
-{"msg_type":"generate_answer_finish"}

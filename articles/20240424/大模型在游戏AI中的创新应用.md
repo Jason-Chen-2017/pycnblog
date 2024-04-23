@@ -73,4 +73,3 @@ L_{\text{MLM}} = -\sum_{i=1}^N \log p(x_i | x_{\setminus i})
 $$
 
 其中，$N$表示文本序列的长度，$x_i$表示第 $i$ 个词语，$x_{\setminus i}$表示除第 $i$ 个词语之外的所有词语，$p(x_i | x_{\setminus i})$表示模型预测第 $i$ 个词语的概率。 
-{"msg_type":"generate_answer_finish"}

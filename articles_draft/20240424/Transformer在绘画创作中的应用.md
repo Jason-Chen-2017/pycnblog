@@ -151,4 +151,3 @@ class Transformer(nn.Module):
 ### 3. 如何评估模型的性能？
 
 可以使用图像质量评估指标、风格相似度指标等评估模型的性能。 
-{"msg_type":"generate_answer_finish"}

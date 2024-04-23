@@ -106,4 +106,3 @@ text = "Hello, world!"
 translated = model.generate(**tokenizer(text, return_tensors="pt"))
 print(tokenizer.decode(translated[0], skip_special_tokens=True))  # 输出：Bonjour, le monde!
 ``` 
-{"msg_type":"generate_answer_finish"}

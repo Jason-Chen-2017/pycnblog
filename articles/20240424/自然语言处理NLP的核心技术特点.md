@@ -109,4 +109,4 @@ f_t &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \\
 i_t &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \\
 o_t &= \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) \\
 \tilde{c}_t &= tanh(W_c \cdot [h_{t-1}, x_t] + b_c) \\
-c_t &= f_t * c_{t-1} +{"msg_type":"generate_answer_finish"}
+c_t &= f_t * c_{t-1} +

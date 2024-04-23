@@ -167,4 +167,3 @@ Q-learning 和 SARSA 都是基于价值的强化学习算法，但它们在更�
 ### 8.2 深度Q-learning 如何处理连续动作空间？
 
 深度Q-learning 可以通过使用函数逼近器(例如深度神经网络)来处理连续动作空间。网络的输出可以是动作的概率分布，或者直接输出动作的连续值。 
-{"msg_type":"generate_answer_finish"}

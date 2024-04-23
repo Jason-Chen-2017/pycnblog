@@ -115,4 +115,3 @@ print(state_probabilities_after_3_steps)
 
 ### 6.1 
 
-{"msg_type":"generate_answer_finish"}

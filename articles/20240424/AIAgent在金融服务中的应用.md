@@ -139,4 +139,3 @@ AIAgent需要采用严格的数据安全措施，例如数据加密、访问控�
 ### 9.2 AIAgent会取代人类工作吗？
 
 AIAgent可以自动化处理大量重复性任务，但无法完全取代人类工作。AIAgent更像是人类的助手，可以帮助人类更高效地工作。
-{"msg_type":"generate_answer_finish"}

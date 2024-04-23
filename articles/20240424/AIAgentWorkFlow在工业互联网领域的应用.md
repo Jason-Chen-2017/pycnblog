@@ -144,4 +144,3 @@ AIAgentWorkFlow 在工业互联网领域具有广阔的应用前景，未来发�
 ### 9.2. AIAgentWorkFlow 适用于哪些工业场景？
 
 AIAgentWorkFlow 适用于各种需要自动化和智能化的工业场景，例如生产过程自动化、设备预测性维护、供应链优化等。 
-{"msg_type":"generate_answer_finish"}

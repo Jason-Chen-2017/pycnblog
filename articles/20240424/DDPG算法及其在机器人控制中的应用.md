@@ -63,4 +63,3 @@ Critic 网络的更新目标是最小化时间差分误差 (TD error)，其计�
 $$
 L(\theta^Q) = \mathbb{E}_{s, a, r, s' \sim D}[(y - Q(s, a | \theta^Q))^2]
 $$ 
-{"msg_type":"generate_answer_finish"}

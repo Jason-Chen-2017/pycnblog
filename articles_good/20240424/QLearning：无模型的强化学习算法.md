@@ -189,4 +189,3 @@ Q-Learning 算法的参数包括学习率 $\alpha$ 和折扣因子 $\gamma$。�
 * **$\epsilon$-greedy 策略**：以一定的概率选择随机动作，以探索新的策略。
 * **softmax 策略**：根据 Q 值的分布选择动作，Q 值越高的动作被选择的概率越大。
 * **Upper Confidence Bound (UCB) 算法**：在选择动作时，考虑动作的不确定性，鼓励探索未充分探索的动作。 
-{"msg_type":"generate_answer_finish"}

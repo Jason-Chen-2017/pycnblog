@@ -170,4 +170,3 @@ A: Transformer 模型的性能可以通过 BLEU 分数、ROUGE 分数等指标�
 **Q: 如何将 Transformer 模型应用于实际项目？**
 
 A: 可以使用 PyTorch、TensorFlow 等深度学习框架搭建 Transformer 模型，并将其应用于具体的 NLP 任务。
-{"msg_type":"generate_answer_finish"}

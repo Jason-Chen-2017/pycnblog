@@ -206,4 +206,3 @@ Milvus 支持多种分布式部署方式，例如：
 *   **单机多节点**: 在一台机器上部署多个 Milvus 节点。
 *   **集群部署**: 将 Milvus 部署在多个机器组成的集群上。
 *   **云部署**: 将 Milvus 部署在云平台上。
-{"msg_type":"generate_answer_finish"}

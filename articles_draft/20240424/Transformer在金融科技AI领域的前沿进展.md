@@ -134,4 +134,3 @@ Transformer 架构在金融科技 AI 领域的应用前景广阔，未来发展�
 ### Q2: 如何选择合适的 Transformer 模型？
 
 **A2**: 选择合适的 Transformer 模型需要考虑任务类型、数据集大小、计算资源等因素。对于小型数据集，可以选择轻量化的 Transformer 模型；对于大型数据集，可以选择预训练的 Transformer 模型，并进行微调。
-{"msg_type":"generate_answer_finish"}

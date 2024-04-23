@@ -213,4 +213,4 @@ $$
    \mathbf{\Lambda} = \mathrm{diag} \left( \mathbf{A}^T \mathcal{X}_{(1)} \left( \mathbf{A} \odot \mathbf{A} \right) \right)
    $$
    
-4. 重复步骤2和3,直到收敛{"msg_type":"generate_answer_finish"}
+4. 重复步骤2和3,直到收敛

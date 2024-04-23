@@ -173,4 +173,3 @@ train_gan(dataset, epochs=100)
 * **更稳定的训练方法**
 * **更强大的生成能力**
 * **更广泛的应用领域** 
-{"msg_type":"generate_answer_finish"}

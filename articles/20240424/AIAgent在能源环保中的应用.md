@@ -153,4 +153,3 @@ AI agent 的智能水平取决于其算法和训练数据。目前，大多数 A
 
 ### 8.3 AI agent 会取代人类吗？
 AI agent 旨在辅助人类，而不是取代人类。AI agent 可以帮助人类完成一些重复性或危险性的工作，从而提高效率和安全性。
-{"msg_type":"generate_answer_finish"}

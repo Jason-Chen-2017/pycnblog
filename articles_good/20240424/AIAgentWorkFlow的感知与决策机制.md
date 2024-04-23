@@ -172,4 +172,3 @@ AIAgentWorkFlow的优点包括：
 * 易于使用：提供简单易用的API，简化AI Agent的开发过程。
 * 可扩展性：支持多种感知机制、决策机制和行动策略，可以构建各种复杂的AI Agent。
 * 可重用性：提供可重用的组件，可以减少开发时间和成本。 
-{"msg_type":"generate_answer_finish"}

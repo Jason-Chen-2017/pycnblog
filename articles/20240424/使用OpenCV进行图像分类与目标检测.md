@@ -294,4 +294,4 @@ class_names = [coco.loadCats(ids=[i])[0]['name'] for i in range(num_classes)]
 
 # 设置锚点生成器
 anchor_generator = AnchorGenerator(sizes=((32, 64, 128, 256, 512),),
-                                   aspect_rat{"msg_type":"generate_answer_finish"}
+                                   aspect_rat

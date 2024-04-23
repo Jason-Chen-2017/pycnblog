@@ -145,4 +145,3 @@ Drazin广义逆矩阵是Moore-Penrose广义逆矩阵的一种特殊情况。当�
 ### 8.2 如何判断一个矩阵是否存在Drazin广义逆矩阵？
 
 所有复方阵都存在唯一的Drazin广义逆矩阵。 
-{"msg_type":"generate_answer_finish"}

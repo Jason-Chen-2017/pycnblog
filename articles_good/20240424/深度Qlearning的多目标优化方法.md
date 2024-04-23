@@ -158,4 +158,3 @@ class MultiObjectiveDQN:
 ### 9.3 如何评估 MORL 算法的性能？
 
 由于 MORL 算法的目标是找到一组 Pareto 最优策略，因此传统的评估指标，例如累积奖励，并不适用。常用的评估指标包括超体积 (hypervolume) 和覆盖率 (coverage)。 
-{"msg_type":"generate_answer_finish"}

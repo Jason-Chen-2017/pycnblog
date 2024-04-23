@@ -86,4 +86,3 @@ Q-learning是一种经典的基于价值的强化学习算法，通过学习状�
 * $R(s, a)$: 状态 $s$ 下执行动作 $a$ 获得的即时奖励。
 * $P(s' | s, a)$: 状态 $s$ 下执行动作 $a$ 后转移到状态 $s'$ 的概率。
 * $\gamma$: 折扣因子。 
-{"msg_type":"generate_answer_finish"}

@@ -163,4 +163,3 @@ BERT 模型可以通过微调 (Fine-tuning) 的方式应用于下游任务。 �
 ### 8.3. 如何选择合适的 Transformer 模型？
 
 选择合适的 Transformer 模型需要考虑任务类型、数据规模和计算资源等因素。 例如，对于文本分类任务，可以选择 BERT 或 RoBERTa 等模型；对于机器翻译任务，可以选择 T5 或 BART 等模型。 
-{"msg_type":"generate_answer_finish"}

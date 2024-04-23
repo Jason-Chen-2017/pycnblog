@@ -106,4 +106,3 @@ model = TransformerModel(vocab_size, embedding_dim, num_heads, num_layers, hidde
 ### 5.2 模型训练和评估
 
 可以使用交叉熵损失函数和 Adam 优化器进行模型训练。评估指标可以选择准确率、召回率、F1 值等。 
-{"msg_type":"generate_answer_finish"}

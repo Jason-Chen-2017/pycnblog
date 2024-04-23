@@ -147,4 +147,3 @@ A: Transformer 在图像分类、目标检测、语义分割和图像生成等�
 **Q: Transformer 的未来发展趋势是什么？**
 
 A: Transformer 的未来发展趋势包括模型轻量化、多模态学习和自监督学习。
-{"msg_type":"generate_answer_finish"}
