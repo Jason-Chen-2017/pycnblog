@@ -82,4 +82,3 @@ LSTM模型的数学公式比RNN模型更复杂，它引入了输入门、遗忘�
 ### 4.3 GAN模型
 
 GAN模型由生成器和判别器组成，它们的数学公式如下： 
-{"msg_type":"generate_answer_finish","data":""}
