@@ -170,4 +170,3 @@ Text-to-Image GANs 的训练需要大量的图像-文本对数据，例如包含
 ### 9.3. Text-to-Image GANs 的应用场景有哪些？
 
 Text-to-Image GANs 具有广泛的应用场景，包括图像生成、图像编辑、图像修复、虚拟现实、艺术创作等。 
-{"msg_type":"generate_answer_finish","data":""}

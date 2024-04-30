@@ -218,4 +218,3 @@ print(recommended_items)
 * 建立药品知识库，对推荐结果进行安全性校验。
 * 利用专家知识或规则，过滤掉不安全的推荐结果。
 * 建立用户反馈机制，及时发现和处理不安全的推荐结果。 
-{"msg_type":"generate_answer_finish","data":""}

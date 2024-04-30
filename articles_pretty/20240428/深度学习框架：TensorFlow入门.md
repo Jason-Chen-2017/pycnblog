@@ -77,4 +77,3 @@ $$
 其中，$y$ 是预测值，$x$ 是输入特征，$w$ 是权重，$b$ 是偏置。
 
 ### 4.2 逻辑回归 
-{"msg_type":"generate_answer_finish","data":""}

@@ -166,4 +166,3 @@ A: 可以使用各种指标来评估 RLHF 模型的性能，例如累积奖励�
 **Q: RLHF 技术有哪些局限性？**
 
 A: RLHF 技术的局限性包括数据依赖、算法复杂性、计算成本等。 
-{"msg_type":"generate_answer_finish","data":""}

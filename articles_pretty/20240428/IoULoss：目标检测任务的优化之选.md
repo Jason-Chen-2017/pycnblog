@@ -126,4 +126,3 @@ IoULoss 的权重需要根据任务和数据集进行调整。通常情况下，
 ### 9.3 IoULoss 有哪些局限性？
 
 IoULoss 可能会受到边界框大小的影响，对于大小差异较大的边界框，IoULoss 的值可能不具有很好的区分度。此外，IoULoss 无法直接优化边界框的朝向。
-{"msg_type":"generate_answer_finish","data":""}

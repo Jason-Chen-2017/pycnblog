@@ -151,4 +151,3 @@ print(fan_ctrl_simulation.output['fan_speed'])
 ### 8.3 如何评估模糊系统的性能？
 
 可以使用精确度、召回率、F1 值等指标来评估模糊系统的性能。 
-{"msg_type":"generate_answer_finish","data":""}

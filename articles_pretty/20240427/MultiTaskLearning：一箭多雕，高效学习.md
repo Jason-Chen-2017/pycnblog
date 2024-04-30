@@ -78,4 +78,3 @@ $$
 * $\Omega(\theta_s)$ 是正则化项，用于防止过拟合。 
 
 这个公式表示 MTL 的目标是最小化所有任务的损失函数的加权和，同时对共享参数进行正则化。 
-{"msg_type":"generate_answer_finish","data":""}

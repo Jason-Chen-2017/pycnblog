@@ -117,4 +117,3 @@ A: Fine-Tuning参数需要根据具体任务进行调整，例如学习率、批
 **Q: 如何评估Fine-Tuning效果？**
 
 A: 可以使用评估指标，例如准确率、召回率、F1值等来评估Fine-Tuning效果。
-{"msg_type":"generate_answer_finish","data":""}

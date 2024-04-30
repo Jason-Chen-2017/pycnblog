@@ -147,4 +147,3 @@ MADQN的协作问题可以通过信息交互、策略协调等方法进行解决
 ### 9.5 如何将MADQN应用于实际场景？
 
 将MADQN应用于实际场景需要考虑环境建模、奖励设计、算法部署等问题。
-{"msg_type":"generate_answer_finish","data":""}

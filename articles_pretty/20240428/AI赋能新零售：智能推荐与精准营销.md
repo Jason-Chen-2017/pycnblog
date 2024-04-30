@@ -164,4 +164,3 @@ recommendations = ratings.loc[ratings['userId'].isin(similar_users)]['itemId'].u
 * **利用商品或服务的属性信息进行推荐。**
 * **利用专家知识进行推荐。**
 * **利用迁移学习技术，将其他领域的推荐模型迁移到当前领域。**
-{"msg_type":"generate_answer_finish","data":""}

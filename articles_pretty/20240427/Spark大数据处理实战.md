@@ -105,4 +105,3 @@ wordCounts.print()
 ssc.start()
 ssc.awaitTermination()
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

@@ -147,4 +147,3 @@ A: 学习率的选择需要根据具体问题和数据集进行调整。通常�
 **Q: 如何防止 DBN 过拟合？**
 
 A: 可以采用 L1/L2 正则化、Dropout 等技术防止 DBN 过拟合。 
-{"msg_type":"generate_answer_finish","data":""}

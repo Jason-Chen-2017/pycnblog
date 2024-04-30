@@ -100,4 +100,3 @@ print(results)
 ```
 [{'person': 'Barack Obama', 'birthplace': 'Honolulu, Hawaii'}]
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

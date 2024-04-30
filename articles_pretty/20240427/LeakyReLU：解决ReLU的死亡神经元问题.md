@@ -128,4 +128,3 @@ Leaky ReLU与ReLU、ELU等其他激活函数相比，具有简单、高效、避
 ### 9.3. Leaky ReLU的局限性？
 
 Leaky ReLU在负值区间内的输出仍然是线性的，这可能会限制其表达能力。
-{"msg_type":"generate_answer_finish","data":""}

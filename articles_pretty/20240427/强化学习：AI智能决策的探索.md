@@ -162,4 +162,3 @@ env.close()
 ### 9.2 强化学习的应用场景有哪些？
 
 游戏AI、机器人控制、金融交易等。 
-{"msg_type":"generate_answer_finish","data":""}

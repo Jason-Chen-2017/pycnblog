@@ -103,4 +103,3 @@ C = tf.matmul(A, B)
 # 打印结果
 print(C)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

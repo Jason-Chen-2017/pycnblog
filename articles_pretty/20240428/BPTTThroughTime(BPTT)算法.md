@@ -203,4 +203,3 @@ def train_step(inputs, targets):
 
 * 计算成本高
 * 容易出现梯度消失和梯度爆炸问题 
-{"msg_type":"generate_answer_finish","data":""}

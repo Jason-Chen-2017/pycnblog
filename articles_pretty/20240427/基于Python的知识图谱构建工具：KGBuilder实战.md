@@ -141,4 +141,3 @@ A: KGBuilder 提供基于规则推理和统计推理的方法。
 **Q: KGBuilder 如何进行可视化?**
 
 A: KGBuilder 提供可视化工具，帮助用户直观地理解和分析知识图谱。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -151,4 +151,3 @@ model.fit(x_train, y_train, epochs=5)
 * 建立AI伦理规范
 * 加强AI安全研究
 * 提高公众对AI的认知
-{"msg_type":"generate_answer_finish","data":""}

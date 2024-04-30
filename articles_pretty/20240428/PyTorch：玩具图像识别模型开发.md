@@ -162,4 +162,3 @@ A: 提高模型准确率的方法包括：增加训练数据量、调整模型�
 **Q: 如何部署图像识别模型？**
 
 A: 可以将训练好的模型转换为ONNX格式，然后使用TensorRT等推理引擎进行部署。
-{"msg_type":"generate_answer_finish","data":""}

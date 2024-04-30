@@ -166,4 +166,3 @@ HBase是NoSQL数据库，采用键值对的数据模型，而关系型数据库�
 ### 9.2 如何选择合适的Row Key？
 
 Row Key设计对HBase的性能至关重要。选择Row Key时，需要考虑数据访问模式、数据分布等因素，以避免数据热点和查询性能问题。
-{"msg_type":"generate_answer_finish","data":""}

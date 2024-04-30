@@ -124,4 +124,3 @@ dropout rate 的选择取决于具体的任务和模型结构。一般来说，d
 ### 9.2 Dropout 是否会影响模型的训练速度？
 
 Dropout 会在一定程度上影响模型的训练速度，因为每次训练时都需要随机丢弃一部分神经元。但是，Dropout 带来的性能提升通常可以弥补训练速度的损失。
-{"msg_type":"generate_answer_finish","data":""}

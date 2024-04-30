@@ -20,4 +20,4 @@ Huber损失函数的定义如下：
 $$
 L_{\delta}(y, \hat{y}) = \begin{cases}
 \frac{1}{2}(y - \hat{y})^2 & \text{if } |y - \hat{y}| \leq \delta \\
-\delta |y - \hat{y}| - \{"msg_type":"generate_answer_finish","data":""}
+\delta |y - \hat{y}| - \

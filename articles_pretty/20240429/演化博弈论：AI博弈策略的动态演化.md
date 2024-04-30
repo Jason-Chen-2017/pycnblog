@@ -164,4 +164,3 @@ def replicator_dynamics(payoff_matrix, x0, dt=0.01, t_max=100):
 **Q: 如何评估演化博弈论模型的有效性？**
 
 **A:** 可以通过将模型预测结果与实际数据进行比较，或通过实验验证模型的预测能力。 
-{"msg_type":"generate_answer_finish","data":""}

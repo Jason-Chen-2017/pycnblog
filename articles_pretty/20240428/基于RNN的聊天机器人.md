@@ -122,4 +122,3 @@ class Decoder(tf.keras.Model):
 *   **问：如何提高聊天机器人的对话质量？**
 
     **答：** 可以使用更大的数据集、更复杂的模型、更有效的训练方法等来提高聊天机器人的对话质量。
-{"msg_type":"generate_answer_finish","data":""}

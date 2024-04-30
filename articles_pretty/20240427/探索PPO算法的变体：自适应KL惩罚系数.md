@@ -69,4 +69,3 @@ $$
 
 * $p$ 表示旧策略的概率分布。
 * $q$ 表示新策略的概率分布。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -148,4 +148,3 @@ cv2.destroyAllWindows()
 ### 9.2 3D人脸重建的精度如何？
 
 3D人脸重建的精度取决于算法和数据的质量。目前，基于深度学习的人脸重建方法可以达到较高的精度。
-{"msg_type":"generate_answer_finish","data":""}

@@ -118,4 +118,3 @@ recommendations = ratings[ratings['userId'].isin(similar_users)]['itemId'].value
 # 打印推荐结果
 print(recommendations)
 ```
-{"msg_type":"generate_answer_finish","data":""}

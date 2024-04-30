@@ -147,4 +147,3 @@ AlphaGo 通过学习大量的棋谱数据和自我对弈来学习围棋。它使
 ### 9.2 AlphaGo 的局限性是什么？
 
 AlphaGo 的局限性在于它需要大量的计算资源和数据才能进行训练和推理。此外，AlphaGo 的算法也存在一定的局限性，例如它可能难以处理一些复杂的棋局。
-{"msg_type":"generate_answer_finish","data":""}

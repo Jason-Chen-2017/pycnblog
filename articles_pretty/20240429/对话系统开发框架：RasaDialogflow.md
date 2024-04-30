@@ -142,4 +142,3 @@ Rasa 和 Dialogflow 各有优缺点，选择哪个框架取决于具体的应用
 *   **优化 NLU 模型**
 *   **改进对话管理策略**
 *   **进行用户测试和反馈** 
-{"msg_type":"generate_answer_finish","data":""}

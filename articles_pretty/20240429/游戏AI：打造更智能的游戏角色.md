@@ -103,4 +103,3 @@ public:
     virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
 };
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

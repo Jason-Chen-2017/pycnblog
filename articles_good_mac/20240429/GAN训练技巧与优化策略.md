@@ -212,4 +212,3 @@ GAN 的训练过程通常不稳定，容易出现梯度消失、梯度爆炸等�
 ### 9.3 评估指标
 
 常用的 GAN 评估指标包括 Inception Score (IS) 和 Fréchet Inception Distance (FID)。
-{"msg_type":"generate_answer_finish","data":""}

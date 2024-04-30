@@ -142,4 +142,3 @@ print(C)
 **Q：** 如何计算Kronecker积？
 
 **A：** 可以使用NumPy库中的 `kron()` 函数计算Kronecker积。
-{"msg_type":"generate_answer_finish","data":""}

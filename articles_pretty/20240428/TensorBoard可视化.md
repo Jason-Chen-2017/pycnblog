@@ -95,4 +95,3 @@ tensorboard --logdir /path/to/logs
 ## 4. 数学模型和公式详细讲解举例说明 
 
 TensorBoard 主要用于可视化深度学习模型的训练过程，因此不涉及具体的数学模型和公式。但是，TensorBoard 可以帮助我们理解模型的训练过程，并进行有效的调试和优化。例如，通过观察损失函数的变化趋势，我们可以判断模型是否收敛；通过观察权重分布的直方图，我们可以判断模型是否过拟合。 
-{"msg_type":"generate_answer_finish","data":""}

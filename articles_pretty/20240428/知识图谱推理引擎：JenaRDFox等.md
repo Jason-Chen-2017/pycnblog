@@ -237,4 +237,3 @@ RDF (Resource Description Framework) 是一种用于描述资源的标准语言�
 ### 9.3 什么是 Datalog？
 
 Datalog 是一种基于逻辑的查询语言，它可以用于表达复杂的推理规则。 
-{"msg_type":"generate_answer_finish","data":""}

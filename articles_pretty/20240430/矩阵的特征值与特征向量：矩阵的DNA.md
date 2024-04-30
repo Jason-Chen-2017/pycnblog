@@ -51,4 +51,3 @@ $$
 4. **特征向量：** 
     * 对于 $\lambda_1 = 1$，解得特征向量 $\mathbf{v}_1 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}$
     * 对于 $\lambda_2 = 3$，解得特征向量 $\mathbf{v}_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$ 
-{"msg_type":"generate_answer_finish","data":""}

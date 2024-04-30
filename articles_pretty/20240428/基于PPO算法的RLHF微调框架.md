@@ -160,4 +160,3 @@ A：RLHF技术可以应用于游戏AI、机器人控制、推荐系统、自然�
 **Q：RLHF技术面临哪些挑战？**
 
 A：RLHF技术面临的挑战包括人类反馈的成本、人类反馈的偏差、模型的可解释性等。
-{"msg_type":"generate_answer_finish","data":""}

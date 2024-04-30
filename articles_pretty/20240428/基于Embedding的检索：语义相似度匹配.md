@@ -130,4 +130,3 @@ A: 常用的评估指标包括准确率、召回率、F1 值等。
 **Q: 如何处理 Embedding 维度过高的问题?**
 
 A: 可以使用降维技术，例如主成分分析 (PCA) 或 t-SNE，将高维向量降到低维空间。 
-{"msg_type":"generate_answer_finish","data":""}

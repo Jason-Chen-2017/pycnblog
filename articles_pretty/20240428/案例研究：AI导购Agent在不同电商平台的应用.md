@@ -126,4 +126,3 @@ AI导购Agent和人工导购员是互补关系，AI导购Agent可以处理大量
 ### 9.2 如何评估AI导购Agent的效果？
 
 可以通过点击率、转化率、用户满意度等指标来评估AI导购Agent的效果。
-{"msg_type":"generate_answer_finish","data":""}

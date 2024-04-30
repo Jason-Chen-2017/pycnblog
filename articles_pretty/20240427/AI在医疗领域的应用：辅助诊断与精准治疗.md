@@ -165,4 +165,3 @@ A: 可以采取以下措施消除人工智能模型的 bias：
 *   使用多样化的数据集训练模型，避免模型学习到数据集中的 bias。
 *   对模型进行 bias 检测和消除，例如使用 fairness 工具检测模型的 bias，并采取措施消除 bias。
 *   建立模型的可解释性，以便了解模型的决策过程，发现并消除 bias。
-{"msg_type":"generate_answer_finish","data":""}

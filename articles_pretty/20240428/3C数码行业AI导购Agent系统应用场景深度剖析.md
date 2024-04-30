@@ -67,4 +67,3 @@ s_{ij} = \cos(\vec{v_i}, \vec{v_j})
 $$
 
 其中，$s_{ij}$ 表示物品 i 和物品 j 之间的相似度，$\vec{v_i}$ 和 $\vec{v_j}$ 分别表示物品 i 和物品 j 的特征向量。 
-{"msg_type":"generate_answer_finish","data":""}

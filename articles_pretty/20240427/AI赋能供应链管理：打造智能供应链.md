@@ -93,4 +93,3 @@ $$
 *   $\phi_1, \phi_2, ..., \phi_p$ 是自回归系数。
 *   $\theta_1, \theta_2, ..., \theta_q$ 是移动平均系数。
 *   $\epsilon_t$ 是时间 $t$ 的误差项。 
-{"msg_type":"generate_answer_finish","data":""}

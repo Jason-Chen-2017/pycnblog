@@ -125,4 +125,3 @@ iid = 10
 pred = algo.predict(uid, iid)
 print(pred.est)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

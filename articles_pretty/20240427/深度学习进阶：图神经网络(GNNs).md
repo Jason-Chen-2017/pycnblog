@@ -91,4 +91,3 @@ $$
 * $\alpha_{ij}$ 表示节点 $i$ 和节点 $j$ 之间的注意力权重。
 * $W^{(l)}$ 表示第 $l$ 层的权重矩阵。
 * $\sigma$ 表示激活函数，例如 ReLU。 
-{"msg_type":"generate_answer_finish","data":""}

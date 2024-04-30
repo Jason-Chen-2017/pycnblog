@@ -123,4 +123,3 @@ print(counts)
 ### 9.2 什么是量子纠缠？
 
 量子纠缠是指两个或多个量子比特之间的关联性，即使它们相距很远，它们的状态仍然是相互关联的。 
-{"msg_type":"generate_answer_finish","data":""}

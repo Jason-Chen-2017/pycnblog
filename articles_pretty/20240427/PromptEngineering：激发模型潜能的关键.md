@@ -138,4 +138,3 @@ Prompt Engineering 也面临一些挑战，例如：
 ### 9.3 如何避免 LLMs 生成有害文本？
 
 可以通过过滤训练数据、设计安全的 Prompt 等方法来避免 LLMs 生成有害文本。
-{"msg_type":"generate_answer_finish","data":""}

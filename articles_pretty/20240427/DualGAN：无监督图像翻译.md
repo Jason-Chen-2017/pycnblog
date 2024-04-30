@@ -130,4 +130,3 @@ A: DualGAN 的训练时间取决于数据集的大小和模型的复杂度。
 **Q: DualGAN 可以用于视频翻译吗？**
 
 A: 可以，但是需要对 DualGAN 进行一些改进。
-{"msg_type":"generate_answer_finish","data":""}

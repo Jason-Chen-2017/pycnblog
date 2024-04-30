@@ -152,4 +152,3 @@ print(prediction.est)
 ### 8.2 挑战
 
 * **数据隐私保护：**推荐系统需要收集用户的个人数据，如何保护用户的
-{"msg_type":"generate_answer_finish","data":""}

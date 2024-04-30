@@ -128,4 +128,3 @@ GRU 的超参数包括隐藏层大小、学习率等。超参数的选择需要�
 ### 9.3 如何解决 GRU 的过拟合问题？
 
 可以使用正则化技术（如 L1 正则化、L2 正则化）或 Dropout 来解决 GRU 的过拟合问题。
-{"msg_type":"generate_answer_finish","data":""}

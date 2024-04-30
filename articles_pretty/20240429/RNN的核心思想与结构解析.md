@@ -143,4 +143,3 @@ RNN 适用于处理序列数据，而 CNN 适用于处理图像等空间数据�
 ### 9.3. 如何解决 RNN 的梯度消失和梯度爆炸问题？
 
 可以使用梯度裁剪、LSTM、GRU 等技术来缓解梯度消失和梯度爆炸问题。
-{"msg_type":"generate_answer_finish","data":""}

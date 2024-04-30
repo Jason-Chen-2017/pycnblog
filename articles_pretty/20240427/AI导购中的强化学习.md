@@ -123,4 +123,3 @@ def train_step(state, action, reward, next_state, done):
 * **可解释性:** 强化学习模型的决策过程难以解释，需要进一步研究可解释性方法。
 
 未来，随着强化学习技术的不断发展，以及与其他人工智能技术的结合，AI 导购将变得更加智能、高效和个性化，为用户带来更好的购物体验。
-{"msg_type":"generate_answer_finish","data":""}

@@ -156,4 +156,3 @@ def train_step(x):
 
 * 可以显式地建模数据的概率分布。
 * 可以引入先验知识。 
-{"msg_type":"generate_answer_finish","data":""}

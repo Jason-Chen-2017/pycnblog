@@ -67,4 +67,3 @@ Double DQN 使用两个 Q 网络来分别选择动作和评估动作价值。动
 $$Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma Q_{target}(s', \arg\max_{a'} Q(s', a')) - Q(s, a)]$$
 
 ### 4.3 Dueling DQN 
-{"msg_type":"generate_answer_finish","data":""}

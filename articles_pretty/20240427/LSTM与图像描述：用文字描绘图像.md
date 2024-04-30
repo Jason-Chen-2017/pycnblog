@@ -97,4 +97,3 @@ $$
 * $N$：句子长度 
 * $y_i$：真实单词的 one-hot 编码
 * $\hat{y}_i$：模型预测的单词概率分布 
-{"msg_type":"generate_answer_finish","data":""}

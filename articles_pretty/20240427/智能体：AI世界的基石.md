@@ -73,4 +73,3 @@ Q-learning是一种常用的强化学习算法，用于学习最优动作价值�
 $$Q(s,a) \leftarrow Q(s,a) + \alpha [r + \gamma \max_{a'} Q(s',a') - Q(s,a)]$$
 
 其中，$s$表示当前状态，$a$表示当前动作，$r$表示奖励，$\alpha$表示学习率，$\gamma$表示折扣因子，$s'$表示下一个状态，$a'$表示下一个动作。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -207,4 +207,3 @@ A: 常用的 MDP 求解算法包括值迭代、策略迭代、Q-学习等。
 **Q: MDP 的应用前景如何？**
 
 A: MDP 在各个领域都有着广泛的应用，随着 AI 技术的发展，MDP 的应用前景将会更加广阔。
-{"msg_type":"generate_answer_finish","data":""}

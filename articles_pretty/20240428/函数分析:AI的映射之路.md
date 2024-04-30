@@ -160,4 +160,3 @@ y_pred = model.predict(X_test)
 * **高维数据**: AI  increasingly deals with high-dimensional data, which poses challenges for traditional function analysis methods.
 * **非线性模型**: 许多 AI 模型都是非线性的，需要发展新的函数分析工具来研究它们的性质。
 * **可解释性**: AI 模型的可解释性是一个重要问题，函数分析可以帮助理解模型的内部 workings and decision-making processes. 
-{"msg_type":"generate_answer_finish","data":""}

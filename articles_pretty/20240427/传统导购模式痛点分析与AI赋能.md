@@ -69,4 +69,3 @@ tfidf(t, d, D) = tf(t, d) \cdot idf(t, D)
 $$
 
 其中，$tf(t, d)$ 表示词语 $t$ 在文档 $d$ 中出现的频率，$idf(t, D)$ 表示词语 $t$ 在文档集合 $D$ 中的逆文档频率。 
-{"msg_type":"generate_answer_finish","data":""}

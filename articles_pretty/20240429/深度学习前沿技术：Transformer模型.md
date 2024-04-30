@@ -130,4 +130,3 @@ A: Transformer 模型采用自注意力机制，而 RNN 和 CNN 则采用循环�
 **Q: Transformer 模型的优缺点是什么？**
 
 A: Transformer 模型的优点包括：能够有效地捕捉长距离依赖关系，对序列顺序信息进行建模，并行计算能力强。缺点包括：计算量较大，可解释性较差。 
-{"msg_type":"generate_answer_finish","data":""}

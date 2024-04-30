@@ -155,4 +155,3 @@ print(result)
 ### Q3: 学习谓词逻辑需要哪些基础知识？
 
 **A3:** 学习谓词逻辑需要具备一定的数学基础，例如集合论、逻辑学等。
-{"msg_type":"generate_answer_finish","data":""}

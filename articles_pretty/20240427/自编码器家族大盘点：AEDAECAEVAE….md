@@ -220,4 +220,3 @@ model.compile(optimizer='adam', loss=vae_loss)
 ### 9.4  自编码器与 PCA 的区别是什么？
 
 自编码器是非线性降维方法，可以学习更复杂的特征；PCA 是线性降维方法，只能学习线性特征。
-{"msg_type":"generate_answer_finish","data":""}

@@ -83,4 +83,3 @@ model.encoder.layer[0].attention.self = KnowledgeAttention(...)
 
 # ...
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

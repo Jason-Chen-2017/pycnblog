@@ -151,4 +151,3 @@ LSTM 和 GRU 都是 RNN 的变种，都引入了门控机制来缓解梯度消�
 ### 9.3 RNN 的应用场景有哪些？
 
 RNN 在自然语言处理、时间序列预测、视频分析等领域有广泛的应用。
-{"msg_type":"generate_answer_finish","data":""}

@@ -66,4 +66,3 @@
 *   **DeepWalk**：利用随机游走生成节点序列，并使用 Word2Vec 模型进行嵌入。
 *   **Node2Vec**：利用带偏随机游走生成节点序列，并使用 Word2Vec 模型进行嵌入。
 *   **TransR**：将实体和关系映射到不同的向量空间，并使用线性变换进行连接。 
-{"msg_type":"generate_answer_finish","data":""}

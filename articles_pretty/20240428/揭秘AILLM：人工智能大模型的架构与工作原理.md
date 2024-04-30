@@ -81,4 +81,3 @@ Transformer 模型主要由编码器和解码器组成，每个编码器和解�
 ### 4.2 自注意力机制
 
 自注意力机制是 Transformer 模型的核心组件，它能够计算句子中每个词语与其他词语之间的相关性。自注意力机制的计算公式如下：
-{"msg_type":"generate_answer_finish","data":""}

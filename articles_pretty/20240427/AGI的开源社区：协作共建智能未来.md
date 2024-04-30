@@ -131,4 +131,3 @@ model.evaluate(x_test,  y_test, verbose=2)
 *   `tf.keras.optimizers.Adam`：定义优化器，用于更新模型参数。
 *   `model.fit`：训练模型，参数`x_train`和`y_train`分别表示训练数据和标签，参数`epochs`表示训练轮数。
 *   `model.evaluate`：评估模型，参数`x_test`和`y_test`分别表示测试数据和标签。 
-{"msg_type":"generate_answer_finish","data":""}

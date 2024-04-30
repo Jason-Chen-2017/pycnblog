@@ -123,4 +123,3 @@ A: 可以使用标准的自然语言处理评估指标，例如BLEU、ROUGE和ME
 **Q: 如何解决RAG模型的偏差问题？**
 
 A: 可以使用数据增强、模型正则化和公平性约束等方法来解决模型偏差问题。
-{"msg_type":"generate_answer_finish","data":""}

@@ -143,4 +143,3 @@ LSTM 是 RNN 的改进版本，通过引入门控机制解决了 RNN 的梯度�
 ### 9.3. 如何选择 LSTM 的参数？
 
 LSTM 的参数选择需要根据具体任务和数据集进行调整，可以通过实验和调参来找到最佳参数设置。
-{"msg_type":"generate_answer_finish","data":""}

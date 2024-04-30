@@ -148,4 +148,3 @@ A: LSTM 模型的参数选择是一个复杂的问题，需要根据具体的应
 **Q: 如何解决 LSTM 模型的过拟合问题？**
 
 A: 可以使用正则化技术（如 L1 或 L2 正则化）或 Dropout 来解决 LSTM 模型的过拟合问题。
-{"msg_type":"generate_answer_finish","data":""}

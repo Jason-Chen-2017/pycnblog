@@ -97,4 +97,3 @@ print(C)
 [[19 22]
  [43 50]]
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

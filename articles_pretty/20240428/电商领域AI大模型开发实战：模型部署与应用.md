@@ -128,4 +128,3 @@ AI 大模型在电商领域的应用前景广阔，未来将朝着以下几个�
 **Q: 如何解决 AI 大模型的过拟合问题？**
 
 **A:** 可以使用正则化、Dropout 等技术来解决 AI 大模型的过拟合问题。
-{"msg_type":"generate_answer_finish","data":""}

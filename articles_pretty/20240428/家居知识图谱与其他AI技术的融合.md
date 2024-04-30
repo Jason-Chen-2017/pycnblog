@@ -87,4 +87,3 @@ $$\forall x (Person(x) \rightarrow \exists y (City(y) \land lives\_in(x, y)))$$
 $$P(open\_air\_conditioner) = \sigma(\theta_0 + \theta_1 * temperature + \theta_2 * humidity)$$
 
 其中，$\sigma$ 是 sigmoid 函数，$\theta_i$ 是模型参数，$temperature$ 是温度，$humidity$ 是湿度。 
-{"msg_type":"generate_answer_finish","data":""}

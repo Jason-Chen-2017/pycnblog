@@ -84,4 +84,3 @@ $$
 以下是一个基于Python的手机导购推荐系统示例代码：
 
 ```python
-{"msg_type":"generate_answer_finish","data":""}

@@ -141,4 +141,3 @@ print(grandparent)  # 输出: Mike
 ### 9.2 知识图谱与谓词逻辑的关系是什么？
 
 知识图谱是一种基于图结构的知识表示方法，它可以使用谓词逻辑来描述图中的节点和边。
-{"msg_type":"generate_answer_finish","data":""}

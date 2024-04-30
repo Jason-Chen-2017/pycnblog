@@ -137,4 +137,3 @@ generated_code = code_generator(text)[0]['generated_text']
 ### 9.3 如何选择合适的代码生成工具？
 
 选择代码生成工具时，需要考虑支持的编程语言、功能、易用性和价格等因素。
-{"msg_type":"generate_answer_finish","data":""}

@@ -144,4 +144,3 @@ recommendations = ratings.sort_values(by='predicted_rating', ascending=False)[:1
 ### 9.2 如何解决冷启动问题？
 
 可以利用用户的人口统计数据、兴趣爱好等信息，或基于内容的推荐算法进行冷启动推荐。 
-{"msg_type":"generate_answer_finish","data":""}

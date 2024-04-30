@@ -65,4 +65,3 @@
 
 *   将训练好的模型部署到生产环境，提供在线导购服务。
 *   监控模型效果，进行持续优化。 
-{"msg_type":"generate_answer_finish","data":""}

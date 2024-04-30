@@ -86,4 +86,3 @@ P(y = 1 | x) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \be
 $$
 
 其中，$P(y = 1 | x)$ 是给定特征变量 $x$ 时，目标变量 $y$ 等于 1 的概率。 
-{"msg_type":"generate_answer_finish","data":""}

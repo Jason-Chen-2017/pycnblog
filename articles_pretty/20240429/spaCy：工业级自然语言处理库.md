@@ -131,4 +131,3 @@ spaCy支持使用GPU加速，需要安装cupy库:
 ```
 pip install cupy
 ```
-{"msg_type":"generate_answer_finish","data":""}

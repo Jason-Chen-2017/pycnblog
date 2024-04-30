@@ -233,4 +233,3 @@ result = secure_sum(x, y, ctx=context)
 ### 9.5 如何构建可信赖的AI系统？
 
 可以通过应用差分隐私、同态加密、安全多方计算等技术来构建可信赖的AI系统。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -134,4 +134,3 @@ recommendations = predicted_ratings.sort_values(ascending=False).index[:num_reco
 #### 9.3 如何保护用户隐私？
 
 可以使用差分隐私、联邦学习等技术保护用户隐私。
-{"msg_type":"generate_answer_finish","data":""}

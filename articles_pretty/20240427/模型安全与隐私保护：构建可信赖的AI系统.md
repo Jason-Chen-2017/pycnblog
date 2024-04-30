@@ -157,4 +157,3 @@ model.fit(x_train, y_train, epochs=5)
 ### 9.2 如何评估模型的隐私保护程度？
 
 可以使用差分隐私、成员推理攻击等方法来评估模型的隐私保护程度。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -136,4 +136,3 @@ print(recommended_items)
 3. 获取目标用户的相似用户，并排除目标用户本身。
 4. 遍历相似用户，获取他们购买过的商品，并添加到推荐列表中。
 5. 打印推荐结果。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -172,4 +172,3 @@ FAISS 是一个高效的相似度搜索库，可以用于文档检索。
 ### 9.3 如何提高 RAG 模型的生成多样性？
 
 可以使用 beam search、top-k sampling 等方法来提高 RAG 模型的生成多样性。 
-{"msg_type":"generate_answer_finish","data":""}

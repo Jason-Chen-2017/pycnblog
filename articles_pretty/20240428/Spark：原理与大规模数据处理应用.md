@@ -110,4 +110,3 @@ Spark 和 Hadoop 都是大数据处理框架，但它们之间存在一些区别
 * **处理速度:** Spark 比 Hadoop 更快，因为它使用内存计算。
 * **易用性:** Spark 比 Hadoop 更易于使用，因为它提供了更高级的 API。
 * **通用性:** Spark 比 Hadoop 更通用，因为它支持多种数据处理任务，例如批处理、流式处理、机器学习等。
-{"msg_type":"generate_answer_finish","data":""}

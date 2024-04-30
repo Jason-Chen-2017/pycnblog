@@ -110,4 +110,3 @@ plt.show()
 * `kde.fit(x.reshape(-1, 1))`: 使用数据拟合核密度估计模型。
 * `kde.score_samples(x_grid.reshape(-1, 1))`: 计算每个点的概率密度。
 * `plt.plot(x_grid, pdf)`: 绘制概率密度函数曲线。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -72,4 +72,3 @@ head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)
 $$
 
 其中，$h$表示头的数量，$W_i^Q$、$W_i^K$、$W_i^V$分别表示第$i$个头的线性变换矩阵，$W^O$表示输出线性变换矩阵。 
-{"msg_type":"generate_answer_finish","data":""}

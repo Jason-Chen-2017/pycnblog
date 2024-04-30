@@ -93,4 +93,3 @@ EyeReasoner.query("son(?x, ?y)");
 ### 6.3 推荐系统
 
 知识图谱推理可以用于推荐系统，根据用户的兴趣和行为，推理出用户可能感兴趣的商品或服务。 
-{"msg_type":"generate_answer_finish","data":""}

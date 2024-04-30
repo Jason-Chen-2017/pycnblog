@@ -87,4 +87,3 @@ $$
 $$
 
 这个级数对于所有 $x$ 都收敛。 
-{"msg_type":"generate_answer_finish","data":""}

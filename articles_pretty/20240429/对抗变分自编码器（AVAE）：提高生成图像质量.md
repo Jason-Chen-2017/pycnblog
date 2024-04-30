@@ -102,4 +102,3 @@ class AVAE(nn.Module):
 def train(model, data_loader, optimizer, device):
     # ...
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

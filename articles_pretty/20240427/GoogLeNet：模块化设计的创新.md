@@ -200,4 +200,3 @@ GoogLeNet的缺点在于模型结构较为复杂，参数量较大，训练难�
 ### 9.4 如何选择合适的CNN模型？
 
 选择合适的CNN模型需要考虑任务需求、数据集规模、计算资源等因素。对于图像识别任务，可以选择GoogLeNet、ResNet等性能较好的模型；对于计算资源有限的任务，可以选择MobileNet等轻量级模型。
-{"msg_type":"generate_answer_finish","data":""}

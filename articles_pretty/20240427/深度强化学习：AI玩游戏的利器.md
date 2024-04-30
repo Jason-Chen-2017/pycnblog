@@ -230,4 +230,3 @@ agent = A2CAgent(env.observation_space.shape[0], env.action_space.n)
 ### 9.3 深度强化学习有哪些挑战？
 
 深度强化学习面临样本效率、泛化能力和可解释性等挑战。
-{"msg_type":"generate_answer_finish","data":""}

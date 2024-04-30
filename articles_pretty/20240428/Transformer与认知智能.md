@@ -135,4 +135,3 @@ A：选择合适的 Transformer 模型取决于具体的任务和数据集。一
 **Q：如何优化 Transformer 模型的性能？**
 
 A：优化 Transformer 模型的性能可以从以下几个方面入手：调整模型参数、使用更大的数据集、使用预训练模型、使用更好的优化算法等。 
-{"msg_type":"generate_answer_finish","data":""}

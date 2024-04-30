@@ -117,4 +117,3 @@ DBN与其他深度学习模型，例如卷积神经网络（CNN）和循环神�
 ### 9.2 DBN的调参技巧
 
 DBN的调参技巧包括调整学习率、正则化参数、网络结构等。
-{"msg_type":"generate_answer_finish","data":""}

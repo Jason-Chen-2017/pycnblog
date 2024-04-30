@@ -147,4 +147,3 @@ PPO 算法的超参数选择需要根据具体问题进行调整，常见的超�
 * 学习率
 * 折扣因子
 * KL 散度阈值
-{"msg_type":"generate_answer_finish","data":""}

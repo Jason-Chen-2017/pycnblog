@@ -49,4 +49,3 @@
 * **基于梯度的元学习Reward**: 利用梯度下降算法来更新奖励函数参数，例如 RL^2(Reinforcement Learning with Learned Reward) 算法。
 * **基于记忆的元学习Reward**: 利用外部记忆模块来存储以往的学习经验，例如 Meta-Q-Learning 算法。
 * **基于度量的元学习Reward**: 利用距离度量来比较不同任务之间的相似性，例如 Reward-Agnostic Meta-Learning 算法。 
-{"msg_type":"generate_answer_finish","data":""}

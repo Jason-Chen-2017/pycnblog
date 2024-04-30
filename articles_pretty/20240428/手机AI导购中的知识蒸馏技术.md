@@ -160,4 +160,3 @@ student_model.fit(x_train, y_train, epochs=10)
 ### 9.3 如何选择合适的蒸馏方法？
 
 选择合适的蒸馏方法取决于具体的应用场景和需求。例如，如果需要保留教师模型的概率分布信息，可以选择概率分布蒸馏；如果需要保留教师模型的特征表示信息，可以选择特征蒸馏。
-{"msg_type":"generate_answer_finish","data":""}

@@ -73,4 +73,3 @@ sim(i, j) = \frac{\sum_{u \in U(i, j)} (r_{ui} - \bar{r}_u) \cdot (r_{uj} - \bar
 $$
 
 其中，$i$ 和 $j$ 表示两个物品，$U(i, j)$ 表示同时评价过物品 $i$ 和 $j$ 的用户集合，$\bar{r}_u$ 表示用户 $u$ 的平均评分。 
-{"msg_type":"generate_answer_finish","data":""}

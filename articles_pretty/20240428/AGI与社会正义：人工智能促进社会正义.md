@@ -140,4 +140,3 @@ accuracy = model.score(X_test, y_test)
 
 
 **人工智能技术的发展为促进社会正义提供了新的机遇，但同时也带来了新的挑战。我们需要以负责任的态度发展和应用 AI 技术，确保 AI 技术真正造福于人类社会。**
-{"msg_type":"generate_answer_finish","data":""}

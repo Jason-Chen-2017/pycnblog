@@ -117,4 +117,3 @@ print(predicted_demand)
 *   **零售商:** 优化门店库存，提高销售额和客户满意度。
 *   **批发商:** 优化仓库库存，提高配送效率和降低物流成本。
 *   **食品加工企业:** 优化原材料库存，确保生产 continuity and reduce waste.
-{"msg_type":"generate_answer_finish","data":""}

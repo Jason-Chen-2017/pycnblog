@@ -191,4 +191,3 @@ def train_step(heads, relations, tails, negative_heads, negative_tails):
 ### 9.4 如何选择合适的知识图谱嵌入算法？
 
 选择合适的知识图谱嵌入算法取决于具体的应用场景和数据特点。
-{"msg_type":"generate_answer_finish","data":""}

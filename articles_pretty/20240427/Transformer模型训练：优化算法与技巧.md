@@ -80,4 +80,4 @@ $$
 \begin{aligned}
 m_t &= \beta_1 m_{t-1} + (1 - \beta_1) g_t \\
 v_t &= \beta_2 v_{t-1} + (1 - \beta_2) g_t^2 \\
-\hat{m}_t &= \frac{m_t}{1 - \beta_1^t} \\{"msg_type":"generate_answer_finish","data":""}
+\hat{m}_t &= \frac{m_t}{1 - \beta_1^t} \\

@@ -79,4 +79,3 @@ $$
 *   $N$ 是批次大小。
 *   $y_i = r_i + \gamma \max_{a'} Q(s'_i, a')$ 是目标Q值。
 *   $Q(s_i, a_i)$ 是主网络预测的Q值。 
-{"msg_type":"generate_answer_finish","data":""}

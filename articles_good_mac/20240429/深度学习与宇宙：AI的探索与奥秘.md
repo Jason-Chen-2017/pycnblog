@@ -189,4 +189,3 @@ output, hidden = rnn(input, hidden)
 ---
 
 **希望这篇文章能够帮助您了解深度学习在宇宙探索中的应用和潜力。**
-{"msg_type":"generate_answer_finish","data":""}

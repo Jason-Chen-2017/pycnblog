@@ -79,4 +79,3 @@ Q(s, a) = R_t + \gamma \max_{a'} Q(s', a')
 $$
 
 该方程表明，当前状态下采取动作 $a$ 的价值等于立即获得的奖励 $R_t$ 加上下一状态下采取最优动作的价值的折扣值。 
-{"msg_type":"generate_answer_finish","data":""}

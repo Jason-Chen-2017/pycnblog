@@ -62,4 +62,3 @@ $$ MultiHead(Q, K, V) = Concat(head_1, ..., head_h)W^O $$
 $$ head_i = Attention(QW_i^Q, KW_i^K, VW_i^V) $$
 
 其中，$h$ 表示注意力头的数量，$W_i^Q$、$W_i^K$、$W_i^V$ 和 $W^O$ 表示线性变换矩阵。 
-{"msg_type":"generate_answer_finish","data":""}

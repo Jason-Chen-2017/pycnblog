@@ -171,4 +171,3 @@ A: 奖励模型的泛化能力是一个重要问题，需要通过数据增强�
 **Q: RLHF可能会引发哪些伦理问题？**
 
 A: RLHF可能会引发一些伦理问题，例如算法偏见、隐私泄露等。需要采取措施来 mitigate 这些问题。
-{"msg_type":"generate_answer_finish","data":""}

@@ -142,4 +142,3 @@ A: Transformer 模型有很多变体，例如 BERT、GPT、XLNet 等。
 **Q: 如何选择合适的 Transformer 模型？**
 
 A: 选择合适的 Transformer 模型取决于具体的 NLP 任务和数据集。
-{"msg_type":"generate_answer_finish","data":""}

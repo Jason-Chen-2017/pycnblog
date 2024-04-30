@@ -56,4 +56,3 @@ RNN 的反向传播过程使用 BPTT (Backpropagation Through Time) 算法，其
 ### 3.3 梯度消失/爆炸问题
 
 由于链式法则的应用，RNN 在反向传播时梯度信息会逐渐消失或爆炸，导致模型难以学习长期依赖关系。LSTM 和 GRU 通过引入门控机制，有效地解决了这个问题。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -92,4 +92,3 @@ def moe_model(inputs):
     )
     return outputs
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

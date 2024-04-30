@@ -177,4 +177,3 @@ MAS 和 AI Agent 的发展前景广阔，未来将面临以下挑战：
 **Q4: 如何解决 MAS 中的冲突问题？**
 
 **A4:** MAS 中的冲突可以通过博弈论、谈判机制等方法解决。
-{"msg_type":"generate_answer_finish","data":""}

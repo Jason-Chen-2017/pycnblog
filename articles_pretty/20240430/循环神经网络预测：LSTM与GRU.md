@@ -175,4 +175,3 @@ A3: 可以通过正则化、dropout、early stopping 等方法来解决 LSTM 或
 **Q4: 如何评估 LSTM 或 GRU 的性能？**
 
 A4: 可以使用均方误差（MSE）、平均绝对误差（MAE）等指标来评估 LSTM 或 GRU 的性能。
-{"msg_type":"generate_answer_finish","data":""}

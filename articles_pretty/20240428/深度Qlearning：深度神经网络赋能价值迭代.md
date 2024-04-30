@@ -77,4 +77,3 @@ y_i = r_i + \gamma \max_{a'} Q(s'_i, a'; \theta^-)
 $$
 
 其中，$r_i$表示第$i$个经验的奖励，$s'_i$表示第$i$个经验的下一个状态，$\theta^-$表示目标网络的参数。目标网络的参数是定期从当前网络的参数复制过来的，这样做可以提高训练的稳定性。 
-{"msg_type":"generate_answer_finish","data":""}

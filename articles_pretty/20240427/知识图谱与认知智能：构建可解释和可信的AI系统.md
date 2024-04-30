@@ -182,4 +182,3 @@ model.evaluate(x_test, y_test)
 *   **构建更大规模、更高质量的知识图谱**
 *   **开发更智能、更高效的认知智能算法**
 *   **将知识图谱和认知智能应用于更广泛的领域**
-{"msg_type":"generate_answer_finish","data":""}

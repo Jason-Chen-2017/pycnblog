@@ -164,4 +164,3 @@ A: RLHF 可以应用于各种 NLP 任务，例如对话系统、机器翻译、�
 **Q: RLHF 的未来发展趋势是什么?**
 
 A: RLHF 的未来发展趋势包括更有效的人类反馈机制、更强大的奖励模型和更通用的 RLHF 框架。 
-{"msg_type":"generate_answer_finish","data":""}

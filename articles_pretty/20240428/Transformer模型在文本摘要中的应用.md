@@ -149,4 +149,3 @@ A: 选择合适的 Transformer 模型需要考虑任务类型、数据集大小�
 **Q: 如何评估文本摘要的质量？**
 
 A: 文本摘要的质量评估指标包括 ROUGE、BLEU 等，这些指标衡量模型生成的摘要与真实摘要之间的相似度。
-{"msg_type":"generate_answer_finish","data":""}

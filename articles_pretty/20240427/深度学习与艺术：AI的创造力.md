@@ -97,4 +97,3 @@ gan.compile(loss=gan_loss, optimizer='adam')
 # 训练模型
 gan.fit(noise, real_data, epochs=100)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

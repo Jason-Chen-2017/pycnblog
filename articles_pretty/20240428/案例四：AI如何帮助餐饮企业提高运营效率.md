@@ -161,4 +161,3 @@ predictions = model_fit.predict(start=len(data), end=len(data)+n_periods)
 **问：如何选择合适的 AI 技术？**
 
 答：需要根据具体业务需求和数据情况选择合适的 AI 技术。
-{"msg_type":"generate_answer_finish","data":""}

@@ -116,4 +116,3 @@ loss, accuracy = model.evaluate(X_test, y_test)
 print("Loss:", loss)
 print("Accuracy:", accuracy)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

@@ -89,4 +89,3 @@ $$
 * 苏格拉底是人类。
 
 我们可以使用一阶逻辑推理得出结论：苏格拉底是会死的。 
-{"msg_type":"generate_answer_finish","data":""}

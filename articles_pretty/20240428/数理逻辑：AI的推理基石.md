@@ -120,4 +120,3 @@ def resolve(clause1, clause2):
 **问：数理逻辑难学吗？**
 
 答：数理逻辑需要一定的数学基础，但只要你肯努力学习，就一定能够掌握它。 
-{"msg_type":"generate_answer_finish","data":""}

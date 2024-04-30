@@ -141,4 +141,3 @@ with tf.Session() as sess:
 **Q：导购Agent 和聊天机器人有什么区别？**
 
 A：导购Agent 更专注于购物场景，能够理解用户的购物需求，并推荐符合用户偏好的商品。聊天机器人则更通用，可以用于各种场景，例如闲聊、问答等。
-{"msg_type":"generate_answer_finish","data":""}

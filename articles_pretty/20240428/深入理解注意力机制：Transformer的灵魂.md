@@ -68,4 +68,3 @@ MultiHead(Q, K, V) = Concat(head_1, ..., head_h)W^O
 $$
 
 其中，$head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)$，$W_i^Q$、$W_i^K$、$W_i^V$ 分别表示第 $i$ 个注意力头的查询、键和值权重矩阵，$W^O$ 表示输出权重矩阵。 
-{"msg_type":"generate_answer_finish","data":""}

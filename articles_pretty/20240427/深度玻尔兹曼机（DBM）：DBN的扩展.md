@@ -50,4 +50,3 @@ DBM 的 Gibbs 采样算法步骤如下：
 4. 重复步骤 2 和 3 多次，直到模型收敛。
 
 ## 4. 数学模型和公式详细讲解举例说明 
-{"msg_type":"generate_answer_finish","data":""}

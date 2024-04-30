@@ -122,4 +122,3 @@ REINFORCE 算法是一种纯策略梯度方法，而 Actor-Critic 算法是一�
 ### 9.2 如何选择 REINFORCE 算法的学习率？
 
 学习率是 REINFORCE 算法的一个重要超参数，它控制着策略参数更新的步长。学习率过大会导致学习过程不稳定，学习率过小会导致学习速度过慢。通常可以使用网格搜索或随机搜索等方法来选择合适的学习率。 
-{"msg_type":"generate_answer_finish","data":""}

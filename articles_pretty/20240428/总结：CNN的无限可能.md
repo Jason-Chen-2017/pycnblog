@@ -160,4 +160,3 @@ Keras 是一个高级神经网络 API，可以运行在 TensorFlow 或 PyTorch �
 * **正则化**：使用 L1 或 L2 正则化约束模型参数，防止参数过大。
 * **Dropout**：在训练过程中随机丢弃部分神经元，减少模型的复杂度。
 * **Early Stopping**：当模型在验证集上的性能不再提升时，停止训练。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -64,4 +64,3 @@ h_r + r \approx t_r
 $$
 
 其中，$h_r$ 和 $t_r$ 分别表示头实体和尾实体在关系空间中的投影向量。 
-{"msg_type":"generate_answer_finish","data":""}

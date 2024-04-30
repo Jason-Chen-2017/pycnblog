@@ -89,4 +89,3 @@ p(y=1|x) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n
 $$
 
 其中，$p(y=1|x)$ 表示样本属于类别1的概率。 
-{"msg_type":"generate_answer_finish","data":""}

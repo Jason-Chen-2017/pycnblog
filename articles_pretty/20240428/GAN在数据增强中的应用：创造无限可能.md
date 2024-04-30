@@ -68,4 +68,3 @@ GAN 的训练过程可以分为以下步骤：
 * **WGAN (Wasserstein GAN)**: 使用 Wasserstein 距离作为损失函数，可以缓解模式崩溃问题。
 * **CycleGAN**: 用于图像风格转换，可以将图像从一个域转换到另一个域。
 * **StyleGAN**: 可以生成高分辨率、逼真的图像。 
-{"msg_type":"generate_answer_finish","data":""}

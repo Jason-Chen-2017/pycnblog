@@ -173,4 +173,3 @@ print(recommended_movies)
 * **基于内容的推荐**: 利用用户或商品的特征信息进行推荐。
 * **专家推荐**: 利用专家知识进行推荐。
 * **基于流行度的推荐**: 推荐最热门的商品或内容。 
-{"msg_type":"generate_answer_finish","data":""}

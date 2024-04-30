@@ -162,4 +162,3 @@ RNNLM 基于循环结构，而 Transformer 基于自注意力机制。Transforme
 ### 9.2 如何选择合适的语言模型？
 
 选择语言模型时，需要考虑任务需求、计算资源、数据规模等因素。对于需要捕捉长距离依赖关系的任务，Transformer 是更好的选择；对于计算资源有限的任务，RNNLM 可能更合适。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -147,4 +147,3 @@ def bayes_theorem(p_a, p_b_given_a, p_b):
 ### 9.3 贝叶斯方法的局限性是什么？
 
 贝叶斯方法的局限性包括模型选择、参数估计和计算复杂度等问题。此外，贝叶斯方法的结果也可能受到先验概率的影响。
-{"msg_type":"generate_answer_finish","data":""}

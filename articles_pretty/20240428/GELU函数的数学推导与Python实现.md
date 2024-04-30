@@ -119,4 +119,3 @@ A: 选择激活函数取决于具体的任务和数据集。GELU 函数在许多
 **Q: GELU 函数的计算复杂度如何？**
 
 A: GELU 函数的计算复杂度略高于 ReLU 函数，但仍然可以高效地进行计算。 
-{"msg_type":"generate_answer_finish","data":""}

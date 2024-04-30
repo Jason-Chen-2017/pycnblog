@@ -139,4 +139,3 @@ A: RLHF 可以用于各种自然语言处理任务，例如对话系统、机器
 **Q: 如何评估 RLHF 模型的性能？**
 
 A: 可以使用各种指标来评估 RLHF 模型的性能，例如 BLEU 分数、ROUGE 分数、人工评估等。 
-{"msg_type":"generate_answer_finish","data":""}

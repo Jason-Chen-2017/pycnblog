@@ -118,4 +118,3 @@ model.fit(x_train, y_train, epochs=10)
 * A: 通常使用交叉验证来选择最佳的正则化系数。
 * **Q: 正则化技术会影响模型的训练速度吗？** 
 * A: 正则化技术会增加模型的训练时间，但可以提高模型的泛化能力。 
-{"msg_type":"generate_answer_finish","data":""}

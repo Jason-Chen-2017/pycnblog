@@ -65,4 +65,4 @@ $$
 i_t &= \sigma(W_i x_t + U_i h_{t-1} + b_i) \\
 f_t &= \sigma(W_f x_t + U_f h_{t-1} + b_f) \\
 o_t &= \sigma(W_o x_t + U_o h_{t-1} + b_o) \\
-\tilde{c}_t &= tanh(W_c x_t + U_c h_{t-1} + b{"msg_type":"generate_answer_finish","data":""}
+\tilde{c}_t &= tanh(W_c x_t + U_c h_{t-1} + b

@@ -143,4 +143,3 @@ Transformer模型的出现，极大地推动了机器翻译技术的发展。未
 * 任务类型：不同的任务需要不同的模型结构。
 * 数据集大小：数据集越大，需要的模型参数量也越大。
 * 计算资源：训练Transformer模型需要大量的计算资源。 
-{"msg_type":"generate_answer_finish","data":""}

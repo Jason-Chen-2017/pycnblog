@@ -196,4 +196,3 @@ Pix2Pix 是一种条件 GAN，需要成对的训练数据，而 CycleGAN 是一�
 ### 9.2 如何选择合适的图像翻译模型？
 
 选择合适的图像翻译模型取决于具体的应用场景和数据集。如果拥有成对的训练数据，可以选择 Pix2Pix；如果沒有成对的训练数据，可以选择 CycleGAN。 
-{"msg_type":"generate_answer_finish","data":""}

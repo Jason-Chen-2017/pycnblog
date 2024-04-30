@@ -148,4 +148,3 @@ Transformer 模型已经成为自然语言处理领域的主流模型，未来�
 ### 9.3 如何使用预训练模型？
 
 可以使用 Hugging Face Transformers 等预训练模型库下载预训练模型，并将其用于初始化模型参数。
-{"msg_type":"generate_answer_finish","data":""}

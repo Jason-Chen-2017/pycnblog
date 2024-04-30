@@ -163,4 +163,3 @@ DBN的结构选择取决于具体的应用场景和数据特点。通常需要�
 ### 9.3 如何评估DBN的性能？
 
 可以使用AUC (Area Under Curve) 等指标来评估DBN的性能。AUC越高，表示模型的性能越好。
-{"msg_type":"generate_answer_finish","data":""}

@@ -126,4 +126,3 @@ $$
 *   $\epsilon$ 是一个服从标准正态分布的随机变量。
 
 通过重参数化技巧，可以将随机性从编码器转移到 $\epsilon$ 上，从而可以使用随机梯度下降算法优化VAE模型。 
-{"msg_type":"generate_answer_finish","data":""}

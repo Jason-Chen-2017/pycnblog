@@ -111,4 +111,3 @@ $$
 $$
 
 表示如果 $x$ 是 $y$ 的父亲，$y$ 是 $z$ 的父亲，则 $x$ 是 $z$ 的祖父。 
-{"msg_type":"generate_answer_finish","data":""}

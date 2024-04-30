@@ -74,4 +74,3 @@ $$
 $$
 
 其中，$i$ 和 $j$ 表示商品，$f_{ik}$ 表示商品 $i$ 的第 $k$ 个特征，$sim(f_{ik}, f_{jk})$ 表示特征 $f_{ik}$ 和 $f_{jk}$ 的相似度，$w_k$ 表示特征 $k$ 的权重。
-{"msg_type":"generate_answer_finish","data":""}

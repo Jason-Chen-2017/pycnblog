@@ -72,4 +72,3 @@ y = f(W * x + b)
 $$
 
 其中，$x$ 表示输入图像，$W$ 表示卷积核，$*$ 表示卷积操作，$b$ 表示偏置项，$f$ 表示激活函数，$y$ 表示输出结果。 
-{"msg_type":"generate_answer_finish","data":""}

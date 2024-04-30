@@ -79,4 +79,3 @@ $$
 ### 4.2. 联邦学习 - FedAvg 算法
 
 FedAvg 算法是联邦学习中常用的模型聚合算法，它通过计算各个设备上传的模型参数的加权平均值来更新全局模型。 
-{"msg_type":"generate_answer_finish","data":""}

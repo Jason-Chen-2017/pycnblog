@@ -79,4 +79,3 @@ $$
 
 1.  将码字与生成多项式进行卷积运算。
 2.  生成校验位，并将其添加到码字的末尾。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -124,4 +124,3 @@ AlphaGo的成功，标志着人工智能在围棋领域的里程碑，也为人�
 ### 8.3 AlphaGo的未来发展方向是什么？
 
 AlphaGo的技术原理可以应用于其他需要决策和规划的领域，例如金融交易、机器人控制、智能交通等。 
-{"msg_type":"generate_answer_finish","data":""}

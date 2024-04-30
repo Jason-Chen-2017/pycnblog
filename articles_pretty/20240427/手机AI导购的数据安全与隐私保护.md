@@ -84,4 +84,3 @@
 ### 3.5 商品推荐
 
 根据模型预测的结果，为用户推荐个性化的商品。 
-{"msg_type":"generate_answer_finish","data":""}

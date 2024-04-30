@@ -152,4 +152,3 @@ Transformer在医疗领域的应用前景广阔，但仍面临一些挑战，例
 *   **如何评估Transformer模型的性能？**
 
     可以使用常用的评估指标，例如准确率、召回率、F1值等。
-{"msg_type":"generate_answer_finish","data":""}

@@ -98,4 +98,3 @@ explanation = explainer.explain_instance(image, model.predict, top_labels=5, hid
 # 可视化解释结果
 explanation.show_in_notebook(text=True)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

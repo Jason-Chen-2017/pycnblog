@@ -87,4 +87,3 @@ PyTorch 是一个开源的深度学习框架，可以用于构建和训练 Trans
 ### 7.2 IPFS
 
 IPFS 
-{"msg_type":"generate_answer_finish","data":""}

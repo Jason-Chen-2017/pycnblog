@@ -105,4 +105,3 @@ print(text)
 Hugging Face Transformers 库是一个开源的 NLP 库，它提供了各种预训练的大语言模型和工具。
 
 ### 7.2 Google AI 
-{"msg_type":"generate_answer_finish","data":""}

@@ -165,4 +165,3 @@ def train_step(x):
 ### 9.3. 如何评估自编码器的性能？
 
 可以使用重建误差、分类准确率等指标评估自编码器的性能。
-{"msg_type":"generate_answer_finish","data":""}

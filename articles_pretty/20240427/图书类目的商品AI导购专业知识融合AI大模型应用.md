@@ -159,4 +159,3 @@ print(similar_books)
 ### 9.3 如何防止推荐结果过于单一？
 
 可以利用多样性指标来评估推荐结果的多样性，并采用多样性推荐算法来增加推荐结果的多样性。
-{"msg_type":"generate_answer_finish","data":""}

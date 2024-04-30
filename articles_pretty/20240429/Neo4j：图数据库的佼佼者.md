@@ -89,4 +89,3 @@ with driver.session() as session:
     for record in result:
         print(record["n"])
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

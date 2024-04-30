@@ -146,4 +146,3 @@ Photoshop 是一款功能强大的像素级图像编辑软件，而 Lightroom �
 ### 9.3 有哪些免费的图像处理软件？
 
 GIMP 和 Darktable 是两款功能强大的免费开源图像处理软件。Pixlr 是一款基于网页的免费图像编辑工具。
-{"msg_type":"generate_answer_finish","data":""}

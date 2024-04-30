@@ -148,4 +148,3 @@ StackGAN是图像生成领域的一个重要里程碑，它展示了多阶段生
 **问：StackGAN的未来发展趋势是什么？**
 
 答：未来，我们可以期待更多基于StackGAN的变体和改进模型的出现，以解决现有模型的局限性并提升图像生成的效果。
-{"msg_type":"generate_answer_finish","data":""}

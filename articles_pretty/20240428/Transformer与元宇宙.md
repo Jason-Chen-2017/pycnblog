@@ -130,4 +130,3 @@ Transformer通过自注意力机制捕捉长距离依赖关系，从而有效地
 ### 9.2 如何提高Transformer模型的性能？
 
 可以通过增加模型的层数、增加注意力头的数量、使用预训练模型等方法来提高Transformer模型的性能。 
-{"msg_type":"generate_answer_finish","data":""}

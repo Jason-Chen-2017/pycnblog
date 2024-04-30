@@ -159,4 +159,3 @@ print(recommendations)
 **问：家居AI导购的未来发展方向是什么？**
 
 答：家居AI导购未来将朝着更加个性化、多模态、场景化、生态化的方向发展。
-{"msg_type":"generate_answer_finish","data":""}

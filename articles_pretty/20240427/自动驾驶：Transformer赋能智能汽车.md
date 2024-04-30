@@ -63,4 +63,3 @@ head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)
 $$
 
 其中，$h$表示头的数量，$W_i^Q$、$W_i^K$、$W_i^V$表示线性投影矩阵。 
-{"msg_type":"generate_answer_finish","data":""}

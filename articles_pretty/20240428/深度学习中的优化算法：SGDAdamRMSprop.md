@@ -80,4 +80,3 @@ w_{t+1} = w_t - \eta \frac{g_t}{\sqrt{v_t} + \epsilon}
 $$
 
 其中，$v_t$ 表示梯度平方的指数加权平均值，$\beta$ 是指数衰减率，$g_t$ 表示梯度，$\epsilon$ 是一个小的平滑项。
-{"msg_type":"generate_answer_finish","data":""}

@@ -84,4 +84,3 @@ $$ M = (Q, \Sigma, \Gamma, \delta, q_0, B, F) $$
 $$ L_H = \{ \langle M, w \rangle \mid M \text{ 在输入 } w \text{ 上停止运行} \} $$
 
 其中 $\langle M, w \rangle$ 表示图灵机 M 和输入 w 的编码。 停机问题的证明表明 $L_H$ 是不可判定的，即不存在任何图灵机可以识别 $L_H$ 中的所有字符串。 
-{"msg_type":"generate_answer_finish","data":""}

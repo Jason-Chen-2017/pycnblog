@@ -118,4 +118,3 @@ A: 可以使用 `concat()` 函数、`merge()` 函数、`join()` 函数等进行 
 **Q: 如何对 DataFrame 进行分组和聚合？**
 
 A: 可以使用 `groupby()` 函数进行分组，然后使用 `agg()` 函数进行聚合操作。
-{"msg_type":"generate_answer_finish","data":""}

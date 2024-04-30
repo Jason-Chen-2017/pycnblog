@@ -147,4 +147,3 @@ translation = model.predict(x_test)
 *   **使用更好的预训练模型。**
 *   **使用 beam search 等解码算法。**
 *   **进行人工评估和错误分析，改进模型。** 
-{"msg_type":"generate_answer_finish","data":""}

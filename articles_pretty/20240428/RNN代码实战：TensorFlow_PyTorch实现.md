@@ -79,4 +79,3 @@ h_t &= o_t \odot \tanh(c_t)
 $$
 
 其中，$i_t$、$f_t$ 和 $o_t$ 分别表示输入门、遗忘门和输出门，$\tilde{c}_t$ 表示候选细胞状态，$c_t$ 表示细胞状态，$\sigma$ 表示 sigmoid 函数，$\odot$ 表示按元素相乘。 
-{"msg_type":"generate_answer_finish","data":""}

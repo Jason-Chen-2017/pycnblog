@@ -74,4 +74,3 @@ x_q = round(\frac{x - x_{min}}{x_{max} - x_{min}} \cdot (2^b - 1))
 $$
 
 其中，$x$是浮点数，$x_q$是量化后的定点数，$x_{min}$和$x_{max}$分别是浮点数的最小值和最大值，$b$是定点数的位宽。 
-{"msg_type":"generate_answer_finish","data":""}

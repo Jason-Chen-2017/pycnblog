@@ -151,4 +151,3 @@ for epoch in range(num_epochs):
 ### 9.3 如何评估知识蒸馏的效果？
 
 知识蒸馏的效果可以通过比较学生模型和教师模型的性能来评估。常用的评估指标包括准确率、召回率、F1值等。
-{"msg_type":"generate_answer_finish","data":""}

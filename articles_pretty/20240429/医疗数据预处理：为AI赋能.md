@@ -76,4 +76,3 @@
 * **词袋模型 (Bag-of-Words):** 将文本数据转换为词频向量。
 * **TF-IDF:** 考虑词频和逆文档频率，提取更重要的词语。
 * **词嵌入 (Word Embedding):** 将词语映射到低维向量空间，保留语义信息。 
-{"msg_type":"generate_answer_finish","data":""}

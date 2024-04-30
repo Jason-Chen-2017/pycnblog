@@ -126,4 +126,3 @@ Transformer模型可以通过分段处理长文本，或者使用特殊的位置
 ### 9.2 如何评估Transformer模型的性能？
 
 可以使用BLEU、ROUGE等指标来评估机器翻译模型的性能，使用准确率、召回率、F1值等指标来评估文本分类模型的性能。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -62,4 +62,3 @@ $$ L_C = \frac{1}{2} \sum_{i,j} (F_{i,j}^l - P_{i,j}^l)^2 $$
 **风格损失：**
 
 $$ L_S = \sum_{l} \frac{1}{4N_l^2M_l^2} \sum_{i,j} (G_{i,j}^l - A_{i,j}^l)^2 $$ 
-{"msg_type":"generate_answer_finish","data":""}

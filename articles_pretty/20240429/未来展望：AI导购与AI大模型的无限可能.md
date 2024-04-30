@@ -82,4 +82,3 @@ $$
 $$
 
 其中，$\hat{r}_{ui}$ 表示用户 $u$ 对商品 $i$ 的预测评分，$N_u(i)$ 表示与用户 $u$ 相似的用户中评价过商品 $i$ 的用户集合。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -142,4 +142,3 @@ Softmax函数适用于多分类问题，将输出转化为概率分布；Sigmoid
 ### 9.3 如何选择合适的Softmax函数改进方法？
 
 选择合适的改进方法取决于具体的应用场景和数据集规模。
-{"msg_type":"generate_answer_finish","data":""}

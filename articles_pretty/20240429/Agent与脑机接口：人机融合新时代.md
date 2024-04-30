@@ -105,4 +105,3 @@ Q(s, a) \leftarrow Q(s, a) + \alpha[r + \gamma \max_{a'} Q(s', a') - Q(s, a)]
 $$
 
 其中，$Q(s, a)$ 是状态-动作值函数，$\alpha$ 是学习率，$r$ 是奖励，$\gamma$ 是折扣因子，$s'$ 是下一个状态，$a'$ 是下一个动作。 
-{"msg_type":"generate_answer_finish","data":""}

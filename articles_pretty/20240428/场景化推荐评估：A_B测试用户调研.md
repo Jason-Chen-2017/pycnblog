@@ -70,4 +70,3 @@ d(\vec{a}, \vec{b}) = ||\vec{a} - \vec{b}||
 $$
 
 其中，$\vec{a}$ 和 $\vec{b}$ 分别表示两个向量，$||\vec{a} - \vec{b}||$ 表示两个向量之间的距离。 
-{"msg_type":"generate_answer_finish","data":""}

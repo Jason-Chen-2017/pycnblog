@@ -77,4 +77,3 @@ $$c_t = \sum_{i=1}^T \alpha_{ti} x_i$$
 1. 将注意力机制的上下文向量 $c_t$ 作为 GRU 的输入之一：
 
 $$\tilde{h}_t = \tanh(W_h x_t + U_h (r_t \odot h_{t-1}) + V_h c_t + b_h)$$ 
-{"msg_type":"generate_answer_finish","data":""}

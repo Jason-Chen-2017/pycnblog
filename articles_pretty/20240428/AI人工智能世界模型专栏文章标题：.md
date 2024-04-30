@@ -110,4 +110,3 @@ world_model = WorldModel()
 * **世界模型的未来发展方向是什么？**
 
 未来，世界模型的研究方向包括：构建更复杂、更准确的模型、探索更有效率的训练方法、将世界模型应用于更广泛的领域等。 
-{"msg_type":"generate_answer_finish","data":""}

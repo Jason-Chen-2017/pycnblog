@@ -161,4 +161,3 @@ for epoch in range(num_epochs):
 **问题3：如何评估元学习GAN的性能？**
 
 **回答：**评估元学习GAN的性能通常需要在多个任务上进行测试，并比较模型在不同任务上的表现。 
-{"msg_type":"generate_answer_finish","data":""}

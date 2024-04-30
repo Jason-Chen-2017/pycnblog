@@ -154,4 +154,3 @@ def matching_network(support_set, query):
 ### 9.4 匹配网络与其他少样本学习方法相比有哪些优势？
 
 匹配网络的优势在于其简单有效、泛化能力强、可扩展性强。
-{"msg_type":"generate_answer_finish","data":""}

@@ -80,4 +80,3 @@ s(u,i) = \sum_{k=1}^{n} w_k f_k(u) f_k(i)
 $$
 
 其中，$s(u,i)$表示用户$u$对商品$i$的兴趣度，$n$表示商品的属性数量，$w_k$表示属性$k$的权重，$f_k(u)$表示用户$u$在属性$k$上的特征值，$f_k(i)$表示商品$i$在属性$k$上的特征值。 
-{"msg_type":"generate_answer_finish","data":""}

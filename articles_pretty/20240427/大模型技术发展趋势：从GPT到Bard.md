@@ -100,4 +100,3 @@ class Transformer(tf.keras.Model):
 ### 6.2 对话系统
 
 大模型技术可以用于构建智能对话系统，例如聊天机器人和虚拟助手，实现更自然的人机对话。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -96,4 +96,3 @@ padded_sequences = tf.keras.preprocessing.sequence.pad_sequences(sequences)
 # 训练 RNN 模型
 model.fit(padded_sequences, labels, epochs=10)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

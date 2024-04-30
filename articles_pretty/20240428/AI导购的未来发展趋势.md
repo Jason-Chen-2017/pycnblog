@@ -73,4 +73,3 @@ tfidf(t,d,D) = tf(t,d) \times idf(t,D)
 $$
 
 其中，$t$ 表示关键词，$d$ 表示商品描述，$D$ 表示所有商品描述的集合。$tf(t,d)$ 表示关键词 $t$ 在商品描述 $d$ 中出现的频率，$idf(t,D)$ 表示关键词 $t$ 的逆文档频率，用于衡量关键词的普遍程度。 
-{"msg_type":"generate_answer_finish","data":""}

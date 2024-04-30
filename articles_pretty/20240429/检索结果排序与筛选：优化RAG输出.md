@@ -75,4 +75,3 @@ $$
 * $\text{IDF}(t, D)$ 表示词语 $t$ 的逆文档频率
 
 ## 4. 数学模型和公式详细讲解举例说明 
-{"msg_type":"generate_answer_finish","data":""}

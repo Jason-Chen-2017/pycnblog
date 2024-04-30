@@ -133,4 +133,3 @@ print(pm.summary(trace))
 **问：学习概率编程需要哪些基础知识？**
 
 答：学习概率编程需要一定的概率论、统计学和编程基础知识。
-{"msg_type":"generate_answer_finish","data":""}

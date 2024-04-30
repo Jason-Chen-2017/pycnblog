@@ -123,4 +123,3 @@ f_tensor = np.tensordot(f1, f2, axes=0)
 **答：** 多模态融合技术的主要局限性在于数据异构性和计算复杂性。
 
 **问：** 如何选择合适的
-{"msg_type":"generate_answer_finish","data":""}

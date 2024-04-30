@@ -237,4 +237,3 @@ while not done:
 ### 9.3 什么是强化学习？
 
 强化学习是一种机器学习方法，它允许Agent通过与环境的交互来学习最优策略。
-{"msg_type":"generate_answer_finish","data":""}

@@ -55,4 +55,3 @@ ESRGAN 的训练过程与 SRGAN 类似，但有一些改进：
 1. **使用 RRDB 构建更深的生成器网络。**
 2. **移除 BN 层，并使用 spectral normalization 稳定训练过程。**
 3. **使用 Relativistic GAN 和感知损失函数提升生成图像质量。** 
-{"msg_type":"generate_answer_finish","data":""}

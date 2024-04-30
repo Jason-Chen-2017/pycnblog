@@ -166,4 +166,3 @@ model.fit(x_train, y_train, epochs=5)
 ### 9.3 模型压缩后的模型如何部署到家电设备上？
 
 模型压缩后的模型可以使用TensorRT等推理引擎进行部署，以提高模型的推理速度。 
-{"msg_type":"generate_answer_finish","data":""}

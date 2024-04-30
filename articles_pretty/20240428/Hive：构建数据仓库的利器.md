@@ -146,4 +146,3 @@ A: 可以通过以下方式提高 Hive 查询性能：
 **Q: 如何学习 Hive？**
 
 A: 可以参考 Hive 官方文档和社区资源，也可以参加 Hive 相关的培训课程。
-{"msg_type":"generate_answer_finish","data":""}

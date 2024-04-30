@@ -127,4 +127,3 @@ BLOOM模型可以用于构建问答系统，例如客服机器人、智能助手
 ### 6.4 代码生成
 
 BLOOM模型可以用于根据自然语言描述生成代码，例如Python代码、Java代码等。 
-{"msg_type":"generate_answer_finish","data":""}

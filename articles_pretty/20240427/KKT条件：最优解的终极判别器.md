@@ -101,4 +101,3 @@ $$
 4.  **验证解的有效性:**
 
     该解满足 KKT 条件的所有条件，因此为最优解。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -127,4 +127,3 @@ A：可以利用用户 demographics 信息、社交网络信息等进行冷启�
 **Q：如何避免推荐系统偏差？**
 
 A：可以通过数据清洗、算法优化等方式减少推荐系统偏差。
-{"msg_type":"generate_answer_finish","data":""}

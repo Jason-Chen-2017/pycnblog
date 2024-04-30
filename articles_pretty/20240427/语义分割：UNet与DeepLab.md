@@ -170,4 +170,3 @@ U-Net 和 DeepLab 都是常用的语义分割模型，但它们在结构和算�
 * **像素精度 (Pixel Accuracy):** 正确分类的像素占总像素的比例。
 * **平均交并比 (Mean Intersection over Union, MIoU):** 所有类别的交并比的平均值。
 * **频率加权交并比 (Frequency Weighted Intersection over Union, FWIoU):** 根据每个类别的像素数量对 MIoU 进行加权。
-{"msg_type":"generate_answer_finish","data":""}

@@ -177,4 +177,3 @@ RNN 在 ITS 中的应用也面临一些挑战：
 *   **调整模型参数**
 *   **使用正则化技术**
 *   **采用更先进的 RNN 模型** 
-{"msg_type":"generate_answer_finish","data":""}

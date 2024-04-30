@@ -152,4 +152,3 @@ attack_results = model.attack_dataset(train_dataset, augmenter)
 ### 9.3 如何评估数据增强的效果？
 
 可以使用交叉验证或在测试集上评估模型的性能，来评估数据增强的效果。
-{"msg_type":"generate_answer_finish","data":""}

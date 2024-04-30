@@ -70,4 +70,3 @@ $$
 * $\gamma$：折扣因子，用于衡量未来奖励的权重
 * $V(s_t;\omega)$：Critic网络对状态$s_t$的价值评估
 * $V(s_{t+1};\omega)$：Critic网络对状态$s_{t+1}$的价值评估 
-{"msg_type":"generate_answer_finish","data":""}

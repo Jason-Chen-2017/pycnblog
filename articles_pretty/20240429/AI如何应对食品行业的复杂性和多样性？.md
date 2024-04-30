@@ -126,4 +126,3 @@ predicted_cluster = model.predict(new_data)
 
 print(predicted_cluster)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

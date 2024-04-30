@@ -134,4 +134,3 @@ class QLearningAgent:
 * `__init__`：初始化智能体，设置状态空间、动作空间、学习率、折扣因子和 epsilon。
 * `choose_action`：根据当前状态选择一个动作。
 * `update_q_table`：更新Q表格。 
-{"msg_type":"generate_answer_finish","data":""}

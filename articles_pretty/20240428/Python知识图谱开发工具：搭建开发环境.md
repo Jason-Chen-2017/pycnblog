@@ -164,4 +164,3 @@ print(G.edges)
 ### 9.4 常见的知识图谱工具有哪些？
 
 常见的知识图谱工具包括Neo4j、JanusGraph、DGL等。
-{"msg_type":"generate_answer_finish","data":""}

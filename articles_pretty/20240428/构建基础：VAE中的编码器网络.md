@@ -69,4 +69,3 @@ KL 散度用于度量两个概率分布之间的差异。在 VAE 中，KL 散度
 $$
 D_{KL}[q(z|x) || p(z)] = \int q(z|x) \log \frac{q(z|x)}{p(z)} dz
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

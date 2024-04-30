@@ -147,4 +147,3 @@ model.fit(x_train, y_train, epochs=10)
 ### 9.3. 如何避免过拟合？
 
 过拟合是指模型在训练数据上表现良好，但在测试数据上表现较差。避免过拟合的方法包括正则化、数据增强和 Dropout 等。
-{"msg_type":"generate_answer_finish","data":""}

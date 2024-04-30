@@ -183,4 +183,3 @@ A: Keras是一个高级神经网络API，可以运行在TensorFlow、CNTK、Thea
 **Q: 如何选择合适的深度学习框架？**
 
 A: 选择深度学习框架需要考虑多个因素，如易用性、性能、灵活性、社区支持等。TensorFlow是一个功能强大、社区活跃的框架，适合各种深度学习任务。
-{"msg_type":"generate_answer_finish","data":""}

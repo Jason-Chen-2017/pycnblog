@@ -213,4 +213,3 @@ model.evaluate(x_test, y_test)
 **问题**：LSTM 模型有哪些实际应用场景？
 
 **解答**：LSTM 模型在自然语言处理、语音识别、时间序列预测等领域都有广泛的应用。
-{"msg_type":"generate_answer_finish","data":""}

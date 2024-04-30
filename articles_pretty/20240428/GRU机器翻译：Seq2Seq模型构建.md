@@ -77,4 +77,3 @@ $$ \alpha_{ti} = \frac{exp(e_{ti})}{\sum_{k=1}^{T_x} exp(e_{tk})} $$
 $$ c_t = \sum_{i=1}^{T_x} \alpha_{ti} h_i $$
 
 其中，$e_{ti}$表示解码器当前时间步的隐藏状态与编码器第$i$个时间步的隐藏状态之间的相似度，$T_x$表示源语言句子的长度，$h_i$表示编码器第$i$个时间步的隐藏状态。 
-{"msg_type":"generate_answer_finish","data":""}

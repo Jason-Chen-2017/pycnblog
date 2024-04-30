@@ -174,4 +174,3 @@ print(data['signal'])
 ### 9.3 什么是量化交易？
 
 量化交易是指利用计算机技术和数学模型进行交易决策的投资方式。 
-{"msg_type":"generate_answer_finish","data":""}

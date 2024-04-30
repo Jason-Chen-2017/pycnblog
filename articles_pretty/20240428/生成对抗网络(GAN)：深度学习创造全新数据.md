@@ -75,4 +75,3 @@ $$ L_D = - \frac{1}{m} \sum_{i=1}^m [y_i \log D(x_i) + (1 - y_i) \log (1 - D(x_i
 * $x_i$ 是第 $i$ 个样本。
 * $y_i$ 是第 $i$ 个样本的标签，真实样本为 1，生成样本为 0。
 * $D(x_i)$ 是判别器对第 $i$ 个样本的输出，表示该样本为真实样本的概率。 
-{"msg_type":"generate_answer_finish","data":""}

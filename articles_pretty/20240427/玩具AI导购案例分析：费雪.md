@@ -76,4 +76,3 @@ $$
 $$
 sim(i, j) = \frac{\sum_{k=1}^{n} w_k \cdot f_{ik} \cdot f_{jk}}{\sqrt{\sum_{k=1}^{n} (w_k \cdot f_{ik})^2} \cdot \sqrt{\sum_{k=1}^{n} (w_k \cdot f_{jk})^2}}
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

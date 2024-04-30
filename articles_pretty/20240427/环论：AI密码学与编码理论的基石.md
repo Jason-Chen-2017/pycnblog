@@ -98,4 +98,3 @@ def encode(message, generator):
     codeword.append(lfsr.shift(bit))
   return codeword
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

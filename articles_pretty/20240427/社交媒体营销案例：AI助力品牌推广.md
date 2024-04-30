@@ -173,4 +173,3 @@ df = pd.DataFrame(data, columns=["text", "created_at", "user"])
 ### 9.2 如何选择合适的社交媒体平台？
 
 需要根据目标用户群体和营销目标选择合适的社交媒体平台。例如，如果目标用户是年轻人，可以选择 Instagram 或 TikTok；如果目标用户是职场人士，可以选择 LinkedIn。
-{"msg_type":"generate_answer_finish","data":""}

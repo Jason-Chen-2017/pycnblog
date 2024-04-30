@@ -74,4 +74,3 @@ HMM模型的解码过程可以通过维特比算法(Viterbi Algorithm)来实现�
 DNN是一种机器学习模型，由多层神经元组成。DNN可以用来建模复杂的非线性关系，例如语音信号和文本序列之间的关系。
 
 DNN模型的训练过程通常采用反向传播算法(Backpropagation Algorithm)来实现。反向传播算法是一种梯度下降算法，用于更新神经网络的权重，使得模型的输出更加接近真实值。 
-{"msg_type":"generate_answer_finish","data":""}

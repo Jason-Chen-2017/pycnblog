@@ -181,4 +181,3 @@ LSTM 模型的参数选择需要根据具体任务和数据集进行调整。一
 ### 9.3. 如何评估 LSTM 模型的性能？
 
 LSTM 模型的性能评估指标包括准确率、召回率、F1 分数等。 
-{"msg_type":"generate_answer_finish","data":""}

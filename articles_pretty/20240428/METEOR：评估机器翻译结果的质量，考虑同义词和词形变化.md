@@ -114,4 +114,3 @@ A: METEOR 和 BLEU 都是机器翻译评估指标，但它们的核心思想不�
 **Q: METEOR 的优缺点是什么？**
 
 A: METEOR 的优点是考虑了同义词和词形变化，评估结果更符合人类判断。缺点是计算复杂度较高，需要外部知识库的支持。
-{"msg_type":"generate_answer_finish","data":""}

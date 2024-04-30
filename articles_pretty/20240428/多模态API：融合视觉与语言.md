@@ -107,4 +107,3 @@ answer = transformer(features, question)
 # 打印答案
 print(answer)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

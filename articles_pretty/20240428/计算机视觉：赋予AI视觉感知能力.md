@@ -179,4 +179,3 @@ print(outputs)
 ### 9.2 如何学习计算机视觉？
 
 学习计算机视觉需要掌握图像处理、机器学习和深度学习等知识。可以参考一些在线课程、书籍和开源项目，例如 OpenCV 和 TensorFlow 教程。
-{"msg_type":"generate_answer_finish","data":""}

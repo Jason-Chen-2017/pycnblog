@@ -183,4 +183,3 @@ Cholesky 分解只适用于对称正定矩阵。
 ### 9.3 Cholesky 分解的复杂度是多少？
 
 Cholesky 分解的计算复杂度为 $O(n^3)$，其中 $n$ 是矩阵的维度。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -63,4 +63,3 @@ v_i = W_v x_i
 $$
 
 其中，$x_i$ 表示第 $i$ 个词语的词向量，$W_q$、$W_k$ 和 $W_v$ 
-{"msg_type":"generate_answer_finish","data":""}

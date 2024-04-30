@@ -148,4 +148,3 @@ RNN 擅长处理序列数据，而 CNN 擅长处理图像等空间数据。
 ### 9.2. 如何选择合适的 RNN 架构？
 
 选择 RNN 架构取决于具体的任务和数据集。对于简单的任务，可以使用简单 RNN；对于更复杂的任务，可以考虑 LSTM 或 GRU。
-{"msg_type":"generate_answer_finish","data":""}

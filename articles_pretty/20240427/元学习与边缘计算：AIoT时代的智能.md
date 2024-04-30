@@ -77,4 +77,3 @@ $$
 * $\theta_i'$ 是第 $i$ 个任务上训练得到的模型参数
 
 MAML 的目标是找到一组初始化参数 $\theta$，使得模型能够在所有任务上都表现良好。 
-{"msg_type":"generate_answer_finish","data":""}

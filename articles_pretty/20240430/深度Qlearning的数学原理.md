@@ -79,4 +79,3 @@ $$
 $$
 Q^*(s, a) = R(s, a) + \gamma \max_{a'} Q^*(s', a')
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

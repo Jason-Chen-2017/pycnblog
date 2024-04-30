@@ -184,4 +184,3 @@ VAE 和 GAN 都是生成模型，但它们的工作原理不同。VAE 使用概�
 *   使用更合适的潜在空间维度
 *   使用更有效的训练策略
 *   结合其他生成模型，例如 GAN
-{"msg_type":"generate_answer_finish","data":""}

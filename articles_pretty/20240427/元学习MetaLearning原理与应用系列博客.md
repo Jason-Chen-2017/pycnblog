@@ -67,4 +67,3 @@ L(f) = - \sum_{i=1}^{N} \log P(y_i | x_i, S)
 $$
 
 其中，$N$ 是样本数量，$y_i$ 是第 $i$ 个样本的标签，$x_i$ 是第 $i$ 个样本的输入数据，$S$ 是支持集，包含少量带有标签的样本。Matching Networks通过优化损失函数，学习一个良好的嵌入函数 $f$。 
-{"msg_type":"generate_answer_finish","data":""}

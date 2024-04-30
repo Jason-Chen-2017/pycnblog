@@ -211,4 +211,3 @@ A: RDD是Spark的核心数据结构，它代表一个不可变的、可分区的
 **Q: K-Means算法的原理是什么？**
 
 A: K-Means算法将数据点划分为K个簇，使得簇内数据点之间的距离最小，簇间数据点之间的距离最大。
-{"msg_type":"generate_answer_finish","data":""}

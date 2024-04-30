@@ -112,4 +112,3 @@ for epoch in range(num_epochs):
         loss.backward()
         optimizer.step()
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

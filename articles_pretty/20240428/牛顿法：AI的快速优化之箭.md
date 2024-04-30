@@ -161,4 +161,3 @@ print(result)
 ### 8.3 如何避免陷入局部极值 
 
 可以使用随机初始化、动量法或其他全局优化算法来避免陷入局部极值。 
-{"msg_type":"generate_answer_finish","data":""}

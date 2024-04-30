@@ -166,4 +166,3 @@ pip install statsmodels
 ### 9.3 如何解释模型结果？
 
 Statsmodels 提供了多种方法来解释模型结果，例如 summary() 方法可以打印模型的统计摘要，params 属性可以获取模型参数的估计值。
-{"msg_type":"generate_answer_finish","data":""}

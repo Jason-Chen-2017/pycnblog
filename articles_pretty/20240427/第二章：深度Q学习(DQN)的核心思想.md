@@ -80,4 +80,3 @@ DQN的损失函数为均方误差 (Mean Squared Error, MSE) 损失函数，它�
 $$
 L(\theta) = E[(r + \gamma \max_{a'} Q(s', a'; \theta^-) - Q(s, a; \theta))^2]
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

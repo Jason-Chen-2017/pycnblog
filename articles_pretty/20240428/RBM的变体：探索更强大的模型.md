@@ -145,4 +145,3 @@ RBM是DBN的基本 building block。DBN是由多个RBM堆叠而成，其中每�
 ### 9.3 如何评估RBM的性能？
 
 RBM的性能可以通过重建误差、生成数据的质量等指标来评估。
-{"msg_type":"generate_answer_finish","data":""}

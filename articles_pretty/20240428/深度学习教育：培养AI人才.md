@@ -178,4 +178,3 @@ class RNN(nn.Module):
 *   **使用正则化技术**
 *   **提前停止训练**
 *   **降低模型复杂度** 
-{"msg_type":"generate_answer_finish","data":""}

@@ -109,4 +109,3 @@ data['cluster'] = clusters
 ### 8.3 跨渠道营销
 
 消费者在多个渠道之间切换，例如网站、移动应用和社交媒体。企业需要制定跨渠道营销策略，以确保一致的品牌体验。
-{"msg_type":"generate_answer_finish","data":""}

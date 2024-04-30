@@ -76,4 +76,3 @@ $$
 * $N$ 表示排列次数。 
 
 排列重要性越大，说明该特征对模型预测结果的影响越大。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -86,4 +86,3 @@ $$
 $$
 P(y=1|x) = \frac{1}{1 + e^{-(wx+b)}}
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

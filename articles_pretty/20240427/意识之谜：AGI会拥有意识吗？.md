@@ -118,4 +118,3 @@ model.evaluate(x_test, y_test)
 ### 9.2 如何确保人工智能的安全？
 
 人工智能的安全问题需要从技术、伦理和法律等多个方面进行考虑。需要建立完善的人工智能安全标准和规范，并加强对人工智能的监管。
-{"msg_type":"generate_answer_finish","data":""}

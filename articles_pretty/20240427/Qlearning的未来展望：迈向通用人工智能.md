@@ -65,4 +65,3 @@ Q(s, \text{向上}) \leftarrow Q(s, \text{向上}) + 0.1 [-1 + 0.9 \times 5 - Q(
 $$
 
 通过不断地更新Q函数，智能体最终能够学习到最优策略，即在每个状态下选择能够获得最大累积奖励的动作。 
-{"msg_type":"generate_answer_finish","data":""}

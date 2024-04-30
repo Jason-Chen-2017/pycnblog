@@ -112,4 +112,3 @@ A: CIDEr指标的局限性包括：
 
 * 对参考描述的依赖
 * 无法评估描述的多样性 
-{"msg_type":"generate_answer_finish","data":""}

@@ -111,4 +111,3 @@ if similarity12 > similarity13:
 else:
   print("推荐商品 3")
 ```
-{"msg_type":"generate_answer_finish","data":""}

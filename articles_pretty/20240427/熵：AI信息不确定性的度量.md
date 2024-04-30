@@ -124,4 +124,3 @@ def calculate_entropy(data):
 ### 9.2 如何理解熵的物理意义？
 
 熵在物理学中表示系统的混乱程度，熵越高，系统越混乱。
-{"msg_type":"generate_answer_finish","data":""}

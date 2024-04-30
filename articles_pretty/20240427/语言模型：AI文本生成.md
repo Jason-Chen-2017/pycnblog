@@ -89,4 +89,3 @@ $$
 其中，$h_t$ 表示 t 时刻的隐藏状态，$x_t$ 表示 t 时刻的输入，$y_t$ 表示 t 时刻的输出，$W_h$、$W_x$、$W_y$ 表示权重矩阵，$b_h$、$b_y$ 表示偏置项，$f$ 和 $g$ 表示激活函数。
 
 ### 4.2 LSTM 的数学模型 
-{"msg_type":"generate_answer_finish","data":""}

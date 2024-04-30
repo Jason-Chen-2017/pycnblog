@@ -102,4 +102,3 @@ print(explanation.as_list())
 **解释:**
 
 这段代码首先训练了一个模型，然后创建了一个 LIME 解释器。`explain_instance` 方法用于解释一个样本的预测结果，并返回一个解释对象。`as_list` 方法将解释结果转换为一个列表，其中包含每个特征的贡献程度。 
-{"msg_type":"generate_answer_finish","data":""}

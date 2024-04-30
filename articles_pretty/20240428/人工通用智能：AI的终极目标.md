@@ -117,4 +117,3 @@ AGI 的实现时间尚不清楚，但随着 AI 技术的不断发展，AGI 的�
 ### 9.2 AGI 会取代人类吗?
 
 AGI 的目标不是取代人类，而是增强人类的能力。AGI 将与人类协作，共同创造更美好的未来。
-{"msg_type":"generate_answer_finish","data":""}

@@ -125,4 +125,3 @@ gan.compile(loss=gan_loss, optimizer='adam')
 - 提高公众意识，了解深度伪造的危害。
 - 加强技术研发，开发更有效的深度伪造检测和防御技术。
 - 制定相关法律法规，打击深度伪造的滥用行为。
-{"msg_type":"generate_answer_finish","data":""}

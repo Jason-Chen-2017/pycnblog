@@ -82,4 +82,3 @@ H(X) = -\sum_{x \in X} p(x) \log_2 p(x)
 $$
 
 其中，$X$ 表示随机变量，$p(x)$ 表示 $x$ 出现的概率。信息熵越小，信息的不确定性越低，数据压缩的潜力越大。 
-{"msg_type":"generate_answer_finish","data":""}

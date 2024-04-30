@@ -254,4 +254,3 @@ Transformer 模型也面临一些挑战，例如：
 ### 9.5 Transformer 模型的未来发展趋势是什么？
 
 Transformer 模型的未来发展趋势包括模型压缩和加速、多模态学习和可解释性。 
-{"msg_type":"generate_answer_finish","data":""}

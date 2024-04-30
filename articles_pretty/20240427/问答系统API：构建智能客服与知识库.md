@@ -128,4 +128,3 @@ $$
 *   $k_1$、$b$ 是可调参数
 *   $|d|$ 表示文档 $d$ 的长度
 *   $\text{avgdl}$ 表示所有文档的平均长度 
-{"msg_type":"generate_answer_finish","data":""}

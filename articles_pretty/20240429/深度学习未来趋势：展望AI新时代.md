@@ -194,4 +194,3 @@ optimizer = torch.optim.Adam(model.parameters())
 ### 9.3 如何评估深度学习模型的性能？
 
 评估深度学习模型的性能可以使用各种指标，例如准确率、召回率、F1 分数等。选择合适的指标取决于具体的任务。 
-{"msg_type":"generate_answer_finish","data":""}

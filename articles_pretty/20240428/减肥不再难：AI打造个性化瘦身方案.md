@@ -131,4 +131,3 @@ print("Predicted weight:", predicted_weight)
 * 然后，将数据划分为特征和标签。
 * 接着，创建线性回归模型并进行训练。
 * 最后，使用模型预测新数据的体重。 
-{"msg_type":"generate_answer_finish","data":""}

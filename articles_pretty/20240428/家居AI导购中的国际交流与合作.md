@@ -101,4 +101,3 @@ $$
 $$
 J(A, B) = \frac{|\{b, c\}|}{|\{a, b, c, d\}|} = \frac{2}{4} = 0.5
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

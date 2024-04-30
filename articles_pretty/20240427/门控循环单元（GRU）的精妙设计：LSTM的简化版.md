@@ -83,4 +83,3 @@ $$
 * $z_t$ 是更新门
 * $h_{t-1}$ 是前一时间步的隐藏状态
 * $\tilde{h}_t$ 是候选隐藏状态 
-{"msg_type":"generate_answer_finish","data":""}

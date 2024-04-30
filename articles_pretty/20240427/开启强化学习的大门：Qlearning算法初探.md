@@ -128,4 +128,3 @@ A：可以使用 ε-贪婪策略、softmax 策略等方法来平衡探索和利�
 **Q：Q-learning 可以处理连续状态和动作空间吗？**
 
 A：传统的 Q-learning 算法难以处理连续状态和动作空间。可以考虑使用函数逼近方法，例如深度 Q-learning。
-{"msg_type":"generate_answer_finish","data":""}

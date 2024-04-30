@@ -77,4 +77,3 @@ $$
 * $r$ 表示奖励。
 * $\gamma$ 表示折扣因子。
 * $s'$ 表示下一个状态。 
-{"msg_type":"generate_answer_finish","data":""}

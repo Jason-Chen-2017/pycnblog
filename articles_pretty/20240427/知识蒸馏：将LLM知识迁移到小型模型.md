@@ -148,4 +148,3 @@ for epoch in range(num_epochs):
 * **问：如何评估学生模型的性能？**
 
 答：使用与教师模型相同的评估指标评估学生模型的性能，例如准确率、F1 值等。
-{"msg_type":"generate_answer_finish","data":""}

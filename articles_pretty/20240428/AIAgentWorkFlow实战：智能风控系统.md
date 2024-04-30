@@ -118,4 +118,3 @@ A: 可以采用过采样、欠采样等技术，平衡正负样本比例。
 **Q: 如何评估AIAgentWorkFlow模型的性能？**
 
 A: 可以使用准确率、召回率、F1值等指标评估模型的性能。 
-{"msg_type":"generate_answer_finish","data":""}

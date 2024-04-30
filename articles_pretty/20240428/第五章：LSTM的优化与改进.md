@@ -71,4 +71,3 @@ LSTM的反向传播通过时间反向传播 (BPTT) 算法进行，计算梯度�
 * 上下文向量：$c_t = \sum_{s=1}^T \alpha_t * \bar{h}_s$
 
 其中，$h_t$ 是当前时刻的隐藏状态，$\bar{h}_s$ 是编码器输出的隐藏状态序列，$score$ 函数计算两个向量之间的相关性。 
-{"msg_type":"generate_answer_finish","data":""}

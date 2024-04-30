@@ -75,4 +75,3 @@ $$
 $$
 
 其中，$\alpha$ 表示学习率。 
-{"msg_type":"generate_answer_finish","data":""}

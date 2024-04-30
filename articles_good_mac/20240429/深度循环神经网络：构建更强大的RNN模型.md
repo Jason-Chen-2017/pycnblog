@@ -166,4 +166,3 @@ DRNN 在处理序列数据方面取得了显著成果，但仍然面临一些挑
 ### 9.3 如何评估 DRNN 模型的性能？
 
 可以使用 perplexity、BLEU score 等指标评估 DRNN 模型的性能。
-{"msg_type":"generate_answer_finish","data":""}

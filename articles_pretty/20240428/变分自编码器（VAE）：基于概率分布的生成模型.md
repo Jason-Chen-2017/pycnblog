@@ -138,4 +138,3 @@ A: 可以使用一些指标来评估 VAE 生成样本的质量，例如 Inceptio
 **Q: 如何将 VAE 应用于实际问题？**
 
 A: 需要根据具体问题进行调整，例如选择合适的模型结构、损失函数和优化算法。
-{"msg_type":"generate_answer_finish","data":""}

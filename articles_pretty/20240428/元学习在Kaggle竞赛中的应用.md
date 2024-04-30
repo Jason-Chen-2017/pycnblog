@@ -87,4 +87,3 @@ $$
 * $n$ 表示任务数量
 * $L_i$ 表示第 $i$ 个任务的损失函数
 * $\phi_i$ 表示第 $i$ 个任务上微调后的模型参数 
-{"msg_type":"generate_answer_finish","data":""}

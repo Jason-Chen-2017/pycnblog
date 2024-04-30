@@ -63,4 +63,3 @@ sim(A,B) = \frac{5*4 + 4*3}{\sqrt{5^2 + 4^2}\sqrt{4^2 + 3^2}} = 0.97
 $$
 
 这说明用户A和用户B的兴趣爱好非常相似，可以将用户B购买过的其他商品推荐给用户A。 
-{"msg_type":"generate_answer_finish","data":""}

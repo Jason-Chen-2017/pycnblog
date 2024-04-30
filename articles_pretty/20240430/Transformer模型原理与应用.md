@@ -83,4 +83,3 @@ PE_{(pos, 2i+1)} = cos(\frac{pos}{10000^{2i/d_{model}}})
 $$
 
 其中，$pos$ 表示词语的位置，$i$ 表示维度索引，$d_{model}$ 表示模型的维度。 
-{"msg_type":"generate_answer_finish","data":""}

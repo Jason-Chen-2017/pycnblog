@@ -172,4 +172,3 @@ nltk.download()
 **问：NLTK 支持哪些语言？**
 
 答：NLTK 主要支持英语，但也支持其他一些语言，例如西班牙语、法语和德语。
-{"msg_type":"generate_answer_finish","data":""}

@@ -159,4 +159,3 @@ A: AI导购Agent系统的推荐结果的准确性取决于数据的质量和算�
 **Q: AI导购Agent系统如何保护用户隐私?**
 
 A: AI导购Agent系统需要遵循相关的隐私保护法规，并采取技术手段保护用户数据安全，例如数据加密、匿名化处理等。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -169,4 +169,3 @@ A: RAG在问答系统、对话系统、文本摘要、机器翻译等领域都�
 **Q: RAG有哪些挑战？**
 
 A: RAG面临着知识库构建、模型训练、评估等方面的挑战。
-{"msg_type":"generate_answer_finish","data":""}

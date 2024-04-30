@@ -125,4 +125,3 @@ A: 可以使用多种指标评估 LLM-RL 系统的性能，例如任务完成率
 **Q: LLM-RL 融合技术有哪些局限性？**
 
 A: LLM-RL 融合技术目前还处于发展初期，存在训练成本高、安全性和伦理问题等挑战。
-{"msg_type":"generate_answer_finish","data":""}

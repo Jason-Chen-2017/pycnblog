@@ -144,4 +144,3 @@ A: Agent技术是人工智能的一个分支，其关注的是能够自主感知
 **Q: Agent技术有哪些应用领域？**
 
 A: Agent技术可以应用于智能制造、智慧城市、智能家居、游戏等领域。
-{"msg_type":"generate_answer_finish","data":""}

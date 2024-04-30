@@ -160,4 +160,3 @@ $$
 
 *   使用矩阵分解等技术进行数据填充。
 *   使用深度学习等技术学习数据特征。
-{"msg_type":"generate_answer_finish","data":""}

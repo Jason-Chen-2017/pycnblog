@@ -150,4 +150,3 @@ class SparseAttention(nn.Module):
 然而，优化 Transformer 训练速度也面临着一些挑战：
 
 * **模型精度与训练速度的平衡:**  如何 
-{"msg_type":"generate_answer_finish","data":""}

@@ -92,4 +92,3 @@ class KnowledgeGraphGNN(nn.Module):
         # ... GNN消息传递和节点表示更新 ...
         return features
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

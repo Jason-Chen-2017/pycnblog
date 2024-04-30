@@ -130,4 +130,3 @@ print(recommended_products)
 *   **数据隐私**：如何保护消费者的数据隐私是一个重要挑战。
 *   **算法可解释性**：如何解释AI算法的决策过程，提高消费者的信任度。
 *   **技术成本**：AI技术的开发和应用需要较高的成本。 
-{"msg_type":"generate_answer_finish","data":""}

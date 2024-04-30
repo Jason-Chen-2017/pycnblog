@@ -70,4 +70,3 @@ $$ Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V $$
 2. 将点积结果除以键矩阵维度的平方根。
 3. 对结果应用 softmax 函数，得到注意力权重。
 4. 将注意力权重与值矩阵相乘，得到最终的输出。 
-{"msg_type":"generate_answer_finish","data":""}

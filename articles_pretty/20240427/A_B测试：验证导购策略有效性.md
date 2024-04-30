@@ -98,4 +98,3 @@ variant_a = "推荐算法 A"
 variant_b = "推荐算法 B"
 ab_test(users, variant_a, variant_b)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

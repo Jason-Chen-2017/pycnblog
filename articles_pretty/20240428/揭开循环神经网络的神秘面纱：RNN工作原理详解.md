@@ -122,4 +122,3 @@ model.evaluate(x_test, y_test)
 * `metrics` 参数指定了评估指标。
 * `fit` 方法用于训练模型。
 * `evaluate` 方法用于评估模型。 
-{"msg_type":"generate_answer_finish","data":""}

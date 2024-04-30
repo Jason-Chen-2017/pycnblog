@@ -169,4 +169,3 @@ for recommendation in recommendations:
 *   **利用用户画像**: 收集用户的 demographic 信息、兴趣爱好等，为新用户生成初步的推荐结果。
 *   **利用商品属性**: 根据商品的类别、品牌、属性等信息，为新商品生成初步的推荐结果。
 *   **利用专家知识**: 利用专家知识为新用户或新商品生成推荐结果。 
-{"msg_type":"generate_answer_finish","data":""}

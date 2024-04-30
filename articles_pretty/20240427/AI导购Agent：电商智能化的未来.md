@@ -191,4 +191,3 @@ A: 电商平台需要定期评估推荐算法的偏差，并采取措施进行�
 **Q: 如何提高用户对AI导购Agent的信任？**
 
 A: 电商平台需要提高AI导购Agent的透明度，让用户了解Agent的工作原理，并提供用户反馈机制，让用户能够对Agent的推荐结果进行评价。 
-{"msg_type":"generate_answer_finish","data":""}

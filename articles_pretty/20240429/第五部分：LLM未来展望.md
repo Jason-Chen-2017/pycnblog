@@ -120,4 +120,3 @@ LLMs 通过自注意力机制捕捉长距离依赖关系，能够有效处理长
 #### 9.3 如何评估 LLM 的性能？
 
 常用的 LLM 评估指标包括 BLEU 分数、ROUGE 分数等。
-{"msg_type":"generate_answer_finish","data":""}

@@ -111,4 +111,3 @@ def policy(state):
 # 运行强化学习算法
 # ...
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

@@ -123,4 +123,3 @@ Supervised Fine-Tuning 是一种有效的迁移学习方法，可以显著提高
 ### 9.3 如何评估模型的性能？
 
 常用的评估指标包括准确率、召回率、F1 值等。 
-{"msg_type":"generate_answer_finish","data":""}

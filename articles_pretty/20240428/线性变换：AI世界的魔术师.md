@@ -105,4 +105,3 @@ v = np.array([1, 0])
 rotated_v = rotate(v, 90)
 print(rotated_v)  # 输出: [0 1]
 ```
-{"msg_type":"generate_answer_finish","data":""}

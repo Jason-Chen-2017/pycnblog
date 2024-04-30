@@ -172,4 +172,3 @@ y_pred = model.predict(X_new)
 ### 9.4 AI 创业的未来是什么？
 
 人工智能创业的未来是光明的，有大量的机会等待着那些能够利用人工智能力量解决现实世界问题的人们。
-{"msg_type":"generate_answer_finish","data":""}

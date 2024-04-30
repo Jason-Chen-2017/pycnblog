@@ -71,4 +71,3 @@ MDP 是强化学习的基本框架，它由以下几个要素组成：
 * **动作空间 (Action Space):** 智能体可以执行的所有动作的集合。
 * **状态转移概率 (State Transition Probability):** 从一个状态执行某个动作后转移到另一个状态的概率。
 * **奖励函数 (Reward Function):** 定义智能体在每个状态或执行每个动作后获得的奖励值。 
-{"msg_type":"generate_answer_finish","data":""}

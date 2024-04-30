@@ -151,4 +151,3 @@ DGL-KE 可以应用于以下实际场景：
 **问：DGL-KE 是否支持分布式训练？**
 
 答：是的，DGL-KE 支持分布式训练，可以加速模型的训练过程。
-{"msg_type":"generate_answer_finish","data":""}

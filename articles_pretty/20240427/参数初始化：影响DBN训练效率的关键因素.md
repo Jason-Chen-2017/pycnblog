@@ -77,4 +77,3 @@ def he_init(m):
   if isinstance(m, nn.Linear):
     nn.init.kaiming_uniform_(m.weight, a=0, mode='fan_in', nonlinearity='relu')
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

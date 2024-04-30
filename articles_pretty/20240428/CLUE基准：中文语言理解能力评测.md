@@ -80,4 +80,3 @@ RNN 是一种能够处理序列数据的深度学习模型，常用的 RNN 模�
 
 * **LSTM (Long Short-Term Memory):** 能够解决 RNN 梯度消失和梯度爆炸问题。
 * **GRU (Gated Recurrent Unit):** 比 LSTM 结构更简单，计算效率更高。 
-{"msg_type":"generate_answer_finish","data":""}

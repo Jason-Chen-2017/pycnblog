@@ -135,4 +135,3 @@ Transformer模型可以通过自注意力机制捕捉到长距离依赖关系，
 ### 9.2 如何评估Transformer模型的性能？
 
 可以使用BLEU、ROUGE等指标来评估机器翻译模型的性能，使用 ROUGE 等指标来评估文本摘要模型的性能，使用准确率、召回率等指标来评估问答系统的性能。 
-{"msg_type":"generate_answer_finish","data":""}

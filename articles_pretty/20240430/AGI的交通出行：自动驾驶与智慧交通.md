@@ -92,4 +92,3 @@ f(n) = g(n) + h(n)
 $$
 
 其中，$f(n)$ 表示节点 $n$ 的总代价，$g(n)$ 表示从起点到节点 $n$ 的实际代价，$h(n)$ 表示从节点 $n$ 到目标点的估计代价。 
-{"msg_type":"generate_answer_finish","data":""}

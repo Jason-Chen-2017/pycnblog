@@ -135,4 +135,3 @@ GoogLeNet 的缺点是模型结构比较复杂，训练和推理速度较慢。
 ### 9.3 如何选择 Inception 模块的参数？
 
 Inception 模块的参数需要根据具体的任务和数据集进行调整。一般来说，可以使用网格搜索或随机搜索等方法进行参数优化。
-{"msg_type":"generate_answer_finish","data":""}

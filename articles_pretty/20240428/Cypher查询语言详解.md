@@ -99,4 +99,3 @@ Cypher 作为图数据库领域最受欢迎的查询语言之一，将持续发�
 ### 9.2 Cypher 和 SQL 有什么区别？
 
 Cypher 是专为图数据库设计的查询语言，而 SQL 是为关系型数据库设计的查询语言。Cypher 更擅长处理高度关联的数据，而 SQL 更擅长处理结构化数据。
-{"msg_type":"generate_answer_finish","data":""}

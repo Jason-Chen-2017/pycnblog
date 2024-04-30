@@ -54,4 +54,3 @@ $$
 $$
 
 其中，$h$ 是注意力头的数量，$\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)$，$W_i^Q, W_i^K, W_i^V$ 是第 $i$ 个注意力头的线性变换矩阵，$W^O$ 是输出线性变换矩阵。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -82,4 +82,3 @@ $$
 * $\sigma$ 是sigmoid函数。
 * $tanh$ 是双曲正切函数。 
 * $*$ 表示逐元素相乘。 
-{"msg_type":"generate_answer_finish","data":""}

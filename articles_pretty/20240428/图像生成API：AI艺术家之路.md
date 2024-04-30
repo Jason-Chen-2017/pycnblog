@@ -145,4 +145,3 @@ image = generator("一只戴着帽子的猫坐在长凳上")
 * **答**：图像生成 API 可以生成各种类型的图像，包括照片、绘画、插图等。
 * **问：如何使用图像生成 API？**
 * **答**：许多公司提供图像生成 API，例如 Google Cloud AI Platform 和 Amazon Rekognition。用户可以通过 API 文档和代码示例来学习如何使用 API。
-{"msg_type":"generate_answer_finish","data":""}

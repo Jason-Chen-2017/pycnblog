@@ -103,4 +103,3 @@ A: AlphaGo 在与顶尖人类棋手的比赛中取得了胜利，但围棋的复
 **Q: AlphaGo 的技术可以应用于其他领域吗？**
 
 A: 是的，AlphaGo 的技术可以应用于游戏、机器人控制、自然语言处理等领域。
-{"msg_type":"generate_answer_finish","data":""}

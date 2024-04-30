@@ -78,4 +78,3 @@ $$
 ### 4.2 策略梯度
 
 策略梯度算法的核心公式如下： 
-{"msg_type":"generate_answer_finish","data":""}

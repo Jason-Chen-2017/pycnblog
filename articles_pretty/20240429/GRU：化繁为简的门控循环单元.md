@@ -98,4 +98,3 @@ $$
 其中：
 
 * $W_o$ 和 $b_o$ 是模型参数。 
-{"msg_type":"generate_answer_finish","data":""}

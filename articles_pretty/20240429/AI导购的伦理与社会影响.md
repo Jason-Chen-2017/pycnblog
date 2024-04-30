@@ -95,4 +95,3 @@ predicted_rating = U[user_id, :] @ V[:, item_id]
 
 print(predicted_rating)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

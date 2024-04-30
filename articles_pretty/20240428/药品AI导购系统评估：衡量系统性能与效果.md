@@ -76,4 +76,3 @@ R \approx U^TV
 $$
 
 其中，$R$ 表示用户-物品评分矩阵，$U$ 表示用户隐含特征矩阵，$V$ 表示物品隐含特征矩阵。 
-{"msg_type":"generate_answer_finish","data":""}

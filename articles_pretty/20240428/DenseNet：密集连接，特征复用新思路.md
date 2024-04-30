@@ -148,4 +148,3 @@ DenseNet是一种高效的卷积神经网络结构，其密集连接的特性使
 ### 9.3 如何选择DenseNet的Growth Rate？
 
 Growth Rate是DenseNet中的一个重要参数，它控制着网络的宽度。较大的Growth Rate可以提升网络的表达能力，但也增加了计算量和参数量。选择Growth Rate需要根据具体的任务和硬件资源进行权衡。
-{"msg_type":"generate_answer_finish","data":""}

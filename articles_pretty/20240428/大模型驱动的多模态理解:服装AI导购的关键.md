@@ -153,4 +153,3 @@ encoded_features = outputs.last_hidden_state
 * **问：服装 AI 导购系统的未来发展方向是什么？**
 
 答：服装 AI 导购系统的未来发展方向是更加智能化、个性化，例如：结合增强现实技术，为用户提供虚拟试衣服务；结合语音识别技术，实现语音交互式的服装推荐等。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -136,4 +136,3 @@ A: 可以使用峰值信噪比 (PSNR) 和结构相似性 (SSIM) 等指标来评�
 **Q: 如何改进 CIN-GAN 的性能？**
 
 A: 可以尝试使用更复杂的网络结构、更有效的训练策略或更合适的损失函数来改进 CIN-GAN 的性能。
-{"msg_type":"generate_answer_finish","data":""}

@@ -136,4 +136,3 @@ VAE 和 GAN 都是深度生成模型，但它们在原理和实现上存在着�
 
 * 训练过程容易出现不稳定性
 * 生成样本的多样性可能不如 VAE 
-{"msg_type":"generate_answer_finish","data":""}

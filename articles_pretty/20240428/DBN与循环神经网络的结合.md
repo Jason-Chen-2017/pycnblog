@@ -193,4 +193,3 @@ A：DBN和RNN的结构选择需要根据具体任务和数据集进行调整。
 **Q：如何评估DBN-RNN模型的性能？**
 
 A：可以使用准确率、召回率、F1值等指标评估DBN-RNN模型的性能。
-{"msg_type":"generate_answer_finish","data":""}

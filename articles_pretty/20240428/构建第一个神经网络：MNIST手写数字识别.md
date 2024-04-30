@@ -77,4 +77,3 @@ $$
 其中，$\theta_t$表示第$t$次迭代的参数值，$\alpha$表示学习率，$\nabla J(\theta_t)$表示损失函数对参数的梯度。
 
 ## 5. 项目实践：代码实例和详细解释说明 
-{"msg_type":"generate_answer_finish","data":""}

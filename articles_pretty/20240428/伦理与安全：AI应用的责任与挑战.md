@@ -106,4 +106,3 @@ cv2.destroyAllWindows()
 ### 6.2 医疗诊断
 
 AI可以辅助医生进行疾病诊断，例如通过医学影像识别肿瘤。 
-{"msg_type":"generate_answer_finish","data":""}

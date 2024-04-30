@@ -92,4 +92,3 @@ predictions = outputs.logits.argmax(-1)
 # 打印预测结果
 print(predictions)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

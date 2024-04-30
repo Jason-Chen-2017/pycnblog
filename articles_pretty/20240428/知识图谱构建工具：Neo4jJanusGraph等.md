@@ -69,4 +69,3 @@ Jaccard 相似度用于衡量两个集合之间的相似程度，常用于实体
 $$
 J(A,B) = \frac{|A \cap B|}{|A \cup B|}
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

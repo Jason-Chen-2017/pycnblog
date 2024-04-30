@@ -159,4 +159,3 @@ A: AI导购Agent系统应该建立完善的客户服务体系，及时处理用�
 **Q: AI导购Agent系统如何与其他系统集成？**
 
 A: AI导购Agent系统可以与其他系统（例如CRM系统、ERP系统）集成，以提供更全面的服务。
-{"msg_type":"generate_answer_finish","data":""}

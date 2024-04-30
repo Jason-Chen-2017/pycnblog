@@ -176,4 +176,3 @@ print(f"Object: {object}")
 * 知识图谱的规模将会越来越大。
 * 知识图谱的质量将会越来越高。
 * 知识图谱的应用将会越来越广泛。 
-{"msg_type":"generate_answer_finish","data":""}

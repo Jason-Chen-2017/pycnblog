@@ -182,4 +182,3 @@ model.evaluate(x_test, y_test)
 **F1 分数:**  准确率和召回率的调和平均值。
 
 **AUC:**  ROC 曲线下的面积，用于评估模型的整体性能。 
-{"msg_type":"generate_answer_finish","data":""}

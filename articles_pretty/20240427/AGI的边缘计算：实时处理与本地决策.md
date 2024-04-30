@@ -77,4 +77,3 @@ $$
 $$
 
 其中，$\theta$ 表示全局模型参数，$n_k$ 表示第 $k$ 个边缘设备的数据量，$n$ 表示所有边缘设备的数据总量，$\theta_k$ 表示第 $k$ 个边缘设备的参数更新。 
-{"msg_type":"generate_answer_finish","data":""}

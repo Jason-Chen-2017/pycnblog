@@ -109,4 +109,3 @@ A: Reward Function 的选择取决于具体任务和目标。需要考虑任务�
 **Q: 如何避免 Reward Hacking?**
 
 A: Reward Hacking 是指智能体找到利用 Reward Function 漏洞的方法来获得高奖励，但没有真正完成任务。可以通过仔细设计 Reward Function 和使用 Reward Shaping 技术来避免 Reward Hacking。
-{"msg_type":"generate_answer_finish","data":""}

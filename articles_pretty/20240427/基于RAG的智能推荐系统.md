@@ -182,4 +182,3 @@ RAG 框架是一种 promising 的推荐系统框架，它结合了检索和生�
 * **问：RAG 框架的应用场景有哪些？**
 
     答：RAG 框架可以应用于各种推荐场景，例如电商平台、新闻网站、音乐平台、视频平台等。
-{"msg_type":"generate_answer_finish","data":""}

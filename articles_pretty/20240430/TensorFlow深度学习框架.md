@@ -56,4 +56,3 @@ TensorFlow具有以下优势：
 ### 3.5 部署模型
 
 训练好的模型可以保存为文件，并部署到不同的设备上，例如服务器、移动设备等，用于实际应用。 
-{"msg_type":"generate_answer_finish","data":""}

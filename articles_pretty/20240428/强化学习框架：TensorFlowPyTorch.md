@@ -165,4 +165,3 @@ A:  常见的强化学习算法包括 Q-Learning、DQN、Policy Gradient 等。
 **Q:  强化学习有哪些应用场景？**
 
 A:  强化学习在游戏、机器人控制、自然语言处理、金融、医疗等领域都有广泛的应用。 
-{"msg_type":"generate_answer_finish","data":""}

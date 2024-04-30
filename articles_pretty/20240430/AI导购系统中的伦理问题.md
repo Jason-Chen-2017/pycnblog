@@ -85,4 +85,3 @@ sim(i,j) = \frac{\vec{v}_i \cdot \vec{v}_j}{||\vec{v}_i||||\vec{v}_j||}
 $$
 
 其中，$sim(i,j)$ 表示商品 $i$ 和商品 $j$ 的相似度，$\vec{v}_i$ 表示商品 $i$ 的特征向量。 
-{"msg_type":"generate_answer_finish","data":""}

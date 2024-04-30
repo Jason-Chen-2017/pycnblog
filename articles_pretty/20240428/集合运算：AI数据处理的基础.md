@@ -175,4 +175,3 @@ set1 = {1, 2, 3}
 if 2 in set1:
   print("2 属于 set1")
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

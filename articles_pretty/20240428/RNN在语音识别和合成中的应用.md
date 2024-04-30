@@ -88,4 +88,4 @@ $$
 o_t = \sigma(W_{xo} x_t + W_{ho} h_{t-1} + b_o)
 $$ 
 $$
-\tilde{c}_t = tanh(W_{{"msg_type":"generate_answer_finish","data":""}
+\tilde{c}_t = tanh(W_{

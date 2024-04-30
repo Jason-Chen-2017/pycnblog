@@ -151,4 +151,3 @@ CycleGAN 的训练数据应该包含两个不同域的图像，例如照片和�
 ### 9.3 如何评估 CycleGAN 的性能？
 
 CycleGAN 的性能可以通过视觉效果和一些指标来评估，例如循环一致性损失、生成图像的真实性等。
-{"msg_type":"generate_answer_finish","data":""}

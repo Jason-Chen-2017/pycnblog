@@ -98,4 +98,3 @@ probability_density = norm_dist.pdf(1)
 # 计算 x 小于 1 的累积概率
 cumulative_probability = norm_dist.cdf(1)
 ```
-{"msg_type":"generate_answer_finish","data":""}

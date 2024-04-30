@@ -165,4 +165,3 @@ def train_step(inp, targ, enc_hidden):
 *   **翻译质量**：选择翻译质量较高的API。
 *   **价格**：选择价格合理的API。
 *   **易用性**：选择易于使用的API。 
-{"msg_type":"generate_answer_finish","data":""}

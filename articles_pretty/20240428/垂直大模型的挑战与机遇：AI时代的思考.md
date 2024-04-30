@@ -203,4 +203,3 @@ Hugging Face Transformers 库提供了预训练好的 Transformer 模型和相�
 * **数据脱敏:** 对敏感数据进行脱敏处理，例如匿名化、加密等。
 * **联邦学习:** 在不共享数据的情况下进行模型训练。
 * **差分隐私:** 在模型训练过程中添加噪声，保护数据隐私。
-{"msg_type":"generate_answer_finish","data":""}

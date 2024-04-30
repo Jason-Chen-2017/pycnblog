@@ -126,4 +126,3 @@ AI导购Agent也面临着一些挑战：
 **Q: AI导购Agent会取代人类导购员吗?**
 
 A: AI导购Agent是人类导购员的补充，而不是替代。AI导购Agent可以处理一些重复性的工作，而人类导购员可以提供更个性化、更具情感的服务。 
-{"msg_type":"generate_answer_finish","data":""}

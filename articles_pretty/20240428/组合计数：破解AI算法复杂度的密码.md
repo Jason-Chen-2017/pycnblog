@@ -148,4 +148,3 @@ def combinations(n, k):
 * 图算法设计
 * 自然语言处理
 * 计算机视觉 
-{"msg_type":"generate_answer_finish","data":""}

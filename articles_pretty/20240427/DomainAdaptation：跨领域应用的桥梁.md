@@ -172,4 +172,3 @@ class DomainAdaptationModel(nn.Module):
 ### 9.3 如何评估领域自适应的效果？
 
 可以使用目标域上的性能指标，例如准确率、召回率、F1值等，来评估领域自适应的效果。
-{"msg_type":"generate_answer_finish","data":""}

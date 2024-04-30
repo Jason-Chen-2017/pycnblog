@@ -107,4 +107,3 @@ text = generator("The world is a beautiful place,")
 
 print(text[0]['generated_text'])
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

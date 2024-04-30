@@ -159,4 +159,3 @@ data = (data - data.min()) / (data.max() - data.min())
 * **如何处理大规模数据集的清洗？**
 
 可以使用分布式计算框架，例如Spark，来处理大规模数据集的清洗。
-{"msg_type":"generate_answer_finish","data":""}

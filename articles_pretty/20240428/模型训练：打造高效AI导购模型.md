@@ -158,4 +158,3 @@ print(recommendations)
 ### 9.3 如何提升推荐模型的可解释性？
 
 可以利用注意力机制、知识图谱等技术提升推荐模型的可解释性。 
-{"msg_type":"generate_answer_finish","data":""}

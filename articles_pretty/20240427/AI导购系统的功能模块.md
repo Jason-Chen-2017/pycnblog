@@ -74,4 +74,3 @@ def user_based_cf(ratings_matrix, user_id, k):
     # 返回预测评分最高的 n 个商品
     return predicted_ratings.sort_values(by=user_id, ascending=False).index[:n]
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

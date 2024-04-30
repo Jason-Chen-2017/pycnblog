@@ -195,4 +195,3 @@ for epoch in range(num_epochs):
 *   **精确率 (Precision):**  模型预测为正例的样本中，真正例的比例。
 *   **召回率 (Recall):**  所有正例样本中，模型预测为正例的比例。
 *   **F1 分数:**  精确率和召回率的调和平均值。 
-{"msg_type":"generate_answer_finish","data":""}

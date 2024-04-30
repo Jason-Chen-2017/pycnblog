@@ -115,4 +115,3 @@ model.evaluate(x_test, y_test)
 *   **编译模型**：使用 `model.compile` 方法配置模型的优化器、损失函数和评估指标。
 *   **训练模型**：使用 `model.fit` 方法训练模型，指定训练轮数 (epochs) 为 10。
 *   **评估模型**：使用 `model.evaluate` 方法评估模型在测试集上的性能，输出模型的损失值和准确率。 
-{"msg_type":"generate_answer_finish","data":""}

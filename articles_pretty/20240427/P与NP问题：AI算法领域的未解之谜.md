@@ -83,4 +83,3 @@ def tsp(cities):
 ### 8.2 为什么P vs NP问题如此重要？
 
    P vs NP问题涉及到计算的本质，以及计算机的能力极限。解决这个问题将对人类的认知产生重大影响。
-{"msg_type":"generate_answer_finish","data":""}

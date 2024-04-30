@@ -99,4 +99,3 @@ eigenvalues, eigenvectors = np.linalg.eig(A)
 print("特征值:", eigenvalues)
 print("特征向量:", eigenvectors)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

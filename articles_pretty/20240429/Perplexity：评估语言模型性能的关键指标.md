@@ -71,4 +71,3 @@ $$
 $$
 \text{Perplexity} = 2^{\text{Entropy}}
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

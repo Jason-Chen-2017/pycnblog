@@ -119,4 +119,3 @@ y_pred = model.predict(X_test)
 *   **问：如何选择合适的先验分布？**
 
     *   **答：** 先验分布的选择应该基于现有知识或经验。可以使用无信息先验或弱信息先验，以避免对结果产生过大的影响。
-{"msg_type":"generate_answer_finish","data":""}

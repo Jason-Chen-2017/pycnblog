@@ -60,4 +60,3 @@ f(h, r, t) = Re(h^T \cdot diag(r) \cdot \bar{t})
 $$
 
 其中，$Re()$ 表示取复数的实部，$\bar{t}$ 表示尾实体向量的共轭。ComplEx 模型能够处理非对称关系，因为复数向量的共轭操作引入了非对称性。 
-{"msg_type":"generate_answer_finish","data":""}

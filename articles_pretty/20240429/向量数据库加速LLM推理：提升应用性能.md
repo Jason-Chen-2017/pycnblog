@@ -105,4 +105,3 @@ similar_texts = [tokenizer.decode(embeddings[i]) for i in indices[0]]
 * **Annoy：** Approximate Nearest Neighbors Oh Yeah，另一个高效的相似性搜索库。
 * **Milvus：** 一个开源的向量数据库系统。
 * **Weaviate：** 一个开源的向量数据库系统，支持语义搜索。 
-{"msg_type":"generate_answer_finish","data":""}

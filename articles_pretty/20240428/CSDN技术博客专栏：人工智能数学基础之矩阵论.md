@@ -142,4 +142,3 @@ print("特征向量:", eigenvectors)
 * **如何学习矩阵论？**
 
    可以参考线性代数教材、在线课程、开源项目等资源。
-{"msg_type":"generate_answer_finish","data":""}

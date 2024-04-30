@@ -79,4 +79,3 @@ $$
 
 *   **交叉熵损失函数**: $L = -\sum_{i=1}^{n} y_i log(\hat{y_i})$
 *   **均方误差损失函数**: $L = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y_i})^2$ 
-{"msg_type":"generate_answer_finish","data":""}

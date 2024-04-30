@@ -207,4 +207,3 @@ VGGNet 是深度学习领域中具有里程碑意义的模型，它证明了增�
 **问：如何提升 VGGNet 模型的性能？**
 
 答：可以通过增加网络深度、使用更小的卷积核、使用数据增强等方法来提升 VGGNet 模型的性能。 
-{"msg_type":"generate_answer_finish","data":""}

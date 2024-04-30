@@ -140,4 +140,3 @@ Transformer 模型的缺点包括：
 * **计算成本高**: Transformer 模型的训练和推理过程需要大量的计算资源。
 * **内存消耗大**: Transformer 模型的参数量较大，需要占用大量的内存。
 * **可解释性差**: Transformer 模型的决策过程难以解释，限制了其在某些领域的应用。 
-{"msg_type":"generate_answer_finish","data":""}

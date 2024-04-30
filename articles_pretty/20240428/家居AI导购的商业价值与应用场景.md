@@ -118,4 +118,3 @@ print(vectorizer.get_feature_names_out())
 ### 9.2 如何解决算法 bias 问题?
 
 通过数据清洗、算法优化等方式，减少算法 bias。
-{"msg_type":"generate_answer_finish","data":""}

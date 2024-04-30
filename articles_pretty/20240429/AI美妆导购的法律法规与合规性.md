@@ -92,4 +92,3 @@ $$
 $$
 
 其中，$w$ 和 $b$ 是模型参数，$\xi_i$ 是松弛变量，$C$ 是惩罚系数，$x_i$ 是样本特征向量，$y_i$ 是样本标签。 
-{"msg_type":"generate_answer_finish","data":""}

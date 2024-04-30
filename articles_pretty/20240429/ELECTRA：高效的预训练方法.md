@@ -157,4 +157,3 @@ ELECTRA 模型的大小取决于具体的应用场景和计算资源限制。较
 ### 9.3 如何评估 ELECTRA 模型的性能？
 
 ELECTRA 模型的性能可以通过在下游 NLP 任务上的表现来评估，例如准确率、召回率、F1 值等。
-{"msg_type":"generate_answer_finish","data":""}

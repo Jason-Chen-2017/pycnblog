@@ -144,4 +144,3 @@ AI for Good 是一种利用人工智能技术解决社会重大挑战的理念�
 ### 9.3 AI for Good 的未来是什么？
 
 AI for Good 的未来充满希望。随着人工智能技术的不断发展，我们可以期待看到更多创新解决方案来解决社会挑战。
-{"msg_type":"generate_answer_finish","data":""}

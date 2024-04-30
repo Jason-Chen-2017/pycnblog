@@ -89,4 +89,3 @@ class DQN:
         # 训练深度Q网络
         # ...
 ```
-{"msg_type":"generate_answer_finish","data":""}

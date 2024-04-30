@@ -154,4 +154,3 @@ model.evaluate(x_test, y_test)
 
 *   **微调**：使用预训练模型，并根据新任务进行微调。
 *   **特征提取**：使用预训练模型提取特征，并使用这些特征训练新的模型。 
-{"msg_type":"generate_answer_finish","data":""}

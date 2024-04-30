@@ -75,4 +75,3 @@ score(u, i) = \sum_{f \in F} w_f \cdot sim(f_u, f_i)
 $$
 
 其中，$score(u, i)$ 表示用户 $u$ 对商品 $i$ 的评分，$F$ 表示商品特征集合，$w_f$ 表示特征 $f$ 的权重，$sim(f_u, f_i)$ 表示用户 $u$ 的特征 $f$ 与商品 $i$ 的特征 $f$ 的相似度。
-{"msg_type":"generate_answer_finish","data":""}

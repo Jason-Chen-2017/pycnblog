@@ -159,4 +159,3 @@ AI导购Agent系统在美妆行业具有广阔的应用前景，未来发展趋�
 * **问：如何提高AI导购Agent的推荐效果？**
 
 * **答：** 可以通过收集更多的数据、优化算法、改进模型等方式来提高AI导购Agent的推荐效果。
-{"msg_type":"generate_answer_finish","data":""}

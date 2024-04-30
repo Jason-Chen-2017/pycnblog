@@ -141,4 +141,3 @@ DQN 使用深度神经网络来近似Q函数，而 Q-learning 使用表格来存
 ### 9.3 目标网络的作用是什么？
 
 目标网络可以稳定训练过程，并防止Q值震荡。 
-{"msg_type":"generate_answer_finish","data":""}

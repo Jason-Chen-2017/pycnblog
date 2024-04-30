@@ -88,4 +88,3 @@ d(x_i, \mu_k) = \sum_{j=1}^{p}|x_{ij} - \mu_{kj}|
 $$
 
 *   **余弦相似度:** 
-{"msg_type":"generate_answer_finish","data":""}

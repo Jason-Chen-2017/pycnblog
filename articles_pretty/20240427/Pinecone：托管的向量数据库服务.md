@@ -155,4 +155,3 @@ Pinecone 可以应用于各种场景，例如：
 **问：Pinecone 如何保证数据隐私和安全？**
 
 答：Pinecone 采用多层安全措施，包括数据加密、访问控制和审计日志，以保护用户数据的隐私和安全。
-{"msg_type":"generate_answer_finish","data":""}

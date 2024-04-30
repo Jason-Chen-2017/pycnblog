@@ -87,4 +87,3 @@ class DQN(nn.Module):
         super(DQN, self).__init__()
         # ... 定义网络结构 ...
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

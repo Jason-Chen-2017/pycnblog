@@ -133,4 +133,3 @@ perplexity = model.evaluate(x_test, y_test)
 ### 9.2 困惑度的最佳值是多少
 
 困惑度的最佳值取决于具体的任务和数据集。通常情况下，较低的困惑度意味着更好的模型性能。
-{"msg_type":"generate_answer_finish","data":""}

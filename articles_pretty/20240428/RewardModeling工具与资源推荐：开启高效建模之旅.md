@@ -99,4 +99,3 @@ reward_net.fit(demonstrations, ...)
 # 使用学习到的奖励函数进行强化学习
 # ...
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

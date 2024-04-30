@@ -114,4 +114,3 @@ class Transformer(nn.Module):
         output = self.linear(tgt)
         return output
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

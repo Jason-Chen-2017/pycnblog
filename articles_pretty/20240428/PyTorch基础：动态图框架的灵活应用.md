@@ -101,4 +101,3 @@ y = f(W_n ... f(W_2 f(W_1 x + b_1) + b_2) ... + b_n)
 $$
 
 其中，$f$ 是激活函数，$W_i$ 和 $b_i$ 分别是第 $i$ 层的权重和偏差。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -91,4 +91,3 @@ def cosine_similarity(u, v):
     norm_v = np.linalg.norm(v)
     return dot_product / (norm_u * norm_v)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

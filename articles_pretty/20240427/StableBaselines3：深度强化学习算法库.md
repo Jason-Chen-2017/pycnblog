@@ -67,4 +67,3 @@ Actor-Critic 算法结合了价值函数和策略函数的优点，使用两个�
     *   使用 Critic 网络评估当前状态和下一个状态的价值。
     *   使用时间差分 (TD) 误差更新 Critic 网络参数。
     *   使用策略梯度算法更新 Actor 网络参数，使其能够产生更高的价值。 
-{"msg_type":"generate_answer_finish","data":""}

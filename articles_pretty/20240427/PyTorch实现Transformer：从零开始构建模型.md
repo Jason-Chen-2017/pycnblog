@@ -171,4 +171,3 @@ Transformer模型已经成为自然语言处理领域的主流模型，未来可
 * 使用模型剪枝技术。
 * 使用知识蒸馏技术。
 * 使用轻量级Transformer模型，例如Lite Transformer。 
-{"msg_type":"generate_answer_finish","data":""}

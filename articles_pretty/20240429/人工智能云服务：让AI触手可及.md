@@ -72,4 +72,3 @@
 
 *   **语音识别：**将语音转换为文本。
 *   **语音合成：**将文本转换为语音。 
-{"msg_type":"generate_answer_finish","data":""}

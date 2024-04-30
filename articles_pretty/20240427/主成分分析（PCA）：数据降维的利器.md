@@ -73,4 +73,3 @@ Y = X Q_k
 $$
 
 其中，$Q_k$ 是由前 k 个特征向量构成的 p x k 矩阵，Y 是降维后的数据矩阵。 
-{"msg_type":"generate_answer_finish","data":""}

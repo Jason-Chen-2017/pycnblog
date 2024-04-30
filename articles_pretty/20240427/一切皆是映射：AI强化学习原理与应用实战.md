@@ -90,4 +90,3 @@ V^*(s) = \max_a Q^*(s, a)
 $$
 
 将 $Q^*(s, a)$ 展开，得到： 
-{"msg_type":"generate_answer_finish","data":""}

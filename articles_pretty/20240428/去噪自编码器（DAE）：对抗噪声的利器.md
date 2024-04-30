@@ -153,4 +153,3 @@ DAE 和 AE 的主要区别在于训练数据。AE 的训练数据是原始数据
 ### 9.3 如何评估 DAE 的性能？
 
 DAE 的性能可以通过多种指标进行评估，例如峰值信噪比 (PSNR)、结构相似性 (SSIM) 等。
-{"msg_type":"generate_answer_finish","data":""}

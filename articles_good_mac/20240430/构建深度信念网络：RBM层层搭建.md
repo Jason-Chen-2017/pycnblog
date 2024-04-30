@@ -192,4 +192,3 @@ RBM是DBN的基本组成单元，DBN由多个RBM层叠而成。
 ### 9.3 如何选择RBM和DBN的层数和单元数？
 
 RBM和DBN的层数和单元数需要根据具体的数据和任务需求进行调整，通常可以通过实验来选择最佳的模型结构。
-{"msg_type":"generate_answer_finish","data":""}

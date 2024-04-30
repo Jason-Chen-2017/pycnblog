@@ -142,4 +142,3 @@ def dfs(graph, start_vertex):
 ### 8.2 如何处理大规模图数据？
 
 处理大规模图数据需要高效的算法和工具。可以考虑使用分布式计算框架，如Spark或Hadoop，来并行处理图数据。
-{"msg_type":"generate_answer_finish","data":""}

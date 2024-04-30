@@ -78,4 +78,3 @@ y_t = W_{hy}h_t + b_y
 $$
 
 其中，$h_t$ 表示t时刻的隐藏状态，$x_t$ 表示t时刻的输入，$y_t$ 表示t时刻的输出，$W$ 和 $b$ 表示权重和偏置项。 
-{"msg_type":"generate_answer_finish","data":""}

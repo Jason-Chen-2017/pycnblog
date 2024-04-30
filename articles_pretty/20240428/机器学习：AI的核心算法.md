@@ -192,4 +192,3 @@ model.evaluate(X_test, y_test)
 ### 9.3 如何评估机器学习模型的性能？
 
 常用的评估指标包括准确率、精确率、召回率和 F1 值等。选择合适的指标取决于问题的类型和目标。
-{"msg_type":"generate_answer_finish","data":""}

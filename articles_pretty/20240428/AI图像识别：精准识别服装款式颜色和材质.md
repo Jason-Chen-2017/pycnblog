@@ -143,4 +143,3 @@ model.evaluate(x_test, y_test)
 *   **根据任务需求**:  不同的 CNN 模型适用于不同的任务。
 *   **根据计算资源**:  大型 CNN 模型需要更多的计算资源。
 *   **根据模型性能**:  选择性能更好的 CNN 模型。
-{"msg_type":"generate_answer_finish","data":""}

@@ -134,4 +134,3 @@ embeddings = model.get_embeddings()
 * **问：图论在哪些领域有应用？**
 
    **答：** 图论在社交网络分析、推荐系统、欺诈检测、生物信息学、自然语言处理等领域都有广泛应用。
-{"msg_type":"generate_answer_finish","data":""}

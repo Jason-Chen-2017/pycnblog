@@ -157,4 +157,3 @@ A: 可以使用Transformers等自然语言处理库构建RAG模型。
 **Q: RAG模型的未来发展趋势是什么？**
 
 A: RAG模型的未来发展趋势包括多模态RAG、个性化RAG、可控RAG等。
-{"msg_type":"generate_answer_finish","data":""}

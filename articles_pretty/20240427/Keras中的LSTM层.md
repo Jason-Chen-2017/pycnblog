@@ -87,4 +87,3 @@ $$
 *   $\tanh$：tanh 激活函数。
 *   $W_C$：候选细胞状态的权重矩阵。
 *   $b_C$：候选细胞状态的偏置项。 
-{"msg_type":"generate_answer_finish","data":""}

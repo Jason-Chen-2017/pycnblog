@@ -195,4 +195,3 @@ predictions = model.predict(x_test)
 ### 9.3 智能家居系统是否适合所有人？
 
 智能家居系统可以为人们带来便利和舒适，但并非适合所有人。在选择智能家居系统之前，需要考虑自身需求和预算。
-{"msg_type":"generate_answer_finish","data":""}

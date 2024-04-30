@@ -174,4 +174,3 @@ def model(text_inputs, audio_inputs):
 ### 9.3 多模态AI的未来发展趋势是什么？
 
 多模态AI将继续发展，并应用于更广泛的领域，例如医疗、教育等。
-{"msg_type":"generate_answer_finish","data":""}

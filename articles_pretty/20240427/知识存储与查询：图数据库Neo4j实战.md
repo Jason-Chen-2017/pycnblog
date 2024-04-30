@@ -121,4 +121,3 @@ A: Neo4j 可以用于社交网络分析、推荐系统、欺诈检测、知识�
 **Q: 如何学习 Neo4j？**
 
 A: Neo4j 官方网站提供了丰富的文档和教程，还有活跃的社区可以提供帮助。
-{"msg_type":"generate_answer_finish","data":""}

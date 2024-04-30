@@ -151,4 +151,3 @@ GANs 的训练过程是一个 minimax 博弈，生成器和判别器之间存在
 * **使用更稳定的训练方法**： 例如使用 Wasserstein GAN、Spectral Normalization GAN 等。
 * **调整损失函数**： 设计更有效的损失函数，例如使用感知损失、风格损失等。
 * **使用更多的数据**： 使用更多的数据进行训练，可以提高生成样本的多样性和质量。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -76,4 +76,3 @@ $$ \theta_{t+1} = \theta_t - \alpha \nabla J(\theta_t) $$
 
 * **学习率衰减:** 随着训练的进行，逐渐减小学习率。
 * **自适应学习率:** 根据梯度的大小自动调整学习率，例如Adam优化器。 
-{"msg_type":"generate_answer_finish","data":""}

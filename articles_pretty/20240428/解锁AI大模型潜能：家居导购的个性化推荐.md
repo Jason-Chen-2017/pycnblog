@@ -152,4 +152,3 @@ print(recommended_items)
 
 - 利用矩阵分解等技术进行数据填充。
 - 基于知识图谱进行推荐。 
-{"msg_type":"generate_answer_finish","data":""}

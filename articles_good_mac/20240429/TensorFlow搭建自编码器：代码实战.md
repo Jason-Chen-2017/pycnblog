@@ -234,4 +234,3 @@ autoencoder.fit(x_train, x_train, epochs=10, batch_size=32,
 *   **特征提取效果**：可以使用分类器、回归模型等评估提取的特征是否有效。
 *   **异常检测效果**：可以使用 AUC (Area Under Curve) 等指标评估模型的异常检测能力。
 *   **图像生成效果**：可以直观地评估生成的图像质量。
-{"msg_type":"generate_answer_finish","data":""}

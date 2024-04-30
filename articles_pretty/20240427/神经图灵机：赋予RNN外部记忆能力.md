@@ -124,4 +124,3 @@ NTM是一种很有前途的模型，它为RNN赋予了强大的外部记忆能�
 **Q: NTM的缺点是什么？**
 
 **A:** NTM的训练过程比较复杂，需要大量的计算资源。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -155,4 +155,3 @@ BERT 在各种 NLP 任务中都有广泛的应用，例如：
 **9.3 如何解决 BERT 模型的过拟合问题?**
 
 可以使用正则化技术 (例如 dropout、L2 正则化) 和 early stopping 等方法解决 BERT 模型的过拟合问题。
-{"msg_type":"generate_answer_finish","data":""}

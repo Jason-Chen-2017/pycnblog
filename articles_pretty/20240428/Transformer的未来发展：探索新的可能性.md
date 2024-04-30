@@ -142,4 +142,3 @@ RNN 按顺序处理输入序列，难以捕捉长距离依赖关系。Transforme
 ### 8.3 如何选择合适的 Transformer 模型？
 
 选择合适的 Transformer 模型取决于具体的任务和数据。可以参考 Hugging Face Transformers 库提供的模型列表和相关文档。
-{"msg_type":"generate_answer_finish","data":""}

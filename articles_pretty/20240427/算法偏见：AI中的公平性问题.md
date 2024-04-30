@@ -117,4 +117,3 @@ equalized_odds_difference(y_true, y_pred, sensitive_features=race)
 * **定义公平性:** 公平性的定义是一个复杂的问题，不同的应用场景可能需要不同的公平性标准。
 * **数据收集成本:** 收集多样化的数据可能需要更高的成本。
 * **算法透明度:** 提高算法的透明度，让用户了解算法的决策过程。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -65,4 +65,3 @@ L = E_{q(z|x)}[log p(x|z)] - D_{KL}[q(z|x)||p(z)]
 $$
 
 其中，$q(z|x)$ 表示编码器，$D_{KL}$ 表示 KL 散度。第一项是重建误差，第二项是 KL 散度，用于衡量潜在变量的概率分布与标准正态分布之间的差异。 
-{"msg_type":"generate_answer_finish","data":""}

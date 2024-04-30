@@ -98,4 +98,3 @@ BM25 算法是 TF-IDF 算法的改进版本，考虑了文档长度和词语频�
 $$BM25(q, d) = \sum_{t \in q} IDF(t) * \frac{tf(t, d) * (k_1 + 1)}{tf(t, d) + k_1 * (1 - b + b * \frac{|d|}{avgdl})}$$
 
 其中，$q$ 表示用户查询，$d$ 表示文档，$tf(t, d)$ 表示词语 $t$ 在文档 $d$ 中出现的频率，$k_1$ 和 $b$ 是可调参数，$|d|$ 表示文档 $d$ 的长度，$avgdl$ 表示所有文档的平均长度。 
-{"msg_type":"generate_answer_finish","data":""}

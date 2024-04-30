@@ -82,4 +82,3 @@ $$
 *   $x$ 是自变量。
 *   $m$ 是斜率。
 *   $b$ 是截距。 
-{"msg_type":"generate_answer_finish","data":""}

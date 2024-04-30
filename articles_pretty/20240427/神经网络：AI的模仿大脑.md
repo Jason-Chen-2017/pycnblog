@@ -159,4 +159,3 @@ model.evaluate(x_test, y_test)
 ### 9.5 什么是梯度下降？
 
 梯度下降是一种优化算法，用于寻找函数的最小值。在神经网络中，梯度下降用于调整权重，使得神经网络的输出误差最小化。
-{"msg_type":"generate_answer_finish","data":""}

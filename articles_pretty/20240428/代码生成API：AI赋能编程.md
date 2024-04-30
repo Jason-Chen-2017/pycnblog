@@ -187,4 +187,3 @@ def generate_code(prompt):
 **问：如何选择合适的代码生成API？**
 
 答：选择合适的代码生成API取决于您的需求和预算。您需要考虑以下因素：支持的编程语言、代码生成质量、易用性、价格等。
-{"msg_type":"generate_answer_finish","data":""}

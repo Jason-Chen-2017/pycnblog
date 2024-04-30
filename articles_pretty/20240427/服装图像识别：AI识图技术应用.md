@@ -143,4 +143,3 @@ model.evaluate(x_test, y_test)
 *   对光照、遮挡和背景等因素敏感。
 *   难以识别一些细粒度的服装类别，例如不同款式的衬衫或裤子。
 *   需要大量的训练数据和计算资源。 
-{"msg_type":"generate_answer_finish","data":""}

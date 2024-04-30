@@ -188,4 +188,3 @@ Q-learning 算法可以处理随机环境，因为算法的更新规则是基于
 ### 9.3 Q-learning 算法如何处理延迟奖励？
 
 Q-learning 算法可以处理延迟奖励，因为算法的更新规则考虑了未来奖励的折扣值，即使奖励是延迟的，算法仍然可以学习到最优策略。
-{"msg_type":"generate_answer_finish","data":""}

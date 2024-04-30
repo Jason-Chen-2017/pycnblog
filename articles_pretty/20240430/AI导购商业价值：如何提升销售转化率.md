@@ -128,4 +128,3 @@ model.fit([user_ids, item_ids], ratings, epochs=10)
 # 预测用户评分
 predictions = model.predict([user_ids, item_ids])
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

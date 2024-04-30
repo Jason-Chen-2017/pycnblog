@@ -119,4 +119,3 @@ for row in qres:
 
 * 根据用户的兴趣和历史行为，推荐相关的实体和概念。
 * 发现用户潜在的兴趣，例如根据实体之间的关系进行推荐。 
-{"msg_type":"generate_answer_finish","data":""}

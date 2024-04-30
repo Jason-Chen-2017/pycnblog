@@ -102,4 +102,3 @@ Transformer在CV领域的应用场景包括：
 *   **目标检测**：DETR等模型使用Transformer进行目标检测，取得了与CNN模型相当的性能。
 *   **图像分割**：SETR等模型使用Transformer进行图像分割，取得了较好的效果。
 *   **视频理解**：TimeSformer等模型使用Transformer进行视频分类和动作识别。 
-{"msg_type":"generate_answer_finish","data":""}

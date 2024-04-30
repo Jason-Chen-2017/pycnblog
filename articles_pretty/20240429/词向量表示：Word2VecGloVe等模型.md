@@ -94,4 +94,3 @@ model.fit(cooccurrence_matrix, epochs=100)
 # 获取词向量
 vector = model.word_vectors[model.dictionary["cat"]]
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

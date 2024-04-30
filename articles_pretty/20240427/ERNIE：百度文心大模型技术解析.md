@@ -138,4 +138,3 @@ A: ERNIE在BERT的基础上引入了知识图谱信息，增强了模型的语�
 **Q: 如何选择合适的ERNIE模型？**
 
 A: 可以根据具体的任务需求和计算资源选择合适的ERNIE模型。例如，ERNIE 2.0 Base适用于大多数NLP任务，而ERNIE 3.0 Titan适用于需要更高精度和更复杂任务的场景。 
-{"msg_type":"generate_answer_finish","data":""}

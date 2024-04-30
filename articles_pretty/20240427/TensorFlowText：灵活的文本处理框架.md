@@ -263,4 +263,3 @@ TensorFlowText 支持多种语言，包括中文。可以使用 TensorFlowText �
 ### 9.3 如何使用 TensorFlowText 进行预训练模型的微调？
 
 TensorFlowText 支持使用预训练模型进行微调。可以使用 Hugging Face Transformers 库加载预训练模型，并使用 TensorFlowText 进行微调。
-{"msg_type":"generate_answer_finish","data":""}

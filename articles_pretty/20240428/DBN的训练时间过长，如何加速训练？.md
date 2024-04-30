@@ -158,4 +158,3 @@ A: DBN 的层数和每层的节点数需要根据具体任务和数据集进行�
 **Q: 如何评估 DBN 的性能?**
 
 A: DBN 的性能可以通过分类准确率、均方误差等指标进行评估。 
-{"msg_type":"generate_answer_finish","data":""}

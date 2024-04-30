@@ -152,4 +152,3 @@ A: 可以从用户满意度、转化率、复购率等指标来评价 AI 导购 
 **Q: 如何提升 AI 导购 Agent 系统的性能?**
 
 A: 可以通过优化算法、增加训练数据、改进模型结构等方式来提升 AI 导购 Agent 系统的性能。
-{"msg_type":"generate_answer_finish","data":""}

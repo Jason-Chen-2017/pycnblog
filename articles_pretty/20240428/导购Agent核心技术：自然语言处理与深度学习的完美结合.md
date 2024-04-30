@@ -204,4 +204,3 @@ for epoch in range(num_epochs):
 *   **自然流畅**: 交互方式应该自然流畅，符合用户的习惯。
 *   **个性化**: 交互界面应该根据用户的偏好进行个性化定制。
 
-{"msg_type":"generate_answer_finish","data":""}

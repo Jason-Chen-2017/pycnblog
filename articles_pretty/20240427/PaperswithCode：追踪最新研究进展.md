@@ -127,4 +127,3 @@ A: 研究者可以将自己的代码提交到 GitHub 等开源代码库平台，
 **Q: PaperswithCode 是否提供 API？**
 
 A: PaperswithCode 提供 API，开发者可以利用 API 获取 PaperswithCode 上的数据。 
-{"msg_type":"generate_answer_finish","data":""}

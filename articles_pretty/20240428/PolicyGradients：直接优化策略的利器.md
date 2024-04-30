@@ -175,4 +175,3 @@ Policy Gradients 方法也面临一些挑战，例如：
 ### 9.3 如何评估 Policy Gradients 算法的性能？
 
 可以使用多种指标评估 Policy Gradients 算法的性能，例如累积奖励、成功率等。可以将算法在不同的环境中进行测试，并与其他算法进行比较。
-{"msg_type":"generate_answer_finish","data":""}

@@ -187,4 +187,3 @@ MXNet、TensorFlow 和 PyTorch 都是流行的深度学习框架，它们各有�
 ### 9.3 如何学习 MXNet？
 
 MXNet 官方网站和教程提供了丰富的学习资源。此外，还可以参考社区论坛和博客文章。
-{"msg_type":"generate_answer_finish","data":""}

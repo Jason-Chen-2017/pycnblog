@@ -157,4 +157,3 @@ Actor-Critic 方法结合了基于价值和基于策略方法的优点，能够�
 ### 9.2 如何选择合适的 Actor 和 Critic 网络结构？
 
 Actor 和 Critic 网络结构的选择取决于具体的任务和环境。一般来说，可以使用深度神经网络，例如卷积神经网络 (CNN) 和循环神经网络 (RNN) 来构建 Actor 和 Critic 网络。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -132,4 +132,3 @@ A: 可以通过调整模型结构、优化超参数、增加训练数据等方�
 **Q: 如何解决 CNN 模型的过拟合问题？**
 
 A: 可以通过正则化、数据增强、Dropout 等方式解决 CNN 模型的过拟合问题。 
-{"msg_type":"generate_answer_finish","data":""}

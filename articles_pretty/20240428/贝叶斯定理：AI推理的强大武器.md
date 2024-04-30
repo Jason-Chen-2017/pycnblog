@@ -78,4 +78,3 @@ $$
 $$
 P(B) = \sum_{i=1}^{n} P(B|A_i) * P(A_i)
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

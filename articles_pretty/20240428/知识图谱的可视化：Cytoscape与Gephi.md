@@ -92,4 +92,3 @@ Kamada-Kawai算法的数学模型如下：
 $$
 E = \sum_{i<j} (d_{ij} - l_{ij})^2
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

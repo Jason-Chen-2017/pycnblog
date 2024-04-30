@@ -223,4 +223,3 @@ Transformer 模型已经成为 NLP 领域的主流模型，并取得了显著的
 * 使用预训练模型。
 * 进行数据增强。
 * 调节模型超参数。
-{"msg_type":"generate_answer_finish","data":""}

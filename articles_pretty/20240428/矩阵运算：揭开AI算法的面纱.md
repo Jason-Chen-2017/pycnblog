@@ -200,4 +200,3 @@ A: 可以通过以下途径学习矩阵运算：
 *   学习线性代数教材。
 *   学习 NumPy、TensorFlow 等库的文档和教程。
 *   参加线上或线下课程。 
-{"msg_type":"generate_answer_finish","data":""}

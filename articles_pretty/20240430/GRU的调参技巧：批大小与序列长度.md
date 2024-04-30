@@ -145,4 +145,3 @@ GRU模型广泛应用于以下领域：
 * 调整超参数，例如学习率、批大小、序列长度等。
 * 使用正则化技术，例如Dropout、L2正则化等。
 
-{"msg_type":"generate_answer_finish","data":""}

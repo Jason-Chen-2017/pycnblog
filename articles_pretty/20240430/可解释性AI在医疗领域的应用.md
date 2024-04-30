@@ -85,4 +85,3 @@ $$
 * $F$ 是所有特征的集合。
 * $S$ 是 $F$ 的一个子集，不包含特征 $i$。
 * $f_x(S)$ 是模型在特征集 $S$ 上的预测结果。 
-{"msg_type":"generate_answer_finish","data":""}

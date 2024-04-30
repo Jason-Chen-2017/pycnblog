@@ -83,4 +83,3 @@ map:person a d2rq:ClassMap;
 # 使用GREL表达式将"name"列拆分为"firstName"和"lastName"列
 value.split(" ")
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

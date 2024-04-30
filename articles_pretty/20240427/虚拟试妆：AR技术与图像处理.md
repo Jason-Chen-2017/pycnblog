@@ -129,4 +129,3 @@ cv2.destroyAllWindows()
 ### 9.2 虚拟试妆可以替代真实的试妆吗？
 
 虚拟试妆可以作为真实试妆的补充，但不能完全替代。真实试妆可以提供更真实的使用体验，例如产品的质地、气味等。
-{"msg_type":"generate_answer_finish","data":""}

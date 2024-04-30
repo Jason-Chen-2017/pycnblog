@@ -111,4 +111,3 @@ model.fit(...)
 image = ...
 predictions = model.predict(image)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

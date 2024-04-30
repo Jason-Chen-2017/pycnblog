@@ -164,4 +164,3 @@ SARSA 也是一种基于价值迭代的强化学习算法，但它使用的是 o
 ### 9.3 如何解决探索-利用困境？
 
 可以使用 epsilon-greedy 策略，以一定概率选择随机动作，以进行探索。也可以使用其他探索策略，例如 softmax 策略、UCB 策略等。 
-{"msg_type":"generate_answer_finish","data":""}

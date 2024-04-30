@@ -18,4 +18,4 @@
 
 ### 2.1 手机AI导购的定义
 
-手机AI导购是指{"msg_type":"generate_answer_finish","data":""}
+手机AI导购是指

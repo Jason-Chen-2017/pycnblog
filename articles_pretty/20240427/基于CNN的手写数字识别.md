@@ -149,4 +149,3 @@ print('Test accuracy:', test_acc)
 * **数据增强:** 对训练数据进行随机变换，例如旋转、缩放和裁剪。
 * **正则化:** 使用 L1 或 L2 正则化，防止模型过拟合。
 * **Dropout:** 在训练过程中随机丢弃一些神经元，防止模型过拟合。
-{"msg_type":"generate_answer_finish","data":""}

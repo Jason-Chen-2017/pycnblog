@@ -65,4 +65,3 @@
 ### 3.6 售后服务
 
 家居 AI 导购需要提供及时的售后服务，解决用户在使用过程中遇到的问题。
-{"msg_type":"generate_answer_finish","data":""}

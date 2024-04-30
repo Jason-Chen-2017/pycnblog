@@ -94,4 +94,3 @@ result = graph.run(query)
 for record in result:
     print(record["f.name"])
 ```
-{"msg_type":"generate_answer_finish","data":""}

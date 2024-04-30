@@ -241,4 +241,3 @@ def predict(inp):
 * 调整模型参数。
 * 使用正则化技术防止过拟合。
 * 使用预训练模型进行迁移学习。
-{"msg_type":"generate_answer_finish","data":""}

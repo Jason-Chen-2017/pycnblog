@@ -220,4 +220,3 @@ A: 导购Agent可以通过分析用户的负面评价，改进推荐算法和商
 **Q: 导购Agent如何处理用户的隐私问题？**
 
 A: 导购Agent可以通过匿名化处理、数据加密等方式来保护用户的隐私数据。
-{"msg_type":"generate_answer_finish","data":""}

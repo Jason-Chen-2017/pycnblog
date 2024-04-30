@@ -134,4 +134,3 @@ A: AIAgentWorkflow 提供了错误处理机制，可以捕获任务执行过程�
 **Q: AIAgentWorkflow 是否支持分布式执行？**
 
 A: AIAgentWorkflow 支持分布式执行，可以将任务分配到多个节点上并行执行。 
-{"msg_type":"generate_answer_finish","data":""}

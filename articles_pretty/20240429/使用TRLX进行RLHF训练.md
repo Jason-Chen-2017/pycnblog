@@ -151,4 +151,3 @@ A: 可以使用多种指标评估 RLHF 模型的性能，例如 BLEU 分数、RO
 **Q: 如何选择合适的 RL 算法？**
 
 A: 选择 RL 算法取决于具体任务和数据集，例如 PPO 算法适用于连续控制任务，而 DQN 算法适用于离散控制任务。 
-{"msg_type":"generate_answer_finish","data":""}

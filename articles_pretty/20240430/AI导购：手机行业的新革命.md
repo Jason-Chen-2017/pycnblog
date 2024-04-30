@@ -84,4 +84,3 @@ $$
 $$
 
 其中，$N_u(i)$ 表示与用户 $u$ 相似的用户中，评过分物品 $i$ 的用户集合。 
-{"msg_type":"generate_answer_finish","data":""}

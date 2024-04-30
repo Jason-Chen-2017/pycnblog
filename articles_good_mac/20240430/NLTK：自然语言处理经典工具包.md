@@ -201,4 +201,3 @@ nltk.download()
 ### 9.3 如何使用 NLTK 进行中文 NLP？
 
 NLTK 主要针对英文 NLP，对于中文 NLP，可以考虑使用其他工具包，例如 Jieba、SnowNLP 等。
-{"msg_type":"generate_answer_finish","data":""}

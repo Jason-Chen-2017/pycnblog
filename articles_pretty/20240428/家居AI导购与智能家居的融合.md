@@ -157,4 +157,3 @@ print(recommended_items[['item_id', 'rating']].head(10))
 **问：如何选择合适的智能家居产品？**
 
 答：用户可以根据自身的需求、预算和家居环境，选择合适的智能家居产品。建议选择知名品牌的产品，并参考AI导购系统的推荐。 
-{"msg_type":"generate_answer_finish","data":""}

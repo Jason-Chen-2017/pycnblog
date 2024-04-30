@@ -106,4 +106,3 @@ model.fit(x_train, y_train, epochs=10)
 ### 9.3 如何避免过拟合？
 
 可以使用正则化技术，例如 L1 正则化、L2 正则化、Dropout 等来避免过拟合。
-{"msg_type":"generate_answer_finish","data":""}

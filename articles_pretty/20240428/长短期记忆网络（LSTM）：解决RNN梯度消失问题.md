@@ -142,4 +142,3 @@ model.fit(x_train, y_train, epochs=10)
 * `Dense`: 输出层，使用 softmax 激活函数进行多分类。
 * `compile`: 编译模型，指定损失函数、优化器和评估指标。
 * `fit`: 训练模型，指定训练数据、训练轮数等参数。 
-{"msg_type":"generate_answer_finish","data":""}

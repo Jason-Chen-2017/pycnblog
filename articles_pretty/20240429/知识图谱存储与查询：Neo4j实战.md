@@ -114,4 +114,3 @@ A: Cypher 是一种声明式的图查询语言，其语法简洁易懂，学习�
 **Q: 如何学习 Neo4j？**
 
 A: Neo4j 官方网站提供了丰富的学习资源，包括文档、教程和示例代码。 
-{"msg_type":"generate_answer_finish","data":""}

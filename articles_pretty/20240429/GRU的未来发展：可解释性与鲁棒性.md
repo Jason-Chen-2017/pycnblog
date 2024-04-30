@@ -106,4 +106,3 @@ $$
 
 * $y_t$ 是输出。
 * $W_o$, $b_o$ 是权重矩阵和偏置向量。 
-{"msg_type":"generate_answer_finish","data":""}

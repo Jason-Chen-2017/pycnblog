@@ -116,4 +116,3 @@ $$
 *   $b$表示偏置项
 *   $*$表示卷积操作
 *   $f$表示激活函数 
-{"msg_type":"generate_answer_finish","data":""}

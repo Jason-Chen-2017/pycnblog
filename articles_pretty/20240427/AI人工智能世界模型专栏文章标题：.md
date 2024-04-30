@@ -128,4 +128,3 @@ predictions = model(states)
 **问题：** 构建世界模型需要哪些技能？
 
 **回答：** 构建世界模型需要机器学习、深度学习、强化学习和软件开发等方面的技能。 
-{"msg_type":"generate_answer_finish","data":""}

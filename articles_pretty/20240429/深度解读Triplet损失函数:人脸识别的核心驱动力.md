@@ -129,4 +129,3 @@ A2: Triplet样本的选择对模型的性能有很大的影响，可以使用har
 **Q3: Triplet损失函数的计算复杂度如何？**
 
 A3: Triplet损失函数的计算复杂度较高，需要优化算法提高效率。 
-{"msg_type":"generate_answer_finish","data":""}

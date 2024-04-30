@@ -152,4 +152,3 @@ Logit损失函数作为一种经典的损失函数，在分类问题中发挥着
 #### 9.2 Logit损失函数适用于多分类问题吗？
 
 Logit损失函数主要用于二分类问题。对于多分类问题，可以使用softmax函数和交叉熵损失函数。 
-{"msg_type":"generate_answer_finish","data":""}

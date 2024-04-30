@@ -107,4 +107,3 @@ for epoch in range(3):
 # 保存微调后的模型
 model.save_pretrained("finetuned_model")
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

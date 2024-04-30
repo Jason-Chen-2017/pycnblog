@@ -110,4 +110,3 @@ model.train()
 
     **Q: 如何评估微调模型的性能？**
     A: 评估微调模型的性能可以使用下游任务的评价指标，例如准确率、召回率、F1值等。
-{"msg_type":"generate_answer_finish","data":""}

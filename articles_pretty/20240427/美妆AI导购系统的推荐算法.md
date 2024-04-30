@@ -128,4 +128,3 @@ def predict_rating(user_id, item_id):
 * **利用用户属性信息:** 根据用户的年龄、性别、地域等信息进行推荐。
 * **基于内容推荐:** 根据产品的属性和特征进行推荐。
 * **专家推荐:** 由美妆专家推荐产品。 
-{"msg_type":"generate_answer_finish","data":""}

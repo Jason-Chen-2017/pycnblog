@@ -84,4 +84,3 @@ $$L = \frac{1}{N} \sum_{i=1}^{N} (target\_Q_i - Q(s_i, a_i))^2$$
 * $N$：样本数量。
 * $target\_Q_i$：第 $i$ 个样本的目标 Q 值。
 * $Q(s_i, a_i)$：主网络对第 $i$ 个样本的 Q 值估计。 
-{"msg_type":"generate_answer_finish","data":""}

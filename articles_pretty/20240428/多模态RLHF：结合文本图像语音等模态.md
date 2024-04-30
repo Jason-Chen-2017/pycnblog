@@ -169,4 +169,3 @@ A: 多模态 RLHF 可以帮助 AI 系统更好地理解人类的意图，并提�
 **Q: 多模态 RLHF 的应用场景有哪些？**
 
 A: 多模态 RLHF 具有广泛的应用场景，包括对话系统、虚拟助手、机器人和推荐系统。
-{"msg_type":"generate_answer_finish","data":""}

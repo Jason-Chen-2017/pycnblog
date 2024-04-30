@@ -135,4 +135,3 @@ preference = model.predict(data)
 *   **问：如何平衡人类反馈和探索？**
 
     *   答：可以使用 epsilon-greedy 等方法来平衡利用已知信息和探索未知信息。
-{"msg_type":"generate_answer_finish","data":""}

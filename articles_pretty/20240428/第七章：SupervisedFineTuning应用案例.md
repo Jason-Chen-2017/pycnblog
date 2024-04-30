@@ -121,4 +121,3 @@ Supervised Fine-Tuning 是迁移学习的一种有效方法，可以有效地利
 *   **如何评估微调模型的性能？**
 
     使用目标任务的测试集评估微调模型的性能，例如准确率、召回率、F1 值等。
-{"msg_type":"generate_answer_finish","data":""}

@@ -116,4 +116,3 @@ stream.close()
 # 终止PyAudio对象
 p.terminate()
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

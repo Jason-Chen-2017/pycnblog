@@ -175,4 +175,3 @@ rnn = RNN(input_size, hidden_size, output_size)
 *   **数据增强:** 通过数据增强技术增加训练数据的数量和多样性。
 *   **模型调参:** 调整模型的超参数，例如学习率、batch size 等。
 *   **模型 ensemble:** 将多个模型进行 ensemble，提升模型的泛化能力。 
-{"msg_type":"generate_answer_finish","data":""}

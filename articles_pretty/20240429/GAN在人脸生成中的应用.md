@@ -144,4 +144,3 @@ for epoch in range(epochs):
   # 训练判别器
   # ...
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

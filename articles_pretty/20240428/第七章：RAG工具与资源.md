@@ -152,4 +152,3 @@ A: RAG 能够弥补 LLMs 的局限性，例如知识截止日期、事实性错�
 **Q: RAG 的应用场景有哪些？**
 
 A: RAG 可以应用于问答系统、聊天机器人、文本摘要、机器翻译等场景。
-{"msg_type":"generate_answer_finish","data":""}

@@ -164,4 +164,3 @@ VAE 和 GAN 都是生成模型，但它们的工作原理不同。VAE 使用概�
 *   **重建损失**：衡量生成数据与原始数据之间的差异。
 *   **Inception Score**：衡量生成数据的质量和多样性。
 *   **Fréchet Inception Distance (FID)**：衡量生成数据与真实数据之间的距离。
-{"msg_type":"generate_answer_finish","data":""}

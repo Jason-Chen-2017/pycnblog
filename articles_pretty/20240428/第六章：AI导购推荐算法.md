@@ -140,4 +140,3 @@ for user_id in similar_users:
 #### 9.3 如何评估推荐系统的效果？
 
 常用的评估指标包括准确率、召回率、F1值、NDCG等。
-{"msg_type":"generate_answer_finish","data":""}

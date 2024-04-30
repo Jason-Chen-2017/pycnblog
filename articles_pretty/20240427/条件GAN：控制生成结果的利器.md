@@ -165,4 +165,3 @@ def build_discriminator(img_shape, num_classes):
 ### 9.3 条件GANs的应用场景有哪些？
 
 条件GANs可以应用于图像生成、风格迁移、数据增强、图像修复、图像编辑等领域。
-{"msg_type":"generate_answer_finish","data":""}

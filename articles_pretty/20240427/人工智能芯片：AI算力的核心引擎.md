@@ -115,4 +115,3 @@ class LSTMModel(nn.Module):
 ### 6.1 自动驾驶
 
 AI 芯片在自动驾驶领域扮演着重要角色。自动驾驶汽车需要实时处理来自传感器的数据，并做出驾驶决策。AI 芯片可以加速图像识别、目标检测等任务，从而提高自动驾驶的安全性
-{"msg_type":"generate_answer_finish","data":""}

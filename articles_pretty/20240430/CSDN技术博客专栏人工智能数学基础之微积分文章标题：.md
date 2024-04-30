@@ -121,4 +121,3 @@ def gradient_descent(x, y, learning_rate, num_iterations):
 #### 9.2 如何学习微积分？
 
 可以通过大学课程、在线课程、书籍等方式学习微积分。建议先学习基础知识，例如导数、积分等，再学习多元微积分。 
-{"msg_type":"generate_answer_finish","data":""}

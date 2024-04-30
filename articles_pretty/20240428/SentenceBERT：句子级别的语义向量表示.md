@@ -142,4 +142,3 @@ SBERT 模型有多种预训练模型可供选择，选择合适的模型取决�
 ### 9.3 如何评估 SBERT 模型的性能？
 
 可以使用句子相似度计算、句子分类等任务评估 SBERT 模型的性能。
-{"msg_type":"generate_answer_finish","data":""}

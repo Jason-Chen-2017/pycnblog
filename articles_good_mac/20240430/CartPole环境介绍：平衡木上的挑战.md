@@ -210,4 +210,3 @@ CartPole 环境有多个变种，例如：
 *   平均奖励
 *   游戏时长
 *   成功率
-{"msg_type":"generate_answer_finish","data":""}

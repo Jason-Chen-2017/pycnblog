@@ -148,4 +148,3 @@ summary = model.predict(encoder_input_data)
 * `model.compile`：编译模型，指定损失函数和优化算法。
 * `model.fit`：训练模型，输入为训练数据，`epochs`表示训练轮数。
 * `model.predict`：使用模型生成摘要。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -140,4 +140,3 @@ Reward Modeling 面临的挑战包括：
 *   **如何评估 Reward Model 的性能？**
 
     评估 Reward Model 的性能可以采用离线评估和在线评估两种方式。离线评估使用历史数据来评估模型的性能，在线评估则将模型部署到实际环境中进行评估。
-{"msg_type":"generate_answer_finish","data":""}

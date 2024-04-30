@@ -175,4 +175,3 @@ Q-learning 算法作为一种经典的强化学习方法，在许多领域都取
 ### 9.5 如何处理奖励稀疏的问题？
 
 当奖励稀疏时，可以考虑使用分层强化学习 (hierarchical reinforcement learning) 等方法，将复杂任务分解为多个子任务，并分别进行学习。
-{"msg_type":"generate_answer_finish","data":""}

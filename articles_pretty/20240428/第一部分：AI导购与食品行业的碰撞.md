@@ -85,4 +85,3 @@ sim(i, j) = \frac{\sum_{k=1}^{n}w_k \cdot sim(f_{ik}, f_{jk})}{\sum_{k=1}^{n}w_k
 $$
 
 其中，$sim(i, j)$ 表示商品 i 和商品 j 之间的相似度，$f_{ik}$ 表示商品 i 的第 k 个属性值，$sim(f_{ik}, f_{jk})$ 表示商品 i 和商品 j 第 k 个属性值的相似度，$w_k$ 表示第 k 个属性的权重。 
-{"msg_type":"generate_answer_finish","data":""}

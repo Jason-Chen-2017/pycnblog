@@ -79,4 +79,3 @@ $$
 * $I_{uv}$ 表示用户 $u$ 和用户 $v$ 共同评价过的物品集合。
 * $r_{ui}$ 表示用户 $u$ 对物品 $i$ 的评分。
 * $\bar{r_u}$ 表示用户 $u$ 的平均评分。 
-{"msg_type":"generate_answer_finish","data":""}

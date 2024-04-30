@@ -78,4 +78,3 @@ $$
 $$
 
 其中，$\theta_t$ 是当前模型参数，$\theta_t'$ 是模型在任务 $T_i$ 上训练后的参数，$\epsilon$ 是学习率。 
-{"msg_type":"generate_answer_finish","data":""}

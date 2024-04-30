@@ -148,4 +148,3 @@ vis.line(Y=loss, X=np.arange(100), win='loss_curve', opts=dict(title='Loss Curve
 
 * 使用 `win` 参数指定窗口名称。
 * 使用 `env` 参数指定环境名称，可以将不同的窗口分组。 
-{"msg_type":"generate_answer_finish","data":""}

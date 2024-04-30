@@ -171,4 +171,4 @@ class PolicyGradient(nn.Module):
     self.fc2 = nn.Linear(64, output_dim)
 
   def forward(self, x):
-    x ={"msg_type":"generate_answer_finish","data":""}
+    x =

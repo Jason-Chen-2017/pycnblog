@@ -97,4 +97,3 @@ model.fit(x_train, y_train, epochs=10)
 # 评估模型
 model.evaluate(x_test, y_test)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

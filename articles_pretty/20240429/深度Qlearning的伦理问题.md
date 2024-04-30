@@ -135,4 +135,3 @@ A: 可以通过以下指标评估深度Q-learning 算法的性能：
 *   奖励函数值。
 *   学习速度。
 *   泛化能力。
-{"msg_type":"generate_answer_finish","data":""}

@@ -150,4 +150,3 @@ LSTM模型相对复杂，训练时间较长，需要大量的计算资源。
 ### 9.4 如何选择LSTM的参数？
 
 LSTM的参数选择需要根据具体的任务和数据集进行调整，例如LSTM单元数量、学习率等。
-{"msg_type":"generate_answer_finish","data":""}

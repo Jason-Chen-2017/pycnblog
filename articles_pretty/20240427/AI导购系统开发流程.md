@@ -83,4 +83,3 @@ r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i
 $$
 
 其中，$x_i$ 和 $y_i$ 分别表示两个用户的评分或购买记录，$\bar{x}$ 和 $\bar{y}$ 分别表示两个用户的平均评分或购买记录。 
-{"msg_type":"generate_answer_finish","data":""}

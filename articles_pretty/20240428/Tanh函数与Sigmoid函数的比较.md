@@ -160,4 +160,3 @@ def tanh(x):
 * 新型激活函数的研究和应用。
 * 自适应激活函数的发展。
 * 激活函数与其他深度学习技术的结合。
-{"msg_type":"generate_answer_finish","data":""}

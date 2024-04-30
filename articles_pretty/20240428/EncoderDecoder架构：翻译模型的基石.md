@@ -72,4 +72,4 @@ $$
 \begin{aligned}
 i_t &= \sigma(W_{xi} x_t + W_{hi} h_{t-1} + b_i) \\
 f_t &= \sigma(W_{xf} x_t + W_{hf} h_{t-1} + b_f) \\
-o_t &= \sigma(W_{xo} x_t + W_{ho} h_{t{"msg_type":"generate_answer_finish","data":""}
+o_t &= \sigma(W_{xo} x_t + W_{ho} h_{t

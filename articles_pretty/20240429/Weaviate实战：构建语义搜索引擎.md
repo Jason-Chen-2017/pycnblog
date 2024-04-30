@@ -225,4 +225,3 @@ Weaviate 支持多种向量化模型，例如 SentenceTransformers、CLIP、Hugg
 * 使用更高效的近邻搜索算法，例如 HNSW。
 * 对向量进行降维处理，减少向量维度。
 * 使用近似近邻搜索算法，牺牲一定的精度来提高搜索效率。
-{"msg_type":"generate_answer_finish","data":""}

@@ -91,4 +91,3 @@ sim(u, i) = \cos(\vec{u}, \vec{i}) = \frac{\vec{u} \cdot \vec{i}}{||\vec{u}|| \c
 $$
 
 其中，$sim(u, i)$ 表示用户 $u$ 和物品 $i$ 的相似度，$\vec{u}$ 表示用户兴趣向量，$\vec{i}$ 表示物品特征向量。 
-{"msg_type":"generate_answer_finish","data":""}

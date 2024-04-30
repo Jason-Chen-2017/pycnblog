@@ -166,4 +166,3 @@ A: 可以通过用户满意度、转化率、客单价等指标来评价 AI 导�
 **Q: 如何提升 AI 导购 Agent 的用户体验？**
 
 A: 可以通过优化算法、提升数据质量、改进交互方式等方式来提升 AI 导购 Agent 的用户体验。 
-{"msg_type":"generate_answer_finish","data":""}

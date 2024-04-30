@@ -39,4 +39,3 @@ Transformer模型采用编码器-解码器 (Encoder-Decoder) 结构，其中编�
 ### 2.3 位置编码
 
 由于Transformer模型没有循环结构，无法直接捕捉文本序列中的位置信息，因此需要引入位置编码 (Positional Encoding) 来表示每个元素在序列中的位置。位置编码通常是一个包含正弦和余弦函数的向量，它可以为模型提供关于元素位置的信息。 
-{"msg_type":"generate_answer_finish","data":""}

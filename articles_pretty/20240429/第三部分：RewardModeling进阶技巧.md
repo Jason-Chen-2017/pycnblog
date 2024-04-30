@@ -111,4 +111,3 @@ A: 可以通过实验比较使用 Shaping Function 和不使用 Shaping Function
 **Q: 如何避免 Reward Shaping 引入偏差？**
 
 A: 可以使用 Potential-based Reward Shaping 或 carefully design Shaping Function，确保 Shaping Function 不会改变最优策略。 
-{"msg_type":"generate_answer_finish","data":""}

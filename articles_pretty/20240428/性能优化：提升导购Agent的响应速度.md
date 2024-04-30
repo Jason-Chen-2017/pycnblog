@@ -97,4 +97,3 @@ P(a' | q) = \frac{sim(q, a')}{\sum_{a'' \in A} sim(q, a'')}
 $$
 
 其中，$sim(q, a')$ 表示问句 $q$ 与答案 $a'$ 的相似度。 
-{"msg_type":"generate_answer_finish","data":""}

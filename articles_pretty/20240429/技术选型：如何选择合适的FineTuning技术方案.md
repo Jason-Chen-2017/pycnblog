@@ -159,4 +159,3 @@ A: 可以采用一些正则化技术，例如Dropout、L1/L2正则化等，来�
 **Q: 如何评估Fine-Tuning模型的性能？**
 
 A: 可以使用测试数据集对模型进行评估，并计算相关指标，例如准确率、召回率、F1值等。
-{"msg_type":"generate_answer_finish","data":""}

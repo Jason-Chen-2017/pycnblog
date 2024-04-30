@@ -88,4 +88,3 @@ $$
 $$
 
 其中，$\mathbf{w}$ 表示超平面的法向量，$b$ 表示截距，$C$ 表示惩罚参数，$\xi_i$ 表示松弛变量。 
-{"msg_type":"generate_answer_finish","data":""}

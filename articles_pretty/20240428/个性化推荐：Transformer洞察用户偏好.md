@@ -158,4 +158,3 @@ Transformer模型在个性化推荐领域展现出巨大的潜力，未来发展
 * **Q: 如何评估Transformer模型的性能？**
 
   A: 可以使用AUC、NDCG等指标评估Transformer模型的性能。
-{"msg_type":"generate_answer_finish","data":""}

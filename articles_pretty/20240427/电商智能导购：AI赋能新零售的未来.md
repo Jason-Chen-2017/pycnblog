@@ -150,4 +150,3 @@ print(recommended_items)
 *   **利用用户画像:** 收集用户的 demographic 信息和兴趣偏好，进行初步推荐。
 *   **利用专家知识:** 结合专家知识和规则进行推荐。
 *   **利用内容推荐:** 基于商品的属性和描述进行推荐。
-{"msg_type":"generate_answer_finish","data":""}

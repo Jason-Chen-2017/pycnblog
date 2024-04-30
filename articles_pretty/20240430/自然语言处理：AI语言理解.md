@@ -223,4 +223,3 @@ NLP 可以用于机器翻译、智能客服、文本摘要、情感分析等领�
 ### 9.4 NLP 的未来发展方向是什么？
 
 NLP 的未来发展方向包括预训练模型的应用、多模态 NLP、可解释 NLP 等。 
-{"msg_type":"generate_answer_finish","data":""}

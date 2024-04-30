@@ -135,4 +135,3 @@ recommendations.sort(key=lambda x: recommendations.count(x), reverse=True)
 ### 9.4 如何解决冷启动问题？
 
 解决冷启动问题的方法包括利用用户注册信息、利用商品属性信息、利用社交网络信息等。
-{"msg_type":"generate_answer_finish","data":""}

@@ -136,4 +136,3 @@ Transformer 完全基于注意力机制，而 RNN 依赖于循环结构来处理
 ### 9.2. Transformer 与 CNN 的区别？
 
 CNN 擅长处理局部特征，而 Transformer 能够捕获全局依赖关系。Transformer 在 NLP 任务上通常比 CNN 表现更好。
-{"msg_type":"generate_answer_finish","data":""}

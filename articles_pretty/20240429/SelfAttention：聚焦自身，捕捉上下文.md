@@ -140,4 +140,3 @@ Self-Attention机制已经成为深度学习领域的重要技术，并在各个
 **Q2：Self-Attention有哪些变体？**
 
 **A2：**Self-Attention的变体包括Multi-Head Attention、Masked Self-Attention等。Multi-Head Attention使用多个Attention Head，可以捕捉更丰富的语义信息。Masked Self-Attention用于序列生成任务，避免模型看到未来的信息。
-{"msg_type":"generate_answer_finish","data":""}

@@ -74,4 +74,3 @@ $$
 ### 4.2 损失函数
 
 损失函数用于衡量模型的预测结果和真实标签之间的误差。常见的损失函数包括均方误差 (Mean Squared Error, MSE) 和交叉熵 (Cross-Entropy)。 
-{"msg_type":"generate_answer_finish","data":""}

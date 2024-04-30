@@ -119,4 +119,3 @@ A: Transformer模型通过自注意力机制捕捉长距离依赖关系。自注
 * **Q: Transformer模型如何并行计算？**
 
 A: Transformer模型不需要按照序列顺序处理输入数据，而是可以并行地计算所有输入之间的关系。这是因为自注意力机制可以同时计算所有输入之间的关系，而不需要像循环神经网络那样依次计算。
-{"msg_type":"generate_answer_finish","data":""}

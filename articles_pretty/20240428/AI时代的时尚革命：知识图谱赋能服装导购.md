@@ -108,4 +108,3 @@ with driver.session() as session:
 for record in result:
     print(record["product_name"])
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

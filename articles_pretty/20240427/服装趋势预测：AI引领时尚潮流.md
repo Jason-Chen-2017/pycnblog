@@ -165,4 +165,3 @@ A：AI 预测结果的准确率取决于多个因素，例如数据质量、模�
 **Q：如何使用 AI 进行服装趋势预测？**
 
 A：可以使用开源机器学习平台（例如 TensorFlow 或 PyTorch）和相关库来构建和训练 AI 模型。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -164,4 +164,3 @@ VAE 和 GAN 都是生成模型，但它们的工作原理不同。VAE 使用变�
 
 *   **视觉评估**：观察生成数据的质量。
 *   **定量评估**：使用一些指标来评估生成数据的质量，例如 Inception Score、FID 等。
-{"msg_type":"generate_answer_finish","data":""}

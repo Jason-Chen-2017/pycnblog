@@ -162,4 +162,3 @@ Surprise 是一个 Python 推荐系统库，提供了多种推荐算法的实现
 ### 9.2 如何评估家居 AI 导购系统的推荐效果？
 
 可以使用准确率、召回率、NDCG 等指标评估家居 AI 导购系统的推荐效果。 
-{"msg_type":"generate_answer_finish","data":""}

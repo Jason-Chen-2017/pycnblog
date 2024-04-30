@@ -181,4 +181,3 @@ A：NER的目标是识别文本中的命名实体，而实体链接的目标是�
 **Q：如何评估NER模型的性能？**
 
 A：常见的NER模型评估指标包括精确率、召回率和F1值。
-{"msg_type":"generate_answer_finish","data":""}

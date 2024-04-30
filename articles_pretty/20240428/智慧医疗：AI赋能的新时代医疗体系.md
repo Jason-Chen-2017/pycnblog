@@ -158,4 +158,3 @@ model.evaluate(x_test, y_test)
 ### 9.3 如何学习智慧医疗相关知识？
 
 可以通过学习机器学习、深度学习、自然语言处理等人工智能技术，以及相关的医疗知识，了解智慧医疗的发展现状和未来趋势。
-{"msg_type":"generate_answer_finish","data":""}

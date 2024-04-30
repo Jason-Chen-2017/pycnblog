@@ -108,4 +108,4 @@ f_t = \sigma(W_f [h_{t-1}, x_t] + b_f)
 $$
 
 $$
-o_t = \sigma(W_o [h_{t-1}, x_t] +{"msg_type":"generate_answer_finish","data":""}
+o_t = \sigma(W_o [h_{t-1}, x_t] +

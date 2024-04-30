@@ -140,4 +140,3 @@ model.evaluate(x_test, y_test)
 *   选择合适的深度学习框架和工具。
 *   根据具体应用场景，设计合适的模型架构和训练策略。
 *   与相关领域的专家合作，例如服装设计师、电商平台等。
-{"msg_type":"generate_answer_finish","data":""}

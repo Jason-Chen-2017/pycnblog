@@ -192,4 +192,3 @@ print(res)
 ### 9.3 如何处理不可行解
 
 如果优化算法得到的解不满足约束条件，则需要调整算法参数或选择其他优化算法。
-{"msg_type":"generate_answer_finish","data":""}

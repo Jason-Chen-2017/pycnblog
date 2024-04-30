@@ -131,4 +131,3 @@ A: OpenAI API 支持多种编程语言，例如 Python、JavaScript、Java 等�
 **Q: OpenAI API 的价格是多少？**
 
 A: OpenAI API 的价格取决于使用的模型和请求量。您可以在 OpenAI 官网查看详细的价格信息。 
-{"msg_type":"generate_answer_finish","data":""}

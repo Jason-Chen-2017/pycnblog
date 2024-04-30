@@ -174,4 +174,3 @@ resources:
 
 * `limits`：指定 Pod 可以使用的最大资源量。
 * `requests`：指定 Pod 请求的资源量。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -116,4 +116,3 @@ A: 可以使用 BLEU、ROUGE 等指标评估 LLMs 模型的文本生成质量。
 **Q: 如何解决 LLMs 模型的数据偏见问题？**
 
 A: 可以使用数据增强、模型正则化等技术 mitigate 数据偏见的影响。
-{"msg_type":"generate_answer_finish","data":""}

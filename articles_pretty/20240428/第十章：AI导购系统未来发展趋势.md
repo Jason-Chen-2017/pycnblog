@@ -126,4 +126,3 @@ print(pred.est)
 **9.3 如何避免算法偏见？**
 
 可以采用多样化的数据集，并使用公平性约束来训练推荐模型。
-{"msg_type":"generate_answer_finish","data":""}

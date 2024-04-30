@@ -166,4 +166,3 @@ labels = kmeans.labels_
 ### 9.3 如何学习集合论？
 
 学习集合论可以参考相关的数学教材或在线课程。
-{"msg_type":"generate_answer_finish","data":""}

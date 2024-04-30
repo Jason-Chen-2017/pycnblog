@@ -164,4 +164,3 @@ Q-learning容易陷入局部最优，可以采用以下方法：
 *   **softmax策略**：根据Q值的大小，以一定的概率选择动作。
 *   **经验回放**：将过去的经验存储起来，并用于训练Q函数，以增加探索。 
 
-{"msg_type":"generate_answer_finish","data":""}

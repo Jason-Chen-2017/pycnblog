@@ -154,4 +154,3 @@ DQN可以使用函数近似器来处理连续动作空间，例如深度确定�
 ### 9.2 DQN如何处理部分可观测环境？
 
 DQN可以使用循环神经网络（RNN）来处理部分可观测环境，例如深度循环Q网络（DRQN）。
-{"msg_type":"generate_answer_finish","data":""}

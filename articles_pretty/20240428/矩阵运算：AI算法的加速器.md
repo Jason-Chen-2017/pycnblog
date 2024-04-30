@@ -150,4 +150,3 @@ print(A_inv)
 ### 9.1 如何选择合适的矩阵运算库？
 
 选择合适的矩阵运算库取决于具体的应用场景和需求。例如，对于小型项目或原型设计，NumPy 和 SciPy 足以满足需求；对于大规模深度学习模型的训练，则需要使用 TensorFlow 或 PyTorch 等支持 GPU 加速的框架。 
-{"msg_type":"generate_answer_finish","data":""}

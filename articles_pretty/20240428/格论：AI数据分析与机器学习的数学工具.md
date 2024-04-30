@@ -68,4 +68,3 @@
 
 *   $A$ 中的所有对象都具有 $B$ 中的所有属性。
 *   $B$ 中的所有属性都为 $A$ 中的所有对象所共有。 
-{"msg_type":"generate_answer_finish","data":""}

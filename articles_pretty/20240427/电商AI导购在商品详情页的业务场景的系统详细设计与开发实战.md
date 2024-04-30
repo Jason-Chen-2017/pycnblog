@@ -95,4 +95,3 @@ r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i
 $$
 
 其中，x和y表示两个变量，n表示样本数量，$\bar{x}$和$\bar{y}$表示变量的平均值。 
-{"msg_type":"generate_answer_finish","data":""}

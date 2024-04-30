@@ -201,4 +201,3 @@ AGI（Artificial General Intelligence），即通用人工智能，是指具备�
 ### 9.3 AGI在元宇宙中有什么作用？
 
 AGI可以辅助人类创造虚拟世界、驱动虚拟角色、管理虚拟世界、提供个性化体验等。
-{"msg_type":"generate_answer_finish","data":""}

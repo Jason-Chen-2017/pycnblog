@@ -209,4 +209,3 @@ model.evaluate(x_test, y_test)
 ### 9.5 物联网和人工智能的应用场景有哪些？
 
 物联网和人工智能的应用场景包括智能家居、工业自动化、智慧城市、医疗保健、金融、交通运输和制造业。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -102,4 +102,4 @@ def ucb(arms, c, T):
 * `T` 是时间步数。
 * `rewards` 和 `counts` 数组用于存储每个臂的回报估计值和选择次数。
 * `ucb_values` 数组存储每个臂的上置信界。
-* `chosen_arm` 是选择{"msg_type":"generate_answer_finish","data":""}
+* `chosen_arm` 是选择

@@ -50,4 +50,3 @@ ViT模型将图像分割成多个patch，并将每个patch视为一个token，�
 3. **位置编码**: 为每个token添加位置信息，以便模型能够学习到token之间的空间关系。
 4. **Transformer编码器**: 使用多个Transformer块对token embeddings进行特征提取。
 5. **分类器**: 使用MLP (Multi-Layer Perceptron) 对Transformer编码器的输出进行分类。 
-{"msg_type":"generate_answer_finish","data":""}

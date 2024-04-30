@@ -136,4 +136,3 @@ VAE 和 GAN 都是常用的生成模型，但它们的工作原理不同。VAE �
 *   **增加 KL 散度项的权重**
 *   **使用更复杂的潜在空间**
 *   **使用对抗训练**
-{"msg_type":"generate_answer_finish","data":""}

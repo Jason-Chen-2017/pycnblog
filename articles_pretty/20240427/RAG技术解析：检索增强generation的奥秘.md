@@ -77,4 +77,3 @@ DPR模型是一种基于深度学习的检索模型，它使用两个Transformer
 * **Document encoder：** 将文档编码成向量表示。
 
 DPR模型计算查询向量和文档向量之间的相似度，并返回相似度最高的文档作为检索结果。 
-{"msg_type":"generate_answer_finish","data":""}

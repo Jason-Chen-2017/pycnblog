@@ -84,4 +84,3 @@ $$
 ### 4.5 输出门
 
 输出门的值 $o_t$ 计算如下： 
-{"msg_type":"generate_answer_finish","data":""}

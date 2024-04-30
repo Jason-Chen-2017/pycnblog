@@ -79,4 +79,3 @@ text = "I want to buy a new refrigerator."
 tokens = nltk.word_tokenize(text)
 print(tokens)  # ['I', 'want', 'to', 'buy', 'a', 'new', 'refrigerator', '.']
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

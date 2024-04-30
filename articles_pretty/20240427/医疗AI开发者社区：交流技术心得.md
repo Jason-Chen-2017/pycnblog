@@ -191,4 +191,3 @@ model.evaluate(x_test, y_test)
 * **准确率**: 模型预测结果的准确程度。
 * **召回率**: 模型能够正确识别出所有正例的比例。
 * **F1 值**: 准确率和召回率的综合指标。
-{"msg_type":"generate_answer_finish","data":""}

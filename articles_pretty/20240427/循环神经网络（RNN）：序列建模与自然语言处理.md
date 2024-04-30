@@ -178,4 +178,3 @@ RNN 主要用于处理序列数据，而 CNN 主要用于处理图像、视频�
 ### 9.2. LSTM 和 GRU 的区别是什么？
 
 LSTM 和 GRU 都是特殊的 RNN 结构，它们都引入了门控机制来控制信息的流动。LSTM 比 GRU 复杂一些，但通常也更强大。 
-{"msg_type":"generate_answer_finish","data":""}

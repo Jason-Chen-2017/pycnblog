@@ -96,4 +96,3 @@ L_G = ||E_{x \sim p_{data}(x)}[f(x)] - E_{z \sim p_z(z)}[f(G(z))]||_2^2
 $$
 
 其中，$f(x)$ 表示判别器中间层的特征向量。 
-{"msg_type":"generate_answer_finish","data":""}

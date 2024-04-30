@@ -147,4 +147,3 @@ PGMs 已经成为 AI 领域中不可或缺的工具，但仍然面临一些挑�
 **Q: 如何评估 PGM 的性能？**
 
 **A:** 可以使用多种指标来评估 PGM 的性能，例如对数似然 (log-likelihood)、预测精度等。
-{"msg_type":"generate_answer_finish","data":""}

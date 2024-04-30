@@ -113,4 +113,3 @@ LLM 作为 NLP 领域的最新突破，展现出巨大的潜力，但也面临�
 ### 9.2 如何评估 LLM 模型的性能？
 
 常用的 LLM 评估指标包括困惑度（Perplexity）、BLEU 分数和 ROUGE 分数等。
-{"msg_type":"generate_answer_finish","data":""}

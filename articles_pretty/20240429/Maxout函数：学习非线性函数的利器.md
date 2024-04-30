@@ -120,4 +120,3 @@ Maxout函数的主要缺点是参数数量较多，容易导致模型过拟合�
 ### 9.3 如何避免Maxout函数的过拟合？
 
 可以使用正则化技术，例如Dropout、L1/L2正则化等，来避免Maxout函数的过拟合。
-{"msg_type":"generate_answer_finish","data":""}

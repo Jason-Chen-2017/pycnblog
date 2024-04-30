@@ -154,4 +154,3 @@ GPT-3、LaMDA 和 WuDao 都是 LLM，但它们在模型架构、训练数据和�
 ### 9.3 如何选择合适的 LLM？
 
 选择合适的 LLM 取决于具体的应用场景和需求。需要考虑的因素包括模型规模、性能、成本和可用性。
-{"msg_type":"generate_answer_finish","data":""}

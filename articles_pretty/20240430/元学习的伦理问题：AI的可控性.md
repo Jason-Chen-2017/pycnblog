@@ -92,4 +92,3 @@ class MAML(nn.Module):
 
     def forward(self, x_spt, y_spt, x_qry, y_qry):
         # 
-{"msg_type":"generate_answer_finish","data":""}

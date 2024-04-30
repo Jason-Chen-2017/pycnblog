@@ -107,4 +107,3 @@ print(future_demand)
 * 使用 `fit()` 方法训练模型。
 * 使用 `predict()` 方法预测未来需求量。
 * 打印预测结果。 
-{"msg_type":"generate_answer_finish","data":""}

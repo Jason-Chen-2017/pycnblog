@@ -162,4 +162,3 @@ A: 选择 AgentWorkFlow 平台时需要考虑以下因素：功能、易用性�
 **Q: 如何评估AgentWorkFlow的效益？**
 
 A: 评估 AgentWorkFlow 的效益可以从以下方面入手：效率提升、成本降低、出错率降低、员工满意度提升等。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -65,4 +65,3 @@ $$
 $$
 L_G = -\mathbb{E}_{z \sim p_z(z)}[\log D(G(z))]
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

@@ -142,4 +142,3 @@ predictions = model.predict(X_test)
 * **删除：** 删除包含缺失值的数据点。
 * **插值：** 使用插值方法填充缺失值，例如线性插值、样条插值等。
 * **模型填充：** 使用模型预测缺失值。 
-{"msg_type":"generate_answer_finish","data":""}

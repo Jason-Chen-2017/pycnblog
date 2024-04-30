@@ -109,4 +109,3 @@ y_pred = model.predict(X_new)
 ### 6.2 疾病诊断
 
 使用决策树模型可以根据病人的症状、体检结果等特征来诊断疾病。 
-{"msg_type":"generate_answer_finish","data":""}

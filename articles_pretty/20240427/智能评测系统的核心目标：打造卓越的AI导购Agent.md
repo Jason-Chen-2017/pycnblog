@@ -133,4 +133,3 @@ print(pred.est)  # 预测评分
 - 为用户推荐合适的金融产品和服务。
 - 帮助用户进行风险评估和投资决策。
 - 提升用户的理财收益和风险控制能力。 
-{"msg_type":"generate_answer_finish","data":""}

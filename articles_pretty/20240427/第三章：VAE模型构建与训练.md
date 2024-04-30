@@ -151,4 +151,3 @@ VAE 和 GAN 都是生成模型，但它们的工作原理不同。VAE 通过学�
 * **使用条件 VAE**
 * **使用不同的先验分布**
 * **使用对抗训练**
-{"msg_type":"generate_answer_finish","data":""}

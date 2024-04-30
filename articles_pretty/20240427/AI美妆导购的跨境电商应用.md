@@ -86,4 +86,3 @@ sim(i,j) = \frac{|A_i \cap A_j|}{|A_i \cup A_j|}
 $$
 
 其中，$i$ 和 $j$ 表示两个商品，$A_i$ 表示商品 $i$ 的属性集合。 
-{"msg_type":"generate_answer_finish","data":""}

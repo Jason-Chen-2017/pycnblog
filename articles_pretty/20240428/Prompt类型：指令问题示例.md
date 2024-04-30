@@ -154,4 +154,3 @@ Prompt Engineering 正在快速发展，未来可能会出现以下趋势：
 ### 9.3 如何避免 Prompt 注入攻击？
 
 Prompt 注入攻击是指攻击者通过精心设计的 Prompt 来操控模型输出有害或误导性的内容。为了避免这种攻击，可以对 Prompt 进行过滤和审查，并使用安全的 Prompt 设计原则。 
-{"msg_type":"generate_answer_finish","data":""}

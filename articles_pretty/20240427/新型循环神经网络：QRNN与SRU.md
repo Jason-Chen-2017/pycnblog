@@ -68,4 +68,3 @@ h_t &= r_t \odot \tilde{h}_t + (1 - r_t) \odot h_{t-1}
 $$
 
 其中，$x_t$ 是当前时间步的输入，$h_{t-1}$ 是前一个时间步的隐藏状态，$f_t$ 是遗忘门，$\tilde{h}_t$ 是候选隐藏状态，$r_t$ 是重置门，$h_t$ 是当前时间步的隐藏状态，$\odot$ 表示 element-wise 乘法。 
-{"msg_type":"generate_answer_finish","data":""}

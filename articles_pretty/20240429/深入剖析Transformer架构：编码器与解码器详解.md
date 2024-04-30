@@ -115,4 +115,3 @@ Transformer模型在NLP领域取得了巨大的成功，但仍然存在一些挑
 **Q: 如何选择合适的Transformer模型？**
 
 **A:** 选择合适的Transformer模型取决于具体的任务和数据集。可以参考Hugging Face Transformers库中提供的预训练模型，并根据自己的需求进行微调。
-{"msg_type":"generate_answer_finish","data":""}

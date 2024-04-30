@@ -85,4 +85,3 @@ def train_step(images):
 def generate_art():
     # ...
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

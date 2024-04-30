@@ -157,4 +157,3 @@ A: 可以使用正则化技术，例如 dropout 或 L1/L2 正则化。
 **Q: 如何提高模型的性能？**
 
 A: 可以尝试不同的 DNN 架构、超参数、优化器或数据增强技术。
-{"msg_type":"generate_answer_finish","data":""}

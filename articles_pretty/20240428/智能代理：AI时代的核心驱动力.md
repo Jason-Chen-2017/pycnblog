@@ -93,4 +93,3 @@ $$
 * $r$ 表示奖励值。
 * $\alpha$ 表示学习率。
 * $\gamma$ 表示折扣因子。 
-{"msg_type":"generate_answer_finish","data":""}

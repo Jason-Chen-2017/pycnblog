@@ -70,4 +70,3 @@ y = \frac{x - \mu}{\sqrt{\sigma^2 + \epsilon}} * \gamma + \beta,
 $$
 
 其中，$x$ 表示输入数据，$\mu$ 和 $\sigma^2$ 分别表示输入数据的均值和方差，$\epsilon$ 是一个很小的常数，$\gamma$ 和 $\beta$ 是可学习的参数。 
-{"msg_type":"generate_answer_finish","data":""}

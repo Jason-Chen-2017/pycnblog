@@ -87,4 +87,3 @@ with driver.session() as session:
 ### 5.2 TensorFlow
 
 TensorFlow 是一个开源的机器学习框架，可以用于构建知识图谱嵌入模型。知识图谱嵌入将实体和关系映射到低维向量空间，从而支持基于向量的推理和查询。 
-{"msg_type":"generate_answer_finish","data":""}

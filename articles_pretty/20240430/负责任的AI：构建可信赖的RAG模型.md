@@ -156,4 +156,3 @@ RAG 模型可以使用信息检索技术筛选相关文档，并使用 LLM 提�
 ### 9.3 如何 mitigate RAG 模型的偏见风险？
 
 可以使用多种方法 mitigate RAG 模型的偏见风险，例如使用多样化的数据集、进行数据清洗和使用公平性评估指标。
-{"msg_type":"generate_answer_finish","data":""}

@@ -121,4 +121,3 @@ $$
 | User C | 3 | 4 | ? |
 
 通过矩阵分解，可以得到用户特征矩阵和物品特征矩阵，并预测用户B对Item 2的评分和用户C对Item 3的评分。 
-{"msg_type":"generate_answer_finish","data":""}

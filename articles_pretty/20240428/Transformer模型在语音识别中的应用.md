@@ -123,4 +123,3 @@ Transformer模型可以通过位置编码来处理不同长度的语音信号。
 ### 9.2 如何评估语音识别模型的性能？
 
 常见的语音识别模型评估指标包括词错误率 (WER) 和字符错误率 (CER)。 
-{"msg_type":"generate_answer_finish","data":""}

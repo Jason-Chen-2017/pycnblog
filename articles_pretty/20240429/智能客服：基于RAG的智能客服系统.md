@@ -89,4 +89,3 @@ score(D, Q) = \sum_{i=1}^{n} IDF(q_i) \cdot \frac{f(q_i, D) \cdot (k_1 + 1)}{f(q
 $$
 
 其中，$D$ 表示文档，$Q$ 表示查询，$q_i$ 表示查询中的第 $i$ 个关键词，$f(q_i, D)$ 表示关键词 $q_i$ 在文档 $D$ 中出现的频率，$|D|$ 表示文档 $D$ 的长度，$avgdl$ 表示所有文档的平均长度，$k_1$ 和 $b$ 是可调节的参数。
-{"msg_type":"generate_answer_finish","data":""}

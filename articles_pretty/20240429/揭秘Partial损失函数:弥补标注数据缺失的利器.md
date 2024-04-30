@@ -127,4 +127,3 @@ A: 不可以。Partial损失函数可以缓解标注数据不足带来的负面�
 **Q: 如何选择合适的Partial损失函数？**
 
 A: 选择合适的Partial损失函数取决于具体的任务和标注数据的特点。需要根据实际情况进行实验和比较。
-{"msg_type":"generate_answer_finish","data":""}

@@ -77,4 +77,3 @@ $$
 $$
 
 其中，$F$ 是所有特征的集合，$S$ 是特征的子集，$f_x(S)$ 是只使用特征 $S$ 预测样本 $x$ 的结果。 
-{"msg_type":"generate_answer_finish","data":""}

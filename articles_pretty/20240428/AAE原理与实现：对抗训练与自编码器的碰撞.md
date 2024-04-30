@@ -166,4 +166,3 @@ VAE (Variational Autoencoder) 也是一种结合了自编码器和概率模型�
 * **使用更强大的判别器**: 提升判别器的能力，使其能够更好地区分真实样本和生成样本。
 * **使用更灵活的先验分布**: 使用更灵活的先验分布，例如条件高斯分布、混合高斯模型等，增强模型的表达能力。
 * **改进训练策略**: 使用更稳定的训练策略，例如 Wasserstein GAN、Gradient Penalty 等。
-{"msg_type":"generate_answer_finish","data":""}

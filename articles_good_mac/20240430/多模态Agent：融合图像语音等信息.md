@@ -156,4 +156,3 @@ class MultimodalAgent(nn.Module):
 * **如何解决多模态数据的不平衡问题？**
 
 可以使用数据增强、重采样等方法解决多模态数据的不平衡问题。
-{"msg_type":"generate_answer_finish","data":""}

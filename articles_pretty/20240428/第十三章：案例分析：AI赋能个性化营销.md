@@ -160,4 +160,3 @@ def recommend_movies(userId, num_recommendations):
 *   **数据加密:** 对用户数据进行加密，防止数据泄露。
 *   **访问控制:** 限制对用户数据的访问权限。
 *   **数据匿名化:** 对用户数据进行匿名化处理，保护用户隐私。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -139,4 +139,3 @@ model = CNN()
 ### 9.2 如何选择 DBN 或 CNN？
 
 选择 DBN 或 CNN 取决于具体的应用场景和任务需求。如果需要构建生成模型，则可以选择 DBN；如果需要进行图像识别等任务，则可以选择 CNN。
-{"msg_type":"generate_answer_finish","data":""}

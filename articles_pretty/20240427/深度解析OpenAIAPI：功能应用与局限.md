@@ -140,4 +140,3 @@ OpenAI API 根据使用情况收费。不同的模型和功能有不同的价格
 ### 9.3 OpenAI API 支持哪些编程语言？
 
 OpenAI API 提供各种编程语言的库，包括 Python、JavaScript 和 Node.js。
-{"msg_type":"generate_answer_finish","data":""}

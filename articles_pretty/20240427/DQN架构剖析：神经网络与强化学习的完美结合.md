@@ -79,4 +79,3 @@ $$
 $$
 
 其中，$\alpha$ 表示学习率，$\nabla_\theta L(\theta)$ 表示损失函数关于参数 $\theta$ 的梯度。 
-{"msg_type":"generate_answer_finish","data":""}

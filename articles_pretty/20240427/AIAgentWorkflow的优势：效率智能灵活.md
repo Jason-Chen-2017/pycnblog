@@ -162,4 +162,3 @@ AIAgentWorkflow 作为 AI 与工作流的结合，具有巨大的发展潜力。
 ### 8.1 发展趋势
 
 * **更强大的 AIAgent**:  AIAgent 将具备更强的学习能力、决策能力和执行能力，能够处理更复杂的 
-{"msg_type":"generate_answer_finish","data":""}

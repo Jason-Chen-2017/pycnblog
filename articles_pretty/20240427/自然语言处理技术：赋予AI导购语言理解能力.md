@@ -62,4 +62,3 @@
 ## 4. 数学模型和公式详细讲解举例说明
 
 ### 4.1 词向量模型 
-{"msg_type":"generate_answer_finish","data":""}

@@ -125,4 +125,3 @@ def shaping_reward(state, next_state):
 * **Shaping 的设计**: 设计有效的 Shaping 函数仍然是一项挑战，需要领域知识和经验。
 * **Shaping 的负面影响**: 不恰当的 Shaping 可能导致智能体学习到不希望的行为。
 * **Shaping 的可解释性**: Shaping 后的奖励函数可能难以解释，这会影响强化学习算法的可解释性。 
-{"msg_type":"generate_answer_finish","data":""}

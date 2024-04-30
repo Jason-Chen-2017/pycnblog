@@ -78,4 +78,3 @@ $$
     1. 计算损失函数 $J(\theta)$ 在 $\theta_t$ 处关于样本批次 $B$ 的梯度 $\nabla J(\theta_t; B)$。
     2. 更新模型参数：$\theta_{t+1} = \theta_t - \eta \nabla J(\theta_t; B)$。
 3. 重复步骤 2，直至模型收敛或达到预设的迭代次数。 
-{"msg_type":"generate_answer_finish","data":""}

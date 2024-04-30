@@ -129,4 +129,3 @@ Dropout 是一种简单而有效的正则化技术，在深度学习领域得到
 ### 9.2 Dropout 与 Batch Normalization 的关系？
 
 Dropout 和 Batch Normalization 都是常用的正则化技术，可以结合使用以进一步提高模型的泛化能力。通常情况下，Dropout 应用于 Batch Normalization 之后。
-{"msg_type":"generate_answer_finish","data":""}

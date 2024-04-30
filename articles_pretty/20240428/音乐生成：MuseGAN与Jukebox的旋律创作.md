@@ -102,4 +102,3 @@ Transformer是一种基于自注意力机制的深度神经网络，它能够学
 $$h_l = \text{Transformer}(h_{l-1})$$
 
 其中，$h_l$ 表示 Transformer 模型第 $l$ 层的输出。 
-{"msg_type":"generate_answer_finish","data":""}

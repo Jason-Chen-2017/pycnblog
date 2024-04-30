@@ -162,4 +162,3 @@ A: 可以使用 `arr.shape` 属性获取。
 **Q: 如何将 ndarray 保存到文件？**
 
 A: 可以使用 `np.savetxt("data.txt", arr)` 函数保存。
-{"msg_type":"generate_answer_finish","data":""}

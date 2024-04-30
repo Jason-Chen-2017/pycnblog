@@ -219,4 +219,3 @@ GRU 是 LSTM 的一种变体，它具有更少的门控机制，因此计算效�
 ### 9.5 如何评估 LSTM 模型的性能？
 
 可以使用均方误差、平均绝对误差或困惑度等指标来评估 LSTM 模型的性能。 
-{"msg_type":"generate_answer_finish","data":""}

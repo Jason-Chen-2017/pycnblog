@@ -159,4 +159,3 @@ VAE的性能可以通过重构损失和生成数据的质量来评估。
 ### 9.3 VAE和GAN有什么区别？
 
 VAE和GAN都是生成模型，但它们的工作原理不同。VAE使用变分推断来近似后验分布，而GAN使用对抗训练来学习生成数据。
-{"msg_type":"generate_answer_finish","data":""}

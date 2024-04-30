@@ -96,4 +96,3 @@ $$\nabla J(\theta) = E_{\pi_\theta}[\nabla_\theta \log \pi_\theta(a|s) Q^{\pi_\t
 
 *   $\pi_\theta(a|s)$ 是策略网络，表示在状态 s 下选择动作 a 的概率。 
 *   $Q^{\pi_\theta}(s, a)$ 是在策略 $\pi_\theta$ 下状态-动作值函数。 
-{"msg_type":"generate_answer_finish","data":""}

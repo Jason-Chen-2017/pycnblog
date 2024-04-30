@@ -134,4 +134,3 @@ AI导购技术面临的挑战包括：
 **问：如何提升AI导购技术的 accuracy？**
 
 答：可以通过优化算法、增加数据量、改进特征工程等方式来提升AI导购技术的 accuracy。
-{"msg_type":"generate_answer_finish","data":""}

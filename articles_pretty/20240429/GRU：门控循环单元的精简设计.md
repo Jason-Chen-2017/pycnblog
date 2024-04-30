@@ -109,4 +109,3 @@ class GRUCell(tf.keras.layers.Layer):
 
         return h_t, [h_t]
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

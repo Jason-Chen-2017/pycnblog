@@ -100,4 +100,3 @@ for episode in range(num_episodes):
 # 测试智能体
 # ...
 ```
-{"msg_type":"generate_answer_finish","data":""}

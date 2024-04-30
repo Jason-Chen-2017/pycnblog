@@ -80,4 +80,3 @@ RAG 中常用的数学模型包括：
 
 * **图嵌入**: 将实体和关系映射到低维向量空间，例如 TransE、DistMult 等。
 * **图神经网络**: 用于学习节点和边的表示，例如 GCN、GAT 等。 
-{"msg_type":"generate_answer_finish","data":""}

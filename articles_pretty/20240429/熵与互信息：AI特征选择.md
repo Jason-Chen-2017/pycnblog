@@ -98,4 +98,3 @@ k_best_features = np.argsort(mi_scores)[-k:]
 可以使用交叉验证或其他模型选择方法来确定最佳特征数量。 
 * **如何评估特征选择的效果?** 
 可以使用模型性能指标 (例如，准确率、召回率) 来评估特征选择的效果。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -83,4 +83,3 @@ for episode in range(1000):
 
 env.close()
 ```
-{"msg_type":"generate_answer_finish","data":""}

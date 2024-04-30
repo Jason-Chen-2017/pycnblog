@@ -126,4 +126,3 @@ A: 需要考虑平台的功能、易用性、可扩展性、安全性等因素�
 **Q: AgentWorkFlow 的未来发展方向是什么？**
 
 A: AgentWorkFlow 将朝着更强大的 AI 能力、更广泛的应用场景和更人性化的交互方式发展。
-{"msg_type":"generate_answer_finish","data":""}

@@ -205,4 +205,3 @@ Surprise 是一个用于构建和评估推荐系统的 Python 库。
 ### 9.2 手机AI导购有哪些优势？
 
 手机AI导购具有个性化推荐、精准营销、提升转化率、降低运营成本等优势。 
-{"msg_type":"generate_answer_finish","data":""}

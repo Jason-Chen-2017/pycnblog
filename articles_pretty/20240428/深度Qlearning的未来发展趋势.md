@@ -74,4 +74,3 @@ $$
 ### 4.2 Q值更新公式
 
 Q值更新公式是Q-learning算法的核心，它根据贝尔曼方程更新Q值： 
-{"msg_type":"generate_answer_finish","data":""}

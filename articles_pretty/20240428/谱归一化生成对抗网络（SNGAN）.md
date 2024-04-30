@@ -192,4 +192,3 @@ A: SNGAN 的主要区别在于对判别器网络进行了谱归一化，从而�
 **Q: SNGAN 的局限性是什么？**
 
 A: SNGAN 仍然存在一些局限性，例如生成图像的多样性可能不足，以及训练时间较长等。
-{"msg_type":"generate_answer_finish","data":""}

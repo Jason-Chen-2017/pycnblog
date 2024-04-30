@@ -95,4 +95,3 @@ model.fit(x_train, y_train, epochs=10)
 # 使用模型进行情感理解
 predicted_emotion = model.predict(x_test)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

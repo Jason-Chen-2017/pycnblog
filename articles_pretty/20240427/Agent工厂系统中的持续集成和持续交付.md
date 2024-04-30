@@ -87,4 +87,3 @@ pipeline {
 * `sh 'mvn clean package'` 运行Maven命令来清理并打包应用程序。
 * `stage('Test')` 定义了测试阶段。
 * `sh 'mvn test'` 运行Maven命令来执行测试。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -127,4 +127,3 @@ model.evaluate(x_test, y_test)
 ### 9.3 如何评估深度学习模型的性能？
 
 常用的评估指标包括准确率、精确率、召回率和 F1 分数。
-{"msg_type":"generate_answer_finish","data":""}

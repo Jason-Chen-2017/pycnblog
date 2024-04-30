@@ -87,4 +87,3 @@ x_i \geq 0, \forall i = 1, 2, ..., n
 $$
 
 其中，$x_i$表示第i个产品的生产数量，$c_i$表示第i个产品的生产成本，$a_{ij}$表示第i个产品消耗第j种资源的数量，$b_j$表示第j种资源的可用量。 
-{"msg_type":"generate_answer_finish","data":""}

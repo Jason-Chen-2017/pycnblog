@@ -97,4 +97,3 @@ for epoch in range(epochs):
     # ...
 
 ```
-{"msg_type":"generate_answer_finish","data":""}

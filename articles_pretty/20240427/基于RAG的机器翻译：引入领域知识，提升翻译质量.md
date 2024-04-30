@@ -85,4 +85,3 @@ h_t' = g * h_t + (1 - g) * c_t
 $$
 
 其中，$h_t$ 表示文本特征，$c_t$ 表示文档特征，$W_g$ 表示门控参数，$g$ 表示门控值，$h_t'$ 表示融合后的特征。 
-{"msg_type":"generate_answer_finish","data":""}

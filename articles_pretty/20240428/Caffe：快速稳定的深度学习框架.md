@@ -122,4 +122,3 @@ Caffe 的模型训练过程包括数据准备、模型定义、Solver 配置、�
 * **如何将 Caffe 模型部署到实际应用中？**
 
 Caffe 支持将模型导出为不同的格式，例如 CaffeModel、Prototxt、ONNX 等，可以方便地部署到不同的平台和设备上。
-{"msg_type":"generate_answer_finish","data":""}

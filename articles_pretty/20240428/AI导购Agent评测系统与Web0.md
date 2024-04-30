@@ -138,4 +138,3 @@ AI 导购 Agent 可以通过采用差分隐私、联邦学习等技术，在保�
 * **AI 导购 Agent 如何确保推荐的公平性？**
 
 AI 导购 Agent 可以通过采用去偏算法、多样性推荐等技术，确保推荐的公平性。 
-{"msg_type":"generate_answer_finish","data":""}

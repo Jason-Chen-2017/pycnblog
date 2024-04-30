@@ -93,4 +93,3 @@ def classify_image(image_path):
     predictions = model.predict(x)
     return tf.keras.applications.resnet50.decode_predictions(predictions, top=3)[0]
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

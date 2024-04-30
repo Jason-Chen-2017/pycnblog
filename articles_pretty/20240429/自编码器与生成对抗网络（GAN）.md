@@ -156,4 +156,3 @@ model.fit(x_train, x_train, epochs=10)
 ### 9.2 自编码器和GAN可以用于哪些任务？
 
 自编码器可以用于降维、特征提取、异常检测等任务；GAN可以用于图像生成、自然语言处理、数据增强等任务。 
-{"msg_type":"generate_answer_finish","data":""}

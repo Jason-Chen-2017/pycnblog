@@ -161,4 +161,3 @@ TensorFlow 可以通过 pip 或 conda 进行安装。
 ### 9.4 如何部署 TensorFlow 模型？
 
 TensorFlow 模型可以部署到各种平台上，例如云端服务器、移动设备和嵌入式设备。
-{"msg_type":"generate_answer_finish","data":""}

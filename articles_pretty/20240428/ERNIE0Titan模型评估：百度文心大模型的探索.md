@@ -114,4 +114,3 @@ A: ERNIE模型有多个版本，选择合适的模型取决于具体任务需求
 **Q: 如何使用ERNIE模型进行文本分类？**
 
 A: 可以使用PaddleNLP或Hugging Face Transformers等工具包，加载ERNIE模型并进行微调，从而实现文本分类任务。
-{"msg_type":"generate_answer_finish","data":""}

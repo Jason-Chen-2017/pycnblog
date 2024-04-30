@@ -123,4 +123,3 @@ A: 可以通过点击率、转化率、用户满意度等指标来评估AI导购
 **Q: 如何保证AI导购的公平性？**
 
 A: 需要使用 unbiased 的数据进行模型训练，并定期评估模型的公平性。
-{"msg_type":"generate_answer_finish","data":""}

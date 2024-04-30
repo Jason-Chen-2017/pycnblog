@@ -105,4 +105,3 @@ print(recommended_items)
 3. 获取目标用户的相似用户，选择相似度最高的5个用户。
 4. 获取相似用户喜欢的商品，统计每个商品被相似用户喜欢的次数。
 5. 推荐最受欢迎的10个商品给目标用户。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -156,4 +156,3 @@ shap.force_plot(explainer.expected_value, shap_values, text)
 *   **模型选择:** 选择具有较高可解释性的模型，例如线性模型或决策树模型。
 *   **模型训练:** 在模型训练过程中加入 Fairness 约束，例如使用 Fairlearn 等工具。
 *   **模型评估:** 使用 Fairness 度量指标评估模型的 Fairness，并进行相应的调整。
-{"msg_type":"generate_answer_finish","data":""}

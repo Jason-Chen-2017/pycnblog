@@ -116,4 +116,3 @@ print(prediction)
 4.  使用 fit() 方法训练模型，传入数据集 X 和 y。
 5.  使用 predict() 方法预测新数据，传入 new_data。
 6.  最后，打印预测结果。 
-{"msg_type":"generate_answer_finish","data":""}

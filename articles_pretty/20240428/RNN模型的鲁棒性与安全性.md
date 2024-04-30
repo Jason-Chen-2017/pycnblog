@@ -111,4 +111,3 @@ optimizer = tfp.privacy.DPAdamOptimizer(
 model.compile(loss='categorical_crossentropy', optimizer=optimizer)
 model.fit(x_train, y_train, epochs=10)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

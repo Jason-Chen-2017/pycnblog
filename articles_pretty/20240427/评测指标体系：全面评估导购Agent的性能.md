@@ -197,4 +197,3 @@ def recommend_items(userId, num_recommendations):
 * **基于内容的推荐**：利用商品属性和用户偏好进行推荐。
 * **冷启动策略**：利用用户的注册信息、社交网络信息等进行推荐。
 * **迁移学习**：利用其他领域的数据或模型进行推荐。 
-{"msg_type":"generate_answer_finish","data":""}

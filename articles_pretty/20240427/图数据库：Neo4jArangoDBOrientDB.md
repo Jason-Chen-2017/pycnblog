@@ -128,4 +128,3 @@ SELECT expand(out('WorksFor')) FROM Person WHERE name = "John Doe"
 *   **易用性**：图数据库需要提供易于使用的工具和接口，降低用户的学习成本。
 
 尽管面临这些挑战，图数据库技术仍然具有巨大的潜力，将在未来的数据管理和分析领域发挥越来越重要的作用。
-{"msg_type":"generate_answer_finish","data":""}

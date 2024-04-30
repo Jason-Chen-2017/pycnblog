@@ -195,4 +195,3 @@ ComplEx 算法的主要超参数包括嵌入维度、margin 超参数、学习�
 ### 9.3 如何评估 ComplEx 算法的效果？
 
 ComplEx 算法的效果可以通过链接预测、实体分类、关系抽取等任务的性能来评估。
-{"msg_type":"generate_answer_finish","data":""}

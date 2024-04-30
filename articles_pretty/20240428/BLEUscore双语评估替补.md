@@ -72,4 +72,3 @@ ROUGE-N = \frac{\sum_{gram_n \in Reference} Count_{match}(gram_n)}{\sum_{gram_n 
 $$
 
 其中，$gram_n$ 表示长度为 $n$ 的 n-gram，$Reference$ 表示参考译文，$Count_{match}(gram_n)$ 表示机器翻译结果和参考译文中相同 $gram_n$ 的数量，$Count(gram_n)$ 表示参考译文中 $gram_n$ 的数量。 
-{"msg_type":"generate_answer_finish","data":""}

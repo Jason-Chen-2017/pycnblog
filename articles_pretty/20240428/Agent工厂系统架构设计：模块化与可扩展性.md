@@ -140,4 +140,3 @@ AgentSpeak是一种Agent编程语言，用于描述Agent的行为和目标。
 ### 8.3 Agent伦理与安全
 
 随着Agent技术的应用范围不断扩大，Agent的伦理与安全问题也越来越受到关注，需要建立相应的规范和机制来保障Agent的安全性
-{"msg_type":"generate_answer_finish","data":""}

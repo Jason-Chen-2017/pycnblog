@@ -110,4 +110,3 @@ pm25, temperature, humidity = data.split(',')
 
 # 将数据存储到数据库
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

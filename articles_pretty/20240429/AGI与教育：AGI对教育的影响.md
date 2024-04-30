@@ -103,4 +103,3 @@ predictions = model.predict(x_new)
 ### 6.2 智能辅导机器人
 
 例如微软小冰、百度小度等智能助手可以与学生进行对话，解答问题，并提供学习建议。 
-{"msg_type":"generate_answer_finish","data":""}

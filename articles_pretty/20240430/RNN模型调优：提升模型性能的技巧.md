@@ -69,4 +69,4 @@ LSTM 通过输入门、遗忘门和输出门控制信息流动：
 
 $$
 i_t = \sigma(W_{xi} x_t + W_{hi} h_{t-1} + b_i) \\
-f_t = \sigma(W_{xf} x_t + W_{hf} h_{t-1}{"msg_type":"generate_answer_finish","data":""}
+f_t = \sigma(W_{xf} x_t + W_{hf} h_{t-1}

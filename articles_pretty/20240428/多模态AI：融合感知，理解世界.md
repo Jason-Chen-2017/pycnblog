@@ -143,4 +143,3 @@ class MultimodalAttention(nn.Module):
 ### 9.3 多模态AI有哪些挑战？
 
 多模态AI面临着数据收集、模态融合、模型训练等方面的挑战。
-{"msg_type":"generate_answer_finish","data":""}

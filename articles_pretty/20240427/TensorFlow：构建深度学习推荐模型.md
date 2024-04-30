@@ -70,4 +70,3 @@ y = f(W_2 \cdot f(W_1 \cdot x + b_1) + b_2)
 $$
 
 其中，$x$ 表示输入向量，$W_1$ 和 $W_2$ 表示权重矩阵，$b_1$ 和 $b_2$ 表示偏置向量，$f$ 表示激活函数。 
-{"msg_type":"generate_answer_finish","data":""}

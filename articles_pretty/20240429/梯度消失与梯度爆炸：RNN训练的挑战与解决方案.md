@@ -73,4 +73,3 @@ $$\frac{\partial h_t}{\partial h_{t-1}} = W_h^T diag(sigmoid'(h_{t-1}))$$
 ### 4.2. 梯度爆炸的数学解释
 
 梯度爆炸问题通常发生在梯度值过大时。例如，当 RNN 中的权重矩阵 $W_h$ 的特征值大于 1 时，梯度值会在反向传播过程中指数级增长，最终导致梯度爆炸。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -77,4 +77,3 @@ $$
 $$
 CE = -\sum_{i=1}^{n} y_i log(\hat{y_i})
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

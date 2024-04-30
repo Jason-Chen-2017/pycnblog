@@ -126,4 +126,3 @@ A:  常用的机器翻译评价指标包括 BLEU、METEOR、ROUGE 等。
 **Q: 如何选择合适的机器翻译工具？**
 
 A:  选择机器翻译工具时，需要考虑翻译质量、支持的语言、价格等因素。
-{"msg_type":"generate_answer_finish","data":""}

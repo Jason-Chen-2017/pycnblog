@@ -61,4 +61,3 @@ CRF 是一种常用的机器学习模型，可以有效地解决 NER 任务。CR
 * **双向 LSTM (BiLSTM):** BiLSTM 可以有效地捕获文本序列中的上下文信息，从而提高实体识别的准确率。
 * **Transformer：** Transformer 是一种基于注意力机制的模型，可以更好地处理长距离依赖关系，并具有并行计算的优势。
 * **BERT：** BERT 是一种预训练语言模型，可以提供丰富的语义信息，并显著提升 NER 的性能。 
-{"msg_type":"generate_answer_finish","data":""}

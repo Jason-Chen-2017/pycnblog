@@ -76,4 +76,3 @@ $$
 $$
 q(z|\mu, \sigma) = p(\epsilon) \left| \frac{dz}{d\epsilon} \right| = p(\epsilon) \sigma
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

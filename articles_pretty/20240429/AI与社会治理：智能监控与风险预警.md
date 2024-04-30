@@ -130,4 +130,3 @@ anomaly_index = np.where(predictions == -1)[0]
 ### 6.1 城市安全管理
 
 *   **犯罪预防**: 利用智能监控系统识别可
-{"msg_type":"generate_answer_finish","data":""}

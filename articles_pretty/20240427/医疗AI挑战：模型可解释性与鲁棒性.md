@@ -72,4 +72,3 @@
 
 *   **FGSM (Fast Gradient Sign Method)**：通过计算梯度，生成对抗样本。
 *   **PGD (Projected Gradient Descent)**：通过迭代优化，生成更强的对抗样本。 
-{"msg_type":"generate_answer_finish","data":""}

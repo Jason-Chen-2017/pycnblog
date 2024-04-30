@@ -130,4 +130,3 @@ A: 可以使用自动指标（例如 BLEU 分数）和人工评估来评估 LLM 
 **Q: 如何确保 RLHF 微调后的 LLM 的安全性？**
 
 A: 可以使用安全检查机制和对抗性训练来提高 LLM 的安全性。 
-{"msg_type":"generate_answer_finish","data":""}

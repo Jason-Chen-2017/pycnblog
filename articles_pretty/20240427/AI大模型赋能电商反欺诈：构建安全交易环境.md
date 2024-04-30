@@ -84,4 +84,3 @@ H^{(l+1)} = \sigma(\hat{D}^{-\frac{1}{2}}\hat{A}\hat{D}^{-\frac{1}{2}}H^{(l)}W^{
 $$
 
 其中，$H^{(l)}$ 表示第 $l$ 层的节点特征表示，$\hat{A} = A + I$ 表示邻接矩阵加上自连接，$\hat{D}$ 表示度矩阵，$W^{(l)}$ 表示第 $l$ 层的权重矩阵，$\sigma$ 表示激活函数。 
-{"msg_type":"generate_answer_finish","data":""}

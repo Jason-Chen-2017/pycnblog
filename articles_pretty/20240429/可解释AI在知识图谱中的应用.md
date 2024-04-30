@@ -134,4 +134,3 @@ model.fit((heads, relations, tails), labels, epochs=10)
 *   **解释的准确性:** 解释结果是否与模型的真实决策过程一致。
 *   **解释的可理解性:** 解释结果是否容易理解。
 *   **解释的实用性:** 解释结果是否能够帮助人们解决实际问题。
-{"msg_type":"generate_answer_finish","data":""}

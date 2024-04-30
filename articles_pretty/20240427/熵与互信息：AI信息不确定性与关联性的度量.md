@@ -65,4 +65,3 @@ $$
 3. 将所有 $p_i \log_2 p_i$ 求和，并取负值，得到 $X$ 的熵 $H(X)$。 
 
 ### 3.2 互信息的计算步骤 
-{"msg_type":"generate_answer_finish","data":""}

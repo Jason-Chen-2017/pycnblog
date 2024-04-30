@@ -79,4 +79,3 @@ X = PX'
 $$
 
 其中，$X$ 表示物体的三维坐标，$P$ 表示相机矩阵，$X'$ 表示物体的二维图像坐标。 
-{"msg_type":"generate_answer_finish","data":""}

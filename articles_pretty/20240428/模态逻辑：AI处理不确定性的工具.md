@@ -114,4 +114,3 @@ class ModalLogicReasoner:
 ### 8.3 模态逻辑与其他形式化方法
 
 将模态逻辑与其他形式化方法相结合，例如概率论和博弈论，可以为AI提供更强大的推理工具。 
-{"msg_type":"generate_answer_finish","data":""}

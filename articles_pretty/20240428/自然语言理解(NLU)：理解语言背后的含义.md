@@ -83,4 +83,3 @@ NLU 在众多领域具有重要意义，例如：
 
 * **建模语言的统计规律**
 * **进行推理和预测** 
-{"msg_type":"generate_answer_finish","data":""}

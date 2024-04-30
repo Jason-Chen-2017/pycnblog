@@ -173,4 +173,3 @@ LSTM 的参数选择取决于具体的任务和数据集。通常需要进行实
 ### 9.3 如何解决 LSTM 的过拟合问题？
 
 可以使用正则化技术（例如 L1 或 L2 正则化）或 dropout 技术来解决 LSTM 的过拟合问题。
-{"msg_type":"generate_answer_finish","data":""}

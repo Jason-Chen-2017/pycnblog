@@ -92,4 +92,3 @@ L(1, 3) = \max(0, 1 + 3.2 - 2.5) = 1.7
 $$
 
 ## 5. 项目实践：代码实例和详细解释说明 
-{"msg_type":"generate_answer_finish","data":""}

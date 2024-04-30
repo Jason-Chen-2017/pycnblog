@@ -120,4 +120,3 @@ estimate = model.estimate_effect(identified_estimand, method_name="backdoor.line
 # 打印结果
 print(estimate)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

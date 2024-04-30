@@ -68,4 +68,3 @@ $$
 $$
 sim(i,j) = \frac{\sum_{u \in U_{ij}}(r_{ui} - \bar{r}_i)(r_{uj} - \bar{r}_j)}{\sqrt{\sum_{u \in U_{ij}}(r_{ui} - \bar{r}_i)^2}\sqrt{\sum_{u \in U_{ij}}(r_{uj} - \bar{r}_j)^2}}
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

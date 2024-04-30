@@ -91,4 +91,3 @@ $$
 4. 将结果向量转换回字母： "tq", "lo", ...
 
 最终密文信息为 "tqlolcv...". 
-{"msg_type":"generate_answer_finish","data":""}

@@ -108,4 +108,3 @@ model.evaluate(x_test, y_test)
 ```python
 y_pred = model.predict(x_new)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

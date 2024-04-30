@@ -166,4 +166,3 @@ def recommend_books(bookId, num_recommendations):
 * **基于内容的推荐：** 利用图书内容信息进行推荐。
 * **专家推荐：** 利用人工经验进行推荐。
 * **混合推荐：** 结合多种推荐算法，提高推荐效果。
-{"msg_type":"generate_answer_finish","data":""}

@@ -134,4 +134,3 @@ A: Agent 工作流具有分布式、协作式、灵活性和可扩展性等优�
 **Q: 如何选择合适的 Agent 工作流管理系统？**
 
 A: 选择 Agent 工作流管理系统时，需要考虑系统的功能、性能、易用性和价格等因素。
-{"msg_type":"generate_answer_finish","data":""}

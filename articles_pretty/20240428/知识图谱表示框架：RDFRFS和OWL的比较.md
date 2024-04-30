@@ -161,4 +161,3 @@ A: 可以参考相关的书籍、教程和开源项目，例如 Protégé、RDF4
 **Q: 知识图谱表示框架的未来发展趋势是什么？**
 
 A: 未来将会发展更加 expressive 的表示语言、更加高效的推理算法，以及与机器学习技术的结合。
-{"msg_type":"generate_answer_finish","data":""}

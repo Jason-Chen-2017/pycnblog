@@ -118,4 +118,3 @@ A: 可以使用 BLEU、ROUGE 等指标评估 RAG 模型生成的文本质量，�
 **Q: RAG 模型有哪些局限性？**
 
 A: RAG 模型依赖于外部知识库，如果知识库不完整或不准确，会影响模型的性能。此外，RAG 模型的可解释性较差，难以理解其推理过程。 
-{"msg_type":"generate_answer_finish","data":""}

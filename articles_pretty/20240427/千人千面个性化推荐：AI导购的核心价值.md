@@ -126,4 +126,3 @@ def matrix_factorization(ratings, k):
   optimizer = tf.keras.optimizers.Adam()
   optimizer.minimize(loss, var_list=[user_latent_factors, item_latent_factors])
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

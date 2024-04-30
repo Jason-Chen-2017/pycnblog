@@ -192,4 +192,3 @@ LSTM模型的性能可以通过多种指标进行评估，例如：
 - 精确率
 - 召回率
 - F1值
-{"msg_type":"generate_answer_finish","data":""}

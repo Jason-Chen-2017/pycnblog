@@ -98,4 +98,3 @@ $$f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
 
 * $\mu$ 是均值.
 * $\sigma$ 是标准差. 
-{"msg_type":"generate_answer_finish","data":""}

@@ -118,4 +118,3 @@
 **问：家居 AI 导购的未来发展方向是什么？**
 
 答：家居 AI 导购的未来发展方向包括多模态融合、AR/VR 技术应用、智能家居等。
-{"msg_type":"generate_answer_finish","data":""}

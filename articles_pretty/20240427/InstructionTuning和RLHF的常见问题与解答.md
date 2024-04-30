@@ -104,4 +104,3 @@ Instruction Tuning 是一种监督学习方法，而 RLHF 是一种强化学习�
 
 ### 9.3 如何评估 Instruction Tuning 和 RLHF 模型的性能？
 评估模型性能的方法取决于具体的任务。一些常见的评估指标包括 BLEU 分数、ROUGE 分数和人工评估。
-{"msg_type":"generate_answer_finish","data":""}

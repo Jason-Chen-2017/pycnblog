@@ -155,4 +155,3 @@ def fgsm_attack(model, image, label, epsilon):
 ### 9.3 对抗攻击的伦理问题？
 
 对抗攻击引发了一系列伦理问题，例如如何平衡 AI 模型的安全性与隐私，以及如何防止对抗攻击被用于恶意目的。
-{"msg_type":"generate_answer_finish","data":""}

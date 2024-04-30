@@ -149,4 +149,3 @@ Transformer 与 GNN 的融合是 NLP 和图学习领域的一个重要研究方�
 **问：如何评估融合模型的效果？**
 
 答：可以根据具体的任务选择合适的评价指标，例如文本分类的准确率、关系抽取的 F1 值等。
-{"msg_type":"generate_answer_finish","data":""}

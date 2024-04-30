@@ -97,4 +97,3 @@ def mcts(root, simulations):
 ### 5.2 详细解释
 
 以上代码示例展示了策略网络、价值网络和蒙特卡洛树搜索的简单实现。实际的 AlphaGo 代码更加复杂，涉及到更多细节和优化技巧。 
-{"msg_type":"generate_answer_finish","data":""}

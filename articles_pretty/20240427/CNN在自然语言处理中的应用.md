@@ -143,4 +143,3 @@ CNN 擅长提取局部特征，而 RNN 擅长处理序列数据。CNN 通常用�
 *   调整模型的超参数。
 *   使用预训练语言模型。
 *   使用正则化技术，例如 Dropout。
-{"msg_type":"generate_answer_finish","data":""}

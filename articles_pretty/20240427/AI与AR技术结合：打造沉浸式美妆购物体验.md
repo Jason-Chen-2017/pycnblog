@@ -65,4 +65,3 @@ sim(u, v) = \frac{\sum_{i \in I_{uv}}(r_{ui} - \bar{r}_u)(r_{vi} - \bar{r}_v)}{\
 $$ 
 
 其中，$sim(u, v)$ 表示用户 $u$ 和用户 $v$ 之间的相似度，$I_{uv}$ 表示用户 $u$ 和用户 $v$ 都评价过的物品集合，$r_{ui}$ 表示用户 $u$ 对物品 $i$ 的评分，$\bar{r}_u$ 表示用户 $u$ 的平均评分。 
-{"msg_type":"generate_answer_finish","data":""}

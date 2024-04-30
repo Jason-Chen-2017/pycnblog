@@ -143,4 +143,3 @@ Transformer模型的超参数较多，需要根据具体任务和数据集进行
 ### 9.3. 如何评估解码器性能？
 
 解码器性能的评估指标包括BLEU、ROUGE等，这些指标用于衡量生成序列与参考序列之间的相似度。
-{"msg_type":"generate_answer_finish","data":""}

@@ -159,4 +159,3 @@ AIAgentWorkFlow 可应用于各种实际场景，例如：
 ## 8. 总结：未来发展趋势与挑战
 
 AIAgentWorkFlow 是一个功能强大的 Agent 工作流管理平台，它可以帮助开发者更轻松地构建、部署和管理 Agent 应用。未来，AIAgentWorkFlow 将继续发展，支持更多的 Agent 类型、更复杂的 
-{"msg_type":"generate_answer_finish","data":""}

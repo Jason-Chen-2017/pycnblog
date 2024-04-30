@@ -112,4 +112,3 @@ top_n_recommendations = recommended_items.index[:n]
 3. 找到与目标用户最相似的 k 个用户。
 4. 获取相似用户喜欢的物品，并计算平均评分。
 5. 推荐评分最高的 n 个物品。 
-{"msg_type":"generate_answer_finish","data":""}

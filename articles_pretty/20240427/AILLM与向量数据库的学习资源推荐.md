@@ -80,4 +80,3 @@ $$
 $$
 
 其中，$A_i$ 和 $B_i$ 分别表示两个向量第 $i$ 个维度上的值。 
-{"msg_type":"generate_answer_finish","data":""}

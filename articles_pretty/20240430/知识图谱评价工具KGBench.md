@@ -195,4 +195,3 @@ KGBench可以应用于以下场景：
 **问：KGBench如何生成知识图谱评价报告？**
 
 答：KGBench可以生成包含所有评价结果的报告，方便用户进行分析和比较。
-{"msg_type":"generate_answer_finish","data":""}

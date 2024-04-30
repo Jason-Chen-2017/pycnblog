@@ -110,4 +110,3 @@ most_similar_text = knowledge_base[most_similar_index]
 # 打印结果
 print(f"最相似的信息: {most_similar_text}")
 ```
-{"msg_type":"generate_answer_finish","data":""}

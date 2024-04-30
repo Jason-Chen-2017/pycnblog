@@ -170,4 +170,3 @@ pm.summary(trace)
 **问：如何评估概率模型的性能？**
 
 答：可以使用交叉验证、似然函数、后验预测检查等方法来评估概率模型的性能。
-{"msg_type":"generate_answer_finish","data":""}

@@ -248,4 +248,3 @@ PaddlePaddle 支持使用 GPU 进行模型训练，开发者需要安装 NVIDIA 
 ### 9.3 如何获取 PaddlePaddle 预训练模型？
 
 PaddlePaddle 提供了多种预训练模型，开发者可以通过 PaddleHub 获取预训练模型。
-{"msg_type":"generate_answer_finish","data":""}

@@ -123,4 +123,3 @@ print(recommendations)
 ### 9.2 AI赋能服装导购会取代人工导购吗？
 
 AI赋能服装导购的目的是辅助人工导购，而不是取代人工导购。AI可以承担一些重复性、机械性的工作，而人工导购可以专注于提供更具个性化和情感化的服务。
-{"msg_type":"generate_answer_finish","data":""}

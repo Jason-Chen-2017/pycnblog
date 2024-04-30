@@ -170,4 +170,3 @@ print(tfidf_matrix.toarray())
 **问：美妆 AI 导购系统会取代人工导购吗？**
 
 答：美妆 AI 导购系统是人工导购的补充，而不是替代。AI 导购系统可以提供 24 小时服务，并提供更丰富的产品信息和专业建议，而人工导购可以提供更个性化的服务和情感交流。 
-{"msg_type":"generate_answer_finish","data":""}

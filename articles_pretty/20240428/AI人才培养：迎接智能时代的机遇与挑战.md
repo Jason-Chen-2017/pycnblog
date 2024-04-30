@@ -84,4 +84,3 @@ y = f(w_1 x_1 + w_2 x_2 + ... + w_n x_n + b)
 $$
 
 其中，$y$ 是输出，$x_1, x_2, ..., x_n$ 是输入，$w_1, w_2, ..., w_n$ 是权重，$b$ 是偏置，$f$ 是激活函数。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -157,4 +157,3 @@ output_feature_map = conv_layer(input_data)
 ### 9.3 如何选择填充方式？
 
 填充方式通常设置为 "same" 或 "valid"，"same" 填充可以保持输出特征图尺寸与输入数据尺寸相同，"valid" 填充则不进行填充。
-{"msg_type":"generate_answer_finish","data":""}

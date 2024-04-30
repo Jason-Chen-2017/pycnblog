@@ -60,4 +60,3 @@ $$ Loss = -\sum_{i=1}^{N} y_i log(\hat{y}_i) $$
 *   $N$ 是样本数量。
 *   $y_i$ 是真实标签，表示第 $i$ 个样本的真实词语。
 *   $\hat{y}_i$ 是模型预测的概率分布，表示模型预测第 $i$ 个样本是每个词语的概率。 
-{"msg_type":"generate_answer_finish","data":""}

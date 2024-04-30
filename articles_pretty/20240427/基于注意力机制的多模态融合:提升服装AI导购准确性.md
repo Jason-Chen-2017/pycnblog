@@ -123,4 +123,3 @@ class MultimodalFusionModel(nn.Module):
 * **Q：如何解决多模态数据缺失的问题？**
 * **A：** 可以使用数据增强技术或缺失值填充技术来解决多模态数据缺失的问题。
 
-{"msg_type":"generate_answer_finish","data":""}

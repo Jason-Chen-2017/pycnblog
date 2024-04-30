@@ -73,4 +73,3 @@ AI 的核心目标是使机器能够像人类一样思考和学习。而人类�
 *   **插入排序**:  Insert each element into its correct position in the sorted portion of the array. 
 *   **归并排序**:  Divide the array into halves, recursively sort each half, and then merge the sorted halves. 
 *   **快速排序**:  Choose a pivot element and partition the array around the pivot, then recursively sort the sub-arrays. 
-{"msg_type":"generate_answer_finish","data":""}

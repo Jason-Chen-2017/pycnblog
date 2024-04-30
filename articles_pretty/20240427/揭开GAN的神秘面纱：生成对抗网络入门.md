@@ -185,4 +185,3 @@ GANs 可以用于生成自然语言文本，例如诗歌、小说、新闻报道
 ### 9.3 如何提高 GANs 的训练稳定性？
 
 提高 GANs 的训练稳定性可以使用多种技巧，例如使用 Wasserstein 距离、梯度惩罚等。
-{"msg_type":"generate_answer_finish","data":""}

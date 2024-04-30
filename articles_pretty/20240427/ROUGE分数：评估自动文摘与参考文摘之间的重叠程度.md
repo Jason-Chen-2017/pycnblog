@@ -147,4 +147,3 @@ A:  提高 ROUGE 分数的方法包括:
 * 优化自动文摘算法，提高摘要的准确性和覆盖率。
 * 使用高质量的参考摘要进行评估。
 * 选择合适的 ROUGE 指标。
-{"msg_type":"generate_answer_finish","data":""}

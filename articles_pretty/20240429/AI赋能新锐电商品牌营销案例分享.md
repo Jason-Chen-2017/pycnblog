@@ -123,4 +123,3 @@ pred = algo.predict(uid, iid)
 # 获取推荐列表
 recommendations = algo.recommend(uid, n=10)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

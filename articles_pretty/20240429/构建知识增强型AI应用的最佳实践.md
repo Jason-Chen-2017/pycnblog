@@ -95,4 +95,3 @@ g.serialize(destination="knowledge_graph.ttl", format="turtle")
 ## 6. 实际应用场景
 
 知识增强型AI 
-{"msg_type":"generate_answer_finish","data":""}

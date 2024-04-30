@@ -217,4 +217,3 @@ model = tf.keras.Sequential([
 *   **使用合适的激活函数**：例如 ReLU、Leaky ReLU 等激活函数可以缓解梯度消失问题。
 *   **梯度裁剪**：将梯度值限制在一定范围内，避免梯度爆炸。
 *   **批量归一化**：批量归一化可以规范化网络层的输入，提高模型的稳定性和收敛速度。
-{"msg_type":"generate_answer_finish","data":""}

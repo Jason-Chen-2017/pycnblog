@@ -68,4 +68,3 @@
 ## 5. 项目实践：代码实例和详细解释说明
 
 ### 5.1 图像分类 
-{"msg_type":"generate_answer_finish","data":""}

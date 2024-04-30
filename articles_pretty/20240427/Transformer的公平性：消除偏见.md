@@ -146,4 +146,3 @@ model.fit(x_train, y_train, epochs=10)
 **问：如何确保模型的公平性？**
 
 答：可以通过定期评估模型的公平性指标，并采取必要的措施来消除模型中的偏见，来确保模型的公平性。
-{"msg_type":"generate_answer_finish","data":""}

@@ -132,4 +132,3 @@ AI导购Agent系统可应用于：
 ### 6.3 新零售
 
 结合线下门店和线上平台，提供全渠道导购服务。 
-{"msg_type":"generate_answer_finish","data":""}

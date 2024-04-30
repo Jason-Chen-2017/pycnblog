@@ -159,4 +159,3 @@ A: 根据项目需求和个人熟悉程度选择，Scikit-learn适合初学者�
 **Q: 如何学习机器学习？**
 
 A: 可以参考在线课程、书籍、博客等学习资料，并进行实践项目。
-{"msg_type":"generate_answer_finish","data":""}

@@ -168,4 +168,3 @@ A: 选择合适的 Transformer 模型需要考虑以下因素：
 * **任务类型：** 不同的 NLP 任务需要不同的 Transformer 模型。
 * **数据集大小：** 数据集的大小会影响模型的性能。
 * **计算资源：** 模型的计算复杂度需要与可用的计算资源相匹配。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -90,4 +90,3 @@ $$
 $$
 e_{ij} = \text{score}(h_i, r_j)
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

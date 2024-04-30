@@ -188,4 +188,3 @@ Hugging Face Transformers 是一个预训练模型库，提供了各种预训练
 ### 9.3 如何评估迁移学习的效果？
 
 评估迁移学习的效果可以使用目标任务的标准评估指标，例如准确率、召回率、F1 值等。
-{"msg_type":"generate_answer_finish","data":""}

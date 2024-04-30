@@ -122,4 +122,3 @@ trainer.train()
 ### 9.3 如何避免过拟合？
 
 过拟合是指模型在训练数据上表现良好，但在测试数据上表现较差。为了避免过拟合，可以使用正则化技术，例如 dropout、L2 正则化等。
-{"msg_type":"generate_answer_finish","data":""}

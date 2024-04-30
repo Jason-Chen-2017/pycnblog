@@ -172,4 +172,3 @@ LSTM模型的参数选择需要根据具体的任务和数据集进行调整，�
 #### 9.3. LSTM与GRU有什么区别？
 
 GRU是LSTM的一种简化版本，它只有两个门控机制：更新门和重置门。GRU的计算成本比LSTM低，但性能可能不如LSTM。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -157,4 +157,3 @@ model = GAT(dataset.num_node_features, 8, dataset.num_classes, heads=8)
 # 训练模型
 ...
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

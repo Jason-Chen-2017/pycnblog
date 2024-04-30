@@ -136,4 +136,3 @@ A：可以采取以下措施防止模型过拟合：
 **Q：Fine-tuning需要多少数据？**
 
 A：Fine-tuning所需的数据量取决于任务的复杂性和预训练模型的大小。一般来说，Fine-tuning需要比训练全新模型少得多的数据。
-{"msg_type":"generate_answer_finish","data":""}

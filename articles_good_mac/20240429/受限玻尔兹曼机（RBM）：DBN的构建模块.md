@@ -165,4 +165,3 @@ A: RBM 的参数选择可以通过交叉验证或贝叶斯优化等方法进行�
 **Q: 如何防止 RBM 过拟合？**
 
 A: 可以通过正则化、dropout 或 early stopping 等方法防止 RBM 过拟合。
-{"msg_type":"generate_answer_finish","data":""}

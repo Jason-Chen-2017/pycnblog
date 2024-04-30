@@ -149,4 +149,3 @@ A: 知识库的选择取决于具体的应用场景和需求。一般来说，�
 **Q: 如何评估 RAG 模型的效果？**
 
 A: RAG 模型的效果可以通过多种指标进行评估，例如 ROUGE、BLEU 等指标可以评估生成文本的质量，MRR、Recall@k 等指标可以评估检索器的效果。
-{"msg_type":"generate_answer_finish","data":""}

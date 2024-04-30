@@ -76,4 +76,3 @@
 
 *   **协同过滤:** 基于用户之间的相似性或商品之间的相似性进行推荐。
 *   **内容
-{"msg_type":"generate_answer_finish","data":""}

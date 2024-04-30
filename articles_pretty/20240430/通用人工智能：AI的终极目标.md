@@ -62,4 +62,3 @@ $$
 $$
 
 其中，$L$ 是损失函数，$y$ 是网络的输出，$z$ 是网络的中间变量，$W$ 是网络的权重。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -65,4 +65,3 @@ $$ A(s,a) = Q(s,a) - V(s) $$
 ### 5.1 OpenAI Gym
 
 OpenAI Gym 是 OpenAI 开发的一个强化学习工具包，它提供了各种各样的游戏环境和算法，方便开发者进行强化学习实验。OpenAIFive 的训练过程也使用了 OpenAI Gym。 
-{"msg_type":"generate_answer_finish","data":""}

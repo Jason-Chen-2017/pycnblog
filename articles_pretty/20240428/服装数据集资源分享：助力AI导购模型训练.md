@@ -82,4 +82,3 @@ $$sim(d_i, d_j) = \frac{d_i \cdot d_j}{||d_i|| \cdot ||d_j||}$$
 * **图像相似度计算:** 利用CNN提取图像特征，计算图像之间的欧氏距离：
 
 $$dist(f_i, f_j) = ||f_i - f_j||_2$$ 
-{"msg_type":"generate_answer_finish","data":""}

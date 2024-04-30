@@ -229,4 +229,3 @@ Transformer模型可以用于音乐视频平台的歌曲推荐、视频推荐、
 * Recall
 
 
-{"msg_type":"generate_answer_finish","data":""}

@@ -130,4 +130,3 @@ VAE和GAN都是常用的生成模型，但它们的工作原理不同。VAE通�
 ### 9.3 如何评估VAE模型的性能？
 
 评估VAE模型的性能可以使用多种指标，例如重建损失、KL散度、生成样本的质量等。
-{"msg_type":"generate_answer_finish","data":""}

@@ -90,4 +90,3 @@ model.fit(train_data, epochs=10)
 
 recommendations = model.predict(user_sequence, current_item)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

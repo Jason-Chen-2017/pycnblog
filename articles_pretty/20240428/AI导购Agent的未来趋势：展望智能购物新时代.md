@@ -141,4 +141,3 @@ A: AI 导购 Agent 能够承担一些重复性、标准化的工作，但无法�
 **Q: 如何评价 AI 导购 Agent 的推荐效果？**
 
 A: 可以通过点击率、转化率、用户满意度等指标评估 AI 导购 Agent 的推荐效果。 
-{"msg_type":"generate_answer_finish","data":""}

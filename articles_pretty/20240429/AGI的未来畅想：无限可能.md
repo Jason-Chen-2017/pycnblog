@@ -151,4 +151,3 @@ A: 意识是一个复杂的概念，目前尚不清楚 AGI 是否能够拥有意
 **Q: 如何为 AGI 的发展做准备？**
 
 A: 我们可以通过学习 AI 相关的知识和技能，以及关注 AGI 的发展动态，为 AGI 的到来做好准备。
-{"msg_type":"generate_answer_finish","data":""}

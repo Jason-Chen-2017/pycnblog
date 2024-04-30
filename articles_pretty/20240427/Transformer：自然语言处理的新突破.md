@@ -222,4 +222,3 @@ Hugging Face Transformers 是一个开源的 NLP 库，提供了预训练的 Tra
 *   使用预训练的模型进行微调。
 *   调整模型的超参数。
 *   使用数据增强技术。
-{"msg_type":"generate_answer_finish","data":""}

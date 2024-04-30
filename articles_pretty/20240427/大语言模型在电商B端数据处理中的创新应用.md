@@ -72,4 +72,3 @@ softmax(x_i) = \frac{exp(x_i)}{\sum_{j=1}^{n} exp(x_j)}
 $$
 
 其中，$x_i$表示向量中的第i个元素。 
-{"msg_type":"generate_answer_finish","data":""}

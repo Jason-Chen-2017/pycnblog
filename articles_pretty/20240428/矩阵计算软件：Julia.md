@@ -112,4 +112,3 @@ Julia 和 Python 都是动态类型的编程语言，但 Julia 在性能方面�
 ### 9.2 如何学习 Julia
 
 Julia 官方网站提供了丰富的学习资源，例如文档、教程和社区论坛。
-{"msg_type":"generate_answer_finish","data":""}

@@ -161,4 +161,3 @@ server:
 * **如何进行微服务的版本管理？**
 
 可以使用版本控制工具来管理微服务的版本，并进行灰度发布和回滚操作。
-{"msg_type":"generate_answer_finish","data":""}

@@ -164,4 +164,3 @@ def collaborative_filtering(ratings, user_id, k):
 ### 9.3 如何避免智能导购Agent的算法偏差?
 
 避免智能导购Agent的算法偏差可以采用多种方法，例如使用更加多样化的训练数据、使用公平性约束等。
-{"msg_type":"generate_answer_finish","data":""}

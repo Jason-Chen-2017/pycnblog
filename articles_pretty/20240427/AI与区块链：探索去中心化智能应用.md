@@ -186,4 +186,3 @@ result = result.get()
 ### 9.3 去中心化AI有哪些应用场景？
 
 去中心化AI可以应用于金融、医疗、物联网等领域，例如欺诈检测、信用评估、辅助诊断、智能家居等。
-{"msg_type":"generate_answer_finish","data":""}

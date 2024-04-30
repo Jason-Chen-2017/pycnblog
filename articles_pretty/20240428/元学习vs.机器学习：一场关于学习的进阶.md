@@ -97,4 +97,3 @@ def meta_train(model, optimizer, meta_batch_size, inner_update_lr, inner_update_
 ### 6.3. 自动驾驶
 
 元学习可以用于自动驾驶，例如学习如何识别交通信号灯、行人、车辆等。 
-{"msg_type":"generate_answer_finish","data":""}

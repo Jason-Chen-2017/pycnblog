@@ -149,4 +149,3 @@ A: 可以使用正则化技术，如 L1 或 L2 正则化，或 dropout 技术，
 **Q: 如何解释自编码器的潜在表示？**
 
 A: 可以使用可视化技术或降维技术，例如 PCA 或 t-SNE，分析潜在表示的含义。
-{"msg_type":"generate_answer_finish","data":""}

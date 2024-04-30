@@ -97,4 +97,3 @@ $$
 * $pos$ 是词语的位置。
 * $i$ 是维度索引。
 * $d_{model}$ 是模型的维度。 
-{"msg_type":"generate_answer_finish","data":""}

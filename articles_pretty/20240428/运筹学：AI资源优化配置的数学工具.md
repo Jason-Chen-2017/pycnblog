@@ -92,4 +92,3 @@ d[i, j] = \min_{k \in N(i)} \{ d[i, k] + w(k, j) \}
 $$
 
 其中，$d[i, j]$ 表示从节点 $i$ 到节点 $j$ 的最短路径长度，$N(i)$ 表示节点 $i$ 的邻居节点集合，$w(k, j)$ 表示节点 $k$ 到节点 $j$ 的距离。 
-{"msg_type":"generate_answer_finish","data":""}

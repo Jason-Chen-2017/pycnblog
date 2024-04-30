@@ -79,4 +79,3 @@ tanh 激活函数的公式为：
 $$
 f(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

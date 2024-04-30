@@ -80,4 +80,3 @@ $$
 ### 4.4 文档选择
 
 选择与用户输入最相似的文档，例如选择相似度最高的$k$个文档。 
-{"msg_type":"generate_answer_finish","data":""}

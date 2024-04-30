@@ -174,4 +174,3 @@ GRU和LSTM都是循环神经网络的变体，主要区别在于：
 * **增加训练数据**
 * **使用正则化技术**，例如L1正则化、L2正则化、Dropout等
 * **使用早停技术**
-{"msg_type":"generate_answer_finish","data":""}

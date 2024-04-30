@@ -184,4 +184,3 @@ GPT 和 BERT 都是基于 Transformer 架构的预训练语言模型，但它们
 *   **BLEU**：衡量机器翻译结果与人工翻译结果之间的相似度。
 *   **ROUGE**：衡量机器生成的摘要与人工生成的摘要之间的相似度。
 *   **Perplexity**：衡量语言模型预测下一个词的困惑度。
-{"msg_type":"generate_answer_finish","data":""}

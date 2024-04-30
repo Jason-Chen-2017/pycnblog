@@ -74,4 +74,3 @@ KL 散度用于衡量两个概率分布之间的差异，公式如下：
 $$
 D_{KL}(q||p) = \int q(x) \log \frac{q(x)}{p(x)} dx
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

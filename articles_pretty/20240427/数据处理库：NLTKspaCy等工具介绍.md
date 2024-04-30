@@ -193,4 +193,3 @@ NLTK和spaCy都是优秀的NLP数据处理库，各有优缺点。NLTK更适合�
 ### 9.2 如何选择合适的NLP数据处理库？
 
 选择合适的NLP数据处理库取决于具体的任务需求和开发环境。例如，如果需要处理大量文本数据，可以选择spaCy；如果需要进行学术研究，可以选择NLTK。
-{"msg_type":"generate_answer_finish","data":""}

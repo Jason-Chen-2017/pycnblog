@@ -152,4 +152,3 @@ BPTT 算法计算所有时间步的梯度，而截断 BPTT 算法只计算固定
 ### 9.3 如何解决 RNN 的梯度消失和梯度爆炸问题？
 
 可以使用 LSTM、GRU 等更先进的 RNN 架构，或者使用梯度裁剪等技术来解决梯度消失和梯度爆炸问题。
-{"msg_type":"generate_answer_finish","data":""}

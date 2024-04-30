@@ -73,4 +73,3 @@ $$ Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V $$
 * $d_k$ 是键向量的维度。
 
 自注意力机制能够捕捉句子中词语之间的依赖关系，例如代词指代、语义关联等，从而提升翻译质量。 
-{"msg_type":"generate_answer_finish","data":""}

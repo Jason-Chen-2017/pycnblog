@@ -143,4 +143,3 @@ GRU 比 LSTM 结构更简单，参数更少，训练速度更快。在许多任�
 ### 9.2 如何选择 GRU 和 LSTM？
 
 如果计算资源有限，或者需要更快的训练速度，可以选择 GRU。如果需要更强的模型表达能力，可以选择 LSTM。 
-{"msg_type":"generate_answer_finish","data":""}

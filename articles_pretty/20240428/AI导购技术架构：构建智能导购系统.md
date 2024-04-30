@@ -71,4 +71,3 @@ r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i
 $$
 
 其中，x 和 y 分别表示两个变量，$\bar{x}$ 和 $\bar{y}$ 分别表示两个变量的平均值。皮尔逊相关系数的取值范围为 [-1, 1]，值越接近 1 表示两个变量正相关程度越高，值越接近 -1 表示两个变量负相关程度越高。 
-{"msg_type":"generate_answer_finish","data":""}

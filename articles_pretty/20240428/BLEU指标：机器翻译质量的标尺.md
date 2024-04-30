@@ -95,4 +95,3 @@ $$
 $$
 P_1 = \frac{5}{6} = 0.8333
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

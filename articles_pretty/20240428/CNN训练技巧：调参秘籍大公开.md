@@ -95,4 +95,3 @@ L = -\sum_{i=1}^{n} y_i log(\hat{y_i})
 $$
 
 其中，$y_i$ 表示真实标签，$\hat{y_i}$ 表示模型预测值，$n$ 表示样本数量。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -143,4 +143,3 @@ Reward Hacking 是强化学习领域的一个重要挑战，随着人工智能�
 ### 9.2 Reward Hacking 与对抗样本有什么区别？
 
 Reward Hacking 和对抗样本都是人工智能系统中的安全问题，但它们有所不同。Reward Hacking 是指智能体利用奖励函数的缺陷学习到非预期行为的策略，而对抗样本是指对输入数据进行微小的修改，导致人工智能系统输出错误的结果。
-{"msg_type":"generate_answer_finish","data":""}

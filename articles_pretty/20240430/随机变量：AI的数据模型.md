@@ -145,4 +145,3 @@ print("方差:", var)
 ### 9.3 什么是贝叶斯定理？
 
 贝叶斯定理描述了如何根据先验概率和似然函数计算后验概率。
-{"msg_type":"generate_answer_finish","data":""}

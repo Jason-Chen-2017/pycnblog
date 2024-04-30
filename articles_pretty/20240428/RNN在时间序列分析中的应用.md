@@ -58,4 +58,4 @@ f_t = \sigma(W_{xf}x_t + W_{hf}h_{t-1} + b_f) \\
 i_t = \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i) \\
 o_t = \sigma(W_{xo}x_t + W_{ho}h_{t-1} + b_o) \\
 \tilde{c}_t = \tanh(W_{xc}x_t + W_{hc}h_{t-1} + b_c) \\
-c_t = f_t \odot c_{t-1}{"msg_type":"generate_answer_finish","data":""}
+c_t = f_t \odot c_{t-1}

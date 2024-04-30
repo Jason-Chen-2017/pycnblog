@@ -182,4 +182,3 @@ GAN 面临的挑战包括：
 *   数据增强
 *   文本到图像生成
 *   视频生成
-{"msg_type":"generate_answer_finish","data":""}

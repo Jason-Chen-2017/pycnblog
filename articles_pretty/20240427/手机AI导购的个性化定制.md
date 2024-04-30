@@ -74,4 +74,3 @@ def collaborative_filtering(ratings_matrix, user_id, item_id):
 *   **电商平台:** 为用户推荐个性化的商品，提高用户的购物体验和转化率。
 *   **社交平台:** 为用户推荐感兴趣的内容和好友，增强用户的社交粘性。
 *   **资讯平台:** 为用户推荐个性化的新闻和文章，提高用户的阅读体验。 
-{"msg_type":"generate_answer_finish","data":""}

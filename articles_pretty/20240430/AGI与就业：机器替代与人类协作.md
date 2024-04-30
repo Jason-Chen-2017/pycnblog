@@ -140,4 +140,3 @@ while True:
     break
   state = next_state
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

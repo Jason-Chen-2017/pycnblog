@@ -80,4 +80,3 @@ def build_user_profile(user_id):
   user_vector = encode_features(user_features)
   return user_vector
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

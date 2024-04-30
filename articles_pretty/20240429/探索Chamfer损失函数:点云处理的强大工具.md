@@ -66,4 +66,3 @@ $$
 $$
 ||p - q|| = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 - z_2)^2}
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

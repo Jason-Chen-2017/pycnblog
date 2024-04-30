@@ -124,4 +124,3 @@ model.fit(x_train, y_train, epochs=10)
 * **模型的可解释性：** RNN模型的可解释性较差，需要研究如何解释模型的预测结果。
 
 尽管面临一些挑战，但RNN与知识图谱的融合将会推动NLP技术的进一步发展，为我们带来更加智能化的应用。
-{"msg_type":"generate_answer_finish","data":""}

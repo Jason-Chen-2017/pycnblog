@@ -195,4 +195,3 @@ spaCy 是一个用于高级 NLP 的 Python 库，它提供了词嵌入、命名�
 ### 9.2 如何选择合适的词嵌入模型？
 
 选择合适的词嵌入模型取决于具体的 NLP 任务和数据集。一般来说，如果需要考虑全局语义信息，可以选择 GloVe；如果需要关注局部上下文信息，可以选择 Word2Vec。 
-{"msg_type":"generate_answer_finish","data":""}

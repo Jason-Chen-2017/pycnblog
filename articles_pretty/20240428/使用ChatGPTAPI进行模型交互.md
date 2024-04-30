@@ -162,4 +162,3 @@ OpenAI 提供了多种 ChatGPT 模型，每个模型都有不同的性能和价�
 *   提供清晰、具体的提示。
 *   使用适当的温度参数。
 *   使用微调技术定制模型。 
-{"msg_type":"generate_answer_finish","data":""}

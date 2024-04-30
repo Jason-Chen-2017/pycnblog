@@ -109,4 +109,3 @@ Individual: John
 
   需要进行充分的需求分析和领域知识梳理，并选择合适的本体建模工具和方法。
 
-{"msg_type":"generate_answer_finish","data":""}

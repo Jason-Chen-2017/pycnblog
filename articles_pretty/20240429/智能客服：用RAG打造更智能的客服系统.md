@@ -148,4 +148,3 @@ A: 可以使用BLEU、ROUGE等指标评估RAG模型生成的回答的质量。
 **Q: 如何提高RAG模型的效果？**
 
 A: 可以通过增加知识库的规模、优化模型参数、使用更先进的文本生成模型等方法提高RAG模型的效果。
-{"msg_type":"generate_answer_finish","data":""}

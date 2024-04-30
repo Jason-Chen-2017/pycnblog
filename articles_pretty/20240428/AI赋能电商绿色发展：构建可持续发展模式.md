@@ -123,4 +123,3 @@ for generation in range(num_generations):
 # 输出最优路径
 best_solution = ...
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

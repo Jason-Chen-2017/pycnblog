@@ -184,4 +184,3 @@ prune.remove(model.fc1, 'weight')
 ### 9.3 模型并行技术有哪些优缺点？
 
 模型并行技术的优点是可以提升模型的训练和推理速度，缺点是实现难度较大，需要一定的硬件资源。
-{"msg_type":"generate_answer_finish","data":""}

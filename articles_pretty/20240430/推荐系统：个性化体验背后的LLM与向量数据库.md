@@ -81,4 +81,3 @@ D, I = index.search(query_vector, k)
 * `IndexFlatL2` 创建了一个基于 L2 距离的向量索引。
 * `index.add()` 将向量添加到索引中。
 * `index.search()` 搜索与查询向量最相似的 k 个向量，并返回距离数组和索引数组。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -79,4 +79,3 @@ Transformer模型的训练过程与其他深度学习模型类似，采用反向
 $$
 \text{Attention}(Q, K, V) = \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

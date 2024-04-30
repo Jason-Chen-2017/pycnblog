@@ -80,4 +80,3 @@ $$
 $$
 
 其中，$F$为特征集合，$S$为特征子集，$v(S)$表示模型在特征子集$S$上的预测值。 
-{"msg_type":"generate_answer_finish","data":""}

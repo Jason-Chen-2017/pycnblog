@@ -180,4 +180,3 @@ MDP是强化学习的数学基础，强化学习是基于MDP的一种机器学�
 ### 9.3 如何评估MDP算法的性能？
 
 可以使用累计奖励、平均奖励等指标来评估MDP算法的性能。
-{"msg_type":"generate_answer_finish","data":""}

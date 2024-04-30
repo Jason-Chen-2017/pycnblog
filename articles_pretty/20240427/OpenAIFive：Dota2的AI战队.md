@@ -90,4 +90,3 @@ OpenAIFive 的成功表明，强化学习可以用于开发高水平的游戏 AI
 ### 6.2 其他领域
 
 强化学习还可以应用于其他领域，例如机器人控制、自动驾驶、金融交易等。 
-{"msg_type":"generate_answer_finish","data":""}

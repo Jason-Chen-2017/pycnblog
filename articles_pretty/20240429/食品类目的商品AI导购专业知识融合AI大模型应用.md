@@ -95,4 +95,3 @@ R \approx U^T V
 $$
 
 其中，$R$ 表示用户-商品评分矩阵，$U$ 表示用户隐因子矩阵，$V$ 表示商品隐因子矩阵。 
-{"msg_type":"generate_answer_finish","data":""}

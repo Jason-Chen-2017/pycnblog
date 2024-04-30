@@ -91,4 +91,3 @@ a = f(z) = ReLU(z) = \begin{bmatrix}
 32
 \end{bmatrix}
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

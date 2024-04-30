@@ -85,4 +85,3 @@ Person ≡ ∃hasName.String ⊓ ∃hasAge.Integer
 ```
 
 表示“人”是拥有姓名 (hasName) 和年龄 (hasAge) 的实体。 
-{"msg_type":"generate_answer_finish","data":""}

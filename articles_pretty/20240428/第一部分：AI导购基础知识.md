@@ -119,4 +119,3 @@ AI导购技术也面临着一些挑战，例如：
 **问题：**AI导购系统会侵犯用户隐私吗？
 
 **解答：**AI导购系统会严格遵守数据隐私保护 regulations，并采取必要的技术措施来保护用户隐私。
-{"msg_type":"generate_answer_finish","data":""}

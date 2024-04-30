@@ -62,4 +62,3 @@
 ### 4.2. 特征值方程
 
 特征值方程是指形
-{"msg_type":"generate_answer_finish","data":""}

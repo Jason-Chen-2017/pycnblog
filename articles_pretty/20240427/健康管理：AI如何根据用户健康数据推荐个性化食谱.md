@@ -91,4 +91,3 @@ $$ P(y=1|x) = \frac{1}{1+e^{-(w^Tx+b)}} $$
 * 推荐与用户健康需求相关的食谱给用户。
 
 ## 5. 项目实践：代码实例和详细解释说明 
-{"msg_type":"generate_answer_finish","data":""}

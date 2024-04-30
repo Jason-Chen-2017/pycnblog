@@ -116,4 +116,3 @@ Dialogflow是Google提供的对话式AI平台，可以用于构建对话机器�
 # 创建一个回复：
 # - 我找到了以下商品：...
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

@@ -109,4 +109,3 @@ AgentWorkFlow 技术也面临着一些挑战，例如：
 
 * **Agent 协作的复杂性**：Agent 之间的协作需要考虑多方面的因素，例如 Agent 的能力、目标、资源等，协作算法的设计和实现比较复杂。
 * **AgentWorkFlow 系统的安全性**：AgentWorkFlow 系统需要考虑安全性问题，防止恶意 Agent 的攻击和数据泄露。
-{"msg_type":"generate_answer_finish","data":""}

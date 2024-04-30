@@ -97,4 +97,3 @@ model.evaluate(x_test, y_test)
 *   **编译模型**：指定优化器、损失函数和评估指标。
 *   **训练模型**：使用训练数据训练模型。
 *   **评估模型**：使用测试数据评估模型的性能。 
-{"msg_type":"generate_answer_finish","data":""}

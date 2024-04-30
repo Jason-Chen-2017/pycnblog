@@ -153,4 +153,3 @@ A: 可以参考AgentWorkFlow框架的官方文档和开源代码，也可以参�
 **Q: AgentWorkFlow框架的未来发展方向是什么？**
 
 A: AgentWorkFlow框架将朝着更强大的智能体学习能力、更灵活的工作流建模能力、更完善的知识推理能力和更广泛的应用场景发展。
-{"msg_type":"generate_answer_finish","data":""}

@@ -106,4 +106,3 @@ $$
 $$
 J(A, B) = \frac{|\{感冒\}|}{|\{感冒, 发烧, 咳嗽\}|} = \frac{1}{3} \approx 0.333
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

@@ -138,4 +138,3 @@ Hugging Face Transformers是一个开源库，提供了预训练的Transformer�
 ### 9.3 如何评估Transformer模型的性能
 
 可以使用准确率、召回率、F1值等指标评估Transformer模型的性能。
-{"msg_type":"generate_answer_finish","data":""}

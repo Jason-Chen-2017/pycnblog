@@ -93,4 +93,3 @@ target_network = QNetwork(env.action_space.n)
 
 # ...
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

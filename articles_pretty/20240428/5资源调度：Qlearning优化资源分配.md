@@ -189,4 +189,3 @@ def schedule_resources(state):
 *   物联网
 *   机器人控制
 *   游戏 playing
-{"msg_type":"generate_answer_finish","data":""}

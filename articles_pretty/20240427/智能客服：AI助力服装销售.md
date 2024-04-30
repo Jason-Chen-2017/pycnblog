@@ -80,4 +80,3 @@ Word2Vec 算法是一种用于词嵌入的常用算法，能够将词语表示�
 
 *   **CBOW 模型**: 利用上下文词语预测目标词语。
 *   **Skip-gram 模型**: 利用目标词语预测上下文词语。 
-{"msg_type":"generate_answer_finish","data":""}

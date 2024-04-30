@@ -177,4 +177,3 @@ shap.force_plot(explainer.expected_value, shap_values, text)
 * **人类评估：**  让人类专家评估解释结果的准确性和可理解性。
 * **模型性能评估：**  评估解释结果是否能够帮助改进模型的性能。
 * **因果推理评估：**  评估解释结果是否能够揭示模型的因果关系。 
-{"msg_type":"generate_answer_finish","data":""}

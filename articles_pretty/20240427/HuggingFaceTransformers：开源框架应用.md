@@ -112,4 +112,3 @@ predicted_class_id = logits.argmax(-1).item()
 *   **Hugging Face Transformers**：提供预训练模型和工具的开源库。
 *   **Datasets**：Hugging Face 提供的 NLP 数据集库。
 *   **🤗 
-{"msg_type":"generate_answer_finish","data":""}

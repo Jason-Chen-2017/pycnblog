@@ -75,4 +75,3 @@ GRU网络中的门控机制通过 sigmoid 函数将输入值映射到 0 到 1 �
 ### 4.2 TensorFlow-addons 中 GRU 扩展的数学模型
 
 TensorFlow-addons 中的 GRU 扩展在数学模型上与传统的 GRU 网络基本一致，主要区别在于门控机制的实现方式和参数设置。例如，`MinimalRNNCell` 中的 `_gate` 方法使用单个线性层计算重置门和更新门，而 `ConvRNNCell` 中的 `_gate` 方法则使用卷积层提取局部特征。 
-{"msg_type":"generate_answer_finish","data":""}

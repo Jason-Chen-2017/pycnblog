@@ -166,4 +166,3 @@ A: 常用的评估指标包括mAP (mean Average Precision) 和IoU (Intersection 
 **Q: 如何改进Fast R-CNN算法的性能？**
 
 A: 可以通过改进网络结构、使用更好的训练数据、优化超参数等方式来改进Fast R-CNN算法的性能。 
-{"msg_type":"generate_answer_finish","data":""}

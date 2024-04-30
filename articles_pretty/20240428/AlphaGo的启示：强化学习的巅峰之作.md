@@ -119,4 +119,3 @@ OpenAI Gym是一个用于开发和比较强化学习算法的工具包，提供�
 ### 9.3 AlphaGo是如何下围棋的？
 
 AlphaGo使用深度学习模型和蒙特卡洛树搜索算法来下围棋。 
-{"msg_type":"generate_answer_finish","data":""}

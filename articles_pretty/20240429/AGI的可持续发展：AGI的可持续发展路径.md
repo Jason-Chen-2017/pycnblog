@@ -99,4 +99,3 @@ model.fit(x_train, y_train, epochs=5)
 ### 6.1 自动驾驶
 
 AGI 
-{"msg_type":"generate_answer_finish","data":""}

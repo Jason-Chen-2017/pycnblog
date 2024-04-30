@@ -232,4 +232,3 @@ VAE 通过从潜在空间中采样新的 $z$ 值，然后将其输入到解码�
 ### 9.3.  VAE 如何评估生成的数据质量？
 
 可以使用一些指标来评估 VAE 生成的数据质量，例如 Inception Score、Fréchet Inception Distance 等等。
-{"msg_type":"generate_answer_finish","data":""}

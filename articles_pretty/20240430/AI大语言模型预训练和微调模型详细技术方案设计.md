@@ -73,4 +73,3 @@ L = -\sum_{i=1}^N y_i log(\hat{y_i})
 $$
 
 其中，$N$ 表示词语数量，$y_i$ 表示真实词语的 one-hot 编码，$\hat{y_i}$ 表示模型预测的词语概率分布。 
-{"msg_type":"generate_answer_finish","data":""}

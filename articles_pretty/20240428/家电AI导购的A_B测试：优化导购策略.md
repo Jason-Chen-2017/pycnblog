@@ -96,4 +96,3 @@ $$ n = \frac{(Z_{\alpha/2} + Z_{\beta})^2 * (p_1(1-p_1) + p_2(1-p_2))}{(p_1 - p_
 * $Z_{\beta}$ 为检验效能对应的 Z 值
 * $p_1$ 为实验组的预期转化率
 * $p_2$ 为对照组的预期转化率 
-{"msg_type":"generate_answer_finish","data":""}

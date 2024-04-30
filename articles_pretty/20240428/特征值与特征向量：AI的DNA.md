@@ -123,4 +123,3 @@ print("特征向量:", eigenvectors)
 ### 9.2 如何解释特征值和特征向量的几何意义？ 
 
 特征向量代表了线性变换的主要方向，而特征值则表示了这些方向上的变换程度。 
-{"msg_type":"generate_answer_finish","data":""}

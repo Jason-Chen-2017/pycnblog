@@ -168,4 +168,3 @@ recommendations = sorted(predictions, key=lambda x: x.est, reverse=True)[:10]
 *   **基于内容的推荐:** 利用商品特征进行推荐。
 *   **专家知识:** 利用专家知识进行推荐。
 *   **用户调查:** 收集用户偏好信息。 
-{"msg_type":"generate_answer_finish","data":""}

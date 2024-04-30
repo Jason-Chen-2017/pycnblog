@@ -181,4 +181,3 @@ pip install aiagentworkflow
 ### 9.3 如何训练 AI Agent？
 
 AIAgentWorkflow 支持多种模型训练方法，用户可以选择合适的算法和工具进行训练。
-{"msg_type":"generate_answer_finish","data":""}

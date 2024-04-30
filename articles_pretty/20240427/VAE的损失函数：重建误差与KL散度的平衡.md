@@ -153,4 +153,3 @@ A：VAE 的性能可以使用重建误差、KL 散度、生成样本质量等指
 **Q：如何解决 VAE 生成样本多样性不足的问题？**
 
 A：可以使用条件 VAE、对抗训练等方法来提高 VAE 生成样本的多样性。
-{"msg_type":"generate_answer_finish","data":""}

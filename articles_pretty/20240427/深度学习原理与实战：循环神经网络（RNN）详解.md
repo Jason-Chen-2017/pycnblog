@@ -158,4 +158,3 @@ LSTM 比 GRU 结构更复杂，但性能也更好。
 ### 9.3 如何解决 RNN 的梯度消失和梯度爆炸问题？
 
 可以使用梯度裁剪、LSTM 或 GRU 等方法来解决 RNN 的梯度消失和梯度爆炸问题。
-{"msg_type":"generate_answer_finish","data":""}

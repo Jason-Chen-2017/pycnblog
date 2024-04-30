@@ -79,4 +79,3 @@ $$
 ### 4.2 Nadam
 
 Nadam的更新公式如下：
-{"msg_type":"generate_answer_finish","data":""}

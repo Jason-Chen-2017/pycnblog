@@ -143,4 +143,3 @@ Q-learning 的参数选择需要根据具体任务进行调整。一般来说，
 ### 9.3 Q-learning 可以处理连续状态空间吗？
 
 传统的 Q-learning 算法只能处理离散状态空间。对于连续状态空间，可以采用函数逼近的方法，例如深度 Q-learning。 
-{"msg_type":"generate_answer_finish","data":""}

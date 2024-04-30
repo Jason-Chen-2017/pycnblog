@@ -213,4 +213,3 @@ A: Knowledge Distillation 通过将大型模型的知识迁移到小型模型中
 **Q: 如何评估 Fine-tuning 的效果？**
 
 A: Fine-tuning 的效果可以通过下游任务的评价指标来评估，例如准确率、召回率、F1 值等。
-{"msg_type":"generate_answer_finish","data":""}

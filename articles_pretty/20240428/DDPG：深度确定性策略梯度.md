@@ -83,4 +83,3 @@ $$
 * $Q'(s_{t+1}, \mu'(s_{t+1} | \theta^{\mu'}) | \theta^{Q'})$ 是目标网络预测的下一状态-动作对的价值。
 * $\gamma$ 是折扣因子。
 * $D$ 是经验池。 
-{"msg_type":"generate_answer_finish","data":""}

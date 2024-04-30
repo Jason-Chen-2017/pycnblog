@@ -98,4 +98,3 @@ A: EarlyStopping 的主要参数是 `patience`，它控制在验证损失没有�
 **Q: EarlyStopping 策略的优缺点是什么？**
 
 A: 优点：简单易用，不需要额外的超参数调整。缺点：可能会导致模型欠拟合，无法达到最优性能。 
-{"msg_type":"generate_answer_finish","data":""}

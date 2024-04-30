@@ -89,4 +89,3 @@ class NPC:
                 self.state = "chase"
         # ...
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

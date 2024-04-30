@@ -77,4 +77,3 @@ h_{i, j} = \frac{1}{|R_{i, j}|} \sum_{m, n \in R_{i, j}} x_{m, n}
 $$
 
 其中，$|R_{i, j}|$ 表示池化窗口的大小。 
-{"msg_type":"generate_answer_finish","data":""}

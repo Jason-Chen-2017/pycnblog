@@ -71,4 +71,3 @@ $$ H \Delta x = -g $$
 不同的拟牛顿法使用不同的方法来更新 $B$，例如 BFGS 算法使用如下公式更新 $B$：
 
 $$ B_{k+1} = B_k - \frac{B_k s_k s_k^T B_k}{s_k^T B_k s_k} + \frac{y_k y_k^T}{y_k^T s_k} $$ 
-{"msg_type":"generate_answer_finish","data":""}

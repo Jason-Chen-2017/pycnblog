@@ -89,4 +89,3 @@ class SelfAttention(nn.Module):
 - `torch.matmul`用于计算矩阵乘法，即计算注意力分数。
 - `F.softmax`用于计算softmax函数，即计算注意力权重。
 - `self.out_linear`用于将上下文向量映射回模型的维度。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -103,4 +103,3 @@ def cosine_similarity(user1, user2):
 
     return similarity
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

@@ -80,4 +80,3 @@ $$
 - $W_{\overrightarrow{h}}$, $W_{\overleftarrow{h}}$, $W_{\overrightarrow{x}}$, $W_{\overleftarrow{x}}$ 是权重矩阵。
 - $b_{\overrightarrow{h}}$ 和 $b_{\overleftarrow{h}}$ 是偏置向量。
 - $f$ 是合并函数，可以是拼接或求和操作。 
-{"msg_type":"generate_answer_finish","data":""}

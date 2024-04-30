@@ -84,4 +84,3 @@ $$
 * **线性核**: $K(x_i, x_j) = x_i^T x_j$
 * **多项式核**: $K(x_i, x_j) = (x_i^T x_j + c)^d$
 * **径向基函数（RBF）核**: $K(x_i, x_j) = exp(-\gamma ||x_i - x_j||^2)$ 
-{"msg_type":"generate_answer_finish","data":""}

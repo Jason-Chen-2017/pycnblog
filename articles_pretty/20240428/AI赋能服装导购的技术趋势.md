@@ -83,4 +83,3 @@ $$tfidf(t,d) = tf(t,d) \cdot idf(t)$$
 $$sim(d_1,d_2) = \frac{\sum_{t \in V} tfidf(t,d_1) \cdot tfidf(t,d_2)}{\sqrt{\sum_{t \in V} tfidf(t,d_1)^2} \cdot \sqrt{\sum_{t \in V} tfidf(t,d_2)^2}}$$
 
 其中，$V$表示所有词语的集合。 
-{"msg_type":"generate_answer_finish","data":""}

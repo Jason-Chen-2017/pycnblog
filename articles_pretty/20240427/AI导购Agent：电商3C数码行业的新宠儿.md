@@ -166,4 +166,3 @@ AI导购Agent严格遵守数据安全和隐私保护法规，对用户数据进�
 ### 9.3 AI导购Agent会取代真人导购员吗？
 
 AI导购Agent和真人导购员是互补关系，AI导购Agent可以承担重复性、标准化的工作，而真人导购员可以提供更具个性化和情感化的服务。 
-{"msg_type":"generate_answer_finish","data":""}

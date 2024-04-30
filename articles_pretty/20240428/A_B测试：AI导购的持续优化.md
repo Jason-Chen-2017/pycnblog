@@ -99,4 +99,3 @@ t_statistic, p_value = stats.ttest_ind(version_a, version_b)
 print("t 统计量:", t_statistic)
 print("p 值:", p_value)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

@@ -124,4 +124,3 @@ A: AGI 可能会取代人类在某些工作岗位上的角色，但它也创造�
 **Q: AGI 会对人类构成威胁吗？**
 
 A: AGI 的安全性是一个重要问题，需要采取措施确保 AGI 的行为符合人类的利益。
-{"msg_type":"generate_answer_finish","data":""}

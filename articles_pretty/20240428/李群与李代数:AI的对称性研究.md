@@ -189,4 +189,3 @@ class so3(LieAlgebra):
 ### 9.2. 李群和李代数有什么用？
 
 李群和李代数可以用来研究对称性和不变性，它们在机器人控制、计算机视觉、自然语言处理等领域都有广泛的应用。
-{"msg_type":"generate_answer_finish","data":""}

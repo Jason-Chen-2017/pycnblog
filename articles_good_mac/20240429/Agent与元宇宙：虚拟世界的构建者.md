@@ -174,4 +174,3 @@ A: 构建Agent需要掌握人工智能、机器学习、软件开发等方面的
 **Q: Agent的未来发展方向是什么?**
 
 A: Agent的未来发展方向包括更加智能、更加多样化、更加融合等。
-{"msg_type":"generate_answer_finish","data":""}

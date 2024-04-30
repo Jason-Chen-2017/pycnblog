@@ -178,4 +178,3 @@ decrypted_data = cipher.decrypt(encrypted_data)
 ### 9.3 如何评估AI导购Agent评测系统的安全性？
 
 评估AI导购Agent评测系统的安全性可以采用渗透测试、代码审计等方法。渗透测试模拟攻击者的行为，检测系统的漏洞；代码审计检查系统的代码，发现潜在的安全风险。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -138,4 +138,3 @@ A: API 限流是指限制 API 的调用频率，以防止滥用和保护服务�
 **Q: 什么是 API 版本控制？**
 
 A: API 版本控制是指对 API 进行版本管理，以便在更新 API 时保持向后兼容性。
-{"msg_type":"generate_answer_finish","data":""}

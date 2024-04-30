@@ -173,4 +173,3 @@ labels = kmeans.predict(data)
 ### 9.3 如何选择合适的数据挖掘算法？
 
 选择合适的数据挖掘算法取决于具体的任务和数据类型。例如，对于分类任务，可以使用决策树或支持向量机；对于聚类任务，可以使用 K-Means 或 DBSCAN 算法。
-{"msg_type":"generate_answer_finish","data":""}

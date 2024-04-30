@@ -91,4 +91,3 @@ model.evaluate(x_test, y_test)
 ```
 
 该代码示例演示了如何使用 TensorFlow 构建一个简单的图像分类模型，并使用 MNIST 数据集进行训练和评估。 
-{"msg_type":"generate_answer_finish","data":""}

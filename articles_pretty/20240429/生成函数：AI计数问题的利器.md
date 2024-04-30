@@ -125,4 +125,3 @@ def binomial_coefficient(n, k):
 **问：生成函数如何处理无限序列？**
 
 答：对于无限序列，其生成函数可能是一个无穷级数。在这种情况下，需要使用一些特殊的技巧来处理，例如截断级数或使用渐近分析。
-{"msg_type":"generate_answer_finish","data":""}

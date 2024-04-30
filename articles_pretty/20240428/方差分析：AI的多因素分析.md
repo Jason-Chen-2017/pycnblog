@@ -149,4 +149,3 @@ print(results.summary())
 ### 9.3 交互作用
 
 交互作用是指两个或多个因素共同对结果的影响，例如肥料种类和施肥量之间的交互作用。 
-{"msg_type":"generate_answer_finish","data":""}

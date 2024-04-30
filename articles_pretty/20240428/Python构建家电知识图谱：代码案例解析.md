@@ -170,4 +170,3 @@ def merge_knowledge(knowledge_base1, knowledge_base2):
 *   **准确性:** 知识图谱中的知识是否准确可靠。
 *   **一致性:** 知识图谱中的知识是否相互一致，没有矛盾。
 *   **实用性:** 知识图谱是否能够满足实际应用的需求。
-{"msg_type":"generate_answer_finish","data":""}

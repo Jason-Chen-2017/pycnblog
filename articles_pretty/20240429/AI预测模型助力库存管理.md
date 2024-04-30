@@ -101,4 +101,3 @@ model_fit = model.fit()
 future_demand = model_fit.predict(start=len(data), end=len(data)+12)
 print(future_demand)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

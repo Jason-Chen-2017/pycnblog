@@ -74,4 +74,3 @@ Y = X V_k
 $$
 
 其中，$V_k$为前$k$个特征向量构成的矩阵，$Y$为投影后的数据矩阵。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -148,4 +148,3 @@ XLNet 适合各种 NLP 任务，例如文本分类、问答系统、自然语言
 ### 9.3 如何使用 XLNet 模型？
 
 可以使用 Hugging Face Transformers 库加载 XLNet 预训练模型，并进行微调或推理。
-{"msg_type":"generate_answer_finish","data":""}

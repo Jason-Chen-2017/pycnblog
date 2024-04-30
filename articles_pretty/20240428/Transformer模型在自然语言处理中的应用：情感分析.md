@@ -176,4 +176,3 @@ Transformer模型可以通过截断或分段处理长文本。截断是指将文
 ### 9.3 如何选择合适的Transformer模型？
 
 选择合适的Transformer模型需要考虑任务类型、数据集规模、计算资源等因素。一般来说，BERT、RoBERTa等预训练模型在情感分析任务中表现较好。
-{"msg_type":"generate_answer_finish","data":""}

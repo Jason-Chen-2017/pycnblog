@@ -162,4 +162,3 @@ AI 硬件系统在智慧医疗领域也有广泛应用，例如：
 *   **TensorFlow:** Google 开发的开源深度学习框架，支持多种 AI 硬件平台。
 *   **PyTorch:** Facebook 开发的开源深度学习框架，以其灵活性
 
-{"msg_type":"generate_answer_finish","data":""}

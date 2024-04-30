@@ -77,4 +77,3 @@ $$ y = f(\sum_{i=1}^{n} w_i x_i + b) $$
 $$ w_i = w_i - \alpha \frac{\partial L}{\partial w_i} $$
 
 其中，$\alpha$ 表示学习率，$L$ 表示损失函数。 
-{"msg_type":"generate_answer_finish","data":""}

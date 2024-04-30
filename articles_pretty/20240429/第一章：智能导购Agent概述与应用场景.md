@@ -107,4 +107,3 @@ def recommend_by_content(user_id, item_id, item_embeddings):
 **问：智能导购Agent的未来发展方向是什么？**
 
 答：智能导购Agent将朝着更加智能化、个性化、人性化的方向发展，支持多模态交互、情感识别等功能。
-{"msg_type":"generate_answer_finish","data":""}

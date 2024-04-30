@@ -92,4 +92,3 @@ logits = outputs.logits
 # 获取预测结果
 predicted_class_id = logits.argmax(-1).item()
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

@@ -150,4 +150,3 @@ A：可以使用标准的问答数据集进行评估，例如SQuAD、MS MARCO等
 **Q：如何选择合适的PLM和知识图谱？**
 
 A：选择PLM和知识图谱时需要考虑任务需求、数据规模、计算资源等因素。
-{"msg_type":"generate_answer_finish","data":""}

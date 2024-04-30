@@ -126,4 +126,3 @@ recommendations = ratings[ratings['userId'].isin(similar_users)]['movieId'].uniq
 *   **召回率:**  推荐结果覆盖用户兴趣的比例。
 *   **多样性:**  推荐结果的多样化程度。
 *   **新颖性:**  推荐结果的新颖程度。 
-{"msg_type":"generate_answer_finish","data":""}

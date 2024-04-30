@@ -90,4 +90,3 @@ $$∇_θ J(θ) = E[∇_θ log π(a|s; θ) A(s, a)]$$
 * **Critic网络梯度：**
 
 $$∇_w L(w) = E[(V(s; w) - R)^2]$$ 
-{"msg_type":"generate_answer_finish","data":""}

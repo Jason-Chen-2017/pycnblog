@@ -134,4 +134,3 @@ A: 可以通过以下措施来保证 Agent 的安全性：
 * **身份认证**: 对 Agent 进行身份认证，确保只有授权的 Agent 才能访问 Agent 工厂系统。
 * **访问控制**: 对 Agent 的访问权限进行控制，限制 Agent 能够执行的操作。 
 * **数据加密**: 对 Agent 传输的数据进行加密，防止数据泄露。
-{"msg_type":"generate_answer_finish","data":""}

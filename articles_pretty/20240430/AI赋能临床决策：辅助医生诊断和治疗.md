@@ -96,4 +96,3 @@ print(prediction)
 
 AI可以用于分析医学图像，例如X射线、CT扫描和MRI扫描，以识别病变、肿瘤和
 
-{"msg_type":"generate_answer_finish","data":""}

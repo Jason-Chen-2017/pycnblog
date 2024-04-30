@@ -91,4 +91,3 @@ bleu_score = corpus_bleu(references, hypothesis)
 # 输出 BLEU 得分
 print(bleu_score)
 ```
-{"msg_type":"generate_answer_finish","data":""}

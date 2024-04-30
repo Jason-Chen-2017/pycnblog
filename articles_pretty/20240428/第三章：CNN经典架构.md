@@ -67,4 +67,3 @@ $$
 $$
 y_{i,j} = \max_{u=0}^{k-1}\max_{v=0}^{k-1} x_{i+u,j+v}
 $$
-{"msg_type":"generate_answer_finish","data":""}

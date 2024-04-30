@@ -89,4 +89,3 @@ def sigmoid(x):
 *   `sigmoid(x)` 函数接收输入值 `x`，并返回 Sigmoid 函数的输出值。
 *   `np.exp(-x)` 计算 $e^{-x}$。
 *   `1 / (1 + np.exp(-x))` 计算 Sigmoid 函数的表达式。 
-{"msg_type":"generate_answer_finish","data":""}

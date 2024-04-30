@@ -147,4 +147,3 @@ AI for Good 项目的盈利模式多种多样，例如：
 *   **参与开源项目**: 参与 AI for Good 相关的开源项目，例如 TensorFlow 或 PyTorch 等。
 *   **开发 AI for Good 应用**: 开发 AI for Good 相关的应用程序，例如 AI 辅助医疗系统或 AI 教育平台等。
 *   **捐赠**: 向 AI for Good 组织或项目进行捐赠。
-{"msg_type":"generate_answer_finish","data":""}

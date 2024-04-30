@@ -86,4 +86,3 @@ $$
 $$
 
 其中，$\hat{r}_{ui}$ 表示用户 $u$ 对商品 $i$ 的评分预测值，$f(u, i)$ 表示用户 $u$ 和商品 $i$ 的特征相似度函数。 
-{"msg_type":"generate_answer_finish","data":""}

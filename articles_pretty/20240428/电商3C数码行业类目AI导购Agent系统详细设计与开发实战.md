@@ -100,4 +100,3 @@ cos(\theta) = \frac{\vec{a} \cdot \vec{b}}{||\vec{a}|| \cdot ||\vec{b}||}
 $$
 
 其中，$\vec{a}$ 和 $\vec{b}$ 分别表示两个向量。 
-{"msg_type":"generate_answer_finish","data":""}

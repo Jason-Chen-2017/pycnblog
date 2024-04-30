@@ -196,4 +196,3 @@ GANs Zoo 是一个收集了各种 GANs 模型和代码的网站，可以作为�
 * 使用不同的激活函数。
 * 使用批量归一化。
 * 使用残差网络。
-{"msg_type":"generate_answer_finish","data":""}

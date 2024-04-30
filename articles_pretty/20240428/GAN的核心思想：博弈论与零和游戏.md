@@ -188,4 +188,3 @@ def train(dataloader, epochs):
 
 *   使用 Inception Score (IS) 或 Fréchet Inception Distance (FID) 等指标，评估生成数据的真实性和多样性。
 *   进行人工评估，例如通过问卷调查或图灵测试。
-{"msg_type":"generate_answer_finish","data":""}

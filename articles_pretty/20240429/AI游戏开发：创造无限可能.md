@@ -184,4 +184,3 @@ AI 可以应用于游戏开发的各个方面，例如 NPC 行为、关卡生成
 ### 9.4 游戏 AI 面临哪些挑战？
 
 游戏 AI 面临的挑战包括 AI 可解释性、AI 伦理和 AI 安全。
-{"msg_type":"generate_answer_finish","data":""}

@@ -125,4 +125,3 @@ Fisherface算法作为一种经典的人脸识别算法，在实际应用中取�
 *   **问：Fisherface算法与主成分分析（PCA）的区别是什么？**
 
     *   PCA是一种无监督降维方法，它只考虑数据的分散程度，而LDA是一种有监督降维方法，它同时考虑数据的分散程度和类别信息。 
-{"msg_type":"generate_answer_finish","data":""}

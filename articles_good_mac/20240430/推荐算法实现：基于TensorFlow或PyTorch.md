@@ -273,4 +273,3 @@ predictions = model(user_id, item_id)
 **问题 3：如何提高推荐算法的可解释性？**
 
 **回答：** 可以使用可解释的机器学习模型，例如决策树、逻辑回归等。
-{"msg_type":"generate_answer_finish","data":""}

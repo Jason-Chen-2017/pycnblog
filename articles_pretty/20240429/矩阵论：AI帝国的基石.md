@@ -158,4 +158,3 @@ y_pred = model.predict(X_new)
 ### 9.2 矩阵论在 AI 中的应用有哪些？
 
 矩阵论在 AI 中的应用非常广泛，例如线性回归、PCA、SVD、深度学习等。
-{"msg_type":"generate_answer_finish","data":""}

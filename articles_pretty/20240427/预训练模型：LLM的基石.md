@@ -71,4 +71,3 @@ L = -\sum_{i=1}^{N} \sum_{j=1}^{V} y_{ij} \log(p_{ij})
 $$
 
 其中，$N$表示样本数量，$V$表示词汇表大小，$y_{ij}$表示第$i$个样本的第$j$个词语的真实标签，$p_{ij}$表示模型预测的第$i$个样本的第$j$个词语的概率。 
-{"msg_type":"generate_answer_finish","data":""}

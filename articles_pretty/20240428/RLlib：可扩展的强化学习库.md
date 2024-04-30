@@ -166,4 +166,3 @@ A: 用户可以继承 `gym.Env` 类来创建自定义环境，并将其注册到
 **Q: 如何使用 RLlib 进行分布式训练？**
 
 A: RLlib 支持分布式训练，可以通过设置 `num_workers` 参数来指定 worker 数量。
-{"msg_type":"generate_answer_finish","data":""}

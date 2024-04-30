@@ -133,4 +133,3 @@ A: 可以通过人工评估或自动评估指标来评估 Prompt 的效果，例
 * **Q: 如何避免 LLM 生成有害内容？**
 
 A: 可以通过设计 Prompt、过滤输出内容、使用安全模型等方式来避免 LLM 生成有害内容。
-{"msg_type":"generate_answer_finish","data":""}

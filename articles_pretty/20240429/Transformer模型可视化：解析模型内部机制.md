@@ -84,4 +84,3 @@ y = \frac{x - \mu}{\sqrt{\sigma^2 + \epsilon}} * \gamma + \beta
 $$
 
 其中，$\mu$ 和 $\sigma^2$ 分别是输入的均值和方差，$\gamma$ 和 $\beta$ 是可学习的参数，$\epsilon$ 是一个很小的常数，防止除以零。 
-{"msg_type":"generate_answer_finish","data":""}

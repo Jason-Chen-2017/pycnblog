@@ -102,4 +102,3 @@ recommendations.sort(key=lambda x: recommendations.count(x), reverse=True)
 # 输出推荐结果
 print(recommendations)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

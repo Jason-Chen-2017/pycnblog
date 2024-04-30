@@ -165,4 +165,3 @@ def user_based_cf(ratings, user_id, item_id):
 ### 9.3 智能导购Agent会取代人类导购员吗？
 
 智能导购Agent可以辅助人类导购员，但并不能完全取代人类导购员。人类导购员在情感交流、复杂问题处理等方面仍然具有优势。
-{"msg_type":"generate_answer_finish","data":""}

@@ -116,4 +116,3 @@ A: ERNIE 模型有多个版本，例如 ERNIE 1.0、ERNIE 2.0 等，用户可以
 **Q: 如何使用 ERNIE 模型进行下游任务？**
 
 A: 用户可以使用 PaddleNLP 库或 Transformers 库加载 ERNIE 模型，并进行微调。
-{"msg_type":"generate_answer_finish","data":""}

@@ -104,4 +104,3 @@ docker run -d -p 5000:5000 myapp
 ## 8. 附录：常见问题与解答 
 
 ### 8.1 容器和虚拟机的区别是什么？ 
-{"msg_type":"generate_answer_finish","data":""}

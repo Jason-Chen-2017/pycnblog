@@ -131,4 +131,3 @@ train(env, agent, 1000)
 ### 9.3 如何提高游戏AI的泛化能力？
 
 可以使用迁移学习、元学习等方法来提高游戏AI的泛化能力。 
-{"msg_type":"generate_answer_finish","data":""}

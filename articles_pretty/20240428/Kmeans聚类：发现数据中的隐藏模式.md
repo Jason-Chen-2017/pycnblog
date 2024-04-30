@@ -138,4 +138,3 @@ K 值的选择通常需要根据具体问题和数据的特点进行调整。常
 ### 9.2 如何评估聚类结果的好坏？
 
 常用的聚类结果评估指标包括 SSE、轮廓系数、Calinski-Harabasz 指数等。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -118,4 +118,3 @@ A: 可以从推荐准确率、用户满意度、交互流畅度等多个维度�
 **Q: AI导购Agent的未来发展方向是什么？**
 
 A: AI导购Agent的未来发展方向包括多模态交互、情感识别、个性化定制等。 
-{"msg_type":"generate_answer_finish","data":""}

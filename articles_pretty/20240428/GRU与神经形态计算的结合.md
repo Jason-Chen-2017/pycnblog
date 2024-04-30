@@ -141,4 +141,3 @@ GRU 和 LSTM 都是改进的 RNN 结构，但 GRU 的结构更简单，参数更
 ### 9.3 GRU-SNN 转换的难点
 
 GRU-SNN 转换的难点在于如何将 GRU 的激活函数和门控机制转换为脉冲信号，同时保持模型的精度。 
-{"msg_type":"generate_answer_finish","data":""}

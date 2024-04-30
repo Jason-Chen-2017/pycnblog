@@ -79,4 +79,3 @@ Wasserstein loss是一种基于Wasserstein距离的损失函数，相比Minimax 
 **目标**:
 
 *   **最小化** $W(p_{data}, p_g)$，即最小化真实数据分布和生成数据分布之间的Wasserstein距离，使得生成样本尽可能逼真。 
-{"msg_type":"generate_answer_finish","data":""}

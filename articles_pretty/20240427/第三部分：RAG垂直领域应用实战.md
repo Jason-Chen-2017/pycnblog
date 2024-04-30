@@ -81,4 +81,3 @@ print(generated_text)
 RAG 模型在垂直领域有着广泛的应用场景，例如：
 
 * **智能客服**: 
-{"msg_type":"generate_answer_finish","data":""}

@@ -207,4 +207,3 @@ model = ResNet(ResidualBlock, [3, 4, 6, 3])
 * **数据增强：** 增加训练数据的数量和多样性。
 * **正则化：** 限制模型的复杂度，例如L1正则化、L2正则化、Dropout等。
 * **提前停止：** 监控模型在验证集上的性能，并在性能开始下降时停止训练。
-{"msg_type":"generate_answer_finish","data":""}

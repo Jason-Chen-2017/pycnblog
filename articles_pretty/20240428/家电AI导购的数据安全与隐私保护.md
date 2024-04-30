@@ -147,4 +147,3 @@ print(predicted_rating)
 *   关注推荐结果的多样性，避免算法歧视。
 *   了解算法的工作原理，确保算法的透明度。
 *   参与平台的反馈机制，提供您的意见和建议。
-{"msg_type":"generate_answer_finish","data":""}

@@ -67,4 +67,4 @@ LSTM 单元的数学公式如下：
 $$
 \begin{aligned}
 i_t &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \\
-f_t &= \sigma(W_f \cdot [h_{t-1},{"msg_type":"generate_answer_finish","data":""}
+f_t &= \sigma(W_f \cdot [h_{t-1},

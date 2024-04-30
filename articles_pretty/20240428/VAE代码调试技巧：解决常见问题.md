@@ -191,4 +191,3 @@ VAE 作为一种强大的生成模型，在各个领域都展现出了巨大的�
 
 - 调整 KL 散度的权重
 - 使用更合适的先验分布
-{"msg_type":"generate_answer_finish","data":""}

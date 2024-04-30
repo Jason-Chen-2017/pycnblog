@@ -112,4 +112,3 @@ RAG 是一种 NLP 技术框架，而知识图谱是一种知识表示方式。RA
 * **如何评估 RAG 模型的性能？**
 
 可以采用 BLEU、ROUGE 等指标评估 RAG 模型生成的文本质量。
-{"msg_type":"generate_answer_finish","data":""}

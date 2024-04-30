@@ -80,4 +80,3 @@ dp[i] = \max_{j < i, a_j < a_i} (dp[j] + 1)
 $$
 
 其中，$dp[i]$ 表示以 $a_i$ 结尾的最长递增子序列的长度。 
-{"msg_type":"generate_answer_finish","data":""}

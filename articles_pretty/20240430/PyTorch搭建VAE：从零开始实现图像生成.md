@@ -82,4 +82,3 @@ $$
 * $\mu$ 和 $\sigma$ 分别是 $q(z|x)$ 的均值和标准差。
 * $\epsilon$ 是从标准正态分布中采样的随机向量。
 * $\odot$ 表示逐元素相乘。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -143,4 +143,3 @@ AI 导购 Agent 通过收集和分析用户的行为数据，并结合机器学�
 #### 9.2 AI 导购 Agent 如何保护用户的隐私？
 
 AI 导购 Agent 采用数据加密、脱敏等技术，保护用户的隐私数据，并严格遵守相关法律法规。 
-{"msg_type":"generate_answer_finish","data":""}

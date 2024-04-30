@@ -73,4 +73,4 @@ h_pool1 = max_pool_2x2(h_conv1)
 
 # 定义损失函数和优化器
 cross_entropy = tf.reduce_mean(
-    tf.nn.softmax_cross_entropy{"msg_type":"generate_answer_finish","data":""}
+    tf.nn.softmax_cross_entropy

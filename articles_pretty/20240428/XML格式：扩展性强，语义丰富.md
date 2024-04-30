@@ -112,4 +112,3 @@ XML作为一种灵活且可扩展的数据格式，在数据交换、配置文�
 * **如何从XML文档中提取数据？**
 
    可以使用XPath或XQuery语言进行数据提取。 
-{"msg_type":"generate_answer_finish","data":""}

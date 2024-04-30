@@ -199,4 +199,3 @@ A: 选择合适的Attention机制取决于具体的任务和数据集。
 **Q: 如何提高RNN with Attention模型的性能？**
 
 A: 可以尝试使用不同的Attention机制、调整模型参数、增加训练数据等方法。
-{"msg_type":"generate_answer_finish","data":""}

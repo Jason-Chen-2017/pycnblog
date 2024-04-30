@@ -282,4 +282,3 @@ RNN 是一种擅长处理序列数据的神经网络，而 GAN 是一种由生�
 
 * 对于 RNN，可以使用困惑度、BLEU 分数等指标来评估模型的预测能力。
 * 对于 GAN，可以使用 Inception Score、Fréchet Inception Distance 等指标来评估模型生成样本的质量。
-{"msg_type":"generate_answer_finish","data":""}

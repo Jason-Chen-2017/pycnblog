@@ -153,4 +153,3 @@ RLHF可以应用于机器人控制、对话系统优化、游戏AI等领域。
 ### 9.3 RLHF技术有哪些挑战？
 
 RLHF技术面临数据收集和标注、安全性和可解释性等方面的挑战。
-{"msg_type":"generate_answer_finish","data":""}

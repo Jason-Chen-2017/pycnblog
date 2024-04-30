@@ -135,4 +135,3 @@ for record in result:
 **Q: 如何评估AI导购系统的性能?**
 
 **A:** 可以使用准确率、召回率、F1值等指标评估推荐算法的性能，并通过用户满意度调查评估导购服务的质量。
-{"msg_type":"generate_answer_finish","data":""}

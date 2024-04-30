@@ -195,4 +195,3 @@ hidden_states = model.predict(X)
 ### 9.5 概率论与统计学在 AI 领域有哪些应用？
 
 概率论与统计学在 AI 领域的应用非常广泛，例如机器学习、数据分析、决策理论等。
-{"msg_type":"generate_answer_finish","data":""}

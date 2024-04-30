@@ -240,4 +240,3 @@ results.show()
 ### 9.5 计算机视觉面临哪些挑战？
 
 计算机视觉面临的挑战包括数据隐私、模型可解释性、鲁棒性和安全性等。 
-{"msg_type":"generate_answer_finish","data":""}

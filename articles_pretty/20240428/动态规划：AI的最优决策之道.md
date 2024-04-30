@@ -87,4 +87,3 @@ dp(i-1, j-1) + 1 & \text{if } A_i = B_j \\
 $$
 
 其中 $A_i$ 和 $B_j$ 分别表示字符串 $A$ 和 $B$ 的第 $i$ 个和第 $j$ 个字符。 
-{"msg_type":"generate_answer_finish","data":""}

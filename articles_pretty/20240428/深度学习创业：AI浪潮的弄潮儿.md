@@ -178,4 +178,3 @@ model.evaluate(x_test, y_test)
 ### 9.4 如何解决深度学习模型的过拟合问题？
 
 可以使用正则化、Dropout、Early Stopping 等技术解决深度学习模型的过拟合问题。 
-{"msg_type":"generate_answer_finish","data":""}

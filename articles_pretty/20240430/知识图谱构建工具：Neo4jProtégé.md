@@ -89,4 +89,3 @@ CREATE (p2:Person {name: "Laurence Fishburne"})
 CREATE (p1)-[:ACTED_IN {roles: ["Neo"]}]->(m)
 CREATE (p2)-[:ACTED_IN {roles: ["Morpheus"]}]->(m)
 ```
-{"msg_type":"generate_answer_finish","data":""}

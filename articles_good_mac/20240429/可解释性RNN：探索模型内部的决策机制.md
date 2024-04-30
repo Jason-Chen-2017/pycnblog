@@ -174,4 +174,3 @@ predictions = model.predict(x_test)
 **Q: 如何评估模型 可解释性水平？**
 
 **A:** 可以使用定性和定量方法评估模型 可解释性水平，例如用户研究、可视化分析和指标评估。 
-{"msg_type":"generate_answer_finish","data":""}

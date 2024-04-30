@@ -177,4 +177,3 @@ print("Accuracy:", accuracy)
 ### 9.3 如何选择合适的自动化数据标注工具？
 
 选择合适的自动化数据标注工具需要考虑多个因素，例如标注任务的类型、数据量、预算和所需的准确性。
-{"msg_type":"generate_answer_finish","data":""}

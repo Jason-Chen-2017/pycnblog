@@ -155,4 +155,3 @@ AI 导购 Agent 将朝着更加智能化、个性化、人性化的方向发展�
 *   **问：如何评估 AI 导购 Agent 的性能？**
 
     答：可以从准确率、召回率、用户满意度等方面评估 AI 导购 Agent 的性能。 
-{"msg_type":"generate_answer_finish","data":""}

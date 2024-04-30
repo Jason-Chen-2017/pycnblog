@@ -122,4 +122,3 @@ def evaluate(users, algorithm):
 **Q: 如何处理用户反馈中的噪声数据？**
 
 **A:** 可以使用数据清洗技术，例如去除异常值、过滤无效数据等。
-{"msg_type":"generate_answer_finish","data":""}

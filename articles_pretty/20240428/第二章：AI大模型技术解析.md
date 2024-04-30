@@ -130,4 +130,3 @@ class Transformer(nn.Module):
 #### 9.3 如何选择合适的大模型？
 
 选择合适的大模型需要考虑任务需求、数据量、算力资源等因素。
-{"msg_type":"generate_answer_finish","data":""}

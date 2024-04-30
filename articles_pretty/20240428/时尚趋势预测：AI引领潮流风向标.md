@@ -92,4 +92,3 @@ model.evaluate(x_test, y_test)
 
 *   **TensorFlow:** Google 开发的开源机器学习框架。
 *   **Keras:** 
-{"msg_type":"generate_answer_finish","data":""}

@@ -95,4 +95,3 @@ RNN是一种深度学习模型，适用于序列数据处理任务。它通过�
 #### 4.2.1 LSTM
 
 LSTM（Long Short-Term Memory）是一种特殊的RNN结构，它通过门控机制来控制信息的流动，可以有效地解决RNN的梯度消失问题。 
-{"msg_type":"generate_answer_finish","data":""}

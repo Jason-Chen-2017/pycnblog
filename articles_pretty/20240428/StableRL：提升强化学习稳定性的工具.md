@@ -111,4 +111,3 @@ while True:
 # 关闭环境
 env.close()
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

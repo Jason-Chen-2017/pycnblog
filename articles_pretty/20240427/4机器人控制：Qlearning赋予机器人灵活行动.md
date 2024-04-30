@@ -68,4 +68,3 @@ $$
 * $\gamma$ 表示折扣因子，控制未来奖励的权重。
 * $s'$ 表示执行动作a后到达的新状态。
 * $\max_{a'} Q(s', a')$ 表示在新状态s'下，所有可能动作的Q值的最大值。 
-{"msg_type":"generate_answer_finish","data":""}

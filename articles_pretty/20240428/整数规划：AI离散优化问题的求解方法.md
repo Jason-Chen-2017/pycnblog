@@ -202,4 +202,3 @@ else:
 ### 9.4 如何提高整数规划求解效率？
 
 可以尝试使用更高效的求解器、改进模型 formulation、利用并行计算技术等方法来提高整数规划求解效率。
-{"msg_type":"generate_answer_finish","data":""}

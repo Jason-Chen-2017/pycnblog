@@ -195,4 +195,3 @@ LSTM和GRU是两种常用的RNN单元，它们都能够有效地解决梯度消�
 ### 9.3 如何评估机器翻译模型的质量？
 
 常用的机器翻译模型评估指标包括BLEU、ROUGE、METEOR等。BLEU是一种基于n-gram匹配的评估指标，ROUGE是一种基于召回率的评估指标，METEOR则是一种综合考虑了n-gram匹配和同义词匹配的评估指标。
-{"msg_type":"generate_answer_finish","data":""}

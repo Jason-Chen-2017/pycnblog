@@ -149,4 +149,3 @@ A: 多模态RLHF可以提供更丰富、更全面的信息，从而提升智能�
 **Q: 多模态RLHF有哪些应用场景？**
 
 A: 多模态RLHF可以应用于机器人控制、游戏AI、对话系统、虚拟助手等场景。
-{"msg_type":"generate_answer_finish","data":""}

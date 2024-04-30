@@ -65,4 +65,3 @@ $$
 
 *   $sim(i, j)$ 表示商品 $i$ 和商品 $j$ 之间的相似度。
 *   $\vec{v}_i$ 和 $\vec{v}_j$ 分别表示商品 $i$ 和商品 $j$ 的特征向量。 
-{"msg_type":"generate_answer_finish","data":""}

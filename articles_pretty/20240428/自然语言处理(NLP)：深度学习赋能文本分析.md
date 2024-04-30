@@ -103,4 +103,3 @@ model.evaluate(x_test, y_test)
 ### 6.4. 文本摘要
 
 文本摘要生成文本的简短版本，保留关键信息。 
-{"msg_type":"generate_answer_finish","data":""}

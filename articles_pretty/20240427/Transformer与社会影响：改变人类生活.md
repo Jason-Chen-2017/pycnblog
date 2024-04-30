@@ -137,4 +137,3 @@ Transformer 模型通过自注意力机制捕获长距离依赖关系。自注�
 ### 9.2 Transformer 模型如何并行化？
 
 Transformer 模型的编码器和解码器都可以并行化，因为每个词的处理都相互独立。这使得 Transformer 模型能够在现代硬件上高效地训练和推理。
-{"msg_type":"generate_answer_finish","data":""}

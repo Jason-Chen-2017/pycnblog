@@ -153,4 +153,3 @@ Transformer模型具有并行计算能力强、可扩展性好等优点，而RNN
 ### 9.3 Transformer模型的应用前景如何？
 
 Transformer模型在自然语言处理领域展现出强大的能力，未来有望应用于更多领域，例如计算机视觉、语音识别等。
-{"msg_type":"generate_answer_finish","data":""}

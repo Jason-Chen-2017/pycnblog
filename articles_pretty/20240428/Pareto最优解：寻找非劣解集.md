@@ -105,4 +105,3 @@ print(res.F)
 ### 5.2 代码解释
 
 这段代码使用`pymoo`库实现了基于NSGA-II算法的Pareto最优解搜索。它定义了两个目标函数`f1`和`f2`，以及一个约束条件`constraint`。然后，它使用`NSGA2`算法搜索Pareto最优解，并打印结果。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -200,4 +200,3 @@ GANs 作为一种强大的生成模型，在深度学习领域取得了显著的
 - **Inception Score**: 基于 Inception 模型的评估指标，衡量生成样本的多样性和清晰度。
 
 - **Fréchet Inception Distance (FID)**: 衡量生成样本与真实数据之间的距离。
-{"msg_type":"generate_answer_finish","data":""}

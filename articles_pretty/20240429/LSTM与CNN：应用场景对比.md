@@ -102,4 +102,3 @@ $$
 $$
 
 其中，$f$ 表示输入数据，$g$ 表示卷积核。 
-{"msg_type":"generate_answer_finish","data":""}

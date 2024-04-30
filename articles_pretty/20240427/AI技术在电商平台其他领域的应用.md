@@ -186,4 +186,3 @@ predicted_label = classifier.predict(new_features)[0]
 # 输出预测结果
 print(predicted_label)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

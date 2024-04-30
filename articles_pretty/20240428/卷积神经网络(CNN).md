@@ -204,4 +204,3 @@ A: CNN 模型的局限性包括：
 *   对输入数据的空间结构敏感
 *   难以处理具有长距离依赖关系的数据
 *   可解释性差
-{"msg_type":"generate_answer_finish","data":""}

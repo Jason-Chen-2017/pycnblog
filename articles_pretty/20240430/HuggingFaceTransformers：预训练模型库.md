@@ -143,4 +143,3 @@ Hugging Face Transformers 库可以应用于多种 NLP 任务，例如：
 ### 9.3 如何评估模型性能？
 
 评估模型性能时，可以使用准确率、召回率、F1 值等指标。
-{"msg_type":"generate_answer_finish","data":""}

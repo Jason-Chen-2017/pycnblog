@@ -158,4 +158,3 @@ cv2.destroyAllWindows()
 **问：虚拟试衣间如何保护用户隐私？**
 
 答：虚拟试衣间可以通过数据加密、匿名化处理等方式保护用户隐私，并遵守相关的隐私政策和法规。 
-{"msg_type":"generate_answer_finish","data":""}

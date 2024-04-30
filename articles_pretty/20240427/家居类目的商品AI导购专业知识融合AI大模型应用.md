@@ -76,4 +76,3 @@ $$ h + r \approx t $$
 $$ \hat{r}_{ui} = \frac{\sum_{v \in N_i(u)} s_{uv} r_{vi}}{\sum_{v \in N_i(u)} s_{uv}} $$
 
 其中，$\hat{r}_{ui}$ 表示用户 $u$ 对商品 $i$ 的预测评分，$N_i(u)$ 表示与用户 $u$ 具有相似兴趣并且交互过商品 $i$ 的用户集合，$s_{uv}$ 表示用户 $u$ 和用户 $v$ 之间的相似度，$r_{vi}$ 表示用户 $v$ 对商品 $i$ 的评分。 
-{"msg_type":"generate_answer_finish","data":""}

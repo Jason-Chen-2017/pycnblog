@@ -185,4 +185,3 @@ def train(dataset, epochs):
 
 * 使用人工评估。
 * 使用基于距离的评估指标，例如 Inception Score (IS) 和 Fréchet Inception Distance (FID)。
-{"msg_type":"generate_answer_finish","data":""}

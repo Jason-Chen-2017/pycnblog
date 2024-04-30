@@ -119,4 +119,3 @@ A: 选择 LLM 取决于具体的任务需求和计算资源。
 **Q: 如何评估 LLM 的性能？**
 
 A: 可以使用各种指标来评估 LLM 的性能，例如准确率、召回率、F1 值等。
-{"msg_type":"generate_answer_finish","data":""}

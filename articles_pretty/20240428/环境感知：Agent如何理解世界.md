@@ -80,4 +80,3 @@ $$
 * $H_k$ 是观测矩阵
 * $P_k$ 是 $k$ 时刻的估计误差协方差矩阵
 * $I$ 是单位矩阵 
-{"msg_type":"generate_answer_finish","data":""}

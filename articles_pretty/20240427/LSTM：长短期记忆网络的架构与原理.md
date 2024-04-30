@@ -156,4 +156,3 @@ LSTM 的参数可以通过梯度下降算法进行调整。
 *   模型复杂，训练时间较长。
 *   参数较多，容易过拟合。
 
-{"msg_type":"generate_answer_finish","data":""}

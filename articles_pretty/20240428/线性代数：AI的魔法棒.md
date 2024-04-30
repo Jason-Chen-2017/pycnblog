@@ -142,4 +142,3 @@ print(y_pred)
 ### 9.2 如何将线性代数应用于 AI 项目？
 
 将线性代数应用于 AI 项目需要对 AI 算法和模型有一定的了解，可以通过学习机器学习和深度学习等课程来掌握相关知识。
-{"msg_type":"generate_answer_finish","data":""}

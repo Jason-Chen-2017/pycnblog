@@ -152,4 +152,3 @@ OpenAI Gym 是一个强化学习环境库，提供各种各样的环境，可以
 ### 9.3 如何平衡探索和利用？
 
 可以使用 ε-greedy 策略、softmax 策略等技术来平衡探索和利用。 
-{"msg_type":"generate_answer_finish","data":""}

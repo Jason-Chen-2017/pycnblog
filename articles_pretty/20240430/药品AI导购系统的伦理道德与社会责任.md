@@ -115,4 +115,3 @@ print(recommended_items)
 **问：如何确保药品 AI 导购系统的安全性？**
 
 答：需要采取数据加密、访问控制、安全审计等措施，确保系统的安全性。 
-{"msg_type":"generate_answer_finish","data":""}

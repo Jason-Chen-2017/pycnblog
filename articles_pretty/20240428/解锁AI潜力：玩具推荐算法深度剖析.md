@@ -124,4 +124,3 @@ recommendations = toys_data[toys_data["toy_id"].isin(similar_user_liked_toys)]
 
 print(recommendations[["name", "description"]])
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

@@ -72,4 +72,3 @@ $$ Attention(Q,K,V) = softmax(\frac{QK^T}{\sqrt{d_k}})V $$
 * $Q$ 表示查询矩阵，$K$ 表示键矩阵，$V$ 表示值矩阵。
 * $d_k$ 表示键向量的维度。
 * $softmax$ 函数用于对注意力分数进行归一化。 
-{"msg_type":"generate_answer_finish","data":""}

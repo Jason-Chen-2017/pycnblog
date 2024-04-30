@@ -119,4 +119,3 @@ air_conditioner.learn_user_behavior("turn on")
 *   **更加互联化:** 家电AI将与其他智能设备更加互联互通，形成更加完善的智能家居生态系统。
 *   **更加安全可靠:** 家电AI的安全性
 
-{"msg_type":"generate_answer_finish","data":""}

@@ -82,4 +82,3 @@ L_G = - \frac{1}{m} \sum_{i=1}^{m} \log D(G(z_i))
 $$
 
 其中，$z_i$ 是第 $i$ 个噪声向量，$G(z_i)$ 是生成器生成的样本。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -143,4 +143,3 @@ A: Agent技术可以提高运输效率、降低成本、提高服务质量。
 **Q: Agent技术在智慧物流中面临哪些挑战？**
 
 A: Agent技术面临数据安全、算法鲁棒性、伦理问题等挑战。 
-{"msg_type":"generate_answer_finish","data":""}

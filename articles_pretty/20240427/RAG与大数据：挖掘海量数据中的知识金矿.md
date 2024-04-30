@@ -149,4 +149,3 @@ A: RAG 模型的训练需要大量的文本数据，通常需要数百万甚至�
 **Q: 如何评估 RAG 模型的效果?**
 
 A: 可以使用 BLEU、ROUGE 等指标评估 RAG 模型生成的文本质量，也可以通过人工评估的方式评估模型的效果。
-{"msg_type":"generate_answer_finish","data":""}

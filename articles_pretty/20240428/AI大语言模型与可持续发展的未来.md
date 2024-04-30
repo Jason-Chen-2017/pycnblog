@@ -146,4 +146,3 @@ PyTorch是一个开源机器学习框架，提供了灵活的编程接口和高�
 * 困惑度（Perplexity）
 * BLEU score
 * ROUGE score 
-{"msg_type":"generate_answer_finish","data":""}

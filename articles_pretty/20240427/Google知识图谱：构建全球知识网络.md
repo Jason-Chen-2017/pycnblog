@@ -125,4 +125,3 @@ results = g.query(query)
 for row in results:
   print(row.friend)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

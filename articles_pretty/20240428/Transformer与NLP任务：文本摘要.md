@@ -144,4 +144,3 @@ A：常用的评估指标包括ROUGE、BLEU等，这些指标主要衡量摘要�
 **Q：如何选择合适的Transformer模型进行文本摘要？**
 
 A：选择模型时需要考虑任务类型、数据集大小、计算资源等因素。可以参考Hugging Face Transformers提供的模型列表和评估结果。
-{"msg_type":"generate_answer_finish","data":""}

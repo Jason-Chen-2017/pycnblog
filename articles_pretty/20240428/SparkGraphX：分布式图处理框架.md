@@ -170,4 +170,3 @@ GraphX 与其他图处理框架相比，具有以下优势：
 * 阅读 GraphX Programming Guide。
 * 参加 GraphX 相关的培训课程。
 * 参考 GraphX 的开源项目。 
-{"msg_type":"generate_answer_finish","data":""}

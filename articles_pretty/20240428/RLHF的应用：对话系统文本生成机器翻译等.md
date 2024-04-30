@@ -173,4 +173,3 @@ A: 所需的数据量取决于任务的复杂性和模型的规模。
 **Q: 如何评估 RLHF 模型的性能？**
 
 A: 可以使用人类评估或自动指标来评估 RLHF 模型的性能。
-{"msg_type":"generate_answer_finish","data":""}

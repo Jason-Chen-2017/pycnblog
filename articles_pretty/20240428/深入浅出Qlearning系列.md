@@ -171,4 +171,3 @@ Q-learning 作为强化学习的基石，在过去几十年中取得了显著进
 * **Q-learning 可以用于连续动作空间吗？**
 
     Q-learning 通常用于离散动作空间，但也可以通过函数逼近等方法扩展到连续动作空间。
-{"msg_type":"generate_answer_finish","data":""}

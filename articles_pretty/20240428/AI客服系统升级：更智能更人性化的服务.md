@@ -70,4 +70,3 @@
 
 *   **LSTM：** 长短期记忆网络，可以更好地处理长序列数据。
 *   **GRU：** 门控循环单元，比 LSTM 更简单，但性能相似。 
-{"msg_type":"generate_answer_finish","data":""}

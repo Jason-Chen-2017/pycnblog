@@ -113,4 +113,3 @@ print(recommended_movies)
 2. 使用余弦相似度计算用户相似度矩阵。
 3. 获取与目标用户最相似的若干个用户。
 4. 获取相似用户喜欢的电影并推荐给目标用户。 
-{"msg_type":"generate_answer_finish","data":""}

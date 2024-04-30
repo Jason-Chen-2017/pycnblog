@@ -130,4 +130,3 @@ A: LSTM 的优点是能够学习长距离依赖关系，缺点是训练时间长
 **Q: LSTM 的应用场景有哪些？**
 
 A: LSTM 的应用场景包括自然语言处理、语音识别和时间序列预测。 
-{"msg_type":"generate_answer_finish","data":""}

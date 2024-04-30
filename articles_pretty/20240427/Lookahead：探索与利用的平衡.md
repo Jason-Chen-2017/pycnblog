@@ -84,4 +84,3 @@ class Lookahead(tf.keras.optimizers.Optimizer):
 ```
 
 这个代码定义了一个 Lookahead 优化器类，它接受一个基础优化器（例如 Adam）和 k、alpha 参数作为输入。在每个训练步骤中，Lookahead 优化器会先更新基础优化器的参数（fast weights），然后根据 slow weights 和 alpha 参数更新 slow weights。每 k 步，Lookahead 优化器会将 fast weights 更新为 slow weights，从而实现 Lookahead 的探索策略。 
-{"msg_type":"generate_answer_finish","data":""}

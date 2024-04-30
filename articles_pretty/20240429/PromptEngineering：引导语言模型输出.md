@@ -138,4 +138,3 @@ A: 可以使用一些指标来评估 Prompt 的效果，例如 BLEU 分数、ROU
 **Q: 如何避免 Prompt 注入攻击？**
 
 A: 可以使用一些技术来避免 Prompt 注入攻击，例如输入过滤、模型正则化等。 
-{"msg_type":"generate_answer_finish","data":""}

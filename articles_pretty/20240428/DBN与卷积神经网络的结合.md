@@ -144,4 +144,3 @@ A: DBN 和 CNN 的参数选择是一个复杂的问题，需要根据具体的�
 **Q: DBN-CNN 模型的优缺点是什么？**
 
 A: DBN-CNN 模型的优点是能够学习数据的层次表示，并取得比 DBN 或 CNN 单独使用更好的性能。缺点是模型复杂度高，训练时间长。 
-{"msg_type":"generate_answer_finish","data":""}

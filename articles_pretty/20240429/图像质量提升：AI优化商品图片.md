@@ -89,4 +89,3 @@ R = X - CNN(X)
 $$
 
 其中，$X$表示带噪声的图像，$R$表示去噪后的图像，$CNN(X)$表示CNN学习到的噪声模式。 
-{"msg_type":"generate_answer_finish","data":""}

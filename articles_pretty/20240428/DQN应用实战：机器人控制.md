@@ -103,4 +103,3 @@ $$
 
 * $\theta$ 表示深度神经网络的参数。
 * $y$ 表示目标 Q 值。 
-{"msg_type":"generate_answer_finish","data":""}

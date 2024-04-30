@@ -57,4 +57,4 @@ from tensorflow.keras import layers
 
 # 定义模型
 model = tf.keras.Sequential([
-    layers.{"msg_type":"generate_answer_finish","data":""}
+    layers.

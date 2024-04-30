@@ -144,4 +144,3 @@ A: LSTM 比 GRU 更复杂，但可以处理更长的依赖关系。GRU 比 LSTM 
 **Q: 如何选择合适的 RNN 架构？**
 
 A: 选择 RNN 架构取决于具体的任务和数据集。对于简单的任务，简单 RNN 可能就足够了。对于更复杂的任务，LSTM 或 GRU 可能更合适。
-{"msg_type":"generate_answer_finish","data":""}

@@ -141,4 +141,3 @@ Lookahead 的超参数 k 和 alpha 需要根据具体的任务和数据集进行
 ### 9.2 Lookahead 是否适用于所有任务？
 
 Lookahead 适用于大多数优化任务，尤其是那些容易出现震荡和不稳定性的任务。然而，对于一些简单任务，Lookahead 可能并不会带来显著的性能提升。
-{"msg_type":"generate_answer_finish","data":""}

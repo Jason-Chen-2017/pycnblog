@@ -157,4 +157,3 @@ public:
 ### 9.2 如何评估游戏 AI 的性能？
 
 可以通过观察 AI 的行为、测试 AI 的决策能力以及收集玩家的反馈来评估游戏 AI 的性能。
-{"msg_type":"generate_answer_finish","data":""}

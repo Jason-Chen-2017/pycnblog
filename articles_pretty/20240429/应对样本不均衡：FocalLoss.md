@@ -96,4 +96,3 @@ class FocalLoss(nn.Module):
 * `(1-pt)**self.gamma` 计算调制因子。
 * `self.alpha * (1-pt)**self.gamma * ce_loss` 计算 Focal Loss。
 * `focal_loss.mean()` 计算所有样本的平均 Focal Loss。 
-{"msg_type":"generate_answer_finish","data":""}

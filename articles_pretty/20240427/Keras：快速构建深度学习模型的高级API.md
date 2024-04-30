@@ -87,4 +87,3 @@ Keras 具有以下优势：
 
 1. 准备数据：将数据转换为模型的输入格式。
 2. 预测：使用 `predict()` 方法进行预测。 
-{"msg_type":"generate_answer_finish","data":""}

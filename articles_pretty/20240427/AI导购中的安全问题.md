@@ -83,4 +83,3 @@ sim(u,v) = \frac{u \cdot v}{||u|| \cdot ||v||}
 $$
 
 其中，$sim(u,v)$ 表示用户 $u$ 对商品 $v$ 的兴趣程度，$u \cdot v$ 表示向量 $u$ 和 $v$ 的内积，$||u||$ 和 $||v||$ 分别表示向量 $u$ 和 $v$ 的模。 
-{"msg_type":"generate_answer_finish","data":""}

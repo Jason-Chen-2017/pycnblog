@@ -158,4 +158,3 @@ A1：选择合适的迁移学习方法取决于具体的任务和数据集。一
 **Q2：如何评估小样本图像生成的质量？**
 
 A2：常用的评估指标包括 Inception Score (IS) 和 Fréchet Inception Distance (FID)。IS 评估生成图像的多样性和质量，FID 评估生成图像与真实图像的相似度。
-{"msg_type":"generate_answer_finish","data":""}

@@ -88,4 +88,3 @@ $$
 *   $\vec{v_i}$ 表示商品 $i$ 的特征向量。
 *   $\vec{v_j}$ 表示商品 $j$ 的特征向量。
 *   $cos$ 表示余弦相似度函数。 
-{"msg_type":"generate_answer_finish","data":""}

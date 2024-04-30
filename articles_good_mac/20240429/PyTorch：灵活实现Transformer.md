@@ -177,4 +177,3 @@ A: Transformer 模型的未来发展方向包括：
 *   **更高效的模型架构：** 研究更高效的 Transformer 模型架构，降低计算复杂度。
 *   **更强的可解释性：** 研究 Transformer 模型的可解释性，理解模型的内部机制。
 *   **更广泛的应用领域：** 将 Transformer 模型应用于更广泛的领域，例如计算机视觉、语音识别等。
-{"msg_type":"generate_answer_finish","data":""}

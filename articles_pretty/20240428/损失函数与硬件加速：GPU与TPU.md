@@ -191,4 +191,3 @@ with strategy.scope():
 - 使用合适的损失函数和优化算法。
 - 使用硬件加速器加速模型训练。
 - 使用模型压缩和量化技术减小模型大小。 
-{"msg_type":"generate_answer_finish","data":""}

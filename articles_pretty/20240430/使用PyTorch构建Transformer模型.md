@@ -74,4 +74,3 @@ MultiHead(Q, K, V) = Concat(head_1, ..., head_h)W^O
 $$
 
 其中，$head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)$，$W_i^Q$、$W_i^K$、$W_i^V$ 和 $W^O$ 
-{"msg_type":"generate_answer_finish","data":""}

@@ -113,4 +113,3 @@ A：Tanh函数和Sigmoid函数各有优缺点。Tanh函数解决了Sigmoid函数
 **Q：如何选择合适的激活函数？**
 
 A：选择合适的激活函数取决于具体的任务和模型结构。一般来说，Tanh函数适用于隐藏层，而Sigmoid函数适用于输出层。 
-{"msg_type":"generate_answer_finish","data":""}

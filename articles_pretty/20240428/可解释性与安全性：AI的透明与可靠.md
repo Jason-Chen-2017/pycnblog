@@ -74,4 +74,3 @@ $$
 * $F$ 表示所有特征的集合。
 * $S$ 表示 $F$ 的一个子集，不包含特征 $i$。
 * $val(S)$ 表示模型在特征集 $S$ 上的预测值。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -158,4 +158,3 @@ print(predicted_rating)
 * **问：药品AI导购系统会取代药剂师吗？**
 
 > 答：药品AI导购系统是药剂师的辅助工具，可以帮助药剂师更好地服务用户，但不能完全取代药剂师。
-{"msg_type":"generate_answer_finish","data":""}

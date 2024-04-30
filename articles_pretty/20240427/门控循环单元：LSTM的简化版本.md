@@ -165,4 +165,3 @@ GRU 比 LSTM 更简单，它将遗忘门和输入门合并为一个更新门，�
 ### 9.3 如何选择 GRU 和 LSTM？
 
 选择 GRU 还是 LSTM 取决于具体的任务和数据集。如果计算资源有限，或者数据集较小，可以选择 GRU。如果需要处理长序列数据，或者需要更高的性能，可以选择 LSTM。
-{"msg_type":"generate_answer_finish","data":""}

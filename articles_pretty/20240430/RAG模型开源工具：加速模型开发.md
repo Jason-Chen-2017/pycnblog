@@ -123,4 +123,3 @@ A: 可以使用标准的 NLP 评估指标，例如 BLEU、ROUGE 或 METEOR，来
 **Q: 如何选择合适的 RAG 模型工具？**
 
 A: 选择 RAG 模型工具时，需要考虑以下因素：功能、易用性、社区支持和计算资源要求。
-{"msg_type":"generate_answer_finish","data":""}

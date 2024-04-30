@@ -74,4 +74,3 @@ E[y_i] = p \cdot 0 + (1-p) \cdot \frac{x_i}{1-p} = x_i
 $$
 
 因此，Dropout可以保证神经元的输出期望值不变，从而避免对模型的预测结果产生过大的影响。 
-{"msg_type":"generate_answer_finish","data":""}

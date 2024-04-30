@@ -71,4 +71,3 @@ class SpectralNormalization(tf.keras.layers.Wrapper):
 ```
 
 该代码定义了一个 `SpectralNormalization` 类，它包装了一个 Keras 层并对其应用谱归一化。在 `build()` 方法中，我们初始化了一个辅助变量 `u`，它用于计算谱范数。在 `call()` 方法中，我们首先计算权重矩阵的谱范数，然后对其进行归一化。接下来，我们更新辅助变量 `u`，并最终应用包装的层。 
-{"msg_type":"generate_answer_finish","data":""}

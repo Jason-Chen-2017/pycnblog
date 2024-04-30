@@ -81,4 +81,3 @@ Obj = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 + \lambda \sum_{k=1}^{K} \sum_{j=1}^{T}
 $$
 
 其中，$\lambda$ 表示正则化系数，$T$ 表示决策树的叶子节点数量，$w_{kj}$ 表示第 $k$ 棵决策树第 $j$ 个叶子节点的权重。 
-{"msg_type":"generate_answer_finish","data":""}

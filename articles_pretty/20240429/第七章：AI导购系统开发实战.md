@@ -107,4 +107,3 @@ item_similarity_matrix = cosine_similarity(item_tfidf_matrix)
 # 获取目标商品的相似商品列表
 similar_items = item_similarity_matrix[target_item_id].argsort()[::-1]
 ```
-{"msg_type":"generate_answer_finish","data":""}

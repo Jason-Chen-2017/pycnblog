@@ -186,4 +186,3 @@ AI 写作和诗歌创作是一个充满潜力的领域，未来发展趋势包�
 *   **创造力**：AI 目前还难以像人类一样具有创造力，生成的作品可能缺乏 originality 和想象力。
 *   **伦理问题**：AI 生成
 
-{"msg_type":"generate_answer_finish","data":""}

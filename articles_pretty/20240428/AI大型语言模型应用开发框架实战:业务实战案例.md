@@ -95,4 +95,3 @@ print(summary[0]['summary_text'])
 1. 首先，使用`pipeline`函数加载预训练的文本摘要模型。
 2. 然后，将输入文本传递给模型，并设置摘要的最大长度、最小长度和是否进行随机采样等参数。
 3. 最后，模型生成摘要，并打印输出。 
-{"msg_type":"generate_answer_finish","data":""}

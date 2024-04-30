@@ -64,4 +64,3 @@ LIME（Local Interpretable Model-agnostic Explanations）是一种局部解释�
 ### 4.3 全局解释方法：决策树
 
 决策树是一种全局解释方法，可以解释模型的整体行为。决策树模型的每个节点代表一个特征，每个分支代表一个决策规则，每个叶子节点代表一个预测结果。通过分析决策树的结构，可以理解模型的决策过程。 
-{"msg_type":"generate_answer_finish","data":""}

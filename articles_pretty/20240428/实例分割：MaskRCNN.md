@@ -164,4 +164,3 @@ A: 可以通过以下方法提高 Mask R-CNN 的效率：
 * **使用轻量级的 Backbone 网络**:  例如 MobileNet 或 ShuffleNet。
 * **模型压缩**:  例如剪枝或量化。
 * **使用更高效的推理框架**:  例如 TensorRT 或 OpenVINO。
-{"msg_type":"generate_answer_finish","data":""}

@@ -173,4 +173,3 @@ A：LSTM的变体包括GRU（门控循环单元）、双向LSTM等。
 **Q：如何选择LSTM的超参数？**
 
 A：LSTM的超参数选择需要根据具体的任务和数据集进行调整，可以使用网格搜索、随机搜索等方法进行优化。
-{"msg_type":"generate_answer_finish","data":""}

@@ -110,4 +110,3 @@ tanh 函数的输出范围为 -1 到 1，而 Sigmoid 函数的输出范围为 0 
 ### 9.2 如何解决梯度消失问题
 
 可以使用 ReLU 等激活函数，或者采用批量归一化、残差网络等技术。 
-{"msg_type":"generate_answer_finish","data":""}

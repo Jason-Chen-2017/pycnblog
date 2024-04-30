@@ -85,4 +85,3 @@ $$
 * $N$ 表示所有特征的集合。
 * $S$ 表示特征的子集。
 * $v(S)$ 表示特征子集 $S$ 的预测结果。 
-{"msg_type":"generate_answer_finish","data":""}

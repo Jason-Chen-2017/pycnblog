@@ -115,4 +115,3 @@ class ActionSearchProduct(Action):
 *   **name()** 方法返回动作名称。
 *   **run()** 方法执行动作逻辑，包括获取用户需求、检索商品信息、回复用户信息等。
 *   **SlotSet** 用于设置槽值，例如将 "product_type" 槽值设置为 None，表示用户已经完成商品搜索。 
-{"msg_type":"generate_answer_finish","data":""}

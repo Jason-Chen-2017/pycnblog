@@ -141,4 +141,3 @@ Q-learning 算法是一种经典的强化学习算法，具有简单易懂、易
 ### 9.3 Q-learning 算法如何处理连续状态空间？
 
 Q-learning 算法最初是为离散状态空间设计的。对于连续状态空间，可以将其离散化，或者使用函数逼近方法，例如神经网络，来表示 Q 函数。
-{"msg_type":"generate_answer_finish","data":""}

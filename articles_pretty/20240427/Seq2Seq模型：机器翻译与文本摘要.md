@@ -77,4 +77,3 @@ $$\alpha_{tj} = \frac{exp(e_{tj})}{\sum_{k=1}^T exp(e_{tk})}$$
 $$c_t = \sum_{j=1}^T \alpha_{tj} h_j$$
 
 其中，$e_{tj}$ 是解码器状态 $s_{t-1}$ 和编码器隐藏状态 $h_j$ 的相关性得分，$\alpha_{tj}$ 是注意力权重，$c_t$ 是上下文向量。 
-{"msg_type":"generate_answer_finish","data":""}

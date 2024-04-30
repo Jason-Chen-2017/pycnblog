@@ -99,4 +99,3 @@ $$
 * $\alpha$ 是学习率，控制参数更新的步长。
 * $J(\theta)$ 是损失函数。
 * $\frac{\partial J(\theta)}{\partial \theta_j}$ 是损失函数关于参数 $\theta_j$ 的偏导数，表示损失函数在参数 $\theta_j$ 方向上的变化率。 
-{"msg_type":"generate_answer_finish","data":""}

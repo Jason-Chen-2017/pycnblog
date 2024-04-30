@@ -96,4 +96,3 @@ model.fit(x_train, [y_train1, y_train2], epochs=10)
 * `tf.keras.optimizers.Adam` 表示优化器，用于更新模型参数。
 * `model.compile` 用于配置模型的训练参数，包括损失函数和优化器。
 * `model.fit` 用于训练模型，其中 `x_train` 和 `y_train` 分别表示训练数据和标签，`epochs` 表示训练轮数。 
-{"msg_type":"generate_answer_finish","data":""}

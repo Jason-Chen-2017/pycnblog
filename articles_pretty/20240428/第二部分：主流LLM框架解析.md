@@ -135,4 +135,3 @@ LLM 在各种 NLP 任务中具有广泛的应用，例如：
 * **困惑度:** 衡量模型预测下一个词的 uncertainty。
 * **BLEU 分数:** 衡量机器翻译结果与参考译文之间的相似度。
 * **ROUGE 分数:** 衡量文本摘要与参考摘要之间的相似度。
-{"msg_type":"generate_answer_finish","data":""}

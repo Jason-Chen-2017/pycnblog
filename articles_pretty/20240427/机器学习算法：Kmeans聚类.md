@@ -84,4 +84,3 @@ labels = kmeans.predict(new_data)
 *   `n_clusters` 参数指定聚类的簇数。
 *   `fit()` 方法用于训练模型，即根据输入数据学习聚类中心。
 *   `predict()` 方法用于预测新数据点的簇标签。 
-{"msg_type":"generate_answer_finish","data":""}

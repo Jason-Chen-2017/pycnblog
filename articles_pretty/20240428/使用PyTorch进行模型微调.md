@@ -74,4 +74,4 @@ model.fc = nn.Linear(model.fc.in_features, num_classes)
 
 ```python
 for param in model.parameters():
-    param.requires{"msg_type":"generate_answer_finish","data":""}
+    param.requires

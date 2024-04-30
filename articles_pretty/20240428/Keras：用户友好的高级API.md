@@ -80,4 +80,3 @@ model.compile(loss='categorical_crossentropy',
               optimizer='adam',
               metrics=['accuracy'])
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

@@ -77,4 +77,3 @@ $$ Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V $$
 $$ FFN(x) = max(0, xW_1 + b_1)W_2 + b_2 $$
 
 其中，$x$ 是输入向量，$W_1$ 和 $W_2$ 是权重矩阵，$b_1$ 和 $b_2$ 是偏置向量。 
-{"msg_type":"generate_answer_finish","data":""}

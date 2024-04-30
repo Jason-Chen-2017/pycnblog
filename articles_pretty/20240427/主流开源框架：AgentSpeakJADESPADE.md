@@ -196,4 +196,3 @@ AgentSpeak 是一种面向智能体的编程语言，而 JADE 和 SPADE 是智�
 ### 9.4 MAS 的未来发展方向是什么？
 
 MAS 的未来发展方向包括更复杂的智能体模型、更灵活的协调机制和更广泛的应用领域。
-{"msg_type":"generate_answer_finish","data":""}

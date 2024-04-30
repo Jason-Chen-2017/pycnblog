@@ -136,4 +136,3 @@ Triplet 的选择对模型的性能有很大的影响。一般来说，选择难
 ### 9.3 Triplet Loss 的缺点是什么？
 
 Triplet Loss 的主要缺点是训练过程比较复杂，需要 carefully 选择 Triplet。此外，Triplet Loss 对噪声和数据分布的变化比较敏感。
-{"msg_type":"generate_answer_finish","data":""}

@@ -69,4 +69,3 @@ $$
 2. 将 $\epsilon$ 乘以 $\sigma$ 并加上 $\mu$，得到隐变量 $z$。
 
 这样，$z$ 就可以通过 $\mu$ 和 $\sigma$ 进行梯度下降优化。 
-{"msg_type":"generate_answer_finish","data":""}

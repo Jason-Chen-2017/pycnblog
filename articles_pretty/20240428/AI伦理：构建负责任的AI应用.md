@@ -91,4 +91,3 @@ group_2_ratio = cm[1, 1] / (cm[1, 0] + cm[1, 1])
 # 计算统计奇偶校验
 statistical_parity = group_1_ratio / group_2_ratio
 ```
-{"msg_type":"generate_answer_finish","data":""}

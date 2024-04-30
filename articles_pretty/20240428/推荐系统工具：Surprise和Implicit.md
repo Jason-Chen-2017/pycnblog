@@ -166,4 +166,3 @@ A: 可以使用RMSE、MAE、Precision、Recall等指标评估推荐系统的性�
 **Q: 如何解决冷启动问题？**
 
 A: 可以利用用户的注册信息、社交网络信息等辅助信息进行推荐。
-{"msg_type":"generate_answer_finish","data":""}

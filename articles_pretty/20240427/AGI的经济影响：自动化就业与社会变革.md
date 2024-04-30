@@ -71,4 +71,3 @@ $$
 *   $\gamma$ 是折扣因子
 *   $s'$ 是下一个状态
 *   $a'$ 是下一个动作 
-{"msg_type":"generate_answer_finish","data":""}

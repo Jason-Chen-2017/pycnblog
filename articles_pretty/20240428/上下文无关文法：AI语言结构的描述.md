@@ -133,4 +133,3 @@ A: 选择合适的 CFG 取决于具体的应用场景和语言的复杂性。对
 **Q: 如何评估 CFG 的性能？**
 
 A: 可以使用语法分析的准确率和效率来评估 CFG 的性能。
-{"msg_type":"generate_answer_finish","data":""}

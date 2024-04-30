@@ -158,4 +158,3 @@ A: 可以通过以下几种方式提高 Keras 模型的性能：
 **Q: 如何将 Keras 模型部署到生产环境？**
 
 A: 可以使用 TensorFlow Serving 或其他模型部署工具将 Keras 模型部署到生产环境。
-{"msg_type":"generate_answer_finish","data":""}

@@ -138,4 +138,3 @@ label_studio.start(project)
 ### 9.3 如何提高标注效率？
 
 * 使用高效的标注平台，优化标注流程，利用自动化标注技术。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -80,4 +80,3 @@ $$
 * $head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)$
 * $W_i^Q$, $W_i^K$, $W_i^V$ 是第 $i$ 个头的权重矩阵。
 * $W^O$ 是输出线性层的权重矩阵。 
-{"msg_type":"generate_answer_finish","data":""}

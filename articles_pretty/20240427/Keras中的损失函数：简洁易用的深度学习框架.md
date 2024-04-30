@@ -124,4 +124,3 @@ model.fit(x_train, y_train, epochs=10)
 ### 6.3 语音识别
 
 均方误差常用于语音识别任务，例如使用循环神经网络（RNN）进行语音识别。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -179,4 +179,3 @@ AI for Science 可以应用于各个科学研究领域，包括物理、化学�
 ### 9.3  AI 会取代科学家吗？
 
 AI 不会取代科学家，而是会成为科学家的得力助手，帮助科学家提高研究效率和质量。
-{"msg_type":"generate_answer_finish","data":""}

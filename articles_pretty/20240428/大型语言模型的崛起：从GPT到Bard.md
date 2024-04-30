@@ -168,4 +168,3 @@ LLM使用Transformer模型中的自注意力机制来捕捉长距离依赖关系
 ### 9.3 LLM的应用有哪些限制？
 
 LLM的应用受到计算资源、数据偏差和伦理问题的限制。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -134,4 +134,3 @@ Dropout 通常适用于全连接神经网络和卷积神经网络，但对于循
 ### 9.3 如何评估 Dropout 的效果？
 
 可以通过比较使用 Dropout 和不使用 Dropout 的模型在测试集上的性能来评估 Dropout 的效果。
-{"msg_type":"generate_answer_finish","data":""}

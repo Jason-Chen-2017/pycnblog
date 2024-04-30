@@ -116,4 +116,3 @@ print(predicted_risk)
 
 *   **智能投顾**: 利用 AI 算法为客户提供个性化的投资建议，自动执行交易策略。
 *   **风险管理**: 
-{"msg_type":"generate_answer_finish","data":""}

@@ -102,4 +102,3 @@ print(answer)
 ### 6.1 智能客服
 
 智能问答系统可以用于构建智能客服系统，自动回答用户常见问题，提高客服效率和用户满意度。 
-{"msg_type":"generate_answer_finish","data":""}

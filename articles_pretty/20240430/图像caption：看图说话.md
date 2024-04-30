@@ -138,4 +138,3 @@ model = ImageCaptionModel(encoder, decoder)
 * **问：如何提高图像caption模型的性能？**
 
 答：可以通过使用更大的数据集、更复杂的模型、更好的训练技巧等方法来提高模型性能。
-{"msg_type":"generate_answer_finish","data":""}

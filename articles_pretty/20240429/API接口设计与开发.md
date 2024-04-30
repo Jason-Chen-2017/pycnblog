@@ -135,4 +135,3 @@ API 限流是指限制 API 的访问频率，以防止 API 被滥用或过载。
 ### 9.3 如何设计一个好的 API？
 
 一个好的 API 应该具有以下特点：功能性、易用性、性能、安全性、版本控制。
-{"msg_type":"generate_answer_finish","data":""}

@@ -182,4 +182,3 @@ model.evaluate(x_test, y_test)
 ### 9.5 深度学习的未来发展方向是什么？
 
 深度学习的未来发展方向包括模型轻量化、自动机器学习、可解释人工智能等。 
-{"msg_type":"generate_answer_finish","data":""}

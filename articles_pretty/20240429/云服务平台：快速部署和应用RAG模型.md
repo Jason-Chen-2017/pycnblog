@@ -130,4 +130,3 @@ RAG 模型面临的挑战包括：
 **Q: 如何评估 RAG 模型的性能?**
 
 **A:** 可以使用标准的 NLP 评估指标，例如 ROUGE 和 BLEU，以及人工评估来评估 RAG 模型的性能。
-{"msg_type":"generate_answer_finish","data":""}

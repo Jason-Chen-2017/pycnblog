@@ -72,4 +72,3 @@ $$
 $$
 
 其中，$h$ 表示头的数量，$W_i^Q$、$W_i^K$、$W_i^V$ 和 $W^O$ 表示线性变换矩阵。 
-{"msg_type":"generate_answer_finish","data":""}

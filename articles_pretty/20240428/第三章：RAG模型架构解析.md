@@ -167,4 +167,3 @@ RAG 模型也面临一些挑战，例如：
 *   **RAG 模型有哪些应用场景？**
 
     RAG 模型可以应用于问答系统、聊天机器人、文本摘要等领域。
-{"msg_type":"generate_answer_finish","data":""}

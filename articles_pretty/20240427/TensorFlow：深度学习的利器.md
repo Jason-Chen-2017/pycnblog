@@ -57,4 +57,3 @@ CNN 是一种专门用于处理图像数据的深度学习模型。它使用卷�
 ### 3.4 循环神经网络 (RNN)
 
 RNN 是一种专门用于处理序列数据的深度学习模型。它使用循环层来记忆过去的信息，并将其用于预测未来的输出。在 TensorFlow 中，可以使用 `tf.keras.layers.LSTM` 和 `tf.keras.layers.GRU` 层来创建 RNN 模型。 
-{"msg_type":"generate_answer_finish","data":""}

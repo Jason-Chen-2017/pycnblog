@@ -190,4 +190,3 @@ AIAgent技术正处于快速发展阶段，未来将面临以下趋势和挑战�
 **问：AIAgent会取代人类吗？**
 
 答：AIAgent旨在辅助人类，而不是取代人类。它们可以帮助人类完成危险、重复或复杂的任务，并提高效率和生产力。
-{"msg_type":"generate_answer_finish","data":""}

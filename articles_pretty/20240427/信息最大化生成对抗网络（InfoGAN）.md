@@ -58,4 +58,3 @@ L_I = E_{x~P_G}[E_{c~Q(c|x)}[log Q(c|x)]] + H(c)
 $$
 
 其中，P_G表示生成数据分布，Q(c|x)表示辅助分布。第一项表示c在Q(c|x)下的期望熵，第二项表示c的熵。最大化L_I可以近似最大化I(c;G(z,c))。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -160,4 +160,3 @@ Transformer 模型可以部署在云端或边缘设备上。一些常见的部�
 *   **ONNX Runtime**: 用于部署 ONNX 模型。
 
 希望本文能够帮助读者更好地理解 Transformer 模型和 HuggingFace Transformers 库，并将其应用于实际的 NLP 项目中。
-{"msg_type":"generate_answer_finish","data":""}

@@ -131,4 +131,3 @@ $\alpha$ 值的选择取决于具体的任务和数据集。通常情况下，�
 ### 9.2. ELU的计算复杂度如何？
 
 ELU的计算复杂度与ReLU相似，都比较低，适合在资源受限的设备上使用。 
-{"msg_type":"generate_answer_finish","data":""}

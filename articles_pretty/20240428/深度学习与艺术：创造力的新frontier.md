@@ -105,4 +105,3 @@ def train_vae(epochs):
         # ...
         train_step(data)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

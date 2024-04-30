@@ -175,4 +175,3 @@ A: 需要根据具体应用场景和需求选择合适的 LLM 和向量数据库
 **Q: 如何评估专利检索系统的性能？**
 
 A: 可以使用 recall, precision, F1 score 等指标评估检索系统的性能。
-{"msg_type":"generate_answer_finish","data":""}

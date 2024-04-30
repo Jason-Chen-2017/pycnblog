@@ -169,4 +169,3 @@ Q-learning 算法在满足一定的条件下可以收敛到最优策略。这些
 ### 9.3 如何解决 Q-learning 算法的探索与利用问题？
 
 可以使用 $\epsilon$-贪婪策略来解决 Q-learning 算法的探索与利用问题。$\epsilon$-贪婪策略以 $\epsilon$ 的概率选择随机动作，以 $1-\epsilon$ 的概率选择当前 Q 函数认为最好的动作。
-{"msg_type":"generate_answer_finish","data":""}

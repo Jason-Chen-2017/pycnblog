@@ -174,4 +174,3 @@ y_pred = model.predict(X_test)
 ### 9.4 如何处理高维数据？
 
 可以使用特征选择、降维等方法处理高维数据。 
-{"msg_type":"generate_answer_finish","data":""}

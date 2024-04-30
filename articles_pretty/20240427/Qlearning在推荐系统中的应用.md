@@ -149,4 +149,3 @@ class QLearningAgent:
 
 * 学习速度较慢。
 * 对状态空间和动作空间的要求较高。 
-{"msg_type":"generate_answer_finish","data":""}

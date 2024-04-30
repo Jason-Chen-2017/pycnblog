@@ -149,4 +149,3 @@ spaCy是一个NLP库，提供预训练的词嵌入模型和NLP工具。
 ### 9.3 如何处理未登录词？
 
 可以使用子词技术或字符级别的词嵌入模型来处理未登录词。
-{"msg_type":"generate_answer_finish","data":""}

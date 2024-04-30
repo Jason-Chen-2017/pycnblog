@@ -109,4 +109,3 @@ print(model.summary())
 ```
 
 该代码使用 statsmodels 库进行线性回归分析，比较不同版本页面的转化率。输出结果包括模型参数、p值、置信区间等信息，可以用于评估测试结果的显著性。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -197,4 +197,3 @@ A: 目前尚不清楚AGI是否能够拥有意识。
 **Q: 如何参与AGI研究？**
 
 A: 可以学习相关知识，参与开源项目，或加入AGI研究机构。
-{"msg_type":"generate_answer_finish","data":""}

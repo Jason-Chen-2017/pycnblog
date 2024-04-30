@@ -74,4 +74,3 @@ ELBO = E_{q(z|x)}[\log p(x|z)] - KL[q(z|x) || p(z)]
 $$
 
 其中，$q(z|x)$ 是编码器学习到的隐变量的后验分布，$p(x|z)$ 是解码器学习到的似然函数，$p(z)$ 是隐变量的先验分布，$KL$ 是 Kullback-Leibler 散度。
-{"msg_type":"generate_answer_finish","data":""}

@@ -127,4 +127,3 @@ def hinge_loss(y_true, y_pred):
 * 参数选择：SVM 的性能对参数选择很敏感。
 * 可解释性：SVM 模型的可解释性较差。
 * 计算复杂度：SVM 训练的计算复杂度较高。 
-{"msg_type":"generate_answer_finish","data":""}

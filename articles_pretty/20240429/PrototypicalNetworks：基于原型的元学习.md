@@ -150,4 +150,3 @@ A: embedding 空间的维度需要根据具体任务进行调整。
 **Q: 如何处理类别不平衡问题？**
 
 A: 可以使用加权损失函数或数据增强方法来处理类别不平衡问题。
-{"msg_type":"generate_answer_finish","data":""}

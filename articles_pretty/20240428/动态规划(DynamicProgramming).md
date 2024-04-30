@@ -173,4 +173,3 @@ def knapsack(W, wt, val, n):
 3. 初始化。
 4. 确定计算顺序。
 5. 输出结果。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -77,4 +77,3 @@ AIAgentWorkFlow 使用 YAML 或 Python 代码来定义工作流。工作流定�
 *   **重试**:  自动重试任务执行。
 *   **告警**:  发送告警通知管理员。
 *   **终止工作流**:  终止整个工作流的执行。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -119,4 +119,3 @@ def central_difference(f, x, h=1e-5):
 **问：数值微分有哪些局限性？**
 
 答：数值微分是一种近似方法，因此存在一定的误差。此外，数值微分可能对某些函数不稳定，例如不连续函数或具有奇异点的函数。
-{"msg_type":"generate_answer_finish","data":""}

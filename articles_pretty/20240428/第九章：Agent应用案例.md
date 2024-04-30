@@ -142,4 +142,3 @@ A: 可以根据Agent完成任务的效率、效果和安全性等指标来评估
 **Q: Agent技术有哪些局限性？**
 
 A: Agent技术目前还无法完全模拟人类的智能，在处理复杂问题和适应未知环境方面 masih  存在局限性。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -135,4 +135,3 @@ def reward_function(state, action, next_state):
 ### 9.3 如何调试奖励函数？
 
 可以通过分析智能体的行为和奖励值来调试奖励函数。如果智能体的行为不符合预期，或者奖励值不合理，则需要调整奖励函数的设计。
-{"msg_type":"generate_answer_finish","data":""}

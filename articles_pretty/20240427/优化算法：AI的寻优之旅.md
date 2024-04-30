@@ -172,4 +172,3 @@ def genetic_algorithm(population, fitness_func, mutation_rate, generations):
 *   **网格搜索**：对参数进行穷举搜索，找到最优的参数组合。
 *   **随机搜索**：随机采样参数组合，评估其性能。
 *   **贝叶斯优化**：利用贝叶斯方法指导参数搜索，提高效率。
-{"msg_type":"generate_answer_finish","data":""}

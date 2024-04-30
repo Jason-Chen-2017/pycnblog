@@ -125,4 +125,3 @@ y_pred = gbm.predict(X_test, num_iteration=gbm.best_iteration)
 ### 6.1 分类问题
 
 LightGBM可以用于解决各种分类问题，例如垃圾邮件识别、图像分类、欺诈检测等。 
-{"msg_type":"generate_answer_finish","data":""}

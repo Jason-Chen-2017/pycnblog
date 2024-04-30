@@ -155,4 +155,3 @@ A: AGI的安全性是一个重要问题，需要采取措施来确保AGI的安�
 **Q: AGI何时能够实现？**
 
 A: AGI的实现时间尚不清楚，但随着技术的不断发展，AGI的实现将越来越近。
-{"msg_type":"generate_answer_finish","data":""}

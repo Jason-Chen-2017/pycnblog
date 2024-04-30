@@ -123,4 +123,3 @@ Sigmoid函数的表达式保证了其输出值始终在 0 到 1 之间。这是�
 ### 9.2. 为什么 Sigmoid 函数是可微分的？
 
 Sigmoid函数的表达式是一个连续函数，并且其导数存在且有限。
-{"msg_type":"generate_answer_finish","data":""}

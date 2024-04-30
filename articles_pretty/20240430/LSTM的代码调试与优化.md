@@ -81,4 +81,3 @@ o_t = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o)
 $$
 
 其中，$o_t$ 表示输出门的输出，$W_o$ 表示输出门的权重矩阵，$b_o$ 表示输出门的偏置项。 
-{"msg_type":"generate_answer_finish","data":""}

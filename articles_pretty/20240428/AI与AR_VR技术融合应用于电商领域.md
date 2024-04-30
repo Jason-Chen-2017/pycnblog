@@ -137,4 +137,3 @@ AI、AR 和 VR 技术的融合应用，为电商行业带来了新的机遇，�
 ### 9.1 AI、AR 和 VR 技术的区别是什么？
 
 AI 技术是让机器具有智能的
-{"msg_type":"generate_answer_finish","data":""}

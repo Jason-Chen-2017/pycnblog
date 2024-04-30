@@ -73,4 +73,3 @@ $$
 * $Q$、$K$ 和 $V$ 分别表示查询、键和值矩阵。
 * $d_k$ 是键向量的维度。
 * $softmax$ 函数用于将注意力分数归一化。 
-{"msg_type":"generate_answer_finish","data":""}

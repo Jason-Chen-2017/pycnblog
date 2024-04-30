@@ -124,4 +124,3 @@ gudhi.plot_persistence_diagram(persistence)
 **问：如何解释 TDA 结果？**
 
 答：TDA 结果通常以持久图或其他可视化方式呈现，需要结合领域知识进行解释。例如，持久图中的长条可能代表数据中的重要特征。
-{"msg_type":"generate_answer_finish","data":""}

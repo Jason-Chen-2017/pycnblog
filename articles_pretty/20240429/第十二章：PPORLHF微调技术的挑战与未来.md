@@ -146,4 +146,3 @@ A: 奖励函数的设计需要考虑任务目标、人类反馈以及模型的�
 **Q: 如何评估 PPO-RLHF 微调后的 LLMs 的性能？**
 
 A: 可以使用人类评估或客观指标来评估 LLMs 的性能，例如 BLEU 分数、ROUGE 分数等。
-{"msg_type":"generate_answer_finish","data":""}

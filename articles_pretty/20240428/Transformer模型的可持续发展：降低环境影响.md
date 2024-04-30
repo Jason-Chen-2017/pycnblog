@@ -157,4 +157,3 @@ student_model.fit(...)
 ### 9.3 如何建设绿色数据中心？
 
 建设绿色数据中心需要考虑能源效率、可再生能源、冷却系统等因素。
-{"msg_type":"generate_answer_finish","data":""}

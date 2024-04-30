@@ -86,4 +86,3 @@ SAC 算法使用策略梯度方法更新策略函数：
 $$
 \pi(a_t|s_t) \propto \exp(Q(s_t, a_t) - V(s_t))
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

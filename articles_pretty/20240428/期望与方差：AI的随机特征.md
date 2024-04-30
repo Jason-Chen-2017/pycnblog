@@ -137,4 +137,3 @@ print("方差:", variance)
 * **问：如何解释AI系统的随机行为？**
 
 答：可以使用可解释性技术，例如特征重要性分析和局部可解释模型不可知解释（LIME），来解释AI系统的随机行为。 
-{"msg_type":"generate_answer_finish","data":""}

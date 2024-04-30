@@ -79,4 +79,3 @@ Q(s, a) = r + \gamma \max_{a'} Q(s', a')
 $$
 
 其中，$Q(s, a)$ 表示在状态 $s$ 下采取行动 $a$ 的价值，$r$ 是立即奖励，$\gamma$ 是折扣因子，$s'$ 是下一个状态，$a'$ 是下一个行动。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -145,4 +145,3 @@ A: 选择合适的 RNN 模型取决于具体的任务和数据集。例如，LST
 **Q: 如何解决 RNN 的梯度消失/爆炸问题？**
 
 A: 可以使用梯度裁剪、LSTM 或 GRU 等方法来解决梯度消失/爆炸问题。
-{"msg_type":"generate_answer_finish","data":""}

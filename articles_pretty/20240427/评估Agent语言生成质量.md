@@ -119,4 +119,3 @@ A: 可以通过改进语言模型、优化训练数据、引入人工反馈等�
 **Q: 如何评估Agent的创造力？**
 
 A: 评估Agent的创造力是一个具有挑战性的问题，需要进一步研究。
-{"msg_type":"generate_answer_finish","data":""}

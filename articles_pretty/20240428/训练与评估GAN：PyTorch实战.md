@@ -165,4 +165,3 @@ GANs 可以生成新的训练数据，以提高模型的泛化能力。例如，
 * **视觉评估**: 人工评估生成样本的质量。
 * **Inception Score (IS)**: 度量生成样本的多样性和真实性。
 * **Fréchet Inception Distance (FID)**: 度量生成样本与真实样本之间的距离。
-{"msg_type":"generate_answer_finish","data":""}

@@ -77,4 +77,3 @@ VAE的数学模型可以用以下公式表示：
 $$ L(\theta, \phi) = -E_{q_\phi(z|x)}[log p_\theta(x|z)] + D_{KL}(q_\phi(z|x)||p(z)) $$
 
 其中，$\theta$ 和 $\phi$ 分别表示解码器和编码器的参数，$x$ 表示输入数据，$z$ 表示隐变量，$q_\phi(z|x)$ 表示编码器输出的隐变量分布，$p_\theta(x|z)$ 表示解码器输出的数据分布，$p(z)$ 表示先验分布。 
-{"msg_type":"generate_answer_finish","data":""}

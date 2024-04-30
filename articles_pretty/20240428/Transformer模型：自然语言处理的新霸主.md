@@ -74,4 +74,4 @@ $$
 1. 计算查询矩阵 $Q$ 与键矩阵 $K$ 的内积，得到注意力分数矩阵：
 
 $$
-\begin{bmatrix} q_1 \cdot k_1 & q_1 \cdot k_2 & q_1 \cdot k_3 \\ q_2 \cdot k_1 & q_2 \cdot k_2 & q_2 \cdot k_3 \\ q_{"msg_type":"generate_answer_finish","data":""}
+\begin{bmatrix} q_1 \cdot k_1 & q_1 \cdot k_2 & q_1 \cdot k_3 \\ q_2 \cdot k_1 & q_2 \cdot k_2 & q_2 \cdot k_3 \\ q_

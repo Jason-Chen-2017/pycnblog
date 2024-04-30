@@ -137,4 +137,3 @@ y_pred = model.predict(X_new)
 * **如何评估决策树模型的性能？**
 
   可以使用准确率、精确率、召回率、F1 分数等指标来评估决策树模型的性能。
-{"msg_type":"generate_answer_finish","data":""}

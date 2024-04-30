@@ -134,4 +134,3 @@ Transformer模型可以用于构建问答系统，例如回答用户提出的问
 
 选择合适的Transformer模型取决于具体的任务和数据集。一般来说， larger model 
 
-{"msg_type":"generate_answer_finish","data":""}

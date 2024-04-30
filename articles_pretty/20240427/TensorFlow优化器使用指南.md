@@ -151,4 +151,3 @@ class MySGD(Optimizer):
 ### 9.3. 如何避免过拟合？
 
 避免过拟合的方法包括：增加训练数据、使用正则化技术、使用 Dropout 等。
-{"msg_type":"generate_answer_finish","data":""}

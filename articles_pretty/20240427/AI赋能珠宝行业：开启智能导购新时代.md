@@ -73,4 +73,3 @@ $$ R \approx P^TQ $$
 图像识别算法通常使用卷积神经网络 (Convolutional Neural Network, CNN) 模型。CNN 是一种深度学习模型，它能够自动从图像中提取特征，并进行分类或识别。
 
 ## 5. 项目实践：代码实例和详细解释说明 
-{"msg_type":"generate_answer_finish","data":""}

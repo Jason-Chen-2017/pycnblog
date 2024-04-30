@@ -93,4 +93,4 @@ $$
 双向 LSTM 的数学模型可以表示为：
 
 $$
-\begin{aligned{"msg_type":"generate_answer_finish","data":""}
+\begin{aligned

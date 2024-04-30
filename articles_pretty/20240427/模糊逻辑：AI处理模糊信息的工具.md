@@ -138,4 +138,3 @@ print(fan.output['fan_speed'])
 *   模糊规则的获取困难
 *   模糊系统的解释性差
 *   模糊系统的计算复杂度高
-{"msg_type":"generate_answer_finish","data":""}

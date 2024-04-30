@@ -145,4 +145,3 @@ agent.train(data, epochs=10)
 **Q: 如何评估 RAG 模型的性能？**
 
 **A:** 可以使用 BLEU、ROUGE 等指标评估生成的文本质量，也可以通过人工评估来衡量模型的性能。
-{"msg_type":"generate_answer_finish","data":""}

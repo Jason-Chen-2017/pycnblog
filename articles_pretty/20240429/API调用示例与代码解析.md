@@ -192,4 +192,3 @@ API 调用失败的原因可能有多种，例如：
 * **检查 API 请求参数：** 确保 API 请求参数正确无误。
 * **查看 API 文档：** 查看 API 文档了解 API 的使用方法和错误代码。
 * **使用调试工具：** 使用 Postman 等工具进行 API 调用调试。 
-{"msg_type":"generate_answer_finish","data":""}

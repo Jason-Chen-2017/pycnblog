@@ -153,4 +153,3 @@ A: 评估Fine-Tuning模型的性能可以使用与评估其他深度学习模型
 **Q: 如何缓解数据偏见？**
 
 A: 缓解数据偏见的方法包括数据增强、数据平衡、模型正则化等。
-{"msg_type":"generate_answer_finish","data":""}

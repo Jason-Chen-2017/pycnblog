@@ -145,4 +145,3 @@ def train(dataset, epochs):
 *   版权问题：生成的服装图像是否侵犯了设计师的版权？
 *   数据隐私问题：如何保护用户的隐私数据？
 *   社会影响问题：服装图像生成技术是否会加剧社会的不平等？
-{"msg_type":"generate_answer_finish","data":""}

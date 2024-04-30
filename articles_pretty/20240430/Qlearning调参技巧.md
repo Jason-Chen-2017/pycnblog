@@ -166,4 +166,3 @@ epsilon 决定了探索和利用的平衡。较大的 epsilon 鼓励探索，较
 ### 9.4 如何判断Q-learning算法是否收敛？
 
 可以观察Q值的變化情况，如果Q值不再发生明显变化，则说明算法已经收敛。
-{"msg_type":"generate_answer_finish","data":""}

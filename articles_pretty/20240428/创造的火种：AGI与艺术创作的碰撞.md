@@ -154,4 +154,3 @@ AI生成的艺术作品的价值取决于其艺术性和创造性。一些AI生�
 ### 9.3 如何学习AI艺术？
 
 学习AI艺术需要掌握一定的编程和AI知识，以及对艺术的理解和 appreciation。
-{"msg_type":"generate_answer_finish","data":""}

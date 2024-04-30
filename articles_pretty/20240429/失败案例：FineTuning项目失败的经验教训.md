@@ -127,4 +127,3 @@ Fine-Tuning技术在NLP领域取得了显著的进展，但仍存在一些挑战
 ### 9.3 如何提高模型的泛化能力？
 
 可以使用正则化技术、Dropout等方法来提高模型的泛化能力。
-{"msg_type":"generate_answer_finish","data":""}

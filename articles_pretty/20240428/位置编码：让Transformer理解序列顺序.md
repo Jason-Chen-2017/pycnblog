@@ -83,4 +83,3 @@ $$
 $$
 PE_{(5, 3)} = cos(5 / 10000^{2/4}) = cos(5 / 100)
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

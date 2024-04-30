@@ -133,4 +133,3 @@ model = tf.keras.Model(inputs=[user_id, item_id], outputs=output)
 ### 9.3 AI导购员能否完全取代人工导购员？
 
 AI导购员可以为消费者提供更加便捷、高效的服务，但是AI导购员无法完全取代人工导购员。人工导购员可以根据消费者的情绪、语气等信息，提供更加个性化的服务。 
-{"msg_type":"generate_answer_finish","data":""}

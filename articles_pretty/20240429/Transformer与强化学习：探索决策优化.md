@@ -144,4 +144,3 @@ A: DQN、策略梯度方法和演员-评论家算法等都适合与 Transformer 
 **Q: Transformer 和强化学习有哪些应用场景？**
 
 A: 自然语言控制、对话系统、推荐系统和游戏等。
-{"msg_type":"generate_answer_finish","data":""}

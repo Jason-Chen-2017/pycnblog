@@ -172,4 +172,3 @@ contract JewelryTrading {
 *   **问：珠宝AI与区块链技术的发展前景如何？**
 
     答：珠宝AI与区块链技术具有广阔的应用前景，将推动珠宝行业向智能化、数字化、透明化方向发展。
-{"msg_type":"generate_answer_finish","data":""}

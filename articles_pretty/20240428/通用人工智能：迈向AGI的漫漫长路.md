@@ -142,4 +142,3 @@ model.evaluate(x_test, y_test)
 ### 9.2 通用人工智能会取代人类吗？
 
 通用人工智能可能会取代人类在某些任务中的角色，但它也可能创造新的就业机会。 
-{"msg_type":"generate_answer_finish","data":""}

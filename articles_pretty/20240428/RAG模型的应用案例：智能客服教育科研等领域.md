@@ -159,4 +159,3 @@ A: RAG模型的性能评估需要综合考虑信息检索和自然语言生成�
 **Q: RAG模型的未来发展方向是什么？**
 
 A: RAG模型的未来发展方向主要包括多模态RAG模型、可解释性RAG模型和领域特定RAG模型。
-{"msg_type":"generate_answer_finish","data":""}

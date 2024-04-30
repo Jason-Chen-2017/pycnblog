@@ -131,4 +131,3 @@ GAN 和 GNN 结合的图数据生成技术具有广阔的应用前景。未来�
 
 * **使用 Wasserstein GAN**: Wasserstein GAN 使用 Wasserstein 距离来衡量真实数据分布和生成数据分布之间的差异，可以提高训练的稳定性。
 * **使用梯度惩罚**: 对判别器的梯度进行惩罚，可以防止判别器过于自信，从而提高训练的稳定性。
-{"msg_type":"generate_answer_finish","data":""}

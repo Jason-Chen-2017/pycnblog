@@ -131,4 +131,3 @@ print(output_tensor.shape)
 ### 9.2 填充和步幅对模型参数量的影响？
 
 填充和步幅会影响卷积层的参数量。更大的填充和步幅会导致更多的参数，从而增加模型的计算复杂度。
-{"msg_type":"generate_answer_finish","data":""}

@@ -154,4 +154,3 @@ LSTM是RNN的一种变体，通过引入门控机制来解决RNN的梯度消失�
 ### 9.3 LSTM的应用场景有哪些？
 
 LSTM可以应用于机器翻译、语音识别、文本摘要、对话系统等自然语言处理任务。
-{"msg_type":"generate_answer_finish","data":""}

@@ -88,4 +88,3 @@ print(recommendations)
 * 找到与目标用户最相似的用户。
 * 获取相似用户喜欢的物品，并推荐给目标用户。
 * 去重并输出推荐结果。 
-{"msg_type":"generate_answer_finish","data":""}

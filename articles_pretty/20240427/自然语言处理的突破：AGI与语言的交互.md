@@ -150,4 +150,3 @@ A: 深度学习在 NLP 中的应用包括机器翻译、文本摘要、情感分
 **Q: NLP 的未来发展趋势是什么？**
 
 A: NLP 的未来发展趋势包括更强大的预训练模型、多模态 NLP 和可解释 NLP。 
-{"msg_type":"generate_answer_finish","data":""}

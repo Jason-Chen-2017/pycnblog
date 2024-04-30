@@ -158,4 +158,3 @@ AI导购Agent可以通过数据脱敏、差分隐私等技术来保护用户隐�
 ### 9.3 如何建立用户对AI导购Agent的信任？
 
 可以通过提供透明的推荐机制、用户评价等方式来建立用户对AI导购Agent的信任。 
-{"msg_type":"generate_answer_finish","data":""}

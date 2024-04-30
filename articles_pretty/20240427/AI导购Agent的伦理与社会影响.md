@@ -139,4 +139,3 @@ Agent 的未来发展也面临着一些挑战：
 **问：Agent 的推荐结果是否总是准确的？**
 
 答：Agent 的推荐结果并非总是准确的，用户需要根据自己的判断进行选择。 
-{"msg_type":"generate_answer_finish","data":""}

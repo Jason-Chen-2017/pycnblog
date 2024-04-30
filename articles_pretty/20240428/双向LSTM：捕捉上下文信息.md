@@ -148,4 +148,3 @@ BiLSTM 的参数选择需要根据具体任务和数据集进行调整，例如 
 ### 9.3 BiLSTM 与其他模型的比较？
 
 BiLSTM 在捕捉上下文信息方面比传统的 NLP 模型更有效，但其训练时间和计算成本也更高。
-{"msg_type":"generate_answer_finish","data":""}

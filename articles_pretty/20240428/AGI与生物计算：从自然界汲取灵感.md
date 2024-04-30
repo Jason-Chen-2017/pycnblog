@@ -89,4 +89,3 @@ $$
 $$
 
 其中，$\tau_{ij}$ 表示路径 $(i,j)$ 上的信息素浓度，$\rho$ 是信息素挥发系数，$\Delta\tau_{ij}^k$ 表示第 $k$ 只蚂蚁在路径 $(i,j)$ 上留下的信息素增量。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -103,4 +103,3 @@ def train_step(images):
 for epoch in range(EPOCHS):
   # ...
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

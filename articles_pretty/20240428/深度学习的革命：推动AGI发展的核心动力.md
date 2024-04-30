@@ -197,4 +197,3 @@ for epoch in range(10):
 *   **正则化:** L1 和 L2 正则化可以限制模型参数的大小，防止模型过拟合。
 *   **Dropout:** Dropout 技术可以随机丢弃一部分神经元，防止模型对特定的神经元过度依赖。
 *   **Early stopping:**  Early stopping 技术可以根据验证集的性能，在模型过拟合之前停止训练。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -155,4 +155,3 @@ Transformer 模型的出现推动了 NLP 领域的快速发展。未来，Transf
 * **模型参数量大，训练成本高。**
 * **模型可解释性差。**
 * **对硬件资源要求较高。** 
-{"msg_type":"generate_answer_finish","data":""}

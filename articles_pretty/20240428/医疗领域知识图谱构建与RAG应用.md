@@ -71,4 +71,3 @@ h_i = f(W \cdot x_{i:i+h-1} + b)
 $$
 
 其中，$x_{i:i+h-1}$ 表示输入句子的第 $i$ 个词到第 $i+h-1$ 个词，$W$ 表示卷积核权重，$b$ 表示偏置项，$f$ 表示激活函数。 
-{"msg_type":"generate_answer_finish","data":""}

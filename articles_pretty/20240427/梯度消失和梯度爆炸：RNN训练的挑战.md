@@ -100,4 +100,3 @@ optimizer = torch.optim.Adam(model.parameters())
 for epoch in range(num_epochs):
     # ... 训练代码 ...
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

@@ -167,4 +167,3 @@ result = private_key.decrypt(encrypted_result)
 **Q: 如何提高 AI 模型的安全性?**
 
 **A:** 可以使用对抗训练、模型加固、异常检测等技术来提高模型的安全性。
-{"msg_type":"generate_answer_finish","data":""}

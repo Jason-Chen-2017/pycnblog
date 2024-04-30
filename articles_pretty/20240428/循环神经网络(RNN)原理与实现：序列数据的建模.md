@@ -105,4 +105,3 @@ model.evaluate(x_test, y_test)
 *   `metrics`：评估指标。
 *   `model.fit`：训练模型。
 *   `model.evaluate`：评估模型。 
-{"msg_type":"generate_answer_finish","data":""}

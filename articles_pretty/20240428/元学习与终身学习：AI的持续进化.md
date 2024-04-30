@@ -57,4 +57,3 @@
 * **基于模型的元学习 (Model-Based Meta-Learning)**: 该方法通过学习一个元模型来预测新任务的模型参数，从而实现快速适应。例如，MAML (Model-Agnostic Meta-Learning) 算法通过学习一个初始化模型，使其能够通过少量样本快速适应新的任务。
 * **基于度量的元学习 (Metric-Based Meta-Learning)**: 该方法通过学习一个度量函数来比较不同任务之间的相似性，从而实现知识迁移。例如，Prototypical Networks 算法通过学习一个原型网络，将每个类别表示为一个原型向量，并通过计算样本与原型之间的距离来进行分类。
 * **基于优化的元学习 (Optimization-Based Meta-Learning)**: 该方法通过学习一个优化器来优化新任务的模型参数，从而实现快速适应。例如，LSTM Meta-Learner 算法使用 LSTM 网络来学习优化器的参数，并根据历史梯度信息来更新模型参数。 
-{"msg_type":"generate_answer_finish","data":""}

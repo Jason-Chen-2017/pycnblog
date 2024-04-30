@@ -203,4 +203,3 @@ RDFox会检测并报告不一致的知识，并提供一些处理不一致知识
 
 RDFox是一款高性能的推理工具，它能够在短时间内处理大规模的知识图谱。
 
-{"msg_type":"generate_answer_finish","data":""}

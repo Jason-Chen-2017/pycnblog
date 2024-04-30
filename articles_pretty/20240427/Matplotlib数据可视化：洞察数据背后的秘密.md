@@ -139,4 +139,3 @@ Matplotlib 在各个领域都有广泛的应用，包括：
 *   **如何添加图例？**
 
     可以使用 `legend()` 方法添加图例。
-{"msg_type":"generate_answer_finish","data":""}

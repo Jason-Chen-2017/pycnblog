@@ -103,4 +103,3 @@ $$
 其中，x和y表示两个变量，$\bar{x}$和$\bar{y}$分别表示x和y的平均值。
 
 **举例:** 
-{"msg_type":"generate_answer_finish","data":""}

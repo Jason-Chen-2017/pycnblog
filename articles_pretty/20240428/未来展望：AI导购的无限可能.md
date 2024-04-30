@@ -125,4 +125,3 @@ AI 导购面临的挑战包括：
 **问：如何评估 AI 导购的性能？**
 
 答：可以通过准确率、召回率等指标来评估 AI 导购的性能。
-{"msg_type":"generate_answer_finish","data":""}

@@ -155,4 +155,3 @@ result = protocol.compute(...)
 # 输出结果
 print(result)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

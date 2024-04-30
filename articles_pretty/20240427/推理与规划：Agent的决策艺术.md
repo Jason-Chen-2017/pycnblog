@@ -164,4 +164,3 @@ def a_star_search(graph, start, goal):
 **Q: 推理和规划有哪些实际应用场景？**
 
 **A:** 推理和规划的实际应用场景包括自动驾驶汽车、游戏AI、机器人等。 
-{"msg_type":"generate_answer_finish","data":""}

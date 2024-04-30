@@ -72,4 +72,3 @@ P(v_i = 1 | h) = \sigma(a_i + \sum_{j} h_j w_{ij})
 $$
 
 其中，$\sigma(x)$ 表示 sigmoid 函数。 
-{"msg_type":"generate_answer_finish","data":""}

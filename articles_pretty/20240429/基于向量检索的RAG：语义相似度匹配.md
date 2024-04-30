@@ -65,4 +65,3 @@ $$
 $$
 
 说明这两个句子语义相似度很高。 
-{"msg_type":"generate_answer_finish","data":""}

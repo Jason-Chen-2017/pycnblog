@@ -82,4 +82,3 @@ Double DQN 的核心在于目标值计算公式的改进，通过使用目标网
 
 * **Q-learning**：目标值计算为 $Y_t = R_{t+1} + \gamma \max_a Q(S_{t+1}, a) = R_{t+1} + \gamma \cdot 10$，可能会高估动作 $a_1$ 的价值。
 * **Double DQN**：目标值计算为 $Y_t = R_{t+1} + \gamma Q(S_{t+1}, \argmax_a Q(S_{t+1}, a; \theta); \theta^-) = R_{t+1} + \gamma Q(S_{t+1}, a_1; \theta^-)$，使用目标网络评估动作 $a_1$ 的价值，有效降低过估计的风险。 
-{"msg_type":"generate_answer_finish","data":""}

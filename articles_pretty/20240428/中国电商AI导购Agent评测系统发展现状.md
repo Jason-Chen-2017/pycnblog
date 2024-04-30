@@ -158,4 +158,3 @@ A: 可以通过任务完成率、对话流畅度、推荐准确率、用户满�
 **Q: AI导购Agent有哪些局限性？**
 
 A: AI导购Agent目前还存在理解能力有限、缺乏情感交流、无法处理复杂问题等局限性。
-{"msg_type":"generate_answer_finish","data":""}

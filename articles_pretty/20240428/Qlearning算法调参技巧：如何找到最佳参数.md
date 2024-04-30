@@ -87,4 +87,3 @@ def q_learning(env, num_episodes=1000, alpha=0.1, gamma=0.95):
     
     return q_table
 ```
-{"msg_type":"generate_answer_finish","data":""}

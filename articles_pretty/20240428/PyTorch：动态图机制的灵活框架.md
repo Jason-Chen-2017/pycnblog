@@ -119,4 +119,3 @@ for epoch in range(100):
 * `loss.backward()`: 反向传播计算梯度。
 * `optimizer.step()`: 更新模型参数。
 * `optimizer.zero_grad()`: 清空梯度。 
-{"msg_type":"generate_answer_finish","data":""}

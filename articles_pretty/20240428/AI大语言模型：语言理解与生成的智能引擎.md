@@ -135,4 +135,3 @@ class Transformer(tf.keras.Model):
 ### 9.3 大语言模型的未来发展方向是什么？
 
 大语言模型的未来发展方向包括模型规模更大、多模态学习和可解释性等。 
-{"msg_type":"generate_answer_finish","data":""}

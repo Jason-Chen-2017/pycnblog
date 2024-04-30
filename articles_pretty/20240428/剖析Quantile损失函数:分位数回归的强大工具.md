@@ -135,4 +135,3 @@ y_pred = model.predict(X_test)
 ### 9.3 如何评估分位数回归模型的性能？
 
 可以使用分位数损失函数或其他指标，例如分位数得分或覆盖率，来评估分位数回归模型的性能。 
-{"msg_type":"generate_answer_finish","data":""}

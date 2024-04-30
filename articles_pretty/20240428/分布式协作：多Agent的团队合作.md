@@ -101,4 +101,3 @@ agent2.set_behavior(...)
 # 运行仿真
 env.run()
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

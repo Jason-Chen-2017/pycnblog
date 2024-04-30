@@ -85,4 +85,3 @@ $$
 **Q-Learning 算法**
 
 Q-Learning 算法的目标是学习状态-动作价值函数 $Q(s, a)$，它表示在状态 $s$ 下执行动作 $a$ 所能获得的期望回报。Q-Learning 的更新公式如下： 
-{"msg_type":"generate_answer_finish","data":""}

@@ -69,4 +69,3 @@ $$ \min_G \max_D V(D, G) = \mathbb{E}_{x \sim p_{data}(x)}[\log D(x)] + \mathbb{
 - **特征重要性分析:** 通过计算每个特征的梯度或排列重要性来评估其影响。
 - **LIME:** 通过在样本周围生成扰动样本，并训练一个局部线性模型来解释模型的预测。
 - **Shapley 值:** 通过计算每个特征在所有可能的特征组合中的边际贡献来量化其影响。 
-{"msg_type":"generate_answer_finish","data":""}

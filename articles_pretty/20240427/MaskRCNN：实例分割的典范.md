@@ -153,4 +153,3 @@ Mask R-CNN的主要局限性在于速度较慢，难以满足实时应用的需�
 ### 9.4 Mask R-CNN的未来发展方向是什么？
 
 Mask R-CNN的未来发展方向包括提高实时性、小目标分割和弱监督学习等。 
-{"msg_type":"generate_answer_finish","data":""}

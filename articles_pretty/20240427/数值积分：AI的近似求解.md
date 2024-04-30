@@ -68,4 +68,3 @@ $$
 $$
 \int_a^b f(x) dx \approx \frac{h}{2} \left[ f(a) + 2 \sum_{i=1}^{n-1} f(x_i) + f(b) \right] 
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

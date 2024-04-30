@@ -125,4 +125,3 @@ model.fit(X_train, y_train, epochs=10)
 # 预测跌倒风险
 predicted_risk = model.predict(X_test)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

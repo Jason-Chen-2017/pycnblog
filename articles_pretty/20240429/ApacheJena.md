@@ -97,4 +97,3 @@ try (QueryExecution qexec = QueryExecutionFactory.create(query, model)) {
 ```
 
 This code snippet demonstrates how to load an RDF model from a file, create a SPARQL query to retrieve the names of all persons, execute the query, and print the results. 
-{"msg_type":"generate_answer_finish","data":""}

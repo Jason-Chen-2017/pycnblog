@@ -202,4 +202,3 @@ scikit-learn 是一个 Python 机器学习库，提供了各种常用的机器�
 ### 9.3 如何降低 AI 技术门槛?
 
 可以使用云计算平台提供的 AI 服务，例如亚马逊云科技的 Amazon Personalize 和阿里云的 PAI 等，这些服务可以帮助电商平台快速搭建 AI 应用，无需专业的 AI 团队。
-{"msg_type":"generate_answer_finish","data":""}

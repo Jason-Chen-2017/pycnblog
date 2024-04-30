@@ -191,4 +191,3 @@ A: 提高 GAN 生成的文本质量可以通过以下方法：
 **Q: GAN 可以用于生成其他类型的数据吗？**
 
 A: 可以，GAN 可以用于生成图像、音频、视频等各种类型的数据。
-{"msg_type":"generate_answer_finish","data":""}

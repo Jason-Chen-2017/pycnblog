@@ -120,4 +120,3 @@ A：可以使用ReLU函数的变体，例如Leaky ReLU、ELU等。
 **Q：ReLU函数的应用场景有哪些？**
 
 A：ReLU函数广泛应用于图像分类、自然语言处理、语音识别等深度学习任务。
-{"msg_type":"generate_answer_finish","data":""}

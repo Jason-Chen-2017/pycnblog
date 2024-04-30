@@ -78,4 +78,3 @@ $$ V(s) = \max_a Q(s, a) $$
 $$ Q(s, a) = R(s, a) + \gamma \sum_{s'} P(s' | s, a) V(s') $$
 
 其中，$R(s, a)$ 表示在状态 $s$ 下执行动作 $a$ 后所能获得的立即奖励，$P(s' | s, a)$ 表示从状态 $s$ 执行动作 $a$ 后转移到状态 $s'$ 的概率。 
-{"msg_type":"generate_answer_finish","data":""}

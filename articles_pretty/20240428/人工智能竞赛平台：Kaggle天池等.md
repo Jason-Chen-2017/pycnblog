@@ -97,4 +97,3 @@ $$
 $$
 f(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

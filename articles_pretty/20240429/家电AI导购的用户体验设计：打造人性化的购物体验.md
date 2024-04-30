@@ -129,4 +129,3 @@ print(similar_products)
 *   **问：如何保证 AI 导购的推荐结果的准确性？**
 
     答：通过不断优化算法模型，并结合用户反馈，可以提高 AI 导购的推荐准确率。 
-{"msg_type":"generate_answer_finish","data":""}

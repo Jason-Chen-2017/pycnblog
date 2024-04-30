@@ -95,4 +95,3 @@ for row in
 * `csv.reader()`函数用于创建一个CSV文件读取器对象。
 * `list()`函数将读取器对象转换成一个列表，其中每个元素代表CSV文件的一行数据。
 * `for`循环遍历列表中的每一行数据，并打印出来。 
-{"msg_type":"generate_answer_finish","data":""}

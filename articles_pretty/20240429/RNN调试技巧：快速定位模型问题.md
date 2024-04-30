@@ -93,4 +93,3 @@ LSTM的数学模型比RNN更加复杂，包含三个门控机制：
 $$
 i_t = \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i)
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

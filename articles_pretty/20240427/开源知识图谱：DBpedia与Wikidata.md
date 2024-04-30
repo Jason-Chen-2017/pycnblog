@@ -80,4 +80,3 @@ for result in results["results"]["bindings"]:
 ```
 
 这段代码首先设置 SPARQL 查询端点为 DBpedia 的 SPARQL endpoint，然后构建一个 SPARQL 查询语句，用于查询人物的姓名和出生地。最后，执行 SPARQL 查询并打印查询结果。 
-{"msg_type":"generate_answer_finish","data":""}

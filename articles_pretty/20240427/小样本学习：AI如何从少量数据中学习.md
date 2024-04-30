@@ -190,4 +190,3 @@ def loss_function(x, y):
 ### 9.3 如何评估小样本学习模型的性能？
 
 可以使用 N-way K-shot 分类准确率等指标来评估小样本学习模型的性能。 
-{"msg_type":"generate_answer_finish","data":""}

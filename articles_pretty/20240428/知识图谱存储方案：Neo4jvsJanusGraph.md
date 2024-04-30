@@ -70,4 +70,3 @@ JanusGraph 支持多种存储后端，并提供 Gremlin 查询语言进行图遍
 * **图遍历算法**：Gremlin 提供丰富的图遍历步骤，例如 `out()`、`in()`、`both()` 等。
 * **索引算法**：JanusGraph 支持多种索引，例如 Elasticsearch、Solr 等，用于快速定位顶点和边。
 * **查询优化算法**：JanusGraph 优化 Gremlin 查询语句，并根据存储后端的特点进行优化。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -68,4 +68,3 @@ GRU单元包含两个门：更新门和重置门。
 **更新门**：$z_t = \sigma(W_z \cdot [h_{t-1}, x_t] + b_z)$
 
 **重置门**：$r_t = \sigma(W_r \cdot [h_{t-1}, x_t] + b_r)$ 
-{"msg_type":"generate_answer_finish","data":""}

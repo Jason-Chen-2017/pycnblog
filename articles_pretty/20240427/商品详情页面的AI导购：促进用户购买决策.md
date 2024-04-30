@@ -83,4 +83,3 @@ Score(u,i) = \sum_{w \in W_u} TFIDF(w,i)
 $$
 
 其中，$Score(u,i)$ 表示用户 $u$ 对商品 $i$ 的推荐得分，$W_u$ 表示用户 $u$ 画像中的关键词集合，$TFIDF(w,i)$ 表示关键词 $w$ 在商品 $i$ 中的 TF-IDF 值。 
-{"msg_type":"generate_answer_finish","data":""}

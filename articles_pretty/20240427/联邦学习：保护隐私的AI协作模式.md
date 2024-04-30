@@ -205,4 +205,3 @@ global_model = bob_model.secure_aggregate(alice_model)
 ### 9.4 联邦学习的未来发展方向是什么？
 
 联邦学习的未来发展方向包括与其他技术的融合、垂直联邦学习和联邦迁移学习、联邦学习标准化等。
-{"msg_type":"generate_answer_finish","data":""}

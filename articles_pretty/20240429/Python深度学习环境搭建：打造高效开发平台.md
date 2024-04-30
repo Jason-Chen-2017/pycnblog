@@ -112,4 +112,3 @@ for epoch in range(5):
 # 评估模型
 # ... 评估代码 ... 
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

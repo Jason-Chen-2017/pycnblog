@@ -110,4 +110,3 @@ Supervised Fine-Tuning 是一种有效的迁移学习技术，可以帮助我们
 * **如何调整超参数？**
 
    可以使用网格搜索或随机搜索等方法调整超参数，例如学习率、批大小和训练轮数等。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -174,4 +174,3 @@ pipeline.train(num_epochs=10)
 #### 9.3 如何解决 RLHF 模型的过拟合问题？
 
 RLHF 模型的过拟合问题可以通过多种方法解决，例如增加训练数据量、使用正则化技术、采用 Dropout 等方法。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -100,4 +100,3 @@ images = tokenizer.decode(output[0])
 *   **视频创作**: VideoGPT 和 CogVideo 可以用于生成各种类型的视频，例如动画、电影、广告等。
 *   **视频编辑**: 可以使用这些模型来修改或增强现有的视频，例如添加特效、改变背景等。
 *   **视频预测**: 可以利用这些模型来预测视频的未来帧，例如预测交通流量、人群行为等。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -132,4 +132,3 @@ print(f"地震发生的概率为：{probability:.2f}")
 **问： 如何确保 AGI 预警信息的准确性？**
 
 **答：**  需要对 AGI 模型进行严格的测试和评估，并建立有效的反馈机制，不断改进模型的性能。
-{"msg_type":"generate_answer_finish","data":""}

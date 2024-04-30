@@ -126,4 +126,3 @@ def authorize(user, action, resource):
 ### 9.2 如何评估系统的安全性？
 
 可以通过安全测试、漏洞扫描等方法评估系统的安全性。
-{"msg_type":"generate_answer_finish","data":""}

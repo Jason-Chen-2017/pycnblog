@@ -60,4 +60,3 @@ class CNN(nn.Module):
         x = self.fc3(x)
         return x
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

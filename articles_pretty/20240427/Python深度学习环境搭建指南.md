@@ -134,4 +134,3 @@ model.evaluate(x_test, y_test)
 ```
 
 该代码首先定义了一个包含两个全连接层的简单神经网络模型，然后编译模型并设置优化器、损失函数和评估指标，最后使用训练数据训练模型并评估模型在测试数据上的性能。 
-{"msg_type":"generate_answer_finish","data":""}

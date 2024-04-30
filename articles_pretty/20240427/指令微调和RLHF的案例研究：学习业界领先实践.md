@@ -69,4 +69,3 @@ RLHF 的数学模型可以表示为：
 $$
 J(\theta) = E_{\pi_{\theta}}[R]
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

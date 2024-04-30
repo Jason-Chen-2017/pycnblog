@@ -93,4 +93,3 @@ sim(A, B) = \frac{(5 - 4.5)(5 - 4.5)}{\sqrt{(5 - 4.5)^2}\sqrt{(5 - 4.5)^2}} = 1
 $$
 
 由于用户 A 和用户 B 的相似度很高，因此可以将用户 A 购买过的其他商品推荐给用户 B。 
-{"msg_type":"generate_answer_finish","data":""}

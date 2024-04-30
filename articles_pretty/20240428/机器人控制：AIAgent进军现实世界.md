@@ -174,4 +174,3 @@ AIAgent可以用于各种类型的机器人，例如工业机器人、服务机�
 ### 9.3 AIAgent的未来发展趋势是什么？
 
 AIAgent的未来发展趋势包括更智能、更安全、更易用。
-{"msg_type":"generate_answer_finish","data":""}

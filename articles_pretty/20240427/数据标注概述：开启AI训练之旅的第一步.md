@@ -135,4 +135,3 @@ labelimg
 * **问：数据标注的未来发展趋势是什么？**
 
 答：数据标注的未来发展趋势是自动化、智能化和众包。
-{"msg_type":"generate_answer_finish","data":""}

@@ -163,4 +163,3 @@ AI导购Agent评测系统是电商行业数字化转型的重要工具，未来�
 ### 9.2 如何提高AI导购Agent的性能？
 
 可以通过优化算法、增加训练数据、改进知识图谱等方式提高AI导购Agent的性能。 
-{"msg_type":"generate_answer_finish","data":""}

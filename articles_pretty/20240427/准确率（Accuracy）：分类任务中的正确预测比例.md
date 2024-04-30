@@ -100,4 +100,3 @@ y_pred = model.predict(X_test)
 # 评估模型的准确率
 accuracy = model.score(X_test, y_test)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

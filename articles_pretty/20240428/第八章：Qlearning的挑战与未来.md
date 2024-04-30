@@ -171,4 +171,3 @@ Q-learning算法可以应用于各种实际场景，例如：
 ### 9.3 Q-learning算法如何避免陷入局部最优？
 
 可以使用 epsilon-greedy 策略来平衡探索与利用，或者使用更复杂的探索策略，例如softmax exploration。
-{"msg_type":"generate_answer_finish","data":""}

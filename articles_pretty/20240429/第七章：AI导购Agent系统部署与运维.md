@@ -105,4 +105,3 @@ AI 导购 Agent 系统的未来发展趋势包括：
 *   **问：如何防止 AI 导购 Agent 系统的推荐结果过于单一？**
 
     答：可以采用多样性推荐算法，确保推荐结果的多样性。
-{"msg_type":"generate_answer_finish","data":""}

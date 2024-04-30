@@ -91,4 +91,4 @@ $$
 y = w^T x + \sum_{i=1}^n \sum_{j=i+1}^n <v_i, v_j> x_i x_j
 $$
 
-其中，$v_i$ 和 $v_j$ 是{"msg_type":"generate_answer_finish","data":""}
+其中，$v_i$ 和 $v_j$ 是

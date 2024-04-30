@@ -110,4 +110,3 @@ optimizer = tfp.DPAdamOptimizer(
 *   隐私增强技术：例如同态加密、安全多方计算等技术将得到进一步发展。
 *   数据治理：数据治理框架和标准将更加完善。
 *   伦理规范：人工智能伦理规范将更加普及和规范化。 
-{"msg_type":"generate_answer_finish","data":""}

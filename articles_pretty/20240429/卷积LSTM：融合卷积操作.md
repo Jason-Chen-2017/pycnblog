@@ -131,4 +131,3 @@ A：卷积 LSTM 能够更好地处理具有空间结构的时间序列数据，�
 **Q：卷积 LSTM 的应用场景有哪些？**
 
 A：卷积 LSTM 可以应用于视频预测、气象预测、交通流量预测等领域。
-{"msg_type":"generate_answer_finish","data":""}

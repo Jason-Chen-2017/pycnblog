@@ -172,4 +172,3 @@ recommended_items = predictions.argsort()[::-1]
 *   **基于内容的推荐**: 根据商品属性进行推荐，即使没有用户行为数据，也可以进行推荐。
 *   **专家推荐**: 由专家制定推荐规则，为新用户或新商品进行推荐。
 *   **混合推荐**: 结合多种推荐算法，提高推荐系统的鲁棒性。 
-{"msg_type":"generate_answer_finish","data":""}

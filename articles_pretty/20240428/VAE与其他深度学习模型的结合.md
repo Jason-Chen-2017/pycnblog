@@ -64,4 +64,3 @@ $$
 其中，$Enc(x)$ 表示编码器网络，$\mu(x)$ 和 $\sigma(x)$ 分别表示隐变量 z 的均值和方差。
 
 ### 4.2 解码器网络 
-{"msg_type":"generate_answer_finish","data":""}

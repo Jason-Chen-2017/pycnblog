@@ -140,4 +140,3 @@ optimizer = ...
 ## 6. 实际应用场景
 
 * **客服机器人:** 情感智能的客服机器人可以识别用户的情绪，并根据用户的 
-{"msg_type":"generate_answer_finish","data":""}

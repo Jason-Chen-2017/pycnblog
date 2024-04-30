@@ -96,4 +96,3 @@ AGI 技术可以用于开发更智能的虚拟助手，例如 Siri 和 Alexa，�
 ### 6.3 医疗诊断
 
 AGI 技术可以用于辅助医生进行医疗诊断，例如分析医学影像、预测疾病风险等。 
-{"msg_type":"generate_answer_finish","data":""}

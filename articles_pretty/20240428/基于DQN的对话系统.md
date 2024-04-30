@@ -87,4 +87,3 @@ r_t + \gamma \max_{a'} Q(s_{t+1}, a'; \theta^-) & \text{otherwise}
 $$
 
 其中，$\theta^-$ 表示目标网络参数。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -181,4 +181,3 @@ for epoch in range(num_epochs):
 ### 9.3 如何评估模型性能？
 
 可以使用准确率、召回率、F1 值等指标来评估模型性能。
-{"msg_type":"generate_answer_finish","data":""}

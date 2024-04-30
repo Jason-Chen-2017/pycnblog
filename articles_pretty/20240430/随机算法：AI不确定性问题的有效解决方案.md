@@ -127,4 +127,3 @@ def simulated_annealing(objective_function, search_space, initial_temperature, c
         temperature *= cooling_rate
     return current_solution
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

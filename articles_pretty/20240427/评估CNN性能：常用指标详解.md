@@ -162,4 +162,3 @@ roc_auc = auc(fpr, tpr)
 ### 9.3 如何解释 CNN 模型的预测结果？
 
 可以使用可解释性技术，例如特征重要性分析、可视化等，解释 CNN 模型的预测结果。
-{"msg_type":"generate_answer_finish","data":""}

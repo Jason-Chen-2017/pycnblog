@@ -260,4 +260,3 @@ nltk.download()
 **Q: 如何选择合适的 NLP 工具？**
 
 A: 根据具体的 NLP 任务和需求选择合适的工具，例如 NLTK 适用于研究和教育，而 SpaCy 适用于工业应用。
-{"msg_type":"generate_answer_finish","data":""}

@@ -85,4 +85,3 @@ MultiHead(Q, K, V) = Concat(head_1, ..., head_h)W^O
 $$
 
 其中，$head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)$，$W_i^Q$、$W_i^K$ 和 $W_i^V$ 是第 $i$ 个注意力头的线性变换矩阵，$W^O$ 是输出线性变换矩阵。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -147,4 +147,3 @@ from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 users[['age']] = scaler.fit_transform(users[['age']])
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

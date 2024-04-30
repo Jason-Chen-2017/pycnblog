@@ -78,4 +78,3 @@ $$
 * $tanh$ 是双曲正切函数
 * $W_C$ 是候选细胞状态的权重矩阵
 * $b_C$ 是候选细胞状态的偏置向量 
-{"msg_type":"generate_answer_finish","data":""}

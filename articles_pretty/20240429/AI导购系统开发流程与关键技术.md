@@ -95,4 +95,3 @@ for user in similar_users:
 # 打印推荐列表
 print(recommendations)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

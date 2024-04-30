@@ -117,4 +117,3 @@ print(recommendations)
 ### 8.2 AI玩具会取代传统玩具吗？
 
 AI玩具并不会取代传统玩具，而是为孩子们提供更多元的玩乐方式。传统玩具仍然具有其独特的价值，例如培养孩子的动手能力和想象力。
-{"msg_type":"generate_answer_finish","data":""}

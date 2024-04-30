@@ -144,4 +144,3 @@ A: Bregman损失函数的计算复杂度取决于所选择的凸函数 $\phi$。
 **Q: 如何将Bregman损失函数应用于深度学习？**
 
 A: 可以将Bregman损失函数作为深度学习模型的损失函数，并使用反向传播算法进行训练。 
-{"msg_type":"generate_answer_finish","data":""}

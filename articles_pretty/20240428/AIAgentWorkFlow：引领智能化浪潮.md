@@ -121,4 +121,3 @@ A: AIAgentWorkFlow适用于各种智能化应用场景，例如智能客服、�
 **Q: 如何学习AIAgentWorkFlow？**
 
 A: 可以参考AIAgentWorkFlow的官方文档和开源代码，也可以参加相关的培训课程或社区活动。
-{"msg_type":"generate_answer_finish","data":""}

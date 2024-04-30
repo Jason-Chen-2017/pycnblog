@@ -75,4 +75,3 @@ $$
 ### 5.2 差分隐私
 
 差分隐私是一种保护数据隐私的技术，它可以添加噪声到数据中，使攻击者无法通过分析数据推断出个体信息。可以使用 TensorFlow Privacy 等库来实现差分隐私。 
-{"msg_type":"generate_answer_finish","data":""}

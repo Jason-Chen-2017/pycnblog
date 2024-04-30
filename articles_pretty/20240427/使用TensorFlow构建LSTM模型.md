@@ -68,4 +68,3 @@ $$
 * $h_{t-1}$ 是前一个时间步的隐藏状态。
 * $x_t$ 是当前时间步的输入。
 * $b_f$ 是遗忘门的偏置项。 
-{"msg_type":"generate_answer_finish","data":""}

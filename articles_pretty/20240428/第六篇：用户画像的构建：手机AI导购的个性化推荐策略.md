@@ -131,4 +131,3 @@ print(recommended_items)
 *   **问：如何保护用户数据隐私？**
 
     **答：** 可以采用数据匿名化、差分隐私、联邦学习等技术保护用户数据隐私。 
-{"msg_type":"generate_answer_finish","data":""}

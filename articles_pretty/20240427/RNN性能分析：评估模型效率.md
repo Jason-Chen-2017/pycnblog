@@ -171,4 +171,3 @@ RNN仍然面临一些挑战，例如：
 ### 9.3 如何提高RNN模型的效率？
 
 可以使用GPU加速、模型压缩等方法来提高RNN模型的效率。
-{"msg_type":"generate_answer_finish","data":""}

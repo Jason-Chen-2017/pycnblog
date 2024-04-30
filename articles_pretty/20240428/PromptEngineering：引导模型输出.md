@@ -130,4 +130,3 @@ Prompt Engineering也面临一些挑战，例如：
 * **Q: 如何避免Prompt Engineering的伦理问题?**
 
 * A: 需要建立相应的伦理规范和监管机制，防止Prompt Engineering被用于生成虚假信息或恶意内容。
-{"msg_type":"generate_answer_finish","data":""}

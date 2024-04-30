@@ -109,4 +109,3 @@ RNN 可以用于语音识别，例如将语音转换成文本。
 *   模型复杂度
 *   训练效率
 *   可解释性
-{"msg_type":"generate_answer_finish","data":""}

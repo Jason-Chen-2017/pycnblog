@@ -156,4 +156,3 @@ A：AIAgentWorkFlow 的优势包括：
 **Q：AIAgentWorkFlow 的应用案例有哪些？**
 
 A：AIAgentWorkFlow 已经应用于多个领域，例如智能制造、智慧城市、智能医疗、智能金融等。例如，在智能制造领域，AIAgentWorkFlow 可以用于自动化生产线、智能物流、质量控制等；在智慧城市领域，AIAgentWorkFlow 可以用于交通管理、环境监测、公共安全等。
-{"msg_type":"generate_answer_finish","data":""}

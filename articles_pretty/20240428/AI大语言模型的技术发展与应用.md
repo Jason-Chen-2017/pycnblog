@@ -132,4 +132,3 @@ LLM 的性能可以通过 perplexity、BLEU score 等指标来评估。
 ### 9.3 如何解决 LLM 的数据偏见问题？
 
 可以通过数据清洗、模型改进等方法来解决 LLM 的数据偏见问题。
-{"msg_type":"generate_answer_finish","data":""}

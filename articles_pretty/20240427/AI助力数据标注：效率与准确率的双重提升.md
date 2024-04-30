@@ -93,4 +93,3 @@ F1-score 是精确率和召回率的调和平均值，用于综合评估模型�
 $$
 F1 = 2 \times \frac{Precision \times Recall}{Precision + Recall}
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

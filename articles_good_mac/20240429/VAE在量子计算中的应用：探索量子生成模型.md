@@ -169,4 +169,3 @@ train(model, data, optimizer)
 ### 9.3 量子生成模型的应用前景如何？
 
 量子生成模型具有广泛的应用前景，例如药物发现、材料设计、金融建模等领域。
-{"msg_type":"generate_answer_finish","data":""}

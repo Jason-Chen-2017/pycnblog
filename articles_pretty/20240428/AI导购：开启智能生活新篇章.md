@@ -105,4 +105,3 @@ recommendations = similar_user_items.head(10)
 
 print(recommendations)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

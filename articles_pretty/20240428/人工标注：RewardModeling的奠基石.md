@@ -177,4 +177,3 @@ def reward_model(state, action):
 * **制定清晰的标注指南**: 明确标注的标准和要求。
 * **进行标注者培训**: 确保标注者理解标注任务和标注指南。
 * **进行质量控制**: 定期检查标注结果，及时发现和纠正错误。
-{"msg_type":"generate_answer_finish","data":""}

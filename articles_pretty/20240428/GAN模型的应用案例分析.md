@@ -189,4 +189,3 @@ GAN Zoo是一个收集了各种GAN模型的网站，用户可以在这里找到�
 * **视觉评估:** 通过肉眼观察生成样本的质量。
 * **Inception Score (IS):** 衡量生成样本的质量和多样性。
 * **Fréchet Inception Distance (FID):** 衡量生成样本与真实数据之间的距离。
-{"msg_type":"generate_answer_finish","data":""}

@@ -113,4 +113,3 @@ recommendations = similar_user_items[~ratings.loc[user_id].isin(similar_user_ite
 *   **数据隐私**: 如何在保护用户隐私的前提下，收集和利用用户数据。
 *   **算法可解释性**: 如何解释 AI 导购系统的推荐结果，提升用户的信任度。
 *   **算法公平性**: 如何避免 AI 导购系统产生歧视或偏见。
-{"msg_type":"generate_answer_finish","data":""}

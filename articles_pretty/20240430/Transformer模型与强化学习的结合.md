@@ -197,4 +197,3 @@ for epoch in range(num_epochs):
 **问：** Transformer 模型与强化学习结合有哪些应用场景？
 
 **答：** 应用场景包括对话系统、文本生成和机器翻译。
-{"msg_type":"generate_answer_finish","data":""}

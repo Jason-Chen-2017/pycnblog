@@ -194,4 +194,3 @@ pip install gym
 ### 9.5 如何将强化学习算法应用到实际问题中？
 
 需要根据实际问题的特点设计合适的环境和奖励函数，并选择合适的算法进行训练。
-{"msg_type":"generate_answer_finish","data":""}

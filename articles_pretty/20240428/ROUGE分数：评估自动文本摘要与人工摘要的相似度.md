@@ -135,4 +135,3 @@ ROUGE 分数是一种简单有效的自动文摘评估指标，但它也存在�
 ### 9.2 如何选择合适的ROUGE指标？
 
 选择合适的 ROUGE 指标取决于具体的应用场景。例如，如果关注的是摘要的忠实度，可以选择 ROUGE-L；如果关注的是摘要的流畅度，可以选择 ROUGE-W。
-{"msg_type":"generate_answer_finish","data":""}

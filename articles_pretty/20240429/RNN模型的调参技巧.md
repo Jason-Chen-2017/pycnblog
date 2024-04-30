@@ -99,4 +99,3 @@ model.fit(x_train, y_train, epochs=10)
 * `Dense` 层定义了一个全连接层，用于将 RNN 的输出映射到最终的输出类别。
 * `compile` 方法用于配置模型的训练参数，包括损失函数、优化器和评估指标。
 * `fit` 方法用于训练模型，`x_train` 和 `y_train` 分别是训练数据和标签，`epochs` 参数指定训练轮数。 
-{"msg_type":"generate_answer_finish","data":""}

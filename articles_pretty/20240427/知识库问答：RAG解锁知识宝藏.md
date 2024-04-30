@@ -150,4 +150,3 @@ RAG模型为KBQA提供了新的思路，未来发展趋势包括：
 ### 9.2  如何评估RAG模型的效果？
 
 可以使用标准的QA评估指标，例如BLEU、ROUGE等。
-{"msg_type":"generate_answer_finish","data":""}

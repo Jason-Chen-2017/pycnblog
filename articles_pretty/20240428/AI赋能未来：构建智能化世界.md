@@ -84,4 +84,3 @@ P(y=1) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x
 $$
 
 其中，$P(y=1)$ 是结果为 1 的概率，$x_1, x_2, ..., x_n$ 是预测变量，$\beta_0, \beta_1, ..., \beta_n$ 是模型参数。 
-{"msg_type":"generate_answer_finish","data":""}

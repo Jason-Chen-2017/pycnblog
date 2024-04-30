@@ -127,4 +127,3 @@ CGANs 可以应用于图像生成、文本生成、语音合成等领域。
 ### 9.3 CGANs 的未来发展趋势是什么？
 
 CGANs 的未来发展趋势可能包括更精细的条件控制、多模态生成和可解释性等。
-{"msg_type":"generate_answer_finish","data":""}

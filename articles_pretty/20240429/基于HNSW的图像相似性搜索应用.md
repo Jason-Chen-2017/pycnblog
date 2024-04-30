@@ -79,4 +79,3 @@ print(distances)
 HNSW 算法在图像相似性搜索领域具有广泛的应用场景，例如：
 
 * **图像检索：** 
-{"msg_type":"generate_answer_finish","data":""}

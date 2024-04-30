@@ -132,4 +132,3 @@ A: 未来 RAG 和知识图谱结合的发展趋势主要包括：
 * **多模态知识图谱**
 * **动态知识图谱**
 * **可解释的 RAG** 
-{"msg_type":"generate_answer_finish","data":""}

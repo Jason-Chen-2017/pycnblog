@@ -68,4 +68,3 @@ DRL 领域存在多种算法，以下是一些常用的算法及其操作步骤�
     * 使用 Critic 网络评估状态的价值。
     * 使用策略梯度更新 Actor 网络的参数。
     * 使用时序差分 (Temporal-Difference，TD) 算法更新 Critic 网络的参数。 
-{"msg_type":"generate_answer_finish","data":""}

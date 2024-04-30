@@ -224,4 +224,3 @@ LSTM 和 GRU 都是 RNN 的变体，它们通过引入门控机制来解决 RNN 
 ### 9.3 如何处理 RNN、LSTM 或 GRU 的过拟合问题？
 
 可以使用正则化技术，例如 L1 正则化、L2 正则化或 Dropout，来处理 RNN、LSTM 或 GRU 的过拟合问题。
-{"msg_type":"generate_answer_finish","data":""}

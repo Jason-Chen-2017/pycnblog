@@ -115,4 +115,3 @@ version_b = "推荐算法 B"
 version = ab_test(user_id, version_a, version_b)
 print(f"用户 {user_id} 被分配到版本: {version}")
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

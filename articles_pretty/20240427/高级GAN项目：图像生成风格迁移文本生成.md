@@ -236,4 +236,3 @@ GAN 领域正在快速发展，一些有前景的未来发展趋势包括：
 *   **视觉检查**：检查生成的图像是否逼真且多样化。
 *   **定量指标**：使用诸如 Inception Score (IS) 或 Fréchet Inception Distance (FID) 等指标来衡量生成的图像的质量。
 *   **人类评估**：让人类评估者对生成的图像进行评分。
-{"msg_type":"generate_answer_finish","data":""}

@@ -91,4 +91,3 @@ $$
 $$
 score = w_1 \times score_{cf} + w_2 \times score_{cb}
 $$ 
-{"msg_type":"generate_answer_finish","data":""}

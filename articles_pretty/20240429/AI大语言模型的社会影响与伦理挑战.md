@@ -85,4 +85,3 @@ generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
 
 print(generated_text)
 ``` 
-{"msg_type":"generate_answer_finish","data":""}

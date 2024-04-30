@@ -99,4 +99,3 @@ caption = model.predict(image)
 
 ### 6.3 人机交互
 图像caption可以作为人机交互的一种方式，例如，用户可以通过语音或文字描述图像，计算机可以自动生成相应的图像。 
-{"msg_type":"generate_answer_finish","data":""}

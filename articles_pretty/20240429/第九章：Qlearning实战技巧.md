@@ -152,4 +152,3 @@ Q-learning 算法可以通过 epsilon-greedy 策略来平衡探索和利用。ep
 #### 9.3 Q-learning 算法如何处理延迟奖励？
 
 Q-learning 算法通过折扣因子来处理延迟奖励。折扣因子控制着未来奖励的重要性，较大的折扣因子表示智能体更关注未来奖励，较小的折扣因子表示智能体更关注当前奖励。
-{"msg_type":"generate_answer_finish","data":""}

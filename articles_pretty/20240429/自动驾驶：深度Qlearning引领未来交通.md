@@ -150,4 +150,3 @@ def q_learning(state, action, reward, next_state, done):
 *   训练过程需要大量数据 and 计算资源。
 *   容易出现过拟合问题。
 *   难以解释模型的决策过程。
-{"msg_type":"generate_answer_finish","data":""}

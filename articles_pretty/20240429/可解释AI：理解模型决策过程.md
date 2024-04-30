@@ -96,4 +96,3 @@ shap.summary_plot(shap_values, X_test)
 * **金融风控:** 解释信用评分模型的决策过程，识别潜在的风险因素。
 * **医疗诊断:** 解释疾病预测模型的预测结果，帮助医生做出更准确的诊断。
 * **自动驾驶:** 解释自动驾驶系统
-{"msg_type":"generate_answer_finish","data":""}

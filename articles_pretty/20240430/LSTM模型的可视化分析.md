@@ -162,4 +162,3 @@ LSTM 通过门控机制来控制信息的流动，从而有效地解决梯度消
 *   可解释性较差。
 
 
-{"msg_type":"generate_answer_finish","data":""}

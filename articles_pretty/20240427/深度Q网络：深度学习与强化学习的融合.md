@@ -80,4 +80,3 @@ L(\theta) = \frac{1}{N} \sum_{i=1}^N (Q_{target} - Q(s, a; \theta))^2
 $$
 
 其中，$N$是样本数量，$\theta$是主网络的参数。 
-{"msg_type":"generate_answer_finish","data":""}

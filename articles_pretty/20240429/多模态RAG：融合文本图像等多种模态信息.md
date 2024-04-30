@@ -67,4 +67,3 @@ Bilinear(x, y) = x^TWy
 $$
 
 其中，$x$ 和 $y$ 分别表示文本和图像的特征向量，$W$ 表示可学习的权重矩阵。 
-{"msg_type":"generate_answer_finish","data":""}

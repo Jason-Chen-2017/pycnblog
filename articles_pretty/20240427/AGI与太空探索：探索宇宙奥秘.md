@@ -71,4 +71,3 @@ NASA 的 Curiosity 和 Perseverance 火星车都使用了自动驾驶技术，�
 ### 5.2 星系动物园项目
 
 星系动物园项目是一个公民科学项目，利用志愿者的力量对星系图像进行分类。该项目使用了机器学习算法来辅助分类，并取得了显著成果。 
-{"msg_type":"generate_answer_finish","data":""}

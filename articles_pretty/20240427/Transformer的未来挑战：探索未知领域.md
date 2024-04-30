@@ -139,4 +139,3 @@ Transformer 模型在 NLP 领域有着广泛的应用，包括：
 * **任务类型：** 不同的 NLP 任务需要不同的 Transformer 模型。
 * **数据集大小：** 数据集大小会影响模型的性能和训练时间。
 * **计算资源：** 可用的计算资源会限制模型的大小和复杂度。
-{"msg_type":"generate_answer_finish","data":""}

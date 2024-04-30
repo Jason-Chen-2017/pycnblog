@@ -142,4 +142,3 @@ A: TRPO 的主要超参数包括 KL 散度阈值 $\delta$ 和学习率。选择�
 **Q: TRPO 算法的缺点是什么？**
 
 A: TRPO 算法的计算成本较高，因为它需要求解约束优化问题。此外，TRPO 对超参数的选择也比较敏感。 
-{"msg_type":"generate_answer_finish","data":""}

@@ -69,4 +69,3 @@ Q-learning算法是强化学习中的一种经典算法，其核心思想是通�
 $$ Q(s,a) \leftarrow Q(s,a) + \alpha [r + \gamma \max_{a'} Q(s',a') - Q(s,a)] $$
 
 其中，$Q(s,a)$表示在状态$s$下执行动作$a$的预期回报，$\alpha$表示学习率，$r$表示奖励，$\gamma$表示折扣因子，$s'$表示下一状态，$a'$表示下一状态下的动作。 
-{"msg_type":"generate_answer_finish","data":""}

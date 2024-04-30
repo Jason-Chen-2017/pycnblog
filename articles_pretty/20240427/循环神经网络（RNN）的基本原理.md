@@ -95,4 +95,3 @@ model.evaluate(x_test, y_test)
 * `model.compile()` 编译模型，指定损失函数和优化器。
 * `model.fit()` 训练模型，指定训练数据和训练轮数。
 * `model.evaluate()` 评估模型，计算模型在测试数据上的损失和准确率。 
-{"msg_type":"generate_answer_finish","data":""}

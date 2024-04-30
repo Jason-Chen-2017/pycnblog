@@ -142,4 +142,3 @@ Transformer 模型已经成为 NLP 领域的主流技术，并持续推动着 NL
 ### 9.2 如何选择合适的 Transformer 模型？
 
 选择合适的 Transformer 模型取决于具体的 NLP 任务和数据集。一些常见的 Transformer 模型包括 BERT、GPT、T5 等。
-{"msg_type":"generate_answer_finish","data":""}

@@ -151,4 +151,3 @@ Reward Hacking是强化学习领域一个重要的安全问题，需要引起开
 **Q: 如何开发更安全的强化学习算法？**
 
 **A:** 可以研究更鲁棒的学习算法，例如对抗学习、模仿学习等。
-{"msg_type":"generate_answer_finish","data":""}
