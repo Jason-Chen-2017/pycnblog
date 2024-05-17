@@ -1,308 +1,140 @@
-# 视觉Transformer原理与代码实例讲解
-
-作者：禅与计算机程序设计艺术
-
 ## 1. 背景介绍
 
-### 1.1 视觉任务的挑战
-#### 1.1.1 图像分类
-#### 1.1.2 目标检测  
-#### 1.1.3 语义分割
+### 1.1 计算机视觉领域的革命：从CNN到Transformer
 
-### 1.2 传统CNN的局限性
-#### 1.2.1 局部感受野
-#### 1.2.2 空间不变性
-#### 1.2.3 层级结构限制
+卷积神经网络（CNN）在计算机视觉领域取得了巨大成功，但其在处理长距离依赖关系方面存在局限性。近年来，Transformer架构在自然语言处理领域取得了突破性进展，其强大的全局信息捕捉能力为计算机视觉任务带来了新的可能性。视觉Transformer（ViT）的出现，标志着Transformer架构正式进军计算机视觉领域，并展现出超越CNN的潜力。
 
-### 1.3 Transformer在NLP领域的成功
-#### 1.3.1 自注意力机制
-#### 1.3.2 并行计算
-#### 1.3.3 全局建模能力
+### 1.2 ViT的突破与优势
+
+ViT将图像分割成一系列的图像块（patch），并将这些图像块作为输入序列送入Transformer模型中进行处理。与CNN相比，ViT具有以下优势：
+
+* **全局感受野:**  Transformer的self-attention机制能够捕捉图像中所有像素之间的相互关系，从而拥有全局感受野，更好地理解图像的整体语义信息。
+* **更强的泛化能力:** ViT在大型数据集上训练后，能够更好地泛化到新的数据集和任务上。
+* **更高的计算效率:** 在处理高分辨率图像时，ViT的计算效率比CNN更高。
+
+### 1.3 ViT的应用领域
+
+ViT已经成功应用于各种计算机视觉任务，包括：
+
+* **图像分类:** ViT在ImageNet等大型图像分类数据集上取得了state-of-the-art的准确率。
+* **目标检测:** ViT可以用于检测图像中的目标，例如人脸、车辆等。
+* **图像分割:** ViT可以将图像分割成不同的语义区域，例如天空、道路、建筑物等。
 
 ## 2. 核心概念与联系
 
-### 2.1 自注意力机制
-#### 2.1.1 查询(Query)、键(Key)、值(Value) 
-#### 2.1.2 计算注意力权重
-#### 2.1.3 加权求和
+### 2.1 Transformer架构
 
-### 2.2 多头注意力
-#### 2.2.1 并行计算多个注意力
-#### 2.2.2 捕捉不同的特征子空间
-#### 2.2.3 特征融合
+Transformer是一种基于自注意力机制的深度学习模型，其核心思想是通过计算输入序列中每个元素与其他元素之间的相关性，来捕捉序列中的全局信息。Transformer架构主要由编码器和解码器组成，其中编码器负责将输入序列转换为隐藏表示，解码器则利用隐藏表示生成输出序列。
 
-### 2.3 位置编码
-#### 2.3.1 绝对位置编码
-#### 2.3.2 相对位置编码 
-#### 2.3.3 二维位置编码
+### 2.2 自注意力机制
 
-### 2.4 图像分块与线性投影
-#### 2.4.1 图像分块
-#### 2.4.2 线性投影
-#### 2.4.3 分块大小与计算效率
+自注意力机制是Transformer的核心组成部分，其作用是计算输入序列中每个元素与其他元素之间的相关性，从而捕捉序列中的全局信息。自注意力机制的计算过程如下：
+
+1. **计算查询向量、键向量和值向量:**  将输入序列中的每个元素分别转换为查询向量、键向量和值向量。
+2. **计算注意力权重:**  计算每个查询向量与所有键向量之间的点积，并通过softmax函数将点积转换为注意力权重。
+3. **加权求和:**  将值向量乘以对应的注意力权重，并进行加权求和，得到最终的输出向量。
+
+### 2.3 图像块嵌入
+
+ViT将图像分割成一系列的图像块（patch），并将每个图像块作为输入序列中的一个元素。为了将图像块转换为Transformer模型可以处理的向量表示，ViT使用图像块嵌入方法将每个图像块映射到一个固定长度的向量。
+
+### 2.4 位置编码
+
+由于Transformer模型本身无法感知输入序列中元素的位置信息，因此需要引入位置编码来为输入序列中的每个元素添加位置信息。ViT使用固定长度的位置编码向量，并将位置编码向量与图像块嵌入向量相加，得到最终的输入向量。
 
 ## 3. 核心算法原理具体操作步骤
 
-### 3.1 Vision Transformer (ViT)
-#### 3.1.1 图像分块与线性投影
-#### 3.1.2 添加位置编码
-#### 3.1.3 Transformer Encoder层
-#### 3.1.4 分类头
+### 3.1 图像预处理
 
-### 3.2 DeiT: Data-efficient Image Transformers 
-#### 3.2.1 知识蒸馏
-#### 3.2.2 数据增强
-#### 3.2.3 正则化技术
+1. **图像缩放:**  将输入图像缩放至目标尺寸。
+2. **图像分割:**  将图像分割成一系列大小相等的图像块。
 
-### 3.3 Swin Transformer
-#### 3.3.1 层次化的Transformer块
-#### 3.3.2 移位窗口机制
-#### 3.3.3 相对位置编码
+### 3.2 图像块嵌入
+
+1. **线性投影:**  将每个图像块通过线性投影映射到一个固定长度的向量。
+2. **位置编码:**  将位置编码向量与图像块嵌入向量相加，得到最终的输入向量。
+
+### 3.3 Transformer编码器
+
+1. **多头自注意力机制:**  使用多头自注意力机制捕捉输入序列中的全局信息。
+2. **前馈神经网络:**  使用前馈神经网络对每个元素进行非线性变换。
+3. **层归一化:**  对每个元素进行层归一化，加速模型训练。
+
+### 3.4 分类器
+
+1. **全局平均池化:**  对Transformer编码器输出的最后一个序列元素进行全局平均池化，得到一个固定长度的向量。
+2. **线性层:**  使用线性层将全局平均池化后的向量映射到类别空间。
+3. **softmax函数:**  使用softmax函数将线性层的输出转换为概率分布，得到最终的分类结果。
 
 ## 4. 数学模型和公式详细讲解举例说明
 
-### 4.1 自注意力计算
-$$
-Attention(Q,K,V) = softmax(\frac{QK^T}{\sqrt{d_k}})V
-$$
+### 4.1 自注意力机制
 
-其中，$Q$、$K$、$V$分别表示查询、键、值矩阵，$d_k$为键向量的维度。
-
-### 4.2 多头注意力
-$$
-MultiHead(Q,K,V) = Concat(head_1,...,head_h)W^O \\
-head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)
-$$
-
-其中，$W_i^Q \in \mathbb{R}^{d_{model} \times d_k}$，$W_i^K \in \mathbb{R}^{d_{model} \times d_k}$，$W_i^V \in \mathbb{R}^{d_{model} \times d_v}$，$W^O \in \mathbb{R}^{hd_v \times d_{model}}$。
-
-### 4.3 位置编码
-对于一维序列，位置编码可以表示为：
+自注意力机制的计算公式如下：
 
 $$
-PE_{(pos,2i)} = sin(pos/10000^{2i/d_{model}}) \\
-PE_{(pos,2i+1)} = cos(pos/10000^{2i/d_{model}})
+Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V
 $$
 
-其中，$pos$表示位置，$i$表示维度，$d_{model}$为嵌入维度。
+其中，$Q$、$K$ 和 $V$ 分别表示查询向量、键向量和值向量，$d_k$ 表示键向量的维度。
 
-对于二维图像，可以将行列位置分别编码后相加。
+**举例说明:**
+
+假设输入序列为 $[x_1, x_2, x_3]$，则查询向量、键向量和值向量分别为：
+
+$$
+Q = [q_1, q_2, q_3]
+$$
+
+$$
+K = [k_1, k_2, k_3]
+$$
+
+$$
+V = [v_1, v_2, v_3]
+$$
+
+注意力权重的计算过程如下：
+
+$$
+\begin{aligned}
+a_{11} &= softmax(\frac{q_1k_1^T}{\sqrt{d_k}}) \\
+a_{12} &= softmax(\frac{q_1k_2^T}{\sqrt{d_k}}) \\
+a_{13} &= softmax(\frac{q_1k_3^T}{\sqrt{d_k}}) \\
+\end{aligned}
+$$
+
+最终的输出向量为：
+
+$$
+y_1 = a_{11}v_1 + a_{12}v_2 + a_{13}v_3
+$$
+
+### 4.2 多头自注意力机制
+
+多头自注意力机制是将自注意力机制并行执行多次，并将多个自注意力机制的输出拼接在一起，从而捕捉输入序列中不同方面的全局信息。
+
+**举例说明:**
+
+假设使用两个自注意力机制，则多头自注意力机制的计算公式如下：
+
+$$
+MultiHead(Q, K, V) = Concat(head_1, ..., head_h)W^O
+$$
+
+其中，$head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)$，$W_i^Q$、$W_i^K$ 和 $W_i^V$ 分别表示第 $i$ 个自注意力机制的查询矩阵、键矩阵和值矩阵，$W^O$ 表示输出矩阵。
 
 ## 5. 项目实践：代码实例和详细解释说明
 
-### 5.1 ViT的PyTorch实现
+### 5.1 Python代码实现ViT
 
 ```python
 import torch
 import torch.nn as nn
 
-class PatchEmbed(nn.Module):
-    """图像分块与线性投影"""
-    def __init__(self, img_size=224, patch_size=16, in_chans=3, embed_dim=768):
+class ViT(nn.Module):
+    def __init__(self, image_size, patch_size, num_classes, dim, depth, heads, mlp_dim, dropout=0.):
         super().__init__()
-        self.img_size = img_size
-        self.patch_size = patch_size
-        self.n_patches = (img_size // patch_size) ** 2
-        
-        self.proj = nn.Conv2d(in_chans, embed_dim, kernel_size=patch_size, stride=patch_size)
-
-    def forward(self, x):
-        x = self.proj(x)  # (batch_size, embed_dim, n_patches ** 0.5, n_patches ** 0.5)
-        x = x.flatten(2)  # (batch_size, embed_dim, n_patches)
-        x = x.transpose(1, 2)  # (batch_size, n_patches, embed_dim)
-        return x
-
-class Attention(nn.Module):
-    """多头自注意力机制"""
-    def __init__(self, dim, n_heads=8, qkv_bias=False, attn_drop=0., proj_drop=0.):
-        super().__init__()
-        self.n_heads = n_heads
-        head_dim = dim // n_heads
-        self.scale = head_dim ** -0.5
-
-        self.qkv = nn.Linear(dim, dim * 3, bias=qkv_bias)
-        self.attn_drop = nn.Dropout(attn_drop)
-        self.proj = nn.Linear(dim, dim)
-        self.proj_drop = nn.Dropout(proj_drop)
-
-    def forward(self, x):
-        B, N, C = x.shape
-        qkv = self.qkv(x).reshape(B, N, 3, self.n_heads, C // self.n_heads).permute(2, 0, 3, 1, 4)
-        q, k, v = qkv[0], qkv[1], qkv[2]
-
-        attn = (q @ k.transpose(-2, -1)) * self.scale
-        attn = attn.softmax(dim=-1)
-        attn = self.attn_drop(attn)
-
-        x = (attn @ v).transpose(1, 2).reshape(B, N, C)
-        x = self.proj(x)
-        x = self.proj_drop(x)
-        return x
-
-class MLP(nn.Module):
-    """前馈神经网络"""
-    def __init__(self, in_features, hidden_features=None, out_features=None, drop=0.):
-        super().__init__()
-        out_features = out_features or in_features
-        hidden_features = hidden_features or in_features
-        self.fc1 = nn.Linear(in_features, hidden_features)
-        self.act = nn.GELU()
-        self.fc2 = nn.Linear(hidden_features, out_features)
-        self.drop = nn.Dropout(drop)
-
-    def forward(self, x):
-        x = self.fc1(x)
-        x = self.act(x)
-        x = self.drop(x)
-        x = self.fc2(x)
-        x = self.drop(x)
-        return x
-
-class Block(nn.Module):
-    """Transformer Encoder块"""
-    def __init__(self, dim, n_heads, mlp_ratio=4., qkv_bias=False, drop=0., attn_drop=0.):
-        super().__init__()
-        self.norm1 = nn.LayerNorm(dim)
-        self.attn = Attention(dim, n_heads=n_heads, qkv_bias=qkv_bias, attn_drop=attn_drop, proj_drop=drop)
-        self.norm2 = nn.LayerNorm(dim)
-        mlp_hidden_dim = int(dim * mlp_ratio)
-        self.mlp = MLP(in_features=dim, hidden_features=mlp_hidden_dim, drop=drop)
-
-    def forward(self, x):
-        x = x + self.attn(self.norm1(x))
-        x = x + self.mlp(self.norm2(x))
-        return x
-
-class VisionTransformer(nn.Module):
-    """Vision Transformer"""
-    def __init__(self, img_size=224, patch_size=16, in_chans=3, n_classes=1000, embed_dim=768, depth=12,
-                 n_heads=12, mlp_ratio=4., qkv_bias=False, drop_rate=0., attn_drop_rate=0.):
-        super().__init__()
-        self.patch_embed = PatchEmbed(img_size=img_size, patch_size=patch_size, in_chans=in_chans, embed_dim=embed_dim)
-        self.cls_token = nn.Parameter(torch.zeros(1, 1, embed_dim))
-        self.pos_embed = nn.Parameter(torch.zeros(1, 1 + self.patch_embed.n_patches, embed_dim))
-        self.pos_drop = nn.Dropout(p=drop_rate)
-
-        self.blocks = nn.ModuleList([
-            Block(dim=embed_dim, n_heads=n_heads, mlp_ratio=mlp_ratio, qkv_bias=qkv_bias, 
-                  drop=drop_rate, attn_drop=attn_drop_rate)
-            for _ in range(depth)
-        ])
-
-        self.norm = nn.LayerNorm(embed_dim)
-        self.head = nn.Linear(embed_dim, n_classes)
-
-    def forward(self, x):
-        x = self.patch_embed(x)
-        cls_token = self.cls_token.expand(x.shape[0], -1, -1)
-        x = torch.cat((cls_token, x), dim=1)
-        x = self.pos_drop(x + self.pos_embed)
-        for block in self.blocks:
-            x = block(x)
-        x = self.norm(x)
-        x = x[:, 0]
-        x = self.head(x)
-        return x
-```
-
-以上代码实现了ViT的基本结构，包括图像分块、自注意力机制、前馈神经网络等关键组件。通过调整模型的超参数如嵌入维度、深度、注意力头数等，可以得到不同大小和性能的ViT模型。
-
-### 5.2 DeiT的训练技巧
-
-DeiT在ViT的基础上引入了一些训练技巧，如知识蒸馏、数据增强和正则化等，以提高模型的数据效率和泛化能力。
-
-```python
-import torch
-import torch.nn as nn
-
-def distillation_loss(student_logits, teacher_logits, temperature):
-    """知识蒸馏损失"""
-    student_probs = torch.softmax(student_logits / temperature, dim=-1)
-    teacher_probs = torch.softmax(teacher_logits / temperature, dim=-1)
-    distill_loss = torch.sum(-teacher_probs * torch.log(student_probs), dim=-1).mean()
-    return distill_loss
-
-def train_deit(student_model, teacher_model, train_loader, optimizer, temperature, alpha):
-    """训练DeiT"""
-    student_model.train()
-    teacher_model.eval()
-    
-    for images, labels in train_loader:
-        images, labels = images.cuda(), labels.cuda()
-        
-        # 数据增强
-        aug_images = data_augmentation(images)
-        
-        # 学生模型前向传播
-        student_logits = student_model(aug_images)
-        
-        # 教师模型前向传播
-        with torch.no_grad():
-            teacher_logits = teacher_model(images)
-        
-        # 分类损失
-        cls_loss = nn.CrossEntropyLoss()(student_logits, labels)
-        
-        # 蒸馏损失
-        distill_loss = distillation_loss(student_logits, teacher_logits, temperature)
-        
-        # 总损失
-        loss = alpha * cls_loss + (1 - alpha) * distill_loss
-        
-        # 反向传播和优化
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
-```
-
-以上代码展示了DeiT的训练流程，通过结合知识蒸馏和数据增强，可以有效提升ViT的性能，尤其在数据量较小的情况下。
-
-### 5.3 Swin Transformer的窗口注意力
-
-Swin Transformer引入了层次化的Transformer块和移位窗口机制，以提高模型在密集预测任务上的性能。
-
-```python
-import torch
-import torch.nn as nn
-
-def window_partition(x, window_size):
-    """将特征图分割为不重叠的窗口"""
-    B, H, W, C = x.shape
-    x = x.view(B, H // window_size, window_size, W // window_size, window_size, C)
-    windows = x.permute(0, 1, 3, 2, 4, 5).contiguous().view(-1, window_size, window_size, C)
-    return windows
-
-def window_reverse(windows, window_size, H, W):
-    """将窗口还原为特征图"""
-    B = int(windows.shape[0] / (H * W / window_size / window_size))
-    x = windows.view(B, H // window_size, W // window_size, window_size, window_size, -1)
-    x = x.permute(0, 1, 3, 2, 4, 5).contiguous().view(B, H, W, -1)
-    return x
-
-class SwinBlock(nn.Module):
-    """Swin Transformer块"""
-    def __init__(self, dim, n_heads, window_size, shift_size=0):
-        super().__init__()
-        self.dim = dim
-        self.n_heads = n_heads
-        self.window_size = window_size
-        self.shift_size = shift_size
-
-        self.norm1 = nn.LayerNorm(dim)
-        self.attn = WindowAttention(dim, window_size, n_heads)
-        self.norm2 = nn.LayerNorm(dim)
-        self.mlp = MLP(dim)
-
-        if self.shift_size > 0:
-            attn_mask = self.calculate_mask(self.window_size)
-        else:
-            attn_mask = None
-        self.register_buffer("attn_mask", attn_mask)
-
-    def calculate_mask(self, window_size):
-        """计算移位窗口的注意力掩码"""
-        mask = torch.zeros(1, window_size, window_size, 1)
-        h_slices = (slice(0, -self.window_size),
-                    slice(-self.window_size, -self.shift_size),
-                    slice(-self.shift_size, None))
-        w_slices = (slice(0
+        assert image_size % patch_size == 0, 'Image dimensions must be divisible by the patch size.'
+        num_patches = (image_size // patch_size) ** 2
+        patch_

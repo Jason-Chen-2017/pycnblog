@@ -7,197 +7,275 @@
 ### 1.1 Kylin的起源与发展历程
 #### 1.1.1 Kylin项目的诞生
 #### 1.1.2 Kylin的发展历程与里程碑
-#### 1.1.3 Kylin在大数据领域的地位
+#### 1.1.3 Kylin在大数据OLAP领域的地位
 
-### 1.2 OLAP与Kylin 
-#### 1.2.1 OLAP的基本概念
-#### 1.2.2 OLAP的特点与优势
-#### 1.2.3 Kylin在OLAP领域的创新
+### 1.2 Kylin的核心价值与优势
+#### 1.2.1 Kylin的核心价值主张
+#### 1.2.2 Kylin相比传统OLAP方案的优势
+#### 1.2.3 Kylin在实际业务中的应用价值
 
-### 1.3 Kylin的应用场景
-#### 1.3.1 电商领域的应用
-#### 1.3.2 金融领域的应用 
-#### 1.3.3 其他行业的应用案例
+### 1.3 Kylin的技术生态与社区
+#### 1.3.1 Kylin的技术组成与架构
+#### 1.3.2 Kylin的开源社区现状
+#### 1.3.3 Kylin与周边大数据生态的结合
 
 ## 2. 核心概念与联系
 
-### 2.1 Cube（多维数据集）
-#### 2.1.1 Cube的定义与结构
-#### 2.1.2 Cube的构建过程
-#### 2.1.3 Cube的优化技巧
+### 2.1 数据立方体(Cube)
+#### 2.1.1 数据立方体的概念与作用  
+#### 2.1.2 Kylin中Cube的逻辑模型
+#### 2.1.3 Cube的物理存储方式
 
-### 2.2 Dimension（维度）
-#### 2.2.1 Dimension的概念与分类
-#### 2.2.2 Dimension的设计原则 
-#### 2.2.3 Dimension的使用场景
+### 2.2 维度(Dimension)与度量(Measure)
+#### 2.2.1 维度的概念与分类
+#### 2.2.2 度量的概念与聚合函数
+#### 2.2.3 维度与度量在Cube中的设计
 
-### 2.3 Measure（度量）
-#### 2.3.1 Measure的概念与类型
-#### 2.3.2 Measure的计算方式
-#### 2.3.3 Measure的聚合函数
+### 2.3 预计算与MOLAP
+#### 2.3.1 预计算的概念与价值 
+#### 2.3.2 Kylin的预计算实现原理
+#### 2.3.3 预计算结果的存储与索引
 
-### 2.4 HBase存储
-#### 2.4.1 HBase的数据模型
-#### 2.4.2 Kylin如何利用HBase存储
-#### 2.4.3 HBase的优化配置
+### 2.4 SQL on Hadoop
+#### 2.4.1 SQL on Hadoop的发展历程
+#### 2.4.2 Kylin对SQL的支持方式
+#### 2.4.3 通过Kylin实现ANSI SQL的OLAP分析
 
-## 3. 核心算法原理具体操作步骤
+## 3. 核心算法原理与操作步骤
 
-### 3.1 预计算（Pre-Calculation）
-#### 3.1.1 预计算的原理
-#### 3.1.2 预计算的实现步骤
-#### 3.1.3 预计算的调度策略
+### 3.1 Cube构建算法
+#### 3.1.1 逻辑Cube的设计与优化
+#### 3.1.2 Cube构建的Map Reduce过程  
+#### 3.1.3 Cube构建过程的调优
 
-### 3.2 查询重写（Query Rewrite）
-#### 3.2.1 查询重写的作用
-#### 3.2.2 查询重写的实现机制
-#### 3.2.3 查询重写的优化方法
+### 3.2 查询引擎实现
+#### 3.2.1 查询解析与翻译
+#### 3.2.2 查询优化技术
+#### 3.2.3 查询执行流程与访问路径
 
-### 3.3 Cube构建算法
-#### 3.3.1 逐层构建算法
-#### 3.3.2 快照合并算法
-#### 3.3.3 Cube构建的性能调优
+### 3.3 Cube增量更新
+#### 3.3.1 增量更新的原理与实现
+#### 3.3.2 Segment划分与管理
+#### 3.3.3 Cube状态管理与更新策略
 
-## 4. 数学模型和公式详细讲解举例说明
+### 3.4 Cube优化与诊断
+#### 3.4.1 Cube的构建优化
+#### 3.4.2 查询性能优化
+#### 3.4.3 Cube的监控与诊断
 
-### 4.1 Cube数学模型
-#### 4.1.1 Cube的数学定义
-$$Cube = (D_1, D_2, ..., D_n, M_1, M_2, ..., M_m)$$
-其中$D_i$表示维度，$M_j$表示度量。
-#### 4.1.2 Cube的数学性质
-- 可加性：$Cube(D_1+D_2) = Cube(D_1) + Cube(D_2)$ 
-- 单调性：如果$D_1 \subseteq D_2$，则$Cube(D_1) \leq Cube(D_2)$
-#### 4.1.3 Cube的计算复杂度分析
+## 4. 数学模型与公式详解
 
-### 4.2 维度数学模型
-#### 4.2.1 维度的数学表示
-$$Dimension = \{d_1, d_2, ..., d_n\}$$
-其中$d_i$表示维度的一个取值。
-#### 4.2.2 维度的层次结构
-$$Level_i = \{l_{i1}, l_{i2}, ..., l_{im}\}$$
-其中$l_{ij}$表示维度第$i$层的第$j$个取值。
-#### 4.2.3 维度的基数估计
+### 4.1 Cube数据模型
+#### 4.1.1 星型模型与雪花模型
+Kylin采用了星型模型(Star Schema)和雪花模型(Snowflake Schema)来对数据进行建模。
 
-### 4.3 度量数学模型 
-#### 4.3.1 度量的数学定义
-$$Measure = f(D_1, D_2, ..., D_n)$$
-其中$f$表示聚合函数，如SUM、AVG、COUNT等。
-#### 4.3.2 度量的估计方法
-- 均匀分布估计：$E(Measure) = \frac{|D_1| \times |D_2| \times ... \times |D_n|}{N}$
-- 基于采样的估计：$E(Measure) = \frac{\sum_{i=1}^{s} Measure_i}{s}$
-#### 4.3.3 度量的误差分析
+星型模型由一个事实表和多个维度表组成，事实表位于模型的中心，维度表围绕事实表呈星状分布。事实表包含度量值，维度表存储维度属性。星型模型简单直观，易于理解，查询效率高。
 
-## 5. 项目实践：代码实例和详细解释说明
+雪花模型是星型模型的扩展，它对维度表进行了规范化处理，将维度属性进一步拆分到子维度表中。相比星型模型，雪花模型减少了数据冗余，但增加了表连接的复杂度。
 
-### 5.1 Kylin环境搭建
-#### 5.1.1 单机版Kylin安装部署
-#### 5.1.2 集群版Kylin安装部署
-#### 5.1.3 Kylin配置优化
+Kylin支持星型模型和雪花模型，可以根据实际的业务场景选择合适的建模方式。
 
-### 5.2 Kylin的使用流程
-#### 5.2.1 创建Cube的步骤
-```sql
--- 创建model
-CREATE MODEL IF NOT EXISTS kylin_sales_model (
-    xxxx
-) DIMENSIONS (
-    xxx
-), MEASURES (
-    xxx
-) PARTITION BY CUBE WITH AGGREGATION GROUP INCLUDES ()
+#### 4.1.2 事实表与维度表
+在Kylin的Cube模型中，事实表(Fact Table)存储度量值，是Cube的原子粒度，对应SQL中的Group By维度组合。
 
--- 创建cube
-CREATE CUBE IF NOT EXISTS kylin_sales_cube ON kylin_sales_model 
-DIMENSIONS (
-    xxx
-) MEASURES (
-    xxx  
-) PARTITION BY (dt)
-REFRESH_RULE = 'FULL'
+维度表(Dimension Table)存储维度属性，与事实表通过外键关联。Kylin支持普通维度、衍生维度、状态维度等多种维度处理方式。
+
+一个Cube中可以包含多个事实表和维度表，通过定义事实表与维度表的关系，Kylin可以自动生成Cube的逻辑模型。
+
+#### 4.1.3 Cube模型的定义与优化
+在Kylin中定义Cube模型时，需要指定事实表、维度表、度量以及它们之间的关系。一个典型的Cube模型定义如下:
+
+```json
+{
+  "name": "sales_cube",
+  "model_name": "sales_model",
+  "description": "Sales analysis cube",
+  "dimensions": [
+    {
+      "name": "date",
+      "table": "dim_date",
+      "columns": ["year", "month", "day"]
+    },
+    {
+      "name": "product",
+      "table": "dim_product",
+      "columns": ["category", "brand"]
+    },
+    {
+      "name": "store",
+      "table": "dim_store",
+      "columns": ["country", "state", "city"]
+    }
+  ],
+  "measures": [
+    {
+      "name": "sales_amount",
+      "function": {
+        "expression": "SUM",
+        "parameter": {
+          "type": "column",
+          "value": "amount"
+         }
+      }       
+    },
+    {
+      "name": "sales_count",
+      "function": {
+        "expression": "COUNT",
+        "parameter": {
+          "type": "constant",
+          "value": "1"
+        }
+      }
+    }
+  ],
+  "rowkey": {
+    "rowkey_columns": [
+      {
+        "column": "date",
+        "encoding": "dict"
+      },
+      {
+        "column": "product",
+        "encoding": "dict"  
+      },
+      {
+        "column": "store",
+        "encoding": "dict"
+      }
+    ]
+  },  
+  "hbase_mapping": {
+    "column_family": [
+      {
+        "name": "F1",
+        "columns": [
+          {
+            "qualifier": "M",
+            "measure_refs": ["sales_amount", "sales_count"]
+          }
+        ]  
+      }
+    ]
+  },
+  "aggregation_groups": [
+    {
+      "includes": ["date", "product", "store"],
+      "select_rule": {
+        "hierarchy_dims": [
+          ["date"], 
+          ["product"],
+          ["store"]
+        ],
+        "mandatory_dims": [],
+        "joint_dims": [
+          ["date", "product"],
+          ["product", "store"] 
+        ]
+      }
+    }
+  ]
+}
 ```
-#### 5.2.2 Cube构建与查询
-```shell
-# 构建cube
-kylin.sh build cube -name kylin_sales_cube -v 1 
 
-# 查询cube
-kylin.sh query -name kylin_sales_cube -sql "select xxx from xxx where xxx" 
-```
-#### 5.2.3 Cube的管理与监控
+以上是一个销售分析Cube的定义，包含了事实表、维度表、度量指标的定义，以及预计算粒度与物理存储的映射。
 
-### 5.3 Kylin与Spark集成
-#### 5.3.1 Kylin on Spark原理
-#### 5.3.2 Kylin on Spark部署步骤
-#### 5.3.3 Kylin on Spark性能优化
+在实际应用中，Cube模型需要根据业务需求和数据特征进行优化，比如选择合适的维度粒度、预聚合粒度、排序方式等，以平衡存储空间和查询性能。Kylin提供了一系列配置参数和优化规则，帮助用户设计出高效的Cube模型。
 
-## 6. 实际应用场景
+### 4.2 Cube构建的数学原理 
+#### 4.2.1 预计算与多维数据集
+Kylin的核心思想是预计算，即在Cube构建时，预先计算各种维度组合的聚合结果，将它们存储为物化视图，从而大幅提升查询的响应速度。
 
-### 6.1 电商用户行为分析
-#### 6.1.1 用户购买行为分析
-#### 6.1.2 用户流失预警
-#### 6.1.3 个性化推荐
+多维数据集可以用数学公式表示为:
+$$
+C = f(D_1, D_2, ..., D_n, M_1, M_2, ..., M_m)
+$$
+其中，$C$ 表示Cube，$D_1, D_2, ..., D_n$表示维度，$M_1, M_2, ..., M_m$ 表示度量。$f$ 是一个多维聚合函数，定义了如何基于维度组合对度量进行聚合计算。
 
-### 6.2 金融风控分析
-#### 6.2.1 反欺诈分析
-#### 6.2.2 信用评分
-#### 6.2.3 客户流失预测
+#### 4.2.2 维度组合与聚合
+对于n个维度，理论上有 $2^n$ 种可能的维度组合。Kylin采用了一种逐层聚合的算法，在Map端先计算底层的维度组合，然后在Reduce端逐层合并，最终生成所有需要的维度组合。
 
-### 6.3 物联网设备监控
-#### 6.3.1 设备异常检测
-#### 6.3.2 能耗分析与预测
-#### 6.3.3 设备健康度评估
+假设有三个维度 $D_1, D_2, D_3$，Kylin的聚合算法可以表示为:
 
-## 7. 工具和资源推荐
+Map端:
+$$
+C_{D_1} = f(D_1, M) \\
+C_{D_2} = f(D_2, M) \\ 
+C_{D_3} = f(D_3, M) \\
+C_{D_1,D_2} = f(D_1, D_2, M) \\
+C_{D_1,D_3} = f(D_1, D_3, M) \\
+C_{D_2,D_3} = f(D_2, D_3, M) \\
+C_{D_1,D_2,D_3} = f(D_1, D_2, D_3, M)
+$$
 
-### 7.1 Kylin生态工具
-#### 7.1.1 Kyligence工具套件
-#### 7.1.2 Kylin-Tableau连接器
-#### 7.1.3 Kylin-Superset适配器
+Reduce端:
+$$
+C_{D_1,D_2,D_3} = merge(C_{D_1,D_2,D_3}) \\
+C_{D_1,D_2} = merge(C_{D_1,D_2}) \\
+C_{D_1,D_3} = merge(C_{D_1,D_3}) \\
+C_{D_2,D_3} = merge(C_{D_2,D_3}) \\
+C_{D_1} = merge(C_{D_1}) \\
+C_{D_2} = merge(C_{D_2}) \\
+C_{D_3} = merge(C_{D_3}) 
+$$
 
-### 7.2 Kylin学习资源
-#### 7.2.1 Kylin官方文档
-#### 7.2.2 Kylin社区分享
-#### 7.2.3 Kylin视频教程
+通过这种分治法，Kylin能够高效地计算出所有的维度组合，并将它们存储在HBase中。
 
-### 7.3 Kylin开发资源
-#### 7.3.1 Kylin源码解析
-#### 7.3.2 Kylin二次开发指南
-#### 7.3.3 Kylin性能调优实践
+#### 4.2.3 Cube存储与HBase映射
+Kylin将预计算的结果存储在HBase中，每个Cube对应一张HBase表。Cube的逻辑模型与物理存储之间通过一个映射配置文件定义。
 
-## 8. 总结：未来发展趋势与挑战
+Cube的rowkey由维度编码拼接而成，采用字典编码、固定长度编码等方式，以优化存储和查询性能。度量作为HBase的列存储，可以灵活地增加度量而无需修改rowkey。
 
-### 8.1 Kylin的发展趋势
-#### 8.1.1 云原生Kylin
-#### 8.1.2 Kylin与AI的结合
-#### 8.1.3 Kylin在5G时代的应用
+HBase的列簇(Column Family)可以根据查询模式进行设计，将相关的度量存储在一起，提高查询的局部性。Kylin还支持衍生维度、Distinct Count等高级特性，通过HBase协处理器实现。
 
-### 8.2 Kylin面临的挑战
-#### 8.2.1 实时OLAP的需求
-#### 8.2.2 高维数据的处理
-#### 8.2.3 异构数据源的整合
+### 4.3 Cube查询的代数运算
+#### 4.3.1 查询重写与剪枝
+当用户提交一个多维分析查询时，Kylin首先对查询进行解析和重写，将其转换为Cube的查询语句。
 
-### 8.3 Kylin的未来展望
-#### 8.3.1 Kylin在数据湖分析中的作用
-#### 8.3.2 Kylin与流处理的融合
-#### 8.3.3 Kylin在数据智能领域的探索
+给定查询的维度和度量，Kylin从预计算的Cube中找出最优的子Cube来回答查询。这个过程称为剪枝(Pruning)，可以用集合代数表示:
 
-## 9. 附录：常见问题与解答
+$$
+Q_{D,M} = \pi_M(\sigma_D(C)) \\
+C_{D',M'} = \arg\min_{D' \supseteq D, M' \supseteq M} size(C_{D',M'})
+$$
 
-### 9.1 Kylin的使用问题
-#### 9.1.1 如何选择合适的维度与度量？
-#### 9.1.2 如何设计Cube以提高查询性能？
-#### 9.1.3 Kylin查询速度慢的原因与优化方法？
+其中，$Q_{D,M}$ 表示在维度 $D$ 上对度量 $M$ 的查询，$\pi$ 是投影操作，$\sigma$ 是选择操作。$C_{D',M'}$ 表示满足查询条件的最小Cube。
 
-### 9.2 Kylin的运维问题
-#### 9.2.1 Kylin的资源规划与配置调优
-#### 9.2.2 Kylin的备份与恢复方案
-#### 9.2.3 Kylin的监控与报警
+#### 4.3.2 Cube的切片与切块
+当确定了最优子Cube后，Kylin会根据查询条件对Cube进行切片(Slice)和切块(Dice)，过滤掉不需要的数据。
 
-### 9.3 Kylin的升级问题 
-#### 9.3.1 不同版本Kylin的兼容性问题
-#### 9.3.2 Kylin升级的步骤与注意事项
-#### 9.3.3 Kylin升级后的回归测试
+切片是在维度上的过滤，相当于SQL中的WHERE条件:
 
-以上就是本文对Kylin原理与代码实例的全面讲解。Kylin作为一款优秀的大数据OLAP引擎，通过预计算与查询优化等核心技术，极大提升了复杂分析查询的效率。同时Kylin提供了丰富的API与工具，使得用户能够快速搭建基于Kylin的OLAP分析系统。
+$$
+C' = \sigma_{D_i=v}(C), v \in D_i
+$$
 
-随着大数据时代的深入发展，Kylin也在不断演进创新，融入云计算、人工智能等新兴技术，为用户提供更加智能、高效的数据分析体验。相信在未来，Kylin会在更多领域发挥重要作用，成为大数据分析领域不可或缺的利器。
+切块是在度量上的过滤，相当于SQL中的HAVING条件:
+
+$$
+C' = \sigma_{f(M)>v}(C)
+$$
+
+#### 4.3.3 聚合运算与表达式计算
+Kylin支持各种聚合函数，如SUM、COUNT、AVG、MAX、MIN等，可以对度量进行聚合计算。
+
+除了简单的聚合外，Kylin还支持复杂的表达式计算，如条件表达式、数学函数等，灵活满足各种分析需求。
+
+表达式计算可以表示为一棵表达式树，Kylin采用了列式存储和向量化执行，充分利用CPU和内存资源，实现了高效的表达式求值。
+
+### 4.4 Cube更新的增量算法
+#### 4.4.1 增量更新的原理
+Kylin采用增量更新的方式来维护Cube，可以在新数据到来时快速更新Cube，而无需全量重建。
+
+增量更新的基本原理是:
+$$
+C_{t+1} = C_t + \Delta C
+$$
+其中，$C_t$ 表示当前的Cube，$\Delta C$ 表示新增的数据，$C_{t+1}$ 表示更新后的Cube。
+
+#### 4.4.2 Segment划分与管理
+为了实现增量更新，Kylin引入了Segment的概念，将一个Cube划分为多个Segment，每个Segment对应一个时间范围的数据。
+
+Segment的划分通过Cube的`partition_date_column`参数指定，可以按天、周、月等粒度进行划分。每个Segment都有一个起始时间和结束时间，记录了其对应的数据范围。
+
+当新数据到来时，Kylin会自动判断数据属于哪个Segment，并将其
