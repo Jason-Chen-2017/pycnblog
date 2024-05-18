@@ -1,302 +1,134 @@
-# Swin Transformer原理与代码实例讲解
-
-作者：禅与计算机程序设计艺术
-
 ## 1. 背景介绍
 
-### 1.1 视觉Transformer的发展历程
-#### 1.1.1 从CNN到Transformer
-#### 1.1.2 视觉Transformer的优势
-#### 1.1.3 视觉Transformer面临的挑战
+### 1.1  计算机视觉的革命：Transformer 崛起
 
-### 1.2 Swin Transformer的提出
-#### 1.2.1 Swin Transformer的创新点  
-#### 1.2.2 Swin Transformer的性能表现
-#### 1.2.3 Swin Transformer的影响力
+近年来，Transformer 架构在自然语言处理领域取得了巨大成功，其强大的特征提取和序列建模能力也为计算机视觉领域带来了新的曙光。Swin Transformer 作为 Transformer 在视觉领域的佼佼者，通过引入**层次化的 Transformer 结构**和**滑动窗口机制**，有效解决了传统 Transformer 在处理高分辨率图像时计算量过大的问题，并在图像分类、目标检测、语义分割等多个视觉任务中取得了领先的性能。
+
+### 1.2 Swin Transformer 的优势与应用
+
+相比于传统的卷积神经网络 (CNN)，Swin Transformer 具备以下优势:
+
+* **全局感受野**: Swin Transformer 通过自注意力机制可以捕捉图像中长距离的依赖关系，从而更好地理解图像的语义信息。
+* **高效的计算**:  滑动窗口机制将自注意力计算限制在局部区域内，有效降低了计算复杂度，使得 Swin Transformer 可以处理更大尺寸的图像。
+* **灵活的架构**: Swin Transformer 可以方便地扩展到不同的视觉任务中，并取得优异的性能。
+
+Swin Transformer 已经成功应用于各种计算机视觉任务，例如：
+
+* **图像分类**: Swin Transformer 在 ImageNet 等图像分类数据集上取得了 state-of-the-art 的准确率。
+* **目标检测**: Swin Transformer 作为 backbone 网络，在 COCO 等目标检测数据集上大幅提升了检测精度。
+* **语义分割**: Swin Transformer 在 Cityscapes 等语义分割数据集上实现了精细的像素级语义分割。
 
 ## 2. 核心概念与联系
 
-### 2.1 自注意力机制
-#### 2.1.1 自注意力机制的基本原理
-#### 2.1.2 自注意力机制在NLP中的应用
-#### 2.1.3 自注意力机制在视觉任务中的应用
+### 2.1  层次化 Transformer 结构
 
-### 2.2 多尺度特征表示
-#### 2.2.1 多尺度特征的重要性
-#### 2.2.2 CNN中的多尺度特征提取方法
-#### 2.2.3 Transformer中的多尺度特征表示
+Swin Transformer 的核心在于其层次化的 Transformer 结构，该结构通过堆叠多个 Swin Transformer Block 构建而成，每个 Block 包含以下关键组件：
 
-### 2.3 位置编码
-#### 2.3.1 位置编码的作用
-#### 2.3.2 绝对位置编码
-#### 2.3.3 相对位置编码
+* **Patch Partition**: 将输入图像划分为多个大小相等的 Patch，每个 Patch 被视为一个 Token。
+* **Linear Embedding**: 将每个 Patch 映射到高维特征空间。
+* **Swin Transformer Block**:  对 Patch 特征进行特征提取和融合，其核心是**滑动窗口机制**。
+* **Patch Merging**:  将相邻 Patch 的特征进行融合，降低特征图分辨率，同时扩大感受野。
+
+### 2.2 滑动窗口机制
+
+传统的 Transformer 在计算自注意力时需要对所有 Token 之间进行交互，计算量巨大。Swin Transformer 引入滑动窗口机制，将自注意力计算限制在局部窗口内，有效降低了计算复杂度。
+
+滑动窗口机制将输入特征图划分为多个大小相等的窗口，每个窗口内包含多个 Patch。自注意力计算只在窗口内部进行，不同窗口之间不进行信息交互。为了增强窗口之间的联系，Swin Transformer 采用**Shift Window**机制，在相邻层中将窗口进行偏移，使得不同窗口的 Patch 之间可以进行信息交互。
+
+### 2.3  核心组件之间的联系
+
+Swin Transformer 的各个组件紧密相连，共同构建了层次化的 Transformer 结构。Patch Partition 将图像转换为 Token 序列，Linear Embedding 将 Token 映射到高维特征空间，Swin Transformer Block 通过滑动窗口机制提取和融合 Patch 特征，Patch Merging 降低特征图分辨率，扩大感受野。这些组件的协同工作使得 Swin Transformer 能够高效地处理高分辨率图像，并提取丰富的语义信息。
 
 ## 3. 核心算法原理具体操作步骤
 
-### 3.1 Swin Transformer的整体架构
-#### 3.1.1 Patch Partition
-#### 3.1.2 Patch Merging
-#### 3.1.3 Swin Transformer Block
+### 3.1 Swin Transformer Block 详解
 
-### 3.2 窗口多头自注意力机制
-#### 3.2.1 窗口划分
-#### 3.2.2 窗口内自注意力计算
-#### 3.2.3 跨窗口连接
+Swin Transformer Block 是 Swin Transformer 的核心组件，其结构如下图所示:
 
-### 3.3 相对位置偏置
-#### 3.3.1 相对位置偏置的引入
-#### 3.3.2 相对位置偏置的计算方法
-#### 3.3.3 相对位置偏置的优势
+```
+[插入 Swin Transformer Block 结构图]
+```
 
-### 3.4 Shifted Window方法
-#### 3.4.1 Shifted Window的动机
-#### 3.4.2 Shifted Window的实现细节
-#### 3.4.3 Shifted Window的效果
+Swin Transformer Block 的具体操作步骤如下:
+
+1. **Layer Normalization**: 对输入特征进行归一化处理。
+2. **Multi-Head Self-Attention (MSA)**:  使用滑动窗口机制计算 Patch 之间的自注意力。
+3. **Residual Connection**:  将 MSA 的输出与输入特征相加。
+4. **Layer Normalization**: 对残差连接后的特征进行归一化处理。
+5. **Multilayer Perceptron (MLP)**:  使用两层全连接网络对特征进行非线性变换。
+6. **Residual Connection**:  将 MLP 的输出与输入特征相加。
+
+### 3.2 滑动窗口机制详解
+
+滑动窗口机制是 Swin Transformer 的关键创新，其具体操作步骤如下:
+
+1. **划分窗口**: 将输入特征图划分为多个大小相等的窗口，每个窗口包含多个 Patch。
+2. **窗口内自注意力**: 对每个窗口内的 Patch 进行自注意力计算，不同窗口之间不进行信息交互。
+3. **Shift Window**: 在相邻层中将窗口进行偏移，使得不同窗口的 Patch 之间可以进行信息交互。
+
+### 3.3 Patch Merging 详解
+
+Patch Merging 用于降低特征图分辨率，扩大感受野，其具体操作步骤如下:
+
+1. **分组**: 将相邻的 2x2 个 Patch 分为一组。
+2. **拼接**: 将每组 Patch 的特征拼接在一起。
+3. **线性变换**: 使用线性层对拼接后的特征进行降维。
 
 ## 4. 数学模型和公式详细讲解举例说明
 
-### 4.1 自注意力机制的数学表示
-#### 4.1.1 查询、键、值的计算
-$$
-\begin{aligned}
-Q &= X W_Q \\
-K &= X W_K \\
-V &= X W_V
-\end{aligned}
-$$
-其中，$X$为输入特征，$W_Q, W_K, W_V$为可学习的权重矩阵。
+### 4.1 自注意力机制
 
-#### 4.1.2 注意力权重的计算
-$$
-Attention(Q,K,V) = softmax(\frac{QK^T}{\sqrt{d_k}})V
-$$
-其中，$d_k$为查询和键的维度，用于缩放点积结果。
+自注意力机制计算输入序列中每个 Token 与其他 Token 之间的相关性，其数学模型如下:
 
-#### 4.1.3 多头自注意力机制
 $$
-\begin{aligned}
-MultiHead(Q,K,V) &= Concat(head_1, ..., head_h)W^O \\
-head_i &= Attention(QW_i^Q, KW_i^K, VW_i^V)
-\end{aligned}
-$$
-其中，$W_i^Q, W_i^K, W_i^V, W^O$为可学习的权重矩阵，$h$为注意力头的数量。
-
-### 4.2 Swin Transformer的数学表示
-#### 4.2.1 窗口多头自注意力
-设输入特征为$X \in \mathbb{R}^{H \times W \times C}$，窗口大小为$M \times M$，则窗口数量为$\frac{HW}{M^2}$。对于每个窗口$X_i \in \mathbb{R}^{M^2 \times C}$，计算窗口内的多头自注意力：
-$$
-\hat{X}_i = WindowMultiHead(X_i) = Concat(head_1, ..., head_h)W^O
+Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V
 $$
 
-#### 4.2.2 相对位置偏置
-引入相对位置偏置$B \in \mathbb{R}^{(2M-1) \times (2M-1)}$，修改注意力权重计算公式为：
+其中:
+
+* $Q$ 表示 Query 矩阵，用于查询相关信息。
+* $K$ 表示 Key 矩阵，用于表示每个 Token 的特征。
+* $V$ 表示 Value 矩阵，表示每个 Token 的值。
+* $d_k$ 表示 Key 矩阵的维度。
+
+### 4.2 滑动窗口机制
+
+滑动窗口机制将自注意力计算限制在局部窗口内，其数学模型如下:
+
 $$
-Attention(Q,K,V) = softmax(\frac{QK^T}{\sqrt{d_k}} + B)V
+Attention(Q, K, V) = softmax(\frac{QW^TKW}{\sqrt{d_k}})V
 $$
 
-#### 4.2.3 Shifted Window
-在连续的Swin Transformer Block之间，交替使用常规窗口和Shifted Window。Shifted Window将特征图在水平和垂直方向上移动$(\lfloor \frac{M}{2} \rfloor, \lfloor \frac{M}{2} \rfloor)$，以实现跨窗口的信息交互。
+其中:
+
+* $W$ 表示窗口矩阵，用于选择窗口内的 Patch。
+
+### 4.3 Patch Merging
+
+Patch Merging 将相邻 Patch 的特征进行融合，其数学模型如下:
+
+$$
+Merged\_Features = Linear(Concat(Patch\_1, Patch\_2, Patch\_3, Patch\_4))
+$$
+
+其中:
+
+* $Linear$ 表示线性层，用于降维。
+* $Concat$ 表示拼接操作。
 
 ## 5. 项目实践：代码实例和详细解释说明
 
-下面以PyTorch为例，给出Swin Transformer的核心代码实现。
+### 5.1 Swin Transformer 的 PyTorch 实现
 
-### 5.1 窗口划分和Patch Merging
-
-```python
-def window_partition(x, window_size):
-    """
-    将特征图划分为非重叠的窗口
-    Args:
-        x: (B, H, W, C)
-        window_size (int): 窗口大小
-    Returns:
-        windows: (num_windows*B, window_size, window_size, C)
-    """
-    B, H, W, C = x.shape
-    x = x.view(B, H // window_size, window_size, W // window_size, window_size, C)
-    windows = x.permute(0, 1, 3, 2, 4, 5).contiguous().view(-1, window_size, window_size, C)
-    return windows
-
-def window_reverse(windows, window_size, H, W):
-    """
-    将窗口还原为特征图
-    Args:
-        windows: (num_windows*B, window_size, window_size, C)
-        window_size (int): 窗口大小
-        H (int): 特征图高度
-        W (int): 特征图宽度
-    Returns:
-        x: (B, H, W, C)
-    """
-    B = int(windows.shape[0] / (H * W / window_size / window_size))
-    x = windows.view(B, H // window_size, W // window_size, window_size, window_size, -1)
-    x = x.permute(0, 1, 3, 2, 4, 5).contiguous().view(B, H, W, -1)
-    return x
-
-class PatchMerging(nn.Module):
-    """
-    对Patch进行下采样合并
-    """
-    def __init__(self, input_resolution, dim):
-        super().__init__()
-        self.input_resolution = input_resolution
-        self.dim = dim
-        self.reduction = nn.Linear(4 * dim, 2 * dim, bias=False)
-        self.norm = nn.LayerNorm(4 * dim)
-
-    def forward(self, x):
-        """
-        x: B, H*W, C
-        """
-        H, W = self.input_resolution
-        B, L, C = x.shape
-        assert L == H * W, "input feature has wrong size"
-        assert H % 2 == 0 and W % 2 == 0, f"x size ({H}*{W}) are not even."
-
-        x = x.view(B, H, W, C)
-
-        x0 = x[:, 0::2, 0::2, :]  # B H/2 W/2 C
-        x1 = x[:, 1::2, 0::2, :]  # B H/2 W/2 C
-        x2 = x[:, 0::2, 1::2, :]  # B H/2 W/2 C
-        x3 = x[:, 1::2, 1::2, :]  # B H/2 W/2 C
-        x = torch.cat([x0, x1, x2, x3], -1)  # B H/2 W/2 4*C
-        x = x.view(B, -1, 4 * C)  # B H/2*W/2 4*C
-
-        x = self.norm(x)
-        x = self.reduction(x)
-
-        return x
-```
-
-### 5.2 Swin Transformer Block
+以下代码展示了 Swin Transformer 的 PyTorch 实现:
 
 ```python
+import torch
+import torch.nn as nn
+
 class SwinTransformerBlock(nn.Module):
-    """
-    Swin Transformer Block
-    """
-    def __init__(self, dim, input_resolution, num_heads, window_size, shift_size=0):
+    def __init__(self, dim, input_resolution, num_heads, window_size, shift_size=0, mlp_ratio=4., qkv_bias=True, qk_scale=None, drop=0., attn_drop=0., drop_path=0., act_layer=nn.GELU, norm_layer=nn.LayerNorm):
         super().__init__()
         self.dim = dim
         self.input_resolution = input_resolution
-        self.num_heads = num_heads
-        self.window_size = window_size
-        self.shift_size = shift_size
-        self.attn_mask = None
-
-        self.norm1 = nn.LayerNorm(dim)
-        self.attn = WindowAttention(
-            dim, window_size=window_size, num_heads=num_heads,
-            qkv_bias=True, qk_scale=None, attn_drop=0., proj_drop=0.)
-
-        self.norm2 = nn.LayerNorm(dim)
-        mlp_hidden_dim = int(dim * 4)
-        self.mlp = Mlp(in_features=dim, hidden_features=mlp_hidden_dim, act_layer=nn.GELU)
-
-        if self.shift_size > 0:
-            H, W = self.input_resolution
-            img_mask = torch.zeros((1, H, W, 1))
-            h_slices = (slice(0, -self.window_size),
-                        slice(-self.window_size, -self.shift_size),
-                        slice(-self.shift_size, None))
-            w_slices = (slice(0, -self.window_size),
-                        slice(-self.window_size, -self.shift_size),
-                        slice(-self.shift_size, None))
-            cnt = 0
-            for h in h_slices:
-                for w in w_slices:
-                    img_mask[:, h, w, :] = cnt
-                    cnt += 1
-
-            mask_windows = window_partition(img_mask, self.window_size)
-            mask_windows = mask_windows.view(-1, self.window_size * self.window_size)
-            attn_mask = mask_windows.unsqueeze(1) - mask_windows.unsqueeze(2)
-            attn_mask = attn_mask.masked_fill(attn_mask != 0, float(-100.0)).masked_fill(attn_mask == 0, float(0.0))
-        else:
-            attn_mask = None
-
-        self.register_buffer("attn_mask", attn_mask)
-
-    def forward(self, x):
-        H, W = self.input_resolution
-        B, L, C = x.shape
-        assert L == H * W, "input feature has wrong size"
-
-        shortcut = x
-        x = self.norm1(x)
-        x = x.view(B, H, W, C)
-
-        # cyclic shift
-        if self.shift_size > 0:
-            shifted_x = torch.roll(x, shifts=(-self.shift_size, -self.shift_size), dims=(1, 2))
-        else:
-            shifted_x = x
-
-        # partition windows
-        x_windows = window_partition(shifted_x, self.window_size)
-        x_windows = x_windows.view(-1, self.window_size * self.window_size, C)
-
-        # W-MSA/SW-MSA
-        attn_windows = self.attn(x_windows, mask=self.attn_mask)
-
-        # merge windows
-        attn_windows = attn_windows.view(-1, self.window_size, self.window_size, C)
-        shifted_x = window_reverse(attn_windows, self.window_size, H, W)
-
-        # reverse cyclic shift
-        if self.shift_size > 0:
-            x = torch.roll(shifted_x, shifts=(self.shift_size, self.shift_size), dims=(1, 2))
-        else:
-            x = shifted_x
-        x = x.view(B, H * W, C)
-
-        # FFN
-        x = shortcut + x
-        x = x + self.mlp(self.norm2(x))
-
-        return x
-```
-
-### 5.3 相对位置偏置
-
-```python
-class WindowAttention(nn.Module):
-    """
-    Window based multi-head self attention (W-MSA) module with relative position bias.
-    """
-    def __init__(self, dim, window_size, num_heads, qkv_bias=True, qk_scale=None, attn_drop=0., proj_drop=0.):
-        super().__init__()
-        self.dim = dim
-        self.window_size = window_size
-        self.num_heads = num_heads
-        head_dim = dim // num_heads
-        self.scale = qk_scale or head_dim ** -0.5
-
-        self.relative_position_bias_table = nn.Parameter(
-            torch.zeros((2 * window_size[0] - 1) * (2 * window_size[1] - 1), num_heads))
-
-        coords_h = torch.arange(self.window_size[0])
-        coords_w = torch.arange(self.window_size[1])
-        coords = torch.stack(torch.meshgrid([coords_h, coords_w]))
-        coords_flatten = torch.flatten(coords, 1)
-        relative_coords = coords_flatten[:, :, None] - coords_flatten[:, None, :]
-        relative_coords = relative_coords.permute(1, 2, 0).contiguous()
-        relative_coords[:, :, 0] += self.window_size[0] - 1
-        relative_coords[:, :, 1] += self.window_size[1] - 1
-        relative_coords[:, :, 0] *= 2 * self.window_size[1] - 1
-        relative_position_index = relative_coords.sum(-1)
-        self.register_buffer("relative_position_index", relative_position_index)
-
-        self.qkv = nn.Linear(dim, dim * 3, bias=qkv_bias)
-        self.attn_drop = nn.Dropout(attn_drop)
-        self.proj = nn.Linear(dim, dim)
-        self.proj_drop = nn.Dropout(proj_drop)
-
-        nn.init.trunc_normal_(self.relative_position_bias_table, std=.02)
-        self.softmax = nn.Softmax(dim=-1)
-
-    def forward(self, x, mask=None):
-        B_, N, C = x.shape
-        qkv = self.qkv(x).reshape(B_, N, 3, self.num_heads, C // self.num_heads).permute(2, 0, 3, 1, 4)
-        q, k, v = qkv[0], qkv[1], qkv[
+        self.num_heads = num_
