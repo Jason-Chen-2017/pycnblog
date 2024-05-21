@@ -7,10 +7,10 @@ do
   make mc
   sleep 60
 
-  make fm
+  make fc
   sleep 10
 
-  make g
+  make gm
 
   sleep 3600
 

@@ -42,3 +42,6 @@ amc:
 
 h:
 	./human_make.sh &
+
+hm:
+	./human_make_mc.sh &
