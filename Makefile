@@ -4,11 +4,17 @@ f:
 fc:
 	./find_mac.sh
 
+fci7:
+	./find_mac_i7.sh
+
 m:
 	./curl_md.sh
 
 mc:
 	./curl_md_mac.sh
+
+mci7:
+	./curl_md_mac_i7.sh
 
 g:
 	./git_commit.sh
