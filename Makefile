@@ -51,3 +51,6 @@ h:
 
 hm:
 	./human_make_mc.sh &
+
+hmi7:
+	./human_make_mc_i7.sh &
