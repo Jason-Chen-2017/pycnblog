@@ -1,381 +1,175 @@
 # few-shot原理与代码实战案例讲解
 
-作者：禅与计算机程序设计艺术
+## 1.背景介绍
 
-## 1. 背景介绍
+### 1.1 什么是few-shot学习？
 
-### 1.1 深度学习的痛点：数据依赖
+在机器学习和深度学习领域中,few-shot学习是一种旨在使用少量样本就能快速学习新概念的范式。传统的监督学习方法需要大量标记数据才能获得良好的性能,但在现实世界中,获取大量标记数据通常是一项昂贵和耗时的任务。
 
-深度学习在过去十年中取得了巨大的成功，已经在图像识别、自然语言处理、语音识别等领域实现了突破性进展。然而，深度学习模型的训练通常需要大量的标注数据，这对于许多实际应用场景来说是一个巨大的挑战。
+few-shot学习试图通过利用已经学习到的知识,在看到少量新类别的示例后,就能够对这些新类别进行分类或生成新示例。这种能力对于那些标记数据稀缺的领域尤为重要,例如医疗影像分析、自然语言处理等。
 
-例如，在医疗领域，获取大量的标注数据非常困难且昂贵；在金融领域，数据隐私和安全问题使得共享数据变得非常敏感。此外，即使有足够的数据，训练一个复杂的深度学习模型也需要大量的计算资源和时间。
+### 1.2 few-shot学习的重要性
 
-### 1.2  小样本学习：应对数据稀缺的利器
+随着人工智能系统在越来越多领域得到应用,对于系统能够快速适应新环境、学习新概念的需求也越来越迫切。few-shot学习为解决这一挑战提供了一种有前景的方法。以下是few-shot学习的一些重要意义:
 
-为了解决深度学习对数据的依赖问题，小样本学习（Few-shot Learning）应运而生。小样本学习旨在利用少量样本训练出泛化能力强的模型，从而在数据稀缺的情况下也能取得良好的性能。
+1. **数据效率**:减少了对大量标记数据的依赖,降低了数据采集和标注的成本。
+2. **泛化能力**:能够从少量示例中捕获新概念的本质特征,提高了模型在新环境下的泛化能力。
+3. **连续学习**:few-shot学习为人工智能系统提供了持续学习新知识的能力,使其能够不断适应变化的环境。
+4. **多样性**:解决了数据集中类别分布失衡的问题,有助于构建更加公平和多样化的人工智能系统。
 
-### 1.3 few-shot的定义与意义
+## 2.核心概念与联系  
 
-Few-shot learning，顾名思义，是指在仅有少量样本的情况下，训练模型的能力。这对于许多实际应用场景具有重要意义，例如：
+### 2.1 few-shot学习的任务形式
 
-* **冷启动问题:** 新上线的产品或服务往往缺乏足够的历史数据，few-shot learning 可以帮助模型快速学习新任务。
-* **个性化推荐:**  用户的个人偏好数据通常较少，few-shot learning 可以根据用户的少量历史行为进行精准推荐。
-* **罕见事件预测:** 罕见事件的发生频率低，历史数据稀缺，few-shot learning 可以帮助模型更好地识别和预测此类事件。
+few-shot学习通常分为以下几种任务形式:
 
-## 2. 核心概念与联系
+1. **Few-shot分类(Few-shot Classification)**
+2. **Few-shot检测(Few-shot Detection)** 
+3. **Few-shot分割(Few-shot Segmentation)**
 
-### 2.1  小样本学习的分类
+其中,few-shot分类是最基础和研究最多的任务。给出一个支持集(support set)包含少量带标签的示例,目标是在查询集(query set)上正确分类查询示例。
 
-小样本学习可以根据样本数量和任务类型进行分类，常见的分类方法包括：
+### 2.2 few-shot学习的范式
 
-* **样本数量:** 
-    * **Zero-shot Learning:**  零样本学习，即在没有任何训练样本的情况下，模型能够识别新类别。
-    * **One-shot Learning:**  单样本学习，即每个类别只有一个训练样本。
-    * **Few-shot Learning:** 少样本学习，即每个类别只有少量训练样本，通常为 1 到 5 个。
-* **任务类型:**
-    * **N-way K-shot classification:**  N 路 K 样本分类，即从 N 个类别中，每个类别有 K 个样本，对测试样本进行分类。
-    * **Metric Learning:** 度量学习，通过学习样本之间的距离度量，将测试样本分类到距离最近的类别中。
-    * **Meta-Learning:** 元学习，通过学习如何学习，使模型能够快速适应新的任务。
+根据是否使用辅助数据,few-shot学习可分为:
 
-### 2.2  Few-shot 与其他学习范式的关系
+1. **无辅助few-shot学习(Inductive Few-shot Learning)**:只使用支持集和查询集,不利用任何其他辅助数据。
+2. **有辅助few-shot学习(Transductive Few-shot Learning)**:除了支持集和查询集,还可以利用查询集的无标签数据。
 
-Few-shot learning 与其他机器学习范式密切相关，例如：
+### 2.3 few-shot学习的方法
 
-* **迁移学习 (Transfer Learning):** 迁移学习利用源领域的数据和知识来提高目标领域的学习效果，few-shot learning 可以看作是一种特殊的迁移学习，将每个类别看作一个单独的领域。
-* **多任务学习 (Multi-task Learning):** 多任务学习同时学习多个相关任务，并利用任务之间的共性来提高每个任务的学习效果，few-shot learning 可以看作是一种极端的多任务学习，每个类别对应一个任务。
-* **元学习 (Meta-Learning):**  元学习旨在学习如何学习，使模型能够快速适应新的任务，few-shot learning 可以利用元学习来学习一个通用的特征提取器或分类器，从而快速适应新的类别。
+常见的few-shot学习方法主要包括:
 
-## 3.  核心算法原理具体操作步骤
+1. **基于度量的方法(Metric-based Methods)**
+2. **基于优化的方法(Optimization-based Methods)** 
+3. **基于生成模型的方法(Generative Methods)**
+4. **基于迁移学习的方法(Transfer Learning Methods)**
+5. **基于metalearning的方法(Meta-learning Methods)**
 
-### 3.1  基于度量学习的 Few-shot 方法
+其中,基于metalearning的方法是当前主流方向,通过在大量任务上学习"如何快速学习",获得良好的初始化权重,从而加快在新任务上的学习速度。
 
-基于度量学习的 Few-shot 方法是目前最常用的方法之一，其核心思想是学习一个 embedding 空间，使得属于同一类别的样本在 embedding 空间中距离更近，而不同类别的样本距离更远。
+### 2.4 metalearning在few-shot学习中的作用
 
-#### 3.1.1  孪生网络 (Siamese Networks)
+Metalearning是few-shot学习的核心和关键所在。具体来说,它通过以下几个方面来支持few-shot学习:
 
-孪生网络是度量学习的经典方法之一，其结构如下图所示：
+1. **快速适应**:通过在大量任务上训练,metalearning可以获得一个良好的初始化,使得在新任务上只需少量梯度更新即可快速适应。
+2. **捕获任务间知识**:metalearning能够从众多相关任务中捕获共享的知识,并将其内化到初始参数中,为新任务的学习提供有利的启发。
+3. **注意力机制**:metalearning常用注意力机制来自适应地聚焦于支持集中对新任务最相关的部分,提高了学习效率。
+4. **生成建模**:metalearning也被应用于生成模型,用于从少量示例生成新的数据,扩充训练集。
 
-```mermaid
-graph LR
-subgraph "孪生网络"
-    A[输入图像1] --> B{特征提取器}
-    C[输入图像2] --> D{特征提取器}
-    B --> E[距离函数]
-    D --> E
-    E --> F[相似度得分]
-end
-```
+总之,metalearning为few-shot学习提供了高效学习新概念的能力,是few-shot学习取得进展的关键所在。
 
-孪生网络有两个相同的特征提取器，分别处理两个输入样本，然后计算两个样本特征表示之间的距离。训练过程中，最小化相同类别样本之间的距离，最大化不同类别样本之间的距离。
+## 3.核心算法原理具体操作步骤
 
-#### 3.1.2  匹配网络 (Matching Networks)
+接下来我们详细介绍几种核心的few-shot学习算法的原理和操作步骤。
 
-匹配网络是另一种常用的基于度量学习的 Few-shot 方法，其结构如下图所示：
+### 3.1 基于优化的算法:MAML
 
-```mermaid
-graph LR
-subgraph "匹配网络"
-    A[支持集图像] --> B{特征提取器}
-    C[查询图像] --> D{特征提取器}
-    B --> E[注意力机制]
-    D --> E
-    E --> F[分类结果]
-end
-```
+**模型不可导分(Model-Agnostic Meta-Learning,MAML)** 是一种简单而有效的metalearning算法,适用于任何可微分的模型。它的核心思想是:从一个良好的初始化点出发,只需少量梯度步即可适应新任务。
 
-匹配网络使用注意力机制来计算支持集中每个样本与查询样本之间的相似度，然后根据相似度对支持集进行加权求和，得到查询样本的预测结果。
+算法步骤:
 
-### 3.2  基于元学习的 Few-shot 方法
+1. 从任务分布$p(\mathcal{T})$中采样一批任务。
+2. 对每个任务$\mathcal{T}_i$:
+    - 从$\mathcal{T}_i$采样支持集$\mathcal{D}_i^{tr}$和查询集$\mathcal{D}_i^{val}$。
+    - 在支持集上进行$k$步梯度更新,获得任务特定参数$\phi_i$:
 
-基于元学习的 Few-shot 方法将 Few-shot learning 问题看作一个元学习问题，通过学习如何学习，使模型能够快速适应新的类别。
+$$\phi_i = \phi - \alpha \nabla_\phi \sum_{(x,y)\in\mathcal{D}_i^{tr}}\mathcal{L}_{\phi}(x,y)$$
 
-#### 3.2.1  MAML (Model-Agnostic Meta-Learning)
+    - 在查询集上计算任务特定损失$\mathcal{L}_{\phi_i}(\mathcal{D}_i^{val})$。
+3. 更新初始参数$\phi$,使得任务特定损失最小化:
 
-MAML 是一种常用的元学习算法，其目标是学习一个模型参数的初始化值，使得模型能够在少量样本上快速微调到最佳状态。
+$$\phi \leftarrow \phi - \beta\nabla_\phi\sum_{\mathcal{T}_i\sim p(\mathcal{T})}\mathcal{L}_{\phi_i}(\mathcal{D}_i^{val})$$
 
-MAML 的训练过程包括两个阶段：
+MAML通过对多个任务的查询集损失求和的方式,找到一个能快速适应新任务的良好初始化点。这种元学习的思路使得MAML在few-shot分类等任务上取得了不错的表现。
 
-* **内循环 (Inner Loop):** 在每个任务上，使用少量样本对模型参数进行微调。
-* **外循环 (Outer Loop):**  根据内循环的更新结果，更新模型参数的初始化值，使得模型能够在新的任务上更快地收敛。
+然而,MAML在计算梯度时需要进行双循环,计算开销较大。此外,它只利用了支持集进行梯度更新,未充分利用查询集中的信息。
 
-#### 3.2.2  Prototypical Networks
+### 3.2 基于度量的算法:MatchingNet
 
-原型网络是一种简单有效的基于元学习的 Few-shot 方法，其核心思想是为每个类别学习一个原型表示，然后将查询样本分类到距离最近的原型表示的类别中。
+**MatchingNet**是一种基于度量学习的few-shot分类算法,通过学习语义嵌入空间中的距离度量,对新的查询样本进行最近邻分类。
 
-原型网络的训练过程如下：
+算法步骤:
 
-* 从每个类别中随机选择一些样本作为支持集，计算每个类别的原型表示，通常为支持集中样本特征表示的平均值。
-* 计算查询样本与每个类别原型表示之间的距离，将查询样本分类到距离最近的原型表示的类别中。
-* 更新模型参数，最小化分类损失。
+1. 将支持集$S=\{(x_1^S,y_1^S),...,(x_k^S,y_k^S)\}$和查询集$Q=\{x_1^Q,...,x_m^Q\}$输入嵌入网络$f_\theta$,获取嵌入向量:
+$$\mathbf{v}_i^S=f_\theta(x_i^S), \mathbf{v}_j^Q=f_\theta(x_j^Q)$$
 
+2. 对每个查询嵌入向量$\mathbf{v}_j^Q$,计算它与每个支持集嵌入$\mathbf{v}_i^S$的相似度:
+$$s(j,i) = \frac{\mathbf{v}_j^Q\cdot\mathbf{v}_i^S}{||\mathbf{v}_j^Q||||\mathbf{v}_i^S||}$$
 
-## 4. 数学模型和公式详细讲解举例说明
+3. 构造分类概率分布:
+$$P(y=y_i^S|x_j^Q) = \frac{\sum_{i:y_i^S=y}s(j,i)}{\sum_{i=1}^ks(j,i)}$$
 
-### 4.1  基于度量学习的 Few-shot 方法
+4. 最小化查询集上的交叉熵损失函数:
+$$\mathcal{L}(\theta) = -\sum_{j=1}^m\log P(y=y_j|x_j^Q)$$
 
-#### 4.1.1  孪生网络
+通过端到端训练,MatchingNet可以学习到一个良好的嵌入空间,使得相似的样本距离更近。在嵌入空间中进行最近邻分类,避免了优化大量参数的计算开销。
 
-孪生网络的目标函数通常为 contrastive loss，其公式如下：
+MatchingNet的主要缺陷是只利用了支持集标签信息,未充分利用查询集信息。此外,简单的最近邻策略也可能带来次优表现。
 
-$$
-L = \frac{1}{2N} \sum_{i=1}^N \left( y_i d(x_i, x_i') + (1 - y_i) max(0, m - d(x_i, x_i')) \right)
-$$
+### 3.3 基于生成模型的算法:MetaGAN  
 
-其中：
+**MetaGAN**是一种基于生成对抗网络(GAN)的few-shot学习算法,通过生成合成样本来扩充支持集,提高分类性能。
 
-* $N$ 为样本数量。
-* $x_i$ 和 $x_i'$ 为一对输入样本。
-* $y_i$ 为标签，相同类别为 1，不同类别为 0。
-* $d(x_i, x_i')$ 为两个样本特征表示之间的距离。
-* $m$ 为 margin，用于控制不同类别样本之间的距离。
+算法步骤:
 
-#### 4.1.2  匹配网络
+1. 从任务分布$p(\mathcal{T})$采样一批任务,每个任务包含支持集$S$和查询集$Q$。
+2. 将支持集$S$输入生成器$G$,生成合成样本$S^g$。
+3. 将真实支持集$S$和生成支持集$S^g$输入判别器$D$,计算真伪损失:
 
-匹配网络使用注意力机制来计算支持集中每个样本与查询样本之间的相似度，其公式如下：
+$$\mathcal{L}_D = -\mathbb{E}_{x\sim S}[\log D(x)] - \mathbb{E}_{x\sim S^g}[\log(1-D(x))]$$
 
-$$
-a(x, x_i) = \frac{exp(c(f(x), g(x_i)))}{\sum_{j=1}^k exp(c(f(x), g(x_j)))}
-$$
+4. 更新生成器$G$使得判别器$D$无法区分真伪样本:
 
-其中：
+$$\mathcal{L}_G = -\mathbb{E}_{x\sim S^g}[\log D(x)]$$
 
-* $x$ 为查询样本。
-* $x_i$ 为支持集中的第 $i$ 个样本。
-* $f(x)$ 和 $g(x_i)$ 分别为查询样本和支持集中样本的特征表示。
-* $c(f(x), g(x_i))$ 为查询样本和支持集中样本特征表示之间的相似度函数，例如 cosine 相似度。
+5. 将真实支持集$S$和生成支持集$S^g$一并输入分类器$C$,在查询集$Q$上计算分类损失:
 
-### 4.2  基于元学习的 Few-shot 方法
+$$\mathcal{L}_C = -\mathbb{E}_{(x,y)\sim Q}[\log P(y|x,S\cup S^g)]$$
 
-#### 4.2.1  MAML
+6. 联合优化$G,D,C$的目标函数:
 
-MAML 的目标函数为：
+$$\min_{G,C}\max_D\mathcal{L}_D(D,G) + \lambda\mathcal{L}_C(C,G)$$
 
-$$
-\min_{\theta} \sum_{\mathcal{T}_i \sim p(\mathcal{T})} \mathcal{L}_{\mathcal{T}_i}(\theta')
-$$
+通过对抗训练,MetaGAN生成的合成样本质量较高,有利于提高分类器在稀疏数据下的表现。但由于GAN训练不稳定,MetaGAN的性能也不够稳健。
 
-其中：
+### 3.4 基于metalearning的算法:SNAIL
 
-* $\theta$ 为模型参数。
-* $\mathcal{T}_i$ 为一个任务。
-* $p(\mathcal{T})$ 为任务分布。
-* $\mathcal{L}_{\mathcal{T}_i}(\theta')$ 为模型在任务 $\mathcal{T}_i$ 上的损失函数，$\theta'$ 为模型参数在任务 $\mathcal{T}_i$ 上微调后的值。
+**SNAIL(Simple Neural Attentive Learner)** 是一种基于注意力机制和metalearning的few-shot分类算法,能够通过少量梯度步骤快速适应新任务。
 
-#### 4.2.2  Prototypical Networks
+算法步骤:
 
-原型网络的目标函数为：
+1. 将支持集$S$和查询集$Q$的图像展平并拼接,输入SNAIL模型。
+2. SNAIL由若干个注意力模块和TC(Temporal Convolution,时间卷积)模块构成。注意力模块用于选择性关注支持集中对当前查询样本最相关的部分,TC模块则捕获序列信息。
+3. 每个注意力模块包含:
+    - 键/值/查询向量计算: $K,V,Q=f_K(S,Q),f_V(S,Q),f_Q(S,Q)$
+    - 注意力权重计算: $A(Q,K)=\text{softmax}(\frac{QK^T}{\sqrt{d}})$
+    - 加权求和: $\text{Output}=\sum_iA(Q,K_i)V_i$
 
-$$
-L = -\log p(y=c | x, S)
-$$
+4. TC模块对注意力模块输出进行时间卷积,融合上下文信息。
+5. 最后一层输出通过全连接层获得分类结果。
+6. 将分类损失关于SNAIL参数$\theta$进行反向传播,进行端到端训练。
 
-其中：
+SNAIL使用注意力机制动态地关注支持集中对当前查询样本最相关的部分,并通过时间卷积捕获序列信息,在数据效率和泛化能力上都表现不俗。
 
-* $x$ 为查询样本。
-* $y$ 为查询样本的真实类别。
-* $c$ 为预测类别。
-* $S$ 为支持集。
-* $p(y=c | x, S)$ 为查询样本属于类别 $c$ 的概率。
+然而,SNAIL的结构相对复杂,对特征提取器的依赖也较强,导致了较大的计算开销。
 
-## 5. 项目实践：代码实例和详细解释说明
+### 3.5 小结
 
-### 5.1  Omniglot 字符识别
+我们介绍了几种代表性的few-shot学习算法,包括基于优化的MAML、基于度量的MatchingNet、基于生成模型的MetaGAN和基于metalearning的SNAIL。
 
-Omniglot 数据集是一个包含 50 种不同语言的 1623 个手写字符数据集，每个字符只有 20 个样本。Omniglot 数据集通常用于 Few-shot learning 算法的评估。
+每种算法都有自己的思路和特点,也存在一定局限性。未来的few-shot学习算法需要进一步提高数据效率和泛化能力,同时降低计算开销,以更好地应对实际场景的挑战。
 
-本节将使用 PyTorch 实现一个基于原型网络的 Omniglot 字符识别模型。
+## 4.数学模型和公式详细讲解举例说明
 
-#### 5.1.1  数据预处理
+在上一节中,我们介绍了几种核心few-shot学习算法的原理和步骤。这些算法中包含了一些重要的数学模型和公式,我们将在本节对其进行详细讲解。
 
-```python
-import torch
-from torch.utils.data import Dataset, DataLoader
-from torchvision import transforms
-from PIL import Image
+### 4.1 交叉熵损失函数
 
-class OmniglotDataset(Dataset):
-    def __init__(self, data_dir, transform=None):
-        self.data_dir = data_dir
-        self.transform = transform
-        self.img_paths = []
-        self.labels = []
+交叉熵损失函数广泛用于分类任务中,也是几乎所有few-shot学习算法的核心损失函数。对于单个样本$(x,y)$,交叉熵损失定义为:
 
-        for class_id in range(1623):
-            class_dir = os.path.join(data_dir, str(class_id))
-            for img_name in os.listdir(class_dir):
-                img_path = os.path.join(class_dir, img_name)
-                self.img_paths.append(img_path)
-                self.labels.append(class_id)
+$$\mathcal{L}_{CE}(x,y) = -\log P(y|x;\theta)$$
 
-    def __len__(self):
-        return len(self.img_paths)
+其中$P(y|x;\theta)$是模型对于输入$x$预测为类别$y$的概率,参数$\theta$是通过训练学习获得的。
 
-    def __getitem__(self, idx):
-        img_path = self.img_paths[idx]
-        label = self.labels[idx]
-
-        img = Image.open(img_path)
-        if self.transform:
-            img = self.transform(img)
-
-        return img, label
-
-# 定义数据预处理
-transform = transforms.Compose([
-    transforms.Resize((28, 28)),
-    transforms.ToTensor(),
-    transforms.Normalize(mean=[0.5], std=[0.5])
-])
-
-# 创建数据集
-train_dataset = OmniglotDataset(data_dir='./omniglot/images_background', transform=transform)
-test_dataset = OmniglotDataset(data_dir='./omniglot/images_evaluation', transform=transform)
-
-# 创建数据加载器
-train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
-test_loader = DataLoader(test_dataset, batch_size=32, shuffle=False)
-```
-
-#### 5.1.2  模型定义
-
-```python
-import torch.nn as nn
-
-class PrototypicalNetwork(nn.Module):
-    def __init__(self, in_channels, hidden_size, out_features):
-        super(PrototypicalNetwork, self).__init__()
-        self.encoder = nn.Sequential(
-            nn.Conv2d(in_channels, hidden_size, kernel_size=3, padding=1),
-            nn.BatchNorm2d(hidden_size),
-            nn.ReLU(),
-            nn.MaxPool2d(kernel_size=2),
-            nn.Conv2d(hidden_size, hidden_size, kernel_size=3, padding=1),
-            nn.BatchNorm2d(hidden_size),
-            nn.ReLU(),
-            nn.MaxPool2d(kernel_size=2),
-        )
-        self.out_features = out_features
-
-    def forward(self, x):
-        x = self.encoder(x)
-        x = x.view(x.size(0), -1)
-        return x
-
-    def get_prototypes(self, support_images, support_labels, n_way, n_shot):
-        """
-        计算每个类别的原型表示
-        """
-        prototypes = torch.zeros(n_way, self.out_features).to(device)
-        for i in range(n_way):
-            # 获取当前类别的支持集样本
-            class_indices = torch.where(support_labels == i)[0]
-            class_images = support_images[class_indices]
-
-            # 计算当前类别的原型表示
-            prototypes[i] = torch.mean(self.forward(class_images), dim=0)
-
-        return prototypes
-```
-
-#### 5.1.3  训练模型
-
-```python
-# 定义设备
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
-# 创建模型
-model = PrototypicalNetwork(in_channels=1, hidden_size=64, out_features=64).to(device)
-
-# 定义优化器和损失函数
-optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
-loss_fn = nn.CrossEntropyLoss()
-
-# 定义训练循环
-def train(model, train_loader, optimizer, loss_fn, n_way, n_shot, n_query):
-    model.train()
-    for batch_idx, (images, labels) in enumerate(train_loader):
-        # 将数据移动到设备
-        images = images.to(device)
-        labels = labels.to(device)
-
-        # 随机选择类别
-        selected_classes = torch.randperm(len(train_dataset.classes))[:n_way]
-
-        # 构建支持集和查询集
-        support_images = []
-        support_labels = []
-        query_images = []
-        query_labels = []
-        for i, class_id in enumerate(selected_classes):
-            # 获取当前类别的样本索引
-            class_indices = torch.where(labels == class_id)[0]
-
-            # 随机选择支持集和查询集样本
-            selected_indices = torch.randperm(len(class_indices))
-            support_indices = class_indices[selected_indices[:n_shot]]
-            query_indices = class_indices[selected_indices[n_shot:n_shot + n_query]]
-
-            # 将样本添加到支持集和查询集中
-            support_images.append(images[support_indices])
-            support_labels.append(torch.tensor([i] * n_shot).to(device))
-            query_images.append(images[query_indices])
-            query_labels.append(torch.tensor([i] * n_query).to(device))
-
-        # 将支持集和查询集转换为张量
-        support_images = torch.cat(support_images, dim=0)
-        support_labels = torch.cat(support_labels, dim=0)
-        query_images = torch.cat(query_images, dim=0)
-        query_labels = torch.cat(query_labels, dim=0)
-
-        # 计算原型表示
-        prototypes = model.get_prototypes(support_images, support_labels, n_way, n_shot)
-
-        # 计算查询样本与每个原型表示之间的距离
-        distances = torch.cdist(model(query_images), prototypes)
-
-        # 计算损失函数
-        loss = loss_fn(-distances, query_labels)
-
-        # 反向传播和参数更新
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
-
-        # 打印训练信息
-        if batch_idx % 100 == 0:
-            print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
-                epoch, batch_idx * len(images), len(train_loader.dataset),
-                100. * batch_idx / len(train_loader), loss.item()))
-
-# 训练模型
-n_way = 5
-n_shot = 5
-n_query = 15
-for epoch in range(10):
-    train(model, train_loader, optimizer, loss_fn, n_way, n_shot, n_query)
-```
-
-#### 5.1.4  测试模型
-
-```python
-# 定义测试循环
-def test(model, test_loader, loss_fn, n_way, n_shot, n_query):
-    model.eval()
-    test_loss = 0
-    correct = 0
-    with torch.no_grad():
-        for batch_idx, (images, labels) in enumerate(test_loader):
-            # 将数据移动到设备
-            images = images.to(device)
-            labels = labels.to(device)
-
-            # 随机选择类别
-            selected_classes = torch.randperm(len(test_dataset.classes))[:n_way]
-
-            # 构建支持集和查询集
-            support_images = []
-            support_labels = []
-            query_images = []
-            query_labels = []
-            for i, class_id in enumerate(selected_classes):
-                
+对于整个数据集,交叉熵损失是所有样本损失的平均:
