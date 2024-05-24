@@ -34,7 +34,7 @@ w1:
 wr:
 	./write_blog_rand.sh &
 
-w3:
+w30:
 	./write_blog30.sh &
 
 t:
