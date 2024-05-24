@@ -4,4 +4,5 @@ __pycache__/
 
 git_commit.sh
 git_commit_mac.sh
+git_commit_mac_i7.sh
 git_commit_ubuntu.sh
