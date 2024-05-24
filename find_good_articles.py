@@ -25,7 +25,7 @@ def is_good_content(content):
 
     # 包含关键字：$$ 表示有公式，```表示有代码
     keywords = [
-        "$",
+         "$",
         "```",
         "背景介绍",
         "核心概念与联系",
@@ -33,18 +33,19 @@ def is_good_content(content):
         "数学模型和公式",
         "项目实践",
         "实际应用场景",
-        # "工具和资源",
     ]
 
     keywords2 = [
         "$",
         "```",
         "Background Introduction",
-        "Core Concepts",
-        "Core Algorithms",
-        "Best Practices",
-        "Real-World Applications",
+        "Core Concept",
+        "Core Algorithm",
+        "Mathematical Model",
+        "Project Implementation",
+        "Practical Application",
         # "Tools and Resources",
+        # "Future Development Trends and Challenges",
     ]
 
     flag1 = True
