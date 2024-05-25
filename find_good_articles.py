@@ -74,7 +74,7 @@ def process_file(file_path, target_good_directory, target_draft_directory):
         line_count = len(cleaned_lines)
 
     # target_good_directory
-    if (length >= 3000) and (250 > line_count >= 100) and is_good_content(content):
+    if (length >= 3000) and (360 > line_count >= 100) and is_good_content(content):
         file_name = os.path.basename(file_path)
         target_good_directory = os.path.join(target_good_directory, file_name)
         shutil.copy(file_path, target_good_directory)

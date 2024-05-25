@@ -1,86 +1,91 @@
-## 背景介绍
+## 1.背景介绍
 
-Apache Mesos 是一个开源的集群管理系统，最初由 Dropbox 开发，并于 2013 年 6 月 18 日发布到 Apache Incubator。Mesos 允许用户将计算资源（如 CPU、内存、磁盘、网络）以微小的granularity（粒度）进行分配，并允许各种类型的应用程序在集群中运行。Mesos 通过一个统一的框架来管理和调度集群中的资源和任务。它可以让用户运行各种类型的应用程序，包括 Hadoop、Spark、Cassandra 和 others。
+Apache Mesos是一个开源的集群管理器，它提供了高效的资源隔离和共享跨分布式应用程序或框架。在大规模集群环境中，资源管理和任务调度是至关重要的。Mesos的出现就是为了解决这一问题。
 
-## 核心概念与联系
+## 2.核心概念与联系
 
-Mesos 的核心概念是资源分配和任务调度。资源分配是指 Mesos 如何将集群中的计算资源分配给不同的应用程序。任务调度是指 Mesos 如何决定运行哪个任务，并在哪个节点上运行。
+Mesos基于两个核心概念：Resource Offer和Task。Resource Offer是Mesos Master向Framework（如Spark，Hadoop等）提供的可用资源描述，包括CPU，内存等。Task则是Framework基于Resource Offer创建的，用于在Mesos Slave节点上运行的工作单元。
 
-Mesos 的核心概念可以分为以下几个部分：
+## 3.核心算法原理具体操作步骤
 
-1. 资源分配：Mesos 将集群中的计算资源分配给不同的应用程序。
-2. 任务调度：Mesos 决定运行哪个任务，并在哪个节点上运行。
-3. 调度器（Scheduler）：Mesos 的调度器负责在集群中运行任务。
-4. 代理（Agent）：Mesos 的代理负责在集群中的节点上运行任务。
+Mesos的工作流程主要包括以下步骤：
 
-## 核心算法原理具体操作步骤
+1. Mesos Master收集所有Mesos Slave节点的资源信息，形成Resource Offer。
+2. Mesos Master将Resource Offer发送给Framework。
+3. Framework根据Resource Offer创建Task，并将Task发送给Mesos Master。
+4. Mesos Master将Task发送给相应的Mesos Slave执行。
 
-Mesos 的核心算法原理是基于资源分配和任务调度。以下是 Mesos 的核心算法原理的具体操作步骤：
+这个流程的核心是Mesos Master和Framework的交互，通过Resource Offer和Task的交换，实现了资源的有效利用和任务的有效调度。
 
-1. 资源分配：Mesos 通过一个统一的框架来管理和调度集群中的资源。它将集群中的计算资源（如 CPU、内存、磁盘、网络）以微小的granularity（粒度）进行分配，并允许各种类型的应用程序在集群中运行。
-2. 任务调度：Mesos 的调度器负责在集群中运行任务。它将任务分配给不同的应用程序，并在集群中的节点上运行。
-3. 调度器（Scheduler）：Mesos 的调度器负责在集群中运行任务。它将任务分配给不同的应用程序，并在集群中的节点上运行。
-4. 代理（Agent）：Mesos 的代理负责在集群中的节点上运行任务。它将任务分配给不同的应用程序，并在集群中的节点上运行。
+## 4.数学模型和公式详细讲解举例说明
 
-## 数学模型和公式详细讲解举例说明
+Mesos的调度算法主要是基于DRF（Dominant Resource Fairness）算法，其主要目标是实现跨多种资源类型的公平分享。DRF算法的核心思想是：在所有的资源类型中，一个用户的主导资源是他所需求最多的资源。
 
-Mesos 的数学模型和公式可以分为以下几个部分：
+假设有两种资源：CPU和内存，用户A需要2个CPU和4GB内存，用户B需要1个CPU和1GB内存。那么对于用户A来说，内存是他的主导资源，对于用户B来说，CPU和内存都可能是他的主导资源。DRF算法就是要确保每个用户的主导资源的公平使用。
 
-1. 资源分配：Mesos 将集群中的计算资源分配给不同的应用程序。资源分配的数学模型可以表示为：R = Σr\_i，where R 是资源分配，r\_i 是应用程序 i 的资源需求。
-2. 任务调度：Mesos 的调度器负责在集群中运行任务。任务调度的数学模型可以表示为：T = Σt\_i，where T 是任务调度，t\_i 是应用程序 i 的任务数量。
+## 5.项目实践：代码实例和详细解释说明
 
-## 项目实践：代码实例和详细解释说明
+下面我们通过一个简单的例子来说明如何在Mesos上运行一个任务。
 
-以下是 Mesos 的代码实例和详细解释说明：
+首先，我们需要创建一个Framework，这个Framework需要实现两个接口：`resourceOffers`和`statusUpdate`。
 
-1. 资源分配：Mesos 的资源分配可以通过以下代码实现：
-```bash
-# 资源分配代码示例
-mesos --master=master --resources="CPU:10;MEM:1024" --name="myapp" --command="myapp --input=hdfs:///input --output=hdfs:///output"
+```java
+public class MyFramework implements Scheduler {
+    @Override
+    public void registered(SchedulerDriver driver, FrameworkID frameworkId, MasterInfo masterInfo) {
+        System.out.println("Registered! ID = " + frameworkId.getValue());
+    }
+
+    @Override
+    public void resourceOffers(SchedulerDriver driver, List<Offer> offers) {
+        for (Offer offer : offers) {
+            TaskInfo task = TaskInfo.newBuilder()
+                    .setName("task " + offer.getHostname())
+                    .setTaskId(TaskID.newBuilder().setValue(Integer.toString(taskId++)))
+                    .setSlaveId(offer.getSlaveId())
+                    .addResources(Resource.newBuilder().setName("cpus").setType(Value.Type.SCALAR).setScalar(Value.Scalar.newBuilder().setValue(1)))
+                    .addResources(Resource.newBuilder().setName("mem").setType(Value.Type.SCALAR).setScalar(Value.Scalar.newBuilder().setValue(128)))
+                    .setCommand(CommandInfo.newBuilder().setValue("echo hello"))
+                    .build();
+
+            tasks.add(task);
+            driver.launchTasks(Collections.singleton(offer.getId()), tasks);
+        }
+    }
+
+    @Override
+    public void statusUpdate(SchedulerDriver driver, TaskStatus status) {
+        System.out.println("Status update: task " + status.getTaskId().getValue() + " is in state " + status.getState());
+    }
+}
 ```
-1. 任务调度：Mesos 的任务调度可以通过以下代码实现：
-```bash
-# 任务调度代码示例
-mesos --master=master --name="myapp" --command="myapp --input=hdfs:///input --output=hdfs:///output"
-```
-## 实际应用场景
 
-Mesos 的实际应用场景可以分为以下几个部分：
+在这个例子中，我们创建了一个简单的Framework，它会接收Mesos Master的Resource Offer，然后创建一个简单的echo任务。
 
-1. 大数据处理：Mesos 可以用于大数据处理，如 Hadoop、Spark、Cassandra 等。
-2. 机器学习：Mesos 可以用于机器学习，例如 TensorFlow、Keras 等。
-3. 服务网格：Mesos 可以用于服务网格，例如 Istio、Linkerd 等。
-4. 虚拟化和容器化：Mesos 可以用于虚拟化和容器化，例如 Docker、Kubernetes 等。
+## 6.实际应用场景
 
-## 工具和资源推荐
+Mesos被广泛应用在各种大规模集群环境中，例如Twitter，Apple，Netflix等公司都在使用Mesos进行资源管理和任务调度。在这些场景中，Mesos主要用于运行各种大数据处理任务，如Hadoop，Spark等。
 
-以下是 Mesos 相关的工具和资源推荐：
+## 7.工具和资源推荐
 
-1. Mesos 官方文档：[https://mesos.apache.org/documentation/](https://mesos.apache.org/documentation/)
-2. Mesos 入门指南：[https://mesos.apache.org/documentation/latest/quick-start/](https://mesos.apache.org/documentation/latest/quick-start/)
-3. Mesos 源码：[https://github.com/apache/mesos](https://github.com/apache/mesos)
-4. Mesos 社区论坛：[https://community.apache.org/mailing-lists.html#mesos-user](https://community.apache.org/mailing-lists.html#mesos-user)
+- Apache Mesos官方网站：[http://mesos.apache.org/](http://mesos.apache.org/)
+- Mesos源代码：[https://github.com/apache/mesos](https://github.com/apache/mesos)
+- Mesos用户邮件列表：[https://lists.apache.org/list.html?user@mesos.apache.org](https://lists.apache.org/list.html?user@mesos.apache.org)
 
-## 总结：未来发展趋势与挑战
+## 8.总结：未来发展趋势与挑战
 
-Mesos 作为一个开源的集群管理系统，在大数据处理、机器学习、服务网格、虚拟化和容器化等领域具有广泛的应用前景。未来，Mesos 将继续发展，进一步提高资源分配和任务调度的效率和性能。然而，Mesos 也面临着一些挑战，如竞争对手的出现、技术升级、市场需求的变化等。Mesos 的未来发展趋势将取决于其团队和社区的努力，以及市场需求的变化。
+Mesos作为一个开源的集群管理器，已经在大规模集群环境中得到了广泛的应用。但是，随着集群规模的不断扩大和应用需求的不断变化，Mesos面临着新的挑战，例如如何更好地支持容器化应用，如何提高资源利用率，如何提供更灵活的调度策略等。这些都是Mesos未来需要解决的问题。
 
-## 附录：常见问题与解答
+## 9.附录：常见问题与解答
 
-以下是 Mesos 相关的常见问题与解答：
+1. 问：Mesos和Kubernetes有什么区别？
+答：Mesos是一个更加通用的集群管理器，它可以运行各种类型的任务，包括长运行的服务，批处理任务，数据处理任务等。而Kubernetes主要是用于运行容器化的服务。
 
-1. Q: Mesos 是什么？
+2. 问：如何调试在Mesos上运行的任务？
+答：你可以通过Mesos的Web UI查看任务的状态和日志，也可以通过Mesos的API获取更详细的信息。
 
-A: Mesos 是一个开源的集群管理系统，允许用户将计算资源（如 CPU、内存、磁盘、网络）以微小的granularity（粒度）进行分配，并允许各种类型的应用程序在集群中运行。
+3. 问：Mesos支持哪些类型的资源？
+答：Mesos支持CPU，内存，磁盘和端口等资源。你也可以定义自己的资源类型。
 
-1. Q: Mesos 的核心概念是什么？
-
-A: Mesos 的核心概念包括资源分配、任务调度、调度器（Scheduler）和代理（Agent）。
-
-1. Q: Mesos 的资源分配和任务调度如何实现的？
-
-A: Mesos 的资源分配和任务调度可以通过代码实例实现，如上文所示。
-
-1. Q: Mesos 有哪些实际应用场景？
-
-A: Mesos 的实际应用场景包括大数据处理、机器学习、服务网格和虚拟化
+4. 问：如何在Mesos上运行Hadoop或Spark？
+答：你可以使用Mesos的Hadoop或Spark框架，在Mesos上运行Hadoop或Spark任务。
