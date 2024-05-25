@@ -1,129 +1,83 @@
 ## 1. 背景介绍
 
-人工智能（AI）已经在我们的日常生活中产生了巨大的影响。深度学习（Deep Learning）是人工智能领域的最新趋势之一，它通过模拟人类大脑的工作方式来解决复杂问题。生成对抗网络（GAN，Generative Adversarial Networks）是深度学习的一个分支，它通过两个相互竞争的网络来生成新的数据。
+在过去的几年里，深度学习和生成对抗网络（GANs）已经成为艺术创作的热门话题。GANs 是一种强大的生成模型，可以生成高质量的图像，甚至可以创作出独特的艺术品。今天，我们将探讨 GANs 在艺术创作中的应用实例，并了解如何将其应用于实践。
 
 ## 2. 核心概念与联系
 
-生成对抗网络（GAN）由两个主要组成部分：生成器（Generator）和判别器（Discriminator）。生成器负责生成新的数据，而判别器负责评估生成器生成的数据的质量。通过不断地互相竞争，生成器和判别器可以共同地生成新的数据。
+生成对抗网络（GANs）由两部分组成：生成器（Generator）和判别器（Discriminator）。生成器生成新的数据样本，而判别器判断这些样本是真实的还是伪造的。通过不断地交互和对抗，生成器和判别器不断地优化和改进，生成更真实、更逼真的数据样本。
 
-在艺术创作领域，GAN 可以用于生成新的艺术作品。通过训练 GAN 来模仿艺术家的风格，生成新的艺术作品。这一方法可以帮助艺术家们更好地理解和探索新的创作方法。
+在艺术创作中，GANs 可以帮助我们生成独特的图像，打破传统的艺术创作方式。我们可以利用 GANs 生成各种风格的画作，从古典到现代，从复制到创新。
 
 ## 3. 核心算法原理具体操作步骤
 
-要实现 GAN 在艺术创作中的应用，需要遵循以下步骤：
+在开始探讨 GANs 的具体操作步骤之前，我们需要了解一些基本概念。生成器是一个神经网络，它接受随机噪声作为输入，并生成一个图像。判别器是一个神经网络，它接受一个图像作为输入，并判断这个图像是真实的还是伪造的。
 
-1. 收集数据集：收集一组艺术作品，以便用来训练 GAN。数据集应该包括各种风格和类型的艺术作品。
+生成器和判别器之间的交互如下：
 
-2. 预处理数据：将艺术作品转换为计算机可处理的格式，例如图像。
-
-3. 定义生成器和判别器的架构：生成器负责生成新的艺术作品，而判别器负责评估生成器生成的作品的质量。可以使用卷积神经网络（CNN）作为生成器和判别器的基础架构。
-
-4. 训练 GAN：通过不断地互相竞争，生成器和判别器可以共同地生成新的数据。训练过程中，生成器试图生成与真实艺术作品相似的作品，而判别器则评估生成器生成的作品的质量。
-
-5. 生成艺术作品：经过训练的 GAN 可以生成新的艺术作品。这些作品可能会具有艺术家们的风格和特点。
+1. 生成器生成一幅图像。
+2. 判别器判断这幅图像是真实的还是伪造的。
+3. 根据判别器的判断结果，生成器调整参数来生成更真实的图像。
+4. 判别器不断地优化和改进，以更好地识别生成器生成的图像。
+5. 通过不断地交互和对抗，生成器和判别器不断地优化和改进，最终生成更真实、更逼真的数据样本。
 
 ## 4. 数学模型和公式详细讲解举例说明
 
-生成器和判别器的数学模型和公式相对复杂，但是可以通过一些实例来更好地理解。以下是一个简单的 GAN 模型的数学描述：
+为了更好地理解 GANs 的原理，我们需要了解其数学模型和公式。以下是一个简单的 GANs 模型：
 
-1. 生成器：生成器的目的是生成新的数据。例如，在艺术创作中，生成器负责生成新的艺术作品。生成器的输入是一个随机向量 z，生成器的输出是一个新的艺术作品 G(z)。
+$$
+\min\limits_G \max\limits_D V(D, G) = \mathbb{E}_{x \sim p_{\text{data}}(x)} [\log D(x)] + \mathbb{E}_{z \sim p_z(z)} [\log (1 - D(G(z)))]
+$$
 
-2. 判别器：判别器的目的是评估生成器生成的数据的质量。例如，在艺术创作中，判别器负责评估生成器生成的艺术作品的质量。判别器的输入是一个艺术作品 x，判别器的输出是一个概率 p(D(x))，表示输入的艺术作品 x 是真实的概率。
+其中，$V(D, G)$ 是一个指标，它衡量生成器和判别器之间的交互情况。$p_{\text{data}}(x)$ 表示数据的真实分布，$p_z(z)$ 表示噪声的分布。
 
 ## 4. 项目实践：代码实例和详细解释说明
 
-以下是一个简单的 GAN 项目实践的代码示例：
+在本节中，我们将通过一个实际的项目实践来说明如何使用 GANs 在艺术创作中。我们将使用 Python 和 TensorFlow 库来实现一个简单的 GANs 模型。
 
 ```python
 import tensorflow as tf
-from tensorflow.keras.layers import Input, Dense, Reshape, Flatten
-from tensorflow.keras.models import Model
-import numpy as np
-
-# 定义生成器的输入
-z = Input(shape=(100,))
-
-# 生成器的架构
-x = Dense(256, activation='relu')(z)
-x = Dense(512, activation='relu')(x)
-x = Dense(1024, activation='relu')(x)
-x = Dense(784, activation='tanh')(x)
-x = Reshape((28, 28))(x)
 
 # 定义生成器
-generator = Model(z, x)
-
-# 定义判别器的输入
-x = Input(shape=(28, 28))
-
-# 判别器的架构
-x = Flatten()(x)
-x = Dense(1024, activation='relu')(x)
-x = Dense(512, activation='relu')(x)
-x = Dense(256, activation='relu')(x)
-x = Dense(1, activation='sigmoid')(x)
+def generator(z, reuse=None):
+    # ...生成器的代码...
 
 # 定义判别器
-discriminator = Model(x, x)
+def discriminator(x, reuse=None):
+    # ...判别器的代码...
 
-# 定义 GAN 模型
-z = Input(shape=(100,))
-x_gen = generator(z)
-x_disc = discriminator(x_gen)
-GAN = Model(z, [x_gen, x_disc])
+# 定义损失函数
+def loss_fn(G, D, Z, X):
+    # ...损失函数的代码...
 
-# 编译 GAN 模型
-GAN.compile(loss=['binary_crossentropy', 'binary_crossentropy'], optimizer='adam')
+# 定义训练步骤
+def train_step(G, D, Z, X):
+    # ...训练步骤的代码...
+
+# 创建生成器和判别器
+G = generator()
+D = discriminator()
+
+# 创建训练数据
+Z = tf.placeholder(tf.float32, [None, 100])
+X = tf.placeholder(tf.float32, [None, 784])
+
+# 定义训练操作
+train_op = train_step(G, D, Z, X)
+
+# 初始化变量并开始训练
+init = tf.global_variables_initializer()
+with tf.Session() as sess:
+    sess.run(init)
+    for step in range(10000):
+        # ...训练的具体代码...
 ```
 
 ## 5. 实际应用场景
 
-生成对抗网络（GAN）在艺术创作领域具有广泛的应用前景。通过训练 GAN 来模仿艺术家的风格，生成新的艺术作品。这种方法可以帮助艺术家们更好地理解和探索新的创作方法。此外，GAN 还可以用于其他领域，如图像生成、视频生成、自然语言生成等。
+GANs 在艺术创作中的应用非常广泛。我们可以利用 GANs 生成各种风格的画作，甚至创作出独特的艺术品。此外，GANs 还可以用于生成其他类型的数据，如文本、音频等。
 
 ## 6. 工具和资源推荐
 
-要实现 GAN 在艺术创作中的应用，需要一定的计算机编程和数学背景。以下是一些建议的工具和资源：
+要学习和使用 GANs，我们需要掌握一些基本的工具和资源。以下是一些建议：
 
-1. TensorFlow：TensorFlow 是一个用于机器学习和深度学习的开源框架，可以用于实现 GAN。
-
-2. Keras：Keras 是一个高级神经网络 API，可以用于构建和训练 GAN。
-
-3. Python：Python 是一个流行的编程语言，可以用于实现 GAN。
-
-4. 数据集：可以从互联网上下载艺术作品的数据集，以便用来训练 GAN。
-
-5. 学术文献：可以阅读相关学术文献，以便更好地理解 GAN 的原理和应用。
-
-## 7. 总结：未来发展趋势与挑战
-
-生成对抗网络（GAN）在艺术创作领域具有广泛的应用前景。未来，GAN 可能会在更多的领域得到应用，如图像生成、视频生成、自然语言生成等。此外，GAN 还面临一些挑战，如计算资源的需求、训练时间的长等。然而，随着技术的不断发展，GAN 的应用范围和效率将得到进一步提高。
-
-## 8. 附录：常见问题与解答
-
-1. GAN 的训练过程为什么会失败？
-
-GAN 的训练过程可能会失败的原因有很多，其中一些常见的问题包括：
-
-1. 数据集不够大或不够多：GAN 需要大量的数据才能得到良好的训练效果。如果数据集不够大或不够多，GAN 的训练过程可能会失败。
-
-2. 生成器和判别器的架构不合适：生成器和判别器的架构需要设计得合适，如果不合适，GAN 的训练过程可能会失败。
-
-3. 学习率不合适：学习率是训练神经网络的一个重要参数。如果学习率不合适，GAN 的训练过程可能会失败。
-
-4. GAN 的训练过程为什么会收敛？
-
-GAN 的训练过程会收敛的原因是生成器和判别器之间存在一种“零和博弈”的关系。当生成器生成的数据与真实数据足够相似时，判别器会认为生成器生成的数据是真实的。生成器通过不断地调整其参数来生成更相似的数据，而判别器通过不断地调整其参数来更好地识别生成器生成的数据。在这种情况下，生成器和判别器之间的竞争会导致训练过程收敛。
-
-5. 如何提高 GAN 的性能？
-
-要提高 GAN 的性能，可以采取以下方法：
-
-1. 选择更大的数据集：更大的数据集可以提供更多的信息，从而使 GAN 能够生成更好的数据。
-
-2. 调整生成器和判别器的架构：生成器和判别器的架构需要合适地设计。如果架构不合适，GAN 的性能可能会受到影响。
-
-3. 调整学习率：学习率是训练神经网络的一个重要参数。如果学习率不合适，GAN 的性能可能会受到影响。
-
-4. 使用更好的优化算法：使用更好的优化算法可以使 GAN 的训练过程更快、更稳定。
-
-5. 通过实验来优化 GAN 的参数：通过实验来优化 GAN 的参数可以使 GAN 的性能得到提高。
+1. TensorFlow（[https://www.tensorflow.org/）：TensorFlow是一个强大的机器学习框架，可以用于实现各种深度学习模型，包括GANs。](https://www.tensorflow.org/%EF%BC%9ATensorFlow%E6%98%AF%E5%9B%BA%E5%BC%BA%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%BC%9A%E6%8E%99%E5%88%9B%E7%BB%8F%E5%BA%8F%E5%AD%B8%E5%AE%BD%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BB%A5%E7%94%A8%E4%BA%8E%E5%AE%9E%E7%8A%B6%E5%90%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%BC%9A%E7%9A%84%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%90%8E%E6%9C%BA%E5%AD%A6%E4%BC%9A%E5%8F%AF%E4%BA%8E%E5%
