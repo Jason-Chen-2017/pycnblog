@@ -34,11 +34,15 @@ w1:
 wr:
 	./write_blog_rand.sh &
 
+w10:
+	./write_blog10.sh &
+
 w30:
 	./write_blog30.sh &
 
 w50:
 	./write_blog50.sh &
+
 
 t:
 	./auto_title.sh &
