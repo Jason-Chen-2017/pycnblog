@@ -1,94 +1,79 @@
 ## 1. 背景介绍
 
-卷积神经网络（Convolutional Neural Networks，CNNs）是当前深度学习领域中最受欢迎的技术之一。它们在图像识别、自然语言处理、语音识别等领域取得了显著的成果。CNNs的核心思想是将输入数据的局部区域与神经网络的权重进行卷积操作，从而提取出有意义的特征。这些特征可以用于训练神经网络进行分类、回归等任务。CNNs的设计和实现具有以下几个关键特点：
-
-* **局部连接性**：CNNs中每个神经元只连接输入数据的局部区域，而不是全局。
-* **共享权重**：CNNs中同一层的神经元共享权重，使得网络参数减少，降低过拟合风险。
-* **卷积操作**：CNNs使用卷积操作来提取输入数据中的特征。
+卷积神经网络（Convolutional Neural Networks，CNNs）是一种特殊类型的神经网络，特别适合处理图像数据。它的核心思想是将图像分解为多个小块，然后对每个小块进行处理，以此来识别图像中的特征。CNNs 已经被广泛应用于计算机视觉领域，包括图像分类、目标检测、语义分割等任务。
 
 ## 2. 核心概念与联系
 
-卷积神经网络由多个层组成，每层都有特定的功能。常见的层类型包括：
-
-* **卷积层**：用于提取输入数据中的特征。
-* **激活函数**：用于非线性变换，使得网络可以学习复杂的函数。
-* **池化层**：用于减少特征映射的维度，降低计算复杂度。
-* **全连接层**：用于进行分类或回归任务。
-
-CNNs的核心概念与联系在于它们可以被看作是多层感知机（MLP）的特例。每个卷积层都可以被看作是一个局部连接的感知机，而激活函数和池化层则是用于增加网络的非线性能力和降低维度。
+CNNs 的核心概念是卷积和池化。卷积操作可以将图像中的局部特征提取出来，而池化操作则可以将这些特征进行降维处理，减少计算量。通过多层卷积和池化操作，CNNs 能够学习更为复杂的特征表示，从而提高模型的性能。
 
 ## 3. 核心算法原理具体操作步骤
 
-卷积神经网络的核心算法原理可以分为以下几个步骤：
+1. 输入图像：首先，将输入图像转换为一个四维矩阵，其中包含了颜色通道和空间坐标。
 
-1. **输入数据的预处理**：将输入数据reshape为一个三维矩阵，其中第一维表示样本数量，第二维表示图像高度，第三维表示图像宽度。
-2. **卷积层**：对于每个卷积层，首先将输入数据与卷积核进行卷积操作，然后对结果进行激活函数处理。卷积核的大小、步长和填充模式可以根据任务需求进行调整。
-3. **池化层**：对于每个池化层，首先将输入数据进行最大值或平均值池化操作，然后将结果reshape为一个更高维的向量。池化层可以减少特征映射的维度，降低计算复杂度。
-4. **全连接层**：对于每个全连接层，首先将上一层的输出数据进行reshape操作，然后将其与全连接权重进行矩阵乘法。最后，对结果进行激活函数处理。
+2. 卷积层：将输入图像与卷积核进行相乘，并进行积分。卷积核是一种可学习的参数，用于提取图像中的特征。
+
+3. 激活函数：对卷积结果进行激活处理，以引入非线性特性。
+
+4. 池化层：对激活后的特征图进行池化操作，以降维处理特征。
+
+5. 全连接层：将池化后的特征图flatten后输入全连接层，进行分类任务。
 
 ## 4. 数学模型和公式详细讲解举例说明
 
-卷积神经网络的数学模型可以用以下公式表示：
+卷积操作可以表示为：
 
 $$
-y = f(W \cdot X + b)
+y(k_{1},k_{2})=\sum_{i=0}^{I-1}\sum_{j=0}^{J-1}x(i,j) \cdot W(k_{1},k_{2},i,j) + b(k_{1},k_{2})
 $$
 
-其中，$y$表示输出数据，$W$表示卷积核，$X$表示输入数据，$b$表示偏置项，$f$表示激活函数。
+其中，$y$ 是输出特征图，$x$ 是输入图像，$W$ 是卷积核，$b$ 是偏置项。
 
-举例说明，假设我们有一个2D图像，高度为$28 \times 28$，并且我们想要使用一个卷积核来提取出图像中的边缘特征。我们可以选择一个$3 \times 3$大小的卷积核，并将其应用到图像上。然后，我们可以使用ReLU激活函数来增加网络的非线性能力。
+池化操作可以表示为：
+
+$$
+y(i,j)=\max_{(u,v)\in S}(x(i+u,j+v))
+$$
+
+其中，$y$ 是输出特征图，$x$ 是输入特征图，$S$ 是池化窗口。
 
 ## 5. 项目实践：代码实例和详细解释说明
 
-下面是一个使用Python和Keras库实现CNNs的代码示例：
+我们可以使用 Python 语言和 Keras 库来实现一个简单的 CNN 模型。以下是一个简单的代码示例：
 
 ```python
-import keras
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 
-# 定义CNN模型
 model = Sequential()
-model.add(Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=(28, 28, 1)))
-model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))
+model.add(MaxPooling2D((2, 2)))
+model.add(Conv2D(64, (3, 3), activation='relu'))
+model.add(MaxPooling2D((2, 2)))
 model.add(Flatten())
-model.add(Dense(128, activation='relu'))
 model.add(Dense(10, activation='softmax'))
 
-# 编译模型
-model.compile(loss=keras.losses.categorical_crossentropy, optimizer=keras.optimizers.Adadelta(), metrics=['accuracy'])
-
-# 训练模型
-model.fit(x_train, y_train, batch_size=128, epochs=10, verbose=1, validation_data=(x_test, y_test))
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+model.fit(X_train, y_train, epochs=10, batch_size=32)
 ```
 
 ## 6. 实际应用场景
 
-卷积神经网络在许多实际应用场景中都有广泛的应用，例如：
+CNNs 已经在多种实际应用场景中得到了广泛应用，包括：
 
-* **图像分类**：CNNs可以用于识别图像中的物体、人物等，例如ImageNet大规模视觉识别挑战（ILSVRC）。
-* **图像生成**：CNNs可以用于生成新图像，例如生成对抗网络（GAN）。
-* **语音识别**：CNNs可以用于将语音信号转换为文本，例如Google Assistant。
-* **自然语言处理**：CNNs可以用于处理文本数据，例如情感分析、情报提取等。
+1. 图像分类：例如，识别猫狗等动物。
+
+2. 目标检测：例如，识别图像中的车辆、行人等目标。
+
+3. 语义分割：例如，分割图像中的不同物体。
+
+4. 图像生成：例如，通过生成对抗网络（GANs）生成新的图像。
 
 ## 7. 工具和资源推荐
 
-如果您想要学习和实现卷积神经网络，以下工具和资源可能会对您有帮助：
+如果你想要深入学习 CNNs 和计算机视觉，以下是一些建议：
 
-* **Keras**：一个高级神经网络API，支持多种深度学习框架，例如TensorFlow和CNTK。[https://keras.io/](https://keras.io/)
-* **TensorFlow**：一个用于机器学习和深度学习的开源框架。[https://www.tensorflow.org/](https://www.tensorflow.org/)
-* **PyTorch**：一个动态计算图的深度学习框架。[https://pytorch.org/](https://pytorch.org/)
-* **深度学习入门**：一个在线课程，涵盖了深度学习的基本概念和技术。[https://www.deeplearningbook.cn/](https://www.deeplearningbook.cn/)
+1. 官方文档：Keras（[https://keras.io/）是一个非常优秀的深度学习框架，可以帮助你快速上手CNNs。](https://keras.io/%EF%BC%89%E6%98%AF%E4%B8%80%E4%B8%AA%E5%BE%88%E4%BA%86%E4%BB%A5%E7%9A%84%E6%B7%B1%E5%BA%AF%E5%AD%A6%E4%BC%9A%E6%8C%87%E5%8A%A1%E4%BD%A0%E5%BF%AB%E9%80%9F%E4%BB%A5%E8%AE%BE%E8%AE%A1CNNs%E3%80%82)
 
-## 8. 总结：未来发展趋势与挑战
+2. 教程：CS231n（[http://cs231n.stanford.edu/）是斯坦福大学的深度学习课程，提供了许多有趣的教程和项目。](http://cs231n.stanford.edu/%EF%BC%89%E6%98%AF%E6%96%AF%E5%8D%9A%E5%A4%84%E7%9A%84%E6%B7%B7%E5%BA%B8%E5%AD%A6%E4%BC%9A%EF%BC%8C%E6%8F%90%E4%BE%9B%E4%BA%86%E5%AE%83%E5%95%8F%E6%95%88%E7%9A%84%E6%95%99%E7%A8%8B%E5%92%8C%E9%A1%B9%E7%9B%AE%E3%80%82)
 
-卷积神经网络在图像处理领域取得了显著的成果，但仍然面临许多挑战。未来，卷积神经网络可能会继续发展在以下几个方面：
-
-* **更深更宽的网络结构**：深度学习社区正在努力构建更深更宽的卷积神经网络，以提高其性能。
-* **更高效的训练方法**：研究人员正在寻找更高效的训练方法，以减少计算资源的消耗。
-* **更强大的模型**：未来，卷积神经网络可能会变得更强大，更好地适应各种不同的任务。
-
-## 9. 附录：常见问题与解答
-
-1. **卷积核的选择**：选择合适的卷积核大小和步长对于CNNs的性能有很大影响。一般来说，较大的卷积核可以捕捉更大的特征，而较小的卷积核可以捕捉更细致的特征。步长的选择则取决于需要的输出大小。
-2. **填充模式**：填充模式可以用于调整卷积核的大小，使其更好地适应输入数据的尺寸。常见的填充模式有“同一”和“反同一”，分别表示在高度和宽度两个维度上进行填充。
+3. 论文：[https://arxiv.org/](https://arxiv.org/%EF%BC%89%E5%8D%8A%E6%97%80%E6%8A%80%E6%9C%89%E5%BC%8A%E5%88%9B%E6%96%BC%E6%9C%89%E6%95%B4%E6%9C%89%E4%B8%8B%E7%9A%84%E5%8F%A3%E6%96%BC%E6%8A%80%E5%BA%93%EF%BC%8C%E8%AE%B8%E5%8F%AF%E6%98%BE%E9%87%91%E5%88%9B%E5%BA%93%E6%8A%80%E5%BA%93%E7%9A%84%E6%95%88%E7%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E8%AE%B8%E5%8F%AF%E6%98%AF%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B%AC%E5%8F%A5%E4%B9%89%E4%B8%8B%E9%83%BD%E5%9C%A8%E6%96%B9%E6%94%BF%E4%BA%8B%E6%8A%A4%E6%8B
