@@ -1,77 +1,60 @@
-## 1. 背景介绍
+## 1.背景介绍
 
-Transformer是目前最流行的神经网络架构之一，主要应用于自然语言处理领域。Transformer大模型实战中，线性层和softmax层是最关键的两部分，它们分别负责对输入数据进行线性变换和对输出概率进行归一化处理。
+Transformer模型自2017年Vaswani等人在《Attention is All You Need》一文中提出以来，已经成为自然语言处理（NLP）领域的主流模型。它的核心特点是使用自注意力机制（Self-Attention）来捕捉序列中的长距离依赖关系，而不依赖于递归或卷积结构。这种机制使得Transformer模型能够在各种NLP任务中表现出色，例如机器翻译、文本摘要、问答系统等。
 
-## 2. 核心概念与联系
+在Transformer模型中，线性层（Linear Layer）和softmax层（Softmax Layer）是两个非常重要的组成部分，它们分别负责计算特征表示和计算注意力权重。下面我们将深入探讨这两种层的作用原理和具体实现方法。
 
-线性层（Linear Layer）和softmax层（Softmax Layer）在Transformer中扮演着非常重要的角色。线性层负责对输入数据进行线性变换，使其适应于后续的softmax处理。softmax层则负责对输出概率进行归一化处理，从而使其和为1，满足条件概率分布要求。
+## 2.核心概念与联系
 
-## 3. 核心算法原理具体操作步骤
+线性层是一个常见的神经网络层，它通常由一个或多个全连接层组成。线性层的作用是将输入向量映射到一个新的特征空间，以便后续的操作可以基于这些新的特征进行。例如，在Transformer模型中，线性层可以将输入序列映射到一个新的特征空间，使得这些特征可以被softmax层进行处理。
 
-Transformer模型的核心算法原理是基于自注意力机制（Self-Attention Mechanism）和 Position-wise Feed-Forward Network（Position-wise Feed-Forward Network）。线性层和softmax层分别在自注意力机制和Position-wise Feed-Forward Network过程中发挥着重要作用。
+softmax层是一种用于计算概率分布的层，它通常在分类和序列模型中使用。softmax层的作用是将输入向量中的每个元素归一化为一个概率分布，使得所有元素之和等于1。例如，在Transformer模型中，softmax层可以将线性层的输出映射到一个概率分布，从而得到注意力权重。
 
-## 4. 数学模型和公式详细讲解举例说明
+线性层和softmax层之间的联系在于它们都是Transformer模型的核心组成部分。线性层负责将输入序列映射到一个新的特征空间，而softmax层则负责计算注意力权重。这些权重在后续的计算过程中将被用作自注意力机制的权重，从而实现对输入序列的处理。
+
+## 3.核心算法原理具体操作步骤
+
+Transformer模型的核心算法原理是自注意力机制。自注意力机制的计算过程可以分为以下几个步骤：
+
+1. 计算自注意力分数（Self-Attention Scores）：首先，我们需要计算输入序列中每个位置相对于其他位置的注意力分数。这个过程可以通过线性层和softmax层实现。具体步骤如下：
+
+a. 对输入序列的每个位置，使用线性层将其映射到一个新的特征空间。
+b. 对于每个位置i，计算与其它所有位置j之间的注意力分数。这个计算可以通过以下公式实现：
+
+$$
+\text{Attention\_Scores}(i,j) = \text{Linear}(x\_i) \cdot \text{Linear}(x\_j)^T
+$$
+
+c. 对于每个位置i，使用softmax层对注意力分数进行归一化。这个计算可以通过以下公式实现：
+
+$$
+\text{Attention\_Weights}(i,j) = \frac{\text{exp}(\text{Attention\_Scores}(i,j))}{\sum\_{k} \text{exp}(\text{Attention\_Scores}(i,k))}
+$$
+
+2. 计算加权和（Weighted Sum）：接下来，我们需要将注意力权重与输入序列进行加权求和，以得到输出序列。这个计算过程可以通过以下公式实现：
+
+$$
+\text{Output}(i) = \sum\_{j} \text{Attention\_Weights}(i,j) \cdot x\_j
+$$
+
+3. 残差连接（Residual Connection）：最后，我们需要将加权和与输入序列进行残差连接。这个操作可以通过以下公式实现：
+
+$$
+\text{Output}(i) = x\_i + \text{Output}(i)
+$$
+
+通过以上步骤，我们可以得到Transformer模型的输出序列。
+
+## 4.数学模型和公式详细讲解举例说明
+
+在上面的章节中，我们已经介绍了Transformer模型中线性层和softmax层的作用原理和具体操作步骤。这里我们将详细解释它们的数学模型和公式。
 
 ### 4.1 线性层
 
-线性层是由一个权重矩阵W和一个偏置b组成。给定输入x，线性层的输出可以表示为：
+线性层是一个全连接层，它将输入向量映射到一个新的特征空间。数学模型可以表示为：
 
-y = Wx + b
+$$
+\text{Linear}(x\_i) = W \cdot x\_i + b
+$$
 
-其中，W是权重矩阵，b是偏置。
-
-### 4.2 softmax层
-
-softmax层的作用是在输出向量上进行归一化处理，使其和为1。给定输出向量z，softmax层的输出可以表示为：
-
-p\_i = exp(z\_i) / Σ\_j exp(z\_j)
-
-其中，p\_i是第i个输出向量的归一化概率，exp()表示自然对数的指数函数。
-
-## 5. 项目实践：代码实例和详细解释说明
-
-下面是一个简单的Python代码示例，展示了如何使用线性层和softmax层实现Transformer模型。
-
-```python
-import torch
-import torch.nn as nn
-
-class LinearLayer(nn.Module):
-    def __init__(self, in_features, out_features):
-        super(LinearLayer, self).__init__()
-        self.linear = nn.Linear(in_features, out_features)
-
-    def forward(self, x):
-        return self.linear(x)
-
-class SoftmaxLayer(nn.Module):
-    def __init__(self):
-        super(SoftmaxLayer, self).__init__()
-
-    def forward(self, x):
-        return torch.nn.functional.softmax(x, dim=-1)
-
-class Transformer(nn.Module):
-    def __init__(self, d_model, num_heads, num_layers):
-        super(Transformer, self).__init__()
-        self.linear = LinearLayer(d_model, d_model)
-        self.softmax = SoftmaxLayer()
-
-    def forward(self, x):
-        x = self.linear(x)
-        x = self.softmax(x)
-        return x
-```
-
-## 6. 实际应用场景
-
-Transformer大模型实战中，线性层和softmax层广泛应用于自然语言处理、图像识别、语音识别等领域。例如，在机器翻译系统中，线性层和softmax层可以将输入句子的词汇向量转换为概率分布，从而生成翻译候选句子。
-
-## 7. 工具和资源推荐
-
-- [PyTorch官方文档](https://pytorch.org/docs/stable/index.html)
-- [Hugging Face Transformers库](https://huggingface.co/transformers/)
-
-## 8. 总结：未来发展趋势与挑战
-
-线性层和softmax层在Transformer大模型实战中具有重要作用。随着计算能力的不断提高和算法的不断优化，Transformer模型在未来将有更多的实际应用场景。然而，线性层和softmax层也面临着一定的挑战，如计算复杂性、过拟合等问题。未来，如何进一步优化线性层和softmax层，以提高模型性能和计算效率，仍然是待探索的方向。
+其中，$W$是权重矩阵，$b$是偏置向量。线性层的输出是输入向量$
