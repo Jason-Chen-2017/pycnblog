@@ -1,113 +1,79 @@
 ## 1. 背景介绍
 
-Apache Hadoop 是一个开源的、可扩展的分布式存储系统，用于处理和分析大数据。YARN（Yet Another Resource Negotiator）是 Hadoop 的一个组件，它负责在集群中分配资源，协调任务的运行。YARN Resource Manager 是 YARN 的一个核心组件，它负责管理集群中的资源和任务。
+YARN（Yet Another Resource Negotiator）是一个开源的资源管理器，它用于管理Hadoop集群中的资源分配和调度。YARN Resource Manager是YARN架构中的一个核心组件，负责管理集群中的资源分配和调度。
 
 ## 2. 核心概念与联系
 
-YARN Resource Manager 的主要职责是：
+YARN Resource Manager的核心概念是资源分配和调度。资源分配指的是将集群中的资源（如CPU、内存等）分配给不同任务。调度则是指将任务分配给集群中的不同节点，以便在最短时间内完成任务。
 
-1. 分配资源：YARN Resource Manager 根据集群的资源状况和用户的请求，分配资源给不同的应用程序。
-2. 调度任务：YARN Resource Manager 负责调度任务，将任务分配给集群中的资源，以便在最短时间内完成任务。
-3. 监控资源：YARN Resource Manager 监控集群的资源状况，确保资源充足，避免资源瓶颈。
+YARN Resource Manager的主要职责是：
 
-YARN Resource Manager 和其他 YARN 组件之间的关系如下：
-
-1. NodeManager：YARN Resource Manager 与每个节点上的 NodeManager 通信，NodeManager 负责在本地执行任务和管理资源。
-2. ApplicationMaster：YARN Resource Manager 与应用程序的 ApplicationMaster 通信，ApplicationMaster 负责协调应用程序的任务。
-3. ResourceManager：YARN Resource Manager 是集群中的主要资源管理器，它与其他 ResourceManager 通信，协调集群中的资源分配。
+1. 管理集群中的资源，包括CPU、内存等。
+2. 调度任务，分配资源给不同的任务。
+3. 监控集群的资源使用情况，确保资源的高效利用。
 
 ## 3. 核心算法原理具体操作步骤
 
-YARN Resource Manager 的核心算法原理是基于资源分配和任务调度。以下是具体的操作步骤：
+YARN Resource Manager的核心算法原理是基于资源分配和调度的。其具体操作步骤如下：
 
-1. 请求资源：应用程序向 YARN Resource Manager 发送资源请求，请求的资源包括内存、CPU 和磁盘空间等。
-2. 分配资源：YARN Resource Manager 根据集群的资源状况和用户的请求，分配资源给不同的应用程序。YARN Resource Manager 使用一种称为资源容器（Resource Container）的数据结构来表示资源分配。
-3. 调度任务：YARN Resource Manager 负责调度任务，将任务分配给集群中的资源。YARN Resource Manager 使用一种称为调度器（Scheduler）的组件来实现任务调度。YARN 提供了多种调度器，如 First-In-First-Out (FIFO) 调度器和 CapacityScheduler。
-4. 监控资源：YARN Resource Manager 监控集群的资源状况，确保资源充足，避免资源瓶颈。YARN Resource Manager 使用一种称为资源管理器（Resource Manager）来实现资源监控。
+1. 初始化资源管理器：YARN Resource Manager在启动时会初始化资源管理器，包括创建资源池、配置资源限制等。
+2. 向资源管理器注册应用程序：应用程序在运行时会向资源管理器注册，申请资源。
+3. 资源分配：资源管理器会根据应用程序的需求，分配资源给不同的任务。
+4. 任务调度：资源管理器会将任务分配给集群中的不同节点，以便在最短时间内完成任务。
+5. 监控资源使用情况：资源管理器会监控集群的资源使用情况，确保资源的高效利用。
 
 ## 4. 数学模型和公式详细讲解举例说明
 
-在这里，我们将详细讲解 YARN Resource Manager 的数学模型和公式。我们将使用 LaTeX 格式来表示公式。
+在YARN Resource Manager中，资源分配和调度的数学模型主要包括：
 
-### 4.1. 资源容器
-
-资源容器（Resource Container）是 YARN Resource Manager 用于表示资源分配的数据结构。资源容器包括以下属性：
-
-* 内存（memory）：资源容器分配的内存大小。
-* CPU（vcore）：资源容器分配的 CPU 核数。
-* 磁盘空间（disk）：资源容器分配的磁盘空间大小。
-
-数学模型和公式可以表示为：
-
-$$
-ResourceContainer = \{memory, vcore, disk\}
-$$
-
-### 4.2. 调度器
-
-调度器（Scheduler）是 YARN Resource Manager 用于实现任务调度的组件。以下是几种常见的调度器：
-
-1. First-In-First-Out (FIFO) 调度器：FIFO 调度器按照任务提交的顺序进行调度。这种调度器简单易用，但不适用于大规模集群。
-2. CapacityScheduler：CapacityScheduler 是 YARN 的默认调度器，它根据集群的资源分配比例进行任务调度。CapacityScheduler 支持多个应用程序共享集群资源，实现了资源的公平分配。
+1. 最短作业优先算法（Shortest Job First，SJF）：该算法优先调度那些完成时间最短的作业，以提高资源利用率。
+2. 最短作业优先算法（Shortest Job First，SJF）：该算法优先调度那些完成时间最短的作业，以提高资源利用率。
+3. 优先级调度算法（Priority Scheduling）：该算法根据任务的优先级进行调度，优先级越高，任务越先被调度。
 
 ## 4. 项目实践：代码实例和详细解释说明
 
-在这里，我们将通过代码实例来详细解释 YARN Resource Manager 的实现过程。我们将使用 Python 语言和 Apache Hadoop 的 Python 客户端库来实现 YARN Resource Manager。
+以下是一个简化的YARN Resource Manager的代码示例，用于演示资源分配和调度的基本过程。
 
-```python
-from hadoop_yarn.client import YarnClient
-from hadoop_yarn.resource_manager import ResourceManager
+```java
+import java.util.List;
 
-# 创建 YARN 客户端
-client = YarnClient()
+public class ResourceManager {
+    private List<Container> containers;
 
-# 启动 ResourceManager
-rm = ResourceManager(client)
+    public ResourceManager() {
+        containers = new ArrayList<>();
+    }
 
-# 发送资源请求
-request = rm.request_resource(memory=1024, vcore=1, disk=10)
-container = rm.allocate_resource(request)
+    public void allocateResources(Application application) {
+        int availableResources = getAvailableResources();
+        List<Container> requiredContainers = application.getRequiredContainers();
 
-# 调度任务
-task = rm.schedule_task(container)
+        for (Container container : requiredContainers) {
+            if (availableResources >= container.getResourceRequirements()) {
+                availableResources -= container.getResourceRequirements();
+                containers.add(container);
+            }
+        }
+    }
+
+    public void scheduleTasks() {
+        for (Container container : containers) {
+            // 将任务分配给集群中的不同节点
+            scheduleTaskOnNode(container);
+        }
+    }
+
+    private int getAvailableResources() {
+        // 获取集群中的可用资源
+        return 100; // 简化为100个资源单元
+    }
+
+    private void scheduleTaskOnNode(Container container) {
+        // 在集群中的不同节点上调度任务
+    }
+}
 ```
 
 ## 5. 实际应用场景
 
-YARN Resource Manager 在实际应用场景中有以下几个应用场景：
-
-1. 大数据分析：YARN Resource Manager 可用于管理大数据分析任务，如 MapReduce、Spark 和 Flink 等。
-2.机器学习：YARN Resource Manager 可用于管理机器学习任务，如 TensorFlow 和 PyTorch 等。
-3. 服务器虚拟化：YARN Resource Manager 可用于管理服务器虚拟化任务，如 KVM 和 Xen 等。
-
-## 6. 工具和资源推荐
-
-以下是一些建议的工具和资源，可以帮助读者更好地理解 YARN Resource Manager：
-
-1. Apache Hadoop 文档：[https://hadoop.apache.org/docs/](https://hadoop.apache.org/docs/)
-2. YARN 用户指南：[https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-site/YARN.html](https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-site/YARN.html)
-3. YARN 资源管理器实例：[https://github.com/yougov/yarn-resource-manager-example](https://github.com/yougov/yarn-resource-manager-example)
-
-## 7. 总结：未来发展趋势与挑战
-
-YARN Resource Manager 作为 Hadoop 集群的核心组件，在大数据领域具有重要作用。未来，YARN Resource Manager 将面临以下几大挑战：
-
-1. 高效的资源分配：随着集群规模的扩大，YARN Resource Manager 需要更高效地分配资源，以满足用户的需求。
-2. 实时性：YARN Resource Manager 需要实时地监控集群资源状况，以便及时地发现和解决资源瓶颈。
-3. 可扩展性：YARN Resource Manager 需要具有较好的可扩展性，以便在集群规模扩大时，仍然能够提供高效的资源分配和任务调度。
-
-## 8. 附录：常见问题与解答
-
-以下是一些建议的常见问题和解答：
-
-Q：YARN Resource Manager 如何分配资源？
-
-A：YARN Resource Manager 使用资源容器（Resource Container）数据结构来表示资源分配。资源容器包括内存、CPU 和磁盘空间等。
-
-Q：YARN Resource Manager 如何调度任务？
-
-A：YARN Resource Manager 使用调度器（Scheduler）组件来实现任务调度。YARN 提供了多种调度器，如 First-In-FirstOut (FIFO) 调度器和 CapacityScheduler。
-
-Q：如何监控 YARN Resource Manager 的资源状况？
-
-A：YARN Resource Manager 使用资源管理器（Resource Manager）组件来实现资源监控。资源管理器可以提供集群资源的实时监控数据。
+YARN Resource Manager广泛应用于大数据领域，尤其是在Hadoop集群中。它可以用于管理资源分配和调度，提高集群的资源利用率，降低成本，

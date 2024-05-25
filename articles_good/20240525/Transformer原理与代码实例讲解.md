@@ -1,195 +1,646 @@
-## 背景介绍
+## 1. 背景介绍
 
-Transformer（变压器）是近年来在自然语言处理(NLP)领域取得了突破性进展的算法之一。它的出现使得各种大型预训练模型（如BERT、GPT-2、GPT-3等）能够在各种自然语言任务中取得优越的表现。 Transformer 通过自注意力（self-attention）机制实现了对输入序列的全局依赖学习，从而解决了传统RNN和LSTM等序列模型难以解决的问题。
+自从2017年 Transformer 模型问世以来，它已经成为自然语言处理(NLP)领域的重要技术之一。Transformer 模型的出现使得神经机器翻译和其他 NLP 任务取得了令人瞩目的成果，例如 Google 的 Google Translate 和 OpenAI 的 GPT 系列。这个模型的出现也引发了人工智能领域的革命性的变化。
 
-本文将从以下几个方面详细讲解 Transformer：
+在本文中，我们将详细讨论 Transformer 模型的原理及其在实际应用中的代码实例。我们将从以下几个方面展开讨论：
 
-1. 核心概念与联系
-2. 核心算法原理具体操作步骤
-3. 数学模型和公式详细讲解举例说明
+1. Transformer 模型的核心概念与联系
+2. Transformer 模型的核心算法原理和操作步骤
+3. Transformer 模型的数学模型和公式详细讲解
 4. 项目实践：代码实例和详细解释说明
 5. 实际应用场景
 6. 工具和资源推荐
 7. 总结：未来发展趋势与挑战
 8. 附录：常见问题与解答
 
-## 核心概念与联系
+## 2. Transformer 模型的核心概念与联系
 
-Transformer 是一种基于自注意力机制的神经网络架构，它由编码器（encoder）和解码器（decoder）组成。编码器用于将输入序列转换为固定长度的向量表示，而解码器则负责将这些向量表示转换为输出序列。自注意力机制能够学习输入序列中的每个位置与其他位置之间的关系，从而捕捉长距离依赖信息。
+Transformer 模型由 Vaswani 等人在 2017 年的论文 "Attention is All You Need" 中提出的。它是一种基于自注意力机制的神经网络架构，旨在解决序列到序列的学习问题。在此之前，序列到序列的学习问题通常使用循环神经网络(RNN)和长短期记忆(LSTM)来解决。然而，RNN 和 LSTM 在处理长序列时存在性能瓶颈，且训练困难。
 
-## 核心算法原理具体操作步骤
+Transformer 模型的核心概念是自注意力机制。自注意力机制允许模型在处理输入序列时，能够关注于不同位置的元素。这种机制使得 Transformer 模型能够捕捉输入序列中的长程依赖关系，从而提高了模型的性能。
 
-Transformer 的核心算法包括以下几个主要步骤：
+## 3. Transformer 模型的核心算法原理和操作步骤
 
-1. 分词（Tokenization）：将输入文本按照词元（subword）或字符（character）进行分割，得到一个序列。
-2. 词嵌入（Word Embedding）：将分词后的序列映射到一个连续的词嵌入空间。
-3.位置编码（Positional Encoding）：为词嵌入添加位置信息，以帮助模型学习序列中的时间结构。
-4. 编码器（Encoder）：由多个自注意力模块和全连接层组成，用于将输入序列编码为一个向量表示。
-5. 解码器（Decoder）：由多个自注意力模块和全连接层组成，用于将编码后的向量表示解码为输出序列。
+Transformer 模型的核心算法原理可以分为以下几个步骤：
 
-## 数学模型和公式详细讲解举例说明
+1. **输入编码**：将输入序列转换为固定长度的向量表示，并将其作为模型的输入。
+2. **位置编码**：为输入向量添加位置信息，以保留输入序列中的顺序关系。
+3. **多头自注意力**：使用多头注意力机制对输入序列进行编码，以捕捉输入序列中的不同语义信息。
+4. **缩放点积**：将多头自注意力输出与原输入向量进行缩放点积，以生成新的向量表示。
+5. **残差连接和正则化**：将缩放点积的输出与原输入向量进行残差连接，并应用层归一化。
+6. **位置敏感线性层**：对输出向量进行位置敏感的线性变换。
+7. **输出层**：将位置敏感线性层的输出与全连接层结合，以生成最终的输出序列。
 
-在本节中，我们将详细讲解 Transformer 的自注意力机制和编码器、解码器的具体实现。
+## 4. Transformer 模型的数学模型和公式详细讲解
 
-### 自注意力机制
+在本节中，我们将详细解释 Transformer 模型的数学模型和公式。
 
-自注意力机制（Self-Attention）是一种特殊的注意力机制，它的目的是捕捉输入序列中各个位置之间的关系。其数学表达式如下：
+### 4.1 输入编码
 
-$$
-Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V
-$$
-
-其中，Q（query）代表查询向量，K（key）代表关键字向量，V（value）代表值向量。d\_k 是向量维度。
-
-### 编码器
-
-编码器由多个自注意力模块和全连接层组成。一个简单的 Transformer 编码器可以表示为：
+输入编码是将输入序列转换为固定长度的向量表示的过程。给定一个输入序列 $$x = (x_1, x_2, ..., x_n)$$, 其中 $$x_i$$ 是输入序列的第 $$i$$ 个元素，我们可以使用词嵌入矩阵 $$W_e$$ 将其转换为向量表示：
 
 $$
-Encoder = [Self-Attention; FFN](x)
+E = W_e \cdot x
 $$
 
-其中，Self-Attention 表示自注意力机制，FFN 表示全连接层。x 是输入序列的向量表示。
+其中 $$E = (e_1, e_2, ..., e_n)$$ 是输入序列的向量表示。
 
-### 解码器
+### 4.2 位置编码
 
-解码器与编码器类似，但在解码器中，自注意力机制是针对输出序列而非输入序列进行的。一个简单的 Transformer 解码器可以表示为：
+位置编码是为输入向量添加位置信息的过程。给定一个输入序列 $$E$$, 我们可以使用位置编码矩阵 $$W_p$$ 为其添加位置信息：
 
 $$
-Decoder = [Self-Attention; FFN](y)
+P = E + W_p
 $$
 
-其中，y 是解码器的输入，通常是编码器输出的最后一个向量表示。
+其中 $$P = (p_1, p_2, ..., p_n)$$ 是位置编码后的向量表示。
 
-## 项目实践：代码实例和详细解释说明
+### 4.3 多头自注意力
 
-在本节中，我们将通过一个简化的 Transformer 实例来展示如何实现 Transformer。我们将使用 Python 和 TensorFlow 来实现 Transformer。
+多头自注意力是 Transformer 模型的核心组件。给定输入序列的位置编码 $$P$$, 我们可以使用多头自注意力机制将其编码为 $$Z$$：
 
-### 数据预处理
+$$
+Z = MultiHead(Q, K, V)
+$$
 
-首先，我们需要将输入文本进行分词，然后将分词后的序列映射到词嵌入空间。
+其中 $$Q$$, $$K$$, $$V$$ 是查询、密钥和值向量表示。$$MultiHead$$ 表示多头自注意力机制。
+
+### 4.4 缩放点积
+
+缩放点积是多头自注意力机制的关键步骤。给定多头自注意力输出 $$Z$$, 我们可以将其与原输入向量 $$P$$ 进行缩放点积：
+
+$$
+X = D \cdot softmax(\frac{Z \cdot P^T}{\sqrt{d_k}})
+$$
+
+其中 $$D$$ 是缩放因子，$$d_k$$ 是查询向量的维度。
+
+### 4.5 残差连接和正则化
+
+残差连接和正则化是 Transformer 模型中的重要组成部分。给定缩放点积输出 $$X$$, 我们可以将其与原输入向量 $$P$$ 进行残差连接：
+
+$$
+R = X + P
+$$
+
+随后，我们可以应用层归一化来减少梯度消失：
+
+$$
+R = \frac{R}{\sqrt{d_k}}
+$$
+
+### 4.6 位置敏感线性层
+
+位置敏感线性层是 Transformer 模型中的一种特殊线性变换。给定残差连接后的输出 $$R$$, 我们可以将其与位置编码矩阵 $$W_p$$ 进行点乘：
+
+$$
+Q^' = R \cdot W_p
+$$
+
+### 4.7 输出层
+
+输出层是 Transformer 模型中生成最终输出序列的部分。给定位置敏感线性层的输出 $$Q^'$$, 我们可以将其与全连接层 $$W_o$$ 结合，以生成输出向量 $$O$$：
+
+$$
+O = W_o \cdot Q^'
+$$
+
+其中 $$O = (o_1, o_2, ..., o_n)$$ 是输出序列的向量表示。
+
+## 4. 项目实践：代码实例和详细解释说明
+
+在本节中，我们将通过一个简化的 Transformer 模型实现来详细解释其代码实例。我们将使用 Python 和 PyTorch 来实现 Transformer 模型。
 
 ```python
-import tensorflow as tf
-from transformers import Tokenizer
+import torch
+import torch.nn as nn
 
-tokenizer = Tokenizer()
-inputs = tokenizer.encode("Hello, world!", return_tensors="tf")
+class PositionalEncoding(nn.Module):
+    def __init__(self, d_model, dropout=0.1, max_len=5000):
+        super(PositionalEncoding, self).__init__()
+        self.dropout = nn.Dropout(p=dropout)
+        pe = torch.zeros(max_len, d_model)
+        position = torch.arange(0, max_len, dtype=torch.float).unsqueeze(1)
+        div_term = torch.exp(torch.arange(0, d_model, 2).float() * (-torch.log(torch.tensor(10000.0)) / d_model))
+        pe[:, 0::2] = torch.sin(position * div_term)
+        pe[:, 1::2] = torch.cos(position * div_term)
+        pe = pe.unsqueeze(0)
+        self.register_buffer('pe', pe)
 
-# 输入序列的词嵌入
-inputs = tokenizer.convert_tokens_to_ids(inputs)
-```
+    def forward(self, x):
+        x = x + self.pe[:x.size(0), :]
+        return self.dropout(x)
 
-### 编码器和解码器实现
+class MultiHeadAttention(nn.Module):
+    def __init__(self, d_model, n_head, dropout=0.1):
+        super(MultiHeadAttention, self).__init__()
+        assert d_model % n_head == 0
+        self.d_model = d_model
+        self.n_head = n_head
+        self.dropout = nn.Dropout(p=dropout)
+        self.W_q = nn.Linear(d_model, d_model, bias=False)
+        self.W_k = nn.Linear(d_model, d_model, bias=False)
+        self.W_v = nn.Linear(d_model, d_model, bias=False)
+        self.dense = nn.Linear(d_model, d_model, bias=False)
 
-接下来，我们将实现 Transformer 的编码器和解码器。
+    def forward(self, q, k, v, mask=None):
+        n_head = self.n_head
+        d_model = self.d_model
+        dropout = self.dropout
+        q, k, v = q.contiguous(), k.contiguous(), v.contiguous()
 
-```python
-class TransformerEncoder(tf.keras.layers.Layer):
-    def __init__(self, d_model, num_heads, dff):
-        super(TransformerEncoder, self).__init__()
-        self.embedding = tf.keras.layers.Embedding(d_model, d_model)
-        self.pos_encoding = PositionalEncoding(d_model)
-        self.enc_layers = tf.keras.layers.LayerList([
-            tf.keras.layers.Dense(dff, activation="relu"),
-            tf.keras.layers.Dense(d_model)
-        ])
+        q, k, v = q.view(q.size(0), -1, n_head, d_model // n_head), k.view(k.size(0), -1, n_head, d_model // n_head), v.view(v.size(0), -1, n_head, d_model // n_head)
+        q, k, v = q * self.sqrt_d_model, k * self.sqrt_d_model, v * self.sqrt_d_model
 
-    def call(self, inputs, training, mask=None):
-        # 对输入序列进行词嵌入
-        seq_len = tf.shape(inputs).[-1]
-        x = self.embedding(inputs)
+        attn_output, attn_output_weights = self.multi_head_attention(q, k, v, mask=mask)
+        attn_output = dropout(attn_output)
+        attn_output = self.dense(attn_output)
 
-        # 添加位置编码
-        x = self.pos_encoding(x)
+        return attn_output, attn_output_weights
 
-        # 编码器层
-        for i in range(len(self.enc_layers)):
-            x = self.enc_layers[i](x, training)
+    def multi_head_attention(self, q, k, v, mask=None):
+        d_k, d_v, n_head = self.d_model // self.n_head, self.d_model // self.n_head, self.n_head
+        sz_b, nq, nk, nv = q.size(0), q.size(1), k.size(1), v.size(1)
 
-        return x
+        qkv = (q * self.sqrt_d_model, k * self.sqrt_d_model, v * self.sqrt_d_model)
 
-class TransformerDecoder(tf.keras.layers.Layer):
-    def __init__(self, d_model, num_heads, dff):
-        super(TransformerDecoder, self).__init__()
-        self.embedding = tf.keras.layers.Embedding(d_model, d_model)
-        self.pos_encoding = PositionalEncoding(d_model)
-        self.dec_layers = tf.keras.layers.LayerList([
-            tf.keras.layers.Dense(dff, activation="relu"),
-            tf.keras.layers.Dense(d_model)
-        ])
+        qkv = torch.stack(qkv, dim=4).transpose(2, 4).contiguous()
 
-    def call(self, inputs, training, mask=None):
-        # 对输入序列进行词嵌入
-        seq_len = tf.shape(inputs).[-1]
-        x = self.embedding(inputs)
+        qkv = qkv.view(sz_b, nq, nk, nv, d_k)
+        qkv = torch.transpose(qkv, 3, 4).reshape(sz_b, nq, nk, d_k * d_v)
 
-        # 添加位置编码
-        x = self.pos_encoding(x)
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nq, d_k * nk, d_v)
 
-        # 解码器层
-        for i in range(len(self.dec_layers)):
-            x = self.dec_layers[i](x, training)
+        qkv = torch.transpose(qkv, 1, 2).reshape(sz_b, d_k * nk, nv)
 
-        return x
-```
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, d_k * nk, nv, d_v)
 
-### 模型构建
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
 
-现在，我们可以将编码器和解码器组合成一个完整的 Transformer 模型。
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, d_k, nv)
 
-```python
-class TransformerModel(tf.keras.Model):
-    def __init__(self, vocab_size, d_model, num_heads, dff, input_seq_length, output_seq_length):
-        super(TransformerModel, self).__init__()
+        qkv = torch.transpose(qkv, 1, 2).reshape(sz_b, nk, d_k, nv)
 
-        self.tokenizer = Tokenizer()
-        self.input_seq_length = input_seq_length
-        self.output_seq_length = output_seq_length
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
 
-        self.encoder = TransformerEncoder(d_model, num_heads, dff)
-        self.decoder = TransformerDecoder(d_model, num_heads, dff)
-        self.final_layer = tf.keras.layers.Dense(vocab_size)
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
 
-    def call(self, inputs, training, decoder_input, decoder_mask=None):
-        # 编码器
-        encoder_outputs = self.encoder(inputs, training)
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
 
-        # 解码器
-        decoder_outputs = self.decoder(decoder_input, training, decoder_mask)
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
 
-        # 最终输出层
-        outputs = self.final_layer(decoder_outputs)
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
 
-        return outputs
-```
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
 
-## 实际应用场景
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
 
-Transformer 模型在自然语言处理领域具有广泛的应用场景，包括文本翻译、文本摘要、问答系统、情感分析等。由于 Transformer 的自注意力机制能够捕捉输入序列中的长距离依赖信息，因此在处理长序列数据时具有优势。
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
 
-## 工具和资源推荐
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
 
-为了学习和实现 Transformer，我们推荐以下工具和资源：
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
 
-1. TensorFlow：TensorFlow 是一个流行的深度学习框架，可以轻松实现 Transformer 模型。其官方网站为 [https://www.tensorflow.org/。](https://www.tensorflow.org/%EF%BC%89%E3%80%82)
-2. Hugging Face：Hugging Face 是一个提供自然语言处理库和模型的社区，包括 Transformers 库，提供了许多预训练模型和相关工具。其官方网站为 [https://huggingface.co/。](https://huggingface.co/%EF%BC%89%E3%80%82)
-3. 《Transformer模型原理与实践》：这本书详细讲解了 Transformer 模型的原理和实现，以及如何应用于各种自然语言处理任务。可以在 [https://book.douban.com/subject/34817267/](https://book.douban.com/subject/34817267/) 购买。
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
 
-## 总结：未来发展趋势与挑战
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
 
-Transformer 模型在自然语言处理领域取得了显著的进展，但仍然存在一些挑战和问题。未来，Transformer 模型将继续发展和完善，可能面临以下挑战：
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
 
-1. 模型规模：当前的预训练模型尺寸非常大，训练和部署成本较高。如何设计更小、更轻量的模型，同时保持性能？
-2. 计算效率：Transformer 模型的计算复杂度较高，如何提高计算效率，减少模型推理时间？
-3. 语言理解能力：尽管 Transformer 模型在许多任务上取得了优越表现，但仍然存在一些语言现象和复杂任务难以解决。如何进一步改进模型，提高语言理解能力？
-4. 数据和计算资源：大型预训练模型需要大量的数据和计算资源，如何在资源受限的情况下进行高质量的预训练？
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
 
-## 附录：常见问题与解答
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
 
-1. Q: Transformer 的位置编码是如何添加的？
-A: Transformer 的位置编码是通过将位置信息与词嵌入信息相加的。具体实现可以参考上文中的 PositionalEncoding 类。
-2. Q: 如何使用 Transformer 进行文本翻译？
-A: 使用 Transformer 进行文本翻译需要构建一个序列到序列的模型，将源语言文本编码为向量表示，然后将目标语言文本解码为向量表示。具体实现可以参考上文中的 TransformerModel 类。
-3. Q: 如何优化 Transformer 模型的性能？
-A: 优化 Transformer 模型的性能可以通过多种方法实现，如减少模型尺寸、使用更高效的注意力机制、使用混合精度训练等。具体实现需要根据实际场景进行调整。
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 3).reshape(sz_b, nk, nv, d_v)
+
+        qkv = torch.transpose(qkv, 3, 4).contiguous()
+
+        qkv = torch.transpose(qkv, 2, 

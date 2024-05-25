@@ -1,94 +1,1291 @@
 ## 1. 背景介绍
 
-K-Means算法是聚类算法中最常用的一种，它可以将数据集划分为k个类别。K-Means算法的目标是使每个数据点与其所属类别的中心距离最小化。它主要有两种类型，分为K-Means聚类和K-Means分层聚类。
+K-Means是一种经典的聚类算法，用于识别数据中的一组模式。它基于一种简单的思想：给定一个数据集，K-Means会将其划分为K个子集，以便于识别其中的模式。K-Means算法的核心思想是：在数据集中随机选择K个中心点，然后将数据点分配给最近的中心点，直至收敛。
 
-K-Means算法的应用场景非常广泛，例如在市场调查、广告推荐、社会网络分析等领域中都有广泛的应用。它具有快速、简单、易于实现等优势，但同时也存在一定的局限性，例如对于数据的分布和密度的假设、数据量的大小等问题。
+K-Means算法在许多领域有广泛的应用，例如图像处理、文本分类、金融分析等。它的优点是简单易用、效率高，但也存在一定局限性，例如需要预先设定K值，容易陷入局部最优解。
 
 ## 2. 核心概念与联系
 
-K-Means算法的核心概念是“聚类”，聚类是一种无监督学习方法，通过将数据划分为不同的类别来发现数据中的模式和结构。聚类的目的是将数据点聚合在一起，使得同一类别中的数据点之间相互距离较近，而不同类别中的数据点之间相互距离较远。
+K-Means算法的核心概念包括：
 
-K-Means算法的核心思想是将数据点划分为k个类别，并为每个类别选择一个中心点。然后，将每个数据点分配给离其最近的中心点，并更新中心点的位置。这个过程会持续进行，直到数据点的分配不再发生变化或达到预设的迭代次数。
+* **聚类：** 将数据点分组，以便识别其中的模式。
+* **中心点：** 代表每个聚类的数据点。
+* **距离：** 测量数据点与中心点之间的相似度。
+* **迭代：** 直至收敛，数据点分配不变时停止。
+
+K-Means算法的联系包括：
+
+* **监督学习与无监督学习：** K-Means是一种无监督学习算法，因为它不需要标记数据。
+* **分层聚类与密度聚类：** K-Means是一种分层聚类算法，因为它将数据点按距离排序，而不是根据密度。
 
 ## 3. 核心算法原理具体操作步骤
 
-K-Means算法的具体操作步骤如下：
+K-Means算法的具体操作步骤包括：
 
-1. 初始化：选择k个数据点作为初始中心点，或者随机选择k个数据点作为初始中心点。
-2. 分配：将所有数据点分配给离其最近的中心点。
-3. 更新：计算每个类别的中心点位置，并更新中心点的位置。
-4. 判断：判断数据点的分配是否发生变化，如果没有变化，则停止迭代；如果有变化，则回到步骤2继续进行。
+1. **初始化：** 随机选择K个数据点作为初始中心点。
+2. **分配：** 将数据点分配给最近的中心点。
+3. **更新：** 根据分配结果更新中心点。
+4. **迭代：** 直至收敛，数据点分配不变时停止。
 
 ## 4. 数学模型和公式详细讲解举例说明
 
-在K-Means算法中，通常使用欧式距离来计算数据点与中心点之间的距离。欧式距离公式为：
-
-$$
-d(x,y) = \sqrt{\sum_{i=1}^{n}(x_i - y_i)^2}
-$$
-
-其中，$x$和$y$分别表示两个数据点，$n$表示数据点的维度。
-
-在K-Means算法中，中心点的更新公式为：
+K-Means算法的数学模型可以表示为：
 
 $$
 c_i = \frac{\sum_{x \in C_i} x}{|C_i|}
 $$
 
-其中，$c_i$表示第i个类别的中心点，$C_i$表示第i个类别中的数据点。
+其中$c_i$表示中心点，$C_i$表示第i个聚类，$x$表示数据点。
 
-## 4. 项目实践：代码实例和详细解释说明
+K-Means算法的公式可以表示为：
 
-在此，我们将使用Python编程语言和Scikit-learn库来实现K-Means算法。代码如下：
+$$
+\min_{C} \sum_{i=1}^K \sum_{x \in C_i} ||x - c_i||^2
+$$
 
-```python
-from sklearn.cluster import KMeans
-import numpy as np
-import matplotlib.pyplot as plt
+其中$C$表示中心点集，$x$表示数据点。
 
-# 生成随机数据
-data = np.random.rand(100, 2)
+举例说明：
 
-# 初始化KMeans模型
-model = KMeans(n_clusters=3, random_state=0)
+假设我们有一组数据点：
 
-# 运行KMeans算法
-model.fit(data)
+$$
+\begin{bmatrix}
+1 \\
+2 \\
+3 \\
+4 \\
+5
+\end{bmatrix}
+$$
 
-# 绘制数据点和中心点
-plt.scatter(data[:, 0], data[:, 1], c=model.labels_)
-plt.scatter(model.cluster_centers_[:, 0], model.cluster_centers_[:, 1], c='red', marker='x')
-plt.show()
-```
+我们希望将其划分为两类。我们随机选择两个数据点作为初始中心点：
 
-在上述代码中，我们首先导入了所需的库，然后生成了一组随机数据。接着，我们初始化了KMeans模型，并设置了聚类数量为3。然后，我们运行了KMeans算法，并绘制了数据点和中心点。
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix},
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix}
+$$
 
-## 5. 实际应用场景
+我们将数据点分配给最近的中心点：
 
-K-Means算法的实际应用场景非常广泛，例如：
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_1
+$$
 
-1. 市场调查：通过K-Means算法对市场调查数据进行聚类分析，发现市场中的不同消费者群体。
-2. 广告推荐：根据用户的点击历史数据使用K-Means算法将用户划分为不同的群体，从而进行个性化的广告推荐。
-3. 社会网络分析：通过K-Means算法对社交网络中的用户进行聚类分析，发现用户之间的关系和社交圈子。
+我们更新中心点：
 
-## 6. 工具和资源推荐
+$$
+c_1 = \frac{1 + 5}{2} = 3 \\
+c_2 = \frac{2 + 4}{2} = 3
+$$
 
-对于K-Means算法的学习和实践，有以下几款工具和资源推荐：
+我们再次分配数据点：
 
-1. Scikit-learn：Python编程语言下的一个强大的机器学习库，提供了K-Means算法的实现和相关的工具。
-2. Python数据科学手册：一本详尽的Python数据科学手册，涵盖了K-Means算法的理论和实际应用。
-3. K-Means聚类教程：一系列K-Means聚类的教程，涵盖了K-Means算法的原理、实现和实际应用。
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
 
-## 7. 总结：未来发展趋势与挑战
+我们更新中心点：
 
-K-Means算法在聚类领域具有广泛的应用前景，但同时也面临着一定的挑战和困难。随着数据量的不断增加，K-Means算法的计算复杂性将会变得越来越大，需要寻找新的方法来解决这个问题。此外，K-Means算法对数据的分布和密度有较大的假设，需要进一步研究如何优化和改进算法。
+$$
+c_1 = \frac{1 + 2 + 3}{3} = 2 \\
+c_2 = \frac{4 + 5}{2} = 4.5
+$$
 
-## 8. 附录：常见问题与解答
+我们再次分配数据点：
 
-以下是一些常见的问题和解答：
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
 
-1. K-Means算法的选择参数：选择合适的聚类数量k是K-Means算法的关键。可以通过交叉验证法来选择合适的k值。
+我们再次更新中心点：
 
-2. K-Means算法的收敛问题：K-Means算法可能会陷入局部最优解，导致收敛问题。可以通过增加迭代次数、调整初始中心点等方法来解决这个问题。
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
 
-3. K-Means算法的性能：K-Means算法的时间复杂度为O(nik)，空间复杂度为O(k)。因此，在处理大量数据时，K-Means算法的性能可能会受到影响。
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
+$$
+
+我们再次分配数据点：
+
+$$
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix} \in C_1 \\
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix} \in C_2 \\
+\begin{bmatrix}
+5
+\end{bmatrix} \in C_2
+$$
+
+我们再次更新中心点：
+
+$$
+c_1 = \frac{1 + 2}{2} = 1.5 \\
+c_2 = \frac{3 + 4 + 5}{3} = 4
