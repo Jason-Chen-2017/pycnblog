@@ -1,118 +1,93 @@
-## 1.背景介绍
+## 1. 背景介绍
 
-YOLO（You Only Look Once）是一个以传统的卷积神经网络（CNN）为基础的目标检测算法。YOLOv5是YOLO系列的最新版本，具有更高的准确性、更好的速度和更强的可扩展性。YOLOv5的核心特点是其简洁的架构和高效的训练方法，这使得它在目标检测领域具有广泛的应用前景。
+YOLOv5是YOLO系列的一個最新版本，這個模型是由AlexeyAB開發的，於2020年9月推出。YOLOv5是基於YOLOv4的進步，它在YOLOv4的基礎上進行了優化，提高了性能，並且提供了更多的定制選項。YOLOv5是目前最流行的物體偵測模型之一，它在多個領域都有應用，例如工業自動化、醫療檢測、安防監控等。
 
-## 2.核心概念与联系
+## 2. 核心概念與聯繫
 
-YOLOv5的核心概念是将目标检测问题转换为图像分类问题。它将整个图像分成一个由多个网格分成的网格图，并将每个网格分配给一个预先定义的类。YOLOv5通过预测每个网格所属类别的概率和bounding box（边界框）来完成目标检测任务。
+YOLO（You Only Look Once）是一種基於深度學習的物體偵測算法，它具有以下特點：
 
-## 3.核心算法原理具体操作步骤
+1. **一次就能完成物體檢測**：YOLO一次就能完成物體檢測，不需要進行多次迭代。
+2. **實時性能強**：YOLO的檢測速度非常快，能夠實現實時檢測。
+3. **端到端訓練**：YOLO可以直接從圖像數據中學習，無需手工設計特徵器。
 
-YOLOv5的核心算法原理可以分为以下几个步骤：
+YOLOv5相對於YOLOv4的改進包括：
 
-1. **数据预处理**：将图像数据resize为固定大小，并将其转换为RGB格式。同时，将标签数据转换为YOLO格式。
+1. **更快的檢測速度**：YOLOv5通過優化和優化算法，提高了檢測速度。
+2. **更高的準確性**：YOLOv5通過使用更好的網絡結構和損失函數，提高了檢測準確性。
+3. **更好的定制性**：YOLOv5提供了更多的定制選項，讓用戶能夠根據自己的需求進行調整。
 
-2. **模型训练**：使用卷积神经网络（CNN）进行训练。YOLOv5采用了卷积层、批归一化层、激活函数等常见的深度学习层。同时，它还采用了Siamese网络和Focal Loss等创新技术，提高了模型性能。
+## 3. 核心算法原理具體操作步驟
 
-3. **目标检测**：在预测阶段，YOLOv5将输入的图像通过卷积层和全连接层处理，得到每个网格的预测概率和边界框。最后，将预测结果通过非极大值抑制（NMS）进行筛选，得到最终的检测结果。
+YOLOv5的工作流程如下：
 
-## 4.数学模型和公式详细讲解举例说明
+1. **圖像輸入**：首先，YOLOv5需要一個輸入圖像，這個圖像包含了一些物體。
+2. **特徵抽取**：YOLOv5使用了一個深度學習模型（例如ResNet、Darknet等）來對圖像進行特徵抽取。
+3. **結構分割**：YOLOv5將圖像分割成一個網格，為每個網格分配一個類別和預測框。
+4. **預測**：YOLOv5使用一個全連接層來預測每個網格的物體類別和座標。
+5. **損失計算**：YOLOv5使用一個損失函數來評估模型的性能，例如交叉熵損失、Focal Loss等。
+6. **反向傳播**：YOLOv5使用反向傳播算法來更新模型的參數，以最小化損失函數。
+7. **檢測**：YOLOv5將預測的結果轉換為實際的檢測結果，並將其返回給用戶。
 
-YOLOv5的数学模型主要包括了卷积层、全连接层和损失函数。以下是一些核心公式：
+## 4. 數學模型和公式詳細講解舉例說明
 
-1. **卷积层**：卷积层用于提取图像中的特征信息。其公式为：
+在這裡，我們將詳細講解YOLOv5的數學模型和公式。YOLOv5使用了一個三元組（B\_ij，C\_ij，X\_ij）來表示每個網格的物體類別分數、座標分數和對應物體的特徵向量。其中，B\_ij表示第ij個網格中物體的存在分數；C\_ij表示第ij個網格中物體的類別分數；X\_ij表示第ij個網格中物體的特徵向量。
 
-$$
-y = \frac{1}{h \times w} \sum_{i=1}^{h} \sum_{j=1}^{w} x(i, j) \times k(i, j)
-$$
+YOLOv5的損失函數可以表示為：
 
-其中，$y$是输出特征图，$x$是输入特征图，$h$和$w$是特征图的高度和宽度，$k$是卷积核。
+L = Σ((1 - B\_ij) * [λ * Σ(C\_ij) + (1 - λ) * Σ((1 - C\_ij) * H(C\_ij))]) + α * Σ(L1(X\_ij)) + β * Σ(L2(X\_ij))
 
-1. **全连接层**：全连接层用于将卷积层的特征信息转换为目标检测所需的概率和边界框。其公式为：
+其中，λ是權重參數，H(C\_ij)是對應C\_ij的結構損失，L1和L2是L1和L2正規化損失分別。
 
-$$
-z = W \times y + b
-$$
+## 4. 项目实践：代码实例和详细解释说明
 
-其中，$z$是全连接层的输出，$W$是权重矩阵，$y$是输入特征，$b$是偏置。
+在本节中，我们将详细介绍如何使用YOLOv5进行物体检测。首先，我们需要安装YOLOv5的依赖库。
 
-1. **损失函数**：YOLOv5采用Focal Loss作为损失函数，用于衡量预测结果与真实结果之间的差异。其公式为：
-
-$$
-L = -\left[\alpha \times (1 - p_w)^{g{w}} \times p_w^{g{w}} \times \log(\hat{p}_w) + \alpha \times (1 - p_b)^{g{b}} \times p_b^
-
-其中，$L$是损失函数，$p_w$和$p_b$是预测的正负样本概率，$\hat{p}_w$和$\hat{p}_b$是真实的正负样本概率，$\alpha$是类权重，$g$是对数损失平衡因子。
-
-## 5.项目实践：代码实例和详细解释说明
-
-以下是一个YOLOv5的简化代码示例：
-
-```python
-import torch
-import torch.nn as nn
-import torch.optim as optim
-import torchvision.transforms as transforms
-from torchvision.datasets import ImageFolder
-from torch.utils.data import DataLoader
-
-# 定义YOLOv5模型
-class YOLOv5(nn.Module):
-    def __init__(self, num_classes):
-        super(YOLOv5, self).__init__()
-        # 定义卷积层、全连接层等网络层
-        # ...
-
-    def forward(self, x):
-        # 定义前向传播过程
-        # ...
-
-# 定义数据加载器
-transform = transforms.Compose([
-    transforms.Resize((224, 224)),
-    transforms.ToTensor(),
-])
-
-dataset = ImageFolder(root='data', transform=transform)
-dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
-
-# 定义优化器
-optimizer = optim.Adam(params=YOLOv5.parameters(), lr=1e-4)
-
-# 训练模型
-for epoch in range(100):
-    for images, labels in dataloader:
-        # 前向传播
-        outputs = YOLOv5(images)
-
-        # 计算损失
-        loss = FocalLoss()(outputs, labels)
-
-        # 反向传播
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
+```bash
+pip install torch torchvision
 ```
 
-## 6.实际应用场景
+然后，我们需要下载YOLOv5的预训练模型和数据集。
 
-YOLOv5在许多实际应用场景中具有广泛的应用前景，例如：
+```bash
+# 下载预训练模型
+wget https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5s.pt
 
-1. **安全监控**：YOLOv5可以用于安全监控，实时识别人脸、车牌等。
+# 下载数据集
+wget https://github.com/ultralytics/yolov5/releases/download/v5.0/data/images.zip
+wget https://github.com/ultralytics/yolov5/releases/download/v5.0/data/labels.zip
+```
 
-2. **物体检测**：YOLOv5可以用于物体检测，识别图像中的各种物体。
+接下来，我们可以使用YOLOv5的`detect.py`脚本进行物体检测。
 
-3. **医疗诊断**：YOLOv5可以用于医疗诊断，自动识别医学图像中的病理变化。
+```bash
+# 开始检测
+python detect.py --img 640 --conf 0.25 --source data/images/bus.jpg
+```
 
-## 7.工具和资源推荐
+`detect.py`脚本的主要逻辑如下：
 
-如果你想深入了解YOLOv5，你可以参考以下工具和资源：
+1. 导入YOLOv5的相关模块。
+2. 配置YOLOv5的超参数，例如输入图片大小、检测的confidence分数阈值等。
+3. 加载YOLOv5的预训练模型。
+4. 加载数据集的图片和标签。
+5. 对图片进行预处理，包括resize、normalize等。
+6. 使用YOLOv5的检测函数进行物体检测。
+7. 输出检测结果，包括类别、框坐标、分数等。
 
-1. **官方文档**：YOLOv5的官方文档提供了详尽的介绍和示例代码，非常值得参考。地址：<https://github.com/ultralytics/yolov5>
+通过上述步骤，我们可以使用YOLOv5进行物体检测。YOLOv5的代码实现非常简洁易懂，易于定制和扩展。
 
-2. **课程资源**：一些知名的在线教育平台提供了YOLOv5相关的课程资源，例如Coursera和Udacity。
+## 5. 实际应用场景
 
-3. **社区讨论**：YOLOv5的社区讨论在GitHub上进行，例如：<https://github.com/ultralytics/yolov5/discussions>
+YOLOv5在多个领域都有实际应用，以下是一些常见的应用场景：
 
-## 8.总结：未来发展趋势与挑战
+1. **工业自动化**: YOLOv5可以用于工业自动化中，例如检测零件、识别产品等，以实现自动生产线。
+2. **医疗诊断**: YOLOv5可以用于医疗诊断中，例如检测X光片、CT扫描等，以帮助医生诊断疾病。
+3. **安防监控**: YOLOv5可以用于安防监控中，例如识别人脸、车牌等，以实现智能监控。
+4. **物流运输**: YOLOv5可以用于物流运输中，例如检测包裹、识别物品等，以实现自动排序和分发。
 
-YOLOv5是一个具有未来发展潜力和挑战的技术。在未来，我们可以预期YOLOv5在目标检测领域的应用将不断扩大，尤其是在AI驱动的智能硬件、自动驾驶等领域。此外，YOLOv5还面临着一些挑战，如模型复杂性、计算资源需求等。未来，研究者们将继续探索更高效、更可扩展的算法和硬件方案，以满足不断增长的AI需求。
+## 6. 工具和资源推荐
+
+为了学习和使用YOLOv5，我们需要一些工具和资源，以下是一些推荐：
+
+1. **GitHub仓库**: YOLOv5的官方GitHub仓库（[https://github.com/ultralytics/yolov5）提供了所有](https://github.com/ultralytics/yolov5%EF%BC%89%E6%8F%90%E4%BE%9B%E6%9C%89%E6%89%80%E6%9C%89)相关的代码、文档和示例。
+2. **PyTorch**: YOLOv5基于PyTorch，因此需要安装PyTorch。官方网站（[https://pytorch.org/）提供了详细的安装指南。](https://pytorch.org/%EF%BC%89%E6%8F%90%E4%BE%9B%E6%9C%89%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%9C%89%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F%90%E4%BE%9B%E6%89%80%E6%9C%89%E7%BD%91%E7%AB%99%E6%8F

@@ -1,172 +1,114 @@
-## 1.背景介绍
+## 1. 背景介绍
 
-随着大规模数据的出现，数据加载和预处理变得越来越重要。DataLoader 是一个用于加载和预处理数据的库，它可以帮助我们更高效地处理大规模数据。DataLoader 不仅可以用于深度学习，还可以用于其他领域的数据处理。我们将在本文中探讨如何使用 DataLoader 提供的数据进行训练。
+近年来，深度学习在各种领域中得到了广泛的应用，如图像识别、自然语言处理、语音识别等。然而，深度学习的研究和实践中遇到的一个主要挑战是数据集的处理。数据处理是训练模型的第一步，它要求我们将数据集从原始格式转换为模型所需的格式。在大多数情况下，我们需要对数据进行预处理、数据增强、数据分割等操作。DataLoader 是 PyTorch 中的一个模块，它可以帮助我们更方便地处理这些操作。本篇博客将详细介绍 DataLoader 的基本概念、原理、应用场景以及如何使用 DataLoader 进行数据处理。
 
-## 2.核心概念与联系
+## 2. 核心概念与联系
 
-DataLoader 是一个用于加载和预处理数据的库，它可以帮助我们更高效地处理大规模数据。DataLoader 提供了一些有用的功能，例如批量加载、多进程加载、数据增强等。这些功能使得 DataLoader 成为一个强大的工具，可以帮助我们更快、更容易地处理大规模数据。
+DataLoader 是 PyTorch 中的一个模块，它主要负责从数据源中读取数据，并对数据进行加载、缓存、分割等操作。DataLoader 的主要职责是将数据加载到模型中，以便进行训练和测试。DataLoader 可以与其他 PyTorch 模块（如 Dataset、DataLoader迭代器等）结合使用，以实现更高效的数据处理。
 
-## 3.核心算法原理具体操作步骤
+## 3. 核心算法原理具体操作步骤
 
-DataLoader 的核心算法原理是基于批量加载和多进程加载。批量加载可以帮助我们减少内存使用，提高数据处理效率。多进程加载可以帮助我们并行处理数据，提高数据处理速度。下面我们将详细介绍 DataLoader 的核心算法原理。
+DataLoader 的核心算法原理是基于 Python 的迭代器（Iterator）和生成器（Generator）概念。DataLoader 通过调用 Dataset 类的 __getitem__ 方法来读取数据，并将数据加载到 DataLoader 中的缓存区中。DataLoader 还可以根据需要对数据进行切片、打乱、批量处理等操作，以满足模型的需求。以下是 DataLoader 的主要操作步骤：
 
-### 3.1 批量加载
+1. 从 Dataset 类中读取数据。
+2. 将数据加载到 DataLoader 的缓存区中。
+3. 根据需要对数据进行切片、打乱、批量处理等操作。
+4. 将处理后的数据返回给模型进行训练和测试。
 
-批量加载是一种加载数据的方法，将数据分成多个小块，分别加载到内存中。这样可以减少内存使用，提高数据处理效率。DataLoader 使用 PyTorch 的 DataLoader 类来实现批量加载。DataLoader 提供了一个简单的接口，用于加载数据，并且支持多种数据源，例如文件、数据库等。
+## 4. 数学模型和公式详细讲解举例说明
 
-### 3.2 多进程加载
+在本节中，我们将详细讲解 DataLoader 的数学模型和公式。DataLoader 的主要作用是将数据加载到模型中，以便进行训练和测试。DataLoader 的数学模型可以用以下公式表示：
 
-多进程加载是一种并行处理数据的方法，将数据分成多个小块，并将这些小块分别传递给多个进程进行处理。这样可以提高数据处理速度。DataLoader 使用 Python 的多进程模块来实现多进程加载。DataLoader 提供了一个简单的接口，用于设置多进程加载的参数，并且支持多种数据源，例如文件、数据库等。
+$$
+DataLoader = f(Dataset, BatchSize, Shuffle, Sampler, CollateFn)
+$$
 
-## 4.数学模型和公式详细讲解举例说明
-
-DataLoader 的数学模型和公式非常简单，它主要涉及到数据的批量加载和多进程加载。下面我们将详细讲解 DataLoader 的数学模型和公式。
-
-### 4.1 批量加载的数学模型
-
-批量加载的数学模型很简单，它主要涉及到将数据分成多个小块，并将这些小块分别加载到内存中。这样可以减少内存使用，提高数据处理效率。DataLoader 使用 PyTorch 的 DataLoader 类来实现批量加载。
-
-### 4.2 多进程加载的数学模型
-
-多进程加载的数学模型也很简单，它主要涉及到将数据分成多个小块，并将这些小块分别传递给多个进程进行处理。这样可以提高数据处理速度。DataLoader 使用 Python 的多进程模块来实现多进程加载。
-
-## 4.项目实践：代码实例和详细解释说明
-
-在本节中，我们将通过一个项目实践来详细解释如何使用 DataLoader 提供的数据进行训练。我们将使用一个简单的神经网络来进行训练，我们将使用 PyTorch 来实现这个神经网络。
-
-### 4.1 准备数据
-
-首先，我们需要准备数据。我们将使用 MNIST 数据集，这是一个包含 60,000 个手写数字图像的数据集。我们将使用 torchvision 库来加载 MNIST 数据集。
+其中，Dataset 是数据源，BatchSize 是批量大小，Shuffle 是是否打乱数据，Sampler 是采样器，CollateFn 是数据处理函数。以下是一个简单的 DataLoader 示例：
 
 ```python
-from torchvision import datasets, transforms
+import torch
+from torch.utils.data import Dataset, DataLoader
 
-transform = transforms.Compose([transforms.ToTensor(),
-                                transforms.Normalize((0.1307,), (0.3081,))])
+class MyDataset(Dataset):
+    def __init__(self, data, target):
+        self.data = data
+        self.target = target
 
-trainset = datasets.MNIST(root='./data', train=True, download=True, transform=transform)
-trainloader = DataLoader(trainset, batch_size=64, shuffle=True, num_workers=2)
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, idx):
+        return self.data[idx], self.target[idx]
+
+data = torch.randn(100, 3, 32, 32)
+target = torch.randint(0, 10, (100,))
+
+dataset = MyDataset(data, target)
+dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
+
+for data, target in dataloader:
+    print(data.size(), target.size())
 ```
 
-### 4.2 定义神经网络
+在这个例子中，我们定义了一个自定义的 Dataset 类，并使用 DataLoader 对其进行处理。DataLoader 将 Dataset 的数据加载到缓存区中，并对数据进行批量处理、打乱等操作。
 
-接下来，我们需要定义一个神经网络。我们将使用 PyTorch 来定义一个简单的神经网络。
+## 5. 项目实践：代码实例和详细解释说明
+
+在本节中，我们将通过一个实际项目来说明如何使用 DataLoader 进行数据处理。我们将使用 PyTorch 的 CIFAR-10 数据集，训练一个简单的卷积神经网络（CNN）。以下是一个简单的代码示例：
 
 ```python
-import torch.nn as nn
-import torch.nn.functional as F
+import torch
+import torchvision
+import torchvision.transforms as transforms
+from torch.utils.data import DataLoader
 
-class Net(nn.Module):
+transform = transforms.Compose(
+    [transforms.RandomHorizontalFlip(),
+     transforms.ToTensor(),
+     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+
+trainset = torchvision.datasets.CIFAR10(root='./data', train=True,
+                                        download=True, transform=transform)
+trainloader = DataLoader(trainset, batch_size=4, shuffle=True, num_workers=2)
+
+testset = torchvision.datasets.CIFAR10(root='./data', train=False,
+                                       download=True, transform=transform)
+testloader = DataLoader(testset, batch_size=4, shuffle=False, num_workers=2)
+
+class Net(torch.nn.Module):
     def __init__(self):
         super(Net, self).__init__()
-        self.fc1 = nn.Linear(28*28, 512)
-        self.fc2 = nn.Linear(512, 256)
-        self.fc3 = nn.Linear(256, 10)
+        self.conv1 = torch.nn.Conv2d(3, 6, 5)
+        self.pool = torch.nn.MaxPool2d(2, 2)
+        self.conv2 = torch.nn.Conv2d(6, 16, 5)
+        self.fc1 = torch.nn.Linear(16 * 5 * 5, 120)
+        self.fc2 = torch.nn.Linear(120, 84)
+        self.fc3 = torch.nn.Linear(84, 10)
 
     def forward(self, x):
+        x = self.pool(F.relu(self.conv1(x)))
+        x = self.pool(F.relu(self.conv2(x)))
+        x = x.view(-1, 16 * 5 * 5)
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
         x = self.fc3(x)
-        return F.log_softmax(x, dim=1)
+        return x
 
 net = Net()
 ```
 
-### 4.3 训练神经网络
+在这个例子中，我们使用 DataLoader 对 CIFAR-10 数据集进行处理，并使用一个简单的 CNN 进行训练。DataLoader 在这里主要负责从数据源中读取数据，并对数据进行批量处理、打乱等操作。
 
-最后，我们需要训练神经网络。我们将使用 DataLoader 提供的数据进行训练。
+## 6. 实际应用场景
 
-```python
-import torch.optim as optim
+DataLoader 可以在各种应用场景中使用，如图像识别、自然语言处理、语音识别等。以下是一些实际应用场景：
 
-criterion = nn.CrossEntropyLoss()
-optimizer = optim.SGD(net.parameters(), lr=0.01, momentum=0.9)
+1. 数据预处理：DataLoader 可以用于将数据从原始格式转换为模型所需的格式，例如将 CSV 文件转换为 torch.Tensor。
+2. 数据增强：DataLoader 可以用于对数据进行增强，如旋转、翻转、裁剪等，以提高模型的泛化能力。
+3. 数据分割：DataLoader 可以用于将数据集分割为训练集、验证集、测试集等，以便进行模型训练和评估。
 
-for epoch in range(10):
-    running_loss = 0.0
-    for i, data in enumerate(trainloader, 0):
-        inputs, labels = data
-        optimizer.zero_grad()
-        outputs = net(inputs.view(inputs.size(0), -1))
-        loss = criterion(outputs, labels)
-        loss.backward()
-        optimizer.step()
-        running_loss += loss.item()
-    print('Epoch %d loss: %.3f' % (epoch + 1, running_loss / len(trainloader)))
-```
+## 7. 工具和资源推荐
 
-## 5.实际应用场景
+DataLoader 是 PyTorch 中的一个非常有用的模块，它可以帮助我们更方便地处理数据。以下是一些工具和资源推荐：
 
-DataLoader 可以用于许多实际应用场景，例如图像识别、自然语言处理、语音识别等。DataLoader 提供了一种简单、可扩展的方法来处理大规模数据，这使得 DataLoader 成为一个非常有用的工具。下面我们将通过一个实际应用场景来详细解释如何使用 DataLoader。
-
-### 5.1 图像识别
-
-图像识别是一个经典的问题，我们可以使用 DataLoader 来处理图像数据。我们将使用 CIFAR-10 数据集，这是一个包含 60,000 个 32x32 颜色图像的数据集。我们将使用 torchvision 库来加载 CIFAR-10 数据集。
-
-```python
-from torchvision import datasets, transforms
-
-transform = transforms.Compose([transforms.ToTensor(),
-                                transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
-
-trainset = datasets.CIFAR10(root='./data', train=True, download=True, transform=transform)
-trainloader = DataLoader(trainset, batch_size=64, shuffle=True, num_workers=2)
-```
-
-## 6.工具和资源推荐
-
-DataLoader 是一个非常有用的工具，可以帮助我们更高效地处理大规模数据。我们推荐以下工具和资源：
-
-1. PyTorch：PyTorch 是一个非常流行的深度学习框架，我们推荐使用 PyTorch 来实现 DataLoader。
-
-2. torchvision：torchvision 是一个用于图像、视频和信号处理的 Python 包，我们推荐使用 torchvision 来加载数据集。
-
-3. DataLoader 文档：DataLoader 的官方文档非常详细，我们推荐阅读 DataLoader 的官方文档，以了解更多关于 DataLoader 的信息。
-
-## 7.总结：未来发展趋势与挑战
-
-DataLoader 是一个非常有用的工具，可以帮助我们更高效地处理大规模数据。我们相信，在未来，DataLoader 将继续发展，提供更多功能和更好的性能。DataLoader 的未来发展趋势包括：
-
-1. 更高效的数据加载：DataLoader 将继续优化数据加载，提高数据加载速度。
-
-2. 更好的数据预处理：DataLoader 将继续提供更多的数据预处理功能，帮助我们更好地处理数据。
-
-3. 更好的多进程加载：DataLoader 将继续优化多进程加载，提高数据处理速度。
-
-4. 更好的扩展性：DataLoader 将继续提供更好的扩展性，支持更多数据源和更多功能。
-
-## 8.附录：常见问题与解答
-
-在本文中，我们讨论了如何使用 DataLoader 提供的数据进行训练。我们相信，读者将能够理解 DataLoader 的核心概念和原理，并能够在实际应用中使用 DataLoader。以下是一些常见的问题和解答：
-
-1. DataLoader 如何工作？
-
-DataLoader 是一个用于加载和预处理数据的库，它可以帮助我们更高效地处理大规模数据。DataLoader 的核心算法原理是基于批量加载和多进程加载。批量加载可以帮助我们减少内存使用，提高数据处理效率。多进程加载可以帮助我们并行处理数据，提高数据处理速度。
-
-2. DataLoader 的优点是什么？
-
-DataLoader 的优点包括：
-
-1. 支持批量加载，减少内存使用，提高数据处理效率。
-
-2. 支持多进程加载，提高数据处理速度。
-
-3. 支持多种数据源，例如文件、数据库等。
-
-4. 提供简单的接口，方便使用。
-
-3. DataLoader 的缺点是什么？
-
-DataLoader 的缺点包括：
-
-1. 不支持动态数据源，例如实时数据流。
-
-2. 不支持自定义数据加载器。
-
-3. 不支持自定义数据预处理。
-
-4. 不支持自定义数据加载器。
-
-4. 如何使用 DataLoader？
-
-我们在本文中提供了一个项目实践，详细解释了如何使用 DataLoader 提供的数据进行训练。我们使用了一个简单的神经网络来进行训练，我们将使用 PyTorch 来实现这个神经网络。我们准备了一个 MNIST 数据集，并使用 DataLoader 提供的数据进行训练。我们通过一个实际应用场景来详细解释如何使用 DataLoader。
+1. 官方文档：PyTorch 官方文档（[https://pytorch.org/docs/stable/data.html](https://pytorch.org/docs/stable/data.html)）提供了详细的 DataLoader 介绍和使用方法。](https://pytorch.org/docs/stable/data.html%EF%BC%89%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%B9%89%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E8%AF%A5%E6%8F%90%E4%BE%9B%E4%BA%86%E8%AF%A5%E6%9E%9C%E4%BA%8B%E9%AB%98%E6%B8%A1%E6%88%90%E5%BA%93%E4%B8%93%E4%BA%8B%E5%8F%91%E8%A7%88%E7%9A%84%EF%BC%89%E4%B8%8D%E7%9B%8B%E6%9E%9C%E4%BA

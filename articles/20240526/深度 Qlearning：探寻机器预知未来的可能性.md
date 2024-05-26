@@ -1,98 +1,90 @@
 ## 1. 背景介绍
 
-深度 Q-learning（DQN）是由 DeepMind 的研究人员开发的一种强化学习方法，用于解决复杂的控制和决策任务。它将传统的 Q-learning 算法与深度神经网络相结合，从而能够处理具有大量状态和动作的复杂环境。DQN 在多种任务中取得了显著的成绩，如 Atari 游戏、语音识别、自然语言处理等。
+深度Q学习（Deep Q-learning）是目前人工智能领域中最热门的技术之一，深度学习和强化学习的结合在许多领域都产生了令人难以置信的效果。深度Q学习的核心思想是通过学习环境中的奖励信号来优化智能体的行为策略，从而实现智能体预知未来的可能性。
+
+在本篇博客中，我们将深入探讨深度Q学习的核心概念、算法原理、数学模型、实际应用场景以及未来发展趋势。
 
 ## 2. 核心概念与联系
 
-深度 Q-learning 的核心概念是利用深度神经网络来approximate Q-function（状态值函数）。Q-function 是一个重要的概念，它描述了在某个状态下采取某个动作的奖励总和。深度 Q-learning 的目标是学习一个能够准确地估计 Q-function 的深度神经网络。
+深度Q学习是一种基于强化学习（Reinforcement Learning，RL）的方法，它将深度学习（Deep Learning，DL）和Q学习（Q-Learning）相结合。深度Q学习的核心概念是，将Q学习中的Q值与深度学习中的神经网络相结合，以便智能体能够学习到更好的行为策略。
+
+深度Q学习与传统的Q学习方法的主要区别在于，它使用了深度神经网络来估计Q值，而非使用线性函数 approximation。这种方法使得深度Q学习能够适应更复杂的状态空间和动作空间，从而在许多实际应用场景中表现出色。
 
 ## 3. 核心算法原理具体操作步骤
 
-深度 Q-learning 算法的主要步骤如下：
+深度Q学习的核心算法原理可以分为以下几个步骤：
 
-1. 初始化一个深度神经网络，用于approximate Q-function。
-2. 从环境中获得当前状态。
-3. 对于每个可选动作，通过神经网络预测其对应的 Q-value。
-4. 选择一个具有最高 Q-value 的动作，并执行该动作。
-5. 根据执行该动作后的新状态和奖励，更新神经网络的参数。
-6. 按照一定的策略（如ε-贪婪策略）选择下一个状态。
-7. 重复上述步骤，直到达到一定的终止条件。
+1. 初始化：为每个状态-动作对初始化一个Q值为0的神经网络。
+
+2. 选择：选择一个当前状态下的动作，根据探索-利用策略（如ε-greedy策略）选择动作。
+
+3. 执行：根据选择的动作执行动作，并得到下一个状态和奖励信号。
+
+4. 更新：根据新得到的经验更新神经网络的权重，以便更好地估计Q值。
+
+5. 重复：重复上述过程，直到智能体在环境中达到一个终止状态。
 
 ## 4. 数学模型和公式详细讲解举例说明
 
-在深度 Q-learning 中，Q-function 可以表示为：
+深度Q学习的数学模型主要包括Q值的定义、目标函数和更新规则。以下是一个简化的数学模型：
 
-$$Q(s,a) = r(s,a) + \gamma \sum_{s'} P(s'|s,a) \max_{a'} Q(s',a')$$
+1. Q值定义：$$Q(s,a)=\sum_{k=1}^{K}r_k(s,a) + \gamma \sum_{k=1}^{K}r_k(s',a')$$，其中$s$是当前状态，$a$是当前动作，$s'$是下一个状态，$a'$是下一个动作，$r_k$是第$k$个奖励信号，$\gamma$是折扣因子。
 
-其中，$s$ 和 $s'$ 代表状态，$a$ 和 $a'$ 代表动作，$r(s,a)$ 表示执行动作 $a$ 在状态 $s$ 下得到的奖励，$\gamma$ 是折扣因子，表示未来奖励的减值率，$P(s'|s,a)$ 是状态转移概率。
+2. 目标函数：$$J(\pi)=\mathbb{E}_{\pi}[\sum_{t=0}^{T}\gamma^tR_t(s_t,a_t)]$$，其中$\pi$是策略，$R_t$是时刻$t$的奖励信号。
+
+3. 更新规则：$$\theta_{t+1}=\theta_t+\alpha(\nabla_{\theta}J(\pi)-\lambda\nabla_{\theta}D_KL(\pi(\cdot|s,a;\theta)||\pi(\cdot|s,a)))$$，其中$\theta$是神经网络的参数，$\alpha$是学习率，$\lambda$是正则化参数，$D_{KL}$是Kullback-Leibler散度。
 
 ## 5. 项目实践：代码实例和详细解释说明
 
-为了更好地理解深度 Q-learning，我们可以通过一个简单的示例来演示其实现过程。以下是一个使用 Python 和 TensorFlow 的简单示例：
+在本节中，我们将通过一个简单的例子来说明如何使用深度Q学习实现一个智能体。我们将使用Python和TensorFlow来实现一个简单的深度Q学习模型。
 
 ```python
-import numpy as np
 import tensorflow as tf
+import numpy as np
 
 # 定义神经网络
 class DQN(tf.keras.Model):
-    def __init__(self, action_space):
+    def __init__(self, input_dim, output_dim):
         super(DQN, self).__init__()
-        self.dense1 = tf.keras.layers.Dense(64, activation='relu')
+        self.dense1 = tf.keras.layers.Dense(128, activation='relu', input_shape=(input_dim,))
         self.dense2 = tf.keras.layers.Dense(64, activation='relu')
-        self.dense3 = tf.keras.layers.Dense(action_space)
+        self.dense3 = tf.keras.layers.Dense(output_dim)
 
     def call(self, inputs):
         x = self.dense1(inputs)
         x = self.dense2(x)
         return self.dense3(x)
 
-# 定义训练过程
-def train(model, env, episodes=1000):
-    for episode in range(episodes):
-        state = env.reset()
-        done = False
-        while not done:
-            # 选择动作
-            q_values = model.predict(state)
-            action = np.argmax(q_values)
-            # 执行动作
-            next_state, reward, done, _ = env.step(action)
-            # 更新模型
-            model.fit(state, reward, epochs=1)
-            state = next_state
+# 初始化模型
+input_dim = 4
+output_dim = 2
+model = DQN(input_dim, output_dim)
+optimizer = tf.keras.optimizers.Adam(learning_rate=0.001)
 
-# 创建环境和模型
-env = ... # 创建一个环境
-action_space = ... # 获取环境的动作空间
-model = DQN(action_space)
+# 训练模型
+for episode in range(1000):
+    # 获取状态和动作
+    state = np.random.rand(input_dim)
+    action = np.random.choice(output_dim)
 
-# 开始训练
-train(model, env)
+    # 执行动作并获取下一个状态和奖励
+    next_state, reward = step(state, action)
+
+    # 计算Q值
+    with tf.GradientTape() as tape:
+        q_values = model(state)
+        q_value = tf.reduce_sum(q_values * tf.one_hot(action, output_dim))
+        loss = -q_value + reward * gamma * tf.reduce_max(model(next_state))
+    gradients = tape.gradient(loss, model.trainable_variables)
+    optimizer.apply_gradients(zip(gradients, model.trainable_variables))
 ```
 
 ## 6. 实际应用场景
 
-深度 Q-learning 已经成功应用于许多领域，如游戏-playing（如 AlphaGo、AlphaStar 等）、机器人控制、自然语言处理、语音识别等。未来，随着技术的不断发展和研究的深入，深度 Q-learning 将在更多领域取得更大的成功。
+深度Q学习已经在许多实际应用场景中得到广泛应用，如游戏playing（如AlphaGo和AlphaStar）、自然语言处理（如Seq2Seq和AttentionMechanism）、计算机视觉（如ImageClassification和ObjectDetection）等。
 
 ## 7. 工具和资源推荐
 
-对于想要学习和研究深度 Q-learning 的读者，可以参考以下资源：
+对于学习深度Q学习，以下是一些建议的工具和资源：
 
-1. [Deep Q-Learning](https://www.tensorflow.org/tutorials/rl/deep_q_learning) - TensorFlow 官方教程
-2. [Deep Reinforcement Learning Hands-On](https://www.manning.com/books/deep-reinforcement-learning-hands-on) - 一本关于深度强化学习的实践性书籍
-3. [Reinforcement Learning: An Introduction](http://www-anw.cs.umass.edu/~bagnell/book/RLbook.html) - 一本关于强化学习的经典教材
-
-## 8. 总结：未来发展趋势与挑战
-
-深度 Q-learning 是强化学习领域的一个重要发展方向。未来，随着算法和硬件技术的进步，深度 Q-learning 将在更多领域得到广泛应用。然而，深度 Q-learning 也面临着一些挑战，如计算资源的要求、样本效率、稳定性等。未来，研究社区需要继续探索新的算法和方法，以解决这些挑战，推动深度 Q-learning 的进一步发展。
-
-## 附录：常见问题与解答
-
-1. **深度 Q-learning 和其他强化学习方法的区别？**
-
-   深度 Q-learning 与其他强化学习方法的主要区别在于，深度 Q-learning 利用深度神经网络来approximate Q-function。其他方法，如 Q-learning 和 SARSA，通常使用表格或线性函数来表示 Q-function。这种差异使得深度 Q-learning 能够处理具有大量状态和动作的复杂环境，而其他方法则可能受到状态空间和动作空间的限制。
-
-2. **深度 Q-learning 能否用于连续空间和连续动作的问题？**
-
-   一般来说，深度 Q-learning 更适合用于离散空间和离散动作的问题。对于连续空间和连续动作的问题，可以考虑使用深度 Deterministic Policy Gradient（DDPG）或其他适合连续空间和连续动作的问题方法。
+1. TensorFlow（[https://www.tensorflow.org/）：一个流行的深度学习框架，可以用于实现深度Q学习模型。](https://www.tensorflow.org/%EF%BC%89%EF%BC%9A%E4%B8%80%E4%B8%AA%E6%B5%81%E5%8F%91%E7%9A%84%E5%BA%95%E5%BF%85%E5%AD%A6%E7%BF%BB%E5%8C%85%EF%BC%8C%E5%8F%AF%E4%BB%A5%E4%BA%8E%E7%AE%97%E6%8A%80%E5%BA%93%E5%AE%A1%E5%8C%85%E5%9F%BA%E8%BF%9B%E5%8A%A1%E8%AE%BE%E8%AE%A1%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%95%E5%BF%85%E5%AD%A6%E7%BF%BB%E5%8C%85%E5%9F%BA%E5%AE%A1%E5%8C%85%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%8C%85%E5%8F%AF%E4%BB%A5%E7%9B%8B%E5%90%88%E6%8B%AC%E5%8F%AF%E7%9A%84%E5%BA%93%E5%AE%A1%E5%
