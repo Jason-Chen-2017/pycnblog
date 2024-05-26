@@ -1,106 +1,108 @@
 ## 1. 背景介绍
 
-随着深度强化学习（Deep Reinforcement Learning, DRL）在各领域的广泛应用，我们开始关注如何解决连续动作空间问题。DQN（Deep Q-Network）是目前解决连续动作空间问题的最常见方法之一。我们将在本文中探讨DQN的策略及其挑战。
+深度强化学习（Deep Reinforcement Learning，DRL）是一种通过与环境交互学习来实现智能行为的方法。深度神经网络（DNN）为DRL提供了强大的学习能力，使其能够在各种复杂环境中学习。然而，DRL的核心挑战之一是处理连续动作空间（continuous action space）问题。连续动作空间问题是指在每个时刻，智能体可以执行无限多个动作，而不仅仅是有限个动作。
 
 ## 2. 核心概念与联系
 
-DQN利用深度神经网络（DNN）来 approximatesate-action value function Q。我们使用DQN来解决连续动作空间问题，主要关注以下几点：
+在解决连续动作空间问题时，我们需要一个可以适应于各种动作空间的学习算法。深度强化学习中的一个广泛使用的算法是Q-learning。Q-learning是一个基于模型的学习方法，可以学习一个Q函数，该函数表示为：Q(s,a)，其中s表示状态，a表示动作。通过迭代更新Q函数，我们可以学习到最优策略。然而，传统的Q-learning只适用于离散动作空间，而不能直接处理连续动作空间。
 
-1. **离散化（Discretization）：** 连续动作空间问题需要将连续动作空间映射到离散空间，以便在神经网络中进行处理。
-2. **策略（Policy）：** DQN需要学习一个策略，以便在给定状态下选择最佳动作。
-3. **挑战（Challenges）：** DQN在解决连续动作空间问题时面临诸多挑战。
+为了解决连续动作空间问题，我们需要将Q-learning与深度神经网络（DNN）结合。这种结合的结果是一个称为深度Q网络（Deep Q-Network，DQN）的算法。DQN能够学习一个Q函数，并且能够处理连续动作空间。
 
 ## 3. 核心算法原理具体操作步骤
 
-DQN算法的主要步骤如下：
+DQN的核心原理是将Q-learning与DNN结合。DQN使用一个神经网络来近似Q函数。神经网络的输入是状态信息，而输出是Q值。通过使用DNN，我们可以学习一个非线性的Q函数。DQN的学习过程包括以下几个步骤：
 
-1. **初始化：** 初始化一个神经网络，并定义好输入、输出层。
-2. **选择：** 根据当前状态选择一个动作。这个动作可以是随机选择或基于当前策略选择。
-3. **执行：** 执行所选择的动作并获得相应的奖励和下一个状态。
-4. **更新：** 使用当前状态、下一个状态和奖励来更新神经网络的参数。
-5. **探索：** 随机选择一个动作以探索其他可能的策略。
+1. 初始化：选择一个随机初始化的神经网络。
+2. 学习：通过与环境交互，收集数据，更新神经网络。我们使用经验存储器来存储状态、动作和奖励。然后，我们使用 minibatch随机采样数据来更新神经网络。
+3. 选择：选择一个最佳动作。我们使用ε-贪婪策略来选择动作。这个策略在开始时会随机选择动作，但随着时间的推移，会逐渐选择最优的动作。
+4. 更新：更新Q值。我们使用神经网络预测Q值，并使用一致性损失函数来更新神经网络。
 
 ## 4. 数学模型和公式详细讲解举例说明
 
-DQN的数学模型可以用下面的方程表示：
+在DQN中，我们使用深度神经网络来近似Q函数。为了计算Q值，我们需要将状态信息传递给神经网络，并得到Q值的预测。我们使用以下公式来计算Q值：
 
-$$
-Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]
-$$
+Q(s,a;θ)=f(s,a,θ)
 
-其中：
+其中，Q(s,a;θ)表示Q值的预测，θ表示神经网络的参数，f表示神经网络的输出函数，s表示状态，a表示动作。
 
-* $Q(s, a)$ 是状态-动作值函数，表示在状态 $s$ 下执行动作 $a$ 的值。
-* $\alpha$ 是学习率，控制更新速度。
-* $r$ 是当前动作的奖励。
-* $\gamma$ 是折扣因子，控制未来奖励的权重。
-* $s'$ 是下一个状态。
-* $\max_{a'} Q(s', a')$ 是下一个状态的最大值。
+为了更新Q值，我们使用一致性损失函数。我们需要计算预测的Q值和真实的Q值之间的差异。我们使用以下公式来计算损失：
+
+L_i = (y_i - Q(s_i, a_i; θ))^2
+
+其中，L_i表示损失，y_i表示真实的Q值，Q(s_i, a_i; θ)表示预测的Q值。
+
+为了更新神经网络，我们使用梯度下降算法来最小化损失。我们使用以下公式来更新神经网络的参数：
+
+θ = θ - α∇θL
+
+其中，θ表示神经网络的参数，α表示学习率，∇θL表示损失对参数的梯度。
 
 ## 4. 项目实践：代码实例和详细解释说明
 
-在本节中，我们将通过一个简单的例子来演示如何使用DQN解决连续动作空间问题。我们将使用Python和PyTorch来实现一个简单的DQN agent。
+在本节中，我们将通过一个具体的示例来解释DQN的实现过程。我们将使用Python和TensorFlow来实现DQN。以下是DQN的主要组件：
+
+1. 状态表示：我们需要将状态表示为一个向量。例如，我们可以使用一个神经网络来将状态映射到一个向量表示。
+2. 动作选择：我们使用ε-贪婪策略来选择动作。我们需要计算每个动作的Q值，并选择具有最高Q值的动作。
+3. Q网络：我们使用一个深度神经网络来近似Q函数。神经网络的输入是状态信息，而输出是Q值。
+4. 目标网络：为了防止学习过快，我们使用一个目标网络来计算Q值。目标网络的参数会定期更新为当前网络的参数。
+
+以下是DQN的代码实例：
 
 ```python
-import torch
-import torch.nn as nn
-import torch.optim as optim
+import tensorflow as tf
+import numpy as np
 
-class DQN(nn.Module):
-    def __init__(self, input_size, output_size):
-        super(DQN, self).__init__()
-        self.fc1 = nn.Linear(input_size, 128)
-        self.fc2 = nn.Linear(128, 64)
-        self.fc3 = nn.Linear(64, output_size)
-
-    def forward(self, x):
-        x = torch.relu(self.fc1(x))
-        x = torch.relu(self.fc2(x))
-        return self.fc3(x)
-
-class DQNAgent:
-    def __init__(self, state_size, action_size, gamma, epsilon, learning_rate):
-        self.state_size = state_size
-        self.action_size = action_size
-        self.gamma = gamma
-        self.epsilon = epsilon
+class DQN(object):
+    def __init__(self, input_size, output_size, learning_rate, gamma):
+        self.input_size = input_size
+        self.output_size = output_size
         self.learning_rate = learning_rate
+        self.gamma = gamma
+        self.build_network()
 
-        self.q_network = DQN(state_size, action_size)
-        self.target_q_network = DQN(state_size, action_size)
-        self.target_q_network.load_state_dict(self.q_network.state_dict())
-        self.target_q_network.eval()
+    def build_network(self):
+        self.network = tf.keras.Sequential([
+            tf.keras.layers.Dense(64, activation='relu', input_shape=(self.input_size,)),
+            tf.keras.layers.Dense(32, activation='relu'),
+            tf.keras.layers.Dense(self.output_size)
+        ])
 
-        self.optimizer = optim.Adam(self.q_network.parameters(), lr=learning_rate)
+        self.target_network = tf.keras.Sequential([
+            tf.keras.layers.Dense(64, activation='relu', input_shape=(self.input_size,)),
+            tf.keras.layers.Dense(32, activation='relu'),
+            tf.keras.layers.Dense(self.output_size)
+        ])
+
+        self.optimizer = tf.keras.optimizers.Adam(self.learning_rate)
+
+    def predict(self, state):
+        return self.network.predict(state)
+
+    def update_target(self):
+        self.target_network.set_weights(self.network.get_weights())
+
+    def train(self, state, action, reward, next_state, done):
+        with tf.GradientTape() as tape:
+            q_values = self.network(state)
+            next_q_values = self.target_network(next_state)
+            q_values = tf.reduce_sum(q_values * tf.one_hot(action, self.output_size), axis=1)
+            max_next_q_values = tf.reduce_max(next_q_values, axis=1)
+            target = reward + self.gamma * max_next_q_values * (1 - done)
+            loss = tf.reduce_mean(tf.keras.losses.mean_squared_error(target, q_values))
+        grads = tape.gradient(loss, self.network.trainable_variables)
+        self.optimizer.apply_gradients(zip(grads, self.network.trainable_variables))
 ```
 
-## 5. 实际应用场景
+## 5.实际应用场景
 
-DQN可以应用于许多实际场景，例如：
+DQN可以用于解决许多实际问题，例如控制飞行器、游戏玩家、机器人等。以下是一些实际应用场景：
 
-1. **游戏玩家训练：** 利用DQN来训练游戏玩家，使其能够在游戏中表现出色。
-2. **自动驾驶：** DQN可以用于训练自动驾驶车辆，使其能够根据不同情况作出正确的反应。
-3. **金融市场交易：** DQN可以用于金融市场交易，帮助投资者做出更明智的决策。
+1. 飞行器控制：我们可以使用DQN来控制飞行器的动作，以达到最大化飞行器的性能。
+2. 游戏玩家：我们可以使用DQN来训练一个游戏玩家，使其能够在各种游戏中取得高分。
+3. 机器人：我们可以使用DQN来训练一个机器人，使其能够在复杂环境中移动并执行任务。
 
 ## 6. 工具和资源推荐
 
-* **PyTorch：** PyTorch是一个开源的深度学习框架，可以用于实现DQN。
-* **OpenAI Gym：** OpenAI Gym是一个开源的机器学习框架，提供了许多预先训练好的环境，可以用于测试和验证DQN agent。
+为了学习和实现DQN，我们需要一些工具和资源。以下是一些建议：
 
-## 7. 总结：未来发展趋势与挑战
-
-DQN在解决连续动作空间问题方面具有广泛的应用前景。然而，DQN仍然面临一些挑战，如过拟合、探索-利用冲突等。未来，深度强化学习领域将持续发展，我们需要继续关注其最新进展，以便更好地解决连续动作空间问题。
-
-## 8. 附录：常见问题与解答
-
-1. **Q：为什么需要离散化？**
-
-A：连续动作空间问题需要将连续动作空间映射到离散空间，以便在神经网络中进行处理。离散化有助于减少计算复杂度和减少过拟合。
-
-1. **Q：DQN的探索策略是什么？**
-
-A：DQN的探索策略主要是$\epsilon$-贪心策略。随机选择一个动作以探索其他可能的策略。随着时间的推移，探索率会逐渐降低，优化策略。
-
-1. **Q：DQN的学习率如何选择？**
-
-A：学习率选择很重要。太大的学习率可能导致过大幅度的参数更新，导致收敛不稳定。太小的学习率可能导致参数更新过慢，导致收敛速度过慢。通常我们可以通过实验来选择合适的学习率。
+1. TensorFlow：TensorFlow是一个强大的深度学习库，可以用于实现DQN。我们可以在官网（[https://www.tensorflow.org/）上下载并安装TensorFlow。](https://www.tensorflow.org/%EF%BC%89%E4%B8%8A%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E6%89%80%E6%8A%80%E5%AE%89%E4%B8%8B%E4%B8%8B%E6%89%93%E5%8C%85%E4%B8%94%E

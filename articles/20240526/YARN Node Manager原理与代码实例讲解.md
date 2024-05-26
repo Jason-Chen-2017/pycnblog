@@ -1,117 +1,105 @@
 ## 1. 背景介绍
 
-YARN（Yet Another Resource Negotiator）是一个开源的资源管理器和应用程序框架，主要用于大数据处理领域。YARN的设计目标是提供一个通用的资源管理和任务调度框架，支持多种类型的数据处理应用程序，包括Hadoop MapReduce、Spark、Flink等。
+YARN（Yet Another Resource Negotiator）是一个由雅虎开发的大规模数据处理平台，它为Hadoop生态系统提供了资源管理和应用程序调度功能。YARN的设计目标是能够处理Peta-Scale数据集，支持多种类型的数据处理应用程序，包括批量处理和流处理。
 
-YARN的核心组件之一是NodeManager，它负责管理和监控每个应用程序的资源使用情况。NodeManager还负责启动和管理应用程序的任务。
-
-本文将介绍YARN NodeManager的原理及其代码实现，包括核心概念、算法原理、数学模型、代码实例等。
+在这个博客文章中，我们将深入探讨YARN的Node Manager组件，了解其原理和工作机制，并提供代码实例以帮助读者理解其实现细节。
 
 ## 2. 核心概念与联系
 
-YARN NodeManager的主要职责包括：
+YARN架构中有两个核心组件：ResourceManager和NodeManager。ResourceManager负责整个集群的资源分配和调度，而NodeManager则负责在每个工作节点上运行和管理应用程序任务。
 
-1. 资源分配：NodeManager负责将集群中的资源（内存、CPU等）分配给应用程序，根据应用程序的需求进行动态调整。
+Node Manager的主要职责包括：
 
-2. 任务调度：NodeManager负责启动和管理应用程序的任务，包括Map和Reduce任务。
-
-3. 监控：NodeManager监控应用程序的资源使用情况，包括内存、CPU等。
-
-4. 日志记录：NodeManager记录应用程序的日志，方便进行诊断和故障排除。
-
-YARN NodeManager的工作原理可以用一个简单的数学模型来描述：
-
-$$
-Resource \rightarrow Task \rightarrow Resource
-$$
-
-其中，Resource表示资源，Task表示任务。
+1. 向ResourceManager报告节点资源状态
+2. 为ResourceManager分配资源
+3. 为应用程序任务提供运行环境
+4. 监控任务执行状态并报告
 
 ## 3. 核心算法原理具体操作步骤
 
-YARN NodeManager的核心算法原理可以分为以下几个步骤：
+Node Manager的核心原理是基于资源分配和任务调度的算法。以下是其具体操作步骤：
 
-1. 资源申请：应用程序向NodeManager申请资源，根据集群的可用资源和应用程序的需求进行分配。
-
-2. 任务启动：NodeManager启动Map和Reduce任务，根据任务的输入数据和输出结果进行处理。
-
-3. 资源释放：任务完成后，NodeManager释放已经使用的资源，供其他应用程序使用。
-
-4. 监控和日志记录：NodeManager持续监控应用程序的资源使用情况，并记录应用程序的日志。
+1. Node Manager启动时，向ResourceManager报告节点资源状态，包括内存、CPU和磁盘空间等。
+2. ResourceManager根据节点资源状态和应用程序需求进行资源分配和调度。ResourceManager会将分配到的资源信息发送给Node Manager。
+3. Node Manager根据ResourceManager分配到的资源信息，为应用程序任务提供运行环境，包括内存、CPU和磁盘空间等。
+4. Node Manager监控任务执行状态，并定期向ResourceManager报告任务状态。
 
 ## 4. 数学模型和公式详细讲解举例说明
 
-为了更好地理解YARN NodeManager的原理，我们可以用一个简单的数学模型进行解释：
+在YARN中，资源分配和调度主要依赖于ResourceManager和Node Manager之间的通信和协调。数学模型和公式主要体现在资源分配和调度的算法中。
 
-$$
-Resource = f(Task, Resource)
-$$
+举例说明：
 
-其中，Resource表示资源，Task表示任务。根据任务的需求，NodeManager会动态调整资源分配，确保应用程序的运行效率。
+1. 资源分配算法：ResourceManager可以采用各种不同的资源分配算法，例如First-Fit、Best-Fit等。这些算法的目标是尽量满足应用程序的资源需求，同时确保资源分配的效率。
 
-## 5. 项目实践：代码实例和详细解释说明
+2. 任务调度算法：ResourceManager可以采用不同的任务调度算法，例如FIFO、Round-Robin等。这些算法的目标是尽量确保任务的按顺序执行，同时提高资源利用率。
 
-以下是一个简单的YARN NodeManager代码示例：
+## 4. 项目实践：代码实例和详细解释说明
+
+以下是一个简化的Node Manager代码实例，用于帮助读者理解其实现细节：
 
 ```python
-from yarn.api import NodeManager
+import time
 
-class MyNodeManager(NodeManager):
-    def __init__(self, *args, **kwargs):
-        super(MyNodeManager, self).__init__(*args, **kwargs)
-        self.resource_allocated = 0
+class NodeManager:
+    def __init__(self, resourceManager):
+        self.resourceManager = resourceManager
+        self.resourceState = self.resourceManager.getResourceState()
 
-    def allocate_resource(self, task, resource):
-        self.resource_allocated += resource
-        return resource
+    def reportResourceState(self):
+        self.resourceState = self.resourceManager.getResourceState()
+        self.resourceManager.updateNodeResourceState(self.resourceState)
 
-    def release_resource(self, resource):
-        self.resource_allocated -= resource
+    def allocateResource(self, applicationRequest):
+        allocatedResource = self.resourceManager.allocateResource(applicationRequest)
+        return allocatedResource
 
-    def start_task(self, task):
-        # 根据task的输入数据和输出结果进行处理
-        pass
+    def monitorTaskExecution(self):
+        taskStatus = self.resourceManager.getTaskStatus()
+        self.resourceManager.updateTaskStatus(taskStatus)
 
-    def monitor_resource(self):
-        # 监控应用程序的资源使用情况
-        pass
+if __name__ == "__main__":
+    resourceManager = ResourceManager()
+    nodeManager = NodeManager(resourceManager)
 
-    def log(self, message):
-        # 记录应用程序的日志
-        pass
+    while True:
+        nodeManager.reportResourceState()
+        time.sleep(5)
+        nodeManager.allocateResource(applicationRequest)
+        time.sleep(5)
+        nodeManager.monitorTaskExecution()
 ```
 
-## 6. 实际应用场景
+## 5. 实际应用场景
 
-YARN NodeManager广泛应用于大数据处理领域，包括Hadoop MapReduce、Spark、Flink等。这些应用程序可以通过YARN NodeManager实现资源分配、任务调度、监控和日志记录等功能。
+YARN的Node Manager在大规模数据处理领域具有广泛的应用场景，例如：
 
-## 7. 工具和资源推荐
+1. 大数据分析：YARN可以用于处理大量的数据，例如数据清洗、数据挖掘等。
+2. 机器学习：YARN可以用于训练机器学习模型，例如深度学习、聚类分析等。
+3. 流处理：YARN可以用于处理实时数据流，例如数据流分析、事件驱动应用程序等。
 
-为了更好地学习和使用YARN NodeManager，以下是一些建议：
+## 6. 工具和资源推荐
 
-1. 官方文档：YARN官方文档提供了详细的介绍和示例，非常值得一读。
-2. 源码分析：通过阅读YARN的源码，可以更深入地了解其原理和实现细节。
-3. 实践项目：参与实践项目，hands-on经验对于学习YARN NodeManager非常有帮助。
+为了更好地理解和使用YARN，以下是一些建议的工具和资源：
 
-## 8. 总结：未来发展趋势与挑战
+1. Apache Hadoop官方文档：[https://hadoop.apache.org/docs/](https://hadoop.apache.org/docs/)
+2. YARN官方文档：[https://yarn.apache.org/docs/](https://yarn.apache.org/docs/)
+3. 大数据学习资源网站：DataCamp、Coursera等
+4. YARN相关书籍："Big Data: Principles and best practices of scalable realtime data systems"等
 
-YARN NodeManager作为YARN的核心组件，在大数据处理领域具有重要作用。随着大数据技术的不断发展，YARN NodeManager将面临更高的资源分配和任务调度挑战。未来，YARN NodeManager将继续优化资源分配和任务调度算法，提高集群利用率和应用程序性能。
+## 7. 总结：未来发展趋势与挑战
 
-## 9. 附录：常见问题与解答
+YARN作为一个大规模数据处理平台，在未来将面临诸多挑战和发展趋势：
 
-1. Q: YARN NodeManager的主要职责是什么？
+1. 数据量的持续增长：随着数据量的持续增长，YARN需要不断优化资源分配和任务调度算法，以提高性能和效率。
+2. 多云环境的适应：YARN需要适应多云环境，实现跨云资源分配和任务调度。
+3. AI和ML的融合：YARN需要与AI和ML技术紧密结合，以支持复杂的数据处理和分析任务。
 
-A: YARN NodeManager的主要职责包括资源分配、任务调度、监控和日志记录等。
+## 8. 附录：常见问题与解答
 
-2. Q: YARN NodeManager如何实现资源分配？
-
-A: YARN NodeManager通过一个简单的数学模型进行资源分配，根据任务的需求进行动态调整。
-
-3. Q: YARN NodeManager如何实现任务调度？
-
-A: YARN NodeManager通过启动Map和Reduce任务实现任务调度。
-
-4. Q: YARN NodeManager如何监控和日志记录？
-
-A: YARN NodeManager持续监控应用程序的资源使用情况，并记录应用程序的日志。
-
-以上是我关于YARN NodeManager的分享，希望对大家有所帮助。
+1. Q: YARN的Node Manager如何报告资源状态？
+A: Node Manager通过向ResourceManager发送资源状态报告，实现资源状态的汇报。
+2. Q: ResourceManager如何进行资源分配和任务调度？
+A: ResourceManager可以采用各种不同的资源分配和任务调度算法，以实现资源分配和任务调度的目标。
+3. Q: YARN如何支持多种类型的数据处理应用程序？
+A: YARN通过提供统一的资源管理和应用程序调度接口，支持多种类型的数据处理应用程序。
