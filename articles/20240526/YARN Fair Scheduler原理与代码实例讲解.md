@@ -1,87 +1,83 @@
+YARN（Yet Another Resource Negotiator）是一个用于实现MapReduce等数据密集型分布式计算框架的资源管理系统。YARN Fair Scheduler是YARN中的一种调度器，它按照“公平”原则分配资源，确保每个任务都得到公平的资源分配。下面我们将深入了解YARN Fair Scheduler的原理和代码实例。
+
 ## 1. 背景介绍
 
-YARN（Yet Another Resource Negotiator）是Hadoop生态系统中的一种资源管理和任务调度系统。自从Hadoop 2.x版本以来，YARN已经成为Hadoop生态系统的核心组件。YARN Fair Scheduler是YARN中的一种资源分配策略，它可以在多个资源队列之间公平地分配计算资源，以实现高效的任务调度。
-
-本文旨在深入剖析YARN Fair Scheduler的原理及其代码实现，以及在实际应用中的优势和局限性。
+在大数据时代，如何高效地利用计算资源已经成为了一项挑战。YARN Fair Scheduler应运而生，它基于YARN平台，为MapReduce等分布式计算框架提供了公平的资源分配策略。通过YARN Fair Scheduler，我们可以确保每个任务都得到公平的资源分配，实现高效的计算。
 
 ## 2. 核心概念与联系
 
-YARN Fair Scheduler的核心概念是基于"公平性"和"效率"的资源分配策略。它将资源队列划分为多个小队列，每个小队列都可以单独地申请资源。YARN Fair Scheduler根据每个小队列的实际需求和资源占用情况，实现公平且高效的资源分配。
+YARN Fair Scheduler的核心概念是“公平性”。它通过一种基于优先级的调度策略，确保每个任务都得到公平的资源分配。YARN Fair Scheduler的核心概念与YARN的资源管理和任务调度之间的联系密切，共同实现了高效的分布式计算。
 
 ## 3. 核心算法原理具体操作步骤
 
-YARN Fair Scheduler的核心算法原理可以分为以下几个步骤：
+YARN Fair Scheduler的核心算法原理是基于一种称为“公平调度”的调度策略。这种调度策略的核心思想是为每个任务分配公平的资源，确保每个任务都得到公平的资源分配。具体操作步骤如下：
 
-1. **队列划分：** 将大队列划分为多个小队列，每个小队列负责具体的任务调度和资源分配。
-2. **资源分配：** 根据每个小队列的实际需求和资源占用情况，实现公平且高效的资源分配。
-3. **任务调度：** 根据资源分配情况，调度任务到合适的小队列。
+1. 根据任务的优先级和资源需求，计算任务的权重。
+2. 根据任务的权重，分配资源，确保每个任务都得到公平的资源分配。
+3. 根据任务的进度和资源需求，持续调整任务的权重和资源分配。
 
 ## 4. 数学模型和公式详细讲解举例说明
 
-为了更好地理解YARN Fair Scheduler的原理，我们需要了解其背后的数学模型和公式。以下是一个简单的公式举例：
+在YARN Fair Scheduler中，任务的权重可以通过以下公式计算：
 
-$$
-资源分配 = \frac{小队列实际需求}{总资源}
-$$
+权重 = 任务的优先级 / (任务所需的资源量 + 1)
 
-## 4. 项目实践：代码实例和详细解释说明
+这里的任务的优先级是一个权重值，用于表示任务的重要性。任务所需的资源量是一个权重值，用于表示任务所需的资源量。通过这种方式，我们可以确保每个任务都得到公平的资源分配。
 
-以下是一个简化的YARN Fair Scheduler代码实例，用于帮助读者更好地理解其具体实现。
+## 5. 项目实践：代码实例和详细解释说明
+
+下面是一个YARN Fair Scheduler的代码示例：
 
 ```java
-public class FairScheduler {
-    private Map<String, Queue> queues = new HashMap<>();
-
-    public void addQueue(String name, int capacity) {
-        queues.put(name, new Queue(capacity));
-    }
-
-    public void allocateResource(String queueName, int resource) {
-        Queue queue = queues.get(queueName);
-        if (queue != null) {
-            queue.allocate(resource);
+public void schedule(String applicationId, String userName, int numContainers, 
+    Cluster cluster) throws YarnException, IOException {
+    // 获取任务的优先级和资源需求
+    PriorityQueue<AppPriority> priorityQueue = getTaskPriority(applicationId, userName);
+    int totalResource = cluster.getResource().getTotal();
+    int totalTask = 0;
+    int totalAllocResource = 0;
+    
+    // 按照任务的优先级和资源需求，分配资源
+    for (AppPriority appPriority : priorityQueue) {
+        int resourceNeed = appPriority.getResourceNeed();
+        int resourceAlloc = allocateResource(resourceNeed, totalAllocResource, totalResource);
+        totalAllocResource += resourceAlloc;
+        totalTask += appPriority.getTaskCount();
+        
+        // 如果已经分配了所有的资源，则停止调度
+        if (totalAllocResource >= totalResource) {
+            break;
         }
     }
-
-    public void scheduleTask(String queueName) {
-        Queue queue = queues.get(queueName);
-        if (queue != null) {
-            queue.schedule();
-        }
-    }
+    
+    // 更新任务的进度和资源需求
+    updateTaskProgress(applicationId, userName, totalTask, totalAllocResource);
 }
 ```
 
-## 5. 实际应用场景
+在这个代码示例中，我们首先获取任务的优先级和资源需求，然后按照任务的优先级和资源需求，分配资源。最后，我们更新任务的进度和资源需求。
 
-YARN Fair Scheduler在实际应用中具有以下优势：
+## 6. 实际应用场景
 
-1. **公平性：** YARN Fair Scheduler可以确保每个小队列都得到公平的资源分配，从而避免资源浪费和饥饿现象。
-2. **效率：** YARN Fair Scheduler根据实际需求分配资源，从而提高资源利用率。
+YARN Fair Scheduler在大数据领域的应用非常广泛。它可以用于实现MapReduce等分布式计算框架的资源管理，确保每个任务都得到公平的资源分配。YARN Fair Scheduler的公平调度策略使得每个任务都能够得到公平的资源分配，实现高效的分布式计算。
 
-然而，YARN Fair Scheduler也有以下局限性：
+## 7. 工具和资源推荐
 
-1. **复杂性：** YARN Fair Scheduler的实现相对复杂，需要一定的技术基础和经验。
-2. **性能影响：** YARN Fair Scheduler可能对任务调度产生一定的性能影响，因为需要额外的计算和资源分配。
+如果您想了解更多关于YARN Fair Scheduler的信息，可以参考以下资源：
 
-## 6. 工具和资源推荐
+1. [YARN官方文档](https://hadoop.apache.org/docs/current/hadoop-yarn/yarn-site/yarn-site.html)
+2. [YARN Fair Scheduler官方文档](https://hadoop.apache.org/docs/current/hadoop-yarn/yarn-site/yarn-fairscheduler.html)
+3. [Hadoop实战](https://book.douban.com/subject/25979031/),这本书详细讲解了Hadoop的实战应用，包括YARN Fair Scheduler的使用方法和最佳实践。
 
-为了更好地了解YARN Fair Scheduler，以下是一些建议的工具和资源：
+## 8. 总结：未来发展趋势与挑战
 
-1. **官方文档：** YARN官方文档提供了详尽的信息和代码示例，非常有帮助。
-2. **在线教程：** 有许多在线教程可以帮助你更好地了解YARN Fair Scheduler。
-3. **社区支持：** YARN社区提供了活跃的支持和讨论，非常值得加入。
+YARN Fair Scheduler作为YARN平台的一部分，具有广泛的应用前景。在未来，YARN Fair Scheduler将不断发展，提供更高效的资源分配策略。同时，YARN Fair Scheduler也面临着一些挑战，例如如何在多个数据中心之间实现公平的资源分配，以及如何应对不断增长的数据量。这些挑战将推动YARN Fair Scheduler的不断发展和优化。
 
-## 7. 总结：未来发展趋势与挑战
+## 9. 附录：常见问题与解答
 
-YARN Fair Scheduler作为Hadoop生态系统中的一种资源管理和任务调度系统，具有广泛的应用前景。未来，YARN Fair Scheduler将继续发展，提高资源分配的效率和公平性。然而，YARN Fair Scheduler也面临着一定的挑战，包括性能影响和复杂性。为此，我们需要不断努力，提高YARN Fair Scheduler的性能和易用性。
-
-## 8. 附录：常见问题与解答
-
-以下是一些建议的常见问题和解答：
-
-1. **如何选择合适的资源队列数？** 根据实际需求和资源限制，选择合适的资源队列数是很重要的。一般来说，越多的资源队列可以提高资源分配的公平性，但也会增加管理和调度的复杂性。
-
-2. **如何调整资源分配策略？** YARN Fair Scheduler提供了灵活的资源分配策略，包括基于时间的权重、基于资源的权重等。根据实际需求，可以调整这些参数以满足不同的应用场景。
-
-3. **如何监控资源分配和任务调度？** YARN提供了丰富的监控和报警功能，可以帮助我们更好地了解资源分配和任务调度的状况。通过监控和报警，我们可以及时发现问题，并采取措施进行调整。
+1. **YARN Fair Scheduler与其他调度器有什么区别？**
+YARN Fair Scheduler与其他调度器的区别在于它们的调度策略。YARN Fair Scheduler采用一种基于优先级的调度策略，确保每个任务都得到公平的资源分配。其他调度器可能采用不同的调度策略，例如最短作业优先策略（Shortest Job First, SJF）或最短作业优先策略加权（Shortest Job First with Weight, SJFW）。
+2. **YARN Fair Scheduler适用于哪些场景？**
+YARN Fair Scheduler适用于实现MapReduce等数据密集型分布式计算框架的资源管理。它可以确保每个任务都得到公平的资源分配，实现高效的分布式计算。
+3. **如何配置YARN Fair Scheduler？**
+YARN Fair Scheduler的配置比较简单，可以通过修改YARN的配置文件（yarn-site.xml）来实现。具体配置方法可以参考[YARN Fair Scheduler官方文档](https://hadoop.apache.org/docs/current/hadoop-yarn/yarn-site/yarn-fairscheduler.html)。

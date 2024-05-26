@@ -1,94 +1,150 @@
 ## 1.背景介绍
 
-自注意力机制(Self-Attention Mechanism)是深度学习领域中最近兴起的一种神经网络结构，主要用于解决长文本序列的信息抽取和表示问题。自注意力机制的一个关键特点是，它不依赖于特定的序列结构，而是通过计算输入序列中每个元素之间的相互关系来学习表示。这一机制在自然语言处理（NLP）、图像识别、语音识别等领域具有广泛的应用前景。
+自注意力机制（Self-Attention Mechanism）是 Transformer 模型的核心部分，它能够解决长文本序列的问题。自注意力机制可以看作是一种神经网络层，它可以同时处理序列中的所有元素。自注意力机制的核心思想是，给定一个输入序列，它可以自适应地为每个输入元素分配一个权重，以便在计算输出时将它们与其他输入元素进行相互作用。
 
 ## 2.核心概念与联系
 
-自注意力机制的核心概念是通过计算输入序列中每个元素之间的相互关系来学习表示。这种关系可以是线性或非线性的，通常通过计算输入序列中每个元素与其他元素之间的权重来表示。这些权重可以通过一种称为“注意力机制”的过程计算出来。注意力机制可以看作是一种“自注意力”的特殊情况，因为它关注的是输入序列中与给定元素相关的其他元素。
-
-自注意力机制与传统的卷积神经网络（CNN）和循环神经网络（RNN）有显著的不同。传统的CNN和RNN都依赖于特定的序列结构，如卷积核和循环层，而自注意力机制则不依赖于这些结构。这种差异使得自注意力机制在处理长文本序列时具有更好的性能。
+在自然语言处理（NLP）领域中，自注意力机制被广泛应用于各种任务，如机器翻译、文本摘要、文本分类等。自注意力机制可以帮助模型理解输入序列中的长距离依赖关系，从而提高模型的性能。
 
 ## 3.核心算法原理具体操作步骤
 
-自注意力机制的核心算法原理可以分为以下几个步骤：
+自注意力机制的核心算法可以分为以下三个步骤：
 
-1. 计算输入序列中每个元素之间的相互关系。通常通过计算输入序列中每个元素与其他元素之间的权重来表示。这些权重可以通过一种称为“注意力机制”的过程计算出来。
+1. 计算注意力分数（Attention Scores）：给定一个输入序列，首先我们需要计算每个输入元素与其他所有输入元素之间的相互作用。我们可以使用一个矩阵来表示输入序列中的每个元素与其他所有元素之间的相互作用。这个矩阵的元素可以通过以下公式计算：
 
-2. 计算每个元素的权重分数。权重分数可以通过计算每个元素与其他元素之间的相关性来得到。相关性通常是通过内积或点积计算的。
+$$
+\text{Attention}\left(\mathbf{Q}, \mathbf{K}, \mathbf{V}, \mathbf{mask}\right)=\text{softmax}\left(\frac{\mathbf{Q} \mathbf{K}^{\top}}{\sqrt{d_{k}}}\right) \odot \mathbf{V}
+$$
 
-3. 计算每个元素的权重。权重通常通过softmax函数进行归一化，以得到权重分布。
+其中，$\mathbf{Q}$是查询矩阵，$\mathbf{K}$是密度矩阵，$\mathbf{V}$是值矩阵，$\sqrt{d_{k}}$是正则化因子，$\odot$表示元素wise乘法，$\mathbf{mask}$是掩码矩阵。
 
-4. 计算加权求和。将输入序列中每个元素与其对应的权重相乘，并对所有元素进行加权求和。这个过程称为“加权求和”。
+1. 计算注意力分数加权求和（Attention Weights Summation）：接下来我们需要将注意力分数加权求和，以便得到最终的输出。我们可以使用以下公式进行计算：
 
-5. 输出表示。将加权求和的结果作为输出表示。
+$$
+\text{Output}=\sum_{i} \alpha_{i} \mathbf{V}_{i}
+$$
+
+其中，$\alpha_{i}$是第$i$个位置的注意力分数，$\mathbf{V}_{i}$是第$i$个位置的值。
+
+1. 残差连接（Residual Connection）：最后，我们需要将输出与输入进行残差连接，以便保持模型的稳定性。我们可以使用以下公式进行计算：
+
+$$
+\text{Output}=\mathbf{x}+\text{Output}
+$$
+
+其中，$\mathbf{x}$是输入序列。
 
 ## 4.数学模型和公式详细讲解举例说明
 
-自注意力机制的数学模型可以用以下公式表示：
+在本节中，我们将详细讲解自注意力机制的数学模型和公式。我们将使用一个简单的例子来说明自注意力机制的原理。
+
+假设我们有一组输入序列 $\{x_1, x_2, x_3\}$。我们将计算每个输入元素与其他所有输入元素之间的相互作用。我们可以使用以下公式进行计算：
 
 $$
-\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)W^V
+\text{Attention}\left(\mathbf{Q}, \mathbf{K}, \mathbf{V}, \mathbf{mask}\right)=\text{softmax}\left(\frac{\mathbf{Q} \mathbf{K}^{\top}}{\sqrt{d_{k}}}\right) \odot \mathbf{V}
 $$
 
-其中，$Q$、$K$和$V$分别表示查询（Query）、密钥（Key）和值（Value）序列。$W^V$是值权重矩阵。$d_k$是密钥的维度。
+其中，$\mathbf{Q}=\begin{bmatrix} 1 & 2 & 3 \end{bmatrix}$，$\mathbf{K}=\begin{bmatrix} 2 & 3 & 4 \end{bmatrix}$，$\mathbf{V}=\begin{bmatrix} 3 & 4 & 5 \end{bmatrix}$，$\sqrt{d_{k}}=1$，$\mathbf{mask}=\begin{bmatrix} 1 & 1 & 1 \end{bmatrix}$。
 
-## 4.项目实践：代码实例和详细解释说明
+我们计算注意力分数：
 
-为了更好地理解自注意力机制，我们可以通过一个简单的Python代码示例来演示如何实现这一概念。以下是一个使用PyTorch库实现自注意力机制的例子：
+$$
+\text{Attention}\left(\mathbf{Q}, \mathbf{K}, \mathbf{V}, \mathbf{mask}\right)=\text{softmax}\left(\frac{\mathbf{Q} \mathbf{K}^{\top}}{\sqrt{d_{k}}}\right) \odot \mathbf{V}=\begin{bmatrix} 0.33 & 0.33 & 0.33 \\ 0.33 & 0.33 & 0.33 \\ 0.33 & 0.33 & 0.33 \end{bmatrix} \odot \begin{bmatrix} 3 & 4 & 5 \end{bmatrix}=\begin{bmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{bmatrix}
+$$
+
+然后我们计算注意力分数加权求和：
+
+$$
+\text{Output}=\sum_{i} \alpha_{i} \mathbf{V}_{i}=\begin{bmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{bmatrix} \odot \begin{bmatrix} 3 & 4 & 5 \\ 3 & 4 & 5 \\ 3 & 4 & 5 \end{bmatrix}=\begin{bmatrix} 3 & 4 & 5 \\ 3 & 4 & 5 \\ 3 & 4 & 5 \end{bmatrix}
+$$
+
+最后，我们进行残差连接：
+
+$$
+\text{Output}=\mathbf{x}+\text{Output}=\begin{bmatrix} 1 & 2 & 3 \end{bmatrix}+\begin{bmatrix} 3 & 4 & 5 \\ 3 & 4 & 5 \\ 3 & 4 & 5 \end{bmatrix}=\begin{bmatrix} 4 & 6 & 8 \end{bmatrix}
+$$
+
+## 5.项目实践：代码实例和详细解释说明
+
+在本节中，我们将通过一个简单的代码实例来演示如何使用自注意力机制。我们将使用 Python 和 TensorFlow 进行编码。
 
 ```python
-import torch
-import torch.nn as nn
+import tensorflow as tf
 
-class MultiHeadAttention(nn.Module):
-    def __init__(self, embed_dim, num_heads, dropout=0.1):
+class MultiHeadAttention(tf.keras.layers.Layer):
+    def __init__(self, num_heads, d_model, d_k, d_v, rate=0.1):
         super(MultiHeadAttention, self).__init__()
-        assert embed_dim % num_heads == 0
-        self.embed_dim = embed_dim
         self.num_heads = num_heads
-        self.dropout = dropout
-        self.head_dim = embed_dim // num_heads
-        self.qkv = nn.Linear(embed_dim, embed_dim * 3)
-        self.attn_out = nn.Linear(embed_dim, embed_dim)
-        self.attn_dropout = nn.Dropout(dropout)
-        self.attn_layer = nn.MultiheadAttention(embed_dim, num_heads, dropout=dropout)
+        self.d_model = d_model
+        self.d_k = d_k
+        self.d_v = d_v
+        self.rate = rate
 
-    def forward(self, x):
-        qkv = self.qkv(x)
-        q, k, v = torch.chunk(qkv, 3, dim=-1)
-        q, k, v = map(lambda t: t.reshape(t.size(0), t.size(1), self.head_dim).transpose(1, 2), (q, k, v))
-        attn_output, attn_output_weights = self.attn_layer(q, k, v)
-        attn_output = self.attn_dropout(attn_output)
-        attn_output = self.attn_out(attn_output)
-        return attn_output, attn_output_weights
+        self.W_q = tf.keras.layers.Dense(d_k, bias=False)
+        self.W_k = tf.keras.layers.Dense(d_k, bias=False)
+        self.W_v = tf.keras.layers.Dense(d_v, bias=False)
+        self.dense = tf.keras.layers.Dense(d_model, bias=False)
 
-# 示例使用
-embed_dim = 512
-num_heads = 8
-input_tensor = torch.randn(10, 32, embed_dim)
-multi_head_attention = MultiHeadAttention(embed_dim, num_heads)
-output_tensor, attn_output_weights = multi_head_attention(input_tensor)
-print(output_tensor.shape)  # torch.Size([10, 32, 512])
+    def call(self, v, k, q, mask=None):
+        residual = q
+
+        q = self.W_q(q)
+        k = self.W_k(k)
+        v = self.W_v(v)
+
+        q = tf.reshape(q, (-1, self.num_heads, self.d_k))
+        k = tf.reshape(k, (-1, self.num_heads, self.d_k))
+        v = tf.reshape(v, (-1, self.num_heads, self.d_v))
+
+        q, k, v = tf.transpose(q), tf.transpose(k), tf.transpose(v)
+
+        attention = tf.matmul(q, k)
+        attention = attention / tf.math.sqrt(tf.cast(self.d_k, tf.float32))
+
+        if mask is not None:
+            attention = attention + (mask * -1e9)
+
+        attention = tf.nn.softmax(attention, axis=-1)
+        output = tf.matmul(attention, v)
+
+        output = tf.reshape(output, (-1, self.d_model))
+        output = self.dense(output)
+
+        return output + residual
+
+# 示例数据
+q = tf.random.uniform((1, 10, 64))
+k = tf.random.uniform((1, 10, 64))
+v = tf.random.uniform((1, 10, 64))
+mask = tf.random.uniform((1, 10, 10))
+
+output = multi_head_attention(q, k, v, mask)
 ```
 
-## 5.实际应用场景
+## 6.实际应用场景
 
-自注意力机制在自然语言处理（NLP）、图像识别、语音识别等领域具有广泛的应用前景。例如，在自然语言处理中，可以使用自注意力机制来解决机器翻译、文本摘要、情感分析等问题。在图像识别中，可以使用自注意力机制来解决图像分割、图像检索等问题。在语音识别中，可以使用自注意力机制来解决语音识别、语音分割等问题。
+自注意力机制广泛应用于自然语言处理任务，如机器翻译、文本摘要、文本分类等。它可以帮助模型理解输入序列中的长距离依赖关系，从而提高模型的性能。
 
-## 6.工具和资源推荐
+## 7.工具和资源推荐
 
-自注意力机制的实现可以利用一些开源工具和库，如PyTorch、TensorFlow、Hugging Face Transformers等。这些工具和资源提供了许多预先训练好的模型和实现自注意力机制的代码示例，可以帮助读者更方便地开始自己的项目。
+- [Attention is All You Need](https://arxiv.org/abs/1706.03762)：原著作者的论文
+- [TensorFlow 文档](https://www.tensorflow.org/)：TensorFlow 的官方文档
+- [Transformers: State-of-the-Art Natural Language Processing](https://towardsdatascience.com/transformers-state-of-the-art-natural-language-processing-4b7d7f0a4e5f)：一篇关于 Transformer 的教程
 
-## 7.总结：未来发展趋势与挑战
+## 8.总结：未来发展趋势与挑战
 
-自注意力机制是一种具有广泛应用前景的神经网络结构。在未来，随着技术的不断发展和研究的不断深入，我们可以期待自注意力机制在各种领域得到更广泛的应用。然而，自注意力机制也面临一些挑战，如计算复杂性、参数量等。未来，如何解决这些挑战，实现更高效、更简洁的自注意力机制，将是研究社区的重要任务。
+自注意力机制是 Transformer 模型的核心部分，能够解决长文本序列的问题。自注意力机制在自然语言处理领域具有广泛的应用前景。然而，自注意力机制也面临着一定的挑战，如计算效率和模型复杂性等。未来，人们将继续研究如何优化自注意力机制，以提高模型性能和计算效率。
 
-## 8.附录：常见问题与解答
+## 附录：常见问题与解答
 
-Q: 自注意力机制与传统的卷积神经网络（CNN）和循环神经网络（RNN）有什么区别？
+Q1：什么是自注意力机制？
 
-A: 自注意力机制与传统的CNN和RNN有显著的不同。传统的CNN和RNN都依赖于特定的序列结构，如卷积核和循环层，而自注意力机制则不依赖于这些结构。这种差异使得自注意力机制在处理长文本序列时具有更好的性能。
+A1：自注意力机制是一种神经网络层，它可以同时处理序列中的所有元素。它可以自适应地为每个输入元素分配一个权重，以便在计算输出时将它们与其他输入元素进行相互作用。
 
-Q: 自注意力机制在哪些领域有应用？
+Q2：自注意力机制有什么优点？
 
-A: 自注意力机制在自然语言处理（NLP）、图像识别、语音识别等领域具有广泛的应用前景。例如，在自然语言处理中，可以使用自注意力机制来解决机器翻译、文本摘要、情感分析等问题。在图像识别中，可以使用自注意力机制来解决图像分割、图像检索等问题。在语音识别中，可以使用自注意力机制来解决语音识别、语音分割等问题。
+A2：自注意力机制的优点在于它可以捕捉输入序列中的长距离依赖关系，从而提高模型的性能。它也可以轻松地处理任意长度的输入序列。
+
+Q3：自注意力机制的主要应用场景是什么？
+
+A3：自注意力机制广泛应用于自然语言处理任务，如机器翻译、文本摘要、文本分类等。

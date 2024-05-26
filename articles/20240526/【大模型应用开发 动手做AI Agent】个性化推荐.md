@@ -1,134 +1,91 @@
 ## 1. 背景介绍
 
-随着大数据和人工智能（AI）技术的不断发展，个性化推荐技术也得到了迅猛发展。个性化推荐技术是指根据用户的历史行为、兴趣、偏好等信息，为用户提供个性化推荐服务的技术。个性化推荐技术的核心是预测用户对某种商品或服务的兴趣，从而提高用户体验和满意度。
+随着人工智能技术的不断发展，我们的生活已经被深入地改变了。AI Agent（智能代理）是当前人工智能技术的一个重要发展方向，它将自动化的程度扩展到了更高的层次，实现了智能化的控制和决策。个性化推荐系统是AI Agent的重要应用之一，它能够根据用户的喜好和行为提供个性化的服务，从而提高用户的满意度和体验。
 
 ## 2. 核心概念与联系
 
-个性化推荐技术主要包括以下几个核心概念：
+个性化推荐系统是一种基于数据挖掘和机器学习技术的推荐系统，它可以根据用户的历史行为、兴趣和偏好提供个性化的商品、服务和信息推荐。个性化推荐系统与用户交互，学习用户的喜好和行为模式，从而提供更符合用户需求的推荐。
 
-1. 用户模型：用户模型是基于用户的历史行为、兴趣、偏好等信息构建的模型，用于描述用户的特征和行为模式。
-2. 商品或服务模型：商品或服务模型是基于商品或服务的特征、类别、价格等信息构建的模型，用于描述商品或服务的特性和价值。
-3. 推荐算法：推荐算法是基于用户模型和商品或服务模型，通过一定的数学模型和算法计算出用户可能感兴趣的商品或服务的排名。
-4. 评估指标：评估指标是用于评估推荐系统性能的指标，常见的评估指标包括准确度、覆盖率、反馈率等。
+个性化推荐系统与AI Agent的联系在于，它需要一个智能代理来实现自动化、智能化的推荐决策。智能代理可以根据用户的历史行为、兴趣和偏好来调整推荐策略，从而实现个性化推荐。
 
 ## 3. 核心算法原理具体操作步骤
 
-个性化推荐技术的核心算法主要有以下几种：
+个性化推荐系统的核心算法原理是基于协同过滤技术。协同过滤技术将用户的喜好与其他用户的喜好进行比较，从而找到相似的用户。然后根据相似的用户的喜好来推荐相似的商品或服务。
 
-1. 基于内容的推荐算法：基于内容的推荐算法是通过分析用户模型和商品或服务模型之间的相似性来进行推荐的。常见的基于内容的推荐算法有：协同过滤（Collaborative Filtering）、内容过滤（Content-Based Filtering）等。
-2. 基于协同过滤的推荐算法：协同过滤是一种基于用户的推荐技术，通过分析用户之间的相似性来进行推荐的。协同过滤可以分为两种类型：用户-用户协同过滤（User-User Collaborative Filtering）和用户-项目协同过滤（User-Item Collaborative Filtering）。
-3. 基于矩阵分解的推荐算法：基于矩阵分解的推荐算法是一种基于线性代数的推荐技术，通过将用户模型和商品或服务模型表示为二维矩阵，并进行矩阵分解，以便降低维度和减少噪声，从而提高推荐的准确性。常见的基于矩阵分解的推荐算法有：奇异值分解（Singular Value Decomposition, SVD）和非负矩阵分解（Nonnegative Matrix Factorization, NMF）等。
+具体操作步骤如下：
+
+1. 收集用户的历史行为数据，如观看、点击、购买等。
+2. 使用协同过滤算法对用户的历史行为数据进行分析，找出相似的用户。
+3. 根据相似的用户的喜好来推荐相似的商品或服务。
+4. 与用户进行交互，学习用户的新行为数据，并不断更新用户的喜好和行为模式。
+5. 根据更新后的用户喜好和行为模式重新进行推荐。
 
 ## 4. 数学模型和公式详细讲解举例说明
 
-### 4.1 基于内容的推荐算法
+个性化推荐系统的数学模型通常是基于矩阵分解技术。假设我们有一个M×N的用户-物品评分矩阵R，其中M是用户数量，N是物品数量。我们需要找到一个低秩矩阵W（M×K）和V（N×K）的乘积，能够尽可能地近似于原始的评分矩阵R。其中K是隐藏的特征维度。
 
-#### 4.1.1 协同过滤（Collaborative Filtering）
+数学模型可以表示为：
 
-##### 4.1.1.1 用户-用户协同过滤（User-User Collaborative Filtering）
+$$
+R = UV^T + E
+$$
 
-用户-用户协同过滤（User-User Collaborative Filtering）是一种基于用户之间的相似性来进行推荐的方法。它的基本思想是：找到与目标用户兴趣相似的其他用户，并根据这些用户的喜好为目标用户进行推荐。
+其中E是残差矩阵，表示原始矩阵R与低秩矩阵UV^T的差异。我们的目标是找到最小化残差矩阵E的方法，即找到最合适的矩阵U和V。
 
-##### 4.1.1.2 用户-项目协同过滤（User-Item Collaborative Filtering）
-
-用户-项目协同过滤（User-Item Collaborative Filtering）是一种基于项目（如商品、服务等）之间的相似性来进行推荐的方法。它的基本思想是：找到与目标项目相似的其他项目，并根据这些项目的喜好为目标用户进行推荐。
-
-### 4.2 基于矩阵分解的推荐算法
-
-#### 4.2.1 奇异值分解（Singular Value Decomposition, SVD）
-
-奇异值分解（Singular Value Decomposition, SVD）是一种用于求解矩阵的分解方法，用于将一个高维矩阵分解为三个低维矩阵。SVD 可以用于将用户模型和商品或服务模型表示为二维矩阵，并进行矩阵分解，以便降低维度和减少噪声，从而提高推荐的准确性。
-
-#### 4.2.2 非负矩阵分解（Nonnegative Matrix Factorization, NMF）
-
-非负矩阵分解（Nonnegative Matrix Factorization, NMF）是一种用于求解非负矩阵的分解方法，用于将一个非负矩阵表示为两个非负矩阵的乘积。NMF 可以用于将用户模型和商品或服务模型表示为二维矩阵，并进行矩阵分解，以便降低维度和减少噪声，从而提高推荐的准确性。
+举例说明，我们可以使用奇异值分解（SVD）技术来实现矩阵分解。首先，我们需要将评分矩阵R进行归一化处理，将其转换为标准的单位长度。然后，我们使用SVD技术对归一化后的评分矩阵R进行分解，得到U、Σ（对角矩阵）、V^T。最后，我们将U、Σ和V^T进行乘积操作，得到最终的推荐结果。
 
 ## 5. 项目实践：代码实例和详细解释说明
 
-在本节中，我们将通过一个简单的 Python 代码示例来演示如何使用 SVD 进行推荐。代码如下：
+下面是一个简单的个性化推荐系统的Python代码实例，使用了Scikit-learn库中的SVD类来实现矩阵分解。
 
 ```python
 import numpy as np
-from scipy.sparse import csr_matrix
-from sklearn.decomposition import TruncatedSVD
 from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.feature_extraction import TruncatedSVD
 
-# 用户-项目矩阵
-user_item_matrix = csr_matrix([
-    [1, 0, 0, 1, 1],
-    [0, 1, 1, 0, 0],
-    [0, 0, 1, 1, 0],
-    [1, 0, 0, 1, 0],
-    [0, 1, 0, 0, 1]
-])
+# 用户-物品评分矩阵
+R = np.array([[5, 3, 0, 1],
+              [4, 0, 0, 1],
+              [1, 1, 0, 5],
+              [1, 0, 0, 4],
+              [0, 1, 5, 4]])
 
-# 对用户-项目矩阵进行奇异值分解
-svd = TruncatedSVD(n_components=2)
-user_item_matrix_svd = svd.fit_transform(user_item_matrix)
+# 归一化评分矩阵
+R_normalized = R / np.max(R)
 
-# 计算用户之间的相似性
-cosine_similarity_matrix = cosine_similarity(user_item_matrix_svd)
+# 使用SVD进行矩阵分解
+svd = TruncatedSVD(n_components=2, algorithm='randomized', n_iter=100, random_state=122)
+U, sigma, Vt = svd.fit_transform(R_normalized, chi2_rcond=1e-07)
 
-# 为目标用户（第四个用户）进行推荐
-target_user_index = 3
-recommendations = np.argsort(-cosine_similarity_matrix[target_user_index, :])
-print("推荐的项目：")
-for i in recommendations[:5]:
-    print(f"项目{i}: {user_item_matrix.toarray()[i]}")
-```
+# 计算相似度矩阵
+similarity_matrix = cosine_similarity(U)
 
-输出结果为：
+# 推荐相似的物品
+def recommend_similar_items(user_id, top_n):
+    user_row_number = user_id - 1
+    similarity_scores = similarity_matrix[user_row_number]
+    top_n_items_indices = np.argpartition(similarity_scores, -top_n)[-top_n:]
+    return top_n_items_indices
 
-```
-推荐的项目：
-项目 0: [0. 0. 1. 1. 1.]
-项目 1: [0. 1. 0. 0. 0.]
-项目 2: [0. 0. 1. 1. 0.]
-项目 3: [1. 0. 0. 1. 0.]
-项目 4: [0. 1. 0. 0. 1.]
+# 推荐前5个相似的物品
+similar_items_indices = recommend_similar_items(1, 5)
+print("Top 5 similar items for user 1:")
+print(similar_items_indices)
 ```
 
 ## 6. 实际应用场景
 
-个性化推荐技术在多个实际应用场景中得到了广泛应用，如：
+个性化推荐系统广泛应用于电子商务、社交媒体、新闻推荐等领域。例如：
 
-1. 电子商务平台：电商平台可以通过个性化推荐技术为用户推荐相关商品，提高用户购买转化率和满意度。
-2. 社交媒体平台：社交媒体平台可以通过个性化推荐技术为用户推荐相关内容，提高用户参与度和留存率。
-3. 电视推荐：电视推荐系统可以通过个性化推荐技术为用户推荐相关节目，提高用户观看满意度。
+1. 电子商务平台：根据用户的购买历史和喜好，推荐相似的商品，提高用户购买转化率。
+2. 社交媒体：根据用户的行为和兴趣，推荐相似的好友、文章、视频等，提高用户粘性和参与度。
+3. 新闻推荐：根据用户的阅读历史和喜好，推荐相关的新闻和报道，提高用户阅读满意度。
 
 ## 7. 工具和资源推荐
 
-以下是一些建议使用的工具和资源：
+为了实现个性化推荐系统，以下是一些常用的工具和资源推荐：
 
-1. **Python 库**：
-
-   - `numpy`：用于进行高效的数值计算。
-   - `scipy`：用于进行科学计算。
-   - `scikit-learn`：用于进行机器学习和数据挖掘。
-   - `pandas`：用于进行数据处理和分析。
-
-2. **教程和指南**：
-
-   - 《Python 数据挖掘与分析》：作者：刘大为，出版社：机械工业出版社。
-   - 《Python 机器学习》：作者：李沐宇，出版社：清华大学出版社。
-
-3. **在线课程**：
-
-   - 《Python 数据科学基础》：课程链接：<https://www.coursera.org/specializations/python-data-science>
-   - 《机器学习基础》：课程链接：<https://www.coursera.org/learn/machine-learning>
-
-## 8. 总结：未来发展趋势与挑战
-
-个性化推荐技术在未来几年内将继续发展，以下是几个值得关注的发展趋势和挑战：
-
-1. **数据质量和规模**：随着数据量的不断增加，如何确保数据质量和可用性成为个性化推荐技术的关键挑战。
-2. **算法创新**：随着数据规模和用户行为的复杂性不断增加，如何创新新的推荐算法以满足用户需求是一个重要方向。
-3. **多样性和多样化**：如何在提高推荐的准确性和个性化的同时，确保推荐的多样性和多样化也是个性化推荐技术面临的挑战。
-
-## 附录：常见问题与解答
-
-1. **如何选择推荐算法**？选择推荐算法时，需要根据具体的场景和需求进行选择。常见的推荐算法包括基于内容的推荐算法、基于协同过滤的推荐算法和基于矩阵分解的推荐算法。需要根据具体的场景和需求选择最合适的推荐算法。
-
-2. **如何评估推荐系统的性能**？推荐系统的性能可以通过多种评估指标进行评估，常见的评估指标包括准确度、覆盖率、反馈率等。需要根据具体的场景和需求选择合适的评估指标，以评估推荐系统的性能。
-
-3. **如何确保推荐系统的多样性和多样化**？在提高推荐的准确性和个性化的同时，确保推荐的多样性和多样化是推荐系统面临的挑战。可以通过多种方法来确保推荐系统的多样性和多样化，例如通过多样化推荐策略、通过多样化推荐算法等。
+1. Python：Python是一种强大的编程语言，拥有丰富的数据科学和机器学习库，如NumPy、Pandas、Scikit-learn等。
+2. TensorFlow：TensorFlow是一种开源的机器学习框架，提供了强大的工具来进行深度学习和神经网络编程。
+3. Scikit-learn：Scikit-learn是一个Python的机器学习库，提供了许多常用的算法和工具，如SVD、K-means等。
+4. Collaborative Filtering for recommender systems: A survey by Bobadilla, J., Ortega, F., Hernando, A., & Gutiérrez, A. (2013). [PDF](https://pdfs.semanticscholar.org/5c0d/1e4a8f5e6a9c3d3a7e6c8c6f7a9c8c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9e9c9
