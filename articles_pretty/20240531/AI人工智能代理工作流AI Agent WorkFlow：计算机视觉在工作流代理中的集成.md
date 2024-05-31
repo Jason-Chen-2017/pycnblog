@@ -68,7 +68,7 @@ function Backpropagate(input, target, weights):
 损失函数用于衡量模型预测值与真实值之间的差异。常见的损失函数包括：
 
 - **均方误差 (MSE)**：`L(yÌ, y) = (yÌ - y)^2`
-- **交叉çµ损失 (Cross Entropy Loss)**：对于分类问题，`L(yÌ, y) = -\\sum_{i=1}^{N} y_i \\log(yÌ_i)`
+- **交叉熵损失 (Cross Entropy Loss)**：对于分类问题，`L(yÌ, y) = -\\sum_{i=1}^{N} y_i \\log(yÌ_i)`
 
 ### 优化器
 
