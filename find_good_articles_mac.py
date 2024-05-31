@@ -33,15 +33,34 @@ def is_good_content(content):
         "数学模型和公式",
         "项目实践",
         "实际应用场景",
+        # "工具和资源",
+    ]
+
+    keywords2 = [
+        "$",
+        "```",
+        "Background Introduction",
+        "Core Concepts",
+        "Core Algorithm",
+        "Mathematical Model",
+        "Project Practice",
+        "Practical Application",
+        # "Tools and Resources",
     ]
 
     flag1 = True
+    flag2 = True
 
     for keyword in keywords:
         if keyword not in content:
             flag1 = False
 
-    return flag1
+    for keyword in keywords2:
+        if keyword not in content:
+            flag2 = False
+
+    return flag1 or flag2
+
 
 
 def process_file(file_path, target_good_directory, target_draft_directory):
