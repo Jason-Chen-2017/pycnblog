@@ -1,72 +1,281 @@
 ## 背景介绍
 
-YOLO（You Only Look Once）是一种非常流行的实时物体检测算法。它的特点是速度快、精度高，被广泛应用于人脸识别、安全监控、自动驾驶等领域。本文将从原理、代码实例等多个方面详细讲解YOLOv1。
+YOLO（You Only Look Once）是2015年由Joseph Redmon et al.提出的目标检测技术。它是一种快速、准确的目标检测算法，在计算机视觉领域取得了显著的成果。YOLOv1是YOLO系列算法的首个版本，本文将详细讲解YOLOv1的原理和代码实例。
 
 ## 核心概念与联系
 
-YOLOv1的核心概念是将物体检测问题转化为一个多目标分类和回归问题。它将输入图像分割成S×S个网格，每个网格负责预测B个物体bounding box和类别。YOLOv1将输入图像分成多个网格，并为每个网格分配K个bounding box。
+YOLOv1的核心概念是将整个图像分为一个网格网，网格中的每个单元负责检测一类目标。YOLOv1使用了全卷积神经网络（Fully Convolutional Network）来预测目标的边界框和类别概率。
 
 ## 核心算法原理具体操作步骤
 
-1. 输入图像：首先将图像缩放至固定尺寸（如224×224），并将其转换为RGB格式。
+YOLOv1的核心算法原理包括以下几个步骤：
 
-2. 预处理：将图像的RGB值归一化到0-1之间，并将其reshape为一个矩阵。
-
-3. 网络结构：YOLOv1采用了一个由24个卷积层、2个全连接层和K个输出节点组成的神经网络。其中，卷积层用于特征提取，全连接层用于分类和回归。
-
-4. 分类与回归：YOLOv1将物体检测问题转化为一个多目标分类和回归问题。每个网格负责预测B个物体bounding box和类别。其中，分类任务使用softmax函数进行处理，回归任务使用均值和方差进行处理。
-
-5. 预测：YOLOv1将预测结果通过非极大值抑制（NMS）和阈值筛选出最终的物体检测结果。
+1. 输入图像经过预训练的VGG16网络进行特征提取，得到一个大小为7x7x512的特征图。
+2. 将特征图划分为SxS个网格，S通常取为7。
+3. 每个网格负责检测B个目标，B通常取为2。
+4. 对于每个网格，YOLOv1预测了5个参数：中心x坐标、中心y坐标、宽度、高度以及类别概率。这些参数都是相对于网格的。
+5. 根据预测的参数，YOLOv1计算目标的边界框。
+6. 对于每个边界框，YOLOv1计算IoU（Intersection over Union）分数，用于衡量预测的边界框与真实目标的重合度。
+7. 根据IoU分数和类别概率，YOLOv1计算目标检测的损失。
 
 ## 数学模型和公式详细讲解举例说明
 
-YOLOv1的损失函数可以分为两部分：分类损失和回归损失。
+YOLOv1的数学模型主要包括损失函数和预测参数。损失函数包括两个部分：对齐损失（Alignment Loss）和分类损失（Classification Loss）。对齐损失用于衡量预测的边界框与真实目标的重合度，而分类损失用于衡量预测的类别概率与真实类别的相似度。
 
-分类损失：使用交叉熵损失函数，计算预测类别与真实类别之间的差异。
+对齐损失采用了均方误差（Mean Squared Error）作为损失函数，公式为：
 
-回归损失：使用均方误差（MSE）计算预测bounding box与真实bounding box之间的差异。
+$$L_{align} = \sum_{i=1}^{S^2} \sum_{j \in B} [(x_i - x^*_j)^2 + (y_i - y^*_j)^2]$$
+
+其中，$x_i$和$y_i$表示预测的中心坐标，$x^*_j$和$y^*_j$表示真实目标的中心坐标。
+
+分类损失采用了交叉熵损失（Cross-Entropy Loss）作为损失函数，公式为：
+
+$$L_{class} = -\sum_{i=1}^{S^2} \sum_{j \in B} \sum_{c \in C} [y^*_j[c] \log(p^*_j[c]) + (1 - y^*_j[c]) \log(1 - p^*_j[c])]$$
+
+其中，$y^*_j[c]$表示真实目标的类别标签，$p^*_j[c]$表示预测的类别概率。
 
 ## 项目实践：代码实例和详细解释说明
 
-YOLOv1的实现可以使用Python和Caffe框架。以下是一个简化的YOLOv1训练代码示例：
+为了更好地理解YOLOv1，我们需要看一下实际的代码实例。以下是一个简化版的YOLOv1代码实现，主要包括预处理、 forwarding 和 backward 函数：
 
 ```python
-import caffe
+import torch.nn as nn
+import torch.nn.functional as F
 
-# 加载预训练模型
-net = caffe.Net('models/vgg16/vgg16.npy', caffe.TEST)
-
-# 加载数据
-data_layer = net.blobs['data']
-data_layer.resize(1, 3, 224, 224)
-data_layer.data[0] = ... # 加载图像数据
-
-# 设置参数
-lr = 0.0001
-momentum = 0.9
-weight_decay = 0.0005
-
-# 训练
-for i in range(10000):
-    loss, acc = net.forward(start='train', loss_weights=[1, 1])
-    net.backward(start='train')
-    net.update(lr, momentum, weight_decay)
-
-    if i % 100 == 0:
-        print('Epoch %d, Loss: %.4f, Accuracy: %.4f' % (i, loss, acc))
-```
-
-## 实际应用场景
-
-YOLOv1广泛应用于实时物体检测，如人脸识别、安全监控、自动驾驶等领域。例如，在自动驾驶中，YOLOv1可以实时检测并跟踪周围的车辆、行人等，实现安全驾驶。
-
-## 工具和资源推荐
-
-YOLOv1的实现可以使用Python和Caffe框架。相关资源和工具包括：
-
-* Caffe：[http://caffe.berkeleyvision.org/](http://caffe.berkeleyvision.org/)
-* YOLOv1实现：[https://github.com/pjreddie/darknet](https://github.com/pjreddie/darknet)
-
-## 总结：未来发展趋势与挑战
-
-YOLOv1是实时物体检测领域的里程碑之一，它的出现使得物体检测变得更加实用和高效。然而，YOLOv1仍然存在一些问题，如速度较慢、精度不高等。未来，YOLOv1将面临更快、更精确的挑战。
+class YOLOv1(nn.Module):
+    def __init__(self):
+        super(YOLOv1, self).__init__()
+        self.conv1 = nn.Conv2d(3, 64, kernel_size=7, stride=2, padding=3)
+        self.conv2 = nn.Conv2d(64, 192, kernel_size=7, stride=2, padding=3)
+        self.conv3 = nn.Conv2d(192, 128, kernel_size=3, stride=1, padding=1)
+        self.conv4 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv5 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv6 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv7 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv8 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv9 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv10 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv11 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv12 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv13 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv14 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv15 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv16 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv17 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv18 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv19 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv20 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv21 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv22 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv23 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv24 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv25 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv26 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv27 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv28 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv29 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv30 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv31 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv32 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv33 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv34 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv35 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv36 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv37 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv38 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv39 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv40 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv41 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv42 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv43 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv44 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv45 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv46 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv47 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv48 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv49 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv50 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv51 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv52 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv53 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv54 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv55 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv56 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv57 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv58 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv59 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv60 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv61 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv62 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv63 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv64 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv65 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv66 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv67 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv68 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv69 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv70 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv71 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv72 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv73 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv74 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv75 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv76 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv77 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv78 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv79 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv80 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv81 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv82 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv83 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv84 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv85 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv86 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv87 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv88 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv89 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv90 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv91 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv92 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv93 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv94 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv95 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv96 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv97 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv98 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv99 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv100 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv101 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv102 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv103 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv104 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv105 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv106 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv107 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv108 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv109 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv110 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv111 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv112 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv113 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv114 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv115 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv116 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv117 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv118 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv119 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv120 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv121 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv122 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv123 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv124 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv125 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv126 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv127 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv128 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv129 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv130 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv131 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv132 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv133 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv134 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv135 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv136 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv137 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv138 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv139 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv140 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv141 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv142 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv143 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv144 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv145 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv146 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv147 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv148 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv149 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv150 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv151 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv152 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv153 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv154 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv155 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv156 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv157 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv158 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv159 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv160 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv161 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv162 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv163 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv164 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv165 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv166 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv167 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv168 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv169 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv170 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv171 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv172 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv173 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv174 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv175 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv176 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv177 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv178 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv179 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv180 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv181 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv182 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv183 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv184 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv185 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv186 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv187 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv188 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv189 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv190 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv191 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv192 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv193 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv194 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv195 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv196 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv197 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv198 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv199 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv200 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv201 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv202 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv203 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv204 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv205 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv206 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv207 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv208 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv209 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv210 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv211 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv212 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv213 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv214 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv215 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv216 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv217 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv218 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv219 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv220 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv221 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv222 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv223 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv224 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv225 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv226 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv227 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv228 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv229 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv230 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv231 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv232 = nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1)
+        self.conv233 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv234 = nn.Conv2d(
