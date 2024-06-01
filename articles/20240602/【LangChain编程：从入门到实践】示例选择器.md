@@ -1,36 +1,75 @@
-## 背景介绍
+## 1. 背景介绍
 
-在深度学习领域，选择器（Selector）是一种常见的模型，它可以根据输入来选择或生成具有特定属性的数据。选择器在许多应用场景中都有用，例如推荐系统、数据挖掘、自然语言处理等。LangChain 是一个用于构建语言模型的框架，它为开发人员提供了许多有用的工具来构建深度学习模型。其中一个关键组件是选择器。在本文中，我们将讨论如何使用 LangChain 编程来实现一个选择器，并探讨其实际应用场景。
+在自然语言处理领域，选择器（Selector）是一种重要的技术，它可以根据输入的提示信息，从大量的文本数据中选取出满足一定条件的内容。选择器广泛应用于信息抽取、问答系统、对话系统等多个领域，成为自然语言处理技术的基石。
 
-## 核心概念与联系
+LangChain是一个开源的自然语言处理框架，它提供了一系列的组件和工具，可以帮助开发者快速构建和部署自然语言处理模型。其中，示例选择器（Example Selector）是一个用于从数据集中选取满足特定条件的示例的组件，它可以帮助开发者更方便地进行模型训练和测试。
 
-选择器可以分为两类：生成选择器（Generative Selector）和判别选择器（Discriminative Selector）。生成选择器可以根据输入来生成具有特定属性的数据，而判别选择器则可以根据输入来判断数据是否具有特定属性。LangChain 提供了两种选择器实现：基于规则的选择器（Rule-based Selector）和基于模型的选择器（Model-based Selector）。
+本篇文章将从入门到实践，引导读者了解和掌握LangChain示例选择器的核心概念、原理、使用方法和实际应用场景。
 
-## 核心算法原理具体操作步骤
+## 2. 核心概念与联系
 
-在 LangChain 中，基于规则的选择器使用一个规则列表来定义选择条件。规则可以是简单的条件（例如，属性等于某值）或者复杂的逻辑表达式（例如，属性在某范围内）。基于模型的选择器则使用一个预训练的神经网络模型来进行选择。模型可以是任何类型的神经网络，例如卷积神经网络（CNN）或循环神经网络（RNN）。
+示例选择器的核心概念是基于谓词（Predicate）来筛选数据的。谓词是一种函数，它可以将输入数据转换为一个布尔值（True或False）。如果谓词的返回值为True，那么数据满足条件；如果返回False，那么数据不满足条件。
 
-## 数学模型和公式详细讲解举例说明
+示例选择器通过使用谓词来筛选数据，从而实现对数据集的高效处理。谓词可以由多种形式的条件组成，如文本内容、时间、位置等。通过组合不同类型的条件，开发者可以根据自己的需求来定制谓词。
 
-在本文中，我们将使用一个简单的基于模型的选择器作为示例。我们将使用一个简单的神经网络模型来进行选择。这个模型由一个输入层、一个隐藏层和一个输出层组成。输入层有一个单独的神经元，用于表示输入数据的特征。隐藏层有一个神经元，用于对输入数据进行特征抽取。输出层有一个神经元，用于表示选择的概率。
+## 3. 核心算法原理具体操作步骤
 
-## 项目实践：代码实例和详细解释说明
+示例选择器的核心算法原理可以概括为以下几个步骤：
 
-在 LangChain 中实现一个基于模型的选择器需要遵循以下步骤：
+1. 数据预处理：将原始数据集进行预处理，包括去重、清洗等操作，以确保数据质量。
 
-1. 准备数据集：首先，我们需要准备一个数据集，其中包含输入数据和对应的选择标签。选择标签表示输入数据是否应该被选中。
-2. 定义神经网络模型：接下来，我们需要定义一个神经网络模型。我们可以使用 TensorFlow 或 PyTorch 等深度学习库来实现这个模型。
-3. 训练模型：然后，我们需要使用数据集来训练模型。在训练过程中，模型将学习如何根据输入数据来选择正确的数据。
-4. 使用模型：最后，我们可以使用训练好的模型来进行选择。模型将根据输入数据来计算选择的概率，并根据一定的阈值来决定是否进行选择。
+2. 谓词定义：根据具体需求，定义一个或多个谓词，以描述满足条件的数据特征。
 
-## 实际应用场景
+3. 数据筛选：使用谓词来筛选数据集，得到满足条件的数据样本。
 
-选择器在许多实际应用场景中都有用，例如：
+4. 结果返回：将筛选出的数据样本返回给调用者，供后续处理或分析。
 
-1. 推荐系统：选择器可以根据用户的喜好和行为来推荐相关的商品或服务。
-2. 数据挖掘：选择器可以根据特定条件来筛选数据，例如筛选出满足一定标准的数据。
-3. 自然语言处理：选择器可以根据文本内容来选择合适的回复或回答。
+## 4. 数学模型和公式详细讲解举例说明
 
-## 工具和资源推荐
+示例选择器的数学模型主要涉及到数据筛选过程。假设数据集为$$D = \{d_1, d_2, ..., d_n\}$$，其中$$d_i$$表示数据样本，$$n$$表示数据集的大小。给定一个谓词$$P$$，可以通过以下公式来得到满足条件的数据样本：
 
-LangChain 是一个非常有用的工具，它为开发人员提供了许多有用的工具来构建深度学习模型。除了选择器之外，LangChain 还提供了许多其他组件，例如数据加载器（Data Loader）、模型训练器（Model Trainer）和评估器（Evaluator）。如果你想了解更多关于 LangChain 的信息，可以查阅官方文档（https://langchain.github.io/langchain/）
+$$
+S = \{d_i \in D | P(d_i) = True\}
+$$
+
+举个例子，假设我们有一个新闻数据集，其中每篇新闻都包含标题、发布时间和内容。我们希望筛选出在过去一周内发布的新闻。我们可以定义一个谓词$$P$$，其中$$P(d_i) = True$$当且仅当$$d_i$$的发布时间在过去一周内。然后，使用示例选择器来筛选满足条件的数据样本。
+
+## 5. 项目实践：代码实例和详细解释说明
+
+为了帮助读者更好地理解示例选择器，下面是一个实际项目的代码实例和详细解释说明。
+
+```python
+from langchain.selectors import ExampleSelector
+
+# 定义谓词
+def is_recent_news(news):
+    from datetime import datetime, timedelta
+    one_week_ago = datetime.now() - timedelta(weeks=1)
+    return news['publish_time'] >= one_week_ago
+
+# 创建示例选择器
+selector = ExampleSelector(predicate=is_recent_news)
+
+# 使用示例选择器筛选数据
+recent_news = selector.select(news_data)
+```
+
+在这个例子中，我们首先从`langchain.selectors`模块导入`ExampleSelector`类。然后，我们定义了一个谓词`is_recent_news`，该谓词接受一个新闻数据作为输入，并返回一个布尔值，表示新闻是否在过去一周内发布。
+
+接着，我们创建了一个示例选择器`selector`，并将我们定义的谓词传递给它。最后，我们使用示例选择器来筛选满足条件的新闻数据。
+
+## 6. 实际应用场景
+
+示例选择器广泛应用于各种自然语言处理任务，如信息抽取、问答系统、对话系统等。以下是一些实际应用场景：
+
+1. 信息抽取：可以使用示例选择器来从大规模数据集中筛选出满足特定条件的信息，如提取某个主题下的相关文章、筛选出某个领域的专家等。
+
+2. 问答系统：可以使用示例选择器来筛选出满足问题条件的回答，如根据用户的问题从知识库中找到相关的回答。
+
+3. 对话系统：可以使用示例选择器来筛选出满足对话主题的对话历史，如根据用户的问题来选择合适的回复。
+
+## 7. 工具和资源推荐
+
+对于想学习和使用LangChain示例选择器的读者，以下是一些建议的工具和资源：
+
+1. 官方文档：LangChain官方文档（[https://docs.langchain.ai/）是学习LangChain的最佳途径，包括示例选择器的详细说明和用法。](https://docs.langchain.ai/%EF%BC%89%E6%98%AF%E5%AD%A6%E4%B9%A0LangChain%E7%9A%84%E6%9C%80%E5%A5%BD%E9%80%82%E8%B0%81%E6%9C%80%E6%8B%A1%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%AB%E4%BE%BF%E5%8F%AF%E7%9A%84%E8%AF%B7%E9%A2%84%E5%8F%A5%E4%B8%8B%E6%8B%A1%E7%9A%84%E8%AF%B7%E9%A2%84%E5%8F%A5%E4%B8%8B%E6%8B%A1%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%81%E4%BE%BF%E5%8F%AF%E7%9A%84%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%
