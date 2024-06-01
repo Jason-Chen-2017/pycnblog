@@ -4,11 +4,17 @@ f:
 fc:
 	./find_mac.sh
 
+fci7:
+	./find_mac_i7.sh
+
 m:
 	./curl_md.sh
 
 mc:
 	./curl_md_mac.sh
+
+mci7:
+	./curl_md_mac_i7.sh
 
 g:
 	./git_commit.sh
@@ -28,8 +34,15 @@ w1:
 wr:
 	./write_blog_rand.sh &
 
-w3:
+w10:
+	./write_blog10.sh &
+
+w30:
 	./write_blog30.sh &
+
+w50:
+	./write_blog50.sh &
+
 
 t:
 	./auto_title.sh &
@@ -45,3 +58,6 @@ h:
 
 hm:
 	./human_make_mc.sh &
+
+hmi7:
+	./human_make_mc_i7.sh &
