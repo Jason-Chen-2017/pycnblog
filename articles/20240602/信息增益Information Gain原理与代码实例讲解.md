@@ -1,113 +1,99 @@
 ## 背景介绍
 
-信息增益（Information Gain）是机器学习中的一种决策树算法，它是一种基于决策树的分类算法。信息增益是一种度量，用于评估一个特征对一个数据集的分类能力。信息增益越大，说明这个特征对数据集的分类能力越强。
+信息增益（Information Gain）是机器学习中常用的决策树算法。决策树是一种树状结构的分类模型，它可以根据特征值对数据进行划分，进而实现分类。信息增益是一种度量方法，用于评估特征值对数据集的影响程度。信息增益越大，特征值对数据的影响越大。
 
 ## 核心概念与联系
 
-信息增益是根据信息论的概念来衡量一个特征对数据集的分类能力。信息增益的核心思想是，通过对特征进行划分，可以得到一个新的数据集，新的数据集的不确定性（即信息熵）会减少。这就是信息增益的基本原理。
+信息增益是基于信息论的概念。信息论是信息处理的理论基础，它研究如何在信息传递、存储、处理等方面进行优化。信息增益的概念源于香农（Claude Shannon）于1948年提出的香农熵（Shannon Entropy）。
+
+信息增益的作用是在决策树构建过程中，选择最佳特征值。信息增益越大，特征值对数据的影响越大，因此在构建决策树时，选择信息增益最大的特征值可以得到更好的分类效果。
 
 ## 核心算法原理具体操作步骤
 
-信息增益的计算过程如下：
+信息增益的计算公式如下：
 
-1. 计算数据集的初始信息熵：首先我们需要计算原始数据集的信息熵。信息熵是度量数据集不确定性的一个指标，信息熵越大，数据集的不确定性越大。
+IG(S, A) = Entropy(S) - sum(|Sv| / |S| * Entropy(Sv))
 
-2. 对每个特征进行划分：对于每个特征，我们需要对数据集进行划分，得到一个新的数据集。新的数据集中的每一条数据都属于一个特征的某一个值。
+其中，IG(S, A) 表示信息增益，S 表示数据集，A 表示特征值，Entropy(S) 表示数据集 S 的熵，|S| 表示数据集 S 的大小，|Sv| 表示特征值 A 下的数据子集 S 的大小，Entropy(Sv) 表示数据子集 S 的熵。
 
-3. 计算划分后的数据集的信息熵：对于每个特征，我们需要计算划分后的数据集的信息熵。划分后的数据集的信息熵越小，特征对数据集的分类能力越强。
+熵是一种度量方法，用于衡量数据的混乱程度。熵越大，数据越混乱。
 
-4. 计算特征的信息增益：最后，我们需要计算每个特征的信息增益。信息增益是原始数据集的信息熵减去划分后的数据集的信息熵。信息增益越大，特征对数据集的分类能力越强。
+计算信息增益的过程如下：
+
+1. 计算数据集的熵 Entropy(S)。
+2. 对每个特征值 A，划分数据集 S 为多个子集 Sv。
+3. 计算每个子集 S 的熵 Entropy(Sv)。
+4. 计算每个特征值 A 的信息增益 IG(S, A)。
+5. 选择信息增益最大的特征值 A 作为决策树的根节点。
 
 ## 数学模型和公式详细讲解举例说明
 
-信息增益的数学公式如下：
+举个例子，假设我们有一组数据集，其中每条数据具有两个特征值 A 和 B，以及一个类别标签 Y。
 
-I(G) = Entropy(S) - ∑[|Sv| / |S| * Entropy(Sv)]
+数据集如下：
 
-其中，I(G) 表示信息增益，Entropy(S) 表示原始数据集的信息熵，|Sv| 表示划分后的数据集的样本数，|S| 表示原始数据集的样本数。
+A | B | Y
+---|---|---
+1 | 0 | 1
+1 | 1 | 1
+0 | 0 | 2
+0 | 1 | 2
 
-举个例子，假设我们有一个数据集，其中每条数据都有两个特征A和B。我们需要计算特征A和特征B的信息增益。
+首先，我们计算数据集的熵 Entropy(S)：
 
-首先，我们需要计算原始数据集的信息熵。假设原始数据集的信息熵为0.8，然后我们需要对每个特征进行划分。
+Entropy(S) = -(|A=1, B=0| / |S| * log2(|A=1, B=0| / |S|) + |A=1, B=1| / |S| * log2(|A=1, B=1| / |S|) + |A=0, B=0| / |S| * log2(|A=0, B=0| / |S|) + |A=0, B=1| / |S| * log2(|A=0, B=1| / |S|))
 
-对于特征A，我们得到一个新的数据集，其中每一条数据都属于特征A的某一个值。然后我们计算划分后的数据集的信息熵，假设为0.6。
+Entropy(S) = -1/4 * log2(1/4) - 1/4 * log2(1/4) - 1/2 * log2(1/2) - 1/4 * log2(1/4)
 
-同样，我们对特征B进行划分，然后计算划分后的数据集的信息熵，假设为0.5。
+Entropy(S) ≈ 0.7213
 
-最后，我们计算特征A和特征B的信息增益：
+然后，我们计算每个特征值 A 和 B 的信息增益 IG(S, A) 和 IG(S, B)：
 
-I(A) = 0.8 - (|Sv_A| / |S| * 0.6) = 0.8 - (0.5 * 0.6) = 0.7
+IG(S, A) = Entropy(S) - (|A=1, B=0| / |S| * Entropy(A=1, B=0) + |A=1, B=1| / |S| * Entropy(A=1, B=1) + |A=0, B=0| / |S| * Entropy(A=0, B=0) + |A=0, B=1| / |S| * Entropy(A=0, B=1))
 
-I(B) = 0.8 - (|Sv_B| / |S| * 0.5) = 0.8 - (0.5 * 0.5) = 0.7
+IG(S, A) = 0.7213 - (1/4 * 0.9183 + 1/4 * 0.9183 + 1/2 * 1.0000 + 1/4 * 0.9183)
 
-可以看到，特征A和特征B的信息增益都是0.7。
+IG(S, A) ≈ 0.0472
+
+IG(S, B) = Entropy(S) - (|A=1, B=0| / |S| * Entropy(A=1, B=0) + |A=1, B=1| / |S| * Entropy(A=1, B=1) + |A=0, B=0| / |S| * Entropy(A=0, B=0) + |A=0, B=1| / |S| * Entropy(A=0, B=1))
+
+IG(S, B) = 0.7213 - (1/4 * 0.9183 + 1/4 * 0.9183 + 1/2 * 1.0000 + 1/4 * 0.9183)
+
+IG(S, B) ≈ 0.0472
+
+由此，我们可以看出 A 和 B 特征值的信息增益都是相等的，都是 0.0472。因此，我们可以选择任意一个特征值作为决策树的根节点。
 
 ## 项目实践：代码实例和详细解释说明
 
-我们可以使用Python语言来实现信息增益的计算。下面是一个简单的代码示例：
+下面是一个 Python 代码示例，使用 scikit-learn 库实现了信息增益的计算：
 
 ```python
-import numpy as np
-from sklearn.metrics import entropy
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.datasets import load_iris
+from sklearn.metrics import accuracy_score
 
-def calculate_entropy(y):
-    hist = np.bincount(y)
-    ps = hist / len(y)
-    return -np.sum([p * np.log2(p) for p in ps if p > 0])
+# 加载鸢尾花数据集
+iris = load_iris()
+X, y = iris.data, iris.target
 
-def gain(X, y, feature_names, label_names):
-    n_samples, n_features = X.shape
-    best_gain = 0.0
-    best_feat = None
-    best_thresh = None
+# 构建决策树
+clf = DecisionTreeClassifier(criterion='entropy', max_depth=3)
+clf.fit(X, y)
 
-    for feat in range(n_features):
-        X_column = X[:, feat]
-        thresholds = np.unique(X_column)
-        for threshold in thresholds:
-            gain = 0.0
+# 预测
+y_pred = clf.predict(X)
 
-            left_mask = X_column < threshold
-            right_mask = X_column >= threshold
-
-            left_entropy = entropy(y[left_mask])
-            right_entropy = entropy(y[right_mask])
-
-            gain = calculate_entropy(y) - (left_entropy * len(y[left_mask]) / n_samples) - (right_entropy * len(y[right_mask]) / n_samples)
-
-            if gain > best_gain:
-                best_gain = gain
-                best_feat = feat
-                best_thresh = threshold
-
-    return best_feat, best_thresh
-
-X, y = ... # your data here
-print(gain(X, y, feature_names, label_names))
+# 计算准确率
+accuracy = accuracy_score(y, y_pred)
+print(f'准确率: {accuracy:.4f}')
 ```
+
+此代码首先加载了鸢尾花数据集，然后使用 scikit-learn 库中的 DecisionTreeClassifier 类构建了一个决策树，指定了信息增益（entropy）作为决策树的树状结构划分的依据。最后，代码使用了预测并计算了准确率。
 
 ## 实际应用场景
 
-信息增益可以用来构建决策树算法，用于分类问题。信息增益可以作为一种特征选择方法，用于选出最有用的特征。信息增益还可以用于计算特征的重要性，用于模型的优化和特征的选择。
+信息增益可以应用于各种分类问题，如物联网、金融、医疗等领域。决策树是一种简单、可视化的模型，可以帮助我们更好地理解数据和特征之间的关系。信息增益可以帮助我们选择最佳的特征值，提高分类准确率。
 
 ## 工具和资源推荐
 
-如果你想深入了解信息增益，以下资源可能会对你有帮助：
-
-1. 《机器学习》 by Tom M. Mitchell
-2. 《Python机器学习》 by Sebastian Raschka and Vahid Mirjalili
-3. sklearn的决策树实现
-
-## 总结：未来发展趋势与挑战
-
-信息增益作为一种决策树算法，已经广泛应用于机器学习领域。随着数据量的不断增加，信息增益在计算效率上的挑战也越来越明显。未来，信息增益算法可能会更加关注计算效率和可扩展性。
-
-## 附录：常见问题与解答
-
-1. 什么是信息增益？
-
-信息增益是机器学习中的一种决策树算法，它是一种基于决策树的分类算法。信息增益是一种度量，用于评估一个特征对一个数据集的分类能力。
-
-2. 信息增益有什么用？
-
-信息增益可以用来构建决策树算法，用于分类问题。信息增益可以作为一种特征选择方法，用于选出最有用的特征。信息增益还可以用于计算特征的重要性，用于模型的优化和特征的选择。
+1. scikit-learn（[https://scikit-learn.org/）是一个强大的 Python 机器学习库，提供了决策树等各种机器学习算法的实现。](https://scikit-learn.org/%EF%BC%89%E6%98%AF%E5%BC%BA%E5%8A%9F%E7%9A%84Python%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%BC%9A%E7%AF%84%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E5%9C%A8%E7%9B%AE%E6%8B%AC%E6%B3%A8%E5%AE%89%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E7%9A%84%E5%BA%9E%E5%BE%88%E6%B6%88%E5%8A%A1%E
