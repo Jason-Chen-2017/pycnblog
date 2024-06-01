@@ -61,3 +61,6 @@ hm:
 
 hmi7:
 	./human_make_mc_i7.sh &
+
+git_merge:
+	./git_merge_ubuntu.sh
