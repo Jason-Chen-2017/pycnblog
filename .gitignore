@@ -2,6 +2,10 @@
 .idea/
 __pycache__/
 
+.DS_Store
+*/.DS_Store
+*/**/.DS_Store
+
 git_commit.sh
 git_commit_mac.sh
 git_commit_mac_i7.sh
