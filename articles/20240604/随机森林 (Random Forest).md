@@ -1,89 +1,64 @@
-随机森林（Random Forest）是机器学习中一种强大的分类和回归算法，具有高效、准确、稳定等优良特点。随机森林是一种集成学习（ensemble learning）方法，它通过构建多个弱学习器（decision tree）来实现强学习器的效果。下面我们将从概念、原理、应用场景等方面对随机森林进行详细介绍。
+## 背景介绍
 
-## 1. 背景介绍
+随机森林（Random Forest）是一种非常强大的机器学习算法，源于计算机科学领域的研究。它在处理大规模数据集的能力以及预测复杂事件的准确性方面表现出色。随机森林是基于集成学习（Ensemble Learning）方法的，通过构建多个弱学习器（弱学习器之间相互独立）来组成一个强学习器。这些弱学习器可以是决策树、线性模型等。
 
-随机森林是由多个决策树组成的集成模型，能够解决分类、回归和回归问题。它通过构建多个弱学习器，并以投票方式组合它们的预测结果，提高模型的预测性能。随机森林适用于各种数据类型和规模的问题，特别是在面对高维特征和复杂关系的情况下。
+## 核心概念与联系
 
-## 2. 核心概念与联系
+随机森林是一种集成学习方法，通过构建多个弱学习器来实现强学习器。每个弱学习器都是基于某个特定的数据集和特定的算法构建的。这些弱学习器之间是相互独立的，这意味着它们不会相互影响。每个弱学习器都有自己的特点和优势，可以相互补充，共同提高整个模型的性能。
 
-随机森林由多个决策树组成，每棵树都是弱学习器。这些树的组合可以提高模型的预测性能。随机森林使用"bagging"技术（Bootstrap Aggregating）来减少过拟合，并利用"feature bagging"技术来选择特征。随机森林的特点是：不需要特征预处理、不需要特征选择、不需要调参、不需要树剪枝、不需要平衡数据、不需要消除多重相关性等。
+## 核心算法原理具体操作步骤
 
-## 3. 核心算法原理具体操作步骤
+随机森林的核心算法原理可以概括为以下几个步骤：
 
-随机森林算法的主要步骤如下：
+1. 选择训练数据集：从原始数据集中随机抽取一部分数据作为训练数据。
+2. 选择特征：从原始特征集中随机选择一部分特征作为输入特征。
+3. 构建弱学习器：使用选择的训练数据和输入特征，构建一个弱学习器（例如，决策树）。
+4. 逐步构建森林：重复步骤1-3，直到构建出一定数量的弱学习器。
+5. 预测：对于新的数据样例，使用所有弱学习器进行预测，然后将预测结果进行投票（即，选择多数票数大的类别作为最终预测结果）。
 
-1. 从原始数据中随机抽取部分数据作为训练集。
-2. 选择一个特征进行划分，划分数据集为左右两个子集。
-3. 选择一个随机选择的特征进行划分，划分数据集为左右两个子集。
-4. 以此类推，形成树状结构。
-5. 对于新的样本，通过每棵树的预测结果进行投票，得到最终的预测结果。
+## 数学模型和公式详细讲解举例说明
 
-## 4. 数学模型和公式详细讲解举例说明
-
-随机森林的数学模型可以用下面的公式表示：
+随机森林的数学模型可以用以下公式表示：
 
 $$
-f(x) = \sum_{i=1}^{N} w_i f_i(x)
+\hat{Y} = \frac{1}{N} \sum_{i=1}^{N} h(\mathbf{x}_i; \theta_i)
 $$
 
-其中，$f(x)$表示最终的预测结果，$N$表示树的数量，$w_i$表示树的权重，$f_i(x)$表示树的预测结果。
+其中， $$\hat{Y}$$ 是预测值， $$\mathbf{x}_i$$ 是输入数据， $$\theta_i$$ 是弱学习器的参数， $$h(\mathbf{x}_i; \theta_i)$$ 是弱学习器的预测函数。N 是森林中弱学习器的数量。
 
-## 5. 项目实践：代码实例和详细解释说明
+## 项目实践：代码实例和详细解释说明
 
-下面是一个使用Python和scikit-learn库实现随机森林的简单示例：
+在 Python 中，可以使用 Scikit-learn 库中的 RandomForestClassifier 类来实现随机森林。以下是一个简单的示例：
 
 ```python
-from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split
+from sklearn.datasets import load_iris
 
-# 加载iris数据集
+# 加载数据集
 iris = load_iris()
-X, y = iris.data, iris.target
+X = iris.data
+y = iris.target
 
-# 划分训练集和测试集
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+# 创建随机森林模型
+clf = RandomForestClassifier(n_estimators=100, random_state=42)
 
-# 创建随机森林分类器
-clf = RandomForestClassifier(n_estimators=100)
+# 训练模型
+clf.fit(X, y)
 
-# 训练随机森林分类器
-clf.fit(X_train, y_train)
-
-# 对测试集进行预测
-y_pred = clf.predict(X_test)
-
-# 计算预测准确率
-accuracy = sum(y_pred == y_test) / len(y_test)
-print(f"预测准确率: {accuracy}")
+# 预测
+y_pred = clf.predict(X)
 ```
 
-## 6. 实际应用场景
+##实际应用场景
 
-随机森林可以用于各种场景，例如：
+随机森林可以应用于各种不同的领域，例如：
 
-1. 人脸识别：通过对人脸图片进行特征提取和分类，实现识别。
-2. 文本分类：对文本进行主题分类，实现文本分组。
-3. 游戏行为分析：分析玩家行为，预测玩家将购买哪些游戏产品。
-4. 医疗诊断：通过对患者病历进行分析，预测患者可能患有的疾病。
+1. 医学诊断：通过分析患者的病史、检查结果等数据，来诊断疾病。
+2. 金融风险管理：通过分析客户的信用记录、经济状况等数据，来评估金融风险。
+3. 自动驾驶：通过分析摄像头捕捉到的影像数据，来判断道路状况和行驶方向。
 
-## 7. 工具和资源推荐
+## 工具和资源推荐
 
-以下是一些用于学习和实现随机森林的工具和资源：
+对于想要学习和使用随机森林的读者，以下是一些建议的工具和资源：
 
-1. scikit-learn：Python的机器学习库，提供了随机森林的实现。
-2. Random Forest from Scratch：一个详细的随机森林实现教程，适合初学者。
-3. Applied Predictive Modeling：一本介绍随机森林等集成学习方法的书籍。
-
-## 8. 总结：未来发展趋势与挑战
-
-随机森林是一种非常强大的机器学习算法，具有广泛的应用前景。随着数据量和特征数量的不断增加，随机森林的性能也在不断提升。然而，随机森林也面临着一些挑战，例如过拟合、计算效率等。未来，随机森林将继续发展，优化算法、提高计算效率、解决过拟合等问题将是未来研究的重点。
-
-## 9. 附录：常见问题与解答
-
-1. 如何选择随机森林中的树的数量？
-答：随机森林中的树的数量通常在100-1000之间，选择合适的树的数量可以平衡计算效率和预测性能。可以通过交叉验证来选择合适的树的数量。
-2. 如何评估随机森林的性能？
-答：可以通过交叉验证、AUC-ROC曲线等方法来评估随机森林的性能。
-
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
+1. Scikit-learn（[https://scikit-learn.org/）：](https://scikit-learn.org/)%EF%BC%9AScikit-learn%EF%BC%88https://scikit-learn.org/%EF%BC%89%E3%80%81%E6%88%90%E9%83%8E%E7%BB%8F%E5%9F%BA%E5%BC%8F%E7%AF%87%E6%9C%AB%E6%9F%A5%E6%9C%89%E6%8F%90%E4%BE%9B%E8%83%BD%E5%8A%9B%E7%89%88%E6%9C%AC%E6%89%80%E6%8B%AC%E6%9C%89%E4%BA%9A%E6%9C%89%E6%96%BC%E6%94%AF%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%9B%E6%89%80%E5%AE%89%E8%A1%8C%E5%AE%9E%E8%B7%B5%E5%8A%A1%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E6%89%80%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%82%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A%A1%E5%8F%�%E7%8A%B6%E4%BB%A5%E4%BA%8B%E4%B8%9A%E4%BA%8B%E8%83%BD%E5%8C%BA%E6%8B%AC%E5%8A
