@@ -127,4 +127,4 @@ F --> |阈值判断| G[异常检测结果]
 
 ### 4.1 多元高斯分布
 多元高斯分布是单变量高斯分布在多维空间上的推广。一个 $n$ 维随机变量 $\boldsymbol{x}$ 服从多元高斯分布，若其概率密度函数为：
-$$p(\boldsymbol{x};\boldsymbol{\mu},\boldsymbol{\Sigma}) = \frac{1}{(2\pi)^{n/2}|\boldsymbol{\Sigma}|^{1/2}} \exp\left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^T\boldsymbol{\Sigma}^{-1}(\boldsymbol{x}-\boldsymbol{\{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+$$p(\boldsymbol{x};\boldsymbol{\mu},\boldsymbol{\Sigma}) = \frac{1}{(2\pi)^{n/2}|\boldsymbol{\Sigma}|^{1/2}} \exp\left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^T\boldsymbol{\Sigma}^{-1}(\boldsymbol{x}-\boldsymbol{\

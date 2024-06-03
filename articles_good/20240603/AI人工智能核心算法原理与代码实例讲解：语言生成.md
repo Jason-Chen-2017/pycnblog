@@ -197,4 +197,4 @@ loss = F.cross_entropy(output.view(-1, vocab_size), tgt[:, 1:].contiguous().view
 
 1. **机器翻译**: 将源语言文本翻译成目标语言,如谷歌翻译、微软翻译等。
 2. **对话系统**: 根据上下文生成自然的对话响应,如智能助手、客服机器人等。
-3{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+3

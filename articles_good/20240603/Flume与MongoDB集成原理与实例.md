@@ -251,4 +251,4 @@ MongoDB官方社区提供了丰富的资源,包括文档、教程、博客和论
 
 ### 7.6 Flume和MongoDB相关书籍
 
-市面上有一些关于Flume和MongoDB的书籍,可以作为{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+市面上有一些关于Flume和MongoDB的书籍,可以作为

@@ -84,4 +84,4 @@ Spark Streaming广泛应用于实时分析，日志处理，事件检测，实�
    
    答：优化Spark Streaming应用的方法有很多，例如调整批次的大小，增加并行度，优化转换操作，以及选择合适的存储级别。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

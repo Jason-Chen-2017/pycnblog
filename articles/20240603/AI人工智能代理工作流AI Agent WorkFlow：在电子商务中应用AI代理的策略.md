@@ -269,4 +269,4 @@ class ReplayBuffer:
         state, action, reward, next_state, done = zip(*transitions)
         return (
             torch.tensor(state, dtype=torch.float),
-            torch.tensor(action{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+            torch.tensor(action

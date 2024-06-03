@@ -173,4 +173,4 @@ $$
 
 这个损失函数的目标是:最大化域分类器正确分类源领域数据的概率,同时最小化它正确分类目标领域数据的概率。通过这种对抗训练,特征提取器就能够学习到域不变的特征表示,从而减小源领域和目标领域的域差异。
 
-在实际优化中,我们通常采用梯度反转层(Gradient Reversal Layer)的技巧,将对抗{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+在实际优化中,我们通常采用梯度反转层(Gradient Reversal Layer)的技巧,将对抗

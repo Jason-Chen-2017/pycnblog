@@ -299,4 +299,4 @@ sums = pairs | beam.CombinePerKey(sum)
 如果我们想计算每个键对应的值的平均值,我们可以使用 `CombinePerKey` 转换和一个自定义的组合函数:
 
 $$
-\text{mean}_k = \frac{1}{n_k} \sum_{i=1{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+\text{mean}_k = \frac{1}{n_k} \sum_{i=1

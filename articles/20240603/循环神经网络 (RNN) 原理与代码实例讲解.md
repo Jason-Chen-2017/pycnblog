@@ -88,4 +88,4 @@ RNN虽然强大，但也有其局限性，如梯度消失和梯度爆炸问题�
 2. 问：RNN有哪些局限性？
 答：RNN的主要局限性有两个：一是梯度消失和梯度爆炸问题，这使得网络难以学习长序列数据中的依赖关系；二是计算复杂性高，因为每个时间步的计算都依赖于前一时间步，所以难以进行并行计算。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -74,4 +74,4 @@ Q: ROC曲线和PR曲线有什么区别？
 
 A: PR曲线（Precision-Recall Curve）是以召回率（Recall）为横轴，精确率（Precision）为纵轴绘制的曲线。与ROC曲线相比，PR曲线更关注正类的预测性能，因此在正负类不平衡的情况下，PR曲线通常比ROC曲线更有用。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

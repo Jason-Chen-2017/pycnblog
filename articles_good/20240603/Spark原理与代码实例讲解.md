@@ -172,4 +172,4 @@ Spark提供了多种缓存(持久化)策略,可以将RDD缓存在内存或磁盘
 ### 9.3 Spark如何实现容错?
 Spark通过RDD的血统(Lineage)信息实现容错。每个RDD都记录了其父RDD和转换操作,当一个RDD的分区数据丢失或损坏时,Spark可以根据血统信息重新计算该分区,保证数据的完整性和一致性。Spark还支持检查点(Checkpoint)机制,将RDD的数据持久化到可靠的存储系统中,以避免长时间的血统重建。
 
-作者:禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者:禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

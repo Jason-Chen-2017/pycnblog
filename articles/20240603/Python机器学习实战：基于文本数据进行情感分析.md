@@ -113,4 +113,4 @@ Q: 如何评估模型的性能？
 
 A: 常用的评估指标有准确率、召回率、F1值等。准确率表示模型预测正确的比例。召回率表示模型找出的正例占所有正例的比例。F1值是准确率和召回率的调和平均数，用于综合评价模型的性能。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

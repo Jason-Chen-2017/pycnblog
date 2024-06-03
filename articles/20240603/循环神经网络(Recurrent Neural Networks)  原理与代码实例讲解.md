@@ -232,4 +232,4 @@ TEXT.build_vocab(train_data, max_size=25000, vectors="glove.6B.100d")
 LABEL.build_vocab(train_data)
 
 train_iter, test_iter = data.BucketIterator.splits(
-    ({"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+    (

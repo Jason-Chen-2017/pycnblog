@@ -249,4 +249,4 @@ for row in range(GRID_SIZE[0]):
         if state == START_STATE:
             print("S", end="")
         elif state == GOAL_STATE:
-            print("G", end=""){"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+            print("G", end="")

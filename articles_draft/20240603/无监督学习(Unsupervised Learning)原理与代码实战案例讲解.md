@@ -133,4 +133,4 @@ Q: PCA降维后的数据还能恢复原来的数据吗？
 
 A: PCA降维是一种有损的降维方法，也就是说，降维后的数据无法完全恢复到原来的数据。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -109,4 +109,4 @@ Kafka和Flink的整合在许多实际应用场景中都非常有用。例如，�
 4. 问题：如何处理从Kafka读取的数据流？
    答：在Flink中，可以对数据流进行各种转换操作，如过滤、聚合等。转换操作可以通过DataStream的方法来实现，如filter、map、reduce等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

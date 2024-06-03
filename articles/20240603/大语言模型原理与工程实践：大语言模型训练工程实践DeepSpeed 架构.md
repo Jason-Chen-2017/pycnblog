@@ -168,4 +168,4 @@ ZeRO-Offload在ZeRO-DP的基础上,进一步减少了优化器状态和梯度的
 
 2. **优化器状态卸载**:将优化器状态从GPU卸载到主机内存中,只在需要时才将其加载到GPU上。
 
-3. **梯度计算和卸{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+3. **梯度计算和卸

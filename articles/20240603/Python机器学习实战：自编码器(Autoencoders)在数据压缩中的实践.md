@@ -239,4 +239,4 @@ for i in range(n):
     ax = plt.subplot(2, n, i+1+n)
     plt.imshow(reconstructed_images[i].reshape(28, 28))
     plt.gray()
-    ax.get_xaxis().set_visible(False){"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+    ax.get_xaxis().set_visible(False)

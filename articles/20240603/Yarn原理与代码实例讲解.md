@@ -107,4 +107,4 @@ Yarn被广泛应用在大数据处理领域。例如，Apache Hadoop、Apache Fl
 
 答：Yarn通过一个基于优先级的公平调度算法来保证公平性。这个算法的目标是最大化资源的利用率，同时保证公平性。公平性在这里的含义是，如果有两个应用程序，他们需要相同的资源，那么他们应该得到相同的资源。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

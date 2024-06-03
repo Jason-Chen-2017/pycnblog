@@ -238,4 +238,4 @@ F --> |青绿| K[好瓜]
 F --> |乌黑| L[坏瓜]
 G --> |青绿| M[坏瓜]
 G --> |浅白| N[好瓜]
-```{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+```

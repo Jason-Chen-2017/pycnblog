@@ -247,4 +247,4 @@ Pig的简单性和可扩展性使其成为处理大数据的有力工具,在各�
 
 8. **Pig与R集成**: 使用R UDF,可以在Pig中使用R代码进行统计分析。
 
-9. **Pig IDE**: 如Pig Eclipse Plugin、Pig Desktop等,提供代码编辑、调试和可视化功能{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+9. **Pig IDE**: 如Pig Eclipse Plugin、Pig Desktop等,提供代码编辑、调试和可视化功能

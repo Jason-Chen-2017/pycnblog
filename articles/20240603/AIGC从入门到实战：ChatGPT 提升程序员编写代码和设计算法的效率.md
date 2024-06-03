@@ -278,4 +278,4 @@ def main():
         print("7. Save todos")
         print("8. Quit")
 
-        choice = input("Enter your choice (1-{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+        choice = input("Enter your choice (1-

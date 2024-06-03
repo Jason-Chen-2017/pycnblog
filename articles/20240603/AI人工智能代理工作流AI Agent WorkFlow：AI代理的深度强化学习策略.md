@@ -129,4 +129,4 @@ for i_episode in range(1000):
 
 深度强化学习已经在很多实际应用中展现了强大的能力，例如，游戏AI、自动驾驶、机器人控制、推荐系统等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

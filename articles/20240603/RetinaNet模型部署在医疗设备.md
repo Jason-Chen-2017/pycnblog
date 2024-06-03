@@ -233,4 +233,4 @@ class RetinaNet(nn.Module):
         # 计算损失(如果提供了目标)
         if targets is not None:
             loss, cls_loss, reg_loss = self.loss_fn(cls_outputs, reg_outputs, anchors, targets)
-            return loss, cls_{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+            return loss, cls_

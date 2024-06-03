@@ -116,4 +116,4 @@ Q: 如何判断模型是否过拟合或欠拟合？
 
 A: 如果模型在训练集上的表现很好，但在测试集上的表现很差，那么模型可能过拟合。如果模型在训练集和测试集上的表现都不好，那么模型可能欠拟合。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

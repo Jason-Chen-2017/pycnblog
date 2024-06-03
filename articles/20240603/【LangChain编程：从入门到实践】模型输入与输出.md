@@ -57,4 +57,4 @@ A: LangChain适用于任何需要处理数据和实现特定功能的场景，�
 
 A: 优化算法、合理设计数据结构、减少冗余代码等方法都可以提高程序的运行效率。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

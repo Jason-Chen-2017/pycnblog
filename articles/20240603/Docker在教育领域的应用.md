@@ -55,4 +55,4 @@ Docker可以用于很多场景，例如，持续集成、自动化测试、部�
 
 推荐首先阅读Docker的官方文档，然后通过实践来学习。可以先从一些简单的例子开始，例如，创建一个简单的Web应用的Docker镜像，然后逐渐尝试一些更复杂的例子。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
