@@ -1,102 +1,64 @@
-## 1. 背景介绍
+## 背景介绍
 
-LangChain是一个开源的Python工具集，旨在帮助开发人员更轻松地构建和部署AI系统。LangChain提供了许多预先构建的组件和实用程序，使得构建自定义AI流程变得更加容易。其中一个核心组件是**请求回调**（Request Callback），它允许开发人员在多个步骤中传递和处理信息。
+LangChain是一个强大的开源库，旨在帮助开发者更轻松地构建复杂的自然语言处理（NLP）系统。它为开发者提供了一个强大的工具集，可以帮助他们更快地构建高效的AI系统。LangChain的核心概念是通过请求回调（request callback）来实现的。这一篇博客文章将从入门到实践，详细讲解LangChain编程中的请求回调。
 
-## 2. 核心概念与联系
+## 核心概念与联系
 
-请求回调是一种设计模式，它允许在多个步骤之间传递数据和控制流。这种模式在LangChain中得到了广泛应用，因为AI系统通常涉及多个步骤，例如数据预处理、模型训练、模型评估等。请求回调使得这些步骤之间的通信变得更加直观和高效。
+请求回调（request callback）是LangChain编程中的一个核心概念，它允许开发者在不同的部分之间传递数据，并在需要时触发相应的操作。请求回调使得复杂的系统更容易构建，因为它提供了一种简洁的方式来处理多个组件之间的交互。
 
-## 3. 请求回调原理具体操作步骤
+## 核心算法原理具体操作步骤
 
-请求回调的基本思想是将函数（或称为“回调”）作为数据传递给另一个函数。调用第二个函数时，会将回调函数作为参数传递。这样，第二个函数可以在适当的时候调用回调函数，从而实现跨步通信。
+在开始讲解LangChain编程中的请求回调之前，我们需要先了解LangChain的基本组成部分。LangChain的核心是一个强大的请求处理器（RequestHandler），它可以处理来自外部的请求，并根据需要将数据传递给相应的组件。RequestHandler的工作原理如下：
 
-在LangChain中，请求回调可以通过`RequestCallback`类来实现。这个类的构造函数接受一个回调函数作为参数。然后，在`process`方法中，`RequestCallback`会将回调函数作为参数传递给下一个步骤。
+1. 接收来自外部的请求。
+2. 根据请求内容，确定需要触发的操作。
+3. 通过调用相应的回调函数来触发操作。
 
-```python
-from langchain.request import RequestCallback
+## 数学模型和公式详细讲解举例说明
 
-def my_callback(data):
-    # 处理数据
-    return processed_data
+在LangChain编程中，请求回调可以通过两种方式实现：同步和异步。同步请求回调（synchronous request callback）是指在处理完请求后，直接返回结果。而异步请求回调（asynchronous request callback）则是在处理请求时启动一个后台任务，然后在任务完成后返回结果。
 
-callback = RequestCallback(my_callback)
-```
+## 项目实践：代码实例和详细解释说明
 
-## 4. 数学模型和公式详细讲解举例说明
-
-在本篇博客中，我们主要关注LangChain的请求回调功能，因此没有涉及到复杂的数学模型和公式。然而，请求回调本身并没有严格的数学公式，因为它是一种设计模式，而不是一个算法或模型。
-
-## 5. 项目实践：代码实例和详细解释说明
-
-下面是一个使用请求回调的简单示例。我们将创建一个简单的数据流处理管道，其中每个步骤会将数据传递给下一个步骤。
+为了更好地理解请求回调，我们来看一个LangChain编程的实例。假设我们要构建一个文本摘要系统，它需要从原始文本中提取关键信息，并将其组合成一个简短的摘要。我们可以使用LangChain中的RequestHandler组件来实现这个系统。以下是一个简单的代码示例：
 
 ```python
-from langchain.request import RequestCallback
-import json
+from langchain.request_handler import RequestHandler
 
-def step1(data):
-    # 数据预处理
-    return processed_data
+class TextSummarizer(RequestHandler):
+    def __init__(self, summarizer):
+        self.summarizer = summarizer
 
-def step2(data):
-    # 模型训练
-    return trained_model
+    async def on_request(self, request):
+        text = request['text']
+        summary = self.summarizer.summarize(text)
+        return {'summary': summary}
 
-def step3(data):
-    # 模型评估
-    return evaluation_results
+async def main():
+    summarizer = SomeSummarizer()
+    request_handler = TextSummarizer(summarizer)
+    request = {'text': '这是一段需要摘要的文本。'}
+    response = await request_handler.handle(request)
+    print(response)
 
-callback = RequestCallback(step3)
-pipe = [
-    RequestCallback(step1),
-    RequestCallback(step2),
-    callback,
-]
-
-# 示例数据
-input_data = {"text": "这是一个示例数据"}
-
-# 运行数据流
-output_data = pipe(input_data)
-
-print(output_data)
+if __name__ == '__main__':
+    asyncio.run(main())
 ```
 
-## 6. 实际应用场景
+## 实际应用场景
 
-请求回调在多种场景下都有实际应用，例如：
+LangChain编程中的请求回调有很多实际应用场景，例如：
 
-* 数据清洗和预处理：在数据清洗过程中，可能需要在多个步骤中传递和修改数据。请求回调可以轻松实现这一点。
-* 模型训练：训练复杂的机器学习模型时，可能需要在多个步骤中传递模型参数。请求回调可以帮助实现这一目标。
-* 任务自动化：在自动化任务流中，可能需要在多个步骤中传递和处理数据。请求回调可以简化这一过程。
+1. 信息抽取：通过请求回调，可以将从文本中抽取的信息传递给相应的组件进行处理。
+2. 语义角色标注：通过请求回调，可以将标注后的语义角色传递给相应的组件进行分析。
+3. 文本分类：通过请求回调，可以将分类后的文本传递给相应的组件进行处理。
 
-## 7. 工具和资源推荐
+## 工具和资源推荐
 
-LangChain提供了许多实用的工具和资源，帮助开发人员更轻松地构建和部署AI系统。以下是一些值得关注的工具和资源：
+如果你想开始学习LangChain编程，以下是一些建议：
 
-* **LangChain官方文档**：<https://langchain.readthedocs.io/>
-* **LangChain GitHub仓库**：<https://github.com/Project-Monaco/langchain>
-* **Python编程指南**：<https://docs.python.org/3/tutorial/index.html>
-* **深度学习入门**：[https://www.deeplearningbook.org.cn/](https://www.deeplearningbook.org.cn/)
+1. 官方文档：LangChain的官方文档（[https://langchain.github.io）是一个很好的学习资源，提供了详细的说明和代码示例。](https://langchain.github.io%EF%BC%89%E6%98%AF%E4%B8%80%E4%B8%AA%E5%BE%88%E5%A5%BD%E7%9A%84%E5%AD%A6%E4%BE%9B%E3%80%82%E6%8F%90%E4%BE%9B%E3%81%8C%E5%BE%88%E4%BC%9A%E7%9A%84%E7%BB%8B%E8%AF%84%E5%92%8C%E4%BB%A3%E7%A2%BA%E5%AD%A6%E4%BE%9B%E3%80%82)
 
-## 8. 总结：未来发展趋势与挑战
+1. GitHub：LangChain的GitHub仓库（[https://github.com/langchain）提供了很多有用的代码示例和文档。](https://github.com/langchain%EF%BC%89%E6%8F%90%E4%BE%9B%E3%81%8C%E6%9C%AA%E7%94%A8%E3%81%AE%E4%BB%A3%E7%A2%BA%E6%84%8F%E7%AF%80%E5%AD%A6%E4%BE%9B%E3%80%82)
 
-请求回调是一种重要的设计模式，它在LangChain中得到了广泛应用。随着AI技术的不断发展，请求回调在构建复杂AI系统中的应用将会变得更加广泛和深入。同时，开发人员需要不断学习和提高技能，以应对不断变化的技术挑战。
-
-## 9. 附录：常见问题与解答
-
-Q: 请求回调有什么优缺点？
-A: 请求回调的优点是它使得跨步通信变得更加直观和高效。缺点是它可能导致回调地狱（Callback Hell）问题，即过多的回调嵌套导致代码难以理解和维护。
-
-Q: 请求回调有什么替代方案？
-A: 请求回调的一些替代方案包括Promises、async/await、消息队列等。这些技术都可以在多个步骤之间传递和处理信息，但是它们的实现方式和语法可能有所不同。
-
-Q: 如何避免请求回调的常见问题？
-A: 若要避免请求回调的常见问题，建议遵循以下几点：
-
-1. 尽量保持回调链的简洁，避免过多嵌套。
-2. 使用Promises、async/await等技术来简化回调代码。
-3. 保持回调函数的目的和功能清晰明确。
-4. 对于复杂的回调链，可以考虑使用中间件或其他设计模式。
-
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
+1. 在线课程：有许多在线课程可以帮助你学习LangChain编程，例如 Coursera（[https://www.coursera.org/](https://www.coursera.org/%EF%BC%89)）和 Udemy（[https://www.udemy.com/](https://www.udemy.com/%EF%BC%89)）上的课程。](https://www.udemy.com/%EF%BC%89%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9A%EF%BC%9
