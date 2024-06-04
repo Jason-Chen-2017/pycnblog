@@ -203,4 +203,4 @@ Flink 提供了多种方式来配置集群资源,包括:
 
 1. **配置文件**: 在 `flink-conf.yaml` 文件中,可以配置 TaskManager 的数量、每个 TaskManager 的 Task Slot 数量等参数。
 
-2. **命令行参数**: 在启动 Flink 集群时,可以通过命令行参数{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+2. **命令行参数**: 在启动 Flink 集群时,可以通过命令行参数

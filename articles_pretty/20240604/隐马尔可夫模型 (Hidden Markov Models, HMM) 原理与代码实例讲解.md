@@ -163,4 +163,4 @@ A: 隐马尔可夫模型的训练通常是通过Baum-Welch算法（也称为EM�
 Q: 隐马尔可夫模型如何进行预测？
 A: 隐马尔可夫模型的预测通常是通过维特比算法来进行的。维特比算法可以求出最有可能产生观察序列的状态序列。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

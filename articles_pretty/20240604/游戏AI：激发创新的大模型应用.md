@@ -89,4 +89,4 @@ env.close()
 
 答：你可以用游戏AI来控制游戏中的NPC，创建一个与玩家互动的环境。你也可以用游戏AI来模拟复杂的系统，例如交通、经济、生态系统等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

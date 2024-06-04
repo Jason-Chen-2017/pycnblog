@@ -249,4 +249,4 @@ AI代理可应用于智慧农业的多个环节,主要包括:
 ### 6.2 作物管理
 
 - **生长预测**:基于作物模型,预测未来生长状况,为管理决策提供依据
-- **病{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+- **病

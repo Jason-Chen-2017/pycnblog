@@ -203,4 +203,4 @@ public class PageRankVertexCompute extends BasicComputation<LongWritable, Double
     private static final double MASS = (1.0 - DAMPING_FACTOR);
 
     @Override
-    public void compute(Vertex{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+    public void compute(Vertex

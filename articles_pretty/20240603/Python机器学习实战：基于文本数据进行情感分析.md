@@ -186,4 +186,4 @@ sigmoid函数的作用是将线性函数的输出值映射到(0, 1)区间,可以
 对于线性可分的二分类问题,SVM的目标函数可以表示为:
 
 $$\begin{aligned}
-&\min_{\vec{w}, b} \frac{1{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+&\min_{\vec{w}, b} \frac{1

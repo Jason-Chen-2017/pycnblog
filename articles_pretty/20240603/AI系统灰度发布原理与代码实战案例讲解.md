@@ -275,4 +275,4 @@ python app.py
 
 3. **Envoy**
 
-   Envoy 是一个开源的边缘代理和通信总线,类似于 Nginx,但更加现代化和云原生。它提供了丰富的流量管理功能,包括灰度发布、金丝雀发布、故障注入等。Envoy 可以与 Istio 等服务网格集成,也可以单独{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+   Envoy 是一个开源的边缘代理和通信总线,类似于 Nginx,但更加现代化和云原生。它提供了丰富的流量管理功能,包括灰度发布、金丝雀发布、故障注入等。Envoy 可以与 Istio 等服务网格集成,也可以单独

@@ -75,4 +75,4 @@ Python的scikit-learn库提供了多种朴素贝叶斯的实现，包括Gaussian
 
 对于连续特征，一种常见的做法是假设特征值服从某种分布，例如正态分布。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

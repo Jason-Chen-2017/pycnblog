@@ -77,4 +77,4 @@ Mahout是一个强大的机器学习库，它已经在许多大型公司和项�
 2. 问题：我如何在Hadoop上运行Mahout算法？
    答：你可以使用Mahout提供的命令行工具来运行算法。具体的命令参数可以参考Mahout的官方文档。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

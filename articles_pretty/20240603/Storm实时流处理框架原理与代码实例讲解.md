@@ -137,4 +137,4 @@ Storm在实际中有很多应用场景，例如：
 3. **问题：如何控制Storm的处理速度？**
    答：可以通过定义Spout和Bolt的并行度来控制处理速度。并行度是指一个Spout或Bolt的执行实例的数量。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

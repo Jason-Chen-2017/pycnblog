@@ -137,4 +137,4 @@ BERTje模型的预训练过程首先需要构建一个高质量的荷兰语语�
 
 1. 将预训练好的BERTje模型作为初始化模型。
 2. 根据下游任务的需求,在BERTje模型的输出层添加一个新的输出层。
-3. 使用下游任务的{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+3. 使用下游任务的

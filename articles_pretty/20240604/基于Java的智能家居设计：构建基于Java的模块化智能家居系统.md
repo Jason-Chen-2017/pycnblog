@@ -228,4 +228,4 @@ $$
 
 其中,$y_t$为时间$t$时的观测值,$c$为常数项,$\phi_1,\ldots,\phi_p$为自回归参数,$\theta_1,\ldots,\theta_q$为移动平均参数,$\epsilon_t$为白噪声序列。
 
-假设我们要对某家庭的用电量数据进行分{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+假设我们要对某家庭的用电量数据进行分

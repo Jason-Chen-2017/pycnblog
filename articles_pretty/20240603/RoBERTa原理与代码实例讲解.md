@@ -222,4 +222,4 @@ RoBERTa作为一种通用的预训练语言模型,可以广泛应用于各种自
 
 ### 6.5 其他应用
 
-除了上述典型任务外,RoBERTa还可以应用于语义相似度计算、关系抽取、事件抽取{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+除了上述典型任务外,RoBERTa还可以应用于语义相似度计算、关系抽取、事件抽取

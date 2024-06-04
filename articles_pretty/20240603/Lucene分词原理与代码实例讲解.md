@@ -219,4 +219,4 @@ Lucene采用了倒排索引等优化方法，分词性能较好。但是对于�
 
 ### 9.4 Lucene如何实现停用词过滤？
 
-可以通过自定义一个Analyzer，重载getStopWords()方法，返回停用词列表。也可以在TokenFilter中进行停用词过滤，如St{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+可以通过自定义一个Analyzer，重载getStopWords()方法，返回停用词列表。也可以在TokenFilter中进行停用词过滤，如St

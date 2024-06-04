@@ -155,4 +155,4 @@ $$
 
 重复类似的更新过程,最终Q值会收敛到最优值,得到最优策略。
 
-### 4{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+### 4

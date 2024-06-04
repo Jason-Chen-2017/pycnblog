@@ -110,4 +110,4 @@ A: 对于不均衡的数据集，我们可以使用torch.utils.data的WeightedRa
 
 A: 对于复杂的数据预处理流程，我们可以使用torchvision库，它提供了一些用于图像处理的工具和预处理操作。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

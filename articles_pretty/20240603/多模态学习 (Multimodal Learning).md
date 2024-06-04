@@ -91,4 +91,4 @@ y_pred = gmm.predict(X_new)
 3. 问题：如何评价多模态学习的发展前景？
    答：多模态学习作为一种新兴的机器学习方法，具有广阔的应用前景和研究潜力。我们期待通过深度学习和大数据等新技术，进一步提高多模态学习的性能和鲁棒性。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

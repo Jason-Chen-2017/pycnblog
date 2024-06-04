@@ -177,4 +177,4 @@ model = Net()
 
 # 定义损失函数和优化器
 criterion = nn.MSELoss()
-optimizer = optim.RMSprop(model.parameters(), lr=0.01, alpha=0.9, eps=1e-8, weight_decay=0, momentum=0{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+optimizer = optim.RMSprop(model.parameters(), lr=0.01, alpha=0.9, eps=1e-8, weight_decay=0, momentum=0

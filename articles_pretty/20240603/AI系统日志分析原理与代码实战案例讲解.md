@@ -207,4 +207,4 @@ anomaly_scores = norm.pdf(X, loc=mu, scale=sigma)
 
 # 设置阈值并标记异常
 threshold = 0.001
-data['anomaly'] = (anomaly_scores < threshold).astype{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+data['anomaly'] = (anomaly_scores < threshold).astype

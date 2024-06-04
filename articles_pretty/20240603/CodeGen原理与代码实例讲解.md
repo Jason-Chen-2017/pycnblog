@@ -253,4 +253,4 @@ if __name__ == '__main__':
 
 `css/styles.css.j2`:
 
-```css{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+```css

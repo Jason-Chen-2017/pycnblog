@@ -152,4 +152,4 @@ $$\Phi(x) = [\kappa(x, x_1), \kappa(x, x_2), \ldots, \kappa(x, x_n)]^T$$
 
 最大均值差异(Maximum Mean Discrepancy, MMD)是一种常用的领域差异度量,它基于核方法,计算两个分布的均值嵌入之间的距离。
 
-对于{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+对于

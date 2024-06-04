@@ -293,4 +293,4 @@ HDFS提供了基于Web的用户界面,可以直观地查看HDFS集群状态、�
 
 ### 7.3 HDFS监控工具
 
-为了监控HDFS集群的运行状态,可以{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+为了监控HDFS集群的运行状态,可以

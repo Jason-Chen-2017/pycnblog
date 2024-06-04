@@ -208,4 +208,4 @@ zookeeper-watcher-demo
         └── java
             └── com
                 └── example
-                    └── ConfigCenterServer{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+                    └── ConfigCenterServer

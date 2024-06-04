@@ -313,4 +313,4 @@ combined_data = pd.merge(housing_data, neighborhood_data, on='区域')
 分组运算是数据分析中一个非常重要的操作,它可以帮助我们按照某些条件对数据进行分组,并对每个组进行聚合运算。
 
 ```python
-# 按'区域'列分组,并计算每个区{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+# 按'区域'列分组,并计算每个区

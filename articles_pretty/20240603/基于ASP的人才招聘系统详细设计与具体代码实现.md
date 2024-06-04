@@ -280,4 +280,4 @@ public class ResumeParser
         // 提取教育经历
         var educations = annotation.Get(typeof(Annotation.SentencesAnnotation))
             .SelectMany(s => s.Get(typeof(Annotation.MentionsAnnotation)))
-            .Where(m => m.NerTag == "{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+            .Where(m => m.NerTag == "

@@ -130,4 +130,4 @@ for epoch in range(num_epochs):
 
 答：对话系统可以用在许多场景，例如客户服务、个人助手、情感陪伴等。只要是需要和用户进行交互的场景，都可以使用对话系统。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

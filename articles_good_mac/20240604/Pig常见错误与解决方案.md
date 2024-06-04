@@ -242,4 +242,4 @@ user002,sports,5
 
 ## 6.实际应用场景
 
-Pig被广泛应{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+Pig被广泛应

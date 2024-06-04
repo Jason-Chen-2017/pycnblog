@@ -157,4 +157,4 @@ V^{\pi_{0}}(s) \leq V^{\pi_{1}}(s) \leq \cdots \leq V^{\pi_{k}}(s) \leq \cdots \
 $$
 又因为值函数有上界$V^*$,所以这个序列必定收敛。设收敛到的策略为$\pi_{\infty}$,那么:
 $$
-V{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+V

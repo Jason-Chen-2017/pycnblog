@@ -139,4 +139,4 @@ Storm Bolt在许多实际应用场景中都有广泛的应用，例如：
 
 答：Storm提供了一种机制，可以保证数据的至少一次处理。当Bolt处理数据成功时，它可以调用`OutputCollector.ack()`方法，这样Storm就会知道这个数据已经被成功处理。如果Bolt没有调用`ack()`方法，Storm会认为这个数据处理失败，会重新发送给Bolt进行处理。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

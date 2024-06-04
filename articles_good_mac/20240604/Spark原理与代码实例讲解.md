@@ -267,4 +267,4 @@ Spark SQL模块提供了结构化数据处理能力,支持使用SQL语句查询�
 
 - IntelliJ IDEA: 具有良好的Scala插件支持,可以方便地编写和调试Spark应用程序。
 - PyCharm: 适用于使用Python开发Spark应用程序。
-- Zeppelin Notebook: 一种基于Web的{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+- Zeppelin Notebook: 一种基于Web的

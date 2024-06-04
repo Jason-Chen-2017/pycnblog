@@ -215,4 +215,4 @@ def train(num_episodes):
             if random.uniform(0, 1) < EPSILON:
                 action = random.choice(ACTIONS)  # 探索
             else:
-                action = np.argmax(Q[state])  # 利用{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+                action = np.argmax(Q[state])  # 利用

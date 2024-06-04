@@ -112,4 +112,4 @@ Q: 如何理解文本匹配任务？
 
 A: 文本匹配任务的目标是判断两段文本在语义上是否相似。具体来说，给定两段文本，模型需要输出一个判断结果，表示这两段文本在语义上的相似度。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

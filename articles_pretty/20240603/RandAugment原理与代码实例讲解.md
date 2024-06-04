@@ -244,4 +244,4 @@ RandAugment作为一种自动数据增强策略,已被广泛应用于各种计�
 
 ### 6.2 目标检测
 
-目标检测旨在在图像或视频中定位和识别感兴趣{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+目标检测旨在在图像或视频中定位和识别感兴趣

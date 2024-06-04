@@ -136,4 +136,4 @@ CEP在实际中有很多应用场景，例如：
 
 答：提高CEP的效率的方法有很多，例如优化事件模式的定义，减少不必要的事件检测，使用高效的事件处理算法等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -191,4 +191,4 @@ $$PR(i)=\frac{1-d}{N}+d\sum_{j\in M(i)}\frac{PR(j)}{L(j)}$$
 
 其中$PR(i)$是节点$i$的PageRank值,$M(i)$是指向节点$i$的节点集合,$L(j)$是节点$j$的出度,$d$是阻尼系数(通常取0.85),$N$是图形中节点的总数。
 
-### 4.3 社{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+### 4.3 社

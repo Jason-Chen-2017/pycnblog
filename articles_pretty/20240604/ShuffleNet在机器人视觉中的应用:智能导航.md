@@ -197,4 +197,4 @@ class ChannelShuffle(nn.Module):
         
         # 重排x的通道,使每个新组包含来自所有原始组的通道
         x = x.view(batch, self.groups, channels_per_group, height, width)
-        x = x.transpose({"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+        x = x.transpose(

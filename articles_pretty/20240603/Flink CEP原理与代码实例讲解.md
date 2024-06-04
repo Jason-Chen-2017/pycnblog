@@ -140,4 +140,4 @@ Q: Flink CEP 可以处理无界数据流吗？
 
 A: 是的，Flink CEP 可以处理无界数据流。在处理无界数据流时，我们需要注意状态的管理，以防止状态无限制地增长。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

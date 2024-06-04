@@ -269,4 +269,4 @@ x_watermarked = embed_watermark_blackbox(model, watermark_set)
 
 GhostNet和对抗水印技术在以下场景具有广泛的应用前景:
 
-1.{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+1.

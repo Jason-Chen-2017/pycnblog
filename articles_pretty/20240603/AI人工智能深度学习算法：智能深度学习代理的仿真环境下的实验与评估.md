@@ -111,4 +111,4 @@ $$\nabla_\theta J(\theta) = \mathbb{E}_{\tau\sim\pi_\theta} \left[ \sum_{t=0}^T 
    5. 最小化值函数损失$L^{VF}(\phi)=\mathbb{E}_{s_t\sim\mathcal{D}} \left[ (V_\phi(s_t)-V_t^{targ})^2 \right]$，其中$V_t^{targ}=\sum_{t'=t}^{T-1} \gamma^{t'-t}r_{t'}$；
 3. end for
 
-PPO引入了重要性采样和裁剪技巧，在保证单调性的同时控制策略更新幅度，有效提升了训练的样本效率和优化稳定性。此外，PPO还支持并行采样和GPU加速{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+PPO引入了重要性采样和裁剪技巧，在保证单调性的同时控制策略更新幅度，有效提升了训练的样本效率和优化稳定性。此外，PPO还支持并行采样和GPU加速

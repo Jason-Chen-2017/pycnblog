@@ -134,4 +134,4 @@ Q: DeepLab和GAN的结合适用于哪些场景？
 
 A: DeepLab和GAN的结合适用于需要高精度图像分割的场景，例如医疗图像分割和自动驾驶。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

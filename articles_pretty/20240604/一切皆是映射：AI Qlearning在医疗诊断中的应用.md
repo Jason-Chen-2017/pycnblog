@@ -117,4 +117,4 @@ Q: Q学习的学习率和折扣因子应该如何设置？
 
 A: 学习率和折扣因子的设置取决于具体的问题和环境。一般来说，学习率应该设置为一个较小的值，例如0.1或0.01，以保证学习过程的稳定性。折扣因子通常设置为一个接近1的值，例如0.9或0.99，以使得智能体更关注未来的奖励。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

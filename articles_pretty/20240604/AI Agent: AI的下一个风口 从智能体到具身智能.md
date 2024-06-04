@@ -123,4 +123,4 @@ env.close()
 
 答：具身智能的实现主要依赖于强化学习的方法。强化学习是一种机器学习方法，它的目标是通过与环境的交互来学习最优的行动策略。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

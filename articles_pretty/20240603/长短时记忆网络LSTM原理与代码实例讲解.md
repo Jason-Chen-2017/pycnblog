@@ -189,4 +189,4 @@ def generate_data(num_samples=1000):
     y = X[:, -1]
     X = X[:, :-1]
     X = torch.from_numpy(X).float()
-    y = torch.from_numpy(y).{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+    y = torch.from_numpy(y).

@@ -236,4 +236,4 @@ print(gcd(10, 15)) # 输出: 5
 
 ### 6.1 代码自动补全和代码片段生成
 
-在IDE(集成开发环境){"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+在IDE(集成开发环境)

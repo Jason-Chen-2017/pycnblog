@@ -273,4 +273,4 @@ for i, (name, sim) in enumerate(matches):
 
 1. **安全与监控**: 在机场、银行、政府机构等场所,人脸识别可以用于身份验证、访问控制和监控,提高安全性和效率。
 
-2. **社交媒体**: 社交媒{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+2. **社交媒体**: 社交媒

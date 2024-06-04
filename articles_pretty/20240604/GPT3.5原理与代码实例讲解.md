@@ -95,4 +95,4 @@ GPT-3.5是当前NLP领域的最新成果，它在许多任务上都表现出强�
 
    可以通过调整温度参数来控制生成的文本的质量。温度越高，生成的文本越随机；温度越低，生成的文本越确定。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -267,4 +267,4 @@ Akash Network是一个去中心化的云计算平台,用户可以在上面部署
 
 ### 8.2 可扩展性问题有待进一步解决
 
-虽然Cosmos在可扩展性方面已经做了很多尝试,但与传统的中心化系统相比,其性能{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+虽然Cosmos在可扩展性方面已经做了很多尝试,但与传统的中心化系统相比,其性能

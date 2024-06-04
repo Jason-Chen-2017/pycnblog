@@ -205,4 +205,4 @@ b_i=\begin{bmatrix}
 0.3\\
 0.4
 \end{bmatrix}$$
-$$W_{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+$$W_

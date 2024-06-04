@@ -242,4 +242,4 @@ public static void main(String[] args) throws Exception {
 
 1. **Mapper**:
    - 继承自`Mapper<LongWritable, Text, Text, IntWritable>`
-   - `map`方法接收一行文本作为输入,使用`{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+   - `map`方法接收一行文本作为输入,使用`

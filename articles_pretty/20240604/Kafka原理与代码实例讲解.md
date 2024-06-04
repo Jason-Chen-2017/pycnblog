@@ -271,4 +271,4 @@ public class ConsumerExample {
         Properties props = new Properties();
         props.put("bootstrap.servers", "localhost:9092");
         props.put("group.id", "test-group");
-        props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+        props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer

@@ -171,4 +171,4 @@ $$L_G = -\mathbb{E}_{z \sim p_z}[D(G(z))]$$
 
 - 判别器 D 不再输出概率,而是输出一个实数值,称为评分 (score)。
 - 判别器损失 $L_D$ 的目标是最大化真实样本的评分和生成样本的评分之差。
-- 生成器损失 $L_G$ 的{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+- 生成器损失 $L_G$ 的

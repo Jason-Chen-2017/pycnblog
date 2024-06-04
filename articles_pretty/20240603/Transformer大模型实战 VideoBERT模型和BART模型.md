@@ -129,4 +129,4 @@ $$
 
 $$
 \begin{aligned}
-\beta_{ji} &= \text{softmax}\left(\frac{t_j^T W_t v_i}{\{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+\beta_{ji} &= \text{softmax}\left(\frac{t_j^T W_t v_i}{\

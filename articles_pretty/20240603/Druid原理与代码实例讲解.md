@@ -151,4 +151,4 @@ Druid在许多实际应用场景中发挥了重要作用，例如：
 - Q: Druid的性能如何？
 - A: Druid在处理大规模、高并发、实时数据分析方面，表现出了卓越的性能。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -270,4 +270,4 @@ HBase二级索引在实际应用中有着广泛的应用场景,下面列举了�
 
 ### 6.1 物联网数据分析
 
-在物联网领域,需要存储和分析大量的传感器数据。这些数据{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+在物联网领域,需要存储和分析大量的传感器数据。这些数据

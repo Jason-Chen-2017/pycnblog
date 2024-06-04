@@ -139,4 +139,4 @@ Q: Presto元数据服务在哪些场景中有应用？
 
 A: Presto元数据服务在许多大数据场景中都有应用。例如，在数据仓库中，我们可以使用Presto元数据服务来管理和查询海量的数据。在数据分析中，我们可以使用Presto元数据服务来快速定位到需要分析的数据。在数据挖掘中，我们可以使用Presto元数据服务来提高数据挖掘的效率。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

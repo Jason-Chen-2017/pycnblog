@@ -200,4 +200,4 @@ $$s.t. \quad \sum_{i=1}^N \alpha_i y_i = 0, \quad \alpha_i \geq 0, \quad i=1,2,.
 求解对偶问题得到最优的$\alpha$,然后可以得到原问题的解:
 
 $$w = \sum_{i=1}^N \alpha_i y_i x_i$$
-$$b = y_j - \sum_{i=1}^N \alpha_i y_i (x_i \cdot{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+$$b = y_j - \sum_{i=1}^N \alpha_i y_i (x_i \cdot

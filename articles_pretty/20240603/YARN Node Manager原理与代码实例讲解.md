@@ -262,4 +262,4 @@ NodeManager运行在Linux环境中,因此熟练掌握Linux命令行工具对于�
 
 ### 7.6 开源社区和文档
 
-Apache Hadoop项目拥有活跃的开源社区和详细的文档,是学习和解决问题的宝贵资源。可以通过邮件列表、问答网站和官方文档获取帮助和最新信息。{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+Apache Hadoop项目拥有活跃的开源社区和详细的文档,是学习和解决问题的宝贵资源。可以通过邮件列表、问答网站和官方文档获取帮助和最新信息。

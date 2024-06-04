@@ -44,4 +44,4 @@ $$ I = L \cdot (k_d \cdot (N \cdot L) + k_s \cdot (R \cdot V)^n) $$
 
 在AIGC的学习和实践中，可能会遇到一些问题。这里，我列出了一些常见的问题和解答，希望对你有所帮助。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -127,4 +127,4 @@ L --> C
 
 总之，人工智能正在为航空航天插上腾飞的翅膀。一切皆是映射，让我们用 AI 的力量，映射出航空航天的美好未来。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -296,4 +296,4 @@ Winlogbeat可用于收集Windows系统和应用日志,Auditbeat收集Linux审计
 - Beats中文社区: https://beats.elastic.co.cn/
 - Beats视频教程: https://www.elastic.co/videos/
 - Beats最佳实践: https://www.elastic.co/guide/en/beats/libbeat/master/best-practices.html
-- Beats性能优化: https://www.elastic.co/{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+- Beats性能优化: https://www.elastic.co/

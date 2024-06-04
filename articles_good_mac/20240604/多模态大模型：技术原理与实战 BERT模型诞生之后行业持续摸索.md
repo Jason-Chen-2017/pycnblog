@@ -141,4 +141,4 @@ $$\mathcal{L}_{NCE}=-\mathbb{E}_{(x,y)\sim D}\left[\log \frac{\exp (f(x)^T f(y)/
 
 当然，多模态大模型的发展也面临着诸多挑战，如计算资源需求的提升、跨模态对齐与融合的难度加大等。这需要研究者们在算法、模型、系统等多个层面进行持续的创新和优化。相信通过学术界和工业界的共同努力，多模态大模型必将在智能化应用中扮演越来越重要的角色，为人类社会的发展贡献力量。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

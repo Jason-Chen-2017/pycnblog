@@ -184,4 +184,4 @@ $$
 
 ### 5.1 系统架构
 
-我们的电子商务系统将采用事件驱动的{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+我们的电子商务系统将采用事件驱动的

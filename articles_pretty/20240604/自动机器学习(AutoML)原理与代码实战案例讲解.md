@@ -179,4 +179,4 @@ print('Accuracy: ', accuracy)
 ### 9.3 AutoML有哪些局限性？
 AutoML的主要局限性是计算资源的消耗。因为AutoML需要进行大量的模型训练和评估，所以它需要大量的计算资源。此外，AutoML也需要大量的时间，尤其是在大规模的数据集上。因此，对于一些需要快速响应的应用，AutoML可能不是最佳选择。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

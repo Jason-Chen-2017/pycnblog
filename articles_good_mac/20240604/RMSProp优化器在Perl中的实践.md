@@ -209,4 +209,4 @@ RMSProp优化算法在实际应用中被广泛使用,尤其是在深度学习领
 
 ### 6.1 计算机视觉
 
-在计算机视觉任务中,如图像分类、目标检测、语义分割等,RMSProp优化算法被广泛使用。例如,在著名的ImageNet图像分{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+在计算机视觉任务中,如图像分类、目标检测、语义分割等,RMSProp优化算法被广泛使用。例如,在著名的ImageNet图像分

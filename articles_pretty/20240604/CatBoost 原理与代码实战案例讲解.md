@@ -136,4 +136,4 @@ $$e(c_k) = \frac{\sum_{i \in D_k} y_i + \alpha}{\sum_{i \in D_k} 1 + \beta}$$
 
 在实际应用中,CatBoost还会对编码值进行排序,以提高模型的准确性。具体来说,对于每个特征值$c_k$,CatBoost会计算它的排序后的编码值$e'(c_k)$,定义如下:
 
-$$e'(c_k) ={"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+$$e'(c_k) =

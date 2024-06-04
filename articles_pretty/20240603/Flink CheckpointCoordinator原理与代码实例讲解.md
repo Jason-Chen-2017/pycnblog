@@ -222,4 +222,4 @@ Flink的Checkpoint机制可以应用于多种实际场景,例如:
 
 ### 6.1 实时数据处理
 
-在实时数据处理中,数据源源不断地产生,需要Flink实时地进行处理。但在处理过程中可能会遇到各种故障,如果没有容错机制,可能会导致数据丢失或重复处理。Flink的Checkpoint机制可以定期地保存算子状态,当作业失败时可以从最近的Checkpoint恢复,避{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+在实时数据处理中,数据源源不断地产生,需要Flink实时地进行处理。但在处理过程中可能会遇到各种故障,如果没有容错机制,可能会导致数据丢失或重复处理。Flink的Checkpoint机制可以定期地保存算子状态,当作业失败时可以从最近的Checkpoint恢复,避

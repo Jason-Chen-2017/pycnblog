@@ -153,4 +153,4 @@ $$e_{t,i} = \text{score}(s_{t-1}, h_i)$$
 
 通过注意力机制,解码器能够动态地关注源句子中与当前目标词相关的部分,从而更好地捕捉长距离依赖关系,提高翻译质量。
 
-## 5. {"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+## 5. 

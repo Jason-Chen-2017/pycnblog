@@ -202,4 +202,4 @@ class ImageTokenizer(nn.Module):
 在`ImageTokenizer`类中,我们实现了Image Tokenization和Position Embedding的功能。
 
 - `__init__`方法中,我们初始化了一些重要的参数,如图像大小、patch大小和嵌入维度。
-- `patch_embed`是一个卷积层,用于将每{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+- `patch_embed`是一个卷积层,用于将每

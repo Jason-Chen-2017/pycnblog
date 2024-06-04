@@ -144,4 +144,4 @@ P(x) &= \sum_{\mathbf{z} \in \mathcal{Z}(x)} P(x, \mathbf{z}) \\
      &= \sum_{\mathbf{z} \in \mathcal{Z}(x)} \prod_{t=1}^n P(x_{z_t} | x_{\overline{z}_t})
 \end{aligned}$$
 
-其中,$\mathcal{Z}(x)$表示所有可能的因式分解顺序,$\mathbf{z}$是一个长度为$n$的向量,表示一种特定的因式分解顺序。$z_t$表示在顺序$\mathbf{z}$中位于第$t$位的token的索引,$\overline{z}_t$表示除了$z_t$之外的{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+其中,$\mathcal{Z}(x)$表示所有可能的因式分解顺序,$\mathbf{z}$是一个长度为$n$的向量,表示一种特定的因式分解顺序。$z_t$表示在顺序$\mathbf{z}$中位于第$t$位的token的索引,$\overline{z}_t$表示除了$z_t$之外的

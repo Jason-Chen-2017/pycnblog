@@ -207,4 +207,4 @@ $$
 ```java
 // 创建数据表
 HTableDescriptor orderTableDescriptor = new HTableDescriptor(TableName.valueOf("order_table"));
-HColumnDescriptor orderColumn{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+HColumnDescriptor orderColumn

@@ -154,4 +154,4 @@ $$\text{Attention}(q, K, V) = \sum_{i=1}^n \alpha_i v_i$$
 
 在实际应用中,Transformer通常采用多头注意力机制(Multi-Head Attention),即将查询、键、值向量先经过不同的线性变换,分别计算多个注意力输出,再将它们拼接起来,从而捕捉不同子空间的注意力信息。具体计算公式如下:
 
-$$\{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+$$\

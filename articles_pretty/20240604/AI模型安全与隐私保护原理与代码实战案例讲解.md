@@ -178,4 +178,4 @@ AI模型安全和隐私保护虽然侧重点不同,但它们是相互关联的�
 
 对抗性攻击的目标是生成对抗样本$x^{adv}$,使得模型$f$在$x^{adv}$上的输出与真实标签$y$不同,即$f(x^{adv}) \neq y$。
 
-常见的对抗性攻击方法包{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+常见的对抗性攻击方法包

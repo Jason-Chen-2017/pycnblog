@@ -210,4 +210,4 @@ class ReplayBuffer:
 # 训练 DQN Agent
 def train_dqn(agent, env, n_episodes=2000, max_t=1000, eps_start=1.0, eps_end=0.01, eps_decay=0.995):
     scores = []
-    scores_window = deque({"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+    scores_window = deque(

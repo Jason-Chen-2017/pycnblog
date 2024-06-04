@@ -122,4 +122,4 @@ AI Agents在许多实际场景中都有应用，例如：
 3. **Q: AI Agent有哪些应用？**
    A: AI Agents在许多领域都有应用，例如自动驾驶汽车、智能家居和客户服务等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

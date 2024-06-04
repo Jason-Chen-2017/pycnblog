@@ -213,4 +213,4 @@ for (SearchHit hit : hits) {
 }
 ```
 
-这段代码创建了一个`SearchRequest`对象,并使用`SearchSourceBuilder{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+这段代码创建了一个`SearchRequest`对象,并使用`SearchSourceBuilder

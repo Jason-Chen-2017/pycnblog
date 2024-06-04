@@ -190,4 +190,4 @@ def simulated_annealing(cities, T0, alpha, L, max_iter):
     
     T = T0
     for iter in range(max_iter):
-        for i in range({"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+        for i in range(

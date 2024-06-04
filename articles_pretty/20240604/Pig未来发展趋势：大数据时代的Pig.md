@@ -165,4 +165,4 @@ Pig不仅支持经典的数据挖掘算法，如PageRank和协同过滤，还能
 
 未来，Pig必将在大数据时代扮演更加重要的角色，为海量数据的高效处理和价值挖掘提供强大的支撑。通过不断创新与发展，Pig将助力企业和组织从大数据中获取更多洞察，驱动业务增长与决策优化，推动大数据技术的普及与应用。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -215,4 +215,4 @@ with torch.no_grad():
         img_features = encoder(img)
         noise = torch.randn(1, noise_dim)
         gen_caption = generator(img_features, noise)
-        ...  # 计算评估{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+        ...  # 计算评估

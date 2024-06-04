@@ -230,4 +230,4 @@ AI代理可以提供智能化的客户服务,如自动问答、个性化理财�
 
 ### 7.4 开源项目
 
-- FinRL: {"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+- FinRL: 

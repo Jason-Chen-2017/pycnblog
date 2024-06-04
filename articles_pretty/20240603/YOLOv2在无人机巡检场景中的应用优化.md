@@ -235,4 +235,4 @@ def detect(model, img):
 
 ### 6.3 铁路检测
 
-无人机可用于铁路线路、桥梁等设施的检测。YOLOv2{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+无人机可用于铁路线路、桥梁等设施的检测。YOLOv2

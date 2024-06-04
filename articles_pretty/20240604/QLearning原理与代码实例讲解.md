@@ -146,4 +146,4 @@ $$Q^{\pi^*}(s, a) = 0.8 \times (-1 + \gamma \max_{a'} Q^{\pi^*}(s', a')) + 0.2 \
 
 Q-Learning算法的核心是通过不断更新Q函数来逼近真实的 $Q^{\pi^*}$。在每个时刻 $t$,智能体处于状态 $s_t$,执行行为 $a_t$,获得奖励 $r_{t+1}$ 并观察到下一状态 $s_{t+1}$。Q函数根据以下更新规则进行迭代:
 
-$$Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha \left[ r_{t+1} + \gamma \max_{a'}Q(s_{t+1}, a') - Q(s_t, a_t) \{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+$$Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha \left[ r_{t+1} + \gamma \max_{a'}Q(s_{t+1}, a') - Q(s_t, a_t) \

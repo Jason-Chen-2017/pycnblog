@@ -277,4 +277,4 @@ public class PaperService {
                 type,
                 ThreadLocalRandom.current()
                                  .ints(count, 0, questionRepository.countByType(type))
-                                 .mapToObj({"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+                                 .mapToObj(

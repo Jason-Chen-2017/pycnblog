@@ -94,4 +94,4 @@ last_hidden_state = outputs.last_hidden_state
 
    答：你可以查看Hugging Face的Transformers库，它提供了许多预训练的模型和工具，包括GPT模型。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -296,4 +296,4 @@ $$
 
 ### 5.2 数据准备
 
-首先,我们需要生成一些示例数据。在这个{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+首先,我们需要生成一些示例数据。在这个

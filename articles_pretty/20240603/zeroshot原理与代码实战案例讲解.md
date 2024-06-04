@@ -168,4 +168,4 @@ class LinearMap(nn.Module):
 
 # 定义损失函数和优化器  
 criterion = nn.MSELoss()  
-model = LinearMap(2048{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+model = LinearMap(2048

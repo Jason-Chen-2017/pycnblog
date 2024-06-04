@@ -267,4 +267,4 @@ MLlib提供了TrainValidationSplit和CrossValidator等工具,可以用于模型�
 
 目前MLlib中大部分算法都是基于批处理学习的,对增量学习的支持较弱。不过一些算法如逻辑回归、线性回归等支持在线训练模式,可以用于增量学习。
 
-作者: 禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者: 禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

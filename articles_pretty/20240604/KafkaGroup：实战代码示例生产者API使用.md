@@ -261,4 +261,4 @@ Kafka生产者API广泛应用于各种场景,包括但不限于:
 
 4. **事件驱动架构**: 在事件驱动架构中,生产者将事件发布到Kafka,消费者订阅并响应这些事件。
 
-5. **物联网(IoT)**: 将来自各种物联网设备的数据流通过Kafka生{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+5. **物联网(IoT)**: 将来自各种物联网设备的数据流通过Kafka生

@@ -173,4 +173,4 @@ class CNN(nn.Module):
    - 通过第一个全连接层`self.fc1`,应用ReLU激活函数。
    - 随机失活`self.dropout2`,防止过拟合。
    - 通过第二个全连接层`self.fc2`,输出维度为10(对应MNIST数据集的10个类别)。
-   - 最后计算log_softmax,用于交叉熵损失`F.log_softmax`{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+   - 最后计算log_softmax,用于交叉熵损失`F.log_softmax`

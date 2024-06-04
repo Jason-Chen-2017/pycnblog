@@ -149,4 +149,4 @@ Reptile算法作为一种简单而高效的元学习算法，已经在许多任�
 
 答：Reptile算法的主要局限性是它依赖于任务之间的相似性。如果任务之间的差异过大，它的性能可能会下降。此外，尽管Reptile算法相比其他元学习算法更简单，但它的复杂性仍然较高。在实际应用中，我们需要处理大量的任务和参数，这可能导致计算资源的浪费。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

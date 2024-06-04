@@ -210,4 +210,4 @@ class Encoder(nn.Module):
             nn.MaxPool2d(2, 2),
             nn.Conv2d(256, 512, 3, padding=1),
             nn.ReLU(),
-            nn.MaxPool2d(2, 2),{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+            nn.MaxPool2d(2, 2),

@@ -137,4 +137,4 @@ Q: AI有哪些应用？
 
 A: AI有很多应用，例如，搜索引擎，推荐系统，语音识别，图像识别，自动驾驶等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

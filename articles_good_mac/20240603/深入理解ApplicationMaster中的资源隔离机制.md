@@ -256,4 +256,4 @@ ApplicationMaster的资源隔离机制在实际应用中扮演着重要角色,�
 
 Apache Hadoop作为一种广泛使用的大数据处理框架,其核心组件YARN依赖于ApplicationMaster的资源隔离机制,确保多个MapReduce、Spark、Flink等作业能够公平地共享集群资源,并且相互隔离,避免相互影响。
 
-### {"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+### 

@@ -239,4 +239,4 @@ y_pred = model.predict(X_test)
 
 # 计算准确率
 accuracy = accuracy_score(y_test, y_pred)
-print("Accuracy:",{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+print("Accuracy:",
