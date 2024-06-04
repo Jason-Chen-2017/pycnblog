@@ -22,7 +22,6 @@ def check_similarity(text):
 
 
 def is_good_content(content):
-
     # 包含关键字：$$ 表示有公式，```表示有代码
     keywords = [
         "$",
@@ -62,7 +61,6 @@ def is_good_content(content):
     return flag1 or flag2
 
 
-
 def process_file(file_path, target_good_directory, target_draft_directory):
     with open(file_path, 'r') as f:
         lines = f.readlines()
@@ -74,16 +72,24 @@ def process_file(file_path, target_good_directory, target_draft_directory):
 
         length = len(content)
         line_count = len(cleaned_lines)
+        short_lines_count_ration = len([line for line in cleaned_lines if len(line) < 20]) / line_count
+        print(f'{short_lines_count_ration} {length} {line_count} {file_path}')
 
     # target_good_directory
-    if length >= 3600 and line_count >= 100 and is_good_content(content):
+    if (length >= 3600 and
+            line_count >= 150 and
+            short_lines_count_ration < 0.3 and
+            is_good_content(content)):
         file_name = os.path.basename(file_path)
         target_good_directory = os.path.join(target_good_directory, file_name)
         shutil.copy(file_path, target_good_directory)
         print("process_good_file:", target_good_directory)
 
     # target_draft_directory
-    if 2000 < length < 3600 and 80 < line_count < 100 and is_good_content(content):
+    if (2000 < length < 3600 and
+            80 < line_count < 150 and
+            short_lines_count_ration < 0.4 and
+            is_good_content(content)):
         file_name = os.path.basename(file_path)
         target_draft_directory = os.path.join(target_draft_directory, file_name)
         shutil.copy(file_path, target_draft_directory)
