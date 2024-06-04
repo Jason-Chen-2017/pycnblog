@@ -32,7 +32,7 @@ def is_good_content(content):
         "数学模型和公式",
         "项目实践",
         "实际应用场景",
-        # "工具和资源",
+        "工具和资源",
     ]
 
     keywords2 = [
@@ -44,7 +44,7 @@ def is_good_content(content):
         "Mathematical Model",
         "Project Practice",
         "Practical Application",
-        # "Tools and Resources",
+        "Tools and Resources",
     ]
 
     flag1 = True
@@ -72,28 +72,28 @@ def process_file(file_path, target_good_directory, target_draft_directory):
 
         length = len(content)
         line_count = len(cleaned_lines)
-        short_lines_count_ration = len([line for line in cleaned_lines if len(line) < 20]) / line_count
+        short_lines_count_ration = len([line for line in cleaned_lines if len(line) < 30]) / line_count
         print(f'{short_lines_count_ration} {length} {line_count} {file_path}')
 
     # target_good_directory
-    if (length >= 3600 and
-            line_count >= 150 and
-            short_lines_count_ration < 0.3 and
+    if (length >= 3000 and
+            line_count >= 120 and
+            short_lines_count_ration < 0.6 and
             is_good_content(content)):
         file_name = os.path.basename(file_path)
         target_good_directory = os.path.join(target_good_directory, file_name)
         shutil.copy(file_path, target_good_directory)
-        print("process_good_file:", target_good_directory)
+        # print("process_good_file:", target_good_directory)
 
     # target_draft_directory
-    if (2000 < length < 3600 and
-            80 < line_count < 150 and
-            short_lines_count_ration < 0.4 and
+    if (2000 < length < 3000 and
+            80 < line_count < 120 and
+            short_lines_count_ration < 0.6 and
             is_good_content(content)):
         file_name = os.path.basename(file_path)
         target_draft_directory = os.path.join(target_draft_directory, file_name)
         shutil.copy(file_path, target_draft_directory)
-        print("process_draft_file:", target_draft_directory)
+        # print("process_draft_file:", target_draft_directory)
 
 
 def find_articles(date):
