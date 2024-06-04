@@ -4,10 +4,10 @@ while true
 do
   echo "执行任务：auto make mc 时间：$(date +%Y-%m-%d_%H:%M:%S)"
 
-  make mc
+  make mci7
   sleep 60
 
-  make fc
+  make fci7
   sleep 10
 
   make gm
