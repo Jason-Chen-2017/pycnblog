@@ -86,7 +86,7 @@ def process_file(file_path, target_good_directory, target_draft_directory):
         # print("process_good_file:", target_good_directory)
 
     # target_draft_directory
-    if (2000 < length < 2500 and
+    if (1200 < length < 2500 and
             80 < line_count < 120 and
             short_lines_count_ration < 0.6 and
             is_good_content(content)):
