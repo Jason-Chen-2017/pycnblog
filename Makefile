@@ -28,6 +28,9 @@ gu:
 w:
 	./write_blog.sh &
 
+ws:
+	./write_start.sh &
+
 w1:
 	./write_blog1.sh &
 
