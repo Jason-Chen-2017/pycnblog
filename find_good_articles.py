@@ -33,7 +33,7 @@ def is_good_content(content):
         "数学模型和公式",
         "项目实践",
         "实际应用场景",
-        "工具和资源",
+        # "工具和资源",
     ]
 
     keywords2 = [
@@ -45,7 +45,7 @@ def is_good_content(content):
         "Mathematical Model",
         "Project Practice",
         "Practical Application",
-        "Tools and Resources",
+        # "Tools and Resources",
     ]
 
     flag1 = True
@@ -78,8 +78,8 @@ def process_file(file_path, target_good_directory, target_draft_directory):
 
 
     # target_good_directory
-    if (length >= 3000 and
-            line_count >= 120 and
+    if (length >= 1300 and
+            line_count >= 90 and
             short_lines_count_ration < 0.6 and
             is_good_content(content)):
         file_name = os.path.basename(file_path)
@@ -88,8 +88,8 @@ def process_file(file_path, target_good_directory, target_draft_directory):
         # print("process_good_file:", target_good_directory)
 
     # target_draft_directory
-    if (2000 < length < 3000 and
-            80 < line_count < 120 and
+    if (1000 < length < 1300 and
+            70 < line_count < 90 and
             short_lines_count_ration < 0.6 and
             is_good_content(content)):
         file_name = os.path.basename(file_path)
