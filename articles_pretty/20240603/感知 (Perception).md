@@ -224,4 +224,4 @@ import numpy as np
 # 读取图像
 img = cv2.imread('example.jpg')
 
-# 转换为{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+# 转换为

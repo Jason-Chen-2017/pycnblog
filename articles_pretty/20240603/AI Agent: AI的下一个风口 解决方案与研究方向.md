@@ -197,4 +197,4 @@ $$
 
 其中$\alpha$是学习率,用于控制新增信息对Q值的影响程度。
 
-Q-Learning算法不需要事先了解环境的转移概率和奖励函数,只需通过与环境的互动来逐步更新Q值,最终收敛到最优策略。它广泛应用于游{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+Q-Learning算法不需要事先了解环境的转移概率和奖励函数,只需通过与环境的互动来逐步更新Q值,最终收敛到最优策略。它广泛应用于游

@@ -230,4 +230,4 @@ output = gr.outputs.Label(num_top_classes=3)
 interface = gr.Interface(
     fn=get_similarity_scores,
     inputs=[image_input, text_input],
-    outputs=output{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+    outputs=output

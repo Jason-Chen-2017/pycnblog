@@ -67,3 +67,6 @@ hmi7:
 
 git_merge:
 	./git_merge_ubuntu.sh
+
+git_merge_m3:
+	./git_merge_m3.sh

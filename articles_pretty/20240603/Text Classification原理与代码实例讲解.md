@@ -223,4 +223,4 @@ class Attention(nn.Module):
    - PyTorch: 深度学习框架,提供了强大的文本处理功能。
    - TensorFlow: 另一个流行的深度学习框架,也支持NLP任务。
    - Hugging Face Transformers: 集成了多种预训练语言模型,提供了统一的API。
-   - scikit-learn: 机器学习框架{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+   - scikit-learn: 机器学习框架

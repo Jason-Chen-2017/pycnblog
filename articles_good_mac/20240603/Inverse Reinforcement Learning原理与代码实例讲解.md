@@ -217,4 +217,4 @@ class RewardModel(nn.Module):
         return reward
 
 # 最大熵逆强化学习算法
-def maxent_irl{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+def maxent_irl

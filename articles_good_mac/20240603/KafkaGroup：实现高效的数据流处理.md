@@ -271,4 +271,4 @@ streams.start();
 
 KafkaGroup作为一个高效的数据流处理框架,在许多领域都有广泛的应用场景,例如:
 
-1. **实时数据{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+1. **实时数据

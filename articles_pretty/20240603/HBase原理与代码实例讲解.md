@@ -285,4 +285,4 @@ public class HBaseExample {
         connection.close();
     }
 
-    public static void main(String[] args{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+    public static void main(String[] args

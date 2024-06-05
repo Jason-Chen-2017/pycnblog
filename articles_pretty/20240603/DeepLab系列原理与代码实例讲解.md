@@ -97,4 +97,4 @@ A：这取决于许多因素，包括训练数据的大小、模型的复杂度�
 
 A：是的，DeepLab模型可以用于视频分割。在处理视频时，可以将每一帧视为一个独立的图像进行处理，或者使用3D卷积来考虑时间维度。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

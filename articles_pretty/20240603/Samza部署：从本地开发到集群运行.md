@@ -109,4 +109,4 @@ public class SimpleSamzaTask implements StreamTask, InitableTask, WindowableTask
 
   A: 我们可以通过优化任务的并行度、调整资源分配策略、使用高效的序列化方式等方法来优化Samza的性能。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

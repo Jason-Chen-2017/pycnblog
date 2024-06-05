@@ -215,4 +215,4 @@ LangSmith可以应用于各种需要评估和验证LLM输出的场景,例如:
 
 1. **LangChain文档**: LangChain的官方文档提供了详细的API参考和使用示例,对于了解LangSmith的使用非常有帮助。可以访问 [https://python.langchain.com/en/latest/](https://python.langchain.com/en/latest/) 查看文档。
 
-2. **LangChain示例库**: LangChain提供了一个示例库,包含了各种使用场景的示例代码。这些示例可以帮助您快速上手LangSmith的使用。可以访问 [https://github.com/hwchase17/langchain-examples](https://github.com/hwchase17/langchain-examples) 查{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+2. **LangChain示例库**: LangChain提供了一个示例库,包含了各种使用场景的示例代码。这些示例可以帮助您快速上手LangSmith的使用。可以访问 [https://github.com/hwchase17/langchain-examples](https://github.com/hwchase17/langchain-examples) 查

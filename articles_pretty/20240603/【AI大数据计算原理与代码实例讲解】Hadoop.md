@@ -268,4 +268,4 @@ $$
 
 ### 4.2 MapReduce任务调度
 
-MapReduce任务调度器需要合理分配Map和Reduce任务到集群中的节点上运行,以实现负载均{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+MapReduce任务调度器需要合理分配Map和Reduce任务到集群中的节点上运行,以实现负载均

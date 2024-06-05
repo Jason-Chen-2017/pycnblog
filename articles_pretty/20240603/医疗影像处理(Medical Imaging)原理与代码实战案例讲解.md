@@ -228,4 +228,4 @@ $$r(u,v) = \frac{\sum_{x,y}[T(x,y)-\bar{T}][I(x-u,y-v)-\bar{I}(u,v)]}{\sqrt{\sum
 
 其中$\bar{T}$和$\bar{I}(u,v)$分别为模板和影像区域的灰度均值。
 
-对于每个位置$(u,v)$,计算$r(u,v)$,当$r(u,v)$超过预设阈值时,{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+对于每个位置$(u,v)$,计算$r(u,v)$,当$r(u,v)$超过预设阈值时,

@@ -137,4 +137,4 @@ LangChain提供了多种链组合算法,用于构建复杂的任务流程。以�
 4. **条件链(Conditional Chain)**: 这种链类型根据条件选择执行不同的子链,实现了基本的控制流逻辑。它适用于构建具有分支逻辑的任务流程。
 5. **自定义链**: LangChain还允许开发人员自定义链的行为,以满足特定的需求。
 
-通过组合不同类型的链,开发人员可以构建出复杂的AI应用程序。链的灵活性和可组合性是LangChain的一大优势,极大{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+通过组合不同类型的链,开发人员可以构建出复杂的AI应用程序。链的灵活性和可组合性是LangChain的一大优势,极大

@@ -246,4 +246,4 @@ Pulsar Producer在许多场景下都可以发挥作用,例如:
 
 1. **更高的吞吐量和更低的延迟**
 
-   随着实时数据处理场景的不断增加,对于更高的吞吐量和更低的延迟将是一个持续的需求。Pulsar Producer需要继续优化批{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+   随着实时数据处理场景的不断增加,对于更高的吞吐量和更低的延迟将是一个持续的需求。Pulsar Producer需要继续优化批

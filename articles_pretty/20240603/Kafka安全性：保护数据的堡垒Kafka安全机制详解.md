@@ -244,4 +244,4 @@ Kafka使用透明数据加密(TDE)技术来加密存储在磁盘上的数据文�
 
 假设我们有一个主密钥$K_m$和两个数据加密密钥$K_1$和$K_2$。加密和解密过程如下:
 
-1. 使用对称加密算法(如AES)和主密钥$K_m$加密数据加密密钥$K_1${"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+1. 使用对称加密算法(如AES)和主密钥$K_m$加密数据加密密钥$K_1$

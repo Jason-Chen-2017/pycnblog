@@ -238,4 +238,4 @@ X_encoded = vectorizer.fit_transform(X)
 
 # 保存特征数据和编码器
 import pickle
-pickle.dump{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+pickle.dump

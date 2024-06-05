@@ -237,4 +237,4 @@ Presto的源代码托管在Github上，仓库中除了代码外，还有一些�
 Github仓库地址：https://github.com/prestodb/presto
 
 ### 7.3 Presto社区
-Presto有{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+Presto有

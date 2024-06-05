@@ -80,4 +80,4 @@ A: 我们可以使用`array`函数创建数组，使用`map`函数创建映射�
 Q: 如何在SparkSQL中操作复杂数据类型？
 A: 我们可以使用内置的函数来操作复杂数据类型。例如，对于数组，我们可以使用`size`函数获取数组的大小，`element_at`函数获取指定位置的元素，`array_contains`函数检查数组是否包含指定元素等。对于映射，我们可以使用`map_keys`函数获取所有的键，`map_values`函数获取所有的值，`map_contains`函数检查映射是否包含指定的键等。对于结构体，我们可以使用`.`操作符获取指定字段的值。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -235,4 +235,4 @@ output_img = input_img.clone().detach().squeeze().permute(1, 2, 0)
 
 ### 6.2 图像/视频编辑
 
-图像风格迁移可以为图像或视频添加特殊的视觉效果和艺术风格,使其更加生动、富{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+图像风格迁移可以为图像或视频添加特殊的视觉效果和艺术风格,使其更加生动、富

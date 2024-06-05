@@ -159,4 +159,4 @@ $$\mathcal{L}_{\text{rec}} = \frac{1}{N} \sum_{i=1}^N \left\lVert (X_i - \hat{X}
 根据重建损失公式,我们可以计算出:
 
 $$\begin{aligned}
-\mathcal{L}_{\text{rec}} &= \frac{1}{2} \left( \left\lVert (X_1 - \hat{X}_1) \odot M_1 \right\rVert_1 + \left\lVert (X_2 - \hat{X}_2) \odot M_2 \right\{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+\mathcal{L}_{\text{rec}} &= \frac{1}{2} \left( \left\lVert (X_1 - \hat{X}_1) \odot M_1 \right\rVert_1 + \left\lVert (X_2 - \hat{X}_2) \odot M_2 \right\

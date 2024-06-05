@@ -122,4 +122,4 @@ A2：在深度学习模型的训练过程中，我们可以通过超参数优化
 
 A3：深度学习和机器学习的结合在许多实际应用场景中都有着广泛的应用，例如自动驾驶、医疗诊断、语音识别、图像识别等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

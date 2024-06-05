@@ -145,4 +145,4 @@ $$\begin{aligned}
 
 $$\mathcal{L}_\mathrm{finetune} = \mathbb{E}_{(s,a,r,s')\sim\mathcal{D}_t}\left[(Q(s,a;\theta) - y)^2\right]$$
 
-其中 $\mathcal{D}_t$ 表示目标环境的标注数据{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+其中 $\mathcal{D}_t$ 表示目标环境的标注数据

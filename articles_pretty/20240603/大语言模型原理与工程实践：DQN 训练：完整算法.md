@@ -205,4 +205,4 @@ for episode in range(num_episodes):
 
 上述代码中,我们首先定义了一个简单的全连接神经网络作为DQN网络,用于近似Q函数。然后定义了一个经验回放池`ReplayBuffer`,用于存储智能体与环境交互过程中的转移元组。
 
-在`DQNAgent`类中,我们实现了DQN算法的核心逻辑。`get_action`方法使用$\epsilon$-贪婪策略从评估网络输出的Q值中选择动作。`update`方法则负责从经验回放池中采样数据,计算目标Q值,并使用均方误差损失函数对评估网络进{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+在`DQNAgent`类中,我们实现了DQN算法的核心逻辑。`get_action`方法使用$\epsilon$-贪婪策略从评估网络输出的Q值中选择动作。`update`方法则负责从经验回放池中采样数据,计算目标Q值,并使用均方误差损失函数对评估网络进

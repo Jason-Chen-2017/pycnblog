@@ -176,4 +176,4 @@ graph LR
 $$
 \begin{aligned}
 Q(S, \text{右移}) &\leftarrow Q(S, \text{右移}) + \alpha \left[-1 + \gamma \max_{a'} Q(A, a') - Q(S, \text{右移})\right] \\
-&= 0 + 0.1 \left[-1 + 0.9 \times 0 - 0\right] \\{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+&= 0 + 0.1 \left[-1 + 0.9 \times 0 - 0\right] \\

@@ -183,4 +183,4 @@ class QLearningAgent:
         return np.argmax(self.q_table[int(state[0]), int(state[1])])
 ```
 
-在这个实现中,我们首先初始化一个Q表,用于存储每个状态-动作对的Q值。`choose_action`函数用于根据当前的$\epsilon$-贪婪策略选择动作。`learn`函数是Q-learning算法的核心部分,它通过不断的试错和更新Q表,来学习最优策略。最后,`get_policy`函数可以根据{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+在这个实现中,我们首先初始化一个Q表,用于存储每个状态-动作对的Q值。`choose_action`函数用于根据当前的$\epsilon$-贪婪策略选择动作。`learn`函数是Q-learning算法的核心部分,它通过不断的试错和更新Q表,来学习最优策略。最后,`get_policy`函数可以根据

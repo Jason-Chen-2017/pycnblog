@@ -243,4 +243,4 @@ with torch.no_grad():
     for data, target in test_loader:
         output = model(data)
         test_loss += criterion(output, target).item()
-        pred = output.{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+        pred = output.

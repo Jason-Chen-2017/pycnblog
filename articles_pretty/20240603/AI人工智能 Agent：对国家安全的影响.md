@@ -239,4 +239,4 @@ AI Agent技术仍在快速发展中,未来可期的趋势包括:
 
 5. **AI武器会不会失控危及人类?**
 
-   AI武器系{"msg_type":"generate_answer_finish","data":"","from_module":null,"from_unit":null}
+   AI武器系
