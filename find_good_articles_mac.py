@@ -32,7 +32,7 @@ def is_good_content(content):
         "数学模型和公式",
         "项目实践",
         "实际应用场景",
-        # "工具和资源",
+        "工具和资源",
     ]
 
     keywords2 = [
@@ -44,7 +44,7 @@ def is_good_content(content):
         "Mathematical Model",
         "Project Practice",
         "Practical Application",
-        # "Tools and Resources",
+        "Tools and Resources",
     ]
 
     flag1 = True
@@ -72,13 +72,14 @@ def process_file(file_path, target_good_directory, target_draft_directory):
 
         length = len(content)
         line_count = len(cleaned_lines)
-        short_lines_count_ration = len([line for line in cleaned_lines if len(line) < 30]) / line_count
+        short_lines_count_ration = len(
+            [line for line in cleaned_lines if len(line) < 30 and line.startswith('##')]) / line_count
         print(f'{short_lines_count_ration} {length} {line_count} {file_path}')
 
     # target_good_directory
     if (length >= 2500 and
-            line_count >= 120 and
-            short_lines_count_ration < 0.6 and
+            line_count >= 90 and
+            short_lines_count_ration < 0.5 and
             is_good_content(content)):
         file_name = os.path.basename(file_path)
         target_good_directory = os.path.join(target_good_directory, file_name)
@@ -87,8 +88,8 @@ def process_file(file_path, target_good_directory, target_draft_directory):
 
     # target_draft_directory
     if (1200 < length < 2500 and
-            80 < line_count < 120 and
-            short_lines_count_ration < 0.6 and
+            80 < line_count < 90 and
+            short_lines_count_ration < 0.5 and
             is_good_content(content)):
         file_name = os.path.basename(file_path)
         target_draft_directory = os.path.join(target_draft_directory, file_name)
