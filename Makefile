@@ -31,6 +31,13 @@ w:
 ws:
 	./write_start.sh &
 
+wchatglm:
+	./write_chatglm4.sh &
+
+wsophon:
+	./write_sophon.sh
+
+
 w1:
 	./write_blog1.sh &
 
