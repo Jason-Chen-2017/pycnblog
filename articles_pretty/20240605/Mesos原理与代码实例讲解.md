@@ -1,255 +1,250 @@
 # Mesos原理与代码实例讲解
 
 ## 1.背景介绍
-### 1.1 Mesos是什么
-Mesos是一个开源的分布式资源管理框架,它可以在集群中动态地共享资源,并将应用程序部署到共享节点池中。Mesos最初由加州大学伯克利分校的AMPLab开发,现在由Apache软件基金会维护。
 
-### 1.2 Mesos的发展历程
-- 2009年,Mesos项目在加州大学伯克利分校启动
-- 2011年,Twitter开始使用Mesos
-- 2013年,Mesos成为Apache孵化器项目
-- 2016年,Mesos成为Apache顶级项目
+在当今的云计算和大数据时代，资源管理和调度已经成为了一个关键的挑战。随着应用程序和服务的不断增加,以及基础设施的日益复杂,有效地管理和利用计算资源变得至关重要。Apache Mesos是一个开源的集群管理系统,旨在高效地共享和管理整个数据中心的资源。
 
-### 1.3 Mesos的优势
-- 可扩展性:Mesos可以轻松扩展到数万个节点
-- 容错性:Mesos使用ZooKeeper实现Master的高可用
-- 资源隔离:Mesos使用Linux Container实现不同框架之间的资源隔离
-- 多框架支持:Mesos支持多种不同的大数据处理框架,如Spark、Hadoop、MPI等
-- 丰富的调度策略:Mesos提供了DRF、Bin Packing等多种资源调度算法
+Mesos的核心理念是将数据中心视为一个共享的资源池,并提供一种通用的资源管理和调度机制。它允许不同的框架(Frameworks)在同一个集群上运行,并动态地分配资源。这种设计使得Mesos能够支持各种不同的工作负载,如大数据处理、微服务、批处理作业等。
+
+Mesos的设计灵感来自于谷歌的Borg系统,但它采用了一种更加分散和可扩展的架构。它的主要目标是提供一个可靠、高效和可扩展的资源管理平台,以满足现代数据中心的需求。
 
 ## 2.核心概念与联系
-### 2.1 Master
-Master是Mesos的核心组件,负责管理整个集群的资源和任务调度。Master运行在独立的机器上,通过选举产生,可以避免单点故障。
 
-### 2.2 Agent
-Agent运行在集群的各个节点上,负责管理本节点的资源,如CPU、内存等,并向Master汇报。当用户提交任务时,Master会将任务分配给合适的Agent执行。
+### 2.1 Mesos架构
 
-### 2.3 Framework
-Framework是基于Mesos开发的应用程序或者计算框架,如Spark、Hadoop等。每个Framework包含两个主要组件:
-- Scheduler:注册到Master,并获取资源来运行任务
-- Executor:在Agent上运行,执行具体的任务
+Mesos的架构由以下几个核心组件组成:
 
-### 2.4 Task
-Task是Framework提交给Mesos的最小执行单元,每个Task都会被分配到一个Agent上运行。Task可以是一个短期的作业,如Spark的一个stage;也可以是一个长期运行的服务,如HDFS的DataNode。
+1. **Mesos Master**:集群的中心管理节点,负责接收资源请求,并根据调度策略分配资源给不同的框架。
+2. **Mesos Agent**:运行在每个节点上的代理程序,负责管理节点上的任务执行和资源隔离。
+3. **Framework**:运行在Mesos集群上的应用程序或服务,它们通过调度器(Scheduler)向Mesos Master请求资源。
+4. **Executor**:由框架启动的进程,用于执行任务并管理其生命周期。
 
-### 2.5 Offer
-Offer是Agent发给Framework的一个资源邀约,包含Agent上可用的资源,如CPU、内存等。Framework可以决定是否接受Offer,如果接受,则在Offer上分配Task。
+这些组件通过高效的资源协商协议进行交互,实现了资源的动态分配和任务的调度执行。
 
-### 2.6 核心概念关系图
 ```mermaid
-graph TD
-  A[Master] -->|资源分配| B[Framework] 
-  A -->|任务调度| C[Agent]
-  B -->|注册| A
-  B -->|提交Task| A
-  C -->|汇报资源| A
-  C -->|发送Offer| B
-  C -->|执行Task| D[Executor]
+graph LR
+    subgraph Mesos Cluster
+        Master[Mesos Master]
+        Agent1[Mesos Agent]
+        Agent2[Mesos Agent]
+        Agent3[Mesos Agent]
+        
+        Master-->|Offers Resources|Agent1
+        Master-->|Offers Resources|Agent2
+        Master-->|Offers Resources|Agent3
+        
+        subgraph Framework1
+            Scheduler1[Scheduler]
+            Executor1[Executor]
+        end
+        
+        subgraph Framework2
+            Scheduler2[Scheduler]
+            Executor2[Executor]
+        end
+        
+        Scheduler1-->|Requests Resources|Master
+        Scheduler2-->|Requests Resources|Master
+        
+        Agent1-->|Launches Tasks|Executor1
+        Agent2-->|Launches Tasks|Executor2
+    end
 ```
 
+### 2.2 资源模型
+
+Mesos采用了一种通用的资源模型,可以描述和管理各种类型的资源,包括CPU、内存、磁盘、网络等。这种资源模型使得Mesos能够支持各种不同的工作负载,并实现资源的高效利用。
+
+每个资源都由一个名称和一个标量值来表示,例如`cpus:2`表示2个CPU核心。Mesos还支持资源的细粒度划分,例如将CPU核心划分为更小的份额。
+
+### 2.3 两层调度器
+
+Mesos采用了一种两层调度器的设计,分为Mesos Master和框架调度器(Scheduler)。
+
+- **Mesos Master**:负责跨框架的资源分配,根据资源供给情况向不同的框架发送资源offers。
+- **框架调度器**:根据应用程序的需求,决定是否接受Mesos Master提供的资源offers,并启动相应的任务。
+
+这种设计使得Mesos能够支持多种调度策略,并允许框架根据自身的需求实现定制化的调度算法。
+
 ## 3.核心算法原理具体操作步骤
-### 3.1 资源分配算法
-Mesos使用DRF(Dominant Resource Fairness)算法来实现多资源的公平分配。DRF算法的基本思想是:
-1. 对于每个用户,找到其任务所占资源份额最大的一类资源,称为主导资源
-2. 将资源分配给主导资源占比最小的用户,直到其主导资源占比与其他用户相同
-3. 重复步骤2,直到所有资源分配完毕
 
-例如,考虑两个用户,每个用户需要<cpu,mem>资源:
-- 用户A:<1,4>
-- 用户B:<3,1> 
+### 3.1 资源协商协议
 
-对于用户A,内存是主导资源;对于用户B,CPU是主导资源。DRF会将资源分配给用户B,直到两个用户的主导资源占比相同。最终分配结果:
-- A:<1/3,4/7>
-- B:<2/3,3/7>
+Mesos的核心算法是基于资源协商协议(Resource Negotiation Protocol)实现的。该协议定义了Mesos Master、Mesos Agent和框架调度器之间的交互过程,用于动态地分配和管理资源。
 
-### 3.2 任务调度算法
-Mesos默认使用Bin Packing算法来实现任务的调度,目标是最小化Agent的数量。具体步骤如下:
-1. 将Agent按照可用资源从大到小排序
-2. 从排序后的Agent列表中,找到第一个可以满足Task资源需求的Agent
-3. 如果找到,则将Task分配给该Agent;否则,等待新的Agent加入或者资源释放
+协商过程如下:
 
-例如,集群中有三个Agent,可用资源如下:
-- Agent1:<4,4>  
-- Agent2:<2,8>
-- Agent3:<6,2>
+1. **资源发现**:Mesos Agent会周期性地向Mesos Master报告其管理的资源情况,包括可用的CPU、内存、磁盘等。
+2. **资源提供**:Mesos Master根据收集到的资源信息,将可用资源打包成资源offers,并向注册的框架调度器发送。
+3. **资源请求**:框架调度器根据应用程序的需求,决定是否接受Mesos Master提供的资源offers。如果接受,则向Mesos Master发送资源请求。
+4. **资源分配**:Mesos Master收到资源请求后,将相应的资源分配给请求的框架调度器。
+5. **任务启动**:框架调度器收到分配的资源后,会在相应的Mesos Agent节点上启动executor进程,执行实际的任务。
 
-当前有两个Framework,每个Framework有两个Task,资源需求如下:
-- Framework1:Task1<1,1>,Task2<2,1>
-- Framework2:Task3<1,4>,Task4<2,2>
+这种协商过程确保了资源的动态分配和高效利用,同时也提供了框架级别的隔离和安全性。
 
-调度过程:
-1. 将Agent按照可用资源排序:Agent3>Agent1>Agent2
-2. Task1分配给Agent3,剩余资源<5,1>
-3. Task2无法分配,因为没有足够的内存
-4. Task3分配给Agent1,剩余资源<3,3>  
-5. Task4分配给Agent1,剩余资源<1,1>
+### 3.2 资源隔离
 
-最终分配结果:
-- Agent1:Task3,Task4
-- Agent2:空闲 
-- Agent3:Task1
+为了确保不同框架之间的资源隔离,Mesos采用了操作系统级别的容器技术,如Linux Cgroups和Namespaces。每个任务都会被限制在一个独立的容器中运行,以防止资源的过度使用或干扰。
 
-### 3.3 容错机制
-Mesos使用ZooKeeper实现Master和Framework的容错。
-- 对于Master,Mesos使用Hot Standby模式,通过选举产生Active Master。当Active Master失效时,Standby Master会接管集群。
-- 对于Framework,Mesos支持Framework实现自己的容错机制。例如,Spark使用Lineage和Checkpoint来实现容错。
+Mesos Agent负责创建和管理这些容器,并监控任务的资源使用情况。如果某个任务超出了分配的资源限制,Mesos Agent会终止该任务,以保护整个系统的稳定性。
+
+### 3.3 容错和恢复
+
+为了提高系统的可靠性和容错能力,Mesos采用了多种机制:
+
+1. **主备Mesos Master**:Mesos支持多个Mesos Master实例,其中一个作为主节点,其他作为备节点。当主节点发生故障时,备节点可以自动接管,确保集群的正常运行。
+2. **重新调度**:如果某个任务由于节点故障或其他原因而失败,框架调度器可以向Mesos Master请求重新调度该任务。
+3. **检查点(Checkpoint)**:Mesos Master和框架调度器会定期将状态信息写入持久存储,以便在发生故障时能够恢复。
+
+这些机制确保了Mesos集群的高可用性和容错能力,能够在发生故障时快速恢复,最大限度地减少服务中断。
 
 ## 4.数学模型和公式详细讲解举例说明
-### 4.1 DRF算法模型
-DRF的目标是最大化每个用户的主导资源份额。假设系统有$R$类资源,第$i$类资源的总量为$C_i$。共有$U$个用户,第$u$个用户分配到第$i$类资源的量为$A_{u,i}$。定义用户$u$在资源$i$上的份额为:
 
-$$D_{u,i}=\frac{A_{u,i}}{C_i}$$
+在Mesos的资源管理和调度过程中,涉及到一些数学模型和算法,用于优化资源利用率和任务调度效率。
 
-用户$u$的主导资源份额为:
+### 4.1 资源模型
 
-$$s_u=\max_{i=1}^R D_{u,i}$$
+Mesos采用了一种通用的资源模型,将资源表示为一个向量:
 
-DRF算法的目标是最大化最小主导资源份额,即:
+$$\vec{r} = (r_1, r_2, \ldots, r_n)$$
 
-$$\max \min_{u=1}^U s_u$$
+其中,每个$r_i$表示一种资源的数量,如CPU核心数、内存大小等。这种表示方式使得Mesos能够统一管理和调度各种类型的资源。
 
-例如,考虑一个系统,包含9个CPU和18GB内存,有两个用户:
-- 用户A:Task需求<1 CPU,4 GB>
-- 用户B:Task需求<3 CPU,1 GB>
+在资源分配过程中,Mesos需要确保分配的资源不超过集群的总资源量。设$\vec{R}$为集群的总资源向量,$\vec{r}_1, \vec{r}_2, \ldots, \vec{r}_m$为已分配给$m$个框架的资源向量,则必须满足:
 
-则资源总量为:$C_{cpu}=9$,$C_{mem}=18$。
+$$\sum_{i=1}^{m} \vec{r}_i \leq \vec{R}$$
 
-假设系统为用户A分配3个Task,为用户B分配2个Task,则:
-- 用户A:$A_{A,cpu}=3$,$A_{A,mem}=12$,主导资源份额$s_A=\frac{12}{18}=\frac{2}{3}$ 
-- 用户B:$A_{B,cpu}=6$,$A_{B,mem}=2$,主导资源份额$s_B=\frac{6}{9}=\frac{2}{3}$
+### 4.2 资源调度算法
 
-可见,此时两个用户的主导资源份额相等,满足DRF的公平性要求。
+Mesos支持多种资源调度算法,用于决定如何将资源分配给不同的框架。常见的算法包括:
 
-### 4.2 Bin Packing模型
-Bin Packing是一个经典的组合优化问题,形式化描述如下:
-给定$N$个物品,每个物品有重量$w_i$,以及$M$个箱子,每个箱子有容量$c_j$。目标是用最少的箱子装下所有物品。
+1. **先到先服务(First Come, First Served, FCFS)**:按照资源请求的时间顺序进行分配,最先发出请求的框架优先获得资源。
+2. **公平共享(Fair Sharing)**:根据框架的权重,按比例分配资源,确保每个框架都能获得公平的资源份额。
+3. **优先级调度(Priority Scheduling)**:根据框架的优先级进行调度,高优先级的框架优先获得资源。
 
-用决策变量$x_{ij}$表示物品$i$是否装入箱子$j$:
+以公平共享算法为例,设$w_i$为第$i$个框架的权重,则该框架应获得的资源份额为:
 
-$$
-x_{ij}=
-\begin{cases}
-1, & 物品i装入箱子j \\
-0, & 否则
-\end{cases}
-$$
+$$\vec{r}_i = \frac{w_i}{\sum_{j=1}^{m} w_j} \vec{R}$$
 
-则Bin Packing可以表示为如下的整数规划模型:
+Mesos Master会根据这个公式计算每个框架的资源份额,并尽可能接近这个目标值进行资源分配。
 
-$$
-\begin{align*}
-\min \quad & \sum_{j=1}^M y_j \\
-\mbox{s.t.} \quad & \sum_{i=1}^N w_ix_{ij} \le c_jy_j, \forall j=1,\ldots,M \\
-& \sum_{j=1}^M x_{ij} = 1, \forall i=1,\ldots,N \\
-& y_j \in \{0,1\}, \forall j=1,\ldots,M \\
-& x_{ij} \in \{0,1\}, \forall i=1,\ldots,N, j=1,\ldots,M
-\end{align*}
-$$
+### 4.3 资源过度使用检测
 
-其中,$y_j$表示箱子$j$是否被使用。第一个约束表示每个箱子的容量限制,第二个约束表示每个物品只能装入一个箱子。
+为了防止任务过度使用资源,Mesos采用了一种基于统计学的异常检测算法。
 
-在Mesos中,Agent对应箱子,Task对应物品,Bin Packing算法用于将Task分配到最少的Agent上,从而提高集群的资源利用率。
+设$\vec{x}_t$为时间$t$时某个任务的资源使用量向量,Mesos会计算该任务在一段时间内的资源使用量均值$\vec{\mu}$和方差$\vec{\sigma}^2$:
 
-## 5.项目实践：代码实例和详细解释说明
-下面通过一个简单的Python代码示例,演示如何使用Mesos的API实现一个自定义的Framework。
+$$\vec{\mu} = \frac{1}{T} \sum_{t=1}^{T} \vec{x}_t$$
+
+$$\vec{\sigma}^2 = \frac{1}{T} \sum_{t=1}^{T} (\vec{x}_t - \vec{\mu})^2$$
+
+如果某个时间点$t_0$的资源使用量$\vec{x}_{t_0}$超出了$\vec{\mu} + k\vec{\sigma}$的范围(其中$k$是一个常数,通常取值为3或更大),则认为该任务出现了资源过度使用的情况。
+
+Mesos Agent会监控每个任务的资源使用情况,一旦检测到异常,就会终止该任务,以保护集群的稳定性。
+
+## 5.项目实践:代码实例和详细解释说明
+
+为了更好地理解Mesos的工作原理,我们来看一个简单的示例项目。该项目包含一个简单的Python框架,用于在Mesos集群上运行Word Count任务。
+
+### 5.1 环境准备
+
+首先,我们需要安装和配置Mesos集群。可以参考官方文档进行安装和配置。
+
+### 5.2 框架实现
+
+我们的Python框架包含两个主要组件:调度器(Scheduler)和执行器(Executor)。
+
+**调度器(Scheduler)**
+
+调度器负责向Mesos Master请求资源,并在获得资源后启动执行器进程。以下是一个简单的调度器实现:
 
 ```python
-from mesos.interface import Scheduler
+import sys
+from threading import Thread
+
+import mesos.interface
 from mesos.interface import mesos_pb2
+from mesos.native import MesosSchedulerDriver
 
-class MyScheduler(Scheduler):
-
-    def registered(self, driver, framework_id, master_info):
-        print("Framework registered with id: {}".format(framework_id))
+class WordCountScheduler(mesos.interface.Scheduler):
+    def __init__(self, executor):
+        self.executor = executor
 
     def resourceOffers(self, driver, offers):
         for offer in offers:
-            print("Received offer: {}".format(offer))
-            # 检查offer的资源是否满足task需求
-            if self.is_offer_sufficient(offer):
-                # 创建task
-                task = self.create_task(offer) 
-                # 接受offer,并在offer上启动task
-                driver.launchTasks(offer.id, [task])
-            else:
-                # 拒绝offer
-                driver.declineOffer(offer.id)
+            tasks = []
+            task = self.create_task(offer)
+            tasks.append(task)
 
-    def statusUpdate(self, driver, update):
-        print("Task {} is in state {}".format(update.task_id, update.state))
-
-    def is_offer_sufficient(self, offer):
-        # 检查offer的cpu和mem是否满足task需求
-        cpus = self.get_resource(offer.resources, 'cpus')
-        mem = self.get_resource(offer.resources, 'mem')
-        return cpus >= TASK_CPU and mem >= TASK_MEM
+            driver.launchTasks(offer.id, tasks)
 
     def create_task(self, offer):
-        # 创建一个Mesos Task
         task = mesos_pb2.TaskInfo()
         task.task_id.value = str(uuid.uuid4())
         task.slave_id.value = offer.slave_id.value
-        task.name = "MyTask"
+        task.name = "Word Count"
+        task.executor.MergeFrom(self.executor)
 
-        # 设置task的资源需求
         cpus = task.resources.add()
         cpus.name = "cpus"
         cpus.type = mesos_pb2.Value.SCALAR
-        cpus.scalar.value = TASK_CPU
+        cpus.scalar.value = 1
 
         mem = task.resources.add()
         mem.name = "mem"
         mem.type = mesos_pb2.Value.SCALAR
-        mem.scalar.value = TASK_MEM
+        mem.scalar.value = 128
 
-        # 设置task的命令
-        task.command.value = "echo hello && sleep 10"
         return task
 
-    def get_resource(self, res_list, name):
-        # 从offer的资源列表中获取特定资源的数量
-        for res in res_list:
-            if res.name == name:
-                return res.scalar.value
-        return 0.0
+if __name__ == "__main__":
+    executor = mesos_pb2.ExecutorInfo()
+    executor.executor_id.value = "WordCount"
+    executor.command.value = "python word_count_executor.py"
 
-if __name__ == '__main__':
-    # 配置Framework信息
-    framework = mesos_pb2.FrameworkInfo()
-    framework.user = ""
-    framework.name = "MyFramework"
-    framework.checkpoint = True
-
-    # 创建Scheduler和MesosSchedulerDriver
-    scheduler = MyScheduler()
-    driver = MesosSchedulerDriver(
-        scheduler, framework, "zk://localhost:2181/mesos"
-    )
-
-    # 启动Framework
-    status = driver.run()
-    if status == mesos_pb2.DRIVER_STOPPED:
-        exit_code = 0
-    else:
-        exit_code = 1
-    driver.stop()
+    framework = WordCountScheduler(executor)
+    driver = MesosSchedulerDriver(framework, sys.argv[1], sys.argv[2])
+    driver.run()
 ```
 
-代码说明:
-1. 自定义一个Scheduler类`MyScheduler`,继承自`mesos.interface.Scheduler`,并实现了几个关键方法:
-   - `registered()`:当Framework成功注册到Mesos时被调用
-   - `resourceOffers()`:当Framework收到Offer时被调用,在此方法中决定是否接受Offer,并创建Task
-   - `statusUpdate()`:当Task状态发生变化时被调用
-2. 在`resourceOffers()`中,首先检查Offer的资源是否满足Task的需求,如果满足,则创建一个Task,并在Offer上启动该Task;否则拒绝Offer。
-3. 在`create_task()`中,创建一个Mesos Task对象,设置Task的资源需求和命令,并返回。
-4. 在`is_offer_sufficient()`中,检查Offer的CPU和内存资源是否满足Task的需求。
-5. 在`get_resource()`中,从Offer的资源列表中获取特定类型资源的数量。
-6. 在`main`函数中,首先配置Framework的信息,然后创建Scheduler对象和MesosSchedulerDriver对象,最后启动Framework。
+这个调度器实现了`Scheduler`接口的`resourceOffers`方法,用于接收Mesos Master发送的资源offers。当收到offers时,它会创建一个Word Count任务,并将其启动在相应的Mesos Agent节点上。
 
-以上就是一个简单的Mesos Framework示例,通过这个示例,我们可以了解Mesos Framework的基本编写方法和流程。在实际应用中,我们还需要考虑更多的因素,如容错、数据本地性等,以构建一个健壮高效的分布式系统。
+**执行器(Executor)**
 
-## 6.实际应用场景
-Mesos作为一个通用的资源管理平台,在实际生产环境中有广泛的应用,下面列举几个典型的应用场景。
+执行器负责运行实际的Word Count任务。以下是一个简单的执行器实现:
 
-### 6.1 大数据处理
-Mesos可以很好地支持各种大数据处理
+```python
+import sys
+import mesos.native
+
+from mesos.interface import mesos_pb2
+
+class WordCountExecutor(mesos.interface.Executor):
+    def launchTask(self, driver, task):
+        def run_task(task_data):
+            with open("input.txt", "r") as f:
+                content = f.read()
+            words = content.split()
+            word_count = len(words)
+            print(f"Word count: {word_count}")
+
+        thread = Thread(target=run_task, args=(task,))
+        thread.start()
+
+    def frameworkMessage(self, driver, message):
+        pass
+
+if __name__ == "__main__":
+    print("Starting Word Count Executor")
+    driver = mesos.native.MesosExecutorDriver(WordCountExecutor())
+    sys.exit(0 if driver.run() == mesos_pb2.Status.DRIVER_STOPPED else 1)
+```
+
+这个执行器实现了`Executor`接口的`launchTask`方法,用于执行实际的Word Count任务。在这个示例中,任务会读取一个名为`input.txt`的文件,统计其中单词的数量,并将结果打印出来。
+
+### 5.3 运行示例
+
+要运行这个示例,我们需要先启动Mesos Master和Mesos Agent,然后运行调度器:
+
+```bash
+# 
