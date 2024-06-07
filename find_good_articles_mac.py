@@ -74,6 +74,7 @@ def process_file(file_path, target_good_directory, target_draft_directory):
         line_count = len(cleaned_lines)
         short_lines_count_ration = len(
             [line for line in cleaned_lines if len(line) < 30 and line.startswith('##')]) / line_count
+
         print(f'{short_lines_count_ration} {length} {line_count} {file_path}')
 
     # target_good_directory
