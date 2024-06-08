@@ -2,122 +2,183 @@
 
 ## 1.背景介绍
 
-在过去几年中,图神经网络(Graph Neural Networks, GNNs)作为一种新兴的深度学习架构,引起了广泛关注和研究。图神经网络旨在高效地处理图结构化数据,并在诸多领域展现出卓越的性能,包括社交网络分析、计算机视觉、自然语言处理、生物信息学等。
+在过去的几年中,图神经网络(Graph Neural Networks, GNNs)作为一种新兴的深度学习架构,已经引起了广泛关注和研究。传统的神经网络模型如卷积神经网络(CNNs)和循环神经网络(RNNs)主要用于处理规则的网格结构数据(如图像和序列数据),但在处理非规则结构化数据(如社交网络、分子结构、交通网络等)时存在局限性。
 
-图是一种通用的数据结构,可以自然地表示实体之间的关系和相互作用。在现实世界中,许多复杂系统都可以用图来建模,例如社交网络中的朋友关系、分子结构中的原子相互作用、交通网络中的道路连接等。传统的机器学习算法和深度神经网络通常假设输入数据是规则的欧几里得结构(如网格或序列),难以直接处理这种非规则的图结构数据。
-
-图神经网络则提供了一种有效的解决方案,能够直接对图数据进行端到端的学习,捕捉图中节点之间的拓扑结构和属性信息。与传统的图算法相比,图神经网络具有更强的表示能力和泛化性,可以自动提取图数据中的高层次模式和特征。
+图神经网络被设计用于直接对图结构数据进行建模和推理。图是一种通用的数据结构,可以自然地表示许多现实世界中的关系数据,如社交网络中的好友关系、化学分子中的原子键合关系、交通网络中的道路连接关系等。因此,图神经网络在诸多领域展现出巨大的应用前景,如社交网络分析、计算机视觉、自然语言处理、生物信息学等。
 
 ## 2.核心概念与联系
 
-在深入探讨图神经网络的原理之前,我们需要先了解一些基本概念。
-
 ### 2.1 图的表示
 
-图 $G = (V, E)$ 由一组节点 $V$ 和一组边 $E$ 组成,其中每条边 $e_{ij} \in E$ 连接两个节点 $v_i$ 和 $v_j$。图可以是有向的或无向的,带权重或无权重。
+在介绍图神经网络之前,我们首先需要了解图的数学表示形式。一个图 $G = (V, E)$ 由一组节点(顶点) $V$ 和一组边 $E$ 组成,其中每条边 $e_{ij} \in E$ 连接一对节点 $v_i$ 和 $v_j$。
 
-在图神经网络中,每个节点 $v_i$ 通常都与一个特征向量 $\mathbf{x}_i$ 相关联,表示该节点的属性信息。边 $e_{ij}$ 也可以携带特征向量 $\mathbf{e}_{ij}$,描述两个节点之间的关系。
+在实践中,我们通常使用邻接矩阵 $A$ 或邻接表来表示图的拓扑结构。对于有权图,每条边还会关联一个权重 $w_{ij}$。除了拓扑结构,节点和边往往还会携带其他属性信息,如节点特征向量 $x_v$ 和边特征向量 $x_e$。
 
-### 2.2 邻居聚合
+### 2.2 图神经网络的基本思想
 
-图神经网络的核心思想是利用邻居节点的信息来更新当前节点的表示。这个过程称为邻居聚合(Neighbor Aggregation),可以形式化表示为:
+图神经网络的核心思想是学习如何在图上传播和聚合邻居节点的表示,从而获得每个节点的更高层次的表示。具体来说,图神经网络通过迭代地更新每个节点的表示,使其不仅包含自身的信息,还包含了其邻居节点的聚合信息。
 
-$$h_i^{(k+1)} = \gamma^{(k)}\left(h_i^{(k)}, \square_{j \in \mathcal{N}(i)} \phi^{(k)}\left(h_i^{(k)}, h_j^{(k)}, \mathbf{e}_{ij}\right)\right)$$
+在图神经网络中,每个节点的表示是通过一个神经网络层(如全连接层或卷积层)来计算的,该层的输入包括当前节点的表示以及来自其邻居节点的聚合信息。通过多层迭代计算,节点的表示会不断被更新和丰富,最终获得高层次的节点表示,用于下游任务如节点分类、链接预测等。
 
-其中:
+### 2.3 消息传递范式
 
-- $h_i^{(k)}$ 是节点 $v_i$ 在第 $k$ 层的隐藏表示
-- $\mathcal{N}(i)$ 是节点 $v_i$ 的邻居集合
-- $\phi^{(k)}$ 是消息函数(Message Function),用于计算来自邻居节点的消息
-- $\square$ 是消息聚合函数(Message Aggregation Function),用于汇总所有邻居消息
-- $\gamma^{(k)}$ 是节点更新函数(Node Update Function),用于更新节点的隐藏表示
+消息传递范式(Message Passing Paradigm)是图神经网络的核心计算模式。在该范式下,每个节点根据自身特征和邻居节点的特征,生成一个"消息"。然后,每个节点将收集到的来自所有邻居的消息进行聚合,并根据聚合结果更新自身的表示。这个过程在图神经网络的多层中重复进行,使得节点表示不断被丰富和提炼。
 
-通过多层邻居聚合,图神经网络可以逐步捕捉更大范围内的结构信息和属性信息,最终学习到节点或整个图的表示。
+消息传递范式可以形式化地表示为:
 
-### 2.3 图卷积
+$$
+m_{v\leftarrow u}^{(k)} = M^{(k)}\left(h_v^{(k-1)}, h_u^{(k-1)}, x_{vu}\right)\\
+m_v^{(k)} = \square_{u\in\mathcal{N}(v)}m_{v\leftarrow u}^{(k)}\\
+h_v^{(k)} = U^{(k)}\left(h_v^{(k-1)}, m_v^{(k)}\right)
+$$
 
-除了邻居聚合,图卷积(Graph Convolution)是另一种常见的图神经网络操作。它借鉴了传统卷积神经网络中的卷积操作,旨在提取局部拓扑结构和特征信息。
+其中 $m_{v\leftarrow u}^{(k)}$ 表示在第 $k$ 层从节点 $u$ 传递到节点 $v$ 的消息, $M^{(k)}$ 是消息函数, $h_v^{(k)}$ 是节点 $v$ 在第 $k$ 层的表示, $U^{(k)}$ 是节点更新函数, $\square$ 是消息聚合函数(如求和、均值等), $\mathcal{N}(v)$ 是节点 $v$ 的邻居集合。
 
-图卷积的基本思想是将节点的特征向量与其邻居节点的特征向量进行加权求和,从而生成新的节点表示。具体来说,对于节点 $v_i$,其图卷积操作可以表示为:
-
-$$h_i^{(k+1)} = \sigma\left(\mathbf{W}^{(k)} \cdot \mathrm{CONCAT}\left(\mathbf{x}_i, \square_{j \in \mathcal{N}(i)} \phi^{(k)}\left(\mathbf{x}_i, \mathbf{x}_j, \mathbf{e}_{ij}\right)\right)\right)$$
-
-其中:
-
-- $\mathbf{W}^{(k)}$ 是可训练的权重矩阵
-- $\sigma$ 是非线性激活函数
-- $\mathrm{CONCAT}$ 是特征向量拼接操作
-
-图卷积操作可以看作是一种特殊的邻居聚合,它将节点的原始特征与邻居信息融合,生成新的节点表示。通过堆叠多层图卷积,图神经网络能够逐步捕捉更高阶的结构和属性信息。
-
-### 2.4 图注意力机制
-
-除了邻居聚合和图卷积,注意力机制(Attention Mechanism)也被广泛应用于图神经网络中。图注意力机制允许模型动态地为不同邻居分配不同的权重,从而更好地捕捉节点之间的重要关系。
-
-具体来说,图注意力机制可以表示为:
-
-$$h_i^{(k+1)} = \sigma\left(\mathbf{W}^{(k)} \cdot \mathrm{CONCAT}\left(\mathbf{x}_i, \sum_{j \in \mathcal{N}(i)} \alpha_{ij}^{(k)} \phi^{(k)}\left(\mathbf{x}_i, \mathbf{x}_j, \mathbf{e}_{ij}\right)\right)\right)$$
-
-其中 $\alpha_{ij}^{(k)}$ 是注意力权重,用于衡量节点 $v_i$ 对邻居节点 $v_j$ 的重视程度。注意力权重通常由注意力机制函数计算得到,例如基于节点特征和边特征的前馈神经网络。
-
-通过引入注意力机制,图神经网络可以自适应地聚焦于重要的邻居节点,从而提高模型的表示能力和泛化性能。
-
-上述概念为图神经网络奠定了基础。接下来,我们将深入探讨图神经网络的核心算法原理和具体操作步骤。
+不同的图神经网络模型主要在于对消息函数 $M$、节点更新函数 $U$ 和聚合函数 $\square$ 的不同设计。
 
 ## 3.核心算法原理具体操作步骤
 
-在本节中,我们将介绍两种广为人知的图神经网络模型:图卷积网络(Graph Convolutional Networks, GCN)和图注意力网络(Graph Attention Networks, GAT)。这两种模型分别采用了图卷积和图注意力机制,展示了图神经网络处理图结构数据的不同方式。
+虽然不同的图神经网络模型在具体实现上有所差异,但它们都遵循消息传递范式的基本原理。我们以 GraphSAGE 这个经典的图神经网络模型为例,介绍其核心算法原理和具体操作步骤。
 
-### 3.1 图卷积网络(GCN)
+GraphSAGE 的核心思想是通过对节点的邻居进行采样,然后学习如何聚合和传播这些采样邻居的表示,从而高效地生成节点的新表示。算法主要包括以下几个步骤:
 
-图卷积网络(GCN)是一种基于谱域(Spectral Domain)的图卷积方法,它利用图的拉普拉斯矩阵(Laplacian Matrix)来定义卷积操作。
+1. **邻居采样**
 
-#### 3.1.1 图卷积操作
+   由于实际图通常规模很大,因此在每次迭代时都考虑所有邻居节点是计算量很大的。GraphSAGE 采用了基于边采样的邻居采样策略,即对于每个节点,只采样一部分邻居节点,从而大大减少了计算量。
 
-在GCN中,图卷积操作可以表示为:
+2. **嵌入向量聚合**
 
-$$\mathbf{H}^{(k+1)} = \sigma\left(\widetilde{\mathbf{D}}^{-\frac{1}{2}} \widetilde{\mathbf{A}} \widetilde{\mathbf{D}}^{-\frac{1}{2}} \mathbf{H}^{(k)} \mathbf{W}^{(k)}\right)$$
+   对于每个采样的邻居节点,GraphSAGE 首先通过一个全连接神经网络层来生成其嵌入向量表示。然后,对这些邻居嵌入向量进行对称归一化求和,得到该节点的邻居嵌入向量表示。
 
-其中:
+3. **节点表示更新**
 
-- $\mathbf{H}^{(k)} \in \mathbb{R}^{N \times D^{(k)}}$ 是第 $k$ 层的节点特征矩阵,其中 $N$ 是节点数,而 $D^{(k)}$ 是第 $k$ 层的特征维度
-- $\widetilde{\mathbf{A}} = \mathbf{A} + \mathbf{I}_N$ 是加入自环(Self-Loop)的邻接矩阵,其中 $\mathbf{A}$ 是原始邻接矩阵,而 $\mathbf{I}_N$ 是 $N \times N$ 的单位矩阵
-- $\widetilde{\mathbf{D}}_{ii} = \sum_j \widetilde{\mathbf{A}}_{ij}$ 是度矩阵(Degree Matrix)的对角线元素
-- $\mathbf{W}^{(k)}$ 是第 $k$ 层的可训练权重矩阵
-- $\sigma$ 是非线性激活函数,如 ReLU
+   GraphSAGE 将当前节点的嵌入向量与其邻居嵌入向量表示进行拼接,并通过另一个全连接神经网络层,生成该节点的新表示。这一步实现了节点表示的更新和传播。
 
-在这个公式中,$\widetilde{\mathbf{D}}^{-\frac{1}{2}} \widetilde{\mathbf{A}} \widetilde{\mathbf{D}}^{-\frac{1}{2}}$ 可以看作是重新缩放后的邻接矩阵,它对应于对称归一化的图拉普拉斯矩阵(Symmetric Normalized Graph Laplacian)。通过这种谱域卷积操作,GCN可以有效地捕捉图中节点的局部拓扑结构和属性信息。
+4. **迭代训练**
 
-#### 3.1.2 GCN 模型架构
+   重复上述步骤,直到模型收敛或达到预设的最大迭代次数。在每次迭代中,都会对每个节点进行邻居采样、嵌入向量聚合和节点表示更新。
 
-GCN通常采用多层堆叠的结构,每一层执行上述图卷积操作。模型的输入是节点的初始特征矩阵 $\mathbf{X} \in \mathbb{R}^{N \times D^{(0)}}$,经过 $K$ 层图卷积后,最终输出是节点的高层次表示 $\mathbf{H}^{(K)} \in \mathbb{R}^{N \times D^{(K)}}$。
+GraphSAGE 的优点在于,通过邻居采样和嵌入向量聚合的方式,可以高效地生成节点表示,同时保留了邻居信息。此外,它还可以很好地推广到归纳学习场景(即在训练时没有出现的新图上进行预测)。
 
-对于节点级别的任务(如节点分类),可以将最终的节点表示 $\mathbf{H}^{(K)}$ 输入到一个全连接层,得到节点的预测标签。而对于图级别的任务(如图分类),可以将所有节点的表示进行池化(Pooling),得到整个图的表示,再输入到全连接层进行预测。
+## 4.数学模型和公式详细讲解举例说明
 
-GCN的优点在于其简单高效,能够有效地捕捉图中节点的局部结构信息。然而,它也存在一些局限性,例如无法处理动态图和缺乏长程依赖建模能力。
+为了更好地理解图神经网络的数学模型,我们以 GraphSAGE 为例,对其核心公式进行详细讲解。
 
-### 3.2 图注意力网络(GAT)
+在 GraphSAGE 中,节点 $v$ 在第 $k$ 层的表示 $h_v^{(k)}$ 由两部分组成:
 
-图注意力网络(GAT)是一种基于空间域(Spatial Domain)的图神经网络模型,它利用注意力机制来自适应地学习节点之间的重要关系。
+1. 聚合邻居表示 $h_{N(v)}^{(k)}$
+2. 自身表示 $h_v^{(k-1)}$
 
-#### 3.2.1 图注意力层
+具体来说,有如下公式:
 
-GAT的核心是图注意力层(Graph Attention Layer),它通过注意力机制计算节点的新表示。具体来说,对于节点 $v_i$,其注意力层的操作可以表示为:
+$$h_v^{(k)} = \sigma\left(W^{(k)} \cdot \mathrm{CONCAT}\left(h_{N(v)}^{(k)}, h_v^{(k-1)}\right)\right)$$
 
-$$\mathbf{h}_i^{(k+1)} = \sigma\left(\sum_{j \in \mathcal{N}(i) \cup \{i\}} \alpha_{ij}^{(k)} \mathbf{W}^{(k)} \mathbf{h}_j^{(k)}\right)$$
+其中 $\sigma$ 是非线性激活函数(如 ReLU),  $W^{(k)}$ 是可训练的权重矩阵, $\mathrm{CONCAT}$ 表示向量拼接操作。
 
-其中 $\alpha_{ij}^{(k)}$ 是注意力权重,用于衡量节点 $v_i$ 对邻居节点 $v_j$ 的重视程度。注意力权重通过注意力机制函数计算得到,例如基于节点特征和边特征的前馈神经网络:
+接下来,我们重点解释如何获得邻居表示 $h_{N(v)}^{(k)}$。GraphSAGE 采用了邻居采样和嵌入向量聚合的策略,具体步骤如下:
 
-$$\alpha_{ij}^{(k)} = \frac{\exp\left(\mathrm{LeakyReLU}\left(\mathbf{a}^{(k)^\top}\left[\mathbf{W}^{(k)}\mathbf{h}_i^{(k)} \| \mathbf{W}^{(k)}\mathbf{h}_j^{(k)}\right]\right)\right)}{\sum_{l \in \mathcal{N}(i) \cup \{i\}} \exp\left(\mathrm{LeakyReLU}\left(\mathbf{a}^{(k)^\top}\left[\mathbf{W}^{(k)}\mathbf{h}_i^{(k)} \| \mathbf{W}^{(k)}\mathbf{h}_l^{(k)}\right]\right)\right)}$$
+1. **邻居采样**
 
-其中 $\mathbf{a}^{(k)}$ 是可训练的注意力权重向量,而 $\|$ 表示向量拼接操作。
+   对于节点 $v$,从其邻居集合 $N(v)$ 中采样一个邻居子集 $N(v)^\prime$。采样函数记为 $\phi$,即 $N(v)^\prime = \phi(N(v))$。
 
-通过注意力机制,GAT能够自适应地为不同邻居分配不同的权重,从而更好地捕捉节点之间的重要关系。这种灵活性使得GAT在处理异构图(Heterogeneous Graphs)和动态图(Dynamic Graphs)时表现出色。
+2. **嵌入向量生成**
 
-#### 3.2.2 GAT 模型架构
+   对于每个采样的邻居节点 $u \in N(v)^\prime$,通过一个前馈神经网络层生成其嵌入向量表示:
 
-与GCN类似,GAT也采用多层堆叠的结构。每一层都是一个图注意力层,通过注意力机制计算节点的新表示。模型的输入是节点的初始特征矩阵 $\mathbf{X} \in \mathbb{R}^{N \times D^{(0)}}$,经过 $K$ 层图注意力层后,最终输出是节点的高层次表示 $\mathbf{H}^{(K)} \in \mathbb{R}^{N \times D^{(K)}}$。
+   $$h_{N(u)}^{(k)} = \sigma\left(W^{(k)} \cdot \mathrm{CONCAT}\left(h_u^{(k-1)}, x_u\right)\right)$$
 
-与GCN类似,对于节点级别的任务,可以将最终的节点表示输入到全连接层进行预测;而对于图级别的任务,可以将所有节点的表示进行池化,得到整个图的表示,再输入到全连接层进行预测。
+   其中 $x_u$ 是节点 $u$ 的初始特征向量。
 
-GAT
+3. **嵌入向量聚合**
+
+   对所有采样邻居的嵌入向量进行对称归一化求和,得到节点 $v$ 的邻居表示:
+
+   $$h_{N(v)}^{(k)} = \gamma\left(\left\{\frac{h_{N(u)}^{(k)}}{\sqrt{\left|N(u)\right|\left|N(v)\right|}}: u \in N(v)^\prime\right\}\right)$$
+
+   其中 $\gamma$ 是对称归一化求和函数,可以是均值、最大值等。
+
+通过上述步骤,我们就可以获得节点 $v$ 在第 $k$ 层的表示 $h_v^{(k)}$。在模型训练过程中,我们需要重复执行这些步骤,直到模型收敛或达到预设的最大迭代次数。
+
+值得注意的是,GraphSAGE 的这种邻居采样和嵌入向量聚合策略,不仅可以有效降低计算复杂度,还能很好地捕捉图结构信息,从而生成高质量的节点表示。
+
+## 5.项目实践:代码实例和详细解释说明
+
+为了帮助读者更好地理解和实践图神经网络,我们将提供一个基于 PyTorch 和 PyTorch Geometric 库的代码示例,实现经典的 GraphSAGE 模型,并在 Cora 数据集上进行节点分类任务。
+
+### 5.1 数据准备
+
+我们首先需要准备数据集。Cora 是一个广泛使用的citation网络数据集,包含2708个科学论文节点和5429条引用边。每个节点都有一个词袋(bag-of-words)特征向量,描述论文的内容,以及一个类别标签(共7个类别)。我们的目标是基于论文的内容特征和引用关系,对论文进行分类。
+
+```python
+import torch
+from torch_geometric.datasets import Planetoid
+dataset = Planetoid(root='/tmp/Cora', name='Cora')
+```
+
+### 5.2 定义 GraphSAGE 模型
+
+接下来,我们定义 GraphSAGE 模型的核心组件。
+
+```python
+import torch.nn as nn
+import torch.nn.functional as F
+from torch_geometric.nn import SAGEConv
+
+class GraphSAGE(nn.Module):
+    def __init__(self, in_channels, hidden_channels, out_channels, num_layers):
+        super(GraphSAGE, self).__init__()
+        self.convs = nn.ModuleList()
+        self.convs.append(SAGEConv(in_channels, hidden_channels))
+        for _ in range(num_layers - 2):
+            self.convs.append(SAGEConv(hidden_channels, hidden_channels))
+        self.convs.append(SAGEConv(hidden_channels, out_channels))
+
+    def forward(self, x, edge_index):
+        for conv in self.convs[:-1]:
+            x = conv(x, edge_index)
+            x = F.relu(x)
+        x = self.convs[-1](x, edge_index)
+        return x
+```
+
+在这个实现中,我们使用了 PyTorch Geometric 提供的 `SAGEConv` 层,它实现了 GraphSAGE 的核心操作:邻居采样、嵌入向量生成和嵌入向量聚合。我们可以灵活地设置隐藏层数量和隐藏维度。
+
+### 5.3 模型训练
+
+下面是模型训练的代码:
+
+```python
+import torch.optim as optim
+
+model = GraphSAGE(dataset.num_node_features, 128, dataset.num_classes, num_layers=2)
+optimizer = optim.Adam(model.parameters(), lr=0.01, weight_decay=5e-4)
+criterion = nn.CrossEntropyLoss()
+
+def train():
+    model.train()
+    optimizer.zero_grad()
+    out = model(dataset.data.x, dataset.data.edge_index)
+    loss = criterion(out[dataset.data.train_mask], dataset.data.y[dataset.data.train_mask])
+    loss.backward()
+    optimizer.step()
+    return loss.item()
+
+@torch.no_grad()
+def test():
+    model.eval()
+    out = model(dataset.data.x, dataset.data.edge_index)
+    pred = out.argmax(dim=1)
+    accs = []
+    for mask in [dataset.data.train_mask, dataset.data.val_mask, dataset.data.test_mask]:
+        correct = pred[mask] == dataset.data.y[mask]
+        accs.append(int(correct.sum()) / int(mask.sum()))
+    return accs
+
+for epoch in range(1, 201):
+    loss = train()
+    train_acc, val_acc, test_acc = test()
+    print(f'Epoch: {epoch:03d}, Loss: {loss:.4f}, Train: {train_acc:.4f}, '
+          f'Val: {val_acc:.4f}, Test: {test_acc:.4f}')
+```
+
+在这段代码中,我们首先
