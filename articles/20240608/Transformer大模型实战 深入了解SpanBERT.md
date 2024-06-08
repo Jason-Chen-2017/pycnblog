@@ -1,210 +1,195 @@
 # Transformer大模型实战 深入了解SpanBERT
 
-## 1.背景介绍
+## 1. 背景介绍
 
-在自然语言处理（NLP）领域，Transformer模型自2017年问世以来，迅速成为了主流的架构。其自注意力机制和并行处理能力使得它在各种任务中表现出色。BERT（Bidirectional Encoder Representations from Transformers）作为Transformer家族中的一员，通过双向编码器的预训练方法，极大地提升了NLP任务的性能。然而，BERT在处理某些特定任务时仍存在一些局限性。为了解决这些问题，SpanBERT应运而生。
+### 1.1 Transformer模型概述
+Transformer模型是自然语言处理领域的一次重大突破。自从2017年谷歌推出Transformer模型以来，基于Transformer的各种预训练语言模型如雨后春笋般涌现，极大地推动了NLP技术的发展。Transformer抛弃了传统的RNN和CNN等序列模型，完全依赖注意力机制来学习文本的上下文信息，并行计算效率高，能够处理长距离依赖。
 
-SpanBERT是BERT的一个变种，专注于改进对文本片段（span）的表示能力。它在预训练阶段引入了新的目标函数，使得模型在处理涉及片段的任务（如问答系统、命名实体识别等）时表现更为优异。
+### 1.2 BERT模型及其局限性
+BERT(Bidirectional Encoder Representations from Transformers)是Google于2018年提出的基于Transformer的预训练语言模型，在多个NLP任务上取得了SOTA的结果。BERT采用了Masked Language Model(MLM)和Next Sentence Prediction(NSP)两个预训练任务，能够学习到双向的上下文表示。
 
-## 2.核心概念与联系
+但BERT也存在一些局限性：
+1. 只能生成单个token的表示，无法直接对spans(连续token序列)建模
+2. 对于一些需要对spans建模的任务如问答、指代消解等，需要额外的span表示生成模块
+3. 预训练和下游任务目标不一致，存在pretrain-finetune discrepancy
 
-### 2.1 Transformer架构
+### 1.3 SpanBERT的提出
+为了克服BERT的局限性，微软和华盛顿大学在2019年提出了SpanBERT模型。SpanBERT在BERT的基础上做了以下改进：
+1. 采用了Span Masking预训练任务，随机mask连续的spans而不是单个tokens，与下游任务更加一致
+2. 去掉了NSP任务，单纯采用Span Masking任务预训练
+3. 引入Span Boundary Objective(SBO)，显式建模span的边界表示
 
-Transformer架构由编码器和解码器组成，每个编码器和解码器包含多个层，每层由自注意力机制和前馈神经网络组成。其核心思想是通过自注意力机制捕捉输入序列中各个位置之间的依赖关系。
+通过这些改进，SpanBERT能够学习到更加强大的span表示，在阅读理解、指代消解、NER等任务上显著超越BERT。下面我们将深入SpanBERT的技术细节。
 
-### 2.2 BERT模型
+## 2. 核心概念与联系
 
-BERT模型是基于Transformer编码器的双向预训练模型。其主要创新点在于使用了双向Transformer来捕捉上下文信息，并通过掩码语言模型（Masked Language Model, MLM）和下一句预测（Next Sentence Prediction, NSP）进行预训练。
+### 2.1 Transformer Encoder
+- Multi-Head Attention：通过多个注意力头并行计算不同的注意力分布，增强模型的表达能力
+- Position-wise Feed-Forward Network：对每个位置应用两层带ReLU激活的全连接网络，增加模型的非线性
+- Residual Connection and Layer Normalization：残差连接和层归一化，有助于深层网络的优化
 
-### 2.3 SpanBERT模型
+### 2.2 预训练任务
+- Masked Language Model(MLM)：随机mask输入的部分tokens，让模型根据上下文预测被mask的tokens。能够学习双向的上下文表示。
+- Next Sentence Prediction(NSP)：给定两个句子，让模型判断第二个句子是否为第一个句子的下一句。能够学习句子间的关系。
+- Span Masking：随机mask输入序列的连续spans，让模型预测被mask的spans。更加符合下游任务的特点。
 
-SpanBERT在BERT的基础上进行了改进，主要包括以下几点：
-- **Span Boundary Objective (SBO)**：在预训练阶段，SpanBERT引入了新的目标函数，专注于预测文本片段的边界。
-- **Span Masking**：与BERT的单词掩码不同，SpanBERT采用了片段掩码策略，使得模型能够更好地学习片段级别的表示。
+### 2.3 Span表示
+- Single-token Span：由单个token构成的span，表示为该token的隐藏层状态向量
+- Multi-token Span：由多个连续tokens构成的span，表示为两个端点token隐藏层状态向量的拼接或池化
+- Span Boundary：span的起始和结束边界token的表示，在SBO中被用来预测整个span的内容
 
-## 3.核心算法原理具体操作步骤
+## 3. 核心算法原理具体操作步骤
 
-### 3.1 数据预处理
+### 3.1 SpanBERT预训练
+1. 随机采样mask spans：以一定概率p mask每个token为span的起点，span长度l从几何分布Geo(q)中采样
+2. 80%的概率替换被mask的tokens为[MASK]，10%的概率保持不变，10%的概率替换为随机token
+3. 输入经过Transformer Encoder得到每个token的上下文表示
+4. Span Masking：用单层前馈网络将span两端token的表示映射为span内每个token的预测概率分布
+5. Span Boundary Objective：用span边界token的表示去预测整个span的内容
 
-在数据预处理阶段，SpanBERT与BERT类似，需要对输入文本进行分词、添加特殊标记（如[CLS]和[SEP]）以及生成掩码。
+### 3.2 下游任务微调
+1. 对于token级别任务(如NER)，直接用每个token的表示做分类或预测
+2. 对于span级别任务(如QA，指代消解)：
+   - 枚举所有可能的candidate spans
+   - 用两个前馈网络分别计算span的起始和结束表示
+   - 将起始和结束表示拼接作为整个span的表示
+   - 用span表示做二分类(是否为正确答案)或多分类
 
-### 3.2 片段掩码策略
+## 4. 数学模型和公式详细讲解举例说明
 
-SpanBERT采用片段掩码策略，即在输入序列中随机选择若干个连续的片段进行掩码。具体步骤如下：
-1. 随机选择若干个起始位置。
-2. 从每个起始位置开始，随机选择一个长度的片段进行掩码。
+### 4.1 Span Masking
+给定输入token序列$\mathbf{x} = \{x_1, x_2, ..., x_T\}$，随机选择mask spans $\mathbf{s} = \{s_1, s_2, ..., s_M\}$，每个span $s_i$表示为起始位置$s_i^{start}$和结束位置$s_i^{end}$的元组：
 
-### 3.3 Span Boundary Objective (SBO)
+$$s_i = (s_i^{start}, s_i^{end}), 1 \leq s_i^{start} \leq s_i^{end} \leq T$$
 
-在预训练阶段，SpanBERT引入了SBO目标函数。具体操作步骤如下：
-1. 对于每个掩码片段，提取其边界位置的表示。
-2. 使用边界位置的表示来预测片段中每个单词的原始词嵌入。
+span的长度$l$服从几何分布：
 
-### 3.4 训练过程
+$$P(l) = q^{l-1}(1-q)$$
 
-SpanBERT的训练过程与BERT类似，采用自监督学习的方法，通过最大化SBO目标函数和MLM目标函数的联合概率来优化模型参数。
+其中$q$为超参数，控制采样span的平均长度。
 
-```mermaid
-graph TD
-    A[输入文本] --> B[分词]
-    B --> C[添加特殊标记]
-    C --> D[生成掩码]
-    D --> E[片段掩码策略]
-    E --> F[提取边界表示]
-    F --> G[预测片段词嵌入]
-    G --> H[优化模型参数]
-```
+将被mask的spans替换为单个[MASK]token或保持不变，然后输入Transformer Encoder：
 
-## 4.数学模型和公式详细讲解举例说明
+$$\mathbf{h} = \text{Transformer}(\mathbf{x}_{masked})$$
 
-### 4.1 掩码语言模型（MLM）
+其中$\mathbf{h} = \{h_1, h_2, ..., h_T\}$为每个token的上下文表示。
 
-BERT和SpanBERT都采用了掩码语言模型（MLM）作为预训练目标之一。其目标是通过上下文信息预测被掩码的单词。具体公式如下：
+对于每个被mask的span $s_i$，用单层前馈网络将起始token $h_{s_i^{start}}$和结束token $h_{s_i^{end}}$的表示映射为span内每个token $x_j$的概率分布：
 
-$$
-L_{MLM} = - \sum_{i \in M} \log P(x_i | x_{\backslash M})
-$$
+$$P(x_j|\mathbf{x}_{\backslash s_i}) = \text{softmax}(\mathbf{W}_2\text{ReLU}(\mathbf{W}_1[h_{s_i^{start}}; h_{s_i^{end}}] + \mathbf{b}_1) + \mathbf{b}_2)$$
 
-其中，$M$表示被掩码的单词集合，$x_i$表示第$i$个单词，$x_{\backslash M}$表示去除掩码单词后的上下文。
+其中$s_i^{start} \leq j \leq s_i^{end}$，$\mathbf{x}_{\backslash s_i}$表示去掉span $s_i$的上下文，$\mathbf{W}_1, \mathbf{W}_2, \mathbf{b}_1, \mathbf{b}_2$为可学习参数。
 
-### 4.2 Span Boundary Objective (SBO)
+最终的Span Masking损失为所有mask spans内tokens的交叉熵损失之和：
 
-SpanBERT引入了SBO目标函数，用于预测片段中每个单词的原始词嵌入。具体公式如下：
+$$\mathcal{L}_{SM} = -\sum_{i=1}^M \sum_{j=s_i^{start}}^{s_i^{end}} \log P(x_j|\mathbf{x}_{\backslash s_i})$$
 
-$$
-L_{SBO} = - \sum_{(i, j) \in S} \log P(x_i | x_j, x_k)
-$$
+### 4.2 Span Boundary Objective
+SBO是为了显式建模span的边界表示。对于每个被mask的span $s_i$，用单层前馈网络将边界token $x_{s_i^{start}}$和$x_{s_i^{end}}$的表示映射为整个span内容$\mathbf{x}_{s_i}$的概率分布：
 
-其中，$S$表示被掩码的片段集合，$x_i$表示片段中的单词，$x_j$和$x_k$表示片段的边界单词。
+$$P(\mathbf{x}_{s_i}|\mathbf{x}_{\backslash s_i}) = \text{softmax}(\mathbf{W}_4\text{ReLU}(\mathbf{W}_3[h_{s_i^{start}}; h_{s_i^{end}}] + \mathbf{b}_3) + \mathbf{b}_4)$$
 
-### 4.3 联合目标函数
+其中$\mathbf{x}_{s_i} = \{x_{s_i^{start}}, x_{s_i^{start}+1}, ..., x_{s_i^{end}}\}$为span $s_i$的内容，$\mathbf{W}_3, \mathbf{W}_4, \mathbf{b}_3, \mathbf{b}_4$为可学习参数。
 
-SpanBERT的预训练目标是最大化MLM和SBO目标函数的联合概率。具体公式如下：
+SBO损失为所有mask spans的内容的交叉熵损失之和：
 
-$$
-L = L_{MLM} + \lambda L_{SBO}
-$$
+$$\mathcal{L}_{SBO} = -\sum_{i=1}^M \log P(\mathbf{x}_{s_i}|\mathbf{x}_{\backslash s_i})$$
 
-其中，$\lambda$是一个超参数，用于平衡MLM和SBO目标函数的权重。
+最终SpanBERT的预训练损失为Span Masking损失和SBO损失的加权和：
 
-## 5.项目实践：代码实例和详细解释说明
+$$\mathcal{L} = \mathcal{L}_{SM} + \lambda \mathcal{L}_{SBO}$$
 
-### 5.1 环境准备
+其中$\lambda$为平衡两个损失的超参数。
 
-首先，确保你的环境中安装了必要的库，如Transformers和PyTorch。
+## 5. 项目实践：代码实例和详细解释说明
+下面我们用PyTorch来实现SpanBERT的核心代码。
 
-```bash
-pip install transformers torch
-```
-
-### 5.2 数据预处理
-
-使用Transformers库中的Tokenizer进行分词和生成掩码。
-
-```python
-from transformers import BertTokenizer
-
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-text = "This is a sample text for SpanBERT."
-tokens = tokenizer.tokenize(text)
-input_ids = tokenizer.convert_tokens_to_ids(tokens)
-```
-
-### 5.3 片段掩码策略
-
-实现片段掩码策略。
+### 5.1 定义SpanBERT模型
 
 ```python
-import random
-
-def span_masking(input_ids, mask_prob=0.15, max_span_length=5):
-    masked_input_ids = input_ids.copy()
-    num_to_mask = int(len(input_ids) * mask_prob)
-    spans = []
-    
-    while num_to_mask > 0:
-        span_length = random.randint(1, max_span_length)
-        start_index = random.randint(0, len(input_ids) - span_length)
-        spans.append((start_index, start_index + span_length))
-        num_to_mask -= span_length
-    
-    for start, end in spans:
-        for i in range(start, end):
-            masked_input_ids[i] = tokenizer.mask_token_id
-    
-    return masked_input_ids, spans
-
-masked_input_ids, spans = span_masking(input_ids)
+class SpanBERT(nn.Module):
+    def __init__(self, config):
+        super().__init__()
+        self.bert = BertModel(config)  # 加载预训练的BERT
+        self.config = config
+        
+        self.span_predictor = nn.Linear(config.hidden_size * 2, config.vocab_size)
+        self.span_boundary_predictor = nn.Linear(config.hidden_size * 2, config.boundary_token_num)
+        
+    def forward(self, input_ids, token_type_ids=None, attention_mask=None, masked_spans=None):
+        outputs = self.bert(input_ids, token_type_ids, attention_mask)
+        sequence_output = outputs[0]  # [batch_size, seq_len, hidden_size]
+        
+        if masked_spans is not None:  # 预训练阶段
+            span_masks = []
+            span_boundary_masks = []
+            for batch_idx, spans in enumerate(masked_spans):
+                span_mask = torch.zeros_like(input_ids[batch_idx])  # [seq_len]
+                span_boundary_mask = torch.zeros_like(input_ids[batch_idx])  # [seq_len]
+                for start, end in spans:
+                    span_mask[start:end] = 1
+                    span_boundary_mask[start] = span_boundary_mask[end] = 1
+                span_masks.append(span_mask)
+                span_boundary_masks.append(span_boundary_mask)
+            span_masks = torch.stack(span_masks, dim=0)  # [batch_size, seq_len]
+            span_boundary_masks = torch.stack(span_boundary_masks, dim=0)  # [batch_size, seq_len]
+            
+            span_hidden_states = torch.matmul(span_masks.unsqueeze(1), sequence_output)  # [batch_size, seq_len, hidden_size]
+            span_boundary_hidden_states = torch.matmul(span_boundary_masks.unsqueeze(1), sequence_output)  # [batch_size, seq_len, hidden_size]
+            
+            span_logits = self.span_predictor(span_hidden_states)  # [batch_size, seq_len, vocab_size]
+            span_boundary_logits = self.span_boundary_predictor(span_boundary_hidden_states)  # [batch_size, seq_len, boundary_token_num]
+            
+            return span_logits, span_boundary_logits
+        
+        else:  # 下游任务微调
+            return sequence_output
 ```
 
-### 5.4 模型训练
+这里定义了SpanBERT模型的基本结构，主要包括：
+- 加载预训练的BERT模型
+- 定义span预测器和span边界预测器，用于计算Span Masking损失和SBO损失
+- 前向传播函数，根据是否提供`masked_spans`参数判断是预训练还是微调
+- 预训练时，根据随机采样的mask spans计算span表示和边界表示，输出用于计算两个预训练损失的logits
+- 微调时，直接返回BERT的输出序列表示，供下游任务使用
 
-使用Transformers库中的BertForMaskedLM进行模型训练。
-
+### 5.2 预训练数据生成
 ```python
-from transformers import BertForMaskedLM, AdamW
-
-model = BertForMaskedLM.from_pretrained('bert-base-uncased')
-optimizer = AdamW(model.parameters(), lr=5e-5)
-
-inputs = torch.tensor([masked_input_ids])
-labels = torch.tensor([input_ids])
-
-model.train()
-outputs = model(inputs, labels=labels)
-loss = outputs.loss
-loss.backward()
-optimizer.step()
-```
-
-## 6.实际应用场景
-
-### 6.1 问答系统
-
-SpanBERT在问答系统中表现出色，特别是在需要识别和提取文本片段的任务中。通过引入SBO目标函数，SpanBERT能够更准确地预测答案片段的边界，从而提高问答系统的准确性。
-
-### 6.2 命名实体识别（NER）
-
-命名实体识别任务需要识别文本中的实体名称，如人名、地名等。SpanBERT通过片段掩码策略和SBO目标函数，能够更好地捕捉实体边界，提高NER任务的性能。
-
-### 6.3 关系抽取
-
-关系抽取任务需要从文本中识别实体之间的关系。SpanBERT通过改进片段表示能力，能够更准确地识别和抽取实体关系。
-
-## 7.工具和资源推荐
-
-### 7.1 Transformers库
-
-Transformers库是一个强大的NLP工具库，支持多种预训练模型，包括BERT和SpanBERT。它提供了丰富的API，方便用户进行模型训练和推理。
-
-### 7.2 Hugging Face Model Hub
-
-Hugging Face Model Hub是一个预训练模型的在线仓库，用户可以方便地下载和使用各种预训练模型，包括SpanBERT。
-
-### 7.3 PyTorch
-
-PyTorch是一个流行的深度学习框架，支持动态计算图和自动微分。它与Transformers库无缝集成，方便用户进行模型训练和推理。
-
-## 8.总结：未来发展趋势与挑战
-
-SpanBERT通过引入片段掩码策略和SBO目标函数，显著提升了对文本片段的表示能力。然而，随着NLP技术的不断发展，仍有许多挑战需要解决。例如，如何进一步提升模型的泛化能力，如何在低资源环境中进行有效的预训练等。
-
-未来，随着计算资源的不断提升和算法的不断优化，SpanBERT及其变种有望在更多的实际应用场景中发挥重要作用。
-
-## 9.附录：常见问题与解答
-
-### 9.1 SpanBERT与BERT的主要区别是什么？
-
-SpanBERT在BERT的基础上进行了改进，主要包括片段掩码策略和Span Boundary Objective (SBO)目标函数。这些改进使得SpanBERT在处理涉及文本片段的任务时表现更为优异。
-
-### 9.2 如何选择合适的片段长度进行掩码？
-
-片段长度的选择可以根据具体任务和数据集进行调整。一般来说，较短的片段适用于细粒度的任务，如命名实体识别；较长的片段适用于粗粒度的任务，如问答系统。
-
-### 9.3 SpanBERT的训练时间和资源需求如何？
-
-SpanBERT的训练时间和资源需求与BERT相似，主要取决于数据集的大小和模型的复杂度。一般来说，较大的数据集和较复杂的模型需要更多的训练时间和计算资源。
-
----
-
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
+def create_pretrain_data(docs, max_seq_len=512, max_span_len=10, p=0.15, q=0.5):
+    all_input_ids = []
+    all_token_type_ids = []
+    all_attention_mask = []
+    all_masked_spans = []
+    
+    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    cls_id = tokenizer.cls_token_id
+    sep_id = tokenizer.sep_token_id
+    mask_id = tokenizer.mask_token_id
+    
+    for doc in docs:
+        tokens = [cls_id] + tokenizer.encode(doc, add_special_tokens=False) + [sep_id]
+        if len(tokens) > max_seq_len:
+            tokens = tokens[:max_seq_len-1] + [sep_id]
+        token_type_ids = [0] * len(tokens)
+        
+        cand_indexes = list(range(1, len(tokens)-1))  # 排除[CLS]和[SEP]
+        num_to_mask = max(1, int(round(len(cand_indexes) * p)))
+        masked_spans = []
+        covered_indexes = set()
+        for _ in range(num_to_mask):
+            start_index = random.choice(cand_indexes)
+            span_len = min(max_span_len, len(cand_indexes) - start_index)
+            span_len = np.random.geometric(q)
+            end_index = min(start_index + span_len, len(tokens)-1)
+            
+            if any(i in covered_indexes for i in range(start_index, end_index+1)):
+                continue
+            
+            covered_indexes.update(range(start_index, end_index+1))
+            masked_spans.append((start_index, end_index))
+            if random.random() < 0.8:
+                for i in range(start_index, end_index+1):
+                    tokens[i] = mask_id
+            elif random.random() < 0.5:
+                for i in range(start_index, end_index+1):
+                    tokens[i] = random.choice(
