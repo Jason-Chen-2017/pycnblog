@@ -1,298 +1,196 @@
 # Scikit-Learn 原理与代码实战案例讲解
 
-## 1.背景介绍
+## 1. 背景介绍
+### 1.1 机器学习概述
+机器学习是人工智能的一个重要分支,它通过让计算机系统从数据中学习,无需进行明确编程就能完成特定任务。近年来,随着大数据时代的到来和计算能力的提升,机器学习得到了飞速发展,在图像识别、自然语言处理、推荐系统等领域取得了巨大成功。
 
-在当今数据主导的时代,机器学习已经成为各行业不可或缺的核心技术。作为一个强大且易于使用的机器学习库,Scikit-Learn以其丰富的算法集、良好的文档和活跃的社区,成为Python机器学习领域事实上的标准。无论是数据科学从业者还是算法研究人员,都可以从Scikit-Learn中获益匪浅。
+### 1.2 Python机器学习生态
+Python凭借其简洁的语法、强大的库生态,已成为机器学习领域的首选编程语言。在Python机器学习生态中,有许多优秀的库,如用于科学计算的NumPy和SciPy,用于数据操作和分析的Pandas,以及本文的主角——机器学习库Scikit-Learn。
 
-Scikit-Learn的出现弥补了Python在机器学习领域的空白,为数据科学家们提供了一个统一的机器学习工作平台。它集成了监督学习和非监督学习的大量流行算法,涵盖分类、回归、聚类、降维、模型选择和预处理等多个方面。同时,Scikit-Learn还提供了大量实用的工具,如数据预处理、模型评估和模型持久化等,极大地简化了机器学习工作流程。
+### 1.3 Scikit-Learn简介
+Scikit-Learn是一个基于Python的机器学习库,它提供了丰富的机器学习算法,包括分类、回归、聚类、降维等,还有模型评估和数据预处理等功能。Scikit-Learn以其简单、高效、通用的特点,成为了机器学习从业者必备的工具之一。
 
-## 2.核心概念与联系
+## 2. 核心概念与联系
+### 2.1 监督学习与非监督学习
+机器学习可分为监督学习和非监督学习两大类。监督学习是指训练数据带有标签,模型通过学习输入和标签之间的关系来对新数据进行预测。常见的监督学习任务有分类和回归。非监督学习则是训练数据没有标签,模型通过发现数据内在的结构和关系来学习。聚类就是典型的非监督学习任务。
 
-### 2.1 Estimator
+### 2.2 分类与回归
+分类和回归是监督学习的两类主要任务。分类是根据输入特征将样本划分到预先定义的类别中,如垃圾邮件识别。回归则是预测连续值输出,如房价预测。Scikit-Learn为分类和回归都提供了丰富的算法。
 
-Estimator是Scikit-Learn中最重要的API,它是一个描述机器学习算法行为的对象。所有的监督学习和非监督学习算法都被实现为不同的Estimator类。Estimator有两个主要方法:fit()用于训练模型,predict()或transform()用于进行预测或转换。
+### 2.3 模型选择与评估
+建立机器学习模型的关键是选择合适的算法和调整最优的超参数。Scikit-Learn提供了交叉验证等模型选择方法,可以帮助我们选出性能最优的模型。模型训练完成后,还需要在测试集上进行评估,以检验模型的泛化能力。分类问题常用的评估指标有准确率、精确率、召回率和F1分数等,回归问题可用均方误差、平均绝对误差等。
 
-```python
-from sklearn.linear_model import LogisticRegression
+### 2.4 数据预处理
+现实世界的数据往往是不完整、不一致、有噪声的,需要进行预处理才能用于机器学习。Scikit-Learn提供了一系列数据预处理工具,如缺失值插补、数据标准化、特征选择等,可以方便地对数据进行清洗和转换。
 
-# 创建Estimator实例
-clf = LogisticRegression()
-
-# 使用fit()方法训练模型
-clf.fit(X_train, y_train)
-
-# 使用predict()方法进行预测
-y_pred = clf.predict(X_test)
-```
-
-### 2.2 Transformer
-
-Transformer是另一个核心概念,它是一种数据转换器,用于对数据进行预处理或特征提取。常见的Transformer包括StandardScaler用于数据标准化,OneHotEncoder用于one-hot编码等。
-
-```python
-from sklearn.preprocessing import StandardScaler
-
-# 创建Transformer实例
-scaler = StandardScaler()
-
-# 使用fit_transform()方法拟合并转换训练数据
-X_train_scaled = scaler.fit_transform(X_train)
-
-# 使用transform()方法转换测试数据
-X_test_scaled = scaler.transform(X_test)
-```
-
-### 2.3 Pipeline
-
-Pipeline是Scikit-Learn中另一个非常有用的API,它允许你将多个Transformer和Estimator组合成一个工作流水线。这样可以大大简化机器学习工作流程,并确保数据处理和模型训练的一致性。
-
-```python
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LogisticRegression
-
-# 创建Pipeline
-pipe = Pipeline([
-    ('scaler', StandardScaler()),
-    ('clf', LogisticRegression())
-])
-
-# 使用fit()方法训练Pipeline
-pipe.fit(X_train, y_train)
-
-# 使用predict()方法进行预测
-y_pred = pipe.predict(X_test)
-```
-
-### 2.4 Mermaid流程图
+下面是这些核心概念之间的关系图:
 
 ```mermaid
 graph TD
-    A[数据] --> B[Transformer]
-    B --> C[Estimator]
-    C --> D[预测/转换结果]
-    
-    E[Pipeline] --> F[Transformer1]
-    F --> G[Transformer2]
-    G --> H[Estimator]
-    H --> I[预测/转换结果]
+A[机器学习] --> B[监督学习]
+A --> C[非监督学习]
+B --> D[分类]
+B --> E[回归]
+D --> F[模型选择与评估]
+E --> F
+C --> G[聚类]
+G --> F
+H[数据预处理] --> A
 ```
 
-上图展示了Scikit-Learn中Estimator、Transformer和Pipeline的核心概念及其相互关系。数据首先通过一系列Transformer进行预处理和特征提取,然后输入Estimator进行模型训练,最终得到预测或转换结果。Pipeline则将多个Transformer和Estimator组合成一个工作流水线,简化了数据处理和模型训练的过程。
+## 3. 核心算法原理具体操作步骤
+本节我们将详细介绍Scikit-Learn中几个核心算法的原理和使用步骤。
 
-## 3.核心算法原理具体操作步骤
+### 3.1 逻辑回归
+逻辑回归虽然名字带有"回归",但实际上是一种分类算法,用于二分类问题。它的原理是通过Sigmoid函数将线性回归的输出映射到0-1之间,作为样本属于正类的概率。
 
-Scikit-Learn实现了多种监督学习和非监督学习算法,这些算法的原理和具体操作步骤如下:
+使用步骤:
+1. 创建LogisticRegression对象
+2. 用fit方法训练模型
+3. 用predict方法进行预测
+4. 用score方法或分类评估指标评估模型性能
 
-### 3.1 监督学习算法
+### 3.2 支持向量机(SVM)
+支持向量机是一种强大的分类算法,特别适合处理高维、非线性的数据。它的基本思想是在特征空间中找到一个最大间隔超平面,将不同类别的样本分开。
 
-#### 3.1.1 线性回归
+使用步骤:
+1. 创建SVC对象(SVM分类)或SVR对象(SVM回归)
+2. 选择合适的核函数,如linear、poly、rbf等
+3. 用fit方法训练模型  
+4. 用predict方法进行预测
+5. 用score方法或分类/回归评估指标评估模型性能
 
-线性回归是一种基础的监督学习算法,用于解决回归问题。其核心思想是找到一条最佳拟合直线,使得数据点到直线的残差平方和最小。
+### 3.3 决策树与随机森林
+决策树通过一系列if-else规则递归地将特征空间划分,直到每个叶子节点都是尽可能纯的类别。随机森林则是多个决策树的集成,每棵树用数据的一个随机子集训练,最后取多数票作为预测结果。
 
-1. 导入相关模块和数据
-2. 将数据集拆分为训练集和测试集
-3. 创建线性回归模型实例
-4. 使用训练数据训练模型
-5. 在测试集上进行预测
-6. 评估模型性能
+使用步骤:
+1. 创建DecisionTreeClassifier/Regressor对象(决策树)或RandomForestClassifier/Regressor对象(随机森林)
+2. 设置树的个数(随机森林)、最大深度、叶子节点的最小样本数等超参数
+3. 用fit方法训练模型
+4. 用predict方法进行预测  
+5. 用score方法或分类/回归评估指标评估模型性能
 
-```python
-from sklearn.linear_model import LinearRegression
+### 3.4 K-均值聚类
+K-均值是最常用的聚类算法之一。它通过迭代优化,将数据划分为K个簇,使得每个样本到其所属簇的中心点的距离平方和最小。 
 
-# 创建线性回归模型实例
-lr = LinearRegression()
+使用步骤:
+1. 创建KMeans对象
+2. 设置聚类数K和初始化方法等超参数
+3. 用fit方法训练模型
+4. 用predict方法给新样本分配簇标签
+5. 用inertia_属性查看簇内距离平方和
 
-# 使用训练数据训练模型
-lr.fit(X_train, y_train)
+## 4. 数学模型和公式详细讲解举例说明
+本节我们将详细讲解几个核心算法的数学模型和公式,并给出具体的例子。
 
-# 在测试集上进行预测
-y_pred = lr.predict(X_test)
-```
+### 4.1 逻辑回归
+逻辑回归的数学模型:
+$$
+P(y=1|x) = \frac{1}{1+e^{-(\beta_0+\beta_1x_1+...+\beta_nx_n)}}
+$$
+其中$x_1,...x_n$为样本的n个特征,$\beta_0,\beta_1,...\beta_n$为模型参数。可以看出,逻辑回归实际上是在线性回归$\beta_0+\beta_1x_1+...+\beta_nx_n$外套了一个Sigmoid函数$g(z)=\frac{1}{1+e^{-z}}$,将输出压缩到0-1之间。
 
-#### 3.1.2 逻辑回归
+举例:对于一个简单的二维数据集,逻辑回归模型可能是:
+$$
+P(y=1|x) = \frac{1}{1+e^{-(0.8+2x_1-3x_2)}}
+$$
+可以看出,特征$x_1$对正类有正贡献,而$x_2$对正类有负贡献。
 
-逻辑回归是一种用于解决分类问题的监督学习算法。它通过对数据进行逻辑回归转换,将输出映射到0到1之间的概率值,从而实现二分类或多分类。
+### 4.2 支持向量机
+线性SVM的数学模型:
+$$
+\min_{\omega,b} \frac{1}{2}||\omega||^2 \\
+s.t. y_i(\omega^Tx_i+b) \geq 1, i=1,2,...m
+$$
+其中$\omega$为分割超平面的法向量,$b$为截距,$x_i$为第$i$个样本,$y_i$为其类别标签(1或-1),m为样本总数。这个优化问题的目标是最大化分类间隔$\frac{2}{||\omega||}$,约束条件确保所有样本都被正确分类。通过拉格朗日乘子法和对偶问题可以得到这个问题的解。
 
-1. 导入相关模块和数据
-2. 将数据集拆分为训练集和测试集
-3. 创建逻辑回归模型实例
-4. 使用训练数据训练模型
-5. 在测试集上进行预测
-6. 评估模型性能
+对于非线性SVM,可以通过核技巧将样本映射到高维空间,然后在高维空间中寻找线性分割超平面。常用的核函数有:
+- 多项式核:$K(x,z)=(x^Tz+c)^d$
+- 高斯RBF核:$K(x,z)=e^{-\gamma||x-z||^2}$
+- Sigmoid核:$K(x,z)=tanh(\gamma x^Tz+c)$
 
-```python
-from sklearn.linear_model import LogisticRegression
+举例:下图展示了一个二维数据集上线性SVM和RBF核SVM的决策边界:
 
-# 创建逻辑回归模型实例
-lr = LogisticRegression()
+<img src="https://scikit-learn.org/stable/_images/sphx_glr_plot_iris_svc_0011.png" width="500px">
 
-# 使用训练数据训练模型
-lr.fit(X_train, y_train)
-
-# 在测试集上进行预测
-y_pred = lr.predict(X_test)
-```
-
-#### 3.1.3 决策树
-
-决策树是一种基于树形结构的监督学习算法,可以用于解决回归和分类问题。它通过递归地对特征进行划分,将数据集分割成越来越小的子集,最终形成一棵决策树。
-
-1. 导入相关模块和数据
-2. 将数据集拆分为训练集和测试集
-3. 创建决策树模型实例
-4. 使用训练数据训练模型
-5. 在测试集上进行预测
-6. 评估模型性能
-
-```python
-from sklearn.tree import DecisionTreeClassifier
-
-# 创建决策树模型实例
-dt = DecisionTreeClassifier()
-
-# 使用训练数据训练模型
-dt.fit(X_train, y_train)
-
-# 在测试集上进行预测
-y_pred = dt.predict(X_test)
-```
-
-### 3.2 非监督学习算法
-
-#### 3.2.1 K-Means聚类
-
-K-Means是一种常用的非监督学习算法,用于对数据进行聚类。它的核心思想是将数据划分为K个簇,使得每个数据点都属于离它最近的簇,并且簇内数据点之间的距离尽可能小。
-
-1. 导入相关模块和数据
-2. 创建K-Means聚类模型实例
-3. 使用训练数据训练模型
-4. 获取聚类标签
-5. 可视化聚类结果
-
-```python
-from sklearn.cluster import KMeans
-
-# 创建K-Means聚类模型实例
-kmeans = KMeans(n_clusters=3)
-
-# 使用训练数据训练模型
-kmeans.fit(X)
-
-# 获取聚类标签
-labels = kmeans.labels_
-```
-
-#### 3.2.2 主成分分析(PCA)
-
-主成分分析(PCA)是一种常用的降维技术,它通过线性变换将高维数据投影到一个低维空间,同时尽可能保留数据的方差。
-
-1. 导入相关模块和数据
-2. 创建PCA模型实例
-3. 使用训练数据训练模型
-4. 将数据投影到低维空间
-5. 可视化降维结果
-
-```python
-from sklearn.decomposition import PCA
-
-# 创建PCA模型实例
-pca = PCA(n_components=2)
-
-# 使用训练数据训练模型
-pca.fit(X)
-
-# 将数据投影到低维空间
-X_pca = pca.transform(X)
-```
-
-## 4.数学模型和公式详细讲解举例说明
-
-### 4.1 线性回归
-
-线性回归的目标是找到一条最佳拟合直线,使得数据点到直线的残差平方和最小。数学模型如下:
-
-$$J(\theta) = \frac{1}{2m}\sum_{i=1}^m(h_\theta(x^{(i)}) - y^{(i)})^2$$
-
-其中:
-- $m$是训练样本数量
-- $x^{(i)}$是第$i$个训练样本
-- $y^{(i)}$是第$i$个训练样本的标签
-- $h_\theta(x)$是线性回归模型,即$h_\theta(x) = \theta_0 + \theta_1x_1 + \theta_2x_2 + ... + \theta_nx_n$
-- $\theta$是模型参数向量,包括$\theta_0, \theta_1, ..., \theta_n$
-
-我们需要找到使$J(\theta)$最小的$\theta$值,这可以通过梯度下降法或正规方程组等优化算法来实现。
-
-### 4.2 逻辑回归
-
-逻辑回归用于解决分类问题,它通过对数据进行逻辑回归转换,将输出映射到0到1之间的概率值。数学模型如下:
-
-$$h_\theta(x) = \frac{1}{1 + e^{-\theta^Tx}}$$
-
-其中:
-- $x$是输入特征向量
-- $\theta$是模型参数向量
-- $h_\theta(x)$是预测的概率值,介于0到1之间
-
-对于二分类问题,我们可以将概率值映射到0或1,即:
-
-$$y = \begin{cases}
-1, & \text{if } h_\theta(x) \geq 0.5\\
-0, & \text{otherwise}
-\end{cases}$$
-
-对于多分类问题,我们可以使用Softmax回归,将输出映射到多个类别的概率之上。
+可以看出,线性SVM只能给出一个线性决策边界,而RBF核SVM可以学习到非线性的决策边界,更好地划分数据。
 
 ### 4.3 决策树
+决策树的核心是递归地构建if-else规则。对于分类树,通常采用信息增益或基尼不纯度来选择最优划分属性。信息增益的定义:
+$$
+Gain(D,a) = Ent(D) - \sum_{v=1}^V \frac{|D^v|}{|D|}Ent(D^v)
+$$
+其中$D$为数据集,$a$为划分属性,$V$为$a$的可取值数量,$D^v$为$a$取第$v$个值的样本子集。$Ent(D)$为数据集$D$的信息熵:
+$$
+Ent(D) = -\sum_{k=1}^K \frac{|C_k|}{|D|} \log_2 \frac{|C_k|}{|D|}
+$$
+其中$K$为类别数,$C_k$为属于第$k$类的样本子集。决策树学习的过程就是在每个节点选择信息增益最大(或基尼不纯度最小)的属性作为划分属性,递归构建子树,直到满足停止条件。
 
-决策树是一种基于树形结构的监督学习算法,它通过递归地对特征进行划分,将数据集分割成越来越小的子集。每个内部节点代表一个特征,每个分支代表该特征的一个取值,每个叶节点代表一个类别或回归值。
+举例:下图展示了根据天气状况决定是否打球的决策树:
 
-决策树的构建过程可以使用信息增益或基尼系数等指标来选择最优分割特征和分割点。对于分类问题,我们可以使用信息增益作为指标:
+<img src="https://www.researchgate.net/profile/Azeez-Adebimpe/publication/342365792/figure/fig1/AS:907269510373376@1593775516194/The-decision-tree-of-the-weather-problem-adapted-from-Witten-et-al-2011-Table1_Q640.jpg" width="500px">
 
-$$\text{Gain}(D, a) = \text{Entropy}(D) - \sum_{v=1}^V \frac{|D^v|}{|D|}\text{Entropy}(D^v)$$
+### 4.4 K-均值聚类
+K-均值聚类的数学模型:
+$$
+\min_{C} \sum_{i=1}^K \sum_{x \in C_i} ||x-\mu_i||^2
+$$
+其中$C = {C_1,C_2,...C_K}$为K个簇的集合,$\mu_i$为第$i$个簇的中心点,$x$为属于第$i$个簇的样本。这个优化问题的目标是最小化所有样本到其所属簇中心的距离平方和。
 
-其中:
-- $D$是当前数据集
-- $a$是特征
-- $V$是特征$a$的取值集合
-- $D^v$是$D$中特征$a$取值为$v$的子集
-- $\text{Entropy}(D)$是数据集$D$的信息熵,定义为$\text{Entropy}(D) = -\sum_{i=1}^c p_i\log_2 p_i$,其中$c$是类别数,$p_i$是第$i$类的概率
+K-均值的算法流程:
+1. 随机选择K个样本作为初始聚类中心
+2. 重复直到收敛:
+   - 对每个样本,计算其到各个聚类中心的距离,将其分配到距离最近的簇 
+   - 对每个簇,重新计算其聚类中心(簇内所有样本的均值)
+   
+举例:下图展示了K-均值聚类在一个二维数据集上的聚类过程:
 
-我们选择信息增益最大的特征和分割点,递归地构建决策树。
+<img src="https://pic4.zhimg.com/80/v2-8966d71a8408fb0270aba30f0364e94e_720w.jpg" width="500px">
 
-### 4.4 K-Means聚类
+## 5. 项目实践:代码实例和详细解释说明
+本节我们将用Scikit-Learn完成几个实际的机器学习项目,并对代码进行详细解释。
 
-K-Means聚类的目标是将数据划分为K个簇,使得每个数据点都属于离它最近的簇,并且簇内数据点之间的距离尽可能小。数学模型如下:
+### 5.1 泰坦尼克号乘客生存预测
+这是一个经典的二分类问题。我们将用逻辑回归模型根据乘客的个人信息如性别、年龄、船票等级等预测其是否生还。
 
-$$J = \sum_{i=1}^K\sum_{x \in C_i}||x - \mu_i||^2$$
+核心代码:
+```python
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
 
-其中:
-- $K$是簇的数量
-- $C_i$是第$i$个簇
-- $\mu_i$是第$i$个簇的质心
-- $||x - \mu_i||^2$是数据点$x$到质心$\mu_i$的欧几里得距离的平方
+# 加载数据,分割特征和标签
+X = df[['Pclass','Sex','Age','Fare','Embarked']]
+y = df['Survived'] 
 
-我们需要找到使$J$最小的簇划分,这可以通过迭代的方式来实现:
+# 分割训练集和测试集
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-1. 随机初始化$K$个质心
-2. 对每个数据点,计算它到每个质心的距离,将它分配给最近的簇
-3. 对每个簇,重新计算质心
-4. 重复步骤2和3,直到簇不再发生变化
+# 创建逻辑回归模型
+model = LogisticRegression()
 
-### 4.5 主成分分析(PCA)
+# 训练模型
+model.fit(X_train, y_train)
 
-主成分分析(PCA)是一种常用的降维技术,它通过线性变换将高维数据投影到一个低维空间,同时尽可能保留数据的方差。数学模型如下:
+# 预测 
+y_pred = model.predict(X_test)
 
-$$X' = X \times W$$
+# 评估
+print("Accuracy: ", accuracy_score(y_test, y_pred))
+```
 
-其中:
-- $X$是原始数据矩阵,每行代表一个样本
-- $W$是投影矩阵,每列代表一个主成分向量
-- $X'$是投影后的低维数据矩阵
+代码解释:
+- 首先我们从DataFrame中分割出特征X和标签y,然后用train_test_split将数据划分为训练集和测试集
+- 创建一个LogisticRegression对象作为我们的模型
+- 用fit方法在训练集上训练模型
+- 用predict方法在测试集上进行预测
+- 用accuracy_score计算模型在测试集上的准确率
 
-我们需要找到使投影后数据方差最大的投影矩阵$W$,这可以通过求解特征值和特征向量来实现。具体步骤如下:
+### 5.2 手写数字识别
+这是一个多分类问题。我们将用SVM模型对手写数字图片进行0-9的分类。
 
-1. 对数据进行中心化,即减去均值
-2. 计算数据的协方差矩阵$\Sigma$
-3. 求解协方差矩阵$\Sigma$的特征值和特征向量
-4. 选择前$k$个最大的特征值对应的特征向
+核心代码:
+```python
+from sklearn import datasets
+from sklearn.svm import SVC
+from sklearn
