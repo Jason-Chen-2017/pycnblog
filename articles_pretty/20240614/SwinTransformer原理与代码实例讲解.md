@@ -66,11 +66,11 @@ class SwinTransformerClassifier(nn.Module):
         return x
 ```
 
-在这个示例中，我们定义了一个SwinTransformer分类器模型。模型的主要部分是SwinTransformer的backbone，它将输入图像转换为特征表示。我们还定义了一个线性层作为分类器的头部，将特征表示映射到类别概率。在前向传播过程中，我们首先将输入图像传递给backbone，然后对特征表示进行平均池化，最后将结果传递给分类器的头部。
+在这个示例中，我们定义了一个SwinTransformer分类器模型。模型的主要部分是SwinTransformer的backbone，它将输入图像转换为特征表示。我们还定义了一个线性层作为分类器的头部，将特征表示映射到类别概率。在前向传播过程中，我们首先将输入图像传递给backbone，然后对特征表示进行平均池化，最后将结果传递给头部进行分类。
 
 ## 6. 实际应用场景
 
-SwinTransformer已经在多个计算机视觉任务中取得了优异的表现，例如图像分类、目标检测和语义分割等。在实际应用中，SwinTransformer可以用于处理大规模的图像数据集，例如ImageNet和COCO等。SwinTransformer的优点是可以在保持准确性的同时大大减少计算量，因此可以在较短的时间内训练更大的模型。
+SwinTransformer已经在多个计算机视觉任务中取得了优异的表现，例如图像分类、目标检测和语义分割等。在实际应用中，SwinTransformer可以用于处理大规模图像数据，例如视频监控、医学影像和卫星图像等。SwinTransformer的优点是可以处理不同大小的图像，并且具有较高的准确性和较低的计算复杂度。
 
 ## 7. 工具和资源推荐
 
@@ -82,20 +82,18 @@ SwinTransformer已经在多个计算机视觉任务中取得了优异的表现�
 
 ## 8. 总结：未来发展趋势与挑战
 
-SwinTransformer是一种新型的Transformer架构，它在计算机视觉领域中表现出色。未来，我们可以期待更多的研究将SwinTransformer应用于其他领域，例如自然语言处理和语音识别等。同时，SwinTransformer也面临着一些挑战，例如如何处理更大的图像数据集和如何进一步提高模型的准确性等。
+SwinTransformer是一种新型的Transformer架构，它在计算机视觉领域中表现出色。SwinTransformer的设计思想是将图像分成多个小块，然后在这些小块上应用Transformer模型。这种方法可以大大减少计算量，同时保持了模型的准确性。未来，SwinTransformer有望在更多的计算机视觉任务中得到应用。然而，SwinTransformer也面临着一些挑战，例如如何处理不同大小的图像、如何处理图像中的长距离依赖关系等。
 
 ## 9. 附录：常见问题与解答
 
-Q: SwinTransformer的优点是什么？
-
-A: SwinTransformer的优点是可以在保持准确性的同时大大减少计算量，因此可以在较短的时间内训练更大的模型。
-
 Q: SwinTransformer适用于哪些计算机视觉任务？
 
-A: SwinTransformer已经在多个计算机视觉任务中取得了优异的表现，例如图像分类、目标检测和语义分割等。
+A: SwinTransformer适用于多个计算机视觉任务，例如图像分类、目标检测和语义分割等。
 
-Q: SwinTransformer的未来发展趋势是什么？
+Q: SwinTransformer的优点是什么？
 
-A: 未来，我们可以期待更多的研究将SwinTransformer应用于其他领域，例如自然语言处理和语音识别等。同时，SwinTransformer也面临着一些挑战，例如如何处理更大的图像数据集和如何进一步提高模型的准确性等。
+A: SwinTransformer的优点是可以处理不同大小的图像，并且具有较高的准确性和较低的计算复杂度。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
+Q: SwinTransformer的缺点是什么？
+
+A: SwinTransformer的缺点是如何处理不同大小的图像、如何处理图像中的长距离依赖关系等问题。
