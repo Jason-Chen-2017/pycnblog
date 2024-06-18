@@ -2,9 +2,7 @@
 # 长短期记忆网络 (Long Short-Term Memory)
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
-
-
-# 长短期记忆网络 (Long Short-Term Memory)
+ 
 
 ## 1. 背景介绍
 
