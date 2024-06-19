@@ -78,7 +78,7 @@ def process_file(file_path, target_good_directory, target_draft_directory):
     # target_good_directory
     if (length >= 2500 and
             line_count >= 120 and
-            short_lines_count_ration < 0.6 and
+            short_lines_count_ration < 0.8 and
             is_good_content(content)):
         file_name = os.path.basename(file_path)
         target_good_directory = os.path.join(target_good_directory, file_name)
@@ -88,7 +88,7 @@ def process_file(file_path, target_good_directory, target_draft_directory):
     # target_draft_directory
     if (2000 < length < 2500 and
             80 < line_count < 120 and
-            short_lines_count_ration < 0.6 and
+            short_lines_count_ration < 0.8 and
             is_good_content(content)):
         file_name = os.path.basename(file_path)
         target_draft_directory = os.path.join(target_draft_directory, file_name)
