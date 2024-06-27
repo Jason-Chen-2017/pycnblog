@@ -1,4 +1,3 @@
-
 # 层次聚类(Hierarchical Clustering) - 原理与代码实例讲解
 
 ## 关键词：层次聚类，聚类分析，数据挖掘，距离度量，树状图，聚合，分裂
@@ -199,9 +198,7 @@ plt.ylabel('Distance')
 plt.show()
 ```
 
-运行以上代码，将得到以下树状图：
-
-![Iris Dendrogram](https://i.imgur.com/5Qx8O7k.png)
+ 
 
 通过观察树状图，我们可以发现以下信息：
 
