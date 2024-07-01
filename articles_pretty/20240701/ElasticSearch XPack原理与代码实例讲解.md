@@ -19,7 +19,7 @@ X-Pack 核心功能包括：
 
 ```mermaid
 graph LR
-    A[ElasticSearch] --> B{X-Pack}
+    A[ElasticSearch] --> B{XPack}
     B --> C{安全}
     B --> D{监控}
     B --> E{分析}
