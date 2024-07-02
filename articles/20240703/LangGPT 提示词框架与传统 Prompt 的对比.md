@@ -1,0 +1,39 @@
+## LangGPT 提示词框架与传统 Prompt 的对比
+
+> 关键词：LangGPT, 提示词框架, 传统 Prompt, 自然语言处理, 语言模型, 性能优化, 泛化能力
+
+## 1. 背景介绍
+
+近年来，大型语言模型（LLM）在自然语言处理（NLP）领域取得了显著进展，展现出强大的文本生成、翻译、摘要等能力。然而，LLM 的性能很大程度上依赖于精心设计的提示词（Prompt）。传统的 Prompt 通常是简单的文本指令，缺乏结构性和可扩展性，难以满足复杂任务的需求。
+
+LangGPT 提示词框架旨在解决这一问题，它提供了一种更高级、更灵活的 Prompt 设计方法，通过将 Prompt 视为一个可训练的组件，并结合模型参数进行优化，从而提升 LLMs 的性能和泛化能力。
+
+## 2. 核心概念与联系
+
+### 2.1  传统 Prompt
+
+传统 Prompt 通常是简单的文本指令，直接告诉模型需要完成的任务。例如，对于文本分类任务，传统 Prompt 可能为：“判断以下文本的 sentiment 是 positive 还是 negative”。
+
+**传统 Prompt 的局限性:**
+
+* **缺乏结构性:**  传统 Prompt 难以表达复杂的任务逻辑，难以处理多步或嵌套的任务。
+* **可扩展性差:**  修改或扩展传统 Prompt 需要人工干预，效率低下。
+* **泛化能力有限:**  传统 Prompt 往往针对特定任务设计，难以迁移到其他任务。
+
+### 2.2  LangGPT 提示词框架
+
+LangGPT 提示词框架将 Prompt 视为一个可训练的组件，并将其嵌入到模型训练过程中。它通过以下几个关键点来提升 Prompt 的设计和性能：
+
+* **结构化 Prompt:**  LangGPT 采用一种结构化的 Prompt 格式，例如使用模板、变量和条件语句，可以更清晰地表达任务逻辑。
+* **可训练性:**  LangGPT 的 Prompt 可以与模型参数一起进行训练，从而优化 Prompt 的效果。
+* **泛化能力:**  通过训练，LangGPT 可以学习到更通用的 Prompt 策略，提高对不同任务的适应性。
+
+**LangGPT 提示词框架的优势:**
+
+* **提高性能:**  通过优化 Prompt 设计，可以显著提升 LLMs 的准确率、流畅度和相关性。
+* **增强可扩展性:**  结构化的 Prompt 格式和可训练性使得 LangGPT 能够轻松扩展到更复杂的任务。
+* **提升泛化能力:**  训练后的 LangGPT 可以生成更通用的 Prompt，提高对不同任务的适应性。
+
+**LangGPT 提示词框架与传统 Prompt 的关系:**
+
+![LangGPT 提示词框架与传统 Prompt 的关系](https://mermaid.live/img/z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z
