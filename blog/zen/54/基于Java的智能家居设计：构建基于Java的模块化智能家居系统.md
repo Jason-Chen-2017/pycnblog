@@ -140,7 +140,7 @@ public class TemperaturePredictor {
     public TemperaturePredictor(double[][] X, double[] y) {
         int m = X.length;
         int n = X[0].length;
-        
+
         // 计算 X^T * X
         double[][] XTX = new double[n][n];
         for (int i = 0; i < n; i++) {
@@ -150,11 +150,11 @@ public class TemperaturePredictor {
                 }
             }
         }
-        
+
         // 计算 (X^T * X)^(-1)
         Matrix XTXMatrix = new Matrix(XTX);
         Matrix XTXInverse = XTXMatrix.inverse();
-        
+
         // 计算 X^T * y
         double[] XTy = new double[n];
         for (int i = 0; i < n; i++) {
@@ -162,13 +162,13 @@ public class TemperaturePredictor {
                 XTy[i] += X[k][i] * y[k];
             }
         }
-        
+
         // 计算系数 a = (X^T * X)^(-1) * X^T * y
         coefficients = XTXInverse.times(new Matrix(XTy, n)).getRowPackedCopy();
     }
-    
+
     public double predict(double outdoorTemp, double setTemp, double acSpeed, double time) {
-        return coefficients[0] + coefficients[1] * outdoorTemp + 
+        return coefficients[0] + coefficients[1] * outdoorTemp +
                coefficients[2] * setTemp + coefficients[3] * acSpeed + coefficients[4] * time;
     }
 }
@@ -196,10 +196,10 @@ public class TemperaturePredictor {
 @Service
 public class TemperatureService {
     private TemperaturePredictor predictor;
-    
+
     @Autowired
     private TemperatureRepository repository;
-    
+
     @PostConstruct
     public void init() {
         // 从数据库中加载历史数据

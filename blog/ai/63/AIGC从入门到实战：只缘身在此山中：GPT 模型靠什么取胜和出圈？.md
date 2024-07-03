@@ -106,11 +106,11 @@ $$
 2. **位置编码**：
 
 $$
-PE_{(pos, 2i)} = \sin\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right) 
+PE_{(pos, 2i)} = \sin\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right)
 $$
 
 $$
-PE_{(pos, 2i+1)} = \cos\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right) 
+PE_{(pos, 2i+1)} = \cos\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right)
 $$
 
 其中，$pos$ 是位置索引，$d_{\text{model}}$ 是模型的最大维度。

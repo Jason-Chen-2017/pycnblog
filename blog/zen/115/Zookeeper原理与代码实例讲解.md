@@ -38,7 +38,7 @@ Znode--设置-->ACL
 Znode--更新-->Version
 ```
 
-## 3. 核心算法原理 & 具体操作步骤 
+## 3. 核心算法原理 & 具体操作步骤
 ### 3.1 算法原理概述
 Zookeeper采用ZAB(Zookeeper Atomic Broadcast)协议来保证分布式数据一致性。ZAB协议是一种基于主从架构的原子广播协议,核心思想是:
 - 每个事务只能被处理一次
@@ -47,7 +47,7 @@ Zookeeper采用ZAB(Zookeeper Atomic Broadcast)协议来保证分布式数据一�
 
 ### 3.2 算法步骤详解
 1. Leader选举:使用FastLeaderElection算法,基于TCP做Leader选举。
-2. 数据同步:把Leader的数据同步给所有Follower。 
+2. 数据同步:把Leader的数据同步给所有Follower。
 3. 客户端读写:
    - 写请求:统一转发给Leader处理,由Leader广播给所有Follower。
    - 读请求:Follower可直接响应,保证数据是有序的。
@@ -58,7 +58,7 @@ Zookeeper采用ZAB(Zookeeper Atomic Broadcast)协议来保证分布式数据一�
 - 全局数据一致:数据按照严格顺序更新,不会出现数据不一致。
 - 可用性高:只要集群中半数以上机器存活,Zookeeper就能正常服务。
 
-缺点: 
+缺点:
 - 吞吐量不高:写操作都要经过半数以上服务器,性能受到影响。
 - 延迟较高:使用主从架构,读写都要等待Leader,延迟较高。
 
@@ -79,7 +79,7 @@ $$
 当Leader服务器(编号为1)接收到一个写请求,会生成一个新事务 $T_x$,并把它广播给所有Follower。Follower接收到事务后,会按照以下规则更新自己的事务日志:
 
 $$
-L_i[x] = 
+L_i[x] =
 \begin{cases}
 T_x & \text{if } i \text{ receives } T_x \text{ from Leader} \\
 L_i[x-1] & \text{otherwise}
@@ -116,11 +116,11 @@ $$
 
 ```java
 public class ZooKeeperLock implements Lock {
-    
+
     private ZooKeeper zk;
     private String lockPath;
     private String currentPath;
-    
+
     public ZooKeeperLock(String lockPath) {
         this.lockPath = lockPath;
         try {
@@ -129,11 +129,11 @@ public class ZooKeeperLock implements Lock {
             e.printStackTrace();
         }
     }
-    
+
     @Override
     public void lock() {
         try {
-            currentPath = zk.create(lockPath + "/lock_", null, 
+            currentPath = zk.create(lockPath + "/lock_", null,
                     ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
             List<String> children = zk.getChildren(lockPath, false);
             Collections.sort(children);
@@ -151,7 +151,7 @@ public class ZooKeeperLock implements Lock {
             e.printStackTrace();
         }
     }
-    
+
     @Override
     public void unlock() {
         try {
@@ -160,22 +160,22 @@ public class ZooKeeperLock implements Lock {
             e.printStackTrace();
         }
     }
-    
+
     @Override
     public void lockInterruptibly() throws InterruptedException {
         throw new UnsupportedOperationException();
     }
-    
+
     @Override
     public boolean tryLock() {
         throw new UnsupportedOperationException();
     }
-    
+
     @Override
     public boolean tryLock(long time, TimeUnit unit) {
         throw new UnsupportedOperationException();
     }
-    
+
     @Override
     public Condition newCondition() {
         throw new UnsupportedOperationException();

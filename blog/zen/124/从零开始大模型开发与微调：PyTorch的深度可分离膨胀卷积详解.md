@@ -1,6 +1,6 @@
 ## 从零开始大模型开发与微调：PyTorch的深度可分离膨胀卷积详解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -388,4 +388,4 @@ torch.Size([1, 64, 28, 28])
 
 希望本文能够帮助您更好地理解深度可分离膨胀卷积，并将其应用于您的项目中。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -1,6 +1,6 @@
 # 【大模型应用开发 动手做AI Agent】AutoGen实战
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：自动生成(AutoGen), 大型语言模型(LLM), 自动化写作, 文本创作, AI代理
 
@@ -79,9 +79,9 @@ AutoGen 技术广泛应用于：
 
 **变分自编码器（VAE）**是生成模型的一种，用于文本生成：
 
-$$ P(x|z) = \\frac{1}{Z} \\exp(-\\frac{1}{\\beta} D_{KL}(q(z|x)||p(z))) $$
+$$ P(x|z) = \frac{1}{Z} \exp(-\frac{1}{\beta} D_{KL}(q(z|x)||p(z))) $$
 
-其中，$x$ 是输入文本，$z$ 是潜在变量，$D_{KL}$ 是Kullback-Leibler散度，$\\beta$ 是控制重建误差和潜在分布之间差异的超参数。
+其中，$x$ 是输入文本，$z$ 是潜在变量，$D_{KL}$ 是Kullback-Leibler散度，$\beta$ 是控制重建误差和潜在分布之间差异的超参数。
 
 ### 4.2 公式推导过程
 
@@ -119,16 +119,16 @@ import torch
 from transformers import AutoModelWithLMHead, AutoTokenizer
 
 # 加载预训练模型和分词器
-model_name = \"gpt2\"
+model_name = "gpt2"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelWithLMHead.from_pretrained(model_name)
 
 # 输入文本和生成长度
-input_text = \"Once upon a time\"
+input_text = "Once upon a time"
 generate_length = 100
 
 # 编码输入文本
-input_ids = tokenizer.encode(input_text, return_tensors=\"pt\")
+input_ids = tokenizer.encode(input_text, return_tensors="pt")
 
 # 生成文本
 output = model.generate(input_ids, max_length=generate_length, do_sample=True, top_k=50, temperature=0.7)

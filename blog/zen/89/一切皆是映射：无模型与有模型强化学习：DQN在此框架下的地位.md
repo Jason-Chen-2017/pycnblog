@@ -252,7 +252,7 @@ def train_dqn(model, env, optimizer, criterion, gamma, episodes, target_update_f
 
         episodes_list.append(episode)
         total_score_list.append(score)
-        
+
         # 更新目标网络
         if episode % target_update_freq == 0:
             model_copy = DQN(state_dim, action_dim, hidden_dim)

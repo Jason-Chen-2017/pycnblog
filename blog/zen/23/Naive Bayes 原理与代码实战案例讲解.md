@@ -1,4 +1,4 @@
-                 
+
 # Naive Bayes 原理与代码实战案例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -138,10 +138,10 @@ class NaiveBayesClassifier:
                     feature_counts_per_class[label] = Counter()
                 feature_counts_per_class[label][sample] += 1
             self.feature_counts[label] = feature_counts_per_class
-        
+
         # Calculate prior probabilities.
         self.priors = {label: count / len(y) for label, count in self.class_counts.items()}
-        
+
         # Calculate likelihoods.
         self.likelihoods = {
             label: {feature: count / self.class_counts[label]
@@ -215,9 +215,9 @@ def main():
 
     vectorizer = CountVectorizer(binary=True)
     X = vectorizer.fit_transform(preprocessed_text)
-    
+
     X_train, X_test, y_train, y_test = train_test_split(X, labels, test_size=0.2, random_state=42)
-    
+
     model = create_model(X_train.toarray(), y_train)
     evaluate_model(model, X_test.toarray(), y_test)
 

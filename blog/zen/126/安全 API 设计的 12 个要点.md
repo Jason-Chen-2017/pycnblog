@@ -277,4 +277,4 @@ if __name__ == "__main__":
 
 **A：**  OAuth 2.0 是一种授权框架，允许第三方应用程序在用户授权的情况下访问用户的资源，而无需获取用户的用户名和密码。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

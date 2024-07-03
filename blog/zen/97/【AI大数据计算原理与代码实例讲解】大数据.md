@@ -264,7 +264,7 @@ A3：Hadoop生态系统中主要包括以下组件：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n spark-env python=3.8 
+conda create -n spark-env python=3.8
 conda activate spark-env
 ```
 

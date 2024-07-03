@@ -148,7 +148,7 @@ class SentimentAnalysisModel(nn.Module):
     def __init__(self):
         super(SentimentAnalysisModel, self).__init__()
         self.bert = BertForSequenceClassification.from_pretrained('bert-base-uncased')
-    
+
     def forward(self, input_ids, attention_mask):
         return self.bert(input_ids, attention_mask=attention_mask)
 
@@ -205,7 +205,7 @@ class SentimentAnalysisModel(nn.Module):
     def __init__(self):
         super(SentimentAnalysisModel, self).__init__()
         self.bert = BertForSequenceClassification.from_pretrained('bert-base-uncased')
-    
+
     def forward(self, input_ids, attention_mask):
         return self.bert(input_ids, attention_mask=attention_mask)
 

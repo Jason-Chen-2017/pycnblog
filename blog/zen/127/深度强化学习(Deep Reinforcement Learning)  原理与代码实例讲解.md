@@ -531,4 +531,4 @@ env.close()
 * **模型架构:**  探索更强大的神经网络架构，例如卷积神经网络、循环神经网络、图神经网络等。
 * **应用拓展:**  将深度强化学习应用于更多领域，例如医疗、金融、制造业等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

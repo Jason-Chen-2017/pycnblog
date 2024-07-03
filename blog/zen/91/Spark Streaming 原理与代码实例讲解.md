@@ -320,6 +320,6 @@ A5：是的，Spark Streaming 可以与 Spark MLlib 集成，支持实时机器�
 
 希望以上解答能够帮助读者更好地理解 Spark Streaming。如有其他疑问，请随时提问。
 
---- 
+---
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

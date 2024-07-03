@@ -75,8 +75,7 @@
 ### 4.2 公式推导过程
 
 - **Bellman方程**：$V(s) = \\max_a \\{R(s,a) + \\gamma V(s')\\}$，其中$V(s)$是状态$s$的价值，$\\gamma$是折扣因子。
-- **策略梯度方法**：$\\Delta \\theta = \\eta \\cdot \
-abla_\\theta \\mathbb{E}_{s,a \\sim \\pi_\\theta} [\\rho(s,a) \\cdot Q(s,a)]$，其中$\\theta$是策略函数的参数，$\\pi_\\theta$是策略函数，$\\rho(s,a)$是状态-动作分布，$Q(s,a)$是状态-动作值函数。
+- **策略梯度方法**：$\\Delta \\theta = \\eta \\cdot \nabla_\\theta \\mathbb{E}_{s,a \\sim \\pi_\\theta} [\\rho(s,a) \\cdot Q(s,a)]$，其中$\\theta$是策略函数的参数，$\\pi_\\theta$是策略函数，$\\rho(s,a)$是状态-动作分布，$Q(s,a)$是状态-动作值函数。
 
 ### 4.3 案例分析与讲解
 

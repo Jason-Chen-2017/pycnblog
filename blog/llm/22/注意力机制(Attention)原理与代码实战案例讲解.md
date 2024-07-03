@@ -46,9 +46,9 @@
 
 对于输入序列 $X = (x_1, x_2, ..., x_T)$，我们将每个元素转换成查询、键和值向量：
 
-- **查询向量**：$Q = W_Q \\cdot X$
-- **键向量**：$K = W_K \\cdot X$
-- **值向量**：$V = W_V \\cdot X$
+- **查询向量**：$Q = W_Q \cdot X$
+- **键向量**：$K = W_K \cdot X$
+- **值向量**：$V = W_V \cdot X$
 
 其中，$W_Q$、$W_K$和$W_V$是参数矩阵。
 
@@ -56,7 +56,7 @@
 
 计算每个查询向量与每个键向量之间的点积：
 
-$$a_{ij} = \\frac{\\text{softmax}(Q_i \\cdot K_j^T / \\sqrt{d_k})}{\\sqrt{d_k}}$$
+$$a_{ij} = \frac{\text{softmax}(Q_i \cdot K_j^T / \sqrt{d_k})}{\sqrt{d_k}}$$
 
 其中，$d_k$是键向量的维度，$a_{ij}$是注意力分数。
 
@@ -64,7 +64,7 @@ $$a_{ij} = \\frac{\\text{softmax}(Q_i \\cdot K_j^T / \\sqrt{d_k})}{\\sqrt{d_k}}$
 
 根据注意力分数对值向量进行加权平均：
 
-$$\\text{Attention}(Q, K, V) = \\text{softmax}(Q \\cdot K^T / \\sqrt{d_k}) \\cdot V$$
+$$\text{Attention}(Q, K, V) = \text{softmax}(Q \cdot K^T / \sqrt{d_k}) \cdot V$$
 
 ### 算法优缺点
 
@@ -83,21 +83,21 @@ $$\\text{Attention}(Q, K, V) = \\text{softmax}(Q \\cdot K^T / \\sqrt{d_k}) \\cdo
 
 假设输入序列 $X$ 的长度为 $T$，每个元素的维度为 $D$。则：
 
-- 查询向量：$Q = \\text{Linear}(X)$
-- 键向量：$K = \\text{Linear}(X)$
-- 值向量：$V = \\text{Linear}(X)$
+- 查询向量：$Q = \text{Linear}(X)$
+- 键向量：$K = \text{Linear}(X)$
+- 值向量：$V = \text{Linear}(X)$
 
-其中，$\\text{Linear}$ 表示线性变换操作。
+其中，$\text{Linear}$ 表示线性变换操作。
 
 ### 公式推导过程
 
 #### 注意力分数计算：
 
-$$a_{ij} = \\frac{\\text{softmax}(Q_i \\cdot K_j^T / \\sqrt{d_k})}{\\sqrt{d_k}}$$
+$$a_{ij} = \frac{\text{softmax}(Q_i \cdot K_j^T / \sqrt{d_k})}{\sqrt{d_k}}$$
 
 #### 注意力向量计算：
 
-$$\\text{Attention}(Q, K, V) = \\text{softmax}(Q \\cdot K^T / \\sqrt{d_k}) \\cdot V$$
+$$\text{Attention}(Q, K, V) = \text{softmax}(Q \cdot K^T / \sqrt{d_k}) \cdot V$$
 
 ### 案例分析与讲解
 
@@ -107,9 +107,9 @@ $$\\text{Attention}(Q, K, V) = \\text{softmax}(Q \\cdot K^T / \\sqrt{d_k}) \\cdo
 import numpy as np
 
 def scaled_dot_product_attention(query, key, value, mask=None):
-    \"\"\"
+    """
     实现带掩码的点积注意力
-    \"\"\"
+    """
     d_k = query.shape[-1]
     scores = np.matmul(query, key.transpose(-2, -1)) / np.sqrt(d_k)
     if mask is not None:
@@ -124,8 +124,8 @@ key = np.random.rand(10, 5, 256)
 value = np.random.rand(10, 5, 256)
 
 context, attention_weights = scaled_dot_product_attention(query, key, value)
-print(\"Context shape:\", context.shape)
-print(\"Attention weights shape:\", attention_weights.shape)
+print("Context shape:", context.shape)
+print("Attention weights shape:", attention_weights.shape)
 ```
 
 ### 常见问题解答
@@ -188,7 +188,7 @@ class MultiHeadAttention(tf.keras.layers.Layer):
 # 创建MultiHeadAttention层并调用
 mha = MultiHeadAttention(d_model=512, num_heads=8)
 output = mha(q, k, v, mask=None)
-print(\"Output shape:\", output.shape)
+print("Output shape:", output.shape)
 ```
 
 ### 代码解读与分析
@@ -226,7 +226,7 @@ print(\"Output shape:\", output.shape)
 
 ### 相关论文推荐
 
-- **\"Attention is All You Need\"**：Vaswani等人发表于2017年的论文，提出了Transformer模型及其多头注意力机制。
+- **"Attention is All You Need"**：Vaswani等人发表于2017年的论文，提出了Transformer模型及其多头注意力机制。
 
 ### 其他资源推荐
 

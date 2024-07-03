@@ -193,7 +193,7 @@ $$
 假设机器人需要在二维网格世界中从起始位置移动到目标位置，每个位置可以采取上下左右四个动作，奖励函数为：
 
 $$
-R(s, a) = 
+R(s, a) =
 \begin{cases}
 1, & \text{if } s \text{ is the goal state} \\
 -1, & \text{if } s \text{ is the obstacle state} \\

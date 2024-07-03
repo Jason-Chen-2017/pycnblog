@@ -141,7 +141,7 @@ $$
 残差连接和层归一化可以缓解梯度消失和梯度爆炸问题。
 
 $$
-\text{Residual}(\mathbf{X}) = \mathbf{X} + \text{FFN}(\text{Attention}(\mathbf{X})) 
+\text{Residual}(\mathbf{X}) = \mathbf{X} + \text{FFN}(\text{Attention}(\mathbf{X}))
 $$
 
 $$

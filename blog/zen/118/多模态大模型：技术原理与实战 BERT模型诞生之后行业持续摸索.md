@@ -158,19 +158,19 @@ class QADataset(torch.utils.data.Dataset):
         self.questions = questions
         self.answers = answers
         self.contexts = contexts
-    
+
     def __len__(self):
         return len(self.questions)
-    
+
     def __getitem__(self, idx):
         question = self.questions[idx]
         answer = self.answers[idx]
         context = self.contexts[idx]
-        
+
         # 对文本数据进行编码
         inputs = tokenizer(question, context, return_tensors='pt')
         targets = tokenizer(answer, return_tensors='pt')['input_ids']
-        
+
         return inputs, targets
 
 # 创建数据集和加载器

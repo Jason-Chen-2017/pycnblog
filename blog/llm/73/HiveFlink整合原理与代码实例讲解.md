@@ -215,26 +215,26 @@ public class HiveOnFlinkExample {
         // 创建Flink流执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setRestartStrategy(RestartStrategies.fixedDelayRestart(3, 10000));
-        
+
         // 创建Flink表执行环境
         StreamTableEnvironment tableEnv = StreamTableEnvironment.create(env);
-        
+
         // 连接Hive
         tableEnv.executeSql("CREATE TABLE user_log (user_id STRING, login_time TIMESTAMP, action STRING) " +
-                            "ROW FORMAT DELIMITED FIELDS TERMINATED BY '\\t' " +
+                            "ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' " +
                             "STORED AS TEXTFILE");
-        
+
         // 从Hive读取数据
         tableEnv.executeSql("CREATE VIEW user_log_stream AS " +
                             "SELECT user_id, login_time, action " +
                             "FROM user_log");
-        
+
         // 查询登录行为
         tableEnv.executeSql("SELECT user_id, login_time, action " +
                             "FROM user_log_stream " +
                             "WHERE action = 'login' " +
                             "ORDER BY login_time");
-        
+
         // 执行Flink程序
         env.execute("Hive on Flink Example");
     }

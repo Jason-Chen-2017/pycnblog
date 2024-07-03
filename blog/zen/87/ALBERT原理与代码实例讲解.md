@@ -141,7 +141,7 @@ A：ALBERT模型的预训练策略包括：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n albert-env python=3.7 
+conda create -n albert-env python=3.7
 conda activate albert-env
 ```
 3. 安装PyTorch：
@@ -219,7 +219,7 @@ batch_size = 16
 for epoch in range(epochs):
     loss = train_epoch(model, train_dataset, batch_size, optimizer)
     print(f"Epoch {epoch+1}, train loss: {loss:.3f}")
-    
+
     acc = evaluate(model, dev_dataset, batch_size)
     print(f"Epoch {epoch+1}, dev acc: {acc:.3f}")
 ```

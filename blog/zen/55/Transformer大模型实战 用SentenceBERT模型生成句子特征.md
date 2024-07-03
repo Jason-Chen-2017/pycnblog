@@ -15,7 +15,7 @@
 
 ### 2.1 Transformer的核心概念
 - Self-Attention:自注意力机制,让模型中的每个位置都能attend到序列中的任意位置,直接建模长距离依赖。
-- Multi-Head Attention:多头注意力机制,通过多个独立的attention函数学习不同的注意力表示,提高模型容量。  
+- Multi-Head Attention:多头注意力机制,通过多个独立的attention函数学习不同的注意力表示,提高模型容量。
 - Positional Encoding:位置编码,为模型引入序列中元素的位置信息。
 - Layer Normalization:层归一化,加速模型收敛,提高训练稳定性。
 - Residual Connection:残差连接,解决深层网络中的梯度消失问题。
@@ -34,7 +34,7 @@
 
 ### 3.1 BERT的训练过程
 1. 构建大规模无监督语料库,进行预处理和tokenization。
-2. 随机掩盖(mask)部分词语,作为MLM任务的目标。 
+2. 随机掩盖(mask)部分词语,作为MLM任务的目标。
 3. 生成句子对,并标记它们是否在原文中相邻,作为NSP任务的目标。
 4. 将数据输入BERT模型,前向传播计算MLM和NSP的损失。
 5. 反向传播计算梯度,更新模型参数。
@@ -46,7 +46,7 @@
 3. 将句子对输入Siamese BERT,分别得到句子的embedding向量。
 4. 对BERT输出的token embedding进行池化,得到固定长度的句子向量。
 5. 计算anchor与positive的距离、anchor与negative的距离,构建triplet loss。
-6. 反向传播计算梯度,更新Siamese BERT的参数。  
+6. 反向传播计算梯度,更新Siamese BERT的参数。
 7. 重复步骤2-6,直到模型收敛。
 
 ### 3.3 Sentence-BERT的推理过程
@@ -65,7 +65,7 @@ $$
 
 其中,$Q$,$K$,$V$分别是查询、键、值矩阵,$d_k$为键向量的维度。通过计算查询与所有键的点积,得到注意力权重,再与值相乘得到最终的注意力表示。
 
-### 4.2 Triplet Loss的数学描述  
+### 4.2 Triplet Loss的数学描述
 Triplet Loss的目标是让anchor与positive的距离小于anchor与negative的距离,并且二者之差大于一个margin $\alpha$:
 
 $$
@@ -85,7 +85,7 @@ from sentence_transformers import SentenceTransformer
 model = SentenceTransformer('paraphrase-distilroberta-base-v1')
 
 # 待编码的句子
-sentences = ['This is an example sentence', 
+sentences = ['This is an example sentence',
              'Each sentence is converted']
 
 # 编码句子,生成特征向量
@@ -135,7 +135,7 @@ Sentence-BERT生成的句子特征向量可以应用于多种NLP任务,举几个
 Sentence-BERT作为一种简洁有效的句子embedding生成方法,在学界和业界都受到了广泛关注。未来它的发展趋势可能有:
 
 - 探索更大规模、更强大的预训练模型,如RoBERTa、XLNet等,进一步提升性能。
-- 在更多垂直领域进行fine-tuning,生成适用于特定任务的sentence embedding。  
+- 在更多垂直领域进行fine-tuning,生成适用于特定任务的sentence embedding。
 - 研究新的pooling方法和目标函数,优化sentence embedding的质量。
 - 将Sentence-BERT与知识图谱、指代消解等技术相结合,实现更加智能的语义理解。
 
@@ -159,7 +159,7 @@ A3: Sentence-BERT生成的向量是一种dense distributed representation,难以
 
 ### Q4: 在使用Sentence-BERT时,需要注意哪些问题?
 A4: 使用Sentence-BERT时,要注意以下几点:
-- 根据任务和数据选择合适的预训练模型。 
+- 根据任务和数据选择合适的预训练模型。
 - 对输入句子进行必要的预处理,如切词、小写化等。
 - 合理设置编码器的最大长度、batch size等超参数。
 - 评估不同pooling策略对下游任务的影响。

@@ -13,7 +13,7 @@ Faster R-CNN是两阶段检测器的集大成者,引入区域建议网络(RPN)�
 
 ## 2.核心概念与联系
 
-### 2.1 区域建议网络(RPN) 
+### 2.1 区域建议网络(RPN)
 - 在原图上滑动一个小网络,判断每个位置是否包含目标
 - 同时对目标的位置进行修正,得到更准确的候选区域
 - RPN和检测网络共享卷积特征,使得计算区域建议的成本很低
@@ -56,7 +56,7 @@ F --> H[边框回归]
 4. 根据分类概率和回归偏移量,过滤出高质量的候选区域
 
 ### 3.3 ROI Pooling
-1. 根据候选区域的坐标映射到卷积特征图上对应的区域  
+1. 根据候选区域的坐标映射到卷积特征图上对应的区域
 2. 将区域划分为固定数量的子区域,如7x7
 3. 对每个子区域进行最大池化操作
 4. 得到固定大小的ROI特征图,如7x7x512
@@ -101,7 +101,7 @@ L_{reg}(t_i,t_i^*) = \sum_{i \in {x,y,w,h}} \text{Smooth}_{L1}(t_i - t_i^*)
 $$
 
 $$
-\text{Smooth}_{L1}(x) = 
+\text{Smooth}_{L1}(x) =
 \begin{cases}
 0.5x^2, & \text{if } |x| < 1 \\
 |x| - 0.5, & \text{otherwise}
@@ -125,7 +125,7 @@ $$
 
 $$
 \text{bin}_w = r_w / W, \quad \text{bin}_h = r_h / H
-$$  
+$$
 
 对于第$(i,j)$个子区域,其对应特征图上的坐标范围为:
 
@@ -164,18 +164,18 @@ class FasterRCNN(nn.Module):
         # 加载预训练的ResNet50作为特征提取器
         self.extractor = models.resnet50(pretrained=True)
         self.extractor = nn.Sequential(*list(self.extractor.children())[:-2])
-        
+
         # 区域建议网络
         self.rpn = RPN()
-        
+
         # ROI Pooling层
         self.roi_pool = RoIPool(7, 7, 1.0/16)
-        
+
         # 分类和回归头
         self.cls_head = nn.Sequential(
             nn.Linear(2048*7*7, 4096),
             nn.ReLU(True),
-            nn.Linear(4096, 4096),  
+            nn.Linear(4096, 4096),
             nn.ReLU(True),
             nn.Linear(4096, num_classes)
         )
@@ -190,20 +190,20 @@ class FasterRCNN(nn.Module):
     def forward(self, x):
         # 提取卷积特征
         feature_map = self.extractor(x)
-        
+
         # 区域建议
         rois = self.rpn(feature_map)
-        
+
         # ROI Pooling
         roi_feats = self.roi_pool(feature_map, rois)
-        
+
         # 展平
         roi_feats = roi_feats.view(roi_feats.size(0), -1)
-        
+
         # 分类和回归
         cls_scores = self.cls_head(roi_feats)
         bbox_preds = self.reg_head(roi_feats)
-        
+
         return cls_scores, bbox_preds
 
 class RPN(nn.Module):
@@ -220,11 +220,11 @@ class RPN(nn.Module):
         h = self.conv(x)
         cls_scores = self.cls(h)
         bbox_preds = self.reg(h)
-        
+
         # 生成锚框并应用边框回归
         anchors = generate_anchors(cls_scores.shape[-2:])
         rois = apply_deltas(anchors, bbox_preds)
-        
+
         return rois
 ```
 
@@ -249,7 +249,7 @@ class RPN(nn.Module):
 Faster R-CNN作为一种高效准确的通用目标检测算法,在很多领域得到了广泛应用,例如:
 
 - 智能监控:通过检测人、车等目标,实现异常行为分析、人流量统计等功能
-- 无人驾驶:检测道路上的车辆、行人、交通标志等,为自动驾驶提供环境感知能力  
+- 无人驾驶:检测道路上的车辆、行人、交通标志等,为自动驾驶提供环境感知能力
 - 医学影像分析:定位病灶区域如肿瘤,辅助医生进行诊断
 - 工业质检:检测工件的缺陷和异常,提高生产效率和质量
 - 卫星遥感图像分析:检测建筑物、道路等地物,用于制图和城市规划

@@ -108,18 +108,18 @@ PyTorch 广泛应用于深度学习、机器学习、计算机视觉、自然语
 $$ y = wx + b $$
 
 其中，
-- \\( y \\) 是预测值，
-- \\( w \\) 是权重（参数），
-- \\( x \\) 是输入特征，
-- \\( b \\) 是偏置项。
+- \( y \) 是预测值，
+- \( w \) 是权重（参数），
+- \( x \) 是输入特征，
+- \( b \) 是偏置项。
 
 ### 4.2 公式推导过程
 
 线性回归的目标是最小化均方误差（MSE）：
 
-$$ MSE(w, b) = \\frac{1}{n}\\sum_{i=1}^{n}(y_i - (wx_i + b))^2 $$
+$$ MSE(w, b) = \frac{1}{n}\sum_{i=1}^{n}(y_i - (wx_i + b))^2 $$
 
-通过梯度下降法找到最优的 \\( w \\) 和 \\( b \\)，使得 \\( MSE \\) 最小。
+通过梯度下降法找到最优的 \( w \) 和 \( b \)，使得 \( MSE \) 最小。
 
 ### 4.3 案例分析与讲解
 
@@ -155,7 +155,7 @@ for _ in range(1000):
         w.grad.zero_()
         b.grad.zero_()
 
-print(f\"W: {w.item()}, B: {b.item()}\")
+print(f"W: {w.item()}, B: {b.item()}")
 ```
 
 ### 4.4 常见问题解答
@@ -232,7 +232,7 @@ labels = torch.tensor([[0.], [1.], [1.], [0.]])
 model = SimpleLinearRegression()
 model.fit(inputs, labels)
 predictions = model.predict(inputs)
-print(f\"Predictions: {predictions}\")
+print(f"Predictions: {predictions}")
 ```
 
 ### 5.3 代码解读与分析

@@ -1,6 +1,6 @@
 ## Hugging Face 开源社区：Models、Datasets、Spaces、Docs
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**
 
 ### 1. 背景介绍
 
@@ -298,4 +298,4 @@ Hugging Face 平台将继续推动 NLP 领域的发展，并为开发者和研�
     * **开发新的工具:** 开发新的工具，以帮助其他开发者和研究人员使用 Hugging Face 平台。
     * **参与社区讨论:** 在 Hugging Face 社区论坛上参与讨论，分享经验和解决问题。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

@@ -8,7 +8,7 @@
 #### 1.1.2 强化学习的基本框架
 #### 1.1.3 强化学习的主要算法分类
 
-### 1.2 深度强化学习的兴起  
+### 1.2 深度强化学习的兴起
 #### 1.2.1 深度学习与强化学习的结合
 #### 1.2.2 DQN的提出与突破
 #### 1.2.3 DQN的后续改进与变种
@@ -171,7 +171,7 @@ class DQN(nn.Module):
         self.fc1 = nn.Linear(state_dim, 64)
         self.fc2 = nn.Linear(64, 64)
         self.fc3 = nn.Linear(64, action_dim)
-        
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = torch.relu(self.fc2(x))
@@ -183,18 +183,18 @@ class ReplayBuffer:
         self.capacity = capacity
         self.buffer = []
         self.position = 0
-    
+
     def push(self, state, action, reward, next_state, done):
         if len(self.buffer) < self.capacity:
             self.buffer.append(None)
         self.buffer[self.position] = (state, action, reward, next_state, done)
         self.position = (self.position + 1) % self.capacity
-    
+
     def sample(self, batch_size):
         batch = random.sample(self.buffer, batch_size)
         state, action, reward, next_state, done = zip(*batch)
         return state, action, reward, next_state, done
-    
+
     def __len__(self):
         return len(self.buffer)
 
@@ -205,7 +205,7 @@ def train(env, agent, replay_buffer, batch_size, gamma, optimizer):
         next_state, reward, done, _ = env.step(action)
         replay_buffer.push(state, action, reward, next_state, done)
         state = next_state
-        
+
         if len(replay_buffer) > batch_size:
             states, actions, rewards, next_states, dones = replay_buffer.sample(batch_size)
             states = torch.FloatTensor(states)
@@ -213,16 +213,16 @@ def train(env, agent, replay_buffer, batch_size, gamma, optimizer):
             rewards = torch.FloatTensor(rewards)
             next_states = torch.FloatTensor(next_states)
             dones = torch.FloatTensor(dones)
-            
+
             q_values = agent(states).gather(1, actions.unsqueeze(1)).squeeze(1)
             next_q_values = agent(next_states).max(1)[0]
             expected_q_values = rewards + gamma * next_q_values * (1 - dones)
-            
+
             loss = nn.MSELoss()(q_values, expected_q_values.detach())
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-        
+
         if done:
             state = env.reset()
 
@@ -237,7 +237,7 @@ if __name__ == '__main__':
     batch_size = 64
     gamma = 0.99
     epsilon = 0.1
-    
+
     train(env, agent, replay_buffer, batch_size, gamma, optimizer)
 ```
 

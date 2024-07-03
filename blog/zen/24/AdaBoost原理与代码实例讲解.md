@@ -1,4 +1,4 @@
-                 
+
 # AdaBoost原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -96,22 +96,22 @@ AdaBoost的目标是在训练集中最小化分类损失函数L(y, f(x)), 其中
 AdaBoost的算法迭代分为以下几步进行推导：
 1. **初始化权重**：
    $$ w_i(0) = \frac{1}{N}, \quad i = 1, \ldots, N $$
-   
+
 2. **迭代学习**：
    在第k次迭代时，计算分类器权重α_k和误差ε_k。
    - 误差率：
      $$ \epsilon_k = \frac{\sum_{i:y_i \neq h_k(x_i)} w_i(k-1)}{\sum_{i:y_i = h_k(x_i)} w_i(k-1)} $$
    - 分类器权重：
      $$ \alpha_k = \ln\left(\frac{1-\epsilon_k}{\epsilon_k}\right), \quad k > 0 $$
-   
+
 3. **更新样本权重**：
    新权重基于先前的权重和当前分类器的预测结果：
    $$ w_i(k) = w_i(k-1) \exp(-\alpha_k y_i h_k(x_i)) $$
-   
+
 4. **组合分类器**：
    最终预测由所有分类器的加权平均给出：
    $$ F(x) = \text{sign}\left(\sum_{k=1}^K \alpha_k h_k(x)\right) $$
-   
+
 ### 4.3 案例分析与讲解
 
 假设我们有如下训练数据集：

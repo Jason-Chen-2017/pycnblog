@@ -28,7 +28,7 @@ AI代理是一种智能化的软件实体,能够根据特定的任务目标,自�
 ### 2.3 AI代理在测试工作流中的位置
 ```mermaid
 graph LR
-需求分析 --> 测试计划 
+需求分析 --> 测试计划
 测试计划 --> 测试设计
 测试设计 --> AI代理
 AI代理 --> 测试执行
@@ -131,7 +131,7 @@ for episode in range(num_episodes):
             action = np.random.choice(actions)
         else:
             action = actions[np.argmax(q_table[states.index(state)])]
-        
+
         # 执行动作,得到下一状态和奖励
         next_state_idx = states.index(state) + actions.index(action) - 1
         if next_state_idx < 0 or next_state_idx >= len(states):
@@ -139,12 +139,12 @@ for episode in range(num_episodes):
         else:
             next_state = states[next_state_idx]
         reward = rewards[states.index(state), actions.index(action)]
-        
+
         # 更新Q值
         q_table[states.index(state), actions.index(action)] += alpha * (
-            reward + gamma * np.max(q_table[states.index(next_state)]) - 
+            reward + gamma * np.max(q_table[states.index(next_state)]) -
             q_table[states.index(state), actions.index(action)])
-        
+
         # 更新状态
         state = next_state
         if state == 'G':

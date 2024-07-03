@@ -63,10 +63,8 @@
 1. **初始化**：初始化策略参数 $\theta$ 和目标函数 $J(\theta)$。
 2. **采样**：根据策略参数 $\theta$，从概率分布 $p(a_t|s_t;\theta)$ 中采样动作 $a_t$。
 3. **执行动作**：执行动作 $a_t$，观察环境状态 $s_{t+1}$ 和奖励 $r_t$。
-4. **计算梯度**：计算策略梯度 $\
-abla_\theta J(\theta)$，其中 $J(\theta)$ 是基于策略 $\theta$ 的期望回报。
-5. **更新策略参数**：根据策略梯度 $\
-abla_\theta J(\theta)$，使用梯度下降等方法更新策略参数 $\theta$。
+4. **计算梯度**：计算策略梯度 $\nabla_\theta J(\theta)$，其中 $J(\theta)$ 是基于策略 $\theta$ 的期望回报。
+5. **更新策略参数**：根据策略梯度 $\nabla_\theta J(\theta)$，使用梯度下降等方法更新策略参数 $\theta$。
 6. **重复步骤2-5**，直到收敛。
 
 ### 3.3 算法优缺点
@@ -108,9 +106,7 @@ $$
 1. **策略梯度**：
 
 $$
-\
-abla_\theta J(\theta) = \sum_{t=0}^{\infty} \gamma^t \
-abla_\theta R_t
+\nabla_\theta J(\theta) = \sum_{t=0}^{\infty} \gamma^t \nabla_\theta R_t
 $$
 
 2. **回报**：
@@ -128,17 +124,13 @@ $$
 4. **策略梯度**：
 
 $$
-\
-abla_\theta J(\theta) = \sum_{t=0}^{\infty} \gamma^t \sum_{s_{t+1}}^{\infty} \gamma^{t+1} R_{t+1} p(s_{t+1}|s_t, a_t) \
-abla_\theta p(s_t, a_t)
+\nabla_\theta J(\theta) = \sum_{t=0}^{\infty} \gamma^t \sum_{s_{t+1}}^{\infty} \gamma^{t+1} R_{t+1} p(s_{t+1}|s_t, a_t) \nabla_\theta p(s_t, a_t)
 $$
 
 5. **简化**：
 
 $$
-\
-abla_\theta J(\theta) = \sum_{t=0}^{\infty} \gamma^t \sum_{s_{t+1}}^{\infty} \gamma^{t+1} R_{t+1} p(s_{t+1}|s_t, a_t) \
-abla_\theta p(a_t|s_t; \theta)
+\nabla_\theta J(\theta) = \sum_{t=0}^{\infty} \gamma^t \sum_{s_{t+1}}^{\infty} \gamma^{t+1} R_{t+1} p(s_{t+1}|s_t, a_t) \nabla_\theta p(a_t|s_t; \theta)
 $$
 
 ### 4.3 案例分析与讲解
@@ -197,7 +189,7 @@ class PolicyNetwork(nn.Module):
         super(PolicyNetwork, self).__init__()
         self.fc1 = nn.Linear(state_dim, 64)
         self.fc2 = nn.Linear(64, action_dim)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)

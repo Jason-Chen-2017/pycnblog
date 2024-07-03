@@ -16,7 +16,7 @@
 ### 2.1 医疗AI的定义和分类
 医疗AI是指将人工智能技术应用于医疗领域,旨在辅助医生进行诊断、治疗和预后预测,优化医疗资源配置,提高医疗质量和效率。医疗AI可分为以下几类:
 - 医学影像分析
-- 电子病历分析 
+- 电子病历分析
 - 药物研发
 - 精准医疗
 - 远程医疗
@@ -75,7 +75,7 @@ $$
 MDP是一种常用的序贯决策模型,可以用于建模医院患者流程管理问题。其数学定义如下:
 
 - 状态空间$S$:所有可能的系统状态的集合。
-- 动作空间$A$:每个状态下可以采取的动作的集合。 
+- 动作空间$A$:每个状态下可以采取的动作的集合。
 - 状态转移概率$P(s'|s,a)$:在状态$s$下采取动作$a$后转移到状态$s'$的概率。
 - 奖励函数$R(s,a)$:在状态$s$下采取动作$a$获得的即时奖励。
 - 折扣因子$\gamma$:未来奖励的折扣率,取值范围[0,1]。
@@ -107,10 +107,10 @@ class CNN(nn.Module):
         self.pool2 = nn.MaxPool2d(kernel_size=2, stride=2)
         self.fc1 = nn.Linear(32*8*8, 128)
         self.fc2 = nn.Linear(128, 2)
-        
+
     def forward(self, x):
         x = self.pool1(torch.relu(self.conv1(x)))
-        x = self.pool2(torch.relu(self.conv2(x))) 
+        x = self.pool2(torch.relu(self.conv2(x)))
         x = x.view(-1, 32*8*8)
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)
@@ -136,7 +136,7 @@ for epoch in range(10):
     for i, (images, labels) in enumerate(dataloader):
         outputs = model(images)
         loss = criterion(outputs, labels)
-        
+
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()

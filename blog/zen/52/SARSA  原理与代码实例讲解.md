@@ -113,7 +113,7 @@ $$\theta_{t+1} = \theta_t + \alpha \delta_t \nabla_\theta Q(s_t,a_t)$$
 
 ```
 [ R  R  R  U ]
-[ D  X  X  R ]  
+[ D  X  X  R ]
 [ D  D  R  U ]
 [ L  D  D  G ]
 ```
@@ -151,25 +151,25 @@ for episode in range(EPISODES):
     # 初始化状态
     state = (0, 0)
     action = np.random.choice(ACTIONS)
-    
+
     while True:
         # 获取奖励和下一状态
         reward = WORLD[state]
         next_state = get_next_state(state, action)
-        
+
         # 选择下一行为
         next_action = get_action(next_state, ACTIONS, Q)
-        
+
         # 更新Q函数
         Q[state + (ACTIONS.index(action),)] += ALPHA * (
             reward + GAMMA * Q[next_state + (ACTIONS.index(next_action),)] -
             Q[state + (ACTIONS.index(action),)]
         )
-        
+
         # 更新状态和行为
         state = next_state
         action = next_action
-        
+
         # 终止条件
         if reward == 10:
             break

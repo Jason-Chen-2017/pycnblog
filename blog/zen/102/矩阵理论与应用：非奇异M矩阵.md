@@ -118,7 +118,7 @@ eq 0$；
 
 ### 4.3 案例分析与讲解
 
-以矩阵 $A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{bmatrix}$ 为例，分析其是否为非奇异M-矩阵。
+以矩阵 $A = \begin{bmatrix} 1 & 2 & 3 \ 4 & 5 & 6 \ 7 & 8 & 9 \end{bmatrix}$ 为例，分析其是否为非奇异M-矩阵。
 
 - 行列式不为0：$|A| = 1 \times 5 \times 9 - 2 \times 4 \times 7 + 3 \times 4 \times 6 = 1$，满足条件；
 - M-性质：对于第一行，$1 \times 5 \times 6 \geq 2 \times 4 \times 3$；对于第二行，$4 \times 5 \times 9 \geq 4 \times 6 \times 7$；对于第三行，$7 \times 5 \times 3 \geq 7 \times 8 \times 6$，均满足条件。
@@ -170,18 +170,18 @@ def is nonsingular_m_matrix(matrix):
     """
     # 计算行列式
     det = np.linalg.det(matrix)
-    
+
     # 判断行列式是否不为0
     if det == 0:
         return False
-    
+
     # 判断M-性质
     for i in range(matrix.shape[0]):
         min_val = np.min(matrix[i, :])
         product = np.prod(matrix[i, :])
         if product < min_val * np.prod(matrix[i, :min_val]):
             return False
-    
+
     return True
 
 # 测试代码

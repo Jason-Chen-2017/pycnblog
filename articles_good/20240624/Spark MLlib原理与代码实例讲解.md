@@ -107,11 +107,9 @@ $$L(\theta) = -\sum_{i=1}^{n}y_i\log(\sigma(\theta^T x_i)) + (1 - y_i)\log(1 - \
 
 - **梯度下降**：
 
-$$\theta_{\text{new}} = \theta_{\text{old}} - \alpha \
-abla L(\theta)$$
+$$\theta_{\text{new}} = \theta_{\text{old}} - \alpha \nabla L(\theta)$$
 
-其中，$\alpha$是学习率，$\
-abla L(\theta)$是损失函数关于参数$\theta$的梯度。
+其中，$\alpha$是学习率，$\nabla L(\theta)$是损失函数关于参数$\theta$的梯度。
 
 ### 4.2 公式推导过程
 
@@ -121,8 +119,7 @@ $$\sigma'(x) = \sigma(x)(1 - \sigma(x))$$
 
 - **损失函数的导数**：
 
-$$\
-abla L(\theta) = \begin{bmatrix} \frac{\partial L}{\partial \theta_1} \\ \vdots \\ \frac{\partial L}{\partial \theta_n} \end{bmatrix} = \begin{bmatrix} \frac{y_i - \sigma(\theta^T x_i)}{\sigma(\theta^T x_i)(1 - \sigma(\theta^T x_i))} \\ \vdots \\ \frac{y_i - \sigma(\theta^T x_i)}{\sigma(\theta^T x_i)(1 - \sigma(\theta^T x_i))} \end{bmatrix}$$
+$$\nabla L(\theta) = \begin{bmatrix} \frac{\partial L}{\partial \theta_1} \\ \vdots \\ \frac{\partial L}{\partial \theta_n} \end{bmatrix} = \begin{bmatrix} \frac{y_i - \sigma(\theta^T x_i)}{\sigma(\theta^T x_i)(1 - \sigma(\theta^T x_i))} \\ \vdots \\ \frac{y_i - \sigma(\theta^T x_i)}{\sigma(\theta^T x_i)(1 - \sigma(\theta^T x_i))} \end{bmatrix}$$
 
 ### 4.3 案例分析与讲解
 

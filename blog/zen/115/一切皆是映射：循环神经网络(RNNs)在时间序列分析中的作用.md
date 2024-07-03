@@ -226,5 +226,5 @@ RNNs在自然语言处理、语音识别、金融预测、图像识别等领域�
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

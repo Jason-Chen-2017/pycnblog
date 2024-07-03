@@ -5,7 +5,7 @@
 
 ### 1.1 电子商务的发展现状
 #### 1.1.1 电商行业规模持续扩大
-#### 1.1.2 移动端购物成为主流趋势  
+#### 1.1.2 移动端购物成为主流趋势
 #### 1.1.3 个性化和智能化服务受青睐
 
 ### 1.2 B2C模式的优势
@@ -67,11 +67,11 @@ B2C购物网站中涉及到一些常见的算法,如推荐系统、搜索排序�
 #### 3.2.4 基于最近邻用户对商品的评分,预测目标用户对候选商品的评分
 #### 3.2.5 按预测评分排序,生成推荐列表
 
-### 3.3 基于物品的协同过滤(Item-based CF) 
+### 3.3 基于物品的协同过滤(Item-based CF)
 #### 3.3.1 收集用户对商品的评分数据,构建用户-物品评分矩阵
 #### 3.3.2 计算物品之间的相似度,常用的相似度计算方法有:
 - 欧几里得距离
-- 皮尔逊相关系数 
+- 皮尔逊相关系数
 - 余弦相似度
 
 #### 3.3.3 对目标用户评分过的每个商品,找到其最相似的K个商品
@@ -94,7 +94,7 @@ $$r=\frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i-\ba
 | 商品 | 用户A评分 | 用户B评分 |
 |------|----------|----------|
 | P1   | 4        | 5        |
-| P2   | 3        | 3        |  
+| P2   | 3        | 3        |
 | P3   | 5        | 4        |
 | P4   | 2        | 1        |
 | P5   | 3        | 3        |
@@ -142,18 +142,18 @@ def pearson_similarity(ratings, user1, user2):
     n = len(common_items)
     if n == 0:
         return 0
-    
+
     sum1 = sum([ratings[user1][item] for item in common_items])
     sum2 = sum([ratings[user2][item] for item in common_items])
     sum1_sq = sum([pow(ratings[user1][item], 2) for item in common_items])
     sum2_sq = sum([pow(ratings[user2][item], 2) for item in common_items])
     sum_prod = sum([ratings[user1][item] * ratings[user2][item] for item in common_items])
-    
+
     num = sum_prod - (sum1 * sum2 / n)
     den = sqrt((sum1_sq - pow(sum1, 2) / n) * (sum2_sq - pow(sum2, 2) / n))
     if den == 0:
         return 0
-    
+
     return num / den
 ```
 
@@ -162,13 +162,13 @@ def pearson_similarity(ratings, user1, user2):
 
 ```python
 def recommend(ratings, user, k=3):
-    user_similarities = [(other_user, pearson_similarity(ratings, user, other_user)) 
+    user_similarities = [(other_user, pearson_similarity(ratings, user, other_user))
                          for other_user in ratings if other_user != user]
-    
+
     user_similarities.sort(key=lambda x: x[1], reverse=True)
-    
+
     top_similar_users = user_similarities[:k]
-    
+
     recommendations = {}
     for similar_user, _ in top_similar_users:
         for item in ratings[similar_user]:
@@ -176,7 +176,7 @@ def recommend(ratings, user, k=3):
                 if item not in recommendations:
                     recommendations[item] = 0
                 recommendations[item] += ratings[similar_user][item]
-    
+
     return sorted(recommendations.items(), key=lambda x: x[1], reverse=True)
 ```
 
@@ -238,7 +238,7 @@ B2C购物网站的设计与开发是一个复杂而有趣的领域,未来还有�
 ### 8.1 个性化和智能化
 利用人工智能、机器学习等技术,不断提升推荐系统的准确性和实时性,为用户提供更加个性化和智能化的购物体验。
 
-### 8.2 移动端优化  
+### 8.2 移动端优化
 随着移动设备的普及,移动端购物已成为主流。需要重点关注移动端的用户界面设计、性能优化和功能适配。
 
 ### 8.3 社交化电商

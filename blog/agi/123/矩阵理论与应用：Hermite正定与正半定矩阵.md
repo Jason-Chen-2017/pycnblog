@@ -343,13 +343,13 @@ $$
 目标函数 $f(x) = x_1^2 + 2x_2^2$ 可以表示为Hermite正定矩阵的形式：
 
 $$
-f(x) = \begin{bmatrix} x_1 & x_2 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & 2 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
+f(x) = \begin{bmatrix} x_1 & x_2 \end{bmatrix} \begin{bmatrix} 1 & 0 \ 0 & 2 \end{bmatrix} \begin{bmatrix} x_1 \ x_2 \end{bmatrix}
 $$
 
 约束条件 $x_1^2 + x_2^2 = 1$ 可以表示为正半定矩阵的形式：
 
 $$
-x_1^2 + x_2^2 = \begin{bmatrix} x_1 & x_2 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
+x_1^2 + x_2^2 = \begin{bmatrix} x_1 & x_2 \end{bmatrix} \begin{bmatrix} 1 & 0 \ 0 & 1 \end{bmatrix} \begin{bmatrix} x_1 \ x_2 \end{bmatrix}
 $$
 
 ### 6.2 控制理论

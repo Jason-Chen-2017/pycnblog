@@ -54,13 +54,13 @@ Anomaly detection algorithms can be categorized into statistical-based, machine 
 
 The Z-score method calculates the number of standard deviations an observation is from the mean.
 
-$$Z = \\frac{x - \\mu}{\\sigma}$$
+$$Z = \frac{x - \mu}{\sigma}$$
 
 Where:
 
 - $x$ is the observed value
-- $\\mu$ is the mean of the data set
-- $\\sigma$ is the standard deviation of the data set
+- $\mu$ is the mean of the data set
+- $\sigma$ is the standard deviation of the data set
 
 If the Z-score is greater than a predefined threshold (e.g., 3), the observation is considered an anomaly.
 
@@ -107,7 +107,7 @@ import weka.filters.unsupervised.attribute.IsolationTree;
 public class IsolationForestExample {
     public static void main(String[] args) throws Exception {
         // Load data
-        DataSource source = new DataSource(\"data.arff\");
+        DataSource source = new DataSource("data.arff");
         Instances data = source.getDataSet();
 
         // Create Isolation Forest filter
@@ -120,7 +120,7 @@ public class IsolationForestExample {
         // Identify anomalies
         for (int i = 0; i < transformedData.numInstances(); i++) {
             if (transformedData.instance(i).classValue() == -1) {
-                System.out.println(\"Anomaly detected: \" + transformedData.instance(i));
+                System.out.println("Anomaly detected: " + transformedData.instance(i));
             }
         }
     }
@@ -184,4 +184,4 @@ A8: To learn more about AIOps, you can read books such as The Art of AIOps: Best
 
 ## Author: Zen and the Art of Computer Programming
 
-This article was written by Zen, the author of the renowned book series \"The Art of Computer Programming.\" Zen's expertise in computer science and programming has made him a world-class AI expert and a leading voice in the field of AIOps.
+This article was written by Zen, the author of the renowned book series "The Art of Computer Programming." Zen's expertise in computer science and programming has made him a world-class AI expert and a leading voice in the field of AIOps.

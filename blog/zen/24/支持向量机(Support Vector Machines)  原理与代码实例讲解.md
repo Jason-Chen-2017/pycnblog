@@ -1,4 +1,4 @@
-                 
+
 # 支持向量机(Support Vector Machines) - 原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -57,10 +57,10 @@ $$ f(x) = \sum_{i=1}^{N_s} \alpha_i y_i K(x, x_i) + b $$
 
 1. **参数初始化**：
    初始化权重向量 $\mathbf{w}$ 和偏置 $b$。
-   
+
 2. **损失函数构建**：
    使用 hinge 损失函数定义误差范围内的惩罚。
-   
+
 3. **优化目标**：
    将间隔最大化转化为最小化 $\frac{1}{2}\|\mathbf{w}\|^2$ 同时确保所有训练样例都在超平面两侧，偏差不超过 $C$ 的惩罚值。
 
@@ -228,7 +228,7 @@ plot_decision_boundary(clf_rbf, X_train, y_train)
 ### 7.3 相关论文推荐
 
 - **Boser, E.B., Guyon, I.M., & Vapnik, V.N. (1992).** *A training algorithm for optimal margin classifiers.* In Proceedings of the fifth annual workshop on Computational learning theory.
-  
+
 ### 7.4 其他资源推荐
 
 - **博客和教程网站**：Medium、Towards Data Science、LinkedIn Learning 提供了许多关于 SVM 的深入讲解和案例研究。

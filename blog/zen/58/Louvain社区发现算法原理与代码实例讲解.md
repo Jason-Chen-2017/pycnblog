@@ -20,7 +20,7 @@ Louvain算法是一种基于模块度的启发式算法，其核心思想是通�
 
 模块度是用来衡量网络社区结构强度的指标，其取值范围为 $[-0.5, 1]$，模块度越高，表示网络的社区结构越明显。模块度的定义如下：
 $$
-Q = \frac{1}{2m}\sum_{i,j} \left( A_{ij} - \frac{k_i k_j}{2m} \right) \delta(c_i, c_j) 
+Q = \frac{1}{2m}\sum_{i,j} \left( A_{ij} - \frac{k_i k_j}{2m} \right) \delta(c_i, c_j)
 $$
 其中：
 

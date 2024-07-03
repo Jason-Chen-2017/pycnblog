@@ -128,7 +128,7 @@ dh_params = np.array([[0, np.pi/2, 0.089159, 0],
                       [0, 0, 0.0535, 0]])
 
 # 关节角度(单位:弧度)
-joint_angles = np.array([0, np.pi/4, 0, -np.pi/2, 0, 0]) 
+joint_angles = np.array([0, np.pi/4, 0, -np.pi/2, 0, 0])
 
 def dh_matrix(dh_params):
     theta, alpha, a, d = dh_params
@@ -140,7 +140,7 @@ def dh_matrix(dh_params):
 def fwd_kinematics(dh_params, joint_angles):
     T = np.eye(4)
     for i in range(len(dh_params)):
-        T = T @ dh_matrix(dh_params[i,:]).T @ np.array([[np.cos(joint_angles[i]), -np.sin(joint_angles[i]), 0, 0], 
+        T = T @ dh_matrix(dh_params[i,:]).T @ np.array([[np.cos(joint_angles[i]), -np.sin(joint_angles[i]), 0, 0],
                                                         [np.sin(joint_angles[i]), np.cos(joint_angles[i]), 0, 0],
                                                         [0, 0, 1, 0],
                                                         [0, 0, 0, 1]])

@@ -98,7 +98,7 @@ graph TD
 在Q-learning中,我们将工业控制问题建模为一个马尔可夫决策过程(MDP)。MDP可以用一个元组$(S, A, P, R, \gamma)$来表示,其中:
 
 - $S$是状态空间集合
-- $A$是行动空间集合 
+- $A$是行动空间集合
 - $P(s' | s, a)$是状态转移概率,表示在状态$s$下执行行动$a$后,转移到状态$s'$的概率
 - $R(s, a, s')$是奖励函数,表示在状态$s$下执行行动$a$并转移到状态$s'$时获得的即时奖励
 - $\gamma \in [0, 1)$是折扣因子,用于平衡即时和长期回报
@@ -200,6 +200,6 @@ class GameEnv:
         pygame.init()
         self.window = pygame.display.set_mode((600, 400))
         pygame.display.set_caption("Q-Learning Game")
-        
+
         # 定义游戏对象
         self.ball = pygame.Rect

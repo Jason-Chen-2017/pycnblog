@@ -105,7 +105,7 @@ Elasticsearch的Shard机制可以通过以下数学模型进行描述：
 则Shard的数量和每个Shard包含的数据量可以通过以下公式进行计算：
 
 $$
-M = \lceil \frac{N}{N_i} \rceil 
+M = \lceil \frac{N}{N_i} \rceil
 $$
 
 其中，$\lceil \cdot \rceil$ 表示向上取整。
@@ -115,13 +115,13 @@ $$
 假设每个Shard包含 $N_i$ 条数据，则Shard的数量可以通过以下公式进行计算：
 
 $$
-M = \frac{N}{N_i} 
+M = \frac{N}{N_i}
 $$
 
 当 $N$ 不是 $N_i$ 的倍数时，需要向上取整，即：
 
 $$
-M = \lceil \frac{N}{N_i} \rceil 
+M = \lceil \frac{N}{N_i} \rceil
 $$
 
 ### 4.3 案例分析与讲解
@@ -131,7 +131,7 @@ $$
 根据公式计算，Shard的数量为：
 
 $$
-M = \lceil \frac{100000}{10000} \rceil = 10 
+M = \lceil \frac{100000}{10000} \rceil = 10
 $$
 
 因此，我们可以将这个索引划分为10个Shard，每个Shard包含1万条数据。

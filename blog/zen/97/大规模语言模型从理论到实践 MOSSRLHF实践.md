@@ -115,7 +115,7 @@ $$
   其中 $s_t$ 为状态，$a_t$ 为动作，$\pi(\theta)$ 为策略。
 - 人类反馈的推导：
   $$
-F(y, \hat{y}) = \begin{cases} 
+F(y, \hat{y}) = \begin{cases}
   1, & \text{if } y = \hat{y} \\
   0, & \text{if } y \
 eq \hat{y}

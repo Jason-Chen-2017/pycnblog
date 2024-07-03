@@ -61,11 +61,9 @@ $$
 $$
 \\begin{aligned}
 J(\\theta) &=\\mathbb{E}\\left[\\left(r_t+\\gamma \\max _{a^{\\prime}} Q_{\\theta}\\left(s_{t+1}, a^{\\prime}\\right)-Q_{\\theta}\\left(s_t, a_t\\right)\\right)^2\\right] \\\\
-\
-abla J(\\theta) &=\\mathbb{E}[(r_t \\\\
+\nabla J(\\theta) &=\\mathbb{E}[(r_t \\\\
 ```latex
-                           &+\\gamma \\max _{a^{\\prime}} Q_{\\theta}\\left(s_{t+1}, a^{\\prime}\\right)-Q_{\\theta}\\left(s_t, a_t\\right)] \
-abla_{\\theta} Q_{\\theta}\\left(s_t, a_t\\right)]
+                           &+\\gamma \\max _{a^{\\prime}} Q_{\\theta}\\left(s_{t+1}, a^{\\prime}\\right)-Q_{\\theta}\\left(s_t, a_t\\right)] \nabla_{\\theta} Q_{\\theta}\\left(s_t, a_t\\right)]
 ```
 
 其中，$\\theta$ 是神经网络参数。通过反向传播算法更新参数 $\\theta$ 以最小化目标函数 $J(\\theta)$。
@@ -289,11 +287,9 @@ $$
 $$
 \\begin{aligned}
 J(\\theta) &=\\mathbb{E}\\left[\\left(r_t+\\gamma \\max _{a^{\\prime}} Q_{\\theta}\\left(s_{t+1}, a^{\\prime}\\right)-Q_{\\theta}\\left(s_t, a_t\\right)\\right)^2\\right] \\\\
-\
-abla J(\\theta) &=\\mathbb{E}[(r_t \\\\
+\nabla J(\\theta) &=\\mathbb{E}[(r_t \\\\
 ```latex
-                           &+\\gamma \\max _{a^{\\prime}} Q_{\\theta}\\left(s_{t+1}, a^{\\prime}\\right)-Q_{\\theta}\\left(s_t, a_t\\right)] \
-abla_{\\theta} Q_{\\theta}\\left(s_t, a_t\\right)]
+                           &+\\gamma \\max _{a^{\\prime}} Q_{\\theta}\\left(s_{t+1}, a^{\\prime}\\right)-Q_{\\theta}\\left(s_t, a_t\\right)] \nabla_{\\theta} Q_{\\theta}\\left(s_t, a_t\\right)]
 ```
 
 其中，$\\theta$ 是神经网络参数。通过反向传播算法更新参数 $\\theta$ 以最小化目标函数 $J(\\theta)$。
@@ -431,8 +427,7 @@ def train_deep_q_network(env, network, episodes=1000):
 
 $$
 \\begin{aligned}
-J(\\theta) &=\\mathbb{E}\\left[\\left(r_t+\\gamma \\max _{a^{\\prime}} Q_{\\theta}\\left(s_{t+1}, a^{\\prime}-Q\\left(s_t, a_t\\right)\\right] \
-abla_{\\theta} Q_{\\theta}(s, a)
+J(\\theta) &=\\mathbb{E}\\left[\\left(r_t+\\gamma \\max _{a^{\\prime}} Q_{\\theta}\\left(s_{t+1}, a^{\\prime}-Q\\left(s_t, a_t\\right)\\right] \nabla_{\\theta} Q_{\\theta}(s, a)
 ```latex
 其中，$\\theta$ 是神经网络参数。通过反向传播算法更新参数 $\\theta$ 以最小化目标函数 $J(\\theta)$。
 

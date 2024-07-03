@@ -72,8 +72,8 @@
 
 设输入向量 $x_t$ 和历史记忆矩阵 $M$，目标是输出向量 $y_t$。记忆网络包含两部分：查询向量 $q_t$ 和检索函数。
 
-- **查询向量**：$q_t = W_q \\cdot x_t$
-- **检索函数**：对于每个记忆单元 $m_i$，计算匹配分数 $s_i = \\langle q_t, m_i \\rangle$，然后通过加权平均更新检索矩阵：$M' = \\alpha M + \\beta q_t \\cdot q_t^T$ （$\\alpha$和$\\beta$是学习率）
+- **查询向量**：$q_t = W_q \cdot x_t$
+- **检索函数**：对于每个记忆单元 $m_i$，计算匹配分数 $s_i = \langle q_t, m_i \rangle$，然后通过加权平均更新检索矩阵：$M' = \alpha M + \beta q_t \cdot q_t^T$ （$\alpha$和$\beta$是学习率）
 
 ### 4.2 公式推导过程
 

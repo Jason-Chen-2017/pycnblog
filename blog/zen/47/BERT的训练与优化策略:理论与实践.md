@@ -236,7 +236,7 @@ print("Predicted labels:", predictions)
 
 ### 5.3 代码解读与分析
 
-1. **加载预训练的BERT模型和分词器**: 
+1. **加载预训练的BERT模型和分词器**:
     ```python
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     model = BertForSequenceClassification.from_pretrained('bert-base-uncased')

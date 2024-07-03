@@ -21,7 +21,7 @@ Storm 是一个分布式实时计算系统,能够对无界的数据流进行连�
 ### 3.1 算法原理概述
 Storm 基于 Topology 实现了高效可靠的流式计算。Topology 将复杂的计算任务划分为多个子任务,由 Spout 和 Bolt 节点分别执行。数据以 Tuple 形式在节点间传递,每个 Tuple 都带有一个或多个 Field。Topology 运行时,Nimbus 节点负责在集群中分发代码,将任务分配给 Supervisor 节点。Supervisor 根据任务配置启动 Worker 进程,每个 Worker 运行一个或多个 Executor 线程来执行具体的 Spout 或 Bolt 任务。
 ### 3.2 算法步骤详解
-1. Nimbus 将 Topology 提交到 Storm 集群,将任务分配给 Supervisor 节点。 
+1. Nimbus 将 Topology 提交到 Storm 集群,将任务分配给 Supervisor 节点。
 2. Supervisor 根据任务配置启动 Worker 进程。
 3. 每个 Worker 进程运行一个或多个 Executor 线程。
 4. Executor 从 Spout 或上游 Bolt 接收 Tuple 数据。
@@ -86,7 +86,7 @@ class RandomSpout(Spout):
 class SplitBolt(Bolt):
     def process(self, tup):
         # 接收句子,分割为单词
-        sentence = tup.values[0] 
+        sentence = tup.values[0]
         words = sentence.split(" ")
         # 发射单词
         for word in words:
@@ -96,7 +96,7 @@ class CountBolt(Bolt):
     def initialize(self):
         # 初始化单词计数字典
         self.counts = {}
-        
+
     def process(self, tup):
         # 接收单词,更新计数
         word = tup.values[0]
@@ -106,7 +106,7 @@ class CountBolt(Bolt):
             self.counts[word] = 1
         # 发射单词和计数
         self.emit([word, self.counts[word]])
-        
+
 def createTopology():
     # 创建拓扑
     topology = Topology(name="WordCount", debug=True)
@@ -117,7 +117,7 @@ def createTopology():
     # 设置CountBolt
     topology.setBolt("count", CountBolt(), 2).fieldsGrouping("split", ["word"])
     return topology
-    
+
 if __name__ == '__main__':
     # 创建拓扑
     topology = createTopology()
@@ -172,7 +172,7 @@ Storm 在实时流式数据处理领域有广泛应用,一些典型场景包括:
 - 集成工具:Flux,简化 Topology 的定义和部署
 ### 7.3 相关论文推荐
 - Storm @Twitter
-- Benchmarking Streaming Computation Engines: Storm, Flink and Spark Streaming 
+- Benchmarking Streaming Computation Engines: Storm, Flink and Spark Streaming
 - Distributed Real-time Data Processing - Storm
 ### 7.4 其他资源推荐
 - GitHub Storm 项目:丰富的 Storm 示例代码

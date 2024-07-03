@@ -106,7 +106,7 @@ public class WordCountTask implements StreamTask<String>, InitableTask {
     @Override
     public void process(IncomingMessageEnvelope envelope, MessageCollector collector, TaskCoordinator coordinator) {
         String message = envelope.getMessage();
-        String[] words = message.split("\\s+");
+        String[] words = message.split("\s+");
         for (String word : words) {
             wordCounts.put(word, wordCounts.getOrDefault(word, 0) + 1);
         }

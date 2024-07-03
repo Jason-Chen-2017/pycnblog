@@ -7,7 +7,7 @@ Semantic Segmentation(语义分割)是计算机视觉领域的一个重要任务
 ### 1.2 语义分割的应用场景
 语义分割在很多领域有广泛应用,例如:
 - 无人驾驶:精确分割道路、车辆、行人等
-- 医学影像:肿瘤、器官等组织的自动勾画  
+- 医学影像:肿瘤、器官等组织的自动勾画
 - 卫星遥感影像:土地利用分类
 - 增强现实:虚拟物体与真实场景的融合
 
@@ -79,7 +79,7 @@ $$
 
 网络输出:
 ```
-[[0.8, 0.2], 
+[[0.8, 0.2],
  [0.3, 0.7],
  [0.1, 0.9]]
 ```
@@ -87,7 +87,7 @@ $$
 真实标签:
 ```
 [[1, 0],
- [0, 1], 
+ [0, 1],
  [0, 1]]
 ```
 
@@ -95,7 +95,7 @@ $$
 $$
 \begin{aligned}
 L &= -\frac{1}{3} [1*\log(0.8) + 0*\log(0.2) \\
-&+ 0*\log(0.3) + 1*\log(0.7) \\  
+&+ 0*\log(0.3) + 1*\log(0.7) \\
 &+ 0*\log(0.1) + 1*\log(0.9)] \\
 &= 0.364
 \end{aligned}
@@ -133,34 +133,34 @@ import torch.nn.functional as F
 class FCN(nn.Module):
     def __init__(self, num_classes):
         super(FCN, self).__init__()
-        
+
         # 骨干网络(假设为3个卷积层)
         self.conv1 = nn.Conv2d(3, 64, 3, padding=1)
         self.conv2 = nn.Conv2d(64, 128, 3, padding=1)
         self.conv3 = nn.Conv2d(128, 256, 3, padding=1)
-        
+
         # 1x1卷积调整通道数
         self.conv1x1_1 = nn.Conv2d(64, num_classes, 1)
         self.conv1x1_2 = nn.Conv2d(128, num_classes, 1)
         self.conv1x1_3 = nn.Conv2d(256, num_classes, 1)
-        
+
     def forward(self, x):
         # 骨干网络前向传播
         x1 = F.relu(self.conv1(x))
         x2 = F.relu(self.conv2(x1))
         x3 = F.relu(self.conv3(x2))
-        
+
         # 调整通道数
         s1 = self.conv1x1_1(x1)
         s2 = self.conv1x1_2(x2)
         s3 = self.conv1x1_3(x3)
-        
+
         # 上采样并相加
         s2 = F.interpolate(s2, size=s1.size()[2:], mode='bilinear', align_corners=True)
         s3 = F.interpolate(s3, size=s1.size()[2:], mode='bilinear', align_corners=True)
-        
+
         y = s1 + s2 + s3
-        
+
         return y
 ```
 
@@ -187,7 +187,7 @@ for epoch in range(num_epochs):
         # 前向传播
         outputs = net(images)
         loss = criterion(outputs, labels)
-        
+
         # 反向传播
         optimizer.zero_grad()
         loss.backward()
@@ -201,7 +201,7 @@ with torch.no_grad():
     for images, labels in test_loader:
         # 前向传播
         outputs = net(images)
-        
+
         # 取最大概率的类别
         _, predicted = torch.max(outputs, 1)
 ```

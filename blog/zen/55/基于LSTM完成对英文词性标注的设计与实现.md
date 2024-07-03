@@ -144,7 +144,7 @@ word2idx = {...} # 词表
 tag2idx = {...} # 标记表
 
 # 构建数据集
-train_data = [(torch.tensor([word2idx[w] for w in sent]), 
+train_data = [(torch.tensor([word2idx[w] for w in sent]),
                torch.tensor([tag2idx[t] for t in tags]))
               for sent, tags in zip(train_sentences, train_tags)]
 

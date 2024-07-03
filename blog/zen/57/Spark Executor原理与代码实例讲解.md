@@ -11,7 +11,7 @@ Spark凭借其高性能、易用性和通用性等优势,已成为大数据处�
 ## 2. 核心概念与联系
 ### 2.1 Spark基本概念
 - **Application:** Spark应用程序,由Driver Program和一系列Executor组成。
-- **Driver Program:** Spark应用程序的主程序,负责任务的调度和分发。  
+- **Driver Program:** Spark应用程序的主程序,负责任务的调度和分发。
 - **Executor:** 运行在工作节点上的进程,负责执行计算任务。
 - **Task:** Spark中的最小计算单元,由Executor执行。
 - **Stage:** 一组可以一起执行的Task,代表了Job的一个计算阶段。
@@ -30,11 +30,11 @@ E -->|返回结果| A
 ## 3. 核心算法原理具体操作步骤
 ### 3.1 Executor的启动流程
 1. Driver Program向Cluster Manager申请资源,提交应用程序。
-2. Cluster Manager在Worker Node上启动Executor进程。 
+2. Cluster Manager在Worker Node上启动Executor进程。
 3. Executor向Driver Program注册,建立通信连接。
 4. Driver Program将应用程序代码发送给Executor。
 5. Executor加载应用程序代码,准备执行任务。
-### 3.2 Executor执行任务的流程 
+### 3.2 Executor执行任务的流程
 1. Driver Program将Task以序列化的形式发送给Executor。
 2. Executor反序列化Task,创建Task对象。
 3. Executor执行Task的计算逻辑。
@@ -52,7 +52,7 @@ $$O(N \log N + M)$$
 ### 4.2 数据本地性优化
 Spark通过数据本地性优化来减少网络传输开销。数据本地性分为三个级别:
 - PROCESS_LOCAL: 数据和Executor在同一个JVM进程中。
-- NODE_LOCAL: 数据和Executor在同一个节点上。 
+- NODE_LOCAL: 数据和Executor在同一个节点上。
 - ANY: 数据和Executor在不同节点上。
 
 Spark会尽可能地将Task调度到数据所在的节点上执行,提高数据本地性。假设一个Task需要处理大小为$S$的数据,网络传输速率为$V$,则数据本地性带来的性能提升为:

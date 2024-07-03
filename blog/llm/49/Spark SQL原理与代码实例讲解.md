@@ -259,4 +259,4 @@ Spark SQL 与 Spark MLlib 和其他机器学习库紧密集成,可以用于构�
 
 通过 Spark Structured Streaming,Spark SQL 还可以用于实时数据处理。它支持从各种源(如 Kafka、Flume 和 Kinesis 等)接收流数据,并对其进行增量式的查询和处理。这对于构建实时数据管道和应用程序非常有用。
 
-### 
+###

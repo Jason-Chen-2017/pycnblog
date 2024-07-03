@@ -161,7 +161,7 @@ class PatrolRobot:
     def __init__(self, position, environment):
         self.position = position
         self.environment = environment
-    
+
     def move(self, action):
         if action == 'forward':
             self.position = (self.position[0], self.position[1] + 1)
@@ -175,14 +175,14 @@ class PatrolRobot:
             pass
         else:
             raise ValueError("Invalid action")
-        
+
         if self.position in self.environment.obstacles:
             return -1
         return 1
 
     def get_state(self):
         return np.array(self.position)
-    
+
     def get_reward(self):
         if self.position in self.environment.goal:
             return 10

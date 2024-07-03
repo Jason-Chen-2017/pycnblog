@@ -212,4 +212,4 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
 
 ### 9.3 如何处理中文分词？
 
-可以使用专门的中文分词器，例如IKAnalyzer。 
+可以使用专门的中文分词器，例如IKAnalyzer。

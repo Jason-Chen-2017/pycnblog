@@ -57,7 +57,7 @@ The fine-tuning schedule determines when to unfreeze the pre-trained model and a
 Mathematically, fine-tuning can be viewed as an optimization problem, where the goal is to minimize the loss function. Let $L$ denote the loss function, $W$ the weights of the model, and $D$ the dataset. The optimization problem can be written as:
 
 $$
-\\min_W \\sum_{i=1}^{|D|} L(W, D_i)
+\min_W \sum_{i=1}^{|D|} L(W, D_i)
 $$
 
 During the fine-tuning process, the weights $W$ are updated using an optimization algorithm, such as SGD or Adam, to minimize the loss function.

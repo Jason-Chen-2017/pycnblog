@@ -39,8 +39,7 @@ Laplace-Beltrami算子对于理解和处理流形上的几何问题具有重要�
 Laplace-Beltrami算子是一个定义在流形上的二阶偏微分算子。它可以通过以下方式定义：
 
 $$
-\Delta f = \
-abla^2 f = \sum_{i=1}^n \frac{\partial^2 f}{\partial x_i^2}
+\Delta f = \nabla^2 f = \sum_{i=1}^n \frac{\partial^2 f}{\partial x_i^2}
 $$
 
 其中，$f$ 是流形上的标量函数，$x_i$ 是流形上的坐标。
@@ -113,8 +112,7 @@ $$
 接着，计算梯度：
 
 $$
-\
-abla f = \begin{bmatrix} 2x \\ 2y \end{bmatrix}
+\nabla f = \begin{bmatrix} 2x \\ 2y \end{bmatrix}
 $$
 
 最后，计算Hessian矩阵：

@@ -114,8 +114,8 @@ def build_discriminator():
 ```python
 # 构建和编译判别器
 discriminator = build_discriminator()
-discriminator.compile(loss='binary_crossentropy', 
-                      optimizer=Adam(0.0002,0.5), 
+discriminator.compile(loss='binary_crossentropy',
+                      optimizer=Adam(0.0002,0.5),
                       metrics=['accuracy'])
 
 # 构建生成器

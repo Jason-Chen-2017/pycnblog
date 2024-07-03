@@ -168,12 +168,10 @@ $$
 3. **梯度下降**：
 
 $$
-\theta = \theta - \alpha \
-abla_\theta L
+\theta = \theta - \alpha \nabla_\theta L
 $$
 
-其中 $\theta$ 为模型参数，$\alpha$ 为学习率，$\
-abla_\theta L$ 为损失函数对参数的梯度。
+其中 $\theta$ 为模型参数，$\alpha$ 为学习率，$\nabla_\theta L$ 为损失函数对参数的梯度。
 
 ### 4.3 案例分析与讲解
 
@@ -223,7 +221,7 @@ criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
 
 # 训练模型
-for epoch in range(2):  
+for epoch in range(2):
     running_loss = 0.0
     for i, data in enumerate(train_loader, 0):
         inputs, labels = data
@@ -233,7 +231,7 @@ for epoch in range(2):
         loss.backward()
         optimizer.step()
         running_loss += loss.item()
-        if i % 2000 == 1999:    
+        if i % 2000 == 1999:
             print(f'[{epoch + 1}, {i + 1:5d}] loss: {running_loss / 2000:.3f}')
             running_loss = 0.0
 
@@ -299,7 +297,7 @@ A：评估神经网络模型可以从以下几个方面进行：
 2. 创建并激活虚拟环境：
 
 ```bash
-conda create -n torch-env python=3.8 
+conda create -n torch-env python=3.8
 conda activate torch-env
 ```
 

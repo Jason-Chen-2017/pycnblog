@@ -364,4 +364,4 @@ print('Accuracy:', acc)
 
 **答：** 神经网络的模型部署可以将训练好的模型保存到磁盘，并在需要时加载到内存中进行预测。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

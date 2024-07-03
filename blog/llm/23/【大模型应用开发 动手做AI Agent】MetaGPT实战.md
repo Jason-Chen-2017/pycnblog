@@ -1,6 +1,6 @@
 # 【大模型应用开发 动手做AI Agent】MetaGPT实战
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：大模型应用开发，AI Agent，MetaGPT，多模态交互，自动编程
 
@@ -130,19 +130,17 @@ MetaGPT适用于多个领域，包括但不限于：
 
 #### 多模态融合模型
 
-- **加权融合**：$W \\cdot V + L \\cdot L$，其中$W$为视觉权重，$V$为视觉特征向量，$L$为语言权重，$L$为语言特征向量。
+- **加权融合**：$W \cdot V + L \cdot L$，其中$W$为视觉权重，$V$为视觉特征向量，$L$为语言权重，$L$为语言特征向量。
 
 #### 自动编程模型
 
-- **代码生成模型**：$G(\\theta)$，其中$\\theta$为模型参数，$G$表示生成函数。
-- **代码优化模型**：$O(\\theta')$，其中$\\theta'$为优化参数，$O$表示优化函数。
+- **代码生成模型**：$G(\theta)$，其中$\theta$为模型参数，$G$表示生成函数。
+- **代码优化模型**：$O(\theta')$，其中$\theta'$为优化参数，$O$表示优化函数。
 
 #### 强化学习模型
 
-- **价值函数**：$V(s, \\pi)$，其中$s$为状态，$\\pi$为策略。
-- **策略更新**：$\\pi' = \\pi + \\alpha \\cdot \
-abla_\\pi J(\\pi)$，其中$\\alpha$为学习率，$\
-abla_\\pi$为梯度，$J(\\pi)$为策略的损失函数。
+- **价值函数**：$V(s, \pi)$，其中$s$为状态，$\pi$为策略。
+- **策略更新**：$\pi' = \pi + \alpha \cdot \nabla_\pi J(\pi)$，其中$\alpha$为学习率，$\nabla_\pi$为梯度，$J(\pi)$为策略的损失函数。
 
 ### 4.2 公式推导过程
 
@@ -150,28 +148,26 @@ abla_\\pi$为梯度，$J(\\pi)$为策略的损失函数。
 
 假设视觉特征向量$V$和语言特征向量$L$分别经过预训练模型的编码，产生向量$V_e$和$L_e$。则加权融合公式为：
 
-$$W \\cdot V_e + L \\cdot L_e$$
+$$W \cdot V_e + L \cdot L_e$$
 
 其中$W$和$L$分别为视觉和语言的权重系数。
 
 #### 自动编程公式推导
 
-- **生成代码**：$G(\\theta)$通过输入任务描述$x$生成代码$C$：
-$$C = G(\\theta, x)$$
-- **代码优化**：$O(\\theta')$通过接收环境反馈$R$和当前策略$\\pi$调整优化参数$\\theta'$：
-$$\\theta' = O(\\theta', R, \\pi)$$
+- **生成代码**：$G(\theta)$通过输入任务描述$x$生成代码$C$：
+$$C = G(\theta, x)$$
+- **代码优化**：$O(\theta')$通过接收环境反馈$R$和当前策略$\pi$调整优化参数$\theta'$：
+$$\theta' = O(\theta', R, \pi)$$
 
 #### 强化学习公式推导
 
-- **价值函数**：$V(s, \\pi)$通过状态$s$和策略$\\pi$计算价值：
-$$V(s, \\pi) = \\sum_{t=0}^{\\infty} \\gamma^t r_t$$
-其中$r_t$为即时奖励，$\\gamma$为折扣因子。
+- **价值函数**：$V(s, \pi)$通过状态$s$和策略$\pi$计算价值：
+$$V(s, \pi) = \sum_{t=0}^{\infty} \gamma^t r_t$$
+其中$r_t$为即时奖励，$\gamma$为折扣因子。
 
-- **策略更新**：$\\pi' = \\pi + \\alpha \\cdot \
-abla_\\pi J(\\pi)$通过梯度$\
-abla_\\pi$和学习率$\\alpha$更新策略$\\pi$：
-$$J(\\pi) = \\mathbb{E}_{s, a \\sim p(s, a|\\pi)} \\left[\\mathbb{E}_{\\pi'}[\\mathcal{L}(s, a, \\pi')]\\right]$$
-其中$\\mathcal{L}(s, a, \\pi')$为损失函数，衡量当前策略$\\pi$与目标策略$\\pi'$之间的差异。
+- **策略更新**：$\pi' = \pi + \alpha \cdot \nabla_\pi J(\pi)$通过梯度$\nabla_\pi$和学习率$\alpha$更新策略$\pi$：
+$$J(\pi) = \mathbb{E}_{s, a \sim p(s, a|\pi)} \left[\mathbb{E}_{\pi'}[\mathcal{L}(s, a, \pi')]\right]$$
+其中$\mathcal{L}(s, a, \pi')$为损失函数，衡量当前策略$\pi$与目标策略$\pi'$之间的差异。
 
 ### 4.3 案例分析与讲解
 
@@ -181,7 +177,7 @@ $$J(\\pi) = \\mathbb{E}_{s, a \\sim p(s, a|\\pi)} \\left[\\mathbb{E}_{\\pi'}[\\m
 
 #### 案例二：自动编程案例
 
-对于生成特定功能的代码任务，首先通过代码生成模型$G(\\theta)$基于任务描述$x$生成初步代码$C$。随后，利用强化学习策略调整优化参数$\\theta'$，在与环境的交互中逐步优化代码，提升执行效率和适应性。
+对于生成特定功能的代码任务，首先通过代码生成模型$G(\theta)$基于任务描述$x$生成初步代码$C$。随后，利用强化学习策略调整优化参数$\theta'$，在与环境的交互中逐步优化代码，提升执行效率和适应性。
 
 ### 4.4 常见问题解答
 
@@ -216,7 +212,7 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 # 初始化模型和分词器
-model_name = \"meta-gpt\"
+model_name = "meta-gpt"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
@@ -237,13 +233,13 @@ def reinforcement_learning(state, action, reward):
 
 # 主函数
 def main():
-    task_description = \"编写一个用于检测物体颜色的程序\"
+    task_description = "编写一个用于检测物体颜色的程序"
     code = auto_code_generation(task_description)
     state = initial_state()
     reward = reinforce_learning(state, code, reward_function(code))
     # 循环执行强化学习过程，直至达到终止条件
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     main()
 ```
 

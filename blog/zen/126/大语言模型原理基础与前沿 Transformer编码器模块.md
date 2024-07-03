@@ -555,4 +555,4 @@ Transformer 模型已广泛应用于各种 NLP 任务，例如：
 * **自然语言理解**:  情感分析、文本分类、问答系统等。
 * **代码生成**:  根据自然语言描述生成代码。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -106,12 +106,10 @@ $$
 在微调阶段，我们希望最小化上述损失函数。通过梯度下降法，我们可以更新模型参数：
 
 $$
-\theta \leftarrow \theta - \eta \cdot \
-abla_{\theta}\mathcal{L}(\theta)
+\theta \leftarrow \theta - \eta \cdot \nabla_{\theta}\mathcal{L}(\theta)
 $$
 
-其中，$\eta$ 是学习率，$\
-abla_{\theta}\mathcal{L}(\theta)$ 是损失函数关于参数$\theta$的梯度。
+其中，$\eta$ 是学习率，$\nabla_{\theta}\mathcal{L}(\theta)$ 是损失函数关于参数$\theta$的梯度。
 
 ### 4.3 案例分析与讲解
 假设我们正在构建一个文本分类系统，用于分类电影评论为正面或负面。我们使用BERT作为基础模型，定义一个简单的全连接层来输出分类结果。通过LangChain提供的API，我们可以方便地加载预训练的BERT模型，定义输入和输出格式，然后使用训练数据集进行微调。

@@ -142,8 +142,7 @@ AI和DL算法在航空航天领域的应用具有重要的研究意义：
 
 - 梯度下降法更新模型参数：
 $$
-\theta \leftarrow \theta - \alpha \
-abla_{\theta}L(f(x), y)
+\theta \leftarrow \theta - \alpha \nabla_{\theta}L(f(x), y)
 $$
 
 ### 4.2 飞行控制与优化

@@ -22,7 +22,7 @@ K-Means是最经典、应用最广泛的聚类算法之一。它以迭代优化�
 ### 2.1 聚类(Cluster)
 聚类指数据集中的一个子集,该子集内的数据点彼此相似,而与其他聚类内的点存在明显差异。聚类反映了数据的内在分组结构。
 
-### 2.2 质心(Centroid) 
+### 2.2 质心(Centroid)
 质心是每个聚类的中心点,通常用该聚类内所有数据点的均值向量表示。质心直观地刻画了聚类的位置特征。
 
 ### 2.3 距离度量(Distance Metric)
@@ -123,7 +123,7 @@ for k in range(2, 11):
     labels = kmeans.fit_predict(X)
     score = silhouette_score(X, labels)
     silhouette_scores.append(score)
-    
+
 # 绘制不同K值下的轮廓系数
 plt.plot(range(2, 11), silhouette_scores)
 plt.xlabel('Number of clusters')
@@ -139,7 +139,7 @@ labels = kmeans.fit_predict(X)
 plt.scatter(X[:, 0], X[:, 1], c=labels)
 plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], marker='*', s=200, c='red')
 plt.xlabel('Feature 1')
-plt.ylabel('Feature 2') 
+plt.ylabel('Feature 2')
 plt.show()
 ```
 

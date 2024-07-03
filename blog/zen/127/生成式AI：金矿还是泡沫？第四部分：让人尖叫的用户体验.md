@@ -226,10 +226,10 @@ for epoch in range(num_epochs):
 
 ## 9. 附录：常见问题与解答
 ### 9.1  Q1: 如何选择合适的生成式AI模型？
-### 9.2  A1: 
+### 9.2  A1:
 ### 9.3  Q2: 如何评估生成式AI模型的性能？
-### 9.4  A2: 
+### 9.4  A2:
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

@@ -12,7 +12,7 @@
 #### 2.1.1 迁移学习的定义
 #### 2.1.2 迁移学习的分类
 #### 2.1.3 迁移学习与微调的关系
-### 2.2 预训练模型 
+### 2.2 预训练模型
 #### 2.2.1 预训练模型的概念
 #### 2.2.2 常见的预训练模型
 #### 2.2.3 预训练模型在微调中的应用
@@ -43,7 +43,7 @@
 #### 4.1.1 交叉熵损失函数
 $$ L_{CE}(y, \hat{y}) = -\sum_{i=1}^{N} y_i \log(\hat{y}_i) $$
 其中，$y_i$ 是真实标签，$\hat{y}_i$ 是预测概率。
-#### 4.1.2 均方误差损失函数 
+#### 4.1.2 均方误差损失函数
 $$ L_{MSE}(y, \hat{y}) = \frac{1}{N}\sum_{i=1}^{N}(y_i - \hat{y}_i)^2 $$
 其中，$y_i$ 是真实值，$\hat{y}_i$ 是预测值。
 ### 4.2 微调的优化算法
@@ -54,7 +54,7 @@ $$ \theta_{t+1} = \theta_t - \eta \nabla_{\theta}L(\theta) $$
 $$m_t = \beta_1 m_{t-1} + (1 - \beta_1) g_t \\
 v_t = \beta_2 v_{t-1} + (1 - \beta_2) g_t^2  \\
 \hat{m}_t = \frac{m_t}{1 - \beta_1^t} \\
-\hat{v}_t = \frac{v_t}{1 - \beta_2^t} \\ 
+\hat{v}_t = \frac{v_t}{1 - \beta_2^t} \\
 \theta_{t+1} = \theta_{t} - \frac{\eta}{\sqrt{\hat{v}_t} + \epsilon} \hat{m}_t$$
 其中，$m_t$ 和 $v_t$ 分别是梯度的一阶矩和二阶矩估计，$\beta_1$ 和 $\beta_2$ 是衰减率，$\epsilon$ 是平滑项。
 
@@ -78,7 +78,7 @@ model.fc = nn.Linear(num_features, num_classes)
 train_dataset = datasets.ImageFolder(train_dir, transform=train_transforms)
 val_dataset = datasets.ImageFolder(val_dir, transform=val_transforms)
 
-train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size, shuffle=True)  
+train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 val_loader = torch.utils.data.DataLoader(val_dataset, batch_size=batch_size)
 ```
 使用`ImageFolder`加载图像数据集，并用`DataLoader`封装成批次。
@@ -95,13 +95,13 @@ for epoch in range(num_epochs):
     model.train()
     for inputs, labels in train_loader:
         inputs, labels = inputs.to(device), labels.to(device)
-        
+
         optimizer.zero_grad()
         outputs = model(inputs)
         loss = criterion(outputs, labels)
         loss.backward()
         optimizer.step()
-        
+
     model.eval()
     # 在验证集上评估模型性能
     ...
@@ -113,7 +113,7 @@ for epoch in range(num_epochs):
 #### 5.2.1 加载预训练模型
 ```python
 base_model = tf.keras.applications.MobileNetV2(input_shape=IMG_SHAPE,
-                                               include_top=False, 
+                                               include_top=False,
                                                weights='imagenet')
 ```
 加载在ImageNet上预训练的MobileNetV2模型，去掉顶层。
@@ -151,11 +151,11 @@ fine_tune_at = 100
 
 for layer in base_model.layers[:fine_tune_at]:
   layer.trainable =  False
-  
+
 model.compile(optimizer=tf.keras.optimizers.Adam(lr=fine_tune_learning_rate),
               loss='categorical_crossentropy',
               metrics=['accuracy'])
-              
+
 history_fine = model.fit(train_dataset,
                          epochs=fine_tune_epochs,
                          validation_data=validation_dataset)

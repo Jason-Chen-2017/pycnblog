@@ -65,13 +65,13 @@ AI代理在健康医疗中的应用广泛，包括但不限于智能诊断、药
 
 对于疾病诊断模型，可以构建以下数学框架：
 
-$$P(D|E) = \\frac{P(E|D)P(D)}{P(E)}$$
+$$P(D|E) = \frac{P(E|D)P(D)}{P(E)}$$
 
 其中，
-- \\(P(D|E)\\) 是给定证据\\(E\\)时疾病\\(D\\)的概率，
-- \\(P(E|D)\\) 是给定疾病\\(D\\)时观察到证据\\(E\\)的概率，
-- \\(P(D)\\) 是疾病\\(D\\)的先验概率，
-- \\(P(E)\\) 是证据\\(E\\)的总概率。
+- \(P(D|E)\) 是给定证据\(E\)时疾病\(D\)的概率，
+- \(P(E|D)\) 是给定疾病\(D\)时观察到证据\(E\)的概率，
+- \(P(D)\) 是疾病\(D\)的先验概率，
+- \(P(E)\) 是证据\(E\)的总概率。
 
 ### 4.2 公式推导过程
 
@@ -125,7 +125,7 @@ def train_model(model, x_train, y_train, epochs=10):
 # 验证模型
 def evaluate_model(model, x_test, y_test):
     _, accuracy = model.evaluate(x_test, y_test)
-    print(f\"Accuracy: {accuracy}\")
+    print(f"Accuracy: {accuracy}")
 
 # 主函数
 def main():

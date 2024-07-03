@@ -1,4 +1,4 @@
-                 
+
 # 多模态大模型：技术原理与实战 OpenAI一鸣惊人带来的启示
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -134,14 +134,14 @@ class MultimodalTransformer(nn.Module):
     def forward(self, input_ids, attention_mask=None, image_features=None):
         # Text processing
         text_outputs = self.text_model(input_ids=input_ids, attention_mask=attention_mask)
-        
+
         # Image processing (assuming a simple linear projection for demonstration purposes)
         image_outputs = self.image_encoder(image_features)
-        
+
         # Concatenate and process further if needed
-        
+
         return text_outputs.last_hidden_state, image_outputs
-    
+
 # Example of an image encoder
 class ImageEncoder(nn.Module):
     def __init__(self, dim):

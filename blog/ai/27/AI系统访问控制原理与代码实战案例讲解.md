@@ -89,12 +89,12 @@ AI系统访问控制的研究具有深远的意义：
 
 假设存在N个主体、M个客体和K种权限类型，我们可以用矩阵来表示主体-客体-权限之间的关联：
 
-$$ A = \\begin{bmatrix}
-A_{11} & A_{12} & \\cdots & A_{1M} \\\\
-A_{21} & A_{22} & \\cdots & A_{2M} \\\\
-\\vdots & \\vdots & \\ddots & \\vdots \\\\
-A_{N1} & A_{N2} & \\cdots & A_{NM}
-\\end{bmatrix} $$
+$$ A = \begin{bmatrix}
+A_{11} & A_{12} & \cdots & A_{1M} \\\
+A_{21} & A_{22} & \cdots & A_{2M} \\\
+\vdots & \vdots & \ddots & \vdots \\\
+A_{N1} & A_{N2} & \cdots & A_{NM}
+\end{bmatrix} $$
 
 其中，$A_{ij}$表示第i个主体是否拥有对第j个客体的第k种权限。
 
@@ -102,10 +102,10 @@ A_{N1} & A_{N2} & \\cdots & A_{NM}
 
 在策略执行阶段，对于任意主体i和客体j，访问是否被允许取决于：
 
-$$ \\text{Allow(i, j)} = \\begin{cases} 
-1 & \\text{if } \\exists k \\in \\{1, 2, ..., K\\} \\text{ such that } A_{ik} = \\text{True} \\text{ and } A_{kj} \\text{ satisfies the policy} \\\\
-0 & \\text{otherwise}
-\\end{cases} $$
+$$ \text{Allow(i, j)} = \begin{cases}
+1 & \text{if } \exists k \in \{1, 2, ..., K\} \text{ such that } A_{ik} = \text{True} \text{ and } A_{kj} \text{ satisfies the policy} \\\
+0 & \text{otherwise}
+\end{cases} $$
 
 ### 案例分析与讲解
 
@@ -179,17 +179,17 @@ class Policy:
         pass
 
 # 示例使用
-roles = [Role(\"admin\"), Role(\"user\")]
-permissions = [Permission(\"read\"), Permission(\"write\"), Permission(\"execute\")]
+roles = [Role("admin"), Role("user")]
+permissions = [Permission("read"), Permission("write"), Permission("execute")]
 policies = [
     Policy(),
     Policy()
 ]
 
 access_control = AccessControl(roles, permissions, policies)
-subject = \"admin\"
-object = \"file\"
-operation = \"read\"
+subject = "admin"
+object = "file"
+operation = "read"
 print(access_control.check_access(subject, object, operation))
 ```
 
@@ -224,8 +224,8 @@ print(access_control.check_access(subject, object, operation))
 
 ### 相关论文推荐
 
-- **\"Access Control in AI Systems\"** （作者：John Doe）
-- **\"AI Enhanced Security Strategies\"** （作者：Jane Smith）
+- **"Access Control in AI Systems"** （作者：John Doe）
+- **"AI Enhanced Security Strategies"** （作者：Jane Smith）
 
 ### 其他资源推荐
 

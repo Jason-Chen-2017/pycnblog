@@ -84,28 +84,28 @@
 知识蒸馏的目标是使学生模型学习教师模型的特征表示，可以构建如下数学模型：
 
 $$
-L_{\\text{distill}} = \\beta \\cdot \\mathcal{L}_{\\text{KD}}(f_{\\text{student}}(x), f_{\\text{teacher}}(x)) + \\lambda \\cdot \\mathcal{L}_{\\text{CE}}(p_{\\text{student}}, p_{\\text{teacher}})
+L_{\text{distill}} = \beta \cdot \mathcal{L}_{\text{KD}}(f_{\text{student}}(x), f_{\text{teacher}}(x)) + \lambda \cdot \mathcal{L}_{\text{CE}}(p_{\text{student}}, p_{\text{teacher}})
 $$
 
 其中：
 
-- $\\mathcal{L}_{\\text{KD}}$ 是知识蒸馏损失，衡量学生模型预测与教师模型预测之间的差异。
-- $\\mathcal{L}_{\\text{CE}}$ 是交叉熵损失，用于保持学生模型的预测分布接近于真实标签分布。
-- $\\beta$ 和 $\\lambda$ 是超参数，分别控制知识蒸馏损失和交叉熵损失的影响程度。
+- $\mathcal{L}_{\text{KD}}$ 是知识蒸馏损失，衡量学生模型预测与教师模型预测之间的差异。
+- $\mathcal{L}_{\text{CE}}$ 是交叉熵损失，用于保持学生模型的预测分布接近于真实标签分布。
+- $\beta$ 和 $\lambda$ 是超参数，分别控制知识蒸馏损失和交叉熵损失的影响程度。
 
 ### 4.2 公式推导过程
 
-知识蒸馏损失函数 $\\mathcal{L}_{\\text{KD}}$ 可以通过以下方式定义：
+知识蒸馏损失函数 $\mathcal{L}_{\text{KD}}$ 可以通过以下方式定义：
 
 $$
-\\mathcal{L}_{\\text{KD}}(f_{\\text{student}}, f_{\\text{teacher}}) = \\mathbb{E}_{(x, y)} \\left[ \\alpha \\cdot \\left( \\frac{1}{T} \\cdot \\text{KL}(f_{\\text{student}}(x), f_{\\text{teacher}}(x)) + \\text{MSE}(f_{\\text{student}}(x), f_{\\text{teacher}}(x)) \\right) \\right]
+\mathcal{L}_{\text{KD}}(f_{\text{student}}, f_{\text{teacher}}) = \mathbb{E}_{(x, y)} \left[ \alpha \cdot \left( \frac{1}{T} \cdot \text{KL}(f_{\text{student}}(x), f_{\text{teacher}}(x)) + \text{MSE}(f_{\text{student}}(x), f_{\text{teacher}}(x)) \right) \right]
 $$
 
 其中：
 
-- $\\text{KL}$ 是Kullback-Leibler散度，衡量两个分布之间的差异。
-- $\\text{MSE}$ 是均方误差，衡量两者的预测差异。
-- $\\alpha$ 是平衡系数，用于调整Kullback-Leibler散度和均方误差的权重。
+- $\text{KL}$ 是Kullback-Leibler散度，衡量两个分布之间的差异。
+- $\text{MSE}$ 是均方误差，衡量两者的预测差异。
+- $\alpha$ 是平衡系数，用于调整Kullback-Leibler散度和均方误差的权重。
 
 ### 4.3 案例分析与讲解
 
@@ -121,7 +121,7 @@ $$
 
 ### 4.4 常见问题解答
 
-- **如何选择合适的温度参数**？温度参数 $\\alpha$ 和 $T$ 应根据具体任务和模型调整，通常通过实验找到最佳值。
+- **如何选择合适的温度参数**？温度参数 $\alpha$ 和 $T$ 应根据具体任务和模型调整，通常通过实验找到最佳值。
 - **如何避免过拟合**？可以采用正则化技术，如L1或L2正则化，或者使用数据增强来增加模型的泛化能力。
 
 ## 5. 项目实践：代码实例和详细解释说明
@@ -171,7 +171,7 @@ for epoch in range(num_epochs):
         inputs, labels = batch
         outputs_student = model_student(inputs)
         outputs_teacher = model_teacher(inputs)
-        
+
         loss = criterion(outputs_student, outputs_teacher, labels)
         optimizer.zero_grad()
         loss.backward()

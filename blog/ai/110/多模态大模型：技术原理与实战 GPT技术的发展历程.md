@@ -258,4 +258,4 @@ A photo of a dog sitting on a bed.
 * **如何评估多模态大模型的效果?**
     * 可以使用不同的指标进行评估，例如准确率、召回率、F1-score 等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

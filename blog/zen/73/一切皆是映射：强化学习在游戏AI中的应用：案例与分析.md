@@ -161,13 +161,13 @@ for episode in range(1000):
         else:
             q_values = model.predict(state.reshape(-1, 4))
             action = np.argmax(q_values)
-        
+
         next_state, reward, done, _ = env.step(action)
         memory.append((state, action, reward, next_state, done))
-        
+
         # 更新状态
         state = next_state
-    
+
     # 回放并更新模型
     for transition in memory:
         state, action, reward, next_state, done = transition
@@ -177,7 +177,7 @@ for episode in range(1000):
         target_q_values = model.predict(state.reshape(-1, 4))
         target_q_values[0][action] = target
         model.fit(state.reshape(-1, 4), target_q_values, epochs=1, verbose=0)
-    
+
     # 衰减epsilon
     if epsilon > epsilon_min:
         epsilon *= epsilon_decay

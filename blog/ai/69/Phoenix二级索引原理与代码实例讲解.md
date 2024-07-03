@@ -157,7 +157,7 @@ print(result)
 
 ```
         id  age
-name                
+name
 Bob     2    25
 ```
 

@@ -137,7 +137,7 @@ AI Agent和具身智能的数学模型主要包括：
    为了提取图像中的障碍物信息，我们可以使用卷积神经网络（CNN）进行特征提取：
 
    $$
- \mathbf{f}(\mathbf{I}) = \mathbf{f}_1(\mathbf{I}) \circ \mathbf{f}_2(\mathbf{I}) \circ \cdots \circ \mathbf{f}_n(\mathbf{I}) 
+ \mathbf{f}(\mathbf{I}) = \mathbf{f}_1(\mathbf{I}) \circ \mathbf{f}_2(\mathbf{I}) \circ \cdots \circ \mathbf{f}_n(\mathbf{I})
 $$
 
    其中 $\mathbf{f}_1, \mathbf{f}_2, \cdots, \mathbf{f}_n$ 为CNN中的卷积层，$\circ$ 表示卷积操作。
@@ -147,7 +147,7 @@ $$
    基于CNN提取的特征 $\mathbf{f}$，我们可以使用强化学习（RL）算法进行决策：
 
    $$
- \mathbf{a} = \pi(\mathbf{f}; \theta) 
+ \mathbf{a} = \pi(\mathbf{f}; \theta)
 $$
 
    其中 $\pi$ 为动作策略，$\theta$ 为策略参数。
@@ -163,8 +163,7 @@ $$
    智能体 $i$ 可以根据交互信息 $\mathbf{x}_{ij}$ 更新其动作策略：
 
    $$
- \theta_i = \theta_i + \alpha \
-abla_{\theta_i} J(\theta_i, \mathbf{x}_{ij}) 
+ \theta_i = \theta_i + \alpha \nabla_{\theta_i} J(\theta_i, \mathbf{x}_{ij})
 $$
 
    其中 $\alpha$ 为学习率，$J(\theta_i, \mathbf{x}_{ij})$ 为目标函数。

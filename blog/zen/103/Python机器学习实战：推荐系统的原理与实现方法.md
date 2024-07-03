@@ -271,7 +271,7 @@ def build_recommender(text_data, item_data):
     vectorizer = CountVectorizer()
     item_vectors = vectorizer.fit_transform(item_data)
     text_vectors = vectorizer.transform(text_data)
-    
+
     similarity_matrix = cosine_similarity(item_vectors, text_vectors)
     return similarity_matrix
 

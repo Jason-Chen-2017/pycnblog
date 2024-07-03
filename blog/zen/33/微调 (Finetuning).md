@@ -133,14 +133,14 @@ def train(model, data_loader, optimizer):
 
 以交叉熵损失为例，其公式如下：
 
-$$L(\\theta) = -\\sum_{i=1}^{n} y_i \\log(\\hat{y}_i)$$
+$$L(\theta) = -\sum_{i=1}^{n} y_i \log(\hat{y}_i)$$
 
 其中：
 
-- $L(\\theta)$表示损失函数。
+- $L(\theta)$表示损失函数。
 - $n$表示样本数量。
 - $y_i$表示真实标签。
-- $\\hat{y}_i$表示模型预测值。
+- $\hat{y}_i$表示模型预测值。
 
 ### 4.3 案例分析与讲解
 
@@ -235,7 +235,7 @@ def validate(model, data_loader, criterion):
 num_epochs = 10
 train(model, train_loader, optimizer, criterion)
 val_loss = validate(model, val_loader, criterion)
-print(f\"Validation loss: {val_loss}\")
+print(f"Validation loss: {val_loss}")
 ```
 
 ### 5.3 代码解读与分析
@@ -286,9 +286,9 @@ print(f\"Validation loss: {val_loss}\")
 
 ### 7.3 相关论文推荐
 
-1. **\"Very Deep Convolutional Networks for Large-Scale Image Recognition\"**：作者：Alex Krizhevsky, Ilya Sutskever, Geoffrey Hinton
-2. **\"BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding\"**：作者：Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova
-3. **\"Attention Is All You Need\"**：作者：Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, Illia Polosukhin
+1. **"Very Deep Convolutional Networks for Large-Scale Image Recognition"**：作者：Alex Krizhevsky, Ilya Sutskever, Geoffrey Hinton
+2. **"BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"**：作者：Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova
+3. **"Attention Is All You Need"**：作者：Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, Illia Polosukhin
 
 ### 7.4 其他资源推荐
 

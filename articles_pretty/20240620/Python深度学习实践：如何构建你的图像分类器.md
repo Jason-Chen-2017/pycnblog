@@ -170,11 +170,9 @@ $$J(\\theta) = -\\sum_{j=1}^{C} y_j \\log(\\hat{y}_j)$$
 
 为了最小化损失函数$J(\\theta)$，我们采用梯度下降法更新参数$\\theta$：
 
-$$\\theta := \\theta - \\alpha \
-abla J(\\theta)$$
+$$\\theta := \\theta - \\alpha \nabla J(\\theta)$$
 
-其中$\\alpha$是学习率，$\
-abla J(\\theta)$是损失函数关于参数$\\theta$的梯度。
+其中$\\alpha$是学习率，$\nabla J(\\theta)$是损失函数关于参数$\\theta$的梯度。
 
 ### 4.3 案例分析与讲解
 

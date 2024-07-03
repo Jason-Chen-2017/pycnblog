@@ -361,4 +361,4 @@ Hinton、LeCun 和 Bengio 三位图灵奖得主在深度学习领域做出了开
 * **深度学习的未来发展趋势？**
     * 深度学习技术将继续发展，并将在以下几个方面取得突破：更强大的模型、更少的数据需求、更强的解释性、更广泛的应用。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

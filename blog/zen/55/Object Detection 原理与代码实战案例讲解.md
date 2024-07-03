@@ -167,19 +167,19 @@ NMS算法的伪代码如下:
 def nms(boxes, scores, iou_threshold):
     # 根据置信度分数排序
     sorted_indices = np.argsort(scores)[::-1]
-    
+
     keep = []
     while sorted_indices.size > 0:
         # 取置信度最高的框
         idx = sorted_indices[0]
         keep.append(idx)
-        
+
         # 计算其他框与当前框的IoU
         iou = compute_iou(boxes[idx], boxes[sorted_indices[1:]])
-        
+
         # 移除IoU超过阈值的框
         sorted_indices = sorted_indices[np.where(iou <= iou_threshold)[0] + 1]
-    
+
     return keep
 ```
 
@@ -230,10 +230,10 @@ class YOLODetector(nn.Module):
         super(YOLODetector, self).__init__()
         # 特征提取网络
         self.backbone = DarkNet()
-        
+
         # 密集预测头
         self.head = YOLOHead(num_classes, anchors)
-        
+
     def forward(self, x):
         features = self.backbone(x)
         outputs = self.head(features)
@@ -248,13 +248,13 @@ class YOLOHead(nn.Module):
         super(YOLOHead, self).__init__()
         self.num_anchors = len(anchors)
         self.num_classes = num_classes
-        
+
         # 预测边界框坐标和置信度
         self.box_pred = nn.Conv2d(...)
-        
+
         # 预测类别概率
         self.cls_pred = nn.Conv2d(...)
-        
+
     def forward(self, x):
         box_pred = self.box_pred(x)
         cls_pred = self.cls_pred(x)

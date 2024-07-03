@@ -75,7 +75,7 @@ $$\nabla_\theta J(\theta) = E_{\tau \sim \pi_\theta} [\sum_{t=0}^T \nabla_\theta
 其中：
 
 * $J(\theta)$ 表示预期回报。
-* $\theta$ 表示策略函数的参数。 
+* $\theta$ 表示策略函数的参数。
 * $\tau$ 表示轨迹，即状态和动作的序列。
 * $\pi_\theta(a_t | s_t)$ 表示在状态 $s_t$ 下采取动作 $a_t$ 的概率。
 * $A_t$ 表示在时间步 $t$ 的优势函数，它衡量在特定状态下采取特定动作的价值。

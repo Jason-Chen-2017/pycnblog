@@ -332,7 +332,7 @@ A：对抗训练可以有效地提高模型的鲁棒性。但是，对抗训练�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n machine-learning-env python=3.8 
+conda create -n machine-learning-env python=3.8
 conda activate machine-learning-env
 ```
 

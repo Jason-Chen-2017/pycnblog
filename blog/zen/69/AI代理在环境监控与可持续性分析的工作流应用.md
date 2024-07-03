@@ -63,7 +63,7 @@ $$\hat{Z}(s_0)=\sum_{i=1}^n\lambda_iZ(s_i)$$
 #### 4.1.3 机器学习模型
 机器学习模型如支持向量机(SVM)、随机森林等,可用于环境状态分类和预测。以SVM为例,其目标函数为:
 
-$$\min \frac{1}{2}||w||^2+C\sum_{i=1}^n\xi_i \\ s.t. y_i(w^Tx_i+b)\geq1-\xi_i, \xi_i\geq0$$
+$$\min \frac{1}{2}||w||^2+C\sum_{i=1}^n\xi_i \ s.t. y_i(w^Tx_i+b)\geq1-\xi_i, \xi_i\geq0$$
 
 其中,$w$为超平面法向量,$\xi_i$为松弛变量,$C$为惩罚系数。
 
@@ -71,7 +71,7 @@ $$\min \frac{1}{2}||w||^2+C\sum_{i=1}^n\xi_i \\ s.t. y_i(w^Tx_i+b)\geq1-\xi_i, \
 #### 4.2.1 系统动力学模型
 系统动力学模型可用于模拟复杂系统的动态行为。以Lotka-Volterra方程为例,其数学表达式为:
 
-$$\frac{dx}{dt}=\alpha x-\beta xy \\ \frac{dy}{dt}=\delta xy-\gamma y$$
+$$\frac{dx}{dt}=\alpha x-\beta xy \ \frac{dy}{dt}=\delta xy-\gamma y$$
 
 其中,$x$为猎物数量,$y$为捕食者数量,$\alpha,\beta,\gamma,\delta$为模型参数。
 
@@ -94,7 +94,7 @@ $$FCI=\frac{\sum_{i=1}^nT_{ii}}{\sum_{i=1}^n\sum_{j=1}^nT_{ij}}\times100\%$$
 马尔可夫决策过程(MDP)是强化学习的理论基础。其数学定义为一个五元组$(S,A,P,R,\gamma)$:
 
 - $S$为状态空间
-- $A$为动作空间 
+- $A$为动作空间
 - $P$为状态转移概率矩阵
 - $R$为奖励函数
 - $\gamma$为折扣因子
@@ -196,7 +196,7 @@ print(f'Optimal value: {res.fun:.2f}')
 import numpy as np
 
 # 定义MDP
-S = ['s1', 's2', 's3'] 
+S = ['s1', 's2', 's3']
 A = ['a1', 'a2']
 P = {
     's1': {'a1': [('s1', 0.7), ('s2', 0.3)], 'a2': [('s2', 0.8), ('s3', 0.2)]},
@@ -205,7 +205,7 @@ P = {
 }
 R = {
     's1': {'a1': 1, 'a2': 2},
-    's2': {'a1': 2, 'a2': 1}, 
+    's2': {'a1': 2, 'a2': 1},
     's3': {'a1': 1, 'a2': 2}
 }
 gamma = 0.9

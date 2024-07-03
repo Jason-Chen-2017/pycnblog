@@ -1,6 +1,6 @@
 # 损失函数 (Loss Function) 原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -167,7 +167,7 @@ class SimpleMLP(nn.Module):
         self.fc1 = nn.Linear(input_size, hidden_size)
         self.relu = nn.ReLU()
         self.fc2 = nn.Linear(hidden_size, output_size)
-    
+
     def forward(self, x):
         x = self.fc1(x)
         x = self.relu(x)

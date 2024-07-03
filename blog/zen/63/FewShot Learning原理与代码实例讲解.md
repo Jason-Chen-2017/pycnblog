@@ -37,7 +37,7 @@ FSL在许多领域都有着广泛的应用前景，例如：
 基于度量学习的FSL方法通常包含以下步骤：
 
 1. **训练阶段:** 使用大量的标注数据训练一个度量学习模型，例如孪生网络 (Siamese Network) 或匹配网络 (Matching Network)。
-2. **元测试阶段:** 
+2. **元测试阶段:**
     * 将少量样本分成支持集 (Support Set) 和查询集 (Query Set)。
     * 使用度量学习模型计算支持集样本和查询集样本之间的距离。
     * 根据距离对查询集样本进行分类。
@@ -47,7 +47,7 @@ FSL在许多领域都有着广泛的应用前景，例如：
 基于元学习的FSL方法通常包含以下步骤：
 
 1. **元训练阶段:** 使用多个任务训练一个元学习模型，例如模型无关元学习 (MAML) 或 Reptile。
-2. **元测试阶段:** 
+2. **元测试阶段:**
     * 使用少量样本微调元学习模型。
     * 使用微调后的模型对查询集样本进行分类。
 
@@ -157,7 +157,7 @@ class MAML(tf.keras.Model):
             # 外循环：使用查询集样本计算损失
             query_logits = self.model(inputs[2], training=True)
             query_loss = tf.keras.losses.sparse_categorical_crossentropy(inputs[3], query_logits)
-        
+
         # 计算梯度
         grads = tape.gradient(query_loss, self.trainable_variables)
         return query_loss, grads

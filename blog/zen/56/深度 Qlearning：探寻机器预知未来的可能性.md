@@ -2,7 +2,7 @@
 
 ## 1. 背景介绍
 ### 1.1 强化学习的兴起
-#### 1.1.1 强化学习的定义与特点  
+#### 1.1.1 强化学习的定义与特点
 #### 1.1.2 强化学习的发展历程
 #### 1.1.3 强化学习的应用前景
 
@@ -19,7 +19,7 @@
 ## 2. 核心概念与联系
 ### 2.1 强化学习中的核心概念
 #### 2.1.1 智能体(Agent)
-#### 2.1.2 环境(Environment)  
+#### 2.1.2 环境(Environment)
 #### 2.1.3 状态(State)
 #### 2.1.4 动作(Action)
 #### 2.1.5 奖励(Reward)
@@ -32,7 +32,7 @@
 #### 2.2.3 时间差分学习(Temporal Difference Learning)
 #### 2.2.4 探索与利用(Exploration and Exploitation)
 
-### 2.3 深度学习中的核心概念  
+### 2.3 深度学习中的核心概念
 #### 2.3.1 神经网络(Neural Network)
 #### 2.3.2 前馈神经网络(Feedforward Neural Network)
 #### 2.3.3 卷积神经网络(Convolutional Neural Network, CNN)
@@ -41,7 +41,7 @@
 ### 2.4 深度 Q-learning 的核心概念
 #### 2.4.1 深度 Q 网络(Deep Q-Network, DQN)
 #### 2.4.2 经验回放(Experience Replay)
-#### 2.4.3 目标网络(Target Network)  
+#### 2.4.3 目标网络(Target Network)
 #### 2.4.4 Double DQN
 #### 2.4.5 Dueling DQN
 #### 2.4.6 优先经验回放(Prioritized Experience Replay)

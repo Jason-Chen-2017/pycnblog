@@ -222,8 +222,8 @@ class Scheduler:
     def update_resources(self):
         # 根据资源状态更新资源分配
         for i in range(self.num_nodes):
-            self.allocation[i] = [self.resources[i][0] - np.sum(self.allocation[:, 0]), 
-                                  self.resources[i][1] - np.sum(self.allocation[:, 1]), 
+            self.allocation[i] = [self.resources[i][0] - np.sum(self.allocation[:, 0]),
+                                  self.resources[i][1] - np.sum(self.allocation[:, 1]),
                                   self.resources[i][2] - np.sum(self.allocation[:, 2])]
 
 # 创建调度器

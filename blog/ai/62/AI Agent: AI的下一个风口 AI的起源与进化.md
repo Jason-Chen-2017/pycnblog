@@ -272,7 +272,7 @@ A：Q值函数是衡量智能体在特定状态下采取特定行动的预期奖
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n ai-env python=3.8 
+conda create -n ai-env python=3.8
 conda activate ai-env
 ```
 
@@ -426,7 +426,7 @@ print(Q)
 
 1. “Reinforcement Learning: An Introduction”
 2. “An Introduction to Multi-Agent Systems”
-3. “A Few Useful Things to Know about Machine Learning” 
+3. “A Few Useful Things to Know about Machine Learning”
 4. “Algorithms for reinforcement learning”
 
 ### 7.4 其他资源推荐

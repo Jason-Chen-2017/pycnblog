@@ -223,7 +223,7 @@ class EmbeddingFactorization(nn.Module):
         super(EmbeddingFactorization, self).__init__()
         self.embedding = nn.Embedding(vocab_size, hidden_size)
         self.factorization = nn.ModuleList([nn.Linear(hidden_size, hidden_size // num_factors) for _ in range(num_factors)])
-    
+
     def forward(self, x):
         x = self.embedding(x)
         for factor in self.factorization:

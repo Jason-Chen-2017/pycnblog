@@ -40,7 +40,7 @@ DBSCAN定义的聚类(簇)是由密度可达关系导出的最大密度相连的
 DBSCAN算法的基本步骤如下:
 
 1. 随机选择一个未被访问过的对象p。
-2. 找出p的所有ε-邻域对象。 
+2. 找出p的所有ε-邻域对象。
 3. 如果p是一个核心对象,则创建一个新的簇C,将p添加到C中,并将p的所有ε-邻域对象添加到候选集合N中。
 4. 从N中取出一个对象q:
    - 如果q是未被访问过的,则找出q的所有ε-邻域对象,并将其添加到N中。
@@ -88,7 +88,7 @@ class DBSCAN:
     def __init__(self, eps=1, min_pts=5):
         self.eps = eps
         self.min_pts = min_pts
-        
+
     def fit(self, X):
         self.labels_ = np.zeros(len(X), dtype=int)
         cluster_id = 0
@@ -101,11 +101,11 @@ class DBSCAN:
             else:
                 cluster_id += 1
                 self._expand_cluster(X, i, neighbors, cluster_id)
-                
+
     def _get_neighbors(self, X, i):
         distances = np.linalg.norm(X - X[i], axis=1)
         return np.where(distances <= self.eps)[0]
-    
+
     def _expand_cluster(self, X, i, neighbors, cluster_id):
         self.labels_[i] = cluster_id
         for j in neighbors:
@@ -172,6 +172,6 @@ DBSCAN也面临一些挑战,例如:
 1. 如何选择ε和MinPts参数?
    - ε:根据领域知识,选择一个能够反映数据点之间"密度可达"关系的距离阈值。可以通过观察数据分布、绘制距离分布图等方法辅助选择。
    - MinPts:一般选择比数据维度略大的值,如2-3倍。MinPts越大,对噪声的容忍度越高,形成的簇越大。
-   
+
 2. DBSCAN能否发现非球形的簇?
    - 能。

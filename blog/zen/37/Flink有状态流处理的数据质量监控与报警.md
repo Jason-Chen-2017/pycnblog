@@ -102,7 +102,7 @@ Flink有状态流处理的数据质量监控与报警可以应用于以下领域
 
 数据质量指标可以表示为以下数学模型：
 
-$$Q = \\alpha \\cdot A + \\beta \\cdot C + \\gamma \\cdot I + \\delta \\cdot R$$
+$$Q = \alpha \cdot A + \beta \cdot C + \gamma \cdot I + \delta \cdot R$$
 
 其中：
 
@@ -111,7 +111,7 @@ $$Q = \\alpha \\cdot A + \\beta \\cdot C + \\gamma \\cdot I + \\delta \\cdot R$$
 - $C$表示一致性。
 - $I$表示完整性。
 - $R$表示实时性。
-- $\\alpha, \\beta, \\gamma, \\delta$表示各指标的权重。
+- $\alpha, \beta, \gamma, \delta$表示各指标的权重。
 
 ### 4.2 公式推导过程
 
@@ -164,13 +164,13 @@ public class DataQualityMonitoring {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         // 创建数据源，模拟订单数据流
-        DataStream<String> orderStream = env.socketTextStream(\"localhost\", 9999);
+        DataStream<String> orderStream = env.socketTextStream("localhost", 9999);
 
         // 解析订单数据
         DataStream<Order> orderStream = orderStream.map(new MapFunction<String, Order>() {
             @Override
             public Order map(String value) throws Exception {
-                String[] fields = value.split(\",\");
+                String[] fields = value.split(",");
                 return new Order(Integer.parseInt(fields[0]), fields[1], Double.parseDouble(fields[2]), fields[3]);
             }
         });
@@ -197,7 +197,7 @@ public class DataQualityMonitoring {
         dataQualityStream.print();
 
         // 执行Flink任务
-        env.execute(\"Data Quality Monitoring\");
+        env.execute("Data Quality Monitoring");
     }
 
     // 检查一致性
@@ -308,8 +308,8 @@ Flink有状态流处理的数据质量监控与报警在实际应用中有着广
 
 ### 7.3 相关论文推荐
 
-1. **\"Flink: Stream Processing at Scale\"**: paper
-2. **\"Real-time Data Quality Monitoring in Big Data Systems\"**: paper
+1. **"Flink: Stream Processing at Scale"**: paper
+2. **"Real-time Data Quality Monitoring in Big Data Systems"**: paper
 
 ### 7.4 其他资源推荐
 

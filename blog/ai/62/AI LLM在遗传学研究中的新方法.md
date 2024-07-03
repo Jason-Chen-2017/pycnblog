@@ -1,7 +1,7 @@
 
 # AI LLM在遗传学研究中的新方法
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 ### 1.1 问题的由来

@@ -132,7 +132,7 @@ class MyModel(nn.Module):
         self.fc1 = nn.Linear(784, 500)
         self.dropout = nn.Dropout(p=0.5)
         self.fc2 = nn.Linear(500, 10)
-        
+
     def forward(self, x):
         x = x.view(-1, 784)
         x = self.fc1(x)

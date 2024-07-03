@@ -31,7 +31,7 @@ SU(N)群是由N×N的复数矩阵组成，这些矩阵满足以下条件：
 这些矩阵的乘积仍然满足相同的条件，因此构成了群。特别地，特殊单元矩阵群SU(N)的成员满足行列式的绝对值为1，即：
 
 $$
-\\det(U) = e^{i\\theta}
+\det(U) = e^{i\theta}
 $$
 
 其中θ是实数，确保了矩阵的模为1。
@@ -80,10 +80,10 @@ $$
 考虑一个SU(N)群的不可约表示，表示矩阵形式可以为：
 
 $$
-X_i = \\sum_{j=1}^N \\sum_{k=1}^N g_{ijk} \\sigma_j \\otimes \\tau_k
+X_i = \sum_{j=1}^N \sum_{k=1}^N g_{ijk} \sigma_j \otimes \tau_k
 $$
 
-其中$g_{ijk}$是复数系数，$\\sigma_j$和$\\tau_k$是复数空间上的基矩阵（例如Pauli矩阵和Dirac矩阵）。
+其中$g_{ijk}$是复数系数，$\sigma_j$和$\tau_k$是复数空间上的基矩阵（例如Pauli矩阵和Dirac矩阵）。
 
 #### 表示变换
 
@@ -103,10 +103,10 @@ $$
 
 ### 案例分析与讲解
 
-考虑SU(2)群的一个常见表示，即旋转群SO(3)的量子化版本。在这个例子中，可以用两组Pauli矩阵$\\sigma_x$、$\\sigma_y$、$\\sigma_z$来表示生成元，其中$\\sigma_1 = \\sigma_x$，$\\sigma_2 = \\sigma_y$，$\\sigma_3 = \\sigma_z$。对于一个SU(2)群的不可约表示，我们可以选择一组表示矩阵：
+考虑SU(2)群的一个常见表示，即旋转群SO(3)的量子化版本。在这个例子中，可以用两组Pauli矩阵$\sigma_x$、$\sigma_y$、$\sigma_z$来表示生成元，其中$\sigma_1 = \sigma_x$，$\sigma_2 = \sigma_y$，$\sigma_3 = \sigma_z$。对于一个SU(2)群的不可约表示，我们可以选择一组表示矩阵：
 
 $$
-X_1 = \\sigma_x, \\quad X_2 = \\sigma_y, \\quad X_3 = \\sigma_z
+X_1 = \sigma_x, \quad X_2 = \sigma_y, \quad X_3 = \sigma_z
 $$
 
 这些矩阵满足群的乘法规则和不可约性条件。
@@ -130,16 +130,16 @@ import numpy as np
 from scipy.linalg import expm
 
 def su2_exp(gamma):
-    \"\"\"
+    """
     Calculate the exponential of a gamma matrix for SU(2).
-    \"\"\"
+    """
     return np.array([[np.cos(np.linalg.norm(gamma)/2), -(gamma[2]/np.linalg.norm(gamma))*np.sin(np.linalg.norm(gamma)/2)],
                      [-(gamma[2]/np.linalg.norm(gamma))*np.sin(np.linalg.norm(gamma)/2), np.cos(np.linalg.norm(gamma)/2)]])
-    
+
 def su2_matrix_representation(n):
-    \"\"\"
+    """
     Construct an SU(2) matrix representation.
-    \"\"\"
+    """
     if n == 1:
         return np.array([[0, 1], [-1, 0]])
     elif n == 2:
@@ -148,15 +148,15 @@ def su2_matrix_representation(n):
         return np.array([[1, 0], [0, -1]])
 
 def su2_generators():
-    \"\"\"
+    """
     Return generators for SU(2).
-    \"\"\"
+    """
     return np.array([su2_matrix_representation(i) for i in range(3)])
 
 def su2_group_action(g, u):
-    \"\"\"
+    """
     Apply group action using matrix exponentiation.
-    \"\"\"
+    """
     return np.dot(expm(g @ np.log(u)), u)
 
 # Example usage

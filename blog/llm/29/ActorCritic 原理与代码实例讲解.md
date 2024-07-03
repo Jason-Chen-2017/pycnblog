@@ -70,30 +70,29 @@ Actor-Critic 方法广泛应用于自动驾驶、机器人控制、游戏策略�
 
 对于单步学习过程，我们可以构建如下的数学模型：
 
-设 $s_t$ 是当前状态，$a_t$ 是采取的行动，$r_t$ 是收到的即时奖励，$s_{t+1}$ 是下一个状态。目标是学习策略 $\\pi(a|s)$ 和价值函数 $V(s)$。
+设 $s_t$ 是当前状态，$a_t$ 是采取的行动，$r_t$ 是收到的即时奖励，$s_{t+1}$ 是下一个状态。目标是学习策略 $\pi(a|s)$ 和价值函数 $V(s)$。
 
-**策略**：$\\pi(a|s)$ 可以通过最大化期望累积奖励来定义：
+**策略**：$\pi(a|s)$ 可以通过最大化期望累积奖励来定义：
 
-$$J(\\pi) = \\mathbb{E}_{\\tau \\sim \\pi} \\left[ \\sum_{t=0}^{\\tau} r_t \\right]$$
+$$J(\pi) = \mathbb{E}_{\tau \sim \pi} \left[ \sum_{t=0}^{\tau} r_t \right]$$
 
 **价值函数**：$V(s)$ 可以通过最小化均方误差来估计：
 
-$$V(s) = \\mathbb{E}_{\\tau \\sim \\pi} \\left[ \\sum_{t=0}^{\\tau} r_t \\right]$$
+$$V(s) = \mathbb{E}_{\tau \sim \pi} \left[ \sum_{t=0}^{\tau} r_t \right]$$
 
 ### 4.2 公式推导过程
 
 对于策略梯度方法，可以采用梯度上升法来更新策略：
 
-$$\\theta_{t+1} = \\theta_t + \\alpha \\cdot \
-abla_\\theta J(\\pi_\\theta)$$
+$$\theta_{t+1} = \theta_t + \alpha \cdot \nabla_\theta J(\pi_\theta)$$
 
-其中 $\\theta$ 是策略参数，$\\alpha$ 是学习率。
+其中 $\theta$ 是策略参数，$\alpha$ 是学习率。
 
 对于价值函数，可以采用 TD 学习来更新：
 
-$$V(s) = V(s) + \\alpha \\cdot [G_t - V(s)]$$
+$$V(s) = V(s) + \alpha \cdot [G_t - V(s)]$$
 
-其中 $G_t$ 是根据策略 $\\pi$ 计算的预期累计奖励。
+其中 $G_t$ 是根据策略 $\pi$ 计算的预期累计奖励。
 
 ### 4.3 案例分析与讲解
 

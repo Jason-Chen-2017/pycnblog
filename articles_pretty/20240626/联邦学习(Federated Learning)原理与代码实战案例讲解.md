@@ -111,8 +111,7 @@ $$
 其中，$\beta$ 是正则化参数。通过梯度下降更新中央模型：
 
 $$
-M \leftarrow M - \eta \cdot \frac{1}{N} \sum_{i=1}^{N} \
-abla_{M} L_i(m_i)
+M \leftarrow M - \eta \cdot \frac{1}{N} \sum_{i=1}^{N} \nabla_{M} L_i(m_i)
 $$
 
 其中，$\eta$ 是学习率。

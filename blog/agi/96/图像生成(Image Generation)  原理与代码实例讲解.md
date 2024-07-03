@@ -211,7 +211,7 @@ class Encoder(nn.Module):
             nn.ReLU(),
             nn.Linear(400, 20)
         )
-    
+
     def forward(self, x):
         x = self.encoder(x)
         return x
@@ -226,7 +226,7 @@ class Decoder(nn.Module):
             nn.Linear(400, 784),
             nn.Sigmoid()
         )
-    
+
     def forward(self, x):
         x = self.decoder(x)
         return x
@@ -237,13 +237,13 @@ class VAE(nn.Module):
         super(VAE, self).__init__()
         self.encoder = Encoder()
         self.decoder = Decoder()
-    
+
     def encode(self, x):
         return self.encoder(x)
-    
+
     def decode(self, z):
         return self.decoder(z)
-    
+
     def forward(self, x):
         z = self.encode(x)
         return self.decode(z), z
@@ -271,10 +271,10 @@ transform = transforms.Compose([
 # 加载MNIST数据集
 train_loader = DataLoader(
     TensorDataset(
-        torch.unsqueeze(data, dim=1), 
+        torch.unsqueeze(data, dim=1),
         torch.unsqueeze(target, dim=1)
-    ), 
-    batch_size=64, 
+    ),
+    batch_size=64,
     shuffle=True
 )
 
@@ -337,7 +337,7 @@ A: VAEs生成的图像质量不如GANs，主要有以下原因：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 
@@ -390,7 +390,7 @@ class Generator(nn.Module):
             nn.ConvTranspose2d(num_features // 2, out_channels, kernel_size=4, stride=2, padding=1),
             nn.Tanh()
         )
-    
+
     def forward(self, x):
         return self.model(x)
 
@@ -411,7 +411,7 @@ class Discriminator(nn.Module):
             nn.Conv2d(num_features * 2, 1, kernel_size=4, stride=1, padding=0),
             nn.Sigmoid()
         )
-    
+
     def forward(self, x):
         return self.model(x).view(x.size(0), -1)
 ```
@@ -424,10 +424,10 @@ class GAN(nn.Module):
         super(GAN, self).__init__()
         self.generator = Generator()
         self.discriminator = Discriminator()
-    
+
     def forward(self, x):
         return self.generator(x), self.discriminator(x)
-    
+
     def train_step(self, x, z):
         fake_images, fake_logits = self.forward(z)
         real_logits = self.discriminator(x)
@@ -452,10 +452,10 @@ transform = transforms.Compose([
 # 加载MNIST数据集
 train_loader = DataLoader(
     TensorDataset(
-        torch.unsqueeze(data, dim=1), 
+        torch.unsqueeze(data, dim=1),
         torch.unsqueeze(target, dim=1)
-    ), 
-    batch_size=64, 
+    ),
+    batch_size=64,
     shuffle=True
 )
 ```
@@ -472,7 +472,7 @@ for epoch in range(num_epochs):
         z = torch.randn(x.size(0), 100)
         g_loss, d_loss = model.train_step(x, z)
         print(f"Epoch {epoch+1}, Iteration {i+1}, G_loss: {g_loss.item():.4f}, D_loss: {d_loss.item():.4f}")
-    
+
     # 生成图像
     z = torch.randn(10, 100)
     with torch.no_grad():

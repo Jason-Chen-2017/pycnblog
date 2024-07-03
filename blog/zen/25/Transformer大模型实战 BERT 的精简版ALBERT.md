@@ -84,7 +84,7 @@ ALBERT的数学模型构建基于BERT的基础结构，但通过参数共享和�
 
 - **预训练阶段**：设$W_p$为预训练阶段的参数集，对于所有任务$t$和位置$i$，共享参数表示为$W_{p,t,i}$。
 
-- **微调阶段**：引入任务特定参数$W_{t,i}$，用于调整特定任务的性能。总参数集为$W = W_p \\cup W_t$。
+- **微调阶段**：引入任务特定参数$W_{t,i}$，用于调整特定任务的性能。总参数集为$W = W_p \cup W_t$。
 
 ### 4.3 案例分析与讲解
 
@@ -164,8 +164,8 @@ ALBERT的广泛应用场景包括但不限于：
 
 ### 7.3 相关论文推荐
 
-- **BERT论文**：\"BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding\"，深入了解BERT的工作原理和设计。
-- **ALBERT论文**：\"ALBERT: A Lite BERT for Self-supervised Learning\"，了解ALBERT的改进和优化。
+- **BERT论文**："BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"，深入了解BERT的工作原理和设计。
+- **ALBERT论文**："ALBERT: A Lite BERT for Self-supervised Learning"，了解ALBERT的改进和优化。
 
 ### 7.4 其他资源推荐
 

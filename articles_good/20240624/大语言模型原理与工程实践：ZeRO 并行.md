@@ -92,8 +92,7 @@ $$
 \begin{align*}
 \text{参数} &= \theta_1, \theta_2, \dots, \theta_n \\
 \text{梯度} &= \Delta \theta_1, \Delta \theta_2, \dots, \Delta \theta_n \\
-\text{局部梯度} &= \Delta \theta_{i} = \frac{1}{b_i} \sum_{j=1}^{b_i} \
-abla_{\theta_j} L(\theta_1, \dots, \theta_n) \\
+\text{局部梯度} &= \Delta \theta_{i} = \frac{1}{b_i} \sum_{j=1}^{b_i} \nabla_{\theta_j} L(\theta_1, \dots, \theta_n) \\
 \text{全局梯度} &= \Delta \theta = \sum_{i=1}^n \Delta \theta_i
 \end{align*}
 $$

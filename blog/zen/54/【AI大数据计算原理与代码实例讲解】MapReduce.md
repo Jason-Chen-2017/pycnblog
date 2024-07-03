@@ -21,10 +21,10 @@ Map阶段接收一组键值对<key, value>,对其进行用户自定义的map函�
 map(key, value) -> list(key', value')
 ```
 
-#### 2.1.2 Reduce阶段 
+#### 2.1.2 Reduce阶段
 Reduce阶段对Map阶段产生的中间结果键值对按key'进行分组,得到<key', list(value')>,然后对每一组数据进行用户自定义的reduce函数聚合,产生最终的结果键值对<key', value''>。
 ```
-reduce(key', list(value')) -> list(key', value'') 
+reduce(key', list(value')) -> list(key', value'')
 ```
 
 ### 2.2 WordCount词频统计示例
@@ -41,7 +41,7 @@ map(文档名, 文档内容):
 Map阶段的输入键值对是<文档名,文档内容>,输出键值对是<单词,1>。Map将文档内容切分成单词,然后以<单词,1>的形式输出。
 
 #### 2.2.2 Reduce阶段
-```  
+```
 reduce(单词, list(数量)):
     sum = 0
     对于list(数量)中的每个数量x:
@@ -55,7 +55,7 @@ Reduce阶段的输入键值对是<单词, list(数量)>,输出键值对是<单�
 ```mermaid
 graph LR
     A[输入数据] --> B[分片]
-    B --> C1[Map任务] 
+    B --> C1[Map任务]
     B --> C2[Map任务]
     B --> C3[Map任务]
     C1 --> D[Shuffle/Sort]
@@ -72,7 +72,7 @@ MapReduce采用Master/Slave架构,由一个Master节点和多个Slave节点组�
 - Slave节点负责执行具体的Map任务和Reduce任务
 
 处理流程如下:
-1. 输入数据被切分成等长的数据块(Split),每个数据块由一个Map任务处理 
+1. 输入数据被切分成等长的数据块(Split),每个数据块由一个Map任务处理
 2. Map任务在本地磁盘产生中间结果,并将中间结果按key进行分区(Partition)
 3. 中间结果经过Shuffle阶段,将相同key的数据发送到同一个Reduce任务
 4. Reduce任务对收到的数据进行排序(Sort)后执行聚合逻辑,产生最终结果
@@ -93,7 +93,7 @@ Map任务从HDFS读取对应Split的数据块,将数据块解析成<key,value>�
 #### 3.2.2 运行map函数
 对于每一个输入键值对,运行用户自定义的map函数进行处理,产生一组中间结果键值对<key',value'>。中间结果先写入内存缓冲区。
 
-#### 3.2.3 分区与溢写 
+#### 3.2.3 分区与溢写
 当内存缓冲区达到阈值后,中间结果会溢写到磁盘,同时按Partition函数对key'进行分区,将相同分区的数据写入同一个文件。默认使用hash(key') mod R作为Partition函数,保证相同key'的数据会被发送到同一个Reduce任务。溢写前会对每个分区内的数据按key'进行排序。
 
 ### 3.3 Shuffle阶段
@@ -139,7 +139,7 @@ $$map(k1, v1) \rightarrow list(word, 1)$$
 $$M = \{<"hello",1>,<"world",1>,<"hello",1>,<"hadoop",1>,<"hadoop",1>, <"world",1>\}$$
 
 Reduce阶段对M按单词进行分组,对每个单词的计数列表求和:
-$$reduce(word, list(count)) \rightarrow <word, sum(count)>$$  
+$$reduce(word, list(count)) \rightarrow <word, sum(count)>$$
 $$R = \{<"hello",2>,<"world",2>,<"hadoop",2>\}$$
 
 最终结果R表示每个单词在所有文档中出现的总次数。
@@ -159,7 +159,7 @@ class MRWordCount(MRJob):
     def mapper(self, _, line):
         for word in re.findall(r'\w+', line):
             yield word.lower(), 1
-            
+
     def reducer(self, word, counts):
         yield word, sum(counts)
 

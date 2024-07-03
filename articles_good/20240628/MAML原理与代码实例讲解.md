@@ -69,8 +69,7 @@ MAML的核心思想是：学习一个模型，使其在少量数据上能够快�
 假设我们有一个模型 $f_\theta(x)$，其中 $\theta$ 是模型的参数。对于新的任务，我们首先在少量数据 $D$ 上对模型进行微调，使其快速适应该任务。然后，我们评估模型在大量数据 $S$ 上的性能。MAML的目标是最小化以下损失：
 
 $$
-\mathcal{L}(\theta) = \mathbb{E}_{D \sim D_S} \mathcal{L}(f_{\theta+\alpha \
-abla_{\theta} f_D(x)}(x), y)
+\mathcal{L}(\theta) = \mathbb{E}_{D \sim D_S} \mathcal{L}(f_{\theta+\alpha \nabla_{\theta} f_D(x)}(x), y)
 $$
 
 其中 $D$ 是从大量数据 $S$ 中采样的数据分布，$y$ 是对应的标签，$\alpha$ 是学习率。
@@ -81,8 +80,7 @@ MAML的算法步骤如下：
 
 1. 初始化模型参数 $\theta$。
 2. 在大量数据 $S$ 上采样数据分布 $D$。
-3. 在数据分布 $D$ 上进行微调，得到新的模型参数 $\theta + \alpha \
-abla_{\theta} f_D(x)$。
+3. 在数据分布 $D$ 上进行微调，得到新的模型参数 $\theta + \alpha \nabla_{\theta} f_D(x)$。
 4. 在大量数据 $S$ 上评估模型的性能。
 5. 重复步骤2-4，直到满足预设的迭代次数或性能指标。
 
@@ -115,10 +113,8 @@ MAML的数学模型如下：
 $$
 \begin{align*}
 \theta &\gets \theta_0 \\
-\theta + \alpha \
-abla_{\theta} f_D(x) &\gets f_D(x) \\
-\mathcal{L}(\theta) &= \mathbb{E}_{D \sim D_S} \mathcal{L}(f_{\theta+\alpha \
-abla_{\theta} f_D(x)}(x), y)
+\theta + \alpha \nabla_{\theta} f_D(x) &\gets f_D(x) \\
+\mathcal{L}(\theta) &= \mathbb{E}_{D \sim D_S} \mathcal{L}(f_{\theta+\alpha \nabla_{\theta} f_D(x)}(x), y)
 \end{align*}
 $$
 
@@ -143,23 +139,19 @@ $$
 对损失函数求梯度，得到：
 
 $$
-\
-abla_{\theta} \mathcal{L}(f_\theta(x_i), y_i) = f_\theta(x_i) - y_i
+\nabla_{\theta} \mathcal{L}(f_\theta(x_i), y_i) = f_\theta(x_i) - y_i
 $$
 
-在数据分布 $D$ 上进行微调，得到新的模型参数 $\theta + \alpha \
-abla_{\theta} f_D(x)$，使得：
+在数据分布 $D$ 上进行微调，得到新的模型参数 $\theta + \alpha \nabla_{\theta} f_D(x)$，使得：
 
 $$
-f_{\theta + \alpha \
-abla_{\theta} f_D(x)}(x_i) = y_i
+f_{\theta + \alpha \nabla_{\theta} f_D(x)}(x_i) = y_i
 $$
 
 在大量数据 $S$ 上评估模型的性能，得到损失函数：
 
 $$
-\mathcal{L}(\theta) = \mathbb{E}_{D \sim D_S} \mathcal{L}(f_{\theta+\alpha \
-abla_{\theta} f_D(x)}(x), y)
+\mathcal{L}(\theta) = \mathbb{E}_{D \sim D_S} \mathcal{L}(f_{\theta+\alpha \nabla_{\theta} f_D(x)}(x), y)
 $$
 
 ### 4.3 案例分析与讲解

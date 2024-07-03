@@ -1,6 +1,6 @@
 # 【LangChain编程：从入门到实践】记忆模块
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -316,4 +316,4 @@ while True:
 * **缓存机制:** 使用缓存，减少数据库访问次数。
 * **压缩算法:** 使用压缩算法，减少存储空间占用。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

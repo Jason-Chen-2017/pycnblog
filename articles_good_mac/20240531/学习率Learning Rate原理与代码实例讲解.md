@@ -39,8 +39,7 @@ $$
 
 考虑二次函数 $f(\\mathbf{x}) = \\frac{1}{2} \\|\\mathbf{Ax}\\|^2 + \\mathbf{b}^T\\mathbf{x} + c$ 的最小化问题。其梯度为：
 $$
-\
-abla f(\\mathbf{x}) = \\mathbf{Ax} + \\mathbf{b}
+\nabla f(\\mathbf{x}) = \\mathbf{Ax} + \\mathbf{b}
 $$
 当使用学习率 $\\alpha$ 进行梯度下降时，每次更新的步长为：
 $$

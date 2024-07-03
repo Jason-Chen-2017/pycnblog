@@ -79,9 +79,9 @@
 
 假设我们使用随机森林模型预测最佳提问：
 
-$$ \\hat{Q}(x) = \\frac{1}{M} \\sum_{m=1}^{M} f_m(x) $$
+$$ \hat{Q}(x) = \frac{1}{M} \sum_{m=1}^{M} f_m(x) $$
 
-其中，$\\hat{Q}(x)$ 是预测的提问建议，$f_m(x)$ 是第$m$棵决策树的预测结果，$M$ 是决策树的数量。
+其中，$\hat{Q}(x)$ 是预测的提问建议，$f_m(x)$ 是第$m$棵决策树的预测结果，$M$ 是决策树的数量。
 
 ### 4.3 案例分析与讲解
 
@@ -115,8 +115,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 
 # 数据准备
-questions = [\"What is the capital of France?\", \"Can you explain quantum computing?\"]
-responses = [\"Paris\", \"Quantum computing is...\"]
+questions = ["What is the capital of France?", "Can you explain quantum computing?"]
+responses = ["Paris", "Quantum computing is..."]
 features = CountVectorizer().fit_transform(questions)
 
 # 分割数据集
@@ -127,10 +127,10 @@ rf = RandomForestRegressor(n_estimators=100, random_state=42)
 rf.fit(X_train, y_train)
 
 # 预测
-new_question = [\"How does DNA work?\"]
+new_question = ["How does DNA work?"]
 new_features = CountVectorizer().fit_transform(new_question)
 predicted_response = rf.predict(new_features)
-print(\"Predicted response:\", predicted_response)
+print("Predicted response:", predicted_response)
 ```
 
 ### 5.3 代码解读与分析

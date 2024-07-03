@@ -119,7 +119,7 @@ epochs = 1000
 for _ in range(epochs):
     state = env.reset()
     done = False
-    
+
     while not done:
         action = np.argmax(Q_table[state, :] + np.random.randn(1, env.action_space.n) * alpha / (_+1))
         next_state, reward, done, info = env.step(action)

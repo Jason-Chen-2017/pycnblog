@@ -1,4 +1,4 @@
-                 
+
 # 【大模型应用开发 动手做AI Agent】函数调用
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -143,20 +143,20 @@ def preprocess(text):
 def model_inference(preprocessed_text, model_path):
     # 加载预训练模型
     model = load_model(model_path)
-    
+
     # 进行预测
     prediction = model.predict(preprocessed_text)
-    
+
     return prediction
 
 def analyze_sentiment(prediction):
     sentiment_score = prediction[0][0]  # 假设模型输出为概率分布
-    
+
     if sentiment_score > 0.5:
         sentiment = "Positive"
     else:
         sentiment = "Negative"
-        
+
     return sentiment
 
 # 主流程

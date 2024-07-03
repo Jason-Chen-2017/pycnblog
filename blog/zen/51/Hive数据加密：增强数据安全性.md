@@ -38,11 +38,11 @@ Hive中的每张表都对应HDFS上的一个目录,表中的数据以文件形�
 
 ```sql
 CREATE TABLE encrypted_table (
-  id int, 
+  id int,
   name string
-) 
+)
 ROW FORMAT DELIMITED
-FIELDS TERMINATED BY ',' 
+FIELDS TERMINATED BY ','
 STORED AS TEXTFILE
 TBLPROPERTIES("encrypt.algorithm"="AES", "encrypt.key"="your_key_here");
 ```
@@ -53,7 +53,7 @@ TBLPROPERTIES("encrypt.algorithm"="AES", "encrypt.key"="your_key_here");
 在导入数据到加密表之前,需要先生成加密密钥,并使用密钥对数据进行加密。可以使用Java的 `javax.crypto` 包来生成密钥和执行加密。示例代码如下:
 
 ```java
-// 生成AES密钥 
+// 生成AES密钥
 KeyGenerator keyGen = KeyGenerator.getInstance("AES");
 keyGen.init(128);
 SecretKey secretKey = keyGen.generateKey();
@@ -70,7 +70,7 @@ byte[] encrypted = cipher.doFinal(data.getBytes(StandardCharsets.UTF_8));
 当用户访问加密表数据时,Hive需要动态解密数据。解密发生在Hive Fetch任务中,具体流程如下:
 
 1. Hive解析查询计划,遇到加密表会获取相应的加密算法和密钥。
-2. 在Fetch任务中,Hive从加密表读取密文数据。 
+2. 在Fetch任务中,Hive从加密表读取密文数据。
 3. 使用密钥和加密算法对密文进行解密,还原出原始数据。
 4. 将解密后的明文数据返回给用户。
 
@@ -80,11 +80,11 @@ byte[] encrypted = cipher.doFinal(data.getBytes(StandardCharsets.UTF_8));
 ### 4.1 AES加密算法原理
 AES(Advanced Encryption Standard)是一种对称加密算法,密钥长度可以是128位、192位或256位。AES加密过程涉及以下几个步骤:
 
-1. 密钥扩展:根据原始密钥生成一系列轮密钥。 
+1. 密钥扩展:根据原始密钥生成一系列轮密钥。
 2. 初始轮:AddRoundKey,将轮密钥与明文做异或操作。
 3. 重复轮:
    - SubBytes:对状态矩阵的每一个字节做S盒变换。
-   - ShiftRows:将状态矩阵的后三行循环左移。  
+   - ShiftRows:将状态矩阵的后三行循环左移。
    - MixColumns:将状态矩阵的每一列与固定矩阵相乘。
    - AddRoundKey:将轮密钥与状态矩阵做异或操作。
 4. 最终轮:
@@ -119,11 +119,11 @@ DES(Data Encryption Standard)也是一种对称加密算法,密钥长度为56位
 ```sql
 -- 创建加密表
 CREATE TABLE encrypted_table (
-  id int, 
+  id int,
   name string
-) 
+)
 ROW FORMAT DELIMITED
-FIELDS TERMINATED BY ',' 
+FIELDS TERMINATED BY ','
 STORED AS TEXTFILE
 TBLPROPERTIES("encrypt.algorithm"="AES", "encrypt.key"="1234567890123456");
 ```
@@ -134,7 +134,7 @@ TBLPROPERTIES("encrypt.algorithm"="AES", "encrypt.key"="1234567890123456");
 String key = "1234567890123456";
 SecretKeySpec secretKey = new SecretKeySpec(key.getBytes(StandardCharsets.UTF_8), "AES");
 
-// 加密数据  
+// 加密数据
 Cipher cipher = Cipher.getInstance("AES");
 cipher.init(Cipher.ENCRYPT_MODE, secretKey);
 
@@ -149,7 +149,7 @@ outputStream.close();
 ```
 
 ### 5.3 访问加密表
-```sql  
+```sql
 -- 查询加密表
 SELECT * FROM encrypted_table;
 
@@ -158,7 +158,7 @@ SELECT * FROM encrypted_table;
 -- | id  | name  |
 -- +-----+-------+
 -- | 1   | Hello |
--- | 2   | World |  
+-- | 2   | World |
 -- | 3   | Hive  |
 -- +-----+-------+
 ```

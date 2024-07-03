@@ -162,7 +162,7 @@ class Generator(nn.Module):
             nn.Linear(1024, 784),
             nn.Tanh()
         )
-    
+
     def forward(self, z):
         return self.net(z)
 
@@ -180,7 +180,7 @@ class Discriminator(nn.Module):
             nn.Linear(256, 1),
             nn.Sigmoid()
         )
-    
+
     def forward(self, x):
         return self.net(x).view(-1, 1)
 

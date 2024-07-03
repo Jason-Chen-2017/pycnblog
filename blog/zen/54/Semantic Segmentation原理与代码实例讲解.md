@@ -11,7 +11,7 @@ Semantic Segmentation（语义分割）是计算机视觉领域的一项重要�
 尽管语义分割取得了长足进步，但仍面临着诸多技术挑战：
 
 1. 图像的多尺度和多视角问题：如何在不同尺度和视角下准确分割目标。
-2. 类别不平衡问题：不同语义类别在图像中出现的频率差异较大，导致模型训练的不平衡。  
+2. 类别不平衡问题：不同语义类别在图像中出现的频率差异较大，导致模型训练的不平衡。
 3. 上下文信息的有效利用：如何充分利用图像的全局和局部上下文信息，提高分割精度。
 4. 边界和细节的精确定位：对于复杂场景和细粒度的语义类别，准确定位边界和细节仍具有挑战性。
 
@@ -156,9 +156,9 @@ class UNet(nn.Module):
         self.enc3 = DoubleConv(128, 256)
         self.enc4 = DoubleConv(256, 512)
         self.enc5 = DoubleConv(512, 1024)
-        
+
         self.pool = nn.MaxPool2d(2)
-        
+
         self.dec5 = DoubleConv(1024, 512)
         self.dec4 = DoubleConv(1024, 256)
         self.dec3 = DoubleConv(512, 128)
@@ -190,19 +190,19 @@ from torch.utils.data import DataLoader
 def train(model, train_loader, criterion, optimizer, device):
     model.train()
     train_loss = 0.0
-    
+
     for images, labels in train_loader:
         images = images.to(device)
         labels = labels.to(device)
-        
+
         optimizer.zero_grad()
         outputs = model(images)
         loss = criterion(outputs, labels)
         loss.backward()
         optimizer.step()
-        
+
         train_loss += loss.item() * images.size(0)
-    
+
     train_loss = train_loss / len(train_loader.dataset)
     return train_loss
 
@@ -215,7 +215,7 @@ def main():
     for epoch in range(num_epochs):
         train_loss = train(model, train_loader, criterion, optimizer, device)
         print(f'Epoch [{epoch+1}/{num_epochs}], Train Loss: {train_loss:.4f}')
-        
+
         if (epoch + 1) % 10 == 0:
             torch.save(model.state_dict(), f'model_epoch_{epoch+1}.pth')
 
@@ -231,4 +231,4 @@ if __name__ == '__main__':
 1. 自动驾驶：对道路场景进行语义分割，识别车道线、车辆、行人等关键元素，为自动驾驶决策提供支持。
 2. 医学影像分析：对医学图像（如CT、MRI）进行语义分割，自动勾画病变区域，辅助医生进行诊断和治疗。
 3. 遥感图像处理：对卫星或航拍图像进行语义分割，识别不同的地物类别，如建筑、道路、植被等，用于土地利用分析和城市规划。
-4. 
+4.

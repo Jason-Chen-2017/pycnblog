@@ -273,19 +273,19 @@ def evaluate_results(predictions, ground_truth):
 def main():
     # 数据采集
     data = preprocess_data(raw_data)
-    
+
     # 代理构建
     agents = create_agents(data)
-    
+
     # 模型训练
     models = train_model(agents, data)
-    
+
     # 事件预测
     predictions = predict_event(models, data)
-    
+
     # 评估结果
     results = evaluate_results(predictions, ground_truth)
-    
+
     # 打印结果
     print(results)
 

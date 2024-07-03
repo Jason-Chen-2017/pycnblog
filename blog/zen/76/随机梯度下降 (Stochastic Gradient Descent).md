@@ -32,11 +32,9 @@ $$ L(w) = \ell(w; x_i, y_i) $$
 
 SGD通过梯度的负方向更新参数：
 
-$$ w \leftarrow w - \eta \cdot \
-abla_w L(w; x_i, y_i) $$
+$$ w \leftarrow w - \eta \cdot \nabla_w L(w; x_i, y_i) $$
 
-这里$\eta$是学习率，$\
-abla_w$表示关于$w$的梯度。
+这里$\eta$是学习率，$\nabla_w$表示关于$w$的梯度。
 
 ### 2.3 连接其他优化方法
 
@@ -53,8 +51,7 @@ SGD通过迭代更新参数，每次更新仅涉及一个数据样本，使得�
 1. 初始化参数$w$和学习率$\eta$。
 2. 随机选择数据集中的一个样本或小批量样本。
 3. 计算该样本的损失函数梯度。
-4. 更新参数：$w \leftarrow w - \eta \cdot \
-abla_w L(w; x_i, y_i)$。
+4. 更新参数：$w \leftarrow w - \eta \cdot \nabla_w L(w; x_i, y_i)$。
 5. 重复步骤2至4直到达到预定的迭代次数或满足停止条件。
 
 ### 3.3 算法优缺点
@@ -94,8 +91,7 @@ $$ L(w, b; x_i, y_i) = \frac{1}{2}(y_i - (wx_i + b))^2 $$
 
 计算损失函数关于$w$的梯度：
 
-$$ \
-abla_w L(w, b; x_i, y_i) = -(y_i - wx_i) \cdot x_i $$
+$$ \nabla_w L(w, b; x_i, y_i) = -(y_i - wx_i) \cdot x_i $$
 
 ### 4.3 案例分析与讲解
 

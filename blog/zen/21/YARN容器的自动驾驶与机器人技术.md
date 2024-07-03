@@ -1,4 +1,4 @@
-                 
+
 # YARN容器的自动驾驶与机器人技术
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -141,7 +141,7 @@ $$
 class DynamicScheduler:
     def __init__(self):
         self.resource_model = None  # 初始化资源分配模型
-    
+
     def train_resource_allocation(self, dataset):
         # 这里可以加入模型训练逻辑
         pass

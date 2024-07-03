@@ -30,9 +30,7 @@
 策略梯度方法的基本原理是利用策略梯度来更新策略参数。策略梯度的计算公式如下：
 
 $$
-\
-abla_{\theta} J(\theta) = \mathbb{E}_{\tau \sim \pi_{\theta}} \left[ \
-abla_{\theta} \log \pi_{\theta}(a_t | s_t) \cdot Q(s_t, a_t) \right]
+\nabla_{\theta} J(\theta) = \mathbb{E}_{\tau \sim \pi_{\theta}} \left[ \nabla_{\theta} \log \pi_{\theta}(a_t | s_t) \cdot Q(s_t, a_t) \right]
 $$
 
 其中：
@@ -47,13 +45,11 @@ $$
 ### 3.2  算法步骤详解
 1. 初始化策略参数 $\theta$。
 2. 在环境中进行交互，收集状态、动作和奖励数据。
-3. 计算策略梯度 $\
-abla_{\theta} J(\theta)$。
+3. 计算策略梯度 $\nabla_{\theta} J(\theta)$。
 4. 更新策略参数 $\theta$：
 
 $$
-\theta = \theta + \alpha \
-abla_{\theta} J(\theta)
+\theta = \theta + \alpha \nabla_{\theta} J(\theta)
 $$
 
 其中 $\alpha$ 是学习率。
@@ -100,15 +96,12 @@ $$
 策略梯度的计算公式可以从价值函数的梯度推导而来：
 
 $$
-\
-abla_{\theta} J(\theta) = \mathbb{E}_{\tau \sim \pi_{\theta}} \left[ \
-abla_{\theta} \log \pi_{\theta}(a_t | s_t) \cdot Q(s_t, a_t) \right]
+\nabla_{\theta} J(\theta) = \mathbb{E}_{\tau \sim \pi_{\theta}} \left[ \nabla_{\theta} \log \pi_{\theta}(a_t | s_t) \cdot Q(s_t, a_t) \right]
 $$
 
 其中：
 
-* $\
-abla_{\theta} \log \pi_{\theta}(a_t | s_t)$ 是策略参数 $\theta$ 对策略函数 $\pi_{\theta}(a_t | s_t)$ 的梯度。
+* $\nabla_{\theta} \log \pi_{\theta}(a_t | s_t)$ 是策略参数 $\theta$ 对策略函数 $\pi_{\theta}(a_t | s_t)$ 的梯度。
 * $Q(s_t, a_t)$ 是状态 $s_t$ 下动作 $a_t$ 的价值函数。
 
 ### 4.3  案例分析与讲解

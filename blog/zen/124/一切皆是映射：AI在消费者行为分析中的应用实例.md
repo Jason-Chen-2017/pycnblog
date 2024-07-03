@@ -1,6 +1,6 @@
 # 一切皆是映射：AI在消费者行为分析中的应用实例
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -279,4 +279,4 @@ AI在消费者行为分析领域取得了显著进展，为企业提供更有效
 * **如何评估模型性能?**  可以使用准确率、召回率、F1值、AUC等指标评估模型性能。
 * **如何保护用户隐私?**  可以使用数据脱敏、数据加密等方法保护用户隐私。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

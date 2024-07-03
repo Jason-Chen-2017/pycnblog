@@ -281,5 +281,5 @@ A5：YOLOv5算法的应用场景非常广泛，例如目标检测、图像识别
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

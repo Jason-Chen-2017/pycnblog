@@ -48,13 +48,11 @@
 
 1. **初始化参数**：设定初始参数$\theta_0$，通常选择较小的随机值。
 
-2. **计算梯度**：计算损失函数$L(\theta)$关于参数$\theta$的梯度$\
-abla_\theta L(\theta)$。
+2. **计算梯度**：计算损失函数$L(\theta)$关于参数$\theta$的梯度$\nabla_\theta L(\theta)$。
 
 3. **更新参数**：根据梯度下降公式更新参数：
 
-   $$\theta_{t+1} = \theta_t - \alpha \
-abla_\theta L(\theta_t)$$
+   $$\theta_{t+1} = \theta_t - \alpha \nabla_\theta L(\theta_t)$$
 
    其中，$\alpha$为学习率，用于控制参数更新的步长。
 
@@ -91,24 +89,20 @@ abla_\theta L(\theta_t)$$
 
 梯度下降算法的数学模型如下：
 
-$$\theta_{t+1} = \theta_t - \alpha \
-abla_\theta L(\theta_t)$$
+$$\theta_{t+1} = \theta_t - \alpha \nabla_\theta L(\theta_t)$$
 
 其中，
 
 - $\theta$为模型参数。
 - $L(\theta)$为损失函数。
-- $\
-abla_\theta L(\theta)$为损失函数关于参数$\theta$的梯度。
+- $\nabla_\theta L(\theta)$为损失函数关于参数$\theta$的梯度。
 - $\alpha$为学习率。
 
 ### 4.2 公式推导过程
 
-假设损失函数$L(\theta)$是参数$\theta$的函数，且$L(\theta)$在$\theta$处可导。则损失函数的梯度$\
-abla_\theta L(\theta)$可以表示为：
+假设损失函数$L(\theta)$是参数$\theta$的函数，且$L(\theta)$在$\theta$处可导。则损失函数的梯度$\nabla_\theta L(\theta)$可以表示为：
 
-$$\
-abla_\theta L(\theta) = \left[\frac{\partial L(\theta)}{\partial \theta_1}, \frac{\partial L(\theta)}{\partial \theta_2}, \dots, \frac{\partial L(\theta)}{\partial \theta_n}\right]$$
+$$\nabla_\theta L(\theta) = \left[\frac{\partial L(\theta)}{\partial \theta_1}, \frac{\partial L(\theta)}{\partial \theta_2}, \dots, \frac{\partial L(\theta)}{\partial \theta_n}\right]$$
 
 其中，$n$为参数的个数。
 
@@ -131,12 +125,10 @@ $$L(\theta) = \frac{1}{2} \sum_{i=1}^m (y_i - \theta_0 - \theta_1x_{i1} - \dots 
 梯度下降算法的具体步骤如下：
 
 1. 初始化参数$\theta_0, \theta_1, \dots, \theta_n$。
-2. 计算损失函数$L(\theta)$关于参数$\theta$的梯度$\
-abla_\theta L(\theta)$。
+2. 计算损失函数$L(\theta)$关于参数$\theta$的梯度$\nabla_\theta L(\theta)$。
 3. 根据梯度下降公式更新参数：
 
-   $$\theta_{t+1} = \theta_t - \alpha \
-abla_\theta L(\theta_t)$$
+   $$\theta_{t+1} = \theta_t - \alpha \nabla_\theta L(\theta_t)$$
 
 4. 重复步骤2和3，直到满足停止条件。
 

@@ -79,7 +79,7 @@
 
 - **Q-Learning** 更新规则：
   $$ Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a') - Q(s, a)] $$
-  
+
 ### 4.3 案例分析与讲解
 
 在特定游戏场景中，通过Q-Learning算法学习到的策略能够显著提升得分，说明算法的有效性。
@@ -111,7 +111,7 @@ class DQN:
         self.batch_size = 64
         self.memory = deque(maxlen=2000)
         self.model = self._build_model()
-        
+
     def _build_model(self):
         model = Sequential()
         model.add(Dense(24, input_dim=self.state_size, activation='relu'))
@@ -119,17 +119,17 @@ class DQN:
         model.add(Dense(self.action_size, activation='linear'))
         model.compile(loss='mse', optimizer=Adam(lr=self.learning_rate))
         return model
-        
+
     def remember(self, state, action, reward, next_state, done):
         self.memory.append((state, action, reward, next_state, done))
-        
+
     def act(self, state):
         if np.random.rand() <= self.epsilon:
             return random.randrange(self.action_size)
         else:
             q_values = self.model.predict(state)
             return np.argmax(q_values[0])
-        
+
     def replay(self):
         if len(self.memory) < self.batch_size:
             return
@@ -141,10 +141,10 @@ class DQN:
             target_f = self.model.predict(state)
             target_f[0][action] = target
             self.model.fit(state, target_f, epochs=1, verbose=0)
-            
+
     def load_weights(self, filepath):
         self.model.load_weights(filepath)
-        
+
     def save_weights(self, filepath):
         self.model.save_weights(filepath)
 

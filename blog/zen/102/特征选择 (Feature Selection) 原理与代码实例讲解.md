@@ -349,7 +349,7 @@ A：可以通过以下方法评估特征选择算法的效果：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n ml-env python=3.8 
+conda create -n ml-env python=3.8
 conda activate ml-env
 ```
 3. 安装必要的库：

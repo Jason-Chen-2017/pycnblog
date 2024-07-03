@@ -1,7 +1,7 @@
 
 # AI人工智能核心算法原理与代码实例讲解：价值函数
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -95,7 +95,7 @@
 状态价值函数 $V(s)$ 表示智能体在状态 $s$ 下采取最优策略，从该状态开始执行动作，获得的总奖励期望：
 
 $$
-V(s) = \mathbb{E}_\pi[R_t + \gamma R_{t+1} + \gamma^2 R_{t+2} + \cdots] 
+V(s) = \mathbb{E}_\pi[R_t + \gamma R_{t+1} + \gamma^2 R_{t+2} + \cdots]
 $$
 
 其中，$R_t$ 表示第 $t$ 个时刻的奖励，$\gamma$ 表示折现因子，$\pi$ 表示策略。
@@ -103,7 +103,7 @@ $$
 动作价值函数 $Q(s,a)$ 表示智能体在状态 $s$ 下采取动作 $a$，从该状态开始执行动作，获得的总奖励期望：
 
 $$
-Q(s,a) = \mathbb{E}_\pi[R_t + \gamma R_{t+1} + \gamma^2 R_{t+2} + \cdots | A_t = a] 
+Q(s,a) = \mathbb{E}_\pi[R_t + \gamma R_{t+1} + \gamma^2 R_{t+2} + \cdots | A_t = a]
 $$
 
 其中，$A_t$ 表示第 $t$ 个时刻的动作。
@@ -115,7 +115,7 @@ $$
 假设智能体在状态 $s$ 下采取动作 $a$，进入状态 $s'$，并获得奖励 $R$。根据马尔可夫决策过程（MDP）的定义，我们有：
 
 $$
-R_t + \gamma R_{t+1} + \gamma^2 R_{t+2} + \cdots = R + \gamma R_{t+1} + \gamma^2 R_{t+2} + \cdots 
+R_t + \gamma R_{t+1} + \gamma^2 R_{t+2} + \cdots = R + \gamma R_{t+1} + \gamma^2 R_{t+2} + \cdots
 $$
 
 其中，$R_t + \gamma R_{t+1} + \gamma^2 R_{t+2} + \cdots$ 表示从状态 $s$ 开始执行动作 $a$，获得的总奖励期望。
@@ -123,21 +123,21 @@ $$
 假设智能体在状态 $s'$ 下采取最优策略 $\pi'$，从该状态开始执行动作，获得的总奖励期望为：
 
 $$
-\mathbb{E}_\pi[R_{t+1} + \gamma R_{t+2} + \cdots] 
+\mathbb{E}_\pi[R_{t+1} + \gamma R_{t+2} + \cdots]
 $$
 
 因此，状态价值函数 $V(s)$ 可以表示为：
 
 $$
-V(s) = \mathbb{E}_\pi[R_t + \gamma R_{t+1} + \gamma^2 R_{t+2} + \cdots] 
+V(s) = \mathbb{E}_\pi[R_t + \gamma R_{t+1} + \gamma^2 R_{t+2} + \cdots]
 $$
 
 $$
-= R + \gamma \mathbb{E}_\pi[R_{t+1} + \gamma R_{t+2} + \cdots] 
+= R + \gamma \mathbb{E}_\pi[R_{t+1} + \gamma R_{t+2} + \cdots]
 $$
 
 $$
-= R + \gamma V(s') 
+= R + \gamma V(s')
 $$
 
 ### 4.3 案例分析与讲解
@@ -156,13 +156,13 @@ $$
 首先，计算状态(1,1)的值函数：
 
 $$
-V(1,1) = \max_{a} Q(1,1) 
+V(1,1) = \max_{a} Q(1,1)
 $$
 
 其中，$Q(1,1)$ 表示玩家A在状态(1,1)下采取行动1或行动2的期望奖励。
 
 $$
-Q(1,1) = P(1,1|1,1) \times 3 + P(1,1|1,2) \times 0 
+Q(1,1) = P(1,1|1,1) \times 3 + P(1,1|1,2) \times 0
 $$
 
 其中，$P(1,1|1,1)$ 表示玩家A在状态(1,1)下采取行动1进入状态(1,1)的概率，$P(1,1|1,2)$ 表示玩家A在状态(1,1)下采取行动2进入状态(1,1)的概率。
@@ -170,21 +170,21 @@ $$
 假设 $P(1,1|1,1) = 0.9$，$P(1,1|1,2) = 0.1$，则：
 
 $$
-Q(1,1) = 0.9 \times 3 + 0.1 \times 0 = 2.7 
+Q(1,1) = 0.9 \times 3 + 0.1 \times 0 = 2.7
 $$
 
 同理，可以计算状态(1,2)、(2,1)和(2,2)的值函数：
 
 $$
-V(1,2) = \max_{a} Q(1,2) = 1 
+V(1,2) = \max_{a} Q(1,2) = 1
 $$
 
 $$
-V(2,1) = \max_{a} Q(2,1) = 0 
+V(2,1) = \max_{a} Q(2,1) = 0
 $$
 
 $$
-V(2,2) = \max_{a} Q(2,2) = 1 
+V(2,2) = \max_{a} Q(2,2) = 1
 $$
 
 ### 4.4 常见问题解答

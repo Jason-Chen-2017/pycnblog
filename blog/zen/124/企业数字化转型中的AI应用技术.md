@@ -303,4 +303,4 @@ pickle.dump(model, open('customer_classification_model.pkl', 'wb'))
 * **AI技术如何与企业现有的业务流程进行整合？** 企业需要根据自身的需求和情况，对现有的业务流程进行调整，并开发相应的AI应用，将AI技术与企业现有的业务流程进行整合。
 * **如何确保AI技术的应用安全？** 企业需要制定严格的数据安全策略，并采用安全技术，例如数据加密、访问控制等，确保AI技术的应用安全。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

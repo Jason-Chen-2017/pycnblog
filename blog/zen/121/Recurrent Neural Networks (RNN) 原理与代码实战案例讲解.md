@@ -240,7 +240,7 @@ A3：RNN简单易实现，但容易出现梯度消失或梯度爆炸问题；LST
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n rnn-env python=3.8 
+conda create -n rnn-env python=3.8
 conda activate rnn-env
 ```
 

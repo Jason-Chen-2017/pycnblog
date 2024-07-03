@@ -100,13 +100,10 @@ $$
 
 #### 梯度计算：
 
-对于深度学习模型，通过自动微分技术计算梯度 $\
-abla_\theta L(\theta)$，以便更新参数 $\theta$：
+对于深度学习模型，通过自动微分技术计算梯度 $\nabla_\theta L(\theta)$，以便更新参数 $\theta$：
 
 $$
-\
-abla_\theta L(\theta) = \
-abla_\theta (w_1 J(\theta) + w_2 E(\theta))
+\nabla_\theta L(\theta) = \nabla_\theta (w_1 J(\theta) + w_2 E(\theta))
 $$
 
 #### 参数更新：
@@ -114,8 +111,7 @@ $$
 基于计算出的梯度，应用优化算法进行参数更新：
 
 $$
-\theta \leftarrow \theta - \alpha \
-abla_\theta L(\theta)
+\theta \leftarrow \theta - \alpha \nabla_\theta L(\theta)
 $$
 
 其中 $\alpha$ 是学习率，控制参数更新的速度。

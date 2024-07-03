@@ -1,6 +1,6 @@
 # AI人工智能代理工作流AI Agent WorkFlow：融合认知科学的AI代理发展
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：AI代理，认知科学，工作流，多模态交互，情境感知
 

@@ -329,4 +329,4 @@ Neo4j 的事务粒度为整个数据库，即在一个事务中对数据库的�
 
 学习 Neo4j 可以参考官方文档、相关书籍和在线教程。此外，还可以参与 Neo4j 社区，与其他开发者交流学习经验。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

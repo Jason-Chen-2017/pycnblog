@@ -57,11 +57,9 @@ $$V^{\\pi}(s) = \\max_{a \\in A(s)} \\sum_{s'} P(s,a,s') [R(s,a,s') + \\gamma V^
 ### 4.2 策略梯度算法
 策略梯度算法的目标是最大化策略的期望累计奖励。对于多智能体系统，策略梯度算法可以通过以下公式更新策略参数：
 
-$$\\theta_{t+1} \\leftarrow \\theta_t + \\alpha \
-abla_\\theta J(\\theta)$$
+$$\\theta_{t+1} \\leftarrow \\theta_t + \\alpha \nabla_\\theta J(\\theta)$$
 
-其中，$\\theta$ 是策略参数，$\\alpha$ 是学习率，$J(\\theta)$ 是策略的性能指标（通常基于策略下累计奖励的期望），$\
-abla_\\theta$ 是关于策略参数的梯度。
+其中，$\\theta$ 是策略参数，$\\alpha$ 是学习率，$J(\\theta)$ 是策略的性能指标（通常基于策略下累计奖励的期望），$\nabla_\\theta$ 是关于策略参数的梯度。
 
 ## 5. 项目实践：代码实例和详细解释说明
 

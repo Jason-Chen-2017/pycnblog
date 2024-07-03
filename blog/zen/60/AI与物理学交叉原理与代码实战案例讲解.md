@@ -127,13 +127,13 @@ dt = 0.01  # s
 for i in range(100):
     # 计算加速度
     acceleration = force / mass
-    
+
     # 更新速度
     velocity += acceleration * dt
-    
+
     # 更新位置
     position += velocity * dt
-    
+
     # 打印物体位置
     print(f"Time: {i*dt:.2f} s, Position: {position}")
 ```
@@ -204,10 +204,10 @@ epsilon = 0.1  # 探索率
 for i in range(1000):
     # 初始化状态
     state = env.reset()
-    
+
     # 初始化总奖励
     total_reward = 0
-    
+
     # 循环直到游戏结束
     while True:
         # 选择动作
@@ -215,25 +215,25 @@ for i in range(1000):
             action = env.action_space.sample()  # 随机选择动作
         else:
             action = max(q_table.get(state, {}), key=q_table.get(state, {}).get)  # 选择 Q 值最大的动作
-        
+
         # 执行动作
         next_state, reward, done, _ = env.step(action)
-        
+
         # 更新 Q 值
         if state not in q_table:
             q_table[state] = {}
         if action not in q_table[state]:
             q_table[state][action] = 0
         q_table[state][action] += alpha * (reward + gamma * max(q_table.get(next_state, {}).values(), default=0) - q_table[state][action])
-        
+
         # 更新状态和总奖励
         state = next_state
         total_reward += reward
-        
+
         # 如果游戏结束，则退出循环
         if done:
             break
-    
+
     # 打印总奖励
     print(f"Episode: {i}, Total reward: {total_reward}")
 ```
@@ -302,4 +302,4 @@ for i in range(1000):
 
 * **数据增强:**  通过对现有数据进行变换，例如旋转、缩放等，来生成更多的数据。
 * **迁移学习:**  利用其他领域的数据训练模型，然后将模型迁移到目标领域。
-* **模拟数据:**  利用物理模型生成模拟数据，用于训练 AI 模型。 
+* **模拟数据:**  利用物理模型生成模拟数据，用于训练 AI 模型。

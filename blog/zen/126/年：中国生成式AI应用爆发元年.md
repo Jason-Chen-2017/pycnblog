@@ -133,8 +133,8 @@ TEXT.build_vocab(train_data, max_size=10000, vectors="glove.6B.100d")
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # 模型定义
-model = TransformerModel('transformer', src_vocab_size=TEXT.vocab.vectors.shape[0], 
-                        trg_vocab_size=TEXT.vocab.vectors.shape[0], 
+model = TransformerModel('transformer', src_vocab_size=TEXT.vocab.vectors.shape[0],
+                        trg_vocab_size=TEXT.vocab.vectors.shape[0],
                         d_model=512, nhead=8, num_layers=6)
 
 # 训练过程

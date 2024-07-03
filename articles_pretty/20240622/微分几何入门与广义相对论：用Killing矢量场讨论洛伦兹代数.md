@@ -71,10 +71,8 @@ Killing矢量场与洛伦兹代数之间的联系体现在它们都涉及到时�
 - **度量张量**：$g_{\\mu\
 u}$，描述时空的几何结构。
   
-- **Killing方程**：$\
-abla_\\mu \\xi_\
-u + \
-abla_\
+- **Killing方程**：$\nabla_\\mu \\xi_\
+u + \nabla_\
 u \\xi_\\mu = 0$，其中$\\xi$是Killing矢量场。
 
 ### 4.2 公式推导过程

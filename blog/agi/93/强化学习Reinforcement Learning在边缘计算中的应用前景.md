@@ -256,7 +256,7 @@ class EdgeResourceSchedulingEnv(gym.Env):
         self.num_nodes = 3
         self.num_resources = 2
         self.num_tasks = 3
-        
+
     def step(self, action):
         # 根据动作分配资源
         resources = np.zeros((self.num_nodes, self.num_resources))
@@ -269,11 +269,11 @@ class EdgeResourceSchedulingEnv(gym.Env):
         done = ...
         info = ...
         return state, reward, done, info
-    
+
     def reset(self):
         # ... 重置状态 ...
         return ...
-    
+
     def render(self, mode='human'):
         # ... 可视化 ...
         return ...

@@ -69,12 +69,12 @@ x_1 \\
 x_2 \\
 x_3 \\
 x_4
-\end{bmatrix} \rightarrow 
+\end{bmatrix} \rightarrow
 \begin{bmatrix}
 x_1 \\
 x_2 \\
 x_3
-\end{bmatrix} \cdot 
+\end{bmatrix} \cdot
 \begin{bmatrix}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
@@ -196,7 +196,7 @@ a_{11} & a_{12} & \cdots & a_{1n} \\
 a_{21} & a_{22} & \cdots & a_{2n} \\
 \vdots & \vdots & \ddots & \vdots \\
 a_{m1} & a_{m2} & \cdots & a_{mn}
-\end{bmatrix} 
+\end{bmatrix}
 \begin{bmatrix}
 b_{11} & b_{12} & \cdots & b_{1n} \\
 b_{21} & b_{22} & \cdots & b_{2n} \\
@@ -292,7 +292,7 @@ $$
 AB = \begin{bmatrix}
 1 & 2 \\
 3 & 4
-\end{bmatrix} 
+\end{bmatrix}
 \begin{bmatrix}
 5 & 6 \\
 7 & 8
@@ -322,7 +322,7 @@ $$
 
 1. 求解特征多项式：$det(A-\lambda I) = 0$
 2. 求解特征值：$\lambda_1 = 1, \lambda_2 = 3$
-3. 求解特征向量：$\mathbf{v_1} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \mathbf{v_2} = \begin{bmatrix} -1 \\ 1 \end{bmatrix}$
+3. 求解特征向量：$\mathbf{v_1} = \begin{bmatrix} 1 \ 1 \end{bmatrix}, \mathbf{v_2} = \begin{bmatrix} -1 \ 1 \end{bmatrix}$
 
 #### 4.2.4 线性方程组求解
 
@@ -410,7 +410,7 @@ $$
 AB = \begin{bmatrix}
 1 & 2 \\
 3 & 4
-\end{bmatrix} 
+\end{bmatrix}
 \begin{bmatrix}
 5 & 6 \\
 7 & 8
@@ -436,9 +436,9 @@ $$
 
 **解：**
 
-1. 求解特征多项式：$det(A-\lambda I) = \begin{vmatrix} 2-\lambda & 1 \\ -1 & 2-\lambda \end{vmatrix} = (2-\lambda)^2 - 1 = 0$
+1. 求解特征多项式：$det(A-\lambda I) = \begin{vmatrix} 2-\lambda & 1 \ -1 & 2-\lambda \end{vmatrix} = (2-\lambda)^2 - 1 = 0$
 2. 求解特征值：$\lambda_1 = 1, \lambda_2 = 3$
-3. 求解特征向量：$\mathbf{v_1} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \mathbf{v_2} = \begin{bmatrix} -1 \\ 1 \end{bmatrix}$
+3. 求解特征向量：$\mathbf{v_1} = \begin{bmatrix} 1 \ 1 \end{bmatrix}, \mathbf{v_2} = \begin{bmatrix} -1 \ 1 \end{bmatrix}$
 
 #### 4.3.3 线性方程组求解
 

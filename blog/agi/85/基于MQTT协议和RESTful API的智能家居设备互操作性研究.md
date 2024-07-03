@@ -7,7 +7,7 @@
 随着物联网技术的快速发展,智能家居已经成为人们生活中不可或缺的一部分。然而,由于不同厂商的智能家居设备采用不同的通信协议和接口标准,导致设备之间难以实现互联互通,这严重阻碍了智能家居的普及和发展。因此,如何实现不同智能家居设备之间的互操作性,成为了亟待解决的问题。
 ### 1.2 研究现状
 目前,国内外学者对智能家居设备互操作性问题进行了广泛研究。一些学者提出利用中间件技术实现不同协议之间的转换与映射；也有学者提出构建统一的智能家居平台,为各种设备提供统一的接入接口。但这些方案都存在一定局限性,如系统复杂度高、可扩展性差等。因此,仍需要进一步探索更加高效、灵活的互操作性解决方案。
-### 1.3 研究意义 
+### 1.3 研究意义
 本文提出利用MQTT协议和RESTful API实现智能家居设备的互操作,具有重要的理论和实践意义。一方面,该方案可有效解决异构设备之间的互联互通问题,为实现智能家居的无缝集成提供可行途径；另一方面,所提出的互操作性架构具有良好的可扩展性和易用性,可为智能家居领域的进一步发展提供有益参考。
 ### 1.4 本文结构
 本文共分为九个部分。第一部分介绍研究背景与意义；第二部分阐述智能家居互操作性涉及的核心概念；第三部分详细讲解本文采用的MQTT和REST核心技术原理；第四部分建立互操作性数学模型并给出案例分析；第五部分提供相关代码实现；第六部分探讨方案的实际应用场景；第七部分推荐相关工具和资源；第八部分总结全文并展望未来研究方向；第九部分为附录。
@@ -36,7 +36,7 @@
 - 协议轻量级,资源占用小。
 - 松耦合架构,扩展性好。
 - 基于Web标准,跨平台支持。
-缺点:  
+缺点:
 - 需要一定的开发工作量。
 - 实时性取决于网络状况。
 - 安全性有待进一步加强。
@@ -62,7 +62,7 @@ $$a_j \stackrel{o_j^i}{\longrightarrow} r_i \quad (2)$$
 
 $$d_i \leftrightarrow r_i \quad (3)$$
 
-将公式(2)代入公式(3),可得:  
+将公式(2)代入公式(3),可得:
 
 $$a_j \stackrel{o_j^i}{\longrightarrow} d_i \quad (4)$$
 
@@ -73,7 +73,7 @@ $$a_j \stackrel{o_j^i}{\longrightarrow} d_i \quad (4)$$
 
 则灯的REST资源 $r_1$ 可表示为:
 
-$$r_1=<\text{"home/light"},\{\text{"on","brightness"}\}> \quad (5)$$  
+$$r_1=<\text{"home/light"},\{\text{"on","brightness"}\}> \quad (5)$$
 
 应用读取资源属性"on"可知灯的开关状态,修改"brightness"可控制灯的亮度,即实现了对灯的监控与控制:
 
@@ -83,7 +83,7 @@ $$a_1 \stackrel{\text{PUT}}{\longrightarrow} r_1.\text{"brightness"} \quad (7)$$
 当灯的状态发生变化时,会通过MQTT通知给订阅了相关主题的应用,实现状态实时同步。
 
 ### 4.4 常见问题解答
-Q: MQTT和HTTP的区别是什么?  
+Q: MQTT和HTTP的区别是什么?
 A: MQTT是一种发布/订阅模式的轻量级协议,而HTTP是一种请求/响应模式的应用层协议。MQTT更适合频繁的消息收发,HTTP更适合数据的请求获取。
 
 Q: REST API与传统API有何不同?
@@ -115,7 +115,7 @@ client.on('message', (topic, message) => {
 
 module.exports = client
 
-// app.js  
+// app.js
 const express = require('express')
 const mqtt = require('./mqtt')
 const app = express()
@@ -126,7 +126,7 @@ app.get('/api/devices/:deviceId', (req, res) => {
   const topic = `home/${deviceId}`
   const message = JSON.stringify({type: 'query'})
   mqtt.publish(topic, message)
-  
+
   mqtt.on('message', (topic, message) => {
     if (topic === `home/${deviceId}`) {
       res.send(JSON.parse(message))
@@ -135,7 +135,7 @@ app.get('/api/devices/:deviceId', (req, res) => {
 })
 
 // 控制设备
-app.put('/api/devices/:deviceId', (req, res) => {  
+app.put('/api/devices/:deviceId', (req, res) => {
   const deviceId = req.params.deviceId
   const payload = req.body
   const topic = `home/${deviceId}`
@@ -171,7 +171,7 @@ export default {
     return {
       lightState: {
         on: false,
-        brightness: 50    
+        brightness: 50
       }
     }
   },
@@ -181,7 +181,7 @@ export default {
       this.lightState = res.data
     },
     async controlLight() {
-      await axios.put('/api/devices/light', this.lightState)  
+      await axios.put('/api/devices/light', this.lightState)
     }
   },
   async created() {

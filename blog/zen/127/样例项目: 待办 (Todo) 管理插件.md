@@ -377,4 +377,4 @@ export default {
 
   可以将数据同步到云端，方便在不同设备上使用。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

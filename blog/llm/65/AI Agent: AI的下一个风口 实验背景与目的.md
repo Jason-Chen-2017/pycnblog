@@ -208,10 +208,10 @@ def build_model(input_shape, action_space):
 def dqn(env, model, epsilon=0.1, gamma=0.99, epsilon_min=0.01, epsilon_decay=0.995, target_update=1e3):
   # 创建经验回放机制
   replay_buffer = collections.deque(maxlen=2000)
-  
+
   # 创建代理
   agent = Agent(model, epsilon, gamma, replay_buffer)
-  
+
   # 训练代理
   for i in range(100000):
     state = env.reset()
@@ -223,7 +223,7 @@ def dqn(env, model, epsilon=0.1, gamma=0.99, epsilon_min=0.01, epsilon_decay=0.9
       state = next_state
       if i % target_update == 0:
         agent.update_target_model()
-  
+
   return agent
 
 class Agent:
@@ -233,7 +233,7 @@ class Agent:
     self.gamma = gamma
     self.replay_buffer = replay_buffer
     self.target_model = copy.deepcopy(self.model)
-  
+
   def get_action(self, state):
     if np.random.random() < self.epsilon:
       return np.random.randint(0, 4)
@@ -241,10 +241,10 @@ class Agent:
       state = np.expand_dims(state, axis=0)
       q_values = self.model.predict(state)
       return np.argmax(q_values)
-  
+
   def update_target_model(self):
     self.target_model.set_weights(self.model.get_weights())
-  
+
   def train(self):
     batch_size = 32
     states, actions, rewards, next_states, dones = zip(*random.sample(self.replay_buffer, batch_size))

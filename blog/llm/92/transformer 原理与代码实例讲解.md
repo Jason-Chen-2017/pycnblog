@@ -157,11 +157,11 @@ class MultiHeadAttention(nn.Module):
         Q = self.线性层(query).view(batch_size, -1, self.num_heads, self.d_k)
         K = self.线性层(key).view(batch_size, -1, self.num_heads, self.d_k)
         V = self.线性层(value).view(batch_size, -1, self.num_heads, self.d_k)
-        
+
         # 注意力权重计算
         scores = torch.matmul(Q, K.transpose(-2, -1)) / self.d_k ** 0.5
         attention_weights = torch.softmax(scores, dim=-1)
-        
+
         # 输出
         output = torch.matmul(attention_weights, V)
         output = output.view(batch_size, -1, self.num_heads * self.d_k)
@@ -223,23 +223,23 @@ class Transformer(nn.Module):
         self.d_ff = d_ff
         self.input_vocab_size = input_vocab_size
         self.output_vocab_size = output_vocab_size
-        
+
         self.embedding = nn.Embedding(input_vocab_size, d_model)
         self.positional_encoding = PositionalEncoding(d_model)
-        
+
         self.transformer_encoder = nn.ModuleList([TransformerEncoderLayer(d_model, num_heads, d_ff) for _ in range(num_layers)])
         self.transformer_decoder = nn.ModuleList([TransformerDecoderLayer(d_model, num_heads, d_ff) for _ in range(num_layers)])
-        
+
         self.linear_out = nn.Linear(d_model, output_vocab_size)
 
     def forward(self, src, tgt):
         src = self.embedding(src) + self.positional_encoding(src)
         tgt = self.embedding(tgt) + self.positional_encoding(tgt)
-        
+
         for i in range(self.num_layers):
             src = self.transformer_encoder[i](src)
             tgt = self.transformer_decoder[i](tgt, src)
-        
+
         output = self.linear_out(tgt)
         return output
 

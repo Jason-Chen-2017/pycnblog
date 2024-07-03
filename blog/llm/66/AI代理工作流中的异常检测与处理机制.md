@@ -159,7 +159,7 @@ class Autoencoder(nn.Module):
         super(Autoencoder, self).__init__()
         self.encoder = nn.Linear(input_dim, hidden_dim)
         self.decoder = nn.Linear(hidden_dim, input_dim)
-    
+
     def forward(self, x):
         z = torch.relu(self.encoder(x))
         x' = self.decoder(z)

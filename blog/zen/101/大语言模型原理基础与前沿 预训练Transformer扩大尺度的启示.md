@@ -1,7 +1,7 @@
 
 # 大语言模型原理基础与前沿 预训练Transformer扩大尺度的启示
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -161,29 +161,29 @@
 
    - 计算查询向量 $Q$、键向量 $K$ 和值向量 $V$：
      $$
- Q = W_Q \times E(x_i) 
+ Q = W_Q \times E(x_i)
 $$
      $$
- K = W_K \times E(x_i) 
+ K = W_K \times E(x_i)
 $$
      $$
- V = W_V \times E(x_i) 
+ V = W_V \times E(x_i)
 $$
 
    - 计算注意力权重 $A$：
      $$
- A = \frac{softmax(QK^T)}{d_k^{0.5}} 
+ A = \frac{softmax(QK^T)}{d_k^{0.5}}
 $$
 
    - 计算输出向量 $H$：
      $$
- H = V \times A 
+ H = V \times A
 $$
 
 4. **层归一化**：
 
    $$
- \hat{h}_i = \frac{h_i + \mathbf{0}}{\sqrt{d_k}} 
+ \hat{h}_i = \frac{h_i + \mathbf{0}}{\sqrt{d_k}}
 $$
 
 其中，$W_Q, W_K, W_V$ 分别为查询、键和值矩阵，$d_k$ 为键向量的维度，$\mathbf{0}$ 为零向量。

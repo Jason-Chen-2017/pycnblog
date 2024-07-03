@@ -269,7 +269,7 @@ A：ResNet的参数量取决于网络层数和宽度。一般来说，ResNet的�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n resnet-env python=3.8 
+conda create -n resnet-env python=3.8
 conda activate resnet-env
 ```
 

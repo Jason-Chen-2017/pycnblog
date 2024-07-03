@@ -189,7 +189,7 @@ A：智能体可以采用以下方式处理不同类型的数据：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n public-transport-env python=3.8 
+conda create -n public-transport-env python=3.8
 conda activate public-transport-env
 ```
 

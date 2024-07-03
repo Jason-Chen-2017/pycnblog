@@ -129,8 +129,7 @@ $$
 目标函数对簇中心 $\mu_i$ 的梯度为：
 
 $$
-\
-abla_{\mu_i}J(\theta) = 2 \sum_{x \in C_i} (x-\mu_i)
+\nabla_{\mu_i}J(\theta) = 2 \sum_{x \in C_i} (x-\mu_i)
 $$
 
 **梯度下降**：

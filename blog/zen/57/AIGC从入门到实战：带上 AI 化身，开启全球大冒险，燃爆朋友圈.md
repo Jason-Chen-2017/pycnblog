@@ -44,7 +44,7 @@ E --> F
 #### 3.1.2 基于Transformer的文本生成
 #### 3.1.3 GPT系列模型
 
-### 3.2 图像生成算法 
+### 3.2 图像生成算法
 #### 3.2.1 DCGAN
 #### 3.2.2 StyleGAN
 #### 3.2.3 DALL-E
@@ -95,7 +95,7 @@ tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 
 # 生成文本
 input_text = "Once upon a time"
-input_ids = tokenizer.encode(input_text, return_tensors='tf') 
+input_ids = tokenizer.encode(input_text, return_tensors='tf')
 output = model.generate(input_ids, max_length=100, num_return_sequences=1)
 generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
 

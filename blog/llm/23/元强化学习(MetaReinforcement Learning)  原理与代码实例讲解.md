@@ -75,17 +75,17 @@
 
 元强化学习的核心在于学习如何学习，通常通过以下数学模型进行描述：
 
-$$ \\mathcal{L}_{meta}(w) = \\mathbb{E}_{\\tau \\sim \\mathcal{D}}[\\mathcal{L}_\\tau(w)] $$
+$$ \mathcal{L}_{meta}(w) = \mathbb{E}_{\tau \sim \mathcal{D}}[\mathcal{L}_\tau(w)] $$
 
-其中，$\\mathcal{L}_{meta}(w)$是元损失函数，$\\mathcal{D}$是任务集，$\\mathcal{L}_\\tau(w)$是在任务$\\tau$上基于策略$w$的学习损失。
+其中，$\mathcal{L}_{meta}(w)$是元损失函数，$\mathcal{D}$是任务集，$\mathcal{L}_\tau(w)$是在任务$\tau$上基于策略$w$的学习损失。
 
 ### 4.2 公式推导过程
 
 在MAML中，元梯度计算过程如下：
 
-$$ \\Delta w = \\frac{1}{K} \\sum_{k=1}^K (\\theta_k(\\tau) - \\theta_0) $$
+$$ \Delta w = \frac{1}{K} \sum_{k=1}^K (\theta_k(\tau) - \theta_0) $$
 
-其中，$\\theta_k(\\tau)$是在任务$\\tau$上的第$k$轮学习后策略参数的估计，$\\theta_0$是初始策略参数。
+其中，$\theta_k(\tau)$是在任务$\tau$上的第$k$轮学习后策略参数的估计，$\theta_0$是初始策略参数。
 
 ### 4.3 案例分析与讲解
 
@@ -164,15 +164,15 @@ class MAML:
         return w
 
 # 示例代码
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     # 创建任务数据和标签（简化示例）
     tasks_data = [[np.random.rand(10, 10), np.random.randint(2, size=(10,))]]
     tasks_labels = [[np.random.randint(2, size=(10,))]]
 
     model = MAML(BaseModel(), inner_lr=0.1, outer_lr=0.01, num_steps=5, num_ways=1)
     w, losses = model.learn(tasks_data, tasks_labels)
-    print(\"Final model parameters:\", w)
-    print(\"Losses:\", losses)
+    print("Final model parameters:", w)
+    print("Losses:", losses)
 ```
 
 ### 5.3 代码解读与分析

@@ -412,4 +412,4 @@ for episode in range(10):
 * **约束条件:** 设置约束条件，限制生成式智能体的行为范围，防止其出现不符合预期行为。
 * **人工干预:** 在必要时进行人工干预，纠正生成式智能体的错误行为。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -85,8 +85,7 @@ $$ \\hat{\\pi}(s) = \\arg\\max_{\\pi \\in \\Pi} \\mathbb{E}_{(s,a) \\sim \\pi_e}
 
 对于策略梯度方法，我们使用梯度上升来更新学习者的策略：
 
-$$ \\Delta \\theta \\propto \\mathbb{E}_{(s,a) \\sim \\pi_l} [\
-abla_{\\theta} \\log \\pi_l(a|s) \\cdot \\delta(s,a)] $$
+$$ \\Delta \\theta \\propto \\mathbb{E}_{(s,a) \\sim \\pi_l} [\nabla_{\\theta} \\log \\pi_l(a|s) \\cdot \\delta(s,a)] $$
 
 其中 $\\theta$ 是策略参数，$\\delta(s,a)$ 是策略改进的方向。
 

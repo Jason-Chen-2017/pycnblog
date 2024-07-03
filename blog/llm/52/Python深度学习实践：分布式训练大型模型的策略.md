@@ -100,10 +100,10 @@ strategy = tf.distribute.MirroredStrategy()
 with strategy.scope():
     # 定义优化器
     optimizer = tf.keras.optimizers.Adam()
-    
+
     # 定义损失函数
     loss_fn = tf.keras.losses.SparseCategoricalCrossentropy()
-    
+
     # 编译模型
     model.compile(optimizer=optimizer, loss=loss_fn, metrics=['accuracy'])
 

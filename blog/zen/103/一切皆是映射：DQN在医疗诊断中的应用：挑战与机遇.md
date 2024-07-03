@@ -264,7 +264,7 @@ for epoch in range(epochs):
         selected_action = q_values.argmax(dim=1)
         q_expected = reward + discount_factor * dqn_model(next_state).max(dim=1)[0]
         loss = loss_fn(q_values.gather(1, selected_action.unsqueeze(1)), q_expected.unsqueeze(1))
-        
+
         # 反向传播
         optimizer.zero_grad()
         loss.backward()

@@ -89,8 +89,7 @@
 
 假设在任务$T_i$上微调后的参数为$\\theta_i$，则有：
 
-$$\\theta_i = \\theta - \\alpha \\cdot (\
-abla_{\\theta} L(T_i, \\theta))$$
+$$\\theta_i = \\theta - \\alpha \\cdot (\nabla_{\\theta} L(T_i, \\theta))$$
 
 其中$L(T_i, \\theta)$是任务$T_i$上的损失函数，$\\alpha$是学习率。
 

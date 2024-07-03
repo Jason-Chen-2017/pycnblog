@@ -100,25 +100,25 @@ GPT模型的核心是Transformer架构，其数学模型主要包括以下几个
 假设输入序列 $X = [x_1, x_2, \dots, x_n]$，其中 $x_i$ 是第 $i$ 个词的词向量。多头自注意力计算公式如下：
 
 $$
-Q = W_QQX 
+Q = W_QQX
 $$
 
 $$
-K = W_KKX 
+K = W_KKX
 $$
 
 $$
-V = W_VVX 
+V = W_VVX
 $$
 
 其中 $W_Q, W_K, W_V$ 是可学习参数矩阵，$Q, K, V$ 是查询、键和值向量。
 
 $$
-\text{MultiHeadAttention}(Q, K, V) = \text{Concat}(\text{head}_1, \text{head}_2, \dots, \text{head}_h)W_O 
+\text{MultiHeadAttention}(Q, K, V) = \text{Concat}(\text{head}_1, \text{head}_2, \dots, \text{head}_h)W_O
 $$
 
 $$
-\text{head}_i = \frac{QW_{Q_i}K_{Q_i}V_{V_i}}{\sqrt{d_k}} 
+\text{head}_i = \frac{QW_{Q_i}K_{Q_i}V_{V_i}}{\sqrt{d_k}}
 $$
 
 其中 $d_k$ 是键值向量的维度，$W_O$ 是输出层的可学习参数矩阵，$h$ 是多头注意力头数。
@@ -204,7 +204,7 @@ A3：以下是一些优化GPT模型性能的方法：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 

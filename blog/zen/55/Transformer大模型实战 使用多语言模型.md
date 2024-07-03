@@ -34,7 +34,7 @@
 Transformer凭借其强大的特征提取和建模能力,成为构建多语言模型的首选架构。研究者们通过以下方式将Transformer应用到多语言场景:
 
 - 多语言预训练:在多语言语料上进行联合预训练,学习语言普适的表示。
-- 参数共享:在编码器、解码器等部分共享参数,促进跨语言知识的迁移。 
+- 参数共享:在编码器、解码器等部分共享参数,促进跨语言知识的迁移。
 - 语言标识符:在输入中加入语言标识符,显式地指导模型区分不同语言。
 - 对抗训练:引入对抗目标,使得编码后的表示语言无关。
 
@@ -46,7 +46,7 @@ graph LR
     B --> C[Language Embedding]
     B --> D[Transformer Encoder]
     C --> D
-    D --> E[Transformer Decoder] 
+    D --> E[Transformer Decoder]
     E --> F[Output]
 ```
 
@@ -100,17 +100,17 @@ $$
 $$
 \begin{aligned}
 Q &= \begin{bmatrix}
-1 & 0 & 1 & 0\\ 
+1 & 0 & 1 & 0\\
 0 & 2 & 0 & 2\\
 1 & 1 & 1 & 1
 \end{bmatrix} \\
 K &= \begin{bmatrix}
-1 & 1 & 0 & 1\\ 
+1 & 1 & 0 & 1\\
 0 & 1 & 0 & 1\\
 0 & 1 & 1 & 2
 \end{bmatrix} \\
 V &= \begin{bmatrix}
-0 & 1 & 0 & 1\\ 
+0 & 1 & 0 & 1\\
 1 & 0 & 0 & 2\\
 0 & 0 & 1 & 1
 \end{bmatrix}
@@ -120,7 +120,7 @@ $$
 计算$QK^T$:
 $$
 QK^T = \begin{bmatrix}
-2 & 1 & 2\\ 
+2 & 1 & 2\\
 2 & 4 & 4\\
 3 & 4 & 5
 \end{bmatrix}
@@ -129,7 +129,7 @@ $$
 缩放并归一化:
 $$
 Attention = softmax(\frac{QK^T}{\sqrt{4}}) = \begin{bmatrix}
-0.24 & 0.09 & 0.24\\ 
+0.24 & 0.09 & 0.24\\
 0.09 & 0.33 & 0.33\\
 0.16 & 0.24 & 0.36
 \end{bmatrix}
@@ -138,7 +138,7 @@ $$
 最终结果:
 $$
 Attention \cdot V = \begin{bmatrix}
-0.24 & 0.42 & 0.48 & 1.44\\ 
+0.24 & 0.42 & 0.48 & 1.44\\
 0.42 & 0.33 & 0.33 & 1.66\\
 0.40 & 0.48 & 0.60 & 1.92
 \end{bmatrix}

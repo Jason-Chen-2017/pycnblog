@@ -7,7 +7,7 @@
 在大数据流处理领域,实时性和吞吐量一直是两个关键的挑战。传统的同步I/O模式会阻塞整个流处理管道,限制了系统的吞吐量。为了解决这个问题,Apache Flink引入了异步I/O机制,通过非阻塞的异步请求大幅提升吞吐量,同时保证了端到端的一致性。
 ### 1.2  研究现状
 目前业界主流的流处理框架如Spark Streaming、Storm等都缺乏对异步I/O的原生支持,导致在与外部系统交互时性能受限。而Flink通过在框架层面集成异步I/O,使得用户可以方便地利用异步I/O的优势,构建高性能的流处理应用。
-### 1.3  研究意义 
+### 1.3  研究意义
 Flink异步I/O为流处理系统性能优化提供了新的思路。通过研究其内部机制和最佳实践,可以指导我们设计和优化其他流处理系统,推动大数据技术的发展。同时异步I/O也可以应用到更广泛的异步编程场景,具有重要的理论和实践意义。
 ### 1.4  本文结构
 本文将首先介绍Flink异步I/O的核心概念和工作原理,然后通过数学建模分析其性能,并给出典型的使用场景和最佳实践。同时分享实际项目中的应用案例和代码示例,最后总结异步I/O的优势和未来的发展方向。
@@ -65,7 +65,7 @@ Flink异步I/O的算法可以概括为:
 - 机器学习预测,如模型inference
 - 其他需要和外部系统交互的场景
 
-## 4. 数学模型和公式 & 详细讲解 & 举例说明 
+## 4. 数学模型和公式 & 详细讲解 & 举例说明
 ### 4.1  数学模型构建
 我们可以用排队论来建模分析异步I/O的性能。假设异步请求的到达率为$\lambda$,服务率为$\mu$,异步请求的平均响应时间为$T_a$,同步请求的平均响应时间为$T_s$,则根据Little's Law,系统的平均请求数$L$为:
 
@@ -103,7 +103,7 @@ $$T_s = \frac{1}{100} = 10ms$$
 
 而系统的最大吞吐量为:
 
-$$\mu = \frac{1}{0.01} = 100 \text{ QPS}$$  
+$$\mu = \frac{1}{0.01} = 100 \text{ QPS}$$
 
 远小于1000的输入速率,系统将无法正常处理。而使用异步I/O,假设异步请求的平均等待时间为1ms,则平均响应时间为:
 
@@ -161,7 +161,7 @@ AsyncFunction<String, String> asyncClient = new AsyncFunction<String, String>() 
     public void asyncInvoke(String key, ResultFuture<String> resultFuture) throws Exception {
         // 异步查询外部键值存储
         client.get(key, new GetCallback() {
-            @Override 
+            @Override
             public void onSuccess(String value) {
                 resultFuture.complete(Collections.singleton(value));
             }
@@ -181,10 +181,10 @@ DataStream<String> stream = env.fromElements("key1", "key2", "key3", "key4", "ke
 
 // 使用异步I/O关联维表
 DataStream<String> resultStream = AsyncDataStream.unorderedWait(
-    stream, 
+    stream,
     asyncClient,
     1000, // 超时时间
-    TimeUnit.MILLISECONDS, 
+    TimeUnit.MILLISECONDS,
     100 // 最大并发请求数
 );
 

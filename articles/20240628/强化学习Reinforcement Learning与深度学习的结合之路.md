@@ -145,9 +145,7 @@ $$
 策略梯度表示在给定状态和动作下的梯度。
 
 $$
-\
-abla_{\theta} \pi(a|s) = \
-abla_{\theta} P(a|s)
+\nabla_{\theta} \pi(a|s) = \nabla_{\theta} P(a|s)
 $$
 
 其中，$\theta$ 表示策略函数的参数。
@@ -173,9 +171,7 @@ $$
 2. **计算梯度**：
 
 $$
-\
-abla_{\theta} L(\theta) = \
-abla_{\theta} \sum_{t=0}^{T} (R_{t+1} + \gamma V(s_{t+1}) - V(s_t))^2
+\nabla_{\theta} L(\theta) = \nabla_{\theta} \sum_{t=0}^{T} (R_{t+1} + \gamma V(s_{t+1}) - V(s_t))^2
 $$
 
 3. **简化梯度**：
@@ -183,9 +179,7 @@ $$
 由于 $V(s_{t+1})$ 与 $\theta$ 无关，可以将其视为常数，从而简化梯度为：
 
 $$
-\
-abla_{\theta} L(\theta) = \sum_{t=0}^{T} \
-abla_{\theta} (R_{t+1} + \gamma V(s_{t+1}) - V(s_t))^2
+\nabla_{\theta} L(\theta) = \sum_{t=0}^{T} \nabla_{\theta} (R_{t+1} + \gamma V(s_{t+1}) - V(s_t))^2
 $$
 
 4. **使用反向传播计算梯度**：

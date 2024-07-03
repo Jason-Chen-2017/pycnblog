@@ -1,7 +1,7 @@
 
 # 【LangChain编程：从入门到实践】LLM 驱动的智能代理
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 关键词：
 

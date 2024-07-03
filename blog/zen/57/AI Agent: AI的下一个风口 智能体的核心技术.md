@@ -4,7 +4,7 @@
 
 ### 1.1 人工智能的发展历程
 #### 1.1.1 早期人工智能
-#### 1.1.2 专家系统时代  
+#### 1.1.2 专家系统时代
 #### 1.1.3 机器学习与深度学习
 
 ### 1.2 AI Agent的兴起
@@ -51,7 +51,7 @@ D --> A
 #### 3.2.2 合作博弈
 #### 3.2.3 非合作博弈
 
-### 3.3 规划与搜索算法 
+### 3.3 规划与搜索算法
 #### 3.3.1 经典规划算法
 #### 3.3.2 启发式搜索
 #### 3.3.3 蒙特卡洛树搜索
@@ -62,7 +62,7 @@ D --> A
 一个马尔可夫决策过程由一个四元组 $(S,A,P,R)$ 定义：
 
 - $S$ 是有限的状态集合
-- $A$ 是有限的动作集合  
+- $A$ 是有限的动作集合
 - $P$ 是状态转移概率矩阵，$P_{ss'}^a=P[S_{t+1}=s'|S_t=s,A_t=a]$
 - $R$ 是回报函数，$R_s^a=E[R_{t+1}|S_t=s,A_t=a]$
 
@@ -99,7 +99,7 @@ $$u(a^*,b^*) \leq u(a^*,b), \forall b\in\mathcal{B}$$
 import numpy as np
 
 actions = ['Rock', 'Paper', 'Scissors']
-payoff = np.array([[0, -1, 1], 
+payoff = np.array([[0, -1, 1],
                    [1, 0, -1],
                    [-1, 1, 0]])
 ```
@@ -113,15 +113,15 @@ class Agent:
     def __init__(self, learning_rate):
         self.q_table = np.zeros((3,3))  # Q值表
         self.learning_rate = learning_rate
-        
+
     def learn(self, my_action, other_action, reward):
-        s = actions.index(my_action) 
+        s = actions.index(my_action)
         a = actions.index(other_action)
         self.q_table[s,a] += self.learning_rate * (reward - self.q_table[s,a])
-        
+
     def play(self):
         return np.random.choice(actions, p=self.policy())
-        
+
     def policy(self):
         policy = np.exp(self.q_table) / np.exp(self.q_table).sum(axis=1, keepdims=True)
         return policy.mean(axis=0)
@@ -134,7 +134,7 @@ class Agent:
 ```python
 np.random.seed(0)
 
-agent1 = Agent(learning_rate=0.1)  
+agent1 = Agent(learning_rate=0.1)
 agent2 = Agent(learning_rate=0.1)
 
 rounds = 10000
@@ -144,8 +144,8 @@ for i in range(rounds):
     reward = payoff[actions.index(action1), actions.index(action2)]
     agent1.learn(action1, action2, reward)
     agent2.learn(action2, action1, -reward)
-    
-print('Agent 1 Policy:', agent1.policy())    
+
+print('Agent 1 Policy:', agent1.policy())
 print('Agent 2 Policy:', agent2.policy())
 ```
 
@@ -183,7 +183,7 @@ Agent 2 Policy: [0.33332364 0.3333357  0.33334066]
 - DeepMind Lab
 - Unity ML-Agents
 
-### 7.2 学习资源  
+### 7.2 学习资源
 - 《人工智能：一种现代的方法》
 - 《强化学习》
 - David Silver的强化学习课程
@@ -192,7 +192,7 @@ Agent 2 Policy: [0.33332364 0.3333357  0.33334066]
 
 ### 8.1 AI Agent的发展趋势
 #### 8.1.1 多模态Agent
-#### 8.1.2 群体智能  
+#### 8.1.2 群体智能
 #### 8.1.3 人机混合增强智能
 
 ### 8.2 面临的挑战
@@ -205,7 +205,7 @@ Agent 2 Policy: [0.33332364 0.3333357  0.33334066]
 ### 9.1 AI Agent与传统软件的区别是什么？
 AI Agent具有自主性、交互性和适应性，能够感知环境、自主决策并与环境交互来完成目标，而传统软件则是按照预先设定好的流程机械式地执行任务。
 
-### 9.2 AI Agent需要哪些基础知识？ 
+### 9.2 AI Agent需要哪些基础知识？
 AI Agent涉及人工智能、机器学习、博弈论、运筹学等多个学科，需要掌握搜索、规划、学习算法，以及概率论、优化理论等数学基础。
 
 ### 9.3 如何评估一个AI Agent系统？

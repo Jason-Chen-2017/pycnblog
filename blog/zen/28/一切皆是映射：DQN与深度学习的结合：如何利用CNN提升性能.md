@@ -81,19 +81,19 @@ DQN与CNN结合后的应用领域广泛，包括但不限于：
 
 ### 4.1 数学模型构建
 
-DQN的目标是学习一个函数$q_\\theta(s,a)$，其中$\\theta$是参数集，$s$是状态，$a$是动作。这个函数应该满足贝尔曼方程：
+DQN的目标是学习一个函数$q_\theta(s,a)$，其中$\theta$是参数集，$s$是状态，$a$是动作。这个函数应该满足贝尔曼方程：
 
-$$q_\\theta(s,a) = r + \\gamma \\max_{a'} q_\\theta(s',a')$$
+$$q_\theta(s,a) = r + \gamma \max_{a'} q_\theta(s',a')$$
 
-其中$r$是即时奖励，$\\gamma$是折扣因子，$s'$是下一个状态，$a'$是下一个动作。
+其中$r$是即时奖励，$\gamma$是折扣因子，$s'$是下一个状态，$a'$是下一个动作。
 
 ### 4.2 公式推导过程
 
-在DQN中，我们使用深度神经网络来逼近$q_\\theta(s,a)$。假设我们使用神经网络$Q(s,a;\\theta)$来近似这个函数。通过反向传播算法，我们更新神经网络参数$\\theta$，以最小化均方误差（MSE）损失：
+在DQN中，我们使用深度神经网络来逼近$q_\theta(s,a)$。假设我们使用神经网络$Q(s,a;\theta)$来近似这个函数。通过反向传播算法，我们更新神经网络参数$\theta$，以最小化均方误差（MSE）损失：
 
-$$L(\\theta) = \\frac{1}{n}\\sum_{i=1}^{n}(y_i - Q(s_i,a_i;\\theta))^2$$
+$$L(\theta) = \frac{1}{n}\sum_{i=1}^{n}(y_i - Q(s_i,a_i;\theta))^2$$
 
-其中$n$是经验池中样本的数量，$y_i$是目标值，$Q(s_i,a_i;\\theta)$是神经网络的输出。
+其中$n$是经验池中样本的数量，$y_i$是目标值，$Q(s_i,a_i;\theta)$是神经网络的输出。
 
 ### 4.3 案例分析与讲解
 
@@ -132,7 +132,7 @@ class DQN:
         self.batch_size = batch_size
         self.memory = deque(maxlen=2000)
         self.model = self._build_model()
-        
+
     def _build_model(self):
         model = Sequential()
         model.add(Flatten(input_shape=(1,) + self.state_size))
@@ -141,17 +141,17 @@ class DQN:
         model.add(Dense(self.action_size, activation='linear'))
         model.compile(loss='mse', optimizer=tf.optimizers.Adam(lr=self.learning_rate))
         return model
-    
+
     def remember(self, state, action, reward, next_state, done):
         self.memory.append((state, action, reward, next_state, done))
-    
+
     def act(self, state):
         if np.random.rand() <= self.epsilon:
             return np.random.choice(self.action_size)
         else:
             state = np.array(state).reshape(1, -1)
             return np.argmax(self.model.predict(state)[0])
-    
+
     def replay(self):
         if len(self.memory) < self.batch_size:
             return
@@ -166,7 +166,7 @@ class DQN:
 
     def load_weights(self, filename):
         self.model.load_weights(filename)
-    
+
     def save_weights(self, filename):
         self.model.save_weights(filename)
 ```

@@ -31,10 +31,8 @@ $$ y = \\beta_0 + \\sum_{i=1}^{n} \\beta_i X_i $$
 为了找到最优的参数 $\\theta = (\\beta_0, \\beta_1, ..., \\beta_n)$，我们通常使用最小二乘法来最小化均方误差（Mean Squared Error, MSE）：
 $$ L(\\theta, X) = \\frac{1}{2N} \\sum_{i=1}^{N} (y_i - (\\beta_0 + \\sum_{j=1}^{n} \\beta_j x_{ij}))^2 $$
 通过梯度下降算法迭代求解最优解：
-$$ \\theta^{(t+1)} = \\theta^{(t)} - \\alpha \
-abla L(\\theta^{(t)}, X) $$
-其中，$\\alpha$ 是学习率，$\
-abla L(\\theta^{(t)}, X)$ 是损失函数的梯度。
+$$ \\theta^{(t+1)} = \\theta^{(t)} - \\alpha \nabla L(\\theta^{(t)}, X) $$
+其中，$\\alpha$ 是学习率，$\nabla L(\\theta^{(t)}, X)$ 是损失函数的梯度。
 
 ## 5.项目实践：代码实例和详细解释说明
 在本节中，我们将使用PyTorch 2.0实现一个简单的线性回归模型。首先，我们需要安装PyTorch框架：
@@ -184,10 +182,8 @@ $$ y = \\beta_0 + \\sum_{i=1}^{n} \\beta_i X_i $$
 为了找到最优的参数 $\\theta = (\\beta_0, \\beta_1, ..., \\beta_n)$，我们通常使用最小二乘法来最小化均方误差（Mean Squared Error, MSE）：
 $$ L(\\theta, X) = \\frac{1}{2N} \\sum_{i=1}^{N} (y_i - (\\beta_0 + \\sum_{j=1}^{n} \\beta_j x_{ij}))^2 $$
 通过梯度下降算法迭代求解最优解：
-$$ \\theta^{(t+1)} = \\theta^{(t)} - \\alpha \
-abla L(\\theta^{(t)}, X) $$
-其中，$\\alpha$ 是学习率，$\
-abla L(\\theta^{(t)}, X)$ 是损失函数的梯度。
+$$ \\theta^{(t+1)} = \\theta^{(t)} - \\alpha \nabla L(\\theta^{(t)}, X) $$
+其中，$\\alpha$ 是学习率，$\nabla L(\\theta^{(t)}, X)$ 是损失函数的梯度。
 
 ## 5.项目实践：代码实例和详细解释说明
 在本节中，我们将使用PyTorch 2.0实现一个简单的线性回归模型。首先，我们需要安装PyTorch框架：
@@ -336,10 +332,8 @@ $$ y = \\beta_0 + \\sum_{i=1}^{n} \\beta_i X_i $$
 为了找到最优的参数 $\\theta = (\\beta_0, \\beta_1, ..., \\beta_n)$，我们通常使用最小二乘法来最小化均方误差（Mean Squared Error, MSE）：
 $$ L(\\theta, X) = \\frac{1}{2N} \\sum_{i=1}^{N} (y_i - (\\beta_0 + \\sum_{j=1}^{n} \\beta_j x_{ij})^2 $$
 通过梯度下降算法迭代求解最优解：
-$$ \\theta^{(t+1)} = \\theta^{(t)} - \\alpha \
-abla L(\\theta^{(t)}, X) $$
-其中，$\\alpha$ 是学习率，$\
-abla L(\\theta^{(t)}, X)$ 是损失函数的梯度。
+$$ \\theta^{(t+1)} = \\theta^{(t)} - \\alpha \nabla L(\\theta^{(t)}, X) $$
+其中，$\\alpha$ 是学习率，$\nabla L(\\theta^{(t)}, X)$ 是损失函数的梯度。
 
 ## 5.项目实践：代码实例和详细解释说明
 在本节中，我们将使用PyTorch 2.0实现一个简单的线性回归模型。首先，我们需要安装PyTorch框架：

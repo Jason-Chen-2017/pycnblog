@@ -133,18 +133,18 @@ class DQN(nn.Module):
 def train_dqn(agent, memory, target_update_freq, gamma, batch_size, device):
     if len(memory) < batch_size:
         return
-    
+
     states, actions, rewards, next_states, dones = memory.sample(batch_size)
     states = torch.FloatTensor(states).to(device)
     actions = torch.LongTensor(actions).unsqueeze(1).to(device)
     rewards = torch.FloatTensor(rewards).unsqueeze(1).to(device)
     next_states = torch.FloatTensor(next_states).to(device)
     dones = torch.BoolTensor(dones).unsqueeze(1).to(device)
-    
+
     q_values = agent(states).gather(1, actions)
     next_q_values = agent(next_states).max(1)[0]
     target_q_values = rewards + gamma * next_q_values * (1 - dones)
-    
+
     loss = F.smooth_l1_loss(q_values, target_q_values.unsqueeze(1))
     agent.optimizer.zero_grad()
     loss.backward()
@@ -166,11 +166,11 @@ for episode in range(num_episodes):
     # 进行一局游戏并收集经验到记忆库
     states, actions, rewards, next_states, dones = play_game()
     memory.add(states, actions, rewards, next_states, dones)
-    
+
     # 检查是否满足更新频率
     if episode % target_update_freq == 0:
         update_target_network(agent, target_agent)
-        
+
     # 训练DQN
     train_dqn(agent, memory, target_update_freq, gamma, batch_size, device)
 

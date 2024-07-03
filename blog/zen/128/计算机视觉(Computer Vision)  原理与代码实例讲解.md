@@ -294,4 +294,4 @@ German shepherd: 1.65%
 
 **答：** 学习计算机视觉需要具备一定的数学基础，例如线性代数、微积分、概率论等，以及编程基础，例如 Python、C++ 等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

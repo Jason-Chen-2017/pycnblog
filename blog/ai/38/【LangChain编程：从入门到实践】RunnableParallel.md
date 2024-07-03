@@ -152,7 +152,7 @@ if __name__ == "__main__":
         FilterData(ThresholdFilter),
         FilterData
     ])
-    
+
     result = task_chain.execute()
     print(result)
 ```

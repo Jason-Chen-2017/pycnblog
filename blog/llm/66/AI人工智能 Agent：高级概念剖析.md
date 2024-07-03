@@ -234,7 +234,7 @@
 状态转移方程为：
 
 $$
-(x_{t+1},y_{t+1}) = (x_t+\Delta x,y_t+\Delta y) 
+(x_{t+1},y_{t+1}) = (x_t+\Delta x,y_t+\Delta y)
 $$
 
 其中 $x_t,y_t$ 分别表示智能代理在时间步 $t$ 的位置。
@@ -242,7 +242,7 @@ $$
 奖励函数为：
 
 $$
-R(x,y,\Delta x,\Delta y) = -\sqrt{(x_{t+1}-x_t)^2+(y_{t+1}-y_t)^2} 
+R(x,y,\Delta x,\Delta y) = -\sqrt{(x_{t+1}-x_t)^2+(y_{t+1}-y_t)^2}
 $$
 
 其中 $\sqrt{(x_{t+1}-x_t)^2+(y_{t+1}-y_t)^2}$ 表示智能代理移动的距离。
@@ -254,7 +254,7 @@ $$
 0.5, & \text{if } \Delta y=0 \\
 0.3, & \text{if } \Delta x=1 \\
 0.2, & \text{if } \Delta y=1 \\
-\end{cases} 
+\end{cases}
 $$
 
 ### 4.3 案例分析与讲解
@@ -266,7 +266,7 @@ $$
 状态转移方程为：
 
 $$
-(x_{t+1},y_{t+1}) = (x_t+\Delta x,y_t+\Delta y) 
+(x_{t+1},y_{t+1}) = (x_t+\Delta x,y_t+\Delta y)
 $$
 
 其中 $x_t,y_t$ 分别表示小车在时间步 $t$ 的位置。
@@ -277,7 +277,7 @@ $$
 R(x,y,\Delta x,\Delta y) = \begin{cases}
 -100, & \text{if } \text{碰撞} \\
 -1, & \text{otherwise} \\
-\end{cases} 
+\end{cases}
 $$
 
 策略为：
@@ -287,7 +287,7 @@ $$
 0.5, & \text{if } \Delta y=0 \\
 0.3, & \text{if } \Delta x=1 \\
 0.2, & \text{if } \Delta y=1 \\
-\end{cases} 
+\end{cases}
 $$
 
 在这个例子中，智能小车需要避免与其他物体发生碰撞。小车在向右移动时，需要向左转向以避免碰撞。当小车向左移动时，需要向右转向。

@@ -195,7 +195,7 @@ class SegNet(nn.Module):
             nn.Conv2d(64, 1, kernel_size=1),
             # ...
         )
-    
+
     def forward(self, x):
         # 编码器
         x = self.encoder(x)

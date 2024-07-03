@@ -116,11 +116,9 @@ $$L(\theta) = \frac{1}{M} \sum_{i=1}^M \left[ \frac{1}{2} (y_i - \hat{y}_i)^2 \r
 
 梯度下降是一种常用的优化算法，其目标是找到使损失函数最小的参数$\theta$。梯度下降的迭代公式如下：
 
-$$\theta^{(t+1)} = \theta^{(t)} - \alpha \
-abla_\theta L(\theta^{(t)})$$
+$$\theta^{(t+1)} = \theta^{(t)} - \alpha \nabla_\theta L(\theta^{(t)})$$
 
-其中，$\alpha$为学习率，$\
-abla_\theta L(\theta^{(t)})$为损失函数关于参数$\theta$的梯度。
+其中，$\alpha$为学习率，$\nabla_\theta L(\theta^{(t)})$为损失函数关于参数$\theta$的梯度。
 
 ### 4.3 案例分析与讲解
 
@@ -151,7 +149,7 @@ abla_\theta L(\theta^{(t)})$为损失函数关于参数$\theta$的梯度。
 ### 5.1 开发环境搭建
 
 1. 安装Python和TensorFlow：
-   
+
    ```bash
    pip install tensorflow
    ```

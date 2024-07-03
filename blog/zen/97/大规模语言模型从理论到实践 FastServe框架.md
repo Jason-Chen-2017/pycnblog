@@ -139,7 +139,7 @@ BERT模型主要由以下几部分组成：
 BERT模型的损失函数为：
 
 $$
-L = \frac{1}{N} \sum_{i=1}^N \sum_{t=1}^{T} (-\log P(y_t|x_{1:t})) + \lambda \sum_{t=2}^{T} (-\log P(y_{t-1}|x_{t-1:t})) 
+L = \frac{1}{N} \sum_{i=1}^N \sum_{t=1}^{T} (-\log P(y_t|x_{1:t})) + \lambda \sum_{t=2}^{T} (-\log P(y_{t-1}|x_{t-1:t}))
 $$
 
 其中，$y_t$ 为第 $t$ 个词的预测标签，$x_{1:t}$ 为前 $t$ 个词的输入序列，$N$ 为样本数量，$T$ 为序列长度。
@@ -151,7 +151,7 @@ $$
 转换器编码层由多头自注意力机制和前馈神经网络组成。假设输入序列为 $x_{1:T}$，则转换器编码层输出为：
 
 $$
-h_t^{(l)} = \text{MultiHeadAttention}(h^{(l-1)}, h^{(l-1)}, h^{(l-1)}) + \text{LayerNorm}(h^{(l-1)}) + \text{FFN}(h^{(l-1)}) + \text{LayerNorm}(h^{(l-1)}) 
+h_t^{(l)} = \text{MultiHeadAttention}(h^{(l-1)}, h^{(l-1)}, h^{(l-1)}) + \text{LayerNorm}(h^{(l-1)}) + \text{FFN}(h^{(l-1)}) + \text{LayerNorm}(h^{(l-1)})
 $$
 
 其中，$h_t^{(l)}$ 为第 $l$ 层、第 $t$ 个词的输出，$\text{MultiHeadAttention}$ 为多头自注意力机制，$\text{LayerNorm}$ 为层归一化，$\text{FFN}$ 为前馈神经网络。
@@ -161,7 +161,7 @@ $$
 注意力机制用于捕捉文本中词与词之间的关系。假设输入序列为 $h^{(l-1)}$，则注意力机制输出为：
 
 $$
-\text{Attention}(Q, K, V) = \text{Softmax}(\frac{QK^T}{\sqrt{d_k}})V 
+\text{Attention}(Q, K, V) = \text{Softmax}(\frac{QK^T}{\sqrt{d_k}})V
 $$
 
 其中，$Q, K, V$ 分别为查询、键和值矩阵，$\text{Softmax}$ 为softmax函数。

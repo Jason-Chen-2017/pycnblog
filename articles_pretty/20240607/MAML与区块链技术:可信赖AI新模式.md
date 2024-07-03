@@ -21,15 +21,13 @@ MAML通过以下步骤实现其目标：
 
 ### 内部循环：
 
-$$ \\theta_t = \\theta_{t-1} + \\eta \\cdot \
-abla_{\\theta_{t-1}} L_t(f_{\\theta_{t-1}}(x), y) $$
+$$ \\theta_t = \\theta_{t-1} + \\eta \\cdot \nabla_{\\theta_{t-1}} L_t(f_{\\theta_{t-1}}(x), y) $$
 
 其中$\\eta$是学习率，$L_t$是任务$t$的损失函数。
 
 ### 外循环：
 
-$$ \\theta_{t+1} = \\theta_t - \\alpha \\cdot \
-abla_\\theta L_{meta}(f_\\theta(x), y) $$
+$$ \\theta_{t+1} = \\theta_t - \\alpha \\cdot \nabla_\\theta L_{meta}(f_\\theta(x), y) $$
 
 $L_{meta}$是元损失函数，用于衡量模型适应新任务的能力。
 

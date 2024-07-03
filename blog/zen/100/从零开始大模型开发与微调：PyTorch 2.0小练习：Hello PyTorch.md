@@ -137,16 +137,16 @@ num_epochs = 1000
 for epoch in range(num_epochs):
     # 前向传播
     y_pred = features @ w + b
-    
+
     # 计算损失
     loss = criterion(y_pred, labels)
-    
+
     # 反向传播
     loss.backward()
-    
+
     # 更新参数
     optimizer.step()
-    
+
     # 清零梯度
     optimizer.zero_grad()
 
@@ -157,7 +157,7 @@ print("Trained parameters: w =", w.item(), "b =", b.item())
 ### 4.4 常见问题解答
 
 - **Q**: 我该如何选择合适的学习率？
-  
+
   **A**: 通常，从较低的学习率开始，比如 $10^{-3}$ 或 $10^{-4}$，并通过实验来调整。确保学习率足够低，以避免过拟合。
 
 - **Q**: 是否需要冻结所有层进行微调？
@@ -189,7 +189,7 @@ class LinearRegression(nn.Module):
     def __init__(self, input_dim, output_dim):
         super(LinearRegression, self).__init__()
         self.linear = nn.Linear(input_dim, output_dim)
-    
+
     def forward(self, x):
         out = self.linear(x)
         return out
@@ -206,10 +206,10 @@ num_epochs = 1000
 for epoch in range(num_epochs):
     # 前向传播
     predictions = model(features)
-    
+
     # 计算损失
     loss = criterion(predictions, labels)
-    
+
     # 反向传播和优化
     optimizer.zero_grad()
     loss.backward()
@@ -285,23 +285,23 @@ print("Trained model parameters: w =", model.linear.weight.item(), "b =", model.
 ## 9. 附录：常见问题与解答
 
 - **Q**: 如何处理大量数据？
-  
+
   **A**: 使用分布式训练，如DataParallel或DistributedDataParallel，将数据和模型分布到多个GPU或机器上进行并行训练。
 
 - **Q**: 如何提高模型的泛化能力？
-  
+
   **A**: 采用正则化技术（如L1、L2正则化）、数据增强、早停策略等，防止过拟合。
 
 - **Q**: 如何评估模型性能？
-  
+
   **A**: 使用准确率、召回率、F1分数、AUC-ROC曲线等指标，结合交叉验证进行评估。
 
 - **Q**: 如何解决内存不足的问题？
-  
+
   **A**: 优化模型结构，减少参数量；使用批量训练，分批处理数据；利用GPU加速计算。
 
 - **Q**: 如何处理不平衡的数据集？
-  
+
   **A**: 通过过采样少数类、欠采样多数类、使用加权损失函数等方式平衡数据集。
 
 ---

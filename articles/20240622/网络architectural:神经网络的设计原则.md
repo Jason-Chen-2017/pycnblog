@@ -117,8 +117,7 @@ $$\delta_i^{(l)} = f'(z_i^{(l)}) \cdot (W^{(l+1)} \cdot \delta_{i}^{(l+1)})$$
 
 3. **梯度下降**：
 
-$$\theta = \theta - \alpha \cdot \
-abla_{\theta} J(\theta)$$
+$$\theta = \theta - \alpha \cdot \nabla_{\theta} J(\theta)$$
 
 其中，$\theta$表示模型参数，$\alpha$表示学习率，$J(\theta)$表示损失函数。
 
@@ -170,11 +169,9 @@ $$\delta_1^{(1)} = f'(z_1^{(1)}) \cdot (W_{2,1} \cdot \delta_2^{(2)})$$
 
 根据梯度下降公式，计算损失函数关于模型参数的梯度，并更新模型参数：
 
-$$\theta = \theta - \alpha \cdot \
-abla_{\theta} J(\theta)$$
+$$\theta = \theta - \alpha \cdot \nabla_{\theta} J(\theta)$$
 
-其中，$\
-abla_{\theta} J(\theta)$表示损失函数关于模型参数的梯度，$\alpha$表示学习率。
+其中，$\nabla_{\theta} J(\theta)$表示损失函数关于模型参数的梯度，$\alpha$表示学习率。
 
 ### 4.3 案例分析与讲解
 
@@ -205,20 +202,14 @@ abla_{\theta} J(\theta)$表示损失函数关于模型参数的梯度，$\alpha$
    - $MSE = \frac{1}{2} \cdot (10 - 3)^2 = 28.5$
 
 4. 计算梯度：
-   - $\
-abla_{y_3^{(3)}} J = 10 - 3 = 7$
-   - $\
-abla_{z_3^{(3)}} J = \frac{\partial J}{\partial z_3^{(3)}} = 1$
-   - $\
-abla_{b_{3,1}} J = \frac{\partial J}{\partial b_{3,1}} = 1$
-   - $\
-abla_{W_{3,1}} J = \frac{\partial J}{\partial W_{3,1}} = y_2^{(2)} - y_{target} = 6 - 3 = 3$
+   - $\nabla_{y_3^{(3)}} J = 10 - 3 = 7$
+   - $\nabla_{z_3^{(3)}} J = \frac{\partial J}{\partial z_3^{(3)}} = 1$
+   - $\nabla_{b_{3,1}} J = \frac{\partial J}{\partial b_{3,1}} = 1$
+   - $\nabla_{W_{3,1}} J = \frac{\partial J}{\partial W_{3,1}} = y_2^{(2)} - y_{target} = 6 - 3 = 3$
 
 5. 更新权重和偏置：
-   - $W_{3,1} = W_{3,1} - \alpha \cdot \
-abla_{W_{3,1}} J = [1] - [3] = [-2]$
-   - $b_{3,1} = b_{3,1} - \alpha \cdot \
-abla_{b_{3,1}} J = 1 - \alpha \cdot 1$
+   - $W_{3,1} = W_{3,1} - \alpha \cdot \nabla_{W_{3,1}} J = [1] - [3] = [-2]$
+   - $b_{3,1} = b_{3,1} - \alpha \cdot \nabla_{b_{3,1}} J = 1 - \alpha \cdot 1$
    - ...
 
 6. 重复步骤2-5，直至损失函数收敛。

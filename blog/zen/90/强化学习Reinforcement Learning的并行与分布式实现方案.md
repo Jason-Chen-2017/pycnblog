@@ -101,9 +101,7 @@
 以下为策略梯度公式：
 
 $$
-\Delta \pi(\alpha | s) = \
-abla_{\alpha} J(\pi) = \
-abla_{\alpha} \sum_{t=0}^\infty \gamma^t R(s_t, \alpha_t)
+\Delta \pi(\alpha | s) = \nabla_{\alpha} J(\pi) = \nabla_{\alpha} \sum_{t=0}^\infty \gamma^t R(s_t, \alpha_t)
 $$
 
 其中，

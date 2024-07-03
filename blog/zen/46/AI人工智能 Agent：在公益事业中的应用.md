@@ -175,15 +175,15 @@ import tensorflow as tf
 class EducationAgent:
     def __init__(self, model):
         self.model = model
-    
+
     def train(self, x, y):
         # 训练模型
         pass
-    
+
     def predict(self, x):
         # 预测学生成绩
         return self.model.predict(x)
-    
+
     def evaluate(self, x, y):
         # 评估模型性能
         pass

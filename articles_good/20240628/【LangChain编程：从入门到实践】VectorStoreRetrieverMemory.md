@@ -128,15 +128,11 @@ $$
 $$
 
 $$
-\vec{h}_t = \vec{h}_t - \alpha \
-abla_W \hat{p}_w - \beta \
-abla_{\vec{h}}_t \hat{p}_w
+\vec{h}_t = \vec{h}_t - \alpha \nabla_W \hat{p}_w - \beta \nabla_{\vec{h}}_t \hat{p}_w
 $$
 
 $$
-\vec{v}_w = \vec{v}_w - \alpha \
-abla_W \hat{p}_w - \beta \
-abla_{\vec{h}}_t \hat{p}_w
+\vec{v}_w = \vec{v}_w - \alpha \nabla_W \hat{p}_w - \beta \nabla_{\vec{h}}_t \hat{p}_w
 $$
 
 其中：

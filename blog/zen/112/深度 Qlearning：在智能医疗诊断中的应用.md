@@ -51,7 +51,7 @@
 - 在现实或模拟环境中，让智能体采取行动并收集状态、动作、奖励和下一个状态的数据。
 
 #### 更新 Q 值估计
-- 使用 Bellman 方程更新 Q 值估计：\[Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha [r_t + \gamma \max_{a'} Q(s_{t+1}, a') - Q(s_t, a_t)]\]
+- 使用 Bellman 方程更新 Q 值估计：$$Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha [r_t + \gamma \max_{a'} Q(s_{t+1}, a') - Q(s_t, a_t)]$$
   其中，$\alpha$ 是学习率，$\gamma$ 是折扣因子。
 
 #### 选择动作

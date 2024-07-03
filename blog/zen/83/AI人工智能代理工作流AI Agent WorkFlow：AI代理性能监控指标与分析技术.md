@@ -143,7 +143,7 @@ $$P = f(X)$$
 
 假设异常检测的决策函数为$D$，则异常检测模型可以表示为：
 
-$$D(X) = \begin{cases} 1 & \text{if } X \in A \\ 0 & \text{otherwise} \end{cases}$$
+$$D(X) = \begin{cases} 1 & \text{if } X \in A \ 0 & \text{otherwise} \end{cases}$$
 
 其中，$A$表示异常值的集合。
 

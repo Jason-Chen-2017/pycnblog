@@ -127,8 +127,7 @@ $$
 假设全局模型参数为 $\theta$，局部模型参数为 $\theta_i$，则模型参数的更新公式为：
 
 $$
-\theta_i = \theta - \alpha \
-abla_\theta L(D_i)
+\theta_i = \theta - \alpha \nabla_\theta L(D_i)
 $$
 
 其中，$\alpha$ 为学习率，$L(D_i)$ 为本地数据上的损失函数。
@@ -136,19 +135,16 @@ $$
 将上述公式代入全局模型参数的计算公式，得到：
 
 $$
-\theta = \frac{1}{N}\sum_{i=1}^N (\theta - \alpha \
-abla_\theta L(D_i))
+\theta = \frac{1}{N}\sum_{i=1}^N (\theta - \alpha \nabla_\theta L(D_i))
 $$
 
 化简后得到：
 
 $$
-\theta = \theta - \frac{\alpha}{N} \sum_{i=1}^N \
-abla_\theta L(D_i)
+\theta = \theta - \frac{\alpha}{N} \sum_{i=1}^N \nabla_\theta L(D_i)
 $$
 
-由于 $\
-abla_\theta L(D_i)$ 为负梯度，因此上述公式可以进一步化简为：
+由于 $\nabla_\theta L(D_i)$ 为负梯度，因此上述公式可以进一步化简为：
 
 $$
 \theta = \frac{1}{N}\sum_{i=1}^N \theta_i
@@ -161,18 +157,15 @@ $$
 在第一个轮次，每个设备上的局部模型参数更新如下：
 
 $$
-\theta_1 = \theta - \alpha \
-abla_\theta L(D_1)
+\theta_1 = \theta - \alpha \nabla_\theta L(D_1)
 $$
 
 $$
-\theta_2 = \theta - \alpha \
-abla_\theta L(D_2)
+\theta_2 = \theta - \alpha \nabla_\theta L(D_2)
 $$
 
 $$
-\theta_3 = \theta - \alpha \
-abla_\theta L(D_3)
+\theta_3 = \theta - \alpha \nabla_\theta L(D_3)
 $$
 
 在第二个轮次，全局模型参数更新如下：
@@ -206,7 +199,7 @@ A：联邦学习的模型性能可能不如集中式学习，因为模型训练�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n federated-learning-env python=3.8 
+conda create -n federated-learning-env python=3.8
 conda activate federated-learning-env
 ```
 

@@ -19,7 +19,7 @@ Presto采用了简单的主从架构，由一个Coordinator节点和多个Worker
 ```mermaid
 graph LR
   A[Coordinator] --> B[Worker]
-  A[Coordinator] --> C[Worker] 
+  A[Coordinator] --> C[Worker]
   A[Coordinator] --> D[Worker]
 ```
 
@@ -29,14 +29,14 @@ graph LR
 ### 2.2 Presto查询执行流程
 ```mermaid
 graph TD
-  A[SQL语句] --> B[语法解析] 
+  A[SQL语句] --> B[语法解析]
   B --> C[生成执行计划]
   C --> D[任务调度]
   D --> E[任务执行]
   E --> F[结果合并]
 ```
 
-- 语法解析：Presto的Coordinator节点负责将SQL语句解析成抽象语法树。 
+- 语法解析：Presto的Coordinator节点负责将SQL语句解析成抽象语法树。
 - 生成执行计划：Coordinator根据语法树生成执行计划，优化器也会对执行计划进行优化。
 - 任务调度：Coordinator将执行计划转换成一系列的Stage，每个Stage包含若干任务，这些任务会被分发给Worker节点执行。
 - 任务执行：Worker节点执行Coordinator分发的任务，从数据源获取数据并进行计算。
@@ -79,7 +79,7 @@ SELECT reverse('Hello, World!');
 这里以一个简单的数学函数为例，实现一个计算平方根的函数：
 ```java
 public class SquareRootFunction {
-    
+
     @ScalarFunction("sqrt")
     @SqlType(StandardTypes.DOUBLE)
     public static double squareRoot(@SqlType(StandardTypes.DOUBLE) double input) {
@@ -101,12 +101,12 @@ SELECT sqrt(4);
 下面是一个更复杂一点的自定义函数例子，实现一个IP地址转整数的函数：
 ```java
 public class IpAddressToLongFunction {
-    
+
     @ScalarFunction("ip2long")
     @SqlType(StandardTypes.BIGINT)
     public static long ipAddressToLong(@SqlType(StandardTypes.VARCHAR) Slice slice) {
         String ip = slice.toStringUtf8();
-        String[] octets = ip.split("\\.");
+        String[] octets = ip.split("\.");
         long result = 0;
         for (String octet : octets) {
             result = result * 256 + Long.parseLong(octet);
@@ -123,9 +123,9 @@ public class IpAddressToLongFunction {
 例如，IP地址`192.168.1.1`转换的过程如下：
 ```
 result = 0
-result = 0 * 256 + 192 = 192 
+result = 0 * 256 + 192 = 192
 result = 192 * 256 + 168 = 49320
-result = 49320 * 256 + 1 = 12625921 
+result = 49320 * 256 + 1 = 12625921
 result = 12625921 * 256 + 1 = 3232235777
 ```
 
@@ -142,7 +142,7 @@ Presto自定义函数在实际的业务场景中有非常广泛的应用，举�
 在金融、医疗等行业，经常需要对一些敏感数据进行脱敏处理，可以通过自定义函数来实现：
 ```java
 public class MaskFunction {
-    
+
     @ScalarFunction("mask")
     @SqlType(StandardTypes.VARCHAR)
     public static Slice mask(@SqlType(StandardTypes.VARCHAR) Slice slice) {
@@ -161,7 +161,7 @@ public class MaskFunction {
 在数据分析过程中，经常需要对数据进行格式转换，比如将JSON字符串解析成对象，可以通过自定义函数来实现：
 ```java
 public class JsonFunction {
-    
+
     @ScalarFunction("json_parse")
     @SqlType(StandardTypes.JSON)
     public static Slice jsonParse(@SqlType(StandardTypes.VARCHAR) Slice slice) {

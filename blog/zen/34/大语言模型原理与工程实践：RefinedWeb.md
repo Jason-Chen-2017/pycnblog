@@ -80,15 +80,15 @@
 
 大语言模型的核心是Transformer架构，其数学模型构建基于以下组件：
 
-- **自注意力机制**：定义为 $A = \\text{MultiHeadAttention}(Q, K, V)$，其中 $Q$、$K$ 和 $V$ 分别是查询、键和值向量，$A$ 是注意力矩阵。
-- **位置嵌入**：通过 $PE = \\sin(\\frac{(pos-1) \\cdot (2i/\\dim)}{10000})$ 和 $\\cos(\\frac{(pos-1) \\cdot (2i/\\dim)}{10000})$ 来获取位置信息。
+- **自注意力机制**：定义为 $A = \text{MultiHeadAttention}(Q, K, V)$，其中 $Q$、$K$ 和 $V$ 分别是查询、键和值向量，$A$ 是注意力矩阵。
+- **位置嵌入**：通过 $PE = \sin(\frac{(pos-1) \cdot (2i/\dim)}{10000})$ 和 $\cos(\frac{(pos-1) \cdot (2i/\dim)}{10000})$ 来获取位置信息。
 - **多层Transformer**：包括编码器和解码器，分别负责处理输入序列和生成序列。
 
 ### 4.2 公式推导过程
 
 假设输入序列 $X$ 的长度为 $L$，每个元素的维度为 $d$，则：
 
-- **自注意力机制**：对于每个头 $h$，$Q$、$K$ 和 $V$ 的计算分别为 $Q = XW_Q$、$K = XW_K$、$V = XW_V$，其中 $W_Q$、$W_K$ 和 $W_V$ 是权重矩阵。注意力分数 $S$ 计算为 $S = \\text{softmax}(QK^T/\\sqrt{d})$，然后与 $V$ 相乘得到输出 $O_h$。所有头的结果通过拼接和线性变换得到最终输出。
+- **自注意力机制**：对于每个头 $h$，$Q$、$K$ 和 $V$ 的计算分别为 $Q = XW_Q$、$K = XW_K$、$V = XW_V$，其中 $W_Q$、$W_K$ 和 $W_V$ 是权重矩阵。注意力分数 $S$ 计算为 $S = \text{softmax}(QK^T/\sqrt{d})$，然后与 $V$ 相乘得到输出 $O_h$。所有头的结果通过拼接和线性变换得到最终输出。
 
 ### 4.3 案例分析与讲解
 
@@ -114,13 +114,13 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # 初始化模型和分词器
-model_name = \"gpt2\"
+model_name = "gpt2"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
 # 输入文本和预测
-input_text = \"我喜欢在周末去\"
-input_ids = tokenizer.encode(input_text, return_tensors=\"pt\")
+input_text = "我喜欢在周末去"
+input_ids = tokenizer.encode(input_text, return_tensors="pt")
 
 # 预测下一个单词
 output = model(input_ids, output_hidden_states=True)
@@ -130,7 +130,7 @@ next_token_scores = output.logits[:, -1, :]
 predicted_token_id = torch.argmax(next_token_scores).item()
 predicted_token = tokenizer.decode(predicted_token_id)
 
-print(f\"预测的下一个单词是：{predicted_token}\")
+print(f"预测的下一个单词是：{predicted_token}")
 ```
 
 ### 5.3 代码解读与分析

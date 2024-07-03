@@ -271,7 +271,7 @@ def evaluate(model, dataset, batch_size):
         for batch in dataloader:
             input_ids, attention_mask, batch_labels = [t.to(device) for t in batch]
             logits = model(input_ids, attention_mask=attention_mask)
-            preds.extend(logits.argmax(dim=1).tolist()) 
+            preds.extend(logits.argmax(dim=1).tolist())
             labels.extend(batch_labels.tolist())
     return accuracy_score(labels, preds)
 ```
@@ -296,7 +296,7 @@ optimizer = AdamW(model.parameters(), lr=2e-5)
 for epoch in range(epochs):
     loss = train(model, train_dataset, batch_size, optimizer)
     print(f"Epoch {epoch+1}, train loss: {loss:.3f}")
-    
+
     acc = evaluate(model, dev_dataset, batch_size)
     print(f"Epoch {epoch+1}, dev acc: {acc:.3f}")
 ```

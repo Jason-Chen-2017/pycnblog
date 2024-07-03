@@ -6,7 +6,7 @@
 ### 1.1  问题的由来
 在机器学习和深度学习领域,我们经常需要衡量模型预测结果与真实标签之间的差异,以此来优化模型参数。交叉熵(Cross Entropy)作为一种常用的损失函数,在分类问题中被广泛使用。它源自信息论领域,用于度量两个概率分布之间的差异性。
 
-### 1.2  研究现状 
+### 1.2  研究现状
 目前,交叉熵已成为分类问题中的标准损失函数之一。无论是传统的机器学习分类算法,还是深度学习中的神经网络,都离不开交叉熵的身影。许多深度学习框架如PyTorch、TensorFlow等都内置了交叉熵损失函数,方便了研究者和工程师的使用。
 
 ### 1.3  研究意义
@@ -68,7 +68,7 @@ $$
 缺点包括:
 - 对离群点(outlier)比较敏感,容易受其影响
 - 没有考虑类别之间的结构关系
-  
+
 ### 3.4  算法应用领域
 交叉熵广泛应用于各种分类问题,如:
 - 图像分类
@@ -149,23 +149,23 @@ import torch.nn as nn
 class BinaryCrossEntropy(nn.Module):
     def __init__(self):
         super(BinaryCrossEntropy, self).__init__()
-    
+
     def forward(self, y_pred, y_true):
         # 对模型输出做sigmoid归一化
-        y_pred = torch.sigmoid(y_pred) 
-        
+        y_pred = torch.sigmoid(y_pred)
+
         # 计算交叉熵损失
-        loss = -torch.mean(y_true * torch.log(y_pred) + 
+        loss = -torch.mean(y_true * torch.log(y_pred) +
                            (1 - y_true) * torch.log(1 - y_pred))
-        
+
         return loss
 
 # 测试
-model_output = torch.tensor([[1.2, 0.8], 
+model_output = torch.tensor([[1.2, 0.8],
                              [-0.3, 1.1],
                              [0.5, 1.6]], requires_grad=True)
 true_label = torch.tensor([[1, 0],
-                           [0, 1], 
+                           [0, 1],
                            [0, 1]])
 
 criterion = BinaryCrossEntropy()
@@ -197,7 +197,7 @@ tensor(0.3677, grad_fn=<NegBackward>)
 - 新闻主题分类:训练一个多分类模型,将新闻文章分类到不同的主题,如体育、娱乐、科技等。
 - 图像场景识别:训练一个卷积神经网络,对输入的图片进行场景分类,如海滩、城市、山地等。
 - 语音情感识别:训练一个循环神经网络,根据语音片段判断说话人的情绪,如高兴、悲伤、愤怒等。
-  
+
 ### 6.4  未来应用展望
 随着深度学习的不断发展,交叉熵损失必将在更多领域得到应用。一些可能的发展方向包括:
 

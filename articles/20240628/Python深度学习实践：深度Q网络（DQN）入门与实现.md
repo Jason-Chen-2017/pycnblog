@@ -96,8 +96,7 @@ DQN的具体操作步骤如下：
    其中，$N$ 为样本数量。
 9. 使用Adam优化器更新策略网络参数：
    $$
-   \theta \leftarrow \theta - \alpha \
-abla_{\theta} \mathcal{L}(\theta)
+   \theta \leftarrow \theta - \alpha \nabla_{\theta} \mathcal{L}(\theta)
    $$
    其中，$\alpha$ 为学习率。
 10. 每隔一定步数更新目标网络参数：
@@ -159,8 +158,7 @@ DQN的数学模型主要包括以下几个部分：
    其中，$N$ 为样本数量。
 6. 使用Adam优化器更新策略网络参数：
    $$
-   \theta \leftarrow \theta - \alpha \
-abla_{\theta} \mathcal{L}(\theta)
+   \theta \leftarrow \theta - \alpha \nabla_{\theta} \mathcal{L}(\theta)
    $$
    其中，$\alpha$ 为学习率。
 7. 每隔一定步数更新目标网络参数：

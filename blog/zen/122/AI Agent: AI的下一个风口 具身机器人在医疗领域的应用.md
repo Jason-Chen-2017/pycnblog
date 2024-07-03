@@ -236,17 +236,17 @@ move_to_goal(goal_x, goal_y)
 
 ## 9. 附录：常见问题与解答
 ### 9.1  Q1: 具身AI Agent与传统AI有什么区别?
-### 9.2  A1: 
+### 9.2  A1:
 
 具身AI Agent与传统AI的主要区别在于，具身AI Agent具有物理实体，能够感知环境、自主运动和与人类交互，而传统AI则主要局限于数据处理和决策支持。
 
 ### 9.3  Q2: 具身AI Agent在医疗领域的应用有哪些?
-### 9.4  A2: 
+### 9.4  A2:
 
 具身AI Agent在医疗领域的应用非常广泛，例如手术机器人、康复机器人、护理机器人等。
 
 ### 9.5  Q3: 具身AI Agent的安全性如何保证?
-### 9.6  A3: 
+### 9.6  A3:
 
 具身AI Agent的安全性需要通过多种措施保证，例如：
 
@@ -256,5 +256,5 @@ move_to_goal(goal_x, goal_y)
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

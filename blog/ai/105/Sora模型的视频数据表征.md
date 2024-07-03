@@ -407,4 +407,4 @@ Sora 模型的研究展望：
 
 **解答:** Sora 模型的研究展望是提高模型的效率、提高模型的鲁棒性、扩展模型的应用领域等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

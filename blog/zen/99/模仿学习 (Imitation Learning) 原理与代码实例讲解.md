@@ -167,12 +167,12 @@ env = gym.make('CartPole-v1')  # 使用Gym环境
 def q_learning(env, episodes):
     # 初始化Q表
     q_table = np.zeros([env.observation_space.n, env.action_space.n])
-    
+
     # 学习参数
     alpha = 0.1
     gamma = 0.9
     epsilon = 0.1
-    
+
     # 迭代次数
     for episode in range(episodes):
         state = env.reset()

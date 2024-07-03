@@ -221,7 +221,7 @@ class DQN:
         self.state_dim = state_dim
         self.action_dim = action_dim
         self.learning_rate = learning_rate
-        
+
         self.model = self._build_model()
         self.target_model = self._build_model()
         self.memory = []

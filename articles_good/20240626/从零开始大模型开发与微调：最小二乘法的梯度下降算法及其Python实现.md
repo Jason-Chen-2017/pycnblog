@@ -92,10 +92,8 @@ $$
 
 1. 初始化模型参数 $\theta$。
 2. 计算损失函数 $\ell(\theta)$。
-3. 计算损失函数对参数 $\theta$ 的梯度 $\
-abla \ell(\theta)$。
-4. 更新模型参数 $\theta = \theta - \alpha \
-abla \ell(\theta)$。
+3. 计算损失函数对参数 $\theta$ 的梯度 $\nabla \ell(\theta)$。
+4. 更新模型参数 $\theta = \theta - \alpha \nabla \ell(\theta)$。
 5. 重复步骤2-4，直至满足停止条件。
 
 ### 3.3 算法优缺点
@@ -173,12 +171,10 @@ $$
 对于线性回归模型，梯度下降的迭代公式如下：
 
 $$
-\theta = \theta - \alpha \
-abla \ell(\theta)
+\theta = \theta - \alpha \nabla \ell(\theta)
 $$
 
-其中，$\
-abla \ell(\theta)$ 为损失函数对参数 $\theta$ 的梯度。
+其中，$\nabla \ell(\theta)$ 为损失函数对参数 $\theta$ 的梯度。
 
 ### 4.3 案例分析与讲解
 

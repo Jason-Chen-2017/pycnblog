@@ -1,7 +1,7 @@
 
 # AI模型安全与隐私保护原理与代码实战案例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 > 关键词：AI模型安全，隐私保护，差分隐私，联邦学习，数据脱敏，安全多方计算，加密算法
 

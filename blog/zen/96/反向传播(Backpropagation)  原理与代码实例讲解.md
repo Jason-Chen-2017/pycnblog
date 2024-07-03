@@ -81,11 +81,11 @@
 **前向传播**：
 
 $$
-Z^{(l)} = W^{(l)} \cdot A^{(l-1)} + b^{(l)} 
+Z^{(l)} = W^{(l)} \cdot A^{(l-1)} + b^{(l)}
 $$
 
 $$
-A^{(l)} = \sigma(Z^{(l)}) 
+A^{(l)} = \sigma(Z^{(l)})
 $$
 
 其中，$W^{(l)}$和$b^{(l)}$分别为第l层的权重和偏置，$\sigma$为激活函数。
@@ -93,7 +93,7 @@ $$
 **损失函数**：
 
 $$
-L = \frac{1}{2} \sum_{i=1}^{N} (Y_i - \hat{Y}_i)^2 
+L = \frac{1}{2} \sum_{i=1}^{N} (Y_i - \hat{Y}_i)^2
 $$
 
 其中，$Y_i$为真实标签，$\hat{Y}_i$为预测标签。
@@ -101,11 +101,11 @@ $$
 **反向传播**：
 
 $$
-\frac{\partial L}{\partial W^{(l)}} = \frac{\partial L}{\partial A^{(l)}} \cdot \frac{\partial A^{(l)}}{\partial Z^{(l)}} \cdot \frac{\partial Z^{(l)}}{\partial W^{(l)}} 
+\frac{\partial L}{\partial W^{(l)}} = \frac{\partial L}{\partial A^{(l)}} \cdot \frac{\partial A^{(l)}}{\partial Z^{(l)}} \cdot \frac{\partial Z^{(l)}}{\partial W^{(l)}}
 $$
 
 $$
-\frac{\partial L}{\partial b^{(l)}} = \frac{\partial L}{\partial A^{(l)}} \cdot \frac{\partial A^{(l)}}{\partial Z^{(l)}} \cdot \frac{\partial Z^{(l)}}{\partial b^{(l)}} 
+\frac{\partial L}{\partial b^{(l)}} = \frac{\partial L}{\partial A^{(l)}} \cdot \frac{\partial A^{(l)}}{\partial Z^{(l)}} \cdot \frac{\partial Z^{(l)}}{\partial b^{(l)}}
 $$
 
 其中，$\frac{\partial L}{\partial A^{(l)}}$为损失函数对第l层输出的梯度，$\frac{\partial A^{(l)}}{\partial Z^{(l)}}$为激活函数的导数，$\frac{\partial Z^{(l)}}{\partial W^{(l)}}$和$\frac{\partial Z^{(l)}}{\partial b^{(l)}}$分别为权重和偏置的梯度。
@@ -125,7 +125,7 @@ $$
 1. **计算损失函数对输出的梯度**：
 
 $$
-\frac{\partial L}{\partial \hat{Y}^{(l)}} = (Y^{(l)} - \hat{Y}^{(l)}) 
+\frac{\partial L}{\partial \hat{Y}^{(l)}} = (Y^{(l)} - \hat{Y}^{(l)})
 $$
 
 其中，$Y^{(l)}$为真实标签，$\hat{Y}^{(l)}$为预测标签。
@@ -133,7 +133,7 @@ $$
 2. **计算激活函数的导数**：
 
 $$
-\frac{\partial A^{(l)}}{\partial Z^{(l)}} = \sigma'(Z^{(l)}) = A^{(l)}(1 - A^{(l)}) 
+\frac{\partial A^{(l)}}{\partial Z^{(l)}} = \sigma'(Z^{(l)}) = A^{(l)}(1 - A^{(l)})
 $$
 
 其中，$\sigma'(Z^{(l)})$为激活函数的导数。
@@ -141,17 +141,17 @@ $$
 3. **计算损失函数对前一层输出的梯度**：
 
 $$
-\frac{\partial L}{\partial A^{(l-1)}} = \frac{\partial L}{\partial \hat{Y}^{(l)}} \cdot \frac{\partial A^{(l)}}{\partial Z^{(l)}} 
+\frac{\partial L}{\partial A^{(l-1)}} = \frac{\partial L}{\partial \hat{Y}^{(l)}} \cdot \frac{\partial A^{(l)}}{\partial Z^{(l)}}
 $$
 
 4. **计算损失函数对权重和偏置的梯度**：
 
 $$
-\frac{\partial L}{\partial W^{(l)}} = \frac{\partial L}{\partial A^{(l)}} \cdot \frac{\partial A^{(l)}}{\partial Z^{(l)}} \cdot A^{(l-1)} 
+\frac{\partial L}{\partial W^{(l)}} = \frac{\partial L}{\partial A^{(l)}} \cdot \frac{\partial A^{(l)}}{\partial Z^{(l)}} \cdot A^{(l-1)}
 $$
 
 $$
-\frac{\partial L}{\partial b^{(l)}} = \frac{\partial L}{\partial A^{(l)}} \cdot \frac{\partial A^{(l)}}{\partial Z^{(l)}} 
+\frac{\partial L}{\partial b^{(l)}} = \frac{\partial L}{\partial A^{(l)}} \cdot \frac{\partial A^{(l)}}{\partial Z^{(l)}}
 $$
 
 ### 4.3 案例分析与讲解

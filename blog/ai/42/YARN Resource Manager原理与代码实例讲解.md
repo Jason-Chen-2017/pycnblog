@@ -63,11 +63,11 @@ graph TD
     RM -->|Allocates resources| NM1 & NM2 & NM3
     NM1 -->|Manages| C1 & C2
     NM2 -->|Manages| C3
-    
+
     subgraph Application
     AM(ApplicationMaster)
     end
-    
+
     AM -->|Negotiates resources| RM
     AM -->|Monitors| C1 & C2 & C3
 ```

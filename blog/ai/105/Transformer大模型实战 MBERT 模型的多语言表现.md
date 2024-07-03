@@ -274,4 +274,4 @@ M-BERT 模型是 BERT 模型的多语言版本，它使用多语言语料进行�
 
 可以使用不同的评估指标来评估 M-BERT 模型在不同 NLP 任务上的性能，例如准确率、召回率、F1 值等。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

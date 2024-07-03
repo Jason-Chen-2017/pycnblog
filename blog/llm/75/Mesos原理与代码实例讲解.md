@@ -187,10 +187,10 @@ import subprocess
 def run_task(task_id, command):
     # 启动Executor
     subprocess.run(f"docker run -d --name mesos-executor-{task_id} --net host --restart=always mesos/mesos executor --master=master:5050", shell=True)
-    
+
     # 启动任务
     subprocess.run(f"docker exec mesos-executor-{task_id} {command}", shell=True)
-    
+
     # 停止Executor
     subprocess.run("docker stop mesos-executor-{task_id}".format(task_id=task_id), shell=True)
 

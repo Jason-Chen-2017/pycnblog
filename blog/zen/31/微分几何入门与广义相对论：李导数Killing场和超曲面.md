@@ -41,7 +41,7 @@ Killing场是流形上的矢量场，满足李导数为零的条件，即沿此�
 ### 3.1 算法原理概述
 
 - **李导数计算**：在给定流形上的两个向量场时，通过计算它们的李导数来了解向量场的变化方式。李导数的计算涉及到坐标变换和微分运算，体现了向量场在不同坐标系下的行为差异。
-  
+
 - **Killing场检测**：判断一个向量场是否为Killing场，即检查该向量场是否满足李导数为零的条件。这通常通过计算李导数并验证其是否等于零来完成。
 
 - **超曲面分析**：通过定义超曲面的几何属性，如曲率、测度和拓扑结构，来分析超曲面与其所在流形的关系。这涉及使用微分几何的基本工具，如度量张量和黎曼曲率张量。
@@ -91,15 +91,11 @@ Killing场是流形上的矢量场，满足李导数为零的条件，即沿此�
 
 #### 李导数公式：
 
-$$ \
-abla_X Y = X(g(Y, Z)) - g(\
-abla_X Y, Z) $$
+$$ \nabla_X Y = X(g(Y, Z)) - g(\nabla_X Y, Z) $$
 
 #### Killing场定义：
 
-$$ \
-abla_X Y = \
-abla_Y X $$
+$$ \nabla_X Y = \nabla_Y X $$
 
 ### 4.3 案例分析与讲解
 
@@ -128,20 +124,20 @@ abla_Y X $$
 import numpy as np
 
 def metric_tensor(m):
-    \"\"\"定义度量张量\"\"\"
+    """定义度量张量"""
     return np.array([[m, 0], [0, m]])
 
 def christoffel_symbols(m):
-    \"\"\"计算Christoffel符号\"\"\"
+    """计算Christoffel符号"""
     # 假设度量张量为m，具体实现根据m的值进行计算
     pass
 
 def connection_coefficients(m, christoffel_symbols):
-    \"\"\"构建连接系数矩阵\"\"\"
+    """构建连接系数矩阵"""
     pass
 
 def lie_derivative(X, Y):
-    \"\"\"计算李导数\"\"\"
+    """计算李导数"""
     pass
 
 # 示例度量张量和向量场

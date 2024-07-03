@@ -124,7 +124,7 @@ from scipy.integrate import odeint
 
 # 定义度规函数
 def metric(r, M):
-    return -(1 - 2*M/r) 
+    return -(1 - 2*M/r)
 
 # 定义测地线方程
 def geodesic(y, s, M):
@@ -187,7 +187,7 @@ plt.show()
 
 ### 7.1  学习资源推荐
 
-- Sean Carroll - Spacetime and Geometry 
+- Sean Carroll - Spacetime and Geometry
 - Misner, Thorne, Wheeler - Gravitation
 - Nakahara - Geometry, Topology and Physics
 - 吴崇试 - 广义相对论引论

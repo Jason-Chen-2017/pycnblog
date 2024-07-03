@@ -46,7 +46,7 @@
 
 #### 定义弱紧基数
 
-定义弱紧基数通常涉及到选择函数和选择公理的概念。一个基数\\( \\kappa \\)是弱紧基数，如果存在一个选择函数\\( f \\)，对于集合\\( A \\)中的每一个非空子集\\( X \\)，\\( f(X) \\)在\\( X \\)中选择一个元素，且\\( \\kappa \\)满足某些特定的性质。
+定义弱紧基数通常涉及到选择函数和选择公理的概念。一个基数\( \kappa \)是弱紧基数，如果存在一个选择函数\( f \)，对于集合\( A \)中的每一个非空子集\( X \)，\( f(X) \)在\( X \)中选择一个元素，且\( \kappa \)满足某些特定的性质。
 
 #### 判断弱紧基数
 
@@ -74,19 +74,19 @@
 
 弱紧基数的定义通常涉及到以下公式：
 
-$$ \\kappa \\text{ 是弱紧基数} \\iff (\\exists f: \\mathcal{P}(A) \\setminus \\{\\emptyset\\} \\to A)(\\forall X \\subset A, X \
-eq \\emptyset, f(X) \\in X) $$
+$$ \kappa \text{ 是弱紧基数} \iff (\exists f: \mathcal{P}(A) \setminus \{\emptyset\} \to A)(\forall X \subset A, X \
+eq \emptyset, f(X) \in X) $$
 
-其中，\\( \\mathcal{P}(A) \\) 表示集合 \\( A \\) 的幂集。
+其中，\( \mathcal{P}(A) \) 表示集合 \( A \) 的幂集。
 
 ### 4.3 案例分析与讲解
 
-考虑一个具体的例子，假设集合 \\( A = \\{1, 2, 3\\} \\)，对于任意非空子集 \\( X \\)，选择一个元素作为 \\( f(X) \\)。如果 \\( X = \\{1, 2\\} \\)，可以选择 \\( f(X) = 1 \\) 或 \\( f(X) = 2 \\)，这取决于选择函数的具体定义。
+考虑一个具体的例子，假设集合 \( A = \{1, 2, 3\} \)，对于任意非空子集 \( X \)，选择一个元素作为 \( f(X) \)。如果 \( X = \{1, 2\} \)，可以选择 \( f(X) = 1 \) 或 \( f(X) = 2 \)，这取决于选择函数的具体定义。
 
 ### 4.4 常见问题解答
 
 #### Q: 如何验证一个基数是弱紧基数？
-   A: 验证一个基数是否为弱紧基数，需要构造一个选择函数，对于集合 \\( A \\) 的每个非空子集 \\( X \\)，选择一个元素 \\( f(X) \\)。验证过程可能需要深入的集合论知识和逻辑推理。
+   A: 验证一个基数是否为弱紧基数，需要构造一个选择函数，对于集合 \( A \) 的每个非空子集 \( X \)，选择一个元素 \( f(X) \)。验证过程可能需要深入的集合论知识和逻辑推理。
 
 #### Q: 弱紧基数与连续统假设有什么关系？
    A: 弱紧基数的概念与连续统假设紧密相关，后者探讨了无限基数之间的关系。在某些数学模型中，连续统假设可以用来证明某些基数不是弱紧基数，或者反之亦然。
@@ -105,24 +105,24 @@ eq \\emptyset, f(X) \\in X) $$
 class WeaklyCompactCardinal:
     def __init__(self, cardinality):
         self.cardinality = cardinality
-    
+
     def is_weakly_compact(self, set_collection):
-        \"\"\"
+        """
         判断一个集合是否为弱紧基数。
         参数：
             set_collection：包含多个非空集合的列表。
         返回：
             如果对每个集合都能选择一个元素，则返回 True，否则返回 False。
-        \"\"\"
+        """
         for collection in set_collection:
             if not collection or not self.choice_function(collection):
                 return False
         return True
 
     def choice_function(self, collection):
-        \"\"\"
+        """
         定义选择函数，选择一个元素并验证是否属于集合。
-        \"\"\"
+        """
         # 假设选择函数在这里定义
         pass
 
@@ -132,7 +132,7 @@ weak_cardinal = WeaklyCompactCardinal(3)
 # 验证弱紧基数
 test_set_collection = [{1, 2}, {2, 3}, {1}]
 result = weak_cardinal.is_weakly_compact(test_set_collection)
-print(f\"是否为弱紧基数：{result}\")
+print(f"是否为弱紧基数：{result}")
 ```
 
 ### 5.3 代码解读与分析

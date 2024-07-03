@@ -189,7 +189,7 @@ DataStream<Tuple2<Double, Vector>> predictionStream = model.transform(testingDat
 #### 6.1.3 在线推荐服务
 
 ### 6.2 金融风控
-#### 6.2.1 实时交易数据处理  
+#### 6.2.1 实时交易数据处理
 #### 6.2.2 欺诈行为检测
 #### 6.2.3 风险预警
 

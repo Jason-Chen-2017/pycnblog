@@ -140,30 +140,30 @@ def style_transfer(content_path, style_path, content_weights=[0.5], style_weight
     base_model = VGG19(weights='imagenet', include_top=False)
     content_layers = ['block5_conv2']  # 可以选择不同的层来控制内容损失的权重
     style_layers = ['block1_conv1', 'block2_conv1', 'block3_conv1', 'block4_conv1', 'block5_conv1']
-    
+
     content_outputs = [base_model.get_layer(name).output for name in content_layers]
     style_outputs = [base_model.get_layer(name).output for name in style_layers]
     model_outputs = content_outputs + style_outputs
-    
+
     # 创建模型
     model = Model(inputs=base_model.input, outputs=model_outputs)
-    
+
     # 计算内容损失和风格损失
     content_losses = [Lambda(lambda x: K.mean(x**2), output_shape=lambda s: s)(K.concatenate([content_outputs[i], content_weights[i]*content_weights[i]])) for i in range(len(content_layers))]
     style_losses = [Lambda(lambda x: K.mean((K.batch_dot(x, x, axes=[1, 2]) - K.batch_dot(style_weights[i], style_weights[i], axes=[0, 1]))**2), output_shape=lambda s: s)(K.concatenate([style_outputs[i], K.repeat_elements(style_weights[i], K.shape(style_outputs[i])[1], axis=1)])).sum() for i in range(len(style_layers))]
-    
+
     # 总损失函数
     loss = K.sum(content_losses) + K.sum(style_losses)
     model.add_loss(loss)
     model.compile(optimizer=tf.optimizers.Adam(learning_rate=learning_rate))
-    
+
     # 加载内容和风格图片
     content_img = preprocess_image(content_path)
     style_img = preprocess_image(style_path)
-    
+
     # 训练模型
     model.fit([content_img, style_img], epochs=epochs)
-    
+
     # 获取生成的风格迁移图像
     generated_img = model.predict([content_img, style_img])
     return generated_img[0]

@@ -65,7 +65,7 @@ i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i)
 $$
 
 $$
-\tilde{C}_t = \tanh(W_C \cdot [h_{t-1}, x_t] + b_C)  
+\tilde{C}_t = \tanh(W_C \cdot [h_{t-1}, x_t] + b_C)
 $$
 
 其中:
@@ -148,40 +148,40 @@ $$
 
 1. 遗忘门计算
 
-令$W_f=\begin{bmatrix}0.2&0.4\\-0.3&0.1\end{bmatrix}$, $b_f=\begin{bmatrix}0.6\\0.2\end{bmatrix}$
+令$W_f=\begin{bmatrix}0.2&0.4\-0.3&0.1\end{bmatrix}$, $b_f=\begin{bmatrix}0.6\0.2\end{bmatrix}$
 
 $$
-f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) = \sigma\left(\begin{bmatrix}0.2&0.4\\-0.3&0.1\end{bmatrix}\cdot\begin{bmatrix}0.1\\0.3\\3\end{bmatrix} + \begin{bmatrix}0.6\\0.2\end{bmatrix}\right) = \begin{bmatrix}0.82\\0.39\end{bmatrix}
+f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) = \sigma\left(\begin{bmatrix}0.2&0.4\-0.3&0.1\end{bmatrix}\cdot\begin{bmatrix}0.1\0.3\3\end{bmatrix} + \begin{bmatrix}0.6\0.2\end{bmatrix}\right) = \begin{bmatrix}0.82\0.39\end{bmatrix}
 $$
 
 2. 输入门和细胞状态候选值计算
 
-令$W_i=\begin{bmatrix}0.5&-0.3\\0.1&0.2\end{bmatrix}$, $b_i=\begin{bmatrix}-0.1\\0.4\end{bmatrix}$, $W_C=\begin{bmatrix}-0.2&0.1\\-0.3&0.2\end{bmatrix}$, $b_C=\begin{bmatrix}0.2\\0.1\end{bmatrix}$
+令$W_i=\begin{bmatrix}0.5&-0.3\0.1&0.2\end{bmatrix}$, $b_i=\begin{bmatrix}-0.1\0.4\end{bmatrix}$, $W_C=\begin{bmatrix}-0.2&0.1\-0.3&0.2\end{bmatrix}$, $b_C=\begin{bmatrix}0.2\0.1\end{bmatrix}$
 
 $$
-i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) = \begin{bmatrix}0.45\\0.63\end{bmatrix}
+i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) = \begin{bmatrix}0.45\0.63\end{bmatrix}
 $$
 
 $$
-\tilde{C}_t = \tanh(W_C \cdot [h_{t-1}, x_t] + b_C) = \begin{bmatrix}0.81\\-0.66\end{bmatrix}
+\tilde{C}_t = \tanh(W_C \cdot [h_{t-1}, x_t] + b_C) = \begin{bmatrix}0.81\-0.66\end{bmatrix}
 $$
 
 3. 细胞状态更新
 
 $$
-C_t = f_t * C_{t-1} + i_t * \tilde{C}_t = \begin{bmatrix}0.82&0.39\end{bmatrix}*\begin{bmatrix}0.5\\0.9\end{bmatrix} + \begin{bmatrix}0.45\\0.63\end{bmatrix}*\begin{bmatrix}0.81\\-0.66\end{bmatrix} = \begin{bmatrix}0.78\\-0.03\end{bmatrix}
+C_t = f_t * C_{t-1} + i_t * \tilde{C}_t = \begin{bmatrix}0.82&0.39\end{bmatrix}*\begin{bmatrix}0.5\0.9\end{bmatrix} + \begin{bmatrix}0.45\0.63\end{bmatrix}*\begin{bmatrix}0.81\-0.66\end{bmatrix} = \begin{bmatrix}0.78\-0.03\end{bmatrix}
 $$
 
 4. 输出门计算
 
-令$W_o=\begin{bmatrix}-0.1&0.2\\0.3&-0.4\end{bmatrix}$, $b_o=\begin{bmatrix}0.3\\-0.2\end{bmatrix}$
+令$W_o=\begin{bmatrix}-0.1&0.2\0.3&-0.4\end{bmatrix}$, $b_o=\begin{bmatrix}0.3\-0.2\end{bmatrix}$
 
 $$
-o_t = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) = \begin{bmatrix}0.68\\0.34\end{bmatrix}
+o_t = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) = \begin{bmatrix}0.68\0.34\end{bmatrix}
 $$
 
 $$
-h_t = o_t * \tanh(C_t) = \begin{bmatrix}0.68&0.34\end{bmatrix}*\begin{bmatrix}0.64\\-0.03\end{bmatrix}=\begin{bmatrix}0.43\\-0.01\end{bmatrix}
+h_t = o_t * \tanh(C_t) = \begin{bmatrix}0.68&0.34\end{bmatrix}*\begin{bmatrix}0.64\-0.03\end{bmatrix}=\begin{bmatrix}0.43\-0.01\end{bmatrix}
 $$
 
 通过上述计算步骤,我们得到了当前时刻$t$的细胞状态$C_t$和隐藏状态输出$h_t$。这些状态将被传递到下一时刻,用于预测序列的下一个值。
@@ -200,22 +200,22 @@ class LSTMClassifier(nn.Module):
         super(LSTMClassifier, self).__init__()
         self.hidden_dim = hidden_dim
         self.num_layers = num_layers
-        
+
         self.embedding = nn.Embedding(vocab_size, embedding_dim)
         self.lstm = nn.LSTM(embedding_dim, hidden_dim, num_layers, batch_first=True)
         self.fc = nn.Linear(hidden_dim, label_size)
-        
+
     def forward(self, x, hidden):
         batch_size = x.size(0)
-        
+
         embeds = self.embedding(x)
         lstm_out, hidden = self.lstm(embeds, hidden)
-        
+
         lstm_out = lstm_out[:,-1,:]
-        
+
         out = self.fc(lstm_out)
         return out, hidden
-    
+
     def init_hidden(self, batch_size):
         weight = next(self.parameters()).data
         hidden = (weight.new(self.num_layers, batch_size, self.hidden_dim).zero_(),

@@ -246,7 +246,7 @@ train_texts = ['This is a good movie', 'This is a bad movie']
 train_labels = [0, 1]
 
 # 构建数据加载器
-train_dataloader = torch.utils.data.DataLoader([torch.tensor([tokenizer.encode(text) for text in train_texts]), 
+train_dataloader = torch.utils.data.DataLoader([torch.tensor([tokenizer.encode(text) for text in train_texts]),
                                               torch.tensor(train_labels)], batch_size=1)
 
 # 模型训练
@@ -257,7 +257,7 @@ for epoch in range(2):
 
 # 模型评估
 test_texts = ['This is a great movie', 'This is a terrible movie']
-test_dataloader = torch.utils.data.DataLoader([torch.tensor([tokenizer.encode(text) for text in test_texts]), 
+test_dataloader = torch.utils.data.DataLoader([torch.tensor([tokenizer.encode(text) for text in test_texts]),
                                               torch.tensor([0, 1])], batch_size=1)
 print(f"Test acc: {evaluate(model, test_dataloader)}")
 ```

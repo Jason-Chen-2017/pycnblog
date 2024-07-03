@@ -54,7 +54,7 @@ Q-learning算法通过以下步骤实现学习：
 4. **更新Q值**：根据以下公式更新Q值：
 
 $$
- Q(s, a) = Q(s, a) + \alpha \left[ R(s, a) + \gamma \max_{a'} Q(s', a') - Q(s, a) \right] 
+ Q(s, a) = Q(s, a) + \alpha \left[ R(s, a) + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]
 $$
 
 其中：
@@ -106,7 +106,7 @@ Q-learning在智能电网中的应用领域主要包括：
 假设我们有一个Q-learning模型，其状态空间为$S$，动作空间为$A$，奖励函数为$R$，学习率为$\alpha$，折扣因子为$\gamma$。则Q-learning模型的更新公式如下：
 
 $$
- Q(s, a) = Q(s, a) + \alpha \left[ R(s, a) + \gamma \max_{a'} Q(s', a') - Q(s, a) \right] 
+ Q(s, a) = Q(s, a) + \alpha \left[ R(s, a) + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]
 $$
 
 其中：

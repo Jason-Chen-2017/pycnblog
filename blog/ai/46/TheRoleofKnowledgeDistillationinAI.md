@@ -38,7 +38,7 @@
 
 ```mermaid
 graph LR
-A[Teacher Model] -- Soft Targets --> C[Student Model] 
+A[Teacher Model] -- Soft Targets --> C[Student Model]
 B[Hard Targets] --> C
 C -- KL Divergence Loss --> D[Soft Targets]
 C -- Cross Entropy Loss --> B

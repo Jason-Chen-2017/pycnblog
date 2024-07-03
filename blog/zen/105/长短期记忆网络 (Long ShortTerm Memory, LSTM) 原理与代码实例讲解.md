@@ -1,7 +1,7 @@
 
 # 长短期记忆网络 (Long Short-Term Memory, LSTM) 原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -184,7 +184,7 @@ class LSTMModel(nn.Module):
         self.hidden_dim = hidden_dim
         self.lstm = nn.LSTM(input_dim, hidden_dim)
         self.fc = nn.Linear(hidden_dim, output_dim)
-    
+
     def forward(self, x):
         h0 = torch.zeros(1, x.size(0), self.hidden_dim).requires_grad_()
         c0 = torch.zeros(1, x.size(0), self.hidden_dim).requires_grad_()

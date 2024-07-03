@@ -108,16 +108,13 @@ $$
 假设模型参数为 $\theta$，则在数据分布 $D$ 上的梯度为：
 
 $$
-\
-abla_{\theta} L(\theta) = \mathbb{E}_{x,y \sim D} [\
-abla_{\theta} L(y, f(x;\theta))]
+\nabla_{\theta} L(\theta) = \mathbb{E}_{x,y \sim D} [\nabla_{\theta} L(y, f(x;\theta))]
 $$
 
 为了使模型在少量样本上快速收敛，我们需要找到一个梯度小的参数更新公式：
 
 $$
-\theta_{\text{new}} = \theta - \eta \
-abla_{\theta} L(\theta)
+\theta_{\text{new}} = \theta - \eta \nabla_{\theta} L(\theta)
 $$
 
 其中，$\eta$ 为学习率。

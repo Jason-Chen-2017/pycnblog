@@ -117,7 +117,7 @@
    其中，$\text{similarity}$函数可以根据具体场景选择不同的相似度度量方法，如余弦相似度、欧氏距离等。
 
 2. **初始化标签向量$\textbf{y}^0$**：
-   $$\textbf{y}^0_i = \begin{cases} 
+   $$\textbf{y}^0_i = \begin{cases}
    y_i & \text{if } y_i \text{ is known} \\
    0 & \text{if } y_i \text{ is unknown}
    \end{cases}$$

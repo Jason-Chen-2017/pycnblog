@@ -137,12 +137,12 @@ $$
             margin: 0;
             font-family: Arial, sans-serif;
         }
-        
+
         .container {
             width: 80%;
             margin: 0 auto;
         }
-        
+
         @media (max-width: 768px) {
             .container {
                 width: 95%;
@@ -243,12 +243,12 @@ public class DeviceController {
             margin: 0;
             font-family: Arial, sans-serif;
         }
-        
+
         .container {
             width: 80%;
             margin: 0 auto;
         }
-        
+
         @media (max-width: 768px) {
             .container {
                 width: 95%;
@@ -280,7 +280,7 @@ public class DeviceController {
                 deviceList.appendChild(deviceElement);
             });
         });
-        
+
         // 控制设备
         function controlDevice(id, status) {
             axios.post('/api/devices/' + id + '/status', { status }).then(function() {

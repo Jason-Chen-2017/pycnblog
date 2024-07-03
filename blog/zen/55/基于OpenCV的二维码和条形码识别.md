@@ -139,26 +139,26 @@ cnts = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)[-2]
 for c in cnts:
     # 计算轮廓的边界框
     x, y, w, h = cv2.boundingRect(c)
-    
+
     # 根据边界框的长宽比进行过滤
     ar = w / float(h)
     if ar < 0.5 or ar > 0.9:
         continue
-        
+
     # 透视变换
     rect = np.zeros((4, 2), dtype="float32")
     s = np.sum(c, axis=2)
     tl = tuple(c[np.argmin(s)][0])  # 左上角
     br = tuple(c[np.argmax(s)][0])  # 右下角
-    
+
     rect[0] = tl
     rect[2] = br
     (rect[1], rect[3]) = (br, tl)
-    
+
     dst = np.array([[0, 0], [w - 1, 0], [w - 1, h - 1], [0, h - 1]], dtype="float32")
     M = cv2.getPerspectiveTransform(rect, dst)
     warp = cv2.warpPerspective(gray, M, (w, h))
-    
+
     # 解码
     decoded = pyzbar.decode(warp)
     for d in decoded:
@@ -168,7 +168,7 @@ for c in cnts:
         text = str(d.data.decode("utf-8"))
         cv2.putText(img, text, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
 
-# 显示结果图像        
+# 显示结果图像
 cv2.imshow("Result", img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

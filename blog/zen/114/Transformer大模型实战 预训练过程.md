@@ -224,7 +224,7 @@ for epoch in range(num_epochs):
         loss.backward()
         optimizer.step()
     average_train_loss = total_train_loss / len(train_dataloader)
-    
+
     model.eval()
     total_eval_loss = 0
     for batch in eval_dataloader:

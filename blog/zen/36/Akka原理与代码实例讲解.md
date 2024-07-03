@@ -91,7 +91,7 @@ Akka实现了一系列算法来支持其核心功能，包括但不限于：
 
 - **如何选择合适的线程池大小？**
   可以根据系统的并发需求和硬件资源来计算线程池的大小。通常，可以使用系统每秒需要处理的请求量除以每个线程的处理能力来估算。
-  
+
 - **如何处理异常和错误？**
   在Akka中，可以通过配置Actor的行为来处理异常和错误，例如重试策略、超时处理、日志记录等。
 
@@ -114,20 +114,20 @@ import akka.actor.Actor
 import scala.concurrent.duration._
 
 // 创建一个Actor系统
-val system = ActorSystem(\"MyActorSystem\")
+val system = ActorSystem("MyActorSystem")
 
 // 定义一个Actor类
 class MyActor extends Actor {
   def receive = {
-    case message => println(s\"Received message: $message\")
+    case message => println(s"Received message: $message")
   }
 }
 
 // 创建并启动一个Actor
-val myActor = system.actorOf(Props[MyActor], \"myActor\")
+val myActor = system.actorOf(Props[MyActor], "myActor")
 
 // 向Actor发送消息
-myActor ! \"Hello, World!\"
+myActor ! "Hello, World!"
 ```
 
 ### 5.3 代码解读与分析

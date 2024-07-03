@@ -117,7 +117,7 @@ $$
 其中 $R(\theta)$ 为旋转矩阵，具体表达式为：
 
 $$
-R(\theta) = 
+R(\theta) =
 \begin{bmatrix}
 \cos(\theta) & -\sin(\theta) \\
 \sin(\theta) & \cos(\theta)

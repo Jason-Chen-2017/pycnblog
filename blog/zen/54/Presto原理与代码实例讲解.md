@@ -151,7 +151,7 @@ STORED AS TEXTFILE;
 
 ```sql
 -- 连接Presto集群
-presto> 
+presto>
 
 -- 查看可用的Hive schema
 presto> SHOW SCHEMAS FROM hive;
@@ -165,8 +165,8 @@ presto> DESCRIBE orders;
 -- 查询订单总金额
 presto> SELECT sum(total_amount) AS total_sales
          FROM orders;
-         
--- 按客户ID分组,计算每个客户的订单总金额         
+
+-- 按客户ID分组,计算每个客户的订单总金额
 presto> SELECT customer_id, sum(total_amount) AS customer_sales
          FROM orders
          GROUP BY customer_id

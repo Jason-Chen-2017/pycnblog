@@ -32,7 +32,7 @@ PageRank算法的数学模型借鉴了马尔可夫链的随机游走概念。假
 
 每个网页的PageRank值由其他网页的PageRank值和链入本页面的链接数共同决定。具有高PageRank值的网页,如果链入某个网页,就会为该网页带来较高的权重分数。通过不断迭代,所有网页的PageRank值最终会收敛到一个稳定值。
 
-## 3. 核心算法原理具体操作步骤 
+## 3. 核心算法原理具体操作步骤
 
 ### 3.1 PageRank算法流程
 
@@ -85,7 +85,7 @@ $$\vec{p} = c\vec{e} + (1-c)M^T\vec{p}$$
 
 对于任意网页 $u$, 如果存在 $k$ 个网页 $v_1,v_2,...,v_k$ 链接到 $u$, 则 $M$ 矩阵中第 $u$ 行的元素为:
 
-$$M_{u,v_i} = \begin{cases} 
+$$M_{u,v_i} = \begin{cases}
 \frac{1}{L(v_i)} & \text{if }(v_i,u)\in E\\
 0 & \text{otherwise}
 \end{cases}$$
@@ -102,7 +102,7 @@ $$M_{u,v_i} = \begin{cases}
 graph LR
 A-->B
 A-->C
-B-->C 
+B-->C
 B-->D
 C-->D
 D-->A
@@ -114,14 +114,14 @@ D-->E
 对于网页A:
 $$PR(A) = 0.85 \times (\frac{PR(D)}{2}) + 0.15 \times \frac{1}{5} = 0.425PR(D) + 0.03$$
 
-对于网页B: 
+对于网页B:
 $$PR(B) = 0.15 \times \frac{1}{5} = 0.03$$
 
 对于网页C:
 $$PR(C) = 0.85 \times (\frac{PR(A)}{2} + \frac{PR(B)}{1}) + 0.15 \times \frac{1}{5} = 0.425PR(A) + 0.85PR(B) + 0.03$$
 
 对于网页D:
-$$PR(D) = 0.85 \times (\frac{PR(B)}{2} + \frac{PR(C)}{1}) + 0.15 \times \frac{1}{5} = 0.425PR(B) + 0.85PR(C) + 0.03$$ 
+$$PR(D) = 0.85 \times (\frac{PR(B)}{2} + \frac{PR(C)}{1}) + 0.15 \times \frac{1}{5} = 0.425PR(B) + 0.85PR(C) + 0.03$$
 
 对于网页E:
 $$PR(E) = 0.85 \times \frac{PR(D)}{2} + 0.15 \times \frac{1}{5} = 0.425PR(D) + 0.03$$
@@ -173,7 +173,7 @@ pr = {node: 1/N for node in links}
 import numpy as np
 
 def page_rank(links, pr, d=0.85, max_iter=100, tol=1e-8):
-    
+
     # 构建转移概率矩阵
     n = len(pr)
     M = np.zeros((n, n))
@@ -184,10 +184,10 @@ def page_rank(links, pr, d=0.85, max_iter=100, tol=1e-8):
                 M[j][i] = 1 / len(neighbors)
         else:
             M[i] = 1 / n
-    
+
     # 初始化PageRank向量
     pr_vec = np.array([v for v in pr.values()])
-    
+
     # 迭代计算
     for _ in range(max_iter):
         new_pr_vec = (1 - d) / n + d * np.dot(M.T, pr_vec)
@@ -195,11 +195,11 @@ def page_rank(links, pr, d=0.85, max_iter=100, tol=1e-8):
         if delta < tol:
             break
         pr_vec = new_pr_vec
-    
+
     # 更新PageRank值字典
     for i, node in enumerate(pr.keys()):
         pr[node] = pr_vec[i]
-    
+
     return pr
 ```
 

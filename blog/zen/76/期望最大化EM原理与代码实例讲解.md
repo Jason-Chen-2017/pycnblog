@@ -77,7 +77,7 @@ EM算法通过迭代的方式来逐步改善参数估计，其核心思想是在
 #### 迭代过程
 
 - **E步**：对于每个数据点$x_i$，计算其属于每个潜在类别的期望概率：
-  
+
 $$
 \gamma(z_i=k|x_i,\theta^{(t)}) = \frac{\pi_k \phi(x_i|\mu_k,\Sigma_k)}{\sum_{j=1}^K \pi_j \phi(x_i|\mu_j,\Sigma_j)}
 $$

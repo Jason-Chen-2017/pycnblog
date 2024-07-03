@@ -218,7 +218,7 @@ A：优化可视化效果可以从以下几个方面入手：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n data-vis-env python=3.8 
+conda create -n data-vis-env python=3.8
 conda activate data-vis-env
 ```
 3. 安装必要的Python库：

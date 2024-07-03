@@ -246,11 +246,11 @@ from sklearn.metrics import accuracy_score
 data = pd.read_csv('telecom_churn.csv')
 
 # 数据预处理
-data = data.drop(['customerID', 
-'gender', 'Partner', 'Dependents', 'PhoneService', 
-'MultipleLines', 'OnlineSecurity', 'OnlineBackup', 
-'DeviceProtection', 'TechSupport', 'StreamingTV', 
-'StreamingMovies', 'Contract', 'PaperlessBilling', 
+data = data.drop(['customerID',
+'gender', 'Partner', 'Dependents', 'PhoneService',
+'MultipleLines', 'OnlineSecurity', 'OnlineBackup',
+'DeviceProtection', 'TechSupport', 'StreamingTV',
+'StreamingMovies', 'Contract', 'PaperlessBilling',
 'PaymentMethod'], axis=1)
 data = pd.get_dummies(data, columns=['InternetService', 'TotalCharges'])
 

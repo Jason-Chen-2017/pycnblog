@@ -214,8 +214,8 @@ model = Sequential([
 ])
 
 # 编译模型
-model.compile(optimizer='adam', 
-              loss='sparse_categorical_crossentropy', 
+model.compile(optimizer='adam',
+              loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 
 # 加载数据

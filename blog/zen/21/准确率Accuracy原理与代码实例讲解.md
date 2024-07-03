@@ -30,7 +30,7 @@
 
 准确性（Accuracy）的计算公式为：
 
-$$ Accuracy = \\frac{TP + TN}{TP + TN + FP + FN} $$
+$$ Accuracy = \frac{TP + TN}{TP + TN + FP + FN} $$
 
 其中：
 
@@ -86,7 +86,7 @@ $$ Accuracy = \\frac{TP + TN}{TP + TN + FP + FN} $$
 
 准确性模型本质上是一个统计模型，通过计算预测结果与实际标签的一致性来衡量性能。数学上，准确性可以被表示为：
 
-$$ Accuracy = \\frac{\\text{正确预测的数量}}{\\text{总样本数量}} $$
+$$ Accuracy = \frac{\text{正确预测的数量}}{\text{总样本数量}} $$
 
 ### 4.2 公式推导过程
 
@@ -97,7 +97,7 @@ $$ Accuracy = \\frac{\\text{正确预测的数量}}{\\text{总样本数量}} $$
 
 基于这些假设，准确性可通过以下公式计算：
 
-$$ Accuracy = \\frac{\\text{TP} + \\text{TN}}{\\text{TP} + \\text{TN} + \\text{FP} + \\text{FN}} $$
+$$ Accuracy = \frac{\text{TP} + \text{TN}}{\text{TP} + \text{TN} + \text{FP} + \text{FN}} $$
 
 ### 4.3 案例分析与讲解
 
@@ -149,7 +149,7 @@ predictions = model.predict(X_test)
 
 # 计算准确性
 accuracy = accuracy_score(y_test, predictions)
-print(f\"Accuracy: {accuracy}\")
+print(f"Accuracy: {accuracy}")
 ```
 
 ### 5.3 代码解读与分析

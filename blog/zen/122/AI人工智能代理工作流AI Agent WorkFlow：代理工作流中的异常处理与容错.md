@@ -1,6 +1,6 @@
 # AI人工智能代理工作流AI Agent WorkFlow：代理工作流中的异常处理与容错
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -344,7 +344,7 @@ class Agent:
 
 ### 5.3 代码解读与分析
 
-* **app.py：** 
+* **app.py：**
     * 定义了两个路由：`/start`和`/status`。
     * `/start`路由用于启动代理，接收用户请求并创建代理实例。
     * `/status`路由用于获取代理状态，返回代理的当前状态和错误次数。
@@ -466,4 +466,4 @@ AI代理可以用于构建数据分析系统，自动收集、清洗、分析数
 * **如何部署AI代理？**
     * 可以将AI代理部署在云平台、服务器等环境中。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

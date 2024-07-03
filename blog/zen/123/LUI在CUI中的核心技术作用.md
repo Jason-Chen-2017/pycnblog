@@ -546,4 +546,4 @@ LUI的应用场景非常广泛，例如：
 * Python自然语言处理
 * 斯坦福大学自然语言处理课程
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

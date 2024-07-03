@@ -24,16 +24,13 @@ Adam优化器的核心算法包括以下步骤：
 
 2. **计算一阶矩（动量）**：更新一阶矩的指数加权平均值：
    \\[
-   m_t = \\beta_1 \\cdot m_{t-1} + (1 - \\beta_1) \\cdot \
-abla_\\theta J(\\theta)
+   m_t = \\beta_1 \\cdot m_{t-1} + (1 - \\beta_1) \\cdot \nabla_\\theta J(\\theta)
    \\]
-   其中 $m_t$ 是一阶矩，$\
-abla_\\theta J(\\theta)$ 是损失函数关于参数 $\\theta$ 的梯度。
+   其中 $m_t$ 是一阶矩，$\nabla_\\theta J(\\theta)$ 是损失函数关于参数 $\\theta$ 的梯度。
 
 3. **计算二阶矩**：更新二阶矩的指数加权平均值：
    \\[
-   v_t = \\beta_2 \\cdot v_{t-1} + (1 - \\beta_2) \\cdot (\
-abla_\\theta J(\\theta))^2
+   v_t = \\beta_2 \\cdot v_{t-1} + (1 - \\beta_2) \\cdot (\nabla_\\theta J(\\theta))^2
    \\]
    其中 $v_t$ 是二阶矩。
 
@@ -61,8 +58,7 @@ L(G, D) = E_{x \\sim p_{data}(x)}[\\log(D(x))] + E_{z \\sim p_z(z)}[\\log(1 - D(
 Adam优化器通过迭代更新参数来最小化上述损失函数。在每一步迭代中，我们首先计算损失函数的梯度：
 
 \\[
-\
-abla_\\theta L(G, D)
+\nabla_\\theta L(G, D)
 \\]
 
 然后，根据上面描述的Adam算法更新参数：

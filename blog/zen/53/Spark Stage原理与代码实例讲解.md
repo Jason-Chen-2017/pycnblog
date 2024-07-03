@@ -5,7 +5,7 @@ Apache Spark是一个快速、通用的大规模数据处理引擎,建立在Hado
 
 ### 1.1 Spark基本架构
 #### 1.1.1 Spark生态系统组件
-#### 1.1.2 Spark核心RDD编程模型 
+#### 1.1.2 Spark核心RDD编程模型
 #### 1.1.3 Spark运行时架构
 
 ### 1.2 Stage在Spark中的作用
@@ -28,7 +28,7 @@ Apache Spark是一个快速、通用的大规模数据处理引擎,建立在Hado
 #### 2.3.2 Shuffle操作原理
 #### 2.3.3 Shuffle引起的Stage划分
 ### 2.4 Pipeline
-#### 2.4.1 Pipeline定义 
+#### 2.4.1 Pipeline定义
 #### 2.4.2 Pipeline在Stage中的应用
 ### 2.5 核心概念之间的关系
 ```mermaid
@@ -146,7 +146,7 @@ Shuffle是Spark性能的瓶颈所在。优化Shuffle的策略很多,例如Shuffl
 当然,Spark Stage的优化也面临不少挑战:
 
 - 复杂的DAG划分:实际的Spark作业可能包含成百上千个RDD,DAG图的划分策略仍有优化空间。
-- 资源调度与隔离:Spark与YARN等资源管理系统的整合有待加强,不同Stage之间的资源隔离也需要改进。 
+- 资源调度与隔离:Spark与YARN等资源管理系统的整合有待加强,不同Stage之间的资源隔离也需要改进。
 - 数据倾斜问题:如何在Stage层面解决数据倾斜问题,是一个亟待攻克的难题。
 
 ## 9.附录:常见问题与解答

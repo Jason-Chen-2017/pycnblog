@@ -135,11 +135,11 @@ $$
 通过对损失函数求导，可以求得最优的模型参数：
 
 $$
-\beta_0 = \frac{1}{N}\sum_{i=1}^N (y_i - (\beta_0 + \beta_1x_i)) 
+\beta_0 = \frac{1}{N}\sum_{i=1}^N (y_i - (\beta_0 + \beta_1x_i))
 $$
 
 $$
-\beta_1 = \frac{1}{N}\sum_{i=1}^N ((y_i - (\beta_0 + \beta_1x_i))x_i) 
+\beta_1 = \frac{1}{N}\sum_{i=1}^N ((y_i - (\beta_0 + \beta_1x_i))x_i)
 $$
 
 ### 4.3 案例分析与讲解

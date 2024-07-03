@@ -196,8 +196,7 @@ $$
 则交叉熵损失的梯度为：
 
 $$
-\
-abla_{\theta} \ell(f_{\theta}(x),y) = \frac{\partial}{\partial \theta} \left[-y\log f_{\theta}(x) - (1-y)\log (1-f_{\theta}(x))\right]
+\nabla_{\theta} \ell(f_{\theta}(x),y) = \frac{\partial}{\partial \theta} \left[-y\log f_{\theta}(x) - (1-y)\log (1-f_{\theta}(x))\right]
 $$
 
 根据链式法则，梯度可以进一步展开计算。
@@ -242,8 +241,7 @@ $$
 根据标注数据更新模型参数 $\theta$。
 
 $$
-\theta = \theta - \eta \
-abla_{\theta} \ell(f_{\theta}(x_1),y_1)
+\theta = \theta - \eta \nabla_{\theta} \ell(f_{\theta}(x_1),y_1)
 $$
 
 **步骤5：迭代**

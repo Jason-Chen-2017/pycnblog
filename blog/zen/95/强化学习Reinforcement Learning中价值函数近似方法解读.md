@@ -319,7 +319,7 @@ class QLearning:
                 else:
                     with torch.no_grad():
                         action = self.q_network(state).argmax().item()
-                
+
                 next_state, reward, done, _ = self.env.step(action)
                 next_value = self.q_network(next_state).max().item() if not done else 0
 
@@ -342,7 +342,7 @@ class QLearning:
             while True:
                 with torch.no_grad():
                     action = self.q_network(state).argmax().item()
-                
+
                 next_state, reward, done, _ = self.env.step(action)
 
                 state = next_state

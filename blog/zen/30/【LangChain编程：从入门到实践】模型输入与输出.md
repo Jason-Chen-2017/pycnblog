@@ -84,17 +84,17 @@ LangChain适用于广泛的AI应用领域，包括但不限于：
 
 LangChain中的数学模型主要围绕以下构建：
 
-- **输入变换**：$f_{input\\_transform}(x)$，将原始输入$x$转换为模型可接受的格式。
+- **输入变换**：$f_{input\_transform}(x)$，将原始输入$x$转换为模型可接受的格式。
 - **模型执行**：$M(x')$，执行模型处理，其中$x'$为转换后的输入。
-- **输出转换**：$f_{output\\_transform}(y)$，将模型输出$y$转换为所需格式。
+- **输出转换**：$f_{output\_transform}(y)$，将模型输出$y$转换为所需格式。
 
 ### 4.2 公式推导过程
 
 假设模型输入$x$为文本序列，LangChain中的公式可以表示为：
 
-$$f_{input\\_transform}(x) = \\text{encode}(x)$$
+$$f_{input\_transform}(x) = \text{encode}(x)$$
 
-其中$\\text{encode}$函数将文本序列编码为模型可接受的向量表示。
+其中$\text{encode}$函数将文本序列编码为模型可接受的向量表示。
 
 ### 4.3 案例分析与讲解
 
@@ -132,15 +132,15 @@ LangChain可以用于分析用户评论的情感倾向，输入为评论文本�
 from langchain import LangChain
 
 class TextSummarizer:
-    def __init__(self, model_name=\"gpt2\"):
+    def __init__(self, model_name="gpt2"):
         self.summarizer = LangChain(model_name)
 
     def summarize(self, text):
         return self.summarizer.summarize(text)
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     summarizer = TextSummarizer()
-    text = \"这是一个用于演示的长文本。\"
+    text = "这是一个用于演示的长文本。"
     summary = summarizer.summarize(text)
     print(summary)
 ```

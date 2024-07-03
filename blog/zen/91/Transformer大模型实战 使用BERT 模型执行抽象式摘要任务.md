@@ -247,10 +247,10 @@ class SummaryDataset(Dataset):
         self.texts = texts
         self.summaries = summaries
         self.tokenizer = tokenizer
-    
+
     def __len__(self):
         return len(self.texts)
-    
+
     def __getitem__(self, item):
         text = self.texts[item]
         summary = self.summaries[item]

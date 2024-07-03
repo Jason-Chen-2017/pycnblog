@@ -34,9 +34,9 @@ Spark SQL支持多种方式构建DataFrame/Dataset,主要包括:
 val df = spark.createDataFrame(rdd, schema)
 ```
 
-2. 从Hive表读取  
+2. 从Hive表读取
 ```scala
-val df = spark.table("hive_table_name")  
+val df = spark.table("hive_table_name")
 ```
 
 3. 从结构化文件读取
@@ -60,7 +60,7 @@ DataFrame/Dataset提供了丰富的算子操作,主要分为Transformation和Act
 - groupBy/agg: 分组聚合
 - join: 多表关联
 - sort/orderBy: 全局排序
-- limit/distinct: 限制返回行数,去重  
+- limit/distinct: 限制返回行数,去重
 
 常用的Action算子包括:
 - show: 打印前N行数据
@@ -80,7 +80,7 @@ Spark SQL利用Catalyst对用户的查询进行自动优化。主要步骤包括
 
 1. 语法解析:将SQL语句解析为抽象语法树AST
 2. 语义分析:对AST进行属性绑定,类型检查,生成逻辑计划
-3. 逻辑优化:对逻辑计划应用各种优化规则,如谓词下推,常量折叠等  
+3. 逻辑优化:对逻辑计划应用各种优化规则,如谓词下推,常量折叠等
 4. 物理计划生成:为逻辑计划中的每个节点选择最佳的物理实现
 5. 代码生成:将物理计划编译为可执行的RDD操作
 
@@ -125,9 +125,9 @@ $$
 // 创建SparkSession
 val spark = SparkSession.builder()
   .appName("SaleAnalysis")
-  .master("local[*]")  
+  .master("local[*]")
   .getOrCreate()
-  
+
 // 读取数据文件
 val df = spark.read.format("json").load("sales.json")
 
@@ -139,9 +139,9 @@ df.createOrReplaceTempView("sales")
 
 // 编写SQL查询
 val query = """
-  SELECT 
-    category, 
-    SUM(amount) AS total_amount  
+  SELECT
+    category,
+    SUM(amount) AS total_amount
   FROM sales
   GROUP BY category
 """
@@ -190,7 +190,7 @@ Spark SQL与Spark Streaming无缝集成,支持以毫秒级延迟处理实时数�
 
 ### 7.2 学习资源
 - Spark官网:https://spark.apache.org/docs/latest/sql-programming-guide.html
-- Databricks博客:https://databricks.com/blog 
+- Databricks博客:https://databricks.com/blog
 - Spark Summit:Spark领域顶级会议,覆盖最新的技术动向和实践案例
 -《Spark: The Definitive Guide》:Spark权威指南,系统讲解Spark各个组件的原理和使用
 

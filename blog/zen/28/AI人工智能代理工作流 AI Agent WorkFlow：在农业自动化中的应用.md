@@ -98,9 +98,9 @@ AI代理工作流是指由一组智能代理组成的系统，每个代理负责
 
 假设$X_t$为某一时刻的农田数据（如温度），$Y_t$为下一时刻的预测值，可以使用ARIMA模型进行预测：
 
-$$ Y_{t+1} = \\phi_1 X_t + \\phi_2 X_{t-1} + \\cdots + \\phi_p X_{t-p} + \\varepsilon $$
+$$ Y_{t+1} = \phi_1 X_t + \phi_2 X_{t-1} + \cdots + \phi_p X_{t-p} + \varepsilon $$
 
-其中，$\\phi_i$为模型参数，$\\varepsilon$为误差项。
+其中，$\phi_i$为模型参数，$\varepsilon$为误差项。
 
 ### 4.3 案例分析与讲解
 
@@ -109,9 +109,9 @@ $$ Y_{t+1} = \\phi_1 X_t + \\phi_2 X_{t-1} + \\cdots + \\phi_p X_{t-p} + \\varep
 - **数据**：土壤湿度$S$、降雨量$R$、蒸发量$E$。
 - **模型**：使用回归分析预测最佳灌溉量$I$。
 
-$$ I = \\beta_0 + \\beta_1 S + \\beta_2 R + \\beta_3 E $$
+$$ I = \beta_0 + \beta_1 S + \beta_2 R + \beta_3 E $$
 
-其中，$\\beta_0$至$\\beta_3$为回归系数。
+其中，$\beta_0$至$\beta_3$为回归系数。
 
 ### 4.4 常见问题解答
 

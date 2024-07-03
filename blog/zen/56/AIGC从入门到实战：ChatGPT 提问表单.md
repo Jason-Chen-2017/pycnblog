@@ -157,12 +157,12 @@ class TransformerModel(nn.Module):
 import time
 
 criterion = nn.CrossEntropyLoss()
-lr = 5.0 
+lr = 5.0
 optimizer = torch.optim.SGD(model.parameters(), lr=lr)
 scheduler = torch.optim.lr_scheduler.StepLR(optimizer, 1.0, gamma=0.95)
 
 def train():
-    model.train() 
+    model.train()
     total_loss = 0.
     start_time = time.time()
     src_mask = model.generate_square_subsequent_mask(bptt).to(device)
@@ -192,7 +192,7 @@ def train():
             start_time = time.time()
 
 def evaluate(eval_model, data_source):
-    eval_model.eval() 
+    eval_model.eval()
     total_loss = 0.
     src_mask = model.generate_square_subsequent_mask(bptt).to(device)
     with torch.no_grad():

@@ -350,4 +350,4 @@ print('模型准确率: {}'.format(accuracy))
 
 **A:** 未来，逻辑回归算法的研究方向包括探索新的损失函数和优化算法、开发新的特征工程方法、将逻辑回归算法应用于更多领域等等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

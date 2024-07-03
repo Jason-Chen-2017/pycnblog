@@ -86,7 +86,7 @@ graph TD
     SelfAttention --> FeedForward
     FeedForward --> EncoderOutput
     end
-    
+
     subgraph Decoder
     DecoderInput --> DecoderEmbedding
     DecoderEmbedding --> DecoderPositionalEncoding
@@ -96,7 +96,7 @@ graph TD
     DecoderFeedForward --> DecoderOutput
     EncoderOutput --> DecoderCrossAttention
     end
-    
+
     DecoderOutput --> Output
 ```
 

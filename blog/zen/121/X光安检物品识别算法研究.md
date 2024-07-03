@@ -175,7 +175,7 @@ A：可以通过以下方法提高X光安检物品识别算法的准确率：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n xray-env python=3.8 
+conda create -n xray-env python=3.8
 conda activate xray-env
 ```
 3. 安装PyTorch：

@@ -251,7 +251,7 @@ A：解释深度学习模型决策过程的方法包括：
 2. 创建并激活虚拟环境：
 
 ```bash
-conda create -n vassistent-env python=3.8 
+conda create -n vassistent-env python=3.8
 conda activate vassistent-env
 ```
 
@@ -284,7 +284,7 @@ class VASSistent(nn.Module):
         super(VASSistent, self).__init__()
         self.rnn = nn.LSTM(input_size=100, hidden_size=256, num_layers=2, batch_first=True)
         self.fc = nn.Linear(256, 100)
-    
+
     def forward(self, x):
         output, (h_n, c_n) = self.rnn(x)
         output = self.fc(output[:, -1, :])

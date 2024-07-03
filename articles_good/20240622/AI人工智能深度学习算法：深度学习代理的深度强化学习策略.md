@@ -106,15 +106,11 @@ $$Q(s, a) = \mathbb{E}_{S', R}[\sum_{t=0}^\infty \gamma^t r_t | S=s, A=a]$$
 
 策略梯度公式如下：
 
-$$\
-abla_\theta J(\theta) = \
-abla_\theta \sum_{t=0}^\infty \gamma^t r_t$$
+$$\nabla_\theta J(\theta) = \nabla_\theta \sum_{t=0}^\infty \gamma^t r_t$$
 
 将动作价值函数代入上式，得到：
 
-$$\
-abla_\theta J(\theta) = \sum_{t=0}^\infty \gamma^t \
-abla_\theta Q(s_t, a_t)$$
+$$\nabla_\theta J(\theta) = \sum_{t=0}^\infty \gamma^t \nabla_\theta Q(s_t, a_t)$$
 
 其中，$s_t$和$a_t$分别表示第$t$个状态和动作。
 

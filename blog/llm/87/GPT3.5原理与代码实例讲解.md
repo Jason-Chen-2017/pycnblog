@@ -212,7 +212,7 @@ class GPT35(nn.Module):
         self.transformer = nn.Transformer(d_model, nhead, num_layers, dim_feedforward, dropout)
         self.embedding = nn.Embedding(vocab_size, d_model)
         self.output_layer = nn.Linear(d_model, vocab_size)
-    
+
     def forward(self, src):
         x = self.embedding(src)
         output = self.transformer(x)

@@ -87,17 +87,17 @@
 
 ### 4.1 数学模型构建
 
-假设我们有两类知识表示：旧知识表示$\\mathbf{K}_o$和新知识表示$\\mathbf{K}_n$，我们可以通过以下公式表示知识融合过程：
+假设我们有两类知识表示：旧知识表示$\mathbf{K}_o$和新知识表示$\mathbf{K}_n$，我们可以通过以下公式表示知识融合过程：
 
-$$\\mathbf{K}_{new} = \\alpha \\cdot \\mathbf{K}_o + (1-\\alpha) \\cdot \\mathbf{K}_n$$
+$$\mathbf{K}_{new} = \alpha \cdot \mathbf{K}_o + (1-\alpha) \cdot \mathbf{K}_n$$
 
-其中，$\\alpha$是融合权重，取决于新知识和旧知识之间的相对重要性和兼容性。
+其中，$\alpha$是融合权重，取决于新知识和旧知识之间的相对重要性和兼容性。
 
 ### 4.2 公式推导过程
 
-假设旧知识表示为$\\mathbf{K}_o = \\{k_{o1}, k_{o2}, ..., k_{on}\\}$，新知识表示为$\\mathbf{K}_n = \\{k_{n1}, k_{n2}, ..., k_{nk}\\}$。融合过程可以通过向量加权平均实现：
+假设旧知识表示为$\mathbf{K}_o = \{k_{o1}, k_{o2}, ..., k_{on}\}$，新知识表示为$\mathbf{K}_n = \{k_{n1}, k_{n2}, ..., k_{nk}\}$。融合过程可以通过向量加权平均实现：
 
-$$\\mathbf{K}_{new} = \\frac{\\alpha}{|\\mathbf{K}_o|} \\sum_{i=1}^{|\\mathbf{K}_o|} k_{oi} + \\frac{(1-\\alpha)}{|\\mathbf{K}_n|} \\sum_{j=1}^{|\\mathbf{K}_n|} k_{nj}$$
+$$\mathbf{K}_{new} = \frac{\alpha}{|\mathbf{K}_o|} \sum_{i=1}^{|\mathbf{K}_o|} k_{oi} + \frac{(1-\alpha)}{|\mathbf{K}_n|} \sum_{j=1}^{|\mathbf{K}_n|} k_{nj}$$
 
 ### 4.3 案例分析与讲解
 
@@ -106,7 +106,7 @@ $$\\mathbf{K}_{new} = \\frac{\\alpha}{|\\mathbf{K}_o|} \\sum_{i=1}^{|\\mathbf{K}
 ### 4.4 常见问题解答
 
 - **如何平衡新旧知识的融合？**
-答：通过调整融合权重$\\alpha$，根据新旧知识的重要性来平衡融合过程。
+答：通过调整融合权重$\alpha$，根据新旧知识的重要性来平衡融合过程。
 
 - **如何避免知识冲突？**
 答：采用知识表示的兼容性评估机制，确保新旧知识在融合前经过兼容性检查。

@@ -96,9 +96,9 @@ Spark SQL广泛应用于大数据处理、数据仓库、实时流处理、机�
 
 在Spark SQL中，查询通常会被转换为一系列的操作，这些操作可以被看作是数学表达式。例如，连接操作可以被表示为：
 
-$$ R \\Join S = \\{ r \\Join s : r \\in R \\land s \\in S \\land \\text{join condition}(r, s) \\} $$
+$$ R \Join S = \{ r \Join s : r \in R \land s \in S \land \text{join condition}(r, s) \} $$
 
-其中，$R$和$S$是两个关系，$\\text{join condition}(r, s)$表示连接条件，即用于确定$r$和$s$是否应该被连接在一起的条件。
+其中，$R$和$S$是两个关系，$\text{join condition}(r, s)$表示连接条件，即用于确定$r$和$s$是否应该被连接在一起的条件。
 
 ### 4.3 案例分析与讲解
 
@@ -135,23 +135,23 @@ import org.apache.spark.sql.SparkSession
 object SparkSqlExample {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession.builder()
-      .appName(\"Spark SQL Example\")
+      .appName("Spark SQL Example")
       .getOrCreate()
 
     // 加载数据
-    val data = spark.read.format(\"csv\")
-      .option(\"header\", \"true\")
-      .option(\"inferSchema\", \"true\")
-      .load(\"path/to/data.csv\")
+    val data = spark.read.format("csv")
+      .option("header", "true")
+      .option("inferSchema", "true")
+      .load("path/to/data.csv")
 
     // 过滤数据
-    val filteredData = data.filter($\"date\" > \"2020-01-01\")
+    val filteredData = data.filter($"date" > "2020-01-01")
 
     // 显示结果
     filteredData.show()
 
     // 结果保存
-    filteredData.write.format(\"parquet\").save(\"output/path\")
+    filteredData.write.format("parquet").save("output/path")
   }
 }
 ```

@@ -1,7 +1,7 @@
 
 # Python机器学习实战：使用机器学习进行时间序列分析
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍

@@ -1,4 +1,4 @@
-                 
+
 # 基于Opencv的船只检测系统详细设计与具体代码实现
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -106,7 +106,7 @@ YOLOv4的核心是通过其精巧的网络架构实现高效的物体检测。�
 YOLOv4损失函数包含三个部分：对象检测损失、类别的交叉熵损失、正则化项。
 
 $$
-\mathcal{L} = \lambda_{obj} \cdot \sum_i^{n} \left( IoU_{pred,gt} + \lambda_{noobj} \cdot \max(0, 1 - IoU) \right) + 
+\mathcal{L} = \lambda_{obj} \cdot \sum_i^{n} \left( IoU_{pred,gt} + \lambda_{noobj} \cdot \max(0, 1 - IoU) \right) +
 \lambda_{class} \cdot CE(pred_{classes}, gt_{classes}) + \lambda_{reg} \cdot L_{reg}
 $$
 
@@ -168,13 +168,13 @@ def main():
         ret, frame = cap.read()
         if not ret:
             break
-        
+
         # 预处理图像
         img_processed = preprocess_image(frame)
-        
+
         # 进行检测
         detections = model.detect(img_processed)
-        
+
         # 绘制检测框和标签
         draw_boxes_on_image(frame, detections)
 
@@ -256,7 +256,7 @@ if __name__ == '__main__':
 
 - **Q**: 如何调整YOLOv4模型参数以适应特定场景？
    - **A**: 可以通过调整训练集中的正负样本比例、学习率、批次大小等参数来优化模型性能。此外，使用数据增广可以增强模型泛化能力。
-  
+
 - **Q**: 是否存在适用于小型设备的轻量级检测模型替代方案？
    - **A**: 是的，Tiny-YOLO和YOLOv2等轻量化模型可供选择，适合资源有限的边缘计算设备。
 

@@ -40,7 +40,7 @@
 ```mermaid
 graph LR
 A[特征重要性分析] --> C[可解释性]
-B[反事实解释] --> C[可解释性] 
+B[反事实解释] --> C[可解释性]
 D[规则提取] --> C[可解释性]
 E[视觉解释] --> C[可解释性]
 C --> F[XAI]
@@ -57,13 +57,13 @@ C --> F[XAI]
 ### 3.2 LIME(Local Interpretable Model-agnostic Explanations)
 
 #### 3.2.1 LIME的基本思想
-#### 3.2.2 LIME的具体实现步骤  
+#### 3.2.2 LIME的具体实现步骤
 #### 3.2.3 LIME的优缺点分析
 
 ### 3.3 DeepLIFT(Deep Learning Important FeaTures)
 
 #### 3.3.1 DeepLIFT的核心原理
-#### 3.3.2 DeepLIFT的前向传播与反向传播  
+#### 3.3.2 DeepLIFT的前向传播与反向传播
 #### 3.3.3 DeepLIFT的优缺点分析
 
 ### 3.4 Grad-CAM(Gradient-weighted Class Activation Mapping)
@@ -80,7 +80,7 @@ C --> F[XAI]
 #### 4.1.2 SHAP值的计算公式
 #### 4.1.3 SHAP模型的数学推导
 
-### 4.2 LIME的数学模型 
+### 4.2 LIME的数学模型
 
 #### 4.2.1 局部可解释模型的数学表示
 #### 4.2.2 LIME目标函数的数学形式
@@ -88,14 +88,14 @@ C --> F[XAI]
 
 ### 4.3 DeepLIFT的数学模型
 
-#### 4.3.1 DeepLIFT中的链式法则 
+#### 4.3.1 DeepLIFT中的链式法则
 #### 4.3.2 DeepLIFT的梯度计算公式
 #### 4.3.3 DeepLIFT与Shapley值的关系
 
 ### 4.4 Grad-CAM的数学模型
 
 #### 4.4.1 Grad-CAM中的梯度计算
-#### 4.4.2 Grad-CAM热力图的生成公式 
+#### 4.4.2 Grad-CAM热力图的生成公式
 #### 4.4.3 Grad-CAM++的改进
 
 举例说明:以SHAP为例,假设有一个简单的线性模型$f(x)=2x_1+3x_2+5$,其中$x_1,x_2$为输入特征。根据Shapley值的定义,特征$x_1$的Shapley值$\phi_1$可以通过以下公式计算:
@@ -163,7 +163,7 @@ exp.show_in_notebook(show_table=True)
 ```
 
 代码解释:
-- 首先加载Iris数据集,并使用随机森林分类模型进行训练。 
+- 首先加载Iris数据集,并使用随机森林分类模型进行训练。
 - 然后使用LIME的`LimeTabularExplainer`对单个样本的预测结果进行解释。通过指定`num_features`参数,可以控制解释中包含的特征数量。
 - 最后调用`show_in_notebook`函数在Notebook中可视化解释结果,通过`show_table`参数可以选择是否显示特征权重表格。
 
@@ -247,7 +247,7 @@ plt.imshow(superimposed_img)
 
 ### 7.1 XAI工具包
 
-#### 7.1.1 SHAP (SHapley Additive exPlanations) 
+#### 7.1.1 SHAP (SHapley Additive exPlanations)
 #### 7.1.2 LIME (Local Interpretable Model-agnostic Explanations)
 #### 7.1.3 AIX360 (AI Explainability 360)
 #### 7.1.4 InterpretML
@@ -275,7 +275,7 @@ plt.imshow(superimposed_img)
 ### 8.2 XAI面临的挑战
 
 #### 8.2.1 可解释性与性能的权衡
-#### 8.2.2 评估标准的建立 
+#### 8.2.2 评估标准的建立
 #### 8.2.3 跨领域应用的适应性
 
 ### 8.3 XAI的未来展望

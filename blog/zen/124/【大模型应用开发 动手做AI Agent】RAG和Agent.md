@@ -1,8 +1,8 @@
 ## 【大模型应用开发 动手做AI Agent】RAG和Agent
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
-## 1. 背景介绍 
+## 1. 背景介绍
 
 ### 1.1 问题的由来
 
@@ -368,4 +368,4 @@ RAG 和 AI Agent 技术也面临着一些挑战：
 
 **A：**RAG 和 AI Agent 技术可以帮助人们解决各种复杂的问题，提高工作效率，但它们并不会取代人类。人类仍然需要发挥自己的创造力和智慧，来设计、开发和应用这些技术。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

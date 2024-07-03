@@ -167,7 +167,7 @@ class Transformer(nn.Module):
         self.positional_encoding = PositionalEncoding(hidden_dim)
         self.transformer = nn.Transformer(hidden_dim, num_heads, num_layers)
         self.fc = nn.Linear(hidden_dim, output_dim)
-    
+
     def forward(self, x):
         x = self.embedding(x)
         x = self.positional_encoding(x)

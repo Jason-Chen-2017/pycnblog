@@ -92,7 +92,7 @@ for epoch in range(num_epochs):
         # 前向传播
         outputs = model(**batch)
         loss = criterion(outputs.logits, batch['labels'])
-        
+
         # 反向传播和优化
         loss.backward()
         optimizer.step()
@@ -108,7 +108,7 @@ for epoch in range(num_epochs):
 class WordEmbeddingExtractor:
     def __init__(self, model):
         self.model = model
-    
+
     def extract_embedding(self, input_ids):
         with torch.no_grad():
             output = self.model(input_ids)
@@ -156,7 +156,7 @@ $$E_{new} = E + \Delta E = E + \theta \cdot \text{激活函数}(X)$$
 
 - **Q：如何选择微调的层数？**
   A：通常，选择模型的最后一层或倒数第二层进行微调，因为这些层包含了更多关于文本结构的信息。具体选择取决于任务需求和模型特性。
-  
+
 - **Q：微调后的模型如何保持较小的尺寸？**
   A：通过仅微调模型的最后一层或选择较小的预训练模型，可以减少微调后的模型大小。同时，可以采用量化、剪枝等技术进一步压缩模型大小而不牺牲性能。
 

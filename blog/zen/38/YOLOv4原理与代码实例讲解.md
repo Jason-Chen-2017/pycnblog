@@ -253,7 +253,7 @@ class DetectionHead(nn.Module):
         # 构建卷积层
         self.conv1 = nn.Conv2d(512, 256, kernel_size=3, stride=1, padding=1)
         # ...
-        
+
     def forward(self, x):
         # 卷积操作
         x = self.conv1(x)

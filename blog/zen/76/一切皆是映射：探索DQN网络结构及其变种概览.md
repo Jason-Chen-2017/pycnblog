@@ -155,7 +155,7 @@ class DQN:
         self.learning_rate = learning_rate
         self.batch_size = batch_size
         self.build_model()
-        
+
     def build_model(self):
         # 构建深度神经网络模型
         ...

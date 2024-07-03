@@ -17,7 +17,7 @@ DQN(Deep Q-Network)是DRL的代表性算法之一,由DeepMind公司于2015年提
 
 ### 2.1 马尔可夫决策过程
 - 2.1.1 状态空间
-- 2.1.2 动作空间  
+- 2.1.2 动作空间
 - 2.1.3 状态转移概率
 - 2.1.4 奖励函数
 - 2.1.5 折扣因子
@@ -111,7 +111,7 @@ class DQN(nn.Module):
         self.fc1 = nn.Linear(state_dim, 64)
         self.fc2 = nn.Linear(64, 64)
         self.fc3 = nn.Linear(64, action_dim)
-        
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = torch.relu(self.fc2(x))
@@ -128,12 +128,12 @@ class DQNAgent:
         self.epsilon = epsilon
         self.buffer_size = buffer_size
         self.batch_size = batch_size
-        
+
         self.Q_net = DQN(state_dim, action_dim)
         self.target_Q_net = DQN(state_dim, action_dim)
         self.optimizer = optim.Adam(self.Q_net.parameters(), lr=lr)
         self.buffer = deque(maxlen=buffer_size)
-        
+
     def act(self, state):
         if np.random.rand() < self.epsilon:
             return np.random.randint(self.action_dim)
@@ -141,33 +141,33 @@ class DQNAgent:
             state = torch.tensor(state, dtype=torch.float32).unsqueeze(0)
             Q_values = self.Q_net(state)
             return torch.argmax(Q_values).item()
-    
+
     def learn(self):
         if len(self.buffer) < self.batch_size:
             return
-        
+
         samples = random.sample(self.buffer, self.batch_size)
         states, actions, rewards, next_states, dones = zip(*samples)
-        
+
         states = torch.tensor(states, dtype=torch.float32)
         actions = torch.tensor(actions, dtype=torch.long).unsqueeze(1)
         rewards = torch.tensor(rewards, dtype=torch.float32).unsqueeze(1)
         next_states = torch.tensor(next_states, dtype=torch.float32)
         dones = torch.tensor(dones, dtype=torch.float32).unsqueeze(1)
-        
+
         Q_values = self.Q_net(states).gather(1, actions)
         target_Q_values = self.target_Q_net(next_states).max(1)[0].unsqueeze(1)
         target_Q_values = rewards + (1 - dones) * self.gamma * target_Q_values
-        
+
         loss = nn.MSELoss()(Q_values, target_Q_values.detach())
-        
+
         self.optimizer.zero_grad()
         loss.backward()
         self.optimizer.step()
-        
+
     def update_target_net(self):
         self.target_Q_net.load_state_dict(self.Q_net.state_dict())
-        
+
     def store_transition(self, state, action, reward, next_state, done):
         self.buffer.append((state, action, reward, next_state, done))
 
@@ -176,32 +176,32 @@ def main():
     env = VideoAnalysisEnv()  # 假设已经定义了视频分析环境
     state_dim = env.observation_space.shape[0]
     action_dim = env.action_space.n
-    
-    agent = DQNAgent(state_dim, action_dim, lr=1e-3, gamma=0.99, epsilon=0.1, 
+
+    agent = DQNAgent(state_dim, action_dim, lr=1e-3, gamma=0.99, epsilon=0.1,
                      buffer_size=10000, batch_size=64)
-    
+
     num_episodes = 1000
     update_target_freq = 100
-    
+
     for episode in range(num_episodes):
         state = env.reset()
         done = False
         episode_reward = 0
-        
+
         while not done:
             action = agent.act(state)
             next_state, reward, done, _ = env.step(action)
             agent.store_transition(state, action, reward, next_state, done)
             state = next_state
             episode_reward += reward
-            
+
             agent.learn()
-            
+
         if episode % update_target_freq == 0:
             agent.update_target_net()
-        
+
         print(f"Episode {episode}: Reward = {episode_reward:.2f}")
-        
+
 if __name__ == "__main__":
     main()
 ```

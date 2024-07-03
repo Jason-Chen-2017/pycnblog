@@ -1,7 +1,7 @@
 
 # AI人工智能 Agent：制造业中智能体的应用
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -213,7 +213,7 @@ A：强化学习中的样本效率问题可以通过以下方法解决：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 

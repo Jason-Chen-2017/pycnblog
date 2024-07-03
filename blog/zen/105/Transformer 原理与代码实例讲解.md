@@ -59,13 +59,13 @@ $$
 1. 计算查询和键的点积：
 
 $$
-QK^T = \begin{bmatrix} q_1 \\ q_2 \\ \vdots \\ q_n \end{bmatrix} \begin{bmatrix} k_1 & k_2 & \cdots & k_n \end{bmatrix} = \begin{bmatrix} q_1k_1 & q_1k_2 & \cdots & q_1k_n \\ q_2k_1 & q_2k_2 & \cdots & q_2k_n \\ \vdots & \vdots & \ddots & \vdots \\ q_nk_1 & q_nk_2 & \cdots & q_nk_n \end{bmatrix}
+QK^T = \begin{bmatrix} q_1 \ q_2 \ \vdots \ q_n \end{bmatrix} \begin{bmatrix} k_1 & k_2 & \cdots & k_n \end{bmatrix} = \begin{bmatrix} q_1k_1 & q_1k_2 & \cdots & q_1k_n \ q_2k_1 & q_2k_2 & \cdots & q_2k_n \ \vdots & \vdots & \ddots & \vdots \ q_nk_1 & q_nk_2 & \cdots & q_nk_n \end{bmatrix}
 $$
 
 2. 对查询和键的点积进行缩放：
 
 $$
-\frac{QK^T}{\sqrt{d_k}} = \frac{1}{\sqrt{d_k}} \begin{bmatrix} q_1k_1 & q_1k_2 & \cdots & q_1k_n \\ q_2k_1 & q_2k_2 & \cdots & q_2k_n \\ \vdots & \vdots & \ddots & \vdots \\ q_nk_1 & q_nk_2 & \cdots & q_nk_n \end{bmatrix}
+\frac{QK^T}{\sqrt{d_k}} = \frac{1}{\sqrt{d_k}} \begin{bmatrix} q_1k_1 & q_1k_2 & \cdots & q_1k_n \ q_2k_1 & q_2k_2 & \cdots & q_2k_n \ \vdots & \vdots & \ddots & \vdots \ q_nk_1 & q_nk_2 & \cdots & q_nk_n \end{bmatrix}
 $$
 
 3. 通过softmax函数得到注意力权重：

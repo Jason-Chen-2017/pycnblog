@@ -59,8 +59,7 @@ $$
 对于多变量优化问题，损失函数 $J(\theta_1, \theta_2, ..., \theta_n)$ 关于每个参数 $\theta_i$ 的偏导数组成梯度向量：
 
 $$
-\
-abla J(\theta) = \left[\frac{\partial J}{\partial \theta_1}, \frac{\partial J}{\partial \theta_2}, ..., \frac{\partial J}{\partial \theta_n}\right]^T
+\nabla J(\theta) = \left[\frac{\partial J}{\partial \theta_1}, \frac{\partial J}{\partial \theta_2}, ..., \frac{\partial J}{\partial \theta_n}\right]^T
 $$
 
 ### 3.2 算法步骤详解
@@ -71,8 +70,7 @@ $$
 
 #### 计算梯度
 
-使用损失函数计算梯度 $\
-abla J(\theta)$。
+使用损失函数计算梯度 $\nabla J(\theta)$。
 
 #### 更新参数
 

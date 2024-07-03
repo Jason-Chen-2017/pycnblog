@@ -84,8 +84,7 @@ DQN的训练过程主要包括以下步骤：
 2. **探索与利用**：在初始阶段，智能体采用ε-greedy策略进行探索，随机选择动作；在后期，逐渐减小ε的值，增加利用已有知识的概率。
 3. **状态-动作对采样**：从环境中采样状态-动作对$(s,a)$，其中$s$为当前状态，$a$为采取的动作。
 4. **计算目标值**：根据目标值函数，计算目标值$Q^*$，即$Q^* = r + \gamma \max_{a'}Q(s',a')$，其中$r$为采取动作$a$后获得的即时奖励，$s'$为采取动作$a$后的状态。
-5. **梯度下降**：根据目标值$Q^*$和Q函数的估计值$Q(s,a)$，使用梯度下降算法更新Q函数的参数$\theta$，即$\theta \leftarrow \theta - \alpha \
-abla_{\theta}Q(s,a)$。
+5. **梯度下降**：根据目标值$Q^*$和Q函数的估计值$Q(s,a)$，使用梯度下降算法更新Q函数的参数$\theta$，即$\theta \leftarrow \theta - \alpha \nabla_{\theta}Q(s,a)$。
 6. **迭代**：重复步骤2-5，不断更新Q函数的参数$\theta$，直至满足预设的迭代次数或收敛条件。
 
 ### 3.3 算法优缺点
@@ -156,8 +155,7 @@ $$
 2. 从环境中随机选择一个状态$s$，并采取一个动作$a$。
 3. 执行动作$a$，并根据环境反馈获得即时奖励$r$和下一个状态$s'$。
 4. 根据目标函数计算目标值$Q^*$，即$Q^* = r + \gamma \max_{a'}Q(s',a')$。
-5. 使用梯度下降算法更新Q函数的参数$\theta$，即$\theta \leftarrow \theta - \alpha \
-abla_{\theta}Q(s,a)$。
+5. 使用梯度下降算法更新Q函数的参数$\theta$，即$\theta \leftarrow \theta - \alpha \nabla_{\theta}Q(s,a)$。
 6. 重复步骤2-5，不断更新Q函数的参数$\theta$，直至满足预设的迭代次数或收敛条件。
 
 通过不断学习，DQN能够学习到在给定状态下，采取哪个动作能够获得最大的累积奖励，从而实现路径规划。
@@ -216,7 +214,7 @@ class DQN(nn.Module):
         super(DQN, self).__init__()
         self.fc1 = nn.Linear(input_dim, 128)
         self.fc2 = nn.Linear(128, output_dim)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         return self.fc2(x)

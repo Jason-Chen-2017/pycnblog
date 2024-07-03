@@ -193,7 +193,7 @@ weather_cpd = TabularCPD('Weather', 2, [[0.6], [0.4]])
 weather_model.add_cpds(weather_cpd)
 
 # 气压节点的 CPT
-barometer_cpd = TabularCPD('Barometer', 2, 
+barometer_cpd = TabularCPD('Barometer', 2,
                            [[0.9, 0.2], [0.1, 0.8]],
                            evidence=['Weather'],
                            evidence_card=[2])
@@ -218,7 +218,7 @@ from pgmpy.inference import VariableElimination
 infer = VariableElimination(weather_model)
 
 # 计算后验概率
-posterior_weather = infer.query(['Weather'], 
+posterior_weather = infer.query(['Weather'],
                                 evidence={'Barometer': 1})
 print(posterior_weather)
 ```

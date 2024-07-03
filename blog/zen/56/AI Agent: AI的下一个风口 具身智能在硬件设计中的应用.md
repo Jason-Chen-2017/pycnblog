@@ -3,7 +3,7 @@
 ## 1. 背景介绍
 ### 1.1 人工智能的发展历程
 #### 1.1.1 早期的人工智能
-#### 1.1.2 机器学习的兴起 
+#### 1.1.2 机器学习的兴起
 #### 1.1.3 深度学习的突破
 
 ### 1.2 人工智能的局限性
@@ -107,18 +107,18 @@ for episode in range(num_episodes):
             action = env.action_space.sample()  # 随机探索
         else:
             action = np.argmax(Q[state, :])  # 贪婪策略
-        
+
         # 执行动作并观察结果
         next_state, reward, done, _ = env.step(action)
-        
+
         # 更新Q值
         Q[state, action] += learning_rate * (reward + discount_factor * np.max(Q[next_state, :]) - Q[state, action])
-        
+
         state = next_state
-        
+
         if done:
             break
-            
+
     # 降低探索率
     epsilon = max(0.01, epsilon * 0.995)
 
@@ -151,28 +151,28 @@ def layout_problem(solution):
 def genetic_algorithm(population_size, num_generations, mutation_rate):
     # 初始化种群
     population = np.random.randint(2, size=(population_size, 10))
-    
+
     for generation in range(num_generations):
         # 计算适应度
         fitness = np.array([layout_problem(solution) for solution in population])
-        
+
         # 选择操作
         parents = population[np.argsort(fitness)[::-1][:2]]
-        
+
         # 交叉操作
         offspring = np.empty((population_size - 2, 10))
         for i in range(population_size - 2):
             crossover_point = np.random.randint(1, 9)
             offspring[i, :crossover_point] = parents[0, :crossover_point]
             offspring[i, crossover_point:] = parents[1, crossover_point:]
-        
+
         # 变异操作
         mutation_mask = np.random.rand(population_size - 2, 10) < mutation_rate
         offspring[mutation_mask] = 1 - offspring[mutation_mask]
-        
+
         # 更新种群
         population = np.vstack((parents, offspring))
-    
+
     # 返回最优解
     best_solution = population[np.argmin(fitness)]
     return best_solution
@@ -231,7 +231,7 @@ print("最优芯片布局:", best_layout)
 
 ### 7.3 学习资源
 #### 7.3.1 在线课程
-#### 7.3.2 书籍推荐 
+#### 7.3.2 书籍推荐
 #### 7.3.3 学术论文
 
 ## 8. 总结：未来发展趋势与挑战

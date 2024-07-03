@@ -82,9 +82,7 @@ DRL在以下领域有广泛的应用：
 
 1. **策略梯度公式**：
 
-$$\
-abla_{\theta}J(\theta) = E_{\pi(\theta)}[A(\theta, s)]\
-abla_{\theta}\log \pi(a|s)$$
+$$\nabla_{\theta}J(\theta) = E_{\pi(\theta)}[A(\theta, s)]\nabla_{\theta}\log \pi(a|s)$$
 
 其中，$\theta$是策略参数，$J(\theta)$是策略的期望回报，$A(\theta, s)$是状态s下智能体采取动作a的累积回报，$\pi(a|s)$是策略在状态s下采取动作a的概率。
 

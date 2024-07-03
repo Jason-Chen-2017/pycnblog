@@ -1,4 +1,4 @@
-                 
+
 # Python机器学习实战：机器学习模型的持久化与重新加载
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -180,10 +180,10 @@ loaded_model = load('svm_model_simplified.pkl')
 
 - **Q**: 如何处理模型过拟合？
   - **A**: 通过调整参数$C$或采用交叉验证方法选择最佳值；引入正则化项，如L1或L2正则化。
-  
+
 - **Q**: 在分布式环境中部署模型时应注意什么？
   - **A**: 需要确保模型版本一致，考虑通信延迟和网络稳定性的影响；可能需要设计同步或异步更新策略。
-  
+
 - **Q**: 如何评估模型持久化对性能的影响？
   - **A**: 测试加载时间、预测速度以及与新数据集成时的准确性变化。
 
@@ -214,22 +214,22 @@ def main():
     # 加载数据
     data = load_iris()
     X, y = data.data, data.target
-    
+
     # 划分训练集和测试集
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-    
+
     # 特征标准化
     scaler = StandardScaler()
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)
-    
+
     # 定义并训练SVM模型
     model = SVC()
     model.fit(X_train_scaled, y_train)
-    
+
     # 模型持久化
     dump(model, 'svm_model.joblib')
-    
+
     # 重新加载模型进行预测
     loaded_model = load('svm_model.joblib')
     predictions = loaded_model.predict(X_test_scaled)

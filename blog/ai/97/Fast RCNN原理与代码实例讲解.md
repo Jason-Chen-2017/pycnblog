@@ -1,7 +1,7 @@
 
 # Fast R-CNN原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -197,7 +197,7 @@ class FastRCNN(nn.Module):
         self.backbone = ResNet50(pretrained=True)
         self.rpn = RPN()
         self.classifier = ClassifierHead()
-        
+
     def forward(self, x):
         features = self.backbone(x)
         proposals, labels = self.rpn(features)
@@ -208,7 +208,7 @@ class FastRCNN(nn.Module):
 def train_model(train_loader, model):
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
     criterion = nn.CrossEntropyLoss()
-    
+
     for epoch in range(10):
         for x, y in train_loader:
             optimizer.zero_grad()
@@ -216,7 +216,7 @@ def train_model(train_loader, model):
             loss = criterion(cls_scores, y)
             loss.backward()
             optimizer.step()
-        
+
         print(f"Epoch {epoch+1}, Loss: {loss.item()}")
 
 # 加载数据集

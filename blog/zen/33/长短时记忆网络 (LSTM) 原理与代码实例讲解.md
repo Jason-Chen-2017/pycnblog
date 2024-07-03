@@ -109,7 +109,7 @@ LSTM在以下领域有着广泛的应用：
 LSTM的数学模型主要基于神经网络和门控机制。以下是一个LSTM单元的数学模型：
 
 $$
-h_t = \\text{sigmoid}(W_f \\cdot [h_{t-1}, x_t] + b_f) \\cdot f_t + \\text{sigmoid}(W_i \\cdot [h_{t-1}, x_t] + b_i) \\cdot i_t + \\text{sigmoid}(W_o \\cdot [h_{t-1}, x_t] + b_o) \\cdot o_t
+h_t = \text{sigmoid}(W_f \cdot [h_{t-1}, x_t] + b_f) \cdot f_t + \text{sigmoid}(W_i \cdot [h_{t-1}, x_t] + b_i) \cdot i_t + \text{sigmoid}(W_o \cdot [h_{t-1}, x_t] + b_o) \cdot o_t
 $$
 
 其中，$W_f$、$W_i$、$W_o$分别是遗忘门、输入门和输出门的权重矩阵，$b_f$、$b_i$、$b_o$分别是遗忘门、输入门和输出门的偏置向量，$f_t$、$i_t$、$o_t$分别是遗忘门、输入门和输出门的输出，$[h_{t-1}, x_t]$表示输入序列的第t个时间步的输入和前一个隐藏状态。
@@ -123,17 +123,17 @@ LSTM的数学模型推导过程较为复杂，涉及矩阵运算、激活函数�
 遗忘门根据当前输入和前一个隐藏状态计算遗忘门输出：
 
 $$
-f_t = \\text{sigmoid}(W_f \\cdot [h_{t-1}, x_t] + b_f)
+f_t = \text{sigmoid}(W_f \cdot [h_{t-1}, x_t] + b_f)
 $$
 
-其中，$W_f$是遗忘门的权重矩阵，$b_f$是遗忘门的偏置向量，$\\text{sigmoid}$是Sigmoid激活函数。
+其中，$W_f$是遗忘门的权重矩阵，$b_f$是遗忘门的偏置向量，$\text{sigmoid}$是Sigmoid激活函数。
 
 #### 输入门
 
 输入门根据当前输入和前一个隐藏状态计算输入门输出：
 
 $$
-i_t = \\text{sigmoid}(W_i \\cdot [h_{t-1}, x_t] + b_i)
+i_t = \text{sigmoid}(W_i \cdot [h_{t-1}, x_t] + b_i)
 $$
 
 其中，$W_i$是输入门的权重矩阵，$b_i$是输入门的偏置向量。
@@ -143,7 +143,7 @@ $$
 输出门根据细胞状态和前一个隐藏状态计算输出门输出：
 
 $$
-o_t = \\text{sigmoid}(W_o \\cdot [h_{t-1}, x_t] + b_o)
+o_t = \text{sigmoid}(W_o \cdot [h_{t-1}, x_t] + b_o)
 $$
 
 其中，$W_o$是输出门的权重矩阵，$b_o$是输出门的偏置向量。
@@ -196,7 +196,7 @@ model.fit(train_data, train_labels, epochs=epochs, batch_size=batch_size, valida
 
 # 评估模型
 score, acc = model.evaluate(test_data, test_labels, verbose=2)
-print(f\"Test score: {score:.4f}, accuracy: {acc:.4f}\")
+print(f"Test score: {score:.4f}, accuracy: {acc:.4f}")
 ```
 
 ### 5.3 代码解读与分析
@@ -235,8 +235,8 @@ LSTM在时间序列分析领域可以用于股票预测、天气预测、交通�
 
 ### 7.3 相关论文推荐
 
-1. \"Long Short-Term Memory\" by Hochreiter and Schmidhuber
-2. \"Sequence to Sequence Learning with Neural Networks\" by Sutskever et al.
+1. "Long Short-Term Memory" by Hochreiter and Schmidhuber
+2. "Sequence to Sequence Learning with Neural Networks" by Sutskever et al.
 
 ### 7.4 其他资源推荐
 

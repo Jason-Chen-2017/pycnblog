@@ -72,7 +72,7 @@ $$
 x' \\
 y' \\
 1
-\end{bmatrix} = 
+\end{bmatrix} =
 \begin{bmatrix}
 a & b & t_x \\
 c & d & t_y \\
@@ -121,7 +121,7 @@ faces = detector.detect_faces(img)
 for face in faces:
     x, y, w, h = face['box']
     keypoints = face['keypoints']
-    
+
     cv2.rectangle(img, (x,y), (x+w,y+h), (0,155,255), 2)
     cv2.circle(img, keypoints['left_eye'], 2, (0,155,255), 2)
     cv2.circle(img, keypoints['right_eye'], 2, (0,155,255), 2)
@@ -153,7 +153,7 @@ def extract_features(image_path):
     features = model.predict(image)
     return features[0]
 
-features1 = extract_features('face1.jpg') 
+features1 = extract_features('face1.jpg')
 features2 = extract_features('face2.jpg')
 
 distance = tf.norm(features1 - features2, ord='euclidean')

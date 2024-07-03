@@ -130,7 +130,7 @@ ValueStateFunction<Long> countStateFunction = new ValueStateFunction<Long>() {
 };
 
 // 创建状态，并应用窗口函数
-input.keyBy(...) 
+input.keyBy(...)
      .window(TumblingEventTimeWindows.of(Time.seconds(10)))
      .aggregate(Aggregations.create(countStateFunction));
 
@@ -190,7 +190,7 @@ ValueStateFunction<Long> countStateFunction = new ValueStateFunction<Long>() {
 };
 
 // 创建状态，并应用窗口函数
-input.keyBy(...) 
+input.keyBy(...)
      .window(TumblingEventTimeWindows.of(Time.seconds(10)))
      .aggregate(Aggregations.create(countStateFunction));
 

@@ -1,7 +1,7 @@
 
 # AI人工智能核心算法原理与代码实例讲解：数据隐私
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -309,7 +309,7 @@ A：加密算法可以将数据加密处理，在确保数据安全的前提下�
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n privacy-env python=3.8 
+conda create -n privacy-env python=3.8
 conda activate privacy-env
 ```
 3. 安装Python依赖库：

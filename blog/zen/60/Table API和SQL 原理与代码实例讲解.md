@@ -53,7 +53,7 @@
 ## 4. 数学模型和公式详细讲解举例说明
 ### 4.1 关系代数模型
 #### 4.1.1 选择(Selection)
-#### 4.1.2 投影(Projection)  
+#### 4.1.2 投影(Projection)
 #### 4.1.3 笛卡尔积(Cartesian Product)
 #### 4.1.4 并集(Union)
 #### 4.1.5 差集(Difference)
@@ -72,7 +72,7 @@
 #### 5.1.1 批处理模式下的Table API实例
 #### 5.1.2 流处理模式下的Table API实例
 #### 5.1.3 代码详细解释说明
-### 5.2 SQL代码实例  
+### 5.2 SQL代码实例
 #### 5.2.1 批处理模式下的SQL实例
 #### 5.2.2 流处理模式下的SQL实例
 #### 5.2.3 代码详细解释说明
@@ -100,7 +100,7 @@
 #### 7.1.1 Flink架构与特性
 #### 7.1.2 Flink Table API与SQL支持
 #### 7.1.3 Flink学习资源
-### 7.2 Apache Beam 
+### 7.2 Apache Beam
 #### 7.2.1 Beam编程模型
 #### 7.2.2 Beam SQL支持
 #### 7.2.3 Beam学习资源
@@ -163,7 +163,7 @@ Table result = tEnv.from("words")
     .select($("word"), $("word").count().as("count"))
     .filter($("count").isGreaterOrEqual(5));
 
-// 将结果写入TableSink  
+// 将结果写入TableSink
 result.executeInsert("output");
 ```
 
@@ -181,7 +181,7 @@ tEnv.executeSql("CREATE TABLE words (word STRING) WITH ('connector' = 'datagen')
 // 执行SQL查询
 tEnv.executeSql("SELECT word, COUNT(word) AS count " +
                 "FROM words " +
-                "GROUP BY word " + 
+                "GROUP BY word " +
                 "HAVING COUNT(word) >= 5");
 
 // 将结果写入TableSink

@@ -9,7 +9,7 @@
 #### 1.1.3 智慧城市理念提出
 ### 1.2 人工智能技术的发展
 #### 1.2.1 深度学习的突破
-#### 1.2.2 大语言模型(LLM)的崛起  
+#### 1.2.2 大语言模型(LLM)的崛起
 #### 1.2.3 多智能体系统的应用前景
 ### 1.3 智能交通的重要性
 #### 1.3.1 交通拥堵问题严重
@@ -17,7 +17,7 @@
 #### 1.3.3 智能交通系统(ITS)的必要性
 
 ## 2. 核心概念与联系
-### 2.1 大语言模型(LLM) 
+### 2.1 大语言模型(LLM)
 #### 2.1.1 LLM的定义与特点
 #### 2.1.2 LLM的训练方法
 #### 2.1.3 LLM在自然语言处理中的应用
@@ -36,7 +36,7 @@
 #### 3.1.2 LLM策略生成
 #### 3.1.3 智能体交互学习
 ### 3.2 多智能体协同决策算法
-#### 3.2.1 博弈论建模 
+#### 3.2.1 博弈论建模
 #### 3.2.2 纳什均衡求解
 #### 3.2.3 基于LLM的策略优化
 ### 3.3 分布式多智能体系统设计
@@ -48,7 +48,7 @@
 ### 4.1 马尔可夫决策过程(MDP)
 MDP可以用一个五元组 $(S,A,P,R,\gamma)$ 来表示：
 - $S$ 是有限的状态集合
-- $A$ 是有限的动作集合  
+- $A$ 是有限的动作集合
 - $P$ 是状态转移概率矩阵，$P(s'|s,a)$ 表示在状态 $s$ 下执行动作 $a$ 后转移到状态 $s'$ 的概率
 - $R$ 是奖励函数，$R(s,a)$ 表示在状态 $s$ 下执行动作 $a$ 获得的即时奖励
 - $\gamma \in [0,1]$ 是折扣因子，表示未来奖励的重要程度
@@ -92,7 +92,7 @@ $$\max_{\theta} \mathbb{E}_{(s,d)\sim \mathcal{D}} \left[ \mathbb{E}_{a\sim \pi_
 class Agent:
     def __init__(self, policy_generator):
         self.policy_generator = policy_generator
-    
+
     def select_action(self, state, instruction):
         policy = self.policy_generator(state, instruction)
         action = policy.sample()
@@ -164,7 +164,7 @@ def train(env, agents, num_episodes, max_steps):
 - [BERT](https://github.com/google-research/bert)：Google开源的预训练语言模型
 - [RoBERTa](https://github.com/pytorch/fairseq/tree/master/examples/roberta)：Facebook开源的鲁棒优化版BERT
 ### 7.3 数据集
-- [SUMO](https://www.eclipse.org/sumo/)：城市交通模拟数据集  
+- [SUMO](https://www.eclipse.org/sumo/)：城市交通模拟数据集
 - [NGSIM](https://ops.fhwa.dot.gov/trafficanalysistools/ngsim.htm)：美国高速公路交通数据集
 - [PeMS](http://pems.dot.ca.gov/)：加州高速公路交通数据集
 

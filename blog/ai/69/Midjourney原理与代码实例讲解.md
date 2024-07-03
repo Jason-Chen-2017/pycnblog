@@ -199,7 +199,7 @@ A：Midjourney的模型参数优化可以从以下几个方面进行：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n midjourney-env python=3.8 
+conda create -n midjourney-env python=3.8
 conda activate midjourney-env
 ```
 

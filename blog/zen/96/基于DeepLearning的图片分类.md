@@ -233,7 +233,7 @@ criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
 
 # 训练模型
-for epoch in range(2):  
+for epoch in range(2):
     running_loss = 0.0
     for i, data in enumerate(trainloader, 0):
         inputs, labels = data

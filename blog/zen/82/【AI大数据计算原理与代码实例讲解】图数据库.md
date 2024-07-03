@@ -16,7 +16,7 @@
 图数据库使用图这种数据结构来表示实体及实体间的关系。图中的节点表示实体,边表示实体间的关系。与关系型数据库不同,图数据库的schema是灵活的,可以随时添加新的节点和边类型。
 
 图数据库的核心概念包括:
-- 节点(Node):图中的实体,例如人、地点、事物等。 
+- 节点(Node):图中的实体,例如人、地点、事物等。
 - 边(Edge):连接节点的关系,例如"认识"、"属于"等。
 - 属性(Property):节点和边的属性,用于描述它们的特征。
 - 标签(Label):用于给节点分类,一个节点可以有多个标签。
@@ -35,7 +35,7 @@ graph LR
 ### 3.1 算法原理概述
 图数据库的核心是图算法,用于在图上进行各种分析和计算。常见的图算法包括:
 - 最短路径算法:找出两个节点之间的最短路径,如Dijkstra算法、A*算法等。
-- 连通性算法:找出图中的连通分量,如并查集算法、强连通分量算法等。 
+- 连通性算法:找出图中的连通分量,如并查集算法、强连通分量算法等。
 - 中心性算法:找出图中的重要节点,如PageRank算法、Betweenness Centrality算法等。
 - 社区发现算法:在图中找出紧密联系的社区,如Label Propagation算法、Louvain算法等。
 ### 3.2 算法步骤详解
@@ -47,7 +47,7 @@ graph LR
 5. 根据距离和前驱节点信息还原出最短路径。
 ### 3.3 算法优缺点
 Dijkstra算法的优点是逻辑清晰,易于实现。但其时间复杂度较高,不适合处理大规模图。一些优化版本如A*算法,引入了启发式函数,在实际应用中效率更高。
-### 3.4 算法应用领域 
+### 3.4 算法应用领域
 图的最短路径算法在地图导航、网络路由等领域有广泛应用。在社交网络等领域,也可以用于分析用户之间的最短连接路径。
 
 ## 4. 数学模型和公式 & 详细讲解 & 举例说明
@@ -65,10 +65,10 @@ graph LR
 
 其邻接矩阵表示为:
 $$
-A = \begin{bmatrix} 
-0 & 2 & 5 & \infty \\\\
-\infty & 0 & 1 & 6 \\\\
-\infty & \infty & 0 & 1 \\\\
+A = \begin{bmatrix}
+0 & 2 & 5 & \infty \\\
+\infty & 0 & 1 & 6 \\\
+\infty & \infty & 0 & 1 \\\
 \infty & \infty & \infty & 0
 \end{bmatrix}
 $$
@@ -92,11 +92,11 @@ $$
 
 ```mermaid
 graph LR
-  A((1)) -- 2 --> B((2)) 
+  A((1)) -- 2 --> B((2))
   A -- 5 --> C((3))
   B -- 1 --> C
   B -- 6 --> D((4))
-  C -- 1 --> D  
+  C -- 1 --> D
 ```
 
 初始时,起点1的距离为0,其他节点的距离为 $\infty$。
@@ -105,7 +105,7 @@ graph LR
 - $d(2) = min(\infty, 0+2) = 2$
 - $d(3) = min(\infty, 0+5) = 5$
 
-第二次选择节点2,更新其邻居节点3和4的距离:  
+第二次选择节点2,更新其邻居节点3和4的距离:
 - $d(3) = min(5, 2+1) = 3$
 - $d(4) = min(\infty, 2+6) = 8$
 
@@ -119,14 +119,14 @@ graph LR
 
 最短路径为:
 - 1->2
-- 1->2->3 
+- 1->2->3
 - 1->2->3->4
 
 ### 4.4 常见问题解答
 - Q: Dijkstra算法能处理负权边吗?
 - A: 不能,Dijkstra算法要求边的权重非负。如果有负权边,需要使用Bellman-Ford算法等。
 
-- Q: 如何优化Dijkstra算法? 
+- Q: 如何优化Dijkstra算法?
 - A: 可以使用优先级队列来选择距离最小的节点,将算法的时间复杂度优化到 $O((E+V)logV)$。
 
 ## 5. 项目实践：代码实例和详细解释说明
@@ -161,7 +161,7 @@ graph.run("""
          (c:Node {id: 3}),
          (d:Node {id: 4}),
          (a)-[:LINK {cost: 2}]->(b),
-         (a)-[:LINK {cost: 5}]->(c), 
+         (a)-[:LINK {cost: 5}]->(c),
          (b)-[:LINK {cost: 1}]->(c),
          (b)-[:LINK {cost: 6}]->(d),
          (c)-[:LINK {cost: 1}]->(d)
@@ -175,7 +175,7 @@ start_node = 1
 result = graph.run(f"""
   MATCH (start:Node {{id: {start_node} }}), (end:Node)
   WHERE start <> end
-  CALL gds.alpha.shortestPath.dijkstra.stream('myGraph', {{ 
+  CALL gds.alpha.shortestPath.dijkstra.stream('myGraph', {{
     sourceNode: start,
     targetNode: end,
     relationshipWeightProperty: 'cost'
@@ -201,8 +201,8 @@ print(result)
 运行上述代码,输出结果为:
 
 ```
-[{'node': 2, 'distance': 2.0}, 
- {'node': 3, 'distance': 3.0}, 
+[{'node': 2, 'distance': 2.0},
+ {'node': 3, 'distance': 3.0},
  {'node': 4, 'distance': 4.0}]
 ```
 
@@ -222,7 +222,7 @@ print(result)
 - 《Graph Databases》:图数据库领域的经典书籍,系统介绍了图数据库的原理和应用。
 - Neo4j官方文档:提供了详尽的Neo4j使用指南和案例。
 - 《GraphQL in Action》:介绍了基于图的查询语言GraphQL的原理和实践。
-### 7.2 开发工具推荐 
+### 7.2 开发工具推荐
 - Neo4j Desktop:Neo4j官方的图形化管理工具,可以方便地管理和查询Neo4j数据库。
 - Cypher Shell:Neo4j的命令行查询工具,支持交互式执行Cypher语句。
 - Gremlin Console:图查询语言Gremlin的交互式控制台,可以在各种图数据库上执行Gremlin查询。

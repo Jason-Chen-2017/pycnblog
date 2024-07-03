@@ -303,4 +303,4 @@ Kibana可以用于探索数据，发现数据之间的关系和趋势，例如�
 * **如何分享图表？**
     * 使用Kibana的分享功能，将图表分享给其他人。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

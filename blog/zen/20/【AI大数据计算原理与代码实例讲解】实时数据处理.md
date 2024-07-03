@@ -85,7 +85,7 @@
 
 流式计算中的数学模型主要涉及数据流的统计分析、模式识别和预测。例如，使用滑动窗口算法进行平均值计算：
 
-$$ \\text{Average}(W) = \\frac{\\sum_{i=n}^{n+m} x_i}{m} $$
+$$ \text{Average}(W) = \frac{\sum_{i=n}^{n+m} x_i}{m} $$
 
 其中，$W$是滑动窗口，$x_i$是窗口内的第$i$个元素，$n$是窗口的起始索引，$m$是窗口大小。
 
@@ -134,7 +134,7 @@ public class RealtimeSales {
 
         // 创建Kafka连接器
         DataStream<String> stream = env
-            .addSource(new FlinkKafkaConsumer<>(\"sales-topic\", new SimpleStringSchema(), kafkaConfig))
+            .addSource(new FlinkKafkaConsumer<>("sales-topic", new SimpleStringSchema(), kafkaConfig))
             .setParallelism(1);
 
         // 数据清洗：去除无效数据
@@ -154,7 +154,7 @@ public class RealtimeSales {
         dailySales.print().setParallelism(1);
 
         // 执行任务
-        env.execute(\"Realtime Sales Calculation\");
+        env.execute("Realtime Sales Calculation");
     }
 
     static class Record {

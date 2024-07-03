@@ -178,14 +178,14 @@ public class DataQualityMonitor {
             .setTaskName("data-quality-task")
             .setRunner(new DataQualityRunner())
             .build();
-        
+
         // 创建Samza运行时环境
         SamzaContainerFactory factory = SamzaContainerFactory.newFactory(config, new DefaultContainerConfiguration());
         SamzaContainer container = factory.getContainer();
-        
+
         // 启动容器
         container.start();
-        
+
         // 运行一段时间后停止容器
         Thread.sleep(10000);
         container.stop();

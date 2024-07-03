@@ -96,9 +96,9 @@
 人工免疫算法中的关键步骤通常涉及适应度函数、选择、交叉、突变等操作。具体公式可能因算法变种而异，但一般形式可以表示为：
 
 - **适应度**：$f(x)$，其中$x$是抗体。
-- **选择**：基于适应度$w_i = \\frac{f(x_i)}{\\sum_j f(x_j)}$进行选择。
-- **交叉**：$x'_i = x_i \\cdot \\alpha + x_j \\cdot (1-\\alpha)$，其中$\\alpha$是交叉概率。
-- **突变**：$x''_i = x'_i + \\Delta x_i$，其中$\\Delta x_i$是突变幅度。
+- **选择**：基于适应度$w_i = \frac{f(x_i)}{\sum_j f(x_j)}$进行选择。
+- **交叉**：$x'_i = x_i \cdot \alpha + x_j \cdot (1-\alpha)$，其中$\alpha$是交叉概率。
+- **突变**：$x''_i = x'_i + \Delta x_i$，其中$\Delta x_i$是突变幅度。
 
 ### 4.3 案例分析与讲解
 
@@ -173,7 +173,7 @@ class ArtificialImmuneSystem:
 ais = ArtificialImmuneSystem(population_size=50, iterations=100, mutation_rate=0.1, crossover_rate=0.8)
 problem_domain = np.array([[1, 2], [3, 4], [5, 6]])  # 示例问题域
 best_solution = ais.run_algorithm(problem_domain)
-print(\"Best Solution:\", best_solution)
+print("Best Solution:", best_solution)
 ```
 
 ### 5.3 代码解读与分析

@@ -421,4 +421,4 @@ Kafka 是一个高性能、高可靠性、可扩展的分布式消息队列系�
 
 **回答：** Kafka 提供了丰富的监控指标，可以通过 JMX、Kafka Tool 等工具进行监控。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

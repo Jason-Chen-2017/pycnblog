@@ -209,7 +209,7 @@ class DETR(nn.Module):
             nn.Linear(256, num_classes),
             # ...
         )
-    
+
     def forward(self, x):
         x = self.backbone(x)
         x = x.view(x.size(0), -1)
@@ -302,7 +302,7 @@ class DETR(nn.Module):
             nn.Linear(256, num_classes),
             # ...
         )
-    
+
     def forward(self, x):
         x = self.backbone(x)
         x = x.view(x.size(0), -1)

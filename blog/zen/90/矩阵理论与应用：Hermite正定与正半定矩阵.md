@@ -146,18 +146,18 @@ $$
 设矩阵A如下：
 
 $$
-A = \begin{pmatrix} 1 & 2 \\ 2 & 3 \end{pmatrix}
+A = \begin{pmatrix} 1 & 2 \ 2 & 3 \end{pmatrix}
 $$
 
 求A的特征值和特征向量。
 
 **解答**：
 
-1. 计算特征多项式：$f(t) = \det(A - tI) = \det \begin{pmatrix} 1-t & 2 \\ 2 & 3-t \end{pmatrix} = (1-t)(3-t) - 4 = t^2 - 4t - 3$。
+1. 计算特征多项式：$f(t) = \det(A - tI) = \det \begin{pmatrix} 1-t & 2 \ 2 & 3-t \end{pmatrix} = (1-t)(3-t) - 4 = t^2 - 4t - 3$。
 2. 求解特征多项式：$t^2 - 4t - 3 = 0$，得到特征值$\lambda_1 = -1, \lambda_2 = 3$。
-3. 求解特征值对应的特征向量：对于$\lambda_1 = -1$，有$(A + I)x = 0$，解得特征向量$x_1 = \begin{pmatrix} 1 \\ -1 \end{pmatrix}$；对于$\lambda_2 = 3$，有$(A - 3I)x = 0$，解得特征向量$x_2 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$。
+3. 求解特征值对应的特征向量：对于$\lambda_1 = -1$，有$(A + I)x = 0$，解得特征向量$x_1 = \begin{pmatrix} 1 \ -1 \end{pmatrix}$；对于$\lambda_2 = 3$，有$(A - 3I)x = 0$，解得特征向量$x_2 = \begin{pmatrix} 1 \ 1 \end{pmatrix}$。
 
-因此，A的特征值为$\lambda_1 = -1, \lambda_2 = 3$，对应的特征向量分别为$x_1 = \begin{pmatrix} 1 \\ -1 \end{pmatrix}$和$x_2 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$。
+因此，A的特征值为$\lambda_1 = -1, \lambda_2 = 3$，对应的特征向量分别为$x_1 = \begin{pmatrix} 1 \ -1 \end{pmatrix}$和$x_2 = \begin{pmatrix} 1 \ 1 \end{pmatrix}$。
 
 由于特征值$\lambda_1, \lambda_2 > 0$，所以A是正定矩阵。
 
@@ -166,14 +166,14 @@ $$
 设矩阵A如下：
 
 $$
-A = \begin{pmatrix} 1 & 2 \\ 2 & 3 \end{pmatrix}
+A = \begin{pmatrix} 1 & 2 \ 2 & 3 \end{pmatrix}
 $$
 
 求A的特征值和特征向量。
 
 **解答**：
 
-与案例一类似，A的特征值为$\lambda_1 = -1, \lambda_2 = 3$，对应的特征向量分别为$x_1 = \begin{pmatrix} 1 \\ -1 \end{pmatrix}$和$x_2 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$。
+与案例一类似，A的特征值为$\lambda_1 = -1, \lambda_2 = 3$，对应的特征向量分别为$x_1 = \begin{pmatrix} 1 \ -1 \end{pmatrix}$和$x_2 = \begin{pmatrix} 1 \ 1 \end{pmatrix}$。
 
 由于特征值$\lambda_1, \lambda_2 \geq 0$，所以A是正半定矩阵。
 

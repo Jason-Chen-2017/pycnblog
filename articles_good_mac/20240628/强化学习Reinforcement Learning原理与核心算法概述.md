@@ -73,8 +73,7 @@
 #### Actor-Critic步骤：
 1. 初始化策略和价值函数。
 2. 从初始状态s开始，执行动作a并接收奖励r和下一个状态s'。
-3. 通过策略梯度更新策略：$\theta_{t+1} = \theta_t + \alpha \
-abla_\theta J(\theta_t)$，其中$J(\theta)$是策略的性能指标。
+3. 通过策略梯度更新策略：$\theta_{t+1} = \theta_t + \alpha \nabla_\theta J(\theta_t)$，其中$J(\theta)$是策略的性能指标。
 4. 使用价值函数估计更新策略：$V(s) = V(s) + \beta [\tilde{r} - V(s)]$，其中$\tilde{r}$是基于价值函数的估计奖励。
 5. 重复步骤2至4，直到达到终止条件。
 

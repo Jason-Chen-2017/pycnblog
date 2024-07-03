@@ -12,7 +12,7 @@ CodeGen技术可以显著提高软件开发效率,减少人工编码的工作量
 CodeGen技术在很多领域都有广泛应用,包括:
 - 编译器
 - 代码生成器
-- 低代码/无代码开发平台  
+- 低代码/无代码开发平台
 - 模型驱动开发(MDD)
 - 领域特定语言(DSL)
 - 自动化测试
@@ -28,7 +28,7 @@ CodeGen的输入通常包括以下几个方面:
 ### 2.2 CodeGen的处理过程
 CodeGen的处理过程可以分为以下几个步骤:
 - 解析(Parsing):分析和理解输入的元模型、模板等内容
-- 转换(Transformation):根据转换规则将输入转换为中间表示  
+- 转换(Transformation):根据转换规则将输入转换为中间表示
 - 生成(Generation):根据中间表示生成最终的代码
 
 ### 2.3 CodeGen的输出
@@ -56,7 +56,7 @@ C --> E[生成的代码]
 3. 进行语法分析,生成抽象语法树(AST)
 4. 构建符号表,建立AST节点之间的引用关系
 
-### 3.2 转换阶段 
+### 3.2 转换阶段
 1. 遍历AST,应用一系列转换规则
 2. 常见的转换规则包括:
    - 模式匹配和替换
@@ -79,7 +79,7 @@ C --> E[生成的代码]
 ### 4.1 编译器中的代码生成
 在编译器的代码生成阶段,通常使用中间代码表示(Intermediate Representation)作为桥梁,将前端的抽象语法树转换为目标代码。常见的IR形式有:
 - 三地址码(Three-Address Code):使用类似汇编语言的形式表示程序,每条指令最多有三个操作数。例如:
-  $x=y+z$ 
+  $x=y+z$
 - 四元式(Quadruple):用四元组(op,arg1,arg2,result)表示一条语句。例如:
   $(+,a,b,t1)$
   $(*, t1, 2, t2)$
@@ -93,7 +93,7 @@ C --> E[生成的代码]
   ...
   #end
 - 循环语句:
-  #foreach(${item} in ${collection}) 
+  #foreach(${item} in ${collection})
   ...
   #end
 
@@ -111,14 +111,14 @@ public class ClassModel {
     private String className;
     private List<FieldModel> fields = new ArrayList<>();
     private List<MethodModel> methods = new ArrayList<>();
-    
+
     // 省略getter/setter
 }
 
 public class FieldModel {
     private String name;
     private String type;
-    
+
     // 省略getter/setter
 }
 
@@ -126,7 +126,7 @@ public class MethodModel {
     private String name;
     private String returnType;
     private List<ParameterModel> parameters = new ArrayList<>();
-    
+
     // 省略getter/setter
 }
 ```
@@ -139,7 +139,7 @@ public class ${className} {
     #foreach($field in $fields)
     private ${field.type} ${field.name};
     #end
-    
+
     #foreach($method in $methods)
     public ${method.returnType} ${method.name}(#foreach($parameter in $method.parameters)${parameter.type} ${parameter.name}#if($foreach.hasNext), #end#end) {
         // TODO
@@ -154,17 +154,17 @@ public class ${className} {
 ```java
 VelocityEngine ve = new VelocityEngine();
 ve.init();
-    
+
 Template t = ve.getTemplate("class.vm");
-    
+
 VelocityContext ctx = new VelocityContext();
 ctx.put("className", "Person");
-    
+
 List<FieldModel> fields = new ArrayList<>();
 fields.add(new FieldModel("name", "String"));
 fields.add(new FieldModel("age", "int"));
 ctx.put("fields", fields);
-    
+
 List<MethodModel> methods = new ArrayList<>();
 MethodModel method = new MethodModel();
 method.setName("sayHello");
@@ -172,10 +172,10 @@ method.setReturnType("void");
 method.getParameters().add(new ParameterModel("msg", "String"));
 methods.add(method);
 ctx.put("methods", methods);
-    
+
 StringWriter writer = new StringWriter();
 t.merge(ctx, writer);
-    
+
 System.out.println(writer.toString());
 ```
 
@@ -185,7 +185,7 @@ System.out.println(writer.toString());
 public class Person {
     private String name;
     private int age;
-    
+
     public void sayHello(String msg) {
         // TODO
     }

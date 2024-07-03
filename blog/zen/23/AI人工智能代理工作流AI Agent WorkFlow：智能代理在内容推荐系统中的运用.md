@@ -1,4 +1,4 @@
-                 
+
 # AI人工智能代理工作流AI Agent WorkFlow：智能代理在内容推荐系统中的运用
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -130,14 +130,14 @@ user_similarities = cosine_similarity(user_items.pivot_table(index='userId', col
 def recommend_movies(user_id, num_recommendations=5):
     user_profile = user_items[user_items['userId'] == user_id]
     similar_users = user_similarities[user_id].argsort()[-num_recommendations:][::-1] # 取最相似的用户
-    
+
     recommendations = []
     for sim_user in similar_users:
         if sim_user != user_id:
             sim_ratings = item_features[item_features['movieId'].isin(user_profile['movieId'])]['rating']
             weighted_rating = (similarity * sim_ratings).sum() / similarity.sum()
             recommendations.append((weighted_rating, sim_user))
-    
+
     return sorted(recommendations, key=lambda x: x[0], reverse=True)
 
 # 测试推荐功能
@@ -167,11 +167,11 @@ print(recommend_movies(1))  # 用户ID为1的推荐结果
 - **在线课程**：
   - Coursera: "Machine Learning" by Andrew Ng
   - edX: "Data Science MicroMasters Program"
-  
+
 - **书籍**：
   - "Recommender Systems Handbook" edited by Yehuda Koren et al.
   - "Programming Collective Intelligence" by Toby Segaran
-  
+
 ### 7.2 开发工具推荐
 
 - **数据处理库**：Pandas, NumPy

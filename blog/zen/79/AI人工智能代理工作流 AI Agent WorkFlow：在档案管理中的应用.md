@@ -194,7 +194,7 @@ for epoch in range(10):
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-    
+
     model.eval()
     predictions = []
     labels = []

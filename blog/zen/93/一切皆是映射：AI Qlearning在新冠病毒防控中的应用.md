@@ -187,11 +187,11 @@ def learn(alpha, gamma, n_episodes):
     for episode in range(n_episodes):
         state = np.random.randint(0, n_states)
         action = policy(state)
-        
+
         # 执行行动
         next_state = np.random.randint(0, n_states)
         reward = np.random.randint(0, 10)
-        
+
         # 更新Q值
         Q[state, action] = Q[state, action] + alpha * (reward + gamma * np.max(Q[next_state, :]) - Q[state, action])
 

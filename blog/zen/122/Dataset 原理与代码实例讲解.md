@@ -13,7 +13,7 @@
 ### 1.4 本文结构
 本文将重点介绍 PyTorch 中 Dataset 的原理和使用。内容安排如下:
 
-- 第 2 节介绍 Dataset 的核心概念和相关组件。 
+- 第 2 节介绍 Dataset 的核心概念和相关组件。
 - 第 3 节讲解 Dataset 的工作原理和典型用法。
 - 第 4 节结合代码示例,展示几种常见的 Dataset 实现。
 - 第 5 节总结全文,并对 Dataset 的发展趋势做简要展望。
@@ -29,7 +29,7 @@ Dataset 的核心是 `__getitem__` 方法,它定义了如何通过索引(index)�
 graph TD
 A[Dataset] --> B[TensorDataset]
 A --> C[ConcatDataset]
-A --> D[...] 
+A --> D[...]
 E[DataLoader] --> A
 ```
 
@@ -41,7 +41,7 @@ Dataset 的核心是 `__getitem__` 方法,它接收一个索引作为输入,返�
 以下是实现自定义 Dataset 的典型步骤:
 
 1. 继承 `torch.utils.data.Dataset` 基类
-2. 实现 `__init__` 方法,在其中完成数据集的初始化工作,如读入全部数据等 
+2. 实现 `__init__` 方法,在其中完成数据集的初始化工作,如读入全部数据等
 3. 实现 `__getitem__` 方法,定义如何通过索引获取样本
 4. 实现 `__len__` 方法,返回数据集的样本数量
 
@@ -84,7 +84,7 @@ $$Dataset: \{0, 1, ..., 999\} \rightarrow \{(image_0, label_0), (image_1, label_
 - 问:Dataset 和 DataLoader 有什么区别?
 - 答:Dataset 定义了如何读取数据集中的单个样本,而 DataLoader 在 Dataset 的基础上实现了批次读取、数据混洗等功能。它们通常配合使用。
 
-## 5. 项目实践:代码实例和详细解释说明 
+## 5. 项目实践:代码实例和详细解释说明
 ### 5.1 开发环境搭建
 首先需要安装 PyTorch,可以通过以下命令安装:
 
@@ -106,18 +106,18 @@ class MyDataset(Dataset):
         self.root_dir = root_dir
         self.transform = transform
         self.images = os.listdir(root_dir)
-        
+
     def __len__(self):
         return len(self.images)
-    
+
     def __getitem__(self, index):
         img_path = os.path.join(self.root_dir, self.images[index])
         image = Image.open(img_path).convert('RGB')
         label = int(self.images[index].split("_")[0]) # 假设图像文件名的格式为 "label_xxx.jpg"
-        
+
         if self.transform is not None:
             image = self.transform(image)
-        
+
         return image, label
 ```
 
@@ -134,7 +134,7 @@ from torch.utils.data import DataLoader
 from torchvision import transforms
 
 transform = transforms.Compose([
-    transforms.Resize((224, 224)), 
+    transforms.Resize((224, 224)),
     transforms.ToTensor()
 ])
 

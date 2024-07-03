@@ -42,7 +42,7 @@ graph TD
     C --> C2[查询重写]
     C --> C3[连接重排序]
     D --> D1[Hive连接器]
-    D --> D2[Kafka连接器] 
+    D --> D2[Kafka连接器]
     D --> D3[MySQL连接器]
     E --> E1[并行管道]
     E --> E2[数据分区]

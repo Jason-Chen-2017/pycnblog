@@ -105,12 +105,12 @@ Pig的数学模型构建主要围绕数据流和图论。数据流模型定义�
 
 在数据流模型中，每个操作符可以被看作一个数学函数$f(x,y)$，其中$x$和$y$是输入数据集，$f$是操作符。例如，数据选择操作可以被表示为：
 
-\\[f(x, y) = \\begin{cases} 
-x & \\text{if } y \\\\
-\\emptyset & \\text{otherwise}
-\\end{cases}\\]
+$$f(x, y) = \begin{cases}
+x & \text{if } y \\\
+\emptyset & \text{otherwise}
+\end{cases}$$
 
-这里$x$是输入数据集，$y$是选择条件，$\\emptyset$表示空集。
+这里$x$是输入数据集，$y$是选择条件，$\emptyset$表示空集。
 
 ### 4.3 案例分析与讲解
 
@@ -129,7 +129,7 @@ monthly_sales = FOREACH monthly_sales GENERATE AVG(sales);
 
 - **问题**：如何在Pig中处理缺失数据？
 - **解答**：使用`COALESCE`函数来替换缺失值，或者使用`IF`语句来检查是否存在缺失值。
-  
+
 - **问题**：如何优化Pig脚本的性能？
 - **解答**：尽量减少数据集的大小，使用更有效的数据分区策略，避免不必要的数据复制，以及优化UDFs的实现。
 

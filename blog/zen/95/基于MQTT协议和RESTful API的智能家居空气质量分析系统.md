@@ -265,11 +265,11 @@ client.connect(mqtt_server, mqtt_port, 60)
 def on_message(client, userdata, msg):
     pm2_5 = float(msg.payload)
     print("Received PM2.5 value:", pm2_5)
-    
+
     # 预测空气质量指数(AQI)
     aqi = model.predict([[pm2_5]])[0]
     print("Predicted AQI:", aqi)
-    
+
     # 发送空气质量指数(AQI)到服务器
     client.publish("home/aqi", aqi)
 

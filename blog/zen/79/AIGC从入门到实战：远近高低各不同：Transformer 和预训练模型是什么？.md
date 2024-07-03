@@ -113,11 +113,11 @@ $$
 #### Q&A
 
 - **Q**: Transformer如何处理文本中的顺序依赖性？
-  
+
   **A**: Transformer通过自注意力机制解决了顺序依赖性问题。每个位置的查询向量会与所有其他位置的键向量进行比较，从而捕捉到文本的全局依赖关系，而不是仅仅依赖于前一时刻的信息。
 
 - **Q**: 微调过程中如何选择合适的超参数？
-  
+
   **A**: 超参数的选择需要根据具体任务和数据集来调整。通常，学习率、批次大小、训练轮数是最重要的超参数。可以使用网格搜索或随机搜索来寻找最佳组合。
 
 ## 5. 项目实践：代码实例和详细解释说明
@@ -149,8 +149,8 @@ max_length = len(tokenizer.encode(input_text)) + 50
 
 # 生成文本
 input_ids = tokenizer.encode(input_text, return_tensors="pt")
-output_sequences = model.generate(input_ids, 
-                                  max_length=max_length, 
+output_sequences = model.generate(input_ids,
+                                  max_length=max_length,
                                   num_return_sequences=num_return_sequences)
 
 # 解码生成的文本
@@ -226,11 +226,11 @@ print(decoded_sequences)
 #### Q&A
 
 - **Q**: Transformer如何解决数据不平衡问题？
-  
+
   **A**: 在训练过程中，可以通过调整采样策略、增加少数类样本、使用加权损失函数等方式来减轻数据不平衡的影响。
-  
+
 - **Q**: 预训练模型如何处理文本中的噪声？
-  
+
   **A**: 预训练模型通常通过自注意力机制捕捉文本中的上下文依赖关系，这有助于在一定程度上抑制噪声的影响。同时，数据清洗和预处理步骤也是减少噪声的有效措施。
 
 ---

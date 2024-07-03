@@ -4,7 +4,7 @@
 ### 1.1 自然语言处理的发展历程
 自然语言处理(Natural Language Processing, NLP)是人工智能的一个重要分支,旨在让计算机能够理解、生成和处理人类语言。NLP技术经历了从基于规则、统计学习到深度学习的发展历程。近年来,随着深度学习的兴起,特别是Transformer模型的提出,NLP领域取得了巨大的进展。
 
-### 1.2 ViT模型的提出 
+### 1.2 ViT模型的提出
 ViT(Vision Transformer)最初是由Google Research在2020年提出的,用于计算机视觉领域。ViT将Transformer架构应用到图像分类任务中,取得了优于CNN的性能。ViT的成功启发了研究者将其应用到其他领域,包括自然语言处理。
 
 ### 1.3 ViT在NLP中的应用前景
@@ -22,7 +22,7 @@ ViT强大的建模能力和并行计算优势,使其在NLP领域具有广阔的�
 - 自注意力可以捕捉输入序列中的全局依赖关系
 
 ### 2.3 位置编码
-- 由于Transformer不包含循环和卷积操作,需要引入位置编码来表示序列中元素的位置信息  
+- 由于Transformer不包含循环和卷积操作,需要引入位置编码来表示序列中元素的位置信息
 - 常见的位置编码方式有正弦位置编码和学习位置编码
 
 ### 2.4 ViT模型结构
@@ -213,7 +213,7 @@ ViT在自然语言处理领域有广泛的应用场景,包括:
 - CoNLL 2003命名实体识别数据集:[https://www.clips.uantwerpen.be/conll2003/ner/](https://www.clips.uantwerpen.be/conll2003/ner/)
 
 ### 7.4 教程和文档
-- PyTorch官方教程:[https://pytorch.org/tutorials/](https://pytorch.org/tutorials/) 
+- PyTorch官方教程:[https://pytorch.org/tutorials/](https://pytorch.org/tutorials/)
 - TensorFlow官方教程:[https://www.tensorflow.org/tutorials](https://www.tensorflow.org/tutorials)
 - Hugging Face Transformers文档:[https://huggingface.co/transformers/](https://huggingface.co/transformers/)
 

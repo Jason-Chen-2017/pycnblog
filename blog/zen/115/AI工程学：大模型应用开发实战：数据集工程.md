@@ -199,7 +199,7 @@ Accuracy: 0.85
     * Udacity
 
 ### 7.2  开发工具推荐
-* **Python:** 
+* **Python:**
 * **pandas:** 数据处理和分析
 * **scikit-learn:** 机器学习算法
 * **TensorFlow:** 深度学习框架
@@ -243,5 +243,5 @@ Accuracy: 0.85
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

@@ -17,7 +17,7 @@
 - 核心概念与联系
 - 核心算法原理与具体操作步骤
 - 数学模型和公式详细讲解与举例说明
-- 项目实践：代码实例和详细解释说明 
+- 项目实践：代码实例和详细解释说明
 - 实际应用场景
 - 工具和资源推荐
 - 总结：未来发展趋势与挑战
@@ -53,7 +53,7 @@ B --> G
 C --> G
 ```
 
-## 3. 核心算法原理 & 具体操作步骤 
+## 3. 核心算法原理 & 具体操作步骤
 ### 3.1  算法原理概述
 Spark的核心是RDD，RDD是一个不可变、可分区、里面的元素可并行计算的集合。RDD之间的转换是函数式的，通过一系列的算子操作来完成。常见的算子包括map、filter、reduce、join等。
 
@@ -63,7 +63,7 @@ Spark的任务调度采用了DAG（有向无环图）模型。Spark应用程序�
 以WordCount为例，详细讲解Spark的算法步骤：
 
 1. 读取输入数据，创建初始RDD。可以从HDFS、本地文件、数据库等创建RDD。
-   
+
    ```scala
    val lines = sc.textFile("hdfs://input/file.txt")
    ```
@@ -73,7 +73,7 @@ Spark的任务调度采用了DAG（有向无环图）模型。Spark应用程序�
    - filter：对RDD中的每个元素应用一个函数，返回满足条件的元素组成的新RDD。
    - flatMap：对RDD中的每个元素应用一个函数，将结果压平后返回新的RDD。
    - reduceByKey：对RDD中的每个key对应的值进行聚合。
-   
+
    ```scala
    val words = lines.flatMap(_.split(" "))
    val pairs = words.map(word => (word, 1))
@@ -196,7 +196,7 @@ $$
 val links = sc.parallelize(Seq(
   ("A", Seq("B", "C")),
   ("B", Seq("C", "D")),
-  ("C", Seq("A")), 
+  ("C", Seq("A")),
   ("D", Seq("B", "C"))
 ))
 
@@ -207,9 +207,9 @@ for (i <- 1 to 10) {
     case (page, (links, rank)) =>
       links.map(dest => (dest, rank / links.size))
   }
-  
+
   val newRanks = contributions.reduceByKey(_ + _).mapValues(0.2 + 0.8 * _)
-  
+
   ranks = newRanks
 }
 
@@ -254,10 +254,10 @@ object WordCount {
   def main(args: Array[String]) {
     val conf = new SparkConf().setAppName("WordCount")
     val sc = new SparkContext(conf)
-    
+
     val lines = sc.textFile("hdfs://input/file.txt")
     val words = lines.flatMap(_.split(" "))
     val pairs = words.map(word => (word, 1))
     val wordCounts = pairs.reduceByKey(_ + _)
-    
+
     wordCounts.saveAsTextFile("hdfs://output/wordcount")

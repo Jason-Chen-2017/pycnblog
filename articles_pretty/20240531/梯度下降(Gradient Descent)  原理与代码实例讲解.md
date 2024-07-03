@@ -27,16 +27,14 @@
 根据梯度和学习率的乘积来更新参数。学习率是一个超参数，用于控制每次迭代的步长。
 
 $$
-w_{new} = w_{old} - \\alpha \
-abla L(w_{old})
+w_{new} = w_{old} - \\alpha \nabla L(w_{old})
 $$
 
 其中：
 - $w_{new}$ 是新参数值；
 - $w_{old}$ 是当前参数值；
 - $\\alpha$ 是学习率；
-- $\
-abla L(w_{old})$ 是损失函数在当前参数值处的梯度。
+- $\nabla L(w_{old})$ 是损失函数在当前参数值处的梯度。
 
 ### 重复迭代
 
@@ -53,8 +51,7 @@ $$
 我们对参数 $w$ 和 $b$ 求导：
 
 $$
-\
-abla L(w, b) = \\begin{bmatrix} \\frac{\\partial L}{\\partial w} \\\\ \\frac{\\partial L}{\\partial b} \\end{bmatrix} = \\begin{bmatrix} \\sum_{i=1}^{n} x_i (wx_i + b - y_i) \\\\ \\sum_{i=1}^{n} (wx_i + b - y_i) \\end{bmatrix}
+\nabla L(w, b) = \\begin{bmatrix} \\frac{\\partial L}{\\partial w} \\\\ \\frac{\\partial L}{\\partial b} \\end{bmatrix} = \\begin{bmatrix} \\sum_{i=1}^{n} x_i (wx_i + b - y_i) \\\\ \\sum_{i=1}^{n} (wx_i + b - y_i) \\end{bmatrix}
 $$
 
 然后，我们更新参数：

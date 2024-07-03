@@ -1,6 +1,6 @@
 # 【LangChain编程：从入门到实践】使用LangServe提供服务
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：LangChain, LangServe, 微服务架构, API设计, 端到端解决方案
 
@@ -71,15 +71,15 @@ LangServe的操作步骤包括：
 
 LangChain和LangServe均采用事件驱动的模型来构建和管理服务。对于LangChain，可以构建如下事件模型：
 
-设$S$为服务集合，$A$为API集合，则服务与API之间的关系可以用映射$M：S \\rightarrow A$表示。$M$定义了每个服务$S_i$提供哪些API$A_j$。
+设$S$为服务集合，$A$为API集合，则服务与API之间的关系可以用映射$M：S \rightarrow A$表示。$M$定义了每个服务$S_i$提供哪些API$A_j$。
 
 ### 4.2 公式推导过程
 
 在LangChain中，API版本控制可以采用以下公式来表示：
 
-$$V_i = V_{i-1} + \\Delta V$$
+$$V_i = V_{i-1} + \Delta V$$
 
-其中，$V_i$表示第$i$个版本的API版本号，$V_{i-1}$是前一个版本的版本号，$\\Delta V$是版本增量。
+其中，$V_i$表示第$i$个版本的API版本号，$V_{i-1}$是前一个版本的版本号，$\Delta V$是版本增量。
 
 ### 4.3 案例分析与讲解
 
@@ -93,7 +93,7 @@ $$V_i = V_{i-1} + \\Delta V$$
 
 - **Q:** 如何处理API版本升级时的向后兼容性？
    - **A:** 通过在API文档中明确说明新旧版本的差异，并确保新版本不会破坏现有客户端代码的兼容性。
-   
+
 - **Q:** LangChain如何确保安全性？
    - **A:** LangChain内置身份验证、授权和速率限制策略，通过API定义时指定安全策略来实现。
 
@@ -121,12 +121,12 @@ class Order(BaseModel):
     id: int
     status: str
 
-@app.get(\"/orders/{id}\")
+@app.get("/orders/{id}")
 async def get_order(id: int):
     # 查询数据库并返回订单状态
     ...
 
-@app.put(\"/orders/{id}\")
+@app.put("/orders/{id}")
 async def update_order(id: int, new_status: str):
     # 更新数据库中的订单状态
     ...
@@ -199,7 +199,7 @@ LangChain和LangServe将继续发展，探索更多创新功能，以适应不�
 
 - **Q:** 如何处理API版本升级中的兼容性问题？
    - **A:** 通过详细的API文档和版本迁移指南，确保新旧版本之间的兼容性。
-   
+
 - **Q:** LangChain如何处理API的安全性？
    - **A:** LangChain内置安全策略，如身份验证、授权和速率限制，确保API安全。
 

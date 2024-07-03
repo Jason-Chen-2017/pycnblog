@@ -17,7 +17,7 @@
 ### 1.3 BERT模型在自然语言处理中的应用
 
 #### 1.3.1 BERT在文本分类任务中的应用
-#### 1.3.2 BERT在命名实体识别任务中的应用 
+#### 1.3.2 BERT在命名实体识别任务中的应用
 #### 1.3.3 BERT在问答系统中的应用
 
 ## 2. 核心概念与联系
@@ -48,7 +48,7 @@ A --> D[Positional Encoding]
 B --> E[BERT Model]
 C --> E
 D --> E
-E --> F[Masked Language Model MLM] 
+E --> F[Masked Language Model MLM]
 E --> G[Next Sentence Prediction NSP]
 E --> H[WordPiece Embedding]
 ```
@@ -126,7 +126,7 @@ $$\mathcal{L}_{MLM} = -\sum_{i=1}^{n}log P(w_i|w_{\backslash i})$$
 
 #### 5.3.1 数据集准备与预处理
 #### 5.3.2 加载预训练的中文BERT模型
-#### 5.3.3 定义微调的网络结构 
+#### 5.3.3 定义微调的网络结构
 #### 5.3.4 训练与评估
 #### 5.3.5 代码实例与解释
 

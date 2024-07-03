@@ -308,7 +308,7 @@ A：提高情感分析模型性能的方法包括：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n sentiment-analysis-env python=3.8 
+conda create -n sentiment-analysis-env python=3.8
 conda activate sentiment-analysis-env
 ```
 3. 安装所需的库：

@@ -100,7 +100,7 @@ MCTS的数学模型主要包括以下公式：
 其中，$V(n,s)$ 表示节点s的值，$N(n,s)$ 表示节点s的访问次数。
 
 - **ε-greedy**：$P(n,s) = \begin{cases} \frac{\epsilon}{|S|} & \text{if } s \
-eq \text{argmax}_s UCB_1(n,s) \\ \frac{1}{|S|} & \text{otherwise} \end{cases}$
+eq \text{argmax}_s UCB_1(n,s) \ \frac{1}{|S|} & \text{otherwise} \end{cases}$
 
 其中，$S$ 表示节点n的子节点集合。
 

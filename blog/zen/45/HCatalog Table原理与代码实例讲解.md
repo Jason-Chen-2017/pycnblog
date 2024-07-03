@@ -136,11 +136,11 @@ AND product = 'Product A';
 ### 4.4 常见问题解答
 
 1. **HCatalog Table与Hive的关系是什么**？
-   
+
    HCatalog Table是Hive的一部分，它提供了一种统一的数据存储接口，允许用户使用Hive的SQL语法访问不同的数据存储系统。
 
 2. **为什么选择HCatalog Table**？
-   
+
    HCatalog Table提供了统一的数据存储接口，简化了数据管理，提高了数据访问效率，并支持多种数据源。
 
 ## 5. 项目实践：代码实例和详细解释说明

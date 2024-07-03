@@ -85,11 +85,8 @@
 
 #### 沿流体流动的质点坐标变换
 
-$$ \\frac{\\partial u}{\\partial t} + \\mathbf{u} \\cdot \
-abla \\mathbf{u} = -\\frac{1}{\\rho} \
-abla p + \
-u \
-abla^2 \\mathbf{u} $$
+$$ \\frac{\\partial u}{\\partial t} + \\mathbf{u} \\cdot \nabla \\mathbf{u} = -\\frac{1}{\\rho} \nabla p + \
+u \nabla^2 \\mathbf{u} $$
 
 其中：
 - $\\mathbf{u}$ 是速度向量，

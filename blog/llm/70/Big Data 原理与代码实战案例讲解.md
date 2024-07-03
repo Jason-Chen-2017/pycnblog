@@ -194,7 +194,7 @@ A：评估模型的性能通常需要使用交叉验证等方法，以下是一�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n bigdata-env python=3.8 
+conda create -n bigdata-env python=3.8
 conda activate bigdata-env
 ```
 

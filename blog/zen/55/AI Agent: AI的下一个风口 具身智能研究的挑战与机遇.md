@@ -22,7 +22,7 @@
 #### 2.1.2 具身性对智能的影响
 #### 2.1.3 具身性的分类
 
-### 2.2 情境交互(Situated Interaction) 
+### 2.2 情境交互(Situated Interaction)
 #### 2.2.1 情境交互的定义
 #### 2.2.2 情境交互对智能的作用
 #### 2.2.3 情境交互的实现方式
@@ -46,14 +46,14 @@ C --> D[具身智能]
 #### 3.1.2 Q-Learning算法
 #### 3.1.3 策略梯度(Policy Gradient)算法
 
-### 3.2 元学习(Meta Learning) 
+### 3.2 元学习(Meta Learning)
 #### 3.2.1 元学习的定义与分类
 #### 3.2.2 MAML算法
 #### 3.2.3 Reptile算法
 
 ### 3.3 迁移学习(Transfer Learning)
 #### 3.3.1 迁移学习的定义与分类
-#### 3.3.2 领域自适应(Domain Adaptation) 
+#### 3.3.2 领域自适应(Domain Adaptation)
 #### 3.3.3 领域泛化(Domain Generalization)
 
 ### 3.4 多模态学习(Multi-modal Learning)
@@ -86,10 +86,10 @@ class DQN(object):
         self.env = env
         self.state_dim = env.observation_space.shape[0]
         self.action_dim = env.action_space.n
-        
+
         self.model = self._build_model()
         self.target_model = self._build_model()
-        
+
     def _build_model(self):
         model = tf.keras.Sequential([
             tf.keras.layers.Dense(64, activation='relu', input_shape=(self.state_dim,)),
@@ -98,24 +98,24 @@ class DQN(object):
         ])
         model.compile(loss='mse', optimizer=tf.keras.optimizers.Adam())
         return model
-    
+
     def train(self, batch_size):
         experiences = self.replay_buffer.sample(batch_size)
         states, actions, rewards, next_states, dones = experiences
-        
+
         target_qs = rewards + (1 - dones) * self.gamma * np.max(self.target_model.predict(next_states), axis=1)
-        
+
         q_values = self.model.predict(states)
         q_values[range(batch_size), actions] = target_qs
-        
+
         self.model.fit(states, q_values, verbose=0)
-        
+
     def update_target_model(self):
         self.target_model.set_weights(self.model.get_weights())
-        
+
     def act(self, state, epsilon):
         if np.random.rand() <= epsilon:
-            return self.env.action_space.sample()  
+            return self.env.action_space.sample()
         else:
             q_values = self.model.predict(state[np.newaxis])
             return np.argmax(q_values[0])
@@ -130,13 +130,13 @@ for episode in range(1000):
         action = agent.act(state, epsilon=0.1)
         next_state, reward, done, _ = env.step(action)
         agent.replay_buffer.add(state, action, reward, next_state, done)
-        
+
         if len(agent.replay_buffer) > batch_size:
             agent.train(batch_size)
-        
+
         if episode % target_update_freq == 0:
             agent.update_target_model()
-        
+
         state = next_state
 ```
 以上代码实现了一个基于DQN的自动驾驶智能体。首先定义了DQN类,包括状态空间、动作空间、模型构建、训练、决策等功能。然后在环境中进行交互学习,通过 epsilon-greedy 策略平衡探索和利用,将转移数据存入经验回放池中,并定期从中采样进行训练,同时定期更新目标网络。最终得到一个能够自主驾驶的智能体。
@@ -150,24 +150,24 @@ class MAML(object):
         self.model = model
         self.meta_lr = meta_lr
         self.inner_lr = inner_lr
-        
+
     def _compute_loss(self, x, y):
         logits = self.model(x)
         loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y, logits=logits))
         return loss
-    
+
     def _inner_loop(self, x, y, num_steps):
         with tf.GradientTape() as tape:
             loss = self._compute_loss(x, y)
         grads = tape.gradient(loss, self.model.trainable_variables)
         inner_model = tf.keras.models.clone_model(self.model)
         inner_model.set_weights(self.model.get_weights())
-        
+
         for _ in range(num_steps):
-            inner_model.set_weights([w - self.inner_lr * g for w, g in 
+            inner_model.set_weights([w - self.inner_lr * g for w, g in
                                      zip(inner_model.trainable_variables, grads)])
         return inner_model
-    
+
     def _outer_step(self, tasks, num_steps):
         with tf.GradientTape() as tape:
             total_loss = 0
@@ -175,20 +175,20 @@ class MAML(object):
                 inner_model = self._inner_loop(x_spt, y_spt, num_steps)
                 qry_loss = self._compute_loss(x_qry, y_qry)
                 total_loss += qry_loss
-            
+
             total_loss /= len(tasks)
         grads = tape.gradient(total_loss, self.model.trainable_variables)
         self.optimizer.apply_gradients(zip(grads, self.model.trainable_variables))
         return total_loss
-    
+
     def train(self, tasks, num_steps=1, num_epochs=10000):
         self.optimizer = tf.keras.optimizers.Adam(self.meta_lr)
-        
+
         for epoch in range(num_epochs):
             loss = self._outer_step(tasks, num_steps)
             if epoch % 100 == 0:
                 print(f'Epoch {epoch+1}, Loss: {loss:.4f}')
-                
+
 model = tf.keras.Sequential([
     tf.keras.layers.Conv2D(32, 3, activation='relu', input_shape=(28, 28, 1)),
     tf.keras.layers.MaxPooling2D((2, 2)),

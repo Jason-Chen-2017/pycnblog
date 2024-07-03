@@ -209,5 +209,5 @@ RLHF算法取得了显著的成果，能够训练出更符合人类期望的语�
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

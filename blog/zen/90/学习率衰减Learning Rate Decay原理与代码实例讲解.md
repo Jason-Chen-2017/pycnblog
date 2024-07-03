@@ -130,7 +130,7 @@ for epoch in range(100):
         loss = criterion(output, target)
         loss.backward()
         optimizer.step()
-    
+
     # 更新学习率
     lr_scheduler.step()
 ```
@@ -194,7 +194,7 @@ for epoch in range(100):
         loss = criterion(output, target)
         loss.backward()
         optimizer.step()
-    
+
     # 更新学习率
     scheduler.step()
 ```

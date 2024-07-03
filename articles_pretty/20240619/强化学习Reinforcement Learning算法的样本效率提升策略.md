@@ -85,8 +85,7 @@ $$Q(s_t, a_t) \\leftarrow Q(s_t, a_t) + \\alpha [r_t + \\gamma \\max_{a'} Q(s_{t
 
 #### Policy Gradient
 - **策略更新**：
-$$\\theta \\leftarrow \\theta + \\eta \
-abla_\\theta J(\\theta)$$
+$$\\theta \\leftarrow \\theta + \\eta \nabla_\\theta J(\\theta)$$
 
 ### 4.3 案例分析与讲解
 

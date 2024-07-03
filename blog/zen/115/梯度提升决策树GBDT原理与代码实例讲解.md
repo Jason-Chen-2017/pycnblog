@@ -178,17 +178,17 @@ GBDT算法可以用于检测金融交易中的欺诈行为，例如信用卡诈�
     * edX上的《Artificial Intelligence》课程
 
 ### 7.2  开发工具推荐
-* **Python:** 
-* **XGBoost:** 
-* **Scikit-learn:** 
+* **Python:**
+* **XGBoost:**
+* **Scikit-learn:**
 
 ### 7.3  相关论文推荐
 * 《Gradient Boosting Machines》
 * 《XGBoost: A Scalable Tree Boosting System》
 
 ### 7.4  其他资源推荐
-* **Kaggle:** 
-* **GitHub:** 
+* **Kaggle:**
+* **GitHub:**
 
 ## 8. 总结：未来发展趋势与挑战
 ### 8.1  研究成果总结
@@ -215,7 +215,7 @@ GBDT算法也面临一些挑战，例如：
 
 ### 9.1  问题1：GBDT算法与随机森林算法有什么区别？
 
-**答案:** 
+**答案:**
 
 GBDT算法和随机森林算法都是集成学习算法，但它们在算法原理和训练方式上有所不同。
 

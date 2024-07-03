@@ -237,5 +237,5 @@ GANs 在多个领域都有广泛的应用，例如图像生成、文本生成、
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

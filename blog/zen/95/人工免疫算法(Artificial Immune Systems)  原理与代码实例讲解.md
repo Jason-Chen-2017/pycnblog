@@ -223,25 +223,25 @@ population = np.random.randint(2, size=(population_size, num_weights))
 for _ in range(max_iter):
     # 评估抗体种群
     fitness_scores = np.array([fitness_function(weights) for weights in population])
-    
+
     # 选择和克隆抗体
     selected_indices = np.argsort(fitness_scores)[:int(population_size * 0.2)]
     selected_population = population[selected_indices]
     clone_population = np.array([selected_population] * int(population_size * 0.8))
-    
+
     # 变异操作
     for i in range(population_size):
         for j in range(num_weights):
             if np.random.rand() < mutation_rate:
                 clone_population[i][j] = 1 - clone_population[i][j]
-    
+
     # 交叉操作
     for i in range(0, population_size, 2):
         if np.random.rand() < crossover_rate:
             crossover_point = np.random.randint(1, num_weights)
             population[i] = np.concatenate((clone_population[i][:crossover_point], clone_population[i+1][crossover_point:]))
             population[i+1] = np.concatenate((clone_population[i+1][:crossover_point], clone_population[i][crossover_point:]))
-    
+
     # 更新抗体种群
     population = np.array(clone_population)
 
@@ -307,25 +307,25 @@ population = np.random.randint(2, size=(population_size, num_weights))
 for _ in range(max_iter):
     # 评估抗体种群
     fitness_scores = np.array([fitness_function(weights) for weights in population])
-    
+
     # 选择和克隆抗体
     selected_indices = np.argsort(fitness_scores)[:int(population_size * 0.2)]
     selected_population = population[selected_indices]
     clone_population = np.array([selected_population] * int(population_size * 0.8))
-    
+
     # 变异操作
     for i in range(population_size):
         for j in range(num_weights):
             if np.random.rand() < mutation_rate:
                 clone_population[i][j] = 1 - clone_population[i][j]
-    
+
     # 交叉操作
     for i in range(0, population_size, 2):
         if np.random.rand() < crossover_rate:
             crossover_point = np.random.randint(1, num_weights)
             population[i] = np.concatenate((clone_population[i][:crossover_point], clone_population[i+1][crossover_point:]))
             population[i+1] = np.concatenate((clone_population[i+1][:crossover_point], clone_population[i][crossover_point:]))
-    
+
     # 更新抗体种群
     population = np.array(clone_population)
 

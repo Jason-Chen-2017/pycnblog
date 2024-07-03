@@ -198,8 +198,7 @@ $$
 梯度下降法用于优化模型参数，使得损失函数最小化：
 
 $$
-\theta = \theta - \alpha \
-abla_{\theta} L(y, \hat{y})
+\theta = \theta - \alpha \nabla_{\theta} L(y, \hat{y})
 $$
 
 其中 $\alpha$ 是学习率。

@@ -1,4 +1,4 @@
-                 
+
 # 视觉Transformer原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -121,15 +121,15 @@ $$\textbf{X} = [\textbf{x}_1, \textbf{x}_2, ..., \textbf{x}_{N}]$$
 在Transformer块中，自注意力机制的计算涉及三个主要部分：
 
 1. **查询(Q)**：通过一个线性变换，将输入序列转化为查询向量。
-   
+
    $$ Q = W_Q \cdot \textbf{X} $$
 
 2. **键(K)**：同样地，对输入序列执行线性变换以产生键向量。
-   
+
    $$ K = W_K \cdot \textbf{X} $$
 
 3. **值(V)**：再次对输入序列执行线性变换以生成值向量。
-   
+
    $$ V = W_V \cdot \textbf{X} $$
 
 接下来，使用点乘运算和softmax函数计算注意力权重：
@@ -154,35 +154,35 @@ class Attention(nn.Module):
         self.num_heads = num_heads
         head_dim = embed_dim // num_heads
         self.scaling = head_dim ** -0.5
-        
+
         # Linear projections for query, key and value
         self.q_proj = nn.Linear(embed_dim, embed_dim)
         self.k_proj = nn.Linear(embed_dim, embed_dim)
         self.v_proj = nn.Linear(embed_dim, embed_dim)
-        
+
         # Dropout layer
         self.dropout = nn.Dropout(dropout_rate)
 
     def forward(self, x: Tensor) -> Tensor:
         batch_size, sequence_length, _ = x.size()
-        
+
         # Project input to query, key, value
         q = self.q_proj(x).view(batch_size, sequence_length, self.num_heads, -1).transpose(1, 2)
         k = self.k_proj(x).view(batch_size, sequence_length, self.num_heads, -1).transpose(1, 2)
         v = self.v_proj(x).view(batch_size, sequence_length, self.num_heads, -1).transpose(1, 2)
-        
+
         # Compute attention scores
         scores = (q @ k.transpose(-2, -1)) * self.scaling
-        
+
         # Apply softmax along the heads dimension
         attn_weights = scores.softmax(dim=-1)
-        
+
         # Apply dropout on attention weights
         attn_weights = self.dropout(attn_weights)
-        
+
         # Compute weighted values
         output = (attn_weights @ v).transpose(1, 2).contiguous().view(batch_size, sequence_length, -1)
-        
+
         return output
 ```
 

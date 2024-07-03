@@ -162,8 +162,7 @@ $$
    使用梯度下降法更新Q值：
 
    $$
- Q_{t+1}(s,a) = Q_t(s,a) - \eta \
-abla_{Q_t(s,a)} [R_t + \gamma \max_a Q_t(s',a) - Q_t(s,a)]
+ Q_{t+1}(s,a) = Q_t(s,a) - \eta \nabla_{Q_t(s,a)} [R_t + \gamma \max_a Q_t(s',a) - Q_t(s,a)]
 $$
 
    其中，$\eta$ 表示学习率。

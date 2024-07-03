@@ -200,16 +200,16 @@ for i in range(1000):
         a = np.random.randint(4)
     else:
         a = np.argmax(Q[s])
-    
+
     # 执行动作
     s_next = (s[0] + actions[a][0], s[1] + actions[a][1])
-    
+
     # 获取奖励
     r = reward(s, a)
-    
+
     # 更新Q值
     update_Q(s, a, r, s_next)
-    
+
     # 更新智能体状态
     s = s_next
 

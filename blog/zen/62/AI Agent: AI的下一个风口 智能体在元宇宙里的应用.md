@@ -5,7 +5,7 @@
 ## 1. 背景介绍
 ### 1.1 人工智能的发展历程
 #### 1.1.1 早期人工智能
-#### 1.1.2 专家系统时代  
+#### 1.1.2 专家系统时代
 #### 1.1.3 机器学习和深度学习的崛起
 ### 1.2 元宇宙的概念与发展
 #### 1.2.1 元宇宙的定义
@@ -46,7 +46,7 @@ $$
 \begin{aligned}
 &\text{MDP} = (S, A, P, R, \gamma) \\
 &S: \text{状态空间} \\
-&A: \text{动作空间} \\ 
+&A: \text{动作空间} \\
 &P: S \times A \times S \to [0, 1], \text{转移概率} \\
 &R: S \times A \to \mathbb{R}, \text{奖励函数} \\
 &\gamma \in [0, 1], \text{折扣因子}
@@ -81,7 +81,7 @@ class DQN(nn.Module):
         self.fc1 = nn.Linear(state_dim, 64)
         self.fc2 = nn.Linear(64, 64)
         self.fc3 = nn.Linear(64, action_dim)
-        
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = torch.relu(self.fc2(x))
@@ -100,7 +100,7 @@ class Actor(tf.keras.Model):
         self.fc1 = tf.keras.layers.Dense(64, activation='relu')
         self.fc2 = tf.keras.layers.Dense(64, activation='relu')
         self.fc3 = tf.keras.layers.Dense(action_dim, activation='tanh')
-        
+
     def call(self, x):
         x = self.fc1(x)
         x = self.fc2(x)
@@ -113,13 +113,13 @@ class Critic(tf.keras.Model):
         self.fc1 = tf.keras.layers.Dense(64, activation='relu')
         self.fc2 = tf.keras.layers.Dense(64, activation='relu')
         self.fc3 = tf.keras.layers.Dense(1, activation='linear')
-        
+
     def call(self, x, a):
         x = tf.concat([x, a], axis=-1)
         x = self.fc1(x)
         x = self.fc2(x)
         x = self.fc3(x)
-        return x  
+        return x
 ```
 详细解释：这是MADDPG算法中Actor和Critic网络的实现，Actor网络输出动作，Critic网络输入状态和动作，输出Q值...
 

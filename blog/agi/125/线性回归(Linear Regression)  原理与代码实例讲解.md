@@ -139,7 +139,7 @@ $$
 1. 构建数据矩阵 $X$ 和目标向量 $y$：
 
 $$
-X = \begin{bmatrix} 1 & x_{11} & x_{12} & ... & x_{1n} \\ 1 & x_{21} & x_{22} & ... & x_{2n} \\ ... & ... & ... & ... & ... \\ 1 & x_{m1} & x_{m2} & ... & x_{mn} \end{bmatrix}, \quad y = \begin{bmatrix} y_1 \\ y_2 \\ ... \\ y_m \end{bmatrix}
+X = \begin{bmatrix} 1 & x_{11} & x_{12} & ... & x_{1n} \ 1 & x_{21} & x_{22} & ... & x_{2n} \ ... & ... & ... & ... & ... \ 1 & x_{m1} & x_{m2} & ... & x_{mn} \end{bmatrix}, \quad y = \begin{bmatrix} y_1 \ y_2 \ ... \ y_m \end{bmatrix}
 $$
 
 2. 计算正规方程：
@@ -159,7 +159,7 @@ $$
 2. 计算误差函数 $J(w)$ 的梯度 $\nabla J(w)$：
 
 $$
-\nabla J(w) = \begin{bmatrix} \frac{\partial J(w)}{\partial w_0} \\ \frac{\partial J(w)}{\partial w_1} \\ ... \\ \frac{\partial J(w)}{\partial w_n} \end{bmatrix} = 2X^T(y - Xw)
+\nabla J(w) = \begin{bmatrix} \frac{\partial J(w)}{\partial w_0} \ \frac{\partial J(w)}{\partial w_1} \ ... \ \frac{\partial J(w)}{\partial w_n} \end{bmatrix} = 2X^T(y - Xw)
 $$
 
 3. 根据梯度更新参数：

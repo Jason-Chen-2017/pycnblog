@@ -158,7 +158,7 @@ A：对于尺寸不一致的图像，可以采用以下方法：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n style-transfer-env python=3.8 
+conda create -n style-transfer-env python=3.8
 conda activate style-transfer-env
 ```
 3. 安装PyTorch和相关库：

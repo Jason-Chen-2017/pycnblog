@@ -80,7 +80,7 @@ $$
 
 其中，$s$ 表示当前状态，$a$ 表示当前动作，$r$ 表示奖励，$s'$ 表示下一状态，$a'$ 表示下一动作，$\alpha$ 表示学习率，$\gamma$ 表示折扣因子。
 
-## 5. 项目实践：代码实例和详细解释说明 
+## 5. 项目实践：代码实例和详细解释说明
 
 ### 5.1 基于强化学习的机械臂控制
 
@@ -96,26 +96,26 @@ env = gym.make('FetchReach-v1')
 def q_learning(env, num_episodes=1000):
     # 初始化Q表
     q_table = {}
-    
+
     # 训练循环
     for episode in range(num_episodes):
         # 重置环境
         state = env.reset()
-        
+
         # 循环直到结束
         while True:
             # 选择动作
             action = choose_action(state, q_table)
-            
+
             # 执行动作并获取下一状态和奖励
             next_state, reward, done, _ = env.step(action)
-            
+
             # 更新Q表
             update_q_table(q_table, state, action, reward, next_state)
-            
+
             # 更新状态
             state = next_state
-            
+
             # 如果结束则退出循环
             if done:
                 break
@@ -189,7 +189,7 @@ AIAgent可以用于构建智慧工厂，例如：
 *   **AIAgent的可解释性和可信赖性:** AIAgent的决策过程需要透明可解释，才能获得用户的信任。
 *   **AIAgent的伦理和社会影响:** AIAgent的发展需要考虑其伦理和社会影响，避免潜在的风险。
 
-## 9. 附录：常见问题与解答 
+## 9. 附录：常见问题与解答
 
 ### 9.1 AIAgent与传统自动化设备的区别是什么？
 
@@ -201,4 +201,4 @@ AIAgent可以通过以下措施保证生产安全：
 
 *   **安全设计:** 在设计AIAgent时，需要考虑安全因素，例如故障检测和处理机制。
 *   **安全测试:** 在部署AIAgent之前，需要进行严格的安全测试，确保其安全性。
-*   **安全监控:** 在AIAgent运行过程中，需要进行实时监控，及时发现并处理安全问题。 
+*   **安全监控:** 在AIAgent运行过程中，需要进行实时监控，及时发现并处理安全问题。

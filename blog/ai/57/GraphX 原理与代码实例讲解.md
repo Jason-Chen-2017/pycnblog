@@ -100,7 +100,7 @@ PR(A_1) \\
 PR(A_2) \\
 \vdots \\
 PR(A_N)
-\end{bmatrix} = 
+\end{bmatrix} =
 (1-d) \begin{bmatrix}
 1 \\
 1 \\

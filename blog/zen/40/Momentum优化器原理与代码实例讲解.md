@@ -29,11 +29,9 @@ Momentum优化器在深度学习中的应用具有重要的研究意义。它不
 
 ### 2.1 梯度下降与参数更新
 
-梯度下降是优化模型参数的基本方法。在给定损失函数$J(\theta)$和模型参数$\theta$的情况下，通过计算损失函数关于参数的梯度$\
-abla J(\theta)$，更新参数$\theta$以最小化损失函数：
+梯度下降是优化模型参数的基本方法。在给定损失函数$J(\theta)$和模型参数$\theta$的情况下，通过计算损失函数关于参数的梯度$\nabla J(\theta)$，更新参数$\theta$以最小化损失函数：
 
-$$\theta_{\text{new}} = \theta_{\text{old}} - \alpha \
-abla J(\theta)$$
+$$\theta_{\text{new}} = \theta_{\text{old}} - \alpha \nabla J(\theta)$$
 
 其中，$\alpha$为学习率。
 
@@ -45,8 +43,7 @@ abla J(\theta)$$
 
 Momentum优化器结合了梯度下降和动量思想，通过引入一个动量项$v$，更新参数$\theta$：
 
-$$v = \mu v + \alpha \
-abla J(\theta)$$
+$$v = \mu v + \alpha \nabla J(\theta)$$
 
 $$\theta_{\text{new}} = \theta_{\text{old}} - v$$
 
@@ -62,8 +59,7 @@ Momentum优化器通过引入动量项$v$，将梯度累积起来，从而在训
 
 1. 初始化参数$\theta_0$、动量项$v_0$和学习率$\alpha$。
 2. 计算当前梯度和参数更新：
-   $$v = \mu v + \alpha \
-abla J(\theta)$$
+   $$v = \mu v + \alpha \nabla J(\theta)$$
    $$\theta_{\text{new}} = \theta_{\text{old}} - v$$
 3. 将新参数$\theta_{\text{new}}$作为下一次迭代的初始参数，重复步骤2，直到满足停止条件。
 
@@ -90,8 +86,7 @@ Momentum优化器在深度学习领域得到了广泛应用，如神经网络、
 
 Momentum优化器可以表示为一个递归方程：
 
-$$v_t = \mu v_{t-1} + \alpha \
-abla J(\theta_t)$$
+$$v_t = \mu v_{t-1} + \alpha \nabla J(\theta_t)$$
 
 $$\theta_t = \theta_{t-1} - v_t$$
 
@@ -103,8 +98,7 @@ Momentum优化器的推导过程如下：
 
 1. 初始化参数$\theta_0$、动量项$v_0$和学习率$\alpha$。
 2. 计算当前梯度和参数更新：
-   $$v = \mu v + \alpha \
-abla J(\theta)$$
+   $$v = \mu v + \alpha \nabla J(\theta)$$
    $$\theta_{\text{new}} = \theta_{\text{old}} - v$$
 3. 将新参数$\theta_{\text{new}}$作为下一次迭代的初始参数，重复步骤2，直到满足停止条件。
 

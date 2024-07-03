@@ -1,6 +1,6 @@
 # 强化学习算法：策略梯度（Policy Gradient）原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：强化学习，策略梯度，深度学习，深度 Q 网络，蒙特卡洛方法，优势函数
 
@@ -86,32 +86,30 @@
 
 策略梯度算法的核心在于定义策略函数及其与累积奖励的关系。策略函数通常表示为：
 
-$$ \\pi(a|s) = P(a \\mid s) $$
+$$ \pi(a|s) = P(a \mid s) $$
 
-其中，$P(a \\mid s)$ 是在状态 $s$ 下采取动作 $a$ 的概率。
+其中，$P(a \mid s)$ 是在状态 $s$ 下采取动作 $a$ 的概率。
 
 ### 4.2 公式推导过程
 
 策略梯度算法通常通过梯度上升法来优化策略：
 
-$$ \\theta \\leftarrow \\theta + \\alpha \\cdot \
-abla_\\theta J(\\theta) $$
+$$ \theta \leftarrow \theta + \alpha \cdot \nabla_\theta J(\theta) $$
 
 其中：
 
-- $\\theta$ 是策略参数，
-- $\\alpha$ 是学习率，
-- $\
-abla_\\theta J(\\theta)$ 是策略梯度，
+- $\theta$ 是策略参数，
+- $\alpha$ 是学习率，
+- $\nabla_\theta J(\theta)$ 是策略梯度，
 
 策略梯度通常通过以下方式计算：
 
-$$ J(\\theta) = \\mathbb{E}_{\\tau \\sim \\pi} [\\sum_{t=0}^{T} \\gamma^t r_t] $$
+$$ J(\theta) = \mathbb{E}_{\tau \sim \pi} [\sum_{t=0}^{T} \gamma^t r_t] $$
 
 其中：
 
-- $\\tau$ 是轨迹（即一系列状态、动作和奖励的序列），
-- $\\gamma$ 是折现因子，
+- $\tau$ 是轨迹（即一系列状态、动作和奖励的序列），
+- $\gamma$ 是折现因子，
 - $r_t$ 是第 $t$ 步的即时奖励。
 
 ### 4.3 案例分析与讲解
@@ -145,23 +143,23 @@ class PolicyGradientAgent:
         self.n_features = env.observation_space.shape[0]
         self.n_actions = env.action_space.n
         self.policy = np.ones(self.n_actions) / self.n_actions
-    
+
     def choose_action(self, state):
         policy = self._compute_policy(state)
         action = np.random.choice(self.n_actions, p=policy)
         return action
-    
+
     def learn(self, states, actions, rewards):
         policy_gradient = np.zeros(self.n_actions)
         for state, action, reward in zip(states, actions, rewards):
             policy_gradient[action] += reward * self.learning_rate
         self.policy += policy_gradient
-    
+
     def _compute_policy(self, state):
         state = np.array([state])
         policy = softmax(self.policy)
         return policy
-    
+
     def softmax(self, x):
         e_x = np.exp(x - np.max(x))
         return e_x / e_x.sum(axis=0)
@@ -201,8 +199,8 @@ agent.learn([env.reset(), env.reset()], [0, 1], [1, 0])
 
 ### 7.3 相关论文推荐
 
-- **\"Policy Gradient Methods\" by Richard S. Sutton**：深入理解策略梯度方法的理论基础。
-- **\"Asynchronous Actor-Critic Algorithms\" by John Schulman et al.**：了解异步actor-critic算法，这是一种高效的策略梯度方法。
+- **"Policy Gradient Methods" by Richard S. Sutton**：深入理解策略梯度方法的理论基础。
+- **"Asynchronous Actor-Critic Algorithms" by John Schulman et al.**：了解异步actor-critic算法，这是一种高效的策略梯度方法。
 
 ### 7.4 其他资源推荐
 

@@ -112,19 +112,19 @@
 - **状态空间模型**：设 $S$ 为状态空间，$A$ 为动作空间，$T$ 为转移概率矩阵，$R$ 为奖励函数，则状态空间模型可以表示为：
 
   $$
- M = \{S, A, T, R\} 
+ M = \{S, A, T, R\}
 $$
 
 - **马尔可夫决策过程（MDP）**：设 $S$ 为状态空间，$A$ 为动作空间，$T(s, a, s')$ 为状态转移概率，$R(s, a)$ 为奖励函数，$γ$ 为折扣因子，则MDP可以表示为：
 
   $$
- M = \{S, A, T, R, γ\} 
+ M = \{S, A, T, R, γ\}
 $$
 
 - **强化学习**：设 $S$ 为状态空间，$A$ 为动作空间，$π(s)$ 为动作概率分布，$T(s, a, s')$ 为状态转移概率，$R(s, a)$ 为奖励函数，$Q(s, a)$ 为价值函数，则强化学习可以表示为：
 
   $$
- M = \{S, A, T, R, π, Q\} 
+ M = \{S, A, T, R, π, Q\}
 $$
 
 ### 4.2 公式推导过程
@@ -247,7 +247,7 @@ class GridWorld:
             new_position = (self.position[0], self.position[1] + 1)
         else:
             raise ValueError("Invalid action")
-        
+
         if new_position[0] < 0 or new_position[0] >= self.width or new_position[1] < 0 or new_position[1] >= self.height:
             return self.position, -1, False  # 遇到墙壁，奖励为-1，返回原位置
 
@@ -258,7 +258,7 @@ class GridWorld:
             reward = -10
         else:
             reward = -1  # 其他位置，奖励为-1
-        
+
         self.position = new_position
         done = True if reward == 10 else False
 

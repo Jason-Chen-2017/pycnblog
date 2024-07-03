@@ -129,7 +129,7 @@
 - **像素操作**：$new\_pixel\_value = pixel\_value\_1 + pixel\_value\_2$
 - **滤波**：$filtered\_image(x, y) = \sum_{m=-r}^{r} \sum_{n=-r}^{r} gaussian\_kernel(m, n) \cdot image(x+m, y+n)$
 - **增强**：$enhanced\_image(x, y) = \alpha \cdot image(x, y) + \beta$
-- **分割**：$segmented\_image(x, y) = \begin{cases} 
+- **分割**：$segmented\_image(x, y) = \begin{cases}
       region\_A & \text{if } condition \\
       region\_B & \text{otherwise}
    \end{cases}$

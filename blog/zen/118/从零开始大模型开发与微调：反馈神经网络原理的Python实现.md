@@ -160,7 +160,7 @@ class LogisticRegression(nn.Module):
     def __init__(self, input_size, output_size):
         super(LogisticRegression, self).__init__()
         self.linear = nn.Linear(input_size, output_size)
-    
+
     def forward(self, x):
         out = self.linear(x)
         return torch.sigmoid(out)
@@ -230,7 +230,7 @@ class FeedbackNeuralNetwork(nn.Module):
         self.linear1 = nn.Linear(input_size, hidden_size)
         self.linear2 = nn.Linear(hidden_size, output_size)
         self.linear3 = nn.Linear(output_size, input_size)
-    
+
     def forward(self, x):
         x = self.linear1(x)
         x = torch.tanh(x)

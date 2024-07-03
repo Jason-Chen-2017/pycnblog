@@ -94,9 +94,7 @@ $$V(s) = \mathbb{E}_{\pi}[G_t | S_t = s]$$
 
 策略梯度算法使用以下公式来估计梯度：
 
-$$\
-abla_\theta J(\theta) \approx \mathbb{E}_{\pi}[\
-abla_\theta \ln \pi(a|s;\theta) \cdot R]$$
+$$\nabla_\theta J(\theta) \approx \mathbb{E}_{\pi}[\nabla_\theta \ln \pi(a|s;\theta) \cdot R]$$
 
 其中，$J(\theta)$是策略的性能指标，$R$是从时间步$t$到结束的总回报。
 
@@ -137,7 +135,7 @@ class PolicyGradientAgent:
         self.action_space = action_space
         self.learning_rate = learning_rate
         self.model = self.build_model()
-    
+
     def build_model(self):
         model = tf.keras.models.Sequential([
             tf.keras.layers.Dense(64, activation='relu', input_shape=(self.state_space,)),
@@ -146,13 +144,13 @@ class PolicyGradientAgent:
         model.compile(optimizer=tf.optimizers.Adam(learning_rate=self.learning_rate),
                       loss=tf.losses.CategoricalCrossentropy())
         return model
-    
+
     def choose_action(self, state):
         state = np.array(state).reshape(-1, self.state_space)
         probabilities = self.model.predict(state)[0]
         action = np.random.choice(self.action_space, p=probabilities)
         return action, probabilities
-    
+
     def learn(self, states, actions, rewards):
         states = np.array(states)
         actions = np.array(actions)

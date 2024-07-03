@@ -47,8 +47,7 @@ Momentum优化器的原理可以概括为以下两点：
 Momentum优化器的具体操作步骤如下：
 
 1. 初始化模型参数$\theta$、学习率$\alpha$和动量参数$\beta$。
-2. 计算当前梯度$g_t = \
-abla_{\theta}L(\theta)$，其中$L(\theta)$为目标函数。
+2. 计算当前梯度$g_t = \nabla_{\theta}L(\theta)$，其中$L(\theta)$为目标函数。
 3. 更新动量：$v_t = \beta v_{t-1} - \alpha g_t$。
 4. 更新模型参数：$\theta_t = \theta_{t-1} + v_t$。
 

@@ -76,8 +76,7 @@ $$Q^*(s, a) = r + \gamma \max_{a'} Q(s', a')$$
 
 Q值函数更新是DQN算法的核心步骤。在训练过程中，需要根据当前状态、动作、奖励和目标Q值来更新Q值函数的参数。具体更新方法如下：
 
-$$\theta_{t+1} = \theta_t - \alpha \left( Q(s_t, a_t) - (r + \gamma \max_{a'} Q(s', a')) \right) \
-abla_\theta Q(s_t, a_t)$$
+$$\theta_{t+1} = \theta_t - \alpha \left( Q(s_t, a_t) - (r + \gamma \max_{a'} Q(s', a')) \right) \nabla_\theta Q(s_t, a_t)$$
 
 其中，$\theta_t$表示当前Q值函数的参数；$\theta_{t+1}$表示更新后的Q值函数参数；$\alpha$表示学习率。
 

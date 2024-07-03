@@ -82,7 +82,7 @@ import torch
 from midjourney import MidjourneyModel
 from anomaly_detector import AnomalyDetector
 
-midjourney_model = MidjourneyModel.from_pretrained('midjourney-v4') 
+midjourney_model = MidjourneyModel.from_pretrained('midjourney-v4')
 anomaly_detector = AnomalyDetector(midjourney_model)
 
 video_frames = load_video_frames('surveillance_video.mp4')

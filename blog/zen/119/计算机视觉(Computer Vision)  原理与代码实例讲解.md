@@ -331,7 +331,7 @@ A：选择合适的目标检测算法取决于具体的应用场景。例如，�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n cv-env python=3.8 
+conda create -n cv-env python=3.8
 conda activate cv-env
 ```
 

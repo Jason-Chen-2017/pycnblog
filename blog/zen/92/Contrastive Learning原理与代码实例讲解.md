@@ -101,8 +101,7 @@ $$
 根据InfoNCE损失函数计算梯度，更新模型参数：
 
 $$
-\theta \leftarrow \theta - \eta \
-abla_{\theta}L(\theta)
+\theta \leftarrow \theta - \eta \nabla_{\theta}L(\theta)
 $$
 
 其中 $\eta$ 为学习率。
@@ -141,7 +140,7 @@ Contrastive Learning算法在以下领域得到了广泛应用：
 定义样本 $x$ 和 $x'$ 之间的相似度为 $\sim(x,x')$，则Contrastive Learning的目标是最小化以下损失函数：
 
 $$
-L(\theta) = \frac{1}{N} \sum_{i=1}^N \sum_{j=1}^M \ell(\sim(x,x_j)) 
+L(\theta) = \frac{1}{N} \sum_{i=1}^N \sum_{j=1}^M \ell(\sim(x,x_j))
 $$
 
 其中 $N$ 为正样本对的数量，$M$ 为负样本对的数量，$\ell$ 为损失函数。
@@ -178,8 +177,7 @@ $$
 对损失函数求梯度，得：
 
 $$
-\
-abla_{\theta}\ell(\sim(x,x')) = \frac{1}{\exp(\sim(x,x'))} - \frac{\sum_{k=1}^K \exp(\sim(x,x_k))}{\left(\sum_{k=1}^K \exp(\sim(x,x_k))\right)^2}
+\nabla_{\theta}\ell(\sim(x,x')) = \frac{1}{\exp(\sim(x,x'))} - \frac{\sum_{k=1}^K \exp(\sim(x,x_k))}{\left(\sum_{k=1}^K \exp(\sim(x,x_k))\right)^2}
 $$
 
 其中 $\theta$ 为特征提取器参数。
@@ -296,7 +294,7 @@ A: 特征提取器的选择应根据任务和数据集的特点进行调整。�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n contrastive-env python=3.8 
+conda create -n contrastive-env python=3.8
 conda activate contrastive-env
 ```
 

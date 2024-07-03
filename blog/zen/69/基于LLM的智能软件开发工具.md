@@ -71,7 +71,7 @@ LLMs 是一种基于深度学习的神经网络模型，能够处理和生成自
 3. **知识提取:** 从代码中提取知识，例如变量类型、函数定义和代码注释。
 
 
-## 4. 数学模型和公式详细讲解举例说明 
+## 4. 数学模型和公式详细讲解举例说明
 (Due to limitations in rendering LaTeX within this response format, the mathematical models and formulas will be described conceptually.)
 
 ### 4.1 Transformer 模型
@@ -91,7 +91,7 @@ LLMs 通常使用概率语言模型来生成文本。概率语言模型计算给
 代码生成模型通常使用条件概率语言模型，它根据用户的需求和规范，以及已生成的代码，计算下一个代码标记 (token) 出现的概率。
 
 
-## 5. 项目实践：代码实例和详细解释说明 
+## 5. 项目实践：代码实例和详细解释说明
 (Due to the limitations of this text-based format, providing a full code implementation is not feasible. Instead, a conceptual example will be provided.)
 
 ### 5.1 代码生成示例

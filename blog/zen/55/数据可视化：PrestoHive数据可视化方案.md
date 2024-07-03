@@ -18,7 +18,7 @@ Presto是由Facebook开发的一个开源的分布式SQL查询引擎,适用于�
 ### 2.1 数据仓库
 数据仓库是一个面向主题的、集成的、非易失的和时变的数据集合,用于支持管理决策。它通过ETL(Extract-Transform-Load)过程,将企业各个业务系统的数据进行抽取、清洗、转换和加载,最终存储在一个集中的仓库中,为数据分析和挖掘提供支持。
 
-### 2.2 即席查询 
+### 2.2 即席查询
 即席查询(Ad Hoc Query)是指用户根据自己的需求,灵活地提出查询请求,系统能够快速给出查询结果。与预先定义好的报表不同,即席查询允许用户探索未知的领域,发现数据中隐藏的规律和趋势。这对于数据分析人员和业务人员来说非常重要。
 
 ### 2.3 数据可视化
@@ -31,7 +31,7 @@ Presto是由Facebook开发的一个开源的分布式SQL查询引擎,适用于�
 graph LR
   A(数据源) --> B(ETL)
   B --> C(数据仓库 Hive)
-  C --> D(即席查询引擎 Presto) 
+  C --> D(即席查询引擎 Presto)
   D --> E(数据可视化)
 ```
 
@@ -89,7 +89,7 @@ for i in range(n):
 
 ```
 for i in range(0, n, k):  // k为批大小
-  for j in range(k): 
+  for j in range(k):
     z[i+j] = a[i+j] + b[i+j] * c[i+j]
 ```
 
@@ -103,10 +103,10 @@ for i in range(0, n, k):  // k为批大小
 ```sql
 CREATE TABLE sales (
   date STRING,
-  product STRING, 
+  product STRING,
   price DOUBLE,
   quantity INT
-) 
+)
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
 STORED AS TEXTFILE;
 ```
@@ -115,7 +115,7 @@ STORED AS TEXTFILE;
 首先,使用Presto进行即席查询,分析每个产品的销售额:
 
 ```sql
-SELECT product, SUM(price * quantity) AS total_sales 
+SELECT product, SUM(price * quantity) AS total_sales
 FROM hive.default.sales
 GROUP BY product
 ORDER BY total_sales DESC
@@ -124,7 +124,7 @@ LIMIT 10;
 
 查询结果:
 ```
- product  | total_sales 
+ product  | total_sales
 ----------+-------------
  iPhone   |  1234567.89
  iPad     |   345678.01
@@ -160,27 +160,27 @@ plt.show()
 在实际应用中,我们经常需要将多个数据源的数据关联起来分析。例如,将销售数据和广告投放数据结合,分析广告对销量的影响:
 
 ```sql
-SELECT 
+SELECT
   s.date,
   s.product,
   s.total_sales,
   a.ad_channel,
   a.ad_spend
-FROM 
-  (SELECT 
+FROM
+  (SELECT
      date,
-     product, 
+     product,
      SUM(price * quantity) AS total_sales
    FROM sales
    GROUP BY date, product) s
-JOIN 
+JOIN
   (SELECT
      date,
      product,
      channel AS ad_channel,
      spend AS ad_spend
    FROM ads) a
-ON s.date = a.date AND s.product = a.product;  
+ON s.date = a.date AND s.product = a.product;
 ```
 
 通过数据关联,我们可以发现广告投放与销量之间的相关性,优化广告策略,提升投资回报率。

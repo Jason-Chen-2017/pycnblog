@@ -234,7 +234,7 @@ A：设计可拓展的深度学习模型架构需要考虑以下因素：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 

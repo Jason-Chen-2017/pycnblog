@@ -183,7 +183,7 @@ A/B测试可以用于优化广告文案、图片、目标受众等，以提高�
 
 ### 7.3  相关论文推荐
 * Kohavi, R., et al. (2015). "A/B Testing: The Gold Standard for Optimization."
-*  
+*
 
 ### 7.4  其他资源推荐
 * **A/B Testing Blog:** https://www.optimizely.com/blog/
@@ -232,5 +232,5 @@ A/B测试结果可能会受到偏差的影响，例如用户偏好、测试环�
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

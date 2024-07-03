@@ -58,12 +58,9 @@ Adam算法的步骤如下：
    - 初始化动量项 $v = 0$ 和偏差校正项 $s = 0$。
 
 2. 更新参数：
-   - 计算梯度 $\
-abla J(\theta)$。
-   - 更新动量项：$v = \beta_1 v + (1 - \beta_1) \
-abla J(\theta)$。
-   - 更新偏差校正项：$s = \beta_2 s + (1 - \beta_2) \
-abla J(\theta)^2$。
+   - 计算梯度 $\nabla J(\theta)$。
+   - 更新动量项：$v = \beta_1 v + (1 - \beta_1) \nabla J(\theta)$。
+   - 更新偏差校正项：$s = \beta_2 s + (1 - \beta_2) \nabla J(\theta)^2$。
    - 计算校正后的动量项和偏差校正项：$\hat{v} = \frac{v}{1 - \beta_1^t}$ 和 $\hat{s} = \frac{s}{1 - \beta_2^t}$。
    - 更新参数：$\theta = \theta - \eta \hat{v} / \sqrt{\hat{s}}$。
 
@@ -99,18 +96,15 @@ Adam算法的数学模型如下：
 
 $$
 \begin{align*}
-v_t &= \beta_1 v_{t-1} + (1 - \beta_1) \
-abla J(\theta_t) \\
-s_t &= \beta_2 s_{t-1} + (1 - \beta_2) \
-abla J(\theta_t)^2 \\
+v_t &= \beta_1 v_{t-1} + (1 - \beta_1) \nabla J(\theta_t) \\
+s_t &= \beta_2 s_{t-1} + (1 - \beta_2) \nabla J(\theta_t)^2 \\
 \hat{v}_t &= \frac{v_t}{1 - \beta_1^t} \\
 \hat{s}_t &= \frac{s_t}{1 - \beta_2^t} \\
 \theta_{t+1} &= \theta_t - \eta \hat{v}_t / \sqrt{\hat{s}_t}
 \end{align*}
 $$
 
-其中，$t$ 表示迭代次数，$\theta_t$ 表示在 $t$ 次迭代时的模型参数，$\
-abla J(\theta_t)$ 表示在 $t$ 次迭代时的梯度。
+其中，$t$ 表示迭代次数，$\theta_t$ 表示在 $t$ 次迭代时的模型参数，$\nabla J(\theta_t)$ 表示在 $t$ 次迭代时的梯度。
 
 ### 4.2 公式推导过程
 

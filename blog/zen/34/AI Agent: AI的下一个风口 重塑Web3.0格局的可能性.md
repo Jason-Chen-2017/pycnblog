@@ -105,7 +105,7 @@ AI Agent的核心数学模型包括：
 
 **感知器模型**：
 
-$$y = \\sigma(W^T x + b)$$
+$$y = \sigma(W^T x + b)$$
 
 其中，
 
@@ -113,11 +113,11 @@ $$y = \\sigma(W^T x + b)$$
 - $W$是权重矩阵；
 - $x$是输入特征；
 - $b$是偏置项；
-- $\\sigma$是激活函数，通常采用Sigmoid函数。
+- $\sigma$是激活函数，通常采用Sigmoid函数。
 
 **激活函数Sigmoid**：
 
-$$\\sigma(x) = \\frac{1}{1 + e^{-x}}$$
+$$\sigma(x) = \frac{1}{1 + e^{-x}}$$
 
 ### 4.3 案例分析与讲解
 

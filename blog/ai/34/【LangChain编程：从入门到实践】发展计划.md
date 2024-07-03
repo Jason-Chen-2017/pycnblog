@@ -100,12 +100,12 @@ LangChain 的数学模型构建基于以下框架：
 
 自然语言理解模型通常涉及以下公式：
 
-$$P(\\text{code}|\\text{description}) = \\frac{P(\\text{description}|\\text{code})P(\\text{code})}{P(\\text{description})}$$
+$$P(\text{code}|\text{description}) = \frac{P(\text{description}|\text{code})P(\text{code})}{P(\text{description})}$$
 
 其中：
-- $P(\\text{code}|\\text{description})$ 表示给定描述生成代码的概率。
-- $P(\\text{description}|\\text{code})$ 表示给定代码生成描述的概率。
-- $P(\\text{code})$ 和 $P(\\text{description})$ 分别是代码和描述的先验概率。
+- $P(\text{code}|\text{description})$ 表示给定描述生成代码的概率。
+- $P(\text{description}|\text{code})$ 表示给定代码生成描述的概率。
+- $P(\text{code})$ 和 $P(\text{description})$ 分别是代码和描述的先验概率。
 
 ### 4.3 案例分析与讲解
 

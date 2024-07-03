@@ -69,22 +69,22 @@ Transformer模型通过引入自注意力机制，改变了传统的循环神经
 在Transformer中，自注意力机制通过以下公式计算注意力得分：
 
 $$
-A(i,j) = \\frac{\\exp(e_{ij})}{\\sum_{k=1}^{N} \\exp(e_{ik})}
+A(i,j) = \frac{\exp(e_{ij})}{\sum_{k=1}^{N} \exp(e_{ik})}
 $$
 
 其中，$e_{ij}$是输入序列中第$i$个元素和第$j$个元素之间的对数欧氏距离，即：
 
 $$
-e_{ij} = \\frac{\\text{W}_K \\cdot \\text{W}_Q^T \\cdot [\\text{W}_V \\cdot \\text{X}_i] \\cdot [\\text{W}_V \\cdot \\text{X}_j]}{\\sqrt{d_k}}
+e_{ij} = \frac{\text{W}_K \cdot \text{W}_Q^T \cdot [\text{W}_V \cdot \text{X}_i] \cdot [\text{W}_V \cdot \text{X}_j]}{\sqrt{d_k}}
 $$
 
 ### 4.2 公式推导过程
 
-公式中的$\\text{W}_K$、$\\text{W}_Q$和$\\text{W}_V$分别对应于查询（Query）、键（Key）和值（Value）的权重矩阵，$\\text{X}_i$和$\\text{X}_j$分别是输入序列中的两个元素的向量表示，$d_k$是键的维度。
+公式中的$\text{W}_K$、$\text{W}_Q$和$\text{W}_V$分别对应于查询（Query）、键（Key）和值（Value）的权重矩阵，$\text{X}_i$和$\text{X}_j$分别是输入序列中的两个元素的向量表示，$d_k$是键的维度。
 
 ### 4.3 案例分析与讲解
 
-在实际应用中，通过调整模型参数和优化算法，可以实现显著的性能提升。例如，通过分块处理和注意力权重剪枝，可以将计算时间减少到原来的$\\frac{1}{4}$左右，同时保持较高的准确率。
+在实际应用中，通过调整模型参数和优化算法，可以实现显著的性能提升。例如，通过分块处理和注意力权重剪枝，可以将计算时间减少到原来的$\frac{1}{4}$左右，同时保持较高的准确率。
 
 ### 4.4 常见问题解答
 
@@ -113,11 +113,11 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
 # 输入文本和截断长度
-input_text = \"Hello, world!\"
+input_text = "Hello, world!"
 max_length = 50
 
 # 编码输入文本
-input_ids = tokenizer.encode(input_text, return_tensors=\"pt\")
+input_ids = tokenizer.encode(input_text, return_tensors="pt")
 
 # 设置模型为评估模式
 model.eval()

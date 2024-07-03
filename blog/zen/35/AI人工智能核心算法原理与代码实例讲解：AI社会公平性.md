@@ -91,11 +91,11 @@
 
 #### 指标
 
-- **平均相对偏差（ARD）**：衡量算法预测值与实际值之间的相对差异，公式为 $\\text{ARD} = \\frac{1}{n}\\sum_{i=1}^{n}\\frac{|y_i - \\hat{y}_i|}{|y_i|}$，其中 $y_i$ 是实际值，$\\hat{y}_i$ 是预测值。
+- **平均相对偏差（ARD）**：衡量算法预测值与实际值之间的相对差异，公式为 $\text{ARD} = \frac{1}{n}\sum_{i=1}^{n}\frac{|y_i - \hat{y}_i|}{|y_i|}$，其中 $y_i$ 是实际值，$\hat{y}_i$ 是预测值。
 
 #### 算法
 
-- **加权最小化损失**：通过引入权重矩阵 $W$ 来调整不同群体的损失函数，公式为 $\\min_{\\theta} \\sum_{i=1}^{n} W_i \\cdot L(\\theta, x_i, y_i)$，其中 $W_i$ 是针对第 $i$ 个样本的权重。
+- **加权最小化损失**：通过引入权重矩阵 $W$ 来调整不同群体的损失函数，公式为 $\min_{\theta} \sum_{i=1}^{n} W_i \cdot L(\theta, x_i, y_i)$，其中 $W_i$ 是针对第 $i$ 个样本的权重。
 
 ### 公式推导过程
 
@@ -153,7 +153,7 @@ model.fit(X_train_balanced, y_train_balanced)
 predictions = model.predict(X_test)
 accuracy = accuracy_score(y_test, predictions)
 
-print(f\"Accuracy: {accuracy}\")
+print(f"Accuracy: {accuracy}")
 ```
 
 #### 代码解读与分析

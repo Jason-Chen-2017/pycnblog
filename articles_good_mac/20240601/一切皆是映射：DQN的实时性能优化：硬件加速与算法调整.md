@@ -89,8 +89,7 @@ where $\\alpha$ is the learning rate, which determines the step size of the upda
 
 The Deep Q-Network (DQN) update rule is used to update the network weights based on the observed reward and the Q-values predicted by the network for the new state-action pairs. The update rule can be represented mathematically as:
 
-$$w \\leftarrow w + \\alpha \
-abla_w L(y, \\hat{y})$$
+$$w \\leftarrow w + \\alpha \nabla_w L(y, \\hat{y})$$
 
 where $w$ are the network weights, $\\alpha$ is the learning rate, $L$ is the loss function, $y$ is the target Q-value, and $\\hat{y}$ is the predicted Q-value.
 

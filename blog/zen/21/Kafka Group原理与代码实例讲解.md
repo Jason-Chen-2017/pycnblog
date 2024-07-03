@@ -1,4 +1,4 @@
-                 
+
 # Kafka Group原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -39,7 +39,7 @@
 ### 2.2 Group Member与Group Coordinator
 
 - **Group Member**: 组内的一员，负责从服务器获取消息并进行消费。每个成员都有自己的消费进度信息。
-  
+
 - **Group Coordinator**: 在一个组中，只有唯一的一个成员是**Group Coordinator**，它是整个组的管理者，负责与服务器通信，更新组状态，并与其他成员保持同步。
 
 ### 2.3 Group Rebalancing
@@ -55,7 +55,7 @@
 Kafka Group的管理涉及多个关键算法，其中最核心的是**ZooKeeper**提供的分布式协调服务，用于存储和维护组的状态信息。此外，还包括以下算法原理：
 
 1. **Leader Election Algorithm**: ZooKeeper用于选举一个组协调者，它是组内唯一可以修改组状态的节点。
-   
+
 2. **State Transfer Algorithm**: 当新的组成员加入或现有成员离开时，组协调者负责转移组状态信息至新成员。
 
 3. **Rebalance Algorithm**: 当组状态发生变化时，组协调者执行一组操作，重新分配主题分区给不同的组成员。
@@ -165,25 +165,25 @@ from kafka.errors import NoBrokersAvailable, InvalidTopicError
 class KafkaGroupManager:
     def __init__(self):
         self.client = KafkaAdminClient(bootstrap_servers=['localhost:9092'])
-        
+
     def create_topic(self, topic_name, num_partitions, replication_factor):
         """创建一个新的主题"""
         topic = NewTopic(name=topic_name,
                          num_partitions=num_partitions,
                          replication_factor=replication_factor)
         self.client.create_topics([topic])
-    
+
     def group_coordinator(self, topic_name, group_id, consumer_id=None):
         """返回给定主题的组协调者"""
         try:
             # 查询主题信息
             topic_info = self.client.describe_topics(topic_name)[topic_name]
-            
+
             # 查找当前组的协调者ID
             for member in topic_info[0].members.values():
                 if member['memberId'].startswith('coordinator'):
                     return member['memberId']
-            
+
             raise Exception("无法找到组协调者")
         except Exception as e:
             print(f"错误: {str(e)}")

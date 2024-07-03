@@ -182,7 +182,7 @@ A: 可以使用均方误差、均方根误差、决定系数等指标评估模�
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n ai-env python=3.8 
+conda create -n ai-env python=3.8
 conda activate ai-env
 ```
 3. 安装PyTorch：根据CUDA版本，从官网获取对应的安装命令。

@@ -58,10 +58,10 @@ LSTM的算法包括四个基本步骤：
 1. **初始化**：设置遗忘门、输入门、输出门和细胞状态的初始值。
 
 2. **正向传播**：
-   - 计算遗忘门的值$f_t$：$f_t = \\sigma(W_f \\cdot [h_{t-1}, x_t] + b_f)$。
-   - 计算输入门的值$i_t$：$i_t = \\sigma(W_i \\cdot [h_{t-1}, x_t] + b_i)$。
-   - 更新细胞状态$c_t$：$c_t = \\tanh(W_c \\cdot [h_{t-1}, x_t] + b_c)$。
-   - 计算输出门的值$o_t$：$o_t = \\sigma(W_o \\cdot [h_{t-1}, x_t] + b_o)$。
+   - 计算遗忘门的值$f_t$：$f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)$。
+   - 计算输入门的值$i_t$：$i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i)$。
+   - 更新细胞状态$c_t$：$c_t = \tanh(W_c \cdot [h_{t-1}, x_t] + b_c)$。
+   - 计算输出门的值$o_t$：$o_t = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o)$。
 
 3. **反向传播**：根据损失函数计算梯度，并更新权重参数。
 
@@ -91,12 +91,12 @@ LSTM广泛应用于：
 
 LSTM的数学模型构建主要包括以下步骤：
 
-- **遗忘门（Forget Gate）**：$f_t = \\sigma(W_f \\cdot [h_{t-1}, x_t] + b_f)$
-- **输入门（Input Gate）**：$i_t = \\sigma(W_i \\cdot [h_{t-1}, x_t] + b_i)$
-- **细胞状态更新（Cell State Update）**：$g_t = \\tanh(W_c \\cdot [h_{t-1}, x_t] + b_c)$
-- **输出门（Output Gate）**：$o_t = \\sigma(W_o \\cdot [h_{t-1}, x_t] + b_o)$
-- **细胞状态（Cell State）**：$c_t = f_t \\odot c_{t-1} + i_t \\odot g_t$
-- **隐藏状态（Hidden State）**：$h_t = o_t \\odot \\tanh(c_t)$
+- **遗忘门（Forget Gate）**：$f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)$
+- **输入门（Input Gate）**：$i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i)$
+- **细胞状态更新（Cell State Update）**：$g_t = \tanh(W_c \cdot [h_{t-1}, x_t] + b_c)$
+- **输出门（Output Gate）**：$o_t = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o)$
+- **细胞状态（Cell State）**：$c_t = f_t \odot c_{t-1} + i_t \odot g_t$
+- **隐藏状态（Hidden State）**：$h_t = o_t \odot \tanh(c_t)$
 
 ### 4.2 公式推导过程
 
@@ -138,7 +138,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Embedding, LSTM, Dense
 
 # 数据准备
-data = [\"the quick brown fox jumps over the lazy dog\"]
+data = ["the quick brown fox jumps over the lazy dog"]
 vocabulary = set([char for line in data for char in line])
 vocabulary_size = len(vocabulary)
 
@@ -184,7 +184,7 @@ def predict_next_char(model, sequence, vocabulary, id_to_word):
 
 sequence = ['the quick brown fox']
 next_char = predict_next_char(model, sequence, vocabulary, id_to_word)
-print(f\"The next character is: {next_char}\")
+print(f"The next character is: {next_char}")
 ```
 
 ### 5.3 代码解读与分析
@@ -215,7 +215,7 @@ print(f\"The next character is: {next_char}\")
 
 ### 7.3 相关论文推荐
 
-- **\"Long Short-Term Memory\"**（1997年）：由Hochreiter和Schmidhuber发表的论文，首次提出了LSTM网络的概念。
+- **"Long Short-Term Memory"**（1997年）：由Hochreiter和Schmidhuber发表的论文，首次提出了LSTM网络的概念。
 
 ### 7.4 其他资源推荐
 

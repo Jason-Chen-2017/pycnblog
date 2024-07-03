@@ -143,10 +143,10 @@ vgg = torchvision.models.vgg16(pretrained=True)
 class FCN(nn.Module):
     def __init__(self, num_classes):
         super(FCN, self).__init__()
-        
+
         # 编码器:VGG16卷积层
         self.encoder = nn.Sequential(*list(vgg.features.children())[:30])
-        
+
         # 解码器
         self.decoder = nn.Sequential(
             nn.Conv2d(512, 256, kernel_size=3, padding=1),
@@ -155,23 +155,23 @@ class FCN(nn.Module):
             nn.ReLU(inplace=True),
             nn.Conv2d(256, num_classes, kernel_size=1)
         )
-        
+
         # 跳跃连接
         self.skip = nn.Conv2d(512, num_classes, kernel_size=1)
-        
+
     def forward(self, x):
         # 编码
         encoder_output = self.encoder(x)
-        
+
         # 跳跃连接
         skip_output = self.skip(encoder_output)
-        
+
         # 解码
         decoder_output = self.decoder(encoder_output)
-        
+
         # 融合跳跃连接和解码器输出
         output = decoder_output + nn.functional.interpolate(skip_output, decoder_output.size()[2:], mode='bilinear', align_corners=True)
-        
+
         return output
 ```
 

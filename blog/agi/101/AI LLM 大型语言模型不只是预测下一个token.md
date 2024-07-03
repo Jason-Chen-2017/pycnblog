@@ -1,7 +1,7 @@
 
 # AI LLM 大型语言模型不只是预测下一个token
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍

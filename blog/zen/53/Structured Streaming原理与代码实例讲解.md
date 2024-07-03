@@ -12,13 +12,13 @@ Spark Streaming是较早出现的流处理框架之一,基于Spark的微批次(m
 为了克服Spark Streaming的不足,Databricks在Spark 2.0中引入了全新的流处理引擎——Structured Streaming。它以Spark SQL为基础,利用DataFrame/Dataset API,提供了更加直观、可组合、容错性强的流式数据处理方式。
 
 ## 2.核心概念与联系
-### 2.1 无界表(Unbounded Table) 
+### 2.1 无界表(Unbounded Table)
 Structured Streaming的核心思想是将流式数据看作一张不断增长的动态表(Unbounded Table)。每个时间点到达的新数据被看作是对该表的一次新增修改操作(插入/更新)。
 ### 2.2 输入源(Input Source)
 输入源定义了数据从何而来。Structured Streaming支持多种输入源,如Kafka、文件、Socket等。系统从输入源不断获取新数据并添加到无界表中。
 ### 2.3 数据处理逻辑(Query)
 用户使用类似批处理的DataFrame/Dataset API来定义对无界表的查询计算逻辑,如select、where、groupBy等。Structured Streaming会不断执行查询,在无界表上产生连续的结果集。
-### 2.4 输出结果(Result)  
+### 2.4 输出结果(Result)
 连续计算的结果可以输出到外部系统,如控制台、文件、数据库等。结果输出模式有几种:
 - Complete Mode:每次都输出完整结果集
 - Append Mode:只输出新增的数据
@@ -47,7 +47,7 @@ B --> E[Checkpoint]
 
 ### 3.3 状态管理
 1. 许多流计算都涉及状态,如聚合操作中的中间累加值。
-2. Structured Streaming将状态数据持久化到状态存储中,每个任务单独管理自己的状态。  
+2. Structured Streaming将状态数据持久化到状态存储中,每个任务单独管理自己的状态。
 3. 任务通过WAL(Write Ahead Log)的方式来原子性地更新状态,保证一致性。
 4. 状态数据也会定期写入检查点,用于故障恢复。
 
@@ -71,8 +71,8 @@ SELECT user, SUM(amount) FROM transactions GROUP BY user
 则聚合操作可用下列公式表示:
 
 $$
-S_t(k) = \begin{cases} 
-  S_{t-1}(k) + I_t(k) & \text{if } \exists I_t(k) \\\\
+S_t(k) = \begin{cases}
+  S_{t-1}(k) + I_t(k) & \text{if } \exists I_t(k) \\\
   S_{t-1}(k) & \text{otherwise}
 \end{cases}
 $$
@@ -85,15 +85,15 @@ $$
 
 例如有如下数据流:
 ```
-t1: (Alice, 10) 
+t1: (Alice, 10)
 t2: (Bob, 20)
 t3: (Alice, 30)
 ```
 
 则各时刻的状态$S_t$和输出$R_t$为:
-- t1: $S_{t1}=\\{Alice:10\\}, R_{t1}=\\{Alice:10\\}$  
-- t2: $S_{t2}=\\{Alice:10, Bob:20\\}, R_{t2}=\\{Alice:10, Bob:20\\}$
-- t3: $S_{t3}=\\{Alice:40, Bob:20\\}, R_{t3}=\\{Alice:40, Bob:20\\}$
+- t1: $S_{t1}=\{Alice:10\}, R_{t1}=\{Alice:10\}$
+- t2: $S_{t2}=\{Alice:10, Bob:20\}, R_{t2}=\{Alice:10, Bob:20\}$
+- t3: $S_{t3}=\{Alice:40, Bob:20\}, R_{t3}=\{Alice:40, Bob:20\}$
 
 可见Structured Streaming通过增量更新状态、生成结果的方式,实现了高效的流式聚合。
 
@@ -122,7 +122,7 @@ val wordCounts = lines.as[String]
   .groupBy("value")
   .count()
 
-// 输出结果到控制台  
+// 输出结果到控制台
 val query = wordCounts.writeStream
   .outputMode("complete")
   .format("console")
@@ -161,7 +161,7 @@ Structured Streaming在许多实际场景中都有广泛应用,例如:
 ## 8.总结：未来发展趋势与挑战
 Structured Streaming为Spark带来了高性能、易用的流处理能力,是流处理领域一次重要的创新。未来它有望进一步发展,成为流批一体化的统一计算引擎。但同时也面临一些挑战:
 - 低延迟优化:如何进一步降低端到端延迟,实现毫秒级的流处理。
-- 吞吐量提升:在超高数据量下如何提升系统吞吐能力。 
+- 吞吐量提升:在超高数据量下如何提升系统吞吐能力。
 - 更多数据源连接器:扩展更多的流数据源,提高系统适用性。
 - 大状态管理:高效管理TB级别的状态数据,进行快照/恢复。
 

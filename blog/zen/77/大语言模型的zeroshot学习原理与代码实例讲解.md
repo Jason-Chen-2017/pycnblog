@@ -118,7 +118,7 @@ $$\min_{f, h} \mathbb{E}_{x, c} [L(h(f(x)), c)]$$
 
 假设我们有一个特征向量$f(x)$和一个分类器$h$，对于给定输入$x$的特征$f(x)$，分类器$h$的输出为$h(f(x))$。损失函数$L$衡量预测类别与真实类别的差异：
 
-$$L(h(f(x)), c) = \begin{cases} 
+$$L(h(f(x)), c) = \begin{cases}
 0 & \text{if } h(f(x)) = c \\
 \text{loss} & \text{otherwise}
 \end{cases}$$

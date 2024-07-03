@@ -160,20 +160,20 @@ $$M = D_k(C, k_{private})$$
 
 - **访问控制矩阵**：
 
-$$A = \begin{bmatrix} 
+$$A = \begin{bmatrix}
 a_{11} & a_{12} & \dots & a_{1n} \\
 a_{21} & a_{22} & \dots & a_{2n} \\
 \vdots & \vdots & \ddots & \vdots \\
-a_{m1} & a_{m2} & \dots & a_{mn} 
+a_{m1} & a_{m2} & \dots & a_{mn}
 \end{bmatrix}$$
 
 其中，$A$表示访问控制矩阵，$a_{ij}$表示用户$u_i$对资源$r_j$的访问权限。
 
 - **访问控制树**：
 
-$$\text{AccessTree}(u, r) = \begin{cases} 
+$$\text{AccessTree}(u, r) = \begin{cases}
 \text{允许} & \text{if } u \in \text{Descendants}(r) \\
-\text{拒绝} & \text{otherwise} 
+\text{拒绝} & \text{otherwise}
 \end{cases}$$
 
 其中，$\text{Descendants}(r)$表示资源$r$的子资源集合。

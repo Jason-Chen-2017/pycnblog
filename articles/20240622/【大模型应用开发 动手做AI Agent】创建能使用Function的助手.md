@@ -112,8 +112,7 @@ AI Agent的数学模型主要包括以下部分：
 1. **大模型训练公式**：
 
 $$
-\theta_{new} = \theta_{old} - \alpha \cdot \
-abla_{\theta}J(\theta)
+\theta_{new} = \theta_{old} - \alpha \cdot \nabla_{\theta}J(\theta)
 $$
 
 其中，
@@ -121,14 +120,12 @@ $$
 - $\theta_{new}$是优化后的模型参数；
 - $\theta_{old}$是当前模型参数；
 - $\alpha$是学习率；
-- $\
-abla_{\theta}J(\theta)$是损失函数关于模型参数的梯度。
+- $\nabla_{\theta}J(\theta)$是损失函数关于模型参数的梯度。
 
 2. **Function模块优化公式**：
 
 $$
-\theta_{new} = \theta_{old} - \alpha \cdot \
-abla_{\theta}J(\theta)
+\theta_{new} = \theta_{old} - \alpha \cdot \nabla_{\theta}J(\theta)
 $$
 
 其中，
@@ -136,8 +133,7 @@ $$
 - $\theta_{new}$是优化后的Function模块参数；
 - $\theta_{old}$是当前Function模块参数；
 - $\alpha$是学习率；
-- $\
-abla_{\theta}J(\theta)$是损失函数关于Function模块参数的梯度。
+- $\nabla_{\theta}J(\theta)$是损失函数关于Function模块参数的梯度。
 
 ### 4.3 案例分析与讲解
 

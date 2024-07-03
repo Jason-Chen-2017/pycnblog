@@ -182,7 +182,7 @@ A：VAE的损失函数主要包括两部分：重构损失和KL散度损失。�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n vae-env python=3.8 
+conda create -n vae-env python=3.8
 conda activate vae-env
 ```
 

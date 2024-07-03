@@ -140,13 +140,13 @@ def regular_hopf_algebra():
     B = Operator(b)
     C = Operator(c)
     D = Operator(d)
-    
+
     # 定义乘法、单位元、乘子映射等结构
     # 示例代码省略了具体的结构定义，这里仅示意
-    
+
     # 接下来可以定义乘法、单位元、乘子映射等具体实现，
     # 包括对偶结构、对称性、单位性等验证
-    
+
     # 返回构建的正则乘子Hopf代数对象
     return {
         'multiplication': multiplication,

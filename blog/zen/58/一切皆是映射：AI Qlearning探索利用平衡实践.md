@@ -50,9 +50,9 @@ Q-learning算法的流程如下：
     2. 选择一个动作 $a$，可以使用不同的探索-利用策略。
     3. 执行动作 $a$，并观察下一个状态 $s'$ 和奖励 $r$。
     4. 更新Q-function：
-    
+
        $$Q(s, a) \leftarrow Q(s, a) + \alpha \cdot [r + \gamma \cdot \max_{a'} Q(s', a') - Q(s, a)]$$
-       
+
        其中，$\alpha$ 是学习率，控制Q-function更新的速度；$\gamma$ 是折扣因子，控制未来奖励的权重。
     5. 将当前状态更新为下一个状态：$s \leftarrow s'$。
 

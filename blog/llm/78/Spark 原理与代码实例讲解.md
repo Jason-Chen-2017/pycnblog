@@ -31,7 +31,7 @@ Spark的核心概念主要包括:
 - Application:用户编写的Spark应用程序,一个Application包含一个Driver Program和多个Executor。
 - Driver Program:运行Application的main()函数并创建SparkContext。
 - Cluster Manager:在集群上获取资源的外部服务,目前有三种:Standalone、Mesos和YARN。
-- Worker Node:集群中任何可以运行Application代码的节点。  
+- Worker Node:集群中任何可以运行Application代码的节点。
 
 下图展示了Spark核心概念之间的联系:
 
@@ -71,7 +71,7 @@ Spark的核心算法主要包括RDD的创建、转换和控制操作。RDD是Spa
 ```mermaid
 graph LR
 A[Input RDD] --> B[flatMap]
-B --> C[map] 
+B --> C[map]
 C --> D[reduceByKey]
 D --> E[Result RDD]
 E --> F[collect]
@@ -131,7 +131,7 @@ $$idf_j=log \frac{N}{n_j}$$
 逆文档频率为:
 $idf_1=log \frac{3}{3}=0$
 
-因此,"Spark"在各个文档中的TF-IDF权重为:  
+因此,"Spark"在各个文档中的TF-IDF权重为:
 - $w_{11}=1 \cdot 0 = 0$
 - $w_{21}=1 \cdot 0=0$
 - $w_{31}=1 \cdot 0=0$

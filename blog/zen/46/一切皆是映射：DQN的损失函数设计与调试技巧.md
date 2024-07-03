@@ -124,7 +124,7 @@ $$L = \frac{1}{N} \sum_{i=1}^N (Q(s_i,a_i) - y_i)^2$$
 1. **状态空间**：$S = \{s_1, s_2, s_3\}$
 2. **动作空间**：$A = \{a_1, a_2, a_3\}$
 3. **奖励函数**：$R(s,a) = 1$，当智能体执行动作$a$时，获得奖励$R$。
-4. **Q值函数**：$Q(s,a) = \begin{cases} 1, & \text{if } a = \text{opt\_action}(s) \\ 0, & \text{otherwise} \end{cases}$
+4. **Q值函数**：$Q(s,a) = \begin{cases} 1, & \text{if } a = \text{opt\_action}(s) \ 0, & \text{otherwise} \end{cases}$
 5. **深度神经网络**：$f(\cdot)$是一个简单的全连接神经网络。
 
 在这个案例中，我们希望智能体在状态$s_1$下采取动作$a_1$，以获得最大奖励。

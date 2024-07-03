@@ -5,7 +5,7 @@
 
 ### 1.1 社交媒体数据的特点
 #### 1.1.1 数据量巨大
-#### 1.1.2 数据实时性强 
+#### 1.1.2 数据实时性强
 #### 1.1.3 数据种类多样
 
 ### 1.2 传统数据处理方式的局限性
@@ -67,9 +67,9 @@ DStream离散流--输出Operations-->外部系统ExternalSystem
 ### 4.1 滑动窗口算法
 Spark Streaming支持基于滑动窗口的聚合计算,如下公式:
 
-$$ 
+$$
 \begin{aligned}
-&\textit{windowDuration = 10 分钟} \\ 
+&\textit{windowDuration = 10 分钟} \\
 &\textit{slideDuration = 5 分钟} \\
 &\textit{操作 = reduceByWindow(_ + _)}
 \end{aligned}
@@ -84,10 +84,10 @@ $$
 \begin{aligned}
 &\textit{// 读取流数据,每5秒一个批次}\\
 &\textit{val lines = ssc.socketTextStream("localhost", 9999, StorageLevel.MEMORY_AND_DISK_SER)} \\
-&\textit{// 对每个批次的数据进行 TopN 排序} \\  
+&\textit{// 对每个批次的数据进行 TopN 排序} \\
 &\textit{val topN = lines} \\
 &\quad \textit{.flatMap(_.split(" "))} \\
-&\quad \textit{.map(word => (word, 1))} \\ 
+&\quad \textit{.map(word => (word, 1))} \\
 &\quad \textit{.reduceByKey(_ + _)} \\
 &\quad \textit{.map(_.swap)} \\
 &\quad \textit{.transform(rdd => rdd.sortByKey(false))} \\
@@ -113,14 +113,14 @@ object TwitterPopularTags {
     val conf = new SparkConf().setAppName("TwitterPopularTags")
     // 创建StreamingContext,每5秒一个批次
     val ssc = new StreamingContext(conf, Seconds(5))
-    
-    // 配置Twitter API认证信息  
+
+    // 配置Twitter API认证信息
     val consumerKey = "..."
     val consumerSecret = "..."
     val accessToken = "..."
     val accessTokenSecret = "..."
     val filters = Array("spark")
-    
+
     // 创建Twitter输入流
     val stream = TwitterUtils.createStream(ssc, None, filters)
 
@@ -130,10 +130,10 @@ object TwitterPopularTags {
                          .reduceByKeyAndWindow(_ + _, Seconds(60)) //60秒内的热门话题
                          .map{case (topic, count) => (count, topic)}
                          .transform(_.sortByKey(false))
-    
+
     // 打印结果
     hashTags.print
-    
+
     // 启动流计算
     ssc.start()
     ssc.awaitTermination()

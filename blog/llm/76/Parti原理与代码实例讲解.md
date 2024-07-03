@@ -7,7 +7,7 @@
 目前,业界主流的文本生成模型如GPT-3、PaLM等,虽然在通用自然语言理解和生成方面表现优异,但在创作长篇连贯文章、维持全局主题一致性等方面仍有不足。Parti作为一种新兴的autoregressive语言模型,通过引入新颖的架构设计和训练范式,在保证生成内容质量和连贯性的同时,极大地提升了生成效率和创意度。
 ### 1.3 研究意义
 Parti的提出具有里程碑式的意义。一方面,它为LLMs的进一步发展指明了方向,为探索更高效、更智能的语言模型提供了新思路;另一方面,Parti在智能写作助手、虚拟客服、知识问答等领域展现出广阔的应用前景,有望彻底改变人机交互的方式,为人类生活和工作带来便利。
-### 1.4 本文结构 
+### 1.4 本文结构
 本文将全面解析Parti的核心原理和代码实现。第2部分介绍Parti的关键概念;第3部分重点阐述其核心算法;第4部分建立数学模型并给出公式推导;第5部分提供详细的代码实例;第6部分探讨Parti的实际应用场景;第7部分推荐相关工具和资源;第8部分对Parti的研究现状和未来趋势进行总结展望。
 
 ## 2. 核心概念与联系
@@ -18,7 +18,7 @@ graph LR
 A[输入文本] --> B(Transformer Encoder)
 B --> C(Sparse Attention)
 B --> D(LSH Attention)
-C --> E(Transformer Decoder) 
+C --> E(Transformer Decoder)
 D --> E
 E --> F(MoE)
 E --> G(Prefix LM)
@@ -30,7 +30,7 @@ G --> H
 ### 3.1 算法原理概述
 Parti的核心算法可以概括为以下几个关键步骤:
 1. 将输入文本序列通过Transformer Encoder映射为隐向量表示。
-2. 在Encoder中,使用Sparse Attention和LSH Attention机制建模长程依赖,提取全局语义信息。 
+2. 在Encoder中,使用Sparse Attention和LSH Attention机制建模长程依赖,提取全局语义信息。
 3. 将Encoder的输出通过Transformer Decoder解码生成目标文本。
 4. 在Decoder中,使用MoE和Prefix LM等技术,增强生成内容的多样性和连贯性。
 5. 通过自回归方式,不断生成下一个单词,直到达到预设的最大长度或遇到终止符。

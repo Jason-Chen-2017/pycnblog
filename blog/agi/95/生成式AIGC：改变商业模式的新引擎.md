@@ -1,7 +1,7 @@
 
 # 生成式AIGC：改变商业模式的新引擎
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 关键词：
 

@@ -197,11 +197,9 @@ $$f(\mathbf{x}) = -\sum_{i=1}^n c_i x_i$$
 
 假设目标函数 $f(\mathbf{x})$ 在 $\mathbf{x}_0$ 点可微，则梯度下降法的更新公式为：
 
-$$\mathbf{x}_{k+1} = \mathbf{x}_k - \alpha \
-abla f(\mathbf{x}_k)$$
+$$\mathbf{x}_{k+1} = \mathbf{x}_k - \alpha \nabla f(\mathbf{x}_k)$$
 
-其中，$\alpha$ 为步长，$\
-abla f(\mathbf{x}_k)$ 为目标函数 $f(\mathbf{x})$ 在 $\mathbf{x}_k$ 点的梯度。
+其中，$\alpha$ 为步长，$\nabla f(\mathbf{x}_k)$ 为目标函数 $f(\mathbf{x})$ 在 $\mathbf{x}_k$ 点的梯度。
 
 #### 4.2.2 共轭梯度法
 
@@ -209,12 +207,9 @@ abla f(\mathbf{x}_k)$ 为目标函数 $f(\mathbf{x})$ 在 $\mathbf{x}_k$ 点的�
 
 假设目标函数 $f(\mathbf{x})$ 在 $\mathbf{x}_0$ 点可微，则共轭梯度法的更新公式为：
 
-$$\mathbf{x}_{k+1} = \mathbf{x}_k + \alpha_k (\
-abla f(\mathbf{x}_k) - \alpha_{k-1} \mathbf{p}_{k-1})$$
+$$\mathbf{x}_{k+1} = \mathbf{x}_k + \alpha_k (\nabla f(\mathbf{x}_k) - \alpha_{k-1} \mathbf{p}_{k-1})$$
 
-其中，$\mathbf{p}_k = \
-abla f(\mathbf{x}_k) - \
-abla f(\mathbf{x}_{k-1})$，$\alpha_k$ 为步长。
+其中，$\mathbf{p}_k = \nabla f(\mathbf{x}_k) - \nabla f(\mathbf{x}_{k-1})$，$\alpha_k$ 为步长。
 
 ### 4.3 案例分析与讲解
 
@@ -226,19 +221,15 @@ abla f(\mathbf{x}_{k-1})$，$\alpha_k$ 为步长。
 
 **第1次迭代**：
 
-$$\
-abla f(\mathbf{x}_0) = 2 \times 0 = 0$$
+$$\nabla f(\mathbf{x}_0) = 2 \times 0 = 0$$
 
-$$\mathbf{x}_1 = \mathbf{x}_0 - 0.1 \times \
-abla f(\mathbf{x}_0) = 0 - 0.1 \times 0 = 0$$
+$$\mathbf{x}_1 = \mathbf{x}_0 - 0.1 \times \nabla f(\mathbf{x}_0) = 0 - 0.1 \times 0 = 0$$
 
 **第2次迭代**：
 
-$$\
-abla f(\mathbf{x}_1) = 2 \times 0 = 0$$
+$$\nabla f(\mathbf{x}_1) = 2 \times 0 = 0$$
 
-$$\mathbf{x}_2 = \mathbf{x}_1 - 0.1 \times \
-abla f(\mathbf{x}_1) = 0 - 0.1 \times 0 = 0$$
+$$\mathbf{x}_2 = \mathbf{x}_1 - 0.1 \times \nabla f(\mathbf{x}_1) = 0 - 0.1 \times 0 = 0$$
 
 ...
 

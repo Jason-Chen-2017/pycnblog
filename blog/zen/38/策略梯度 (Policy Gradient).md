@@ -49,12 +49,10 @@
 
 ### 3.2 算法步骤详解
 
-1. 初始化策略参数$\\theta$。
-2. 在环境中执行策略$\\pi(\\theta)$，收集经验数据$(s_t, a_t, r_t, s_{t+1})$，其中$s_t$为状态，$a_t$为采取的行动，$r_t$为奖励，$s_{t+1}$为下一个状态。
-3. 利用收集到的经验数据计算策略梯度$\
-abla_{\\theta} J(\\pi(\\theta))$。
-4. 根据策略梯度更新策略参数$\\theta$：$\\theta \\leftarrow \\theta - \\alpha \
-abla_{\\theta} J(\\pi(\\theta))$，其中$\\alpha$为学习率。
+1. 初始化策略参数$\theta$。
+2. 在环境中执行策略$\pi(\theta)$，收集经验数据$(s_t, a_t, r_t, s_{t+1})$，其中$s_t$为状态，$a_t$为采取的行动，$r_t$为奖励，$s_{t+1}$为下一个状态。
+3. 利用收集到的经验数据计算策略梯度$\nabla_{\theta} J(\pi(\theta))$。
+4. 根据策略梯度更新策略参数$\theta$：$\theta \leftarrow \theta - \alpha \nabla_{\theta} J(\pi(\theta))$，其中$\alpha$为学习率。
 5. 重复步骤2-4，直至策略收敛。
 
 ### 3.3 算法优缺点
@@ -84,12 +82,11 @@ abla_{\\theta} J(\\pi(\\theta))$，其中$\\alpha$为学习率。
 
 ### 4.1 数学模型构建
 
-策略梯度方法的核心是策略梯度公式。假设策略$\\pi(\\theta)$在状态$s$下的动作$a$的概率为$P(a | s; \\theta)$，那么策略梯度公式可以表示为：
+策略梯度方法的核心是策略梯度公式。假设策略$\pi(\theta)$在状态$s$下的动作$a$的概率为$P(a | s; \theta)$，那么策略梯度公式可以表示为：
 
-$$\
-abla_{\\theta} J(\\pi(\\theta)) = \\mathbb{E}_{s, a \\sim \\pi(\\theta)} \\left[ \\frac{\\partial \\log P(a | s; \\theta)}{\\partial \\theta} R(s, a) \\right]$$
+$$\nabla_{\theta} J(\pi(\theta)) = \mathbb{E}_{s, a \sim \pi(\theta)} \left[ \frac{\partial \log P(a | s; \theta)}{\partial \theta} R(s, a) \right]$$
 
-其中，$J(\\pi(\\theta))$为策略$\\pi(\\theta)$的预期回报，$R(s, a)$为在状态$s$采取行动$a$所获得的奖励。
+其中，$J(\pi(\theta))$为策略$\pi(\theta)$的预期回报，$R(s, a)$为在状态$s$采取行动$a$所获得的奖励。
 
 ### 4.2 公式推导过程
 
@@ -97,22 +94,21 @@ abla_{\\theta} J(\\pi(\\theta)) = \\mathbb{E}_{s, a \\sim \\pi(\\theta)} \\left[
 
 1. **贝尔曼方程**：
 
-$$J(\\pi(\\theta)) = \\mathbb{E}_{s, a \\sim \\pi(\\theta)} \\left[ R(s, a) + \\gamma \\mathbb{E}_{s' \\sim p(s'|s, a)} J(\\pi(\\theta)) \\right]$$
+$$J(\pi(\theta)) = \mathbb{E}_{s, a \sim \pi(\theta)} \left[ R(s, a) + \gamma \mathbb{E}_{s' \sim p(s'|s, a)} J(\pi(\theta)) \right]$$
 
-其中，$\\gamma$为折扣因子，$p(s'|s, a)$为状态转移概率。
+其中，$\gamma$为折扣因子，$p(s'|s, a)$为状态转移概率。
 
 2. **策略梯度下降算法**：
 
-$$\\theta \\leftarrow \\theta - \\alpha \
-abla_{\\theta} J(\\pi(\\theta))$$
+$$\theta \leftarrow \theta - \alpha \nabla_{\theta} J(\pi(\theta))$$
 
 将贝尔曼方程代入策略梯度下降算法，得到：
 
-$$\\theta \\leftarrow \\theta - \\alpha \\mathbb{E}_{s, a \\sim \\pi(\\theta)} \\left[ \\frac{\\partial \\log P(a | s; \\theta)}{\\partial \\theta} R(s, a) + \\gamma \\frac{\\partial \\log P(s' | s, a; \\theta)}{\\partial \\theta} J(\\pi(\\theta)) \\right]$$
+$$\theta \leftarrow \theta - \alpha \mathbb{E}_{s, a \sim \pi(\theta)} \left[ \frac{\partial \log P(a | s; \theta)}{\partial \theta} R(s, a) + \gamma \frac{\partial \log P(s' | s, a; \theta)}{\partial \theta} J(\pi(\theta)) \right]$$
 
-由于$J(\\pi(\\theta))$是关于$\\theta$的函数，因此可以将上式简化为：
+由于$J(\pi(\theta))$是关于$\theta$的函数，因此可以将上式简化为：
 
-$$\\theta \\leftarrow \\theta - \\alpha \\mathbb{E}_{s, a \\sim \\pi(\\theta)} \\left[ \\frac{\\partial \\log P(a | s; \\theta)}{\\partial \\theta} R(s, a) \\right]$$
+$$\theta \leftarrow \theta - \alpha \mathbb{E}_{s, a \sim \pi(\theta)} \left[ \frac{\partial \log P(a | s; \theta)}{\partial \theta} R(s, a) \right]$$
 
 这就是策略梯度公式。
 
@@ -125,9 +121,9 @@ $$\\theta \\leftarrow \\theta - \\alpha \\mathbb{E}_{s, a \\sim \\pi(\\theta)} \
 3. **状态转移概率**：根据智能体的位置和方向来计算。
 4. **奖励函数**：到达出口时获得奖励1，否则获得奖励0。
 
-假设策略为$\\pi(\\theta) = \\text{argmax}_a P(a | s; \\theta)$，其中$P(a | s; \\theta)$为在状态$s$下采取行动$a$的概率。
+假设策略为$\pi(\theta) = \text{argmax}_a P(a | s; \theta)$，其中$P(a | s; \theta)$为在状态$s$下采取行动$a$的概率。
 
-通过迭代更新策略参数$\\theta$，智能体逐渐学习到最优策略，并找到迷宫的最近出口。
+通过迭代更新策略参数$\theta$，智能体逐渐学习到最优策略，并找到迷宫的最近出口。
 
 ### 4.4 常见问题解答
 
@@ -162,7 +158,7 @@ import tensorflow as tf
 from tensorflow.keras import layers
 
 # 创建环境
-env = gym.make(\"CartPole-v1\")
+env = gym.make("CartPole-v1")
 
 # 创建策略网络
 class PolicyNetwork(tf.keras.Model):
@@ -195,7 +191,7 @@ def train_policy_gradient():
             gradients = tape.gradient(policy_loss, policy_network.trainable_variables)
             optimizer.apply_gradients(zip(gradients, policy_network.trainable_variables))
             state = next_state
-        print(f\"Episode {episode}: Reward {env.step_count}\")
+        print(f"Episode {episode}: Reward {env.step_count}")
 
 train_policy_gradient()
 ```
@@ -248,9 +244,9 @@ train_policy_gradient()
 
 ### 7.3 相关论文推荐
 
-1. **\"On the Convergence of Policy Gradient Methods\"**: 作者：Richard S. Sutton, Andrew G. Barto
-2. **\"Reinforcement Learning: An Introduction\"**: 作者：Richard S. Sutton, Andrew G. Barto
-3. **\"Deep Q-Networks\"**: 作者：Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Alex Graves, Ilya Sutskever,joel Shor, Richard Sutton
+1. **"On the Convergence of Policy Gradient Methods"**: 作者：Richard S. Sutton, Andrew G. Barto
+2. **"Reinforcement Learning: An Introduction"**: 作者：Richard S. Sutton, Andrew G. Barto
+3. **"Deep Q-Networks"**: 作者：Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Alex Graves, Ilya Sutskever,joel Shor, Richard Sutton
 
 ### 7.4 其他资源推荐
 

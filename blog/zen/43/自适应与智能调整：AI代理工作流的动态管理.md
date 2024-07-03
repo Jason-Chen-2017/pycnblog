@@ -315,7 +315,7 @@ print(vm_loads)
 ```
 任务分配结果：
           V1  V2  V3  V4  V5
-task                
+task
 T1       1   0   0   0   0
 T2       1   1   0   0   0
 T3       0   0   1   0   0

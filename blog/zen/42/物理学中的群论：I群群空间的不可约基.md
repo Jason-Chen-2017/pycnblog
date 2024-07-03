@@ -85,7 +85,7 @@ $$\rho(g)v$$
 
 考虑一个简单的例子，群$G$是由两个元素$\{e, g\}$构成的循环群，其中$e$是单位元素，$g^2 = e$。设向量空间$V = \mathbb{C}^2$，考虑群表示$\rho: G \to GL(V)$，其中：
 
-$$\rho(e) = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}, \quad \rho(g) = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$$
+$$\rho(e) = \begin{pmatrix} 1 & 0 \ 0 & 1 \end{pmatrix}, \quad \rho(g) = \begin{pmatrix} 0 & 1 \ 1 & 0 \end{pmatrix}$$
 
 通过计算特征值和特征向量，可以验证$\rho$在$\mathbb{C}^2$上的表示是不可约的。
 

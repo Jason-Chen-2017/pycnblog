@@ -40,7 +40,7 @@ Recall在信息检索、推荐系统、文本挖掘等领域都有着广泛的�
 在信息检索领域，召回率（Recall）是衡量系统检索结果全面性的重要指标。它表示系统检索到的相关文档占所有相关文档的比例。召回率的计算公式如下：
 
 $$
-Recall = \frac{R}{R + M} 
+Recall = \frac{R}{R + M}
 $$
 
 其中，$R$ 表示系统检索到的相关文档数，$M$ 表示所有相关文档数。
@@ -48,7 +48,7 @@ $$
 准确率（Precision）表示系统检索到的相关文档中，实际为相关文档的比例。准确率的计算公式如下：
 
 $$
-Precision = \frac{T}{R + F} 
+Precision = \frac{T}{R + F}
 $$
 
 其中，$T$ 表示系统检索到的实际为相关文档数，$F$ 表示系统检索到的非相关文档数。
@@ -56,7 +56,7 @@ $$
 F1值是召回率和准确率的调和平均，用于综合评价信息检索系统的性能。F1值的计算公式如下：
 
 $$
-F1 = \frac{2 \times Precision \times Recall}{Precision + Recall} 
+F1 = \frac{2 \times Precision \times Recall}{Precision + Recall}
 $$
 
 ### 2.2 相关性评估

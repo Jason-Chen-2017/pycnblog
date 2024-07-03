@@ -1,7 +1,7 @@
 
 # AIGC从入门到实战：基建：人工智能时代的变迁
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 > 关键词：人工智能生成内容，AIGC，AI赋能，自然语言处理，计算机视觉，自动化，创意产业，未来趋势
 

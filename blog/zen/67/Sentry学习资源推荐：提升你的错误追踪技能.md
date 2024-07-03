@@ -172,4 +172,4 @@ Sentry正在加强对云原生环境的支持，例如Kubernetes、Docker等，�
 开发者可以通过Sentry事件查看器查看事件的详细信息，包括错误信息、堆栈跟踪、上下文信息等。
 
 ### 9.3 如何将Sentry与其他工具集成？
-Sentry提供了丰富的集成选项，开发者可以将Sentry与Slack、GitHub、Jira等工具集成，方便协作和管理错误. 
+Sentry提供了丰富的集成选项，开发者可以将Sentry与Slack、GitHub、Jira等工具集成，方便协作和管理错误.

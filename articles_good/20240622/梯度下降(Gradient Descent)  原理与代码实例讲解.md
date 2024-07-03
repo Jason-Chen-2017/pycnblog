@@ -41,17 +41,14 @@
 
 梯度下降算法的基本思想是：根据目标函数的梯度，更新参数的值，使得目标函数的值逐渐减小。具体地，我们使用以下公式来更新参数：
 
-$$\\theta = \\theta - \\alpha \\cdot \
-abla_{\\theta} J(\\theta)$$
+$$\\theta = \\theta - \\alpha \\cdot \nabla_{\\theta} J(\\theta)$$
 
-其中，$\\theta$表示模型参数，$J(\\theta)$表示目标函数，$\\alpha$表示学习率，$\
-abla_{\\theta} J(\\theta)$表示目标函数关于参数$\\theta$的梯度。
+其中，$\\theta$表示模型参数，$J(\\theta)$表示目标函数，$\\alpha$表示学习率，$\nabla_{\\theta} J(\\theta)$表示目标函数关于参数$\\theta$的梯度。
 
 ### 3.2 算法步骤详解
 
 1. **初始化参数**：设定初始参数$\\theta_0$。
-2. **计算梯度**：计算目标函数$J(\\theta)$在当前参数$\\theta$下的梯度$\
-abla_{\\theta} J(\\theta)$。
+2. **计算梯度**：计算目标函数$J(\\theta)$在当前参数$\\theta$下的梯度$\nabla_{\\theta} J(\\theta)$。
 3. **更新参数**：根据梯度下降公式，更新参数$\\theta$。
 4. **重复步骤2和步骤3**，直至满足停止条件（如梯度变化很小或达到最大迭代次数）。
 
@@ -90,8 +87,7 @@ $$J(\\theta) = \\frac{1}{2m} \\sum_{i=1}^m (h_\\theta(x^{(i)}) - y^{(i)})^2$$
 
 以线性回归为例，推导目标函数的梯度：
 
-$$\
-abla_{\\theta} J(\\theta) = \\frac{1}{m} \\sum_{i=1}^m (h_\\theta(x^{(i)}) - y^{(i)}) \\cdot x^{(i)}$$
+$$\nabla_{\\theta} J(\\theta) = \\frac{1}{m} \\sum_{i=1}^m (h_\\theta(x^{(i)}) - y^{(i)}) \\cdot x^{(i)}$$
 
 ### 4.3 案例分析与讲解
 

@@ -5,7 +5,7 @@
 ## 1. 背景介绍
 ### 1.1 问题的由来
 随着人工智能技术的飞速发展,深度学习在计算机视觉、自然语言处理等领域取得了巨大的成功。然而,训练一个高性能的深度学习模型通常需要大量的标注数据和计算资源,这在实际应用中往往难以满足。如何利用已有的知识和模型,快速适应新的任务,成为了一个亟待解决的问题。
-### 1.2 研究现状 
+### 1.2 研究现状
 迁移学习作为一种解决上述问题的有效方法,近年来受到了学术界和工业界的广泛关注。迁移学习旨在利用已有的知识,帮助模型更好地学习新的任务,从而减少对大量标注数据的依赖。目前,迁移学习已经在计算机视觉、自然语言处理、语音识别等多个领域取得了显著的进展。
 ### 1.3 研究意义
 迁移学习的研究意义主要体现在以下几个方面:
@@ -202,7 +202,7 @@ for epoch in range(num_epochs):
         loss = criterion(output, target)
         loss.backward()
         optimizer.step()
-        
+
     model.eval()
     with torch.no_grad():
         correct = 0
@@ -212,7 +212,7 @@ for epoch in range(num_epochs):
             _, predicted = torch.max(output.data, 1)
             total += target.size(0)
             correct += (predicted == target).sum().item()
-        
+
         print('Epoch [{}/{}], Accuracy: {:.2f}%'
               .format(epoch+1, num_epochs, 100 * correct / total))
 ```

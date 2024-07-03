@@ -1,4 +1,4 @@
-                 
+
 # Chinchilla原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -134,7 +134,7 @@ class ResourceAllocator:
         for i in range(num_tasks):
             self.tasks.put(Task(i, random.randint(1, 10)))
         self.resources = [resources] * num_tasks
-    
+
     def schedule(self):
         while not self.tasks.empty():
             next_task = self.tasks.get()

@@ -66,15 +66,15 @@ von Neumann代数，也称为有限维或无限维赫密算子代数，是在希
 ### 4.1 数学模型构建
 
 - **希尔伯特空间**：$H$是一个复内积空间，满足希尔伯特空间的公理。
-- **自伴算子**：$A \\in \\mathcal{B}(H)$，满足$A^* = A$，其中$A^*$是$A$的共轭转置。
+- **自伴算子**：$A \in \mathcal{B}(H)$，满足$A^* = A$，其中$A^*$是$A$的共轭转置。
 
 ### 4.2 公式推导过程
 
-- **谱定理**：设$A \\in \\mathcal{B}(H)$为自伴算子，则存在一组实数$\\lambda_i$和正交本征向量$|v_i\\rangle$，使得$A|v_i\\rangle = \\lambda_i|v_i\\rangle$。此外，$\\lambda_i$为$A$的本征值，且$A$可表示为$\\sum_i \\lambda_i P_i$，其中$P_i$是$|v_i\\rangle\\langle v_i|$。
+- **谱定理**：设$A \in \mathcal{B}(H)$为自伴算子，则存在一组实数$\lambda_i$和正交本征向量$|v_i\rangle$，使得$A|v_i\rangle = \lambda_i|v_i\rangle$。此外，$\lambda_i$为$A$的本征值，且$A$可表示为$\sum_i \lambda_i P_i$，其中$P_i$是$|v_i\rangle\langle v_i|$。
 
 ### 4.3 案例分析与讲解
 
-- **量子力学中的应用**：考虑量子态$|\\psi\\rangle$和测量算子$M$，则$M|\\psi\\rangle$给出测量的结果之一。通过谱定理，我们可以找到$M$的所有本征值和相应的本征态，进而理解量子系统的行为。
+- **量子力学中的应用**：考虑量子态$|\psi\rangle$和测量算子$M$，则$M|\psi\rangle$给出测量的结果之一。通过谱定理，我们可以找到$M$的所有本征值和相应的本征态，进而理解量子系统的行为。
 
 ### 4.4 常见问题解答
 
@@ -95,25 +95,25 @@ import numpy as np
 from scipy.linalg import eigvals, eig
 
 def compute_spectrum(operator):
-    \"\"\"
+    """
     计算自伴算子的谱。
     参数:
         operator: 自伴算子，形式为np.array或scipy.sparse矩阵。
     返回:
         本征值列表。
-    \"\"\"
+    """
     eigenvalues = eigvals(operator)
     return eigenvalues
 
 def construct_projection(operator, eigenvalue):
-    \"\"\"
+    """
     构建投影算子。
     参数:
         operator: 自伴算子，形式为np.array或scipy.sparse矩阵。
         eigenvalue: 相应的本征值。
     返回:
         投影算子矩阵。
-    \"\"\"
+    """
     eigenvector = eig(operator)[1][:, eigenvalue]
     projection_matrix = np.outer(eigenvector, eigenvector.conj().T)
     return projection_matrix
@@ -129,9 +129,9 @@ def construct_projection(operator, eigenvalue):
 operator = np.array([[4, 0], [0, 1]])  # 一个简单的自伴算子
 eigenvalues = compute_spectrum(operator)
 projection_matrix = construct_projection(operator, eigenvalues[0])
-print(\"本征值:\", eigenvalues)
-print(\"对应的投影算子:\
-\", projection_matrix)
+print("本征值:", eigenvalues)
+print("对应的投影算子:\
+", projection_matrix)
 ```
 输出结果将显示自伴算子的本征值和对应的投影算子矩阵。
 
@@ -154,7 +154,7 @@ print(\"对应的投影算子:\
 
 ### 7.3 相关论文推荐
 
-- **经典论文**：J. von Neumann, \"Mathematical Foundations of Quantum Mechanics\"（1932年）。
+- **经典论文**：J. von Neumann, "Mathematical Foundations of Quantum Mechanics"（1932年）。
 
 ### 7.4 其他资源推荐
 

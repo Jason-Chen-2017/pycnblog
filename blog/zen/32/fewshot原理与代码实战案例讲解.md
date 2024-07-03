@@ -1,9 +1,9 @@
-                 
+
 # few-shot原理与代码实战案例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
 
- 
+
 
 ## 1.背景介绍
 
@@ -138,18 +138,18 @@ def meta_train(model, tasks, num_updates, lr_inner):
         # Backward pass and parameter update
         grads = torch.autograd.grad(inner_loss, model.parameters(), create_graph=True)
         updated_params = [param - lr_inner * grad for param, grad in zip(model.parameters(), grads)]
-        
+
         for _ in range(num_updates):
             output = model(task['input'], updated_params)
             inner_loss = loss_fn(output, task['target'])
             grads = torch.autograd.grad(inner_loss, updated_params)
             updated_params = [param - lr_inner * grad for param, grad in zip(updated_params, grads)]
-            
+
         # Update base model parameters using gradients from all tasks
         base_model_gradients = []
         for param, updated_param in zip(model.parameters(), updated_params):
             base_model_gradients.append(param.grad.data - updated_param.data)
-    
+
     # Update base model parameters with average gradient
     optimizer = optim.Adam(model.parameters(), lr_outer)
     for grad in base_model_gradients:
@@ -187,7 +187,7 @@ class SimpleFCNet(nn.Module):
     def __init__(self, input_size, hidden_size):
         super(SimpleFCNet, self).__init__()
         self.fc = nn.Linear(input_size, hidden_size)
-    
+
     def forward(self, x):
         return torch.relu(self.fc(x))
 
@@ -195,7 +195,7 @@ class SimpleFCNet(nn.Module):
 def maml_algorithm(task, base_net, learning_rate_inner, num_updates):
     # 初始化内循环优化器
     inner_optimizer = Adam(base_net.parameters(), lr=learning_rate_inner)
-    
+
     # 对于每个步骤执行内循环
     for step in range(num_updates):
         # 计算梯度并更新参数
@@ -204,24 +204,24 @@ def maml_algorithm(task, base_net, learning_rate_inner, num_updates):
         loss = ((output - task['target'])**2).mean()
         loss.backward()
         inner_optimizer.step()
-    
+
     # 获取当前参数作为外循环更新的基础
     current_weights = {name: param.detach().clone() for name, param in base_net.named_parameters()}
-    
+
     return current_weights
 
 # 示例运行
 if __name__ == "__main__":
     # 初始化数据集和任务（此处省略具体实现）
     # 数据集和任务定义
-    
+
     # 创建基础网络
     base_network = SimpleFCNet(10, 64)
-    
+
     # 设置参数
     learning_rate_inner = 0.4
     num_updates = 1
-    
+
     # 进行MAML训练迭代
     for epoch in range(epochs):
         for task in tasks:

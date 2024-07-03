@@ -57,7 +57,7 @@ Dirichlet特征可以分为平凡特征（trivial character）、非平凡特征
 对于模$m$的任何整数$a$，如果$a$模$m$的值为单位，则$\chi(a) \
 eq 0$；否则$\chi(a) = 0$。具体计算$\chi(a)$可以通过以下步骤完成：
 
-$$\chi(a) = \begin{cases} 
+$$\chi(a) = \begin{cases}
       \zeta(\chi, a) & \text{if } \gcd(a, m) = 1 \\
       0 & \text{otherwise}
    \end{cases}$$

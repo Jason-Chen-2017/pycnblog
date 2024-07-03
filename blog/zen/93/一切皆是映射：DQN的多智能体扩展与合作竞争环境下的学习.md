@@ -171,7 +171,7 @@ A3：可以通过以下方法提高收敛速度：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n rl-env python=3.8 
+conda create -n rl-env python=3.8
 conda activate rl-env
 ```
 3. 安装必要的库：

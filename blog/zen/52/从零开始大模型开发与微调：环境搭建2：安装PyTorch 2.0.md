@@ -127,7 +127,7 @@ class LinearRegression(nn.Module):
     def __init__(self):
         super().__init__()
         self.linear = nn.Linear(1, 1)  # 输入维度为 1, 输出维度为 1
-    
+
     def forward(self, x):
         y_hat = self.linear(x)
         return y_hat
@@ -151,12 +151,12 @@ for epoch in range(epochs):
         # 前向传播
         y_hat = model(X)
         loss = criterion(y_hat, y)
-        
+
         # 反向传播
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-    
+
     if (epoch + 1) % 10 == 0:
         print(f'Epoch [{epoch+1}/{epochs}], Loss: {loss.item():.4f}')
 ```
@@ -251,13 +251,13 @@ import torch.multiprocessing as mp
 def main():
     # 初始化进程组
     dist.init_process_group(backend='nccl')
-    
+
     # 创建模型
     model = MyModel()
-    
+
     # 包装模型
     ddp_model = torch.nn.parallel.DistributedDataParallel(model)
-    
+
     # 训练
     train(ddp_model)
 

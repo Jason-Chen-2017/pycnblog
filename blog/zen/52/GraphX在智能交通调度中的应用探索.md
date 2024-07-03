@@ -105,7 +105,7 @@ val shortestPaths = graph.pregel(Double.PositiveInfinity)(
 ```scala
 val graph2 = graph.mapEdges(e => {
   val flow = predicts(e.srcId, e.dstId)
-  val factor = math.exp(flow / capacity) 
+  val factor = math.exp(flow / capacity)
   e.attr * factor
 })
 val paths = graph2.shortestPaths(sourceId)

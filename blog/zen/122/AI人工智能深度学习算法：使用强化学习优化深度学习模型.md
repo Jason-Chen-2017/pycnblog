@@ -401,4 +401,4 @@ Episode 1000, Total Reward: 200.0
 * **奖励函数设计:**  设计合适的奖励函数是强化学习算法成功的关键，但这也是一个具有挑战性的任务。
 * **可解释性:**  强化学习算法学习到的策略通常是一个黑盒，难以解释其决策过程。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -273,7 +273,7 @@ text_df = df.select("text")
 label_df = df.select("label")
 
 # 创建分词器
-tokenizer = RegexTokenizer(inputCol="text", outputCol="words", pattern="\\W")
+tokenizer = RegexTokenizer(inputCol="text", outputCol="words", pattern="\W")
 
 # 分词
 tokenized_df = tokenizer.transform(text_df)

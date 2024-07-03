@@ -6,7 +6,7 @@
 
 ### 1.1 大数据处理的挑战
 #### 1.1.1 数据量急剧增长
-#### 1.1.2 实时性需求提高  
+#### 1.1.2 实时性需求提高
 #### 1.1.3 复杂的计算逻辑
 
 ### 1.2 传统批处理框架的局限性
@@ -28,7 +28,7 @@
 
 ### 2.2 状态(State)
 #### 2.2.1 算子状态(Operator State)
-#### 2.2.2 键控状态(Keyed State) 
+#### 2.2.2 键控状态(Keyed State)
 #### 2.2.3 状态后端(State Backend)
 
 ### 2.3 时间概念(Time)
@@ -36,9 +36,9 @@
 #### 2.3.2 处理时间(Processing Time)
 #### 2.3.3 摄入时间(Ingestion Time)
 
-### 2.4 窗口(Window) 
+### 2.4 窗口(Window)
 #### 2.4.1 滚动窗口(Tumbling Windows)
-#### 2.4.2 滑动窗口(Sliding Windows)  
+#### 2.4.2 滑动窗口(Sliding Windows)
 #### 2.4.3 会话窗口(Session Windows)
 
 ### 2.5 触发器(Trigger)
@@ -75,7 +75,7 @@
 
 ### 3.5 反压机制(Backpressure)
 #### 3.5.1 基于信用的流控
-#### 3.5.2 基于阻塞的流控  
+#### 3.5.2 基于阻塞的流控
 #### 3.5.3 Flink的反压实现
 
 ## 4. 数学模型和公式详细讲解举例说明
@@ -86,7 +86,7 @@ $W_i = [i \cdot \omega, (i+1) \cdot \omega)$
 其中，$W_i$表示第$i$个窗口，$\omega$表示窗口大小。
 
 #### 4.1.2 滑动窗口的数学定义
-$W_i = [i \cdot \delta, i \cdot \delta + \omega)$ 
+$W_i = [i \cdot \delta, i \cdot \delta + \omega)$
 其中，$W_i$表示第$i$个窗口，$\delta$表示滑动步长，$\omega$表示窗口大小。
 
 #### 4.1.3 会话窗口的数学定义
@@ -102,7 +102,7 @@ $$
 
 #### 4.2.2 基于阻塞的流控模型
 $$
-B_i = 
+B_i =
 \begin{cases}
 1, & \text{if } Q_i > Q_{max} \\
 0, & \text{otherwise}

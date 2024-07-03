@@ -89,15 +89,15 @@ Ranger广泛应用于软件开发的各个阶段，包括但不限于：
 
 Ranger的核心数学模型基于以下假设和概念：
 
-- **规则集**：$R=\\{r_1,r_2,...,r_n\\}$，其中$r_i$表示特定类型的代码审查规则。
-- **代码片段**：$C=\\{c_1,c_2,...,c_m\\}$，其中$c_j$表示源代码中的某一段代码。
+- **规则集**：$R=\{r_1,r_2,...,r_n\}$，其中$r_i$表示特定类型的代码审查规则。
+- **代码片段**：$C=\{c_1,c_2,...,c_m\}$，其中$c_j$表示源代码中的某一段代码。
 - **违规检测**：$V(c_i, r_j)$，如果代码片段$c_i$违反了规则$r_j$，则$V(c_i, r_j)=1$，否则$V(c_i, r_j)=0$。
 
 ### 4.2 公式推导过程
 
 Ranger通过以下公式来评估代码片段是否违反规则：
 
-$$Score(c_i) = \\sum_{j=1}^{n} V(c_i, r_j) \\times Weight(r_j)$$
+$$Score(c_i) = \sum_{j=1}^{n} V(c_i, r_j) \times Weight(r_j)$$
 
 其中$Weight(r_j)$是规则$r_j$的权重值，可以基于规则的严重性或出现频率来设定。
 
@@ -176,12 +176,12 @@ def main():
     rules = load_rules()
     analyzer = CodeAnalyzer()
     engine = RuleEngine(rules)
-    code_snippet = \"...\"
+    code_snippet = "..."
     violations = engine.check(analyzer.analyze(code_snippet))
     report_generator = ReportGenerator()
     report_generator.generate(violations)
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     main()
 ```
 

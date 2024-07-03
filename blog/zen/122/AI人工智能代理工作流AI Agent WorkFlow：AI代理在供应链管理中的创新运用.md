@@ -1,6 +1,6 @@
 # AI人工智能代理工作流AI Agent WorkFlow：AI代理在供应链管理中的创新运用
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -335,4 +335,4 @@ AI代理在供应链管理中的应用也面临着一些挑战，例如：
 * **AI代理的未来发展趋势如何？**
     * AI代理的未来发展趋势包括：更智能、更个性化、更可持续。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

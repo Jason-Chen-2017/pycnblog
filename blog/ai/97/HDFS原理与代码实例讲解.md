@@ -161,13 +161,13 @@ public class HDFSWriteExample {
         Configuration conf = new Configuration();
         conf.set("fs.defaultFS", "hdfs://localhost:9000");
         FileSystem fs = FileSystem.get(conf);
-        
+
         Path path = new Path("/example.txt");
         fs.create(path);
-        
+
         byte[] data = "Hello, HDFS!".getBytes();
         fs.write(path, data);
-        
+
         fs.close();
     }
 }

@@ -203,16 +203,16 @@ def data_transfer():
     sqoop.set_table('your_table')
     sqoop.set_username('your_username')
     sqoop.set_password('your_password')
-    
+
     data = sqoop.read_data()
     encrypted_data = encrypt_data(data)
-    
+
     # 使用Kerberos进行用户身份验证
     principal = 'your_principal'
     keytab = 'your_keytab'
     kerberos.init_krb5()
     kerberos.set_principal(principal, keytab)
-    
+
     sqoop.set_server('your_server')
     sqoop.set_port(9999)
     sqoop.write_data(encrypted_data)

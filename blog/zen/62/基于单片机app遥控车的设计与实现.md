@@ -123,14 +123,14 @@ $$ \cot \theta_i - \cot \theta_o = \frac{d}{L} $$
 int main() {
   // 初始化
   init();
-  
+
   while (1) {
     // 接收APP控制指令
     receiveCommand();
-    
+
     // 解析控制指令
     parseCommand();
-    
+
     // 执行控制指令
     executeCommand();
   }

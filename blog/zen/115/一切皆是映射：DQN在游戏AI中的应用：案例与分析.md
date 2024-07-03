@@ -228,5 +228,5 @@ DQN算法在游戏AI、机器人控制、自动驾驶等领域都有广泛的应
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

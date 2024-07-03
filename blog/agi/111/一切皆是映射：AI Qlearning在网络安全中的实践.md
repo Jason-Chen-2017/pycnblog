@@ -159,7 +159,7 @@ A：解决Q-learning在网络安全中的过拟合问题，可以采用以下方
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n qlearning-env python=3.8 
+conda create -n qlearning-env python=3.8
 conda activate qlearning-env
 ```
 3. 安装必要的库：

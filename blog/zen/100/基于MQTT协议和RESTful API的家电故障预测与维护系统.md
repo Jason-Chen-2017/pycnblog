@@ -7,7 +7,7 @@
 随着物联网技术的快速发展,智能家电已经逐渐走入千家万户。然而,家电设备的故障问题也日益凸显。传统的被动维修模式已经无法满足用户对家电可靠性和维修效率的需求。如何利用物联网技术和大数据分析,实现家电故障的预测和预防性维护,成为亟待解决的问题。
 ### 1.2  研究现状
 目前,国内外已有不少学者开展了家电故障预测方面的研究。张三等人提出了一种基于支持向量机的洗衣机故障预测方法[1]。李四等人研究了基于深度学习的空调故障诊断技术[2]。但现有研究主要集中在单一设备和特定场景,缺乏通用性和可扩展性。本文拟构建一个基于MQTT协议和RESTful API的家电故障预测与维护系统,实现多种家电的统一监控和故障预警。
-### 1.3  研究意义 
+### 1.3  研究意义
 本研究的意义主要体现在以下三个方面:
 
 (1)提高家电的可靠性和使用寿命。通过实时监测家电的运行状态,及时发现潜在故障并预警,可以避免设备带病运行,延长其使用寿命。
@@ -151,7 +151,7 @@ $$\mathbf{h}_t = \mathbf{o}_t \odot \tanh(\mathbf{C}_t)$$
 
 ```
 Flask==1.1.2
-flask-restful==0.3.8 
+flask-restful==0.3.8
 pandas==1.1.3
 scikit-learn==0.23.2
 tensorflow==2.3.1
@@ -172,14 +172,14 @@ from resources.predict import Predict
 app = Flask(__name__)
 api = Api(app)
 
-api.add_resource(DeviceList, '/devices')  
+api.add_resource(DeviceList, '/devices')
 api.add_resource(Device, '/devices/<string:device_id>')
 api.add_resource(Predict, '/predict/<string:device_id>')
 
 if __name__ == '__main__':
     app.run(debug=True)
 
-# resources/device.py 
+# resources/device.py
 from flask_restful import Resource
 from models.device import DeviceModel
 
@@ -187,7 +187,7 @@ class DeviceList(Resource):
     def get(self):
         return {'devices': [device.json() for device in DeviceModel.find_all()]}
 
-class Device(Resource):  
+class Device(Resource):
     def get(self, device_id):
         device = DeviceModel.find_by_id(device_id)
         if device:
@@ -200,10 +200,10 @@ from flask_restful import Resource
 from models.predict import get_data, lstm_predict
 
 class Predict(Resource):
-    def get(self, device_id):   
+    def get(self, device_id):
         data = get_data(device_id)
-        result = lstm_predict(data)  
-        
+        result = lstm_predict(data)
+
         return {'device_id': device_id, 'fail_prob': result}
 
 # models/device.py
@@ -213,16 +213,16 @@ class DeviceModel():
     def __init__(self, device_id, device_type):
         self.device_id = device_id
         self.device_type = device_type
-        
+
     def save_to_db(self):
         # 写入influxdb数据库
         pass
-        
+
     @classmethod
     def find_by_id(cls, device_id):
         # 从influxdb读取设备信息
         pass
-        
-    @classmethod  
+
+    @classmethod
     def find_all(cls):
         # 从influxdb

@@ -195,7 +195,7 @@ A2：可以通过以下方法解决梯度消失和梯度爆炸问题：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n seq2seq-env python=3.8 
+conda create -n seq2seq-env python=3.8
 conda activate seq2seq-env
 ```
 

@@ -109,11 +109,11 @@ AI技术，尤其是机器学习和深度学习，为推荐系统带来了以下
 
 #### 用户向量表示
 
-$$ \mathbf{u} = \begin{bmatrix} u_1 \\ u_2 \\ \vdots \\ u_n \end{bmatrix} $$
+$$ \mathbf{u} = \begin{bmatrix} u_1 \ u_2 \ \vdots \ u_n \end{bmatrix} $$
 
 #### 物品向量表示
 
-$$ \mathbf{i} = \begin{bmatrix} i_1 \\ i_2 \\ \vdots \\ i_m \end{bmatrix} $$
+$$ \mathbf{i} = \begin{bmatrix} i_1 \ i_2 \ \vdots \ i_m \end{bmatrix} $$
 
 #### 相似度计算（余弦相似度）
 
@@ -135,11 +135,11 @@ $$ \hat{r}_{ik} = \bar{r} + \sum_{j \in \Gamma(i)} \frac{\text{sim}(u_i, u_j)}{|
 
 假设用户 $U$ 喜欢物品 $A$ 和物品 $B$，且物品 $A$ 和物品 $B$ 的特征向量分别为：
 
-$$ \mathbf{f_A} = \begin{bmatrix} f_{A1} \\ f_{A2} \\ \vdots \\ f_{An} \end{bmatrix}, \mathbf{f_B} = \begin{bmatrix} f_{B1} \\ f_{B2} \\ \vdots \\ f_{Bn} \end{bmatrix} $$
+$$ \mathbf{f_A} = \begin{bmatrix} f_{A1} \ f_{A2} \ \vdots \ f_{An} \end{bmatrix}, \mathbf{f_B} = \begin{bmatrix} f_{B1} \ f_{B2} \ \vdots \ f_{Bn} \end{bmatrix} $$
 
 如果新用户 $V$ 的特征向量为：
 
-$$ \mathbf{f_V} = \begin{bmatrix} f_{V1} \\ f_{V2} \\ \vdots \\ f_{Vn} \end{bmatrix} $$
+$$ \mathbf{f_V} = \begin{bmatrix} f_{V1} \ f_{V2} \ \vdots \ f_{Vn} \end{bmatrix} $$
 
 则推荐物品 $C$ 给用户 $V$ 的相似度为：
 

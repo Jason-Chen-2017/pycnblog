@@ -179,8 +179,7 @@ AIGC中的图像识别和自然语言生成技术具有以下联系：
 
    使用梯度下降法对RNN进行训练。
 
-   $$ \mathbf{w} \leftarrow \mathbf{w} - \alpha \
-abla_{\mathbf{w}} J(\mathbf{w}) $$
+   $$ \mathbf{w} \leftarrow \mathbf{w} - \alpha \nabla_{\mathbf{w}} J(\mathbf{w}) $$
 
    其中，$\mathbf{w}$为RNN权重，$\alpha$为学习率，$J(\mathbf{w})$为损失函数。
 

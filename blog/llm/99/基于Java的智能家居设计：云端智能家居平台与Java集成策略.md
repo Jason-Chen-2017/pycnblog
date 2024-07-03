@@ -214,8 +214,8 @@ $$
 数据过滤公式：
 
 $$
-H(X) = 
-\begin{cases} 
+H(X) =
+\begin{cases}
 X & \text{if } |X| > \theta \\
 0 & \text{otherwise}
 \end{cases}
@@ -345,7 +345,7 @@ public class SmartHomePlatform {
         Scanner scanner = new Scanner(System.in);
         System.out.println("请输入指令：");
         String command = scanner.nextLine();
-        
+
         // 根据指令执行相应操作
         switch (command) {
             case "turn_on_light":
@@ -362,17 +362,17 @@ public class SmartHomePlatform {
                 break;
         }
     }
-    
+
     private static void turnOnLight() {
         // 控制灯光开启
         System.out.println("灯光开启");
     }
-    
+
     private static void turnOffLight() {
         // 控制灯光关闭
         System.out.println("灯光关闭");
     }
-    
+
     private static void setTemperature() {
         // 设置温度
         System.out.println("设置温度：");

@@ -55,7 +55,7 @@ SSM框架是指Spring+SpringMVC+MyBatis的开源架构,是目前使用最广泛�
 
 各模块功能紧密配合,共同完成培训机构的日常运营管理。
 
-## 3.核心算法原理具体操作步骤  
+## 3.核心算法原理具体操作步骤
 
 ### 3.1 用户认证与授权
 
@@ -161,7 +161,7 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-    
+
     @RequestMapping("/login")
     public String login(HttpServletRequest request, Model model){
         String username = request.getParameter("username");
@@ -186,7 +186,7 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
-    
+
     @Override
     public User authenticate(String username, String password) {
         User user = userMapper.getByUsername(username);
@@ -214,7 +214,7 @@ dao层使用MyBatis访问数据库:
 
 ```java
 public class SchedulingOptimizer {
-    
+
     public Schedule optimize(List<Course> courses, List<Room> rooms, List<Teacher> teachers){
         List<Schedule> allSchedules = generateSchedules(courses, rooms, teachers);
         Schedule bestSchedule = null;
@@ -228,18 +228,18 @@ public class SchedulingOptimizer {
         }
         return bestSchedule;
     }
-    
+
     private List<Schedule> generateSchedules(List<Course> courses, List<Room> rooms, List<Teacher> teachers){
         // 代码根据输入生成所有可能的排课方案...
     }
-    
+
     private int scoreSchedule(Schedule schedule){
         int timeConflictScore = 0;
         int roomCapacityScore = 0;
         int teacherExpertiseScore = 0;
-        
+
         // 评分模型具体计算逻辑...
-        
+
         return w1*timeConflictScore + w2*roomCapacityScore + w3*teacherExpertiseScore;
     }
 }

@@ -105,8 +105,7 @@ $$L(f) = \sum_{i=1}^N (f(x_i) - y_i)^2$$
 
 为了使损失函数$L(f)$最小，我们可以使用梯度下降算法来优化模型参数：
 
-$$\theta_{t+1} = \theta_t - \alpha \cdot \
-abla_{\theta_t} L(f)$$
+$$\theta_{t+1} = \theta_t - \alpha \cdot \nabla_{\theta_t} L(f)$$
 
 其中，$\theta_t$是第$t$次迭代的模型参数，$\alpha$是学习率。
 

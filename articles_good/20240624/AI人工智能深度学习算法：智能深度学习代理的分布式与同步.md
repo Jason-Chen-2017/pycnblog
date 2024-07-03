@@ -140,38 +140,30 @@
 本文将使用以下数学模型来描述分布式深度学习过程：
 
 1. **损失函数**：$L(\theta, x, y) = \sum_{i=1}^n L(\theta, x_i, y_i)$
-2. **梯度**：$\
-abla L(\theta, x, y) = \frac{\partial L(\theta, x, y)}{\partial \theta}$
-3. **梯度下降**：$\theta_{t+1} = \theta_t - \alpha \
-abla L(\theta_t, x, y)$
+2. **梯度**：$\nabla L(\theta, x, y) = \frac{\partial L(\theta, x, y)}{\partial \theta}$
+3. **梯度下降**：$\theta_{t+1} = \theta_t - \alpha \nabla L(\theta_t, x, y)$
 
 ### 4.2 公式推导过程
 
-假设有n个工作节点，每个工作节点分别拥有一个模型参数$\theta_i$，损失函数为$L(\theta_i, x, y)$，梯度为$\
-abla L(\theta_i, x, y)$。
+假设有n个工作节点，每个工作节点分别拥有一个模型参数$\theta_i$，损失函数为$L(\theta_i, x, y)$，梯度为$\nabla L(\theta_i, x, y)$。
 
 #### 4.2.1 参数服务器
 
-1. 工作节点$i$计算梯度：$\
-abla L(\theta_i, x, y)$
+1. 工作节点$i$计算梯度：$\nabla L(\theta_i, x, y)$
 2. 将梯度发送给参数服务器。
-3. 参数服务器汇总梯度：$g = \sum_{i=1}^n \
-abla L(\theta_i, x, y)$
+3. 参数服务器汇总梯度：$g = \sum_{i=1}^n \nabla L(\theta_i, x, y)$
 4. 更新参数：$\theta_{t+1} = \theta_t - \alpha g$
 
 #### 4.2.2 全部同步
 
-1. 工作节点$i$计算梯度：$\
-abla L(\theta_i, x, y)$
+1. 工作节点$i$计算梯度：$\nabla L(\theta_i, x, y)$
 2. 将梯度发送给中心节点。
-3. 中心节点汇总梯度：$g = \sum_{i=1}^n \
-abla L(\theta_i, x, y)$
+3. 中心节点汇总梯度：$g = \sum_{i=1}^n \nabla L(\theta_i, x, y)$
 4. 更新参数：$\theta_{t+1} = \theta_t - \alpha g$
 
 #### 4.2.3 异步方法
 
-1. 工作节点$i$独立更新参数：$\theta_{t+1,i} = \theta_t - \alpha \
-abla L(\theta_t, x, y)$
+1. 工作节点$i$独立更新参数：$\theta_{t+1,i} = \theta_t - \alpha \nabla L(\theta_t, x, y)$
 2. 定期将更新后的参数发送给中心节点。
 
 ### 4.3 案例分析与讲解

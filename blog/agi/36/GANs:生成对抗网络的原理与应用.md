@@ -165,17 +165,17 @@ def build_generator(z_dim, img_shape):
     x = LeakyReLU(alpha=0.2)(x)
     x = BatchNormalization(momentum=0.8)(x)
     x = Reshape((7, 7, 128))(x)
-    
+
     x = UpSampling2D((2, 2))(x)
     x = Conv2D(128, (3, 3), padding='same')(x)
     x = LeakyReLU(alpha=0.2)(x)
     x = BatchNormalization(momentum=0.8)(x)
-    
+
     x = UpSampling2D((2, 2))(x)
     x = Conv2D(128, (3, 3), padding='same')(x)
     x = LeakyReLU(alpha=0.2)(x)
     x = BatchNormalization(momentum=0.8)(x)
-    
+
     img = Conv2D(3, (3, 3), padding='same')(x)
     return Model(inputs, img)
 
@@ -184,19 +184,19 @@ def build_discriminator(img_shape):
     inputs = Input(shape=img_shape)
     x = Conv2D(64, (3, 3), padding='same')(inputs)
     x = LeakyReLU(alpha=0.2)(x)
-    
+
     x = Conv2D(128, (3, 3), padding='same')(x)
     x = LeakyReLU(alpha=0.2)(x)
     x = BatchNormalization(momentum=0.8)(x)
-    
+
     x = Conv2D(256, (3, 3), padding='same')(x)
     x = LeakyReLU(alpha=0.2)(x)
     x = BatchNormalization(momentum=0.8)(x)
-    
+
     x = Conv2D(512, (3, 3), padding='same')(x)
     x = LeakyReLU(alpha=0.2)(x)
     x = BatchNormalization(momentum=0.8)(x)
-    
+
     x = GlobalAveragePooling2D()(x)
     outputs = Dense(1, activation='sigmoid')(x)
     return Model(inputs, outputs)
@@ -227,18 +227,18 @@ for epoch in range(epochs):
         real_images = next(train_dataset)
         z = np.random.uniform(-1, 1, size=(batch_size, z_dim))
         fake_images = generator.predict(z)
-        
+
         real_labels = np.ones((batch_size, 1))
         fake_labels = np.zeros((batch_size, 1))
-        
+
         # 训练判别器
         d_loss_real = discriminator.train_on_batch(real_images, real_labels)
         d_loss_fake = discriminator.train_on_batch(fake_images, fake_labels)
         d_loss = 0.5 * np.add(d_loss_real, d_loss_fake)
-        
+
         # 训练生成器
         g_loss = gan.train_on_batch(z, np.ones((batch_size, 1)))
-        
+
         print(f"Epoch {epoch+1}/{epochs}, Discriminator loss: {d_loss}, Generator loss: {g_loss}")
 
 # 保存模型

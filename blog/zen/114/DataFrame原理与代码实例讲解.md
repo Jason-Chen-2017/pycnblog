@@ -71,11 +71,11 @@ DataFrame广泛应用于各种数据分析和挖掘场景，如金融量化交�
 DataFrame可以用一个二维矩阵来表示，矩阵的每一行对应一个数据样本，每一列对应一个特征或变量。设DataFrame有$m$行$n$列，则其数学模型可以表示为：
 
 $$
-\begin{bmatrix} 
+\begin{bmatrix}
 x_{11} & x_{12} & \cdots & x_{1n} \\
 x_{21} & x_{22} & \cdots & x_{2n} \\
 \vdots & \vdots & \ddots & \vdots \\
-x_{m1} & x_{m2} & \cdots & x_{mn} 
+x_{m1} & x_{m2} & \cdots & x_{mn}
 \end{bmatrix}
 $$
 
@@ -236,11 +236,11 @@ df.plot(x='Name', y='Salary', kind='bar')  # 绘制柱状图
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 5 entries, 0 to 4
 Data columns (total 3 columns):
- #   Column  Non-Null Count  Dtype 
----  ------  --------------  ----- 
+ #   Column  Non-Null Count  Dtype
+---  ------  --------------  -----
  0   Name    5 non-null      object
- 1   Age     5 non-null      int64 
- 2   Salary  5 non-null      int64 
+ 1   Age     5 non-null      int64
+ 2   Salary  5 non-null      int64
 dtypes: int64(2), object(1)
 memory usage: 248.0+ bytes
 None

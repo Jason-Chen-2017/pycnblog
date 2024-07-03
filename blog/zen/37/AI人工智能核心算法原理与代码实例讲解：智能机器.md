@@ -109,33 +109,33 @@
 
 以线性回归为例，其数学模型如下：
 
-$$y = \\beta_0 + \\beta_1 x + \\epsilon$$
+$$y = \beta_0 + \beta_1 x + \epsilon$$
 
 其中：
 
 - $y$是因变量。
 - $x$是自变量。
-- $\\beta_0$和$\\beta_1$是模型参数。
-- $\\epsilon$是误差项。
+- $\beta_0$和$\beta_1$是模型参数。
+- $\epsilon$是误差项。
 
 ### 4.2 公式推导过程
 
 线性回归的目标是最小化预测值与实际值之间的误差，即：
 
-$$MSE = \\sum_{i=1}^n (y_i - \\hat{y}_i)^2$$
+$$MSE = \sum_{i=1}^n (y_i - \hat{y}_i)^2$$
 
 其中：
 
 - $y_i$是实际值。
-- $\\hat{y}_i$是预测值。
+- $\hat{y}_i$是预测值。
 
 对损失函数进行求导，并令导数为0，可得到：
 
-$$\\frac{\\partial MSE}{\\partial \\beta_0} = 2 \\sum_{i=1}^n (y_i - \\hat{y}_i) = 0$$
+$$\frac{\partial MSE}{\partial \beta_0} = 2 \sum_{i=1}^n (y_i - \hat{y}_i) = 0$$
 
-$$\\frac{\\partial MSE}{\\partial \\beta_1} = 2 \\sum_{i=1}^n (y_i - \\hat{y}_i) x_i = 0$$
+$$\frac{\partial MSE}{\partial \beta_1} = 2 \sum_{i=1}^n (y_i - \hat{y}_i) x_i = 0$$
 
-解上述方程组，可得到最优的模型参数$\\beta_0$和$\\beta_1$。
+解上述方程组，可得到最优的模型参数$\beta_0$和$\beta_1$。
 
 ### 4.3 案例分析与讲解
 
@@ -149,17 +149,17 @@ $$\\frac{\\partial MSE}{\\partial \\beta_1} = 2 \\sum_{i=1}^n (y_i - \\hat{y}_i)
 | 2   | 4   |
 | 3   | 6   |
 
-我们的目标是找到线性回归模型$y = \\beta_0 + \\beta_1 x$的最佳参数。
+我们的目标是找到线性回归模型$y = \beta_0 + \beta_1 x$的最佳参数。
 
 根据上述推导过程，我们可以列出以下方程组：
 
-$$\\begin{cases} 
-\\beta_0 + \\beta_1 = 2 \\\\
-2\\beta_0 + 3\\beta_1 = 4 \\\\
-3\\beta_0 + 4\\beta_1 = 6 
-\\end{cases}$$
+$$\begin{cases}
+\beta_0 + \beta_1 = 2 \\\
+2\beta_0 + 3\beta_1 = 4 \\\
+3\beta_0 + 4\beta_1 = 6
+\end{cases}$$
 
-解方程组，可得到$\\beta_0 = 1$和$\\beta_1 = 1$。因此，线性回归模型为$y = 1 + x$。
+解方程组，可得到$\beta_0 = 1$和$\beta_1 = 1$。因此，线性回归模型为$y = 1 + x$。
 
 ### 4.4 常见问题解答
 
@@ -207,8 +207,8 @@ y = np.array([2, 4, 6])
 b0, b1 = linear_regression(x, y)
 
 # 打印参数
-print(\"b0:\", b0)
-print(\"b1:\", b1)
+print("b0:", b0)
+print("b1:", b1)
 ```
 
 ### 5.3 代码解读与分析
@@ -266,10 +266,10 @@ b1: 1.0
 
 ### 7.3 相关论文推荐
 
-1. **\"A Few Useful Things to Know about Machine Learning\"**: 作者： Pedro Domingos
+1. **"A Few Useful Things to Know about Machine Learning"**: 作者： Pedro Domingos
     - 这篇论文介绍了机器学习的基本概念、方法和应用。
 
-2. **\"Deep Learning\"**: 作者：Ian Goodfellow, Yoshua Bengio, Aaron Courville
+2. **"Deep Learning"**: 作者：Ian Goodfellow, Yoshua Bengio, Aaron Courville
     - 这本书详细介绍了深度学习的基础知识和应用。
 
 ### 7.4 其他资源推荐

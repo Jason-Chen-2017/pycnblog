@@ -191,7 +191,7 @@ A：AutoML的技术难点主要包括：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n automl-env python=3.8 
+conda create -n automl-env python=3.8
 conda activate automl-env
 ```
 
@@ -230,10 +230,10 @@ param_space = {
 
 # 定义评估函数
 def evaluate_model(n_estimators, max_depth, min_samples_split, min_samples_leaf, bootstrap):
-    model = RandomForestRegressor(n_estimators=int(n_estimators), 
-                                 max_depth=int(max_depth), 
-                                 min_samples_split=float(min_samples_split), 
-                                 min_samples_leaf=int(min_samples_leaf), 
+    model = RandomForestRegressor(n_estimators=int(n_estimators),
+                                 max_depth=int(max_depth),
+                                 min_samples_split=float(min_samples_split),
+                                 min_samples_leaf=int(min_samples_leaf),
                                  bootstrap=bool(bootstrap))
     model.fit(X_train, y_train)
     return -mean_squared_error(y_test, model.predict(X_test))

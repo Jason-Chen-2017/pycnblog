@@ -407,4 +407,4 @@ public class SmartHomeSecurity {
     * 智能合约开发技能
     * 数据库开发技能
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

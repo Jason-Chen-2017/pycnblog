@@ -1,4 +1,4 @@
-                 
+
 # AI Agent: AI的下一个风口 NLP
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -164,13 +164,13 @@ Your long text goes here...
 def process_task(text):
     # 任务理解阶段，可能涉及解析文本结构、关键词抽取等
     task_info = parse_text(text)
-    
+
     # 计划阶段，将任务拆分为子任务列表，比如“理解”，“提取关键词”
     subtasks = plan_tasks(task_info)
-    
+
     # 求解阶段，使用大模型逐一解决子任务
     solutions = solve_subtasks(subtasks)
-    
+
     # 整合解决方案
     final_output = integrate_solutions(solutions)
 

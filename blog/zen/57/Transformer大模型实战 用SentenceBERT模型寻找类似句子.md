@@ -13,7 +13,7 @@
 
 ### 1.3 寻找类似句子任务的重要性
 #### 1.3.1 信息检索中的应用
-#### 1.3.2 文本聚类中的应用  
+#### 1.3.2 文本聚类中的应用
 #### 1.3.3 推荐系统中的应用
 
 ## 2. 核心概念与联系
@@ -41,7 +41,7 @@ B --> E[Sentence-BERT模型]
 C --> E
 D --> E
 E --> F[BERT模型]
-E --> G[Siamese网络结构]  
+E --> G[Siamese网络结构]
 E --> H[余弦相似度]
 ```
 
@@ -159,7 +159,7 @@ from sentence_transformers import SentenceTransformer, util
 model = SentenceTransformer('output/sbert_model')
 
 # 提取句子特征向量
-sentences = ['句子1', '句子2', '句子3', '句子4']  
+sentences = ['句子1', '句子2', '句子3', '句子4']
 sentence_embeddings = model.encode(sentences)
 
 # 计算句子之间的相似度
@@ -179,7 +179,7 @@ for score, idx in zip(top_results[0], top_results[1]):
 #### 6.1.2 相似问题匹配与问答系统
 #### 6.1.3 智能客服中的自动回复
 
-### 6.2 文本聚类与主题发现  
+### 6.2 文本聚类与主题发现
 #### 6.2.1 短文本聚类
 #### 6.2.2 话题检测与跟踪
 #### 6.2.3 社交媒体中的舆情分析

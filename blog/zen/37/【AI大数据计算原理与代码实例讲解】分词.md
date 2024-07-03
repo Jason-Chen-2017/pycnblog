@@ -91,7 +91,7 @@
 
 ### 数学模型构建
 
-- **n-gram模型**：$$P(w_i|w_{i-1},...,w_{i-k}) = \\frac{count(w_{i-1},...,w_i)}{count(w_{i-1},...,w_{i-k})}$$
+- **n-gram模型**：$$P(w_i|w_{i-1},...,w_{i-k}) = \frac{count(w_{i-1},...,w_i)}{count(w_{i-1},...,w_{i-k})}$$
 - **HMM**：$$P(x,y) = P(y|x)P(x)$$
 
 ### 公式推导过程
@@ -123,7 +123,7 @@
 import nltk
 from nltk.tokenize import word_tokenize
 
-text = \"This is an example sentence for tokenization.\"
+text = "This is an example sentence for tokenization."
 tokens = word_tokenize(text)
 print(tokens)
 ```

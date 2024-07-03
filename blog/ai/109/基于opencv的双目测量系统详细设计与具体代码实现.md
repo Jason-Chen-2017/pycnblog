@@ -392,4 +392,4 @@ cv2.waitKey(0)
 * 研究多传感器融合技术，提高系统的可靠性和鲁棒性。
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

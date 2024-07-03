@@ -368,4 +368,4 @@ Alexander双性是一个重要的数学工具，它在代数拓扑、几何拓�
 
 答：Alexander双性还可以应用于其他领域，例如物理学、化学、生物学等。在物理学中，Alexander双性可以用来研究物理系统的拓扑性质。在化学中，Alexander双性可以用来研究分子结构。在生物学中，Alexander双性可以用来研究生物网络的拓扑结构。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

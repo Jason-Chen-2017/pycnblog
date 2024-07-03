@@ -81,12 +81,10 @@ $$
 梯度下降算法的更新公式为：
 
 $$
-\theta_{t+1} = \theta_t - \alpha \
-abla Loss(\theta_t)
+\theta_{t+1} = \theta_t - \alpha \nabla Loss(\theta_t)
 $$
 
-其中，$\theta$ 为模型参数，$\alpha$ 为学习率，$\
-abla Loss(\theta_t)$ 为损失函数在当前参数下的梯度。
+其中，$\theta$ 为模型参数，$\alpha$ 为学习率，$\nabla Loss(\theta_t)$ 为损失函数在当前参数下的梯度。
 
 ### 4.3  案例分析与讲解
 假设我们训练一个代理模型用于预测文本的 sentiment (情感倾向)。

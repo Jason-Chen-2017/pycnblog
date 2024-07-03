@@ -485,4 +485,4 @@ NER 算法面临的挑战包括：
 - **模型可解释性差**：深度学习模型的决策过程难以解释，难以理解模型的预测结果。
 - **新词和新实体识别效果较差**：对于新词和新实体，NER 模型的识别效果可能较差。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

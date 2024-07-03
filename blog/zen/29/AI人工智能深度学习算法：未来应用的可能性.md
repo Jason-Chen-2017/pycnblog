@@ -1,4 +1,4 @@
-                 
+
 # AI人工智能深度学习算法：未来应用的可能性
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -77,7 +77,7 @@ graph TD;
   - 自动学习特征：减少了手动特征工程的需求。
   - 强大的表达能力：能捕捉复杂的数据关系。
   - 高效利用大量数据：通过深层网络结构，更充分地利用大样本量的优势。
-  
+
 - **缺点**：
   - 训练耗时：尤其是在大型网络和海量数据集的情况下。
   - 过拟合风险：缺乏足够的正则化手段容易导致模型在新数据上的泛化能力弱。
@@ -128,21 +128,21 @@ def init_weights_and_bias(layers):
 def forward_propagation(X, weights, biases):
     # 展开数据维度以便于计算
     X = np.expand_dims(X, axis=1)
-    
+
     activations = []
     z = X
-    
+
     for w, b in zip(weights[:-1], biases[:-1]):
         z = np.dot(w, z) + b
         a = sigmoid(z)  # 使用Sigmoid激活函数
         activations.append(a)
         z = a
-    
+
     final_w = weights[-1]
     final_b = biases[-1]
     z_final = np.dot(final_w, z) + final_b
     activation_final = sigmoid(z_final)
-    
+
     return activations, activation_final
 
 # 定义损失函数（例如交叉熵）
@@ -157,10 +157,10 @@ def main():
     target_labels = ...  # 目标标签
     layers = [input_size, hidden_layer_size, output_size]  # 网络架构
     weights, biases = init_weights_and_bias(layers)
-    
+
     activations, final_output = forward_propagation(input_data, weights, biases)
     loss = compute_loss(target_labels, final_output)
-    
+
     print("Loss:", loss)
 
 if __name__ == '__main__':
@@ -232,7 +232,7 @@ print(model.predict([[1., 2., 3.]]))
 - **在线课程**：
   - Coursera: "Deep Learning Specialization" by Andrew Ng
   - edX: "Neural Networks and Deep Learning" by Andrew Ng
-  
+
 - **书籍**：
   - "Deep Learning" by Ian Goodfellow, Yoshua Bengio, Aaron Courville
   - "Pattern Recognition and Machine Learning" by Christopher Bishop

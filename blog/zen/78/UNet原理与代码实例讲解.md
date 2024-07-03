@@ -56,10 +56,10 @@ $$
 假设我们有一个大小为$512 \times 512$的输入图像，我们首先通过一个卷积层提取特征，得到一个大小为$512 \times 512 \times 64$的特征图，然后通过一个最大池化层进行下采样，得到一个大小为$256 \times 256 \times 64$的特征图，这就完成了收缩路径的一次操作。接着，我们通过一个上采样层将特征图的尺度提升，得到一个大小为$512 \times 512 \times 64$的特征图，然后通过一个跳跃连接将收缩路径上对应尺度的特征图进行融合，得到一个大小为$512 \times 512 \times 128$的特征图，这就完成了扩张路径的一次操作。通过这样的操作，U-Net能够在提取图像的上下文信息的同时，保留并利用到图像的细节信息，从而达到精细的分割效果。
 
 ### 4.4  常见问题解答
-1. **为什么U-Net可以在只有少量训练数据的情况下，就能达到很好的分割效果？**  
+1. **为什么U-Net可以在只有少量训练数据的情况下，就能达到很好的分割效果？**
 这是因为U-Net采用了全卷积网络结构，可以接收任意大小的输入图像，因此可以通过数据增强等方式扩充训练数据；同时，U-Net引入了跳跃连接，使得网络在进行上采样的同时，能够保留并利用到浅层的细节信息，从而能够更好地进行精细的分割。
 
-2. **为什么U-Net要引入跳跃连接？**  
+2. **为什么U-Net要引入跳跃连接？**
 这是因为在卷积神经网络中，随着网络层数的增加，图像的细节信息会逐渐丢失，而跳跃连接可以将浅层的细节信息直接传递到深层，从而保留并利用到这些细节信息，提升分割的精度。
 
 ## 5. 项目实践：代码实例和详细解释说明
@@ -78,55 +78,55 @@ def double_conv(in_channels, out_channels):
         nn.ReLU(inplace=True),
         nn.Conv2d(out_channels, out_channels, 3, padding=1),
         nn.ReLU(inplace=True)
-    )   
+    )
 
 class UNet(nn.Module):
 
     def __init__(self, n_class):
         super().__init__()
-                
+
         self.dconv_down1 = double_conv(1, 64)
         self.dconv_down2 = double_conv(64, 128)
         self.dconv_down3 = double_conv(128, 256)
-        self.dconv_down4 = double_conv(256, 512)        
+        self.dconv_down4 = double_conv(256, 512)
 
         self.maxpool = nn.MaxPool2d(2)
-        self.upsample = nn.Upsample(scale_factor=2, mode='bilinear', align_corners=True)        
-        
+        self.upsample = nn.Upsample(scale_factor=2, mode='bilinear', align_corners=True)
+
         self.dconv_up3 = double_conv(256 + 512, 256)
         self.dconv_up2 = double_conv(128 + 256, 128)
         self.dconv_up1 = double_conv(128 + 64, 64)
-        
+
         self.conv_last = nn.Conv2d(64, n_class, 1)
-        
-        
+
+
     def forward(self, x):
         conv1 = self.dconv_down1(x)
         x = self.maxpool(conv1)
 
         conv2 = self.dconv_down2(x)
         x = self.maxpool(conv2)
-        
+
         conv3 = self.dconv_down3(x)
-        x = self.maxpool(conv3)   
-        
+        x = self.maxpool(conv3)
+
         x = self.dconv_down4(x)
-        
-        x = self.upsample(x)        
+
+        x = self.upsample(x)
         x = torch.cat([x, conv3], dim=1)
-        
+
         x = self.dconv_up3(x)
-        x = self.upsample(x)        
-        x = torch.cat([x, conv2], dim=1)       
+        x = self.upsample(x)
+        x = torch.cat([x, conv2], dim=1)
 
         x = self.dconv_up2(x)
-        x = self.upsample(x)        
-        x = torch.cat([x, conv1], dim=1)   
-        
+        x = self.upsample(x)
+        x = torch.cat([x, conv1], dim=1)
+
         x = self.dconv_up1(x)
-        
+
         out = self.conv_last(x)
-        
+
         return out
 ```
 ### 5.3  代码解读与分析

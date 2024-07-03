@@ -118,14 +118,14 @@ $$T = \{T_1, T_2, \dots, T_n\}$$
 
 1. **准备阶段**：
 
-$$P_i^{pre} = \begin{cases} 
+$$P_i^{pre} = \begin{cases}
 1 & \text{如果参与者}P_i\text{准备好提交事务} \\
 0 & \text{如果参与者}P_i\text{拒绝提交事务}
 \end{cases}$$
 
 2. **提交阶段**：
 
-$$P_i^{commit} = \begin{cases} 
+$$P_i^{commit} = \begin{cases}
 1 & \text{如果参与者}P_i\text{收到提交指令} \\
 0 & \text{如果参与者}P_i\text{收到回滚指令}
 \end{cases}$$

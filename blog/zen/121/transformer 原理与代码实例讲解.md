@@ -1,7 +1,7 @@
 
 # transformer 原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -265,7 +265,7 @@ A：选择合适的Transformer模型架构需要根据具体任务和数据特�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 

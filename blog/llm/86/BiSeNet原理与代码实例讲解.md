@@ -148,10 +148,10 @@ class BiSeNet(nn.Module):
     def __init__(self, num_classes):
         super(BiSeNet, self).__init__()
         # ... (省略网络结构定义代码)
-        
+
     def forward(self, x):
         # ... (省略前向传播代码)
-        
+
 # 实例化模型
 model = BiSeNet(num_classes)
 
@@ -172,10 +172,10 @@ class BiSeNet(nn.Module):
     def __init__(self, num_classes):
         super(BiSeNet, self).__init__()
         # ... (省略网络结构定义代码)
-        
+
     def forward(self, x):
         # ... (省略前向传播代码)
-        
+
 # ... (省略其他代码)
 ```
 

@@ -108,14 +108,12 @@ $$R(s_t, a_t) = w_{\\text{quality}} \\cdot Q(s_t, a_t) + w_{\\text{consistency}}
 
 策略更新通常基于强化学习算法，如Q-learning或Policy Gradient方法。以Policy Gradient为例：
 
-$$\\Delta \\pi(a_t | s_t) \\propto \
-abla \\mathbb{E}_{\\pi}[\\log \\pi(a_t | s_t) \\cdot R(s_t, a_t)]$$
+$$\\Delta \\pi(a_t | s_t) \\propto \nabla \\mathbb{E}_{\\pi}[\\log \\pi(a_t | s_t) \\cdot R(s_t, a_t)]$$
 
 其中：
 - \\(\\pi\\) 是策略函数，
 - \\(\\Delta \\pi\\) 是策略更新量，
-- \\(\
-abla\\) 表示梯度，
+- \\(\nabla\\) 表示梯度，
 - \\(\\mathbb{E}\\) 是期望值。
 
 ### 4.3 案例分析与讲解

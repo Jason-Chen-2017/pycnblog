@@ -180,7 +180,7 @@ public class StudentAverage {
     public static class StudentMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
         @Override
         protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-            String[] scores = value.toString().split("\\s+");
+            String[] scores = value.toString().split("\s+");
             context.write(new Text(scores[0]), new IntWritable(Integer.parseInt(scores[1])));
         }
     }

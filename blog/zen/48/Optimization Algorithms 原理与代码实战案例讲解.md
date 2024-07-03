@@ -6,7 +6,7 @@
 ### 1.1  问题的由来
 在现实世界中,我们经常会遇到需要寻找最优解的问题,比如如何规划最经济的运输路线,如何设计最高效的生产流程,如何配置最佳的投资组合等。这些问题都可以抽象为数学模型,通过优化算法求解得到最优或近似最优的解。
 
-### 1.2  研究现状 
+### 1.2  研究现状
 优化算法经过几十年的发展,已经形成了多个不同的流派和分支。传统的优化算法如梯度下降法、牛顿法等基于导数信息进行搜索,对目标函数有较强的要求。现代优化算法如遗传算法、粒子群优化等模拟自然界的智能行为,无需目标函数可导,适用范围更广。近年来,深度学习的兴起也为优化算法注入了新的活力。
 
 ### 1.3  研究意义
@@ -17,7 +17,7 @@
 
 ## 2. 核心概念与联系
 - 目标函数(Objective Function):衡量解的质量,优化过程就是寻找目标函数的极值点。
-- 决策变量(Decision Variable):求解过程中可调整的变量,其取值构成解空间。  
+- 决策变量(Decision Variable):求解过程中可调整的变量,其取值构成解空间。
 - 约束条件(Constraint):决策变量需要满足的限制条件,分为等式约束和不等式约束。
 - 梯度(Gradient):多元函数对各个自变量的偏导数构成的向量,指出函数值增长最快的方向。
 - 海森矩阵(Hessian Matrix):多元函数的二阶偏导数矩阵,刻画了函数的局部曲率。
@@ -37,14 +37,14 @@ $$
 ### 3.1 算法原理概述
 优化算法的基本思想是:从一个初始解出发,根据某种搜索策略不断更新解,使目标函数值逐步减小,最终收敛到最优解或满意解。根据搜索策略的不同,优化算法可分为以下三类:
 
-1. 基于梯度的算法:利用目标函数的梯度信息指引搜索方向,代表有梯度下降法、牛顿法等。  
+1. 基于梯度的算法:利用目标函数的梯度信息指引搜索方向,代表有梯度下降法、牛顿法等。
 2. 基于启发式规则的算法:模拟自然界的智能行为,通过群体协作探索解空间,代表有遗传算法、粒子群优化等。
 3. 基于轨迹的算法:在解空间中生成一条轨迹,沿轨迹搜索最优解,代表有模拟退火、禁忌搜索等。
 
 ### 3.2 算法步骤详解
 以梯度下降法为例,其基本步骤如下:
 
-1. 选择初始点$x_0$,置$k=0$ 
+1. 选择初始点$x_0$,置$k=0$
 2. 计算$x_k$处的梯度$\nabla f(x_k)$
 3. 更新$x_{k+1} = x_k - \alpha_k \nabla f(x_k)$,其中$\alpha_k$为步长
 4. 若$\|\nabla f(x_{k+1})\|<\epsilon$或达到最大迭代次数,则停止;否则$k=k+1$,转2
@@ -57,7 +57,7 @@ $$
 - 对凸函数收敛速度快
 - 可并行化,适合大规模问题
 
-缺点是:  
+缺点是:
 - 对非凸函数可能收敛到局部最优
 - 迭代次数多时步长难以调节
 - 目标函数必须可导
@@ -72,7 +72,7 @@ $$
 \begin{align}
 \min \quad & f(x,y) = x^2 + 2y^2 - 2xy - 8x \\
 \text{s.t.} \quad & x + y \leq 8 \\
-& x \geq 0, y \geq 0  
+& x \geq 0, y \geq 0
 \end{align}
 $$
 首先将目标函数$f(x,y)$和约束条件抽象为数学模型,然后选择合适的优化算法求解。
@@ -83,7 +83,7 @@ $$
 x_{k+1} = x_k - \alpha_k \nabla f(x_k)
 $$
 其中梯度$\nabla f(x,y)=\begin{bmatrix}
-2x-2y-8\\ 
+2x-2y-8\\
 4y-2x
 \end{bmatrix}$
 
@@ -93,7 +93,7 @@ f(x) \approx f(x_k) + \nabla f(x_k)^T(x-x_k) + \frac{1}{2}(x-x_k)^TH(x_k)(x-x_k)
 $$
 求解极小点可得到迭代公式:
 $$
-x_{k+1} = x_k - H^{-1}(x_k)\nabla f(x_k) 
+x_{k+1} = x_k - H^{-1}(x_k)\nabla f(x_k)
 $$
 
 ### 4.3 案例分析与讲解
@@ -124,7 +124,7 @@ def gradient_descent(x0, alpha, eps=1e-4, max_iter=100):
 Q: 如何判断一个优化问题是否为凸问题?
 A: 对于无约束问题,凸性等价于海森矩阵半正定。对于约束问题,可用KKT条件判断。
 
-Q: 遇到非凸问题怎么办? 
+Q: 遇到非凸问题怎么办?
 A: 尝试多个初始点,选择最优解。使用全局优化算法如模拟退火等。转化为凸松弛问题求解。
 
 Q: 梯度下降法收敛速度慢怎么办?
@@ -157,13 +157,13 @@ MUTATION_RATE = 0.003    # 变异概率
 N_GENERATIONS = 200      # 迭代次数
 X_BOUND = [0, 5]         # x取值范围
 
-def F(x): 
+def F(x):
     return np.sin(10*np.pi*x)*x + np.cos(2*np.pi*x)*x  # 目标函数
 
-def get_fitness(pred): 
+def get_fitness(pred):
     return pred + 1e-3 - np.min(pred)  # 适应度函数
 
-def translateDNA(pop): 
+def translateDNA(pop):
     return pop.dot(2 ** np.arange(DNA_SIZE)[::-1]) / (2**DNA_SIZE-1) * X_BOUND[1]
 
 def select(pop, fitness):    # 根据适应度选择
@@ -172,8 +172,8 @@ def select(pop, fitness):    # 根据适应度选择
 
 def crossover(parent, pop):  # 交叉
     if np.random.rand() < CROSS_RATE:
-        i_ = np.random.randint(0, POP_SIZE, size=1)  
-        cross_points = np.random.randint(0, 2, size=DNA_SIZE).astype(np.bool)  
+        i_ = np.random.randint(0, POP_SIZE, size=1)
+        cross_points = np.random.randint(0, 2, size=DNA_SIZE).astype(np.bool)
         parent[cross_points] = pop[i_, cross_points]
     return parent
 
@@ -199,7 +199,7 @@ for _ in range(N_GENERATIONS):
     # 绘制图像
     if 'sca' in globals(): sca.remove()
     sca = plt.scatter(translateDNA(pop), F(translateDNA(pop)), s=200, lw=0, c='red', alpha=0.5); plt.pause(0.05)
-    
+
 plt.ioff(); plt.show()
 ```
 
@@ -209,7 +209,7 @@ plt.ioff(); plt.show()
 2. 迭代N_GENERATIONS次:
    - 计算种群的目标函数值和适应度
    - 选择操作,根据适应度选出新一代个体
-   - 交叉操作,随机选择两个个体的部分基因交换 
+   - 交叉操作,随机选择两个个体的部分基因交换
    - 变异操作,个体的某些基因以一定概率变异
 3. 绘制每一代的目标函数值,直观展示优化过程
 

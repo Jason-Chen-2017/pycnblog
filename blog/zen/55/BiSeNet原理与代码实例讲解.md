@@ -28,7 +28,7 @@ BiSeNet采用双边网络结构,包含一个浅层的空间路径(Spatial Path)�
 
 BiSeNet在两个路径之间引入了注意力细化模块(Attention Refinement Module,ARM),用于自适应地融合不同层级的特征。ARM通过显式地建模特征之间的依赖关系,有效地提高了特征表示能力。
 
-### 2.3 特征融合模块 
+### 2.3 特征融合模块
 
 BiSeNet使用特征融合模块(Feature Fusion Module,FFM)将空间路径和上下文路径的特征进行融合。FFM采用一个注意力机制来自适应地调整两个路径的重要性,使融合的特征更加准确有效。
 

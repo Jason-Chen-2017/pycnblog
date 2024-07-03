@@ -210,7 +210,7 @@ A：锚框的设计通常遵循以下原则：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n yolo6-env python=3.8 
+conda create -n yolo6-env python=3.8
 conda activate yolo6-env
 ```
 
@@ -247,7 +247,7 @@ class YOLOv6(nn.Module):
     def __init__(self):
         super(YOLOv6, self).__init__()
         # ... (此处省略模型定义代码)
-    
+
     def forward(self, x):
         # ... (此处省略前向传播代码)
         return outputs
@@ -282,7 +282,7 @@ for epoch in range(10):
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-    
+
     print(f'Epoch {epoch+1}, Loss: {loss.item()}')
 
 # 保存模型

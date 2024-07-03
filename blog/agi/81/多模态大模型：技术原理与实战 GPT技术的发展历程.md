@@ -176,7 +176,7 @@ A：多模态大模型可以采用以下方法解决数据不平衡问题：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n multimodal-env python=3.8 
+conda create -n multimodal-env python=3.8
 conda activate multimodal-env
 ```
 
@@ -215,7 +215,7 @@ class ImageDataset(Dataset):
     def __getitem__(self, idx):
         image = Image.open(self.image_paths[idx])
         caption = open(self.caption_paths[idx], 'r').read().strip()
-        
+
         if self.transform:
             image = self.transform(image)
 
@@ -225,7 +225,7 @@ def create_model():
     image_model = models.resnet152(pretrained=True)
     image_model.fc = nn.Linear(image_model.fc.in_features, 512)
     text_model = models.BertModel.from_pretrained('bert-base-uncased')
-    
+
     model = nn.Sequential(
         image_model,
         nn.Flatten(),
@@ -234,7 +234,7 @@ def create_model():
         nn.Dropout(0.5),
         text_model
     )
-    
+
     return model
 
 def train(model, dataloader, optimizer):

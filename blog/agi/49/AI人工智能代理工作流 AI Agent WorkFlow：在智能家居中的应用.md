@@ -187,7 +187,7 @@ class QLearningAgent:
         self.exploration_rate = exploration_rate
         self.decay_rate = decay_rate
         self.model = self.build_model()
-    
+
     def build_model(self):
         model = tf.keras.models.Sequential([
             tf.keras.layers.Dense(64, activation='relu'),
@@ -198,14 +198,14 @@ class QLearningAgent:
                       loss='mse',
                       metrics=['accuracy'])
         return model
-    
+
     def act(self, state):
         if np.random.rand() <= self.exploration_rate:
             return np.random.randint(self.action_size)
         else:
             q_values = self.model.predict(state)
             return np.argmax(q_values)
-    
+
     def learn(self, state, action, reward, next_state, done):
         target = reward
         if not done:
@@ -213,7 +213,7 @@ class QLearningAgent:
         target_f = self.model.predict(state)
         target_f[0][action] = target
         self.model.fit(state, target_f, epochs=1, verbose=0)
-        
+
     def decay_exploration_rate(self):
         self.exploration_rate -= self.decay_rate
         return self.exploration_rate

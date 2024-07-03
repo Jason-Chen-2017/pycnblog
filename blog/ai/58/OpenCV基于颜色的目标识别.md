@@ -17,7 +17,7 @@ OpenCV(Open Source Computer Vision Library)是一个开源的计算机视觉库,
 #### 2.1.1 RGB色彩空间
 RGB色彩空间是最常见的一种色彩空间,由红(R)、绿(G)、蓝(B)三个分量组成。RGB适合显示系统,但是RGB的三个分量相互关联,难以直观地描述颜色。
 
-#### 2.1.2 HSV色彩空间  
+#### 2.1.2 HSV色彩空间
 HSV色彩空间由色调(Hue)、饱和度(Saturation)、明度(Value)三个分量组成。HSV色彩空间更符合人眼对颜色的主观感受,H分量表示颜色的种类,S分量表示颜色的纯度,V分量表示颜色的明亮程度。在OpenCV中,H分量的取值范围是[0,180),S和V分量的取值范围是[0,255]。
 
 #### 2.1.3 其他色彩空间
@@ -42,7 +42,7 @@ Mat hsvImage;
 cvtColor(rgbImage, hsvImage, COLOR_BGR2HSV);
 ```
 
-### 3.2 颜色阈值分割  
+### 3.2 颜色阈值分割
 设定目标颜色的HSV阈值下限和上限,用inRange函数提取满足阈值区间的像素:
 ```cpp
 Mat mask;
@@ -51,12 +51,12 @@ inRange(hsvImage, lowerb, upperb, mask);
 其中,lowerb和upperb分别是HSV三个通道的下限和上限值。mask是输出的二值图像掩膜。
 
 ### 3.3 形态学操作
-对二值图像掩膜进行形态学操作,消除噪点和空洞,常用的有:  
+对二值图像掩膜进行形态学操作,消除噪点和空洞,常用的有:
 - 开运算:先腐蚀后膨胀,可以去除小的噪点
 - 闭运算:先膨胀后腐蚀,可以填充目标内的小空洞
 
 ```cpp
-Mat kernel = getStructuringElement(MORPH_RECT, Size(3,3)); 
+Mat kernel = getStructuringElement(MORPH_RECT, Size(3,3));
 morphologyEx(mask, mask, MORPH_OPEN, kernel);
 morphologyEx(mask, mask, MORPH_CLOSE, kernel);
 ```
@@ -102,7 +102,7 @@ $$
 
 ### 4.2 形态学操作的数学原理
 形态学操作是基于集合论的一系列图像处理操作,主要包括:
-- 腐蚀(Erosion):用结构元素B去腐蚀图像A,得到结果图像中的每一个像素值为: 
+- 腐蚀(Erosion):用结构元素B去腐蚀图像A,得到结果图像中的每一个像素值为:
 $$
 \begin{aligned}
 dst(x,y) = \min_{(x',y') \in B} src(x+x',y+y')
@@ -111,7 +111,7 @@ $$
 - 膨胀(Dilation):用结构元素B去膨胀图像A,得到结果图像中的每一个像素值为:
 $$
 \begin{aligned}
-dst(x,y) = \max_{(x',y') \in B} src(x-x',y-y')  
+dst(x,y) = \max_{(x',y') \in B} src(x-x',y-y')
 \end{aligned}
 $$
 - 开运算(Opening):先腐蚀后膨胀,可以去除小的噪点。数学表示为:
@@ -123,7 +123,7 @@ $$
 - 闭运算(Closing):先膨胀后腐蚀,可以填充目标内的小空洞。数学表示为:
 $$
 \begin{aligned}
-dst = (src \oplus B) \ominus B  
+dst = (src \oplus B) \ominus B
 \end{aligned}
 $$
 
@@ -169,11 +169,11 @@ int main() {
         cvtColor(frame, hsvImage, COLOR_BGR2HSV); //BGR转HSV
 
         //红色的HSV阈值,可以根据实际情况调整
-        Mat lowerb1 = (0, 100, 100); 
+        Mat lowerb1 = (0, 100, 100);
         Mat upperb1 = (10, 255, 255);
         Mat lowerb2 = (160, 100, 100);
         Mat upperb2 = (180, 255, 255);
-        
+
         Mat mask1, mask2;
         inRange(hsvImage, lowerb1, upperb1, mask1);
         inRange(hsvImage, lowerb2, upperb2, mask2);
@@ -181,7 +181,7 @@ int main() {
 
         //开运算和闭运算,消除噪点
         Mat kernel = getStructuringElement(MORPH_RECT, Size(3,3));
-        morphologyEx(mask, mask, MORPH_OPEN, kernel);  
+        morphologyEx(mask, mask, MORPH_OPEN, kernel);
         morphologyEx(mask, mask, MORPH_CLOSE, kernel);
 
         //轮廓提取与分析

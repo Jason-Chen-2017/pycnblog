@@ -455,4 +455,4 @@ BERT模型在汉语NLP任务中仍然面临一些挑战：
 - **使用更复杂的模型架构**: 使用更复杂的模型架构可以提高模型的表达能力。
 - **使用更有效的训练策略**: 使用更有效的训练策略可以提高模型的收敛速度和性能。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

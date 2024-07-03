@@ -82,7 +82,7 @@ $$F(x) = x + g(x)$$
 
 对于一个包含$n$个卷积层的残差块，可以定义为：
 
-$$F(x) = x + \\sum_{i=1}^{n} g_i(x)$$
+$$F(x) = x + \sum_{i=1}^{n} g_i(x)$$
 
 其中，$g_i(x)$表示第$i$个卷积层的学习结果。
 
@@ -98,7 +98,7 @@ import torch.nn.functional as F
 
 class BasicBlock(nn.Module):
     expansion = 1
-    
+
     def __init__(self, in_channels, out_channels, stride=1, downsample=None):
         super(BasicBlock, self).__init__()
         self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size=3, stride=stride, padding=1, bias=False)
@@ -107,7 +107,7 @@ class BasicBlock(nn.Module):
         self.conv2 = nn.Conv2d(out_channels, out_channels, kernel_size=3, stride=1, padding=1, bias=False)
         self.bn2 = nn.BatchNorm2d(out_channels)
         self.downsample = downsample
-        
+
     def forward(self, x):
         identity = x
         out = self.conv1(x)
@@ -115,13 +115,13 @@ class BasicBlock(nn.Module):
         out = self.relu(out)
         out = self.conv2(out)
         out = self.bn2(out)
-        
+
         if self.downsample is not None:
             identity = self.downsample(x)
-            
+
         out += identity
         out = self.relu(out)
-        
+
         return out
 ```
 
@@ -129,7 +129,7 @@ class BasicBlock(nn.Module):
 
 - **如何选择卷积层的数量？**
   卷积层的数量取决于任务的需求和数据集的大小。通常，增加卷积层的数量可以提高模型的表达能力，但也可能导致过拟合的风险。可以通过交叉验证来调整卷积层的数量。
-  
+
 - **为什么使用Batch Normalization？**
   Batch Normalization可以帮助稳定训练过程，减少内部协变量移位的影响，加速训练速度，以及提高模型的泛化能力。
 

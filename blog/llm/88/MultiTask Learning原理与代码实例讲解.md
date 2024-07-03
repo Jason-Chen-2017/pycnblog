@@ -162,7 +162,7 @@ A：对于不平衡数据，可以采取以下策略：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 3. 安装PyTorch：根据CUDA版本，从官网获取对应的安装命令。例如：

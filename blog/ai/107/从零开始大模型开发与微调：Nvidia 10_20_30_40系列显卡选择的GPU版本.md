@@ -344,4 +344,4 @@ Nvidia 10/20/30/40系列显卡是目前市面上常见的消费级和专业级GP
 
 选择合适的GPU版本对于大模型开发至关重要。希望本文能够帮助您根据自身需求和预算，选择到最合适的Nvidia 10/20/30/40系列显卡，开启您的深度学习之旅。
 
-## 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+## 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

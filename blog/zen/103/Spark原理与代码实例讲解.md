@@ -169,7 +169,7 @@ A：Spark提供了多种优化方法，如数据本地化、任务倾斜、内�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n spark-env python=3.8 
+conda create -n spark-env python=3.8
 conda activate spark-env
 ```
 

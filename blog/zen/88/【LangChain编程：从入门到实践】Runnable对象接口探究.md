@@ -227,7 +227,7 @@ import numpy as np
 class TextClassifierRunnable(Runnable):
     def __init__(self, model_path, vocab_path):
         self.model = self.load_model(model_path, vocab_path)
-    
+
     def load_model(self, model_path, vocab_path):
         # 加载模型和词嵌入
         # ...

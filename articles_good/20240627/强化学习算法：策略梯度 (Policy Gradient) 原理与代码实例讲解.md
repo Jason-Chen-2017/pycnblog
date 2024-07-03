@@ -88,19 +88,15 @@ $$J(\theta) = \sum_{t=0}^T r_t$$
 
 其中，$r_t$ 为在时刻 $t$ 收到的奖励，$T$ 为总步数。
 
-为了计算梯度，我们需要考虑策略函数的梯度 $\
-abla_{\theta} J(\theta)$。根据Jensen不等式，我们有：
+为了计算梯度，我们需要考虑策略函数的梯度 $\nabla_{\theta} J(\theta)$。根据Jensen不等式，我们有：
 
 $$J(\theta) = \sum_{t=0}^T r_t \geq \sum_{t=0}^T \pi(\theta)(r_t | s_t)$$
 
 因此，我们可以定义策略梯度为：
 
-$$\
-abla_{\theta} J(\theta) = \sum_{t=0}^T \pi(\theta)(r_t | s_t, a_t, \theta) \
-abla_{\theta} \pi(\theta)(a_t | s_t, \theta)$$
+$$\nabla_{\theta} J(\theta) = \sum_{t=0}^T \pi(\theta)(r_t | s_t, a_t, \theta) \nabla_{\theta} \pi(\theta)(a_t | s_t, \theta)$$
 
-其中，$\
-abla_{\theta} \pi(\theta)(a_t | s_t, \theta)$ 表示策略函数 $\pi(\theta)$ 在给定状态 $s_t$ 和动作 $a_t$ 下的梯度。
+其中，$\nabla_{\theta} \pi(\theta)(a_t | s_t, \theta)$ 表示策略函数 $\pi(\theta)$ 在给定状态 $s_t$ 和动作 $a_t$ 下的梯度。
 
 ### 3.2 算法步骤详解
 
@@ -120,13 +116,11 @@ abla_{\theta} \pi(\theta)(a_t | s_t, \theta)$ 表示策略函数 $\pi(\theta)$ �
 
 **Step 4: 计算策略梯度**
 
-- 计算策略梯度 $\
-abla_{\theta} J(\theta)$。
+- 计算策略梯度 $\nabla_{\theta} J(\theta)$。
 
 **Step 5: 更新策略参数**
 
-- 根据策略梯度更新策略参数 $\theta \leftarrow \theta - \alpha \
-abla_{\theta} J(\theta)$，其中 $\alpha$ 为学习率。
+- 根据策略梯度更新策略参数 $\theta \leftarrow \theta - \alpha \nabla_{\theta} J(\theta)$，其中 $\alpha$ 为学习率。
 
 **Step 6: 迭代**
 
@@ -164,12 +158,9 @@ abla_{\theta} J(\theta)$，其中 $\alpha$ 为学习率。
 
 定义策略梯度为：
 
-$$\
-abla_{\theta} J(\theta) = \sum_{t=0}^T \pi(\theta)(r_t | s_t, a_t, \theta) \
-abla_{\theta} \pi(\theta)(a_t | s_t, \theta)$$
+$$\nabla_{\theta} J(\theta) = \sum_{t=0}^T \pi(\theta)(r_t | s_t, a_t, \theta) \nabla_{\theta} \pi(\theta)(a_t | s_t, \theta)$$
 
-其中，$\
-abla_{\theta} \pi(\theta)(a_t | s_t, \theta)$ 表示策略函数 $\pi(\theta)$ 在给定状态 $s_t$ 和动作 $a_t$ 下的梯度。
+其中，$\nabla_{\theta} \pi(\theta)(a_t | s_t, \theta)$ 表示策略函数 $\pi(\theta)$ 在给定状态 $s_t$ 和动作 $a_t$ 下的梯度。
 
 ### 4.2 公式推导过程
 
@@ -183,13 +174,11 @@ $$\pi(\theta)(a_t | s_t) = \theta^T \phi(s_t, a_t)$$
 
 则策略函数的梯度为：
 
-$$\
-abla_{\theta} \pi(\theta)(a_t | s_t, \theta) = \phi(s_t, a_t)$$
+$$\nabla_{\theta} \pi(\theta)(a_t | s_t, \theta) = \phi(s_t, a_t)$$
 
 因此，策略梯度为：
 
-$$\
-abla_{\theta} J(\theta) = \sum_{t=0}^T \pi(\theta)(r_t | s_t, a_t, \theta) \phi(s_t, a_t)$$
+$$\nabla_{\theta} J(\theta) = \sum_{t=0}^T \pi(\theta)(r_t | s_t, a_t, \theta) \phi(s_t, a_t)$$
 
 ### 4.3 案例分析与讲解
 
@@ -229,10 +218,8 @@ $$\theta_0 = \begin{bmatrix} 0.1 & 0.2 \\ 0.2 & 0.1 \end{bmatrix}$$
 
 1. 采样动作序列 $\{a_t\}_{t=0}^T$，即根据策略函数 $\pi(\theta)$ 采样动作序列。
 2. 执行动作 $a_t$，收集状态-动作对 $(s_t, a_t)$ 和奖励 $r_t$。
-3. 计算策略梯度 $\
-abla_{\theta} J(\theta)$。
-4. 根据策略梯度更新策略参数 $\theta \leftarrow \theta - \alpha \
-abla_{\theta} J(\theta)$。
+3. 计算策略梯度 $\nabla_{\theta} J(\theta)$。
+4. 根据策略梯度更新策略参数 $\theta \leftarrow \theta - \alpha \nabla_{\theta} J(\theta)$。
 5. 返回Step 1，重复执行以上步骤。
 
 假设我们使用学习率 $\alpha = 0.1$，迭代次数为100次。经过迭代优化后，策略参数 $\theta$ 将收敛到：

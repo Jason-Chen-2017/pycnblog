@@ -1,4 +1,4 @@
-                 
+
 # 线性回归(Linear Regression) - 原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -72,7 +72,7 @@ $$ X^TX\beta = X^Ty $$
   - 直观易懂，易于实现。
   - 解决过程有明确的数学公式指导。
   - 可以处理较大的数据集。
-  
+
 - **缺点**:
   - 对异常值敏感，容易受到极端数据点的影响。
   - 假设误差项服从正态分布，对非线性关系无能为力。
@@ -124,11 +124,11 @@ learning_rate = 0.01
 for _ in range(100):
     # 预测值
     predictions = np.dot(X, beta)
-    
+
     # 更新参数
     gradient = np.mean((predictions - y) * X, axis=0)
     beta -= learning_rate * gradient
-    
+
 print("最优参数:", beta)
 ```
 

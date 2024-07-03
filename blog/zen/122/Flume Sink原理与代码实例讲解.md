@@ -48,7 +48,7 @@ graph LR
     Source --> Channel
     Channel --> Sink
     Sink --> ExternalSystem
-    
+
     subgraph Agent
         Source
         Channel

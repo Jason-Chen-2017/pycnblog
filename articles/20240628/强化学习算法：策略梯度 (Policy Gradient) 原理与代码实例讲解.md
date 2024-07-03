@@ -75,8 +75,7 @@
 4. **更新策略参数**：根据优势函数$A_t(a_t; \theta)$和策略参数$\theta$，更新策略参数$\theta_{t+1}$，使得策略参数$\theta_{t+1}$能够最大化累积奖励。具体来说，可以使用以下公式：
 
    $$
-\theta_{t+1} = \theta_t + \alpha \
-abla_\theta J(\theta_t)
+\theta_{t+1} = \theta_t + \alpha \nabla_\theta J(\theta_t)
 $$
 
    其中，$\alpha$为学习率，$J(\theta_t) = E_{\pi_\theta}[R]$为累积奖励期望。
@@ -144,9 +143,7 @@ $$
 4. **策略梯度**：
 
    $$
-\
-abla_\theta J(\theta) = \sum_{t=0}^\infty \gamma^t \sum_{s,a} \pi_\theta(a|s) A_t(a; \theta) \
-abla_\theta \pi_\theta(a|s)
+\nabla_\theta J(\theta) = \sum_{t=0}^\infty \gamma^t \sum_{s,a} \pi_\theta(a|s) A_t(a; \theta) \nabla_\theta \pi_\theta(a|s)
 $$
 
 ### 4.3 案例分析与讲解

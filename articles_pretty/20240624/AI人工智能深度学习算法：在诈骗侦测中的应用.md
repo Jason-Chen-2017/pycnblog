@@ -97,8 +97,7 @@
 
 #### 优化算法
 - **梯度下降（Gradient Descent）**：用于更新模型参数，最小化损失函数。
-\[\theta := \theta - \alpha \cdot \
-abla_\theta J(\theta)\]
+\[\theta := \theta - \alpha \cdot \nabla_\theta J(\theta)\]
 
 ### 4.2 公式推导过程
 

@@ -57,10 +57,10 @@ $$
 梯度下降的具体步骤如下:
 1. 随机初始化参数 $\theta$
 2. 重复直到收敛{
-    
+
     a. 计算损失函数关于参数的梯度:
     $$\nabla_{\theta} J(\theta) = \frac{\partial J(\theta)}{\partial \theta}$$
-    
+
     b. 更新参数:
     $$\theta = \theta - \alpha \cdot \nabla_{\theta} J(\theta)$$
     }
@@ -82,7 +82,7 @@ $$
 - 每次迭代需要遍历整个训练集,当样本数很大时,训练非常慢
 - 对参数的初始值和学习率比较敏感
 
-### 3.4 算法应用领域 
+### 3.4 算法应用领域
 梯度下降在机器学习和深度学习中应用非常广泛,几乎所有的参数优化问题都会用到它,比如:
 - 线性回归
 - Logistic回归
@@ -143,7 +143,7 @@ $$\theta_j = \theta_j - \alpha \cdot \frac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)
 
 假设训练集为:
 $$(x^{(1)}, y^{(1)}) = (1, 1)$$
-$$(x^{(2)}, y^{(2)}) = (2, 2)$$  
+$$(x^{(2)}, y^{(2)}) = (2, 2)$$
 $$(x^{(3)}, y^{(3)}) = (3, 3)$$
 
 学习一个模型: $h_{\theta}(x) = \theta_0 + \theta_1 x$
@@ -163,7 +163,7 @@ $$
 \begin{aligned}
 \theta_0 &= 0 - 0.01 \cdot \frac{1}{3} [(0+0 \cdot 1-1) + (0+0 \cdot 2-2) + (0+0 \cdot 3-3)] \\
 &= 0 - 0.01 \cdot (-2) = 0.02 \\
-\theta_1 &= 0 - 0.01 \cdot \frac{1}{3} [(0+0 \cdot 1-1) \cdot 1 + (0+0 \cdot 2-2) \cdot 2 + (0+0 \cdot 3-3) \cdot 3] \\ 
+\theta_1 &= 0 - 0.01 \cdot \frac{1}{3} [(0+0 \cdot 1-1) \cdot 1 + (0+0 \cdot 2-2) \cdot 2 + (0+0 \cdot 3-3) \cdot 3] \\
 &= 0 - 0.01 \cdot (-14/3) \approx 0.0467
 \end{aligned}
 $$
@@ -206,21 +206,21 @@ import matplotlib.pyplot as plt
 def gradient_descent(X, y, theta, alpha, num_iters):
     """
     梯度下降函数
-    
+
     参数:
         X: 输入特征矩阵,shape为(m,n)
         y: 输出标签向量,shape为(m,)
         theta: 参数向量,shape为(n,)
         alpha: 学习率
         num_iters: 迭代次数
-        
+
     返回:
         theta: 学习到的参数
         J_history: 每次迭代的损失函数值
     """
     m = len(y)
     J_history = np.zeros(num_iters)
-    
+
     for i in range(num_iters):
         h = X.dot(theta)
         errors = h - y

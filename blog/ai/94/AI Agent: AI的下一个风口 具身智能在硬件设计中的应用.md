@@ -308,7 +308,7 @@ A：选择合适的AI算法需要根据具体任务的特点和需求。例如�
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n deep_learning_env python=3.8 
+conda create -n deep_learning_env python=3.8
 conda activate deep_learning_env
 ```
 3. 安装深度学习框架和工具包：

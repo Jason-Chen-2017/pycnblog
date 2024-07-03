@@ -150,19 +150,19 @@ public class SparkStreamingWithRedis {
         // 创建Spark配置
         SparkConf conf = new SparkConf().setAppName("SparkStreamingWithRedis")
                 .setMaster("local[*]");
-        
+
         // 创建SparkContext
         JavaSparkContext sc = new JavaSparkContext(conf);
-        
+
         // 创建SparkStreaming流
         JavaStreamingContext ssc = new JavaStreamingContext(sc, Seconds(1));
-        
+
         // 创建Redis连接
         Jedis jedis = new Jedis("localhost", 6379);
-        
+
         // 创建接收器
         JavaReceiver receiver = new JavaReceiver(jedis);
-        
+
         // 启动接收器
         ssc.addSource(receiver).mapToPair(new PairFunction<String, String, Integer>() {
             @Override
@@ -177,7 +177,7 @@ public class SparkStreamingWithRedis {
                 jedis.set("result", rdd.first().toString());
             }
         });
-        
+
         // 启动SparkStreaming
         ssc.start();
         ssc.awaitTermination();

@@ -55,19 +55,19 @@ Q-learning的核心步骤包括：
 
 #### Q-table更新公式
 
-$$Q(s,a) \\leftarrow Q(s,a) + \\alpha [r + \\gamma \\max_{a'} Q(s',a') - Q(s,a)]$$
+$$Q(s,a) \leftarrow Q(s,a) + \alpha [r + \gamma \max_{a'} Q(s',a') - Q(s,a)]$$
 
 其中：
-- \\(s\\) 是当前状态，
-- \\(a\\) 是选择的动作，
-- \\(r\\) 是获得的即时奖励，
-- \\(s'\\) 是新状态，
-- \\(\\alpha\\) 是学习率（步长），
-- \\(\\gamma\\) 是折扣因子（未来奖励的重视程度）。
+- \(s\) 是当前状态，
+- \(a\) 是选择的动作，
+- \(r\) 是获得的即时奖励，
+- \(s'\) 是新状态，
+- \(\alpha\) 是学习率（步长），
+- \(\gamma\) 是折扣因子（未来奖励的重视程度）。
 
 #### 算法步骤：
 
-1. **初始化**：设置学习率 \\(\\alpha\\)、折扣因子 \\(\\gamma\\) 和Q表大小。
+1. **初始化**：设置学习率 \(\alpha\)、折扣因子 \(\gamma\) 和Q表大小。
 2. **状态-行动选择**：根据策略（e-greedy策略）选择行动。
 3. **执行行动**：执行选择的动作，接收新状态和奖励。
 4. **Q值更新**：根据公式更新Q表。
@@ -99,15 +99,15 @@ Q-learning广泛应用于：
 
 Q-learning通过数学模型构建来预测未来状态下的最大Q值，从而指导行动选择。核心模型基于马尔可夫决策过程（MDP）框架：
 
-$$V(s) = \\max_a Q(s,a)$$
+$$V(s) = \max_a Q(s,a)$$
 
-其中 \\(V(s)\\) 是状态 \\(s\\) 的价值。
+其中 \(V(s)\) 是状态 \(s\) 的价值。
 
 ### 4.2 公式推导过程
 
 Q-learning通过以下步骤进行公式推导：
 
-1. **价值函数定义**：\\(Q(s,a)\\) 表示在状态 \\(s\\) 下采取行动 \\(a\\) 后的最大累积奖励。
+1. **价值函数定义**：\(Q(s,a)\) 表示在状态 \(s\) 下采取行动 \(a\) 后的最大累积奖励。
 2. **学习过程**：根据当前状态和Q值选择行动，执行后更新Q值。
 3. **学习率与折扣因子**：调整学习过程中的学习效率和未来奖励的重要性。
 
@@ -210,8 +210,8 @@ Q-learning在复杂系统中的应用广泛，包括但不限于：
 
 ### 相关论文推荐
 
-- **Q-learning基础**：Watkins, C.J.C.H., \"Learning from delayed rewards\", PhD thesis, University of Cambridge, UK, 1989.
-- **深度Q学习**：Mnih, V., et al., \"Human-level control through deep reinforcement learning\", Nature, vol. 518, no. 7540, pp. 529-533, 2015.
+- **Q-learning基础**：Watkins, C.J.C.H., "Learning from delayed rewards", PhD thesis, University of Cambridge, UK, 1989.
+- **深度Q学习**：Mnih, V., et al., "Human-level control through deep reinforcement learning", Nature, vol. 518, no. 7540, pp. 529-533, 2015.
 
 ### 其他资源推荐
 

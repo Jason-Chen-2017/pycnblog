@@ -1,6 +1,6 @@
 ## 一切皆是映射：GANs生成对抗网络的原理和应用
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 **关键词：** 生成对抗网络，GANs，深度学习，人工智能，图像生成，文本生成，对抗训练，生成模型
 

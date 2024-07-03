@@ -198,7 +198,7 @@ plt.ylabel('Distance')
 plt.show()
 ```
 
- 
+
 
 通过观察树状图，我们可以发现以下信息：
 

@@ -1,6 +1,6 @@
 # Transformer大模型实战 BioBERT模型
 
-## 1. 背景介绍 
+## 1. 背景介绍
 
 ### 1.1 问题的由来
 近年来,随着深度学习技术的飞速发展,自然语言处理(NLP)领域也迎来了一次重大的突破。特别是Transformer模型的出现,更是掀起了NLP领域的一场革命。Transformer作为一种全新的神经网络结构,摒弃了传统的RNN和CNN结构,完全依靠注意力机制(Attention Mechanism)来实现序列到序列的建模。它的出现,不仅大大提高了机器翻译、文本分类、命名实体识别等NLP任务的性能,也为后续的BERT、GPT等大模型的诞生奠定了基础。
@@ -71,7 +71,7 @@ BioBERT的训练分为两步:预训练和微调。
 
 **微调步骤**:
 1. 将预训练好的BioBERT模型应用到目标生物医学NLP任务。
-2. 根据任务类型,设计合适的输入表示和输出层。如对于NER任务,输出层为线性分类层;对于关系抽取任务,输出层为多层感知机。  
+2. 根据任务类型,设计合适的输入表示和输出层。如对于NER任务,输出层为线性分类层;对于关系抽取任务,输出层为多层感知机。
 3. 使用任务的标注数据对BioBERT进行微调。将标注数据转化为BioBERT的输入表示,送入模型进行前向传播,并计算任务的损失函数。
 4. 通过反向传播更新BioBERT的参数,使其适应目标任务。根据任务的不同,可以选择性地固定部分层的参数。
 5. 重复步骤3-4,直到模型在目标任务上达到最优性能或满足预设的停止条件。
@@ -95,7 +95,7 @@ BioBERT的训练分为两步:预训练和微调。
 BioBERT在生物医学领域有广泛的应用前景,主要包括:
 
 - **命名实体识别**: 识别文本中的生物医学实体,如基因、蛋白质、疾病、药物等。BioBERT可以显著提高NER任务的F1值。
-- **关系抽取**: 从文本中抽取生物医学实体间的关系,如基因-疾病关联、药物-药物相互作用等。BioBERT可以有效捕捉实体间的语义关系。  
+- **关系抽取**: 从文本中抽取生物医学实体间的关系,如基因-疾病关联、药物-药物相互作用等。BioBERT可以有效捕捉实体间的语义关系。
 - **文本分类**: 对生物医学文献进行主题分类,如将文献分为癌症、遗传学等不同类别。BioBERT可以学习到更好的文本表示用于分类。
 - **问答系统**: 根据用户的自然语言问题,从大规模生物医学文献中检索答案。BioBERT可以用于问题表示和答案匹配。
 - **文本推理**: 根据给定的生物医学前提,预测某个假设是否成立。BioBERT可以用于建模前提和假设之间的逻辑关系。
@@ -257,7 +257,7 @@ optimizer = AdamW(model.parameters(), lr=2e-5)
 for epoch in range(epochs):
     loss = train_epoch(model, train_dataset, batch_size, optimizer)
     print(f"Epoch {epoch+1}, train loss: {loss:.3f}")
-    
+
     report = evaluate(model, dev_dataset, batch_size)
     print(f"Epoch {epoch+1}, dev report:\n{report}")
 ```
@@ -299,7 +299,7 @@ A: 如果微调效果不如预期，可以从以下几个角度分析和优化�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n biobert-env python=3.8 
+conda create -n biobert-env python=3.8
 conda activate biobert-env
 ```
 
@@ -337,24 +337,24 @@ class NERDataset(Dataset):
         self.tags = tags
         self.tokenizer = tokenizer
         self.max_len = max_len
-        
+
     def __len__(self):
         return len(self.texts)
-    
+
     def __getitem__(self, item):
         text = self.texts[item]
         tags = self.tags[item]
-        
+
         encoding = self.tokenizer(text, return_tensors='pt', max_length=self.max_len, padding='max_length', truncation=True)
         input_ids = encoding['input_ids'][0]
         attention_mask = encoding['attention_mask'][0]
-        
+
         # 对token-wise的标签进行编码
-        encoded_tags = [tag2id[tag] for tag in tags] 
+        encoded_tags = [tag2id[tag] for tag in tags]
         encoded_tags.extend([tag2id['O']] * (self.max_len - len(encoded_tags)))
         labels = torch.tensor(encoded_tags, dtype=torch.long)
-        
-        return {'input_ids': input_ids, 
+
+        return {'input_ids': input_ids,
                 'attention_mask': attention_mask,
                 'labels': labels}
 
@@ -423,7 +423,7 @@ def evaluate(model, dataset, batch_size):
                 label_tags = [id2tag[_id] for _id in label_tokens]
                 preds.append(pred_tags[:len(label_tags)])
                 labels.append(label_tags)
-                
+
     print(classification_report(labels, preds))
 ```
 
@@ -436,10 +436,10 @@ batch_size = 16
 for epoch in range(epochs):
     loss = train_epoch(model, train_dataset, batch_size, optimizer)
     print(f"Epoch {epoch+1}, train loss: {loss:.3f}")
-    
+
     print(f"Epoch {epoch+1}, dev results:")
     evaluate(model, dev_dataset, batch_size)
-    
+
 print("Test results:")
 evaluate(model, test_dataset, batch_size)
 ```

@@ -14,7 +14,7 @@
 
 ### 1.3 区块链的分类
 #### 1.3.1 公有链
-#### 1.3.2 私有链 
+#### 1.3.2 私有链
 #### 1.3.3 联盟链
 
 ## 2.核心概念与联系
@@ -33,7 +33,7 @@
 #### 2.3.2 交易的数据结构
 #### 2.3.3 交易的验证与确认
 
-### 2.4 共识机制 (Consensus Mechanism)  
+### 2.4 共识机制 (Consensus Mechanism)
 #### 2.4.1 共识机制的定义与作用
 #### 2.4.2 工作量证明 (PoW)
 #### 2.4.3 权益证明 (PoS)
@@ -54,11 +54,11 @@ E[智能合约 Smart Contract] --> C
 
 ## 3.核心算法原理具体操作步骤
 ### 3.1 哈希算法 (Hash Algorithm)
-#### 3.1.1 哈希函数的定义与特点  
+#### 3.1.1 哈希函数的定义与特点
 #### 3.1.2 SHA-256算法原理
 #### 3.1.3 哈希指针与区块链接
 
-### 3.2 Merkle树 (Merkle Tree) 
+### 3.2 Merkle树 (Merkle Tree)
 #### 3.2.1 Merkle树的定义与结构
 #### 3.2.2 Merkle树的构建过程
 #### 3.2.3 Merkle树在区块链中的应用
@@ -74,7 +74,7 @@ E[智能合约 Smart Contract] --> C
 #### 3.4.3 挖矿过程与奖励机制
 
 ### 3.5 PoS权益证明算法
-#### 3.5.1 权益证明的定义  
+#### 3.5.1 权益证明的定义
 #### 3.5.2 股权与投票权
 #### 3.5.3 验证过程与奖励机制
 
@@ -91,7 +91,7 @@ E[智能合约 Smart Contract] --> C
 $$
 \begin{aligned}
 \lambda &= \frac{y_2-y_1}{x_2-x_1} \pmod p \\
-x_3 &= \lambda^2 - x_1 - x_2 \pmod p \\  
+x_3 &= \lambda^2 - x_1 - x_2 \pmod p \\
 y_3 &= \lambda(x_1-x_3) - y_1 \pmod p
 \end{aligned}
 $$
@@ -115,27 +115,27 @@ class Block:
         self.data = data
         self.previous_hash = previous_hash
         self.hash = self.calc_hash()
-    
+
     def calc_hash(self):
         sha = hashlib.sha256()
-        sha.update(str(self.index).encode('utf-8') + 
-                   str(self.timestamp).encode('utf-8') + 
-                   str(self.data).encode('utf-8') + 
+        sha.update(str(self.index).encode('utf-8') +
+                   str(self.timestamp).encode('utf-8') +
+                   str(self.data).encode('utf-8') +
                    str(self.previous_hash).encode('utf-8'))
         return sha.hexdigest()
 
 class BlockChain:
     def __init__(self):
         self.chain = [self.create_genesis_block()]
-    
+
     def create_genesis_block(self):
         return Block(0, datetime.datetime.now(), "Genesis Block", "0")
-    
+
     def add_block(self, new_block):
         new_block.previous_hash = self.get_latest_block().hash
         new_block.hash = new_block.calc_hash()
         self.chain.append(new_block)
-    
+
     def get_latest_block(self):
         return self.chain[-1]
 ```
@@ -150,7 +150,7 @@ class ProofOfWork:
     def __init__(self, block):
         self.block = block
         self.target = 1 << (256 - DIFFICULTY_BITS)
-        
+
     def prepare_data(self, nonce):
         data = self.block.previous_hash + \
                self.block.data + \
@@ -158,13 +158,13 @@ class ProofOfWork:
                str(DIFFICULTY_BITS) + \
                str(nonce)
         return data
-        
+
     def run(self):
         nonce = 0
         while self.valid_proof(nonce) is False:
             nonce += 1
         return nonce
-    
+
     def valid_proof(self, nonce):
         data = self.prepare_data(nonce)
         hash_result = hashlib.sha256(data.encode()).hexdigest()
@@ -186,11 +186,11 @@ class ProofOfWork:
 - 商品溯源
 - 防伪与验证
 - 库存管理
-- 物流追踪  
+- 物流追踪
 
 ### 6.3 医疗健康
 - 电子病历管理
-- 药品供应链  
+- 药品供应链
 - 医疗保险理赔
 - 基因组数据共享
 
@@ -202,7 +202,7 @@ class ProofOfWork:
 
 ### 6.5 电子政务
 - 不动产登记
-- 电子证照  
+- 电子证照
 - 数字身份认证
 - 电子投票
 
@@ -213,7 +213,7 @@ class ProofOfWork:
 - Hyperledger Fabric - 联盟链开源项目
 - EOS - 高性能公有链平台
 
-### 7.2 开发工具与框架 
+### 7.2 开发工具与框架
 - Truffle Suite - 以太坊开发套件
 - Remix - 在线Solidity IDE
 - OpenZeppelin - 安全的智能合约库
@@ -232,9 +232,9 @@ class ProofOfWork:
 - 更加关注可扩展性、隐私保护、互操作性
 - 监管科技 (RegTech) 成为新方向
 
-### 8.2 区块链面临的挑战  
+### 8.2 区块链面临的挑战
 - 可扩展性问题有待解决
-- 缺乏统一的行业标准  
+- 缺乏统一的行业标准
 - 法律监管问题
 - 人才缺口较大
 

@@ -70,17 +70,17 @@
 
 假设我们有三种模态信息：文本（T）、音频（A）、视频（V）。我们使用以下公式表示多模态融合：
 
-$$ F = \\text{MultiModalFusion}(T, A, V) $$
+$$ F = \text{MultiModalFusion}(T, A, V) $$
 
-其中，$\\text{MultiModalFusion}$ 是一个多模态融合函数，它将三种模态的信息融合为一个统一的表示形式。
+其中，$\text{MultiModalFusion}$ 是一个多模态融合函数，它将三种模态的信息融合为一个统一的表示形式。
 
 ### 4.2 公式推导过程
 
 假设我们使用加权平均法进行融合：
 
-$$ F = \\frac{\\alpha_T \\cdot T + \\alpha_A \\cdot A + \\alpha_V \\cdot V}{\\alpha_T + \\alpha_A + \\alpha_V} $$
+$$ F = \frac{\alpha_T \cdot T + \alpha_A \cdot A + \alpha_V \cdot V}{\alpha_T + \alpha_A + \alpha_V} $$
 
-其中，$\\alpha_T$、$\\alpha_A$、$\\alpha_V$ 分别是文本、音频、视频的权重，可以基于模态的重要性或通过学习得到。
+其中，$\alpha_T$、$\alpha_A$、$\alpha_V$ 分别是文本、音频、视频的权重，可以基于模态的重要性或通过学习得到。
 
 ### 4.3 案例分析与讲解
 

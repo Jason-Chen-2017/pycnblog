@@ -2,7 +2,7 @@
 
 ## 1.背景介绍
 ### 1.1 虚拟现实的发展历程
-### 1.2 计算机视觉在虚拟现实中的重要性  
+### 1.2 计算机视觉在虚拟现实中的重要性
 ### 1.3 ViT模型的诞生与优势
 
 ## 2.核心概念与联系
@@ -51,15 +51,15 @@ class ViT(nn.Module):
         super().__init__()
         assert image_size % patch_size == 0, 'Image dimensions must be divisible by the patch size.'
         num_patches = (image_size // patch_size) ** 2
-        patch_dim = 3 * patch_size ** 2 
-        
+        patch_dim = 3 * patch_size ** 2
+
         self.patch_size = patch_size
         self.patch_to_embedding = nn.Linear(patch_dim, dim)
         self.cls_token = nn.Parameter(torch.randn(1, 1, dim))
         self.pos_embedding = nn.Parameter(torch.randn(1, num_patches + 1, dim))
-        
+
         self.transformer = Transformer(dim, depth, heads, mlp_dim)
-        
+
         self.to_cls_token = nn.Identity()
         self.mlp_head = nn.Sequential(
             nn.Linear(dim, mlp_dim),
@@ -71,12 +71,12 @@ class ViT(nn.Module):
         p = self.patch_size
         x = rearrange(img, 'b c (h p1) (w p2) -> b (h w) (p1 p2 c)', p1 = p, p2 = p)
         x = self.patch_to_embedding(x)
-        
+
         cls_tokens = repeat(self.cls_token, '() n d -> b n d', b = x.shape[0])
         x = torch.cat((cls_tokens, x), dim=1)
         x += self.pos_embedding[:, :(x.shape[1])]
         x = self.transformer(x)
-        
+
         x = self.to_cls_token(x[:, 0])
         return self.mlp_head(x)
 ```
@@ -108,7 +108,7 @@ def test(model, test_loader):
     accuracy = correct / len(test_loader.dataset)
     return test_loss, accuracy
 
-model = ViT(...).to(device) 
+model = ViT(...).to(device)
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
 for epoch in range(1, epochs + 1):
@@ -132,7 +132,7 @@ for epoch in range(1, epochs + 1):
 
 ## 7.工具和资源推荐
 ### 7.1 ViT预训练模型库
-- Google Research: ViT/DeiT 
+- Google Research: ViT/DeiT
 - Facebook AI: DINO
 - OpenAI: CLIP
 ### 7.2 虚拟现实开发平台
@@ -171,7 +171,7 @@ graph LR
     Patch_Embedding --> Transformer_Encoder
     Transformer_Encoder --> MLP_Head
     MLP_Head --> Class
-    
+
     subgraph Transformer_Encoder
         Multihead_Attention --> Add_Norm_1
         Add_Norm_1 --> MLP

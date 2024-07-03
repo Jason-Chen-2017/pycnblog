@@ -50,7 +50,7 @@
 
 #### 3.1.1 卷积层
 
-卷积层是 CNN 的核心组成部分，它通过卷积操作提取图像特征。卷积操作 involves sliding a small filter over the input image and computing the dot product between the filter and the corresponding image patch. 
+卷积层是 CNN 的核心组成部分，它通过卷积操作提取图像特征。卷积操作 involves sliding a small filter over the input image and computing the dot product between the filter and the corresponding image patch.
 
 **操作步骤:**
 
@@ -275,4 +275,4 @@ ImageNet 是一个大型图像数据库，包含超过 1400 万张带注释的�
 
 * 使用可解释的模型架构，例如决策树、线性模型等。
 * 使用注意力机制，突出模型关注的图像区域。
-* 使用特征可视化技术，展示模型学习到的特征。 
+* 使用特征可视化技术，展示模型学习到的特征。

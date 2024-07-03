@@ -233,7 +233,7 @@ class TextGenerator(nn.Module):
         self.embedding = nn.Embedding(vocab_size, embedding_dim)
         self.lstm = nn.LSTM(embedding_dim, hidden_dim)
         self.fc = nn.Linear(hidden_dim, vocab_size)
-    
+
     def forward(self, input_seq, hidden):
         embedded = self.embedding(input_seq)
         output, hidden = self.lstm(embedded, hidden)

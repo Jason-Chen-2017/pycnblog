@@ -155,10 +155,10 @@ class MedicalDataset(Dataset):
     def __init__(self, texts, labels):
         self.texts = texts
         self.labels = labels
-    
+
     def __len__(self):
         return len(self.texts)
-    
+
     def __getitem__(self, idx):
         text = self.texts[idx]
         label = self.labels[idx]

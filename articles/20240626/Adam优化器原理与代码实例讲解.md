@@ -52,8 +52,7 @@ Adam优化器结合了SGD和动量法，同时引入了自适应学习率。它�
 ### 3.2 算法步骤详解
 
 1. 初始化一阶矩估计 $\text{v}_t$ 和二阶矩估计 $\text{s}_t$，以及学习率 $\alpha$、$\beta_1$、$\beta_2$ 和 $\epsilon$。
-2. 在每个迭代步骤 t，计算当前梯度 $\text{g}_t = \
-abla \phi(\theta_t)$。
+2. 在每个迭代步骤 t，计算当前梯度 $\text{g}_t = \nabla \phi(\theta_t)$。
 3. 更新一阶矩估计：
    $$
    \text{v}_t = \beta_1 \text{v}_{t-1} + (1 - \beta_1) \text{g}_t
@@ -118,8 +117,7 @@ $$
 Adam优化器的推导过程如下：
 
 1. 初始化 $\text{v}_0 = \text{s}_0 = 0$。
-2. 在每个迭代步骤 t，计算当前梯度 $\text{g}_t = \
-abla \phi(\theta_t)$。
+2. 在每个迭代步骤 t，计算当前梯度 $\text{g}_t = \nabla \phi(\theta_t)$。
 3. 更新一阶矩估计：
    $$
    \text{v}_t = \beta_1 \text{v}_{t-1} + (1 - \beta_1) \text{g}_t

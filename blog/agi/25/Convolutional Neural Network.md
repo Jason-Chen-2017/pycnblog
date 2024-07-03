@@ -47,7 +47,7 @@ CNN 的出现极大地推动了人工智能和机器学习领域的发展，尤�
 #### 卷积操作
 
 $$
-\\text{Conv}(I, W, S, P) = \\sum_{i=0}^{H-I} \\sum_{j=0}^{W-J} I(i,j) \\cdot W(i,j)
+\text{Conv}(I, W, S, P) = \sum_{i=0}^{H-I} \sum_{j=0}^{W-J} I(i,j) \cdot W(i,j)
 $$
 
 其中，$I$ 是输入特征图，$W$ 是卷积核（滤波器），$S$ 是步长，$P$ 是填充长度。
@@ -57,7 +57,7 @@ $$
 池化操作通常采用最大池化或平均池化。以最大池化为例：
 
 $$
-\\text{Pool}(I, K, S) = \\max_{i,j} \\sum_{k=0}^{K/2} \\sum_{l=0}^{K/2} I(i \\cdot S, j \\cdot S + k, l \\cdot S + k)
+\text{Pool}(I, K, S) = \max_{i,j} \sum_{k=0}^{K/2} \sum_{l=0}^{K/2} I(i \cdot S, j \cdot S + k, l \cdot S + k)
 $$
 
 其中，$I$ 是输入特征图，$K$ 是池化窗口大小，$S$ 是步长。
@@ -67,7 +67,7 @@ $$
 常用的激活函数有ReLU、Leaky ReLU、Sigmoid和Tanh等。以ReLU为例：
 
 $$
-\\text{ReLU}(x) = \\max(0, x)
+\text{ReLU}(x) = \max(0, x)
 $$
 
 #### 反向传播算法
@@ -109,19 +109,19 @@ $$
 #### 卷积层
 
 $$
-\\text{Output} = \\sum_{k=1}^{K} \\sum_{i=1}^{H} \\sum_{j=1}^{W} \\text{Input}(i, j) \\cdot \\text{Filter}(k, i, j)
+\text{Output} = \sum_{k=1}^{K} \sum_{i=1}^{H} \sum_{j=1}^{W} \text{Input}(i, j) \cdot \text{Filter}(k, i, j)
 $$
 
 #### 池化层
 
 $$
-\\text{Pool}(I, K, S) = \\max_{i,j} \\sum_{k=0}^{K/2} \\sum_{l=0}^{K/2} I(i \\cdot S, j \\cdot S + k, l \\cdot S + k)
+\text{Pool}(I, K, S) = \max_{i,j} \sum_{k=0}^{K/2} \sum_{l=0}^{K/2} I(i \cdot S, j \cdot S + k, l \cdot S + k)
 $$
 
 #### 激活函数
 
 $$
-\\text{ReLU}(x) = \\max(0, x)
+\text{ReLU}(x) = \max(0, x)
 $$
 
 ### 4.2 公式推导过程
@@ -131,7 +131,7 @@ $$
 卷积操作本质上是对输入数据和滤波器进行逐点相乘后再求和的过程。对于二维卷积而言：
 
 $$
-\\text{Output}_{ij} = \\sum_{m=0}^{M-1} \\sum_{n=0}^{N-1} \\text{Input}_{(i+m) \\mod H, (j+n) \\mod W} \\cdot \\text{Filter}_{mn}
+\text{Output}_{ij} = \sum_{m=0}^{M-1} \sum_{n=0}^{N-1} \text{Input}_{(i+m) \mod H, (j+n) \mod W} \cdot \text{Filter}_{mn}
 $$
 
 #### 池化公式推导
@@ -139,7 +139,7 @@ $$
 池化操作可以简化为取局部区域的最大值或平均值：
 
 $$
-\\text{Pool}_{ij} = \\max_{k,l} \\sum_{m=0}^{K/2} \\sum_{n=0}^{K/2} \\text{Input}_{(i+m \\cdot S) \\mod H, (j+n \\cdot S) \\mod W}
+\text{Pool}_{ij} = \max_{k,l} \sum_{m=0}^{K/2} \sum_{n=0}^{K/2} \text{Input}_{(i+m \cdot S) \mod H, (j+n \cdot S) \mod W}
 $$
 
 ### 4.3 案例分析与讲解
@@ -225,7 +225,7 @@ convnet.compile_and_train(x_train, y_train, epochs=10)
 
 ```python
 loss, accuracy = convnet.evaluate(x_test, y_test)
-print(f\"Test loss: {loss:.4f}, Test accuracy: {accuracy:.4f}\")
+print(f"Test loss: {loss:.4f}, Test accuracy: {accuracy:.4f}")
 ```
 
 #### 模型预测：

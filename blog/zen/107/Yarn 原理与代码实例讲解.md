@@ -186,14 +186,14 @@ $$
 假设我们有一个4节点的Yarn集群,每个节点的资源如下:
 
 - Node1: 8 CPU, 32GB Memory
-- Node2: 4 CPU, 16GB Memory  
+- Node2: 4 CPU, 16GB Memory
 - Node3: 4 CPU, 16GB Memory
 - Node4: 2 CPU, 8GB Memory
 
 现在有3个应用程序提交到集群:
 
 - Job1: 需求 4 CPU, 8GB Memory
-- Job2: 需求 2 CPU, 4GB Memory  
+- Job2: 需求 2 CPU, 4GB Memory
 - Job3: 需求 6 CPU, 16GB Memory
 
 我们将这3个应用程序分别提交到3个不同的队列Queue1、Queue2和Queue3,资源配额分别为40%、30%和30%。
@@ -210,4 +210,4 @@ $$
 
 - Queue1: $U_1 = \frac{4 \times 8 + 4 \times 32}{0.4 \times (8 \times 8 + 4 \times 16 + 4 \times 16 + 2 \times 8)} = 1$
 - Queue2: $U_2 = \frac{2 \times 4 + 2 \times 16}{0.3 \times (8 \times 8 + 4 \times 16 + 4 \times 16 + 2 \times 8)} = 1$
-- Queue3: $U_3 = \frac{2 \times 2 + 2 \times 8 + 4 \times 4 + 4 \times 16}{0.3 \times (8 \times 8 + 4 \times 16 + 4 \times 16 
+- Queue3: $U_3 = \frac{2 \times 2 + 2 \times 8 + 4 \times 4 + 4 \times 16}{0.3 \times (8 \times 8 + 4 \times 16 + 4 \times 16

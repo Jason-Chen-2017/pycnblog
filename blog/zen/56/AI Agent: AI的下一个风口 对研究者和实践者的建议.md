@@ -3,7 +3,7 @@
 ## 1. 背景介绍
 ### 1.1 人工智能的发展历程
 #### 1.1.1 早期人工智能
-#### 1.1.2 专家系统时代 
+#### 1.1.2 专家系统时代
 #### 1.1.3 机器学习崛起
 ### 1.2 当前人工智能的现状
 #### 1.2.1 深度学习的突破
@@ -44,7 +44,7 @@ D --> A
 #### 3.1.3 规则执行
 ### 3.2 基于机器学习的AI Agent
 #### 3.2.1 监督学习
-#### 3.2.2 无监督学习  
+#### 3.2.2 无监督学习
 #### 3.2.3 强化学习
 ### 3.3 基于深度学习的AI Agent
 #### 3.3.1 卷积神经网络
@@ -57,7 +57,7 @@ D --> A
 MDP可以用一个五元组 $(S, A, P, R, \gamma)$ 来表示：
 
 - $S$: 状态集合
-- $A$: 动作集合  
+- $A$: 动作集合
 - $P$: 状态转移概率矩阵，$P(s'|s,a)$表示在状态$s$下执行动作$a$后转移到状态$s'$的概率
 - $R$: 奖励函数，$R(s,a)$表示在状态$s$下执行动作$a$获得的即时奖励
 - $\gamma$: 折扣因子，$\gamma \in [0,1]$，表示未来奖励的折扣程度
@@ -96,7 +96,7 @@ class GridWorld:
         self.start = start
         self.goal = goal
         self.obstacles = obstacles
-        
+
     def step(self, state, action):
         # 根据当前状态和动作，返回下一个状态和奖励
         next_state = tuple(map(sum, zip(state, action)))
@@ -107,7 +107,7 @@ class GridWorld:
         else:
             reward = 0
         return next_state, reward
-    
+
     def get_actions(self, state):
         # 返回当前状态下可用的动作
         actions = []

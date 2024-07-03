@@ -114,7 +114,7 @@ $$
 我们可以使用以下公式来表示单词$t_i$在文档集合$\mathbb{D}$中的出现情况：
 
 $$
-f(t_i, d_j) = \begin{cases} 
+f(t_i, d_j) = \begin{cases}
 1, & \text{if } t_i \text{ appears in } d_j \\
 0, & \text{otherwise}
 \end{cases}

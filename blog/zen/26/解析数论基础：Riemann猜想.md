@@ -6,7 +6,7 @@
 
 Riemann猜想，全名为黎曼猜想，是数学领域中最著名的未解难题之一，由德国数学家高斯在1859年提出的。该猜想主要关注的是黎曼ζ函数在复平面上的零点分布。黎曼ζ函数，记作ζ(s)，是一个从复数到复数的函数，定义为当实部大于1时的无穷级数：
 
-$$\\zeta(s) = \\sum_{n=1}^{\\infty} \\frac{1}{n^s}$$
+$$\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}$$
 
 黎曼猜想指出，对于ζ函数在非平凡零点（即s ≠ 1且Re(s) < 0）上的零点，所有的实部都等于1/2。这个猜想的重要性在于它与素数分布理论密切相关，若证明正确，将极大地推进我们对素数分布规律的理解。
 
@@ -67,9 +67,9 @@ Riemann猜想虽然目前没有直接的应用，但其研究对数学和理论�
 
 Riemann猜想可以通过以下数学模型构建来表述：
 
-$$\\zeta(s) = \\prod_{p \\text{ prime}} \\frac{1}{1-p^{-s}}$$
+$$\zeta(s) = \prod_{p \text{ prime}} \frac{1}{1-p^{-s}}$$
 
-这里，\\( p \\) 表示所有素数。
+这里，\( p \) 表示所有素数。
 
 ### 4.2 公式推导过程
 
@@ -87,7 +87,7 @@ $$\\zeta(s) = \\prod_{p \\text{ prime}} \\frac{1}{1-p^{-s}}$$
 
 - **为什么Riemann猜想如此困难？**
   主要原因在于ζ函数在复平面上的复杂行为和非平凡零点的分布规律尚未完全明了。
-  
+
 - **如何验证非平凡零点的实部为1/2？**
   通常通过数值计算和理论分析来寻找证据，但缺乏严格的证明方法。
 
@@ -104,14 +104,14 @@ $$\\zeta(s) = \\prod_{p \\text{ prime}} \\frac{1}{1-p^{-s}}$$
 import sympy as sp
 
 def riemann_zeta(s):
-    \"\"\"计算黎曼ζ函数的值\"\"\"
+    """计算黎曼ζ函数的值"""
     # 采用sympy库中的Riemann zeta函数
     return sp.zeta(s)
 
 # 示例：计算ζ(1/2)
 s_value = 0.5
 result = riemann_zeta(s_value)
-print(f\"The value of ζ({s_value}) is {result}\")
+print(f"The value of ζ({s_value}) is {result}")
 ```
 
 ### 5.3 代码解读与分析

@@ -24,11 +24,9 @@
 
 优化器的主要目标是在损失函数的梯度指引下，找到一组参数值，使得损失函数最小。在机器学习模型的训练过程中，优化器根据损失函数的梯度来调整参数。这个过程可以被描述为：
 
-$$ \\theta_{t+1} = \\theta_t - \\eta \\cdot \
-abla J(\\theta_t) $$
+$$ \\theta_{t+1} = \\theta_t - \\eta \\cdot \nabla J(\\theta_t) $$
 
-其中，$\\theta$ 表示参数，$\\eta$ 是学习率，$\
-abla J(\\theta_t)$ 是损失函数关于参数的梯度。
+其中，$\\theta$ 表示参数，$\\eta$ 是学习率，$\nabla J(\\theta_t)$ 是损失函数关于参数的梯度。
 
 ### 2.2 关键联系
 
@@ -51,15 +49,12 @@ abla J(\\theta_t)$ 是损失函数关于参数的梯度。
 #### Adam算法步骤：
 
 1. 初始化学习率$\\eta$、动量参数$m$和平均梯度$\\tilde{v}$，通常设置$m=0$和$\\tilde{v}=0$。
-2. 计算梯度$\
-abla J(\\theta)$。
+2. 计算梯度$\nabla J(\\theta)$。
 3. 更新$m$和$\\tilde{v}$：
 
-   $$ m_t = \\beta_1 \\cdot m_{t-1} + (1 - \\beta_1) \\cdot \
-abla J(\\theta_t) $$
+   $$ m_t = \\beta_1 \\cdot m_{t-1} + (1 - \\beta_1) \\cdot \nabla J(\\theta_t) $$
    
-   $$ \\tilde{v}_t = \\beta_2 \\cdot \\tilde{v}_{t-1} + (1 - \\beta_2) \\cdot (\
-abla J(\\theta_t))^2 $$
+   $$ \\tilde{v}_t = \\beta_2 \\cdot \\tilde{v}_{t-1} + (1 - \\beta_2) \\cdot (\nabla J(\\theta_t))^2 $$
 
 4. 计算修正后的$m$和$\\tilde{v}$：
 
@@ -86,15 +81,13 @@ abla J(\\theta_t))^2 $$
 
 ### 4.1 数学模型构建
 
-假设我们有一个简单的神经网络模型，通过反向传播算法计算损失函数$L$关于参数$\\theta$的梯度$\
-abla L(\\theta)$。优化器的目标是找到$\\theta$的更新步骤，使得$L(\\theta')$尽可能小，其中$\\theta'$是$\\theta$的下一个值。
+假设我们有一个简单的神经网络模型，通过反向传播算法计算损失函数$L$关于参数$\\theta$的梯度$\nabla L(\\theta)$。优化器的目标是找到$\\theta$的更新步骤，使得$L(\\theta')$尽可能小，其中$\\theta'$是$\\theta$的下一个值。
 
 ### 4.2 公式推导过程
 
 以**SGD**为例，其基本公式是：
 
-$$ \\theta_{t+1} = \\theta_t - \\eta \\cdot \
-abla L(\\theta_t) $$
+$$ \\theta_{t+1} = \\theta_t - \\eta \\cdot \nabla L(\\theta_t) $$
 
 ### 4.3 案例分析与讲解
 

@@ -89,7 +89,7 @@ Scikit-learn在以下领域具有广泛的应用：
 
 - **逻辑回归**：
 
-$$P(y=1 | x) = \\frac{1}{1 + \\exp(-\\beta^T x)}$$
+$$P(y=1 | x) = \frac{1}{1 + \exp(-\beta^T x)}$$
 
 - **决策树**：
 
@@ -105,13 +105,13 @@ K均值聚类将数据集划分为K个簇，每个簇由其质心代表。
 
 1. **损失函数**：均方误差损失函数：
 
-$$L(\\theta) = \\frac{1}{m} \\sum_{i=1}^{m} (h_\\theta(x^{(i)}) - y^{(i)})^2$$
+$$L(\theta) = \frac{1}{m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2$$
 
 2. **梯度下降**：
 
-$$\\theta_{\\text{new}} = \\theta_{\\text{old}} - \\alpha \\frac{\\partial L(\\theta)}{\\partial \\theta}$$
+$$\theta_{\text{new}} = \theta_{\text{old}} - \alpha \frac{\partial L(\theta)}{\partial \theta}$$
 
-通过迭代优化，最终得到最小损失函数的参数$\\theta$。
+通过迭代优化，最终得到最小损失函数的参数$\theta$。
 
 ### 4.3 案例分析与讲解
 

@@ -59,7 +59,7 @@
 
 ### 4.1 边界框回归
 #### 4.1.1 边界框参数化
-$$ 
+$$
 t_x = (x - c_x) / w \\
 t_y = (y - c_y) / h \\
 t_w = \log(w / p_w) \\
@@ -116,17 +116,17 @@ for epoch in range(num_epochs):
     for images, targets in train_loader:
         images = images.to(device)
         targets = targets.to(device)
-        
+
         # 前向传播
         loss = model(images, targets)
-        
+
         # 反向传播和优化
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-    
+
     scheduler.step()
-    
+
     # 评估模型性能
     model.eval()
     # ...

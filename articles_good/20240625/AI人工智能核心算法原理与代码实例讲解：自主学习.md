@@ -180,8 +180,7 @@ $$
 设 $f(x)$ 为激活函数，则损失函数 $L$ 对权重矩阵 $W$ 的梯度为：
 
 $$
-\
-abla_W L = \frac{\partial L}{\partial W} = \frac{\partial L}{\partial y} \cdot \frac{\partial y}{\partial W}
+\nabla_W L = \frac{\partial L}{\partial W} = \frac{\partial L}{\partial y} \cdot \frac{\partial y}{\partial W}
 $$
 
 其中，$\frac{\partial L}{\partial y}$ 为损失函数对输出的梯度，$\frac{\partial y}{\partial W}$ 为输出对权重矩阵的梯度。

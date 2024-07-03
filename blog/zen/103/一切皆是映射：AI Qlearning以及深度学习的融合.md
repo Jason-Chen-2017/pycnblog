@@ -215,7 +215,7 @@ A3：学习率和折扣因子需要根据具体任务和数据特点进行调整
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 

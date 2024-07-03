@@ -688,7 +688,7 @@ $$
 
 建议使用虚拟环境管理项目依赖，例如：
 
-* **conda:** 
+* **conda:**
 
 ```bash
 conda create -n myenv python=3.8

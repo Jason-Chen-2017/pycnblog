@@ -1,7 +1,7 @@
 
 # 召回率Recall原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 关键词：召回率，机器学习，分类，信息检索，精准率，F1分数，指标评估，实践案例
 

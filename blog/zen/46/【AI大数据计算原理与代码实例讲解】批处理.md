@@ -1,7 +1,7 @@
 
 # 【AI大数据计算原理与代码实例讲解】批处理
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -107,7 +107,7 @@
 批处理的核心数学模型可以概括为以下公式：
 
 $$
- \text{批处理} = \text{数据输入} \rightarrow \text{数据处理} \rightarrow \text{结果输出} 
+ \text{批处理} = \text{数据输入} \rightarrow \text{数据处理} \rightarrow \text{结果输出}
 $$
 
 其中，数据输入、数据处理和结果输出分别对应批处理过程中的三个环节。
@@ -164,14 +164,14 @@ import pandas as pd
 def process_data(data_path, output_path):
     # 读取数据
     data = pd.read_csv(data_path)
-    
+
     # 数据清洗
     data.drop_duplicates(inplace=True)
     data.dropna(inplace=True)
-    
+
     # 数据转换
     data['timestamp'] = pd.to_datetime(data['timestamp'])
-    
+
     # 结果输出
     data.to_csv(output_path, index=False)
 

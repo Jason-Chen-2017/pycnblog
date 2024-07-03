@@ -88,13 +88,11 @@ $$
 根据判别器的预测结果，更新生成器和判别器参数。
 
 $$
-\theta_G = \theta_G + \alpha \cdot \
-abla_G D(x; \theta_G)
+\theta_G = \theta_G + \alpha \cdot \nabla_G D(x; \theta_G)
 $$
 
 $$
-\theta_D = \theta_D + \alpha \cdot \
-abla_D D(x; \theta_D)
+\theta_D = \theta_D + \alpha \cdot \nabla_D D(x; \theta_D)
 $$
 
 其中，$\theta_G$和$\theta_D$分别为生成器和判别器参数，$\alpha$为学习率。

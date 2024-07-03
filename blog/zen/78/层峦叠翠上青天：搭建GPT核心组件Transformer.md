@@ -179,15 +179,15 @@ class Transformer(nn.Module):
         # Embedding and positional encoding
         src = self.embedding(src) * math.sqrt(d_model)
         src = self.pos_encoder(src)
-        
+
         # Encoder
         src = self.encoder(src)
-        
+
         # Decoder
         trg = self.embedding(trg) * math.sqrt(d_model)
         trg = self.pos_encoder(trg)
         trg = self.decoder(trg, src)
-        
+
         # Final linear layer
         output = self.fc(trg)
         return output

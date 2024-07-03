@@ -178,13 +178,13 @@ import networkx as nx
 def pagerank(graph, damping=0.85, max_iter=100, tol=1e-6):
     """
     计算调用图的PageRank值。
-    
+
     Args:
         graph: 调用图，NetworkX图对象。
         damping: 阻尼系数。
         max_iter: 最大迭代次数。
         tol: 收敛阈值。
-    
+
     Returns:
         p: PageRank值，字典类型，键为网页名称，值为PageRank值。
     """

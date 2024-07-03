@@ -226,7 +226,7 @@ class Agent(nn.Module):
     def __init__(self):
         super(Agent, self).__init__()
         self.fc = nn.Linear(1, 2)
-    
+
     def forward(self, state):
         x = torch.tensor(state, dtype=torch.float32).view(1, 1)
         output = self.fc(x)
@@ -259,7 +259,7 @@ def train_agent(model, state_space, action_space, max_epochs=100):
             loss.backward()
             optimizer.step()
             state = torch.tensor(next_state, dtype=torch.float32).view(1, 1)
-            
+
             if timeout_check(state, start_time, 10):  # 设置超时时间为10秒
                 print("Timeout, resetting agent...")
                 state = reset_agent(state)

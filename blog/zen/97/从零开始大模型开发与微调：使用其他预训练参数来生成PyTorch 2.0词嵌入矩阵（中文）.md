@@ -184,7 +184,7 @@ class EmbeddingModel(nn.Module):
         super(EmbeddingModel, self).__init__()
         self.embedding = nn.Embedding(vocab_size, embedding_dim)
         self.fc = nn.Linear(embedding_dim, embedding_dim)
-    
+
     def forward(self, input_ids):
         x = self.embedding(input_ids)
         x = self.fc(x)

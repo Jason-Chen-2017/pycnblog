@@ -5,7 +5,7 @@
 #### 1.1.1 Transformer的诞生
 2017年，Google提出了Transformer模型，开启了NLP领域的新纪元。Transformer采用了自注意力机制和全连接前馈网络，摒弃了传统的RNN和CNN结构，大大提升了并行计算能力和长距离依赖建模能力。
 
-#### 1.1.2 BERT模型的崛起 
+#### 1.1.2 BERT模型的崛起
 2018年，基于Transformer的BERT(Bidirectional Encoder Representations from Transformers)模型横空出世。BERT采用了双向Transformer编码器结构，并引入了MLM和NSP预训练任务，在多个NLP任务上取得了SOTA效果，掀起了预训练语言模型的热潮。
 
 #### 1.1.3 模型压缩与知识蒸馏
@@ -54,7 +54,7 @@ TinyBERT的训练分为两个阶段：通用蒸馏和任务蒸馏。在通用蒸
 #### 3.2.3 损失函数与优化
 通用蒸馏的损失函数为Transformer蒸馏各层损失的加权和。采用AdamW优化器对学生模型进行训练，并使用线性学习率调度。
 
-### 3.3 任务蒸馏阶段 
+### 3.3 任务蒸馏阶段
 #### 3.3.1 数据选择与增强
 任务蒸馏在下游任务的训练集上进行。同样可以采用数据增强策略。
 
@@ -105,33 +105,33 @@ class TinyBERT(nn.Module):
     def __init__(self, num_layers, hidden_size, num_heads, intermediate_size):
         super().__init__()
         # 学生模型的Embedding层
-        self.embeddings = BertEmbeddings(hidden_size) 
+        self.embeddings = BertEmbeddings(hidden_size)
         # 学生模型的Transformer编码器层
         self.encoder = nn.ModuleList([TransformerBlock(hidden_size, num_heads, intermediate_size) for _ in range(num_layers)])
-    
+
     def forward(self, input_ids, attention_mask):
         # Embedding层前向传播
         embedding_output = self.embeddings(input_ids)
         # 记录各层的输出，用于计算蒸馏损失
         all_encoder_outputs = []
         all_attention_outputs = []
-        
+
         hidden_states = embedding_output
         for layer in self.encoder:
             # Transformer编码器层前向传播
             hidden_states, attention_output = layer(hidden_states, attention_mask)
             all_encoder_outputs.append(hidden_states)
             all_attention_outputs.append(attention_output)
-        
+
         return all_encoder_outputs, all_attention_outputs
-    
+
 def transformer_distill_loss(student_outputs, teacher_outputs, alpha, beta, gamma):
     # 计算Transformer蒸馏损失
     loss = 0
     num_layers = len(student_outputs)
     for i in range(num_layers):
         emb_loss = torch.mean((student_outputs[i] - teacher_outputs[i])**2)
-        attn_loss = torch.sum(torch.distributions.kl_divergence(student_attn[i], teacher_attn[i]))   
+        attn_loss = torch.sum(torch.distributions.kl_divergence(student_attn[i], teacher_attn[i]))
         hidn_loss = torch.mean((student_hidn[i] - teacher_hidn[i])**2)
         loss += alpha*emb_loss + beta*attn_loss + gamma*hidn_loss
     return loss
@@ -140,25 +140,25 @@ def train_step(teacher_model, student_model, dataloader, optimizer, alpha, beta,
     # 训练一个Epoch
     for batch in dataloader:
         input_ids, attention_mask, labels = batch
-        
+
         with torch.no_grad():
             # 教师模型前向传播
             teacher_outputs, teacher_attn = teacher_model(input_ids, attention_mask)
-        
+
         # 学生模型前向传播
         student_outputs, student_attn = student_model(input_ids, attention_mask)
-        
+
         # 计算MLM/任务损失
         pred_loss = compute_pred_loss(student_outputs[-1], labels)
-        
+
         # 计算Transformer蒸馏损失
-        distill_loss = transformer_distill_loss(student_outputs, teacher_outputs, 
-                                                student_attn, teacher_attn, 
+        distill_loss = transformer_distill_loss(student_outputs, teacher_outputs,
+                                                student_attn, teacher_attn,
                                                 alpha, beta, gamma)
-        
+
         # 总损失
         loss = lambda_*distill_loss + pred_loss
-        
+
         # 反向传播和优化
         optimizer.zero_grad()
         loss.backward()

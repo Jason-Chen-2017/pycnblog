@@ -283,4 +283,4 @@ while True:
 * **如何选择合适的实时监控系统?**  需要根据实际应用场景和需求选择合适的实时监控系统。
 * **如何搭建实时监控系统?**  需要选择合适的硬件平台、操作系统、编程语言和开发工具，并进行系统设计和开发。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

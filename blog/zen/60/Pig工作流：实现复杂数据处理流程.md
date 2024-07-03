@@ -187,10 +187,10 @@ num_iterations = 10;
 for i in range(1, num_iterations + 1):
     -- 计算每个网页的贡献值
     contributions = FOREACH links GENERATE to AS page, rank/COUNT(links) AS contribution;
-    
+
     -- 聚合贡献值
     grouped_contributions = GROUP contributions BY page;
-    
+
     -- 更新PageRank值
     ranks = FOREACH grouped_contributions GENERATE group AS page, 0.15 + 0.85 * SUM(contributions.contribution) AS rank;
 ```

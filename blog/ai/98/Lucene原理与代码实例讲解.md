@@ -171,7 +171,7 @@ public class LuceneDemo {
         indexWriter.flush();
         // 关闭索引写入器
         indexWriter.close();
-        
+
         // 创建索引搜索器
         IndexSearcher indexSearcher = new IndexSearcher(DirectoryReader.open(directory));
         // 创建查询解析器

@@ -110,9 +110,7 @@ $$G = \\sum_{t=0}^\\infty \\gamma^t R(s_t, a_t, s_{t+1})$$
 
 对$J(\\theta)$求导，得到策略梯度：
 
-$$\
-abla_\\theta J(\\theta) = \\mathbb{E}_{\\pi(\\theta)}[\
-abla_\\theta \\log \\pi(\\theta_s | a) R(s, a, s')]$$
+$$\nabla_\\theta J(\\theta) = \\mathbb{E}_{\\pi(\\theta)}[\nabla_\\theta \\log \\pi(\\theta_s | a) R(s, a, s')]$$
 
 #### 4.2.2 价值函数的更新
 

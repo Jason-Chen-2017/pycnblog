@@ -191,7 +191,7 @@ public class KafkaStreamsExample {
         KStream<String, String> source = builder.stream("source-topic", Consumed.with(Serdes.String(), Serdes.String()));
 
         KTable<Windowed<String>, Integer> wordCounts = source
-                .flatMapValues(value -> Arrays.asList(value.toLowerCase().split("\\s+")))
+                .flatMapValues(value -> Arrays.asList(value.toLowerCase().split("\s+")))
                 .groupByKey()
                 .windowedBy(TimeWindows.of(Duration.ofMinutes(1)))
                 .count();

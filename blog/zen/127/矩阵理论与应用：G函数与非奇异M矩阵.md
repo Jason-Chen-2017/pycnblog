@@ -498,4 +498,4 @@ G-函数在非奇异M-矩阵应用中也面临着一些挑战：
 
 **解答**: 可以通过阅读相关书籍和论文来学习G-函数。推荐书籍《线性代数及其应用》和《矩阵论》，推荐论文《G-函数在非奇异M-矩阵研究中的应用》。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

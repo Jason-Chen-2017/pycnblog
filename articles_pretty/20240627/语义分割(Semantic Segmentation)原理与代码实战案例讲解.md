@@ -118,11 +118,9 @@ $$
 
 - **梯度下降**：
 $$
-\theta := \theta - \eta \cdot \
-abla_\theta J(\theta)
+\theta := \theta - \eta \cdot \nabla_\theta J(\theta)
 $$
-其中，$\theta$ 是参数，$\eta$ 是学习率，$\
-abla_\theta J(\theta)$ 是损失函数关于参数的梯度。
+其中，$\theta$ 是参数，$\eta$ 是学习率，$\nabla_\theta J(\theta)$ 是损失函数关于参数的梯度。
 
 ### 4.2 公式推导过程
 
@@ -136,8 +134,7 @@ $$
 
 #### 参数更新过程
 
-- 使用梯度下降法最小化损失函数，$\
-abla_\theta J(\theta)$ 是损失函数关于参数$\theta$的偏导数。学习率$\eta$控制了参数更新的速度。
+- 使用梯度下降法最小化损失函数，$\nabla_\theta J(\theta)$ 是损失函数关于参数$\theta$的偏导数。学习率$\eta$控制了参数更新的速度。
 
 ### 4.3 案例分析与讲解
 

@@ -90,12 +90,9 @@ u}$是爱因斯坦张量，$\\kappa$是比例常数，$T_{\\mu\
 u}$是能量-动量张量。
 
 #### Killing视界模型
-- **Killing矢量场**：$\\xi^\\mu$满足$\
-abla_\
-u\\xi^\\mu+\
-abla_\\mu\\xi^\
-u=0$，其中$\
-abla$是拉普拉斯-贝尔特拉米算符。
+- **Killing矢量场**：$\\xi^\\mu$满足$\nabla_\
+u\\xi^\\mu+\nabla_\\mu\\xi^\
+u=0$，其中$\nabla$是拉普拉斯-贝尔特拉米算符。
 
 ### 公式推导过程
 

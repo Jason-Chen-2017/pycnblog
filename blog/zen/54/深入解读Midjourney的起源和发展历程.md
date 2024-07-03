@@ -157,7 +157,7 @@ class Generator(nn.Module):
         img = img.view(img.size(0), *self.img_shape)
         return img
 
-# 判别器  
+# 判别器
 class Discriminator(nn.Module):
     def __init__(self, img_shape):
         super().__init__()

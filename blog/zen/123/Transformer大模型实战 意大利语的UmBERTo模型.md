@@ -270,4 +270,4 @@ UmBERTo 模型面临的挑战包括：
 
 **解答:** UmBERTo 模型的未来发展方向包括模型规模扩大、多任务学习、模型压缩等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

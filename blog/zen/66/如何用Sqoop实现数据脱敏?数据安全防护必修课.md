@@ -84,7 +84,7 @@ sqoop import \
   --table users \
   --target-dir /user/hive/warehouse/users \
   --fields-terminated-by ',' \
-  --escaped-by '\\' \
+  --escaped-by '\' \
   --columns "id,name,email,phone" \
   --map-column-java name=String,email=String,phone=String \
   --map-column-hive name=STRING,email=STRING,phone=STRING \
@@ -106,7 +106,7 @@ sqoop export \
   --table users \
   --export-dir /user/hive/warehouse/users \
   --input-fields-terminated-by ',' \
-  --input-escaped-by '\\' \
+  --input-escaped-by '\' \
   --columns "id,name,email,phone" \
   --map-column-java name=String,email=String,phone=String \
   --map-column-hive name=STRING,email=STRING,phone=STRING \

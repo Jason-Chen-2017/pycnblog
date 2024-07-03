@@ -184,4 +184,4 @@ class MySpider(scrapy.Spider):
 ### 9.2. 如何处理动态网页？
 
 * 使用Selenium等工具模拟浏览器行为，执行JavaScript代码并获取动态内容。
-* 使用headless浏览器，例如PhantomJS，在后台执行JavaScript代码并获取网页内容。 
+* 使用headless浏览器，例如PhantomJS，在后台执行JavaScript代码并获取网页内容。

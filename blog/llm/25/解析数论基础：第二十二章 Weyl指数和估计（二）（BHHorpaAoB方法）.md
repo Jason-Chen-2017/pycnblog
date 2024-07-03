@@ -22,7 +22,7 @@ Weyl指数估计的研究对于理解多维空间中点的均匀分布特性至�
 
 Weyl指数估计主要关注的是多维空间中均匀分布点集的均匀性度量。在数学上，可以通过以下方式定义：
 
-设$\\mathbb{Z}^n$是$n$维整数向量的集合，$\\Lambda$是$\\mathbb{Z}^n$的一个离散格，即$\\Lambda=\\{a_1\\mathbb{Z}\\times\\cdots\\times a_n\\mathbb{Z}:a_i\\in\\mathbb{Z}\\}$，其中$a_i$是格向量。Weyl指数$M(\\Lambda)$定义为$\\Lambda$中与原点距离不超过$r$的所有点的数量，即$M(\\Lambda)=|\\Lambda\\cap[-r,r]^n|$。
+设$\mathbb{Z}^n$是$n$维整数向量的集合，$\Lambda$是$\mathbb{Z}^n$的一个离散格，即$\Lambda=\{a_1\mathbb{Z}\times\cdots\times a_n\mathbb{Z}:a_i\in\mathbb{Z}\}$，其中$a_i$是格向量。Weyl指数$M(\Lambda)$定义为$\Lambda$中与原点距离不超过$r$的所有点的数量，即$M(\Lambda)=|\Lambda\cap[-r,r]^n|$。
 
 ### 关联概念：
 
@@ -69,22 +69,22 @@ BHHorpaAoB方法基于离散格的概念，通过构建一个特定的离散格�
 
 ### 4.1 数学模型构建
 
-考虑一个多维空间$\\mathbb{R}^n$，其中$\\Lambda$是$\\mathbb{Z}^n$的一个离散格。构建一个离散格$\\Lambda$的一般步骤如下：
+考虑一个多维空间$\mathbb{R}^n$，其中$\Lambda$是$\mathbb{Z}^n$的一个离散格。构建一个离散格$\Lambda$的一般步骤如下：
 
-1. **选择基向量**：$\\{\\mathbf{v}_1, \\mathbf{v}_2, ..., \\mathbf{v}_n\\}$，其中$\\mathbf{v}_i \\in \\mathbb{R}^n$且$\\mathbf{v}_i$为非零向量。
-2. **生成格**：$\\Lambda = \\{\\mathbf{a}_1\\mathbf{v}_1 + \\mathbf{a}_2\\mathbf{v}_2 + ... + \\mathbf{a}_n\\mathbf{v}_n : \\mathbf{a}_i \\in \\mathbb{Z}\\}$。
+1. **选择基向量**：$\{\mathbf{v}_1, \mathbf{v}_2, ..., \mathbf{v}_n\}$，其中$\mathbf{v}_i \in \mathbb{R}^n$且$\mathbf{v}_i$为非零向量。
+2. **生成格**：$\Lambda = \{\mathbf{a}_1\mathbf{v}_1 + \mathbf{a}_2\mathbf{v}_2 + ... + \mathbf{a}_n\mathbf{v}_n : \mathbf{a}_i \in \mathbb{Z}\}$。
 
 ### 4.2 公式推导过程
 
-Weyl指数$M(\\Lambda)$的计算通常涉及到计算格$\\Lambda$中所有与原点距离不超过$r$的点的数量。具体而言，可以使用以下公式：
+Weyl指数$M(\Lambda)$的计算通常涉及到计算格$\Lambda$中所有与原点距离不超过$r$的点的数量。具体而言，可以使用以下公式：
 
-$$M(\\Lambda) = \\left|\\Lambda \\cap [-r,r]^n\\right|$$
+$$M(\Lambda) = \left|\Lambda \cap [-r,r]^n\right|$$
 
 其中$[-r,r]^n$表示$n$维空间中所有坐标都在$[-r, r]$区间内的点的集合。
 
 ### 4.3 案例分析与讲解
 
-假设我们想要估计一个二维空间中由基向量$\\mathbf{v}_1 = (1, 0)$和$\\mathbf{v}_2 = (\\frac{1}{2}, \\frac{\\sqrt{3}}{2})$生成的离散格的Weyl指数，当$r = 1$时。首先，构造格$\\Lambda$，然后计算$\\Lambda$中所有与原点距离不超过$1$的点的数量。
+假设我们想要估计一个二维空间中由基向量$\mathbf{v}_1 = (1, 0)$和$\mathbf{v}_2 = (\frac{1}{2}, \frac{\sqrt{3}}{2})$生成的离散格的Weyl指数，当$r = 1$时。首先，构造格$\Lambda$，然后计算$\Lambda$中所有与原点距离不超过$1$的点的数量。
 
 ### 4.4 常见问题解答
 
@@ -111,17 +111,17 @@ import numpy as np
 def weyl_index_estimate(vectors, r):
     # 将基向量转换为矩阵形式
     matrix = np.array([vector for vector in vectors])
-    
+
     # 计算格的边界框大小
     box_size = np.linalg.norm(matrix[:, :, np.newaxis] * np.array([r, r]), axis=0)
-    
+
     # 计算格的范围
     range_matrix = np.array([[min, max] for min, max in zip(-box_size, box_size)])
-    
+
     # 计算格内的点数量（此处简化，实际应用中需详细计算）
     points_count = len(np.where(np.all((range_matrix[:, 0] <= np.abs(matrix)[:, :, np.newaxis]) &
                                        (np.abs(matrix)[:, :, np.newaxis] < range_matrix[:, 1]), axis=0))[0])
-    
+
     return points_count
 
 # 示例基向量和r值
@@ -130,7 +130,7 @@ r = 1
 
 # 计算Weyl指数估计
 estimated_weyl_index = weyl_index_estimate(vectors, r)
-print(f\"Weyl Index Estimate: {estimated_weyl_index}\")
+print(f"Weyl Index Estimate: {estimated_weyl_index}")
 ```
 
 ### 5.3 代码解读与分析

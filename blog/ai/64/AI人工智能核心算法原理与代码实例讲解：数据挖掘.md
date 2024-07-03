@@ -230,7 +230,7 @@ A：评估模型性能的方法包括：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n datamining-env python=3.8 
+conda create -n datamining-env python=3.8
 conda activate datamining-env
 ```
 

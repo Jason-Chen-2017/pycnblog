@@ -124,8 +124,7 @@
 - **客户端设备 $i$ 的本地训练**：
 
   $$
-\theta_i^t = \theta_i^{t-1} + \alpha_i \
-abla_{\theta_i} f(\theta_i^{t-1},D_i)
+\theta_i^t = \theta_i^{t-1} + \alpha_i \nabla_{\theta_i} f(\theta_i^{t-1},D_i)
 $$
 
   其中，$\alpha_i$ 为学习率，$f(\theta_i^{t-1},D_i)$ 为客户端设备 $i$ 使用本地数据集 $D_i$ 和全局模型参数 $\theta_i^{t-1}$ 训练得到的模型。

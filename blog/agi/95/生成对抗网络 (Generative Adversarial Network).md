@@ -221,7 +221,7 @@ A2：解决GAN训练不稳定问题的方法有以下几点：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n gan-env python=3.8 
+conda create -n gan-env python=3.8
 conda activate gan-env
 ```
 

@@ -179,7 +179,7 @@ class FluidDynamicsModel(nn.Module):
         self.conv1 = nn.Conv2d(1, 32, kernel_size=3, stride=1, padding=1)
         self.relu = nn.ReLU()
         self.conv2 = nn.Conv2d(32, 1, kernel_size=3, stride=1, padding=1)
-    
+
     def forward(self, x):
         x = self.conv1(x)
         x = self.relu(x)

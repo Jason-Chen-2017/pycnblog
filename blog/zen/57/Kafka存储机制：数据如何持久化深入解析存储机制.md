@@ -18,7 +18,7 @@ Kafka集群由多个Broker(服务实例)组成,每个Broker可以存储部分或
 
 为了容错,Kafka采用了Replication机制,每个Partition都有多个副本,其中一个作为Leader,其他作为Follower。所有的生产和消费操作都是通过Leader进行的。
 
-## 3.核心算法原理具体操作步骤  
+## 3.核心算法原理具体操作步骤
 
 ### 3.1 写入流程
 

@@ -1,7 +1,7 @@
 
 # Transformer大模型实战：VideoBERT模型和BART模型
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -189,7 +189,7 @@ A：对于视频-文本交互任务，可以使用BLEU、METEOR等评价指标�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n videobert-bart-env python=3.8 
+conda create -n videobert-bart-env python=3.8
 conda activate videobert-bart-env
 ```
 

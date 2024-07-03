@@ -144,7 +144,7 @@ $$
 ```scala
 val lines = KafkaUtils.createStream(ssc, "kafka-broker:2181", "spark-streaming", Map("topic" -> "clicks"))
 val windowedLines = lines.window(Seconds(300), Seconds(60))
-val clickCounts = windowedLines.flatMap(_.split(" ")) 
+val clickCounts = windowedLines.flatMap(_.split(" "))
   .map(word => (word, 1))
   .reduceByKey(_ + _)
 ```

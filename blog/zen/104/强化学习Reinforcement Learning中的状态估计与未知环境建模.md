@@ -1,7 +1,7 @@
 
 # 强化学习Reinforcement Learning中的状态估计与未知环境建模
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 ### 1.1 问题的由来
@@ -224,7 +224,7 @@ A：DQN算法可以采用重要性采样等技术，提高稀疏奖励情况下�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n dqn-env python=3.8 
+conda create -n dqn-env python=3.8
 conda activate dqn-env
 ```
 

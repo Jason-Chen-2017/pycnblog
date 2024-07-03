@@ -136,12 +136,12 @@ for i in range(max_iter):
     x_new = [np.random.choice(cities) for _ in range(5)]
     energy_new = tsp(x_new)
     delta_energy = energy_new - tsp(initial_x)
-    
+
     if delta_energy < 0 or np.exp(-delta_energy / T) > np.random.rand():
         initial_x = x_new
         best_x = x_new
         best_energy = energy_new
-    
+
     T *= alpha
 
 print("最佳路径：", best_x)
@@ -193,12 +193,12 @@ for i in range(max_iter):
     x_new = [np.random.choice(cities) for _ in range(5)]
     energy_new = tsp(x_new)
     delta_energy = energy_new - tsp(initial_x)
-    
+
     if delta_energy < 0 or np.exp(-delta_energy / T) > np.random.rand():
         initial_x = x_new
         best_x = x_new
         best_energy = energy_new
-    
+
     T *= alpha
 
 print("最佳路径：", best_x)

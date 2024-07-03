@@ -18,7 +18,7 @@ RDD全称为Resilient Distributed Dataset,即弹性分布式数据集。它是Sp
 
 ### 2.2 RDD的特性
 - Immutable:一旦创建,RDD就不能修改,这可以防止数据的不一致。
-- Partitioned:RDD中的数据被分成多个partition,分布在集群的不同节点上,便于并行计算。 
+- Partitioned:RDD中的数据被分成多个partition,分布在集群的不同节点上,便于并行计算。
 - Resilient:RDD通过血统(lineage)记录数据的变化过程,可以自动容错、恢复丢失的partition。
 - In-Memory:RDD支持数据的内存存储和计算,大大提升了迭代计算的效率。
 
@@ -44,7 +44,7 @@ Spark提供了RDD的持久化机制,可以将RDD的数据缓存到内存或磁�
 - reduceByKey:使用指定的reduce函数合并具有相同key的值
 - join:对两个RDD执行内连接
 
-### 3.3 RDD的行动操作  
+### 3.3 RDD的行动操作
 常用的RDD行动操作包括:
 - collect:返回RDD中的所有元素
 - count:返回RDD中元素的个数
@@ -82,7 +82,7 @@ $$Dependency_{wide}(RDD_p,RDD_c) = \{(P_i,C_j)|P_i \in RDD_p, C_j \in RDD_c, C_j
 val conf = new SparkConf().setAppName("WordCount")
 val sc = new SparkContext(conf)
 
-// 读取文本文件,创建初始RDD 
+// 读取文本文件,创建初始RDD
 val textRDD = sc.textFile("input.txt")
 
 // 对每一行文本进行分词,转换成(word, 1)的二元组RDD

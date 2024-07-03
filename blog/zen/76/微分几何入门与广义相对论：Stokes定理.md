@@ -40,10 +40,8 @@ Stokes定理不仅在纯数学领域内是证明几何和拓扑性质的重要�
 ### Stokes定理
 
 - **定理表述**：对于具有连续偏导数的矢量场$\mathbf{F}$在有向闭合曲面$S$上的积分等于该矢量场沿边界曲线$\partial S$上的线积分。
-$$\int_S (\
-abla \times \mathbf{F}) \cdot d\mathbf{S} = \oint_{\partial S} \mathbf{F} \cdot d\mathbf{r}$$
-其中$\
-abla \times \mathbf{F}$是矢量场$\mathbf{F}$的旋度。
+$$\int_S (\nabla \times \mathbf{F}) \cdot d\mathbf{S} = \oint_{\partial S} \mathbf{F} \cdot d\mathbf{r}$$
+其中$\nabla \times \mathbf{F}$是矢量场$\mathbf{F}$的旋度。
 
 ### 广义相对论中的应用
 
@@ -59,10 +57,8 @@ Stokes定理通过将空间中的局部性质（即矢量场在曲面上的旋�
 
 1. **确定矢量场**：选择一个合适的矢量场$\mathbf{F}$，它可以是任何物理量的分布，比如电场、磁场、流体流动等。
 2. **定义曲面$S$和边界曲线$\partial S$**：明确曲面$S$及其边界曲线$\partial S$。曲面可以是任意形状，边界曲线则必须是闭合的。
-3. **计算旋度**：计算矢量场$\mathbf{F}$在曲面$S$上的旋度$\
-abla \times \mathbf{F}$。
-4. **曲面积分**：对曲面$S$上的旋度进行积分，得到$\int_S (\
-abla \times \mathbf{F}) \cdot d\mathbf{S}$的结果。
+3. **计算旋度**：计算矢量场$\mathbf{F}$在曲面$S$上的旋度$\nabla \times \mathbf{F}$。
+4. **曲面积分**：对曲面$S$上的旋度进行积分，得到$\int_S (\nabla \times \mathbf{F}) \cdot d\mathbf{S}$的结果。
 5. **线积分**：沿着边界曲线$\partial S$计算矢量场$\mathbf{F}$的线积分$\oint_{\partial S} \mathbf{F} \cdot d\mathbf{r}$。
 6. **验证**：比较曲面积分和线积分的结果，确认是否满足Stokes定理。
 

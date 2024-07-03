@@ -178,7 +178,7 @@ class TransformerEncoder(nn.Module):
         self.num_layers = num_layers
         self.num_heads = num_heads
         self.layers = nn.ModuleList([nn.TransformerEncoderLayer(d_model=input_dim, nhead=num_heads) for _ in range(num_layers)])
-    
+
     def forward(self, src):
         for layer in self.layers:
             src = layer(src)
@@ -280,7 +280,7 @@ for epoch in range(3):
         loss = outputs.loss
         loss.backward()
         optimizer.step()
-    
+
     # 评估模型
     model.eval()
     with torch.no_grad():

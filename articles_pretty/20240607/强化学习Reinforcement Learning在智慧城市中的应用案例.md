@@ -29,9 +29,7 @@ $$ Q(s, a) \\leftarrow Q(s, a) + \\alpha [r + \\gamma \\max_{a'} Q(s', a') - Q(s
 
 ### 策略梯度方法
 
-$$ \
-abla_\\theta J(\\theta) = \\mathbb{E}_{\\pi_\\theta} [\
-abla_\\theta \\log \\pi_\\theta(s, a) \\cdot r(s, a)] $$
+$$ \nabla_\\theta J(\\theta) = \\mathbb{E}_{\\pi_\\theta} [\nabla_\\theta \\log \\pi_\\theta(s, a) \\cdot r(s, a)] $$
 
 其中，$J(\\theta)$ 是策略 $\\pi_\\theta$ 的期望累积奖励，$\\theta$ 是策略参数，$\\pi_\\theta(s, a)$ 是在状态 $s$ 下采取动作 $a$ 的概率。
 

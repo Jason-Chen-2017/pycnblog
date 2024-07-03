@@ -1,7 +1,7 @@
 
 # TheUseofAccuracyin3DPrinting
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -276,7 +276,7 @@ $$
 
 收集不同制备工艺参数下的材料性能数据，如下表所示：
 
-| 制备工艺参数 | 材料性能 | 
+| 制备工艺参数 | 材料性能 |
 | --- | --- |
 | 温度(℃) | 熔点(℃) |
 | 200 | 240 |

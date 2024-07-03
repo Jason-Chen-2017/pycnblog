@@ -84,25 +84,25 @@ Transformer架构因其在序列处理方面的优越性能，广泛应用于自
 
 #### Transformer的数学模型可以表示为：
 
-$$\\begin{aligned}
-& \\text{Input} \\rightarrow \\text{Positional Encoding} \\\\
-& \\text{Query} = \\text{W}_Q \\cdot \\text{X} \\\\
-& \\text{Key} = \\text{W}_K \\cdot \\text{X} \\\\
-& \\text{Value} = \\text{W}_V \\cdot \\text{X} \\\\
-& \\text{Attention}(\\text{Query}, \\text{Key}, \\text{Value}) = \\text{softmax}\\left(\\frac{\\text{Q} \\cdot \\text{K}^T}{\\sqrt{d_k}}\\right) \\cdot \\text{V} \\\\
-& \\text{MultiHead Attention} = \\text{Concat}(MHA_1, MHA_2, \\ldots, MHA_h) \\\\
-& \\text{Feed Forward Network} = \\text{MLP}(\\text{MultiHead Attention} + \\text{Skip Connection}) \\\\
-& \\text{Layer Normalization} = \\text{LayerNorm}(\\text{Feed Forward Network}) \\\\
-& \\text{Output} = \\text{Layer Normalization} + \\text{Skip Connection} \\\\
-\\end{aligned}$$
+$$\begin{aligned}
+& \text{Input} \rightarrow \text{Positional Encoding} \\\
+& \text{Query} = \text{W}_Q \cdot \text{X} \\\
+& \text{Key} = \text{W}_K \cdot \text{X} \\\
+& \text{Value} = \text{W}_V \cdot \text{X} \\\
+& \text{Attention}(\text{Query}, \text{Key}, \text{Value}) = \text{softmax}\left(\frac{\text{Q} \cdot \text{K}^T}{\sqrt{d_k}}\right) \cdot \text{V} \\\
+& \text{MultiHead Attention} = \text{Concat}(MHA_1, MHA_2, \ldots, MHA_h) \\\
+& \text{Feed Forward Network} = \text{MLP}(\text{MultiHead Attention} + \text{Skip Connection}) \\\
+& \text{Layer Normalization} = \text{LayerNorm}(\text{Feed Forward Network}) \\\
+& \text{Output} = \text{Layer Normalization} + \text{Skip Connection} \\\
+\end{aligned}$$
 
 ### 4.2 公式推导过程
 
 #### Attention计算：
 
-$$\\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V$$
+$$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
 
-这里，$Q$、$K$和$V$分别表示查询、键和值向量，$d_k$是键的维度，$\\text{softmax}$函数用于计算注意力权重。
+这里，$Q$、$K$和$V$分别表示查询、键和值向量，$d_k$是键的维度，$\text{softmax}$函数用于计算注意力权重。
 
 ### 4.3 案例分析与讲解
 

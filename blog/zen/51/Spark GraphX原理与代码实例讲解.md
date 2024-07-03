@@ -24,7 +24,7 @@ Spark GraphX是Apache Spark中的图形计算模块,提供了一种高效的图�
 GraphX中的核心数据结构是属性图(Property Graph),用于表示包含顶点和边属性的图形。它由以下三个部分组成:
 
 - `VertexRDD[VD]`: 顶点属性RDD
-- `EdgeRDD[ED]`: 边属性RDD  
+- `EdgeRDD[ED]`: 边属性RDD
 - `triplets: RDD[EdgeTriplet[VD, ED]]`: 视图RDD,表示每条边及其源顶点和目标顶点的属性。
 
 ```scala
@@ -116,13 +116,13 @@ val ranks = ... // RDD[(VertexId, Double)]
 val pr = graph.pregel(ranks)(
   // 计算每个顶点发送给邻居的贡献值
   vprog = (id, rank, msgSum) => rank / getDegree(graph.outDegrees, id),
-  
+
   // 发送消息
-  sendMsg = { 
+  sendMsg = {
     case triplet @ EdgeTriplet(src, attr, dst, dattr) =>
       triplet.sendToDst(attr * triplet.srcAttr)
   },
-  
+
   // 合并消息,更新PageRank值
   mergeMsg = (msg1, msg2) => msg1 + msg2
 )
@@ -150,7 +150,7 @@ val sourceId: VertexId = ...
 // 执行最短路径迭代
 val shortestPaths = graph.staticMessageRun(
   staticMsgFn = (ctx, msg) => msg, // 不需要处理消息
-  sendMsg = { 
+  sendMsg = {
     case triplet @ EdgeTriplet(src, attr, dst, dattr) =>
       val newDist = attr + triplet.srcAttr
       if (newDist < triplet.dstAttr.getOrElse(Double.PositiveInfinity)) {
@@ -225,13 +225,13 @@ val labels: VertexRDD[VertexId] = graph.vertices.mapValues((vid, attr) => vid)
 val communities = labels.pregel(Double.NegativeInfinity)(
   // 更新顶点标签
   vprog = (vid, vdata, msg) => math.max(vdata, msg.max),
-  
+
   // 发送消息
-  sendMsg = { 
+  sendMsg = {
     case triplet @ EdgeTriplet(src, attr, dst, dattr) =>
       triplet.sendToDst(triplet.srcAttr)
   },
-  
+
   // 合并消息
   mergeMsg = (msg1, msg2) => math.max(msg1, msg2)
 )

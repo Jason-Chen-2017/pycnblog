@@ -100,7 +100,7 @@ $$
 卷积操作可以用以下公式表示：
 
 $$
-(C * I)(x,y) = \\sum_{a=0}^{A-1} \\sum_{b=0}^{B-1} W(a,b) * I(x+a,y+b),
+(C * I)(x,y) = \sum_{a=0}^{A-1} \sum_{b=0}^{B-1} W(a,b) * I(x+a,y+b),
 $$
 
 其中$W$是卷积核，$I$是输入图像，$C * I$是卷积后的输出。
@@ -110,7 +110,7 @@ $$
 常用的激活函数，如ReLU，可以表示为：
 
 $$
-ReLU(x) = \\max(0, x),
+ReLU(x) = \max(0, x),
 $$
 
 其中$x$是输入值。
@@ -159,7 +159,7 @@ class ResidualBlock(nn.Module):
         self.conv2 = nn.Conv2d(out_channels, out_channels, kernel_size=3, stride=1, padding=1, bias=False)
         self.bn2 = nn.BatchNorm2d(out_channels)
         self.downsample = downsample
-    
+
     def forward(self, x):
         identity = x
         if self.downsample is not None:
@@ -260,8 +260,8 @@ ResNet网络在实际应用中的成功案例包括但不限于：
 
 ### 7.3 相关论文推荐
 
-- **原文**：Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun. \"Deep Residual Learning for Image Recognition.\" (https://arxiv.org/abs/1512.03385)
-- **综述**：Vladimir Vapnik. \"An Overview of Statistical Learning Theory.\" (https://link.springer.com/chapter/10.1007/978-3-540-44513-0_6)
+- **原文**：Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun. "Deep Residual Learning for Image Recognition." (https://arxiv.org/abs/1512.03385)
+- **综述**：Vladimir Vapnik. "An Overview of Statistical Learning Theory." (https://link.springer.com/chapter/10.1007/978-3-540-44513-0_6)
 
 ### 7.4 其他资源推荐
 

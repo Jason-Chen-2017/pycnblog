@@ -173,14 +173,14 @@ class Model(nn.Module):
 def maml(model, optimizer, x_train, y_train, x_test, y_test):
     model.train()
     optimizer.zero_grad()
-    
+
     # 训练模型
     for _ in range(10):
         output = model(x_train)
         loss = nn.MSELoss()(output, y_train)
         loss.backward()
         optimizer.step()
-    
+
     # 测试模型
     model.eval()
     with torch.no_grad():

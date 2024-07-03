@@ -153,7 +153,7 @@ for epoch in range(100):
     loss = criterion(outputs, y)
     loss.backward()
     optimizer.step()
-    
+
     # 记录损失值
     writer.add_scalar('Train/Loss', loss.item(), epoch)
 

@@ -72,7 +72,7 @@
 **公式**：
 
 $$
-L_{\epsilon}(x) = \frac{\epsilon}{\Delta} 
+L_{\epsilon}(x) = \frac{\epsilon}{\Delta}
 $$
 
 其中 $L_{\epsilon}(x)$ 为扰动函数，$\Delta$ 为数据扰动幅度。
@@ -88,7 +88,7 @@ $$
 **公式**：
 
 $$
-C = E(M) \odot E(N) 
+C = E(M) \odot E(N)
 $$
 
 其中 $C$ 为加密后的结果，$M$ 和 $N$ 为加密前的数据，$\odot$ 为加密运算符。
@@ -109,12 +109,12 @@ $$
 
 - **差分隐私模型**：
   $$
- L_{\epsilon}(x) = \frac{\epsilon}{\Delta} 
+ L_{\epsilon}(x) = \frac{\epsilon}{\Delta}
 $$
 
 - **同态加密模型**：
   $$
- C = E(M) \odot E(N) 
+ C = E(M) \odot E(N)
 $$
 
 ### 4.2 公式推导过程

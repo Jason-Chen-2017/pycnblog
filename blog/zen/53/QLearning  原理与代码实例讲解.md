@@ -102,30 +102,30 @@ import numpy as np
 Q = np.zeros((n_states, n_actions))
 
 # 设置超参数
-alpha = 0.1  # 学习率 
+alpha = 0.1  # 学习率
 gamma = 0.9  # 折扣因子
 epsilon = 0.1  # 探索概率
 
 # Q-Learning 主循环
 for episode in range(n_episodes):
     state = env.reset()  # 初始化环境,获得初始状态
-    
+
     while True:
         # 选择动作
         if np.random.uniform() < epsilon:
             action = env.action_space.sample()  # 探索
         else:
             action = np.argmax(Q[state])  # 利用
-        
+
         # 执行动作,观察下一状态和奖励
         next_state, reward, done, _ = env.step(action)
-        
+
         # 更新 Q 值
         target = reward + gamma * np.max(Q[next_state])
         Q[state][action] += alpha * (target - Q[state][action])
-        
+
         state = next_state  # 更新状态
-        
+
         if done:
             break
 ```

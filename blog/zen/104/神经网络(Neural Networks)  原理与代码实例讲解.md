@@ -201,7 +201,7 @@ A：选择激活函数应根据具体任务和模型结构进行选择。常见�
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n tensorflow-env python=3.8 
+conda create -n tensorflow-env python=3.8
 conda activate tensorflow-env
 ```
 3. 安装TensorFlow：

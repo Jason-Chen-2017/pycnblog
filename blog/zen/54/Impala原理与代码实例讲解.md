@@ -60,7 +60,7 @@ Impala采用了全新的并行执行引擎,可高效利用集群资源。主要�
 - **代码生成**:动态生成查询代码,减少解释器开销。
 - **I/O管理**:细粒度调度I/O操作,最大化磁盘吞吐。
 
-## 3.核心算法原理具体操作步骤  
+## 3.核心算法原理具体操作步骤
 
 ### 3.1 查询编译
 
@@ -187,7 +187,7 @@ CREATE TABLE orders (
 ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
   STORED AS TEXTFILE;
 
--- 产品表  
+-- 产品表
 CREATE TABLE products (
     product_id BIGINT,
     product_name STRING,
@@ -198,7 +198,7 @@ CREATE TABLE products (
 CREATE TABLE users (
     user_id BIGINT,
     name STRING,
-    city STRING  
+    city STRING
 ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
 ```
 
@@ -260,7 +260,7 @@ ORDER BY revenue DESC;
 
 ```sql
 CREATE TABLE products_parquet (
-    product_id BIGINT,  
+    product_id BIGINT,
     product_name STRING,
     category STRING
 )

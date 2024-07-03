@@ -188,7 +188,7 @@ A3：LangChain可以通过截断或拼接的方式处理长文本。
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n langchain-env python=3.8 
+conda create -n langchain-env python=3.8
 conda activate langchain-env
 ```
 

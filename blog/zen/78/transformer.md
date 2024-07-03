@@ -70,7 +70,7 @@ transformer模型广泛应用于自然语言处理的多个领域，包括但不
 
 假设输入序列 $X$ 的长度为 $L$，维度为 $D$，可以表示为：
 
-$$ X = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_L \end{bmatrix} $$
+$$ X = \begin{bmatrix} x_1 \ x_2 \ \vdots \ x_L \end{bmatrix} $$
 
 自注意力机制的公式可以表示为：
 

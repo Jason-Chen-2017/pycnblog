@@ -96,7 +96,7 @@ $$ U = \sum_{i=1}^N c_i e_i $$
 
 旋量基的构造通常基于旋转矩阵的特性。例如，在SO(3)群中，Pauli旋量基可以由以下公式得到：
 
-$$ e_1 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad e_2 = \begin{pmatrix} 0 & i \\ -i & 0 \end{pmatrix}, \quad e_3 = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} $$
+$$ e_1 = \begin{pmatrix} 0 & 1 \ 1 & 0 \end{pmatrix}, \quad e_2 = \begin{pmatrix} 0 & i \ -i & 0 \end{pmatrix}, \quad e_3 = \begin{pmatrix} 1 & 0 \ 0 & -1 \end{pmatrix} $$
 
 对于SO(N)群，可以构造相应的Gell-Mann旋量基或Dirac旋量基。
 
@@ -104,7 +104,7 @@ $$ e_1 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad e_2 = \begin{pmatri
 
 以SO(3)群为例，考虑一个旋转矩阵$R$：
 
-$$ R = \begin{pmatrix} \cos(\theta) & -\sin(\theta) & 0 \\ \sin(\theta) & \cos(\theta) & 0 \\ 0 & 0 & 1 \end{pmatrix} $$
+$$ R = \begin{pmatrix} \cos(\theta) & -\sin(\theta) & 0 \ \sin(\theta) & \cos(\theta) & 0 \ 0 & 0 & 1 \end{pmatrix} $$
 
 我们需要将R表示为旋量基的线性组合：
 
@@ -155,19 +155,19 @@ def rot_matrix_to_spinor(R):
     """将SO(3)群的旋转矩阵转换为旋量表示"""
     # 计算旋转矩阵的特征值和特征向量
     eigenvalues, eigenvectors = np.linalg.eig(R)
-    
+
     # 选择特征值为1的特征向量作为旋量基
     spinor_base = eigenvectors[:, np.isclose(eigenvalues, 1)]
-    
+
     # 计算旋转矩阵在旋量基上的坐标
     c1, c2, c3 = spinor_base[0], spinor_base[1], spinor_base[2]
-    
+
     # 返回旋量表示
     return np.array([c1, c2, c3])
 
 # 示例旋转矩阵
-R = np.array([[0.9238795, -0.3826834, 0.0], 
-              [0.3826834, 0.9238795, 0.0], 
+R = np.array([[0.9238795, -0.3826834, 0.0],
+              [0.3826834, 0.9238795, 0.0],
               [0.0, 0.0, 1.0]])
 
 # 计算旋量表示

@@ -46,8 +46,7 @@
 
 Momentum优化器在梯度下降的基础上，引入了动量项，使得梯度下降的搜索方向具有一定的惯性。具体来说，动量优化器的更新公式如下：
 
-$$\theta_{t+1} = \theta_t - \alpha \cdot \left( \mu \cdot \theta_{t-1} + (1-\mu) \cdot \
-abla J(\theta_t) \right)$$
+$$\theta_{t+1} = \theta_t - \alpha \cdot \left( \mu \cdot \theta_{t-1} + (1-\mu) \cdot \nabla J(\theta_t) \right)$$
 
 其中：
 
@@ -59,8 +58,7 @@ abla J(\theta_t) \right)$$
 ### 3.2 算法步骤详解
 
 1. 初始化参数：设定初始参数$\theta_0$、学习率$\alpha$和动量系数$\mu$；
-2. 计算梯度：计算损失函数$J(\theta)$关于参数$\theta$的梯度$\
-abla J(\theta)$；
+2. 计算梯度：计算损失函数$J(\theta)$关于参数$\theta$的梯度$\nabla J(\theta)$；
 3. 更新参数：根据公式(1)更新参数$\theta$；
 4. 迭代：重复步骤2和3，直至收敛。
 
@@ -99,8 +97,7 @@ $$J(\theta) = \frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2$$
 
 动量优化器的更新公式(1)可以表示为：
 
-$$\theta_{t+1} = \theta_t + \alpha \cdot (\mu \cdot \theta_{t-1} - \
-abla J(\theta_t))$$
+$$\theta_{t+1} = \theta_t + \alpha \cdot (\mu \cdot \theta_{t-1} - \nabla J(\theta_t))$$
 
 这里，$\mu \cdot \theta_{t-1}$代表动量项，它反映了参数$\theta$的历史变化趋势。
 

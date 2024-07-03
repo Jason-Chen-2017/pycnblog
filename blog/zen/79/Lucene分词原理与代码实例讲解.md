@@ -59,7 +59,7 @@ Lucene分词的核心算法是基于有限状态机(FSM)的，通过对输入的
 
 ### 3.3 算法优缺点
 Lucene分词算法的优点包括：
-- 采用FSM实现，运行效率高，性能好。 
+- 采用FSM实现，运行效率高，性能好。
 - 支持多语言分词，灵活性强。
 - 可通过自定义分词器、TokenFilter等来扩展功能。
 
@@ -142,28 +142,28 @@ import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 
 public class LuceneTokenizer {
-    
+
     public static void main(String[] args) throws Exception {
         // 待分词的文本
         String text = "Lucene is a Java library";
-        
+
         // 创建标准分词器
         Analyzer analyzer = new StandardAnalyzer();
-        
+
         // 获取TokenStream
         TokenStream tokenStream = analyzer.tokenStream("content", text);
-        
+
         // 获取每个Token的文本属性
         CharTermAttribute charAttr = tokenStream.addAttribute(CharTermAttribute.class);
-        
+
         // 重置TokenStream
         tokenStream.reset();
-        
+
         // 迭代输出每个Token
         while (tokenStream.incrementToken()) {
             System.out.println(charAttr.toString());
         }
-        
+
         // 关闭TokenStream
         tokenStream.close();
     }

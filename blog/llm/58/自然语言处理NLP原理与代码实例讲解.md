@@ -137,8 +137,8 @@ from sumy.summarizers.lex_rank import LexRankSummarizer
 
 # 待摘要的文本
 text = """
-Natural language processing (NLP) is a subfield of artificial intelligence that deals with the interaction between computers and human language. 
-NLP is used to analyze, understand, and generate human language, and it has applications in many areas, including machine translation, sentiment analysis, and text summarization. 
+Natural language processing (NLP) is a subfield of artificial intelligence that deals with the interaction between computers and human language.
+NLP is used to analyze, understand, and generate human language, and it has applications in many areas, including machine translation, sentiment analysis, and text summarization.
 """
 
 # 创建文本解析器对象

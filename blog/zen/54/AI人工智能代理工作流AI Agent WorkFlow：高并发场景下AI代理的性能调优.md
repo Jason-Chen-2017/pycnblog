@@ -15,7 +15,7 @@ AI代理的性能直接影响到用户体验和业务效率。性能不佳不仅
 一个典型的AI代理系统通常由以下几个核心组件构成:
 
 1. 感知模块:负责接收和理解外界的请求和数据输入。
-2. 决策模块:根据输入信息和知识库,进行推理和决策。  
+2. 决策模块:根据输入信息和知识库,进行推理和决策。
 3. 执行模块:根据决策结果,执行相应的动作和任务。
 4. 学习模块:不断从数据和反馈中学习,优化自身的知识和策略。
 
@@ -121,14 +121,14 @@ async def process_request(request):
     """处理单个请求"""
     # 解析请求参数
     params = json.loads(request)
-    
+
     # 异步获取数据
     async with aiohttp.ClientSession() as session:
         data = await fetch(session, params['url'])
-        
+
     # AI代理的决策逻辑
     action = agent_decision(data)
-    
+
     # 返回响应结果
     return json.dumps({'action': action})
 
@@ -138,7 +138,7 @@ async def handle_requests(requests):
     for request in requests:
         task = asyncio.create_task(process_request(request))
         tasks.append(task)
-    
+
     # 并发等待所有任务完成
     results = await asyncio.gather(*tasks)
     return results

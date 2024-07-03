@@ -556,4 +556,4 @@ X-Pack 的机器学习功能可以用于进行数据挖掘、预测分析等。�
 * **Q：如何使用 X-Pack 的日志分析功能？**
     * **A：**可以参考本文中的代码示例，创建日志索引、导入日志数据和使用 Kibana 进行日志分析。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

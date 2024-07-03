@@ -1,6 +1,6 @@
 # Yarn原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -172,7 +172,7 @@ A -> D
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo "Error: no test specified" && exit 1"
   },
   "author": "",
   "license": "ISC",
@@ -289,4 +289,4 @@ Yarn 的研究方向包括：
 * **如何使用 Yarn 卸载依赖？**
     * 使用 `yarn remove` 命令卸载依赖。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

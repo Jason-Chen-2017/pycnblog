@@ -106,8 +106,7 @@ $$
 以梯度下降法为例，联邦学习中通常采用的聚合方式是加权平均：
 
 $$
-w_{t+1} = w_t - \eta \sum_{i=1}^{n} \alpha_i \
-abla \mathcal{L}_i(w_t; D_i)
+w_{t+1} = w_t - \eta \sum_{i=1}^{n} \alpha_i \nabla \mathcal{L}_i(w_t; D_i)
 $$
 
 其中 $w_t$ 是第$t$轮迭代后的模型参数，$\eta$是学习率。
@@ -201,7 +200,7 @@ strategy = tff.learning.build_federated_averaging_process(
 
 ```python
 for round_num in range(10):  # 进行10轮训练
-    state, model_weights = strategy.next(state=model_state, 
+    state, model_weights = strategy.next(state=model_state,
                                         server_weights=model_params,
                                         client_data=user_datasets.values())
     print(f"Round {round_num}: Server weights updated.")

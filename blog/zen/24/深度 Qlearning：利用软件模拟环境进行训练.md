@@ -1,4 +1,4 @@
-                 
+
 # 深度 Q-learning：利用软件模拟环境进行训练
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -44,9 +44,9 @@
 深度Q-learning的基本思想是在强化学习框架下使用深度神经网络作为函数逼近器，估计给定状态和动作的Q值。这个过程通常涉及到以下几个关键组件：
 
 - **经验回放缓冲区**（Experience Replay Buffer）：用于存储过去的经验数据，使算法能够在不同时间点之间重新采样样本，减少序列依赖。
-  
+
 - **目标网络**（Target Network）：用于稳定训练过程，它是一个不直接更新的网络版本，用来计算目标Q值，避免梯度消失问题。
-  
+
 - **ε-greedy策略**：混合随机选择和最佳策略选择，帮助探索未知状态和利用已知信息。
 
 ### 3.2 算法步骤详解
@@ -59,18 +59,18 @@
 2. **执行**：
    - 选择一个状态并使用ε-greedy策略决定是否执行预定义的动作或随机动作；
    - 执行该动作并在环境中得到新的状态、奖励和结束标志；
-   
+
 3. **存储经验**：
    - 将当前状态、执行的动作、得到的新状态、奖励和结束标志添加到经验回放缓冲区；
-   
+
 4. **训练**：
    - 当经验回放缓冲区足够大时，从缓冲区中抽取一组经验样本；
    - 使用当前的参数模型预测下一步动作的Q值；
    - 更新参数模型以最小化预测Q值与真实回报之差的平方损失；
-   
+
 5. **更新目标网络**：
    - 定期更新目标网络的权重至当前参数模型的权重，以保持两者的一致性；
-   
+
 6. **循环**：
    - 返回步骤2，直到达到预定的学习周期数或满足终止条件。
 
@@ -177,8 +177,8 @@ class DQN:
         self.state_size = state_size
         self.action_size = action_size
         self.memory = deque(maxlen=2000)
-        self.gamma = 0.95  
-        self.epsilon = 1.0 
+        self.gamma = 0.95
+        self.epsilon = 1.0
         self.epsilon_min = 0.01
         self.epsilon_decay = 0.995
         self.learning_rate = 0.001
@@ -237,7 +237,7 @@ def train_dqn(env, episodes):
                 break
         scores.append(score)
         print("Episode:", episode, "Score:", score)
-        
+
         if episode % 10 == 0 and episode > 0:
             avg_score = np.mean(scores[-10:])
             print("Average Score over last 10 Episodes:", avg_score)
@@ -257,7 +257,7 @@ if __name__ == "__main__":
 这段代码实现了DQN算法的核心功能：
 
 1. **初始化**：定义了DQN类，并在构造函数中设置了关键参数，包括折扣因子、学习率等。
-   
+
 2. **神经网络构建**：通过`_build_model`方法创建了一个包含两个隐藏层的多层感知器（MLP）网络。
 
 3. **记忆回放机制**：通过`remember`方法将状态-动作对存储到经验回放缓冲区。
@@ -294,7 +294,7 @@ if __name__ == "__main__":
 - **在线课程**：
   - Coursera: 强化学习系列课程
   - Udacity: 强化学习纳米学位课程
-  
+
 - **书籍**：
   - “Reinforcement Learning: An Introduction” by Richard S. Sutton and Andrew G. Barto
   - “Deep Reinforcement Learning Hands-On: With Python and TensorFlow” by Christopher Piech et al.
@@ -325,19 +325,19 @@ if __name__ == "__main__":
 随着计算能力的增强和数据集的增长，深度Q-learning将进一步发展，可能涉及：
 
 - **更高效的学习算法**：改进学习速度和收敛性能，降低资源消耗。
-  
+
 - **鲁棒性和泛化能力**：增强算法在未知情况下的表现，使其能够更好地处理环境变化和噪声干扰。
-  
+
 - **可解释性**：提高模型的透明度，使人类能够理解其决策过程。
-  
+
 - **自适应学习**：实现基于反馈和自我修正的学习能力，提高适应不同任务和环境的能力。
 
 ### 8.3 面临的挑战
 
 - **超参调优**：找到适合不同任务的最佳超参数配置仍是一个挑战。
-  
+
 - **过拟合与欠拟合**：平衡模型复杂度与泛化能力，防止过度拟合和欠拟合。
-  
+
 - **安全性与伦理考量**：确保算法在实际应用中的安全性和避免潜在的不良影响。
 
 ### 8.4 研究展望

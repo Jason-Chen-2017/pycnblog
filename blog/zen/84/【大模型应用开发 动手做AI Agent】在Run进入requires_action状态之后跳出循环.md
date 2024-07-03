@@ -87,10 +87,10 @@ AI Agent是指能够感知环境、根据环境信息进行决策并采取行动
 跳出循环算法的数学模型可以表示为：
 
 $$
-f\left(\text{当前状态}, \text{操作}, \text{标志变量}\right) = 
-\begin{cases} 
+f\left(\text{当前状态}, \text{操作}, \text{标志变量}\right) =
+\begin{cases}
 \text{执行操作} & \text{如果标志变量为True} \\
-\text{跳出循环} & \text{如果标志变量为False} 
+\text{跳出循环} & \text{如果标志变量为False}
 \end{cases}
 $$
 
@@ -99,10 +99,10 @@ $$
 假设当前状态为 $S$，操作为 $O$，标志变量为 $B$。根据跳出循环算法的步骤，我们可以推导出以下公式：
 
 $$
-f(S, O, B) = 
-\begin{cases} 
+f(S, O, B) =
+\begin{cases}
 \text{执行操作} & \text{如果} B = \text{True} \\
-\text{跳出循环} & \text{如果} B = \text{False} 
+\text{跳出循环} & \text{如果} B = \text{False}
 \end{cases}
 $$
 
@@ -125,16 +125,16 @@ def turn_right():
 def at_intersection():
     # 获取机器人位置信息
     position = get_robot_position()
-    
+
     # 判断是否到达岔路口
     if position == "intersection":
         # 设置标志变量为True
         is_running = True
-        
+
         while is_running:
             # 获取用户输入，选择左转或右转
             direction = input("请选择方向（L：左转，R：右转）: ")
-            
+
             if direction == "L":
                 is_running = False
                 turn_left()
@@ -143,7 +143,7 @@ def at_intersection():
                 turn_right()
             else:
                 print("无效输入，请重新选择方向")
-        
+
         # 继续执行后续任务
         go_straight()
 ```

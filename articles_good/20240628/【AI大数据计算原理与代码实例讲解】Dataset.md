@@ -132,11 +132,9 @@ Dataset的核心算法在以下领域有广泛应用：
 
 2. **梯度下降**：
 
-   $$\theta = \theta - \alpha \
-abla_\theta L(\theta)$$
+   $$\theta = \theta - \alpha \nabla_\theta L(\theta)$$
 
-   其中，$\theta$ 为模型参数，$\alpha$ 为学习率，$\
-abla_\theta L(\theta)$ 为损失函数关于参数 $\theta$ 的梯度。
+   其中，$\theta$ 为模型参数，$\alpha$ 为学习率，$\nabla_\theta L(\theta)$ 为损失函数关于参数 $\theta$ 的梯度。
 
 3. **PCA**：
 

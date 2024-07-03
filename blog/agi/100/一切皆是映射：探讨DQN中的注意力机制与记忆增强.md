@@ -214,7 +214,7 @@ class DQN(tf.keras.Model):
         self.fc1 = tf.keras.layers.Dense(64, activation='relu')
         self.fc2 = tf.keras.layers.Dense(64, activation='relu')
         self.fc3 = tf.keras.layers.Dense(action_dim)
-    
+
     def call(self, x):
         x = self.fc1(x)
         x = self.fc2(x)
@@ -235,7 +235,7 @@ class MemoryEnhancement(tf.keras.Model):
         self.fc1 = tf.keras.layers.Dense(64, activation='relu')
         self.fc2 = tf.keras.layers.Dense(64, activation='relu')
         self.fc3 = tf.keras.layers.Dense(action_dim)
-    
+
     def call(self, x):
         x = self.fc1(x)
         x = self.fc2(x)

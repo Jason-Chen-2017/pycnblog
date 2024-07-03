@@ -48,7 +48,7 @@ graph TB
 
     subgraph SM1
         Core1[Core]
-        Core2[Core] 
+        Core2[Core]
         ...
         CoreM[Core]
     end

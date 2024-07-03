@@ -300,4 +300,4 @@ GPU 在 AI 领域的应用将越来越广泛，未来将应用于更多领域，
 
 **答：** GPU 在 AI 领域面临的挑战包括编程难度、内存带宽、成本等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

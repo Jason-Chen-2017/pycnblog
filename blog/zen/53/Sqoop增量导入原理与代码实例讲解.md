@@ -35,7 +35,7 @@ Sqoop支持以下几种增量导入方式:
 
 本文重点讨论基于查询条件和基于元数据的增量导入。
 
-## 3.核心算法原理具体操作步骤 
+## 3.核心算法原理具体操作步骤
 
 ### 3.1 基于查询条件的增量导入
 
@@ -48,7 +48,7 @@ Sqoop支持以下几种增量导入方式:
 示例SQL查询:
 
 ```sql
-SELECT * 
+SELECT *
 FROM table
 WHERE last_modified > '2023-05-30 10:00:00'
 ```
@@ -67,7 +67,7 @@ graph TD
 
 该方法优点是实现简单,但需要数据库表具有可用于过滤的字段,如最后修改时间戳。
 
-### 3.2 基于元数据的增量导入  
+### 3.2 基于元数据的增量导入
 
 该方法利用Sqoop维护的元数据信息跟踪已导入数据,从而实现增量导入。具体步骤:
 
@@ -76,7 +76,7 @@ graph TD
 3. 下次导入时,Sqoop比对元数据获取已导入数据范围
 4. 导入新增数据,并更新元数据文件
 
-#### 3.2.1 Mermaid流程图  
+#### 3.2.1 Mermaid流程图
 
 ```mermaid
 graph TD
@@ -142,7 +142,7 @@ last_value=`cat $HOME/.syn/employees.txt`
 sqoop import \
 --connect jdbc:mysql://localhost/company \
 --username root \
---table employees \  
+--table employees \
 --target-dir /user/sqoop/employees \
 --fields-terminated-by '\t' \
 --check-column 'last_modified' \
@@ -156,7 +156,7 @@ sqoop import \
 
 我们仍以 `company.employees` 表为例,需要将该表导入到 `/user/sqoop/employees` 目录。
 
-1. 首次全量导入:  
+1. 首次全量导入:
 
 ```bash
 sqoop import \

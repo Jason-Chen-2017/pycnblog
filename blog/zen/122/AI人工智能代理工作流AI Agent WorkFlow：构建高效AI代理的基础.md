@@ -221,7 +221,7 @@ AI代理工作流可以提供个性化的产品和服务，例如：
     * Udacity: 深度学习课程
 
 ### 7.2  开发工具推荐
-* **Python:** 
+* **Python:**
     * TensorFlow
     * PyTorch
     * Keras
@@ -266,5 +266,5 @@ AI代理工作流的研究仍然面临一些挑战，例如：
 未来，我们将继续致力于AI代理工作流的研究，努力解决上述挑战，并推动AI代理工作流技术的发展和应用。
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

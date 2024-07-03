@@ -84,7 +84,7 @@
 
 设原始文本序列为$x = x_1x_2...x_n$，其中$x_i$为文本中的第$i$个字符。字节对编码过程可以表示为：
 
-\[BPE(x) = \{y_1, y_2, ..., y_m\}\]
+$$BPE(x) = \{y_1, y_2, ..., y_m\}$$
 
 其中，$y_i$为经过编码后的词汇单位。
 
@@ -120,7 +120,7 @@ def byte_pair_encoding(text, vocab_size=5000):
     # 初始化词汇单位集合和字符对频率矩阵
     vocab = set()
     freq = Counter()
-    
+
     # 初始化文本处理过程
     while len(vocab) < vocab_size:
         # 统计字符对频率
@@ -128,17 +128,17 @@ def byte_pair_encoding(text, vocab_size=5000):
             char, next_char = text[i], text[i+1]
             pair = char + next_char
             freq[pair] += 1
-        
+
         # 找到出现频率最高的字符对并生成新词汇单位
         if freq:
             highest_freq_pair, _ = freq.most_common(1)[0]
             new_vocab_unit = highest_freq_pair
             vocab.add(new_vocab_unit)
-            
+
             # 更新文本处理过程
             text = re.sub(highest_freq_pair, new_vocab_unit, text)
             freq[new_vocab_unit] += freq.pop(highest_freq_pair)
-    
+
     return vocab
 
 # 示例文本和词汇单位数量

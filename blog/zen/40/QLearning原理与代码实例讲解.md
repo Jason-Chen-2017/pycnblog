@@ -64,7 +64,7 @@ $$Q(s, a) = 0 \quad \text{(初始化值函数)}$$
 
 2. **选择动作**：根据当前状态$s$，使用某种策略选择动作$a$，例如ε-贪心策略。
 
-$$\pi(s) = \begin{cases} 
+$$\pi(s) = \begin{cases}
 \text{随机选择动作} & \text{如果 } \text{rand()} < \epsilon \\
 \text{选择最优动作} & \text{否则}
 \end{cases}$$

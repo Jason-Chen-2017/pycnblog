@@ -514,4 +514,4 @@ Q-learning 算法的改进算法有很多，例如：
 - SARSA
 - Deep Q-Network (DQN)
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

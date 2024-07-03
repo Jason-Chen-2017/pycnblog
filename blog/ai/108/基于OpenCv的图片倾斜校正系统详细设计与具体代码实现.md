@@ -339,4 +339,4 @@ cv2.waitKey(0)
 
 **答:** 可以根据直线的长度、斜率等信息进行筛选，选择最有可能代表图像倾斜方向的直线。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

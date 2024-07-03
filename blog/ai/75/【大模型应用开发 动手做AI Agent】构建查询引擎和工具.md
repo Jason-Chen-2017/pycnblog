@@ -145,8 +145,7 @@ $$
 - **梯度下降**：
 
 $$
-\theta \leftarrow \theta - \alpha \
-abla_{\theta}L(\theta)
+\theta \leftarrow \theta - \alpha \nabla_{\theta}L(\theta)
 $$
 
 其中，$\theta$ 表示模型参数，$\alpha$ 表示学习率。

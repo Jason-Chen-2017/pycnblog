@@ -31,9 +31,9 @@
 
 隐马尔可夫模型假设：
 
-* **齐次马尔可夫性**: 
+* **齐次马尔可夫性**:
 当前状态只依赖于前一个状态，与更早的状态无关。
-* **观测独立性**: 
+* **观测独立性**:
 每个观测只依赖于当前状态，与其他观测无关。
 
 ## 3. 核心算法原理 & 具体操作步骤
@@ -184,17 +184,17 @@ print(model.emissionprob_)
 ```
 
 ### 5.3  代码解读与分析
-* **生成示例数据:** 
+* **生成示例数据:**
 代码首先生成一个示例数据，包含三个观测序列。
-* **创建隐马尔可夫模型:** 
+* **创建隐马尔可夫模型:**
 使用`HiddenMarkovModel`类创建隐马尔可夫模型，并设置模型参数，例如状态数量、初始参数估计方法、状态转移概率矩阵参数估计方法等。
-* **训练模型:** 
+* **训练模型:**
 使用`fit()`方法训练模型，根据示例数据估计模型参数。
-* **预测隐含状态:** 
+* **预测隐含状态:**
 使用`predict()`方法预测给定观测序列的隐含状态。
-* **打印预测结果:** 
+* **打印预测结果:**
 打印预测结果，显示每个观测序列对应的隐含状态。
-* **打印模型参数:** 
+* **打印模型参数:**
 打印模型参数，包括状态转移概率矩阵和观测概率矩阵。
 
 ### 5.4  运行结果展示
@@ -234,9 +234,9 @@ print(model.emissionprob_)
     * edX: Introduction to Machine Learning
 
 ### 7.2  开发工具推荐
-* **Python:** 
+* **Python:**
 Python是一种流行的编程语言，广泛用于机器学习和数据科学领域。
-* **Scikit-learn:** 
+* **Scikit-learn:**
 Scikit-learn是一个用于机器学习的Python库，提供了隐马尔可夫模型等多种算法的实现。
 
 ### 7.3  相关论文推荐
@@ -244,9 +244,9 @@ Scikit-learn是一个用于机器学习的Python库，提供了隐马尔可夫�
 * **Baum, L. E., & Eagon, T. (1965). An inequality for the probability of a sequence of events. The Annals of Mathematical Statistics, 36(3), 881-884.**
 
 ### 7.4  其他资源推荐
-* **HMM Toolkit:** 
+* **HMM Toolkit:**
 https://www.cs.cmu.edu/~ark/HMM/
-* **Hidden Markov Models Tutorial:** 
+* **Hidden Markov Models Tutorial:**
 https://www.youtube.com/watch?v=7_z99999999
 
 ## 8. 总结：未来发展趋势与挑战

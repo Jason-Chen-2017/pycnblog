@@ -108,8 +108,7 @@ $$
 
 - **策略梯度更新**：
 $$
-\Delta \theta_p \propto \
-abla_\theta \mathbb{E}_{\pi_\theta}[\rho_\theta(s, a) Q(s, a)]
+\Delta \theta_p \propto \nabla_\theta \mathbb{E}_{\pi_\theta}[\rho_\theta(s, a) Q(s, a)]
 $$
 - **Q 学习更新**：
 $$
@@ -125,8 +124,7 @@ $$
 
 #### PDQN 推导
 
-- **策略梯度**：$\
-abla_\theta \mathbb{E}_{\pi_\theta}[\rho_\theta(s, a) Q(s, a)]$，其中 $\rho_\theta(s, a)$ 是策略 $\pi_\theta$ 下的动作选择概率。
+- **策略梯度**：$\nabla_\theta \mathbb{E}_{\pi_\theta}[\rho_\theta(s, a) Q(s, a)]$，其中 $\rho_\theta(s, a)$ 是策略 $\pi_\theta$ 下的动作选择概率。
 - **Q 学习**：通过梯度上升来更新 Q 值估计，同时考虑策略网络 $\pi_\theta$ 的输出。
 
 ### 4.3 案例分析与讲解

@@ -1,7 +1,7 @@
 
 # 循环神经网络(Recurrent Neural Networks) - 原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -184,7 +184,7 @@ A3：可以通过以下方法优化RNN的性能：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n rnn-env python=3.7 
+conda create -n rnn-env python=3.7
 conda activate rnn-env
 ```
 3. 安装PyTorch：

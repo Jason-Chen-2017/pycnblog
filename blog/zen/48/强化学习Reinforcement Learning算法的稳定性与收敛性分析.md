@@ -209,17 +209,17 @@ def q_learning():
                 action = np.random.choice(actions(x, y))
             else:
                 action = np.argmax(Q[x, y])
-            
+
             # 执行动作
             new_x, new_y = x + action[0], y + action[1]
             reward_value = reward(new_x, new_y)
-            
+
             # 更新Q值
             Q[x, y] = Q[x, y] + alpha * (reward_value + gamma * np.max(Q[new_x, new_y]) - Q[x, y])
-            
+
             # 更新位置
             x, y = new_x, new_y
-            
+
             # 检查是否达到终点
             if x == 3 and y == 3:
                 break

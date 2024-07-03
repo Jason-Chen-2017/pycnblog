@@ -108,17 +108,17 @@ $$ o = f(e, s) $$
 假设事件 $e$ 包含数值属性 $x$ 和时间戳 $t_e$，状态 $s$ 包含数值属性 $x_s$ 和时间戳 $t_s$。处理函数 $f$ 可以包含以下步骤：
 
 1. **状态检查**：比较时间戳 $t_e$ 和 $t_s$，如果 $t_e > t_s$，则更新状态 $s$：
-   
+
    $$ t_s' = t_e $$
-   
+
    $$ x_s' = x $$
-   
+
    否则，执行事件处理逻辑。
 
 2. **事件处理**：基于事件属性和状态属性执行逻辑操作。例如，如果事件是“增加”操作，那么更新状态 $s$：
-   
+
    $$ x_s' = x_s + x $$
-   
+
    输出 $o$ 可以是状态 $s$ 的某个属性，或者事件处理后的其他结果。
 
 ### 4.3 案例分析与讲解
@@ -130,12 +130,12 @@ def process_stock_price(event, state):
     timestamp = event["timestamp"]
     price = event["price"]
     highest_price, lowest_price = state
-    
+
     if price > highest_price:
         highest_price = price
     elif price < lowest_price:
         lowest_price = price
-    
+
     return {"highest_price": highest_price, "lowest_price": lowest_price}
 ```
 
@@ -303,11 +303,11 @@ public class StockPriceStateStore implements StateStore {
 ## 9. 附录：常见问题与解答
 
 - **Q:** 如何处理大规模数据流下的状态同步问题？
-  
+
   **A:** 对于大规模数据流，可以采用分布式的状态存储方案，如使用分布式缓存（如Redis）、分布式键值存储（如Cassandra）或基于消息队列的状态存储（如Kafka）。这样可以减轻单一状态存储的压力，提高系统的容错能力和扩展性。
 
 - **Q:** 如何优化 Samza 的性能以应对高负载场景？
-  
+
   **A:** 通过优化处理函数的执行效率、改进状态存储机制、合理配置资源分配策略以及采用负载均衡技术，可以有效提升 Samza 在高负载场景下的性能。同时，使用现代硬件和优化编译器策略也是提高性能的有效手段。
 
 ---

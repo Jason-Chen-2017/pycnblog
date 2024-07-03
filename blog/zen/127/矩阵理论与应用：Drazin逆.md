@@ -453,4 +453,4 @@ Drazin逆在机器学习、深度学习等领域也展现出了巨大的潜力�
 * Drazin逆的计算方法将更加高效和稳定。
 * Drazin逆的理论研究将更加深入，例如，Drazin逆的推广和应用。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

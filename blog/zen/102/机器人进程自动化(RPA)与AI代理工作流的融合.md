@@ -267,7 +267,7 @@ ai_model = AIModel()
 def process_task(data):
     # 使用AI模型进行数据分析
     result = ai_model.predict(data)
-    
+
     # 根据分析结果执行相应操作
     if result['valid']:
         robot.execute('Task1')
@@ -279,7 +279,7 @@ def process_task(data):
 if __name__ == '__main__':
     # 从数据库获取数据
     data = get_data_from_database()
-    
+
     # 处理任务
     process_task(data)
 ```

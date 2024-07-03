@@ -41,7 +41,7 @@ NDCG是一种更复杂但更全面的排序质量评估指标。它不仅考虑�
 1. 计算每个结果的折扣累积增益(Discounted Cumulative Gain,DCG):
 
    $$\text{DCG@K} = \sum_{i=1}^{K} \frac{2^{rel_i} - 1}{\log_2(i+1)}$$
-   
+
    其中,$ rel_i $表示第i个结果的相关性分数(通常取0或1,但也可以使用其他分数)。分母$ \log_2(i+1) $是一个折扣因子,用于降低后面结果的权重。
 
 2. 计算理想情况下的DCG(理想DCG,IDCG),即将所有结果按相关性降序排列时的DCG值。
@@ -123,11 +123,11 @@ NDCG的优点是它既考虑了相关性,又考虑了排序质量。它对于评
 def precision_at_k(relevance_scores, k):
     """
     计算前K个结果的准确率
-    
+
     Args:
         relevance_scores (list): 每个结果的相关性分数列表,1表示相关,0表示不相关
         k (int): 要计算的K值
-        
+
     Returns:
         float: 准确率@K
     """
@@ -163,11 +163,11 @@ import math
 def dcg_at_k(relevance_scores, k):
     """
     计算前K个结果的折扣累积增益(DCG)
-    
+
     Args:
         relevance_scores (list): 每个结果的相关性分数列表
         k (int): 要计算的K值
-        
+
     Returns:
         float: 前K个结果的DCG
     """
@@ -179,11 +179,11 @@ def dcg_at_k(relevance_scores, k):
 def ndcg_at_k(relevance_scores, k):
     """
     计算前K个结果的归一化折扣累积增益(NDCG)
-    
+
     Args:
         relevance_scores (list): 每个结果的相关性分数列表
         k (int): 要计算的K值
-        
+
     Returns:
         float: 前K个结果的NDCG
     """

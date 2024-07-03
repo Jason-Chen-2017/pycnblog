@@ -26,7 +26,7 @@ $$\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^s}=\prod_{p}\frac{1}{1-p^{-s}},$$
 $$\pi(x)\sim \frac{x}{logx},$$
 其中 $\pi(x)$ 表示不超过 $x$ 的素数个数。
 
-## 3. 核心算法原理 & 具体操作步骤 
+## 3. 核心算法原理 & 具体操作步骤
 ### 3.1  算法原理概述
 计算logL(s,x)函数的一个主要方法是通过Dirichlet级数的Euler乘积展开式,将其转化为一个无穷乘积的对数:
 $$logL(s,x)=\sum_{p}log\left(\frac{1}{1-x(p)p^{-s}}\right).$$
@@ -35,7 +35,7 @@ $$logL(s,x)=\sum_{p}log\left(\frac{1}{1-x(p)p^{-s}}\right).$$
 ### 3.2  算法步骤详解
 1) 对每个素数 $p$,计算 $log\left(\frac{1}{1-x(p)p^{-s}}\right)$;
 2) 利用Taylor展开公式 $log(1-x)=-\sum_{n=1}^\infty \frac{x^n}{n}$,将上式展开为幂级数;
-3) 对所有 $p\leq P$ 的项求和,得到近似值 
+3) 对所有 $p\leq P$ 的项求和,得到近似值
 $$logL(s,x)\approx \sum_{p\leq P}\sum_{n=1}^{N}\frac{x(p)^n}{n}p^{-ns};$$
 4) 选取适当的截断点 $P,N$,使得计算精度满足要求。
 
@@ -44,13 +44,13 @@ $$logL(s,x)\approx \sum_{p\leq P}\sum_{n=1}^{N}\frac{x(p)^n}{n}p^{-ns};$$
 - 原理简单,容易实现;
 - 通过调节参数 $P,N$ 可以灵活控制精度。
 
-缺点:  
+缺点:
 - 当 $s$ 较大时,级数收敛慢,计算量大;
 - 截断误差难以准确估计,影响计算精度。
 
 ### 3.4  算法应用领域
 - 计算Riemann zeta函数、Dirichlet L-函数的值;
-- 研究素数的分布规律;  
+- 研究素数的分布规律;
 - 验证一些数论猜想,如Riemann假设。
 
 ## 4. 数学模型和公式 & 详细讲解 & 举例说明
@@ -90,7 +90,7 @@ $$\zeta(s)=\frac{1}{\Gamma(s)}\int_{0}^{\infty}\frac{x^{s-1}}{e^x-1}dx.$$
 
 ## 5. 项目实践：代码实例和详细解释说明
 ### 5.1  开发环境搭建
-本项目使用Python语言,需要安装以下库:  
+本项目使用Python语言,需要安装以下库:
 - Numpy: 数值计算
 - Sympy: 符号计算
 - Matplotlib: 绘图
@@ -159,11 +159,11 @@ $$\frac{1}{\varphi(q)}\sum_{\chi \bmod q}L(1,\chi),$$
 ## 7. 工具和资源推荐
 ### 7.1  学习资源推荐
 - 书籍:《解析数论》 H. Davenport, 《素数》 M. R. Schroeder
-- 课程:Coursera《Analytic Combinatorics》, MIT《Analytic Number Theory》 
+- 课程:Coursera《Analytic Combinatorics》, MIT《Analytic Number Theory》
 - 网站:The Euler Archive, MathWorld
 
 ### 7.2  开发工具推荐
-- 数学软件:Mathematica, Maple, Sage  
+- 数学软件:Mathematica, Maple, Sage
 - 编程语言:Python (Numpy/Sympy), C++, Fortran
 - 可视化:MATLAB, Matplotlib
 

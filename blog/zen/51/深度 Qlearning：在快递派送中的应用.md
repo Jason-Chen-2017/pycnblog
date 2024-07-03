@@ -24,7 +24,7 @@
 
 Q-learning是一种经典的无模型强化学习算法,通过迭代更新动作-状态值函数(Q函数)来逼近最优策略。Q-learning的核心是贝尔曼方程和时序差分学习。
 
-### 2.3 深度Q-learning 
+### 2.3 深度Q-learning
 
 深度Q-learning将深度神经网络引入Q-learning,以拟合复杂的Q函数。深度神经网络强大的函数拟合能力使得深度Q-learning能够处理大规模、高维度的状态空间,在许多领域取得了突破性进展。
 
@@ -37,7 +37,7 @@ Q-learning是一种经典的无模型强化学习算法,通过迭代更新动作
 ### 3.1 快递派送MDP的构建
 
 - 定义状态空间S:快递员所处位置、快递目的地、已派送快递数等
-- 定义动作空间A:快递员下一步行动,如前进、左转、右转等  
+- 定义动作空间A:快递员下一步行动,如前进、左转、右转等
 - 定义状态转移概率P:根据当前状态和动作,快递员转移到下一状态的概率
 - 定义奖励函数R:快递员执行动作后获得的即时奖励,如派送快递的奖励、行驶里程的惩罚等
 
@@ -47,7 +47,7 @@ Q-learning是一种经典的无模型强化学习算法,通过迭代更新动作
 graph TB
 A[初始化Q网络参数] --> B[初始化经验回放缓存D]
 B --> C{是否达到训练终止条件}
-C -->|否| D[与环境交互,存储转移(s,a,r,s')到D] 
+C -->|否| D[与环境交互,存储转移(s,a,r,s')到D]
 D --> E[从D中随机采样一批转移样本]
 E --> F[计算Q目标值y=r+γ*max_a'Q(s',a')]
 F --> G[最小化TD误差,更新Q网络参数]
@@ -58,7 +58,7 @@ C -->|是| H[输出训练好的Q网络]
 1. 初始化Q网络参数和经验回放缓存D
 2. 重复以下步骤,直到达到训练终止条件:
    - 与环境交互,存储转移(s,a,r,s')到经验回放缓存D
-   - 从D中随机采样一批转移样本(s,a,r,s')  
+   - 从D中随机采样一批转移样本(s,a,r,s')
    - 计算Q目标值 $y=r+\gamma \max_{a'} Q(s',a';\theta^-)$
    - 最小化时序差分误差 $(y-Q(s,a;\theta))^2$,更新Q网络参数$\theta$
 3. 输出训练好的Q网络
@@ -137,13 +137,13 @@ class QNet(nn.Module):
         self.fc1 = nn.Linear(state_dim, 64)
         self.fc2 = nn.Linear(64, 64)
         self.fc3 = nn.Linear(64, action_dim)
-        
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = torch.relu(self.fc2(x))
         x = self.fc3(x)
         return x
-        
+
 # 定义DQN Agent
 class DQNAgent:
     def __init__(self, state_dim, action_dim, lr, gamma, epsilon, buffer_size, batch_size):
@@ -154,14 +154,14 @@ class DQNAgent:
         self.epsilon = epsilon
         self.buffer_size = buffer_size
         self.batch_size = batch_size
-        
+
         self.Q = QNet(state_dim, action_dim)
         self.Q_target = QNet(state_dim, action_dim)
         self.Q_target.load_state_dict(self.Q.state_dict())
-        
+
         self.optimizer = optim.Adam(self.Q.parameters(), lr=lr)
         self.buffer = deque(maxlen=buffer_size)
-        
+
     def act(self, state):
         if random.random() < self.epsilon:
             return random.randint(0, self.action_dim - 1)
@@ -170,36 +170,36 @@ class DQNAgent:
             q_values = self.Q(state)
             action = q_values.argmax().item()
             return action
-        
+
     def learn(self):
         if len(self.buffer) < self.batch_size:
             return
-        
+
         batch = random.sample(self.buffer, self.batch_size)
         states, actions, rewards, next_states, dones = zip(*batch)
-        
+
         states = torch.tensor(states, dtype=torch.float32)
         actions = torch.tensor(actions, dtype=torch.long).unsqueeze(1)
         rewards = torch.tensor(rewards, dtype=torch.float32).unsqueeze(1)
         next_states = torch.tensor(next_states, dtype=torch.float32)
         dones = torch.tensor(dones, dtype=torch.float32).unsqueeze(1)
-        
+
         q_values = self.Q(states).gather(1, actions)
         next_q_values = self.Q_target(next_states).max(1)[0].unsqueeze(1)
         expected_q_values = rewards + (1 - dones) * self.gamma * next_q_values
-        
+
         loss = nn.MSELoss()(q_values, expected_q_values.detach())
-        
+
         self.optimizer.zero_grad()
         loss.backward()
         self.optimizer.step()
-        
+
     def update_target(self):
         self.Q_target.load_state_dict(self.Q.state_dict())
-        
+
     def save(self, path):
         torch.save(self.Q.state_dict(), path)
-        
+
     def load(self, path):
         self.Q.load_state_dict(torch.load(path))
         self.Q_target.load_state_dict(torch.load(path))
@@ -248,7 +248,7 @@ class DQNAgent:
   - [PyTorch](https://pytorch.org/)
   - [TensorFlow](https://www.tensorflow.org/)
   - [Keras](https://keras.io/)
-- 深度强化学习算法库: 
+- 深度强化学习算法库:
   - [Stable Baselines](https://github.com/hill-a/stable-baselines)
   - [OpenAI Baselines](https://github.com/openai/baselines)
   - [

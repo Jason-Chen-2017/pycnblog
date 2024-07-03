@@ -13,7 +13,7 @@
 与单任务学习相比,多任务学习具有以下优势:
 
 1. 利用任务之间的相关性,提高模型泛化能力。
-2. 共享不同任务的知识,减少过拟合风险。 
+2. 共享不同任务的知识,减少过拟合风险。
 3. 加速模型收敛,减少训练时间。
 4. 降低标注数据的需求,提高数据利用率。
 
@@ -46,7 +46,7 @@
 
 ### 2.3 并行学习与交替学习
 
-根据任务学习的顺序,多任务学习可分为并行学习和交替学习两种。 
+根据任务学习的顺序,多任务学习可分为并行学习和交替学习两种。
 
 - 并行学习:同时训练所有任务,每个任务的梯度同步更新。优点是训练效率高;缺点是任务干扰大,难以平衡不同任务的学习进度。
 
@@ -65,7 +65,7 @@ A --> D[学习顺序]
 B --> E[硬参数共享]
 B --> F[软参数共享]
 
-C --> G[显式建模]  
+C --> G[显式建模]
 C --> H[隐式建模]
 
 D --> I[并行学习]
@@ -86,7 +86,7 @@ D --> J[交替学习]
 graph TB
 A[输入] --> B[主干网络]
 B --> C[任务1头]
-B --> D[任务2头] 
+B --> D[任务2头]
 C --> E[任务1输出]
 D --> F[任务2输出]
 ```
@@ -105,7 +105,7 @@ $$
 
 1. 初始化网络参数。
 2. 在每个训练步骤:
-   1. 从数据集采样一个批次的数据。 
+   1. 从数据集采样一个批次的数据。
    2. 前向传播,计算每个任务的输出。
    3. 计算每个任务的损失,并加权求和得到总损失。
    4. 反向传播,计算梯度。
@@ -126,7 +126,7 @@ $$
 ### 4.1 符号定义
 
 - $x$:输入数据
-- $y_1$:任务1的真实标签  
+- $y_1$:任务1的真实标签
 - $y_2$:任务2的真实标签
 - $f_1$:任务1的输出函数
 - $f_2$:任务2的输出函数
@@ -147,7 +147,7 @@ $$
 ### 4.3 损失计算
 
 $$
-L_1 = l_1(\hat{y}_1, y_1) \\ 
+L_1 = l_1(\hat{y}_1, y_1) \\
 L_2 = l_2(\hat{y}_2, y_2) \\
 L = w_1 L_1 + w_2 L_2
 $$
@@ -178,7 +178,7 @@ $$
 class MyDataset(Dataset):
     def __init__(self, data, labels1, labels2):
         self.data = data
-        self.labels1 = labels1  
+        self.labels1 = labels1
         self.labels2 = labels2
 
     def __getitem__(self, index):
@@ -224,7 +224,7 @@ def train(model, dataloader, criterion, optimizer, epochs, device):
             out1, out2 = model(data)
             loss1 = criterion(out1, labels1)
             loss2 = criterion(out2, labels2)
-            loss = loss1 + loss2 
+            loss = loss1 + loss2
 
             optimizer.zero_grad()
             loss.backward()
@@ -235,7 +235,7 @@ def train(model, dataloader, criterion, optimizer, epochs, device):
 
 ```python
 def test(model, dataloader, device):
-    model.eval() 
+    model.eval()
     task1_correct = 0
     task2_correct = 0
     total = 0
@@ -249,12 +249,12 @@ def test(model, dataloader, device):
             out1, out2 = model(data)
             _, pred1 = torch.max(out1, 1)
             _, pred2 = torch.max(out2, 1)
-            
+
             task1_correct += (pred1 == labels1).sum().item()
             task2_correct += (pred2 == labels2).sum().item()
             total += labels1.size(0)
 
-    print(f'Task 1 Accuracy: {100 * task1_correct / total:.2f}%') 
+    print(f'Task 1 Accuracy: {100 * task1_correct / total:.2f}%')
     print(f'Task 2 Accuracy: {100 * task2_correct / total:.2f}%')
 ```
 
@@ -263,7 +263,7 @@ def test(model, dataloader, device):
 ```python
 def main():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    
+
     train_data = ...
     train_labels1 = ...
     train_labels2 = ...

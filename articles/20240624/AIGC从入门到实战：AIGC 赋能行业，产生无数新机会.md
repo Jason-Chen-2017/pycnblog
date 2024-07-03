@@ -141,15 +141,13 @@ $$
 对于生成器 $G$：
 
 $$
-\theta_G \leftarrow \theta_G + \alpha \
-abla_{\theta_G} \mathcal{L}(G,D)
+\theta_G \leftarrow \theta_G + \alpha \nabla_{\theta_G} \mathcal{L}(G,D)
 $$
 
 对于判别器 $D$：
 
 $$
-\theta_D \leftarrow \theta_D + \alpha \
-abla_{\theta_D} \mathcal{L}(G,D)
+\theta_D \leftarrow \theta_D + \alpha \nabla_{\theta_D} \mathcal{L}(G,D)
 $$
 
 其中，$\alpha$ 为学习率。

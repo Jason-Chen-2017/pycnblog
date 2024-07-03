@@ -1,4 +1,4 @@
-                 
+
 # Exactly-once语义在ApacheHive中的实现
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -182,7 +182,7 @@ public class ExactlyOnceExample {
         Path outputPath = new Path(outputTable);
         job.setInputPaths(inputPath);
         job.setOutputPath(outputPath);
-        
+
         // 执行SQL脚本以创建并装载表
         job.waitForCompletion(true);
         System.out.println("Successfully loaded data to table: " + outputTable);

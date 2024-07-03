@@ -403,4 +403,4 @@ print('模型准确率：', accuracy)
 * **欠采样**: 减少多数类样本的数量。
 * **使用权重**: 在训练过程中对不同类别的样本赋予不同的权重。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

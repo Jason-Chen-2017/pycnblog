@@ -114,7 +114,7 @@ $$
 考虑一个简单的模李超代数实例，模 $\mathcal{V}$ 是实数域上的全体二维向量 $\mathbb{R}^2$，模内的元素可以表示为：
 
 $$
-v = \begin{pmatrix} a \\ b \end{pmatrix},
+v = \begin{pmatrix} a \ b \end{pmatrix},
 $$
 
 李超代数 $\mathfrak{g}$ 是 $\mathbb{R}$ 上的全体实数，李超代数内的元素可以表示为：
@@ -128,7 +128,7 @@ $$
 模李超代数内的超乘法操作可以定义为：
 
 $$
-v \cdot x = \begin{pmatrix} ac \\ bc \end{pmatrix}.
+v \cdot x = \begin{pmatrix} ac \ bc \end{pmatrix}.
 $$
 
 这个例子直观地展示了模内的元素如何与模李超代数内的元素进行交互，形成新的结构。

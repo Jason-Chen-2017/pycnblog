@@ -229,7 +229,7 @@ KNN算法可以用于识别说话人的性别、年龄等语音识别任务。
     *   edX上的《机器学习》课程
 
 ### 7.2  开发工具推荐
-*   **Python:** 
+*   **Python:**
     *   Jupyter Notebook
     *   VS Code
 *   **机器学习库:**
@@ -281,5 +281,5 @@ KNN算法也面临一些挑战：
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

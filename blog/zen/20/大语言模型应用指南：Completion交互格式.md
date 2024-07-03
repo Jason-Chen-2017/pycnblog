@@ -1,6 +1,6 @@
 # 大语言模型应用指南：Completion交互格式
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：Completion交互格式, 大语言模型, API接口, 自动完成, 应用场景, 技术栈
 
@@ -75,13 +75,13 @@ Completion交互格式广泛应用于自然语言处理、信息检索、对话�
 
 假设我们有多个可能的任务参数$p_i$，每个参数$p_i$对应于特定的概率分布$P_i$，表示在给定参数下模型的响应分布。通过训练数据集，我们可以估计这些分布，并利用贝叶斯法则或最大似然估计法来预测最佳参数组合。
 
-$$P(\\text{optimal parameters}) = \\arg\\max_{p_i} \\prod_{i=1}^n P_i(p_i)$$
+$$P(\text{optimal parameters}) = \arg\max_{p_i} \prod_{i=1}^n P_i(p_i)$$
 
 ### 4.2 公式推导过程
 
 在实际应用中，通过构建特征向量$x$，其中$x_i$表示参数$p_i$的影响程度，可以简化上述问题为：
 
-$$P(\\text{optimal parameters}) = \\arg\\max_x \\sum_{i=1}^n w_i \\cdot \\log P_i(x_i)$$
+$$P(\text{optimal parameters}) = \arg\max_x \sum_{i=1}^n w_i \cdot \log P_i(x_i)$$
 
 其中，$w_i$为权重系数，用于调整不同参数的重要性。
 
@@ -128,7 +128,7 @@ def send_request(model_url, params):
         response.raise_for_status()
         return response.json()
     except requests.exceptions.RequestException as e:
-        logger.error(f\"Request failed: {e}\")
+        logger.error(f"Request failed: {e}")
         return None
 
 def parse_response(response_data):
@@ -137,12 +137,12 @@ def parse_response(response_data):
 
 # 参数示例
 params = {
-    \"task\": \"text_comprehension\",
-    \"input\": \"Your input text here\",
-    \"context\": [\"Contextual information\"]
+    "task": "text_comprehension",
+    "input": "Your input text here",
+    "context": ["Contextual information"]
 }
 
-response = send_request(\"http://your-model-url.com\", params)
+response = send_request("http://your-model-url.com", params)
 parse_response(response)
 ```
 
@@ -219,7 +219,7 @@ parse_response(response)
 
 - **Q**: 如何处理大规模模型的计算资源需求？
    **A**: 通过云服务提供商，利用弹性计算资源，按需扩展计算能力。同时，优化模型结构和训练策略，减少不必要的计算负担。
-   
+
 - **Q**: 如何平衡数据隐私和模型性能？
    **A**: 实施数据加密、匿名化处理和差分隐私技术，保护用户数据的同时，确保模型能够学习到有价值的信息。
 

@@ -1,6 +1,6 @@
 # AIGC从入门到实战：AIGC 在金融行业的创新场景—银行零售新范式
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 

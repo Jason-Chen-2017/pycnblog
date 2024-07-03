@@ -109,13 +109,10 @@ DQN算法的核心思想是使用深度神经网络学习动作值函数，并�
      $$
      y_i = r_i + \gamma \max_{a'} Q(s_{i+1},a'; \theta)
      $$
-   - 计算梯度 $\
-abla_{\theta}L(\theta) = \
-abla_{\theta}(y_i - Q(s_i,a_i; \theta))^2$。
+   - 计算梯度 $\nabla_{\theta}L(\theta) = \nabla_{\theta}(y_i - Q(s_i,a_i; \theta))^2$。
    - 使用梯度下降法更新网络参数 $\theta$：
      $$
-     \theta \leftarrow \theta - \alpha \
-abla_{\theta}L(\theta)
+     \theta \leftarrow \theta - \alpha \nabla_{\theta}L(\theta)
      $$
    - 更新目标网络参数 $\theta'$：
      $$
@@ -164,17 +161,14 @@ $$
 
 #### 步骤7：计算梯度
 
-计算梯度 $\
-abla_{\theta}L(\theta) = \
-abla_{\theta}(y_i - Q(s_i,a_i; \theta))^2$。
+计算梯度 $\nabla_{\theta}L(\theta) = \nabla_{\theta}(y_i - Q(s_i,a_i; \theta))^2$。
 
 #### 步骤8：更新参数
 
 使用梯度下降法更新网络参数 $\theta$：
 
 $$
-\theta \leftarrow \theta - \alpha \
-abla_{\theta}L(\theta)
+\theta \leftarrow \theta - \alpha \nabla_{\theta}L(\theta)
 $$
 
 其中，$\alpha$ 为学习率。

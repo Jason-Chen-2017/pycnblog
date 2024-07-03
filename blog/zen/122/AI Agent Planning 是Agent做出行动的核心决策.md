@@ -1,6 +1,6 @@
 # AI Agent Planning 是Agent做出行动的核心决策
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -428,4 +428,4 @@ AI Agent Planning 的未来发展趋势包括更强大的规划算法、更灵�
 
 AI Agent Planning 面临的挑战包括环境模型的不确定性、行动结果的不确定性、计算效率等。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

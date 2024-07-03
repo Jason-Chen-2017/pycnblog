@@ -1,4 +1,4 @@
-                 
+
 # AIGC from Basics to Practice: Leveraging AI for Video Creation to Unlock Traffic Secrets and Avoid Being Overlooked
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -184,20 +184,20 @@ def generate_video_from_text(text):
         truncation=True,
         return_tensors='tf'
     )
-    
+
     # 使用Bert提取特征
     sequence_output = bert_model(encoded_input['input_ids'])[0]
     features = sequence_output.numpy()
-    
+
     # 视频生成部分
     generator = StyleGAN2Generator()  # 加载图像生成模型
-    
+
     # 根据文本特征生成视频帧序列
     frames = []
     for _ in range(60):  # 假设每秒生成一帧，共60帧
         frame = generator.generate_frame(features)  # 假设此方法根据特征生成单帧图片
         frames.append(frame)
-    
+
     # 后期制作与输出
     video_writer = cv2.VideoWriter('output.mp4', cv2.VideoWriter_fourcc(*'mp4v'), 30, (frame.shape[1], frame.shape[0]))
     for frame in frames:

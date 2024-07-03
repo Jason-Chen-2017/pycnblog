@@ -185,4 +185,4 @@ print(web3.fromWei(balance, "ether"))
 
 * **隐私和安全:**  LLM-based Agent需要处理用户的敏感信息，需要确保数据的隐私和安全。
 * **可解释性和可信赖性:**  LLM-based Agent的决策过程需要更加透明和可解释，以增强用户对其的信任。
-* **伦理和社会影响:**  LLM-based Agent的应用需要考虑伦理和社会影响，避免潜在的风险。 
+* **伦理和社会影响:**  LLM-based Agent的应用需要考虑伦理和社会影响，避免潜在的风险。

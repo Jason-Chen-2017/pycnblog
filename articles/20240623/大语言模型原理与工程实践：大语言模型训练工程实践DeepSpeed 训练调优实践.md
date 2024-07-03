@@ -94,8 +94,7 @@ DeepSpeed的训练过程中，涉及以下数学模型：
 
 假设目标函数为$f(\theta)$，其中$\theta$为模型参数。梯度下降法的核心思想是沿着目标函数的负梯度方向更新参数$\theta$，即：
 
-$$\theta = \theta - \alpha \cdot \
-abla f(\theta)$$
+$$\theta = \theta - \alpha \cdot \nabla f(\theta)$$
 
 其中，$\alpha$为学习率。
 

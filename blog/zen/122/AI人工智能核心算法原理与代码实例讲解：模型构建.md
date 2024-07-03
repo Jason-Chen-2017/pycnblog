@@ -1,6 +1,6 @@
 # AI人工智能核心算法原理与代码实例讲解：模型构建
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -767,4 +767,4 @@ AI模型构建领域取得了重大进展，涌现出许多优秀的算法和框
 
 AI模型构建是AI技术发展的重要方向，它为各种应用提供了强大的工具。本文从多个方面对AI模型构建进行了探讨，包括核心概念、算法原理、数学模型、代码实例、应用场景、工具资源、发展趋势和挑战等。希望本文能够帮助读者更好地理解AI模型构建，并为其在相关领域的研究和应用提供参考。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

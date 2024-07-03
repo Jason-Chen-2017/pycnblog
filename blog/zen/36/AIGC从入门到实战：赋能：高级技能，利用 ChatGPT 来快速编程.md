@@ -122,13 +122,13 @@ ChatGPT，全名“Generative Pre-trained Transformer”，是一种大规模预
 
 设有一组变量$X$和$Y$，$P(X,Y)$表示联合概率分布，贝叶斯网络通过图形结构表示$X$和$Y$之间的条件独立性，公式为：
 
-$$P(X,Y) = \\prod_i P(X_i|Parents(X_i)) \\times \\prod_j P(Y_j|Parents(Y_j))$$
+$$P(X,Y) = \prod_i P(X_i|Parents(X_i)) \times \prod_j P(Y_j|Parents(Y_j))$$
 
 #### 生成模型
 
 对于变分自编码器（VAE），其目标是学习数据分布$P_{data}(X)$的近似，公式为：
 
-$$\\log P_{data}(X) \\approx \\log P_{Z}(X) + \\text{KL}(P_Z(Z) || P_{data}(Z))$$
+$$\log P_{data}(X) \approx \log P_{Z}(X) + \text{KL}(P_Z(Z) || P_{data}(Z))$$
 
 ### 4.3 案例分析与讲解
 
@@ -193,7 +193,7 @@ def generate_code(prompt, max_length=100, num_return_sequences=1):
     output = model.generate(input_ids, max_length=max_length, num_return_sequences=num_return_sequences)
     return [tokenizer.decode(ids, skip_special_tokens=True) for ids in output]
 
-code = generate_code(\"def calculate_sum(a, b):\")
+code = generate_code("def calculate_sum(a, b):")
 print(code)
 ```
 

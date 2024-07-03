@@ -12,14 +12,11 @@ AdaGrad 的核心在于其自适应的学习率策略。不同于固定学习率
 
 1. **初始化**：设置初始学习率 $\\eta$，初始化梯度平方和矩阵 $G$，通常设为零。
 
-2. **计算梯度**：根据当前模型参数和损失函数计算梯度 $\
-abla J(\\theta)$。
+2. **计算梯度**：根据当前模型参数和损失函数计算梯度 $\nabla J(\\theta)$。
 
-3. **更新梯度平方和矩阵**：对梯度平方和矩阵进行更新，$G \\leftarrow G + (\
-abla J(\\theta))^2$。
+3. **更新梯度平方和矩阵**：对梯度平方和矩阵进行更新，$G \\leftarrow G + (\nabla J(\\theta))^2$。
 
-4. **计算更新量**：根据梯度和梯度平方和矩阵计算更新量 $\\Delta \\theta = -\\frac{\\eta}{\\sqrt{G} + \\epsilon}\
-abla J(\\theta)$，其中 $\\epsilon$ 是一个很小的正数以避免除以零。
+4. **计算更新量**：根据梯度和梯度平方和矩阵计算更新量 $\\Delta \\theta = -\\frac{\\eta}{\\sqrt{G} + \\epsilon}\nabla J(\\theta)$，其中 $\\epsilon$ 是一个很小的正数以避免除以零。
 
 5. **更新参数**：将计算出的更新量应用到模型参数上，$\\theta \\leftarrow \\theta + \\Delta \\theta$。
 
@@ -31,11 +28,9 @@ abla J(\\theta)$，其中 $\\epsilon$ 是一个很小的正数以避免除以零
 
 假设我们有参数向量 $\\theta = [\\theta_1, \\theta_2, ..., \\theta_n]$，损失函数为 $J(\\theta)$，学习率为 $\\eta$，以及梯度平方和矩阵 $G = [G_1, G_2, ..., G_n]$。那么，对于第 $i$ 个参数 $\\theta_i$ 的更新规则如下：
 
-$$ G_i \\leftarrow G_i + (\
-abla J(\\theta))^2_i $$
+$$ G_i \\leftarrow G_i + (\nabla J(\\theta))^2_i $$
 
-$$ \\Delta \\theta_i = -\\frac{\\eta}{\\sqrt{G_i} + \\epsilon} \
-abla J(\\theta)_i $$
+$$ \\Delta \\theta_i = -\\frac{\\eta}{\\sqrt{G_i} + \\epsilon} \nabla J(\\theta)_i $$
 
 $$ \\theta_i \\leftarrow \\theta_i + \\Delta \\theta_i $$
 
@@ -45,8 +40,7 @@ $$ \\theta_i \\leftarrow \\theta_i + \\Delta \\theta_i $$
 
 假设我们正在训练一个简单的线性回归模型，并使用 AdaGrad 来优化参数 $\\theta$。在一次迭代中，我们计算了损失函数的梯度，然后更新了梯度平方和矩阵和参数。以下是一个简单的数学表示：
 
-假设 $\
-abla J(\\theta) = [-0.5, 0.3]$，初始学习率 $\\eta = 0.1$，$\\epsilon = 1e^{-8}$，$G = [0, 0]$（初始值）。
+假设 $\nabla J(\\theta) = [-0.5, 0.3]$，初始学习率 $\\eta = 0.1$，$\\epsilon = 1e^{-8}$，$G = [0, 0]$（初始值）。
 
 1. **计算梯度平方和矩阵更新**：
    $$ G \\leftarrow [0, 0] + [(-0.5)^2, (0.3)^2] = [0.25, 0.09] $$

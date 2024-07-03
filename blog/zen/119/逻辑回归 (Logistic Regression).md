@@ -185,9 +185,9 @@ X = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-然后，设置模型参数 $\theta = \begin{bmatrix} 0.2 \\ 0.1 \end{bmatrix}$，并使用梯度下降算法进行训练。
+然后，设置模型参数 $\theta = \begin{bmatrix} 0.2 \ 0.1 \end{bmatrix}$，并使用梯度下降算法进行训练。
 
-经过多次迭代后，得到最优模型参数 $\theta = \begin{bmatrix} 0.1 \\ 0.1 \end{bmatrix}$。
+经过多次迭代后，得到最优模型参数 $\theta = \begin{bmatrix} 0.1 \ 0.1 \end{bmatrix}$。
 
 最后，将测试样本 $X = \begin{bmatrix} 0.5 \end{bmatrix}$ 输入模型，得到预测概率：
 

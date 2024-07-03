@@ -142,24 +142,24 @@ for t in range(10):
     # 选择一个样本进行重放
     idx = np.random.randint(0, len(memory))
     x_replay, y_replay = memory[idx]
-    
+
     # 计算预测值和损失
     y_pred = w.dot(x_replay)
     loss = (y_pred - y_replay) ** 2
-    
+
     # 计算梯度
     grad = (y_pred - y_replay) * x_replay
-    
+
     # 更新模型参数
     w -= grad
-    
+
     # 计算预测值和损失
     y_pred = w.dot(x)
     loss = (y_pred - y) ** 2
-    
+
     # 记录样本
     memory.append((x, y))
-    
+
     # 打印结果
     print(f"Epoch {t}, Loss: {loss}")
 ```
@@ -212,27 +212,27 @@ for t in range(10):
     # 选择一个样本进行重放
     idx = np.random.randint(0, len(memory))
     x_replay, y_replay = memory[idx]
-    
+
     # 计算预测值和损失
     y_pred = w.dot(x_replay)
     loss = (y_pred - y_replay) ** 2
-    
+
     # 计算梯度
     grad = (y_pred - y_replay) * x_replay
-    
+
     # 更新模型参数
     w -= grad
-    
+
     # 计算预测值和损失
     y_pred = w.dot(x)
     loss = (y_pred - y) ** 2
-    
+
     # 记录样本
     memory.append((x, y))
-    
+
     # 打印结果
     print(f"Epoch {t}, Loss: {loss}")
-    
+
     # 绘制训练结果
     plt.scatter(x, y)
     plt.plot(x, y_pred)

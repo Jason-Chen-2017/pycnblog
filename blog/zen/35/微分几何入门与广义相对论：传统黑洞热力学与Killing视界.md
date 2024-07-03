@@ -83,19 +83,16 @@ Killing视界是黎曼度量不变的特定二维空间，用于研究黑洞的�
 - **熵的定义**：$S = A / 4$，其中$S$是熵，$A$是事件视界的面积。
 
 #### 广义相对论模型
-- **爱因斯坦场方程**：$G_{\\mu\
-u} = \\kappa T_{\\mu\
-u}$，其中$G_{\\mu\
-u}$是爱因斯坦张量，$\\kappa$是比例常数，$T_{\\mu\
+- **爱因斯坦场方程**：$G_{\mu\
+u} = \kappa T_{\mu\
+u}$，其中$G_{\mu\
+u}$是爱因斯坦张量，$\kappa$是比例常数，$T_{\mu\
 u}$是能量-动量张量。
 
 #### Killing视界模型
-- **Killing矢量场**：$\\xi^\\mu$满足$\
-abla_\
-u\\xi^\\mu+\
-abla_\\mu\\xi^\
-u=0$，其中$\
-abla$是拉普拉斯-贝尔特拉米算符。
+- **Killing矢量场**：$\xi^\mu$满足$\nabla_\
+u\xi^\mu+\nabla_\mu\xi^\
+u=0$，其中$\nabla$是拉普拉斯-贝尔特拉米算符。
 
 ### 公式推导过程
 
@@ -150,7 +147,7 @@ from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 
 def schwarzschild_metric(r, t):
-    \"\"\"Schwarzschild metric components.\"\"\"
+    """Schwarzschild metric components."""
     # Schwarzschild radius for example purposes
     rs = 2 * G * M / c**2
     # Metric components
@@ -162,7 +159,7 @@ def schwarzschild_metric(r, t):
     return g_tt, g_rr, g_thh, g_tth, g_rth
 
 def geodesic_eqns(g_tt, g_rr, g_thh, g_tth, g_rth, v, t):
-    \"\"\"Geodesic equations.\"\"\"
+    """Geodesic equations."""
     g11, g22, _, _, _ = g_tt, g_rr, g_thh, g_tth, g_rth
     v = np.array(v)
     # Geodesic equations
@@ -172,25 +169,25 @@ def geodesic_eqns(g_tt, g_rr, g_thh, g_tth, g_rth, v, t):
     return dv_dt
 
 def solve_geodesic(initial_conditions, t_span, g_tt, g_rr, g_thh, g_tth, g_rth):
-    \"\"\"Solve geodesic equations.\"\"\"
+    """Solve geodesic equations."""
     sol = odeint(geodesic_eqns, initial_conditions, t_span, args=(g_tt, g_rr, g_thh, g_tth, g_rth))
     return sol
 
 # Example usage
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     # Schwarzschild parameters
     G, c, M = 6.674e-11, 3e8, 1.989e30  # gravitational constant, speed of light, solar mass
     rs = 2 * G * M / c**2
-    
+
     # Initial conditions
     r0, v0 = 1.5 * rs, 0.01 * c
-    
+
     # Time span
     t_span = np.linspace(0, 100, 1000)
-    
+
     # Solve geodesic equation
     sol = solve_geodesic([r0, v0], t_span, *schwarzschild_metric)
-    
+
     # Plotting
     plt.figure()
     plt.plot(t_span, sol[:, 0])

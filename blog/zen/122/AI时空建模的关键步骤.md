@@ -387,4 +387,4 @@ Loss: 0.0012345678901234567
 
 **A**: 可以通过阅读相关书籍、论文、博客，参加相关课程，参加相关比赛等方式学习时空建模。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

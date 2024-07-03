@@ -14,7 +14,7 @@
 
 ### 2.1 模型评估指标
 
-衡量模型性能的关键指标,常见的有:  
+衡量模型性能的关键指标,常见的有:
 - 分类任务:准确率、精确率、召回率、F1 score、ROC曲线、AUC值等
 - 回归任务:平均绝对误差MAE、均方误差MSE、决定系数R^2等
 
@@ -22,7 +22,7 @@
 
 把数据划分为不同的子集,用于模型训练、调优和评估:
 - 训练集:用于训练模型参数
-- 验证集:用于模型选择和超参数调优 
+- 验证集:用于模型选择和超参数调优
 - 测试集:在训练完成后评估模型的泛化性能
 
 ### 2.3 交叉验证
@@ -33,7 +33,7 @@
 
 通过在目标函数中引入参数惩罚项,控制模型复杂度,降低过拟合风险,如L1正则、L2正则等。
 
-### 2.5 模型集成 
+### 2.5 模型集成
 
 组合多个模型的预测结果,提升整体性能,代表性方法有Bagging、Boosting、Stacking等。
 
@@ -62,13 +62,13 @@ D --> I[模型集成]
 3. 对每个参数组合,训练模型并在验证集上评估性能
 4. 返回性能最优的参数组合
 
-### 3.2 随机搜索 Random Search 
+### 3.2 随机搜索 Random Search
 
 随机采样参数组合,与网格搜索相比,在高维参数空间搜索更高效。
 
 1. 确定待搜索的参数及其分布
 2. 从参数分布中随机采样若干组合
-3. 对每个参数组合,训练模型并在验证集上评估性能  
+3. 对每个参数组合,训练模型并在验证集上评估性能
 4. 返回性能最优的参数组合
 
 ### 3.3 贝叶斯优化 Bayesian Optimization
@@ -76,7 +76,7 @@ D --> I[模型集成]
 建模目标函数与参数的关系,引导参数搜索的方向,搜索效率高。
 
 1. 给定先验分布和采集函数
-2. 初始随机采样一些参数点,评估目标函数值 
+2. 初始随机采样一些参数点,评估目标函数值
 3. 更新后验分布,基于采集函数确定新的采样点
 4. 重复步骤3,直到达到预算或性能要求
 5. 返回性能最优的参数组合
@@ -103,7 +103,7 @@ $$
 
 ![bias-variance-tradeoff](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Bias-variance_tradeoff.svg/1024px-Bias-variance_tradeoff.svg.png)
 
-### 4.2 交叉验证 
+### 4.2 交叉验证
 
 以 k 折交叉验证为例,数学描述如下:
 
@@ -134,9 +134,9 @@ iris = load_iris()
 X, y = iris.data, iris.target
 
 # 设置参数网格
-param_grid = {'C': [0.1, 1, 10], 
+param_grid = {'C': [0.1, 1, 10],
               'gamma': [0.01, 0.1, 1],
-              'kernel': ['rbf', 'poly']} 
+              'kernel': ['rbf', 'poly']}
 
 # 初始化模型
 svc = SVC()
@@ -164,11 +164,11 @@ from scipy.stats import randint
 from sklearn.model_selection import RandomizedSearchCV
 
 # 设置参数分布
-param_dist = {'C': randint(1, 10), 
+param_dist = {'C': randint(1, 10),
               'gamma': [0.01, 0.1, 1],
               'kernel': ['rbf', 'poly']}
 
-# 随机搜索 
+# 随机搜索
 clf = RandomizedSearchCV(svc, param_dist, n_iter=10, cv=5, verbose=2)
 clf.fit(X, y)
 
@@ -223,7 +223,7 @@ Mean score:  0.9733333333333334
 除了 scikit-learn,还有一些其他强大的AutoML工具,能够实现自动化的特征工程、算法选择和超参数优化:
 
 - H2O AutoML: http://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html
-- Auto-sklearn: https://automl.github.io/auto-sklearn 
+- Auto-sklearn: https://automl.github.io/auto-sklearn
 - TPOT: https://epistasislab.github.io/tpot/
 
 一些介绍模型选择原理的经典文献:

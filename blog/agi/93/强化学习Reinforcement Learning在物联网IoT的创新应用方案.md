@@ -104,9 +104,9 @@ DQN算法的数学模型如下：
 
 - Q值函数：$Q(s, a) = \sum_{s' \in \mathcal{S}} \pi(a|s) \times R(s, a) + \gamma \max_{a' \in \mathcal{A}} Q(s', a')$
 
-- 策略函数：$\pi(a|s) = \begin{cases} 
+- 策略函数：$\pi(a|s) = \begin{cases}
 1 - \epsilon & \text{with probability } \epsilon \\
-P(a|s) & \text{with probability } 1-\epsilon 
+P(a|s) & \text{with probability } 1-\epsilon
 \end{cases}$
 
 其中：
@@ -125,9 +125,9 @@ P(a|s) & \text{with probability } 1-\epsilon
 DQN算法的公式推导过程如下：
 
 - Q值函数：$Q(s, a) = \mathbb{E}_{s'}[R(s, a) + \gamma \max_{a'} Q(s', a')] = \mathbb{E}_{s', a'}[R(s, a) + \gamma Q(s', a')]$
-- 策略函数：$\pi(a|s) = \frac{\pi(a|s) Q(s, a)}{\sum_{a' \in \mathcal{A}} \pi(a'|s) Q(s, a')} = \begin{cases} 
+- 策略函数：$\pi(a|s) = \frac{\pi(a|s) Q(s, a)}{\sum_{a' \in \mathcal{A}} \pi(a'|s) Q(s, a')} = \begin{cases}
 \frac{1 - \epsilon}{\sum_{a' \in \mathcal{A}} \pi(a'|s) Q(s, a')} & \text{with probability } \epsilon \\
-\frac{\pi(a|s) Q(s, a)}{\sum_{a' \in \mathcal{A}} \pi(a'|s) Q(s, a')} & \text{with probability } 1-\epsilon 
+\frac{\pi(a|s) Q(s, a)}{\sum_{a' \in \mathcal{A}} \pi(a'|s) Q(s, a')} & \text{with probability } 1-\epsilon
 \end{cases}$
 
 ### 4.3 案例分析与讲解

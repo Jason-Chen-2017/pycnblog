@@ -136,9 +136,9 @@ $$V_{t+1}^{\pi}(s) = \max_{a}[\min_{\pi'}V_t^{\pi'}(s, a) + R_{t+1} + \gamma \ma
 
 奖励函数为：
 
-$$R_t = \begin{cases} 
+$$R_t = \begin{cases}
 10 & \text{if } (x_t, y_t) = (x_{t+1}, y_{t+1}) \\
--1 & \text{otherwise} 
+-1 & \text{otherwise}
 \end{cases}$$
 
 假设折扣因子$\gamma = 0.9$，初始值函数$V^{\pi}_0(s) = 0$，学习率$\alpha = 0.1$。使用VIO算法训练10次，分析机器人路径规划过程。
@@ -195,7 +195,7 @@ class VIO(nn.Module):
         super(VIO, self).__init__()
         self.fc1 = nn.Linear(state_dim, hidden_dim)
         self.fc2 = nn.Linear(hidden_dim, action_dim)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)

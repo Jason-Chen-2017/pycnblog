@@ -6,7 +6,7 @@
 
 ### 1.1 机器人技术的发展历程
 #### 1.1.1 早期机器人的诞生
-#### 1.1.2 工业机器人的崛起 
+#### 1.1.2 工业机器人的崛起
 #### 1.1.3 服务机器人和社交机器人的兴起
 
 ### 1.2 机器人技术的重要性
@@ -65,7 +65,7 @@
 ### 4.1 机器人运动学模型
 #### 4.1.1 D-H参数与坐标变换
 $$
-^{i-1}T_i = \begin{bmatrix} 
+^{i-1}T_i = \begin{bmatrix}
 \cos\theta_i & -\sin\theta_i\cos\alpha_i & \sin\theta_i\sin\alpha_i & a_i\cos\theta_i \\
 \sin\theta_i & \cos\theta_i\cos\alpha_i & -\cos\theta_i\sin\alpha_i & a_i\sin\theta_i \\
 0 & \sin\alpha_i & \cos\alpha_i & d_i \\
@@ -75,7 +75,7 @@ $$
 #### 4.1.2 正向运动学求解
 #### 4.1.3 逆向运动学求解
 
-### 4.2 机器人动力学模型  
+### 4.2 机器人动力学模型
 #### 4.2.1 拉格朗日方程推导
 $$
 \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}_i}\right) - \frac{\partial L}{\partial q_i} = \tau_i
@@ -149,7 +149,7 @@ def inverse_kinematics(px, py, pz, roll, pitch, yaw):
 
     # 求解关节角度
     q1_sol = sp.atan2(py, px)
-    
+
     # 省略中间步骤...
 
     return q1_sol, q2_sol, q3_sol, q4_sol, q5_sol, q6_sol
@@ -173,17 +173,17 @@ def lagrange_dynamics(T, V, q):
     """基于拉格朗日方程求解动力学方程"""
     n = len(q)
     L = T - V
-    
+
     # 计算拉格朗日方程左边项
     left_term = sp.Matrix([sp.diff(L, q_dot) for q_dot in q])
     left_term = sp.Matrix([sp.diff(left_term[i], sp.Symbol('t')) for i in range(n)])
-    
-    # 计算拉格朗日方程右边项  
+
+    # 计算拉格朗日方程右边项
     right_term = sp.Matrix([sp.diff(L, q[i]) for i in range(n)])
-    
+
     # 整理动力学方程
     dynamics_eq = left_term - right_term
-    
+
     return dynamics_eq
 
 # 定义广义坐标和速度
@@ -216,7 +216,7 @@ class PIDController:
         self.kd = kd
         self.integral = 0
         self.last_error = 0
-    
+
     def control(self, error, dt):
         """计算控制量"""
         self.integral += error * dt

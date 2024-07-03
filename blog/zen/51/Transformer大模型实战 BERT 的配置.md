@@ -31,7 +31,7 @@ graph LR
     subgraph Decoder
         MultiHeadAttention2[多头注意力机制] --> Add3[规范化+残差连接]
         Add3 --> MultiHeadAttention3[Encoder-Decoder注意力机制]
-        MultiHeadAttention3 --> Add4[规范化+残差连接] 
+        MultiHeadAttention3 --> Add4[规范化+残差连接]
         Add4 --> FeedForward2[前馈神经网络]
         FeedForward2 --> Add5[规范化+残差连接]
         Add5 --> DecoderLayer[Decoder层]
@@ -54,7 +54,7 @@ graph LR
     EncoderN --> Sequence[序列输出] --> SequenceLabel[序列标注任务输出层]
 ```
 
-## 3.核心算法原理具体操作步骤 
+## 3.核心算法原理具体操作步骤
 
 ### 3.1 注意力机制
 
@@ -100,10 +100,10 @@ labels = ["the", "his"]
 ```python
 # 输入为连续的两个句子
 sentence_a = "The man went to the store."
-sentence_b = "He bought a bag of apples." 
+sentence_b = "He bought a bag of apples."
 label = 1 # 是连续句子
 
-# 输入为无关的两个句子 
+# 输入为无关的两个句子
 sentence_a = "The dog played in the park."
 sentence_b = "I love eating pizza."
 label = 0 # 不是连续句子

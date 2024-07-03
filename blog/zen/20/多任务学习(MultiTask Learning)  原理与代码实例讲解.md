@@ -80,11 +80,11 @@
 
 多任务学习的数学模型通常基于联合损失函数，该函数旨在最小化所有任务的损失同时考虑任务间的共享信息。以下是一个基本的多任务学习模型的公式表示：
 
-设 $f_i(\\cdot)$ 是第$i$个任务的模型，$\\theta_i$ 是第$i$个任务的参数，$L_i(x,y,\\theta_i)$ 是第$i$个任务的损失函数，$M$ 是任务的数量，则多任务学习的目标是：
+设 $f_i(\cdot)$ 是第$i$个任务的模型，$\theta_i$ 是第$i$个任务的参数，$L_i(x,y,\theta_i)$ 是第$i$个任务的损失函数，$M$ 是任务的数量，则多任务学习的目标是：
 
-$$\\min_{\\theta_1,\\theta_2,...,\\theta_M} \\sum_{i=1}^{M} \\lambda_i L_i(x,y,\\theta_i) + \\Omega(\\theta_1,\\theta_2,...,\\theta_M)$$
+$$\min_{\theta_1,\theta_2,...,\theta_M} \sum_{i=1}^{M} \lambda_i L_i(x,y,\theta_i) + \Omega(\theta_1,\theta_2,...,\theta_M)$$
 
-其中，$\\lambda_i$ 是任务$i$的损失权重，$\\Omega(\\cdot)$ 是正则化项，用于衡量参数之间的差异，以促进任务间的共享信息。
+其中，$\lambda_i$ 是任务$i$的损失权重，$\Omega(\cdot)$ 是正则化项，用于衡量参数之间的差异，以促进任务间的共享信息。
 
 ## 5. 项目实践：代码实例和详细解释说明
 
@@ -107,7 +107,7 @@ from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Input, Dense, concatenate
 
 # 加载数据集
-data = load_files(\"/path/to/dataset\")
+data = load_files("/path/to/dataset")
 X, y = data.data, data.target
 
 # 将标签转换为二进制表示

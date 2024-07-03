@@ -136,11 +136,11 @@ Q-learning 算法流程如下：
     * 选择行动 $a_t$。
     * 执行行动 $a_t$，环境状态转变为 $s_{t+1}$，Agent 获得奖励 $r_{t+1}$。
     * 更新行动值函数：
-    
+
     $$
     Q(s_t,a_t) \leftarrow Q(s_t,a_t) + \alpha [r_{t+1} + \gamma \max_{a' \in A} Q(s_{t+1},a') - Q(s_t,a_t)]
     $$
-    
+
     其中，$\alpha$ 为学习率。
 
 ### 4.4 举例说明

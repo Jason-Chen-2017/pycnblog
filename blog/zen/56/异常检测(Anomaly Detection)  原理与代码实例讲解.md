@@ -115,21 +115,21 @@ class GaussianAD:
         self.epsilon = epsilon
         self.mu = None
         self.sigma = None
-        
+
     def fit(self, X):
         """
         用正常数据拟合高斯分布参数
         """
         self.mu = np.mean(X, axis=0)
         self.sigma = np.std(X, axis=0)
-        
+
     def predict(self, X):
         """
         异常检测,返回异常分数(负对数概率)
         """
         p = np.prod(self._gaussian_pdf(X), axis=1)
         return -np.log(p)
-    
+
     def _gaussian_pdf(self, X):
         """
         计算高斯分布概率密度
@@ -174,7 +174,7 @@ print(scores)
 1. 制造业设备故障检测
    - 背景:在生产车间,各种机器设备的健康状况直接影响产品质量和生产效率。设备故障会导致停产,造成经济损失。
    - 应用:通过在设备上安装各种传感器,采集设备的振动、温度、电流等参数,构建异常检测模型。一旦发现设备参数异常,及时预警,安排检修,避免设备损坏。
-   
+
 2. 互联网系统的入侵检测
    - 背景:互联网系统面临着各种恶意攻击和入侵的威胁,及时发现异常流量对于保障系统安全至关重要。
    - 应用:通过收集网络流量日志数据,如IP地址、端口号、请求频率等,构建异常检测模型。一旦发现异常流量,及时阻断,防止入侵事件。

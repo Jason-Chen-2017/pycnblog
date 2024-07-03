@@ -13,7 +13,7 @@
 ## 2. 核心概念与联系
 ### 2.1 元数据(Metadata)
 元数据是描述数据的数据,它记录了数据的结构、语义、来源、变更等关键信息。在数据治理中,元数据扮演着至关重要的角色,它是数据资产管理的基础。
-### 2.2 数据血缘(Data Lineage) 
+### 2.2 数据血缘(Data Lineage)
 数据血缘描述了数据从源头到目的地的完整路径和转换过程。通过数据血缘分析,可以追踪数据的来龙去脉,发现数据质量问题,进行影响分析和溯源。
 ### 2.3 数据分类与标签(Data Classification & Tagging)
 数据分类与标签是将数据进行系统性组织和描述的方法。通过给数据打上业务标签、安全标签、隐私标签等,可以更好地理解和管控数据,实现精细化的数据治理。
@@ -89,7 +89,7 @@ hive_table = {
         },
         {
             "name": "age",
-            "type": "int" 
+            "type": "int"
         }
     ]
 }
@@ -101,7 +101,7 @@ import json
 atlas_url = "http://atlas-host:21000/api/atlas"
 headers = {"Content-Type": "application/json"}
 
-response = requests.post(f"{atlas_url}/v2/entity", 
+response = requests.post(f"{atlas_url}/v2/entity",
                          data=json.dumps({"entity": hive_table}),
                          headers=headers, auth=("admin", "admin"))
 print(response.json())
@@ -119,7 +119,7 @@ table_a = {
 }
 table_a_id = create_entity(table_a)
 
-# 创建表B元数据 
+# 创建表B元数据
 table_b = {
     "name": "table_b",
     "db": {"name": "sales"}

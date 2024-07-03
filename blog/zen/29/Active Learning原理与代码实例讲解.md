@@ -160,23 +160,23 @@ n_queries = 10
 for i in range(n_queries):
     # 训练模型
     model.fit(X_train, y_train)
-    
+
     # 选择最不确定的数据点
     probs = model.predict_proba(X_pool)
     uncertainties = 1 - np.max(probs, axis=1)
     query_idx = np.argmax(uncertainties)
-    
+
     # 获取标注数据
     X_query, y_query = X_pool[query_idx].reshape(1, -1), y_pool[query_idx].reshape(1, )
-    
+
     # 更新训练集
     X_train = np.vstack((X_train, X_query))
     y_train = np.hstack((y_train, y_query))
-    
+
     # 移除已标注数据
     X_pool = np.delete(X_pool, query_idx, axis=0)
     y_pool = np.delete(y_pool, query_idx, axis=0)
-    
+
     # 输出当前模型的准确率
     y_pred = model.predict(X_train)
     print(f'Query {i+1}, Accuracy: {accuracy_score(y_train, y_pred)}')

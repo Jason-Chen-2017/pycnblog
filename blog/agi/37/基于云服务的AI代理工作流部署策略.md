@@ -131,7 +131,7 @@ $$s(v) \geq 0, \forall v \in V$$
 
 ```mermaid
 graph LR
-A[v1, 10] --> B[v2, 20] 
+A[v1, 10] --> B[v2, 20]
 A --> C[v3, 30]
 B --> D[v4, 20]
 C --> D

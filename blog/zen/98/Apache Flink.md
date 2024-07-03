@@ -205,4 +205,4 @@ public class AvgTemperature extends WindowFunction<SensorReading, Tuple3<String,
     @Override
     public void apply(String key, TimeWindow window, Iterable<SensorReading> values, Collector<Tuple3<String, Long, Double>> out) {
         double sum = 0;
-        int count = 
+        int count =

@@ -97,19 +97,15 @@ MAML算法的推导过程如下：
 1. 在源任务上训练模型，计算损失函数：
    $$\mathcal{L}(\theta, x, y)$$
 2. 根据损失函数，计算梯度：
-   $$\
-abla_{\theta} \mathcal{L}(\theta, x, y)$$
+   $$\nabla_{\theta} \mathcal{L}(\theta, x, y)$$
 3. 使用梯度下降法更新模型参数：
-   $$\theta \leftarrow \theta - \alpha \
-abla_{\theta} \mathcal{L}(\theta, x, y)$$
+   $$\theta \leftarrow \theta - \alpha \nabla_{\theta} \mathcal{L}(\theta, x, y)$$
 4. 在新任务上获取少量数据，计算损失函数：
    $$\mathcal{L}(\theta + \delta, x, y)$$
 5. 根据损失函数，计算梯度：
-   $$\
-abla_{\delta} \mathcal{L}(\theta + \delta, x, y)$$
+   $$\nabla_{\delta} \mathcal{L}(\theta + \delta, x, y)$$
 6. 使用梯度下降法更新微调参数：
-   $$\delta \leftarrow \delta - \alpha \
-abla_{\delta} \mathcal{L}(\theta + \delta, x, y)$$
+   $$\delta \leftarrow \delta - \alpha \nabla_{\delta} \mathcal{L}(\theta + \delta, x, y)$$
 7. 将微调参数$\delta$应用到训练好的模型$\theta$上，得到新任务上的模型$\theta + \delta$。
 
 ### 4.3 案例分析与讲解

@@ -217,7 +217,7 @@ class QNetwork(nn.Module):
         super(QNetwork, self).__init__()
         self.fc1 = nn.Linear(input_size, 128)
         self.fc2 = nn.Linear(128, output_size)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)
@@ -240,7 +240,7 @@ class Environment:
     def __init__(self):
         self.state_space = [0, 1]
         self.action_space = [0, 1]
-    
+
     def step(self, action):
         if action == 0:
             return torch.tensor([1, 0]), torch.tensor([10])
@@ -256,15 +256,15 @@ def train(q_network, environment, epochs):
         while True:
             with torch.no_grad():
                 action = torch.argmax(q_network(state))
-            
+
             next_state, reward = environment.step(action)
             target = reward + gamma * torch.max(q_network(next_state))
             loss = criterion(q_network(state), target)
-            
+
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-            
+
             state = next_state
 
 # 执行训练

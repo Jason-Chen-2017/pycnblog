@@ -701,4 +701,4 @@ Recall: 0.5
 
 评估多语言 Transformer 模型的性能可以使用目标任务的评估指标，例如准确率、精确率、召回率等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

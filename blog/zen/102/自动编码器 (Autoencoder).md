@@ -214,7 +214,7 @@ A：过拟合问题可以通过以下方法进行缓解：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 

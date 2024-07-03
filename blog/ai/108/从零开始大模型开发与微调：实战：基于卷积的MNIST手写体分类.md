@@ -355,4 +355,4 @@ print("Accuracy: ", accuracy)
 * **使用更复杂的模型架构：**  使用更复杂的模型架构，可以学习到更复杂的特征，提高模型的泛化能力。
 * **使用正则化技术：**  使用正则化技术，可以防止模型过度拟合，提高模型的泛化能力。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

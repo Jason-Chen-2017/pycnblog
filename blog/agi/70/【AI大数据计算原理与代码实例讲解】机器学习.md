@@ -1,7 +1,7 @@
 
 # 【AI大数据计算原理与代码实例讲解】机器学习
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 关键词：机器学习，大数据计算，深度学习，算法原理，代码实例，应用场景
 

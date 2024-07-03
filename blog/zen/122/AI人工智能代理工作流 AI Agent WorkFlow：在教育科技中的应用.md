@@ -329,4 +329,4 @@ if __name__ == "__main__":
 * **Q：AI Agent 如何处理学生的情绪问题？**
 * **A：** AI Agent 可以通过情感识别技术，识别学生的情绪，并提供相应的支持和帮助，例如提供情绪调节技巧、引导学生进行心理咨询等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

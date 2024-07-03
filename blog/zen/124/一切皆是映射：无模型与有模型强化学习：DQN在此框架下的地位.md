@@ -1,6 +1,6 @@
 # 一切皆是映射：无模型与有模型强化学习：DQN在此框架下的地位
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 

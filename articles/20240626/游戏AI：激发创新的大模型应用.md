@@ -233,8 +233,7 @@ graph LR
 
 **多智能体系统**
 
-- 智能体策略更新：$\pi_i(s_i) \leftarrow \pi_i(s_i) + \alpha \
-abla_{\pi_i(s_i)} J(\pi_i(s_i))$
+- 智能体策略更新：$\pi_i(s_i) \leftarrow \pi_i(s_i) + \alpha \nabla_{\pi_i(s_i)} J(\pi_i(s_i))$
 
 ### 4.3 案例分析与讲解
 

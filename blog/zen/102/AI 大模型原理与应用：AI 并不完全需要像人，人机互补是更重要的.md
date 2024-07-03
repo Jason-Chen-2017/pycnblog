@@ -1,7 +1,7 @@
 
 # AI 大模型原理与应用：AI 并不完全需要像人，人机互补是更重要的
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍

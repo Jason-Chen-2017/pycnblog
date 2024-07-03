@@ -543,4 +543,4 @@ print('Pareto Front:', res.F)
 
 可以使用模拟环境、仿真数据等方法来降低评估成本。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

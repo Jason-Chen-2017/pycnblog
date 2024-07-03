@@ -162,7 +162,7 @@ model = BertForMaskedLM.from_pretrained('bert-base-uncased')
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
 def generate_summary(text, max_length=50):
-    inputs = tokenizer.encode(text, return_tensors=\"pt\", max_length=max_length, truncation=True)
+    inputs = tokenizer.encode(text, return_tensors="pt", max_length=max_length, truncation=True)
     summary = model.generate(inputs, max_length=max_length, num_beams=2, no_repeat_ngram_size=2, early_stopping=True)
     return tokenizer.decode(summary[0])
 ```
@@ -183,7 +183,7 @@ def train_gan(gan, dataloader, epochs=10):
     for epoch in range(epochs):
         for images in dataloader:
             gan.train_step(images)
-        print(f\"Epoch {epoch+1}/{epochs}, Loss: {gan.loss:.4f}\")
+        print(f"Epoch {epoch+1}/{epochs}, Loss: {gan.loss:.4f}")
 ```
 
 #### 代码生成
@@ -193,7 +193,7 @@ import random
 from nltk.tokenize import word_tokenize
 
 def generate_code(code_base, keywords):
-    code = \"\"
+    code = ""
     for line in code_base.split('\
 '):
         tokens = word_tokenize(line)

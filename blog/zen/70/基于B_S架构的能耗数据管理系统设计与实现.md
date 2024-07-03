@@ -187,4 +187,4 @@ public ResponseEntity<AnalysisResult> analyzeData(@RequestParam String startTime
 * **建立完善的能耗管理制度：**明确责任分工，制定奖惩措施。
 * **加强员工培训：**提高员工的节能意识。
 * **采用先进的节能技术：**例如变频技术、LED照明等。
-* **定期进行能耗审计：**发现能源浪费问题，并及时改进。 
+* **定期进行能耗审计：**发现能源浪费问题，并及时改进。

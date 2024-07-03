@@ -29,7 +29,7 @@ Flink 采用主从架构,由一个 JobManager(主节点)和多个 TaskManager(�
 ```mermaid
 graph TD
     A[JobManager] -->|schedules tasks| B(TaskManager)
-    A -->|schedules tasks| C(TaskManager) 
+    A -->|schedules tasks| C(TaskManager)
     A -->|schedules tasks| D(TaskManager)
 ```
 
@@ -67,7 +67,7 @@ Flink 提供了 Fault-Tolerant State 机制,支持:
 - 一致性检查点(Checkpointing)
 - 状态恢复
 
-## 3.核心算法原理具体操作步骤  
+## 3.核心算法原理具体操作步骤
 
 ### 3.1 流执行模型
 
@@ -255,7 +255,7 @@ public class ViewCountsJob {
 - 智能家居: 分析家电传感器数据,实现智能控制
 - 预测性维护: 分析工业设备数据,提前发现故障隐患
 
-### 6.3 金融服务 
+### 6.3 金融服务
 
 - 交易监控: 实时检测可疑交易活动
 - 欺诈检测: 分析交易数据流,识别欺诈行为

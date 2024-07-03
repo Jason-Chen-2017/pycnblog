@@ -74,19 +74,19 @@ The LDA mathematical model is based on the Bayes decision rule and the assumptio
 #### 4.1.1 Between-Class Scatter Matrix
 
 $$
-\\mathbf{S}_{b} = \\sum_{i=1}^{C} n_{i} (\\mathbf{\\mu}_{i} - \\mathbf{\\mu})(\\mathbf{\\mu}_{i} - \\mathbf{\\mu})^{T}
+\mathbf{S}_{b} = \sum_{i=1}^{C} n_{i} (\mathbf{\mu}_{i} - \mathbf{\mu})(\mathbf{\mu}_{i} - \mathbf{\mu})^{T}
 $$
 
 #### 4.1.2 Within-Class Scatter Matrix
 
 $$
-\\mathbf{S}_{w} = \\sum_{i=1}^{C} \\sum_{j=1}^{n_{i}} (\\mathbf{x}_{ij} - \\mathbf{\\mu}_{i})(\\mathbf{x}_{ij} - \\mathbf{\\mu}_{i})^{T}
+\mathbf{S}_{w} = \sum_{i=1}^{C} \sum_{j=1}^{n_{i}} (\mathbf{x}_{ij} - \mathbf{\mu}_{i})(\mathbf{x}_{ij} - \mathbf{\mu}_{i})^{T}
 $$
 
 #### 4.1.3 Eigenvalue Equation
 
 $$
-(\\mathbf{S}_{b} + \\lambda \\mathbf{S}_{w}) \\mathbf{v} = \\mathbf{0}
+(\mathbf{S}_{b} + \lambda \mathbf{S}_{w}) \mathbf{v} = \mathbf{0}
 $$
 
 ### 4.2 KNN Mathematical Model
@@ -96,7 +96,7 @@ The KNN mathematical model is based on the distance between the query point and 
 #### 4.2.1 Euclidean Distance
 
 $$
-d(\\mathbf{x}, \\mathbf{y}) = \\sqrt{\\sum_{i=1}^{D} (x_{i} - y_{i})^{2}}
+d(\mathbf{x}, \mathbf{y}) = \sqrt{\sum_{i=1}^{D} (x_{i} - y_{i})^{2}}
 $$
 
 ### 4.3 SVM Mathematical Model
@@ -106,17 +106,17 @@ The SVM mathematical model is based on the optimal hyperplane that maximally sep
 #### 4.3.1 Kernel Function
 
 $$
-K(\\mathbf{x}, \\mathbf{y}) = \\phi(\\mathbf{x}) \\cdot \\phi(\\mathbf{y})
+K(\mathbf{x}, \mathbf{y}) = \phi(\mathbf{x}) \cdot \phi(\mathbf{y})
 $$
 
 #### 4.3.2 Quadratic Optimization Problem
 
 $$
-\\begin{aligned}
-\\min_{\\mathbf{w}, b, \\xi} & \\frac{1}{2} \\mathbf{w}^{T} \\mathbf{w} + C \\sum_{i=1}^{n} \\xi_{i} \\\\
-\\text{subject to} & y_{i} (\\mathbf{w}^{T} \\phi(\\mathbf{x}_{i}) + b) \\geq 1 - \\xi_{i} \\\\
-& \\xi_{i} \\geq 0, \\quad i = 1, \\ldots, n
-\\end{aligned}
+\begin{aligned}
+\min_{\mathbf{w}, b, \xi} & \frac{1}{2} \mathbf{w}^{T} \mathbf{w} + C \sum_{i=1}^{n} \xi_{i} \\\
+\text{subject to} & y_{i} (\mathbf{w}^{T} \phi(\mathbf{x}_{i}) + b) \geq 1 - \xi_{i} \\\
+& \xi_{i} \geq 0, \quad i = 1, \ldots, n
+\end{aligned}
 $$
 
 ## 5. Project Practice: Code Examples and Detailed Explanations

@@ -163,8 +163,7 @@ $$
    智能体 $i$ 可以根据交互信息 $\mathbf{x}_{ij}$ 更新其动作策略：
 
    $$
- \theta_i = \theta_i + \alpha \
-abla_{\theta_i} J(\theta_i, \mathbf{x}_{ij}) 
+ \theta_i = \theta_i + \alpha \nabla_{\theta_i} J(\theta_i, \mathbf{x}_{ij}) 
 $$
 
    其中 $\alpha$ 为学习率，$J(\theta_i, \mathbf{x}_{ij})$ 为目标函数。

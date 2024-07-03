@@ -102,7 +102,7 @@ def serre_ss(base, fiber):
     for p in range(base.dimension + 1):
         for q in range(fiber.dimension + 1):
             E[(p, q)] = base.homology(p).tensor(fiber.homotopy(q))
-    
+
     # 计算微分
     def diff(E, r):
         E_next = {}
@@ -111,7 +111,7 @@ def serre_ss(base, fiber):
                 d = E[(p+r, q-r+1)] * E[(p, q)]
                 E_next[(p, q)] = E[(p, q)] / d
         return E_next
-        
+
     # 迭代计算收敛页
     r = 2
     while True:
@@ -120,7 +120,7 @@ def serre_ss(base, fiber):
             break
         E = E_next
         r += 1
-        
+
     return E
 ```
 

@@ -122,7 +122,7 @@ P(w_1, w_2, ..., w_n) &= P(w_1) \cdot P(w_2|w_1) \cdot P(w_3|w_1,w_2) \cdot ... 
 
 $$\begin{aligned}
 &P(\text{"I"}) \\
-&P(\text{"love"} | \text{"I"}) \\ 
+&P(\text{"love"} | \text{"I"}) \\
 &P(\text{"natural"} | \text{"I love"}) \\
 &P(\text{"language"} | \text{"I love natural"}) \\
 &P(\text{"processing"} | \text{"I love natural language"}) \\

@@ -1,7 +1,7 @@
 
 # FlinkTableAPI:事件驱动架构与流处理
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -213,7 +213,7 @@ public class ClickStreamAnalysis {
         // 创建事件时间水印
         TimeCharacteristic timeCharacteristic = TimeCharacteristic.EventTime;
         tableEnv.connect(inputStream)
-                .withFormat(new Json().jsonSchema("{\"type\":\"object\",\"properties\":{\"user\":{\"type\":\"string\"},\"timestamp\":{\"type\":\"string\",\"format\":\"date-time\"},\"url\":{\"type\":\"string\"}},\"required\":[\"user\",\"timestamp\",\"url\"]}"))
+                .withFormat(new Json().jsonSchema("{"type":"object","properties":{"user":{"type":"string"},"timestamp":{"type":"string","format":"date-time"},"url":{"type":"string"}},"required":["user","timestamp","url"]}"))
                 .withSchema(new Schema(
                         new Field("user", DataTypes.STRING()),
                         new Field("timestamp", DataTypes.TIMESTAMP(3)),

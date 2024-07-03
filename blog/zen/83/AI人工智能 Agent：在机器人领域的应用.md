@@ -22,14 +22,14 @@
 graph TB
   env[Environment]
   percept[Percept]
-  sensor[Sensors] 
+  sensor[Sensors]
   belief[Belief State]
   goal[Goals]
   plan[Plans]
   action[Actions]
   actuator[Actuators]
   learner[Learning]
-  
+
   env --> sensor
   sensor --> percept
   percept --> belief
@@ -48,7 +48,7 @@ graph TB
 Agent的核心概念包括：
 
 - 感知(Percept)：Agent通过传感器从环境获取的信息，如图像、声音等。
-- 信念状态(Belief State)：Agent对环境的内部表示，包括环境状态、Agent状态等。  
+- 信念状态(Belief State)：Agent对环境的内部表示，包括环境状态、Agent状态等。
 - 目标(Goals)：Agent需要完成的任务或达到的状态。
 - 规划(Plans)：根据目标和信念状态，生成一系列动作的过程。
 - 学习(Learning)：根据与环境的交互，优化信念状态和规划策略的过程。
@@ -64,7 +64,7 @@ Agent的核心概念包括：
 
 1. 初始化Q值表Q(s,a)，表示状态s下采取行动a的期望收益。
 2. 重复以下步骤，直到收敛：
-   1. 根据当前状态s，使用一定的策略(如ε-贪心)选择一个行动a。 
+   1. 根据当前状态s，使用一定的策略(如ε-贪心)选择一个行动a。
    2. 执行行动a，观察环境反馈的下一个状态s'和奖励r。
    3. 更新Q值：$Q(s,a) \leftarrow Q(s,a) + \alpha [r + \gamma \max_{a'} Q(s',a') - Q(s,a)]$
    4. 更新当前状态：$s \leftarrow s'$
@@ -130,7 +130,7 @@ $$\pi^*(s) = \arg\max_{a \in A} Q^*(s,a)$$
 - 状态空间S：地图中的16个网格。
 - 行动空间A：{上,下,左,右}。
 - 奖励函数R：每一步-1，到达终点+10。
-- 状态转移概率P：1.0，表示行动的执行是确定的。 
+- 状态转移概率P：1.0，表示行动的执行是确定的。
 - 折扣因子γ：0.9，表示更看重短期奖励。
 
 下图展示了机器人导航的网格地图，S表示起点，G表示终点：

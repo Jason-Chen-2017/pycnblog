@@ -9,7 +9,7 @@
 #### 1.1.3 LLMasOS的发展历程
 ### 1.2 LLMasOS的意义与价值
 #### 1.2.1 推动人工智能教育普及
-#### 1.2.2 降低人工智能应用门槛  
+#### 1.2.2 降低人工智能应用门槛
 #### 1.2.3 促进人工智能技术创新
 
 ## 2.核心概念与联系
@@ -33,7 +33,7 @@
 #### 3.1.3 多任务预训练
 ### 3.2 微调算法
 #### 3.2.1 提示学习(Prompt Learning)
-#### 3.2.2 参数高效微调(Parameter-Efficient Fine-tuning) 
+#### 3.2.2 参数高效微调(Parameter-Efficient Fine-tuning)
 #### 3.2.3 上下文学习(Context Learning)
 ### 3.3 推理优化算法
 #### 3.3.1 知识蒸馏(Knowledge Distillation)
@@ -58,7 +58,7 @@ $$\mathcal{L}(\mathcal{U})=\sum_{i} \log P\left(u_{i} \mid u_{i-k}, \ldots, u_{i
 #### 4.2.2 零样本学习(Zero-Shot Learning)
 $$P(y \mid x) = \frac{\exp \left(f_{\theta}(x, y)\right)}{\sum_{y^{\prime} \in \mathcal{Y}} \exp \left(f_{\theta}\left(x, y^{\prime}\right)\right)}$$
 其中，$x$是输入，$y$是输出，$\mathcal{Y}$是所有可能的输出，$f_{\theta}$是打分函数。
-### 4.3 BERT模型 
+### 4.3 BERT模型
 #### 4.3.1 掩码语言模型(Masked Language Model)
 $$\mathcal{L}_{MLM}(\mathbf{x})=-\sum_{i=1}^{n} m_{i} \log p\left(x_{i} \mid \mathbf{x}_{\backslash i}\right)$$
 其中，$\mathbf{x}=(x_1,\dots,x_n)$是输入序列，$m_i \in \{0,1\}$表示$x_i$是否被掩码，$\mathbf{x}_{\backslash i}$表示去掉$x_i$的输入序列。
@@ -81,8 +81,8 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 prompt = "Once upon a time"
 input_ids = tokenizer(prompt, return_tensors="pt").input_ids
 
-output = model.generate(input_ids, 
-                        max_length=50, 
+output = model.generate(input_ids,
+                        max_length=50,
                         num_beams=5,
                         no_repeat_ngram_size=2,
                         early_stopping=True)
@@ -99,12 +99,12 @@ class TextDataset(Dataset):
         self.examples = []
         with open(file_path, encoding="utf-8") as f:
             text = f.read()
-        
+
         tokenized_text = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(text))
-        
+
         for i in range(0, len(tokenized_text)-block_size+1, block_size):
             self.examples.append(tokenizer.build_inputs_with_special_tokens(tokenized_text[i:i+block_size]))
-    
+
     def __len__(self):
         return len(self.examples)
 

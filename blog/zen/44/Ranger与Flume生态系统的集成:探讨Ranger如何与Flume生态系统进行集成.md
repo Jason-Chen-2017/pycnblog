@@ -135,7 +135,7 @@ Ranger与Flume集成的算法可以应用于以下领域：
 
 设$A$为访问控制矩阵，其中$A_{ij}$表示用户$i$对数据$j$的访问权限。则访问控制矩阵可表示为：
 
-$$A = \begin{bmatrix} A_{11} & \dots & A_{1n} \\ \vdots & \ddots & \vdots \\ A_{m1} & \dots & A_{mn} \end{bmatrix}$$
+$$A = \begin{bmatrix} A_{11} & \dots & A_{1n} \ \vdots & \ddots & \vdots \ A_{m1} & \dots & A_{mn} \end{bmatrix}$$
 
 其中，$i$表示用户集合，$j$表示数据集合。
 

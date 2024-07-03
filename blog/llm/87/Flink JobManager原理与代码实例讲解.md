@@ -1,7 +1,7 @@
 
 # Flink JobManager原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -141,7 +141,7 @@ public class WindowFunction {
 
     @ProcessFunction<IN, OUT> public void processElement(IN value, Context ctx, Collector<OUT> out) {
         ValueStateDescriptor<Long> descriptor = new ValueStateDescriptor<>(
-            "countState", 
+            "countState",
             Types.LONG
         );
         countState = ctx.getSideOutputState(descriptor);

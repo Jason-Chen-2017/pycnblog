@@ -143,12 +143,12 @@ def train():
     # 加载MNIST数据集
     train_loader = torch.utils.data.DataLoader(
         datasets.MNIST(
-            root='./data', 
-            train=True, 
-            download=True, 
+            root='./data',
+            train=True,
+            download=True,
             transform=transforms.Compose([transforms.ToTensor()])
-        ), 
-        batch_size=64, 
+        ),
+        batch_size=64,
         shuffle=True
     )
 
@@ -247,12 +247,12 @@ def train():
     # 加载MNIST数据集
     train_loader = torch.utils.data.DataLoader(
         datasets.MNIST(
-            root='./data', 
-            train=True, 
-            download=True, 
+            root='./data',
+            train=True,
+            download=True,
             transform=transforms.Compose([transforms.ToTensor()])
-        ), 
-        batch_size=64, 
+        ),
+        batch_size=64,
         shuffle=True
     )
 

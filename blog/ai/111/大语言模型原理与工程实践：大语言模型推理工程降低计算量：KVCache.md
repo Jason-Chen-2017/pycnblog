@@ -1,4 +1,4 @@
-# 大语言模型原理与工程实践：大语言模型推理工程降低计算量：KV-Cache 
+# 大语言模型原理与工程实践：大语言模型推理工程降低计算量：KV-Cache
 
 ## 1. 背景介绍
 
@@ -312,4 +312,4 @@ Paris
 
 **A：** KV-Cache 可以与模型压缩技术、推理加速技术等结合使用，进一步降低推理的计算量和提升推理效率。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

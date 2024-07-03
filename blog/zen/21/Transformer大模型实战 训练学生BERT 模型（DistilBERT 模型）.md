@@ -1,4 +1,4 @@
-                 
+
 # Transformer大模型实战 训练学生BERT 模型（DistilBERT 模型）
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -135,7 +135,7 @@ $$
 以上述自注意力层为例，推导过程涉及内积运算和标准化：
 
 1. **计算内积**：
-   $$ QK^T = \begin{bmatrix} q_1 \\ q_2 \\ ... \\ q_N \end{bmatrix} \cdot \begin{bmatrix} k_1^T \\ k_2^T \\ ... \\ k_N^T \end{bmatrix} = q_1k_1 + q_2k_2 + ... + q_Nk_N $$
+   $$ QK^T = \begin{bmatrix} q_1 \ q_2 \ ... \ q_N \end{bmatrix} \cdot \begin{bmatrix} k_1^T \ k_2^T \ ... \ k_N^T \end{bmatrix} = q_1k_1 + q_2k_2 + ... + q_Nk_N $$
 
 2. **归一化**：
    $$ \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) = \frac{\exp\left(\frac{q_1k_1}{\sqrt{d_k}}\right)}{\sum_{i=1}^{N}\exp\left(\frac{q_i k_i}{\sqrt{d_k}}\right)},...,\frac{\exp\left(\frac{q_N k_N}{\sqrt{d_k}}\right)}{\sum_{i=1}^{N}\exp\left(\frac{q_i k_i}{\sqrt{d_k}}\right)} $$
@@ -188,7 +188,7 @@ class SST2Dataset(torch.utils.data.Dataset):
     def __init__(self, encodings, labels):
         self.encodings = encodings
         self.labels = labels
-    
+
     def __getitem__(self, idx):
         item = {key: torch.tensor(val[idx]) for key, val in self.encodings.items()}
         item['labels'] = torch.tensor(self.labels[idx])

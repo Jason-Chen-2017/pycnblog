@@ -173,9 +173,9 @@ $$Q(s, a) = Q(s, a) + \alpha \times [R + \gamma \times \max_{a'} Q(s', a') - Q(s
 
 奖励可以根据病虫害发生程度、防治效果等因素进行设计。以下是一个简单的奖励函数：
 
-$$R(s, a, s', a') = \begin{cases} 
+$$R(s, a, s', a') = \begin{cases}
 1, & \text{如果病虫害得到有效控制} \\
--1, & \text{如果病虫害加剧} 
+-1, & \text{如果病虫害加剧}
 \end{cases}$$
 
 我们可以通过Q-learning算法来学习最优的防治策略。

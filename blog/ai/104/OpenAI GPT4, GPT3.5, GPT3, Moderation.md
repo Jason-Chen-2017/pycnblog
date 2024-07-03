@@ -267,4 +267,4 @@ LLM 的安全问题也面临着一些挑战：
 * **如何防止模型窃取？** 可以使用模型加密、模型水印等方法，保护模型的安全。
 * **如何保护用户隐私？** 可以使用差分隐私、联邦学习等方法，保护用户数据的安全。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

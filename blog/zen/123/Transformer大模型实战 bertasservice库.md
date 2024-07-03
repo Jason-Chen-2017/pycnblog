@@ -338,4 +338,4 @@ print(embeddings.shape)
 - 减少服务端的 worker 数量。
 - 使用量化技术压缩模型。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

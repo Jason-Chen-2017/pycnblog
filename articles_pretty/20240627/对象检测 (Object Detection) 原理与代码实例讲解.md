@@ -148,9 +148,7 @@
 
 #### 损失函数最小化
 
-- **梯度下降**：$\theta_{new} = \theta_{old} - \eta \
-abla_\theta J(\theta)$，其中$\eta$是学习率，$\
-abla_\theta J(\theta)$是关于$\theta$的梯度。
+- **梯度下降**：$\theta_{new} = \theta_{old} - \eta \nabla_\theta J(\theta)$，其中$\eta$是学习率，$\nabla_\theta J(\theta)$是关于$\theta$的梯度。
 
 ### 4.3 案例分析与讲解
 

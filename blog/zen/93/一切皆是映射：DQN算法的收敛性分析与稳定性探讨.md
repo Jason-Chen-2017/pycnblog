@@ -101,11 +101,9 @@ DQN算法的核心思想是使用深度神经网络来逼近Q值函数，并通�
 2. 计算目标值 $y_i$：
     - 如果 $d_i=0$，则 $y_i = r_i + \gamma Q(\theta^{\text{target}})(s'_i, \pi(\theta^{\text{target}})(s'_i))$；
     - 如果 $d_i=1$，则 $y_i = r_i$。
-3. 计算梯度 $\
-abla_{\theta} Q(\theta)(s_i, a_i)$。
+3. 计算梯度 $\nabla_{\theta} Q(\theta)(s_i, a_i)$。
 4. 使用梯度下降法更新Q值网络参数 $\theta$：
-    - $ \theta \leftarrow \theta - \alpha \
-abla_{\theta} Q(\theta)(s_i, a_i) $。
+    - $ \theta \leftarrow \theta - \alpha \nabla_{\theta} Q(\theta)(s_i, a_i) $。
 
 **Step 5：目标网络更新**
 
@@ -165,12 +163,10 @@ $$
 **2. 梯度下降**：
 
 $$
-\theta \leftarrow \theta - \alpha \
-abla_{\theta} Q(\theta)(s_i, a_i)
+\theta \leftarrow \theta - \alpha \nabla_{\theta} Q(\theta)(s_i, a_i)
 $$
 
-其中，$\alpha$ 表示学习率，$\
-abla_{\theta} Q(\theta)(s_i, a_i)$ 表示Q值函数 $Q(\theta)(s, a)$ 在参数 $\theta$ 下的梯度。
+其中，$\alpha$ 表示学习率，$\nabla_{\theta} Q(\theta)(s_i, a_i)$ 表示Q值函数 $Q(\theta)(s, a)$ 在参数 $\theta$ 下的梯度。
 
 ### 4.3 案例分析与讲解
 

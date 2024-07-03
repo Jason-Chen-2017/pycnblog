@@ -19,7 +19,7 @@
 ### 1.4  本文结构
 本文将重点探讨如何利用大模型开发一个AI Agent,使其能够自主地分析数据并生成图表。内容涵盖了相关的核心概念、算法原理、数学模型、代码实现、应用场景等方面。全文结构如下:
 
-1. 背景介绍  
+1. 背景介绍
 2. 核心概念与联系
 3. 核心算法原理 & 具体操作步骤
 4. 数学模型和公式 & 详细讲解 & 举例说明
@@ -80,7 +80,7 @@ C --> D[图表可视化]
   "intent": "analyze_trend",
   "metric": "sales",
   "dimension": "product",
-  "dimension_value": "A",  
+  "dimension_value": "A",
   "time_range": "6 months"
 }
 ```
@@ -89,15 +89,15 @@ C --> D[图表可视化]
 根据意图表示,生成对应的数据分析任务。比如上例中,可以生成如下的SQL查询:
 
 ```sql
-SELECT 
+SELECT
   DATE_TRUNC('month', order_date) AS month,
   SUM(sales_amount) AS sales
 FROM order_table
-WHERE 
+WHERE
   product_id = 'A'
-  AND order_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 6 MONTH)  
+  AND order_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 6 MONTH)
 GROUP BY month
-ORDER BY month;  
+ORDER BY month;
 ```
 
 #### Step3:执行分析任务
@@ -124,7 +124,7 @@ ORDER BY month;
 ### 3.3  算法优缺点
 上述算法的优点包括:
 - 端到端的自动化:从用户查询到图表生成,全流程无需人工介入。
-- 易用性强:用户只需用自然语言表达分析需求,无需懂复杂的数据分析和可视化知识。  
+- 易用性强:用户只需用自然语言表达分析需求,无需懂复杂的数据分析和可视化知识。
 - 解释性好:自动生成图表解释,帮助用户理解图表含义。
 
 但同时也存在一些局限性:
@@ -134,7 +134,7 @@ ORDER BY month;
 
 ### 3.4  算法应用领域
 尽管有局限性,该算法仍然可以在多个领域发挥价值,如:
-- BI报表自动生成:利用大模型从自然语言描述生成结构化的数据分析报表。  
+- BI报表自动生成:利用大模型从自然语言描述生成结构化的数据分析报表。
 - 数据探索辅助:用户在分析数据时,通过对话方式引导其找到有价值的洞见。
 - 数据新闻写作:通过分析背后的数据,自动撰写数据驱动的新闻报道。
 
@@ -163,7 +163,7 @@ $$ P(c|q,D) = P(c|i_q) = \frac{exp(W_c \cdot i_q)}{\sum_{c'\in C} exp(W_{c'} \cd
 
 其中$W_c$是意图到图表类型的映射矩阵,可以通过大规模语料的监督学习来训练。
 
-#### 图表解释生成模型 
+#### 图表解释生成模型
 $P(e|c,D,q)$的目标是根据预测的图表类型、查询和数据生成自然语言解释,本质上是一个条件文本生成任务。可以通过基于注意力机制的Seq2Seq模型来实现,如Transformer、T5等。
 
 设解释文本序列为$e=(x_1,x_2,...,x_T)$,则有:

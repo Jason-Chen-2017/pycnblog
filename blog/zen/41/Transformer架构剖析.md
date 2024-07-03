@@ -80,7 +80,7 @@ Transformer架构广泛应用于自然语言处理的各个领域，包括但不
 
 - **输入**：序列 $Q$、$K$、$V$，其中 $Q$ 是查询矩阵，$K$ 和 $V$ 分别是键和值矩阵。
 - **权重矩阵**：$W_q$、$W_k$、$W_v$，分别对应于查询、键和值的线性变换。
-- **注意力分数**：$S = softmax(\\frac{QW_q^TW_k^T}{\\sqrt{d_k}})$，其中 $d_k$ 是键的维度。
+- **注意力分数**：$S = softmax(\frac{QW_q^TW_k^T}{\sqrt{d_k}})$，其中 $d_k$ 是键的维度。
 - **上下文向量**：$C = VS$。
 
 #### 多头自注意力：
@@ -94,7 +94,7 @@ Transformer架构广泛应用于自然语言处理的各个领域，包括但不
 #### 层规范化（Layer Normalization）：
 
 - **输入**：隐藏层输出 $X$。
-- **层规范化**：$Y = \\frac{X - \\mu}{\\sigma} * \\gamma + \\beta$，其中 $\\mu$ 是均值，$\\sigma$ 是标准差，$\\gamma$ 是尺度参数，$\\beta$ 是偏置参数。
+- **层规范化**：$Y = \frac{X - \mu}{\sigma} * \gamma + \beta$，其中 $\mu$ 是均值，$\sigma$ 是标准差，$\gamma$ 是尺度参数，$\beta$ 是偏置参数。
 
 ### 4.3 案例分析与讲解
 
@@ -133,8 +133,8 @@ outputs = model(input_ids)
 # 输出是包含了[CLS]和[SEP]标记的隐藏状态和池化后的表示
 hidden_states, pooled_output = outputs
 
-print(\"隐藏状态形状：\", hidden_states.shape)
-print(\"池化表示形状：\", pooled_output.shape)
+print("隐藏状态形状：", hidden_states.shape)
+print("池化表示形状：", pooled_output.shape)
 ```
 
 ### 5.3 代码解读与分析

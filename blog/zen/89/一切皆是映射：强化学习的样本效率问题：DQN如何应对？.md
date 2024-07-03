@@ -134,8 +134,7 @@ $$y_i = r_i + \gamma \max_{a'} Q(s'_i, a')$$
 
 对目标函数$J(W)$进行梯度下降，得到：
 
-$$\Delta W = -\alpha \
-abla_W J(W)$$
+$$\Delta W = -\alpha \nabla_W J(W)$$
 
 其中，$\alpha$是学习率。
 

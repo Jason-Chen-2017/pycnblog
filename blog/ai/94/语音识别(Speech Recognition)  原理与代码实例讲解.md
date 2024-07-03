@@ -241,7 +241,7 @@ audio_data = np.random.rand(1000)
 class AcousticModel:
     def __init__(self):
         self.parameters = np.random.rand(100, 10)
-    
+
     def predict(self, x):
         return np.dot(x, self.parameters)
 
@@ -249,7 +249,7 @@ class AcousticModel:
 class LanguageModel:
     def __init__(self):
         self.parameters = np.random.rand(10, 3)
-    
+
     def predict(self, y):
         return np.dot(y, self.parameters)
 

@@ -392,4 +392,4 @@ if __name__ == "__main__":
 
 **A5：**CUI设计未来发展趋势是更加智能化、多模态化、个性化。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

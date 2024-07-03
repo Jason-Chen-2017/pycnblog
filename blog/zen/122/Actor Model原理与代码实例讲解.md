@@ -340,4 +340,4 @@ Actor 模型也面临着一些挑战，例如：
 
 **A:** Actor 模型适合构建高性能、高可扩展性和高容错性的并发系统，例如分布式系统、并行计算和游戏开发。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

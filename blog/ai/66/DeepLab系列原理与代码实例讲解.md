@@ -81,7 +81,7 @@ class VGG(nn.Module):
             nn.ReLU(inplace=True),
             # ... (其他层)
         )
-    
+
     def forward(self, x):
         x = self.features(x)
         return x
@@ -96,7 +96,7 @@ class AtrousConv2d(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size, padding, dilation):
         super(AtrousConv2d, self).__init__()
         self.conv = nn.Conv2d(in_channels, out_channels, kernel_size=kernel_size, padding=padding, dilation=dilation)
-    
+
     def forward(self, x):
         return self.conv(x)
 ```
@@ -257,7 +257,7 @@ class DeepLabV3Plus(nn.Module):
             nn.Dropout2d(0.5),
             nn.Conv2d(256, num_classes, kernel_size=1)
         )
-    
+
     def forward(self, x):
         x = self.backbone(x)
         x = self.aspp(x)

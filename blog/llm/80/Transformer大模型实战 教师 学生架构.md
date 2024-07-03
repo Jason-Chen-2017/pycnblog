@@ -203,10 +203,10 @@ class StudentModel(nn.Module):
 def train_teacher_student(model_name, teacher_lr, student_lr):
     teacher_model = TeacherModel(model_name)
     student_model = StudentModel(model_name)
-    
+
     optimizer_t = torch.optim.Adam(teacher_model.parameters(), lr=teacher_lr)
     optimizer_s = torch.optim.Adam(student_model.parameters(), lr=student_lr)
-    
+
     for epoch in range(num_epochs):
         # ... (训练代码)
         pass

@@ -80,8 +80,7 @@
 元学习算法的数学模型可以表示为：
 
 $$
-\theta = \theta^* + \alpha \
-abla_{\theta} J(\theta)
+\theta = \theta^* + \alpha \nabla_{\theta} J(\theta)
 $$
 
 其中，$\theta$ 是模型参数，$\theta^*$ 是预训练得到的模型参数，$J(\theta)$ 是损失函数，$\alpha$ 是学习率。
@@ -99,9 +98,7 @@ $$
 为了最小化总损失函数，我们需要计算其梯度：
 
 $$
-\
-abla_{\theta} J(\theta) = \frac{1}{M} \sum_{m=1}^M \
-abla_{\theta} L_m(\theta)
+\nabla_{\theta} J(\theta) = \frac{1}{M} \sum_{m=1}^M \nabla_{\theta} L_m(\theta)
 $$
 
 将梯度代入上述公式，即可得到元学习算法的更新公式。

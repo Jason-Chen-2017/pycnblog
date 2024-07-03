@@ -1,6 +1,6 @@
 # AI人工智能深度学习算法：跨领域自主深度学习代理的集成
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -365,4 +365,4 @@ Accuracy: 0.923456789453125
 
 跨领域自主深度学习代理的伦理问题需要通过制定相关法律法规、加强伦理教育、建立伦理审查机制等方式进行解决。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

@@ -26,7 +26,7 @@
 ```mermaid
 graph LR
 A[输入层] --> B[隐藏层1]
-B --> C[隐藏层2] 
+B --> C[隐藏层2]
 C --> D[隐藏层3]
 D --> E[输出层]
 E --> F[损失函数]
@@ -37,7 +37,7 @@ F --> |梯度爆炸| C
 ## 3.核心算法原理具体操作步骤
 ### 3.1 梯度剪裁 Gradient Clipping
 #### 3.1.1 全局梯度范数裁剪
-#### 3.1.2 局部梯度值裁剪 
+#### 3.1.2 局部梯度值裁剪
 ### 3.2 权重正则化 Weight Regularization
 #### 3.2.1 L1正则化
 #### 3.2.2 L2正则化
@@ -166,21 +166,21 @@ import tensorflow as tf
 # 定义残差块
 def residual_block(x, filters, kernel_size, strides):
     identity = x
-    
+
     out = tf.keras.layers.Conv2D(filters, kernel_size, strides=strides, padding='same')(x)
     out = tf.keras.layers.BatchNormalization()(out)
     out = tf.keras.layers.ReLU()(out)
-    
+
     out = tf.keras.layers.Conv2D(filters, kernel_size, strides=1, padding='same')(out)
     out = tf.keras.layers.BatchNormalization()(out)
-    
+
     if strides != 1:
         identity = tf.keras.layers.Conv2D(filters, 1, strides=strides, padding='same')(identity)
         identity = tf.keras.layers.BatchNormalization()(identity)
-        
+
     out = tf.keras.layers.Add()([identity, out])
     out = tf.keras.layers.ReLU()(out)
-    
+
     return out
 ```
 
@@ -220,7 +220,7 @@ model.add(Dense(64, kernel_constraint=unit_norm()))
 #### 6.1.1 图像分类
 #### 6.1.2 目标检测
 #### 6.1.3 语义分割
-### 6.2 自然语言处理中的应用 
+### 6.2 自然语言处理中的应用
 #### 6.2.1 机器翻译
 #### 6.2.2 情感分析
 #### 6.2.3 文本生成

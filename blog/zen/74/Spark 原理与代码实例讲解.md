@@ -3,7 +3,7 @@
 ## 1. 背景介绍
 ### 1.1 问题的由来
 随着大数据时代的到来,传统的数据处理方式已经无法满足海量数据的实时计算和处理需求。Hadoop虽然在离线批处理方面表现优异,但在实时流式计算方面却捉襟见肘。为了解决这一问题,Spark应运而生。
-### 1.2 研究现状 
+### 1.2 研究现状
 Spark自2009年诞生以来,凭借其快速、通用、易用等特点,迅速成为大数据领域的明星项目。目前已广泛应用于各大互联网公司,成为大数据实时计算的事实标准。学术界对Spark的研究也方兴未艾,涌现出大量高质量论文。
 ### 1.3 研究意义
 深入理解Spark的原理和实现,对于开发高性能的大数据应用具有重要意义。通过剖析Spark源码,我们可以学习其设计思想和优化技巧,写出更加高效、健壮的分布式程序。同时对Spark生态的掌握,也有助于解决实际工程问题。
@@ -124,7 +124,7 @@ println(s"Mean Squared Error = $mse")
 - Q:Spark能处理高维数据吗?
 - A:当维度很高时,Spark可能会遇到维度诅咒问题。可以先用特征选择或降维算法处理,如PCA。
 
-- Q:Spark适合深度学习吗?  
+- Q:Spark适合深度学习吗?
 - A:Spark目前对DL的支持还不够完善,主要体现在对GPU的利用不够高效。不过随着Spark 3.0的发布,对DL的支持会越来越好。
 
 ## 5. 项目实践：代码实例和详细解释说明
@@ -142,22 +142,22 @@ object WordCount {
     // 创建Spark配置和上下文
     val conf = new SparkConf().setAppName("WordCount").setMaster("local[2]")
     val sc = new SparkContext(conf)
-    
-    // 读取文件,转换为RDD 
+
+    // 读取文件,转换为RDD
     val lines: RDD[String] = sc.textFile("data/words.txt")
-    
+
     // 切分为单词
     val words: RDD[String] = lines.flatMap(_.split(" "))
-    
+
     // 转换为(word, 1)的形式
     val wordPairs: RDD[(String, Int)] = words.map((_, 1))
-    
+
     // 按单词聚合
     val wordCounts: RDD[(String, Int)] = wordPairs.reduceByKey(_ + _)
-    
+
     // 打印结果
     wordCounts.collect().foreach(println)
-    
+
     sc.stop()
   }
 }

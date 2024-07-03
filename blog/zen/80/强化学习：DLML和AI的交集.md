@@ -194,7 +194,7 @@ class QLearningAgent:
         self.epsilon_decay = exploration_decay
         self.experience_replay = deque(maxlen=10000)
         self.model = self._build_model()
-        
+
     def _build_model(self):
         model = tf.keras.models.Sequential([
             tf.keras.layers.Dense(24, input_shape=(self.state_size,), activation='relu'),
@@ -202,15 +202,15 @@ class QLearningAgent:
         ])
         model.compile(loss='mse', optimizer=tf.keras.optimizers.Adam(lr=self.learning_rate))
         return model
-    
+
     def remember(self, state, action, reward, next_state, done):
         self.experience_replay.append((state, action, reward, next_state, done))
-        
+
     def act(self, state):
         if np.random.rand() <= self.epsilon:
             return env.action_space.sample()
         return np.argmax(self.model.predict(state.reshape(-1, self.state_size)))
-    
+
     def learn(self, batch_size):
         if len(self.experience_replay) < batch_size:
             return
@@ -323,7 +323,7 @@ env.close()
 
 - **Q: 如何选择合适的超参数？**
   A: 超参数的选择通常依赖于经验和实验，可以采用网格搜索、随机搜索或贝叶斯优化等方法来系统地探索超参数空间。重要的是要监控学习过程中的性能指标，避免过拟合或欠拟合。
-  
+
 - **Q: 强化学习如何处理连续动作空间？**
   A: 在处理连续动作空间时，可以使用策略梯度方法或结合策略网络的深度强化学习方法，如DQN的变种、PPO（Proximal Policy Optimization）等。这些方法通常通过神经网络来近似策略函数或价值函数，从而能够有效地探索连续动作空间。
 

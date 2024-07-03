@@ -81,7 +81,7 @@ AutoGPT的数学模型主要包括：
 奖励函数定义为：
 
 $$
-R(s, a) = \begin{cases} 
+R(s, a) = \begin{cases}
 \text{reward\_function}(s', a, s) & \text{if } s' \text{ is a valid solution} \\
 -\text{penalty\_function}(s', a, s) & \text{otherwise}
 \end{cases}
@@ -104,7 +104,7 @@ $$
 
 - **Q**: 如何处理生成的代码错误？
    - **A**: 自动GPT会记录执行结果和错误信息，通过反馈循环优化策略，减少错误发生。
-   
+
 ## 5. 项目实践：代码实例和详细解释说明
 
 ### 5.1 开发环境搭建

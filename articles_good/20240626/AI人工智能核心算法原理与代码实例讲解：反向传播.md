@@ -88,8 +88,7 @@
     - 根据计算出的梯度，更新每个参数的值。更新公式如下：
 
         $$
-\theta = \theta - \alpha \cdot \
-abla_{\theta}J(\theta)
+\theta = \theta - \alpha \cdot \nabla_{\theta}J(\theta)
 $$
 
         其中，$\theta$ 为参数，$J(\theta)$ 为损失函数，$\alpha$ 为学习率。

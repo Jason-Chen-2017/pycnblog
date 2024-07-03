@@ -117,8 +117,8 @@ $$
 3. **Huber损失**：
 
 $$
-\text{Huber}(y, \hat{y}) = 
-\begin{cases} 
+\text{Huber}(y, \hat{y}) =
+\begin{cases}
 \frac{1}{2}(y - \hat{y})^2 & \text{if } |y - \hat{y}| \leq \delta \\
 \delta |y - \hat{y}| & \text{otherwise}
 \end{cases}
@@ -168,18 +168,18 @@ Huber损失是MSE和绝对值损失的折中。其公式推导如下：
 
 $$
 \begin{aligned}
-\text{Huber}(y, \hat{y}) &= 
-\begin{cases} 
+\text{Huber}(y, \hat{y}) &=
+\begin{cases}
 \frac{1}{2}(y - \hat{y})^2 & \text{if } |y - \hat{y}| \leq \delta \\
 \delta |y - \hat{y}| & \text{otherwise}
 \end{cases} \\
-&= 
-\begin{cases} 
+&=
+\begin{cases}
 \frac{1}{2}(\hat{y} - y)^2 & \text{if } |\hat{y} - y| \leq \delta \\
 \delta |\hat{y} - y| & \text{otherwise}
 \end{cases} \\
-&= 
-\begin{cases} 
+&=
+\begin{cases}
 \frac{1}{2}(\hat{y} - y)^2 & \text{if } |\hat{y} - y| \leq \delta \\
 \delta |\hat{y} - y| & \text{otherwise}
 \end{cases}

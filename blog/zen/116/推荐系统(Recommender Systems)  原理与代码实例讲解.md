@@ -176,11 +176,11 @@ print("推荐给用户1的物品:", [i for i in recommended_items])
     * Udacity: Machine Learning Engineer Nanodegree
 
 ### 7.2  开发工具推荐
-* **Python:** 
+* **Python:**
     * Scikit-learn
     * TensorFlow
     * PyTorch
-* **Spark:** 
+* **Spark:**
     * MLlib
 
 ### 7.3  相关论文推荐
@@ -228,5 +228,5 @@ print("推荐给用户1的物品:", [i for i in recommended_items])
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

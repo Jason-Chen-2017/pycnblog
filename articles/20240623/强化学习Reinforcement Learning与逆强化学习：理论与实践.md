@@ -195,15 +195,13 @@ $$
 
 **策略梯度方法**：
 
-1. 初始化策略参数$\theta$和梯度$\
-abla_\theta J(\theta)$。
+1. 初始化策略参数$\theta$和梯度$\nabla_\theta J(\theta)$。
 2. 对于每个时间步，重复以下步骤：
     - 执行动作$a$，观察状态$s'$和奖励$r$。
     - 计算策略梯度：
 
 $$
-\
-abla_\theta J(\theta) = \sum_{a \in A} \pi(a | s, \theta) \left[ R(s, a) + \gamma \max_{a'} Q(s', a') - Q(s, \pi(\cdot | s, \theta)) \right]
+\nabla_\theta J(\theta) = \sum_{a \in A} \pi(a | s, \theta) \left[ R(s, a) + \gamma \max_{a'} Q(s', a') - Q(s, \pi(\cdot | s, \theta)) \right]
 $$
 
 #### 4.2.2 逆强化学习

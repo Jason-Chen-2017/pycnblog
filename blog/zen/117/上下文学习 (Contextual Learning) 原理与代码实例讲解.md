@@ -241,5 +241,5 @@ model = Transformer(num_layers=6, d_model=512, num_heads=8)
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

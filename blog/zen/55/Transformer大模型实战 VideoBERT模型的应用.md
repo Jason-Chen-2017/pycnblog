@@ -102,7 +102,7 @@ $$
 \mathcal{L}_{MLM} = -\sum_{i \in M_t} \log P(w_i|X_{\backslash M_t})
 $$
 $$
-\mathcal{L}_{MFM} = -\sum_{i \in M_v} \log P(v_i|X_{\backslash M_v}) 
+\mathcal{L}_{MFM} = -\sum_{i \in M_v} \log P(v_i|X_{\backslash M_v})
 $$
 
 其中,$M_t$和$M_v$分别表示被遮挡的文本词和视频帧的索引集合,$w_i$和$v_i$表示真实的词和帧,$X_{\backslash M_t}$和$X_{\backslash M_v}$表示去掉遮挡部分的输入序列。
@@ -136,14 +136,14 @@ class VideoBERT(nn.Module):
         super().__init__()
         self.vision_model = vision_model
         self.text_model = text_model
-        
+
     def forward(self, video_frames, text_ids, text_mask):
         video_features = self.vision_model(video_frames)
         text_features = self.text_model(text_ids, attention_mask=text_mask)[0]
-        
+
         # 将视频特征和文本特征拼接
         features = torch.cat([video_features, text_features], dim=1)
-        
+
         return features
 
 # 加载预训练的BERT模型和tokenizer
@@ -167,21 +167,21 @@ vtm_loss_fn = nn.BCEWithLogitsLoss()
 for epoch in range(num_epochs):
     for batch in dataloader:
         video_frames, text, labels = batch
-        
+
         # 对文本进行tokenize
         text_ids = tokenizer(text, return_tensors='pt', padding=True, truncation=True)
-        
+
         # 前向传播
         features = video_bert(video_frames, text_ids['input_ids'], text_ids['attention_mask'])
-        
+
         # 计算MLM、MFM和VTM损失
         mlm_loss = mlm_loss_fn(mlm_logits, mlm_labels)
         mfm_loss = mfm_loss_fn(mfm_logits, mfm_labels)
         vtm_loss = vtm_loss_fn(vtm_logits, vtm_labels)
-        
+
         # 加权求和得到总损失
         loss = lambda_1 * mlm_loss + lambda_2 * mfm_loss + lambda_3 * vtm_loss
-        
+
         # 反向传播和优化
         optimizer.zero_grad()
         loss.backward()

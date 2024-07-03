@@ -131,8 +131,7 @@ $$
 为了最小化目标函数 $ L(\theta) $，我们对 $ \theta $ 进行梯度下降：
 
 $$
-\theta \leftarrow \theta - \eta \
-abla_{\theta} L(\theta) 
+\theta \leftarrow \theta - \eta \nabla_{\theta} L(\theta) 
 $$
 
 其中 $ \eta $ 为学习率。

@@ -202,7 +202,7 @@ import jieba
 def wordpiece(text, max_token_length=5):
     """
     将文本分解为WordPiece token。
-    
+
     :param text: 输入文本
     :param max_token_length: token的最大长度
     :return: 分解后的token列表

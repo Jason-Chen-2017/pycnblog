@@ -162,8 +162,7 @@ $$J = \sum_{t=0}^{\infty} \gamma^t Q(s_t, a_t)$$
 
 通过梯度下降法更新神经网络参数：
 
-$$\theta \leftarrow \theta - \alpha \
-abla_\theta J$$
+$$\theta \leftarrow \theta - \alpha \nabla_\theta J$$
 
 ### 4.3 案例分析与讲解
 

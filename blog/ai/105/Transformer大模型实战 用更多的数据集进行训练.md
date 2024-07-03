@@ -338,4 +338,4 @@ Accuracy: 86.7%
 
   可以使用分布式训练、模型压缩等技术提高模型的训练效率。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

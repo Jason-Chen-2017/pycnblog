@@ -383,4 +383,4 @@ Pregel 模型是一种高效的分布式图计算模型，它在社交网络分�
     * **Spark GraphX 官方网站:** [https://spark.apache.org/docs/latest/graphx-programming-guide.html](https://spark.apache.org/docs/latest/graphx-programming-guide.html)
     * **Pregel 论文:** [https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36998.pdf](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36998.pdf)
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

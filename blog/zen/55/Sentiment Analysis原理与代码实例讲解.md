@@ -7,7 +7,7 @@
 情感分析研究始于20世纪90年代末,最初主要集中在产品评论的极性分类。21世纪初,随着互联网尤其是社交媒体的迅猛发展,海量的用户生成内容(UGC)为情感分析提供了丰富的研究素材,情感分析逐渐成为NLP领域的研究热点。近年来,深度学习的兴起又为情感分析注入了新的活力。
 ### 1.3 情感分析的应用场景
 情感分析的应用领域十分广泛,主要包括:
-- 社交媒体监测:分析社交网络用户对热点事件、公众人物的情感倾向。 
+- 社交媒体监测:分析社交网络用户对热点事件、公众人物的情感倾向。
 - 舆情分析:政府、企业利用情感分析监测网络舆情动向。
 - 产品评论挖掘:分析用户对产品的评价,挖掘产品优缺点,指导产品改进。
 - 金融市场预测:分析投资者情绪,预测金融市场走势。
@@ -37,7 +37,7 @@ Aspect-Based Sentiment Analysis在细粒度层面分析文本针对不同属性(
 ### 3.2 特征提取
 将文本转化为特征向量,常用特征有:
 - Bag-of-Words:忽略词序,以词在文档中是否出现作为特征。
-- TF-IDF:考虑词频和逆文档频率,突出重要词。 
+- TF-IDF:考虑词频和逆文档频率,突出重要词。
 - N-gram:考虑词序,提取文本中的N元词组作为特征。
 - 词性特征:提取文本中的形容词、副词等词性作为特征。
 - 情感词典特征:利用情感词典,提取文本中情感词的统计信息作为特征。
@@ -90,7 +90,7 @@ from sklearn.datasets import load_files
 
 reviews_train = load_files("aclImdb/train/")
 text_train, y_train = reviews_train.data, reviews_train.target
-reviews_test = load_files("aclImdb/test/") 
+reviews_test = load_files("aclImdb/test/")
 text_test, y_test = reviews_test.data, reviews_test.target
 ```
 这里使用IMDB电影评论数据集,其中训练集12500个正面评论和12500个负面评论,测试集同样各12500个。`load_files`可以自动从文件夹中加载文本数据。
@@ -98,7 +98,7 @@ text_test, y_test = reviews_test.data, reviews_test.target
 ```python
 from sklearn.feature_extraction.text import CountVectorizer
 
-vectorizer = CountVectorizer(stop_words="english", 
+vectorizer = CountVectorizer(stop_words="english",
                              max_features=10000)
 X_train = vectorizer.fit_transform(text_train)
 X_test = vectorizer.transform(text_test)

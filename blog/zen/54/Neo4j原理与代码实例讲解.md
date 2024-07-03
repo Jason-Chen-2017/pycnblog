@@ -63,7 +63,7 @@ function Dijkstra(Graph, source):
         prev[v] := undefined
 
     Q := the set of all nodes in Graph
-    
+
     while Q is not empty:
         u := vertex in Q with smallest dist[]
         remove u from Q

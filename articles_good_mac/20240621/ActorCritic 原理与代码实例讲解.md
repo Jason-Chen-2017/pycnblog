@@ -84,8 +84,7 @@ $$V(s) = \\mathbb{E}_{\\tau \\sim \\pi} \\left[ \\sum_{t=0}^{\\tau} r_t \\right]
 
 对于策略梯度方法，可以采用梯度上升法来更新策略：
 
-$$\\theta_{t+1} = \\theta_t + \\alpha \\cdot \
-abla_\\theta J(\\pi_\\theta)$$
+$$\\theta_{t+1} = \\theta_t + \\alpha \\cdot \nabla_\\theta J(\\pi_\\theta)$$
 
 其中 $\\theta$ 是策略参数，$\\alpha$ 是学习率。
 

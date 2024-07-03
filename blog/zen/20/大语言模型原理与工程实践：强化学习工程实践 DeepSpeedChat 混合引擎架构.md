@@ -92,23 +92,23 @@ DeepSpeed-Chat混合引擎架构广泛应用于自然语言处理任务，如文
 - **奖励（Reward）**：根据模型性能的变化给出的反馈，正向奖励促进性能提升，负向奖励避免性能下降。
 
 #### 动态优化公式
-- **学习率调整**：$lr = lr \\times \\alpha^{reward}$
-- **批大小调整**：$batch\\_size = \\frac{prev\\_batch\\_size \\times reward}{max\\_reward}$
-- **策略更新**：$\\theta_{new} = \\theta_{old} + \\eta \\cdot (\\pi(\\theta_{new}) - \\pi(\\theta_{old}))$
+- **学习率调整**：$lr = lr \times \alpha^{reward}$
+- **批大小调整**：$batch\_size = \frac{prev\_batch\_size \times reward}{max\_reward}$
+- **策略更新**：$\theta_{new} = \theta_{old} + \eta \cdot (\pi(\theta_{new}) - \pi(\theta_{old}))$
 
 ### 4.2 公式推导过程
 
 #### 学习率调整
 - **目标**：使学习率随奖励变化，正向奖励增加学习率，负向奖励减少学习率。
-- **推导**：设初始学习率为$lr_0$，奖励为$r$，调整系数为$\\alpha$（通常在0到1之间），则学习率更新公式为$lr = lr_0 \\times \\alpha^r$。
+- **推导**：设初始学习率为$lr_0$，奖励为$r$，调整系数为$\alpha$（通常在0到1之间），则学习率更新公式为$lr = lr_0 \times \alpha^r$。
 
 #### 批大小调整
 - **目标**：动态调整批大小以优化训练效率和性能。
-- **推导**：假设之前的批大小为$batch\\_size_0$，奖励为$r$，则新的批大小为$batch\\_size = \\frac{batch\\_size_0 \\times r}{max\\_reward}$，其中$max\\_reward$为训练过程中可能达到的最大奖励。
+- **推导**：假设之前的批大小为$batch\_size_0$，奖励为$r$，则新的批大小为$batch\_size = \frac{batch\_size_0 \times r}{max\_reward}$，其中$max\_reward$为训练过程中可能达到的最大奖励。
 
 #### 策略更新
-- **目标**：通过策略梯度方法优化策略参数$\\theta$。
-- **推导**：策略更新依赖于策略梯度$\\pi(\\theta)$，即策略$\\theta$下的行为分布，通过梯度上升或下降来优化策略参数，具体公式为$\\theta_{new} = \\theta_{old} + \\eta \\cdot (\\pi(\\theta_{new}) - \\pi(\\theta_{old}))$，其中$\\eta$是学习率。
+- **目标**：通过策略梯度方法优化策略参数$\theta$。
+- **推导**：策略更新依赖于策略梯度$\pi(\theta)$，即策略$\theta$下的行为分布，通过梯度上升或下降来优化策略参数，具体公式为$\theta_{new} = \theta_{old} + \eta \cdot (\pi(\theta_{new}) - \pi(\theta_{old}))$，其中$\eta$是学习率。
 
 ### 4.3 案例分析与讲解
 
@@ -146,8 +146,8 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 from deepspeed import DeepSpeedEngine
 
 # 模型加载与准备
-tokenizer = AutoTokenizer.from_pretrained(\"your_model_name\")
-model = AutoModelForCausalLM.from_pretrained(\"your_model_name\").to(\"cuda\")
+tokenizer = AutoTokenizer.from_pretrained("your_model_name")
+model = AutoModelForCausalLM.from_pretrained("your_model_name").to("cuda")
 
 # 数据加载与预处理
 dataset = YourDataset()  # 自定义数据集类
@@ -161,22 +161,22 @@ model = DeepSpeedEngine(model, optimizer=optimizer)
 for epoch in range(num_epochs):
     for batch in dataloader:
         input_ids, attention_mask, labels = batch
-        input_ids = input_ids.to(\"cuda\")
-        attention_mask = attention_mask.to(\"cuda\")
-        labels = labels.to(\"cuda\")
-        
+        input_ids = input_ids.to("cuda")
+        attention_mask = attention_mask.to("cuda")
+        labels = labels.to("cuda")
+
         loss, _, _ = model(input_ids=input_ids, attention_mask=attention_mask, labels=labels)
         model.backward(loss)
         model.step()
-        
+
         # 强化学习策略调整（此处省略具体实现）
         # 可以在此处添加策略学习代码，根据模型性能调整超参数
-        
+
         # 监控与记录训练过程
         log_metrics(loss.item())
 
 # 结束训练，保存模型
-torch.save(model.state_dict(), \"model.pth\")
+torch.save(model.state_dict(), "model.pth")
 ```
 
 ### 5.3 代码解读与分析

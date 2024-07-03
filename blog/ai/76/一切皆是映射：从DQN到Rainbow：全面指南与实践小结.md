@@ -184,7 +184,7 @@ class DQN(nn.Module):
         self.fc1 = nn.Linear(input_size, 128)
         self.fc2 = nn.Linear(128, 64)
         self.fc3 = nn.Linear(64, action_size)
-        
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = torch.relu(self.fc2(x))
@@ -197,19 +197,19 @@ def rainbow_dqn(env, num_episodes, target_update_freq, learning_rate, gamma, eps
     # 迭代训练
     for episode in range(num_episodes):
         # 省略智能体选择动作、执行动作等代码
-        
+
         # 存储经验
         # 省略存储经验代码
-        
+
         # 更新经验池
         # 省略更新经验池代码
-        
+
         # 更新Q值
         # 省略更新Q值代码
-        
+
         # 同步主网络和目标网络
         # 省略同步主网络和目标网络代码
-        
+
         # 打印训练信息
         # 省略打印训练信息代码
 

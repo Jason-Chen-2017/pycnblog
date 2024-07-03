@@ -156,9 +156,9 @@ $$
 政策函数 $\pi(a|s)$ 表示在状态 $s$ 下采取动作 $a$ 的概率分布。其数学表达式如下：
 
 $$
-\pi(a|s) = \begin{cases} 
+\pi(a|s) = \begin{cases}
 p(a|s) & \text{if } a \in A_s \\
-0 & \text{otherwise} 
+0 & \text{otherwise}
 \end{cases}
 $$
 
@@ -276,7 +276,7 @@ class DQN(nn.Module):
         super(DQN, self).__init__()
         self.fc1 = nn.Linear(input_dim, 128)
         self.fc2 = nn.Linear(128, output_dim)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)
@@ -289,10 +289,10 @@ class DQN_Agent:
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.model = DQN(input_dim, output_dim).to(self.device)
         self.memory = deque(maxlen=1000)
-    
+
     def remember(self, state, action, reward, next_state, done):
         self.memory.append((state, action, reward, next_state, done))
-    
+
     def act(self, state):
         if random.random() < self.epsilon:
             return random.randrange(self.model.output_dim)
@@ -300,7 +300,7 @@ class DQN_Agent:
             state = torch.from_numpy(state).float().unsqueeze(0).to(self.device)
             act_values = self.model(state)
             return torch.argmax(act_values).item()
-    
+
     def replay(self, batch_size):
         minibatch = random.sample(self.memory, batch_size)
         for state, action, reward, next_state, done in minibatch:

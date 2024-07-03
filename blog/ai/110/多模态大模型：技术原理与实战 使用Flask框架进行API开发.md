@@ -370,4 +370,4 @@ if __name__ == '__main__':
     * **更丰富的应用**: 将多模态大模型应用于更多领域，解决更多实际问题。
     * **更安全的应用**: 确保多模态大模型的应用安全和隐私保护。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

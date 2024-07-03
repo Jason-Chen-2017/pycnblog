@@ -55,7 +55,7 @@ $$\frac{\partial L}{\partial b}=\begin{cases}
 -y_i, & y_i(w^Tx_i+b)<1 \\
 0, & otherwise
 \end{cases}$$
-3. 更新参数: 
+3. 更新参数:
 $$w\leftarrow w-\eta\frac{\partial L}{\partial w}, b\leftarrow b-\eta\frac{\partial L}{\partial b}$$
 其中$\eta$为学习率
 4. 重复步骤1-3,直到满足停止条件
@@ -107,13 +107,13 @@ class HingeLossClassifier:
         self.lambda_reg = lambda_reg  # 正则化系数
         self.w = None
         self.b = None
-    
+
     def fit(self, X, y):
         """训练模型"""
         n_samples, n_features = X.shape
         self.w = np.zeros(n_features)
         self.b = 0
-        
+
         for _ in range(self.epochs):
             for i in range(n_samples):
                 xi, yi = X[i], y[i]
@@ -122,7 +122,7 @@ class HingeLossClassifier:
                     self.b -= self.lr * (-yi)
                 else:
                     self.w -= self.lr * 2 * self.lambda_reg * self.w
-    
+
     def predict(self, X):
         """预测类别"""
         return np.sign(np.dot(X, self.w) + self.b)

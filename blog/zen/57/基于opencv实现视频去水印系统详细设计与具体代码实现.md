@@ -151,13 +151,13 @@ while True:
     ret, frame = video.read()
     if not ret:
         break
-    
+
     # 对当前帧进行处理
     # ...
-    
+
     # 显示处理后的帧
     cv2.imshow("Frame", frame)
-    
+
     # 按下'q'键退出循环
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break

@@ -257,4 +257,4 @@ print('均方误差：', mse)
 * **如何学习大数据与人工智能技术？**  可以通过学习相关课程、参加竞赛、阅读书籍和论文等方式学习。
 * **大数据与人工智能技术有哪些应用场景？**  大数据与人工智能技术被广泛应用于各个领域，例如金融、医疗、零售、交通、制造等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

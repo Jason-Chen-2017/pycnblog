@@ -212,14 +212,14 @@ public class PulsarConsumerExample {
         PulsarClient client = PulsarClient.builder()
                 .serviceUrl("pulsar://localhost:6650")
                 .build();
-        
+
         // 创建消费者
         Consumer<String> consumer = client.newConsumer(String.class)
                 .topic("my-topic")
                 .subscriptionName("my-subscription")
                 .subscriptionType(SubscriptionType.Exclusive)
                 .subscribe();
-        
+
         // 消费消息
         while (true) {
             Message<String> message = consumer.receive();

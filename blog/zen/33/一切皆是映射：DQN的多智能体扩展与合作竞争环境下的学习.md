@@ -1,4 +1,4 @@
-                 
+
 # 一切皆是映射：DQN的多智能体扩展与合作-竞争环境下的学习
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -161,10 +161,10 @@ def train_dqn(env, dqn, episodes=1000):
 if __name__ == "__main__":
     # 初始化环境
     env = gym.make('CartPole-v1')
-    
+
     # 创建DQN对象
     dqn = DQN(env.observation_space.shape[0], env.action_space.n)
-    
+
     # 训练模型
     train_dqn(env, dqn)
 ```

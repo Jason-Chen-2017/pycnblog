@@ -7,14 +7,14 @@ Computer Vision(计算机视觉)是一门研究如何使计算机获得高层次
 ### 1.2 Computer Vision的发展历程
 计算机视觉起源于20世纪60年代早期,经历了几个重要的发展阶段:
 - 20世纪60年代末到70年代初,主要研究低层次的图像处理,如边缘检测等。
-- 20世纪70年代到80年代,开始研究一些中层视觉问题,如运动估计、立体视觉等。 
+- 20世纪70年代到80年代,开始研究一些中层视觉问题,如运动估计、立体视觉等。
 - 20世纪80年代到90年代,随着计算机性能的提升,开始研究一些高层视觉问题,如物体识别、人脸识别等。
 - 21世纪以来,深度学习的兴起极大地推动了计算机视觉的发展,使得图像分类、目标检测、语义分割等任务取得了突破性进展。
 
 ### 1.3 Computer Vision的应用领域
 计算机视觉在很多领域有着广泛的应用,例如:
 - 智能监控:人脸识别、行为分析、异常检测等
-- 自动驾驶:车道线检测、障碍物识别、交通标志识别等  
+- 自动驾驶:车道线检测、障碍物识别、交通标志识别等
 - 医学影像:肿瘤检测、病变定位、器官分割等
 - 工业视觉:缺陷检测、外观检测、OCR识别等
 - 人机交互:手势识别、表情识别、视线追踪等
@@ -65,7 +65,7 @@ graph TD
 3. 对梯度幅值进行非极大值抑制
 4. 使用双阈值法检测和连接边缘
 
-### 3.2 Harris角点检测  
+### 3.2 Harris角点检测
 1. 计算图像在水平和垂直方向的梯度
 2. 计算每个像素的自相关矩阵
 3. 计算自相关矩阵的特征值和响应函数
@@ -140,11 +140,11 @@ $$\frac{1}{m}XX^T=U\Lambda U^T$$
 import cv2
 
 # 读取图像
-img = cv2.imread('image.jpg') 
+img = cv2.imread('image.jpg')
 
 # 显示图像
 cv2.imshow('image', img)
-cv2.waitKey(0)  
+cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
@@ -158,13 +158,13 @@ import cv2
 img = cv2.imread('image.jpg')
 
 # 均值滤波
-blur = cv2.blur(img, (5,5)) 
+blur = cv2.blur(img, (5,5))
 
-# 高斯滤波 
-gaussian = cv2.GaussianBlur(img, (5,5), 0) 
+# 高斯滤波
+gaussian = cv2.GaussianBlur(img, (5,5), 0)
 
 # 中值滤波
-median = cv2.medianBlur(img, 5)  
+median = cv2.medianBlur(img, 5)
 
 cv2.imshow('image', img)
 cv2.imshow('blur', blur)
@@ -181,10 +181,10 @@ cv2.destroyAllWindows()
 ```python
 import cv2
 
-img = cv2.imread('image.jpg', 0) 
+img = cv2.imread('image.jpg', 0)
 
 # Canny边缘检测
-edges = cv2.Canny(img, 100, 200) 
+edges = cv2.Canny(img, 100, 200)
 
 cv2.imshow('image', img)
 cv2.imshow('edges', edges)
@@ -205,11 +205,11 @@ gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 # 二值化
 ret, thresh = cv2.threshold(gray, 127, 255, 0)
 
-# 寻找轮廓  
+# 寻找轮廓
 contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
 # 绘制轮廓
-cv2.drawContours(img, contours, -1, (0,255,0), 3) 
+cv2.drawContours(img, contours, -1, (0,255,0), 3)
 
 cv2.imshow('image', img)
 cv2.waitKey(0)
@@ -234,7 +234,7 @@ faces = face_cascade.detectMultiScale(gray, 1.3, 5)
 # 绘制人脸框
 for (x,y,w,h) in faces:
     cv2.rectangle(img, (x,y), (x+w,y+h), (255,0,0), 2)
-    
+
 cv2.imshow('image', img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

@@ -139,7 +139,7 @@ from stable_baselines3.common.callbacks import EvalCallback
 env = gym.make('MyCustomEnv-v0')
 eval_env = gym.make('MyCustomEnv-v0')
 
-eval_callback = EvalCallback(eval_env, 
+eval_callback = EvalCallback(eval_env,
                              eval_freq=1000,
                              best_model_save_path='./logs',
                              deterministic=True,

@@ -151,8 +151,7 @@ $$
 对目标函数求导，得：
 
 $$
-\
-abla_{\mathbf{w}} L(\mathbf{w}) = 2\sum_{i=1}^N (y_i - \mathbf{w}^T\mathbf{x_i})\mathbf{x_i}
+\nabla_{\mathbf{w}} L(\mathbf{w}) = 2\sum_{i=1}^N (y_i - \mathbf{w}^T\mathbf{x_i})\mathbf{x_i}
 $$
 
 令梯度等于零，得：

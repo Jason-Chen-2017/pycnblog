@@ -78,11 +78,11 @@
 
 ### 4.2 公式推导过程
 
-**信息增益**：$IG(T, A) = H(T) - \\sum_{v \\in values(A)} \\frac{|T_v|}{|T|}H(T_v)$
+**信息增益**：$IG(T, A) = H(T) - \sum_{v \in values(A)} \frac{|T_v|}{|T|}H(T_v)$
 
-**基尼指数**：$Gini(T) = \\sum_{i=1}^{C} \\sum_{j=i+1}^{C} \\frac{N_i}{N} \\cdot \\frac{N_j}{N} \\cdot \\left(1 - \\frac{N_i}{N} - \\frac{N_j}{N}\\right)$
+**基尼指数**：$Gini(T) = \sum_{i=1}^{C} \sum_{j=i+1}^{C} \frac{N_i}{N} \cdot \frac{N_j}{N} \cdot \left(1 - \frac{N_i}{N} - \frac{N_j}{N}\right)$
 
-**深度学习损失函数**：$L = \\frac{1}{N} \\sum_{i=1}^{N} L(y_i, \\hat{y}_i)$
+**深度学习损失函数**：$L = \frac{1}{N} \sum_{i=1}^{N} L(y_i, \hat{y}_i)$
 
 ### 4.3 案例分析与讲解
 
@@ -148,8 +148,8 @@ dl_model.fit(X_train_scaled, y_train, epochs=100, batch_size=32, validation_spli
 # 预测与评估
 y_pred_dtree = dtree.predict(X_test_scaled)
 y_pred_dl = dl_model.predict(X_test_scaled).round()
-print(\"决策树准确率:\", accuracy_score(y_test, y_pred_dtree))
-print(\"深度学习准确率:\", accuracy_score(y_test, y_pred_dl))
+print("决策树准确率:", accuracy_score(y_test, y_pred_dtree))
+print("深度学习准确率:", accuracy_score(y_test, y_pred_dl))
 ```
 
 ### 5.3 代码解读与分析

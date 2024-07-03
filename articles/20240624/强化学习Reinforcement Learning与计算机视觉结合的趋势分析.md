@@ -157,16 +157,13 @@ $$J(\pi) = \mathbb{E}_{s_0 \sim \pi} \left[ \sum_{t=0}^\infty \gamma^t R(s_t, a_
 
 策略梯度是一种优化策略参数的方法，其公式如下：
 
-$$\
-abla_{\theta} J(\pi(\theta)) = \mathbb{E}_{s \sim \pi} \left[ \
-abla_a J(\pi(\theta)) \right]$$
+$$\nabla_{\theta} J(\pi(\theta)) = \mathbb{E}_{s \sim \pi} \left[ \nabla_a J(\pi(\theta)) \right]$$
 
 其中，
 
 - $\theta$表示策略参数。
 - $J(\pi(\theta))$表示策略$\pi(\theta)$的期望回报。
-- $\
-abla_a J(\pi(\theta))$表示在动作$a$处对期望回报的梯度。
+- $\nabla_a J(\pi(\theta))$表示在动作$a$处对期望回报的梯度。
 
 #### 4.2.2 价值函数
 

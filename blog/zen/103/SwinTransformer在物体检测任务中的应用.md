@@ -331,7 +331,7 @@ A：Swin模型采用PAN的思想进行多路径特征聚合，将不同路径提
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n swin-env python=3.8 
+conda create -n swin-env python=3.8
 conda activate swin-env
 ```
 

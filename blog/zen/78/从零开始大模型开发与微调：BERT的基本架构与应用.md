@@ -183,4 +183,4 @@ $$
 \text{FFN}(x) = \max(0, xW_1 + b_1)W_2 + b_2
 $$
 
-其中 $W_1 \in \mathbb{R}^{d_x \times d_{ff}}$、$b_1 \in \mathbb{R}^{d_{ff}}$、$W_2 \in \mathbb{R}^{d_{ff} \times d_x}$ 和 $b_2 
+其中 $W_1 \in \mathbb{R}^{d_x \times d_{ff}}$、$b_1 \in \mathbb{R}^{d_{ff}}$、$W_2 \in \mathbb{R}^{d_{ff} \times d_x}$ 和 $b_2

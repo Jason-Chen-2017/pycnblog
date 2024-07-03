@@ -1,6 +1,6 @@
 # AI 神经网络计算艺术之禅：世界模型——建立自然环境的物理模型
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 

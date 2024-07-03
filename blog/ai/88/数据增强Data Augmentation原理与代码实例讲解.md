@@ -110,7 +110,7 @@ def augment_image(image_path, transformations):
             crop_box = (np.random.randint(0, image.width - crop_size[0]), np.random.randint(0, image.height - crop_size[1]), crop_size[0], crop_size[1])
             image = image.crop(crop_box)
         # 添加更多变换操作...
-    
+
     return image
 ```
 
@@ -248,7 +248,7 @@ def augment_image(image_path, transformations):
             crop_box = (np.random.randint(0, image.shape[1] - crop_size[0]), np.random.randint(0, image.shape[0] - crop_size[1]), crop_size[0], crop_size[1])
             image = image[crop_box[1]:crop_box[1] + crop_size[1], crop_box[0]:crop_box[0] + crop_size[0]]
         # 添加更多变换操作...
-    
+
     return image
 
 # 加载图像

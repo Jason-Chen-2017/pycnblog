@@ -62,8 +62,7 @@ AutoAugment使用强化学习中的策略优化算法来调整操作的概率和
 3. 根据概率$p_i$和预定义的强度范围，选择一个强度值$s_i$。
 4. 对操作$O_i$执行增强，并计算增强数据的模型性能损失$L(\theta, (O_i, p_i, s_i))$。
 5. 更新策略参数$\theta$，使用梯度下降或其他优化算法：
-   $$\theta \leftarrow \theta - \alpha \cdot \
-abla_{\theta}L(\theta, (O_i, p_i, s_i))$$
+   $$\theta \leftarrow \theta - \alpha \cdot \nabla_{\theta}L(\theta, (O_i, p_i, s_i))$$
 6. 重复步骤2至5，直到达到预设的迭代次数。
 
 #### 3.2.3 模型训练

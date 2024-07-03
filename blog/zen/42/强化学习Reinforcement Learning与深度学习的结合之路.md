@@ -122,17 +122,17 @@ class DQN:
         self.action_size = action_size
         self.learning_rate = learning_rate
         self.build_model()
-        
+
     def build_model(self):
         self.model = tf.keras.models.Sequential([
             tf.keras.layers.Dense(24, input_shape=(self.state_size,), activation='relu'),
             tf.keras.layers.Dense(self.action_size, activation='linear')
         ])
         self.model.compile(optimizer=tf.optimizers.Adam(learning_rate=self.learning_rate), loss='mse')
-        
+
     def predict(self, state):
         return self.model.predict(state)
-    
+
     def train(self, states, actions, rewards, next_states, dones):
         targets = rewards + self.learning_rate * np.max(self.model.predict(next_states), axis=1) * ~dones
         self.model.fit(states, targets.reshape(-1, 1), epochs=1, verbose=0)
@@ -208,7 +208,7 @@ dqn.train(states, actions, rewards, next_states, dones)
 
 - **问：如何平衡探索与利用？**
 答：通过策略梯度方法，智能体在探索未知状态的同时，利用已知策略最大化累积奖励。可以采用 ε-greedy策略、Softmax策略或UCB策略来调整探索与利用的平衡。
-  
+
 - **问：如何处理大规模状态空间？**
 答：利用深度学习进行特征学习，减少对特征工程的依赖。采用注意力机制、递归神经网络（RNN）或变分自编码器（VAE）等技术，帮助智能体在大规模状态空间中进行有效的学习和决策。
 

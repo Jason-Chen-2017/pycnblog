@@ -70,9 +70,9 @@
 
 设$R$为环，$I$为$R$的理想，定义$m$次生成理想$J_m(R)$为：
 
-$$J_m(R) = \\bigcap\\{I : I \\subseteq R, \\exists i_1, \\ldots, i_m \\in I \\text{ such that } I = \\langle i_1, \\ldots, i_m \\rangle\\}$$
+$$J_m(R) = \bigcap\{I : I \subseteq R, \exists i_1, \ldots, i_m \in I \text{ such that } I = \langle i_1, \ldots, i_m \rangle\}$$
 
-其中，$\\langle i_1, \\ldots, i_m \\rangle$表示由$i_1, \\ldots, i_m$生成的理想。
+其中，$\langle i_1, \ldots, i_m \rangle$表示由$i_1, \ldots, i_m$生成的理想。
 
 ### 4.2 公式推导过程
 
@@ -80,7 +80,7 @@ $$J_m(R) = \\bigcap\\{I : I \\subseteq R, \\exists i_1, \\ldots, i_m \\in I \\te
 
 ### 4.3 案例分析与讲解
 
-考虑环$R = \\mathbb{Z}/4\\mathbb{Z}$，其中$\\mathbb{Z}/4\\mathbb{Z}$表示整数模4的环。对于$m=2$，可以找出所有次数不超过2的理想生成集，并从中选择最大的理想作为$J_2(R)$。
+考虑环$R = \mathbb{Z}/4\mathbb{Z}$，其中$\mathbb{Z}/4\mathbb{Z}$表示整数模4的环。对于$m=2$，可以找出所有次数不超过2的理想生成集，并从中选择最大的理想作为$J_2(R)$。
 
 ### 4.4 常见问题解答
 
@@ -125,11 +125,11 @@ print(J_2_R)
 
 ### 5.3 代码解读与分析
 
-这段代码首先定义了一个整数模4的环$R$，然后定义了一个函数$m\\_generating\\_ideals$，用于生成所有次数不超过$m$的理想集。最后，通过交集操作找到了$J_2(R)$。
+这段代码首先定义了一个整数模4的环$R$，然后定义了一个函数$m\_generating\_ideals$，用于生成所有次数不超过$m$的理想集。最后，通过交集操作找到了$J_2(R)$。
 
 ### 5.4 运行结果展示
 
-运行上述代码，可以得到$J_2(\\mathbb{Z}/4\\mathbb{Z})$的具体理想表示。
+运行上述代码，可以得到$J_2(\mathbb{Z}/4\mathbb{Z})$的具体理想表示。
 
 ## 6. 实际应用场景
 

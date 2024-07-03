@@ -231,7 +231,7 @@ class Transformer(nn.Module):
         self.src_tokemb = nn.Embedding(src_vocab_size, d_model)
         self.tar_tokemb = nn.Embedding(tar_vocab_size, d_model)
         self.fc_out = nn.Linear(d_model, tar_vocab_size)
-        
+
     def forward(self, src, tar):
         src_emb = self.src_tokemb(src)
         tar_emb = self.tar_tokemb(tar)

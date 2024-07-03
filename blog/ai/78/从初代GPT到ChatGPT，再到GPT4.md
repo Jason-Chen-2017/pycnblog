@@ -188,7 +188,7 @@ A：GPT模型的主要缺点包括：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n gpt-env python=3.8 
+conda create -n gpt-env python=3.8
 conda activate gpt-env
 ```
 

@@ -9,7 +9,7 @@
 ### 1.1 AIGC的兴起与发展
 
 - 早期的规则与模板生成系统
-- 基于深度学习的端到端生成模型 
+- 基于深度学习的端到端生成模型
 - 大规模预训练模型与few-shot学习范式
 - AIGC商业化应用的兴起
 
@@ -22,7 +22,7 @@
 
 ### 1.3 AIGC技术的关键构成要素
 
-- 大规模高质量的训练数据 
+- 大规模高质量的训练数据
 - 先进的深度学习模型结构
 - 高性能计算资源与优化技术
 - 人机交互与反馈学习机制
@@ -31,7 +31,7 @@
 
 要理解AIGC的工作原理,需要掌握一些核心概念:
 
-### 2.1 深度学习 
+### 2.1 深度学习
 
 - 前馈神经网络
 - 卷积神经网络(CNN)
@@ -47,7 +47,7 @@
 
 ### 2.3 计算机视觉
 
-- 生成对抗网络(GAN) 
+- 生成对抗网络(GAN)
 - Variational Autoencoder(VAE)
 - 神经风格迁移
 - 文本-图像跨模态生成
@@ -79,7 +79,7 @@
 #### 3.1.3 解码策略与采样方法
 
 - Greedy Decoding
-- Beam Search Decoding 
+- Beam Search Decoding
 - Top-k/Top-p Sampling
 - Temperature Sampling
 
@@ -187,7 +187,7 @@ class TransformerLM(nn.Module):
         self.embed = nn.Embedding(vocab_size, embed_dim)
         self.pos_embed = nn.Parameter(torch.zeros(1, 512, embed_dim))
         self.layers = nn.ModuleList([
-            TransformerBlock(embed_dim, num_heads, ff_dim, dropout) 
+            TransformerBlock(embed_dim, num_heads, ff_dim, dropout)
             for _ in range(num_layers)
         ])
         self.norm = nn.LayerNorm(embed_dim)
@@ -215,7 +215,7 @@ import torch.nn as nn
 import torch.optim as optim
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-model = TransformerLM(vocab_size=10000, embed_dim=512, num_heads=8, 
+model = TransformerLM(vocab_size=10000, embed_dim=512, num_heads=8,
                       ff_dim=2048, num_layers=6, dropout=0.1).to(device)
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=1e-4)

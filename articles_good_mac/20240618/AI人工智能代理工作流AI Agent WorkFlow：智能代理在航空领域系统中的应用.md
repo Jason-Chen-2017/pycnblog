@@ -120,9 +120,7 @@ AI代理（AI Agents）是能够感知环境、做出决策并采取行动的智
 #### RL
 
 - **动态规划**：$V(s) = \\max_a \\sum_{s', r} P(s', r|s, a)[r + \\gamma V(s')]$
-- **策略梯度**：$\
-abla_\\theta J(\\theta) = \\mathbb{E}_{\\tau \\sim \\pi_\\theta}[\\sum_t \
-abla_\\theta \\log \\pi_\\theta(a_t|\\tau) \\cdot Q_\\theta(s_t, a_t)]$
+- **策略梯度**：$\nabla_\\theta J(\\theta) = \\mathbb{E}_{\\tau \\sim \\pi_\\theta}[\\sum_t \nabla_\\theta \\log \\pi_\\theta(a_t|\\tau) \\cdot Q_\\theta(s_t, a_t)]$
 
 ### 4.3 案例分析与讲解
 

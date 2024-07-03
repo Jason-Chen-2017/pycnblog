@@ -116,10 +116,10 @@ $$ o_t = \phi(W_{ho}h_t + b_o) $$
 
 假设我们有三个输入节点、两个隐藏节点和一个输出节点。激活函数为 tanh，权重矩阵和偏置项如下：
 
-- $W_{hx} = \begin{bmatrix} w_{11} & w_{12} & w_{13} \\ w_{21} & w_{22} & w_{23} \end{bmatrix}$，$W_{hh} = \begin{bmatrix} w_{h1} & w_{h2} \\ w_{h3} & w_{h4} \end{bmatrix}$，$W_{ho} = \begin{bmatrix} w_{o1} & w_{o2} \end{bmatrix}$，
-- $b_h = \begin{bmatrix} b_1 \\ b_2 \end{bmatrix}$，$b_o = \begin{bmatrix} b_3 \end{bmatrix}$，
+- $W_{hx} = \begin{bmatrix} w_{11} & w_{12} & w_{13} \ w_{21} & w_{22} & w_{23} \end{bmatrix}$，$W_{hh} = \begin{bmatrix} w_{h1} & w_{h2} \ w_{h3} & w_{h4} \end{bmatrix}$，$W_{ho} = \begin{bmatrix} w_{o1} & w_{o2} \end{bmatrix}$，
+- $b_h = \begin{bmatrix} b_1 \ b_2 \end{bmatrix}$，$b_o = \begin{bmatrix} b_3 \end{bmatrix}$，
 
-输入节点接收外部信号 $x_t = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}$，当前时刻的隐藏状态为 $h_{t-1} = \begin{bmatrix} h_1 \\ h_2 \end{bmatrix}$。
+输入节点接收外部信号 $x_t = \begin{bmatrix} x_1 \ x_2 \ x_3 \end{bmatrix}$，当前时刻的隐藏状态为 $h_{t-1} = \begin{bmatrix} h_1 \ h_2 \end{bmatrix}$。
 
 #### 隐藏状态更新：
 

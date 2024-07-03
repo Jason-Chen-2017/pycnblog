@@ -1,6 +1,6 @@
 # Python机器学习实战：特征选择与特征工程的最佳实践
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -647,4 +647,4 @@ print('相关性选择模型准确率：', accuracy)
 - **社会影响评估:**  评估模型的社会影响，例如对就业、环境、社会公平等方面的影响。
 - **社会参与:**  鼓励社会参与模型的开发和使用，例如征求公众意见或进行社会实验。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -68,7 +68,7 @@ AI Agent中"Sample"的应用广泛，包括但不限于：
 
 在构建数学模型时，"Sample"的引入通常体现在数据集的构建上。假设我们有数据集$D$，其中包含输入特征$x$和输出标签$y$：
 
-\[ D = \{(x_i, y_i)\}_{i=1}^{n} \]
+$$ D = \{(x_i, y_i)\}_{i=1}^{n} $$
 
 这里，$n$是数据集的大小，$x_i$是第$i$个样本的特征向量，$y_i$是相应的标签或输出值。
 
@@ -76,7 +76,7 @@ AI Agent中"Sample"的应用广泛，包括但不限于：
 
 在机器学习中，通过最小化损失函数来优化模型参数，损失函数$J(\theta)$依赖于训练集上的"Sample"：
 
-\[ J(\theta) = \frac{1}{n} \sum_{i=1}^{n} L(\theta, x_i, y_i) \]
+$$ J(\theta) = \frac{1}{n} \sum_{i=1}^{n} L(\theta, x_i, y_i) $$
 
 其中，$L(\cdot)$是损失函数，衡量模型预测值与实际值之间的差异。
 
@@ -84,7 +84,7 @@ AI Agent中"Sample"的应用广泛，包括但不限于：
 
 以深度学习为例，通过梯度下降算法优化网络权重：
 
-\[ \theta := \theta - \eta \frac{\partial J(\theta)}{\partial \theta} \]
+$$ \theta := \theta - \eta \frac{\partial J(\theta)}{\partial \theta} $$
 
 其中，$\eta$是学习率，$\theta$是待优化的参数。
 

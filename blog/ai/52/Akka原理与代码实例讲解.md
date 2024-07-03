@@ -165,7 +165,7 @@ class Mapper extends Actor {
   def receive: Receive = {
     case text: String =>
       // 将文本拆分为单词
-      val words = text.toLowerCase.split("\\W+")
+      val words = text.toLowerCase.split("\W+")
 
       // 统计每个单词的出现次数
       val wordCounts = words.groupBy(identity).mapValues(_.size)

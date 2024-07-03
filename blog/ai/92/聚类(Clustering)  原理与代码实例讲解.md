@@ -135,10 +135,10 @@ centroids = data[np.random.choice(range(data.shape[0]), K, replace=False)]
 for _ in range(100):
     # 计算每个数据点与各个质心的距离
     distances = np.linalg.norm(data[:, np.newaxis] - centroids, axis=2)
-    
+
     # 将每个数据点分配到距离最近的质心所在的簇
     labels = np.argmin(distances, axis=1)
-    
+
     # 计算每个簇的平均中心（质心）
     centroids = np.array([data[labels == k].mean(axis=0) for k in range(K)])
 
@@ -207,21 +207,21 @@ def kmeans(data, K, max_iter=100):
     """
     # 初始化K个质心
     centroids = data[np.random.choice(range(data.shape[0]), K, replace=False)]
-    
+
     for _ in range(max_iter):
         # 计算每个数据点与各个质心的距离
         distances = np.linalg.norm(data[:, np.newaxis] - centroids, axis=2)
-        
+
         # 将每个数据点分配到距离最近的质心所在的簇
         labels = np.argmin(distances, axis=1)
-        
+
         # 计算每个簇的平均中心（质心）
         centroids = np.array([data[labels == k].mean(axis=0) for k in range(K)])
-        
+
         # 检查是否收敛
         if np.all(centroids == centroids[0]):
             break
-    
+
     return labels, centroids
 
 # 创建一个包含10个数据点的随机数据集

@@ -7,14 +7,14 @@
 ### 1.2 Java在智能家居中的应用
 ### 1.3 MVC设计模式的重要性
 
-## 2. 核心概念与联系  
+## 2. 核心概念与联系
 ### 2.1 智能家居系统架构
 #### 2.1.1 感知层
 #### 2.1.2 网络层
 #### 2.1.3 应用层
 ### 2.2 MVC设计模式
 #### 2.2.1 Model（模型）
-#### 2.2.2 View（视图）  
+#### 2.2.2 View（视图）
 #### 2.2.3 Controller（控制器）
 ### 2.3 MVC在智能家居中的应用
 #### 2.3.1 模型层：家居设备抽象
@@ -41,7 +41,7 @@
 $E=\sum_{i=1}^{n} P_i \times t_i$
 其中，$E$为总能耗，$P_i$为第$i$个设备的功率，$t_i$为其工作时间。
 #### 4.1.2 能效优化策略
-### 4.2 用户行为预测模型  
+### 4.2 用户行为预测模型
 #### 4.2.1 马尔可夫链
 状态转移概率矩阵$P$：
 $$
@@ -73,7 +73,7 @@ public abstract class Device {
     protected String name;
     protected String type;
     protected String status;
-    
+
     public abstract void on();
     public abstract void off();
     // 其他通用方法...
@@ -83,17 +83,17 @@ public abstract class Device {
 ```java
 public class Light extends Device {
     private int brightness;
-    
+
     @Override
     public void on() {
         // 实现开灯逻辑
     }
-    
-    @Override  
+
+    @Override
     public void off() {
         // 实现关灯逻辑
     }
-    
+
     public void setBrightness(int brightness) {
         // 设置亮度
     }
@@ -112,16 +112,16 @@ public class Light extends Device {
 ```xml
 <LinearLayout
     android:orientation="vertical"
-    android:layout_width="match_parent"  
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView  
+    <TextView
         android:id="@+id/device_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/btn_on"  
+        android:id="@+id/btn_on"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="开启"/>
@@ -129,27 +129,27 @@ public class Light extends Device {
     <Button
         android:id="@+id/btn_off"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"  
+        android:layout_height="wrap_content"
         android:text="关闭"/>
 
 </LinearLayout>
 ```
-### 5.3 自动化控制模块  
+### 5.3 自动化控制模块
 #### 5.3.1 规则引擎实现
 ```java
 public class RuleEngine {
     private List<Rule> rules;
-    
+
     public void addRule(Rule rule) {
-        // 添加规则  
+        // 添加规则
     }
-    
+
     public void removeRule(Rule rule) {
         // 移除规则
     }
-    
+
     public void runRules() {
-        // 运行规则匹配  
+        // 运行规则匹配
     }
 }
 ```
@@ -158,16 +158,16 @@ public class RuleEngine {
 public class Rule {
     private Condition condition;
     private Action action;
-    
+
     // 构造方法、getter/setter等
 }
 
-// 条件定义  
+// 条件定义
 public class Condition {
     private String deviceId;
     private String operator;
     private String value;
-    
+
     // 构造方法、getter/setter等
 }
 
@@ -175,7 +175,7 @@ public class Condition {
 public class Action {
     private String deviceId;
     private String command;
-    
+
     // 构造方法、getter/setter等
 }
 ```
@@ -184,7 +184,7 @@ public class Action {
 ### 6.1 家庭能源管理
 #### 6.1.1 智能电表数据采集分析
 #### 6.1.2 用电高峰预警与负荷控制
-### 6.2 家居安防  
+### 6.2 家居安防
 #### 6.2.1 门窗传感器与报警联动
 #### 6.2.2 智能门锁与访客管理
 ### 6.3 环境舒适度调节
@@ -195,7 +195,7 @@ public class Action {
 ### 7.1 开发工具
 #### 7.1.1 Android Studio
 #### 7.1.2 Eclipse SmartHome
-### 7.2 协议与标准  
+### 7.2 协议与标准
 #### 7.2.1 ZigBee
 #### 7.2.2 Z-Wave
 #### 7.2.3 Wi-Fi
@@ -205,7 +205,7 @@ public class Action {
 
 ## 8. 总结：未来发展趋势与挑战
 ### 8.1 人工智能技术融合
-### 8.2 多品类家居设备互联互通  
+### 8.2 多品类家居设备互联互通
 ### 8.3 能源需求侧管理
 ### 8.4 用户隐私与信息安全
 

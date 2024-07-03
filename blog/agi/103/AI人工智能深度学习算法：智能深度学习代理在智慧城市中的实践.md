@@ -201,9 +201,9 @@ class DrivingEnv:
         self._reset()
 
     def _reset(self):
-        self.state = [np.random.randint(self.low_speed, self.high_speed), 
-                      np.random.randint(self.low_speed, self.high_speed), 
-                      np.random.randint(self.low_speed, self.high_speed), 
+        self.state = [np.random.randint(self.low_speed, self.high_speed),
+                      np.random.randint(self.low_speed, self.high_speed),
+                      np.random.randint(self.low_speed, self.high_speed),
                       np.random.randint(self.low_speed, self.high_speed)]
         return self.state
 

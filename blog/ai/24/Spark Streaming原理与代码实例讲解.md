@@ -97,11 +97,11 @@ Spark Streaming中的数据流可以看作是由一系列事件组成的序列�
 
 #### 公式示例
 
-设事件流为$E = \\{(t_i, u_i)\\}$，其中$t_i$是事件时间戳，$u_i$是用户ID。可以定义如下变换：
+设事件流为$E = \{(t_i, u_i)\}$，其中$t_i$是事件时间戳，$u_i$是用户ID。可以定义如下变换：
 
-\\[W(t) = \\sum_{t_i \\in E, t_i \\geq t-\\delta, t_i < t+\\delta} \\mathbb{1}_{u_i}\\]
+$$W(t) = \sum_{t_i \in E, t_i \geq t-\delta, t_i < t+\delta} \mathbb{1}_{u_i}$$
 
-其中$W(t)$是在时间窗口$\\delta$内用户$u_i$的登录次数，$\\mathbb{1}_{u_i}$是指示函数，当$u_i$在给定时间窗口内出现时返回1，否则返回0。
+其中$W(t)$是在时间窗口$\delta$内用户$u_i$的登录次数，$\mathbb{1}_{u_i}$是指示函数，当$u_i$在给定时间窗口内出现时返回1，否则返回0。
 
 ### 4.4 常见问题解答
 
@@ -126,17 +126,17 @@ pip install pyspark
 from pyspark.sql import SparkSession
 from pyspark.streaming.kafka import KafkaUtils
 
-spark = SparkSession.builder.appName(\"StreamingApp\").getOrCreate()
+spark = SparkSession.builder.appName("StreamingApp").getOrCreate()
 
 # 创建DStream，指定Kafka服务器、主题和批次大小
 kafka_stream = KafkaUtils.createDirectStream(
     spark.sparkContext,
-    topics=[\"temperature\"],
-    kafkaParams={\"metadata.broker.list\": \"localhost:9092\"}
+    topics=["temperature"],
+    kafkaParams={"metadata.broker.list": "localhost:9092"}
 )
 
 # 解析每条消息为结构化数据，例如：(time, temperature)
-parsed_stream = kafka_stream.map(lambda x: x[1].split(\",\")).map(lambda fields: (fields[0], float(fields[1])))
+parsed_stream = kafka_stream.map(lambda x: x[1].split(",")).map(lambda fields: (fields[0], float(fields[1])))
 
 # 计算每分钟平均温度
 average_temperatures = parsed_stream \\

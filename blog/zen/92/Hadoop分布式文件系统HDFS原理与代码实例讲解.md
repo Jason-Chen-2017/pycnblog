@@ -1,7 +1,7 @@
 
 # Hadoop分布式文件系统HDFS原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 ### 1.1 问题的由来
@@ -153,14 +153,14 @@ public class HdfsExample {
         // 创建HDFS配置对象
         Configuration conf = new Configuration();
         conf.set("fs.defaultFS", "hdfs://localhost:9000");
-        
+
         // 创建FileSystem实例
         FileSystem fs = FileSystem.get(conf);
-        
+
         // 上传文件到HDFS
         fs.copyFromLocalFile(new Path("/path/to/local/file.txt"),
                              new Path("/path/to/hdfs/file.txt"));
-        
+
         // 读取HDFS上的文件
         Path hdfsPath = new Path("/path/to/hdfs/file.txt");
         FSDataInputStream in = fs.open(hdfsPath);

@@ -121,7 +121,7 @@ $$
 P = \begin{bmatrix}
 f_x & 0 & c_x \\
 0 & f_y & c_y \\
-0 & 0 & 1 
+0 & 0 & 1
 \end{bmatrix}
 $$
 
@@ -133,30 +133,30 @@ $$
 \begin{bmatrix}
 x \\
 y \\
-z 
+z
 \end{bmatrix}
 =
 \begin{bmatrix}
 x' \\
 y' \\
-z' 
+z'
 \end{bmatrix}
 =
 \begin{bmatrix}
 x_u' \\
 y_u' \\
-z_u' 
+z_u'
 \end{bmatrix}
 =
 \begin{bmatrix}
 u' \\
 v' \\
-1 
+1
 \end{bmatrix}
 \begin{bmatrix}
 f_x & 0 & c_x \\
 0 & f_y & c_y \\
-0 & 0 & 1 
+0 & 0 & 1
 \end{bmatrix}
 $$
 
@@ -244,9 +244,9 @@ test_data = [o3d.io.read_point_cloud(f"test/{i}.ply") for i in range(10)]
 test_labels = [1] * 10
 
 # 创建数据加载器
-train_dataset = torch.utils.data.TensorDataset(torch.tensor([point.data for point in train_data]), 
+train_dataset = torch.utils.data.TensorDataset(torch.tensor([point.data for point in train_data]),
                                              torch.tensor(train_labels))
-test_dataset = torch.utils.data.TensorDataset(torch.tensor([point.data for point in test_data]), 
+test_dataset = torch.utils.data.TensorDataset(torch.tensor([point.data for point in test_data]),
                                              torch.tensor(test_labels))
 train_loader = DataLoader(train_dataset, batch_size=2, shuffle=True)
 test_loader = DataLoader(test_dataset, batch_size=2, shuffle=False)

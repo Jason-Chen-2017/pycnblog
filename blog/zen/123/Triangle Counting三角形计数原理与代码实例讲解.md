@@ -407,4 +407,4 @@ print("使用节点迭代算法计算的三角形数量：", triangle_count_iter
 三角形计数可以应用于社交网络分析、生物信息学、推荐系统、金融风险控制、交通流量预测、自然语言处理等领域。
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -202,13 +202,13 @@ for episode in range(episodes):
     while not done:
         # 选择动作
         action = np.argmax(Q[state])
-        
+
         # 执行动作
         next_state, reward, done, _ = env.step(action)
-        
+
         # 更新Q值
         Q[state, action] = Q[state, action] + alpha * (reward + gamma * np.max(Q[next_state]) - Q[state, action])
-        
+
         state = next_state
 
 # 评估

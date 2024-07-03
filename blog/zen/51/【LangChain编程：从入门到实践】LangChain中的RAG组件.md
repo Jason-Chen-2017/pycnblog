@@ -70,19 +70,19 @@ graph TD
 
 1. **输入查询(Query Input)**: 用户输入一个自然语言查询或问题,如"什么是LangChain?"。
 
-2. **语料检索(Document Retrieval)**: 
+2. **语料检索(Document Retrieval)**:
     - 使用检索器(如TF-IDF、BM25等)从语料库中检索与查询相关的文档或段落。
     - 检索器通常会返回一个排序的文档列表,其中包含相关性分数。
 
-3. **上下文构建(Context Building)**: 
+3. **上下文构建(Context Building)**:
     - 将检索到的相关文档或段落与原始查询组合,构建输入上下文。
     - 上下文可以是简单的文本拼接,也可以使用更复杂的模板或规则。
 
-4. **语言模型生成(Language Model Generation)**: 
+4. **语言模型生成(Language Model Generation)**:
     - 将构建好的上下文输入到语言模型(如GPT、BERT等)中。
     - 语言模型会基于上下文和查询,生成相关的输出结果。
 
-5. **输出结果(Result Output)**: 
+5. **输出结果(Result Output)**:
     - 将语言模型生成的输出作为最终结果返回给用户。
     - 输出结果可能是一个简单的文本答复,也可能是一个更复杂的结构化输出。
 

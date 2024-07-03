@@ -55,7 +55,7 @@ L(s,χ) 的积分均值定理形式与之类似，证明方法可参考上述思
 
 积分均值定理的证明综合运用了解析数论中的多种方法，如 Euler 乘积、Dirichlet 级数、dyadic 分割、均方估计等，思路精妙、论证严密。但证明过程非常复杂，需要众多的数论工具和估计技巧。
 
-### 3.4 算法应用领域 
+### 3.4 算法应用领域
 
 积分均值定理在解析数论研究中有广泛应用，如可用于证明 ζ(s) 和 L(s,χ) 在临界线 Re(s)=1/2 的非零性、给出零点分布的密度估计等。同时对于理解 ζ(s) 和 L(s,χ) 的值分布也有重要意义。
 
@@ -193,7 +193,7 @@ Mean square of zeta(s) on [1/2, 1/2+i100]: 6.092
 
 ### 7.3 相关论文推荐
 
-- J. E. Littlewood, On the Riemann zeta-function, Proc. London Math. Soc. (2) 20 (1922), 273-279. 
+- J. E. Littlewood, On the Riemann zeta-function, Proc. London Math. Soc. (2) 20 (1922), 273-279.
 - A. E. Ingham, Mean-value theorems in the theory of the Riemann zeta-function, Proc. London Math. Soc. (2) 27 (1926), 273-300.
 - K. Ramachandra, Some remarks on the mean value of the Riemann zeta-function and other Dirichlet series, Ann. Acad. Sci. Fenn. Ser. A I Math. 1 (1975), 447-461.
 

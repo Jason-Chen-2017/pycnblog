@@ -165,10 +165,10 @@ def train_model(X, y, theta, lambda_, epochs):
         with tf.GradientTape() as tape:
             predictions = linear_regression(theta, X)
             loss = loss_function(theta, X, y, lambda_)
-        
+
         gradients = tape.gradient(loss, theta)
         optimizer.apply_gradients(zip(gradients, theta))
-        
+
         if epoch % 100 == 0:
             print(f"Epoch {epoch}: Loss = {loss.numpy()}")
 

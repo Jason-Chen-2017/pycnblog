@@ -36,20 +36,15 @@
 
 ### 2.1 梯度的概念
 
-在数学上，设函数$f(x)$在某一点$x$处的梯度表示为$\
-abla f(x)$，则$\
-abla f(x)$定义为函数$f(x)$在该点处沿各个坐标轴方向的偏导数的向量。对于二维空间中的函数$f(x, y)$，$\
-abla f(x, y) = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}\right)$。
+在数学上，设函数$f(x)$在某一点$x$处的梯度表示为$\nabla f(x)$，则$\nabla f(x)$定义为函数$f(x)$在该点处沿各个坐标轴方向的偏导数的向量。对于二维空间中的函数$f(x, y)$，$\nabla f(x, y) = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}\right)$。
 
 ### 2.2 梯度下降算法
 
 梯度下降算法的核心步骤是：
 
 1. **初始化**：选择一个初始点$x_0$作为起点。
-2. **计算梯度**：在当前位置计算函数$f(x)$的梯度$\
-abla f(x)$。
-3. **更新位置**：根据梯度的方向移动一定步长，即$x_{new} = x - \alpha \cdot \
-abla f(x)$，其中$\alpha$是学习率（step size），决定了移动的步长。
+2. **计算梯度**：在当前位置计算函数$f(x)$的梯度$\nabla f(x)$。
+3. **更新位置**：根据梯度的方向移动一定步长，即$x_{new} = x - \alpha \cdot \nabla f(x)$，其中$\alpha$是学习率（step size），决定了移动的步长。
 4. **检查停止条件**：如果满足某个停止条件（例如到达预定次数、达到最小变化阈值或梯度接近于零），则停止迭代，否则返回第2步。
 
 ### 2.3 梯度下降的应用
@@ -71,13 +66,11 @@ abla f(x)$，其中$\alpha$是学习率（step size），决定了移动的步�
 
 #### 计算梯度：
 
-- 计算当前点$x_i$处函数$f(x)$的梯度$\
-abla f(x_i)$。
+- 计算当前点$x_i$处函数$f(x)$的梯度$\nabla f(x_i)$。
 
 #### 更新位置：
 
-- 更新$x_i$为$x_{i+1} = x_i - \alpha \cdot \
-abla f(x_i)$。
+- 更新$x_i$为$x_{i+1} = x_i - \alpha \cdot \nabla f(x_i)$。
 
 #### 检查停止条件：
 
@@ -107,35 +100,29 @@ abla f(x_i)$。
 
 ### 4.1 数学模型构建
 
-假设我们有一个多元函数$f(x_1, x_2, ..., x_n)$，其中$x_i$是$n$个变量。梯度下降的目标是找到函数$f$的最小值。在$n$维空间中，梯度$\
-abla f$是一个$n$维向量，其分量表示$f$在每个坐标方向上的偏导数。
+假设我们有一个多元函数$f(x_1, x_2, ..., x_n)$，其中$x_i$是$n$个变量。梯度下降的目标是找到函数$f$的最小值。在$n$维空间中，梯度$\nabla f$是一个$n$维向量，其分量表示$f$在每个坐标方向上的偏导数。
 
 数学上，梯度下降的迭代更新公式可以表示为：
 
-$$x_{k+1} = x_k - \alpha_k \
-abla f(x_k)$$
+$$x_{k+1} = x_k - \alpha_k \nabla f(x_k)$$
 
 其中$x_k$是第$k$次迭代的点，$\alpha_k$是第$k$次迭代的学习率。
 
 ### 4.2 公式推导过程
 
-对于函数$f(x)$在点$x$处的梯度$\
-abla f(x)$，我们可以使用偏导数来表达：
+对于函数$f(x)$在点$x$处的梯度$\nabla f(x)$，我们可以使用偏导数来表达：
 
-$$\
-abla f(x) = \left(\frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, ..., \frac{\partial f}{\partial x_n}\right)$$
+$$\nabla f(x) = \left(\frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, ..., \frac{\partial f}{\partial x_n}\right)$$
 
 梯度下降的迭代更新过程可以看作是在$n$维空间中沿着梯度的负方向移动一定步长。这个步长由学习率$\alpha_k$决定：
 
-$$x_{k+1} = x_k - \alpha_k \
-abla f(x_k)$$
+$$x_{k+1} = x_k - \alpha_k \nabla f(x_k)$$
 
 ### 4.3 案例分析与讲解
 
 **例子**：假设我们有一个简单的二次函数$f(x) = x^2$。我们要在实数域内找到$f(x)$的最小值。
 
-- **计算梯度**：$\
-abla f(x) = \frac{df}{dx} = 2x$。
+- **计算梯度**：$\nabla f(x) = \frac{df}{dx} = 2x$。
 - **梯度下降**：选取初始点$x_0 = 5$，学习率$\alpha = 0.1$。迭代几次后，我们发现$x$的值会越来越接近$f(x)$的最小值$x=0$。
 
 ### 4.4 常见问题解答

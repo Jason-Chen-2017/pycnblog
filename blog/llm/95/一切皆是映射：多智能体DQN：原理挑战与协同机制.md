@@ -219,7 +219,7 @@ A：为了提高多智能体DQN的策略收敛速度，可以采用以下策略�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n dqn-env python=3.8 
+conda create -n dqn-env python=3.8
 conda activate dqn-env
 ```
 

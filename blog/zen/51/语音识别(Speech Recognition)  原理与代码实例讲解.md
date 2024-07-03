@@ -31,7 +31,7 @@ graph TD
     B --> D[语音特征提取]
     C --> E[解码器]
     D --> E
-    E --> F[语言模型] 
+    E --> F[语言模型]
     F --> G[输出文本]
 ```
 
@@ -182,7 +182,7 @@ class AcousticModel(nn.Module):
         super().__init__()
         self.fc1 = nn.Linear(input_size, hidden_size)
         self.fc2 = nn.Linear(hidden_size, num_classes)
-        
+
     def forward(self, x):
         x = self.fc1(x)
         x = nn.functional.relu(x)
@@ -208,13 +208,13 @@ class LanguageModel:
         self.tokens = tokens
         self.counts = {}
         self.init_counts()
-        
+
     def init_counts(self):
         for n in range(1, self.ngram+1):
             for i in range(len(self.tokens)-n+1):
                 ngram = tuple(self.tokens[i:i+n])
                 self.counts[ngram] = self.counts.get(ngram, 0) + 1
-                
+
     def score(self, tokens):
         score = 0
         for n in range(1, self.ngram+1):
@@ -223,7 +223,7 @@ class LanguageModel:
                 count = self.counts.get(ngram, 0)
                 score += np.log(count)
         return score
-    
+
 # 创建语言模型实例
 ngram = 3
 tokens = list(transcript)
@@ -240,10 +240,10 @@ def decode(model, lm, mfcc):
     使用词束搜索算法进行解码
     """
     beam_width = 10
-    
+
     # 初始化词束
     beam = [((), 0)]
-    
+
     # 迭代解码
     for t in range(mfcc.shape[0]):
         new_beam = []
@@ -254,11 +254,11 @@ def decode(model, lm, mfcc):
                 new_prefix = prefix + (i,)
                 new_score = score + logprob_scores[i] + lm.score(new_prefix)
                 new_beam.append((new_prefix, new_score))
-        
+
         # 保留概率最高的beam_width个序列
         new_beam.sort(key=lambda x: x[1], reverse=True)
         beam = new_beam[:beam_width]
-        
+
     # 返回概率最高的序列
     best_prefix, best_score = beam[0]
     return best_prefix

@@ -1,7 +1,7 @@
 
 # AI Agent: AI的下一个风口 解决方案与研究方向
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -265,7 +265,7 @@ A：当动作空间过大时，可以采用以下方法：
 2. 创建并激活虚拟环境：
 
 ```bash
-conda create -n rl-env python=3.8 
+conda create -n rl-env python=3.8
 conda activate rl-env
 ```
 

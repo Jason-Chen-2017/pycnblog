@@ -1,7 +1,7 @@
 
 # 【大模型应用开发 动手做AI Agent】第一轮思考：模型决定搜索
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -139,8 +139,7 @@ $$
    - 损失函数可以采用交叉熵损失、均方误差损失等。
 2. **搜索过程**：
    - 利用梯度下降等优化算法，寻找最小化目标函数的参数 $\theta^*$。
-   - 梯度下降公式为 $\theta \leftarrow \theta - \eta \
-abla_{\theta} f(\theta)$，其中 $\eta$ 为学习率。
+   - 梯度下降公式为 $\theta \leftarrow \theta - \eta \nabla_{\theta} f(\theta)$，其中 $\eta$ 为学习率。
 
 ### 4.3 案例分析与讲解
 

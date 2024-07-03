@@ -121,10 +121,10 @@ def jacobi_field_equation(curvature_tensor, initial_conditions, time_span):
     t, J, gamma, dot_gamma = symbols('t J gamma dot_gamma', cls=Function)
     R = curvature_tensor
     equation = diff(diff(J(t), t), t) + (R(J(t), dot_gamma(t)) * dot_gamma(t))
-    
+
     # 解微分方程
     sol = odeint(equation, initial_conditions, time_span)
-    
+
     return sol
 
 # 示例：二维球面上的Jacobi场计算
@@ -195,7 +195,7 @@ jacobi_field_S2 = jacobi_field_equation(curvature_tensor_S2, initial_conditions_
 ## 9. 附录：常见问题与解答
 
 - **Q：如何验证Jacobi场的正确性？**
-  
+
   **A：**通过数值模拟与理论计算的结果对比，以及数值稳定性的检查来验证Jacobi场的正确性。此外，还可以通过分析Jacobi场的几何性质，如共轭点的存在与否，来间接验证其正确性。
 
 ---

@@ -242,7 +242,7 @@ conn = mysql.connector.connect(
 def add_order():
     data = request.json
     sql = """
-    INSERT INTO orders (order_id, customer_id, product_id, quantity, order_time) 
+    INSERT INTO orders (order_id, customer_id, product_id, quantity, order_time)
     VALUES (%s, %s, %s, %s, %s)
     """
     cursor = conn.cursor()

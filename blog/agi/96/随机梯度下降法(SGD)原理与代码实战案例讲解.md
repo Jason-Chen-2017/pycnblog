@@ -53,10 +53,8 @@ graph LR
 SGD通过随机选择样本进行梯度计算，更新模型参数，使得损失函数最小化。具体原理如下：
 
 1. 初始化参数 $\theta$ 和学习率 $\eta$。
-2. 随机选择样本 $(x, y)$，计算梯度 $\
-abla_{\theta} J(\theta)$。
-3. 更新参数 $\theta$：$\theta \leftarrow \theta - \eta \
-abla_{\theta} J(\theta)$。
+2. 随机选择样本 $(x, y)$，计算梯度 $\nabla_{\theta} J(\theta)$。
+3. 更新参数 $\theta$：$\theta \leftarrow \theta - \eta \nabla_{\theta} J(\theta)$。
 4. 重复步骤2和3，直至满足停止条件（如损失函数收敛、迭代次数达到预设值等）。
 
 ### 3.2 算法步骤详解
@@ -65,11 +63,8 @@ SGD的具体操作步骤如下：
 
 1. 初始化参数 $\theta$ 和学习率 $\eta$。参数 $\theta$ 是模型中所有可学习参数的集合，学习率 $\eta$ 决定了参数更新幅度。
 2. 随机选择样本 $(x, y)$。样本 $(x, y)$ 是输入和对应的真实标签。
-3. 计算梯度 $\
-abla_{\theta} J(\theta)$。梯度 $\
-abla_{\theta} J(\theta)$ 表示损失函数 $J(\theta)$ 对参数 $\theta$ 的偏导数，反映了参数更新方向。
-4. 更新参数 $\theta$：$\theta \leftarrow \theta - \eta \
-abla_{\theta} J(\theta)$。根据梯度和学习率，更新参数 $\theta$。
+3. 计算梯度 $\nabla_{\theta} J(\theta)$。梯度 $\nabla_{\theta} J(\theta)$ 表示损失函数 $J(\theta)$ 对参数 $\theta$ 的偏导数，反映了参数更新方向。
+4. 更新参数 $\theta$：$\theta \leftarrow \theta - \eta \nabla_{\theta} J(\theta)$。根据梯度和学习率，更新参数 $\theta$。
 5. 重复步骤2至4，直至满足停止条件。
 
 ### 3.3 算法优缺点
@@ -99,16 +94,14 @@ SGD广泛应用于以下领域：
 SGD的数学模型如下：
 
 $$
-\theta_{t+1} = \theta_t - \eta \
-abla_{\theta} J(\theta_t)
+\theta_{t+1} = \theta_t - \eta \nabla_{\theta} J(\theta_t)
 $$
 
 其中：
 
 - $\theta_t$ 表示第 $t$ 次迭代的参数。
 - $\eta$ 表示学习率。
-- $\
-abla_{\theta} J(\theta_t)$ 表示损失函数 $J(\theta)$ 对参数 $\theta_t$ 的梯度。
+- $\nabla_{\theta} J(\theta_t)$ 表示损失函数 $J(\theta)$ 对参数 $\theta_t$ 的梯度。
 
 ### 4.2 公式推导过程
 
@@ -145,8 +138,7 @@ $$
 最终得到SGD的公式：
 
 $$
-\theta_{t+1} = \theta_t - \eta \
-abla_{\theta} J(\theta_t)
+\theta_{t+1} = \theta_t - \eta \nabla_{\theta} J(\theta_t)
 $$
 
 ### 4.3 案例分析与讲解
@@ -170,12 +162,12 @@ for _ in range(epochs):
     # 随机选择样本
     index = np.random.randint(0, len(x))
     xi, yi = x[index], y[index]
-    
+
     # 计算梯度
     error = yi - (theta0 + theta1 * xi)
     grad_theta0 = -2 * error
     grad_theta1 = -2 * xi * error
-    
+
     # 更新参数
     theta0 -= eta * grad_theta0
     theta1 -= eta * grad_theta1
@@ -232,12 +224,12 @@ for _ in range(epochs):
     # 随机选择样本
     index = np.random.randint(0, len(x))
     xi, yi = x[index], y[index]
-    
+
     # 计算梯度
     error = yi - (theta0 + theta1 * xi)
     grad_theta0 = -2 * error
     grad_theta1 = -2 * xi * error
-    
+
     # 更新参数
     theta0 -= eta * grad_theta0
     theta1 -= eta * grad_theta1

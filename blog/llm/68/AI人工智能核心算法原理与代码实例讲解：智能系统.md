@@ -312,7 +312,7 @@ class SimpleCNN(nn.Module):
         self.conv1 = nn.Conv2d(1, 16, kernel_size=3, stride=1, padding=1)
         self.conv2 = nn.Conv2d(16, 32, kernel_size=3, stride=1, padding=1)
         self.fc1 = nn.Linear(32 * 28 * 28, 10)
-        
+
     def forward(self, x):
         x = torch.relu(self.conv1(x))
         x = torch.relu(self.conv2(x))
@@ -335,7 +335,7 @@ for epoch in range(10):
         loss = criterion(output, target)
         loss.backward()
         optimizer.step()
-    
+
     print(f'Epoch {epoch+1}, Loss: {loss.item()}')
 
 # 保存模型

@@ -1,4 +1,4 @@
-                 
+
 # 【LangChain编程：从入门到实践】记忆组件
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -142,13 +142,13 @@ embeddings_model = OpenAIEmbeddings()
 def load_and_store_documents(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         text = f.read()
-    
+
     # 分割文本为可处理的小块
     documents = text_splitter.split_text(text)
-    
+
     # 创建嵌入向量
     embeddings = [embeddings_model.embed_query(doc) for doc in documents]
-    
+
     # 存储到Chroma向量数据库
     db = Chroma.from_texts(documents, embeddings)
     return db

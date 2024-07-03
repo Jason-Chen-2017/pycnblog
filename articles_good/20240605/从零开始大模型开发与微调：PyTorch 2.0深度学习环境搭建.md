@@ -56,8 +56,7 @@ $$
 SGD(随机梯度下降)是一种常用的优化器，其公式为：
 
 $$
-\\theta = \\theta - \\alpha \\cdot \
-abla_{\\theta} J(\\theta)
+\\theta = \\theta - \\alpha \\cdot \nabla_{\\theta} J(\\theta)
 $$
 
 其中，$\\theta$为网络参数，$\\alpha$为学习率，$J(\\theta)$为损失函数。

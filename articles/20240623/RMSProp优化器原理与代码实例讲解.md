@@ -34,8 +34,7 @@ RMSProp优化器在深度学习模型训练中具有重要作用。通过使用R
 梯度下降法是一种最简单的优化算法，其核心思想是沿着损失函数的梯度方向更新参数，使损失函数值逐渐减小。梯度下降法的基本公式如下：
 
 $$
-\theta_{t+1} = \theta_t - \alpha \cdot \
-abla J(\theta_t)
+\theta_{t+1} = \theta_t - \alpha \cdot \nabla J(\theta_t)
 $$
 
 其中，$\theta$表示模型参数，$\alpha$表示学习率，$J(\theta)$表示损失函数。
@@ -45,8 +44,7 @@ $$
 动量法是一种在梯度下降法基础上引入动量的优化算法。动量法利用历史梯度信息来加速参数更新，从而提高收敛速度。动量法的基本公式如下：
 
 $$
-v_t = \beta \cdot v_{t-1} + \
-abla J(\theta_t)
+v_t = \beta \cdot v_{t-1} + \nabla J(\theta_t)
 $$
 
 $$
@@ -64,8 +62,7 @@ $$
 $$
 
 $$
-v_t = \frac{\rho v_{t-1}}{1-\rho} + \frac{\eta \cdot \
-abla J(\theta_t)^2}{1-\rho}
+v_t = \frac{\rho v_{t-1}}{1-\rho} + \frac{\eta \cdot \nabla J(\theta_t)^2}{1-\rho}
 $$
 
 $$
@@ -80,8 +77,7 @@ $$
 
 RMSProp优化器通过以下步骤实现参数优化：
 
-1. 计算当前梯度$\
-abla J(\theta_t)$。
+1. 计算当前梯度$\nabla J(\theta_t)$。
 2. 根据历史梯度和当前梯度计算梯度平方的移动平均$\hat{v}_t$。
 3. 使用$\hat{v}_t$计算自适应学习率$\alpha_t$。
 4. 使用自适应学习率$\alpha_t$更新模型参数$\theta_{t+1}$。
@@ -90,8 +86,7 @@ abla J(\theta_t)$。
 
 1. 初始化参数：设置初始学习率$\eta$、衰减率$\rho$和平滑常数$\epsilon$。
 2. 对于每一轮迭代：
-    - 计算当前梯度$\
-abla J(\theta_t)$。
+    - 计算当前梯度$\nabla J(\theta_t)$。
     - 计算梯度平方的移动平均$\hat{v}_t$。
     - 使用$\hat{v}_t$计算自适应学习率$\alpha_t$。
     - 使用自适应学习率$\alpha_t$更新模型参数$\theta_{t+1}$。
@@ -130,8 +125,7 @@ $$
 $$
 
 $$
-\hat{v}_t = \frac{\rho \hat{v}_{t-1}}{1-\rho} + \frac{\eta \cdot \
-abla J(\theta_t)^2}{1-\rho}
+\hat{v}_t = \frac{\rho \hat{v}_{t-1}}{1-\rho} + \frac{\eta \cdot \nabla J(\theta_t)^2}{1-\rho}
 $$
 
 $$

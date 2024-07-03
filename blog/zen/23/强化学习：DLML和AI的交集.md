@@ -1,4 +1,4 @@
-                 
+
 # 强化学习：DL、ML和AI的交集
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -42,7 +42,7 @@
 - **深度Q网络（DQN）**：使用深度神经网络估计动作的价值函数，实现端到端的学习。
 - **Policy Gradients**：直接优化策略参数，利用梯度信息更新行为。
 - **Actor-Critic架构**：结合策略导数（Actor）与价值评估（Critic），提高学习效率与稳定性。
-  
+
 这些集成方法不仅提升了模型的泛化能力和处理能力，而且能更有效地处理具有高度不确定性和复杂性的环境。
 
 ## 3. 核心算法原理 & 具体操作步骤
@@ -146,7 +146,7 @@ def calculate_loss(policy_net, states, actions, rewards):
     # 计算总奖励的负熵作为损失函数的一部分
     log_probs = policy_net(states).gather(1, actions.unsqueeze(-1)).squeeze()
     entropy = -(policy_net(states) * policy_net(states).log()).sum(dim=-1)
-    
+
     # 总损失包含期望奖励减去负熵的部分
     advantages = calculate_advantages(rewards)
     loss = (-log_probs * advantages - 0.01 * entropy).mean()
@@ -175,13 +175,13 @@ def main():
     env = gym.make('CartPole-v1')
     state_size = env.observation_space.shape[0]
     action_size = env.action_space.n
-    
+
     policy_net = PolicyNetwork(state_size, action_size)
     optimizer = optim.Adam(policy_net.parameters(), lr=0.01)
-    
+
     num_episodes = 1000
     scores = []
-    
+
     for episode in range(num_episodes):
         done = False
         score = 0
@@ -190,24 +190,24 @@ def main():
             state_tensor = torch.tensor([state], dtype=torch.float32)
             action_probabilities = policy_net(state_tensor)[np.argmax(action_probabilities)]
             action = np.random.choice(action_size, p=action_probabilities.numpy())
-            
+
             next_state, reward, done, _ = env.step(action)
             score += reward
-            
+
             if done:
                 break
-                
+
             state = next_state
-        
+
         states, actions, rewards = zip(*[(state, action, reward) for state, action, reward in zip(range(len(scores)), range(len(scores)), scores)])
-        
+
         loss = train_policy_network(policy_net, optimizer, states, actions, rewards)
-        
+
         print(f"Episode: {episode+1}, Score: {score}")
         scores.append(score)
-    
+
     env.close()
-    
+
 if __name__ == "__main__":
     main()
 ```
@@ -234,10 +234,10 @@ if __name__ == "__main__":
 ### 7.1 学习资源推荐
 - **在线课程**：
   - Coursera的“Deep Reinforcement Learning Specialization”课程由DeepMind团队提供。
-  
+
 - **书籍**：
   - "Reinforcement Learning: An Introduction" by Richard S. Sutton and Andrew G. Barto.
-  
+
 - **开源项目**：
   - OpenAI Gym和TensorFlow Agents库提供了丰富的环境和工具集。
 

@@ -4,7 +4,7 @@
 
 ### 1.1 人机交互的演变历程
 #### 1.1.1 命令行界面时代
-#### 1.1.2 图形用户界面时代  
+#### 1.1.2 图形用户界面时代
 #### 1.1.3 自然语言交互的兴起
 
 ### 1.2 AI技术的发展现状
@@ -21,7 +21,7 @@
 
 ### 2.1 AI Agent的核心要素
 #### 2.1.1 自然语言理解(NLU)
-#### 2.1.2 对话管理(Dialogue Management) 
+#### 2.1.2 对话管理(Dialogue Management)
 #### 2.1.3 任务完成(Task Completion)
 
 ### 2.2 AI Agent与相关技术的关系
@@ -38,7 +38,7 @@
 graph LR
 A[用户输入] --> B[自然语言理解NLU]
 B --> C[对话管理DM]
-C --> D[任务完成TC] 
+C --> D[任务完成TC]
 D --> E[自然语言生成NLG]
 E --> F[用户输出]
 ```
@@ -52,7 +52,7 @@ E --> F[用户输出]
 
 ### 3.2 对话管理(DM)算法
 #### 3.2.1 有限状态机方法
-#### 3.2.2 基于框架的方法  
+#### 3.2.2 基于框架的方法
 #### 3.2.3 基于深度强化学习的方法
 
 ### 3.3 任务完成(TC)算法
@@ -69,7 +69,7 @@ E --> F[用户输出]
 $$
 A=\begin{bmatrix}
 a_{11} & a_{12} & \cdots & a_{1n}\\
-a_{21} & a_{22} & \cdots & a_{2n}\\  
+a_{21} & a_{22} & \cdots & a_{2n}\\
 \vdots & \vdots & \ddots & \vdots\\
 a_{n1} & a_{n2} & \cdots & a_{nn}
 \end{bmatrix}
@@ -84,7 +84,7 @@ $$
 
 其中$Z(x)$是归一化因子,$f_j$是特征函数,$\lambda_j$是对应的权重系数。
 
-### 4.2 对话管理中的数学模型 
+### 4.2 对话管理中的数学模型
 #### 4.2.1 马尔可夫决策过程(MDP)
 马尔可夫决策过程由状态集合$S$,动作集合$A$,转移概率$P$,奖励函数$R$和折扣因子$\gamma$组成。最优策略$\pi^*$满足贝尔曼最优方程:
 
@@ -92,7 +92,7 @@ $$
 V^*(s) = \max_{a \in A} \left\{ R(s,a) + \gamma \sum_{s' \in S} P(s'|s,a) V^*(s') \right\}
 $$
 
-#### 4.2.2 部分可观察马尔可夫决策过程(POMDP) 
+#### 4.2.2 部分可观察马尔可夫决策过程(POMDP)
 POMDP在MDP的基础上引入了观察集合$O$和观察概率$Z$。最优策略需要在信念状态空间中进行搜索,贝尔曼最优方程变为:
 
 $$
@@ -131,15 +131,15 @@ from tensorflow.keras.layers import Input, Embedding, Bidirectional, LSTM, Dense
 
 def build_model(vocab_size, embed_dim, num_tags):
     input = Input(shape=(None,))
-    embedding = Embedding(vocab_size, embed_dim)(input) 
+    embedding = Embedding(vocab_size, embed_dim)(input)
     bilstm = Bidirectional(LSTM(units=128, return_sequences=True))(embedding)
     dense = TimeDistributed(Dense(50, activation="relu"))(bilstm)
     crf = CRF(num_tags)
     output = crf(dense)
-    
+
     model = Model(input, output)
     model.compile(optimizer="adam", loss=crf.loss, metrics=[crf.accuracy])
-    
+
     return model
 ```
 
@@ -156,10 +156,10 @@ import torch.optim as optim
 class DQN(nn.Module):
     def __init__(self, state_size, action_size):
         super(DQN, self).__init__()
-        self.fc1 = nn.Linear(state_size, 256) 
+        self.fc1 = nn.Linear(state_size, 256)
         self.fc2 = nn.Linear(256, 256)
         self.fc3 = nn.Linear(256, action_size)
-        
+
     def forward(self, state):
         x = torch.relu(self.fc1(state))
         x = torch.relu(self.fc2(x))
@@ -168,16 +168,16 @@ class DQN(nn.Module):
 
 def train(model, optimizer, batch):
     states, actions, rewards, next_states, dones = batch
-    
+
     q_values = model(states)
     next_q_values = model(next_states).detach()
-    
-    q_value = q_values.gather(1, actions.unsqueeze(1)).squeeze(1) 
+
+    q_value = q_values.gather(1, actions.unsqueeze(1)).squeeze(1)
     next_q_value = next_q_values.max(1)[0]
     expected_q_value = rewards + gamma * next_q_value * (1 - dones)
-    
+
     loss = (q_value - expected_q_value).pow(2).mean()
-    
+
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
@@ -195,7 +195,7 @@ import torch.nn as nn
 class Transformer(nn.Module):
     def __init__(self, vocab_size, embed_dim, num_heads, num_layers):
         super(Transformer, self).__init__()
-        
+
         self.embedding = nn.Embedding(vocab_size, embed_dim)
         self.positional_encoding = PositionalEncoding(embed_dim)
         self.encoder_layers = nn.TransformerEncoderLayer(embed_dim, num_heads)
@@ -203,17 +203,17 @@ class Transformer(nn.Module):
         self.decoder_layers = nn.TransformerDecoderLayer(embed_dim, num_heads)
         self.decoder = nn.TransformerDecoder(self.decoder_layers, num_layers)
         self.fc = nn.Linear(embed_dim, vocab_size)
-        
+
     def forward(self, src, tgt):
         src = self.embedding(src) * math.sqrt(embed_dim)
         src = self.positional_encoding(src)
         tgt = self.embedding(tgt) * math.sqrt(embed_dim)
         tgt = self.positional_encoding(tgt)
-        
+
         memory = self.encoder(src)
         output = self.decoder(tgt, memory)
         output = self.fc(output)
-        
+
         return output
 ```
 

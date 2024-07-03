@@ -274,7 +274,7 @@ A3：Double DQN使用两个目标网络，一个用于预测当前状态的价�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n tensorflow-env python=3.8 
+conda create -n tensorflow-env python=3.8
 conda activate tensorflow-env
 ```
 

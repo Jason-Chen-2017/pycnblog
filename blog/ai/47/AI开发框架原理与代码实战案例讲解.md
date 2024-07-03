@@ -14,7 +14,7 @@
 本文将围绕几个主流AI开发框架,从以下方面展开系统讨论：
 
 - 核心概念与内在联系
-- 底层算法原理与实现细节  
+- 底层算法原理与实现细节
 - 数学模型与关键公式推导
 - 代码实例与案例解析
 - 实际应用场景与未来展望
@@ -146,7 +146,7 @@ $$\frac{\partial{J}}{\partial{W_1}} = \frac{\partial{J}}{\partial{\hat{y}}}\frac
 
 ```python
 def forward(x):
-    a = np.dot(W1,x)  
+    a = np.dot(W1,x)
     h = sigmoid(a)
     z = np.dot(W2,h)
     y_hat = sigmoid(z)
@@ -156,7 +156,7 @@ def forward(x):
 然后求损失函数对W1和W2的梯度:
 
 ```python
-W1_grad = grad(loss_func,argnum=0)(W1,W2,x,y) 
+W1_grad = grad(loss_func,argnum=0)(W1,W2,x,y)
 W2_grad = grad(loss_func,argnum=1)(W1,W2,x,y)
 ```
 
@@ -185,13 +185,13 @@ pip install torch
 ```python
 from torchvision import datasets, transforms
 
-train_dataset = datasets.MNIST(root='./data', 
-                               train=True, 
+train_dataset = datasets.MNIST(root='./data',
+                               train=True,
                                transform=transforms.ToTensor(),
                                download=True)
 
-test_dataset = datasets.MNIST(root='./data', 
-                              train=False, 
+test_dataset = datasets.MNIST(root='./data',
+                              train=False,
                               transform=transforms.ToTensor())
 ```
 
@@ -204,12 +204,12 @@ class MnistModel(nn.Module):
     def __init__(self):
         super().__init__()
         self.linear = nn.Linear(input_size, num_classes)
-        
+
     def forward(self, xb):
         xb = xb.reshape(-1, 784)
         out = self.linear(xb)
         return out
-    
+
 model = MnistModel()
 ```
 

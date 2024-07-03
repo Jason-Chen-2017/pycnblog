@@ -84,7 +84,7 @@ Actor-Critic算法的核心在于通过梯度上升的方法来优化策略和�
 
 ### 4.1 数学模型构建
 
-设状态空间为$S$，动作空间为$A$，策略函数为$\\pi(a|s)$，价值函数为$V(s)$。Actor-Critic算法的目标是寻找最佳策略$\\pi^*(a|s)$和价值函数$V^*(s)$，使得累计奖励最大化。
+设状态空间为$S$，动作空间为$A$，策略函数为$\pi(a|s)$，价值函数为$V(s)$。Actor-Critic算法的目标是寻找最佳策略$\pi^*(a|s)$和价值函数$V^*(s)$，使得累计奖励最大化。
 
 ### 4.2 公式推导过程
 
@@ -92,15 +92,15 @@ Actor-Critic算法的核心在于通过梯度上升的方法来优化策略和�
 
 Critic通过最小化均方误差来更新价值函数：
 
-$$J(V) = \\mathbb{E}_{\\pi}[(r + \\gamma V(s')) - V(s)]^2$$
+$$J(V) = \mathbb{E}_{\pi}[(r + \gamma V(s')) - V(s)]^2$$
 
-其中$r$是即时奖励，$\\gamma$是折扣因子。
+其中$r$是即时奖励，$\gamma$是折扣因子。
 
 #### 策略更新
 
 Actor通过最大化策略函数的期望累计奖励来更新策略：
 
-$$\\mathbb{E}_{\\pi}[\\sum_{t=0}^{\\infty} \\gamma^t r_t]$$
+$$\mathbb{E}_{\pi}[\sum_{t=0}^{\infty} \gamma^t r_t]$$
 
 这里$r_t$是第$t$步的奖励。
 
@@ -113,7 +113,7 @@ $$\\mathbb{E}_{\\pi}[\\sum_{t=0}^{\\infty} \\gamma^t r_t]$$
 
 - **Q:** 如何平衡探索与利用？
    - **A:** 使用ε-greedy策略，即在一定概率下采取随机行动，其余情况下选择基于当前策略的最大预期收益的行动。
-   
+
 ## 5. 项目实践：代码实例和详细解释说明
 
 ### 5.1 开发环境搭建
@@ -184,8 +184,8 @@ agent.train(env)
 
 ### 7.3 相关论文推荐
 
-- **\"Asynchronous Methods for Reinforcement Learning\"**
-- **\"A Connectionist Temporal Classification Model for Sequence Tagging\"**
+- **"Asynchronous Methods for Reinforcement Learning"**
+- **"A Connectionist Temporal Classification Model for Sequence Tagging"**
 
 ### 7.4 其他资源推荐
 
@@ -220,10 +220,10 @@ Actor-Critic算法为强化学习提供了高效、稳定的解决方案，尤�
 
 - **如何选择合适的超参数？**
    - **解答**：通过网格搜索、随机搜索或强化学习优化算法（如进化策略）来调整超参数，以找到最佳配置。
-  
+
 - **如何处理稀疏奖励的问题？**
    - **解答**：引入额外的奖励引导策略，如奖励塑造或使用外部奖励源，以鼓励探索和快速学习。
-  
+
 - **如何提高算法的稳定性？**
    - **解答**：采用经验回放、双Critic、多步学习等策略，减少学习过程中的噪声影响，提高算法的收敛速度和稳定性。
 

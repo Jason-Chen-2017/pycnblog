@@ -189,7 +189,7 @@ class MNISTModel(nn.Module):
         super(MNISTModel, self).__init__()
         self.fc1 = nn.Linear(28*28, 128)
         self.fc2 = nn.Linear(128, 10)
-    
+
     def forward(self, x):
         x = x.view(-1, 28*28)
         x = nn.functional.relu(self.fc1(x))
@@ -263,7 +263,7 @@ A：梯度下降是一种优化算法，用于最小化损失函数。它通过�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 

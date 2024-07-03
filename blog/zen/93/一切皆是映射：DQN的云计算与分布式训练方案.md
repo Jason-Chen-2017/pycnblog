@@ -93,7 +93,7 @@ DQN算法的核心思想是：
 奖励函数用于衡量每个动作的优劣。通常，奖励函数设计为：
 
 $$
-R(s,a) = \begin{cases} 
+R(s,a) = \begin{cases}
 R_{\text{max}} & \text{if } s' \in S_{\text{success}} \\
 -R_{\text{max}} & \text{if } s' \in S_{\text{failure}} \\
 0 & \text{otherwise}
@@ -138,8 +138,7 @@ DQN算法的步骤如下：
 
 7. 从经验池中随机采样一批经验，并计算目标Q值 $Q(s',a;\theta^{\text{target}})$。
 
-8. 计算梯度 $\
-abla_{\theta}J(\theta)$。
+8. 计算梯度 $\nabla_{\theta}J(\theta)$。
 
 9. 使用梯度下降算法更新参数 $\theta$。
 
@@ -193,7 +192,7 @@ DQN算法在以下领域取得了显著的应用：
 奖励函数用于衡量每个动作的优劣。假设奖励函数为：
 
 $$
-R(s,a) = \begin{cases} 
+R(s,a) = \begin{cases}
 R_{\text{max}} & \text{if } s' \in S_{\text{success}} \\
 -R_{\text{max}} & \text{if } s' \in S_{\text{failure}} \\
 0 & \text{otherwise}
@@ -342,12 +341,12 @@ def train_dqn():
   env = gym.make("CartPole-v0")
   model = create_model()
   optimizer = create_optimizer()
-  
+
   strategy = distribute.MirroredStrategy()
 
   with strategy.scope():
     loss_object = tf.keras.losses.MeanSquaredError()
-  
+
   def train_step(optimizer, loss_object, model, batch_data):
     """训练步骤。"""
     x, y = batch_data
@@ -361,12 +360,12 @@ def train_dqn():
   # 训练数据
   train_dataset = tf.data.Dataset.from_tensor_slices(np.random.random((1000, 4)))
   train_dataset = train_dataset.batch(10)
-  
+
   for epoch in range(10):
     for batch_data in train_dataset:
       loss = train_step(optimizer, loss_object, model, batch_data)
       print(f"Epoch {epoch}, Loss: {loss.numpy()}")
-  
+
   # 评估模型
   test_x = np.random.random((100, 4))
   test_logits = model(test_x)

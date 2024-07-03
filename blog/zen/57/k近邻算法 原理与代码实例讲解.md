@@ -71,15 +71,15 @@ from collections import Counter
 class KNN:
     def __init__(self, k=3):
         self.k = k
-    
+
     def fit(self, X, y):
         self.X_train = X
         self.y_train = y
-        
+
     def predict(self, X):
         predictions = [self._predict(x) for x in X]
         return predictions
-        
+
     def _predict(self, x):
         # 计算距离
         distances = [np.sqrt(np.sum((x_train - x)**2)) for x_train in self.X_train]

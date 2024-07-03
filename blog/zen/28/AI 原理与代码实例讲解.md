@@ -49,17 +49,17 @@ SVM广泛应用于文本分类、生物信息学、手写数字识别、语音�
 
 SVM的目标是最大化决策边界与最近样本的距离，数学上表示为：
 
-$$ \\max \\frac{1}{||w||} \\quad \\text{subject to} \\quad y_i(w \\cdot x_i + b) \\geq 1 - \\xi_i $$
+$$ \max \frac{1}{||w||} \quad \text{subject to} \quad y_i(w \cdot x_i + b) \geq 1 - \xi_i $$
 
-其中，$w$ 是权重向量，$b$ 是偏置项，$\\xi_i$ 是松弛变量。
+其中，$w$ 是权重向量，$b$ 是偏置项，$\xi_i$ 是松弛变量。
 
 ### 4.2 公式推导过程
 
 推导过程涉及拉格朗日乘子法，引入拉格朗日函数：
 
-$$ L(\\alpha, w, b, \\xi) = \\frac{1}{2} ||w||^2 - \\sum_i \\alpha_i[y_i(w \\cdot x_i + b) - 1 + \\xi_i] $$
+$$ L(\alpha, w, b, \xi) = \frac{1}{2} ||w||^2 - \sum_i \alpha_i[y_i(w \cdot x_i + b) - 1 + \xi_i] $$
 
-通过求解Lagrange乘子$\\alpha_i$，找到最优解$w$和$b$。
+通过求解Lagrange乘子$\alpha_i$，找到最优解$w$和$b$。
 
 ### 4.3 案例分析与讲解
 

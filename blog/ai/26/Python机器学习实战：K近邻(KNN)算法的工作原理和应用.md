@@ -1,6 +1,6 @@
 # Python机器学习实战：K-近邻(KNN)算法的工作原理和应用
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：机器学习，K-近邻算法，分类，回归，数据集，距离度量，Python实现
 
@@ -78,23 +78,23 @@ KNN算法广泛应用于多个领域，包括但不限于：
 
 ### 4.1 数学模型构建
 
-设有一个特征向量$x$和一个训练集$S=\\{x_1,x_2,...,x_n\\}$，其中$x_i$是第$i$个样本的特征向量。KNN算法的目标是根据$x$在特征空间中的位置，预测其类别或值。
+设有一个特征向量$x$和一个训练集$S=\{x_1,x_2,...,x_n\}$，其中$x_i$是第$i$个样本的特征向量。KNN算法的目标是根据$x$在特征空间中的位置，预测其类别或值。
 
 #### 距离度量公式
 常用的距离度量公式有：
 
-- **欧氏距离**：$d(x, x_i) = \\sqrt{\\sum_{j=1}^{m}(x_j - x_{ij})^2}$
-- **曼哈顿距离**：$d(x, x_i) = \\sum_{j=1}^{m}|x_j - x_{ij}|$
+- **欧氏距离**：$d(x, x_i) = \sqrt{\sum_{j=1}^{m}(x_j - x_{ij})^2}$
+- **曼哈顿距离**：$d(x, x_i) = \sum_{j=1}^{m}|x_j - x_{ij}|$
 
 ### 4.2 公式推导过程
 
 假设我们要预测新样本$x$的类别，首先计算$x$与训练集中每个样本的距离$d(x, x_i)$，然后选取距离最小的K个样本。对于分类任务，假设训练集中类别的数量为$C$，对于每个类别$c$，记录包含该类别的样本数$N_c$。预测类别为：
 
-$$\\hat{y} = \\arg\\min_{c \\in C} N_c$$
+$$\hat{y} = \arg\min_{c \in C} N_c$$
 
 对于回归任务，预测值为这K个最近邻居值的平均：
 
-$$\\hat{y} = \\frac{1}{K}\\sum_{i \\in \\text{nearest neighbors}} y_i$$
+$$\hat{y} = \frac{1}{K}\sum_{i \in \text{nearest neighbors}} y_i$$
 
 ### 4.3 案例分析与讲解
 
@@ -174,7 +174,7 @@ knn.fit(X_train, y_train)
 predictions = knn.predict(X_test)
 
 # 打印预测结果
-print(\"Predictions:\", predictions)
+print("Predictions:", predictions)
 
 # 绘制决策边界
 def plot_decision_boundary(model, X, y):
@@ -228,7 +228,7 @@ KNN算法在实际应用中具有广泛的应用场景：
 - **在线课程**：Coursera或Udemy上的机器学习课程通常包含KNN算法的讲解。
 
 #### 论文推荐：
-- **Kohavi, Ron, and George H. John. \"Experimental comparison of classifier construction methods.\" Machine learning 30.3 (1998): 115-139.**
+- **Kohavi, Ron, and George H. John. "Experimental comparison of classifier construction methods." Machine learning 30.3 (1998): 115-139.**
 - **Bishop, Christopher M. Pattern recognition and machine learning. Springer, 2006.**
 
 ### 7.2 开发工具推荐
@@ -243,7 +243,7 @@ KNN算法在实际应用中具有广泛的应用场景：
 
 ### 7.3 相关论文推荐
 
-- **Kohavi, Ron, and George H. John. \"Experimental comparison of classifier construction methods.\" Machine learning 30.3 (1998): 115-139.**
+- **Kohavi, Ron, and George H. John. "Experimental comparison of classifier construction methods." Machine learning 30.3 (1998): 115-139.**
 - **Bishop, Christopher M. Pattern recognition and machine learning. Springer, 2006.**
 
 ### 7.4 其他资源推荐

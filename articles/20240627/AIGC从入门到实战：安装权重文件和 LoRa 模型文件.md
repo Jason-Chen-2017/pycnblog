@@ -135,14 +135,12 @@ LoRa模型的推导过程如下：
 
 2. **确定微调目标函数**：根据特定任务，确定目标函数 $L(\theta, x, y)$。
 
-3. **计算梯度**：计算目标函数对模型参数的梯度 $\
-abla_{\theta}L(\theta, x, y)$。
+3. **计算梯度**：计算目标函数对模型参数的梯度 $\nabla_{\theta}L(\theta, x, y)$。
 
 4. **更新参数**：使用梯度下降法更新模型参数：
 
 $$
-\theta \leftarrow \theta - \eta \
-abla_{\theta}L(\theta, x, y)
+\theta \leftarrow \theta - \eta \nabla_{\theta}L(\theta, x, y)
 $$
 
 其中 $\eta$ 是学习率。
@@ -150,8 +148,7 @@ $$
 5. **调整参数**：根据目标函数的变化，调整少量参数：
 
 $$
-\alpha \Delta \theta = -\
-abla_{\theta}L(\theta, x, y)
+\alpha \Delta \theta = -\nabla_{\theta}L(\theta, x, y)
 $$
 
 $$

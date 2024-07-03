@@ -191,7 +191,7 @@ class GNN(nn.Module):
         super(GNN, self).__init__()
         self.graph_embedding = nn.Linear(768, 128)
         self.rnn = nn.GRU(128, 128)
-        
+
     def forward(self, x):
         x = self.graph_embedding(x)
         x, _ = self.rnn(x)
@@ -204,7 +204,7 @@ class ReinforcementLearning(nn.Module):
         self.gnn = gnn
         self.embedding = nn.Embedding(vocab_size, 128)
         self.fc = nn.Linear(128, vocab_size)
-        
+
     def forward(self, x, action):
         x = self.embedding(x)
         x = self.gnn(x)

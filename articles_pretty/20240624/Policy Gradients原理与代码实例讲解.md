@@ -103,8 +103,7 @@
 
 策略梯度算法中的一个重要步骤是计算策略梯度：
 
-\[ \
-abla_\theta J(\theta) = \mathbb{E}_{s,a \sim \pi}[Q(s,a)] \]
+\[ \nabla_\theta J(\theta) = \mathbb{E}_{s,a \sim \pi}[Q(s,a)] \]
 
 其中，\(Q(s,a)\) 是状态-动作对的值函数，可以通过价值函数近似或直接估计。
 

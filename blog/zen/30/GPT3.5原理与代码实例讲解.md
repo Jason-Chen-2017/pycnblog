@@ -1,6 +1,6 @@
 # GPT-3.5原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -89,36 +89,36 @@ GPT-3.5的核心是基于Transformer的自回归模型，数学模型构建主�
 
 #### 自注意力机制
 
-对于一个长度为\\(T\\)的文本序列，假设输入为\\(x = \\{x_1, x_2, ..., x_T\\}\\)，则自注意力机制的计算过程可以表示为：
+对于一个长度为\(T\)的文本序列，假设输入为\(x = \{x_1, x_2, ..., x_T\}\)，则自注意力机制的计算过程可以表示为：
 
 $$
-\\text{Attention}(x, x, x, mask) = \\text{Softmax}(\\frac{W_x Q x + W_k K x + W_v V x}{\\sqrt{d}}) \\cdot V x
+\text{Attention}(x, x, x, mask) = \text{Softmax}(\frac{W_x Q x + W_k K x + W_v V x}{\sqrt{d}}) \cdot V x
 $$
 
 其中，
 
-- \\(W_x\\)、\\(W_k\\)、\\(W_v\\)分别对应查询、键、值矩阵；
-- \\(Q\\)、\\(K\\)、\\(V\\)分别代表查询、键、值向量；
-- \\(d\\)是维度参数。
+- \(W_x\)、\(W_k\)、\(W_v\)分别对应查询、键、值矩阵；
+- \(Q\)、\(K\)、\(V\)分别代表查询、键、值向量；
+- \(d\)是维度参数。
 
 ### 4.2 公式推导过程
 
 #### 计算查询向量
 
 $$
-Q = x \\cdot W_q
+Q = x \cdot W_q
 $$
 
 #### 计算键向量
 
 $$
-K = x \\cdot W_k
+K = x \cdot W_k
 $$
 
 #### 计算值向量
 
 $$
-V = x \\cdot W_v
+V = x \cdot W_v
 $$
 
 ### 4.3 案例分析与讲解
@@ -126,11 +126,11 @@ $$
 假设我们有一个简单的文本序列：
 
 $$
-x = \\{x_1, x_2, x_3\\}
+x = \{x_1, x_2, x_3\}
 $$
 
-- \\(x_1\\)、\\(x_2\\)、\\(x_3\\)分别代表文本序列中的第一个、第二个和第三个词。
-- 我们使用\\(W_q\\)、\\(W_k\\)、\\(W_v\\)分别表示查询、键、值矩阵。
+- \(x_1\)、\(x_2\)、\(x_3\)分别代表文本序列中的第一个、第二个和第三个词。
+- 我们使用\(W_q\)、\(W_k\)、\(W_v\)分别表示查询、键、值矩阵。
 
 ### 4.4 常见问题解答
 
@@ -178,8 +178,8 @@ model = GPT2LMHeadModel.from_pretrained('gpt2')
 #### 准备输入：
 
 ```python
-prompt = \"Once upon a time\"
-input_ids = tokenizer.encode(prompt, return_tensors=\"pt\")
+prompt = "Once upon a time"
+input_ids = tokenizer.encode(prompt, return_tensors="pt")
 ```
 
 #### 生成文本：

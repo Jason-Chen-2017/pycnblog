@@ -7,7 +7,7 @@
 随着人工智能技术的快速发展,AI Agent在各行各业得到了广泛应用。然而,在享受AI带来便利的同时,人们也越来越关注个人隐私和数据安全问题。传统的数据收集和处理方式存在隐私泄露风险,亟需探索如何在AI时代更好地保护用户隐私。
 ### 1.2  研究现状
 目前,学术界和工业界都在积极探索隐私保护和数据安全领域的新技术和解决方案。比如,谷歌提出了联邦学习的概念,通过在本地设备上训练模型,避免了用户数据的集中存储。此外,区块链、同态加密等技术也被尝试用于隐私保护。
-### 1.3  研究意义 
+### 1.3  研究意义
 研究AI如何更好地保护隐私和数据安全,对于推动人工智能的健康发展至关重要。只有在隐私得到充分保障的前提下,用户才愿意分享数据,AI企业才能获得数据来训练模型。同时,数据安全也关系到个人、企业乃至国家安全。总之,隐私和安全是AI未来发展绕不开的话题。
 ### 1.4  本文结构
 本文将重点探讨AI Agent在隐私保护和数据安全领域的应用。第2部分介绍相关的核心概念。第3部分重点讲解几种隐私保护的核心算法原理。第4部分给出这些算法背后的数学模型和公式推导。第5部分提供代码实例。第6部分分析实际应用场景。第7部分推荐相关工具和资源。第8部分总结全文并展望未来。第9部分是常见问题解答。
@@ -30,7 +30,7 @@
 ### 3.2  算法步骤详解
 #### 联邦学习
 1. 每个参与方在本地用自己的数据训练模型
-2. 各方上传本地模型参数(如梯度)到服务器 
+2. 各方上传本地模型参数(如梯度)到服务器
 3. 服务器聚合这些参数,更新全局模型
 4. 全局模型分发给各参与方,进入下一轮训练
 
@@ -113,8 +113,8 @@ def federated_averaging(model_updates):
 ```python
 def local_training(model, x, y, epochs):
     model.compile(optimizer=SGD(0.01), loss='mse')
-    model.fit(x, y, epochs=epochs, verbose=0) 
-    weights = model.get_weights()  
+    model.fit(x, y, epochs=epochs, verbose=0)
+    weights = model.get_weights()
     return weights
 ```
 
@@ -123,20 +123,20 @@ def local_training(model, x, y, epochs):
 ```python
 def main():
     model = tf.keras.Sequential([tf.keras.layers.Dense(1, input_shape=(1,))])
-    
-    # 生成数据  
-    x_data_A = np.random.rand(100, 1)  
+
+    # 生成数据
+    x_data_A = np.random.rand(100, 1)
     y_data_A = 2 * x_data_A + 1 + 0.1*np.random.randn(100, 1)
-    x_data_B = np.random.rand(200, 1)  
+    x_data_B = np.random.rand(200, 1)
     y_data_B = 2 * x_data_B + 1 + 0.1*np.random.randn(200, 1)
-    
+
     for round in range(5):
-        model_A = local_training(model, x_data_A, y_data_A, 10) 
+        model_A = local_training(model, x_data_A, y_data_A, 10)
         model_B = local_training(model, x_data_B, y_data_B, 10)
-        
+
         # 聚合更新
         model_updates = [model_A, model_B]
-        average_weights = federated_averaging(model_updates)        
+        average_weights = federated_averaging(model_updates)
         model.set_weights(average_weights)
         print(f"Round {round}, global model weights: {model.get_weights()}")
 

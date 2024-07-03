@@ -10,8 +10,7 @@
 
 ### 2.2 优化目标
 
-Gradient Descent的优化目标是找到一组参数$\\theta$，使得损失函数$J(\\theta)$最小化。这可以通过计算损失函数关于参数的梯度来实现，即求导数$\
-abla_{\\theta} J(\\theta)$。
+Gradient Descent的优化目标是找到一组参数$\\theta$，使得损失函数$J(\\theta)$最小化。这可以通过计算损失函数关于参数的梯度来实现，即求导数$\nabla_{\\theta} J(\\theta)$。
 
 ## 3.核心算法原理具体操作步骤
 
@@ -20,10 +19,8 @@ abla_{\\theta} J(\\theta)$。
 梯度下降算法的核心思想是：从初始点开始，沿着负梯度方向逐步移动，直到收敛到局部最小值。其基本步骤如下：
 
 1. **选择初始点**：随机选择一个初始参数值$\\theta_0$。
-2. **计算梯度**：在当前点$\\theta_t$处计算损失函数的梯度$\
-abla_{\\theta} J(\\theta_t)$。
-3. **更新参数**：按照梯度的负方向更新参数$\\theta_{t+1} = \\theta_t - \\alpha \
-abla_{\\theta} J(\\theta_t)$，其中$\\alpha$是学习率（learning rate），控制着步长大小。
+2. **计算梯度**：在当前点$\\theta_t$处计算损失函数的梯度$\nabla_{\\theta} J(\\theta_t)$。
+3. **更新参数**：按照梯度的负方向更新参数$\\theta_{t+1} = \\theta_t - \\alpha \nabla_{\\theta} J(\\theta_t)$，其中$\\alpha$是学习率（learning rate），控制着步长大小。
 4. **检查停止条件**：如果满足停止条件（如梯度接近零或迭代次数达到上限），则停止；否则回到步骤2继续迭代。
 
 ### 3.2 学习率的选取
@@ -37,21 +34,17 @@ abla_{\\theta} J(\\theta_t)$，其中$\\alpha$是学习率（learning rate），
 设损失函数为$J(\\theta) = f(x, y; \\theta)$，其中$x$是输入数据，$y$是真实标签，$\\theta$是模型参数。梯度下降算法可以表示为：
 
 $$
-\\theta_{t+1} = \\theta_t - \\alpha \
-abla_{\\theta} J(\\theta_t)
+\\theta_{t+1} = \\theta_t - \\alpha \nabla_{\\theta} J(\\theta_t)
 $$
 
-其中，$\
-abla_{\\theta} J(\\theta_t) = \\frac{\\partial}{\\partial \\theta} f(x, y; \\theta_t)$是损失函数关于参数的梯度向量。
+其中，$\nabla_{\\theta} J(\\theta_t) = \\frac{\\partial}{\\partial \\theta} f(x, y; \\theta_t)$是损失函数关于参数的梯度向量。
 
 ### 4.2 批量梯度下降(Batch Gradient Descent)
 
 在批量梯度下降中，我们通常使用整个训练集来计算梯度：
 
 $$
-\
-abla_{\\theta} J(\\theta) = \\frac{1}{m} \\sum_{i=1}^{m} \
-abla_{\\theta} L(f(x^{(i)}, y^{(i)}; \\theta), y^{(i)})
+\nabla_{\\theta} J(\\theta) = \\frac{1}{m} \\sum_{i=1}^{m} \nabla_{\\theta} L(f(x^{(i)}, y^{(i)}; \\theta), y^{(i)})
 $$
 
 其中$L$是损失函数，$m$是样本数量。
@@ -61,8 +54,7 @@ $$
 与批量梯度下降不同，随机梯度下降每次迭代仅使用一个样本来计算梯度：
 
 $$
-\\theta_{t+1} = \\theta_t - \\alpha \
-abla_{\\theta} L(f(x^{(i)}; \\theta_t), y^{(i)})
+\\theta_{t+1} = \\theta_t - \\alpha \nabla_{\\theta} L(f(x^{(i)}; \\theta_t), y^{(i)})
 $$
 
 这种方法在处理大规模数据集时更高效，但可能会导致振荡和收敛速度较慢。

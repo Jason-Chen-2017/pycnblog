@@ -348,4 +348,4 @@ print(conv_op.numpy())
 
 **A：** 可以使用一维卷积核，来处理时间序列数据。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

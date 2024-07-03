@@ -125,7 +125,7 @@ class GPTModel(nn.Module):
         ])
         self.decoder = DecoderLayer(d_model, heads, dropout)
         self.out = nn.Linear(d_model, vocab_size)
-        
+
     def forward(self, x, src_mask=None, tgt_mask=None):
         embeddings = self.embedding(x) + self.pos_embedding(x)
         for layer in self.encoder_layers:

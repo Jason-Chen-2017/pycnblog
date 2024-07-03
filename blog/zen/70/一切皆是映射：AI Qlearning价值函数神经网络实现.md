@@ -81,7 +81,7 @@ $$L = \frac{1}{N} \sum_{i=1}^N (Q_{target}^i - Q_{predict}^i)^2$$
 
 *   Huber 损失函数：
 
-$$L = \begin{cases} \frac{1}{2} (Q_{target} - Q_{predict})^2 & \text{if } |Q_{target} - Q_{predict}| \leq \delta \\ \delta (|Q_{target} - Q_{predict}| - \frac{1}{2} \delta) & \text{otherwise} \end{cases}$$
+$$L = \begin{cases} \frac{1}{2} (Q_{target} - Q_{predict})^2 & \text{if } |Q_{target} - Q_{predict}| \leq \delta \ \delta (|Q_{target} - Q_{predict}| - \frac{1}{2} \delta) & \text{otherwise} \end{cases}$$
 
 其中，$\delta$ 是一个超参数，用于控制损失函数对异常值的敏感程度。
 
@@ -114,13 +114,13 @@ def update_q_value(state, action, reward, next_state, done):
     next_q_values = model(next_state)
     max_next_q = tf.math.reduce_max(next_q_values, axis=1)
     target_q = reward + gamma * max_next_q * (1 - done)
-    
+
     # 计算损失函数
     with tf.GradientTape() as tape:
         q_values = model(state)
         q_value = tf.gather(q_values, action, axis=1)
         loss = loss_fn(target_q, q_value)
-    
+
     # 反向传播更新网络参数
     gradients = tape.gradient(loss, model.trainable_variables)
     optimizer.apply_gradients(zip(gradients, model.trainable_variables))
@@ -140,21 +140,21 @@ env = gym.make('CartPole-v1')
 for episode in range(num_episodes):
     # 重置环境
     state = env.reset()
-    
+
     # 与环境交互
     while True:
         # 选择动作
         action = ...
-        
+
         # 执行动作
         next_state, reward, done, info = env.step(action)
-        
+
         # 更新 Q 值
         update_q_value(state, action, reward, next_state, done)
-        
+
         # 更新状态
         state = next_state
-        
+
         # 判断是否结束
         if done:
             break
@@ -188,4 +188,4 @@ for episode in range(num_episodes):
 *   **奖励函数的设计：** 奖励函数的设计对强化学习算法的性能有重要影响。
 *   **过拟合问题：** 神经网络模型容易出现过拟合问题，需要采取相应的措施进行预防。
 
-**（全文完）** 
+**（全文完）**

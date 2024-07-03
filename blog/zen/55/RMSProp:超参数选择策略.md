@@ -98,7 +98,7 @@ def RMSProp(params, lr=0.01, rho=0.9, eps=1e-8):
         if param_state is None:
             param_state = torch.zeros_like(param.data)
             setattr(param, 'rms_prop', param_state)
-        
+
         grad = param.grad.data
         param_state.mul_(rho).addcmul_(1 - rho, grad, grad)
         param.data.addcdiv_(-lr, grad, param_state.sqrt().add_(eps))
@@ -111,11 +111,11 @@ for epoch in range(100):
     # 前向传播
     outputs = model(inputs)
     loss = criterion(outputs, targets)
-    
+
     # 反向传播
     optimizer.zero_grad()
     loss.backward()
-    
+
     # 更新参数
     optimizer.step()
 ```

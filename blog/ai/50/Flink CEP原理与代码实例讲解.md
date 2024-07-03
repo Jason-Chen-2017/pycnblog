@@ -116,57 +116,57 @@ Flink CEP 的核心数学模型是基于图论的事件流处理模型。该模�
 public class TrafficEvent {
     private String id;
     private double traffic;
-    
+
     // 省略构造函数、getters 和 setters
 }
 
 // 定义模式
 public class TrafficAlertPattern extends Pattern<StreamRecord<TrafficEvent>> {
     private ValueStateDescriptor<Double> thresholdState;
-    
+
     public TrafficAlertPattern(String id, double threshold) {
         super(id);
         this.thresholdState = new ValueStateDescriptor<>("threshold", TypeInformation.of(Double.class), threshold);
     }
-    
+
     @Override
     protected Collection<StreamRecord<TrafficEvent>> triggerцидTrigger(FlinkCEPContext<TrafficEvent> context) {
         ValueState<Double> thresholdState = context.getPartitionedState(thresholdState);
         double threshold = thresholdState.value();
         Collection<StreamRecord<TrafficEvent>> result = new ArrayList<>();
-        
+
         for (StreamRecord<TrafficEvent> event : context.events()) {
             if (event.value().traffic > threshold) {
                 result.add(event);
                 context.emit(event);
             }
         }
-        
+
         return result;
     }
-    
+
     @Override
     public Collection<StreamRecord<TrafficEvent>> onMatch(StreamRecord<TrafficEvent> event, FlinkCEPContext<TrafficEvent> context) {
         // 触发报警逻辑
         context.emit(new StreamRecord<>(event.value()));
         return null;
     }
-    
+
     @Override
     public void onEventTime(FlinkCEPContext<TrafficEvent> context) {
         // 处理事件时间逻辑
     }
-    
+
     @Override
     public void onProcessingTime(FlinkCEPContext<TrafficEvent> context) {
         // 处理处理时间逻辑
     }
-    
+
     @Override
     public void onTimer(Time timer, FlinkCEPContext<TrafficEvent> context) {
         // 处理定时器逻辑
     }
-    
+
     @Override
     public void cancel(FlinkCEPContext<TrafficEvent> context) {
         // 取消模式逻辑
@@ -231,7 +231,7 @@ public class TrafficAlertApplication {
     public static void main(String[] args) throws Exception {
         // 创建 Flink 流执行环境
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        
+
         // 创建事件时间戳分配器
         DataStream<String> stream = env.readTextFile("path/to/traffic_data.txt")
             .map(new MapFunction<String, Tuple2<String, Long>>() {
@@ -250,7 +250,7 @@ public class TrafficAlertApplication {
                     return element.f1;
                 }
             });
-        
+
         // 定义模式
         Pattern<String, String> pattern = Pattern.<String>begin("start")
             .where(new SimpleCondition<String>() {
@@ -276,10 +276,10 @@ public class TrafficAlertApplication {
                     return "end".equals(value);
                 }
             });
-        
+
         // 创建 PatternStream
         PatternStream<String> patternStream = CEP.pattern(stream, pattern);
-        
+
         // 处理模式
         DataStream<String> alertStream = patternStream.select(new SelectFunction<Tuple<String, String>, String>() {
             @Override
@@ -288,10 +288,10 @@ public class TrafficAlertApplication {
                 return "Alert: " + value.f0;
             }
         });
-        
+
         // 输出结果
         alertStream.print();
-        
+
         // 执行 Flink 应用
         env.execute("Flink CEP Traffic Alert Application");
     }

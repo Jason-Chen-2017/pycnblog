@@ -1,6 +1,6 @@
 # Flink原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -436,4 +436,4 @@ Flink的未来发展充满潜力，相信随着技术的不断进步，Flink将�
 * **数据一致性:**  Flink可以通过checkpoint机制和状态管理机制保证数据一致性。
 * **性能调优:**  可以从数据流、算子、状态管理、资源配置等方面进行性能调优。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

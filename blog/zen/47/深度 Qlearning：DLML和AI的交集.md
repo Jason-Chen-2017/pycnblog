@@ -94,9 +94,9 @@
 深度 Q-learning 的数学模型主要包括以下几个部分：
 
 1. **Q 函数**：$Q(s, a) = \sum_{s'} \gamma \max_a Q(s', a)$
-2. **行动策略**：$\pi(a|s) = \begin{cases} 
+2. **行动策略**：$\pi(a|s) = \begin{cases}
 \text{random} & \text{if random action is taken} \\
-\arg\max_a Q(s, a) & \text{if greedy action is taken} 
+\arg\max_a Q(s, a) & \text{if greedy action is taken}
 \end{cases}$
 3. **目标网络**：$Q^*(s, a) = \max_{a'} Q(s', a')$
 

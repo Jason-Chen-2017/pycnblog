@@ -228,7 +228,7 @@ A：选择合适的学习率需要根据具体问题和实验结果进行调整�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 

@@ -125,8 +125,7 @@ $$
 对损失函数求梯度，得：
 
 $$
-\
-abla_{\theta}L(\theta) = -2(y_{true} - y_{pred})\frac{\partial f}{\partial y}
+\nabla_{\theta}L(\theta) = -2(y_{true} - y_{pred})\frac{\partial f}{\partial y}
 $$
 
 ### 4.3 案例分析与讲解

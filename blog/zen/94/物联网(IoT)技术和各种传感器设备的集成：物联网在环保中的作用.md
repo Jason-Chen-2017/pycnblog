@@ -1,7 +1,7 @@
 
 # 物联网(IoT)技术和各种传感器设备的集成：物联网在环保中的作用
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍

@@ -94,23 +94,23 @@ U-Net是针对语义分割任务设计的一种深度学习模型，其结构特
 
 #### 编码器部分：
 
-$$E(x) = \\text{Conv}(x, W_e) + \\text{BN}(x) + \\text{ReLU}(x)$$
+$$E(x) = \text{Conv}(x, W_e) + \text{BN}(x) + \text{ReLU}(x)$$
 
 #### 解码器部分：
 
-$$D(x) = \\text{UpSample}(x) \\cdot \\text{Conv}(x, W_d) + \\text{Concat}(x, E(x)) + \\text{BN}(x) + \\text{ReLU}(x)$$
+$$D(x) = \text{UpSample}(x) \cdot \text{Conv}(x, W_d) + \text{Concat}(x, E(x)) + \text{BN}(x) + \text{ReLU}(x)$$
 
 #### 跳跃连接：
 
-$$\\text{SkipConnection}(E(x), D(x))$$
+$$\text{SkipConnection}(E(x), D(x))$$
 
 ### 4.2 公式推导过程
 
 #### 损失函数：
 
-$$L = -\\frac{1}{N} \\sum_{i=1}^{N} \\sum_{j=1}^{C} y_{ij} \\log \\hat{y}_{ij}$$
+$$L = -\frac{1}{N} \sum_{i=1}^{N} \sum_{j=1}^{C} y_{ij} \log \hat{y}_{ij}$$
 
-其中，$N$是样本数量，$C$是类别数量，$y_{ij}$是真实标签，$\\hat{y}_{ij}$是模型预测的概率。
+其中，$N$是样本数量，$C$是类别数量，$y_{ij}$是真实标签，$\hat{y}_{ij}$是模型预测的概率。
 
 ### 4.3 案例分析与讲解
 

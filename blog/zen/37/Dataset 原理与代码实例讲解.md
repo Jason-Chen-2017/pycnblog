@@ -138,7 +138,7 @@ Dataset 的构建在以下领域有广泛应用：
 
 假设我们有一个数据集$D$，包含$n$个样本，其中第$i$个样本表示为$x_i$，对应的标签为$y_i$。则概率统计模型可以表示为：
 
-$$P(x_i | y_i) = \\frac{P(y_i, x_i)}{P(y_i)}$$
+$$P(x_i | y_i) = \frac{P(y_i, x_i)}{P(y_i)}$$
 
 其中，$P(y_i, x_i)$表示样本$x_i$属于类别$y_i$的概率，$P(y_i)$表示类别$y_i$的概率。
 
@@ -198,7 +198,7 @@ from sklearn.datasets import make_classification
 X, y = make_classification(n_samples=1000, n_features=20, n_informative=15, n_redundant=5, random_state=42)
 
 # 创建数据集
-dataset = pd.DataFrame(data=np.c_[X, y], columns=[\"feature_{}\".format(i) for i in range(20)] + [\"label\"])
+dataset = pd.DataFrame(data=np.c_[X, y], columns=["feature_{}".format(i) for i in range(20)] + ["label"])
 
 # 数据清洗
 dataset.dropna(inplace=True)
@@ -207,8 +207,8 @@ dataset.dropna(inplace=True)
 X_train, X_test, y_train, y_test = train_test_split(dataset.iloc[:, :-1], dataset.iloc[:, -1], test_size=0.15, random_state=42)
 
 # 输出数据集信息
-print(\"训练集样本数：\", X_train.shape[0])
-print(\"测试集样本数：\", X_test.shape[0])
+print("训练集样本数：", X_train.shape[0])
+print("测试集样本数：", X_test.shape[0])
 ```
 
 ### 5.3 代码解读与分析
@@ -269,9 +269,9 @@ Dataset 的构建在以下领域有广泛应用：
 
 ### 7.3 相关论文推荐
 
-1. **\"Learning Deep Representations by Maximizing Mutual Information Between Tasks and Labels\"**: 作者：Yoshua Bengio, Yarin Gal, and Nir Shavit
-2. **\"Domain Adaptation for Natural Language Processing\"**: 作者：Ilya Sutskever, Oriol Vinyals, and Quoc V. Le
-3. **\"Data Augmentation as Regularization\"**: 作者：Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron C. Courville
+1. **"Learning Deep Representations by Maximizing Mutual Information Between Tasks and Labels"**: 作者：Yoshua Bengio, Yarin Gal, and Nir Shavit
+2. **"Domain Adaptation for Natural Language Processing"**: 作者：Ilya Sutskever, Oriol Vinyals, and Quoc V. Le
+3. **"Data Augmentation as Regularization"**: 作者：Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron C. Courville
 
 ### 7.4 其他资源推荐
 

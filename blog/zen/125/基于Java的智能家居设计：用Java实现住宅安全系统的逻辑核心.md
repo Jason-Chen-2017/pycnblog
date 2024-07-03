@@ -384,4 +384,4 @@ class AlarmSystem {
 * **数据最小化：** 只收集必要的用户数据，避免过度收集。
 * **数据访问控制：** 对用户数据进行访问控制，确保只有授权人员才能访问。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

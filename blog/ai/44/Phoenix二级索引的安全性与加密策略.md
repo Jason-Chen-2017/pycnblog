@@ -114,7 +114,7 @@ $$
 以基于角色的访问控制（RBAC）为例，其访问控制过程可以表示为：
 
 $$
-RBAC(R, P, A) = \begin{cases} 
+RBAC(R, P, A) = \begin{cases}
 \text{授权} & \text{如果}\, \exists r \in R, p \in P, \, \text{且}\, (r, p) \in P_R \\
 \text{拒绝} & \text{否则}
 \end{cases}

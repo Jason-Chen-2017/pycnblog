@@ -151,8 +151,7 @@ $$
 以随机梯度下降（SGD）为例，其更新公式如下：
 
 $$
-\theta^{(t+1)} = \theta^{(t)} - \alpha \cdot \
-abla_{\theta^{(t)}} J(\theta^{(t)})
+\theta^{(t+1)} = \theta^{(t)} - \alpha \cdot \nabla_{\theta^{(t)}} J(\theta^{(t)})
 $$
 
 其中，$\theta^{(t)}$ 表示在迭代 $t$ 时的模型参数，$\theta^{(t+1)}$ 表示在迭代 $t+1$ 时的模型参数，$\alpha$ 表示学习率，$J(\theta^{(t)})$ 表示在迭代 $t$ 时的损失函数。
@@ -301,7 +300,7 @@ A：评估深度学习模型可以从以下几个方面进行：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 

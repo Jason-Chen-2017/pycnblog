@@ -274,7 +274,7 @@ class SimpleGPT(nn.Module):
         self.embedding = nn.Embedding(vocab_size, d_model)
         self.transformer = nn.Transformer(d_model, nhead, num_layers, d_ff)
         self.linear = nn.Linear(d_model, vocab_size)
-    
+
     def forward(self, src):
         x = self.embedding(src)
         x = self.transformer(x)

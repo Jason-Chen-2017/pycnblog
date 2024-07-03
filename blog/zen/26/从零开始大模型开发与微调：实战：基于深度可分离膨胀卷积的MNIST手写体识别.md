@@ -48,11 +48,11 @@
 
 #### 步骤1：深度卷积（Depthwise Convolution）
 对于输入特征图`I`和深度卷积核`W_d`，深度卷积的输出`O_d`可通过以下公式计算：
-$$ O_d(x,y) = \\sum_{k=0}^{K_d-1} \\sum_{i=0}^{H-1} \\sum_{j=0}^{W-1} I(i+k \\cdot d, j, k) \\cdot W_d(k,i,j) $$
+$$ O_d(x,y) = \sum_{k=0}^{K_d-1} \sum_{i=0}^{H-1} \sum_{j=0}^{W-1} I(i+k \cdot d, j, k) \cdot W_d(k,i,j) $$
 
 #### 步骤2：逐点卷积（Pointwise Convolution）
 将深度卷积的结果`O_d`与逐点卷积核`W_p`相乘，通常是在通道维度上进行操作：
-$$ O_p = W_p \\cdot O_d $$
+$$ O_p = W_p \cdot O_d $$
 
 #### 步骤3：组合输出
 将逐点卷积的结果`O_p`作为最终的特征映射输出，或者根据需要进行进一步处理。
@@ -80,7 +80,7 @@ $$ O_p = W_p \\cdot O_d $$
 
 设输入特征图为`I`，深度卷积核为`W_d`，逐点卷积核为`W_p`，膨胀率为`d`，则深度可分离膨胀卷积的输出`O`可表示为：
 
-$$ O(x,y) = \\sum_{k=0}^{K_d-1} \\sum_{i=0}^{H-1} \\sum_{j=0}^{W-1} I(i+k \\cdot d, j, k) \\cdot W_d(k,i,j) + \\sum_{k=0}^{K_p-1} \\sum_{i=0}^{K_d-1} \\sum_{j=0}^{K_p-1} O_d(i,j,k) \\cdot W_p(k,j) $$
+$$ O(x,y) = \sum_{k=0}^{K_d-1} \sum_{i=0}^{H-1} \sum_{j=0}^{W-1} I(i+k \cdot d, j, k) \cdot W_d(k,i,j) + \sum_{k=0}^{K_p-1} \sum_{i=0}^{K_d-1} \sum_{j=0}^{K_p-1} O_d(i,j,k) \cdot W_p(k,j) $$
 
 ### 4.2 公式推导过程
 
@@ -155,8 +155,8 @@ def test(model, device, dataloader, criterion):
             correct += preds.eq(target.view_as(preds)).sum().item()
     return running_loss / len(dataloader), correct / len(dataloader.dataset)
 
-if __name__ == \"__main__\":
-    device = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")
+if __name__ == "__main__":
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))])
     train_dataset = datasets.MNIST(root='./data', train=True, download=True, transform=transform)
     test_dataset = datasets.MNIST(root='./data', train=False, download=True, transform=transform)
@@ -169,11 +169,11 @@ if __name__ == \"__main__\":
 
     epochs = 10
     for epoch in range(epochs):
-        print(f\"Epoch {epoch+1}/{epochs}\")
+        print(f"Epoch {epoch+1}/{epochs}")
         train_loss = train(model, device, train_loader, criterion, optimizer)
-        print(f\"Train Loss: {train_loss:.4f}\")
+        print(f"Train Loss: {train_loss:.4f}")
         test_loss, accuracy = test(model, device, test_loader, criterion)
-        print(f\"Test Loss: {test_loss:.4f}, Accuracy: {accuracy * 100:.2f}%\")
+        print(f"Test Loss: {test_loss:.4f}, Accuracy: {accuracy * 100:.2f}%")
 ```
 
 ### 5.3 代码解读与分析

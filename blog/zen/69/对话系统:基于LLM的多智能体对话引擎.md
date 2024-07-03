@@ -73,7 +73,7 @@ NLG 模块通常采用基于 LLM 的生成模型，例如：
 * **共享内存**: 智能体之间共享一个全局内存空间，用于存储和访问共享信息。
 * **集中式控制**: 一个中央控制器负责协调多个智能体的行为，并分配任务。
 
-### 4. 数学模型和公式详细讲解举例说明 
+### 4. 数学模型和公式详细讲解举例说明
 
 #### 4.1 Transformer 模型
 
@@ -146,19 +146,19 @@ state = {}
 while True:
     # 获取用户输入
     text = input("User: ")
-    
+
     # NLU 模块处理用户输入
     intent, entities = agents[0].act(text)
-    
+
     # DM 模块选择动作
     action = agents[1].act((state, intent, entities))
-    
+
     # NLG 模块生成回复
     response = agents[2].act((state, action))
-    
+
     # 输出回复
     print("Bot:", response)
-    
+
     # 更新状态
     state = update_state(state, action)
 ```

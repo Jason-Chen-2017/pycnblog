@@ -1,7 +1,7 @@
 
 # AI Agent: AI的下一个风口 重新审视智能体的重要性
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍

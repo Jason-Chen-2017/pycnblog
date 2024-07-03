@@ -41,9 +41,7 @@ $$
 为了更新Actor，我们需要计算策略梯度：
 
 $$
-\
-abla_{\\theta} E_{\\pi} \\left[ \\sum_{t=0}^{T} \\gamma^t r_t \\right] = E_{a \\sim \\pi(.|s)} \\left[ \
-abla_{\\theta} \\log \\pi(a|s) Q^{\\pi}(s, a) \\right]
+\nabla_{\\theta} E_{\\pi} \\left[ \\sum_{t=0}^{T} \\gamma^t r_t \\right] = E_{a \\sim \\pi(.|s)} \\left[ \nabla_{\\theta} \\log \\pi(a|s) Q^{\\pi}(s, a) \\right]
 $$
 
 这个梯度可以通过采样动作$a$和对应的价值函数$Q^{\\pi}(s, a)$来近似。
@@ -199,9 +197,7 @@ $$
 为了更新Actor，我们需要计算策略梯度：
 
 $$
-\
-abla_{\\theta} E_{\\pi} \\left[ \\sum_{t=0}^{T} \\gamma^t r_t \\right] = E_{a \\sim \\pi(.|s)} \\left[ \
-abla_{\\theta} \\log \\pi(a|s) Q^{\\pi}(s, a) \\right]
+\nabla_{\\theta} E_{\\pi} \\left[ \\sum_{t=0}^{T} \\gamma^t r_t \\right] = E_{a \\sim \\pi(.|s)} \\left[ \nabla_{\\theta} \\log \\pi(a|s) Q^{\\pi}(s, a) \\right]
 $$
 
 这个梯度可以通过采样动作$a$和对应的价值函数$Q^{\\pi}(s, a)$来近似。
@@ -314,9 +310,7 @@ $$
 为了更新Actor，我们需要计算策略梯度：
 
 $$
-\
-abla_{\\theta} E_{\\pi} \\left[ \\sum_{t=0}^{T} \\gamma^t r_t \\right] = E_{a \\sim \\pi(.|s)} \\left[ \
-abla_{\\theta} \\log \\pi(a|s) Q^{\\pi}(s, a) \\right]
+\nabla_{\\theta} E_{\\pi} \\left[ \\sum_{t=0}^{T} \\gamma^t r_t \\right] = E_{a \\sim \\pi(.|s)} \\left[ \nabla_{\\theta} \\log \\pi(a|s) Q^{\\pi}(s, a) \\right]
 $$
 
 这个梯度可以通过采样动作$a$和对应的价值函数$Q^{\\pi}(s, a)$来近似。

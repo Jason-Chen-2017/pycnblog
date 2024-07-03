@@ -127,9 +127,9 @@ SARSA算法的数学模型主要由值函数Q(s,a)和策略π(s)组成。
 - **策略π(s)**：表示在状态s下选择动作a的概率。
 
   $$
- \pi(s,a) = \begin{cases} 
+ \pi(s,a) = \begin{cases}
  1 & \text{if } a = \arg\max_{a'}Q(s,a') \\
- 0 & \text{otherwise} 
+ 0 & \text{otherwise}
  \end{cases}
  $$
 

@@ -128,8 +128,7 @@ $$
 首先，我们在任务 1 的数据上训练模型，然后使用以下公式更新模型参数：
 
 $$
-\theta_{t+1} = \theta_t - \alpha \
-abla_{\theta_t} L_{total}(\theta_t)
+\theta_{t+1} = \theta_t - \alpha \nabla_{\theta_t} L_{total}(\theta_t)
 $$
 
 其中，$\alpha$ 为学习率，$L_{total}(\theta_t)$ 为在任务 1 的数据上训练得到的损失函数。
@@ -137,8 +136,7 @@ $$
 然后，我们在任务 2 的数据上训练模型，并使用以下公式更新模型参数：
 
 $$
-\theta_{t+2} = \theta_{t+1} - \beta \
-abla_{\theta_{t+1}} L_{total}(\theta_{t+1})
+\theta_{t+2} = \theta_{t+1} - \beta \nabla_{\theta_{t+1}} L_{total}(\theta_{t+1})
 $$
 
 其中，$\beta$ 为学习率，$L_{total}(\theta_{t+1})$ 为在任务 1 和任务 2 的数据上训练得到的损失函数。

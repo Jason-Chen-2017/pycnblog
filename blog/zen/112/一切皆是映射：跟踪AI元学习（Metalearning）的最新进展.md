@@ -203,6 +203,6 @@ class MAML:
         self.alpha = alpha
         self.beta = beta
         self.num_inner_steps = num_inner_steps
-        
+
     def meta_train(self, tasks, num_epochs):
         optimizer = optim.Adam(self

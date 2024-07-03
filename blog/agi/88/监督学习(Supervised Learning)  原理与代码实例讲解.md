@@ -449,7 +449,7 @@ plt.show()
 运行上述代码后，将得到如下结果：
 
 ```
-$ python linear_regression.py 
+$ python linear_regression.py
 ```
 
 ```

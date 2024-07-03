@@ -115,7 +115,7 @@ $$V(s) = \max_{a \in A} \left[ R(s, a) + \gamma V(s') \right]$$
 
 以自动驾驶为例，智能体的状态空间为$S = \{ s_1, s_2, \dots, s_n \}$，动作空间为$A = \{ a_1, a_2, \dots, a_m \}$。假设奖励函数为：
 
-$$R(s, a) = \begin{cases} 
+$$R(s, a) = \begin{cases}
 10, & \text{if } a = \text{" accelerate"} \\
 -10, & \text{if } a = \text{" decelerate"} \\
 -100, & \text{otherwise}

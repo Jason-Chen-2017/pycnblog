@@ -1,4 +1,4 @@
-                 
+
 # AI数据增强之：数据增强的技术原理与实现方法
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -136,7 +136,7 @@ import numpy as np
 def rotate_image(image_path, angle):
     # 加载图片
     img = cv2.imread(image_path)
-    
+
     # 计算旋转中心点
     height, width = img.shape[:2]
     center = (width // 2, height // 2)

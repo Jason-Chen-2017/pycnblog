@@ -230,7 +230,7 @@ A：评估知识图谱的质量可以从以下几个方面进行：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n kg-env python=3.8 
+conda create -n kg-env python=3.8
 conda activate kg-env
 ```
 3. 安装必要的Python库：

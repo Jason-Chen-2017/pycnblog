@@ -10,7 +10,7 @@
 
 随着深度学习技术的不断发展,人工智能(AI)已成为解决缺陷检测问题的有力工具。深度学习算法能够从大量数据中自动学习特征表示,并对复杂的视觉模式进行建模,从而实现高精度的缺陷检测。
 
-## 2.核心概念与联系  
+## 2.核心概念与联系
 
 ### 2.1 深度学习概述
 
@@ -148,15 +148,15 @@ for epoch in range(num_epochs):
         # 前向传播
         outputs = model(inputs)
         loss = criterion(outputs, labels)
-        
+
         # 反向传播和优化
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-        
+
         # 统计损失
         running_loss += loss.item()
-    
+
     # 打印epoch损失
     epoch_loss = running_loss / len(train_loader)
     print(f'Epoch {epoch+1} loss: {epoch_loss:.4f}')
@@ -180,7 +180,7 @@ def evaluate(model, data_loader):
             _, predicted = torch.max(outputs.data, 1)
             total += labels.size(0)
             correct += (predicted == labels).sum().item()
-    
+
     accuracy = 100 * correct / total
     return accuracy
 

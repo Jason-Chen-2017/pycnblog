@@ -6,7 +6,7 @@
 
 ### 1.1 人工智能的发展历程
 #### 1.1.1 早期的人工智能
-#### 1.1.2 机器学习的兴起  
+#### 1.1.2 机器学习的兴起
 #### 1.1.3 深度学习的突破
 
 ### 1.2 传统机器学习的局限性
@@ -27,7 +27,7 @@
 #### 2.1.3 机器学习中的映射
 
 ### 2.2 元学习：学会如何学习
-#### 2.2.1 元学习的核心思想 
+#### 2.2.1 元学习的核心思想
 #### 2.2.2 元学习与传统机器学习的区别
 #### 2.2.3 元学习的分类
 
@@ -48,7 +48,7 @@
 #### 3.2.2 LSTM 元学习器（LSTM Meta-Learner）
 #### 3.2.3 MAML 算法（Model-Agnostic Meta-Learning）
 
-### 3.3 基于模型的元学习（Model-based Meta-learning） 
+### 3.3 基于模型的元学习（Model-based Meta-learning）
 #### 3.3.1 核心思想：学习一个快速适应的模型
 #### 3.3.2 元网络（Meta Networks）
 #### 3.3.3 Latent Embedding Optimization
@@ -59,7 +59,7 @@
 $$L(a, p, n) = max(0, m + D(a,p) - D(a,n))$$
 其中 $a$ 为 Anchor，$p$ 为 Positive，$n$ 为 Negative，$D$ 为距离度量函数，$m$ 为间隔阈值。
 
-### 4.2 原型网络的损失函数  
+### 4.2 原型网络的损失函数
 $$L(\theta) = -\mathbb{E}_{(x,y) \sim p(\mathcal{T})} [\log p_\theta (y|x,S)]$$
 
 其中 $\mathcal{T}$ 为测试集，$S$ 为支撑集，$p_\theta$ 为原型网络参数化的条件概率分布。
@@ -80,22 +80,22 @@ class MAML(nn.Module):
         self.inner_lr = inner_lr
         self.outer_lr = outer_lr
         self.inner_steps = inner_steps
-        
+
     def forward(self, support_x, support_y, query_x, query_y):
         meta_batch_size = len(support_x)
         losses = []
-        
+
         for i in range(meta_batch_size):
             # 内循环更新
             model_copy = deepcopy(self.model)
             for _ in range(self.inner_steps):
                 support_loss = F.cross_entropy(model_copy(support_x[i]), support_y[i])
                 model_copy.adapt(support_loss, self.inner_lr)
-            
-            # 外循环更新  
+
+            # 外循环更新
             query_loss = F.cross_entropy(model_copy(query_x[i]), query_y[i])
             losses.append(query_loss)
-        
+
         meta_loss = torch.stack(losses).mean()
         self.model.adapt(meta_loss, self.outer_lr)
         return meta_loss
@@ -117,18 +117,18 @@ class PrototypicalNetwork(tf.keras.Model):
             tf.keras.layers.Flatten(),
             tf.keras.layers.Dense(emb_dim)
         ])
-        
+
     def call(self, support_x, support_y, query_x):
         # 计算原型向量
         prototypes = tf.reshape(support_x, [self.num_classes, -1, *support_x.shape[1:]])
         prototypes = tf.reduce_mean(self.encoder(prototypes), axis=1)
-        
+
         # 计算查询集嵌入
         query_emb = self.encoder(query_x)
-        
+
         # 计算欧氏距离
         dists = euclidean_dist(query_emb, prototypes)
-        
+
         # 计算概率分布
         log_p_y = tf.nn.log_softmax(-dists, axis=-1)
         return log_p_y
@@ -157,11 +157,11 @@ class PrototypicalNetwork(tf.keras.Model):
 
 ### 7.1 元学习研究论文
 - [Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks](https://arxiv.org/abs/1703.03400)
-- [Prototypical Networks for Few-shot Learning](https://arxiv.org/abs/1703.05175) 
+- [Prototypical Networks for Few-shot Learning](https://arxiv.org/abs/1703.05175)
 - [Meta-Learning with Memory-Augmented Neural Networks](https://arxiv.org/abs/1605.06065)
 
 ### 7.2 元学习开源代码库
-- [Torchmeta：PyTorch 元学习库](https://github.com/tristandeleu/pytorch-meta) 
+- [Torchmeta：PyTorch 元学习库](https://github.com/tristandeleu/pytorch-meta)
 - [learn2learn：PyTorch 元学习框架](https://github.com/learnables/learn2learn)
 - [higher：PyTorch 元学习库](https://github.com/facebookresearch/higher)
 
@@ -176,7 +176,7 @@ class PrototypicalNetwork(tf.keras.Model):
 #### 8.1.2 元学习与强化学习的结合
 #### 8.1.3 元学习在多模态学习中的应用
 
-### 8.2 元学习面临的挑战  
+### 8.2 元学习面临的挑战
 #### 8.2.1 理论基础有待加强
 #### 8.2.2 任务分布的选择与构建
 #### 8.2.3 元学习的泛化与鲁棒性

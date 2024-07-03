@@ -76,33 +76,33 @@ P的重言式系统的核心在于其推理算法的设计，该算法旨在高�
 
 构建P的重言式系统的一个关键步骤是定义数学模型，以便在形式上描述系统的行为和特性。此模型通常包括：
 
-- **符号集**：$\\Sigma$，包含基本符号和逻辑运算符。
+- **符号集**：$\Sigma$，包含基本符号和逻辑运算符。
 - **陈述集**：$S$，包含所有可能的有效陈述。
 - **推理规则集**：$R$，定义如何从陈述集推出新陈述的规则。
 
 ### 公式推导过程
 
-在构建系统时，需要定义推理过程的公式。例如，假设我们要验证陈述$A \\rightarrow B$的有效性，如果$A$和$B$都是有效的，则$A \\rightarrow B$也是有效的。这可以通过以下公式表示：
+在构建系统时，需要定义推理过程的公式。例如，假设我们要验证陈述$A \rightarrow B$的有效性，如果$A$和$B$都是有效的，则$A \rightarrow B$也是有效的。这可以通过以下公式表示：
 
-$$\\text{if } A \\in S \\text{ and } B \\in S \\text{ then } A \\rightarrow B \\in S$$
+$$\text{if } A \in S \text{ and } B \in S \text{ then } A \rightarrow B \in S$$
 
 ### 案例分析与讲解
 
 考虑以下例子：
 
-- **公理集**：$A \\lor \
+- **公理集**：$A \lor \
 eg A$（排中律）
-- **推理规则**：蕴含引入（从$A$推出$A \\rightarrow B$）
+- **推理规则**：蕴含引入（从$A$推出$A \rightarrow B$）
 
-构建一个简单的陈述：$A \\land B$
+构建一个简单的陈述：$A \land B$
 
 **推理过程**：
 
-1. **初始陈述**：$A \\land B$
-2. **应用规则**：从$A \\land B$出发，应用蕴含引入规则，推出$A \\rightarrow (A \\land B)$。
-3. **验证有效性**：根据排中律，我们知道$A \\lor \
+1. **初始陈述**：$A \land B$
+2. **应用规则**：从$A \land B$出发，应用蕴含引入规则，推出$A \rightarrow (A \land B)$。
+3. **验证有效性**：根据排中律，我们知道$A \lor \
 eg A$，这意味着$A$和$\
-eg A$至少有一个是真的。因此，$A \\land B$只能在$A$为真的情况下成立，所以$A \\rightarrow (A \\land B)$是有效的。
+eg A$至少有一个是真的。因此，$A \land B$只能在$A$为真的情况下成立，所以$A \rightarrow (A \land B)$是有效的。
 
 ### 常见问题解答
 
@@ -128,7 +128,7 @@ class PropositionalLogicSystem:
         derived_statements = {statement}
         for axiom in self.axioms:
             derived_statements.add(axiom)
-        
+
         while True:
             new_statements = set()
             for existing in derived_statements:
@@ -141,13 +141,13 @@ class PropositionalLogicSystem:
             if not new_statements:
                 break
         return derived_statements
-    
+
     def validate(self, statement):
         return statement in self.derive(statement)
 
 # 示例
 logic_system = PropositionalLogicSystem(
-    axioms={'A ∨ ¬A'},  
+    axioms={'A ∨ ¬A'},
     rules=[Rule(lambda x: x == 'A ∨ B', lambda x: 'A → (A ∨ B)')]
 )
 
@@ -191,8 +191,8 @@ P的重言式系统在多个领域有着广泛的应用，包括：
 
 ### 相关论文推荐
 
-- **\"A Tutorial on Automated Theorem Proving\"**（自动定理证明教程）
-- **\"Propositional Logic and Beyond\"**（命题逻辑及超越）
+- **"A Tutorial on Automated Theorem Proving"**（自动定理证明教程）
+- **"Propositional Logic and Beyond"**（命题逻辑及超越）
 
 ### 其他资源推荐
 

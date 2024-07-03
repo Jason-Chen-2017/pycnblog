@@ -111,11 +111,9 @@
 
 在微调阶段，更新模型权重 $\\theta$：
 
-\\[ \\theta_{new} = \\theta_{old} - \\eta \\cdot \
-abla J(\\theta_{old}) \\]
+\\[ \\theta_{new} = \\theta_{old} - \\eta \\cdot \nabla J(\\theta_{old}) \\]
 
-其中，$\\eta$ 是学习率，$\
-abla J(\\theta)$ 是损失函数关于权重的梯度。
+其中，$\\eta$ 是学习率，$\nabla J(\\theta)$ 是损失函数关于权重的梯度。
 
 ## 5. 代码实例与实现
 

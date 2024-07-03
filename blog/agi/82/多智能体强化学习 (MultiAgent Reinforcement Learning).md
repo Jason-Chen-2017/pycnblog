@@ -8,7 +8,7 @@
 
 随着人工智能技术的飞速发展,越来越多的实际应用场景需要多个智能体协同工作,完成复杂任务。传统的单智能体强化学习方法已经无法满足这些场景的需求。因此,多智能体强化学习(Multi-Agent Reinforcement Learning,MARL)应运而生,成为了人工智能领域的研究热点。
 
-### 1.2 研究现状 
+### 1.2 研究现状
 
 近年来,MARL取得了长足的进展。一方面,深度强化学习的兴起为MARL提供了更强大的学习范式。另一方面,博弈论与优化理论的发展为解决多智能体协同问题提供了理论基础。目前MARL已经在无人驾驶、智能电网、网络安全等诸多领域得到应用。但同时MARL还面临着诸如信息不完全、通信受限、探索-利用困境等诸多挑战。
 
@@ -25,7 +25,7 @@ MARL的研究对于推动人工智能在实际场景中的应用具有重要意�
 MARL中的核心概念包括:
 - 智能体(Agent):自主执行动作、感知环境的个体。
 - 状态(State):环境的完整描述。
-- 动作(Action):智能体对环境施加的影响。  
+- 动作(Action):智能体对环境施加的影响。
 - 奖励(Reward):量化智能体行为优劣的即时反馈。
 - 策略(Policy):将状态映射为动作的函数。
 - 价值(Value):衡量状态或动作长期收益的函数。
@@ -35,7 +35,7 @@ MARL中的核心概念包括:
 ```mermaid
 graph LR
 A[Agent] --> B[State]
-B --> C[Action] 
+B --> C[Action]
 C --> D[Reward]
 D --> A
 A --> E[Policy]
@@ -67,11 +67,11 @@ MARL的核心是让多个智能体通过与环境和彼此互动,学习到最优
    2. 当前状态为 $s$,重复:
       1. 对于智能体 $i=1,2$:
          1. 根据 $\epsilon$-贪婪策略选择动作 $a_i$
-      2. 执行联合动作 $\mathbf{a}=(a_1,a_2)$,观测下一状态 $s'$,奖励 $r_1,r_2$ 
+      2. 执行联合动作 $\mathbf{a}=(a_1,a_2)$,观测下一状态 $s'$,奖励 $r_1,r_2$
       3. 对于智能体 $i=1,2$,更新Q值:
-         
+
          $Q_i(s,a_1,a_2) \leftarrow (1-\alpha)Q_i(s,a_1,a_2)+\alpha[r_i+\gamma \min\limits_{a'_j} \max\limits_{a'_i} Q_i(s',a'_1,a'_2)]$
-         
+
       4. $s \leftarrow s'$
    3. 更新目标Q网络参数 $\theta'_i \leftarrow \theta_i$
 
@@ -96,7 +96,7 @@ $$
 
 其中:
 - $\mathcal{S}$ 是状态空间
-- $\mathcal{A}^i$ 是智能体 $i$ 的行动空间  
+- $\mathcal{A}^i$ 是智能体 $i$ 的行动空间
 - $\mathcal{T}:\mathcal{S}\times\mathcal{A}^1\times\ldots\times\mathcal{A}^N\rightarrow\Delta(\mathcal{S})$ 是状态转移函数
 - $\mathcal{R}^i:\mathcal{S}\times\mathcal{A}^1\times\ldots\times\mathcal{A}^N\rightarrow\mathbb{R}$ 是智能体 $i$ 的奖励函数
 
@@ -135,7 +135,7 @@ $$
 考虑一个简单的二人零和博弈,称为"匹配硬币"。两名玩家同时出示正面或反面,若两人出示面相同则玩家1胜,反之玩家2胜。
 
 我们可以将其建模为一个马尔可夫博弈:
-- 状态空间 $\mathcal{S}=\{\text{Start},\text{End}\}$ 
+- 状态空间 $\mathcal{S}=\{\text{Start},\text{End}\}$
 - 行动空间 $\mathcal{A}^1=\mathcal{A}^2=\{\text{正面},\text{反面}\}$
 - 转移函数 $\mathcal{T}(\text{End}|\text{Start},\cdot)=1$
 - 奖励函数 $\mathcal{R}^1(\text{Start},a^1,a^2)=\mathbf{1}_{a^1=a^2}, \mathcal{R}^2=-\mathcal{R}^1$
@@ -176,23 +176,23 @@ import numpy as np
 
 class MinimaxQ:
     def __init__(self, gamma=0.99, lr=0.01):
-        self.gamma = gamma 
+        self.gamma = gamma
         self.lr = lr
-        self.Q = torch.zeros(2,2) 
-        
+        self.Q = torch.zeros(2,2)
+
     def choose_action(self, epsilon=0.1):
         if np.random.rand() < epsilon:
             return np.random.randint(2)
         else:
             return self.Q[0].argmax().item()
-        
+
     def train(self, s, a1, a2, r, done=True):
         if done:
-            target = r 
+            target = r
         else:
             target = r + self.gamma * self.Q[s].min().max().item()
         self.Q[s,a1,a2] += self.lr * (target - self.Q[s,a1,a2])
-        
+
 def play(agent1, agent2, episodes=1000):
     rewards = [0, 0]
     for _ in range(episodes):
@@ -206,11 +206,11 @@ def play(agent1, agent2, episodes=1000):
         agent2.train(0, a2, a1, r2)
         rewards[0] += r1
         rewards[1] += r2
-        
+
     return rewards[0]/episodes, rewards[1]/episodes
-        
+
 agent1 = MinimaxQ()
 agent2 = MinimaxQ()
 r1, r2 = play(agent1, agent2)
-print(f"Agent1 average reward: {r1:.2f}")  
+print(f"Agent1 average reward: {r1:.2f}")
 print(f"Agent2 average reward: {

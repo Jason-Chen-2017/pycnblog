@@ -92,7 +92,7 @@ print(text[0]['generated_text'])
 1. 导入 `transformers` 库中的 `pipeline` 函数。
 2. 创建一个名为 `generator` 的文本生成 pipeline，使用 `gpt2` 模型。
 3. 使用 `generator` 函数生成文本，输入文本为 "The quick brown fox jumps over the lazy dog."，最大长度为 50。
-4. 打印生成的文本。 
+4. 打印生成的文本。
 
 ### 5.2 使用 TensorFlow 构建 LLM 模型
 
@@ -179,4 +179,4 @@ LLM 的性能评估指标包括：
 
 * **任务类型:** 不同的任务类型需要选择不同的 LLM 模型。
 * **性能要求:** 不同的应用场景对模型的性能要求不同。
-* **资源限制:** 不同的 LLM 模型对计算资源的需求不同。 
+* **资源限制:** 不同的 LLM 模型对计算资源的需求不同。

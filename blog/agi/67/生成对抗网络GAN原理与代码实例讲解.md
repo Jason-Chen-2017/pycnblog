@@ -264,7 +264,7 @@ def train(generator, discriminator, epochs):
             d_loss = (real_loss + fake_loss) / 2
             d_loss.backward()
             d_optimizer.step()
-            
+
             # 训练生成器
             generator.zero_grad()
             fake_data = generator(noise)
@@ -272,7 +272,7 @@ def train(generator, discriminator, epochs):
             g_loss = nn.BCELoss()(output, torch.ones_like(output))
             g_loss.backward()
             g_optimizer.step()
-            
+
         print(f"Epoch [{epoch+1}/{epochs}], Discriminator Loss: {d_loss.item():.4f}, Generator Loss: {g_loss.item():.4f}")
 
 # 生成图像

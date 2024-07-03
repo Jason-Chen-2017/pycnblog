@@ -1,7 +1,7 @@
 
 # Graph Traversal图遍历原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -237,7 +237,7 @@ A3：BFS算法优先访问同一层的顶点，可能导致在广度方向上搜
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n graph-env python=3.8 
+conda create -n graph-env python=3.8
 conda activate graph-env
 ```
 3. 安装Anaconda的包管理器conda：
@@ -319,10 +319,10 @@ plt.show()
 执行上述代码后，输出DFS和BFS算法的遍历结果，并绘制图形如下：
 
 ```
-DFS: 
-1 2 3 4 
-BFS: 
-1 2 3 4 
+DFS:
+1 2 3 4
+BFS:
+1 2 3 4
 ```
 
 图形如下：

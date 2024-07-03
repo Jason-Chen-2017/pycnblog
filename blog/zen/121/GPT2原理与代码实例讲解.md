@@ -169,7 +169,7 @@ A：GPT-2的参数量取决于模型的层数、隐藏层大小和注意力头�
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n gpt2-env python=3.8 
+conda create -n gpt2-env python=3.8
 conda activate gpt2-env
 ```
 3. 安装PyTorch：

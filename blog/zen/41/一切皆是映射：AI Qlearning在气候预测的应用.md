@@ -32,14 +32,14 @@ Q-learning是一种基于价值迭代的学习方法，主要用于解决带有�
 
 Q-learning通过迭代更新Q-table来学习最优策略。在每一次迭代中，算法根据当前状态、采取的动作以及新状态来更新Q值，以便于学习在特定状态下的最佳动作。Q-learning具有Q-value更新规则，即：
 
-$$ Q(s, a) \\leftarrow Q(s, a) + \\alpha [r + \\gamma \\max_{a'} Q(s', a') - Q(s, a)] $$
+$$ Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a') - Q(s, a)] $$
 
 其中，
-- \\( Q(s, a) \\) 是状态\\( s \\)和动作\\( a \\)的Q值；
-- \\( \\alpha \\) 是学习率，决定了新信息与旧信息的加权；
-- \\( r \\) 是即时奖励；
-- \\( \\gamma \\) 是折扣因子，用于衡量未来的奖励价值；
-- \\( s' \\) 是新状态，\\( a' \\) 是在新状态下的动作。
+- \( Q(s, a) \) 是状态\( s \)和动作\( a \)的Q值；
+- \( \alpha \) 是学习率，决定了新信息与旧信息的加权；
+- \( r \) 是即时奖励；
+- \( \gamma \) 是折扣因子，用于衡量未来的奖励价值；
+- \( s' \) 是新状态，\( a' \) 是在新状态下的动作。
 
 ### 3.2 算法步骤详解
 
@@ -67,15 +67,15 @@ $$ Q(s, a) \\leftarrow Q(s, a) + \\alpha [r + \\gamma \\max_{a'} Q(s', a') - Q(s
 
 ### 4.1 数学模型构建
 
-假设我们构建了一个简单的气候预测模型，其中状态\\( S \\)包括温度、湿度、风速等多个参数组成的向量，动作\\( A \\)为预测策略的调整，如改变预测模型的参数、选择不同的预测算法等。奖励\\( R \\)根据预测结果与实际气候事件之间的偏差来计算。
+假设我们构建了一个简单的气候预测模型，其中状态\( S \)包括温度、湿度、风速等多个参数组成的向量，动作\( A \)为预测策略的调整，如改变预测模型的参数、选择不同的预测算法等。奖励\( R \)根据预测结果与实际气候事件之间的偏差来计算。
 
 ### 4.2 公式推导过程
 
-在气候预测场景中，Q-learning的目标是学习一个函数\\( Q(s, a) \\)，该函数在给定状态\\( s \\)和动作\\( a \\)时返回预期的累计奖励。Q-learning通过迭代更新Q函数来实现这一目标，公式如下：
+在气候预测场景中，Q-learning的目标是学习一个函数\( Q(s, a) \)，该函数在给定状态\( s \)和动作\( a \)时返回预期的累计奖励。Q-learning通过迭代更新Q函数来实现这一目标，公式如下：
 
-$$ Q(s, a) \\leftarrow Q(s, a) + \\alpha [r + \\gamma \\max_{a'} Q(s', a') - Q(s, a)] $$
+$$ Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a') - Q(s, a)] $$
 
-其中，\\( \\alpha \\)是学习率，决定了新信息与旧信息的加权；\\( r \\)是即时奖励，通常是预测误差的负数；\\( \\gamma \\)是折扣因子，用于衡量未来的奖励价值。
+其中，\( \alpha \)是学习率，决定了新信息与旧信息的加权；\( r \)是即时奖励，通常是预测误差的负数；\( \gamma \)是折扣因子，用于衡量未来的奖励价值。
 
 ### 4.3 案例分析与讲解
 
@@ -133,22 +133,22 @@ def q_learning(s, a, r, s_prime):
 for episode in range(num_episodes):
     state = np.random.randint(state_space)
     done = False
-    
+
     while not done:
         # 选择动作（探索-利用）
         if np.random.rand() < exploration_rate:
             action = np.random.choice(len(action_space))
         else:
             action = np.argmax(Q_table[state])
-        
+
         # 执行动作并获取奖励
         reward = simulate_environment(state, action)
         next_state = get_next_state(state, action)
         done = check_done(state, next_state)
-        
+
         # 更新Q-table
         q_learning(state, action, reward, next_state)
-        
+
         state = next_state
         exploration_rate *= exploration_decay
 

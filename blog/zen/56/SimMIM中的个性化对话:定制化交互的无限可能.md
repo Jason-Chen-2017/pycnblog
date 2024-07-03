@@ -48,7 +48,7 @@ G --> A
 
 ### 3.2 多模态融合算法
 #### 3.2.1 早期融合
-#### 3.2.2 晚期融合 
+#### 3.2.2 晚期融合
 #### 3.2.3 循环融合
 
 ### 3.3 对话状态追踪算法
@@ -57,7 +57,7 @@ G --> A
 #### 3.3.3 基于深度学习的方法
 
 ### 3.4 对话策略优化算法
-#### 3.4.1 基于强化学习的方法  
+#### 3.4.1 基于强化学习的方法
 #### 3.4.2 基于对抗学习的方法
 #### 3.4.3 基于元学习的方法
 
@@ -140,16 +140,16 @@ class PersonalizedTransformer(nn.Module):
         self.decoder = Decoder(config)
         self.fc = nn.Linear(config.hidden_size, config.vocab_size)
         self.p_embedding = nn.Embedding(config.persona_size, config.hidden_size)
-        
+
     def forward(self, input_ids, persona_ids):
         # 文本嵌入
         text_embeddings = self.embedding(input_ids)
-        # 个性化嵌入 
+        # 个性化嵌入
         persona_embeddings = self.p_embedding(persona_ids)
         # 编码
         encoder_outputs = self.encoder(text_embeddings, persona_embeddings)
         # 解码
-        decoder_outputs = self.decoder(text_embeddings, encoder_outputs, persona_embeddings) 
+        decoder_outputs = self.decoder(text_embeddings, encoder_outputs, persona_embeddings)
         # 输出
         logits = self.fc(decoder_outputs)
         return logits
@@ -202,7 +202,7 @@ def compute_loss(logits, labels, persona):
 #### 7.3.3 微软 Azure Bot Service
 
 ## 8. 总结:未来发展趋势与挑战
-### 8.1 个性化对话的发展趋势 
+### 8.1 个性化对话的发展趋势
 #### 8.1.1 多模态个性化对话
 #### 8.1.2 知识增强个性化对话
 #### 8.1.3 持续学习个性化对话

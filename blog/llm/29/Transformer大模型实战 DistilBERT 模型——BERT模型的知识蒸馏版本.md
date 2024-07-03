@@ -88,15 +88,15 @@ DistilBERT因其高效性，广泛应用于自然语言处理的多个领域，�
 多头注意力机制的核心是自注意力（Self-Attention）函数，定义为：
 
 $$
-\\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
 $$
 
 其中：
 
-- \\(Q\\)：查询向量矩阵，表示输入序列中每个位置的查询。
-- \\(K\\)：键向量矩阵，表示输入序列中每个位置的键。
-- \\(V\\)：值向量矩阵，表示输入序列中每个位置的值。
-- \\(d_k\\)：键的维度。
+- \(Q\)：查询向量矩阵，表示输入序列中每个位置的查询。
+- \(K\)：键向量矩阵，表示输入序列中每个位置的键。
+- \(V\)：值向量矩阵，表示输入序列中每个位置的值。
+- \(d_k\)：键的维度。
 
 ### 4.2 公式推导过程
 
@@ -105,19 +105,19 @@ $$
 DistilBERT中，Embedding层和全连接层被共享，这意味着：
 
 $$
-\\text{Shared Embedding}(x) = \\text{Emb}(x)
+\text{Shared Embedding}(x) = \text{Emb}(x)
 $$
 
 $$
-\\text{Shared FC}(h) = \\text{FC}(h)
+\text{Shared FC}(h) = \text{FC}(h)
 $$
 
 其中：
 
-- \\(\\text{Emb}\\) 是共享的Embedding层。
-- \\(\\text{FC}\\) 是共享的全连接层。
-- \\(x\\) 是输入文本。
-- \\(h\\) 是经过多头注意力后的隐藏状态。
+- \(\text{Emb}\) 是共享的Embedding层。
+- \(\text{FC}\) 是共享的全连接层。
+- \(x\) 是输入文本。
+- \(h\) 是经过多头注意力后的隐藏状态。
 
 ### 4.3 案例分析与讲解
 
@@ -134,7 +134,7 @@ DistilBERT在处理此序列时，会通过多头注意力机制对每个词进�
 ### 4.4 常见问题解答
 
 #### Q：如何选择合适的知识蒸馏策略？
-   
+
    A：选择知识蒸馏策略时要考虑教师模型和学生模型的性能差异、计算资源限制以及任务需求。例如，对于性能要求较高且计算资源充足的场景，可以选择精确度较高的知识蒸馏方法，如最小化均方误差（MSE）。而对于资源受限的场景，则可能更适合选择简化版的知识蒸馏方法，如最小化交叉熵（CE）或KL散度。
 
 ## 5. 项目实践：代码实例和详细解释说明
@@ -163,7 +163,7 @@ model = DistilBertForSequenceClassification.from_pretrained('distilbert-base-unc
 text = ['The quick brown fox jumps over the lazy dog.', 'Natural language processing is fascinating.']
 
 # 分词
-inputs = tokenizer(text, padding=True, truncation=True, return_tensors=\"pt\")
+inputs = tokenizer(text, padding=True, truncation=True, return_tensors="pt")
 
 # 预测
 outputs = model(**inputs)
@@ -211,7 +211,7 @@ DistilBERT可用于分析社交媒体上的文本情绪，帮助企业了解消�
 
 ### 7.3 相关论文推荐
 
-- **\"DistilBERT\"**：阅读论文原文以深入了解DistilBERT的设计理念和技术细节。
+- **"DistilBERT"**：阅读论文原文以深入了解DistilBERT的设计理念和技术细节。
 
 ### 7.4 其他资源推荐
 

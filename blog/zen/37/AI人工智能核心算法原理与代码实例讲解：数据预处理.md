@@ -104,21 +104,21 @@
 
 - **归一化**：
 
-$$x_{\\text{norm}} = \\frac{x - \\mu}{\\sigma}$$
+$$x_{\text{norm}} = \frac{x - \mu}{\sigma}$$
 
-其中，$x$为原始数据，$\\mu$为数据均值，$\\sigma$为数据标准差。
+其中，$x$为原始数据，$\mu$为数据均值，$\sigma$为数据标准差。
 
 - **标准化**：
 
-$$x_{\\text{std}} = \\frac{x - \\mu}{\\sigma}$$
+$$x_{\text{std}} = \frac{x - \mu}{\sigma}$$
 
-其中，$x$为原始数据，$\\mu$为数据均值，$\\sigma$为数据标准差。
+其中，$x$为原始数据，$\mu$为数据均值，$\sigma$为数据标准差。
 
 - **主成分分析（PCA）**：
 
-$$\\mathbf{X} = \\mathbf{U} \\mathbf{L} \\mathbf{V}^{\\mathrm{T}}$$
+$$\mathbf{X} = \mathbf{U} \mathbf{L} \mathbf{V}^{\mathrm{T}}$$
 
-其中，$\\mathbf{X}$为原始数据矩阵，$\\mathbf{U}$为特征向量矩阵，$\\mathbf{L}$为特征值矩阵，$\\mathbf{V}^{\\mathrm{T}}$为特征向量矩阵的转置。
+其中，$\mathbf{X}$为原始数据矩阵，$\mathbf{U}$为特征向量矩阵，$\mathbf{L}$为特征值矩阵，$\mathbf{V}^{\mathrm{T}}$为特征向量矩阵的转置。
 
 ### 4.2 公式推导过程
 
@@ -128,41 +128,41 @@ $$\\mathbf{X} = \\mathbf{U} \\mathbf{L} \\mathbf{V}^{\\mathrm{T}}$$
 
 归一化公式将数据转换为均值为0、标准差为1的分布。推导过程如下：
 
-$$\\frac{x - \\mu}{\\sigma} = \\frac{x}{\\sigma} - \\frac{\\mu}{\\sigma}$$
+$$\frac{x - \mu}{\sigma} = \frac{x}{\sigma} - \frac{\mu}{\sigma}$$
 
-由于$\\frac{x}{\\sigma}$和$-\\frac{\\mu}{\\sigma}$的标准差均为1，因此归一化公式成立。
+由于$\frac{x}{\sigma}$和$-\frac{\mu}{\sigma}$的标准差均为1，因此归一化公式成立。
 
 - **标准化**：
 
 标准化公式将数据转换为均值为0、标准差为1的分布。推导过程如下：
 
-$$\\frac{x - \\mu}{\\sigma} = \\frac{x}{\\sigma} - \\frac{\\mu}{\\sigma}$$
+$$\frac{x - \mu}{\sigma} = \frac{x}{\sigma} - \frac{\mu}{\sigma}$$
 
-由于$\\frac{x}{\\sigma}$和$-\\frac{\\mu}{\\sigma}$的标准差均为1，因此标准化公式成立。
+由于$\frac{x}{\sigma}$和$-\frac{\mu}{\sigma}$的标准差均为1，因此标准化公式成立。
 
 - **主成分分析（PCA）**：
 
 PCA是一种降维方法，它通过找到数据的主成分（特征向量）来实现。推导过程如下：
 
-1. 计算协方差矩阵$\\mathbf{C}$：
+1. 计算协方差矩阵$\mathbf{C}$：
 
-$$\\mathbf{C} = \\mathbf{X} \\mathbf{X}^{\\mathrm{T}}$$
+$$\mathbf{C} = \mathbf{X} \mathbf{X}^{\mathrm{T}}$$
 
-其中，$\\mathbf{X}$为原始数据矩阵。
+其中，$\mathbf{X}$为原始数据矩阵。
 
 2. 计算协方差矩阵的特征值和特征向量：
 
-$$\\mathbf{C} \\mathbf{v} = \\lambda \\mathbf{v}$$
+$$\mathbf{C} \mathbf{v} = \lambda \mathbf{v}$$
 
-其中，$\\lambda$为特征值，$\\mathbf{v}$为特征向量。
+其中，$\lambda$为特征值，$\mathbf{v}$为特征向量。
 
 3. 对特征值和特征向量进行排序，并选择最大的$k$个特征值和对应的特征向量。
 
-4. 将原始数据矩阵$\\mathbf{X}$投影到选择的特征向量上：
+4. 将原始数据矩阵$\mathbf{X}$投影到选择的特征向量上：
 
-$$\\mathbf{X}_{\\text{new}} = \\mathbf{U} \\mathbf{L}$$
+$$\mathbf{X}_{\text{new}} = \mathbf{U} \mathbf{L}$$
 
-其中，$\\mathbf{U}$为选择的特征向量矩阵，$\\mathbf{L}$为特征值矩阵。
+其中，$\mathbf{U}$为选择的特征向量矩阵，$\mathbf{L}$为特征值矩阵。
 
 ### 4.3 案例分析与讲解
 
@@ -182,29 +182,29 @@ $$\\mathbf{X}_{\\text{new}} = \\mathbf{U} \\mathbf{L}$$
 
    用户年龄的均值为：
 
-   $$\\mu_{\\text{age}} = \\frac{18 + 20 + 25 + 30 + 35 + 40}{6} = 27.5$$
+   $$\mu_{\text{age}} = \frac{18 + 20 + 25 + 30 + 35 + 40}{6} = 27.5$$
 
    用户年龄的标准差为：
 
-   $$\\sigma_{\\text{age}} = \\sqrt{\\frac{(18 - 27.5)^2 + (20 - 27.5)^2 + (25 - 27.5)^2 + (30 - 27.5)^2 + (35 - 27.5)^2 + (40 - 27.5)^2}{6}} = 8.66$$
+   $$\sigma_{\text{age}} = \sqrt{\frac{(18 - 27.5)^2 + (20 - 27.5)^2 + (25 - 27.5)^2 + (30 - 27.5)^2 + (35 - 27.5)^2 + (40 - 27.5)^2}{6}} = 8.66$$
 
    用户评分的均值为：
 
-   $$\\mu_{\\text{rating}} = \\frac{3 + 4 + 2 + 5 + 3 + 1}{6} = 3.17$$
+   $$\mu_{\text{rating}} = \frac{3 + 4 + 2 + 5 + 3 + 1}{6} = 3.17$$
 
    用户评分的标准差为：
 
-   $$\\sigma_{\\text{rating}} = \\sqrt{\\frac{(3 - 3.17)^2 + (4 - 3.17)^2 + (2 - 3.17)^2 + (5 - 3.17)^2 + (3 - 3.17)^2 + (1 - 3.17)^2}{6}} = 1.27$$
+   $$\sigma_{\text{rating}} = \sqrt{\frac{(3 - 3.17)^2 + (4 - 3.17)^2 + (2 - 3.17)^2 + (5 - 3.17)^2 + (3 - 3.17)^2 + (1 - 3.17)^2}{6}} = 1.27$$
 
 2. 对用户年龄和用户评分进行归一化处理。
 
    归一化后的用户年龄为：
 
-   $$x_{\\text{norm}} = \\frac{x - \\mu_{\\text{age}}}{\\sigma_{\\text{age}}}$$
+   $$x_{\text{norm}} = \frac{x - \mu_{\text{age}}}{\sigma_{\text{age}}}$$
 
    归一化后的用户评分为：
 
-   $$x_{\\text{std}} = \\frac{x - \\mu_{\\text{rating}}}{\\sigma_{\\text{rating}}}$$
+   $$x_{\text{std}} = \frac{x - \mu_{\text{rating}}}{\sigma_{\text{rating}}}$$
 
    归一化后的数据如下：
 
@@ -271,7 +271,7 @@ pca = PCA(n_components=2)
 data_pca = pca.fit_transform(data_scaled)
 
 # 输出预处理后的数据
-print(\"预处理后的数据：\")
+print("预处理后的数据：")
 print(data_pca)
 ```
 

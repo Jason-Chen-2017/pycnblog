@@ -62,12 +62,10 @@ $$
 Adam优化算法是一种自适应学习率优化算法。其数学公式如下：
 
 $$
-m_t = \\beta_1m_{t-1} + (1-\\beta_1)(\\theta_{t-1} - \
-abla_{\\theta}L(x_{t-1}, y_{t-1}))
+m_t = \\beta_1m_{t-1} + (1-\\beta_1)(\\theta_{t-1} - \nabla_{\\theta}L(x_{t-1}, y_{t-1}))
 $$
 $$
-v_t = \\beta_2v_{t-1} + (1-\\beta_2)(\\theta_{t-1} - \
-abla_{\\theta}L(x_{t-1}, y_{t-1}))^2
+v_t = \\beta_2v_{t-1} + (1-\\beta_2)(\\theta_{t-1} - \nabla_{\\theta}L(x_{t-1}, y_{t-1}))^2
 $$
 $$
 \\theta_t = \\theta_{t-1} - \\frac{\\alpha}{\\sqrt{v_t + \\epsilon}}(m_t + \\epsilon)

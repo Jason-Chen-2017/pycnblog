@@ -89,15 +89,15 @@
 
 深度 Q-learning 可以通过以下公式进行数学建模：
 
-$$ Q(s, a) = \\mathbb{E}_{s'}[r + \\gamma \\max_{a'} Q(s', a')] $$
+$$ Q(s, a) = \mathbb{E}_{s'}[r + \gamma \max_{a'} Q(s', a')] $$
 
 其中：
 
-- \\( s \\) 是状态，
-- \\( a \\) 是动作，
-- \\( r \\) 是即时奖励，
-- \\( \\gamma \\) 是折扣因子（衡量未来奖励的重要性），
-- \\( \\max_{a'} Q(s', a') \\) 表示在下一个状态 \\( s' \\) 下所有可能动作 \\( a' \\) 的最大 Q-value。
+- \( s \) 是状态，
+- \( a \) 是动作，
+- \( r \) 是即时奖励，
+- \( \gamma \) 是折扣因子（衡量未来奖励的重要性），
+- \( \max_{a'} Q(s', a') \) 表示在下一个状态 \( s' \) 下所有可能动作 \( a' \) 的最大 Q-value。
 
 ### 4.2 公式推导过程
 
@@ -138,11 +138,11 @@ class DQN:
         self.epsilon = epsilon
         self.batch_size = batch_size
         self.memory = []
-        
+
         self.model = self.build_model()
         self.target_model = self.build_model()
         self.update_target_network()
-        
+
     def build_model(self):
         model = tf.keras.models.Sequential([
             tf.keras.layers.Dense(64, activation='relu', input_shape=(self.state_size,)),
@@ -151,12 +151,12 @@ class DQN:
         ])
         model.compile(optimizer=tf.optimizers.Adam(learning_rate=self.learning_rate), loss='mse')
         return model
-    
+
     def remember(self, state, action, reward, next_state, done):
         self.memory.append((state, action, reward, next_state, done))
         if len(self.memory) > self.batch_size:
             self.memory.pop(0)
-    
+
     def choose_action(self, state):
         if np.random.uniform(0, 1) < self.epsilon:
             return np.random.randint(self.action_size)
@@ -164,27 +164,27 @@ class DQN:
             state = np.array([state])
             q_values = self.model.predict(state)[0]
             return np.argmax(q_values)
-    
+
     def learn(self):
         if len(self.memory) < self.batch_size:
             return
-        
+
         minibatch = np.array(random.sample(self.memory, self.batch_size))
         states = np.array([sample[0] for sample in minibatch])
         actions = np.array([sample[1] for sample in minibatch])
         rewards = np.array([sample[2] for sample in minibatch])
         next_states = np.array([sample[3] for sample in minibatch])
         dones = np.array([sample[4] for sample in minibatch])
-        
+
         target_q_values = self.target_model.predict(states)
         next_q_values = self.target_model.predict(next_states)
         updated_q_values = rewards + self.gamma * np.max(next_q_values, axis=1)
-        
+
         for i in range(self.batch_size):
             target_q_values[i][actions[i]] = updated_q_values[i]
-            
+
         self.model.fit(states, target_q_values, epochs=1, verbose=0)
-        
+
     def update_target_network(self):
         self.target_model.set_weights(self.model.get_weights())
 ```

@@ -71,27 +71,27 @@ RoBERTa广泛应用于自然语言处理的多个领域，包括但不限于：
 
 RoBERTa基于Transformer架构，其核心数学模型可以表示为：
 
-$$ \\text{RoBERTa}(x) = \\text{Transformer}(\\text{Embedding}(x), \\text{PositionalEncoding}(x), \\text{MultiHeadAttention}(x), \\text{FeedForward}(x)) $$
+$$ \text{RoBERTa}(x) = \text{Transformer}(\text{Embedding}(x), \text{PositionalEncoding}(x), \text{MultiHeadAttention}(x), \text{FeedForward}(x)) $$
 
 其中，
 
-- $\\text{Embedding}(x)$ 是将输入$x$映射到向量空间的函数。
-- $\\text{PositionalEncoding}(x)$ 是添加位置信息的函数，用于捕捉序列位置的特征。
-- $\\text{MultiHeadAttention}(x)$ 是多头注意力机制，允许模型同时关注多个位置之间的关系。
-- $\\text{FeedForward}(x)$ 是前馈神经网络，用于处理经过多头注意力后的信息。
+- $\text{Embedding}(x)$ 是将输入$x$映射到向量空间的函数。
+- $\text{PositionalEncoding}(x)$ 是添加位置信息的函数，用于捕捉序列位置的特征。
+- $\text{MultiHeadAttention}(x)$ 是多头注意力机制，允许模型同时关注多个位置之间的关系。
+- $\text{FeedForward}(x)$ 是前馈神经网络，用于处理经过多头注意力后的信息。
 
 ### 4.2 公式推导过程
 
 在Transformer架构中，多头注意力机制的计算可以表示为：
 
-$$ \\text{MultiHeadAttention}(Q, K, V) = \\text{Concat}(\\text{head}_1, \\text{head}_2, \\ldots, \\text{head}_h)W^O $$
+$$ \text{MultiHeadAttention}(Q, K, V) = \text{Concat}(\text{head}_1, \text{head}_2, \ldots, \text{head}_h)W^O $$
 
 其中，
 
 - $Q$、$K$、$V$ 分别是查询、键、值向量。
 - $W^Q$、$W^K$、$W^V$ 是权重矩阵。
 - $W^O$ 是输出权重矩阵。
-- $\\text{head}_i = \\text{Attention}(Q_i, K_i, V_i)$，其中 $\\text{Attention}(Q_i, K_i, V_i)$ 表示单个头的注意力计算。
+- $\text{head}_i = \text{Attention}(Q_i, K_i, V_i)$，其中 $\text{Attention}(Q_i, K_i, V_i)$ 表示单个头的注意力计算。
 
 ### 4.3 案例分析与讲解
 
@@ -123,7 +123,7 @@ config = RobertaConfig.from_pretrained('roberta-base')
 model = RobertaModel(config)
 
 # 假设输入为文本列表
-texts = [\"Hello, world!\", \"Welcome to RoBERTa.\"]
+texts = ["Hello, world!", "Welcome to RoBERTa."]
 
 # 编码文本
 encoded_texts = model.encode(texts)

@@ -24,12 +24,12 @@ Eilenberg-MacLane空间的研究对于推动数学理论的发展具有重要意
 
 Eilenberg-MacLane空间是一种特殊的拓扑空间，它的同调群在某个特定维度上非零，而在所有其他维度上都为零。形式上，对于某个群$G$和整数$n$，Eilenberg-MacLane空间$K(G,n)$满足以下性质：
 
-$$H_k(K(G,n),\\mathbb{Z}) = \\begin{cases} 
-G & \\text{if } k=n \\\\
-0 & \\text{otherwise}
-\\end{cases}$$
+$$H_k(K(G,n),\mathbb{Z}) = \begin{cases}
+G & \text{if } k=n \\\
+0 & \text{otherwise}
+\end{cases}$$
 
-这里的$H_k$表示$k$维的同调群，$\\mathbb{Z}$表示整数环。
+这里的$H_k$表示$k$维的同调群，$\mathbb{Z}$表示整数环。
 
 ### 2.2 Eilenberg-MacLane空间与同调群的关系
 
@@ -87,7 +87,7 @@ Eilenberg-MacLane空间的应用广泛，特别是在代数拓扑、几何拓扑
 
 #### 步骤1：选择$n$维球面$S^n$
 
-选取$n$维球面$S^n$作为$n$维细胞，其同伦群为$\\mathbb{Z}$。
+选取$n$维球面$S^n$作为$n$维细胞，其同伦群为$\mathbb{Z}$。
 
 #### 步骤2：添加$m$维细胞
 
@@ -103,16 +103,16 @@ Eilenberg-MacLane空间的应用广泛，特别是在代数拓扑、几何拓扑
 
 假设我们正在构建一个Eilenberg-MacLane空间$K(G,n)$，其中$G$是群，$n$是正整数。我们通过CW复形的结构来构建这个空间，其中$n$维球面$S^n$构成了$n$维细胞。为了确保空间在$n$维上的同调群为$G$，我们还需要添加$m$维细胞，其中$m > n$。这样构建的空间满足：
 
-$$H_k(K(G,n),\\mathbb{Z}) = \\begin{cases} 
-G & \\text{if } k=n \\\\
-0 & \\text{otherwise}
-\\end{cases}$$
+$$H_k(K(G,n),\mathbb{Z}) = \begin{cases}
+G & \text{if } k=n \\\
+0 & \text{otherwise}
+\end{cases}$$
 
 ### 4.3 案例分析与讲解
 
 #### 案例分析
 
-考虑群$G = \\mathbb{Z}/2\\mathbb{Z}$（模2群），我们要构建一个Eilenberg-MacLane空间$K(\\mathbb{Z}/2\\mathbb{Z},1)$。在这个例子中，我们选择$n=1$，意味着我们需要一个空间在第一维上有非零同调群，而在其他维度上为零。我们可以选择两个$m$维球面$S^1$（也就是圆环）来构成这个空间，其中$m=2$。在这种情况下，空间$K(\\mathbb{Z}/2\\mathbb{Z},1)$实际上是一个莫比乌斯带。
+考虑群$G = \mathbb{Z}/2\mathbb{Z}$（模2群），我们要构建一个Eilenberg-MacLane空间$K(\mathbb{Z}/2\mathbb{Z},1)$。在这个例子中，我们选择$n=1$，意味着我们需要一个空间在第一维上有非零同调群，而在其他维度上为零。我们可以选择两个$m$维球面$S^1$（也就是圆环）来构成这个空间，其中$m=2$。在这种情况下，空间$K(\mathbb{Z}/2\mathbb{Z},1)$实际上是一个莫比乌斯带。
 
 ### 4.4 常见问题解答
 
@@ -120,7 +120,7 @@ G & \\text{if } k=n \\\\
 
 - **如何选择合适的$m$？**
   选择$m$时需要考虑群$G$的性质和$n$的值。通常，$m$应大于$n$，并且$m$的选择直接影响到空间的同调群结构。
-  
+
 - **为什么$m$维细胞在$n$维上的映射会产生$G$的同调群？**
   这是因为$m$维细胞的边界映射和复合映射的设计确保了在$n$维上的同调群为$G$，而其他维度上的同调群为零。
 
@@ -141,14 +141,14 @@ G & \\text{if } k=n \\\\
 import numpy as np
 
 def construct_eilenberg_mac_lane_space(g, n):
-    \"\"\"
+    """
     构建Eilenberg-MacLane空间。
     参数:
         g: 群G的实例或描述。
         n: 整数，表示空间的维度。
     返回:
         一个表示Eilenberg-MacLane空间的拓扑结构。
-    \"\"\"
+    """
     # 这里可以使用numpy数组或其他库来构建CW复形的结构。
     # 实际实现会涉及到更多的拓扑学和代数结构的计算。
     # 示例代码仅为说明，实际实现需更详细的数学处理和代码编写。
@@ -191,7 +191,7 @@ Eilenberg-MacLane空间在理论物理、数学物理、数据科学等领域有
 
 ### 7.3 相关论文推荐
 
-- **经典论文**：Eilenberg和Mac Lane的“On the groups $H(\\Pi,n)$”和“Group extensions and homology”
+- **经典论文**：Eilenberg和Mac Lane的“On the groups $H(\Pi,n)$”和“Group extensions and homology”
 - **最新研究**：Google Scholar上的相关论文搜索，关注领域内的前沿研究
 
 ### 7.4 其他资源推荐

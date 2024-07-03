@@ -57,7 +57,7 @@
 在这个模型中，选择器的函数可以表示为：
 
 $$
-f(x) = \begin{cases} 
+f(x) = \begin{cases}
 1 & \text{if } x \text{ satisfies the selection condition} \\
 0 & \text{otherwise}
 \end{cases}
@@ -70,7 +70,7 @@ $$
 例如，假设我们有一个代码片段集合 {a, b, c, d}，其中 a 和 b 是函数，c 和 d 是变量。我们的选择条件是“选择所有的函数”。那么，选择器的函数就可以表示为：
 
 $$
-f(x) = \begin{cases} 
+f(x) = \begin{cases}
 1 & \text{if } x \text{ is a function} \\
 0 & \text{otherwise}
 \end{cases}

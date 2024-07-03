@@ -1,6 +1,6 @@
 ##  【大模型应用开发 动手做AI Agent】提示工程、RAG与微调
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 **引言：**
 
@@ -615,4 +615,4 @@ AI Agent的发展也面临着一些挑战：
 * **AI Agent会取代人类吗？**
     * AI Agent不会取代人类，而是会与人类合作，共同创造更加美好的未来。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

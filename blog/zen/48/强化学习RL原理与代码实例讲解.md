@@ -178,7 +178,7 @@ class QNetwork(nn.Module):
         super(QNetwork, self).__init__()
         self.fc1 = nn.Linear(state_dim, hidden_dim)
         self.fc2 = nn.Linear(hidden_dim, action_dim)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)
@@ -189,18 +189,18 @@ def train(q_network, optimizer, criterion, memory, batch_size=64, gamma=0.99):
     for _ in range(batch_size):
         # 从记忆中随机抽取一批样本
         states, actions, rewards, next_states, dones = memory.sample(batch_size)
-        
+
         # 计算Q值预测
         q_values = q_network(states)
         q_values = q_values.gather(1, actions.unsqueeze(1)).squeeze(1)
-        
+
         # 计算目标Q值
         next_q_values = q_network(next_states).max(1)[0]
         target_q_values = rewards + (1 - dones) * gamma * next_q_values
-        
+
         # 计算损失
         loss = criterion(q_values, target_q_values)
-        
+
         # 更新参数
         optimizer.zero_grad()
         loss.backward()
@@ -231,13 +231,13 @@ for episode in range(1000):
         action = torch.argmax(q_values).item()
         next_state, reward, done, _ = env.step(action)
         total_reward += reward
-        
+
         # 存储样本
         memory.push(state, action, reward, next_state, done)
-        
+
         # 更新Q网络
         train(q_network, optimizer, criterion, memory)
-        
+
     print(f"Episode {episode}, Total Reward: {total_reward}")
 ```
 

@@ -144,7 +144,7 @@ class S_q_2:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-    
+
     def _mul_(self, other):
         return q * self.x * other.y
 

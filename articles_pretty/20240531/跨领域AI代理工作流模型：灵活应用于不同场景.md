@@ -16,11 +16,9 @@
 ## 4.数学模型和公式详细讲解举例说明
 以元学习中的模型为例，其数学模型可以表示为：
 $$
-\\theta = \\theta_0 + \\alpha \
-abla_{\\theta_0} L(\\mathcal{D}, \\theta_0)
+\\theta = \\theta_0 + \\alpha \nabla_{\\theta_0} L(\\mathcal{D}, \\theta_0)
 $$
-其中，$\\theta$ 是模型的参数向量，$\\theta_0$ 是预训练的参数，$\\alpha$ 是学习率，$\
-abla_{\\theta_0} L(\\mathcal{D}, \\theta_0)$ 是关于数据集 $\\mathcal{D}$ 的损失函数 $L$ 对 $\\theta_0$ 的梯度。通过这个公式，模型可以在新任务上快速调整其参数，实现跨领域的知识迁移。
+其中，$\\theta$ 是模型的参数向量，$\\theta_0$ 是预训练的参数，$\\alpha$ 是学习率，$\nabla_{\\theta_0} L(\\mathcal{D}, \\theta_0)$ 是关于数据集 $\\mathcal{D}$ 的损失函数 $L$ 对 $\\theta_0$ 的梯度。通过这个公式，模型可以在新任务上快速调整其参数，实现跨领域的知识迁移。
 
 ## 5.项目实践：代码实例和详细解释说明
 以下是一个简单的Python示例，展示如何使用PyTorch框架实现一个基于元学习的跨领域AI代理工作流模型：

@@ -20,7 +20,7 @@
 #### 2.1.2 训练数据与模型架构
 #### 2.1.3 预训练与微调
 ### 2.2 自主Agent系统
-#### 2.2.1 定义与特点  
+#### 2.2.1 定义与特点
 #### 2.2.2 自主性与目标导向
 #### 2.2.3 知识表示与推理能力
 ### 2.3 大语言模型与自主Agent系统的关系
@@ -58,7 +58,7 @@ D --> E[智能化交互]
 $$
 \begin{aligned}
 \mathbf{Q} &= \mathbf{X} \mathbf{W}^Q \\
-\mathbf{K} &= \mathbf{X} \mathbf{W}^K \\ 
+\mathbf{K} &= \mathbf{X} \mathbf{W}^K \\
 \mathbf{V} &= \mathbf{X} \mathbf{W}^V \\
 \text{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) &= \text{softmax}(\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{d_k}})\mathbf{V}
 \end{aligned}
@@ -88,11 +88,11 @@ $$
 
 其中，$\mathcal{M}$表示被掩码的单词集合，$\mathbf{x}_{\backslash \mathcal{M}}$表示去掉掩码单词后的输入序列。
 
-#### 4.2.2 下一句预测(NSP)  
+#### 4.2.2 下一句预测(NSP)
 NSP的目标是预测两个句子是否相邻，其损失函数为：
 
 $$
-\mathcal{L}_{NSP} = -\log P(y | \mathbf{x}_1, \mathbf{x}_2) 
+\mathcal{L}_{NSP} = -\log P(y | \mathbf{x}_1, \mathbf{x}_2)
 $$
 
 其中，$y \in \{0, 1\}$表示两个句子$\mathbf{x}_1$和$\mathbf{x}_2$是否相邻。
@@ -111,7 +111,7 @@ $$
 Actor-Critic算法结合了值函数和策略函数，其中Actor根据当前状态输出动作，Critic估计状态的值函数。Actor的策略梯度为：
 
 $$
-\nabla_{\theta} J(\theta) = \mathbb{E}_{s_t, a_t \sim \pi_{\theta}}[\nabla_{\theta} \log \pi_{\theta}(a_t | s_t) A(s_t, a_t)]  
+\nabla_{\theta} J(\theta) = \mathbb{E}_{s_t, a_t \sim \pi_{\theta}}[\nabla_{\theta} \log \pi_{\theta}(a_t | s_t) A(s_t, a_t)]
 $$
 
 其中，$A(s_t, a_t)$表示优势函数，即当前动作相对于平均动作的优势。
@@ -183,11 +183,11 @@ class MyEnv(gym.Env):
     def __init__(self, config):
         # 初始化环境
         pass
-    
+
     def reset(self):
         # 重置环境状态
         return obs
-    
+
     def step(self, action):
         # 执行动作并返回下一状态、奖励等
         return obs, reward, done, info
@@ -198,7 +198,7 @@ class MyModel(TorchModelV2, nn.Module):
         super().__init__(obs_space, action_space, num_outputs, model_config, name)
         # 定义模型结构
         pass
-    
+
     def forward(self, input_dict, state, seq_lens):
         # 前向传播
         return outputs, state

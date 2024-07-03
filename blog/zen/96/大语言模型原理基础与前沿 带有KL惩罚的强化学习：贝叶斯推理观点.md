@@ -169,15 +169,15 @@ class KLPenaltyRL(nn.Module):
         self.model = GPT2LMHeadModel.from_pretrained(model_name)
         self.device = device
         self.model.to(device)
-        
+
     def forward(self, input_ids, labels=None):
         outputs = self.model(input_ids=input_ids, labels=labels)
         return outputs.loss
-    
+
     def kl_penalty(self, prior, posterior):
         kl_div = nn.functional.kl_div(posterior.log_probs(), prior, reduction='batchmean')
         return kl_div
-    
+
     def train(self, data_loader, optimizer, kl_coefficient=0.01):
         self.model.train()
         for epoch in range(num_epochs):

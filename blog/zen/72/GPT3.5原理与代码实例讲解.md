@@ -46,7 +46,7 @@ GPT-3.5的核心在于自注意力机制，它允许模型在处理文本时关�
 
 #### 输入预处理：
 - 将输入文本序列化为tokens，通常采用预训练模型的词表进行映射。
-  
+
 #### 编码过程：
 - 通过多层自注意力机制，模型在每个位置上获取周围信息，形成一个表示向量。
 - 应用前馈神经网络（Feed-Forward Networks, FFNs）对表示向量进行非线性变换，增强模型的表达能力。
@@ -108,7 +108,7 @@ $$S^{(i)} = \text{ScaledDotProductAttention}(x^{(i)}, x^{(i)}, x^{(i)})$$
 
 最后，将$m$个头的结果拼接起来：
 
-$$S = \begin{bmatrix} S^{(1)} \\ S^{(2)} \\ ... \\ S^{(m)} \end{bmatrix}$$
+$$S = \begin{bmatrix} S^{(1)} \ S^{(2)} \ ... \ S^{(m)} \end{bmatrix}$$
 
 ### 4.3 案例分析与讲解
 
@@ -134,7 +134,7 @@ class MultiHeadAttention(torch.nn.Module):
         q = q.view(batch_size, seq_len, self.num_heads, self.head_size).transpose(1, 2)
         k = k.view(batch_size, seq_len, self.num_heads, self.head_size).transpose(1, 2)
         v = v.view(batch_size, seq_len, self.num_heads, self.head_size).transpose(1, 2)
-        
+
         scores = torch.matmul(q, k.transpose(-2, -1)) / math.sqrt(self.head_size)
         if mask is not None:
             scores = scores.masked_fill(mask == 0, float('-inf'))

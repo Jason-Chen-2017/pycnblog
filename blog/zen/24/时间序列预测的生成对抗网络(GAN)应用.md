@@ -1,4 +1,4 @@
-                 
+
 # 时间序列预测的生成对抗网络(GAN)应用
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -170,7 +170,7 @@ if __name__ == "__main__":
     latent_dim = 100  # 调整潜在空间大小
     generator = define_generator(latent_dim)
     discriminator = define_discriminator()
-    
+
     # 使用Adam优化器
     opt = Adam(lr=0.0002, beta_1=0.5)
     discriminator.compile(loss='binary_crossentropy', optimizer=opt)

@@ -2,7 +2,7 @@
 
 ## 1. 背景介绍
 ### 1.1 人工智能的发展历程
-### 1.2 大语言模型的兴起 
+### 1.2 大语言模型的兴起
 ### 1.3 自主Agent系统的概念与意义
 
 ## 2. 核心概念与联系
@@ -51,13 +51,13 @@ $\nabla_{\theta}J(\pi_{\theta}) = E_{\tau\sim\pi_{\theta}}[\sum_{t=0}^{T}\nabla_
 
 ```python
 # 加载预训练的BERT模型
-model = BertForSequenceClassification.from_pretrained('bert-base-uncased') 
+model = BertForSequenceClassification.from_pretrained('bert-base-uncased')
 
 # 准备微调数据集
 train_dataset = MyDataset(...)
 train_dataloader = DataLoader(train_dataset, batch_size=32, shuffle=True)
 
-# 定义优化器和损失函数  
+# 定义优化器和损失函数
 optimizer = AdamW(model.parameters(), lr=2e-5)
 criterion = nn.CrossEntropyLoss()
 
@@ -85,7 +85,7 @@ class DialogueEnv(gym.Env):
         ...
     def step(self, action):
         ...
-        
+
 # 定义策略网络
 class PolicyNetwork(tf.keras.Model):
     def __init__(self):
@@ -93,19 +93,19 @@ class PolicyNetwork(tf.keras.Model):
     def call(self, state):
         ...
 
-# 创建环境和策略网络        
-env = DialogueEnv()  
+# 创建环境和策略网络
+env = DialogueEnv()
 policy_net = PolicyNetwork()
 
 # 使用PPO算法训练策略
 for iteration in range(1000):
     states, actions, rewards = collect_dialogue(env, policy_net)
-    with tf.GradientTape() as tape:  
+    with tf.GradientTape() as tape:
         logits = policy_net(states)
         dist = tfp.distributions.Categorical(logits=logits)
         log_probs = dist.log_prob(actions)
         loss = -tf.reduce_mean(log_probs * rewards)
-    grads = tape.gradient(loss, policy_net.trainable_variables)  
+    grads = tape.gradient(loss, policy_net.trainable_variables)
     optimizer.apply_gradients(zip(grads, policy_net.trainable_variables))
 ```
 
@@ -129,7 +129,7 @@ for iteration in range(1000):
 
 ### 7.2 对话系统开发框架
 - Rasa: https://rasa.com/
-- DeepPavlov: https://deeppavlov.ai/ 
+- DeepPavlov: https://deeppavlov.ai/
 - ParlAI: https://parl.ai/
 
 ### 7.3 知识图谱构建工具

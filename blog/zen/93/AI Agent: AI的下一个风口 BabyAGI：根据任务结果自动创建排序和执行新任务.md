@@ -156,7 +156,7 @@ $$
 2. **策略迭代（Policy Iteration）**：
 
 $$
-\pi^* = \arg\max_{\pi} \{E_{\pi} [R(s, a) + \gamma V(s')] \mid s'\} 
+\pi^* = \arg\max_{\pi} \{E_{\pi} [R(s, a) + \gamma V(s')] \mid s'\}
 $$
 
 其中 $\pi$ 为策略，表示智能体在状态 $s$ 下执行动作 $a$ 的概率。

@@ -23,7 +23,7 @@ LangChain的研究具有重要意义:
 - 第4部分:数学模型和公式详解
 - 第5部分:项目实践 - 代码实例和详细解释
 - 第6部分:实际应用场景
-- 第7部分:工具和资源推荐 
+- 第7部分:工具和资源推荐
 - 第8部分:总结与未来展望
 - 第9部分:附录 - 常见问题解答
 
@@ -43,7 +43,7 @@ LangChain的核心概念包括:
 ```mermaid
 graph LR
     A[Language Model] --> B[Prompt Template]
-    C[Document Loader] --> D[Text Splitter] 
+    C[Document Loader] --> D[Text Splitter]
     D --> E[Vector Store]
     E --> F[Index]
     B --> G[Chain]
@@ -56,7 +56,7 @@ graph LR
 ### 3.1 算法原理概述
 LangChain的核心算法包括:
 
-1. 文本嵌入(Text Embedding):将文本转换为密集向量表示,捕捉语义信息。常用算法有Word2Vec、GloVe、BERT等。 
+1. 文本嵌入(Text Embedding):将文本转换为密集向量表示,捕捉语义信息。常用算法有Word2Vec、GloVe、BERT等。
 
 2. 向量相似度(Vector Similarity):计算两个向量之间的相似度,常用的度量有欧氏距离、余弦相似度等。
 
@@ -83,7 +83,7 @@ LangChain的核心算法包括:
 - 基于海量知识的问答和任务执行能力
 
 缺点:
-- 对计算和存储资源要求较高  
+- 对计算和存储资源要求较高
 - 语言模型的推理能力有限,可能生成不恰当内容
 - 处理速度取决于数据量和模型复杂度
 
@@ -126,7 +126,7 @@ $$log P(w_t|context(w_t))=log \sigma(u_{w_t}^Tv_c)+\sum_{i=1}^kE_{w_i\sim P_n(w)
 
 1. 构建词表:V={the, quick, brown, fox, jumps, over, lazy, dog}
 2. 定义上下文窗口大小,如window=2
-3. 选择目标词,如"fox",其上下文为{quick, brown, jumps, over} 
+3. 选择目标词,如"fox",其上下文为{quick, brown, jumps, over}
 4. 通过CBOW模型计算$P("fox"|{quick, brown, jumps, over})$
 5. 计算损失并更新目标词和上下文词的嵌入向量
 6. 重复步骤3-5,直到遍历完所有目标词
@@ -137,7 +137,7 @@ $$log P(w_t|context(w_t))=log \sigma(u_{w_t}^Tv_c)+\sum_{i=1}^kE_{w_i\sim P_n(w)
 Q: Word2Vec能否处理未登录词(OOV)?
 A: 传统Word2Vec不能直接处理OOV,但可以通过字符级嵌入、子词嵌入等方法解决。现在主流的BERT等模型使用WordPiece或BPE等分词算法,可以更好地处理OOV问题。
 
-Q: 向量维度对模型性能有何影响?  
+Q: 向量维度对模型性能有何影响?
 A: 通常维度越高,表达能力越强,但过高的维度也可能带来过拟合风险和计算开销。一般选择256-512维。
 
 Q: 哪些因素影响嵌入向量的质量?
@@ -207,6 +207,6 @@ print(result)
 LangChain在许多场景中都有广泛应用,例如:
 
 - 智能客服:利用LangChain搭建知识库问答系统,自动解答用户咨询,提升服务效率。
-- 个人助理:通过LangChain连接日历、邮件等API,让语言模型理解用户指令并自主完成任务。  
+- 个人助理:通过LangChain连接日历、邮件等API,让语言模型理解用户指令并自主完成任务。
 - 文档智能:用LangChain对文档进行语义索引,实现智能搜索和问答。
 - 行业应用:如金融领域的智

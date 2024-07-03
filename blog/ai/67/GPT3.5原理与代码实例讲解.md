@@ -275,7 +275,7 @@ A：残差连接是一种网络结构，通过添加输入序列的直接映射�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 

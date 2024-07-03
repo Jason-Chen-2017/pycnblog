@@ -32,7 +32,7 @@ graph TD
 A[智能代理] -->|依赖| B(深度学习模型)
 B -->|可能出现| C{异常和错误}
 C -->|需要| D[异常处理]
-C -->|需要| E[容错机制] 
+C -->|需要| E[容错机制]
 D -->|提高| F(系统鲁棒性)
 E -->|提高| F
 ```
@@ -146,7 +146,7 @@ $$
 
 ### 4.3 案例分析与讲解
 
-下面以一个简单的二维数据集为例,演示高斯分布异常检测的过程。假设有100个正常样本,服从均值为 $[0, 0]^\top$、协方差矩阵为 $\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$ 的高斯分布,如下图所示:
+下面以一个简单的二维数据集为例,演示高斯分布异常检测的过程。假设有100个正常样本,服从均值为 $[0, 0]^\top$、协方差矩阵为 $\begin{bmatrix} 1 & 0 \ 0 & 1 \end{bmatrix}$ 的高斯分布,如下图所示:
 
 ```python
 import numpy as np
@@ -154,7 +154,7 @@ import matplotlib.pyplot as plt
 
 # 生成正常样本
 mean = [0, 0]
-cov = [[1, 0], [0, 1]]  
+cov = [[1, 0], [0, 1]]
 normal_samples = np.random.multivariate_normal(mean, cov, 100)
 
 # 绘制散点图
@@ -173,7 +173,7 @@ plt.show()
 mu = np.mean(normal_samples, axis=0)
 sigma = np.cov(normal_samples, rowvar=False)
 
-print(f'Estimated mean: {mu}')  
+print(f'Estimated mean: {mu}')
 print(f'Estimated covariance matrix: \n{sigma}')
 ```
 
@@ -181,5 +181,5 @@ print(f'Estimated covariance matrix: \n{sigma}')
 
 ```
 Estimated mean: [0.01691816 0.08027708]
-Estimated covariance matrix: 
+Estimated covariance matrix:
 [[1.

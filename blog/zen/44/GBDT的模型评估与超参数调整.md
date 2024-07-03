@@ -58,8 +58,7 @@ $$\hat{y}^{(0)} = \mu$$
 
 使用梯度下降法计算损失函数的梯度，并更新模型参数。
 
-$$\theta^{(t+1)} = \theta^{(t)} - \alpha \cdot \
-abla_{\theta^{(t)}} L(y, \hat{y}^{(t)})$$
+$$\theta^{(t+1)} = \theta^{(t)} - \alpha \cdot \nabla_{\theta^{(t)}} L(y, \hat{y}^{(t)})$$
 
 其中，$\alpha$为学习率，$L(y, \hat{y}^{(t)})$为损失函数。
 
@@ -110,8 +109,7 @@ $$y = f(x) = \sum_{i=1}^T w_i h(x; \theta_i)$$
 
 梯度下降法用于优化决策树的预测误差，公式如下：
 
-$$\theta^{(t+1)} = \theta^{(t)} - \alpha \cdot \
-abla_{\theta^{(t)}} L(y, \hat{y}^{(t)})$$
+$$\theta^{(t+1)} = \theta^{(t)} - \alpha \cdot \nabla_{\theta^{(t)}} L(y, \hat{y}^{(t)})$$
 
 其中，$\alpha$为学习率，$L(y, \hat{y}^{(t)})$为损失函数。
 
@@ -122,14 +120,11 @@ GBDT算法的公式推导过程涉及到梯度下降法和决策树模型。以�
 1. 假设目标函数为损失函数$L(y, \hat{y})$，其中$\hat{y} = \sum_{i=1}^T w_i h(x; \theta_i)$为GBDT模型的预测结果。
 2. 计算损失函数的梯度：
 
-$$\
-abla_{\theta^{(t)}} L(y, \hat{y}^{(t)}) = \
-abla_{\theta^{(t)}} \left( L(y, \sum_{i=1}^T w_i h(x; \theta_i)) \right)$$
+$$\nabla_{\theta^{(t)}} L(y, \hat{y}^{(t)}) = \nabla_{\theta^{(t)}} \left( L(y, \sum_{i=1}^T w_i h(x; \theta_i)) \right)$$
 
 3. 使用梯度下降法更新决策树参数：
 
-$$\theta^{(t+1)} = \theta^{(t)} - \alpha \cdot \
-abla_{\theta^{(t)}} L(y, \hat{y}^{(t)})$$
+$$\theta^{(t+1)} = \theta^{(t)} - \alpha \cdot \nabla_{\theta^{(t)}} L(y, \hat{y}^{(t)})$$
 
 ### 4.3 案例分析与讲解
 

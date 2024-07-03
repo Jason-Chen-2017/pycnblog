@@ -57,9 +57,7 @@
 1. 初始化策略参数$\\theta$。
 2. 在环境中采样一个状态序列$S_1, S_2, \\dots, S_T$和动作序列$A_1, A_2, \\dots, A_T$。
 3. 计算状态-动作对$(S_t, A_t)$的回报$R_t$。
-4. 计算策略梯度$\
-abla_{\\theta} J(\\theta) = \
-abla_{\\theta} \\sum_{t=1}^T R_t$。
+4. 计算策略梯度$\nabla_{\\theta} J(\\theta) = \nabla_{\\theta} \\sum_{t=1}^T R_t$。
 5. 使用梯度下降或其他优化方法更新策略参数$\\theta$。
 
 ### 3.2 算法步骤详解
@@ -67,8 +65,7 @@ abla_{\\theta} \\sum_{t=1}^T R_t$。
 1. **初始化策略参数**：使用随机初始化或预训练方法初始化策略参数$\\theta$。
 2. **采样状态-动作对**：在环境中执行策略$\\pi(\\cdot|\\theta)$，从状态空间中采样状态序列$S_1, S_2, \\dots, S_T$，并根据策略$\\pi$从动作空间中采样动作序列$A_1, A_2, \\dots, A_T$。
 3. **计算回报**：计算每个状态-动作对的回报$R_t$。
-4. **计算策略梯度**：根据回报序列和策略梯度定义，计算策略梯度$\
-abla_{\\theta} J(\\theta)$。
+4. **计算策略梯度**：根据回报序列和策略梯度定义，计算策略梯度$\nabla_{\\theta} J(\\theta)$。
 5. **更新策略参数**：使用梯度下降或其他优化方法更新策略参数$\\theta$，以提升策略性能。
 
 ### 3.3 算法优缺点
@@ -99,9 +96,7 @@ abla_{\\theta} J(\\theta)$。
 
 策略梯度算法的数学模型可以表示为以下形式：
 
-$$\
-abla_{\\theta} J(\\theta) = \\sum_{t=1}^T \
-abla_{\\theta} \\log \\pi(\\theta; S_t, A_t) R_t$$
+$$\nabla_{\\theta} J(\\theta) = \\sum_{t=1}^T \nabla_{\\theta} \\log \\pi(\\theta; S_t, A_t) R_t$$
 
 其中：
 
@@ -115,8 +110,7 @@ abla_{\\theta} \\log \\pi(\\theta; S_t, A_t) R_t$$
 
 1. **策略梯度定义**：
 
-$$\
-abla_{\\theta} \\log \\pi(\\theta; S_t, A_t) = \\frac{\\partial}{\\partial \\theta} \\log \\pi(\\theta; S_t, A_t)$$
+$$\nabla_{\\theta} \\log \\pi(\\theta; S_t, A_t) = \\frac{\\partial}{\\partial \\theta} \\log \\pi(\\theta; S_t, A_t)$$
 
 2. **期望回报**：
 
@@ -124,9 +118,7 @@ $$J(\\theta) = \\sum_{t=1}^T \\sum_{a \\in A(S_t)} \\pi(\\theta; S_t, a) R_t$$
 
 3. **策略梯度**：
 
-$$\
-abla_{\\theta} J(\\theta) = \\sum_{t=1}^T \\sum_{a \\in A(S_t)} \\pi(\\theta; S_t, a) \
-abla_{\\theta} \\log \\pi(\\theta; S_t, a) R_t$$
+$$\nabla_{\\theta} J(\\theta) = \\sum_{t=1}^T \\sum_{a \\in A(S_t)} \\pi(\\theta; S_t, a) \nabla_{\\theta} \\log \\pi(\\theta; S_t, a) R_t$$
 
 ### 4.3 案例分析与讲解
 
@@ -139,13 +131,9 @@ abla_{\\theta} \\log \\pi(\\theta; S_t, a) R_t$$
 3. **计算回报**：根据状态-动作对$(S_t, A_t)$和奖励函数，计算回报$R_t$。
 4. **计算策略梯度**：
 
-$$\
-abla_{w_0} J(w_0, w_1) = \\sum_{t=1}^T \
-abla_{w_0} \\log \\pi(w_0, w_1; S_t, A_t) R_t = \\sum_{t=1}^T R_t$$
+$$\nabla_{w_0} J(w_0, w_1) = \\sum_{t=1}^T \nabla_{w_0} \\log \\pi(w_0, w_1; S_t, A_t) R_t = \\sum_{t=1}^T R_t$$
 
-$$\
-abla_{w_1} J(w_0, w_1) = \\sum_{t=1}^T \
-abla_{w_1} \\log \\pi(w_0, w_1; S_t, A_t) R_t = \\sum_{t=1}^T R_t S_t$$
+$$\nabla_{w_1} J(w_0, w_1) = \\sum_{t=1}^T \nabla_{w_1} \\log \\pi(w_0, w_1; S_t, A_t) R_t = \\sum_{t=1}^T R_t S_t$$
 
 5. **更新策略参数**：使用梯度下降或其他优化方法更新策略参数$w_0$和$w_1$。
 

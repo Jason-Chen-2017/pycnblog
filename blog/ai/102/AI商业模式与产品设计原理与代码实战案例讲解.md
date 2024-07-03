@@ -333,4 +333,4 @@ A: AI 在某些方面可以取代人类的工作，例如重复性劳动、数�
 
 A: AI 的未来发展方向包括：更加通用的人工智能、更加安全可靠的人工智能、更加人性化的人工智能等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

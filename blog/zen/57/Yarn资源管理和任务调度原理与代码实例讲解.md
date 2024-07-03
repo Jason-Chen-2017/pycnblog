@@ -13,7 +13,7 @@
 ## 2. 核心概念与联系
 ### 2.1 Yarn的架构设计
 #### 2.1.1 ResourceManager
-#### 2.1.2 NodeManager 
+#### 2.1.2 NodeManager
 #### 2.1.3 ApplicationMaster
 #### 2.1.4 Container
 ### 2.2 资源管理模型
@@ -39,7 +39,7 @@ E --> F[Task]
 #### 3.1.1 FIFO调度器
 #### 3.1.2 Capacity调度器
 #### 3.1.3 Fair调度器
-### 3.2 任务调度优化技术  
+### 3.2 任务调度优化技术
 #### 3.2.1 数据本地性优化
 #### 3.2.2 推测执行
 #### 3.2.3 任务倾斜处理
@@ -86,20 +86,20 @@ public class YarnExample {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
         String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
-        
+
         // 创建Yarn客户端
         YarnClient yarnClient = YarnClient.createYarnClient();
         yarnClient.init(conf);
         yarnClient.start();
-        
+
         // 创建应用程序提交上下文
         ApplicationSubmissionContext appContext = yarnClient.createApplication().getApplicationSubmissionContext();
         appContext.setApplicationName("Yarn Example");
-        
+
         // 设置ApplicationMaster的资源需求
         Resource capability = Resource.newInstance(1024, 1);
         appContext.setResource(capability);
-        
+
         // 设置ApplicationMaster的启动命令
         ContainerLaunchContext amContainer = ContainerLaunchContext.newInstance(
             Collections.<String, LocalResource>emptyMap(),
@@ -110,10 +110,10 @@ public class YarnExample {
             null
         );
         appContext.setAMContainerSpec(amContainer);
-        
+
         // 提交应用程序
         yarnClient.submitApplication(appContext);
-        
+
         yarnClient.close();
     }
 }
@@ -133,7 +133,7 @@ public class YarnExample {
 #### 6.3.2 流式ETL
 #### 6.3.3 实时异常检测
 
-## 7. 工具和资源推荐 
+## 7. 工具和资源推荐
 ### 7.1 Yarn生态系统
 #### 7.1.1 Hadoop MapReduce
 #### 7.1.2 Spark on Yarn

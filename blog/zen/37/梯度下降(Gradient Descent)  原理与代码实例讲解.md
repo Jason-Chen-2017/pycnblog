@@ -41,18 +41,15 @@
 
 梯度下降算法的基本思想是：根据目标函数的梯度，更新参数的值，使得目标函数的值逐渐减小。具体地，我们使用以下公式来更新参数：
 
-$$\\theta = \\theta - \\alpha \\cdot \
-abla_{\\theta} J(\\theta)$$
+$$\theta = \theta - \alpha \cdot \nabla_{\theta} J(\theta)$$
 
-其中，$\\theta$表示模型参数，$J(\\theta)$表示目标函数，$\\alpha$表示学习率，$\
-abla_{\\theta} J(\\theta)$表示目标函数关于参数$\\theta$的梯度。
+其中，$\theta$表示模型参数，$J(\theta)$表示目标函数，$\alpha$表示学习率，$\nabla_{\theta} J(\theta)$表示目标函数关于参数$\theta$的梯度。
 
 ### 3.2 算法步骤详解
 
-1. **初始化参数**：设定初始参数$\\theta_0$。
-2. **计算梯度**：计算目标函数$J(\\theta)$在当前参数$\\theta$下的梯度$\
-abla_{\\theta} J(\\theta)$。
-3. **更新参数**：根据梯度下降公式，更新参数$\\theta$。
+1. **初始化参数**：设定初始参数$\theta_0$。
+2. **计算梯度**：计算目标函数$J(\theta)$在当前参数$\theta$下的梯度$\nabla_{\theta} J(\theta)$。
+3. **更新参数**：根据梯度下降公式，更新参数$\theta$。
 4. **重复步骤2和步骤3**，直至满足停止条件（如梯度变化很小或达到最大迭代次数）。
 
 ### 3.3 算法优缺点
@@ -82,16 +79,15 @@ abla_{\\theta} J(\\theta)$。
 
 以线性回归为例，我们可以构建以下目标函数：
 
-$$J(\\theta) = \\frac{1}{2m} \\sum_{i=1}^m (h_\\theta(x^{(i)}) - y^{(i)})^2$$
+$$J(\theta) = \frac{1}{2m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})^2$$
 
-其中，$h_\\theta(x)$表示线性回归模型的预测值，$x^{(i)}$表示第$i$个输入特征，$y^{(i)}$表示对应的真实值，$m$表示样本数量。
+其中，$h_\theta(x)$表示线性回归模型的预测值，$x^{(i)}$表示第$i$个输入特征，$y^{(i)}$表示对应的真实值，$m$表示样本数量。
 
 ### 4.2 公式推导过程
 
 以线性回归为例，推导目标函数的梯度：
 
-$$\
-abla_{\\theta} J(\\theta) = \\frac{1}{m} \\sum_{i=1}^m (h_\\theta(x^{(i)}) - y^{(i)}) \\cdot x^{(i)}$$
+$$\nabla_{\theta} J(\theta) = \frac{1}{m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)}) \cdot x^{(i)}$$
 
 ### 4.3 案例分析与讲解
 
@@ -110,14 +106,14 @@ def compute_cost(X, y, theta):
 def gradient_descent(X, y, theta, alpha, iterations):
     m = len(y)
     cost_history = []
-    
+
     for i in range(iterations):
         predictions = X.dot(theta)
         errors = predictions - y
         gradient = (1/m) * X.T.dot(errors)
         theta = theta - (alpha * gradient)
         cost_history.append(compute_cost(X, y, theta))
-    
+
     return theta, cost_history
 
 # 示例数据
@@ -129,7 +125,7 @@ theta = np.array([0.0, 0.0])
 theta, cost_history = gradient_descent(X, y, theta, alpha=0.01, iterations=1000)
 
 # 打印结果
-print(\"theta:\", theta)
+print("theta:", theta)
 ```
 
 ### 4.4 常见问题解答
@@ -174,14 +170,14 @@ def compute_cost(X, y, theta):
 def gradient_descent(X, y, theta, alpha, iterations):
     m = len(y)
     cost_history = []
-    
+
     for i in range(iterations):
         predictions = X.dot(theta)
         errors = predictions - y
         gradient = (1/m) * X.T.dot(errors)
         theta = theta - (alpha * gradient)
         cost_history.append(compute_cost(X, y, theta))
-    
+
     return theta, cost_history
 
 # 示例数据
@@ -193,14 +189,14 @@ theta = np.array([0.0, 0.0])
 theta, cost_history = gradient_descent(X, y, theta, alpha=0.01, iterations=1000)
 
 # 打印结果
-print(\"theta:\", theta)
-print(\"cost history:\", cost_history)
+print("theta:", theta)
+print("cost history:", cost_history)
 
 # 绘制成本曲线
 plt.plot(cost_history)
-plt.xlabel(\"Iteration\")
-plt.ylabel(\"Cost\")
-plt.title(\"Cost History\")
+plt.xlabel("Iteration")
+plt.ylabel("Cost")
+plt.title("Cost History")
 plt.show()
 ```
 
@@ -264,9 +260,9 @@ cost history: [ 4.94065646  1.16438357  0.24669283  0.04054107  0.00725206  0.00
 
 ### 7.3 相关论文推荐
 
-1. **\"Stochastic Gradient Descent\"**: 作者：Stochastic Gradient Descent (S. S. Rasmussen, C. K. I. Williams)
+1. **"Stochastic Gradient Descent"**: 作者：Stochastic Gradient Descent (S. S. Rasmussen, C. K. I. Williams)
     - 介绍了随机梯度下降算法的基本原理和特点。
-2. **\"Adam: A Method for Stochastic Optimization\"**: 作者：Adam (D. P. Kingma, J. Ba)
+2. **"Adam: A Method for Stochastic Optimization"**: 作者：Adam (D. P. Kingma, J. Ba)
     - 介绍了Adam优化器，一种改进的梯度下降算法。
 
 ### 7.4 其他资源推荐

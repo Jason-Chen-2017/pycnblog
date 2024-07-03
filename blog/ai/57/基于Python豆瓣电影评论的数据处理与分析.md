@@ -8,7 +8,7 @@
 #### 1.1.2 影响电影市场走向
 #### 1.1.3 为推荐系统提供数据支持
 
-### 1.2 Python在数据处理与分析中的优势  
+### 1.2 Python在数据处理与分析中的优势
 #### 1.2.1 丰富的数据处理库
 #### 1.2.2 强大的数据分析和可视化能力
 #### 1.2.3 简洁高效的语法
@@ -46,7 +46,7 @@
 #### 3.1.2 设计爬虫程序或API请求
 #### 3.1.3 执行采集并存储数据
 
-### 3.2 数据清洗步骤 
+### 3.2 数据清洗步骤
 #### 3.2.1 识别和处理缺失值
 #### 3.2.2 识别和处理异常值
 #### 3.2.3 进行必要的数据类型转换
@@ -101,7 +101,7 @@ $$
 
 举例来说，假设我们用词频向量表示上面提到的两个文档：
 
-- 文档1：(1, 1, 1, 0) 
+- 文档1：(1, 1, 1, 0)
 - 文档2：(1, 0, 0, 1)
 
 其中向量的每一维分别对应"这部"、"电影"、"好看"和"失望"。那么两个文档的余弦相似度为：
@@ -124,12 +124,12 @@ def get_reviews(movie_id, page_num):
     url = f'https://movie.douban.com/subject/{movie_id}/reviews?start={(page_num-1)*20}'
     headers = {'User-Agent': 'Mozilla/5.0'}
     response = requests.get(url, headers=headers)
-    
+
     if response.status_code == 200:
         pattern = re.compile('<div class="short">(.*?)</div>', re.S)
         reviews = re.findall(pattern, response.text)
         return reviews
-    
+
     return None
 ```
 
@@ -162,7 +162,7 @@ def analyze_reviews(reviews):
     words = []
     for review in reviews:
         words.extend(jieba.lcut(review))
-    
+
     word_freq = Counter(words)
     return word_freq.most_common(10)  # 返回出现频率最高的10个词
 ```
@@ -178,7 +178,7 @@ import matplotlib.pyplot as plt
 def plot_word_freq(word_freq):
     words = [x[0] for x in word_freq]
     freqs = [x[1] for x in word_freq]
-    
+
     plt.figure(figsize=(10, 5))
     plt.bar(words, freqs)
     plt.title('Top 10 High Frequency Words')
@@ -197,7 +197,7 @@ def plot_word_freq(word_freq):
 - 通过分析用户评论的情感倾向，预测用户可能感兴趣的其他电影。
 
 ### 6.2 电影市场分析
-- 通过对不同电影评论数据的对比分析，了解不同类型电影的市场表现和观众反响。  
+- 通过对不同电影评论数据的对比分析，了解不同类型电影的市场表现和观众反响。
 - 挖掘评论中提及的演员、导演等信息，分析其与电影票房、口碑之间的关系。
 
 ### 6.3 影评自动生成
@@ -217,7 +217,7 @@ def plot_word_freq(word_freq):
 
 ### 7.3 数据可视化
 - Matplotlib：基础绘图库，支持各种2D、3D图表的绘制。
-- Seaborn：基于Matplotlib的高级可视化库，提供更丰富、更美观的统计图表。 
+- Seaborn：基于Matplotlib的高级可视化库，提供更丰富、更美观的统计图表。
 - Pyecharts：基于百度Echarts的数据可视化库，支持丰富的交互式图表。
 
 ## 8. 总结：未来发展趋势与挑战
@@ -230,7 +230,7 @@ def plot_word_freq(word_freq):
 - 文本+视频：分析电影预告片、花絮与评论文本的关联，捕捉影片更多细节。
 
 ### 8.3 自然语言处理技术的进步
-- 预训练语言模型：利用BERT、GPT等模型，提升文本表示和生成的效果。  
+- 预训练语言模型：利用BERT、GPT等模型，提升文本表示和生成的效果。
 - 对抗学习：利用对抗训练，增强模型应对语言多样性和对抗攻击的鲁棒性。
 
 ### 8.4 数据隐私与安全

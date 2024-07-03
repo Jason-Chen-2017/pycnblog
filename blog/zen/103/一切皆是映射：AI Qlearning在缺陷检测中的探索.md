@@ -140,9 +140,9 @@ Q-learning在以下领域具有广泛的应用：
 - 奖励函数根据检测结果计算获得，如：
 
 $$
-R = \begin{cases} 
+R = \begin{cases}
 1 & \text{若检测到缺陷} \\
-0 & \text{若未检测到缺陷} 
+0 & \text{若未检测到缺陷}
 \end{cases}
 $$
 
@@ -195,7 +195,7 @@ class DefectDetectionAgent:
         self.alpha = alpha
         self.gamma = gamma
         self.Q_table = torch.zeros(state_space_size, action_space_size)
-        
+
     def select_action(self, state):
         # ε-greedy策略
         epsilon = 0.1
@@ -204,11 +204,11 @@ class DefectDetectionAgent:
         else:
             action = torch.argmax(self.Q_table[state])
         return action.item()
-    
+
     def update_q_table(self, state, action, reward, next_state):
         Q_next = torch.max(self.Q_table[next_state])
         self.Q_table[state, action] = self.Q_table[state, action] + self.alpha * (reward + self.gamma * Q_next - self.Q_table[state, action])
-    
+
     def train(self, state_space, action_space, reward_space):
         for state in state_space:
             action = self.select_action(state)

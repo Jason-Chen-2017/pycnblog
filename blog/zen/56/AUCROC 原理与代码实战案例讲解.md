@@ -36,7 +36,7 @@ AUC(Area Under Curve)是ROC曲线下的面积,可以理解为ROC曲线包围的�
 要绘制ROC曲线,我们需要计算不同阈值下的TPR和FPR。设:
 
 - TP(True Positive)为真正例数
-- FN(False Negative)为假反例数 
+- FN(False Negative)为假反例数
 - FP(False Positive)为假正例数
 - TN(True Negative)为真反例数
 

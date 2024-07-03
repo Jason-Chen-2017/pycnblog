@@ -1,7 +1,7 @@
 
 # Q-Learning - 原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -150,21 +150,21 @@ def q_learning(Q, state_space, action_space, epsilon, goal_state, reward):
     while True:
         # 随机选择一个状态
         state = np.random.choice(state_space)
-        
+
         # 如果是目标状态，退出循环
         if state == goal_state:
             break
-        
+
         # 在当前状态下选择动作
         action = np.random.choice(action_space)
-        
+
         # 执行动作，得到下一个状态和奖励
         next_state = (state[0] + action[0], state[1] + action[1])
         r = -1 if next_state != goal_state else reward
-        
+
         # 更新Q函数
         Q[state[0], state[1], action[0], action[1]] += 1 / (1 + len(state_space) * len(action_space)) * (r + np.max(Q[state[0], state[1]]) - Q[state[0], state[1], action[0], action[1]])
-    
+
     return Q
 
 # 训练Q函数
@@ -200,7 +200,7 @@ A：为了避免Q-Learning算法陷入局部最优，可以采取以下措施：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n q_learning_env python=3.8 
+conda create -n q_learning_env python=3.8
 conda activate q_learning_env
 ```
 
@@ -237,21 +237,21 @@ def q_learning(Q, state_space, action_space, epsilon, goal_state, reward):
     while True:
         # 随机选择一个状态
         state = np.random.choice(state_space)
-        
+
         # 如果是目标状态，退出循环
         if state == goal_state:
             break
-        
+
         # 在当前状态下选择动作
         action = np.random.choice(action_space)
-        
+
         # 执行动作，得到下一个状态和奖励
         next_state = (state[0] + action[0], state[1] + action[1])
         r = -1 if next_state != goal_state else reward
-        
+
         # 更新Q函数
         Q[state[0], state[1], action[0], action[1]] += 1 / (1 + len(state_space) * len(action_space)) * (r + np.max(Q[state[0], state[1]]) - Q[state[0], state[1], action[0], action[1]])
-    
+
     return Q
 
 # 训练Q函数

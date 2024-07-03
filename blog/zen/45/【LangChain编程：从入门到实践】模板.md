@@ -135,11 +135,11 @@ $$P(y|x) = \prod_{i=1}^n P(y_i|x) \times \frac{P(x)}{P(x)}$$
 ### 5.1 开发环境搭建
 
 1. 安装Python和pip：
-   
+
    ```bash
    # macOS/Linux
    sudo apt-get install python3-pip
-   
+
    # Windows
    https://www.python.org/downloads/
    ```

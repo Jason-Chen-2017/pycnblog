@@ -22,15 +22,15 @@ Perron-Frobenius理论不仅为非负矩阵的理论研究提供了坚实的基�
 
 ### 2.1 非负矩阵的定义
 
-非负矩阵$A$满足$A_{ij} \\geq 0$对于所有的$i,j$，其中$A_{ij}$是矩阵$A$中的元素。
+非负矩阵$A$满足$A_{ij} \geq 0$对于所有的$i,j$，其中$A_{ij}$是矩阵$A$中的元素。
 
 ### 2.2 Perron-Frobenius特征值与特征向量
 
-对于非负矩阵$A$，存在一个最大的特征值$\\lambda_p$（称为Perron-Frobenius特征值），使得对于任意非零特征向量$\\mathbf{x}$，有$\\lambda_p = \\mathbf{x}^T A \\mathbf{x}$。特别地，当$\\lambda_p$为非负特征值时，$\\mathbf{x}$也是一个非负特征向量。
+对于非负矩阵$A$，存在一个最大的特征值$\lambda_p$（称为Perron-Frobenius特征值），使得对于任意非零特征向量$\mathbf{x}$，有$\lambda_p = \mathbf{x}^T A \mathbf{x}$。特别地，当$\lambda_p$为非负特征值时，$\mathbf{x}$也是一个非负特征向量。
 
 ### 2.3 特征向量的唯一性
 
-除了主特征值$\\lambda_p$之外，其他特征值的模小于$\\lambda_p$。这意味着$\\lambda_p$是唯一的，且具有相应的非负特征向量$\\mathbf{x}$。
+除了主特征值$\lambda_p$之外，其他特征值的模小于$\lambda_p$。这意味着$\lambda_p$是唯一的，且具有相应的非负特征向量$\mathbf{x}$。
 
 ### 2.4 Perron-Frobenius定理的应用
 
@@ -48,10 +48,10 @@ Perron-Frobenius理论在多个领域具有广泛的应用，包括但不限于�
 
 ### 3.2 算法步骤详解
 
-1. **初始化**：选择一个非零向量$\\mathbf{v}_0$作为初始迭代向量。
-2. **迭代过程**：对于每一步$n$，更新向量$\\mathbf{v}_{n+1} = A \\mathbf{v}_n$。
-3. **收敛检查**：重复步骤2直到$\\mathbf{v}_{n+1}$相对于$\\mathbf{v}_n$的变化足够小，此时$\\mathbf{v}_n$近似为主特征向量$\\mathbf{x}$。
-4. **特征值估计**：主特征值$\\lambda_p$可通过$\\lambda_p \\approx \\frac{\\mathbf{x}^T A \\mathbf{x}}{\\mathbf{x}^T \\mathbf{x}}$来估算。
+1. **初始化**：选择一个非零向量$\mathbf{v}_0$作为初始迭代向量。
+2. **迭代过程**：对于每一步$n$，更新向量$\mathbf{v}_{n+1} = A \mathbf{v}_n$。
+3. **收敛检查**：重复步骤2直到$\mathbf{v}_{n+1}$相对于$\mathbf{v}_n$的变化足够小，此时$\mathbf{v}_n$近似为主特征向量$\mathbf{x}$。
+4. **特征值估计**：主特征值$\lambda_p$可通过$\lambda_p \approx \frac{\mathbf{x}^T A \mathbf{x}}{\mathbf{x}^T \mathbf{x}}$来估算。
 
 ### 3.3 算法优缺点
 
@@ -68,21 +68,21 @@ Perron-Frobenius理论在多个领域具有广泛的应用，包括但不限于�
 
 ### 4.1 数学模型构建
 
-考虑非负矩阵$A$，其特征值$\\lambda$和特征向量$\\mathbf{x}$满足以下方程：
+考虑非负矩阵$A$，其特征值$\lambda$和特征向量$\mathbf{x}$满足以下方程：
 
-$$A\\mathbf{x} = \\lambda \\mathbf{x}$$
+$$A\mathbf{x} = \lambda \mathbf{x}$$
 
 ### 4.2 公式推导过程
 
-通过矩阵特征值的定义和性质，可以推导出Perron-Frobenius特征值$\\lambda_p$满足：
+通过矩阵特征值的定义和性质，可以推导出Perron-Frobenius特征值$\lambda_p$满足：
 
-$$\\lambda_p = \\max_{\\|\\mathbf{x}\\|_1 = 1} \\mathbf{x}^T A \\mathbf{x}$$
+$$\lambda_p = \max_{\|\mathbf{x}\|_1 = 1} \mathbf{x}^T A \mathbf{x}$$
 
-其中$\\|\\mathbf{x}\\|_1 = \\sum_i x_i$是向量$\\mathbf{x}$的一范数。
+其中$\|\mathbf{x}\|_1 = \sum_i x_i$是向量$\mathbf{x}$的一范数。
 
 ### 4.3 案例分析与讲解
 
-- **经济流量模型**：假设矩阵$A$描述了国家间的商品流通，其中$A_{ij}$表示从国家$i$流向国家$j$的商品量。主特征向量$\\mathbf{x}$反映了商品流的分布，主特征值$\\lambda_p$则表示最大总流量。
+- **经济流量模型**：假设矩阵$A$描述了国家间的商品流通，其中$A_{ij}$表示从国家$i$流向国家$j$的商品量。主特征向量$\mathbf{x}$反映了商品流的分布，主特征值$\lambda_p$则表示最大总流量。
 
 ### 4.4 常见问题解答
 
@@ -106,9 +106,9 @@ from scipy.sparse import csr_matrix
 from scipy.sparse.linalg import eigsh
 
 def find_perron_frobenius(A):
-    \"\"\"
+    """
     Calculate the Perron-Frobenius eigenvalue and eigenvector for a non-negative matrix.
-    \"\"\"
+    """
     # Convert to sparse CSR format for efficient computation
     A_sparse = csr_matrix(A)
 
@@ -122,8 +122,8 @@ def find_perron_frobenius(A):
 # Example usage
 A = np.array([[0.5, 0.3], [0.2, 0.4]])
 eigenvalue, eigenvector = find_perron_frobenius(A)
-print(f\"Perron-Frobenius Eigenvalue: {eigenvalue}\")
-print(f\"Perron-Frobenius Eigenvector: {eigenvector}\")
+print(f"Perron-Frobenius Eigenvalue: {eigenvalue}")
+print(f"Perron-Frobenius Eigenvector: {eigenvector}")
 ```
 
 ### 5.3 代码解读与分析

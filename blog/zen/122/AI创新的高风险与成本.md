@@ -1,6 +1,6 @@
 # AI创新的高风险与成本
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -149,7 +149,7 @@ AI 创新、风险和成本之间存在着密切的联系。
 **线性回归** 的数学模型如下：
 
 $$
-y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x_n 
+y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x_n
 $$
 
 其中：

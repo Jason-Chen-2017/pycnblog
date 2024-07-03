@@ -88,8 +88,7 @@ $$Q(s,a) \leftarrow Q(s,a) + \alpha [r + \gamma \max_{a'} Q(s',a') - Q(s,a)]$$
 
 **策略梯度学习**中的REINFORCE公式为：
 
-$$\pi(a|s) \propto \exp(\
-abla_{\theta} \mathbb{E}_{\pi}[\log \pi(a|s) R(s,a)])$$
+$$\pi(a|s) \propto \exp(\nabla_{\theta} \mathbb{E}_{\pi}[\log \pi(a|s) R(s,a)])$$
 
 其中，$\theta$为策略参数。
 

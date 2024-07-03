@@ -1,7 +1,7 @@
 
 # AI人工智能深度学习算法：在视频游戏中的自适应机制
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 关键词：
@@ -178,8 +178,7 @@ $$
 损失函数的梯度下降公式：
 
 $$
-\theta = \theta - \eta \
-abla_{\theta}L(f(x),y)
+\theta = \theta - \eta \nabla_{\theta}L(f(x),y)
 $$
 
 #### 4.2.3 生成对抗网络

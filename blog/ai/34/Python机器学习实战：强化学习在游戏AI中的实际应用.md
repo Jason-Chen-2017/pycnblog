@@ -45,8 +45,8 @@
 2. **选择动作**：基于当前状态，使用ε-greedy策略选择动作。这意味着有时会随机选择动作以探索新策略，有时则选择当前Q值最高的动作以利用已知信息。
 3. **执行动作**：在选定的状态下执行动作，并观察环境响应，获取下一个状态和奖励。
 4. **更新Q值**：使用Q-learning的更新规则来调整Q表中的值。公式如下：
-   $$ Q(s, a) \\leftarrow Q(s, a) + \\alpha [R + \\gamma \\max_{a'} Q(s', a') - Q(s, a)] $$
-   其中，$\\alpha$是学习率，$\\gamma$是折扣因子（用于预测未来的奖励），$R$是即时奖励。
+   $$ Q(s, a) \leftarrow Q(s, a) + \alpha [R + \gamma \max_{a'} Q(s', a') - Q(s, a)] $$
+   其中，$\alpha$是学习率，$\gamma$是折扣因子（用于预测未来的奖励），$R$是即时奖励。
 5. **重复**：回到步骤2，直到达到预设的迭代次数或满足终止条件。
 
 ### 3.3 算法优缺点
@@ -88,14 +88,14 @@
 
 Q-learning的目标是估计每个状态-动作对的期望累积奖励。通过迭代更新Q表中的值，Q-learning公式如下：
 
-$$ Q(s, a) \\leftarrow Q(s, a) + \\alpha [R + \\gamma \\max_{a'} Q(s', a') - Q(s, a)] $$
+$$ Q(s, a) \leftarrow Q(s, a) + \alpha [R + \gamma \max_{a'} Q(s', a') - Q(s, a)] $$
 
 其中：
 
-- $\\alpha$ 是学习率，控制更新的速度。
-- $\\gamma$ 是折扣因子，衡量未来奖励的重要性。
+- $\alpha$ 是学习率，控制更新的速度。
+- $\gamma$ 是折扣因子，衡量未来奖励的重要性。
 - $R$ 是即时奖励。
-- $\\max_{a'} Q(s', a')$ 是在新状态$s'$下的最大Q值，用于预测未来的奖励。
+- $\max_{a'} Q(s', a')$ 是在新状态$s'$下的最大Q值，用于预测未来的奖励。
 
 ### 4.3 案例分析与讲解
 
@@ -139,24 +139,24 @@ epsilon_decay = 0.995
 for episode in range(num_episodes):
     state = env.reset()
     done = False
-    
+
     while not done:
         if np.random.uniform(0, 1) < epsilon:
             action = env.action_space.sample() # 探索
         else:
             action = np.argmax(Q_table[state, :]) # 利用Q表选择动作
-        
+
         next_state, reward, done, info = env.step(action)
-        
+
         old_Q = Q_table[state, action]
         next_max_Q = np.max(Q_table[next_state, :])
-        
+
         new_Q = (1 - learning_rate) * old_Q + learning_rate * (reward + discount_factor * next_max_Q)
-        
+
         Q_table[state, action] = new_Q
-        
+
         state = next_state
-    
+
     epsilon *= epsilon_decay
 
 # 测试Q-table
@@ -166,7 +166,7 @@ while True:
     state, reward, done, info = env.step(action)
     env.render()
     if done:
-        print(f\"Total reward: {env.episode_reward}\")
+        print(f"Total reward: {env.episode_reward}")
         break
 env.close()
 ```

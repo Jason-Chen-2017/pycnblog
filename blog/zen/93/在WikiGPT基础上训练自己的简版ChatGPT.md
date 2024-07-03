@@ -110,19 +110,19 @@ Wiki-GPT是一种基于大规模知识库的预训练语言模型，它使用维
 
 1. **自注意力机制**：
    $$
- Q = \mathrm{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V 
+ Q = \mathrm{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
 $$
    其中，$Q$、$K$和$V$分别表示查询（Query）、键（Key）和值（Value）向量，$\mathrm{softmax}$为Softmax函数。
 
 2. **多头注意力**：
    $$
- \mathrm{MultiHead}(Q, K, V) = \mathrm{Concat}(\mathrm{head}_1, \mathrm{head}_2, \dots, \mathrm{head}_h)W^O 
+ \mathrm{MultiHead}(Q, K, V) = \mathrm{Concat}(\mathrm{head}_1, \mathrm{head}_2, \dots, \mathrm{head}_h)W^O
 $$
    其中，$\mathrm{head}_i$表示第$i$个注意力头，$W^O$为输出层的权重。
 
 3. **Transformer模型**：
    $$
- \mathrm{Encoder}(x) = \mathrm{MultiHead}\left(\mathrm{Attention}(x, x, x), \mathrm{FeedForward}(x)\right) 
+ \mathrm{Encoder}(x) = \mathrm{MultiHead}\left(\mathrm{Attention}(x, x, x), \mathrm{FeedForward}(x)\right)
 $$
    其中，$\mathrm{Attention}$和$\mathrm{FeedForward}$分别表示自注意力和前馈神经网络。
 

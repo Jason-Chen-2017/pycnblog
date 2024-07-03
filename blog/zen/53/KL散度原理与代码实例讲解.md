@@ -56,7 +56,7 @@ $$KL(P||Q) = H(P,Q) - H(P)$$
 
 KL散度的非对称性使其无法作为一个严格的距离度量,但在很多应用中,这种非对称性是合理的。
 
-## 3.核心算法原理具体操作步骤 
+## 3.核心算法原理具体操作步骤
 
 ### 3.1 KL散度的计算步骤
 
@@ -104,7 +104,7 @@ KL散度的非对称性使其无法作为一个严格的距离度量,但在很�
 
 $$
 \begin{aligned}
-P(x) &= \begin{cases} 
+P(x) &= \begin{cases}
 0.4, & x=1\\
 0.6, & x=2
 \end{cases}\\
@@ -167,22 +167,22 @@ import numpy as np
 def kl_divergence(p, q):
     """
     计算两个离散分布之间的KL散度
-    
+
     参数:
     p (numpy.ndarray): 第一个分布的概率质量函数
     q (numpy.ndarray): 第二个分布的概率质量函数
-    
+
     返回值:
     kl_div (float): KL散度值
     """
     p = np.asarray(p, dtype=np.float32)
     q = np.asarray(q, dtype=np.float32)
-    
+
     # 防止出现log(0)的情况
     q = np.clip(q, 1e-10, 1.0)
-    
+
     kl_div = np.sum(p * np.log(p / q))
-    
+
     return kl_div
 ```
 
@@ -210,19 +210,19 @@ from scipy.integrate import quad
 def kl_divergence_continuous(p, q):
     """
     计算两个连续分布之间的KL散度
-    
+
     参数:
     p (callable): 第一个分布的概率密度函数
     q (callable): 第二个分布的概率密度函数
-    
+
     返回值:
     kl_div (float): KL散度值
     """
     def integrand(x):
         return p(x) * np.log(p(x) / q(x))
-    
+
     kl_div, _ = quad(integrand, -np.inf, np.inf)
-    
+
     return kl_div
 ```
 

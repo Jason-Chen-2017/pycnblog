@@ -1,4 +1,4 @@
-                 
+
 # Flume Interceptor原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -167,7 +167,7 @@ public class CustomLogInterceptor implements Interceptor {
     public Status process(Event event, ProcessorContext context) throws EventDeliveryException, InterruptedException {
         String value = event.getBody();
         double logValue = Double.parseDouble(value);
-        
+
         // 过滤异常值
         if (logValue > 7.5 && logValue < 8.5) {
             event.setBody("Filtered log value: " + logValue);
@@ -214,7 +214,7 @@ Flume拦截器广泛应用于大数据处理系统、监控平台以及日志收
 
 ### 7.1 学习资源推荐
 - Apache Flume官方文档：[https://flume.apache.org/](https://flume.apache.org/)
-- Flume中文社区：[https://www.flume.org.cn/](https://www.flume.org.cn/) 
+- Flume中文社区：[https://www.flume.org.cn/](https://www.flume.org.cn/)
 - 网络教程和博客文章：Google搜索“Flume Interceptors”找到更多学习资料
 
 ### 7.2 开发工具推荐

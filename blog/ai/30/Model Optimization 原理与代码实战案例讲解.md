@@ -1,6 +1,6 @@
 # Model Optimization 原理与代码实战案例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：模型优化、超参数调整、损失函数、正则化、激活函数、神经网络
 
@@ -95,9 +95,9 @@
 
 假设我们正在构建一个简单的线性回归模型，其目标是预测房价。模型可以表示为：
 
-$$ y = \\theta_0 + \\theta_1 x + \\epsilon $$
+$$ y = \theta_0 + \theta_1 x + \epsilon $$
 
-其中，$y$是预测值，$x$是特征，$\\theta_0$和$\\theta_1$是参数，$\\epsilon$是误差。
+其中，$y$是预测值，$x$是特征，$\theta_0$和$\theta_1$是参数，$\epsilon$是误差。
 
 ### 4.2 公式推导过程
 
@@ -105,9 +105,9 @@ $$ y = \\theta_0 + \\theta_1 x + \\epsilon $$
 
 对于线性回归，通常选择均方误差（MSE）作为损失函数：
 
-$$ J(\\theta) = \\frac{1}{2m} \\sum_{i=1}^{m} (h_\\theta(x^{(i)}) - y^{(i)})^2 $$
+$$ J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2 $$
 
-其中，$h_\\theta(x) = \\theta_0 + \\theta_1 x$是预测函数，$m$是样本数量。
+其中，$h_\theta(x) = \theta_0 + \theta_1 x$是预测函数，$m$是样本数量。
 
 ### 4.3 案例分析与讲解
 
@@ -119,7 +119,7 @@ $$ J(\\theta) = \\frac{1}{2m} \\sum_{i=1}^{m} (h_\\theta(x^{(i)}) - y^{(i)})^2 $
 | 2   | 5   |
 | 3   | 7   |
 
-我们使用最小二乘法来找到$\\theta_0$和$\\theta_1$的值。通过计算，我们得到$\\theta_0 = -1$，$\\theta_1 = 2$。因此，模型变为：
+我们使用最小二乘法来找到$\theta_0$和$\theta_1$的值。通过计算，我们得到$\theta_0 = -1$，$\theta_1 = 2$。因此，模型变为：
 
 $$ y = -1 + 2x $$
 
@@ -196,7 +196,7 @@ print(predictions)
 
 ### 7.1 学习资源推荐
 
-- **Coursera**: \"Machine Learning\" by Andrew Ng
+- **Coursera**: "Machine Learning" by Andrew Ng
 - **Kaggle**: 实践项目和竞赛
 
 ### 7.2 开发工具推荐
@@ -206,8 +206,8 @@ print(predictions)
 
 ### 7.3 相关论文推荐
 
-- **\"On the Convergence Properties of Gradient Methods for Stochastic Nonconvex Optimization\"**
-- **\"Deep Learning\"** by Ian Goodfellow, Yoshua Bengio, and Aaron Courville
+- **"On the Convergence Properties of Gradient Methods for Stochastic Nonconvex Optimization"**
+- **"Deep Learning"** by Ian Goodfellow, Yoshua Bengio, and Aaron Courville
 
 ### 7.4 其他资源推荐
 

@@ -388,4 +388,4 @@ Token 是语言模型的输入和输出的基本单位，可以是字、词、�
 * 使用更强大的语言模型，例如 BERT、GPT-3 等。
 * 对模型进行更有效的训练，例如使用更大的数据集、更复杂的训练方法等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

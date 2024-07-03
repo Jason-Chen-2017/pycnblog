@@ -1,4 +1,4 @@
-                 
+
 # SimulatedAnnealing算法原理与代码实现
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -51,7 +51,7 @@ Simulated Annealing 类似于现实世界中金属冷却过程中晶格结构的
 
 #### Step 1: 初始化
 - **设定** 初始解 $x_0$ 和初始温度 $T_0$。
-  
+
 #### Step 2: 迭代搜索
 - 对于每个迭代步：
     - 生成候选解 $x'$；
@@ -123,26 +123,26 @@ def simulated_annealing(func, bounds, init_temp=100, cool_rate=0.99, max_iter=10
     # Initialize current solution and temperature
     x = np.random.uniform(*bounds)
     T = init_temp
-    
+
     for _ in range(max_iter):
         # Generate a neighbor
         x_new = np.clip(x + np.random.normal(0, 1), *bounds)
-        
+
         # Calculate the difference in function value
         delta_func = func(x_new) - func(x)
-        
+
         if delta_func < 0 or np.exp(-delta_func / T) > np.random.rand():
             x = x_new
-        
+
         # Cool down the temperature
         T *= cool_rate
-    
+
     return x, func(x)
 
 # Define your target function here
 def objective_function(x):
     return x[0]**2 + x[1]**2  # Example: Minimize this function
-    
+
 # Set up parameters
 bounds = (-5, 5)  # Example: [x_min, x_max]
 initial_temperature = 100
@@ -183,7 +183,7 @@ Simulated Annealing 在众多实际场景中展现出了其独特价值，例如
 - **书籍**：
   - "Introduction to Operations Research" by Frederick S. Hillier and Gerald J. Lieberman
   - "Algorithms" by Sanjoy Dasgupta, Christos Papadimitriou, and Umesh Vazirani
-  
+
 - **在线课程**：
   - Coursera: "Discrete Optimization"
   - edX: "Algorithmic Toolbox"

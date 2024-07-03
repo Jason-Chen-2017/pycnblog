@@ -146,8 +146,7 @@ $$
 机器学习模型采用梯度下降法进行训练，以下以神经网络为例进行说明：
 
 $$
-\theta_{t+1} = \theta_t - \alpha \cdot \
-abla J(\theta_t)
+\theta_{t+1} = \theta_t - \alpha \cdot \nabla J(\theta_t)
 $$
 
 其中，
@@ -155,8 +154,7 @@ $$
 - $\theta_t$为当前模型参数。
 - $\theta_{t+1}$为更新后的模型参数。
 - $\alpha$为学习率。
-- $\
-abla J(\theta_t)$为损失函数关于参数$\theta_t$的梯度。
+- $\nabla J(\theta_t)$为损失函数关于参数$\theta_t$的梯度。
 
 ### 4.3 案例分析与讲解
 

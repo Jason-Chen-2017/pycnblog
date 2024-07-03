@@ -28,7 +28,7 @@ SLAM问题是一个典型的鸡生蛋、蛋生鸡的难题。要估计机器人�
 
 地图构建是指基于传感器数据构建环境地图的过程。常用的方法有:
 
-- 占据网格地图(Occupancy Grid Mapping) 
+- 占据网格地图(Occupancy Grid Mapping)
 - 特征点地图(Feature-based Mapping)
 - pose SLAM
 
@@ -39,14 +39,14 @@ SLAM问题是一个典型的鸡生蛋、蛋生鸡的难题。要估计机器人�
 - 回环检测(Loop Closure Detection)
 - 里程计(Odometry)
 
-## 3.核心算法原理具体操作步骤  
+## 3.核心算法原理具体操作步骤
 
 ### 3.1 SLAM算法框架
 
 SLAM算法通常包括以下步骤:
 
 1. 获取传感器数据(如激光、视觉等)
-2. 数据预处理(如去噪、特征提取等)  
+2. 数据预处理(如去噪、特征提取等)
 3. 运动估计(如里程计等)
 4. 观测数据关联
 5. 误差最小化(如图优化、滤波等)
@@ -108,7 +108,7 @@ $$
 在图优化SLAM中,我们需要最小化误差项:
 
 $$
-e_{ij}(X_i, X_j) = \begin{pmatrix} 
+e_{ij}(X_i, X_j) = \begin{pmatrix}
     e_r \\
     e_t
 \end{pmatrix} = \begin{pmatrix}
@@ -181,10 +181,10 @@ bool LocalMapping::Run() {
     ...
     // 关键帧插入
     InsertKeyFrame(mpCurrentKeyFrame);
-    
+
     // 检查并融合重复的地图点
     ProcessNewKeyFrame();
-    
+
     // 检查并融合重复的地图点
     MapPointCulling();
 
@@ -205,12 +205,12 @@ void Optimizer::GlobalBundleAdjustemnt(...)
     g2o::SparseOptimizer optimizer;
     g2o::BlockSolver_6_3::LinearSolverType * linearSolver;
     ...
-    
+
     // 添加节点和边
     const vector<KeyFrame*> vpKFs = vpMap->GetAllKeyFrames();
     const vector<MapPoint*> vpMP = vpMap->GetAllMapPoints();
     const unsigned int nInsertedKFs = vpKFs.size();
-    
+
     // 优化
     optimizer.initializeOptimization();
     optimizer.optimize(nIterations);
@@ -244,7 +244,7 @@ SLAM使服务机器人能够在未知环境中自主探索和构建地图,从而
 
 无人机上的SLAM系统能够实时估计飞行器位姿和构建三维地图,从而实现自主导航和避障。
 
-## 7.工具和资源推荐  
+## 7.工具和资源推荐
 
 ### 7.1 开源SLAM库
 

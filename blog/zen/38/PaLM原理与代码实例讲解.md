@@ -118,31 +118,31 @@ PaLM模型的数学模型主要包括以下几个部分：
 
 1. **Self-Attention**：
 
-$$\\text{Q} = \\text{W}_Q \\text{X}$$
-$$\\text{K} = \\text{W}_K \\text{X}$$
-$$\\text{V} = \\text{W}_V \\text{X}$$
+$$\text{Q} = \text{W}_Q \text{X}$$
+$$\text{K} = \text{W}_K \text{X}$$
+$$\text{V} = \text{W}_V \text{X}$$
 
-其中，$\\text{X}$为输入序列，$\\text{W}_Q$、$\\text{W}_K$、$\\text{W}_V$为权重矩阵。
+其中，$\text{X}$为输入序列，$\text{W}_Q$、$\text{W}_K$、$\text{W}_V$为权重矩阵。
 
 2. **Scaled Dot-Product Attention**：
 
-$$\\text{Attention}(\\text{Q}, \\text{K}, \\text{V}) = \\text{softmax}\\left(\\frac{\\text{QK}^T}{\\sqrt{d_k}}\\right)\\text{V}$$
+$$\text{Attention}(\text{Q}, \text{K}, \text{V}) = \text{softmax}\left(\frac{\text{QK}^T}{\sqrt{d_k}}\right)\text{V}$$
 
-其中，$\\text{softmax}$为归一化函数，$\\text{d_k}$为键（Key）的维度。
+其中，$\text{softmax}$为归一化函数，$\text{d_k}$为键（Key）的维度。
 
 #### 4.2.2 Decoder部分
 
 1. **Encoder-Decoder Attention**：
 
-$$\\text{M} = \\text{softmax}\\left(\\frac{\\text{Q} \\text{K}^T}{\\sqrt{d_k}}\\right)\\text{V}$$
+$$\text{M} = \text{softmax}\left(\frac{\text{Q} \text{K}^T}{\sqrt{d_k}}\right)\text{V}$$
 
-其中，$\\text{M}$为解码器的输出。
+其中，$\text{M}$为解码器的输出。
 
 2. **Decoder-Decoder Attention**：
 
-$$\\text{Output} = \\text{softmax}\\left(\\frac{\\text{Q} \\text{M}^T}{\\sqrt{d_k}}\\right)\\text{V}$$
+$$\text{Output} = \text{softmax}\left(\frac{\text{Q} \text{M}^T}{\sqrt{d_k}}\right)\text{V}$$
 
-其中，$\\text{Output}$为解码器的最终输出。
+其中，$\text{Output}$为解码器的最终输出。
 
 ### 4.3 案例分析与讲解
 

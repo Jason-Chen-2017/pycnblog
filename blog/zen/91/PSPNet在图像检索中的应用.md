@@ -76,7 +76,7 @@ PSPNet在图像分割领域取得了显著的成果，可以应用于以下领�
 PSPNet的数学模型如下：
 
 $$
-\text{PSPNet}(x) = \text{FPN}(\text{ResNet}(x)) 
+\text{PSPNet}(x) = \text{FPN}(\text{ResNet}(x))
 $$
 
 其中，$\text{PSPNet}(x)$ 表示输入图像 $x$ 的分割结果，$\text{ResNet}(x)$ 表示预训练的ResNet模型，$\text{FPN}(x)$ 表示特征金字塔网络。

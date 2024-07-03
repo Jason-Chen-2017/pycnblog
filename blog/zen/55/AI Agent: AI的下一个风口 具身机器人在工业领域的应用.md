@@ -188,7 +188,7 @@ def process_image(msg):
 
     # 进行图像处理,如边缘检测、目标识别等
     edges = cv2.Canny(cv_image, 100, 200)
-    
+
     # 根据处理结果规划运动轨迹
     path = plan_path(edges)
     path_pub.publish(path)

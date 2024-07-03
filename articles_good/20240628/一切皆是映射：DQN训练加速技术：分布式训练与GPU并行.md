@@ -204,12 +204,10 @@ $$
 梯度下降的更新公式为：
 
 $$
-\theta \leftarrow \theta - \eta \
-abla_{\theta} L(\theta)
+\theta \leftarrow \theta - \eta \nabla_{\theta} L(\theta)
 $$
 
-其中，$\eta$ 表示学习率，$\
-abla_{\theta} L(\theta)$ 表示损失函数对参数 $\theta$ 的梯度。
+其中，$\eta$ 表示学习率，$\nabla_{\theta} L(\theta)$ 表示损失函数对参数 $\theta$ 的梯度。
 
 ### 4.3 案例分析与讲解
 

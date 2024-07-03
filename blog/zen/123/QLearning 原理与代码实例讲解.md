@@ -412,4 +412,4 @@ Q-Learning 算法使用表格来存储 Q 函数的值，而 DQN 使用深度神�
 
 Q-Learning 算法可以应用于各种强化学习问题，例如游戏 AI、机器人控制、推荐系统、金融交易等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

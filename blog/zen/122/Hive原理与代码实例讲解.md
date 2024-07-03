@@ -366,4 +366,4 @@ hive.execution.engine=spark
 - **数据验证：**在数据加载和处理过程中，可以进行数据验证，确保数据的一致性。
 - **数据备份：**定期备份数据，以便在数据丢失时进行恢复。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

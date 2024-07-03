@@ -96,17 +96,17 @@ Ansible的任务调度器会根据这个DAG图来生成一个拓扑排序,将任
   tasks:
     - name: Install Nginx
       yum: name=nginx state=present
-      
+
     - name: Configure Nginx
-      template: 
+      template:
         src: nginx.conf.j2
         dest: /etc/nginx/nginx.conf
-      notify: 
+      notify:
         - Restart Nginx
-        
+
     - name: Start Nginx service
       service: name=nginx state=started enabled=yes
-      
+
   handlers:
     - name: Restart Nginx
       service: name=nginx state=restarted
@@ -148,7 +148,7 @@ Ansible在实际运维工作中有非常广泛的应用,下面列举了一些常
 
 随着IT基础架构的日益复杂,自动化运维已经成为大势所趋。而Ansible凭借其简单灵活的特点,必将在未来的自动化运维领域扮演越来越重要的角色。未来Ansible的发展趋势可能包括:
 
-### 8.1 与容器、Kubernetes等新兴技术深度整合 
+### 8.1 与容器、Kubernetes等新兴技术深度整合
 
 ### 8.2 利用AI、机器学习等技术实现智能化运维
 

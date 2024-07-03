@@ -20,14 +20,14 @@
 
 目标跟踪技术的持续改进对于实现智能视觉系统至关重要。准确的目标跟踪能够支持高级视觉任务,如行为分析、轨迹预测和场景理解,为无人驾驶、智能监控等应用提供有力支持。
 
-## 2. 核心概念与联系  
+## 2. 核心概念与联系
 
 ### 2.1 目标表示
 
 在目标跟踪中,需要选择一种合适的目标表示方式,常用的有:
 
 - 点表示:使用目标的质心坐标表示
-- 矩形框表示:使用包围盒来表示目标区域  
+- 矩形框表示:使用包围盒来表示目标区域
 - 形状匹配:使用目标的实际轮廓或边缘特征表示
 - 核相关滤波器:使用目标的特征模板表示
 
@@ -206,33 +206,33 @@ class KCFTracker:
     def __init__(self, bbox, frame):
         # 初始化目标边界框
         self.bbox = np.array(bbox)
-        
+
         # 从第一帧提取目标patch
         self.obj = self.get_object(frame)
-        
+
         # 计算高斯核相关滤波器
         self.filter = self.gaussian_correlation(self.obj, self.obj)
-        
+
     def gaussian_correlation(self, x, y):
         # 计算高斯核相关滤波器
         # 实现细节略
         return filter
-        
+
     def get_object(self, frame):
         # 从当前帧提取目标patch
         # 实现细节略
         return obj_patch
-        
+
     def track(self, frame):
         # 在新帧上应用核相关滤波器
         new_obj = self.get_object(frame)
         response = self.gaussian_correlation(new_obj, self.filter)
-        
+
         # 找到响应最大的位置作为新目标位置
         row, col = np.unravel_index(np.argmax(response), response.shape)
         dy, dx = row - response.shape[0]//2, col - response.shape[1]//2
         new_bbox = self.bbox + np.array([dy, dx, dy, dx])
-        
+
         # 返回新的边界框
         return new_bbox
 

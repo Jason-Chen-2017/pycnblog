@@ -57,27 +57,27 @@ The GBT algorithm can be mathematically represented using the following equation
 
 1. Loss function:
 $$
-L(y, \\hat{y}) = \\frac{1}{2} \\sum_{i=1}^{n} (y_i - \\hat{y}_i)^2
+L(y, \hat{y}) = \frac{1}{2} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
 $$
 
 2. Residual error:
 $$
-r_i = y_i - \\hat{y}_i
+r_i = y_i - \hat{y}_i
 $$
 
 3. Output of tree `T_t`:
 $$
-\\hat{y}_{i,t} = \\sum_{j=1}^{m_t} f(x_{ij}, \\theta_{tj})
+\hat{y}_{i,t} = \sum_{j=1}^{m_t} f(x_{ij}, \theta_{tj})
 $$
 
 4. Weight update:
 $$
-w_i^{(t)} = w_i^{(t-1)} \\frac{e^{-r_i^{(t-1)}}}{\\sum_{k=1}^{n} e^{-r_k^{(t-1)}}}
+w_i^{(t)} = w_i^{(t-1)} \frac{e^{-r_i^{(t-1)}}}{\sum_{k=1}^{n} e^{-r_k^{(t-1)}}}
 $$
 
 5. Learning rate:
 $$
-\\alpha_t = \\frac{1}{2} \\frac{\\sum_{i=1}^{n} (r_i^{(t-1)} - r_i^{(t)})^2}{\\sum_{i=1}^{n} (r_i^{(t-1)})^2}
+\alpha_t = \frac{1}{2} \frac{\sum_{i=1}^{n} (r_i^{(t-1)} - r_i^{(t)})^2}{\sum_{i=1}^{n} (r_i^{(t-1)})^2}
 $$
 
 ## 5. Project Practice: Code Examples and Detailed Explanations
@@ -110,7 +110,7 @@ gb_model.fit(X_train, y_train)
 y_pred = gb_model.predict(X_test)
 from sklearn.metrics import mean_squared_error
 mse = mean_squared_error(y_test, y_pred)
-print(\"Mean Squared Error:\", mse)
+print("Mean Squared Error:", mse)
 ```
 
 ## 6. Practical Application Scenarios

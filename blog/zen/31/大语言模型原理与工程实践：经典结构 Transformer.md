@@ -82,13 +82,13 @@ Transformer架构在多个领域展现出卓越性能，包括但不限于：
 
 ### 4.1 数学模型构建
 
-对于多头自注意力（MHA）的操作，设输入为$Q$（查询）、$K$（键）和$V$（值），三者维度均为$D\\times T$，其中$D$为特征维度，$T$为序列长度。MHA的输出可以表示为：
+对于多头自注意力（MHA）的操作，设输入为$Q$（查询）、$K$（键）和$V$（值），三者维度均为$D\times T$，其中$D$为特征维度，$T$为序列长度。MHA的输出可以表示为：
 
 $$
-\\text{MHA}(Q, K, V) = \\text{Softmax}\\left(\\frac{QK^T}{\\sqrt{D}}\\right)V
+\text{MHA}(Q, K, V) = \text{Softmax}\left(\frac{QK^T}{\sqrt{D}}\right)V
 $$
 
-其中，Softmax函数用于计算注意力权重，$K^T$表示键矩阵的转置，$\\sqrt{D}$用于缩放以避免梯度消失或梯度爆炸。
+其中，Softmax函数用于计算注意力权重，$K^T$表示键矩阵的转置，$\sqrt{D}$用于缩放以避免梯度消失或梯度爆炸。
 
 ### 4.2 公式推导过程
 
@@ -167,7 +167,7 @@ class MultiHeadAttention(tf.keras.layers.Layer):
 
         return output
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     # 示例代码
     input_shape = (10, 5, 10)  # (batch, sequence, features)
     model = MultiHeadAttention(d_model=10, num_heads=4)

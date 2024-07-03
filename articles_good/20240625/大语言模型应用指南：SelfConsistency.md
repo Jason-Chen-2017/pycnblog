@@ -107,8 +107,7 @@ Self-Consistency在以下领域具有广泛的应用前景：
 3. **奖励函数**：假设奖励函数为 $R(\mathcal{S}, \mathcal{A})$，表示LLM在生成文本过程中的奖励值。
 4. **价值函数**：假设价值函数为 $V(\mathcal{S})$，表示LLM在状态 $\mathcal{S}$ 下的期望奖励值。
 5. **策略函数**：假设策略函数为 $\pi(\mathcal{S})$，表示LLM在状态 $\mathcal{S}$ 下的选择。
-6. **策略梯度**：假设策略梯度为 $\
-abla_{\pi}R(\mathcal{S}, \mathcal{A})$，表示LLM在动作 $\mathcal{A}$ 下的策略梯度。
+6. **策略梯度**：假设策略梯度为 $\nabla_{\pi}R(\mathcal{S}, \mathcal{A})$，表示LLM在动作 $\mathcal{A}$ 下的策略梯度。
 
 ### 4.2 公式推导过程
 
@@ -117,13 +116,9 @@ abla_{\pi}R(\mathcal{S}, \mathcal{A})$，表示LLM在动作 $\mathcal{A}$ 下的
 $$
 \begin{align*}
 V(\mathcal{S}) &= \mathbb{E}_{\pi(\mathcal{S})}\left[R(\mathcal{S}, \pi(\mathcal{S}))\right] \\
-\
-abla_{\pi}V(\mathcal{S}) &= \
-abla_{\pi}\mathbb{E}_{\pi(\mathcal{S})}\left[R(\mathcal{S}, \pi(\mathcal{S}))\right] \\
-&= \mathbb{E}_{\pi(\mathcal{S})}\left[\
-abla_{\pi}R(\mathcal{S}, \pi(\mathcal{S}))\right] \\
-&= \mathbb{E}_{\pi(\mathcal{S})}\left[\
-abla_{\pi}R(\mathcal{S}, a)\right]_{a=\pi(\mathcal{S})}
+\nabla_{\pi}V(\mathcal{S}) &= \nabla_{\pi}\mathbb{E}_{\pi(\mathcal{S})}\left[R(\mathcal{S}, \pi(\mathcal{S}))\right] \\
+&= \mathbb{E}_{\pi(\mathcal{S})}\left[\nabla_{\pi}R(\mathcal{S}, \pi(\mathcal{S}))\right] \\
+&= \mathbb{E}_{\pi(\mathcal{S})}\left[\nabla_{\pi}R(\mathcal{S}, a)\right]_{a=\pi(\mathcal{S})}
 \end{align*}
 $$
 

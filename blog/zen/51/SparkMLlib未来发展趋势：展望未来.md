@@ -20,7 +20,7 @@ Apache Spark MLlib是Apache Spark中的机器学习库,提供了多种机器学�
 SparkMLlib已被广泛应用于各个领域,包括但不限于:
 
 - 推荐系统
-- 金融风险分析 
+- 金融风险分析
 - 自然语言处理
 - 计算机视觉
 - 生物信息学
@@ -68,7 +68,7 @@ SparkMLlib支持多种机器学习算法:
 
 这些算法被统一封装为Estimator或Transformer,方便组合使用。
 
-## 3.核心算法原理具体操作步骤 
+## 3.核心算法原理具体操作步骤
 
 在这一部分,我们将重点介绍SparkMLlib中两种核心算法的原理和实现步骤。
 
@@ -107,7 +107,7 @@ val lrModel = lr.fit(trainingData)
 
 6. 使用模型进行预测:
 
-```scala 
+```scala
 val predictions = lrModel.transform(testData)
 ```
 
@@ -222,7 +222,7 @@ val rawData = spark.read
 // 对类别特征进行编码
 val encodedData = encodeCategoricalFeatures(rawData)
 
-// 将数据集拆分为训练集和测试集 
+// 将数据集拆分为训练集和测试集
 val Array(trainingData, testData) = encodedData.randomSplit(Array(0.8, 0.2))
 ```
 
@@ -255,7 +255,7 @@ val lr = new LogisticRegression()
   .setFeaturesCol(featuresCol)
   .setMaxIter(100)
 
-// 训练模型  
+// 训练模型
 val lrModel = lr.fit(trainingData)
 ```
 

@@ -93,7 +93,7 @@ DistilBERT广泛应用于：
 DistilBERT模型可以表示为：
 
 $$
-\text{DistilBERT}(x, \alpha) = \text{MLP}(\text{MLP}(\text{MLP}(\text{MLP}(\text{MLP}(x, \alpha))))) 
+\text{DistilBERT}(x, \alpha) = \text{MLP}(\text{MLP}(\text{MLP}(\text{MLP}(\text{MLP}(x, \alpha)))))
 $$
 
 其中$x$是输入文本序列，$\alpha$是一组参数，$\text{MLP}$表示多层感知机（全连接层）。
@@ -193,14 +193,14 @@ def fine_tune(model, inputs, masks, labels, epochs=4, learning_rate=5e-5):
     model.train()
     criterion = CrossEntropyLoss()
     optimizer = Adam(model.parameters(), lr=learning_rate)
-    
+
     for epoch in range(epochs):
         predictions = model(inputs, attention_mask=masks)['last_hidden_state'][:, 0, :]
         loss = criterion(predictions, labels)
         loss.backward()
         optimizer.step()
         optimizer.zero_grad()
-        
+
     return model
 ```
 

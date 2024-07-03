@@ -191,9 +191,9 @@ $$
 根据传感器数据采集模型和预警阈值，可以建立以下模型：
 
 $$
-y_j = \begin{cases} 
+y_j = \begin{cases}
 1, & \text{if } X_j > \alpha \\
-0, & \text{if } X_j \leq \alpha 
+0, & \text{if } X_j \leq \alpha
 \end{cases}
 $$
 
@@ -218,9 +218,9 @@ $$
 假设地震预警阈值为 $\alpha = 0.5$，则地震预警模型可以表示为：
 
 $$
-y_1 = \begin{cases} 
+y_1 = \begin{cases}
 1, & \text{if } x_1 > 0.5 \\
-0, & \text{if } x_1 \leq 0.5 
+0, & \text{if } x_1 \leq 0.5
 \end{cases}
 $$
 

@@ -1,4 +1,4 @@
-                 
+
 # AI人工智能 Agent：在网络安全中的应用
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -47,7 +47,7 @@ AI 安全代理的核心算法包括但不限于以下几种：
 
 #### 步骤一：数据预处理
 - 收集和清洗网络流量、日志文件、系统事件等信息。
-  
+
 #### 步骤二：特征提取
 - 使用机器学习算法或深度学习模型提取有用特征，例如异常行为模式、恶意IP地址等。
 
@@ -139,12 +139,12 @@ class AIProxySecurity:
             # 添加多个卷积层、池化层、密集连接层等，
             # 配置适当的神经网络架构以适应特定任务需求
         ])
-    
+
     def train(self, dataset):
         # 使用优化器（例如Adam）进行训练
         self.model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
         self.model.fit(dataset.x_train, dataset.y_train)
-    
+
     def predict(self, new_data):
         return self.model.predict(new_data)
 

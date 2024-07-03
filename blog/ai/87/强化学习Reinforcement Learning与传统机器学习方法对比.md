@@ -1,7 +1,7 @@
 
 # 强化学习Reinforcement Learning与传统机器学习方法对比
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 关键词：
@@ -176,7 +176,7 @@ A: 梯度消失问题是神经网络学习过程中常见的问题，以下是�
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n rl-env python=3.8 
+conda create -n rl-env python=3.8
 conda activate rl-env
 ```
 3. 安装PyTorch：根据CUDA版本，从官网获取对应的安装命令。例如：

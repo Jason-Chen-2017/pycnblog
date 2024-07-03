@@ -70,8 +70,7 @@ $$
 在微调阶段，使用Adam优化算法进行模型参数优化：
 
 $$
-\\theta_{t+1} = \\theta_t - \\alpha \\cdot \
-abla_{\\theta_t}L_t
+\\theta_{t+1} = \\theta_t - \\alpha \\cdot \nabla_{\\theta_t}L_t
 $$
 
 其中，$\\theta$ 代表模型参数；$L_t$ 代表损失函数；$\\alpha$ 代表学习率。

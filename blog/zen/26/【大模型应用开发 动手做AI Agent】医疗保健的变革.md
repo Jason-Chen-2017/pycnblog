@@ -77,11 +77,11 @@
 以Transformer为例，其核心是自注意力机制（Self-Attention），可以表示为：
 
 $$
-\\text{MultiHead}(Q, K, V) = \\text{Concat}(\\text{head}_1, \\dots, \\text{head}_n)W^{'}
+\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \dots, \text{head}_n)W^{'}
 
 $$
 
-其中，$Q$、$K$和$V$分别表示查询、键和值矩阵，$W'$是权重矩阵，$\\text{Concat}$表示拼接操作。
+其中，$Q$、$K$和$V$分别表示查询、键和值矩阵，$W'$是权重矩阵，$\text{Concat}$表示拼接操作。
 
 ### 4.3 案例分析与讲解
 

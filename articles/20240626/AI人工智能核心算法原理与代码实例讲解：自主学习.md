@@ -147,8 +147,7 @@ $$
 对损失函数求导，得到：
 
 $$
-\
-abla_{\theta} L(\theta) = \frac{1}{N} \sum_{i=1}^N (Y_i - \hat{Y_i}) X_i
+\nabla_{\theta} L(\theta) = \frac{1}{N} \sum_{i=1}^N (Y_i - \hat{Y_i}) X_i
 $$
 
 令导数为0，得到：

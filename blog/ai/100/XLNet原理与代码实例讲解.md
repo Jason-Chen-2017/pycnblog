@@ -153,7 +153,7 @@ $$
 ```python
 from transformers import XlnetForSequenceClassification, XlnetTokenizer
 
-model = XlnetForSequenceClassification.from_pretrained('xlnet-base-cased') 
+model = XlnetForSequenceClassification.from_pretrained('xlnet-base-cased')
 tokenizer = XlnetTokenizer.from_pretrained('xlnet-base-cased')
 ```
 
@@ -167,7 +167,7 @@ def encode_data(texts, labels, tokenizer):
         dataset.append((encodings['input_ids'][i], encodings['attention_mask'][i], labels[i]))
     return dataset
 
-train_dataset = encode_data(train_texts, train_labels, tokenizer) 
+train_dataset = encode_data(train_texts, train_labels, tokenizer)
 dev_dataset = encode_data(dev_texts, dev_labels, tokenizer)
 ```
 
@@ -205,7 +205,7 @@ def evaluate(model, dataset, batch_size):
             attention_mask = batch['attention_mask'].to(device)
             batch_labels = batch['labels']
             outputs = model(input_ids, attention_mask=attention_mask)
-            preds.extend(outputs.logits.argmax(dim=1).tolist()) 
+            preds.extend(outputs.logits.argmax(dim=1).tolist())
             labels.extend(batch_labels.tolist())
     return accuracy_score(labels, preds)
 ```
@@ -220,7 +220,7 @@ optimizer = AdamW(model.parameters(), lr=2e-5)
 for epoch in range(epochs):
     loss = train_epoch(model, train_dataset, batch_size, optimizer)
     print(f"Epoch {epoch+1}, train loss: {loss:.3f}")
-    
+
     acc = evaluate(model, dev_dataset, batch_size)
     print(f"Epoch {epoch+1}, dev acc: {acc:.3f}")
 ```
@@ -264,7 +264,7 @@ A：XLNet模型在处理长文本时，主要优势如下：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n xlnet-env python=3.8 
+conda create -n xlnet-env python=3.8
 conda activate xlnet-env
 ```
 3. 安装PyTorch和Transformers库：
@@ -325,19 +325,19 @@ for epoch in range(num_train_epochs):
     for batch in train_dataloader:
         # 获取输入和标签
         b_input_ids, b_input_mask, b_labels = batch
-        
+
         # 获取模型输出
         outputs = model(b_input_ids, token_type_ids=None, attention_mask=b_input_mask, labels=b_labels)
-        
+
         # 计算损失
         loss = outputs.loss
-        
+
         # 反向传播和优化
         loss.backward()
         optimizer.step()
         scheduler.step()
         model.zero_grad()
-        
+
     print(f"Epoch {epoch+1}, Loss: {loss.item()}")
 
 # 保存模型

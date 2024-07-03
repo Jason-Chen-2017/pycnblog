@@ -277,11 +277,11 @@ train_encodings = tokenizer(train_texts, truncation=True, padding=True)
 dev_encodings = tokenizer(dev_texts, truncation=True, padding=True)
 
 # 创建数据集和迭代器
-train_dataset = torch.utils.data.TensorDataset(torch.tensor(train_encodings['input_ids']), 
-                                             torch.tensor(train_encodings['attention_mask']), 
+train_dataset = torch.utils.data.TensorDataset(torch.tensor(train_encodings['input_ids']),
+                                             torch.tensor(train_encodings['attention_mask']),
                                              torch.tensor(train_labels))
-dev_dataset = torch.utils.data.TensorDataset(torch.tensor(dev_encodings['input_ids']), 
-                                             torch.tensor(dev_encodings['attention_mask']), 
+dev_dataset = torch.utils.data.TensorDataset(torch.tensor(dev_encodings['input_ids']),
+                                             torch.tensor(dev_encodings['attention_mask']),
                                              torch.tensor(dev_labels))
 train_dataloader = DataLoader(train_dataset, batch_size=32, shuffle=True)
 dev_dataloader = DataLoader(dev_dataset, batch_size=32)

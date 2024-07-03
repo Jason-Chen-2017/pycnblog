@@ -86,30 +86,30 @@ graph TD;
 **多头自注意力**（MHA）的公式可以表示为：
 
 $$
-\\text{MultiHeadAttention}(Q, K, V) = \\text{Concat}(head_1, head_2, ..., head_n)W^O
+\text{MultiHeadAttention}(Q, K, V) = \text{Concat}(head_1, head_2, ..., head_n)W^O
 $$
 
 其中，
 
-- \\(Q\\) 是查询矩阵，
-- \\(K\\) 是键矩阵，
-- \\(V\\) 是值矩阵，
-- \\(head_i\\) 是第 \\(i\\) 个头部的输出，
-- \\(W^O\\) 是输出权重矩阵。
+- \(Q\) 是查询矩阵，
+- \(K\) 是键矩阵，
+- \(V\) 是值矩阵，
+- \(head_i\) 是第 \(i\) 个头部的输出，
+- \(W^O\) 是输出权重矩阵。
 
 **前馈神经网络**（FFN）可以表示为：
 
 $$
-\\text{FFN}(x) = \\text{ReLU}(W_2 \\cdot \\text{MLP}(W_1 \\cdot x + b_1) + b_2)
+\text{FFN}(x) = \text{ReLU}(W_2 \cdot \text{MLP}(W_1 \cdot x + b_1) + b_2)
 $$
 
 其中，
 
-- \\(x\\) 是输入向量，
-- \\(W_1\\) 和 \\(W_2\\) 是全连接层的权重矩阵，
-- \\(b_1\\) 和 \\(b_2\\) 是偏置项，
-- \\(\\text{MLP}\\) 是多层感知机（一种简单的神经网络模型），
-- \\(\\text{ReLU}\\) 是ReLU激活函数。
+- \(x\) 是输入向量，
+- \(W_1\) 和 \(W_2\) 是全连接层的权重矩阵，
+- \(b_1\) 和 \(b_2\) 是偏置项，
+- \(\text{MLP}\) 是多层感知机（一种简单的神经网络模型），
+- \(\text{ReLU}\) 是ReLU激活函数。
 
 ### 4.3 案例分析与讲解
 
@@ -146,7 +146,7 @@ from transformers import GPT2Tokenizer, GPT2LMHeadModel
 tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 model = GPT2LMHeadModel.from_pretrained('gpt2')
 
-input_text = \"[start] 气候变化是由全球变暖引发的现象，与温室气体排放密切相关。\"
+input_text = "[start] 气候变化是由全球变暖引发的现象，与温室气体排放密切相关。"
 input_ids = torch.tensor([tokenizer.encode(input_text)])
 
 output = model(input_ids)[0]

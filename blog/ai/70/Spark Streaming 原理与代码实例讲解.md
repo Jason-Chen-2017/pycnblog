@@ -90,7 +90,7 @@ Spark Streaming 在以下领域得到了广泛应用：
 Spark Streaming 的微批处理模型可以抽象为一个数学模型，如下所示：
 
 $$
-F_{batch} = f_{transformation}(D_{batch}) 
+F_{batch} = f_{transformation}(D_{batch})
 $$
 
 其中，$F_{batch}$ 表示微批处理作业的处理结果，$f_{transformation}$ 表示对数据进行转换处理的函数，$D_{batch}$ 表示微批处理作业包含的数据。
@@ -115,7 +115,7 @@ ssc = StreamingContext(sc, 1)
 
 # 创建 Kafka Direct Kafka Direct Stream
 kafkaStream = ssc.kafkaDirectStream(
-    "kafka://localhost:2181/kafka-streaming", 
+    "kafka://localhost:2181/kafka-streaming",
     {"metadata.broker.list": "localhost:9092"}
 )
 

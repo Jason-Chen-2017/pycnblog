@@ -120,14 +120,12 @@ $$
 
 #### 策略更新：
 $$
-\theta \leftarrow \theta + \alpha \
-abla_\theta J(\theta)
+\theta \leftarrow \theta + \alpha \nabla_\theta J(\theta)
 $$
 
 #### 价值函数更新：
 $$
-\phi \leftarrow \phi + \beta \
-abla_\phi \mathbb{E}_{(s,a,r,s') \sim \mathcal{D}}[A_t]
+\phi \leftarrow \phi + \beta \nabla_\phi \mathbb{E}_{(s,a,r,s') \sim \mathcal{D}}[A_t]
 $$
 
 ### 4.3 案例分析与讲解

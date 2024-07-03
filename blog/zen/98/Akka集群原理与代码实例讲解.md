@@ -192,7 +192,7 @@ import akka.actor.ActorRef
 
 object ClusterExample extends App {
   val system = ActorSystem("ClusterExample")
-  
+
   // 定义ActorA的行为逻辑
   object ActorABehavior extends Receive {
     case class Request() => {
@@ -305,7 +305,7 @@ Request received!
 ### 常见问题
 
 - **Q**: 如何解决Akka集群中的性能瓶颈？
-  
+
 **A**: 优化Akka集群性能的关键在于改进消息传递效率、合理利用缓存、优化路由规则以及提高Actor状态管理的效率。例如，减少不必要的消息传递、使用本地缓存减轻远程服务访问负担、精细调整路由规则以减少中转次数、以及定期清理和优化Actor状态等。
 
 ### 解答总结

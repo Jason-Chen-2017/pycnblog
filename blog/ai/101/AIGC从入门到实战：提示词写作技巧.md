@@ -328,4 +328,4 @@ AIGC技术正在不断发展，未来将会在更多领域得到应用，例如�
 
 **A:** AIGC技术不会取代人类，而是会成为人类的工具，帮助人类更高效、更便捷地完成工作。人类的创造力和想象力是AIGC技术无法取代的。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

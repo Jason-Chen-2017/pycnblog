@@ -94,9 +94,9 @@ MapReduce广泛应用于大数据处理、数据挖掘、机器学习等领域�
 MapReduce的核心是并行处理的概念，可以抽象为以下数学模型：
 
 - **Map函数**：$f_{map}(k, v) = (k', v')$
-- **Reduce函数**：$f_{reduce}(k, \\{v_i\\}) = k'$
-  
-其中，$k$和$v$分别为输入键和值，$k'$和$v'$分别为映射后的键和值，$\\{v_i\\}$为同一键的所有值集合。
+- **Reduce函数**：$f_{reduce}(k, \{v_i\}) = k'$
+
+其中，$k$和$v$分别为输入键和值，$k'$和$v'$分别为映射后的键和值，$\{v_i\}$为同一键的所有值集合。
 
 ### 4.2 公式推导过程
 
@@ -106,7 +106,7 @@ MapReduce通过以下步骤实现数据的并行处理：
 2. **映射**：每个Map任务执行$f_{map}(k, v)$，生成键值对$(k', v')$。
 3. **排序**：相同键的键值对进行排序。
 4. **分发**：排序后的键值对根据键分发到$n$个Reduce任务。
-5. **聚合**：每个Reduce任务执行$f_{reduce}(k, \\{v_i\\})$，生成最终结果。
+5. **聚合**：每个Reduce任务执行$f_{reduce}(k, \{v_i\})$，生成最终结果。
 
 ### 4.3 案例分析与讲解
 
@@ -118,18 +118,18 @@ public class WordCount {
         Configuration conf = new Configuration();
         Job job = Job.getInstance(conf);
         job.setJarByClass(WordCount.class);
-        job.setJobName(\"word count\");
-        
+        job.setJobName("word count");
+
         job.setMapperClass(Map.class);
         job.setReducerClass(Reduce.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
-        
+
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
-        
+
         boolean success = job.waitForCompletion(true);
-        System.out.println(\"Job completed: \" + success);
+        System.out.println("Job completed: " + success);
     }
 }
 
@@ -139,7 +139,7 @@ public class Map extends Mapper<LongWritable, Text, Text, IntWritable> {
 
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String line = value.toString();
-        String[] words = line.split(\"\\\\W+\");
+        String[] words = line.split("\\W+");
         for (String w : words) {
             if (!w.isEmpty()) {
                 word.set(w);
@@ -251,7 +251,7 @@ MapReduce为大规模数据处理提供了强大的支撑，通过并行处理�
 
 - **如何处理数据倾斜问题？**
   使用更均匀的数据分区策略或引入数据均衡机制，例如基于值的分区策略。
-  
+
 - **如何提高MapReduce的性能？**
   优化数据分区、减少磁盘I/O操作、提高网络传输效率、合理配置Map和Reduce任务数量等。
 

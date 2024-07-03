@@ -176,7 +176,7 @@ A2：评估强化学习算法的性能可以通过以下方法：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n tensorflow-env python=3.8 
+conda create -n tensorflow-env python=3.8
 conda activate tensorflow-env
 ```
 3. 安装TensorFlow：

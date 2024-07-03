@@ -227,7 +227,7 @@ class KMeansModel(keras.Model):
             initializer="random_normal",
             trainable=True,
         )
-    
+
     def call(self, x):
         x = x - self.cluster_centers
         distances = tf.reduce_sum(x**2, axis=1)

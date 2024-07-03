@@ -1,7 +1,7 @@
 
 # 梯度下降Gradient Descent原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -49,10 +49,8 @@
 梯度下降算法的步骤如下：
 
 1. 初始化参数 $\theta$：随机选择一组参数 $\theta_0$ 作为初始值。
-2. 计算损失函数 $L(\theta)$ 在当前参数 $\theta$ 处的梯度 $\
-abla_{\theta}L(\theta)$。
-3. 根据梯度信息更新参数 $\theta$：$\theta \leftarrow \theta - \alpha \
-abla_{\theta}L(\theta)$，其中 $\alpha$ 为学习率。
+2. 计算损失函数 $L(\theta)$ 在当前参数 $\theta$ 处的梯度 $\nabla_{\theta}L(\theta)$。
+3. 根据梯度信息更新参数 $\theta$：$\theta \leftarrow \theta - \alpha \nabla_{\theta}L(\theta)$，其中 $\alpha$ 为学习率。
 4. 重复步骤2和3，直到满足停止条件（如达到预设的迭代次数或损失值变化小于某个阈值）。
 
 ### 3.3 算法优缺点
@@ -185,7 +183,7 @@ A3：梯度下降算法无法保证找到全局最小值，但可以通过以下
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n gradient-descent-env python=3.8 
+conda create -n gradient-descent-env python=3.8
 conda activate gradient-descent-env
 ```
 
@@ -220,17 +218,17 @@ def gradient_descent(X, y, w_init, learning_rate, epochs):
     m = X.shape[0]
     w = w_init
     w_history = []
-    
+
     for epoch in range(epochs):
         predictions = X.dot(w)
         error = predictions - y
         w_gradient = np.dot(X.T, error) / m
         w = w - learning_rate * w_gradient
         w_history.append(w)
-        
+
         if epoch % 100 == 0:
             print(f"Epoch {epoch}: w = {w}")
-    
+
     return w, w_history
 
 # 初始化参数

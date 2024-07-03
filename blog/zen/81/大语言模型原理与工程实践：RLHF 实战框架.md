@@ -88,8 +88,7 @@ $$
 以 Policy Gradient 方法为例，其更新策略的目标函数为：
 
 $$
-\Delta\theta \propto \mathbb{E}_{\pi_\theta}\left[\
-abla_\theta \log \pi_\theta(a|s) G_t\right]
+\Delta\theta \propto \mathbb{E}_{\pi_\theta}\left[\nabla_\theta \log \pi_\theta(a|s) G_t\right]
 $$
 
 其中，$G_t$ 是到时间 $t$ 的累积奖励，$\pi_\theta(a|s)$ 是在状态 $s$ 下采取动作 $a$ 的概率。
@@ -99,9 +98,7 @@ $$
 假设我们使用 Policy Gradient 方法对策略评估器进行优化。在一次迭代中，策略评估器根据当前策略生成文本片段，并接收人类评估者的反馈。根据反馈，我们可以计算出策略梯度：
 
 $$
-\
-abla_\theta J(\theta) \approx \frac{1}{N} \sum_{i=1}^N \
-abla_\theta \log \pi_\theta(a_i|s_i) G_i
+\nabla_\theta J(\theta) \approx \frac{1}{N} \sum_{i=1}^N \nabla_\theta \log \pi_\theta(a_i|s_i) G_i
 $$
 
 其中，$N$ 是样本数量，$G_i$ 是第 $i$ 个样本的累积奖励。
@@ -160,7 +157,7 @@ def policy_gradient_update(policy, rewards, learning_rate=0.01):
 
 ```
 Prompt: Write a detailed review about the latest smartphone.
-Generated Text: The latest smartphone is an amazing device... 
+Generated Text: The latest smartphone is an amazing device...
 
 Reward: 4.5 out of 5 stars.
 ```

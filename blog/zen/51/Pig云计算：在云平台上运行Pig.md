@@ -92,13 +92,13 @@ $$R = \gamma_{category, SUM(sales)}(SalesData)$$
 
 ```pig
 -- 加载销售数据
-sales = LOAD 'sales.csv' USING PigStorage(',') 
+sales = LOAD 'sales.csv' USING PigStorage(',')
         AS (product:chararray, category:chararray, amount:double);
 
 -- 按照产品类别分组,计算每个类别的销售总额
 category_sales = GROUP sales BY category;
-result = FOREACH category_sales GENERATE 
-         group AS category, 
+result = FOREACH category_sales GENERATE
+         group AS category,
          SUM(sales.amount) AS total_sales;
 
 -- 将结果存储到HDFS

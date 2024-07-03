@@ -24,8 +24,8 @@ Stiefel-Whitney类的意义在于它们提供了一种量化向量丛拓扑性�
 
 Stiefel-Whitney类是向量丛上的特征类，用于描述向量丛的拓扑性质。对于一个向量丛$V$，其$ k $阶Stiefel-Whitney类$ w_k(V) $是一个整数类，它满足以下性质：
 
-1. **乘法性**：如果两个向量丛$V$和$W$相容，则$w_k(V \\oplus W) = w_k(V) \\cdot w_k(W)$。
-2. **循环性**：$w_k(V \\times \\mathbb{R}^n) = w_k(V)$，其中$V \\times \\mathbb{R}^n$是向量丛$V$与$\\mathbb{R}^n$的直积。
+1. **乘法性**：如果两个向量丛$V$和$W$相容，则$w_k(V \oplus W) = w_k(V) \cdot w_k(W)$。
+2. **循环性**：$w_k(V \times \mathbb{R}^n) = w_k(V)$，其中$V \times \mathbb{R}^n$是向量丛$V$与$\mathbb{R}^n$的直积。
 3. **基本性质**：$w_0(V) = 1$，$w_1(V)$是$V$的非平凡性指标。
 
 ### Stiefel-Whitney类的计算方法
@@ -69,14 +69,14 @@ Stiefel-Whitney类的计算通常涉及拓扑学中的特征类理论和同调�
 
 在数学模型构建中，Stiefel-Whitney类的计算涉及同调群、特征类映射和特征映射理论。具体模型可以表示为：
 
-- **特征类映射**：$f: Vect \\to H^*(M; \\mathbb{Z}/2\\mathbb{Z})$，其中$Vect$是向量丛的范畴，$H^*(M; \\mathbb{Z}/2\\mathbb{Z})$是流形$M$的双整系数同调群。
-- **Stiefel-Whitney类**：$w_k(V) \\in H^k(M; \\mathbb{Z}/2\\mathbb{Z})$，是特征类$f(V)$在$k$阶的值。
+- **特征类映射**：$f: Vect \to H^*(M; \mathbb{Z}/2\mathbb{Z})$，其中$Vect$是向量丛的范畴，$H^*(M; \mathbb{Z}/2\mathbb{Z})$是流形$M$的双整系数同调群。
+- **Stiefel-Whitney类**：$w_k(V) \in H^k(M; \mathbb{Z}/2\mathbb{Z})$，是特征类$f(V)$在$k$阶的值。
 
 ### 公式推导过程
 
 #### 公式推导
 
-- **特征类公式**：$f(V) = \\sum_{i=0}^{rank(V)} w_i(V)$，其中$rank(V)$是向量丛$V$的秩，$w_i(V)$是$V$的$i$阶Stiefel-Whitney类。
+- **特征类公式**：$f(V) = \sum_{i=0}^{rank(V)} w_i(V)$，其中$rank(V)$是向量丛$V$的秩，$w_i(V)$是$V$的$i$阶Stiefel-Whitney类。
 - **Stiefel-Whitney类计算**：通过特征类映射$f$和同调群的性质，可以得到$w_i(V)$的具体表达式和计算方法。
 
 ### 案例分析与讲解
@@ -110,26 +110,26 @@ Stiefel-Whitney类的计算通常涉及拓扑学中的特征类理论和同调�
 import sage.all
 
 def compute_stiefel_whitney_class(vector_bundle, rank):
-    \"\"\"
+    """
     计算Stiefel-Whitney类的函数。
     参数:
         vector_bundle: SageManifolds中的向量丛对象。
         rank: 向量丛的秩。
     返回:
         vector_bundle的Stiefel-Whitney类列表。
-    \"\"\"
+    """
     # 获取向量丛的同调群
     cohomology_group = vector_bundle.base_space().cohomology_group()
-    
+
     # 初始化Stiefel-Whitney类列表
     stiefel_whitney_classes = []
-    
+
     for i in range(rank + 1):
         # 计算i阶Stiefel-Whitney类
         stiefel_whitney_class_i = cohomology_group.characteristic_class(
             vector_bundle, degree=i, orientation_form=vector_bundle.orientation_form())
         stiefel_whitney_classes.append(stiefel_whitney_class_i)
-    
+
     return stiefel_whitney_classes
 ```
 

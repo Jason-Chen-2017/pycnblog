@@ -65,7 +65,7 @@ BART采用自回归的方式进行文本生成，同时通过双向注意力机�
 BART的数学模型构建基于双向注意力机制和自回归生成过程。关键公式如下：
 
 $$
-P(y|x) = \\prod_{t=1}^{T} P(y_t|y_{<t}, x)
+P(y|x) = \prod_{t=1}^{T} P(y_t|y_{<t}, x)
 $$
 
 其中，$y$表示生成的文本序列，$x$表示输入文本序列，$y_t$表示第$t$个时间步生成的词。
@@ -102,14 +102,14 @@ model = BartForConditionalGeneration.from_pretrained('facebook/bart-base')
 tokenizer = BartTokenizer.from_pretrained('facebook/bart-base')
 
 # 输入文本序列
-input_text = \"The quick brown fox jumps over the lazy dog.\"
+input_text = "The quick brown fox jumps over the lazy dog."
 input_ids = tokenizer.encode(input_text, return_tensors='pt')
 
 # 解码过程
 output = model.generate(input_ids)
 decoded_output = tokenizer.decode(output[0])
 
-print(\"Generated Text:\", decoded_output)
+print("Generated Text:", decoded_output)
 ```
 
 ### 5.3 代码解读与分析
@@ -174,7 +174,7 @@ BART模型展示了多任务学习在提升模型泛化能力方面的潜力，�
 ### Q&A
 
 - **Q：如何在BART模型中调整多任务学习的权重？**
-  
+
 答：权重调整通常依赖于实验和交叉验证，通过观察不同任务的表现和模型的整体性能来决定。在实践中，可以使用加权平均的方法，根据任务的重要性或预期的性能调整权重。
 
 - **Q：BART模型是否适用于处理序列长度极长的文本？**

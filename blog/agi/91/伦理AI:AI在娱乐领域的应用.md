@@ -221,7 +221,7 @@ AI在娱乐领域的应用主要依赖于以下几种算法：
 假设深度神经网络包含 $L$ 层，第 $l$ 层的输出为 $a_l$，激活函数为 $\phi$，权重矩阵为 $W_l$，则：
 
 $$
-a_l = \phi(W_l a_{l-1}) 
+a_l = \phi(W_l a_{l-1})
 $$
 
 其中 $a_0$ 为输入数据。
@@ -231,8 +231,7 @@ $$
 假设损失函数为 $L(\theta)$，权重矩阵为 $\theta$，则随机梯度下降的迭代公式为：
 
 $$
-\theta \leftarrow \theta - \alpha \
-abla_{\theta}L(\theta) 
+\theta \leftarrow \theta - \alpha \nabla_{\theta}L(\theta)
 $$
 
 其中 $\alpha$ 为学习率。

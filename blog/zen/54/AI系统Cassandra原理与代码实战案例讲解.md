@@ -211,7 +211,7 @@ Cassandra作为一款优秀的分布式NoSQL数据库,广泛应用于以下场�
 
 1. **Apache Cassandra官网**: https://cassandra.apache.org/
 2. **Cassandra查询语言(CQL)参考**: https://cassandra.apache.org/doc/latest/cql/
-3. **Cassandra可视化工具**: 
+3. **Cassandra可视化工具**:
    - DataStax DevCenter: https://www.datastax.com/dev/devcenter
    - Cassandra Web: https://github.com/Bvlgari/Cassandra-Web
 4. **Cassandra驱动程序**:

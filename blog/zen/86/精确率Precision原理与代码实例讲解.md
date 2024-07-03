@@ -32,7 +32,7 @@
 精确率（Precision）是指模型预测为正例的样本中，实际为正例的比例。它可以表示为：
 
 $$
- \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}} 
+ \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
 $$
 
 其中，TP（True Positives）表示模型正确预测为正例的样本数量，FP（False Positives）表示模型错误预测为正例的样本数量。
@@ -44,7 +44,7 @@ $$
 - **召回率**是指模型正确预测为正例的样本占总正例的比例，即：
 
 $$
- \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}} 
+ \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
 $$
 
 其中，FN（False Negatives）表示模型错误预测为负例的样本数量。
@@ -52,7 +52,7 @@ $$
 - **F1分数**是精确率和召回率的调和平均，即：
 
 $$
- \text{F1 Score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}} 
+ \text{F1 Score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
 $$
 
 F1分数综合考虑了精确率和召回率，是一个更全面的性能指标。
@@ -91,7 +91,7 @@ F1分数综合考虑了精确率和召回率，是一个更全面的性能指标
 精确率的数学模型已经在前文给出，即：
 
 $$
- \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}} 
+ \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
 $$
 
 ### 4.2 公式推导过程
@@ -99,11 +99,11 @@ $$
 假设有一个样本集，其中包含n个样本。对于每个样本，模型预测为正例的概率为$P(Y=1|X)$，预测为负例的概率为$P(Y=0|X)$。根据贝叶斯定理，我们可以计算出每个样本的真实标签：
 
 $$
- P(Y=1|X) = \frac{P(X|Y=1)P(Y=1)}{P(X)} 
+ P(Y=1|X) = \frac{P(X|Y=1)P(Y=1)}{P(X)}
 $$
 
 $$
- P(Y=0|X) = \frac{P(X|Y=0)P(Y=0)}{P(X)} 
+ P(Y=0|X) = \frac{P(X|Y=0)P(Y=0)}{P(X)}
 $$
 
 其中，$P(X|Y=1)$和$P(X|Y=0)$分别表示在标签为正和负的条件下，样本X的概率分布；$P(Y=1)$和$P(Y=0)$分别表示标签为正和负的先验概率；$P(X)$表示样本X的概率分布。
@@ -131,7 +131,7 @@ $$
 因此，精确率为：
 
 $$
- \text{Precision} = \frac{1}{1 + 1} = 0.5 
+ \text{Precision} = \frac{1}{1 + 1} = 0.5
 $$
 
 这个案例表明，模型在预测正例方面的能力较差，精确率为50%。

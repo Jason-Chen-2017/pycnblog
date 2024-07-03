@@ -122,8 +122,7 @@ AGI在量子引力中的应用领域主要包括：
 以下以量子力学薛定谔方程为例，说明公式推导过程：
 
 $$
-\mathrm{i} \hbar \frac{\partial}{\partial t} \Psi(\boldsymbol{r},t) = -\frac{\hbar^2}{2m}\
-abla^2 \Psi(\boldsymbol{r},t) + V(\boldsymbol{r})\Psi(\boldsymbol{r},t)
+\mathrm{i} \hbar \frac{\partial}{\partial t} \Psi(\boldsymbol{r},t) = -\frac{\hbar^2}{2m}\nabla^2 \Psi(\boldsymbol{r},t) + V(\boldsymbol{r})\Psi(\boldsymbol{r},t)
 $$
 
 其中，$\Psi(\boldsymbol{r},t)$ 表示量子系统的波函数，$m$ 为粒子质量，$V(\boldsymbol{r})$ 为势能函数。

@@ -288,15 +288,15 @@ def translate(src_text, model, tokenizer, max_len=128):
     src_encoding = tokenizer(src_text, return_tensors='pt', max_length=max_len, padding='max_length', truncation=True)
     input_ids = src_encoding['input_ids']
     attention_mask = src_encoding['attention_mask']
-    
+
     # 将模型设置为评估模式
     model.eval()
-    
+
     with torch.no_grad():
         outputs = model(input_ids, attention_mask=attention_mask)
         logits = outputs.logits
         preds = logits.argmax(dim=-1).tolist()
-    
+
     return tokenizer.decode(preds[0], skip_special_tokens=True)
 
 # 测试翻译函数
@@ -323,15 +323,15 @@ print(f"翻译结果：{tgt_text}")
        src_encoding = tokenizer(src_text, return_tensors='pt', max_length=max_len, padding='max_length', truncation=True)
        input_ids = src_encoding['input_ids']
        attention_mask = src_encoding['attention_mask']
-       
+
        # 将模型设置为评估模式
        model.eval()
-       
+
        with torch.no_grad():
            outputs = model(input_ids, attention_mask=attention_mask)
            logits = outputs.logits
            preds = logits.argmax(dim=-1).tolist()
-       
+
        return tokenizer.decode(preds[0], skip_special_tokens=True)
    ```
 

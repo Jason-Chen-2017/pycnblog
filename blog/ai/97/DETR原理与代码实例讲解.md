@@ -254,7 +254,7 @@ A：对于多目标检测任务，DETR模型可以直接预测多个目标的类
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n detr-env python=3.8 
+conda create -n detr-env python=3.8
 conda activate detr-env
 ```
 

@@ -127,22 +127,22 @@ public class OrderSummarizer {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         // 创建源数据集
-        DataStream<String> ordersStream = env.socketTextStream(\"localhost\", 9999);
+        DataStream<String> ordersStream = env.socketTextStream("localhost", 9999);
 
         // 转换为表
-        Table ordersTable = tableEnv.fromDataStream(ordersStream, \"OrderId STRING, Quantity INT, Price DECIMAL\");
+        Table ordersTable = tableEnv.fromDataStream(ordersStream, "OrderId STRING, Quantity INT, Price DECIMAL");
 
         // 计算总金额
         Table totalAmountTable = ordersTable
-            .select(\"OrderId\", \"Quantity\", \"Price\")
-            .groupBy(\"OrderId\")
-            .selectExpr(\"sum(Quantity * Price) as TotalAmount\");
+            .select("OrderId", "Quantity", "Price")
+            .groupBy("OrderId")
+            .selectExpr("sum(Quantity * Price) as TotalAmount");
 
         // 打印结果
         totalAmountTable.print();
 
         // 执行任务
-        env.execute(\"Order Summarizer\");
+        env.execute("Order Summarizer");
     }
 }
 ```

@@ -293,4 +293,4 @@ BERT模型是近年来NLP领域取得的重大突破之一，它在各种NLP任�
 * **如何使用BERT模型进行不同的NLP任务？**
     * 使用BERT模型进行不同的NLP任务，需要根据具体的任务对预训练好的BERT模型进行微调。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

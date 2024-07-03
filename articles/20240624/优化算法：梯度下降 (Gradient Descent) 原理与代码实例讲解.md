@@ -59,10 +59,8 @@ B & C & D --> E{优化模型参数}
 
 梯度下降算法的步骤如下：
 1. 初始化模型参数 $\theta$。
-2. 计算损失函数 $L(\theta)$ 的梯度 $\
-abla_{\theta}L(\theta)$。
-3. 根据梯度更新参数：$\theta \leftarrow \theta - \alpha \
-abla_{\theta}L(\theta)$，其中 $\alpha$ 为学习率。
+2. 计算损失函数 $L(\theta)$ 的梯度 $\nabla_{\theta}L(\theta)$。
+3. 根据梯度更新参数：$\theta \leftarrow \theta - \alpha \nabla_{\theta}L(\theta)$，其中 $\alpha$ 为学习率。
 4. 重复步骤2和3，直到满足停止条件（如达到预设的迭代次数或损失函数值变化很小）。
 
 ### 3.3 算法优缺点
@@ -93,12 +91,10 @@ abla_{\theta}L(\theta)$，其中 $\alpha$ 为学习率。
 
 ### 4.2 公式推导过程
 
-假设损失函数 $L(\theta)$ 关于 $\theta$ 的梯度为 $\
-abla_{\theta}L(\theta)$。则梯度下降的更新公式为：
+假设损失函数 $L(\theta)$ 关于 $\theta$ 的梯度为 $\nabla_{\theta}L(\theta)$。则梯度下降的更新公式为：
 
 $$
-\theta \leftarrow \theta - \alpha \
-abla_{\theta}L(\theta)
+\theta \leftarrow \theta - \alpha \nabla_{\theta}L(\theta)
 $$
 
 其中 $\alpha$ 为学习率。

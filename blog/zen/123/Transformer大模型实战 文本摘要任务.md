@@ -353,4 +353,4 @@ Transformer 模型在文本摘要领域取得了显著进展，它能够学习�
 
 **A：** 一些文本包含复杂的语义信息，例如隐喻、反讽等，现有的文本摘要模型难以处理这些信息。未来需要进一步探索如何处理复杂语义信息。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -110,19 +110,19 @@ D --> E
 - 编码器：$E(x)$ 表示编码器，$x$ 表示原文序列，$E(x)$ 表示编码器输出序列。
 
 $$
-E(x) = \left[ \begin{array}{c} e_1(x) \\ e_2(x) \\ \vdots \\ e_N(x) \end{array} \right]
+E(x) = \left[ \begin{array}{c} e_1(x) \ e_2(x) \ \vdots \ e_N(x) \end{array} \right]
 $$
 
 - 注意力机制：$A(x,y)$ 表示注意力机制，$y$ 表示编码器输出序列，$A(x,y)$ 表示注意力权重。
 
 $$
-A(x,y) = \left[ \begin{array}{c} a_1(x,y) \\ a_2(x,y) \\ \vdots \\ a_N(x,y) \end{array} \right]
+A(x,y) = \left[ \begin{array}{c} a_1(x,y) \ a_2(x,y) \ \vdots \ a_N(x,y) \end{array} \right]
 $$
 
 - 解码器：$D(x,y)$ 表示解码器，$y$ 表示编码器输出序列，$D(x,y)$ 表示解码器输出序列。
 
 $$
-D(x,y) = \left[ \begin{array}{c} d_1(x,y) \\ d_2(x,y) \\ \vdots \\ d_M(x,y) \end{array} \right]
+D(x,y) = \left[ \begin{array}{c} d_1(x,y) \ d_2(x,y) \ \vdots \ d_M(x,y) \end{array} \right]
 $$
 
 ### 4.2 公式推导过程
@@ -156,7 +156,7 @@ $$
 4. **编码器输出**：将多层感知机输出拼接成编码器输出序列。
 
 $$
-E(x) = \left[ \begin{array}{c} e_1^{(m)} \\ e_2^{(m)} \\ \vdots \\ e_N^{(m)} \end{array} \right]
+E(x) = \left[ \begin{array}{c} e_1^{(m)} \ e_2^{(m)} \ \vdots \ e_N^{(m)} \end{array} \right]
 $$
 
 ### 4.3 案例分析与讲解
@@ -290,7 +290,7 @@ for epoch in range(3):
         loss = outputs.loss
         loss.backward()
         optimizer.step()
-    
+
     model.eval()
     with torch.no_grad():
         dev_loss = 0
@@ -382,7 +382,7 @@ for epoch in range(3):
         loss = outputs.loss
         loss.backward()
         optimizer.step()
-    
+
     model.eval()
     with torch.no_grad():
         dev_loss = 0

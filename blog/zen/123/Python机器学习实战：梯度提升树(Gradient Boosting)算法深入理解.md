@@ -1,6 +1,6 @@
 # Python机器学习实战：梯度提升树(Gradient Boosting)算法深入理解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 

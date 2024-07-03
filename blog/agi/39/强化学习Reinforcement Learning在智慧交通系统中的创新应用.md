@@ -119,8 +119,7 @@ Q值更新公式用于在迭代过程中更新Q值函数。其推导过程如下
 
 设$\theta$为Q值函数的参数，则：
 
-$$\theta_{new} = \theta_{old} + \eta \
-abla_{\theta} J(\theta_{old})$$
+$$\theta_{new} = \theta_{old} + \eta \nabla_{\theta} J(\theta_{old})$$
 
 其中，$J(\theta)$为损失函数，$\eta$为学习率。
 
@@ -203,7 +202,7 @@ class QNetwork(nn.Module):
         super(QNetwork, self).__init__()
         self.fc1 = nn.Linear(input_dim, hidden_dim)
         self.fc2 = nn.Linear(hidden_dim, output_dim)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)
@@ -222,27 +221,27 @@ def q_learning(env, q_network, optimizer, episodes=1000, gamma=0.99, alpha=0.01)
         state = env.reset()
         state = np.expand_dims(state, axis=0)
         done = False
-        
+
         while not done:
             with torch.no_grad():
                 q_values = q_network(torch.from_numpy(state))
-            
+
             # ε-greedy策略
             if np.random.rand() < 0.1:
                 action = env.action_space.sample()
             else:
                 _, action = torch.max(q_values, dim=1)
-            
+
             next_state, reward, done, _ = env.step(action.item())
             next_state = np.expand_dims(next_state, axis=0)
-            
+
             # 更新Q值
             target = reward + gamma * torch.max(q_network(torch.from_numpy(next_state)))
             loss = F.mse_loss(q_values, target)
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-            
+
             state = next_state
 
 # 运行Q-learning算法
@@ -253,13 +252,13 @@ for _ in range(10):
     state = env.reset()
     state = np.expand_dims(state, axis=0)
     done = False
-    
+
     while not done:
         with torch.no_grad():
             q_values = q_network(torch.from_numpy(state))
-        
+
         _, action = torch.max(q_values, dim=1)
-        
+
         next_state, reward, done, _ = env.step(action.item())
         state = next_state
 ```

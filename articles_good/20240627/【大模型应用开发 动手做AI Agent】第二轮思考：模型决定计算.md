@@ -209,8 +209,7 @@
 
 梯度下降是一种常用的优化算法，用于求解损失函数的最小值。其核心思想是沿着损失函数梯度方向反向更新参数。
 
-$$\theta_{t+1} = \theta_t - \alpha\
-abla_{\theta}L(\theta_t)$$
+$$\theta_{t+1} = \theta_t - \alpha\nabla_{\theta}L(\theta_t)$$
 
 其中 $\theta$ 为模型参数，$L$ 为损失函数，$\alpha$ 为学习率。
 
@@ -259,12 +258,10 @@ abla_{\theta}L(\theta_t)$$
 梯度下降的推导过程如下：
 
 1. **计算损失函数关于参数的梯度**：
-   $$\
-abla_{\theta}L(\theta) = \frac{\partial L}{\partial \theta}$$
+   $$\nabla_{\theta}L(\theta) = \frac{\partial L}{\partial \theta}$$
 
 2. **更新参数**：
-   $$\theta_{t+1} = \theta_t - \alpha\
-abla_{\theta}L(\theta_t)$$
+   $$\theta_{t+1} = \theta_t - \alpha\nabla_{\theta}L(\theta_t)$$
 
 #### 4.2.3 模型剪枝
 

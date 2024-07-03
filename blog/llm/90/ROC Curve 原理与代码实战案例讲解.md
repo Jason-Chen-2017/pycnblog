@@ -1,7 +1,7 @@
 
 # ROC Curve 原理与代码实战案例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 关键词
 
@@ -180,15 +180,15 @@ ROC Curve和AUC在以下领域具有广泛的应用：
 ROC Curve和AUC的数学模型如下：
 
 $$
-TPR = \frac{TP}{TP+FN} 
+TPR = \frac{TP}{TP+FN}
 $$
 
 $$
-FPR = \frac{FP}{FP+TN} 
+FPR = \frac{FP}{FP+TN}
 $$
 
 $$
-AUC = \int_{0}^{1} P(TPR|FPR) dFPR 
+AUC = \int_{0}^{1} P(TPR|FPR) dFPR
 $$
 
 其中，TPR表示真阳性率，FPR表示假阳性率。

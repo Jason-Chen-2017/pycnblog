@@ -354,17 +354,17 @@ def train():
     data = request.get_json()
     x = torch.tensor([data['x']])
     y = torch.tensor([data['y']])
-    
+
     # 前向传播
     output = model(x)
-    
+
     # 计算损失
     loss = nn.MSELoss()(output, y)
-    
+
     # 反向传播
     loss.backward()
     model.zero_grad()
-    
+
     return jsonify({'loss': loss.item()})
 
 # 模型预测
@@ -373,10 +373,10 @@ def predict():
     # 解析请求参数
     data = request.get_json()
     x = torch.tensor([data['x']])
-    
+
     # 前向传播
     output = model(x)
-    
+
     return jsonify({'output': output.item()})
 
 if __name__ == '__main__':

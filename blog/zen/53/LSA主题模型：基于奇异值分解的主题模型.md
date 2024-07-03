@@ -10,7 +10,7 @@ LSA（Latent Semantic Analysis）是一种经典的主题模型算法，基于�
 #### 1.1.2 主题模型的发展历程
 #### 1.1.3 常见的主题模型算法
 
-### 1.2 LSA模型的起源与发展  
+### 1.2 LSA模型的起源与发展
 #### 1.2.1 LSA模型的提出
 #### 1.2.2 LSA模型的改进与扩展
 #### 1.2.3 LSA模型的应用领域
@@ -23,7 +23,7 @@ LSA（Latent Semantic Analysis）是一种经典的主题模型算法，基于�
 
 ### 2.2 奇异值分解（SVD）
 #### 2.2.1 SVD的数学定义
-#### 2.2.2 SVD的几何解释  
+#### 2.2.2 SVD的几何解释
 #### 2.2.3 SVD在LSA中的应用
 
 ### 2.3 潜在语义空间
@@ -86,22 +86,22 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import TruncatedSVD
 
 # 构建词-文档矩阵
-vectorizer = TfidfVectorizer(stop_words='english', 
-                             use_idf=True, 
+vectorizer = TfidfVectorizer(stop_words='english',
+                             use_idf=True,
                              smooth_idf=True)
 X = vectorizer.fit_transform(documents)
 
 # 奇异值分解
-lsa = TruncatedSVD(n_components=k) 
+lsa = TruncatedSVD(n_components=k)
 X_lsa = lsa.fit_transform(X)
 
 # 提取主题词
 terms = vectorizer.get_feature_names()
 for i, comp in enumerate(lsa.components_):
     print(f"Topic {i}:")
-    print(" ".join([terms[j] 
+    print(" ".join([terms[j]
                     for j in comp.argsort()[:-10 - 1:-1]]))
-                    
+
 # 文档在主题空间中的表示
 doc_topic_matrix = X_lsa
 ```
@@ -118,7 +118,7 @@ doc_topic_matrix = X_lsa
 #### 6.1.2 主题驱动的文档聚类
 #### 6.1.3 案例分析
 
-### 6.2 信息检索与推荐系统  
+### 6.2 信息检索与推荐系统
 #### 6.2.1 基于主题的文档检索
 #### 6.2.2 个性化推荐中的主题匹配
 #### 6.2.3 案例分析
@@ -140,7 +140,7 @@ doc_topic_matrix = X_lsa
 - Wikipedia Corpus: 维基百科文章语料库，适用于大规模主题模型实验。
 
 ### 7.3 主题模型研究论文与教程
-- Deerwester et al. (1990). Indexing by Latent Semantic Analysis. JASIS. 
+- Deerwester et al. (1990). Indexing by Latent Semantic Analysis. JASIS.
 - Landauer et al. (1998). An Introduction to Latent Semantic Analysis. Discourse Processes.
 - Blei (2012). Probabilistic Topic Models. Communications of the ACM.
 
@@ -150,7 +150,7 @@ doc_topic_matrix = X_lsa
 #### 8.1.2 LSA模型的局限性
 #### 8.1.3 LSA与其他主题模型的比较
 
-### 8.2 主题模型的发展趋势  
+### 8.2 主题模型的发展趋势
 #### 8.2.1 深度学习与主题模型的结合
 #### 8.2.2 动态主题模型与主题演化
 #### 8.2.3 跨语言与跨领域主题模型
@@ -170,11 +170,11 @@ doc_topic_matrix = X_lsa
 ### 9.2 LSA模型能否处理短文本？
 LSA对于短文本的表现通常不如长文档，主要原因是短文本词汇稀疏、共现信息不足。针对短文本主题建模，可以考虑以下策略：
 - 引入外部知识，如词汇的语义关系、主题先验等。
-- 利用文档元数据，如作者、时间、标签等辅助信息。 
+- 利用文档元数据，如作者、时间、标签等辅助信息。
 - 将短文本聚合为长文档，如按会话、用户等维度进行聚合。
 
 ### 9.3 LSA模型的时间复杂度如何？
-LSA的核心是奇异值分解，其时间复杂度为$O(min(m^2n,mn^2))$，其中m为文档数，n为词数。在实践中，可以采用以下方法提高效率：  
+LSA的核心是奇异值分解，其时间复杂度为$O(min(m^2n,mn^2))$，其中m为文档数，n为词数。在实践中，可以采用以下方法提高效率：
 - 对词-文档矩阵进行稀疏化表示，减少存储和计算开销。
 - 使用随机SVD等近似算法，降低奇异值分解的时间复杂度。
 - 对数据进行分块处理，利用分布式计算框架实现并行化。

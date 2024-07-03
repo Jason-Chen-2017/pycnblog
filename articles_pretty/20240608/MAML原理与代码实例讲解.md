@@ -42,11 +42,9 @@ $$ L_i(\\theta) = \\mathbb{E}_{\\mathbf{x}_i, \\mathbf{y}_i} [L(f_\\theta(\\math
 
 为了使模型适应新任务，我们需要更新参数 $\\theta$。根据梯度下降法，我们有：
 
-$$ \\theta_{new} = \\theta - \\alpha \\cdot \
-abla_\\theta \\sum_i L_i(\\theta) $$
+$$ \\theta_{new} = \\theta - \\alpha \\cdot \nabla_\\theta \\sum_i L_i(\\theta) $$
 
-其中 $\\alpha$ 是学习率，$\
-abla_\\theta$ 表示关于 $\\theta$ 的梯度。
+其中 $\\alpha$ 是学习率，$\nabla_\\theta$ 表示关于 $\\theta$ 的梯度。
 
 ## 项目实践：代码实例和详细解释说明
 

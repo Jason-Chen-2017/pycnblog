@@ -90,16 +90,12 @@ $$
 
 使用梯度下降等优化算法，优化优势函数 $A(s,a)$，具体步骤如下：
 
-- **计算梯度**：计算优势函数 $A(s,a)$ 对策略参数 $\theta$ 的梯度 $\
-abla_{\theta}A(s,a)$。
-- **更新参数**：根据梯度 $\
-abla_{\theta}A(s,a)$ 和学习率 $\eta$，更新策略参数 $\theta$，即 $\theta \leftarrow \theta - \eta \
-abla_{\theta}A(s,a)$。
+- **计算梯度**：计算优势函数 $A(s,a)$ 对策略参数 $\theta$ 的梯度 $\nabla_{\theta}A(s,a)$。
+- **更新参数**：根据梯度 $\nabla_{\theta}A(s,a)$ 和学习率 $\eta$，更新策略参数 $\theta$，即 $\theta \leftarrow \theta - \eta \nabla_{\theta}A(s,a)$。
 
 **Step 3: 计算策略梯度**
 
-根据优化后的优势函数，计算策略梯度 $\
-abla_{\theta}J(\theta)$，其中 $J(\theta)$ 表示策略 $\theta$ 的期望回报：
+根据优化后的优势函数，计算策略梯度 $\nabla_{\theta}J(\theta)$，其中 $J(\theta)$ 表示策略 $\theta$ 的期望回报：
 
 $$
 J(\theta) = \sum_{s,a} \pi(a|s) A(s,a)
@@ -109,11 +105,8 @@ $$
 
 使用梯度下降等优化算法，优化策略参数 $\theta$，具体步骤如下：
 
-- **计算梯度**：计算策略梯度 $\
-abla_{\theta}J(\theta)$。
-- **更新参数**：根据梯度 $\
-abla_{\theta}J(\theta)$ 和学习率 $\eta$，更新策略参数 $\theta$，即 $\theta \leftarrow \theta - \eta \
-abla_{\theta}J(\theta)$。
+- **计算梯度**：计算策略梯度 $\nabla_{\theta}J(\theta)$。
+- **更新参数**：根据梯度 $\nabla_{\theta}J(\theta)$ 和学习率 $\eta$，更新策略参数 $\theta$，即 $\theta \leftarrow \theta - \eta \nabla_{\theta}J(\theta)$。
 
 ### 3.3 算法优缺点
 

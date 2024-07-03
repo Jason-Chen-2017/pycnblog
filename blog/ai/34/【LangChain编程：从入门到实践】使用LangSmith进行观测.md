@@ -59,23 +59,23 @@ LangSmith的核心算法原理基于数据收集、数据清洗、数据分析�
 3. **创建任务**：定义任务类型、任务描述和所需输入。
    ```python
    task = {
-       \"type\": \"classification\",
-       \"description\": \"Classify text snippets into categories.\",
-       \"input_schema\": {\"text\": str},
-       \"output_schema\": {\"category\": str},
+       "type": "classification",
+       "description": "Classify text snippets into categories.",
+       "input_schema": {"text": str},
+       "output_schema": {"category": str},
    }
    ```
 
 4. **执行任务**：通过调用LangSmith API执行任务并获取结果。
    ```python
-   result = client.run_task(task, input_data={\"text\": \"Your text here\"})
+   result = client.run_task(task, input_data={"text": "Your text here"})
    ```
 
 #### 分析数据
 
 5. **查看结果**：分析任务执行后的数据，包括结果、指标和反馈。
    ```python
-   print(result[\"output\"])
+   print(result["output"])
    ```
 
 #### 数据管理
@@ -110,7 +110,7 @@ LangSmith适用于需要频繁迭代和优化的语言模型，包括但不限�
 假设 `Y` 是模型预测值，`Y'` 是真实值，`N` 是样本数量，则准确率 (`Accuracy`) 可以通过以下公式计算：
 
 $$
-Accuracy = \\frac{\\sum_{i=1}^{N} I(Y_i = Y'_i)}{N}
+Accuracy = \frac{\sum_{i=1}^{N} I(Y_i = Y'_i)}{N}
 $$
 
 其中，`I` 是指示函数，等于1当 `Y_i` 和 `Y'_i` 相等时，否则等于0。
@@ -147,14 +147,14 @@ from langsmith import LangSmithClient
 
 client = LangSmithClient()
 template = PromptTemplate(
-    input_variables=[\"text\"],
-    template=\"Given the text {text}, classify it into one of the categories: [animal, plant, mineral].\",
+    input_variables=["text"],
+    template="Given the text {text}, classify it into one of the categories: [animal, plant, mineral].",
 )
 llm = ...
 
 chain = LLMChain(llm=llm, prompt=template)
 
-result = chain.run({\"text\": \"Elephant\"})
+result = chain.run({"text": "Elephant"})
 client.save_result(result)
 ```
 

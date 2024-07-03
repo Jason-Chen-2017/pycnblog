@@ -84,7 +84,7 @@ Transformer的核心是自注意力机制。对于输入序列 $X=(x_1,\cdots,x_
 $$
 \begin{aligned}
 Q &= XW_Q \\
-K &= XW_K \\  
+K &= XW_K \\
 V &= XW_V \\
 \text{Attention}(Q,K,V) &= \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V
 \end{aligned}
@@ -151,8 +151,8 @@ input_ids = tokenizer.encode(input_text, return_tensors='pt')
 
 # 生成文本
 output = model.generate(
-    input_ids, 
-    max_length=max_length, 
+    input_ids,
+    max_length=max_length,
     num_return_sequences=num_return_sequences,
     no_repeat_ngram_size=2,
     early_stopping=True

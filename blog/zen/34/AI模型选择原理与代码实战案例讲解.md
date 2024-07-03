@@ -129,35 +129,35 @@ AI模型选择原理在以下领域有着广泛应用：
 
 线性回归是一种常用的回归模型，用于预测连续值。其数学模型如下：
 
-$$y = \\beta_0 + \\beta_1 x_1 + \\beta_2 x_2 + \\dots + \\beta_n x_n + \\epsilon$$
+$$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n + \epsilon$$
 
 其中，
 
 - $y$为预测值；
-- $x_1, x_2, \\dots, x_n$为输入特征；
-- $\\beta_0, \\beta_1, \\beta_2, \\dots, \\beta_n$为模型参数；
-- $\\epsilon$为误差项。
+- $x_1, x_2, \dots, x_n$为输入特征；
+- $\beta_0, \beta_1, \beta_2, \dots, \beta_n$为模型参数；
+- $\epsilon$为误差项。
 
 #### 4.1.2 逻辑回归
 
 逻辑回归是一种常用的二分类模型，用于预测样本属于正类或负类的概率。其数学模型如下：
 
-$$\\hat{y} = \\frac{1}{1 + e^{-(\\beta_0 + \\beta_1 x_1 + \\beta_2 x_2 + \\dots + \\beta_n x_n)}}$$
+$$\hat{y} = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n)}}$$
 
 其中，
 
-- $\\hat{y}$为预测概率；
-- $\\beta_0, \\beta_1, \\beta_2, \\dots, \\beta_n$为模型参数。
+- $\hat{y}$为预测概率；
+- $\beta_0, \beta_1, \beta_2, \dots, \beta_n$为模型参数。
 
 #### 4.1.3 支持向量机
 
 支持向量机（SVM）是一种常用的分类模型，用于将样本分类到不同的类别。其数学模型如下：
 
-$$\\max_{\\beta, \\beta_0} \\left(-\\frac{1}{2} \\sum_{i=1}^n \\beta_i^2\\right) \\quad \\text{s.t.} \\quad y_i (\\beta_0 + \\sum_{j=1}^n \\beta_j x_{ij}) \\geq 1$$
+$$\max_{\beta, \beta_0} \left(-\frac{1}{2} \sum_{i=1}^n \beta_i^2\right) \quad \text{s.t.} \quad y_i (\beta_0 + \sum_{j=1}^n \beta_j x_{ij}) \geq 1$$
 
 其中，
 
-- $\\beta$为模型参数；
+- $\beta$为模型参数；
 - $x_{ij}$为第$i$个样本的第$j$个特征；
 - $y_i$为第$i$个样本的标签。
 
@@ -205,10 +205,10 @@ $$\\max_{\\beta, \\beta_0} \\left(-\\frac{1}{2} \\sum_{i=1}^n \\beta_i^2\\right)
 我们需要使用线性回归模型预测$x=3.5$时的$y$值。
 
 1. **建立线性回归模型**：根据上述公式建立线性回归模型。
-2. **求解参数**：使用最小二乘法求解参数$\\beta_0, \\beta_1, \\beta_2, \\dots, \\beta_n$。
+2. **求解参数**：使用最小二乘法求解参数$\beta_0, \beta_1, \beta_2, \dots, \beta_n$。
 3. **预测**：使用求解得到的参数预测$x=3.5$时的$y$值。
 
-经过求解，我们得到线性回归模型的参数$\\beta_0=0.5, \\beta_1=1$，预测$x=3.5$时的$y$值为4.5。
+经过求解，我们得到线性回归模型的参数$\beta_0=0.5, \beta_1=1$，预测$x=3.5$时的$y$值为4.5。
 
 #### 4.3.2 逻辑回归案例
 
@@ -224,10 +224,10 @@ $$\\max_{\\beta, \\beta_0} \\left(-\\frac{1}{2} \\sum_{i=1}^n \\beta_i^2\\right)
 我们需要使用逻辑回归模型预测$x=3.5$时的$y$值。
 
 1. **建立逻辑回归模型**：根据上述公式建立逻辑回归模型。
-2. **求解参数**：使用梯度下降法求解参数$\\beta_0, \\beta_1, \\beta_2, \\dots, \\beta_n$。
+2. **求解参数**：使用梯度下降法求解参数$\beta_0, \beta_1, \beta_2, \dots, \beta_n$。
 3. **预测**：使用求解得到的参数预测$x=3.5$时的$y$值。
 
-经过求解，我们得到逻辑回归模型的参数$\\beta_0=0.5, \\beta_1=1$，预测$x=3.5$时的$y$值为0.94，属于负类。
+经过求解，我们得到逻辑回归模型的参数$\beta_0=0.5, \beta_1=1$，预测$x=3.5$时的$y$值为0.94，属于负类。
 
 #### 4.3.3 支持向量机案例
 
@@ -243,10 +243,10 @@ $$\\max_{\\beta, \\beta_0} \\left(-\\frac{1}{2} \\sum_{i=1}^n \\beta_i^2\\right)
 我们需要使用支持向量机模型进行分类。
 
 1. **建立支持向量机模型**：根据上述公式建立支持向量机模型。
-2. **求解参数**：使用SVM优化算法求解参数$\\beta, \\beta_0$。
+2. **求解参数**：使用SVM优化算法求解参数$\beta, \beta_0$。
 3. **分类**：使用求解得到的参数对新的数据进行分类。
 
-经过求解，我们得到支持向量机模型的参数$\\beta=1, \\beta_0=0$，将新的数据$x=3.5$分类为负类。
+经过求解，我们得到支持向量机模型的参数$\beta=1, \beta_0=0$，将新的数据$x=3.5$分类为负类。
 
 ### 4.4 常见问题解答
 
@@ -281,7 +281,7 @@ from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
 # 加载数据
-data = pd.read_csv(\"data.csv\")
+data = pd.read_csv("data.csv")
 
 # 分离特征和标签
 X = data.iloc[:, :-1]
@@ -301,7 +301,7 @@ y_pred = model.predict(X_test)
 
 # 评估模型
 score = model.score(X_test, y_test)
-print(\"模型准确率：\", score)
+print("模型准确率：", score)
 
 # 可视化结果
 plt.scatter(X_test, y_test, color='red')
@@ -378,9 +378,9 @@ plt.show()
 
 ### 7.3 相关论文推荐
 
-1. \"Playing for Data: Learning to Beat Human Players at Liar's Dice\" by I. Goodfellow, et al. (2014)
-2. \"Dropout: A Simple Way to Prevent Neural Networks from Overfitting\" by D. Hinton, et al. (2012)
-3. \"Very Deep Convolutional Networks for Large-Scale Image Recognition\" by K. Simonyan, A. Zisserman (2014)
+1. "Playing for Data: Learning to Beat Human Players at Liar's Dice" by I. Goodfellow, et al. (2014)
+2. "Dropout: A Simple Way to Prevent Neural Networks from Overfitting" by D. Hinton, et al. (2012)
+3. "Very Deep Convolutional Networks for Large-Scale Image Recognition" by K. Simonyan, A. Zisserman (2014)
 
 ### 7.4 其他资源推荐
 

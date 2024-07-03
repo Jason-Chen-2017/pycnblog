@@ -103,7 +103,7 @@ AI代理是指能够在特定环境下自主行动、解决问题、做出决策
 
 - **状态方程**：$S_{t+1} = S_t + f(S_t, D_t)$，其中$S_t$是时间$t$的状态，$D_t$是时间$t$的决策。
 - **决策函数**：$D_t = g(S_t)$，根据当前状态决定下一时刻的行动。
-- **优化目标**：$\\min \\sum_{t=0}^{T} \\Delta T_t$，其中$\\Delta T_t$是第$t$时刻的生产周期时间增量。
+- **优化目标**：$\min \sum_{t=0}^{T} \Delta T_t$，其中$\Delta T_t$是第$t$时刻的生产周期时间增量。
 
 ### 案例分析与讲解
 
@@ -159,7 +159,7 @@ model.fit(X_train, y_train)
 new_data = {'设备A时间': [4, 5], '设备B时间': [3, 4]}
 predictions = model.predict(new_data)
 
-print(\"预测的总时间:\", predictions)
+print("预测的总时间:", predictions)
 ```
 
 ### 代码解读与分析

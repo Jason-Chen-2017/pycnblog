@@ -208,8 +208,8 @@ public class WordCount {
 
     public void map(Object key, Text value, Context context
                     ) throws IOException, InterruptedException {
-      String[] tokens = value.toString().split("\\s+");
-      for (String token : tokens) {  
+      String[] tokens = value.toString().split("\s+");
+      for (String token : tokens) {
         word.set(token);
         context.write(word, one);
       }

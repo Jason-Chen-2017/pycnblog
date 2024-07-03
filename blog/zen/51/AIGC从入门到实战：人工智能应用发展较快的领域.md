@@ -10,7 +10,7 @@
 #### 1.1.2 AIGC的起源与演进
 #### 1.1.3 AIGC的应用现状
 
-### 1.2 AIGC的社会价值与影响  
+### 1.2 AIGC的社会价值与影响
 #### 1.2.1 提升内容创作效率
 #### 1.2.2 催生新的商业模式
 #### 1.2.3 改变传统内容消费习惯
@@ -21,7 +21,7 @@
 ### 2.1 机器学习与深度学习
 机器学习是人工智能的核心,它让计算机具备从数据中自主学习的能力。深度学习是机器学习的一个分支,通过模拟人脑的神经网络结构,构建多层次的学习模型。深度学习是AIGC的理论基础。
 
-### 2.2 自然语言处理 
+### 2.2 自然语言处理
 自然语言处理(NLP)是人工智能的一个重要方向,旨在让计算机理解、生成和处理人类语言。NLP技术如语言模型、文本分类、机器翻译等,是实现文本生成的关键。
 
 ### 2.3 计算机视觉
@@ -39,7 +39,7 @@ B --> C[深度学习]
 C --> D[自然语言处理]
 C --> E[计算机视觉]
 C --> F[语音识别与合成]
-D --> G[AIGC文本生成]  
+D --> G[AIGC文本生成]
 E --> H[AIGC图像视频生成]
 F --> I[AIGC音频生成]
 ```
@@ -53,14 +53,14 @@ Transformer是一种基于注意力机制的神经网络结构,擅长处理序�
 GPT的训练和推理步骤如下:
 1. 准备大规模无标注文本数据集
 2. 构建Transformer网络结构
-3. 使用自回归任务进行预训练,让模型学习文本的统计规律  
+3. 使用自回归任务进行预训练,让模型学习文本的统计规律
 4. 在下游任务上进行微调,如对话生成、文章写作等
 5. 使用训练好的模型进行推理,生成相应的文本内容
 
 ### 3.2 DALL·E与扩散模型
 DALL·E是一个基于扩散模型的图像生成系统,能根据文本提示生成逼真的图像。扩散模型通过迭代去噪的过程,逐步将随机噪声转化为目标图像。
 
-DALL·E的训练和生成步骤如下:  
+DALL·E的训练和生成步骤如下:
 1. 准备大规模文本-图像对数据集
 2. 构建扩散模型网络结构
 3. 训练文本编码器和图像解码器,建立文本到图像的映射关系
@@ -116,14 +116,14 @@ class GPT(nn.Module):
         self.embedding = nn.Embedding(vocab_size, d_model)
         self.transformer = nn.Transformer(d_model, nhead, num_layers)
         self.fc = nn.Linear(d_model, vocab_size)
-        
+
     def forward(self, x):
         x = self.embedding(x)
         x = self.transformer(x)
         x = self.fc(x)
         return x
 
-# 实例化模型    
+# 实例化模型
 model = GPT(vocab_size=10000, d_model=512, nhead=8, num_layers=6)
 
 # 训练
@@ -136,12 +136,12 @@ for epoch in range(10):
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-        
+
 # 推理生成
 input_text = "AIGC is"
 input_ids = tokenizer.encode(input_text)
 output = model.generate(input_ids, max_length=100)
-print(tokenizer.decode(output))        
+print(tokenizer.decode(output))
 ```
 
 这个代码实现了一个基于Transformer的GPT模型。模型主要由三部分组成:词嵌入层、Transformer层和输出层。前向传播时,输入文本先经过词嵌入,然后通过Transformer层捕捉序列依赖,最后输出下一个词的概率分布。训练时使用交叉熵损失函数和Adam优化器。推理时,给定输入文本,模型可以自回归地生成后续文本。
@@ -154,28 +154,28 @@ import torch.nn as nn
 class DALLE(nn.Module):
     def __init__(self, text_vocab_size, image_vocab_size, d_model):
         super().__init__()
-        self.text_embedding = nn.Embedding(text_vocab_size, d_model) 
+        self.text_embedding = nn.Embedding(text_vocab_size, d_model)
         self.image_embedding = nn.Embedding(image_vocab_size, d_model)
         self.text_encoder = nn.Transformer(d_model)
         self.diffusion = DiffusionModel(d_model)
         self.image_decoder = nn.Sequential(
             nn.ConvTranspose2d(d_model, 128, 4, 2, 1),
             nn.ReLU(),
-            nn.ConvTranspose2d(128, 64, 4, 2, 1), 
+            nn.ConvTranspose2d(128, 64, 4, 2, 1),
             nn.ReLU(),
             nn.ConvTranspose2d(64, 3, 4, 2, 1),
             nn.Tanh()
         )
-        
+
     def forward(self, text, noise):
-        text_emb = self.text_embedding(text) 
+        text_emb = self.text_embedding(text)
         text_feat = self.text_encoder(text_emb)
-        
+
         image_feat = self.diffusion(noise, text_feat)
         image = self.image_decoder(image_feat)
         return image
 
-# 实例化模型    
+# 实例化模型
 model = DALLE(text_vocab_size=10000, image_vocab_size=1024, d_model=512)
 
 # 训练
@@ -189,10 +189,10 @@ for epoch in range(10):
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-        
+
 # 推理生成
 text = "a cat sitting on a bench"
-text_ids = tokenizer.encode(text) 
+text_ids = tokenizer.encode(text)
 noise = torch.randn(1, 3, 256, 256)
 with torch.no_grad():
     image = model(text_ids, noise)

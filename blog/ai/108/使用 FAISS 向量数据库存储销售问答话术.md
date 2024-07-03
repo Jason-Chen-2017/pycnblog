@@ -1,6 +1,6 @@
 ## 使用 FAISS 向量数据库存储销售问答话术
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 **关键词：FAISS, 向量数据库, 销售问答, 问答系统, 语义检索, 人工智能, 自然语言处理**
 

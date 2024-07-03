@@ -191,7 +191,7 @@ A：以下是一些提高GAN生成数据质量的方法：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n aigc-env python=3.8 
+conda create -n aigc-env python=3.8
 conda activate aigc-env
 ```
 3. 安装深度学习框架和库：

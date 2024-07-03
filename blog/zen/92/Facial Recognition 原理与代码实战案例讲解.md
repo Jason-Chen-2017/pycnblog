@@ -221,7 +221,7 @@ while True:
     # 预处理图像
     face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
     faces = face_cascade.detectMultiScale(frame, 1.1, 4)
-    
+
     for (x, y, w, h) in faces:
         face = frame[y:y+h, x:x+w]
         face = cv2.resize(face, (64, 64))

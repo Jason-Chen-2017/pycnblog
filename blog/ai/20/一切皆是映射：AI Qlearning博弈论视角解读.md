@@ -60,9 +60,9 @@ Q-learning通过四个基本步骤实现：状态观察、动作选择、奖励�
 #### 步骤4：Q-value更新
 - 使用Q-learning公式更新Q值：
 $$
-Q(s, a) \\leftarrow Q(s, a) + \\alpha \\left[ r + \\gamma \\max_{a'} Q(s', a') - Q(s, a) \\right]
+Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]
 $$
-其中，$s$是当前状态，$a$是选择的动作，$r$是接收的奖励，$s'$是下一个状态，$\\alpha$是学习率，$\\gamma$是折扣因子。
+其中，$s$是当前状态，$a$是选择的动作，$r$是接收的奖励，$s'$是下一个状态，$\alpha$是学习率，$\gamma$是折扣因子。
 
 ### 3.3 算法优缺点
 
@@ -85,22 +85,22 @@ Q-learning广泛应用于：
 
 ### 4.1 数学模型构建
 
-Q-learning的目标是找到一个策略$\\pi(a|s)$，使得在状态$s$下执行动作$a$时，预期累积奖励最大化：
+Q-learning的目标是找到一个策略$\pi(a|s)$，使得在状态$s$下执行动作$a$时，预期累积奖励最大化：
 $$
-\\pi(a|s) = \\arg\\max_a Q(s, a)
+\pi(a|s) = \arg\max_a Q(s, a)
 $$
 
 ### 4.2 公式推导过程
 
 Q-learning的核心公式为：
 $$
-Q(s, a) \\leftarrow Q(s, a) + \\alpha \\left[ r + \\gamma \\max_{a'} Q(s', a') - Q(s, a) \\right]
+Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]
 $$
 其中，
 - $Q(s, a)$是状态$s$和动作$a$的Q值。
 - $r$是即时奖励。
-- $\\gamma$是折扣因子，用于权衡即时奖励与未来奖励的重要性。
-- $\\alpha$是学习率，决定了更新量的大小。
+- $\gamma$是折扣因子，用于权衡即时奖励与未来奖励的重要性。
+- $\alpha$是学习率，决定了更新量的大小。
 
 ### 4.3 案例分析与讲解
 
@@ -109,9 +109,9 @@ $$
 ### 4.4 常见问题解答
 
 - **如何处理非终止状态？**
-答：对于非终止状态，Q-learning需要明确终止条件或设定一个足够小的$\\gamma$值来模拟终止状态。
+答：对于非终止状态，Q-learning需要明确终止条件或设定一个足够小的$\gamma$值来模拟终止状态。
 - **如何避免过拟合？**
-答：通过调整学习率$\\alpha$和探索率$\\epsilon$，以及采用经验回放（Experience Replay）来减少过拟合。
+答：通过调整学习率$\alpha$和探索率$\epsilon$，以及采用经验回放（Experience Replay）来减少过拟合。
 
 ## 5. 项目实践：代码实例和详细解释说明
 
@@ -222,7 +222,7 @@ Q-learning作为强化学习的基础，未来的研究将聚焦于提升其在�
 - **Q-learning如何处理连续状态空间？**
 答：通过离散化状态空间、使用函数逼近方法（如DQN、Deep Q-Network）或变分自编码器等技术来处理连续状态空间。
 - **如何平衡探索与利用？**
-答：通过调整探索率$\\epsilon$和学习率$\\alpha$，以及使用策略梯度方法来动态调整探索与利用之间的平衡。
+答：通过调整探索率$\epsilon$和学习率$\alpha$，以及使用策略梯度方法来动态调整探索与利用之间的平衡。
 
 ---
 

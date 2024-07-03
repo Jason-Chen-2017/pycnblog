@@ -222,13 +222,13 @@ centroids = data[np.random.choice(data.shape[0], k, replace=False)]
 for _ in range(max_iter):
     # 分配阶段
     labels = np.argmin(np.linalg.norm(data[:, np.newaxis] - centroids, axis=2), axis=1)
-    
+
     # 更新阶段
     new_centroids = np.array([np.mean(data[labels == i], axis=0) for i in range(k)])
-    
+
     if np.all(centroids == new_centroids):
         break
-    
+
     centroids = new_centroids
 
 print("聚类中心:", centroids)

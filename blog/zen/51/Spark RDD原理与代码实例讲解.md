@@ -3,7 +3,7 @@
 ## 1. 背景介绍
 ### 1.1 大数据处理的挑战
 随着数据量的爆炸式增长,传统的数据处理方式已经无法满足实时性、高吞吐量的大数据处理需求。Hadoop MapReduce等批处理框架虽然能够处理海量数据,但是其处理延迟较高,无法满足实时计算的场景。
-### 1.2 Spark的诞生 
+### 1.2 Spark的诞生
 Spark作为内存计算框架应运而生,其以RDD(Resilient Distributed Dataset)为核心,提供了高效、易用的大规模数据处理模型。Spark基于内存计算,避免了不必要的磁盘IO,大大提升了数据处理的实时性能。
 ### 1.3 RDD的重要性
 RDD作为Spark的核心抽象,是Spark数据处理的基础。深入理解RDD的原理和使用,是掌握Spark编程的关键。本文将从RDD的概念入手,结合代码实例深入讲解RDD的原理和使用。
@@ -13,7 +13,7 @@ RDD作为Spark的核心抽象,是Spark数据处理的基础。深入理解RDD的
 RDD(Resilient Distributed Dataset)是Spark的基本数据结构,它是一个不可变、可分区、里面的元素可并行计算的集合。RDD具有以下特点:
 
 - Immutable:一旦创建,RDD就不能修改。这保证了RDD的一致性和容错性。
-- Partitioned:RDD中的数据被分成多个分区,分布在集群的不同节点上,以实现并行计算。  
+- Partitioned:RDD中的数据被分成多个分区,分布在集群的不同节点上,以实现并行计算。
 - Resilient:RDD通过血统(Lineage)记录数据的转换过程,可以容错和恢复。
 - In-Memory:RDD支持数据缓存在内存中,加速后续的计算。
 
@@ -57,7 +57,7 @@ RDD可以通过两种方式创建:
 val lines = sc.textFile("hdfs://path/to/file")
 ```
 
-### 3.2 RDD的转换(Transformation) 
+### 3.2 RDD的转换(Transformation)
 RDD的转换操作是延迟执行的,即只记录转换逻辑而不立即执行,只有遇到Action操作时才会真正执行。常见的转换操作有:
 
 - map:对RDD中的每个元素都执行一个函数并生成新的RDD。
@@ -157,7 +157,7 @@ val words = lines.flatMap(_.split(" "))
 
 `flatMap`将行拆分为单词,返回新的单词RDD。
 
-### 5.3 转换为(单词,1)键值对  
+### 5.3 转换为(单词,1)键值对
 
 ```scala
 val pairs = words.map(word => (word, 1))
@@ -241,5 +241,5 @@ Structured Streaming基于微批次架构,在吞吐量和延迟之间权衡。�
 RDD作为Spark的核心设计,在可预见的未来仍将发挥重要作用。深入理解和掌握RDD,对于高效使用Spark至关重要。
 
 ## 9. 附录:常见问题与解答
-### Q1:什么时候使用RDD,什么时候使用DataFrame? 
+### Q1:什么时候使用RDD,什么时候使用DataFrame?
 A1:当数据是

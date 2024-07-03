@@ -326,4 +326,4 @@ AI技术在解决组织熵增问题方面也面临着一些挑战，例如：
 
 AI技术可以有效地解决一些组织熵增问题，但无法解决所有组织熵增问题。组织熵增是一个复杂的系统现象，受到多种因素的影响，需要综合运用多种手段来解决。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -178,8 +178,7 @@ $$L(\theta) = -\mathbb{E}_{\pi_\theta} [R(s, a)]$$
 
 根据梯度下降法，策略参数的更新公式为：
 
-$$\theta_{t+1} = \theta_t - \alpha \
-abla_\theta L(\theta_t)$$
+$$\theta_{t+1} = \theta_t - \alpha \nabla_\theta L(\theta_t)$$
 
 其中，$\alpha$是学习率。
 

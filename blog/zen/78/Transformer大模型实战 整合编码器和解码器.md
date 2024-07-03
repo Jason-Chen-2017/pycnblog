@@ -116,11 +116,11 @@ $$
 
 1. **构建查询、键和值矩阵**：
 
-   $$ Q = \begin{bmatrix} q_1 \\ q_2 \\ q_3 \end{bmatrix}, K = \begin{bmatrix} k_1 \\ k_2 \\ k_3 \end{bmatrix}, V = \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} $$
+   $$ Q = \begin{bmatrix} q_1 \ q_2 \ q_3 \end{bmatrix}, K = \begin{bmatrix} k_1 \ k_2 \ k_3 \end{bmatrix}, V = \begin{bmatrix} v_1 \ v_2 \ v_3 \end{bmatrix} $$
 
 2. **计算点积**：
 
-   $$ QK^T = \begin{bmatrix} q_1 & q_2 & q_3 \end{bmatrix} \begin{bmatrix} k_1 \\ k_2 \\ k_3 \end{bmatrix} = q_1k_1 + q_2k_2 + q_3k_3 $$
+   $$ QK^T = \begin{bmatrix} q_1 & q_2 & q_3 \end{bmatrix} \begin{bmatrix} k_1 \ k_2 \ k_3 \end{bmatrix} = q_1k_1 + q_2k_2 + q_3k_3 $$
 
 3. **归一化**：
 

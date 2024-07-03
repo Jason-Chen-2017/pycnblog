@@ -201,9 +201,7 @@ DQN的训练过程可以分为以下几个步骤：
 4. **计算梯度**：
 
    $$
- \
-abla_{\theta} L(Q) = \
-abla_{\theta} (Q(s_t, a_t) - [R_t + \gamma \max_{a'} Q^{\prime}(s_{t+1}, a')])^2
+ \nabla_{\theta} L(Q) = \nabla_{\theta} (Q(s_t, a_t) - [R_t + \gamma \max_{a'} Q^{\prime}(s_{t+1}, a')])^2
  $$
 
 5. **反向传播**：

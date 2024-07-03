@@ -49,20 +49,20 @@ AUC值越高，代表模型的分类性能越好。一般来说，AUC值在 0.5 
 def confusion_matrix(y_true, y_pred):
     """
     计算混淆矩阵
-    
+
     参数：
     y_true：样本的真实标签
     y_pred：模型的预测结果
-    
+
     返回值：
     混淆矩阵
     """
-    
+
     TP = np.sum((y_true == 1) & (y_pred == 1))
     FP = np.sum((y_true == 0) & (y_pred == 1))
     TN = np.sum((y_true == 0) & (y_pred == 0))
     FN = np.sum((y_true == 1) & (y_pred == 0))
-    
+
     return np.array([[TN, FP], [FN, TP]])
 ```
 
@@ -74,19 +74,19 @@ def confusion_matrix(y_true, y_pred):
 def calculate_fpr_tpr(confusion_matrix):
     """
     计算 FPR 和 TPR
-    
+
     参数：
     confusion_matrix：混淆矩阵
-    
+
     返回值：
     FPR 和 TPR
     """
-    
+
     TN, FP, FN, TP = confusion_matrix.ravel()
-    
+
     FPR = FP / (FP + TN)
     TPR = TP / (TP + FN)
-    
+
     return FPR, TPR
 ```
 
@@ -100,12 +100,12 @@ import matplotlib.pyplot as plt
 def plot_roc_curve(FPRs, TPRs):
     """
     绘制 ROC 曲线
-    
+
     参数：
     FPRs：不同阈值对应的 FPR 列表
     TPRs：不同阈值对应的 TPR 列表
     """
-    
+
     plt.plot(FPRs, TPRs, color='darkorange', lw=2)
     plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
     plt.xlim([0.0, 1.0])

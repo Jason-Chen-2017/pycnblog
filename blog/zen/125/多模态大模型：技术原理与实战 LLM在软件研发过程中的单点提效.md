@@ -1,6 +1,6 @@
 # 多模态大模型：技术原理与实战 LLM在软件研发过程中的单点提效
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 

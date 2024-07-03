@@ -211,5 +211,5 @@ Catastrophic forgetting 是指机器学习模型在学习新数据时，会遗�
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

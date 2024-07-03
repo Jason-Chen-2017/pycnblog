@@ -147,7 +147,7 @@ tableEnv.executeSql(
 有了源表之后,我们就可以使用SQL查询对订单数据进行转换和分析了。例如,下面这个查询计算出每个产品的总销售额:
 
 ```sql
-SELECT 
+SELECT
   product_id,
   SUM(quantity) AS total_quantity
 FROM Orders
@@ -181,14 +181,14 @@ Table productQuantities = orders
 现在,我们来看一个稍微复杂的例子,计算每个用户在30分钟的滑动窗口内的总消费金额:
 
 ```sql
-SELECT 
+SELECT
   user_id,
   product_id,
   SUM(quantity * price) AS revenue,
   HOP_START(order_time, INTERVAL 30 MINUTE, INTERVAL 10 MINUTE) AS window_start
 FROM Orders
 JOIN Products ON Orders.product_id = Products.id
-GROUP BY 
+GROUP BY
   user_id,
   product_id,
   HOP(order_time, INTERVAL 30 MINUTE, INTERVAL 10 MINUTE)

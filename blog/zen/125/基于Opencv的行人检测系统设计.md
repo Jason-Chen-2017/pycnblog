@@ -435,4 +435,4 @@ OpenCV 提供了多种预训练模型，例如 Haar 特征分类器、HOG + SVM 
 * **智能监控系统:**  识别入侵者、追踪人员、识别违规行为等。
 * **人机交互系统:**  识别用户，例如人脸识别、手势识别等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

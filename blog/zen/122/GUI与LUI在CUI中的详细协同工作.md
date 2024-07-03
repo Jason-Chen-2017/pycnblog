@@ -338,4 +338,4 @@ GUI 和 LUI 在 CUI 中的协同工作也面临着一些挑战：
 
 **解答:** GUI 和 LUI 在 CUI 中协同工作需要考虑用户交互体验问题，例如，使用人性化的界面设计，并提供流畅的用户交互流程。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

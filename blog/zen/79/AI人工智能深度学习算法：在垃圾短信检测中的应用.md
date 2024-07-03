@@ -180,7 +180,7 @@ class TextClassifier(nn.Module):
         super().__init__()
         self.embedding = nn.Embedding(vocab_size, embedding_dim)
         self.fc = nn.Linear(embedding_dim, n_classes)
-        
+
     def forward(self, x):
         out = self.embedding(x)
         out = out.mean(1)
@@ -292,7 +292,7 @@ print(f"Accuracy: {accuracy * 100}%")
 
 - **Q：如何确保模型的公平性？**
   - **A**：通过正向和反向测试，确保模型在不同人群中的性能一致。引入公平性指标，比如预测差异、混淆矩阵分析等，进行公平性评估和调优。
-  
+
 - **Q：如何提高模型的可解释性？**
   - **A**：使用可视化技术展示模型的决策过程，如特征重要性排序、注意力机制分析。同时，探索解释性模型，如规则基模型，结合深度学习模型的预测结果，提高整体系统的可解释性。
 

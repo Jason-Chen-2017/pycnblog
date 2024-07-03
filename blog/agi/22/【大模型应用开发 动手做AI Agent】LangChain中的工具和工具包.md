@@ -79,7 +79,7 @@ LangChain的算法适用于多个领域，包括但不限于：
 #### 策略生成
 
 - **强化学习**：采用Q-learning或Policy Gradient方法，通过与环境交互学习最佳策略。
-  
+
 #### 多模态执行
 
 - **多模态融合**：通过多模态融合模型（如MMDAN）整合文本、图像、语音等不同模态的信息。
@@ -88,15 +88,15 @@ LangChain的算法适用于多个领域，包括但不限于：
 
 #### 自然语言理解
 
-$$ P(\\text{Intent}|\\text{Input}) = \\text{BERT}(\\text{Input}) $$
+$$ P(\text{Intent}|\text{Input}) = \text{BERT}(\text{Input}) $$
 
 #### 策略生成
 
-$$ Q(s,a) = \\text{Q-learning}(s,a,R,s') $$
+$$ Q(s,a) = \text{Q-learning}(s,a,R,s') $$
 
 #### 多模态执行
 
-$$ \\text{Multi-modal Fusion}(M_1,M_2,...,M_n) $$
+$$ \text{Multi-modal Fusion}(M_1,M_2,...,M_n) $$
 
 ### 4.3 案例分析与讲解
 
@@ -155,7 +155,7 @@ client = LangChainClient()
 strategy = QLearningStrategy(client)
 
 # 自然语言理解
-input_text = \"我想预订一张明天去纽约的机票\"
+input_text = "我想预订一张明天去纽约的机票"
 intent = client.parse_intent(input_text)
 
 # 策略生成

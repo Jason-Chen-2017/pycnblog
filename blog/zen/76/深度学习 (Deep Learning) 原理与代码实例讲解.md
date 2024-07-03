@@ -193,16 +193,16 @@ def main():
     model = ConvNet().to(device)
     criterion = nn.CrossEntropyLoss()
     optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
-    
+
     train_loader = torch.utils.data.DataLoader(..., batch_size=32, shuffle=True)
     val_loader = torch.utils.data.DataLoader(..., batch_size=32, shuffle=False)
-    
+
     epochs = 10
     for epoch in range(epochs):
         train_loss = train(model, train_loader, criterion, optimizer)
         val_loss = validate(model, val_loader, criterion)
         print(f"Epoch {epoch+1}/{epochs}, Train Loss: {train_loss:.4f}, Val Loss: {val_loss:.4f}")
-    
+
     # Save model
     torch.save(model.state_dict(), "model.pth")
 

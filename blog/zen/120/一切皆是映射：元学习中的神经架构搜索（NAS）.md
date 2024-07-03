@@ -237,7 +237,7 @@ A：常见的搜索算法包括：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n nas-env python=3.8 
+conda create -n nas-env python=3.8
 conda activate nas-env
 ```
 

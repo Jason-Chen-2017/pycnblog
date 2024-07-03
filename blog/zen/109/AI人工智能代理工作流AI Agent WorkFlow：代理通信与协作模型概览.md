@@ -2,7 +2,7 @@
 
 关键词：人工智能，智能代理，工作流，通信协作，多智能体系统
 
-## 1. 背景介绍 
+## 1. 背景介绍
 ### 1.1 问题的由来
 随着人工智能技术的快速发展,智能代理系统在各行各业得到了广泛应用。在复杂的任务场景中,往往需要多个智能代理协同工作来完成任务目标。如何实现智能代理之间高效的通信与协作,成为了一个亟待解决的关键问题。
 
@@ -37,7 +37,7 @@
 下面以订阅/发布机制为例,详细说明其工作流程:
 
 1. 定义主题:根据任务需求,定义一系列消息主题。
-2. 代理订阅:感兴趣的代理订阅特定主题。 
+2. 代理订阅:感兴趣的代理订阅特定主题。
 3. 消息发布:任务执行过程中,代理将状态更新等消息发布到主题。
 4. 消息通知:订阅该主题的所有代理都会收到发布的消息。
 5. 决策行动:代理根据接收到的消息,结合自身状态,做出下一步行动决策。
@@ -91,7 +91,7 @@ light订阅了brightness主题,curtain订阅了brightness和temperature,aircondi
 $$
 \begin{aligned}
 Sub(light, brightness) & = True \\
-Sub(curtain, brightness) & = True \\ 
+Sub(curtain, brightness) & = True \\
 Sub(curtain, temperature) & = True \\
 Sub(aircondition, temperature) & = True \\
 Sub(aircondition, humidity) & = True
@@ -181,7 +181,7 @@ class Agent:
 ```python
 if __name__ == "__main__":
     # 创建主题
-    topic1 = Topic("topic1") 
+    topic1 = Topic("topic1")
     topic2 = Topic("topic2")
 
     # 创建代理
@@ -205,7 +205,7 @@ if __name__ == "__main__":
 ```
 agent1 received message Hello from agent1 from topic topic1
 agent2 received message Hello from agent1 from topic topic1
-agent2 received message Hi from agent2 from topic topic2 
+agent2 received message Hi from agent2 from topic topic2
 agent3 received message Hi from agent2 from topic topic2
 agent2 received message Message from agent3 from topic topic2
 agent3 received message Message from agent3 from topic topic2

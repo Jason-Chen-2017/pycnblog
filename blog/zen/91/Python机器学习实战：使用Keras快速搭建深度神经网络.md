@@ -142,28 +142,22 @@ $$
 假设损失函数为 $J$，则损失函数对输出 $y$ 的梯度为：
 
 $$
-\frac{\partial J}{\partial y} = \
-abla_{y} J
+\frac{\partial J}{\partial y} = \nabla_{y} J
 $$
 
 损失函数对权重 $W$ 的梯度为：
 
 $$
-\frac{\partial J}{\partial W} = \
-abla_{W} J
+\frac{\partial J}{\partial W} = \nabla_{W} J
 $$
 
 根据链式法则，有：
 
 $$
-\
-abla_{W} J = \
-abla_{y} J \cdot \
-abla_{y} W
+\nabla_{W} J = \nabla_{y} J \cdot \nabla_{y} W
 $$
 
-其中，$\
-abla_{y} W$ 为输出 $y$ 对权重的梯度，可以通过计算激活函数的导数得到。
+其中，$\nabla_{y} W$ 为输出 $y$ 对权重的梯度，可以通过计算激活函数的导数得到。
 
 ### 4.3 案例分析与讲解
 
@@ -225,7 +219,7 @@ A：过拟合问题可以通过以下方法进行缓解：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n keras-env python=3.8 
+conda create -n keras-env python=3.8
 conda activate keras-env
 ```
 

@@ -94,7 +94,7 @@ class TextEncoder(nn.Module):
         super().__init__()
         self.embedding = nn.Embedding(vocab_size, embedding_dim)
         self.transformer = nn.Transformer(d_model=embedding_dim, nhead=8, num_encoder_layers=12)
-    
+
     def forward(self, x):
         x = self.embedding(x)
         x = self.transformer(x)
@@ -107,7 +107,7 @@ class ImageDecoder(nn.Module):
         super().__init__()
         self.latent_dim = latent_dim
         self.channels = channels
-        
+
         self.fc = nn.Linear(latent_dim, 4 * 4 * channels * 8)
         self.conv_layers = nn.Sequential(
             nn.ConvTranspose2d(channels * 8, channels * 4, kernel_size=4, stride=2, padding=1),
@@ -119,7 +119,7 @@ class ImageDecoder(nn.Module):
             nn.ConvTranspose2d(channels * 2, channels, kernel_size=4, stride=2, padding=1),
             nn.Tanh()
         )
-    
+
     def forward(self, z):
         x = self.fc(z)
         x = x.view(-1, self.channels * 8, 4, 4)
@@ -132,24 +132,24 @@ def train(text_encoder, image_decoder, dataloader, optimizer, criterion, epochs)
     for epoch in range(epochs):
         for batch in dataloader:
             text, image = batch
-            
+
             # 文本编码
             text_features = text_encoder(text)
-            
+
             # 潜空间采样
             z = torch.randn(text_features.shape[0], latent_dim).to(device)
-            
+
             # 图像解码
             generated_image = image_decoder(z)
-            
+
             # 计算损失
             loss = criterion(generated_image, image)
-            
+
             # 反向传播与优化
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-        
+
         print(f"Epoch [{epoch+1}/{epochs}], Loss: {loss.item():.4f}")
 ```
 

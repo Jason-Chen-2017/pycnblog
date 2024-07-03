@@ -70,13 +70,13 @@
 
 在进行模型部署时，构建数学模型以指导模型优化至关重要。例如，对于量化过程，可以使用以下公式来计算量化系数：
 
-$$ q(x) = \\frac{M}{N} \\cdot \\text{round}(x \\cdot \\frac{M}{N}) $$
+$$ q(x) = \frac{M}{N} \cdot \text{round}(x \cdot \frac{M}{N}) $$
 
-其中，\\( q(x) \\) 是量化后的值，\\( x \\) 是原始值，\\( M \\) 和 \\( N \\) 是量化范围的定义。
+其中，\( q(x) \) 是量化后的值，\( x \) 是原始值，\( M \) 和 \( N \) 是量化范围的定义。
 
 ### 4.2 公式推导过程
 
-在推导量化公式时，需要考虑原始值的范围、量化后的精度和量化误差。通过调整 \\( M \\) 和 \\( N \\)，可以控制量化后的表示范围和精度，最小化量化误差。
+在推导量化公式时，需要考虑原始值的范围、量化后的精度和量化误差。通过调整 \( M \) 和 \( N \)，可以控制量化后的表示范围和精度，最小化量化误差。
 
 ### 4.3 案例分析与讲解
 
@@ -174,8 +174,8 @@ AI模型部署到嵌入式设备的应用场景广泛，包括但不限于：
 
 ### 7.3 相关论文推荐
 
-- **\"Quantization and Training of Neural Networks for Efficient Acceleration on ASICs\"**
-- **\"Deep Learning for Embedded Systems\"**
+- **"Quantization and Training of Neural Networks for Efficient Acceleration on ASICs"**
+- **"Deep Learning for Embedded Systems"**
 
 ### 7.4 其他资源推荐
 

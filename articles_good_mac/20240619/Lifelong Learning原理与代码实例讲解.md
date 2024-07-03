@@ -68,9 +68,7 @@
 
 在终身学习中，常用的优化策略是通过在线学习和迁移学习来更新模型参数。一个简单的方法是：
 
-- **在线学习**：在新任务$T_i$上，更新参数$\\theta \\leftarrow \\theta + \\eta \\cdot \
-abla_{\\theta} L_i(\\theta)$，其中$\\eta$是学习率，$\
-abla_{\\theta} L_i(\\theta)$是梯度。
+- **在线学习**：在新任务$T_i$上，更新参数$\\theta \\leftarrow \\theta + \\eta \\cdot \nabla_{\\theta} L_i(\\theta)$，其中$\\eta$是学习率，$\nabla_{\\theta} L_i(\\theta)$是梯度。
 - **迁移学习**：利用旧任务$T_j$上的知识，通过知识蒸馏或特征共享来改善新任务的学习效率。
 
 ### 4.3 案例分析与讲解

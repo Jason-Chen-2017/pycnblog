@@ -176,7 +176,7 @@ print(f'均方误差: {mse}')
     * edX: Artificial Intelligence by Columbia University
 
 ### 7.2  开发工具推荐
-* **Python:** 
+* **Python:**
     * scikit-learn
     * TensorFlow
     * PyTorch
@@ -222,5 +222,5 @@ print(f'均方误差: {mse}')
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

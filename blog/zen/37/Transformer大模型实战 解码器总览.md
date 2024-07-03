@@ -76,7 +76,7 @@
 解码器的数学模型通常基于循环神经网络（RNN）或变体，如长短期记忆（LSTM）单元或门控循环单元（GRU）。对于Transformer解码器，其数学模型可以表示为：
 
 $$
-\\text{Decoder}_{t} = \\text{SelfAttention}(\\text{Decoder}_{t-1}, \\text{EncoderOutput})
+\text{Decoder}_{t} = \text{SelfAttention}(\text{Decoder}_{t-1}, \text{EncoderOutput})
 $$
 
 ### 4.2 公式推导过程
@@ -84,7 +84,7 @@ $$
 在推导解码器中的自注意力机制时，可以使用以下公式：
 
 $$
-\\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
 $$
 
 其中，$Q$为查询向量，$K$为键向量，$V$为值向量，$d_k$为键向量的维度。此公式计算了查询向量与键向量之间的注意力权重，随后乘以值向量得到注意力加权后的值。
@@ -156,7 +156,7 @@ for epoch in range(num_epochs):
         loss.backward()
         optimizer.step()
         total_loss += loss.item()
-    print(f\"Epoch {epoch+1}: Loss {total_loss/len(dataloader)}\")
+    print(f"Epoch {epoch+1}: Loss {total_loss/len(dataloader)}")
 ```
 
 ## 6. 实际应用场景

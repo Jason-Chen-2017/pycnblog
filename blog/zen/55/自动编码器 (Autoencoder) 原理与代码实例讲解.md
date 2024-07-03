@@ -56,11 +56,11 @@ $$
 自动编码器的前向传播过程包括编码和解码两个阶段:
 
 1. **编码阶段**:输入数据x通过编码器网络f(x)得到编码表示z。
-   
+
    $$z = f(x)$$
 
 2. **解码阶段**:编码表示z通过解码器网络g(z)得到重构输出\hat{x}。
-   
+
    $$\hat{x} = g(z)$$
 
 ### 3.2 自动编码器的反向传播
@@ -68,15 +68,15 @@ $$
 在反向传播过程中,我们需要计算损失函数相对于网络参数的梯度,并使用优化算法(如梯度下降)更新参数,以最小化重构误差。
 
 1. 计算重构误差:
-   
+
    $$\mathcal{L}(x, \hat{x}) = \|x - \hat{x}\|^2$$
 
 2. 计算损失函数相对于解码器参数的梯度:
-   
+
    $$\frac{\partial \mathcal{L}}{\partial \theta_d} = \frac{\partial \mathcal{L}}{\partial \hat{x}} \cdot \frac{\partial \hat{x}}{\partial \theta_d}$$
 
 3. 计算损失函数相对于编码器参数的梯度:
-   
+
    $$\frac{\partial \mathcal{L}}{\partial \theta_e} = \frac{\partial \mathcal{L}}{\partial \hat{x}} \cdot \frac{\partial \hat{x}}{\partial z} \cdot \frac{\partial z}{\partial \theta_e}$$
 
 4. 使用优化算法更新编码器和解码器的参数。
@@ -198,14 +198,14 @@ import torch.nn as nn
 class Autoencoder(nn.Module):
     def __init__(self, input_dim, hidden_dim, latent_dim):
         super(Autoencoder, self).__init__()
-        
+
         # 编码器
         self.encoder = nn.Sequential(
             nn.Linear(input_dim, hidden_dim),
             nn.ReLU(),
             nn.Linear(hidden_dim, latent_dim)
         )
-        
+
         # 解码器
         self.decoder = nn.Sequential(
             nn.Linear(latent_dim, hidden_dim),
@@ -213,7 +213,7 @@ class Autoencoder(nn.Module):
             nn.Linear(hidden_dim, input_dim),
             nn.Sigmoid()  # 输出在0-1范围内
         )
-        
+
     def forward(self, x):
         z = self.encoder(x)
         x_recon = self.decoder(z)
@@ -243,16 +243,16 @@ criterion = nn.MSELoss()
 for epoch in range(epochs):
     for data, _ in train_loader:
         data = data.view(-1, input_dim)  # 将图像展平为一维向量
-        
+
         # 前向传播
         output = model(data)
         loss = criterion(output, data)
-        
+
         # 反向传播和优化
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-        
+
     print(f"Epoch {epoch+1}/{epochs}, Loss: {loss.item():.4f}")
 ```
 

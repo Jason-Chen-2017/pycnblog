@@ -206,25 +206,25 @@ raft = RAFT()
 def search(query, documents, k):
   # 将查询文本分词
   query_tokens = tokenizer.tokenize(query)
-  
+
   # 检索相关文档
   scores = raft.search(query_tokens, documents, k)
   related_documents = [documents[i] for i in scores.argsort()[-k:]]
-  
+
   return related_documents
 
 # 定义生成函数
 def generate(related_documents, max_length=50):
   # 将文档内容分词
   document_tokens = [tokenizer.tokenize(doc) for doc in related_documents]
-  
+
   # 生成文本
   with torch.no_grad():
     generated_output = model.generate(document_tokens, max_length=max_length)
-  
+
   # 解码生成的文本
   generated_text = tokenizer.decode(generated_output)
-  
+
   return generated_text
 
 # 测试

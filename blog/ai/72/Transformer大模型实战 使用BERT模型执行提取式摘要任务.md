@@ -157,7 +157,7 @@ A：可以使用多种评价指标评估摘要质量，如ROUGE分数、BLEU分�
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n nlp-env python=3.8 
+conda create -n nlp-env python=3.8
 conda activate nlp-env
 ```
 3. 安装PyTorch和Transformers库：

@@ -92,7 +92,7 @@ Hive提供了丰富的内置统计函数,用于对数据进行统计分析。例
 例如,计算每个部门员工的薪资排名:
 
 ```sql
-SELECT 
+SELECT
     dept_id,
     emp_name,
     salary,
@@ -183,7 +183,7 @@ SELECT SUM(order_amount) AS total_revenue FROM orders;
 #### 5.4.2 按产品统计销售额
 
 ```sql
-SELECT 
+SELECT
     product_id,
     SUM(order_amount) AS product_revenue
 FROM orders
@@ -193,7 +193,7 @@ GROUP BY product_id;
 #### 5.4.3 按客户统计订单数
 
 ```sql
-SELECT 
+SELECT
     customer_id,
     COUNT(*) AS order_count
 FROM orders
@@ -209,7 +209,7 @@ SELECT MAX(order_amount) AS max_order_amount FROM orders;
 #### 5.4.5 按月统计订单金额
 
 ```sql
-SELECT 
+SELECT
     MONTH(order_date) AS order_month,
     SUM(order_amount) AS monthly_revenue
 FROM orders

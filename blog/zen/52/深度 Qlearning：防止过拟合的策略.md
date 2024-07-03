@@ -44,7 +44,7 @@ Dropout是一种常用的防止过拟合的技术,通过在训练时随机丢弃
 
 早停法是指在训练过程中监控模型在验证集上的表现,当验证集上的性能开始下降时,提前停止训练。这种方法可以防止模型过度拟合训练数据。
 
-## 3. 核心算法原理具体操作步骤 
+## 3. 核心算法原理具体操作步骤
 
 防止DQN过拟合的关键步骤如下:
 
@@ -185,13 +185,13 @@ for epoch in range(num_epochs):
         q_values = model(states)
         next_q_values = target_model(next_states).detach().max(dim=-1)[0]
         target_q_values = rewards + gamma * next_q_values * (1 - dones)
-        
+
         loss = loss_fn(q_values, target_q_values, actions)
-        
+
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-        
+
     # 更新目标网络
     if epoch % target_update_freq == 0:
         target_model.load_state_dict(model.state_dict())

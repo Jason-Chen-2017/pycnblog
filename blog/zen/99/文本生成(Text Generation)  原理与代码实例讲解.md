@@ -78,7 +78,7 @@ graph TD
 
 3. **transformer编码器(Encoder)**: 计算输入序列的上下文表示,传递给解码器。
 
-4. **transformer解码器(Decoder)**: 
+4. **transformer解码器(Decoder)**:
     a. 初始化解码器的起始状态,通常为特殊开始标记`<bos>`。
     b. 自回归地生成新标记:
         i. 将已生成序列和编码器输出作为解码器输入。

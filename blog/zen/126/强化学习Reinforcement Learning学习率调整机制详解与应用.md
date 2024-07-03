@@ -477,4 +477,4 @@ if __name__ == "__main__":
 * **参数的选择需要经验:**  学习率调整机制中的参数选择需要根据具体任务进行调整，需要一定的经验。
 * **难以适应动态环境:**  学习率调整机制难以适应动态环境，例如环境中的奖励函数发生变化。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

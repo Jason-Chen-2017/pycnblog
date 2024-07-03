@@ -82,19 +82,19 @@ Flink中的时间处理涉及以下数学模型：
 
 ### 4.2 公式推导过程
 在事件时间处理模型中，假设事件时间$ t_e $和处理时间$ t_p $之间的关系为：
-\[ t_p = t_e + \Delta t \]
+$$ t_p = t_e + \Delta t $$
 其中$ \Delta t $是处理延迟。
 
 ### 4.3 案例分析与讲解
 考虑一个简单的事件流处理例子，使用Flink进行实时聚合操作：
 假设输入流为：
-\[ \{(t_e_1, v_1), (t_e_2, v_2), ...\} \]
+$$ \{(t_e_1, v_1), (t_e_2, v_2), ...\} $$
 其中$ t_e_i $是事件时间，$ v_i $是事件值。
 
 处理逻辑为：
-\[ \text{result} = \text{reduce}(v_i, \text{add}) \]
+$$ \text{result} = \text{reduce}(v_i, \text{add}) $$
 则结果为：
-\[ \text{result} = \text{add}(v_1, v_2, ...) \]
+$$ \text{result} = \text{add}(v_1, v_2, ...) $$
 
 ### 4.4 常见问题解答
 - **如何处理延迟？**：通过设置合理的处理延迟阈值和超时策略。
@@ -116,10 +116,10 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 public class AverageTemperature {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        
+
         // 创建数据源
         DataStream<String> lines = env.socketTextStream("localhost", 9999);
-        
+
         // 解析数据并转换为温度值
         DataStream<Long> temps = lines.map(new MapFunction<String, Long>() {
             @Override
@@ -131,7 +131,7 @@ public class AverageTemperature {
                 return null;
             }
         });
-        
+
         // 计算每分钟平均温度
         temps.window(TumblingEventTimeWindows.of(Time.minutes(1)))
             .sum(0)

@@ -139,8 +139,7 @@
 
    - 知识更新公式：
 
-     $$\theta_{t+1} = \theta_t - \alpha \
-abla_\theta L(x,y)$$
+     $$\theta_{t+1} = \theta_t - \alpha \nabla_\theta L(x,y)$$
 
      其中，$\theta_t$ 表示当前模型参数，$\alpha$ 表示学习率。
 
@@ -182,8 +181,7 @@ abla_\theta L(x,y)$$
 
      假设机器人使用梯度下降算法进行参数更新，则知识更新公式为：
 
-     $$\theta_{t+1} = \theta_t - \alpha \
-abla_\theta L(x,y)$$
+     $$\theta_{t+1} = \theta_t - \alpha \nabla_\theta L(x,y)$$
 
 2. 规划与决策模型：
 

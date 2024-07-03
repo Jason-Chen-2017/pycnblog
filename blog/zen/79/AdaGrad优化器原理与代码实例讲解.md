@@ -41,8 +41,7 @@ AdaGrad 是一种自适应学习率方法，其核心思想是通过累积历史
 AdaGrad 的学习率更新规则基于历史梯度平方的累积和。对于每个参数 $w_i$，AdaGrad 更新规则如下：
 
 $$
-\Delta w_i = -\frac{\eta}{\sqrt{G_i + \epsilon}} \cdot \
-abla J(w_i)
+\Delta w_i = -\frac{\eta}{\sqrt{G_i + \epsilon}} \cdot \nabla J(w_i)
 $$
 
 其中：
@@ -51,8 +50,7 @@ $$
 - $\eta$ 是学习率，通常在整个训练过程中保持恒定。
 - $G_i$ 是累积的梯度平方和，即：
 $$
-G_i = G_i + \|\
-abla J(w_i)\|^2
+G_i = G_i + \|\nabla J(w_i)\|^2
 $$
 - $\epsilon$ 是一个小常数，用于避免除以零的情况。
 
@@ -69,12 +67,9 @@ AdaGrad 通过维护一个动态学习率矩阵，该矩阵中的元素对应于
 1. 初始化学习率 $\eta$ 和一个很小的 $\epsilon$ 值。
 2. 初始化一个累积梯度平方矩阵 $G$，初始时为零。
 3. 在每次迭代中：
-   - 计算梯度 $\
-abla J(w)$。
-   - 更新累积梯度平方矩阵：$G_i \leftarrow G_i + \|\
-abla J(w_i)\|^2$。
-   - 计算更新量：$\Delta w_i = -\frac{\eta}{\sqrt{G_i + \epsilon}} \cdot \
-abla J(w_i)$。
+   - 计算梯度 $\nabla J(w)$。
+   - 更新累积梯度平方矩阵：$G_i \leftarrow G_i + \|\nabla J(w_i)\|^2$。
+   - 计算更新量：$\Delta w_i = -\frac{\eta}{\sqrt{G_i + \epsilon}} \cdot \nabla J(w_i)$。
    - 更新参数：$w_i \leftarrow w_i + \Delta w_i$。
 4. 重复步骤3，直至达到预定的迭代次数或满足收敛条件。
 
@@ -101,8 +96,7 @@ AdaGrad 主要应用于深度学习和机器学习模型的训练，特别是在
 为了构建 AdaGrad 的数学模型，我们定义了以下变量和符号：
 
 - $J(w)$：损失函数，表示模型预测与真实值之间的差距。
-- $\
-abla J(w)$：损失函数的梯度，表示损失函数相对于参数 $w$ 的变化率。
+- $\nabla J(w)$：损失函数的梯度，表示损失函数相对于参数 $w$ 的变化率。
 - $\eta$：学习率，控制参数更新的步长。
 - $G_i$：累积梯度平方矩阵，用于调整学习率。
 - $\epsilon$：小常数，用于避免除以零的情况。
@@ -112,15 +106,13 @@ abla J(w)$：损失函数的梯度，表示损失函数相对于参数 $w$ 的�
 在每次迭代中，AdaGrad 的学习率更新规则为：
 
 $$
-\Delta w_i = -\frac{\eta}{\sqrt{G_i + \epsilon}} \cdot \
-abla J(w_i)
+\Delta w_i = -\frac{\eta}{\sqrt{G_i + \epsilon}} \cdot \nabla J(w_i)
 $$
 
 其中：
 
 $$
-G_i = \sum_{t=1}^{i} \|\
-abla J(w_t)\|^2
+G_i = \sum_{t=1}^{i} \|\nabla J(w_t)\|^2
 $$
 
 这里，$G_i$ 表示从第一轮迭代到第 $i$ 轮迭代，累积的梯度平方之和。这个累积过程使得 AdaGrad 能够自动调整学习率，适应不同特征的梯度变化。
@@ -132,13 +124,10 @@ $$
 假设我们正在训练一个线性回归模型，目标是最小化均方误差。对于参数 $w$，我们可以按照 AdaGrad 的规则来更新：
 
 1. 初始化 $G_w = 0$。
-2. 在每次迭代中计算梯度 $\
-abla J(w)$。
-3. 更新累积梯度平方：$G_w \leftarrow G_w + \|\
-abla J(w)\|^2$。
+2. 在每次迭代中计算梯度 $\nabla J(w)$。
+3. 更新累积梯度平方：$G_w \leftarrow G_w + \|\nabla J(w)\|^2$。
 4. 计算学习率：$\eta_w = \frac{\eta}{\sqrt{G_w + \epsilon}}$。
-5. 更新参数：$w \leftarrow w - \eta_w \cdot \
-abla J(w)$。
+5. 更新参数：$w \leftarrow w - \eta_w \cdot \nabla J(w)$。
 
 ### 4.4 常见问题解答
 

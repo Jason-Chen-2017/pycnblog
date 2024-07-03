@@ -137,7 +137,7 @@ RetinaNet 算法是一种单阶段目标检测算法，其主要特点是使用�
 边界框回归的损失函数通常使用 Smooth L1 Loss，其表达式如下：
 
 $$
-Smooth_{L1}(x) = 
+Smooth_{L1}(x) =
 \begin{cases}
 0.5x^2, & |x| < 1 \\
 |x| - 0.5, & otherwise

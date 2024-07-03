@@ -1,4 +1,4 @@
-                 
+
 # 机器人学:通过AI进行运动和感知
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -30,9 +30,9 @@
 在讨论AI驱动的运动与感知时，我们首先需要理解几个核心概念及其相互关系：
 
 1. **自主行动**：指的是机器人在没有人类直接干预的情况下，根据预设规则或学习到的知识自动完成一系列任务的能力。
-   
+
    ![自主行动](自主行动.png)
-   
+
 2. **感知系统**：用于收集环境信息，如图像、声音、距离等数据。这些信息是机器人决策的基础。
 
 3. **控制理论**：负责解析感知系统的输入，生成适合机器人行动的输出指令。
@@ -151,29 +151,29 @@ class Agent:
         self.state_size = env.observation_space.shape[0]
         self.action_size = env.action_space.n
         self.memory = deque(maxlen=1000)
-        
+
     # ... (省略具体实现细节)
 
 def train(agent):
     for episode in range(EPISODES):
         state = env.reset()
         score = 0
-        
+
         while True:
             action = agent.act(state)
             next_state, reward, done, _ = env.step(action)
-            
+
             if not done:
                 reward += 1
-            
+
             agent.remember(state, action, reward, next_state, done)
-            
+
             state = next_state
             score += reward
-            
+
             if done:
                 break
-                
+
         average_score = np.mean(scores[-n:])
 
 agent.train()

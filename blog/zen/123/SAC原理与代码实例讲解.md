@@ -328,4 +328,4 @@ SAC算法也面临着一些挑战，例如：
 - **Q：SAC算法的未来发展方向是什么？**
    **A：**未来，SAC算法将继续得到发展和改进，例如提高算法的效率、泛化能力和扩展性。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

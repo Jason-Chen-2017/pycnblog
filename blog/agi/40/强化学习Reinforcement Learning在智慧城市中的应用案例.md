@@ -114,9 +114,7 @@ $$J(\theta) = \sum_{s, a} \pi(a | s, \theta) \times R(s, a)$$
 
 策略梯度方法通过以下公式计算梯度：
 
-$$\
-abla_\theta J(\theta) = \sum_{s, a} \pi(a | s, \theta) \times \left(R(s, a) + \gamma \max_{a'} Q(s', a') | s, a\right) \times \
-abla_\theta \pi(a | s, \theta)$$
+$$\nabla_\theta J(\theta) = \sum_{s, a} \pi(a | s, \theta) \times \left(R(s, a) + \gamma \max_{a'} Q(s', a') | s, a\right) \times \nabla_\theta \pi(a | s, \theta)$$
 
 ### 4.3 案例分析与讲解
 
@@ -219,13 +217,13 @@ for episode in range(1000):
         output = model(state)
         action = torch.argmax(output)
         next_state, reward, done, _ = env.step(action)
-        
+
         # 反向传播
         loss = -(reward)
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-        
+
         state = next_state
 ```
 

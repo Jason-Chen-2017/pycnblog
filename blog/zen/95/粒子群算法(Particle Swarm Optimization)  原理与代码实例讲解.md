@@ -1,7 +1,7 @@
 
 # 粒子群算法(Particle Swarm Optimization) - 原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 关键词：
 
@@ -86,18 +86,18 @@ PSO算法在以下领域得到了广泛应用：
 
 1. 初始化粒子位置和速度：
    $$
- x_i^{(0)} \sim U(a, b) 
+ x_i^{(0)} \sim U(a, b)
 $$
    $$
- v_i^{(0)} = 0 
+ v_i^{(0)} = 0
 $$
 
 2. 更新粒子速度和位置：
    $$
- v_i^{(t+1)} = w \cdot v_i^{(t)} + c_1 \cdot r_1 \cdot (p_i^{(t)} - x_i^{(t)}) + c_2 \cdot r_2 \cdot (p_g^{(t)} - x_i^{(t)}) 
+ v_i^{(t+1)} = w \cdot v_i^{(t)} + c_1 \cdot r_1 \cdot (p_i^{(t)} - x_i^{(t)}) + c_2 \cdot r_2 \cdot (p_g^{(t)} - x_i^{(t)})
 $$
    $$
- x_i^{(t+1)} = x_i^{(t)} + v_i^{(t+1)} 
+ x_i^{(t+1)} = x_i^{(t)} + v_i^{(t+1)}
 $$
    其中，$ w $为惯性权重，$ c_1 $和$ c_2 $为学习因子，$ r_1 $和$ r_2 $为[0,1]区间内均匀分布的随机数，$ p_i^{(t)} $为第i个粒子的个体最优解，$ p_g^{(t)} $为全局最优解。
 
@@ -138,12 +138,12 @@ for iteration in range(max_iterations):
         for j in range(n_dimensions):
             velocities[i, j] = 0.5 * velocities[i, j] + 0.3 * np.random.rand() * (p_best[i, j] - particles[i, j]) + 0.3 * np.random.rand() * (g_best[j] - particles[i, j])
             particles[i, j] += velocities[i, j]
-    
+
     # 更新个体最优解和全局最优解
     p_best = np.copy(particles)
     g_best_index = np.argmin([f(p) for p in p_best])
     g_best = p_best[g_best_index]
-    
+
     print(f"Iteration {iteration+1}, Best Fitness: {f(g_best)}")
 
 # 绘制结果
@@ -211,12 +211,12 @@ for iteration in range(max_iterations):
         for j in range(n_dimensions):
             velocities[i, j] = 0.5 * velocities[i, j] + 0.3 * np.random.rand() * (p_best[i, j] - particles[i, j]) + 0.3 * np.random.rand() * (g_best[j] - particles[i, j])
             particles[i, j] += velocities[i, j]
-    
+
     # 更新个体最优解和全局最优解
     p_best = np.copy(particles)
     g_best_index = np.argmin([f(p) for p in p_best])
     g_best = p_best[g_best_index]
-    
+
     print(f"Iteration {iteration+1}, Best Fitness: {f(g_best)}")
 
 # 绘制结果

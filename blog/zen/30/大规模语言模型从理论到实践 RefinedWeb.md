@@ -84,7 +84,7 @@
 公式表示为：
 
 $$
-\\text{Attention}(Q, K, V) = \\text{Softmax}(\\frac{QK^T}{\\sqrt{d_k}})V
+\text{Attention}(Q, K, V) = \text{Softmax}(\frac{QK^T}{\sqrt{d_k}})V
 $$
 
 ### 4.3 案例分析与讲解
@@ -201,8 +201,8 @@ def fine_tune(model, task_data, criterion, optimizer, device):
 
 ### 相关论文推荐
 
-- **\"Attention is All You Need\"**：Vaswani等人，2017年，提出了Transformer模型。
-- **\"Language Models are Unsupervised Multimodal Pre-Trained Tasks\"**：Yang等人，2021年，探索了多模态预训练任务。
+- **"Attention is All You Need"**：Vaswani等人，2017年，提出了Transformer模型。
+- **"Language Models are Unsupervised Multimodal Pre-Trained Tasks"**：Yang等人，2021年，探索了多模态预训练任务。
 
 ### 其他资源推荐
 

@@ -1,4 +1,4 @@
-                 
+
 # AI人工智能深度学习算法：仿真环境中深度学习代理的实验与评估
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -120,10 +120,10 @@ class DQN:
         self.state_size = self.env.observation_space.shape[0]
         self.action_size = self.env.action_space.n
         self.learning_rate = learning_rate
-        
+
         # 创建神经网络
         self.model = self.create_model()
-        
+
         # 初始化经验回放缓冲区
         self.memory = deque(maxlen=10000)
 
@@ -135,7 +135,7 @@ class DQN:
         ])
         model.compile(loss='mse', optimizer=tf.keras.optimizers.Adam(lr=self.learning_rate))
         return model
-    
+
     # 存储经验
     def remember(self, state, action, reward, next_state, done):
         self.memory.append((state, action, reward, next_state, done))
@@ -157,14 +157,14 @@ class DQN:
             state = self.env.reset()
             state = np.reshape(state, [1, self.state_size])
             done = False
-            
+
             while not done:
                 action = self.choose_action(state)
                 next_state, reward, done, _ = self.env.step(action)
                 next_state = np.reshape(next_state, [1, self.state_size])
                 self.remember(state, action, reward, next_state, done)
                 state = next_state
-                
+
                 if len(self.memory) > batch_size:
                     self.replay(batch_size)
 

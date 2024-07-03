@@ -11,7 +11,7 @@
 #### 2.1.2 结构
 #### 2.1.3 原理
 ### 2.2 Transformer
-#### 2.2.1 定义  
+#### 2.2.1 定义
 #### 2.2.2 self-attention机制
 #### 2.2.3 优势
 ### 2.3 MAE
@@ -24,7 +24,7 @@
 #### 3.1.1 图像分块与线性投影
 #### 3.1.2 加入位置编码
 #### 3.1.3 Transformer编码
-### 3.2 解码器  
+### 3.2 解码器
 #### 3.2.1 mask token的引入
 #### 3.2.2 解码器结构
 #### 3.2.3 重建像素的预测
@@ -48,7 +48,7 @@ $z_i = E_{\theta}(x_i) = W_Ex_i + b_E, \quad i=1,2,...,N$
 $\hat{z}_i = z_i + p_i, \quad i=1,2,...,N$
 #### 4.1.3 Transformer编码
 $\mathbf{y} = \text{Transformer}(\hat{\mathbf{z}}) \in \mathbb{R}^{N \times D}$
-### 4.2 解码器数学描述 
+### 4.2 解码器数学描述
 #### 4.2.1 引入mask token
 $\mathbf{y}_{m} = [\mathbf{y}_{\text{vis}}; \mathbf{y}_{\text{mask}}] \in \mathbb{R}^{N \times D}$
 #### 4.2.2 解码器处理
@@ -63,7 +63,7 @@ class MAEEncoder(nn.Module):
     def __init__(self, img_size=224, patch_size=16, in_chans=3, embed_dim=1024, depth=24, num_heads=16):
         super().__init__()
         # 图像分块与线性映射
-        self.patch_embed = PatchEmbed(img_size, patch_size, in_chans, embed_dim) 
+        self.patch_embed = PatchEmbed(img_size, patch_size, in_chans, embed_dim)
         num_patches = self.patch_embed.num_patches
         # 位置编码
         self.pos_embed = nn.Parameter(torch.zeros(1, num_patches, embed_dim))
@@ -90,7 +90,7 @@ class MAEDecoder(nn.Module):
     def __init__(self, patch_size=16, embed_dim=1024, depth=8, num_heads=16, out_chans=3):
         super().__init__()
         self.embed_dim = embed_dim
-        # Mask token 
+        # Mask token
         self.mask_token = nn.Parameter(torch.zeros(1, 1, embed_dim))
         # 解码器Transformer块
         self.blocks = nn.ModuleList([
@@ -163,7 +163,7 @@ def train(model, data_loader, optimizer, criterion, device):
 ## 9. 附录：常见问题与解答
 ### 9.1 MAE相比其他自监督方法有何优势？
 ### 9.2 MAE可以用于哪些视觉任务？
-### 9.3 如何设置MAE中的超参数？ 
+### 9.3 如何设置MAE中的超参数？
 ### 9.4 MAE的训练对硬件要求高吗？
 ### 9.5 MAE模型预训练需要多少数据和时间？
 

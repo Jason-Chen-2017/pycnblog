@@ -90,8 +90,8 @@ Actor-Critic方法在多个领域都有广泛应用，如：
 
 Actor-Critic方法的主要数学模型包括：
 
-- **策略函数**：$\\pi(\\theta_s | a)$，表示在状态$s$下，选择动作$a$的概率分布。
-- **价值函数**：$V(\\theta_v, s)$，表示在状态$s$下的期望奖励。
+- **策略函数**：$\pi(\theta_s | a)$，表示在状态$s$下，选择动作$a$的概率分布。
+- **价值函数**：$V(\theta_v, s)$，表示在状态$s$下的期望奖励。
 - **奖励函数**：$R(s, a, s')$，表示智能体在状态$s$执行动作$a$后，转移到状态$s'$所获得的奖励。
 
 ### 4.2 公式推导过程
@@ -102,25 +102,23 @@ Actor-Critic方法的主要数学模型包括：
 
 策略梯度的目标是最大化期望回报，即：
 
-$$J(\\theta) = \\mathbb{E}_{\\pi(\\theta)}[G]$$
+$$J(\theta) = \mathbb{E}_{\pi(\theta)}[G]$$
 
 其中，$G$为未来回报，表示为：
 
-$$G = \\sum_{t=0}^\\infty \\gamma^t R(s_t, a_t, s_{t+1})$$
+$$G = \sum_{t=0}^\infty \gamma^t R(s_t, a_t, s_{t+1})$$
 
-对$J(\\theta)$求导，得到策略梯度：
+对$J(\theta)$求导，得到策略梯度：
 
-$$\
-abla_\\theta J(\\theta) = \\mathbb{E}_{\\pi(\\theta)}[\
-abla_\\theta \\log \\pi(\\theta_s | a) R(s, a, s')]$$
+$$\nabla_\theta J(\theta) = \mathbb{E}_{\pi(\theta)}[\nabla_\theta \log \pi(\theta_s | a) R(s, a, s')]$$
 
 #### 4.2.2 价值函数的更新
 
 价值函数的更新公式如下：
 
-$$V(s | \\theta_v) = V(s) + \\alpha [R(s, a, s') + \\gamma V(s') - V(s)]$$
+$$V(s | \theta_v) = V(s) + \alpha [R(s, a, s') + \gamma V(s') - V(s)]$$
 
-其中，$\\alpha$为学习率，$\\gamma$为折扣因子。
+其中，$\alpha$为学习率，$\gamma$为折扣因子。
 
 ### 4.3 案例分析与讲解
 
@@ -334,8 +332,8 @@ Actor-Critic方法可以用于金融领域中的风险管理、量化交易等�
 
 ### 7.3 相关论文推荐
 
-1. **\"Actor-Critic Methods\"**：作者：Richard S. Sutton, Andrew G. Barto
-2. **\"Deep Deterministic Policy Gradient\"**：作者：Tom Schaul, John Quan, Ioannis Antonoglou, and David Silver
+1. **"Actor-Critic Methods"**：作者：Richard S. Sutton, Andrew G. Barto
+2. **"Deep Deterministic Policy Gradient"**：作者：Tom Schaul, John Quan, Ioannis Antonoglou, and David Silver
 
 ### 7.4 其他资源推荐
 

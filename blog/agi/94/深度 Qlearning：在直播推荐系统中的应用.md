@@ -158,7 +158,7 @@ class DQN(nn.Module):
         self.fc1 = nn.Linear(state_dim, 128)
         self.fc2 = nn.Linear(128, 128)
         self.fc3 = nn.Linear(128, action_dim)
-        
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = torch.relu(self.fc2(x))
@@ -170,16 +170,16 @@ class DQNAgent:
     def __init__(self, state_dim, action_dim, lr, gamma, epsilon, target_update):
         self.state_dim = state_dim
         self.action_dim = action_dim
-        self.gamma = gamma 
+        self.gamma = gamma
         self.epsilon = epsilon
         self.target_update = target_update
         self.count = 0
-        
+
         self.policy_net = DQN(state_dim, action_dim)
         self.target_net = DQN(state_dim, action_dim)
         self.target_net.load_state_dict(self.policy_net.state_dict())
         self.optimizer = optim.Adam(self.policy_net.parameters(), lr=lr)
-        
+
     def act(self, state):
         if np.random.rand() <= self.epsilon:
             return np.random.randint(self.action_dim)
@@ -188,65 +188,65 @@ class DQNAgent:
             q_value = self.policy_net(state)
             action = q_value.max(1)[1].item()
             return action
-        
+
     def learn(self, state, action, reward, next_state, done):
         state = torch.tensor(state, dtype=torch.float32).unsqueeze(0)
         next_state = torch.tensor(next_state, dtype=torch.float32).unsqueeze(0)
         action = torch.tensor([action], dtype=torch.long)
         reward = torch.tensor([reward], dtype=torch.float32)
-        
+
         if done:
             q_target = reward
         else:
             q_target = reward + self.gamma * self.target_net(next_state).max(1)[0]
-            
+
         q_value = self.policy_net(state).gather(1, action)
         loss = (q_value - q_target.detach()).pow(2).mean()
-        
+
         self.optimizer.zero_grad()
         loss.backward()
         self.optimizer.step()
-        
+
         self.count += 1
         if self.count % self.target_update == 0:
             self.target_net.load_state_dict(self.policy_net.state_dict())
-        
+
 # 训练
 def train(env, agent, num_episodes, batch_size):
     for i in range(num_episodes):
         state = env.reset()
         done = False
         total_reward = 0
-        
+
         while not done:
             action = agent.act(state)
             next_state, reward, done, _ = env.step(action)
             agent.learn(state, action, reward, next_state, done)
             state = next_state
             total_reward += reward
-            
+
         if i % 10 == 0:
             print('Episode: {}, Total Reward: {}'.format(i, total_reward))
-            
+
 # 测试
 def test(env, agent):
     state = env.reset()
     done = False
     total_reward = 0
-    
+
     while not done:
         action = agent.act(state)
         next_state, reward, done, _ = env.step(action)
         state = next_state
         total_reward += reward
-        
+
     print('Total Reward: {}'.format(total_reward))
-    
+
 if __name__ == '__main__':
     env = gym.make('CartPole-v0')
     state_dim = env.observation_space.shape[0]
     action_dim = env.action_space.n
-    
+
     agent = DQNAgent(state_dim, action_dim, lr=1e-3, gamma=0.99, epsilon=0.1, target_update=10)
     train(env, agent, num_episodes=100, batch_size=32)
     test(env, agent)

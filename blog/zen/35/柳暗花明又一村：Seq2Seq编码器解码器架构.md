@@ -1,6 +1,6 @@
 # 柳暗花明又一村：Seq2Seq编码器-解码器架构
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -80,9 +80,9 @@ Seq2Seq模型的核心在于它的端到端学习能力，即模型能够直接�
 
 ### 4.1 数学模型构建
 
-设输入序列为$\\mathbf{x} = \\{x_1, x_2, ..., x_T\\}$，目标输出序列为$\\mathbf{y} = \\{y_1, y_2, ..., y_S\\}$，其中$T$和$S$分别是输入序列和输出序列的长度。Seq2Seq模型可以被表示为：
+设输入序列为$\mathbf{x} = \{x_1, x_2, ..., x_T\}$，目标输出序列为$\mathbf{y} = \{y_1, y_2, ..., y_S\}$，其中$T$和$S$分别是输入序列和输出序列的长度。Seq2Seq模型可以被表示为：
 
-$$\\mathbf{y} = \\text{Seq2Seq}(\\mathbf{x})$$
+$$\mathbf{y} = \text{Seq2Seq}(\mathbf{x})$$
 
 ### 4.2 公式推导过程
 
@@ -90,9 +90,9 @@ $$\\mathbf{y} = \\text{Seq2Seq}(\\mathbf{x})$$
 
 编码器通常采用循环神经网络（RNN），对于第$t$个时间步的输入$x_t$和编码器的隐藏状态$h_t$，可以定义为：
 
-$$\\begin{aligned}
-h_t &= \\text{GRU}(x_t, h_{t-1})
-\\end{aligned}$$
+$$\begin{aligned}
+h_t &= \text{GRU}(x_t, h_{t-1})
+\end{aligned}$$
 
 其中，GRU是门控循环单元，可以看作是LSTM的一种简化版本。
 
@@ -100,15 +100,15 @@ h_t &= \\text{GRU}(x_t, h_{t-1})
 
 解码器同样基于RNN结构，但在每个时间步$t$时，除了当前的输入$x_t$外，还会接入编码器的最终隐藏状态$h_T$：
 
-$$\\begin{aligned}
-h_t &= \\text{GRU}(x_t, h_{t-1}, h_T)
-\\end{aligned}$$
+$$\begin{aligned}
+h_t &= \text{GRU}(x_t, h_{t-1}, h_T)
+\end{aligned}$$
 
 这里，$h_T$是在编码器阶段最后时刻的隐藏状态。
 
 ### 4.3 案例分析与讲解
 
-对于一个具体的机器翻译任务，假设输入序列$\\mathbf{x}$为英文文本，输出序列$\\mathbf{y}$为目标语言文本（例如中文）。通过Seq2Seq模型，输入序列$\\mathbf{x}$经过编码器处理后，得到一个固定长度的编码向量$h_T$。解码器则基于这个编码向量$h_T$和初始解码状态开始生成目标语言文本。每生成一个目标语言单词，解码器都会将生成的单词与编码向量$h_T$以及之前的解码状态$h_{t-1}$一起作为输入，继续生成下一个目标语言单词。
+对于一个具体的机器翻译任务，假设输入序列$\mathbf{x}$为英文文本，输出序列$\mathbf{y}$为目标语言文本（例如中文）。通过Seq2Seq模型，输入序列$\mathbf{x}$经过编码器处理后，得到一个固定长度的编码向量$h_T$。解码器则基于这个编码向量$h_T$和初始解码状态开始生成目标语言文本。每生成一个目标语言单词，解码器都会将生成的单词与编码向量$h_T$以及之前的解码状态$h_{t-1}$一起作为输入，继续生成下一个目标语言单词。
 
 ### 4.4 常见问题解答
 
@@ -230,8 +230,8 @@ Seq2Seq模型在多个领域展现出了强大的应用潜力：
 
 ### 7.3 相关论文推荐
 
-- **\"Neural Machine Translation by Jointly Learning to Align and Translate\"** （Wu等人，2016年）
-- **\"Sequence-to-Sequence Learning via Neural Networks\"** （Sutskever等人，2014年）
+- **"Neural Machine Translation by Jointly Learning to Align and Translate"** （Wu等人，2016年）
+- **"Sequence-to-Sequence Learning via Neural Networks"** （Sutskever等人，2014年）
 
 ### 7.4 其他资源推荐
 

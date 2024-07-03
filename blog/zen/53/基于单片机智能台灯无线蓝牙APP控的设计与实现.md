@@ -97,14 +97,14 @@ void setup() {
   pinMode(COLD_PIN, OUTPUT);
   pinMode(WARM_PIN, OUTPUT);
   pinMode(LIGHT_PIN, INPUT);
-  
+
   bluetooth.begin(9600);
 }
 
 void loop() {
   if (bluetooth.available()) {
     char cmd = bluetooth.read();
-    
+
     if (cmd == 'B') { // 设置亮度
       int brightness = bluetooth.parseInt();
       analogWrite(COLD_PIN, brightness);
@@ -116,11 +116,11 @@ void loop() {
       analogWrite(WARM_PIN, warmness);
     }
   }
-  
+
   int lightValue = analogRead(LIGHT_PIN);
   bluetooth.print("L");
   bluetooth.println(lightValue);
-  
+
   delay(100);
 }
 ```

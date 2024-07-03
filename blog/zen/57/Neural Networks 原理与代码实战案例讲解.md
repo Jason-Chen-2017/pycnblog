@@ -7,12 +7,12 @@
 #### 1.1.3 神经网络的起源与发展
 ### 1.2 神经网络的应用领域
 #### 1.2.1 计算机视觉
-#### 1.2.2 自然语言处理  
+#### 1.2.2 自然语言处理
 #### 1.2.3 语音识别
 #### 1.2.4 其他应用场景
 
 ## 2. 核心概念与联系
-### 2.1 生物神经元与人工神经元  
+### 2.1 生物神经元与人工神经元
 #### 2.1.1 生物神经元的结构和功能
 #### 2.1.2 人工神经元的数学模型
 #### 2.1.3 激活函数
@@ -39,7 +39,7 @@ B --> C[输出层]
 #### 3.1.4 权重更新
 ### 3.2 梯度下降优化算法
 #### 3.2.1 批量梯度下降
-#### 3.2.2 随机梯度下降  
+#### 3.2.2 随机梯度下降
 #### 3.2.3 小批量梯度下降
 #### 3.2.4 自适应学习率优化算法
 ### 3.3 正则化技术
@@ -78,35 +78,35 @@ def sigmoid(x):
 
 class SimpleNetwork:
     def __init__(self, input_size, hidden_size, output_size):
-        self.W1 = np.random.randn(input_size, hidden_size) 
+        self.W1 = np.random.randn(input_size, hidden_size)
         self.b1 = np.zeros(hidden_size)
         self.W2 = np.random.randn(hidden_size, output_size)
         self.b2 = np.zeros(output_size)
-        
+
     def forward(self, x):
         self.z1 = np.dot(x, self.W1) + self.b1
         self.a1 = sigmoid(self.z1)
         self.z2 = np.dot(self.a1, self.W2) + self.b2
         self.a2 = sigmoid(self.z2)
         return self.a2
-        
+
     def backward(self, x, y, learning_rate):
         m = x.shape[0]
-        
+
         dz2 = self.a2 - y
         dW2 = np.dot(self.a1.T, dz2) / m
         db2 = np.sum(dz2, axis=0) / m
-        
+
         da1 = np.dot(dz2, self.W2.T)
-        dz1 = da1 * sigmoid(self.z1) * (1 - sigmoid(self.z1))  
+        dz1 = da1 * sigmoid(self.z1) * (1 - sigmoid(self.z1))
         dW1 = np.dot(x.T, dz1) / m
         db1 = np.sum(dz1, axis=0) / m
-        
+
         self.W2 -= learning_rate * dW2
         self.b2 -= learning_rate * db2
-        self.W1 -= learning_rate * dW1  
+        self.W1 -= learning_rate * dW1
         self.b1 -= learning_rate * db1
-        
+
     def train(self, X, y, epochs, learning_rate):
         for i in range(epochs):
             output = self.forward(X)
@@ -173,7 +173,7 @@ model.fit(train_images, train_labels, epochs=5)
 #### 8.1.4 神经网络的可解释性
 ### 8.2 神经网络面临的挑战
 #### 8.2.1 数据质量与数量
-#### 8.2.2 计算资源需求  
+#### 8.2.2 计算资源需求
 #### 8.2.3 模型的泛化能力
 #### 8.2.4 隐私与安全问题
 

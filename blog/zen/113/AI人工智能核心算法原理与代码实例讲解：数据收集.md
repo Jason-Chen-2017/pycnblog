@@ -8,7 +8,7 @@
 
 在人工智能领域,数据是训练模型和算法的燃料。没有高质量的数据,就无法构建出准确高效的人工智能系统。数据收集作为人工智能项目的第一步,对最终模型的性能有着至关重要的影响。然而,获取足够数量、高质量的数据并非易事,需要解决诸多挑战。
 
-### 1.2 研究现状  
+### 1.2 研究现状
 
 目前,数据收集主要有以下几种方式:
 
@@ -145,7 +145,7 @@ $$PR(v_j) = (1-d) + d \sum_{v_i \in B_j} \frac{PR(v_i)}{L(v_i)}$$
 ```mermaid
 graph LR
     A --> B
-    A --> C 
+    A --> C
     B --> C
     C --> D
     D --> A
@@ -212,7 +212,7 @@ import scrapy
 
 class NewsSpider(scrapy.Spider):
     name = 'news'
-    start_urls = ['https://news.example.com/'] 
+    start_urls = ['https://news.example.com/']
 
     def parse(self, response):
         for article in response.css('div.article'):

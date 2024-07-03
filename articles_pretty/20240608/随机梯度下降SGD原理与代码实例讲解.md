@@ -26,14 +26,12 @@ SGD的核心步骤包括：
 
 设损失函数为 \\(L(\\theta)\\)，其中 \\(\\theta\\) 是参数集合，SGD算法的更新规则可以表示为：
 
-$$\\theta_{t+1} = \\theta_t - \\eta \\cdot \
-abla L(\\theta_t; x_i)$$
+$$\\theta_{t+1} = \\theta_t - \\eta \\cdot \nabla L(\\theta_t; x_i)$$
 
 其中，
 - \\(x_i\\) 是第 \\(i\\) 个样本，
 - \\(\\eta\\) 是学习率，
-- \\(\
-abla L(\\theta_t; x_i)\\) 是损失函数 \\(L\\) 在参数 \\(\\theta_t\\) 和样本 \\(x_i\\) 处的梯度。
+- \\(\nabla L(\\theta_t; x_i)\\) 是损失函数 \\(L\\) 在参数 \\(\\theta_t\\) 和样本 \\(x_i\\) 处的梯度。
 
 ## 项目实践：代码实例和详细解释说明
 

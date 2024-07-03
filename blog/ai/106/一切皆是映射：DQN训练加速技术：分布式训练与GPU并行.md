@@ -1,6 +1,6 @@
 # 一切皆是映射：DQN训练加速技术：分布式训练与GPU并行
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -429,4 +429,4 @@ train(env, replay_buffer)
 
 希望本文能够帮助读者更好地理解DQN训练加速技术，并为其在实际应用中提供参考。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

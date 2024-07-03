@@ -105,17 +105,13 @@ $$V(s_{t+1}; \theta) = \max_{a \in A_t} [R(s_t, a) + \gamma V(s_{t+1}; \theta)]$
 
 假设Actor-Critic方法使用策略梯度进行优化，则策略梯度为：
 
-$$\
-abla_{\theta} \pi(\theta) = \sum_{a \in A_t} \
-abla_{\theta} \pi(a|s_t) Q(s_t, a; \theta)$$
+$$\nabla_{\theta} \pi(\theta) = \sum_{a \in A_t} \nabla_{\theta} \pi(a|s_t) Q(s_t, a; \theta)$$
 
 #### 4.2.3 行为值函数梯度
 
 假设使用TD误差作为行为值函数的损失函数，则行为值函数梯度为：
 
-$$\
-abla_{\theta} V(s_t; \theta) = \
-abla_{\theta} [R(s_t, \pi(a|s_t)) + \gamma V(s_{t+1}; \theta) - V(s_t; \theta)]$$
+$$\nabla_{\theta} V(s_t; \theta) = \nabla_{\theta} [R(s_t, \pi(a|s_t)) + \gamma V(s_{t+1}; \theta) - V(s_t; \theta)]$$
 
 ### 4.3 案例分析与讲解
 

@@ -180,7 +180,7 @@ class SimpleModel(nn.Module):
     def __init__(self):
         super(SimpleModel, self).__init__()
         self.fc = nn.Linear(10, 2)
-    
+
     def forward(self, x):
         return self.fc(x)
 
@@ -202,7 +202,7 @@ for epoch in range(10):
     loss = criterion(output, y_train)
     loss.backward()
     optimizer.step()
-    
+
     # 评估模型
     output = model(x_val)
     val_loss = criterion(output, y_val)

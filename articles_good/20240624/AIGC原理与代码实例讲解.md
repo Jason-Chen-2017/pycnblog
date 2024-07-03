@@ -101,10 +101,8 @@ AIGC的算法主要应用于以下领域：
 
 #### 4.2.2 GANs的优化过程
 
-- **生成器优化**：$G'_{\theta'}(\theta) = \theta' - \alpha \
-abla_{\theta'}L_G(\theta, \theta', x)$
-- **判别器优化**：$D'_{\theta'}(\theta) = \theta' - \alpha \
-abla_{\theta'}L_D(\theta, \theta', x)$
+- **生成器优化**：$G'_{\theta'}(\theta) = \theta' - \alpha \nabla_{\theta'}L_G(\theta, \theta', x)$
+- **判别器优化**：$D'_{\theta'}(\theta) = \theta' - \alpha \nabla_{\theta'}L_D(\theta, \theta', x)$
 
 ### 4.3 案例分析与讲解
 

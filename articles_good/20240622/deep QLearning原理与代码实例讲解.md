@@ -148,8 +148,7 @@ $$\pi(a | s) = \frac{e^{Q(s, a)}}{\sum_{a' \in A} e^{Q(s, a')}}$$
 
 经验回放是指在训练过程中，从经验池中随机抽取样本进行学习。假设经验池中有$N$个样本，第$i$个样本为$(s_i, a_i, r_i, s'_i)$，则：
 
-$$\theta_{t+1} = \theta_t + \alpha \cdot \
-abla_{\theta_t} J(\theta_t)$$
+$$\theta_{t+1} = \theta_t + \alpha \cdot \nabla_{\theta_t} J(\theta_t)$$
 
 其中，
 

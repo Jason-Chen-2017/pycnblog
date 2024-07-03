@@ -9,11 +9,11 @@
 Apache Spark 是当前最流行的大数据处理框架之一,其Tungsten引擎通过优化内存和CPU的使用,大幅提升了Spark的性能。将Spark Tungsten应用于环境监测大数据处理,可以高效地完成数据ETL、统计分析、机器学习等任务,为环保部门提供强大的数据处理和分析能力。
 
 ## 2.核心概念与联系
-### 2.1 Apache Spark 
+### 2.1 Apache Spark
 - 基于内存的分布式计算框架
 - 支持批处理、交互式查询、流处理、机器学习等
 - 使用Scala、Java、Python、R等语言开发
-### 2.2 Spark Tungsten  
+### 2.2 Spark Tungsten
 - Spark的第二代执行引擎
 - 通过内存管理、代码生成、缓存感知等优化提升性能
 - Databricks发布,Spark 1.4引入
@@ -38,11 +38,11 @@ C -->|数据采集| F[土壤]
 - 显式内存管理:直接操作系统内存,减少JVM GC
 ### 3.2 Spark Tungsten 的代码生成
 - 动态字节码生成:针对查询生成优化的Java字节码,加速执行
-- 循环展开:减少分支预测失败,提高CPU流水线效率  
+- 循环展开:减少分支预测失败,提高CPU流水线效率
 - 表达式代码生成:对DataFrame/Dataset操作生成遍历代码,减少虚函数调用
 ### 3.3 Spark Tungsten 在环境监测中的应用步骤
 1. 数据采集:通过传感器等设备采集环境监测数据并传输到HDFS等
-2. 数据预处理:使用Spark SQL进行数据清洗、转换,生成优化后的Parquet格式数据  
+2. 数据预处理:使用Spark SQL进行数据清洗、转换,生成优化后的Parquet格式数据
 3. 数据分析:使用Spark MLlib进行统计分析、异常检测、趋势预测等
 4. 结果展示:使用Spark Streaming实时计算结果并通过Web前端展示
 
@@ -82,21 +82,21 @@ $$
 // 读取CSV格式的环境监测数据
 val df = spark.read
   .option("header", "true")
-  .option("inferSchema", "true") 
+  .option("inferSchema", "true")
   .csv("data/air_quality.csv")
 
 // 进行必要的数据转换和过滤
 val pm25 = df.select($"pm25".cast("double"))
   .where($"pm25".isNotNull)
 
-// 定义AQI计算的自定义函数  
+// 定义AQI计算的自定义函数
 def aqiFunc(pm25: Double): Int = {
   val C_low = 35.0
   val C_high = 75.0
   val I_low = 50
   val I_high = 100
   if (pm25 < C_low) {
-    I_low 
+    I_low
   } else if (pm25 > C_high) {
     I_high
   } else {
@@ -121,7 +121,7 @@ result.groupBy($"aqi")
 1. 使用`spark.read`从CSV文件读取环境监测数据。
 2. 选取PM2.5浓度列并过滤掉空值。
 3. 定义计算AQI的Scala函数`aqiFunc`,根据PM2.5浓度计算对应的AQI值。
-4. 使用`udf`将`aqiFunc`注册为Spark UDF。 
+4. 使用`udf`将`aqiFunc`注册为Spark UDF。
 5. 调用UDF计算每个监测记录的AQI。
 6. 按AQI值分组统计,得到各空气质量等级的分布情况。
 
@@ -134,7 +134,7 @@ Spark Tungsten在环境监测领域有广泛的应用前景,主要场景包括:
 
 - 污染源解析:综合分析环境质量数据和排放源数据,识别对区域环境质量影响重大的污染源,为污染防治提供指导。
 
-- 环境预警预报:通过对环境监测数据的趋势分析和预测,及时发现环境质量恶化趋势,实现环境预警和风险防范。  
+- 环境预警预报:通过对环境监测数据的趋势分析和预测,及时发现环境质量恶化趋势,实现环境预警和风险防范。
 
 - 环境公众服务:将环境监测数据通过Web、移动App等方式向公众开放,提高环境信息透明度,引导公众参与环境保护。
 

@@ -160,7 +160,7 @@ class Encoder(nn.Module):
         self.fc1 = nn.Linear(4*4*50, 500)
         self.fc21 = nn.Linear(500, 20)
         self.fc22 = nn.Linear(500, 20)
-        
+
     def forward(self, x):
         x = F.relu(self.conv1(x))
         x = F.max_pool2d(x, 2, 2)
@@ -181,7 +181,7 @@ class Decoder(nn.Module):
         self.conv3 = nn.ConvTranspose2d(50, 20, 5, 2, 2, 1)
         self.conv4 = nn.ConvTranspose2d(20, 10, 5, 2, 2, 1)
         self.sigmoid = nn.Sigmoid()
-        
+
     def forward(self, z):
         x = F.relu(self.fc1(z))
         x = F.relu(self.fc2(x))
@@ -197,19 +197,19 @@ class VAE(nn.Module):
         super(VAE, self).__init__()
         self.encoder = Encoder()
         self.decoder = Decoder()
-        
+
     def encode(self, x):
         mu, logvar = self.encoder(x)
         return mu, logvar
-    
+
     def reparameterize(self, mu, logvar):
         std = torch.exp(0.5*logvar)
         eps = torch.randn_like(std)
         return mu + eps*std
-    
+
     def decode(self, z):
         return self.decoder(z)
-    
+
     def forward(self, x):
         mu, logvar = self.encode(x)
         z = self.reparameterize(mu, logvar)

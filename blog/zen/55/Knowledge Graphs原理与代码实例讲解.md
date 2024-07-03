@@ -22,7 +22,7 @@
 
 ### 2.2 知识图谱的组成要素
 #### 2.2.1 节点(Nodes)
-#### 2.2.2 边(Edges)  
+#### 2.2.2 边(Edges)
 #### 2.2.3 三元组(Triples)
 
 ### 2.3 知识图谱与其他知识表示方式的区别
@@ -36,7 +36,7 @@ graph TD
 A[知识图谱] --> B[实体]
 A --> C[关系]
 A --> D[属性]
-B --> E[节点Node]  
+B --> E[节点Node]
 C --> F[边Edge]
 B & C & D --> G[三元组Triple]
 ```
@@ -44,7 +44,7 @@ B & C & D --> G[三元组Triple]
 ## 3. 核心算法原理具体操作步骤
 ### 3.1 知识抽取
 #### 3.1.1 命名实体识别(NER)
-#### 3.1.2 关系抽取  
+#### 3.1.2 关系抽取
 #### 3.1.3 属性抽取
 
 ### 3.2 知识融合
@@ -116,25 +116,25 @@ public class KnowledgeExtraction {
         Properties props = new Properties();
         props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,depparse,natlog,openie");
         StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
-        
+
         // 待处理的文本
         String text = "Barack Obama was born in Hawaii. He was the president of the United States.";
-        
+
         // 创建文档注释
         CoreDocument document = new CoreDocument(text);
-        
+
         // 注释文档
         pipeline.annotate(document);
-        
+
         // 打印命名实体
         for (CoreEntityMention em : document.entityMentions()) {
             System.out.println(em.text() + "\t" + em.entityType());
         }
-        
+
         // 打印关系三元组
         for (CoreSentence sentence : document.sentences()) {
             for (RelationTriple triple : sentence.openieTriples()) {
-                System.out.println(triple.subjectLemmaGloss() + "\t" 
+                System.out.println(triple.subjectLemmaGloss() + "\t"
                     + triple.relationLemmaGloss() + "\t"
                     + triple.objectLemmaGloss());
             }
@@ -164,17 +164,17 @@ class TransE(nn.Module):
         super(TransE, self).__init__()
         self.entity_embeddings = nn.Embedding(num_entities, embedding_dim)
         self.relation_embeddings = nn.Embedding(num_relations, embedding_dim)
-        
+
     def forward(self, head, relation, tail):
         h = self.entity_embeddings(head)
         r = self.relation_embeddings(relation)
         t = self.entity_embeddings(tail)
         score = torch.norm(h + r - t, p=1, dim=-1)
         return score
-        
+
 # 超参数设置
 num_entities = 10
-num_relations = 5 
+num_relations = 5
 embedding_dim = 50
 learning_rate = 0.01
 num_epochs = 100
@@ -183,27 +183,27 @@ batch_size = 32
 # 创建模型
 model = TransE(num_entities, num_relations, embedding_dim)
 
-# 定义损失函数和优化器  
+# 定义损失函数和优化器
 criterion = nn.MarginRankingLoss(margin=1.0)
 optimizer = optim.SGD(model.parameters(), lr=learning_rate)
 
 for epoch in range(num_epochs):
     # 获取训练数据batch
     heads, relations, tails = get_batch(batch_size)
-    
+
     # 前向传播
     positive_score = model(heads, relations, tails)
     negative_score = model(heads, relations, corrupt_tails(tails))
-    
+
     # 计算损失
     target = torch.ones(batch_size)
     loss = criterion(positive_score, negative_score, target)
-    
+
     # 反向传播和优化
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
-    
+
     # 打印损失
     if (epoch + 1) % 10 == 0:
         print(f"Epoch {epoch+1}, Loss: {loss.item():.4f}")

@@ -99,8 +99,7 @@ LoRA可以应用于各种NLP任务，如文本分类、情感分析、机器翻�
 在微调过程中，自适应参数 $\theta_{\text{ad}}$ 在预训练参数 $\theta_{\text{pre}}$ 的基础上进行更新。具体而言，假设损失函数为 $\mathcal{L}(\theta)$，则自适应参数 $\theta_{\text{ad}}$ 的更新公式为：
 
 $$
-\theta_{\text{ad}} \leftarrow \theta_{\text{ad}} - \eta \
-abla_{\theta_{\text{ad}}}\mathcal{L}(\theta_{\text{pre}} + \theta_{\text{ad}})
+\theta_{\text{ad}} \leftarrow \theta_{\text{ad}} - \eta \nabla_{\theta_{\text{ad}}}\mathcal{L}(\theta_{\text{pre}} + \theta_{\text{ad}})
 $$
 
 其中 $\eta$ 为学习率。
@@ -110,13 +109,10 @@ $$
 LoRA的公式推导过程如下：
 
 1. **损失函数**：假设损失函数为 $\mathcal{L}(\theta)$，其中 $\theta$ 为模型参数。
-2. **梯度计算**：根据链式法则，损失函数对参数 $\theta$ 的梯度为 $\
-abla_{\theta}\mathcal{L}(\theta)$。
-3. **参数更新**：根据梯度下降算法，参数 $\theta$ 的更新公式为 $\theta \leftarrow \theta - \eta \
-abla_{\theta}\mathcal{L}(\theta)$。
+2. **梯度计算**：根据链式法则，损失函数对参数 $\theta$ 的梯度为 $\nabla_{\theta}\mathcal{L}(\theta)$。
+3. **参数更新**：根据梯度下降算法，参数 $\theta$ 的更新公式为 $\theta \leftarrow \theta - \eta \nabla_{\theta}\mathcal{L}(\theta)$。
 4. **参数分解**：将参数 $\theta$ 分解为 $\theta_{\text{pre}} + \theta_{\text{ad}}$。
-5. **自适应参数更新**：根据梯度下降算法，自适应参数 $\theta_{\text{ad}}$ 的更新公式为 $\theta_{\text{ad}} \leftarrow \theta_{\text{ad}} - \eta \
-abla_{\theta_{\text{ad}}}\mathcal{L}(\theta_{\text{pre}} + \theta_{\text{ad}})$。
+5. **自适应参数更新**：根据梯度下降算法，自适应参数 $\theta_{\text{ad}}$ 的更新公式为 $\theta_{\text{ad}} \leftarrow \theta_{\text{ad}} - \eta \nabla_{\theta_{\text{ad}}}\mathcal{L}(\theta_{\text{pre}} + \theta_{\text{ad}})$。
 
 ### 4.3 案例分析与讲解
 
@@ -179,7 +175,7 @@ def evaluate(model, dataset, batch_size):
         for batch in tqdm(dataloader):
             input_ids, attention_mask, batch_labels = [t.to(device) for t in batch]
             outputs = model(input_ids, attention_mask=attention_mask)
-            preds.extend(outputs.logits.argmax(dim=1).tolist()) 
+            preds.extend(outputs.logits.argmax(dim=1).tolist())
             labels.extend(batch_labels.tolist())
     return accuracy_score(labels, preds)
 ```
@@ -194,7 +190,7 @@ optimizer = AdamW(model.parameters(), lr=2e-5)
 for epoch in range(epochs):
     loss = train_epoch(model, train_dataset, batch_size, optimizer)
     print(f"Epoch {epoch+1}, train loss: {loss:.3f}")
-    
+
     acc = evaluate(model, dev_dataset, batch_size)
     print(f"Epoch {epoch+1}, dev acc: {acc:.3f}")
 ```
@@ -306,7 +302,7 @@ optimizer = AdamW(model.parameters(), lr=2e-5)
 for epoch in range(epochs):
     loss = train_epoch(model, train_dataset, batch_size, optimizer)
     print(f"Epoch {epoch+1}, train loss: {loss:.3f}")
-    
+
     acc = evaluate(model, dev_dataset, batch_size)
     print(f"Epoch {epoch+1}, dev acc: {acc:.3f}")
 ```

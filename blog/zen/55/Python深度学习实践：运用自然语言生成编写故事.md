@@ -51,7 +51,7 @@ H --> N
 I --> N
 J --> N
 K --> N
-L --> N 
+L --> N
 M --> N
 N --> O[序列到序列模型]
 N --> P[条件文本生成]
@@ -161,7 +161,7 @@ generated_text = seed_text
 for i in range(500):
     encoded = tokenizer.texts_to_sequences([seed_text])[0]
     encoded = pad_sequences([encoded], maxlen=max_length, truncating='pre')
-    
+
     y_pred = model.predict_classes(encoded, verbose=0)
     predicted_word = ""
     for word, index in tokenizer.word_index.items():
@@ -170,7 +170,7 @@ for i in range(500):
             break
     seed_text += predicted_word
     generated_text += predicted_word
-    
+
 print(generated_text)
 ```
 
@@ -192,8 +192,8 @@ seed_text = "Once upon a time"
 input_ids = tokenizer.encode(seed_text, return_tensors='tf')
 
 output = model.generate(
-    input_ids, 
-    max_length=100, 
+    input_ids,
+    max_length=100,
     num_return_sequences=1,
     no_repeat_ngram_size=2,
     early_stopping=True
@@ -234,15 +234,15 @@ for epoch in range(num_epochs):
         # 生成器生成文本
         noise = tf.random.normal((batch_size, max_length, latent_dim))
         generated_sequences = generator(noise)
-        
+
         # 判别器训练
         real_sequences = get_real_sequences(batch_size)
         discriminator_loss = train_discriminator(real_sequences, generated_sequences)
-        
+
         # 生成器训练
         rewards = get_rewards(generated_sequences)
         generator_loss = train_generator(noise, rewards)
-        
+
     print(f"Epoch {epoch+1}, Discriminator Loss: {discriminator_loss}, Generator Loss: {generator_loss}")
 ```
 
@@ -256,13 +256,13 @@ class LeakGANGenerator(tf.keras.Model):
         self.lstm = tf.keras.layers.LSTM(hidden_dim, return_sequences=True)
         self.dense = tf.keras.layers.Dense(vocab_size)
         self.max_length = max_length
-        
+
     def call(self, x, hidden):
         x = self.embedding(x)
         output, hidden = self.lstm(x, initial_state=hidden)
         output = self.dense(output)
         return output, hidden
-    
+
     def initialize_hidden_state(self, batch_size):
         return [tf.zeros((batch_size, self.lstm.units)) for _ in range(2)]
 
@@ -273,7 +273,7 @@ class LeakGANDiscriminator(tf.keras.Model):
         self.embedding = tf.keras.layers.Embedding(vocab_size, embedding_dim)
         self.lstm = tf.keras.layers.LSTM(hidden_dim)
         self.dense = tf.keras.layers.Dense(1, activation='sigmoid')
-        
+
     def call(self, x):
         x = self.embedding(x)
         x = self.lstm(x)
@@ -290,15 +290,15 @@ for epoch in range(num_epochs):
         noise = tf.random.normal((batch_size, max_length, latent_dim))
         hidden = generator.initialize_hidden_state(batch_size)
         generated_sequences, _ = generator(noise, hidden)
-        
+
         # 判别器训练
         real_sequences = get_real_sequences(batch_size)
         discriminator_loss = train_discriminator(real_sequences, generated_sequences)
-        
+
         # 生成器训练
         rewards = get_rewards(generated_sequences)
         generator_loss = train_generator(noise, rewards)
-        
+
     print(f"Epoch {epoch+1}, Discriminator Loss: {discriminator_loss}, Generator Loss: {generator_loss}")
 ```
 

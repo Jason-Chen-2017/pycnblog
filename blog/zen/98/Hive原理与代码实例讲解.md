@@ -106,7 +106,7 @@ Hive广泛应用于大数据分析、商业智能、数据挖掘等领域。在�
 
 查询`total_sales_by_customer`：找出每个顾客的总销售额。
 
-$$ \text{total_sales_by_customer} = \begin{cases} 
+$$ \text{total_sales_by_customer} = \begin{cases}
 \sum_{\text{sales}} \text{amount} & \text{if customer_id = given_customer_id} \\
 \text{null} & \text{otherwise}
 \end{cases} $$

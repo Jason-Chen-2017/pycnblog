@@ -246,19 +246,19 @@ def bigram_predictor(text):
     # 统计字符和字符组合出现的次数
     char_counts = np.zeros(256)  # ASCII字符集
     bigram_counts = np.zeros(256 * 256)
-    
+
     for i in range(len(text) - 1):
         char_counts[ord(text[i])] += 1
         bigram_counts[ord(text[i]) * 256 + ord(text[i + 1])] += 1
-    
+
     # 计算概率分布
     char_prob = char_counts / char_counts.sum()
     bigram_prob = bigram_counts / bigram_counts.sum()
-    
+
     # 预测下一个字符
     last_char = ord(text[-1])
     next_char = np.random.choice(list(range(256)), p=bigram_prob[last_char * 256:])
-    
+
     return chr(next_char)
 
 # 测试Bigram模型

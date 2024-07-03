@@ -1,4 +1,4 @@
-                 
+
 # Deep Learning
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -41,9 +41,9 @@ graph TD;
 
 激活函数用于引入非线性因素，使神经网络能够学习和表达复杂的映射关系。常见的激活函数有sigmoid、tanh、ReLU等。
 
-$$ f(x) = \begin{cases} 
+$$ f(x) = \begin{cases}
 0, & x < 0 \\
-x, & x \geq 0 
+x, & x \geq 0
 \end{cases}
 $$
 
@@ -142,7 +142,7 @@ def create_model():
     model.add(layers.Conv2D(64, (3, 3), activation='relu'))
     model.add(layers.MaxPooling2D((2, 2)))
     model.add(layers.Conv2D(64, (3, 3), activation='relu'))
-    
+
     model.add(layers.Flatten())
     model.add(layers.Dense(64, activation='relu'))
     model.add(layers.Dense(10))

@@ -208,5 +208,5 @@ BERT 模型采用 masked language modeling (MLM) 和 next sentence prediction (N
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

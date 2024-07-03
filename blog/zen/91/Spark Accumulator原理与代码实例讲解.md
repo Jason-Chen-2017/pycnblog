@@ -107,7 +107,7 @@ $$
 将上述公式进行累加，得到：
 
 $$
-A_{final} = \sum_{i=1}^{N}(x_i + A_i^{'}) = \sum_{i=1}^{N}x_i + \sum_{i=1}^{N}A_i^{'} = \sum_{i=1}^{N}x_i + A_{final}^{'} 
+A_{final} = \sum_{i=1}^{N}(x_i + A_i^{'}) = \sum_{i=1}^{N}x_i + \sum_{i=1}^{N}A_i^{'} = \sum_{i=1}^{N}x_i + A_{final}^{'}
 $$
 
 其中，$A_{final}^{'}$ 表示所有任务中Accumulator增量的总和。

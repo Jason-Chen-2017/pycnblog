@@ -1,6 +1,6 @@
 # 大语言模型原理基础与前沿：高效的大模型混合专家架构（MoE）
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 关键词：
 
@@ -98,25 +98,25 @@ MoE架构广泛应用于自然语言处理、推荐系统、图像分类等多�
 MoE模型可以构建为以下形式：
 
 $$
-\\text{Output} = \\text{Gate}(x) \\cdot \\text{Expert}_i(x)
+\text{Output} = \text{Gate}(x) \cdot \text{Expert}_i(x)
 $$
 
 其中，
 
-- $\\text{Gate}(x)$ 是门控器函数，用于预测输入$x$应该由哪个“专家”处理。
-- $\\text{Expert}_i(x)$ 是第$i$个“专家”对输入$x$的响应。
+- $\text{Gate}(x)$ 是门控器函数，用于预测输入$x$应该由哪个“专家”处理。
+- $\text{Expert}_i(x)$ 是第$i$个“专家”对输入$x$的响应。
 
 ### 4.2 公式推导过程
 
 在训练过程中，需要最小化损失函数$L$，以调整门控器和专家的参数。损失函数可以是交叉熵损失、均方误差等，具体取决于任务类型：
 
 $$
-L = \\mathbb{E}_{(x,y)}[-\\log p(y|x)]
+L = \mathbb{E}_{(x,y)}[-\log p(y|x)]
 $$
 
 其中，
 
-- $\\mathbb{E}_{(x,y)}$ 表示对输入$x$和真实标签$y$的期望。
+- $\mathbb{E}_{(x,y)}$ 表示对输入$x$和真实标签$y$的期望。
 - $p(y|x)$ 是模型预测的标签概率。
 
 ### 4.3 案例分析与讲解
@@ -126,29 +126,29 @@ $$
 #### 门控器公式：
 
 $$
-\\text{Gate}(x) = \\sigma(W_x \\cdot x + b_x)
+\text{Gate}(x) = \sigma(W_x \cdot x + b_x)
 $$
 
 #### “专家”公式：
 
 $$
-\\text{Expert}_1(x) = \\text{MLP}_1(x)
+\text{Expert}_1(x) = \text{MLP}_1(x)
 $$
 
 $$
-\\text{Expert}_2(x) = \\text{MLP}_2(x)
+\text{Expert}_2(x) = \text{MLP}_2(x)
 $$
 
 其中，
 
-- $\\sigma$ 是激活函数，例如sigmoid或ReLU。
+- $\sigma$ 是激活函数，例如sigmoid或ReLU。
 - $W_x$ 和 $b_x$ 是门控器的权重和偏置。
-- $\\text{MLP}_1(x)$ 和 $\\text{MLP}_2(x)$ 分别是“专家”的多层感知机模型。
+- $\text{MLP}_1(x)$ 和 $\text{MLP}_2(x)$ 分别是“专家”的多层感知机模型。
 
 ### 4.4 常见问题解答
 
 - **如何选择合适的门控器和专家？** 选择门控器和专家的策略需要考虑任务的特性、专家的数量以及计算资源。通常，门控器的复杂性应适中，以便在训练过程中能够有效地学习决策规则，而专家的性能应当足够高，以满足特定任务的需求。
-  
+
 ## 5. 项目实践：代码实例和详细解释说明
 
 ### 5.1 开发环境搭建

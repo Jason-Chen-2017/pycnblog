@@ -61,8 +61,7 @@
 2. **计算梯度**：利用反向传播算法计算损失函数关于模型参数的梯度。
 3. **更新模型参数**：根据梯度和学习率（Learning Rate）调整模型参数。更新公式如下：
 
-$$\theta_{\text{new}} = \theta_{\text{old}} - \alpha \cdot \
-abla_{\theta} J(\theta)$$
+$$\theta_{\text{new}} = \theta_{\text{old}} - \alpha \cdot \nabla_{\theta} J(\theta)$$
 
 其中，$\theta$表示模型参数，$J(\theta)$表示损失函数，$\alpha$表示学习率。
 
@@ -112,8 +111,7 @@ $$J(\theta) = \frac{1}{2} \sum_{i=1}^m (y_i - (\theta_0 + \theta_1 x_{1i} + \the
 
 对损失函数求导，得到：
 
-$$\
-abla_{\theta} J(\theta) = \begin{pmatrix} \frac{\partial J}{\partial \theta_0} \\ \frac{\partial J}{\partial \theta_1} \\ \vdots \\ \frac{\partial J}{\partial \theta_n} \end{pmatrix} = \begin{pmatrix} \sum_{i=1}^m (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i} + \cdots + \theta_n x_{ni})) \\ \sum_{i=1}^m (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i} + \cdots + \theta_n x_{ni})) x_{1i} \\ \vdots \\ \sum_{i=1}^m (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i} + \cdots + \theta_n x_{ni})) x_{ni} \end{pmatrix}$$
+$$\nabla_{\theta} J(\theta) = \begin{pmatrix} \frac{\partial J}{\partial \theta_0} \ \frac{\partial J}{\partial \theta_1} \ \vdots \ \frac{\partial J}{\partial \theta_n} \end{pmatrix} = \begin{pmatrix} \sum_{i=1}^m (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i} + \cdots + \theta_n x_{ni})) \ \sum_{i=1}^m (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i} + \cdots + \theta_n x_{ni})) x_{1i} \ \vdots \ \sum_{i=1}^m (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i} + \cdots + \theta_n x_{ni})) x_{ni} \end{pmatrix}$$
 
 ### 4.3 案例分析与讲解
 

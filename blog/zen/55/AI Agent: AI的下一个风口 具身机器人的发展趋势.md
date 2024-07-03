@@ -3,7 +3,7 @@
 ## 1. 背景介绍
 ### 1.1 人工智能的发展历程
 #### 1.1.1 早期人工智能
-#### 1.1.2 机器学习时代  
+#### 1.1.2 机器学习时代
 #### 1.1.3 深度学习时代
 ### 1.2 人工智能的应用现状
 #### 1.2.1 语音识别与自然语言处理
@@ -16,12 +16,12 @@
 
 ## 2. 核心概念与联系
 ### 2.1 AI Agent的定义与特点
-#### 2.1.1 自主性与目标导向 
+#### 2.1.1 自主性与目标导向
 #### 2.1.2 感知、推理与决策能力
 #### 2.1.3 学习与适应能力
 ### 2.2 具身机器人的概念与内涵
 #### 2.2.1 具身性：身体与环境的交互
-#### 2.2.2 智能性：感知、规划与控制 
+#### 2.2.2 智能性：感知、规划与控制
 #### 2.2.3 自主性：无人干预下的独立行为
 ### 2.3 AI Agent与具身机器人的关系
 #### 2.3.1 AI Agent是具身机器人的大脑
@@ -33,7 +33,7 @@
 #### 3.1.1 马尔可夫决策过程(MDP)
 #### 3.1.2 Q-Learning算法
 #### 3.1.3 策略梯度算法
-### 3.2 深度强化学习算法  
+### 3.2 深度强化学习算法
 #### 3.2.1 Deep Q-Network(DQN)
 #### 3.2.2 Deep Deterministic Policy Gradient(DDPG)
 #### 3.2.3 Proximal Policy Optimization(PPO)
@@ -45,7 +45,7 @@
 ## 4. 数学模型和公式详细讲解举例说明
 ### 4.1 马尔可夫决策过程(MDP)的数学定义
 #### 4.1.1 状态空间 $\mathcal{S}$
-#### 4.1.2 动作空间 $\mathcal{A}$  
+#### 4.1.2 动作空间 $\mathcal{A}$
 #### 4.1.3 状态转移概率 $\mathcal{P}$
 #### 4.1.4 奖励函数 $\mathcal{R}$
 #### 4.1.5 折扣因子 $\gamma$
@@ -77,13 +77,13 @@ num_episodes = 2000
 for i in range(num_episodes):
     state = env.reset()
     done = False
-    
+
     while not done:
         action = np.argmax(q_table[state])
         next_state, reward, done, _ = env.step(action)
-        
+
         q_table[state, action] += learning_rate * (reward + gamma * np.max(q_table[next_state]) - q_table[state, action])
-        
+
         state = next_state
 
 print("Training finished.")
@@ -104,7 +104,7 @@ class DQN(nn.Module):
         self.fc1 = nn.Linear(state_size, 64)
         self.fc2 = nn.Linear(64, 64)
         self.fc3 = nn.Linear(64, action_size)
-        
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = torch.relu(self.fc2(x))
@@ -126,26 +126,26 @@ gamma = 0.99
 for i in range(num_episodes):
     state = env.reset()
     done = False
-    
+
     while not done:
         state_tensor = torch.FloatTensor(state).unsqueeze(0)
         q_values = model(state_tensor)
         action = torch.argmax(q_values).item()
-        
+
         next_state, reward, done, _ = env.step(action)
-        
+
         target = reward + gamma * torch.max(model(torch.FloatTensor(next_state).unsqueeze(0)))
         target_f = model(state_tensor)
         target_f[0][action] = target
-        
+
         loss = nn.MSELoss()(q_values, target_f)
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-        
+
         state = next_state
 
-print("Training finished.")        
+print("Training finished.")
 ```
 这段代码使用PyTorch实现了一个基于DQN的深度强化学习算法。通过神经网络近似Q值函数，并使用经验回放(Experience Replay)和目标网络(Target Network)等技巧来提高算法的稳定性和收敛速度。最终训练出一个能够很好地控制CartPole平衡的智能体。
 
@@ -156,7 +156,7 @@ print("Training finished.")
 #### 6.1.3 安防机器人：入侵检测、紧急呼叫等
 ### 6.2 工业制造中的具身机器人
 #### 6.2.1 装配机器人：精密装配、质量检测等
-#### 6.2.2 搬运机器人：物料搬运、仓储物流等 
+#### 6.2.2 搬运机器人：物料搬运、仓储物流等
 #### 6.2.3 巡检机器人：设备巡检、故障诊断等
 ### 6.3 特种领域中的具身机器人
 #### 6.3.1 航天机器人：太空探索、卫星维修等
@@ -172,7 +172,7 @@ print("Training finished.")
 #### 7.2.1 Gazebo
 #### 7.2.2 V-REP
 #### 7.2.3 Webots
-### 7.3 机器人开发框架 
+### 7.3 机器人开发框架
 #### 7.3.1 ROS (Robot Operating System)
 #### 7.3.2 YARP (Yet Another Robot Platform)
 #### 7.3.3 MOOS (Mission Oriented Operating Suite)
@@ -184,7 +184,7 @@ print("Training finished.")
 #### 8.1.3 更加个性化的服务与定制
 ### 8.2 多智能体协同与群体智能
 #### 8.2.1 多机器人系统的分布式决策
-#### 8.2.2 机器人集群的涌现行为 
+#### 8.2.2 机器人集群的涌现行为
 #### 8.2.3 人机混合系统的协同优化
 ### 8.3 安全性、鲁棒性与可解释性
 #### 8.3.1 对抗攻击下的模型防御

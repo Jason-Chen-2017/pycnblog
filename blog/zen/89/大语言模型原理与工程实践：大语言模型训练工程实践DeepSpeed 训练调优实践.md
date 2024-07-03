@@ -116,13 +116,9 @@ DeepSpeed的应用领域包括：
 
 #### 4.1.3 动态损失归一化
 
-- **梯度**：$\
-abla_\theta L(\theta; x, y) = \frac{\partial L(\theta; x, y)}{\partial \theta}$
+- **梯度**：$\nabla_\theta L(\theta; x, y) = \frac{\partial L(\theta; x, y)}{\partial \theta}$
 - **学习率**：$\eta$
-- **归一化梯度**：$\hat{\
-abla}_\theta L(\theta; x, y) = \frac{\
-abla_\theta L(\theta; x, y)}{\|\
-abla_\theta L(\theta; x, y)\|}$
+- **归一化梯度**：$\hat{\nabla}_\theta L(\theta; x, y) = \frac{\nabla_\theta L(\theta; x, y)}{\|\nabla_\theta L(\theta; x, y)\|}$
 
 ### 4.2 公式推导过程
 

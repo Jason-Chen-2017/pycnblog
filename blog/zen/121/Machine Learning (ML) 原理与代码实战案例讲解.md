@@ -93,7 +93,7 @@ $$
 **公式**：
 
 $$
-P(y=1) = \frac{1}{1+e^{-(\beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_n x_n)} 
+P(y=1) = \frac{1}{1+e^{-(\beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_n x_n)}
 $$
 
 其中，$P(y=1)$ 是样本属于正类的概率。
@@ -122,7 +122,7 @@ $$
 **公式**：
 
 $$
-\min_{\beta, b} \frac{1}{2} ||\beta||^2 + C \sum_{i=1}^N \xi_i 
+\min_{\beta, b} \frac{1}{2} ||\beta||^2 + C \sum_{i=1}^N \xi_i
 $$
 
 其中，$||\beta||^2$ 是惩罚项，$C$ 是惩罚系数，$\xi_i$ 是支持向量。

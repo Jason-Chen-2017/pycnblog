@@ -237,13 +237,13 @@ for epoch in range(100):
     next_state = next_state.unsqueeze(0)
     action = action.unsqueeze(0)
     reward = reward.unsqueeze(0)
-    
+
     optimizer.zero_grad()
     output = agent(next_state)
     loss = (output - action).pow(2).mean()
     loss.backward()
     optimizer.step()
-    
+
     print(f"Epoch {epoch+1}, loss: {loss.item()}")
 
 # 测试

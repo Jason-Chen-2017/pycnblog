@@ -193,7 +193,7 @@ public class LogAggregationTask implements StreamTask {
         String message = msg.getPayload().toString();
         long timestamp = msg.getStream().getTimestamp();
         String[] words = message.split(" ");
-        
+
         for (String word : words) {
             context.emit(word, "1");
         }

@@ -304,4 +304,4 @@ The quick brown fox jumps over the lazy dog.
 * **可解释性:**  评估用户对 Prompt 的理解程度。
 * **可控性:**  评估用户对 LLM 输出的控制程度。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -94,15 +94,13 @@ $$ \\pi(a|s) = P(a \\mid s) $$
 
 策略梯度算法通常通过梯度上升法来优化策略：
 
-$$ \\theta \\leftarrow \\theta + \\alpha \\cdot \
-abla_\\theta J(\\theta) $$
+$$ \\theta \\leftarrow \\theta + \\alpha \\cdot \nabla_\\theta J(\\theta) $$
 
 其中：
 
 - $\\theta$ 是策略参数，
 - $\\alpha$ 是学习率，
-- $\
-abla_\\theta J(\\theta)$ 是策略梯度，
+- $\nabla_\\theta J(\\theta)$ 是策略梯度，
 
 策略梯度通常通过以下方式计算：
 

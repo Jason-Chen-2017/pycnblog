@@ -1,4 +1,4 @@
-                 
+
 # KL散度原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -43,9 +43,9 @@ $$ D_{\text{KL}}(P||Q) = \sum_{x} P(x) \log \frac{P(x)}{Q(x)} $$
 ### 2.2 与其他概念的联系
 
 - **交叉熵**：交叉熵（Cross Entropy, CE）是两个概率分布的期望负对数似然度，即：
-  
+
   $$ H(P, Q) = -\sum_x P(x) \log Q(x) $$
-  
+
   当\( P \)和\( Q \)相同，则CE等于KL散度；若\( P \)和\( Q \)完全不同时，CE大于KL散度。
 
 - **相对熵**：KL散度有时被称为相对熵（Relative Entropy），强调了它描述的是某个分布相对于另一个分布的“偏离”。
@@ -138,7 +138,7 @@ def kl_divergence(p, q):
     # 检查概率是否合法
     if not (np.all(p >= 0) and np.sum(p) == 1) or not (np.all(q >= 0) and np.sum(q) == 1):
         raise ValueError("Probabilities must be non-negative and sum to 1.")
-    
+
     return np.sum(p * np.log(p / q))
 
 # 示例分布

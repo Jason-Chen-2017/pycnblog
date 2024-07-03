@@ -1,6 +1,6 @@
 # Lucene原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：Lucene, 倒排索引, 全文检索, 信息检索, 搜索引擎
 
@@ -14,7 +14,7 @@
 
 目前,Lucene已经成为全文检索领域事实上的标准。很多知名的搜索引擎和大数据分析平台,如Elasticsearch、Solr、Nutch等,都是基于Lucene构建的。Lucene以其优秀的性能、可扩展性和跨平台特性,在学术界和工业界得到了广泛应用。
 
-### 1.3 研究意义 
+### 1.3 研究意义
 
 深入研究Lucene的原理和应用,对于构建高效的搜索引擎和大数据分析平台具有重要意义。通过剖析Lucene的架构设计和核心算法,可以启发我们设计出更加优秀的信息检索系统。同时,Lucene丰富的API和可扩展性,也为各种垂直领域的应用提供了便利。
 
@@ -144,7 +144,7 @@ $$
 经过分词后：
 
 - Q: {"java", "lucene"}
-- D1: {"lucene", "is", "a", "java", "full-text", "search", "engine"}  
+- D1: {"lucene", "is", "a", "java", "full-text", "search", "engine"}
 - D2: {"lucene", "is", "an", "information", "retrieval", "library", "written", "in", "java"}
 
 假设索引中总文档数为2。那么：
@@ -161,7 +161,7 @@ $score(Q, D1) = (1 \times 1^2 \times 1 + 1 \times 1^2 \times 1) \times 0.378 \ap
 
 对于D2：
 
-- $tf("java", D2) = 1, tf("lucene", D2) = 1$  
+- $tf("java", D2) = 1, tf("lucene", D2) = 1$
 - $norm(D2) = \frac{1}{\sqrt{9}} = 0.333$
 
 $score(Q, D2) = (1 \times 1^2 \times 1 + 1 \times 1^2 \times 1) \times 0.333 \approx 0.666$
@@ -231,7 +231,7 @@ public class LuceneDemo {
       directory = FSDirectory.open(Paths.get("./index"));
       IndexWriterConfig config = new IndexWriterConfig(analyzer);
       IndexWriter iwriter = new IndexWriter(directory, config);
-      
+
       Document doc1 = new Document();
       doc1.add(new TextField("title", "Lucene is a Java full-text search engine", Field.Store.YES));
       iwriter.addDocument(doc1);
@@ -241,11 +241,11 @@ public class LuceneDemo {
       iwriter.addDocument(doc2);
 
       iwriter.close();
-      
+
     } catch (IOException e) {
       e.printStackTrace();
     }
-    
+
     // 2. Query
     try {
       // 2.1 Parse the query string
@@ -257,7 +257,7 @@ public class LuceneDemo {
       IndexSearcher searcher = new IndexSearcher(reader);
       TopDocs docs = searcher.search(q, hitsPerPage);
       ScoreDoc[] hits = docs.scoreDocs;
-      
+
       // 2.2 Iterate through the results:
       System.out.println("Found " + hits.length + " hits.");
       for(int i=0;i<hits.length;++i) {
@@ -269,7 +269,7 @@ public class LuceneDemo {
       // reader can only be closed when there
       // is no need to access the documents any more.
       reader.close();
-      
+
     } catch (IOException | ParseException e) {
       e.printStackTrace();
     }
@@ -300,7 +300,7 @@ public class LuceneDemo {
 
 ```
 Found 2 hits.
-1. Lucene is a Java full-text search engine 
+1. Lucene is a Java full-text search engine
 2. Lucene is an Information Retrieval library written in Java
 ```
 

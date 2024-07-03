@@ -1,4 +1,4 @@
-                 
+
 # 联邦学习(Federated Learning) - 原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -119,7 +119,7 @@
 
 - **问**：如何解决客户端间的不平衡数据问题？
     **答**：通过动态调整权重分配、数据增强技术、或者采用更加灵活的模型结构（如自适应学习速率），可以在一定程度上缓解不平衡数据带来的影响。
-    
+
 - **问**：如何在保证隐私的同时传输模型更新信息？
     **答**：可采用差分隐私、同态加密等技术，将原始梯度转换为匿名化的形式，再进行通信，以保护参与方的隐私。
 
@@ -253,7 +253,7 @@ if __name__ == "__main__":
 
 - **官方文档**：
   - [FLWR Server](https://flwr.readthedocs.io/en/latest/server.html)：提供详细的Flower服务器配置指南。
-  
+
 - **教程和案例**：
   - [Federated Learning Tutorial](https://towardsdatascience.com/federated-learning-tutorial-for-machine-learning-beginners-with-pytorch-9a83b4d970c)：深入浅出地介绍了联邦学习的基础知识及其实践应用。
 

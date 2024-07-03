@@ -1,7 +1,7 @@
 
 # 一切皆是映射：深入剖析条件神经过程（CNPs）
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 关键词：
 
@@ -181,7 +181,7 @@ class ConditionalVAE(nn.Module):
             nn.Linear(latent_dim * 2, input_dim),
             nn.Sigmoid()
         )
-        
+
     def forward(self, x, c):
         z = self.encoder(torch.cat([x, c], dim=1))
         mu, logvar = torch.chunk(z, 2, dim=1)

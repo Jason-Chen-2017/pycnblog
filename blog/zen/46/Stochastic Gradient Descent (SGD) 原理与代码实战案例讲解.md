@@ -120,10 +120,10 @@ for i in range(max_iter):
     idx = np.random.randint(0, len(x))
     xi = x[idx, :]
     yi = y[idx, :]
-    
+
     # 计算梯度
     gradient = 2 * (theta[0] * xi - yi)
-    
+
     # 更新参数
     theta = theta - alpha * gradient
 
@@ -177,10 +177,10 @@ for i in range(max_iter):
     idx = np.random.randint(0, len(x))
     xi = x[idx, :]
     yi = y[idx, :]
-    
+
     # 计算梯度
     gradient = 2 * (theta[0] * xi - yi)
-    
+
     # 更新参数
     theta = theta - alpha * gradient
 

@@ -1,6 +1,6 @@
 # Python机器学习实战：使用机器学习预测股票市场走势
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -353,4 +353,4 @@ print('预测价格:', predicted_price)
 * **如何评估模型的性能？**  可以使用各种指标来评估模型的性能，例如均方误差 (MSE)、均方根误差 (RMSE)、准确率、召回率等。
 * **如何处理数据中的噪声？**  可以使用数据清洗、特征工程和模型正则化等方法来处理数据中的噪声。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

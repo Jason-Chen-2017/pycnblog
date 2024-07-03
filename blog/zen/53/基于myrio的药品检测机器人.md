@@ -7,7 +7,7 @@
 ### 1.1 药品质量检测的重要性
 
 #### 1.1.1 保障公众健康安全
-#### 1.1.2 维护医药市场秩序  
+#### 1.1.2 维护医药市场秩序
 #### 1.1.3 促进医药产业健康发展
 
 ### 1.2 传统药品检测方式的局限性
@@ -33,7 +33,7 @@
 ### 2.2 药品检测技术概述
 
 #### 2.2.1 光谱分析法
-#### 2.2.2 色谱分析法  
+#### 2.2.2 色谱分析法
 #### 2.2.3 质谱分析法
 
 ### 2.3 机器人技术在药品检测中的应用
@@ -49,7 +49,7 @@ A --> C[机器人技术]
 B --> D[光谱分析法]
 B --> E[色谱分析法]
 B --> F[质谱分析法]
-C --> G[机器视觉技术]  
+C --> G[机器视觉技术]
 C --> H[机械臂技术]
 C --> I[自动化控制技术]
 ```
@@ -64,14 +64,14 @@ C --> I[自动化控制技术]
 
 ### 3.2 药品成分分析算法
 
-#### 3.2.1 光谱数据采集与预处理  
+#### 3.2.1 光谱数据采集与预处理
 #### 3.2.2 数据降维与特征提取
 #### 3.2.3 成分识别与定量分析
 
 ### 3.3 机器人运动控制算法
 
 #### 3.3.1 运动学建模与求解
-#### 3.3.2 轨迹规划与插补  
+#### 3.3.2 轨迹规划与插补
 #### 3.3.3 伺服控制与误差补偿
 
 ## 4.数学模型和公式详细讲解举例说明
@@ -88,10 +88,10 @@ $$g(x,y)=f(x,y)+n(x,y)$$
 #### 4.1.2 边缘检测模型
 常用的边缘检测算子有Sobel、Prewitt、Laplacian等。以Sobel算子为例,其模板为:
 
-$$G_x = \begin{bmatrix} 
+$$G_x = \begin{bmatrix}
 -1 & 0 & +1 \\
 -2 & 0 & +2 \\
--1 & 0 & +1 
+-1 & 0 & +1
 \end{bmatrix} * A$$
 
 $$G_y = \begin{bmatrix}
@@ -149,7 +149,7 @@ $$X = f(\theta)$$
 
 常用的求解方法有D-H参数法、几何法等。
 
-#### 4.3.2 机器人逆运动学模型  
+#### 4.3.2 机器人逆运动学模型
 已知末端执行器位姿 $X$,求解关节变量 $\theta$,即:
 
 $$\theta = f^{-1}(X)$$
@@ -169,7 +169,7 @@ z(t) = c_0 + c_1t + c_2t^2 + c_3t^3 + c_4t^4 + c_5t^5
 
 $$\begin{cases}
 x(0) = x_0, & x(t_f) = x_f \\
-y(0) = y_0, & y(t_f) = y_f \\  
+y(0) = y_0, & y(t_f) = y_f \\
 z(0) = z_0, & z(t_f) = z_f \\
 \dot{x}(0) = 0, & \dot{x}(t_f) = 0 \\
 \dot{y}(0) = 0, & \dot{y}(t_f) = 0 \\
@@ -189,22 +189,22 @@ import time
 with nifpga.Session("path/to/bitfile.lvbitx") as session:
     # 配置I/O通道
     dio = session.registers['DIO']
-    ai = session.registers['AI']  
+    ai = session.registers['AI']
     ao = session.registers['AO']
     encoder = session.registers['Encoder']
     pwm = session.registers['PWM']
-    
+
     # 主循环
     while True:
         # 读取传感器数据
         sensor_data = ai.read()
-        
+
         # 执行控制算法
         control_output = control_algorithm(sensor_data)
-        
+
         # 输出控制量
         ao.write(control_output)
-        
+
         # 延时
         time.sleep(0.01)
 ```
@@ -231,7 +231,7 @@ blurred = cv2.GaussianBlur(gray, (5,5), 0)
 thresh = cv2.threshold(blurred, 60, 255, cv2.THRESH_BINARY)[1]
 
 # 形态学处理
-kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5,5)) 
+kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5,5))
 closed = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, kernel)
 
 # 轮廓提取
@@ -242,7 +242,7 @@ for contour in contours:
     area = cv2.contourArea(contour)
     if area < 100:
         cv2.drawContours(img, [contour], -1, (0,0,255), 2)
-        
+
 cv2.imshow('Defect Detection', img)
 cv2.waitKey(0)
 ```
@@ -280,7 +280,7 @@ print(f'正运动学:\n{T}')
 # 逆运动学
 T_target = np.array([
     [0, -1, 0, 0.4],
-    [1, 0, 0, 0.2], 
+    [1, 0, 0, 0.2],
     [0, 0, 1, 0.3],
     [0, 0, 0, 1]
 ])
@@ -288,7 +288,7 @@ q_target = robot.ikine_LM(T_target)
 print(f'逆运动学:\n{q_target}')
 
 # 轨迹规划
-q0 = [0, 0, 0] 
+q0 = [0, 0, 0]
 qf = [np.pi/2, np.pi/3, -np.pi/4]
 tf = 2.0
 N = 100

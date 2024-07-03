@@ -105,8 +105,7 @@ $$
 通过梯度下降算法，可以推导出元学习模型的参数更新公式：
 
 $$
-\theta_{meta} \leftarrow \theta_{meta} - \eta \
-abla_{\theta_{meta}} L(\theta_{base}, x, y) - \eta \alpha \theta_{meta}
+\theta_{meta} \leftarrow \theta_{meta} - \eta \nabla_{\theta_{meta}} L(\theta_{base}, x, y) - \eta \alpha \theta_{meta}
 $$
 
 其中，$\eta$ 表示学习率。

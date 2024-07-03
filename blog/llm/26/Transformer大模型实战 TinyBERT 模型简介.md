@@ -78,7 +78,7 @@ TinyBERT模型适用于多种自然语言处理任务，包括但不限于文本
 
 对于多头注意力机制，假设查询(query)、键(key)和值(value)分别表示为$q_i$、$k_j$和$v_j$，则注意力分数$z_{ij}$计算公式为：
 
-$$z_{ij} = \\frac{\\exp(\\text{softmax}(W_q q_i W_k k_j'))}{\\sqrt{d_k}}$$
+$$z_{ij} = \frac{\exp(\text{softmax}(W_q q_i W_k k_j'))}{\sqrt{d_k}}$$
 
 其中，$W_q$和$W_k$分别是query和key的权重矩阵，$d_k$是键的维度，$'$表示转置操作。
 
@@ -86,7 +86,7 @@ $$z_{ij} = \\frac{\\exp(\\text{softmax}(W_q q_i W_k k_j'))}{\\sqrt{d_k}}$$
 
 多头注意力输出$y_i$的计算公式为：
 
-$$y_i = \\sum_{j=1}^{n} \\text{softmax}(W_v v_j') z_{ij}$$
+$$y_i = \sum_{j=1}^{n} \text{softmax}(W_v v_j') z_{ij}$$
 
 其中，$W_v$是值(value)的权重矩阵。
 

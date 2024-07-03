@@ -1,7 +1,7 @@
 
 # HBase二级索引原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -145,7 +145,7 @@ $$
 假设HBase数据表中的数据分布服从均匀分布，则：
 
 $$
-P(\text{行键}|\text{数据}) = \frac{1}{N} 
+P(\text{行键}|\text{数据}) = \frac{1}{N}
 $$
 
 其中 $N$ 为数据表中的行数。
@@ -153,7 +153,7 @@ $$
 假设索引表中每个索引键对应的行键数量相等，则：
 
 $$
-P(\text{索引键}|\text{行键}) = \frac{1}{M} 
+P(\text{索引键}|\text{行键}) = \frac{1}{M}
 $$
 
 其中 $M$ 为索引表中每个索引键对应的行键数量。

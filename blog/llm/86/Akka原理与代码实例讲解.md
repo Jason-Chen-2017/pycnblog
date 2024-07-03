@@ -122,7 +122,7 @@ object ActorExample extends App {
   val actorSystem = ActorSystem("ActorSystem")
   val actor = actorSystem.actorOf(Props[MyActor], "myActor")
   actor ! "Hello, Akka!"
-  
+
   class MyActor extends Actor {
     def receive = {
       case "Hello, Akka!" => println("Hello, back!")
@@ -184,11 +184,11 @@ object ActorExample extends App {
   val actorSystem = ActorSystem("ActorSystem")
   val actor = actorSystem.actorOf(Props[MyActor], "myActor")
   actor ! "Hello, Akka!"
-  
+
   class MyActor extends Actor {
     def receive = {
       case "Hello, Akka!" => println("Hello, back!")
-      case "CreateChild" => 
+      case "CreateChild" =>
         val childActor = context.actorOf(Props[ChildActor], "childActor")
         childActor ! "Hello, child!"
       case _ => println("Unknown message")

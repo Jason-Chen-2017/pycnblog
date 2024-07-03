@@ -155,11 +155,11 @@ class MultiHeadAttention(nn.Module):
 
     def forward(self, query, key, value, attn_mask=None):
         batch_size = query.size(0)
-        
+
         # Linear projections
         query, key, value = [l(x).view(batch_size, -1, self.n_heads, self.head_dim).transpose(1, 2)
                             for l, x in zip(self.linear_layers, (query, key, value))]
-        
+
         # Attention
         x = torch.matmul(query, key.transpose(-2, -1)) / math.sqrt(self.head_dim)
         if attn_mask is not None:
@@ -167,7 +167,7 @@ class MultiHeadAttention(nn.Module):
         x = torch.softmax(x, dim=-1)
         x = self.attn_drop(x)
         x = torch.matmul(x, value)
-        
+
         # Combine heads
         x = x.transpose(1, 2).contiguous().view(batch_size, -1, self.d_model)
         x = self.out(x)
@@ -189,11 +189,11 @@ Transformer结构在实际应用中具有广泛的应用场景，以下列举几
 ### 机器翻译
 
 - **翻译质量提升**：Transformer通过多头自注意力机制捕捉到更丰富的上下文信息，显著提高了翻译质量。
-  
+
 ### 文本生成
 
 - **故事创作**：根据给定的开头或主题生成连贯的故事文本。
-  
+
 ### 问答系统
 
 - **自然语言理解**：理解用户的提问意图，提供准确的答案或建议。

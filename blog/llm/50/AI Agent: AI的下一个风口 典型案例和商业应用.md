@@ -48,7 +48,7 @@ E --> I[机器人控制]
 
 强化学习的主要步骤如下:
 1. Agent根据当前状态选择一个动作
-2. 环境根据Agent的动作给出下一个状态和即时奖励 
+2. 环境根据Agent的动作给出下一个状态和即时奖励
 3. Agent根据即时奖励和下一个状态更新价值函数
 4. 重复步骤1-3,直到达到终止状态
 5. 多次迭代上述过程,不断优化价值函数,得到最优策略
@@ -123,11 +123,11 @@ class GridWorld:
         self.goal = goal
         self.obstacles = obstacles
         self.agent_pos = start
-        
+
     def reset(self):
         self.agent_pos = self.start
         return self.agent_pos
-        
+
     def step(self, action):
         next_pos = self.agent_pos + action
         if (next_pos < 0).any() or (next_pos >= [self.height, self.width]).any() or (tuple(next_pos) in self.obstacles):
@@ -139,10 +139,10 @@ class GridWorld:
         else:
             reward = -1
             done = False
-        
+
         if not done:
             self.agent_pos = next_pos
-        
+
         return next_pos, reward, done
 ```
 
@@ -160,14 +160,14 @@ class QLearningAgent:
         self.gamma = gamma
         self.epsilon = epsilon
         self.q_table = np.zeros((env.height, env.width, 4))
-        
+
     def choose_action(self, state):
         if np.random.uniform() < self.epsilon:
             action = np.random.choice(4)
         else:
             action = np.argmax(self.q_table[tuple(state)])
         return action
-        
+
     def learn(self, state, action, reward, next_state, done):
         q_predict = self.q_table[tuple(state)][action]
         if done:
@@ -195,7 +195,7 @@ for episode in range(1000):
         next_state, reward, done = env.step(np.array([0, 1, 0, -1])[action])
         agent.learn(state, action, reward, next_state, done)
         state = next_state
-        
+
 print(np.argmax(agent.q_table, axis=2))
 ```
 

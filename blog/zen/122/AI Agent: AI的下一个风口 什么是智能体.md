@@ -1,6 +1,6 @@
 ## AI Agent: AI的下一个风口 什么是智能体
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 **关键词：** AI Agent，智能体，强化学习，深度学习，自主代理，多智能体系统，游戏AI，虚拟助手，机器人，元宇宙
 

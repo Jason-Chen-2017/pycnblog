@@ -165,9 +165,7 @@ $$
 策略的迭代公式如下：
 
 $$
-\pi(s,a) = \frac{\
-abla V(s)}{\sum_{a' \in A} \
-abla V(s,a')}
+\pi(s,a) = \frac{\nabla V(s)}{\sum_{a' \in A} \nabla V(s,a')}
 $$
 
 ### 4.3 案例分析与讲解
@@ -220,7 +218,7 @@ A：可以通过以下方法评估强化学习算法的性能：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n torch-env python=3.8 
+conda create -n torch-env python=3.8
 conda activate torch-env
 ```
 

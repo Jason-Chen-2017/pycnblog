@@ -2,14 +2,14 @@
 
 关键词：流形拓扑、Laplace-Beltrami算子、谱几何、Hodge理论、调和分析、偏微分方程
 
-## 1. 背景介绍 
+## 1. 背景介绍
 ### 1.1 问题的由来
 流形拓扑学是微分几何和拓扑学的交叉领域,旨在研究流形的拓扑性质。Laplace-Beltrami算子作为流形上的一种基本算子,在流形的几何和拓扑研究中有着重要的作用。它是欧几里得空间中Laplace算子在流形上的推广,包含了流形的几何信息。
 
 ### 1.2 研究现状
 目前,Laplace-Beltrami算子在计算机图形学、计算机视觉、机器学习等领域得到了广泛应用。利用其谱理论可以进行流形的特征提取、形状分析与识别等。同时在偏微分方程的数值求解、流形的谱聚类等方面也有重要应用。
 
-### 1.3 研究意义  
+### 1.3 研究意义
 深入理解Laplace-Beltrami算子的理论基础和计算方法,对于揭示流形的内蕴几何结构、开发新的流形学习算法具有重要意义。同时也为偏微分方程的求解、信号处理等领域提供了新的思路和工具。
 
 ### 1.4 本文结构
@@ -18,7 +18,7 @@
 ## 2. 核心概念与联系
 - 流形(Manifold):拓扑空间局部同胚于欧氏空间。
 - 切丛(Tangent Bundle):流形上所有切空间的集合。
-- 余切丛(Cotangent Bundle):切丛的对偶丛。  
+- 余切丛(Cotangent Bundle):切丛的对偶丛。
 - 微分形式(Differential Form):余切丛上的光滑截面。
 - 外微分算子(Exterior Derivative):微分形式间的映射。
 - Hodge Star算子:微分形式到其对偶形式的同构。
@@ -29,11 +29,11 @@
 ```mermaid
 graph LR
 A[流形] --> B[切丛]
-A --> C[余切丛] 
+A --> C[余切丛]
 C --> D[微分形式]
 D --> E[外微分算子]
 D --> F[Hodge Star算子]
-E --> G[Laplace-Beltrami算子] 
+E --> G[Laplace-Beltrami算子]
 F --> G
 ```
 
@@ -61,7 +61,7 @@ $$
 - 具有多尺度特性,可提取局部到全局的特征
 - 计算效率高,适合大规模数据处理
 
-缺点:  
+缺点:
 - 对流形的采样和噪声敏感
 - 特征提取能力受限于流形的基本类型
 - 缺乏对特征语义性的解释
@@ -69,7 +69,7 @@ $$
 ### 3.4 算法应用领域
 - 3D形状分析与检索
 - 图像语义分割
-- 流形聚类与异常检测  
+- 流形聚类与异常检测
 - 药物虚拟筛选
 - 生物信息网络分析
 
@@ -101,7 +101,7 @@ d \star df &= \sum_{i,j,k} \frac{\partial}{\partial x^k} \left(\sqrt{G} g^{ij} \
 &= \sum_{i,j} \frac{1}{\sqrt{G}} \frac{\partial}{\partial x^i} \left(\sqrt{G} g^{ij} \frac{\partial f}{\partial x^j}\right) \star 1
 \end{aligned}$$
 
-最后利用 $\delta$ 的定义,即得 
+最后利用 $\delta$ 的定义,即得
 
 $$\Delta f = \delta d f = \frac{1}{\sqrt{G}} \sum_{i,j} \frac{\partial}{\partial x^i} \left( \sqrt{G} g^{ij} \frac{\partial f}{\partial x^j} \right)$$
 
@@ -126,7 +126,7 @@ A: 不同特征值对应的特征函数在流形上积分为0,构成了函数空
 ## 5. 项目实践：代码实例和详细解释说明
 ### 5.1 开发环境搭建
 - Python 3.7
-- NumPy, SciPy 
+- NumPy, SciPy
 - Matplotlib
 - PyTorch (可选)
 
@@ -139,7 +139,7 @@ def spherical_mesh(n):
     theta = np.linspace(0, np.pi, n)
     phi = np.linspace(0, 2*np.pi, 2*n)
     theta, phi = np.meshgrid(theta, phi)
-    x = np.sin(theta) * np.cos(phi) 
+    x = np.sin(theta) * np.cos(phi)
     y = np.sin(theta) * np.sin(phi)
     z = np.cos(theta)
     return x, y, z
@@ -153,23 +153,23 @@ def cot_laplacian(vertices, faces):
     n = len(vertices)
     cot_matrix = csr_matrix((n, n))
     area_matrix = csr_matrix((n, n))
-    
+
     for face in faces:
         v1, v2, v3 = vertices[face]
-        
+
         cot1 = np.dot(v2-v1, v3-v1) / np.linalg.norm(np.cross(v2-v1, v3-v1))
-        cot2 = np.dot(v3-v2, v1-v2) / np.linalg.norm(np.cross(v3-v2, v1-v2))  
+        cot2 = np.dot(v3-v2, v1-v2) / np.linalg.norm(np.cross(v3-v2, v1-v2))
         cot3 = np.dot(v1-v3, v2-v3) / np.linalg.norm(np.cross(v1-v3, v2-v3))
-        
+
         area = 0.5 * np.linalg.norm(np.cross(v2-v1, v3-v1))
-        
+
         for c, (i, j) in zip([cot1, cot2, cot3], [(1, 2), (2, 0), (0, 1)]):
             cot_matrix[face[i], face[j]] += c
             cot_matrix[face[j], face[i]] += c
-            
+
         for i in range(3):
             area_matrix[face[i], face[i]] += area / 3
-            
+
     return area_matrix.power(-1).dot(cot_matrix)
 ```
 
@@ -207,7 +207,7 @@ for i in range(6):
     ax.scatter(*vertices.T, c=evecs[:,i], cmap='coolwarm', s=10)
     ax.view_init(elev=10, azim=20)
     ax.set_axis_off()
-    
+
 plt.tight_layout()
 plt.show()
 ```

@@ -1,6 +1,6 @@
 # 卷积层 (Convolutional Layer) 原理与代码实例讲解
 
-关键词：卷积层, 卷积神经网络, 深度学习, 特征提取, 图像识别 
+关键词：卷积层, 卷积神经网络, 深度学习, 特征提取, 图像识别
 
 ## 1. 背景介绍
 ### 1.1 问题的由来
@@ -22,7 +22,7 @@
 
 ```mermaid
 graph LR
-A[输入层] --> B[卷积层] 
+A[输入层] --> B[卷积层]
 B --> C[激活层]
 C --> D[池化层]
 D --> E[全连接层]
@@ -162,7 +162,7 @@ class ConvLayer(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size, stride=1, padding=0):
         super(ConvLayer, self).__init__()
         self.conv = nn.Conv2d(in_channels, out_channels, kernel_size, stride, padding)
-        
+
     def forward(self, x):
         return self.conv(x)
 

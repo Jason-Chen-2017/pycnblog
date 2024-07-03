@@ -102,10 +102,10 @@ $$
 假设迷宫环境为一个二维网格，智能体位于起始点 $(s_0)$，目标点为 $(s_t)$。智能体可以选择向上、向下、向左、向右四个方向移动。奖励函数可以表示为：
 
 $$
-R(s, a) = \begin{cases} 
+R(s, a) = \begin{cases}
 R_{\text{max}} & \text{if } s = s_t \\
 -R_{\text{min}} & \text{if } s \
-eq s_t 
+eq s_t
 \end{cases}
 $$
 
@@ -162,19 +162,19 @@ type q_table = (state * action) list
 
 let create_q_table () = []
 
-let update_q_table q_table state action reward = 
-  let rec update (state', action', reward') = 
+let update_q_table q_table state action reward =
+  let rec update (state', action', reward') =
     match q_table with
     | [] -> [(state', action', reward')]
-    | (s', a', r') :: rest when s' = state -> 
+    | (s', a', r') :: rest when s' = state ->
         let new_reward = reward + 0.1 * r' in
         (s', a', new_reward) :: rest
     | _ :: rest -> update rest
   in
   update q_table state action reward
 
-let get_q_value q_table state action = 
-  let rec find_value (s', a', r') = 
+let get_q_value q_table state action =
+  let rec find_value (s', a', r') =
     match q_table with
     | [] -> None
     | (s', a', r') :: rest when s' = state -> Some r'
@@ -186,7 +186,7 @@ let get_q_value q_table state action =
 let mutable state = (0, 0)
 let mutable action = 0
 
-let rec simulate () = 
+let rec simulate () =
   let reward = reward (state, action) in
   state <- match action with
     | 0 -> (state.fst, state.snd + 1)

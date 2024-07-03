@@ -199,7 +199,7 @@ class VGG(nn.Module):
             nn.Dropout(),
             nn.Conv2d(4096, 1000, kernel_size=1),
         )
-    
+
     def forward(self, x):
         x = self.features(x)
         x = x.view(x.size(0), -1)

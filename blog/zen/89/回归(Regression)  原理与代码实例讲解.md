@@ -357,7 +357,7 @@ A：选择正则化参数通常使用交叉验证方法，如留一法交叉验�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n regression-env python=3.8 
+conda create -n regression-env python=3.8
 conda activate regression-env
 ```
 

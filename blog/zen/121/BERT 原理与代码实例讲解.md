@@ -196,7 +196,7 @@ for epoch in range(5):
         loss = criterion(outputs.logits, labels)
         loss.backward()
         optimizer.step()
-    
+
     # 评估模型
     model.eval()
     with torch.no_grad():

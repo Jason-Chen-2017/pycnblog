@@ -72,13 +72,13 @@ This section will provide detailed explanations and examples of mathematical mod
 
 The linear regression model is used to predict a continuous outcome variable based on one or more predictor variables. The formula for the linear regression model is:
 
-$$y = \\beta_0 + \\beta_1x_1 + \\beta_2x_2 + ... + \\beta_nx_n + \\epsilon$$
+$$y = \beta_0 + \beta_1x_1 + \beta_2x_2 + ... + \beta_nx_n + \epsilon$$
 
 ### 4.2 Logistic Regression Model
 
 The logistic regression model is used to predict a binary outcome variable. The formula for the logistic regression model is:
 
-$$P(y=1) = \\frac{1}{1 + e^{-z}}$$
+$$P(y=1) = \frac{1}{1 + e^{-z}}$$
 
 Where z is a linear combination of the predictor variables and their coefficients.
 
@@ -151,9 +151,9 @@ This section will recommend tools and resources for learning and implementing AI
 
 ### 7.2 Books
 
-- \"Artificial Intelligence: A Modern Approach\" by Stuart Russell and Peter Norvig
-- \"Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow\" by Aurelien Geron
-- \"Deep Learning\" by Ian Goodfellow, Yoshua Bengio, and Aaron Courville
+- "Artificial Intelligence: A Modern Approach" by Stuart Russell and Peter Norvig
+- "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow" by Aurelien Geron
+- "Deep Learning" by Ian Goodfellow, Yoshua Bengio, and Aaron Courville
 
 ## 8. Summary: Future Development Trends and Challenges
 

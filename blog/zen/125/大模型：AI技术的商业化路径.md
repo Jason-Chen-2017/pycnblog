@@ -319,4 +319,4 @@ print(predicted_class)
 
 未来大模型的研究方向包括降低训练成本、提高模型效率、增强模型可解释性、保障模型安全性和隐私等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

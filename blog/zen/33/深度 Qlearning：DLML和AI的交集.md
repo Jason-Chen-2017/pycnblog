@@ -103,7 +103,7 @@ graph TD
     subgraph DNN
         Input --> Layer1
         Layer1 --> Layer2
-        Layer2 --> ... 
+        Layer2 --> ...
         ... --> LayerN
         LayerN --> Output
     end

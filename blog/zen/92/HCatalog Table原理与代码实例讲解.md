@@ -176,7 +176,7 @@ public class HCatalogExample {
         record.set("amount", 100.0);
         record.set("date", "2021-01-01");
         client.upsert(table, record);
-        
+
         table = client.getTable("default", "sales");
         for (HCatRecord r : table) {
             System.out.println(r);

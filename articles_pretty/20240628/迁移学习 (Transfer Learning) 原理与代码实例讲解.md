@@ -94,15 +94,13 @@ $$
 **梯度下降:**
 
 $$
-\theta = \theta - \eta \
-abla J(\theta)
+\theta = \theta - \eta \nabla J(\theta)
 $$
 
 其中:
 
 * $\eta$ 是学习率。
-* $\
-abla J(\theta)$ 是目标函数的梯度。
+* $\nabla J(\theta)$ 是目标函数的梯度。
 
 ### 4.2  公式推导过程
 迁移学习的公式推导过程主要涉及以下几个方面:

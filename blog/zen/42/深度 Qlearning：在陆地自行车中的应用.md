@@ -2,7 +2,7 @@
 
 关键词：深度强化学习、Q-learning、自动驾驶、陆地自行车、深度神经网络、Markov决策过程
 
-## 1. 背景介绍 
+## 1. 背景介绍
 
 ### 1.1 问题的由来
 近年来，随着人工智能技术的飞速发展，自动驾驶领域受到了广泛关注。传统的自动驾驶系统主要应用于汽车等大型交通工具，而对于自行车等小型交通工具的自动驾驶研究还相对较少。如何利用先进的人工智能算法，实现陆地自行车的自动驾驶，成为了一个富有挑战性和实际应用价值的研究课题。
@@ -39,7 +39,7 @@ $$Q(s,a) = R(s,a) + \gamma \max_{a'} Q(s',a')$$
 Q-learning 算法的具体步骤如下：
 
 1. 初始化 Q 表格 $Q(s,a)$，对于所有状态-动作对，初始值可以设为0。
-2. 当前状态为 $s$，使用一定的策略（如 $\epsilon$-贪心）选择一个动作 $a$。 
+2. 当前状态为 $s$，使用一定的策略（如 $\epsilon$-贪心）选择一个动作 $a$。
 3. 执行动作 $a$，得到即时奖励 $r$ 和下一状态 $s'$。
 4. 根据贝尔曼方程更新 Q 表格：
 $$Q(s,a) \leftarrow Q(s,a) + \alpha [r + \gamma \max_{a'} Q(s',a') - Q(s,a)]$$
@@ -134,11 +134,11 @@ class BicycleEnv:
         self.grid_size = grid_size
         self.state = None
         self.goal = (grid_size-1, grid_size-1)
-        
+
     def reset(self):
         self.state = (0, 0)
         return self.state
-    
+
     def step(self, action):
         i, j = self.state
         if action == 0:  # 向上

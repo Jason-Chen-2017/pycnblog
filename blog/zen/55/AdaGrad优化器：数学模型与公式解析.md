@@ -99,17 +99,17 @@ class AdaGrad:
         self.lr = lr
         self.epsilon = epsilon
         self.r = None
-        
+
     def update(self, params, grads):
         if self.r is None:
             self.r = []
             for param in params:
                 self.r.append(np.zeros_like(param))
-        
+
         for i in range(len(params)):
             self.r[i] += grads[i] ** 2
             params[i] -= self.lr * grads[i] / (np.sqrt(self.r[i]) + self.epsilon)
-        
+
         return params
 ```
 

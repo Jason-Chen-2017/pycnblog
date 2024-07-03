@@ -1,6 +1,6 @@
 # 生成式AIGC：从理论到商业应用的跨越
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -319,4 +319,4 @@ AIGC技术的研究前景非常广阔，未来需要在以下几个方面进行�
 * **AIGC技术有哪些挑战？**  AIGC技术面临着伦理问题、模型可解释性、数据安全等挑战。
 * **AIGC技术的未来发展趋势是什么？**  AIGC技术的未来发展趋势是模型能力提升、应用领域扩展、更智能的交互。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

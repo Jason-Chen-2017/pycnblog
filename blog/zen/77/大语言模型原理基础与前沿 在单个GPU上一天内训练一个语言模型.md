@@ -149,7 +149,7 @@ def main():
     model = Model().to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
     criterion = torch.nn.CrossEntropyLoss()
-    
+
     train_iter, test_iter = create_dataset()
     for epoch in range(num_epochs):
         train_model(model, train_iter, optimizer, criterion)

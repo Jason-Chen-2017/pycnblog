@@ -126,8 +126,7 @@ graph
 以下是一个简单的持续学习数学模型：
 
 $$
-\theta^{(t)} = \theta^{(t-1)} - \eta \cdot \
-abla_{\theta^{(t-1)}} \ell(\theta^{(t-1)}, D_t)
+\theta^{(t)} = \theta^{(t-1)} - \eta \cdot \nabla_{\theta^{(t-1)}} \ell(\theta^{(t-1)}, D_t)
 $$
 
 其中，$\theta^{(t)}$ 表示在第 $t$ 个任务上的模型参数，$\theta^{(t-1)}$ 表示在第 $t-1$ 个任务上的模型参数，$\eta$ 表示学习率，$\ell(\theta^{(t-1)}, D_t)$ 表示在第 $t$ 个任务上的损失函数，$D_t$ 表示在第 $t$ 个任务上的训练数据。
@@ -140,13 +139,11 @@ $$
 2. 在学习第 $t$ 个任务时，将训练过程中遇到的样本 $(x_i, y_i)$ 存储在经验池中。
 3. 定期从经验池中随机抽取样本 $(x_j, y_j)$ 进行训练，更新模型参数：
    $$
-   \theta^{(t)} = \theta^{(t-1)} - \eta \cdot \
-abla_{\theta^{(t-1)}} \ell(\theta^{(t-1)}, (x_j, y_j))
+   \theta^{(t)} = \theta^{(t-1)} - \eta \cdot \nabla_{\theta^{(t-1)}} \ell(\theta^{(t-1)}, (x_j, y_j))
    $$
 4. 使用新任务的数据 $D_t$ 进行训练，并评估模型性能：
    $$
-   \theta^{(t+1)} = \theta^{(t)} - \eta \cdot \
-abla_{\theta^{(t)}} \ell(\theta^{(t)}, D_t)
+   \theta^{(t+1)} = \theta^{(t)} - \eta \cdot \nabla_{\theta^{(t)}} \ell(\theta^{(t)}, D_t)
    $$
 
 ### 4.3 案例分析与讲解
@@ -179,7 +176,7 @@ A：为了解决样本偏差问题，可以采用以下策略：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 

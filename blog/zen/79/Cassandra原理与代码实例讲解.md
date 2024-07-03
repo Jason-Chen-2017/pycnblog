@@ -115,7 +115,7 @@ public class CassandraExample {
         session.execute("USE test;");
         session.execute("CREATE TABLE IF NOT EXISTS users (user_id int PRIMARY KEY, name text, email text);");
         session.execute("INSERT INTO users (user_id, name, email) VALUES (1, 'John', 'john@example.com');");
-        
+
         ResultSet resultSet = session.execute("SELECT * FROM users;");
         for (Row row : resultSet) {
             System.out.println(row.getInt("user_id") + "\t" + row.getString("name") + "\t" + row.getString("email"));

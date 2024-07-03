@@ -416,4 +416,4 @@ plt.show()
 * **加权求和法:** 将多个目标函数加权求和，转化为单目标优化问题。
 * **多目标粒子群算法:** 开发专门针对多目标优化问题的粒子群算法。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

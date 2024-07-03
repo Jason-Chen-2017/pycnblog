@@ -79,7 +79,7 @@ $$
 量子门操作可以用矩阵表示，例如：
 
 $$
-H = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}
+H = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \ 1 & -1 \end{pmatrix}
 $$
 
 其中，$H$表示Hadamard门。

@@ -102,14 +102,12 @@ $$
 在微调过程中，我们需要最小化交叉熵损失函数 $\mathcal{L}(\theta)$。为实现这一点，我们使用梯度下降法来更新模型参数 $\theta$：
 
 $$
-\theta_{new} = \theta_{old} - \eta \cdot \
-abla_{\theta}\mathcal{L}(\theta)
+\theta_{new} = \theta_{old} - \eta \cdot \nabla_{\theta}\mathcal{L}(\theta)
 $$
 
 其中：
 - $\eta$ 是学习率，
-- $\
-abla_{\theta}\mathcal{L}(\theta)$ 是损失函数关于参数 $\theta$ 的梯度。
+- $\nabla_{\theta}\mathcal{L}(\theta)$ 是损失函数关于参数 $\theta$ 的梯度。
 
 ### 4.3 案例分析与讲解
 

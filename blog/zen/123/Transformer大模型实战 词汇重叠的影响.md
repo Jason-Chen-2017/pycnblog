@@ -201,7 +201,7 @@ model = OverlapTransformer.from_pretrained('bert-base-uncased')
 * **Q3: 如何评估词汇重叠处理的Transformer模型的性能？**
 * **A3:** 可以使用BLEU、ROUGE等指标评估机器翻译和文本摘要任务的性能。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 

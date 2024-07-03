@@ -127,7 +127,7 @@ class SkipGramModel:
         self.embedding_matrix = tf.Variable(tf.random.uniform([self.vocab_size, self.embedding_size]))
         self.loss_function = tf.keras.losses.CategoricalCrossentropy(from_logits=True)
         self.optimizer = tf.keras.optimizers.Adam()
-        
+
         # 创建模型
         self.model = tf.keras.Sequential([
             tf.keras.layers.Embedding(input_dim=self.vocab_size, output_dim=self.embedding_size,

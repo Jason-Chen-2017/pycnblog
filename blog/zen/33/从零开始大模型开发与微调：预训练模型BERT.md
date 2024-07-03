@@ -1,4 +1,4 @@
-                 
+
 # 从零开始大模型开发与微调：预训练模型BERT
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -235,7 +235,7 @@ for epoch in range(3):
         loss.backward()
         optimizer.step()
         total_loss += loss.item()
-    
+
     print(f'Epoch {epoch + 1} Loss: {total_loss / len(train_inputs)}')
 
 # 测试模型性能

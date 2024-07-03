@@ -152,7 +152,7 @@ Poincare引理的证明涉及以下数学模型：
 - **测地线方程**：在三维流形 $M$ 上，测地线的方程可以表示为：
 
   $$
- \frac{d^2 x^\alpha}{d\tau^2} + \Gamma^\alpha_{\beta\gamma} \frac{dx^\beta}{d\tau} \frac{dx^\gamma}{d\tau} = 0 
+ \frac{d^2 x^\alpha}{d\tau^2} + \Gamma^\alpha_{\beta\gamma} \frac{dx^\beta}{d\tau} \frac{dx^\gamma}{d\tau} = 0
 $$
 
   其中，$x^\alpha$ 是坐标，$\tau$ 是弧长，$\Gamma^\alpha_{\beta\gamma}$ 是度量张量的克里斯托费尔符号。
@@ -160,7 +160,7 @@ $$
 - **克里斯托费尔符号**：克里斯托费尔符号可以表示为：
 
   $$
- \Gamma^\alpha_{\beta\gamma} = \frac{1}{2} g^{\alpha\delta} \left( \frac{\partial g_{\delta\beta}}{\partial x^\gamma} + \frac{\partial g_{\delta\gamma}}{\partial x^\beta} - \frac{\partial g_{\beta\gamma}}{\partial x^\delta} \right) 
+ \Gamma^\alpha_{\beta\gamma} = \frac{1}{2} g^{\alpha\delta} \left( \frac{\partial g_{\delta\beta}}{\partial x^\gamma} + \frac{\partial g_{\delta\gamma}}{\partial x^\beta} - \frac{\partial g_{\beta\gamma}}{\partial x^\delta} \right)
 $$
 
   其中，$g_{\alpha\beta}$ 是度量张量。
@@ -168,7 +168,7 @@ $$
 - **同伦映射**：同伦映射可以表示为：
 
   $$
- f_t: M \rightarrow N 
+ f_t: M \rightarrow N
 $$
 
   其中，$t$ 是参数，$N$ 是一个固定空间。
@@ -182,7 +182,7 @@ $$
 根据测地线方程，我们可以得到：
 
 $$
- \frac{d^2 x^\alpha}{d\tau^2} = 0 
+ \frac{d^2 x^\alpha}{d\tau^2} = 0
 $$
 
 这意味着测地线 $x^\alpha(\tau)$ 是一条直线。由于 $N$ 是一个平面，所以每条直线都是简单闭曲线。因此，我们可以得出结论：在三维流形 $M$ 上的紧致子流形 $N$ 上的测地线都是简单闭曲线。

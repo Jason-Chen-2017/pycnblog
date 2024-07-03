@@ -32,7 +32,7 @@ A --> I[硬件加速]
 ## 3. 核心算法原理具体操作步骤
 ### 3.1 卷积神经网络(CNN)加速
 #### 3.1.1 卷积(Convolution)操作加速
-#### 3.1.2 池化(Pooling)操作加速 
+#### 3.1.2 池化(Pooling)操作加速
 #### 3.1.3 激活(Activation)函数加速
 ### 3.2 循环神经网络(RNN)加速
 #### 3.2.1 门控循环单元(GRU)加速
@@ -93,7 +93,7 @@ class ConvLayer(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size, stride=1, padding=0):
         super(ConvLayer, self).__init__()
         self.conv = nn.Conv2d(in_channels, out_channels, kernel_size, stride, padding)
-    
+
     def forward(self, x):
         x = self.conv(x)
         return x

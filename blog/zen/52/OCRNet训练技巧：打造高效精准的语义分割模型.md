@@ -9,7 +9,7 @@
 ### 1.2 OCRNet的优势
 OCRNet(Object-Contextual Representations for Semantic Segmentation)是2020年提出的一种高效语义分割网络。它通过对象上下文表示(Object-Contextual Representations)来增强像素级特征,在保持高分割精度的同时大幅提升了推理速度。
 
-### 1.3 训练OCRNet面临的挑战  
+### 1.3 训练OCRNet面临的挑战
 尽管OCRNet展现出了优异的性能,但训练一个鲁棒高效的OCRNet模型仍面临诸多挑战,如:
 
 - 样本不平衡问题
@@ -31,20 +31,20 @@ OCRNet在编码器和解码器中都采用了多尺度特征融合策略,以获�
 
 ## 3. 核心算法原理与具体操作步骤
 ### 3.1 编码器
-1. 使用ResNet50作为骨干网络提取多尺度特征 
+1. 使用ResNet50作为骨干网络提取多尺度特征
 2. 移除原始ResNet50的全局平均池化层和全连接层
 3. 特征图尺寸依次为1/4, 1/8, 1/16, 1/32
 
 ### 3.2 对象上下文表示模块
 1. 使用3x3卷积生成粗糙预测
 2. 应用Softmax函数将粗糙预测转化为soft object regions
-3. 对soft object regions进行自适应平均池化,生成object region representations 
+3. 对soft object regions进行自适应平均池化,生成object region representations
 4. 将object region representations通过全连接层变换为object contextual representations
 5. 将object contextual representations与像素级特征逐元素相加,得到增强后的特征表示
 
 ### 3.3 解码器
 1. 融合编码器中的多尺度特征
-2. 利用级联的上采样和跳跃连接逐步恢复空间分辨率  
+2. 利用级联的上采样和跳跃连接逐步恢复空间分辨率
 3. 最后通过1x1卷积生成每个像素的类别概率
 
 ## 4. 数学模型和公式详细讲解举例说明
@@ -62,7 +62,7 @@ $$
 $$
 \begin{aligned}
 S_{1} &= \frac{\exp(1.2)}{\exp(1.2) + \exp(0.9) + \exp(-0.3)} \approx 0.53 \\
-S_{2} &= \frac{\exp(0.9)}{\exp(1.2) + \exp(0.9) + \exp(-0.3)} \approx 0.39 \\ 
+S_{2} &= \frac{\exp(0.9)}{\exp(1.2) + \exp(0.9) + \exp(-0.3)} \approx 0.39 \\
 S_{3} &= \frac{\exp(-0.3)}{\exp(1.2) + \exp(0.9) + \exp(-0.3)} \approx 0.08
 \end{aligned}
 $$
@@ -133,7 +133,7 @@ class ObjectContextBlock(nn.Module):
 
         sim_map = torch.matmul(query, key)
         sim_map = (self.key_channels**-.5) * sim_map
-        sim_map = F.softmax(sim_map, dim=-1)   
+        sim_map = F.softmax(sim_map, dim=-1)
 
         context = torch.matmul(sim_map, value)
         context = context.permute(0, 2, 1).contiguous()
@@ -146,7 +146,7 @@ class ObjectContextBlock(nn.Module):
 
 代码解释:
 1. `f_pixel`和`f_object`分别用于提取像素级特征和对象级特征,并将其映射到一个公共的嵌入空间。
-2. `f_down`用于降维value特征,减少计算复杂度。  
+2. `f_down`用于降维value特征,减少计算复杂度。
 3. `f_up`用于将聚合后的上下文特征恢复到原始维度。
 4. 在`forward`函数中,首先利用`f_pixel`和`f_object`提取query和key特征。
 5. 计算query和key的相似度矩阵`sim_map`,并应用Softmax归一化。

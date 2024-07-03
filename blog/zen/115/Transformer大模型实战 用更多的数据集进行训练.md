@@ -10,7 +10,7 @@
 * **数据增强:** 通过文本替换、 paraphrasing 等方法，扩充训练数据规模。
 
 ### 1.3  研究意义
-本文旨在探讨如何通过使用更多的数据集进行训练，提升 Transformer 模型的性能。 
+本文旨在探讨如何通过使用更多的数据集进行训练，提升 Transformer 模型的性能。
 
 ### 1.4  本文结构
 本文首先介绍 Transformer 模型的基本原理和架构，然后详细阐述如何使用更多的数据集进行训练，并结合实际案例进行说明。最后，总结本文的研究成果，并展望未来发展趋势。
@@ -148,17 +148,17 @@ class Transformer(nn.Module):
     def forward(self, src, tgt, src_mask, tgt_mask):
         src = self.embedding(src)
         tgt = self.embedding(tgt)
-        
+
         # Encoder
         encoder_output = src
         for layer in self.encoder_layers:
             encoder_output = layer(encoder_output, src_mask)
-        
+
         # Decoder
         decoder_output = tgt
         for layer in self.decoder_layers:
             decoder_output = layer(decoder_output, encoder_output, tgt_mask)
-        
+
         return decoder_output
 
 class EncoderLayer(nn.Module):

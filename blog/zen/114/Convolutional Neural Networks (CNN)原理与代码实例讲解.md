@@ -129,7 +129,7 @@ model.compile(optimizer='adam',
               metrics=['accuracy'])
 
 # 训练模型
-model.fit(train_images, train_labels, epochs=10, 
+model.fit(train_images, train_labels, epochs=10,
           validation_data=(test_images, test_labels))
 ```
 

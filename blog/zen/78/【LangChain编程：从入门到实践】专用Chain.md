@@ -61,7 +61,7 @@ LangChain中的一些核心算法基于统计和概率理论，以下是一个�
 
 设用户的原始输入为$x$，$Q(x)$表示查询组件生成的问题描述，则可以使用以下公式表示：
 
-$$Q(x) = \begin{cases} 
+$$Q(x) = \begin{cases}
 f(x) & \text{if } x \text{ 符合语义要求} \\
 \text{error} & \text{否则}
 \end{cases}$$

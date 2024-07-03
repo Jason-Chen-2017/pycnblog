@@ -273,7 +273,7 @@ print(pivot_table)
 
 ```
    salary
-name    
+name
 Alice  5000
 Bob    6000
 Carol  7000
@@ -285,7 +285,7 @@ Carol  7000
 
 ```
            salary
-name        
+name
 Alice      5000
 Bob        6000
 Carol      7000

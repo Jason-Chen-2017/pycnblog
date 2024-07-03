@@ -14,14 +14,14 @@
 
 在大数据分析中,聚合分析是一种核心技术。它通过对大量细粒度数据进行汇总和统计,能够揭示数据中的模式和趋势,为后续的数据挖掘和商业智能分析奠定基础。聚合分析广泛应用于报表生成、OLAP分析、数据可视化等场景。
 
-## 2.核心概念与联系  
+## 2.核心概念与联系
 
 ### 2.1 聚合函数
 
 聚合函数是聚合分析的基础,用于对一组值执行计算并返回单个值。常见的聚合函数包括:
 
 - **COUNT:** 计算记录数
-- **SUM:** 计算数值字段的总和  
+- **SUM:** 计算数值字段的总和
 - **AVG:** 计算数值字段的平均值
 - **MAX/MIN:** 获取最大/最小值
 - **VAR/STDDEV:** 计算方差和标准差
@@ -185,7 +185,7 @@ GROUP BY category;
 我们将使用一个开源的电商销售数据集,该数据集包含以下字段:
 
 - `InvoiceNo`: 订单编号
-- `StockCode`: 产品代码  
+- `StockCode`: 产品代码
 - `Description`: 产品名称
 - `Quantity`: 购买数量
 - `InvoiceDate`: 订单日期
@@ -213,8 +213,8 @@ Pandas提供了强大的数据透视(pivot)和聚合功能,可以轻松实现分
 
 ```python
 # 计算每个国家每个产品类别的销售总额
-sales = orders.pivot_table(index=['Country', 'Description'], 
-                           values='Quantity', 
+sales = orders.pivot_table(index=['Country', 'Description'],
+                           values='Quantity',
                            aggfunc='sum')
 
 # 查看前10行
@@ -231,7 +231,7 @@ stats = orders.pivot_table(index=['Country', 'Description'],
                            values='Quantity',
                            aggfunc=['sum', 'count', 'mean', 'median'])
 
-# 查看前5行                           
+# 查看前5行
 stats.head()
 ```
 

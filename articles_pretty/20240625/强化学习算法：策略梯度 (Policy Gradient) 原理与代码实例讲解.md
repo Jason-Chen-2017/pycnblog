@@ -54,11 +54,8 @@
 1. **定义策略函数**：通常使用神经网络来近似策略函数，形式化为 $\pi(a|s;\theta)$，其中 $\theta$ 是策略函数的参数。
 2. **采样**：根据当前策略函数 $\pi$ 产生一系列状态-动作对 $(s_t, a_t)$。
 3. **价值函数估计**：使用蒙特卡洛方法或TD学习方法估计价值函数 $V(s_t)$ 或 $Q(s_t, a_t)$。
-4. **策略梯度计算**：基于价值函数估计计算策略梯度 $\
-abla_\theta \mathbb{E}_\pi[R] = \
-abla_\theta \mathbb{E}_{s,a}[R \cdot \pi(a|s;\theta)]$。
-5. **参数更新**：根据计算出的梯度更新策略参数 $\theta$，通常使用梯度上升方法 $\theta \leftarrow \theta + \alpha \
-abla_\theta \mathbb{E}_\pi[R]$，其中 $\alpha$ 是学习率。
+4. **策略梯度计算**：基于价值函数估计计算策略梯度 $\nabla_\theta \mathbb{E}_\pi[R] = \nabla_\theta \mathbb{E}_{s,a}[R \cdot \pi(a|s;\theta)]$。
+5. **参数更新**：根据计算出的梯度更新策略参数 $\theta$，通常使用梯度上升方法 $\theta \leftarrow \theta + \alpha \nabla_\theta \mathbb{E}_\pi[R]$，其中 $\alpha$ 是学习率。
 6. **迭代优化**：重复上述步骤直至达到预设的迭代次数或满足收敛条件。
 
 ### 3.3 算法优缺点
@@ -108,12 +105,9 @@ $$
 
 策略梯度的估计：
 $$
-\
-abla_\theta \mathbb{E}_\pi[R] = \mathbb{E}_\pi[\
-abla_\theta \log \pi(a|s;\theta) \cdot R]
+\nabla_\theta \mathbb{E}_\pi[R] = \mathbb{E}_\pi[\nabla_\theta \log \pi(a|s;\theta) \cdot R]
 $$
-其中，$\
-abla_\theta \log \pi(a|s;\theta)$ 是策略函数的对数导数。
+其中，$\nabla_\theta \log \pi(a|s;\theta)$ 是策略函数的对数导数。
 
 ### 4.3 案例分析与讲解
 

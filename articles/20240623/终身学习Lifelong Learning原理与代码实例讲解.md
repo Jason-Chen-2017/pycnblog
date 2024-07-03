@@ -188,11 +188,9 @@
 
 假设损失函数为$L(\theta)$，模型参数为$\theta$，则梯度下降的更新公式如下：
 
-$$\theta_{t+1} = \theta_t - \alpha \cdot \
-abla L(\theta_t)$$
+$$\theta_{t+1} = \theta_t - \alpha \cdot \nabla L(\theta_t)$$
 
-其中，$\alpha$是学习率，$\
-abla L(\theta_t)$是损失函数$L(\theta)$在$\theta_t$处的梯度。
+其中，$\alpha$是学习率，$\nabla L(\theta_t)$是损失函数$L(\theta)$在$\theta_t$处的梯度。
 
 #### 4.2.2 Adam优化器
 
@@ -200,10 +198,8 @@ Adam优化器是一种结合了梯度下降和动量法的优化算法，其基�
 
 Adam优化器的更新公式如下：
 
-$$v_t = \beta_1 \cdot v_{t-1} + (1 - \beta_1) \cdot \
-abla L(\theta_t)$$
-$$s_t = \beta_2 \cdot s_{t-1} + (1 - \beta_2) \cdot (\
-abla L(\theta_t))^2$$
+$$v_t = \beta_1 \cdot v_{t-1} + (1 - \beta_1) \cdot \nabla L(\theta_t)$$
+$$s_t = \beta_2 \cdot s_{t-1} + (1 - \beta_2) \cdot (\nabla L(\theta_t))^2$$
 $$\theta_t = \theta_{t-1} - \frac{\alpha}{\sqrt{1 - \beta_2^t}(1 - \beta_1^t)} \cdot (v_t / s_t)$$
 
 其中，$\beta_1$和$\beta_2$是超参数，分别控制一阶和二阶矩估计的偏差校正。

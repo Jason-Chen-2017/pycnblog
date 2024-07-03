@@ -67,8 +67,7 @@ $$\\pi'(a|s) \\cdot \\frac{A(s,a)}{\\pi'(a|s)} \\leq \\pi(a|s) \\leq \\pi'(a|s) 
 
 通过梯度上升来优化$J(θ)$，即：
 
-$$\\theta \\leftarrow \\theta + \\eta \\cdot \
-abla_{\\theta} \\left[\\min\\left(\\alpha \\cdot A(s,a), \\pi(a|s) \\cdot \\frac{A(s,a)}{\\pi'(a|s)}\\right)\\right]$$
+$$\\theta \\leftarrow \\theta + \\eta \\cdot \nabla_{\\theta} \\left[\\min\\left(\\alpha \\cdot A(s,a), \\pi(a|s) \\cdot \\frac{A(s,a)}{\\pi'(a|s)}\\right)\\right]$$
 
 其中$\\eta$是学习率。
 

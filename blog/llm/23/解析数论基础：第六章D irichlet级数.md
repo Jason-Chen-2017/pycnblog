@@ -24,18 +24,18 @@ Dirichlet级数不仅为数论提供了一种强大的工具，而且对其他�
 
 Dirichlet级数一般形式为：
 
-$$\\sum_{n=1}^{\\infty} \\frac{a_n}{n^s}$$
+$$\sum_{n=1}^{\infty} \frac{a_n}{n^s}$$
 
-其中，$a_n$ 是数列的元素，$s$ 是复数。当$a_n$ 是由某个数列定义的序列时，这样的级数可以用于研究该序列的性质。例如，考虑序列 $a_n = \\mu(n)$（莫比乌斯函数）时，得到的级数称为莫比乌斯函数的Dirichlet级数：
+其中，$a_n$ 是数列的元素，$s$ 是复数。当$a_n$ 是由某个数列定义的序列时，这样的级数可以用于研究该序列的性质。例如，考虑序列 $a_n = \mu(n)$（莫比乌斯函数）时，得到的级数称为莫比乌斯函数的Dirichlet级数：
 
-$$\\sum_{n=1}^{\\infty} \\frac{\\mu(n)}{n^s}$$
+$$\sum_{n=1}^{\infty} \frac{\mu(n)}{n^s}$$
 
 这样的级数在解析数论中有极其重要的地位。
 
 ### 2.2 关键定理
 
 - **欧拉乘积公式**：对于具有积性性质的序列$a_n$，其Dirichlet级数与乘积形式相关联。具体而言，如果$a_n$是积性函数，则级数可以表示为无穷乘积的形式：
-$$\\sum_{n=1}^{\\infty} \\frac{a_n}{n^s} = \\prod_p \\left(1+\\frac{a_p}{p^s}+\\frac{a_p^2}{p^{2s}}+\\cdots\\right)$$
+$$\sum_{n=1}^{\infty} \frac{a_n}{n^s} = \prod_p \left(1+\frac{a_p}{p^s}+\frac{a_p^2}{p^{2s}}+\cdots\right)$$
 其中$p$是素数。
 
 ### 2.3 应用领域
@@ -84,25 +84,25 @@ Dirichlet级数在解析数论中的应用主要集中在：
 
 Dirichlet级数可以被构建为：
 
-$$\\sum_{n=1}^{\\infty} \\frac{a_n}{n^s}$$
+$$\sum_{n=1}^{\infty} \frac{a_n}{n^s}$$
 
 其中，$a_n$ 是由特定数列定义的序列，$s$ 是复数变量。
 
 ### 4.2 公式推导过程
 
-例如，考虑莫比乌斯函数$\\mu(n)$的Dirichlet级数：
+例如，考虑莫比乌斯函数$\mu(n)$的Dirichlet级数：
 
-$$\\sum_{n=1}^{\\infty} \\frac{\\mu(n)}{n^s}$$
+$$\sum_{n=1}^{\infty} \frac{\mu(n)}{n^s}$$
 
 通过欧拉乘积公式，我们可以将其表示为：
 
-$$\\zeta(s) \\cdot \\prod_p \\left(1-\\frac{1}{p^s}\\right)$$
+$$\zeta(s) \cdot \prod_p \left(1-\frac{1}{p^s}\right)$$
 
-其中，$\\zeta(s)$ 是黎曼ζ函数。
+其中，$\zeta(s)$ 是黎曼ζ函数。
 
 ### 4.3 案例分析与讲解
 
-- **莫比乌斯函数**：$\\mu(n)$ 的Dirichlet级数实际上等于 $\\zeta(s)$ 的倒数，表明了黎曼ζ函数与莫比乌斯函数之间的密切关系。
+- **莫比乌斯函数**：$\mu(n)$ 的Dirichlet级数实际上等于 $\zeta(s)$ 的倒数，表明了黎曼ζ函数与莫比乌斯函数之间的密切关系。
 - **黎曼猜想**：黎曼猜想与ζ函数的非平凡零点分布紧密相关，而通过Dirichlet级数分析可以提供对这些零点分布的深入理解。
 
 ### 4.4 常见问题解答
@@ -155,7 +155,7 @@ print(result)
 
 ### 5.3 代码解读与分析
 
-这段代码实现了计算莫比乌斯函数$\\mu(n)$的Dirichlet级数。通过定义一个递归函数`mu(n)`来计算$\\mu(n)$的值，并使用SymPy库中的`summation`函数来计算级数。最终结果是黎曼ζ函数的倒数。
+这段代码实现了计算莫比乌斯函数$\mu(n)$的Dirichlet级数。通过定义一个递归函数`mu(n)`来计算$\mu(n)$的值，并使用SymPy库中的`summation`函数来计算级数。最终结果是黎曼ζ函数的倒数。
 
 ### 5.4 运行结果展示
 
@@ -212,7 +212,7 @@ Dirichlet级数作为数论中的核心概念，已经在多个领域取得了�
 
 #### Q: 如何判断Dirichlet级数的收敛性？
 
-A: 判断Dirichlet级数的收敛性通常采用Dirichlet判别法或Abel判别法。具体而言，如果序列$a_n$满足$\\lim_{n \\to \\infty} \\frac{a_{n+1}}{a_n} = 0$且$\\sum_{n=1}^{\\infty} |a_n|$收敛，则原级数收敛。
+A: 判断Dirichlet级数的收敛性通常采用Dirichlet判别法或Abel判别法。具体而言，如果序列$a_n$满足$\lim_{n \to \infty} \frac{a_{n+1}}{a_n} = 0$且$\sum_{n=1}^{\infty} |a_n|$收敛，则原级数收敛。
 
 #### Q: Dirichlet级数在实际应用中的局限性是什么？
 

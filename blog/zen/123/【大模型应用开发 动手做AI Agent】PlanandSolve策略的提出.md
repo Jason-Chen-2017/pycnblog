@@ -1,6 +1,6 @@
 ##  【大模型应用开发 动手做AI Agent】Plan-and-Solve策略的提出
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -327,4 +327,4 @@ Plan-and-Solve策略的研究前景广阔，未来将继续探索以下方向：
 - **如何提高Agent的可解释性？**
     - 可以使用可视化工具来展示Agent的决策过程，例如使用决策树、流程图等。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

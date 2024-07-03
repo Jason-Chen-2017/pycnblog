@@ -426,4 +426,4 @@ while state["task_queue"]:
 * **资源利用率**:  衡量资源利用效率。
 * **代理负载**:  衡量代理负载情况。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

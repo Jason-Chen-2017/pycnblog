@@ -125,22 +125,22 @@ cd contrib
 ```java
 public class CSResourceScheduler extends AbstractYarnScheduler {
     // 省略部分代码...
-    
+
     @Override
     public synchronized void submitApplication(ApplicationSubmissionContext appContext) {
         // 提交应用，分配资源池...
     }
-    
+
     @Override
     protected synchronized void handleApplicationAttemptFailure(ApplicationAttemptId attemptId) {
         // 处理应用失败，释放资源...
     }
-    
+
     @Override
     protected synchronized void handleApplicationCleanup(ApplicationId appId) {
         // 清理应用，释放资源...
     }
-    
+
     // 省略部分代码...
 }
 ```

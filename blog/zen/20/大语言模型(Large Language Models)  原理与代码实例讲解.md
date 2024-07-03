@@ -111,7 +111,7 @@
 
 给定一个输入序列$x$和一个查询向量$q$，自注意力机制通过计算权重矩阵$W$来获取上下文信息：
 
-$$W = softmax\\left(\\frac{qK^T}{\\sqrt{d_k}}\\right)V$$
+$$W = softmax\left(\frac{qK^T}{\sqrt{d_k}}\right)V$$
 
 其中，$K$是键向量，$V$是值向量，$d_k$是键的维度。
 
@@ -119,7 +119,7 @@ $$W = softmax\\left(\\frac{qK^T}{\\sqrt{d_k}}\\right)V$$
 
 多头自注意力通过多个独立的自注意力机制并行运行，分别处理不同“头部”之间的信息交换，以增强模型的表达能力：
 
-$$\\text{MultiHead}(Q, K, V) = \\text{Concat}(head_1, head_2, ..., head_h)W^o$$
+$$\text{MultiHead}(Q, K, V) = \text{Concat}(head_1, head_2, ..., head_h)W^o$$
 
 其中，$head_i$是第$i$个头部的结果，$W^o$是输出矩阵。
 
@@ -128,7 +128,7 @@ $$\\text{MultiHead}(Q, K, V) = \\text{Concat}(head_1, head_2, ..., head_h)W^o$$
 以多头自注意力为例，假设输入序列$x$为$m$个元素，每个元素长度为$n$，每个头部$h$的大小为$d$，则多头自注意力的计算过程可以表示为：
 
 1. **查询、键、值向量**：$Q = [q_1, q_2, ..., q_m]^T$，$K = [k_1, k_2, ..., k_m]^T$，$V = [v_1, v_2, ..., v_m]^T$。
-2. **计算权重矩阵**：$W = softmax\\left(\\frac{QK^T}{\\sqrt{d}}\\right)$。
+2. **计算权重矩阵**：$W = softmax\left(\frac{QK^T}{\sqrt{d}}\right)$。
 3. **加权平均**：$M = WV$。
 
 ### 4.3 案例分析与讲解
@@ -231,8 +231,8 @@ class Transformer(tf.keras.Model):
 
 #### 在线课程
 
-- **Coursera**: \"Deep Learning Specialization\"
-- **Udacity**: \"Deep Learning Nanodegree\"
+- **Coursera**: "Deep Learning Specialization"
+- **Udacity**: "Deep Learning Nanodegree"
 
 #### 书籍
 
@@ -255,11 +255,11 @@ class Transformer(tf.keras.Model):
 
 #### Transformer架构论文
 
-- **Vaswani et al., \"Attention is All You Need\", 2017**
+- **Vaswani et al., "Attention is All You Need", 2017**
 
 #### 大型语言模型论文
 
-- **Brown et al., \"Language Models are Unsupervised Multimodal Pre-Trained DNNs\", 2020**
+- **Brown et al., "Language Models are Unsupervised Multimodal Pre-Trained DNNs", 2020**
 
 ### 7.4 其他资源推荐
 

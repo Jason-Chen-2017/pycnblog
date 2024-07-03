@@ -177,7 +177,7 @@ print(predicted_states)
 ```
 
 ### 5.3  代码解读与分析
-* **生成示例数据:** 
+* **生成示例数据:**
 
 ```python
 observations = np.array([[1, 0, 1],
@@ -269,7 +269,7 @@ print(predicted_states)
     * edX 上的《自然语言处理》课程
 
 ### 7.2  开发工具推荐
-* **Python:** 
+* **Python:**
     * scikit-learn 库
     * TensorFlow 库
     * PyTorch 库
@@ -325,5 +325,5 @@ print(predicted_states)
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

@@ -108,11 +108,11 @@ LangChain 可以构建为一个多层次的系统，其中每一层都包含特�
 
 策略生成的决策可以基于以下公式：
 
-$$ \\text{策略} = \\text{argmax}_{\\text{action}} \\; \\text{P}(\\text{answer}| \\text{input}, \\text{context}) $$
+$$ \text{策略} = \text{argmax}_{\text{action}} \; \text{P}(\text{answer}| \text{input}, \text{context}) $$
 
 其中，
-- $\\text{strategy} = \\text{argmax}_{\\text{action}}$ 表示选择使回答概率最大的行动。
-- $\\text{P}(\\text{answer}| \\text{input}, \\text{context})$ 是给定输入和上下文的条件下生成回答的概率。
+- $\text{strategy} = \text{argmax}_{\text{action}}$ 表示选择使回答概率最大的行动。
+- $\text{P}(\text{answer}| \text{input}, \text{context})$ 是给定输入和上下文的条件下生成回答的概率。
 
 ### 4.3 案例分析与讲解
 
@@ -156,7 +156,7 @@ def custom_agent():
     pass
 
 agent = create_custom_agent(agent_function=custom_agent)
-result = agent.run(\"生成描述秋天树叶变化的文本\")
+result = agent.run("生成描述秋天树叶变化的文本")
 print(result)
 ```
 

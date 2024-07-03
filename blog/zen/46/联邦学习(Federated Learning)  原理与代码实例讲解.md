@@ -100,12 +100,10 @@
 联邦学习的数学模型可以表示为：
 
 $$
-\theta^{(t)} = \theta^{(t-1)} + \alpha \cdot \
-abla_{\theta} \mathcal{L}(\theta^{(t-1)}, x^{(t)}_i, y^{(t)}_i)
+\theta^{(t)} = \theta^{(t-1)} + \alpha \cdot \nabla_{\theta} \mathcal{L}(\theta^{(t-1)}, x^{(t)}_i, y^{(t)}_i)
 $$
 
-其中，$\theta^{(t)}$表示第$t$轮更新的模型参数，$\theta^{(t-1)}$表示第$t-1$轮的模型参数，$\alpha$表示学习率，$\
-abla_{\theta} \mathcal{L}(\theta^{(t-1)}, x^{(t)}_i, y^{(t)}_i)$表示在数据点$x^{(t)}_i$和标签$y^{(t)}_i$上对模型参数$\theta^{(t-1)}$的梯度。
+其中，$\theta^{(t)}$表示第$t$轮更新的模型参数，$\theta^{(t-1)}$表示第$t-1$轮的模型参数，$\alpha$表示学习率，$\nabla_{\theta} \mathcal{L}(\theta^{(t-1)}, x^{(t)}_i, y^{(t)}_i)$表示在数据点$x^{(t)}_i$和标签$y^{(t)}_i$上对模型参数$\theta^{(t-1)}$的梯度。
 
 ### 4.2 公式推导过程
 
@@ -120,15 +118,13 @@ $$
 为了优化损失函数$L^{(t)}$，我们需要计算模型参数$\theta^{(t-1)}$的梯度：
 
 $$
-\
-abla_{\theta} \mathcal{L}(\theta^{(t-1)}, x^{(t)}_i, y^{(t)}_i) = \frac{\partial}{\partial \theta} \mathcal{L}(\theta^{(t-1)}, x^{(t)}_i, y^{(t)}_i)
+\nabla_{\theta} \mathcal{L}(\theta^{(t-1)}, x^{(t)}_i, y^{(t)}_i) = \frac{\partial}{\partial \theta} \mathcal{L}(\theta^{(t-1)}, x^{(t)}_i, y^{(t)}_i)
 $$
 
 将梯度乘以学习率$\alpha$，即可得到第$t$轮更新的模型参数：
 
 $$
-\theta^{(t)} = \theta^{(t-1)} + \alpha \cdot \
-abla_{\theta} \mathcal{L}(\theta^{(t-1)}, x^{(t)}_i, y^{(t)}_i)
+\theta^{(t)} = \theta^{(t-1)} + \alpha \cdot \nabla_{\theta} \mathcal{L}(\theta^{(t-1)}, x^{(t)}_i, y^{(t)}_i)
 $$
 
 ### 4.3 案例分析与讲解
@@ -136,12 +132,10 @@ $$
 以联邦学习在图像分类任务中的应用为例，我们可以使用以下公式描述：
 
 $$
-\theta^{(t)} = \theta^{(t-1)} + \alpha \cdot \
-abla_{\theta} \mathcal{L}(\theta^{(t-1)}, x^{(t)}_i, y^{(t)}_i)
+\theta^{(t)} = \theta^{(t-1)} + \alpha \cdot \nabla_{\theta} \mathcal{L}(\theta^{(t-1)}, x^{(t)}_i, y^{(t)}_i)
 $$
 
-其中，$\theta^{(t)}$表示第$t$轮更新的模型参数，$\theta^{(t-1)}$表示第$t-1$轮的模型参数，$\alpha$表示学习率，$\
-abla_{\theta} \mathcal{L}(\theta^{(t-1)}, x^{(t)}_i, y^{(t)}_i)$表示在数据点$x^{(t)}_i$和标签$y^{(t)}_i$上对模型参数$\theta^{(t-1)}$的梯度。
+其中，$\theta^{(t)}$表示第$t$轮更新的模型参数，$\theta^{(t-1)}$表示第$t-1$轮的模型参数，$\alpha$表示学习率，$\nabla_{\theta} \mathcal{L}(\theta^{(t-1)}, x^{(t)}_i, y^{(t)}_i)$表示在数据点$x^{(t)}_i$和标签$y^{(t)}_i$上对模型参数$\theta^{(t-1)}$的梯度。
 
 在这个案例中，我们可以使用以下步骤进行联邦学习：
 

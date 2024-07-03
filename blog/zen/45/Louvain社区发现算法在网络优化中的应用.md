@@ -224,10 +224,10 @@ Louvain 算法代码主要包含以下几个部分：
 def louvain(graph):
     """
     Louvain 算法的主要函数。
-    
+
     Args:
         graph (Graph): 输入的图对象。
-        
+
     Returns:
         list: 输出的社区结构。
     """

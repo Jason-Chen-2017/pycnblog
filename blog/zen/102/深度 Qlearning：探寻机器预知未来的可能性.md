@@ -1,7 +1,7 @@
 
 # 深度 Q-learning：探寻机器预知未来的可能性
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍

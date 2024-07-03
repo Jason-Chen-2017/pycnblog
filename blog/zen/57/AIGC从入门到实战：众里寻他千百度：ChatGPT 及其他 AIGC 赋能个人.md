@@ -78,7 +78,7 @@ $$head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)$$
 设编码器的输入为 $X \in \mathbb{R}^{n \times d_{model}}$，经过自注意力层和前馈神经网络后得到输出 $Z \in \mathbb{R}^{n \times d_{model}}$：
 $$Z = Encoder(X) = FeedForward(MultiHead(X,X,X))$$
 
-#### 4.2.2 解码器(Decoder)的计算过程 
+#### 4.2.2 解码器(Decoder)的计算过程
 设解码器的输入为 $Y \in \mathbb{R}^{m \times d_{model}}$，编码器的输出为 $Z$，经过自注意力层、编码-解码注意力层和前馈神经网络后得到输出 $O \in \mathbb{R}^{m \times d_{model}}$：
 $$O = Decoder(Y,Z) = FeedForward(MultiHead(MultiHead(Y,Y,Y),Z,Z))$$
 
@@ -109,8 +109,8 @@ input_text = "Once upon a time"
 input_ids = tokenizer.encode(input_text, return_tensors="pt")
 
 output = model.generate(
-    input_ids, 
-    max_length=100, 
+    input_ids,
+    max_length=100,
     num_beams=5,
     no_repeat_ngram_size=2,
     early_stopping=True

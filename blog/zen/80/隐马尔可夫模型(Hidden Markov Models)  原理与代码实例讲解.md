@@ -76,7 +76,7 @@ HMM的核心算法包括前向算法、后向算法和维特比算法，分别�
 - **优点**：
   - 简洁有效：HMM算法易于理解和实现，对于序列数据的建模和预测具有很好的效果。
   - 灵活性高：可以通过调整转移概率和发射概率来适应不同的应用场景。
-  
+
 - **缺点**：
   - 假设限制：HMM假设状态是离散的、连续的时间序列以及状态之间的独立转移，这些假设在某些情况下可能不成立。
   - 参数估计：模型参数的估计可能受到数据量和分布的影响，尤其是在数据稀疏的情况下。
@@ -125,8 +125,8 @@ $$P(X_1:T|\pi) = \max_{\gamma_1:T} P(X_1:T, \gamma_1:T|\pi)$$
 
 - **状态集**：$\mathcal{S} = \{S_A, S_B, S_C\}$
 - **观测集**：$\mathcal{O} = \{A, B, C\}$
-- **转移概率矩阵**：$A = \begin{bmatrix} 0.7 & 0.2 & 0.1 \\ 0.3 & 0.6 & 0.1 \\ 0.2 & 0.3 & 0.5 \end{bmatrix}$
-- **发射概率矩阵**：$B = \begin{bmatrix} 0.4 & 0.3 & 0.3 \\ 0.2 & 0.5 & 0.3 \\ 0.1 & 0.2 & 0.7 \end{bmatrix}$
+- **转移概率矩阵**：$A = \begin{bmatrix} 0.7 & 0.2 & 0.1 \ 0.3 & 0.6 & 0.1 \ 0.2 & 0.3 & 0.5 \end{bmatrix}$
+- **发射概率矩阵**：$B = \begin{bmatrix} 0.4 & 0.3 & 0.3 \ 0.2 & 0.5 & 0.3 \ 0.1 & 0.2 & 0.7 \end{bmatrix}$
 
 假设初始状态分布为$\pi = [0.3, 0.4, 0.3]$。
 
@@ -167,11 +167,11 @@ from hmmlearn.hmm import GaussianHMM
 class HMM:
     def __init__(self, n_components, init_params, params):
         self.model = GaussianHMM(n_components=n_components, init_params=init_params, params=params)
-    
+
     def fit(self, observations, initial_state_distr):
         self.model.startprob_ = np.array(initial_state_distr)
         self.model.fit(observations)
-    
+
     def predict(self, observations):
         _, state_sequence = self.model.decode(observations)
         return state_sequence

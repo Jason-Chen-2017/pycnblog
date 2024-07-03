@@ -140,7 +140,7 @@ Adaptive Boosting算法的目标是找到一个弱学习器 $h_i(x)$，使得 $h
 定义损失函数 $L(h_i(x), y_i)$，用于衡量 $h_i(x)$ 的错误率。
 
 $$
-L(h_i(x), y_i) = \begin{cases} 0, & \text{if } h_i(x) = y_i \\ 1, & \text{otherwise} \end{cases}
+L(h_i(x), y_i) = \begin{cases} 0, & \text{if } h_i(x) = y_i \ 1, & \text{otherwise} \end{cases}
 $$
 
 Adaptive Boosting的目标是最小化总损失函数 $L$：

@@ -1,6 +1,6 @@
 # Active Learning原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -238,4 +238,4 @@ graph LR
 
 Active Learning 是一种非常有效的机器学习方法，可以帮助我们提高模型的性能，降低标注成本，提高数据利用率。Active Learning 已经被广泛应用于各种领域，例如图像识别、自然语言处理、医疗诊断等。随着机器学习技术的不断发展，Active Learning 的应用场景将会更加广泛，其研究意义也将会更加重大。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

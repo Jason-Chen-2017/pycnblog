@@ -1,6 +1,6 @@
 # AI 大模型原理与应用：AGI 大基建受限于物理条件
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -249,4 +249,4 @@ AI 大模型的发展也面临着一些挑战，例如：
 * **什么是 BERT 模型？** BERT 模型是一种预训练语言模型，它能够理解语言的上下文信息，并完成各种自然语言处理任务。
 * **什么是 GPT-3 模型？** GPT-3 模型是一种强大的文本生成模型，它能够生成各种类型的文本，例如新闻报道、小说、诗歌等。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

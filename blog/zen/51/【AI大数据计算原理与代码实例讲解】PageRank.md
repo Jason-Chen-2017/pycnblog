@@ -181,23 +181,23 @@ def page_rank(links, damping_factor=0.85, max_iterations=100, tolerance=1e-6):
 
     for iteration in range(max_iterations):
         new_pr_values = {}
-        
+
         for page in pr_values:
             new_pr = (1 - damping_factor) / N
-            
+
             for linking_page in links:
                 if page in links[linking_page]:
                     new_pr += damping_factor * pr_values[linking_page] / outlink_counts[linking_page]
-            
+
             new_pr_values[page] = new_pr
-        
+
         # 检查是否收敛
         diff = max(abs(new_pr_values[page] - pr_values[page]) for page in pr_values)
         if diff < tolerance:
             break
-        
+
         pr_values = new_pr_values.copy()
-    
+
     return pr_values
 ```
 

@@ -189,7 +189,7 @@ A：提高预测模型精度的方法包括：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n hadoop-env python=3.8 
+conda create -n hadoop-env python=3.8
 conda activate hadoop-env
 ```
 3. 安装PyHadoop、PySpark等Hadoop相关库：

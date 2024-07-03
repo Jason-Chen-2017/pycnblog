@@ -6,7 +6,7 @@
 #### 1.1.2 Transformer的出现与发展
 #### 1.1.3 GPT系列模型的演进
 ### 1.2 LLaMA模型的诞生
-#### 1.2.1 Meta AI实验室的研究进展  
+#### 1.2.1 Meta AI实验室的研究进展
 #### 1.2.2 LLaMA模型的特点与优势
 #### 1.2.3 LLaMA模型的开源计划
 
@@ -33,7 +33,7 @@
 #### 3.2.1 计算查询、键、值矩阵
 #### 3.2.2 计算注意力权重
 #### 3.2.3 生成注意力输出
-### 3.3 前馈神经网络的实现 
+### 3.3 前馈神经网络的实现
 #### 3.3.1 全连接层的设计
 #### 3.3.2 激活函数的选择
 #### 3.3.3 残差连接与层归一化
@@ -49,7 +49,7 @@
 $$
 \begin{aligned}
 \mathbf{Q} &= \mathbf{X} \mathbf{W}^Q \\
-\mathbf{K} &= \mathbf{X} \mathbf{W}^K \\ 
+\mathbf{K} &= \mathbf{X} \mathbf{W}^K \\
 \mathbf{V} &= \mathbf{X} \mathbf{W}^V
 \end{aligned}
 $$

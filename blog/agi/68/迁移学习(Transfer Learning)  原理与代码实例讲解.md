@@ -207,7 +207,7 @@ class Net(nn.Module):
     def forward(self, x):
         x = self.pool(nn.functional.relu(self.conv1(x)))
         x = self.pool(nn.functional.relu(self.conv2(x)))
-        x = torch.flatten(x, 1) 
+        x = torch.flatten(x, 1)
         x = nn.functional.relu(self.fc1(x))
         x = nn.functional.relu(self.fc2(x))
         x = self.fc3(x)

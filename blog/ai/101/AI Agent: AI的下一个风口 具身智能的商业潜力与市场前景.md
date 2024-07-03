@@ -1,6 +1,6 @@
 # AI Agent: AI的下一个风口 具身智能的商业潜力与市场前景
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 

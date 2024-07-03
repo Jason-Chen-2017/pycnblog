@@ -1,4 +1,4 @@
-                 
+
 # 一切皆是映射：DQN中的序列决策与时间差分学习
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -130,17 +130,17 @@ class DQN:
         self.learning_rate = 0.001
         self.gamma = 0.95
         self.batch_size = 32
-        
+
         # 初始化经验回放缓冲区
         self.memory = deque(maxlen=2000)
-        
+
         # 创建网络
         self.model = self.build_model()
         self.target_model = self.build_model()
 
         # 初始化目标网络的权重与主网络相同
         self.update_target_network()
-    
+
     def build_model(self):
         model = tf.keras.models.Sequential([
             tf.keras.layers.Dense(24, activation='relu', input_shape=self.input_shape),
@@ -149,7 +149,7 @@ class DQN:
         ])
         model.compile(loss='mse', optimizer=tf.keras.optimizers.Adam(lr=self.learning_rate))
         return model
-    
+
     def remember(self, state, action, reward, next_state, done):
         self.memory.append((state, action, reward, next_state, done))
 

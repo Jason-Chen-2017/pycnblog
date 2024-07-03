@@ -219,14 +219,14 @@ A：AI Agent可以协助人类完成一些重复性、危险或耗时的任务�
 2. 创建并激活虚拟环境：
 
 ```bash
-conda create -n ai-agent-env python=3.8 
+conda create -n ai-agent-env python=3.8
 conda activate ai-agent-env
 ```
 
 3. 安装PyTorch和Transformers库：
 
 ```bash
-conda install pytorch torchvision torchaudio -c pytorch 
+conda install pytorch torchvision torchaudio -c pytorch
 pip install transformers
 ```
 

@@ -140,12 +140,10 @@ $$
 梯度下降是一种优化算法，用于调整神经网络参数以最小化损失函数。其公式如下：
 
 $$
-\theta_{\text{new}} = \theta_{\text{old}} - \alpha \cdot \
-abla L(\theta)
+\theta_{\text{new}} = \theta_{\text{old}} - \alpha \cdot \nabla L(\theta)
 $$
 
-其中，$\theta$是参数，$\alpha$是学习率，$\
-abla L(\theta)$是损失函数关于参数的梯度。
+其中，$\theta$是参数，$\alpha$是学习率，$\nabla L(\theta)$是损失函数关于参数的梯度。
 
 ### 4.3 案例分析与讲解
 

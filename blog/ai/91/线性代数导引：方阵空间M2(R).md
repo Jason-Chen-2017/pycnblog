@@ -1,7 +1,7 @@
 
 # 线性代数导引：方阵空间M2(R)
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -33,7 +33,7 @@
 
 ### 2.1 方阵空间M2(R)
 
-方阵空间M2(R)是由所有形如 $\begin{bmatrix}a&b\\c&d\end{bmatrix}$ 的实数方阵构成的集合，其中 $a,b,c,d\in R$。该空间在矩阵加法和矩阵数乘运算下构成一个线性空间。
+方阵空间M2(R)是由所有形如 $\begin{bmatrix}a&b\c&d\end{bmatrix}$ 的实数方阵构成的集合，其中 $a,b,c,d\in R$。该空间在矩阵加法和矩阵数乘运算下构成一个线性空间。
 
 ### 2.2 线性变换
 
@@ -53,34 +53,34 @@
 
 #### 3.2.1 矩阵加法
 
-设 $A=\begin{bmatrix}a_1&b_1\\c_1&d_1\end{bmatrix}$，$B=\begin{bmatrix}a_2&b_2\\c_2&d_2\end{bmatrix}$，则矩阵加法 $A+B$ 的结果为：
+设 $A=\begin{bmatrix}a_1&b_1\c_1&d_1\end{bmatrix}$，$B=\begin{bmatrix}a_2&b_2\c_2&d_2\end{bmatrix}$，则矩阵加法 $A+B$ 的结果为：
 
 $$
-A+B=\begin{bmatrix}a_1+a_2&b_1+b_2\\c_1+c_2&d_1+d_2\end{bmatrix}
+A+B=\begin{bmatrix}a_1+a_2&b_1+b_2\c_1+c_2&d_1+d_2\end{bmatrix}
 $$
 
 #### 3.2.2 矩阵数乘
 
-设 $A=\begin{bmatrix}a_1&b_1\\c_1&d_1\end{bmatrix}$，$k\in R$，则矩阵数乘 $kA$ 的结果为：
+设 $A=\begin{bmatrix}a_1&b_1\c_1&d_1\end{bmatrix}$，$k\in R$，则矩阵数乘 $kA$ 的结果为：
 
 $$
-kA=\begin{bmatrix}ka_1&kb_1\\kc_1&kd_1\end{bmatrix}
+kA=\begin{bmatrix}ka_1&kb_1\kc_1&kd_1\end{bmatrix}
 $$
 
 #### 3.2.3 矩阵乘法
 
-设 $A=\begin{bmatrix}a_1&b_1\\c_1&d_1\end{bmatrix}$，$B=\begin{bmatrix}a_2&b_2\\c_2&d_2\end{bmatrix}$，则矩阵乘法 $AB$ 的结果为：
+设 $A=\begin{bmatrix}a_1&b_1\c_1&d_1\end{bmatrix}$，$B=\begin{bmatrix}a_2&b_2\c_2&d_2\end{bmatrix}$，则矩阵乘法 $AB$ 的结果为：
 
 $$
-AB=\begin{bmatrix}a_1a_2+b_1c_2&a_1b_2+b_1d_2\\c_1a_2+d_1c_2&c_1b_2+d_1d_2\end{bmatrix}
+AB=\begin{bmatrix}a_1a_2+b_1c_2&a_1b_2+b_1d_2\c_1a_2+d_1c_2&c_1b_2+d_1d_2\end{bmatrix}
 $$
 
 #### 3.2.4 矩阵的逆矩阵
 
-设 $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$，若存在矩阵 $B$ 满足 $AB=BA=I$，则称 $A$ 可逆，$B$ 为 $A$ 的逆矩阵。$A$ 的逆矩阵可以表示为：
+设 $A=\begin{bmatrix}a&b\c&d\end{bmatrix}$，若存在矩阵 $B$ 满足 $AB=BA=I$，则称 $A$ 可逆，$B$ 为 $A$ 的逆矩阵。$A$ 的逆矩阵可以表示为：
 
 $$
-A^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}
+A^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d&-b\-c&a\end{bmatrix}
 $$
 
 ### 3.3 算法优缺点
@@ -112,7 +112,7 @@ $$
 方阵空间M2(R)的数学模型可以表示为：
 
 $$
-\mathcal{M}_2(R) = \left\{\begin{bmatrix}a&b\\c&d\end{bmatrix} \mid a,b,c,d\in R\right\}
+\mathcal{M}_2(R) = \left\{\begin{bmatrix}a&b\c&d\end{bmatrix} \mid a,b,c,d\in R\right\}
 $$
 
 ### 4.2 公式推导过程
@@ -121,61 +121,61 @@ $$
 
 #### 4.2.1 矩阵加法
 
-设 $A=\begin{bmatrix}a_1&b_1\\c_1&d_1\end{bmatrix}$，$B=\begin{bmatrix}a_2&b_2\\c_2&d_2\end{bmatrix}$，则矩阵加法 $A+B$ 的结果为：
+设 $A=\begin{bmatrix}a_1&b_1\c_1&d_1\end{bmatrix}$，$B=\begin{bmatrix}a_2&b_2\c_2&d_2\end{bmatrix}$，则矩阵加法 $A+B$ 的结果为：
 
 $$
-A+B=\begin{bmatrix}a_1+a_2&b_1+b_2\\c_1+c_2&d_1+d_2\end{bmatrix}
+A+B=\begin{bmatrix}a_1+a_2&b_1+b_2\c_1+c_2&d_1+d_2\end{bmatrix}
 $$
 
 推导过程如下：
 
 $$
 \begin{aligned}
-A+B &= \begin{bmatrix}a_1&b_1\\c_1&d_1\end{bmatrix}+\begin{bmatrix}a_2&b_2\\c_2&d_2\end{bmatrix} \\
-&= \begin{bmatrix}a_1+a_2&b_1+b_2\\c_1+c_2&d_1+d_2\end{bmatrix}
+A+B &= \begin{bmatrix}a_1&b_1\c_1&d_1\end{bmatrix}+\begin{bmatrix}a_2&b_2\c_2&d_2\end{bmatrix} \\
+&= \begin{bmatrix}a_1+a_2&b_1+b_2\c_1+c_2&d_1+d_2\end{bmatrix}
 \end{aligned}
 $$
 
 #### 4.2.2 矩阵数乘
 
-设 $A=\begin{bmatrix}a_1&b_1\\c_1&d_1\end{bmatrix}$，$k\in R$，则矩阵数乘 $kA$ 的结果为：
+设 $A=\begin{bmatrix}a_1&b_1\c_1&d_1\end{bmatrix}$，$k\in R$，则矩阵数乘 $kA$ 的结果为：
 
 $$
-kA=\begin{bmatrix}ka_1&kb_1\\kc_1&kd_1\end{bmatrix}
+kA=\begin{bmatrix}ka_1&kb_1\kc_1&kd_1\end{bmatrix}
 $$
 
 推导过程如下：
 
 $$
 \begin{aligned}
-kA &= k\begin{bmatrix}a_1&b_1\\c_1&d_1\end{bmatrix} \\
-&= \begin{bmatrix}ka_1&kb_1\\kc_1&kd_1\end{bmatrix}
+kA &= k\begin{bmatrix}a_1&b_1\c_1&d_1\end{bmatrix} \\
+&= \begin{bmatrix}ka_1&kb_1\kc_1&kd_1\end{bmatrix}
 \end{aligned}
 $$
 
 #### 4.2.3 矩阵乘法
 
-设 $A=\begin{bmatrix}a_1&b_1\\c_1&d_1\end{bmatrix}$，$B=\begin{bmatrix}a_2&b_2\\c_2&d_2\end{bmatrix}$，则矩阵乘法 $AB$ 的结果为：
+设 $A=\begin{bmatrix}a_1&b_1\c_1&d_1\end{bmatrix}$，$B=\begin{bmatrix}a_2&b_2\c_2&d_2\end{bmatrix}$，则矩阵乘法 $AB$ 的结果为：
 
 $$
-AB=\begin{bmatrix}a_1a_2+b_1c_2&a_1b_2+b_1d_2\\c_1a_2+d_1c_2&c_1b_2+d_1d_2\end{bmatrix}
+AB=\begin{bmatrix}a_1a_2+b_1c_2&a_1b_2+b_1d_2\c_1a_2+d_1c_2&c_1b_2+d_1d_2\end{bmatrix}
 $$
 
 推导过程如下：
 
 $$
 \begin{aligned}
-AB &= \begin{bmatrix}a_1&b_1\\c_1&d_1\end{bmatrix}\begin{bmatrix}a_2&b_2\\c_2&d_2\end{bmatrix} \\
-&= \begin{bmatrix}a_1a_2+b_1c_2&a_1b_2+b_1d_2\\c_1a_2+d_1c_2&c_1b_2+d_1d_2\end{bmatrix}
+AB &= \begin{bmatrix}a_1&b_1\c_1&d_1\end{bmatrix}\begin{bmatrix}a_2&b_2\c_2&d_2\end{bmatrix} \\
+&= \begin{bmatrix}a_1a_2+b_1c_2&a_1b_2+b_1d_2\c_1a_2+d_1c_2&c_1b_2+d_1d_2\end{bmatrix}
 \end{aligned}
 $$
 
 #### 4.2.4 矩阵的逆矩阵
 
-设 $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$，若存在矩阵 $B$ 满足 $AB=BA=I$，则称 $A$ 可逆，$B$ 为 $A$ 的逆矩阵。$A$ 的逆矩阵可以表示为：
+设 $A=\begin{bmatrix}a&b\c&d\end{bmatrix}$，若存在矩阵 $B$ 满足 $AB=BA=I$，则称 $A$ 可逆，$B$ 为 $A$ 的逆矩阵。$A$ 的逆矩阵可以表示为：
 
 $$
-A^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}
+A^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d&-b\-c&a\end{bmatrix}
 $$
 
 推导过程如下：
@@ -183,7 +183,7 @@ $$
 $$
 \begin{aligned}
 A^{-1}B &= A^{-1}AB = A^{-1}I = A^{-1} \\
-A^{-1} &= \frac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}
+A^{-1} &= \frac{1}{ad-bc}\begin{bmatrix}d&-b\-c&a\end{bmatrix}
 \end{aligned}
 $$
 
@@ -191,11 +191,11 @@ $$
 
 #### 4.3.1 矩阵乘法的几何意义
 
-设 $A=\begin{bmatrix}1&1\\0&1\end{bmatrix}$，则 $A$ 对应的线性变换将向量 $\begin{bmatrix}x\\y\end{bmatrix}$ 变换为 $\begin{bmatrix}x+y\\y\end{bmatrix}$。直观地，该变换是将向量沿着y轴平移了 $x$ 个单位。
+设 $A=\begin{bmatrix}1&1\0&1\end{bmatrix}$，则 $A$ 对应的线性变换将向量 $\begin{bmatrix}x\y\end{bmatrix}$ 变换为 $\begin{bmatrix}x+y\y\end{bmatrix}$。直观地，该变换是将向量沿着y轴平移了 $x$ 个单位。
 
 #### 4.3.2 矩阵的逆矩阵的应用
 
-设 $A=\begin{bmatrix}1&2\\3&4\end{bmatrix}$，则 $A$ 的逆矩阵为 $\begin{bmatrix}2&-1\\-3&1\end{bmatrix}$。利用逆矩阵，可以方便地求解线性方程组 $Ax=b$。
+设 $A=\begin{bmatrix}1&2\3&4\end{bmatrix}$，则 $A$ 的逆矩阵为 $\begin{bmatrix}2&-1\-3&1\end{bmatrix}$。利用逆矩阵，可以方便地求解线性方程组 $Ax=b$。
 
 ### 4.4 常见问题解答
 

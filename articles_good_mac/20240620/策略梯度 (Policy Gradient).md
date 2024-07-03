@@ -88,9 +88,7 @@ $$ \\pi(a|s) = \\pi(a) \\cdot \\pi(s) $$
 
 蒙特卡洛策略梯度方法通过以下公式估计策略梯度：
 
-$$ \
-abla_\\theta J(\\pi) \\approx \\frac{1}{N} \\sum_{i=1}^N \
-abla_\\theta \\ln \\pi_\\theta(a_i|s_i) \\cdot r(s_i, a_i) $$
+$$ \nabla_\\theta J(\\pi) \\approx \\frac{1}{N} \\sum_{i=1}^N \nabla_\\theta \\ln \\pi_\\theta(a_i|s_i) \\cdot r(s_i, a_i) $$
 
 其中，$N$是样本数量，$\\theta$是策略参数。
 

@@ -153,12 +153,9 @@ $$L(x, y) = -\sum_{i=1}^m y_i \log(p(x_i | \theta))$$
 
 RL模型的策略梯度方法可以表示为：
 
-$$\
-abla_\theta \pi(\theta) = \
-abla_\theta \mathbb{E}_{s, a} [R(s, a, s')]$$
+$$\nabla_\theta \pi(\theta) = \nabla_\theta \mathbb{E}_{s, a} [R(s, a, s')]$$
 
-其中，$\
-abla$表示梯度。
+其中，$\nabla$表示梯度。
 
 ### 4.3 案例分析与讲解
 

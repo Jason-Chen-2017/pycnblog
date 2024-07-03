@@ -87,13 +87,11 @@ SGD 广泛应用于机器学习和深度学习领域，尤其是在训练神经�
 
 在每次迭代中，SGD 使用单个样本 \\( (x_i, y_i) \\) 来估计梯度：
 
-\\[ \
-abla_\\theta L(\\theta, x_i, y_i) \\]
+\\[ \nabla_\\theta L(\\theta, x_i, y_i) \\]
 
 根据梯度下降法，参数更新公式为：
 
-\\[ \\theta \\leftarrow \\theta - \\alpha \
-abla_\\theta L(\\theta, x_i, y_i) \\]
+\\[ \\theta \\leftarrow \\theta - \\alpha \nabla_\\theta L(\\theta, x_i, y_i) \\]
 
 其中 \\(\\alpha\\) 是学习率，决定了每一步参数更新的幅度。
 
@@ -107,10 +105,8 @@ abla_\\theta L(\\theta, x_i, y_i) \\]
 
 1. 初始化参数 \\(\\theta = [\\theta_0, \\theta_1]\\)。
 2. 随机选择一个样本 \\( (x_i, y_i) \\)。
-3. 计算梯度：\\[\
-abla_\\theta L(\\theta, x_i, y_i) = [-x_i(y_i - (\\theta_0 + \\theta_1x_i)), -(y_i - (\\theta_0 + \\theta_1x_i))]\\]。
-4. 更新参数：\\[\\theta \\leftarrow \\theta - \\alpha \
-abla_\\theta L(\\theta, x_i, y_i)\\]。
+3. 计算梯度：\\[\nabla_\\theta L(\\theta, x_i, y_i) = [-x_i(y_i - (\\theta_0 + \\theta_1x_i)), -(y_i - (\\theta_0 + \\theta_1x_i))]\\]。
+4. 更新参数：\\[\\theta \\leftarrow \\theta - \\alpha \nabla_\\theta L(\\theta, x_i, y_i)\\]。
 5. 重复步骤2至4，直到达到预定的迭代次数或满足收敛条件。
 
 ### 4.4 常见问题解答

@@ -182,15 +182,15 @@ model.summary()
 ```
 Model: "model"
 _________________________________________________________________
-Layer (type)                 Output Shape              Param #   
+Layer (type)                 Output Shape              Param #
 =================================================================
-input_1 (InputLayer)         (None, 32)                0         
-dense (Dense)                (None, 64)                2048       
-relu (ReLU)                  (None, 64)                0         
-dense_1 (Dense)              (None, 128)               8192       
-relu_1 (ReLU)                (None, 128)               16384      
-dense_2 (Dense)              (None, 10)                1280       
-softmax (Softmax)             (None, 10)                10         
+input_1 (InputLayer)         (None, 32)                0
+dense (Dense)                (None, 64)                2048
+relu (ReLU)                  (None, 64)                0
+dense_1 (Dense)              (None, 128)               8192
+relu_1 (ReLU)                (None, 128)               16384
+dense_2 (Dense)              (None, 10)                1280
+softmax (Softmax)             (None, 10)                10
 =================================================================
 Total params: 20,496
 Trainable params: 20,496

@@ -1,12 +1,12 @@
 # Activation Functions 原理与代码实战案例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 ### 1.1 问题的由来
 在神经网络和深度学习中，激活函数(Activation Function)扮演着至关重要的角色。它们决定了神经元是否被激活，以及在多大程度上将输入信号转化为输出。没有激活函数，神经网络将只是一个线性组合，无法学习和表示复杂的非线性关系。因此，选择合适的激活函数对于构建高效、鲁棒的神经网络模型至关重要。
 
-### 1.2 研究现状 
+### 1.2 研究现状
 目前，已经提出了多种不同类型的激活函数，如Sigmoid、Tanh、ReLU、Leaky ReLU、ELU等。它们各有优缺点，适用于不同的场景。研究人员不断探索新的激活函数形式，以期进一步提升神经网络的性能。同时，针对不同的任务和数据类型，如何选择最佳的激活函数组合，也是一个值得深入研究的课题。
 
 ### 1.3 研究意义
@@ -31,7 +31,7 @@ graph LR
 A[Activation Functions] --> B(Sigmoid)
 A --> C(Tanh)
 A --> D(ReLU)
-D --> E(Leaky ReLU) 
+D --> E(Leaky ReLU)
 D --> F(ELU)
 ```
 
@@ -78,7 +78,7 @@ $$
 - Tanh函数：$f(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}}$
 - ReLU函数：$f(z) = \max(0, z)$
 - Leaky ReLU函数：$f(z) = \max(\alpha z, z)$，其中$\alpha$是一个小的正常数，如0.01。
-- ELU函数：$f(z) = \begin{cases} z, & \text{if } z > 0 \\ \alpha (e^z - 1), & \text{if } z \leq 0 \end{cases}$，其中$\alpha$是一个超参数。
+- ELU函数：$f(z) = \begin{cases} z, & \text{if } z > 0 \ \alpha (e^z - 1), & \text{if } z \leq 0 \end{cases}$，其中$\alpha$是一个超参数。
 
 ### 4.2 公式推导过程
 以Sigmoid函数为例，其推导过程如下：
@@ -132,7 +132,7 @@ print("Sigmoid:", sigmoid(x))
 
 # Tanh函数
 tanh = nn.Tanh()
-print("Tanh:", tanh(x)) 
+print("Tanh:", tanh(x))
 
 # ReLU函数
 relu = nn.ReLU()

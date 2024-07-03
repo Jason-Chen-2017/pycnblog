@@ -45,11 +45,9 @@ SGD的核心思想是在每次迭代中仅使用一个样本来计算梯度，�
 
 SGD的基本公式如下：
 
-$$ \\theta := \\theta - \\eta \\cdot \
-abla J(\\theta) $$
+$$ \\theta := \\theta - \\eta \\cdot \nabla J(\\theta) $$
 
-其中，$\\theta$ 是参数向量，$\\eta$ 是学习率，$\
-abla J(\\theta)$ 是损失函数关于参数的梯度。
+其中，$\\theta$ 是参数向量，$\\eta$ 是学习率，$\nabla J(\\theta)$ 是损失函数关于参数的梯度。
 
 ### 3.2 算法步骤详解
 
@@ -61,10 +59,8 @@ abla J(\\theta)$ 是损失函数关于参数的梯度。
 
 - 对于每一轮迭代：
   - 随机选择一个样本或小批量样本。
-  - 计算损失函数关于参数的梯度 $\
-abla J(\\theta)$。
-  - 更新参数：$\\theta := \\theta - \\eta \\cdot \
-abla J(\\theta)$。
+  - 计算损失函数关于参数的梯度 $\nabla J(\\theta)$。
+  - 更新参数：$\\theta := \\theta - \\eta \\cdot \nabla J(\\theta)$。
   
 #### 终止条件：
 
@@ -107,8 +103,7 @@ $$ J(\\theta) = \\frac{1}{2N} \\sum_{i=1}^{N} (f(x_i; \\theta) - y_i)^2 $$
 
 对于单样本 $x_i$ 和真实值 $y_i$：
 
-$$ \
-abla J(\\theta) = - \\frac{\\partial}{\\partial \\theta} \\left( \\frac{1}{2} (f(x_i; \\theta) - y_i)^2 \\right) = -(f(x_i; \\theta) - y_i) \\cdot \\frac{\\partial f(x_i; \\theta)}{\\partial \\theta} $$
+$$ \nabla J(\\theta) = - \\frac{\\partial}{\\partial \\theta} \\left( \\frac{1}{2} (f(x_i; \\theta) - y_i)^2 \\right) = -(f(x_i; \\theta) - y_i) \\cdot \\frac{\\partial f(x_i; \\theta)}{\\partial \\theta} $$
 
 ### 4.3 案例分析与讲解
 

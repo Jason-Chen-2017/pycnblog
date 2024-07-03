@@ -1,6 +1,6 @@
 ## 【大模型应用开发 动手做AI Agent】Agent的大脑：大模型的通用推理能力
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -123,7 +123,7 @@ $$
 
 ### 4.3 案例分析与讲解
 
-**案例：** 
+**案例：**
 
 假设我们要开发一个 AI Agent 来完成以下任务：
 
@@ -312,4 +312,4 @@ AI Agent 可以辅助医生进行诊断，提高诊断效率和准确性。
 * **因果推理：** 能够理解事件之间的因果关系。
 * **常识推理：** 能够理解人类的常识和经验。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

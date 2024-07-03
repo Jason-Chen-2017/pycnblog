@@ -331,14 +331,14 @@ client.subscribe(MQTT_TOPIC)
 def on_message(client, userdata, message):
     # 解析消息内容
     data = json.loads(message.payload)
-    
+
     # 存储数据
     response = requests.post(DATA_API_URL, json=data)
-    
+
     # 预测温度
     x_predict = np.array([[data['time']]])
     y_predict = model.predict(x_predict)
-    
+
     # 控制空调
     control_air_conditioner(y_predict[0])
 

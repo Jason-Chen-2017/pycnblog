@@ -84,20 +84,20 @@ IT预算管理的研究主要集中在几个关键领域：预算编制、执行
 
 ### 4.1 数学模型构建
 
-- **预算编制模型**：$B = \\sum_{i=1}^{n} C_i \\cdot W_i$，其中$B$是总预算，$C_i$是第$i$个项目成本，$W_i$是第$i$个项目的权重（根据业务优先级或ROI分配）。
-- **成本优化模型**：通过最小化成本函数$C(x)$，达到最优资源配置$x^*$，即$\\min_x C(x)$。
+- **预算编制模型**：$B = \sum_{i=1}^{n} C_i \cdot W_i$，其中$B$是总预算，$C_i$是第$i$个项目成本，$W_i$是第$i$个项目的权重（根据业务优先级或ROI分配）。
+- **成本优化模型**：通过最小化成本函数$C(x)$，达到最优资源配置$x^*$，即$\min_x C(x)$。
 
 ### 4.2 公式推导过程
 
 #### 示例：预算编制公式推导
 
-假设企业有三个主要业务部门，每个部门有多个IT项目。根据业务优先级，部门A的项目权重为$W_A = 0.5$，部门B和C分别为$W_B = 0.3$和$W_C = 0.2$。若部门A的项目成本为$C_A$，部门B和C分别为$C_B$和$C_C$，则总预算$B$可以通过公式$B = C_A \\cdot W_A + C_B \\cdot W_B + C_C \\cdot W_C$进行计算。
+假设企业有三个主要业务部门，每个部门有多个IT项目。根据业务优先级，部门A的项目权重为$W_A = 0.5$，部门B和C分别为$W_B = 0.3$和$W_C = 0.2$。若部门A的项目成本为$C_A$，部门B和C分别为$C_B$和$C_C$，则总预算$B$可以通过公式$B = C_A \cdot W_A + C_B \cdot W_B + C_C \cdot W_C$进行计算。
 
 ### 4.3 案例分析与讲解
 
 #### 案例：预算优化
 
-某公司有三个主要业务部门，每个部门有多个IT项目。公司决定引入成本中心管理，对每个部门进行细分成本中心分配。例如，部门A下设三个成本中心：营销自动化（M），客户支持（S），以及IT基础设施（I）。分别设定成本中心M、S、I的预算比例为$W_{M} = 0.4$，$W_{S} = 0.3$，$W_{I} = 0.3$。假设部门A总预算为$B_A = \\$100,000$，则成本中心M的预算为$B_{M} = B_A \\cdot W_{M} = \\$40,000$，以此类推。
+某公司有三个主要业务部门，每个部门有多个IT项目。公司决定引入成本中心管理，对每个部门进行细分成本中心分配。例如，部门A下设三个成本中心：营销自动化（M），客户支持（S），以及IT基础设施（I）。分别设定成本中心M、S、I的预算比例为$W_{M} = 0.4$，$W_{S} = 0.3$，$W_{I} = 0.3$。假设部门A总预算为$B_A = \$100,000$，则成本中心M的预算为$B_{M} = B_A \cdot W_{M} = \$40,000$，以此类推。
 
 ### 4.4 常见问题解答
 
@@ -125,7 +125,7 @@ df_budget = pd.DataFrame(budget_data)
 
 # 计算总预算
 total_budget = df_budget['Cost Estimate'].sum()
-print(f\"Total Budget: ${total_budget:.2f}\")
+print(f"Total Budget: ${total_budget:.2f}")
 
 # 计算每个成本中心的预算分配
 cost_centers = ['Marketing Automation', 'Customer Support', 'Infrastructure']
@@ -134,10 +134,10 @@ for center in cost_centers:
     department_df = df_budget[df_budget['Department'] == center]
     center_budget = department_df['Cost Estimate'].sum() * department_df['Weight'].sum()
     center_budgets.append(center_budget)
-    
-print(\"Cost Center Budgets:\")
+
+print("Cost Center Budgets:")
 for i, center in enumerate(cost_centers):
-    print(f\"{center}: ${center_budgets[i]:.2f}\")
+    print(f"{center}: ${center_budgets[i]:.2f}")
 ```
 
 ### 5.2 源代码详细实现
@@ -159,8 +159,8 @@ def allocate_budget(df, cost_centers):
 total_budget = calculate_total_budget(df_budget)
 center_budgets = allocate_budget(df_budget, cost_centers)
 
-print(f\"Total Budget: ${total_budget:.2f}\")
-print(\"Center Budgets:\", center_budgets)
+print(f"Total Budget: ${total_budget:.2f}")
+print("Center Budgets:", center_budgets)
 ```
 
 ### 5.3 代码解读与分析

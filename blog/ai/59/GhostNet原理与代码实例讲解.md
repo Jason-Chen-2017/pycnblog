@@ -138,33 +138,33 @@ class GhostNet(nn.Module):
             nn.BatchNorm2d(16),
             nn.ReLU(inplace=True)
         )
-        
+
         self.stage1 = nn.Sequential(
             GhostModule(16, 16, 3, 1, 1),
-            GhostModule(16, 24, 3, 2, 1) 
+            GhostModule(16, 24, 3, 2, 1)
         )
-        
+
         self.stage2 = nn.Sequential(
             GhostModule(24, 24, 3, 1, 1),
             GhostModule(24, 40, 3, 2, 1)
         )
-        
+
         self.stage3 = nn.Sequential(
             GhostModule(40, 40, 3, 1, 1),
             GhostModule(40, 80, 3, 2, 1),
             GhostModule(80, 80, 3, 1, 1),
             GhostModule(80, 80, 3, 1, 1),
             GhostModule(80, 112, 3, 1, 1),
-            GhostModule(112, 112, 3, 1, 1) 
+            GhostModule(112, 112, 3, 1, 1)
         )
-        
+
         self.stage4 = nn.Sequential(
              GhostModule(112, 160, 3, 2, 1),
              GhostModule(160, 160, 3, 1, 1),
              GhostModule(160, 160, 3, 1, 1),
              GhostModule(160, 160, 3, 1, 1)
         )
-        
+
         self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
         self.fc = nn.Linear(160, num_classes)
 
@@ -204,7 +204,7 @@ GhostNet可以运行在智能门锁、考勤机等低功耗设备上,实现实�
 ## 7. 工具和资源推荐
 
 ### 7.1 官方实现
-- GhostNet的官方PyTorch实现: https://github.com/huawei-noah/ghostnet 
+- GhostNet的官方PyTorch实现: https://github.com/huawei-noah/ghostnet
 - GhostNet的官方TensorFlow实现: https://github.com/huawei-noah/ghostnet_tf
 
 ### 7.2 基准数据集

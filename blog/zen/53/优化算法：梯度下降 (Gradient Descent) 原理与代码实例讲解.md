@@ -6,7 +6,7 @@
 
 在现代科学和工程领域,我们经常会遇到各种优化问题。无论是机器学习、深度学习、操作研究、控制理论还是其他许多领域,都需要求解优化问题以找到最优解。优化问题的形式通常是:给定一个目标函数(代价函数或损失函数),需要找到使该函数值最小(或最大)的自变量的取值。
 
-### 1.2 梯度下降法概述  
+### 1.2 梯度下降法概述
 
 梯度下降(Gradient Descent)是求解优化问题的一种最基本、最常用的数值方法。它通过不断地沿着目标函数的负梯度方向前进,逐步逼近最优解。由于其简单有效,在机器学习和深度学习等领域得到了广泛应用。
 
@@ -28,11 +28,11 @@ $$x_{k+1} = x_k - \alpha \nabla f(x_k)$$
 
 合适的步长对算法收敛性能至关重要。过大的步长可能会越过极小值点,而过小的步长则会使收敛过程变慢。常用的步长选择策略有固定步长、自适应步长等。
 
-## 3.核心算法原理具体操作步骤  
+## 3.核心算法原理具体操作步骤
 
 梯度下降算法的具体步骤如下:
 
-1) 选择一个合适的初始点$x_0$; 
+1) 选择一个合适的初始点$x_0$;
 2) 计算目标函数$f(x)$在$x_0$处的梯度$\nabla f(x_0)$;
 3) 更新$x_1 = x_0 - \alpha \nabla f(x_0)$;
 4) 重复步骤2)和3),直到满足终止条件(如梯度接近0或函数值变化很小)。
@@ -40,9 +40,9 @@ $$x_{k+1} = x_k - \alpha \nabla f(x_k)$$
 该算法的伪代码如下:
 
 ```python
-initialize x_0 
+initialize x_0
 while not converged:
-    compute gradient: g = ∇f(x)  
+    compute gradient: g = ∇f(x)
     update: x = x - α * g
 ```
 
@@ -54,7 +54,7 @@ while not converged:
 
 如果目标函数$f(x)$可导,那么它的梯度为:
 
-$$\nabla f(x) = \begin{bmatrix} 
+$$\nabla f(x) = \begin{bmatrix}
 \frac{\partial f}{\partial x_1} \\
 \frac{\partial f}{\partial x_2} \\
 \vdots \\
@@ -66,7 +66,7 @@ $$\nabla f(x) = \begin{bmatrix}
 例如,对于二元函数$f(x,y) = x^2 + 2y^2$,其梯度为:
 
 $$\nabla f(x,y) = \begin{bmatrix}
-2x \\  
+2x \\
 4y
 \end{bmatrix}$$
 
@@ -80,7 +80,7 @@ $$\nabla f(x,y) = \begin{bmatrix}
 
 为了提高梯度下降法的性能,研究人员提出了多种变种算法,如随机梯度下降(SGD)、momentum梯度下降、Nesterov加速梯度等。这些变种在不同场景下表现出不同的优势。
 
-## 5.项目实践:代码实例和详细解释说明  
+## 5.项目实践:代码实例和详细解释说明
 
 我们以最小化函数$f(x,y) = x^2 + 2y^2$为例,用Python实现梯度下降算法:
 
@@ -92,7 +92,7 @@ def f(x):
     return x[0]**2 + 2*x[1]**2
 
 def gradf(x):
-    return np.array([2*x[0], 4*x[1]]) 
+    return np.array([2*x[0], 4*x[1]])
 
 # 梯度下降算法
 def gradient_descent(f, gradf, x0, alpha, max_iter, tol):
@@ -111,7 +111,7 @@ if __name__ == "__main__":
     alpha = 0.1 # 步长
     max_iter = 1000 # 最大迭代次数
     tol = 1e-6 # 终止条件
-    
+
     x_opt = gradient_descent(f, gradf, x0, alpha, max_iter, tol)
     print(f"Optimal point: {x_opt}")
     print(f"Minimum value: {f(x_opt)}")

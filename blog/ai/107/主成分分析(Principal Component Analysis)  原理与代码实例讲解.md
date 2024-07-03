@@ -204,7 +204,7 @@ $$
 
 **4. 选择主成分:**
 
-选择特征值最大的特征向量，即 $U_{1} = \begin{bmatrix} 0.71 \\ 0.71 \end{bmatrix}$。
+选择特征值最大的特征向量，即 $U_{1} = \begin{bmatrix} 0.71 \ 0.71 \end{bmatrix}$。
 
 **5. 数据投影:**
 
@@ -396,4 +396,4 @@ print(pca.components_)
 * **核 PCA:** 使用核函数将数据映射到高维空间，然后在高维空间中进行线性 PCA。
 * **其他非线性降维方法:** 使用其他非线性降维方法，例如 t-SNE。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

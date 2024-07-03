@@ -113,7 +113,7 @@ AIGC是数字人分身的技术基础，而数字人分身则是AIGC在特定领
 WaveNet是一种基于深度学习的语音合成模型，其数学模型如下：
 
 $$
-h^{[l]} = f_{\theta}(h^{[l-1]}, x^{[l-1]}, \mathcal{C}^{[l-1]}, \mathcal{K}^{[l-1]}, \mathcal{M}^{[l-1]}, \mathcal{C}, \mathcal{K}, \mathcal{M}) 
+h^{[l]} = f_{\theta}(h^{[l-1]}, x^{[l-1]}, \mathcal{C}^{[l-1]}, \mathcal{K}^{[l-1]}, \mathcal{M}^{[l-1]}, \mathcal{C}, \mathcal{K}, \mathcal{M})
 $$
 
 其中，$h^{[l]}$表示第l层的隐藏状态，$f_{\theta}$为模型函数，$x^{[l-1]}$表示第l-1层的输入，$\mathcal{C}^{[l-1]}$、$\mathcal{K}^{[l-1]}$、$\mathcal{M}^{[l-1]}$分别表示第l-1层的卷积、注意力、位置编码，$\mathcal{C}$、$\mathcal{K}$、$\mathcal{M}$分别表示整个模型的全局卷积、注意力、位置编码。
@@ -123,7 +123,7 @@ $$
 GANs（生成对抗网络）是一种无监督学习模型，其数学模型如下：
 
 $$
-G(z) = \mathcal{D}(x) 
+G(z) = \mathcal{D}(x)
 $$
 
 其中，$G(z)$为生成器，$z$为随机噪声，$\mathcal{D}(x)$为判别器。

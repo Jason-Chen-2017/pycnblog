@@ -1,6 +1,6 @@
 # AIGC从入门到实战：飞升：MetaHuman 三步构建数字人模型，带领我们走向元宇宙
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -320,4 +320,4 @@ model.save("model.h5")
     - 训练更加智能的 AI 模型。
     - 设计更加人性化的交互界面。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

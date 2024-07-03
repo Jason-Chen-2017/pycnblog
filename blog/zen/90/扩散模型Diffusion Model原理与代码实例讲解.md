@@ -63,19 +63,19 @@
 
     1.1 初始化去噪模型$D$和潜在变量$z_0$。
     1.2 对于每个时间步$t$，根据噪声参数$\epsilon_t$和去噪模型$D$，计算去噪后的样本$\hat{x}_t$：
-    
+
     $$
 \hat{x}_t = D(z_t, \epsilon_t)
 $$
 
     1.3 计算下一个时间步的噪声参数$\epsilon_{t+1}$：
-    
+
     $$
 \epsilon_{t+1} = \text{noise}(x_t - \hat{x}_t)
 $$
 
     1.4 更新潜在变量$z_{t+1}$：
-    
+
     $$
 z_{t+1} = z_t + \epsilon_{t+1}
 $$
@@ -88,19 +88,19 @@ $$
 
     1.1 初始化噪声参数$\epsilon_0 = 0$。
     1.2 对于每个时间步$t$，根据噪声参数$\epsilon_t$和去噪模型$D$，计算去噪后的样本$\hat{x}_t$：
-    
+
     $$
 \hat{x}_t = D(z_t, \epsilon_t)
 $$
 
     1.3 更新噪声参数$\epsilon_{t+1}$：
-    
+
     $$
 \epsilon_{t+1} = \text{noise}(x_t - \hat{x}_t)
 $$
 
     1.4 更新潜在变量$z_{t+1}$：
-    
+
     $$
 z_{t+1} = z_t + \epsilon_{t+1}
 $$
@@ -269,7 +269,7 @@ $$
 ### 5.1 开发环境搭建
 
 1. 安装Python和PyTorch：
-   
+
 ```bash
 pip install python torch torchvision
 ```

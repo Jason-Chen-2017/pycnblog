@@ -104,8 +104,7 @@ $$
 
 Adagrad算法的推导过程如下：
 
-1. 假设损失函数为 $L(\theta)$，则第 $t$ 次迭代的梯度为 $g_t = \
-abla L(\theta)$。
+1. 假设损失函数为 $L(\theta)$，则第 $t$ 次迭代的梯度为 $g_t = \nabla L(\theta)$。
 2. 计算梯度累积 $g_t^2 = g_t^2 + g_t^2$。
 3. 计算学习率 $\eta = \frac{\eta}{\sqrt{g_t^2 + \epsilon}}$。
 4. 更新参数 $\theta = \theta - \eta \cdot g_t$。

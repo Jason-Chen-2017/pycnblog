@@ -31,9 +31,9 @@
 
 （s，a）的二次积分均值定理是关于函数f(x)在区间[a, b]上的平均值的一种表述。设f(x)为定义在实数集上的函数，其在区间[a, b]上的二次积分均值可以表示为：
 
-$$ \\overline{f} = \\frac{1}{b-a} \\int_{a}^{b} f(x) dx $$
+$$ \overline{f} = \frac{1}{b-a} \int_{a}^{b} f(x) dx $$
 
-这里，$\\overline{f}$表示f(x)在区间[a, b]上的平均值。
+这里，$\overline{f}$表示f(x)在区间[a, b]上的平均值。
 
 ### 2.2 关键概念
 
@@ -51,8 +51,8 @@ $$ \\overline{f} = \\frac{1}{b-a} \\int_{a}^{b} f(x) dx $$
 
 1. **定义区间**：明确函数f(x)的作用区间[a, b]。
 2. **函数定义**：确保f(x)在[a, b]上有定义且可积。
-3. **计算积分**：使用数值积分方法（如梯形法则、辛普森法则）计算$\\int_{a}^{b} f(x) dx$。
-4. **计算平均值**：将积分结果除以区间长度(b - a)，得到$\\overline{f}$。
+3. **计算积分**：使用数值积分方法（如梯形法则、辛普森法则）计算$\int_{a}^{b} f(x) dx$。
+4. **计算平均值**：将积分结果除以区间长度(b - a)，得到$\overline{f}$。
 
 ### 3.3 算法优缺点
 
@@ -74,19 +74,19 @@ $$ \\overline{f} = \\frac{1}{b-a} \\int_{a}^{b} f(x) dx $$
 
 ### 4.1 数学模型构建
 
-- **积分定义**：$\\int_{a}^{b} f(x) dx$ 表示f(x)在区间[a, b]上的积分。
-- **平均值定义**：$\\overline{f} = \\frac{1}{b-a} \\int_{a}^{b} f(x) dx$
+- **积分定义**：$\int_{a}^{b} f(x) dx$ 表示f(x)在区间[a, b]上的积分。
+- **平均值定义**：$\overline{f} = \frac{1}{b-a} \int_{a}^{b} f(x) dx$
 
 ### 4.2 公式推导过程
 
-- **基本积分公式**：$\\int x^n dx = \\frac{x^{n+1}}{n+1} + C$ （n ≠ -1）
-- **定积分定义**：$\\int_{a}^{b} f(x) dx = \\lim_{n \\to \\infty} \\sum_{i=1}^{n} f(x_i) \\Delta x_i$，其中$\\Delta x_i = \\frac{b-a}{n}$，$x_i = a + i\\Delta x$。
+- **基本积分公式**：$\int x^n dx = \frac{x^{n+1}}{n+1} + C$ （n ≠ -1）
+- **定积分定义**：$\int_{a}^{b} f(x) dx = \lim_{n \to \infty} \sum_{i=1}^{n} f(x_i) \Delta x_i$，其中$\Delta x_i = \frac{b-a}{n}$，$x_i = a + i\Delta x$。
 
 ### 4.3 案例分析与讲解
 
 考虑函数$f(x) = x^2$在区间[0, 1]上的平均值计算：
 
-$$ \\overline{f} = \\frac{1}{1-0} \\int_{0}^{1} x^2 dx = \\int_{0}^{1} x^2 dx = \\left[\\frac{x^3}{3}\\right]_{0}^{1} = \\frac{1}{3} $$
+$$ \overline{f} = \frac{1}{1-0} \int_{0}^{1} x^2 dx = \int_{0}^{1} x^2 dx = \left[\frac{x^3}{3}\right]_{0}^{1} = \frac{1}{3} $$
 
 ### 4.4 常见问题解答
 
@@ -116,7 +116,7 @@ def f(x):
     return x**2
 
 average = compute_average(f, 0, 1)
-print(f\"The average value of f(x) = x^2 on [0, 1] is: {average}\")
+print(f"The average value of f(x) = x^2 on [0, 1] is: {average}")
 ```
 
 ### 5.3 代码解读与分析
@@ -125,7 +125,7 @@ print(f\"The average value of f(x) = x^2 on [0, 1] is: {average}\")
 
 ### 5.4 运行结果展示
 
-输出结果验证了先前的理论计算，即函数$f(x) = x^2$在区间[0, 1]上的平均值为$\\frac{1}{3}$。
+输出结果验证了先前的理论计算，即函数$f(x) = x^2$在区间[0, 1]上的平均值为$\frac{1}{3}$。
 
 ## 6. 实际应用场景
 

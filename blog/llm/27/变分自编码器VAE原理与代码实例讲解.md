@@ -41,7 +41,7 @@
 变分自编码器的目标是学习一个潜在分布，使得生成的数据尽可能接近原始输入。这一过程涉及以下两个主要步骤：
 
 1. **编码过程**：将输入数据x通过编码器映射到潜在空间中的潜在变量z。
-2. **解码过程**：将潜在变量z通过解码器映射回数据空间，生成重构的数据$\\hat{x}$。
+2. **解码过程**：将潜在变量z通过解码器映射回数据空间，生成重构的数据$\hat{x}$。
 
 通过引入变分推断，VAEs能够学习到数据的潜在分布，并通过最小化重构损失和KL散度来优化模型参数。
 
@@ -56,7 +56,7 @@
 对于每一个输入数据x：
 
 1. **编码**：通过编码器计算潜在变量z。
-2. **解码**：通过解码器计算重构数据$\\hat{x}$。
+2. **解码**：通过解码器计算重构数据$\hat{x}$。
 3. **损失计算**：计算重构损失（通常采用均方误差或交叉熵损失）和KL散度损失。
 4. **梯度更新**：根据损失函数进行梯度下降，更新模型参数。
 
@@ -95,16 +95,16 @@
 
 #### 定义：
 
-- 输入$x \\in \\mathcal{X}$，潜在变量$z \\in \\mathcal{Z}$，潜在分布$q(z)$和$p(z|x)$。
-- 解码器$f_\\theta$: $\\hat{x} = f_\\theta(z)$。
-- 编码器$g_\\phi$: $z = g_\\phi(x)$。
+- 输入$x \in \mathcal{X}$，潜在变量$z \in \mathcal{Z}$，潜在分布$q(z)$和$p(z|x)$。
+- 解码器$f_\theta$: $\hat{x} = f_\theta(z)$。
+- 编码器$g_\phi$: $z = g_\phi(x)$。
 
 #### 目标函数：
 
-- 最小化重构损失$L_{rec}(x, \\hat{x})$和KL散度$L_{KL}(q(z|x), p(z))$：
+- 最小化重构损失$L_{rec}(x, \hat{x})$和KL散度$L_{KL}(q(z|x), p(z))$：
 
 $$
-\\min_\\theta \\min_\\phi \\mathbb{E}_{x \\sim p_{data}(x)} \\left[ L_{rec}(x, f_\\theta(g_\\phi(x))) + \\lambda L_{KL}(q(z|x), p(z)) \\right]
+\min_\theta \min_\phi \mathbb{E}_{x \sim p_{data}(x)} \left[ L_{rec}(x, f_\theta(g_\phi(x))) + \lambda L_{KL}(q(z|x), p(z)) \right]
 $$
 
 ### 4.2 公式推导过程
@@ -114,7 +114,7 @@ $$
 KL散度衡量了两个概率分布之间的差异：
 
 $$
-L_{KL}(q(z|x), p(z)) = \\int q(z|x) \\log \\frac{q(z|x)}{p(z)}
+L_{KL}(q(z|x), p(z)) = \int q(z|x) \log \frac{q(z|x)}{p(z)}
 $$
 
 #### 重构损失计算：
@@ -122,7 +122,7 @@ $$
 常用的重构损失是均方误差（MSE）：
 
 $$
-L_{rec}(x, \\hat{x}) = \\frac{1}{2} \\sum_i (\\hat{x}_i - x_i)^2
+L_{rec}(x, \hat{x}) = \frac{1}{2} \sum_i (\hat{x}_i - x_i)^2
 $$
 
 ### 4.3 案例分析与讲解
@@ -139,7 +139,7 @@ $$
 - 初始化编码器和解码器的参数。
 - 对于每一个训练样本：
   - 使用编码器计算潜在变量z。
-  - 使用解码器生成重构样本$\\hat{x}$。
+  - 使用解码器生成重构样本$\hat{x}$。
   - 计算重构损失和KL散度损失。
   - 更新模型参数。
 
@@ -223,7 +223,7 @@ class VAE(Model):
         super(VAE, self).__init__(**kwargs)
         self.encoder = encoder
         self.decoder = decoder
-        self.total_loss_tracker = tf.keras.metrics.Mean(name=\"total_loss\")
+        self.total_loss_tracker = tf.keras.metrics.Mean(name="total_loss")
 
     def compile(self, optimizer):
         super(VAE, self).compile(optimizer=optimizer)
@@ -245,7 +245,7 @@ class VAE(Model):
         grads = tape.gradient(total_loss, self.trainable_weights)
         self.optimizer.apply_gradients(zip(grads, self.trainable_weights))
         self.total_loss_tracker.update_state(total_loss)
-        return {\"loss\": self.total_loss_tracker.result()}
+        return {"loss": self.total_loss_tracker.result()}
 
     @property
     def metrics(self):

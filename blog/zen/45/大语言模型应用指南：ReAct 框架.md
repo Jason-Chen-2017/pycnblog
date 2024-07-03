@@ -224,18 +224,18 @@ tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 def text_summary(text):
     # 任务分解
     subtasks = ['提取关键信息', '生成摘要', '评估摘要质量']
-    
+
     # 动态规划
     # ...（省略具体实现）
-    
+
     # 知识库集成
     # ...（省略具体实现）
-    
+
     # 适应性调整
     # ...（省略具体实现）
-    
+
     # ...（省略具体实现）
-    
+
     # 返回摘要结果
     return summary
 

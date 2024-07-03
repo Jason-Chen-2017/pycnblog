@@ -28,7 +28,7 @@
 
 - 核心概念与联系
 - 核心算法原理与具体操作步骤
-- 数学模型和公式详细讲解与案例分析  
+- 数学模型和公式详细讲解与案例分析
 - 项目实践:代码实例和详细解释
 - 实际应用场景
 - 工具和资源推荐
@@ -82,7 +82,7 @@ graph TD
 
 K-Means是一种简单而有效的聚类算法。它的基本思想是,首先随机初始化K个聚类中心,然后迭代地调整每个样本的簇分配和每个簇的中心,直至聚类结果收敛。算法旨在最小化所有样本到其所属簇中心的平方距离之和。
 
-2. **主成分分析(PCA)降维算法**  
+2. **主成分分析(PCA)降维算法**
 
 PCA是一种常用的线性降维技术。它通过学习数据的协方差结构,将原始高维数据投影到一组相互正交的低维空间中,从而达到降维的目的。投影后的低维数据尽可能保留原始数据的方差信息。
 
@@ -98,44 +98,44 @@ GMM假设数据服从多个高斯分布的混合,通过期望最大化(EM)算法
 
 1. **K-Means聚类算法步骤**
 
-输入: 数据集 $X = \{x_1, x_2, \ldots, x_n\}$, 簇数 $K$  
+输入: 数据集 $X = \{x_1, x_2, \ldots, x_n\}$, 簇数 $K$
 输出: 每个样本的簇分配 $C = \{c_1, c_2, \ldots, c_n\}$
 
 1) 随机初始化 $K$ 个聚类中心 $\mu_1, \mu_2, \ldots, \mu_K$
 2) 重复直至收敛:
-    a) 对每个样本 $x_i$, 计算其与每个聚类中心的距离 $d(x_i, \mu_j)$, 将其分配至最近的簇 $c_i = \arg\min_j d(x_i, \mu_j)$  
+    a) 对每个样本 $x_i$, 计算其与每个聚类中心的距离 $d(x_i, \mu_j)$, 将其分配至最近的簇 $c_i = \arg\min_j d(x_i, \mu_j)$
     b) 对每个簇 $j$, 重新计算其中心 $\mu_j = \frac{1}{|C_j|}\sum_{x_i \in C_j}x_i$, 其中 $C_j$ 是簇 $j$ 中的样本集合
 3) 返回每个样本的簇分配 $C$
 
 2. **主成分分析(PCA)算法步骤**
 
-输入: 数据矩阵 $X \in \mathbb{R}^{n \times d}$, 目标维度 $k$  
+输入: 数据矩阵 $X \in \mathbb{R}^{n \times d}$, 目标维度 $k$
 输出: 降维后的数据 $Z \in \mathbb{R}^{n \times k}$
 
 1) 对数据 $X$ 进行中心化,得到 $\tilde{X}$
-2) 计算数据协方差矩阵 $\Sigma = \frac{1}{n}\tilde{X}^T\tilde{X}$  
+2) 计算数据协方差矩阵 $\Sigma = \frac{1}{n}\tilde{X}^T\tilde{X}$
 3) 对协方差矩阵 $\Sigma$ 进行特征值分解,得到特征值 $\lambda_1 \geq \lambda_2 \geq \ldots \geq \lambda_d$ 和对应的特征向量 $v_1, v_2, \ldots, v_d$
 4) 选取前 $k$ 个最大特征值对应的特征向量,构成投影矩阵 $W = [v_1, v_2, \ldots, v_k]$
 5) 将原始数据投影到 $k$ 维空间,得到降维后的数据 $Z = \tilde{X}W$
 
-3. **高斯混合模型(GMM)EM算法步骤**  
+3. **高斯混合模型(GMM)EM算法步骤**
 
-输入: 数据集 $X = \{x_1, x_2, \ldots, x_n\}$, 高斯分量数 $K$  
+输入: 数据集 $X = \{x_1, x_2, \ldots, x_n\}$, 高斯分量数 $K$
 输出: 每个高斯分量的参数 $\{\pi_k, \mu_k, \Sigma_k\}_{k=1}^K$
 
 1) 随机初始化每个高斯分量的参数 $\{\pi_k, \mu_k, \Sigma_k\}_{k=1}^K$
 2) 重复直至收敛:
-    a) E步骤(Expectation): 计算每个样本 $x_i$ 对于每个高斯分量 $k$ 的响应度(responsibilities) $\gamma(z_{ik})$  
+    a) E步骤(Expectation): 计算每个样本 $x_i$ 对于每个高斯分量 $k$ 的响应度(responsibilities) $\gamma(z_{ik})$
     b) M步骤(Maximization): 更新每个高斯分量的参数
         - $\pi_k = \frac{1}{n}\sum_{i=1}^n\gamma(z_{ik})$
-        - $\mu_k = \frac{1}{n_k}\sum_{i=1}^n\gamma(z_{ik})x_i$  
+        - $\mu_k = \frac{1}{n_k}\sum_{i=1}^n\gamma(z_{ik})x_i$
         - $\Sigma_k = \frac{1}{n_k}\sum_{i=1}^n\gamma(z_{ik})(x_i - \mu_k)(x_i - \mu_k)^T$
     其中 $n_k = \sum_{i=1}^n\gamma(z_{ik})$
 3) 返回每个高斯分量的参数 $\{\pi_k, \mu_k, \Sigma_k\}_{k=1}^K$
 
 4. **自编码器(Autoencoder)训练步骤**
 
-输入: 训练数据 $X = \{x_1, x_2, \ldots, x_n\}$, 编码器 $f_\theta$, 解码器 $g_\phi$  
+输入: 训练数据 $X = \{x_1, x_2, \ldots, x_n\}$, 编码器 $f_\theta$, 解码器 $g_\phi$
 输出: 训练好的编码器 $f_\theta$ 和解码器 $g_\phi$
 
 1) 初始化编码器参数 $\theta$ 和解码器参数 $\phi$

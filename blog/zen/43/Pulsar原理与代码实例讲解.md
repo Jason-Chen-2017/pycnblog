@@ -191,7 +191,7 @@ public class PulsarExample {
             .topic("order_topic")
             .create();
 
-        String message = "{\"order_id\": \"12345\", \"user_id\": \"abc\", \"product_id\": \"xyz\", \"amount\": 99.99}";
+        String message = "{"order_id": "12345", "user_id": "abc", "product_id": "xyz", "amount": 99.99}";
         producer.send(message);
 
         // 创建消费者，接收消息

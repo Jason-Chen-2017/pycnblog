@@ -131,36 +131,36 @@ LangChain和AI Agent的数学模型主要包括以下几部分：
 
 假设自然语言处理模型为一个条件语言模型$P(Y | X)$，其中$X$为输入文本，$Y$为输出文本。
 
-$$P(Y | X) = \\frac{1}{Z(X)} \\exp\\left(\\sum_{t=1}^m \\Phi(y_t, X) + \\sum_{t=1}^{m-1} \\Psi(y_t, y_{t+1}, X)\\right)$$
+$$P(Y | X) = \frac{1}{Z(X)} \exp\left(\sum_{t=1}^m \Phi(y_t, X) + \sum_{t=1}^{m-1} \Psi(y_t, y_{t+1}, X)\right)$$
 
 其中，
 
 - $Z(X)$为配分函数，用于归一化。
-- $\\Phi(y_t, X)$为节点特征函数，描述了当前标记$y_t$与输入文本$X$之间的关系。
-- $\\Psi(y_t, y_{t+1}, X)$为边特征函数，描述了相邻标记$y_t$和$y_{t+1}$之间的依赖关系。
+- $\Phi(y_t, X)$为节点特征函数，描述了当前标记$y_t$与输入文本$X$之间的关系。
+- $\Psi(y_t, y_{t+1}, X)$为边特征函数，描述了相邻标记$y_t$和$y_{t+1}$之间的依赖关系。
 
 #### 4.2.2 编程式AI模型
 
 假设编程式AI模型为一个序列到序列（Seq2Seq）模型，其中输入为自然语言，输出为代码。
 
-$$P(Y | X) = \\frac{1}{Z(X)} \\exp\\left(\\sum_{t=1}^m \\Phi(y_t, X) + \\sum_{t=1}^{m-1} \\Psi(y_t, y_{t+1}, X)\\right)$$
+$$P(Y | X) = \frac{1}{Z(X)} \exp\left(\sum_{t=1}^m \Phi(y_t, X) + \sum_{t=1}^{m-1} \Psi(y_t, y_{t+1}, X)\right)$$
 
 其中，
 
 - $Z(X)$为配分函数，用于归一化。
-- $\\Phi(y_t, X)$为节点特征函数，描述了当前标记$y_t$与输入文本$X$之间的关系。
-- $\\Psi(y_t, y_{t+1}, X)$为边特征函数，描述了相邻标记$y_t$和$y_{t+1}$之间的依赖关系。
+- $\Phi(y_t, X)$为节点特征函数，描述了当前标记$y_t$与输入文本$X$之间的关系。
+- $\Psi(y_t, y_{t+1}, X)$为边特征函数，描述了相邻标记$y_t$和$y_{t+1}$之间的依赖关系。
 
 #### 4.2.3 强化学习模型
 
 假设强化学习模型为一个Q-Learning模型，其中状态集合为$S$，动作集合为$A$，奖励函数为$R$。
 
-$$Q(s, a) = \\sum_{s' \\in S} \\gamma R(s, a, s') Q(s', a')$$
+$$Q(s, a) = \sum_{s' \in S} \gamma R(s, a, s') Q(s', a')$$
 
 其中，
 
 - $Q(s, a)$为在状态$s$下执行动作$a$的期望奖励。
-- $\\gamma$为折现因子。
+- $\gamma$为折现因子。
 - $R(s, a, s')$为在状态$s$下执行动作$a$后转移到状态$s'$的奖励。
 - $Q(s', a')$为在状态$s'$下执行动作$a'$的期望奖励。
 
@@ -170,7 +170,7 @@ $$Q(s, a) = \\sum_{s' \\in S} \\gamma R(s, a, s') Q(s', a')$$
 
 假设我们要利用LangChain生成以下自然语言描述的代码：
 
-> \"创建一个列表，包含1到10的整数，然后计算列表中所有元素的和。\"
+> "创建一个列表，包含1到10的整数，然后计算列表中所有元素的和。"
 
 使用Seq2Seq模型，我们可以将自然语言描述转换为以下代码：
 
@@ -225,8 +225,8 @@ from transformers import pipeline
 from typing import Tuple
 
 # 加载LLMs
-nlp = pipeline(\"text-classification\")
-codegen = transformers.pipeline(\"code-generation\")
+nlp = pipeline("text-classification")
+codegen = transformers.pipeline("code-generation")
 
 # 定义智能客服函数
 def smart_customer_service(user_query: str) -> str:
@@ -234,30 +234,30 @@ def smart_customer_service(user_query: str) -> str:
     question_type, confidence = nlp(user_query)
 
     # 根据问题类型，调用相应的API处理
-    if question_type == \"query\":
+    if question_type == "query":
         # 调用查询API
         response = query_api(user_query)
         return response
-    elif question_type == \"complaint\":
+    elif question_type == "complaint":
         # 调用投诉API
         response = complaint_api(user_query)
         return response
     else:
         # 未识别问题类型
-        return \"无法识别问题类型，请重新输入。\"
+        return "无法识别问题类型，请重新输入。"
 
 # 示例API
 def query_api(query: str) -> str:
     # 这里是查询API的实现，此处省略具体代码
-    return \"这是查询API的返回结果。\"
+    return "这是查询API的返回结果。"
 
 def complaint_api(complaint: str) -> str:
     # 这里是投诉API的实现，此处省略具体代码
-    return \"这是投诉API的返回结果。\"
+    return "这是投诉API的返回结果。"
 
 # 测试智能客服
-if __name__ == \"__main__\":
-    user_query = \"我家的电视怎么没有信号？\"
+if __name__ == "__main__":
+    user_query = "我家的电视怎么没有信号？"
     response = smart_customer_service(user_query)
     print(response)
 ```
@@ -274,7 +274,7 @@ if __name__ == \"__main__\":
 我家的电视怎么没有信号？
 ```
 
-智能客服会通过自然语言处理识别出问题类型为\"query\"，并调用查询API进行处理。最后，返回以下结果：
+智能客服会通过自然语言处理识别出问题类型为"query"，并调用查询API进行处理。最后，返回以下结果：
 
 ```
 这是查询API的返回结果。
@@ -320,9 +320,9 @@ LangChain和AI Agent可以用于辅助医生进行诊断和治疗，提高医疗
 
 ### 7.3 相关论文推荐
 
-1. **\"LangChain: Building Robots with Instruction Tuning and Meta-Learning\"**: 作者：Jacob Devlin, Mark Chen, Keenon Yang, et al.
+1. **"LangChain: Building Robots with Instruction Tuning and Meta-Learning"**: 作者：Jacob Devlin, Mark Chen, Keenon Yang, et al.
     - 介绍了LangChain的概念和实现方法。
-2. **\"DeepMind’s AlphaGo Zero: A new approach to machine learning\"**: 作者：Silver, D., et al.
+2. **"DeepMind’s AlphaGo Zero: A new approach to machine learning"**: 作者：Silver, D., et al.
     - 介绍了强化学习在AI Agent中的应用。
 
 ### 7.4 其他资源推荐

@@ -7,7 +7,7 @@
 ### 1.2 Q-learning的局限性
 尽管Q-learning算法已经相对成熟,但在实际应用中仍然存在一些局限性,比如:
 - 收敛速度慢,需要大量的训练数据和时间
-- 容易陷入局部最优,难以找到全局最优策略  
+- 容易陷入局部最优,难以找到全局最优策略
 - 对环境变化的适应性不够强
 - 难以处理高维、连续的状态和动作空间
 
@@ -53,7 +53,7 @@
    - 执行动作,观察奖励 $r_t$ 和下一状态 $s_{t+1}$,存储经验 $(s_t,a_t,r_t,s_{t+1})$ 到 $D$ 中
    - 从 $D$ 中随机采样小批量经验 $(s,a,r,s')$
    - 计算Q学习目标 $y$:
-     $$y = \begin{cases} r & \text{if episode terminates at } s' \\ r + \gamma \max_{a'} \hat{Q}(s',a';\theta^-) & \text{otherwise} \end{cases}$$
+     $$y = \begin{cases} r & \text{if episode terminates at } s' \ r + \gamma \max_{a'} \hat{Q}(s',a';\theta^-) & \text{otherwise} \end{cases}$$
    - 通过最小化损失函数 $L(\theta) = \mathbb{E}_{(s,a,r,s')\sim D}[(y - Q(s,a;\theta))^2]$ 来更新在线Q网络
    - 每隔一定步数将在线Q网络参数 $\theta$ 复制给目标Q网络参数 $\theta^-$
 4. 返回训练好的Q网络,即为近似最优策略
@@ -106,13 +106,13 @@ class QLearning:
         self.alpha = alpha
         self.gamma = gamma
         self.epsilon = epsilon
-        
+
     def choose_action(self, state):
         if np.random.uniform() < self.epsilon:
             return np.random.randint(self.Q.shape[1])
         else:
             return np.argmax(self.Q[state])
-        
+
     def update(self, state, action, reward, next_state):
         td_error = reward + self.gamma * np.max(self.Q[next_state]) - self.Q[state, action]
         self.Q[state, action] += self.alpha * td_error
@@ -134,7 +134,7 @@ if __name__ == "__main__":
     env = GridWorld(5, 5)
     agent = QLearning(env.num_states, env.num_actions, alpha=0.1, gamma=0.9, epsilon=0.1)
     num_episodes = 1000
-    
+
     for episode in range(num_episodes):
         episode_reward = run_episode(env, agent)
         print(f"Episode {episode+1}: Reward = {episode_reward}")
@@ -152,4 +152,4 @@ if __name__ == "__main__":
 ## 6.实际应用场景
 Q-learning及其变体在许多领域都有广泛应用,下面列举几个典型场景:
 
-### 
+###

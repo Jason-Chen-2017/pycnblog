@@ -4,7 +4,7 @@
 
 ## 1. Background Introduction
 
-In the rapidly evolving digital age, the Internet of Things (IoT) has emerged as a revolutionary technology, transforming various industries by connecting everyday objects to the internet. This interconnectedness enables these objects to collect and exchange data, making them \"smart\" and capable of automating tasks. One of the key technologies driving this revolution is Radio-Frequency Identification (RFID), a wireless non-contact application technology that uses radio waves to automatically identify and track tags attached to objects. This article delves into the integration of IoT technology and various sensor devices, with a focus on RFID and IoT.
+In the rapidly evolving digital age, the Internet of Things (IoT) has emerged as a revolutionary technology, transforming various industries by connecting everyday objects to the internet. This interconnectedness enables these objects to collect and exchange data, making them "smart" and capable of automating tasks. One of the key technologies driving this revolution is Radio-Frequency Identification (RFID), a wireless non-contact application technology that uses radio waves to automatically identify and track tags attached to objects. This article delves into the integration of IoT technology and various sensor devices, with a focus on RFID and IoT.
 
 ### 1.1 The Rise of IoT and RFID
 
@@ -54,7 +54,7 @@ The data processing and analysis process in an RFID-IoT system involves the foll
 
 The distance between a tag and a reader can be calculated using the following formula:
 
-$$d = \\frac{c \\cdot t}{2 \\cdot f \\cdot \\sqrt{G}}$$
+$$d = \frac{c \cdot t}{2 \cdot f \cdot \sqrt{G}}$$
 
 Where:
 - $d$ is the distance between the tag and the reader (in meters)
@@ -91,19 +91,19 @@ void loop() {
   if ( ! mfrc522.PICC_ReadCardSerial()) {
     return;
   }
-  Serial.print(\"UID tag: \");
-  String content = \"\";
+  Serial.print("UID tag: ");
+  String content = "";
   for (byte i = 0; i < mfrc522.uid.size; i++) {
-     content.concat(String(mfrc522.uid.uidByte[i] < 0x10 ? \" 0\" : \" \"));
+     content.concat(String(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " "));
      content.concat(String(mfrc522.uid.uidByte[i], HEX));
   }
   Serial.println();
-  Serial.print(\"Message: \");
+  Serial.print("Message: ");
   content.toUpperCase();
-  if (content.substring(1) == \"00\") {
-    Serial.println(\"Access Granted\");
+  if (content.substring(1) == "00") {
+    Serial.println("Access Granted");
   } else {
-    Serial.println(\"Access Denied\");
+    Serial.println("Access Denied");
   }
 }
 ```

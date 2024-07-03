@@ -56,7 +56,7 @@ SIFT(Scale-Invariant Feature Transform)是一种用于图像局部特征提取�
 
 以关键点为中心,在其尺度空间取16x16的邻域窗口。将邻域划分为4x4的子区域。
 
-#### 3.2.2 梯度直方图计算 
+#### 3.2.2 梯度直方图计算
 
 在每个4x4子区域内,计算每个像素的梯度大小和方向。将360度平均分为8个方向,对每个方向做梯度大小加权,形成8维梯度方向直方图。
 
@@ -140,7 +140,7 @@ $$ \frac{d(p,q_1)}{d(p,q_2)} < T $$
 import cv2
 
 # 读取图像
-img1 = cv2.imread('image1.jpg')  
+img1 = cv2.imread('image1.jpg')
 img2 = cv2.imread('image2.jpg')
 
 # 转换为灰度图像

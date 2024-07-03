@@ -126,7 +126,7 @@ $$Y = \gamma \frac{(X - \mu)}{\sigma} + \beta$$
 
 假设我们有以下输入特征矩阵$X$：
 
-$$X = \begin{bmatrix} 1.2 & 0.8 \\ 1.5 & 1.0 \\ 0.9 & 1.1 \end{bmatrix}$$
+$$X = \begin{bmatrix} 1.2 & 0.8 \ 1.5 & 1.0 \ 0.9 & 1.1 \end{bmatrix}$$
 
 首先，计算平均值和方差：
 
@@ -136,11 +136,11 @@ $$\sigma^2 = \frac{1}{3} ((1.2 - 1.0)^2 + (0.8 - 1.0)^2 + (1.5 - 1.0)^2 + (1.0 -
 
 然后，对输入特征进行标准化：
 
-$$X_{\text{norm}} = \begin{bmatrix} 0.2 & -0.2 \\ 0.5 & 0.0 \\ -0.1 & 0.1 \end{bmatrix}$$
+$$X_{\text{norm}} = \begin{bmatrix} 0.2 & -0.2 \ 0.5 & 0.0 \ -0.1 & 0.1 \end{bmatrix}$$
 
 假设缩放因子$\gamma$为1.1，平移因子$\beta$为0.1，则有：
 
-$$Y = \begin{bmatrix} 0.22 & -0.22 \\ 0.55 & 0.10 \\ -0.11 & 0.11 \end{bmatrix}$$
+$$Y = \begin{bmatrix} 0.22 & -0.22 \ 0.55 & 0.10 \ -0.11 & 0.11 \end{bmatrix}$$
 
 ### 4.4 常见问题解答
 

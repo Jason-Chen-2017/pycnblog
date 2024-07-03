@@ -169,14 +169,14 @@ import torch.nn as nn
 conv = nn.Conv2d(1, 1, 3, stride=1, padding=1)
 
 # 初始化卷积核和偏置
-conv.weight.data = torch.tensor([[[[1.0, 2.0, 1.0], 
+conv.weight.data = torch.tensor([[[[1.0, 2.0, 1.0],
                                    [2.0, 4.0, 2.0],
                                    [1.0, 2.0, 1.0]]]])
 conv.bias.data = torch.tensor([0.0])
 
 # 创建输入张量
 input = torch.tensor([[[[1.0, 2.0, 3.0],
-                        [4.0, 5.0, 6.0], 
+                        [4.0, 5.0, 6.0],
                         [7.0, 8.0, 9.0]]]])
 
 # 将数据移动到GPU

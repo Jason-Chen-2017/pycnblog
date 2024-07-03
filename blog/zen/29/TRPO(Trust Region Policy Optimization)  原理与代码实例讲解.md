@@ -64,7 +64,7 @@ TRPO广泛应用于需要稳定学习过程的强化学习任务，特别是那�
 
 构建一个优化问题，旨在最小化策略改进的KL散度，同时满足信任区域的约束：
 
-$$\\min_{\\delta\\theta} KL(\\pi_{\\theta'}, \\pi_\\theta) \\quad \\text{s.t.} \\quad \\Delta\\theta \\leq \\Delta\\theta_{\\text{max}}$$
+$$\min_{\delta\theta} KL(\pi_{\theta'}, \pi_\theta) \quad \text{s.t.} \quad \Delta\theta \leq \Delta\theta_{\text{max}}$$
 
 ### 4.2 公式推导过程
 

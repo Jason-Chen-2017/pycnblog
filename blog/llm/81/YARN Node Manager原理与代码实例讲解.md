@@ -221,43 +221,43 @@ A：监控Node Manager的资源使用情况可以使用以下工具：
 ```java
 public class NodeManager implements NodeManagerMBean, NodeManagerMXBean {
     // ... 省略部分代码 ...
-    
+
     @Override
     public void start() throws Exception {
         // 初始化Node Manager服务进程
         // ...
     }
-    
+
     @Override
     public void stop() throws Exception {
         // 停止Node Manager服务进程
         // ...
     }
-    
+
     @Override
     public void registerApplicationMaster(ApplicationMasterInfo appMasterInfo) {
         // 注册ApplicationMaster信息
         // ...
     }
-    
+
     @Override
     public void unregisterApplicationMaster(ApplicationMasterId applicationMasterId) {
         // 注销ApplicationMaster信息
         // ...
     }
-    
+
     @Override
     public void registerContainer(Container container) {
         // 注册Container信息
         // ...
     }
-    
+
     @Override
     public void unregisterContainer(Container container) {
         // 注销Container信息
         // ...
     }
-    
+
     // ... 省略部分代码 ...
 }
 ```
@@ -267,25 +267,25 @@ public class NodeManager implements NodeManagerMBean, NodeManagerMXBean {
 ```java
 public class ContainerManager {
     // ... 省略部分代码 ...
-    
+
     @Override
     public void startContainer(Container container) {
         // 启动Container
         // ...
     }
-    
+
     @Override
     public void stopContainer(Container container) {
         // 停止Container
         // ...
     }
-    
+
     @Override
     public void killContainer(Container container) {
         // 杀死Container
         // ...
     }
-    
+
     // ... 省略部分代码 ...
 }
 ```
@@ -295,19 +295,19 @@ public class ContainerManager {
 ```java
 public class Container implements ContainerMBean {
     // ... 省略部分代码 ...
-    
+
     @Override
     public void启动() {
         // 启动Container进程
         // ...
     }
-    
+
     @Override
     public void 关闭() {
         // 关闭Container进程
         // ...
     }
-    
+
     // ... 省略部分代码 ...
 }
 ```

@@ -75,15 +75,15 @@ GoogleBigtable的数据读写过程:
 ### 4.1 数学模型构建
 SparkGraphX的Pregel模型可以用以下公式表示:
 
-$$ 
-a_i^{t+1} = \sum_{j \in N(i)} f(a_i^t, a_j^t, e_{ij}) 
+$$
+a_i^{t+1} = \sum_{j \in N(i)} f(a_i^t, a_j^t, e_{ij})
 $$
 
 其中,$a_i^t$表示第$t$轮迭代时顶点$i$的状态,$N(i)$为顶点$i$的邻居顶点集合,$f$为计算逻辑。
 
 GoogleBigtable的数据模型可以用以下多维映射表示:
 
-$$ 
+$$
 (row:string, column:string, timestamp:int64) \rightarrow cell:string
 $$
 

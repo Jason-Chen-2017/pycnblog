@@ -69,7 +69,7 @@ class EnvModel:
         self.n_states = 100
         self.n_actions = 4
         ...
-    
+
     def get_state(self):
         # 提取环境状态特征
         ...
@@ -86,7 +86,7 @@ class EnvModel:
 ```
 #### 5.1.3 奖励函数与场景生成
 ```python
-class EnvModel:  
+class EnvModel:
     ...
     def get_reward(self, state, action):
         # 根据状态和动作计算即时奖励

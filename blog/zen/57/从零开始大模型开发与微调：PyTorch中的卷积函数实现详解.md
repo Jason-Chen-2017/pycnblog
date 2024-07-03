@@ -9,7 +9,7 @@
 ### 2.1 卷积的数学定义
 ### 2.2 卷积神经网络的组成
 #### 2.2.1 卷积层
-#### 2.2.2 池化层  
+#### 2.2.2 池化层
 #### 2.2.3 全连接层
 ### 2.3 卷积与大模型的关系
 
@@ -31,7 +31,7 @@
 ### 5.1 利用PyTorch实现卷积层
 #### 5.1.1 nn.Conv2d类详解
 #### 5.1.2 卷积层前向传播的代码实现
-#### 5.1.3 卷积层反向传播的代码实现 
+#### 5.1.3 卷积层反向传播的代码实现
 ### 5.2 搭建卷积神经网络完成图像分类任务
 #### 5.2.1 数据集的准备
 #### 5.2.2 模型构建
@@ -71,7 +71,7 @@
 graph TB
     A[输入特征图] --> B[卷积层]
     B --> C[激活层]
-    C --> D[池化层] 
+    C --> D[池化层]
     D --> E{是否还有卷积层}
     E -->|是| B
     E -->|否| F[全连接层]
@@ -125,7 +125,7 @@ conv = nn.Conv2d(in_channels, out_channels, kernel_size, stride=1, padding=0, bi
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
-        self.conv1 = nn.Conv2d(3, 64, 3, padding=1) 
+        self.conv1 = nn.Conv2d(3, 64, 3, padding=1)
         self.conv2 = nn.Conv2d(64, 128, 3, padding=1)
         self.conv3 = nn.Conv2d(128, 256, 3, padding=1)
         self.pool = nn.MaxPool2d(2, 2)
@@ -142,12 +142,12 @@ class Net(nn.Module):
         x = F.relu(self.fc2(x))
         x = self.fc3(x)
         return x
-        
+
 net = Net()
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
 
-for epoch in range(10):   
+for epoch in range(10):
     for i, (inputs, labels) in enumerate(trainloader, 0):
         optimizer.zero_grad()
         outputs = net(inputs)
@@ -160,7 +160,7 @@ for epoch in range(10):
 
 展望未来，卷积神经网络的发展趋势主要有以下几个方面：
 
-1. 设计更加轻量高效的卷积结构，如MobileNet、ShuffleNet等，以适应边缘设备部署的需求。  
+1. 设计更加轻量高效的卷积结构，如MobileNet、ShuffleNet等，以适应边缘设备部署的需求。
 2. 加强卷积神经网络的可解释性研究，探索卷积在提取特征过程中的内在机制。
 3. 将卷积操作推广到非欧几里得数据上，发展图卷积神经网络，拓宽卷积的应用范围。
 

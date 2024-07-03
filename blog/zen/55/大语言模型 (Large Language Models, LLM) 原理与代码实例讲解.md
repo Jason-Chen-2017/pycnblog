@@ -7,7 +7,7 @@
 #### 1.1.3 大语言模型的研究意义
 ### 1.2 大语言模型的应用现状
 #### 1.2.1 自然语言处理领域的应用
-#### 1.2.2 信息检索与问答系统的应用  
+#### 1.2.2 信息检索与问答系统的应用
 #### 1.2.3 机器翻译领域的应用
 ### 1.3 大语言模型面临的挑战与机遇
 #### 1.3.1 计算资源与训练效率的挑战
@@ -56,7 +56,7 @@
 #### 4.3.2 相对位置编码的数学公式
 #### 4.3.3 位置编码的数学性质分析
 
-## 5. 项目实践：代码实例和详细解释说明 
+## 5. 项目实践：代码实例和详细解释说明
 ### 5.1 使用 PyTorch 实现 Transformer 模型
 #### 5.1.1 编码器的代码实现与解释
 #### 5.1.2 解码器的代码实现与解释
@@ -86,7 +86,7 @@
 
 ## 7. 工具和资源推荐
 ### 7.1 开源工具与框架
-#### 7.1.1 PyTorch 与 TensorFlow 
+#### 7.1.1 PyTorch 与 TensorFlow
 #### 7.1.2 HuggingFace Transformers 库
 #### 7.1.3 OpenAI GPT 系列模型
 ### 7.2 预训练模型资源
@@ -177,7 +177,7 @@ class TransformerEncoder(nn.Module):
         super(TransformerEncoder, self).__init__()
         encoder_layer = nn.TransformerEncoderLayer(d_model, nhead, dim_feedforward)
         self.encoder = nn.TransformerEncoder(encoder_layer, num_layers)
-    
+
     def forward(self, src):
         return self.encoder(src)
 ```

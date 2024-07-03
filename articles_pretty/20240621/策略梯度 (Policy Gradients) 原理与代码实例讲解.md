@@ -69,9 +69,7 @@ $$ J(\\pi) = \\mathbb{E}_{\\tau \\sim \\pi} \\left[ \\sum_{t=0}^{T-1} r(s_t, a_t
 
 策略梯度算法中的梯度估计通常基于 **蒙特卡洛优势估计**：
 
-$$ \
-abla_{\\theta} J(\\pi) \\approx \\frac{1}{N} \\sum_{i=1}^{N} \
-abla_{\\theta} \\log \\pi(a_i|s_i) \\cdot A_i $$
+$$ \nabla_{\\theta} J(\\pi) \\approx \\frac{1}{N} \\sum_{i=1}^{N} \nabla_{\\theta} \\log \\pi(a_i|s_i) \\cdot A_i $$
 
 其中，$A_i$ 是 **优势函数**：
 
@@ -85,8 +83,7 @@ $$ \\pi(a|s) = \\sigma(Ws + b) $$
 
 其中，$\\sigma$ 是激活函数，$W$ 和 $b$ 是参数。通过梯度上升法更新参数：
 
-$$ W_{new} = W + \\alpha \\cdot \
-abla_W \\log \\pi(a_i|s_i) \\cdot A_i $$
+$$ W_{new} = W + \\alpha \\cdot \nabla_W \\log \\pi(a_i|s_i) \\cdot A_i $$
 
 ### 4.4 常见问题解答
 

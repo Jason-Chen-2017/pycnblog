@@ -185,7 +185,7 @@ public class PregelDegree {
     public static class DegreeMapper extends Mapper<Object, Text, Text, IntWritable> {
         private final static IntWritable one = new IntWritable(1);
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
-            String[] words = value.toString().split("\\s+");
+            String[] words = value.toString().split("\s+");
             for (String word : words) {
                 context.write(new Text(word), one);
             }

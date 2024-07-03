@@ -144,7 +144,7 @@ class LanguageEmbedding(nn.Module):
     def __init__(self, num_langs, embed_dim):
         super().__init__()
         self.embedding = nn.Embedding(num_langs, embed_dim)
-    
+
     def forward(self, lang_ids):
         return self.embedding(lang_ids)
 
@@ -153,7 +153,7 @@ class LanguageAwareTransformer(nn.Module):
         super().__init__()
         self.transformer = AutoModel.from_pretrained(model_name)
         self.lang_embed = LanguageEmbedding(num_langs, embed_dim)
-    
+
     def forward(self, input_ids, attention_mask, lang_ids):
         lang_embedding = self.lang_embed(lang_ids)
         outputs = self.transformer(

@@ -119,8 +119,7 @@ Q值更新公式用于在迭代过程中更新Q值函数。其推导过程如下
 
 设$\theta$为Q值函数的参数，则：
 
-$$\theta_{new} = \theta_{old} + \eta \
-abla_{\theta} J(\theta_{old})$$
+$$\theta_{new} = \theta_{old} + \eta \nabla_{\theta} J(\theta_{old})$$
 
 其中，$J(\theta)$为损失函数，$\eta$为学习率。
 

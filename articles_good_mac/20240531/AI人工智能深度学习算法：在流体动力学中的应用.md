@@ -43,16 +43,11 @@
 
 Navier-Stokes方程是描述流体运动的偏微分方程组。在连续介质假设下，Navier-Stokes方程可以表示为：
 $$
-\\frac{\\partial \\vec{u}}{\\partial t} + (\\vec{u} \\cdot \
-abla) \\vec{u} = -\\frac{1}{\\rho} \
-abla p + \
-u \
-abla^2 \\vec{u} + \\vec{f}
+\\frac{\\partial \\vec{u}}{\\partial t} + (\\vec{u} \\cdot \nabla) \\vec{u} = -\\frac{1}{\\rho} \nabla p + \
+u \nabla^2 \\vec{u} + \\vec{f}
 $$
 其中，$\\vec{u}$ 是流体的速度场，$t$ 是时间，$\\rho$ 是流体密度，$p$ 是压力场，$\
-u$ 是动力粘性系数，$\
-abla p$ 是压力梯度，$\
-abla^2 \\vec{u}$ 是拉普拉斯算子作用在速度场上，$\\vec{f}$ 是外部力场。
+u$ 是动力粘性系数，$\nabla p$ 是压力梯度，$\nabla^2 \\vec{u}$ 是拉普拉斯算子作用在速度场上，$\\vec{f}$ 是外部力场。
 
 ### 4.2 深度学习模型
 

@@ -273,8 +273,7 @@ $$
 利用梯度下降算法，更新模型参数：
 
 $$
-\theta = \theta - \alpha \
-abla_{\theta} \mathcal{L}(\theta)
+\theta = \theta - \alpha \nabla_{\theta} \mathcal{L}(\theta)
 $$
 
 其中，$\alpha$ 为学习率。
@@ -298,8 +297,7 @@ $$
 利用梯度下降算法，更新模型参数：
 
 $$
-\theta = \theta - \alpha \
-abla_{\theta} \mathcal{L}(\theta)
+\theta = \theta - \alpha \nabla_{\theta} \mathcal{L}(\theta)
 $$
 
 其中，$\alpha$ 为学习率。
@@ -339,10 +337,10 @@ y = 1 + 0.5 * X + np.random.randn(100, 1)
 class LinearRegression:
     def __init__(self):
         selftheta = np.zeros(2)
-        
+
     def fit(self, X, y):
         selftheta = np.linalg.inv(X.T @ X) @ X.T @ y
-    
+
     def predict(self, X):
         return X @ selftheta
 
@@ -548,10 +546,10 @@ y = 1 + 0.5 * X + np.random.randn(100, 1)
 class LinearRegression:
     def __init__(self):
         selftheta = np.zeros(2)
-        
+
     def fit(self, X, y):
         selftheta = np.linalg.inv(X.T @ X) @ X.T @ y
-    
+
     def predict(self, X):
         return X @ selftheta
 

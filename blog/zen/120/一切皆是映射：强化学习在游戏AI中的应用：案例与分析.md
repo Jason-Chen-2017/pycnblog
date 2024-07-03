@@ -190,7 +190,7 @@ class QNetwork(nn.Module):
         self.fc1 = nn.Linear(4, 128)
         self.fc2 = nn.Linear(128, 64)
         self.fc3 = nn.Linear(64, env.action_space.n)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = torch.relu(self.fc2(x))
@@ -209,14 +209,14 @@ class ReplayBuffer:
     def __init__(self, capacity):
         self.capacity = capacity
         self.memory = []
-    
+
     def push(self, state, action, reward, next_state, done):
         if len(self.memory) < self.capacity:
             self.memory.append((state, action, reward, next_state, done))
         else:
             self.memory.pop(0)
             self.memory.append((state, action, reward, next_state, done))
-    
+
     def sample(self, batch_size):
         return random.sample(self.memory, batch_size)
 
@@ -228,16 +228,16 @@ def train(q_network, replay_buffer, batch_size):
     rewards = torch.tensor(rewards)
     next_states = torch.stack(next_states)
     dones = torch.tensor(dones)
-    
+
     q_values = q_network(states).gather(1, actions.unsqueeze(1)).squeeze(1)
     next_values = q_network(next_states).max(1)[0]
     targets = rewards + (1 - dones) * next_values
-    
+
     loss = criterion(q_values, targets)
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
-    
+
 # 定义学习过程
 def learn(q_network, replay_buffer, episodes=1000, batch_size=32):
     for episode in range(episodes):

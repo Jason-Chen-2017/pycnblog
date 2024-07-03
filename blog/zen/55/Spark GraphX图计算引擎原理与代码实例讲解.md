@@ -6,7 +6,7 @@
 
 在当今大数据时代,图计算已经成为了数据处理和分析的重要组成部分。许多现实世界的问题都可以用图结构表示,例如社交网络、Web链接、交通网络等。图计算可以帮助我们发现隐藏在海量数据中的复杂关系和模式,从而为决策提供有价值的洞见。
 
-### 1.2 Spark GraphX简介 
+### 1.2 Spark GraphX简介
 
 Apache Spark是一个开源的大数据处理框架,GraphX是Spark的一个图计算模块。GraphX将低级的图并行计算抽象为一个易于使用的集合运算,并提供了多种图算法的实现。GraphX可以高效地在大规模集群上执行图计算任务,为分析大规模图数据提供了强大的工具。
 
@@ -142,7 +142,7 @@ $$PR(u) = \frac{1-d}{N} + d \sum_{v \in B_u} \frac{PR(v)}{L(v)}$$
 graph LR
     A --> B
     A --> C
-    B --> C 
+    B --> C
     C --> D
 ```
 
@@ -168,7 +168,7 @@ import org.apache.spark.graphx._
 val verts = sc.parallelize(Array((1L, ("Node1", 10)), (2L, ("Node2", 20)), (3L, ("Node3", 30))))
 val vertexRDD: RDD[(VertexId, (String, Int))] = verts
 
-// 创建边集合 
+// 创建边集合
 val edges = sc.parallelize(Array(Edge(1L, 2L, 1), Edge(1L, 3L, 2), Edge(2L, 3L, 3)))
 val edgeRDD = edges
 

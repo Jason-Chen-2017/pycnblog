@@ -100,7 +100,7 @@ Transformer大模型的核心是自注意力机制，它允许模型在处理序
 
 #### 4.1.1 注意力机制
 
-- **自注意力公式**: 
+- **自注意力公式**:
 
 $$
 \text{Attention}(Q, K, V) = \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V

@@ -12,12 +12,12 @@
 #### 2.1.1 定义
 #### 2.1.2 计算公式
 #### 2.1.3 解释与理解
-### 2.2 召回率(Recall)  
+### 2.2 召回率(Recall)
 #### 2.2.1 定义
 #### 2.2.2 计算公式
 #### 2.2.3 解释与理解
 ### 2.3 F1 score
-#### 2.3.1 定义 
+#### 2.3.1 定义
 #### 2.3.2 计算公式
 #### 2.3.3 F1 score与精确率、召回率的关系
 ### 2.4 精确率-召回率曲线(PR曲线)
@@ -48,7 +48,7 @@
 ## 5. 项目实践：代码实例和详细解释说明
 ### 5.1 使用Python和Scikit-learn计算F1 score
 #### 5.1.1 二分类示例
-#### 5.1.2 多分类示例 
+#### 5.1.2 多分类示例
 #### 5.1.3 多标签分类示例
 ### 5.2 使用Python绘制PR曲线
 #### 5.2.1 绘制PR曲线的代码实现
@@ -90,7 +90,7 @@ $Precision=\frac{TP}{TP+FP}$
 
 召回率(Recall)衡量的是在所有真实为正例的样本中,被正确预测为正例的比例。公式为:
 
-$Recall=\frac{TP}{TP+FN}$  
+$Recall=\frac{TP}{TP+FN}$
 
 其中FN为假反例(False Negative)。
 
@@ -126,7 +126,7 @@ from sklearn.metrics import f1_score
 y_true = [0, 1, 2, 0, 1, 2]
 y_pred = [0, 2, 1, 0, 0, 1]
 
-print(f1_score(y_true, y_pred, average='micro'))  
+print(f1_score(y_true, y_pred, average='micro'))
 # 输出 0.33333333333333331
 
 print(f1_score(y_true, y_pred, average='macro'))
@@ -139,9 +139,9 @@ print(f1_score(y_true, y_pred, average='macro'))
 from sklearn.metrics import f1_score
 
 y_true = [[1, 0, 0], [0, 1, 1], [1, 0, 1]]
-y_pred = [[1, 0, 0], [0, 1, 0], [1, 0, 0]] 
+y_pred = [[1, 0, 0], [0, 1, 0], [1, 0, 0]]
 
-print(f1_score(y_true, y_pred, average='samples'))  
+print(f1_score(y_true, y_pred, average='samples'))
 # 输出 0.5555555555555555
 ```
 

@@ -456,4 +456,4 @@ Faster R-CNN与其他目标检测算法相比，具有以下优势：
 * **使用轻量化模型**：使用更小的模型，例如MobileNet、ShuffleNet等。
 * **使用硬件加速**：使用GPU、FPGA等硬件加速器来加速模型的推理过程。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

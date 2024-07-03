@@ -72,40 +72,40 @@ Sentence-BERT在多个NLP领域具有广泛应用，包括但不限于：
 
 在Sentence-BERT中，句子向量通过以下公式构建：
 
-$$ \\text{Sentence Embedding} = \\text{MLP}( \\text{Pooling}( \\text{BERT}( \\text{Sentence} ))) $$
+$$ \text{Sentence Embedding} = \text{MLP}( \text{Pooling}( \text{BERT}( \text{Sentence} ))) $$
 
 其中，
 
-- $\\text{BERT}( \\text{Sentence} )$ 是BERT模型对输入句子的编码输出。
-- $\\text{Pooling}( \\cdot )$ 是用于从BERT输出中提取句向量的池化操作，例如全局平均池化或全局最大池化。
-- $\\text{MLP}( \\cdot )$ 是多层感知机（Multi-Layer Perceptron），用于进一步调整句向量的维度和特征。
+- $\text{BERT}( \text{Sentence} )$ 是BERT模型对输入句子的编码输出。
+- $\text{Pooling}( \cdot )$ 是用于从BERT输出中提取句向量的池化操作，例如全局平均池化或全局最大池化。
+- $\text{MLP}( \cdot )$ 是多层感知机（Multi-Layer Perceptron），用于进一步调整句向量的维度和特征。
 
 ### 4.2 公式推导过程
 
 考虑一个句子 $s$ ，通过BERT模型编码后得到的句向量表示为：
 
-$$ \\text{BERT}(s) = [h_1, h_2, ..., h_L] $$
+$$ \text{BERT}(s) = [h_1, h_2, ..., h_L] $$
 
 其中，$L$ 是句子的词数，$h_i$ 是第$i$个词的向量表示。
 
 在Sentence-BERT中，通过池化操作获取句向量：
 
-$$ \\text{Pooling}( \\text{BERT}(s) ) = \\text{Pool}( [h_1, h_2, ..., h_L] ) $$
+$$ \text{Pooling}( \text{BERT}(s) ) = \text{Pool}( [h_1, h_2, ..., h_L] ) $$
 
 常见的池化方式包括：
 
-- **全局平均池化**：$\\text{Pool}( \\text{BERT}(s) ) = \\frac{1}{L} \\sum_{i=1}^{L} h_i$
-- **全局最大池化**：$\\text{Pool}( \\text{BERT}(s) ) = \\max_{i=1}^{L} h_i$
+- **全局平均池化**：$\text{Pool}( \text{BERT}(s) ) = \frac{1}{L} \sum_{i=1}^{L} h_i$
+- **全局最大池化**：$\text{Pool}( \text{BERT}(s) ) = \max_{i=1}^{L} h_i$
 
 随后，通过多层感知机调整句向量：
 
-$$ \\text{Sentence Embedding}(s) = \\text{MLP}( \\text{Pool}( \\text{BERT}(s) ) ) $$
+$$ \text{Sentence Embedding}(s) = \text{MLP}( \text{Pool}( \text{BERT}(s) ) ) $$
 
 ### 4.3 案例分析与讲解
 
-假设我们有一个句子集 $\\{s_1, s_2, ..., s_N\\}$ ，Sentence-BERT可以用来计算任意两个句子之间的余弦相似度，从而找出最相似的句子：
+假设我们有一个句子集 $\{s_1, s_2, ..., s_N\}$ ，Sentence-BERT可以用来计算任意两个句子之间的余弦相似度，从而找出最相似的句子：
 
-$$ \\text{Similarity}(s_i, s_j) = \\frac{\\text{Sentence Embedding}(s_i) \\cdot \\text{Sentence Embedding}(s_j)}{\\| \\text{Sentence Embedding}(s_i) \\| \\| \\text{Sentence Embedding}(s_j) \\| } $$
+$$ \text{Similarity}(s_i, s_j) = \frac{\text{Sentence Embedding}(s_i) \cdot \text{Sentence Embedding}(s_j)}{\| \text{Sentence Embedding}(s_i) \| \| \text{Sentence Embedding}(s_j) \| } $$
 
 ### 4.4 常见问题解答
 
@@ -130,15 +130,15 @@ from sentence_transformers import SentenceTransformer
 model = SentenceTransformer('distilbert-base-nli-stsb-mean-tokens')
 
 # 示例句子列表
-sentences = [\"我喜欢吃苹果\", \"我爱吃水果\", \"香蕉很好吃\"]
+sentences = ["我喜欢吃苹果", "我爱吃水果", "香蕉很好吃"]
 
 # 计算句子向量
 sentence_embeddings = model.encode(sentences)
 
 # 打印句子向量
 for i, sentence in enumerate(sentences):
-    print(f\"Sentence: {sentence}\")
-    print(f\"Embedding: {sentence_embeddings[i]}\")
+    print(f"Sentence: {sentence}")
+    print(f"Embedding: {sentence_embeddings[i]}")
     print()
 ```
 

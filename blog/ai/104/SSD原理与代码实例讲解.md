@@ -209,10 +209,10 @@ selected_boxes, selected_scores = tf.image.non_max_suppression(
 for i in range(len(selected_boxes)):
     box = selected_boxes[i].numpy()
     score = selected_scores[i].numpy()
-    
+
     # 绘制边界框
     cv2.rectangle(image, (int(box[1]), int(box[0])), (int(box[3]), int(box[2])), (0, 255, 0), 2)
-    
+
     # 显示置信度
     cv2.putText(image, f'{score:.2f}', (int(box[1]), int(box[0]) - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
 
@@ -286,10 +286,10 @@ selected_boxes, selected_scores = tf.image.non_max_suppression(
 for i in range(len(selected_boxes)):
     box = selected_boxes[i].numpy()
     score = selected_scores[i].numpy()
-    
+
     # 绘制边界框
     cv2.rectangle(image, (int(box[1]), int(box[0])), (int(box[3]), int(box[2])), (0, 255, 0), 2)
-    
+
     # 显示置信度
     cv2.putText(image, f'{score:.2f}', (int(box[1]), int(box[0]) - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
 ```
@@ -421,4 +421,4 @@ SSD算法使用预先定义的配置参数来选择最佳的默认框。这些�
 * **使用更复杂的网络结构：** 使用更复杂的网络结构，例如ResNet，可以更好地处理复杂场景。
 * **使用更先进的训练策略：** 使用更先进的训练策略，例如数据增强、迁移学习，可以提高SSD算法对复杂场景的适应性。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

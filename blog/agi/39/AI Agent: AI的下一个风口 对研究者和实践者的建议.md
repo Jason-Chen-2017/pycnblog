@@ -207,12 +207,12 @@ for episode in range(1000):
             action = env.action_space.sample()
         else:
             action = np.argmax(q_table[state])
-        
+
         next_state, reward, done, _ = env.step(action)
-        
+
         # 更新Q-table
         q_table[state, action] = (1 - learning_rate) * q_table[state, action] + learning_rate * (reward + discount_factor * np.max(q_table[next_state]))
-        
+
         state = next_state
 
 # 关闭环境

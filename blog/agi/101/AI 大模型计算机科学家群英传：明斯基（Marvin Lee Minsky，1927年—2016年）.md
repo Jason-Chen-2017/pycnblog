@@ -1,7 +1,7 @@
 
 # AI 大模型计算机科学家群英传：明斯基（Marvin Lee Minsky，1927年—2016年）
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 ### 1.1 问题的由来

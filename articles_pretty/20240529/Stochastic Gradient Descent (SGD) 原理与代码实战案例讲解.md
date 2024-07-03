@@ -18,8 +18,7 @@ SGD 算法首先由 Robbins & Monro 在 1951 年提出，但是当时其应用�
 
 $$
 \\min_{x} f(x): \\text{ subject to } x_0 \\in R^n \\\\
-x_{k+1}=x_k-\\alpha\
-abla f(x_k), k=0, 1,\\cdots
+x_{k+1}=x_k-\\alpha\nabla f(x_k), k=0, 1,\\cdots
 $$
 
 图 1. 二维平面上 t = 0 处的函数 f(t) 及其第一阶导数 f'(t)
@@ -32,8 +31,7 @@ $$
 Batch Gradient Descent 是一种批量样本æ¢¯度下降算法，其每次迭代都在所有数据 samples 上计算æ¢¯度并进行更新。
 
 $$
-x_{k+1}=x_k - \\frac{\\eta}{m}\\sum_{i=1}^m \
-abla f(\\mathbf{x}; \\mathbf{z}_i)
+x_{k+1}=x_k - \\frac{\\eta}{m}\\sum_{i=1}^m \nabla f(\\mathbf{x}; \\mathbf{z}_i)
 $$
 
 其中 $\\mathbf{x}$ 是待优化参数，$\\mathbf{z}_i$ 是第 i 个 sample，m 是总共的 sample 数。$\\eta$ 称为学习率，决定了每次迭代取多少步长来减小目标函数的误差。
@@ -43,8 +41,7 @@ $$
 Stochastic Gradient Descent (SGD) 是一种随机采样æ¢¯度下降算法，每次迭代只选取一个或几个 sample 来计算æ¢¯度并进行更新。这意味着 SGD 需要更少的内存和计算资源，而且可以更加灵活地调节学习率。
 
 $$
-x_{k+1}=x_k -\\eta_k \
-abla f(\\mathbf{x}; \\mathbf{z}_{s(k)}),\\quad s(k)\\sim U[1, m]
+x_{k+1}=x_k -\\eta_k \nabla f(\\mathbf{x}; \\mathbf{z}_{s(k)}),\\quad s(k)\\sim U[1, m]
 $$
 
 其中 $s(k)$ 是一个随机变量，表示每次迭代选择的样例索引，均å分布在 $[1, m]$ 之间。$\\eta_k$ 是每次迭代的学习率，通常是递减的，因此可以避免é·入局部最小值。
@@ -76,8 +73,7 @@ $$
 
 $$
 \\begin{aligned}
-\
-abla_\\mathbf{w} J &= \\frac{dJ}{dw_j}=\\frac{1}{m}\\sum_{i=1}^m\\left[(y_i-\\mathbf{w}^\\top\\mathbf{x}_i) x_{ij}\\right]\\text{ for } j = 1,\\ldots, n \\\\
+\nabla_\\mathbf{w} J &= \\frac{dJ}{dw_j}=\\frac{1}{m}\\sum_{i=1}^m\\left[(y_i-\\mathbf{w}^\\top\\mathbf{x}_i) x_{ij}\\right]\\text{ for } j = 1,\\ldots, n \\\\
 &= \\frac{1}{m}(\\mathbf{X}^\\top \\mathbf{Y}- \\mathbf{X}^\\top\\mathbf{X}\\mathbf{w}),
 \\end{aligned}
 $$
@@ -87,8 +83,7 @@ $$
 接下来，我们计算æ¢¯度下降方程：
 
 $$
-\\Delta \\mathbf{w} =\\alpha \
-abla_\\mathbf{w} J = - \\alpha\\left[\\frac{\\mathbf{X}^\\top \\mathbf{Y}}{m}- \\frac{\\mathbf{X}^\\top\\mathbf{X}}{m}\\mathbf{w}\\right].
+\\Delta \\mathbf{w} =\\alpha \nabla_\\mathbf{w} J = - \\alpha\\left[\\frac{\\mathbf{X}^\\top \\mathbf{Y}}{m}- \\frac{\\mathbf{X}^\\top\\mathbf{X}}{m}\\mathbf{w}\\right].
 $$
 
 最后，我们更新 $\\mathbf{w}$:

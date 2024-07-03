@@ -15,7 +15,7 @@
 大数据具有4V特征:
 
 - 海量(Volume)
-- 多样(Variety) 
+- 多样(Variety)
 - 高速(Velocity)
 - 价值(Value)
 
@@ -59,7 +59,7 @@ MapReduce是分布式并行编程模型,用于大规模数据集的并行运算�
 - Map阶段: 将输入数据拆分,并行处理产生中间数据
 - Reduce阶段: 对Map阶段输出的中间数据进行汇总
 
-### 2.4 资源管理 - YARN 
+### 2.4 资源管理 - YARN
 
 YARN(Yet Another Resource Negotiator)是Hadoop的资源管理和调度系统,负责集群资源管理和作业调度。
 
@@ -67,7 +67,7 @@ YARN(Yet Another Resource Negotiator)是Hadoop的资源管理和调度系统,负
 - NodeManager: 每个节点的资源管理器
 - ApplicationMaster: 每个应用程序的资源协调者
 
-## 3.核心算法原理具体操作步骤  
+## 3.核心算法原理具体操作步骤
 
 ### 3.1 MapReduce算法原理
 
@@ -106,7 +106,7 @@ Spark采用了基于内存的计算模型,性能更优。其核心是RDD(Resilie
 3. **行动操作**
    - 对RDD计算后输出结果或将结果存储
 
-### 3.3 Flink算法原理  
+### 3.3 Flink算法原理
 
 Flink是新一代流式处理框架,支持有状态计算。其核心是流(Stream)和状态(State)。
 
@@ -190,7 +190,7 @@ public static class TokenizerMapper
     }
   }
 
-// Reducer类  
+// Reducer类
 public static class IntSumReducer
        extends Reducer<Text,IntWritable,Text,IntWritable> {
     private IntWritable result = new IntWritable();

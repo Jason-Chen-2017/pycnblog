@@ -108,7 +108,7 @@ $$G(x) = \text{Conv}(x)$$
 
 在CIFAR-10任务中，假设使用ResNet-18，可以使用以下公式表示模型结构：
 
-\[F(x) = x + \text{ResBlock}(x)\]
+$$F(x) = x + \text{ResBlock}(x)$$
 
 其中，\(\text{ResBlock}\) 是一个包含多个卷积层和激活函数的模块。
 
@@ -142,7 +142,7 @@ import torch.optim as optim
 ```python
 class BasicBlock(nn.Module):
     expansion = 1
-    
+
     def __init__(self, in_planes, planes, stride=1):
         super(BasicBlock, self).__init__()
         self.conv1 = nn.Conv2d(in_planes, planes, kernel_size=3, stride=stride, padding=1, bias=False)

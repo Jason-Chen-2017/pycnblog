@@ -114,8 +114,7 @@
 - **交叉熵损失**：衡量两个概率分布之间的差异，公式为：$H(p, q) = -\sum_x p(x) \log q(x)$。
 
 #### 模型优化
-- **梯度下降**：通过最小化损失函数寻找最优参数，公式为：$\theta_{new} = \theta_{old} - \alpha \cdot \
-abla_\theta J(\theta)$，其中$\alpha$为学习率。
+- **梯度下降**：通过最小化损失函数寻找最优参数，公式为：$\theta_{new} = \theta_{old} - \alpha \cdot \nabla_\theta J(\theta)$，其中$\alpha$为学习率。
 
 ### 4.3 案例分析与讲解
 

@@ -46,7 +46,7 @@ LSTM可以用以下数学公式来表示:
 $i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i)$
 
 遗忘门:
-$f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)$  
+$f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)$
 
 输出门:
 $o_t = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o)$

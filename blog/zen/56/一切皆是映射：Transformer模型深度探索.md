@@ -3,7 +3,7 @@
 ## 1. 背景介绍
 ### 1.1 深度学习的发展历程
 #### 1.1.1 早期神经网络模型
-#### 1.1.2 卷积神经网络的崛起  
+#### 1.1.2 卷积神经网络的崛起
 #### 1.1.3 循环神经网络的应用
 ### 1.2 自然语言处理的挑战
 #### 1.2.1 语言的复杂性和多样性
@@ -35,7 +35,7 @@
 ## 3. 核心算法原理具体操作步骤
 ### 3.1 Transformer的整体架构
 #### 3.1.1 编码器(Encoder)
-#### 3.1.2 解码器(Decoder) 
+#### 3.1.2 解码器(Decoder)
 #### 3.1.3 编码器-解码器结构
 ### 3.2 Multi-Head Attention
 #### 3.2.1 Multi-Head Attention的概念
@@ -59,7 +59,7 @@ $$
 其中，$Q$, $K$, $V$ 分别表示查询(Query)、键(Key)、值(Value)矩阵，$d_k$表示键向量的维度。
 #### 4.1.2 注意力机制的直观解释
 #### 4.1.3 注意力权重的计算与归一化
-### 4.2 Self-Attention的数学表示  
+### 4.2 Self-Attention的数学表示
 #### 4.2.1 Self-Attention的矩阵计算
 $$
 SelfAttention(X) = Attention(XW^Q, XW^K, XW^V)
@@ -113,20 +113,20 @@ class TransformerEncoder(nn.Module):
         super(TransformerEncoder, self).__init__()
         self.layers = nn.ModuleList([EncoderLayer(d_model, num_heads, d_ff, dropout) for _ in range(num_layers)])
         self.norm = nn.LayerNorm(d_model)
-        
+
     def forward(self, x, mask=None):
         for layer in self.layers:
             x = layer(x, mask)
         return self.norm(x)
 ```
 #### 5.2.2 解码器的实现
-```python  
+```python
 class TransformerDecoder(nn.Module):
     def __init__(self, num_layers, d_model, num_heads, d_ff, dropout=0.1):
         super(TransformerDecoder, self).__init__()
         self.layers = nn.ModuleList([DecoderLayer(d_model, num_heads, d_ff, dropout) for _ in range(num_layers)])
         self.norm = nn.LayerNorm(d_model)
-        
+
     def forward(self, x, memory, src_mask=None, tgt_mask=None):
         for layer in self.layers:
             x = layer(x, memory, src_mask, tgt_mask)
@@ -143,17 +143,17 @@ class MultiHeadAttention(nn.Module):
         self.linears = clones(nn.Linear(d_model, d_model), 4)
         self.attn = None
         self.dropout = nn.Dropout(p=dropout)
-        
+
     def forward(self, query, key, value, mask=None):
         if mask is not None:
             mask = mask.unsqueeze(1)
         nbatches = query.size(0)
-        
+
         query, key, value = [l(x).view(nbatches, -1, self.num_heads, self.d_k).transpose(1, 2)
                              for l, x in zip(self.linears, (query, key, value))]
-        
+
         x, self.attn = attention(query, key, value, mask=mask, dropout=self.dropout)
-        
+
         x = x.transpose(1, 2).contiguous().view(nbatches, -1, self.num_heads * self.d_k)
         return self.linears[-1](x)
 ```
@@ -176,7 +176,7 @@ class MultiHeadAttention(nn.Module):
 #### 6.3.2 Transformer捕捉情感信息的机制
 #### 6.3.3 Transformer在情感分析任务中的表现
 ### 6.4 问答系统
-#### 6.4.1 Transformer在问答系统中的应用 
+#### 6.4.1 Transformer在问答系统中的应用
 #### 6.4.2 Transformer生成答案的过程
 #### 6.4.3 Transformer在问答任务中的效果评估
 
@@ -202,7 +202,7 @@ class MultiHeadAttention(nn.Module):
 ### 8.1 Transformer的优势与局限
 #### 8.1.1 Transformer的优势总结
 #### 8.1.2 Transformer面临的挑战与局限
-#### 8.1.3 Transformer的改进方向 
+#### 8.1.3 Transformer的改进方向
 ### 8.2 Transformer的扩展与变体
 #### 8.2.1 基于Transformer的预训练语言模型
 #### 8.2.2 Transformer在多模态任务中的应用

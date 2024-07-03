@@ -3,7 +3,7 @@
 作者：禅与计算机程序设计艺术
 
 ## 1. 背景介绍
-   
+
 ### 1.1 文本聚类的重要性
 在当今大数据时代,海量的文本数据正以前所未有的速度增长。如何从这些文本数据中挖掘出有价值的信息,成为了一个重要的研究课题。文本聚类作为一种无监督学习方法,可以将相似的文本自动归类到同一个簇中,从而帮助我们快速发现文本数据内在的结构和关系。
 
@@ -14,7 +14,7 @@ K-Means是一种经典的聚类算法,由于其简单高效的特点,在文本�
 K-Means文本聚类可以应用于多个领域,例如:
 
 - 新闻分类:将海量新闻自动分类到不同主题,方便用户浏览和检索
-- 社交媒体分析:对社交网络上的用户评论进行聚类,发现热点话题和用户情感倾向  
+- 社交媒体分析:对社交网络上的用户评论进行聚类,发现热点话题和用户情感倾向
 - 客户细分:根据客户反馈文本,将客户划分为不同群体,实现精准营销
 - 文献组织:对科研文献进行聚类,发现研究热点和前沿方向
 
@@ -34,7 +34,7 @@ $$\cos(\vec{d_1},\vec{d_2}) = \frac{\vec{d_1} \cdot \vec{d_2}}{\lVert \vec{d_1} 
 
 其中$\vec{d_1}$和$\vec{d_2}$是两个文档的向量表示。余弦相似度取值范围为[0,1],值越大表示文本越相似。
 
-### 2.3 聚类评估指标 
+### 2.3 聚类评估指标
 为了评估聚类结果的好坏,需要使用一些评估指标。常见的指标有:
 
 - 轮廓系数(Silhouette Coefficient):衡量簇内聚合度和簇间分离度的平衡
@@ -132,7 +132,7 @@ $$s_i = \frac{b_i - a_i}{max(a_i, b_i)}$$
 
 例如,假设有3个簇,每个簇分别包含以下样本:
 - 簇1: [0.1, 0.2, 0.15]
-- 簇2: [0.7, 0.6, 0.8] 
+- 簇2: [0.7, 0.6, 0.8]
 - 簇3: [0.4, 0.3]
 
 对于簇1中的样本0.1,其$a_i$为:
@@ -194,7 +194,7 @@ print("Clustering result:", labels)
 ```python
 from sklearn.metrics import silhouette_score
 
-# 计算轮廓系数 
+# 计算轮廓系数
 silhouette = silhouette_score(X, labels)
 print("Silhouette Coefficient:", silhouette)
 
@@ -202,7 +202,7 @@ print("Silhouette Coefficient:", silhouette)
 clusters = [[] for _ in range(2)]
 for i, label in enumerate(labels):
     clusters[label].append(texts[i])
-    
+
 for i, cluster in enumerate(clusters):
     print(f"Cluster {i}:")
     for text in cluster:

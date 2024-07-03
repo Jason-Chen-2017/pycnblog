@@ -1,4 +1,4 @@
-                 
+
 # Zookeeper与分布式通知中心的实现与应用
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -159,36 +159,36 @@ import pyzmq
 def register_watcher(zk_url, path):
     context = pyzmq.Context()
     socket = context.socket(pyzmq.REQ)
-    
+
     # 连接到Zookeeper服务
     socket.connect(f'tcp://{zk_url}')
-    
+
     while True:
         try:
             # 注册Watcher
             socket.send_multipart([b'REGISTER', path.encode()])
             response = socket.recv_multipart()
             print("Watcher registered with", response[1].decode())
-            
+
             # 监听事件（这里简化了实际逻辑）
             event = input("Enter 'watch' to monitor events: ")
             if event.lower() == 'watch':
                 watch_socket = context.socket(pyzmq.PUB)
                 watch_socket.bind('tcp://*:6789')
-                
+
                 def on_event(event_type, data):
                     message = f"Event type: {event_type.decode()}, Data: {data.decode()}"
                     watch_socket.send_string(message)
-                    
+
                 zk.set_watcher(on_event)
-                
+
                 while True:
                     # 循环获取事件通知
                     msg = socket.recv_multipart()
                     print("Received:", msg[-1].decode())
         except KeyboardInterrupt:
             break
-        
+
     socket.close()
     context.term()
 
@@ -217,12 +217,12 @@ Zookeeper的应用场景广泛，特别适用于以下领域：
 
 - **官方文档**：Apache Zookeeper官方文档提供了详细的API参考和使用指南。
 - **在线教程**：例如Udemy、Coursera上的课程，专门针对Zookeeper进行深入学习。
-  
+
 ### 7.2 开发工具推荐
 
 - **IDE**：IntelliJ IDEA、Eclipse等支持Java开发的强大工具。
 - **版本控制**：Git用于项目管理和协同工作。
-  
+
 ### 7.3 相关论文推荐
 
 - **《Zookeeper: Evolving Distributed Systems》**

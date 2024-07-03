@@ -1,4 +1,4 @@
-                 
+
 # Python机器学习实战：解析机器学习模型的可解释性与透明度
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -149,7 +149,7 @@ from shap import TreeExplainer, summary_plot
 
 # 数据加载和预处理
 data = pd.read_csv('bank_churn_data.csv')
-features = ['age', 'balance', 'duration', 'campaign', 'pdays', 'previous', 'emp.var.rate', 'cons.price.idx', 
+features = ['age', 'balance', 'duration', 'campaign', 'pdays', 'previous', 'emp.var.rate', 'cons.price.idx',
             'cons.conf.idx', 'euribor3m', 'nr.employed']
 X = data[features]
 y = (data['churn'] == 'yes').astype(int)

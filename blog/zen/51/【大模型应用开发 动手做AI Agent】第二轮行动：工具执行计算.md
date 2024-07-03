@@ -105,7 +105,7 @@ class ToolInterface:
     def __init__(self, name, func):
         self.name = name
         self.func = func
-    
+
     def run(self, args):
         return self.func(args)
 
@@ -126,31 +126,31 @@ search_tool = ToolInterface("SearchEngine", search_engine)
 class TaskPlanner:
     def __init__(self, tools):
         self.tools = tools
-    
+
     def plan(self, task):
         # 解析任务,生成提示
         prompt = self.parse_task(task)
-        
+
         # 调用语言模型,生成工具使用序列
         tool_sequence = self.generate_tool_sequence(prompt)
-        
+
         # 依次执行工具,获取结果
         result = []
         for tool_name, tool_input in tool_sequence:
             tool = self.get_tool(tool_name)
             output = tool.run(tool_input)
             result.append(output)
-        
+
         return result
-    
+
     def parse_task(self, task):
         # 实现任务解析逻辑
         pass
-    
+
     def generate_tool_sequence(self, prompt):
         # 实现工具序列生成逻辑
         pass
-    
+
     def get_tool(self, name):
         for tool in self.tools:
             if tool.name == name:

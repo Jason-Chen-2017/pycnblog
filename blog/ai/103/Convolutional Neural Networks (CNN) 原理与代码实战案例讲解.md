@@ -425,4 +425,4 @@ CNN 的网络结构取决于任务需求和数据特征。一般来说，对于�
 * **将语音信号转换成声谱图**：使用短时傅里叶变换将语音信号转换成声谱图。
 * **使用 CNN 来提取语音特征**：使用 CNN 来提取语音特征，并使用其他算法进行识别。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

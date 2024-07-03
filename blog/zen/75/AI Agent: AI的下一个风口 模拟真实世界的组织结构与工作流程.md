@@ -137,7 +137,7 @@ class WarehouseAgent:
         self.learning_rate = learning_rate
         self.gamma = gamma
         self.model = self.build_model()
-        
+
     def build_model(self):
         model = tf.keras.Sequential([
             tf.keras.layers.Dense(64, activation='relu'),
@@ -147,7 +147,7 @@ class WarehouseAgent:
         model.compile(optimizer=tf.optimizers.Adam(learning_rate=self.learning_rate),
                       loss='mse')
         return model
-    
+
     def choose_action(self, state):
         state = np.array(state).reshape(-1, len(state))
         actions_values = self.model.predict(state)

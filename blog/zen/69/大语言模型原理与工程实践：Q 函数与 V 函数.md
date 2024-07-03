@@ -81,7 +81,7 @@ V(s) = \max_{a} [R(s, a) + \gamma \sum_{s'} P(s' | s, a) V(s')]
 $$
 
 $$
-Q(s, a) = R(s, a) + \gamma \sum_{s'} P(s' | s, a) \max_{a'} Q(s', a') 
+Q(s, a) = R(s, a) + \gamma \sum_{s'} P(s' | s, a) \max_{a'} Q(s', a')
 $$
 
 其中，$R(s, a)$ 表示在状态 $s$ 执行动作 $a$ 后获得的奖励，$P(s' | s, a)$ 表示在状态 $s$ 执行动作 $a$ 后转移到状态 $s'$ 的概率。

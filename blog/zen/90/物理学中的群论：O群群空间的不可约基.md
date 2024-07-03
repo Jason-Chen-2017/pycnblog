@@ -134,7 +134,7 @@ $$
 首先，选择基向量v = (1, 0)^T。对于O(2)群中的元素，我们有：
 
 $$
-R(\theta) = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix},
+R(\theta) = \begin{pmatrix} \cos\theta & -\sin\theta \ \sin\theta & \cos\theta \end{pmatrix},
 $$
 
 其中$\theta$是旋转角度。
@@ -148,7 +148,7 @@ $$
 对R(θ)v进行正交化处理，得到正交向量集：
 
 $$
-\{v_1, v_2\} = \left\{\begin{pmatrix} \cos\frac{\theta}{2} \\ \sin\frac{\theta}{2} \end{pmatrix}, \begin{pmatrix} -\sin\frac{\theta}{2} \\ \cos\frac{\theta}{2} \end{pmatrix}\right\}.
+\{v_1, v_2\} = \left\{\begin{pmatrix} \cos\frac{\theta}{2} \ \sin\frac{\theta}{2} \end{pmatrix}, \begin{pmatrix} -\sin\frac{\theta}{2} \ \cos\frac{\theta}{2} \end{pmatrix}\right\}.
 $$
 
 我们可以验证，这两个向量组成了一个2维不可约子空间，即为O(2)群的不可约基。

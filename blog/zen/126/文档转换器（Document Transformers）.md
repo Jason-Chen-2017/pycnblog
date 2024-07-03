@@ -292,4 +292,4 @@ print(output_text)
 
 答：文档转换器可以用于办公自动化、信息检索、知识图谱构建、数字图书馆等商业场景。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

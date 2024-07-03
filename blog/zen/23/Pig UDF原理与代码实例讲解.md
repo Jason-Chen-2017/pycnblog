@@ -1,4 +1,4 @@
-                 
+
 # Pig UDF原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -105,16 +105,16 @@ Pig UDF广泛应用于各种大数据处理场景，特别是：
 ```java
 public class LinearRegressionUDF extends EvalFunc<Double> {
     private double[] coefficients;
-    
+
     public void init() {
         // 初始化系数数组（此处省略）
     }
-    
+
     @Override
     public Double evaluate(Double x, Double y) {
         return computePrediction(x);
     }
-    
+
     private double computePrediction(double x) {
         double prediction = 0;
         for (int i = 0; i < coefficients.length; i++) {

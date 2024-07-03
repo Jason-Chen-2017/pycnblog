@@ -92,17 +92,17 @@ DQN广泛应用于游戏、机器人控制、自动驾驶、医疗健康、经�
 
 DQN模型构建依赖于深度神经网络，其中Q网络的主要数学模型可以表示为：
 
-$$ Q_\\theta(s, a) = \\mathbf{W}^T \\cdot \\mathbf{f}(s, a) $$
+$$ Q_\theta(s, a) = \mathbf{W}^T \cdot \mathbf{f}(s, a) $$
 
-其中，$\\mathbf{W}$是权重矩阵，$\\mathbf{f}(s, a)$是特征函数，将状态$s$和动作$a$映射到特征空间。
+其中，$\mathbf{W}$是权重矩阵，$\mathbf{f}(s, a)$是特征函数，将状态$s$和动作$a$映射到特征空间。
 
 ### 4.2 公式推导过程
 
 Q学习的目标是最大化长期奖励，公式表示为：
 
-$$ J(\\theta) = \\mathbb{E}_{s,a,r,s'}[\\sum_{t=0}^\\infty \\gamma^t r_t] $$
+$$ J(\theta) = \mathbb{E}_{s,a,r,s'}[\sum_{t=0}^\infty \gamma^t r_t] $$
 
-其中，$\\gamma$是折扣因子，$\\mathbb{E}$表示期望。
+其中，$\gamma$是折扣因子，$\mathbb{E}$表示期望。
 
 ### 4.3 案例分析与讲解
 
@@ -201,10 +201,10 @@ class DQN:
                 if done:
                     break
             self.update_epsilon()
-            print(f\"Episode {episode + 1}/{episodes}, Score: {time}\")
+            print(f"Episode {episode + 1}/{episodes}, Score: {time}")
         self.save_weights('weights.h5')
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     env = MazeEnv()
     agent = DQN(env.state_space, env.action_space, learning_rate=0.001, gamma=0.95, epsilon=1.0, batch_size=32, buffer_size=100000)
     agent.train(env, episodes=500)

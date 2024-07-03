@@ -197,7 +197,7 @@ for i_episode in range(num_episodes):
 
 1. 博客：Andrej Karpathy的“Deep Reinforcement Learning: Pong from Pixels”
 
-2. 视频：Siraj Raval的“Deep Q Learning for Video Games” 
+2. 视频：Siraj Raval的“Deep Q Learning for Video Games”
 
 3. 论坛：Reddit的/r/MachineLearning板块
 

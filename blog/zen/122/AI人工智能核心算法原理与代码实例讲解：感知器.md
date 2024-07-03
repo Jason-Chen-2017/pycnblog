@@ -198,7 +198,7 @@ plt.show()
     * edX 上的《人工智能导论》课程
 
 ### 7.2  开发工具推荐
-* **Python:** 
+* **Python:**
     * NumPy
     * Scikit-learn
     * TensorFlow
@@ -246,5 +246,5 @@ plt.show()
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

@@ -300,4 +300,4 @@ Transformer模型的解码器部分也面临着一些挑战：
 
 解码器可以通过掩码机制来实现并行计算，即在每个时间步只计算当前词及之前词的注意力权重。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

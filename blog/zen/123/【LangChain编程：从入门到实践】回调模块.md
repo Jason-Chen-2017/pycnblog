@@ -241,4 +241,4 @@ Why don't scientists trust atoms? Because they make up everything!
 * **如何使用多个观察者？**
     * 可以使用 `chain.add_observer()` 或 `tool.add_observer()` 方法多次注册观察者。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

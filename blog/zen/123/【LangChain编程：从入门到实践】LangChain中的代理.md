@@ -1,6 +1,6 @@
 # 【LangChain编程：从入门到实践】LangChain中的代理
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -411,4 +411,4 @@ The capital of France is Paris.
 * **优化代理的策略函数：**  例如，使用更加合理的策略函数，选择合适的工具和链。
 * **使用更加高效的算法：**  例如，使用更加高效的算法来处理工具或链的调用结果。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

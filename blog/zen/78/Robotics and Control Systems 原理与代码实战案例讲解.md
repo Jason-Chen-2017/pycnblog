@@ -231,12 +231,12 @@ def simulate_PID_controller(T_setpoint, initial_T, Kp, Ki, Kd, dt, t_end):
     T_measured = np.zeros_like(time)
     T_measured[0] = initial_T
     last_error = 0
-    
+
     for t in time[:-1]:
         control_signal = pid_controller(T_setpoint, T_measured[t], Kp, Ki, Kd)
         next_T = T_measured[t] + control_signal * dt
         T_measured[t+1] = next_T
-    
+
     return time, T_measured
 
 if __name__ == "__main__":
@@ -247,7 +247,7 @@ if __name__ == "__main__":
     Kd = 0.1
     dt = 0.1
     t_end = 100
-    
+
     time, measured_T = simulate_PID_controller(T_setpoint, initial_T, Kp, Ki, Kd, dt, t_end)
     plt.plot(time, measured_T)
     plt.xlabel('Time (s)')

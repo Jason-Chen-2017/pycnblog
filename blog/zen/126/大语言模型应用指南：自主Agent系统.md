@@ -402,4 +402,4 @@ LLM 应用于自主 Agent 系统的研究还面临着一些挑战：
 * **模型加速：** 使用模型加速技术，例如 GPU 加速、分布式训练等，可以提高 LLM 模型的运行速度，降低其计算资源消耗。
 * **云计算平台：** 使用云计算平台，例如 AWS、Azure、GCP 等，可以获得更强大的计算资源，支持 LLM 模型的训练和运行。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

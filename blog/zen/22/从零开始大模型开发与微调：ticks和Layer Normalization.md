@@ -1,4 +1,4 @@
-                 
+
 # 从零开始大模型开发与微调：ticks和Layer Normalization
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

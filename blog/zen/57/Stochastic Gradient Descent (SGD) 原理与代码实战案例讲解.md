@@ -15,7 +15,7 @@
 #### 2.1.1 SGD的定义
 #### 2.1.2 SGD与BGD的区别
 #### 2.1.3 SGD的优缺点
-### 2.2 小批量随机梯度下降(Mini-batch SGD) 
+### 2.2 小批量随机梯度下降(Mini-batch SGD)
 #### 2.2.1 Mini-batch SGD的定义
 #### 2.2.2 Mini-batch size的选择
 #### 2.2.3 Mini-batch SGD的优缺点
@@ -71,7 +71,7 @@
 #### 6.1.1 矩阵分解
 #### 6.1.2 因子分解机(FFM)
 #### 6.1.3 深度学习推荐模型
-### 6.2 自然语言处理中的SGD应用 
+### 6.2 自然语言处理中的SGD应用
 #### 6.2.1 word2vec
 #### 6.2.2 语言模型
 #### 6.2.3 机器翻译
@@ -150,29 +150,29 @@ class LogisticRegression(nn.Module):
     def __init__(self, input_size):
         super(LogisticRegression, self).__init__()
         self.linear = nn.Linear(input_size, 1)
-    
+
     def forward(self, x):
         out = torch.sigmoid(self.linear(x))
         return out
 
 # 定义数据
-X = torch.randn(100, 10) 
+X = torch.randn(100, 10)
 y = torch.randint(0, 2, (100,)).float().unsqueeze(1)
 
-# 初始化模型和优化器  
+# 初始化模型和优化器
 model = LogisticRegression(10)
 criterion = nn.BCELoss()
 optimizer = optim.SGD(model.parameters(), lr=0.01)
 
 # 训练模型
 for epoch in range(100):
-    y_pred = model(X) 
+    y_pred = model(X)
     loss = criterion(y_pred, y)
-    
+
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
-    
+
     if (epoch+1) % 10 == 0:
         print(f'Epoch [{epoch+1}/100], Loss: {loss.item():.4f}')
 ```

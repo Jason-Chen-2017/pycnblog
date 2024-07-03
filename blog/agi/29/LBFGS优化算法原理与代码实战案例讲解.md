@@ -52,7 +52,7 @@ L-BFGS算法的核心在于使用有限数量的历史梯度信息来近似Hessi
 
 3. 更新搜索方向：使用L-BFGS算法近似Hessian矩阵的逆，从而得到搜索方向$d_k$。
 
-4. 更新搜索点：找到步长$\\alpha_k$，使得$x_{k+1} = x_k + \\alpha_k d_k$。
+4. 更新搜索点：找到步长$\alpha_k$，使得$x_{k+1} = x_k + \alpha_k d_k$。
 
 5. 检查停止条件：如果满足预定的收敛标准（如梯度接近零或达到最大迭代次数），则结束；否则，重复步骤2至4。
 
@@ -86,18 +86,18 @@ L-BFGS算法的核心在于近似Hessian矩阵的逆。设$m$是历史梯度信�
 
 - **历史搜索方向**：$s_i = x_i - x_{i-1}$，其中$i = k-m+1, ..., k$。
 
-- **构建L-BFGS矩阵**：$B_k$是一个$m\\times m$的矩阵，通过以下方式更新：
+- **构建L-BFGS矩阵**：$B_k$是一个$m\times m$的矩阵，通过以下方式更新：
 
-   \\[
-   B_k = \\begin{bmatrix}
-   b_{11} & b_{12} & \\cdots & b_{1m} \\\\
-   b_{21} & b_{22} & \\cdots & b_{2m} \\\\
-   \\vdots & \\vdots & \\ddots & \\vdots \\\\
-   b_{m1} & b_{m2} & \\cdots & b_{mm}
-   \\end{bmatrix}
-   \\]
+   $$
+   B_k = \begin{bmatrix}
+   b_{11} & b_{12} & \cdots & b_{1m} \\\
+   b_{21} & b_{22} & \cdots & b_{2m} \\\
+   \vdots & \vdots & \ddots & \vdots \\\
+   b_{m1} & b_{m2} & \cdots & b_{mm}
+   \end{bmatrix}
+   $$
 
-   其中，$b_{ij} = \\frac{g_i^\\top s_j}{s_j^\\top s_j}$。
+   其中，$b_{ij} = \frac{g_i^\top s_j}{s_j^\top s_j}$。
 
 - **搜索方向**：$d_k = -B_k g_k$。
 

@@ -4,12 +4,12 @@
 
 ### 1.1 人工智能的发展历程
 #### 1.1.1 早期的人工智能
-#### 1.1.2 机器学习的崛起 
+#### 1.1.2 机器学习的崛起
 #### 1.1.3 深度学习的突破
 
 ### 1.2 自然语言处理的演进
 #### 1.2.1 基于规则的方法
-#### 1.2.2 统计语言模型 
+#### 1.2.2 统计语言模型
 #### 1.2.3 神经网络语言模型
 
 ### 1.3 GPT系列模型的诞生
@@ -91,7 +91,7 @@ openai.api_key = "your_api_key"
 ```python
 prompt = "Once upon a time"
 response = openai.Completion.create(
-    engine="davinci", 
+    engine="davinci",
     prompt=prompt,
     max_tokens=100,
     n=1,
@@ -128,7 +128,7 @@ messages = [
 while True:
     reply = chat_with_gpt4(messages)
     print(f"Assistant: {reply}")
-    
+
     user_input = input("User: ")
     messages.append({"role": "assistant", "content": reply})
     messages.append({"role": "user", "content": user_input})
@@ -200,7 +200,7 @@ GPT-4 API的并发限制取决于您的订阅计划。免费试用版有较低�
 graph TD
 A[输入文本] --> B{Transformer编码器}
 B --> C[自注意力层]
-C --> D[前馈神经网络层] 
+C --> D[前馈神经网络层]
 D --> E{Transformer解码器}
 E --> F[自注意力层]
 F --> G[编码器-解码器注意力层]

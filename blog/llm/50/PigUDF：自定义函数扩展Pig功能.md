@@ -69,7 +69,7 @@ public Integer exec(Tuple input) throws IOException {
   if (input == null || input.size() == 0) {
     return null;
   }
-  
+
   String str = (String)input.get(0);
   return str.length();
 }
@@ -126,7 +126,7 @@ def tfidf(bag_of_docs):
     doc_count = len(bag_of_docs)
     df = {}
     tf = []
-    
+
     for doc in bag_of_docs:
         doc_tf = {}
         doc_tokens = doc.split()
@@ -140,7 +140,7 @@ def tfidf(bag_of_docs):
                 else:
                     df[token] = 1
         tf.append(doc_tf)
-        
+
     tfidf = []
     for doc_tf in tf:
         doc_tfidf = []
@@ -148,7 +148,7 @@ def tfidf(bag_of_docs):
             score = freq * math.log(doc_count / df[token])
             doc_tfidf.append((token, score))
         tfidf.append(doc_tfidf)
-        
+
     return tfidf
 ```
 

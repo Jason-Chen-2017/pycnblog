@@ -111,15 +111,15 @@ DQN的数学模型主要包括以下几个部分：
 
 DQN的目标是最大化累积奖励，即：
 
-$$\\max_{\\pi} \\mathbb{E}[\\sum_{t=0}^\\infty r_t | \\pi]$$
+$$\max_{\pi} \mathbb{E}[\sum_{t=0}^\infty r_t | \pi]$$
 
-其中，$\\pi$表示策略，$r_t$表示在第t个时间步的奖励。
+其中，$\pi$表示策略，$r_t$表示在第t个时间步的奖励。
 
 根据贝尔曼最优原理（Bellman's Optimality Principle），我们有：
 
-$$Q^*(s, a) = \\mathbb{E}[r_t + \\gamma \\max_{a'} Q^*(s', a') | s, a]$$
+$$Q^*(s, a) = \mathbb{E}[r_t + \gamma \max_{a'} Q^*(s', a') | s, a]$$
 
-其中，$Q^*(s, a)$表示在最优策略下，状态s下采取动作a的期望累积奖励，$\\gamma$表示折现因子。
+其中，$Q^*(s, a)$表示在最优策略下，状态s下采取动作a的期望累积奖励，$\gamma$表示折现因子。
 
 通过求解上述优化问题，我们可以得到最优的状态-动作价值函数$Q^*$。
 

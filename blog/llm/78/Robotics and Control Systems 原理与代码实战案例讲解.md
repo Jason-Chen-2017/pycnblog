@@ -1,7 +1,7 @@
 
 # Robotics and Control Systems 原理与代码实战案例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 关键词：
 机器人技术，控制系统，嵌入式系统，算法设计，代码实现，案例研究
@@ -228,15 +228,15 @@ t = 0:0.01:20;
 for i = 1:length(t)
     theta = theta0;
     omega = omega0;
-    
+
     % 求解微分方程
     theta = theta + 0.01 * (g/l * sin(theta) + u(i)/(m));
     omega = omega + 0.01 * (g/l * cos(theta) + u(i)/(m) - b*omega);
-    
+
     % 求解控制信号
     e = 0.5 * sin(t(i));
     u = k_p*e + k_i*integral(e, 0, t(i)) + k_d*diff(e, t(i));
-    
+
     % 更新状态
     theta0 = theta;
     omega0 = omega;

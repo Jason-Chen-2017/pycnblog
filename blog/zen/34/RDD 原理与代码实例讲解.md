@@ -63,7 +63,7 @@ RDD通过以下步骤实现数据的分布式存储和并行操作：
 #### 3.2.1 创建RDD
 
 ```scala
-val lines = sc.textFile(\"hdfs://path/to/data.txt\")
+val lines = sc.textFile("hdfs://path/to/data.txt")
 ```
 
 这段代码从HDFS读取数据文件`data.txt`，创建了一个名为`lines`的RDD。
@@ -79,7 +79,7 @@ val partitionedLines = lines.partitionBy(numPartitions)
 #### 3.2.3 转换
 
 ```scala
-val words = lines.flatMap(_.split(\" \"))
+val words = lines.flatMap(_.split(" "))
 val pairs = words.map(word => (word, 1))
 val wordCounts = pairs.reduceByKey((a, b) => a + b)
 ```
@@ -90,7 +90,7 @@ val wordCounts = pairs.reduceByKey((a, b) => a + b)
 
 ```scala
 val count = wordCounts.count()
-println(s\"Total number of words: $count\")
+println(s"Total number of words: $count")
 ```
 
 这段代码计算单词总数，并打印出来。
@@ -129,40 +129,40 @@ RDD的操作可以抽象为数学模型和公式，以下是一些常见的操�
 #### 4.1.1 转换操作
 
 - `map`: 对RDD中的每个元素应用一个函数，生成新的RDD。
-  $$ f: \\mathbb{R} \\rightarrow \\mathbb{R} $$
+  $$ f: \mathbb{R} \rightarrow \mathbb{R} $$
 - `flatMap`: 将RDD中的每个元素展开成多个元素，生成新的RDD。
-  $$ f: \\mathbb{R} \\rightarrow \\mathbb{R}^n $$
+  $$ f: \mathbb{R} \rightarrow \mathbb{R}^n $$
 - `filter`: 选择满足条件的RDD元素，生成新的RDD。
-  $$ f: \\mathbb{R} \\rightarrow \\{0, 1\\} $$
+  $$ f: \mathbb{R} \rightarrow \{0, 1\} $$
 - `union`: 合并两个RDD，生成新的RDD。
-  $$ \\mathbb{R} \\oplus \\mathbb{R} $$
+  $$ \mathbb{R} \oplus \mathbb{R} $$
 - `subtract`: 从第一个RDD中移除第二个RDD中的元素，生成新的RDD。
-  $$ \\mathbb{R} \\setminus \\mathbb{R} $$
+  $$ \mathbb{R} \setminus \mathbb{R} $$
 
 #### 4.1.2 行动操作
 
 - `count`: 返回RDD中元素的数量。
-  $$ | \\mathbb{R} | $$
+  $$ | \mathbb{R} | $$
 - `collect`: 将RDD中的元素收集到驱动程序中。
-  $$ \\mathbb{R} \\rightarrow \\mathbb{R}^n $$
+  $$ \mathbb{R} \rightarrow \mathbb{R}^n $$
 - `reduce`: 对RDD中的元素进行聚合操作。
-  $$ f: \\mathbb{R} \\times \\mathbb{R} \\rightarrow \\mathbb{R} $$
+  $$ f: \mathbb{R} \times \mathbb{R} \rightarrow \mathbb{R} $$
 - `reduceByKey`: 对相同键的值进行聚合操作。
-  $$ f: \\mathbb{R} \\times \\mathbb{R} \\rightarrow \\mathbb{R} $$
+  $$ f: \mathbb{R} \times \mathbb{R} \rightarrow \mathbb{R} $$
 
 ### 4.2 公式推导过程
 
-以`map`操作为例，假设有一个RDD $\\mathbb{R}$ 和一个函数 $f: \\mathbb{R} \\rightarrow \\mathbb{R}$，则`map`操作的数学公式如下：
+以`map`操作为例，假设有一个RDD $\mathbb{R}$ 和一个函数 $f: \mathbb{R} \rightarrow \mathbb{R}$，则`map`操作的数学公式如下：
 
-$$ \\text{map}(\\mathbb{R}, f) = \\{ f(x) \\mid x \\in \\mathbb{R} \\} $$
+$$ \text{map}(\mathbb{R}, f) = \{ f(x) \mid x \in \mathbb{R} \} $$
 
 ### 4.3 案例分析与讲解
 
 以一个简单的案例来说明RDD的操作：
 
 ```scala
-val lines = sc.textFile(\"hdfs://path/to/data.txt\")
-val words = lines.flatMap(_.split(\" \"))
+val lines = sc.textFile("hdfs://path/to/data.txt")
+val words = lines.flatMap(_.split(" "))
 val pairs = words.map(word => (word, 1))
 val wordCounts = pairs.reduceByKey((a, b) => a + b)
 val count = wordCounts.count()
@@ -209,14 +209,14 @@ import org.apache.spark.{SparkConf, SparkContext}
 
 object RDDExample {
   def main(args: Array[String]): Unit = {
-    val conf = new SparkConf().setAppName(\"RDD Example\")
+    val conf = new SparkConf().setAppName("RDD Example")
     val sc = new SparkContext(conf)
 
     // 从HDFS读取数据
-    val lines = sc.textFile(\"hdfs://path/to/data.txt\")
+    val lines = sc.textFile("hdfs://path/to/data.txt")
 
     // 转换操作
-    val words = lines.flatMap(_.split(\" \"))
+    val words = lines.flatMap(_.split(" "))
     val pairs = words.map(word => (word, 1))
     val wordCounts = pairs.reduceByKey((a, b) => a + b)
 
@@ -224,7 +224,7 @@ object RDDExample {
     val count = wordCounts.count()
 
     // 打印结果
-    println(s\"Total number of words: $count\")
+    println(s"Total number of words: $count")
 
     sc.stop()
   }
@@ -300,9 +300,9 @@ RDD在以下实际应用场景中发挥着重要作用：
 
 ### 7.3 相关论文推荐
 
-1. **\"Resilient Distributed Datasets for Large-Scale Data Processing\"**: 作者：Matei Zaharia等
+1. **"Resilient Distributed Datasets for Large-Scale Data Processing"**: 作者：Matei Zaharia等
     - 这篇论文介绍了RDD的原理、设计和应用，是RDD的官方论文。
-2. **\"Spark: cluster computing with working set sizes\"**: 作者：Matei Zaharia等
+2. **"Spark: cluster computing with working set sizes"**: 作者：Matei Zaharia等
     - 这篇论文介绍了Spark的设计和实现，解释了Spark如何通过优化数据存储和计算来提高性能。
 
 ### 7.4 其他资源推荐

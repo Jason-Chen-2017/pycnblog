@@ -212,7 +212,7 @@ torchvision.io.write_video('output.mp4', predictions, fps=25)
 
 ## 7. 工具和资源推荐
 ### 7.1 语音合成工具
-#### 7.1.1 Tacotron2 
+#### 7.1.1 Tacotron2
 #### 7.1.2 WaveGlow
 #### 7.1.3 Parallel WaveGAN
 

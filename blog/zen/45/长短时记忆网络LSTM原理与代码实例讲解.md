@@ -95,31 +95,31 @@ LSTM的数学模型基于递归神经网络，其主要参数包括：
 
 以下为LSTM中各个公式的推导过程：
 
-1. **遗忘门**: 
+1. **遗忘门**:
 
 $$f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)$$
 
 其中，$W_f \in \mathbb{R}^{n_h \times (n_h + n_x)}$，$b_f \in \mathbb{R}^{n_h}$。
 
-2. **输入门**: 
+2. **输入门**:
 
 $$i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i)$$
 
 其中，$W_i \in \mathbb{R}^{n_h \times (n_h + n_x)}$，$b_i \in \mathbb{R}^{n_h}$。
 
-3. **新的单元状态**: 
+3. **新的单元状态**:
 
 $$c_t = f_t \cdot c_{t-1} + i_t \cdot \tanh(W_c \cdot [h_{t-1}, x_t] + b_c)$$
 
 其中，$W_c \in \mathbb{R}^{n_h \times (n_h + n_x)}$，$b_c \in \mathbb{R}^{n_h}$。
 
-4. **输出门**: 
+4. **输出门**:
 
 $$o_t = \sigma(W_o \cdot [h_{t-1}, c_t] + b_o)$$
 
 其中，$W_o \in \mathbb{R}^{n_h \times (n_h + n_x)}$，$b_o \in \mathbb{R}^{n_h}$。
 
-5. **隐藏状态**: 
+5. **隐藏状态**:
 
 $$h_t = o_t \cdot \tanh(c_t)$$
 

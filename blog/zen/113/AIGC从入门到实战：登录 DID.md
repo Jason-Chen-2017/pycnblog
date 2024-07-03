@@ -168,7 +168,7 @@ def build_discriminator(input_dim, output_dim):
 # 构建GAN模型
 def build_gan(generator, discriminator):
     model = Sequential([generator, discriminator])
-    model.compile(loss=['binary_crossentropy', 'binary_crossentropy'], 
+    model.compile(loss=['binary_crossentropy', 'binary_crossentropy'],
                   optimizers=Adam(), loss_weights=[1, 0])
     return model
 

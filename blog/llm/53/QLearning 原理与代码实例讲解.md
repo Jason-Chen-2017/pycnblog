@@ -107,20 +107,20 @@ epsilon = 0.2
 for episode in range(num_episodes):
     state = env.reset()
     done = False
-    
+
     while not done:
         # ε-贪婪策略选择动作
         if np.random.rand() < epsilon:
             action = env.action_space.sample()
         else:
             action = np.argmax(Q[state])
-        
+
         # 执行动作并观察奖励和下一状态
         next_state, reward, done, _ = env.step(action)
-        
+
         # 更新Q表
         Q[state, action] += learning_rate * (reward + gamma * np.max(Q[next_state]) - Q[state, action])
-        
+
         state = next_state
 ```
 

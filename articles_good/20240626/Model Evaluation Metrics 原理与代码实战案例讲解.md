@@ -204,8 +204,7 @@ $$
 其梯度为：
 
 $$
-\
-abla_L M = -\sum_{i=1}^N \frac{y_i}{M(x_i)} + \frac{1-y_i}{1-M(x_i)}
+\nabla_L M = -\sum_{i=1}^N \frac{y_i}{M(x_i)} + \frac{1-y_i}{1-M(x_i)}
 $$
 
 ### 4.3 案例分析与讲解

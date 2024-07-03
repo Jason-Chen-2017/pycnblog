@@ -252,21 +252,21 @@ class Chatbot:
     def __init__(self, model, tokenizer):
         self.model = model
         self.tokenizer = tokenizer
-    
+
     def generate_response(self, input_text):
         # 将输入文本编码为模型输入格式
         input_ids = self.tokenizer.encode_plus(input_text, return_tensors='pt', max_length=512, truncation=True)
-        
+
         # 前向传播计算输出
         with torch.no_grad():
             outputs = self.model(**input_ids)
-        
+
         # 解码输出结果
         logits = outputs.logits
         _, preds = logits.topk(1, dim=1)
         response_id = preds[0].item()
         response = self.tokenizer.decode(self.tokenizer.convert_ids_to_tokens(response_id))
-        
+
         return response
 
 # 创建聊天机器人实例

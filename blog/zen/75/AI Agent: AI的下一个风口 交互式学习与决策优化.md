@@ -14,7 +14,7 @@
 AI Agent 通过交互式学习实现策略优化,是实现通用人工智能的重要途径。研究AI Agent有助于突破传统机器学习的局限性,提升AI系统的自主性、适应性和鲁棒性。同时,AI Agent 的进展也将推动自动化决策、智能控制等领域的发展,为解决现实世界复杂问题提供新的方案。
 
 ### 1.4 本文结构
-本文将围绕AI Agent的交互式学习与决策优化展开,内容包括:  
+本文将围绕AI Agent的交互式学习与决策优化展开,内容包括:
 - 核心概念与联系
 - 核心算法原理与具体操作步骤
 - 数学模型和公式详解
@@ -40,7 +40,7 @@ AI Agent 通过交互式学习实现策略优化,是实现通用人工智能的�
 
 ```mermaid
 graph LR
-    A[Agent] -- 行动 --> B[环境] 
+    A[Agent] -- 行动 --> B[环境]
     B -- 奖励 --> A
     B -- 状态 --> A
 ```
@@ -55,7 +55,7 @@ graph LR
 以Q-learning为例,其具体步骤如下:
 
 1. 初始化Q表格 $Q(s,a)$,存储状态-行动对的价值估计
-2. 设置学习率 $\alpha$,折扣因子 $\gamma$,探索率 $\epsilon$ 
+2. 设置学习率 $\alpha$,折扣因子 $\gamma$,探索率 $\epsilon$
 3. 循环直到收敛:
    - 根据 $\epsilon$-贪婪策略选择行动 $a$,即以 $\epsilon$ 的概率随机探索,否则选择Q值最大的行动
    - 执行行动 $a$,观察奖励 $r$ 和下一状态 $s'$
@@ -70,7 +70,7 @@ graph LR
   - 简单直观,易于实现
   - 通过探索-利用权衡,在学习最优策略的同时兼顾探索
   - 对环境转移概率无要求,具有一定通用性
-- 缺点:  
+- 缺点:
   - 需要大量的采样数据,样本效率较低
   - 状态-行动空间过大时,Q表格维度过高
   - 难以处理连续状态和行动空间
@@ -84,7 +84,7 @@ graph LR
 马尔可夫决策过程(MDP)是描述强化学习问题的标准数学模型。一个MDP由以下元素组成:
 
 - 状态空间 $\mathcal{S}$
-- 行动空间 $\mathcal{A}$ 
+- 行动空间 $\mathcal{A}$
 - 转移概率 $\mathcal{P}_{ss'}^a = P[S_{t+1}=s'|S_t=s, A_t=a]$
 - 奖励函数 $\mathcal{R}_s^a = E[R_{t+1}|S_t=s, A_t=a]$
 - 折扣因子 $\gamma \in [0,1]$
@@ -166,26 +166,26 @@ for i in range(num_episodes):
     state = env.reset()
     done = False
     total_reward = 0
-    
+
     while not done:
         # 选择行动
         if np.random.uniform(0, 1) < epsilon:
             action = env.action_space.sample()  # 随机探索
         else:
             action = np.argmax(Q[state, :])  # 贪婪策略
-        
+
         # 执行行动
         next_state, reward, done, _ = env.step(action)
-        
+
         # 更新Q表格
         Q[state, action] += alpha * (reward + gamma * np.max(Q[next_state, :]) - Q[state, action])
-        
+
         state = next_state
         total_reward += reward
-        
+
     rewards.append(total_reward)
 
-# 绘制学习曲线    
+# 绘制学习曲线
 plt.plot(rewards)
 plt.xlabel('Episode')
 plt.ylabel('Total Reward')
@@ -227,7 +227,7 @@ AI Agent在很多领域有广泛应用,例如:
 
 ### 7.1 学习资源推荐
 - 《Reinforcement Learning: An Introduction》,Richard S. Sutton 经典强化学习教材
-- David Silver 的 Reinforcement Learning 课程 
+- David Silver 的 Reinforcement Learning 课程
 - 台湾大学李宏毅教授的《深度强化学习》课程
 - 莫烦 Python 的强化学习教程
 

@@ -56,14 +56,14 @@ Spark的RDD算法原理基于分布式计算模型，通过将数据划分为多
 
 - **初始化SparkContext**：Spark程序通常从SparkContext开始，它是Spark应用程序的入口点，负责配置Spark运行环境和初始化分布式计算框架。
 - **加载数据**：可以使用Spark提供的数据源接口加载本地文件、HDFS、S3等存储的数据，生成RDD。
-  
+
 #### RDD操作
 
 - **map**：对RDD中的每个元素应用一个函数，生成新的RDD。
 - **filter**：根据指定的条件筛选RDD中的元素。
 - **reduceByKey**：将RDD中的元素按照key进行分组，然后对每组应用一个reduce函数。
 - **union**：合并两个或多个RDD。
-  
+
 #### 转换操作
 
 - **collect**：将RDD收集到驱动程序进程中，并返回结果列表。

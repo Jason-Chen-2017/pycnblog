@@ -100,8 +100,7 @@ $$ \theta \leftarrow \theta + \alpha \cdot \sum_{i=1}^{N} w_i \cdot (\theta_i - 
 
 ### 4.2 公式推导过程
 
-假设参与者$i$在本地数据集$D_i$上训练的损失函数为$L_i(\theta_i)$，模型参数更新为$\Delta\theta_i = \
-abla_\theta L_i(\theta_i)$。联邦学习中，中央服务器将所有参与者的模型更新进行加权平均以更新全局模型参数$\theta$：
+假设参与者$i$在本地数据集$D_i$上训练的损失函数为$L_i(\theta_i)$，模型参数更新为$\Delta\theta_i = \nabla_\theta L_i(\theta_i)$。联邦学习中，中央服务器将所有参与者的模型更新进行加权平均以更新全局模型参数$\theta$：
 
 $$ \Delta\theta = \sum_{i=1}^{N} w_i \cdot \Delta\theta_i $$
 

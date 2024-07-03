@@ -301,4 +301,4 @@ sigmoid 函数将输出结果映射到 [0, 1] 之间，表示该数据来自真�
 - **使用 Spectral Normalization**: Spectral Normalization 可以帮助稳定判别器的训练过程。
 - **使用 Gradient Penalty**: Gradient Penalty 可以帮助稳定判别器的训练过程。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

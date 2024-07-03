@@ -28,11 +28,11 @@ Python凭借其简洁的语法、丰富的类库和强大的社区支持,已经�
 
 ### 2.3 机器学习算法
 - 朴素贝叶斯:基于贝叶斯定理和特征独立性假设,适合处理高维稀疏数据。
-- 逻辑回归:寻找一个最优的超平面将不同类别的样本分开。 
+- 逻辑回归:寻找一个最优的超平面将不同类别的样本分开。
 - 支持向量机:通过最大化分类间隔寻找最优决策边界。
 - 神经网络:通过多层神经元的复杂非线性变换,自动提取高级特征。
 
-### 2.4 评估指标 
+### 2.4 评估指标
 - 准确率(Accuracy):正确分类的样本数占总样本的比例。
 - 精确率(Precision):对某一个类别,预测正确的样本数占预测为该类的样本总数的比例。
 - 召回率(Recall):对某一个类别,预测正确的样本数占该类样本总数的比例。
@@ -79,7 +79,7 @@ $$\hat{y} = \arg\max_{k\in\{1,\dots,K\}} P(C_k)\prod_{i=1}^nP(F_i|C_k)$$
 | 特征词 | 出现次数 |
 |-------|---------|
 | 球    | 5       |
-| 胜负  | 3       |  
+| 胜负  | 3       |
 | 选举  | 0       |
 | 政党  | 0       |
 
@@ -118,7 +118,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.metrics import classification_report
 
 # 加载20个新闻组数据集
-categories = ['alt.atheism', 'soc.religion.christian', 'comp.graphics', 'sci.med'] 
+categories = ['alt.atheism', 'soc.religion.christian', 'comp.graphics', 'sci.med']
 twenty_train = fetch_20newsgroups(subset='train', categories=categories, shuffle=True, random_state=42)
 
 # 构建Pipeline,依次进行特征提取、TF-IDF转换和朴素贝叶斯分类

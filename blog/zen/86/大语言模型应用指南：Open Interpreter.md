@@ -214,13 +214,13 @@ model = pipeline('code-generation', model='facebook/m2m100_418M')
 def open_interpreter(instruction):
     # 解析指令
     parsed_instruction = parse_instruction(instruction)
-    
+
     # 生成代码
     code = generate_code(parsed_instruction)
-    
+
     # 执行代码
     result = execute_code(code)
-    
+
     # 返回结果
     return result
 
@@ -238,16 +238,16 @@ def generate_code(parsed_instruction):
 def execute_code(code):
     # 将代码字符串转换为PyTorch张量
     input_ids = tokenizer.encode(code, return_tensors='pt')
-    
+
     # 使用模型生成代码
     output_ids = model.generate(input_ids, max_length=512)
-    
+
     # 将生成的代码解码为字符串
     generated_code = tokenizer.decode(output_ids[0], skip_special_tokens=True)
-    
+
     # 执行生成的代码
     result = eval(generated_code)
-    
+
     return result
 
 # 运行示例

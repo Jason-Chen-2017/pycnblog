@@ -17,16 +17,16 @@
 - 由Header和Body两部分组成
 
 ### 2.2 Agent
-- Agent是Flume部署的基本单位 
+- Agent是Flume部署的基本单位
 - 由Source、Channel和Sink三个组件构成
 
-### 2.3 Source 
+### 2.3 Source
 - 数据采集组件,负责把数据收集进来发送到Channel
 - 支持Avro/Thrift/Exec/JMS/Spooling Directory/Kafka/NetCat/Sequence Generator等
 
 ### 2.4 Channel
 - 位于Source和Sink之间的缓冲区
-- File Channel和Memory Channel是两种常用类型 
+- File Channel和Memory Channel是两种常用类型
 
 ### 2.5 Sink
 - 从Channel读取数据,将数据写到目标源
@@ -35,7 +35,7 @@
 ### 2.6 组件间的关系
 ```mermaid
 graph LR
-A[Source] --> B[Channel] 
+A[Source] --> B[Channel]
 B --> C[Sink]
 ```
 
@@ -68,7 +68,7 @@ $$t_{max}=\frac{C}{T}$$
 Channel最多可缓存 $t_{max}$ 秒的数据量。举例,若 $C=1GB$, $T=50MB/s$,则:
 $$t_{max}=\frac{1000MB}{50MB/s}=20s$$
 
-### 4.2 Event平均传输时延 
+### 4.2 Event平均传输时延
 $$latency=\frac{L}{T}$$
 
 假设 $L=500B$, $T=50MB/s$,则单个Event的平均传输时延为:
@@ -82,7 +82,7 @@ $$latency=\frac{500B}{50MB/s}=0.01ms$$
 
 ### 5.1 安装部署Flume
 1. 下载Flume发布包并解压
-2. 配置环境变量 `FLUME_HOME` 
+2. 配置环境变量 `FLUME_HOME`
 3. 验证安装,执行 `flume-ng version`
 
 ### 5.2 配置Flume
@@ -154,7 +154,7 @@ Web服务器的访问日志、应用系统的运行日志,通过Flume实时收�
 
 ## 7.工具和资源推荐
 - [Flume User Guide](https://flume.apache.org/FlumeUserGuide.html) - Flume官方用户手册
-- [Flume API](https://flume.apache.org/releases/content/1.9.0/apidocs/index.html) - Flume API文档 
+- [Flume API](https://flume.apache.org/releases/content/1.9.0/apidocs/index.html) - Flume API文档
 - [Github Repository](https://github.com/apache/flume) - Flume源码仓库
 - [Flume Plugins](https://github.com/apache/flume/wiki/Flume-Plugins) - 社区贡献的插件列表
 
@@ -166,7 +166,7 @@ Flume作为可靠的海量日志收集系统,已在业界得到广泛应用和�
 适配Kubernetes等云原生平台,提供弹性扩容和故障自愈能力。
 
 ### 8.2 Serverless化
-将Flume的功能解耦成细粒度的函数,按需使用,提高资源利用率。 
+将Flume的功能解耦成细粒度的函数,按需使用,提高资源利用率。
 
 ### 8.3 智能运维
 引入AI算法,实现故障的自动诊断和处理,减少运维成本。

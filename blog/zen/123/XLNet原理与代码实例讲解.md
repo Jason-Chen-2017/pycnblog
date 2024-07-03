@@ -331,4 +331,4 @@ XLNet 的研究为 NLP 领域的发展提供了新的思路和方法，未来将
 
 **A：** XLNet 的未来发展趋势包括更强大的预训练模型、更有效的训练方法和更广泛的应用。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -219,8 +219,8 @@ AI代理在网络安全领域的应用前景广阔，未来将应用于更多场
 ## 7. 工具和资源推荐
 ### 7.1  学习资源推荐
 * **书籍:**
-    * "Deep Learning for Cybersecurity" by  
-    * "Artificial Intelligence in Cybersecurity" by  
+    * "Deep Learning for Cybersecurity" by
+    * "Artificial Intelligence in Cybersecurity" by
 * **在线课程:**
     * Coursera: "Machine Learning for Cybersecurity"
     * Udacity: "AI for Cybersecurity"

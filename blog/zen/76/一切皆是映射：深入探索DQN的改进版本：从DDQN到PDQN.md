@@ -73,8 +73,7 @@ DQN通过深度学习模型预测Q值，指导智能体采取行动。改进版�
 ### 4.1 数学模型构建
 
 - **Q学习公式**：$Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma \max_{a'} Q'(s', a') - Q(s, a)]$
-- **策略梯度公式**：$\Delta \theta \propto \mathbb{E}_{\pi_\theta} [\
-abla_\theta \log \pi_\theta(a|s) \cdot Q(s, a)]$
+- **策略梯度公式**：$\Delta \theta \propto \mathbb{E}_{\pi_\theta} [\nabla_\theta \log \pi_\theta(a|s) \cdot Q(s, a)]$
 
 ### 4.2 公式推导过程
 
@@ -83,8 +82,7 @@ abla_\theta \log \pi_\theta(a|s) \cdot Q(s, a)]$
 - **策略选择**：$a = \arg\max_a \{Q(s, a)\}$
 
 #### PDQN推导：
-- **策略更新**：$\Delta \theta \propto \mathbb{E}_{\pi_\theta} [\
-abla_\theta \log \pi_\theta(a|s) \cdot (\delta + \gamma \max_{a'} Q'(s', a'))]$
+- **策略更新**：$\Delta \theta \propto \mathbb{E}_{\pi_\theta} [\nabla_\theta \log \pi_\theta(a|s) \cdot (\delta + \gamma \max_{a'} Q'(s', a'))]$
 - **Q值学习**：$Q(s, a) \leftarrow Q(s, a) + \alpha [\delta + \gamma \max_{a'} Q'(s', a') - Q(s, a)]$
 
 ### 4.3 案例分析与讲解
@@ -118,19 +116,19 @@ class DoubleDQN:
         self.lr = lr
         self.gamma = gamma
         self.build_model()
-        
+
     def build_model(self):
         self.input = tf.keras.layers.Input(shape=(env.observation_space.shape))
         self.q_network = self.create_q_network()
-        
+
     def create_q_network(self):
         # 创建Q网络结构
         pass
-        
+
     def train(self, state, action, reward, next_state, done):
         # 训练Q网络
         pass
-        
+
     def choose_action(self, state):
         # 选择动作
         pass
@@ -148,23 +146,23 @@ class PDQN:
         self.lr = lr
         self.gamma = gamma
         self.build_models()
-        
+
     def build_models(self):
         self.q_network = self.create_q_network()
         self.policy_network = PolicyGradient(self.env.action_space.n)
-        
+
     def create_q_network(self):
         # 创建Q网络结构
         pass
-        
+
     def learn_policy(self, states, actions, rewards, next_states, dones):
         # 学习策略
         pass
-        
+
     def learn_q_values(self, states, actions, rewards, next_states, dones):
         # 学习Q值
         pass
-        
+
     def choose_action(self, state):
         # 选择动作
         pass

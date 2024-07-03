@@ -154,21 +154,21 @@ import numpy as np
 def k_means(data, k):
     # 随机选择K个数据点作为初始簇中心
     centroids = data[np.random.choice(data.shape[0], k, replace=False)]
-    
+
     # 迭代更新簇中心和数据点分配
     while True:
         # 分配数据点
         labels = np.argmin(np.linalg.norm(data[:, np.newaxis] - centroids, axis=2), axis=1)
-        
+
         # 更新簇中心
         new_centroids = np.array([data[labels == i].mean(axis=0) for i in range(k)])
-        
+
         # 检查簇中心是否收敛
         if np.all(centroids == new_centroids):
             break
-        
+
         centroids = new_centroids
-    
+
     return centroids, labels
 
 # 示例数据
@@ -226,21 +226,21 @@ import numpy as np
 def k_means(data, k, max_iterations=100):
     # 随机选择K个数据点作为初始簇中心
     centroids = data[np.random.choice(data.shape[0], k, replace=False)]
-    
+
     # 迭代更新簇中心和数据点分配
     for _ in range(max_iterations):
         # 分配数据点
         labels = np.argmin(np.linalg.norm(data[:, np.newaxis] - centroids, axis=2), axis=1)
-        
+
         # 更新簇中心
         new_centroids = np.array([data[labels == i].mean(axis=0) for i in range(k)])
-        
+
         # 检查簇中心是否收敛
         if np.all(centroids == new_centroids):
             break
-        
+
         centroids = new_centroids
-    
+
     return centroids, labels
 
 # 示例数据

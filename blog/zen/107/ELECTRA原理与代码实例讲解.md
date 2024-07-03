@@ -166,12 +166,12 @@ for epoch in range(10):  # 假设训练10个周期
     # 前向传播和计算损失
     outputs = model(input_ids, attention_mask=attention_mask, labels=labels_encoded)
     loss = outputs.loss
-    
+
     # 后向传播和优化
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
-    
+
     # 打印损失值
     print(f'Epoch {epoch+1}, Loss: {loss.item()}')
 ```

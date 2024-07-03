@@ -195,13 +195,13 @@ def analyze_markov_chain(P, initial_state=None):
     max_eigenvalue = np.max(np.abs(eigenvalues))
     max_eigenvector = eigenvectors[:, np.argmax(np.abs(eigenvalues))]
     stationary_distribution = compute_stationary_distribution(P)
-    
+
     print("特征值:", eigenvalues)
     print("特征向量:", eigenvectors)
     print("最大特征值:", max_eigenvalue)
     print("最大特征向量:", max_eigenvector)
     print("平稳分布:", stationary_distribution)
-    
+
     return eigenvalues, eigenvectors, max_eigenvalue, max_eigenvector, stationary_distribution
 
 # 示例：网站链接分析

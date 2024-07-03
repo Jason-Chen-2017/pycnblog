@@ -88,8 +88,7 @@
     - 根据计算出的梯度，更新每个参数的值。更新公式如下：
 
         $$
-\theta = \theta - \alpha \cdot \
-abla_{\theta}J(\theta)
+\theta = \theta - \alpha \cdot \nabla_{\theta}J(\theta)
 $$
 
         其中，$\theta$ 为参数，$J(\theta)$ 为损失函数，$\alpha$ 为学习率。
@@ -173,14 +172,14 @@ def backward(x, y, w1, w2, w3):
     output = forward(x, w1, w2, w3)
     output_error = output - y
     output_delta = output_error * sigmoid_derivative(output)
-    
+
     hidden_error = output_delta.dot(w2.T)
     hidden_delta = hidden_error * sigmoid_derivative(x1)
-    
+
     w3_grad = x2.T.dot(output_delta)
     w2_grad = x1.T.dot(hidden_delta)
     w1_grad = x.T.dot(hidden_delta.dot(w2.T))
-    
+
     return [w1_grad, w2_grad, w3_grad]
 
 def update_params(w1, w2, w3, d_w1, d_w2, d_w3, learning_rate):

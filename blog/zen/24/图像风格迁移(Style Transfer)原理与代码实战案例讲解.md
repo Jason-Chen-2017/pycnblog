@@ -1,4 +1,4 @@
-                 
+
 # 图像风格迁移(Style Transfer)原理与代码实战案例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -160,21 +160,21 @@ def style_transfer(model_name, source_path, style_path, output_path):
     # Load and preprocess images
     source = load_and_preprocess_image(source_path)
     style = load_and_preprocess_image(style_path)
-    
+
     # Model setup
     content_layer = 'block5_conv2'
     style_layers = ['block1_conv1', 'block2_conv1', 'block3_conv1', 'block4_conv1', 'block5_conv1']
     model = load_model(model_name)
-    
+
     # Extract features
     content_features = extract_features(model, content_layer, source)
     style_features = []
     for layer in style_layers:
         style_features.append(extract_features(model, layer, style))
-    
+
     # Define loss functions
     total_content_loss, total_style_loss = calculate_losses(content_features, style_features)
-    
+
     # Training loop
     # ...
 
@@ -284,7 +284,7 @@ if __name__ == "__main__":
 
 - **Q:** 如何解决版权问题？
    - **A:** 在使用他人作品作为风格来源前，确保获得合法授权或者使用公共领域素材。
-   
+
 - **Q:** 能否解释一下Gram矩阵的作用？
    - **A:** Gram矩阵用于度量特征向量之间的相似性，它是图像局部区域的线性变换，能有效捕捉图像的风格特性。
 

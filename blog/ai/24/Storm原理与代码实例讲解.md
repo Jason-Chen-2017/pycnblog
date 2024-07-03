@@ -75,7 +75,7 @@ Storm 的核心算法依赖于分布式架构和容错机制。当拓扑（Topol
 
 Storm 的数学模型构建主要集中在数据流处理的逻辑和算法上。核心模型可以表示为：
 
-- **数据流模型**：$D(t) = \\{d_i(t)\\}_{i=1}^n$，其中 $d_i(t)$ 表示第 $i$ 个数据点在时间 $t$ 的值。
+- **数据流模型**：$D(t) = \{d_i(t)\}_{i=1}^n$，其中 $d_i(t)$ 表示第 $i$ 个数据点在时间 $t$ 的值。
 
 - **处理逻辑**：$P(d_i(t), t)$，表示处理函数，根据输入数据和时间进行计算。
 
@@ -83,7 +83,7 @@ Storm 的数学模型构建主要集中在数据流处理的逻辑和算法上�
 
 在具体实现中，处理函数 $P$ 可以涉及数学运算、统计分析、模式识别等复杂逻辑。例如，对于简单的平均值计算：
 
-$$\\text{Average}(D(t)) = \\frac{1}{n} \\sum_{i=1}^n d_i(t)$$
+$$\text{Average}(D(t)) = \frac{1}{n} \sum_{i=1}^n d_i(t)$$
 
 ### 4.3 案例分析与讲解
 
@@ -92,7 +92,7 @@ $$\\text{Average}(D(t)) = \\frac{1}{n} \\sum_{i=1}^n d_i(t)$$
 ```java
 // 定义 Spout
 public class MySpout extends BoundedBatchSpout {
-    private final List<String> messages = Arrays.asList(\"Hello\", \"World\");
+    private final List<String> messages = Arrays.asList("Hello", "World");
     // ... (其他初始化代码)
 
     @Override
@@ -108,9 +108,9 @@ public class MySpout extends BoundedBatchSpout {
 public class MyBolt extends BaseRichBolt {
     @Override
     public void execute(Tuple tuple) {
-        String message = tuple.getStringByField(\"message\");
+        String message = tuple.getStringByField("message");
         // 处理逻辑，例如打印消息
-        System.out.println(\"Received message: \" + message);
+        System.out.println("Received message: " + message);
     }
 }
 
@@ -120,14 +120,14 @@ public class MyTopology {
         // 创建环境
         Environment env = new Environment();
         // 注册 Spout 和 Bolt
-        env.registerBolt(\"MySpout\", new MySpout(), 1);
-        env.registerBolt(\"MyBolt\", new MyBolt(), 1);
+        env.registerBolt("MySpout", new MySpout(), 1);
+        env.registerBolt("MyBolt", new MyBolt(), 1);
         // 定义 Spout 和 Bolt 的连接
-        env.connect(\"MySpout\", \"MyBolt\");
+        env.connect("MySpout", "MyBolt");
         // 创建并提交拓扑
-        Topology topology = new TopologyBuilder().addStream(\"MyStream\", new MySpout())
+        Topology topology = new TopologyBuilder().addStream("MyStream", new MySpout())
             .parallelismHint(1)
-            .to(\"MyBolt\")
+            .to("MyBolt")
             .createTopology();
         // 执行拓扑
         env.execute(topology);
@@ -161,12 +161,12 @@ public class MyTopology {
 
 ```java
 public class MySpout extends BoundedBatchSpout {
-    private final List<String> messages = Arrays.asList(\"Hello\", \"World\");
+    private final List<String> messages = Arrays.asList("Hello", "World");
     private int currentMessageIndex = 0;
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
-        declarer.declare(new Fields(\"message\"));
+        declarer.declare(new Fields("message"));
     }
 
     @Override
@@ -195,8 +195,8 @@ public class MyBolt extends BaseRichBolt {
 
     @Override
     public void process(Tuple input) {
-        String message = input.getStringByField(\"message\");
-        log.info(\"Received message: {}\", message);
+        String message = input.getStringByField("message");
+        log.info("Received message: {}", message);
         // 可以在此处添加更多的处理逻辑，例如存储到数据库或发送到另一个Bolt。
     }
 
@@ -213,14 +213,14 @@ public class MyBolt extends BaseRichBolt {
 public class MyTopology {
     public static void main(String[] args) throws InterruptedException {
         Configuration conf = new Configuration();
-        conf.set(\"nimbus.hostname\", \"localhost\");
-        conf.set(\"nimbus.port\", \"61616\");
+        conf.set("nimbus.hostname", "localhost");
+        conf.set("nimbus.port", "61616");
 
         NimbusClient nimbusClient = new NimbusClient(conf);
         NimbusClient nimbus = nimbusClient.connect();
 
         // 注册 Spout 和 Bolt
-        StormSubmitter.submitTopology(\"MyTopology\", conf, new Config());
+        StormSubmitter.submitTopology("MyTopology", conf, new Config());
         Thread.sleep(Integer.MAX_VALUE);
     }
 }

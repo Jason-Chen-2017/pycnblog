@@ -27,9 +27,7 @@ Meta-SGD 是一种 **元优化器**（meta optimizer），它适合于快速训�
 
 1. 找到 $K(t, t'), \\forall t'$ 中最大的值，记作 $\\alpha^* = max_{t'} K(t, t')$。
 2. 根据 $\\alpha^*$ 计算学习率：$\\eta = \\frac{c}{\\sqrt{\\alpha^*} + d}$，其中 c 和 d 是 hyperparameters。
-3. 更新模型参数 $\\theta$，使用以下公式：$\\theta = \\theta - \\eta \
-abla_\\theta L(\\theta)$，其中 $\
-abla_\\theta L(\\theta)$ 是 loss function 的æ¢¯度。
+3. 更新模型参数 $\\theta$，使用以下公式：$\\theta = \\theta - \\eta \nabla_\\theta L(\\theta)$，其中 $\nabla_\\theta L(\\theta)$ 是 loss function 的æ¢¯度。
 4. 继续迭代第 3 步直到 convergence。
 5. 返回最终的 model parameters $\\theta$。
 

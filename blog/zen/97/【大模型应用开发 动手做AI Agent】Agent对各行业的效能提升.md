@@ -140,7 +140,7 @@ A：AI Agent可以通过安全学习、可解释人工智能等方法保证安�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n agent-env python=3.8 
+conda create -n agent-env python=3.8
 conda activate agent-env
 ```
 

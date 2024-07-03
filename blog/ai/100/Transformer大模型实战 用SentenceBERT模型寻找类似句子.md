@@ -199,7 +199,7 @@ A：提高Sentence-BERT模型的性能可以从以下几个方面入手：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n tf-env python=3.8 
+conda create -n tf-env python=3.8
 conda activate tf-env
 ```
 

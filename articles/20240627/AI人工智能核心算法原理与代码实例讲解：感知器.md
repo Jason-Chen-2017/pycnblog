@@ -92,12 +92,10 @@ graph LR
 5. **更新权重**：根据损失函数L和梯度下降算法，更新权重w：
 
    $$
-   w_{new} = w_{old} - \eta \cdot \
-abla_w L
+   w_{new} = w_{old} - \eta \cdot \nabla_w L
    $$
 
-   其中，$\eta$为学习率，$\
-abla_w L$为损失函数L对权重w的梯度。
+   其中，$\eta$为学习率，$\nabla_w L$为损失函数L对权重w的梯度。
 
 6. **重复步骤2-5**：对于训练集中的所有样本，重复步骤2-5，直至达到预设的迭代次数或损失函数收敛。
 
@@ -161,15 +159,13 @@ $$
 4. **计算梯度**：
 
    $$
-   \
-abla_w L = \begin{cases} -x, & \text{if } z < 0 \\ 0, & \text{if } z \geq 0 \end{cases}
+   \nabla_w L = \begin{cases} -x, & \text{if } z < 0 \\ 0, & \text{if } z \geq 0 \end{cases}
    $$
 
 5. **更新权重**：
 
    $$
-   w_{new} = w_{old} - \eta \cdot \
-abla_w L = \begin{cases} w_{old} + \eta x, & \text{if } z < 0 \\ w_{old}, & \text{if } z \geq 0 \end{cases}
+   w_{new} = w_{old} - \eta \cdot \nabla_w L = \begin{cases} w_{old} + \eta x, & \text{if } z < 0 \\ w_{old}, & \text{if } z \geq 0 \end{cases}
    $$
 
 ### 4.3 案例分析与讲解

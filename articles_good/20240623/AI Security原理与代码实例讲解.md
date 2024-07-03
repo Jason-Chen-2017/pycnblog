@@ -167,9 +167,7 @@ DAGN的对抗训练过程如下：
 1. 生成对抗样本：$x_{adv} = G(x)$
 2. 计算对抗样本的损失：$L_D(x_{adv}) = D(x_{adv})$
 3. 计算真实样本的损失：$L_G(x) = -D(x)$
-4. 更新生成器和判别器参数：$G \leftarrow \theta_G - \alpha \
-abla_G L_G(x)$, $D \leftarrow \theta_D - \alpha \
-abla_D L_D(x_{adv})$
+4. 更新生成器和判别器参数：$G \leftarrow \theta_G - \alpha \nabla_G L_G(x)$, $D \leftarrow \theta_D - \alpha \nabla_D L_D(x_{adv})$
 
 #### 4.2.2 数据脱敏
 
@@ -185,8 +183,7 @@ abla_D L_D(x_{adv})$
 
 1. 设真实样本为$x$，标签为$y$，对抗样本为$x_{adv}$，真实标签为$y_{adv}$。
 2. 损失函数为：$Loss = \frac{1}{2} ||y - \hat{y}||^2 + \lambda ||\hat{y} - y_{adv}||^2$
-3. 利用梯度下降法更新模型参数：$\theta \leftarrow \theta - \alpha \
-abla_{\theta} Loss$
+3. 利用梯度下降法更新模型参数：$\theta \leftarrow \theta - \alpha \nabla_{\theta} Loss$
 
 #### 4.2.4 XAI
 

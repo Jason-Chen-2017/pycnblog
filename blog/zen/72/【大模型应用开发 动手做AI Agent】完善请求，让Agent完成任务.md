@@ -128,9 +128,9 @@
 - **代码片段**：
   ```python
   from transformers import pipeline
-  
+
   nlu_pipeline = pipeline("text2text-generation", model="distilbert-base-cased-finetuned-thai-summarization")
-  
+
   task_description = "将指定货物从仓库A移至仓库B并在规定时间内完成。"
   response = nlu_pipeline(task_description)
   parsed_task = response[0]["generated_text"]
@@ -141,7 +141,7 @@
 - **代码片段**：
   ```python
   import random
-  
+
   def generate_strategy(parsed_task):
       # 假设策略生成函数
       actions = ["取货", "移动", "放货"]

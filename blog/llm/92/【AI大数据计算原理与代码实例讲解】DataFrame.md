@@ -184,7 +184,7 @@ A：可以使用`dropna()`、`fillna()`等函数处理缺失值。`dropna()`函�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pandas-env python=3.8 
+conda create -n pandas-env python=3.8
 conda activate pandas-env
 ```
 

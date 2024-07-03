@@ -419,4 +419,4 @@ A:  可以采取以下措施保护用户隐私：
 * **使用加密技术:**  例如，对用户数据进行加密存储和传输。
 * **遵守相关法律法规:**  例如，遵守 GDPR 等数据保护法律法规。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

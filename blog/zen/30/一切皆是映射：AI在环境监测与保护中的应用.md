@@ -1,6 +1,6 @@
 # 一切皆是映射：AI在环境监测与保护中的应用
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：环境监测，AI应用，数据映射，智能决策，生态系统保护
 
@@ -93,8 +93,8 @@ AI技术的应用不仅可以提高环境监测的准确性和及时性，还能
 
 #### 回归模型例子
 假设使用线性回归模型预测温度$T$：
-$$ T = \\beta_0 + \\beta_1 \\cdot \\text{湿度} + \\beta_2 \\cdot \\text{风速} + \\epsilon $$
-其中$\\beta_0$、$\\beta_1$、$\\beta_2$是模型参数，$\\epsilon$是误差项。
+$$ T = \beta_0 + \beta_1 \cdot \text{湿度} + \beta_2 \cdot \text{风速} + \epsilon $$
+其中$\beta_0$、$\beta_1$、$\beta_2$是模型参数，$\epsilon$是误差项。
 
 ### 4.3 案例分析与讲解
 

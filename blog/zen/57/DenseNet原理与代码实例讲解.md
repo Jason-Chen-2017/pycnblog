@@ -17,7 +17,7 @@
 ### 2.1 卷积神经网络基本构成
 #### 2.1.1 卷积层
 #### 2.1.2 池化层
-#### 2.1.3 全连接层 
+#### 2.1.3 全连接层
 ### 2.2 残差网络ResNet
 #### 2.2.1 残差块
 #### 2.2.2 恒等映射
@@ -32,10 +32,10 @@ graph TD
     B --> C[Max Pool 3x3]
     C --> D[Dense Block 1]
     D --> E[Transition Layer 1]
-    E --> F[Dense Block 2] 
+    E --> F[Dense Block 2]
     F --> G[Transition Layer 2]
     G --> H[Dense Block 3]
-    H --> I[Transition Layer 3] 
+    H --> I[Transition Layer 3]
     I --> J[Dense Block 4]
     J --> K[Global Average Pooling]
     K --> L[Fully Connected]
@@ -47,7 +47,7 @@ graph TD
 #### 3.1.1 前向密集连接
 #### 3.1.2 特征重用
 ### 3.2 密集块内部结构
-#### 3.2.1 BN-ReLU-Conv(1x1)-BN-ReLU-Conv(3x3) 
+#### 3.2.1 BN-ReLU-Conv(1x1)-BN-ReLU-Conv(3x3)
 #### 3.2.2 特征图连接
 ### 3.3 过渡层作用
 #### 3.3.1 降低特征图尺寸
@@ -156,7 +156,7 @@ class DenseNet(nn.Module):
 ### 5.2 代码详解
 - DenseLayer实现了DenseNet的基本组成单元，由BN-ReLU-Conv(1x1)-BN-ReLU-Conv(3x3)构成，最后将输入与输出在通道维度上连接。
 - DenseBlock由多个DenseLayer串联而成，每个DenseLayer的输入是前面所有层的输出的级联。
-- TransitionLayer用于连接两个相邻的DenseBlock，并降低特征图的尺寸和数量。包含BN-ReLU-Conv(1x1)-AvgPool。 
+- TransitionLayer用于连接两个相邻的DenseBlock，并降低特征图的尺寸和数量。包含BN-ReLU-Conv(1x1)-AvgPool。
 - DenseNet的主体部分由多个DenseBlock和TransitionLayer交替堆叠而成，最后接一个全局池化和全连接层进行分类。
 
 ## 6. 实际应用场景
@@ -172,7 +172,7 @@ class DenseNet(nn.Module):
 
 ## 7. 工具和资源推荐
 ### 7.1 DenseNet官方实现
-- [DenseNet官方Torch实现](https://github.com/liuzhuang13/DenseNet) 
+- [DenseNet官方Torch实现](https://github.com/liuzhuang13/DenseNet)
 - [DenseNet官方Caffe实现](https://github.com/liuzhuang13/DenseNetCaffe)
 ### 7.2 DenseNet在PyTorch中的实现
 - [PyTorch官方实现](https://github.com/pytorch/vision/blob/master/torchvision/models/densenet.py)

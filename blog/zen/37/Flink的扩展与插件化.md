@@ -205,4 +205,4 @@ $$
 \end{aligned}
 $$
 
-其中,`Functions` 是一个集合,它包含了所有实现了 `Function` 接口的扩展。`ServiceLoader.load(Function.class)` 
+其中,`Functions` 是一个集合,它包含了所有实现了 `Function` 接口的扩展。`ServiceLoader.load(Function.class)`

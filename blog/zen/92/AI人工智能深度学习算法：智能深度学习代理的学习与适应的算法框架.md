@@ -147,9 +147,7 @@ graph LR
 假设策略函数 $Q(\theta)$ 是一个参数为 $\theta$ 的函数，其中 $\theta$ 是策略参数。策略梯度可以表示为：
 
 $$
-\
-abla_{\theta}Q(\theta) = \
-abla_{\theta}\left[\sum_{i=1}^T\gamma^{T-i}R_i\right]
+\nabla_{\theta}Q(\theta) = \nabla_{\theta}\left[\sum_{i=1}^T\gamma^{T-i}R_i\right]
 $$
 
 其中 $R_i$ 是在第 $i$ 个时间步的回报，$\gamma$ 是折扣因子，$T$ 是总时间步数。
@@ -157,9 +155,7 @@ $$
 根据链式法则，可以得到策略梯度的具体计算公式：
 
 $$
-\
-abla_{\theta}Q(\theta) = \sum_{i=1}^T\gamma^{T-i}\left[R_i + \gamma\
-abla_{\theta}Q(\theta)\right]
+\nabla_{\theta}Q(\theta) = \sum_{i=1}^T\gamma^{T-i}\left[R_i + \gamma\nabla_{\theta}Q(\theta)\right]
 $$
 
 通过迭代更新策略参数 $\theta$，可以使得策略函数 $Q(\theta)$ 最大化回报。

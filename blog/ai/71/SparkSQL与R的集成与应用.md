@@ -201,11 +201,11 @@ Call:
 lm(formula = y ~ x)
 
 Residuals:
-     Min       1Q   Median       3Q      Max 
--0.44082 -0.03590  0.01638  0.05323  0.26667 
+     Min       1Q   Median       3Q      Max
+-0.44082 -0.03590  0.01638  0.05323  0.26667
 
 Coefficients:
-            Estimate Std. Error t value Pr(>|t|)    
+            Estimate Std. Error t value Pr(>|t|)
 (Intercept)  1.2700      0.1842  6.895 2.35e-06 ***
 x           0.5333      0.0503 10.613  <2e-16 ***
 ---

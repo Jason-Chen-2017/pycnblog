@@ -181,7 +181,7 @@ class MIXER(nn.Module):
         self.text_model = BertModel.from_pretrained(text_model)
         self.image_model = ResNet(image_model)
         self.fc = nn.Linear(512, num_classes)
-    
+
     def forward(self, text, image):
         text_embedding = self.text_model(text)[0][:, 0, :]
         image_embedding = self.image_model(image)

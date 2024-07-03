@@ -1,7 +1,7 @@
 
 # 【LangChain编程：从入门到实践】对话场景
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -115,7 +115,7 @@ LangChain编程的数学模型主要基于Transformer、BERT、GPT等NLP模型�
 以下是BERT模型的数学公式：
 
 $$
-\mathbf{h}^{(i)} = \text{Transformer}(\mathbf{W}_e, \mathbf{W}_k, \mathbf{W}_v, \mathbf{h}^{(i-1)}) 
+\mathbf{h}^{(i)} = \text{Transformer}(\mathbf{W}_e, \mathbf{W}_k, \mathbf{W}_v, \mathbf{h}^{(i-1)})
 $$
 
 其中：

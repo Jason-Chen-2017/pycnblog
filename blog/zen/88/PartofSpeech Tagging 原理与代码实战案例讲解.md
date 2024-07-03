@@ -245,12 +245,12 @@ class CRFModel(tf.keras.Model):
         self.embedding = tf.keras.layers.Embedding(vocab_size, embedding_dim)
         self.lstm = tf.keras.layers.LSTM(hidden_dim)
         self.crf = tf.keras.layers.Dense(tagset_size, activation='softmax', use_bias=False)
-        
+
     def call(self, x, training=False):
         x = self.embedding(x)
         x = self.lstm(x)
         return self.crf(x), self.crf.logits
-    
+
 # 训练CRF模型
 def train_crf_model(model, train_data, epochs=10):
     optimizer = tf.keras.optimizers.Adam()
@@ -259,11 +259,11 @@ def train_crf_model(model, train_data, epochs=10):
             # 将文本和标签转换为Tensor
             x = tf.convert_to_tensor([text])
             y = tf.convert_to_tensor([tags])
-            
+
             with tf.GradientTape() as tape:
                 logits, _ = model(x, training=True)
                 loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=logits))
-            
+
             gradients = tape.gradient(loss, model.trainable_variables)
             optimizer.apply_gradients(zip(gradients, model.trainable_variables))
         print(f"Epoch {epoch+1}/{epochs}, Loss: {loss.numpy()}")

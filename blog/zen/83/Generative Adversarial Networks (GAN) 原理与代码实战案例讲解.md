@@ -153,7 +153,7 @@ class Generator(nn.Module):
             nn.Linear(1024, 784),
             nn.Tanh()
         )
-    
+
     def forward(self, x):
         return self.model(x)
 
@@ -171,7 +171,7 @@ class Discriminator(nn.Module):
             nn.Linear(256, 1),
             nn.Sigmoid()
         )
-    
+
     def forward(self, x):
         return self.model(x).view(-1, 1).squeeze(1)
 
@@ -196,33 +196,33 @@ dataloader = DataLoader(dataset, batch_size=64, shuffle=True)
 for epoch in range(epochs):
     for i, (inputs, labels) in enumerate(dataloader):
         batch_size = inputs.size(0)
-        
+
         # 生成假样本
         z = torch.randn(batch_size, 100)
         fake_samples = generator(z)
-        
+
         # 训练判别器
         optimizer_D.zero_grad()
         real_labels = torch.ones(batch_size, 1)
         fake_labels = torch.zeros(batch_size, 1)
-        
+
         output_real = discriminator(inputs)
         output_fake = discriminator(fake_samples.detach())
-        
+
         d_loss_real = criterion(output_real, real_labels)
         d_loss_fake = criterion(output_fake, fake_labels)
         d_loss = (d_loss_real + d_loss_fake) / 2
         d_loss.backward()
         optimizer_D.step()
-        
+
         # 训练生成器
         optimizer_G.zero_grad()
         output_fake = discriminator(fake_samples)
-        
+
         g_loss = criterion(output_fake, real_labels)
         g_loss.backward()
         optimizer_G.step()
-        
+
         # 打印训练信息
         if (i + 1) % 100 == 0:
             print(f'Epoch [{epoch + 1}/{epochs}], Step [{i + 1}/{len(dataloader)}], '

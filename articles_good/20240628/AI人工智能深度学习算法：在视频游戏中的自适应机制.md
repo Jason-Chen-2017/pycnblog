@@ -178,8 +178,7 @@ $$
 损失函数的梯度下降公式：
 
 $$
-\theta = \theta - \eta \
-abla_{\theta}L(f(x),y)
+\theta = \theta - \eta \nabla_{\theta}L(f(x),y)
 $$
 
 #### 4.2.3 生成对抗网络

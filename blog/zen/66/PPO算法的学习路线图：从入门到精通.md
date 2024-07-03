@@ -5,7 +5,7 @@
 ## 1. 背景介绍
 
 ### 1.1 强化学习概述
-#### 1.1.1 强化学习的定义与特点  
+#### 1.1.1 强化学习的定义与特点
 #### 1.1.2 强化学习的基本框架
 #### 1.1.3 强化学习的应用领域
 
@@ -113,7 +113,7 @@ class PPO:
         self.eps_clip = eps_clip
         self.K_epoch = K_epoch
         self.batch_size = batch_size
-        
+
     def select_action(self, state):
         state = torch.from_numpy(state).float().unsqueeze(0)
         probs = self.actor(state)
@@ -121,41 +121,41 @@ class PPO:
         action = dist.sample()
         log_prob = dist.log_prob(action)
         return action.item(), log_prob
-    
+
     def update(self, memory):
         states, actions, log_probs, rewards, is_terminals = memory.sample()
-        
+
         for _ in range(self.K_epoch):
             # 计算优势函数和回报
             values = self.critic(states)
             advantages = self.compute_advantages(rewards, values, is_terminals)
             returns = advantages + values
-            
+
             # 计算重要性采样权重
             log_probs_new = self.actor(states).gather(1, actions.unsqueeze(1)).squeeze(1)
             ratios = torch.exp(log_probs_new - log_probs.detach())
-            
+
             # 计算代理损失
             surr1 = ratios * advantages
             surr2 = torch.clamp(ratios, 1-self.eps_clip, 1+self.eps_clip) * advantages
             actor_loss = -torch.min(surr1, surr2).mean()
-            
+
             # 计算值函数损失
             critic_loss = 0.5 * (returns - self.critic(states)).pow(2).mean()
-            
+
             # 更新模型参数
             self.actor_optimizer.zero_grad()
             actor_loss.backward()
             self.actor_optimizer.step()
-            
-            self.critic_optimizer.zero_grad()  
+
+            self.critic_optimizer.zero_grad()
             critic_loss.backward()
             self.critic_optimizer.step()
-            
+
     def compute_advantages(self, rewards, values, is_terminals):
         deltas = rewards + self.gamma * values[1:] * (1 - is_terminals) - values[:-1]
         return self.discount_cumsum(deltas, self.gamma * self.lmbda)
-    
+
     def discount_cumsum(self, x, discount):
         return np.array([np.sum(np.array([y * (discount ** i) for i,y in enumerate(x[i:])])) for i in range(len(x))])
 ```

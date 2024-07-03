@@ -216,7 +216,7 @@ def predict_text(model, start_string):
     input_eval = [char_to_index[s] for s in start_string]
     input_eval = tf.expand_dims(input_eval, 0)
     hidden = [tf.zeros((1, units)), tf.zeros((1, units))]
-    
+
     # 生成文本
     text_generated = []
     for _ in range(300):  # 生成300个字符
@@ -225,7 +225,7 @@ def predict_text(model, start_string):
         predicted_id = tf.random.categorical(predictions, num_samples=1)[-1, 0].numpy()
         input_eval = tf.expand_dims([predicted_id], 0)
         text_generated.append(index_to_char[predicted_id])
-        
+
     return start_string + ''.join(text_generated)
 
 # 测试生成文本

@@ -9,7 +9,7 @@
 #### 1.1.3 强化学习的应用领域
 
 ### 1.2 时序差分学习
-#### 1.2.1 时序差分学习的基本思想  
+#### 1.2.1 时序差分学习的基本思想
 #### 1.2.2 时序差分学习与蒙特卡洛方法的区别
 #### 1.2.3 时序差分学习的优势
 
@@ -171,29 +171,29 @@ class GridWorld:
         self.start = start
         self.goal = goal
         self.obstacles = obstacles
-        
+
     def reset(self):
         self.agent_pos = self.start
         return self.agent_pos
-    
+
     def step(self, action):
         if action == 0:  # 上
             next_pos = (self.agent_pos[0] - 1, self.agent_pos[1])
         elif action == 1:  # 下
-            next_pos = (self.agent_pos[0] + 1, self.agent_pos[1]) 
+            next_pos = (self.agent_pos[0] + 1, self.agent_pos[1])
         elif action == 2:  # 左
             next_pos = (self.agent_pos[0], self.agent_pos[1] - 1)
         elif action == 3:  # 右
             next_pos = (self.agent_pos[0], self.agent_pos[1] + 1)
-            
+
         if next_pos[0] < 0 or next_pos[0] >= self.n_rows or next_pos[1] < 0 or next_pos[1] >= self.n_cols:
             # 碰到边界,无法移动
             next_pos = self.agent_pos
-        
+
         if next_pos in self.obstacles:
             # 碰到障碍,无法移动
             next_pos = self.agent_pos
-            
+
         if next_pos == self.goal:
             # 到达目标,给予奖励1
             reward = 1
@@ -201,7 +201,7 @@ class GridWorld:
         else:
             reward = 0
             done = False
-        
+
         self.agent_pos = next_pos
         return next_pos, reward, done
 
@@ -209,25 +209,25 @@ class GridWorld:
 def sarsa(env, n_episodes, alpha, gamma, epsilon):
     n_actions = 4
     Q = np.zeros((env.n_rows, env.n_cols, n_actions))
-    
+
     for episode in range(n_episodes):
         state = env.reset()
         action = epsilon_greedy(Q, state, epsilon)
         done = False
-        
+
         while not done:
             next_state, reward, done = env.step(action)
             next_action = epsilon_greedy(Q, next_state, epsilon)
-            
+
             td_target = reward + gamma * Q[next_state[0], next_state[1], next_action]
             td_error = td_target - Q[state[0], state[1], action]
             Q[state[0], state[1], action] += alpha * td_error
-            
+
             state = next_state
             action = next_action
-            
+
     return Q
-            
+
 # ε-贪婪策略
 def epsilon_greedy(Q, state, epsilon):
     if np.random.rand() < epsilon:
@@ -235,11 +235,11 @@ def epsilon_greedy(Q, state, epsilon):
     else:
         return np.argmax(Q[state[0], state[1], :])
 
-# 测试代码        
+# 测试代码
 if __name__ == '__main__':
     env = GridWorld(3, 4, (2, 0), (0, 3), [(1, 1), (1, 3)])
     Q = sarsa(env, n_episodes=500, alpha=0.5, gamma=0.95, epsilon=0.1)
-    
+
     print(np.argmax(Q, axis=-1))  # 打印最优策略
 ```
 

@@ -90,8 +90,7 @@
 以下是迁移学习的数学模型：
 
 $$
-\theta_{target} = \theta_{source} + \alpha \
-abla_{\theta_{target}} J(\theta_{source}, \theta_{target}, x, y)
+\theta_{target} = \theta_{source} + \alpha \nabla_{\theta_{target}} J(\theta_{source}, \theta_{target}, x, y)
 $$
 
 其中，$\theta_{source}$ 是源域的模型参数，$\theta_{target}$ 是目标域的模型参数，$\alpha$ 是学习率，$J$ 是损失函数。
@@ -101,8 +100,7 @@ $$
 以下是迁移学习公式的推导过程：
 
 1. 首先，我们需要定义损失函数 $J(\theta_{source}, \theta_{target}, x, y)$，它衡量的是目标域模型在数据 $x$ 上的预测结果 $y$ 和真实标签之间的差异。
-2. 然后，我们计算损失函数对目标域模型参数 $\theta_{target}$ 的梯度 $\
-abla_{\theta_{target}} J(\theta_{source}, \theta_{target}, x, y)$。
+2. 然后，我们计算损失函数对目标域模型参数 $\theta_{target}$ 的梯度 $\nabla_{\theta_{target}} J(\theta_{source}, \theta_{target}, x, y)$。
 3. 最后，我们使用梯度下降算法更新目标域模型参数 $\theta_{target}$，使其最小化损失函数 $J(\theta_{source}, \theta_{target}, x, y)$。
 
 ### 4.3 案例分析与讲解

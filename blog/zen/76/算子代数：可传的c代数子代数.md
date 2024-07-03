@@ -122,10 +122,10 @@ class CstarAlgebraElement:
     def __init__(self, matrix):
         self.matrix = matrix
         self.shape = matrix.shape
-    
+
     def adjoint(self):
         return np.conj(self.matrix).T
-    
+
     def product(self, other):
         return np.dot(self.matrix, other.matrix)
 

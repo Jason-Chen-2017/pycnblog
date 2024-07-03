@@ -3,14 +3,14 @@
 ## 1. 背景介绍
 ### 1.1 问题的由来
 在现代Web应用程序开发中,依赖管理是一个关键问题。随着项目规模的增大,手动管理依赖关系变得越来越困难。这时,我们需要一个可靠的依赖管理工具来简化流程,提高效率。Yarn应运而生,成为了众多开发者的首选。
-### 1.2 研究现状 
+### 1.2 研究现状
 目前,主流的JavaScript依赖管理工具有npm、Yarn等。其中Yarn由Facebook、Google、Exponent和Tilde联合推出,旨在解决npm的一些缺陷,如安装速度慢、版本不一致等问题。自发布以来,Yarn获得了广泛关注和应用。
 ### 1.3 研究意义
 深入研究Yarn的原理和应用,对于提高开发效率,保证依赖版本一致性,优化项目管理流程具有重要意义。通过学习Yarn,我们可以掌握先进的依赖管理理念和实践,为构建高质量应用奠定基础。
 ### 1.4 本文结构
 本文将从以下几个方面展开:
 - Yarn的核心概念与原理
-- Yarn的关键算法和数学模型 
+- Yarn的关键算法和数学模型
 - Yarn的安装和使用步骤
 - Yarn常用命令代码实例解析
 - Yarn在实际项目中的最佳实践
@@ -68,7 +68,7 @@ Yarn采用了决策树和优化算法来管理依赖,主要流程如下:
 - 缓存加速,提高安装效率
 - 锁文件机制,确保依赖版本一致
 
-缺点:  
+缺点:
 - 算法复杂度高,对于超大型项目性能有影响
 - 部分依赖关系识别有误差,需要手动调整
 
@@ -131,7 +131,7 @@ Yarn通过优化,会自动选择一个既满足B也满足A的C的版本,比如C@
 Q: Yarn如何处理循环依赖?
 A: 由于建模为DAG,理论上不存在循环依赖。实际上Yarn会提示错误,需要手动解决。
 
-Q: Yarn优化是否保证得到最优解?  
+Q: Yarn优化是否保证得到最优解?
 A: 不保证。一般情况下是最优的,但对于复杂依赖场景,只能给出次优解。
 
 ## 5. 项目实践：代码实例和详细解释说明
@@ -216,7 +216,7 @@ Yarn适用于各种规模的JavaScript项目,典型应用场景包括:
 ## 7. 工具和资源推荐
 ### 7.1 学习资源推荐
 - [Yarn官方文档](https://classic.yarnpkg.com/en/docs)
-- [Yarn GitHub仓库](https://github.com/yarnpkg/yarn) 
+- [Yarn GitHub仓库](https://github.com/yarnpkg/yarn)
 - [Yarn vs npm 命令速查表](https://shift.infinite.red/npm-vs-yarn-cheat-sheet-8755b092e5cc)
 ### 7.2 开发工具推荐
 - [VSCode](https://code.visualstudio.com/)编辑器 + Yarn插件
@@ -224,7 +224,7 @@ Yarn适用于各种规模的JavaScript项目,典型应用场景包括:
 ### 7.3 相关论文推荐
 - [Analysis of JavaScript Package Manager Performance](https://arxiv.org/abs/2003.01201)
 - [On the Impact of Security Vulnerabilities in Manifest Files](https://arxiv.org/abs/2002.05534)
-### 7.4 其他资源推荐 
+### 7.4 其他资源推荐
 - [npm](https://www.npmjs.com/)官网
 - [OpenBase](https://openbase.com/) - JavaScript包的质量评估平台
 

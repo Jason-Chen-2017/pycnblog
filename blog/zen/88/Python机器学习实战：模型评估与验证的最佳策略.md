@@ -1,7 +1,7 @@
 
 # Python机器学习实战：模型评估与验证的最佳策略
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 关键词
 

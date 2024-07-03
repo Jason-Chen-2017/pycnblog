@@ -93,7 +93,7 @@ Keras广泛应用于：
 卷积运算的公式可以表示为：
 
 $$
-f(x,y) * g(x,y) = \\sum_{i=-\\infty}^{\\infty} \\sum_{j=-\\infty}^{\\infty} f(i,j) \\cdot g(x-i,y-j)
+f(x,y) * g(x,y) = \sum_{i=-\infty}^{\infty} \sum_{j=-\infty}^{\infty} f(i,j) \cdot g(x-i,y-j)
 $$
 
 其中$f(x,y)$是输入图像，$g(x,y)$是卷积核，$*$表示卷积运算。

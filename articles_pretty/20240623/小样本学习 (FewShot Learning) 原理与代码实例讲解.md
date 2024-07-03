@@ -113,8 +113,7 @@ $$ \mathcal{L}(\theta) = \frac{1}{n_t}\sum_{i=1}^{n_t}L(f(x_i, \theta), y_i) $$
 
 元梯度通过在多个任务上对参数 $\theta$ 进行微调，来最小化元损失：
 
-$$ \Delta\theta = \eta \sum_{t=1}^T \
-abla_\theta \mathcal{L}(\theta) $$
+$$ \Delta\theta = \eta \sum_{t=1}^T \nabla_\theta \mathcal{L}(\theta) $$
 
 其中，$\eta$ 是学习率，$T$ 是任务的数量。
 

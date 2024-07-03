@@ -270,7 +270,7 @@ doc2_similarity = cosine_similarity(query_vector, doc2_vector)
 doc3_similarity = cosine_similarity(query_vector, doc3_vector)
 
 # 对文档进行排序
-sorted_docs = sorted([(doc1_vector, doc1_similarity), (doc2_vector, doc2_similarity), (doc3_vector, doc3_similarity)], 
+sorted_docs = sorted([(doc1_vector, doc1_similarity), (doc2_vector, doc2_similarity), (doc3_vector, doc3_similarity)],
                      key=lambda x: x[1], reverse=True)
 
 # 输出排序后的文档及其相似度
@@ -311,7 +311,7 @@ user_similarity = cosine_similarity(user1_interest, user3_interest)
 user3_film = [0.7, 0.6, 0.5]
 
 # 根据相似度推荐电影
-recommendation = sorted([(user3_film, similarity) for similarity in user_similarity], 
+recommendation = sorted([(user3_film, similarity) for similarity in user_similarity],
                         key=lambda x: x[1], reverse=True)
 
 # 输出推荐结果

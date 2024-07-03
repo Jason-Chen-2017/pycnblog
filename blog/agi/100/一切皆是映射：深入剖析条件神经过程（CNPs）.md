@@ -140,7 +140,7 @@ A：CNPs的应用前景十分广阔，可以应用于智能问答、智能推荐
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n cnps-env python=3.8 
+conda create -n cnps-env python=3.8
 conda activate cnps-env
 ```
 
@@ -175,7 +175,7 @@ class ConditionalEncoder(nn.Module):
         self.embedding = nn.Embedding(vocab_size, embedding_dim)
         self.gru = nn.GRU(embedding_dim, hidden_dim, num_layers, dropout=dropout, bidirectional=True)
         self.fc = nn.Linear(hidden_dim * 2, hidden_dim)
-        
+
     def forward(self, x, hidden):
         x = self.embedding(x)
         out, hidden = self.gru(x, hidden)
@@ -188,7 +188,7 @@ class InferenceModule(nn.Module):
         super(InferenceModule, self).__init__()
         self.fc1 = nn.Linear(hidden_dim, hidden_dim)
         self.fc2 = nn.Linear(hidden_dim, 1)
-        
+
     def forward(self, hidden):
         out = torch.tanh(self.fc1(hidden))
         out = self.fc2(out)

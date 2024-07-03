@@ -124,9 +124,9 @@ $$
 - **策略**：表示智能体在给定状态下选择动作的规则，用以下公式表示：
 
    $$
- \pi(a|s) = \begin{cases} 
+ \pi(a|s) = \begin{cases}
  1, & \text{if } a = \arg\max_a Q(s,a) \\
- 0, & \text{otherwise} 
+ 0, & \text{otherwise}
 \end{cases}
 $$
 

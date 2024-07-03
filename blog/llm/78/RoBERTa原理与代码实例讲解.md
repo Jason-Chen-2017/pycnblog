@@ -112,7 +112,7 @@ RoBERTa模型的数学模型主要由以下部分组成：
 Transformer编码器由多个相同的编码器层堆叠而成，每个编码器层由自注意力机制和前馈神经网络组成。以下为Transformer编码器的数学模型：
 
 $$
-\mathbf{h}_i^{(l)} = \text{Attention}(W_Q \mathbf{h}^{(l-1)}, W_K \mathbf{h}^{(l-1)}, W_V \mathbf{h}^{(l-1)}) + \text{FFN}(W_1 \mathbf{h}^{(l-1)} + W_2 \mathbf{h}^{(l-1)}) 
+\mathbf{h}_i^{(l)} = \text{Attention}(W_Q \mathbf{h}^{(l-1)}, W_K \mathbf{h}^{(l-1)}, W_V \mathbf{h}^{(l-1)}) + \text{FFN}(W_1 \mathbf{h}^{(l-1)} + W_2 \mathbf{h}^{(l-1)})
 $$
 
 其中，$\mathbf{h}_i^{(l)}$ 表示第 $i$ 个token在第 $l$ 层的输出，$\mathbf{h}^{(l-1)}$ 表示第 $l-1$ 层的输出，$W_Q$、$W_K$ 和 $W_V$ 分别表示查询、键和值矩阵，$W_1$ 和 $W_2$ 分别表示前馈神经网络的权重。
@@ -122,7 +122,7 @@ $$
 掩码语言模型的目的是预测被掩码的单词。以下为MLM的数学模型：
 
 $$
-\text{MLM}(\mathbf{x}) = \text{softmax}(W_Q \mathbf{x} \times W_K \mathbf{x}^T) \times W_V 
+\text{MLM}(\mathbf{x}) = \text{softmax}(W_Q \mathbf{x} \times W_K \mathbf{x}^T) \times W_V
 $$
 
 其中，$\mathbf{x}$ 表示输入的序列向量，$W_Q$、$W_K$ 和 $W_V$ 分别表示查询、键和值矩阵。
@@ -132,7 +132,7 @@ $$
 NSP的目的是预测两个句子是否属于同一篇章。以下为NSP的数学模型：
 
 $$
-\text{NSP}(\mathbf{s}_1, \mathbf{s}_2) = \text{softmax}(W_Q \mathbf{s}_1 \times W_K \mathbf{s}_2^T) \times W_V 
+\text{NSP}(\mathbf{s}_1, \mathbf{s}_2) = \text{softmax}(W_Q \mathbf{s}_1 \times W_K \mathbf{s}_2^T) \times W_V
 $$
 
 其中，$\mathbf{s}_1$ 和 $\mathbf{s}_2$ 分别表示两个句子的序列向量。

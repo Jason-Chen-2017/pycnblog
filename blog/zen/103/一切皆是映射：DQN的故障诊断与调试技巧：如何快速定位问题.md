@@ -207,7 +207,7 @@ A：目标网络是一个与当前网络参数不同的网络，用于更新Q值
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n tensorflow-env python=3.8 
+conda create -n tensorflow-env python=3.8
 conda activate tensorflow-env
 ```
 

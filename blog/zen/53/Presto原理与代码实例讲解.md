@@ -3,7 +3,7 @@
 ## 1.背景介绍
 ### 1.1 大数据查询引擎的发展历程
 #### 1.1.1 MapReduce时代
-#### 1.1.2 Hive时代 
+#### 1.1.2 Hive时代
 #### 1.1.3 Spark SQL时代
 ### 1.2 Presto的诞生
 #### 1.2.1 Facebook的大数据分析痛点
@@ -21,7 +21,7 @@
 #### 2.2.3 结果集合并与返回
 ### 2.3 Presto与Hive、Spark SQL的对比
 #### 2.3.1 查询性能对比
-#### 2.3.2 SQL兼容性对比  
+#### 2.3.2 SQL兼容性对比
 #### 2.3.3 生态集成对比
 
 ## 3.核心算法原理具体操作步骤
@@ -30,7 +30,7 @@
 #### 3.1.2 语义分析与查询重写
 #### 3.1.3 逻辑执行计划生成
 ### 3.2 Cost Based优化器
-#### 3.2.1 统计信息收集 
+#### 3.2.1 统计信息收集
 #### 3.2.2 代价估算模型
 #### 3.2.3 动态规划算法
 ### 3.3 执行器与调度器
@@ -41,7 +41,7 @@
 ## 4.数学模型和公式详细讲解举例说明
 ### 4.1 代价估算模型
 #### 4.1.1 基于直方图的选择率估计
-$$ Selectivity(Col=x) = \frac{Histogram(Col,x)}{NDV(Col)} $$ 
+$$ Selectivity(Col=x) = \frac{Histogram(Col,x)}{NDV(Col)} $$
 #### 4.1.2 基于采样的基数估计
 $$ Cardinality = \frac{SampleCardinality}{SampleSize} * TotalSize $$
 #### 4.1.3 多表Join基数估计
@@ -50,9 +50,9 @@ $$ Cardinality(T1 \bowtie T2) = \frac{Cardinality(T1) * Cardinality(T2)}{Max(NDV
 #### 4.2.1 查询图与关系代数表达式
 #### 4.2.2 递归搜索最优Join顺序
 $$ Cost = DataSize * CpuCost + DataSize * NetworkCost + DataSize * MemoryCost $$
-#### 4.2.3 剪枝与最优子结构 
+#### 4.2.3 剪枝与最优子结构
 
-## 5.项目实践：代码实例和详细解释说明 
+## 5.项目实践：代码实例和详细解释说明
 ### 5.1 Presto安装部署
 #### 5.1.1 单机部署
 #### 5.1.2 集群部署
@@ -62,13 +62,13 @@ $$ Cost = DataSize * CpuCost + DataSize * NetworkCost + DataSize * MemoryCost $$
 #### 5.2.2 Hive Connector实现解析
 #### 5.2.3 自定义Connector开发
 ### 5.3 UDF与UDAF开发
-#### 5.3.1 标量函数实现 
+#### 5.3.1 标量函数实现
 #### 5.3.2 聚合函数实现
 #### 5.3.3 Lambda函数支持
 
 ## 6.实际应用场景
 ### 6.1 Presto在Facebook的应用
-#### 6.1.1 实时数仓分析 
+#### 6.1.1 实时数仓分析
 #### 6.1.2 A/B测试分析
 #### 6.1.3 机器学习特征工程
 ### 6.2 Presto在阿里巴巴的应用
@@ -83,9 +83,9 @@ $$ Cost = DataSize * CpuCost + DataSize * NetworkCost + DataSize * MemoryCost $$
 ### 7.1 开发调试工具
 #### 7.1.1 Presto Cli
 #### 7.1.2 Presto IntelliJ插件
-#### 7.1.3 Presto Web UI  
+#### 7.1.3 Presto Web UI
 ### 7.2 周边生态系统
-#### 7.2.1 Airpal: Presto的Web SQL工具 
+#### 7.2.1 Airpal: Presto的Web SQL工具
 #### 7.2.2 Presto Gateway: Presto多集群管理
 #### 7.2.3 Presto Benchmark: 性能测试框架
 ### 7.3 源码学习资料
@@ -98,7 +98,7 @@ $$ Cost = DataSize * CpuCost + DataSize * NetworkCost + DataSize * MemoryCost $$
 #### 8.1.1 开源社区现状
 #### 8.1.2 商业发行版本
 #### 8.1.3 云厂商的支持
-### 8.2 Presto面临的机遇与挑战  
+### 8.2 Presto面临的机遇与挑战
 #### 8.2.1 Presto与Spark的竞合关系
 #### 8.2.2 Presto在OLAP领域的发展
 #### 8.2.3 Presto在数据湖分析的应用
@@ -116,7 +116,7 @@ $$ Cost = DataSize * CpuCost + DataSize * NetworkCost + DataSize * MemoryCost $$
 #### 9.2.1 Presto的查询执行流程
 #### 9.2.2 Presto的数据存储与计算分离
 #### 9.2.3 Presto的容错与高可用
-### 9.3 Presto的开发问题 
+### 9.3 Presto的开发问题
 #### 9.3.1 如何开发Presto UDF
 #### 9.3.2 如何开发Presto Connector
 #### 9.3.3 如何参与Presto社区贡献
@@ -157,7 +157,7 @@ GROUP BY l.orderkey;
 ```
 
 Presto优化器会枚举所有可能的Join顺序：
-- ((customer JOIN orders) JOIN lineitem) 
+- ((customer JOIN orders) JOIN lineitem)
 - ((customer JOIN lineitem) JOIN orders)
 - ((orders JOIN lineitem) JOIN customer)
 

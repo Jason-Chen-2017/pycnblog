@@ -300,4 +300,4 @@ ReAct 框架的研究展望包括：
 * **Q: ReAct 框架如何处理错误的行动结果？**
     * **A:** ReAct 框架可以根据错误结果进行调整，并尝试其他行动。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -170,7 +170,7 @@ class VGG16(nn.Module):
         self.conv4 = nn.Conv2d(128, 128, kernel_size=3, padding=1)
         self.fc1 = nn.Linear(128 * 6 * 6, 1024)
         self.fc2 = nn.Linear(1024, 10)
-    
+
     def forward(self, x):
         x = nn.functional.relu(self.conv1(x))
         x = nn.functional.relu(self.conv2(x))

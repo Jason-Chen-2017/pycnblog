@@ -92,8 +92,7 @@ $$
 根据动作价值函数 $Q'(s,a)$ 和奖励信号 $r$，更新策略参数 $\theta$：
 
 $$
-\theta \leftarrow \theta - \alpha \
-abla_{\theta} J(\theta)
+\theta \leftarrow \theta - \alpha \nabla_{\theta} J(\theta)
 $$
 
 其中，$J(\theta)$ 表示策略的损失函数，可以通过最大熵损失函数或确定性策略梯度（DPG）等方法进行计算。

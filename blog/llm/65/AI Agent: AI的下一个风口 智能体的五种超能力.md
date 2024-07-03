@@ -152,16 +152,13 @@ $$
 定义策略梯度：
 
 $$
-\
-abla_\theta V(s;\theta) = \
-abla_\theta \mathbb{E}_\pi[r_t | s_t = s]
+\nabla_\theta V(s;\theta) = \nabla_\theta \mathbb{E}_\pi[r_t | s_t = s]
 $$
 
 根据策略梯度下降算法，有：
 
 $$
-\theta \leftarrow \theta - \eta \
-abla_\theta V(s;\theta)
+\theta \leftarrow \theta - \eta \nabla_\theta V(s;\theta)
 $$
 
 其中，$\eta$ 为学习率。

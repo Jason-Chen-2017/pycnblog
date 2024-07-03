@@ -23,7 +23,7 @@ Spark和HBase都是大数据领域的重要工具,将它们进行整合可以发
 - Dataset:是DataFrame的扩展,提供了强类型支持
 - Spark SQL:Spark用于结构化数据处理的编程模块
 
-### 2.2 HBase核心概念 
+### 2.2 HBase核心概念
 - RowKey:HBase表的主键,用于检索记录
 - Column Family:列族,HBase表中的每个列都归属于某个列族
 - Column Qualifier:列标识符,列族中的数据通过列标识符来定位
@@ -53,7 +53,7 @@ C -.->|数据处理| A
 5. 关闭HBase连接
 
 ### 3.2 Spark写入数据到HBase的步骤
-1. 创建HBase连接 
+1. 创建HBase连接
 2. 将数据转化为RDD
 3. 将RDD数据写入HBase
 4. 提交数据修改
@@ -63,7 +63,7 @@ C -.->|数据处理| A
 1. 初始化作业配置
 2. 设置输入数据路径
 3. 配置HFileOutputFormat2输出格式
-4. 运行MapReduce作业生成HFile 
+4. 运行MapReduce作业生成HFile
 5. 将生成的HFile加载到HBase表中
 
 ## 4. 数学模型和公式详细讲解举例说明
@@ -110,7 +110,7 @@ val conf = HBaseConfiguration.create()
 conf.set("hbase.zookeeper.quorum", "localhost")
 conf.set("hbase.zookeeper.property.clientPort", "2181")
 
-val sc = new SparkContext("local", "HBaseTest", conf) 
+val sc = new SparkContext("local", "HBaseTest", conf)
 val hbaseContext = new HBaseContext(sc, conf)
 
 val rdd = hbaseContext.hbaseRDD(
@@ -169,7 +169,7 @@ sc.parallelize(data).map { case (k, v) =>
   (new ImmutableBytesWritable(rowKey), kv)
 }.saveAsNewAPIHadoopFile(
   "/hfiles",
-  classOf[ImmutableBytesWritable], 
+  classOf[ImmutableBytesWritable],
   classOf[KeyValue],
   classOf[HFileOutputFormat2],
   job.getConfiguration

@@ -6,7 +6,7 @@
 
 在当今时代,人工智能(AI)已经无处不在,从个人助理到自动驾驶汽车,从推荐系统到机器翻译,AI正在彻底改变我们的生活和工作方式。随着AI技术的不断发展,构建高效、可靠、安全的AI系统变得越来越重要。然而,构建复杂的AI系统并非易事,需要解决诸多挑战,例如数据管理、模型训练、系统部署等。这就需要一个清晰的工作流程来协调和管理AI系统的各个组件。
 
-### 1.2 研究现状  
+### 1.2 研究现状
 
 目前,已有一些流行的AI工作流程框架,如TensorFlow Extended(TFX)、Kubeflow、AzureML等。这些框架提供了端到端的AI工作流程管理,涵盖了数据处理、模型训练、模型评估、部署等多个阶段。然而,这些框架往往针对特定的AI场景或平台,存在一定的局限性。因此,需要一个更加通用、灵活的AI工作流程框架,能够适应不同的AI场景和需求。
 
@@ -50,7 +50,7 @@
 
 这些核心概念相互关联,共同构成了AI工作流程框架的基础架构。下面我们将详细介绍框架的核心算法原理和实现细节。
 
-## 3. 核心算法原理 & 具体操作步骤  
+## 3. 核心算法原理 & 具体操作步骤
 
 ### 3.1 算法原理概述
 
@@ -107,16 +107,16 @@ sorted_components = topological_sort(dag)
 for component in sorted_components:
     # 获取输入工件
     inputs = get_inputs(component, artifacts)
-    
+
     # 执行组件
     outputs = execute_component(component, inputs)
-    
+
     # 更新工件
     artifacts.update(outputs)
-    
+
     # 收集元数据
     collect_metadata(component, inputs, outputs)
-    
+
     # 处理错误和重试
     if execution_failed(component):
         retry_count += 1

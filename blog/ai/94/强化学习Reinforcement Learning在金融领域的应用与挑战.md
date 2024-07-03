@@ -1,7 +1,7 @@
 
 # 强化学习Reinforcement Learning在金融领域的应用与挑战
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -208,7 +208,7 @@ A：评估强化学习模型需要综合考虑多个因素，包括：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 3. 安装PyTorch：
@@ -238,7 +238,7 @@ class StockTradingPolicy(sb3.torch_policy.TorchPolicy):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.model = sb3.torch_policy.MlpPolicy(
-            features_dim=env.observation_space.shape[0], 
+            features_dim=env.observation_space.shape[0],
             action_space=env.action_space.n,
             hidden_sizes=(64, 64)
         )

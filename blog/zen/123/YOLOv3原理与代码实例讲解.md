@@ -459,4 +459,4 @@ YOLOv3 算法也面临着一些挑战：
 * **Q: YOLOv3 算法可以用于哪些平台?**
 * **A:** YOLOv3 算法可以部署到各种平台，例如嵌入式设备、移动设备、服务器等。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

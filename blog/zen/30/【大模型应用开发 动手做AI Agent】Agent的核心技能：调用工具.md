@@ -146,11 +146,11 @@ $$P(s_{t+1}|s_t,a_t)$$
 
 $$R(s_t,a_t,s_{t+1}) = r_{t+1}$$
 
-在强化学习中，代理通过学习优化策略$\\pi(a|s)$，即在给定状态$s$下选择动作$a$的概率，来最大化累积奖励：
+在强化学习中，代理通过学习优化策略$\pi(a|s)$，即在给定状态$s$下选择动作$a$的概率，来最大化累积奖励：
 
-$$V^\\pi(s) = \\mathbb{E}_\\pi\\left[\\sum_{t'=t}^{\\infty}\\gamma^{t'-t}R(s_t',a_t',s_{t'+1}')\\right]$$
+$$V^\pi(s) = \mathbb{E}_\pi\left[\sum_{t'=t}^{\infty}\gamma^{t'-t}R(s_t',a_t',s_{t'+1}')\right]$$
 
-其中，$\\gamma$是折扣因子，衡量未来奖励的即时价值。
+其中，$\gamma$是折扣因子，衡量未来奖励的即时价值。
 
 ### 4.3 案例分析与讲解
 
@@ -170,10 +170,10 @@ $$V^\\pi(s) = \\mathbb{E}_\\pi\\left[\\sum_{t'=t}^{\\infty}\\gamma^{t'-t}R(s_t',
 
 - **如何处理多模态输入？**
   解决方案：使用多模态融合技术，如多输入联合学习或特征融合，整合视觉、听觉、触觉等信息。
-  
+
 - **如何提高决策速度？**
   解决方案：优化算法模型结构，采用更高效的计算框架，或者引入预训练模型加快决策过程。
-  
+
 - **如何确保安全？**
   解决方案：建立安全策略和紧急停止机制，定期进行安全审计和测试，确保系统稳定可靠。
 
@@ -201,34 +201,34 @@ class SmartAirConditioner:
         self.people_count = people_count
         self.action_space = ['off', 'cool', 'heat']
         self.state_space = np.array([temperature, humidity])
-        
+
     def step(self, action):
         reward = self._calculate_reward()
         self._update_state()
         done = self._check_done()
         return self.state_space, reward, done, {}
-    
+
     def _calculate_reward(self):
         comfort_level = self._compute_comfort()
         energy_efficiency = self._compute_energy_efficiency()
         return comfort_level * energy_efficiency
-    
+
     def _update_state(self):
         # Update state based on actions taken
         pass
-    
+
     def _check_done(self):
         # Check if the environment is done
         pass
-    
+
     def _compute_comfort(self):
         # Calculate comfort level based on temperature and humidity
         pass
-    
+
     def _compute_energy_efficiency(self):
         # Calculate energy efficiency based on current actions
         pass
-    
+
     def reset(self):
         # Reset environment to initial state
         pass

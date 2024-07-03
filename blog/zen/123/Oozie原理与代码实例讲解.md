@@ -284,7 +284,7 @@ Oozie 是一款非常有前景的工作流调度系统，未来将会在更多�
 
 **问题 1:** Oozie 和 Azkaban、Airflow 有什么区别？
 
-**解答:** 
+**解答:**
 
 * **Oozie:** 成熟稳定，功能强大，但学习曲线相对较陡峭。
 * **Azkaban:** 易于使用，但功能相对简单。
@@ -298,4 +298,4 @@ Oozie 是一款非常有前景的工作流调度系统，未来将会在更多�
 
 **解答:** 可以使用 Oozie Web UI 或 Oozie 命令行工具来监控工作流的执行状态。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

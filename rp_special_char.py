@@ -7,31 +7,30 @@ def process_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as file:
         content = file.read()
 
-    # 特殊关键字，不进行替换的部分
-    special_keywords = ["\\\\nebula", "\\\\nabla", "\\\\neq", "\\\\not", "\\\\neg"]
+    lines = content.split('\n')
+    newLines = []
+    # 遍历每一行过滤特殊字符
+    for i in range(len(lines)):
+        line = lines[i]
+        # 去除文本行尾部的空白字符
+        line = line.rstrip()
 
-    # 替换 \\n 为 \n，但保留特殊关键字
+        # 替换特殊字符
+        # 替换 \" 为 "
+        line = line.replace('\\"', '"')
+        # 替换 \\ 为 \  ，但是本行末尾的 \\ 不替换
+        line = re.sub(r'\\\\(?!$)', r'\\', line)
+        # 替换 \\[ 为 $$
+        line = line.replace('\\[', '$$')
+        # 替换 \\] 为 $$
+        line = line.replace('\\]', '$$')
 
-    def replace_newline(match):
-        if match.group(0) in special_keywords:
-            return match.group(0)
+        newLines.append(line)
 
-        return match.group(0).replace("\\n", "\n")
-
-    content = re.sub(r'\\\\n|\\\\nebula|\\\\nabla|\\\\neq|\\\\not|\\\\neg', replace_newline, content)
-
-    # 替换 \" 为 "
-    content = content.replace('\\"', '"')
-    # 替换 \\ 为 \， 但是本行末尾的 \\ 不替换
-    content = re.sub(r'\\\\(?!$)', '\\', content)
-    
-    # 替换 \\[ 为 $$
-    content = content.replace('\\[', '$$')
-    # 替换 \\] 为 $$
-    content = content.replace('\\]', '$$')
+    newContent = '\n'.join(newLines)
 
     with open(filepath, 'w', encoding='utf-8') as file:
-        file.write(content)
+        file.write(newContent)
 
 
 def process_directory(directory):

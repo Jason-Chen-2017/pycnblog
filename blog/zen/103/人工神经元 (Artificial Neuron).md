@@ -157,21 +157,21 @@ for epoch in range(1000):
     # 前向传播
     z = np.dot([1, x], w) + b
     y_pred = sigmoid(z)
-    
+
     # 计算损失
     loss_value = loss(y_true, y_pred)
-    
+
     # 反向传播
     dL_dy_pred = 2 * (y_pred - y_true)
     dL_dy_pred = dL_dy_pred * y_pred * (1 - y_pred)
     dL_dy = dL_dy_pred * w
     dL_dw = np.dot([1, x], dL_dy)
     dL_db = dL_dy_pred
-    
+
     # 更新权重和偏置
     w -= dL_dw
     b -= dL_db
-    
+
     # 打印损失
     if epoch % 100 == 0:
         print(f'Epoch {epoch}: Loss = {loss_value}')

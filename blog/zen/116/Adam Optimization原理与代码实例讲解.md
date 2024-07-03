@@ -125,17 +125,17 @@ for epoch in range(100):
     # 假设我们有输入数据x和目标值y
     x = torch.randn(10)
     y = torch.randn(1)
-    
+
     # 前向传播
     output = model(x)
-    
+
     # 计算损失
     loss = (output - y).pow(2).mean()
-    
+
     # 反向传播
     optimizer.zero_grad()
     loss.backward()
-    
+
     # 更新参数
     optimizer.step()
 ```

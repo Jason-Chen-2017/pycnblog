@@ -3,14 +3,14 @@
 ## 1. 背景介绍
 ### 1.1 语言模型的发展历程
 #### 1.1.1 早期的统计语言模型
-#### 1.1.2 神经网络语言模型的兴起  
+#### 1.1.2 神经网络语言模型的兴起
 #### 1.1.3 Transformer时代的到来
 ### 1.2 语言模型的应用现状
 #### 1.2.1 自然语言处理领域的广泛应用
 #### 1.2.2 对话系统和智能助手
 #### 1.2.3 文本生成和创意写作
 ### 1.3 LangChain的出现与定位
-#### 1.3.1 LangChain的诞生背景  
+#### 1.3.1 LangChain的诞生背景
 #### 1.3.2 LangChain的核心理念
 #### 1.3.3 LangChain在语言模型编程中的独特优势
 
@@ -20,7 +20,7 @@
 #### 2.1.2 概率分布与条件概率
 #### 2.1.3 语言模型的评估指标
 ### 2.2 LangChain的核心组件
-#### 2.2.1 Prompts - 灵活的提示模板 
+#### 2.2.1 Prompts - 灵活的提示模板
 #### 2.2.2 Chains - 组合语言模型的管道
 #### 2.2.3 Agents - 自主决策的智能体
 ### 2.3 LangChain与其他框架的比较
@@ -43,11 +43,11 @@
 #### 3.3.2 多模态输入与输出
 #### 3.3.3 与外部知识库的集成
 
-## 4. 数学模型和公式详细讲解举例说明 
+## 4. 数学模型和公式详细讲解举例说明
 ### 4.1 语言模型的数学基础
 #### 4.1.1 概率论与信息论基础
 #### 4.1.2 n-gram语言模型
-#### 4.1.3 神经网络语言模型 
+#### 4.1.3 神经网络语言模型
 ### 4.2 Transformer模型的数学原理
 #### 4.2.1 自注意力机制
 $$
@@ -92,7 +92,7 @@ template = """
 """
 
 prompt = PromptTemplate(
-    input_variables=["context", "question"], 
+    input_variables=["context", "question"],
     template=template
 )
 ```
@@ -124,9 +124,9 @@ tools = [
 #### 5.2.2 选择代理类型并初始化
 ```python
 agent = initialize_agent(
-    tools, 
-    llm, 
-    agent="zero-shot-react-description", 
+    tools,
+    llm,
+    agent="zero-shot-react-description",
     verbose=True
 )
 ```
@@ -176,7 +176,7 @@ print(result)
 #### 8.1.1 模型规模与性能的提升
 #### 8.1.2 多模态语言模型
 #### 8.1.3 个性化与适应性
-### 8.2 LangChain的未来展望 
+### 8.2 LangChain的未来展望
 #### 8.2.1 功能扩展与优化
 #### 8.2.2 多语言支持
 #### 8.2.3 与其他生态的融合
@@ -197,26 +197,26 @@ graph TB
     A[语言模型] --> B1[统计语言模型]
     A --> B2[神经网络语言模型]
     A --> B3[Transformer语言模型]
-    
+
     B1 --> C1[n-gram模型]
     B1 --> C2[平滑与回退]
-    
+
     B2 --> D1[NNLM]
     B2 --> D2[RNNLM]
     B2 --> D3[LSTM/GRU]
-    
+
     B3 --> E1[Encoder-Decoder]
     B3 --> E2[GPT]
     B3 --> E3[BERT]
-    
+
     E2 --> F1[GPT-2]
     E2 --> F2[GPT-3]
     E2 --> F3[InstructGPT]
-    
+
     E3 --> G1[RoBERTa]
     E3 --> G2[ALBERT]
     E3 --> G3[ELECTRA]
-    
+
     F2 --> H[LangChain]
     F3 --> H
     G2 --> H

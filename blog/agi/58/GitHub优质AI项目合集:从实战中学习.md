@@ -21,7 +21,7 @@
 ## 2.核心概念与联系
 ### 2.1 机器学习
 #### 2.1.1 监督学习
-#### 2.1.2 无监督学习  
+#### 2.1.2 无监督学习
 #### 2.1.3 强化学习
 
 ### 2.2 深度学习
@@ -189,7 +189,7 @@ class LogisticRegression(nn.Module):
     def __init__(self, input_dim):
         super(LogisticRegression, self).__init__()
         self.linear = nn.Linear(input_dim, 1)
-        
+
     def forward(self, x):
         out = torch.sigmoid(self.linear(x))
         return out
@@ -207,12 +207,12 @@ for epoch in range(num_epochs):
     # 前向传播
     y_pred = model(X_train)
     loss = criterion(y_pred, y_train)
-    
+
     # 反向传播和优化
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
-    
+
     if (epoch+1) % 10 == 0:
         print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
 
