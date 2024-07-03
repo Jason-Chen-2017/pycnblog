@@ -49,7 +49,7 @@ SVM回归分析相比于其他回归方法，具有以下优势：
 在进行SVM回归分析之前，我们需要对数据进行预处理，包括：
 
 *   **数据清洗:** 处理缺失值和异常值。
-*   **特征缩放:** 将不同特征的取值范围缩放到相同的区间，例如 \[0, 1] 或 \[-1, 1]。
+*   **特征缩放:** 将不同特征的取值范围缩放到相同的区间，例如 $$0, 1] 或 $$-1, 1]。
 *   **特征选择:** 选择与目标变量相关的特征。
 
 ### 3.2 模型训练
@@ -74,7 +74,7 @@ SVM回归分析的模型训练过程如下：
 线性SVM回归的目标是找到一个线性函数 $f(x) = w^Tx + b$，它能够最小化ε-不敏感损失函数：
 
 $$
-L_\epsilon(y, f(x)) = \begin{cases} 0 & \text{if } |y - f(x)| \le \epsilon \\ |y - f(x)| - \epsilon & \text{otherwise} \end{cases}
+L_\epsilon(y, f(x)) = \begin{cases} 0 & \text{if } |y - f(x)| \le \epsilon \ |y - f(x)| - \epsilon & \text{otherwise} \end{cases}
 $$
 
 其中，$w$ 是权重向量，$b$ 是偏置项，$\epsilon$ 是不敏感参数。
@@ -83,8 +83,8 @@ $$
 
 $$
 \begin{aligned}
-& \min_{w, b} \frac{1}{2} \|w\|^2 + C \sum_{i=1}^n L_\epsilon(y_i, f(x_i)) \\
-& \text{subject to } |y_i - f(x_i)| \le \epsilon + \xi_i, \\
+& \min_{w, b} \frac{1}{2} \|w\|^2 + C \sum_{i=1}^n L_\epsilon(y_i, f(x_i)) \
+& \text{subject to } |y_i - f(x_i)| \le \epsilon + \xi_i, \
 & \xi_i \ge 0, i = 1, 2, ..., n
 \end{aligned}
 $$

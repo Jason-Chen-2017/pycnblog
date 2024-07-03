@@ -79,9 +79,9 @@ Spark SQL中的执行计划可以被视为一个有向无环图（DAG），其�
 
 在执行计划的生成过程中，Spark SQL会考虑数据集的大小、分区策略等因素，以最小化执行时间。假设我们有一个数据集$D$，大小为$n$，并使用分区策略$p$，则执行计划的总时间$T$可以表示为：
 
-\\[ T = \\sum_{i=1}^{p} \\alpha_i \\cdot \\beta_i \\]
+$$ T = \sum_{i=1}^{p} \alpha_i \cdot \beta_i $$
 
-其中$\\alpha_i$是第$i$个分区的操作开销，$\\beta_i$是该分区的数据量。Spark SQL通过优化$\\alpha_i$和$\\beta_i$来生成更高效的执行计划。
+其中$\alpha_i$是第$i$个分区的操作开销，$\beta_i$是该分区的数据量。Spark SQL通过优化$\alpha_i$和$\beta_i$来生成更高效的执行计划。
 
 ### 4.3 案例分析与讲解
 
@@ -122,15 +122,15 @@ pip install pyspark==3.1.1
 from pyspark.sql import SparkSession
 
 # 创建SparkSession
-spark = SparkSession.builder \\
-    .appName(\"Spark SQL Example\") \\
+spark = SparkSession.builder \
+    .appName("Spark SQL Example") \
     .getOrCreate()
 
 # 加载数据
-df = spark.read.csv(\"path/to/data.csv\", header=True, inferSchema=True)
+df = spark.read.csv("path/to/data.csv", header=True, inferSchema=True)
 
 # 执行SQL查询
-result = df.filter(df.date > '2023-01-01').select(\"*\")
+result = df.filter(df.date > '2023-01-01').select("*")
 
 # 显示结果
 result.show()

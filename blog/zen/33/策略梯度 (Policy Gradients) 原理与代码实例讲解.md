@@ -54,22 +54,22 @@
 
 策略梯度算法的核心思想是计算策略的梯度，并使用梯度信息更新策略参数。以下是一个简化的策略梯度算法步骤：
 
-1. 初始化策略参数$\\theta$。
-2. 在环境中采样一个状态序列$S_1, S_2, \\dots, S_T$和动作序列$A_1, A_2, \\dots, A_T$。
+1. 初始化策略参数$\theta$。
+2. 在环境中采样一个状态序列$S_1, S_2, \dots, S_T$和动作序列$A_1, A_2, \dots, A_T$。
 3. 计算状态-动作对$(S_t, A_t)$的回报$R_t$。
 4. 计算策略梯度$\
-abla_{\\theta} J(\\theta) = \
-abla_{\\theta} \\sum_{t=1}^T R_t$。
-5. 使用梯度下降或其他优化方法更新策略参数$\\theta$。
+abla_{\theta} J(\theta) = \
+abla_{\theta} \sum_{t=1}^T R_t$。
+5. 使用梯度下降或其他优化方法更新策略参数$\theta$。
 
 ### 3.2 算法步骤详解
 
-1. **初始化策略参数**：使用随机初始化或预训练方法初始化策略参数$\\theta$。
-2. **采样状态-动作对**：在环境中执行策略$\\pi(\\cdot|\\theta)$，从状态空间中采样状态序列$S_1, S_2, \\dots, S_T$，并根据策略$\\pi$从动作空间中采样动作序列$A_1, A_2, \\dots, A_T$。
+1. **初始化策略参数**：使用随机初始化或预训练方法初始化策略参数$\theta$。
+2. **采样状态-动作对**：在环境中执行策略$\pi(\cdot|\theta)$，从状态空间中采样状态序列$S_1, S_2, \dots, S_T$，并根据策略$\pi$从动作空间中采样动作序列$A_1, A_2, \dots, A_T$。
 3. **计算回报**：计算每个状态-动作对的回报$R_t$。
 4. **计算策略梯度**：根据回报序列和策略梯度定义，计算策略梯度$\
-abla_{\\theta} J(\\theta)$。
-5. **更新策略参数**：使用梯度下降或其他优化方法更新策略参数$\\theta$，以提升策略性能。
+abla_{\theta} J(\theta)$。
+5. **更新策略参数**：使用梯度下降或其他优化方法更新策略参数$\theta$，以提升策略性能。
 
 ### 3.3 算法优缺点
 
@@ -100,13 +100,13 @@ abla_{\\theta} J(\\theta)$。
 策略梯度算法的数学模型可以表示为以下形式：
 
 $$\
-abla_{\\theta} J(\\theta) = \\sum_{t=1}^T \
-abla_{\\theta} \\log \\pi(\\theta; S_t, A_t) R_t$$
+abla_{\theta} J(\theta) = \sum_{t=1}^T \
+abla_{\theta} \log \pi(\theta; S_t, A_t) R_t$$
 
 其中：
 
-- $J(\\theta)$表示策略$\\theta$的期望回报。
-- $\\pi(\\theta; S_t, A_t)$表示策略$\\theta$在状态$S_t$下执行动作$A_t$的概率。
+- $J(\theta)$表示策略$\theta$的期望回报。
+- $\pi(\theta; S_t, A_t)$表示策略$\theta$在状态$S_t$下执行动作$A_t$的概率。
 - $R_t$表示在时间步$t$获得的回报。
 
 ### 4.2 公式推导过程
@@ -116,36 +116,36 @@ abla_{\\theta} \\log \\pi(\\theta; S_t, A_t) R_t$$
 1. **策略梯度定义**：
 
 $$\
-abla_{\\theta} \\log \\pi(\\theta; S_t, A_t) = \\frac{\\partial}{\\partial \\theta} \\log \\pi(\\theta; S_t, A_t)$$
+abla_{\theta} \log \pi(\theta; S_t, A_t) = \frac{\partial}{\partial \theta} \log \pi(\theta; S_t, A_t)$$
 
 2. **期望回报**：
 
-$$J(\\theta) = \\sum_{t=1}^T \\sum_{a \\in A(S_t)} \\pi(\\theta; S_t, a) R_t$$
+$$J(\theta) = \sum_{t=1}^T \sum_{a \in A(S_t)} \pi(\theta; S_t, a) R_t$$
 
 3. **策略梯度**：
 
 $$\
-abla_{\\theta} J(\\theta) = \\sum_{t=1}^T \\sum_{a \\in A(S_t)} \\pi(\\theta; S_t, a) \
-abla_{\\theta} \\log \\pi(\\theta; S_t, a) R_t$$
+abla_{\theta} J(\theta) = \sum_{t=1}^T \sum_{a \in A(S_t)} \pi(\theta; S_t, a) \
+abla_{\theta} \log \pi(\theta; S_t, a) R_t$$
 
 ### 4.3 案例分析与讲解
 
 以下是一个简单的案例，展示如何使用策略梯度算法进行强化学习。
 
-假设有一个简单的环境，智能体可以从状态0或1中选择动作0或1，并获得相应的奖励。我们使用线性策略，即$\\pi(a|s) = w_0 + w_1 s$，其中$w_0$和$w_1$是策略参数。
+假设有一个简单的环境，智能体可以从状态0或1中选择动作0或1，并获得相应的奖励。我们使用线性策略，即$\pi(a|s) = w_0 + w_1 s$，其中$w_0$和$w_1$是策略参数。
 
 1. **初始化策略参数**：$w_0 = 0, w_1 = 0$。
-2. **采样状态-动作对**：环境随机生成状态序列$S_1, S_2, \\dots, S_T$和动作序列$A_1, A_2, \\dots, A_T$。
+2. **采样状态-动作对**：环境随机生成状态序列$S_1, S_2, \dots, S_T$和动作序列$A_1, A_2, \dots, A_T$。
 3. **计算回报**：根据状态-动作对$(S_t, A_t)$和奖励函数，计算回报$R_t$。
 4. **计算策略梯度**：
 
 $$\
-abla_{w_0} J(w_0, w_1) = \\sum_{t=1}^T \
-abla_{w_0} \\log \\pi(w_0, w_1; S_t, A_t) R_t = \\sum_{t=1}^T R_t$$
+abla_{w_0} J(w_0, w_1) = \sum_{t=1}^T \
+abla_{w_0} \log \pi(w_0, w_1; S_t, A_t) R_t = \sum_{t=1}^T R_t$$
 
 $$\
-abla_{w_1} J(w_0, w_1) = \\sum_{t=1}^T \
-abla_{w_1} \\log \\pi(w_0, w_1; S_t, A_t) R_t = \\sum_{t=1}^T R_t S_t$$
+abla_{w_1} J(w_0, w_1) = \sum_{t=1}^T \
+abla_{w_1} \log \pi(w_0, w_1; S_t, A_t) R_t = \sum_{t=1}^T R_t S_t$$
 
 5. **更新策略参数**：使用梯度下降或其他优化方法更新策略参数$w_0$和$w_1$。
 
@@ -200,7 +200,7 @@ class PolicyNetwork(torch.nn.Module):
         return x
 
 # 定义强化学习环境
-env = gym.make(\"CartPole-v0\")
+env = gym.make("CartPole-v0")
 
 # 初始化策略网络和优化器
 policy_network = PolicyNetwork(input_dim=4, hidden_dim=64, action_dim=2)
@@ -243,7 +243,7 @@ def policy_gradient_step(policy_network, env, optimizer, gamma=0.99):
 # 训练策略网络
 for epoch in range(1000):
     total_reward = policy_gradient_step(policy_network, env, optimizer)
-    print(f\"Epoch {epoch}, Total Reward: {total_reward}\")
+    print(f"Epoch {epoch}, Total Reward: {total_reward}")
 
 # 关闭环境
 env.close()
@@ -252,7 +252,7 @@ env.close()
 ### 5.3 代码解读与分析
 
 1. **PolicyNetwork类**：定义了策略网络，使用两个全连接层来表示策略参数。
-2. **gym.make(\"CartPole-v0\")**：加载CartPole环境，这是一个经典的强化学习环境，用于演示策略梯度算法。
+2. **gym.make("CartPole-v0")**：加载CartPole环境，这是一个经典的强化学习环境，用于演示策略梯度算法。
 3. **policy_gradient_step函数**：实现策略梯度算法的核心步骤，包括状态采样、动作选择、回报计算、梯度计算和参数更新。
 4. **训练策略网络**：使用策略梯度算法训练策略网络，直到达到预定的训练轮数。
 

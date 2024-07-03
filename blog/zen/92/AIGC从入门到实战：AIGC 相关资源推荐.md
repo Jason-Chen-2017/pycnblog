@@ -108,8 +108,8 @@ GAN的优点是能够生成高质量的数据，且生成数据具有多样性�
 以GAN为例，其数学模型如下：
 
 $$
-D(x) = \sigma(W_Dx+b_D) \quad \text{(判别器)}\\
-G(z) = \sigma(W_Gz+b_G) \quad \text{(生成器)}\\
+D(x) = \sigma(W_Dx+b_D) \quad \text{(判别器)}\
+G(z) = \sigma(W_Gz+b_G) \quad \text{(生成器)}\
 \text{损失函数:} \quad L(G,D) = \mathbb{E}_{x\sim p_{data}(x)}[D(x)] - \mathbb{E}_{z\sim p_{z}(z)}[D(G(z))]
 $$
 

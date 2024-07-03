@@ -67,9 +67,9 @@ $$
 
 $$
 \begin{aligned}
-\vec{a} \cdot \vec{b} &= 3 \times 4 + 4 \times 3 = 24 \\
-||\vec{a}|| &= \sqrt{3^2 + 4^2} = 5 \\
-||\vec{b}|| &= \sqrt{4^2 + 3^2} = 5 \\
+\vec{a} \cdot \vec{b} &= 3 \times 4 + 4 \times 3 = 24 \
+||\vec{a}|| &= \sqrt{3^2 + 4^2} = 5 \
+||\vec{b}|| &= \sqrt{4^2 + 3^2} = 5 \
 \text{CosineSimilarity}(\vec{a}, \vec{b}) &= \frac{24}{5 \times 5} = 0.96
 \end{aligned}
 $$
@@ -92,8 +92,8 @@ $$
 
 $$
 \begin{aligned}
-\text{EuclideanDistance}(\vec{a}, \vec{b}) &= \sqrt{(3 - 4)^2 + (4 - 3)^2} \\
-&= \sqrt{1 + 1} \\
+\text{EuclideanDistance}(\vec{a}, \vec{b}) &= \sqrt{(3 - 4)^2 + (4 - 3)^2} \
+&= \sqrt{1 + 1} \
 &= \sqrt{2}
 \end{aligned}
 $$

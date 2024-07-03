@@ -78,7 +78,7 @@ sequenceDiagram
 对于文本生成任务，可以采用生成对抗网络（GAN）模型：
 
 $$
-G(x) = \\text{Generator}(x)
+G(x) = \text{Generator}(x)
 $$
 
 其中，$G$表示生成器模型，$x$是输入数据。
@@ -88,7 +88,7 @@ $$
 假设我们使用BERT模型进行文本分类：
 
 $$
-f(x) = \\text{BERT}(x)
+f(x) = \text{BERT}(x)
 $$
 
 其中，$f$是BERT模型的前向传播函数，$x$是输入文本。

@@ -98,7 +98,7 @@ $$
 $$
 \mathbf{y} = 
 \begin{bmatrix}
-\max(\mathbf{x}_{1:2,2:3}) & \max(\mathbf{x}_{1:2,3:4}) \\
+\max(\mathbf{x}_{1:2,2:3}) & \max(\mathbf{x}_{1:2,3:4}) \
 \max(\mathbf{x}_{2:3,2:3}) & \max(\mathbf{x}_{2:3,3:4}) 
 \end{bmatrix}
 $$
@@ -109,9 +109,9 @@ $$
 
 $$
 \begin{aligned}
-\Delta x &= (G_x - P_x) / P_w \\
-\Delta y &= (G_y - P_y) / P_h \\
-\Delta w &= \log(G_w / P_w) \\
+\Delta x &= (G_x - P_x) / P_w \
+\Delta y &= (G_y - P_y) / P_h \
+\Delta w &= \log(G_w / P_w) \
 \Delta h &= \log(G_h / P_h)
 \end{aligned}
 $$

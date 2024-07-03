@@ -186,8 +186,8 @@ $$U(a) = \sum_{i=1}^{n}w_i u_i(a)$$
 根据效用模型公式,我们可以计算出每个行动计划的综合效用:
 
 $$\begin{aligned}
-U(a_1) &= 0.3 \times 0.8 + 0.2 \times 0.7 + 0.4 \times 0.9 + 0.1 \times 0.6 = 0.81 \\
-U(a_2) &= 0.3 \times 0.6 + 0.2 \times 0.9 + 0.4 \times 0.8 + 0.1 \times 0.7 = 0.75 \\
+U(a_1) &= 0.3 \times 0.8 + 0.2 \times 0.7 + 0.4 \times 0.9 + 0.1 \times 0.6 = 0.81 \
+U(a_2) &= 0.3 \times 0.6 + 0.2 \times 0.9 + 0.4 \times 0.8 + 0.1 \times 0.7 = 0.75 \
 U(a_3) &= 0.3 \times 0.7 + 0.2 \times 0.6 + 0.4 \times 0.7 + 0.1 \times 0.9 = 0.69
 \end{aligned}$$
 

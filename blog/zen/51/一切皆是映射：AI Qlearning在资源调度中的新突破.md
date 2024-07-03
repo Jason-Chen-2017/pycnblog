@@ -64,8 +64,8 @@ Q-learning的一个优点是异策略(off-policy)学习,即学习最优策略$\p
 假设当前状态为s=(0,0,0,4,5),即所有任务都未完成,资源满载。考虑选择动作a=T1,则有:
 $$
 \begin{aligned}
-Q(s,a) &\leftarrow Q(s,a) + \alpha [r + \gamma \max_{a'} Q(s',a') - Q(s,a)] \\
-&= 0 + \alpha [-1 + 1 \max_{a'} Q((1,0,0,2,4),a') - 0] \\
+Q(s,a) &\leftarrow Q(s,a) + \alpha [r + \gamma \max_{a'} Q(s',a') - Q(s,a)] \
+&= 0 + \alpha [-1 + 1 \max_{a'} Q((1,0,0,2,4),a') - 0] \
 &= \alpha [-1 + 1 \max_{a'} Q((1,0,0,2,4),a')]
 \end{aligned}
 $$

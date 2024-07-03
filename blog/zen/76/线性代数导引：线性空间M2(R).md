@@ -30,7 +30,7 @@
 
 - **定义**: 线性空间M2(R)指的是所有2×2实数矩阵组成的集合。这些矩阵可以表示为：
   
-  $$ A = \begin{bmatrix} a & b \\ c & d \end{bmatrix} $$
+  $$ A = \begin{bmatrix} a & b \ c & d \end{bmatrix} $$
   
 - **加法**: 矩阵加法遵循标准矩阵加法规则。
   
@@ -145,16 +145,16 @@
 
 #### 示例矩阵：
 
-\[ A = \begin{bmatrix} 3 & 1 \\ 1 & 3 \end{bmatrix} \]
+$$ A = \begin{bmatrix} 3 & 1 \ 1 & 3 \end{bmatrix} $$
 
 - **特征多项式**：\( p(λ) = λ^2 - 6λ + 8 \)
 - **特征值**：\( λ = 2, 4 \)
-- **特征向量**：对于\( λ = 2 \)，特征向量\( v = \begin{bmatrix} 1 \\ 1 \end{bmatrix} \); 对于\( λ = 4 \)，特征向量\( v = \begin{bmatrix} -1 \\ 1 \end{bmatrix} \)
+- **特征向量**：对于\( λ = 2 \)，特征向量\( v = \begin{bmatrix} 1 \ 1 \end{bmatrix} \); 对于\( λ = 4 \)，特征向量\( v = \begin{bmatrix} -1 \ 1 \end{bmatrix} \)
 
 #### 对角化
 
-- **构造矩阵P**：\( P = \begin{bmatrix} 1 & -1 \\ 1 & 1 \end{bmatrix} \)
-- **验证对角化**：\( P^{-1}AP = \begin{bmatrix} 2 & 0 \\ 0 & 4 \end{bmatrix} \)
+- **构造矩阵P**：\( P = \begin{bmatrix} 1 & -1 \ 1 & 1 \end{bmatrix} \)
+- **验证对角化**：\( P^{-1}AP = \begin{bmatrix} 2 & 0 \ 0 & 4 \end{bmatrix} \)
 
 ### 4.4 常见问题解答
 
@@ -206,7 +206,7 @@ if __name__ == "__main__":
 
 ### 5.4 运行结果展示
 
-- **输出**：特征值为2和4，特征向量分别为\[1, 1\]和\[-1, 1\]。对角化后的矩阵为\[2, 0\;0, 4\]。
+- **输出**：特征值为2和4，特征向量分别为$$1, 1$$和$$-1, 1$$。对角化后的矩阵为$$2, 0\;0, 4$$。
 
 ## 6. 实际应用场景
 

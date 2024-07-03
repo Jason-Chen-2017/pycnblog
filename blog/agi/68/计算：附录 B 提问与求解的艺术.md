@@ -122,8 +122,8 @@ C --> E{深度学习}
 
 $$
 \begin{align*}
-\text{maximize} \quad & c^T x \\
-\text{subject to} \quad & Ax \leq b \\
+\text{maximize} \quad & c^T x \
+\text{subject to} \quad & Ax \leq b \
 & x \geq 0
 \end{align*}
 $$
@@ -134,11 +134,11 @@ $$
 
 $$
 \begin{align*}
-\text{maximize} \quad & c^T x \\
-\text{subject to} \quad & Ax + s_1 = b_1 \\
-& s_2 = 0 \\
-& \ldots \\
-& s_m = 0 \\
+\text{maximize} \quad & c^T x \
+\text{subject to} \quad & Ax + s_1 = b_1 \
+& s_2 = 0 \
+& \ldots \
+& s_m = 0 \
 & x, s_1, s_2, \ldots, s_m \geq 0
 \end{align*}
 $$
@@ -172,8 +172,8 @@ $$
 
 $$
 \begin{align*}
-\text{maximize} \quad & \sum_{i=1}^n v_i x_i \\
-\text{subject to} \quad & \sum_{i=1}^n w_i x_i \leq C \\
+\text{maximize} \quad & \sum_{i=1}^n v_i x_i \
+\text{subject to} \quad & \sum_{i=1}^n w_i x_i \leq C \
 & x_i \in \{0,1\}
 \end{align*}
 $$

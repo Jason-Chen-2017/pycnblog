@@ -78,7 +78,7 @@ $$
 
 $$
 \begin{aligned}
-MultiHead(Q,K,V) &= Concat(head_1,...,head_h)W^O \\
+MultiHead(Q,K,V) &= Concat(head_1,...,head_h)W^O \
 head_i &= Attention(QW_i^Q, KW_i^K, VW_i^V)
 \end{aligned}
 $$

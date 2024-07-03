@@ -107,8 +107,8 @@ C*代数的乘法运算必须满足结合律,并且与标量乘法和向量加�
 C*代数的调用运算必须满足以下条件:
 
 $$\begin{align*}
-(A^*)^* &= A \\
-(AB)^* &= B^*A^* \\
+(A^*)^* &= A \
+(AB)^* &= B^*A^* \
 (\alpha A + \beta B)^* &= \overline{\alpha}A^* + \overline{\beta}B^*
 \end{align*}$$
 
@@ -143,8 +143,8 @@ $$\|A^*A\| = \|A\|^2$$
 2. 检查范数$\|A\|$是否满足条件。我们需要证明$\|A\| = \|A^*\|$。利用调用的定义,我们有:
 
 $$\begin{align*}
-\|A\| &= \sup\{\|Ax\| : x \in H, \|x\| = 1\} \\
-      &= \sup\{\|A^*(x)\| : x \in H, \|x\| = 1\} \\
+\|A\| &= \sup\{\|Ax\| : x \in H, \|x\| = 1\} \
+      &= \sup\{\|A^*(x)\| : x \in H, \|x\| = 1\} \
       &= \|A^*\|
 \end{align*}$$
 
@@ -153,16 +153,16 @@ $$\begin{align*}
 3. 检查调用$A^*$是否满足条件。由于$(A^*)^* = (A^{\dagger})^{T*} = A^{\dagger\dagger} = A$,所以$(A^*)^* = A$。对于$(AB)^*$,我们有:
 
 $$\begin{align*}
-(AB)^* &= ((AB)^{\dagger})^T \\
-       &= (B^{\dagger}A^{\dagger})^T \\
+(AB)^* &= ((AB)^{\dagger})^T \
+       &= (B^{\dagger}A^{\dagger})^T \
        &= B^*A^*
 \end{align*}$$
 
 对于$(\alpha A + \beta B)^*$,我们有:
 
 $$\begin{align*}
-(\alpha A + \beta B)^* &= ((\alpha A + \beta B)^{\dagger})^T \\
-                       &= (\overline{\alpha}A^{\dagger} + \overline{\beta}B^{\dagger})^T \\
+(\alpha A + \beta B)^* &= ((\alpha A + \beta B)^{\dagger})^T \
+                       &= (\overline{\alpha}A^{\dagger} + \overline{\beta}B^{\dagger})^T \
                        &= \overline{\alpha}A^* + \overline{\beta}B^*
 \end{align*}$$
 

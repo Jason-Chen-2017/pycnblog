@@ -96,10 +96,10 @@ LlamaIndex的数学模型构建主要围绕大型语言模型的训练过程展�
 大型语言模型的训练通常基于损失函数最小化，如交叉熵损失：
 
 $$
-\\mathcal{L}(W, \\theta) = -\\frac{1}{N}\\sum_{i=1}^{N}\\sum_{j=1}^{M} y_{ij} \\log \\hat{y}_{ij}
+\mathcal{L}(W, \theta) = -\frac{1}{N}\sum_{i=1}^{N}\sum_{j=1}^{M} y_{ij} \log \hat{y}_{ij}
 $$
 
-其中，$W$是模型参数，$\\theta$是优化变量，$N$是样本数量，$M$是类别的数量，$y_{ij}$是真实标签，$\\hat{y}_{ij}$是预测概率。
+其中，$W$是模型参数，$\theta$是优化变量，$N$是样本数量，$M$是类别的数量，$y_{ij}$是真实标签，$\hat{y}_{ij}$是预测概率。
 
 ### 4.3 案例分析与讲解
 
@@ -175,7 +175,7 @@ index = GPTVectorStoreIndex.from_documents(documents, service_context=service_co
 
 ```python
 query_engine = index.as_query_engine()
-response = query_engine.query(\"巴黎的埃菲尔铁塔是何时建造的？\")
+response = query_engine.query("巴黎的埃菲尔铁塔是何时建造的？")
 print(response.response)
 ```
 

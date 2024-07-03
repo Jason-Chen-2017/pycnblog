@@ -81,7 +81,7 @@ RNNs的数学模型可以用以下公式表示：
 
 $$
 \begin{aligned}
-h_t &= f(W_{xh} x_t + W_{hh} h_{t-1} + b_h) \\
+h_t &= f(W_{xh} x_t + W_{hh} h_{t-1} + b_h) \
 y_t &= g(W_{hy} h_t + b_y)
 \end{aligned}
 $$

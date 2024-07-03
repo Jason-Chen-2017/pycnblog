@@ -82,10 +82,10 @@ $$
 
 $$
 \begin{aligned}
-Q(s_t,a_t) &\leftarrow Q(s_t,a_t)+\alpha[r_{t+1}+\gamma \max_a Q(s_{t+1},a)-Q(s_t,a_t)]\\
-&=Q(s_t,a_t)+\alpha[r_{t+1}+\gamma V^*(s_{t+1})-Q(s_t,a_t)]\\
-&=Q(s_t,a_t)+\alpha[\mathcal{R}(s_t,a_t)+\gamma \max_{a'} Q^*(s_{t+1},a')-Q(s_t,a_t)]\\
-&=Q(s_t,a_t)+\alpha[Q^*(s_t,a_t)-Q(s_t,a_t)]\\
+Q(s_t,a_t) &\leftarrow Q(s_t,a_t)+\alpha[r_{t+1}+\gamma \max_a Q(s_{t+1},a)-Q(s_t,a_t)]\
+&=Q(s_t,a_t)+\alpha[r_{t+1}+\gamma V^*(s_{t+1})-Q(s_t,a_t)]\
+&=Q(s_t,a_t)+\alpha[\mathcal{R}(s_t,a_t)+\gamma \max_{a'} Q^*(s_{t+1},a')-Q(s_t,a_t)]\
+&=Q(s_t,a_t)+\alpha[Q^*(s_t,a_t)-Q(s_t,a_t)]\
 &=(1-\alpha)Q(s_t,a_t)+\alpha Q^*(s_t,a_t)
 \end{aligned}
 $$

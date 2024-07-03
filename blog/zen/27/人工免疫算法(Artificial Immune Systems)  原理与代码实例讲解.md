@@ -107,9 +107,9 @@
 
 人工免疫算法中的数学模型主要围绕抗体、抗原、适应性评分等概念展开。假设我们有一个抗体库，每个抗体$A_i$代表一个解决方案，抗原$O$代表问题或目标，适应性评分$f(A_i)$衡量抗体的性能。数学模型可以表示为：
 
-- **适应性评分**：$f(A_i) = \\text{性能指标}(A_i, O)$，这里的性能指标可以是损失函数、准确率、召回率等。
+- **适应性评分**：$f(A_i) = \text{性能指标}(A_i, O)$，这里的性能指标可以是损失函数、准确率、召回率等。
 - **选择**：选择策略可以基于适应性评分，例如选择分数最高的$k$个抗体进行克隆和突变。
-- **突变**：突变过程可以引入随机扰动，例如，对于抗体$A_i$，突变后的抗体$A'_i$可以表示为$A'_i = A_i + \\Delta A_i$，其中$\\Delta A_i$是随机扰动。
+- **突变**：突变过程可以引入随机扰动，例如，对于抗体$A_i$，突变后的抗体$A'_i$可以表示为$A'_i = A_i + \Delta A_i$，其中$\Delta A_i$是随机扰动。
 
 ### 4.2 公式推导过程
 
@@ -117,9 +117,9 @@
 
 - 假设抗原$O$和抗体$A_i$之间的距离$d(O, A_i)$反映了两者之间的不匹配程度，则适应性评分$f(A_i)$可以通过以下方式计算：
 
-$$f(A_i) = \\exp(-\\alpha d(O, A_i))$$
+$$f(A_i) = \exp(-\alpha d(O, A_i))$$
 
-其中，$\\alpha$是正则化参数，用于调整评分的敏感度。
+其中，$\alpha$是正则化参数，用于调整评分的敏感度。
 
 #### 选择过程
 
@@ -192,12 +192,12 @@ class ArtificialImmuneSystem:
             self.antibodies = np.vstack([self.antibodies, selected_antibodies, mutated_antibodies])
         return self.antibodies[-1]
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     problem = np.array([[0.1, 0.2], [0.3, 0.4], [0.5, 0.6]])
     target = np.array([0.4, 0.5])
     ais = ArtificialImmuneSystem(population_size=50, mutation_rate=0.1, k=5)
     best_antibody = ais.run(problem, target)
-    print(\"Best Antibody:\", best_antibody)
+    print("Best Antibody:", best_antibody)
 ```
 
 ### 5.3 代码解读与分析

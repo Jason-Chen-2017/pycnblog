@@ -89,8 +89,8 @@ Transformer模型主要由编码器（Encoder）和解码器（Decoder）组成�
 Transformer模型的核心是自注意力机制，其公式如下：
 
 $$
-Q = W_QK + b_Q \\
-K = W_KK + b_K \\
+Q = W_QK + b_Q \
+K = W_KK + b_K \
 V = W_VV + b_V
 $$
 

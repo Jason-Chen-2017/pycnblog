@@ -110,7 +110,7 @@ Kafka Group的管理涉及多个关键算法，其中最核心的是**ZooKeeper*
 
 $$\Delta G = \left\{
     \begin{array}{ll}
-        G_{new}(t+dt) - G(t), & \text{如果} t \in [t_i, t_f] \\
+        G_{new}(t+dt) - G(t), & \text{如果} t \in [t_i, t_f] \
         0, & \text{否则}
     \end{array}
 \right.$$

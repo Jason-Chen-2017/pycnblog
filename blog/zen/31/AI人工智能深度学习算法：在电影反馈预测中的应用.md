@@ -75,25 +75,25 @@
 
 ### 4.1 数学模型构建
 
-假设用户的行为数据可以用矩阵 $X \\in \\mathbb{R}^{M \\times N}$ 表示，其中 $M$ 是用户数量，$N$ 是电影数量，$X_{ij}$ 表示用户 $i$ 对电影 $j$ 的评分。目标是预测用户对未评分电影的评分。
+假设用户的行为数据可以用矩阵 $X \in \mathbb{R}^{M \times N}$ 表示，其中 $M$ 是用户数量，$N$ 是电影数量，$X_{ij}$ 表示用户 $i$ 对电影 $j$ 的评分。目标是预测用户对未评分电影的评分。
 
 #### 基于矩阵分解的方法：
 
 $$
-\\hat{X}_{ij} = W_i^\\top V_j + b_i + b_j,
+\hat{X}_{ij} = W_i^\top V_j + b_i + b_j,
 $$
 
-其中 $W_i \\in \\mathbb{R}^{k}$ 和 $V_j \\in \\mathbb{R}^{k}$ 分别是用户 $i$ 和电影 $j$ 的特征向量，$b_i$ 和 $b_j$ 是偏置项。$k$ 是特征向量的维度。
+其中 $W_i \in \mathbb{R}^{k}$ 和 $V_j \in \mathbb{R}^{k}$ 分别是用户 $i$ 和电影 $j$ 的特征向量，$b_i$ 和 $b_j$ 是偏置项。$k$ 是特征向量的维度。
 
 ### 4.2 公式推导过程
 
 在矩阵分解模型中，通过最小化预测误差来调整参数。误差函数通常为均方误差（MSE）：
 
 $$
-E(W, V, b_i, b_j) = \\frac{1}{2}\\sum_{(i,j) \\in \\Omega^-} \\left( \\hat{X}_{ij} - X_{ij} \\right)^2 + \\lambda \\left( \\|W_i\\|^2 + \\|V_j\\|^2 \\right),
+E(W, V, b_i, b_j) = \frac{1}{2}\sum_{(i,j) \in \Omega^-} \left( \hat{X}_{ij} - X_{ij} \right)^2 + \lambda \left( \|W_i\|^2 + \|V_j\|^2 \right),
 $$
 
-其中 $\\Omega^-$ 是训练样本集，$\\lambda$ 是正则化系数，防止过拟合。
+其中 $\Omega^-$ 是训练样本集，$\lambda$ 是正则化系数，防止过拟合。
 
 ### 4.3 案例分析与讲解
 

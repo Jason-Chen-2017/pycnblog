@@ -268,8 +268,8 @@ BP = 1.0 (未启用惩罚因子)
 
 $$
 \begin{aligned}
-\text{BLEU} &= 1.0 \times \exp\left(0.25 \log 0.7 + 0.25 \log 0.6 + 0.25 \log 0.5 + 0.25 \log 0.4\right) \\
-            &= 1.0 \times \exp(-0.3147) \\
+\text{BLEU} &= 1.0 \times \exp\left(0.25 \log 0.7 + 0.25 \log 0.6 + 0.25 \log 0.5 + 0.25 \log 0.4\right) \
+            &= 1.0 \times \exp(-0.3147) \
             &= 0.73
 \end{aligned}
 $$

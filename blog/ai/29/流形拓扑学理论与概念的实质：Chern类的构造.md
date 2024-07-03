@@ -58,9 +58,9 @@ Chern类广泛应用于几何学、拓扑学、量子场论、弦理论以及材
 
 Chern类可通过特征序列构建，特征序列定义如下：
 
-$$c_k(E) = \\frac{1}{k!} \\cdot \\sum_{i_1 < i_2 < \\cdots < i_k} \\operatorname{ch}(A_{i_1}) \\cdot \\operatorname{ch}(A_{i_2}) \\cdots \\operatorname{ch}(A_{i_k})$$
+$$c_k(E) = \frac{1}{k!} \cdot \sum_{i_1 < i_2 < \cdots < i_k} \operatorname{ch}(A_{i_1}) \cdot \operatorname{ch}(A_{i_2}) \cdots \operatorname{ch}(A_{i_k})$$
 
-其中，$\\operatorname{ch}(A_i)$表示第$i$个特征类的多项式，$A_i$为复向量丛的局部基空间。
+其中，$\operatorname{ch}(A_i)$表示第$i$个特征类的多项式，$A_i$为复向量丛的局部基空间。
 
 ### 4.2 公式推导过程
 
@@ -68,7 +68,7 @@ Chern类的推导基于复向量丛的特征序列和多项式展开。通过将
 
 ### 4.3 案例分析与讲解
 
-考虑一个简单的复向量丛，例如$E = \\mathbb{C}^n \\times M$，其中$M$是流形，$\\mathbb{C}^n$是$n$维复空间。在这种情况下，Chern类可以通过特征序列直接计算得到。
+考虑一个简单的复向量丛，例如$E = \mathbb{C}^n \times M$，其中$M$是流形，$\mathbb{C}^n$是$n$维复空间。在这种情况下，Chern类可以通过特征序列直接计算得到。
 
 ### 4.4 常见问题解答
 
@@ -101,8 +101,8 @@ def calculate_chern_class(n, k):
 # 示例计算Chern类c_1(E)和c_2(E)
 c1_E = calculate_chern_class(n, 1)
 c2_E = calculate_chern_class(n, 2)
-print(f\"c_1(E): {c1_E}\")
-print(f\"c_2(E): {c2_E}\")
+print(f"c_1(E): {c1_E}")
+print(f"c_2(E): {c2_E}")
 ```
 
 ### 5.3 代码解读与分析
@@ -134,8 +134,8 @@ Chern类在理论物理、材料科学和数据科学中的应用广泛。例如
 
 ### 7.3 相关论文推荐
 
-- **\"Chern Classes in Algebraic Geometry\"**：探索Chern类在代数几何中的应用。
-- **\"Chern Classes and Quantum Field Theory\"**：讨论Chern类在量子场论中的角色。
+- **"Chern Classes in Algebraic Geometry"**：探索Chern类在代数几何中的应用。
+- **"Chern Classes and Quantum Field Theory"**：讨论Chern类在量子场论中的角色。
 
 ### 7.4 其他资源推荐
 

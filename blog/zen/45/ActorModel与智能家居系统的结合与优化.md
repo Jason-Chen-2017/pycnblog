@@ -100,7 +100,7 @@ ActorModel在智能家居系统中的应用主要包括：
 假设Actor$A_1$需要向Actor$A_2$发送消息$m$，可以通过以下公式进行推导：
 
 $$P(m, A_2) = \begin{cases} 
-\text{发送消息} & \text{如果} A_1 \text{能够访问} A_2 \\
+\text{发送消息} & \text{如果} A_1 \text{能够访问} A_2 \
 \text{发送失败} & \text{如果} A_1 \text{无法访问} A_2 
 \end{cases}$$
 

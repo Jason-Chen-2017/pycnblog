@@ -90,7 +90,7 @@ M-矩阵的求解方法主要包括以下几种：
 
 分块对角化法求解 M-矩阵线性方程组的步骤如下：
 
-1. 将 $A$ 分解为分块对角矩阵 $A = \begin{bmatrix} A_1 & 0 \\ 0 & A_2 \end{bmatrix}$。
+1. 将 $A$ 分解为分块对角矩阵 $A = \begin{bmatrix} A_1 & 0 \ 0 & A_2 \end{bmatrix}$。
 2. 分别求解 $A_1x_1 = b_1$ 和 $A_2x_2 = b_2$。
 3. 组合 $x_1$ 和 $x_2$ 得到方程组的解 $x = [x_1, x_2]^T$。
 
@@ -137,9 +137,9 @@ M-矩阵的数学模型主要涉及线性代数和矩阵理论的基本概念和
 
 假设 $A$ 为 M-矩阵，$b$ 为常数向量，则方程组 $Ax=b$ 可以表示为 $x = AD^{-1}b$，其中 $D$ 为 $A$ 的对角矩阵。
 
-1. 将 $A$ 分解为 $A = \begin{bmatrix} a_{11} & 0 & \cdots & 0 \\ 0 & a_{22} & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & a_{nn} \end{bmatrix}$。
-2. 将 $D^{-1}$ 分解为 $D^{-1} = \begin{bmatrix} \frac{1}{a_{11}} & 0 & \cdots & 0 \\ 0 & \frac{1}{a_{22}} & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & \frac{1}{a_{nn}} \end{bmatrix}$。
-3. 将 $x$ 分解为 $x = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}$，$b$ 分解为 $b = \begin{bmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{bmatrix}$。
+1. 将 $A$ 分解为 $A = \begin{bmatrix} a_{11} & 0 & \cdots & 0 \ 0 & a_{22} & \cdots & 0 \ \vdots & \vdots & \ddots & \vdots \ 0 & 0 & \cdots & a_{nn} \end{bmatrix}$。
+2. 将 $D^{-1}$ 分解为 $D^{-1} = \begin{bmatrix} \frac{1}{a_{11}} & 0 & \cdots & 0 \ 0 & \frac{1}{a_{22}} & \cdots & 0 \ \vdots & \vdots & \ddots & \vdots \ 0 & 0 & \cdots & \frac{1}{a_{nn}} \end{bmatrix}$。
+3. 将 $x$ 分解为 $x = \begin{bmatrix} x_1 \ x_2 \ \vdots \ x_n \end{bmatrix}$，$b$ 分解为 $b = \begin{bmatrix} b_1 \ b_2 \ \vdots \ b_n \end{bmatrix}$。
 4. 计算 $x_1 = \frac{1}{a_{11}}b_1$。
 5. 计算 $x_2 = \frac{1}{a_{22}}(b_2 - \sum_{i=1}^{2-1} a_{2i}x_i)$。
 6. 依次计算 $x_3, x_4, \ldots, x_n$。
@@ -151,20 +151,20 @@ M-矩阵的数学模型主要涉及线性代数和矩阵理论的基本概念和
 **例：** 求解方程组 $Ax=b$，其中
 
 $$
-A = \begin{bmatrix} 2 & 1 & 1 \\ 1 & 2 & 1 \\ 1 & 1 & 2 \end{bmatrix}, \quad b = \begin{bmatrix} 3 \\ 4 \\ 5 \end{bmatrix}
+A = \begin{bmatrix} 2 & 1 & 1 \ 1 & 2 & 1 \ 1 & 1 & 2 \end{bmatrix}, \quad b = \begin{bmatrix} 3 \ 4 \ 5 \end{bmatrix}
 $$
 
 解：
 
-1. 初始化 $x_0 = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}$。
-2. 计算 $r_0 = AD^{-1}b = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}$。
-3. 计算 $x_1 = x_0 + \alpha r_0 = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}$。
-4. 计算 $r_1 = AD^{-1}b = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}$。
-5. 计算 $x_2 = x_1 + \alpha r_1 = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}$。
-6. 计算 $r_2 = AD^{-1}b = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}$。
-7. 计算 $x_3 = x_2 + \alpha r_2 = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}$。
+1. 初始化 $x_0 = \begin{bmatrix} 0 \ 0 \ 0 \end{bmatrix}$。
+2. 计算 $r_0 = AD^{-1}b = \begin{bmatrix} 0 \ 0 \ 0 \end{bmatrix}$。
+3. 计算 $x_1 = x_0 + \alpha r_0 = \begin{bmatrix} 0 \ 0 \ 0 \end{bmatrix}$。
+4. 计算 $r_1 = AD^{-1}b = \begin{bmatrix} 0 \ 0 \ 0 \end{bmatrix}$。
+5. 计算 $x_2 = x_1 + \alpha r_1 = \begin{bmatrix} 0 \ 0 \ 0 \end{bmatrix}$。
+6. 计算 $r_2 = AD^{-1}b = \begin{bmatrix} 0 \ 0 \ 0 \end{bmatrix}$。
+7. 计算 $x_3 = x_2 + \alpha r_2 = \begin{bmatrix} 0 \ 0 \ 0 \end{bmatrix}$。
 
-因此，方程组的解为 $x = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}$。
+因此，方程组的解为 $x = \begin{bmatrix} 0 \ 0 \ 0 \end{bmatrix}$。
 
 ### 4.4 常见问题解答
 
@@ -241,7 +241,7 @@ print("解为：", x)
 解为：[0. 0. 0.]
 ```
 
-说明方程组 $Ax=b$ 的解为 $x = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}$。
+说明方程组 $Ax=b$ 的解为 $x = \begin{bmatrix} 0 \ 0 \ 0 \end{bmatrix}$。
 
 ## 6. 实际应用场景
 

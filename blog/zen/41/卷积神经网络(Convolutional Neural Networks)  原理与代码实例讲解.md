@@ -95,13 +95,13 @@
 
 设输入为 $I$，滤波器为 $W$，步长为 $s$，填充为 $p$，则卷积层输出 $O$ 可以通过以下公式计算：
 
-$$ O(x,y) = \\sum_{i=-p}^{I_x-s} \\sum_{j=-p}^{I_y-s} I(i,j) \\cdot W(x-i,y-j) $$
+$$ O(x,y) = \sum_{i=-p}^{I_x-s} \sum_{j=-p}^{I_y-s} I(i,j) \cdot W(x-i,y-j) $$
 
 #### 池化操作
 
 最大池化可以简化为：
 
-$$ P(x,y) = \\max_{(i,j) \\in S} I(i+x, j+y) $$
+$$ P(x,y) = \max_{(i,j) \in S} I(i+x, j+y) $$
 
 其中，$S$ 是池化窗口大小。
 

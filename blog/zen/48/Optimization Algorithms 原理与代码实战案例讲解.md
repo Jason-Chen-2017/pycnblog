@@ -26,8 +26,8 @@
 优化问题可以形式化表示为:
 $$
 \begin{align}
-\min \quad & f(x) \\
-\text{s.t.} \quad & g_i(x) \leq 0, \quad i=1,\ldots,m\\
+\min \quad & f(x) \
+\text{s.t.} \quad & g_i(x) \leq 0, \quad i=1,\ldots,m\
 & h_j(x) = 0, \quad j=1,\ldots,n
 \end{align}
 $$
@@ -70,8 +70,8 @@ $$
 以下面这个非线性规划问题为例:
 $$
 \begin{align}
-\min \quad & f(x,y) = x^2 + 2y^2 - 2xy - 8x \\
-\text{s.t.} \quad & x + y \leq 8 \\
+\min \quad & f(x,y) = x^2 + 2y^2 - 2xy - 8x \
+\text{s.t.} \quad & x + y \leq 8 \
 & x \geq 0, y \geq 0  
 \end{align}
 $$
@@ -83,7 +83,7 @@ $$
 x_{k+1} = x_k - \alpha_k \nabla f(x_k)
 $$
 其中梯度$\nabla f(x,y)=\begin{bmatrix}
-2x-2y-8\\ 
+2x-2y-8\ 
 4y-2x
 \end{bmatrix}$
 

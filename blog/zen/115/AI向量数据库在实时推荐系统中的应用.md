@@ -80,7 +80,7 @@ H --> |topk| G
 
 $$
 \begin{aligned}
-\mathbf{u} &= f(x_u) \in \mathbb{R}^d \\
+\mathbf{u} &= f(x_u) \in \mathbb{R}^d \
 \mathbf{i} &= g(x_i) \in \mathbb{R}^d
 \end{aligned}
 $$

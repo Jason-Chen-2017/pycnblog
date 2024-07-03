@@ -78,17 +78,17 @@ The PCA algorithm follows these steps:
 
 A Gaussian Mixture Model (GMM) is a probabilistic model that represents a distribution as a weighted sum of Gaussian distributions. The probability density function (PDF) of a GMM is given by:
 
-$$p(x) = \\sum_{k=1}^{K} w_k \\frac{1}{(2\\pi)^{d/2}|\\Sigma_k|^{1/2}} \\exp\\left(-\\frac{1}{2}(x-\\mu_k)^T\\Sigma_k^{-1}(x-\\mu_k)\\right)$$
+$$p(x) = \sum_{k=1}^{K} w_k \frac{1}{(2\pi)^{d/2}|\Sigma_k|^{1/2}} \exp\left(-\frac{1}{2}(x-\mu_k)^T\Sigma_k^{-1}(x-\mu_k)\right)$$
 
-where $K$ is the number of Gaussian components, $w_k$ is the weight of the $k$-th component, $\\mu_k$ is the mean of the $k$-th component, $\\Sigma_k$ is the covariance matrix of the $k$-th component, and $d$ is the number of dimensions.
+where $K$ is the number of Gaussian components, $w_k$ is the weight of the $k$-th component, $\mu_k$ is the mean of the $k$-th component, $\Sigma_k$ is the covariance matrix of the $k$-th component, and $d$ is the number of dimensions.
 
 ### 4.2 K-means Objective Function
 
 The objective function for the K-means algorithm is the sum of squared distances between each data point and its assigned centroid:
 
-$$J = \\sum_{i=1}^{N} \\min_{k=1,\\ldots,K} ||x_i - \\mu_k||^2$$
+$$J = \sum_{i=1}^{N} \min_{k=1,\ldots,K} ||x_i - \mu_k||^2$$
 
-where $N$ is the number of data points, $K$ is the number of centroids, $x_i$ is the $i$-th data point, and $\\mu_k$ is the centroid of the $k$-th cluster.
+where $N$ is the number of data points, $K$ is the number of centroids, $x_i$ is the $i$-th data point, and $\mu_k$ is the centroid of the $k$-th cluster.
 
 ## 5. Project Practice: Code Examples and Detailed Explanations
 

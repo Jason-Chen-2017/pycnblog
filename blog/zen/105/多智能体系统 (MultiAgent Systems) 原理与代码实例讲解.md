@@ -129,7 +129,7 @@
 
 $$
 \begin{align*}
-\mathbf{s}_{i, t+1} &= f(\mathbf{s}_{i, t}, \mathbf{u}_i, \mathbf{s}_{-i, t}, \mathbf{u}_{-i}, t) \\
+\mathbf{s}_{i, t+1} &= f(\mathbf{s}_{i, t}, \mathbf{u}_i, \mathbf{s}_{-i, t}, \mathbf{u}_{-i}, t) \
 \mathbf{u}_i &= g(\mathbf{s}_i, \mathbf{s}_{-i}, t)
 \end{align*}
 $$
@@ -154,7 +154,7 @@ $$
 
 $$
 \mathbf{u}_i = \begin{cases}
-[\mathbf{v}_{i, t}, \mathbf{a}_{i, t}] & \text{if } \text{dist}(\mathbf{s}_{i, t}, \mathbf{target}) > \epsilon \\
+[\mathbf{v}_{i, t}, \mathbf{a}_{i, t}] & \text{if } \text{dist}(\mathbf{s}_{i, t}, \mathbf{target}) > \epsilon \
 [\mathbf{v}_{i, t}, \mathbf{a}_{i, t}] + \alpha \cdot (\mathbf{s}_{i, t} - \mathbf{target}) & \text{otherwise}
 \end{cases}
 $$

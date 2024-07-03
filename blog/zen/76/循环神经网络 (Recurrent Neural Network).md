@@ -116,7 +116,7 @@ RNN 应用于多种序列处理任务，包括但不限于：
 RNN 的数学模型可以描述为：
 
 $$ \begin{align*}
-h_t &= \text{RNN}(x_t, h_{t-1}) \\
+h_t &= \text{RNN}(x_t, h_{t-1}) \
 y_t &= \text{Output}(h_t)
 \end{align*} $$
 

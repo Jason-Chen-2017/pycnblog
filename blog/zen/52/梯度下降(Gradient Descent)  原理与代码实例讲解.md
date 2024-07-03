@@ -74,7 +74,7 @@ $$
 
 $$
 \begin{aligned}
-\frac{\partial J}{\partial \theta_0} &= \frac{2}{n} \sum_{i=1}^n (\theta_0 + \theta_1 x_i - y_i) \\
+\frac{\partial J}{\partial \theta_0} &= \frac{2}{n} \sum_{i=1}^n (\theta_0 + \theta_1 x_i - y_i) \
 \frac{\partial J}{\partial \theta_1} &= \frac{2}{n} \sum_{i=1}^n (\theta_0 + \theta_1 x_i - y_i) x_i
 \end{aligned}
 $$
@@ -83,7 +83,7 @@ $$
 
 $$
 \begin{aligned}
-\theta_0 &:= \theta_0 - \alpha \frac{\partial J}{\partial \theta_0} \\
+\theta_0 &:= \theta_0 - \alpha \frac{\partial J}{\partial \theta_0} \
 \theta_1 &:= \theta_1 - \alpha \frac{\partial J}{\partial \theta_1}
 \end{aligned}
 $$

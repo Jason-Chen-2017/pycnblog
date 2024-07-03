@@ -58,7 +58,7 @@ Perron-Frobenius理论和幂法在许多领域都有应用，比如在Google的P
 
 ### 4.3 案例分析与讲解
 
-让我们通过一个简单的例子来说明这个公式的应用。假设我们有一个非负矩阵$A=\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$，和一个特征向量$x=\begin{bmatrix} 1 \\ 1 \end{bmatrix}$。我们可以计算特征值$\lambda$为$\frac{x^TAx}{x^Tx}=\frac{10}{2}=5$。
+让我们通过一个简单的例子来说明这个公式的应用。假设我们有一个非负矩阵$A=\begin{bmatrix} 1 & 2 \ 3 & 4 \end{bmatrix}$，和一个特征向量$x=\begin{bmatrix} 1 \ 1 \end{bmatrix}$。我们可以计算特征值$\lambda$为$\frac{x^TAx}{x^Tx}=\frac{10}{2}=5$。
 
 ### 4.4 常见问题解答
 

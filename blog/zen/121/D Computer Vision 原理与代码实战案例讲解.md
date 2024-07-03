@@ -152,21 +152,21 @@ graph TD
 在3D视觉中,我们需要构建数学模型来描述相机成像的过程。最基本的是针孔相机模型(Pinhole Camera Model),它将三维世界点$\mathbf{P} = (X, Y, Z)^T$通过下式映射到二维图像平面上的像素点$\mathbf{p} = (u, v)^T$:
 
 $$
-\begin{bmatrix}u\\v\\1\end{bmatrix} = 
+\begin{bmatrix}u\v\1\end{bmatrix} = 
 \begin{bmatrix}
-f_x & 0 & c_x\\
-0 & f_y & c_y\\
+f_x & 0 & c_x\
+0 & f_y & c_y\
 0 & 0 & 1
 \end{bmatrix}
 \begin{bmatrix}
-r_{11} & r_{12} & r_{13} & t_1\\
-r_{21} & r_{22} & r_{23} & t_2\\
+r_{11} & r_{12} & r_{13} & t_1\
+r_{21} & r_{22} & r_{23} & t_2\
 r_{31} & r_{32} & r_{33} & t_3
 \end{bmatrix}
 \begin{bmatrix}
-X\\
-Y\\
-Z\\
+X\
+Y\
+Z\
 1
 \end{bmatrix}
 $$
@@ -187,9 +187,9 @@ $$
 
 $$
 \begin{align*}
-\mathbf{F} &= [\mathbf{e}]_\times\mathbf{P}\\
-           &= [\mathbf{e}]_\times\begin{bmatrix}\mathbf{R} & \mathbf{t}\end{bmatrix}\\
-           &= [\mathbf{e}]_\times\begin{bmatrix}\mathbf{r}_1 & \mathbf{r}_2 & \mathbf{r}_3 & \mathbf{t}\end{bmatrix}\\
+\mathbf{F} &= [\mathbf{e}]_\times\mathbf{P}\
+           &= [\mathbf{e}]_\times\begin{bmatrix}\mathbf{R} & \mathbf{t}\end{bmatrix}\
+           &= [\mathbf{e}]_\times\begin{bmatrix}\mathbf{r}_1 & \mathbf{r}_2 & \mathbf{r}_3 & \mathbf{t}\end{bmatrix}\
            &= [\mathbf{t}]_\times\mathbf{R}
 \end{align*}
 $$

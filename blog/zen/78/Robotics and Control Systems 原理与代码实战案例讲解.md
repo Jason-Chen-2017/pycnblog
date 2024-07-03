@@ -131,7 +131,7 @@ $$
 
 $$
 \begin{align*}
-\dot{x}(t) &= Ax(t) + Bu(t) \\
+\dot{x}(t) &= Ax(t) + Bu(t) \
 y(t) &= Cx(t) + Du(t)
 \end{align*}
 $$
@@ -156,7 +156,7 @@ PID控制器的原理基于误差的即时反应、累积效应和预测未来�
 
 $$
 \begin{align*}
-\dot{T} &= k_p(T_d - T) \\
+\dot{T} &= k_p(T_d - T) \
 \end{align*}
 $$
 
@@ -172,11 +172,11 @@ $$
 
 $$
 \begin{align*}
-\dot{x_1} &= x_2 \\
-\dot{x_2} &= u \\
-\dot{x_3} &= x_4 \\
-\dot{x_4} &= u \\
-y &= x_1 \\
+\dot{x_1} &= x_2 \
+\dot{x_2} &= u \
+\dot{x_3} &= x_4 \
+\dot{x_4} &= u \
+y &= x_1 \
 \end{align*}
 $$
 

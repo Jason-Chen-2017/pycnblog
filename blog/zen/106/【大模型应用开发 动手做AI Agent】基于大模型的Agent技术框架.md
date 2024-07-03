@@ -189,8 +189,8 @@ graph TD
 大型语言模型通常采用自注意力机制(Self-Attention)和Transformer架构,能够有效捕获长距离依赖关系。其中,自注意力机制是模型的核心,可以用以下公式表示:
 
 $$\begin{aligned}
-\text{Attention}(Q, K, V) &= \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V \\
-\text{MultiHead}(Q, K, V) &= \text{Concat}(head_1, \ldots, head_h)W^O\\
+\text{Attention}(Q, K, V) &= \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V \
+\text{MultiHead}(Q, K, V) &= \text{Concat}(head_1, \ldots, head_h)W^O\
 \text{where}&\; \text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
 \end{aligned}$$
 
@@ -200,6 +200,6 @@ $$\begin{aligned}
 
 另一个重要的技术是掩码语言模型(Masked Language Model, MLM),它通过随机掩码部分输入词,并让模型预测被掩码的词,从而实现自监督学习。MLM的目标函数可表示为:
 
-$$\mathcal{L}_\text{MLM} = -\mathbb{E}_{x, m}\left[\sum_{i \in m}\log P(x_i|x_{\\m})\right]$$
+$$\mathcal{L}_\text{MLM} = -\mathbb{E}_{x, m}\left[\sum_{i \in m}\log P(x_i|x_{\m})\right]$$
 
 其中,$x$表示输入序列,$m$表示被掩码的位置,$x_

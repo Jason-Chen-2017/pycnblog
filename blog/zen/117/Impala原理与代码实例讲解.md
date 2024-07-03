@@ -195,12 +195,12 @@ $$
 
 $$
 \begin{aligned}
-R &= 10^8 \\
-row\_size &= 100 \text{ bytes} \\
-cpu\_cost &= 10 \text{ ns} \\
-Cost_{scan} &= R \times (row\_size + cpu\_cost) \\
-           &= 10^8 \times (100 \text{ bytes} + 10 \text{ ns}) \\
-           &= 10^{10} \text{ bytes} + 10^9 \text{ ns} \\
+R &= 10^8 \
+row\_size &= 100 \text{ bytes} \
+cpu\_cost &= 10 \text{ ns} \
+Cost_{scan} &= R \times (row\_size + cpu\_cost) \
+           &= 10^8 \times (100 \text{ bytes} + 10 \text{ ns}) \
+           &= 10^{10} \text{ bytes} + 10^9 \text{ ns} \
            &\approx 9.54 \text{ GB} + 1 \text{ s}
 \end{aligned}
 $$

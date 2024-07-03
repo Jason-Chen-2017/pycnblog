@@ -138,7 +138,7 @@ graph TD
 
 $$
 \begin{aligned}
-z &= \mathbf{w}^\top \mathbf{x} + b \\
+z &= \mathbf{w}^\top \mathbf{x} + b \
 \hat{y} &= \sigma(z)
 \end{aligned}
 $$
@@ -153,7 +153,7 @@ $$
 
 $$
 \begin{aligned}
-\frac{\partial \hat{y}}{\partial x_i} &= \frac{\partial \hat{y}}{\partial z} \cdot \frac{\partial z}{\partial x_i} \\
+\frac{\partial \hat{y}}{\partial x_i} &= \frac{\partial \hat{y}}{\partial z} \cdot \frac{\partial z}{\partial x_i} \
 &= \sigma'(z) \cdot w_i
 \end{aligned}
 $$

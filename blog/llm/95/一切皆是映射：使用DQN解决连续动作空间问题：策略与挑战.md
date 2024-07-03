@@ -147,7 +147,7 @@ $$
 
 $$
 r = \begin{cases}
-1 & \text{if } |v_{next} - v_{current}| \leq 0.1 \\
+1 & \text{if } |v_{next} - v_{current}| \leq 0.1 \
 -1 & \text{else}
 \end{cases}
 $$

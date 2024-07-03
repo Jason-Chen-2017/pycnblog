@@ -187,7 +187,7 @@ $$
 
 $$
 Cost(scan) = num\_bytes \times \begin{cases}
-    seq\_cost, & \text{if sequential scan}\\
+    seq\_cost, & \text{if sequential scan}\
     ran\_cost, & \text{if random scan}
 \end{cases}
 $$

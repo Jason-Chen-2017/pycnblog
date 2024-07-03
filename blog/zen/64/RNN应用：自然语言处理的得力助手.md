@@ -56,7 +56,7 @@ RNN 的数学模型可以表示为以下公式：
 
 $$
 \begin{aligned}
-h_t &= f(W_{hh}h_{t-1} + W_{xh}x_t + b_h) \\
+h_t &= f(W_{hh}h_{t-1} + W_{xh}x_t + b_h) \
 y_t &= g(W_{hy}h_t + b_y)
 \end{aligned}
 $$

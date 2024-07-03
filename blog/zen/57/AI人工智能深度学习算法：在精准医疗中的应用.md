@@ -49,10 +49,10 @@ B --> C[深度学习]
 
 $$
 \begin{aligned}
-dZ^{[L]} &= A^{[L]} - Y \\
-dW^{[l]} &= \frac{1}{m} dZ^{[l+1]} (A^{[l]})^T \\  
-db^{[l]} &= \frac{1}{m} \sum_{i=1}^{m} dZ^{[l+1]} \\
-dZ^{[l]} &= W^{[l+1]T} dZ^{[l+1]} * g^{[l]'}(Z^{[l]}) \\
+dZ^{[L]} &= A^{[L]} - Y \
+dW^{[l]} &= \frac{1}{m} dZ^{[l+1]} (A^{[l]})^T \  
+db^{[l]} &= \frac{1}{m} \sum_{i=1}^{m} dZ^{[l+1]} \
+dZ^{[l]} &= W^{[l+1]T} dZ^{[l+1]} * g^{[l]'}(Z^{[l]}) \
 \end{aligned}
 $$
 

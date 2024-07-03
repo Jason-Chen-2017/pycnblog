@@ -61,8 +61,8 @@ $$
 
 $$
 \begin{aligned}
-S_{1} &= \frac{\exp(1.2)}{\exp(1.2) + \exp(0.9) + \exp(-0.3)} \approx 0.53 \\
-S_{2} &= \frac{\exp(0.9)}{\exp(1.2) + \exp(0.9) + \exp(-0.3)} \approx 0.39 \\ 
+S_{1} &= \frac{\exp(1.2)}{\exp(1.2) + \exp(0.9) + \exp(-0.3)} \approx 0.53 \
+S_{2} &= \frac{\exp(0.9)}{\exp(1.2) + \exp(0.9) + \exp(-0.3)} \approx 0.39 \ 
 S_{3} &= \frac{\exp(-0.3)}{\exp(1.2) + \exp(0.9) + \exp(-0.3)} \approx 0.08
 \end{aligned}
 $$

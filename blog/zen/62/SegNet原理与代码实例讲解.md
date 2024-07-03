@@ -85,7 +85,7 @@ $$P^l_{i,j} = \mathop{\arg\max}_{0 \leq m,n < k} X^{l-1}_{ski+m,skj+n}$$
 在解码阶段,SegNet利用Pooling Indices对下采样的特征图进行非线性上采样。设上采样后的特征图为$Y^l$,非线性上采样操作可以表示为:
 
 $$Y^l_{si+m,sj+n} = \begin{cases} 
-X^l_{i,j}, & \text{if } (m,n)=P^l_{i,j} \\
+X^l_{i,j}, & \text{if } (m,n)=P^l_{i,j} \
 0, & \text{otherwise}
 \end{cases}$$
 

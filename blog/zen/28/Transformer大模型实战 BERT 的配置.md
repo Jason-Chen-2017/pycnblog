@@ -64,18 +64,18 @@ BERT的数学模型构建基于Transformer架构，包含多头自我注意力�
 在多头自我注意力模块中，每个头$h$的计算过程可以表示为：
 
 $$
-\\text{MultiHead}(Q, K, V) = \\text{Concat}(\\text{head}_1, \\dots, \\text{head}_k)W^{'}
+\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \dots, \text{head}_k)W^{'}
 
 $$
 
-其中，$Q, K, V$分别代表查询(query)、键(key)和值(value)，$W^{'}$是权重矩阵，$\\text{Concat}$表示拼接操作。
+其中，$Q, K, V$分别代表查询(query)、键(key)和值(value)，$W^{'}$是权重矩阵，$\text{Concat}$表示拼接操作。
 
 ### 4.3 案例分析与讲解
 
 以文本分类为例，通过BERT进行预训练后，可以将其特征用于下游任务。例如，对于文本$x$，经过BERT处理后得到的表示向量$z$，可以用于计算文本的情感得分：
 
 $$
-\\hat{y} = \\text{Softmax}(Wz + b)
+\hat{y} = \text{Softmax}(Wz + b)
 
 $$
 
@@ -103,7 +103,7 @@ model = BertModel.from_pretrained('bert-base-uncased')
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
 # 输入文本
-text = \"我喜欢自然语言处理。\"
+text = "我喜欢自然语言处理。"
 tokens = tokenizer.tokenize(text)
 input_ids = torch.tensor([tokenizer.convert_tokens_to_ids(tokens)])
 attention_mask = torch.tensor([[1]])
@@ -145,8 +145,8 @@ last_hidden_states = outputs.last_hidden_state
 
 ### 7.3 相关论文推荐
 
-- **BERT论文**：\"BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding\"，由Google AI团队发表。
-- **RoBERTa论文**：\"RoBERTa: A Robustly Optimized BERT Pretraining Approach\"，进一步优化预训练过程。
+- **BERT论文**："BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"，由Google AI团队发表。
+- **RoBERTa论文**："RoBERTa: A Robustly Optimized BERT Pretraining Approach"，进一步优化预训练过程。
 
 ### 7.4 其他资源推荐
 

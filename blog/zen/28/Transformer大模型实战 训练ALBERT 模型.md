@@ -71,7 +71,7 @@ ALBERT广泛应用于自然语言处理任务，包括但不限于：
 ALBERT的数学模型构建基于Transformer架构，其核心是多头自注意力（Multi-head Attention）模块。多头自注意力可以表示为：
 
 $$
-\\text{MultiHead}(Q, K, V) = \\text{Concat}(head_1, \\dots, head_m)W^O
+\text{MultiHead}(Q, K, V) = \text{Concat}(head_1, \dots, head_m)W^O
 $$
 
 其中，$Q$、$K$、$V$分别为查询、键、值矩阵，$head_i$表示第$i$个注意力头的结果，$W^O$是将多头结果合并后的线性变换矩阵。
@@ -90,7 +90,7 @@ $$
 以文本分类任务为例，假设输入为长度为$L$的文本序列，经过预训练后，每个位置的隐藏状态为$h$维度，通过多头自注意力模块处理后，输出为：
 
 $$
-\\text{Output} = \\text{MultiHead}(Q, K, V) \\cdot W^O + \\text{Position Embeddings} + \\text{Token Embeddings}
+\text{Output} = \text{MultiHead}(Q, K, V) \cdot W^O + \text{Position Embeddings} + \text{Token Embeddings}
 $$
 
 这里，$W^O$是输出层的权重矩阵，包含了不同头的输出合并方式。

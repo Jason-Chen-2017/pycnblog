@@ -85,14 +85,14 @@ LangChain编程中的模型I/O模块广泛应用于以下领域：
 - **状态转移方程**：$S_{t+1} = T(S_t, A_t)$，其中$S_t$是时间$t$的状态，$A_t$是执行的操作，$T$是状态转移函数。
 
 #### 数据转换模型
-- **模式匹配规则**：$P(x) \\rightarrow Q(x)$，其中$P(x)$是模式表达式，$Q(x)$是转换后的表达式。
+- **模式匹配规则**：$P(x) \rightarrow Q(x)$，其中$P(x)$是模式表达式，$Q(x)$是转换后的表达式。
 
 ### 4.2 公式推导过程
 #### 数据清洗公式
-- **噪声过滤**：$D_{clean} = D_{raw} \\setminus D_{noise}$，其中$D_{clean}$是清洗后的数据集，$D_{raw}$是原始数据集，$D_{noise}$是噪声数据。
+- **噪声过滤**：$D_{clean} = D_{raw} \setminus D_{noise}$，其中$D_{clean}$是清洗后的数据集，$D_{raw}$是原始数据集，$D_{noise}$是噪声数据。
 
 #### 特征提取公式
-- **特征选择**：$F_{selected} = \\{f_1(x), ..., f_n(x)\\}$，其中$F_{selected}$是选择的特征集，$f_i(x)$是特征提取函数。
+- **特征选择**：$F_{selected} = \{f_1(x), ..., f_n(x)\}$，其中$F_{selected}$是选择的特征集，$f_i(x)$是特征提取函数。
 
 ### 4.3 案例分析与讲解
 #### 实例：文本数据处理
@@ -138,8 +138,8 @@ def store_data(data):
     # 将处理后的数据存储到数据库或文件系统
     pass
 
-if __name__ == \"__main__\":
-    consume_kafka(\"example_topic\")
+if __name__ == "__main__":
+    consume_kafka("example_topic")
 ```
 
 ### 5.3 代码解读与分析
@@ -171,8 +171,8 @@ if __name__ == \"__main__\":
 - **版本控制**：Git。
 
 ### 7.3 相关论文推荐
-- **Kafka论文**：\"Kafka: Scalable Log-Structured Event Streams\"。
-- **多模态学习**：\"Multimodal Learning for Real-Time Data Processing\"。
+- **Kafka论文**："Kafka: Scalable Log-Structured Event Streams"。
+- **多模态学习**："Multimodal Learning for Real-Time Data Processing"。
 
 ### 7.4 其他资源推荐
 - **社区论坛**：Stack Overflow、GitHub开源项目。

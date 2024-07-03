@@ -115,7 +115,7 @@
 
 $$
 \begin{cases}
-\dot{x}(t) = Ax(t) + Bu(t) \\
+\dot{x}(t) = Ax(t) + Bu(t) \
 y(t) = Cx(t) + Du(t)
 \end{cases}
 $$
@@ -159,7 +159,7 @@ $$
 
 $$
 \begin{cases}
-\dot{\theta}(t) = \frac{g}{l} \sin(\theta(t)) + \frac{u(t)}{m} \\
+\dot{\theta}(t) = \frac{g}{l} \sin(\theta(t)) + \frac{u(t)}{m} \
 \ddot{\theta}(t) = \frac{g}{l} \cos(\theta(t)) + \frac{u(t)}{m} - b\dot{\theta}(t)
 \end{cases}
 $$

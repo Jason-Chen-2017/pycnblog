@@ -137,7 +137,7 @@ $$V_{t+1}^{\pi}(s) = \max_{a}[\min_{\pi'}V_t^{\pi'}(s, a) + R_{t+1} + \gamma \ma
 奖励函数为：
 
 $$R_t = \begin{cases} 
-10 & \text{if } (x_t, y_t) = (x_{t+1}, y_{t+1}) \\
+10 & \text{if } (x_t, y_t) = (x_{t+1}, y_{t+1}) \
 -1 & \text{otherwise} 
 \end{cases}$$
 

@@ -104,7 +104,7 @@ $$
 $$
 B_i = 
 \begin{cases}
-1, & \text{if } Q_i > Q_{max} \\
+1, & \text{if } Q_i > Q_{max} \
 0, & \text{otherwise}
 \end{cases}
 $$

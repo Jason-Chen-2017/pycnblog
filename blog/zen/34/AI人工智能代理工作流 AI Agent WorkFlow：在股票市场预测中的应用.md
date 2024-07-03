@@ -121,12 +121,12 @@ AI Agent WorkFlow在股票市场预测中的应用领域包括：
 在股票市场预测中，常见的数学模型包括：
 
 - **线性回归模型**：
-  $$y = \\beta_0 + \\beta_1 x_1 + \\beta_2 x_2 + \\dots + \\beta_n x_n + \\epsilon$$
-  其中，$y$是预测值，$x_1, x_2, \\dots, x_n$是输入特征，$\\beta_0, \\beta_1, \\dots, \\beta_n$是模型参数，$\\epsilon$是误差项。
+  $$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n + \epsilon$$
+  其中，$y$是预测值，$x_1, x_2, \dots, x_n$是输入特征，$\beta_0, \beta_1, \dots, \beta_n$是模型参数，$\epsilon$是误差项。
 
 - **神经网络模型**：
-  $$f(x) = \\sigma(W \\cdot x + b)$$
-  其中，$f(x)$是神经网络输出，$W$是权重矩阵，$x$是输入向量，$b$是偏置向量，$\\sigma$是激活函数。
+  $$f(x) = \sigma(W \cdot x + b)$$
+  其中，$f(x)$是神经网络输出，$W$是权重矩阵，$x$是输入向量，$b$是偏置向量，$\sigma$是激活函数。
 
 ### 4.2 公式推导过程
 
@@ -134,7 +134,7 @@ AI Agent WorkFlow在股票市场预测中的应用领域包括：
 
 线性回归模型通过最小化损失函数来优化模型参数：
 
-$$\\min_{\\beta} \\sum_{i=1}^n (y_i - f(x_i))^2$$
+$$\min_{\beta} \sum_{i=1}^n (y_i - f(x_i))^2$$
 
 其中，$y_i$是实际值，$f(x_i)$是预测值。
 
@@ -143,13 +143,13 @@ $$\\min_{\\beta} \\sum_{i=1}^n (y_i - f(x_i))^2$$
 神经网络模型通过反向传播算法来优化模型参数：
 
 1. 计算预测值和实际值之间的误差：
-   $$\\delta = y - f(x)$$
+   $$\delta = y - f(x)$$
 2. 传播误差到前一层：
-   $$\\delta_{l-1} = \\frac{\\partial L}{\\partial x_{l-1}} = \\frac{\\partial L}{\\partial f(x_{l-1})} \\cdot \\frac{\\partial f(x_{l-1})}{\\partial x_{l-1}}$$
+   $$\delta_{l-1} = \frac{\partial L}{\partial x_{l-1}} = \frac{\partial L}{\partial f(x_{l-1})} \cdot \frac{\partial f(x_{l-1})}{\partial x_{l-1}}$$
 3. 更新权重和偏置：
-   $$W_{l-1} \\leftarrow W_{l-1} - \\alpha \\cdot \
+   $$W_{l-1} \leftarrow W_{l-1} - \alpha \cdot \
 abla_{W_{l-1}} L$$
-   $$b_{l-1} \\leftarrow b_{l-1} - \\alpha \\cdot \
+   $$b_{l-1} \leftarrow b_{l-1} - \alpha \cdot \
 abla_{b_{l-1}} L$$
 
 ### 4.3 案例分析与讲解
@@ -235,7 +235,7 @@ predictions = model.predict(X)
 
 # 评估模型
 mse = mean_squared_error(y, predictions)
-print(f\"均方误差：{mse}\")
+print(f"均方误差：{mse}")
 ```
 
 ### 5.3 代码解读与分析

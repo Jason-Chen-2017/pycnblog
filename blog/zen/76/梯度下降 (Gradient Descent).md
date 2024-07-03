@@ -122,7 +122,7 @@ $$\theta_j = \theta_j - \alpha \cdot \frac{\partial J(\theta)}{\partial \theta_j
 将 $J(\theta)$ 展开:
 $$
 \begin{aligned}
-J(\theta) &= \frac{1}{2m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)})^2 \\
+J(\theta) &= \frac{1}{2m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)})^2 \
 &= \frac{1}{2m} \sum_{i=1}^m (\theta^T x^{(i)} - y^{(i)})^2
 \end{aligned}
 $$
@@ -130,7 +130,7 @@ $$
 对 $\theta_j$ 求偏导:
 $$
 \begin{aligned}
-\frac{\partial J(\theta)}{\partial \theta_j} &= \frac{1}{m} \sum_{i=1}^m (\theta^T x^{(i)} - y^{(i)}) \cdot x_j^{(i)} \\
+\frac{\partial J(\theta)}{\partial \theta_j} &= \frac{1}{m} \sum_{i=1}^m (\theta^T x^{(i)} - y^{(i)}) \cdot x_j^{(i)} \
 &= \frac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)}) \cdot x_j^{(i)}
 \end{aligned}
 $$
@@ -153,7 +153,7 @@ $$(x^{(3)}, y^{(3)}) = (3, 3)$$
 根据前面推导的公式,有:
 $$
 \begin{aligned}
-\theta_0 &= \theta_0 - \alpha \cdot \frac{1}{3} \sum_{i=1}^3 (h_{\theta}(x^{(i)}) - y^{(i)}) \\
+\theta_0 &= \theta_0 - \alpha \cdot \frac{1}{3} \sum_{i=1}^3 (h_{\theta}(x^{(i)}) - y^{(i)}) \
 \theta_1 &= \theta_1 - \alpha \cdot \frac{1}{3} \sum_{i=1}^3 (h_{\theta}(x^{(i)}) - y^{(i)}) \cdot x^{(i)}
 \end{aligned}
 $$
@@ -161,9 +161,9 @@ $$
 代入数据,可以得到:
 $$
 \begin{aligned}
-\theta_0 &= 0 - 0.01 \cdot \frac{1}{3} [(0+0 \cdot 1-1) + (0+0 \cdot 2-2) + (0+0 \cdot 3-3)] \\
-&= 0 - 0.01 \cdot (-2) = 0.02 \\
-\theta_1 &= 0 - 0.01 \cdot \frac{1}{3} [(0+0 \cdot 1-1) \cdot 1 + (0+0 \cdot 2-2) \cdot 2 + (0+0 \cdot 3-3) \cdot 3] \\ 
+\theta_0 &= 0 - 0.01 \cdot \frac{1}{3} [(0+0 \cdot 1-1) + (0+0 \cdot 2-2) + (0+0 \cdot 3-3)] \
+&= 0 - 0.01 \cdot (-2) = 0.02 \
+\theta_1 &= 0 - 0.01 \cdot \frac{1}{3} [(0+0 \cdot 1-1) \cdot 1 + (0+0 \cdot 2-2) \cdot 2 + (0+0 \cdot 3-3) \cdot 3] \ 
 &= 0 - 0.01 \cdot (-14/3) \approx 0.0467
 \end{aligned}
 $$

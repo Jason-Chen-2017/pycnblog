@@ -92,7 +92,7 @@ $$
 
 $$
 y_i = \begin{cases} 
-j & \text{if } \min_{1 \leq j \leq k} d(x_i, c_j) = d(x_i, c_j) \\
+j & \text{if } \min_{1 \leq j \leq k} d(x_i, c_j) = d(x_i, c_j) \
 \end{cases}
 $$
 
@@ -104,7 +104,7 @@ $$
 
 $$
 y_i = \begin{cases} 
-j & \text{if } \sum_{m=1}^k \exp(-\frac{1}{2} \sum_{n=1}^d (x_i - c_j)^2) \cdot \exp(-\frac{1}{2} \sum_{n=1}^d (x_i - c_m)^2) \geq \exp(-\frac{1}{2} \sum_{n=1}^d (x_i - c_j)^2) \\
+j & \text{if } \sum_{m=1}^k \exp(-\frac{1}{2} \sum_{n=1}^d (x_i - c_j)^2) \cdot \exp(-\frac{1}{2} \sum_{n=1}^d (x_i - c_m)^2) \geq \exp(-\frac{1}{2} \sum_{n=1}^d (x_i - c_j)^2) \
 \end{cases}
 $$
 
@@ -132,8 +132,8 @@ $$
 
 $$
 y_i = \begin{cases} 
-1 & \text{if } d(x_i, (1, 2)) \leq d(x_i, (10, 4)) \\
-2 & \text{otherwise} \\
+1 & \text{if } d(x_i, (1, 2)) \leq d(x_i, (10, 4)) \
+2 & \text{otherwise} \
 \end{cases}
 $$
 

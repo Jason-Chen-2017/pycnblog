@@ -339,7 +339,7 @@ public class WordCount {
         private Text word = new Text();
 
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
-            String[] words = value.toString().split("\\s+");
+            String[] words = value.toString().split("\s+");
             for (String word : words) {
                 this.word.set(word);
                 context.write(this.word, one);

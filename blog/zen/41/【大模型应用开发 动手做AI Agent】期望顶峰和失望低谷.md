@@ -99,22 +99,22 @@ AI代理指的是能够自主地执行任务并作出决策的智能体。在大
 以均方误差（MSE）为例：
 
 $$
-\\text{MSE} = \\frac{1}{n} \\sum_{i=1}^{n} (y_i - \\hat{y}_i)^2
+\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
 $$
 
-其中，$y_i$是真实值，$\\hat{y}_i$是预测值，$n$是样本数量。
+其中，$y_i$是真实值，$\hat{y}_i$是预测值，$n$是样本数量。
 
 #### 梯度下降算法
 
 梯度下降算法用于最小化损失函数：
 
 $$
-\\theta := \\theta - \\alpha \\cdot \
-abla J(\\theta)
+\theta := \theta - \alpha \cdot \
+abla J(\theta)
 $$
 
-其中，$\\theta$是参数向量，$\\alpha$是学习率，$\
-abla J(\\theta)$是损失函数关于参数的梯度。
+其中，$\theta$是参数向量，$\alpha$是学习率，$\
+abla J(\theta)$是损失函数关于参数的梯度。
 
 ### 4.3 案例分析与讲解
 
@@ -133,10 +133,10 @@ $$
 利用注意力机制、拆分模型等方法增加模型可解释性：
 
 $$
-\\text{Attention}(x, h) = \\frac{\\exp(\\text{score}(x, h))}{\\sum_{j} \\exp(\\text{score}(x, j))}
+\text{Attention}(x, h) = \frac{\exp(\text{score}(x, h))}{\sum_{j} \exp(\text{score}(x, j))}
 $$
 
-其中，$\\text{score}(x, h)$是$x$和$h$之间的得分。
+其中，$\text{score}(x, h)$是$x$和$h$之间的得分。
 
 ### 4.4 常见问题解答
 
@@ -187,7 +187,7 @@ class SentimentDataset(Dataset):
             text,
             add_special_tokens=True,
             max_length=self.max_len,
-            padding=\"max_length\",
+            padding="max_length",
             return_token_type_ids=True,
             truncation=True,
             return_attention_mask=True,
@@ -205,7 +205,7 @@ tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
 model = BertForSequenceClassification.from_pretrained('bert-base-cased', num_labels=2)
 
 # 准备数据集
-texts = [\"I love this product!\", \"This movie is terrible.\"]
+texts = ["I love this product!", "This movie is terrible."]
 labels = [1, 0]  # 1 for positive sentiment, 0 for negative sentiment
 dataset = SentimentDataset(texts=texts, labels=labels, tokenizer=tokenizer, max_len=512)
 

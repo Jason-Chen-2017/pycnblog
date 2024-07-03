@@ -89,23 +89,23 @@
 
 ### 4.1 数学模型构建
 
-假设状态空间为$S$，动作空间为$A$，策略为$\\pi(a|s)$。异常检测的目标是识别状态$s$、动作$a$或策略$\\pi$的异常行为。一个简单的数学模型可以是：
+假设状态空间为$S$，动作空间为$A$，策略为$\pi(a|s)$。异常检测的目标是识别状态$s$、动作$a$或策略$\pi$的异常行为。一个简单的数学模型可以是：
 
-\\[ \\text{异常检测}(s,a,\\pi) = \\begin{cases} 
-1 & \\text{如果 } \\text{异常标志} > \\text{阈值} \\\\
-0 & \\text{否则}
-\\end{cases} \\]
+$$ \text{异常检测}(s,a,\pi) = \begin{cases} 
+1 & \text{如果 } \text{异常标志} > \text{阈值} \\
+0 & \text{否则}
+\end{cases} $$
 
 ### 4.2 公式推导过程
 
 #### 基于统计模型的异常检测
 
-假设状态$s$的行为遵循高斯分布$N(\\mu, \\sigma)$，其中$\\mu$是均值，$\\sigma$是标准差。异常检测可以定义为：
+假设状态$s$的行为遵循高斯分布$N(\mu, \sigma)$，其中$\mu$是均值，$\sigma$是标准差。异常检测可以定义为：
 
-\\[ \\text{异常检测}(s) = \\begin{cases} 
-1 & \\text{如果 } |s-\\mu| > k\\sigma \\\\
-0 & \\text{否则}
-\\end{cases} \\]
+$$ \text{异常检测}(s) = \begin{cases} 
+1 & \text{如果 } |s-\mu| > k\sigma \\
+0 & \text{否则}
+\end{cases} $$
 
 其中$k$是设定的阈值系数。
 
@@ -165,7 +165,7 @@ def train_model(model, data_loader, epochs, learning_rate):
             loss.backward()
             optimizer.step()
             running_loss += loss.item()
-        print(f\"Epoch {epoch+1}, Loss: {running_loss/len(data_loader)}\")
+        print(f"Epoch {epoch+1}, Loss: {running_loss/len(data_loader)}")
 
 def detect_anomalies(model, test_data):
     predictions = []
@@ -221,8 +221,8 @@ predictions = detect_anomalies(model, test_loader)
 
 ### 7.3 相关论文推荐
 
-- **\"Learning to Detect Anomalies Using Deep Reinforcement Learning\"**
-- **\"Reinforcement Learning for Anomaly Detection in Time Series Data\"**
+- **"Learning to Detect Anomalies Using Deep Reinforcement Learning"**
+- **"Reinforcement Learning for Anomaly Detection in Time Series Data"**
 
 ### 7.4 其他资源推荐
 

@@ -121,7 +121,7 @@ otin Visited$$
 
     $$d(s, v) = \begin{cases}
     \text{无穷大}, & \text{if } v \
-otin S \\
+otin S \
     \min_{u \in S} d(s, u) + w(s, u), & \text{if } v \in S
     \end{cases}$$
 

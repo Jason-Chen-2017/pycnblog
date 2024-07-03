@@ -65,7 +65,7 @@ $$\theta_{t+1,i} = \theta_{t,i} - \frac{\eta}{\sqrt{r_{t,i} + \epsilon}} \cdot g
 AdaGrad优化算法可以用如下数学模型表示:
 
 $$\begin{aligned}
-r_{t,i} &= r_{t-1,i} + g_{t,i}^2 \\
+r_{t,i} &= r_{t-1,i} + g_{t,i}^2 \
 \theta_{t+1,i} &= \theta_{t,i} - \frac{\eta}{\sqrt{r_{t,i} + \epsilon}} \cdot g_{t,i}
 \end{aligned}$$
 

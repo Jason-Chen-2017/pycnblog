@@ -66,9 +66,9 @@ graph LR
 其邻接矩阵表示为:
 $$
 A = \begin{bmatrix} 
-0 & 2 & 5 & \infty \\\\
-\infty & 0 & 1 & 6 \\\\
-\infty & \infty & 0 & 1 \\\\
+0 & 2 & 5 & \infty \\
+\infty & 0 & 1 & 6 \\
+\infty & \infty & 0 & 1 \\
 \infty & \infty & \infty & 0
 \end{bmatrix}
 $$

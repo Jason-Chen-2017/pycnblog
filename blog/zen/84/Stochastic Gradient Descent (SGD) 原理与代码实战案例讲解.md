@@ -101,7 +101,7 @@ $$f(\theta) = \frac{1}{2}\sum_{i=1}^n (y_i - (\theta_0 + \theta_1 \cdot x_i))^2$
 首先，我们计算目标函数的梯度：
 
 $$\
-abla f(\theta) = -\frac{1}{n} \sum_{i=1}^n \left( y_i - (\theta_0 + \theta_1 \cdot x_i) \right) \cdot \begin{bmatrix} 1 \\ x_i \end{bmatrix}$$
+abla f(\theta) = -\frac{1}{n} \sum_{i=1}^n \left( y_i - (\theta_0 + \theta_1 \cdot x_i) \right) \cdot \begin{bmatrix} 1 \ x_i \end{bmatrix}$$
 
 然后，使用梯度下降法更新参数：
 

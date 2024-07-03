@@ -75,7 +75,7 @@ Flink的检查点机制广泛应用于实时数据分析、日志处理、金融
 
 设 $S$ 为状态集，$C$ 表示检查点集，$T$ 表示时间线。Flink检查点机制可以构建以下数学模型：
 
-$$ S(C, T) = \\bigcup_{c \\in C} S_c(T) $$
+$$ S(C, T) = \bigcup_{c \in C} S_c(T) $$
 
 其中，$S_c(T)$ 表示在时间 $T$ 生成的检查点 $c$ 的状态集。
 
@@ -116,7 +116,7 @@ public class CheckpointExample {
         env.setCheckpointingMode(CheckpointingMode.EXACTLY_ONCE);
         
         // 创建数据源
-        DataStream<String> stream = env.socketTextStream(\"localhost\", 9999);
+        DataStream<String> stream = env.socketTextStream("localhost", 9999);
         
         // 处理流数据
         DataStream<String> processedStream = stream.map(new MapFunction<String, String>() {
@@ -131,7 +131,7 @@ public class CheckpointExample {
         processedStream.addSink(new PrintToConsole());
         
         // 执行任务
-        env.execute(\"Flink Checkpoint Example\");
+        env.execute("Flink Checkpoint Example");
     }
 }
 ```
@@ -213,6 +213,6 @@ Flink检查点机制在各种实时数据处理场景中应用广泛，包括但
 - **A**：可以通过Flink UI或使用命令行工具`flink job get-checkpoint-status`来查看检查点状态。Flink UI通常提供详细的检查点历史记录和状态信息。
 
 #### Q：如何处理检查点确认失败？
-- **A**：Flink提供了重试机制和多副本存储策略来处理检查点确认失败。例如，可以使用`env.setStateBackend(new FsStateBackend(\"hdfs://host/path\"));`设置状态后端为分布式存储系统，增加检查点的可靠性。
+- **A**：Flink提供了重试机制和多副本存储策略来处理检查点确认失败。例如，可以使用`env.setStateBackend(new FsStateBackend("hdfs://host/path"));`设置状态后端为分布式存储系统，增加检查点的可靠性。
 
 通过上述详细回答，我们可以解决在实际部署和使用Flink检查点机制时可能遇到的常见问题。

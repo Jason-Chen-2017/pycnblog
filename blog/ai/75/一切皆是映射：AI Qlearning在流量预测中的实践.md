@@ -166,7 +166,7 @@ $$
 
 $$
 P(s',r|s,a) = \begin{cases}
-1, & \text{if } s' = s + a \\
+1, & \text{if } s' = s + a \
 0, & \text{otherwise}
 \end{cases}
 $$

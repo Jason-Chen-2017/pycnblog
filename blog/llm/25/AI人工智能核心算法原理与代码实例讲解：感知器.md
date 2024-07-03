@@ -36,12 +36,12 @@
 
 #### 训练过程
 - 对于每个训练样本：
-  - 计算加权和：$z = \\sum w_i x_i + b$
+  - 计算加权和：$z = \sum w_i x_i + b$
   - 应用激活函数：$f(z)$
   - 如果预测结果与实际标签不符，则更新权重和偏置：
-    - 如果预测为正类但实际上是负类：$w \\leftarrow w + \\eta * (y - f(z)) * x_i$
-    - 如果预测为负类但实际上是正类：$w \\leftarrow w - \\eta * (y - f(z)) * x_i$
-    - 更新偏置：$b \\leftarrow b + \\eta * (y - f(z))$
+    - 如果预测为正类但实际上是负类：$w \leftarrow w + \eta * (y - f(z)) * x_i$
+    - 如果预测为负类但实际上是正类：$w \leftarrow w - \eta * (y - f(z)) * x_i$
+    - 更新偏置：$b \leftarrow b + \eta * (y - f(z))$
 
 #### 收敛检查
 - 如果没有样本违反分类规则，或者达到预设的最大迭代次数，则停止训练。
@@ -67,10 +67,10 @@
 
 感知器可以表示为：
 
-$$ f(x) = \\begin{cases} 
-1 & \\text{if } \\sum w_i x_i + b > 0 \\\\
-0 & \\text{otherwise}
-\\end{cases} $$
+$$ f(x) = \begin{cases} 
+1 & \text{if } \sum w_i x_i + b > 0 \\
+0 & \text{otherwise}
+\end{cases} $$
 
 其中：
 - $x_i$ 是输入特征
@@ -81,12 +81,12 @@ $$ f(x) = \\begin{cases}
 
 感知器的学习过程涉及权重和偏置的更新：
 
-$$ w \\leftarrow w + \\eta (y - f(z)) x_i $$
+$$ w \leftarrow w + \eta (y - f(z)) x_i $$
 
-$$ b \\leftarrow b + \\eta (y - f(z)) $$
+$$ b \leftarrow b + \eta (y - f(z)) $$
 
 这里：
-- $\\eta$ 是学习率
+- $\eta$ 是学习率
 - $y$ 是实际标签（0 或 1）
 - $f(z)$ 是激活函数的输出
 
@@ -131,7 +131,7 @@ model.fit(X, y)
 predictions = model.predict(X)
 
 # 打印预测结果
-print(\"Predictions:\", predictions)
+print("Predictions:", predictions)
 
 # 绘制数据集和决策边界
 plt.scatter(X[:, 0], X[:, 1], c=y, s=50, cmap='autumn')

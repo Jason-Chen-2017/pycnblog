@@ -156,9 +156,9 @@ graph LR
 
 $$
 \begin{aligned}
-PR(A) &= (1-0.85) + 0.85 \times \frac{1}{2} = 0.675\\
-PR(B) &= (1-0.85) + 0.85 \times \frac{1}{2} = 0.675\\
-PR(C) &= (1-0.85) + 0.85 \times (\frac{1}{2}+\frac{1}{1}+\frac{1}{2}) = 1.025\\
+PR(A) &= (1-0.85) + 0.85 \times \frac{1}{2} = 0.675\
+PR(B) &= (1-0.85) + 0.85 \times \frac{1}{2} = 0.675\
+PR(C) &= (1-0.85) + 0.85 \times (\frac{1}{2}+\frac{1}{1}+\frac{1}{2}) = 1.025\
 PR(D) &= (1-0.85) + 0.85 \times 0 = 0.15
 \end{aligned}
 $$

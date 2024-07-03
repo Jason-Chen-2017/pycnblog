@@ -84,7 +84,7 @@ Midjourney 的核心数学模型包括 GAN 和 AE。
 
 $$
 \begin{align*}
-\min_{G} \quad & \mathbb{E}_{z \sim p(z)}[D(G(z))] \\
+\min_{G} \quad & \mathbb{E}_{z \sim p(z)}[D(G(z))] \
 \max_{D} \quad & \mathbb{E}_{z \sim p(z)}[D(G(z))] + \mathbb{E}_{x \sim p(x)}[D(x)]
 \end{align*}
 $$

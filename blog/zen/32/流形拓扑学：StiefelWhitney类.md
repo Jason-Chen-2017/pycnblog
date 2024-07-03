@@ -22,13 +22,13 @@ Stiefel-Whitney类不仅在纯数学领域内具有深远的影响，还在理�
 
 ### 2.1 Stiefel-Whitney类的定义
 
-Stiefel-Whitney类是用于描述向量丛几何性质的一系列拓扑不变量。对于给定的向量丛$V$，Stiefel-Whitney类$w_i(V)$是一个元素，它属于流形$M$上的环$H^i(M;\\mathbb{Z}/2\\mathbb{Z})$。这些类可以用来区分不同的向量丛，或者用来判断一个向量丛是否可以“紧致化”为另一个向量丛。
+Stiefel-Whitney类是用于描述向量丛几何性质的一系列拓扑不变量。对于给定的向量丛$V$，Stiefel-Whitney类$w_i(V)$是一个元素，它属于流形$M$上的环$H^i(M;\mathbb{Z}/2\mathbb{Z})$。这些类可以用来区分不同的向量丛，或者用来判断一个向量丛是否可以“紧致化”为另一个向量丛。
 
 ### 2.2 关键概念的联系
 
 - **向量丛**：在几何和拓扑学中，向量丛是一个赋有结构的集合，其中每个点都关联着一个向量空间，这个向量空间称为纤维。
 - **Stiefel-Whitney类**：它们是向量丛的拓扑不变量，通过这些类，我们可以了解向量丛的几何结构和性质。
-- **环**：在数学中，环是满足加法和乘法运算的代数结构。在这个上下文中，$H^i(M;\\mathbb{Z}/2\\mathbb{Z})$指的是$M$上的$Z/2Z$系数的$i$级环。
+- **环**：在数学中，环是满足加法和乘法运算的代数结构。在这个上下文中，$H^i(M;\mathbb{Z}/2\mathbb{Z})$指的是$M$上的$Z/2Z$系数的$i$级环。
 
 ## 3. 核心算法原理 & 具体操作步骤
 
@@ -37,7 +37,7 @@ Stiefel-Whitney类是用于描述向量丛几何性质的一系列拓扑不变�
 计算Stiefel-Whitney类通常涉及以下步骤：
 
 1. **选择适当的拓扑结构**：首先，需要定义流形$M$上的向量丛$V$。
-2. **构造特征映射**：使用特征映射将向量丛映射到环$H^i(M;\\mathbb{Z}/2\\mathbb{Z})$。
+2. **构造特征映射**：使用特征映射将向量丛映射到环$H^i(M;\mathbb{Z}/2\mathbb{Z})$。
 3. **计算环元素**：通过特征映射计算出$w_i(V)$的具体值。
 
 ### 3.2 算法步骤详解
@@ -46,7 +46,7 @@ Stiefel-Whitney类是用于描述向量丛几何性质的一系列拓扑不变�
 
 #### 步骤1：选取向量丛$V$
 
-假设$M$是给定的流形，$V$是$M$上的向量丛，其纤维是$\\mathbb{R}^k$。
+假设$M$是给定的流形，$V$是$M$上的向量丛，其纤维是$\mathbb{R}^k$。
 
 #### 步骤2：特征映射构造
 
@@ -70,11 +70,11 @@ Stiefel-Whitney类是用于描述向量丛几何性质的一系列拓扑不变�
 
 ### 4.1 数学模型构建
 
-设$M$是$n$维流形，$V$是$M$上的$m$维向量丛。Stiefel-Whitney类$w_i(V)$是一个元素，属于环$H^i(M;\\mathbb{Z}/2\\mathbb{Z})$。通过特征映射$\\phi_V:H^*(M;\\mathbb{Z}/2\\mathbb{Z})\\rightarrow H^*(M;\\mathbb{Z}/2\\mathbb{Z})$，可以将向量丛$V$映射到环结构中。
+设$M$是$n$维流形，$V$是$M$上的$m$维向量丛。Stiefel-Whitney类$w_i(V)$是一个元素，属于环$H^i(M;\mathbb{Z}/2\mathbb{Z})$。通过特征映射$\phi_V:H^*(M;\mathbb{Z}/2\mathbb{Z})\rightarrow H^*(M;\mathbb{Z}/2\mathbb{Z})$，可以将向量丛$V$映射到环结构中。
 
 ### 4.2 公式推导过程
 
-考虑特征映射$\\phi_V$在$H^*(M;\\mathbb{Z}/2\\mathbb{Z})$上的作用，通过引入Stiefel-Whitney序列和切比雪夫级数的概念，可以推导出Stiefel-Whitney类的表达式。
+考虑特征映射$\phi_V$在$H^*(M;\mathbb{Z}/2\mathbb{Z})$上的作用，通过引入Stiefel-Whitney序列和切比雪夫级数的概念，可以推导出Stiefel-Whitney类的表达式。
 
 ### 4.3 案例分析与讲解
 
@@ -108,7 +108,7 @@ def stiefel_whitney_class(V, i):
         # 计算w_2(V)，假设V是一个二维向量丛
         w_2 = V.second_fiber_dimension % 2
     else:
-        raise ValueError(\"Only w_1 and w_2 are implemented.\")
+        raise ValueError("Only w_1 and w_2 are implemented.")
     
     return ZZ(w_1), ZZ(w_2)
 
@@ -120,8 +120,8 @@ class VectorBundle:
 
 V = VectorBundle()
 w1, w2 = stiefel_whitney_class(V, 1)
-print(f\"w_1(V) = {w1}\")
-print(f\"w_2(V) = {w2}\")
+print(f"w_1(V) = {w1}")
+print(f"w_2(V) = {w2}")
 ```
 
 ### 5.3 代码解读与分析

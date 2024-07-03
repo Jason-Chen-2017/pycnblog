@@ -92,13 +92,13 @@ MapReduce广泛应用于大数据处理、数据挖掘、机器学习等领域�
 
 HDFS中的数据流模型可以用以下公式表示：
 
-$$ \\text{DataFlow}(Input) = \\text{Map}(Input) \\rightarrow \\text{Shuffle}(Output) \\rightarrow \\text{Reduce}(Output) $$
+$$ \text{DataFlow}(Input) = \text{Map}(Input) \rightarrow \text{Shuffle}(Output) \rightarrow \text{Reduce}(Output) $$
 
 ### 4.2 MapReduce并行计算模型
 
 MapReduce并行计算模型可以表示为：
 
-$$ \\text{Map}(Input) \\rightarrow \\text{Shuffle}(Output) \\rightarrow \\text{Reduce}(Output) $$
+$$ \text{Map}(Input) \rightarrow \text{Shuffle}(Output) \rightarrow \text{Reduce}(Output) $$
 
 ### 4.3 常见问题解答
 
@@ -143,16 +143,16 @@ sudo chmod -R 777 /usr/local/spark
 ```java
 public class WordCount extends JavaSparkContext {
     public static void main(String[] args) {
-        SparkConf conf = new SparkConf().setAppName(\"Word Count\").setMaster(\"local[*]\");
+        SparkConf conf = new SparkConf().setAppName("Word Count").setMaster("local[*]");
         JavaSparkContext sc = new JavaSparkContext(conf);
 
-        List<String> input = Arrays.asList(\"Hello\", \"World\", \"Hello\", \"Spark\", \"Spark\");
+        List<String> input = Arrays.asList("Hello", "World", "Hello", "Spark", "Spark");
         JavaRDD<String> words = sc.parallelize(input);
         JavaPairRDD<String, Integer> counts = words.flatMap(new FlatMapFunction<String, Iterable<String>>() {
             @Override
             public Iterator<String> call(String s) throws Exception {
                 return new Iterator<String>() {
-                    private String[] tokens = s.split(\"\\\\W+\");
+                    private String[] tokens = s.split("\\W+");
                     private int size = tokens.length;
 
                     @Override
@@ -185,7 +185,7 @@ public class WordCount extends JavaSparkContext {
         counts.foreach(new VoidFunction<Tuple2<String, Integer>>() {
             @Override
             public void call(Tuple2<String, Integer> wordCount) throws Exception {
-                System.out.println(wordCount._1() + \": \" + wordCount._2());
+                System.out.println(wordCount._1() + ": " + wordCount._2());
             }
         });
     }
@@ -228,8 +228,8 @@ Hadoop在实际应用中的例子包括：
 
 ### 7.3 相关论文推荐
 
-- **\"The Hadoop Distributed File System\"** by Jeffrey Dean and Sanjay Ghemawat.
-- **\"MapReduce: Simplified Data Processing on Large Clusters\"** by Jeffrey Dean and Sanjay Ghemawat.
+- **"The Hadoop Distributed File System"** by Jeffrey Dean and Sanjay Ghemawat.
+- **"MapReduce: Simplified Data Processing on Large Clusters"** by Jeffrey Dean and Sanjay Ghemawat.
 
 ### 7.4 其他资源推荐
 

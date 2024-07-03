@@ -96,10 +96,10 @@ GPT模型的数学模型基于Transformer架构，主要包括以下部分：
 1. **多头自注意力机制**：
 
 $$
-Q = W_Q \\times X \\\\
-K = W_K \\times X \\\\
-V = W_V \\times X \\\\
-\\text{Attention}(Q, K, V) = \\frac{\\exp(QK^T)}{\\sqrt{d_k}} \\times V
+Q = W_Q \times X \\
+K = W_K \times X \\
+V = W_V \times X \\
+\text{Attention}(Q, K, V) = \frac{\exp(QK^T)}{\sqrt{d_k}} \times V
 $$
 
 其中，$X$为输入序列，$W_Q, W_K, W_V$分别为查询、键和值矩阵，$d_k$为键的维度。
@@ -107,7 +107,7 @@ $$
 2. **前馈神经网络**：
 
 $$
-\\text{FFN}(X) = \\text{ReLU}(W_1 \\times \\text{ReLU}(W_2 \\times X + b_2))
+\text{FFN}(X) = \text{ReLU}(W_1 \times \text{ReLU}(W_2 \times X + b_2))
 $$
 
 其中，$X$为输入序列，$W_1, W_2$分别为权重矩阵，$b_1, b_2$分别为偏置项。

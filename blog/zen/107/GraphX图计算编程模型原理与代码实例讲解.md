@@ -108,7 +108,7 @@ GraphX广泛应用于社交网络分析、推荐系统、生物信息学、物�
 
 对于邻域遍历操作，可以通过以下公式表示：
 
-\[ \text{Visited}(v) = \bigcup_{(u, v) \in E} \text{Visited}(u) \]
+$$ \text{Visited}(v) = \bigcup_{(u, v) \in E} \text{Visited}(u) $$
 
 这里，$\text{Visited}(v)$表示顶点$v$的已访问邻居集合。
 
@@ -116,7 +116,7 @@ GraphX广泛应用于社交网络分析、推荐系统、生物信息学、物�
 
 图模式匹配可以通过以下过程实现：
 
-\[ \text{Match}(G, P) = \{ V \mid \exists \text{ path } p \in P \text{ from } G \text{ such that } \text{path} \text{ matches } P \} \]
+$$ \text{Match}(G, P) = \{ V \mid \exists \text{ path } p \in P \text{ from } G \text{ such that } \text{path} \text{ matches } P \} $$
 
 这里，$\text{Match}(G, P)$表示图$G$中匹配模式$P$的顶点集合。
 

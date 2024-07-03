@@ -219,7 +219,7 @@ public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritabl
 
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String line = value.toString();
-        String[] words = line.split("\\W+");
+        String[] words = line.split("\W+");
         for (String w : words) {
             if (!w.isEmpty()) {
                 word.set(w);

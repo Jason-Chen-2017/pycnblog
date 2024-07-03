@@ -128,20 +128,20 @@ abla_Y X $$
 import numpy as np
 
 def metric_tensor(m):
-    \"\"\"定义度量张量\"\"\"
+    """定义度量张量"""
     return np.array([[m, 0], [0, m]])
 
 def christoffel_symbols(m):
-    \"\"\"计算Christoffel符号\"\"\"
+    """计算Christoffel符号"""
     # 假设度量张量为m，具体实现根据m的值进行计算
     pass
 
 def connection_coefficients(m, christoffel_symbols):
-    \"\"\"构建连接系数矩阵\"\"\"
+    """构建连接系数矩阵"""
     pass
 
 def lie_derivative(X, Y):
-    \"\"\"计算李导数\"\"\"
+    """计算李导数"""
     pass
 
 # 示例度量张量和向量场

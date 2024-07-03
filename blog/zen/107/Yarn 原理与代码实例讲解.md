@@ -140,10 +140,10 @@ Yarn的资源管理和调度算法可以应用于以下领域:
 
 $$
 \begin{aligned}
-\max \quad & \sum_{i=1}^{N} \sum_{j=1}^{M} x_{ij} \\
-\text{s.t.} \quad & \sum_{i=1}^{N} x_{ij} CPU_i \geq CPU_j, \quad \forall j \\
-& \sum_{i=1}^{N} x_{ij} Memory_i \geq Memory_j, \quad \forall j \\
-& \sum_{j=1}^{M} x_{ij} \leq 1, \quad \forall i \\
+\max \quad & \sum_{i=1}^{N} \sum_{j=1}^{M} x_{ij} \
+\text{s.t.} \quad & \sum_{i=1}^{N} x_{ij} CPU_i \geq CPU_j, \quad \forall j \
+& \sum_{i=1}^{N} x_{ij} Memory_i \geq Memory_j, \quad \forall j \
+& \sum_{j=1}^{M} x_{ij} \leq 1, \quad \forall i \
 & x_{ij} \in \{0, 1\}, \quad \forall i, j
 \end{aligned}
 $$

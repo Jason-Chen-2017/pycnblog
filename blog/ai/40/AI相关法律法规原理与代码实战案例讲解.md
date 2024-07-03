@@ -127,7 +127,7 @@ graph TD
 
 $$
 \begin{aligned}
-\text{Risk} &= f(X_1, X_2, \ldots, X_n) \\
+\text{Risk} &= f(X_1, X_2, \ldots, X_n) \
            &= w_1 X_1 + w_2 X_2 + \ldots + w_n X_n
 \end{aligned}
 $$
@@ -146,7 +146,7 @@ $$
 
 $$
 \begin{aligned}
-SPD &= \max_{i,j} |TPR_i - TPR_j| \\
+SPD &= \max_{i,j} |TPR_i - TPR_j| \
     &= \max_{i,j} |\mathbb{E}[Y|G=i] - \mathbb{E}[Y|G=j]|
 \end{aligned}
 $$

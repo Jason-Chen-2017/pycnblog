@@ -111,11 +111,11 @@
 
 $$
 \begin{aligned}
-& \min_{C, \mu} \sum_{i=1}^{n} \sum_{j=1}^{k} \mathbb{1}(x_i \in C_j) ||x_i - \mu_j||^2 \\
-& \text{其中，} \\
-& C = \{C_1, C_2, \dots, C_k\} \text{是 } k \text{ 个聚类中心} \\
-& \mu_j \text{是 } C_j \text{ 的中心点} \\
-& x_i \text{ 是第 } i \text{ 个数据点} \\
+& \min_{C, \mu} \sum_{i=1}^{n} \sum_{j=1}^{k} \mathbb{1}(x_i \in C_j) ||x_i - \mu_j||^2 \
+& \text{其中，} \
+& C = \{C_1, C_2, \dots, C_k\} \text{是 } k \text{ 个聚类中心} \
+& \mu_j \text{是 } C_j \text{ 的中心点} \
+& x_i \text{ 是第 } i \text{ 个数据点} \
 & \mathbb{1}(x_i \in C_j) \text{ 是指示函数，当 } x_i \text{ 属于 } C_j \text{ 时为 } 1 \text{，否则为 } 0
 \end{aligned}
 $$

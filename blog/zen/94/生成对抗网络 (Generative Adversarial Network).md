@@ -111,8 +111,8 @@ GAN的数学模型可以表示为：
 
 $$
 \begin{aligned}
-G(z) &= \Phi_G(z) \\
-D(x) &= \Phi_D(x) \\
+G(z) &= \Phi_G(z) \
+D(x) &= \Phi_D(x) \
 \end{aligned}
 $$
 

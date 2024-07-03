@@ -88,14 +88,14 @@ AaaS广泛应用于金融、制造、零售、医疗健康、教育等多个领�
 ### 4.2 公式推导过程
 
 以回归分析为例，假设目标是预测房价（$y$），基于房屋面积（$x$）：
-$$ y = \\beta_0 + \\beta_1 x + \\epsilon $$
-其中，$\\beta_0$是截距，$\\beta_1$是斜率，$\\epsilon$是随机误差项。
+$$ y = \beta_0 + \beta_1 x + \epsilon $$
+其中，$\beta_0$是截距，$\beta_1$是斜率，$\epsilon$是随机误差项。
 
 ### 4.3 案例分析与讲解
 
 考虑一个基于历史销售数据预测未来销售额的例子。通过构建回归模型，我们得到预测方程：
-$$ Sales = \\beta_0 + \\beta_1 * Advertising\\_Budget + \\beta_2 * Price\\_Discount $$
-其中，$\\beta_0$是截距，$\\beta_1$和$\\beta_2$分别是广告预算和价格折扣的影响系数。
+$$ Sales = \beta_0 + \beta_1 * Advertising\_Budget + \beta_2 * Price\_Discount $$
+其中，$\beta_0$是截距，$\beta_1$和$\beta_2$分别是广告预算和价格折扣的影响系数。
 
 ### 4.4 常见问题解答
 

@@ -90,7 +90,7 @@ $$\text{Attention}(\mathbf{Q},\mathbf{K},\mathbf{V})=\text{softmax}(\frac{\mathb
 
 $$
 \mathbf{M}_{ij}=\begin{cases}
-0, & \text{if }l_i=l_j \\
+0, & \text{if }l_i=l_j \
 -\infty, & \text{otherwise}
 \end{cases}
 $$

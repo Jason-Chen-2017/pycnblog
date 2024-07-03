@@ -97,10 +97,10 @@ graph TD
 
 $$
 \begin{bmatrix}
-0 & 0 & 0 & 1 & 1\\  
-1 & 0 & 1 & 0 & 0\\
-0 & 1 & 1 & 0 & 0\\ 
-1 & 1 & 0 & 0 & 1\\
+0 & 0 & 0 & 1 & 1\  
+1 & 0 & 1 & 0 & 0\
+0 & 1 & 1 & 0 & 0\ 
+1 & 1 & 0 & 0 & 1\
 1 & 0 & 1 & 1 & 0
 \end{bmatrix}
 $$
@@ -109,8 +109,8 @@ $$
 
 $$
 \begin{bmatrix}
-1 & 0 & 1\\
-0 & 1 & 0\\
+1 & 0 & 1\
+0 & 1 & 0\
 1 & 0 & 1
 \end{bmatrix}
 $$
@@ -150,8 +150,8 @@ $$
 
 $$
 \begin{bmatrix}
-2 & 1 & 2\\
-3 & 4 & 3\\
+2 & 1 & 2\
+3 & 4 & 3\
 2 & 3 & 3
 \end{bmatrix}
 $$
@@ -238,5 +238,5 @@ $$
 
 $$
 \begin{aligned}
-Y_{n, h_o, w_o} &= \sum_{k_h=1}^{K_H} \sum_{k_w=1}^{K_W} W_{1, 1, k_h, k_w} \cdot X_{n, h_s+k_h, w_s+k_w} \\
+Y_{n, h_o, w_o} &= \sum_{k_h=1}^{K_H} \sum_{k_w=1}^{K_W} W_{1, 1, k_h, k_w} \cdot X_{n, h_s+k_h, w_s+k_w} \
                 &= \sum_{\vec{k} \in \mathcal{R}} W_{\

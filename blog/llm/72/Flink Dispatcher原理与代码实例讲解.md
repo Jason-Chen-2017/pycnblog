@@ -146,9 +146,9 @@ Flink Dispatcher的算法原理适用于以下场景:
 
 $$
 \begin{aligned}
-\max \quad & \sum_{j=1}^{n} x_j \\
-\text{s.t.} \quad & \sum_{j=1}^{n} x_j c_j \leq C \\
-& \sum_{j=1}^{n} x_j m_j \leq M \\
+\max \quad & \sum_{j=1}^{n} x_j \
+\text{s.t.} \quad & \sum_{j=1}^{n} x_j c_j \leq C \
+& \sum_{j=1}^{n} x_j m_j \leq M \
 & x_j \in \{0, 1\}, \quad j = 1, 2, \ldots, n
 \end{aligned}
 $$
@@ -163,8 +163,8 @@ $$
 
 $$
 \begin{aligned}
-\min \quad & \max_{1 \leq i \leq m} \sum_{j=1}^{n} x_{ij} \\
-\text{s.t.} \quad & \sum_{i=1}^{m} x_{ij} = p_j, \quad j = 1, 2, \ldots, n \\
+\min \quad & \max_{1 \leq i \leq m} \sum_{j=1}^{n} x_{ij} \
+\text{s.t.} \quad & \sum_{i=1}^{m} x_{ij} = p_j, \quad j = 1, 2, \ldots, n \
 & x_{ij} \geq 0, \quad i = 1, 2, \ldots, m, \quad j = 1, 2, \ldots, n
 \end{aligned}
 $$
@@ -183,7 +183,7 @@ $$
 
 $$
 dp[i][j][j'] = \max\begin{cases}
-dp[i-1][j][j'], & \text{不选择第 }i\text{ 个作业}\\
+dp[i-1][j][j'], & \text{不选择第 }i\text{ 个作业}\
 dp[i-1][j-c_i][j'-m_i] + 1, & \text{选择第 }i\text{ 个作业}
 \end{cases}
 $$
@@ -192,7 +192,7 @@ $$
 
 $$
 dp[0][j][j'] = \begin{cases}
-0, & j = 0, j' = 0 \\
+0, & j = 0, j' = 0 \
 -\infty, & \text{otherwise}
 \end{cases}
 $$
@@ -207,9 +207,9 @@ $$
 
 $$
 \begin{aligned}
-\min \quad & z \\
-\text{s.t.} \quad & \sum_{i=1}^{m} x_{ij} = p_j, \quad j = 1, 2, \ldots, n \\
-& \sum_{j=1}^{n} x_{ij} \leq z, \quad i = 1, 2, \ldots, m \\
+\min \quad & z \
+\text{s.t.} \quad & \sum_{i=1}^{m} x_{ij} = p_j, \quad j = 1, 2, \ldots, n \
+& \sum_{j=1}^{n} x_{ij} \leq z, \quad i = 1, 2, \ldots, m \
 & x_{ij} \geq 0, \quad i = 1, 2, \ldots, m, \quad j = 1, 2, \ldots, n
 \end{aligned}
 $$

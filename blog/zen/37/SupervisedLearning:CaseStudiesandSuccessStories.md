@@ -101,25 +101,25 @@
 
 1. **线性回归（Linear Regression）**：线性回归模型假设输入特征与输出标签之间呈线性关系，其数学模型为：
 
-   $$y = \\beta_0 + \\beta_1 x_1 + \\beta_2 x_2 + \\dots + \\beta_n x_n + \\epsilon$$
+   $$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n + \epsilon$$
 
-   其中，$y$为输出标签，$x_i$为第$i$个输入特征，$\\beta_i$为模型参数，$\\epsilon$为误差项。
+   其中，$y$为输出标签，$x_i$为第$i$个输入特征，$\beta_i$为模型参数，$\epsilon$为误差项。
 
 2. **逻辑回归（Logistic Regression）**：逻辑回归模型用于二分类问题，其数学模型为：
 
-   $$\\hat{y} = \\sigma(\\beta_0 + \\beta_1 x_1 + \\beta_2 x_2 + \\dots + \\beta_n x_n)$$
+   $$\hat{y} = \sigma(\beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n)$$
 
-   其中，$\\hat{y}$为预测概率，$\\sigma$为Sigmoid函数。
+   其中，$\hat{y}$为预测概率，$\sigma$为Sigmoid函数。
 
 3. **支持向量机（Support Vector Machine, SVM）**：SVM模型通过寻找最优的超平面来分割数据，其数学模型为：
 
-   $$\\max_{\\beta, \\beta_0} \\min_{\\xi_i \\geq 0} \\left( \\frac{1}{2} ||\\beta||^2 + \\sum_{i=1}^n \\xi_i \\right)$$
+   $$\max_{\beta, \beta_0} \min_{\xi_i \geq 0} \left( \frac{1}{2} ||\beta||^2 + \sum_{i=1}^n \xi_i \right)$$
 
    使得：
 
-   $$\\max_{x} \\left( \\beta^T x + \\beta_0 - y_i \\right) \\geq 1 - \\xi_i, \\quad \\forall i$$
+   $$\max_{x} \left( \beta^T x + \beta_0 - y_i \right) \geq 1 - \xi_i, \quad \forall i$$
 
-   其中，$\\beta$为权重向量，$\\beta_0$为偏置项，$\\xi_i$为松弛变量，$y_i$为第$i$个样本的标签。
+   其中，$\beta$为权重向量，$\beta_0$为偏置项，$\xi_i$为松弛变量，$y_i$为第$i$个样本的标签。
 
 4. **深度神经网络（Deep Neural Network, DNN）**：深度神经网络由多个神经元层组成，通过学习大量样本数据来提取特征和进行预测，其数学模型为：
 
@@ -129,17 +129,17 @@
 
 ### 4.2 公式推导过程
 
-以线性回归为例，假设我们有$m$个样本数据$(x_1, y_1), (x_2, y_2), \\dots, (x_m, y_m)$，其中$x_i$为输入特征，$y_i$为输出标签。线性回归模型的损失函数为：
+以线性回归为例，假设我们有$m$个样本数据$(x_1, y_1), (x_2, y_2), \dots, (x_m, y_m)$，其中$x_i$为输入特征，$y_i$为输出标签。线性回归模型的损失函数为：
 
-$$L(\\beta) = \\frac{1}{m} \\sum_{i=1}^m (y_i - \\beta^T x_i)^2$$
+$$L(\beta) = \frac{1}{m} \sum_{i=1}^m (y_i - \beta^T x_i)^2$$
 
-其中，$\\beta$为模型参数。为了最小化损失函数，我们需要求解以下优化问题：
+其中，$\beta$为模型参数。为了最小化损失函数，我们需要求解以下优化问题：
 
-$$\\min_{\\beta} \\frac{1}{m} \\sum_{i=1}^m (y_i - \\beta^T x_i)^2$$
+$$\min_{\beta} \frac{1}{m} \sum_{i=1}^m (y_i - \beta^T x_i)^2$$
 
-利用最小二乘法（Least Squares）可以求解出最优参数$\\beta$：
+利用最小二乘法（Least Squares）可以求解出最优参数$\beta$：
 
-$$\\beta = (X^T X)^{-1} X^T y$$
+$$\beta = (X^T X)^{-1} X^T y$$
 
 其中，$X$为特征矩阵，$y$为标签向量。
 
@@ -159,7 +159,7 @@ $$\\beta = (X^T X)^{-1} X^T y$$
 
 $$y = 0.85x + 12.5$$
 
-根据该预测方程，预测面积为100平方米的房屋价格为$y = 0.85 \\times 100 + 12.5 = 102.5$万元。
+根据该预测方程，预测面积为100平方米的房屋价格为$y = 0.85 \times 100 + 12.5 = 102.5$万元。
 
 ### 4.4 常见问题解答
 
@@ -221,7 +221,7 @@ model.fit(X, y)
 
 # 预测
 X_test = np.array([[100]])
-print(\"预测值：\", model.predict(X_test))
+print("预测值：", model.predict(X_test))
 ```
 
 ### 5.3 代码解读与分析
@@ -296,10 +296,10 @@ print(\"预测值：\", model.predict(X_test))
 
 ### 7.3 相关论文推荐
 
-1. **\"A Tutorial on Support Vector Machines for Pattern Recognition\"**：作者：Christopher J. C. Burges
+1. **"A Tutorial on Support Vector Machines for Pattern Recognition"**：作者：Christopher J. C. Burges
    - 这篇论文详细介绍了支持向量机（SVM）的理论和应用。
 
-2. **\"Deep Learning\"**：作者：Ian Goodfellow, Yoshua Bengio, Aaron Courville
+2. **"Deep Learning"**：作者：Ian Goodfellow, Yoshua Bengio, Aaron Courville
    - 这本书全面介绍了深度学习的理论和实践。
 
 ### 7.4 其他资源推荐

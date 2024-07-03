@@ -174,9 +174,9 @@ $$P(d|c) = \prod_{i=1}^{n}P(w_i|c)$$
 对于给定的文档d,我们可以计算它属于每个类别的概率,并选择概率最大的类别作为预测结果:
 
 $$\begin{align}
-\hat{c} &= \arg\max_c P(c|d) \\
-        &= \arg\max_c \frac{P(d|c)P(c)}{P(d)} \\
-        &= \arg\max_c P(d|c)P(c) \\
+\hat{c} &= \arg\max_c P(c|d) \
+        &= \arg\max_c \frac{P(d|c)P(c)}{P(d)} \
+        &= \arg\max_c P(d|c)P(c) \
         &= \arg\max_c \left( \prod_{i=1}^{n}P(w_i|c) \right) P(c)
 \end{align}$$
 
@@ -215,14 +215,14 @@ doc_vector = {"this": 1, "movie": 1, "is": 1, "amazing": 1, "the": 2, "acting": 
 我们可以计算该文档属于正面评论和负面评论的概率:
 
 $$\begin{align}
-P(pos|d) &\propto P(d|pos)P(pos) \\
-         &= \prod_{w \in d} P(w|pos) \times 0.6 \\
+P(pos|d) &\propto P(d|pos)P(pos) \
+         &= \prod_{w \in d} P(w|pos) \times 0.6 \
          &= (0.03 \times 0.02 \times ... ) \times 0.6
 \end{align}$$
 
 $$\begin{align}
-P(neg|d) &\propto P(d|neg)P(neg) \\
-         &= \prod_{w \in d} P(w|neg) \times 0.4 \\
+P(neg|d) &\propto P(d|neg)P(neg) \
+         &= \prod_{w \in d} P(w|neg) \times 0.4 \
          &= (0.001 \times 0.005 \times ... ) \times 0.4
 \end{align}$$
 

@@ -166,8 +166,8 @@ $$
 
 $$
 \begin{aligned}
-V(s) &= \sum_{a \in A} \pi(a|s) Q(s,a) \\
-&= \sum_{a \in A} \pi(a|s) \left[ \sum_{s' \in S} P(s'|s,a) R(s,a,s') + \gamma \max_{a' \in A} Q(s',a') \right] \\
+V(s) &= \sum_{a \in A} \pi(a|s) Q(s,a) \
+&= \sum_{a \in A} \pi(a|s) \left[ \sum_{s' \in S} P(s'|s,a) R(s,a,s') + \gamma \max_{a' \in A} Q(s',a') \right] \
 &= \sum_{s' \in S} \pi(a|s) P(s'|s,a) R(s,a,s') + \gamma \max_{a \in A} Q(s,a)
 \end{aligned}
 $$
@@ -190,7 +190,7 @@ $$
 
 $$
 \begin{aligned}
-Q(s,a) &= \sum_{s' \in S} P(s'|s,a) R(s,a,s') + \gamma \max_{a' \in A} Q(s',a') \\
+Q(s,a) &= \sum_{s' \in S} P(s'|s,a) R(s,a,s') + \gamma \max_{a' \in A} Q(s',a') \
 &= \sum_{s' \in S} P(s'|s,a) R(s,a,s') + \gamma \sum_{a' \in A} P(s'|s,a') Q(s',a')
 \end{aligned}
 $$

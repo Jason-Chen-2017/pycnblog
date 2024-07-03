@@ -92,29 +92,29 @@ VideoBERT的数学模型构建主要包括：
 
 #### 多模态特征表示：
 
-设$V \\in \\mathbb{R}^{T_v \\times d_v}$为视觉特征矩阵，$A \\in \\mathbb{R}^{T_a \\times d_a}$为听觉特征矩阵，其中$T_v$和$T_a$分别为视频帧数和音频帧数，$d_v$和$d_a$分别为特征维度。
+设$V \in \mathbb{R}^{T_v \times d_v}$为视觉特征矩阵，$A \in \mathbb{R}^{T_a \times d_a}$为听觉特征矩阵，其中$T_v$和$T_a$分别为视频帧数和音频帧数，$d_v$和$d_a$分别为特征维度。
 
 #### 跨模态注意力：
 
-跨模态注意力矩阵$W \\in \\mathbb{R}^{T_v \\times T_a}$表示为：
+跨模态注意力矩阵$W \in \mathbb{R}^{T_v \times T_a}$表示为：
 
-$$ W = \\text{softmax}(QK^T) $$
+$$ W = \text{softmax}(QK^T) $$
 
-其中，$Q \\in \\mathbb{R}^{T_v \\times d}$和$K \\in \\mathbb{R}^{T_a \\times d}$分别是经过线性变换后的视觉和听觉特征向量。
+其中，$Q \in \mathbb{R}^{T_v \times d}$和$K \in \mathbb{R}^{T_a \times d}$分别是经过线性变换后的视觉和听觉特征向量。
 
 ### 4.2 公式推导过程
 
 #### 特征融合：
 
-融合后的多模态特征表示$M \\in \\mathbb{R}^{T \\times d'}$，其中$T = T_v + T_a$或$T = \\min(T_v, T_a)$，取决于实际应用，可以通过加权平均或拼接实现：
+融合后的多模态特征表示$M \in \mathbb{R}^{T \times d'}$，其中$T = T_v + T_a$或$T = \min(T_v, T_a)$，取决于实际应用，可以通过加权平均或拼接实现：
 
-$$ M = \\alpha V + \\beta A $$
+$$ M = \alpha V + \beta A $$
 
 或者
 
 $$ M = [V, A]^T $$
 
-其中，$\\alpha$和$\\beta$是加权系数。
+其中，$\alpha$和$\beta$是加权系数。
 
 ### 4.3 案例分析与讲解
 
@@ -170,7 +170,7 @@ class VideoBERT(nn.Module):
         if self.fusion_method == 'concat':
             multi_modal_output = torch.cat((visual_output, audio_output), dim=-1)
         else:
-            raise NotImplementedError(\"Only 'concat' fusion method is implemented.\")
+            raise NotImplementedError("Only 'concat' fusion method is implemented.")
 
         return multi_modal_output
 ```

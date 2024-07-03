@@ -60,18 +60,18 @@
 ### 4.1 边界框回归
 #### 4.1.1 边界框参数化
 $$ 
-t_x = (x - c_x) / w \\
-t_y = (y - c_y) / h \\
-t_w = \log(w / p_w) \\
+t_x = (x - c_x) / w \
+t_y = (y - c_y) / h \
+t_w = \log(w / p_w) \
 t_h = \log(h / p_h)
 $$
 其中，$(t_x, t_y, t_w, t_h)$是预测的边界框参数，$(c_x, c_y, p_w, p_h)$是先验框（Anchor）的参数，$(x, y, w, h)$是真实边界框的参数。
 
 #### 4.1.2 边界框解码
 $$
-b_x = \sigma(t_x) + c_x \\
-b_y = \sigma(t_y) + c_y \\
-b_w = p_w e^{t_w} \\
+b_x = \sigma(t_x) + c_x \
+b_y = \sigma(t_y) + c_y \
+b_w = p_w e^{t_w} \
 b_h = p_h e^{t_h}
 $$
 其中，$\sigma$是Sigmoid函数，$(b_x, b_y, b_w, b_h)$是解码后的预测边界框参数。

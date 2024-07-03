@@ -89,8 +89,8 @@ $$ \alpha_{t+1} = \alpha_t \times \text{adjustment\_factor}(s_t, a_t, r_t) $$
 
 $$ adjustment\_factor(s_t, a_t, r_t) = 
 \begin{cases} 
-1 + \beta \times r_t & \text{if } r_t > \text{threshold} \\
-1 - \delta \times |r_t| & \text{if } r_t \leq \text{threshold} \\
+1 + \beta \times r_t & \text{if } r_t > \text{threshold} \
+1 - \delta \times |r_t| & \text{if } r_t \leq \text{threshold} \
 \end{cases} $$
 
 这里，$\beta$是奖励增加学习率的因素，$\delta$是奖励减少学习率的因素，$\text{threshold}$是奖励阈值。这个策略鼓励在获得正向奖励时增加学习率，而在遇到负向奖励时减少学习率。

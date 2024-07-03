@@ -72,12 +72,12 @@ AI系统安全涉及多个层面，包括数据安全、模型安全、系统安
 
 ### 4.2 公式推导过程
 
-假设我们有一个二分类问题，模型为$f(x;\\theta)$，其中$x$是输入向量，$\\theta$是模型参数。为了构建对抗性样本，我们定义了一个损失函数$L$，该函数衡量模型对扰动后的输入$x'$的预测结果与真实标签的不一致性。
+假设我们有一个二分类问题，模型为$f(x;\theta)$，其中$x$是输入向量，$\theta$是模型参数。为了构建对抗性样本，我们定义了一个损失函数$L$，该函数衡量模型对扰动后的输入$x'$的预测结果与真实标签的不一致性。
 
-$$L(\\theta, x', y') = \\mathbb{P}_{\\theta}(f(x'; \\theta) \
+$$L(\theta, x', y') = \mathbb{P}_{\theta}(f(x'; \theta) \
 eq y')$$
 
-其中，$\\mathbb{P}_{\\theta}$表示在参数$\\theta$下的概率分布。
+其中，$\mathbb{P}_{\theta}$表示在参数$\theta$下的概率分布。
 
 ### 4.3 案例分析与讲解
 
@@ -117,14 +117,14 @@ def decrypt_data(key, encrypted_data):
     plaintext = unpad(cipher.decrypt(encrypted_data[AES.block_size:]), AES.block_size)
     return plaintext.decode()
 
-key = b'\\x0b\\xed\\x0e\\x0b\\x0b\\xea\\xfd\\xfb\\x0e\\xfc\\xea\\xed\\xeb\\xea\\xec'
-data = \"Hello, World!\"
+key = b'\x0b\xed\x0e\x0b\x0b\xea\xfd\xfb\x0e\xfc\xea\xed\xeb\xea\xec'
+data = "Hello, World!"
 
 encrypted_data = encrypt_data(key, data)
 decrypted_data = decrypt_data(key, b64decode(encrypted_data))
 
-print(\"Encrypted:\", encrypted_data)
-print(\"Decrypted:\", decrypted_data)
+print("Encrypted:", encrypted_data)
+print("Decrypted:", decrypted_data)
 ```
 
 ### 5.3 代码解读与分析

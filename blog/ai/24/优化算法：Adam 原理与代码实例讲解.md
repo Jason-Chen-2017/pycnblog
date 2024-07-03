@@ -52,29 +52,29 @@ Adam算法的核心在于其对梯度进行矩估计（mean squared gradient）�
 
 1. **初始化**：对于每个参数θi，初始化动量m和矩估计v为零向量。
 
-   $$ m_i \\leftarrow 0 $$
-   $$ v_i \\leftarrow 0 $$
+   $$ m_i \leftarrow 0 $$
+   $$ v_i \leftarrow 0 $$
 
 2. **计算梯度**：在每个迭代步骤中，计算损失函数关于参数θ的梯度g。
 
-   $$ g_i \\leftarrow \\frac{\\partial}{\\partial \\theta_i} J(\\theta) $$
+   $$ g_i \leftarrow \frac{\partial}{\partial \theta_i} J(\theta) $$
 
 3. **动量更新**：更新动量m和矩估计v。
 
-   $$ m_i \\leftarrow \\beta_1 \\cdot m_i + (1 - \\beta_1) \\cdot g_i $$
-   $$ v_i \\leftarrow \\beta_2 \\cdot v_i + (1 - \\beta_2) \\cdot g_i^2 $$
+   $$ m_i \leftarrow \beta_1 \cdot m_i + (1 - \beta_1) \cdot g_i $$
+   $$ v_i \leftarrow \beta_2 \cdot v_i + (1 - \beta_2) \cdot g_i^2 $$
 
 4. **计算修正的矩估计**：对矩估计进行指数衰减平滑。
 
-   $$ \\hat{v}_i \\leftarrow \\frac{v_i}{1 - \\beta_2^t} $$
+   $$ \hat{v}_i \leftarrow \frac{v_i}{1 - \beta_2^t} $$
 
 5. **计算更新步长**：根据修正的矩估计和学习率α进行更新。
 
-   $$ \\delta \\theta_i \\leftarrow - \\alpha \\cdot \\frac{\\hat{v}_i}{\\sqrt{\\hat{v}_i} + \\epsilon} $$
+   $$ \delta \theta_i \leftarrow - \alpha \cdot \frac{\hat{v}_i}{\sqrt{\hat{v}_i} + \epsilon} $$
 
 6. **更新参数**：更新参数θ。
 
-   $$ \\theta_i \\leftarrow \\theta_i + \\delta \\theta_i $$
+   $$ \theta_i \leftarrow \theta_i + \delta \theta_i $$
 
 ### 3.3 算法优缺点
 
@@ -99,13 +99,13 @@ Adam算法广泛应用于深度学习和机器学习领域，特别是在神经�
 
 Adam算法的核心数学模型可以简化为以下步骤：
 
-$$ \\begin{align}
-m_i &= \\beta_1 \\cdot m_i + (1 - \\beta_1) \\cdot g_i \\\\
-v_i &= \\beta_2 \\cdot v_i + (1 - \\beta_2) \\cdot g_i^2 \\\\
-\\hat{v}_i &= \\frac{v_i}{1 - \\beta_2^t} \\\\
-\\delta \\theta_i &= - \\alpha \\cdot \\frac{\\hat{v}_i}{\\sqrt{\\hat{v}_i} + \\epsilon} \\\\
-\\theta_i &= \\theta_i + \\delta \\theta_i
-\\end{align} $$
+$$ \begin{align}
+m_i &= \beta_1 \cdot m_i + (1 - \beta_1) \cdot g_i \\
+v_i &= \beta_2 \cdot v_i + (1 - \beta_2) \cdot g_i^2 \\
+\hat{v}_i &= \frac{v_i}{1 - \beta_2^t} \\
+\delta \theta_i &= - \alpha \cdot \frac{\hat{v}_i}{\sqrt{\hat{v}_i} + \epsilon} \\
+\theta_i &= \theta_i + \delta \theta_i
+\end{align} $$
 
 ### 4.2 公式推导过程
 

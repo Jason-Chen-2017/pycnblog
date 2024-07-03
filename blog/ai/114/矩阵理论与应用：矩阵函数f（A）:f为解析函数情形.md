@@ -143,8 +143,8 @@ $$
 
 $$
 J = \begin{bmatrix}
-J_1 &  & \\
- & \ddots & \\
+J_1 &  & \
+ & \ddots & \
  &  & J_p
 \end{bmatrix},
 $$
@@ -153,9 +153,9 @@ $$
 
 $$
 J_i = \begin{bmatrix}
-\lambda_i & 1 &  & \\
- & \lambda_i & \ddots & \\
- &  & \ddots & 1 \\
+\lambda_i & 1 &  & \
+ & \lambda_i & \ddots & \
+ &  & \ddots & 1 \
  &  &  & \lambda_i
 \end{bmatrix}
 $$
@@ -166,10 +166,10 @@ $$
 
 $$
 e^{J_i} = \begin{bmatrix}
-e^{\lambda_i} & e^{\lambda_i} & \frac{e^{\lambda_i}}{2!} & \dots & \frac{e^{\lambda_i}}{(n_i-1)!} \\
- & e^{\lambda_i} & e^{\lambda_i} & \ddots & \vdots \\
- &  & \ddots & \ddots & \frac{e^{\lambda_i}}{2!} \\
- &  &  & e^{\lambda_i} & e^{\lambda_i} \\
+e^{\lambda_i} & e^{\lambda_i} & \frac{e^{\lambda_i}}{2!} & \dots & \frac{e^{\lambda_i}}{(n_i-1)!} \
+ & e^{\lambda_i} & e^{\lambda_i} & \ddots & \vdots \
+ &  & \ddots & \ddots & \frac{e^{\lambda_i}}{2!} \
+ &  &  & e^{\lambda_i} & e^{\lambda_i} \
  &  &  &  & e^{\lambda_i}
 \end{bmatrix},
 $$
@@ -180,11 +180,11 @@ $$
 
 $$
 \begin{aligned}
-e^A &= e^{PJP^{-1}} \\
-&= P e^J P^{-1} \\
+e^A &= e^{PJP^{-1}} \
+&= P e^J P^{-1} \
 &= P \begin{bmatrix}
-e^{J_1} &  & \\
- & \ddots & \\
+e^{J_1} &  & \
+ & \ddots & \
  &  & e^{J_p}
 \end{bmatrix} P^{-1}.
 \end{aligned}
@@ -192,30 +192,30 @@ $$
 
 #### 4.3 案例分析与讲解
 
-**例 1：** 计算矩阵 $A = \begin{bmatrix} 2 & 1 \\ 0 & 2 \end{bmatrix}$ 的指数函数 $e^A$。
+**例 1：** 计算矩阵 $A = \begin{bmatrix} 2 & 1 \ 0 & 2 \end{bmatrix}$ 的指数函数 $e^A$。
 
 **解：**
 
 **步骤 1：** 矩阵 $A$ 的 Jordan 标准型为：
 
 $$
-J = \begin{bmatrix} 2 & 1 \\ 0 & 2 \end{bmatrix}.
+J = \begin{bmatrix} 2 & 1 \ 0 & 2 \end{bmatrix}.
 $$
 
 **步骤 2：** 计算 Jordan 块 $J$ 的指数函数：
 
 $$
-e^J = \begin{bmatrix} e^2 & e^2 \\ 0 & e^2 \end{bmatrix}.
+e^J = \begin{bmatrix} e^2 & e^2 \ 0 & e^2 \end{bmatrix}.
 $$
 
 **步骤 3：** 计算矩阵指数函数 $e^A$：
 
 $$
 \begin{aligned}
-e^A &= e^{PJP^{-1}} \\
-&= P e^J P^{-1} \\
-&= \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} e^2 & e^2 \\ 0 & e^2 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \\
-&= \begin{bmatrix} e^2 & e^2 \\ 0 & e^2 \end{bmatrix}.
+e^A &= e^{PJP^{-1}} \
+&= P e^J P^{-1} \
+&= \begin{bmatrix} 1 & 0 \ 0 & 1 \end{bmatrix} \begin{bmatrix} e^2 & e^2 \ 0 & e^2 \end{bmatrix} \begin{bmatrix} 1 & 0 \ 0 & 1 \end{bmatrix} \
+&= \begin{bmatrix} e^2 & e^2 \ 0 & e^2 \end{bmatrix}.
 \end{aligned}
 $$
 

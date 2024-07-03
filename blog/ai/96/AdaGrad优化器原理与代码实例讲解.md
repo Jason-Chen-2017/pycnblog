@@ -153,7 +153,7 @@ $$
 
 $$
 \
-abla f(\theta) = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+abla f(\theta) = \begin{bmatrix} 1 \ 2 \end{bmatrix}
 $$
 
 2. 计算梯度平方和：
@@ -172,7 +172,7 @@ $$
 4. 更新参数：
 
 $$
-\theta_{\text{new}} = \begin{bmatrix} 1 \\ 1 \end{bmatrix} - 0.0588 \cdot \begin{bmatrix} 1 \\ 2 \end{bmatrix} = \begin{bmatrix} 0.9412 \\ 0.9092 \end{bmatrix}
+\theta_{\text{new}} = \begin{bmatrix} 1 \ 1 \end{bmatrix} - 0.0588 \cdot \begin{bmatrix} 1 \ 2 \end{bmatrix} = \begin{bmatrix} 0.9412 \ 0.9092 \end{bmatrix}
 $$
 
 5. 重复以上步骤，直至收敛。

@@ -115,7 +115,7 @@ $$
 $$
 \delta_j^l = 
 \begin{cases}
-\frac{\partial L}{\partial z_j^L}, & l = L \\
+\frac{\partial L}{\partial z_j^L}, & l = L \
 (\sum_{k} w_{kj}^{l+1} \delta_k^{l+1}) \sigma'(z_j^l), & l < L
 \end{cases}
 $$

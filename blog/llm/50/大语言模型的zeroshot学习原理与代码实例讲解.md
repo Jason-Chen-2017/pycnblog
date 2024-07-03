@@ -93,16 +93,16 @@ graph TD
 Transformer是大语言模型的核心架构之一,其自注意力(Self-Attention)机制能够有效捕捉序列数据中的长程依赖关系。Transformer的编码器(Encoder)可以表示为:
 
 $$\begin{aligned}
-&\mathbf{z}_0 = \mathbf{x} \\
-&\mathbf{z}_l = \text{Transformer\_Block}(\mathbf{z}_{l-1}), \quad l = 1, \ldots, L \\
+&\mathbf{z}_0 = \mathbf{x} \
+&\mathbf{z}_l = \text{Transformer\_Block}(\mathbf{z}_{l-1}), \quad l = 1, \ldots, L \
 &\mathbf{c} = \mathbf{z}_L
 \end{aligned}$$
 
 其中$\mathbf{x}$为输入序列,$\mathbf{c}$为最终的序列表示。每个Transformer Block由多头自注意力(Multi-Head Attention)和前馈神经网络(Feed-Forward Network)组成,可以表示为:
 
 $$\begin{aligned}
-&\mathbf{z}_{l}' = \text{MultiHead}(\mathbf{z}_{l-1}, \mathbf{z}_{l-1}, \mathbf{z}_{l-1}) \\
-&\mathbf{z}_{l}'' = \text{FeedForward}(\mathbf{z}_{l}') \\
+&\mathbf{z}_{l}' = \text{MultiHead}(\mathbf{z}_{l-1}, \mathbf{z}_{l-1}, \mathbf{z}_{l-1}) \
+&\mathbf{z}_{l}'' = \text{FeedForward}(\mathbf{z}_{l}') \
 &\mathbf{z}_{l} = \text{LayerNorm}(\mathbf{z}_{l-1} + \mathbf{z}_{l}'') + \mathbf{z}_{l}''
 \end{aligned}$$
 

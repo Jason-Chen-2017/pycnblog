@@ -73,15 +73,15 @@ Kerr-Newman黑洞是由旋转、电荷和质量三者共同作用的结果。在
 Kerr-Newman黑洞的数学模型可以通过爱因斯坦场方程来构建，方程形式为：
 
 $$
-R_{\\mu\
-u} - \\frac{1}{2}R g_{\\mu\
-u} = \\frac{8\\pi G}{c^4} T_{\\mu\
+R_{\mu\
+u} - \frac{1}{2}R g_{\mu\
+u} = \frac{8\pi G}{c^4} T_{\mu\
 u}
 $$
 
-其中，$R_{\\mu\
-u}$是 Ricci 张量，$R$是标量曲率，$g_{\\mu\
-u}$是度量张量，$T_{\\mu\
+其中，$R_{\mu\
+u}$是 Ricci 张量，$R$是标量曲率，$g_{\mu\
+u}$是度量张量，$T_{\mu\
 u}$是能量-动量张量，$G$是引力常数，$c$是光速。
 
 ### 4.2 公式推导过程
@@ -93,10 +93,10 @@ Kerr-Newman黑洞的解涉及到复数函数和特殊函数，例如椭圆积分
 考虑一个简单的Kerr-Newman黑洞解，其时空度量可以表示为：
 
 $$
-ds^2 = -\\left(1 - \\frac{2Mr}{\\rho^2} + \\frac{Q^2}{\\rho^4} + \\frac{J^2}{\\rho^2}\\sin^2\\theta\\right)dt^2 + \\frac{\\rho^2}{\\Delta}dr^2 + \\rho^2d\\theta^2 + \\rho^2\\sin^2\\theta d\\phi^2
+ds^2 = -\left(1 - \frac{2Mr}{\rho^2} + \frac{Q^2}{\rho^4} + \frac{J^2}{\rho^2}\sin^2\theta\right)dt^2 + \frac{\rho^2}{\Delta}dr^2 + \rho^2d\theta^2 + \rho^2\sin^2\theta d\phi^2
 $$
 
-其中，$\\Delta = r^2 - 2Mr + Q^2$，$\\rho^2 = r^2 + Q^2$。
+其中，$\Delta = r^2 - 2Mr + Q^2$，$\rho^2 = r^2 + Q^2$。
 
 ### 4.4 常见问题解答
 

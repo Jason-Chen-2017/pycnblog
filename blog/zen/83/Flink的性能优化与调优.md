@@ -182,7 +182,7 @@ public class WordCount {
             .map(new RichMapFunction<String, WordWithCount>() {
                 @Override
                 public void map(String value, Collector<WordWithCount> out) throws Exception {
-                    String[] tokens = value.toLowerCase().split("\\W+");
+                    String[] tokens = value.toLowerCase().split("\W+");
                     for (String token : tokens) {
                         if (token.length() > 0) {
                             out.collect(new WordWithCount(token, 1L));
@@ -226,7 +226,7 @@ class WordWithCount implements Pair<String, Integer> {
 class Tokenizer implements FlatMapFunction<String, String> {
     @Override
     public void flatMap(String value, Collector<String> out) throws Exception {
-        String[] tokens = value.toLowerCase().split("\\W+");
+        String[] tokens = value.toLowerCase().split("\W+");
         for (String token : tokens) {
             if (token.length() > 0) {
                 out.collect(token);

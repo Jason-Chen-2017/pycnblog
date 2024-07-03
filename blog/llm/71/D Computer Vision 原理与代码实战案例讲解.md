@@ -119,8 +119,8 @@
 
 $$
 P = \begin{bmatrix}
-f_x & 0 & c_x \\
-0 & f_y & c_y \\
+f_x & 0 & c_x \
+0 & f_y & c_y \
 0 & 0 & 1 
 \end{bmatrix}
 $$
@@ -131,31 +131,31 @@ $$
 
 $$
 \begin{bmatrix}
-x \\
-y \\
+x \
+y \
 z 
 \end{bmatrix}
 =
 \begin{bmatrix}
-x' \\
-y' \\
+x' \
+y' \
 z' 
 \end{bmatrix}
 =
 \begin{bmatrix}
-x_u' \\
-y_u' \\
+x_u' \
+y_u' \
 z_u' 
 \end{bmatrix}
 =
 \begin{bmatrix}
-u' \\
-v' \\
+u' \
+v' \
 1 
 \end{bmatrix}
 \begin{bmatrix}
-f_x & 0 & c_x \\
-0 & f_y & c_y \\
+f_x & 0 & c_x \
+0 & f_y & c_y \
 0 & 0 & 1 
 \end{bmatrix}
 $$

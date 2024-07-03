@@ -117,21 +117,21 @@ eq j\}$，表示有向边。
 
 $$
 P(X) = \begin{cases}
-0.6 & \text{if } X = \text{True} \\
+0.6 & \text{if } X = \text{True} \
 0.4 & \text{if } X = \text{False}
 \end{cases}
 $$
 
 $$
 P(Y | X) = \begin{cases}
-0.8 & \text{if } X = \text{True} \\
+0.8 & \text{if } X = \text{True} \
 0.2 & \text{if } X = \text{False}
 \end{cases}
 $$
 
 $$
 P(Z | X) = \begin{cases}
-0.9 & \text{if } X = \text{True} \\
+0.9 & \text{if } X = \text{True} \
 0.1 & \text{if } X = \text{False}
 \end{cases}
 $$

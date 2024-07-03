@@ -168,8 +168,8 @@ graph
 
 $$
 R = \begin{bmatrix}
-x_c & y_c & w & h & \text{category} \\
-\vdots & \vdots & \vdots & \vdots & \vdots \\
+x_c & y_c & w & h & \text{category} \
+\vdots & \vdots & \vdots & \vdots & \vdots \
 x_{cN} & y_{cN} & w_N & h_N & \text{category}_N
 \end{bmatrix}
 $$

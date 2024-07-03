@@ -121,14 +121,14 @@ $$
 
 以下是一个前馈网络层的案例分析：
 
-假设我们有一个输入序列 $x = [1, 2, 3, 4, 5]$，权重矩阵 $W = \begin{bmatrix} 0.5 & 0.1 \\ 0.1 & 0.5 \end{bmatrix}$，偏置向量 $b = [0.2, 0.3]$，激活函数为ReLU。
+假设我们有一个输入序列 $x = [1, 2, 3, 4, 5]$，权重矩阵 $W = \begin{bmatrix} 0.5 & 0.1 \ 0.1 & 0.5 \end{bmatrix}$，偏置向量 $b = [0.2, 0.3]$，激活函数为ReLU。
 
-1. **线性变换**：$h = Wx + b = \begin{bmatrix} 0.5 & 0.1 \\ 0.1 & 0.5 \end{bmatrix} \begin{bmatrix} 1 \\ 2 \\ 3 \\ 4 \\ 5 \end{bmatrix} + \begin{bmatrix} 0.2 \\ 0.3 \end{bmatrix} = \begin{bmatrix} 2.6 \\ 3.4 \end{bmatrix}$
-2. **激活函数**：$h' = f(h) = \begin{bmatrix} 2.6 \\ 3.4 \end{bmatrix} = \begin{bmatrix} 2.6 \\ 3.4 \end{bmatrix}$
-3. **残差连接**：$y = h' + x = \begin{bmatrix} 2.6 \\ 3.4 \end{bmatrix} + \begin{bmatrix} 1 \\ 2 \\ 3 \\ 4 \\ 5 \end{bmatrix} = \begin{bmatrix} 3.6 \\ 5.4 \\ 6.4 \\ 8.4 \\ 10.4 \end{bmatrix}$
+1. **线性变换**：$h = Wx + b = \begin{bmatrix} 0.5 & 0.1 \ 0.1 & 0.5 \end{bmatrix} \begin{bmatrix} 1 \ 2 \ 3 \ 4 \ 5 \end{bmatrix} + \begin{bmatrix} 0.2 \ 0.3 \end{bmatrix} = \begin{bmatrix} 2.6 \ 3.4 \end{bmatrix}$
+2. **激活函数**：$h' = f(h) = \begin{bmatrix} 2.6 \ 3.4 \end{bmatrix} = \begin{bmatrix} 2.6 \ 3.4 \end{bmatrix}$
+3. **残差连接**：$y = h' + x = \begin{bmatrix} 2.6 \ 3.4 \end{bmatrix} + \begin{bmatrix} 1 \ 2 \ 3 \ 4 \ 5 \end{bmatrix} = \begin{bmatrix} 3.6 \ 5.4 \ 6.4 \ 8.4 \ 10.4 \end{bmatrix}$
 4. **层归一化**：$\mu = \frac{1}{N} \sum_{i=1}^{N} y_i = \frac{1}{5} \sum_{i=1}^{5} y_i = \frac{33}{5} = 6.6$
 $\sigma = \sqrt{\frac{1}{N-1} \sum_{i=1}^{N} (y_i - \mu)^2} = \sqrt{\frac{1}{4} \sum_{i=1}^{5} (y_i - 6.6)^2} = \sqrt{\frac{1}{4} (1.4^2 + 0.8^2 + 0^2 + (-0.2)^2 + (-0.2)^2)} = \sqrt{0.5} = 0.7071$
-$z = \frac{y - \mu}{\sigma} = \begin{bmatrix} 3.6 - 6.6 \\ 5.4 - 6.6 \\ 6.4 - 6.6 \\ 8.4 - 6.6 \\ 10.4 - 6.6 \end{bmatrix} = \begin{bmatrix} -3.0 \\ -1.2 \\ -0.2 \\ 1.8 \\ 3.8 \end{bmatrix}$
+$z = \frac{y - \mu}{\sigma} = \begin{bmatrix} 3.6 - 6.6 \ 5.4 - 6.6 \ 6.4 - 6.6 \ 8.4 - 6.6 \ 10.4 - 6.6 \end{bmatrix} = \begin{bmatrix} -3.0 \ -1.2 \ -0.2 \ 1.8 \ 3.8 \end{bmatrix}$
 
 ### 4.4 常见问题解答
 

@@ -113,8 +113,8 @@ In-Context 学习的公式推导过程如下：
 
 $$
 \begin{aligned}
-P(y|x, D) &= \frac{P(x, y, D)}{P(x, D)} \\
-&= \frac{P(y|x, D)P(x, D)}{P(x, D)} \\
+P(y|x, D) &= \frac{P(x, y, D)}{P(x, D)} \
+&= \frac{P(y|x, D)P(x, D)}{P(x, D)} \
 &= P(y|x, D)
 \end{aligned}
 $$

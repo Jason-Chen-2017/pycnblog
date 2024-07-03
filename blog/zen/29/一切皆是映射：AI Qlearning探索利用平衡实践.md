@@ -101,7 +101,7 @@ Q-learning及其变种广泛应用于各种领域，包括但不限于：
 
 $$
 \begin{align*}
-Q(s, a) &= E[R_t | S_t = s, A_t = a] \\
+Q(s, a) &= E[R_t | S_t = s, A_t = a] \
 &= \sum_{t=0}^\infty \gamma^t R_t P(S_t=s, A_t=a)
 \end{align*}
 $$

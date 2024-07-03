@@ -84,7 +84,7 @@
 
 - **自注意力机制**：通过权重矩阵计算输入序列各个元素之间的关系，公式为：
   
-  $$\\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V$$
+  $$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
 
 - **多头自注意力**：将注意力机制扩展为多个独立的注意力子层，增加模型的表达能力。
 
@@ -123,7 +123,7 @@ training_args = TrainingArguments(output_dir='./results',
                                  per_device_eval_batch_size=4,
                                  logging_steps=10,
                                  save_steps=100,
-                                 evaluation_strategy=\"epoch\",
+                                 evaluation_strategy="epoch",
                                  learning_rate=3e-5,
                                  weight_decay=0.01,
                                  seed=42)
@@ -132,7 +132,7 @@ training_args = TrainingArguments(output_dir='./results',
 trainer = Trainer(model=model,
                   args=training_args,
                   train_dataset=dataset,
-                  compute_metrics=lambda x: {\"bleu\": calculate_bleu(x.predictions, x.label_ids)})
+                  compute_metrics=lambda x: {"bleu": calculate_bleu(x.predictions, x.label_ids)})
 
 trainer.train()
 ```
@@ -169,7 +169,7 @@ def preprocess_text(text):
     return input_ids, attention_mask
 
 # 预处理文本
-text = \"Hello, world!\"
+text = "Hello, world!"
 input_ids, attention_mask = preprocess_text(text)
 
 # 解码文本

@@ -124,7 +124,7 @@ $$
 
 $$
 r_i(x_i) = \begin{cases} 
-y_i & \text{with probability } p \\
+y_i & \text{with probability } p \
 x_i & \text{with probability } 1-p 
 \end{cases}
 $$

@@ -74,7 +74,7 @@ GAN的数学模型可以表示为以下公式：
 
 $$
 \begin{aligned}
-&\text{Generator}: G(z) \sim P_G(z) \\
+&\text{Generator}: G(z) \sim P_G(z) \
 &\text{Discriminator}: D(x) \sim P_D(x)
 \end{aligned}
 $$
@@ -86,7 +86,7 @@ $$
 GAN的损失函数可以表示为：
 
 $$
-L_G = -\mathbb{E}_{z \sim p_z(z)}[\log D(G(z))] \\
+L_G = -\mathbb{E}_{z \sim p_z(z)}[\log D(G(z))] \
 L_D = -\mathbb{E}_{x \sim p_x(x)}[\log D(x)] - \mathbb{E}_{z \sim p_z(z)}[\log (1 - D(G(z))]
 $$
 

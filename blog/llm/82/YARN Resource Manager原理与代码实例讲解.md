@@ -152,9 +152,9 @@ YARN的资源调度和容器启动算法广泛应用于以下领域:
 
 $$
 \begin{aligned}
-\max \quad & \sum_{i=1}^n \sum_{j=1}^m x_{ij} \\
-\text{s.t.} \quad & \sum_{j=1}^m r_j x_{ij} \leq R_i, \quad \forall i \in \{1, \ldots, n\} \\
-& \sum_{i=1}^n x_{ij} = 1, \quad \forall j \in \{1, \ldots, m\} \\
+\max \quad & \sum_{i=1}^n \sum_{j=1}^m x_{ij} \
+\text{s.t.} \quad & \sum_{j=1}^m r_j x_{ij} \leq R_i, \quad \forall i \in \{1, \ldots, n\} \
+& \sum_{i=1}^n x_{ij} = 1, \quad \forall j \in \{1, \ldots, m\} \
 & x_{ij} \in \{0, 1\}, \quad \forall i \in \{1, \ldots, n\}, j \in \{1, \ldots, m\}
 \end{aligned}
 $$

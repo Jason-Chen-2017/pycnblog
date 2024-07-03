@@ -102,7 +102,7 @@ graph TD
 
 $$
 \begin{aligned}
-w &\leftarrow w - \alpha \frac{\partial \text{MSE}}{\partial w} \\
+w &\leftarrow w - \alpha \frac{\partial \text{MSE}}{\partial w} \
 b &\leftarrow b - \alpha \frac{\partial \text{MSE}}{\partial b}
 \end{aligned}
 $$
@@ -173,7 +173,7 @@ $$\boldsymbol{w}^*, b^* = \arg\min_{\boldsymbol{w}, b} \text{MSE}(\boldsymbol{w}
 
 $$
 \begin{aligned}
-\frac{\partial \text{MSE}}{\partial w_j} &= \frac{2}{m}\sum_{i=1}^{m}(y^{(i)} - \hat{y}^{(i)})(-x_j^{(i)}) \\
+\frac{\partial \text{MSE}}{\partial w_j} &= \frac{2}{m}\sum_{i=1}^{m}(y^{(i)} - \hat{y}^{(i)})(-x_j^{(i)}) \
 \frac{\partial \text{MSE}}{\partial b} &= \frac{2}{m}\sum_{i=1}^{m}(y^{(i)} - \hat{y}^{(i)})(-1)
 \end{aligned}
 $$
@@ -182,7 +182,7 @@ $$
 
 $$
 \begin{aligned}
-w_j &\leftarrow w_j - \alpha \frac{\partial \text{MSE}}{\partial w_j} \\
+w_j &\leftarrow w_j - \alpha \frac{\partial \text{MSE}}{\partial w_j} \
 b &\leftarrow b - \alpha \frac{\partial \text{MSE}}{\partial b}
 \end{aligned}
 $$

@@ -70,16 +70,16 @@
 假设我们有文本模态（Text）和视觉模态（Visual）两种输入，多模态大模型可通过以下步骤构建：
 
 #### 步骤一：文本模态处理
-$$ \\text{Text}_\\text{Embedding} = \\text{Word2Vec}(text) $$
+$$ \text{Text}_\text{Embedding} = \text{Word2Vec}(text) $$
 
 #### 步骤二：视觉模态处理
-$$ \\text{Visual}_\\text{Feature} = \\text{CNN}(image) $$
+$$ \text{Visual}_\text{Feature} = \text{CNN}(image) $$
 
 #### 步骤三：模态融合
-$$ \\text{MultiModal}_\\text{Feature} = \\text{WeightedSum}(\\text{Text}_\\text{Embedding}, \\text{Visual}_\\text{Feature}) $$
+$$ \text{MultiModal}_\text{Feature} = \text{WeightedSum}(\text{Text}_\text{Embedding}, \text{Visual}_\text{Feature}) $$
 
 #### 步骤四：模型训练
-$$ \\text{Loss} = \\text{CrossEntropy}(\\text{MultiModal}_\\text{Feature}, \\text{Labels}) $$
+$$ \text{Loss} = \text{CrossEntropy}(\text{MultiModal}_\text{Feature}, \text{Labels}) $$
 
 ### 4.2 公式推导过程
 
@@ -210,8 +210,8 @@ def predict(model, test_data):
 
 ### 7.3 相关论文推荐
 
-- **[1]** Vinyals, O., et al. \"Show and tell: A neural image caption generator.\" arXiv preprint arXiv:1411.4555 (2014).
-- **[2]** Wang, J., et al. \"Learning to see and write code.\" arXiv preprint arXiv:1803.06906 (2018).
+- **[1]** Vinyals, O., et al. "Show and tell: A neural image caption generator." arXiv preprint arXiv:1411.4555 (2014).
+- **[2]** Wang, J., et al. "Learning to see and write code." arXiv preprint arXiv:1803.06906 (2018).
 
 ### 7.4 其他资源推荐
 

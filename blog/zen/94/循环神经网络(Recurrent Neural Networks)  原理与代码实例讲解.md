@@ -111,23 +111,23 @@ $$
 假设RNN模型只有一个隐藏层，隐藏层神经元个数为2。
 
 1. 初始化权重和偏置：
-- $W_hh = \begin{bmatrix} 0.1 & 0.2 \\ 0.3 & 0.4 \end{bmatrix}$
-- $W_xh = \begin{bmatrix} 0.5 & 0.6 \\ 0.7 & 0.8 \end{bmatrix}$
+- $W_hh = \begin{bmatrix} 0.1 & 0.2 \ 0.3 & 0.4 \end{bmatrix}$
+- $W_xh = \begin{bmatrix} 0.5 & 0.6 \ 0.7 & 0.8 \end{bmatrix}$
 - $W_hy = \begin{bmatrix} 0.9 & 1.0 \end{bmatrix}$
-- $b_h = \begin{bmatrix} 0.1 \\ 0.2 \end{bmatrix}$
+- $b_h = \begin{bmatrix} 0.1 \ 0.2 \end{bmatrix}$
 - $b_y = \begin{bmatrix} 0.3 \end{bmatrix}$
 
 2. 前向传播：
-- $h_0 = \tanh(\begin{bmatrix} 0.1 & 0.2 \\ 0.3 & 0.4 \end{bmatrix} \cdot \begin{bmatrix} 0.1 \\ 0.2 \end{bmatrix} + \begin{bmatrix} 0.5 & 0.6 \\ 0.7 & 0.8 \end{bmatrix} \cdot \begin{bmatrix} 1.0 \\ 0.0 \end{bmatrix} + \begin{bmatrix} 0.1 \\ 0.2 \end{bmatrix}) = \begin{bmatrix} -0.029 \\ 0.039 \end{bmatrix}$
-- $y_1 = \begin{bmatrix} 0.9 & 1.0 \end{bmatrix} \cdot \begin{bmatrix} -0.029 \\ 0.039 \end{bmatrix} + 0.3 = 0.424$
-- $h_1 = \tanh(\begin{bmatrix} 0.1 & 0.2 \\ 0.3 & 0.4 \end{bmatrix} \cdot \begin{bmatrix} -0.029 \\ 0.039 \end{bmatrix} + \begin{bmatrix} 0.5 & 0.6 \\ 0.7 & 0.8 \end{bmatrix} \cdot \begin{bmatrix} 2.0 \\ 0.0 \end{bmatrix} + \begin{bmatrix} 0.1 \\ 0.2 \end{bmatrix}) = \begin{bmatrix} 0.001 \\ 0.042 \end{bmatrix}$
-- $y_2 = \begin{bmatrix} 0.9 & 1.0 \end{bmatrix} \cdot \begin{bmatrix} 0.001 \\ 0.042 \end{bmatrix} + 0.3 = 0.300$
-- $h_2 = \tanh(\begin{bmatrix} 0.1 & 0.2 \\ 0.3 & 0.4 \end{bmatrix} \cdot \begin{bmatrix} 0.001 \\ 0.042 \end{bmatrix} + \begin{bmatrix} 0.5 & 0.6 \\ 0.7 & 0.8 \end{bmatrix} \cdot \begin{bmatrix} 3.0 \\ 0.0 \end{bmatrix} + \begin{bmatrix} 0.1 \\ 0.2 \end{bmatrix}) = \begin{bmatrix} -0.003 \\ 0.056 \end{bmatrix}$
-- $y_3 = \begin{bmatrix} 0.9 & 1.0 \end{bmatrix} \cdot \begin{bmatrix} -0.003 \\ 0.056 \end{bmatrix} + 0.3 = 0.301$
-- $h_3 = \tanh(\begin{bmatrix} 0.1 & 0.2 \\ 0.3 & 0.4 \end{bmatrix} \cdot \begin{bmatrix} -0.003 \\ 0.056 \end{bmatrix} + \begin{bmatrix} 0.5 & 0.6 \\ 0.7 & 0.8 \end{bmatrix} \cdot \begin{bmatrix} 4.0 \\ 0.0 \end{bmatrix} + \begin{bmatrix} 0.1 \\ 0.2 \end{bmatrix}) = \begin{bmatrix} -0.008 \\ 0.071 \end{bmatrix}$
-- $y_4 = \begin{bmatrix} 0.9 & 1.0 \end{bmatrix} \cdot \begin{bmatrix} -0.008 \\ 0.071 \end{bmatrix} + 0.3 = 0.304$
-- $h_4 = \tanh(\begin{bmatrix} 0.1 & 0.2 \\ 0.3 & 0.4 \end{bmatrix} \cdot \begin{bmatrix} -0.008 \\ 0.071 \end{bmatrix} + \begin{bmatrix} 0.5 & 0.6 \\ 0.7 & 0.8 \end{bmatrix} \cdot \begin{bmatrix} 5.0 \\ 0.0 \end{bmatrix} + \begin{bmatrix} 0.1 \\ 0.2 \end{bmatrix}) = \begin{bmatrix} -0.014 \\ 0.088 \end{bmatrix}$
-- $y_5 = \begin{bmatrix} 0.9 & 1.0 \end{bmatrix} \cdot \begin{bmatrix} -0.014 \\ 0.088 \end{bmatrix} + 0.3 = 0.308$
+- $h_0 = \tanh(\begin{bmatrix} 0.1 & 0.2 \ 0.3 & 0.4 \end{bmatrix} \cdot \begin{bmatrix} 0.1 \ 0.2 \end{bmatrix} + \begin{bmatrix} 0.5 & 0.6 \ 0.7 & 0.8 \end{bmatrix} \cdot \begin{bmatrix} 1.0 \ 0.0 \end{bmatrix} + \begin{bmatrix} 0.1 \ 0.2 \end{bmatrix}) = \begin{bmatrix} -0.029 \ 0.039 \end{bmatrix}$
+- $y_1 = \begin{bmatrix} 0.9 & 1.0 \end{bmatrix} \cdot \begin{bmatrix} -0.029 \ 0.039 \end{bmatrix} + 0.3 = 0.424$
+- $h_1 = \tanh(\begin{bmatrix} 0.1 & 0.2 \ 0.3 & 0.4 \end{bmatrix} \cdot \begin{bmatrix} -0.029 \ 0.039 \end{bmatrix} + \begin{bmatrix} 0.5 & 0.6 \ 0.7 & 0.8 \end{bmatrix} \cdot \begin{bmatrix} 2.0 \ 0.0 \end{bmatrix} + \begin{bmatrix} 0.1 \ 0.2 \end{bmatrix}) = \begin{bmatrix} 0.001 \ 0.042 \end{bmatrix}$
+- $y_2 = \begin{bmatrix} 0.9 & 1.0 \end{bmatrix} \cdot \begin{bmatrix} 0.001 \ 0.042 \end{bmatrix} + 0.3 = 0.300$
+- $h_2 = \tanh(\begin{bmatrix} 0.1 & 0.2 \ 0.3 & 0.4 \end{bmatrix} \cdot \begin{bmatrix} 0.001 \ 0.042 \end{bmatrix} + \begin{bmatrix} 0.5 & 0.6 \ 0.7 & 0.8 \end{bmatrix} \cdot \begin{bmatrix} 3.0 \ 0.0 \end{bmatrix} + \begin{bmatrix} 0.1 \ 0.2 \end{bmatrix}) = \begin{bmatrix} -0.003 \ 0.056 \end{bmatrix}$
+- $y_3 = \begin{bmatrix} 0.9 & 1.0 \end{bmatrix} \cdot \begin{bmatrix} -0.003 \ 0.056 \end{bmatrix} + 0.3 = 0.301$
+- $h_3 = \tanh(\begin{bmatrix} 0.1 & 0.2 \ 0.3 & 0.4 \end{bmatrix} \cdot \begin{bmatrix} -0.003 \ 0.056 \end{bmatrix} + \begin{bmatrix} 0.5 & 0.6 \ 0.7 & 0.8 \end{bmatrix} \cdot \begin{bmatrix} 4.0 \ 0.0 \end{bmatrix} + \begin{bmatrix} 0.1 \ 0.2 \end{bmatrix}) = \begin{bmatrix} -0.008 \ 0.071 \end{bmatrix}$
+- $y_4 = \begin{bmatrix} 0.9 & 1.0 \end{bmatrix} \cdot \begin{bmatrix} -0.008 \ 0.071 \end{bmatrix} + 0.3 = 0.304$
+- $h_4 = \tanh(\begin{bmatrix} 0.1 & 0.2 \ 0.3 & 0.4 \end{bmatrix} \cdot \begin{bmatrix} -0.008 \ 0.071 \end{bmatrix} + \begin{bmatrix} 0.5 & 0.6 \ 0.7 & 0.8 \end{bmatrix} \cdot \begin{bmatrix} 5.0 \ 0.0 \end{bmatrix} + \begin{bmatrix} 0.1 \ 0.2 \end{bmatrix}) = \begin{bmatrix} -0.014 \ 0.088 \end{bmatrix}$
+- $y_5 = \begin{bmatrix} 0.9 & 1.0 \end{bmatrix} \cdot \begin{bmatrix} -0.014 \ 0.088 \end{bmatrix} + 0.3 = 0.308$
 
 3. 损失函数的计算和参数的更新
 

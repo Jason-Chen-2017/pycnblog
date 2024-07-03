@@ -110,7 +110,7 @@ $$
 
 $$
 y = \begin{cases}
-c_1 & \text{if} \sum_{i=1}^k w_i c_i > \sum_{i=1}^k w_i c_2 \\
+c_1 & \text{if} \sum_{i=1}^k w_i c_i > \sum_{i=1}^k w_i c_2 \
 c_2 & \text{otherwise}
 \end{cases}
 $$

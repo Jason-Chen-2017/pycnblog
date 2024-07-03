@@ -141,7 +141,7 @@ Q-learning在以下领域具有广泛的应用：
 
 $$
 R = \begin{cases} 
-1 & \text{若检测到缺陷} \\
+1 & \text{若检测到缺陷} \
 0 & \text{若未检测到缺陷} 
 \end{cases}
 $$

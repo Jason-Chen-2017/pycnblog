@@ -105,8 +105,8 @@ $$
 其中，$W_i$是第$i$个头部的线性投影权重矩阵，$\text{Attention}(Q, K, V)$表示标准的多头注意力机制，计算过程如下：
 
 $$
-Q = xW_Q, \quad K = xW_K, \quad V = xW_V \\
-\alpha_{ij} = \frac{\exp(\langle Q_i, K_j \rangle)}{\sqrt{d}} \\
+Q = xW_Q, \quad K = xW_K, \quad V = xW_V \
+\alpha_{ij} = \frac{\exp(\langle Q_i, K_j \rangle)}{\sqrt{d}} \
 O = \sum_{j=1}^N \alpha_{ij}V_j
 $$
 

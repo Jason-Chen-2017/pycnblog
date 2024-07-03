@@ -64,7 +64,7 @@ Routh-Hurwitz判据的基本原理如下：
 $$
 h_{i,j} = 
 \begin{cases} 
-0 & \text{if } i \leq j \\
+0 & \text{if } i \leq j \
 \frac{a_{j-i} - h_{i-1,j-1} - h_{i-1,j}}{a_{n-j}} & \text{if } i > j 
 \end{cases}
 $$
@@ -117,7 +117,7 @@ Routh-Hurwitz判据在以下领域具有广泛的应用：
 Hurwitz矩阵的代数余子式可以通过以下公式计算：
 
 $$
-C_{i,j} = (-1)^{i+j} \sum_{k=0}^{n-j} a_{k} \begin{vmatrix} h_{i,0}, \ldots, h_{i,k}, \ldots, h_{i,n} \\ h_{j,0}, \ldots, h_{j,k}, \ldots, h_{j,n} \\ \vdots & \vdots & \ddots & \vdots \\ h_{n,0}, \ldots, h_{n,k}, \ldots, h_{n,n} \end{vmatrix}
+C_{i,j} = (-1)^{i+j} \sum_{k=0}^{n-j} a_{k} \begin{vmatrix} h_{i,0}, \ldots, h_{i,k}, \ldots, h_{i,n} \ h_{j,0}, \ldots, h_{j,k}, \ldots, h_{j,n} \ \vdots & \vdots & \ddots & \vdots \ h_{n,0}, \ldots, h_{n,k}, \ldots, h_{n,n} \end{vmatrix}
 $$
 
 其中 $C_{i,j}$ 表示Hurwitz矩阵的第 $i$ 行第 $j$ 列的代数余子式。
@@ -136,7 +136,7 @@ Hurwitz矩阵的构建方法如下：
 $$
 h_{i,j} = 
 \begin{cases} 
-0 & \text{if } i \leq j \\
+0 & \text{if } i \leq j \
 \frac{a_{j-i} - h_{i-1,j-1} - h_{i-1,j}}{a_{n-j}} & \text{if } i > j 
 \end{cases}
 $$
@@ -146,7 +146,7 @@ $$
 代数余子式可以通过以下公式计算：
 
 $$
-C_{i,j} = (-1)^{i+j} \sum_{k=0}^{n-j} a_{k} \begin{vmatrix} h_{i,0}, \ldots, h_{i,k}, \ldots, h_{i,n} \\ h_{j,0}, \ldots, h_{j,k}, \ldots, h_{j,n} \\ \vdots & \vdots & \ddots & \vdots \\ h_{n,0}, \ldots, h_{n,k}, \ldots, h_{n,n} \end{vmatrix}
+C_{i,j} = (-1)^{i+j} \sum_{k=0}^{n-j} a_{k} \begin{vmatrix} h_{i,0}, \ldots, h_{i,k}, \ldots, h_{i,n} \ h_{j,0}, \ldots, h_{j,k}, \ldots, h_{j,n} \ \vdots & \vdots & \ddots & \vdots \ h_{n,0}, \ldots, h_{n,k}, \ldots, h_{n,n} \end{vmatrix}
 $$
 
 #### 4.2.3 稳定性判断
@@ -164,7 +164,7 @@ $$
 1. 将 $P(s)$ 写成升幂形式：$P(s) = s^2 + 2s + 2$。
 2. 构建Hurwitz矩阵 $H$：
 $$
-H = \begin{bmatrix} 1 & 2 & 2 \\ 0 & -1 & 0 \\ 0 & 0 & -1 \end{bmatrix}
+H = \begin{bmatrix} 1 & 2 & 2 \ 0 & -1 & 0 \ 0 & 0 & -1 \end{bmatrix}
 $$
 3. 计算Hurwitz矩阵的代数余子式：
 $$

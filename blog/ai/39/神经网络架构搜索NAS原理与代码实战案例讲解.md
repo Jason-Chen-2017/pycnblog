@@ -156,7 +156,7 @@ $$\bar{o}^{(i,j)}(x) = \sum_{o\in\mathcal{O}}\frac{\exp(\alpha_o^{(i,j)})}{\sum_
 然后定义双层优化问题的联合损失函数:
 
 $$\begin{aligned}
-\mathcal{L}_{joint}(\alpha,\omega) &= \mathcal{L}_{val}(\omega^*(\alpha),\alpha) \\
+\mathcal{L}_{joint}(\alpha,\omega) &= \mathcal{L}_{val}(\omega^*(\alpha),\alpha) \
 \text{s.t.} \; \omega^*(\alpha) &= \arg\min_\omega \mathcal{L}_{train}(\omega,\alpha)
 \end{aligned}$$
 

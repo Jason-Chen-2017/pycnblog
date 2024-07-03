@@ -73,24 +73,24 @@
 
 ### 4.1 数学模型构建
 
-考虑一组群$G$和$H$之间的导出范畴$\\mathcal{C}$，$\\mathcal{C}$可以被定义为：
+考虑一组群$G$和$H$之间的导出范畴$\mathcal{C}$，$\mathcal{C}$可以被定义为：
 
-- **对象**：$\\mathcal{C}$的对象集合$\\mathcal{O}$由群$G$和$H$组成。
-- **导出映射**：$\\mathcal{C}$的导出映射集合$\\mathcal{M}$由所有保持群结构的映射$F: G \\to H$和$G \\to G'$、$H \\to H'$组成，其中$G'$和$H'$是群的可能扩展或变换后的形式。
+- **对象**：$\mathcal{C}$的对象集合$\mathcal{O}$由群$G$和$H$组成。
+- **导出映射**：$\mathcal{C}$的导出映射集合$\mathcal{M}$由所有保持群结构的映射$F: G \to H$和$G \to G'$、$H \to H'$组成，其中$G'$和$H'$是群的可能扩展或变换后的形式。
 
 ### 4.2 公式推导过程
 
 在具体应用中，我们可以通过以下步骤推导群之间的导出映射关系：
 
-设$G$和$H$为两个群，$F: G \\to H$为导出映射，那么$F$需要满足：
+设$G$和$H$为两个群，$F: G \to H$为导出映射，那么$F$需要满足：
 
-$$\\forall g, g' \\in G, \\exists h \\in H \\text{ such that } F(g \\cdot g') = F(g) \\cdot h$$
+$$\forall g, g' \in G, \exists h \in H \text{ such that } F(g \cdot g') = F(g) \cdot h$$
 
-其中$\\cdot$表示群的运算。
+其中$\cdot$表示群的运算。
 
 ### 4.3 案例分析与讲解
 
-考虑两个群$G = (\\mathbb{Z}/4\\mathbb{Z}, +)$和$H = (\\mathbb{Z}/2\\mathbb{Z} \\times \\mathbb{Z}/2\\mathbb{Z}, +)$。一个导出映射$F: G \\to H$可以是：
+考虑两个群$G = (\mathbb{Z}/4\mathbb{Z}, +)$和$H = (\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}, +)$。一个导出映射$F: G \to H$可以是：
 
 $$F([x]_4) = ([x]_2, [x]_2)$$
 
@@ -123,16 +123,16 @@ class Group:
         self.operation = operation
 
 def group_isomorphism(g1, g2, mapping):
-    \"\"\"
+    """
     Check if there exists an isomorphism between two groups.
-    \"\"\"
+    """
     # Implementation of the isomorphism check goes here.
     pass
 
 def create_group(elements, operation):
-    \"\"\"
+    """
     Create a new group based on the given elements and operation.
-    \"\"\"
+    """
     return Group(elements, operation)
 
 # Example usage

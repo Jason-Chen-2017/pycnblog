@@ -114,11 +114,11 @@ Adam优化器的数学模型如下：
 $$
 \begin{align*}
 m_t &= \beta_1 m_{t-1} + (1-\beta_1) \
-abla f(\theta_{t-1}) \\
+abla f(\theta_{t-1}) \
 v_t &= \beta_2 v_{t-1} + (1-\beta_2) \
-abla f(\theta_{t-1})^2 \\
-m_t^\prime &= \frac{m_t}{1-\beta_1^t} \\
-v_t^\prime &= \frac{v_t}{1-\beta_2^t} \\
+abla f(\theta_{t-1})^2 \
+m_t^\prime &= \frac{m_t}{1-\beta_1^t} \
+v_t^\prime &= \frac{v_t}{1-\beta_2^t} \
 \theta_t &= \theta_{t-1} - \alpha_t \left( m_t^\prime / \sqrt{v_t^\prime} + \beta_1 \
 abla f(\theta_{t-1}) \right)
 \end{align*}
@@ -151,7 +151,7 @@ $$
 3. **归一化**：为了消除梯度大小的影响，需要将一阶矩估计和二阶矩估计进行归一化，即：
 
 $$
-m_t^\prime = \frac{m_t}{1-\beta_1^t} \\
+m_t^\prime = \frac{m_t}{1-\beta_1^t} \
 v_t^\prime = \frac{v_t}{1-\beta_2^t}
 $$
 

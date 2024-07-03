@@ -119,7 +119,7 @@ for epoch in range(num_epochs):
         loss.backward()
         optimizer.step()
         running_loss += loss.item()
-    print(f\"Epoch {epoch + 1}, Loss: {running_loss / len(trainloader)}\")
+    print(f"Epoch {epoch + 1}, Loss: {running_loss / len(trainloader)}")
 ```
 
 #### 步骤六：测试模型
@@ -134,7 +134,7 @@ with torch.no_grad():
         _, predicted = torch.max(outputs.data, 1)
         total += labels.size(0)
         correct += (predicted == labels).sum().item()
-print(f\"Accuracy: {100 * correct / total}%\")
+print(f"Accuracy: {100 * correct / total}%")
 ```
 
 ### 3.3 算法优缺点
@@ -155,30 +155,30 @@ print(f\"Accuracy: {100 * correct / total}%\")
 
 神经网络的基本数学模型可以表示为：
 
-$$ f(x) = \\sigma(Wx + b) $$
+$$ f(x) = \sigma(Wx + b) $$
 
 其中：
-- \\( f(x) \\) 是输出，
-- \\( W \\) 是权重矩阵，
-- \\( x \\) 是输入向量，
-- \\( b \\) 是偏置向量，
-- \\( \\sigma \\) 是激活函数。
+- \( f(x) \) 是输出，
+- \( W \) 是权重矩阵，
+- \( x \) 是输入向量，
+- \( b \) 是偏置向量，
+- \( \sigma \) 是激活函数。
 
 ### 4.2 公式推导过程
 
 #### 前向传播
 
-输入数据 \\( x \\) 经过多层神经元的加权和激活后，最终得到预测值。
+输入数据 \( x \) 经过多层神经元的加权和激活后，最终得到预测值。
 
 #### 反向传播
 
-损失函数 \\( L \\) 的梯度被用来更新权重和偏置：
+损失函数 \( L \) 的梯度被用来更新权重和偏置：
 
-$$ \\delta_j = \\frac{\\partial L}{\\partial z_j} \\cdot \\sigma'(z_j) $$
+$$ \delta_j = \frac{\partial L}{\partial z_j} \cdot \sigma'(z_j) $$
 
 其中：
-- \\( \\delta_j \\) 是损失对输出 \\( z_j \\) 的梯度，
-- \\( \\sigma'(z_j) \\) 是激活函数的导数。
+- \( \delta_j \) 是损失对输出 \( z_j \) 的梯度，
+- \( \sigma'(z_j) \) 是激活函数的导数。
 
 ### 4.3 案例分析与讲解
 

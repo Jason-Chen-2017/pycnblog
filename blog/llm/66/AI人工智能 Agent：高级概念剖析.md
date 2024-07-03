@@ -251,9 +251,9 @@ $$
 
 $$
 \pi(\Delta x|\Delta y) = \begin{cases}
-0.5, & \text{if } \Delta y=0 \\
-0.3, & \text{if } \Delta x=1 \\
-0.2, & \text{if } \Delta y=1 \\
+0.5, & \text{if } \Delta y=0 \
+0.3, & \text{if } \Delta x=1 \
+0.2, & \text{if } \Delta y=1 \
 \end{cases} 
 $$
 
@@ -275,8 +275,8 @@ $$
 
 $$
 R(x,y,\Delta x,\Delta y) = \begin{cases}
--100, & \text{if } \text{碰撞} \\
--1, & \text{otherwise} \\
+-100, & \text{if } \text{碰撞} \
+-1, & \text{otherwise} \
 \end{cases} 
 $$
 
@@ -284,9 +284,9 @@ $$
 
 $$
 \pi(\Delta x|\Delta y) = \begin{cases}
-0.5, & \text{if } \Delta y=0 \\
-0.3, & \text{if } \Delta x=1 \\
-0.2, & \text{if } \Delta y=1 \\
+0.5, & \text{if } \Delta y=0 \
+0.3, & \text{if } \Delta x=1 \
+0.2, & \text{if } \Delta y=1 \
 \end{cases} 
 $$
 

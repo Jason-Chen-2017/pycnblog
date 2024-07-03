@@ -186,8 +186,8 @@ $$
 
 - **状态空间**：$S=\{(x_t,y_t)\}$，其中 $x_t$ 和 $y_t$ 分别表示智能体的横纵坐标。
 - **动作空间**：$A=\{\uparrow,\downarrow,\leftarrow,\rightarrow\}$，表示向上、向下、向左、向右移动。
-- **奖励函数**：$R(s_t,a_t) = \begin{cases} 1, & \text{if } (x_t,y_t)=(3,3) \\ -1, & \text{otherwise} \end{cases}$
-- **策略**：$\pi(s_t,a_t) = \begin{cases} 1, & \text{if } a_t \text{ is the action that takes agent closer to } (3,3) \\ 0, & \text{otherwise} \end{cases}$
+- **奖励函数**：$R(s_t,a_t) = \begin{cases} 1, & \text{if } (x_t,y_t)=(3,3) \ -1, & \text{otherwise} \end{cases}$
+- **策略**：$\pi(s_t,a_t) = \begin{cases} 1, & \text{if } a_t \text{ is the action that takes agent closer to } (3,3) \ 0, & \text{otherwise} \end{cases}$
 
 使用Q-learning算法进行学习，可以得到以下Q值表：
 
@@ -215,9 +215,9 @@ $$
 
 通过学习，可以得到以下环境模型和奖励函数：
 
-- **环境模型**：$p(s_{t+1}|s_t,a_t) = \begin{cases} 0.8, & \text{if } a_t=\uparrow \text{ or } a_t=\downarrow \\ 0.2, & \text{if } a_t=\leftarrow \text{ or } a_t=\rightarrow \end{cases}$
+- **环境模型**：$p(s_{t+1}|s_t,a_t) = \begin{cases} 0.8, & \text{if } a_t=\uparrow \text{ or } a_t=\downarrow \ 0.2, & \text{if } a_t=\leftarrow \text{ or } a_t=\rightarrow \end{cases}$
 
-- **奖励函数**：$r(s_t,a_t) = \begin{cases} 1, & \text{if } (x_t,y_t)=(3,3) \\ -1, & \text{otherwise} \end{cases}$
+- **奖励函数**：$r(s_t,a_t) = \begin{cases} 1, & \text{if } (x_t,y_t)=(3,3) \ -1, & \text{otherwise} \end{cases}$
 
 使用学习到的环境模型和奖励函数，可以指导强化学习过程，使智能体更快地到达目标点。
 

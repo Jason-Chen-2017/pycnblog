@@ -95,7 +95,7 @@
 
 $$
 \begin{align*}
-\text{maximize}_{\mathbf{w},b} & \quad -\frac{1}{2}||\mathbf{w}||^2 \\
+\text{maximize}_{\mathbf{w},b} & \quad -\frac{1}{2}||\mathbf{w}||^2 \
 \text{subject to} & \quad y_i(\mathbf{w}^\top \mathbf{x}_i + b) \geq 1, \quad i=1,2,...,N
 \end{align*}
 $$

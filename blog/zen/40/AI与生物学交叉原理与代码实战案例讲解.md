@@ -114,8 +114,8 @@ AI与生物学的交叉算法涉及多种数学模型，以下列举一些常见
 1. **支持向量机（SVM）**：
 $$
 \begin{align*}
-\text{最大间隔分类器} & : \max_{w, b} \frac{2C}{\|w\|} \\
-\text{目标函数} & : L(w, b) = \frac{1}{2}\|w\|^2 + C \sum_{i=1}^n \xi_i \\
+\text{最大间隔分类器} & : \max_{w, b} \frac{2C}{\|w\|} \
+\text{目标函数} & : L(w, b) = \frac{1}{2}\|w\|^2 + C \sum_{i=1}^n \xi_i \
 \text{约束条件} & : y_i(w \cdot x_i + b) \geq 1 - \xi_i, \quad \forall i \in [1, n]
 \end{align*}
 $$
@@ -123,7 +123,7 @@ $$
 2. **深度神经网络**：
 $$
 \begin{align*}
-\text{激活函数} & : f(x) = \sigma(w \cdot x + b) \\
+\text{激活函数} & : f(x) = \sigma(w \cdot x + b) \
 \text{损失函数} & : L(y, \hat{y}) = \frac{1}{2}(y - \hat{y})^2
 \end{align*}
 $$
@@ -143,12 +143,12 @@ y_i(w \cdot x_i + b) & \geq 1 - \xi_i, \quad \forall i \in [1, n]
 \end{align*}$$
 4. **求解拉格朗日函数**：引入拉格朗日乘子$\alpha_i$，构造拉格朗日函数：
 $$\begin{align*}
-L(w, b) & = \frac{1}{2}\|w\|^2 + C \sum_{i=1}^n \xi_i + \sum_{i=1}^n \alpha_i(1 - y_i(w \cdot x_i + b) + \xi_i) \\
+L(w, b) & = \frac{1}{2}\|w\|^2 + C \sum_{i=1}^n \xi_i + \sum_{i=1}^n \alpha_i(1 - y_i(w \cdot x_i + b) + \xi_i) \
 \end{align*}$$
 5. **KKT条件**：根据拉格朗日函数的KKT条件，得到以下约束条件：
 $$\begin{align*}
-\alpha_i \geq 0 \\
-y_i(w \cdot x_i + b) & \geq 1 - \xi_i \\
+\alpha_i \geq 0 \
+y_i(w \cdot x_i + b) & \geq 1 - \xi_i \
 w \cdot w & \leq \frac{1}{C} \sum_{i=1}^n \alpha_i y_i^2 x_i^T
 \end{align*}$$
 6. **求解最优解**：根据拉格朗日乘子$\alpha_i$的取值，求解最优的$w$和$b$。

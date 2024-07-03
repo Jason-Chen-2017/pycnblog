@@ -122,7 +122,7 @@ $$
 对 $w$ 和 $b$ 求偏导，设置导数等于0求解：
 
 $$
-\frac{\partial \text{RSS}}{\partial w} = -2\sum_{i=1}^{n}(y_i - wx_i - b)x_i = 0 \\
+\frac{\partial \text{RSS}}{\partial w} = -2\sum_{i=1}^{n}(y_i - wx_i - b)x_i = 0 \
 \frac{\partial \text{RSS}}{\partial b} = -2\sum_{i=1}^{n}(y_i - wx_i - b) = 0
 $$
 

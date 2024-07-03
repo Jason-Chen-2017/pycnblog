@@ -82,7 +82,7 @@
 
 假设用户-物品评分矩阵为$R$，其中$R_{ij}$表示用户$i$对物品$j$的评分。矩阵分解的目标是将$R$近似为两个低秩矩阵的乘积：
 
-$$R \\approx UV^T$$
+$$R \approx UV^T$$
 
 其中，$U$表示用户向量矩阵，$V$表示物品向量矩阵。通过最小化误差函数（例如均方误差）来学习$U$和$V$的值。
 
@@ -90,9 +90,9 @@ $$R \\approx UV^T$$
 
 矩阵分解的目标是最小化预测评分与真实评分之间的差异，即：
 
-$$\\min_{U,V} \\sum_{(i,j) \\in \\Omega} \\left( R_{ij} - \\hat{R}_{ij} \\right)^2$$
+$$\min_{U,V} \sum_{(i,j) \in \Omega} \left( R_{ij} - \hat{R}_{ij} \right)^2$$
 
-其中$\\Omega$是已知评分对的集合，$\\hat{R}_{ij}$是矩阵分解得到的预测评分。
+其中$\Omega$是已知评分对的集合，$\hat{R}_{ij}$是矩阵分解得到的预测评分。
 
 ### 4.3 案例分析与讲解
 
@@ -137,8 +137,8 @@ S = np.diag(S)
 predictions = np.dot(np.dot(U, S), Vt)
 
 # 输出预测矩阵
-print(\"Predicted ratings matrix:\
-\", predictions)
+print("Predicted ratings matrix:\
+", predictions)
 ```
 
 ### 5.3 代码解读与分析
@@ -177,13 +177,13 @@ print(\"Predicted ratings matrix:\
 
 #### 在线课程
 
-- **Coursera**: \"Recommender Systems\" by University of California, San Diego
-- **edX**: \"Data Science MicroMasters Program\"
+- **Coursera**: "Recommender Systems" by University of California, San Diego
+- **edX**: "Data Science MicroMasters Program"
 
 #### 书籍
 
-- **\"Collaborative Filtering\" by Yehuda Koren**
-- **\"Recommender Systems Handbook\" edited by Francesco Ricci**
+- **"Collaborative Filtering" by Yehuda Koren**
+- **"Recommender Systems Handbook" edited by Francesco Ricci**
 
 ### 7.2 开发工具推荐
 
@@ -201,8 +201,8 @@ print(\"Predicted ratings matrix:\
 
 #### 经典论文
 
-- **\"Matrix Factorization Techniques for Recommender Systems\"**
-- **\"Neural Collaborative Filtering\"**
+- **"Matrix Factorization Techniques for Recommender Systems"**
+- **"Neural Collaborative Filtering"**
 
 ### 7.4 其他资源推荐
 

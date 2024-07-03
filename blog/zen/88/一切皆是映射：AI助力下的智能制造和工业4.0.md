@@ -256,22 +256,22 @@ $$
 
 $$
 \begin{bmatrix}
-\sum_{i=1}^N x_j & \sum_{i=1}^N x_1x_j & \ldots & \sum_{i=1}^N x_kx_j \\
-\sum_{i=1}^N x_1x_j & \sum_{i=1}^N x_1x_1 & \ldots & \sum_{i=1}^N x_1x_k \\
-\vdots & \vdots & \ddots & \vdots \\
+\sum_{i=1}^N x_j & \sum_{i=1}^N x_1x_j & \ldots & \sum_{i=1}^N x_kx_j \
+\sum_{i=1}^N x_1x_j & \sum_{i=1}^N x_1x_1 & \ldots & \sum_{i=1}^N x_1x_k \
+\vdots & \vdots & \ddots & \vdots \
 \sum_{i=1}^N x_kx_j & \sum_{i=1}^N x_kx_1 & \ldots & \sum_{i=1}^N x_kx_k
 \end{bmatrix}
 \begin{bmatrix}
-\theta_0 \\
-\theta_1 \\
-\vdots \\
+\theta_0 \
+\theta_1 \
+\vdots \
 \theta_k
 \end{bmatrix}
 =
 \begin{bmatrix}
-\sum_{i=1}^N y_ix_j \\
-\sum_{i=1}^N x_1y_i \\
-\vdots \\
+\sum_{i=1}^N y_ix_j \
+\sum_{i=1}^N x_1y_i \
+\vdots \
 \sum_{i=1}^N x_ky_i
 \end{bmatrix}
 $$

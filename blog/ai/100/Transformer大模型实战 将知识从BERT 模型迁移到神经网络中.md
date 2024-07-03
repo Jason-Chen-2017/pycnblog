@@ -121,7 +121,7 @@ Transformer大模型实战方法可以应用于以下领域：
 
 $$
 \begin{align*}
-\mathbf{h}_l &= \text{ReLU}(\mathbf{W}_l\mathbf{h}_{l-1} + \mathbf{b}_l) \\
+\mathbf{h}_l &= \text{ReLU}(\mathbf{W}_l\mathbf{h}_{l-1} + \mathbf{b}_l) \
 \mathbf{y} &= \text{Softmax}(\mathbf{W}_o\mathbf{h}_l + \mathbf{b}_o)
 \end{align*}
 $$

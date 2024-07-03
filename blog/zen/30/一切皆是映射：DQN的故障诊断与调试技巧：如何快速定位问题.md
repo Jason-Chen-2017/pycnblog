@@ -49,7 +49,7 @@ DQN的核心在于通过深度学习模型来估计状态-动作价值函数（Q
 
 DQN通过深度神经网络来近似状态-动作价值函数Q(s, a)，其中s表示状态，a表示动作。智能体在每个时间步t接收状态s_t，根据Q(s_t, a)选择动作a_t，并接收新状态s_{t+1}和奖励r_t。通过更新Q(s_t, a)来改进策略：
 
-$$ Q(s_t, a_t) \\leftarrow Q(s_t, a_t) + \\alpha [r_t + \\gamma \\max_{a'} Q(s_{t+1}, a') - Q(s_t, a_t)] $$
+$$ Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha [r_t + \gamma \max_{a'} Q(s_{t+1}, a') - Q(s_t, a_t)] $$
 
 其中，α是学习率，γ是折扣因子，决定了未来奖励的权重。
 
@@ -62,7 +62,7 @@ DQN算法的操作步骤包括：
 3. **经验回放缓冲区**：存储每一步的过渡（状态s, 动作a, 奖励r, 新状态s'）。
 4. **学习**：从经验回放缓冲区中随机抽取一组样本，更新Q函数，目的是最小化以下损失函数：
 
-$$ L(Q) = \\frac{1}{|B|^2} \\sum_{(s, a, r, s') \\in B} \\left[ r + \\gamma \\max_{a'} Q(s', a') - Q(s, a) \\right]^2 $$
+$$ L(Q) = \frac{1}{|B|^2} \sum_{(s, a, r, s') \in B} \left[ r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]^2 $$
 
 其中，B表示经验回放缓冲区中的样本集。
 
@@ -89,7 +89,7 @@ DQN及其变种广泛应用于游戏、机器人控制、自动交易、医疗�
 
 DQN的数学模型构建基于函数逼近理论，特别是卷积神经网络（CNN）在视觉任务中的应用，以及多层感知器（MLP）在非视觉任务中的应用。模型的目标是近似状态-动作价值函数Q(s, a)，其中s是状态向量，a是动作向量：
 
-$$ Q: S \\times A \\rightarrow \\mathbb{R} $$
+$$ Q: S \times A \rightarrow \mathbb{R} $$
 
 ### 4.2 公式推导过程
 
@@ -97,12 +97,12 @@ DQN的学习过程涉及以下关键步骤：
 
 1. **损失函数定义**：损失函数定义为均方误差（MSE）：
 
-$$ L(Q) = \\frac{1}{|B|^2} \\sum_{(s, a, r, s') \\in B} \\left[ r + \\gamma \\max_{a'} Q(s', a') - Q(s, a) \\right]^2 $$
+$$ L(Q) = \frac{1}{|B|^2} \sum_{(s, a, r, s') \in B} \left[ r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]^2 $$
 
 2. **梯度下降**：使用梯度下降法最小化损失函数，更新Q函数的参数：
 
-$$ \\theta \\leftarrow \\theta - \\eta \
-abla_\\theta J(\\theta) $$
+$$ \theta \leftarrow \theta - \eta \
+abla_\theta J(\theta) $$
 
 其中，θ是Q函数的参数，η是学习率。
 
@@ -223,9 +223,9 @@ def main():
             total_reward += reward
             dqn.train()
             dqn.decay_epsilon()
-        print(f\"Episode {episode + 1}: Total Reward = {total_reward}\")
+        print(f"Episode {episode + 1}: Total Reward = {total_reward}")
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     main()
 ```
 

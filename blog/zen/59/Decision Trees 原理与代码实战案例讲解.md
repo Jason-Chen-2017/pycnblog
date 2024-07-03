@@ -130,8 +130,8 @@ $$
 
 $$
 \begin{aligned}
-Ent(D) &= -\sum_{k=1}^{|y|} p_k \log_2 p_k \\
-&= -(\frac{6}{10} \log_2 \frac{6}{10} + \frac{4}{10} \log_2 \frac{4}{10}) \\
+Ent(D) &= -\sum_{k=1}^{|y|} p_k \log_2 p_k \
+&= -(\frac{6}{10} \log_2 \frac{6}{10} + \frac{4}{10} \log_2 \frac{4}{10}) \
 &= 0.971
 \end{aligned}
 $$
@@ -142,9 +142,9 @@ $$
 
 $$
 \begin{aligned}
-Gain(D, A) &= Ent(D) - \sum_{v=1}^{V} \frac{|D^v|}{|D|} Ent(D^v) \\
-&= 0.971 - (\frac{4}{10} Ent(D^{a_1}) + \frac{6}{10} Ent(D^{a_2})) \\
-&= 0.971 - (\frac{4}{10} \times 0.811 + \frac{6}{10} \times 1) \\
+Gain(D, A) &= Ent(D) - \sum_{v=1}^{V} \frac{|D^v|}{|D|} Ent(D^v) \
+&= 0.971 - (\frac{4}{10} Ent(D^{a_1}) + \frac{6}{10} Ent(D^{a_2})) \
+&= 0.971 - (\frac{4}{10} \times 0.811 + \frac{6}{10} \times 1) \
 &= 0.161
 \end{aligned}
 $$
@@ -155,8 +155,8 @@ $$
 
 $$
 \begin{aligned}
-Gini(D) &= 1 - \sum_{k=1}^{|y|} p_k^2 \\
-&= 1 - (\frac{6}{10})^2 - (\frac{4}{10})^2 \\
+Gini(D) &= 1 - \sum_{k=1}^{|y|} p_k^2 \
+&= 1 - (\frac{6}{10})^2 - (\frac{4}{10})^2 \
 &= 0.48
 \end{aligned}
 $$
@@ -165,7 +165,7 @@ $$
 
 $$
 \begin{aligned}
-Gini(D^{a_1}) &= 1 - (\frac{3}{4})^2 - (\frac{1}{4})^2 \\
+Gini(D^{a_1}) &= 1 - (\frac{3}{4})^2 - (\frac{1}{4})^2 \
 &= 0.375
 \end{aligned}
 $$
@@ -174,7 +174,7 @@ $$
 
 $$
 \begin{aligned}
-Gini(D^{a_2}) &= 1 - (\frac{3}{6})^2 - (\frac{3}{6})^2 \\
+Gini(D^{a_2}) &= 1 - (\frac{3}{6})^2 - (\frac{3}{6})^2 \
 &= 0.5
 \end{aligned}
 $$
@@ -183,8 +183,8 @@ $$
 
 $$
 \begin{aligned}
-Gini(D, A) &= \sum_{v=1}^{V} \frac{|D^v|}{|D|} Gini(D^v) \\
-&= \frac{4}{10} \times 0.375 + \frac{6}{10} \times 0.5 \\
+Gini(D, A) &= \sum_{v=1}^{V} \frac{|D^v|}{|D|} Gini(D^v) \
+&= \frac{4}{10} \times 0.375 + \frac{6}{10} \times 0.5 \
 &= 0.45
 \end{aligned}
 $$

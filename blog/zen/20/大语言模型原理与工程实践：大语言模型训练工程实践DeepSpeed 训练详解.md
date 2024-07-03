@@ -94,13 +94,13 @@ DeepSpeed适用于自然语言处理、推荐系统、图像处理、计算机�
 
 大语言模型通常基于Transformer架构，其核心是多头自注意力机制（Multi-Head Attention）。对于每个头$h$，输入$x$经过线性变换$W_q$、$W_k$、$W_v$得到查询$q$、键$k$、值$v$：
 
-$$ q = W_q \\cdot x $$
-$$ k = W_k \\cdot x $$
-$$ v = W_v \\cdot x $$
+$$ q = W_q \cdot x $$
+$$ k = W_k \cdot x $$
+$$ v = W_v \cdot x $$
 
 然后通过点积注意力计算得到输出：
 
-$$ o = \\sum_{i=1}^{n} \\frac{\\exp(W_o \\cdot \\operatorname{softmax}(q \\cdot k^T / \\sqrt{d})) \\cdot v}{\\sqrt{d}} $$
+$$ o = \sum_{i=1}^{n} \frac{\exp(W_o \cdot \operatorname{softmax}(q \cdot k^T / \sqrt{d})) \cdot v}{\sqrt{d}} $$
 
 其中$d$是每个头的维度大小。
 
@@ -114,7 +114,7 @@ $$ o = \\sum_{i=1}^{n} \\frac{\\exp(W_o \\cdot \\operatorname{softmax}(q \\cdot 
 
 自注意力机制通过以下公式实现：
 
-$$ o_i = \\sum_{j=1}^{n} \\frac{\\exp\\left(\\frac{q_i \\cdot k_j^T}{\\sqrt{d}}\\right)}{\\sqrt{d}} \\cdot v_j $$
+$$ o_i = \sum_{j=1}^{n} \frac{\exp\left(\frac{q_i \cdot k_j^T}{\sqrt{d}}\right)}{\sqrt{d}} \cdot v_j $$
 
 其中$q_i$是查询向量，$k_j$是键向量，$v_j$是值向量，$d$是每个头的维度大小。
 
@@ -156,15 +156,15 @@ from deepspeed import DeepSpeedEngine
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # 初始化模型和分词器
-tokenizer = AutoTokenizer.from_pretrained(\"gpt2\")
-model = AutoModelForCausalLM.from_pretrained(\"gpt2\")
+tokenizer = AutoTokenizer.from_pretrained("gpt2")
+model = AutoModelForCausalLM.from_pretrained("gpt2")
 
 # 设置DeepSpeed配置
 ds_config = {
-    \"fp16\": {\"enabled\": True},
-    \"gradient_accumulation_steps\": 16,
-    \"optimizer\": {\"type\": \"Adam\", \"args\": {\"betas\": (0.9, 0.95), \"eps\": 1e-8}},
-    \"scheduler\": {\"type\": \"WarmupLR\", \"args\": {\"warmup_steps\": 1000}}
+    "fp16": {"enabled": True},
+    "gradient_accumulation_steps": 16,
+    "optimizer": {"type": "Adam", "args": {"betas": (0.9, 0.95), "eps": 1e-8}},
+    "scheduler": {"type": "WarmupLR", "args": {"warmup_steps": 1000}}
 }
 
 # 创建DeepSpeed引擎
@@ -173,13 +173,13 @@ model = DeepSpeedEngine(model=model, config_dict=ds_config)
 # 准备数据和加载器
 input_ids = torch.randint(1, tokenizer.vocab_size, (1, 100))
 labels = input_ids.clone()
-data_loader = torch.utils.data.DataLoader([{\"input_ids\": input_ids, \"labels\": labels}], batch_size=1)
+data_loader = torch.utils.data.DataLoader([{"input_ids": input_ids, "labels": labels}], batch_size=1)
 
 # 训练循环
 for epoch in range(3):
     for batch in data_loader:
-        input_ids = batch[\"input_ids\"].to(model.device)
-        labels = batch[\"labels\"].to(model.device)
+        input_ids = batch["input_ids"].to(model.device)
+        labels = batch["labels"].to(model.device)
 
         # 前向传播和计算损失
         loss = model(input_ids, labels=labels).loss

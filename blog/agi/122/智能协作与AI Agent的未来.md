@@ -166,7 +166,7 @@ $$
 
 $$
 R(s,a) = \begin{cases} 
--1, & \text{如果发生碰撞} \\ 
+-1, & \text{如果发生碰撞} \ 
 0, & \text{否则} 
 \end{cases}
 $$

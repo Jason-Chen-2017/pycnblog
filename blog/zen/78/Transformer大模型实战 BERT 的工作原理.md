@@ -76,10 +76,10 @@ BERT广泛应用于自然语言处理的多个领域，包括但不限于：
 #### Transformer的多头自注意力机制（Multi-Head Attention）
 
 $$
-Q = W_Q \cdot X \\
-K = W_K \cdot X \\
-V = W_V \cdot X \\
-\text{Attention}(Q, K, V) = \text{Softmax}(\frac{Q \cdot K^T}{\sqrt{d_k}}) \cdot V \\
+Q = W_Q \cdot X \
+K = W_K \cdot X \
+V = W_V \cdot X \
+\text{Attention}(Q, K, V) = \text{Softmax}(\frac{Q \cdot K^T}{\sqrt{d_k}}) \cdot V \
 \text{Multi-Head Attention}(X) = \text{Concat}(\text{head}_1, \text{head}_2, ..., \text{head}_h) \cdot W_O
 $$
 

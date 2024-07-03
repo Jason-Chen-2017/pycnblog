@@ -115,7 +115,7 @@ $$
 
 $$
 f(t_i, d_j) = \begin{cases} 
-1, & \text{if } t_i \text{ appears in } d_j \\
+1, & \text{if } t_i \text{ appears in } d_j \
 0, & \text{otherwise}
 \end{cases}
 $$

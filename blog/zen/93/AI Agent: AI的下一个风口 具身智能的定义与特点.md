@@ -124,9 +124,9 @@
 
 $$
 \begin{aligned}
-&\text{状态空间} \ S = \{s_1, s_2, s_3\} \\
-&\text{动作空间} \ A = \{a_1, a_2\} \\
-&\text{动作-状态转移函数} \ T(s, a) = S' \\
+&\text{状态空间} \ S = \{s_1, s_2, s_3\} \
+&\text{动作空间} \ A = \{a_1, a_2\} \
+&\text{动作-状态转移函数} \ T(s, a) = S' \
 &\text{奖励函数} \ R(s, a) = r
 \end{aligned}
 $$

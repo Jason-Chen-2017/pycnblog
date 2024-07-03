@@ -37,7 +37,7 @@
 自注意力机制通过计算查询$q$与键$k$之间的点积（Dot Product）来确定它们之间的相似度，然后将这个相似度用于加权平均，以生成注意力分数。具体公式如下：
 
 $$
-\\text{Attention}(q, k, v) = \\text{Softmax}\\left(\\frac{q k^T}{\\sqrt{d_k}}\\right) v
+\text{Attention}(q, k, v) = \text{Softmax}\left(\frac{q k^T}{\sqrt{d_k}}\right) v
 $$
 
 其中，$d_k$是键向量的维度，Softmax函数用于将注意力分数归一化，确保总和为1。
@@ -92,25 +92,25 @@ $$
 
 设输入序列$x$的长度为$n$，每个元素的维度为$d$。对于$m$个头（假设$m$个并行执行的注意力子模块），每个头的查询、键和值的维度分别为$q_k$、$k_k$和$v_k$。则：
 
-- 查询向量$q_i$：$n \\times m \\times q_k$
-- 键向量$k_i$：$n \\times m \\times k_k$
-- 值向量$v_i$：$n \\times m \\times v_k$
+- 查询向量$q_i$：$n \times m \times q_k$
+- 键向量$k_i$：$n \times m \times k_k$
+- 值向量$v_i$：$n \times m \times v_k$
 
 ### 4.2 公式推导过程
 
 以单头自注意力为例，假设查询、键和值的维度相同，均为$d$：
 
 $$
-\\text{Query} = W_Q x \\\\
-\\text{Key} = W_K x \\\\
-\\text{Value} = W_V x
+\text{Query} = W_Q x \\
+\text{Key} = W_K x \\
+\text{Value} = W_V x
 $$
 
 其中，$W_Q$、$W_K$和$W_V$是线性变换矩阵。然后计算注意力分数：
 
 $$
-\\text{Scores} = \\text{Query} \\cdot \\text{Key}^T \\\\
-\\text{Attention} = \\text{Softmax}(\\text{Scores}) \\cdot \\text{Value}
+\text{Scores} = \text{Query} \cdot \text{Key}^T \\
+\text{Attention} = \text{Softmax}(\text{Scores}) \cdot \text{Value}
 $$
 
 ### 4.3 案例分析与讲解
@@ -120,8 +120,8 @@ $$
 1. **计算查询**：$W_Qx$。
 2. **计算键**：$W_Kx$。
 3. **计算值**：$W_Vx$。
-4. **计算注意力分数**：$\\text{Scores} = \\text{Query} \\cdot \\text{Key}^T$，然后应用Softmax函数。
-5. **加权平均**：$\\text{Attention} = \\text{Softmax}(\\text{Scores}) \\cdot \\text{Value}$。
+4. **计算注意力分数**：$\text{Scores} = \text{Query} \cdot \text{Key}^T$，然后应用Softmax函数。
+5. **加权平均**：$\text{Attention} = \text{Softmax}(\text{Scores}) \cdot \text{Value}$。
 
 ### 4.4 常见问题解答
 

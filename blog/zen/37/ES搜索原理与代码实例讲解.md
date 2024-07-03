@@ -85,23 +85,23 @@ Elasticsearch 的核心算法原理是倒排索引。倒排索引是一种数据
 Elasticsearch 的倒排索引可以表示为以下数学模型：
 
 $$
-\\text{{ inverted\\_index }} = \\{(\\text{{ term\\_1, docs\\_1 }}, (\\text{{ doc\\_1\\_score, doc\\_2\\_score, ... }}), \\text{{ term\\_2, docs\\_2 }}, (\\text{{ doc\\_1\\_score, doc\\_2\\_score, ... }}), \\ldots \\}
+\text{{ inverted\_index }} = \{(\text{{ term\_1, docs\_1 }}, (\text{{ doc\_1\_score, doc\_2\_score, ... }}), \text{{ term\_2, docs\_2 }}, (\text{{ doc\_1\_score, doc\_2\_score, ... }}), \ldots \}
 $$
 
 其中，
 
-- $\\text{{ inverted\\_index }}$ 表示倒排索引。
-- $\\text{{ term\\_i }}$ 表示第 $i$ 个词语。
-- $\\text{{ docs\\_i }}$ 表示包含词语 $\\text{{ term\\_i }}$ 的文档集合。
-- $\\text{{ doc\\_j\\_score }}$ 表示文档 $j$ 在词语 $\\text{{ term\\_i }}$ 上的得分。
+- $\text{{ inverted\_index }}$ 表示倒排索引。
+- $\text{{ term\_i }}$ 表示第 $i$ 个词语。
+- $\text{{ docs\_i }}$ 表示包含词语 $\text{{ term\_i }}$ 的文档集合。
+- $\text{{ doc\_j\_score }}$ 表示文档 $j$ 在词语 $\text{{ term\_i }}$ 上的得分。
 
 ### 4.2 公式推导过程
 
 倒排索引的构建过程涉及到以下步骤：
 
 1. **分词**：将文档内容分割为词语。
-2. **词形还原**：将词语还原为基本形式，如将 \"running\"、\"runs\" 和 \"ran\" 还原为 \"run\"。
-3. **词干提取**：提取词语的基本词干，如将 \"running\"、\"runs\" 和 \"ran\" 提取为 \"run\"。
+2. **词形还原**：将词语还原为基本形式，如将 "running"、"runs" 和 "ran" 还原为 "run"。
+3. **词干提取**：提取词语的基本词干，如将 "running"、"runs" 和 "ran" 提取为 "run"。
 4. **建立倒排索引**：将每个词语及其对应的文档集合存储到倒排索引中。
 
 ### 4.3 案例分析与讲解
@@ -136,7 +136,7 @@ E --> F[倒排索引]
 
 **Q：什么是词形还原和词干提取？**
 
-A：词形还原是将词语还原为基本形式，如将 \"running\"、\"runs\" 和 \"ran\" 还原为 \"run\"。词干提取是提取词语的基本词干，如将 \"running\"、\"runs\" 和 \"ran\" 提取为 \"run\"。
+A：词形还原是将词语还原为基本形式，如将 "running"、"runs" 和 "ran" 还原为 "run"。词干提取是提取词语的基本词干，如将 "running"、"runs" 和 "ran" 提取为 "run"。
 
 **Q：倒排索引如何提高查询速度？**
 
@@ -157,44 +157,44 @@ A：倒排索引将词语映射到对应的文档集合，可以快速定位包�
 from elasticsearch import Elasticsearch
 
 # 创建 Elasticsearch 客户端
-es = Elasticsearch(\"localhost\", port=9200)
+es = Elasticsearch("localhost", port=9200)
 
 # 创建索引
-if not es.indices.exists(index=\"my_index\"):
-    es.indices.create(index=\"my_index\", body={
-        \"settings\": {
-            \"number_of_shards\": 1,
-            \"number_of_replicas\": 0
+if not es.indices.exists(index="my_index"):
+    es.indices.create(index="my_index", body={
+        "settings": {
+            "number_of_shards": 1,
+            "number_of_replicas": 0
         },
-        \"mappings\": {
-            \"properties\": {
-                \"title\": {\"type\": \"text\"},
-                \"content\": {\"type\": \"text\"}
+        "mappings": {
+            "properties": {
+                "title": {"type": "text"},
+                "content": {"type": "text"}
             }
         }
     })
 
 # 添加文档
 doc1 = {
-    \"title\": \"ES 搜索原理与代码实例讲解\",
-    \"content\": \"本文将深入探讨 Elasticsearch 的搜索原理，并通过代码实例进行讲解。\"
+    "title": "ES 搜索原理与代码实例讲解",
+    "content": "本文将深入探讨 Elasticsearch 的搜索原理，并通过代码实例进行讲解。"
 }
 doc2 = {
-    \"title\": \"Elasticsearch 入门教程\",
-    \"content\": \"本文是 Elasticsearch 的入门教程，介绍了 Elasticsearch 的基本概念和操作。\"
+    "title": "Elasticsearch 入门教程",
+    "content": "本文是 Elasticsearch 的入门教程，介绍了 Elasticsearch 的基本概念和操作。"
 }
-es.index(index=\"my_index\", id=1, body=doc1)
-es.index(index=\"my_index\", id=2, body=doc2)
+es.index(index="my_index", id=1, body=doc1)
+es.index(index="my_index", id=2, body=doc2)
 
 # 搜索文档
 query = {
-    \"query\": {
-        \"match\": {
-            \"content\": \"Elasticsearch\"
+    "query": {
+        "match": {
+            "content": "Elasticsearch"
         }
     }
 }
-response = es.search(index=\"my_index\", body=query)
+response = es.search(index="my_index", body=query)
 print(response)
 ```
 
@@ -211,30 +211,30 @@ print(response)
 
 ```json
 {
-  \"took\": 0,
-  \"timed_out\": false,
-  \"hits\": {
-    \"total\": 2,
-    \"max_score\": 1.0,
-    \"hits\": [
+  "took": 0,
+  "timed_out": false,
+  "hits": {
+    "total": 2,
+    "max_score": 1.0,
+    "hits": [
       {
-        \"_index\": \"my_index\",
-        \"_type\": \"_doc\",
-        \"_id\": \"2\",
-        \"_score\": 1.0,
-        \"_source\": {
-          \"title\": \"Elasticsearch 入门教程\",
-          \"content\": \"本文是 Elasticsearch 的入门教程，介绍了 Elasticsearch 的基本概念和操作。\"
+        "_index": "my_index",
+        "_type": "_doc",
+        "_id": "2",
+        "_score": 1.0,
+        "_source": {
+          "title": "Elasticsearch 入门教程",
+          "content": "本文是 Elasticsearch 的入门教程，介绍了 Elasticsearch 的基本概念和操作。"
         }
       },
       {
-        \"_index\": \"my_index\",
-        \"_type\": \"_doc\",
-        \"_id\": \"1\",
-        \"_score\": 1.0,
-        \"_source\": {
-          \"title\": \"ES 搜索原理与代码实例讲解\",
-          \"content\": \"本文将深入探讨 Elasticsearch 的搜索原理，并通过代码实例进行讲解。\"
+        "_index": "my_index",
+        "_type": "_doc",
+        "_id": "1",
+        "_score": 1.0,
+        "_source": {
+          "title": "ES 搜索原理与代码实例讲解",
+          "content": "本文将深入探讨 Elasticsearch 的搜索原理，并通过代码实例进行讲解。"
         }
       }
     ]

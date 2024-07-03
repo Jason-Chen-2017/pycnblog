@@ -143,7 +143,7 @@ $$
 
 $$
 R(S, A) = \begin{cases} 
-r & \text{if } S' \text{ is desirable} \\
+r & \text{if } S' \text{ is desirable} \
 -r & \text{if } S' \text{ is undesirable}
 \end{cases}
 $$

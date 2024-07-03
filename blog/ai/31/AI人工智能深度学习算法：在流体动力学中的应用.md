@@ -85,16 +85,16 @@
 
 #### 沿流体流动的质点坐标变换
 
-$$ \\frac{\\partial u}{\\partial t} + \\mathbf{u} \\cdot \
-abla \\mathbf{u} = -\\frac{1}{\\rho} \
+$$ \frac{\partial u}{\partial t} + \mathbf{u} \cdot \
+abla \mathbf{u} = -\frac{1}{\rho} \
 abla p + \
 u \
-abla^2 \\mathbf{u} $$
+abla^2 \mathbf{u} $$
 
 其中：
-- $\\mathbf{u}$ 是速度向量，
+- $\mathbf{u}$ 是速度向量，
 - $p$ 是压力，
-- $\\rho$ 是密度，
+- $\rho$ 是密度，
 - $\
 u$ 是粘度系数。
 

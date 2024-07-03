@@ -40,7 +40,7 @@ GAN不仅在学术界受到广泛关注，还在工业界得到广泛应用。�
 生成对抗网络通过最小化判别器对生成样本的错误分类概率，同时最大化生成器生成样本的真实感，来优化生成器和判别器的性能。这一过程通过以下损失函数实现：
 
 $$
-\\min_G \\max_D V(D,G) = \\mathbb{E}_{x \\sim p_data(x)}[\\log D(x)] + \\mathbb{E}_{z \\sim p_z(z)}[\\log(1 - D(G(z)))]
+\min_G \max_D V(D,G) = \mathbb{E}_{x \sim p_data(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log(1 - D(G(z)))]
 $$
 
 ### 3.2 算法步骤详解
@@ -75,8 +75,8 @@ $$
 生成器 $G$ 和判别器 $D$ 的目标函数分别为：
 
 $$
-L_G = \\mathbb{E}_{z \\sim p_z(z)}[\\log D(G(z))] \\\\
-L_D = \\mathbb{E}_{x \\sim p_data(x)}[\\log D(x)] + \\mathbb{E}_{z \\sim p_z(z)}[\\log(1 - D(G(z))]
+L_G = \mathbb{E}_{z \sim p_z(z)}[\log D(G(z))] \\
+L_D = \mathbb{E}_{x \sim p_data(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log(1 - D(G(z))]
 $$
 
 其中，$p_z(z)$ 是噪声分布，$p_data(x)$ 是真实数据分布。
@@ -168,7 +168,7 @@ def train_gan(gan, generator, discriminator, latent_dim, data):
         noise = tf.random.normal([batch_size, latent_dim])
         g_loss = gan.train_on_batch(noise, np.ones(batch_size))
 
-        print(f\"Epoch {epoch+1}/{num_epochs}, D Loss: {d_loss}, G Loss: {g_loss}\")
+        print(f"Epoch {epoch+1}/{num_epochs}, D Loss: {d_loss}, G Loss: {g_loss}")
 
 ```
 

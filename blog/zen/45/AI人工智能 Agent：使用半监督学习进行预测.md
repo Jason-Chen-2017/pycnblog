@@ -118,7 +118,7 @@
 
 2. **初始化标签向量$\textbf{y}^0$**：
    $$\textbf{y}^0_i = \begin{cases} 
-   y_i & \text{if } y_i \text{ is known} \\
+   y_i & \text{if } y_i \text{ is known} \
    0 & \text{if } y_i \text{ is unknown}
    \end{cases}$$
 

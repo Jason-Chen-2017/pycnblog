@@ -126,7 +126,7 @@ graph
 $$
 \begin{align*}
 \theta_{t+1} &= \theta_t + \alpha \cdot \
-abla_{\theta_t} L(x_t, y_t) \\
+abla_{\theta_t} L(x_t, y_t) \
 y_{t+1} &= f(\theta_{t+1}, x_{t+1})
 \end{align*}
 $$

@@ -124,7 +124,7 @@ public class MahoutFrequentItemset {
     public static void main(String[] args) throws IOException, TasteException {
         // 数据集
         List<String[]> transactions = TransactionListConverter.stringToTransactionList(
-                "{\"牛奶, 面包\", \"牛奶, 鸡蛋\", \"面包, 鸡蛋\", \"牛奶, 面包, 鸡蛋\"}"
+                "{"牛奶, 面包", "牛奶, 鸡蛋", "面包, 鸡蛋", "牛奶, 面包, 鸡蛋"}"
         );
 
         // 设置最小支持度

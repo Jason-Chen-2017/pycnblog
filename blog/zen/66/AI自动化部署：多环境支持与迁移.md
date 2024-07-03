@@ -70,8 +70,8 @@
 
 $$
 \begin{aligned}
-\text{maximize} \quad & \sum_{i=1}^{n} w_i x_i \\
-\text{subject to} \quad & \sum_{i=1}^{n} r_{ij} x_i \le R_j, \quad j = 1, 2, ..., m \\
+\text{maximize} \quad & \sum_{i=1}^{n} w_i x_i \
+\text{subject to} \quad & \sum_{i=1}^{n} r_{ij} x_i \le R_j, \quad j = 1, 2, ..., m \
 & x_i \ge 0, \quad i = 1, 2, ..., n
 \end{aligned}
 $$

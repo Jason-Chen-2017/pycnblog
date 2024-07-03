@@ -81,11 +81,11 @@ LSTM是一种特殊的RNN，其特点是能够解决RNN的梯度消失问题，�
 
 $$
 \begin{aligned}
-i_t &= \sigma(W_i x_t + U_i h_{t-1} + b_i) \\
-f_t &= \sigma(W_f x_t + U_f h_{t-1} + b_f) \\
-o_t &= \sigma(W_o x_t + U_o h_{t-1} + b_o) \\
-\tilde{c}_t &= tanh(W_c x_t + U_c h_{t-1} + b_c) \\
-c_t &= f_t * c_{t-1} + i_t * \tilde{c}_t \\
+i_t &= \sigma(W_i x_t + U_i h_{t-1} + b_i) \
+f_t &= \sigma(W_f x_t + U_f h_{t-1} + b_f) \
+o_t &= \sigma(W_o x_t + U_o h_{t-1} + b_o) \
+\tilde{c}_t &= tanh(W_c x_t + U_c h_{t-1} + b_c) \
+c_t &= f_t * c_{t-1} + i_t * \tilde{c}_t \
 h_t &= o_t * tanh(c_t)
 \end{aligned}
 $$

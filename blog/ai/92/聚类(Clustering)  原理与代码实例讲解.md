@@ -106,7 +106,7 @@ K-means算法的数学模型可以表示为：
 
 $$
 \begin{align*}
-\text{最小化目标函数：} & \quad \text{minimize}_{\mu_1,\mu_2,...,\mu_K} \sum_{i=1}^N \sum_{j=1}^K d(x_i,\mu_j)^2 \\
+\text{最小化目标函数：} & \quad \text{minimize}_{\mu_1,\mu_2,...,\mu_K} \sum_{i=1}^N \sum_{j=1}^K d(x_i,\mu_j)^2 \
 \text{终止条件：} & \quad \text{质心不发生变化或达到预设的迭代次数}
 \end{align*}
 $$

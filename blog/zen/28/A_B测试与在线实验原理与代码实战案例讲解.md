@@ -80,8 +80,8 @@ A/B测试和在线实验广泛应用于电子商务、社交媒体、广告投�
 
 假设用户对A版和B版的反应分别为$X_A$和$X_B$，可以用二项分布来建模：
 
-$$X_A \\sim Bin(n_A, p_A)$$
-$$X_B \\sim Bin(n_B, p_B)$$
+$$X_A \sim Bin(n_A, p_A)$$
+$$X_B \sim Bin(n_B, p_B)$$
 
 其中$n_A$和$n_B$分别是A版和B版的用户数量，$p_A$和$p_B$分别是A版和B版的转化率。
 
@@ -95,9 +95,9 @@ $$X_B \\sim Bin(n_B, p_B)$$
 
 假设我们想要比较A版和B版的平均转化率是否有显著差异，可以使用Z检验：
 
-$$Z = \\frac{\\hat{p}_A - \\hat{p}_B}{\\sqrt{\\hat{p}(1-\\hat{p})\\left(\\frac{1}{n_A} + \\frac{1}{n_B}\\right)}}$$
+$$Z = \frac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p}(1-\hat{p})\left(\frac{1}{n_A} + \frac{1}{n_B}\right)}}$$
 
-其中$\\hat{p}$是总体转化率的估计值，$\\hat{p}_A$和$\\hat{p}_B$分别是A版和B版的估计转化率。
+其中$\hat{p}$是总体转化率的估计值，$\hat{p}_A$和$\hat{p}_B$分别是A版和B版的估计转化率。
 
 ### 4.3 案例分析与讲解
 
@@ -134,12 +134,12 @@ import numpy as np
 import scipy.stats as stats
 
 def ab_test(a_samples, b_samples):
-    \"\"\"
+    """
     Perform a simple A/B test using Z-test.
     :param a_samples: List of samples from group A.
     :param b_samples: List of samples from group B.
     :return: Z-score and p-value for significance testing.
-    \"\"\"
+    """
     a_mean, a_std = np.mean(a_samples), np.std(a_samples)
     b_mean, b_std = np.mean(b_samples), np.std(b_samples)
     n_a, n_b = len(a_samples), len(b_samples)
@@ -155,8 +155,8 @@ a_samples = np.random.binomial(1, 0.05, size=10000)  # A version with conversion
 b_samples = np.random.binomial(1, 0.06, size=10000)  # B version with conversion rate 6%
 
 z, p = ab_test(a_samples, b_samples)
-print(f\"Z-score: {z:.2f}\")
-print(f\"P-value: {p:.4f}\")
+print(f"Z-score: {z:.2f}")
+print(f"P-value: {p:.4f}")
 ```
 
 ### 5.2 源代码详细实现
@@ -168,13 +168,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
 def online_experiment(dataset, test_size, n_iterations):
-    \"\"\"
+    """
     Simulate an online experiment by training models on different data splits.
     :param dataset: DataFrame containing user data and actions.
     :param test_size: Fraction of the dataset to use for testing.
     :param n_iterations: Number of iterations to perform the experiment.
     :return: A list of model performances over iterations.
-    \"\"\"
+    """
     X_train, X_test, y_train, y_test = train_test_split(dataset.drop('action', axis=1), dataset['action'], test_size=test_size)
     performances = []
     
@@ -193,7 +193,7 @@ test_size = 0.2
 n_iterations = 100
 
 performances = online_experiment(dataset, test_size, n_iterations)
-print(f\"Average performance over iterations: {np.mean(performances):.2f}\")
+print(f"Average performance over iterations: {np.mean(performances):.2f}")
 ```
 
 ### 5.3 代码解读与分析

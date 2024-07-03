@@ -99,20 +99,20 @@
 
 **状态空间模型**：描述智能体在环境中的状态和动作之间的关系。
 
-$$ \\mathbf{x}_{t+1} = f(\\mathbf{x}_t, \\mathbf{u}_t, \\mathbf{w}_t) $$
+$$ \mathbf{x}_{t+1} = f(\mathbf{x}_t, \mathbf{u}_t, \mathbf{w}_t) $$
 
-- **$\\mathbf{x}_t$**：当前状态向量。
-- **$\\mathbf{u}_t$**：动作向量。
-- **$\\mathbf{w}_t$**：随机扰动项。
+- **$\mathbf{x}_t$**：当前状态向量。
+- **$\mathbf{u}_t$**：动作向量。
+- **$\mathbf{w}_t$**：随机扰动项。
 - **$f$**：状态转移函数。
 
 ### 4.2 公式推导过程
 
 在控制论中，状态空间模型通过微分方程描述系统的行为：
 
-$$ \\dot{\\mathbf{x}}(t) = g(\\mathbf{x}(t), \\mathbf{u}(t), t) $$
+$$ \dot{\mathbf{x}}(t) = g(\mathbf{x}(t), \mathbf{u}(t), t) $$
 
-- **$\\dot{\\mathbf{x}}(t)$**：状态的变化率。
+- **$\dot{\mathbf{x}}(t)$**：状态的变化率。
 - **$g$**：状态变化函数。
 
 ### 4.3 案例分析与讲解

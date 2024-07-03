@@ -109,10 +109,10 @@ $$
 
 $$
 e_{ij}(X_i, X_j) = \begin{pmatrix} 
-    e_r \\
+    e_r \
     e_t
 \end{pmatrix} = \begin{pmatrix}
-    R_i^T (R_j(p_j - p_i) - t_{ij}) \\
+    R_i^T (R_j(p_j - p_i) - t_{ij}) \
     \log(R_i^TR_j)
 \end{pmatrix}
 $$

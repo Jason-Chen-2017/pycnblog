@@ -134,17 +134,17 @@ tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 model = BertForQuestionAnswering.from_pretrained('bert-base-uncased')
 
 # 输入问题和上下文文本
-question = \"What is the capital of France?\"
-text = \"The capital of France is Paris.\"
+question = "What is the capital of France?"
+text = "The capital of France is Paris."
 
 # 分词和编码输入
-inputs = tokenizer(question, text, return_tensors=\"pt\", padding=\"max_length\", truncation=True)
+inputs = tokenizer(question, text, return_tensors="pt", padding="max_length", truncation=True)
 
 # 解码答案
 answer = model(**inputs).answer
 
 # 输出答案
-print(f\"Answer: {answer}\")
+print(f"Answer: {answer}")
 ```
 
 ### 5.3 代码解读与分析

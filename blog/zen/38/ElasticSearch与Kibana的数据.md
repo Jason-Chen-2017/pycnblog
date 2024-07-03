@@ -190,11 +190,11 @@ public class ElasticsearchExample {
         // 创建索引
         IndexRequest indexRequest = new IndexRequest("posts")
                 .id("1")
-                .source("{\"name\":\"John\", \"age\":30, \"about\":\"I love to go rock climbing\"}", XContentType.JSON);
+                .source("{"name":"John", "age":30, "about":"I love to go rock climbing"}", XContentType.JSON);
         client.index(indexRequest, RequestOptions.DEFAULT);
 
         // 搜索
-        String searchQuery = "{\"query\": {\"match_all\": {} } }";
+        String searchQuery = "{"query": {"match_all": {} } }";
         RestHighLevelClient searchClient = RestClient.builder(
                 new HttpHost("localhost", 9200, "http")).build();
         SearchRequest searchRequest = new SearchRequest("posts");

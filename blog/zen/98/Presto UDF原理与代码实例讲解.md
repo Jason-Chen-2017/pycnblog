@@ -266,7 +266,7 @@ $$
 
 $$
 \begin{aligned}
-\sin(c) &= \sin(a) \cdot \sin(b) \\
+\sin(c) &= \sin(a) \cdot \sin(b) \
 \cos(c) &= \cos(a) \cdot \cos(b)
 \end{aligned}
 $$

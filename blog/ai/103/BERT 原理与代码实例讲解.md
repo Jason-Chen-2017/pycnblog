@@ -149,7 +149,7 @@ BERT 使用正弦和余弦函数为每个单词添加位置信息。位置编码
 
 $$
 \begin{aligned}
-PE_{(pos, 2i)} &= sin(pos / 10000^{2i/d_{model}}) \\
+PE_{(pos, 2i)} &= sin(pos / 10000^{2i/d_{model}}) \
 PE_{(pos, 2i+1)} &= cos(pos / 10000^{2i/d_{model}})
 \end{aligned}
 $$
@@ -313,9 +313,9 @@ BERT 在实际应用场景中有着广泛的应用，例如：
 
 ### 7.1 学习资源推荐
 
-*   **BERT 论文**：\[https://arxiv.org/abs/1810.04805](https://arxiv.org/abs/1810.04805)
-*   **Transformer 论文**：\[https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
-*   **Hugging Face Transformers 库**：\[https://huggingface.co/transformers/](https://huggingface.co/transformers/)
+*   **BERT 论文**：$$https://arxiv.org/abs/1810.04805](https://arxiv.org/abs/1810.04805)
+*   **Transformer 论文**：$$https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
+*   **Hugging Face Transformers 库**：$$https://huggingface.co/transformers/](https://huggingface.co/transformers/)
 
 ### 7.2 开发工具推荐
 
@@ -330,8 +330,8 @@ BERT 在实际应用场景中有着广泛的应用，例如：
 
 ### 7.4 其他资源推荐
 
-*   **BERT Explained: State of the art language model for NLP**：\[https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f3f8fca05f8a](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f3f8fca05f8a)
-*   **A Visual Guide to Using BERT for the First Time**：\[https://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/](https://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)
+*   **BERT Explained: State of the art language model for NLP**：$$https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f3f8fca05f8a](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f3f8fca05f8a)
+*   **A Visual Guide to Using BERT for the First Time**：$$https://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/](https://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)
 
 ## 8. 总结：未来发展趋势与挑战
 

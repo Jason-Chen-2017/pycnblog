@@ -121,8 +121,8 @@ $$P(y|x)=\prod_{t=1}^n P(y_t|y_{<t},x)$$
 
 1. GPT模型：
 $$\begin{aligned}
-\boldsymbol{h}_0 &= \text{Embedding}([\boldsymbol{x};\boldsymbol{y}_{<t}]) \\
-\boldsymbol{h}_l &= \text{TransformerBlock}_l(\boldsymbol{h}_{l-1}), l=1,\cdots,L \\  
+\boldsymbol{h}_0 &= \text{Embedding}([\boldsymbol{x};\boldsymbol{y}_{<t}]) \
+\boldsymbol{h}_l &= \text{TransformerBlock}_l(\boldsymbol{h}_{l-1}), l=1,\cdots,L \  
 P(y_t|\boldsymbol{y}_{<t},\boldsymbol{x}) &= \text{softmax}(\boldsymbol{h}_L^\top \boldsymbol{W}_o)
 \end{aligned}$$
 
@@ -130,7 +130,7 @@ P(y_t|\boldsymbol{y}_{<t},\boldsymbol{x}) &= \text{softmax}(\boldsymbol{h}_L^\to
 
 2. Seq2Seq模型：
 $$\begin{aligned}
-\boldsymbol{h}_t &= \text{Encoder}(\boldsymbol{x},\boldsymbol{y}_{<t}) \\
+\boldsymbol{h}_t &= \text{Encoder}(\boldsymbol{x},\boldsymbol{y}_{<t}) \
 P(y_t|\boldsymbol{y}_{<t},\boldsymbol{x}) &= \text{Decoder}(\boldsymbol{h}_t)
 \end{aligned}$$
 
@@ -151,7 +151,7 @@ $$\boldsymbol{h}_l=\text{TransformerBlock}_l(\boldsymbol{h}_{l-1}), l=1,\cdots,L
 
 $$
 \begin{aligned}
-\text{MultiHead}(\boldsymbol{Q},\boldsymbol{K},\boldsymbol{V}) &= \text{Concat}(\text{head}_1,\cdots,\text{head}_h)\boldsymbol{W}^O \\
-\text{head}_i &= \text{Attention}(\boldsymbol{Q}\boldsymbol{W}_i^Q, \boldsymbol{K}\boldsymbol{W}_i^K, \boldsymbol{V}\boldsymbol{W}_i^V) \\
-\text{Attention}(\boldsymbol{Q},\boldsymbol{K},\boldsymbol{V}) &= \text{softmax}(\frac{\boldsymbol{Q}\boldsymbol{K}^\top}{\sqrt{d_k}})\boldsymbol{V} \\
+\text{MultiHead}(\boldsymbol{Q},\boldsymbol{K},\boldsymbol{V}) &= \text{Concat}(\text{head}_1,\cdots,\text{head}_h)\boldsymbol{W}^O \
+\text{head}_i &= \text{Attention}(\boldsymbol{Q}\boldsymbol{W}_i^Q, \boldsymbol{K}\boldsymbol{W}_i^K, \boldsymbol{V}\boldsymbol{W}_i^V) \
+\text{Attention}(\boldsymbol{Q},\boldsymbol{K},\boldsymbol{V}) &= \text{softmax}(\frac{\boldsymbol{Q}\boldsymbol{K}^\top}{\sqrt{d_k}})\boldsymbol{V} \
 \text{FFN}(\boldsymbol{x}) &= \max(0, \boldsymbol{x}\boldsymbol{W}_1 + \boldsymbol{b}_1)\boldsymbol{W}_2 + \boldsymbol{b}_2

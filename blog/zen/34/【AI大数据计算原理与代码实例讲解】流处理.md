@@ -97,9 +97,9 @@
 
 #### 4.1.1 窗口模型
 
-窗口模型描述了数据流中窗口的结构和操作。假设窗口大小为$n$，窗口内的数据序列为$x_1, x_2, \\dots, x_n$，则窗口模型可以表示为：
+窗口模型描述了数据流中窗口的结构和操作。假设窗口大小为$n$，窗口内的数据序列为$x_1, x_2, \dots, x_n$，则窗口模型可以表示为：
 
-$$W = (x_1, x_2, \\dots, x_n)$$
+$$W = (x_1, x_2, \dots, x_n)$$
 
 #### 4.1.2 概率模型
 
@@ -119,7 +119,7 @@ $$W = (x_1, x_2, \\dots, x_n)$$
 
 以时间窗口为例，假设时间窗口大小为$T$，数据流中第$t$个数据点的时间戳为$t_i$，则窗口内数据点的时间戳范围应满足：
 
-$$t_{i} - T \\leq t_i \\leq t_{i}$$
+$$t_{i} - T \leq t_i \leq t_{i}$$
 
 ### 4.3 案例分析与讲解
 
@@ -189,16 +189,16 @@ def count_window_function(window):
     return (window.count(), sum(window))
 
 # 应用窗口函数
-windowed_stream = data_stream \\
-    .assign_timestamps_and_watermarks(lambda x: x) \\
-    .window(All()) \\
+windowed_stream = data_stream \
+    .assign_timestamps_and_watermarks(lambda x: x) \
+    .window(All()) \
     .apply(count_window_function)
 
 # 打印结果
 windowed_stream.print()
 
 # 执行任务
-env.execute(\"Stream Processing Example\")
+env.execute("Stream Processing Example")
 ```
 
 ### 5.3 代码解读与分析
@@ -257,10 +257,10 @@ env.execute(\"Stream Processing Example\")
 
 ### 7.3 相关论文推荐
 
-1. **\"The Design and Implementation of the Flink System\"**: 作者：The Apache Flink Community
+1. **"The Design and Implementation of the Flink System"**: 作者：The Apache Flink Community
     - 该论文详细介绍了Apache Flink的设计和实现。
 
-2. **\"Stream Processing Systems\"**: 作者：The Apache Kafka Community
+2. **"Stream Processing Systems"**: 作者：The Apache Kafka Community
     - 该论文介绍了流处理系统的基本概念、技术和应用。
 
 ### 7.4 其他资源推荐

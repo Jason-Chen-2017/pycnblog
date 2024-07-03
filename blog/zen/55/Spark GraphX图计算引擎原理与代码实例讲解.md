@@ -149,9 +149,9 @@ graph LR
 初始时,每个页面的PageRank值为0.25。在第一次迭代后,各页面的PageRank值为:
 
 $$\begin{aligned}
-PR(A) &= \frac{1-0.85}{4} + 0.85 \times 0 = 0.0375\\
-PR(B) &= \frac{1-0.85}{4} + 0.85 \times \frac{0.25}{2} = 0.15375\\
-PR(C) &= \frac{1-0.85}{4} + 0.85 \times \left(\frac{0.25}{2} + \frac{0.25}{1}\right) = 0.34875\\
+PR(A) &= \frac{1-0.85}{4} + 0.85 \times 0 = 0.0375\
+PR(B) &= \frac{1-0.85}{4} + 0.85 \times \frac{0.25}{2} = 0.15375\
+PR(C) &= \frac{1-0.85}{4} + 0.85 \times \left(\frac{0.25}{2} + \frac{0.25}{1}\right) = 0.34875\
 PR(D) &= \frac{1-0.85}{4} + 0.85 \times \frac{0.25}{1} = 0.21375
 \end{aligned}$$
 

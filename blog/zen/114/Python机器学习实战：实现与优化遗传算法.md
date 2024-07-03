@@ -127,7 +127,7 @@ $$ probability(i) = \frac{fitness(x_i)}{\sum_{j=1}^{N} fitness(x_j)} $$
 - **单点交叉**：
 
 $$ x' = \begin{cases} 
-x_1 & \text{if } r < p \\
+x_1 & \text{if } r < p \
 x_2 & \text{otherwise}
 \end{cases} $$
 

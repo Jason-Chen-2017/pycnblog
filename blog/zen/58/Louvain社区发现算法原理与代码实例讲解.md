@@ -120,7 +120,7 @@ $$
 
 $$
 \begin{aligned}
-\Delta Q &= \left[ \frac{3 + 1}{2 \times 5} - \left( \frac{5 + 3}{2 \times 5} \right)^2 \right] - \left[ \frac{3}{2 \times 5} - \left( \frac{5}{2 \times 5} \right)^2 - \left( \frac{3}{2 \times 5} \right)^2 \right] \\
+\Delta Q &= \left[ \frac{3 + 1}{2 \times 5} - \left( \frac{5 + 3}{2 \times 5} \right)^2 \right] - \left[ \frac{3}{2 \times 5} - \left( \frac{5}{2 \times 5} \right)^2 - \left( \frac{3}{2 \times 5} \right)^2 \right] \
 &= 0.04
 \end{aligned}
 $$

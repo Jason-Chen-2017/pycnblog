@@ -71,13 +71,13 @@
 
 ### 4.1 数学模型构建
 
-强化学习中的核心数学模型是Markov Decision Processes（MDPs），描述了智能体与环境交互的过程。MDPs包括状态空间\\(S\\)、动作空间\\(A\\)、状态转移概率\\(P(s'|s,a)\\)、即时奖励\\(R(s,a,s')\\)和折扣因子\\(\\gamma\\)。
+强化学习中的核心数学模型是Markov Decision Processes（MDPs），描述了智能体与环境交互的过程。MDPs包括状态空间\(S\)、动作空间\(A\)、状态转移概率\(P(s'|s,a)\)、即时奖励\(R(s,a,s')\)和折扣因子\(\gamma\)。
 
 ### 4.2 公式推导过程
 
-强化学习的目标是寻找最优策略\\(\\pi\\)，使得长期累积奖励最大化：
+强化学习的目标是寻找最优策略\(\pi\)，使得长期累积奖励最大化：
 
-$$V_\\pi(s) = \\mathbb{E}_\\pi\\left[\\sum_{t'=0}^{\\infty} \\gamma^t R(s_t, a_t, s_{t+1}) | s_0 = s\\right]$$
+$$V_\pi(s) = \mathbb{E}_\pi\left[\sum_{t'=0}^{\infty} \gamma^t R(s_t, a_t, s_{t+1}) | s_0 = s\right]$$
 
 ### 4.3 案例分析与讲解
 

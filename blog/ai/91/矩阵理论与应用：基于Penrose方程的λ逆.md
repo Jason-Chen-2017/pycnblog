@@ -130,7 +130,7 @@ Penrose方程的推导过程涉及广义相对论和微分几何的复杂理论�
 假设Penrose方程的解矩阵为：
 
 $$
-A = \begin{pmatrix} 2 & 3 \\ 4 & 5 \end{pmatrix}
+A = \begin{pmatrix} 2 & 3 \ 4 & 5 \end{pmatrix}
 $$
 
 我们需要求解$A^{-\lambda}$。
@@ -138,13 +138,13 @@ $$
 首先，计算特征值和特征向量：
 
 $$
-\lambda_1 = 1, v_1 = \begin{pmatrix} 1 \\ 2 \end{pmatrix}, \lambda_2 = 7, v_2 = \begin{pmatrix} -1 \\ 1 \end{pmatrix}
+\lambda_1 = 1, v_1 = \begin{pmatrix} 1 \ 2 \end{pmatrix}, \lambda_2 = 7, v_2 = \begin{pmatrix} -1 \ 1 \end{pmatrix}
 $$
 
 然后，计算λ-逆：
 
 $$
-A^{-\lambda} = \begin{pmatrix} 1/2 & 3/7 \\ 2/7 & 5/7 \end{pmatrix}
+A^{-\lambda} = \begin{pmatrix} 1/2 & 3/7 \ 2/7 & 5/7 \end{pmatrix}
 $$
 
 ### 4.4 常见问题解答

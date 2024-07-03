@@ -53,8 +53,8 @@ $$L=-\sum_{i=1}^{C} y_i \log p_i$$
 
 $$
 \begin{aligned}
-p_1 &= \frac{e^{o_1}}{e^{o_1}+e^{o_2}} \\
-p_2 &= \frac{e^{o_2}}{e^{o_1}+e^{o_2}} \\
+p_1 &= \frac{e^{o_1}}{e^{o_1}+e^{o_2}} \
+p_2 &= \frac{e^{o_2}}{e^{o_1}+e^{o_2}} \
 L &= -(y_1 \log p_1 + y_2 \log p_2)
 \end{aligned}
 $$
@@ -89,7 +89,7 @@ $$\theta^*=\arg\min_{\theta} \frac{1}{N} \sum_{i=1}^{N} H(y_i,f(x_i;\theta))$$
 
 $$
 \begin{aligned}
-H(y_i,o_i) &= -\sum_{j=1}^{C} y_{ij} \log p_{ij} \\
+H(y_i,o_i) &= -\sum_{j=1}^{C} y_{ij} \log p_{ij} \
 &= -\sum_{j=1}^{C} y_{ij} \log \frac{e^{o_{ij}}}{\sum_{k=1}^{C} e^{o_{ik}}}
 \end{aligned}
 $$

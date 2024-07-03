@@ -156,9 +156,9 @@ $$
 
 $$
 R(X) = \begin{cases} 
-A_1 & \text{if } X \in S_1 \\
-A_2 & \text{if } X \in S_2 \\
-\vdots \\
+A_1 & \text{if } X \in S_1 \
+A_2 & \text{if } X \in S_2 \
+\vdots \
 A_n & \text{if } X \in S_n
 \end{cases}
 $$

@@ -73,7 +73,7 @@ D --> E[特定领域应用]
 
 $$
 \begin{aligned}
-\mathbf{Z}^{(l)} &= \text{LayerNorm}(\mathbf{A}^{(l)} + \text{MHA}(\mathbf{A}^{(l)})) \\
+\mathbf{Z}^{(l)} &= \text{LayerNorm}(\mathbf{A}^{(l)} + \text{MHA}(\mathbf{A}^{(l)})) \
 \mathbf{A}^{(l+1)} &= \text{LayerNorm}(\mathbf{Z}^{(l)} + \text{FFN}(\mathbf{Z}^{(l)}))
 \end{aligned}
 $$
@@ -85,8 +85,8 @@ $$
 
 $$
 \begin{aligned}
-\mathbf{Z}^{(l)} &= \text{LayerNorm}(\mathbf{A}^{(l)} + \text{MHA}(\mathbf{A}^{(l)}, \mathbf{A}^{(l)})) \\
-\mathbf{C}^{(l)} &= \text{LayerNorm}(\mathbf{Z}^{(l)} + \text{MHA}(\mathbf{Z}^{(l)}, \mathbf{H}^{(L)})) \\
+\mathbf{Z}^{(l)} &= \text{LayerNorm}(\mathbf{A}^{(l)} + \text{MHA}(\mathbf{A}^{(l)}, \mathbf{A}^{(l)})) \
+\mathbf{C}^{(l)} &= \text{LayerNorm}(\mathbf{Z}^{(l)} + \text{MHA}(\mathbf{Z}^{(l)}, \mathbf{H}^{(L)})) \
 \mathbf{A}^{(l+1)} &= \text{LayerNorm}(\mathbf{C}^{(l)} + \text{FFN}(\mathbf{C}^{(l)}))
 \end{aligned}
 $$
@@ -99,8 +99,8 @@ $$
 
 $$
 \begin{aligned}
-\mathbf{Q} &= \mathbf{X} \mathbf{W}^Q \\
-\mathbf{K} &= \mathbf{X} \mathbf{W}^K \\
+\mathbf{Q} &= \mathbf{X} \mathbf{W}^Q \
+\mathbf{K} &= \mathbf{X} \mathbf{W}^K \
 \mathbf{V} &= \mathbf{X} \mathbf{W}^V
 \end{aligned}
 $$
@@ -129,7 +129,7 @@ $$
 
 $$
 \begin{aligned}
-PE_{(pos, 2i)} &= \sin(pos / 10000^{2i/d}) \\
+PE_{(pos, 2i)} &= \sin(pos / 10000^{2i/d}) \
 PE_{(pos, 2i+1)} &= \cos(pos / 10000^{2i/d})
 \end{aligned}
 $$
@@ -141,7 +141,7 @@ $$
 
 $$
 \begin{aligned}
-\mathbf{R}_{i,j} &= \mathbf{w}_{clip(j-i, k)} \\
+\mathbf{R}_{i,j} &= \mathbf{w}_{clip(j-i, k)} \
 \text{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) &= \text{softmax}(\frac{\mathbf{Q} \mathbf{K}^T + \mathbf{R}}{\sqrt{d_k}}) \mathbf{V}
 \end{aligned}
 $$

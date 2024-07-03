@@ -129,10 +129,10 @@ GPT-3的核心在于其庞大的参数规模和训练数据量。它采用了Tra
 
 $$
 \begin{aligned}
-\mathbf{Q} &= \mathbf{X} \mathbf{W}^Q \\
-\mathbf{K} &= \mathbf{X} \mathbf{W}^K \\
-\mathbf{V} &= \mathbf{X} \mathbf{W}^V \\
-\mathbf{A} &= \text{softmax}(\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{d_k}}) \\
+\mathbf{Q} &= \mathbf{X} \mathbf{W}^Q \
+\mathbf{K} &= \mathbf{X} \mathbf{W}^K \
+\mathbf{V} &= \mathbf{X} \mathbf{W}^V \
+\mathbf{A} &= \text{softmax}(\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{d_k}}) \
 \text{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) &= \mathbf{A} \mathbf{V}
 \end{aligned}
 $$

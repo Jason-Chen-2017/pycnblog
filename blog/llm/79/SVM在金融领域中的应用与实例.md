@@ -106,9 +106,9 @@ SVM的数学模型如下：
 
 $$
 \begin{aligned}
-&\max_{\theta} \min_{\alpha} \frac{1}{2} \sum_{i=1}^n (\alpha_i - \sum_{j=1}^n \alpha_j y_j)(\alpha_i - \sum_{j=1}^n \alpha_j y_j)^2 \\
-&\text{s.t.} \\
-&\alpha_i \geq 0 \\
+&\max_{\theta} \min_{\alpha} \frac{1}{2} \sum_{i=1}^n (\alpha_i - \sum_{j=1}^n \alpha_j y_j)(\alpha_i - \sum_{j=1}^n \alpha_j y_j)^2 \
+&\text{s.t.} \
+&\alpha_i \geq 0 \
 &\sum_{i=1}^n \alpha_i y_i = 0
 \end{aligned}
 $$
@@ -157,9 +157,9 @@ $$
 
 $$
 \begin{aligned}
-&\max_{\alpha} \min_{\theta} \frac{1}{2} \sum_{i=1}^n (\alpha_i - \sum_{j=1}^n \alpha_j y_j)^2 + \lambda \sum_{i=1}^n \alpha_i \\
-&\text{s.t.} \\
-&\alpha_i \geq 0 \\
+&\max_{\alpha} \min_{\theta} \frac{1}{2} \sum_{i=1}^n (\alpha_i - \sum_{j=1}^n \alpha_j y_j)^2 + \lambda \sum_{i=1}^n \alpha_i \
+&\text{s.t.} \
+&\alpha_i \geq 0 \
 &\sum_{i=1}^n \alpha_i y_i = 0
 \end{aligned}
 $$

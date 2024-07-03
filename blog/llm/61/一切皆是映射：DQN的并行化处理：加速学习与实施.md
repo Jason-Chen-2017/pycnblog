@@ -129,7 +129,7 @@ DQN算法的数学模型主要包括以下部分：
 - 目标Q值函数：$Q'(s, a) = \max_{a'} Q'(s', a')$
 
 - 策略：$P(a|s) = \begin{cases} 
-1 - \epsilon & \text{以概率} 1 - \epsilon \text{选择随机动作} \\
+1 - \epsilon & \text{以概率} 1 - \epsilon \text{选择随机动作} \
 \frac{1}{Z} \sum_{a \in A} \exp(\alpha Q(s, a)) & \text{以概率} \frac{1}{Z} \exp(\alpha Q(s, a)) \text{选择动作} 
 \end{cases}$
 
@@ -165,7 +165,7 @@ $$
 
 $$
 P(a|s) = \begin{cases} 
-1 - \epsilon & \text{以概率} 1 - \epsilon \text{选择随机动作} \\
+1 - \epsilon & \text{以概率} 1 - \epsilon \text{选择随机动作} \
 \frac{1}{Z} \sum_{a \in A} \exp(\alpha Q(s, a)) & \text{以概率} \frac{1}{Z} \exp(\alpha Q(s, a)) \text{选择动作} 
 \end{cases}
 $$

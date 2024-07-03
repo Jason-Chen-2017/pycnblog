@@ -112,7 +112,7 @@ $$ E = \{ e_1, e_2, ..., e_n \} $$
 以简单的过滤操作为例：
 
 $$ r_i = F(e_i, S) = \begin{cases} 
-output\_event & (满足条件) \\
+output\_event & (满足条件) \
 \text{忽略} & (\text{不满足条件})
 \end{cases} $$
 

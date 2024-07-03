@@ -120,7 +120,7 @@ $$
 $$
 p(s'|s,a) = 
 \begin{cases} 
-1 & \text{if } s' = s + a \\
+1 & \text{if } s' = s + a \
 0 & \text{otherwise} 
 \end{cases}
 $$
@@ -130,7 +130,7 @@ $$
 $$
 r(s') = 
 \begin{cases} 
-1 & \text{if } s' = \text{终点} \\
+1 & \text{if } s' = \text{终点} \
 -1 & \text{otherwise} 
 \end{cases}
 $$

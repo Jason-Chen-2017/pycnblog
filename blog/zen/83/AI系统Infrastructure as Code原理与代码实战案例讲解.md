@@ -111,10 +111,10 @@ IaC在以下领域有广泛应用：
 
 $$
 \begin{align*}
-\text{minimize} & \quad C(x_1, x_2, \dots, x_n) \\
-\text{subject to} & \quad A_{11}x_1 + A_{12}x_2 + \dots + A_{1n}x_n \geq b_1 \\
-& \quad \vdots \\
-& \quad A_{m1}x_1 + A_{m2}x_2 + \dots + A_{mn}x_n \geq b_m \\
+\text{minimize} & \quad C(x_1, x_2, \dots, x_n) \
+\text{subject to} & \quad A_{11}x_1 + A_{12}x_2 + \dots + A_{1n}x_n \geq b_1 \
+& \quad \vdots \
+& \quad A_{m1}x_1 + A_{m2}x_2 + \dots + A_{mn}x_n \geq b_m \
 & \quad x_1, x_2, \dots, x_n \geq 0
 \end{align*}
 $$

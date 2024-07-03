@@ -196,15 +196,15 @@ model = BertForQuestionAnswering.from_pretrained('bert-base-chinese')
 
 # 加载知识图谱数据
 kg_data = {
-    \"entity1\": [\"entity1 is an entity\", \"entity1 is related to entity2\"],
-    \"entity2\": [\"entity2 is an entity\", \"entity2 is related to entity1\"],
+    "entity1": ["entity1 is an entity", "entity1 is related to entity2"],
+    "entity2": ["entity2 is an entity", "entity2 is related to entity1"],
     # ... 其他实体和关系
 }
 
 # 加载问答数据
 qa_data = {
-    \"question\": \"What is the relationship between entity1 and entity2?\",
-    \"answer\": \"entity1 is related to entity2\"
+    "question": "What is the relationship between entity1 and entity2?",
+    "answer": "entity1 is related to entity2"
 }
 
 # 实体识别
@@ -212,7 +212,7 @@ def entity_recognition(text):
     tokens = tokenizer.tokenize(text)
     entities = []
     for i, token in enumerate(tokens):
-        if token.startswith(\"B-\"):
+        if token.startswith("B-"):
             entities.append(token[2:])
     return entities
 
@@ -221,13 +221,13 @@ def relation_extraction(text):
     tokens = tokenizer.tokenize(text)
     relations = []
     for i, token in enumerate(tokens):
-        if token.startswith(\"R-\"):
+        if token.startswith("R-"):
             relations.append(token[2:])
     return relations
 
 # 问答
 def question_answering(question):
-    input_ids = tokenizer.encode(question, return_tensors=\"pt\")
+    input_ids = tokenizer.encode(question, return_tensors="pt")
     outputs = model(input_ids)
     start_logits = outputs.start_logits
     end_logits = outputs.end_logits
@@ -238,18 +238,18 @@ def question_answering(question):
 
 # 处理问答数据
 def process_qa_data(qa_data):
-    question = qa_data[\"question\"]
-    answer = qa_data[\"answer\"]
+    question = qa_data["question"]
+    answer = qa_data["answer"]
     entities = entity_recognition(question)
     relations = relation_extraction(question)
     return entities, relations, question, answer
 
 # 测试
 entities, relations, question, answer = process_qa_data(qa_data)
-print(\"Entities:\", entities)
-print(\"Relations:\", relations)
-print(\"Question:\", question)
-print(\"Answer:\", answer)
+print("Entities:", entities)
+print("Relations:", relations)
+print("Question:", question)
+print("Answer:", answer)
 ```
 
 ### 5.3 代码解读与分析

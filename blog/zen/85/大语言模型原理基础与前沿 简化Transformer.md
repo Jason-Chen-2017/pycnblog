@@ -48,7 +48,7 @@ $$
 $$
 
 $$
-\mathrm{MultiHead}(Q,K,V) = \mathrm{Concat}(\mathrm{head_1}, ..., \mathrm{head_h})W^O \\
+\mathrm{MultiHead}(Q,K,V) = \mathrm{Concat}(\mathrm{head_1}, ..., \mathrm{head_h})W^O \
 \mathrm{head_i} = \mathrm{Attention}(QW_i^Q, KW_i^K, VW_i^V)
 $$
 
@@ -121,7 +121,7 @@ $$
 多头注意力的计算可以看作多个Scaled Dot-Product Attention的结果拼接：
 
 $$
-\mathrm{MultiHead}(Q,K,V) = \mathrm{Concat}(\mathrm{head_1}, ..., \mathrm{head_h})W^O \\
+\mathrm{MultiHead}(Q,K,V) = \mathrm{Concat}(\mathrm{head_1}, ..., \mathrm{head_h})W^O \
 \mathrm{head_i} = \mathrm{Attention}(QW_i^Q, KW_i^K, VW_i^V)
 $$
 
@@ -143,20 +143,20 @@ $$
 $$
 Q = 
 \begin{bmatrix} 
-1 & 2\\
-3 & 4\\
+1 & 2\
+3 & 4\
 5 & 6
 \end{bmatrix}, 
 K = 
 \begin{bmatrix}
-2 & 1\\ 
-4 & 3\\
+2 & 1\ 
+4 & 3\
 6 & 5
 \end{bmatrix},
 V =
 \begin{bmatrix}
-0.1 & 0.2\\
-0.3 & 0.4\\
+0.1 & 0.2\
+0.3 & 0.4\
 0.5 & 0.6
 \end{bmatrix}
 $$
@@ -166,13 +166,13 @@ $$
 $$
 \mathrm{Attention}(Q,K,V) = \mathrm{softmax}(\frac{1}{\sqrt{2}}
 \begin{bmatrix}
-4 & 7 & 10\\
-7 & 14 & 21\\ 
+4 & 7 & 10\
+7 & 14 & 21\ 
 10 & 21 & 32
 \end{bmatrix})
 \begin{bmatrix}
-0.1 & 0.2\\
-0.3 & 0.4\\ 
+0.1 & 0.2\
+0.3 & 0.4\ 
 0.5 & 0.6
 \end{bmatrix}
 $$

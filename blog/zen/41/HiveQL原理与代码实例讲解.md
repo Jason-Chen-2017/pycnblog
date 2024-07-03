@@ -114,7 +114,7 @@ HiveQL 的核心数学模型是基于 SQL 的关系代数模型，它通过一�
 
 **公式**：
 
-$$ AVG\\_SALARY = \\frac{\\sum{SALARY}}{\\text{COUNT}(DEPARTMENT\\_ID)} $$
+$$ AVG\_SALARY = \frac{\sum{SALARY}}{\text{COUNT}(DEPARTMENT\_ID)} $$
 
 **HiveQL 代码**：
 
@@ -132,7 +132,7 @@ GROUP BY department_id;
 
 **公式**：
 
-$$ TOTAL\\_SALES = \\text{SUM}(QUANTITY) \\times PRICE $$
+$$ TOTAL\_SALES = \text{SUM}(QUANTITY) \times PRICE $$
 
 **HiveQL 代码**：
 
@@ -148,7 +148,7 @@ GROUP BY product_id;
 
 **公式**：
 
-$$ EVENT\\_DURATION = \\text{MAX}(ACTIVITY\\_TIME) $$
+$$ EVENT\_DURATION = \text{MAX}(ACTIVITY\_TIME) $$
 
 **HiveQL 代码**：
 
@@ -223,7 +223,7 @@ HiveQL 在以下场景中有广泛的应用：
 
 ### 7.3 相关论文推荐
 
-- **\"Hive: A Massively Parallel Data Warehouse\"**: Apache Hive 的论文，介绍了 Hive 的设计理念和技术细节。
+- **"Hive: A Massively Parallel Data Warehouse"**: Apache Hive 的论文，介绍了 Hive 的设计理念和技术细节。
 
 ### 7.4 其他资源推荐
 

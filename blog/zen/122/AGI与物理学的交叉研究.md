@@ -158,8 +158,8 @@ $$H(X) = -\sum_{i=1}^n p_i \log_2 p_i$$
 考虑一个简单的二元信源,其输出 $X$ 可能是 0 或 1,概率分别为 $p$ 和 $1-p$。我们来计算其信息熵:
 
 $$\begin{aligned}
-H(X) &= -p\log_2 p - (1-p)\log_2(1-p) \\
-     &= -p\log_2 p - \log_2(1-p) + p\log_2(1-p) \\
+H(X) &= -p\log_2 p - (1-p)\log_2(1-p) \
+     &= -p\log_2 p - \log_2(1-p) + p\log_2(1-p) \
      &= H_2(p)
 \end{aligned}$$
 

@@ -44,11 +44,11 @@
 ### 4.1 马尔可夫决策过程
 $$
 \begin{aligned}
-&\text{MDP} = (S, A, P, R, \gamma) \\
-&S: \text{状态空间} \\
-&A: \text{动作空间} \\ 
-&P: S \times A \times S \to [0, 1], \text{转移概率} \\
-&R: S \times A \to \mathbb{R}, \text{奖励函数} \\
+&\text{MDP} = (S, A, P, R, \gamma) \
+&S: \text{状态空间} \
+&A: \text{动作空间} \ 
+&P: S \times A \times S \to [0, 1], \text{转移概率} \
+&R: S \times A \to \mathbb{R}, \text{奖励函数} \
 &\gamma \in [0, 1], \text{折扣因子}
 \end{aligned}
 $$

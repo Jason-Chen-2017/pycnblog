@@ -156,10 +156,10 @@ $$
 这些开销可以通过一些公式进行估算,例如:
 
 $$
-CPU(P) = \sum\limits_{i=1}^{n} CPU_i(P) \\
-IO(P) = \sum\limits_{i=1}^{n} IO_i(P) \\
-MEMORY(P) = \max\limits_{i=1}^{n} MEMORY_i(P) \\
-NETWORK(P) = \sum\limits_{i=1}^{n} NETWORK_i(P) \\
+CPU(P) = \sum\limits_{i=1}^{n} CPU_i(P) \
+IO(P) = \sum\limits_{i=1}^{n} IO_i(P) \
+MEMORY(P) = \max\limits_{i=1}^{n} MEMORY_i(P) \
+NETWORK(P) = \sum\limits_{i=1}^{n} NETWORK_i(P) \
 DATA(P) = \prod\limits_{i=1}^{n} DATA_i(P)
 $$
 
@@ -199,9 +199,9 @@ $$
 
 $$
 \begin{aligned}
-Cost_1 &= IO(R) + CPU(\sigma_{C>10}) + IO(\sigma_{C>10}(R)) \\
-       &+ CPU(\pi_{A,B}) + IO(\pi_{A,B}(\sigma_{C>10}(R))) \\
-Cost_2 &= IO(R) + CPU(\pi_{A,B,C}) + IO(\pi_{A,B,C}(R)) \\
+Cost_1 &= IO(R) + CPU(\sigma_{C>10}) + IO(\sigma_{C>10}(R)) \
+       &+ CPU(\pi_{A,B}) + IO(\pi_{A,B}(\sigma_{C>10}(R))) \
+Cost_2 &= IO(R) + CPU(\pi_{A,B,C}) + IO(\pi_{A,B,C}(R)) \
        &+ CPU(\sigma_{C>10}) + IO(\sigma_{C>10}(\pi_{A,B,C}(R)))
 \end{aligned}
 $$

@@ -201,7 +201,7 @@ $$Q^\pi(s,a) = \mathbb{E}_\pi\left[\sum_{t=0}^\infty \gamma^t R(s_t, a_t) \Big| 
 状态值函数和行为值函数可通过**贝尔曼方程**相互推导:
 
 $$\begin{aligned}
-V^\pi(s) &= \sum_{a\in A}\pi(a|s)Q^\pi(s,a)\\
+V^\pi(s) &= \sum_{a\in A}\pi(a|s)Q^\pi(s,a)\
 Q^\pi(s,a) &= R(s,a) + \gamma\sum_{s'\in S}P(s'|s,a)V^\pi(s')
 \end{aligned}$$
 

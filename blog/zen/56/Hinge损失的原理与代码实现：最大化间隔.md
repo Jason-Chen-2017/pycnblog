@@ -21,7 +21,7 @@ $$L(y,f(x))=max(0,1-yf(x))$$
 ### 2.2 Hinge损失与0/1损失的关系
 0/1损失函数定义为:
 $$L_{0/1}(y,f(x))=\begin{cases}
-0, & yf(x)>0 \\
+0, & yf(x)>0 \
 1, & yf(x)\leq0
 \end{cases}$$
 
@@ -48,11 +48,11 @@ $$\min_{w,b} \frac{1}{N}\sum_{i=1}^N max(0,1-y_i(w^Tx_i+b)) + \lambda\|w\|^2$$
 1. 随机选择一个样本$(x_i,y_i)$
 2. 计算损失函数关于参数的梯度:
 $$\frac{\partial L}{\partial w}=\begin{cases}
--y_ix_i+2\lambda w, & y_i(w^Tx_i+b)<1 \\
+-y_ix_i+2\lambda w, & y_i(w^Tx_i+b)<1 \
 2\lambda w, & otherwise
 \end{cases}$$
 $$\frac{\partial L}{\partial b}=\begin{cases}
--y_i, & y_i(w^Tx_i+b)<1 \\
+-y_i, & y_i(w^Tx_i+b)<1 \
 0, & otherwise
 \end{cases}$$
 3. 更新参数: 
@@ -64,7 +64,7 @@ $$w\leftarrow w-\eta\frac{\partial L}{\partial w}, b\leftarrow b-\eta\frac{\part
 对于Hinge损失$L(y,f(x))=max(0,1-yf(x))$,其梯度计算如下:
 
 $$\frac{\partial L}{\partial f(x)}=\begin{cases}
--y, & yf(x)<1 \\
+-y, & yf(x)<1 \
 0, & yf(x)\geq1
 \end{cases}$$
 

@@ -144,7 +144,7 @@ $$
 
 $$
 s = \begin{cases} 
-\text{"夜间模式"} \\
+\text{"夜间模式"} \
 \text{"白天模式"}
 \end{cases}
 $$

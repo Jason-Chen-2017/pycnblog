@@ -104,9 +104,9 @@ graph TD
 $$
 s(t+1) = 
 \begin{cases}
-0, & s(t)=0 \\
-0, & s(t)=1 \text{ and } a(t)=1 \\
-0, & s(t)=1 \text{ and } a(t)=0 \text{ and } t-t_0 \geq T \\
+0, & s(t)=0 \
+0, & s(t)=1 \text{ and } a(t)=1 \
+0, & s(t)=1 \text{ and } a(t)=0 \text{ and } t-t_0 \geq T \
 1, & s(t)=1 \text{ and } a(t)=0 \text{ and } t-t_0 < T
 \end{cases}
 $$

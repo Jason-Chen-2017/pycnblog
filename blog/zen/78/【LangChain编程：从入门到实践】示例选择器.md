@@ -58,7 +58,7 @@
 
 $$
 f(x) = \begin{cases} 
-1 & \text{if } x \text{ satisfies the selection condition} \\
+1 & \text{if } x \text{ satisfies the selection condition} \
 0 & \text{otherwise}
 \end{cases}
 $$
@@ -71,7 +71,7 @@ $$
 
 $$
 f(x) = \begin{cases} 
-1 & \text{if } x \text{ is a function} \\
+1 & \text{if } x \text{ is a function} \
 0 & \text{otherwise}
 \end{cases}
 $$

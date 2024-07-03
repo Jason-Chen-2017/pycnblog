@@ -114,22 +114,22 @@ $$O=I*W+B$$
 假设我们有一个$3\times 3$的输入张量$I$:
 
 $$I=\begin{bmatrix}
-1 & 2 & 3\\
-4 & 5 & 6\\
+1 & 2 & 3\
+4 & 5 & 6\
 7 & 8 & 9
 \end{bmatrix}$$
 
 和一个$2\times 2$的卷积核$W$:
 
 $$W=\begin{bmatrix}
-1 & 2\\
+1 & 2\
 3 & 4
 \end{bmatrix}$$
 
 步长为1,不使用填充。则输出张量$O$为:
 
 $$O=\begin{bmatrix}
-37 & 47\\
+37 & 47\
 67 & 77
 \end{bmatrix}$$
 

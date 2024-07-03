@@ -103,7 +103,7 @@ $$
 
 $$
 R(s, a) = \begin{cases} 
-R_{\text{max}} & \text{if } s = s_t \\
+R_{\text{max}} & \text{if } s = s_t \
 -R_{\text{min}} & \text{if } s \
 eq s_t 
 \end{cases}

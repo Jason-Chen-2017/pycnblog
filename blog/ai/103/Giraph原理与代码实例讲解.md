@@ -126,7 +126,7 @@ $$msg_{out}(v,t) = \Delta(val'(v,t))$$
 
 我们可以将上述数学模型推广到整个图形,定义图形的值向量 $\vec{val}(t)$ 和消息向量 $\vec{msg}(t)$:
 
-$$\vec{val}(t) = \begin{bmatrix} val(v_1) \\ val(v_2) \\ \vdots \\ val(v_n) \end{bmatrix}, \vec{msg}(t) = \begin{bmatrix} msg_{in}(v_1,t) \\ msg_{in}(v_2,t) \\ \vdots \\ msg_{in}(v_n,t) \end{bmatrix}$$
+$$\vec{val}(t) = \begin{bmatrix} val(v_1) \ val(v_2) \ \vdots \ val(v_n) \end{bmatrix}, \vec{msg}(t) = \begin{bmatrix} msg_{in}(v_1,t) \ msg_{in}(v_2,t) \ \vdots \ msg_{in}(v_n,t) \end{bmatrix}$$
 
 其中 $n$ 是图形中顶点的总数。
 

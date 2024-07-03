@@ -107,8 +107,8 @@ Self-Attention是Transformer的核心组件。对于输入序列$\mathbf{X}=(\ma
 1. 将每个输入向量$\mathbf{x}_i$通过三个线性变换得到Query向量$\mathbf{q}_i$,Key向量$\mathbf{k}_i$和Value向量$\mathbf{v}_i$:
 
 $$
-\mathbf{q}_i = \mathbf{W}^Q\mathbf{x}_i \\
-\mathbf{k}_i = \mathbf{W}^K\mathbf{x}_i \\ 
+\mathbf{q}_i = \mathbf{W}^Q\mathbf{x}_i \
+\mathbf{k}_i = \mathbf{W}^K\mathbf{x}_i \ 
 \mathbf{v}_i = \mathbf{W}^V\mathbf{x}_i
 $$
 

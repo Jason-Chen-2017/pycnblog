@@ -88,20 +88,20 @@ DQN及其变种在游戏、机器人控制、自动驾驶、医疗诊断、金�
 
 ### 4.1 数学模型构建
 
-DQN算法的核心数学模型构建围绕着状态-动作值函数（Q函数）的学习。设$Q(s, a)$为在状态$s$下采取动作$a$后的期望回报，DQN的目标是通过深度学习网络$\\hat{Q}(s, a)$逼近真实的Q函数。学习过程涉及以下步骤：
+DQN算法的核心数学模型构建围绕着状态-动作值函数（Q函数）的学习。设$Q(s, a)$为在状态$s$下采取动作$a$后的期望回报，DQN的目标是通过深度学习网络$\hat{Q}(s, a)$逼近真实的Q函数。学习过程涉及以下步骤：
 
-$$\\min_{\\theta} \\mathbb{E}_{(s,a,r,s') \\sim \\mathcal{D}} \\left[ (\\hat{Q}(s, a) - (r + \\gamma \\max_{a'} \\hat{Q}(s', a')))^2 \\right]$$
+$$\min_{\theta} \mathbb{E}_{(s,a,r,s') \sim \mathcal{D}} \left[ (\hat{Q}(s, a) - (r + \gamma \max_{a'} \hat{Q}(s', a')))^2 \right]$$
 
-其中，$\\mathcal{D}$是经验回放池，$\\gamma$是折扣因子，$\\theta$是Q网络的参数。
+其中，$\mathcal{D}$是经验回放池，$\gamma$是折扣因子，$\theta$是Q网络的参数。
 
 ### 4.2 公式推导过程
 
-DQN算法的核心公式涉及到损失函数的最小化，该损失函数衡量了预测值$\\hat{Q}(s, a)$与实际回报$r$加上下一个状态的最高Q值$\\max_{a'} \\hat{Q}(s', a')$之间的差距。通过梯度下降法，更新Q网络的参数$\\theta$以最小化此损失：
+DQN算法的核心公式涉及到损失函数的最小化，该损失函数衡量了预测值$\hat{Q}(s, a)$与实际回报$r$加上下一个状态的最高Q值$\max_{a'} \hat{Q}(s', a')$之间的差距。通过梯度下降法，更新Q网络的参数$\theta$以最小化此损失：
 
-$$\\theta_{new} = \\theta_{old} - \\alpha \\cdot \
-abla_{\\theta} \\left[ \\frac{1}{|\\mathcal{D}|} \\sum_{(s, a, r, s') \\in \\mathcal{D}} \\left( \\hat{Q}(s, a) - \\left(r + \\gamma \\max_{a'} \\hat{Q}(s', a')\\right) \\right)^2 \\right]$$
+$$\theta_{new} = \theta_{old} - \alpha \cdot \
+abla_{\theta} \left[ \frac{1}{|\mathcal{D}|} \sum_{(s, a, r, s') \in \mathcal{D}} \left( \hat{Q}(s, a) - \left(r + \gamma \max_{a'} \hat{Q}(s', a')\right) \right)^2 \right]$$
 
-其中，$\\alpha$是学习率。
+其中，$\alpha$是学习率。
 
 ### 4.3 案例分析与讲解
 

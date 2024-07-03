@@ -119,7 +119,7 @@ $$
 $$
 \text{Huber}(y, \hat{y}) = 
 \begin{cases} 
-\frac{1}{2}(y - \hat{y})^2 & \text{if } |y - \hat{y}| \leq \delta \\
+\frac{1}{2}(y - \hat{y})^2 & \text{if } |y - \hat{y}| \leq \delta \
 \delta |y - \hat{y}| & \text{otherwise}
 \end{cases}
 $$
@@ -136,9 +136,9 @@ $$
 
 $$
 \begin{aligned}
-\text{MSE}(y, \hat{y}) &= \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y_i})^2 \\
-&= \frac{1}{n}\sum_{i=1}^{n}(y_i^2 - 2y_i\hat{y_i} + \hat{y_i}^2) \\
-&= \frac{1}{n}(\sum_{i=1}^{n}y_i^2 - 2\sum_{i=1}^{n}y_i\hat{y_i} + \sum_{i=1}^{n}\hat{y_i}^2) \\
+\text{MSE}(y, \hat{y}) &= \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y_i})^2 \
+&= \frac{1}{n}\sum_{i=1}^{n}(y_i^2 - 2y_i\hat{y_i} + \hat{y_i}^2) \
+&= \frac{1}{n}(\sum_{i=1}^{n}y_i^2 - 2\sum_{i=1}^{n}y_i\hat{y_i} + \sum_{i=1}^{n}\hat{y_i}^2) \
 &= \frac{1}{n}(\sum_{i=1}^{n}y_i^2 + \sum_{i=1}^{n}\hat{y_i}^2) - 2\frac{1}{n}\sum_{i=1}^{n}y_i\hat{y_i}
 \end{aligned}
 $$
@@ -151,11 +151,11 @@ $$
 
 $$
 \begin{aligned}
-\text{CE}(y, \hat{y}) &= -\sum_{i=1}^{n}y_i\log \hat{y_i} \\
-&= -\sum_{i=1}^{n}y_i\log(\sum_{k=1}^{K}\hat{y_{ik}}) \\
-&= -\sum_{i=1}^{n}y_i\log(\hat{y_{ik}}) \\
-&= -\sum_{i=1}^{n}\sum_{k=1}^{K}y_i\log \hat{y_{ik}} \quad (\because y_i \in \{0,1\}) \\
-&= -\sum_{k=1}^{K}\log \hat{y_{ik}} \sum_{i=1}^{n}y_i \\
+\text{CE}(y, \hat{y}) &= -\sum_{i=1}^{n}y_i\log \hat{y_i} \
+&= -\sum_{i=1}^{n}y_i\log(\sum_{k=1}^{K}\hat{y_{ik}}) \
+&= -\sum_{i=1}^{n}y_i\log(\hat{y_{ik}}) \
+&= -\sum_{i=1}^{n}\sum_{k=1}^{K}y_i\log \hat{y_{ik}} \quad (\because y_i \in \{0,1\}) \
+&= -\sum_{k=1}^{K}\log \hat{y_{ik}} \sum_{i=1}^{n}y_i \
 &= -\sum_{k=1}^{K}\log \hat{y_{ik}}
 \end{aligned}
 $$
@@ -170,17 +170,17 @@ $$
 \begin{aligned}
 \text{Huber}(y, \hat{y}) &= 
 \begin{cases} 
-\frac{1}{2}(y - \hat{y})^2 & \text{if } |y - \hat{y}| \leq \delta \\
+\frac{1}{2}(y - \hat{y})^2 & \text{if } |y - \hat{y}| \leq \delta \
 \delta |y - \hat{y}| & \text{otherwise}
-\end{cases} \\
+\end{cases} \
 &= 
 \begin{cases} 
-\frac{1}{2}(\hat{y} - y)^2 & \text{if } |\hat{y} - y| \leq \delta \\
+\frac{1}{2}(\hat{y} - y)^2 & \text{if } |\hat{y} - y| \leq \delta \
 \delta |\hat{y} - y| & \text{otherwise}
-\end{cases} \\
+\end{cases} \
 &= 
 \begin{cases} 
-\frac{1}{2}(\hat{y} - y)^2 & \text{if } |\hat{y} - y| \leq \delta \\
+\frac{1}{2}(\hat{y} - y)^2 & \text{if } |\hat{y} - y| \leq \delta \
 \delta |\hat{y} - y| & \text{otherwise}
 \end{cases}
 \end{aligned}

@@ -69,8 +69,8 @@ Spark Streaming支持基于滑动窗口的聚合计算,如下公式:
 
 $$ 
 \begin{aligned}
-&\textit{windowDuration = 10 分钟} \\ 
-&\textit{slideDuration = 5 分钟} \\
+&\textit{windowDuration = 10 分钟} \ 
+&\textit{slideDuration = 5 分钟} \
 &\textit{操作 = reduceByWindow(_ + _)}
 \end{aligned}
 $$
@@ -82,16 +82,16 @@ $$
 
 $$
 \begin{aligned}
-&\textit{// 读取流数据,每5秒一个批次}\\
-&\textit{val lines = ssc.socketTextStream("localhost", 9999, StorageLevel.MEMORY_AND_DISK_SER)} \\
-&\textit{// 对每个批次的数据进行 TopN 排序} \\  
-&\textit{val topN = lines} \\
-&\quad \textit{.flatMap(_.split(" "))} \\
-&\quad \textit{.map(word => (word, 1))} \\ 
-&\quad \textit{.reduceByKey(_ + _)} \\
-&\quad \textit{.map(_.swap)} \\
-&\quad \textit{.transform(rdd => rdd.sortByKey(false))} \\
-&\quad \textit{.map(_.swap)} \\
+&\textit{// 读取流数据,每5秒一个批次}\
+&\textit{val lines = ssc.socketTextStream("localhost", 9999, StorageLevel.MEMORY_AND_DISK_SER)} \
+&\textit{// 对每个批次的数据进行 TopN 排序} \  
+&\textit{val topN = lines} \
+&\quad \textit{.flatMap(_.split(" "))} \
+&\quad \textit{.map(word => (word, 1))} \ 
+&\quad \textit{.reduceByKey(_ + _)} \
+&\quad \textit{.map(_.swap)} \
+&\quad \textit{.transform(rdd => rdd.sortByKey(false))} \
+&\quad \textit{.map(_.swap)} \
 &\quad \textit{.transform(_.take(3))}
 \end{aligned}
 $$

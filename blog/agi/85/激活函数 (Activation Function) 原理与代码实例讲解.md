@@ -87,7 +87,7 @@ $$
 
 $$
 Leaky ReLU(x) = \begin{cases}
-x & \text{if } x > 0 \\
+x & \text{if } x > 0 \
 \alpha x & \text{if } x \leq 0
 \end{cases}
 $$
@@ -98,7 +98,7 @@ $$
 
 $$
 ELU(x) = \begin{cases}
-x & \text{if } x > 0 \\
+x & \text{if } x > 0 \
 \alpha(e^x - 1) & \text{if } x \leq 0
 \end{cases}
 $$
@@ -169,7 +169,7 @@ $$
 
 $$
 Leaky ReLU(x) = \begin{cases}
-x & \text{if } x > 0 \\
+x & \text{if } x > 0 \
 \alpha x & \text{if } x \leq 0
 \end{cases}
 $$
@@ -180,7 +180,7 @@ $$
 
 $$
 ELU(x) = \begin{cases}
-x & \text{if } x > 0 \\
+x & \text{if } x > 0 \
 \alpha(e^x - 1) & \text{if } x \leq 0
 \end{cases}
 $$
@@ -237,7 +237,7 @@ Leaky ReLU函数的公式可以推导如下：
 
 $$
 Leaky ReLU(x) = \begin{cases}
-x & \text{if } x > 0 \\
+x & \text{if } x > 0 \
 \alpha x & \text{if } x \leq 0
 \end{cases}
 $$
@@ -250,7 +250,7 @@ ELU函数的公式可以推导如下：
 
 $$
 ELU(x) = \begin{cases}
-x & \text{if } x > 0 \\
+x & \text{if } x > 0 \
 \alpha(e^x - 1) & \text{if } x \leq 0
 \end{cases}
 $$
@@ -289,10 +289,10 @@ $$
 
 $$
 \begin{align*}
-\sigma(x_1) &= \frac{1}{1+e^{-(-2)}} = 0.1186 \\
-\sigma(x_2) &= \frac{1}{1+e^{-(-1)}} = 0.2689 \\
-\sigma(x_3) &= \frac{1}{1+e^{-0}} = 0.5 \\
-\sigma(x_4) &= \frac{1}{1+e^{-1}} = 0.7311 \\
+\sigma(x_1) &= \frac{1}{1+e^{-(-2)}} = 0.1186 \
+\sigma(x_2) &= \frac{1}{1+e^{-(-1)}} = 0.2689 \
+\sigma(x_3) &= \frac{1}{1+e^{-0}} = 0.5 \
+\sigma(x_4) &= \frac{1}{1+e^{-1}} = 0.7311 \
 \sigma(x_5) &= \frac{1}{1+e^{-2}} = 0.8415
 \end{align*}
 $$
@@ -303,10 +303,10 @@ $$
 
 $$
 \begin{align*}
-ReLU(x_1) &= 0 \\
-ReLU(x_2) &= 0 \\
-ReLU(x_3) &= 0 \\
-ReLU(x_4) &= 1 \\
+ReLU(x_1) &= 0 \
+ReLU(x_2) &= 0 \
+ReLU(x_3) &= 0 \
+ReLU(x_4) &= 1 \
 ReLU(x_5) &= 2
 \end{align*}
 $$
@@ -317,10 +317,10 @@ $$
 
 $$
 \begin{align*}
-Swish(x_1) &= -0.0118 \\
-Swish(x_2) &= 0.0218 \\
-Swish(x_3) &= 0.5 \\
-Swish(x_4) &= 0.9311 \\
+Swish(x_1) &= -0.0118 \
+Swish(x_2) &= 0.0218 \
+Swish(x_3) &= 0.5 \
+Swish(x_4) &= 0.9311 \
 Swish(x_5) &= 1.998
 \end{align*}
 $$

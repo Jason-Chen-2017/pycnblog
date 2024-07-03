@@ -149,10 +149,10 @@ optimizer.load_state_dict(model_dict['optimizer_state_dict'])
 ### 4.2 公式推导过程
 
 - **逻辑回归**的目标函数：最小化交叉熵损失函数
-  $$ J(\\theta) = - \\frac{1}{m} \\sum_{i=1}^{m} [y_i \\log h_\\theta(x_i) + (1 - y_i) \\log(1 - h_\\theta(x_i))] $$
+  $$ J(\theta) = - \frac{1}{m} \sum_{i=1}^{m} [y_i \log h_\theta(x_i) + (1 - y_i) \log(1 - h_\theta(x_i))] $$
   
 - **支持向量机**的目标函数：最大化间隔和最小化分类错误
-  $$ \\min_{w, b} \\frac{1}{2} w^T w + C \\sum_{i=1}^{m} \\xi_i $$
+  $$ \min_{w, b} \frac{1}{2} w^T w + C \sum_{i=1}^{m} \xi_i $$
   
 ### 4.3 案例分析与讲解
 

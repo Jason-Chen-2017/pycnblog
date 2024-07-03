@@ -84,11 +84,11 @@ Storm Bolt广泛应用于实时数据分析、电商系统、在线游戏、金�
 
 Storm Bolt的数学模型主要围绕事件处理和消息传递进行构建。以下是一个简化版本的模型：
 
-设$E$为事件集合，$M$为消息队列，$S$为服务集合。对于任意事件$e \\in E$，系统通过事件处理函数$f_e$将事件映射到消息$m \\in M$。消息通过路由机制$r$发送至服务$s \\in S$进行处理。
+设$E$为事件集合，$M$为消息队列，$S$为服务集合。对于任意事件$e \in E$，系统通过事件处理函数$f_e$将事件映射到消息$m \in M$。消息通过路由机制$r$发送至服务$s \in S$进行处理。
 
 数学表达为：
 
-$M = \\bigcup_{e \\in E} f_e(e)$
+$M = \bigcup_{e \in E} f_e(e)$
 
 服务$s$处理消息$m$的结果反馈为结果集$R$。
 
@@ -154,13 +154,13 @@ public class OrderService {
     public void processOrder(String orderId) {
         // 消息处理逻辑
         String event = queue.receive();
-        if (\"orderSubmitted\".equals(event)) {
+        if ("orderSubmitted".equals(event)) {
             // 处理提交的订单
             handleOrderSubmission(orderId);
-        } else if (\"paymentSuccess\".equals(event)) {
+        } else if ("paymentSuccess".equals(event)) {
             // 处理支付成功的事件
             handlePaymentSuccess(orderId);
-        } else if (\"inventoryUpdated\".equals(event)) {
+        } else if ("inventoryUpdated".equals(event)) {
             // 处理库存更新事件
             handleInventoryUpdate(orderId);
         }

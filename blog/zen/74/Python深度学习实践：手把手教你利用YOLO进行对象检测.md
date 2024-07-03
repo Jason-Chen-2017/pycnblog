@@ -97,8 +97,8 @@ YOLO算法的核心在于其独特的单阶段检测方式，通过引入锚框�
 
 $$
 \text{Anchor} = \begin{bmatrix}
-w \cdot r \\
-h \cdot r \\
+w \cdot r \
+h \cdot r \
 \end{bmatrix}
 $$
 
@@ -122,7 +122,7 @@ NMS通过以下步骤进行：
 
 $$
 \text{NMS}(box_i, boxes_j) = \begin{cases}
-\text{True}, & \text{if IoU(box_i, box_j) > threshold} \\
+\text{True}, & \text{if IoU(box_i, box_j) > threshold} \
 \text{False}, & \text{otherwise}
 \end{cases}
 $$

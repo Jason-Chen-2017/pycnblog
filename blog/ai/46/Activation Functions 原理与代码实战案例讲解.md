@@ -103,18 +103,18 @@
 **Sigmoid**：
 
 $$\begin{align*}
-y &= \frac{1}{1 + e^{-x}} \\
-\frac{dy}{dx} &= \frac{e^{-x}}{(1 + e^{-x})^2} \\
-&= \frac{dy}{dx} \cdot \frac{1 + e^{-x}}{1 + e^{-x}} \\
+y &= \frac{1}{1 + e^{-x}} \
+\frac{dy}{dx} &= \frac{e^{-x}}{(1 + e^{-x})^2} \
+&= \frac{dy}{dx} \cdot \frac{1 + e^{-x}}{1 + e^{-x}} \
 &= \frac{dy}{dx} \cdot \left(1 - y\right)
 \end{align*}$$
 
 **Tanh**：
 
 $$\begin{align*}
-y &= \frac{e^x - e^{-x}}{e^x + e^{-x}} \\
-\frac{dy}{dx} &= \frac{e^x + e^{-x}}{e^x + e^{-x}} - \frac{e^x - e^{-x}}{e^x + e^{-x}} \\
-&= \frac{2}{e^{2x} + 1} \cdot 2e^{-x} \\
+y &= \frac{e^x - e^{-x}}{e^x + e^{-x}} \
+\frac{dy}{dx} &= \frac{e^x + e^{-x}}{e^x + e^{-x}} - \frac{e^x - e^{-x}}{e^x + e^{-x}} \
+&= \frac{2}{e^{2x} + 1} \cdot 2e^{-x} \
 &= \frac{2e^{-x}}{1 + e^{2x}}
 \end{align*}$$
 

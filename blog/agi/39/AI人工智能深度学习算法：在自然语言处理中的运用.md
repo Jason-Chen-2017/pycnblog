@@ -125,10 +125,10 @@ LSTM模型的数学公式如下：
 
 $$
 \begin{align*}
-i_t &= \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i) \\
-f_t &= \sigma(W_{xf}x_t + W_{hf}h_{t-1} + b_f) \\
-o_t &= \sigma(W_{xo}x_t + W_{ho}h_{t-1} + b_o) \\
-c_t &= f_t \circ c_{t-1} + i_t \circ \tanh(W_{xc}x_t + W_{hc}h_{t-1} + b_c) \\
+i_t &= \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i) \
+f_t &= \sigma(W_{xf}x_t + W_{hf}h_{t-1} + b_f) \
+o_t &= \sigma(W_{xo}x_t + W_{ho}h_{t-1} + b_o) \
+c_t &= f_t \circ c_{t-1} + i_t \circ \tanh(W_{xc}x_t + W_{hc}h_{t-1} + b_c) \
 h_t &= o_t \circ \tanh(c_t)
 \end{align*}
 $$
@@ -176,9 +176,9 @@ BERT模型的数学公式如下：
 
 $$
 \begin{align*}
-E &= \text{Concat}(E_1, E_2, \dots, E_N) \\
-P &= \text{MaskedLM}(E, \text{mask}) \\
-M &= \text{Softmax}(P) \\
+E &= \text{Concat}(E_1, E_2, \dots, E_N) \
+P &= \text{MaskedLM}(E, \text{mask}) \
+M &= \text{Softmax}(P) \
 \hat{y} &= \text{argmax}(M)
 \end{align*}
 $$

@@ -123,7 +123,7 @@ graph LR
 
 $$
 \begin{align*}
-S_t &\rightarrow A_t \rightarrow R_t, S_{t+1} \\
+S_t &\rightarrow A_t \rightarrow R_t, S_{t+1} \
 S_t &\in S, A_t \in A, R_t \in \mathbb{R}, S_{t+1} \in S
 \end{align*}
 $$

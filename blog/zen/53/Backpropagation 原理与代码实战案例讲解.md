@@ -156,7 +156,7 @@ $$
 
 隐藏层:
 $$
-h_1 = f(w_{11} x_1 + w_{21} x_2 - \gamma_1) \\
+h_1 = f(w_{11} x_1 + w_{21} x_2 - \gamma_1) \
 h_2 = f(w_{12} x_1 + w_{22} x_2 - \gamma_2)
 $$
 
@@ -174,8 +174,8 @@ $$
 
 $$
 \begin{aligned}
-\delta &= \frac{\partial E}{\partial y} \cdot \frac{\partial y}{\partial net} \\
-&= -(t - y) \cdot f'(net) \\
+\delta &= \frac{\partial E}{\partial y} \cdot \frac{\partial y}{\partial net} \
+&= -(t - y) \cdot f'(net) \
 &= -(t - y) \cdot y(1 - y)
 \end{aligned}
 $$
@@ -184,9 +184,9 @@ $$
 
 $$
 \begin{aligned}
-\epsilon_1 &= \frac{\partial E}{\partial h_1} = \frac{\partial E}{\partial y} \cdot \frac{\partial y}{\partial h_1} \\
-&= \delta \cdot v_1 \cdot h_1(1 - h_1) \\
-\epsilon_2 &= \frac{\partial E}{\partial h_2} = \frac{\partial E}{\partial y} \cdot \frac{\partial y}{\partial h_2} \\
+\epsilon_1 &= \frac{\partial E}{\partial h_1} = \frac{\partial E}{\partial y} \cdot \frac{\partial y}{\partial h_1} \
+&= \delta \cdot v_1 \cdot h_1(1 - h_1) \
+\epsilon_2 &= \frac{\partial E}{\partial h_2} = \frac{\partial E}{\partial y} \cdot \frac{\partial y}{\partial h_2} \
 &= \delta \cdot v_2 \cdot h_2(1 - h_2)
 \end{aligned}
 $$
@@ -195,14 +195,14 @@ $$
 
 $$
 \begin{aligned}
-v_1 &:= v_1 - \alpha \cdot \delta \cdot h_1 \\
-v_2 &:= v_2 - \alpha \cdot \delta \cdot h_2 \\
-w_{11} &:= w_{11} - \alpha \cdot \epsilon_1 \cdot x_1 \\ 
-w_{21} &:= w_{21} - \alpha \cdot \epsilon_1 \cdot x_2 \\
-w_{12} &:= w_{12} - \alpha \cdot \epsilon_2 \cdot x_1 \\
-w_{22} &:= w_{22} - \alpha \cdot \epsilon_2 \cdot x_2 \\
-\theta &:= \theta + \alpha \cdot \delta \\
-\gamma_1 &:= \gamma_1 + \alpha \cdot \epsilon_1 \\
+v_1 &:= v_1 - \alpha \cdot \delta \cdot h_1 \
+v_2 &:= v_2 - \alpha \cdot \delta \cdot h_2 \
+w_{11} &:= w_{11} - \alpha \cdot \epsilon_1 \cdot x_1 \ 
+w_{21} &:= w_{21} - \alpha \cdot \epsilon_1 \cdot x_2 \
+w_{12} &:= w_{12} - \alpha \cdot \epsilon_2 \cdot x_1 \
+w_{22} &:= w_{22} - \alpha \cdot \epsilon_2 \cdot x_2 \
+\theta &:= \theta + \alpha \cdot \delta \
+\gamma_1 &:= \gamma_1 + \alpha \cdot \epsilon_1 \
 \gamma_2 &:= \gamma_2 + \alpha \cdot \epsilon_2
 \end{aligned}
 $$

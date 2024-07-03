@@ -40,11 +40,11 @@ Reissner-Nordstrom解对于理解带电黑洞的性质至关重要。它不仅�
 
 Reissner-Nordstrom解是在爱因斯坦场方程中加入电荷源项后的解，形式为：
 
-\\[
-ds^2 = -(1 - \\frac{2Mr - Q^2}{\\rho^2})dt^2 + \\frac{d\\rho^2}{1 - \\frac{2Mr - Q^2}{\\rho^2}} + \\rho^2 d\\Omega^2
-\\]
+$$
+ds^2 = -(1 - \frac{2Mr - Q^2}{\rho^2})dt^2 + \frac{d\rho^2}{1 - \frac{2Mr - Q^2}{\rho^2}} + \rho^2 d\Omega^2
+$$
 
-其中，\\(M\\)是质量，\\(Q\\)是电荷，\\(\\rho\\)是坐标。这个解描述了一个带电的黑洞，其特性包括奇点、事件视界和外视界等。
+其中，\(M\)是质量，\(Q\)是电荷，\(\rho\)是坐标。这个解描述了一个带电的黑洞，其特性包括奇点、事件视界和外视界等。
 
 ## 3. 核心算法原理及具体操作步骤
 
@@ -63,20 +63,20 @@ Reissner-Nordstrom解的推导涉及微分方程的求解，具体步骤包括�
 
 考虑爱因斯坦场方程：
 
-\\[
-R_{\\mu\
-u} - \\frac{1}{2}Rg_{\\mu\
-u} + \\Lambda g_{\\mu\
-u} = \\kappa(T_{\\mu\
-u} + \\lambda\\mathcal{F}_{\\mu\
+$$
+R_{\mu\
+u} - \frac{1}{2}Rg_{\mu\
+u} + \Lambda g_{\mu\
+u} = \kappa(T_{\mu\
+u} + \lambda\mathcal{F}_{\mu\
 u})
-\\]
+$$
 
-其中，\\(R_{\\mu\
-u}\\)是 Ricci 张量，\\(R\\)是标量曲率，\\(g_{\\mu\
-u}\\)是度量张量，\\(\\Lambda\\)是宇宙常数，\\(T_{\\mu\
-u}\\)是物质能量张量，\\(\\lambda\\)是电荷系数，\\(\\mathcal{F}_{\\mu\
-u}\\)是电磁场张量。
+其中，\(R_{\mu\
+u}\)是 Ricci 张量，\(R\)是标量曲率，\(g_{\mu\
+u}\)是度量张量，\(\Lambda\)是宇宙常数，\(T_{\mu\
+u}\)是物质能量张量，\(\lambda\)是电荷系数，\(\mathcal{F}_{\mu\
+u}\)是电磁场张量。
 
 #### 第二步：变量变换
 
@@ -118,25 +118,25 @@ Reissner-Nordstrom解的数学模型基于爱因斯坦场方程和电荷源项�
 
 #### 基础方程
 
-\\[
-R_{\\mu\
-u} - \\frac{1}{2}Rg_{\\mu\
-u} = \\kappa(T_{\\mu\
-u} + \\lambda\\mathcal{F}_{\\mu\
+$$
+R_{\mu\
+u} - \frac{1}{2}Rg_{\mu\
+u} = \kappa(T_{\mu\
+u} + \lambda\mathcal{F}_{\mu\
 u})
-\\]
+$$
 
-其中，\\(T_{\\mu\
-u}\\)和\\(\\mathcal{F}_{\\mu\
-u}\\)分别是物质能量张量和电磁场张量。
+其中，\(T_{\mu\
+u}\)和\(\mathcal{F}_{\mu\
+u}\)分别是物质能量张量和电磁场张量。
 
 #### 特殊解
 
-对于特定的\\(M\\)和\\(Q\\)值，解方程得到Reissner-Nordstrom解：
+对于特定的\(M\)和\(Q\)值，解方程得到Reissner-Nordstrom解：
 
-\\[
-ds^2 = -(1 - \\frac{2Mr - Q^2}{\\rho^2})dt^2 + \\frac{d\\rho^2}{1 - \\frac{2Mr - Q^2}{\\rho^2}} + \\rho^2 d\\Omega^2
-\\]
+$$
+ds^2 = -(1 - \frac{2Mr - Q^2}{\rho^2})dt^2 + \frac{d\rho^2}{1 - \frac{2Mr - Q^2}{\rho^2}} + \rho^2 d\Omega^2
+$$
 
 ### 4.2 公式推导过程
 
@@ -152,7 +152,7 @@ ds^2 = -(1 - \\frac{2Mr - Q^2}{\\rho^2})dt^2 + \\frac{d\\rho^2}{1 - \\frac{2Mr -
 
 #### 分析
 
-Reissner-Nordstrom解提供了带电黑洞的一般性描述，通过改变\\(M\\)和\\(Q\\)的值，可以观察到不同的几何特性，如奇点的位置、事件视界的大小等。
+Reissner-Nordstrom解提供了带电黑洞的一般性描述，通过改变\(M\)和\(Q\)的值，可以观察到不同的几何特性，如奇点的位置、事件视界的大小等。
 
 #### 讲解
 
@@ -209,21 +209,21 @@ ds_squared_numeric = ds_squared.subs({M: M_value, Q: Q_value}).evalf(subs={rho: 
 
 # 绘制ds^2随ρ的变化曲线
 plt.figure(figsize=(10, 6))
-plt.plot(rho_values, ds_squared_numeric, label=f\"M={M_value}, Q={Q_value}\")
-plt.xlabel(r\"$\\rho$\")
-plt.ylabel(r\"$ds^2$\")
-plt.title(\"Reissner-Nordstrom解的ds^2随ρ的变化\")
+plt.plot(rho_values, ds_squared_numeric, label=f"M={M_value}, Q={Q_value}")
+plt.xlabel(r"$\rho$")
+plt.ylabel(r"$ds^2$")
+plt.title("Reissner-Nordstrom解的ds^2随ρ的变化")
 plt.legend()
 plt.show()
 ```
 
 ### 5.3 代码解读与分析
 
-这段代码演示了如何使用Python和SymPy库解析Reissner-Nordstrom解的ds^2表达式，并对其进行数值计算和可视化。通过改变\\(M\\)和\\(Q\\)的值，可以观察到不同情况下ds^2随\\rho的变化，进而分析带电黑洞的几何特性。
+这段代码演示了如何使用Python和SymPy库解析Reissner-Nordstrom解的ds^2表达式，并对其进行数值计算和可视化。通过改变\(M\)和\(Q\)的值，可以观察到不同情况下ds^2随\rho的变化，进而分析带电黑洞的几何特性。
 
 ### 5.4 运行结果展示
 
-运行上述代码将生成一个图表，展示ds^2随\\rho的变化曲线。通过对比不同的\\(M\\)和\\(Q\\)值，可以直观地理解带电黑洞的时空结构。
+运行上述代码将生成一个图表，展示ds^2随\rho的变化曲线。通过对比不同的\(M\)和\(Q\)值，可以直观地理解带电黑洞的时空结构。
 
 ## 6. 实际应用场景
 

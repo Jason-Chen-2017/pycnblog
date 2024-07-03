@@ -153,15 +153,15 @@ graph TD
 
 $$
 A = \begin{bmatrix}
-    a_{11} & a_{12} & \cdots & a_{1m} \\
-    a_{21} & a_{22} & \cdots & a_{2m} \\
-    \vdots & \vdots & \ddots & \vdots \\
+    a_{11} & a_{12} & \cdots & a_{1m} \
+    a_{21} & a_{22} & \cdots & a_{2m} \
+    \vdots & \vdots & \ddots & \vdots \
     a_{n1} & a_{n2} & \cdots & a_{nm}
 \end{bmatrix}
 $$
 
 其中 $a_{ij} = \begin{cases}
-1, & \text{允许对资源 $r_i$ 执行操作 $o_j$} \\
+1, & \text{允许对资源 $r_i$ 执行操作 $o_j$} \
 0, & \text{不允许对资源 $r_i$ 执行操作 $o_j$}
 \end{cases}$
 
@@ -169,15 +169,15 @@ $$
 
 $$
 B_i = \begin{bmatrix}
-    b_{i11} & b_{i12} & \cdots & b_{i1m} \\
-    b_{i21} & b_{i22} & \cdots & b_{i2m} \\
-    \vdots & \vdots & \ddots & \vdots \\
+    b_{i11} & b_{i12} & \cdots & b_{i1m} \
+    b_{i21} & b_{i22} & \cdots & b_{i2m} \
+    \vdots & \vdots & \ddots & \vdots \
     b_{in1} & b_{in2} & \cdots & b_{inm}
 \end{bmatrix}
 $$
 
 其中 $b_{ijk} = \begin{cases}
-1, & \text{层级 $l_i$ 允许对资源 $r_j$ 执行操作 $o_k$} \\
+1, & \text{层级 $l_i$ 允许对资源 $r_j$ 执行操作 $o_k$} \
 0, & \text{层级 $l_i$ 不允许对资源 $r_j$ 执行操作 $o_k$}
 \end{cases}$
 

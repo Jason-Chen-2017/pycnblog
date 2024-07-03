@@ -129,7 +129,7 @@ int main() {
     client.subscribe("home/temperature", 0);
 
     // 发送消息
-    std::string message = "{\"temperature\": 25}";
+    std::string message = "{"temperature": 25}";
     client.publish("home/sensor/temperature", message.c_str(), false);
 
     // 循环处理消息

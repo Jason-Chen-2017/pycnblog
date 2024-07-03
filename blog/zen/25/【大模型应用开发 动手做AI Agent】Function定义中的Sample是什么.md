@@ -95,7 +95,7 @@ $$
 通过梯度下降法求解最优的 $w$ 和 $b$，我们需要计算梯度：
 
 $$
-\frac{\partial L}{\partial w} = -2 \cdot \frac{1}{n} \sum_{i=1}^{n}(y_i - f(x_i))x_i \\
+\frac{\partial L}{\partial w} = -2 \cdot \frac{1}{n} \sum_{i=1}^{n}(y_i - f(x_i))x_i \
 \frac{\partial L}{\partial b} = -2 \cdot \frac{1}{n} \sum_{i=1}^{n}(y_i - f(x_i))
 $$
 

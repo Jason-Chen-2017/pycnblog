@@ -59,7 +59,7 @@
 
 #### 步骤4：权重更新
 
-- 根据梯度和学习率更新参数，$w = w - \\eta \\cdot \\frac{\\partial L}{\\partial w}$。
+- 根据梯度和学习率更新参数，$w = w - \eta \cdot \frac{\partial L}{\partial w}$。
 
 ### 3.3 算法优缺点
 
@@ -80,23 +80,23 @@
 
 假设神经网络具有$l$个隐藏层和$m$个输出单元，输入为$x$，目标输出为$y$。对于第$i$个样本，损失函数$L_i$可以表示为：
 
-$$L_i = \\frac{1}{2}(y_i - \\hat{y}_i)^2$$
+$$L_i = \frac{1}{2}(y_i - \hat{y}_i)^2$$
 
-其中$\\hat{y}_i$是网络的预测输出。
+其中$\hat{y}_i$是网络的预测输出。
 
 ### 4.2 公式推导过程
 
-损失函数关于参数$\\theta$的梯度可以通过链式法则计算：
+损失函数关于参数$\theta$的梯度可以通过链式法则计算：
 
-$$\\frac{\\partial L}{\\partial \\theta} = \\frac{\\partial L}{\\partial z} \\cdot \\frac{\\partial z}{\\partial \\theta}$$
+$$\frac{\partial L}{\partial \theta} = \frac{\partial L}{\partial z} \cdot \frac{\partial z}{\partial \theta}$$
 
-对于第$l$层的参数$\\theta$：
+对于第$l$层的参数$\theta$：
 
-$$\\frac{\\partial L}{\\partial \\theta} = \\frac{\\partial L}{\\partial \\hat{y}} \\cdot \\frac{\\partial \\hat{y}}{\\partial z} \\cdot \\frac{\\partial z}{\\partial \\theta}$$
+$$\frac{\partial L}{\partial \theta} = \frac{\partial L}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial z} \cdot \frac{\partial z}{\partial \theta}$$
 
 ### 4.3 案例分析与讲解
 
-假设我们有一个简单的两层神经网络，包含输入层、隐藏层和输出层。对于隐藏层参数$\\theta_h$和输出层参数$\\theta_o$，我们可以分别进行反向传播计算。
+假设我们有一个简单的两层神经网络，包含输入层、隐藏层和输出层。对于隐藏层参数$\theta_h$和输出层参数$\theta_o$，我们可以分别进行反向传播计算。
 
 ### 4.4 常见问题解答
 
@@ -159,8 +159,8 @@ y_pred = forward(x)
 dw1, db1, dw2, db2 = backward(x, y_true, y_pred)
 weights1, bias1, weights2, bias2 = update_parameters(dw1, db1, dw2, db2, learning_rate)
 
-print(\"Updated weights:\", weights1, weights2)
-print(\"Updated biases:\", bias1, bias2)
+print("Updated weights:", weights1, weights2)
+print("Updated biases:", bias1, bias2)
 ```
 
 ### 5.2 源代码详细实现

@@ -211,9 +211,9 @@ $$
 
 $$
 R(s, a) = \begin{cases}
-10 & \text{if } a = 1 \\
-5 & \text{if } a = 2 \\
-2 & \text{if } a = 3 \\
+10 & \text{if } a = 1 \
+5 & \text{if } a = 2 \
+2 & \text{if } a = 3 \
 -1 & \text{if } a = 4
 \end{cases}
 $$

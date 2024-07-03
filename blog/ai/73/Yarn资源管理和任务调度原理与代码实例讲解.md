@@ -123,8 +123,8 @@ YARN的资源管理和任务调度可以建模为以下数学问题：
 
 $$
 \begin{align*}
-\max_{x} & \quad \sum_{i=1}^k r_i x_i \\
-\text{subject to} & \quad \sum_{i=1}^k x_i \leq P \\
+\max_{x} & \quad \sum_{i=1}^k r_i x_i \
+\text{subject to} & \quad \sum_{i=1}^k x_i \leq P \
 & \quad x_i \geq 0, \quad \forall i=1,2,\dots,k
 \end{align*}
 $$

@@ -109,7 +109,7 @@ Few-shot学习在以下领域有广泛的应用：
 
 $$
 \begin{aligned}
-L(\theta) &= \frac{1}{N}\sum_{i=1}^N L(y_i, f(x_i; \theta)) \\
+L(\theta) &= \frac{1}{N}\sum_{i=1}^N L(y_i, f(x_i; \theta)) \
 \end{aligned}
 $$
 
@@ -121,144 +121,144 @@ $$
 
 $$
 \begin{aligned}
-L(\theta) &= \frac{1}{N}\sum_{i=1}^N L(y_i, f(x_i; \theta)) \\
-&= \frac{1}{N}\sum_{i=1}^N (y_i - f(x_i; \theta))^2 \\
-&= \frac{1}{N}\sum_{i=1}^N \sum_{j=1}^d (y_{ij} - \theta_{ij} x_{ij})^2 \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 - 2\sum_{i=1}^N y_{ij} \theta_{ij} x_{ij} + \sum_{i=1}^N \theta_{ij}^2 x_{ij}^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 - 2\theta_{ij} \sum_{i=1}^N y_{ij} x_{ij} + \sum_{i=1}^N \theta_{ij}^2 x_{ij}^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 - 2\theta_{ij} y_j \sum_{i=1}^N x_{ij} + \sum_{i=1}^N \theta_{ij}^2 x_{ij}^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 - 2\theta_{ij} y_j x_j^2 + \sum_{i=1}^N \theta_{ij}^2 x_{ij}^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 - 2\theta_{ij} y_j x_j^2 + \theta_{ij}^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 - 2\theta_{ij} y_j x_j^2 + \theta_{ij}^2 (x_j^2 - y_j^2)\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 - 2\theta_{ij} y_j x_j^2 + \theta_{ij}^2 x_j^2 - \theta_{ij}^2 y_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left((\sum_{i=1}^N y_{ij}^2 - \theta_{ij}^2 y_j^2) - 2\theta_{ij} y_j x_j^2 + \theta_{ij}^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left((\sum_{i=1}^N y_{ij}^2 - \theta_{ij}^2 y_j^2) + (\theta_{ij}^2 - 2\theta_{ij} y_j) x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left((\sum_{i=1}^N y_{ij}^2 - \theta_{ij}^2 y_j^2) + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 - \theta_{ij}^2 y_j^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 \sum_{i=1}^N x_{ij}^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
-&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \\
+L(\theta) &= \frac{1}{N}\sum_{i=1}^N L(y_i, f(x_i; \theta)) \
+&= \frac{1}{N}\sum_{i=1}^N (y_i - f(x_i; \theta))^2 \
+&= \frac{1}{N}\sum_{i=1}^N \sum_{j=1}^d (y_{ij} - \theta_{ij} x_{ij})^2 \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 - 2\sum_{i=1}^N y_{ij} \theta_{ij} x_{ij} + \sum_{i=1}^N \theta_{ij}^2 x_{ij}^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 - 2\theta_{ij} \sum_{i=1}^N y_{ij} x_{ij} + \sum_{i=1}^N \theta_{ij}^2 x_{ij}^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 - 2\theta_{ij} y_j \sum_{i=1}^N x_{ij} + \sum_{i=1}^N \theta_{ij}^2 x_{ij}^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 - 2\theta_{ij} y_j x_j^2 + \sum_{i=1}^N \theta_{ij}^2 x_{ij}^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 - 2\theta_{ij} y_j x_j^2 + \theta_{ij}^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 - 2\theta_{ij} y_j x_j^2 + \theta_{ij}^2 (x_j^2 - y_j^2)\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 - 2\theta_{ij} y_j x_j^2 + \theta_{ij}^2 x_j^2 - \theta_{ij}^2 y_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left((\sum_{i=1}^N y_{ij}^2 - \theta_{ij}^2 y_j^2) - 2\theta_{ij} y_j x_j^2 + \theta_{ij}^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left((\sum_{i=1}^N y_{ij}^2 - \theta_{ij}^2 y_j^2) + (\theta_{ij}^2 - 2\theta_{ij} y_j) x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left((\sum_{i=1}^N y_{ij}^2 - \theta_{ij}^2 y_j^2) + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 - \theta_{ij}^2 y_j^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 \sum_{i=1}^N x_{ij}^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
+&= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^N y_{ij}^2 + (\theta_{ij} - y_j)^2 x_j^2\right) \
 &= \frac{1}{N}\sum_{j=1}^d \left(\sum_{i=1}^

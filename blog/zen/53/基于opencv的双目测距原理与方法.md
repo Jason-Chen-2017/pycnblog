@@ -81,19 +81,19 @@ OpenCV的双目测距流程可以分为以下几个步骤：
 
 $$
 \left[\begin{matrix}
-u \\ 
-v \\
+u \ 
+v \
 1
 \end{matrix}\right] 
 = 
 \left[\begin{matrix}
-f_x & 0 & c_x \\
-0 & f_y & c_y \\
+f_x & 0 & c_x \
+0 & f_y & c_y \
 0 & 0 & 1 
 \end{matrix}\right]
 \left[\begin{matrix}
-X \\ 
-Y \\
+X \ 
+Y \
 Z
 \end{matrix}\right]
 $$
@@ -121,8 +121,8 @@ $$
 $$
 P = Z \cdot K^{-1} 
 \left[\begin{matrix}
-u \\ 
-v \\
+u \ 
+v \
 1
 \end{matrix}\right]
 $$
@@ -131,8 +131,8 @@ $$
 
 $$
 K = \left[\begin{matrix}
-f_x & 0 & c_x \\
-0 & f_y & c_y \\
+f_x & 0 & c_x \
+0 & f_y & c_y \
 0 & 0 & 1 
 \end{matrix}\right]
 $$

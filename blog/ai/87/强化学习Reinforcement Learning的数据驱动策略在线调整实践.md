@@ -157,12 +157,12 @@
 
 $$
 \begin{align*}
-\mathcal{M} &= (\mathcal{S}, \mathcal{A}, \mathcal{R}, \mathcal{T}, \pi) \\
-\text{其中：} \\
-\mathcal{S} &= \text{状态空间} \\
-\mathcal{A} &= \text{动作空间} \\
-\mathcal{R} &= \text{奖励函数} \\
-\mathcal{T} &= \text{状态转移函数} \\
+\mathcal{M} &= (\mathcal{S}, \mathcal{A}, \mathcal{R}, \mathcal{T}, \pi) \
+\text{其中：} \
+\mathcal{S} &= \text{状态空间} \
+\mathcal{A} &= \text{动作空间} \
+\mathcal{R} &= \text{奖励函数} \
+\mathcal{T} &= \text{状态转移函数} \
 \pi &= \text{策略函数}
 \end{align*}
 $$

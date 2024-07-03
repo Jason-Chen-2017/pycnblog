@@ -57,7 +57,7 @@ $$
 
 $$
 E^2_{p,q}=\begin{cases}
-H_p(X), & q=0 \\
+H_p(X), & q=0 \
 H_p(X;\pi_{q+1}(X)), & q>0
 \end{cases}
 $$

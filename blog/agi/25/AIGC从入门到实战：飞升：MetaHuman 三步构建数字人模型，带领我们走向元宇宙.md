@@ -94,10 +94,10 @@ MetaHuman的应用范围广泛，从娱乐行业（如电影、游戏）到教�
 #### GAN模型：
 
 $$
-\\begin{align*}
-\\text{Generator}: G(z) \\\\
-\\text{Discriminator}: D(x)
-\\end{align*}
+\begin{align*}
+\text{Generator}: G(z) \\
+\text{Discriminator}: D(x)
+\end{align*}
 $$
 
 其中，$z$是随机噪声向量，$x$是真实或生成的数据样本。GAN的目标是在生成器和判别器之间形成竞争，使得生成器能够学习生成与真实数据分布尽可能接近的新样本。
@@ -105,13 +105,13 @@ $$
 #### AE模型：
 
 $$
-\\begin{align*}
-\\text{Encoder}: E(x) \\rightarrow z \\\\
-\\text{Decoder}: D(z) \\rightarrow \\hat{x}
-\\end{align*}
+\begin{align*}
+\text{Encoder}: E(x) \rightarrow z \\
+\text{Decoder}: D(z) \rightarrow \hat{x}
+\end{align*}
 $$
 
-其中，$E(x)$是编码器，负责将输入$x$压缩到一个紧凑的向量空间$z$，而$D(z)$是解码器，负责重构原始输入$\\hat{x}$。AE的目标是通过最小化重构误差来学习有效的特征表示。
+其中，$E(x)$是编码器，负责将输入$x$压缩到一个紧凑的向量空间$z$，而$D(z)$是解码器，负责重构原始输入$\hat{x}$。AE的目标是通过最小化重构误差来学习有效的特征表示。
 
 ### 4.2 公式推导过程
 
@@ -120,21 +120,21 @@ $$
 对于GAN，损失函数通常包括两部分：生成器的损失函数$L_G$和判别器的损失函数$L_D$。具体形式如下：
 
 $$
-L_G = -\\mathbb{E}_{z \\sim p_z} [\\log D(G(z))] \\\\
-L_D = -[\\mathbb{E}_{x \\sim p_x} [\\log D(x)] + \\mathbb{E}_{z \\sim p_z} [\\log(1 - D(G(z)))]
+L_G = -\mathbb{E}_{z \sim p_z} [\log D(G(z))] \\
+L_D = -[\mathbb{E}_{x \sim p_x} [\log D(x)] + \mathbb{E}_{z \sim p_z} [\log(1 - D(G(z)))]
 $$
 
-其中$p_x$是真实数据分布，$p_z$是噪声分布，$D(\\cdot)$是判别器。
+其中$p_x$是真实数据分布，$p_z$是噪声分布，$D(\cdot)$是判别器。
 
 #### AE损失函数：
 
 对于AE，损失函数通常由重建损失$R$和编码损失$C$组成：
 
 $$
-L = R(x, \\hat{x}) + C(z)
+L = R(x, \hat{x}) + C(z)
 $$
 
-其中$R(x, \\hat{x})$是衡量重建质量的损失函数，如均方误差（MSE）或交叉熵损失；$C(z)$是衡量编码质量的损失函数，如Kullback-Leibler散度（KL散度）或欧氏距离。
+其中$R(x, \hat{x})$是衡量重建质量的损失函数，如均方误差（MSE）或交叉熵损失；$C(z)$是衡量编码质量的损失函数，如Kullback-Leibler散度（KL散度）或欧氏距离。
 
 ### 4.3 案例分析与讲解
 

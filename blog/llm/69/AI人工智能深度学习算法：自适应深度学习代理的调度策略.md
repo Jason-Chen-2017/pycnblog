@@ -128,12 +128,12 @@
 
 $$
 \begin{aligned}
-\text{minimize} \quad & \sum_{i=1}^{N} (t_i - c_i)^2 \\
-\text{subject to} \quad & R_{j}^C \cdot t_i \leq \sum_{k=1}^{N} R_{k}^C \cdot t_k \quad \text{for all } j \\
-& R_{j}^M \cdot t_i \leq \sum_{k=1}^{N} R_{k}^M \cdot t_k \quad \text{for all } j \\
-& R_{j}^D \cdot t_i \leq \sum_{k=1}^{N} R_{k}^D \cdot t_k \quad \text{for all } j \\
-& 0 \leq t_i \leq c_i \quad \text{for all } i \\
-& t_i \in \mathbb{Z}^+ \quad \text{for all } i \\
+\text{minimize} \quad & \sum_{i=1}^{N} (t_i - c_i)^2 \
+\text{subject to} \quad & R_{j}^C \cdot t_i \leq \sum_{k=1}^{N} R_{k}^C \cdot t_k \quad \text{for all } j \
+& R_{j}^M \cdot t_i \leq \sum_{k=1}^{N} R_{k}^M \cdot t_k \quad \text{for all } j \
+& R_{j}^D \cdot t_i \leq \sum_{k=1}^{N} R_{k}^D \cdot t_k \quad \text{for all } j \
+& 0 \leq t_i \leq c_i \quad \text{for all } i \
+& t_i \in \mathbb{Z}^+ \quad \text{for all } i \
 \end{aligned}
 $$
 

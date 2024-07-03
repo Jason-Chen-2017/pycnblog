@@ -37,7 +37,7 @@ SVM 的训练过程可以转化为一个凸优化问题，其目标是找到一�
 
 $$
 \begin{aligned}
-& \min_{w, b} \frac{1}{2} ||w||^2 \\
+& \min_{w, b} \frac{1}{2} ||w||^2 \
 & \text{subject to } y_i (w \cdot x_i + b) \ge 1, \forall i = 1, ..., n
 \end{aligned}
 $$

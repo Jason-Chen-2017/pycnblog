@@ -115,7 +115,7 @@ $$
 $$
 \text{s.t.} 
 \begin{cases} 
-r_1 + r_2 + \cdots + r_N \leq R \\
+r_1 + r_2 + \cdots + r_N \leq R \
 i \in \{1,2,\cdots,N\} 
 \end{cases}
 $$
@@ -146,7 +146,7 @@ $$
 $$
 \text{s.t.} 
 \begin{cases} 
-2 + 1 + 3 + 2 \leq 4 \\
+2 + 1 + 3 + 2 \leq 4 \
 1 \leq i \leq 4 
 \end{cases}
 $$

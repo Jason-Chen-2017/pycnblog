@@ -84,9 +84,9 @@
 
 - **资源分配模型**：使用线性规划模型，通过最小化成本或最大化效益，实现资源的最优分配。公式形式如下：
   
-  $$ \\min \\sum_{j=1}^{n} c_j x_j $$
+  $$ \min \sum_{j=1}^{n} c_j x_j $$
   
-  $$ s.t. \\sum_{i=1}^{m} a_{ij} x_i \\geq b_j, \\quad j = 1, ..., n $$
+  $$ s.t. \sum_{i=1}^{m} a_{ij} x_i \geq b_j, \quad j = 1, ..., n $$
   
   其中，$c_j$为第$j$个资源的成本系数，$x_j$为第$j$个资源的数量，$a_{ij}$为第$i$项任务对第$j$个资源的需求系数，$b_j$为第$j$个资源的可用量。
 
@@ -96,9 +96,9 @@
 
 - **K-means算法**：寻找最佳的聚类中心，最小化各数据点与其所属簇中心的距离平方和。公式表示为：
   
-  $$ \\sum_{i=1}^{k} \\sum_{x \\in C_i} \\|x - \\mu_i\\|^2 $$
+  $$ \sum_{i=1}^{k} \sum_{x \in C_i} \|x - \mu_i\|^2 $$
   
-  其中，$\\mu_i$为第$i$个簇的中心，$C_i$为属于第$i$个簇的数据集。
+  其中，$\mu_i$为第$i$个簇的中心，$C_i$为属于第$i$个簇的数据集。
 
 ### 4.3 案例分析与讲解
 
@@ -142,16 +142,16 @@ import numpy as np
 from scipy.optimize import linprog
 
 def resource_allocation(costs, constraints):
-    \"\"\"
+    """
     使用线性规划进行资源分配。
     :param costs: 资源成本向量
     :param constraints: 约束矩阵和边界值
     :return: 最优分配方案
-    \"\"\"
+    """
     # 构建线性规划问题
     c = np.array([-costs])
-    A = np.array(constraints[\"A\"])
-    b = np.array(constraints[\"b\"])
+    A = np.array(constraints["A"])
+    b = np.array(constraints["b"])
     bounds = tuple((0, None) for _ in range(len(costs)))
     
     # 解决线性规划问题
@@ -166,12 +166,12 @@ def resource_allocation(costs, constraints):
 from sklearn.cluster import KMeans
 
 def cluster_analysis(data, k):
-    \"\"\"
+    """
     使用K-means算法进行数据聚类。
     :param data: 数据集
     :param k: 聚类数量
     :return: 聚类结果
-    \"\"\"
+    """
     kmeans = KMeans(n_clusters=k)
     kmeans.fit(data)
     return kmeans.labels_

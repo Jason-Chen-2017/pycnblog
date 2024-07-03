@@ -81,27 +81,27 @@ SpanBERT在以下领域具有广泛的应用：
 SpanBERT的数学模型主要基于BERT模型，并结合了以下公式：
 
 1. **自注意力机制**：$$
- Q = W_Q \\cdot Q + W_K \\cdot K + W_V \\cdot V 
+ Q = W_Q \cdot Q + W_K \cdot K + W_V \cdot V 
 $$
 $$
- K = W_K \\cdot Q 
+ K = W_K \cdot Q 
 $$
 $$
- V = W_V \\cdot V 
+ V = W_V \cdot V 
 $$
 $$
- \\text{output} = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right) \\cdot V 
+ \text{output} = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) \cdot V 
 $$
 
 2. **位置编码**：$$
- \\text{positional\\_encoding}(pos, 2i) = \\sin(\\frac{pos}{10000^{2i/d_{\\text{model}}}) 
+ \text{positional\_encoding}(pos, 2i) = \sin(\frac{pos}{10000^{2i/d_{\text{model}}}) 
 $$
 $$
- \\text{positional\\_encoding}(pos, 2i+1) = \\cos(\\frac{pos}{10000^{2i/d_{\\text{model}}}) 
+ \text{positional\_encoding}(pos, 2i+1) = \cos(\frac{pos}{10000^{2i/d_{\text{model}}}) 
 $$
 
 3. **交叉熵损失函数**：$$
- L(\\theta) = -\\sum_{i=1}^n \\sum_{t=1}^m [y_{it} = 1] \\log p(\\hat{y}_{it}) 
+ L(\theta) = -\sum_{i=1}^n \sum_{t=1}^m [y_{it} = 1] \log p(\hat{y}_{it}) 
 $$
 
 其中，
@@ -111,7 +111,7 @@ $$
 - $pos$为位置编码。
 - $d_k$为键和值的维度。
 - $y_{it}$为真实标签。
-- $\\hat{y}_{it}$为预测标签。
+- $\hat{y}_{it}$为预测标签。
 
 ### 4.2 公式推导过程
 
@@ -119,13 +119,13 @@ $$
 
 1. **自注意力机制**：自注意力机制通过计算查询向量$Q$、键向量$K$和值向量$V$之间的相似度，并加权求和，从而得到注意力权重。然后，将加权后的值向量$V$作为输出。
 2. **位置编码**：位置编码用于向模型中添加序列位置信息，使模型能够关注到不同位置的信息。
-3. **交叉熵损失函数**：交叉熵损失函数用于衡量预测标签$\\hat{y}_{it}$与真实标签$y_{it}$之间的差异，并指导模型进行优化。
+3. **交叉熵损失函数**：交叉熵损失函数用于衡量预测标签$\hat{y}_{it}$与真实标签$y_{it}$之间的差异，并指导模型进行优化。
 
 ### 4.3 案例分析与讲解
 
 以下是一个SpanBERT在NER任务上的应用案例：
 
-输入文本：`\"张三在上海工作。\"`
+输入文本：`"张三在上海工作。"`
 真实标签：`[人物, 地名, 地名]`
 预测标签：`[人物, 地名, 地名]`
 
@@ -182,7 +182,7 @@ def train(model, optimizer, loss_fn, train_dataloader):
             outputs = model(inputs['input_ids'], token_type_ids=inputs['token_type_ids'])
             loss = loss_fn(outputs.logits, labels)
             optimizer.minimize(loss, model.trainable_variables)
-            print(f\"Epoch: {epoch}, Loss: {loss.numpy()}\")
+            print(f"Epoch: {epoch}, Loss: {loss.numpy()}")
 
 # 评估模型
 def evaluate(model, test_dataloader):
@@ -196,10 +196,10 @@ def evaluate(model, test_dataloader):
         correct += tf.reduce_sum(tf.cast(tf.equal(predictions, labels), tf.int32))
         total += tf.shape(labels)[0]
     accuracy = correct / total
-    print(f\"Accuracy: {accuracy}\")
+    print(f"Accuracy: {accuracy}")
 
 # 主程序
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     # TODO: 加载训练数据和测试数据
     # TODO: 定义优化器和损失函数
     # TODO: 训练模型

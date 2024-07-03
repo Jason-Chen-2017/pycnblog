@@ -72,7 +72,7 @@
 设 $L_i$ 表示第 $i$ 次迭代后的验证集损失，$L_{best}$ 是验证集损失的历史最小值，$k$ 是连续迭代次数没有改进的阈值。早停法的数学模型可以表述为：
 
 $$
-\\text{if } L_i > L_{best} \\text{ for } k \\text{ consecutive iterations} \\text{, stop training}
+\text{if } L_i > L_{best} \text{ for } k \text{ consecutive iterations} \text{, stop training}
 $$
 
 ### 4.2 公式推导过程
@@ -129,8 +129,8 @@ early_stopping = EarlyStopping(monitor='val_loss', patience=10)
 history = model.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=100, callbacks=[early_stopping])
 
 # 打印最佳验证集损失和对应的训练周期
-print(\"Best validation loss:\", history.history['val_loss'][-1])
-print(\"Epoch at best validation loss:\", len(history.history['val_loss']) - 1)
+print("Best validation loss:", history.history['val_loss'][-1])
+print("Epoch at best validation loss:", len(history.history['val_loss']) - 1)
 ```
 
 ### 5.3 代码解读与分析
@@ -163,8 +163,8 @@ print(\"Epoch at best validation loss:\", len(history.history['val_loss']) - 1)
 
 ### 7.3 相关论文推荐
 
-- **\"Early Stopping as a Regularization Technique\"**（早期停止作为正则化技术）
-- **\"Deep Learning\"**（深度学习）
+- **"Early Stopping as a Regularization Technique"**（早期停止作为正则化技术）
+- **"Deep Learning"**（深度学习）
 
 ### 7.4 其他资源推荐
 

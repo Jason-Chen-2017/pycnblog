@@ -96,11 +96,11 @@ Istio适用于具有高可用性和可扩展性要求的分布式系统，特别
 
 在Istio中，流量控制策略通常基于速率限制或并发限制。例如，假设一个服务每分钟只能接受1000个请求：
 
-$$ \\text{requests\\_per\\_minute} = \\frac{\\text{总请求数量}}{\\text{时间（分钟）}} $$
+$$ \text{requests\_per\_minute} = \frac{\text{总请求数量}}{\text{时间（分钟）}} $$
 
 对于并发限制，假设每个请求的最大并发连接数为5：
 
-$$ \\text{concurrent\\_connections} = \\text{最大并发连接数} $$
+$$ \text{concurrent\_connections} = \text{最大并发连接数} $$
 
 ### 4.2 公式推导过程
 
@@ -164,7 +164,7 @@ spec:
         number: 80
         name: http
         protocol: HTTP
-      host: \"*\"
+      host: "*"
       tls:
         mode: ISTIO_MUTUAL
 
@@ -175,13 +175,13 @@ metadata:
   name: my-service
 spec:
   hosts:
-    - \"my-service.example.com\"
+    - "my-service.example.com"
   gateways:
-    - \"my-gateway\"
+    - "my-gateway"
   http:
     - match:
       - uri:
-          exact: \"/\"
+          exact: "/"
       route:
         - destination:
             host: backend-service.example.com

@@ -88,10 +88,10 @@ AIGC技术广泛应用于媒体、娱乐、教育、科学研究、软件开发�
 
 VAE模型结合了编码器和解码器，通过学习数据分布来生成新样本：
 
-\[ \begin{aligned}
-& \text{编码器}: \quad q(z|x) = p(z|f(x)), \\
+$$ \begin{aligned}
+& \text{编码器}: \quad q(z|x) = p(z|f(x)), \
 & \text{解码器}: \quad p(x|z) = \mathcal{N}(x|\mu(z), \sigma^2(z)),
-\end{aligned} \]
+\end{aligned} $$
 
 其中，$f(x)$ 是对输入$x$的编码，$\mu(z)$ 和 $\sigma(z)$ 分别是隐变量$z$的均值和方差。
 
@@ -99,17 +99,17 @@ VAE模型结合了编码器和解码器，通过学习数据分布来生成新�
 
 VAE的推导过程涉及到联合分布的分解、KL散度和重建损失的最小化：
 
-\[ \begin{aligned}
-& \text{目标}: \quad \min_{\theta, \phi} \mathbb{E}_{q(z|x)}[\log p(x|z)] + \text{KL}(q(z|x)||p(z)) \\
-& \text{其中:} \\
+$$ \begin{aligned}
+& \text{目标}: \quad \min_{\theta, \phi} \mathbb{E}_{q(z|x)}[\log p(x|z)] + \text{KL}(q(z|x)||p(z)) \
+& \text{其中:} \
 & \quad \text{KL}(q(z|x)||p(z)) = \int q(z|x) \log \frac{q(z|x)}{p(z)}
-\end{aligned} \]
+\end{aligned} $$
 
 ### 4.3 案例分析与讲解
 
 对于文本生成任务，可以使用基于Transformer的模型，例如GPT系列。模型通过自注意力机制学习文本序列间的依赖关系，生成连续的文本序列：
 
-\[ \text{GPT模型结构} \]
+$$ \text{GPT模型结构} $$
 
 ### 4.4 常见问题解答
 

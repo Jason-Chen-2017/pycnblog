@@ -82,7 +82,7 @@ AutoGPT的数学模型主要包括：
 
 $$
 R(s, a) = \begin{cases} 
-\text{reward\_function}(s', a, s) & \text{if } s' \text{ is a valid solution} \\
+\text{reward\_function}(s', a, s) & \text{if } s' \text{ is a valid solution} \
 -\text{penalty\_function}(s', a, s) & \text{otherwise}
 \end{cases}
 $$

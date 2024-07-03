@@ -116,7 +116,7 @@ $$
 - 人类反馈的推导：
   $$
 F(y, \hat{y}) = \begin{cases} 
-  1, & \text{if } y = \hat{y} \\
+  1, & \text{if } y = \hat{y} \
   0, & \text{if } y \
 eq \hat{y}
   \end{cases}

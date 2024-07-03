@@ -63,7 +63,7 @@ $$\hat{Z}(s_0)=\sum_{i=1}^n\lambda_iZ(s_i)$$
 #### 4.1.3 机器学习模型
 机器学习模型如支持向量机(SVM)、随机森林等,可用于环境状态分类和预测。以SVM为例,其目标函数为:
 
-$$\min \frac{1}{2}||w||^2+C\sum_{i=1}^n\xi_i \\ s.t. y_i(w^Tx_i+b)\geq1-\xi_i, \xi_i\geq0$$
+$$\min \frac{1}{2}||w||^2+C\sum_{i=1}^n\xi_i \ s.t. y_i(w^Tx_i+b)\geq1-\xi_i, \xi_i\geq0$$
 
 其中,$w$为超平面法向量,$\xi_i$为松弛变量,$C$为惩罚系数。
 
@@ -71,7 +71,7 @@ $$\min \frac{1}{2}||w||^2+C\sum_{i=1}^n\xi_i \\ s.t. y_i(w^Tx_i+b)\geq1-\xi_i, \
 #### 4.2.1 系统动力学模型
 系统动力学模型可用于模拟复杂系统的动态行为。以Lotka-Volterra方程为例,其数学表达式为:
 
-$$\frac{dx}{dt}=\alpha x-\beta xy \\ \frac{dy}{dt}=\delta xy-\gamma y$$
+$$\frac{dx}{dt}=\alpha x-\beta xy \ \frac{dy}{dt}=\delta xy-\gamma y$$
 
 其中,$x$为猎物数量,$y$为捕食者数量,$\alpha,\beta,\gamma,\delta$为模型参数。
 

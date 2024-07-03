@@ -102,7 +102,7 @@ LangChain的数学模型可以构建为一个图模型，其中节点表示编�
 
 $$
 C(i, j) = \begin{cases} 
-1 & \text{if } i \text{ depends on } j \\
+1 & \text{if } i \text{ depends on } j \
 0 & \text{otherwise} 
 \end{cases}
 $$

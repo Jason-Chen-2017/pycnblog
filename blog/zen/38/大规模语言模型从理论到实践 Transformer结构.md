@@ -86,10 +86,10 @@ Transformer模型在多个NLP任务中取得了显著的成果，如：
 
 Transformer模型的数学模型主要由以下几个部分组成：
 
-1. **嵌入层**：将输入序列$x = (x_1, x_2, \\dots, x_n)$转换为嵌入向量$E = (E_1, E_2, \\dots, E_n)$，其中$E_i = W_E x_i + b_E$。
-2. **多头自注意力层**：计算注意力权重矩阵$A = \\text{Attention}(Q, K, V)$，其中$Q$、$K$、$V$分别代表查询（Query）、键（Key）、值（Value）向量。
-3. **前馈神经网络**：对多头自注意力层的输出进行非线性变换，得到前馈神经网络层的输出$H = \\text{FFN}(H)$。
-4. **层归一化**：对每一层的输出进行归一化处理，得到归一化后的输出$H' = \\text{LayerNorm}(H)$。
+1. **嵌入层**：将输入序列$x = (x_1, x_2, \dots, x_n)$转换为嵌入向量$E = (E_1, E_2, \dots, E_n)$，其中$E_i = W_E x_i + b_E$。
+2. **多头自注意力层**：计算注意力权重矩阵$A = \text{Attention}(Q, K, V)$，其中$Q$、$K$、$V$分别代表查询（Query）、键（Key）、值（Value）向量。
+3. **前馈神经网络**：对多头自注意力层的输出进行非线性变换，得到前馈神经网络层的输出$H = \text{FFN}(H)$。
+4. **层归一化**：对每一层的输出进行归一化处理，得到归一化后的输出$H' = \text{LayerNorm}(H)$。
 5. **残差连接**：在每一层之间添加残差连接，得到最终的输出$O = H' + H$。
 
 ### 4.2 公式推导过程
@@ -101,16 +101,16 @@ Transformer模型的数学模型主要由以下几个部分组成：
    其中，$W_E$为嵌入层权重矩阵，$b_E$为偏置向量。
 
 2. **多头自注意力层**：
-   $$A = \\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V$$
+   $$A = \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
    其中，$d_k$为键（Key）向量的维度，$QK^T$表示查询（Query）和键（Key）之间的点积。
 
 3. **前馈神经网络**：
-   $$H = \\text{FFN}(H) = \\max(\\text{ReLU}(W_{ff}H + b_{ff}))$$
+   $$H = \text{FFN}(H) = \max(\text{ReLU}(W_{ff}H + b_{ff}))$$
    其中，$W_{ff}$为前馈神经网络的权重矩阵，$b_{ff}$为偏置向量。
 
 4. **层归一化**：
-   $$H' = \\text{LayerNorm}(H) = \\frac{H - \\mu}{\\sigma} + \\gamma \\beta$$
-   其中，$\\mu$和$\\sigma$分别为输入的均值和标准差，$\\gamma$和$\\beta$为归一化层的权重矩阵。
+   $$H' = \text{LayerNorm}(H) = \frac{H - \mu}{\sigma} + \gamma \beta$$
+   其中，$\mu$和$\sigma$分别为输入的均值和标准差，$\gamma$和$\beta$为归一化层的权重矩阵。
 
 5. **残差连接**：
    $$O = H' + H$$
@@ -153,7 +153,7 @@ tokenizer = BertTokenizer.from_pretrained('bert-base-chinese')
 model = BertModel.from_pretrained('bert-base-chinese')
 
 # 加载文本数据
-text = \"我爱编程，编程使我快乐。\"
+text = "我爱编程，编程使我快乐。"
 
 # 编码文本数据
 inputs = tokenizer(text, return_tensors='pt', padding=True, truncation=True)

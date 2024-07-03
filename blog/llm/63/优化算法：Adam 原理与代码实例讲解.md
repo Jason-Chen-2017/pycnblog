@@ -100,11 +100,11 @@ Adam算法的数学模型如下：
 $$
 \begin{align*}
 v_t &= \beta_1 v_{t-1} + (1 - \beta_1) \
-abla J(\theta_t) \\
+abla J(\theta_t) \
 s_t &= \beta_2 s_{t-1} + (1 - \beta_2) \
-abla J(\theta_t)^2 \\
-\hat{v}_t &= \frac{v_t}{1 - \beta_1^t} \\
-\hat{s}_t &= \frac{s_t}{1 - \beta_2^t} \\
+abla J(\theta_t)^2 \
+\hat{v}_t &= \frac{v_t}{1 - \beta_1^t} \
+\hat{s}_t &= \frac{s_t}{1 - \beta_2^t} \
 \theta_{t+1} &= \theta_t - \eta \hat{v}_t / \sqrt{\hat{s}_t}
 \end{align*}
 $$

@@ -148,7 +148,7 @@ $$
 
 $$
 \begin{aligned}
-A &= \arg\max_{a \in A} Q(s,a) \\
+A &= \arg\max_{a \in A} Q(s,a) \
 Q(s,a) &= R(s,a) + \gamma \max_{a' \in A} Q(s',a')
 \end{aligned}
 $$

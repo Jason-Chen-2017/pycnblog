@@ -101,7 +101,7 @@ $d_i \in W_{\lfloor \frac{t_i-t_0}{s} \rfloor}$
 设在 $d_i$ 到达前,窗口 $W_k$ 的累积和为 $S_k$,则 $d_i$ 到达后,窗口的累积和更新为:
 
 $S_k=\begin{cases}
-S_k+v_i, & d_i \in W_k \\
+S_k+v_i, & d_i \in W_k \
 S_k,     & d_i \notin W_k
 \end{cases}$
 

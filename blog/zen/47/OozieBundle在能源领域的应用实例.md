@@ -118,11 +118,11 @@ K-means聚类算法是一种常用的聚类方法，其公式如下：
 
 $$
 \begin{align*}
-\mu_i &= \frac{1}{N_i} \sum_{j=1}^{N_i} x_{ij} \\
-x_{ij} &= \frac{1}{K} \sum_{k=1}^{K} \alpha_{kj} x_k \\
+\mu_i &= \frac{1}{N_i} \sum_{j=1}^{N_i} x_{ij} \
+x_{ij} &= \frac{1}{K} \sum_{k=1}^{K} \alpha_{kj} x_k \
 \alpha_{kj} &=
 \begin{cases}
-1, & \text{if } d(x_i, \mu_j) \leq \epsilon \\
+1, & \text{if } d(x_i, \mu_j) \leq \epsilon \
 0, & \text{otherwise}
 \end{cases}
 \end{align*}
@@ -136,7 +136,7 @@ $$
 
 $$
 \begin{align*}
-f(x) &= \text{sign}(\sum_{i=1}^n \alpha_i y_i \phi(x_i, x)) \\
+f(x) &= \text{sign}(\sum_{i=1}^n \alpha_i y_i \phi(x_i, x)) \
 \alpha_i &= \max(0, M - \gamma)
 \end{align*}
 $$

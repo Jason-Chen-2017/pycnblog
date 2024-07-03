@@ -96,7 +96,7 @@ $$ U = \sum_{i=1}^N c_i e_i $$
 
 旋量基的构造通常基于旋转矩阵的特性。例如，在SO(3)群中，Pauli旋量基可以由以下公式得到：
 
-$$ e_1 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad e_2 = \begin{pmatrix} 0 & i \\ -i & 0 \end{pmatrix}, \quad e_3 = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} $$
+$$ e_1 = \begin{pmatrix} 0 & 1 \ 1 & 0 \end{pmatrix}, \quad e_2 = \begin{pmatrix} 0 & i \ -i & 0 \end{pmatrix}, \quad e_3 = \begin{pmatrix} 1 & 0 \ 0 & -1 \end{pmatrix} $$
 
 对于SO(N)群，可以构造相应的Gell-Mann旋量基或Dirac旋量基。
 
@@ -104,7 +104,7 @@ $$ e_1 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad e_2 = \begin{pmatri
 
 以SO(3)群为例，考虑一个旋转矩阵$R$：
 
-$$ R = \begin{pmatrix} \cos(\theta) & -\sin(\theta) & 0 \\ \sin(\theta) & \cos(\theta) & 0 \\ 0 & 0 & 1 \end{pmatrix} $$
+$$ R = \begin{pmatrix} \cos(\theta) & -\sin(\theta) & 0 \ \sin(\theta) & \cos(\theta) & 0 \ 0 & 0 & 1 \end{pmatrix} $$
 
 我们需要将R表示为旋量基的线性组合：
 

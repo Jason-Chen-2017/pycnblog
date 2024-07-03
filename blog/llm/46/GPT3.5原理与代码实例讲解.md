@@ -108,7 +108,7 @@ $$S^{(i)} = \text{ScaledDotProductAttention}(x^{(i)}, x^{(i)}, x^{(i)})$$
 
 最后，将$m$个头的结果拼接起来：
 
-$$S = \begin{bmatrix} S^{(1)} \\ S^{(2)} \\ ... \\ S^{(m)} \end{bmatrix}$$
+$$S = \begin{bmatrix} S^{(1)} \ S^{(2)} \ ... \ S^{(m)} \end{bmatrix}$$
 
 ### 4.3 案例分析与讲解
 

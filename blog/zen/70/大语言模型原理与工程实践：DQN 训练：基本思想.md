@@ -86,7 +86,7 @@ $$
 $$
 L_{\delta}(y, \hat{y}) = 
 \begin{cases}
-\frac{1}{2}(y - \hat{y})^2 & \text{if } |y - \hat{y}| \leq \delta, \\
+\frac{1}{2}(y - \hat{y})^2 & \text{if } |y - \hat{y}| \leq \delta, \
 \delta (|y - \hat{y}| - \frac{1}{2}\delta) & \text{otherwise}.
 \end{cases}
 $$

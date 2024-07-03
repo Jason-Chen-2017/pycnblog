@@ -107,7 +107,7 @@ graph TD
 
 $$
 \begin{align*}
-X: U &\rightarrow \mathbb{R}^3 \\
+X: U &\rightarrow \mathbb{R}^3 \
 (u,v) &\mapsto (x(u,v), y(u,v), z(u,v))
 \end{align*}
 $$
@@ -122,7 +122,7 @@ $$
 
 $$
 \begin{align*}
-g_{ij} &= \frac{\partial X}{\partial u^i} \cdot \frac{\partial X}{\partial u^j} &&\text{(第一基本形式)}\\
+g_{ij} &= \frac{\partial X}{\partial u^i} \cdot \frac{\partial X}{\partial u^j} &&\text{(第一基本形式)}\
 b_{ij} &= -\frac{\partial^2 X}{\partial u^i \partial u^j} \cdot N &&\text{(第二基本形式)}
 \end{align*}
 $$
@@ -139,7 +139,7 @@ $$
 
 $$
 \begin{align*}
-R_{ijkl} &= \frac{\partial \Gamma_{il}^m}{\partial x^j} - \frac{\partial \Gamma_{ij}^m}{\partial x^l} + \Gamma_{ij}^n \Gamma_{nl}^m - \Gamma_{il}^n \Gamma_{nj}^m &&\text{(里奇曲率张量)}\\
+R_{ijkl} &= \frac{\partial \Gamma_{il}^m}{\partial x^j} - \frac{\partial \Gamma_{ij}^m}{\partial x^l} + \Gamma_{ij}^n \Gamma_{nl}^m - \Gamma_{il}^n \Gamma_{nj}^m &&\text{(里奇曲率张量)}\
 C_{ijkl} &= R_{ijkl} - \frac{1}{n-2}(g_{ik}R_{jl} - g_{il}R_{jk} - g_{jk}R_{il} + g_{jl}R_{ik}) &&\text{(威伊张量)}
 \end{align*}
 $$

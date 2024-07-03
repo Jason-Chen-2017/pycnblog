@@ -76,7 +76,7 @@ G --> E
 在策略梯度方法中，智能体的行为由策略函数 $\pi(\theta)$ 决定，其中 $\theta$ 为策略参数。策略函数 $\pi(\theta)$ 定义了在给定状态下选择特定动作的概率分布。例如，对于一个离散动作空间，策略函数可以表示为：
 
 $$\pi(\theta)(a_t | s_t) = \begin{cases}
-\frac{\exp(\theta^T\phi(s_t, a_t))}{\sum_a \exp(\theta^T\phi(s_t, a_t))}, & \text{if } a_t \in A_t \\
+\frac{\exp(\theta^T\phi(s_t, a_t))}{\sum_a \exp(\theta^T\phi(s_t, a_t))}, & \text{if } a_t \in A_t \
 0, & \text{otherwise}
 \end{cases}$$
 
@@ -201,11 +201,11 @@ abla_{\theta} J(\theta) = \sum_{t=0}^T \pi(\theta)(r_t | s_t, a_t, \theta) \phi(
 
 $$\pi(\theta)(a_t | s_t) = \theta^T \phi(s_t, a_t)$$
 
-其中，$\phi(s_t, a_t) = [\begin{matrix} x_t \\ v_t \end{matrix}]$。
+其中，$\phi(s_t, a_t) = [\begin{matrix} x_t \ v_t \end{matrix}]$。
 
 假设无人车的动力学模型为：
 
-$$\begin{cases} x_{t+1} = x_t + v_t \\ v_{t+1} = v_t + \frac{u - d}{m} \end{cases}$$
+$$\begin{cases} x_{t+1} = x_t + v_t \ v_{t+1} = v_t + \frac{u - d}{m} \end{cases}$$
 
 其中，$m$ 为无人车的质量。
 
@@ -223,7 +223,7 @@ $$r_t = -\left( x_t^2 + v_t^2 \right)$$
 
 首先，我们需要初始化策略参数 $\theta_0$。这里我们选择随机初始化策略参数：
 
-$$\theta_0 = \begin{bmatrix} 0.1 & 0.2 \\ 0.2 & 0.1 \end{bmatrix}$$
+$$\theta_0 = \begin{bmatrix} 0.1 & 0.2 \ 0.2 & 0.1 \end{bmatrix}$$
 
 然后，我们将使用策略梯度方法进行迭代优化。具体步骤如下：
 
@@ -237,7 +237,7 @@ abla_{\theta} J(\theta)$。
 
 假设我们使用学习率 $\alpha = 0.1$，迭代次数为100次。经过迭代优化后，策略参数 $\theta$ 将收敛到：
 
-$$\theta = \begin{bmatrix} 0.1 & 0.2 \\ 0.2 & 0.1 \end{bmatrix}$$
+$$\theta = \begin{bmatrix} 0.1 & 0.2 \ 0.2 & 0.1 \end{bmatrix}$$
 
 此时，智能体能够根据策略函数 $\pi(\theta)$ 在每个时刻选择合适的动作，使得无人车能够在有限时间内到达目标位置，并使行驶过程的总奖励最小。
 

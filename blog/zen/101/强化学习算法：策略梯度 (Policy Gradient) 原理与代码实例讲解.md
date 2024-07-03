@@ -159,9 +159,9 @@ $$
 
 $$
 \pi_\theta(a|s) = \begin{cases} 
-0.1 & \text{if } a = \text{up} \\
-0.2 & \text{if } a = \text{down} \\
-0.3 & \text{if } a = \text{left} \\
+0.1 & \text{if } a = \text{up} \
+0.2 & \text{if } a = \text{down} \
+0.3 & \text{if } a = \text{left} \
 0.4 & \text{if } a = \text{right} 
 \end{cases}
 $$
@@ -170,7 +170,7 @@ $$
 
 $$
 R(s,a) = \begin{cases} 
-10 & \text{if } (s,a) = (\text{down},\text{up}) \text{ or } (\text{right},\text{left}) \\
+10 & \text{if } (s,a) = (\text{down},\text{up}) \text{ or } (\text{right},\text{left}) \
 -1 & \text{otherwise} 
 \end{cases}
 $$

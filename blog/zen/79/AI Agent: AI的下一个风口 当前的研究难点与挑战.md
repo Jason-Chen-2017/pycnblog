@@ -90,8 +90,8 @@ AI Agent的概念建立在自主性、学习能力和决策制定之上。它们
 
 #### 强化学习
 $$
-R_t = r(s_t, a_t) \\
-V_\pi(s) = \mathbb{E}[G_t | S_t = s] \\
+R_t = r(s_t, a_t) \
+V_\pi(s) = \mathbb{E}[G_t | S_t = s] \
 Q_\pi(s, a) = \mathbb{E}[G_t | S_t = s, A_t = a]
 $$
 

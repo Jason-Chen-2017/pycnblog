@@ -66,7 +66,7 @@ import re
 
 def parse_log(log):
   # 使用正则表达式解析日志
-  pattern = r'(\d+\.\d+\.\d+\.\d+)\s-\s-\s\[(\d{2}/\w{3}/\d{4}:\d{2}:\d{2}:\d{2}\s\+\d{4})\]\s"(\w+)\s(\S+)\s(\S+)"\s(\d+)\s(\d+)'
+  pattern = r'(\d+\.\d+\.\d+\.\d+)\s-\s-\s$$(\d{2}/\w{3}/\d{4}:\d{2}:\d{2}:\d{2}\s\+\d{4})$$\s"(\w+)\s(\S+)\s(\S+)"\s(\d+)\s(\d+)'
   match = re.match(pattern, log)
   if match:
     ip = match.group(1) 

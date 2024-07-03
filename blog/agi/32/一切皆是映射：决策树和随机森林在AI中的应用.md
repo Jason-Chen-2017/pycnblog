@@ -97,7 +97,7 @@
 
 决策树构建过程中，特征选择依据信息增益、基尼指数或熵等指标。
 
-- **信息增益**：$IG(T, A) = I(T) - \\sum_{v \\in V(A)} \\frac{|T_v|}{|T|} I(T_v)$，其中$I(T)$是总信息熵，$T_v$是根据特征$A$的值$v$划分后的子集。
+- **信息增益**：$IG(T, A) = I(T) - \sum_{v \in V(A)} \frac{|T_v|}{|T|} I(T_v)$，其中$I(T)$是总信息熵，$T_v$是根据特征$A$的值$v$划分后的子集。
 
 #### 随机森林
 
@@ -173,7 +173,7 @@ predictions = dt_model.predict(X_test)
 
 # 计算准确率
 accuracy = accuracy_score(y_test, predictions)
-print(f\"Accuracy: {accuracy}\")
+print(f"Accuracy: {accuracy}")
 ```
 
 #### 示例代码：随机森林分类
@@ -203,7 +203,7 @@ predictions = rf_model.predict(X_test)
 
 # 计算准确率
 accuracy = accuracy_score(y_test, predictions)
-print(f\"Accuracy: {accuracy}\")
+print(f"Accuracy: {accuracy}")
 ```
 
 ### 5.3 代码解读与分析
@@ -256,8 +256,8 @@ print(f\"Accuracy: {accuracy}\")
 
 ### 7.3 相关论文推荐
 
-- **决策树**：Quinlan, J.R. (1986). \"Induction of Decision Trees by Minimizing Program Length.\" Machine Learning.
-- **随机森林**：Breiman, L. (2001). \"Random Forests.\"
+- **决策树**：Quinlan, J.R. (1986). "Induction of Decision Trees by Minimizing Program Length." Machine Learning.
+- **随机森林**：Breiman, L. (2001). "Random Forests."
 
 ### 7.4 其他资源推荐
 

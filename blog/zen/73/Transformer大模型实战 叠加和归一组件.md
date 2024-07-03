@@ -89,7 +89,7 @@
 自注意力机制可以表示为：
 
 $$
-\\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
 $$
 
 其中，$Q$是查询向量，$K$是键向量，$V$是值向量，$d_k$是键向量的维度。
@@ -103,18 +103,18 @@ $$
 以多头自注意力为例，假设我们有4个头部（heads），每个头部处理不同的特征维度。每个头部的计算可以表示为：
 
 $$
-\\text{Head}_i(Q, K, V) = \\text{softmax}\\left(\\frac{Q_iK_i^T}{\\sqrt{d_k}}\\right)V_i
+\text{Head}_i(Q, K, V) = \text{softmax}\left(\frac{Q_iK_i^T}{\sqrt{d_k}}\right)V_i
 $$
 
 其中，$Q_i$、$K_i$和$V_i$分别是第$i$个头部的查询、键和值向量。最终输出为所有头部的结果拼接：
 
 $$
-\\text{MultiHead}(Q, K, V) = \\begin{bmatrix}
-\\text{Head}_1(Q, K, V) \\\\
-\\text{Head}_2(Q, K, V) \\\\
-\\vdots \\\\
-\\text{Head}_4(Q, K, V)
-\\end{bmatrix}
+\text{MultiHead}(Q, K, V) = \begin{bmatrix}
+\text{Head}_1(Q, K, V) \\
+\text{Head}_2(Q, K, V) \\
+\vdots \\
+\text{Head}_4(Q, K, V)
+\end{bmatrix}
 $$
 
 ### 4.4 常见问题解答
@@ -145,7 +145,7 @@ class MultiHeadSelfAttention(nn.Module):
         self.embed_dim = embed_dim
         self.num_heads = num_heads
         self.head_dim = embed_dim // num_heads
-        assert self.head_dim * num_heads == embed_dim, \"Embedding dimension must be divisible by number of heads\"
+        assert self.head_dim * num_heads == embed_dim, "Embedding dimension must be divisible by number of heads"
 
         self.query_key_value = nn.Linear(embed_dim, 3 * embed_dim)
         self.attention_dropout = nn.Dropout(dropout)

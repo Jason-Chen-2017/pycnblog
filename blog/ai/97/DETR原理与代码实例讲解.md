@@ -152,11 +152,11 @@ DETR的数学模型可以表示为以下公式：
 
 $$
 \begin{aligned}
-f(x) &= \text{CNN}(x) \\
-P(x) &= \text{Position Encoding}(x) \\
-C &= [f(x), P(x)] \\
-C^{[L]} &= \text{Transformer}(C) \\
-\hat{y} &= \text{Linear}(C^{[L]}) \\
+f(x) &= \text{CNN}(x) \
+P(x) &= \text{Position Encoding}(x) \
+C &= [f(x), P(x)] \
+C^{[L]} &= \text{Transformer}(C) \
+\hat{y} &= \text{Linear}(C^{[L]}) \
 \hat{b} &= \text{Linear}(C^{[L]})
 \end{aligned}
 $$
@@ -184,7 +184,7 @@ $$
 
 $$
 \begin{aligned}
-P_i(x) &= \sin(\alpha_i + x_i) \\
+P_i(x) &= \sin(\alpha_i + x_i) \
 P_i(x) &= \cos(\alpha_i + x_i)
 \end{aligned}
 $$

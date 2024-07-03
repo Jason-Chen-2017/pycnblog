@@ -192,7 +192,7 @@ $$
 
 $$
 y_j = \begin{cases} 
-1, & \text{if } X_j > \alpha \\
+1, & \text{if } X_j > \alpha \
 0, & \text{if } X_j \leq \alpha 
 \end{cases}
 $$
@@ -219,7 +219,7 @@ $$
 
 $$
 y_1 = \begin{cases} 
-1, & \text{if } x_1 > 0.5 \\
+1, & \text{if } x_1 > 0.5 \
 0, & \text{if } x_1 \leq 0.5 
 \end{cases}
 $$

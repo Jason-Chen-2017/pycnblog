@@ -62,8 +62,8 @@ Transformer 的核心是自注意力机制和前馈神经网络。对于输入�
 
 $$
 \begin{aligned}
-\mathbf{z}_0 &= [\mathbf{x}_1\mathbf{E};...;\mathbf{x}_n\mathbf{E}] + \mathbf{P} \\
-\mathbf{z}'_l &= \text{MHA}(\mathbf{z}_{l-1}) + \mathbf{z}_{l-1}, \quad l=1,...,L \\  
+\mathbf{z}_0 &= [\mathbf{x}_1\mathbf{E};...;\mathbf{x}_n\mathbf{E}] + \mathbf{P} \
+\mathbf{z}'_l &= \text{MHA}(\mathbf{z}_{l-1}) + \mathbf{z}_{l-1}, \quad l=1,...,L \  
 \mathbf{z}_l &= \text{FFN}(\mathbf{z}'_l) + \mathbf{z}'_l, \quad l=1,...,L
 \end{aligned}
 $$

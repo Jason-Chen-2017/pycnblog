@@ -90,8 +90,8 @@ Chu-Liu/Edmonds算法在以下领域有广泛的应用：
 Chu-Liu/Edmonds算法的数学模型可以表示为以下递归关系：
 
 $$MST(G) = \begin{cases} 
-\emptyset, & \text{if } G \text{ is empty}, \\
-\{e\} \cup MST(G - e), & \text{if } e \in G \text{ is an edge with minimum weight}, \\
+\emptyset, & \text{if } G \text{ is empty}, \
+\{e\} \cup MST(G - e), & \text{if } e \in G \text{ is an edge with minimum weight}, \
 \{e\} \cup MST(G/e), & \text{if } e \in G \text{ is an edge and } G/e \text{ is connected},
 \end{cases}$$
 

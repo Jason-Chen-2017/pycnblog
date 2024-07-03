@@ -140,12 +140,12 @@ graph TD
 
 $$
 \begin{aligned}
-\mathbf{z}^{(1)} &= \mathbf{W}^{(1)} \mathbf{x} + \mathbf{b}^{(1)} \\
-\mathbf{a}^{(1)} &= \sigma(\mathbf{z}^{(1)}) \\
-\mathbf{z}^{(2)} &= \mathbf{W}^{(2)} \mathbf{a}^{(1)} + \mathbf{b}^{(2)} \\
-\mathbf{a}^{(2)} &= \sigma(\mathbf{z}^{(2)}) \\
-&\dots\\
-\mathbf{z}^{(L)} &= \mathbf{W}^{(L)} \mathbf{a}^{(L-1)} + \mathbf{b}^{(L)} \\
+\mathbf{z}^{(1)} &= \mathbf{W}^{(1)} \mathbf{x} + \mathbf{b}^{(1)} \
+\mathbf{a}^{(1)} &= \sigma(\mathbf{z}^{(1)}) \
+\mathbf{z}^{(2)} &= \mathbf{W}^{(2)} \mathbf{a}^{(1)} + \mathbf{b}^{(2)} \
+\mathbf{a}^{(2)} &= \sigma(\mathbf{z}^{(2)}) \
+&\dots\
+\mathbf{z}^{(L)} &= \mathbf{W}^{(L)} \mathbf{a}^{(L-1)} + \mathbf{b}^{(L)} \
 \hat{\mathbf{y}} &= \mathbf{a}^{(L)} = \sigma(\mathbf{z}^{(L)})
 \end{aligned}
 $$

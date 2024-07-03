@@ -135,7 +135,7 @@ AI代理工作流是一系列由AI代理执行的自动化任务序列。这些�
 $$
 \phi(x) = 
 \begin{cases} 
-1 & \text{if } x \in X_{abnormal} \\
+1 & \text{if } x \in X_{abnormal} \
 0 & \text{if } x \in X
 \end{cases}
 $$

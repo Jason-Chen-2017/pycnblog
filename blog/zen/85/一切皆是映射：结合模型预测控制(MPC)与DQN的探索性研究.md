@@ -112,7 +112,7 @@ MPC-DQN模型可以应用于以下领域：
 
 $$
 \begin{cases}
-\dot{x}(t) = f(x(t), u(t)) \\
+\dot{x}(t) = f(x(t), u(t)) \
 y(t) = h(x(t))
 \end{cases}
 $$
@@ -125,9 +125,9 @@ $$
 
 $$
 \begin{cases}
-x_{k+1} = f(x_k, u_k) \\
-x_{k+2} = f(x_{k+1}, u_{k+1}) \\
-\vdots \\
+x_{k+1} = f(x_k, u_k) \
+x_{k+2} = f(x_{k+1}, u_{k+1}) \
+\vdots \
 x_{k+m} = f(x_{k+m-1}, u_{k+m-1})
 \end{cases}
 $$

@@ -67,7 +67,7 @@ GPT-4广泛应用于自然语言处理、文本生成、多模态信息融合等
 
 GPT-4的数学模型构建基于概率论和统计学习理论，主要涉及以下公式：
 
-$$ P(w|w_1, ..., w_{t-1}) = \\frac{1}{Z} \\sum_{k=1}^K \\exp(v_k^T \\cdot W_{vk} \\cdot \\text{Softmax}(W_{vk} \\cdot \\text{Multihead\\_Attn}(W_{vk} \\cdot \\text{PosEmb}(w_1), ..., W_{vk} \\cdot \\text{PosEmb}(w_{t-1})) + W_{vk} \\cdot \\text{FeedForward}(W_{vk} \\cdot \\text{Multihead\\_Attn}(W_{vk} \\cdot \\text{PosEmb}(w_1), ..., W_{vk} \\cdot \\text{PosEmb}(w_{t-1})))) ) $$
+$$ P(w|w_1, ..., w_{t-1}) = \frac{1}{Z} \sum_{k=1}^K \exp(v_k^T \cdot W_{vk} \cdot \text{Softmax}(W_{vk} \cdot \text{Multihead\_Attn}(W_{vk} \cdot \text{PosEmb}(w_1), ..., W_{vk} \cdot \text{PosEmb}(w_{t-1})) + W_{vk} \cdot \text{FeedForward}(W_{vk} \cdot \text{Multihead\_Attn}(W_{vk} \cdot \text{PosEmb}(w_1), ..., W_{vk} \cdot \text{PosEmb}(w_{t-1})))) ) $$
 
 其中，$w$是当前生成的单词，$w_1, ..., w_{t-1}$是之前生成的单词序列，$Z$是规范化常数，$K$是注意力头的数量，$v_k$是第$k$个注意力头的参数矩阵。
 
@@ -112,7 +112,7 @@ tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 model = GPT2LMHeadModel.from_pretrained('gpt2')
 
 # 输入文本
-input_text = \"科技发展正在迅速推进，尤其是在人工智能领域。\"
+input_text = "科技发展正在迅速推进，尤其是在人工智能领域。"
 
 # 分词
 tokens = tokenizer.encode(input_text, return_tensors='pt')

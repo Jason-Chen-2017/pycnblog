@@ -53,7 +53,7 @@
 
    $$\text{接受新解} = \left\{
    \begin{array}{ll}
-   1, & \text{if } \Delta E < 0 \text{ or } \exp\left(\frac{\Delta E}{kT}\right) > \text{随机数} \\
+   1, & \text{if } \Delta E < 0 \text{ or } \exp\left(\frac{\Delta E}{kT}\right) > \text{随机数} \
    0, & \text{otherwise}
    \end{array}
    \right.$$
@@ -93,8 +93,8 @@
 模拟退火算法的数学模型可以表示为：
 
 $$\begin{align*}
-x_{t+1} &= x_t + \Delta x \\
-T_{t+1} &= T_t \cdot \alpha \\
+x_{t+1} &= x_t + \Delta x \
+T_{t+1} &= T_t \cdot \alpha \
 E_{t+1} &= f(x_{t+1})
 \end{align*}$$
 

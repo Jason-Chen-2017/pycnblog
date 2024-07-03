@@ -128,7 +128,7 @@ Transformer模型是一种基于自注意力机制的深度神经网络模型，
 
 $$
 \begin{align*}
-\text{encoder}(X) &= \text{LayerNorm}(X + \text{LayerNorm}(W_{\text{pos}}(X) + \text{MultiHeadAttention}(Q, K, V))) \\
+\text{encoder}(X) &= \text{LayerNorm}(X + \text{LayerNorm}(W_{\text{pos}}(X) + \text{MultiHeadAttention}(Q, K, V))) \
 X &= \text{encoder}(X)
 \end{align*}
 $$
@@ -147,7 +147,7 @@ $$
 
 $$
 \begin{align*}
-\text{decoder}(Y) &= \text{LayerNorm}(Y + \text{LayerNorm}(W_{\text{pos}}(Y) + \text{MultiHeadAttention}(Q, K, V))) \\
+\text{decoder}(Y) &= \text{LayerNorm}(Y + \text{LayerNorm}(W_{\text{pos}}(Y) + \text{MultiHeadAttention}(Q, K, V))) \
 Y &= \text{encoder}(Y)
 \end{align*}
 $$

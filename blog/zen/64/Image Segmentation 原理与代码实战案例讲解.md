@@ -88,7 +88,7 @@ U-Net是一种用于医学图像分割的深度学习模型，其结构类似于
 $$
 g(x,y) = \left\{
 \begin{aligned}
-1, & \text{if } f(x,y) > T \\
+1, & \text{if } f(x,y) > T \
 0, & \text{otherwise}
 \end{aligned}
 \right.

@@ -128,7 +128,7 @@ SARSA算法的数学模型主要由值函数Q(s,a)和策略π(s)组成。
 
   $$
  \pi(s,a) = \begin{cases} 
- 1 & \text{if } a = \arg\max_{a'}Q(s,a') \\
+ 1 & \text{if } a = \arg\max_{a'}Q(s,a') \
  0 & \text{otherwise} 
  \end{cases}
  $$

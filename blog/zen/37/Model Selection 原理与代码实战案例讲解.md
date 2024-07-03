@@ -118,9 +118,9 @@
 
 常用的损失函数包括：
 
-- **均方误差(Mean Squared Error, MSE)**: $\\frac{1}{n}\\sum_{i=1}^n (y_i - \\hat{y}_i)^2$
-- **交叉熵损失(Cross-Entropy Loss)**: $- \\sum_{i=1}^n y_i \\log \\hat{y}_i$
-- **对数损失(Log Loss)**: $- \\sum_{i=1}^n y_i \\log(\\hat{y}_i)$
+- **均方误差(Mean Squared Error, MSE)**: $\frac{1}{n}\sum_{i=1}^n (y_i - \hat{y}_i)^2$
+- **交叉熵损失(Cross-Entropy Loss)**: $- \sum_{i=1}^n y_i \log \hat{y}_i$
+- **对数损失(Log Loss)**: $- \sum_{i=1}^n y_i \log(\hat{y}_i)$
 
 #### 4.1.2 交叉验证
 
@@ -132,15 +132,15 @@
 
 - **均方误差(MSE)的推导**：
 
-设真实值为$y_i$，预测值为$\\hat{y}_i$，则均方误差为：
+设真实值为$y_i$，预测值为$\hat{y}_i$，则均方误差为：
 
-$$MSE = \\frac{1}{n}\\sum_{i=1}^n (y_i - \\hat{y}_i)^2$$
+$$MSE = \frac{1}{n}\sum_{i=1}^n (y_i - \hat{y}_i)^2$$
 
 - **交叉熵损失(Cross-Entropy Loss)的推导**：
 
-设真实值为$y_i$，预测值为$\\hat{y}_i$，则交叉熵损失为：
+设真实值为$y_i$，预测值为$\hat{y}_i$，则交叉熵损失为：
 
-$$CE = - \\sum_{i=1}^n y_i \\log \\hat{y}_i$$
+$$CE = - \sum_{i=1}^n y_i \log \hat{y}_i$$
 
 ### 4.3 案例分析与讲解
 
@@ -166,7 +166,7 @@ y_pred = model.predict(X)
 
 # 计算MSE
 mse = mean_squared_error(y, y_pred)
-print(\"MSE:\", mse)
+print("MSE:", mse)
 ```
 
 #### 4.3.2 案例二：文本分类
@@ -191,7 +191,7 @@ y_pred = model.predict(X)
 
 # 计算交叉熵损失
 loss = log_loss(y, y_pred)
-print(\"交叉熵损失:\", loss)
+print("交叉熵损失:", loss)
 ```
 
 ### 4.4 常见问题解答
@@ -237,9 +237,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 
 # 定义候选模型
 models = {
-    \"RandomForest\": RandomForestClassifier(n_estimators=100),
-    \"LogisticRegression\": LogisticRegression(),
-    \"SVM\": SVC()
+    "RandomForest": RandomForestClassifier(n_estimators=100),
+    "LogisticRegression": LogisticRegression(),
+    "SVM": SVC()
 }
 
 # 模型评估
@@ -250,7 +250,7 @@ for name, model in models.items():
 
 # 输出结果
 for name, score in results.items():
-    print(f\"{name}: {score:.2f}\")
+    print(f"{name}: {score:.2f}")
 ```
 
 ### 5.3 代码解读与分析
@@ -317,10 +317,10 @@ SVM: 0.97
 
 ### 7.3 相关论文推荐
 
-1. **\"Model Selection and Model Averaging in Regression and Related Models\"**: 作者：Peter D. Hoff
+1. **"Model Selection and Model Averaging in Regression and Related Models"**: 作者：Peter D. Hoff
     - 介绍了模型选择和模型平均化在回归和相关模型中的应用。
 
-2. **\"The Role of Hyperparameter Optimization in Deep Learning\"**: 作者：Lukasz I. Gustavo de Oliveira, Kevin Swersky, Ryan P. Adams
+2. **"The Role of Hyperparameter Optimization in Deep Learning"**: 作者：Lukasz I. Gustavo de Oliveira, Kevin Swersky, Ryan P. Adams
     - 介绍了超参数优化在深度学习中的重要作用。
 
 ### 7.4 其他资源推荐

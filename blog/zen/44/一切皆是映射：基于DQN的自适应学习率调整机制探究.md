@@ -95,8 +95,8 @@ $$\eta_{t+1} = \eta_0 \times \gamma_t$$
 其中，$\gamma_t$表示第$t$个epoch的调整因子，可以根据损失函数值$L$来计算：
 
 $$\gamma_t = \begin{cases}
-1, & \text{if } |L_{t+1} - L_t| > 1\% \\
-0.99, & \text{if } |L_{t+1} - L_t| \leq 1\% \text{ and } L_{t+1} < L_t \\
+1, & \text{if } |L_{t+1} - L_t| > 1\% \
+0.99, & \text{if } |L_{t+1} - L_t| \leq 1\% \text{ and } L_{t+1} < L_t \
 2, & \text{if } |L_{t+1} - L_t| \leq 1\% \text{ and } L_{t+1} > L_t
 \end{cases}$$
 

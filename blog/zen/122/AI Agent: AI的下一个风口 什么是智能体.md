@@ -126,7 +126,7 @@ MDP 的数学公式如下：
 
 $$
 \begin{aligned}
-&V(s) = \max_{a \in A} \left[ R(s,a) + \gamma \sum_{s' \in S} P(s'|s,a) V(s') \right] \\
+&V(s) = \max_{a \in A} \left[ R(s,a) + \gamma \sum_{s' \in S} P(s'|s,a) V(s') \right] \
 &\pi(s) = \arg \max_{a \in A} \left[ R(s,a) + \gamma \sum_{s' \in S} P(s'|s,a) V(s') \right]
 \end{aligned}
 $$

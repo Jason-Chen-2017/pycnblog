@@ -86,7 +86,7 @@ public class LongLongNullTextInputFormat extends TextVertexInputFormat<
   public class LongLongNullVertexReader extends TextVertexReaderFromEachLineProcessed<String[]> {
     @Override
     protected String[] preprocessLine(Text line) {
-      return line.toString().split("\\s+");
+      return line.toString().split("\s+");
     }
 
     @Override

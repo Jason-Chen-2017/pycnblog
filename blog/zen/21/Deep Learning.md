@@ -42,7 +42,7 @@ graph TD;
 激活函数用于引入非线性因素，使神经网络能够学习和表达复杂的映射关系。常见的激活函数有sigmoid、tanh、ReLU等。
 
 $$ f(x) = \begin{cases} 
-0, & x < 0 \\
+0, & x < 0 \
 x, & x \geq 0 
 \end{cases}
 $$

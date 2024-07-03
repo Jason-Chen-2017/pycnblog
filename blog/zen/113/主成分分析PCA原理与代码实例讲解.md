@@ -94,9 +94,9 @@ PCA的核心步骤包括：
 假设我们有m个样本和n个特征，矩阵X表示这个数据集：
 
 $$ X = \begin{bmatrix} 
-x_{11} & x_{12} & \cdots & x_{1n} \\
-x_{21} & x_{22} & \cdots & x_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
+x_{11} & x_{12} & \cdots & x_{1n} \
+x_{21} & x_{22} & \cdots & x_{2n} \
+\vdots & \vdots & \ddots & \vdots \
 x_{m1} & x_{m2} & \cdots & x_{mn}
 \end{bmatrix} $$
 

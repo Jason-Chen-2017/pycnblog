@@ -85,7 +85,7 @@ CNPs可以应用于以下领域：
 假设输入条件为 $C$，内部表示为 $Z$，推理结果为 $R$。则CNPs的数学模型可以表示为：
 
 $$
-Z = f_C(C) \\
+Z = f_C(C) \
 R = g_Z(Z)
 $$
 
@@ -96,7 +96,7 @@ $$
 假设条件编码器为 $f_C: \mathbb{R}^n \rightarrow \mathbb{R}^m$，推理器/决策器为 $g_Z: \mathbb{R}^m \rightarrow \mathbb{R}^l$。则：
 
 $$
-Z = f_C(C) = \sigma(W_1C + b_1) \\
+Z = f_C(C) = \sigma(W_1C + b_1) \
 R = g_Z(Z) = \sigma(W_2Z + b_2)
 $$
 

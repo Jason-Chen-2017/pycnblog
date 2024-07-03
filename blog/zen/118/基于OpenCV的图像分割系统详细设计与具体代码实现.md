@@ -160,13 +160,13 @@
 
 #### 4.1.1 基于阈值的分割方法
 
-- 阈值分割模型：$f(x) = \begin{cases} 0, & \text{if } x < T \\ 1, & \text{if } x \geq T \end{cases}$
+- 阈值分割模型：$f(x) = \begin{cases} 0, & \text{if } x < T \ 1, & \text{if } x \geq T \end{cases}$
 
 其中，$T$ 为阈值，$x$ 为像素的灰度值或颜色值。
 
 #### 4.1.2 基于区域生长的分割方法
 
-- 区域生长模型：$R = \begin{cases} \{x\}, & \text{if } x \text{ is a seed point} \\ \{x\} \cup R'(x), & \text{if } \text{neighboring pixel } R'(x) \text{ satisfies the condition} \end{cases}$
+- 区域生长模型：$R = \begin{cases} \{x\}, & \text{if } x \text{ is a seed point} \ \{x\} \cup R'(x), & \text{if } \text{neighboring pixel } R'(x) \text{ satisfies the condition} \end{cases}$
 
 其中，$R$ 为连通区域，$x$ 为种子点，$R'(x)$ 为与 $x$ 相邻的像素，$\text{condition}$ 为区域生长条件。
 

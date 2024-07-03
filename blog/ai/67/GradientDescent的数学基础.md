@@ -185,12 +185,12 @@ $$
 $$
 \
 abla L(\theta) = \begin{bmatrix}
-\frac{\partial L}{\partial \theta_0} \\
-\frac{\partial L}{\partial \theta_1} \\
+\frac{\partial L}{\partial \theta_0} \
+\frac{\partial L}{\partial \theta_1} \
 \frac{\partial L}{\partial \theta_2}
 \end{bmatrix} = \begin{bmatrix}
-\sum_{i=1}^N (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i})) \\
-\sum_{i=1}^N x_{1i} (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i})) \\
+\sum_{i=1}^N (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i})) \
+\sum_{i=1}^N x_{1i} (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i})) \
 \sum_{i=1}^N x_{2i} (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i}))
 \end{bmatrix}
 $$

@@ -93,9 +93,9 @@ rectangle(rgbImage, box, Scalar(0,255,0), 2); //用绿色矩形框标记
 因此红色的HSV阈值可以设置为:
 $$
 \begin{aligned}
-&\text{Lower}_1 = (0, 100, 100) \\
-&\text{Upper}_1 = (10, 255, 255) \\
-&\text{Lower}_2 = (160, 100, 100) \\
+&\text{Lower}_1 = (0, 100, 100) \
+&\text{Upper}_1 = (10, 255, 255) \
+&\text{Lower}_2 = (160, 100, 100) \
 &\text{Upper}_2 = (180, 255, 255)
 \end{aligned}
 $$

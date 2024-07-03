@@ -101,19 +101,19 @@
 
 在药物发现领域，常用到的数学模型之一是基于Transformer的深度学习模型，用于预测化合物的生物活性。模型结构可以表示为：
 
-$$\\hat{y} = f(x; \\theta)$$
+$$\hat{y} = f(x; \theta)$$
 
 其中，
 
-- $\\hat{y}$ 是预测的生物活性值（连续变量）。
+- $\hat{y}$ 是预测的生物活性值（连续变量）。
 - $x$ 是化合物的特征向量，可能包括分子指纹、结构化描述符等。
-- $f$ 是深度学习模型，由多层变换器组成，参数为 $\\theta$。
+- $f$ 是深度学习模型，由多层变换器组成，参数为 $\theta$。
 
 ### 4.2 公式推导过程
 
 Transformer模型通过自注意力机制计算输入序列中各个元素之间的关系，可以表示为：
 
-$$Attention(Q, K, V) = \\operatorname{softmax}(\\frac{QK^T}{\\sqrt{d_k}})V$$
+$$Attention(Q, K, V) = \operatorname{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
 
 其中，
 

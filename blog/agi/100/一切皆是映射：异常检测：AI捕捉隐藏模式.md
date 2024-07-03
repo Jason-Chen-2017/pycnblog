@@ -118,16 +118,16 @@ $$
 
 $$
 \mu = \begin{bmatrix}
-170 \\
+170 \
 65
 \end{bmatrix},
 \Sigma = \begin{bmatrix}
-100 & 50 \\
+100 & 50 \
 50 & 50 
 \end{bmatrix}
 $$
 
-对于一个新的身高体重数据 $x = \begin{bmatrix} 200 \\ 100 \end{bmatrix}$,代入高斯分布概率密度函数,计算 $p(x)=5.2\times10^{-10}$。设定阈值 $\epsilon=1\times10^{-5}$,则 $p(x) < \epsilon$,判断该数据为异常。
+对于一个新的身高体重数据 $x = \begin{bmatrix} 200 \ 100 \end{bmatrix}$,代入高斯分布概率密度函数,计算 $p(x)=5.2\times10^{-10}$。设定阈值 $\epsilon=1\times10^{-5}$,则 $p(x) < \epsilon$,判断该数据为异常。
 
 ### 4.2 单类SVM异常检测模型
 

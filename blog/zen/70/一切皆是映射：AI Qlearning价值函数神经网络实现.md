@@ -81,7 +81,7 @@ $$L = \frac{1}{N} \sum_{i=1}^N (Q_{target}^i - Q_{predict}^i)^2$$
 
 *   Huber 损失函数：
 
-$$L = \begin{cases} \frac{1}{2} (Q_{target} - Q_{predict})^2 & \text{if } |Q_{target} - Q_{predict}| \leq \delta \\ \delta (|Q_{target} - Q_{predict}| - \frac{1}{2} \delta) & \text{otherwise} \end{cases}$$
+$$L = \begin{cases} \frac{1}{2} (Q_{target} - Q_{predict})^2 & \text{if } |Q_{target} - Q_{predict}| \leq \delta \ \delta (|Q_{target} - Q_{predict}| - \frac{1}{2} \delta) & \text{otherwise} \end{cases}$$
 
 其中，$\delta$ 是一个超参数，用于控制损失函数对异常值的敏感程度。
 

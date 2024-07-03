@@ -109,7 +109,7 @@ $$
 
 $$
 \begin{aligned}
-\varphi : R &\to R/I \\
+\varphi : R &\to R/I \
 r &\mapsto r + I
 \end{aligned}
 $$

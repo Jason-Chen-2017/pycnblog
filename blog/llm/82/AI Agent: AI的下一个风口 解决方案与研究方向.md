@@ -194,7 +194,7 @@ AI Agent的数学模型主要包括以下部分：
 
 $$
 \begin{align*}
-P(s'|s,a) &= \text{状态转移概率} \\
+P(s'|s,a) &= \text{状态转移概率} \
 R(s,a) &= \text{奖励函数}
 \end{align*}
 $$
@@ -212,10 +212,10 @@ $$
 $$
 \begin{align*}
 P(s'|s,a) &= \begin{cases}
-(s'_x=s_x+1, s'_y=s_y) & \text{if } a=\text{上} \\
-(s'_x=s_x-1, s'_y=s_y) & \text{if } a=\text{下} \\
-(s'_x=s_x, s'_y=s_y+1) & \text{if } a=\text{左} \\
-(s'_x=s_x, s'_y=s_y-1) & \text{if } a=\text{右} \\
+(s'_x=s_x+1, s'_y=s_y) & \text{if } a=\text{上} \
+(s'_x=s_x-1, s'_y=s_y) & \text{if } a=\text{下} \
+(s'_x=s_x, s'_y=s_y+1) & \text{if } a=\text{左} \
+(s'_x=s_x, s'_y=s_y-1) & \text{if } a=\text{右} \
 \end{cases}
 $$
 
@@ -223,8 +223,8 @@ $$
 
 $$
 R(s,a) = \begin{cases}
-1 & \text{if } a=\text{上} \\
--1 & \text{if } a=\text{下} \\
+1 & \text{if } a=\text{上} \
+-1 & \text{if } a=\text{下} \
 0 & \text{otherwise}
 \end{cases}
 $$

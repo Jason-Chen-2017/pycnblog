@@ -112,15 +112,15 @@ P*算法的数学模型可以用以下公式表示：
 $$
 P^*(\varphi) = 
 \begin{cases} 
-\top & \text{如果 } \varphi \text{ 为真} \\
-\bot & \text{如果 } \varphi \text{ 为假} \\
-\phi_1 \wedge \phi_2 & \text{如果 } \varphi = \phi_1 \wedge \phi_2 \\
-\phi_1 \vee \phi_2 & \text{如果 } \varphi = \phi_1 \vee \phi_2 \\
+\top & \text{如果 } \varphi \text{ 为真} \
+\bot & \text{如果 } \varphi \text{ 为假} \
+\phi_1 \wedge \phi_2 & \text{如果 } \varphi = \phi_1 \wedge \phi_2 \
+\phi_1 \vee \phi_2 & \text{如果 } \varphi = \phi_1 \vee \phi_2 \
 \
 eg \phi & \text{如果 } \varphi = \
-eg \phi \\
-\exists x \phi & \text{如果 } \varphi = \exists x \phi \\
-\forall x \phi & \text{如果 } \varphi = \forall x \phi \\
+eg \phi \
+\exists x \phi & \text{如果 } \varphi = \exists x \phi \
+\forall x \phi & \text{如果 } \varphi = \forall x \phi \
 \end{cases}
 $$
 

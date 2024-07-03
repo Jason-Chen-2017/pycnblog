@@ -99,11 +99,11 @@ LSTM的数学模型如下：
 
 $$
 \begin{aligned}
-\text{遗忘门}: f_t &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \\
-\text{输入门}: i_t &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \\
-\text{候选激活值}: \tilde{C}_t &= \tanh(W_c \cdot [h_{t-1}, x_t] + b_c) \\
-\text{更新细胞状态}: C_t &= f_t \cdot C_{t-1} + i_t \cdot \tilde{C}_t \\
-\text{输出门}: o_t &= \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) \\
+\text{遗忘门}: f_t &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \
+\text{输入门}: i_t &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \
+\text{候选激活值}: \tilde{C}_t &= \tanh(W_c \cdot [h_{t-1}, x_t] + b_c) \
+\text{更新细胞状态}: C_t &= f_t \cdot C_{t-1} + i_t \cdot \tilde{C}_t \
+\text{输出门}: o_t &= \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) \
 \text{隐藏状态}: h_t &= o_t \cdot \tanh(C_t)
 \end{aligned}
 $$

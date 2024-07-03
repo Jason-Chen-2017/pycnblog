@@ -99,7 +99,7 @@ $$Q^*(s,a) = \mathbb{E}\left[r_t + \gamma \max_{a'}Q^*(s_{t+1},a')|s_t=s,a_t=a\r
 探索策略决定了在每个状态下选择行为的概率分布。以ε-greedy策略为例,其数学模型为:
 
 $$P(a|s) = \begin{cases} 
-      \epsilon/|A(s)| & \text{if } a \neq \pi(s)\\
+      \epsilon/|A(s)| & \text{if } a \neq \pi(s)\
       1 - \epsilon + \epsilon/|A(s)| & \text{if } a = \pi(s)
    \end{cases}$$
 

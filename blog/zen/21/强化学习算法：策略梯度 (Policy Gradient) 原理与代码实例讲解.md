@@ -86,32 +86,32 @@
 
 策略梯度算法的核心在于定义策略函数及其与累积奖励的关系。策略函数通常表示为：
 
-$$ \\pi(a|s) = P(a \\mid s) $$
+$$ \pi(a|s) = P(a \mid s) $$
 
-其中，$P(a \\mid s)$ 是在状态 $s$ 下采取动作 $a$ 的概率。
+其中，$P(a \mid s)$ 是在状态 $s$ 下采取动作 $a$ 的概率。
 
 ### 4.2 公式推导过程
 
 策略梯度算法通常通过梯度上升法来优化策略：
 
-$$ \\theta \\leftarrow \\theta + \\alpha \\cdot \
-abla_\\theta J(\\theta) $$
+$$ \theta \leftarrow \theta + \alpha \cdot \
+abla_\theta J(\theta) $$
 
 其中：
 
-- $\\theta$ 是策略参数，
-- $\\alpha$ 是学习率，
+- $\theta$ 是策略参数，
+- $\alpha$ 是学习率，
 - $\
-abla_\\theta J(\\theta)$ 是策略梯度，
+abla_\theta J(\theta)$ 是策略梯度，
 
 策略梯度通常通过以下方式计算：
 
-$$ J(\\theta) = \\mathbb{E}_{\\tau \\sim \\pi} [\\sum_{t=0}^{T} \\gamma^t r_t] $$
+$$ J(\theta) = \mathbb{E}_{\tau \sim \pi} [\sum_{t=0}^{T} \gamma^t r_t] $$
 
 其中：
 
-- $\\tau$ 是轨迹（即一系列状态、动作和奖励的序列），
-- $\\gamma$ 是折现因子，
+- $\tau$ 是轨迹（即一系列状态、动作和奖励的序列），
+- $\gamma$ 是折现因子，
 - $r_t$ 是第 $t$ 步的即时奖励。
 
 ### 4.3 案例分析与讲解
@@ -201,8 +201,8 @@ agent.learn([env.reset(), env.reset()], [0, 1], [1, 0])
 
 ### 7.3 相关论文推荐
 
-- **\"Policy Gradient Methods\" by Richard S. Sutton**：深入理解策略梯度方法的理论基础。
-- **\"Asynchronous Actor-Critic Algorithms\" by John Schulman et al.**：了解异步actor-critic算法，这是一种高效的策略梯度方法。
+- **"Policy Gradient Methods" by Richard S. Sutton**：深入理解策略梯度方法的理论基础。
+- **"Asynchronous Actor-Critic Algorithms" by John Schulman et al.**：了解异步actor-critic算法，这是一种高效的策略梯度方法。
 
 ### 7.4 其他资源推荐
 

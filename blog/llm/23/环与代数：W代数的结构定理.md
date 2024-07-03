@@ -68,7 +68,7 @@ W-代数的数学模型通常基于以下构建：
 
 - **环的定义**：$R$是一个带有加法和乘法运算的代数结构，满足结合律、交换律和分配律。
 - **赋值函数**：$\
-u: R \\to \\mathbb{K}$，其中$\\mathbb{K}$是一个数值集（如$\\mathbb{R}$或$\\mathbb{C}$），$\
+u: R \to \mathbb{K}$，其中$\mathbb{K}$是一个数值集（如$\mathbb{R}$或$\mathbb{C}$），$\
 u$定义了每个元素在其上的“重量”。
 
 ### 4.2 公式推导过程
@@ -84,7 +84,7 @@ u(b)$$
 
 ### 4.3 案例分析与讲解
 
-**案例一**：考虑环$R=\\mathbb{Z}[x]$，整系数多项式环，令$\
+**案例一**：考虑环$R=\mathbb{Z}[x]$，整系数多项式环，令$\
 u(f(x))=deg(f(x))$，则$\
 u$定义了一个W-代数结构，其中$\
 u(ab)=\
@@ -133,7 +133,7 @@ weight_f = weight(f)
 weight_g = weight(g)
 
 # 结果验证
-assert weight_product == weight_f + weight_g, \"结构定理不成立\"
+assert weight_product == weight_f + weight_g, "结构定理不成立"
 ```
 
 ### 5.3 代码解读与分析

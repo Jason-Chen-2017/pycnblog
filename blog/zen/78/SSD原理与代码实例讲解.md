@@ -101,23 +101,23 @@ SSD广泛应用于需要实时检测和识别物体的领域，如自动驾驶�
 假设输入为一张图像$I$，输出为一组预测框$\hat{b}$和对应的类别概率$\hat{p}$，可以构建如下数学模型：
 
 #### 输入变换：
-\[I \rightarrow F_1, F_2, \dots, F_s\]
+$$I \rightarrow F_1, F_2, \dots, F_s$$
 
 #### 特征金字塔：
-\[F_i \rightarrow C_i, R_i\]
+$$F_i \rightarrow C_i, R_i$$
 
 其中$F_i$是第$i$个尺度的特征图，$C_i$是分类层的输出，$R_i$是回归层的输出。
 
 #### 输出变换：
-\[C_i \times R_i \rightarrow \hat{b}, \hat{p}\]
+$$C_i \times R_i \rightarrow \hat{b}, \hat{p}$$
 
 ### 4.2 公式推导过程
 
 #### 分类预测：
-\[C_i = \text{Softmax}(W_C \cdot F_i + b_C)\]
+$$C_i = \text{Softmax}(W_C \cdot F_i + b_C)$$
 
 #### 回归预测：
-\[R_i = \text{ReLu}(W_R \cdot F_i + b_R)\]
+$$R_i = \text{ReLu}(W_R \cdot F_i + b_R)$$
 
 这里$W_C$和$W_R$分别是分类和回归层的权重矩阵，$b_C$和$b_R$是偏置向量，$\text{Softmax}$是用于分类的概率转换，$\text{ReLu}$是用于回归的激活函数。
 

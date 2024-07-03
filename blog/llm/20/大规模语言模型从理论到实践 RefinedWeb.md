@@ -74,11 +74,11 @@
 
 大规模语言模型的数学模型通常基于概率模型，特别是条件随机场（CRF）和生成式模型（如变分自动编码器、生成对抗网络）。以下是一个基于Transformer架构的数学模型表示：
 
-设输入文本为序列$x=x_1,x_2,\\ldots,x_T$，目标为生成序列$y=y_1,y_2,\\ldots,y_S$。模型通过多层自注意力机制学习输入序列的上下文依赖，并通过多头机制增加模型的并行性和泛化能力。具体而言，模型的前向传播可以表示为：
+设输入文本为序列$x=x_1,x_2,\ldots,x_T$，目标为生成序列$y=y_1,y_2,\ldots,y_S$。模型通过多层自注意力机制学习输入序列的上下文依赖，并通过多头机制增加模型的并行性和泛化能力。具体而言，模型的前向传播可以表示为：
 
 $$
-\\text{Encoder}(x) = \\text{MultiHeadAttention}(Q,K,V) \\\\
-\\text{Decoder}(y|x) = \\text{MultiHeadAttention}(Q,K,V) + \\text{FeedForward}(...)
+\text{Encoder}(x) = \text{MultiHeadAttention}(Q,K,V) \\
+\text{Decoder}(y|x) = \text{MultiHeadAttention}(Q,K,V) + \text{FeedForward}(...)
 $$
 
 ### 4.2 公式推导过程
@@ -88,7 +88,7 @@ $$
 - **注意力机制**：计算查询（Query）、键（Key）和值（Value）之间的加权和，公式为：
 
 $$
-\\text{Attention}(Q,K,V) = \\text{Softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V
+\text{Attention}(Q,K,V) = \text{Softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
 $$
 
 其中$d_k$是键的维度。
@@ -96,10 +96,10 @@ $$
 - **多头自注意力**：通过多个并行注意力机制提升模型的表示能力：
 
 $$
-\\text{MultiHeadAttention}(Q,K,V) = \\text{Concat}([\\text{Attention}(Q_i,K,V),\\ldots,\\text{Attention}(Q_h,K,V)])W^{\\text{out}}
+\text{MultiHeadAttention}(Q,K,V) = \text{Concat}([\text{Attention}(Q_i,K,V),\ldots,\text{Attention}(Q_h,K,V)])W^{\text{out}}
 $$
 
-其中$W^{\\text{out}}$是将多头输出合并到单个向量上的权重矩阵。
+其中$W^{\text{out}}$是将多头输出合并到单个向量上的权重矩阵。
 
 ### 4.3 案例分析与讲解
 
@@ -136,7 +136,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
 # 输入文本序列
-input_text = \"春暖花开\"
+input_text = "春暖花开"
 
 # 编码输入文本
 input_ids = tokenizer.encode(input_text, return_tensors='pt')
@@ -181,8 +181,8 @@ print(output_text)
 
 ### 7.3 相关论文推荐
 
-- **\"Attention is All You Need\"**：Vaswani等人在2017年发表的论文，详细介绍了Transformer架构及其在自然语言处理中的应用。
-- **\"Language Models are Unsupervised Multitask Learners\"**：Devlin等人在2018年发表的论文，介绍了BERT模型的多任务学习能力。
+- **"Attention is All You Need"**：Vaswani等人在2017年发表的论文，详细介绍了Transformer架构及其在自然语言处理中的应用。
+- **"Language Models are Unsupervised Multitask Learners"**：Devlin等人在2018年发表的论文，介绍了BERT模型的多任务学习能力。
 
 ### 7.4 其他资源推荐
 

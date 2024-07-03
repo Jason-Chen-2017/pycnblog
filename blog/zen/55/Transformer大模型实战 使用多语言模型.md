@@ -100,18 +100,18 @@ $$
 $$
 \begin{aligned}
 Q &= \begin{bmatrix}
-1 & 0 & 1 & 0\\ 
-0 & 2 & 0 & 2\\
+1 & 0 & 1 & 0\ 
+0 & 2 & 0 & 2\
 1 & 1 & 1 & 1
-\end{bmatrix} \\
+\end{bmatrix} \
 K &= \begin{bmatrix}
-1 & 1 & 0 & 1\\ 
-0 & 1 & 0 & 1\\
+1 & 1 & 0 & 1\ 
+0 & 1 & 0 & 1\
 0 & 1 & 1 & 2
-\end{bmatrix} \\
+\end{bmatrix} \
 V &= \begin{bmatrix}
-0 & 1 & 0 & 1\\ 
-1 & 0 & 0 & 2\\
+0 & 1 & 0 & 1\ 
+1 & 0 & 0 & 2\
 0 & 0 & 1 & 1
 \end{bmatrix}
 \end{aligned}
@@ -120,8 +120,8 @@ $$
 计算$QK^T$:
 $$
 QK^T = \begin{bmatrix}
-2 & 1 & 2\\ 
-2 & 4 & 4\\
+2 & 1 & 2\ 
+2 & 4 & 4\
 3 & 4 & 5
 \end{bmatrix}
 $$
@@ -129,8 +129,8 @@ $$
 缩放并归一化:
 $$
 Attention = softmax(\frac{QK^T}{\sqrt{4}}) = \begin{bmatrix}
-0.24 & 0.09 & 0.24\\ 
-0.09 & 0.33 & 0.33\\
+0.24 & 0.09 & 0.24\ 
+0.09 & 0.33 & 0.33\
 0.16 & 0.24 & 0.36
 \end{bmatrix}
 $$
@@ -138,8 +138,8 @@ $$
 最终结果:
 $$
 Attention \cdot V = \begin{bmatrix}
-0.24 & 0.42 & 0.48 & 1.44\\ 
-0.42 & 0.33 & 0.33 & 1.66\\
+0.24 & 0.42 & 0.48 & 1.44\ 
+0.42 & 0.33 & 0.33 & 1.66\
 0.40 & 0.48 & 0.60 & 1.92
 \end{bmatrix}
 $$
@@ -149,7 +149,7 @@ Multi-Head Attention将注意力计算拆分为多个独立的Head,每个Head使
 
 $$
 \begin{aligned}
-MultiHead(Q,K,V) &= Concat(head_1,...,head_h)W^O \\
+MultiHead(Q,K,V) &= Concat(head_1,...,head_h)W^O \
 head_i &= Attention(QW_i^Q, KW_i^K, VW_i^V)
 \end{aligned}
 $$

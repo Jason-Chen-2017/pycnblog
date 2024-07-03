@@ -127,7 +127,7 @@ $$L(w, b; X, y) = \sum_{i=1}^{n}(y_i - (\mathbf{w}^T\mathbf{x}_i + b))^2$$
 对$w$和$b$求偏导数，并令其等于零得到最小二乘解：
 
 $$\begin{align*}
-\frac{\partial L}{\partial w} &= -2\sum_{i=1}^{n}(y_i - (\mathbf{w}^T\mathbf{x}_i + b))x_i \\
+\frac{\partial L}{\partial w} &= -2\sum_{i=1}^{n}(y_i - (\mathbf{w}^T\mathbf{x}_i + b))x_i \
 \frac{\partial L}{\partial b} &= -2\sum_{i=1}^{n}(y_i - (\mathbf{w}^T\mathbf{x}_i + b))
 \end{align*}$$
 

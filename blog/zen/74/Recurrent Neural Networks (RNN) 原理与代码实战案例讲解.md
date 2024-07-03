@@ -72,7 +72,7 @@ RNN通过反向传播算法进行训练,计算损失函数关于参数的梯度,
 
 $$
 \begin{aligned}
-h_t &= f_W(x_t, h_{t-1}) \\
+h_t &= f_W(x_t, h_{t-1}) \
 y_t &= g(h_t)
 \end{aligned}
 $$
@@ -191,7 +191,7 @@ RNN 的关键在于隐藏状态 $h_t$ 不仅取决于当前输入 $x_t$,还取�
 
 $$
 \begin{aligned}
-h_t &= \sigma(W_{hx}x_t + W_{hh}h_{t-1} + b_h) \\
+h_t &= \sigma(W_{hx}x_t + W_{hh}h_{t-1} + b_h) \
 y_t &= g(W_{yh}h_t + b_y)
 \end{aligned}
 $$

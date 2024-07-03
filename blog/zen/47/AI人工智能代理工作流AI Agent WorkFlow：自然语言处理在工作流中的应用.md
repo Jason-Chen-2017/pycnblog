@@ -134,7 +134,7 @@ AI Agent WorkFlow涉及多个数学模型，以下列举几个典型模型：
 
 $$
 \begin{align*}
-\max_{\boldsymbol{w}, b} & \quad \frac{1}{2}\|\boldsymbol{w}\|^2 \\
+\max_{\boldsymbol{w}, b} & \quad \frac{1}{2}\|\boldsymbol{w}\|^2 \
 \text{s.t.} & \quad y_i(\boldsymbol{w}^\mathrm{T}\boldsymbol{x}_i + b) \geq 1, \quad \forall i
 \end{align*}
 $$
@@ -147,9 +147,9 @@ $$
 
 $$
 \begin{align*}
-\max & \quad \sum_{i=1}^n \sum_{j=1}^n c_{ij}x_{ij} \\
-\text{s.t.} & \quad \sum_{j=1}^n x_{ij} = b_i, \quad \forall i \\
-& \quad \sum_{i=1}^n x_{ij} = c_j, \quad \forall j \\
+\max & \quad \sum_{i=1}^n \sum_{j=1}^n c_{ij}x_{ij} \
+\text{s.t.} & \quad \sum_{j=1}^n x_{ij} = b_i, \quad \forall i \
+& \quad \sum_{i=1}^n x_{ij} = c_j, \quad \forall j \
 & \quad x_{ij} \geq 0, \quad \forall i, j
 \end{align*}
 $$

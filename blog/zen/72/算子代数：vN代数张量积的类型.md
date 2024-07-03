@@ -74,7 +74,7 @@ vN代数张量积的研究对于构建更精确的物理理论模型、发展量
 
 考虑两个vN代数$\mathcal{A}$和$\mathcal{B}$，其张量积$\mathcal{A} \otimes \mathcal{B}$可以通过以下步骤构造：
 
-\[ \mathcal{A} \otimes \mathcal{B} := \{ T \otimes S : T \in \mathcal{A}, S \in \mathcal{B} \} \]
+$$ \mathcal{A} \otimes \mathcal{B} := \{ T \otimes S : T \in \mathcal{A}, S \in \mathcal{B} \} $$
 
 其中，$\otimes$表示希尔伯特空间上的外积运算。
 

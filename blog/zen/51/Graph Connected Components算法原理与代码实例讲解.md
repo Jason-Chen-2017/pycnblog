@@ -140,11 +140,11 @@ Union(x, y):
 
 Find操作可以用路径压缩优化:
 
-$Find(x) = \begin{cases} x & \text{if } x = parent[x] \\ Find(parent[x]) & \text{otherwise} \end{cases}$
+$Find(x) = \begin{cases} x & \text{if } x = parent[x] \ Find(parent[x]) & \text{otherwise} \end{cases}$
 
 Union操作可以用按秩合并优化,将较小的树合并到较大的树上:
 
-$Union(x, y) = \begin{cases} parent[Find(y)] = Find(x) & \text{if } rank[Find(x)] > rank[Find(y)] \\ parent[Find(x)] = Find(y) & \text{if } rank[Find(x)] < rank[Find(y)] \\ parent[Find(y)] = Find(x) \\ rank[Find(x)]++ & \text{if } rank[Find(x)] = rank[Find(y)] \end{cases}$
+$Union(x, y) = \begin{cases} parent[Find(y)] = Find(x) & \text{if } rank[Find(x)] > rank[Find(y)] \ parent[Find(x)] = Find(y) & \text{if } rank[Find(x)] < rank[Find(y)] \ parent[Find(y)] = Find(x) \ rank[Find(x)]++ & \text{if } rank[Find(x)] = rank[Find(y)] \end{cases}$
 
 ## 5.项目实践：代码实例和详细解释说明
 

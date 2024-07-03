@@ -72,7 +72,7 @@ HCatalog Table广泛应用于大数据平台，特别是在Hadoop生态系统中
 
 HCatalog Table的数学模型主要涉及元数据的表示和管理。一个基本的元数据模型可以表示为：
 
-$$ Metadata = \\{ SourceName, SourceType, Location, PartitionInfo, Schema\\} $$
+$$ Metadata = \{ SourceName, SourceType, Location, PartitionInfo, Schema\} $$
 
 其中，`SourceName`是数据源的名称，`SourceType`表示数据源的类型（如HDFS、HBase等），`Location`是数据源的位置，`PartitionInfo`包含分区信息，而`Schema`表示数据的结构。
 
@@ -123,7 +123,7 @@ public class HCatalogExample {
             HCatClient hcatClient = new HCatClient();
             
             // 添加新数据源
-            HCatUtil.addSource(hcatClient, \"newDataSource\", \"hdfs://host:port/path/to/source\");
+            HCatUtil.addSource(hcatClient, "newDataSource", "hdfs://host:port/path/to/source");
             
             // 关闭客户端
             hcatClient.close();

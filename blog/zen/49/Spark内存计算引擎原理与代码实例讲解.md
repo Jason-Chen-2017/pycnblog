@@ -115,10 +115,10 @@ $$f_c(\{(w_1,c_1),(w_2,c_2),...\})=\{(w_1,\sum c_1),(w_2,\sum c_2),...\}$$
 根据上面的定义,WordCount的数学推导过程如下:
 
 $$\begin{aligned}
-WordCount(D) &= f_c \circ f_w(D) \\
-&= f_c(\bigcup_{i=1}^nf_w(d_i)) \\  
-&= f_c(\bigcup_{i=1}^n\{(w_1,1),(w_2,1),...,(w_m,1)\}) \\
-&= f_c(\{(w_1,c_1),(w_2,c_2),...\}) \\ 
+WordCount(D) &= f_c \circ f_w(D) \
+&= f_c(\bigcup_{i=1}^nf_w(d_i)) \  
+&= f_c(\bigcup_{i=1}^n\{(w_1,1),(w_2,1),...,(w_m,1)\}) \
+&= f_c(\{(w_1,c_1),(w_2,c_2),...\}) \ 
 &= \{(w_1,\sum c_1),(w_2,\sum c_2),...\}
 \end{aligned}$$
 

@@ -143,7 +143,7 @@ $$R(D) = \sum_{i=1}^n w_i \times f(d_i)$$
 假设风险控制模型为$C(R(D))$，根据风险值采取相应的控制措施：
 
 $$C(R(D)) = \begin{cases} 
-\text{止损} & \text{if } R(D) > \text{阈值} \\
+\text{止损} & \text{if } R(D) > \text{阈值} \
 \text{调仓} & \text{if } R(D) \leq \text{阈值}
 \end{cases}$$
 

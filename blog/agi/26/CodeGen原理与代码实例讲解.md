@@ -75,15 +75,15 @@ CodeGen的数学模型通常基于自回归语言模型，例如Transformer架�
 
 - **多头自注意力**：对于输入序列$x = (x_1, x_2, ..., x_T)$，通过$k$个注意力头$h_i$，每个头计算注意力权重矩阵$W_i$，并进行加权求和，得到输出$q_i$：
 
-  $$q_i = \\text{MHA}(x, k, v) = \\sum_{j=1}^T \\text{softmax}\\left(\\frac{x_j k_j^T}{\\sqrt{d_k}}\\right) v_j$$
+  $$q_i = \text{MHA}(x, k, v) = \sum_{j=1}^T \text{softmax}\left(\frac{x_j k_j^T}{\sqrt{d_k}}\right) v_j$$
 
 - **位置嵌入**：为每个位置$i$添加一个位置向量$p_i$：
 
-  $$p_i = \\sin(i \\cdot \\frac{\\pi}{d}) \\quad \\text{or} \\quad \\cos(i \\cdot \\frac{\\pi}{d})$$
+  $$p_i = \sin(i \cdot \frac{\pi}{d}) \quad \text{or} \quad \cos(i \cdot \frac{\pi}{d})$$
 
 - **自回归机制**：在生成下一个token时，利用之前生成的所有tokens的信息进行预测：
 
-  $$y_{t+1} = \\text{MLP}(W_h \\cdot \\text{FFN}(W_e \\cdot [y_1, ..., y_t] + p_t) + W_f \\cdot [y_1, ..., y_t])$$
+  $$y_{t+1} = \text{MLP}(W_h \cdot \text{FFN}(W_e \cdot [y_1, ..., y_t] + p_t) + W_f \cdot [y_1, ..., y_t])$$
 
 ### 4.2 公式推导过程
 
@@ -97,27 +97,27 @@ CodeGen的数学模型通常基于自回归语言模型，例如Transformer架�
 
 1. **线性变换**：对输入序列$x$进行线性变换，分别得到查询$q$、键$k$和值$v$：
 
-   $$q = W_q \\cdot x$$
-   $$k = W_k \\cdot x$$
-   $$v = W_v \\cdot x$$
+   $$q = W_q \cdot x$$
+   $$k = W_k \cdot x$$
+   $$v = W_v \cdot x$$
 
 2. **分头计算**：将$q$、$k$、$v$分别拆分成$k$个头的表示：
 
-   $$q_i = q \\cdot \\text{head}(i)$$
-   $$k_i = k \\cdot \\text{head}(i)$$
-   $$v_i = v \\cdot \\text{head}(i)$$
+   $$q_i = q \cdot \text{head}(i)$$
+   $$k_i = k \cdot \text{head}(i)$$
+   $$v_i = v \cdot \text{head}(i)$$
 
 3. **计算注意力权重**：
 
-   $$W_i = \\text{softmax}\\left(\\frac{q_i k_i^T}{\\sqrt{d_k}}\\right)$$
+   $$W_i = \text{softmax}\left(\frac{q_i k_i^T}{\sqrt{d_k}}\right)$$
 
 4. **加权求和**：
 
-   $$o_i = W_i \\cdot v_i$$
+   $$o_i = W_i \cdot v_i$$
 
 5. **合并输出**：
 
-   $$o = \\text{concat}(o_1, ..., o_k) \\cdot W_o$$
+   $$o = \text{concat}(o_1, ..., o_k) \cdot W_o$$
 
 通过上述步骤，Transformer能够有效地捕捉文本序列中的依赖关系，为生成代码提供强大的基础。
 
@@ -171,7 +171,7 @@ pip install datasets
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-model_name = \"gpt2\"
+model_name = "gpt2"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 ```
@@ -180,7 +180,7 @@ model = AutoModelForCausalLM.from_pretrained(model_name)
 
 ```python
 def generate_code(description):
-    inputs = tokenizer.encode(description, return_tensors=\"pt\", add_special_tokens=True)
+    inputs = tokenizer.encode(description, return_tensors="pt", add_special_tokens=True)
     output = model.generate(inputs, max_length=200, num_return_sequences=1)
     code = tokenizer.decode(output[0])
     return code
@@ -197,7 +197,7 @@ def generate_code(description):
 ### 5.4 运行结果展示
 
 ```python
-description = \"创建一个名为person的类，包含name和age两个属性\"
+description = "创建一个名为person的类，包含name和age两个属性"
 generated_code = generate_code(description)
 print(generated_code)
 ```

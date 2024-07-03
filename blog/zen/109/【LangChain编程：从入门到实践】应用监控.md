@@ -105,7 +105,7 @@ $$
 
 $$
 \text{Is\_Anomaly} = \begin{cases} 
-1 & \text{if } |M_i - T_i| > \delta \\
+1 & \text{if } |M_i - T_i| > \delta \
 0 & \text{otherwise}
 \end{cases}
 $$

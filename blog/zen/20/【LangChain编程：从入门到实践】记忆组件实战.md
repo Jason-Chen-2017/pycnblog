@@ -73,7 +73,7 @@ LangChain是一个用于构建和管理AI系统的框架，它包含了多种组
 
 ### 4.1 数学模型构建
 
-记$M$为记忆组件，$K$为键集，$V$为值集。对于任意键$k \\in K$，$M(k)$表示键$k$对应的值。记忆组件的操作可以描述为：
+记$M$为记忆组件，$K$为键集，$V$为值集。对于任意键$k \in K$，$M(k)$表示键$k$对应的值。记忆组件的操作可以描述为：
 
 - **插入**：$M(k) = v$，将键$k$与值$v$关联。
 - **查找**：$M(k)$，返回键$k$对应的值。
@@ -81,7 +81,7 @@ LangChain是一个用于构建和管理AI系统的框架，它包含了多种组
 
 ### 4.2 公式推导过程
 
-在某些情况下，为了优化存储和检索效率，可以采用哈希表或平衡树等数据结构。例如，哈希表的查找时间复杂度为$O(1)$，但需要处理冲突（即多个键映射到同一位置）的问题。平衡树（如AVL树或红黑树）虽然查找时间复杂度为$O(\\log n)$，但在频繁更新和查找场景下表现良好。
+在某些情况下，为了优化存储和检索效率，可以采用哈希表或平衡树等数据结构。例如，哈希表的查找时间复杂度为$O(1)$，但需要处理冲突（即多个键映射到同一位置）的问题。平衡树（如AVL树或红黑树）虽然查找时间复杂度为$O(\log n)$，但在频繁更新和查找场景下表现良好。
 
 ### 4.3 案例分析与讲解
 
@@ -115,9 +115,9 @@ pip install langchain
 from langchain.memory import ConversationBufferMemory
 
 memory = ConversationBufferMemory()
-memory.save_context({\"input\": \"Hello\"}, {\"output\": \"Hi! How can I assist you today?\"})
+memory.save_context({"input": "Hello"}, {"output": "Hi! How can I assist you today?"})
 
-memory.save_context({\"input\": \"I need help with my math homework.\"}, {\"output\": \"Sure, I can guide you through that. What specific problem are you facing?\"})
+memory.save_context({"input": "I need help with my math homework."}, {"output": "Sure, I can guide you through that. What specific problem are you facing?"})
 ```
 
 ### 5.3 代码解读与分析

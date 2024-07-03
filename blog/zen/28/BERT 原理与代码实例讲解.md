@@ -84,7 +84,7 @@ BERT 通过将输入文本转换为序列表示，然后应用多层 Transformer
 
 #### Transformer 层结构
 
-- **输入**：$X \\in \\mathbb{R}^{T \\times d}$，其中 $T$ 是序列长度，$d$ 是维度大小。
+- **输入**：$X \in \mathbb{R}^{T \times d}$，其中 $T$ 是序列长度，$d$ 是维度大小。
 - **多头自注意力**：$MHA(X)$，生成注意力矩阵 $A$ 和输出 $Y$。
 - **位置前馈网络**：$FFN(Y)$，通过两层全连接网络生成最终输出。
 
@@ -93,18 +93,18 @@ BERT 通过将输入文本转换为序列表示，然后应用多层 Transformer
 - **查询** $Q$：$Q = XW_Q$
 - **键** $K$：$K = XW_K$
 - **值** $V$：$V = XW_V$
-- **注意力分数**：$A = softmax(\\frac{QK^T}{\\sqrt{d_k}})$
+- **注意力分数**：$A = softmax(\frac{QK^T}{\sqrt{d_k}})$
 - **加权求和**：$Y = AV$
 
 ### 4.2 公式推导过程
 
 #### MLM 公式
 
-- **损失函数**：$L_{MLM} = -\\frac{1}{|M|}\\sum_{i \\in M} \\log P(w_i|\\hat{w}_i, X)$，其中 $M$ 是被遮盖的位置集合，$\\hat{w}_i$ 是遮盖的位置对应的 token。
+- **损失函数**：$L_{MLM} = -\frac{1}{|M|}\sum_{i \in M} \log P(w_i|\hat{w}_i, X)$，其中 $M$ 是被遮盖的位置集合，$\hat{w}_i$ 是遮盖的位置对应的 token。
 
 #### NSP 公式
 
-- **损失函数**：$L_{NSP} = -\\log P(s_1, s_2|\\hat{s})$，其中 $s_1, s_2$ 是两个句子，$\\hat{s}$ 表示是否属于同一语句的标签。
+- **损失函数**：$L_{NSP} = -\log P(s_1, s_2|\hat{s})$，其中 $s_1, s_2$ 是两个句子，$\hat{s}$ 表示是否属于同一语句的标签。
 
 ### 4.3 案例分析与讲解
 
@@ -143,7 +143,7 @@ model = BertModel.from_pretrained('bert-base-uncased')
 #### 准备文本数据
 
 ```python
-text = \"Hello, world! This is an example text for BERT.\"
+text = "Hello, world! This is an example text for BERT."
 encoded_text = tokenizer.encode_plus(text, add_special_tokens=True, return_tensors='pt')
 ```
 
@@ -183,7 +183,7 @@ last_hidden_state, pooler_output = output.last_hidden_state, output.pooler_outpu
 
 ### 7.3 相关论文推荐
 
-- **原论文**：\"BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding\"。
+- **原论文**："BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"。
 
 ### 7.4 其他资源推荐
 

@@ -150,7 +150,7 @@ graph TD
 
   $$
   \sigma'(x) = \begin{cases} 
-  0 & \text{if } x < 0 \\
+  0 & \text{if } x < 0 \
   1 & \text{if } x \geq 0 
   \end{cases}
   $$

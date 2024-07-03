@@ -121,7 +121,7 @@ $$
 $$
 R(\theta) = 
 \begin{bmatrix}
-\cos\theta & -\sin\theta \\
+\cos\theta & -\sin\theta \
 \sin\theta & \cos\theta 
 \end{bmatrix}
 $$
@@ -134,7 +134,7 @@ $$
 
 $$
 \begin{cases}
-x' = x\cos\theta + y\sin\theta \\
+x' = x\cos\theta + y\sin\theta \
 y' = -x\sin\theta + y\cos\theta 
 \end{cases}
 $$

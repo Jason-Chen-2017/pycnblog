@@ -92,7 +92,7 @@ $$ L(\theta) = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2 $$
 #### 均方误差推导
 1. 定义预测误差：\(e_i = y_i - \hat{y}_i\)
 2. 目标是找到\(\theta\)使得\(\mathbb{E}[e^2]\)最小。
-3. 利用平方差公式展开得：\[ \mathbb{E}[e^2] = \mathbb{E}[(y_i - \hat{y}_i)^2] = \mathbb{E}[y_i^2 + \hat{y}_i^2 - 2y_i\hat{y}_i] \]
+3. 利用平方差公式展开得：$$ \mathbb{E}[e^2] = \mathbb{E}[(y_i - \hat{y}_i)^2] = \mathbb{E}[y_i^2 + \hat{y}_i^2 - 2y_i\hat{y}_i] $$
 4. 对于线性模型，有\(\hat{y}_i = w^\top x_i + b\)，代入上式并简化，得到均方误差形式。
 
 ### 4.3 案例分析与讲解

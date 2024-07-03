@@ -115,7 +115,7 @@ graph TD
 
 假设子任务$T_i$的完成时间为$T_{i}^*$，则整个工作流的完成时间为：
 
-$$T = \\max\\limits_{1\\leq i \\leq n} T_{i}^*$$
+$$T = \max\limits_{1\leq i \leq n} T_{i}^*$$
 
 其中，$n$表示子任务数量。
 
@@ -184,7 +184,7 @@ def screen_resumes(data):
     job_description = data['job_description']
     for resume in resumes:
         label = resume_classifier(resume, label_list=['适合', '不适合'])[0]['label']
-        print(f\"简历：{resume}\\t筛选结果：{label}\")
+        print(f"简历：{resume}\t筛选结果：{label}")
 
 # 面试安排
 def schedule_interview(data):
@@ -193,8 +193,8 @@ def schedule_interview(data):
     interviews = []
     for resume in resumes:
         if resume_classifier(resume, label_list=['适合'])[0]['label'] == '适合':
-            interview = interview_scheduler(f\"面试时间：{job_description}\
-简历：{resume}\")
+            interview = interview_scheduler(f"面试时间：{job_description}\
+简历：{resume}")
             interviews.append(interview[0]['generated_text'])
     return interviews
 
@@ -202,7 +202,7 @@ def schedule_interview(data):
 def evaluate_interview(interviews):
     for i, interview in enumerate(interviews):
         label = interview_evaluator(interview, label_list=['优秀', '合格', '不合格'])[0]['label']
-        print(f\"面试结果：{interview}\\t评估结果：{label}\")
+        print(f"面试结果：{interview}\t评估结果：{label}")
 
 # 执行工作流
 def main():

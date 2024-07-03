@@ -102,7 +102,7 @@ Giraph是一种分布式图处理系统，特别适用于处理大规模的图�
 $$
 \text{Distance}(s, t) = 
 \begin{cases} 
-0 & \text{if } s = t \\
+0 & \text{if } s = t \
 \min_{v \in N(s)}(\text{Distance}(s', v) + w(v)) & \text{otherwise}
 \end{cases}
 $$

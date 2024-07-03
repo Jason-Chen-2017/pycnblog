@@ -98,7 +98,7 @@ $$y_t = g(W_{hy} h_t + b_y)$$
 import re
 
 def clean_text(text):
-    text = re.sub(r"[^A-Za-z0-9(),!?@\'\`\"\_\n]", " ", text)
+    text = re.sub(r"[^A-Za-z0-9(),!?@\'\`"\_\n]", " ", text)
     text = re.sub(r"@", "at", text)
     text = re.sub(r"\'s", " \'s", text)
     text = re.sub(r"\'ve", " have", text)

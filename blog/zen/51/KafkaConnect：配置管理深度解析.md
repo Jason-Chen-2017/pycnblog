@@ -134,7 +134,7 @@ POST /connectors/mysql-source/restart
 假设每个任务的平均吞吐量为$T_t$,平均延迟为$L_t$,则总吞吐量$T$和平均延迟$L$可表示为:
 
 $$
-T = n \times T_t \\
+T = n \times T_t \
 L = \frac{1}{n} \sum_{i=1}^{n} L_t
 $$
 

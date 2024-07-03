@@ -121,18 +121,18 @@ DeepSpeed中的数学模型主要包括：
 
 以下为梯度下降算法的公式推导过程：
 
-假设模型参数为$\\theta$，损失函数为$L(\\theta)$，梯度下降算法的更新公式为：
+假设模型参数为$\theta$，损失函数为$L(\theta)$，梯度下降算法的更新公式为：
 
-$$\\theta_{new} = \\theta_{old} - \\alpha \\cdot \
-abla_{\\theta}L(\\theta)$$
+$$\theta_{new} = \theta_{old} - \alpha \cdot \
+abla_{\theta}L(\theta)$$
 
 其中，
 
-- $\\theta_{old}$为旧参数，
-- $\\theta_{new}$为新参数，
-- $\\alpha$为学习率，
+- $\theta_{old}$为旧参数，
+- $\theta_{new}$为新参数，
+- $\alpha$为学习率，
 - $\
-abla_{\\theta}L(\\theta)$为损失函数关于参数$\\theta$的梯度。
+abla_{\theta}L(\theta)$为损失函数关于参数$\theta$的梯度。
 
 ### 4.3 案例分析与讲解
 
@@ -197,7 +197,7 @@ model, optimizer, lr_scheduler = deepspeed.initialize(
 # 训练过程
 for epoch in range(num_epochs):
     for batch in dataloader:
-        inputs = tokenizer(batch[\"input_ids\"], return_tensors=\"pt\", padding=True, truncation=True)
+        inputs = tokenizer(batch["input_ids"], return_tensors="pt", padding=True, truncation=True)
         outputs = model(**inputs)
         loss = outputs.loss
 
@@ -206,7 +206,7 @@ for epoch in range(num_epochs):
         lr_scheduler.step()
 
         # 打印训练信息
-        print(f\"Epoch: {epoch}, Loss: {loss.item()}\")
+        print(f"Epoch: {epoch}, Loss: {loss.item()}")
 ```
 
 ### 5.3 代码解读与分析

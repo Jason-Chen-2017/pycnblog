@@ -88,15 +88,15 @@ LangChain的算法适用于多个领域，包括但不限于：
 
 #### 自然语言理解
 
-$$ P(\\text{Intent}|\\text{Input}) = \\text{BERT}(\\text{Input}) $$
+$$ P(\text{Intent}|\text{Input}) = \text{BERT}(\text{Input}) $$
 
 #### 策略生成
 
-$$ Q(s,a) = \\text{Q-learning}(s,a,R,s') $$
+$$ Q(s,a) = \text{Q-learning}(s,a,R,s') $$
 
 #### 多模态执行
 
-$$ \\text{Multi-modal Fusion}(M_1,M_2,...,M_n) $$
+$$ \text{Multi-modal Fusion}(M_1,M_2,...,M_n) $$
 
 ### 4.3 案例分析与讲解
 
@@ -155,7 +155,7 @@ client = LangChainClient()
 strategy = QLearningStrategy(client)
 
 # 自然语言理解
-input_text = \"我想预订一张明天去纽约的机票\"
+input_text = "我想预订一张明天去纽约的机票"
 intent = client.parse_intent(input_text)
 
 # 策略生成

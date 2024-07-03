@@ -114,20 +114,20 @@ import akka.actor.Actor
 import scala.concurrent.duration._
 
 // 创建一个Actor系统
-val system = ActorSystem(\"MyActorSystem\")
+val system = ActorSystem("MyActorSystem")
 
 // 定义一个Actor类
 class MyActor extends Actor {
   def receive = {
-    case message => println(s\"Received message: $message\")
+    case message => println(s"Received message: $message")
   }
 }
 
 // 创建并启动一个Actor
-val myActor = system.actorOf(Props[MyActor], \"myActor\")
+val myActor = system.actorOf(Props[MyActor], "myActor")
 
 // 向Actor发送消息
-myActor ! \"Hello, World!\"
+myActor ! "Hello, World!"
 ```
 
 ### 5.3 代码解读与分析

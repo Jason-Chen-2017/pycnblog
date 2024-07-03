@@ -113,14 +113,14 @@ $$
 2. 计算损失函数关于 $w$ 和 $b$ 的梯度:
    $$
    \begin{aligned}
-   \frac{\partial \mathcal{L}}{\partial w} &= \frac{2}{n}\sum_{i=1}^n(w^Tx_i + b - y_i)x_i \\
+   \frac{\partial \mathcal{L}}{\partial w} &= \frac{2}{n}\sum_{i=1}^n(w^Tx_i + b - y_i)x_i \
    \frac{\partial \mathcal{L}}{\partial b} &= \frac{2}{n}\sum_{i=1}^n(w^Tx_i + b - y_i)
    \end{aligned}
    $$
 3. 更新参数:
    $$
    \begin{aligned}
-   w &\leftarrow w - \eta \frac{\partial \mathcal{L}}{\partial w} \\
+   w &\leftarrow w - \eta \frac{\partial \mathcal{L}}{\partial w} \
    b &\leftarrow b - \eta \frac{\partial \mathcal{L}}{\partial b}
    \end{aligned}
    $$

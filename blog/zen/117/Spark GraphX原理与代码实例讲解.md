@@ -155,15 +155,15 @@ graph LR
 其超链接矩阵M为:
 
 $$M = \begin{bmatrix}
-0 & 1 & 1 & 0\\
-0 & 0 & 1 & 1\\
-0 & 0 & 0 & 1\\
+0 & 1 & 1 & 0\
+0 & 0 & 1 & 1\
+0 & 0 & 0 & 1\
 0 & 0 & 0 & 0
 \end{bmatrix}$$
 
 令阻尼系数$d=0.85$,初始PageRank值向量$\vec{p}^{(0)}=\begin{bmatrix}\frac{1}{4}&\frac{1}{4}&\frac{1}{4}&\frac{1}{4}\end{bmatrix}$,则第一次迭代后:
 
-$$\vec{p}^{(1)} = \frac{1-0.85}{4}\begin{bmatrix}1\\1\\1\\1\end{bmatrix} + 0.85\begin{bmatrix}0.5\\0.5\\0.25\\0\end{bmatrix} = \begin{bmatrix}0.2375\\0.2375\\0.3125\\0.2125\end{bmatrix}$$
+$$\vec{p}^{(1)} = \frac{1-0.85}{4}\begin{bmatrix}1\1\1\1\end{bmatrix} + 0.85\begin{bmatrix}0.5\0.5\0.25\0\end{bmatrix} = \begin{bmatrix}0.2375\0.2375\0.3125\0.2125\end{bmatrix}$$
 
 可以看出,网页C由于被多个网页链入,因此PageRank值较高。通过多次迭代,PageRank值将收敛到稳定值。
 

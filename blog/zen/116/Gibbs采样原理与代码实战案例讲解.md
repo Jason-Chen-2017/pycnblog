@@ -91,7 +91,7 @@ Gibbs采样在以下领域有广泛应用:
 为了便于理解,我们考虑一个简单的例子:二元高斯分布的Gibbs采样。
 
 设二维随机变量$\mathbf{x}=(x_1,x_2)$服从均值为$\mathbf{0}$,协方差矩阵为$\mathbf{\Sigma}=\begin{bmatrix}
-\sigma_1^2 & \rho\sigma_1\sigma_2\\ 
+\sigma_1^2 & \rho\sigma_1\sigma_2\ 
 \rho\sigma_1\sigma_2 & \sigma_2^2
 \end{bmatrix}$的高斯分布,其中$\sigma_1,\sigma_2>0$,$\rho\in(-1,1)$为相关系数。记
 
@@ -105,7 +105,7 @@ $$p(\mathbf{x})=\frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}\exp\left(-\frac{1}
 对于$x_1$,在给定$x_2$的条件下,其条件概率密度函数为
 
 $$\begin{aligned}
-p(x_1|x_2)&=\frac{p(\mathbf{x})}{p(x_2)}\\
+p(x_1|x_2)&=\frac{p(\mathbf{x})}{p(x_2)}\
 &\propto \exp\left(-\frac{1}{2\sigma_1^2(1-\rho^2)}\left[x_1-\rho\frac{\sigma_1}{\sigma_2}x_2\right]^2\right)
 \end{aligned}$$
 

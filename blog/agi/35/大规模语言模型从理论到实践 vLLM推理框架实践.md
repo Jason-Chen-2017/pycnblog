@@ -63,15 +63,15 @@ vLLM推理框架广泛应用于：
 设$vLLM$为大规模语言模型，$T$为待处理任务，$P(T)$为任务规划器，$E(T)$为执行器，$C$为上下文管理器。数学模型构建如下：
 
 $$
-P(T) = \\{P_1(T), P_2(T), ..., P_n(T)\\}
+P(T) = \{P_1(T), P_2(T), ..., P_n(T)\}
 $$
 
 $$
-E(T) = \\{E_1(P_i(T)), E_2(P_i(T)), ..., E_m(P_i(T))\\}
+E(T) = \{E_1(P_i(T)), E_2(P_i(T)), ..., E_m(P_i(T))\}
 $$
 
 $$
-C = \\{C_1, C_2, ..., C_k\\}
+C = \{C_1, C_2, ..., C_k\}
 $$
 
 ### 4.2 公式推导过程
@@ -79,7 +79,7 @@ $$
 任务规划器$P$生成的任务分解策略依赖于输入任务$T$，可表示为：
 
 $$
-P_i(T) = \\{S_1, S_2, ..., S_m\\}
+P_i(T) = \{S_1, S_2, ..., S_m\}
 $$
 
 其中，$S_j$为第$j$个子任务的提示。
@@ -87,13 +87,13 @@ $$
 执行器$E$根据子任务提示执行操作，并反馈执行结果：
 
 $$
-E_j(P_i(T)) = \\{R_1, R_2, ..., R_l\\}
+E_j(P_i(T)) = \{R_1, R_2, ..., R_l\}
 $$
 
 上下文管理器$C$负责更新任务状态：
 
 $$
-C_k(C_i) = \\{S'_1, S'_2, ..., S'_n\\}
+C_k(C_i) = \{S'_1, S'_2, ..., S'_n\}
 $$
 
 ### 4.3 案例分析与讲解
@@ -127,10 +127,10 @@ tokenizer = AutoTokenizer.from_pretrained('YOUR_MODEL_NAME')
 model = AutoModelForCausalLM.from_pretrained('YOUR_MODEL_NAME')
 
 # 输入任务
-task = \"编写一篇关于人工智能的文章\"
+task = "编写一篇关于人工智能的文章"
 
 # 解析任务并生成子任务提示序列
-task_segments = [\"介绍人工智能的历史\", \"讨论当前的技术进步\", \"展望未来的发展趋势\"]
+task_segments = ["介绍人工智能的历史", "讨论当前的技术进步", "展望未来的发展趋势"]
 prompt_sequences = [tokenizer(seg, return_tensors='pt')['input_ids'] for seg in task_segments]
 
 # 执行子任务并收集结果
@@ -141,10 +141,10 @@ for prompt in prompt_sequences:
     results.append(tokenizer.decode(output))
 
 # 整合结果
-final_article = \"\
-\".join(results)
+final_article = "\
+".join(results)
 
-print(\"最终文章：\")
+print("最终文章：")
 print(final_article)
 ```
 

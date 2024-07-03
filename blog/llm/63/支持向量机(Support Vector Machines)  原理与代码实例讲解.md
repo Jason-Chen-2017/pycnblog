@@ -82,7 +82,7 @@ SVM的数学模型可以表示为以下优化问题：
 
 $$
 \begin{aligned}
-\min_{\theta} \frac{1}{2} ||\theta||^2 \\
+\min_{\theta} \frac{1}{2} ||\theta||^2 \
 \text{s.t.} \quad y_i(\theta^T x_i + b) \geq 1, \quad i=1,\ldots,N
 \end{aligned}
 $$
@@ -106,7 +106,7 @@ $$
 $$
 \begin{aligned}
 \
-abla_{\theta} L(\theta, \alpha) &= \theta - \sum_{i=1}^N \alpha_i y_i x_i^T = 0 \\
+abla_{\theta} L(\theta, \alpha) &= \theta - \sum_{i=1}^N \alpha_i y_i x_i^T = 0 \
 \
 abla_{\alpha_i} L(\theta, \alpha) &= y_i(\theta^T x_i + b) - 1 = 0
 \end{aligned}

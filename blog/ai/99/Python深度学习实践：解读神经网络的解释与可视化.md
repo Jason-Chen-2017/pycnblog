@@ -109,7 +109,7 @@
 
 $$
 y_j = \begin{cases} 
-z_j^{(2)} & \text{if } z_j^{(2)} > 0 \\
+z_j^{(2)} & \text{if } z_j^{(2)} > 0 \
 0 & \text{otherwise}
 \end{cases}
 $$

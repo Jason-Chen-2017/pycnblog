@@ -92,13 +92,13 @@
 
 #### Transformer编码器：
 
-- **自注意力机制**：$A = softmax(QK^T/\\sqrt{d_k})V$
+- **自注意力机制**：$A = softmax(QK^T/\sqrt{d_k})V$
 - **多头注意力**：将自注意力机制扩展为多个独立的注意力头，分别处理不同的特征维度。
 
 #### 双向编码器：
 
-- **前向传播**：$h_i = f(W_h \\cdot [x_i, c_i])$
-- **反向传播**：$h_i = f(W_h \\cdot [c_i, x_i])$
+- **前向传播**：$h_i = f(W_h \cdot [x_i, c_i])$
+- **反向传播**：$h_i = f(W_h \cdot [c_i, x_i])$
 
 #### 参数共享：
 
@@ -110,7 +110,7 @@
 
 设$Q$、$K$、$V$分别为查询、键、值矩阵，$d_k$为键和值的维度，$softmax$函数用于归一化。则自注意力机制的公式为：
 
-$$A = softmax(QK^T/\\sqrt{d_k})V$$
+$$A = softmax(QK^T/\sqrt{d_k})V$$
 
 ### 4.3 案例分析与讲解
 
@@ -166,19 +166,19 @@ pip install tensorflow transformers
 import transformers
 
 class MultilingualBERT:
-    def __init__(self, model_name=\"bert-base-multilingual-cased\"):
+    def __init__(self, model_name="bert-base-multilingual-cased"):
         self.model = transformers.AutoModel.from_pretrained(model_name)
         self.tokenizer = transformers.AutoTokenizer.from_pretrained(model_name)
 
     def encode(self, text):
-        inputs = self.tokenizer(text, padding=True, truncation=True, return_tensors=\"pt\")
+        inputs = self.tokenizer(text, padding=True, truncation=True, return_tensors="pt")
         with torch.no_grad():
             output = self.model(**inputs)[0]
         return output
 
 # 使用示例
 model = MultilingualBERT()
-encoded_text = model.encode(\"Hello, world!\")
+encoded_text = model.encode("Hello, world!")
 ```
 
 ### 5.3 代码解读与分析
@@ -240,8 +240,8 @@ encoded_text = model.encode(\"Hello, world!\")
 
 #### 关键论文：
 
-- **\"BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding\"**：原始论文，介绍了多语言BERT模型的基础和创新点。
-- **\"M-BERT: Multilingual Pre-training by Maximizing Mutual Information\"**：探索多语言BERT模型的预训练策略。
+- **"BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"**：原始论文，介绍了多语言BERT模型的基础和创新点。
+- **"M-BERT: Multilingual Pre-training by Maximizing Mutual Information"**：探索多语言BERT模型的预训练策略。
 
 ### 7.4 其他资源推荐
 

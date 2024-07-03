@@ -134,12 +134,12 @@ LSTM由三个门控单元组成：遗忘门（Forget Gate）、输入门（Input
 
 $$
 \begin{align*}
-f_t &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \quad (3) \\
-i_t &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \quad (4) \\
-\c_t &= \tanh(W_c \cdot [h_{t-1}, x_t] + b_c) \quad (5) \\
-o_t &= \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) \quad (6) \\
-c_t &= f_t \odot c_{t-1} + i_t \odot \c_t \quad (7) \\
-h_t &= o_t \odot \tanh(c_t) \quad (8) \\
+f_t &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \quad (3) \
+i_t &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \quad (4) \
+\c_t &= \tanh(W_c \cdot [h_{t-1}, x_t] + b_c) \quad (5) \
+o_t &= \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) \quad (6) \
+c_t &= f_t \odot c_{t-1} + i_t \odot \c_t \quad (7) \
+h_t &= o_t \odot \tanh(c_t) \quad (8) \
 y_t &= W_y \cdot h_t + b_y \quad (9)
 \end{align*}
 $$

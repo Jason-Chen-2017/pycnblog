@@ -128,35 +128,35 @@ $$
 
 假设序列长度 \(N=3\)，头数 \(H=2\)，键、值维度 \(d_k=d_v=5\)，查询矩阵 \(Q\)、键矩阵 \(K\) 和值矩阵 \(V\) 如下：
 
-\[
+$$
 Q = \begin{bmatrix}
-q_1 & q_2 \\
-q_3 & q_4 \\
+q_1 & q_2 \
+q_3 & q_4 \
 q_5 & q_6
 \end{bmatrix}, \quad
 K = \begin{bmatrix}
-k_1 & k_2 \\
-k_3 & k_4 \\
+k_1 & k_2 \
+k_3 & k_4 \
 k_5 & k_6
 \end{bmatrix}, \quad
 V = \begin{bmatrix}
-v_1 & v_2 \\
-v_3 & v_4 \\
+v_1 & v_2 \
+v_3 & v_4 \
 v_5 & v_6
 \end{bmatrix}
-\]
+$$
 
 计算注意力得分矩阵 \(S\)：
 
-\[
+$$
 S = \frac{QK^T}{\sqrt{d_k}} = \frac{QK^T}{\sqrt{5}}
-\]
+$$
 
 将 \(S\) 与 \(V\) 进行点积，得到加权聚合后的矩阵 \(A\)：
 
-\[
+$$
 A = \text{Softmax}(S)V
-\]
+$$
 
 ### 4.3 案例分析与讲解
 

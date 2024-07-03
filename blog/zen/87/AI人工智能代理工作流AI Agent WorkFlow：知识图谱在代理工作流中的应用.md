@@ -147,7 +147,7 @@ AI代理根据工作流图，依次执行任务，完成任务之间的协调和
 
 知识图谱模型中的关系可以表示为：
 
-$$R(e_1, e_2, v) = \left\{ \begin{matrix} 1 & \text{if } (e_1, e_2, v) \in R \\ 0 & \text{otherwise} \end{matrix} \right.$$
+$$R(e_1, e_2, v) = \left\{ \begin{matrix} 1 & \text{if } (e_1, e_2, v) \in R \ 0 & \text{otherwise} \end{matrix} \right.$$
 
 其中，$R(e_1, e_2, v)$表示实体$e_1$与实体$e_2$之间存在关系$v$。
 

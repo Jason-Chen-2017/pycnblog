@@ -47,9 +47,9 @@ SVM 通过寻找使得分类间隔最大的超平面来最大化两类之间的�
 
 SVM 的核心是求解一个二次规划问题，其目标是在满足一定约束条件下最大化间隔。具体而言，对于线性可分的情况，SVM 的优化目标是：
 
-$$ \\min_{w, b, \\xi} \\frac{1}{2} w^T w + C \\sum_{i=1}^{n} \\xi_i $$
+$$ \min_{w, b, \xi} \frac{1}{2} w^T w + C \sum_{i=1}^{n} \xi_i $$
 
-其中，$w$ 是决策超平面的法向量，$b$ 是截距项，$\\xi_i$ 是松弛变量，$C$ 是惩罚系数，用于平衡误分类和间隔大小。
+其中，$w$ 是决策超平面的法向量，$b$ 是截距项，$\xi_i$ 是松弛变量，$C$ 是惩罚系数，用于平衡误分类和间隔大小。
 
 对于非线性可分的数据，SVM 引入核函数将数据映射到高维空间，使得在新空间中数据变得线性可分。常用的核函数包括多项式核、径向基核（RBF）和Sigmoid核。
 
@@ -90,35 +90,35 @@ SVM 广泛应用于：
 
 SVM 的数学模型基于以下假设和目标：
 
-假设数据集 $\\{(x_1, y_1), \\dots, (x_n, y_n)\\}$，其中 $x_i \\in \\mathbb{R}^d$ 是特征向量，$y_i \\in \\{-1, 1\\}$ 是类别标签。
+假设数据集 $\{(x_1, y_1), \dots, (x_n, y_n)\}$，其中 $x_i \in \mathbb{R}^d$ 是特征向量，$y_i \in \{-1, 1\}$ 是类别标签。
 
 **线性可分情况**：
 
-- **决策函数**：$f(x) = \\sum_{i=1}^{n} \\alpha_i y_i k(x, x_i) + b$
-- **约束条件**：$\\alpha_i \\geq 0$，$\\sum_{i=1}^{n} \\alpha_i y_i = 0$
+- **决策函数**：$f(x) = \sum_{i=1}^{n} \alpha_i y_i k(x, x_i) + b$
+- **约束条件**：$\alpha_i \geq 0$，$\sum_{i=1}^{n} \alpha_i y_i = 0$
 
-**非线性可分情况**（引入松弛变量 $\\xi_i$）：
+**非线性可分情况**（引入松弛变量 $\xi_i$）：
 
-- **优化目标**：$\\min \\frac{1}{2} \\sum_{i,j} \\alpha_i \\alpha_j y_i y_j k(x_i, x_j) + \\sum_{i=1}^{n} \\xi_i$
-- **约束条件**：$\\alpha_i \\geq 0$，$y_i (\\sum_{j=1}^{n} \\alpha_j y_j k(x_i, x_j) + b) \\geq 1 - \\xi_i$，$\\xi_i \\geq 0$
+- **优化目标**：$\min \frac{1}{2} \sum_{i,j} \alpha_i \alpha_j y_i y_j k(x_i, x_j) + \sum_{i=1}^{n} \xi_i$
+- **约束条件**：$\alpha_i \geq 0$，$y_i (\sum_{j=1}^{n} \alpha_j y_j k(x_i, x_j) + b) \geq 1 - \xi_i$，$\xi_i \geq 0$
 
 ### 4.2 公式推导过程
 
 #### 4.2.1 最大间隔决策边界
 
-对于线性可分的情况，SVM 的目标是最大化间隔，即最小化 $\\frac{1}{||w||}$。间隔定义为：
+对于线性可分的情况，SVM 的目标是最大化间隔，即最小化 $\frac{1}{||w||}$。间隔定义为：
 
-$$ \\text{间隔} = \\frac{||w||}{||w||} = \\frac{||w||}{\\sqrt{\\sum_{i=1}^{n} \\alpha_i y_i}} $$
+$$ \text{间隔} = \frac{||w||}{||w||} = \frac{||w||}{\sqrt{\sum_{i=1}^{n} \alpha_i y_i}} $$
 
 通过拉格朗日乘子法，最小化上述间隔的平方，得到优化目标：
 
-$$ \\min \\frac{1}{2} w^T w + C \\sum_{i=1}^{n} \\xi_i $$
+$$ \min \frac{1}{2} w^T w + C \sum_{i=1}^{n} \xi_i $$
 
 #### 4.2.2 非线性可分情况
 
-对于非线性可分的情况，引入松弛变量 $\\xi_i$ 来处理错分类样本，优化目标变为：
+对于非线性可分的情况，引入松弛变量 $\xi_i$ 来处理错分类样本，优化目标变为：
 
-$$ \\min \\frac{1}{2} \\sum_{i,j} \\alpha_i \\alpha_j y_i y_j k(x_i, x_j) + \\sum_{i=1}^{n} \\xi_i $$
+$$ \min \frac{1}{2} \sum_{i,j} \alpha_i \alpha_j y_i y_j k(x_i, x_j) + \sum_{i=1}^{n} \xi_i $$
 
 其中，$k(x_i, x_j)$ 是核函数。
 
@@ -212,8 +212,8 @@ svm_clf.fit(X_train_std, y_train)
 y_pred = svm_clf.predict(X_test_std)
 
 # 输出预测结果
-print(\"预测结果:\", y_pred)
-print(\"真实结果:\", y_test)
+print("预测结果:", y_pred)
+print("真实结果:", y_test)
 ```
 
 ### 5.3 代码解读与分析
@@ -255,8 +255,8 @@ SVM 在以下场景中有广泛应用：
 
 ### 7.3 相关论文推荐
 
-- **\"Statistical Learning Theory\"**，Vladimir Vapnik，详细阐述了SVM理论基础。
-- **\"Support Vector Machines\"**，Bernhard Schölkopf和Alexander Smola，深入探讨SVM算法和技术。
+- **"Statistical Learning Theory"**，Vladimir Vapnik，详细阐述了SVM理论基础。
+- **"Support Vector Machines"**，Bernhard Schölkopf和Alexander Smola，深入探讨SVM算法和技术。
 
 ### 7.4 其他资源推荐
 

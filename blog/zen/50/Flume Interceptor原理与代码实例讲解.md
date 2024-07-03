@@ -99,7 +99,7 @@ $$E_0 \overset{f_1}{\rightarrow} E_1 \overset{f_2}{\rightarrow} E_2 \overset{f_3
 对于第i个Interceptor,其处理函数$f_i$可以进一步分解为两部分:转换函数$t_i$和过滤函数$p_i$。$t_i$对Event进行转换处理,$p_i$判断Event是否需要丢弃。因此,$f_i$可以表示为:
 
 $$f_i(x) = \begin{cases} 
-t_i(x) & p_i(x) = true \\
+t_i(x) & p_i(x) = true \
 null & p_i(x) = false
 \end{cases}$$
 

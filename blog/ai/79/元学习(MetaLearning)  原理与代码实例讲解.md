@@ -81,7 +81,7 @@
 
 $$
 \begin{align*}
-\theta_{meta} &= \theta_{base} + \alpha \theta_{meta} \\
+\theta_{meta} &= \theta_{base} + \alpha \theta_{meta} \
 y &= f(\theta_{meta})
 \end{align*}
 $$

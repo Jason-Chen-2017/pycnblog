@@ -150,7 +150,7 @@ AI在网络安全中的应用领域包括：
 
 $$
 f(\mathbf{x}) = \begin{cases} 
-1 & \text{如果 } \mathbf{x} \text{ 表示异常行为} \\
+1 & \text{如果 } \mathbf{x} \text{ 表示异常行为} \
 0 & \text{如果 } \mathbf{x} \text{ 表示正常行为} 
 \end{cases}
 $$

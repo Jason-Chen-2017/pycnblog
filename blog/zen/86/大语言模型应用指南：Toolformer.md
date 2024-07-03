@@ -156,9 +156,9 @@ $$P(y|x,T) = \sum_z P(y|z,T)P(z|x)$$
 最终，我们可以计算出：
 
 $$\begin{aligned}
-P(y|x,T) &= P(y|z=\{Search\},T)P(z=\{Search\}|x) \\
-&+ P(y|z=\{Calculator\},T)P(z=\{Calculator\}|x) \\
-&= 0.95 \times 0.9 + 0.05 \times 0.1 \\
+P(y|x,T) &= P(y|z=\{Search\},T)P(z=\{Search\}|x) \
+&+ P(y|z=\{Calculator\},T)P(z=\{Calculator\}|x) \
+&= 0.95 \times 0.9 + 0.05 \times 0.1 \
 &= 0.86
 \end{aligned}$$
 

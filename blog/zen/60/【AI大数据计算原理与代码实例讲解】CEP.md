@@ -93,7 +93,7 @@ $$
 $$
 M(E, P) = 
 \begin{cases}
-1, & \text{如果 } E \text{ 匹配 } P \\
+1, & \text{如果 } E \text{ 匹配 } P \
 0, & \text{否则}
 \end{cases}
 $$

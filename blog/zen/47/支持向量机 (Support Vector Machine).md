@@ -147,14 +147,14 @@ abla_b L(\boldsymbol{w}, b, \alpha) = 0$，得到$b = y_i - \sum_{j=1}^n \alpha_
 
 $$
 \begin{align*}
-\boldsymbol{x}_1 &= \begin{bmatrix} 1 \\ 2 \end{bmatrix} \\
-\boldsymbol{x}_2 &= \begin{bmatrix} 2 \\ 2 \end{bmatrix} \\
-\boldsymbol{x}_3 &= \begin{bmatrix} 3 \\ 1 \end{bmatrix} \\
-\boldsymbol{x}_4 &= \begin{bmatrix} 4 \\ 3 \end{bmatrix} \\
-y_1 &= 1 \\
-y_2 &= 1 \\
-y_3 &= -1 \\
-y_4 &= -1 \\
+\boldsymbol{x}_1 &= \begin{bmatrix} 1 \ 2 \end{bmatrix} \
+\boldsymbol{x}_2 &= \begin{bmatrix} 2 \ 2 \end{bmatrix} \
+\boldsymbol{x}_3 &= \begin{bmatrix} 3 \ 1 \end{bmatrix} \
+\boldsymbol{x}_4 &= \begin{bmatrix} 4 \ 3 \end{bmatrix} \
+y_1 &= 1 \
+y_2 &= 1 \
+y_3 &= -1 \
+y_4 &= -1 \
 \end{align*}
 $$
 
@@ -164,14 +164,14 @@ $$
 2. **拉格朗日函数**：$L(\boldsymbol{w}, b, \alpha) = \frac{1}{2} ||\boldsymbol{w}||^2 + \sum_{i=1}^n \alpha_i (1 - y_i (\boldsymbol{w} \cdot \boldsymbol{x}_i + b))$。
 3. **求解最优的权值向量$\boldsymbol{w}$和偏置项$b$**：
     - 由$\
-abla_\boldsymbol{w} L(\boldsymbol{w}, b, \alpha) = 0$，得到$\boldsymbol{w} = \begin{bmatrix} 1 \\ -1 \end{bmatrix}$。
+abla_\boldsymbol{w} L(\boldsymbol{w}, b, \alpha) = 0$，得到$\boldsymbol{w} = \begin{bmatrix} 1 \ -1 \end{bmatrix}$。
     - 将$\boldsymbol{w}$代入$\
 abla_b L(\boldsymbol{w}, b, \alpha) = 0$，得到$b = 1$。
 4. **构造决策函数**：$f(\boldsymbol{x}) = \text{sign}(\boldsymbol{w} \cdot \boldsymbol{x} + b)$。
 
-根据上述决策函数，我们可以对新的数据点进行分类。例如，对于数据点$\boldsymbol{x} = \begin{bmatrix} 2.5 \\ 2.5 \end{bmatrix}$，我们有：
+根据上述决策函数，我们可以对新的数据点进行分类。例如，对于数据点$\boldsymbol{x} = \begin{bmatrix} 2.5 \ 2.5 \end{bmatrix}$，我们有：
 
-$$f(\boldsymbol{x}) = \text{sign}(\begin{bmatrix} 1 \\ -1 \end{bmatrix} \cdot \begin{bmatrix} 2.5 \\ 2.5 \end{bmatrix} + 1) = \text{sign}(2.5 - 2.5 + 1) = 1$$
+$$f(\boldsymbol{x}) = \text{sign}(\begin{bmatrix} 1 \ -1 \end{bmatrix} \cdot \begin{bmatrix} 2.5 \ 2.5 \end{bmatrix} + 1) = \text{sign}(2.5 - 2.5 + 1) = 1$$
 
 因此，该数据点被归类为正类。
 

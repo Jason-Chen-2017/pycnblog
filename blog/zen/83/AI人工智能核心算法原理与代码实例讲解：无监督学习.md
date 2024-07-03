@@ -134,7 +134,7 @@
 
 $$
 \begin{align*}
-\text{minimize} & \quad \sum_{i=1}^n \sum_{j=1}^K ||x_i - c_j||^2 \\
+\text{minimize} & \quad \sum_{i=1}^n \sum_{j=1}^K ||x_i - c_j||^2 \
 \text{subject to} & \quad x_i \in R^d, c_j \in R^d, \quad j=1, 2, \dots, K
 \end{align*}
 $$
@@ -147,7 +147,7 @@ $$
 
 $$
 \begin{align*}
-\text{maximize} & \quad \sum_{i=1}^n \sum_{j=1}^d \alpha_j^2 \cdot \sum_{k=1}^n (x_{ij} - \bar{x}_j)^2 \\
+\text{maximize} & \quad \sum_{i=1}^n \sum_{j=1}^d \alpha_j^2 \cdot \sum_{k=1}^n (x_{ij} - \bar{x}_j)^2 \
 \text{subject to} & \quad \sum_{j=1}^d \alpha_j^2 = 1, \quad x_{ij} \in R, \quad \bar{x}_j = \frac{1}{n} \sum_{k=1}^n x_{kj}, \quad j=1, 2, \dots, d
 \end{align*}
 $$
@@ -160,7 +160,7 @@ $$
 
 $$
 \begin{align*}
-\text{maximize} & \quad \sum_{i=1}^n \sum_{j=1}^d w_{ij}^2 \cdot \sum_{k=1}^n \left( |x_{ik} - \bar{x}_k| - w_{ik} \right)^2 \\
+\text{maximize} & \quad \sum_{i=1}^n \sum_{j=1}^d w_{ij}^2 \cdot \sum_{k=1}^n \left( |x_{ik} - \bar{x}_k| - w_{ik} \right)^2 \
 \text{subject to} & \quad w_{ij} \geq 0, \quad x_{ij} \in R, \quad \bar{x}_k = \frac{1}{n} \sum_{i=1}^n x_{ik}, \quad k=1, 2, \dots, d
 \end{align*}
 $$

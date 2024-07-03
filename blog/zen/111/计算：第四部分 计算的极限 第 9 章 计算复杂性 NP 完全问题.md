@@ -77,8 +77,8 @@ NP完全问题算法被广泛应用于组合优化、机器学习、人工智能
 
 $$
 \begin{aligned}
-\max \quad & \sum_{i=1}^n v_i x_i \\
-\text{s.t.} \quad & \sum_{i=1}^n w_i x_i \leq W \\
+\max \quad & \sum_{i=1}^n v_i x_i \
+\text{s.t.} \quad & \sum_{i=1}^n w_i x_i \leq W \
 & x_i \in \{0,1\}, \quad i=1,2,\dots,n
 \end{aligned}
 $$

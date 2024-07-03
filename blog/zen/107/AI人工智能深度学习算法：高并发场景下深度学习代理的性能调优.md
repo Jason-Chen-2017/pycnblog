@@ -135,8 +135,8 @@ graph TD
 
 $$
 \begin{aligned}
-T &= \frac{1}{\mu(1-\rho)} + \frac{1}{\mu} \\
-W &= \frac{\rho}{\mu(1-\rho)} \\
+T &= \frac{1}{\mu(1-\rho)} + \frac{1}{\mu} \
+W &= \frac{\rho}{\mu(1-\rho)} \
 X &= \lambda(1-P_0)
 \end{aligned}
 $$

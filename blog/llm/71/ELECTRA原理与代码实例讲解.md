@@ -114,9 +114,9 @@ ELECTRA模型的数学模型可以表示为：
 
 $$
 \begin{align*}
-P_{MLM}(w_t) &= \frac{e^{f(w_t; \theta)}}{\sum_{w \in V} e^{f(w; \theta)}} \\
-P_{Decoder}(w_t) &= \frac{e^{g(w_t; \theta)}}{\sum_{w \in V} e^{g(w; \theta)}} \\
-P_{Discriminator}(w_t) &= \sigma(g(w_t; \theta)) \\
+P_{MLM}(w_t) &= \frac{e^{f(w_t; \theta)}}{\sum_{w \in V} e^{f(w; \theta)}} \
+P_{Decoder}(w_t) &= \frac{e^{g(w_t; \theta)}}{\sum_{w \in V} e^{g(w; \theta)}} \
+P_{Discriminator}(w_t) &= \sigma(g(w_t; \theta)) \
 L &= \frac{1}{N} \sum_{t=1}^{N} \log \frac{P_{Discriminator}(w_t)}{P_{MLM}(w_t)}
 \end{align*}
 $$

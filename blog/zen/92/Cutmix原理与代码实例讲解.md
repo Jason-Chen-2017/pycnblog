@@ -120,8 +120,8 @@ CutMix方法在以下任务上取得了显著的效果：
 $$
 M(x, y) = 
 \begin{cases} 
-A(x, y) & \text{if } (x, y) \in F_A \\
-B(x, y) & \text{if } (x, y) \in F_B \\
+A(x, y) & \text{if } (x, y) \in F_A \
+B(x, y) & \text{if } (x, y) \in F_B \
 \alpha A(x, y) + (1 - \alpha) B(x, y) & \text{if } (x, y) \in F_A \cup F_B
 \end{cases}
 $$

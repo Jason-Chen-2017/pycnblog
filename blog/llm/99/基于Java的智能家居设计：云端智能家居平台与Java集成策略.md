@@ -216,7 +216,7 @@ $$
 $$
 H(X) = 
 \begin{cases} 
-X & \text{if } |X| > \theta \\
+X & \text{if } |X| > \theta \
 0 & \text{otherwise}
 \end{cases}
 $$

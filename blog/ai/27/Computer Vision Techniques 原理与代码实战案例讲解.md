@@ -128,13 +128,13 @@
 ### 4.2 公式推导过程
 
 #### 目标检测
-- **损失函数**：交叉熵损失 $\\mathcal{L}(y, \\hat{y}) = - \\sum_{i=1}^{n} y_i \\log(\\hat{y}_i)$，其中$y$是真实标签，$\\hat{y}$是预测概率。
+- **损失函数**：交叉熵损失 $\mathcal{L}(y, \hat{y}) = - \sum_{i=1}^{n} y_i \log(\hat{y}_i)$，其中$y$是真实标签，$\hat{y}$是预测概率。
 
 #### 图像分割
-- **U-Net损失**：交叉熵损失加上正则化项 $\\mathcal{L}(y, \\hat{y}) = \\frac{1}{N}\\sum_{i=1}^{N} \\mathcal{L}_{CE}(y_i, \\hat{y}_i) + \\lambda \\mathcal{L}_{reg}(\\hat{y})$，其中$\\mathcal{L}_{CE}$是交叉熵损失，$\\lambda$是正则化系数。
+- **U-Net损失**：交叉熵损失加上正则化项 $\mathcal{L}(y, \hat{y}) = \frac{1}{N}\sum_{i=1}^{N} \mathcal{L}_{CE}(y_i, \hat{y}_i) + \lambda \mathcal{L}_{reg}(\hat{y})$，其中$\mathcal{L}_{CE}$是交叉熵损失，$\lambda$是正则化系数。
 
 #### 行为分析
-- **卡尔曼滤波**：状态预测方程 $\\hat{x}_{k|k-1} = A_k \\hat{x}_{k-1|k-1} + B_k u_k$，测量更新方程 $y_k = H_k \\hat{x}_{k|k-1} + v_k$，其中$A_k$、$B_k$、$H_k$分别是状态转移矩阵、控制矩阵和测量矩阵。
+- **卡尔曼滤波**：状态预测方程 $\hat{x}_{k|k-1} = A_k \hat{x}_{k-1|k-1} + B_k u_k$，测量更新方程 $y_k = H_k \hat{x}_{k|k-1} + v_k$，其中$A_k$、$B_k$、$H_k$分别是状态转移矩阵、控制矩阵和测量矩阵。
 
 ### 4.3 案例分析与讲解
 

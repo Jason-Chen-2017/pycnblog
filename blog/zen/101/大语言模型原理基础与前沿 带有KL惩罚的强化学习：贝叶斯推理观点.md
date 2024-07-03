@@ -133,9 +133,9 @@ KL惩罚是一种基于信息论的概念，用于衡量两个概率分布之间
 
 $$
 \begin{aligned}
-P(s_t | s_{t-1}, a_{t-1}) &= \pi(a_t | s_t, \theta_{RL}) \\
-P(s_t | s_{t-1}, a_{t-1}) &= M_{\theta}(s_t | s_{t-1}, a_{t-1}) \\
-R_t &= r(s_t, a_t, s_{t+1}) \\
+P(s_t | s_{t-1}, a_{t-1}) &= \pi(a_t | s_t, \theta_{RL}) \
+P(s_t | s_{t-1}, a_{t-1}) &= M_{\theta}(s_t | s_{t-1}, a_{t-1}) \
+R_t &= r(s_t, a_t, s_{t+1}) \
 J(\theta_{RL}, \theta_{M}) &= \sum_{t=1}^T \gamma^t R_t
 \end{aligned}
 $$

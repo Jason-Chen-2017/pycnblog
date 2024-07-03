@@ -78,7 +78,7 @@ $$
 - Tanh函数：$f(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}}$
 - ReLU函数：$f(z) = \max(0, z)$
 - Leaky ReLU函数：$f(z) = \max(\alpha z, z)$，其中$\alpha$是一个小的正常数，如0.01。
-- ELU函数：$f(z) = \begin{cases} z, & \text{if } z > 0 \\ \alpha (e^z - 1), & \text{if } z \leq 0 \end{cases}$，其中$\alpha$是一个超参数。
+- ELU函数：$f(z) = \begin{cases} z, & \text{if } z > 0 \ \alpha (e^z - 1), & \text{if } z \leq 0 \end{cases}$，其中$\alpha$是一个超参数。
 
 ### 4.2 公式推导过程
 以Sigmoid函数为例，其推导过程如下：

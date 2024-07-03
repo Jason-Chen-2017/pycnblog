@@ -148,7 +148,7 @@ $$\sum\limits_{t \in F} \sum\limits_{1 \leq l \leq k} m_l(t)$$
 
 对于给定的维度属性值$d_j^i = a$,我们可以计算满足该条件的所有元组t的度量之和:
 
-$$\sum\limits_{\substack{t \in F \\ d_j^i(t)=a}} \sum\limits_{1 \leq l \leq k} m_l(t)$$
+$$\sum\limits_{\substack{t \in F \ d_j^i(t)=a}} \sum\limits_{1 \leq l \leq k} m_l(t)$$
 
 这就是典型的OLAP分析中的"切片"和"切块"操作。
 
@@ -160,7 +160,7 @@ $$\sum\limits_{\substack{t \in F \\ d_j^i(t)=a}} \sum\limits_{1 \leq l \leq k} m
 
 $$
 \begin{align*}
-SALES = &(sale\_id, date\_id, product\_id, store\_id, customer\_id,\\
+SALES = &(sale\_id, date\_id, product\_id, store\_id, customer\_id,\
         &qty, amount)
 \end{align*}
 $$
@@ -174,7 +174,7 @@ $$
 我们可以查询某个产品在某个时间段内的总销售额:
 
 $$
-\sum\limits_{\substack{t \in SALES \\ date\_id \in [d1, d2] \\ product\_id=p}} amount(t)
+\sum\limits_{\substack{t \in SALES \ date\_id \in [d1, d2] \ product\_id=p}} amount(t)
 $$
 
 通过这种方式,我们可以方便地对数据进行多维度的统计分析。

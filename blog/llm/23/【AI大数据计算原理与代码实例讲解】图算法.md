@@ -106,15 +106,15 @@ Dijkstra算法从起点出发，逐步扩展可达节点的集合，同时维护
 
 **BFS**：
 
-- **队列**：$Q = \\{s\\}$（起点$s$）
-- **已访问集合**：$V\\_visited = \\{s\\}$
-- **未访问集合**：$V\\_unvisited = V - \\{s\\}$
+- **队列**：$Q = \{s\}$（起点$s$）
+- **已访问集合**：$V\_visited = \{s\}$
+- **未访问集合**：$V\_unvisited = V - \{s\}$
 
 **DFS**：
 
-- **栈**：$S = \\{s\\}$
-- **已访问集合**：$V\\_visited = \\{s\\}$
-- **未访问集合**：$V\\_unvisited = V - \\{s\\}$
+- **栈**：$S = \{s\}$
+- **已访问集合**：$V\_visited = \{s\}$
+- **未访问集合**：$V\_unvisited = V - \{s\}$
 
 ### Dijkstra算法公式
 
@@ -126,29 +126,29 @@ Dijkstra算法从起点出发，逐步扩展可达节点的集合，同时维护
 
 **边选择**：
 
-- **边选择**：$E\\_selected = \\{e \\in E : e \\text{ connects two components}\\}$
+- **边选择**：$E\_selected = \{e \in E : e \text{ connects two components}\}$
 
 ### Kruskal算法公式
 
 **边排序**：
 
-- **边排序**：$E\\_sorted = sort(E, \\text{by weight})$
+- **边排序**：$E\_sorted = sort(E, \text{by weight})$
 
 ### 模块度最大化公式
 
 **模块度**：
 
-$$ Q = \\sum_{ij} \\left( A_{ij} - \\frac{k_i k_j}{2m} \\right) \\delta(c_i, c_j) $$
+$$ Q = \sum_{ij} \left( A_{ij} - \frac{k_i k_j}{2m} \right) \delta(c_i, c_j) $$
 
-其中，$A_{ij}$ 是图中节点$i$和$j$之间的边的数目，$k_i$ 和 $k_j$ 分别是节点$i$和$j$的度数，$m$ 是图中边的总数，$c_i$ 和$c_j$ 分别是节点$i$和$j$所属的社区，$\\delta(c_i, c_j)$ 是一个取值为1的函数，如果$c_i = c_j$，否则为0。
+其中，$A_{ij}$ 是图中节点$i$和$j$之间的边的数目，$k_i$ 和 $k_j$ 分别是节点$i$和$j$的度数，$m$ 是图中边的总数，$c_i$ 和$c_j$ 分别是节点$i$和$j$所属的社区，$\delta(c_i, c_j)$ 是一个取值为1的函数，如果$c_i = c_j$，否则为0。
 
 ### 谱聚类公式
 
 **特征向量**：
 
-$$ \\lambda \\mathbf{v} = \\mathbf{L} \\mathbf{v} $$
+$$ \lambda \mathbf{v} = \mathbf{L} \mathbf{v} $$
 
-其中，$\\mathbf{L}$ 是拉普拉斯矩阵，$\\lambda$ 是特征值，$\\mathbf{v}$ 是对应的特征向量。
+其中，$\mathbf{L}$ 是拉普拉斯矩阵，$\lambda$ 是特征值，$\mathbf{v}$ 是对应的特征向量。
 
 ## 5. 项目实践：代码实例和详细解释说明
 

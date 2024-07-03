@@ -161,7 +161,7 @@ $$
 
 $$
 \begin{aligned}
-\theta^* &= \arg\max_\theta \sum_{\boldsymbol{x}}\log P_\theta(\boldsymbol{x})\\
+\theta^* &= \arg\max_\theta \sum_{\boldsymbol{x}}\log P_\theta(\boldsymbol{x})\
 &= \arg\max_\theta \sum_{\boldsymbol{x}}\sum_{t=1}^T\log P_\theta(x_t|x_{<t})
 \end{aligned}
 $$

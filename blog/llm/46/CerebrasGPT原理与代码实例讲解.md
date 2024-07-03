@@ -94,29 +94,29 @@ Cerebras-GPT基于Transformer架构，其核心数学模型包括：
 
 对于输入序列$x$，多头自注意力机制通过以下步骤计算输出：
 
-\[
+$$
 \text{MultiHeadAttention}(Q, K, V) = \text{Concat}(W_1 Q, W_2 K, W_3 V) \cdot \text{LayerNorm}(\text{PositionalEncoding}(Q))
-\]
+$$
 
 #### 前馈神经网络：
 
-\[
+$$
 FFN(x) = \text{MaxPooling}(x) \cdot \text{MLP}(\text{Concat}(x, \text{MaxPooling}(x)))
-\]
+$$
 
 ### 4.2 公式推导过程
 
 #### 多头自注意力的推导：
 
-\[
+$$
 \text{MultiHeadAttention}(Q, K, V) = \text{Concat}(W_1 Q, W_2 K, W_3 V) \cdot \text{Softmax}(W_4 \text{Concat}(W_1 Q, W_2 K, W_3 V)^T)
-\]
+$$
 
 #### 前馈神经网络的推导：
 
-\[
+$$
 FFN(x) = \text{ReLU}(W_5 \text{MLP}(x) + b_5) + \text{MLP}(x)
-\]
+$$
 
 ### 4.3 案例分析与讲解
 

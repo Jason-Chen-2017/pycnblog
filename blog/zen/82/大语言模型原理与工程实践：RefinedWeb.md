@@ -115,10 +115,10 @@ RefinedWeb大语言模型的核心数学模型包括词嵌入、自注意力机�
 
 $$
 \begin{aligned}
-Q &= W_Q \times H \\
-K &= W_K \times H \\
-V &= W_V \times H \\
-A &= \frac{(Q \times K)^T}{\sqrt{d_k}} \times V \\
+Q &= W_Q \times H \
+K &= W_K \times H \
+V &= W_V \times H \
+A &= \frac{(Q \times K)^T}{\sqrt{d_k}} \times V \
 \end{aligned}
 $$
 

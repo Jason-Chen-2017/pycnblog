@@ -98,9 +98,9 @@
 
 #### Q值函数
 
-$$Q(s, a) = \\mathbb{E}_{s'\\sim P(\\cdot|s, a)}[R(s, a) + \\gamma \\max_{a'}Q(s', a')]$$
+$$Q(s, a) = \mathbb{E}_{s'\sim P(\cdot|s, a)}[R(s, a) + \gamma \max_{a'}Q(s', a')]$$
 
-其中，$\\gamma$是折扣因子，表示未来奖励的权重。
+其中，$\gamma$是折扣因子，表示未来奖励的权重。
 
 ### 4.2 公式推导过程
 
@@ -137,9 +137,9 @@ import gym
 from stable_baselines3 import DQN
 
 env = gym.make('CartPole-v1')
-model = DQN(\"MlpPolicy\", env, learning_rate=0.001)
+model = DQN("MlpPolicy", env, learning_rate=0.001)
 model.learn(total_timesteps=10000)
-model.save(\"dqn_cartpole\")
+model.save("dqn_cartpole")
 ```
 
 ### 5.2 源代码详细实现
@@ -237,12 +237,12 @@ class DeepRLAgent:
 
 #### 强化学习领域
 
-- **\"Reinforcement Learning\"**：Richard Sutton和Andrew Barto著。
-- **\"Deep Reinforcement Learning\"**：Sebastian Riedel和Demis Hassabis编著。
+- **"Reinforcement Learning"**：Richard Sutton和Andrew Barto著。
+- **"Deep Reinforcement Learning"**：Sebastian Riedel和Demis Hassabis编著。
 
 #### 深度学习领域
 
-- **\"Deep Learning\"**：Ian Goodfellow等人著。
+- **"Deep Learning"**：Ian Goodfellow等人著。
 
 ### 7.4 其他资源推荐
 

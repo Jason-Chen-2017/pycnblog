@@ -173,7 +173,7 @@ $$\tau^* = \arg\max_\tau J(\tau)$$
 1. 环境状态$s$用一个$n \times n$的矩阵表示,每个元素值对应该位置是否有障碍物。
 2. Agent的行为空间$\mathcal{A} = \{\uparrow, \downarrow, \leftarrow, \rightarrow\}$,表示上下左右四个方向的移动。
 3. 状态转移$P(s' \mid s, a)$遵循确定性规则:如果目标位置是障碍物则保持原状态,否则移动到目标位置。
-4. 奖赏函数$R(s, a) = \begin{cases} 1 & \text{到达目标点}\\ 0 & \text{其他情况}\end{cases}$
+4. 奖赏函数$R(s, a) = \begin{cases} 1 & \text{到达目标点}\ 0 & \text{其他情况}\end{cases}$
 
 在该环境中,我们可以定义:
 

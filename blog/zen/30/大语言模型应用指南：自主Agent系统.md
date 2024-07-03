@@ -55,9 +55,9 @@
 
 构建数学模型时，可以采用强化学习框架下的贝尔曼方程来描述Agent的行为策略：
 
-$$V(s) = \\max_a \\left\\{ r(s, a) + \\gamma E[V(s')] \\right\\}$$
+$$V(s) = \max_a \left\{ r(s, a) + \gamma E[V(s')] \right\}$$
 
-其中，$V(s)$是状态$s$的值函数，$r(s, a)$是状态$s$下执行动作$a$后的即时奖励，$\\gamma$是折扣因子，$E[V(s')]$是状态$s'$的期望价值。
+其中，$V(s)$是状态$s$的值函数，$r(s, a)$是状态$s$下执行动作$a$后的即时奖励，$\gamma$是折扣因子，$E[V(s')]$是状态$s'$的期望价值。
 
 ### 4.2 公式推导过程
 
@@ -65,11 +65,11 @@ $$V(s) = \\max_a \\left\\{ r(s, a) + \\gamma E[V(s')] \\right\\}$$
 
 - **Q-learning**：
   
-  $$Q(s, a) = Q(s, a) + \\alpha [r(s, a) + \\gamma \\max_{a'} Q(s', a') - Q(s, a)]$$
+  $$Q(s, a) = Q(s, a) + \alpha [r(s, a) + \gamma \max_{a'} Q(s', a') - Q(s, a)]$$
 
 - **SARSA**：
   
-  $$Q(s, a) = Q(s, a) + \\alpha [r(s, a) + \\gamma Q(s', a') - Q(s, a)]$$
+  $$Q(s, a) = Q(s, a) + \alpha [r(s, a) + \gamma Q(s', a') - Q(s, a)]$$
 
 ### 4.3 案例分析与讲解
 
@@ -90,12 +90,12 @@ from transformers import GPT2Tokenizer, GPT2LMHeadModel
 from gym import Env, spaces
 
 class LanguageModelAgent:
-    def __init__(self, model_name=\"gpt2\"):
+    def __init__(self, model_name="gpt2"):
         self.tokenizer = GPT2Tokenizer.from_pretrained(model_name)
         self.model = GPT2LMHeadModel.from_pretrained(model_name)
 
     def generate_response(self, user_input):
-        input_ids = self.tokenizer.encode(user_input, return_tensors=\"pt\")
+        input_ids = self.tokenizer.encode(user_input, return_tensors="pt")
         output = self.model.generate(input_ids, max_length=50, num_return_sequences=1)
         response = self.tokenizer.decode(output[0])
         return response
@@ -107,8 +107,8 @@ class LanguageModelAgent:
 
 ### 运行结果展示
 
-- **用户输入**：\"如何使用这款产品？\"
-- **系统输出**：\"请参考产品手册中的第X节，操作步骤如下……\"
+- **用户输入**："如何使用这款产品？"
+- **系统输出**："请参考产品手册中的第X节，操作步骤如下……"
 
 ## 6. 实际应用场景
 

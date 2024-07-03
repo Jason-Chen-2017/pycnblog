@@ -175,7 +175,7 @@
 
   $$
   \begin{align*}
-  S(x,y) &= \sum_{k=1}^{N} w_k \cdot f(x+k \cdot u,y+v) \\
+  S(x,y) &= \sum_{k=1}^{N} w_k \cdot f(x+k \cdot u,y+v) \
   \end{align*}
   $$
 

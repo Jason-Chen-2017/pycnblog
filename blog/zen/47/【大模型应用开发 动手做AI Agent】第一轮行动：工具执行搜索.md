@@ -102,8 +102,8 @@ Plan-and-Solve策略是一种将复杂任务分解为多个子任务，然后逐
 
 $$
 \begin{align*}
-\text{最优路径} &= \text{Search\_Algorithm}(G, \text{初始状态}, \text{目标状态}, \text{启发式函数}) \\
-\text{任务结果} &= \text{Execute\_Tasks}(G, \text{最优路径}) \\
+\text{最优路径} &= \text{Search\_Algorithm}(G, \text{初始状态}, \text{目标状态}, \text{启发式函数}) \
+\text{任务结果} &= \text{Execute\_Tasks}(G, \text{最优路径}) \
 \end{align*}
 $$
 

@@ -67,29 +67,29 @@ $$\min \sum_{i=1}^{n}(y_i - \hat{y_i})^2 = \min \sum_{i=1}^{n}(y_i - wx_i - b)^2
 
 $$
 \begin{bmatrix}
-y_1\\
-y_2\\
-\vdots\\
+y_1\
+y_2\
+\vdots\
 y_n
 \end{bmatrix}
 =
 \begin{bmatrix}
-x_{11} & x_{12} & \cdots & x_{1p}\\
-x_{21} & x_{22} & \cdots & x_{2p}\\
-\vdots & \vdots & \ddots & \vdots\\
+x_{11} & x_{12} & \cdots & x_{1p}\
+x_{21} & x_{22} & \cdots & x_{2p}\
+\vdots & \vdots & \ddots & \vdots\
 x_{n1} & x_{n2} & \cdots & x_{np}
 \end{bmatrix}
 \begin{bmatrix}
-w_1\\
-w_2\\ 
-\vdots\\
+w_1\
+w_2\ 
+\vdots\
 w_p
 \end{bmatrix}
 +
 \begin{bmatrix}
-b\\
-b\\
-\vdots\\
+b\
+b\
+\vdots\
 b
 \end{bmatrix}
 $$
@@ -147,24 +147,24 @@ $$y=w_1x_1+w_2x_2+b$$
 
 $$
 \begin{bmatrix}
-y_1\\
-y_2\\
+y_1\
+y_2\
 y_3
 \end{bmatrix}
 =
 \begin{bmatrix}
-x_{11} & x_{12}\\
-x_{21} & x_{22}\\
+x_{11} & x_{12}\
+x_{21} & x_{22}\
 x_{31} & x_{32}
 \end{bmatrix}
 \begin{bmatrix}
-w_1\\
+w_1\
 w_2
 \end{bmatrix}
 +
 \begin{bmatrix}
-b\\
-b\\
+b\
+b\
 b
 \end{bmatrix}
 $$

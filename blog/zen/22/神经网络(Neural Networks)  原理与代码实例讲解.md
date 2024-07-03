@@ -89,8 +89,8 @@ $$ y = Vh + c $$
 
 对于一个二分类问题，可以使用sigmoid函数作为激活函数，损失函数选择交叉熵。假设网络结构为输入层（维度$n$）、隐藏层（维度$m$）和输出层（维度$1$），则可以建立以下公式：
 
-- **前向传播**：$z = W_1x + b_1$，$a = \\sigma(z)$；$z = W_2a + b_2$，$y = \\sigma(z)$
-- **损失计算**：$L = -y\\log(\\hat{y}) - (1-y)\\log(1-\\hat{y})$
+- **前向传播**：$z = W_1x + b_1$，$a = \sigma(z)$；$z = W_2a + b_2$，$y = \sigma(z)$
+- **损失计算**：$L = -y\log(\hat{y}) - (1-y)\log(1-\hat{y})$
 
 ### 4.4 常见问题解答
 
@@ -178,7 +178,7 @@ mlp = MLP([10, 5])
 mlp.fit(X_train, y_train)
 predictions = mlp.predict(X_test)
 accuracy = accuracy_score(y_test, predictions)
-print(f\"Accuracy: {accuracy}\")
+print(f"Accuracy: {accuracy}")
 ```
 
 ### 5.4 运行结果展示

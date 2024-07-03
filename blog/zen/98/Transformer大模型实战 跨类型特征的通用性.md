@@ -109,10 +109,10 @@ $$
 
 $$
 QK^T = \begin{bmatrix}
-q_1k_1^T & q_1k_2^T & \cdots & q_1k_m^T \\
-q_2k_1^T & q_2k_2^T & \cdots & q_2k_m^T \\
-\vdots & \vdots & \ddots & \vdots \\
-q_mk_1^T & q_mk_2^T & \cdots & q_mk_m^T \\
+q_1k_1^T & q_1k_2^T & \cdots & q_1k_m^T \
+q_2k_1^T & q_2k_2^T & \cdots & q_2k_m^T \
+\vdots & \vdots & \ddots & \vdots \
+q_mk_1^T & q_mk_2^T & \cdots & q_mk_m^T \
 \end{bmatrix}
 $$
 

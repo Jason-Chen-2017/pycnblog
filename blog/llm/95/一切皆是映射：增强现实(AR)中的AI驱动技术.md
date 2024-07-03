@@ -342,25 +342,25 @@ $$
 假设从帧0到帧1的变换矩阵为：
 
 $$
-T_{0\rightarrow1} = \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 1 \\ 0 & 0 & 0 & 1 \end{bmatrix}
+T_{0\rightarrow1} = \begin{bmatrix} 1 & 0 & 0 & 0 \ 0 & 1 & 0 & 0 \ 0 & 0 & 1 & 1 \ 0 & 0 & 0 & 1 \end{bmatrix}
 $$
 
 从帧0到初始帧的变换矩阵为：
 
 $$
-T_{0\rightarrow0} = \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}
+T_{0\rightarrow0} = \begin{bmatrix} 1 & 0 & 0 & 0 \ 0 & 1 & 0 & 0 \ 0 & 0 & 1 & 0 \ 0 & 0 & 0 & 1 \end{bmatrix}
 $$
 
 从帧1到初始帧的变换矩阵为：
 
 $$
-T_{1\rightarrow0} = \begin{bmatrix} 1 & 0 & 0 & 1 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}
+T_{1\rightarrow0} = \begin{bmatrix} 1 & 0 & 0 & 1 \ 0 & 1 & 0 & 0 \ 0 & 0 & 1 & 0 \ 0 & 0 & 0 & 1 \end{bmatrix}
 $$
 
 则有：
 
 $$
-T_{0\rightarrow1} = T_{0\rightarrow0}^{-1}T_{1\rightarrow0} = \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 1 \\ 0 & 0 & 0 & 1 \end{bmatrix}
+T_{0\rightarrow1} = T_{0\rightarrow0}^{-1}T_{1\rightarrow0} = \begin{bmatrix} 1 & 0 & 0 & 0 \ 0 & 1 & 0 & 0 \ 0 & 0 & 1 & 1 \ 0 & 0 & 0 & 1 \end{bmatrix}
 $$
 
 #### 4.3.2 目标检测与识别

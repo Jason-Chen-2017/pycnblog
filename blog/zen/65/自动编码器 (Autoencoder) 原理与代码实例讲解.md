@@ -77,7 +77,7 @@ $$
 线性自动编码器的编码器和解码器都是线性变换，可以用矩阵表示：
 
 $$
-z = Wx \\
+z = Wx \
 \hat{x} = W^Tz
 $$
 
@@ -93,7 +93,7 @@ $$
 
 $$
 W = \begin{bmatrix} 
-0.5 & 0.5 \\
+0.5 & 0.5 \
 0.2 & 0.8 
 \end{bmatrix}
 $$
@@ -102,13 +102,13 @@ $$
 
 $$
 z = Wx = \begin{bmatrix} 
-0.5 & 0.5 \\
+0.5 & 0.5 \
 0.2 & 0.8 
 \end{bmatrix} \begin{bmatrix} 
-x_1 \\
+x_1 \
 x_2 
 \end{bmatrix} = \begin{bmatrix} 
-0.5x_1 + 0.5x_2 \\
+0.5x_1 + 0.5x_2 \
 0.2x_1 + 0.8x_2 
 \end{bmatrix}
 $$
@@ -117,13 +117,13 @@ $$
 
 $$
 \hat{x} = W^Tz = \begin{bmatrix} 
-0.5 & 0.2 \\
+0.5 & 0.2 \
 0.5 & 0.8 
 \end{bmatrix} \begin{bmatrix} 
-0.5x_1 + 0.5x_2 \\
+0.5x_1 + 0.5x_2 \
 0.2x_1 + 0.8x_2 
 \end{bmatrix} = \begin{bmatrix} 
-0.35x_1 + 0.55x_2 \\
+0.35x_1 + 0.55x_2 \
 0.45x_1 + 0.65x_2 
 \end{bmatrix}
 $$

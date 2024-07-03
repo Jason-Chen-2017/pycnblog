@@ -43,8 +43,8 @@ $$ P(x)=\frac{1}{\sigma \sqrt{2 \pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}} $$
 
 $$
 \begin{aligned}
-\min_{\mathbf{w},\xi,\rho} \quad & \frac{1}{2}\lVert \mathbf{w} \rVert^2 + \frac{1}{\nu n} \sum_{i=1}^n \xi_i - \rho \\
-\textrm{s.t.} \quad & (\mathbf{w} \cdot \Phi(\mathbf{x}_i)) \geq \rho - \xi_i,\\
+\min_{\mathbf{w},\xi,\rho} \quad & \frac{1}{2}\lVert \mathbf{w} \rVert^2 + \frac{1}{\nu n} \sum_{i=1}^n \xi_i - \rho \
+\textrm{s.t.} \quad & (\mathbf{w} \cdot \Phi(\mathbf{x}_i)) \geq \rho - \xi_i,\
 & \xi_i \geq 0, i=1,\ldots,n
 \end{aligned}
 $$

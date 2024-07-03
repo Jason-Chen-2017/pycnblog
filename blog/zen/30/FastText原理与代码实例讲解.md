@@ -111,15 +111,15 @@ FastText广泛应用于文本分类、情感分析、主题建模、垃圾邮件
 
 对于短语$P = w_ia...w_j$（其中$a, ..., j$是短语中的词索引），可以定义短语向量$V_P$为：
 
-$$V_P = \\sum_{i=a}^{j} W_{w_i}$$
+$$V_P = \sum_{i=a}^{j} W_{w_i}$$
 
 ### 4.2 公式推导过程
 
 文本表示$T_S$可以由词向量和短语向量加权求和得到：
 
-$$T_S = \\sum_{i=1}^{n} \\alpha_i V_{w_i} + \\sum_{P \\in S} \\beta_P V_P$$
+$$T_S = \sum_{i=1}^{n} \alpha_i V_{w_i} + \sum_{P \in S} \beta_P V_P$$
 
-其中，$\\alpha_i$是词$w_i$的权重，$\\beta_P$是短语$P$的权重。权重可以基于词频和短语频次进行调整。
+其中，$\alpha_i$是词$w_i$的权重，$\beta_P$是短语$P$的权重。权重可以基于词频和短语频次进行调整。
 
 ### 4.3 案例分析与讲解
 
@@ -160,7 +160,7 @@ LABEL = Field(sequential=False)
 train_data, test_data = AG_NEWS.splits(TEXT, LABEL)
 
 # 创建词汇表
-TEXT.build_vocab(train_data, max_size=10000, vectors=\"glove.6B.100d\")
+TEXT.build_vocab(train_data, max_size=10000, vectors="glove.6B.100d")
 
 # 创建迭代器
 train_iterator, test_iterator = BucketIterator.splits(
@@ -223,8 +223,8 @@ FastText在多个领域有广泛的应用，包括：
 
 ### 7.3 相关论文推荐
 
-- **\"Supervised Learning with Principal Coefficients\"**：介绍了FastText模型的设计原理和优势。
-- **\"A Simple Baseline for Text Classification\"**：提供了对FastText和其他文本分类方法的比较分析。
+- **"Supervised Learning with Principal Coefficients"**：介绍了FastText模型的设计原理和优势。
+- **"A Simple Baseline for Text Classification"**：提供了对FastText和其他文本分类方法的比较分析。
 
 ### 7.4 其他资源推荐
 

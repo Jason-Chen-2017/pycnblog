@@ -110,11 +110,11 @@ LSTM模型由输入门（input gate）、遗忘门（forget gate）和输出门�
 
 $$
 \begin{align*}
-i_t &= \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i) \\
-f_t &= \sigma(W_{xf}x_t + W_{hf}h_{t-1} + b_f) \\
-c_t &= f_t \odot c_{t-1} + i_t \odot \sigma(W_{xc}x_t + W_{hc}h_{t-1} + b_c) \\
-o_t &= \sigma(W_{xo}x_t + W_{ho}h_{t-1} + b_o) \\
-h_t &= o_t \odot \sigma(c_t) \\
+i_t &= \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i) \
+f_t &= \sigma(W_{xf}x_t + W_{hf}h_{t-1} + b_f) \
+c_t &= f_t \odot c_{t-1} + i_t \odot \sigma(W_{xc}x_t + W_{hc}h_{t-1} + b_c) \
+o_t &= \sigma(W_{xo}x_t + W_{ho}h_{t-1} + b_o) \
+h_t &= o_t \odot \sigma(c_t) \
 \end{align*}
 $$
 
@@ -126,9 +126,9 @@ GRU模型由更新门（update gate）和重置门（reset gate）组成，结�
 
 $$
 \begin{align*}
-z_t &= \sigma(W_{xz}x_t + W_{hz}h_{t-1} + b_z) \\
-r_t &= \sigma(W_{xr}x_t + W_{hr}h_{t-1} + b_r) \\
-h_t &= z_t \odot h_{t-1} + (1 - z_t) \odot \sigma(W_{xc}x_t + W_{hc}r_{t-1}h_{t-1} + b_c) \\
+z_t &= \sigma(W_{xz}x_t + W_{hz}h_{t-1} + b_z) \
+r_t &= \sigma(W_{xr}x_t + W_{hr}h_{t-1} + b_r) \
+h_t &= z_t \odot h_{t-1} + (1 - z_t) \odot \sigma(W_{xc}x_t + W_{hc}r_{t-1}h_{t-1} + b_c) \
 \end{align*}
 $$
 

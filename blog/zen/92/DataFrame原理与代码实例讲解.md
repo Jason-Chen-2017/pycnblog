@@ -101,8 +101,8 @@ DataFrame操作涉及到的数学模型主要包括：
 
 $$
 df1 + df2 = \begin{pmatrix}
-a_{11} + b_{11} & \cdots & a_{1n} + b_{1n} \\
-\vdots & \ddots & \vdots \\
+a_{11} + b_{11} & \cdots & a_{1n} + b_{1n} \
+\vdots & \ddots & \vdots \
 a_{m1} + b_{m1} & \cdots & a_{mn} + b_{mn}
 \end{pmatrix}
 $$

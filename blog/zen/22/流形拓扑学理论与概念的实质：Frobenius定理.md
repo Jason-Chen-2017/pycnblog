@@ -61,7 +61,7 @@ Frobenius定理在理论数学、物理学、工程学以及计算机科学等�
 
 ### 4.1 数学模型构建
 
-设$M$为一个$n$维流形，$\\mathcal{X}$为其上的向量场集合，$\\mathcal{L}$为一个$m$维线性空间。Frobenius定理关注的是是否存在一组局部坐标系$(x^1,x^2,...,x^n)$使得$\\mathcal{X}$中的向量场在该坐标系下成为零向量场，即$\\frac{\\partial}{\\partial x^i}\\big|_p = 0$对于所有$p\\in M$和$i=1,2,...,n$。
+设$M$为一个$n$维流形，$\mathcal{X}$为其上的向量场集合，$\mathcal{L}$为一个$m$维线性空间。Frobenius定理关注的是是否存在一组局部坐标系$(x^1,x^2,...,x^n)$使得$\mathcal{X}$中的向量场在该坐标系下成为零向量场，即$\frac{\partial}{\partial x^i}\big|_p = 0$对于所有$p\in M$和$i=1,2,...,n$。
 
 ### 4.2 公式推导过程
 
@@ -73,7 +73,7 @@ Frobenius定理的证明通常涉及到拉格朗日乘子法、微分形式理�
 
 ### 4.3 案例分析与讲解
 
-考虑一个简单的例子，设$M=\\mathbb{R}^2$，$n=2$，$\\mathcal{X}=\\{X_1,X_2\\}$，其中$X_1=\\frac{\\partial}{\\partial x}$，$X_2=\\frac{\\partial}{\\partial y}$。要证明$M$上的向量场$X_1$和$X_2$不能构成一个局部坐标系，只需观察它们在任意一点$(x,y)$处均不满足$\\frac{\\partial}{\\partial x}\\big|_{(x,y)}+\\frac{\\partial}{\\partial y}\\big|_{(x,y)}=0$。由于$\\frac{\\partial}{\\partial x}\\big|_{(x,y)}=1$，$\\frac{\\partial}{\\partial y}\\big|_{(x,y)}=1$，所以$X_1$和$X_2$不能构成一个局部坐标系。
+考虑一个简单的例子，设$M=\mathbb{R}^2$，$n=2$，$\mathcal{X}=\{X_1,X_2\}$，其中$X_1=\frac{\partial}{\partial x}$，$X_2=\frac{\partial}{\partial y}$。要证明$M$上的向量场$X_1$和$X_2$不能构成一个局部坐标系，只需观察它们在任意一点$(x,y)$处均不满足$\frac{\partial}{\partial x}\big|_{(x,y)}+\frac{\partial}{\partial y}\big|_{(x,y)}=0$。由于$\frac{\partial}{\partial x}\big|_{(x,y)}=1$，$\frac{\partial}{\partial y}\big|_{(x,y)}=1$，所以$X_1$和$X_2$不能构成一个局部坐标系。
 
 ### 4.4 常见问题解答
 
@@ -102,13 +102,13 @@ import numpy as np
 from scipy.linalg import solve
 
 def create_vector_field(n):
-    \"\"\" 创建n维空间上的向量场 \"\"\"
+    """ 创建n维空间上的向量场 """
     vector_field = np.zeros((n, n))
     vector_field[0, :] = np.eye(n)
     return vector_field
 
 def check_frobenius(vector_field):
-    \"\"\" 检查向量场是否满足Frobenius定理 \"\"\"
+    """ 检查向量场是否满足Frobenius定理 """
     m = vector_field.shape[0]
     n = vector_field.shape[1]
     A = np.zeros((m*(n-1), n))
@@ -126,7 +126,7 @@ def check_frobenius(vector_field):
 # 测试Frobenius定理
 vector_field = create_vector_field(2)
 result = check_frobenius(vector_field)
-print(f\"是否构成局部坐标系: {result}\")
+print(f"是否构成局部坐标系: {result}")
 ```
 
 ### 5.3 代码解读与分析

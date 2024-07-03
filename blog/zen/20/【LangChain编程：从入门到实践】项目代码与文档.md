@@ -105,7 +105,7 @@ LangChain编程涉及的数学模型主要包括：
 #### 温度调整公式
 
 - **原始输出**：$P(x)$ 表示模型在未调整策略下的输出概率。
-- **调整后的输出**：$\\tilde{P}(x) = \\frac{P(x)^{\\frac{1}{T}}}{\\sum_x P(x)^{\\frac{1}{T}}}$，其中$T$是温度参数，$T=1$时对应于标准softmax分布。
+- **调整后的输出**：$\tilde{P}(x) = \frac{P(x)^{\frac{1}{T}}}{\sum_x P(x)^{\frac{1}{T}}}$，其中$T$是温度参数，$T=1$时对应于标准softmax分布。
 
 ### 案例分析与讲解
 
@@ -141,7 +141,7 @@ from langchain import load_model
 model = load_model('your_model_name')
 
 # 定义任务：生成特定主题的故事
-task = \"生成关于太空探险的故事\"
+task = "生成关于太空探险的故事"
 
 # 调用模型执行任务
 response = model.execute_task(task)

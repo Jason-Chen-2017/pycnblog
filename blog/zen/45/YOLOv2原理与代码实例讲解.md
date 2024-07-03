@@ -126,9 +126,9 @@ $$
 
 $$
 \begin{align*}
-x_j &= \frac{p_{ij}^x \cdot W}{W/S} + \frac{W}{2S} \\
-y_j &= \frac{p_{ij}^y \cdot H}{H/T} + \frac{H}{2T} \\
-w_j &= \frac{p_{ij}^w \cdot W}{W/A} \\
+x_j &= \frac{p_{ij}^x \cdot W}{W/S} + \frac{W}{2S} \
+y_j &= \frac{p_{ij}^y \cdot H}{H/T} + \frac{H}{2T} \
+w_j &= \frac{p_{ij}^w \cdot W}{W/A} \
 h_j &= \frac{p_{ij}^h \cdot H}{H/A}
 \end{align*}
 $$
@@ -153,13 +153,13 @@ $$
 
 $$
 \begin{align*}
-p_{0,2}^x &= 0.25 \\
-p_{0,2}^y &= 0.5 \\
-p_{0,2}^w &= 0.3 \\
-p_{0,2}^h &= 0.2 \\
-p_{0,2}^{cat_1} &= 0.1 \\
-p_{0,2}^{cat_2} &= 0.2 \\
-p_{0,2}^{cat_3} &= 0.7 \\
+p_{0,2}^x &= 0.25 \
+p_{0,2}^y &= 0.5 \
+p_{0,2}^w &= 0.3 \
+p_{0,2}^h &= 0.2 \
+p_{0,2}^{cat_1} &= 0.1 \
+p_{0,2}^{cat_2} &= 0.2 \
+p_{0,2}^{cat_3} &= 0.7 \
 \end{align*}
 $$
 
@@ -169,13 +169,13 @@ $$
 
 $$
 \begin{align*}
-x_2 &= \frac{0.25 \cdot 416}{42} + \frac{416}{2 \cdot 42} = 4.76 \\
-y_2 &= \frac{0.5 \cdot 416}{42} + \frac{416}{2 \cdot 42} = 4.76 \\
-w_2 &= \frac{0.3 \cdot 416}{42} = 1.23 \\
-h_2 &= \frac{0.2 \cdot 416}{42} = 0.77 \\
-\hat{P}(cat_1 | X) &= \frac{\exp(0.1)}{\exp(0.1) + \exp(0.2) + \exp(0.7)} = 0.09 \\
-\hat{P}(cat_2 | X) &= \frac{\exp(0.2)}{\exp(0.1) + \exp(0.2) + \exp(0.7)} = 0.18 \\
-\hat{P}(cat_3 | X) &= \frac{\exp(0.7)}{\exp(0.1) + \exp(0.2) + \exp(0.7)} = 0.73 \\
+x_2 &= \frac{0.25 \cdot 416}{42} + \frac{416}{2 \cdot 42} = 4.76 \
+y_2 &= \frac{0.5 \cdot 416}{42} + \frac{416}{2 \cdot 42} = 4.76 \
+w_2 &= \frac{0.3 \cdot 416}{42} = 1.23 \
+h_2 &= \frac{0.2 \cdot 416}{42} = 0.77 \
+\hat{P}(cat_1 | X) &= \frac{\exp(0.1)}{\exp(0.1) + \exp(0.2) + \exp(0.7)} = 0.09 \
+\hat{P}(cat_2 | X) &= \frac{\exp(0.2)}{\exp(0.1) + \exp(0.2) + \exp(0.7)} = 0.18 \
+\hat{P}(cat_3 | X) &= \frac{\exp(0.7)}{\exp(0.1) + \exp(0.2) + \exp(0.7)} = 0.73 \
 \end{align*}
 $$
 

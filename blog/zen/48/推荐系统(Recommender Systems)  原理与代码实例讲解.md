@@ -170,7 +170,7 @@ print("用户$i$对电影$l$的评分预测：", r_il_pred)
 
 以矩阵分解为例，假设用户和项目特征矩阵分别为：
 
-$$U = \begin{bmatrix} 1 & 2 \\ 2 & 3 \end{bmatrix}, \quad V = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$$
+$$U = \begin{bmatrix} 1 & 2 \ 2 & 3 \end{bmatrix}, \quad V = \begin{bmatrix} 1 & 2 \ 3 & 4 \end{bmatrix}$$
 
 则用户$i$对项目$k$的评分预测为：
 

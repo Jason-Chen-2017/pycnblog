@@ -140,9 +140,9 @@ AI Agent的数学模型主要包括以下几个部分：
 
 $$
 \begin{align*}
-S_t &\sim P(S_t|S_{t-1}, A_{t-1}) \\
-A_t &\sim \pi(A_t|S_t) \\
-R_t &\sim p(R_t|S_t, A_t) \\
+S_t &\sim P(S_t|S_{t-1}, A_{t-1}) \
+A_t &\sim \pi(A_t|S_t) \
+R_t &\sim p(R_t|S_t, A_t) \
 S_{t+1} &\sim P(S_{t+1}|S_t, A_t)
 \end{align*}
 $$

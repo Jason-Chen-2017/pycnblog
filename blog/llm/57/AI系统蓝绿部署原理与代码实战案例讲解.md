@@ -70,9 +70,9 @@ $f(x)=\lambda e^{-\lambda x}, x \geq 0$
 
 ### 4.2 资源调度优化模型
 #### 4.2.1 背包问题
-$$\max \sum_{i=1}^{n} v_i x_i \\ s.t. \sum_{i=1}^{n} w_i x_i \leq W \\ x_i \in \{0,1\}, i=1,2,\cdots,n$$
+$$\max \sum_{i=1}^{n} v_i x_i \ s.t. \sum_{i=1}^{n} w_i x_i \leq W \ x_i \in \{0,1\}, i=1,2,\cdots,n$$
 #### 4.2.2 多维背包问题
-$$\max \sum_{i=1}^{n} v_i x_i \\ s.t. \sum_{i=1}^{n} w_{ij} x_i \leq W_j, j=1,2,\cdots,m \\ x_i \in \{0,1\}, i=1,2,\cdots,n$$
+$$\max \sum_{i=1}^{n} v_i x_i \ s.t. \sum_{i=1}^{n} w_{ij} x_i \leq W_j, j=1,2,\cdots,m \ x_i \in \{0,1\}, i=1,2,\cdots,n$$
 #### 4.2.3 贪心算法与动态规划
 
 ### 4.3 服务质量评估模型

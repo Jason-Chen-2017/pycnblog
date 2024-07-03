@@ -157,7 +157,7 @@ $$
 
 $$
 \pi(a|s) = \begin{cases} 
-p(a|s) & \text{if } a \in A_s \\
+p(a|s) & \text{if } a \in A_s \
 0 & \text{otherwise} 
 \end{cases}
 $$

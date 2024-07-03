@@ -196,7 +196,7 @@ $$
 
 $$
 h(R_i, j) = \begin{cases} 
-\frac{1}{N} & \text{if } j = i \\
+\frac{1}{N} & \text{if } j = i \
 0 & \text{otherwise}
 \end{cases}
 $$
@@ -205,7 +205,7 @@ $$
 
 $$
 h(R_i, j) = \begin{cases} 
-\frac{1}{N} & \text{if } j = \arg\min_{k=1}^N count_k \\
+\frac{1}{N} & \text{if } j = \arg\min_{k=1}^N count_k \
 0 & \text{otherwise}
 \end{cases}
 $$
@@ -214,7 +214,7 @@ $$
 
 $$
 h(R_i, j) = \begin{cases} 
-\frac{1}{N} & \text{if } j = \arg\min_{k=1}^N time_k \\
+\frac{1}{N} & \text{if } j = \arg\min_{k=1}^N time_k \
 0 & \text{otherwise}
 \end{cases}
 $$
@@ -223,7 +223,7 @@ $$
 
 $$
 h(R_i, j) = \begin{cases} 
-1 & \text{if } IP(R_i) \mod N = j \\
+1 & \text{if } IP(R_i) \mod N = j \
 0 & \text{otherwise}
 \end{cases}
 $$

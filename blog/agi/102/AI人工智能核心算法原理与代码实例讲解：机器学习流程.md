@@ -117,7 +117,7 @@ $$
 
 $$
 \begin{align*}
-\hat{Y} &= \beta_0 + \beta_1X \\
+\hat{Y} &= \beta_0 + \beta_1X \
 L(\theta) &= \frac{1}{2}\sum_{i=1}^N (Y_i - \hat{Y_i})^2
 \end{align*}
 $$
@@ -126,7 +126,7 @@ $$
 
 $$
 \begin{align*}
-P(Y=1|X) &= \frac{1}{1 + e^{-\beta_0 + \beta_1X}} \\
+P(Y=1|X) &= \frac{1}{1 + e^{-\beta_0 + \beta_1X}} \
 L(\theta) &= \prod_{i=1}^N \left[\frac{1}{1 + e^{-\beta_0 + \beta_1X_i}}\right]^{Y_i}
 \end{align*}
 $$
@@ -139,7 +139,7 @@ $$
 
 $$
 \begin{align*}
-\beta^T\boldsymbol{x} + b &= 0 \\
+\beta^T\boldsymbol{x} + b &= 0 \
 \Delta &= \frac{2}{||\beta||^2}
 \end{align*}
 $$
@@ -168,7 +168,7 @@ $$
 
 $$
 \begin{align*}
-\frac{\partial L(\theta)}{\partial \beta_0} &= -\frac{1}{N}\sum_{i=1}^N (Y_i - \hat{Y_i}) \\
+\frac{\partial L(\theta)}{\partial \beta_0} &= -\frac{1}{N}\sum_{i=1}^N (Y_i - \hat{Y_i}) \
 \frac{\partial L(\theta)}{\partial \beta_1} &= -\frac{1}{N}\sum_{i=1}^N X_i(Y_i - \hat{Y_i})
 \end{align*}
 $$
@@ -187,7 +187,7 @@ $$
 
 $$
 \begin{align*}
-\frac{\partial L(\theta)}{\partial \beta_0} &= -\frac{1}{N}\sum_{i=1}^N \left(Y_i - \frac{1}{1 + e^{-\beta_0 + \beta_1X_i}}\right) \\
+\frac{\partial L(\theta)}{\partial \beta_0} &= -\frac{1}{N}\sum_{i=1}^N \left(Y_i - \frac{1}{1 + e^{-\beta_0 + \beta_1X_i}}\right) \
 \frac{\partial L(\theta)}{\partial \beta_1} &= -\frac{1}{N}\sum_{i=1}^N \left(Y_iX_i - \frac{X_i}{1 + e^{-\beta_0 + \beta_1X_i}}\right)
 \end{align*}
 $$
@@ -206,7 +206,7 @@ $$
 
 $$
 \begin{align*}
-\min_{\beta, b} & \frac{1}{2}||\beta||^2 \\
+\min_{\beta, b} & \frac{1}{2}||\beta||^2 \
 \text{s.t.} & \beta^T\boldsymbol{x}_i + b \geq 1, \quad i=1,2,...,N
 \end{align*}
 $$

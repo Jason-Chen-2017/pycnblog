@@ -82,16 +82,16 @@ HBase主要通过主键进行数据定位。主键通常由行键（row key）�
 
 设$S$为索引表，$S(F|R_i)$表示在行键$R_i$处以非键字段$F$为索引的记录。索引构建过程可以描述为：
 
-$$S(F|R_i) = \\begin{cases} 
-\\text{主键}_{R_i} \\cup \\text{列族}_{C} \\cup \\text{非键字段值}_{F} \\\\
-\\text{如果不存在，则添加}
-\\end{cases}$$
+$$S(F|R_i) = \begin{cases} 
+\text{主键}_{R_i} \cup \text{列族}_{C} \cup \text{非键字段值}_{F} \\
+\text{如果不存在，则添加}
+\end{cases}$$
 
 ### 4.2 公式推导过程
 
 构建索引时，主要涉及到数据扫描和索引条目生成过程。假设HBase表中行键$R_i$的总数为$n$，非键字段$F$的可能值数量为$m$，那么索引表$S$的大小可以通过以下公式估算：
 
-$$|S| \\approx n \\times m$$
+$$|S| \approx n \times m$$
 
 ### 4.3 案例分析与讲解
 
@@ -141,8 +141,8 @@ public class HBaseConnection {
 
     public static void createConnection() {
         Configuration config = HBaseConfiguration.create();
-        String hbaseConfPath = \"/etc/hbase/conf/hbase-site.xml\"; // 指定HBase配置文件路径
-        config.set(\"hbase.zookeeper.quorum\", \"localhost\"); // 设置Zookeeper地址
+        String hbaseConfPath = "/etc/hbase/conf/hbase-site.xml"; // 指定HBase配置文件路径
+        config.set("hbase.zookeeper.quorum", "localhost"); // 设置Zookeeper地址
         connection = ConnectionFactory.createConnection(config);
     }
 

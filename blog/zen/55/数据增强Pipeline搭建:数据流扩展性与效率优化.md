@@ -80,7 +80,7 @@ $$
 $$
 R(\theta) = 
 \begin{bmatrix} 
-\cos \theta & -\sin \theta \\
+\cos \theta & -\sin \theta \
 \sin \theta & \cos \theta 
 \end{bmatrix}
 $$
@@ -89,7 +89,7 @@ $$
 
 $$
 A' = A + \begin{bmatrix} 
-t_x \\ 
+t_x \ 
 t_y
 \end{bmatrix}
 $$

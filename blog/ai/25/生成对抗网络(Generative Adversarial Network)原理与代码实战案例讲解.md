@@ -98,12 +98,12 @@
 #### 生成器（G）
 
 - **目标**：学习从噪声空间到数据空间的映射。
-- **损失函数**：$$L_G = -\\mathbb{E}_{z \\sim p_z}(D(G(z)))$$，其中$p_z$是噪声分布。
+- **损失函数**：$$L_G = -\mathbb{E}_{z \sim p_z}(D(G(z)))$$，其中$p_z$是噪声分布。
 
 #### 判别器（D）
 
 - **目标**：区分真实样本和生成样本。
-- **损失函数**：$$L_D = -[\\mathbb{E}_{x \\sim p_x}(log(D(x))) + \\mathbb{E}_{z \\sim p_z}(log(1-D(G(z))))]$$，其中$p_x$是真实数据分布。
+- **损失函数**：$$L_D = -[\mathbb{E}_{x \sim p_x}(log(D(x))) + \mathbb{E}_{z \sim p_z}(log(1-D(G(z))))]$$，其中$p_x$是真实数据分布。
 
 ### 4.2 公式推导过程
 
@@ -207,13 +207,13 @@ def train(g, d, data_loader, epochs, device):
             g_optimizer.step()
 
             if batch_idx % 100 == 0:
-                print(f\"Epoch {epoch}: Loss D = {d_loss.item()}, Loss G = {g_loss.item()}\")
+                print(f"Epoch {epoch}: Loss D = {d_loss.item()}, Loss G = {g_loss.item()}")
 ```
 
 #### 执行代码
 
 ```python
-device = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 g = Generator(100, 256, 784).to(device)
 d = Discriminator(784, 256, 1).to(device)
 

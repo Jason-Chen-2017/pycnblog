@@ -84,14 +84,14 @@ public class WindowFunctionExample {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
-        DataStream<String> stream = env.socketTextStream(\"localhost\", 9999);
+        DataStream<String> stream = env.socketTextStream("localhost", 9999);
 
         stream
             .window(TumblingEventTimeWindows.of(Time.seconds(10)))
             .count()
             .print();
 
-        env.execute(\"Window Function Example\");
+        env.execute("Window Function Example");
     }
 }
 ```
@@ -147,7 +147,7 @@ public class WindowedStreamProcessing {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         // 创建数据源
-        DataStream<String> sourceStream = env.socketTextStream(\"localhost\", 9999);
+        DataStream<String> sourceStream = env.socketTextStream("localhost", 9999);
 
         // 应用滚动窗口，窗口大小为10秒，滑动步长为5秒
         DataStream<Tuple2<Long, Integer>> windowedStream = sourceStream
@@ -171,7 +171,7 @@ public class WindowedStreamProcessing {
         windowedStream.print();
 
         // 执行任务
-        env.execute(\"Windowed Stream Processing\");
+        env.execute("Windowed Stream Processing");
     }
 }
 ```
@@ -208,8 +208,8 @@ public class WindowedStreamProcessing {
 
 ### 相关论文推荐
 
-- **\"Apache Flink: A Distributed Engine for Stream and Batch Processing\"**：深入理解Flink的架构和技术细节。
-- **\"Window Functions in Apache Flink\"**：详细探讨窗口函数在Flink中的实现和应用。
+- **"Apache Flink: A Distributed Engine for Stream and Batch Processing"**：深入理解Flink的架构和技术细节。
+- **"Window Functions in Apache Flink"**：详细探讨窗口函数在Flink中的实现和应用。
 
 ### 其他资源推荐
 

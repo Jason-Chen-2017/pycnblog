@@ -221,7 +221,7 @@ public class HiveOnFlinkExample {
         
         // 连接Hive
         tableEnv.executeSql("CREATE TABLE user_log (user_id STRING, login_time TIMESTAMP, action STRING) " +
-                            "ROW FORMAT DELIMITED FIELDS TERMINATED BY '\\t' " +
+                            "ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' " +
                             "STORED AS TEXTFILE");
         
         // 从Hive读取数据

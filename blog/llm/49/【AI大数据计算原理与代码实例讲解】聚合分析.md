@@ -105,7 +105,7 @@ $$
 
 $$
 COUNT(X) = \sum_{i=1}^{n} \begin{cases}
-1 & \text{if } x_i \neq \text{NULL}\\
+1 & \text{if } x_i \neq \text{NULL}\
 0 & \text{if } x_i = \text{NULL}
 \end{cases}
 $$

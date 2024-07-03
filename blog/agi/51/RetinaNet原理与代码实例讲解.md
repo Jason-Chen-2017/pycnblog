@@ -88,7 +88,7 @@ Smooth L1 Loss 函数用于计算边界框回归损失，其表达式如下：
 $$
 SmoothL1(x) =
 \begin{cases}
-0.5x^2 & |x| < 1 \\
+0.5x^2 & |x| < 1 \
 |x| - 0.5 & otherwise
 \end{cases}
 $$

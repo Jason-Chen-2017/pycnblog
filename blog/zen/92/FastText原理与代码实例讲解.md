@@ -116,7 +116,7 @@ FastText的数学模型可以表示为：
 
 $$
 \begin{aligned}
-\mathbf{h}^l &= \text{ReLU}(\mathbf{W}^{l-1}\mathbf{a}^l + \mathbf{b}^{l-1}) \\
+\mathbf{h}^l &= \text{ReLU}(\mathbf{W}^{l-1}\mathbf{a}^l + \mathbf{b}^{l-1}) \
 \mathbf{a}^{l+1} &= \text{Softmax}(\mathbf{h}^l)
 \end{aligned}
 $$

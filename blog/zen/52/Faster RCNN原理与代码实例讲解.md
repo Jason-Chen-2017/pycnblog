@@ -74,9 +74,9 @@ F --> H[边框回归]
 
 $$
 \begin{aligned}
-t_x &= (x - x_a) / w_a \\
-t_y &= (y - y_a) / h_a \\
-t_w &= \log(w / w_a) \\
+t_x &= (x - x_a) / w_a \
+t_y &= (y - y_a) / h_a \
+t_w &= \log(w / w_a) \
 t_h &= \log(h / h_a)
 \end{aligned}
 $$
@@ -103,7 +103,7 @@ $$
 $$
 \text{Smooth}_{L1}(x) = 
 \begin{cases}
-0.5x^2, & \text{if } |x| < 1 \\
+0.5x^2, & \text{if } |x| < 1 \
 |x| - 0.5, & \text{otherwise}
 \end{cases}
 $$
@@ -131,9 +131,9 @@ $$
 
 $$
 \begin{aligned}
-x_{start} &= \lfloor i \cdot \text{bin}_w \rfloor + r_x \\
-x_{end} &= \lceil (i+1) \cdot \text{bin}_w \rceil + r_x \\
-y_{start} &= \lfloor j \cdot \text{bin}_h \rfloor + r_y \\
+x_{start} &= \lfloor i \cdot \text{bin}_w \rfloor + r_x \
+x_{end} &= \lceil (i+1) \cdot \text{bin}_w \rceil + r_x \
+y_{start} &= \lfloor j \cdot \text{bin}_h \rfloor + r_y \
 y_{end} &= \lceil (j+1) \cdot \text{bin}_h \rceil + r_y
 \end{aligned}
 $$

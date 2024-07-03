@@ -68,7 +68,7 @@ $$II(x, y) = \sum_{x' \leq x, y' \leq y} I(x', y')$$
 即$II(x, y)$是原始图像$I$中左上角以$(0, 0)$为起点,右下角以$(x, y)$为终点的矩形区域内所有像素值的总和。利用如下递推公式,可以高效地计算出整个积分图像:
 
 $$\begin{aligned}
-II(x, y) &= I(x, y) + II(x-1, y) + II(x, y-1) - II(x-1, y-1) \\
+II(x, y) &= I(x, y) + II(x-1, y) + II(x, y-1) - II(x-1, y-1) \
 II(0, 0) &= 0
 \end{aligned}$$
 

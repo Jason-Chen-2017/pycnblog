@@ -104,13 +104,13 @@ $$F(e) = f_n(...f_2(f_1(e))...)$$
 
 - LogFilterInterceptor: 
 $$f_1(e) = \begin{cases} 
-e, & \text{if } e \text{ satisfies filter criteria} \\
+e, & \text{if } e \text{ satisfies filter criteria} \
 \emptyset, & \text{otherwise}
 \end{cases}$$
 
 - LogEnhancerInterceptor:
 $$f_2(e) = \begin{cases}
-e \cup \{timestamp, hostname\}, & \text{if } e \neq \emptyset \\
+e \cup \{timestamp, hostname\}, & \text{if } e \neq \emptyset \
 \emptyset, & \text{if } e = \emptyset
 \end{cases}$$
 

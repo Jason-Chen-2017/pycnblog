@@ -83,9 +83,9 @@ Actor-Critic 方法使用一个价值函数来估计优势函数，而不是使�
 
 $$
 \begin{aligned}
-\nabla_\theta J(\theta) &= \nabla_\theta E_{\tau \sim π_\theta}[\sum_{t=0}^T R(s_t, a_t)] \\
-&= E_{\tau \sim π_\theta}[\nabla_\theta \sum_{t=0}^T R(s_t, a_t)] \\
-&= E_{\tau \sim π_\theta}[\sum_{t=0}^T \nabla_\theta \log π_\theta(a_t|s_t) \sum_{t'=t}^T R(s_{t'}, a_{t'})] \\
+\nabla_\theta J(\theta) &= \nabla_\theta E_{\tau \sim π_\theta}[\sum_{t=0}^T R(s_t, a_t)] \
+&= E_{\tau \sim π_\theta}[\nabla_\theta \sum_{t=0}^T R(s_t, a_t)] \
+&= E_{\tau \sim π_\theta}[\sum_{t=0}^T \nabla_\theta \log π_\theta(a_t|s_t) \sum_{t'=t}^T R(s_{t'}, a_{t'})] \
 &= E_{\tau \sim π_\theta}[\sum_{t=0}^T \nabla_\theta \log π_\theta(a_t|s_t) A(s_t, a_t)]
 \end{aligned}
 $$

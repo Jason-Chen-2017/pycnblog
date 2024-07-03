@@ -301,8 +301,8 @@ public class HCatalogExample implements Tool {
 
         Properties properties = new Properties();
         properties.setProperty(SerDe.SERIALIZATION_FORMAT, "1");
-        properties.setProperty(SerDe.SERIALIZATION_NULL_FORMAT, "\\N");
-        properties.setProperty(SerDe.SERIALIZATION_ESCAPE_FORMAT, "\\\\");
+        properties.setProperty(SerDe.SERIALIZATION_NULL_FORMAT, "\N");
+        properties.setProperty(SerDe.SERIALIZATION_ESCAPE_FORMAT, "\\");
         properties.setProperty(SerDe.SERIALIZATION_FIELD_DELIMITER, "\t");
         serdeInfo.setParameters(properties);
 

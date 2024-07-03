@@ -152,7 +152,7 @@ $$
 
    $$
 \pi(a|s) = \begin{cases} 
-1 & \text{if } a = \arg\max_{a'} Q(s,a') \\
+1 & \text{if } a = \arg\max_{a'} Q(s,a') \
 \epsilon & \text{otherwise}
 \end{cases}
 $$

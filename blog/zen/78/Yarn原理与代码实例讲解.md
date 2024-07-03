@@ -104,7 +104,7 @@ graph LR
 则Yarn的依赖优化问题可形式化为:
 
 $$
-\min \sum_{v\in V} f(v) \\
+\min \sum_{v\in V} f(v) \
 \text{s.t. } \forall (u,v)\in E, f(u)\ge f(v)
 $$
 

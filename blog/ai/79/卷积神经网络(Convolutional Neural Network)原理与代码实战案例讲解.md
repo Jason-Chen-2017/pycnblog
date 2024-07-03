@@ -127,7 +127,7 @@ ReLU函数定义为：
 
 $$
 \sigma(x) = \begin{cases} 
-x & \text{if } x > 0 \\
+x & \text{if } x > 0 \
 0 & \text{if } x \leq 0 
 \end{cases}
 $$
@@ -136,7 +136,7 @@ $$
 
 $$
 \frac{d\sigma}{dx} = \begin{cases} 
-1 & \text{if } x > 0 \\
+1 & \text{if } x > 0 \
 0 & \text{if } x \leq 0 
 \end{cases}
 $$

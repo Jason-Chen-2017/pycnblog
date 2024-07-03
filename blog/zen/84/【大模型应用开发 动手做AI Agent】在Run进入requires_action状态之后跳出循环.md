@@ -89,7 +89,7 @@ AI Agent是指能够感知环境、根据环境信息进行决策并采取行动
 $$
 f\left(\text{当前状态}, \text{操作}, \text{标志变量}\right) = 
 \begin{cases} 
-\text{执行操作} & \text{如果标志变量为True} \\
+\text{执行操作} & \text{如果标志变量为True} \
 \text{跳出循环} & \text{如果标志变量为False} 
 \end{cases}
 $$
@@ -101,7 +101,7 @@ $$
 $$
 f(S, O, B) = 
 \begin{cases} 
-\text{执行操作} & \text{如果} B = \text{True} \\
+\text{执行操作} & \text{如果} B = \text{True} \
 \text{跳出循环} & \text{如果} B = \text{False} 
 \end{cases}
 $$

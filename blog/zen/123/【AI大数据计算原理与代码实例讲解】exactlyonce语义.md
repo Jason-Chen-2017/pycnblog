@@ -103,7 +103,7 @@ exactly-once语义的算法广泛应用于各种分布式系统，例如：
 **状态转移方程:**
 
 $$S_i(t+1) = \begin{cases}
-1, & \text{if } S_i(t) = 0 \text{ and } \text{消息m被节点i处理} \\
+1, & \text{if } S_i(t) = 0 \text{ and } \text{消息m被节点i处理} \
 S_i(t), & \text{otherwise}
 \end{cases}$$
 

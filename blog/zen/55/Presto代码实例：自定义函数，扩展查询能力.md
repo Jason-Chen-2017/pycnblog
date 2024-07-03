@@ -106,7 +106,7 @@ public class IpAddressToLongFunction {
     @SqlType(StandardTypes.BIGINT)
     public static long ipAddressToLong(@SqlType(StandardTypes.VARCHAR) Slice slice) {
         String ip = slice.toStringUtf8();
-        String[] octets = ip.split("\\.");
+        String[] octets = ip.split("\.");
         long result = 0;
         for (String octet : octets) {
             result = result * 256 + Long.parseLong(octet);

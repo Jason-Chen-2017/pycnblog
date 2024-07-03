@@ -120,8 +120,8 @@ Transformer模型的核心算法是**自注意力机制(Self-Attention)**,它能
 
    $$
    \begin{aligned}
-   Q &= [q_1, q_2, q_3, q_4] = X \cdot W_Q \\
-   K &= [k_1, k_2, k_3, k_4] = X \cdot W_K \\
+   Q &= [q_1, q_2, q_3, q_4] = X \cdot W_Q \
+   K &= [k_1, k_2, k_3, k_4] = X \cdot W_K \
    V &= [v_1, v_2, v_3, v_4] = X \cdot W_V
    \end{aligned}
    $$

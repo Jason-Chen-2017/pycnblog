@@ -82,10 +82,10 @@ VAE的数学模型可以表示为：
 
 $$
 \begin{align*}
-\text{编码器} & : x \rightarrow z = \phi(x) \\
-\text{解码器} & : z \rightarrow x = \psi(z) \\
-\text{潜在空间分布} & : p(z) = \mathcal{N}(\mu, \sigma^2) \\
-\text{重建分布} & : p(x | z) = \mathcal{N}(\psi(z), \sigma^2 \text{eye}) \\
+\text{编码器} & : x \rightarrow z = \phi(x) \
+\text{解码器} & : z \rightarrow x = \psi(z) \
+\text{潜在空间分布} & : p(z) = \mathcal{N}(\mu, \sigma^2) \
+\text{重建分布} & : p(x | z) = \mathcal{N}(\psi(z), \sigma^2 \text{eye}) \
 \text{目标函数} & : \mathcal{L}(\theta) = D_{KL}(p(x | z) || p(x))
 \end{align*}
 $$

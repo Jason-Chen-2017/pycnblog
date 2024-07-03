@@ -89,26 +89,26 @@ ConversationKGMemory算法旨在通过结合对话历史和知识图谱来提升
 ### 4.1 数学模型构建
 
 - **对话历史表示**: 可以使用序列向量表示，例如：
-  $$\\mathbf{H} = [\\mathbf{h}_1, \\mathbf{h}_2, ..., \\mathbf{h}_n]$$
+  $$\mathbf{H} = [\mathbf{h}_1, \mathbf{h}_2, ..., \mathbf{h}_n]$$
   
 - **知识图谱表示**: 图结构表示，例如：
-  $$G = (\\mathcal{V}, \\mathcal{E})$$
+  $$G = (\mathcal{V}, \mathcal{E})$$
   
-其中，$\\mathcal{V}$是节点集合，$\\mathcal{E}$是边集合。
+其中，$\mathcal{V}$是节点集合，$\mathcal{E}$是边集合。
 
 ### 4.2 公式推导过程
 
 #### 对话历史向量化过程
 
-假设对话历史$\\mathbf{H}$通过某种方法被转换为向量序列，每条对话$\\mathbf{h}_i$可以表示为：
-$$\\mathbf{h}_i = \\phi(\\mathbf{x}_i)$$
-其中，$\\phi$是映射函数，$\\mathbf{x}_i$是对话文本序列。
+假设对话历史$\mathbf{H}$通过某种方法被转换为向量序列，每条对话$\mathbf{h}_i$可以表示为：
+$$\mathbf{h}_i = \phi(\mathbf{x}_i)$$
+其中，$\phi$是映射函数，$\mathbf{x}_i$是对话文本序列。
 
 #### 知识图谱更新
 
 知识图谱的更新可以通过添加新节点或边来实现，可以表示为：
-$$G' = G \\cup (\\mathbf{n}, \\mathbf{e})$$
-其中，$\\mathbf{n}$是新增节点，$\\mathbf{e}$是新增边。
+$$G' = G \cup (\mathbf{n}, \mathbf{e})$$
+其中，$\mathbf{n}$是新增节点，$\mathbf{e}$是新增边。
 
 ### 4.3 案例分析与讲解
 
@@ -163,7 +163,7 @@ def update_knowledge_graph(graph, new_info):
 ```python
 def generate_response(context, graph):
     # 分析情境，生成回答
-    response = \"根据您的对话历史和知识图谱，我建议...\"
+    response = "根据您的对话历史和知识图谱，我建议..."
     return response
 ```
 
@@ -178,14 +178,14 @@ def generate_response(context, graph):
 ```python
 if __name__ == '__main__':
     # 示例对话历史和知识图谱初始化
-    history = [\"问天气\", \"查询北京天气\"]
+    history = ["问天气", "查询北京天气"]
     graph = nx.Graph()
     
     vectorized_history = analyze_dialogue_history(history)
-    updated_graph = update_knowledge_graph(graph, {\"node\": \"北京\", \"related_node\": \"天气\"})
+    updated_graph = update_knowledge_graph(graph, {"node": "北京", "related_node": "天气"})
     response = generate_response(vectorized_history[-1], updated_graph)
     
-    print(\"生成的回复:\", response)
+    print("生成的回复:", response)
 ```
 
 ## 6. 实际应用场景
@@ -208,8 +208,8 @@ if __name__ == '__main__':
 
 ### 7.3 相关论文推荐
 
-- **对话记忆技术**: \"Dialogue Memory Networks\"（[论文链接](https://arxiv.org/abs/1905.07780)）。
-- **知识图谱构建**: \"Building Knowledge Graphs for Conversational AI\"（[论文链接](https://dl.acm.org/doi/abs/10.1145/3311754.3311776)）。
+- **对话记忆技术**: "Dialogue Memory Networks"（[论文链接](https://arxiv.org/abs/1905.07780)）。
+- **知识图谱构建**: "Building Knowledge Graphs for Conversational AI"（[论文链接](https://dl.acm.org/doi/abs/10.1145/3311754.3311776)）。
 
 ### 7.4 其他资源推荐
 

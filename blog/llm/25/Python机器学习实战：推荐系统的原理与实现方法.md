@@ -80,11 +80,11 @@
 
 #### 矩阵分解：
 
-假设用户-物品评分矩阵$R$为$m \\times n$大小，其中$m$是用户数量，$n$是物品数量。$R_{ij}$表示用户$i$对物品$j$的评分。矩阵分解的目标是将$R$近似为两个低秩矩阵的乘积：
+假设用户-物品评分矩阵$R$为$m \times n$大小，其中$m$是用户数量，$n$是物品数量。$R_{ij}$表示用户$i$对物品$j$的评分。矩阵分解的目标是将$R$近似为两个低秩矩阵的乘积：
 
-$$ R \\approx UV^T $$
+$$ R \approx UV^T $$
 
-其中，$U$是$m \\times k$的用户特征矩阵，$V$是$n \\times k$的物品特征矩阵，$k$是分解的维度。
+其中，$U$是$m \times k$的用户特征矩阵，$V$是$n \times k$的物品特征矩阵，$k$是分解的维度。
 
 ### 4.2 公式推导过程
 
@@ -92,15 +92,15 @@ $$ R \\approx UV^T $$
 
 矩阵分解的目标是寻找$U$和$V$，最小化以下损失函数：
 
-$$ \\min_{U,V} \\sum_{i=1}^{m} \\sum_{j=1}^{n} \\left( R_{ij} - \\hat{R}_{ij} \\right)^2 + \\lambda \\left( \\|U\\|^2 + \\|V\\|^2 \\right) $$
+$$ \min_{U,V} \sum_{i=1}^{m} \sum_{j=1}^{n} \left( R_{ij} - \hat{R}_{ij} \right)^2 + \lambda \left( \|U\|^2 + \|V\|^2 \right) $$
 
-其中，$\\hat{R}_{ij}$是预测的评分，$\\lambda$是正则化系数，防止过拟合。
+其中，$\hat{R}_{ij}$是预测的评分，$\lambda$是正则化系数，防止过拟合。
 
 ### 4.3 案例分析与讲解
 
 假设我们使用SVD对用户-物品评分矩阵进行分解：
 
-$$ R \\approx UDV^T $$
+$$ R \approx UDV^T $$
 
 其中，
 
@@ -163,7 +163,7 @@ ratings_matrix = np.array([
 
 cf = CollaborativeFiltering(ratings_matrix)
 recommendations = cf.recommend(0)
-print(f\"Recommendations for User 0: {recommendations}\")
+print(f"Recommendations for User 0: {recommendations}")
 ```
 
 ### 5.3 代码解读与分析
@@ -202,8 +202,8 @@ print(f\"Recommendations for User 0: {recommendations}\")
 
 ### 7.3 相关论文推荐
 
-- **\"Item-to-Item Collaborative Filtering Using Explicit and Implicit Ratings\"**：介绍基于项目的协同过滤方法。
-- **\"Deep Neural Networks for YouTube Recommendations\"**：探索深度学习在视频推荐中的应用。
+- **"Item-to-Item Collaborative Filtering Using Explicit and Implicit Ratings"**：介绍基于项目的协同过滤方法。
+- **"Deep Neural Networks for YouTube Recommendations"**：探索深度学习在视频推荐中的应用。
 
 ### 7.4 其他资源推荐
 

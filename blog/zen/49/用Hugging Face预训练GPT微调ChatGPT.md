@@ -133,10 +133,10 @@ Hugging Face是一个开源社区，提供了一系列预训练语言模型和�
 
 $$
 \begin{align*}
-Q &= W_Q \cdot H \\
-K &= W_K \cdot H \\
-V &= W_V \cdot H \\
-A &= \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}}) \\
+Q &= W_Q \cdot H \
+K &= W_K \cdot H \
+V &= W_V \cdot H \
+A &= \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}}) \
 O &= A \cdot V
 \end{align*}
 $$
@@ -152,11 +152,11 @@ $$
 
 $$
 \begin{align*}
-Q &= W_Q \cdot H_t \\
-K &= (H_1, \dots, H_t) \\
-V &= W_V \cdot H_t \\
-A_{(i,j)} &= \mathrm{softmax}(\frac{Q_iK_j^T}{\sqrt{d_k}}) \\
-A &= \mathrm{softmax}(\frac{[A_{(1,1)}, \dots, A_{(i,1)}, \dots, A_{(i,n)}]}{\sqrt{n}}) \\
+Q &= W_Q \cdot H_t \
+K &= (H_1, \dots, H_t) \
+V &= W_V \cdot H_t \
+A_{(i,j)} &= \mathrm{softmax}(\frac{Q_iK_j^T}{\sqrt{d_k}}) \
+A &= \mathrm{softmax}(\frac{[A_{(1,1)}, \dots, A_{(i,1)}, \dots, A_{(i,n)}]}{\sqrt{n}}) \
 O &= A \cdot V
 \end{align*}
 $$

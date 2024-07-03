@@ -114,7 +114,7 @@ RAG 和 Agent 都可以用于构建人机交互系统，但两者之间存在着
 
 $$
 \begin{aligned}
-h_t &= f(W_{hh} h_{t-1} + W_{xh} x_t + b_h) \\
+h_t &= f(W_{hh} h_{t-1} + W_{xh} x_t + b_h) \
 y_t &= g(W_{hy} h_t + b_y)
 \end{aligned}
 $$

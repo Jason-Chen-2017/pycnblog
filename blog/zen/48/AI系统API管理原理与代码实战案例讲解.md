@@ -95,7 +95,7 @@ API管理算法适用于各种需要API交互的场景，如：
 在API管理中，数学模型主要用于数据校验、性能评估等方面。以下是一个简单的数据校验的数学模型：
 
 $$f(input, expected) = \begin{cases} 
-1 & \text{if } input = expected \\
+1 & \text{if } input = expected \
 0 & \text{otherwise}
 \end{cases}$$
 

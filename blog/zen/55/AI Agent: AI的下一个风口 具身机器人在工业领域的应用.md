@@ -106,11 +106,11 @@
 
 $$
 \begin{aligned}
-T_n &= T_1 \cdot T_2 \cdots T_n \\
+T_n &= T_1 \cdot T_2 \cdots T_n \
     &= \prod_{i=1}^n \begin{bmatrix}
-        \cos\theta_i & -\sin\theta_i\cos\alpha_i & \sin\theta_i\sin\alpha_i & a_i\cos\theta_i\\
-        \sin\theta_i & \cos\theta_i\cos\alpha_i & -\cos\theta_i\sin\alpha_i & a_i\sin\theta_i\\
-        0 & \sin\alpha_i & \cos\alpha_i & d_i\\
+        \cos\theta_i & -\sin\theta_i\cos\alpha_i & \sin\theta_i\sin\alpha_i & a_i\cos\theta_i\
+        \sin\theta_i & \cos\theta_i\cos\alpha_i & -\cos\theta_i\sin\alpha_i & a_i\sin\theta_i\
+        0 & \sin\alpha_i & \cos\alpha_i & d_i\
         0 & 0 & 0 & 1
     \end{bmatrix}
 \end{aligned}

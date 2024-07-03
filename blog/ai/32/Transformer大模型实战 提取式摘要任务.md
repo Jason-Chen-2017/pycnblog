@@ -83,9 +83,9 @@ Transformer模型由Vaswani等人于2017年提出，是深度学习领域的一�
 
 对于一个查询矩阵$Q$、键矩阵$K$、值矩阵$V$，自注意力机制可通过以下公式计算注意力权重矩阵$W$：
 
-$$W = \\operatorname{softmax}\\left(\\frac{Q K^{\\top}}{\\sqrt{d_k}}\\right) V$$
+$$W = \operatorname{softmax}\left(\frac{Q K^{\top}}{\sqrt{d_k}}\right) V$$
 
-其中，$d_k$是键的维度，$\\operatorname{softmax}$函数用于归一化注意力权重。
+其中，$d_k$是键的维度，$\operatorname{softmax}$函数用于归一化注意力权重。
 
 ### 4.2 公式推导过程
 
@@ -93,9 +93,9 @@ $$W = \\operatorname{softmax}\\left(\\frac{Q K^{\\top}}{\\sqrt{d_k}}\\right) V$$
 
 在解码阶段，Transformer模型通过以下公式更新上下文向量：
 
-$$h_i = \\operatorname{MLP}(W_1 h_i + W_2 \\operatorname{MultiHeadAttention}(Q, K, V) + \\operatorname{FFN}(h_i))$$
+$$h_i = \operatorname{MLP}(W_1 h_i + W_2 \operatorname{MultiHeadAttention}(Q, K, V) + \operatorname{FFN}(h_i))$$
 
-其中，$h_i$是第$i$个时刻的隐藏状态，$\\operatorname{MLP}$是多层感知机，$\\operatorname{MultiHeadAttention}$是多头自注意力，$\\operatorname{FFN}$是前馈神经网络。
+其中，$h_i$是第$i$个时刻的隐藏状态，$\operatorname{MLP}$是多层感知机，$\operatorname{MultiHeadAttention}$是多头自注意力，$\operatorname{FFN}$是前馈神经网络。
 
 ### 4.3 案例分析与讲解
 
@@ -133,10 +133,10 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
 # 预处理文本
-text = \"...\"
-inputs = tokenizer(text, return_tensors=\"pt\", padding=True, truncation=True)
-input_ids = inputs[\"input_ids\"]
-attention_mask = inputs[\"attention_mask\"]
+text = "..."
+inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True)
+input_ids = inputs["input_ids"]
+attention_mask = inputs["attention_mask"]
 
 # 设置摘要长度
 summary_len = len(input_ids[0]) // 5

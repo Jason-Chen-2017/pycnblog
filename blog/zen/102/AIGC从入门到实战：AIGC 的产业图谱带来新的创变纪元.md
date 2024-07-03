@@ -107,7 +107,7 @@ AIGC算法可以应用于以下领域：
 
 $$
 \begin{aligned}
-    h_t &= \text{Attention}(W_Qh_{t-1}, W_Kh_{t-1}, W_Vh_{t-1}) + h_{t-1} \\
+    h_t &= \text{Attention}(W_Qh_{t-1}, W_Kh_{t-1}, W_Vh_{t-1}) + h_{t-1} \
     y_t &= \text{Feed Forward}(W_{1}h_t, W_{2}h_t)
 \end{aligned}
 $$

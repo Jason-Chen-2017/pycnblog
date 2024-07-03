@@ -43,10 +43,10 @@ Transformer架构是基于自注意力机制的深度学习模型，它通过并
 在自注意力中，每个元素既是查询也是键和值。对于输入序列中的第$i$个元素$x_i$，其自注意力计算过程可以表示为：
 
 $$
-\\text{Attention}(Q, K, V) = \\text{Softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V
+\text{Attention}(Q, K, V) = \text{Softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
 $$
 
-其中，$Q$是查询向量，$K$是键向量，$V$是值向量，$d_k$是键向量的维度。$\\text{Softmax}$函数用于计算每个键向量与查询向量的相似度得分，然后乘以相应的值向量，最终得到注意力加权后的值。
+其中，$Q$是查询向量，$K$是键向量，$V$是值向量，$d_k$是键向量的维度。$\text{Softmax}$函数用于计算每个键向量与查询向量的相似度得分，然后乘以相应的值向量，最终得到注意力加权后的值。
 
 ### 3.2 算法步骤详解
 
@@ -54,7 +54,7 @@ $$
 2. **查询计算**：对每个元素进行线性变换以得到查询向量。
 3. **键计算**：对每个元素进行线性变换以得到键向量。
 4. **值计算**：对每个元素进行线性变换以得到值向量。
-5. **注意力计算**：计算查询与键的点积，然后除以根号下的键的维度，应用$\\text{Softmax}$函数，最后与值向量相乘得到加权值。
+5. **注意力计算**：计算查询与键的点积，然后除以根号下的键的维度，应用$\text{Softmax}$函数，最后与值向量相乘得到加权值。
 6. **输出**：将加权值进行线性变换并拼接，形成输出序列。
 
 ### 3.3 算法优缺点
@@ -86,9 +86,9 @@ $$
 
 在Transformer模型中，自注意力层通常包含以下步骤：
 
-1. **查询（Query）**：$Q = W_Q \\cdot X$
-2. **键（Key）**：$K = W_K \\cdot X$
-3. **值（Value）**：$V = W_V \\cdot X$
+1. **查询（Query）**：$Q = W_Q \cdot X$
+2. **键（Key）**：$K = W_K \cdot X$
+3. **值（Value）**：$V = W_V \cdot X$
 
 其中$W_Q$、$W_K$和$W_V$是权重矩阵，$X$是输入序列。
 
@@ -97,7 +97,7 @@ $$
 自注意力的计算公式如下：
 
 $$
-\\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
 $$
 
 ### 4.3 案例分析与讲解
@@ -132,7 +132,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
 # 输入文本
-input_text = \"How do you make sushi?\"
+input_text = "How do you make sushi?"
 input_ids = tokenizer.encode(input_text, return_tensors='pt')
 
 # 解码文本

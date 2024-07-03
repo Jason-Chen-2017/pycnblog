@@ -100,14 +100,14 @@ Page定理及其背后的概率模型在多个领域具有潜在的应用价值�
 
 假设我们定义一个概率空间 $(\Omega, \mathcal{F}, P)$，其中 $\Omega = \mathbb{N}$ 是自然数集，$\mathcal{F}$ 是 $\Omega$ 上的 $\sigma$-代数，$P$ 是概率测度。Page定理通过引入随机变量 $X$ 来描述素数的出现情况，其中：
 
-\[ X(n) = \begin{cases} 
-1 & \text{if } n \text{ is prime} \\
+$$ X(n) = \begin{cases} 
+1 & \text{if } n \text{ is prime} \
 0 & \text{otherwise}
-\end{cases} \]
+\end{cases} $$
 
 对于任意区间 $[1, x]$，我们定义随机变量 $Y_x$ 来表示在该区间内选取素数的概率：
 
-\[ Y_x = \sum_{n \leq x, \text{prime}} \frac{X(n)}{x} \]
+$$ Y_x = \sum_{n \leq x, \text{prime}} \frac{X(n)}{x} $$
 
 ### 4.2 公式推导过程
 
@@ -115,11 +115,11 @@ Page定理及其背后的概率模型在多个领域具有潜在的应用价值�
 
 假设我们已知素数定理的一个弱形式，即对于足够大的 $x$：
 
-\[ \pi(x) \sim \frac{x}{\ln x} \]
+$$ \pi(x) \sim \frac{x}{\ln x} $$
 
 其中 $\pi(x)$ 是小于等于 $x$ 的素数的数量。Page定理的一个重要步骤是构建一个描述素数分布的随机过程，例如，我们可以考虑一个基于随机抽样的过程：
 
-\[ Z_x = \sum_{k \leq x} \delta_{\text{prime}(k)} \]
+$$ Z_x = \sum_{k \leq x} \delta_{\text{prime}(k)} $$
 
 其中 $\delta_{\text{prime}(k)}$ 是一个指示函数，如果 $k$ 是素数，则函数值为1，否则为0。则 $Z_x$ 描述了在区间 $[1, x]$ 内选取素数的概率密度。
 

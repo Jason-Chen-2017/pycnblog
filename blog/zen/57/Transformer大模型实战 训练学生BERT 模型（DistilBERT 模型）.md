@@ -68,8 +68,8 @@ $$Attention(Q,K,V) = softmax(\frac{QK^T}{\sqrt{d_k}})V$$
 其中，$Q$,$K$,$V$ 分别表示Query,Key,Value矩阵，$d_k$为Key的维度。
 
 ### 4.2 Transformer的编码器结构
-$$Encoder(x) = LayerNorm(x + MHSelfAttention(x)) \\
-MHSelfAttention(x) = Concat(head_1, ..., head_h)W^O \\  
+$$Encoder(x) = LayerNorm(x + MHSelfAttention(x)) \
+MHSelfAttention(x) = Concat(head_1, ..., head_h)W^O \  
 head_i = Attention(xW_i^Q, xW_i^K, xW_i^V)
 $$
 

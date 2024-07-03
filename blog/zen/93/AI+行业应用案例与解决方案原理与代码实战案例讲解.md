@@ -137,7 +137,7 @@ $$
 
 $$
 \begin{aligned}
-\text{minimize} & \quad \frac{1}{2}\|\mathbf{W}\|^2 \\
+\text{minimize} & \quad \frac{1}{2}\|\mathbf{W}\|^2 \
 \text{subject to} & \quad y_i(\mathbf{W}^{\top}\mathbf{x}_i + b) \geq 1, \quad i=1,2,\ldots,N.
 \end{aligned}
 $$

@@ -108,7 +108,7 @@ $$P(w_1, w_2, ..., w_n) = \prod_{i=1}^n P(w_i | w_1, w_2, ..., w_{i-1})$$
 根据链式法则，可以将文本序列的联合概率分解为一系列条件概率的乘积：
 
 $$\begin{aligned}
-P(w_1, w_2, ..., w_n) &= P(w_1) \cdot P(w_2|w_1) \cdot P(w_3|w_1,w_2) \cdot ... \cdot P(w_n|w_1,w_2,...,w_{n-1}) \\
+P(w_1, w_2, ..., w_n) &= P(w_1) \cdot P(w_2|w_1) \cdot P(w_3|w_1,w_2) \cdot ... \cdot P(w_n|w_1,w_2,...,w_{n-1}) \
 &= \prod_{i=1}^n P(w_i | w_1, w_2, ..., w_{i-1})
 \end{aligned}$$
 
@@ -121,11 +121,11 @@ P(w_1, w_2, ..., w_n) &= P(w_1) \cdot P(w_2|w_1) \cdot P(w_3|w_1,w_2) \cdot ... 
 模型会依次计算每个单词出现的条件概率：
 
 $$\begin{aligned}
-&P(\text{"I"}) \\
-&P(\text{"love"} | \text{"I"}) \\ 
-&P(\text{"natural"} | \text{"I love"}) \\
-&P(\text{"language"} | \text{"I love natural"}) \\
-&P(\text{"processing"} | \text{"I love natural language"}) \\
+&P(\text{"I"}) \
+&P(\text{"love"} | \text{"I"}) \ 
+&P(\text{"natural"} | \text{"I love"}) \
+&P(\text{"language"} | \text{"I love natural"}) \
+&P(\text{"processing"} | \text{"I love natural language"}) \
 \end{aligned}$$
 
 通过最大化这些条件概率的乘积，模型就可以生成出完整的句子。

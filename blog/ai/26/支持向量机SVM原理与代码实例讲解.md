@@ -43,11 +43,11 @@ SVM的研究具有重要的理论和实践意义。理论层面，它深化了�
 SVM的核心目标是找到一个超平面，使得不同类别的样本在此超平面上的投影距离最大化。对于线性可分的情况，这个问题可以通过求解以下优化问题得到解答：
 
 $$
-\\min_{w, b, \\xi} \\frac{1}{2} w^T w + C \\sum_i \\xi_i \\\\
-\\text{s.t. } y_i(w^T x_i + b) \\geq 1 - \\xi_i, \\quad \\xi_i \\geq 0
+\min_{w, b, \xi} \frac{1}{2} w^T w + C \sum_i \xi_i \\
+\text{s.t. } y_i(w^T x_i + b) \geq 1 - \xi_i, \quad \xi_i \geq 0
 $$
 
-其中，$w$是权重向量，$b$是偏置项，$\\xi_i$是松弛变量，用于处理非线性可分的情况。
+其中，$w$是权重向量，$b$是偏置项，$\xi_i$是松弛变量，用于处理非线性可分的情况。
 
 ### 3.2 算法步骤详解
 
@@ -82,27 +82,27 @@ SVM广泛应用于：
 对于线性可分的SVM，模型可以构建为：
 
 $$
-\\max_{w, b} \\frac{1}{||w||} \\\\
-\\text{s.t. } y_i(w^T x_i + b) \\geq 1, \\quad \\forall i
+\max_{w, b} \frac{1}{||w||} \\
+\text{s.t. } y_i(w^T x_i + b) \geq 1, \quad \forall i
 $$
 
-通过引入拉格朗日乘子$\\alpha_i$，可以将上述问题转化为：
+通过引入拉格朗日乘子$\alpha_i$，可以将上述问题转化为：
 
 $$
-\\max_{\\alpha} \\sum_i \\alpha_i - \\frac{1}{2}\\sum_{i,j} \\alpha_i \\alpha_j y_i y_j x_i^T x_j \\\\
-\\text{s.t. } \\sum_i \\alpha_i y_i = 0 \\\\
-0 \\leq \\alpha_i \\leq C
+\max_{\alpha} \sum_i \alpha_i - \frac{1}{2}\sum_{i,j} \alpha_i \alpha_j y_i y_j x_i^T x_j \\
+\text{s.t. } \sum_i \alpha_i y_i = 0 \\
+0 \leq \alpha_i \leq C
 $$
 
 ### 4.2 公式推导过程
 
-推导过程涉及到拉格朗日乘子法和KKT条件，通过求解拉格朗日对偶问题，可以找到优化的$\\alpha_i$值。最后，决策函数由支持向量的$\\alpha_i$值和$x_i$决定：
+推导过程涉及到拉格朗日乘子法和KKT条件，通过求解拉格朗日对偶问题，可以找到优化的$\alpha_i$值。最后，决策函数由支持向量的$\alpha_i$值和$x_i$决定：
 
 $$
-f(x) = \\sum_{i \\in SV} \\alpha_i y_i \\phi(x_i)^T x + b
+f(x) = \sum_{i \in SV} \alpha_i y_i \phi(x_i)^T x + b
 $$
 
-其中，$\\phi(x_i)$是核函数映射。
+其中，$\phi(x_i)$是核函数映射。
 
 ### 4.3 案例分析与讲解
 

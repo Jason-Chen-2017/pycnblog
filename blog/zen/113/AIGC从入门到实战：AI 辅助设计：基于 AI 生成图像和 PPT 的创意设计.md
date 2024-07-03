@@ -93,7 +93,7 @@ AI 辅助设计不仅提高了设计工作的效率，还扩展了设计的可�
 
 $$
 \begin{aligned}
-L_G &= \mathbb{E}_{z \sim p_z} [\log D(G(z))] \\
+L_G &= \mathbb{E}_{z \sim p_z} [\log D(G(z))] \
 L_D &= \mathbb{E}_{x \sim p_x} [\log D(x)] + \mathbb{E}_{z \sim p_z} [\log (1 - D(G(z)))]
 \end{aligned}
 $$

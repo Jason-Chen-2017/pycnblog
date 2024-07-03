@@ -27,9 +27,9 @@
 
 ### 2.1 定义与性质
 
-- **幂零元素**：设$(R,+,\\cdot)$是一个环，若存在正整数$n$使得对于环中的任意元素$a \\in R$，$a^n = 0$，则称$a$是环$R$的幂零元素，记作$a \\in Nil(R)$。特别地，当$n=1$时，$a$称为环的零元。
+- **幂零元素**：设$(R,+,\cdot)$是一个环，若存在正整数$n$使得对于环中的任意元素$a \in R$，$a^n = 0$，则称$a$是环$R$的幂零元素，记作$a \in Nil(R)$。特别地，当$n=1$时，$a$称为环的零元。
 
-- **幂零理想**：如果一个环的理想$I$满足对于$I$中的任意元素$a$，$a^n \\in I$，那么称$I$是幂零理想的。幂零理想的引入对于理解环的局部性质至关重要。
+- **幂零理想**：如果一个环的理想$I$满足对于$I$中的任意元素$a$，$a^n \in I$，那么称$I$是幂零理想的。幂零理想的引入对于理解环的局部性质至关重要。
 
 - **幂零级数**：在环论中，幂零级数是一个重要的概念，特别是在讨论环的局部性质时。一个幂零级数通常指的是在某个环中，其系数构成的序列满足一定幂零条件的级数。
 
@@ -89,9 +89,9 @@
 
 在数学模型构建中，幂零元素是环论中的核心概念之一。我们可以构建以下数学模型来表示幂零元素：
 
-设$R$为一个环，$x \\in R$，则$x$是幂零元素当且仅当存在正整数$n$使得$x^n = 0$。我们可以用以下数学表达式来表示这个定义：
+设$R$为一个环，$x \in R$，则$x$是幂零元素当且仅当存在正整数$n$使得$x^n = 0$。我们可以用以下数学表达式来表示这个定义：
 
-$$\\exists n \\in \\mathbb{N}, n > 0 : x^n = 0 \\in R$$
+$$\exists n \in \mathbb{N}, n > 0 : x^n = 0 \in R$$
 
 ### 4.2 公式推导过程
 
@@ -99,21 +99,21 @@ $$\\exists n \\in \\mathbb{N}, n > 0 : x^n = 0 \\in R$$
 
 #### 推论1：幂零元素与幂零理想的关系
 
-设$I$为环$R$中的理想，如果$I$中的每个元素$x \\in I$都满足$x^n = 0$，则$I$是幂零理想的。证明这一结论可以通过构造一个映射$f: I \\to I$，定义$f(x) = x^n$，并利用理想性质证明$f(I) \\subseteq I$，进而推出$I$为幂零理想。
+设$I$为环$R$中的理想，如果$I$中的每个元素$x \in I$都满足$x^n = 0$，则$I$是幂零理想的。证明这一结论可以通过构造一个映射$f: I \to I$，定义$f(x) = x^n$，并利用理想性质证明$f(I) \subseteq I$，进而推出$I$为幂零理想。
 
 #### 推论2：幂零元素在环中的分布
 
-设$R$为环，$A \\subseteq R$是幂零元素的集合，则$A$本身构成一个理想，且$A$的生成元$\\langle A \\rangle$也是幂零理想的。证明这一结论需要利用幂零元素的性质和理想生成的概念。
+设$R$为环，$A \subseteq R$是幂零元素的集合，则$A$本身构成一个理想，且$A$的生成元$\langle A \rangle$也是幂零理想的。证明这一结论需要利用幂零元素的性质和理想生成的概念。
 
 ### 4.3 案例分析与讲解
 
-#### 示例1：环$\\mathbb{Z}/n\\mathbb{Z}$中的幂零元素
+#### 示例1：环$\mathbb{Z}/n\mathbb{Z}$中的幂零元素
 
-考虑环$\\mathbb{Z}/n\\mathbb{Z}$，其中$n$是正整数，$\\mathbb{Z}$为整数环。在这个环中，$x \\in \\mathbb{Z}/n\\mathbb{Z}$是幂零元素当且仅当$x$除以$n$后的余数的幂等于0模$n$。具体地，如果$n$是某个素数$p$的幂，则$\\mathbb{Z}/n\\mathbb{Z}$中的幂零元素只有$n$自身。
+考虑环$\mathbb{Z}/n\mathbb{Z}$，其中$n$是正整数，$\mathbb{Z}$为整数环。在这个环中，$x \in \mathbb{Z}/n\mathbb{Z}$是幂零元素当且仅当$x$除以$n$后的余数的幂等于0模$n$。具体地，如果$n$是某个素数$p$的幂，则$\mathbb{Z}/n\mathbb{Z}$中的幂零元素只有$n$自身。
 
 #### 示例2：群论中的幂零元素
 
-在群论中，考虑群$G$和$G$的一个子群$H$。如果$H$中的每个元素都是幂零的，即对于$H$中的任意元素$h$，存在正整数$n$使得$h^n = e$（其中$e$是群的单位元），则称$H$是幂零子群。例如，在循环群$\\mathbb{Z}/p\\mathbb{Z}$中，每个非单位元都是幂零元素，因为它们的$n$次幂（其中$n$是群的阶）等于群的单位元。
+在群论中，考虑群$G$和$G$的一个子群$H$。如果$H$中的每个元素都是幂零的，即对于$H$中的任意元素$h$，存在正整数$n$使得$h^n = e$（其中$e$是群的单位元），则称$H$是幂零子群。例如，在循环群$\mathbb{Z}/p\mathbb{Z}$中，每个非单位元都是幂零元素，因为它们的$n$次幂（其中$n$是群的阶）等于群的单位元。
 
 ### 4.4 常见问题解答
 
@@ -141,7 +141,7 @@ pip install sympy
 from sympy import symbols, simplify, Eq
 
 def is_power_zero(element, exponent, ring):
-    \"\"\"
+    """
     Check if an element raised to a power equals zero within a given ring.
 
     Parameters:
@@ -151,7 +151,7 @@ def is_power_zero(element, exponent, ring):
 
     Returns:
     bool: True if the element raised to the power equals zero in the specified ring, False otherwise.
-    \"\"\"
+    """
     # Define symbols for variables
     x = symbols(element)
 
@@ -161,7 +161,7 @@ def is_power_zero(element, exponent, ring):
         modulus = symbols(f'modulus_{ring}')
         equation = Eq((x**exponent) % modulus, 0)
     else:
-        raise ValueError(\"Unsupported ring type\")
+        raise ValueError("Unsupported ring type")
 
     # Simplify the equation
     simplified_eq = simplify(equation)
@@ -177,9 +177,9 @@ exponent = 3
 ring = 'Zmod'
 
 if is_power_zero(element, exponent, ring):
-    print(f\"The element {element} raised to the power {exponent} is zero modulo {ring}.\")
+    print(f"The element {element} raised to the power {exponent} is zero modulo {ring}.")
 else:
-    print(f\"The element {element} raised to the power {exponent} is not zero modulo {ring}.\")
+    print(f"The element {element} raised to the power {exponent} is not zero modulo {ring}.")
 ```
 
 ### 5.3 代码解读与分析

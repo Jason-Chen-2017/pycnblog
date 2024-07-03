@@ -73,9 +73,9 @@ Pontrjagin类的计算通常涉及到微分几何和代数拓扑中的高级概�
 
 ### 4.1 数学模型构建
 
-考虑一个流形$M$上的实向量丛$V$，设$V$的纤维为$\\mathbb{R}^k$。对于每个点$p \\in M$，$V$在$p$处的切空间$T_pM$可以与$\\mathbb{R}^k$同构。设$V$上的特征值为$\\lambda_1, \\lambda_2, ..., \\lambda_k$，则Pontrjagin类$P(V)$定义为：
+考虑一个流形$M$上的实向量丛$V$，设$V$的纤维为$\mathbb{R}^k$。对于每个点$p \in M$，$V$在$p$处的切空间$T_pM$可以与$\mathbb{R}^k$同构。设$V$上的特征值为$\lambda_1, \lambda_2, ..., \lambda_k$，则Pontrjagin类$P(V)$定义为：
 
-$$P(V) = \\lambda_1^2 + \\lambda_2^2 + ... + \\lambda_k^2$$
+$$P(V) = \lambda_1^2 + \lambda_2^2 + ... + \lambda_k^2$$
 
 ### 4.2 公式推导过程
 
@@ -83,9 +83,9 @@ Pontrjagin类的推导涉及微分形式、特征值理论和拓扑不变量的�
 
 ### 4.3 案例分析与讲解
 
-假设流形$M$为$S^4$（四维球面），考虑$M$上的实向量丛$V$，其特征值分别为$\\lambda_1 = \\lambda_2 = \\lambda_3 = \\lambda_4 = \\pm 1$。那么，Pontrjagin类$P(V)$为：
+假设流形$M$为$S^4$（四维球面），考虑$M$上的实向量丛$V$，其特征值分别为$\lambda_1 = \lambda_2 = \lambda_3 = \lambda_4 = \pm 1$。那么，Pontrjagin类$P(V)$为：
 
-$$P(V) = \\lambda_1^2 + \\lambda_2^2 + \\lambda_3^2 + \\lambda_4^2 = 4$$
+$$P(V) = \lambda_1^2 + \lambda_2^2 + \lambda_3^2 + \lambda_4^2 = 4$$
 
 ### 4.4 常见问题解答
 
@@ -104,18 +104,18 @@ $$P(V) = \\lambda_1^2 + \\lambda_2^2 + \\lambda_3^2 + \\lambda_4^2 = 4$$
 import numpy as np
 
 def compute_pontryagin_class(vectors):
-    \"\"\"
+    """
     计算给定向量丛的Pontrjagin类。
     :param vectors: 实数向量的列表，表示向量丛的特征值。
     :return: 计算得到的Pontrjagin类。
-    \"\"\"
+    """
     # 计算特征值的平方和
     return sum([v**2 for v in vectors])
 
 # 示例：计算S^4上的向量丛的Pontrjagin类
 vectors = [1, 1, 1, 1]
 pontryagin_class = compute_pontryagin_class(vectors)
-print(f\"Pontrjagin class: {pontryagin_class}\")
+print(f"Pontrjagin class: {pontryagin_class}")
 ```
 
 ### 5.3 代码解读与分析

@@ -89,30 +89,30 @@ PPO广泛应用于机器人控制、游戏、自动驾驶、无人机导航、�
 
 #### 策略函数：
 
-$$\\pi(a|s;\\theta)$$
+$$\pi(a|s;\theta)$$
 
 #### 价值函数：
 
-$$V(s;\\theta_v)$$
+$$V(s;\theta_v)$$
 
 #### 动作选择：
 
-$$a \\sim \\pi(a|s;\\theta)$$
+$$a \sim \pi(a|s;\theta)$$
 
 #### 策略更新：
 
-$$\\theta \\leftarrow \\theta + \\alpha \
-abla_\\theta J(\\theta)$$
+$$\theta \leftarrow \theta + \alpha \
+abla_\theta J(\theta)$$
 
 ### 4.2 公式推导过程
 
 #### 适应性优势系数：
 
-$$A(s,a) = \\hat{V}(s) - V(s)$$
+$$A(s,a) = \hat{V}(s) - V(s)$$
 
 #### KL散度限制：
 
-$$\\Delta \\theta \\leq \\epsilon \\cdot \\|\\theta\\|$$
+$$\Delta \theta \leq \epsilon \cdot \|\theta\|$$
 
 ### 4.3 案例分析与讲解
 

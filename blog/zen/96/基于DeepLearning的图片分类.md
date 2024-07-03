@@ -142,9 +142,9 @@ $$
 
 $$
 \begin{aligned}
-f_{\text{conv}}(X) &= \text{Conv}(x_1, W_1, b_1) \\
-&\quad \quad \quad + \text{Conv}(x_2, W_2, b_2) \\
-&\quad \quad \quad + ... \\
+f_{\text{conv}}(X) &= \text{Conv}(x_1, W_1, b_1) \
+&\quad \quad \quad + \text{Conv}(x_2, W_2, b_2) \
+&\quad \quad \quad + ... \
 &\quad \quad \quad + \text{Conv}(x_N, W_N, b_N)
 \end{aligned}
 $$
@@ -163,8 +163,8 @@ $$
 
 $$
 \begin{aligned}
-f_{\text{fc}}(f_{\text{pool}}(f_{\text{conv}}(X))) &= \text{FC}(f_{\text{pool}}(f_{\text{conv}}(X)), W_{fc}, b_{fc}) \\
-&\quad \quad \quad + ... \\
+f_{\text{fc}}(f_{\text{pool}}(f_{\text{conv}}(X))) &= \text{FC}(f_{\text{pool}}(f_{\text{conv}}(X)), W_{fc}, b_{fc}) \
+&\quad \quad \quad + ... \
 &\quad \quad \quad + \text{FC}(f_{\text{pool}}(f_{\text{conv}}(X)), W_{fc}, b_{fc})
 \end{aligned}
 $$
@@ -175,7 +175,7 @@ $$
 
 $$
 \begin{aligned}
-Y &= \text{Softmax}(f_{\text{fc}}(f_{\text{pool}}(f_{\text{conv}}(X)))) \\
+Y &= \text{Softmax}(f_{\text{fc}}(f_{\text{pool}}(f_{\text{conv}}(X)))) \
 &= \{\text{P}_1, \text{P}_2, ..., \text{P}_K\}
 \end{aligned}
 $$

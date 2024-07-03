@@ -99,9 +99,9 @@
 
 $$
 \begin{align*}
-A(t+1) &= \alpha A(t) + \beta C(t) \\
-C(t) &= \{a_1^{t+1}, a_2^{t+1}, \dots, a_m^{t+1}\} \\
-a_i^{t+1} &= \mu a_i^{t} + \Delta a_i^{t} \\
+A(t+1) &= \alpha A(t) + \beta C(t) \
+C(t) &= \{a_1^{t+1}, a_2^{t+1}, \dots, a_m^{t+1}\} \
+a_i^{t+1} &= \mu a_i^{t} + \Delta a_i^{t} \
 \Delta a_i^{t} &= \frac{\alpha}{\sum_{j=1}^m \alpha(a_j^{t})} \cdot (a_j^{t} - a_i^{t})
 \end{align*}
 $$

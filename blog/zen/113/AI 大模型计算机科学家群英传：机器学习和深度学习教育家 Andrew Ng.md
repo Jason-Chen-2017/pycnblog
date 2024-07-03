@@ -99,7 +99,7 @@ Andrew Ng将稀疏自编码器应用于大规模深度网络的训练中,使得�
 为了更好地理解稀疏自编码器,我们需要给出其数学模型。设输入数据为$x \in R^n$,编码结果为$a \in R^m(m<n)$,重构结果为$\hat{x} \in R^n$,则有:
 
 $$
-a = f(W_1x+b_1) \\
+a = f(W_1x+b_1) \
 \hat{x} = f(W_2a+b_2)
 $$
 
@@ -118,7 +118,7 @@ $$
 稀疏性惩罚通过KL散度来度量编码层激活值$a$的平均激活度与目标稀疏度$\rho$之间的差异:
 
 $$
-L_{sparse} = \sum_{j=1}^{m} KL(\rho||\hat{\rho}_j) \\
+L_{sparse} = \sum_{j=1}^{m} KL(\rho||\hat{\rho}_j) \
 KL(\rho||\hat{\rho}_j) = \rho \log \frac{\rho}{\hat{\rho}_j} + (1-\rho)\log \frac{1-\rho}{1-\hat{\rho}_j}
 $$
 
@@ -145,7 +145,7 @@ $$
 在训练过程中,通过不断迭代更新参数,使得$L$最小化:
 
 $$
-W := W - \alpha \frac{\partial L}{\partial W} \\
+W := W - \alpha \frac{\partial L}{\partial W} \
 b := b - \alpha \frac{\partial L}{\partial b}
 $$
 

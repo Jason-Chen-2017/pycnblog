@@ -79,7 +79,7 @@ DQN及其变种在自然语言处理中的应用广泛，包括但不限于：
 
 #### Q-Learning公式：
 
-$$Q(s, a) \\leftarrow Q(s, a) + \\alpha [r + \\gamma \\max_{a'} Q(s', a') - Q(s, a)]$$
+$$Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a') - Q(s, a)]$$
 
 其中，
 - α是学习率，
@@ -90,11 +90,11 @@ $$Q(s, a) \\leftarrow Q(s, a) + \\alpha [r + \\gamma \\max_{a'} Q(s', a') - Q(s,
 
 #### DQN中的目标Q值：
 
-$$y_i = r_i + \\gamma \\max_{a'} Q(\\hat{s}_{i+1}, a')$$
+$$y_i = r_i + \gamma \max_{a'} Q(\hat{s}_{i+1}, a')$$
 
 其中，
-- \\(\\hat{s}_{i+1}\\)是下一个状态的估计，
-- \\(a'\\)是在\\(\\hat{s}_{i+1}\\)状态下的最佳动作。
+- \(\hat{s}_{i+1}\)是下一个状态的估计，
+- \(a'\)是在\(\hat{s}_{i+1}\)状态下的最佳动作。
 
 ### 4.3 案例分析与讲解
 

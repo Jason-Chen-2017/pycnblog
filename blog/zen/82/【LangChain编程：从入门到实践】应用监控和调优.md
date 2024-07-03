@@ -74,9 +74,9 @@ Transformer的编码器和解码器都由多个注意力层和前馈神经网络
 
 $$
 \begin{aligned}
-Q &= XW_Q \\
-K &= XW_K \\
-V &= XW_V \\
+Q &= XW_Q \
+K &= XW_K \
+V &= XW_V \
 Z &= Attention(Q,K,V)
 \end{aligned}
 $$

@@ -110,7 +110,7 @@ Autoencoder的应用领域包括：
 假设输入数据为 $X \in \mathbb{R}^{n \times m}$，其中 $n$ 表示样本数量，$m$ 表示特征数量。编码器和解码器分别表示为 $f$ 和 $g$，则Autoencoder的数学模型可以表示为：
 
 $$
-Y = f(X) \\
+Y = f(X) \
 X_{\hat{}} = g(Y)
 $$
 
@@ -121,7 +121,7 @@ $$
 假设编码器和解码器都是全连接神经网络，其参数分别为 $\theta_{e}$ 和 $\theta_{d}$，则：
 
 $$
-Y = f_{e}(X; \theta_{e}) \\
+Y = f_{e}(X; \theta_{e}) \
 X_{\hat{}} = f_{d}(Y; \theta_{d})
 $$
 

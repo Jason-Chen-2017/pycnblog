@@ -69,9 +69,9 @@ Nielsen数是流形上连续映射群的一个不变量。它是一个整数，�
 
 基于映射的姜伯驹群结构，我们可以构建映射的Nielsen扩张。Nielsen扩张是一个包含映射、其逆映射以及辅助映射的复合映射。构建Nielsen扩张的过程如下：
 
-1. 定义映射$f: M \\rightarrow N$，其中$M$和$N$是两个流形。
-2. 定义映射$f^{-1}: N \\rightarrow M$为$f$的逆映射。
-3. 定义辅助映射$g: M \\rightarrow N$，使得$g \\circ f$和$f \\circ g$均为恒等映射。
+1. 定义映射$f: M \rightarrow N$，其中$M$和$N$是两个流形。
+2. 定义映射$f^{-1}: N \rightarrow M$为$f$的逆映射。
+3. 定义辅助映射$g: M \rightarrow N$，使得$g \circ f$和$f \circ g$均为恒等映射。
 
 #### 3.2.3 利用Nielsen扩张计算Nielsen数
 
@@ -109,43 +109,43 @@ Nielsen数是流形上连续映射群的一个不变量。它是一个整数，�
 本文提出的Nielsen数计算公式，可以构建如下数学模型：
 
 $$
-N(f) = \\sum_{i=1}^n \\phi_i
+N(f) = \sum_{i=1}^n \phi_i
 $$
 
-其中，$N(f)$表示映射$f$的Nielsen数，$n$表示Nielsen扩张中同伦等价类的个数，$\\phi_i$表示第$i$个同伦等价类的Nielsen数。
+其中，$N(f)$表示映射$f$的Nielsen数，$n$表示Nielsen扩张中同伦等价类的个数，$\phi_i$表示第$i$个同伦等价类的Nielsen数。
 
 ### 4.2 公式推导过程
 
 Nielsen数的推导过程如下：
 
 1. 首先，对映射$f$进行同伦等价分类，得到Nielsen扩张中同伦等价类的个数$n$。
-2. 对于每个同伦等价类，计算其对应的Nielsen数$\\phi_i$。
+2. 对于每个同伦等价类，计算其对应的Nielsen数$\phi_i$。
 3. 将所有Nielsen数相加，得到映射$f$的Nielsen数$N(f)$。
 
 ### 4.3 案例分析与讲解
 
 以下是一个简单的例子，说明如何使用本文提出的公式计算Nielsen数。
 
-**例子**：给定映射$f: S^1 \\rightarrow S^1$，其中$S^1$是单位圆。
+**例子**：给定映射$f: S^1 \rightarrow S^1$，其中$S^1$是单位圆。
 
 首先，我们需要确定映射$f$的姜伯驹群结构。由于$f$是单射映射，其姜伯驹群由一个生成元和一个关系组成：
 
 $$
-G = \\langle a \\mid a^2 = 1 \\rangle
+G = \langle a \mid a^2 = 1 \rangle
 $$
 
-接下来，我们构建映射$f$的Nielsen扩张。由于$f$是单射映射，其逆映射$f^{-1}$也是单射映射。因此，我们可以选择辅助映射$g: S^1 \\rightarrow S^1$为恒等映射。于是，Nielsen扩张为：
+接下来，我们构建映射$f$的Nielsen扩张。由于$f$是单射映射，其逆映射$f^{-1}$也是单射映射。因此，我们可以选择辅助映射$g: S^1 \rightarrow S^1$为恒等映射。于是，Nielsen扩张为：
 
 $$
-N(f) = f \\circ g: S^1 \\rightarrow S^1
+N(f) = f \circ g: S^1 \rightarrow S^1
 $$
 
-现在，我们需要计算Nielsen扩张中同伦等价类的个数。由于$S^1$是单连通的，Nielsen扩张中只有一个同伦等价类。因此，$\\phi_1 = 1$。
+现在，我们需要计算Nielsen扩张中同伦等价类的个数。由于$S^1$是单连通的，Nielsen扩张中只有一个同伦等价类。因此，$\phi_1 = 1$。
 
 最后，根据公式计算Nielsen数：
 
 $$
-N(f) = \\sum_{i=1}^1 \\phi_i = 1
+N(f) = \sum_{i=1}^1 \phi_i = 1
 $$
 
 因此，映射$f$的Nielsen数为1。
@@ -200,10 +200,10 @@ def nielsen_number(f):
     pass
 
 # 测试代码
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     # 计算映射f的Nielsen数
     nn = nielsen_number(f)
-    print(f\"映射f的Nielsen数为: {nn}\")
+    print(f"映射f的Nielsen数为: {nn}")
 ```
 
 ### 5.3 代码解读与分析
@@ -251,10 +251,10 @@ if __name__ == \"__main__\":
 
 ### 7.3 相关论文推荐
 
-1. **\"The Nielsen Fixed Point Theorem\"**: 作者：Michael C. McCord
+1. **"The Nielsen Fixed Point Theorem"**: 作者：Michael C. McCord
     - 该论文详细介绍了Nielsen固定点定理的证明和应用。
 
-2. **\"Nielsen Numbers and Morse Theory\"**: 作者：Robion C. Kirby
+2. **"Nielsen Numbers and Morse Theory"**: 作者：Robion C. Kirby
     - 该论文探讨了Nielsen数在Morse理论中的应用。
 
 ### 7.4 其他资源推荐

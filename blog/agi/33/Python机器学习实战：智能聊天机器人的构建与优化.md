@@ -101,32 +101,32 @@ F --> G[部署]
 Transformer模型的核心是多头自注意力机制（Multi-Head Attention），它能够捕捉不同位置之间的依赖关系。具体公式表示为：
 
 $$
-\\text{MultiHead}(Q, K, V) = \\text{Concat}(head_1, ..., head_h)W^{'}
+\text{MultiHead}(Q, K, V) = \text{Concat}(head_1, ..., head_h)W^{'}
 $$
 
-其中，$head_i = \\text{Attention}(QW^Q_i, KW^K_i, VW^V_i)$，$W^Q$、$W^K$、$W^V$分别是查询、键和值的权重矩阵，$W^{'}$是将多头注意力结果合并后的权重矩阵。
+其中，$head_i = \text{Attention}(QW^Q_i, KW^K_i, VW^V_i)$，$W^Q$、$W^K$、$W^V$分别是查询、键和值的权重矩阵，$W^{'}$是将多头注意力结果合并后的权重矩阵。
 
 ### 4.2 公式推导过程
 
 Transformer模型中的多头自注意力过程可以分为四个步骤：
 
 1. **查询（Query）、键（Key）、值（Value）的提取**：
-   $$ Q = W^Q \\cdot X $$
-   $$ K = W^K \\cdot X $$
-   $$ V = W^V \\cdot X $$
+   $$ Q = W^Q \cdot X $$
+   $$ K = W^K \cdot X $$
+   $$ V = W^V \cdot X $$
    其中，$X$是输入的序列，$W^Q$、$W^K$、$W^V$是权重矩阵。
 
 2. **多头注意力机制**：
-   $$ \\text{Attention}(Q, K, V) = \\text{Softmax}(\\frac{QK^T}{\\sqrt{d_k}})V $$
+   $$ \text{Attention}(Q, K, V) = \text{Softmax}(\frac{QK^T}{\sqrt{d_k}})V $$
    其中，$d_k$是键的维度。
 
 3. **线性变换和拼接**：
-   $$ \\text{MultiHead}(Q, K, V) = \\text{Concat}(\\text{Attention}(Q, K, V))W^{'}, \\quad W' \\in \\mathbb{R}^{h \\times d} $$
+   $$ \text{MultiHead}(Q, K, V) = \text{Concat}(\text{Attention}(Q, K, V))W^{'}, \quad W' \in \mathbb{R}^{h \times d} $$
    其中，$h$是头的数量，$d$是每个头的维度。
 
 4. **前馈网络**：
-   $$ \\text{FFN}(x) = \\text{ReLU}(W_2 \\cdot \\text{MLP}(W_1 \\cdot x)) + x $$
-   其中，$\\text{MLP}$是多层感知机，$W_1$、$W_2$是全连接层的权重矩阵。
+   $$ \text{FFN}(x) = \text{ReLU}(W_2 \cdot \text{MLP}(W_1 \cdot x)) + x $$
+   其中，$\text{MLP}$是多层感知机，$W_1$、$W_2$是全连接层的权重矩阵。
 
 ### 4.3 案例分析与讲解
 
@@ -205,7 +205,7 @@ def build_and_train_model(tokenizer, model, train_dataset, epochs=3):
             loss.backward()
             optimizer.step()
 
-        print(f\"Epoch {epoch+1}, Loss: {running_loss/len(data_loader)}\")
+        print(f"Epoch {epoch+1}, Loss: {running_loss/len(data_loader)}")
     return model
 ```
 
@@ -262,7 +262,7 @@ if __name__ == '__main__':
 
     # 评估模型
     accuracy = evaluate_model(model, test_dataset)
-    print(f\"Model Accuracy: {accuracy}\")
+    print(f"Model Accuracy: {accuracy}")
 ```
 
 ## 6. 实际应用场景

@@ -137,7 +137,7 @@ $$\max_{a \in A} Q(s, a)$$
 4. **策略函数$\pi(a | s)$**：使用ε-greedy策略来选择动作，如下所示：
 
    $$\pi(a | s) = \begin{cases} 
-   \text{随机选择} & \text{以概率} 1-\epsilon \\
+   \text{随机选择} & \text{以概率} 1-\epsilon \
    \text{选择Q值最大的动作} & \text{以概率} \epsilon 
    \end{cases}$$
 

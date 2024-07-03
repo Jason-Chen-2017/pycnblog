@@ -119,11 +119,11 @@ BERT模型的核心是Transformer模型，其数学模型可以表示为：
 
 $$
 \begin{aligned}
-E &= f_W(E) + f_L(L) + f_A(A) + f_S(S) + f_N(N) \\
-f_W &= \text{Word Embedding} \\
-f_L &= \text{Positional Encoding} \\
-f_A &= \text{Attention Mechanism} \\
-f_S &= \text{Softmax} \\
+E &= f_W(E) + f_L(L) + f_A(A) + f_S(S) + f_N(N) \
+f_W &= \text{Word Embedding} \
+f_L &= \text{Positional Encoding} \
+f_A &= \text{Attention Mechanism} \
+f_S &= \text{Softmax} \
 f_N &= \text{Normalization}
 \end{aligned}
 $$

@@ -180,9 +180,9 @@ $$V^{\pi}(s) = \sum_a \pi(a|s) Q^{\pi}(s,a)$$
 假设状态转移概率为:
 
 $$\mathcal{P}(s'|s,a) = \begin{cases}
-0.8, & \text{if } s' \text{ is the intended state after executing } a \text{ from } s\\
-0.1, & \text{if } s' \text{ is one step clockwise from the intended state}\\
-0.1, & \text{if } s' \text{ is one step counter-clockwise from the intended state}\\
+0.8, & \text{if } s' \text{ is the intended state after executing } a \text{ from } s\
+0.1, & \text{if } s' \text{ is one step clockwise from the intended state}\
+0.1, & \text{if } s' \text{ is one step counter-clockwise from the intended state}\
 0, & \text{otherwise}
 \end{cases}$$
 

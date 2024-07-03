@@ -102,10 +102,10 @@ graph LR
 
 $$
 \begin{aligned}
-PR(A) &= (1-0.85) + 0.85 \left(\frac{PR(D)}{2} + \frac{PR(E)}{3}\right)\\
-PR(B) &= (1-0.85) + 0.85 \left(\frac{PR(A)}{2} + \frac{PR(E)}{3}\right)\\
-PR(C) &= (1-0.85) + 0.85 \left(\frac{PR(A)}{2} + \frac{PR(B)}{1} + \frac{PR(D)}{2}\right)\\
-PR(D) &= (1-0.85) + 0.85 \left(\frac{PR(E)}{3}\right)\\
+PR(A) &= (1-0.85) + 0.85 \left(\frac{PR(D)}{2} + \frac{PR(E)}{3}\right)\
+PR(B) &= (1-0.85) + 0.85 \left(\frac{PR(A)}{2} + \frac{PR(E)}{3}\right)\
+PR(C) &= (1-0.85) + 0.85 \left(\frac{PR(A)}{2} + \frac{PR(B)}{1} + \frac{PR(D)}{2}\right)\
+PR(D) &= (1-0.85) + 0.85 \left(\frac{PR(E)}{3}\right)\
 PR(E) &= (1-0.85) + 0.85 \left(0\right)
 \end{aligned}
 $$
@@ -116,10 +116,10 @@ $$
 
 $$
 \begin{aligned}
-PR(A) &\approx 0.23\\
-PR(B) &\approx 0.18\\
-PR(C) &\approx 0.31\\
-PR(D) &\approx 0.08\\
+PR(A) &\approx 0.23\
+PR(B) &\approx 0.18\
+PR(C) &\approx 0.31\
+PR(D) &\approx 0.08\
 PR(E) &\approx 0.20
 \end{aligned}
 $$

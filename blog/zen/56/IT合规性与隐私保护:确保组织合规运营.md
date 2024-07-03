@@ -127,8 +127,8 @@ $$\hat{f}(x) = f(x) + Y$$
 其中,$Y \sim Lap(\frac{\Delta f}{\epsilon})$。为什么选择Laplace分布,且尺度参数为$\frac{\Delta f}{\epsilon}$呢?这是因为:
 
 $$\begin{aligned}
-Pr[\hat{f}(D_1) = z] &= \frac{\epsilon}{2\Delta f} exp(-\frac{\epsilon |z-f(D_1)|}{\Delta f}) \\
-&\leq exp(\epsilon) \cdot \frac{\epsilon}{2\Delta f} exp(-\frac{\epsilon |z-f(D_2)|}{\Delta f}) \\
+Pr[\hat{f}(D_1) = z] &= \frac{\epsilon}{2\Delta f} exp(-\frac{\epsilon |z-f(D_1)|}{\Delta f}) \
+&\leq exp(\epsilon) \cdot \frac{\epsilon}{2\Delta f} exp(-\frac{\epsilon |z-f(D_2)|}{\Delta f}) \
 &= exp(\epsilon) \cdot Pr[\hat{f}(D_2) = z]
 \end{aligned}$$
 

@@ -133,7 +133,7 @@
 
 $$
 \begin{align*}
-q_{k+1} &= f(q_k, u_k, t) \\
+q_{k+1} &= f(q_k, u_k, t) \
 \dot{q}_{k+1} &= \dot{f}(q_k, u_k, t)
 \end{align*}
 $$
@@ -156,7 +156,7 @@ $$
 
 $$
 \begin{align*}
-x &= [x_1, x_2, \dots, x_n] \\
+x &= [x_1, x_2, \dots, x_n] \
 y &= [y_1, y_2, \dots, y_m]
 \end{align*}
 $$
@@ -177,8 +177,8 @@ $$
 
 $$
 \begin{align*}
-\ddot{q}_k &= \frac{1}{m}(\sum_{i=1}^n F_{qi} - F_g) \\
-\dot{q}_{k+1} &= \dot{q}_k + \dot{q}_{k+1} - \dot{q}_k \\
+\ddot{q}_k &= \frac{1}{m}(\sum_{i=1}^n F_{qi} - F_g) \
+\dot{q}_{k+1} &= \dot{q}_k + \dot{q}_{k+1} - \dot{q}_k \
 q_{k+1} &= q_k + \dot{q}_{k+1} - \dot{q}_k
 \end{align*}
 $$

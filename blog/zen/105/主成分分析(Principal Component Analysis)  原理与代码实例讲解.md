@@ -141,7 +141,7 @@ $$
 
 ### 4.3 案例分析与讲解
 
-考虑一个二维数据集 $\mathbf{X} = \begin{bmatrix} 1 & 2 \\ 3 & 4 \\ 5 & 6 \end{bmatrix}$。我们想要将其降维到一维。
+考虑一个二维数据集 $\mathbf{X} = \begin{bmatrix} 1 & 2 \ 3 & 4 \ 5 & 6 \end{bmatrix}$。我们想要将其降维到一维。
 
 #### 步骤一：数据预处理
 
@@ -151,7 +151,7 @@ $$
 #### 步骤二：计算协方差矩阵
 
 $$
-\mathbf{C} = \frac{1}{3-1} \begin{bmatrix} 1 & 2 \\ 3 & 4 \\ 5 & 6 \end{bmatrix}^T \begin{bmatrix} 1 & 3 & 5 \\ 2 & 4 & 6 \end{bmatrix} = \frac{1}{2} \begin{bmatrix} 14 & 20 \\ 20 & 28 \end{bmatrix}
+\mathbf{C} = \frac{1}{3-1} \begin{bmatrix} 1 & 2 \ 3 & 4 \ 5 & 6 \end{bmatrix}^T \begin{bmatrix} 1 & 3 & 5 \ 2 & 4 & 6 \end{bmatrix} = \frac{1}{2} \begin{bmatrix} 14 & 20 \ 20 & 28 \end{bmatrix}
 $$
 
 #### 步骤三：奇异值分解

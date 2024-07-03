@@ -88,11 +88,11 @@ Apache Cassandra采用了一种称为“SSTable”的存储格式来存储数据
 
 $$
 \begin{aligned}
-&\text{复制一致性模型: } C = (S, T, L) \\
-&\text{其中:}\\
-&S: \text{数据节点集合} \\
-&T: \text{时间轴} \\
-&L: \text{日志记录} \\
+&\text{复制一致性模型: } C = (S, T, L) \
+&\text{其中:}\
+&S: \text{数据节点集合} \
+&T: \text{时间轴} \
+&L: \text{日志记录} \
 \end{aligned}
 $$
 
@@ -109,7 +109,7 @@ $$
 
 $$
 \begin{aligned}
-&\text{对于任意时间点 } t \in T: \\
+&\text{对于任意时间点 } t \in T: \
 &\text{要么所有数据节点在 } t \text{ 时刻成功复制数据，要么所有数据节点在 } t \text{ 时刻失败复制数据。}
 \end{aligned}
 $$
@@ -118,9 +118,9 @@ $$
 
 $$
 \begin{aligned}
-&\text{对于任意时间点 } t \in T: \\
-&\text{数据节点 } S_t \text{ 和备份节点 } T_t \text{ 上的数据一致性满足: } \\
-&\text{ } S_t = T_t \\
+&\text{对于任意时间点 } t \in T: \
+&\text{数据节点 } S_t \text{ 和备份节点 } T_t \text{ 上的数据一致性满足: } \
+&\text{ } S_t = T_t \
 \end{aligned}
 $$
 

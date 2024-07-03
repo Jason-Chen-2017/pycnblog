@@ -123,7 +123,7 @@ Transformer模型通过将输入序列转换为包含位置信息的表示，利
 
 给定输入序列 $X$，长度为 $L$，每个元素为一个词向量，维度为 $D$，自注意力机制可以表示为：
 
-\[ \text{Attention}(Q, K, V) = \text{Softmax}(\frac{QK^T}{\sqrt{D}})V \]
+$$ \text{Attention}(Q, K, V) = \text{Softmax}(\frac{QK^T}{\sqrt{D}})V $$
 
 其中：
 
@@ -133,11 +133,11 @@ Transformer模型通过将输入序列转换为包含位置信息的表示，利
 
 多头自注意力通过并行执行多个自注意力机制，每个头关注不同的特征。假设执行 $H$ 个头，每个头的维度为 $D_h$，总维度为 $D$，则多头自注意力可以表示为：
 
-\[ \text{MultiHeadAttention}(Q, K, V) = [\text{Head}_1(...), ..., \text{Head}_H(...)] \]
+$$ \text{MultiHeadAttention}(Q, K, V) = [\text{Head}_1(...), ..., \text{Head}_H(...)] $$
 
 其中：
 
-\[ \text{Head}_i(Q, K, V) = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V) \]
+$$ \text{Head}_i(Q, K, V) = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V) $$
 
 ### 4.3 案例分析与讲解
 

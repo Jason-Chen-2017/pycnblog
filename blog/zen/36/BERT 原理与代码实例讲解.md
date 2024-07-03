@@ -98,7 +98,7 @@ BERT模型的主要组件包括：
 对于每个查询$q$、键$k$和值$v$，自注意力计算如下：
 
 $$
-\\text{Attention}(q, k, v) = \\text{Softmax}\\left(\\frac{qk^T}{\\sqrt{d_k}}\\right)v
+\text{Attention}(q, k, v) = \text{Softmax}\left(\frac{qk^T}{\sqrt{d_k}}\right)v
 $$
 
 其中，$d_k$是键的维度，Softmax函数用于归一化计算结果。
@@ -107,10 +107,10 @@ $$
 
 编码器层包括：
 
-1. **多头自注意力**：$Q = W_Q \\cdot \\text{Embed}(x)$, $K = W_K \\cdot \\text{Embed}(x)$, $V = W_V \\cdot \\text{Embed}(x)$, 输出为$\\text{Attention}(Q, K, V)$。
-2. **位置嵌入**：$W_P \\cdot \\text{Pos}(x)$。
-3. **残差连接**：$\\text{LayerNorm}(x + \\text{Attention}(Q, K, V) + W_P \\cdot \\text{Pos}(x))$。
-4. **前馈神经网络**：$W_1 \\cdot \\text{LayerNorm}(x) + b_1$, $\\text{ReLU}$, $W_2 \\cdot \\text{LayerNorm}(x) + b_2$。
+1. **多头自注意力**：$Q = W_Q \cdot \text{Embed}(x)$, $K = W_K \cdot \text{Embed}(x)$, $V = W_V \cdot \text{Embed}(x)$, 输出为$\text{Attention}(Q, K, V)$。
+2. **位置嵌入**：$W_P \cdot \text{Pos}(x)$。
+3. **残差连接**：$\text{LayerNorm}(x + \text{Attention}(Q, K, V) + W_P \cdot \text{Pos}(x))$。
+4. **前馈神经网络**：$W_1 \cdot \text{LayerNorm}(x) + b_1$, $\text{ReLU}$, $W_2 \cdot \text{LayerNorm}(x) + b_2$。
 
 ### 4.3 案例分析与讲解
 
@@ -147,8 +147,8 @@ model = BertForMaskedLM.from_pretrained('bert-base-uncased')
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
 # 预测被遮蔽的词向量
-text = \"Hello, my name is <mask>.\"
-input_ids = tokenizer.encode(text, return_tensors=\"pt\")
+text = "Hello, my name is <mask>."
+input_ids = tokenizer.encode(text, return_tensors="pt")
 output = model(input_ids)
 predictions = output.logits.argmax(-1)
 
@@ -163,8 +163,8 @@ print(decoded_text)  # 输出：world
 
 ### 5.4 运行结果展示
 
-- **输入文本**：\"Hello, my name is <mask>.\"
-- **预测结果**：\"world\"
+- **输入文本**："Hello, my name is <mask>."
+- **预测结果**："world"
 
 ## 6. 实际应用场景
 

@@ -68,9 +68,9 @@ E --> F[用户输出]
 
 $$
 A=\begin{bmatrix}
-a_{11} & a_{12} & \cdots & a_{1n}\\
-a_{21} & a_{22} & \cdots & a_{2n}\\  
-\vdots & \vdots & \ddots & \vdots\\
+a_{11} & a_{12} & \cdots & a_{1n}\
+a_{21} & a_{22} & \cdots & a_{2n}\  
+\vdots & \vdots & \ddots & \vdots\
 a_{n1} & a_{n2} & \cdots & a_{nn}
 \end{bmatrix}
 $$
@@ -113,7 +113,7 @@ $$
 注意力机制能够让模型动态地聚焦于输入序列的不同部分。在第$t$步解码时,注意力分布$\alpha^t$为:
 
 $$
-\alpha^t = \text{softmax}(e^t) \\
+\alpha^t = \text{softmax}(e^t) \
 e^t_i = \text{score}(s_{t-1}, h_i)
 $$
 

@@ -45,16 +45,16 @@
 TF-IDF 是一种用于文本挖掘和信息检索的指标，用于评估词语在文档集合中的相对重要性。TF（Term Frequency）衡量一个词语在文档中出现的频率，而IDF（Inverse Document Frequency）则衡量该词语在整个文档集合中的稀缺性。TF-IDF 的计算公式如下：
 
 $$
-\\text{TF-IDF}(w, d) = \\text{TF}(w, d) \\times \\text{IDF}(w)
+\text{TF-IDF}(w, d) = \text{TF}(w, d) \times \text{IDF}(w)
 $$
 
 其中，
 
-- $\\text{TF}(w, d)$ 是词语 $w$ 在文档 $d$ 中的出现次数。
-- $\\text{IDF}(w)$ 是词语 $w$ 的逆文档频率，计算方式为：
+- $\text{TF}(w, d)$ 是词语 $w$ 在文档 $d$ 中的出现次数。
+- $\text{IDF}(w)$ 是词语 $w$ 的逆文档频率，计算方式为：
 
 $$
-\\text{IDF}(w) = \\log{\\frac{N}{df(w)}}
+\text{IDF}(w) = \log{\frac{N}{df(w)}}
 $$
 
 其中，$N$ 是文档总数，$df(w)$ 是词语 $w$ 出现的文档数量。
@@ -123,7 +123,7 @@ $$
 
 在构建基于TF-IDF的文本主题提取模型时，可以采用以下数学模型：
 
-- **特征矩阵**：$X \\in \\mathbb{R}^{D \\times N}$，其中 $D$ 是特征（词语）的数量，$N$ 是文档的数量。
+- **特征矩阵**：$X \in \mathbb{R}^{D \times N}$，其中 $D$ 是特征（词语）的数量，$N$ 是文档的数量。
 - **TF-IDF变换**：将特征矩阵转换为TF-IDF向量表示。
 
 ### 4.2 公式推导过程
@@ -131,26 +131,26 @@ $$
 #### TF计算：
 
 $$
-\\text{TF}(w, d) = \\frac{\\text{次数}(w, d)}{\\text{文档长度}(d)}
+\text{TF}(w, d) = \frac{\text{次数}(w, d)}{\text{文档长度}(d)}
 $$
 
 #### IDF计算：
 
 $$
-\\text{IDF}(w) = \\log{\\frac{N}{df(w)}}
+\text{IDF}(w) = \log{\frac{N}{df(w)}}
 $$
 
 其中，
 
-- $\\text{次数}(w, d)$ 是词语 $w$ 在文档 $d$ 中的出现次数，
-- $\\text{文档长度}(d)$ 是文档 $d$ 的总词数，
+- $\text{次数}(w, d)$ 是词语 $w$ 在文档 $d$ 中的出现次数，
+- $\text{文档长度}(d)$ 是文档 $d$ 的总词数，
 - $N$ 是文档总数，
 - $df(w)$ 是词语 $w$ 出现的文档数量。
 
 #### TF-IDF计算：
 
 $$
-\\text{TF-IDF}(w, d) = \\text{TF}(w, d) \\times \\text{IDF}(w)
+\text{TF-IDF}(w, d) = \text{TF}(w, d) \times \text{IDF}(w)
 $$
 
 ### 4.3 案例分析与讲解
@@ -190,17 +190,17 @@ from sklearn.cluster import KMeans
 
 # 示例文本列表
 texts = [
-    \"AI technology is advancing rapidly.\",
-    \"Machine learning is transforming industries.\",
-    \"Natural language processing improves user experience.\",
-    \"Deep learning algorithms are becoming more efficient.\"
+    "AI technology is advancing rapidly.",
+    "Machine learning is transforming industries.",
+    "Natural language processing improves user experience.",
+    "Deep learning algorithms are becoming more efficient."
 ]
 
 # 文本清洗和预处理
 texts_cleaned = []
 for text in texts:
     text = nltk.word_tokenize(text)
-    text = \" \".join(word for word in text if word.isalnum())
+    text = " ".join(word for word in text if word.isalnum())
     texts_cleaned.append(text)
 
 # TF-IDF向量化
@@ -214,8 +214,8 @@ cluster_labels = kmeans.labels_
 
 # 输出结果
 for i, text in enumerate(texts):
-    print(f\"Text: {text}\")
-    print(f\"Cluster: {cluster_labels[i]}\")
+    print(f"Text: {text}")
+    print(f"Cluster: {cluster_labels[i]}")
 ```
 
 ### 5.3 代码解读与分析

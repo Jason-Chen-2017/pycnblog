@@ -57,7 +57,7 @@ BSP模型要求所有顶点在每个超步结束时进行同步。只有当所�
 
 邻接矩阵A是一个n×n的方阵(n为顶点数),定义如下:
 
-$A_{ij} = \begin{cases} 1, & \text{if } (i,j) \in E \\ 0, & \text{otherwise} \end{cases}$
+$A_{ij} = \begin{cases} 1, & \text{if } (i,j) \in E \ 0, & \text{otherwise} \end{cases}$
 
 邻接表则使用链表数组来表示图。对于每个顶点i,邻接表存储其所有邻接顶点的列表。
 

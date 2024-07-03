@@ -144,7 +144,7 @@ $$
 支持向量机算法的数学模型如下：
 
 $$
-\min_{w, b, \xi} \frac{1}{2}||w||^2 + C\sum_{i=1}^{n} \xi_i \\
+\min_{w, b, \xi} \frac{1}{2}||w||^2 + C\sum_{i=1}^{n} \xi_i \
 s.t. \ y_i(w^Tx_i + b) \ge 1 - \xi_i, \ \xi_i \ge 0, \ i = 1, 2, ..., n
 $$
 
@@ -176,15 +176,15 @@ $$
 2. 对 $w$, $b$, $\xi$ 求偏导并令其等于 0：
 
 $$
-\frac{\partial L}{\partial w} = w - \sum_{i=1}^{n} \alpha_i y_i x_i = 0 \\
-\frac{\partial L}{\partial b} = -\sum_{i=1}^{n} \alpha_i y_i = 0 \\
+\frac{\partial L}{\partial w} = w - \sum_{i=1}^{n} \alpha_i y_i x_i = 0 \
+\frac{\partial L}{\partial b} = -\sum_{i=1}^{n} \alpha_i y_i = 0 \
 \frac{\partial L}{\partial \xi_i} = C - \alpha_i - \beta_i = 0
 $$
 
 3. 将上述结果代入拉格朗日函数，得到对偶问题：
 
 $$
-\max_{\alpha} \sum_{i=1}^{n} \alpha_i - \frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{n} \alpha_i \alpha_j y_i y_j x_i^T x_j \\
+\max_{\alpha} \sum_{i=1}^{n} \alpha_i - \frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{n} \alpha_i \alpha_j y_i y_j x_i^T x_j \
 s.t. \ \sum_{i=1}^{n} \alpha_i y_i = 0, \ 0 \le \alpha_i \le C, \ i = 1, 2, ..., n
 $$
 
@@ -193,7 +193,7 @@ $$
 5. 计算权重向量 $w^*$ 和偏置项 $b^*$：
 
 $$
-w^* = \sum_{i=1}^{n} \alpha_i^* y_i x_i \\
+w^* = \sum_{i=1}^{n} \alpha_i^* y_i x_i \
 b^* = y_j - w^{*T}x_j
 $$
 
@@ -238,14 +238,14 @@ $$
 2. 对 $w$, $b$ 求偏导：
 
 $$
-\frac{\partial J}{\partial w} = \frac{1}{n}\sum_{i=1}^{n}(P(y_i=1|x_i) - y_i)x_i \\
+\frac{\partial J}{\partial w} = \frac{1}{n}\sum_{i=1}^{n}(P(y_i=1|x_i) - y_i)x_i \
 \frac{\partial J}{\partial b} = \frac{1}{n}\sum_{i=1}^{n}(P(y_i=1|x_i) - y_i)
 $$
 
 3. 更新 $w$, $b$：
 
 $$
-w = w - \alpha \frac{\partial J}{\partial w} \\
+w = w - \alpha \frac{\partial J}{\partial w} \
 b = b - \alpha \frac{\partial J}{\partial b}
 $$
 

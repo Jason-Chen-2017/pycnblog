@@ -93,7 +93,7 @@ In-context学习通常基于Transformer架构进行构建，通过引入额外�
 
 #### 关键公式：
 
-- **注意力机制**：$A = \\text{softmax}(W_1 Q W_2 V)$，其中$A$为注意力矩阵，$Q$和$V$分别为查询(query)和值(value)，$W_1$和$W_2$为权重矩阵。
+- **注意力机制**：$A = \text{softmax}(W_1 Q W_2 V)$，其中$A$为注意力矩阵，$Q$和$V$分别为查询(query)和值(value)，$W_1$和$W_2$为权重矩阵。
 
 #### 示例说明：
 
@@ -131,7 +131,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
 # 输入情境信息
-context_info = \"询问关于最新科技产品的推荐\"
+context_info = "询问关于最新科技产品的推荐"
 
 # 预处理情境信息
 input_ids = tokenizer.encode(context_info, return_tensors='pt')
@@ -159,7 +159,7 @@ class ContextAwareModel:
 
 # 创建模型实例并执行In-context学习
 context_aware_model = ContextAwareModel('gpt2')
-output = context_aware_model.execute_in_context(\"询问关于最新科技产品的推荐\")
+output = context_aware_model.execute_in_context("询问关于最新科技产品的推荐")
 ```
 
 ### 5.3 代码解读与分析

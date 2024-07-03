@@ -78,7 +78,7 @@
 
 $$
 \omega(x,y) = \begin{cases} 
-f(x) & \text{if } x = y \\
+f(x) & \text{if } x = y \
 0 & \text{otherwise}
 \end{cases}
 $$

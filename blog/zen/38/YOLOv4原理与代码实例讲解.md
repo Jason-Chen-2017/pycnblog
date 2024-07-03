@@ -124,9 +124,9 @@ YOLOv4的数学模型主要包括以下部分：
 1. **边界框位置**：预测每个网格的边界框中心点坐标$(x, y)$和宽高$(w, h)$，公式如下：
 
    $$
-x = \frac{x_{\text{center}}}{W} \\
-y = \frac{y_{\text{center}}}{H} \\
-w = \frac{w_{\text{anchor}}}{W} \\
+x = \frac{x_{\text{center}}}{W} \
+y = \frac{y_{\text{center}}}{H} \
+w = \frac{w_{\text{anchor}}}{W} \
 h = \frac{h_{\text{anchor}}}{H}
 $$
 

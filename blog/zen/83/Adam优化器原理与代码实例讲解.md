@@ -46,9 +46,9 @@ Adam优化器通过计算一阶矩估计（mean of the first moment，m）和二
 $$
 \begin{align*}
 m_t & = \beta_1 m_{t-1} + (1 - \beta_1)(\
-abla L(\theta_{t-1})) \\
+abla L(\theta_{t-1})) \
 v_t & = \beta_2 v_{t-1} + (1 - \beta_2) (\
-abla L(\theta_{t-1}))^2 \\
+abla L(\theta_{t-1}))^2 \
 \theta_t & = \theta_{t-1} - \frac{\alpha}{\sqrt{v_t} + \epsilon} (m_t + \epsilon)
 \end{align*}
 $$
@@ -99,9 +99,9 @@ Adam优化器的数学模型基于以下公式：
 $$
 \begin{align*}
 m_t & = \beta_1 m_{t-1} + (1 - \beta_1)(\
-abla L(\theta_{t-1})) \\
+abla L(\theta_{t-1})) \
 v_t & = \beta_2 v_{t-1} + (1 - \beta_2) (\
-abla L(\theta_{t-1}))^2 \\
+abla L(\theta_{t-1}))^2 \
 \theta_t & = \theta_{t-1} - \frac{\alpha}{\sqrt{v_t} + \epsilon} (m_t + \epsilon)
 \end{align*}
 $$

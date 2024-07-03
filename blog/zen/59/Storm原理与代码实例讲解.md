@@ -150,7 +150,7 @@ Storm的反压力机制通过动态调整发射速率来控制上游的发射量
 
 $$
 T = \begin{cases}
-\frac{1}{R-E} & \text{if } E < R \\
+\frac{1}{R-E} & \text{if } E < R \
 \infty & \text{if } E \geq R
 \end{cases}
 $$
@@ -161,8 +161,8 @@ $$
 
 $$
 E_{new} = E_{old} \times \begin{cases}
-0.8 & \text{if } D > 目标时延 \\
-1.2 & \text{if } D < 目标时延/2 \\
+0.8 & \text{if } D > 目标时延 \
+1.2 & \text{if } D < 目标时延/2 \
 1.0 & \text{其他情况}
 \end{cases}
 $$

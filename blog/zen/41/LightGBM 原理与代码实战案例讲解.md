@@ -93,7 +93,7 @@ LightGBM 采用逻辑损失函数作为优化目标，用于分类任务。
 
 #### 目标函数：Logistic Loss
 
-$$L = \\sum_{i=1}^{n} \\left[ y_i \\log(p_i) + (1 - y_i) \\log(1 - p_i) \\right]$$
+$$L = \sum_{i=1}^{n} \left[ y_i \log(p_i) + (1 - y_i) \log(1 - p_i) \right]$$
 
 其中，$y_i$ 是样本标签，$p_i$ 是模型预测的概率。
 
@@ -152,7 +152,7 @@ y_pred = model.predict(X_test)
 
 # 计算准确率
 accuracy = accuracy_score(y_test, y_pred > 0.5)
-print(f\"Accuracy: {accuracy}\")
+print(f"Accuracy: {accuracy}")
 ```
 
 ### 4.4 常见问题解答
@@ -211,7 +211,7 @@ grid_search.fit(X_train, y_train)
 
 # 最佳参数
 best_params = grid_search.best_params_
-print(\"Best Parameters:\", best_params)
+print("Best Parameters:", best_params)
 
 # 使用最佳参数创建 LightGBM 模型并训练
 best_model = lgb.LGBMClassifier(**best_params)
@@ -222,7 +222,7 @@ y_pred = best_model.predict(X_test)
 
 # 计算准确率
 accuracy = accuracy_score(y_test, y_pred)
-print(f\"Accuracy: {accuracy}\")
+print(f"Accuracy: {accuracy}")
 ```
 
 ### 代码解读与分析

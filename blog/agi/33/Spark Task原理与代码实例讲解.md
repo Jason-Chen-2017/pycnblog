@@ -68,11 +68,11 @@ Spark广泛应用于数据分析、机器学习、数据挖掘等多个领域。
 
 Spark执行任务时，会涉及到并行计算、数据分区、数据聚合等数学模型。以并行计算为例，假设有一个数据集D，将其分割成n个分区，每个分区Pi上的计算可以表示为：
 
-$$ D = \\bigcup_{i=1}^{n} P_i $$
+$$ D = \bigcup_{i=1}^{n} P_i $$
 
 每个分区Pi上的操作可以表示为：
 
-$$ \\text{操作}_i = f(P_i) $$
+$$ \text{操作}_i = f(P_i) $$
 
 其中，f()表示特定的操作，如map、reduce等。
 
@@ -80,13 +80,13 @@ $$ \\text{操作}_i = f(P_i) $$
 
 在Spark中，数据的并行操作通常基于以下公式：
 
-$$ \\text{RDD} = \\text{操作}(\\text{RDD}) $$
+$$ \text{RDD} = \text{操作}(\text{RDD}) $$
 
 其中，操作可以是任意的Transformation操作，如：
 
-$$ \\text{map}(f) = \\text{RDD} \\mapsto (\\text{RDD}_f) $$
+$$ \text{map}(f) = \text{RDD} \mapsto (\text{RDD}_f) $$
 
-$$ \\text{reduceByKey}(g) = (\\text{RDD}_f) \\mapsto (\\text{RDD}_{f,g}) $$
+$$ \text{reduceByKey}(g) = (\text{RDD}_f) \mapsto (\text{RDD}_{f,g}) $$
 
 ### 4.3 案例分析与讲解
 
@@ -135,15 +135,15 @@ bin/spark-shell
 ```python
 from pyspark import SparkContext
 
-sc = SparkContext(\"local\", \"DataStatistics\")
+sc = SparkContext("local", "DataStatistics")
 
 data = sc.parallelize([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
 sum_result = data.reduce(lambda x, y: x + y)
 count_result = data.count()
 
-print(\"Sum:\", sum_result)
-print(\"Count:\", count_result)
+print("Sum:", sum_result)
+print("Count:", count_result)
 ```
 
 ### 5.3 代码解读与分析

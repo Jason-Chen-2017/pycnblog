@@ -75,11 +75,11 @@ $$y_t=\sum_{i=1}^n \alpha_i x_{t,i}$$
 
 建立LSTM网络模型,设隐藏层维度为 $m$,则单个LSTM单元的前向传播公式为:
 $$
-f_t=\sigma(W_f \cdot [h_{t-1},x_t]+b_f) \\
-i_t=\sigma(W_i \cdot [h_{t-1},x_t]+b_i) \\ 
-\tilde{C}_t=tanh(W_C \cdot [h_{t-1},x_t]+b_C) \\
-C_t=f_t*C_{t-1}+i_t*\tilde{C}_t \\
-o_t=\sigma(W_o \cdot [h_{t-1},x_t]+b_o) \\
+f_t=\sigma(W_f \cdot [h_{t-1},x_t]+b_f) \
+i_t=\sigma(W_i \cdot [h_{t-1},x_t]+b_i) \ 
+\tilde{C}_t=tanh(W_C \cdot [h_{t-1},x_t]+b_C) \
+C_t=f_t*C_{t-1}+i_t*\tilde{C}_t \
+o_t=\sigma(W_o \cdot [h_{t-1},x_t]+b_o) \
 h_t=o_t*tanh(C_t)
 $$
 
@@ -88,7 +88,7 @@ $$
 引入注意力机制,对LSTM各时刻隐藏状态 $h_t$ 赋予不同的注意力权重 $\beta_t$:
 
 $$
-e_{t,i}=tanh(W_e \cdot h_i + b_e) \\
+e_{t,i}=tanh(W_e \cdot h_i + b_e) \
 \beta_t=\frac{exp(e_{t,t})}{\sum_{i=1}^T exp(e_{t,i})}
 $$
 
@@ -108,17 +108,17 @@ $$
 再根据链式法则,计算损失函数对各个门控状态的梯度:
 
 $$
-\frac{\partial L}{\partial o_t}=\frac{\partial L}{\partial h_t}*tanh(C_t) \\
-\frac{\partial L}{\partial C_t}=\frac{\partial L}{\partial h_t}*o_t*(1-tanh^2(C_t))+\frac{\partial L}{\partial C_{t+1}}*f_{t+1} \\ 
-\frac{\partial L}{\partial f_t}=\frac{\partial L}{\partial C_t}*C_{t-1} \\
-\frac{\partial L}{\partial i_t}=\frac{\partial L}{\partial C_t}*\tilde{C}_t \\
+\frac{\partial L}{\partial o_t}=\frac{\partial L}{\partial h_t}*tanh(C_t) \
+\frac{\partial L}{\partial C_t}=\frac{\partial L}{\partial h_t}*o_t*(1-tanh^2(C_t))+\frac{\partial L}{\partial C_{t+1}}*f_{t+1} \ 
+\frac{\partial L}{\partial f_t}=\frac{\partial L}{\partial C_t}*C_{t-1} \
+\frac{\partial L}{\partial i_t}=\frac{\partial L}{\partial C_t}*\tilde{C}_t \
 \frac{\partial L}{\partial \tilde{C}_t}=\frac{\partial L}{\partial C_t}*i_t
 $$
 
 最后,利用随机梯度下降法更新模型参数 $W,b$ 以最小化损失函数:
 
 $$
-W:=W-\eta \frac{\partial L}{\partial W} \\
+W:=W-\eta \frac{\partial L}{\partial W} \
 b:=b-\eta \frac{\partial L}{\partial b}
 $$
 

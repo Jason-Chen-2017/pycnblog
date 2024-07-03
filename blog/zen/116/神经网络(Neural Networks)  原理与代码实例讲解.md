@@ -163,7 +163,7 @@ graph TD
 
 $$
 \begin{aligned}
-z^{(l)} &= W^{(l)}a^{(l-1)} + b^{(l)}\\
+z^{(l)} &= W^{(l)}a^{(l-1)} + b^{(l)}\
 a^{(l)} &= \phi(z^{(l)})
 \end{aligned}
 $$

@@ -82,31 +82,31 @@
 
 ### 4.1 数学模型构建
 
-假设输入数据集为 $\\mathbf{X} = \\{\\mathbf{x}_1, \\mathbf{x}_2, ..., \\mathbf{x}_N\\}$，其中 $\\mathbf{x}_i \\in \\mathbb{R}^D$ 是一个维度为 $D$ 的数据点。自动编码器的目标是学习一个编码器函数 $\\mathbf{z} = \\mathbf{E}(\\mathbf{x})$ 和一个解码器函数 $\\mathbf{x'} = \\mathbf{D}(\\mathbf{z})$。
+假设输入数据集为 $\mathbf{X} = \{\mathbf{x}_1, \mathbf{x}_2, ..., \mathbf{x}_N\}$，其中 $\mathbf{x}_i \in \mathbb{R}^D$ 是一个维度为 $D$ 的数据点。自动编码器的目标是学习一个编码器函数 $\mathbf{z} = \mathbf{E}(\mathbf{x})$ 和一个解码器函数 $\mathbf{x'} = \mathbf{D}(\mathbf{z})$。
 
 #### 编码器函数：
 
-$$\\mathbf{z} = \\mathbf{E}(\\mathbf{x}) = \\phi(\\mathbf{W_e}\\mathbf{x} + \\mathbf{b_e})$$
+$$\mathbf{z} = \mathbf{E}(\mathbf{x}) = \phi(\mathbf{W_e}\mathbf{x} + \mathbf{b_e})$$
 
-其中 $\\mathbf{W_e}$ 和 $\\mathbf{b_e}$ 分别是编码器的权重矩阵和偏置向量，$\\phi$ 是激活函数（如ReLU）。
+其中 $\mathbf{W_e}$ 和 $\mathbf{b_e}$ 分别是编码器的权重矩阵和偏置向量，$\phi$ 是激活函数（如ReLU）。
 
 #### 解码器函数：
 
-$$\\mathbf{x'} = \\mathbf{D}(\\mathbf{z}) = \\phi(\\mathbf{W_d}\\mathbf{z} + \\mathbf{b_d})$$
+$$\mathbf{x'} = \mathbf{D}(\mathbf{z}) = \phi(\mathbf{W_d}\mathbf{z} + \mathbf{b_d})$$
 
-其中 $\\mathbf{W_d}$ 和 $\\mathbf{b_d}$ 是解码器的权重矩阵和偏置向量。
+其中 $\mathbf{W_d}$ 和 $\mathbf{b_d}$ 是解码器的权重矩阵和偏置向量。
 
 ### 4.2 公式推导过程
 
 自动编码器的损失函数通常基于重构误差。对于均方误差（MSE）为例：
 
-$$L(\\mathbf{X}, \\mathbf{X'}) = \\frac{1}{N}\\sum_{i=1}^{N}||\\mathbf{x}_i - \\mathbf{x'}_i||^2$$
+$$L(\mathbf{X}, \mathbf{X'}) = \frac{1}{N}\sum_{i=1}^{N}||\mathbf{x}_i - \mathbf{x'}_i||^2$$
 
-其中 $\\mathbf{X'} = \\{\\mathbf{x'}_1, \\mathbf{x'}_2, ..., \\mathbf{x'}_N\\}$ 是通过解码器重构的结果。
+其中 $\mathbf{X'} = \{\mathbf{x'}_1, \mathbf{x'}_2, ..., \mathbf{x'}_N\}$ 是通过解码器重构的结果。
 
 ### 4.3 案例分析与讲解
 
-假设我们有一个二维数据集 $\\mathbf{X}$，自动编码器学习到的编码函数将数据从二维空间映射到一维空间，解码函数将一维空间的编码映射回二维空间，从而实现数据降维和重构。
+假设我们有一个二维数据集 $\mathbf{X}$，自动编码器学习到的编码函数将数据从二维空间映射到一维空间，解码函数将一维空间的编码映射回二维空间，从而实现数据降维和重构。
 
 ### 4.4 常见问题解答
 
@@ -226,8 +226,8 @@ plt.show()
 
 ### 7.3 相关论文推荐
 
-- **\"Auto-Encoding Variational Bayes\"**：[https://arxiv.org/abs/1312.6114](https://arxiv.org/abs/1312.6114)
-- **\"Deep Learning\"**：[http://www.deeplearningbook.org/](http://www.deeplearningbook.org/)
+- **"Auto-Encoding Variational Bayes"**：[https://arxiv.org/abs/1312.6114](https://arxiv.org/abs/1312.6114)
+- **"Deep Learning"**：[http://www.deeplearningbook.org/](http://www.deeplearningbook.org/)
 
 ### 7.4 其他资源推荐
 

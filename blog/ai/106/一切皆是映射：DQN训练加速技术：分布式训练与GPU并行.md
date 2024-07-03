@@ -127,7 +127,7 @@ GPU加速DQN训练主要利用GPU的并行计算能力加速神经网络的训�
 
 $$
 \begin{aligned}
-& \mathcal{L} = \sum_{i=1}^{N} \mathcal{L}_i \\
+& \mathcal{L} = \sum_{i=1}^{N} \mathcal{L}_i \
 & \mathcal{L}_i = \mathbb{E}_{s, a, r, s' \sim D_i} [(r + \gamma \max_{a'} Q(s', a'; \theta_i) - Q(s, a; \theta_i))^2]
 \end{aligned}
 $$

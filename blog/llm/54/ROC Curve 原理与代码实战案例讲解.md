@@ -77,7 +77,7 @@ AUC (Area Under the Curve) 是 ROC 曲线下的面积。AUC 的值介于 0 到 1
 
 $$
 \begin{aligned}
-TPR &= \frac{TP}{TP + FN} \\
+TPR &= \frac{TP}{TP + FN} \
 FPR &= \frac{FP}{FP + TN}
 \end{aligned}
 $$
@@ -104,7 +104,7 @@ $$
 
 $$
 \begin{aligned}
-TPR &= \frac{1}{1 + 1} = 0.5 \\
+TPR &= \frac{1}{1 + 1} = 0.5 \
 FPR &= \frac{1}{1 + 1} = 0.5
 \end{aligned}
 $$
@@ -135,8 +135,8 @@ $$
 
 $$
 \begin{aligned}
-AUC &= \frac{(0.2 - 0)(0.4 + 0)}{2} + \frac{(0.5 - 0.2)(0.7 + 0.4)}{2} + \frac{(0.8 - 0.5)(0.9 + 0.7)}{2} + \frac{(1 - 0.8)(1 + 0.9)}{2} \\
-&= 0.04 + 0.165 + 0.24 + 0.19 \\
+AUC &= \frac{(0.2 - 0)(0.4 + 0)}{2} + \frac{(0.5 - 0.2)(0.7 + 0.4)}{2} + \frac{(0.8 - 0.5)(0.9 + 0.7)}{2} + \frac{(1 - 0.8)(1 + 0.9)}{2} \
+&= 0.04 + 0.165 + 0.24 + 0.19 \
 &= 0.635
 \end{aligned}
 $$

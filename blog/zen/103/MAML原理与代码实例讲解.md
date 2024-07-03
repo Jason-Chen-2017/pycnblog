@@ -114,9 +114,9 @@ MAML的数学模型如下：
 
 $$
 \begin{align*}
-\theta &\gets \theta_0 \\
+\theta &\gets \theta_0 \
 \theta + \alpha \
-abla_{\theta} f_D(x) &\gets f_D(x) \\
+abla_{\theta} f_D(x) &\gets f_D(x) \
 \mathcal{L}(\theta) &= \mathbb{E}_{D \sim D_S} \mathcal{L}(f_{\theta+\alpha \
 abla_{\theta} f_D(x)}(x), y)
 \end{align*}

@@ -76,7 +76,7 @@
 
 $$
 \begin{aligned}
-z &= f_e(W_e x + b_e) \\
+z &= f_e(W_e x + b_e) \
 \hat{x} &= f_d(W_d z + b_d)
 \end{aligned}
 $$
@@ -98,7 +98,7 @@ $$
 
 $$
 \begin{aligned}
-z &= f_e(Conv(x)) \\
+z &= f_e(Conv(x)) \
 \hat{x} &= f_d(DeConv(z))
 \end{aligned}
 $$

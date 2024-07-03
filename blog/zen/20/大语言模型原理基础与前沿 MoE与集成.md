@@ -90,39 +90,39 @@ MoE和集成技术广泛应用于自然语言处理、计算机视觉、语音�
 
 **MoE模型构建**：
 
-设$\\mathcal{M}_i$为第$i$个子模型，$\\theta_i$为其参数集，$\\mathcal{D}$为训练数据集，则MoE模型可以表示为：
+设$\mathcal{M}_i$为第$i$个子模型，$\theta_i$为其参数集，$\mathcal{D}$为训练数据集，则MoE模型可以表示为：
 
-\\[
-\\hat{f}_{MoE}(x) = \\sum_{i=1}^N \\alpha_i \\cdot \\mathcal{M}_i(x; \\theta_i)
-\\]
+$$
+\hat{f}_{MoE}(x) = \sum_{i=1}^N \alpha_i \cdot \mathcal{M}_i(x; \theta_i)
+$$
 
-其中$\\alpha_i$是第$i$个子模型的权重，$\\hat{f}_{MoE}(x)$是MoE模型的预测。
+其中$\alpha_i$是第$i$个子模型的权重，$\hat{f}_{MoE}(x)$是MoE模型的预测。
 
 **集成模型构建**：
 
-设$\\mathcal{M}_j$为第$j$个模型，$\\hat{f}_{j}(x)$为模型$\\mathcal{M}_j$的预测，$\\omega_j$为模型$\\mathcal{M}_j$的权重，则集成模型可以表示为：
+设$\mathcal{M}_j$为第$j$个模型，$\hat{f}_{j}(x)$为模型$\mathcal{M}_j$的预测，$\omega_j$为模型$\mathcal{M}_j$的权重，则集成模型可以表示为：
 
-\\[
-\\hat{f}_{Ensemble}(x) = \\sum_{j=1}^M \\omega_j \\cdot \\hat{f}_{j}(x)
-\\]
+$$
+\hat{f}_{Ensemble}(x) = \sum_{j=1}^M \omega_j \cdot \hat{f}_{j}(x)
+$$
 
 ### 4.2 公式推导过程
 
 **MoE推导**：
 
-假设我们有$N$个子模型，每个子模型基于不同特征进行优化。对于输入$x$，每个子模型$\\mathcal{M}_i$基于其特定参数$\\theta_i$进行预测，得到预测值$\\mathcal{M}_i(x; \\theta_i)$。MoE模型通过加权和来整合这些预测，权重$\\alpha_i$反映了每个子模型在整体预测中的相对重要性。因此，MoE模型的预测为：
+假设我们有$N$个子模型，每个子模型基于不同特征进行优化。对于输入$x$，每个子模型$\mathcal{M}_i$基于其特定参数$\theta_i$进行预测，得到预测值$\mathcal{M}_i(x; \theta_i)$。MoE模型通过加权和来整合这些预测，权重$\alpha_i$反映了每个子模型在整体预测中的相对重要性。因此，MoE模型的预测为：
 
-\\[
-\\hat{f}_{MoE}(x) = \\sum_{i=1}^N \\alpha_i \\cdot \\mathcal{M}_i(x; \\theta_i)
-\\]
+$$
+\hat{f}_{MoE}(x) = \sum_{i=1}^N \alpha_i \cdot \mathcal{M}_i(x; \theta_i)
+$$
 
 **集成推导**：
 
-对于集成模型，我们有$M$个不同类型的模型$\\mathcal{M}_j$，每个模型基于不同策略或参数进行预测，得到预测值$\\hat{f}_{j}(x)$。集成模型通过加权和来整合这些预测，权重$\\omega_j$反映了每个模型在最终预测中的相对重要性。因此，集成模型的预测为：
+对于集成模型，我们有$M$个不同类型的模型$\mathcal{M}_j$，每个模型基于不同策略或参数进行预测，得到预测值$\hat{f}_{j}(x)$。集成模型通过加权和来整合这些预测，权重$\omega_j$反映了每个模型在最终预测中的相对重要性。因此，集成模型的预测为：
 
-\\[
-\\hat{f}_{Ensemble}(x) = \\sum_{j=1}^M \\omega_j \\cdot \\hat{f}_{j}(x)
-\\]
+$$
+\hat{f}_{Ensemble}(x) = \sum_{j=1}^M \omega_j \cdot \hat{f}_{j}(x)
+$$
 
 ### 4.3 案例分析与讲解
 
@@ -189,7 +189,7 @@ class Gate(nn.Module):
     def forward(self, x):
         return torch.sigmoid(self.fc(x))
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     # 创建基本模型
     base_model = BaseModel(input_size=10, output_size=5)
     

@@ -40,13 +40,13 @@ Q-learning的核心在于“学习如何通过观察环境的状态和执行动�
 
 Q-learning的目标是学习一个Q-table，使得在任意给定状态下执行任意动作后的Q-value最大化。算法通过以下方式更新Q-value：
 
-$$ Q(s, a) \\leftarrow Q(s, a) + \\alpha [r + \\gamma \\max_{a'} Q(s', a') - Q(s, a)] $$
+$$ Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a') - Q(s, a)] $$
 
 其中：
 - $Q(s, a)$是状态$s$下执行动作$a$的当前Q-value估计。
-- $\\alpha$是学习率（learning rate），决定了新信息与旧信息的权衡。
+- $\alpha$是学习率（learning rate），决定了新信息与旧信息的权衡。
 - $r$是即时奖励（reward）。
-- $\\gamma$是折扣因子（discount factor），衡量远期奖励的贴现价值。
+- $\gamma$是折扣因子（discount factor），衡量远期奖励的贴现价值。
 - $s'$是状态更新后的状态，$a'$是在新状态下执行的动作。
 
 ### 3.2 算法步骤详解
@@ -59,7 +59,7 @@ $$ Q(s, a) \\leftarrow Q(s, a) + \\alpha [r + \\gamma \\max_{a'} Q(s', a') - Q(s
 - 选择一个动作$a$（可以是随机选择或基于当前Q-table的选择）。
 - 执行动作$a$，并接收奖励$r$和下一个状态$s'$。
 - 更新Q-table：
-  $$ Q(s, a) \\leftarrow Q(s, a) + \\alpha [r + \\gamma \\max_{a'} Q(s', a') - Q(s, a)] $$
+  $$ Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a') - Q(s, a)] $$
 
 #### 循环终止：
 - 当达到预设的学习周期或满足停止条件时，循环结束。
@@ -94,17 +94,17 @@ Q-learning及其变体广泛应用于：
 
 Q-learning通过以下数学模型构建来学习状态-动作价值：
 
-$$ Q(s, a) = \\mathbb{E}_{\\pi}[G_t | S_t = s, A_t = a] $$
+$$ Q(s, a) = \mathbb{E}_{\pi}[G_t | S_t = s, A_t = a] $$
 
-其中，$\\pi$是策略（policy），$G_t$是从时间$t$开始到结束的总奖励序列。
+其中，$\pi$是策略（policy），$G_t$是从时间$t$开始到结束的总奖励序列。
 
 ### 4.2 公式推导过程
 
 Q-learning通过以下公式进行学习：
 
-$$ Q(s, a) \\leftarrow Q(s, a) + \\alpha [r + \\gamma \\max_{a'} Q(s', a') - Q(s, a)] $$
+$$ Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a') - Q(s, a)] $$
 
-这里，$\\alpha$是学习率，$r$是即时奖励，$\\gamma$是折扣因子，$\\max_{a'} Q(s', a')$是下一个状态$s'$下所有动作$a'$的最大Q-value估计。
+这里，$\alpha$是学习率，$r$是即时奖励，$\gamma$是折扣因子，$\max_{a'} Q(s', a')$是下一个状态$s'$下所有动作$a'$的最大Q-value估计。
 
 ### 4.3 案例分析与讲解
 
@@ -116,7 +116,7 @@ $$ Q(s, a) \\leftarrow Q(s, a) + \\alpha [r + \\gamma \\max_{a'} Q(s', a') - Q(s
 
 ### 4.4 常见问题解答
 
-#### 如何选择学习率$\\alpha$？
+#### 如何选择学习率$\alpha$？
 - **初始较大**：快速学习，避免过度拟合旧信息。
 - **逐渐减小**：随着学习进行，减少学习速度，更加稳定收敛。
 

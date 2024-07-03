@@ -178,10 +178,10 @@ YOLOv3在特征图上生成9个预设的锚框，分别对应不同的尺度。�
 
 $$
 \begin{align*}
-x_{\text{pred}} &= \frac{x_a + \frac{w_a}{2}}{W} \\
-y_{\text{pred}} &= \frac{y_a + \frac{h_a}{2}}{H} \\
-w_{\text{pred}} &= \frac{w_a}{W} \\
-h_{\text{pred}} &= \frac{h_a}{H} \\
+x_{\text{pred}} &= \frac{x_a + \frac{w_a}{2}}{W} \
+y_{\text{pred}} &= \frac{y_a + \frac{h_a}{2}}{H} \
+w_{\text{pred}} &= \frac{w_a}{W} \
+h_{\text{pred}} &= \frac{h_a}{H} \
 \end{align*}
 $$
 

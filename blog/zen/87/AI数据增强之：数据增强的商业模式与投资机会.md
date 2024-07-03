@@ -121,7 +121,7 @@ $$X' = T(X)$$
 
 $$
 \begin{cases}
-x' = x \cos(\theta) - y \sin(\theta) \\
+x' = x \cos(\theta) - y \sin(\theta) \
 y' = x \sin(\theta) + y \cos(\theta)
 \end{cases}
 $$

@@ -99,7 +99,7 @@ Life 3.0技术有望在以下领域得到应用：
 
 $$
 \begin{align*}
-f(x) &= f_{1}(x) \circ f_{2}(x) \circ \dots \circ f_{n}(x) \\
+f(x) &= f_{1}(x) \circ f_{2}(x) \circ \dots \circ f_{n}(x) \
 \end{align*}
 $$
 

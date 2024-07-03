@@ -118,13 +118,13 @@ GAN的数学模型可以表示为以下形式：
 
 $$
 \begin{aligned}
-& \min_{G} \max_{D} V(G, D) = \mathbb{E}_{x \sim p_{data}(x)}[D(x)] + \mathbb{E}_{z \sim p_{z}(z)}[1 - D(G(z))] \\
-& \text{其中：} \\
-& G: \text{生成器} \\
-& D: \text{判别器} \\
-& x: \text{真实数据} \\
-& z: \text{随机噪声} \\
-& p_{data}(x): \text{真实数据的分布} \\
+& \min_{G} \max_{D} V(G, D) = \mathbb{E}_{x \sim p_{data}(x)}[D(x)] + \mathbb{E}_{z \sim p_{z}(z)}[1 - D(G(z))] \
+& \text{其中：} \
+& G: \text{生成器} \
+& D: \text{判别器} \
+& x: \text{真实数据} \
+& z: \text{随机噪声} \
+& p_{data}(x): \text{真实数据的分布} \
 & p_{z}(z): \text{随机噪声的分布}
 \end{aligned}
 $$

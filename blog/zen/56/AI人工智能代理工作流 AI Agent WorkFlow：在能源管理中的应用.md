@@ -80,10 +80,10 @@ D[t4] --> E[t5]
 邻接矩阵表示为:
 $$
 M = \begin{bmatrix}
-0 & 1 & 1 & 0 & 0\\
-0 & 0 & 0 & 1 & 0\\
-0 & 0 & 0 & 1 & 0\\
-0 & 0 & 0 & 0 & 1\\
+0 & 1 & 1 & 0 & 0\
+0 & 0 & 0 & 1 & 0\
+0 & 0 & 0 & 1 & 0\
+0 & 0 & 0 & 0 & 1\
 0 & 0 & 0 & 0 & 0
 \end{bmatrix}
 $$
@@ -93,9 +93,9 @@ $$
 
 $$
 \begin{align}
-\min \quad & \max_{1 \leq i \leq n} (s_i + \sum_{j=1}^m x_{ij} \cdot p_{ij}) \\
-\text{s.t.} \quad & \sum_{j=1}^m x_{ij} = 1, \quad i=1,2,\ldots,n \\
-& s_i + \sum_{j=1}^m x_{ij} \cdot p_{ij} \leq s_k, \quad \forall (i,k) \in E \\
+\min \quad & \max_{1 \leq i \leq n} (s_i + \sum_{j=1}^m x_{ij} \cdot p_{ij}) \
+\text{s.t.} \quad & \sum_{j=1}^m x_{ij} = 1, \quad i=1,2,\ldots,n \
+& s_i + \sum_{j=1}^m x_{ij} \cdot p_{ij} \leq s_k, \quad \forall (i,k) \in E \
 & x_{ij} \in \{0,1\}, \quad s_i \geq 0
 \end{align}
 $$
@@ -107,8 +107,8 @@ $$
 
 $$
 \begin{align}
-\min \quad & \sum_{r=1}^m c_r \cdot \max_{1 \leq i \leq n} y_{ir} \\
-\text{s.t.} \quad & \sum_{i=1}^n y_{ir} \leq R_r, \quad r=1,2,\ldots,m \\
+\min \quad & \sum_{r=1}^m c_r \cdot \max_{1 \leq i \leq n} y_{ir} \
+\text{s.t.} \quad & \sum_{i=1}^n y_{ir} \leq R_r, \quad r=1,2,\ldots,m \
 & y_{ir} \geq 0
 \end{align}
 $$

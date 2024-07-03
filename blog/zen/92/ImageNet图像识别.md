@@ -76,11 +76,11 @@ ImageNet图像识别的数学模型主要基于卷积神经网络。以下是一
 
 $$
 \begin{align*}
-& \text{输入：} X \in \mathbb{R}^{H \times W \times C} \\
-& \text{卷积层：} C_1 \rightarrow C_2, \text{卷积核大小} = (K_1 \times K_1), \text{步长} = (S_1 \times S_1) \\
-& \text{激活函数：} ReLU \\
-& \text{池化层：} P_2 \rightarrow C_3, \text{池化核大小} = (P_2 \times P_2), \text{步长} = (P_2 \times P_2) \\
-& \text{全连接层：} C_3 \rightarrow \text{输出} \\
+& \text{输入：} X \in \mathbb{R}^{H \times W \times C} \
+& \text{卷积层：} C_1 \rightarrow C_2, \text{卷积核大小} = (K_1 \times K_1), \text{步长} = (S_1 \times S_1) \
+& \text{激活函数：} ReLU \
+& \text{池化层：} P_2 \rightarrow C_3, \text{池化核大小} = (P_2 \times P_2), \text{步长} = (P_2 \times P_2) \
+& \text{全连接层：} C_3 \rightarrow \text{输出} \
 \end{align*}
 $$
 

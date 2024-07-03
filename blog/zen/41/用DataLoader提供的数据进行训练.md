@@ -111,15 +111,15 @@ DataLoader广泛应用于机器学习和深度学习的各种领域，包括但�
 
 在每次迭代时，DataLoader通过以下步骤获取样本$x$和标签$y$：
 
-\\[x, y = DataLoader(D, batch\\_size, shuffle)\\]
+$$x, y = DataLoader(D, batch\_size, shuffle)$$
 
-这里，$batch\\_size$是每批次中包含的样本数量，$shuffle$是一个布尔值，指示是否在每次迭代前后随机打乱数据顺序。
+这里，$batch\_size$是每批次中包含的样本数量，$shuffle$是一个布尔值，指示是否在每次迭代前后随机打乱数据顺序。
 
 ### 4.3 案例分析与讲解
 
 考虑一个简单的线性回归模型$y = wx + b$，其中$w$是权重，$b$是偏置。DataLoader帮助我们在训练集上高效地迭代样本$x$和标签$y$，以便更新模型参数$w$和$b$：
 
-\\[loss = \\frac{1}{m}\\sum_{i=1}^{m}(wx_i + b - y_i)^2\\]
+$$loss = \frac{1}{m}\sum_{i=1}^{m}(wx_i + b - y_i)^2$$
 
 通过最小化损失函数$loss$来调整模型参数。
 

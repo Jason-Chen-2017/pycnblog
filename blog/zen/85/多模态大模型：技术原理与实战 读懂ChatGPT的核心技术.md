@@ -142,7 +142,7 @@ CNN是一种用于图像识别和图像处理的深度学习模型。以下是�
 
 $$
 \begin{align*}
-h^{(l)}_i &= \sigma \left( W^{(l)}h^{(l-1)}_i + b^{(l)} \right) \\
+h^{(l)}_i &= \sigma \left( W^{(l)}h^{(l-1)}_i + b^{(l)} \right) \
 W^{(l)} &= \text{权重矩阵，}h^{(l)}_i &= \text{输出特征向量，}b^{(l)} &= \text{偏置项，}\sigma &= \text{激活函数}
 \end{align*}
 $$
@@ -153,7 +153,7 @@ RNN是一种用于序列数据处理和预测的深度学习模型。以下是�
 
 $$
 \begin{align*}
-h_t &= \tanh \left( W_xh_{t-1} + W_xuh_t + b_h \right) \\
+h_t &= \tanh \left( W_xh_{t-1} + W_xuh_t + b_h \right) \
 y_t &= W_yh_t + b_y
 \end{align*}
 $$

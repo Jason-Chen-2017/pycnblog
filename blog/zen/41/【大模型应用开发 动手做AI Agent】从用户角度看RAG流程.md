@@ -80,11 +80,11 @@ RAG过程中的数学模型主要体现在知识检索和整合阶段，通常�
 
 ### 4.2 公式推导过程
 
-假设问题向量$q$和知识库向量集$K=\\{k_1, k_2, ..., k_n\\}$，则计算余弦相似度的公式为：
+假设问题向量$q$和知识库向量集$K=\{k_1, k_2, ..., k_n\}$，则计算余弦相似度的公式为：
 
-$$sim(q, k_i) = \\frac{q \\cdot k_i}{||q|| \\cdot ||k_i||}$$
+$$sim(q, k_i) = \frac{q \cdot k_i}{||q|| \cdot ||k_i||}$$
 
-其中，$q \\cdot k_i$表示向量点积，$||q||$和$||k_i||$分别为$q$和$k_i$的欧氏范数。
+其中，$q \cdot k_i$表示向量点积，$||q||$和$||k_i||$分别为$q$和$k_i$的欧氏范数。
 
 ### 4.3 案例分析与讲解
 
@@ -115,8 +115,8 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForQuestionAnswering.from_pretrained(model_name)
 
 # 输入问题和上下文文本
-question = \"What is the highest mountain in the world?\"
-context = \"Mount Everest is located in the Mahalangur Himal sub-range of the Himalayas...\"
+question = "What is the highest mountain in the world?"
+context = "Mount Everest is located in the Mahalangur Himal sub-range of the Himalayas..."
 
 # 解析问题
 encoded_question = tokenizer.encode(question, add_special_tokens=True)
@@ -135,7 +135,7 @@ answer_start = np.argmax(similarity)
 answer_end = answer_start + len(encoded_question)
 answer = tokenizer.convert_tokens_to_string(tokenizer.convert_ids_to_tokens(encoded_context[answer_start:answer_end]))
 
-print(f\"Answer: {answer}\")
+print(f"Answer: {answer}")
 ```
 
 ### 5.3 代码解读与分析

@@ -105,10 +105,10 @@ AI代理工作流的数学模型可以表示为以下形式：
 
 $$
 \begin{align*}
-\text{State} & : S \\
-\text{Action} & : A \\
-\text{Reward} & : R \\
-\text{Policy} & : \pi(s) \\
+\text{State} & : S \
+\text{Action} & : A \
+\text{Reward} & : R \
+\text{Policy} & : \pi(s) \
 \text{Value Function} & : V(s)
 \end{align*}
 $$

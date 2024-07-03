@@ -149,8 +149,8 @@ Transformer模型主要由三个子层组成:多头注意力机制(Multi-Head At
 
 $$
 \begin{aligned}
-Q &= XW^Q \\
-K &= XW^K \\
+Q &= XW^Q \
+K &= XW^K \
 V &= XW^V
 \end{aligned}
 $$

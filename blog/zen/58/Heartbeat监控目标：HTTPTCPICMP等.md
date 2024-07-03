@@ -174,7 +174,7 @@ while True:
 $$
 f(t) =
 \begin{cases}
-1, & \text{if } t \mod T = 0 \\
+1, & \text{if } t \mod T = 0 \
 0, & \text{otherwise}
 \end{cases}
 $$

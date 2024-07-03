@@ -179,7 +179,7 @@ graph LR
 
    $$
    \begin{cases}
-   \boldsymbol{w}^T\boldsymbol{x}_i + b \geq 1, & y_i = 1\\
+   \boldsymbol{w}^T\boldsymbol{x}_i + b \geq 1, & y_i = 1\
    \boldsymbol{w}^T\boldsymbol{x}_i + b \leq -1, & y_i = -1
    \end{cases}
    $$

@@ -21,9 +21,9 @@
 协方差矩阵是PCA的基础概念,用于衡量不同变量之间的线性相关性。对于$n$个变量$X_1, X_2, ..., X_n$,协方差矩阵$\Sigma$为:
 
 $$\Sigma = \begin{bmatrix}
-    \text{Var}(X_1) & \text{Cov}(X_1, X_2) & \cdots & \text{Cov}(X_1, X_n) \\
-    \text{Cov}(X_2, X_1) & \text{Var}(X_2) & \cdots & \text{Cov}(X_2, X_n) \\
-    \vdots & \vdots & \ddots & \vdots \\
+    \text{Var}(X_1) & \text{Cov}(X_1, X_2) & \cdots & \text{Cov}(X_1, X_n) \
+    \text{Cov}(X_2, X_1) & \text{Var}(X_2) & \cdots & \text{Cov}(X_2, X_n) \
+    \vdots & \vdots & \ddots & \vdots \
     \text{Cov}(X_n, X_1) & \text{Cov}(X_n, X_2) & \cdots & \text{Var}(X_n)
 \end{bmatrix}$$
 
@@ -56,9 +56,9 @@ PCA算法的具体步骤如下:
 5. 将原始数据$X$投影到$k$维空间,得到降维后的新特征向量$Z$:
 
 $$Z = P^T X = \begin{bmatrix}
-    \vec{v}_1^T\\
-    \vec{v}_2^T\\ 
-    \vdots\\
+    \vec{v}_1^T\
+    \vec{v}_2^T\ 
+    \vdots\
     \vec{v}_k^T
 \end{bmatrix}X$$
 
@@ -71,41 +71,41 @@ $$Z = P^T X = \begin{bmatrix}
 假设有如下数据:
 
 $$X = \begin{bmatrix}
-    2 & 3\\
-    2 & 1\\
-    8 & 7\\
-    6 & 6\\
-    7 & 8\\
+    2 & 3\
+    2 & 1\
+    8 & 7\
+    6 & 6\
+    7 & 8\
     5 & 6
 \end{bmatrix}$$
 
 首先,我们对数据进行归一化处理,使其均值为0,方差为1:
 
 $$X' = \begin{bmatrix}
-    -1.29 & -0.54\\
-    -1.29 & -1.64\\
-    1.71 & 1.27\\
-    0.29 & 0.54\\
-    1.00 & 1.91\\
+    -1.29 & -0.54\
+    -1.29 & -1.64\
+    1.71 & 1.27\
+    0.29 & 0.54\
+    1.00 & 1.91\
     -0.43 & 0.54
 \end{bmatrix}$$
 
 接下来,计算协方差矩阵$\Sigma$:
 
 $$\Sigma = \begin{bmatrix}
-    2.45 & 1.96\\
+    2.45 & 1.96\
     1.96 & 2.09
 \end{bmatrix}$$
 
 求解$\Sigma$的特征值和特征向量:
 
 $$\lambda_1 = 4.06, \quad \vec{v}_1 = \begin{bmatrix}
-    0.72\\
+    0.72\
     0.69
 \end{bmatrix}$$
 
 $$\lambda_2 = 0.48, \quad \vec{v}_2 = \begin{bmatrix}
-    -0.69\\
+    -0.69\
     0.72
 \end{bmatrix}$$
 
@@ -114,11 +114,11 @@ $$\lambda_2 = 0.48, \quad \vec{v}_2 = \begin{bmatrix}
 将原始数据$X'$投影到$\vec{v}_1$方向上,得到新的一维数据:
 
 $$Z = \vec{v}_1^T X' = \begin{bmatrix}
-    -2.01\\
-    -3.18\\
-    4.22\\
-    1.16\\
-    4.01\\
+    -2.01\
+    -3.18\
+    4.22\
+    1.16\
+    4.01\
     0.16
 \end{bmatrix}$$
 

@@ -185,7 +185,7 @@ public class KvStoreExample extends StreamsApplication implements Processor<Stri
                 .with("kafka.bootstrap.servers", "localhost:9092")
                 .with("kafka.security.protocol", "SASL_PLAINTEXT")
                 .with("kafka.sasl.mechanism", "PLAIN")
-                .with("kafka.sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"admin\" password=\"admin\";");
+                .with("kafka.sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username="admin" password="admin";");
 
         StreamsApplication streamsApplication = new KvStoreExample();
         streamsApplication.run(config);

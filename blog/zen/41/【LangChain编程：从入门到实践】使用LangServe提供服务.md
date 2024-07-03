@@ -71,15 +71,15 @@ LangServe的操作步骤包括：
 
 LangChain和LangServe均采用事件驱动的模型来构建和管理服务。对于LangChain，可以构建如下事件模型：
 
-设$S$为服务集合，$A$为API集合，则服务与API之间的关系可以用映射$M：S \\rightarrow A$表示。$M$定义了每个服务$S_i$提供哪些API$A_j$。
+设$S$为服务集合，$A$为API集合，则服务与API之间的关系可以用映射$M：S \rightarrow A$表示。$M$定义了每个服务$S_i$提供哪些API$A_j$。
 
 ### 4.2 公式推导过程
 
 在LangChain中，API版本控制可以采用以下公式来表示：
 
-$$V_i = V_{i-1} + \\Delta V$$
+$$V_i = V_{i-1} + \Delta V$$
 
-其中，$V_i$表示第$i$个版本的API版本号，$V_{i-1}$是前一个版本的版本号，$\\Delta V$是版本增量。
+其中，$V_i$表示第$i$个版本的API版本号，$V_{i-1}$是前一个版本的版本号，$\Delta V$是版本增量。
 
 ### 4.3 案例分析与讲解
 
@@ -121,12 +121,12 @@ class Order(BaseModel):
     id: int
     status: str
 
-@app.get(\"/orders/{id}\")
+@app.get("/orders/{id}")
 async def get_order(id: int):
     # 查询数据库并返回订单状态
     ...
 
-@app.put(\"/orders/{id}\")
+@app.put("/orders/{id}")
 async def update_order(id: int, new_status: str):
     # 更新数据库中的订单状态
     ...

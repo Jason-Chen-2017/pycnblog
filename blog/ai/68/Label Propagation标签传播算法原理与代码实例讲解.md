@@ -108,9 +108,9 @@ $$
 
 $$
 P(y|x) = \left[ \begin{matrix} 
-P(y|x_1) \\ 
-P(y|x_2) \\ 
-\vdots \\ 
+P(y|x_1) \ 
+P(y|x_2) \ 
+\vdots \ 
 P(y|x_n) 
 \end{matrix} \right]
 $$
@@ -131,9 +131,9 @@ $$
 
 $$
 P(y|x) = \left[ \begin{matrix} 
-\frac{P(y)P(x_1|y)}{P(x_1)} \\ 
-\frac{P(y)P(x_2|y)}{P(x_2)} \\ 
-\vdots \\ 
+\frac{P(y)P(x_1|y)}{P(x_1)} \ 
+\frac{P(y)P(x_2|y)}{P(x_2)} \ 
+\vdots \ 
 \frac{P(y)P(x_n|y)}{P(x_n)} 
 \end{matrix} \right]
 $$
@@ -142,9 +142,9 @@ $$
 
 $$
 P(y|x) = \left[ \begin{matrix} 
-\frac{W_{y1}^{(t)}P(y)P(x_1|y)}{W_{y1}^{(t)}P(y)P(x_1|y)} \\ 
-\frac{W_{y2}^{(t)}P(y)P(x_2|y)}{W_{y2}^{(t)}P(y)P(x_2|y)} \\ 
-\vdots \\ 
+\frac{W_{y1}^{(t)}P(y)P(x_1|y)}{W_{y1}^{(t)}P(y)P(x_1|y)} \ 
+\frac{W_{y2}^{(t)}P(y)P(x_2|y)}{W_{y2}^{(t)}P(y)P(x_2|y)} \ 
+\vdots \ 
 \frac{W_{yn}^{(t)}P(y)P(x_n|y)}{W_{yn}^{(t)}P(y)P(x_n|y)} 
 \end{matrix} \right]
 $$
@@ -153,9 +153,9 @@ $$
 
 $$
 P(y|x) = \left[ \begin{matrix} 
-\frac{W_{y1}^{(t)}}{\sum_{y'} W_{y1}^{(t)}} \\ 
-\frac{W_{y2}^{(t)}}{\sum_{y'} W_{y2}^{(t)}} \\ 
-\vdots \\ 
+\frac{W_{y1}^{(t)}}{\sum_{y'} W_{y1}^{(t)}} \ 
+\frac{W_{y2}^{(t)}}{\sum_{y'} W_{y2}^{(t)}} \ 
+\vdots \ 
 \frac{W_{yn}^{(t)}}{\sum_{y'} W_{yn}^{(t)}} 
 \end{matrix} \right]
 $$

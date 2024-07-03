@@ -130,7 +130,7 @@ abla_\theta J(\theta)$
 假设模型为$y = wx + b$，损失函数为$J(w, b) = \frac{1}{n}\sum_{i=1}^{n}(y_i - wx_i - b)^2$。求导后得到权重和偏置的更新规则：
 
 $$
-w = w - \eta \cdot \frac{2}{n}\sum_{i=1}^{n}(y_i - wx_i - b)x_i \\
+w = w - \eta \cdot \frac{2}{n}\sum_{i=1}^{n}(y_i - wx_i - b)x_i \
 b = b - \eta \cdot \frac{2}{n}\sum_{i=1}^{n}(y_i - wx_i - b)
 $$
 

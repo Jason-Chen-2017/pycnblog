@@ -135,10 +135,10 @@ LSTM单元包含以下部分：
 
 $$
 \begin{align*}
-f_t &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \\
-i_t &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \\
-\c_t &= \tanh(W_c \cdot [h_{t-1}, x_t] + b_c) \\
-o_t &= \sigma(W_o \cdot [h_{t-1}, \c_t] + b_o) \\
+f_t &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \
+i_t &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \
+\c_t &= \tanh(W_c \cdot [h_{t-1}, x_t] + b_c) \
+o_t &= \sigma(W_o \cdot [h_{t-1}, \c_t] + b_o) \
 h_t &= o_t \cdot \tanh(\c_t)
 \end{align*}
 $$

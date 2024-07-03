@@ -105,11 +105,11 @@ KL散度的非对称性使其无法作为一个严格的距离度量,但在很�
 $$
 \begin{aligned}
 P(x) &= \begin{cases} 
-0.4, & x=1\\
+0.4, & x=1\
 0.6, & x=2
-\end{cases}\\
+\end{cases}\
 Q(x) &= \begin{cases}
-0.2, & x=1\\
+0.2, & x=1\
 0.8, & x=2
 \end{cases}
 \end{aligned}
@@ -119,10 +119,10 @@ $$
 
 $$
 \begin{aligned}
-KL(P||Q) &= \sum_{x} P(x) \log \frac{P(x)}{Q(x)}\\
-         &= P(1) \log \frac{P(1)}{Q(1)} + P(2) \log \frac{P(2)}{Q(2)}\\
-         &= 0.4 \log \frac{0.4}{0.2} + 0.6 \log \frac{0.6}{0.8}\\
-         &= 0.4 \log 2 + 0.6 \log 0.75\\
+KL(P||Q) &= \sum_{x} P(x) \log \frac{P(x)}{Q(x)}\
+         &= P(1) \log \frac{P(1)}{Q(1)} + P(2) \log \frac{P(2)}{Q(2)}\
+         &= 0.4 \log \frac{0.4}{0.2} + 0.6 \log \frac{0.6}{0.8}\
+         &= 0.4 \log 2 + 0.6 \log 0.75\
          &\approx 0.19
 \end{aligned}
 $$
@@ -135,7 +135,7 @@ $$
 
 $$
 \begin{aligned}
-p(x) &= \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}},\quad x\in\mathbb{R}\\
+p(x) &= \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}},\quad x\in\mathbb{R}\
 q(x) &= \frac{1}{2}e^{-|x|},\quad x\in\mathbb{R}
 \end{aligned}
 $$
@@ -144,9 +144,9 @@ $$
 
 $$
 \begin{aligned}
-KL(P||Q) &= \int_{-\infty}^{\infty} p(x) \log \frac{p(x)}{q(x)} dx\\
-         &= \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}} \log \left(\frac{\sqrt{2\pi}}{2}e^{\frac{x^2}{2}-|x|}\right) dx\\
-         &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{-\frac{x^2}{2}} \left(\frac{x^2}{2}-|x|+\log\sqrt{2\pi}\right) dx\\
+KL(P||Q) &= \int_{-\infty}^{\infty} p(x) \log \frac{p(x)}{q(x)} dx\
+         &= \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}} \log \left(\frac{\sqrt{2\pi}}{2}e^{\frac{x^2}{2}-|x|}\right) dx\
+         &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{-\frac{x^2}{2}} \left(\frac{x^2}{2}-|x|+\log\sqrt{2\pi}\right) dx\
          &\approx 0.27
 \end{aligned}
 $$

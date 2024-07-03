@@ -134,7 +134,7 @@ $$
 
 以下以线性方程组求解为例，讲解非奇异M-矩阵的应用。
 
-**问题**：求解线性方程组 $Ax = b$，其中 $A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$，$b = \begin{pmatrix} 3 \\ 4 \end{pmatrix}$。
+**问题**：求解线性方程组 $Ax = b$，其中 $A = \begin{pmatrix} 2 & 1 \ 1 & 2 \end{pmatrix}$，$b = \begin{pmatrix} 3 \ 4 \end{pmatrix}$。
 
 **步骤**：
 
@@ -245,7 +245,7 @@ print(A_dagger)
 
 在函数内部，首先使用 `np.linalg.svd` 函数对矩阵 $A$ 进行奇异值分解，得到 $U$、$S$ 和 $V^{\dagger}$。然后计算对角矩阵 $S$ 的逆，并使用 `np.diag` 函数构建对角矩阵。最后，将 $V^{\dagger}$ 和 $S^{-1}$ 相乘，再与 $U$ 相乘，得到 $A$ 的非奇异M-矩阵 $A^{\dagger}$。
 
-示例部分创建了矩阵 $A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$，并调用 `svd_dagger` 函数计算其非奇异M-矩阵 $A^{\dagger}$，打印输出结果。
+示例部分创建了矩阵 $A = \begin{pmatrix} 2 & 1 \ 1 & 2 \end{pmatrix}$，并调用 `svd_dagger` 函数计算其非奇异M-矩阵 $A^{\dagger}$，打印输出结果。
 
 ### 5.4 运行结果展示
 
@@ -256,7 +256,7 @@ print(A_dagger)
  [-0.5 -0.5]]
 ```
 
-这表明矩阵 $A$ 的非奇异M-矩阵 $A^{\dagger} = \begin{pmatrix} 0.5 & 0.5 \\ -0.5 & -0.5 \end{pmatrix}$。
+这表明矩阵 $A$ 的非奇异M-矩阵 $A^{\dagger} = \begin{pmatrix} 0.5 & 0.5 \ -0.5 & -0.5 \end{pmatrix}$。
 
 ## 6. 实际应用场景
 ### 6.1 线性方程组的求解

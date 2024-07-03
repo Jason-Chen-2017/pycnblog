@@ -100,7 +100,7 @@
 $$
 f(x) =
 \begin{cases} 
-0 & \text{if } x < 0 \\
+0 & \text{if } x < 0 \
 x & \text{if } x \geq 0
 \end{cases}
 $$

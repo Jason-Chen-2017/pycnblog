@@ -88,21 +88,21 @@
 
 ### 4.1 数学模型构建
 
-假设我们有一系列任务集 $\\mathcal{T} = \\{T_1, T_2, ..., T_n\\}$，每个任务 $T_i$ 都可以表示为输入 $x$ 和输出 $y$ 的函数。元学习的目标是找到一组元参数 $\\theta$，使得模型在新任务上的表现尽可能好。
+假设我们有一系列任务集 $\mathcal{T} = \{T_1, T_2, ..., T_n\}$，每个任务 $T_i$ 都可以表示为输入 $x$ 和输出 $y$ 的函数。元学习的目标是找到一组元参数 $\theta$，使得模型在新任务上的表现尽可能好。
 
-**损失函数**：对于每个任务 $T_i$，我们定义损失函数 $L_i(\\theta, x, y)$ 表示模型预测与实际输出之间的差距。
+**损失函数**：对于每个任务 $T_i$，我们定义损失函数 $L_i(\theta, x, y)$ 表示模型预测与实际输出之间的差距。
 
-**元参数**：我们通过最小化元损失函数 $L_{meta}(\\theta)$ 来找到元参数 $\\theta$：
+**元参数**：我们通过最小化元损失函数 $L_{meta}(\theta)$ 来找到元参数 $\theta$：
 
-$$L_{meta}(\\theta) = \\frac{1}{n}\\sum_{i=1}^{n}L_i(\\theta)$$
+$$L_{meta}(\theta) = \frac{1}{n}\sum_{i=1}^{n}L_i(\theta)$$
 
 ### 4.2 公式推导过程
 
 在元梯度方法中，我们通过计算梯度估计来更新元参数：
 
-$$\\Delta\\theta = \\frac{1}{n}\\sum_{i=1}^{n}(L_i(\\theta) - L_i(\\theta + \\delta\\theta))$$
+$$\Delta\theta = \frac{1}{n}\sum_{i=1}^{n}(L_i(\theta) - L_i(\theta + \delta\theta))$$
 
-这里 $\\delta\\theta$ 是学习率，用于控制参数更新的速度。
+这里 $\delta\theta$ 是学习率，用于控制参数更新的速度。
 
 ### 4.3 案例分析与讲解
 
@@ -158,7 +158,7 @@ outputs = [torch.rand(10, 1), torch.rand(10, 1)]
 dataset = MetaDataset(tasks, inputs, outputs)
 
 # 训练循环
-device = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = LinearRegression().to(device)
 optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
 

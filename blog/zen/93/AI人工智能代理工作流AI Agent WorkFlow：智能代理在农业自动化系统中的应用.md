@@ -153,8 +153,8 @@ $$
 $$
 R(s, a) = 
 \begin{cases} 
-10 & \text{if } s = s_1 \text{ and } a = a_1 \\
--1 & \text{if } s = s_2 \text{ and } a = a_2 \\
+10 & \text{if } s = s_1 \text{ and } a = a_1 \
+-1 & \text{if } s = s_2 \text{ and } a = a_2 \
 0 & \text{otherwise} 
 \end{cases}
 $$

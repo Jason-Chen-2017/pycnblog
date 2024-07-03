@@ -297,7 +297,7 @@ class Node:
         self.children.append(child_node)
 
     def _build_mermaid_graph(self) -> str:
-        graph_str = f"{self.name} [label=\"{self.name}\"]\n"
+        graph_str = f"{self.name} [label="{self.name}"]\n"
         for child in self.children:
             graph_str += f"{child.name} --> {self.name};\n"
             graph_str += child._build_mermaid_graph()

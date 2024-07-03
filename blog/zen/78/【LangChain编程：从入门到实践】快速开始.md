@@ -183,7 +183,7 @@ $$\sum_{i=1}^{m}(y_i - \beta_0 - \beta_1 x_{i1} - ... - \beta_n x_{in})^2 = \min
 对$\beta_j(j=0,1,...,n)$分别求偏导数并令其等于0,可得到normal方程组:
 
 $$\begin{cases}
-\sum_{i=1}^{m}(y_i - \beta_0 - \beta_1 x_{i1} - ... - \beta_n x_{in}) = 0\\
+\sum_{i=1}^{m}(y_i - \beta_0 - \beta_1 x_{i1} - ... - \beta_n x_{in}) = 0\
 \sum_{i=1}^{m}x_{ij}(y_i - \beta_0 - \beta_1 x_{i1} - ... - \beta_n x_{in}) = 0, & j=1,2,...,n
 \end{cases}$$
 

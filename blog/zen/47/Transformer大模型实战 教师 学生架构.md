@@ -83,8 +83,8 @@ Transformer模型是一种基于自注意力机制的深度神经网络，其核
 
 $$
 \begin{align*}
-\text{Teacher\_Model}(x) &= f_{\theta_{teacher}}(x) \\
-\text{Student\_Model}(x) &= f_{\theta_{student}}(x) \\
+\text{Teacher\_Model}(x) &= f_{\theta_{teacher}}(x) \
+\text{Student\_Model}(x) &= f_{\theta_{student}}(x) \
 \text{Loss}(x) &= L(f_{\theta_{teacher}}(x), f_{\theta_{student}}(x))
 \end{align*}
 $$

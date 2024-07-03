@@ -97,7 +97,7 @@ Kafka-Spark Streaming整合广泛应用于以下领域：
 在Spark Streaming中，数据处理通常通过RDD操作实现，以下是一个简化版本的RDD操作链：
 
 $$
-\\text{input} \\xrightarrow{\\text{map}} \\text{output}
+\text{input} \xrightarrow{\text{map}} \text{output}
 $$
 
 其中，
@@ -154,9 +154,9 @@ public class KafkaProducer {
 
     public KafkaProducer() {
         props = new Properties();
-        props.put(\"bootstrap.servers\", \"localhost:9092\");
-        props.put(\"key.serializer\", StringSerializer.class.getName());
-        props.put(\"value.serializer\", StringSerializer.class.getName());
+        props.put("bootstrap.servers", "localhost:9092");
+        props.put("key.serializer", StringSerializer.class.getName());
+        props.put("value.serializer", StringSerializer.class.getName());
     }
 
     public void send(String topic, String message) {
@@ -169,7 +169,7 @@ public class KafkaProducer {
 
     public static void main(String[] args) {
         KafkaProducer kp = new KafkaProducer();
-        kp.send(\"click_events\", \"User clicked on page: example.com\");
+        kp.send("click_events", "User clicked on page: example.com");
     }
 }
 ```
@@ -182,20 +182,20 @@ import org.apache.spark.streaming.{Seconds, StreamingContext}
 
 object SparkStreamingExample {
   def main(args: Array[String]): Unit = {
-    val conf = new SparkConf().setAppName(\"KafkaSparkStreaming\").setMaster(\"local[2]\")
+    val conf = new SparkConf().setAppName("KafkaSparkStreaming").setMaster("local[2]")
     val ssc = new StreamingContext(conf, Seconds(1))
 
-    ssc.sparkContext.addFile(\"target/kafka-streaming-spark.jar\")
+    ssc.sparkContext.addFile("target/kafka-streaming-spark.jar")
 
     val kafkaParams = Map(
-      \"metadata.broker.list\" -> \"localhost:9092\",
-      \"group.id\" -> \"spark-streaming-example-group-id\",
-      \"enable.auto.commit\" -> true,
-      \"key.deserializer\" -> \"org.apache.kafka.common.serialization.StringDeserializer\",
-      \"value.deserializer\" -> \"org.apache.kafka.common.serialization.StringDeserializer\"
+      "metadata.broker.list" -> "localhost:9092",
+      "group.id" -> "spark-streaming-example-group-id",
+      "enable.auto.commit" -> true,
+      "key.deserializer" -> "org.apache.kafka.common.serialization.StringDeserializer",
+      "value.deserializer" -> "org.apache.kafka.common.serialization.StringDeserializer"
     )
 
-    val stream = ssc.socketTextStream(\"localhost\", 9999)
+    val stream = ssc.socketTextStream("localhost", 9999)
 
     stream.foreachRDD { rdd =>
       rdd.foreach { line =>

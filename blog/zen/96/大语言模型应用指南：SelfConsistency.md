@@ -116,12 +116,12 @@ abla_{\pi}R(\mathcal{S}, \mathcal{A})$，表示LLM在动作 $\mathcal{A}$ 下的
 
 $$
 \begin{align*}
-V(\mathcal{S}) &= \mathbb{E}_{\pi(\mathcal{S})}\left[R(\mathcal{S}, \pi(\mathcal{S}))\right] \\
+V(\mathcal{S}) &= \mathbb{E}_{\pi(\mathcal{S})}\left[R(\mathcal{S}, \pi(\mathcal{S}))\right] \
 \
 abla_{\pi}V(\mathcal{S}) &= \
-abla_{\pi}\mathbb{E}_{\pi(\mathcal{S})}\left[R(\mathcal{S}, \pi(\mathcal{S}))\right] \\
+abla_{\pi}\mathbb{E}_{\pi(\mathcal{S})}\left[R(\mathcal{S}, \pi(\mathcal{S}))\right] \
 &= \mathbb{E}_{\pi(\mathcal{S})}\left[\
-abla_{\pi}R(\mathcal{S}, \pi(\mathcal{S}))\right] \\
+abla_{\pi}R(\mathcal{S}, \pi(\mathcal{S}))\right] \
 &= \mathbb{E}_{\pi(\mathcal{S})}\left[\
 abla_{\pi}R(\mathcal{S}, a)\right]_{a=\pi(\mathcal{S})}
 \end{align*}

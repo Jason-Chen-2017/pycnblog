@@ -68,7 +68,7 @@ Pig Latin的实现主要是基于字符串操作和条件判断,并没有涉及�
 整个过程可以用以下公式表示:
 
 $PigLatin(word) = \begin{cases}
-word + "ay", & \text{if } word[0] \in \{"a", "e", "i", "o", "u"\} \\
+word + "ay", & \text{if } word[0] \in \{"a", "e", "i", "o", "u"\} \
 word[1:] + word[0] + "ay", & \text{otherwise}
 \end{cases}$
 

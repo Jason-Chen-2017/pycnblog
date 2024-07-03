@@ -135,7 +135,7 @@ abla_{\theta} J(\theta) = \sum_{i=1}^n \pi(a_i | \theta) \frac{\partial J(\theta
 假设我们有一个环境，状态空间为$S$，动作空间为$A$，初始策略$\theta_0$为随机策略。我们使用$\epsilon$-greedy策略来探索未知状态，即：
 
 $$\epsilon-greedy(\theta) = \begin{cases} 
-\frac{1}{|\mathcal{A}|} & \text{with probability } 1-\epsilon \\
+\frac{1}{|\mathcal{A}|} & \text{with probability } 1-\epsilon \
 \arg\max_{a \in \mathcal{A}} Q(\theta, s, a) & \text{with probability } \epsilon 
 \end{cases}$$
 

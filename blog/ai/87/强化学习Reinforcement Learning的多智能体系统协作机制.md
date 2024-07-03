@@ -152,7 +152,7 @@ $$
 - **动作空间**：$A = \{ (x_i', y_i') | x_i', y_i' \in \mathbb{N} \}$
 - **策略空间**：$\Pi = \{ \pi_i(s_i) | s_i \in S, \pi_i(s_i) \in A \}$
 - **奖励函数**：$R(s, a) = \begin{cases} -1, & \text{if } c_i \
-eq 0 \\ -d(s, a), & \text{if } c_i = 0 \end{cases}$
+eq 0 \ -d(s, a), & \text{if } c_i = 0 \end{cases}$
 
 其中，$d(s, a)$ 表示从状态 $s$ 移动到动作 $a$ 的距离。
 

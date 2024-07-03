@@ -108,9 +108,9 @@ $$
 为了求解损失函数的最小值，我们对$\beta_0, \beta_1, \dots, \beta_n$分别进行偏导数求导，并令导数为0，得到以下方程组：
 
 $$
-\frac{\partial J(\beta)}{\partial \beta_0} = 0 \\
-\frac{\partial J(\beta)}{\partial \beta_1} = 0 \\
-\vdots \\
+\frac{\partial J(\beta)}{\partial \beta_0} = 0 \
+\frac{\partial J(\beta)}{\partial \beta_1} = 0 \
+\vdots \
 \frac{\partial J(\beta)}{\partial \beta_n} = 0
 $$
 

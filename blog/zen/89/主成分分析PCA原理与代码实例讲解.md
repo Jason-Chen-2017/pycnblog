@@ -122,9 +122,9 @@ PCA的数学模型如下：
 $$
 X = 
 \begin{bmatrix}
-1 & 2 \\
-3 & 4 \\
-5 & 6 \\
+1 & 2 \
+3 & 4 \
+5 & 6 \
 \end{bmatrix}
 $$
 
@@ -133,14 +133,14 @@ $$
 $$
 Z = \frac{1}{\sqrt{2}}
 \begin{bmatrix}
-1 & 2 \\
-3 & 4 \\
-5 & 6 \\
+1 & 2 \
+3 & 4 \
+5 & 6 \
 \end{bmatrix} = 
 \begin{bmatrix}
-\frac{1}{\sqrt{2}} & \frac{2}{\sqrt{2}} \\
-\frac{3}{\sqrt{2}} & \frac{4}{\sqrt{2}} \\
-\frac{5}{\sqrt{2}} & \frac{6}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}} & \frac{2}{\sqrt{2}} \
+\frac{3}{\sqrt{2}} & \frac{4}{\sqrt{2}} \
+\frac{5}{\sqrt{2}} & \frac{6}{\sqrt{2}} \
 \end{bmatrix}
 $$
 
@@ -149,8 +149,8 @@ $$
 $$
 S = \frac{1}{4}
 \begin{bmatrix}
-\frac{1}{2} & \frac{5}{2} \\
-\frac{5}{2} & \frac{13}{2} \\
+\frac{1}{2} & \frac{5}{2} \
+\frac{5}{2} & \frac{13}{2} \
 \end{bmatrix}
 $$
 

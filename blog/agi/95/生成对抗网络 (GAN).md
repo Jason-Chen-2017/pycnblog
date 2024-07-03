@@ -96,7 +96,7 @@ GAN的数学模型可以表示为：
 
 $$
 \begin{align*}
-G(z) &= \mathbb{R}^{D \times H \times W} \\
+G(z) &= \mathbb{R}^{D \times H \times W} \
 D(x) &= \mathbb{R}
 \end{align*}
 $$
@@ -109,7 +109,7 @@ GAN的目标是最小化以下两个损失函数：
 
 $$
 \begin{align*}
-\text{loss\_G} &= \mathbb{E}_{z \sim p(z)}[\log D(G(z))] \\
+\text{loss\_G} &= \mathbb{E}_{z \sim p(z)}[\log D(G(z))] \
 \text{loss\_D} &= \mathbb{E}_{x \sim p(x)}[\log D(x)] + \mathbb{E}_{z \sim p(z)}[\log (1 - D(G(z))]
 \end{align*}
 $$

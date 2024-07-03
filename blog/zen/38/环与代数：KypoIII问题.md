@@ -108,8 +108,8 @@ $$f(\lambda) = \text{det}(A - \lambda I)$$
 其中，$A - \lambda I$是一个$n \times n$的矩阵，其元素为：
 
 $$A_{ij} - \lambda = \begin{cases} 
-1, & \text{如果顶点i和顶点j之间有边} \\
--1, & \text{如果顶点i和顶点j之间没有边} \\
+1, & \text{如果顶点i和顶点j之间有边} \
+-1, & \text{如果顶点i和顶点j之间没有边} \
 0, & \text{其他情况}
 \end{cases}$$
 
@@ -126,18 +126,18 @@ $$A_{ij} - \lambda = \begin{cases}
 假设有一个无向图G，其邻接矩阵为：
 
 $$A = \begin{bmatrix}
-0 & 1 & 0 & 0 \\
-1 & 0 & 1 & 0 \\
-0 & 1 & 0 & 1 \\
+0 & 1 & 0 & 0 \
+1 & 0 & 1 & 0 \
+0 & 1 & 0 & 1 \
 0 & 0 & 1 & 0
 \end{bmatrix}$$
 
 首先，构建特征多项式：
 
 $$f(\lambda) = \text{det}\begin{bmatrix}
--\lambda & 1 & 0 & 0 \\
-1 & -\lambda & 1 & 0 \\
-0 & 1 & -\lambda & 1 \\
+-\lambda & 1 & 0 & 0 \
+1 & -\lambda & 1 & 0 \
+0 & 1 & -\lambda & 1 \
 0 & 0 & 1 & -\lambda
 \end{bmatrix}$$
 

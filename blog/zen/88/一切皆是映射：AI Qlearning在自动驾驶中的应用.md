@@ -162,11 +162,11 @@ $$Q(s, a) = \sum_{a' \in A} \pi(a' | s) [r + \gamma \max_{a'' \in A} Q(s', a'')]
 $$
 \begin{array}{|c|c|c|c|}
 \hline
- & \text{直行} & \text{左转} & \text{右转} \\
+ & \text{直行} & \text{左转} & \text{右转} \
 \hline
-\text{直行} & 0 & 0 & 0 \\
-\text{左转} & 0 & 0 & 0 \\
-\text{右转} & 0 & 0 & 0 \\
+\text{直行} & 0 & 0 & 0 \
+\text{左转} & 0 & 0 & 0 \
+\text{右转} & 0 & 0 & 0 \
 \hline
 \end{array}
 $$
@@ -176,11 +176,11 @@ $$
 $$
 \begin{array}{|c|c|c|c|}
 \hline
- & \text{直行} & \text{左转} & \text{右转} \\
+ & \text{直行} & \text{左转} & \text{右转} \
 \hline
-\text{直行} & 10.2 & 4.8 & -1.2 \\
-\text{左转} & 9.5 & 5.2 & -2.2 \\
-\text{右转} & 8.0 & 4.7 & -3.0 \\
+\text{直行} & 10.2 & 4.8 & -1.2 \
+\text{左转} & 9.5 & 5.2 & -2.2 \
+\text{右转} & 8.0 & 4.7 & -3.0 \
 \hline
 \end{array}
 $$

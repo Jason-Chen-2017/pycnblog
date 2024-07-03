@@ -91,9 +91,9 @@ AdaGrad优化器的数学模型如下：
 
 $$
 \begin{aligned}
-\eta_k &= \frac{\eta_0}{\sqrt{d_k^2} + \epsilon} \\
+\eta_k &= \frac{\eta_0}{\sqrt{d_k^2} + \epsilon} \
 \theta_k &= \theta_{k-1} - \eta_k \
-abla J(\theta_k) \\
+abla J(\theta_k) \
 d_k^2 &= d_k^2 + \
 abla J(\theta_k)^2
 \end{aligned}

@@ -4,7 +4,7 @@
 
 ### 1.1 问题的由来
 
-Dirichlet级数是一类在数论中极为重要的函数，它们在解析数论、代数数论以及调和分析等领域具有广泛的应用。Dirichlet级数通常被定义为形如$\\sum_{n=1}^{\\infty} \\frac{a_n}{n^s}$的形式，其中$a_n$是复数系数序列，$s$是复变量。这类级数之所以重要，是因为它们能够关联到许多数论中的重要函数，比如黎曼ζ函数，以及Dirichlet$L$函数。黎曼ζ函数$\\zeta(s)=\\sum_{n=1}^{\\infty} \\frac{1}{n^s}$是一个典型的Dirichlet级数，而Dirichlet$L$函数则关联着模$m$的完全乘法性函数$f(n)$的级数$\\sum_{n=1}^{\\infty} \\frac{f(n)}{n^s}$。
+Dirichlet级数是一类在数论中极为重要的函数，它们在解析数论、代数数论以及调和分析等领域具有广泛的应用。Dirichlet级数通常被定义为形如$\sum_{n=1}^{\infty} \frac{a_n}{n^s}$的形式，其中$a_n$是复数系数序列，$s$是复变量。这类级数之所以重要，是因为它们能够关联到许多数论中的重要函数，比如黎曼ζ函数，以及Dirichlet$L$函数。黎曼ζ函数$\zeta(s)=\sum_{n=1}^{\infty} \frac{1}{n^s}$是一个典型的Dirichlet级数，而Dirichlet$L$函数则关联着模$m$的完全乘法性函数$f(n)$的级数$\sum_{n=1}^{\infty} \frac{f(n)}{n^s}$。
 
 ### 1.2 研究现状
 
@@ -20,7 +20,7 @@ Dirichlet级数的研究不仅推动了数论的发展，还在密码学、信�
 
 ## 2. 核心概念与联系
 
-Dirichlet级数是数论中的核心概念之一，其基本形式为$\\sum_{n=1}^{\\infty} \\frac{a_n}{n^s}$，其中$a_n$是一个复数序列，$s$是复数。在数论中，这些级数常常用来描述和分析整数序列的性质。Dirichlet级数与黎曼ζ函数、Dirichlet$L$函数紧密相关，后者是模$m$的复数函数$f(n)$的级数$\\sum_{n=1}^{\\infty} \\frac{f(n)}{n^s}$。这些级数的理论基础包括复分析、傅里叶分析以及代数结构。
+Dirichlet级数是数论中的核心概念之一，其基本形式为$\sum_{n=1}^{\infty} \frac{a_n}{n^s}$，其中$a_n$是一个复数序列，$s$是复数。在数论中，这些级数常常用来描述和分析整数序列的性质。Dirichlet级数与黎曼ζ函数、Dirichlet$L$函数紧密相关，后者是模$m$的复数函数$f(n)$的级数$\sum_{n=1}^{\infty} \frac{f(n)}{n^s}$。这些级数的理论基础包括复分析、傅里叶分析以及代数结构。
 
 ## 3. 核心算法原理与具体操作步骤
 
@@ -31,13 +31,13 @@ Dirichlet级数的运算涉及级数的求和、收敛性判断、函数的解�
 ### 3.2 算法步骤详解
 
 #### 步骤1：收敛性判断
-- **Dirichlet收敛准则**：如果序列$\\{a_n\\}$满足$\\lim_{n \\to \\infty} \\frac{|a_n|}{\\log n} = 0$，且$\\sum_{n=1}^{\\infty} |a_n|$收敛，则级数$\\sum_{n=1}^{\\infty} \\frac{a_n}{n^s}$在$\\Re(s) > \\sigma$时收敛，其中$\\sigma$是某个正数。
+- **Dirichlet收敛准则**：如果序列$\{a_n\}$满足$\lim_{n \to \infty} \frac{|a_n|}{\log n} = 0$，且$\sum_{n=1}^{\infty} |a_n|$收敛，则级数$\sum_{n=1}^{\infty} \frac{a_n}{n^s}$在$\Re(s) > \sigma$时收敛，其中$\sigma$是某个正数。
 
 #### 步骤2：函数的解析延拓
-- **黎曼ζ函数的解析延拓**：通过将级数$\\zeta(s) = \\sum_{n=1}^{\\infty} \\frac{1}{n^s}$在$\\Re(s) > 1$时的收敛域扩展至整个复平面，除了$s=1$处的唯一奇点。
+- **黎曼ζ函数的解析延拓**：通过将级数$\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}$在$\Re(s) > 1$时的收敛域扩展至整个复平面，除了$s=1$处的唯一奇点。
 
 #### 步骤3：零点理论
-- **非平凡零点**：对于$\\zeta(s)$，所有非平凡零点都在$\\Re(s) = \\frac{1}{2}$的直线上的猜想是黎曼假设的核心内容。
+- **非平凡零点**：对于$\zeta(s)$，所有非平凡零点都在$\Re(s) = \frac{1}{2}$的直线上的猜想是黎曼假设的核心内容。
 
 ### 3.3 算法优缺点
 
@@ -57,25 +57,25 @@ Dirichlet级数的运算涉及级数的求和、收敛性判断、函数的解�
 
 设$a_n$为复数序列，$s$为复数，Dirichlet级数可表示为：
 
-$$D(a,s) = \\sum_{n=1}^{\\infty} \\frac{a_n}{n^s}$$
+$$D(a,s) = \sum_{n=1}^{\infty} \frac{a_n}{n^s}$$
 
 ### 4.2 公式推导过程
 
 考虑黎曼ζ函数的一个特例：
 
-$$\\zeta(s) = \\sum_{n=1}^{\\infty} \\frac{1}{n^s}$$
+$$\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}$$
 
-通过引入$a_n = \\delta_{n,1}$（Kronecker delta），即序列仅在$n=1$时为1，其余均为0，我们得到$\\zeta(s)$的定义。
+通过引入$a_n = \delta_{n,1}$（Kronecker delta），即序列仅在$n=1$时为1，其余均为0，我们得到$\zeta(s)$的定义。
 
 ### 4.3 案例分析与讲解
 
-取$a_n = \\mu(n)$，黎曼莫比乌斯函数，定义：
+取$a_n = \mu(n)$，黎曼莫比乌斯函数，定义：
 
-$$M(s) = \\sum_{n=1}^{\\infty} \\frac{\\mu(n)}{n^s}$$
+$$M(s) = \sum_{n=1}^{\infty} \frac{\mu(n)}{n^s}$$
 
 该级数是黎曼ζ函数的倒数：
 
-$$\\zeta(s) = \\sum_{n=1}^{\\infty} \\frac{1}{n^s} = \\frac{1}{M(s)}$$
+$$\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s} = \frac{1}{M(s)}$$
 
 ### 4.4 常见问题解答
 
@@ -106,7 +106,7 @@ def dirichlet_series(a, s):
 a_n = [1 for _ in range(10)]
 s = 2
 result = dirichlet_series(a_n, s)
-print(f\"Sum of Dirichlet series for first 10 terms: {result}\")
+print(f"Sum of Dirichlet series for first 10 terms: {result}")
 ```
 
 ### 5.3 代码解读与分析
@@ -174,7 +174,7 @@ print(f\"Sum of Dirichlet series for first 10 terms: {result}\")
 ### 常见问题解答
 
 #### Q: 如何判断Dirichlet级数的收敛性？
-A: 使用Dirichlet收敛准则，即检查序列$\\{a_n\\}$是否满足$\\lim_{n \\to \\infty} \\frac{|a_n|}{\\log n} = 0$，且$\\sum_{n=1}^{\\infty} |a_n|$收敛。若满足这两个条件，则级数在$\\Re(s) > \\sigma$时收敛，其中$\\sigma$是某个正数。
+A: 使用Dirichlet收敛准则，即检查序列$\{a_n\}$是否满足$\lim_{n \to \infty} \frac{|a_n|}{\log n} = 0$，且$\sum_{n=1}^{\infty} |a_n|$收敛。若满足这两个条件，则级数在$\Re(s) > \sigma$时收敛，其中$\sigma$是某个正数。
 
 #### Q: 如何计算Dirichlet级数的零点？
 A: 计算Dirichlet级数的零点通常涉及到复变函数理论和数值分析。对于特定的序列$a_n$，可能需要通过数值积分、求根算法等方法来近似解。黎曼ζ函数的零点可以通过数值方法进行求解，但非平凡零点的确切位置仍然是黎曼猜想中的未解难题。

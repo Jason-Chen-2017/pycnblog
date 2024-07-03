@@ -139,10 +139,10 @@
 - **LSTM单元**：LSTM单元由三个门（输入门、遗忘门、输出门）和三个单元（输入层、遗忘层、输出层）组成。输入门控制信息的输入，遗忘门控制信息的遗忘，输出门控制信息的输出。
 
 $$
-i_t = \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i) \\
-f_t = \sigma(W_{xf}x_t + W_{hf}h_{t-1} + b_f) \\
-o_t = \sigma(W_{xo}x_t + W_{ho}h_{t-1} + b_o) \\
-g_t = \tanh(W_{xg}x_t + W_{hg}h_{t-1} + b_g) \\
+i_t = \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i) \
+f_t = \sigma(W_{xf}x_t + W_{hf}h_{t-1} + b_f) \
+o_t = \sigma(W_{xo}x_t + W_{ho}h_{t-1} + b_o) \
+g_t = \tanh(W_{xg}x_t + W_{hg}h_{t-1} + b_g) \
 h_t = o_t \odot g_t
 $$
 

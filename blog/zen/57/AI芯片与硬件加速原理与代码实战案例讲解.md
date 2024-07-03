@@ -47,7 +47,7 @@ A --> I[硬件加速]
 
 $$
 \begin{aligned}
-\operatorname{Conv}(I, K)_{x, y} &=\sum_{i} \sum_{j} I(x+i, y+j) K(i, j) \\
+\operatorname{Conv}(I, K)_{x, y} &=\sum_{i} \sum_{j} I(x+i, y+j) K(i, j) \
 &=\sum_{i} \sum_{j} I(i, j) K(x-i, y-j)
 \end{aligned}
 $$
@@ -74,9 +74,9 @@ GRU的数学公式如下：
 
 $$
 \begin{aligned}
-z_t &=\sigma\left(W_z \cdot\left[h_{t-1}, x_t\right]\right) \\
-r_t &=\sigma\left(W_r \cdot\left[h_{t-1}, x_t\right]\right) \\
-\tilde{h}_t &=\tanh \left(W \cdot\left[r_t * h_{t-1}, x_t\right]\right) \\
+z_t &=\sigma\left(W_z \cdot\left[h_{t-1}, x_t\right]\right) \
+r_t &=\sigma\left(W_r \cdot\left[h_{t-1}, x_t\right]\right) \
+\tilde{h}_t &=\tanh \left(W \cdot\left[r_t * h_{t-1}, x_t\right]\right) \
 h_t &=\left(1-z_t\right) * h_{t-1}+z_t * \tilde{h}_t
 \end{aligned}
 $$

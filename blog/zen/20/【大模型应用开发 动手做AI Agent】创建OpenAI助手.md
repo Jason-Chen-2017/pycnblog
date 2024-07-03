@@ -108,7 +108,7 @@ AI助手广泛应用于个人助理、客户服务、教育、医疗、金融、
 Transformer模型是基于注意力机制的多头自注意力（Multi-Head Attention）结构，它通过并行处理来加速计算，提高模型的效率。核心公式之一是自注意力机制的计算：
 
 $$
-\\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
 $$
 
 其中，$Q$是查询矩阵，$K$是键矩阵，$V$是值矩阵，$d_k$是键向量的维度。
@@ -118,7 +118,7 @@ $$
 在构建大型语言模型时，通常会使用交叉熵损失函数来衡量模型预测的分布与实际分布之间的差异：
 
 $$
-L(p, q) = -\\sum_x p(x) \\log q(x)
+L(p, q) = -\sum_x p(x) \log q(x)
 $$
 
 其中，$p(x)$是真实的概率分布，$q(x)$是模型预测的概率分布。
@@ -152,13 +152,13 @@ $$
 ```python
 from transformers import pipeline
 
-qa_pipeline = pipeline(\"question-answering\", model=\"distilbert-base-cased-distilled-squad\", tokenizer=\"distilbert-base-cased\")
+qa_pipeline = pipeline("question-answering", model="distilbert-base-cased-distilled-squad", tokenizer="distilbert-base-cased")
 
-question = \"What is the capital of France?\"
-context = \"The capital of France is Paris.\"
+question = "What is the capital of France?"
+context = "The capital of France is Paris."
 
 answer = qa_pipeline(question=question, context=context)
-print(f\"The answer is {answer['answer']}\")
+print(f"The answer is {answer['answer']}")
 ```
 
 ### 5.3 代码解读与分析
@@ -201,8 +201,8 @@ The answer is Paris
 
 ### 7.3 相关论文推荐
 
-- **Transformer**：Vaswani等人，\"Attention is All You Need\"，2017年
-- **大型语言模型**：Brown等人，\"Language Models are Unsupervised Multitask Learners\"，2020年
+- **Transformer**：Vaswani等人，"Attention is All You Need"，2017年
+- **大型语言模型**：Brown等人，"Language Models are Unsupervised Multitask Learners"，2020年
 
 ### 7.4 其他资源推荐
 

@@ -148,7 +148,7 @@ Flink 的 Checkpoint 可以表示为以下数学模型：
 
 $$
 \phi(s, o) = \begin{cases} 
-s & \text{if } o = checkpoint \\
+s & \text{if } o = checkpoint \
 s & \text{if } o \
 e checkpoint 
 \end{cases}

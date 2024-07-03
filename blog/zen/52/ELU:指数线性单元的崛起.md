@@ -34,7 +34,7 @@ $$
 
 $$
 \text{ELU}(x) = \begin{cases}
-x, & \text{if } x > 0\\
+x, & \text{if } x > 0\
 \alpha(e^x - 1), & \text{if } x \leq 0
 \end{cases}
 $$
@@ -101,7 +101,7 @@ def elu_grad(x, alpha=1.0):
 
 $$
 \text{ELU}(x) = \begin{cases}
-x, & \text{if } x > 0\\
+x, & \text{if } x > 0\
 \alpha(e^x - 1), & \text{if } x \leq 0
 \end{cases}
 $$
@@ -122,7 +122,7 @@ ELU的导数定义如下:
 
 $$
 \text{ELU}'(x) = \begin{cases}
-1, & \text{if } x > 0\\
+1, & \text{if } x > 0\
 \alpha e^x, & \text{if } x \leq 0
 \end{cases}
 $$

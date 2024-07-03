@@ -152,13 +152,13 @@ $$
 $$
 R(s,a) = 
 \begin{cases} 
-+1, & \text{if } a = a_1, s = s_1 \\
-+2, & \text{if } a = a_2, s = s_2 \\
-+3, & \text{if } a = a_3, s = s_3 \\
++1, & \text{if } a = a_1, s = s_1 \
++2, & \text{if } a = a_2, s = s_2 \
++3, & \text{if } a = a_3, s = s_3 \
 -1, & \text{if } a \
-eq a_1, s = s_1 \\
+eq a_1, s = s_1 \
 -2, & \text{if } a \
-eq a_2, s = s_2 \\
+eq a_2, s = s_2 \
 -3, & \text{if } a \
 eq a_3, s = s_3 
 \end{cases}
@@ -241,16 +241,16 @@ $$
 $$
 R(s,a) = 
 \begin{cases} 
-+1, & \text{if } a = a_1, s = s_1 \\
-+1, & \text{if } a = a_2, s = s_2 \\
-+1, & \text{if } a = a_3, s = s_3 \\
-+1, & \text{if } a = a_4, s = s_4 \\
++1, & \text{if } a = a_1, s = s_1 \
++1, & \text{if } a = a_2, s = s_2 \
++1, & \text{if } a = a_3, s = s_3 \
++1, & \text{if } a = a_4, s = s_4 \
 -1, & \text{if } a \
-eq a_1, s = s_1 \\
+eq a_1, s = s_1 \
 -1, & \text{if } a \
-eq a_2, s = s_2 \\
+eq a_2, s = s_2 \
 -1, & \text{if } a \
-eq a_3, s = s_3 \\
+eq a_3, s = s_3 \
 -1, & \text{if } a \
 eq a_4, s = s_4 
 \end{cases}
@@ -263,9 +263,9 @@ $$
 $$
 \begin{array}{|c|c|c|c|c|}
 \hline
-s & a_1 & a_2 & a_3 & a_4 \\
+s & a_1 & a_2 & a_3 & a_4 \
 \hline
-s_0 & 0 & 0 & 0 & 0 \\
+s_0 & 0 & 0 & 0 & 0 \
 \hline
 \end{array}
 $$
@@ -275,9 +275,9 @@ $$
 $$
 \begin{array}{|c|c|c|c|c|}
 \hline
-s & a_1 & a_2 & a_3 & a_4 \\
+s & a_1 & a_2 & a_3 & a_4 \
 \hline
-s_0 & 0.9 & 0.8 & 0.7 & 0.6 \\
+s_0 & 0.9 & 0.8 & 0.7 & 0.6 \
 \hline
 \end{array}
 $$

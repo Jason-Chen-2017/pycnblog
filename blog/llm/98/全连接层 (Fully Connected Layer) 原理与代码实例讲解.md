@@ -124,12 +124,12 @@ $$
 
 $$
 \text{output} = \begin{bmatrix}
-0.2 \cdot 1 + 0.3 \cdot 2 + 0.5 \\
-0.2 \cdot 1 + 0.3 \cdot 2 + 0.6 \\
+0.2 \cdot 1 + 0.3 \cdot 2 + 0.5 \
+0.2 \cdot 1 + 0.3 \cdot 2 + 0.6 \
 0.4 \cdot 1 + 0.4 \cdot 2 + 0.7
 \end{bmatrix} = \begin{bmatrix}
-0.9 \\
-1.1 \\
+0.9 \
+1.1 \
 2.1
 \end{bmatrix}
 $$

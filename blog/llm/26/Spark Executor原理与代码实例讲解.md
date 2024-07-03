@@ -68,7 +68,7 @@ Spark 的并行计算模型可以构建为一个分布式计算框架，其中�
 对于并行计算中的负载均衡问题，可以使用以下公式来估算每个 Executor 应承担的计算负载：
 
 $$
-\\text{负载均衡度} = \\frac{\\text{总任务数}}{\\text{Executor 数量}}
+\text{负载均衡度} = \frac{\text{总任务数}}{\text{Executor 数量}}
 $$
 
 ### 4.3 案例分析与讲解
@@ -103,14 +103,14 @@ import org.apache.spark.api.java.JavaSparkContext;
 
 public class SparkExecutorExample {
     public static void main(String[] args) {
-        SparkConf conf = new SparkConf().setAppName(\"Executor Example\").master(\"local[*]\");
+        SparkConf conf = new SparkConf().setAppName("Executor Example").master("local[*]");
         JavaSparkContext sc = new JavaSparkContext(conf);
 
         // 创建数据集
         JavaRDD<Integer> data = sc.parallelize(new Integer[]{1, 2, 3, 4, 5});
 
         // 执行计算任务
-        JavaPairRDD<Integer, String> result = data.mapToPair(x -> new Tuple2<>(x, \"Processed \" + x));
+        JavaPairRDD<Integer, String> result = data.mapToPair(x -> new Tuple2<>(x, "Processed " + x));
 
         // 输出结果
         result.collect().forEach(System.out::println);

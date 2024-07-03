@@ -67,17 +67,17 @@ Pontryagin对偶是数学领域中的一种对偶性理论，用于描述一组�
 
 假设存在一个弱乘子Hopf代数$H$，其结构包括：
 
-- **乘法**：$\\mu:H\\otimes H\\rightarrow H$
-- **乘子**：$\\Delta:H\\rightarrow H\\otimes H$
-- **单位元**：$e\\in H$
+- **乘法**：$\mu:H\otimes H\rightarrow H$
+- **乘子**：$\Delta:H\rightarrow H\otimes H$
+- **单位元**：$e\in H$
 
-其中，$\\mu$满足弱乘法性质，$\\Delta$满足弱乘子性质，$e$是单位元。
+其中，$\mu$满足弱乘法性质，$\Delta$满足弱乘子性质，$e$是单位元。
 
 ### 公式推导过程
 
 考虑两个弱乘子Hopf代数$H$和$K$，通过Pontryagin对偶映射$P$，我们可以建立如下关系：
 
-\\[P:H\\rightarrow K\\]
+$$P:H\rightarrow K$$
 
 这里，$P$是一个线性映射，使得$P$在乘法和乘子上的行为满足特定的对偶关系。具体的公式表达可以涉及双线性形式、对偶群的定义等。
 

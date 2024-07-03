@@ -80,7 +80,7 @@
 
 $$
 \begin{align*}
-G(\theta_g; z) &= G(z), \\
+G(\theta_g; z) &= G(z), \
 D(\theta_d; x) &= D(x),
 \end{align*}
 $$

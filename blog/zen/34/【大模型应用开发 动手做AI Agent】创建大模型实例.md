@@ -84,28 +84,28 @@
 
 大模型的数学模型构建通常基于概率分布和损失函数的概念。以生成文本为例，可以构建如下模型：
 
-$$P(\\textbf{w}_1,\\dots,\\textbf{w}_T|\\textbf{x}) = \\frac{1}{Z(\\textbf{x})}\\exp\\left(\\sum_{t=1}^T \\sum_{k=1}^K w_k \\cdot \\textbf{f}(\\textbf{x};\\theta)\\right)$$
+$$P(\textbf{w}_1,\dots,\textbf{w}_T|\textbf{x}) = \frac{1}{Z(\textbf{x})}\exp\left(\sum_{t=1}^T \sum_{k=1}^K w_k \cdot \textbf{f}(\textbf{x};\theta)\right)$$
 
 其中：
 
-- $\\textbf{w}_1,\\dots,\\textbf{w}_T$ 是生成文本的单词序列，
-- $\\textbf{x}$ 是输入特征，
+- $\textbf{w}_1,\dots,\textbf{w}_T$ 是生成文本的单词序列，
+- $\textbf{x}$ 是输入特征，
 - $K$ 是词汇表大小，
-- $\\textbf{f}(\\textbf{x};\\theta)$ 是模型的输出向量，
-- $Z(\\textbf{x})$ 是规范化因子。
+- $\textbf{f}(\textbf{x};\theta)$ 是模型的输出向量，
+- $Z(\textbf{x})$ 是规范化因子。
 
 ### 4.2 公式推导过程
 
 大模型的训练通常采用最大似然估计，目标是最优化下面的损失函数：
 
-$$\\mathcal{L}(\\theta) = -\\sum_{i=1}^N \\sum_{t=1}^{T_i} \\log P(\\textbf{w}_{t|1:t-1,i}|\\textbf{x}_{i})$$
+$$\mathcal{L}(\theta) = -\sum_{i=1}^N \sum_{t=1}^{T_i} \log P(\textbf{w}_{t|1:t-1,i}|\textbf{x}_{i})$$
 
 其中：
 
-- $\\theta$ 是模型参数，
+- $\theta$ 是模型参数，
 - $N$ 是样本数量，
 - $T_i$ 是第$i$个样本的序列长度，
-- $\\textbf{w}_{t|1:t-1,i}$ 表示序列$\\textbf{w}_1,\\dots,\\textbf{w}_T$中第$t$个元素，给定前$t-1$个元素。
+- $\textbf{w}_{t|1:t-1,i}$ 表示序列$\textbf{w}_1,\dots,\textbf{w}_T$中第$t$个元素，给定前$t-1$个元素。
 
 ### 4.3 案例分析与讲解
 
@@ -140,15 +140,15 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 # 加载预训练模型和分词器
-model_name = \"THUDM/kuangshi\"
+model_name = "THUDM/kuangshi"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
 # 输入文本
-input_text = \"Hello, world!\"
+input_text = "Hello, world!"
 
 # 分词
-input_ids = tokenizer.encode(input_text, return_tensors=\"pt\")
+input_ids = tokenizer.encode(input_text, return_tensors="pt")
 
 # 预测
 output = model.generate(input_ids, max_length=50)

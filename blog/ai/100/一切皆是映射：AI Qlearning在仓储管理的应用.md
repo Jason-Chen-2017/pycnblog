@@ -143,8 +143,8 @@ Q-learning算法在仓储管理中具有广泛的应用前景，以下列举几�
 $$
 R_t = 
 \begin{cases} 
-R_{in} & \text{如果} A_t = 1 \text{且货架 } t \text{ 上没有货物} \\
-R_{out} & \text{如果} A_t = 1 \text{且货架 } t \text{ 上有货物} \\
+R_{in} & \text{如果} A_t = 1 \text{且货架 } t \text{ 上没有货物} \
+R_{out} & \text{如果} A_t = 1 \text{且货架 } t \text{ 上有货物} \
 0 & \text{其他情况} 
 \end{cases}
 $$
@@ -207,7 +207,7 @@ $$
 p(a'|S_t,A_t) = 
 \begin{cases} 
 \epsilon & \text{如果} a' \
-eq \arg\max_{a'' \in A} Q(s',a'') \\
+eq \arg\max_{a'' \in A} Q(s',a'') \
 1 - \epsilon & \text{如果} a' = \arg\max_{a'' \in A} Q(s',a'') 
 \end{cases}
 $$
@@ -231,8 +231,8 @@ $$
 $$
 R_t = 
 \begin{cases} 
-R_{in} & \text{如果} A_t = 1 \text{且货架 } t \text{ 上没有货物} \\
-R_{out} & \text{如果} A_t = 1 \text{且货架 } t \text{ 上有货物} \\
+R_{in} & \text{如果} A_t = 1 \text{且货架 } t \text{ 上没有货物} \
+R_{out} & \text{如果} A_t = 1 \text{且货架 } t \text{ 上有货物} \
 0 & \text{其他情况} 
 \end{cases}
 $$
@@ -266,8 +266,8 @@ $$
 $$
 R_t = 
 \begin{cases} 
-1 & \text{如果} A_t = 1 \text{且货架 } t \text{ 上没有货物} \\
--1 & \text{如果} A_t = 1 \text{且货架 } t \text{ 上有货物} \\
+1 & \text{如果} A_t = 1 \text{且货架 } t \text{ 上没有货物} \
+-1 & \text{如果} A_t = 1 \text{且货架 } t \text{ 上有货物} \
 0 & \text{其他情况} 
 \end{cases}
 $$

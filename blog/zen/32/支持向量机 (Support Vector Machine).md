@@ -86,32 +86,32 @@ SVM 应用于多个领域，包括但不限于：
 
 对于线性可分的情况，SVM 的目标是最小化以下二次规划问题：
 
-$$ \\min \\frac{1}{2} w^T w + C \\sum_i \\xi_i $$
-$$ \\text{s.t.} \\quad y_i (w^T \\phi(x_i) + b) \\geq 1 - \\xi_i, \\quad \\xi_i \\geq 0 $$
+$$ \min \frac{1}{2} w^T w + C \sum_i \xi_i $$
+$$ \text{s.t.} \quad y_i (w^T \phi(x_i) + b) \geq 1 - \xi_i, \quad \xi_i \geq 0 $$
 
 其中：
 
-- \\( w \\) 是超平面的权重向量。
-- \\( \\phi(x_i) \\) 是特征映射函数。
-- \\( \\xi_i \\) 是松弛变量，用于处理误分类情况。
-- \\( C \\) 是惩罚系数，控制误分类代价和间隔大小之间的平衡。
+- \( w \) 是超平面的权重向量。
+- \( \phi(x_i) \) 是特征映射函数。
+- \( \xi_i \) 是松弛变量，用于处理误分类情况。
+- \( C \) 是惩罚系数，控制误分类代价和间隔大小之间的平衡。
 
 ### 4.2 公式推导过程
 
 在非线性可分的情况下，引入软间隔：
 
-$$ \\min \\frac{1}{2} w^T w + C \\sum_i \\xi_i $$
-$$ \\text{s.t.} \\quad y_i (w^T \\phi(x_i) + b) \\geq 1 - \\xi_i, \\quad \\xi_i \\geq 0 $$
+$$ \min \frac{1}{2} w^T w + C \sum_i \xi_i $$
+$$ \text{s.t.} \quad y_i (w^T \phi(x_i) + b) \geq 1 - \xi_i, \quad \xi_i \geq 0 $$
 
-通过引入拉格朗日乘子 \\( \\alpha_i \\)，得到拉格朗日函数：
+通过引入拉格朗日乘子 \( \alpha_i \)，得到拉格朗日函数：
 
-$$ L(w, b, \\xi, \\alpha) = \\frac{1}{2} w^T w + C \\sum_i \\xi_i - \\sum_i \\alpha_i[y_i(w^T \\phi(x_i) + b) - 1 + \\xi_i] $$
+$$ L(w, b, \xi, \alpha) = \frac{1}{2} w^T w + C \sum_i \xi_i - \sum_i \alpha_i[y_i(w^T \phi(x_i) + b) - 1 + \xi_i] $$
 
-通过求解拉格朗日乘子 \\( \\alpha_i \\)，得到支持向量和最优超平面。
+通过求解拉格朗日乘子 \( \alpha_i \)，得到支持向量和最优超平面。
 
 ### 4.3 案例分析与讲解
 
-考虑一个二维线性可分的数据集，使用线性核函数 \\( \\phi(x) = x \\) 和 \\( C = 1 \\)，求解 SVM 的决策边界。
+考虑一个二维线性可分的数据集，使用线性核函数 \( \phi(x) = x \) 和 \( C = 1 \)，求解 SVM 的决策边界。
 
 ### 4.4 常见问题解答
 
@@ -142,7 +142,7 @@ clf.fit(X, y)
 new_sample = np.array([[0.5, 0.5]])
 prediction = clf.predict(new_sample)
 
-print(f\"预测结果: {prediction}\")
+print(f"预测结果: {prediction}")
 ```
 
 ### 5.3 代码解读与分析
@@ -175,8 +175,8 @@ print(f\"预测结果: {prediction}\")
 
 ### 7.3 相关论文推荐
 
-- Cortes, Corinna, and Vladimir Vapnik. \"Support-vector networks.\" Machine learning 20.3 (1995): 273-297.
-- Schölkopf, Bernhard, et al. \"Support vector methods in statistics.\" The Annals of Statistics (2002): 1-42.
+- Cortes, Corinna, and Vladimir Vapnik. "Support-vector networks." Machine learning 20.3 (1995): 273-297.
+- Schölkopf, Bernhard, et al. "Support vector methods in statistics." The Annals of Statistics (2002): 1-42.
 
 ### 7.4 其他资源推荐
 
@@ -208,5 +208,5 @@ SVM 的未来研究可能集中在提高算法效率、增强可解释性、以�
 ### 常见问题解答
 
 - **如何提高 SVM 的训练速度？** 使用随机梯度下降或在线学习方法可以加快训练过程。
-- **如何处理不平衡的数据集？** 可以通过调整惩罚系数 \\( C \\) 来给不同类别的误分类赋予不同的成本。
+- **如何处理不平衡的数据集？** 可以通过调整惩罚系数 \( C \) 来给不同类别的误分类赋予不同的成本。
 - **如何提高 SVM 的可解释性？** 通过可视化支持向量和决策边界可以帮助理解模型决策过程。

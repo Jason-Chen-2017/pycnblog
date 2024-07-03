@@ -101,7 +101,7 @@ M3(R)和M34(R)的计算方法在以下领域具有广泛的应用：
 
 $$
 \begin{cases}
-2x + 3y = 7 \\
+2x + 3y = 7 \
 x - y = 2
 \end{cases}
 $$
@@ -110,25 +110,25 @@ $$
 
 $$
 \begin{bmatrix}
-2 & 3 \\
+2 & 3 \
 1 & -1
 \end{bmatrix}
 \begin{bmatrix}
-x \\
+x \
 y
 \end{bmatrix}
 =
 \begin{bmatrix}
-7 \\
+7 \
 2
 \end{bmatrix}
 $$
 
 其中，系数矩阵为 $\boldsymbol{A} = \begin{bmatrix}
-2 & 3 \\
+2 & 3 \
 1 & -1
 \end{bmatrix}$，增广矩阵为 $\left( \boldsymbol{A}, \boldsymbol{b} \right) = \begin{bmatrix}
-2 & 3 & | & 7 \\
+2 & 3 & | & 7 \
 1 & -1 & | & 2
 \end{bmatrix}$。
 
@@ -138,7 +138,7 @@ $$
 
 $$
 \begin{bmatrix}
-1 & -1 & | & 2 \\
+1 & -1 & | & 2 \
 0 & 5 & | & 3
 \end{bmatrix}
 $$
@@ -147,7 +147,7 @@ $$
 
 $$
 \begin{bmatrix}
-1 & 0 & | & \frac{1}{5} \\
+1 & 0 & | & \frac{1}{5} \
 0 & 1 & | & -\frac{3}{5}
 \end{bmatrix}
 $$
@@ -156,21 +156,21 @@ $$
 
 $$
 \begin{bmatrix}
-x \\
+x \
 y
 \end{bmatrix}
 =
 \begin{bmatrix}
-1 & 0 \\
+1 & 0 \
 0 & 1
 \end{bmatrix}
 \begin{bmatrix}
-\frac{1}{5} \\
+\frac{1}{5} \
 -\frac{3}{5}
 \end{bmatrix}
 =
 \begin{bmatrix}
-\frac{1}{5} \\
+\frac{1}{5} \
 -\frac{3}{5}
 \end{bmatrix}
 $$
@@ -182,7 +182,7 @@ $$
 以下是一个特征值分析的实例，展示M3(R)与M34(R)的应用。
 
 假设我们有一个矩阵 $\boldsymbol{A} = \begin{bmatrix}
-2 & 1 \\
+2 & 1 \
 -3 & -2
 \end{bmatrix}$，我们需要求出它的特征值和特征向量。
 
@@ -190,7 +190,7 @@ $$
 
 $$
 \text{det}(\lambda \boldsymbol{E} - \boldsymbol{A}) = \text{det} \begin{bmatrix}
-\lambda - 2 & -1 \\
+\lambda - 2 & -1 \
 3 & \lambda + 2
 \end{bmatrix}
 = (\lambda - 2)(\lambda + 2) - 3 = \lambda^2 - 4 - 3 = \lambda^2 - 7
@@ -210,22 +210,22 @@ $$
 
 $$
 \begin{bmatrix}
-\sqrt{7} - 2 & -1 \\
+\sqrt{7} - 2 & -1 \
 3 & \sqrt{7} + 2
 \end{bmatrix}
 \begin{bmatrix}
-x_1 \\
+x_1 \
 x_2
 \end{bmatrix}
 =
 \begin{bmatrix}
-0 \\
+0 \
 0
 \end{bmatrix}
 $$
 
 通过行变换，我们可以得到特征向量 $\boldsymbol{\alpha}_1 = \begin{bmatrix}
-1 \\
+1 \
 \sqrt{7}
 \end{bmatrix}$。
 
@@ -239,22 +239,22 @@ $$
 
 $$
 \begin{bmatrix}
--\sqrt{7} - 2 & -1 \\
+-\sqrt{7} - 2 & -1 \
 3 & -\sqrt{7} + 2
 \end{bmatrix}
 \begin{bmatrix}
-x_1 \\
+x_1 \
 x_2
 \end{bmatrix}
 =
 \begin{bmatrix}
-0 \\
+0 \
 0
 \end{bmatrix}
 $$
 
 通过行变换，我们可以得到特征向量 $\boldsymbol{\alpha}_2 = \begin{bmatrix}
-1 \\
+1 \
 -\sqrt{7}
 \end{bmatrix}$。
 
@@ -336,8 +336,8 @@ print("矩阵A的逆：", A_inv)
 
 $$
 \begin{bmatrix}
--0. & 0.3333 & 0.3333 \\
-0.4 & 0. & -0.4 \\
+-0. & 0.3333 & 0.3333 \
+0.4 & 0. & -0.4 \
 0. & 0.3333 & 0.3333
 \end{bmatrix}
 $$

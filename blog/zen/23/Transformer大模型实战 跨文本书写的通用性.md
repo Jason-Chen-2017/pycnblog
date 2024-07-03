@@ -109,8 +109,8 @@ $$
 
 ```latex
 \begin{align*}
-\text{Input: } & "The city is bustling with energy," \\
-& "\text{The sun sets behind the skyscrapers}," \\
+\text{Input: } & "The city is bustling with energy," \
+& "\text{The sun sets behind the skyscrapers}," \
 \text{Output: } & "as the night sky begins to paint a canvas of stars and shadows."
 \end{align*}
 ```

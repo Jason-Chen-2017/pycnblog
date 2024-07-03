@@ -109,7 +109,7 @@ AIGC技术可以应用于以下领域：
 
 $$
 \begin{aligned}
-z &= \mu(x) + \sigma(x) \odot \epsilon \\
+z &= \mu(x) + \sigma(x) \odot \epsilon \
 x' &= \phi(z)
 \end{aligned}
 $$

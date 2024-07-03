@@ -122,7 +122,7 @@ $$\sigma'(x) = \sigma(x)(1 - \sigma(x))$$
 - **损失函数的导数**：
 
 $$\
-abla L(\theta) = \begin{bmatrix} \frac{\partial L}{\partial \theta_1} \\ \vdots \\ \frac{\partial L}{\partial \theta_n} \end{bmatrix} = \begin{bmatrix} \frac{y_i - \sigma(\theta^T x_i)}{\sigma(\theta^T x_i)(1 - \sigma(\theta^T x_i))} \\ \vdots \\ \frac{y_i - \sigma(\theta^T x_i)}{\sigma(\theta^T x_i)(1 - \sigma(\theta^T x_i))} \end{bmatrix}$$
+abla L(\theta) = \begin{bmatrix} \frac{\partial L}{\partial \theta_1} \ \vdots \ \frac{\partial L}{\partial \theta_n} \end{bmatrix} = \begin{bmatrix} \frac{y_i - \sigma(\theta^T x_i)}{\sigma(\theta^T x_i)(1 - \sigma(\theta^T x_i))} \ \vdots \ \frac{y_i - \sigma(\theta^T x_i)}{\sigma(\theta^T x_i)(1 - \sigma(\theta^T x_i))} \end{bmatrix}$$
 
 ### 4.3 案例分析与讲解
 

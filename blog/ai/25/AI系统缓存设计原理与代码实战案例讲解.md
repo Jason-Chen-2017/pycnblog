@@ -75,9 +75,9 @@
 
 ### 4.2 公式推导过程
 
-设缓存容量为$m$，数据集大小为$n$，则缓存满载率为$\\frac{n}{m}$。缓存命中率$h$可以通过以下公式计算：
+设缓存容量为$m$，数据集大小为$n$，则缓存满载率为$\frac{n}{m}$。缓存命中率$h$可以通过以下公式计算：
 
-$$h = \\frac{1}{m} \\sum_{i=1}^{m} \\frac{1}{n-i+1}$$
+$$h = \frac{1}{m} \sum_{i=1}^{m} \frac{1}{n-i+1}$$
 
 ### 4.3 案例分析与讲解
 
@@ -104,11 +104,11 @@ app = Flask(__name__)
 
 def connect_to_db():
     conn = psycopg2.connect(
-        dbname=\"your_db\",
-        user=\"your_user\",
-        password=\"your_password\",
-        host=\"localhost\",
-        port=\"5432\"
+        dbname="your_db",
+        user="your_user",
+        password="your_password",
+        host="localhost",
+        port="5432"
     )
     return conn
 
@@ -128,7 +128,7 @@ def get_data():
 def query_db(key):
     conn = connect_to_db()
     cursor = conn.cursor()
-    cursor.execute(\"SELECT * FROM your_table WHERE key=%s\", (key,))
+    cursor.execute("SELECT * FROM your_table WHERE key=%s", (key,))
     data = cursor.fetchone()
     conn.close()
     return data

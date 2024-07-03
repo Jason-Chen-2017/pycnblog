@@ -101,7 +101,7 @@
 
 $$
 \begin{aligned}
-&h^{(l)}_{ij} = f(W^{(l)}_{ij} \cdot x_i + b^{(l)}_{ij}) \\
+&h^{(l)}_{ij} = f(W^{(l)}_{ij} \cdot x_i + b^{(l)}_{ij}) \
 &y_j = f(W^{(l+1)}_{ji} \cdot h^{(l)}_{i} + b^{(l+1)}_{ji})
 \end{aligned}
 $$
@@ -130,7 +130,7 @@ $$
 
 $$
 \begin{aligned}
-&\frac{\partial L}{\partial y'} = \frac{y-y'}{y'(1-y')} \\
+&\frac{\partial L}{\partial y'} = \frac{y-y'}{y'(1-y')} \
 &\frac{\partial L}{\partial y} = \frac{y'-y}{y'(1-y')}
 \end{aligned}
 $$
@@ -139,7 +139,7 @@ $$
 
 $$
 \begin{aligned}
-&\frac{\partial L}{\partial W} = \frac{\partial L}{\partial y'} \cdot \frac{\partial y'}{\partial y} \cdot \frac{\partial y}{\partial W} \\
+&\frac{\partial L}{\partial W} = \frac{\partial L}{\partial y'} \cdot \frac{\partial y'}{\partial y} \cdot \frac{\partial y}{\partial W} \
 &\frac{\partial L}{\partial b} = \frac{\partial L}{\partial y'} \cdot \frac{\partial y'}{\partial y} \cdot \frac{\partial y}{\partial b}
 \end{aligned}
 $$

@@ -102,7 +102,7 @@
 
 #### 数据清洗公式
 - **填充缺失值**：$x_{cleaned} = \begin{cases} x_{original} & \text{if } x_{original} \
-eq \text{missing} \\ \text{value}_{fill} & \text{if } x_{original} = \text{missing} \end{cases}$
+eq \text{missing} \ \text{value}_{fill} & \text{if } x_{original} = \text{missing} \end{cases}$
 
 #### 异常值检测公式
 - **Z评分**：$Z = \frac{x - \mu}{\sigma}$，其中$x$是数据点，$\mu$是均值，$\sigma$是标准差。

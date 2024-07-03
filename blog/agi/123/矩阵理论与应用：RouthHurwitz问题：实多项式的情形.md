@@ -109,7 +109,7 @@ Routh-Hurwitz判据的数学模型可以通过以下步骤构建：
 
 以下以一个简单的二阶系统为例，说明Routh-Hurwitz判据的推导过程。
 
-假设系统的状态空间模型为 $\dot{x} = Ax + Bu$ 和 $y = Cx + Du$，其中 $A = \begin{bmatrix} -2 & -1 \\ 1 & 0 \end{bmatrix}$，$B = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$，$C = \begin{bmatrix} 1 & 0 \end{bmatrix}$，$D = 0$。
+假设系统的状态空间模型为 $\dot{x} = Ax + Bu$ 和 $y = Cx + Du$，其中 $A = \begin{bmatrix} -2 & -1 \ 1 & 0 \end{bmatrix}$，$B = \begin{bmatrix} 1 \ 0 \end{bmatrix}$，$C = \begin{bmatrix} 1 & 0 \end{bmatrix}$，$D = 0$。
 
 系统的特征多项式为：
 

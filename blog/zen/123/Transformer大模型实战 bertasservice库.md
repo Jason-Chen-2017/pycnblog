@@ -138,8 +138,8 @@ Transformer 模型的核心公式是自注意力机制，其计算过程如下�
 
 $$
 \begin{aligned}
-Q &= XW_Q \\
-K &= XW_K \\
+Q &= XW_Q \
+K &= XW_K \
 V &= XW_V
 \end{aligned}
 $$

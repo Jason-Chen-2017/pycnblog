@@ -53,8 +53,8 @@ TWSVM 模型的基本思想是求解两个二次规划问题，分别对应正�
 
 $$
 \begin{aligned}
-\min_{\mathbf{w}_1,b_1,\xi_1} & \quad \frac{1}{2} ||\mathbf{w}_1||^2 + C_1 \sum_{i=1}^{l_1} \xi_{1i} \\
-\text{s.t.} & \quad \mathbf{w}_1^T \phi(\mathbf{x}_i) + b_1 \geq 1 - \xi_{1i}, \quad i=1,2,...,l_1 \\
+\min_{\mathbf{w}_1,b_1,\xi_1} & \quad \frac{1}{2} ||\mathbf{w}_1||^2 + C_1 \sum_{i=1}^{l_1} \xi_{1i} \
+\text{s.t.} & \quad \mathbf{w}_1^T \phi(\mathbf{x}_i) + b_1 \geq 1 - \xi_{1i}, \quad i=1,2,...,l_1 \
 & \quad \xi_{1i} \geq 0, \quad i=1,2,...,l_1
 \end{aligned}
 $$
@@ -63,8 +63,8 @@ $$
 
 $$
 \begin{aligned}
-\min_{\mathbf{w}_2,b_2,\xi_2} & \quad \frac{1}{2} ||\mathbf{w}_2||^2 + C_2 \sum_{j=1}^{l_2} \xi_{2j} \\
-\text{s.t.} & \quad -\mathbf{w}_2^T \phi(\mathbf{x}_j) - b_2 \geq 1 - \xi_{2j}, \quad j=1,2,...,l_2 \\
+\min_{\mathbf{w}_2,b_2,\xi_2} & \quad \frac{1}{2} ||\mathbf{w}_2||^2 + C_2 \sum_{j=1}^{l_2} \xi_{2j} \
+\text{s.t.} & \quad -\mathbf{w}_2^T \phi(\mathbf{x}_j) - b_2 \geq 1 - \xi_{2j}, \quad j=1,2,...,l_2 \
 & \quad \xi_{2j} \geq 0, \quad j=1,2,...,l_2 
 \end{aligned}
 $$

@@ -44,7 +44,7 @@
 线性空间M2(R)是由所有2x2实数矩阵构成的集合,记作:
 
 $$M_2(R) = \begin{Bmatrix}
-a & b\\
+a & b\
 c & d
 \end{Bmatrix} \bigg\vert a,b,c,d \in \mathbb{R}$$
 
@@ -104,10 +104,10 @@ graph TD
 设A,B为两个2x2矩阵:
 
 $$A = \begin{bmatrix}
-a & b\\
+a & b\
 c & d
 \end{bmatrix}, \quad B = \begin{bmatrix}
-e & f\\
+e & f\
 g & h
 \end{bmatrix}$$
 
@@ -116,14 +116,14 @@ g & h
 1) 计算对应元素之和:
 
 $$\begin{bmatrix}
-a+e & b+f\\
+a+e & b+f\
 c+g & d+h
 \end{bmatrix}$$
 
 2) 得到结果矩阵C=A+B:
 
 $$C = \begin{bmatrix}
-a+e & b+f\\
+a+e & b+f\
 c+g & d+h
 \end{bmatrix}$$
 
@@ -132,7 +132,7 @@ c+g & d+h
 设A为一个2x2矩阵,k为一个实数:
 
 $$A = \begin{bmatrix}
-a & b\\
+a & b\
 c & d
 \end{bmatrix}$$
 
@@ -141,14 +141,14 @@ c & d
 1) 将矩阵每个元素乘以k:
 
 $$\begin{bmatrix}
-ka & kb\\
+ka & kb\
 kc & kd
 \end{bmatrix}$$  
 
 2) 得到结果矩阵B=kA:
 
 $$B = \begin{bmatrix}
-ka & kb\\
+ka & kb\
 kc & kd
 \end{bmatrix}$$
 
@@ -157,10 +157,10 @@ kc & kd
 设A,B为两个2x2矩阵:
 
 $$A = \begin{bmatrix}
-a & b\\
+a & b\
 c & d
 \end{bmatrix}, \quad B = \begin{bmatrix}
-e & f\\
+e & f\
 g & h
 \end{bmatrix}$$
 
@@ -181,7 +181,7 @@ ce+dg & cf+dh
 3) 合并两行得到结果矩阵C=AB:
 
 $$C = \begin{bmatrix}
-ae+bg & af+bh\\
+ae+bg & af+bh\
 ce+dg & cf+dh
 \end{bmatrix}$$
 
@@ -244,13 +244,13 @@ M2(R)作为一个线性空间,其基本代数运算需要满足一系列公理�
 对于任意A,B,C∈M2(R),k,l∈R,我们有:
 
 $$\begin{align}
-A + B &= B + A & \text{(加法交换律)}\\
-(A + B) + C &= A + (B + C) & \text{(加法结合律)}\\
-\exists\ 0 &\in M_2(R),\ \text{使得}\ A + 0 = A & \text{(存在加法单位元)}\\
-\forall\ A &\in M_2(R),\ \exists\ (-A) \in M_2(R),\ \text{使得}\ A + (-A) = 0 & \text{(存在加法逆元)}\\
-k(lA) &= (kl)A & \text{(数乘结合律)}\\
-k(A + B) &= kA + kB & \text{(左分配率)}\\
-(k + l)A &= kA + lA & \text{(右分配率)}\\
+A + B &= B + A & \text{(加法交换律)}\
+(A + B) + C &= A + (B + C) & \text{(加法结合律)}\
+\exists\ 0 &\in M_2(R),\ \text{使得}\ A + 0 = A & \text{(存在加法单位元)}\
+\forall\ A &\in M_2(R),\ \exists\ (-A) \in M_2(R),\ \text{使得}\ A + (-A) = 0 & \text{(存在加法逆元)}\
+k(lA) &= (kl)A & \text{(数乘结合律)}\
+k(A + B) &= kA + kB & \text{(左分配率)}\
+(k + l)A &= kA + lA & \text{(右分配率)}\
 \exists\ 1 &\in R,\ \text{使得}\ 1A = A & \text{(存在数乘单位元)}
 \end{align}$$
 
@@ -265,27 +265,27 @@ k(A + B) &= kA + kB & \text{(左分配率)}\\
 对于任意2x2矩阵A:
 
 $$A = \begin{bmatrix}
-a & b\\
+a & b\
 c & d
 \end{bmatrix}$$
 
 我们定义其行列式为:
 
 $$\begin{vmatrix}
-a & b\\
+a & b\
 c & d
 \end{vmatrix} \equiv ad - bc$$
 
 行列式的概念源于n重线性代数形式的理论。对于2x2矩阵,我们有:
 
 $$\begin{vmatrix}
-a & b\\
+a & b\
 c & d
 \end{vmatrix} = a\begin{vmatrix}
-1 & 0\\
+1 & 0\
 c & d
 \end{vmatrix} - b\begin{vmatrix}
-0 & 1\\
+0 & 1\
 c & d
 \end{vmatrix}$$
 
@@ -304,10 +304,10 @@ c & d
 若A为一个可逆矩阵(行列式不为0),则其逆矩阵A-1可按如下方式计算:
 
 $$A^{-1} = \frac{1}{\begin{vmatrix}
-a & b\\
+a & b\
 c & d
 \end{vmatrix}}\begin{bmatrix}
-d & -b\\
+d & -b\
 -c & a
 \end{bmatrix}$$
 
@@ -318,16 +318,16 @@ d & -b\\
 1) 将A-1写为:
 
 $$A^{-1} = \begin{bmatrix}
-x & y\\
+x & y\
 z & w
 \end{bmatrix}$$
 
 2) 利用AA-1=I的条件,得到方程组:
 
 $$\begin{cases}
-ax+by=1\\
-cx+dy=0\\
-az+bw=0\\
+ax+by=1\
+cx+dy=0\
+az+bw=0\
 cz+dw=1
 \end{cases}$$
 
@@ -340,7 +340,7 @@ cz+dw=1
 对于任意A∈M2(R),其特征值λ需满足:
 
 $$\begin{vmatrix}
-a-\lambda & b\\
+a-\lambda & b\
 c & d-\lambda
 \end{vmatrix} = 0$$
 

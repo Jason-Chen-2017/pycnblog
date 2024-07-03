@@ -43,9 +43,9 @@
 ### 4.1 马尔可夫决策过程数学模型
 #### 4.1.1 状态转移概率矩阵
 $$P(s'|s,a) = \begin{bmatrix} 
-p_{11} & p_{12} & \cdots & p_{1n} \\
-p_{21} & p_{22} & \cdots & p_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
+p_{11} & p_{12} & \cdots & p_{1n} \
+p_{21} & p_{22} & \cdots & p_{2n} \
+\vdots & \vdots & \ddots & \vdots \
 p_{m1} & p_{m2} & \cdots & p_{mn}
 \end{bmatrix}$$
 #### 4.1.2 奖励函数

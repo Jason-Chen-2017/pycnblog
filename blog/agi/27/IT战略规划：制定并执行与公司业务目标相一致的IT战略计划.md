@@ -80,9 +80,9 @@ IT战略规划适用于所有行业，特别是那些依赖于技术创新和数
 
 成本效益分析的公式可以帮助企业评估投资决策的可行性：
 
-\\[预期收益 = 业务改善值 \\times 改善率\\]
+$$预期收益 = 业务改善值 \times 改善率$$
 
-\\[实际成本 = 投资成本 + 运营成本\\]
+$$实际成本 = 投资成本 + 运营成本$$
 
 通过比较净收益，企业可以决定是否进行投资。
 
@@ -90,11 +90,11 @@ IT战略规划适用于所有行业，特别是那些依赖于技术创新和数
 
 考虑一个零售企业，通过引入在线销售平台，预期业务改善率为10%，投资成本为100万元，运营成本为每年50万元。假设在线平台上线后的第一年，预计增加销售额为150万元。
 
-\\[预期收益 = 150万元 \\times 10\\% = 15万元\\]
+$$预期收益 = 150万元 \times 10\% = 15万元$$
 
-\\[实际成本 = 100万元 + 第一年的运营成本 = 150万元\\]
+$$实际成本 = 100万元 + 第一年的运营成本 = 150万元$$
 
-\\[净收益 = 15万元 - 150万元 = -135万元\\]
+$$净收益 = 15万元 - 150万元 = -135万元$$
 
 这个例子说明了初始投资和运营成本可能超过预期收益，需要重新评估投资决策或调整策略。
 
@@ -139,7 +139,7 @@ df
 
 ```python
 def calculate_strategic_impact(business_metrics, it_investments, impact_factors):
-    \"\"\"
+    """
     计算IT投资对业务指标的影响。
     参数：
     business_metrics：列表，包含业务指标名称。
@@ -147,7 +147,7 @@ def calculate_strategic_impact(business_metrics, it_investments, impact_factors)
     impact_factors：字典，业务指标与IT投资影响系数的映射。
     返回：
     DataFrame，包含业务指标、IT投资、影响系数和预期影响。
-    \"\"\"
+    """
     impacts = []
     for i, metric in enumerate(business_metrics):
         impact = it_investments[i] * impact_factors.get(metric, 0)

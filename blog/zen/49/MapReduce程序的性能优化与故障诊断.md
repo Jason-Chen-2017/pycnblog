@@ -101,8 +101,8 @@ MapReduce程序的数学模型可以概括为以下公式：
 
 $$
 \begin{align*}
-Input & \xrightarrow{Map} \text{Key-Value Pairs} \\
-\text{Key-Value Pairs} & \xrightarrow{Shuffle} \text{Partitioned Key-Value Pairs} \\
+Input & \xrightarrow{Map} \text{Key-Value Pairs} \
+\text{Key-Value Pairs} & \xrightarrow{Shuffle} \text{Partitioned Key-Value Pairs} \
 \text{Partitioned Key-Value Pairs} & \xrightarrow{Reduce} Output
 \end{align*}
 $$
@@ -208,7 +208,7 @@ public class WordCount {
 
     public void map(Object key, Text value, Context context
                     ) throws IOException, InterruptedException {
-      String[] tokens = value.toString().split("\\s+");
+      String[] tokens = value.toString().split("\s+");
       for (String token : tokens) {  
         word.set(token);
         context.write(word, one);

@@ -95,8 +95,8 @@ $$p_S(y_i|x) = \frac{\exp(z_S^i)}{\sum_{j} \exp(z_S^j)}$$
 将其代入KL散度公式,化简可得:
 
 \begin{aligned}
-L_{KD} &= \sum_{i} p_T(y_i|x) \log \frac{p_T(y_i|x)}{p_S(y_i|x)} \\
-&= \sum_{i} p_T(y_i|x) \log p_T(y_i|x) - \sum_{i} p_T(y_i|x) \log p_S(y_i|x) \\  
+L_{KD} &= \sum_{i} p_T(y_i|x) \log \frac{p_T(y_i|x)}{p_S(y_i|x)} \
+&= \sum_{i} p_T(y_i|x) \log p_T(y_i|x) - \sum_{i} p_T(y_i|x) \log p_S(y_i|x) \  
 &= - H(p_T) - \sum_{i} p_T(y_i|x) z_S^i + \log \sum_{j} \exp(z_S^j)
 \end{aligned}
 

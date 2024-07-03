@@ -94,15 +94,15 @@ $$Q(s, a) = f(W, s, a)$$
 
 NQ-learning的目标是最大化累积奖励，即：
 
-$$J(W) = \\max_{W} \\sum_{t=0}^\\infty \\gamma^t R_t$$
+$$J(W) = \max_{W} \sum_{t=0}^\infty \gamma^t R_t$$
 
-其中，$\\gamma$表示折扣因子，$R_t$表示在第$t$步获得的奖励。
+其中，$\gamma$表示折扣因子，$R_t$表示在第$t$步获得的奖励。
 
 为了最大化$J(W)$，我们需要优化神经网络映射函数$f(W, s, a)$。这可以通过以下公式进行：
 
-$$f(W, s, a) = Q(s, a) = \\sum_{a'} Q(s', a') \\pi(a' | s, W)$$
+$$f(W, s, a) = Q(s, a) = \sum_{a'} Q(s', a') \pi(a' | s, W)$$
 
-其中，$\\pi(a' | s, W)$表示在状态$s$下采取动作$a'$的概率。
+其中，$\pi(a' | s, W)$表示在状态$s$下采取动作$a'$的概率。
 
 ### 4.3 案例分析与讲解
 
@@ -217,11 +217,11 @@ def train(agent, env, episodes=1000):
             if done:
                 break
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     env = MazeEnv()
     agent = QLearningAgent(env.observation_space.n, env.action_space.n)
     train(agent, env)
-    print(\"Q-Table:\")
+    print("Q-Table:")
     print(agent.Q_table)
 ```
 

@@ -97,7 +97,7 @@
 
 $$
 \begin{align*}
-P(w_i|w_j) & = \frac{exp(\mathbf{v}_i \cdot \mathbf{w}_j)}{\sum_k exp(\mathbf{v}_i \cdot \mathbf{w}_k)} \\
+P(w_i|w_j) & = \frac{exp(\mathbf{v}_i \cdot \mathbf{w}_j)}{\sum_k exp(\mathbf{v}_i \cdot \mathbf{w}_k)} \
 \mathbf{v}_i & = \text{sgn}(\mathbf{w}_i) \circ (\text{Word2Vec模型学习到的词向量})
 \end{align*}
 $$

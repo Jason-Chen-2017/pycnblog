@@ -114,9 +114,9 @@ AI Agent代理的数学模型主要包括：
 
 $$
 \begin{aligned}
-& \text{状态空间} S = \{ s_1, s_2, ..., s_n \} \\
-& \text{动作空间} A = \{ a_1, a_2, ..., a_m \} \\
-& \text{奖励函数} R(s, a) \\
+& \text{状态空间} S = \{ s_1, s_2, ..., s_n \} \
+& \text{动作空间} A = \{ a_1, a_2, ..., a_m \} \
+& \text{奖励函数} R(s, a) \
 & \text{状态转移概率} P(s', s|a)
 \end{aligned}
 $$

@@ -164,7 +164,7 @@ graph TB
 $$
 x_{ij} =
 \begin{cases}
-1, & \text{if app } a_i \text{ is deployed on resource } r_j\\
+1, & \text{if app } a_i \text{ is deployed on resource } r_j\
 0, & \text{otherwise}
 \end{cases}
 $$
@@ -177,8 +177,8 @@ $$
 **约束条件**:
 $$
 \begin{align}
-\sum_{j=1}^{m}x_{ij} &= 1 &&\forall i \in \{1, \ldots, n\} \\
-\sum_{i=1}^{n}d_{ij}x_{ij} &\leq c_j &&\forall j \in \{1, \ldots, m\} \\
+\sum_{j=1}^{m}x_{ij} &= 1 &&\forall i \in \{1, \ldots, n\} \
+\sum_{i=1}^{n}d_{ij}x_{ij} &\leq c_j &&\forall j \in \{1, \ldots, m\} \
 x_{ij} &\in \{0, 1\} &&\forall i \in \{1, \ldots, n\}, j \in \{1, \ldots, m\}
 \end{align}
 $$
@@ -230,10 +230,10 @@ $$
 **约束条件**:
 $$
 \begin{align}
-x_{11} + x_{12} &= 1\\
-x_{21} + x_{22} &= 1\\
-x_{31} + x_{32} &= 1\\
-2x_{11} + 3x_{21} + 4x_{31} &\leq 6\\
+x_{11} + x_{12} &= 1\
+x_{21} + x_{22} &= 1\
+x_{31} + x_{32} &= 1\
+2x_{11} + 3x_{21} + 4x_{31} &\leq 6\
 3x_{12} + 2x_{22} + x_{32} &\leq 4
 \end{align}
 $$

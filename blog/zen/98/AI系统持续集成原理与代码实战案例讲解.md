@@ -80,10 +80,10 @@ AI系统持续集成可以应用于任何需要构建、测试和部署AI系统�
 
 $$
 \begin{align*}
-&\max \sum_{i=1}^{N} x_i \\
-&\text{subject to} \\
-&\sum_{i=1}^{N} c_i*x_i \le C, \forall k \in \{1,2,...,K\} \\
-&\sum_{i=1}^{N} g_i*x_i \le G, \forall k \in \{1,2,...,K\} \\
+&\max \sum_{i=1}^{N} x_i \
+&\text{subject to} \
+&\sum_{i=1}^{N} c_i*x_i \le C, \forall k \in \{1,2,...,K\} \
+&\sum_{i=1}^{N} g_i*x_i \le G, \forall k \in \{1,2,...,K\} \
 &x_i \in \{0,1\}, \forall i \in \{1,2,...,N\}
 \end{align*}
 $$
@@ -92,9 +92,9 @@ $$
 
 $$
 \begin{align*}
-&\text{accuracy} = \frac{TP+TN}{TP+FP+TN+FN} \\
-&\text{precision} = \frac{TP}{TP+FP} \\
-&\text{recall} = \frac{TP}{TP+FN} \\
+&\text{accuracy} = \frac{TP+TN}{TP+FP+TN+FN} \
+&\text{precision} = \frac{TP}{TP+FP} \
+&\text{recall} = \frac{TP}{TP+FN} \
 &\text{F1 score} = \frac{2*precision*recall}{precision+recall}
 \end{align*}
 $$

@@ -72,7 +72,7 @@ $$
 #### 4.2.3 Multi-Head Attention的优势
 
 $$
-MultiHead(Q,K,V) = Concat(head_1, ..., head_h)W^O \\
+MultiHead(Q,K,V) = Concat(head_1, ..., head_h)W^O \
 head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)
 $$
 
@@ -84,7 +84,7 @@ $$
 #### 4.3.3 相对位置编码
 
 $$
-PE_{(pos,2i)} = sin(pos/10000^{2i/d_{model}}) \\
+PE_{(pos,2i)} = sin(pos/10000^{2i/d_{model}}) \
 PE_{(pos,2i+1)} = cos(pos/10000^{2i/d_{model}})
 $$
 

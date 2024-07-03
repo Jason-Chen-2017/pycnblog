@@ -109,7 +109,7 @@ $$
 3. 计算$\alpha(y_i, y_j)$：
    $$
 \alpha(y_i, y_j) = \begin{cases}
-1, & \text{if } y_i = y_j \\
+1, & \text{if } y_i = y_j \
 0, & \text{otherwise}
 \end{cases}
 $$

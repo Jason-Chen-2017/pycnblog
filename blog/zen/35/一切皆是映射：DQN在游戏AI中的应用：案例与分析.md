@@ -73,23 +73,23 @@ DQN及其变体广泛应用于游戏AI、机器人控制、自动驾驶、推荐
 
 ### 4.1 数学模型构建
 
-设**状态**$s$，**动作**$a$，**奖励**$r$，**下一个状态**$s'$，**时间步**$t$，**折扣因子**$\\gamma$（通常取值接近1）。
+设**状态**$s$，**动作**$a$，**奖励**$r$，**下一个状态**$s'$，**时间步**$t$，**折扣因子**$\gamma$（通常取值接近1）。
 
 **Q函数**的定义为：
-$$Q(s, a) = \\mathbb{E}[R_t + \\gamma \\max_{a'} Q(s', a')]$$
+$$Q(s, a) = \mathbb{E}[R_t + \gamma \max_{a'} Q(s', a')]$$
 
 ### 4.2 公式推导过程
 
 #### Q-learning
 更新公式：
-$$Q(s, a) \\leftarrow Q(s, a) + \\alpha [r + \\gamma \\max_{a'} Q(s', a') - Q(s, a)]$$
+$$Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a') - Q(s, a)]$$
 
-其中，$\\alpha$是**学习率**。
+其中，$\alpha$是**学习率**。
 
 #### DQN
 - **预测Q值**：$Q'(s, a)$
-- **目标Q值**：$Q_t = r + \\gamma \\max_{a'} Q'(s', a')$
-- **损失函数**：$L = (\\hat{Q}(s, a) - Q_t)^2$
+- **目标Q值**：$Q_t = r + \gamma \max_{a'} Q'(s', a')$
+- **损失函数**：$L = (\hat{Q}(s, a) - Q_t)^2$
 
 ### 4.3 案例分析与讲解
 
@@ -143,7 +143,7 @@ def main():
     # Start training
     # ...
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     main()
 ```
 

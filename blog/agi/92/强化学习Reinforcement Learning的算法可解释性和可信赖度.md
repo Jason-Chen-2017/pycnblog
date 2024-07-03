@@ -129,8 +129,8 @@ DQN及其变体在很多领域取得了不错的效果，如：
 
 $$
 \begin{aligned}
-S & \leftarrow f_S(S, A, U_S) \\
-A & \leftarrow f_A(S, U_A) \\
+S & \leftarrow f_S(S, A, U_S) \
+A & \leftarrow f_A(S, U_A) \
 R & \leftarrow f_R(S, A, U_R)
 \end{aligned}
 $$
@@ -160,8 +160,8 @@ $$
 
 $$
 \begin{aligned}
-I(\pi, X) & = \mathbb{E}_{x \sim X} [\log \frac{P(\pi(x) | x, \text{do}(X=x))}{P(\pi(x) | x)}] \\
-& = \mathbb{E}_{x \sim X} [\log \frac{P(x, \pi(x))}{P(\pi(x) | x) \sum_{\pi} P(x, \pi)}] \\
-& = \mathbb{E}_{x \sim X} [\log \frac{P(x | \pi(x)) P(\pi(x))}{P(x) P(\pi(x) | x)}] \\
-& = \mathbb{E}_{x \sim X} [\log \frac{P(x | \pi(x))}{P(x)} - \log \frac{P(\pi(x) | x)}{P(\pi(x))}] \\
+I(\pi, X) & = \mathbb{E}_{x \sim X} [\log \frac{P(\pi(x) | x, \text{do}(X=x))}{P(\pi(x) | x)}] \
+& = \mathbb{E}_{x \sim X} [\log \frac{P(x, \pi(x))}{P(\pi(x) | x) \sum_{\pi} P(x, \pi)}] \
+& = \mathbb{E}_{x \sim X} [\log \frac{P(x | \pi(x)) P(\pi(x))}{P(x) P(\pi(x) | x)}] \
+& = \mathbb{E}_{x \sim X} [\log \frac{P(x | \pi(x))}{P(x)} - \log \frac{P(\pi(x) | x)}{P(\pi(x))}] \
 & = \mathbb{E}_{x \sim X} [\log \frac{P(x | \pi(x))}{P(x)}] - \

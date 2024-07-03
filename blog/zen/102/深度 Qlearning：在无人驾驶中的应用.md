@@ -133,9 +133,9 @@ $$
 
 $$
 R(s, a) = \begin{cases}
-10 & \text{if } s = s_0, a = a_0 \\
-5 & \text{if } s = s_1, a = a_1 \\
--5 & \text{if } s = s_2, a = a_2 \\
+10 & \text{if } s = s_0, a = a_0 \
+5 & \text{if } s = s_1, a = a_1 \
+-5 & \text{if } s = s_2, a = a_2 \
 -10 & \text{if } s = s_3, a = a_0
 \end{cases}
 $$
@@ -146,9 +146,9 @@ $$
 
 $$
 Q(s, a) = \begin{cases}
-0 & \text{if } s = s_0, a = a_0 \\
-0 & \text{if } s = s_1, a = a_1 \\
-0 & \text{if } s = s_2, a = a_2 \\
+0 & \text{if } s = s_0, a = a_0 \
+0 & \text{if } s = s_1, a = a_1 \
+0 & \text{if } s = s_2, a = a_2 \
 0 & \text{if } s = s_3, a = a_0
 \end{cases}
 $$
@@ -209,9 +209,9 @@ $$
 
 $$
 R(s, a) = \begin{cases}
-5 & \text{if } s \in \{(v, d) | v \in \{0, 10\}, d \in \{0, 5\}\} \text{ and } a = (0, 0) \\
+5 & \text{if } s \in \{(v, d) | v \in \{0, 10\}, d \in \{0, 5\}\} \text{ and } a = (0, 0) \
 -5 & \text{if } s \in \{(v, d) | v \in \{0, 10\}, d \in \{10, 15, 20\}\} \text{ and } a \
-eq (0, 0) \\
+eq (0, 0) \
 0 & \text{otherwise}
 \end{cases}
 $$

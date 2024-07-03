@@ -96,7 +96,7 @@ $$m(g_1, g_2) = m(g_2, g_1)$$
 
 考虑 $\mathrm{SL}_2(\mathbb{C})$，即复数域上的2×2行列式为1的矩阵群。可以通过生成元 $A$ 和 $B$ 来生成整个群：
 
-$$A = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}, \quad B = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}$$
+$$A = \begin{pmatrix} 0 & -1 \ 1 & 0 \end{pmatrix}, \quad B = \begin{pmatrix} 0 & 1 \ -1 & 0 \end{pmatrix}$$
 
 通过生成元可以构造群内的任意元素。
 

@@ -86,14 +86,14 @@ NER算法通常可以分为两大类：规则基方法和统计学习方法。�
 
 以CRF为例，构建一个联合概率模型来预测序列中的标签序列：
 
-$$ P(\\mathbf{Y}|\\mathbf{X},\\theta) = \\frac{1}{Z(\\mathbf{X},\\theta)} \\exp\\left(\\sum_{i=1}^{T}\\sum_{j=1}^{M} \\beta_j \\phi_j(\\mathbf{x}_i,\\mathbf{y}_i) \\right) $$
+$$ P(\mathbf{Y}|\mathbf{X},\theta) = \frac{1}{Z(\mathbf{X},\theta)} \exp\left(\sum_{i=1}^{T}\sum_{j=1}^{M} \beta_j \phi_j(\mathbf{x}_i,\mathbf{y}_i) \right) $$
 
 其中：
-- $\\mathbf{Y}$ 是标签序列，
-- $\\mathbf{X}$ 是输入序列，
-- $\\theta$ 是模型参数，
-- $\\beta_j$ 是特征权重，
-- $\\phi_j(\\mathbf{x}_i,\\mathbf{y}_i)$ 是特征函数。
+- $\mathbf{Y}$ 是标签序列，
+- $\mathbf{X}$ 是输入序列，
+- $\theta$ 是模型参数，
+- $\beta_j$ 是特征权重，
+- $\phi_j(\mathbf{x}_i,\mathbf{y}_i)$ 是特征函数。
 
 ### 4.2 公式推导过程
 
@@ -106,9 +106,9 @@ CRF模型通过定义特征函数来捕捉序列中的上下文依赖，使得�
 ```python
 import spacy
 
-nlp = spacy.load(\"en_core_web_sm\")
+nlp = spacy.load("en_core_web_sm")
 
-text = \"Apple is looking at buying U.K. startup for $1 billion\"
+text = "Apple is looking at buying U.K. startup for $1 billion"
 doc = nlp(text)
 
 for ent in doc.ents:
@@ -141,13 +141,13 @@ python -m spacy download en_core_web_sm
 ```python
 import spacy
 
-nlp = spacy.load(\"en_core_web_sm\")
+nlp = spacy.load("en_core_web_sm")
 
-text = \"John Doe works at Google in California.\"
+text = "John Doe works at Google in California."
 doc = nlp(text)
 
 for ent in doc.ents:
-    print(f\"Entity: {ent.text}, Type: {ent.label_}\")
+    print(f"Entity: {ent.text}, Type: {ent.label_}")
 ```
 
 ### 5.3 代码解读与分析
@@ -184,8 +184,8 @@ Entity: California, Type: GPE
 
 ### 7.3 相关论文推荐
 
-- **\"Bidirectional LSTM-CRF Model for Named Entity Recognition\"**：介绍了一种结合双向LSTM和CRF的NER模型。
-- **\"BERT: Pre-training of Deep Bidirectional Transformers to Improve Natural Language Understanding\"**：介绍了BERT模型的预训练过程和NER应用。
+- **"Bidirectional LSTM-CRF Model for Named Entity Recognition"**：介绍了一种结合双向LSTM和CRF的NER模型。
+- **"BERT: Pre-training of Deep Bidirectional Transformers to Improve Natural Language Understanding"**：介绍了BERT模型的预训练过程和NER应用。
 
 ### 7.4 其他资源推荐
 

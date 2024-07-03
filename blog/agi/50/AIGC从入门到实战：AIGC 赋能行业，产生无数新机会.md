@@ -85,12 +85,12 @@ AIGC的核心在于利用深度学习模型，特别是生成模型，来模拟�
 数学模型可以表示为：
 
 $$ \begin{align*}
-& \text{编码器：} \\
-& q(z|x) = \text{Encoder}(x) \\
-& \text{解码器：} \\
-& p(x|z) = \text{Decoder}(z) \\
-& \text{潜在变量：} \\
-& z \sim \text{Normal}(0, \sigma^2) \\
+& \text{编码器：} \
+& q(z|x) = \text{Encoder}(x) \
+& \text{解码器：} \
+& p(x|z) = \text{Decoder}(z) \
+& \text{潜在变量：} \
+& z \sim \text{Normal}(0, \sigma^2) \
 \end{align*} $$
 
 其中，$x$是输入数据，$z$是潜在变量。
@@ -100,10 +100,10 @@ $$ \begin{align*}
 GAN模型通过以下过程实现：
 
 $$ \begin{align*}
-& \text{生成器：} \\
-& G(z) \sim \text{Generator}(z) \\
-& \text{判别器：} \\
-& D(x) \sim \text{Discriminator}(x) \\
+& \text{生成器：} \
+& G(z) \sim \text{Generator}(z) \
+& \text{判别器：} \
+& D(x) \sim \text{Discriminator}(x) \
 \end{align*} $$
 
 其中，$z$是输入噪声，$x$是生成或真实的数据。
@@ -115,7 +115,7 @@ $$ \begin{align*}
 VAE的目标是最小化重建损失和潜在变量的KL散度：
 
 $$ \begin{align*}
-\text{最小化} \quad & E_{q(z|x)}[\log p(x|z)] - KL(q(z|x) || p(z)) \\
+\text{最小化} \quad & E_{q(z|x)}[\log p(x|z)] - KL(q(z|x) || p(z)) \
 \end{align*} $$
 
 其中，$KL$散度衡量了$q(z|x)$和$p(z)$之间的差异。

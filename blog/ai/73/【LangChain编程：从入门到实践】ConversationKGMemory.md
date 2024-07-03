@@ -125,7 +125,7 @@ ConversationKGMemory可以应用于以下领域：
 
 $$
 \begin{aligned}
-&y = f(x, r) \\
+&y = f(x, r) \
 &y = \phi(x) + \alpha \cdot \text{knowledge\_graph}(x) + \beta \cdot \text{memory}(x)
 \end{aligned}
 $$

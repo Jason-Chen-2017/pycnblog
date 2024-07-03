@@ -123,8 +123,8 @@ MapReduce算法的数学模型可以概括为以下公式：
 
 $$
 \begin{align*}
-Map(R, \lambda) &= \{ f(x) \mid x \in R \} \\
-Shuffle(R) &= \{ (k, \{ y \mid y = f(x), x \in R, key(y) = k \}) \} \\
+Map(R, \lambda) &= \{ f(x) \mid x \in R \} \
+Shuffle(R) &= \{ (k, \{ y \mid y = f(x), x \in R, key(y) = k \}) \} \
 Reduce(R) &= \{ g(k, S) \mid S = \{ y \mid (k, y) \in Shuffle(R) \} \}
 \end{align*}
 $$
@@ -228,7 +228,7 @@ public class WordCount {
         private Text word = new Text();
 
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
-            String[] tokens = value.toString().split("\\s+");
+            String[] tokens = value.toString().split("\s+");
             for (String token : tokens) {
                 word.set(token);
                 context.write(word, one);

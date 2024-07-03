@@ -64,11 +64,11 @@ Ranger算法的数学模型主要包括两部分：RAdam的自适应学习率调
 
 $$
 \begin{aligned}
-m_t &= \beta_1 m_{t-1} + (1 - \beta_1) g_t \\
-v_t &= \beta_2 v_{t-1} + (1 - \beta_2) g_t^2 \\
-\hat{m_t} &= \frac{m_t}{1 - \beta_1^t} \\
-\hat{v_t} &= \frac{v_t}{1 - \beta_2^t} \\
-\alpha_t &= \alpha \frac{\sqrt{1 - \beta_2^t}}{1 - \beta_1^t} \\
+m_t &= \beta_1 m_{t-1} + (1 - \beta_1) g_t \
+v_t &= \beta_2 v_{t-1} + (1 - \beta_2) g_t^2 \
+\hat{m_t} &= \frac{m_t}{1 - \beta_1^t} \
+\hat{v_t} &= \frac{v_t}{1 - \beta_2^t} \
+\alpha_t &= \alpha \frac{\sqrt{1 - \beta_2^t}}{1 - \beta_1^t} \
 \theta_t &= \theta_{t-1} - \alpha_t \frac{\hat{m_t}}{\sqrt{\hat{v_t}} + \epsilon}
 \end{aligned}
 $$
@@ -79,7 +79,7 @@ $$
 
 $$
 \begin{aligned}
-\theta_t' &= \theta_t - \alpha \nabla f(\theta_t) \\
+\theta_t' &= \theta_t - \alpha \nabla f(\theta_t) \
 \theta_t &= \theta_{t-k} + \eta (\theta_t' - \theta_{t-k})
 \end{aligned}
 $$
@@ -92,8 +92,8 @@ RAdam的公式是在Adam的基础上引入了自适应学习率调整。Adam的�
 
 $$
 \begin{aligned}
-m_t &= \beta_1 m_{t-1} + (1 - \beta_1) g_t \\
-v_t &= \beta_2 v_{t-1} + (1 - \beta_2) g_t^2 \\
+m_t &= \beta_1 m_{t-1} + (1 - \beta_1) g_t \
+v_t &= \beta_2 v_{t-1} + (1 - \beta_2) g_t^2 \
 \theta_t &= \theta_{t-1} - \alpha \frac{\hat{m_t}}{\sqrt{\hat{v_t}} + \epsilon}
 \end{aligned}
 $$

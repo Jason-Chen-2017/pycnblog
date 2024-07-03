@@ -93,7 +93,7 @@ Mixup技术广泛应用于计算机视觉、自然语言处理、音频识别等
 设$D = \{(x_i, y_i)\}_{i=1}^{N}$为训练集，其中$x_i \in \mathbb{R}^d$为输入样本，$y_i \in \mathbb{R}^m$为对应标签。对于任意两个样本$x_i$和$x_j$，Mixup生成的混合样本$x'$和标签$y'$可分别表示为：
 
 $$
-x' = \alpha x_i + (1-\alpha) x_j \\
+x' = \alpha x_i + (1-\alpha) x_j \
 y' = \alpha y_i + (1-\alpha) y_j
 $$
 

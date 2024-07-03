@@ -84,8 +84,8 @@ GAN的数学模型如下：
 
 $$
 \begin{align*}
-D(x) &= \mathbb{P}(y=1|x) \\
-G(z) &= \mathbb{P}(y=1|x) \\
+D(x) &= \mathbb{P}(y=1|x) \
+G(z) &= \mathbb{P}(y=1|x) \
 \end{align*}
 $$
 
@@ -97,8 +97,8 @@ GAN的训练过程可以看作是以下优化问题：
 
 $$
 \begin{align*}
-\min_{G} & \mathbb{E}_{x\sim p_{data}(x)}[D(x)] + \mathbb{E}_{z\sim p_{z}(z)}[D(G(z))] \\
-\max_{D} & \mathbb{E}_{x\sim p_{data}(x)}[D(x)] + \mathbb{E}_{z\sim p_{z}(z)}[D(G(z))] \\
+\min_{G} & \mathbb{E}_{x\sim p_{data}(x)}[D(x)] + \mathbb{E}_{z\sim p_{z}(z)}[D(G(z))] \
+\max_{D} & \mathbb{E}_{x\sim p_{data}(x)}[D(x)] + \mathbb{E}_{z\sim p_{z}(z)}[D(G(z))] \
 \end{align*}
 $$
 

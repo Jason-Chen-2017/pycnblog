@@ -174,7 +174,7 @@ $$
 
 $$
 \begin{aligned}
-C_{cpu}(N_1, N_2, P_1, P_2) &= C_{cpu}^{row} \times N_1 \times f_1 \times N_2 \times f_2 \\
+C_{cpu}(N_1, N_2, P_1, P_2) &= C_{cpu}^{row} \times N_1 \times f_1 \times N_2 \times f_2 \
 &= C_{cpu}^{row} \times N_1 \times N_2 \times f_1 \times f_2
 \end{aligned}
 $$

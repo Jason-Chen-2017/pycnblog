@@ -84,9 +84,9 @@ DenseNet的数学模型主要涉及卷积层、批量归一化和ReLU激活函�
 
 #### 4.1.1 卷积层
 
-卷积层用于提取图像特征。假设输入特征图为$X \\in R^{batch\\_size \\times channels \\times height \\times width}$，卷积核大小为$k \\times k$，则卷积层的计算公式如下：
+卷积层用于提取图像特征。假设输入特征图为$X \in R^{batch\_size \times channels \times height \times width}$，卷积核大小为$k \times k$，则卷积层的计算公式如下：
 
-$$Y = \\sigma(BatchNorm(X) + \\sum_{i=0}^{N} W_{i} \\cdot X_{i})$$
+$$Y = \sigma(BatchNorm(X) + \sum_{i=0}^{N} W_{i} \cdot X_{i})$$
 
 其中，
 
@@ -94,34 +94,34 @@ $$Y = \\sigma(BatchNorm(X) + \\sum_{i=0}^{N} W_{i} \\cdot X_{i})$$
 - $W_{i}$表示第$i$个卷积核的权重。
 - $X_{i}$表示第$i$个输入特征图。
 - $N$表示连接到的输入特征图数量。
-- $\\sigma$表示ReLU激活函数。
+- $\sigma$表示ReLU激活函数。
 
 #### 4.1.2 批量归一化
 
-批量归一化用于加速训练过程，并提高模型的鲁棒性。假设输入特征图为$X \\in R^{batch\\_size \\times channels \\times height \\times width}$，批量归一化的计算公式如下：
+批量归一化用于加速训练过程，并提高模型的鲁棒性。假设输入特征图为$X \in R^{batch\_size \times channels \times height \times width}$，批量归一化的计算公式如下：
 
-$$Y = \\frac{X - \\mu}{\\sigma} \\odot \\gamma + \\beta$$
+$$Y = \frac{X - \mu}{\sigma} \odot \gamma + \beta$$
 
 其中，
 
-- $\\mu$表示输入特征图的均值。
-- $\\sigma$表示输入特征图的标准差。
-- $\\gamma$表示缩放因子。
-- $\\beta$表示偏置项。
+- $\mu$表示输入特征图的均值。
+- $\sigma$表示输入特征图的标准差。
+- $\gamma$表示缩放因子。
+- $\beta$表示偏置项。
 
 #### 4.1.3 ReLU激活函数
 
-ReLU激活函数用于引入非线性，提高模型的表达能力。假设输入特征图为$X \\in R^{batch\\_size \\times channels \\times height \\times width}$，ReLU激活函数的计算公式如下：
+ReLU激活函数用于引入非线性，提高模型的表达能力。假设输入特征图为$X \in R^{batch\_size \times channels \times height \times width}$，ReLU激活函数的计算公式如下：
 
-$$Y = \\max(X, 0)$$
+$$Y = \max(X, 0)$$
 
 ### 4.2 公式推导过程
 
 DenseNet的公式推导过程主要涉及卷积层、批量归一化和ReLU激活函数的计算。具体推导过程如下：
 
-1. **卷积层**：假设输入特征图为$X \\in R^{batch\\_size \\times channels \\times height \\times width}$，卷积核大小为$k \\times k$，则卷积层的计算公式如下：
+1. **卷积层**：假设输入特征图为$X \in R^{batch\_size \times channels \times height \times width}$，卷积核大小为$k \times k$，则卷积层的计算公式如下：
 
-   $$Y = \\sigma(BatchNorm(X) + \\sum_{i=0}^{N} W_{i} \\cdot X_{i})$$
+   $$Y = \sigma(BatchNorm(X) + \sum_{i=0}^{N} W_{i} \cdot X_{i})$$
 
    其中，
 
@@ -129,22 +129,22 @@ DenseNet的公式推导过程主要涉及卷积层、批量归一化和ReLU激�
    - $W_{i}$表示第$i$个卷积核的权重。
    - $X_{i}$表示第$i$个输入特征图。
    - $N$表示连接到的输入特征图数量。
-   - $\\sigma$表示ReLU激活函数。
+   - $\sigma$表示ReLU激活函数。
 
-2. **批量归一化**：假设输入特征图为$X \\in R^{batch\\_size \\times channels \\times height \\times width}$，批量归一化的计算公式如下：
+2. **批量归一化**：假设输入特征图为$X \in R^{batch\_size \times channels \times height \times width}$，批量归一化的计算公式如下：
 
-   $$Y = \\frac{X - \\mu}{\\sigma} \\odot \\gamma + \\beta$$
+   $$Y = \frac{X - \mu}{\sigma} \odot \gamma + \beta$$
 
    其中，
 
-   - $\\mu$表示输入特征图的均值。
-   - $\\sigma$表示输入特征图的标准差。
-   - $\\gamma$表示缩放因子。
-   - $\\beta$表示偏置项。
+   - $\mu$表示输入特征图的均值。
+   - $\sigma$表示输入特征图的标准差。
+   - $\gamma$表示缩放因子。
+   - $\beta$表示偏置项。
 
-3. **ReLU激活函数**：假设输入特征图为$X \\in R^{batch\\_size \\times channels \\times height \\times width}$，ReLU激活函数的计算公式如下：
+3. **ReLU激活函数**：假设输入特征图为$X \in R^{batch\_size \times channels \times height \times width}$，ReLU激活函数的计算公式如下：
 
-   $$Y = \\max(X, 0)$$
+   $$Y = \max(X, 0)$$
 
 ### 4.3 案例分析与讲解
 
@@ -156,7 +156,7 @@ DenseNet的公式推导过程主要涉及卷积层、批量归一化和ReLU激�
 
 我们将使用DenseNet对图像进行分类，并展示其工作过程。
 
-1. **数据预处理**：将图像转换为灰度图像，并裁剪成$32 \\times 32$的尺寸。
+1. **数据预处理**：将图像转换为灰度图像，并裁剪成$32 \times 32$的尺寸。
 2. **模型构建**：使用PyTorch框架构建DenseNet模型。
 3. **模型训练**：使用训练数据对模型进行训练。
 4. **模型测试**：使用测试数据对模型进行测试，评估其性能。

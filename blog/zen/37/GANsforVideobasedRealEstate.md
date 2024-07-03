@@ -93,7 +93,7 @@ GANs由两部分组成：生成器（Generator）和判别器（Discriminator）
 
 $$G(z) = x$$
 
-$$D(x) = \\mathbb{R}$$
+$$D(x) = \mathbb{R}$$
 
 其中，$G(z)$是生成器，$D(x)$是判别器，$z$是生成器输入的随机噪声。
 
@@ -101,9 +101,9 @@ $$D(x) = \\mathbb{R}$$
 
 生成器$G(z)$和判别器$D(x)$的损失函数可以表示为：
 
-$$L_G = -\\mathbb{E}_{z \\sim p_z(z)}[\\log D(G(z))]$$
+$$L_G = -\mathbb{E}_{z \sim p_z(z)}[\log D(G(z))]$$
 
-$$L_D = \\mathbb{E}_{x \\sim p_data(x)}[\\log D(x)] + \\mathbb{E}_{z \\sim p_z(z)}[\\log (1 - D(G(z))]$$
+$$L_D = \mathbb{E}_{x \sim p_data(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log (1 - D(G(z))]$$
 
 其中，$p_z(z)$是噪声分布，$p_data(x)$是真实数据分布。
 

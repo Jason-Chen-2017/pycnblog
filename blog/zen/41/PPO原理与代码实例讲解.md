@@ -68,17 +68,17 @@ PPO广泛应用于**游戏**、**机器人控制**、**自动驾驶**、**推荐
 
 PPO的目标是通过最小化以下期望值来优化策略：
 
-$$J(\\pi) = \\mathbb{E}_{\\tau \\sim \\pi}[\\mathcal{L}(\\pi)]$$
+$$J(\pi) = \mathbb{E}_{\tau \sim \pi}[\mathcal{L}(\pi)]$$
 
-其中，$\\mathcal{L}(\\pi)$是策略$\\pi$下的累积奖励的期望。
+其中，$\mathcal{L}(\pi)$是策略$\pi$下的累积奖励的期望。
 
 ### 4.2 公式推导过程
 
 PPO通过引入**剪裁**来限制策略更新：
 
-$$\\min_{\\theta'} \\max_{\\theta} \\left\\{ \\mathbb{E}_{\\tau \\sim \\pi_\\theta} \\left[ \\frac{\\pi_{\\theta'}(a|\\tau) / \\pi_\\theta(a|\\tau)}{c} \\cdot A_\\theta(\\tau) \\right] \\right\\}$$
+$$\min_{\theta'} \max_{\theta} \left\{ \mathbb{E}_{\tau \sim \pi_\theta} \left[ \frac{\pi_{\theta'}(a|\tau) / \pi_\theta(a|\tau)}{c} \cdot A_\theta(\tau) \right] \right\}$$
 
-其中$c$是剪裁系数，$A_\\theta(\\tau)$是优势函数。
+其中$c$是剪裁系数，$A_\theta(\tau)$是优势函数。
 
 ### 4.3 案例分析与讲解
 
@@ -209,8 +209,8 @@ PPO有望在**自动驾驶**、**机器人操作**、**自然语言处理**、**
 
 ### 7.3 相关论文推荐
 
-- **\"Proximal Policy Optimization Algorithms\"** by John Schulman, Philipp Moritz, Sergey Levine, Michael Jordan, and Pieter Abbeel.
-- **\"A Survey on Reinforcement Learning\"** by Wei Pan et al.
+- **"Proximal Policy Optimization Algorithms"** by John Schulman, Philipp Moritz, Sergey Levine, Michael Jordan, and Pieter Abbeel.
+- **"A Survey on Reinforcement Learning"** by Wei Pan et al.
 
 ### 7.4 其他资源推荐
 

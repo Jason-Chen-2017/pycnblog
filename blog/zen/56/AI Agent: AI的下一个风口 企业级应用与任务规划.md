@@ -114,10 +114,10 @@ $$x_{k+1}^*=A_k x_k^* + B_k u_k^*$$
 其中,$\lambda_k$为协态变量。
 
 例如,考虑一个简单的二阶LTV系统,描述小车在直线上的运动:
-$$\begin{bmatrix} p_{k+1} \\ v_{k+1} \end{bmatrix} = 
-\begin{bmatrix} 1 & \Delta t \\ 0 & 1 \end{bmatrix}
-\begin{bmatrix} p_k \\ v_k \end{bmatrix} +
-\begin{bmatrix} 0 \\ \Delta t \end{bmatrix} u_k$$
+$$\begin{bmatrix} p_{k+1} \ v_{k+1} \end{bmatrix} = 
+\begin{bmatrix} 1 & \Delta t \ 0 & 1 \end{bmatrix}
+\begin{bmatrix} p_k \ v_k \end{bmatrix} +
+\begin{bmatrix} 0 \ \Delta t \end{bmatrix} u_k$$
 其中,$p_k$,$v_k$分别为位置和速度,$\Delta t$为采样时间,$u_k$为加速度控制。我们可以设置代价函数权重,使用时间域配置法求解最优加速度序列,得到小车的最优运动轨迹。
 
 ## 5.项目实践：代码实例和详细解释说明

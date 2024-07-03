@@ -173,7 +173,7 @@ $$
 
 $$
 z = \begin{cases} 
-\text{开启暖气} & \text{if } t < t_{set} \\
+\text{开启暖气} & \text{if } t < t_{set} \
 \text{关闭暖气} & \text{if } t \geq t_{set}
 \end{cases}
 $$

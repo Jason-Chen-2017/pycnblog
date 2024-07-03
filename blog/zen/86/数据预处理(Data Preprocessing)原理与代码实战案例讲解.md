@@ -116,7 +116,7 @@ $$z_i = \frac{x_i - x_{min}}{x_{max} - x_{min}}$$
 $$\mathbf{z}_i = [z_{i1}, z_{i2}, \dots, z_{in}]$$
 
 其中，$z_{ij} = \begin{cases} 
-1, & \text{若 } x_i = j \\
+1, & \text{若 } x_i = j \
 0, & \text{其他情况}
 \end{cases}$$
 

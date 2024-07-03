@@ -79,7 +79,7 @@
 
 设$X$为输入代码的表示形式，$Y$为目标代码的表示形式，$f$为深度学习模型，$L$为损失函数，则自动代码重写的目标是找到$f$使得：
 
-$$ \\min_{f} E_{X,Y}[L(f(X), Y)] $$
+$$ \min_{f} E_{X,Y}[L(f(X), Y)] $$
 
 ### 4.2 公式推导过程
 
@@ -91,11 +91,11 @@ $$ \\min_{f} E_{X,Y}[L(f(X), Y)] $$
 
 使用梯度下降法或其变种（如Adam、RMSprop）来更新模型参数，最小化损失函数。具体步骤为：
 
-$$ \\theta_{t+1} = \\theta_t - \\alpha \\cdot \
-abla_\\theta L(f_\\theta(X), Y) $$
+$$ \theta_{t+1} = \theta_t - \alpha \cdot \
+abla_\theta L(f_\theta(X), Y) $$
 
-其中，$\\theta$为模型参数，$\\alpha$为学习率，$\
-abla_\\theta$为关于$\\theta$的梯度。
+其中，$\theta$为模型参数，$\alpha$为学习率，$\
+abla_\theta$为关于$\theta$的梯度。
 
 ### 4.3 案例分析与讲解
 
@@ -251,8 +251,8 @@ def generate_code(model, input_features):
 ### 7.3 相关论文推荐
 
 #### 论文列表
-- **\"Learning to Refactor Code\"**: Discusses the use of machine learning techniques for code refactoring.
-- **\"Code Tidy: An Automatic Code Cleaning System\"**: Focuses on cleaning up messy code automatically.
+- **"Learning to Refactor Code"**: Discusses the use of machine learning techniques for code refactoring.
+- **"Code Tidy: An Automatic Code Cleaning System"**: Focuses on cleaning up messy code automatically.
 
 ### 7.4 其他资源推荐
 

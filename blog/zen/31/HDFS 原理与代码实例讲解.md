@@ -61,21 +61,21 @@ HDFS采用了分布式存储的设计理念，将数据分散存储在多台服�
 
 假设文件大小为$F$字节，块大小为$B$字节，那么文件包含的块数量$n$可以由以下公式计算：
 
-$$n = \\lceil \\frac{F}{B} \\rceil$$
+$$n = \lceil \frac{F}{B} \rceil$$
 
-其中$\\lceil \\cdot \\rceil$表示向上取整。
+其中$\lceil \cdot \rceil$表示向上取整。
 
 ### 4.2 数据冗余计算
 
 如果每个块有$m$个副本，则总数据量$D$可以表示为：
 
-$$D = n \\times m \\times B$$
+$$D = n \times m \times B$$
 
 ### 4.3 容错率计算
 
-假设系统中存在$p$个DataNode，那么系统在任意时刻至少保留有$\\frac{m}{p}$个副本的概率为：
+假设系统中存在$p$个DataNode，那么系统在任意时刻至少保留有$\frac{m}{p}$个副本的概率为：
 
-$$P = \\left(1-\\frac{1}{p}\\right)^m$$
+$$P = \left(1-\frac{1}{p}\right)^m$$
 
 ## 5. 项目实践：代码实例和详细解释说明
 
@@ -103,19 +103,19 @@ public class HdfsExample {
     public static void main(String[] args) throws IOException {
         Configuration conf = new Configuration();
         FileSystem hdfs = FileSystem.get(conf);
-        Path path = new Path(\"/testFile\");
+        Path path = new Path("/testFile");
         
         // 创建目录
         boolean created = hdfs.mkdirs(path);
-        System.out.println(\"Directory created: \" + created);
+        System.out.println("Directory created: " + created);
         
         // 写入文件
-        FSDataOutputStream fos = hdfs.create(new Path(\"/testFile/testData.txt\"));
-        fos.writeUTF(\"Hello, HDFS!\");
+        FSDataOutputStream fos = hdfs.create(new Path("/testFile/testData.txt"));
+        fos.writeUTF("Hello, HDFS!");
         fos.close();
         
         // 读取文件
-        FSDataInputStream fis = hdfs.open(new Path(\"/testFile/testData.txt\"));
+        FSDataInputStream fis = hdfs.open(new Path("/testFile/testData.txt"));
         byte[] buffer = new byte[1024];
         int read;
         while ((read = fis.read(buffer)) != -1) {
@@ -124,8 +124,8 @@ public class HdfsExample {
         fis.close();
         
         // 删除文件
-        boolean deleted = hdfs.delete(new Path(\"/testFile/testData.txt\"), true);
-        System.out.println(\"File deleted: \" + deleted);
+        boolean deleted = hdfs.delete(new Path("/testFile/testData.txt"), true);
+        System.out.println("File deleted: " + deleted);
         
         hdfs.close();
     }
@@ -145,7 +145,7 @@ public class HdfsExample {
 
 ### 5.4 运行结果展示
 
-运行上述代码后，将创建目录 `/testFile`，写入文本 `\"Hello, HDFS!\"` 到文件 `/testFile/testData.txt`，然后读取并打印文件内容，最后删除文件。
+运行上述代码后，将创建目录 `/testFile`，写入文本 `"Hello, HDFS!"` 到文件 `/testFile/testData.txt`，然后读取并打印文件内容，最后删除文件。
 
 ## 6. 实际应用场景
 

@@ -144,9 +144,9 @@ $$H(x): U \rightarrow V$$
 压缩过程是MD5的核心,涉及到一系列位运算:
 
 $$\begin{aligned}
-a &= b + ((a + F(b,c,d) + M_i + K_i) <<< s) \\
-d &= a + ((d + F(a,b,c) + M_{i+1} + K_{i+1}) <<< s) \\
-c &= d + ((c + F(d,a,b) + M_{i+2} + K_{i+2}) <<< s) \\
+a &= b + ((a + F(b,c,d) + M_i + K_i) <<< s) \
+d &= a + ((d + F(a,b,c) + M_{i+1} + K_{i+1}) <<< s) \
+c &= d + ((c + F(d,a,b) + M_{i+2} + K_{i+2}) <<< s) \
 b &= c + ((b + F(c,d,a) + M_{i+3} + K_{i+3}) <<< s)
 \end{aligned}$$
 

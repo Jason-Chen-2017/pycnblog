@@ -90,8 +90,8 @@ E[智能合约 Smart Contract] --> C
 - 加法运算：设 $P(x_1,y_1), Q(x_2,y_2)$ 为椭圆曲线上的点，则 $P+Q=R(x_3,y_3)$，其中：
 $$
 \begin{aligned}
-\lambda &= \frac{y_2-y_1}{x_2-x_1} \pmod p \\
-x_3 &= \lambda^2 - x_1 - x_2 \pmod p \\  
+\lambda &= \frac{y_2-y_1}{x_2-x_1} \pmod p \
+x_3 &= \lambda^2 - x_1 - x_2 \pmod p \  
 y_3 &= \lambda(x_1-x_3) - y_1 \pmod p
 \end{aligned}
 $$

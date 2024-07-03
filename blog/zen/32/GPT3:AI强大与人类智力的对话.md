@@ -150,8 +150,8 @@ $$\mathcal{L} = \sum_{i=1}^N \log P(x_i|x_1, x_2, ..., x_{i-1})$$
 然后,我们计算查询(Query)、键(Key)和值(Value)向量:
 
 $$\begin{aligned}
-Q &= E W^Q \\
-K &= E W^K \\
+Q &= E W^Q \
+K &= E W^K \
 V &= E W^V
 \end{aligned}$$
 
@@ -195,6 +195,6 @@ mat: [0.1, -0.2, 0.4, ...]
 假设查询向量为 $Q = [0.1, 0.2, 0.3]$,键向量为 $K = [0.4, 0.3, 0.2]$,值向量为 $V = [0.2, 0.1, 0.4]$。根据公式 $\textrm{Attention}(Q, K, V) = \textrm{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V$,我们可以计算出注意力权重矩阵:
 
 $$\alpha = \textrm{softmax}\left(\frac{1}{\sqrt{3}} \begin{bmatrix}
-0.1 \times 0.4 & 0.1 \times 0.3 & 0.1 \times 0.2 \\
-0.2 \times 0.4 & 0.2 \times 0.3 & 0.2 \times 0.2 \\
+0.1 \times 0.4 & 0.1 \times 0.3 & 0.1 \times 0.2 \
+0.2 \times 0.4 & 0.2 \times 0.3 & 0.2 \times 0.2 \
 0.3 \times 0.4 

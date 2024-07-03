@@ -77,7 +77,7 @@ $$T_i = \max_{1 \leq j \leq n_i} (t_{ij} + c_{ij})$$
 如果Stage $i$和Stage $i+1$能够流水线化执行,则有:
 
 $$\begin{aligned}
-T_{i,i+1}^{pipeline} &= \max(\max_{1 \leq j \leq n_i} (t_{ij} + c_{ij}), \max_{1 \leq j \leq n_{i+1}} (t_{i+1,j} + c_{i+1,j}))\\
+T_{i,i+1}^{pipeline} &= \max(\max_{1 \leq j \leq n_i} (t_{ij} + c_{ij}), \max_{1 \leq j \leq n_{i+1}} (t_{i+1,j} + c_{i+1,j}))\
 &\leq T_i + T_{i+1}
 \end{aligned}$$
 

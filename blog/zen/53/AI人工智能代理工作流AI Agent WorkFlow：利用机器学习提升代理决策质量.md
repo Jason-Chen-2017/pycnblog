@@ -20,16 +20,16 @@ AI代理工作流的算法原理主要包括以下步骤：
 AI代理工作流的数学模型通常基于马尔可夫决策过程(MDP)和强化学习(RL)。MDP是一个描述动态系统的框架，其中状态、动作和奖励是关键概念。强化学习则是通过试错来学习最优策略的过程。
 
 $$
-\\begin{aligned}
-& \\text{状态空间 } S \\\\
-& \\text{动作空间 } A \\\\
-& \\text{转移概率矩阵 } P_{ss'} = P[S_{t+1}=s'|S_t=s,A_t=a] \\\\
-& \\text{奖励函数 } R(s, a) \\\\
-& \\text{折扣因子 } \\gamma \\in [0, 1] \\\\
-& \\text{最优值函数 } V^*(s) = \\max_\\pi E[\\sum_{t=0}^{\\infty}\\gamma^t r_t | S_0=s] \\\\
-& \\text{最优策略 } \\pi^* \\\\
-& \\text{Bellman方程 } V(s) = R(s, \\pi(s)) + \\gamma \\sum_{s'} P(s'|s, \\pi(s))V(s') \\\\
-\\end{aligned}
+\begin{aligned}
+& \text{状态空间 } S \\
+& \text{动作空间 } A \\
+& \text{转移概率矩阵 } P_{ss'} = P[S_{t+1}=s'|S_t=s,A_t=a] \\
+& \text{奖励函数 } R(s, a) \\
+& \text{折扣因子 } \gamma \in [0, 1] \\
+& \text{最优值函数 } V^*(s) = \max_\pi E[\sum_{t=0}^{\infty}\gamma^t r_t | S_0=s] \\
+& \text{最优策略 } \pi^* \\
+& \text{Bellman方程 } V(s) = R(s, \pi(s)) + \gamma \sum_{s'} P(s'|s, \pi(s))V(s') \\
+\end{aligned}
 $$
 
 ## 5.项目实践：代码实例和详细解释说明
@@ -160,20 +160,20 @@ class SimpleAgent:
         self.actions = ['move left', 'move right']  # 可能的动作集合
 
     def perceive(self):
-        print(f\"Perceiving environment state in {self.state}\")
+        print(f"Perceiving environment state in {self.state}")
 
     def decide(self):
         return self.actions[random.randint(0, 1)]
 
     def act(self, action):
-        print(f\"Executing action: {action}\")
+        print(f"Executing action: {action}")
         if action == 'move left':
             self.state = 'left side'
         elif action == 'move right':
             self.state = 'right side'
 
     def feedback(self, result):
-        print(f\"Feedback received: {result}\")
+        print(f"Feedback received: {result}")
 
 # 创建代理
 agent = SimpleAgent('middle')

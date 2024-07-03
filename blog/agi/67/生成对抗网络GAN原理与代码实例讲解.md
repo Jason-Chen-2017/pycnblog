@@ -129,10 +129,10 @@ GANs的应用领域非常广泛，包括：
 
 $$
 \begin{align*}
-X &\sim p_X(x) \\
-G(z) &\sim p_G(z) \\
-D(x) &\sim p_D(x) \\
-p_G(z) &\propto \int_{X}p_X(x)p_D(x|z)dx \\
+X &\sim p_X(x) \
+G(z) &\sim p_G(z) \
+D(x) &\sim p_D(x) \
+p_G(z) &\propto \int_{X}p_X(x)p_D(x|z)dx \
 D(x) &\propto \int_{Z}p_G(z)p_D(x|z)dz
 \end{align*}
 $$
@@ -149,7 +149,7 @@ $$
 
 $$
 \begin{align*}
-L_G &= \frac{1}{M} \sum_{i=1}^M \log D(g_i) \\
+L_G &= \frac{1}{M} \sum_{i=1}^M \log D(g_i) \
 L_D &= \frac{1}{N+M} \left( \sum_{i=1}^N \log D(x_i) + \sum_{i=1}^M \log (1-D(g_i)) \right)
 \end{align*}
 $$

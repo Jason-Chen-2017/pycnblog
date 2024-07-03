@@ -146,8 +146,8 @@ graph TD
 
 $$
 \begin{align}
-P &\rightarrow \bot \\
-\bot &\rightarrow Q \\
+P &\rightarrow \bot \
+\bot &\rightarrow Q \
 \therefore \neg P
 \end{align}
 $$
@@ -169,7 +169,7 @@ $$
    - 例如,我们可以构建如下规则:
      $$
      \begin{align}
-     &\forall x \big( \text{HasSymptom(x, 发烧)} \land \text{HasSymptom(x, 咳嗽)} \\
+     &\forall x \big( \text{HasSymptom(x, 发烧)} \land \text{HasSymptom(x, 咳嗽)} \
      &\qquad\qquad \rightarrow \text{HasDisease(x, 肺炎)} \big)
      \end{align}
      $$

@@ -153,11 +153,11 @@ df['Age'].fillna(mean_value, inplace=True)
 
 对于每个列$C$中的每个缺失值$NaN$，可以使用以下公式进行填充：
 
-\[ \text{New Value} = \begin{cases} 
-\text{Previous Value} & \text{if } C_i = \text{NaN} \\
+$$ \text{New Value} = \begin{cases} 
+\text{Previous Value} & \text{if } C_i = \text{NaN} \
 \text{Previous Value} & \text{if } \text{Previous Value} \
 eq \text{NaN} 
-\end{cases} \]
+\end{cases} $$
 
 其中$C_i$是第$i$行第$C$列的值。
 

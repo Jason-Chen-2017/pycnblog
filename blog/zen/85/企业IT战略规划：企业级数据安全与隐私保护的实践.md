@@ -161,9 +161,9 @@ $$M = D_k(C, k_{private})$$
 - **访问控制矩阵**：
 
 $$A = \begin{bmatrix} 
-a_{11} & a_{12} & \dots & a_{1n} \\
-a_{21} & a_{22} & \dots & a_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
+a_{11} & a_{12} & \dots & a_{1n} \
+a_{21} & a_{22} & \dots & a_{2n} \
+\vdots & \vdots & \ddots & \vdots \
 a_{m1} & a_{m2} & \dots & a_{mn} 
 \end{bmatrix}$$
 
@@ -172,7 +172,7 @@ a_{m1} & a_{m2} & \dots & a_{mn}
 - **访问控制树**：
 
 $$\text{AccessTree}(u, r) = \begin{cases} 
-\text{允许} & \text{if } u \in \text{Descendants}(r) \\
+\text{允许} & \text{if } u \in \text{Descendants}(r) \
 \text{拒绝} & \text{otherwise} 
 \end{cases}$$
 

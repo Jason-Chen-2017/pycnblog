@@ -148,7 +148,7 @@ Pig支持标准的关系代数操作,如:
 Map阶段:
 
 $$\begin{align*}
-map(k_1, v_1) &\rightarrow \langle\text{word}, 1\rangle \\
+map(k_1, v_1) &\rightarrow \langle\text{word}, 1\rangle \
                &\rightarrow list(\langle\text{word}_1, 1\rangle, \langle\text{word}_2, 1\rangle, ...)
 \end{align*}$$
 
@@ -157,7 +157,7 @@ map(k_1, v_1) &\rightarrow \langle\text{word}, 1\rangle \\
 Reduce阶段:
 
 $$\begin{align*}
-reduce(\text{word}, \langle1, 1, ..., 1\rangle) &\rightarrow \langle\text{word}, \sum{count}\rangle \\
+reduce(\text{word}, \langle1, 1, ..., 1\rangle) &\rightarrow \langle\text{word}, \sum{count}\rangle \
                                    &\rightarrow list(\langle\text{word}_1, count_1\rangle, \langle\text{word}_2, count_2\rangle, ...)
 \end{align*}$$
 

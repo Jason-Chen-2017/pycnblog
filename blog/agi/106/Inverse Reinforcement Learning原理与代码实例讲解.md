@@ -195,8 +195,8 @@ $$
 $$
 R(s, a) = 
 \begin{cases}
-1, & \text{if } s \text{ is the goal state} \\
--1, & \text{if } s \text{ is the obstacle state} \\
+1, & \text{if } s \text{ is the goal state} \
+-1, & \text{if } s \text{ is the obstacle state} \
 0, & \text{otherwise}
 \end{cases}
 $$

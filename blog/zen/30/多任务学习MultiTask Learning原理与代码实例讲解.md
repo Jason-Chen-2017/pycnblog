@@ -87,34 +87,34 @@
 
 ### 4.1 数学模型构建
 
-假设我们有\\( T \\)个任务，每个任务\\( t \\)有一个损失函数\\( L_t(\\theta) \\)，其中\\( \\theta \\)是模型参数。多任务学习的目标是最小化以下多任务损失函数：
+假设我们有\( T \)个任务，每个任务\( t \)有一个损失函数\( L_t(\theta) \)，其中\( \theta \)是模型参数。多任务学习的目标是最小化以下多任务损失函数：
 
 $$
-L_{\\text{multi}}(\\theta) = \\sum_{t=1}^{T} \\lambda_t L_t(\\theta)
+L_{\text{multi}}(\theta) = \sum_{t=1}^{T} \lambda_t L_t(\theta)
 $$
 
-其中\\( \\lambda_t \\)是任务\\( t \\)的加权系数，通常基于任务的重要性或相关性来确定。
+其中\( \lambda_t \)是任务\( t \)的加权系数，通常基于任务的重要性或相关性来确定。
 
 ### 4.2 公式推导过程
 
 在联合训练框架下，多任务学习的目标是：
 
 $$
-\\min_{\\theta} \\sum_{t=1}^{T} \\lambda_t L_t(\\theta)
+\min_{\theta} \sum_{t=1}^{T} \lambda_t L_t(\theta)
 $$
 
 通过引入拉格朗日乘子或采用其他优化策略，可以设计出具体的优化算法来求解此问题。在实践中，常用的优化算法包括梯度下降法及其变种（如Adam、SGD等）。
 
 ### 4.3 案例分析与讲解
 
-假设我们有两个相关任务：文本分类和文本生成。任务\\( t \\)和\\( t+1 \\)分别对应这两个任务。任务\\( t \\)的损失函数\\( L_t(\\theta) \\)衡量分类的准确性，而任务\\( t+1 \\)的损失函数\\( L_{t+1}(\\theta) \\)衡量生成文本的质量。我们可以定义任务\\( t \\)和\\( t+1 \\)的加权系数\\( \\lambda_t \\)和\\( \\lambda_{t+1} \\)，以反映它们的重要性或相关性。例如：
+假设我们有两个相关任务：文本分类和文本生成。任务\( t \)和\( t+1 \)分别对应这两个任务。任务\( t \)的损失函数\( L_t(\theta) \)衡量分类的准确性，而任务\( t+1 \)的损失函数\( L_{t+1}(\theta) \)衡量生成文本的质量。我们可以定义任务\( t \)和\( t+1 \)的加权系数\( \lambda_t \)和\( \lambda_{t+1} \)，以反映它们的重要性或相关性。例如：
 
 $$
-\\lambda_t = \\frac{\\text{任务} t \\text{的样本数量}}{\\text{总样本数量}}
+\lambda_t = \frac{\text{任务} t \text{的样本数量}}{\text{总样本数量}}
 $$
 
 $$
-\\lambda_{t+1} = \\frac{\\text{任务} t+1 \\text{的样本数量}}{\\text{总样本数量}}
+\lambda_{t+1} = \frac{\text{任务} t+1 \text{的样本数量}}{\text{总样本数量}}
 $$
 
 这样，模型将根据任务的样本数量来平衡两个任务的损失，从而在优化过程中考虑到任务的相对重要性。
@@ -203,7 +203,7 @@ def train(model, tasks, dataloaders, criterion, optimizer, device):
                 running_loss += loss.item() * inputs.size(0)
 
             epoch_loss = running_loss / len(dataloaders[phase].dataset)
-            print(f\"{phase} Loss: {epoch_loss:.4f}\")
+            print(f"{phase} Loss: {epoch_loss:.4f}")
 ```
 
 ### 5.3 代码解读与分析
@@ -231,7 +231,7 @@ def train(model, tasks, dataloaders, criterion, optimizer, device):
 ### 7.1 学习资源推荐
 
 - **在线教程**：Kaggle的多任务学习教程、Google的TensorFlow多任务学习指南。
-- **学术论文**：\"Learning Multiple Tasks Using Shared Parameters\"、\"Transfer Learning\"。
+- **学术论文**："Learning Multiple Tasks Using Shared Parameters"、"Transfer Learning"。
 
 ### 7.2 开发工具推荐
 
@@ -240,8 +240,8 @@ def train(model, tasks, dataloaders, criterion, optimizer, device):
 
 ### 7.3 相关论文推荐
 
-- **\"Learning Multiple Tasks Using Shared Parameters\"**（2005年）
-- **\"Transfer Learning\"**（2014年）
+- **"Learning Multiple Tasks Using Shared Parameters"**（2005年）
+- **"Transfer Learning"**（2014年）
 
 ### 7.4 其他资源推荐
 

@@ -121,11 +121,11 @@ YOLOv3 算法的数学模型可以表示为：
 
 $$
 \begin{aligned}
-& \text{输入图像}: I \\
-& \text{特征提取器}: F \\
-& \text{预测器}: P \\
-& \text{输出结果}: O \\
-& \\
+& \text{输入图像}: I \
+& \text{特征提取器}: F \
+& \text{预测器}: P \
+& \text{输出结果}: O \
+& \
 & O = P(F(I))
 \end{aligned}
 $$
@@ -140,9 +140,9 @@ YOLOv3 算法的公式推导过程如下：
 
    $$
    \begin{aligned}
-   & b_x = (σ(t_x) + c_x) * w \\
-   & b_y = (σ(t_y) + c_y) * h \\
-   & b_w = exp(t_w) * w \\
+   & b_x = (σ(t_x) + c_x) * w \
+   & b_y = (σ(t_y) + c_y) * h \
+   & b_w = exp(t_w) * w \
    & b_h = exp(t_h) * h
    \end{aligned}
    $$

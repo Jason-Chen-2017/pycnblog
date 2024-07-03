@@ -61,7 +61,7 @@
 我们的故障检测算法可以表示为以下公式：
 
 $S(t) = \begin{cases} 
-1, & \text{if device is normal at time } t \\
+1, & \text{if device is normal at time } t \
 0, & \text{if device is faulty at time } t 
 \end{cases}$
 
@@ -70,7 +70,7 @@ $S(t) = \begin{cases}
 我们的故障修复算法可以表示为以下公式：
 
 $S(t+1) = \begin{cases} 
-1, & \text{if device is restarted at time } t \\
+1, & \text{if device is restarted at time } t \
 S(t), & \text{otherwise} 
 \end{cases}$
 

@@ -55,12 +55,12 @@ Attention(Q,K,V) = softmax(\frac{QK^T}{\sqrt{d_k}})V
 $$
 #### 4.2.2 多头注意力
 $$
-MultiHead(Q,K,V) = Concat(head_1, ..., head_h)W^O \\
+MultiHead(Q,K,V) = Concat(head_1, ..., head_h)W^O \
 head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)
 $$
 #### 4.2.3 位置编码
 $$
-PE_{(pos,2i)} = sin(pos/10000^{2i/d_{model}}) \\
+PE_{(pos,2i)} = sin(pos/10000^{2i/d_{model}}) \
 PE_{(pos,2i+1)} = cos(pos/10000^{2i/d_{model}})
 $$
 ### 4.3 LangChain中的数学应用

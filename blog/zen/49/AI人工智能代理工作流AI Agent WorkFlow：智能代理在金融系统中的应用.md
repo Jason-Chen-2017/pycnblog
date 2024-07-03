@@ -160,8 +160,8 @@ $$R(s, a) = -\sum_{t=0}^{\infty} \gamma^t R(s_{t+1}, a_t)$$
 假设工作流调度为一个作业调度问题，每个智能代理为一个作业，作业的执行时间和资源需求不同。工作流调度模型可以表示为：
 
 $$\begin{cases} 
-\min_{\pi} \sum_{i=1}^n C_i \\
-s.t. \\
+\min_{\pi} \sum_{i=1}^n C_i \
+s.t. \
 \sum_{j \in A_i} \alpha_j \leq R_j
 \end{cases}$$
 

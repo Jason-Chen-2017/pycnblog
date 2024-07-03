@@ -108,7 +108,7 @@ $$G(x) = \text{Conv}(x)$$
 
 在CIFAR-10任务中，假设使用ResNet-18，可以使用以下公式表示模型结构：
 
-\[F(x) = x + \text{ResBlock}(x)\]
+$$F(x) = x + \text{ResBlock}(x)$$
 
 其中，\(\text{ResBlock}\) 是一个包含多个卷积层和激活函数的模块。
 

@@ -196,14 +196,14 @@ $$
 
 $$
 A = \begin{pmatrix}
-1 & 2 \\
+1 & 2 \
 3 & 4
 \end{pmatrix}
 $$
 
 $$
 B = \begin{pmatrix}
-5 & 6 \\
+5 & 6 \
 7 & 8
 \end{pmatrix}
 $$
@@ -212,11 +212,11 @@ $$
 
 $$
 C = \begin{pmatrix}
-1 \cdot 5 + 2 \cdot 7 & 1 \cdot 6 + 2 \cdot 8 \\
+1 \cdot 5 + 2 \cdot 7 & 1 \cdot 6 + 2 \cdot 8 \
 3 \cdot 5 + 4 \cdot 7 & 3 \cdot 6 + 4 \cdot 8
 \end{pmatrix}
 = \begin{pmatrix}
-19 & 22 \\
+19 & 22 \
 43 & 50
 \end{pmatrix}
 $$
@@ -227,15 +227,15 @@ $$
 
 $$
 X = \begin{pmatrix}
-1 & 2 & 3 \\
-4 & 5 & 6 \\
+1 & 2 & 3 \
+4 & 5 & 6 \
 7 & 8 & 9
 \end{pmatrix}
 $$
 
 $$
 K = \begin{pmatrix}
-1 & 0 \\
+1 & 0 \
 0 & -1
 \end{pmatrix}
 $$
@@ -262,7 +262,7 @@ $$
 
 $$
 Y = \begin{pmatrix}
--4 & -4 \\
+-4 & -4 \
 -4 & -4
 \end{pmatrix}
 $$
@@ -273,9 +273,9 @@ $$
 
 $$
 x = \begin{pmatrix}
--1 \\
-2 \\
--3 \\
+-1 \
+2 \
+-3 \
 4
 \end{pmatrix}
 $$
@@ -284,9 +284,9 @@ $$
 
 $$
 f(x) = \begin{pmatrix}
-0 \\
-2 \\
-0 \\
+0 \
+2 \
+0 \
 4
 \end{pmatrix}
 $$

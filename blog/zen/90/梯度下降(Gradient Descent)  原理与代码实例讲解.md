@@ -111,7 +111,7 @@ $$J(\theta) = \sum_{i=1}^m (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i} 
 通过计算目标函数的梯度，我们可以得到：
 
 $$\
-abla J(\theta) = \begin{pmatrix} \frac{\partial J(\theta)}{\partial \theta_0} \\ \frac{\partial J(\theta)}{\partial \theta_1} \\ \vdots \\ \frac{\partial J(\theta)}{\partial \theta_n} \end{pmatrix} = \begin{pmatrix} -2 \sum_{i=1}^m (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i} + \dots + \theta_n x_{ni})) \\ -2 \sum_{i=1}^m (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i} + \dots + \theta_n x_{ni})) x_{1i} \\ \vdots \\ -2 \sum_{i=1}^m (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i} + \dots + \theta_n x_{ni})) x_{ni} \end{pmatrix}$$
+abla J(\theta) = \begin{pmatrix} \frac{\partial J(\theta)}{\partial \theta_0} \ \frac{\partial J(\theta)}{\partial \theta_1} \ \vdots \ \frac{\partial J(\theta)}{\partial \theta_n} \end{pmatrix} = \begin{pmatrix} -2 \sum_{i=1}^m (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i} + \dots + \theta_n x_{ni})) \ -2 \sum_{i=1}^m (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i} + \dots + \theta_n x_{ni})) x_{1i} \ \vdots \ -2 \sum_{i=1}^m (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i} + \dots + \theta_n x_{ni})) x_{ni} \end{pmatrix}$$
 
 根据梯度下降算法，我们可以得到参数$\theta$的更新公式：
 

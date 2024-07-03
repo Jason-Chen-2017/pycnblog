@@ -22,9 +22,9 @@ Riemann猜想的重要性不仅在于其本身的数学价值，还在于它对�
 
 ### 核心概念
 
-- **黎曼ζ函数**: $\\zeta(s) = \\sum_{n=1}^{\\infty} \\frac{1}{n^s}$，其中$s$为复数。
-- **非平凡零点**: 当$s$不为正整数时，$\\zeta(s)=0$的零点称为非平凡零点。
-- **瑞利安假设**: 所有的非平凡零点的实部等于$\\frac{1}{2}$。
+- **黎曼ζ函数**: $\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}$，其中$s$为复数。
+- **非平凡零点**: 当$s$不为正整数时，$\zeta(s)=0$的零点称为非平凡零点。
+- **瑞利安假设**: 所有的非平凡零点的实部等于$\frac{1}{2}$。
 
 ### 核心联系
 
@@ -36,7 +36,7 @@ Riemann猜想与黎曼ζ函数紧密相连，通过研究ζ函数的性质，特
 
 Riemann猜想的证明通常涉及到高级数学分析，包括复分析、微积分、数论和函数理论。目前，数学界还没有找到一个通用的方法来解决这个问题。然而，一些尝试性的方法包括：
 
-- **数值模拟**: 通过计算机计算大量非平凡零点的实部，验证它们是否都位于$\\frac{1}{2}$处附近。
+- **数值模拟**: 通过计算机计算大量非平凡零点的实部，验证它们是否都位于$\frac{1}{2}$处附近。
 - **解析方法**: 应用复分析工具来探索ζ函数的性质，如寻找函数的解析延拓、研究ζ函数的导数和级数展开。
 
 ### 3.2 算法步骤详解
@@ -59,20 +59,20 @@ Riemann猜想及其相关研究不仅限于数论，还在密码学、信息理�
 
 构建数学模型通常涉及黎曼ζ函数的定义和性质分析：
 
-- **黎曼ζ函数定义**: $\\zeta(s) = \\sum_{n=1}^{\\infty} \\frac{1}{n^s}$。
-- **非平凡零点**: $\\zeta(s) = 0$且$s \
+- **黎曼ζ函数定义**: $\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}$。
+- **非平凡零点**: $\zeta(s) = 0$且$s \
 eq 1$时的$s$。
 
 ### 4.2 公式推导过程
 
-- **欧拉乘积公式**: $\\zeta(s) = \\prod_{p \\text{ prime}} \\frac{1}{1-p^{-s}}$，这里$p$代表素数。
-- **黎曼函数的级数表示**: $\\zeta(s) = \\frac{1}{\\Gamma(s)} \\int_0^\\infty \\frac{x^{s-1}}{e^x-1} dx$。
+- **欧拉乘积公式**: $\zeta(s) = \prod_{p \text{ prime}} \frac{1}{1-p^{-s}}$，这里$p$代表素数。
+- **黎曼函数的级数表示**: $\zeta(s) = \frac{1}{\Gamma(s)} \int_0^\infty \frac{x^{s-1}}{e^x-1} dx$。
 
 ### 4.3 案例分析与讲解
 
 考虑一个简单的例子，利用欧拉乘积公式探索ζ函数在特定值上的行为：
 
-- **当$s=2$时**，$\\zeta(2) = \\sum_{n=1}^{\\infty} \\frac{1}{n^2} = \\frac{\\pi^2}{6}$，这是一个著名的恒等式，与π的平方相联系。
+- **当$s=2$时**，$\zeta(2) = \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$，这是一个著名的恒等式，与π的平方相联系。
 
 ### 4.4 常见问题解答
 
@@ -93,17 +93,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def riemann_zeta(s):
-    \"\"\"计算黎曼ζ函数的值\"\"\"
+    """计算黎曼ζ函数的值"""
     if np.iscomplexobj(s):
-        raise ValueError(\"s must be real for non-trivial zeros\")
+        raise ValueError("s must be real for non-trivial zeros")
     elif np.abs(np.imag(s)) > 1:
-        raise ValueError(\"s must have imaginary part between -1 and 1 for non-trivial zeros\")
+        raise ValueError("s must have imaginary part between -1 and 1 for non-trivial zeros")
     else:
         z = np.exp(-np.pi * s / 4)
         return np.sum(1 / np.power(np.arange(1, 1000), s))
 
 def plot_non_trivial_zeros():
-    \"\"\"绘制非平凡零点的分布\"\"\"
+    """绘制非平凡零点的分布"""
     s_values = np.linspace(-1.5, 1.5, 1000)
     zeta_values = np.vectorize(riemann_zeta)(s_values)
     
@@ -111,13 +111,13 @@ def plot_non_trivial_zeros():
     non_trivial_zeros = np.array([s for s, value in zip(s_values, zeta_values) if abs(value) < 1e-6])
     
     plt.figure(figsize=(10, 5))
-    plt.plot(s_values, zeta_values, label=\"Riemann Zeta Function\", color=\"blue\")
-    plt.scatter(non_trivial_zeros, np.zeros_like(non_trivial_zeros), color=\"red\", label=\"Non-trivial zeros\")
-    plt.axhline(0, color=\"black\", linewidth=0.5)
-    plt.axvline(x=0, color=\"black\", linewidth=0.5)
-    plt.title(\"Riemann Zeta Function and Non-trivial Zeros\")
-    plt.xlabel(\"s\")
-    plt.ylabel(\"zeta(s)\")
+    plt.plot(s_values, zeta_values, label="Riemann Zeta Function", color="blue")
+    plt.scatter(non_trivial_zeros, np.zeros_like(non_trivial_zeros), color="red", label="Non-trivial zeros")
+    plt.axhline(0, color="black", linewidth=0.5)
+    plt.axvline(x=0, color="black", linewidth=0.5)
+    plt.title("Riemann Zeta Function and Non-trivial Zeros")
+    plt.xlabel("s")
+    plt.ylabel("zeta(s)")
     plt.legend()
     plt.grid(True)
     plt.show()

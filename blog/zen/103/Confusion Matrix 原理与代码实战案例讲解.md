@@ -112,11 +112,11 @@
 $$
 \begin{align*}
 CM &= \begin{pmatrix}
-TP & FN \\
+TP & FN \
 FP & TN
-\end{pmatrix} \\
+\end{pmatrix} \
 &= \begin{pmatrix}
-\frac{TP+TN}{TP+TN+FP+FN} & \frac{FN}{TP+TN+FP+FN} \\
+\frac{TP+TN}{TP+TN+FP+FN} & \frac{FN}{TP+TN+FP+FN} \
 \frac{FP}{TP+TN+FP+FN} & \frac{TN}{TP+TN+FP+FN}
 \end{pmatrix}
 \end{align*}
@@ -135,9 +135,9 @@ $$
 
 $$
 \begin{align*}
-TP &= \frac{TP+TN}{TP+TN+FP+FN} \\
-TN &= \frac{TN}{TP+TN+FP+FN} \\
-FP &= \frac{FP}{TP+TN+FP+FN} \\
+TP &= \frac{TP+TN}{TP+TN+FP+FN} \
+TN &= \frac{TN}{TP+TN+FP+FN} \
+FP &= \frac{FP}{TP+TN+FP+FN} \
 FN &= \frac{FN}{TP+TN+FP+FN}
 \end{align*}
 $$

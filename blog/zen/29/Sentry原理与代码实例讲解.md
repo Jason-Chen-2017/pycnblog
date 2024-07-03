@@ -203,5 +203,5 @@ $$w_{it} = \text{tf}_{it} \times \text{idf}_t$$
 假设事件 $e_i$ 和 $e_j$ 分别对应的 TF-IDF 加权特征向量为 $\vec{v_i}$ 和 $\vec{v_j}$,那么它们之间的余弦相似度为:
 
 $$\begin{aligned}
-\text{sim}_{\cos}(\vec{v_i}, \vec{v_j}) &= \frac{\vec{v_i} \cdot \vec{v_j}}{||\vec{v_i}|| \times ||\vec{v_j}||}\\
+\text{sim}_{\cos}(\vec{v_i}, \vec{v_j}) &= \frac{\vec{v_i} \cdot \vec{v_j}}{||\vec{v_i}|| \times ||\vec{v_j}||}\
 &= \frac{\sum_{t} w_{it} \times w_{jt}}{\sqrt{\sum_{t} w_{it}^2} \

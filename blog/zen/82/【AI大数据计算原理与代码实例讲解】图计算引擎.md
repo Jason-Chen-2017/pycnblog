@@ -82,7 +82,7 @@
 ### 图矩阵表示
 
 - **邻接矩阵**：$A = [a_{ij}]$，其中$a_{ij} = \begin{cases} 
-1 & \text{if } (u,v) \in E \\
+1 & \text{if } (u,v) \in E \
 0 & \text{otherwise}
 \end{cases}$，$E$是边的集合，$u$和$v$是节点。
 - **度矩阵**：对角矩阵，$D = \text{diag}(d_1,d_2,...,d_n)$，其中$d_i = \sum_{j=1}^{n} a_{ij}$是节点$i$的度。

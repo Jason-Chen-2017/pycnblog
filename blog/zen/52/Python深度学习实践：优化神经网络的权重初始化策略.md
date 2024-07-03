@@ -111,7 +111,7 @@ $$
 - 均匀分布 $U(a,b)$:
 $$
 f(x) = \begin{cases} 
-\frac{1}{b-a}, & a \leq x \leq b \\
+\frac{1}{b-a}, & a \leq x \leq b \
 0, & \text{otherwise}
 \end{cases}
 $$

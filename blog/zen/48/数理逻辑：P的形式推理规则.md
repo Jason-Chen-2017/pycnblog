@@ -101,7 +101,7 @@ P的形式推理规则可以构建为一个形式化的系统，包括命题演�
 
 $$
 \begin{align*}
-P \land Q & \vdash P \\
+P \land Q & \vdash P \
 P \land Q & \vdash Q
 \end{align*}
 $$

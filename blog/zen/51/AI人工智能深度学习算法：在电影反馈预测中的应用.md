@@ -101,7 +101,7 @@
 
 One-hot编码是词向量表示的一种简单方法,将每个词映射为一个长度为词典大小的向量,该词对应位置为1,其余位置为0。
 
-$$\operatorname{one\_hot}(x_i) = \begin{bmatrix} 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \end{bmatrix}$$
+$$\operatorname{one\_hot}(x_i) = \begin{bmatrix} 0 \ \vdots \ 1 \ \vdots \ 0 \end{bmatrix}$$
 
 其中$x_i$表示第i个词。
 
@@ -116,11 +116,11 @@ $$\max_{\theta} \frac{1}{T}\sum_{t=1}^{T}\sum_{-c \leq j \leq c, j \neq 0} \log 
 LSTM是一种常用的序列建模网络,它通过设计特殊的门控机制来缓解长期依赖问题。以前向传播为例,LSTM的隐藏状态更新公式为:
 
 $$\begin{aligned}
-f_t &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \\
-i_t &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \\
-\tilde{C}_t &= \tanh(W_C \cdot [h_{t-1}, x_t] + b_C) \\
-C_t &= f_t \odot C_{t-1} + i_t \odot \tilde{C}_t \\
-o_t &= \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) \\
+f_t &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \
+i_t &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \
+\tilde{C}_t &= \tanh(W_C \cdot [h_{t-1}, x_t] + b_C) \
+C_t &= f_t \odot C_{t-1} + i_t \odot \tilde{C}_t \
+o_t &= \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) \
 h_t &= o_t \odot \tanh(C_t)
 \end{aligned}$$
 

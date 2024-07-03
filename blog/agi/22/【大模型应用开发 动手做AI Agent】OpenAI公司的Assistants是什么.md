@@ -96,27 +96,27 @@ Assistant系统广泛应用于：
 
 Assistant系统中的数学模型主要围绕预训练语言模型展开，如BERT、GPT系列等。这些模型通常基于深度神经网络架构，采用以下基本公式进行训练：
 
-$$ \\text{Loss}(W, \\theta) = \\frac{1}{|D|} \\sum_{(x, y) \\in D} \\mathcal{L}(f(x; W, \\theta), y) $$
+$$ \text{Loss}(W, \theta) = \frac{1}{|D|} \sum_{(x, y) \in D} \mathcal{L}(f(x; W, \theta), y) $$
 
 其中：
 
-- \\(W\\) 是模型参数；
-- \\(\\theta\\) 是超参数；
-- \\(D\\) 是训练数据集；
-- \\(\\mathcal{L}\\) 是损失函数，衡量模型预测值与实际值之间的差异；
-- \\(f(x; W, \\theta)\\) 是模型预测函数。
+- \(W\) 是模型参数；
+- \(\theta\) 是超参数；
+- \(D\) 是训练数据集；
+- \(\mathcal{L}\) 是损失函数，衡量模型预测值与实际值之间的差异；
+- \(f(x; W, \theta)\) 是模型预测函数。
 
 ### 4.2 公式推导过程
 
 预训练语言模型通常采用自回归损失函数（如交叉熵损失）进行训练：
 
-$$ \\mathcal{L}(f, y) = - \\sum_{i=1}^{N} \\log \\hat{p}(y_i | y_{<i}; f) $$
+$$ \mathcal{L}(f, y) = - \sum_{i=1}^{N} \log \hat{p}(y_i | y_{<i}; f) $$
 
 其中：
 
-- \\(f\\) 是模型；
-- \\(y_i\\) 是第\\(i\\)个位置上的真实标签；
-- \\(\\hat{p}\\) 是模型预测的分布。
+- \(f\) 是模型；
+- \(y_i\) 是第\(i\)个位置上的真实标签；
+- \(\hat{p}\) 是模型预测的分布。
 
 ### 4.3 案例分析与讲解
 
@@ -150,7 +150,7 @@ $$ \\mathcal{L}(f, y) = - \\sum_{i=1}^{N} \\log \\hat{p}(y_i | y_{<i}; f) $$
 import transformers
 
 class AssistantModel:
-    def __init__(self, model_name=\"gpt2\"):
+    def __init__(self, model_name="gpt2"):
         self.model = transformers.AutoModelForCausalLM.from_pretrained(model_name)
 
     def generate_response(self, user_input):
@@ -174,7 +174,7 @@ class AssistantModel:
 
 # Usage
 assistant = AssistantModel()
-response = assistant.generate_response(\"我想知道如何制作一杯卡布奇诺咖啡。\")
+response = assistant.generate_response("我想知道如何制作一杯卡布奇诺咖啡。")
 print(response)
 ```
 
@@ -211,8 +211,8 @@ print(response)
 
 ### 7.3 相关论文推荐
 
-- **预训练模型**：\"Attention is All You Need\" by Vaswani et al.
-- **对话系统**：\"A Neural Chatbot System\" by Kiros et al.
+- **预训练模型**："Attention is All You Need" by Vaswani et al.
+- **对话系统**："A Neural Chatbot System" by Kiros et al.
 
 ### 7.4 其他资源推荐
 

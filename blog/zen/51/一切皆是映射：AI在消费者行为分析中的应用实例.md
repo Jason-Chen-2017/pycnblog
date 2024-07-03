@@ -74,9 +74,9 @@ $$P(y=1|x) = \frac{1}{1+e^{-(\beta_0+\beta_1x_1+...+\beta_nx_n)}}$$
 用户-物品矩阵$R$表示用户对物品的评分或偏好:
 
 $$R = \begin{bmatrix} 
-r_{11} & r_{12} & \cdots & r_{1n} \\
-r_{21} & r_{22} & \cdots & r_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
+r_{11} & r_{12} & \cdots & r_{1n} \
+r_{21} & r_{22} & \cdots & r_{2n} \
+\vdots & \vdots & \ddots & \vdots \
 r_{m1} & r_{m2} & \cdots & r_{mn} 
 \end{bmatrix}$$
 

@@ -117,17 +117,17 @@
 
 假设有一组文档集D，每篇文档d具有特征向量f(d)，聚类算法的目标是将文档映射到K个类中，其中K是预先设定的数量。K-means算法的目标是最小化每个类中心与文档之间距离的平方和：
 
-$$ J(C, D) = \\sum_{k=1}^{K} \\sum_{d \\in C_k} ||f(d) - \\mu_k||^2 $$
+$$ J(C, D) = \sum_{k=1}^{K} \sum_{d \in C_k} ||f(d) - \mu_k||^2 $$
 
-其中，$C$是类簇集，$\\mu_k$是第$k$类的中心。
+其中，$C$是类簇集，$\mu_k$是第$k$类的中心。
 
 #### 知识图谱构建：
 
 假设有一个知识图谱G=(V,E)，其中V是节点集合，E是边集合。实体识别过程可以使用概率图模型，例如CRF（条件随机场）来预测实体边界和属性值：
 
-$$ P(\\mathbf{x}|\\mathbf{y}) = \\frac{\\exp(\\mathbf{W} \\cdot \\mathbf{x})}{Z(\\mathbf{W})} $$
+$$ P(\mathbf{x}|\mathbf{y}) = \frac{\exp(\mathbf{W} \cdot \mathbf{x})}{Z(\mathbf{W})} $$
 
-其中，$\\mathbf{x}$是特征向量，$\\mathbf{y}$是标签向量，$\\mathbf{W}$是参数矩阵，$Z(\\mathbf{W})$是归一化常数。
+其中，$\mathbf{x}$是特征向量，$\mathbf{y}$是标签向量，$\mathbf{W}$是参数矩阵，$Z(\mathbf{W})$是归一化常数。
 
 ### 4.3 案例分析与讲解
 

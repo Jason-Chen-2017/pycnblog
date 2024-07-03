@@ -101,9 +101,9 @@ AUC（Area Under Curve）表示ROC曲线下的面积，AUC值越大，表示模�
 
 $$
 \begin{matrix}
-\text{实际为正} & \text{实际为负} \\
-\text{预测为正} & TP & FP \\
-\text{预测为负} & FN & TN \\
+\text{实际为正} & \text{实际为负} \
+\text{预测为正} & TP & FP \
+\text{预测为负} & FN & TN \
 \end{matrix}
 $$
 

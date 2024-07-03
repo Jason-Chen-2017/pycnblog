@@ -44,7 +44,7 @@ M/M/c/K队列模型的稳态概率分布可以用以下公式表示：
 
 $$
 P_n = \begin{cases}
-\frac{(c \rho)^n}{n!} P_0, & 0 \leq n < c, \\
+\frac{(c \rho)^n}{n!} P_0, & 0 \leq n < c, \
 \frac{c^c \rho^n}{c!} P_0, & c \leq n \leq K,
 \end{cases}
 $$

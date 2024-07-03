@@ -84,7 +84,7 @@ $$ D \xrightarrow{F} S \xrightarrow{F} O $$
 假设我们有一个简单的过滤操作，目标是筛选出所有超过阈值的数据点。设阈值为$T$，数据流中的元素为$x_i$，则过滤操作可以表示为：
 
 $$ F(x_i) = \begin{cases} 
-x_i & \text{if } x_i > T \\
+x_i & \text{if } x_i > T \
 \text{ignore} & \text{otherwise}
 \end{cases} $$
 

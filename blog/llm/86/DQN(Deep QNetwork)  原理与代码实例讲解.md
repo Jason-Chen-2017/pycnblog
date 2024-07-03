@@ -189,7 +189,7 @@ $$
 
 $$
 \pi(a|s) = \begin{cases} 
-1 & \text{if } a = \text{argmax}_a Q(s,a) \\
+1 & \text{if } a = \text{argmax}_a Q(s,a) \
 \frac{1}{|\mathcal{A}|} & \text{otherwise}
 \end{cases}
 $$

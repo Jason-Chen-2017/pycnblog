@@ -131,12 +131,12 @@ G和D相互min-max对抗训练,G希望最小化$\log(1-D(G(z)))$使D判别错误
 我们可以将生成对抗网络GAN的对策函数$V(D,G)$进一步推导,得到等价形式:
 
 $$\begin{aligned}
-V(D,G) &= \mathbb{E}_{x\sim p_{\text{data}}(x)}\big[\log D(x)\big] + \mathbb{E}_{z\sim p_z(z)}\big[\log(1-D(G(z)))\big] \\
-        &= \mathbb{E}_{x\sim p_{\text{data}}(x)}\big[\log D(x)\big] + \mathbb{E}_{x\sim p_g(x)}\big[\log(1-D(x))\big] \\
-        &= \int_{x} p_{\text{data}}(x) \log D(x) \mathrm{d}x + \int_{x} p_g(x) \log(1-D(x)) \mathrm{d}x \\
-        &= \int_{x} p_{\text{data}}(x) \log \frac{D(x)}{1-D(x)} \mathrm{d}x + \int_{x} p_g(x) \log \frac{1-D(x)}{D(x)} \mathrm{d}x \\
-        &= \int_{x} \big( p_{\text{data}}(x) \log D(x) + p_g(x) \log(1-D(x)) \big) \mathrm{d}x \\
-        &= \int_{x} p_{\text{data}}(x) \log \frac{p_{\text{data}}(x)}{p_g(x)} \mathrm{d}x + \int_{x} p_g(x) \log \frac{p_g(x)}{p_{\text{data}}(x)} \mathrm{d}x \\
+V(D,G) &= \mathbb{E}_{x\sim p_{\text{data}}(x)}\big[\log D(x)\big] + \mathbb{E}_{z\sim p_z(z)}\big[\log(1-D(G(z)))\big] \
+        &= \mathbb{E}_{x\sim p_{\text{data}}(x)}\big[\log D(x)\big] + \mathbb{E}_{x\sim p_g(x)}\big[\log(1-D(x))\big] \
+        &= \int_{x} p_{\text{data}}(x) \log D(x) \mathrm{d}x + \int_{x} p_g(x) \log(1-D(x)) \mathrm{d}x \
+        &= \int_{x} p_{\text{data}}(x) \log \frac{D(x)}{1-D(x)} \mathrm{d}x + \int_{x} p_g(x) \log \frac{1-D(x)}{D(x)} \mathrm{d}x \
+        &= \int_{x} \big( p_{\text{data}}(x) \log D(x) + p_g(x) \log(1-D(x)) \big) \mathrm{d}x \
+        &= \int_{x} p_{\text{data}}(x) \log \frac{p_{\text{data}}(x)}{p_g(x)} \mathrm{d}x + \int_{x} p_g(x) \log \frac{p_g(x)}{p_{\text{data}}(x)} \mathrm{d}x \
         &= \text{KL}(p_{\text{data}}(x) \| p_g(x)) + \text{KL}(p_g(x) \| p_{\text{data}}(x))
 \end{aligned}$$
 

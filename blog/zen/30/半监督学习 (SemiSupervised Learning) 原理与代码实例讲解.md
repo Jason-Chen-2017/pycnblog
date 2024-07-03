@@ -80,25 +80,25 @@
 
 #### 图结构模型：
 
-设图 $G=(V,E)$，其中 $V$ 是节点集合，$E$ 是边集合。对于图中的每个节点 $v_i$，我们有特征向量 $\\mathbf{x}_i$ 和标签向量 $\\mathbf{y}_i$。设 $V_S$ 和 $V_U$ 分别是带标签和未带标签的节点集合，则有：
+设图 $G=(V,E)$，其中 $V$ 是节点集合，$E$ 是边集合。对于图中的每个节点 $v_i$，我们有特征向量 $\mathbf{x}_i$ 和标签向量 $\mathbf{y}_i$。设 $V_S$ 和 $V_U$ 分别是带标签和未带标签的节点集合，则有：
 
-$$ V_S \\cup V_U = V $$
+$$ V_S \cup V_U = V $$
 
 #### 联合损失函数：
 
 假设我们有 $M$ 个类别，$K$ 是类别数目。对于每个节点 $v_i$，我们可以定义一个交叉熵损失函数：
 
-$$ \\mathcal{L}_{\\text{cross-entropy}}(\\mathbf{y}_i, \\hat{\\mathbf{y}}_i) = -\\sum_{k=1}^K y_{ik} \\log(\\hat{y}_{ik}) $$
+$$ \mathcal{L}_{\text{cross-entropy}}(\mathbf{y}_i, \hat{\mathbf{y}}_i) = -\sum_{k=1}^K y_{ik} \log(\hat{y}_{ik}) $$
 
-其中 $\\hat{\\mathbf{y}}_i$ 是预测的类别概率分布。对于带标签的节点，损失函数为：
+其中 $\hat{\mathbf{y}}_i$ 是预测的类别概率分布。对于带标签的节点，损失函数为：
 
-$$ \\mathcal{L}_S = \\sum_{v_i \\in V_S} \\mathcal{L}_{\\text{cross-entropy}}(\\mathbf{y}_i, \\hat{\\mathbf{y}}_i) $$
+$$ \mathcal{L}_S = \sum_{v_i \in V_S} \mathcal{L}_{\text{cross-entropy}}(\mathbf{y}_i, \hat{\mathbf{y}}_i) $$
 
 对于未带标签的节点，我们引入图结构进行正则化：
 
-$$ \\mathcal{L}_U = \\sum_{v_i \\in V_U} \\lambda \\|\\mathbf{D}^{-1/2}\\mathbf{W}\\mathbf{D}^{-1/2}\\mathbf{z}_i - \\mathbf{z}'_i\\|^2 $$
+$$ \mathcal{L}_U = \sum_{v_i \in V_U} \lambda \|\mathbf{D}^{-1/2}\mathbf{W}\mathbf{D}^{-1/2}\mathbf{z}_i - \mathbf{z}'_i\|^2 $$
 
-其中 $\\mathbf{D}$ 是度矩阵，$\\mathbf{W}$ 是拉普拉斯矩阵，$\\mathbf{z}_i$ 和 $\\mathbf{z}'_i$ 分别是节点 $v_i$ 的特征向量和预测向量，$\\lambda$ 是正则化系数。
+其中 $\mathbf{D}$ 是度矩阵，$\mathbf{W}$ 是拉普拉斯矩阵，$\mathbf{z}_i$ 和 $\mathbf{z}'_i$ 分别是节点 $v_i$ 的特征向量和预测向量，$\lambda$ 是正则化系数。
 
 ### 4.2 公式推导过程
 
@@ -106,16 +106,16 @@ $$ \\mathcal{L}_U = \\sum_{v_i \\in V_U} \\lambda \\|\\mathbf{D}^{-1/2}\\mathbf{
 
 #### 图结构构建：
 
-- **邻接矩阵** $\\mathbf{W}$：定义为 $\\mathbf{W}_{ij} = \\begin{cases} \\mathbf{A}_{ij} & \\text{if } i \
-eq j \\\\ 0 & \\text{if } i = j \\end{cases}$，其中 $\\mathbf{A}$ 是非零元素表示边存在的邻接矩阵。
+- **邻接矩阵** $\mathbf{W}$：定义为 $\mathbf{W}_{ij} = \begin{cases} \mathbf{A}_{ij} & \text{if } i \
+eq j \\ 0 & \text{if } i = j \end{cases}$，其中 $\mathbf{A}$ 是非零元素表示边存在的邻接矩阵。
   
 #### 特征学习：
 
-- **特征向量** $\\mathbf{z}_i$：自动编码器学习特征表示，确保能够捕捉数据的内在结构。
+- **特征向量** $\mathbf{z}_i$：自动编码器学习特征表示，确保能够捕捉数据的内在结构。
 
 #### 图卷积：
 
-- **卷积核** $\\mathbf{K}$：定义为 $\\mathbf{K} = \\mathbf{D}^{-1/2}\\mathbf{W}\\mathbf{D}^{-1/2}$，用于在图上进行卷积操作。
+- **卷积核** $\mathbf{K}$：定义为 $\mathbf{K} = \mathbf{D}^{-1/2}\mathbf{W}\mathbf{D}^{-1/2}$，用于在图上进行卷积操作。
 
 #### 标签传播：
 
@@ -123,7 +123,7 @@ eq j \\\\ 0 & \\text{if } i = j \\end{cases}$，其中 $\\mathbf{A}$ 是非零�
 
 #### 损失函数最小化：
 
-- **梯度下降**：通过梯度下降法最小化联合损失函数 $\\mathcal{L} = \\mathcal{L}_S + \\mathcal{L}_U$。
+- **梯度下降**：通过梯度下降法最小化联合损失函数 $\mathcal{L} = \mathcal{L}_S + \mathcal{L}_U$。
 
 ### 4.3 案例分析与讲解
 
@@ -234,7 +234,7 @@ history = model.fit(X_train, y_train_binary, epochs=100, batch_size=32, validati
 ```python
 predictions = model.predict(X_test)
 accuracy = np.mean(np.round(predictions) == y_test)
-print(f\"Accuracy: {accuracy}\")
+print(f"Accuracy: {accuracy}")
 ```
 
 ### 5.3 代码解读与分析

@@ -80,11 +80,11 @@ AI时空建模的研究不仅能够提升预测的准确性和稳定性，还能
 以LSTM为例，其构建可表示为：
 
 $$
-f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \\
-i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \\
-o_t = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) \\
-\tilde{C}_t = \tanh(W_C \cdot [h_{t-1}, x_t] + b_C) \\
-C_t = f_t \odot C_{t-1} + i_t \odot \tilde{C}_t \\
+f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \
+i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \
+o_t = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) \
+\tilde{C}_t = \tanh(W_C \cdot [h_{t-1}, x_t] + b_C) \
+C_t = f_t \odot C_{t-1} + i_t \odot \tilde{C}_t \
 h_t = o_t \odot \tanh(C_t)
 $$
 

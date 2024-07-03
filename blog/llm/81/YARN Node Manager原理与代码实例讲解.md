@@ -113,10 +113,10 @@ Node Manager的核心算法可以抽象为一个动态资源调度模型。假�
 
 $$
 \begin{align*}
-\text{maximize} & \quad \sum_{i=1}^n U_i \\
+\text{maximize} & \quad \sum_{i=1}^n U_i \
 \text{subject to} & \quad \begin{cases}
-d_{cpu} \leq s_{cpu} \times u_{cpu} \\
-d_{memory} \leq s_{memory} \times u_{memory} \\
+d_{cpu} \leq s_{cpu} \times u_{cpu} \
+d_{memory} \leq s_{memory} \times u_{memory} \
 d_{disk} \leq s_{disk} \times u_{disk}
 \end{cases}
 \end{align*}
@@ -132,8 +132,8 @@ $$
 
 $$
 \begin{align*}
-d_{cpu} & \leq s_{cpu}u_{cpu} \\
-d_{memory} & \leq s_{memory}u_{memory} \\
+d_{cpu} & \leq s_{cpu}u_{cpu} \
+d_{memory} & \leq s_{memory}u_{memory} \
 d_{disk} & \leq s_{disk}u_{disk}
 \end{align*}
 $$
@@ -148,10 +148,10 @@ $$
 
 $$
 \begin{align*}
-\text{maximize} & \quad \sum_{i=1}^n U_i \\
+\text{maximize} & \quad \sum_{i=1}^n U_i \
 \text{subject to} & \quad \begin{cases}
-d_{cpu} & \leq s_{cpu}u_{cpu} \\
-d_{memory} & \leq s_{memory}u_{memory} \\
+d_{cpu} & \leq s_{cpu}u_{cpu} \
+d_{memory} & \leq s_{memory}u_{memory} \
 d_{disk} & \leq s_{disk}u_{disk}
 \end{cases}
 \end{align*}

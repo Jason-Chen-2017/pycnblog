@@ -116,8 +116,8 @@ $$
 
 $$
 \begin{aligned}
-\min \quad & f(x) = x \\
-\text{s.t.} \quad & g(x) \leq C \\
+\min \quad & f(x) = x \
+\text{s.t.} \quad & g(x) \leq C \
 & 0 \leq x \leq X_{\max}
 \end{aligned}
 $$

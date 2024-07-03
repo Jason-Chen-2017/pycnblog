@@ -84,7 +84,7 @@ Actor-Critic算法的核心在于通过梯度上升的方法来优化策略和�
 
 ### 4.1 数学模型构建
 
-设状态空间为$S$，动作空间为$A$，策略函数为$\\pi(a|s)$，价值函数为$V(s)$。Actor-Critic算法的目标是寻找最佳策略$\\pi^*(a|s)$和价值函数$V^*(s)$，使得累计奖励最大化。
+设状态空间为$S$，动作空间为$A$，策略函数为$\pi(a|s)$，价值函数为$V(s)$。Actor-Critic算法的目标是寻找最佳策略$\pi^*(a|s)$和价值函数$V^*(s)$，使得累计奖励最大化。
 
 ### 4.2 公式推导过程
 
@@ -92,15 +92,15 @@ Actor-Critic算法的核心在于通过梯度上升的方法来优化策略和�
 
 Critic通过最小化均方误差来更新价值函数：
 
-$$J(V) = \\mathbb{E}_{\\pi}[(r + \\gamma V(s')) - V(s)]^2$$
+$$J(V) = \mathbb{E}_{\pi}[(r + \gamma V(s')) - V(s)]^2$$
 
-其中$r$是即时奖励，$\\gamma$是折扣因子。
+其中$r$是即时奖励，$\gamma$是折扣因子。
 
 #### 策略更新
 
 Actor通过最大化策略函数的期望累计奖励来更新策略：
 
-$$\\mathbb{E}_{\\pi}[\\sum_{t=0}^{\\infty} \\gamma^t r_t]$$
+$$\mathbb{E}_{\pi}[\sum_{t=0}^{\infty} \gamma^t r_t]$$
 
 这里$r_t$是第$t$步的奖励。
 
@@ -184,8 +184,8 @@ agent.train(env)
 
 ### 7.3 相关论文推荐
 
-- **\"Asynchronous Methods for Reinforcement Learning\"**
-- **\"A Connectionist Temporal Classification Model for Sequence Tagging\"**
+- **"Asynchronous Methods for Reinforcement Learning"**
+- **"A Connectionist Temporal Classification Model for Sequence Tagging"**
 
 ### 7.4 其他资源推荐
 

@@ -68,22 +68,22 @@
 假设我们有两个任务，分别为$T_1$和$T_2$，分别有损失函数$L_1$和$L_2$。多任务学习的目标是最小化联合损失函数：
 
 $$
-L_{total} = \\lambda_1 L_1 + \\lambda_2 L_2 + \\beta \\cdot \\text{Shared\\_Loss}
+L_{total} = \lambda_1 L_1 + \lambda_2 L_2 + \beta \cdot \text{Shared\_Loss}
 $$
 
-其中，$\\lambda_1$和$\\lambda_2$是权重，用于平衡不同任务的重要性，$\\beta$是共享损失的权重，$\\text{Shared\\_Loss}$表示共享参数带来的额外损失。
+其中，$\lambda_1$和$\lambda_2$是权重，用于平衡不同任务的重要性，$\beta$是共享损失的权重，$\text{Shared\_Loss}$表示共享参数带来的额外损失。
 
 ### 4.2 公式推导过程
 
 在推导过程中，我们通常会引入共享参数矩阵$W$，用于在不同任务间共享。假设$W$的更新依赖于所有任务的梯度：
 
 $$
-\\Delta W = \\alpha \\left( \
+\Delta W = \alpha \left( \
 abla_{W} L_1 + \
-abla_{W} L_2 + \\beta \\cdot \\text{Shared\\_Gradient}(W) \\right)
+abla_{W} L_2 + \beta \cdot \text{Shared\_Gradient}(W) \right)
 $$
 
-其中，$\\alpha$是学习率，$\\text{Shared\\_Gradient}(W)$是共享参数的梯度。
+其中，$\alpha$是学习率，$\text{Shared\_Gradient}(W)$是共享参数的梯度。
 
 ### 4.3 案例分析与讲解
 
@@ -221,7 +221,7 @@ optimizer = optim.SGD(model.parameters(), lr=0.01)
 A：可以通过统计分析、专家知识或者自动学习方法来确定任务间的共享参数。例如，可以基于特征相关性或者任务性能相关性来指导参数共享。
 
 #### Q：如何平衡任务间的损失？
-A：平衡任务间的损失通常通过调整损失权重$\\lambda_1$和$\\lambda_2$来实现。这可以通过交叉验证或网格搜索来优化，以找到最佳的权重组合。
+A：平衡任务间的损失通常通过调整损失权重$\lambda_1$和$\lambda_2$来实现。这可以通过交叉验证或网格搜索来优化，以找到最佳的权重组合。
 
 #### Q：多任务学习是否适用于所有任务？
 A：多任务学习最适合于任务间存在相关性的场景。对于完全无关的任务，共享参数可能不会带来明显的好处，甚至可能导致性能下降。

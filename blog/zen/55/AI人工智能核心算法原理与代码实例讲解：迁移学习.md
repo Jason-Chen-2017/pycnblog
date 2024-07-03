@@ -77,7 +77,7 @@ G --> C
 
 $$
 \begin{aligned}
-w_{1i}^{S}=& \frac{1}{n}, i=1,2,...,n \\
+w_{1i}^{S}=& \frac{1}{n}, i=1,2,...,n \
 w_{1i}^{T}=& \frac{1}{m}, i=1,2,...,m
 \end{aligned}
 $$
@@ -90,7 +90,7 @@ $$
 
 $$
 \begin{aligned}
-\epsilon_t^S =& \sum_{i=1}^{n} w_{ti}^S \cdot \mathbb{I}(h_t(x_i^S) \neq y_i^S) \\
+\epsilon_t^S =& \sum_{i=1}^{n} w_{ti}^S \cdot \mathbb{I}(h_t(x_i^S) \neq y_i^S) \
 \epsilon_t^T =& \sum_{i=1}^{m} w_{ti}^T \cdot \mathbb{I}(h_t(x_i^T) \neq y_i^T)
 \end{aligned}
 $$
@@ -102,7 +102,7 @@ TrAdaBoost 的核心在于样本权重 $w_t^S$ 和 $w_t^T$ 的更新。权重更
 
 $$
 \begin{aligned}
-w_{t+1,i}^{S}=& \frac{w_{ti}^{S}}{Z_t^{S}} \cdot \exp (-\alpha_t \cdot \mathbb{I}(h_t(x_i^S)=y_i^S)) \\
+w_{t+1,i}^{S}=& \frac{w_{ti}^{S}}{Z_t^{S}} \cdot \exp (-\alpha_t \cdot \mathbb{I}(h_t(x_i^S)=y_i^S)) \
 w_{t+1,i}^{T}=& \frac{w_{ti}^{T}}{Z_t^{T}} \cdot \exp (\alpha_t \cdot \mathbb{I}(h_t(x_i^T) \neq y_i^T))
 \end{aligned}
 $$
@@ -111,7 +111,7 @@ $$
 
 $$
 \begin{aligned}
-Z_t^S =& \sum_{i=1}^{n} w_{ti}^{S} \cdot \exp (-\alpha_t \cdot \mathbb{I}(h_t(x_i^S)=y_i^S))  \\
+Z_t^S =& \sum_{i=1}^{n} w_{ti}^{S} \cdot \exp (-\alpha_t \cdot \mathbb{I}(h_t(x_i^S)=y_i^S))  \
 Z_t^T =& \sum_{i=1}^{m} w_{ti}^{T} \cdot \exp (\alpha_t \cdot \mathbb{I}(h_t(x_i^T) \neq y_i^T)) 
 \end{aligned}
 $$

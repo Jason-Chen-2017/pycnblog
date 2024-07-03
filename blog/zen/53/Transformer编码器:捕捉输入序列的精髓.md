@@ -27,8 +27,8 @@ $$
 ### 3.2 自注意力计算
 对于第 $l$ 层编码器的第 $i$ 个位置,首先通过三个线性变换得到查询向量 $q_i^l$、键向量 $k_i^l$ 和值向量 $v_i^l$:
 $$
-q_i^l = W_q^l h_i^{l-1} \\
-k_i^l = W_k^l h_i^{l-1} \\
+q_i^l = W_q^l h_i^{l-1} \
+k_i^l = W_k^l h_i^{l-1} \
 v_i^l = W_v^l h_i^{l-1}
 $$
 其中 $W_q^l, W_k^l, W_v^l \in \mathbb{R}^{d_{model} \times d_k}$ 为可学习的权重矩阵。
@@ -44,9 +44,9 @@ $$
 ### 3.3 多头注意力
 多头注意力将上述自注意力计算过程独立执行 $h$ 次,每次使用不同的权重矩阵。对于第 $k$ 个头,有:
 $$
-q_i^{l,k} = W_q^{l,k} h_i^{l-1} \\
-k_i^{l,k} = W_k^{l,k} h_i^{l-1} \\
-v_i^{l,k} = W_v^{l,k} h_i^{l-1} \\
+q_i^{l,k} = W_q^{l,k} h_i^{l-1} \
+k_i^{l,k} = W_k^{l,k} h_i^{l-1} \
+v_i^{l,k} = W_v^{l,k} h_i^{l-1} \
 a_i^{l,k} = \sum_{j=1}^n \alpha_{ij}^{l,k} v_j^{l,k}
 $$
 最后,将所有头的输出拼接起来,并通过一个线性变换得到多头注意力的输出:
@@ -63,7 +63,7 @@ $$
 ### 3.5 残差连接与层归一化
 在每个子层(自注意力层和FFN层)之后,Transformer编码器使用残差连接和层归一化:
 $$
-\tilde{m}_i^l = \text{LayerNorm}(m_i^l + h_i^{l-1}) \\
+\tilde{m}_i^l = \text{LayerNorm}(m_i^l + h_i^{l-1}) \
 h_i^l = \text{LayerNorm}(f_i^l + \tilde{m}_i^l)
 $$
 其中 $\text{LayerNorm}(\cdot)$ 表示层归一化操作。
@@ -74,9 +74,9 @@ Transformer编码器通常由多个相同结构的编码器层堆叠而成。每
 ### 4.1 自注意力机制的矩阵计算
 考虑一个由4个词组成的输入序列,词嵌入维度为512。对于第 $l$ 层编码器,假设 $d_k=64$,则自注意力的计算可以表示为:
 $$
-Q^l = H^{l-1} W_q^l \in \mathbb{R}^{4 \times 64} \\
-K^l = H^{l-1} W_k^l \in \mathbb{R}^{4 \times 64} \\
-V^l = H^{l-1} W_v^l \in \mathbb{R}^{4 \times 64} \\
+Q^l = H^{l-1} W_q^l \in \mathbb{R}^{4 \times 64} \
+K^l = H^{l-1} W_k^l \in \mathbb{R}^{4 \times 64} \
+V^l = H^{l-1} W_v^l \in \mathbb{R}^{4 \times 64} \
 A^l = \text{softmax}(\frac{Q^l (K^l)^T}{\sqrt{64}})V^l \in \mathbb{R}^{4 \times 64}
 $$
 其中 $H^{l-1} \in \mathbb{R}^{4 \times 512}$ 为上一层编码器的输出, $W_q^l,W_k^l,W_v^l \in \mathbb{R}^{512 \times 64}$ 为自注意力的权重矩阵。$\text{softmax}(\cdot)$ 对每一行进行softmax归一化。

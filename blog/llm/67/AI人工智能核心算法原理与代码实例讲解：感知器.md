@@ -80,7 +80,7 @@ graph LR
    感知器常用的激活函数为符号函数（Sigmoid函数）：
 
    $$
-   f(z) = \begin{cases} 1, & \text{if } z \geq 0 \\ 0, & \text{if } z < 0 \end{cases}
+   f(z) = \begin{cases} 1, & \text{if } z \geq 0 \ 0, & \text{if } z < 0 \end{cases}
    $$
 
 4. **计算损失函数**：根据输出结果y与真实标签t的差异，计算损失函数L：
@@ -127,9 +127,9 @@ abla_w L$为损失函数L对权重w的梯度。
 
 $$
 \begin{aligned}
-\text{输入向量} & : x \in \mathbb{R}^n \\
-\text{权重} & : w \in \mathbb{R}^n \\
-\text{激活函数} & : f(x) = \begin{cases} 1, & \text{if } \sum_{i=1}^n w_i x_i \geq 0 \\ 0, & \text{if } \sum_{i=1}^n w_i x_i < 0 \end{cases} \\
+\text{输入向量} & : x \in \mathbb{R}^n \
+\text{权重} & : w \in \mathbb{R}^n \
+\text{激活函数} & : f(x) = \begin{cases} 1, & \text{if } \sum_{i=1}^n w_i x_i \geq 0 \ 0, & \text{if } \sum_{i=1}^n w_i x_i < 0 \end{cases} \
 \text{损失函数} & : L(y, t) = \frac{1}{2} (y - t)^2
 \end{aligned}
 $$
@@ -149,27 +149,27 @@ $$
 2. **应用激活函数**：
 
    $$
-   f(z) = \begin{cases} 1, & \text{if } z \geq 0 \\ 0, & \text{if } z < 0 \end{cases}
+   f(z) = \begin{cases} 1, & \text{if } z \geq 0 \ 0, & \text{if } z < 0 \end{cases}
    $$
 
 3. **计算损失函数**：
 
    $$
-   L = \frac{1}{2} (f(z) - t)^2 = \begin{cases} \frac{1}{2}, & \text{if } z < 0 \\ 0, & \text{if } z \geq 0 \end{cases}
+   L = \frac{1}{2} (f(z) - t)^2 = \begin{cases} \frac{1}{2}, & \text{if } z < 0 \ 0, & \text{if } z \geq 0 \end{cases}
    $$
 
 4. **计算梯度**：
 
    $$
    \
-abla_w L = \begin{cases} -x, & \text{if } z < 0 \\ 0, & \text{if } z \geq 0 \end{cases}
+abla_w L = \begin{cases} -x, & \text{if } z < 0 \ 0, & \text{if } z \geq 0 \end{cases}
    $$
 
 5. **更新权重**：
 
    $$
    w_{new} = w_{old} - \eta \cdot \
-abla_w L = \begin{cases} w_{old} + \eta x, & \text{if } z < 0 \\ w_{old}, & \text{if } z \geq 0 \end{cases}
+abla_w L = \begin{cases} w_{old} + \eta x, & \text{if } z < 0 \ w_{old}, & \text{if } z \geq 0 \end{cases}
    $$
 
 ### 4.3 案例分析与讲解

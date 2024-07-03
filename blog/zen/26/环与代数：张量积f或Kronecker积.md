@@ -38,11 +38,11 @@
 
 ### 张量积的基本概念
 
-张量积通常表示为两个向量或矩阵之间的乘积，生成的新对象在数学上被称为张量。张量积的定义依赖于所涉及的对象的维度和结构。对于两个向量$A = (a_1, a_2, ..., a_m)$和$B = (b_1, b_2, ..., b_n)$，它们的张量积$A \\otimes B$可以表示为$m \\times n$个元素组成的矩阵，其中每个元素为$a_i \\cdot b_j$。
+张量积通常表示为两个向量或矩阵之间的乘积，生成的新对象在数学上被称为张量。张量积的定义依赖于所涉及的对象的维度和结构。对于两个向量$A = (a_1, a_2, ..., a_m)$和$B = (b_1, b_2, ..., b_n)$，它们的张量积$A \otimes B$可以表示为$m \times n$个元素组成的矩阵，其中每个元素为$a_i \cdot b_j$。
 
 ### 张量积的性质
 
-张量积满足交换律、分配律和结合律。这意味着对于任意张量$A$、$B$和$C$，有$A \\otimes (B \\otimes C) = (A \\otimes B) \\otimes C$和$A \\otimes (B+C) = A \\otimes B + A \\otimes C$。
+张量积满足交换律、分配律和结合律。这意味着对于任意张量$A$、$B$和$C$，有$A \otimes (B \otimes C) = (A \otimes B) \otimes C$和$A \otimes (B+C) = A \otimes B + A \otimes C$。
 
 ### 张量积与矩阵运算的关系
 
@@ -52,12 +52,12 @@
 
 ### 算法原理概述
 
-张量积的计算通常涉及到元素级的乘法和累加操作。对于两个张量$A$和$B$，如果$A$是$m \\times n$的矩阵，$B$是$p \\times q$的矩阵，则$A \\otimes B$的结果是一个$m \\times n \\times p \\times q$的四维张量（即$m \\times n$的$m \\times p$矩阵与$q$个这样的矩阵的重复）。
+张量积的计算通常涉及到元素级的乘法和累加操作。对于两个张量$A$和$B$，如果$A$是$m \times n$的矩阵，$B$是$p \times q$的矩阵，则$A \otimes B$的结果是一个$m \times n \times p \times q$的四维张量（即$m \times n$的$m \times p$矩阵与$q$个这样的矩阵的重复）。
 
 ### 具体操作步骤
 
 1. **初始化**：确定两个输入张量的维度和形状。
-2. **计算**：对于$A$中的每个元素$a_{ij}$和$B$中的每个元素$b_{kl}$，计算$a_{ij} \\cdot b_{kl}$。
+2. **计算**：对于$A$中的每个元素$a_{ij}$和$B$中的每个元素$b_{kl}$，计算$a_{ij} \cdot b_{kl}$。
 3. **组合**：将所有计算出的乘积组合成一个新的张量，其维度为$A$的行数乘以$B$的行数、$A$的列数乘以$B$的列数。
 
 ### 算法优缺点
@@ -75,24 +75,24 @@
 
 ### 数学模型构建
 
-设有两个张量$A$和$B$，$A$为$m \\times n$的矩阵，$B$为$p \\times q$的矩阵。张量积$A \\otimes B$可以表示为：
+设有两个张量$A$和$B$，$A$为$m \times n$的矩阵，$B$为$p \times q$的矩阵。张量积$A \otimes B$可以表示为：
 
 $$
-(A \\otimes B)_{ijkl} = a_{ij}b_{kl}
+(A \otimes B)_{ijkl} = a_{ij}b_{kl}
 $$
 
 其中，$i$和$j$分别表示$A$的行和列索引，$k$和$l$分别表示$B$的行和列索引。
 
 ### 公式推导过程
 
-考虑两个张量$A$和$B$的张量积$A \\otimes B$，对于任意索引$i,j,k,l$，张量积的第$i$行第$j$列第$k$行第$l$列元素可以表示为$A$的第$i$行第$j$列元素$a_{ij}$与$B$的第$k$行第$l$列元素$b_{kl}$的乘积。
+考虑两个张量$A$和$B$的张量积$A \otimes B$，对于任意索引$i,j,k,l$，张量积的第$i$行第$j$列第$k$行第$l$列元素可以表示为$A$的第$i$行第$j$列元素$a_{ij}$与$B$的第$k$行第$l$列元素$b_{kl}$的乘积。
 
 ### 案例分析与讲解
 
-假设我们有两个矩阵$A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$和$B = \\begin{pmatrix} 5 & 6 \\\\ 7 & 8 \\end{pmatrix}$。计算$A \\otimes B$：
+假设我们有两个矩阵$A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$和$B = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix}$。计算$A \otimes B$：
 
 $$
-A \\otimes B = \\begin{pmatrix} 1 \\cdot 5 & 1 \\cdot 6 & 2 \\cdot 5 & 2 \\cdot 6 \\\\ 1 \\cdot 7 & 1 \\cdot 8 & 2 \\cdot 7 & 2 \\cdot 8 \\\\ 3 \\cdot 5 & 3 \\cdot 6 & 4 \\cdot 5 & 4 \\cdot 6 \\\\ 3 \\cdot 7 & 3 \\cdot 8 & 4 \\cdot 7 & 4 \\cdot 8 \\end{pmatrix} = \\begin{pmatrix} 5 & 6 & 10 & 12 \\\\ 7 & 8 & 14 & 16 \\\\ 15 & 18 & 20 & 24 \\\\ 21 & 24 & 28 & 32 \\end{pmatrix}
+A \otimes B = \begin{pmatrix} 1 \cdot 5 & 1 \cdot 6 & 2 \cdot 5 & 2 \cdot 6 \\ 1 \cdot 7 & 1 \cdot 8 & 2 \cdot 7 & 2 \cdot 8 \\ 3 \cdot 5 & 3 \cdot 6 & 4 \cdot 5 & 4 \cdot 6 \\ 3 \cdot 7 & 3 \cdot 8 & 4 \cdot 7 & 4 \cdot 8 \end{pmatrix} = \begin{pmatrix} 5 & 6 & 10 & 12 \\ 7 & 8 & 14 & 16 \\ 15 & 18 & 20 & 24 \\ 21 & 24 & 28 & 32 \end{pmatrix}
 $$
 
 ### 常见问题解答
@@ -114,9 +114,9 @@ $$
 import numpy as np
 
 def tensor_product(A, B):
-    \"\"\"
+    """
     计算两个矩阵的张量积。
-    \"\"\"
+    """
     return np.outer(A, B)
 
 A = np.array([[1, 2], [3, 4]])

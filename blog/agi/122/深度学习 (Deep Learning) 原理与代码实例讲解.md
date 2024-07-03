@@ -146,7 +146,7 @@ graph LR
 
 ```latex
 f(x) = \begin{cases} 
-0 & \text{if } x \leq 0 \\
+0 & \text{if } x \leq 0 \
 x & \text{if } x > 0 
 \end{cases}
 ```

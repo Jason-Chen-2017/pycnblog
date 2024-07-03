@@ -119,9 +119,9 @@ $$x=(\mathbf{x}_1,\mathbf{x}_2,\mathbf{x}_3,\mathbf{x}_4,\mathbf{x}_5,\mathbf{x}
 然后，通过自注意力机制计算每个位置与其他位置的相关性，得到注意力权重矩阵：
 
 $$A=\begin{bmatrix}
-\alpha_{11} & \alpha_{12} & \cdots & \alpha_{16} \\
-\alpha_{21} & \alpha_{22} & \cdots & \alpha_{26} \\
-\vdots & \vdots & \ddots & \vdots \\
+\alpha_{11} & \alpha_{12} & \cdots & \alpha_{16} \
+\alpha_{21} & \alpha_{22} & \cdots & \alpha_{26} \
+\vdots & \vdots & \ddots & \vdots \
 \alpha_{61} & \alpha_{62} & \cdots & \alpha_{66}
 \end{bmatrix}$$
 

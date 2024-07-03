@@ -51,10 +51,10 @@ $$ L_{MSE}(y, \hat{y}) = \frac{1}{N}\sum_{i=1}^{N}(y_i - \hat{y}_i)^2 $$
 $$ \theta_{t+1} = \theta_t - \eta \nabla_{\theta}L(\theta) $$
 其中，$\theta$ 是模型参数，$\eta$ 是学习率，$\nabla_{\theta}L(\theta)$ 是损失函数对参数的梯度。
 #### 4.2.2 Adam优化算法
-$$m_t = \beta_1 m_{t-1} + (1 - \beta_1) g_t \\
-v_t = \beta_2 v_{t-1} + (1 - \beta_2) g_t^2  \\
-\hat{m}_t = \frac{m_t}{1 - \beta_1^t} \\
-\hat{v}_t = \frac{v_t}{1 - \beta_2^t} \\ 
+$$m_t = \beta_1 m_{t-1} + (1 - \beta_1) g_t \
+v_t = \beta_2 v_{t-1} + (1 - \beta_2) g_t^2  \
+\hat{m}_t = \frac{m_t}{1 - \beta_1^t} \
+\hat{v}_t = \frac{v_t}{1 - \beta_2^t} \ 
 \theta_{t+1} = \theta_{t} - \frac{\eta}{\sqrt{\hat{v}_t} + \epsilon} \hat{m}_t$$
 其中，$m_t$ 和 $v_t$ 分别是梯度的一阶矩和二阶矩估计，$\beta_1$ 和 $\beta_2$ 是衰减率，$\epsilon$ 是平滑项。
 

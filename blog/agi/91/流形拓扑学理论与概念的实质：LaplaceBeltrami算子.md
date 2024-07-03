@@ -114,13 +114,13 @@ $$
 
 $$
 \
-abla f = \begin{bmatrix} 2x \\ 2y \end{bmatrix}
+abla f = \begin{bmatrix} 2x \ 2y \end{bmatrix}
 $$
 
 最后，计算Hessian矩阵：
 
 $$
-H(f) = \begin{bmatrix} \frac{\partial^2 f}{\partial x^2} & \frac{\partial^2 f}{\partial x \partial y} \\ \frac{\partial^2 f}{\partial y \partial x} & \frac{\partial^2 f}{\partial y^2} \end{bmatrix} = \begin{bmatrix} 2 & 0 \\ 0 & 2 \end{bmatrix}
+H(f) = \begin{bmatrix} \frac{\partial^2 f}{\partial x^2} & \frac{\partial^2 f}{\partial x \partial y} \ \frac{\partial^2 f}{\partial y \partial x} & \frac{\partial^2 f}{\partial y^2} \end{bmatrix} = \begin{bmatrix} 2 & 0 \ 0 & 2 \end{bmatrix}
 $$
 
 因此，Laplace-Beltrami算子为：

@@ -90,10 +90,10 @@ $$T=\{brightness, temperature, humidity\}$$
 light订阅了brightness主题,curtain订阅了brightness和temperature,aircondition订阅了temperature和humidity。即:
 $$
 \begin{aligned}
-Sub(light, brightness) & = True \\
-Sub(curtain, brightness) & = True \\ 
-Sub(curtain, temperature) & = True \\
-Sub(aircondition, temperature) & = True \\
+Sub(light, brightness) & = True \
+Sub(curtain, brightness) & = True \ 
+Sub(curtain, temperature) & = True \
+Sub(aircondition, temperature) & = True \
 Sub(aircondition, humidity) & = True
 \end{aligned}
 $$

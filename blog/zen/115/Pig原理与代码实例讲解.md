@@ -184,7 +184,7 @@ result = FOREACH user_totals GENERATE
 1. 连接操作:
 
    $$\begin{aligned}
-   users\_orders &= users \bowtie_{\text{users.uid = orders.uid}} orders \\
+   users\_orders &= users \bowtie_{\text{users.uid = orders.uid}} orders \
                  &= \{(u, o) | u \in users, o \in orders, u.uid = o.uid\}
    \end{aligned}$$
 

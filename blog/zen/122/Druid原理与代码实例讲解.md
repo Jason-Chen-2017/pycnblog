@@ -273,7 +273,7 @@ public class DruidQueryExample {
                         put("metricType", "count");
                         put("aggregator", "count");
                         put("rollup", false);
-                        put("json", "{\"type\":\"count\",\"name\":\"count\",\"fieldName\":null,\"field\":null,\"expression\":null,\"metricType\":\"count\",\"aggregator\":\"count\",\"rollup\":false}");
+                        put("json", "{"type":"count","name":"count","fieldName":null,"field":null,"expression":null,"metricType":"count","aggregator":"count","rollup":false}");
                     }});
                     add(new HashMap<String, Object>() {{
                         put("type", "longSum");
@@ -284,7 +284,7 @@ public class DruidQueryExample {
                         put("metricType", "longSum");
                         put("aggregator", "longSum");
                         put("rollup", false);
-                        put("json", "{\"type\":\"longSum\",\"name\":\"sum\",\"fieldName\":\"visits\",\"field\":\"visits\",\"expression\":null,\"metricType\":\"longSum\",\"aggregator\":\"longSum\",\"rollup\":false}");
+                        put("json", "{"type":"longSum","name":"sum","fieldName":"visits","field":"visits","expression":null,"metricType":"longSum","aggregator":"longSum","rollup":false}");
                     }});
                 }},
                 new ArrayList<String>() {{

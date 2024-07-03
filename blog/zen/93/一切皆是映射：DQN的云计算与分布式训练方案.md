@@ -94,8 +94,8 @@ DQN算法的核心思想是：
 
 $$
 R(s,a) = \begin{cases} 
-R_{\text{max}} & \text{if } s' \in S_{\text{success}} \\
--R_{\text{max}} & \text{if } s' \in S_{\text{failure}} \\
+R_{\text{max}} & \text{if } s' \in S_{\text{success}} \
+-R_{\text{max}} & \text{if } s' \in S_{\text{failure}} \
 0 & \text{otherwise}
 \end{cases}
 $$
@@ -194,8 +194,8 @@ DQN算法在以下领域取得了显著的应用：
 
 $$
 R(s,a) = \begin{cases} 
-R_{\text{max}} & \text{if } s' \in S_{\text{success}} \\
--R_{\text{max}} & \text{if } s' \in S_{\text{failure}} \\
+R_{\text{max}} & \text{if } s' \in S_{\text{success}} \
+-R_{\text{max}} & \text{if } s' \in S_{\text{failure}} \
 0 & \text{otherwise}
 \end{cases}
 $$

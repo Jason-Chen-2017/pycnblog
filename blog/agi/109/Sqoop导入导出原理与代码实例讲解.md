@@ -174,7 +174,7 @@ $$
 $$
 S'
 = \begin{cases} 
-S & \text{当 } S' \leq S \\
+S & \text{当 } S' \leq S \
 \max\{S, \lceil \frac{S}{R} \rceil \} & \text{当 } S' > S
 \end{cases}
 $$

@@ -96,8 +96,8 @@ GPT-2的核心公式包括：
 
 - **多头自注意力机制**：
 $$
-Q = W_Q \cdot X \\
-K = W_K \cdot X \\
+Q = W_Q \cdot X \
+K = W_K \cdot X \
 V = W_V \cdot X
 $$
 $$
@@ -105,12 +105,12 @@ $$
 $$
 - **Transformer编码器**：
 $$
-H = \text{LayerNorm}(X + \text{Scaled Dot-Product Attention}(Q, K, V)) \\
+H = \text{LayerNorm}(X + \text{Scaled Dot-Product Attention}(Q, K, V)) \
 H = \text{LayerNorm}(H + \text{Residual Connection}(FFN(H)))
 $$
 - **Transformer解码器**：
 $$
-Y_{t+1} = \text{LayerNorm}(Y_t + \text{Encoder-Decoder Attention}(Q, K, V)) \\
+Y_{t+1} = \text{LayerNorm}(Y_t + \text{Encoder-Decoder Attention}(Q, K, V)) \
 Y_{t+1} = \text{LayerNorm}(Y_{t+1} + \text{Residual Connection}(FFN(Y_{t+1})))
 $$
 

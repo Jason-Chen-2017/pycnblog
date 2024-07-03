@@ -223,23 +223,23 @@ $$
 $$
 Q = K = V = 
 \begin{bmatrix}
-q_I \\ q_{love} \\ q_{LangChain}
+q_I \ q_{love} \ q_{LangChain}
 \end{bmatrix}
 $$
 
 然后，计算"love"与其他词的注意力分数：
 
 $$
-score_{love,I} = \frac{q_{love} \cdot k_I}{\sqrt{d_k}} \\
-score_{love,love} = \frac{q_{love} \cdot k_{love}}{\sqrt{d_k}} \\
+score_{love,I} = \frac{q_{love} \cdot k_I}{\sqrt{d_k}} \
+score_{love,love} = \frac{q_{love} \cdot k_{love}}{\sqrt{d_k}} \
 score_{love,LangChain} = \frac{q_{love} \cdot k_{LangChain}}{\sqrt{d_k}}
 $$
 
 接着，对注意力分数进行Softmax归一化：
 
 $$
-\alpha_{love,I} = \frac{exp(score_{love,I})}{exp(score_{love,I}) + exp(score_{love,love}) + exp(score_{love,LangChain})} \\
-\alpha_{love,love} = \frac{exp(score_{love,love})}{exp(score_{love,I}) + exp(score_{love,love}) + exp(score_{love,LangChain})} \\
+\alpha_{love,I} = \frac{exp(score_{love,I})}{exp(score_{love,I}) + exp(score_{love,love}) + exp(score_{love,LangChain})} \
+\alpha_{love,love} = \frac{exp(score_{love,love})}{exp(score_{love,I}) + exp(score_{love,love}) + exp(score_{love,LangChain})} \
 \alpha_{love,LangChain} = \frac{exp(score_{love,LangChain})}{exp(score_{love,I}) + exp(score_{love,love}) + exp(score_{love,LangChain})}
 $$
 

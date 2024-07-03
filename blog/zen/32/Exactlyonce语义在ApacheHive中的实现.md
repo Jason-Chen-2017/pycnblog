@@ -97,7 +97,7 @@ Exactly-once语义适用于多种应用场景，包括但不限于：
 目标是定义一个操作序列 $\sigma$，使得对任意两个不同的事件 $e_1, e_2 \in E$，有：
 
 $$\begin{cases}
-f_{\sigma(e_1)} = f_{\sigma(e_2)} \\
+f_{\sigma(e_1)} = f_{\sigma(e_2)} \
 \forall e \in E, \exists! i \in \mathbb{N} | \sigma^i(e) = f_e(e)
 \end{cases}$$
 

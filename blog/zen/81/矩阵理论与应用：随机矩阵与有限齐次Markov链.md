@@ -98,9 +98,9 @@
 考虑一个有限齐次Markov链，状态空间为{1, 2, ..., n}，转移概率矩阵为：
 
 $$ P = \begin{bmatrix}
-p_{11} & p_{12} & \cdots & p_{1n} \\
-p_{21} & p_{22} & \cdots & p_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
+p_{11} & p_{12} & \cdots & p_{1n} \
+p_{21} & p_{22} & \cdots & p_{2n} \
+\vdots & \vdots & \ddots & \vdots \
 p_{n1} & p_{n2} & \cdots & p_{nn}
 \end{bmatrix} $$
 
@@ -139,8 +139,8 @@ $$ \sum_{i=1}^{n} \pi_i = 1 $$
 构建转移矩阵P：
 
 $$ P = \begin{bmatrix}
-0.6 & 0.3 & 0.1 \\
-0.4 & 0.4 & 0.2 \\
+0.6 & 0.3 & 0.1 \
+0.4 & 0.4 & 0.2 \
 0.5 & 0.3 & 0.2
 \end{bmatrix} $$
 

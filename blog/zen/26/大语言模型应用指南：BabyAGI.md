@@ -128,7 +128,7 @@
 
 #### 执行策略：
 
-- **强化学习**：$Q(s,a) = r + \\gamma \\max_{a'} Q(s',a')$，其中$Q$是状态动作值函数，$r$是即时奖励，$\\gamma$是折扣因子。
+- **强化学习**：$Q(s,a) = r + \gamma \max_{a'} Q(s',a')$，其中$Q$是状态动作值函数，$r$是即时奖励，$\gamma$是折扣因子。
 
 ### 4.3 案例分析与讲解
 
@@ -166,8 +166,8 @@
 import transformers
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-tokenizer = AutoTokenizer.from_pretrained(\"gpt2\")
-model = AutoModelForCausalLM.from_pretrained(\"gpt2\")
+tokenizer = AutoTokenizer.from_pretrained("gpt2")
+model = AutoModelForCausalLM.from_pretrained("gpt2")
 
 def train(model, tokenizer, epochs, batch_size, learning_rate):
     # 训练代码实现
@@ -178,7 +178,7 @@ def train(model, tokenizer, epochs, batch_size, learning_rate):
 
 ```python
 def understand_prompt(prompt, model, tokenizer):
-    input_ids = tokenizer.encode(prompt, return_tensors=\"pt\")
+    input_ids = tokenizer.encode(prompt, return_tensors="pt")
     output = model(input_ids)
     # 解释代码实现
     pass

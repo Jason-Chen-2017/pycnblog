@@ -112,7 +112,7 @@
 
 以下以SLAM算法为例，介绍数学模型的推导过程：
 
-设机器人位姿为 $T=\begin{bmatrix} x \\ y \\ \theta \end{bmatrix}$，其中 $x, y$ 为机器人在地图中的坐标，$\theta$ 为机器人的朝向角度。设机器人当前帧的位姿为 $T_{curr}$，前一帧的位姿为 $T_{prev}$，则 SLAM 算法的目标是最小化位姿估计误差：
+设机器人位姿为 $T=\begin{bmatrix} x \ y \ \theta \end{bmatrix}$，其中 $x, y$ 为机器人在地图中的坐标，$\theta$ 为机器人的朝向角度。设机器人当前帧的位姿为 $T_{curr}$，前一帧的位姿为 $T_{prev}$，则 SLAM 算法的目标是最小化位姿估计误差：
 
 $$
 \min_{T} \sum_{i=1}^n \left\| T_{curr}^{-1} T_i - T_{prev}^{-1} T_i \right\|^2

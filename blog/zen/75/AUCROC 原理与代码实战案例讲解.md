@@ -141,7 +141,7 @@ AUC作为一种评估二分类模型性能的指标,具有以下优点:
 
 $$
 I(s^+, s^-) = \begin{cases}
-1, & \text{if } s^+ > s^- \\
+1, & \text{if } s^+ > s^- \
 0, & \text{otherwise}
 \end{cases}
 $$

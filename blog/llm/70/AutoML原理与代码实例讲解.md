@@ -115,7 +115,7 @@ AutoML的数学模型可以表示为：
 
 $$
 \begin{align*}
-\text{AutoML} &= \text{数据预处理} + \text{特征工程} + \text{模型选择} + \text{模型优化} + \text{交叉验证} + \text{结果分析} \\
+\text{AutoML} &= \text{数据预处理} + \text{特征工程} + \text{模型选择} + \text{模型优化} + \text{交叉验证} + \text{结果分析} \
 &= f(x, y) + g(x, y) + h(x, y) + i(x, y) + j(x, y) + k(x, y)
 \end{align*}
 $$
@@ -146,7 +146,7 @@ $$
 
 $$
 \begin{align*}
-\frac{\partial L}{\partial w} &= w - \frac{1}{N} X^T (y - Xw) \\
+\frac{\partial L}{\partial w} &= w - \frac{1}{N} X^T (y - Xw) \
 \frac{\partial L}{\partial b} &= \frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)
 \end{align*}
 $$

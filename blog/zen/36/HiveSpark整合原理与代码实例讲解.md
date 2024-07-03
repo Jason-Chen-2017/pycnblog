@@ -77,9 +77,9 @@ Hive-Spark整合广泛应用于大数据分析、商业智能、机器学习等�
 
 以查询优化为例，可以使用以下公式进行推导：
 
-- **代价估计**：$Cost = \\alpha \\times Size + \\beta \\times Operations$
+- **代价估计**：$Cost = \alpha \times Size + \beta \times Operations$
 
-其中，$Size$ 是数据大小，$Operations$ 是执行的操作数量，$\\alpha$ 和 $\\beta$ 是权重系数。
+其中，$Size$ 是数据大小，$Operations$ 是执行的操作数量，$\alpha$ 和 $\beta$ 是权重系数。
 
 ### 4.3 案例分析与讲解
 
@@ -106,14 +106,14 @@ Hive-Spark整合广泛应用于大数据分析、商业智能、机器学习等�
 ```java
 // 创建SparkSession实例
 SparkSession spark = SparkSession.builder()
-    .appName(\"Hive to Spark Integration Example\")
-    .config(\"spark.sql.hive.metastore.uris\", \"thrift://localhost:9083\") // Hive metastore URL
+    .appName("Hive to Spark Integration Example")
+    .config("spark.sql.hive.metastore.uris", "thrift://localhost:9083") // Hive metastore URL
     .getOrCreate();
 
 // 读取Hive表数据
 Dataset<Row> dataFrame = spark.read()
-    .format(\"parquet\") // 或者其他格式，取决于Hive表的存储方式
-    .option(\"path\", \"/path/to/hive/table\") // Hive表路径
+    .format("parquet") // 或者其他格式，取决于Hive表的存储方式
+    .option("path", "/path/to/hive/table") // Hive表路径
     .load();
 ```
 
@@ -126,18 +126,18 @@ public class HiveSparkIntegration {
 
     public static void main(String[] args) {
         SparkSession spark = SparkSession.builder()
-            .appName(\"Hive to Spark Integration Example\")
-            .config(\"spark.sql.hive.metastore.uris\", \"thrift://localhost:9083\") // Hive metastore URL
+            .appName("Hive to Spark Integration Example")
+            .config("spark.sql.hive.metastore.uris", "thrift://localhost:9083") // Hive metastore URL
             .getOrCreate();
 
         // 查询Hive表数据并转换为DataFrame
-        DataFrame hiveDataFrame = spark.sql(\"SELECT * FROM your_hive_table\");
+        DataFrame hiveDataFrame = spark.sql("SELECT * FROM your_hive_table");
 
         // 执行Spark操作
-        DataFrame transformedDataFrame = hiveDataFrame.withColumn(\"new_column\", F.col(\"old_column\").cast(Types.STRING));
+        DataFrame transformedDataFrame = hiveDataFrame.withColumn("new_column", F.col("old_column").cast(Types.STRING));
 
         // 输出结果到文件或HDFS
-        transformedDataFrame.write().mode(\"overwrite\").save(\"/path/to/output\");
+        transformedDataFrame.write().mode("overwrite").save("/path/to/output");
     }
 }
 ```

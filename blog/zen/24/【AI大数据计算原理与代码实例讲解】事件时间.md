@@ -86,8 +86,8 @@
 $$
 \text{Aggregate}(D, w) = \left\{
     \begin{array}{ll}
-        \text{计算时间窗口 } w 内的所有事件} \\
-        \quad \quad \quad \quad \quad \text{的聚合结果} \\
+        \text{计算时间窗口 } w 内的所有事件} \
+        \quad \quad \quad \quad \quad \text{的聚合结果} \
         \quad \quad \quad \quad \quad \text{(如平均值、总和等)}
     \end{array}
 \right.

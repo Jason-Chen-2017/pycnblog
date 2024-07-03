@@ -55,9 +55,9 @@ while not converged:
 如果目标函数$f(x)$可导,那么它的梯度为:
 
 $$\nabla f(x) = \begin{bmatrix} 
-\frac{\partial f}{\partial x_1} \\
-\frac{\partial f}{\partial x_2} \\
-\vdots \\
+\frac{\partial f}{\partial x_1} \
+\frac{\partial f}{\partial x_2} \
+\vdots \
 \frac{\partial f}{\partial x_n}
 \end{bmatrix}$$
 
@@ -66,7 +66,7 @@ $$\nabla f(x) = \begin{bmatrix}
 例如,对于二元函数$f(x,y) = x^2 + 2y^2$,其梯度为:
 
 $$\nabla f(x,y) = \begin{bmatrix}
-2x \\  
+2x \  
 4y
 \end{bmatrix}$$
 

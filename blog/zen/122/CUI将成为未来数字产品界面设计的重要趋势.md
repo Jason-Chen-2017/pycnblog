@@ -102,8 +102,8 @@ CUI的算法可以用数学模型来描述，例如：
 $$
 CUI = \left\{
 \begin{aligned}
-& 命令解析器(parser) \\
-& 指令执行器(executor) \\
+& 命令解析器(parser) \
+& 指令执行器(executor) \
 & 输出器(outputter)
 \end{aligned}
 \right.

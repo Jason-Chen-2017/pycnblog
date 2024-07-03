@@ -180,7 +180,7 @@ SVM是一种基于统计学习理论的分类器,其基本思想是:在特征空
 
 $$
 \begin{cases}
-w^Tx_i + b \ge 1, & y_i = 1\\
+w^Tx_i + b \ge 1, & y_i = 1\
 w^Tx_i + b \le -1, & y_i = -1
 \end{cases}
 $$
@@ -191,7 +191,7 @@ $$
 
 $$
 \begin{align}
-\min_{w,b} & \frac{1}{2}\|w\|^2\\
+\min_{w,b} & \frac{1}{2}\|w\|^2\
 \text{s.t.} & y_i(w^Tx_i + b) \ge 1, i = 1, 2, \dots, n
 \end{align}
 $$
@@ -236,4 +236,4 @@ $$
 
 $$
 \begin{aligned}
-\phi_1 &= \eta_{20} + \eta_{02}\\
+\phi_1 &= \eta_{20} + \eta_{02}\

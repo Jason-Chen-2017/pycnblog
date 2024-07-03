@@ -125,7 +125,7 @@ $$
 
    $$
  \pi(a|s) = \begin{cases} 
- 1, & \text{if } a = \arg\max_a Q(s,a) \\
+ 1, & \text{if } a = \arg\max_a Q(s,a) \
  0, & \text{otherwise} 
 \end{cases}
 $$

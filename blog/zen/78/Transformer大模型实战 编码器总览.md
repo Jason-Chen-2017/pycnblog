@@ -89,8 +89,8 @@ Transformer编码器广泛应用于各种NLP任务，如机器翻译、文本分
 
 $$
 \begin{aligned}
-Q &= XW^Q \\
-K &= XW^K \\
+Q &= XW^Q \
+K &= XW^K \
 V &= XW^V
 \end{aligned}
 $$
@@ -101,7 +101,7 @@ $$
 
 $$
 \begin{aligned}
-A &= \text{softmax}(\frac{QK^T}{\sqrt{d_k}}) \\
+A &= \text{softmax}(\frac{QK^T}{\sqrt{d_k}}) \
 \text{Attention}(Q,K,V) &= AV
 \end{aligned}
 $$
@@ -120,9 +120,9 @@ $$
 
 $$
 \begin{aligned}
-z &= \text{LayerNorm}(x + \text{Sublayer}(x)) \\
+z &= \text{LayerNorm}(x + \text{Sublayer}(x)) \
 \text{Sublayer}(x) &= \begin{cases}
-\text{Attention}(x), & \text{if sublayer is self-attention} \\
+\text{Attention}(x), & \text{if sublayer is self-attention} \
 \text{FFN}(x), & \text{if sublayer is feed-forward}
 \end{cases}
 \end{aligned}

@@ -55,7 +55,7 @@
       3. 将转移样本$(s_t,a_t,r_t,s_{t+1})$存入$D$
       4. 从$D$中随机采样一个批次的转移样本$(s_j,a_j,r_j,s_{j+1})$
       5. 计算TD目标：$y_j=\begin{cases}
-r_j & \text{if episode terminates at j+1} \\
+r_j & \text{if episode terminates at j+1} \
 r_j+\gamma \max_{a'}Q(s_{j+1},a';\theta^-) & \text{otherwise}
 \end{cases}$
       6. 最小化TD误差，更新Q网络：$\theta \leftarrow \theta - \alpha \nabla_\theta \frac{1}{N}\sum_j(y_j-Q(s_j,a_j;\theta))^2$

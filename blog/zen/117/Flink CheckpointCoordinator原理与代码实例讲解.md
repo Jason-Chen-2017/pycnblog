@@ -121,7 +121,7 @@ CheckpointCoordinator算法不仅应用于Flink,还可以推广到其他分布�
 令$Y = \max\limits_{1 \leq i \leq n} X_i$表示最长的检查点耗时,则$Y$的均值和方差分别为:
 
 $$\begin{aligned}
-\mathbb{E}[Y] &= \int_{-\infty}^{\infty} \left( 1 - \prod_{i=1}^{n} F(x) \right) \mathrm{d}x \\
+\mathbb{E}[Y] &= \int_{-\infty}^{\infty} \left( 1 - \prod_{i=1}^{n} F(x) \right) \mathrm{d}x \
 \mathrm{Var}[Y] &= \int_{-\infty}^{\infty} x^2 \mathrm{d} \left( 1 - \prod_{i=1}^{n} F(x) \right) - \mathbb{E}[Y]^2
 \end{aligned}$$
 
@@ -132,18 +132,18 @@ $$\begin{aligned}
 我们先推导$\mathbb{E}[Y]$的公式:
 
 $$\begin{aligned}
-\mathbb{E}[Y] &= \int_{-\infty}^{\infty} x \mathrm{d} \left( 1 - \prod_{i=1}^{n} F(x) \right) \\
-&= \int_{-\infty}^{\infty} x \mathrm{d} \left( 1 - \prod_{i=1}^{n} (1 - (1 - F(x))) \right) \\
-&= \int_{-\infty}^{\infty} x \mathrm{d} \left( \sum_{i=1}^{n} \binom{n}{i} (-1)^{i+1} (1 - F(x))^i \right) \\
-&= \sum_{i=1}^{n} \binom{n}{i} (-1)^{i+1} \int_{-\infty}^{\infty} x (1 - F(x))^i \mathrm{d}x \\
-&= \sum_{i=1}^{n} \binom{n}{i} (-1)^{i+1} \int_{0}^{1} \frac{t^{i}}{1-t} \mathrm{d}t \qquad \text{(令 } t = 1 - F(x)) \\
+\mathbb{E}[Y] &= \int_{-\infty}^{\infty} x \mathrm{d} \left( 1 - \prod_{i=1}^{n} F(x) \right) \
+&= \int_{-\infty}^{\infty} x \mathrm{d} \left( 1 - \prod_{i=1}^{n} (1 - (1 - F(x))) \right) \
+&= \int_{-\infty}^{\infty} x \mathrm{d} \left( \sum_{i=1}^{n} \binom{n}{i} (-1)^{i+1} (1 - F(x))^i \right) \
+&= \sum_{i=1}^{n} \binom{n}{i} (-1)^{i+1} \int_{-\infty}^{\infty} x (1 - F(x))^i \mathrm{d}x \
+&= \sum_{i=1}^{n} \binom{n}{i} (-1)^{i+1} \int_{0}^{1} \frac{t^{i}}{1-t} \mathrm{d}t \qquad \text{(令 } t = 1 - F(x)) \
 &= \sum_{i=1}^{n} \binom{n}{i} (-1)^{i+1} \frac{1}{i+1}
 \end{aligned}$$
 
 对于$\mathrm{Var}[Y]$的推导:
 
 $$\begin{aligned}
-\mathrm{Var}[Y] &= \int_{-\infty}^{\infty} x^2 \mathrm{d} \left( 1 - \prod_{i=1}^{n} F(x) \right) - \mathbb{E}[Y]^2 \\
+\mathrm{Var}[Y] &= \int_{-\infty}^{\infty} x^2 \mathrm{d} \left( 1 - \prod_{i=1}^{n} F(x) \right) - \mathbb{E}[Y]^2 \
 &= \sum_{i=1}^{n} \binom{n}{i} (-1)^{i+1} \int_{0}^{1} \frac{t^{i}}{(1-t)^2} \mathrm{d}t - \left( \sum_{i=1}^{n} \binom{n}{i} (-1)^{i+1} \frac{1}{i+1} \right)^2
 \end{aligned}$$
 
@@ -154,14 +154,14 @@ $$\begin{aligned}
 根据上述公式,我们可以计算出:
 
 $$\begin{aligned}
-\mathbb{E}[Y] &= \sum_{i=1}^{10} \binom{10}{i} (-1)^{i+1} \int_{0}^{1} t^{i} e^{t} \mathrm{d}t \\
-&= \sum_{i=1}^{10} \binom{10}{i} (-1)^{i+1} \frac{i!}{(i+1)!} \\
+\mathbb{E}[Y] &= \sum_{i=1}^{10} \binom{10}{i} (-1)^{i+1} \int_{0}^{1} t^{i} e^{t} \mathrm{d}t \
+&= \sum_{i=1}^{10} \binom{10}{i} (-1)^{i+1} \frac{i!}{(i+1)!} \
 &\approx 2.302585093
 \end{aligned}$$
 
 $$\begin{aligned}
-\mathrm{Var}[Y] &= \sum_{i=1}^{10} \binom{10}{i} (-1)^{i+1} \int_{0}^{1} \frac{t^{i}}{(1-t)^2} \mathrm{d}t - \left( \sum_{i=1}^{10} \binom{10}{i} (-1)^{i+1} \frac{1}{i+1} \right)^2 \\
-&= \sum_{i=1}^{10} \binom{10}{i} (-1)^{i+1} \frac{i!}{(i+1)!^2} - \left( \sum_{i=1}^{10} \binom{10}{i} (-1)^{i+1} \frac{1}{i+1} \right)^2 \\
+\mathrm{Var}[Y] &= \sum_{i=1}^{10} \binom{10}{i} (-1)^{i+1} \int_{0}^{1} \frac{t^{i}}{(1-t)^2} \mathrm{d}t - \left( \sum_{i=1}^{10} \binom{10}{i} (-1)^{i+1} \frac{1}{i+1} \right)^2 \
+&= \sum_{i=1}^{10} \binom{10}{i} (-1)^{i+1} \frac{i!}{(i+1)!^2} - \left( \sum_{i=1}^{10} \binom{10}{i} (-1)^{i+1} \frac{1}{i+1} \right)^2 \
 &\approx 6.907755279
 \end{aligned}$$
 

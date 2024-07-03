@@ -181,7 +181,7 @@ $$
 
 $$
 C = \begin{bmatrix}
-1 & 1 \\
+1 & 1 \
 1 & 1
 \end{bmatrix}
 $$
@@ -190,21 +190,21 @@ $$
 
 $$
 \Lambda = \begin{bmatrix}
-2 & 0 \\
+2 & 0 \
 0 & 0
 \end{bmatrix}
 $$
 
 $$
 U = \begin{bmatrix}
-0.71 & -0.71 \\
+0.71 & -0.71 \
 0.71 & 0.71
 \end{bmatrix}
 $$
 
 **4. 选择主成分:**
 
-选择特征值最大的特征向量，即 $U_{1} = \begin{bmatrix} 0.71 \\ 0.71 \end{bmatrix}$。
+选择特征值最大的特征向量，即 $U_{1} = \begin{bmatrix} 0.71 \ 0.71 \end{bmatrix}$。
 
 **5. 数据投影:**
 

@@ -64,7 +64,7 @@ RNN 的反向传播涉及计算损失函数相对于网络参数的梯度。这�
 
 $$
 \begin{aligned}
-h_t &= \tanh(W_{xh}x_t + W_{hh}h_{t-1} + b_h) \\
+h_t &= \tanh(W_{xh}x_t + W_{hh}h_{t-1} + b_h) \
 y_t &= W_{hy}h_t + b_y
 \end{aligned}
 $$

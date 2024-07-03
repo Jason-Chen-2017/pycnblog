@@ -174,7 +174,7 @@ public class WordCountWithState {
                 .flatMap(new FlatMapFunction<String, Tuple2<String, Integer>>() {
                     @Override
                     public void flatMap(String value, Collector<Tuple2<String, Integer>> out) throws Exception {
-                        String[] words = value.split("\\s+");
+                        String[] words = value.split("\s+");
                         for (String word : words) {
                             out.collect(new Tuple2<>(word, 1));
                         }

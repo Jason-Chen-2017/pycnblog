@@ -150,9 +150,9 @@ $$
 
 $$
 \begin{cases}
-4\beta_0 + 2\beta_1 = 10 \\
-12\beta_0 + 6\beta_1 = 28 \\
-20\beta_0 + 10\beta_1 = 56 \\
+4\beta_0 + 2\beta_1 = 10 \
+12\beta_0 + 6\beta_1 = 28 \
+20\beta_0 + 10\beta_1 = 56 \
 28\beta_0 + 14\beta_1 = 92
 \end{cases}
 $$
@@ -189,12 +189,12 @@ $$
 
 $$
 \begin{cases}
-5\beta_0 + \beta_1 = 5 \\
-7\beta_0 + 2\beta_1 = 7 \\
-9\beta_0 + 3\beta_1 = 9 \\
-11\beta_0 + 4\beta_1 = 11 \\
-13\beta_0 + 5\beta_1 = 13 \\
-15\beta_0 + 6\beta_1 = 15 \\
+5\beta_0 + \beta_1 = 5 \
+7\beta_0 + 2\beta_1 = 7 \
+9\beta_0 + 3\beta_1 = 9 \
+11\beta_0 + 4\beta_1 = 11 \
+13\beta_0 + 5\beta_1 = 13 \
+15\beta_0 + 6\beta_1 = 15 \
 17\beta_0 + 7\beta_1 = 17
 \end{cases}
 $$

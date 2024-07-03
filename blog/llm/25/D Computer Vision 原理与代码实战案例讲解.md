@@ -134,7 +134,7 @@
 #### 单目深度估计公式
 
 - **特征匹配**：设$F_{ij}(x,y)$为图像$i$中点$(x,y)$处的特征向量，$F_{ij}(x',y')$为图像$j$中与$(x,y)$对应的特征向量。若$(x,y)$和$(x',y')$为匹配特征，则存在相对位移$(u,v)$满足：
-  $$ F_{ij}(x,y) = F_{ij}(x',y') + \\begin{bmatrix} u \\\\ v \\end{bmatrix} $$
+  $$ F_{ij}(x,y) = F_{ij}(x',y') + \begin{bmatrix} u \\ v \end{bmatrix} $$
 
 #### 场景重建公式
 
@@ -144,7 +144,7 @@
 #### 目标识别与跟踪公式
 
 - **特征描述符**：设$D(x,y)$为图像中点$(x,y)$处的目标特征向量，$D'(x',y')$为目标在不同帧间的特征向量。若$D(x,y)$和$D'(x',y')$为匹配特征，则目标位置可通过计算两者的相对位移来更新：
-  $$ D'(x',y') = D(x,y) + \\Delta(x',y') $$
+  $$ D'(x',y') = D(x,y) + \Delta(x',y') $$
 
 ### 4.3 案例分析与讲解
 
@@ -197,9 +197,9 @@ import cv2
 import numpy as np
 from sklearn.cluster import DBSCAN
 
-def estimate_depth(image1, image2, feature_detector=\"SIFT\"):
+def estimate_depth(image1, image2, feature_detector="SIFT"):
     # 初始化特征检测器
-    if feature_detector == \"SIFT\":
+    if feature_detector == "SIFT":
         detector = cv2.xfeatures2d.SIFT_create()
     else:
         detector = cv2.ORB_create()
@@ -234,7 +234,7 @@ def estimate_depth(image1, image2, feature_detector=\"SIFT\"):
 image1 = cv2.imread('image1.jpg', 0)
 image2 = cv2.imread('image2.jpg', 0)
 depth = estimate_depth(image1, image2)
-print(f\"Estimated Depth: {depth}\")
+print(f"Estimated Depth: {depth}")
 ```
 
 #### 场景重建代码示例

@@ -114,7 +114,7 @@ CNN的数学模型主要包括以下部分：
 
 $$
 \begin{aligned}
-h^{(l)} &= \sigma(W^{(l)}h^{(l-1)} + b^{(l)}) \\
+h^{(l)} &= \sigma(W^{(l)}h^{(l-1)} + b^{(l)}) \
 H^{(l)} &= \max(Pool(h^{(l)}), 0)
 \end{aligned}
 $$

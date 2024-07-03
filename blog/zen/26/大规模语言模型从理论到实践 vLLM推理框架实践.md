@@ -60,7 +60,7 @@
 
 大规模语言模型通常采用深度学习模型，如Transformer架构，构建数学模型时考虑以下公式：
 
-$$P(x_1, x_2, ..., x_T) = \\prod_{t=1}^T P(x_t|x_{<t})$$
+$$P(x_1, x_2, ..., x_T) = \prod_{t=1}^T P(x_t|x_{<t})$$
 
 其中，$P(x_t|x_{<t})$表示在已知之前$t-1$个词的情况下，第$t$个词的概率分布。
 
@@ -92,14 +92,14 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # 初始化模型和分词器
-tokenizer = AutoTokenizer.from_pretrained(\"YOUR_MODEL_NAME\")
-model = AutoModelForCausalLM.from_pretrained(\"YOUR_MODEL_NAME\")
+tokenizer = AutoTokenizer.from_pretrained("YOUR_MODEL_NAME")
+model = AutoModelForCausalLM.from_pretrained("YOUR_MODEL_NAME")
 
 # 输入文本
-input_text = \"Hello, I am interested in\"
+input_text = "Hello, I am interested in"
 
 # 分词
-inputs = tokenizer(input_text, return_tensors=\"pt\", padding=True)
+inputs = tokenizer(input_text, return_tensors="pt", padding=True)
 
 # 前向传播
 outputs = model(**inputs)

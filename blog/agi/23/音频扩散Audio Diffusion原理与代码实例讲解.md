@@ -90,23 +90,23 @@
 #### VAE的数学模型：
 
 $$
-\\begin{align*}
-\\mathcal{L}(x) &= \\mathbb{E}_{z \\sim q(z|x)}[\\log p(x|z)] - \\mathbb{D}_{KL}(q(z|x) || p(z)) \\\\
-&= \\mathbb{E}_{z \\sim q(z|x)}[\\log p(x|z)] - \\mathbb{D}_{KL}(q(z|x) || p(z))
-\\end{align*}
+\begin{align*}
+\mathcal{L}(x) &= \mathbb{E}_{z \sim q(z|x)}[\log p(x|z)] - \mathbb{D}_{KL}(q(z|x) || p(z)) \\
+&= \mathbb{E}_{z \sim q(z|x)}[\log p(x|z)] - \mathbb{D}_{KL}(q(z|x) || p(z))
+\end{align*}
 $$
 
 其中，
-- $\\mathcal{L}(x)$ 是损失函数，用于衡量重建误差和先验分布的差异。
+- $\mathcal{L}(x)$ 是损失函数，用于衡量重建误差和先验分布的差异。
 - $q(z|x)$ 是编码器生成的分布，表示输入$x$的特征表示。
 - $p(z)$ 是先验分布，通常设定为标准正态分布。
 
 ### 4.2 公式推导过程
 
-在VAE中，我们通过最小化损失函数$\\mathcal{L}(x)$来训练模型。这个损失函数包含了两个部分：
+在VAE中，我们通过最小化损失函数$\mathcal{L}(x)$来训练模型。这个损失函数包含了两个部分：
 
-- **重建损失**：$\\mathbb{E}_{z \\sim q(z|x)}[\\log p(x|z)]$，衡量解码器重构输入音频的质量。
-- **先验损失**：$\\mathbb{D}_{KL}(q(z|x) || p(z))$，衡量编码器输出的分布$q(z|x)$与先验分布$p(z)$之间的差异。
+- **重建损失**：$\mathbb{E}_{z \sim q(z|x)}[\log p(x|z)]$，衡量解码器重构输入音频的质量。
+- **先验损失**：$\mathbb{D}_{KL}(q(z|x) || p(z))$，衡量编码器输出的分布$q(z|x)$与先验分布$p(z)$之间的差异。
 
 通过调整模型参数，使得这两个部分达到平衡，我们就能得到能够生成新音频样本的VAE模型。
 

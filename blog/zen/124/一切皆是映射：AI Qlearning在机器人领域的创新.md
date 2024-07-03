@@ -112,7 +112,7 @@ Q-learning的目标是学习一个Q函数，使得在任意状态s下采取行�
 
 $$
 \begin{aligned}
-Q(s, a) &\leftarrow Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a') - Q(s, a)] \\
+Q(s, a) &\leftarrow Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a') - Q(s, a)] \
 &= (1 - \alpha) Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a')]
 \end{aligned}
 $$

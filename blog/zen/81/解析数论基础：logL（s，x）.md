@@ -71,10 +71,10 @@ $$logL(s,x)=\sum_{p}\sum_{n=1}^\infty\frac{x(p)^n}{n}p^{-ns}.$$
 下面以Riemann zeta函数为例,计算 $log\zeta(2)$ 的近似值。取 $P=5,N=4$,则
 $$
 \begin{aligned}
-log\zeta(2)&\approx \sum_{p\leq 5}\sum_{n=1}^{4}\frac{1}{n}p^{-2n}\\
-&=\frac{1}{1\cdot 2^2}+\frac{1}{2\cdot 2^4}+\frac{1}{3\cdot 2^6}+\frac{1}{4\cdot 2^8}\\
-&+\frac{1}{1\cdot 3^2}+\frac{1}{2\cdot 3^4}+\frac{1}{3\cdot 3^6}+\frac{1}{4\cdot 3^8}\\
-&+\frac{1}{1\cdot 5^2}+\frac{1}{2\cdot 5^4}+\frac{1}{3\cdot 5^6}+\frac{1}{4\cdot 5^8}\\
+log\zeta(2)&\approx \sum_{p\leq 5}\sum_{n=1}^{4}\frac{1}{n}p^{-2n}\
+&=\frac{1}{1\cdot 2^2}+\frac{1}{2\cdot 2^4}+\frac{1}{3\cdot 2^6}+\frac{1}{4\cdot 2^8}\
+&+\frac{1}{1\cdot 3^2}+\frac{1}{2\cdot 3^4}+\frac{1}{3\cdot 3^6}+\frac{1}{4\cdot 3^8}\
+&+\frac{1}{1\cdot 5^2}+\frac{1}{2\cdot 5^4}+\frac{1}{3\cdot 5^6}+\frac{1}{4\cdot 5^8}\
 &\approx 0.5418.
 \end{aligned}
 $$

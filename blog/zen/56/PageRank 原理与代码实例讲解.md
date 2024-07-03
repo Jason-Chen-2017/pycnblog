@@ -86,7 +86,7 @@ $$\vec{p} = c\vec{e} + (1-c)M^T\vec{p}$$
 对于任意网页 $u$, 如果存在 $k$ 个网页 $v_1,v_2,...,v_k$ 链接到 $u$, 则 $M$ 矩阵中第 $u$ 行的元素为:
 
 $$M_{u,v_i} = \begin{cases} 
-\frac{1}{L(v_i)} & \text{if }(v_i,u)\in E\\
+\frac{1}{L(v_i)} & \text{if }(v_i,u)\in E\
 0 & \text{otherwise}
 \end{cases}$$
 

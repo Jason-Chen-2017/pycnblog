@@ -67,7 +67,7 @@ graph TD
 $$
 \text{action} = 
 \begin{cases} 
-\text{argmax}_a Q(s, a) & \text{with probability } 1-\epsilon \\
+\text{argmax}_a Q(s, a) & \text{with probability } 1-\epsilon \
 \text{random action} & \text{with probability } \epsilon
 \end{cases}
 $$
@@ -143,7 +143,7 @@ $$
 
 $$
 \pi(s, a) = \text{probability} = \begin{cases} 
-1 & \text{if } \pi(s, a) = \text{argmax}_a Q(s, a) \\
+1 & \text{if } \pi(s, a) = \text{argmax}_a Q(s, a) \
 \frac{1}{|\mathcal{A}|} & \text{otherwise}
 \end{cases}
 $$

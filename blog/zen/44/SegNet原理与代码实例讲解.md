@@ -114,9 +114,9 @@ $$f(x) = \sum_{i=1}^n w_i \cdot x_i$$
 
 $$
 \begin{bmatrix}
-0.1 & 0.2 & 0.3 \\
-0.4 & 0.5 & 0.6 \\
-0.7 & 0.8 & 0.9 \\
+0.1 & 0.2 & 0.3 \
+0.4 & 0.5 & 0.6 \
+0.7 & 0.8 & 0.9 \
 \end{bmatrix}
 $$
 
@@ -124,9 +124,9 @@ $$
 
 $$
 \begin{bmatrix}
-1 & 2 & 3 \\
-4 & 5 & 6 \\
-7 & 8 & 9 \\
+1 & 2 & 3 \
+4 & 5 & 6 \
+7 & 8 & 9 \
 \end{bmatrix}
 $$
 
@@ -134,9 +134,9 @@ $$
 
 $$
 \begin{bmatrix}
-0.1 \cdot 1 + 0.2 \cdot 4 + 0.3 \cdot 7 & 0.1 \cdot 2 + 0.2 \cdot 5 + 0.3 \cdot 8 & 0.1 \cdot 3 + 0.2 \cdot 6 + 0.3 \cdot 9 \\
-0.4 \cdot 1 + 0.5 \cdot 4 + 0.6 \cdot 7 & 0.4 \cdot 2 + 0.5 \cdot 5 + 0.6 \cdot 8 & 0.4 \cdot 3 + 0.5 \cdot 6 + 0.6 \cdot 9 \\
-0.7 \cdot 1 + 0.8 \cdot 4 + 0.9 \cdot 7 & 0.7 \cdot 2 + 0.8 \cdot 5 + 0.9 \cdot 8 & 0.7 \cdot 3 + 0.8 \cdot 6 + 0.9 \cdot 9 \\
+0.1 \cdot 1 + 0.2 \cdot 4 + 0.3 \cdot 7 & 0.1 \cdot 2 + 0.2 \cdot 5 + 0.3 \cdot 8 & 0.1 \cdot 3 + 0.2 \cdot 6 + 0.3 \cdot 9 \
+0.4 \cdot 1 + 0.5 \cdot 4 + 0.6 \cdot 7 & 0.4 \cdot 2 + 0.5 \cdot 5 + 0.6 \cdot 8 & 0.4 \cdot 3 + 0.5 \cdot 6 + 0.6 \cdot 9 \
+0.7 \cdot 1 + 0.8 \cdot 4 + 0.9 \cdot 7 & 0.7 \cdot 2 + 0.8 \cdot 5 + 0.9 \cdot 8 & 0.7 \cdot 3 + 0.8 \cdot 6 + 0.9 \cdot 9 \
 \end{bmatrix}
 $$
 

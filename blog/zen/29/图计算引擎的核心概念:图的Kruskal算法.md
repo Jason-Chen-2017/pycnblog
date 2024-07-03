@@ -60,7 +60,7 @@ Kruskal算法可以用于解决最小生成树问题,在网络设计、电路设
 我们定义无向加权连通图G=(V,E),其中V为顶点集,E为边集。边(u,v)∈E的权值为w(u,v)。最小生成树T是G的一棵权值最小的生成树,即T的边权值之和最小。用数学语言描述就是:
 
 $$
-\min \sum_{(u,v)\in T} w(u,v) \\
+\min \sum_{(u,v)\in T} w(u,v) \
 s.t. \quad T \text{ is a spanning tree of } G
 $$
 

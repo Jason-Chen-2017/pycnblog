@@ -103,8 +103,8 @@ $$\eta = \epsilon \ \text{sign}(\nabla_x J(\theta, x, y=\text{cat}))$$
 在JSMA算法中,扰动 $\gamma$ 的构造过程较为复杂。首先需要计算Jacobian矩阵:
 
 $$J_F(x) = \begin{bmatrix}
-\frac{\partial F_1(x)}{\partial x_1} & \cdots & \frac{\partial F_1(x)}{\partial x_n} \\
-\vdots & \ddots & \vdots \\
+\frac{\partial F_1(x)}{\partial x_1} & \cdots & \frac{\partial F_1(x)}{\partial x_n} \
+\vdots & \ddots & \vdots \
 \frac{\partial F_m(x)}{\partial x_1} & \cdots & \frac{\partial F_m(x)}{\partial x_n}
 \end{bmatrix}$$
 

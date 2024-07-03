@@ -159,11 +159,11 @@ LSTM 的 hidden state $h_t$ 和 cell state $c_t$ 的计算公式如下：
 
 $$
 \begin{aligned}
-i_t &= \sigma(W_{ii} x_t + W_{hi} h_{t-1} + b_i) \\
-f_t &= \sigma(W_{if} x_t + W_{hf} h_{t-1} + b_f) \\
-o_t &= \sigma(W_{io} x_t + W_{ho} h_{t-1} + b_o) \\
-\tilde{c}_t &= \tanh(W_{ic} x_t + W_{hc} h_{t-1} + b_c) \\
-c_t &= f_t \odot c_{t-1} + i_t \odot \tilde{c}_t \\
+i_t &= \sigma(W_{ii} x_t + W_{hi} h_{t-1} + b_i) \
+f_t &= \sigma(W_{if} x_t + W_{hf} h_{t-1} + b_f) \
+o_t &= \sigma(W_{io} x_t + W_{ho} h_{t-1} + b_o) \
+\tilde{c}_t &= \tanh(W_{ic} x_t + W_{hc} h_{t-1} + b_c) \
+c_t &= f_t \odot c_{t-1} + i_t \odot \tilde{c}_t \
 h_t &= o_t \odot \tanh(c_t)
 \end{aligned}
 $$

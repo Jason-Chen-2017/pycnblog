@@ -188,9 +188,9 @@ $$
 
 $$
 \begin{align*}
-y_1 &= \boldsymbol{\beta}_0 + \boldsymbol{\beta}_1x_1 + \boldsymbol{\beta}_2x_2 + \cdots + \boldsymbol{\beta}_nx_n + \epsilon_1 \\
-y_2 &= \boldsymbol{\beta}_0 + \boldsymbol{\beta}_1x_2 + \boldsymbol{\beta}_2x_2 + \cdots + \boldsymbol{\beta}_nx_n + \epsilon_2 \\
-\vdots \\
+y_1 &= \boldsymbol{\beta}_0 + \boldsymbol{\beta}_1x_1 + \boldsymbol{\beta}_2x_2 + \cdots + \boldsymbol{\beta}_nx_n + \epsilon_1 \
+y_2 &= \boldsymbol{\beta}_0 + \boldsymbol{\beta}_1x_2 + \boldsymbol{\beta}_2x_2 + \cdots + \boldsymbol{\beta}_nx_n + \epsilon_2 \
+\vdots \
 y_n &= \boldsymbol{\beta}_0 + \boldsymbol{\beta}_1x_n + \boldsymbol{\beta}_2x_2 + \cdots + \boldsymbol{\beta}_nx_n + \epsilon_n
 \end{align*}
 $$
@@ -199,30 +199,30 @@ $$
 
 $$
 \begin{bmatrix}
-1 & x_1 & x_2 & \cdots & x_n \\
-1 & x_2 & x_3 & \cdots & x_n \\
-\vdots & \vdots & \vdots & \ddots & \vdots \\
+1 & x_1 & x_2 & \cdots & x_n \
+1 & x_2 & x_3 & \cdots & x_n \
+\vdots & \vdots & \vdots & \ddots & \vdots \
 1 & x_n & x_n & \cdots & x_n
 \end{bmatrix}
 \begin{bmatrix}
-\boldsymbol{\beta}_0 \\
-\boldsymbol{\beta}_1 \\
-\boldsymbol{\beta}_2 \\
-\vdots \\
+\boldsymbol{\beta}_0 \
+\boldsymbol{\beta}_1 \
+\boldsymbol{\beta}_2 \
+\vdots \
 \boldsymbol{\beta}_n
 \end{bmatrix}
 =
 \begin{bmatrix}
-y_1 \\
-y_2 \\
-\vdots \\
+y_1 \
+y_2 \
+\vdots \
 y_n
 \end{bmatrix}
 +
 \begin{bmatrix}
-\epsilon_1 \\
-\epsilon_2 \\
-\vdots \\
+\epsilon_1 \
+\epsilon_2 \
+\vdots \
 \epsilon_n
 \end{bmatrix}
 $$

@@ -77,11 +77,11 @@ LlamaIndex与RAG的结合，旨在构建一个更智能、更灵活的AI代理�
 
 假设有一个知识图谱K，其中包含实体E和关系R，可以用以下公式表示：
 
-$$ K = \\{E_i, R_j\\}_{i,j} $$
+$$ K = \{E_i, R_j\}_{i,j} $$
 
 对于多模态索引M，可以表示为：
 
-$$ M = \\{M_k\\}_{k} $$
+$$ M = \{M_k\}_{k} $$
 
 其中，$M_k$代表第$k$个模态的索引结构。
 
@@ -116,7 +116,7 @@ index = llama_index.GPTVectorStoreIndex.from_documents(documents)
 query_engine = RetrieverQueryEngine.from_query_engine(index)
 
 # 执行查询
-response = query_engine.query(\"为什么猫会抓家具？\")
+response = query_engine.query("为什么猫会抓家具？")
 ```
 
 ### 5.3 代码解读与分析

@@ -100,9 +100,9 @@ graph TD
 自注意力机制是Transformer模型的核心,它能够直接建模输入序列中任意两个位置之间的依赖关系。具体来说,给定一个输入序列 $X = (x_1, x_2, ..., x_n)$,自注意力机制首先将其映射为三个向量:查询向量(Query) $Q$、键向量(Key) $K$ 和值向量(Value) $V$,然后计算 $Q$ 和 $K$ 之间的相似性得分,并根据这些相似性得分对 $V$ 进行加权求和,得到输出向量。数学表示如下:
 
 $$\begin{aligned}
-Q &= XW^Q\\
-K &= XW^K\\
-V &= XW^V\\
+Q &= XW^Q\
+K &= XW^K\
+V &= XW^V\
 \text{Attention}(Q, K, V) &= \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V
 \end{aligned}$$
 
@@ -115,7 +115,7 @@ V &= XW^V\\
 为了进一步提高模型的表达能力,Transformer引入了多头注意力机制。多头注意力机制将输入 $X$ 通过不同的线性变换映射到多个子空间,然后在每个子空间中分别执行自注意力操作,最后将所有子空间的注意力输出进行拼接并经过另一个线性变换,得到最终的多头注意力输出。数学表示如下:
 
 $$\begin{aligned}
-\text{MultiHead}(Q, K, V) &= \text{Concat}(head_1, ..., head_h)W^O\\
+\text{MultiHead}(Q, K, V) &= \text{Concat}(head_1, ..., head_h)W^O\
 \text{where } head_i &= \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
 \end{aligned}$$
 
@@ -171,7 +171,7 @@ graph TD
 位置编码可以通过不同的函数来实现,如正弦/余弦函数、学习的嵌入向量等。在原始的Transformer模型中,位置编码是通过正弦/余弦函数来实现的,数学表示如下:
 
 $$\begin{aligned}
-PE_{(pos, 2i)} &= \sin(pos / 10000^{2i / d_{model}})\\
+PE_{(pos, 2i)} &= \sin(pos / 10000^{2i / d_{model}})\
 PE_{(pos, 2i+1)} &= \cos(pos / 10000^{2i / d_{model}})
 \end{aligned}$$
 

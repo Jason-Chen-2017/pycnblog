@@ -109,7 +109,7 @@
 
 $$
 T = \left\{ \begin{array}{l}
-O_1, O_2, \ldots, O_n \\
+O_1, O_2, \ldots, O_n \
 \end{array} \right.
 $$
 

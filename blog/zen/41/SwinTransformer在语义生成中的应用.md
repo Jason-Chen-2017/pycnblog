@@ -104,8 +104,8 @@ SwinTransformer的数学模型可以概括为以下几个部分：
 
 $$
 \begin{aligned}
-\mathbf{A}(\mathbf{X}) &= \mathbf{W}_Q \mathbf{X} \mathbf{W}_K^\top / \sqrt{d_k} + \mathbf{W}_V \mathbf{X} \mathbf{W}_V^\top \\
-&= \frac{1}{\sqrt{d_k}} \mathbf{W}_Q \mathbf{X} \mathbf{W}_K^\top + \mathbf{W}_V \mathbf{X} \mathbf{W}_V^\top \\
+\mathbf{A}(\mathbf{X}) &= \mathbf{W}_Q \mathbf{X} \mathbf{W}_K^\top / \sqrt{d_k} + \mathbf{W}_V \mathbf{X} \mathbf{W}_V^\top \
+&= \frac{1}{\sqrt{d_k}} \mathbf{W}_Q \mathbf{X} \mathbf{W}_K^\top + \mathbf{W}_V \mathbf{X} \mathbf{W}_V^\top \
 &= \mathbf{W}_A \mathbf{X}
 \end{aligned}
 $$

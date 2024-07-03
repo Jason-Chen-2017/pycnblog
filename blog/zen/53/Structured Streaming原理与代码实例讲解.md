@@ -72,7 +72,7 @@ SELECT user, SUM(amount) FROM transactions GROUP BY user
 
 $$
 S_t(k) = \begin{cases} 
-  S_{t-1}(k) + I_t(k) & \text{if } \exists I_t(k) \\\\
+  S_{t-1}(k) + I_t(k) & \text{if } \exists I_t(k) \\
   S_{t-1}(k) & \text{otherwise}
 \end{cases}
 $$
@@ -91,9 +91,9 @@ t3: (Alice, 30)
 ```
 
 则各时刻的状态$S_t$和输出$R_t$为:
-- t1: $S_{t1}=\\{Alice:10\\}, R_{t1}=\\{Alice:10\\}$  
-- t2: $S_{t2}=\\{Alice:10, Bob:20\\}, R_{t2}=\\{Alice:10, Bob:20\\}$
-- t3: $S_{t3}=\\{Alice:40, Bob:20\\}, R_{t3}=\\{Alice:40, Bob:20\\}$
+- t1: $S_{t1}=\{Alice:10\}, R_{t1}=\{Alice:10\}$  
+- t2: $S_{t2}=\{Alice:10, Bob:20\}, R_{t2}=\{Alice:10, Bob:20\}$
+- t3: $S_{t3}=\{Alice:40, Bob:20\}, R_{t3}=\{Alice:40, Bob:20\}$
 
 可见Structured Streaming通过增量更新状态、生成结果的方式,实现了高效的流式聚合。
 

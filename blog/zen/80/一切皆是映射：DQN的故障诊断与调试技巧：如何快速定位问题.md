@@ -109,7 +109,7 @@ graph TD
 
 $$
 a_t = \begin{cases}
-\arg\max_a Q(s_t, a; \theta) & \text{with probability } 1-\epsilon\\
+\arg\max_a Q(s_t, a; \theta) & \text{with probability } 1-\epsilon\
 \text{random action} & \text{with probability } \epsilon
 \end{cases}
 $$

@@ -144,7 +144,7 @@ XLM模型基于Transformer模型，其数学模型可以概括如下：
 1. **XLM-M预训练**
 
 $$
-M = \text{Mask}(X) \\
+M = \text{Mask}(X) \
 \text{Mask}(X) = \text{XLM-M}(X)
 $$
 
@@ -153,8 +153,8 @@ $$
 2. **XLS模型**
 
 $$
-\text{XLS}(X, Y) = \text{Encoder}(X) \cdot \text{Decoder}(Y) \\
-\text{Encoder}(X) = \text{XLM-M}(X) \\
+\text{XLS}(X, Y) = \text{Encoder}(X) \cdot \text{Decoder}(Y) \
+\text{Encoder}(X) = \text{XLM-M}(X) \
 \text{Decoder}(Y) = \text{XLM-M}(Y)
 $$
 
@@ -187,7 +187,7 @@ $$
 XLS模型由编码器和解码器组成，编码器和解码器都使用XLM-M模型进行掩码语言表示的学习。编码器和解码器的计算公式如下：
 
 $$
-\text{Encoder}(X) = \text{XLM-M}(X) \\
+\text{Encoder}(X) = \text{XLM-M}(X) \
 \text{Decoder}(Y) = \text{XLM-M}(Y)
 $$
 

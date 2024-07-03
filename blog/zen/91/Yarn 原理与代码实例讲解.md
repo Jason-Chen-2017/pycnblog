@@ -100,8 +100,8 @@ Yarn的资源管理可以用以下数学模型表示：
 
 $$
 \begin{align*}
-\text{Maximize} \quad & \text{Total Resource Utilization} \\
-\text{Subject to} \quad & \text{Resource Availability} \\
+\text{Maximize} \quad & \text{Total Resource Utilization} \
+\text{Subject to} \quad & \text{Resource Availability} \
 & \text{Resource Allocation Constraints}
 \end{align*}
 $$

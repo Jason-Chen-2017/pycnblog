@@ -89,14 +89,14 @@ $$g(x,y)=f(x,y)+n(x,y)$$
 常用的边缘检测算子有Sobel、Prewitt、Laplacian等。以Sobel算子为例,其模板为:
 
 $$G_x = \begin{bmatrix} 
--1 & 0 & +1 \\
--2 & 0 & +2 \\
+-1 & 0 & +1 \
+-2 & 0 & +2 \
 -1 & 0 & +1 
 \end{bmatrix} * A$$
 
 $$G_y = \begin{bmatrix}
--1 & -2 & -1 \\
-0 & 0 & 0 \\
+-1 & -2 & -1 \
+0 & 0 & 0 \
 +1 & +2 & +1
 \end{bmatrix} * A$$
 
@@ -160,19 +160,19 @@ $$\theta = f^{-1}(X)$$
 设机器人起点位姿为 $X_0$,终点位姿为 $X_f$,时间为 $t_f$,则五次多项式轨迹规划方程为:
 
 $$\begin{cases}
-x(t) = a_0 + a_1t + a_2t^2 + a_3t^3 + a_4t^4 + a_5t^5 \\
-y(t) = b_0 + b_1t + b_2t^2 + b_3t^3 + b_4t^4 + b_5t^5 \\
+x(t) = a_0 + a_1t + a_2t^2 + a_3t^3 + a_4t^4 + a_5t^5 \
+y(t) = b_0 + b_1t + b_2t^2 + b_3t^3 + b_4t^4 + b_5t^5 \
 z(t) = c_0 + c_1t + c_2t^2 + c_3t^3 + c_4t^4 + c_5t^5
 \end{cases}$$
 
 边界条件为:
 
 $$\begin{cases}
-x(0) = x_0, & x(t_f) = x_f \\
-y(0) = y_0, & y(t_f) = y_f \\  
-z(0) = z_0, & z(t_f) = z_f \\
-\dot{x}(0) = 0, & \dot{x}(t_f) = 0 \\
-\dot{y}(0) = 0, & \dot{y}(t_f) = 0 \\
+x(0) = x_0, & x(t_f) = x_f \
+y(0) = y_0, & y(t_f) = y_f \  
+z(0) = z_0, & z(t_f) = z_f \
+\dot{x}(0) = 0, & \dot{x}(t_f) = 0 \
+\dot{y}(0) = 0, & \dot{y}(t_f) = 0 \
 \dot{z}(0) = 0, & \dot{z}(t_f) = 0
 \end{cases}$$
 

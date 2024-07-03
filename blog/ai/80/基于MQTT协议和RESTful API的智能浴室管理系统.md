@@ -138,7 +138,7 @@ $$
 
 $$
 S = \begin{cases} 
-\text{off} & \text{if } t < t_{on} \\
+\text{off} & \text{if } t < t_{on} \
 \text{on} & \text{if } t \geq t_{on} 
 \end{cases}
 $$
@@ -151,7 +151,7 @@ $$
 
 $$
 B = \begin{cases} 
-\text{start} & \text{if } S = \text{on} \\
+\text{start} & \text{if } S = \text{on} \
 \text{stop} & \text{if } S = \text{off} 
 \end{cases}
 $$

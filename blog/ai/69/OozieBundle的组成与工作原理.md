@@ -120,7 +120,7 @@ OozieBundle的工作原理主要基于以下数学模型：
 
 $$
 f(t) = \begin{cases} 
-0, & \text{if } t < t_0 \\
+0, & \text{if } t < t_0 \
 T, & \text{if } t_0 \leq t < t_0 + T 
 \end{cases}
 $$

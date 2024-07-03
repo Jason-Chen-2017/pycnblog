@@ -61,7 +61,7 @@ $$ \theta := \theta - \alpha \nabla_\theta J(\theta) $$
 - **Momentum**: 加入动量项加速收敛，防止震荡：
   
   $$
-  v_{t+1} = \beta v_t + (1-\beta)g_t \\
+  v_{t+1} = \beta v_t + (1-\beta)g_t \
   w_{t+1} = w_t - \eta v_{t+1}
   $$
 
@@ -71,10 +71,10 @@ $$ \theta := \theta - \alpha \nabla_\theta J(\theta) $$
   
   - Adam
     $$
-    m_t = \beta_1 m_{t-1} + (1-\beta_1)g_t \\
-    v_t = \beta_2 v_{t-1} + (1-\beta_2)(g_t)^2 \\
-    \hat{m}_t = \frac{m_t}{1-\beta_1^t} \\
-    \hat{v}_t = \frac{v_t}{1-\beta_2^t} \\
+    m_t = \beta_1 m_{t-1} + (1-\beta_1)g_t \
+    v_t = \beta_2 v_{t-1} + (1-\beta_2)(g_t)^2 \
+    \hat{m}_t = \frac{m_t}{1-\beta_1^t} \
+    \hat{v}_t = \frac{v_t}{1-\beta_2^t} \
     w_{t+1} = w_t - \eta\frac{\hat{m}_t}{\sqrt{\hat{v}_t}+\epsilon}
     $$
     
@@ -132,23 +132,23 @@ $$ L(y, f(x)) = \frac{1}{N}\sum_{i=1}^{N}(y_i - f(x_i))^2 $$
 
 1. 计算梯度：
    
-   \[
+   $$
    \frac{\partial L}{\partial \theta_0} = \frac{1}{N}\sum_{i=1}^{N}(y_i - (\theta_0 + \theta_1 x_i))
-   \]
+   $$
    
-   \[
+   $$
    \frac{\partial L}{\partial \theta_1} = \frac{1}{N}\sum_{i=1}^{N}(y_i - (\theta_0 + \theta_1 x_i))x_i
-   \]
+   $$
 
 2. 更新规则：
    
-   \[
+   $$
    \theta_0 := \theta_0 - \alpha \frac{\partial L}{\partial \theta_0}
-   \]
+   $$
    
-   \[
+   $$
    \theta_1 := \theta_1 - \alpha \frac{\partial L}{\partial \theta_1}
-   \]
+   $$
 
 其中$\alpha$为学习率。
 

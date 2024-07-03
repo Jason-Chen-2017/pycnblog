@@ -128,7 +128,7 @@ MDP 的数学模型可以表示为：
 
 $$
 \begin{align*}
-V(s) &= \mathbb{E}\left[R(s,a) + \gamma \sum_{s'} P(s'|s,a) V(s')\right] \\
+V(s) &= \mathbb{E}\left[R(s,a) + \gamma \sum_{s'} P(s'|s,a) V(s')\right] \
 Q(s,a) &= \mathbb{E}\left[R(s,a) + \gamma \sum_{s'} P(s'|s,a) V(s')\right]
 \end{align*}
 $$

@@ -53,7 +53,7 @@
    - 执行动作,观察奖励 $r_t$ 和下一状态 $s_{t+1}$,存储经验 $(s_t,a_t,r_t,s_{t+1})$ 到 $D$ 中
    - 从 $D$ 中随机采样小批量经验 $(s,a,r,s')$
    - 计算Q学习目标 $y$:
-     $$y = \begin{cases} r & \text{if episode terminates at } s' \\ r + \gamma \max_{a'} \hat{Q}(s',a';\theta^-) & \text{otherwise} \end{cases}$$
+     $$y = \begin{cases} r & \text{if episode terminates at } s' \ r + \gamma \max_{a'} \hat{Q}(s',a';\theta^-) & \text{otherwise} \end{cases}$$
    - 通过最小化损失函数 $L(\theta) = \mathbb{E}_{(s,a,r,s')\sim D}[(y - Q(s,a;\theta))^2]$ 来更新在线Q网络
    - 每隔一定步数将在线Q网络参数 $\theta$ 复制给目标Q网络参数 $\theta^-$
 4. 返回训练好的Q网络,即为近似最优策略
@@ -74,8 +74,8 @@ $$Q^*(s,a) = \mathbb{E}[r_t + \gamma \max_{a'}Q^*(s_{t+1},a')|s_t=s,a_t=a]$$
 
 Q-learning的更新公式可以看作是利用时序差分(TD)误差来逼近Bellman最优方程:
 $$\begin{aligned}
-Q(s_t,a_t) &\leftarrow Q(s_t,a_t) + \alpha [r_t + \gamma \max_a Q(s_{t+1},a) - Q(s_t,a_t)]\\
-&\approx Q(s_t,a_t) + \alpha [r_t + \gamma \max_a Q^*(s_{t+1},a) - Q(s_t,a_t)]\\
+Q(s_t,a_t) &\leftarrow Q(s_t,a_t) + \alpha [r_t + \gamma \max_a Q(s_{t+1},a) - Q(s_t,a_t)]\
+&\approx Q(s_t,a_t) + \alpha [r_t + \gamma \max_a Q^*(s_{t+1},a) - Q(s_t,a_t)]\
 &\approx Q(s_t,a_t) + \alpha [Q^*(s_t,a_t) - Q(s_t,a_t)]
 \end{aligned}$$
 可以看出,Q-learning利用TD误差 $r_t + \gamma \max_a Q(s_{t+1},a) - Q(s_t,a_t)$ 来逐步校正Q函数的估计值,最终收敛到最优值函数 $Q^*$。

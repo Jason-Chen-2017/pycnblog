@@ -92,17 +92,17 @@ Python生态系统中，有许多库和框架可以简化与大语言模型的�
 大语言模型通常基于Transformer架构，其中的核心是自注意力机制（Self-Attention）。自注意力机制通过权重矩阵来捕捉输入序列中的依赖关系，公式表示为：
 
 $$
-\\text{Attention}(Q, K, V) = \\text{softmax}(\\frac{QK^T}{\\sqrt{d_k}})V
+\text{Attention}(Q, K, V) = \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V
 $$
 
 其中：
 
-- \\(Q\\)、\\(K\\)和\\(V\\)分别是查询、键和值的矩阵。
-- \\(d_k\\)是键的维度。
+- \(Q\)、\(K\)和\(V\)分别是查询、键和值的矩阵。
+- \(d_k\)是键的维度。
 
 ### 4.2 公式推导过程
 
-自注意力机制通过将查询矩阵\\(Q\\)与键矩阵\\(K\\)相乘，然后除以键的维度的平方根，来计算权重矩阵。这个过程强调了查询与键之间的相似性，从而产生了一个强调了重要元素的加权值矩阵。
+自注意力机制通过将查询矩阵\(Q\)与键矩阵\(K\)相乘，然后除以键的维度的平方根，来计算权重矩阵。这个过程强调了查询与键之间的相似性，从而产生了一个强调了重要元素的加权值矩阵。
 
 ### 4.3 案例分析与讲解
 
@@ -115,29 +115,29 @@ import json
 def execute_code(code, api_key):
     # 构建API请求格式
     payload = {
-        \"code\": code,
-        \"language\": \"python\",
-        \"environment\": {\"libraries\": [\"requests\", \"json\"]},
-        \"execution_options\": {\"max_run_time\": 60}
+        "code": code,
+        "language": "python",
+        "environment": {"libraries": ["requests", "json"]},
+        "execution_options": {"max_run_time": 60}
     }
     
     headers = {
-        \"Authorization\": f\"Bearer {api_key}\",
-        \"Content-Type\": \"application/json\"
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json"
     }
     
     # 发送请求
-    response = requests.post(\"http://example-api-url.com/execute\", json=payload, headers=headers)
+    response = requests.post("http://example-api-url.com/execute", json=payload, headers=headers)
     
     # 解析响应
     result = response.json()
-    if result[\"status\"] == \"success\":
-        print(\"执行结果:\", result[\"output\"])
+    if result["status"] == "success":
+        print("执行结果:", result["output"])
     else:
-        print(\"执行失败:\", result[\"error\"])
+        print("执行失败:", result["error"])
 
 # 调用函数
-execute_code(\"print('Hello, world!')\", \"your-api-key-here\")
+execute_code("print('Hello, world!')", "your-api-key-here")
 ```
 
 ### 4.4 常见问题解答

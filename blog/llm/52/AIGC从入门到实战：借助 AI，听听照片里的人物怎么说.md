@@ -72,8 +72,8 @@ $$
 
 #### 4.1.2 Tacotron模型的数学原理
 $$
-\mathbf{h}_t=\text{Encoder}(\mathbf{x}_t) \\
-\mathbf{s}_t=\text{Attention}(\mathbf{h}_t,\mathbf{s}_{t-1}) \\
+\mathbf{h}_t=\text{Encoder}(\mathbf{x}_t) \
+\mathbf{s}_t=\text{Attention}(\mathbf{h}_t,\mathbf{s}_{t-1}) \
 \mathbf{y}_t=\text{Decoder}(\mathbf{s}_t)
 $$
 其中$\mathbf{x}_t$为输入的文本序列，$\mathbf{h}_t$为编码器输出，$\mathbf{s}_t$为注意力机制的输出，$\mathbf{y}_t$为解码器输出的Mel频谱。

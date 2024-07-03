@@ -118,7 +118,7 @@ $$ \min_{w, b} \frac{1}{2}\|w\|^2 $$
 满足以下约束条件：
 
 $$ \begin{cases} 
-w^T x_i + b > 0 & \text{for } y_i = 1 \\
+w^T x_i + b > 0 & \text{for } y_i = 1 \
 w^T x_i + b < 0 & \text{for } y_i = -1
 \end{cases} $$
 

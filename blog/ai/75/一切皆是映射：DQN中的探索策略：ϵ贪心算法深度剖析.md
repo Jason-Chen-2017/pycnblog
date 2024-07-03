@@ -116,7 +116,7 @@ DQN是一种基于深度学习的强化学习算法，其核心思想是利用�
 $$
 \hat{a} = 
 \begin{cases} 
-a_{\text{random}} & \text{with probability } \epsilon \\
+a_{\text{random}} & \text{with probability } \epsilon \
 a_{\text{greedy}} & \text{with probability } 1-\epsilon 
 \end{cases}
 $$
@@ -136,7 +136,7 @@ $$
 $$
 \hat{a} = 
 \begin{cases} 
-a_{\text{random}} & \text{with probability } \epsilon \\
+a_{\text{random}} & \text{with probability } \epsilon \
 \text{argmax}_{a}Q(s,a) & \text{with probability } 1-\epsilon 
 \end{cases}
 $$

@@ -117,7 +117,7 @@ $$
 
 $$
 \begin{aligned}
-\text{MultiHead}(\mathbf{Q},\mathbf{K},\mathbf{V}) &= \text{Concat}(\text{head}_1,...,\text{head}_h)\mathbf{W}^O \\
+\text{MultiHead}(\mathbf{Q},\mathbf{K},\mathbf{V}) &= \text{Concat}(\text{head}_1,...,\text{head}_h)\mathbf{W}^O \
 \text{head}_i &= \text{Attention}(\mathbf{Q}\mathbf{W}_i^Q, \mathbf{K}\mathbf{W}_i^K, \mathbf{V}\mathbf{W}_i^V)
 \end{aligned}
 $$
@@ -130,7 +130,7 @@ GAN可形式化为一个二人零和博弈,生成器$G$试图最小化目标函�
 
 $$
 \begin{aligned}
-\min_G \max_D \mathcal{L}(D,G) &= \mathbb{E}_{\mathbf{x} \sim p_{\text{data}}(\mathbf{x})}[\log D(\mathbf{x})] \\
+\min_G \max_D \mathcal{L}(D,G) &= \mathbb{E}_{\mathbf{x} \sim p_{\text{data}}(\mathbf{x})}[\log D(\mathbf{x})] \
 &+ \mathbb{E}_{\mathbf{z} \sim p_{\mathbf{z}}(\mathbf{z})}[\log (1-D(G(\mathbf{z})))]
 \end{aligned}
 $$
@@ -141,7 +141,7 @@ $$
 
 $$
 \begin{aligned}
-\mathcal{L}_D &= -\mathbb{E}_{\mathbf{x} \sim p_{\text{data}}}[\log D(\mathbf{x})] - \mathbb{E}_{\mathbf{z} \sim p_{\mathbf{z}}}[\log (1-D(G(\mathbf{z})))] \\
+\mathcal{L}_D &= -\mathbb{E}_{\mathbf{x} \sim p_{\text{data}}}[\log D(\mathbf{x})] - \mathbb{E}_{\mathbf{z} \sim p_{\mathbf{z}}}[\log (1-D(G(\mathbf{z})))] \
 \mathcal{L}_G &= -\mathbb{E}_{\mathbf{z} \sim p_{\mathbf{z}}}[\log D(G(\mathbf{z}))]
 \end{aligned}
 $$

@@ -93,29 +93,29 @@ M-矩阵是一种特殊的非负矩阵，其定义如下：
 
 $$
 A x = \begin{bmatrix}
-a_{11} & a_{12} & \cdots & a_{1n} \\
-a_{21} & a_{22} & \cdots & a_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
+a_{11} & a_{12} & \cdots & a_{1n} \
+a_{21} & a_{22} & \cdots & a_{2n} \
+\vdots & \vdots & \ddots & \vdots \
 a_{n1} & a_{n2} & \cdots & a_{nn}
 \end{bmatrix}
 \begin{bmatrix}
-x_1 \\
-x_2 \\
-\vdots \\
+x_1 \
+x_2 \
+\vdots \
 x_n
 \end{bmatrix}
 =
 \begin{bmatrix}
-a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n \\
-a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n \\
-\vdots \\
+a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n \
+a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n \
+\vdots \
 a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n
 \end{bmatrix}
 =
 \begin{bmatrix}
-x_1 \\
-x_2 \\
-\vdots \\
+x_1 \
+x_2 \
+\vdots \
 x_n
 \end{bmatrix}
 $$
@@ -125,7 +125,7 @@ $$
 
 $$
 A = \begin{bmatrix}
-2 & 1 \\
+2 & 1 \
 1 & 2
 \end{bmatrix}
 $$

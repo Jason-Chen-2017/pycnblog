@@ -98,7 +98,7 @@ history = model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=1
 
 ```python
 loss, accuracy = model.evaluate(X_test, y_test)
-print(f\"Test loss: {loss:.4f}\")
+print(f"Test loss: {loss:.4f}")
 ```
 
 #### 步骤九：预测新数据
@@ -136,15 +136,15 @@ predictions = model.predict(X_test)
 
 $$ y = wx + b $$
 
-其中，\\( w \\) 是权重，\\( b \\) 是偏置项。
+其中，\( w \) 是权重，\( b \) 是偏置项。
 
 ### 4.2 公式推导过程
 
 在深度学习中，我们通常使用均方误差（Mean Squared Error, MSE）作为损失函数：
 
-$$ Loss = \\frac{1}{n} \\sum_{i=1}^{n} (y_i - \\hat{y}_i)^2 $$
+$$ Loss = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 $$
 
-其中，\\( n \\) 是样本数量，\\( y_i \\) 是实际值，\\( \\hat{y}_i \\) 是预测值。
+其中，\( n \) 是样本数量，\( y_i \) 是实际值，\( \hat{y}_i \) 是预测值。
 
 ### 4.3 案例分析与讲解
 
@@ -197,7 +197,7 @@ history = model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=1
 
 # 评估模型
 loss, accuracy = model.evaluate(X_test, y_test)
-print(f\"Test loss: {loss:.4f}\")
+print(f"Test loss: {loss:.4f}")
 
 # 预测新数据
 predictions = model.predict(X_test)

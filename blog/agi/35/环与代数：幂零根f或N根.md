@@ -37,7 +37,7 @@
 
 ### 联系
 
-幂零根和f-根、N根之间存在着密切的联系。f-根实际上是幂零根的一种特殊情况，当f为某个正整数时，f-根意味着$x^f$等于x自身，进一步地，对于任意正整数n，如果f能够整除n，则$x^n = x^f \\cdot x^{n-f}$，这意味着x的n次幂也可以通过f次幂来表达。同样地，N根是幂零根的另一种表述方式，特别地，当N为某个正整数时，N根意味着x的N次幂等于零。
+幂零根和f-根、N根之间存在着密切的联系。f-根实际上是幂零根的一种特殊情况，当f为某个正整数时，f-根意味着$x^f$等于x自身，进一步地，对于任意正整数n，如果f能够整除n，则$x^n = x^f \cdot x^{n-f}$，这意味着x的n次幂也可以通过f次幂来表达。同样地，N根是幂零根的另一种表述方式，特别地，当N为某个正整数时，N根意味着x的N次幂等于零。
 
 ## 3. 核心算法原理与具体操作步骤
 
@@ -73,15 +73,15 @@
 
 #### 多项式环模型
 
-设$R$为环，考虑多项式环$R[x]$，其中$x$是变量。考虑多项式$f(x) = \\sum_{i=0}^{n} a_i x^i$，其中$a_i \\in R$。
+设$R$为环，考虑多项式环$R[x]$，其中$x$是变量。考虑多项式$f(x) = \sum_{i=0}^{n} a_i x^i$，其中$a_i \in R$。
 
 #### 幂零根模型
 
-定义一个映射$\\phi: R \\to \\mathbb{Z}$，使得$\\phi(x^k) = k$，对于所有$k \\geq 0$。如果存在$n \\geq 1$使得$f(x)^n = 0$，则称$f(x)$在环$R[x]$中是幂零的。
+定义一个映射$\phi: R \to \mathbb{Z}$，使得$\phi(x^k) = k$，对于所有$k \geq 0$。如果存在$n \geq 1$使得$f(x)^n = 0$，则称$f(x)$在环$R[x]$中是幂零的。
 
 ### 公式推导过程
 
-对于多项式$f(x) = \\sum_{i=0}^{n} a_i x^i$，考虑$f(x)^n$的展开，利用多项式乘法的性质，可以证明如果$f(x)^n = 0$，则对于所有$i < n$，$a_i = 0$，因为$f(x)^n$的最低次幂项是$a_n^n x^{n^2}$，其余项均被零化。
+对于多项式$f(x) = \sum_{i=0}^{n} a_i x^i$，考虑$f(x)^n$的展开，利用多项式乘法的性质，可以证明如果$f(x)^n = 0$，则对于所有$i < n$，$a_i = 0$，因为$f(x)^n$的最低次幂项是$a_n^n x^{n^2}$，其余项均被零化。
 
 ### 案例分析与讲解
 
@@ -148,16 +148,16 @@ element = RingElement(2, ring_Z5)
 # 计算幂零性
 exponent = 5
 if element.power(exponent).is_zero():
-    print(f\"{element.value} 是 {ring_Z5.mod} 的幂零元素。\")
+    print(f"{element.value} 是 {ring_Z5.mod} 的幂零元素。")
 else:
-    print(f\"{element.value} 不是 {ring_Z5.mod} 的幂零元素。\")
+    print(f"{element.value} 不是 {ring_Z5.mod} 的幂零元素。")
 
 # 测试多项式环的例子
 x = sp.symbols('x')
 f = sp.poly(x**2 + 2*x + 3, domain='ZZ')
 ring_Z5_poly = FiniteRing(5)
 f_evaluated = f.subs(x, ring_Z5_poly.power(x, 3))
-print(f\"f({ring_Z5_poly.zero_element}) = {f_evaluated}\")
+print(f"f({ring_Z5_poly.zero_element}) = {f_evaluated}")
 ```
 
 ### 代码解读与分析

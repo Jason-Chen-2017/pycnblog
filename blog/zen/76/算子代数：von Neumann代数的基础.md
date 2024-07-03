@@ -104,7 +104,7 @@ $$
 
 $$
 H = \begin{pmatrix}
-\omega & -\frac{1}{2}\\
+\omega & -\frac{1}{2}\
 -\frac{1}{2} & \omega
 \end{pmatrix},
 $$
@@ -113,11 +113,11 @@ $$
 
 $$
 |\psi_1\rangle = \begin{pmatrix}
-1\\
+1\
 0
 \end{pmatrix},
 |\psi_2\rangle = \begin{pmatrix}
-0\\
+0\
 1
 \end{pmatrix}.
 $$

@@ -108,7 +108,7 @@ public class MaskField<R extends ConnectRecord<R>> implements Transformation<R> 
     @Override
     public R apply(R record) {
         final String value = (String) record.value();
-        String maskedValue = value.replaceAll("\\d{4}", "****");
+        String maskedValue = value.replaceAll("\d{4}", "****");
         return record.newRecord(record.topic(), record.kafkaPartition(), record.keySchema(), record.key(),
                 record.valueSchema(), maskedValue, record.timestamp());
     }

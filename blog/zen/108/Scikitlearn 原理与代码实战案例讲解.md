@@ -105,8 +105,8 @@ SVM 的数学模型可描述为以下优化问题:
 
 $$
 \begin{aligned}
-\min_{w,b,\xi} \quad & \frac{1}{2}||w||^2 + C\sum_{i=1}^N \xi_i \\
-s.t. \quad & y_i(w^Tx_i+b) \geq 1-\xi_i, \quad i=1,2,...,N \\  
+\min_{w,b,\xi} \quad & \frac{1}{2}||w||^2 + C\sum_{i=1}^N \xi_i \
+s.t. \quad & y_i(w^Tx_i+b) \geq 1-\xi_i, \quad i=1,2,...,N \  
 & \xi_i \geq 0, \quad i=1,2,...,N
 \end{aligned}
 $$
@@ -118,8 +118,8 @@ $$
 
 $$
 \begin{aligned}
-\max_\alpha \quad & \sum_{i=1}^N \alpha_i - \frac{1}{2}\sum_{i,j=1}^N \alpha_i \alpha_j y_i y_j \langle x_i,x_j \rangle \\
-s.t. \quad & \sum_{i=1}^N \alpha_i y_i = 0 \\ 
+\max_\alpha \quad & \sum_{i=1}^N \alpha_i - \frac{1}{2}\sum_{i,j=1}^N \alpha_i \alpha_j y_i y_j \langle x_i,x_j \rangle \
+s.t. \quad & \sum_{i=1}^N \alpha_i y_i = 0 \ 
 & 0 \leq \alpha_i \leq C, \quad i=1,2,...,N  
 \end{aligned}
 $$

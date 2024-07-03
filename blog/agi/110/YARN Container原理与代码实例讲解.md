@@ -141,8 +141,8 @@ YARN的资源管理和任务调度能力使其可广泛应用于:
 
 $$
 \begin{align}
-\sum_{q \in Q} q.quota &\le 1 \\
-\sum_{u \in U} u.quota_q &\le 1 \quad \forall q \in Q\\
+\sum_{q \in Q} q.quota &\le 1 \
+\sum_{u \in U} u.quota_q &\le 1 \quad \forall q \in Q\
 \sum_{a \in A} a.request &\le R
 \end{align}
 $$
@@ -167,14 +167,14 @@ $$\max \sum_{a \in A} f(x_{a,cpu}, x_{a,mem})$$
 
 $$
 \begin{align}
-\max & -\left(10x_{a_1,cpu} + 100x_{a_1,mem} + 20x_{a_2,cpu} + 200x_{a_2,mem} + 15x_{a_3,cpu} + 150x_{a_3,mem}\right) \\
-\text{s.t. } & x_{a_1,cpu} + x_{a_2,cpu} + x_{a_3,cpu} \le 100 \\
-           & x_{a_1,mem} + x_{a_2,mem} + x_{a_3,mem} \le 1000 \\
-           & 0.7(x_{a_1,cpu} + x_{a_2,cpu}) + 0.3x_{a_3,cpu} \le 60 \\
-           & 0.7(x_{a_1,mem} + x_{a_2,mem}) + 0.3x_{a_3,mem} \le 600 \\
-           & x_{a_1,cpu} \le 10, x_{a_1,mem} \le 100\\
-           & x_{a_2,cpu} \le 20, x_{a_2,mem} \le 200\\
-           & x_{a_3,cpu} \le 15, x_{a_3,mem} \le 150\\
+\max & -\left(10x_{a_1,cpu} + 100x_{a_1,mem} + 20x_{a_2,cpu} + 200x_{a_2,mem} + 15x_{a_3,cpu} + 150x_{a_3,mem}\right) \
+\text{s.t. } & x_{a_1,cpu} + x_{a_2,cpu} + x_{a_3,cpu} \le 100 \
+           & x_{a_1,mem} + x_{a_2,mem} + x_{a_3,mem} \le 1000 \
+           & 0.7(x_{a_1,cpu} + x_{a_2,cpu}) + 0.3x_{a_3,cpu} \le 60 \
+           & 0.7(x_{a_1,mem} + x_{a_2,mem}) + 0.3x_{a_3,mem} \le 600 \
+           & x_{a_1,cpu} \le 10, x_{a_1,mem} \le 100\
+           & x_{a_2,cpu} \le 20, x_{a_2,mem} \le 200\
+           & x_{a_3,cpu} \le 15, x_{a_3,mem} \le 150\
            & x \ge 0
 \end{align}
 $$

@@ -88,7 +88,7 @@
 $$
 B(x, y) =
 \begin{cases}
-1, & \text{if } I(x, y) > T \\
+1, & \text{if } I(x, y) > T \
 0, & \text{otherwise}
 \end{cases}
 $$
@@ -115,7 +115,7 @@ $$
 
 $$
 \text{非极大抑制}(\theta, I_x, I_y) = \begin{cases}
-I(\theta), & \text{if } I_x^2 + I_y^2 > \text{threshold} \\
+I(\theta), & \text{if } I_x^2 + I_y^2 > \text{threshold} \
 0, & \text{otherwise}
 \end{cases}
 $$

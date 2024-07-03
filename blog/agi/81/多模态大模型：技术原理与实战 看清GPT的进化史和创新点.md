@@ -120,9 +120,9 @@ C --> D
 
 $$
 \begin{aligned}
-\mathbf{Q} &= \mathbf{X} \mathbf{W}^Q \\
-\mathbf{K} &= \mathbf{X} \mathbf{W}^K \\
-\mathbf{V} &= \mathbf{X} \mathbf{W}^V \\
+\mathbf{Q} &= \mathbf{X} \mathbf{W}^Q \
+\mathbf{K} &= \mathbf{X} \mathbf{W}^K \
+\mathbf{V} &= \mathbf{X} \mathbf{W}^V \
 \text{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) &= \text{softmax}(\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{d_k}})\mathbf{V}
 \end{aligned}
 $$
@@ -134,7 +134,7 @@ $$
 
 $$
 \begin{aligned}
-\text{MultiHead}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) &= \text{Concat}(\text{head}_1, ..., \text{head}_h)\mathbf{W}^O \\
+\text{MultiHead}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) &= \text{Concat}(\text{head}_1, ..., \text{head}_h)\mathbf{W}^O \
 \text{head}_i &= \text{Attention}(\mathbf{Q}\mathbf{W}_i^Q, \mathbf{K}\mathbf{W}_i^K, \mathbf{V}\mathbf{W}_i^V)
 \end{aligned}
 $$
@@ -157,5 +157,5 @@ $$
 
 $$
 \begin{aligned}
-\mathbf{Q} &= \mathbf{X} \mathbf{W}^Q \\
+\mathbf{Q} &= \mathbf{X} \mathbf{W}^Q \
 \mathbf{K} &= \mathbf{X} \

@@ -83,17 +83,17 @@
 
 策略网络 $Q(s, a)$ 的共享形式可以表示为：
 
-$$ Q_{shared}(s, a) = \\phi(s, a) \\cdot W $$
+$$ Q_{shared}(s, a) = \phi(s, a) \cdot W $$
 
-其中，$\\phi(s, a)$ 是特征映射函数，$W$ 是共享权重矩阵。
+其中，$\phi(s, a)$ 是特征映射函数，$W$ 是共享权重矩阵。
 
 #### 值函数共享：
 
 价值函数 $V(s)$ 的共享形式可以表示为：
 
-$$ V_{shared}(s) = \\psi(s) \\cdot W $$
+$$ V_{shared}(s) = \psi(s) \cdot W $$
 
-其中，$\\psi(s)$ 是特征映射函数，$W$ 是共享权重矩阵。
+其中，$\psi(s)$ 是特征映射函数，$W$ 是共享权重矩阵。
 
 ### 4.3 案例分析与讲解
 
@@ -105,10 +105,10 @@ $$ V_{shared}(s) = \\psi(s) \\cdot W $$
 
 对于价值函数共享，假设任务 $T_1$ 和 $T_2$ 的价值函数 $V_1(s)$ 和 $V_2(s)$ 分别表示为：
 
-$$ V_1(s) = \\beta_1 \\cdot \\psi_1(s) $$
-$$ V_2(s) = \\beta_2 \\cdot \\psi_2(s) $$
+$$ V_1(s) = \beta_1 \cdot \psi_1(s) $$
+$$ V_2(s) = \beta_2 \cdot \psi_2(s) $$
 
-其中，$\\beta_i$ 是任务特定的权重向量，$\\psi_i(s)$ 是特征映射函数。在多任务学习中，通过最小化两个任务的价值函数损失，同时确保任务特定的差异被捕捉。
+其中，$\beta_i$ 是任务特定的权重向量，$\psi_i(s)$ 是特征映射函数。在多任务学习中，通过最小化两个任务的价值函数损失，同时确保任务特定的差异被捕捉。
 
 ### 4.4 常见问题解答
 
@@ -187,7 +187,7 @@ for task_id, env in enumerate(envs):
             action = np.argmax(action_probs)
             observation, reward, done, info = env.step(action)
             total_reward += reward
-    print(f\"Task {task_id + 1} reward: {total_reward}\")
+    print(f"Task {task_id + 1} reward: {total_reward}")
 ```
 
 ### 5.3 代码解读与分析

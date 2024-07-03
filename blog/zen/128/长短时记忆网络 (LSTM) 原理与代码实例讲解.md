@@ -103,11 +103,11 @@ LSTM 模型的数学模型可以表示为：
 
 $$
 \begin{aligned}
-f_t &= \sigma(W_f[h_{t-1}, x_t] + b_f) \\
-i_t &= \sigma(W_i[h_{t-1}, x_t] + b_i) \\
-\tilde{C}_t &= \tanh(W_c[h_{t-1}, x_t] + b_c) \\
-C_t &= f_t \odot C_{t-1} + i_t \odot \tilde{C}_t \\
-o_t &= \sigma(W_o[h_{t-1}, x_t] + b_o) \\
+f_t &= \sigma(W_f[h_{t-1}, x_t] + b_f) \
+i_t &= \sigma(W_i[h_{t-1}, x_t] + b_i) \
+\tilde{C}_t &= \tanh(W_c[h_{t-1}, x_t] + b_c) \
+C_t &= f_t \odot C_{t-1} + i_t \odot \tilde{C}_t \
+o_t &= \sigma(W_o[h_{t-1}, x_t] + b_o) \
 h_t &= o_t \odot \tanh(C_t)
 \end{aligned}
 $$

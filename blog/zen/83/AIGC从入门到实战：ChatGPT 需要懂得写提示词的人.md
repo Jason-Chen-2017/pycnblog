@@ -81,7 +81,7 @@ ChatGPT 的核心是 Transformer 模型,其数学表达可以用以下公式来�
 
 $$
 \begin{aligned}
-&\text{Encoder}(X) = \text{Attention}(\text{Embed}(X)) \\
+&\text{Encoder}(X) = \text{Attention}(\text{Embed}(X)) \
 &\text{Decoder}(Z) = \text{Attention}(\text{Embed}(Z), \text{Encoder}(X))
 \end{aligned}
 $$
@@ -94,8 +94,8 @@ Transformer 的自注意力计算可以分为以下几个步骤:
 1. 将输入序列 $X$ 映射为查询向量 $Q$、键向量 $K$ 和值向量 $V$:
 $$
 \begin{aligned}
-&Q = XW_Q \\
-&K = XW_K \\
+&Q = XW_Q \
+&K = XW_K \
 &V = XW_V
 \end{aligned}
 $$

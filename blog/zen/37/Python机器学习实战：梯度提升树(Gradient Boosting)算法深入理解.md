@@ -88,18 +88,18 @@
 损失函数用于衡量模型预测值与真实值之间的差距。常见的损失函数有：
 
 - 均方误差（MSE）：用于回归问题。
-$$L(y, \\hat{y}) = \\frac{1}{2}(y - \\hat{y})^2$$
+$$L(y, \hat{y}) = \frac{1}{2}(y - \hat{y})^2$$
 
 - 交叉熵损失（Cross-Entropy）：用于分类问题。
-$$L(y, \\hat{y}) = -\\sum_{i=1}^n y_i \\log \\hat{y}_i$$
+$$L(y, \hat{y}) = -\sum_{i=1}^n y_i \log \hat{y}_i$$
 
 #### 4.1.2 决策树模型
 
 决策树模型由一系列决策规则组成，每个规则对应一个叶节点。决策规则可以表示为：
 
-$$f(x) = \\prod_{i=1}^m \\alpha_i x_i^{g_i}$$
+$$f(x) = \prod_{i=1}^m \alpha_i x_i^{g_i}$$
 
-其中，$\\alpha_i$和$g_i$是模型的参数。
+其中，$\alpha_i$和$g_i$是模型的参数。
 
 ### 4.2 公式推导过程
 
@@ -109,9 +109,9 @@ $$f(x) = \\prod_{i=1}^m \\alpha_i x_i^{g_i}$$
 
 假设我们使用均方误差作为损失函数，则损失函数的梯度为：
 
-$$\\frac{\\partial L}{\\partial \\alpha} = -\\sum_{i=1}^n (y_i - \\hat{y}_i) x_i$$
+$$\frac{\partial L}{\partial \alpha} = -\sum_{i=1}^n (y_i - \hat{y}_i) x_i$$
 
-为了使损失函数最小化，我们需要找到最优的参数$\\alpha$，使得损失函数的梯度为0。
+为了使损失函数最小化，我们需要找到最优的参数$\alpha$，使得损失函数的梯度为0。
 
 #### 4.2.2 决策树模型的构建
 
@@ -158,7 +158,7 @@ y_pred = model.predict(X_test)
 
 # 计算预测误差
 mse = mean_squared_error(y_test, y_pred)
-print(f\"测试集均方误差: {mse}\")
+print(f"测试集均方误差: {mse}")
 ```
 
 ### 4.4 常见问题解答
@@ -210,7 +210,7 @@ y_pred = model.predict(X_test)
 
 # 计算预测误差
 mse = mean_squared_error(y_test, y_pred)
-print(f\"测试集均方误差: {mse}\")
+print(f"测试集均方误差: {mse}")
 ```
 
 ### 5.3 代码解读与分析
@@ -273,9 +273,9 @@ print(f\"测试集均方误差: {mse}\")
 
 ### 7.3 相关论文推荐
 
-1. **\"Gradient Boosting Machines\": [https://papers.nips.cc/paper/2006/file/5b7d260cbeee38c7b7b3b1e0a9bf7e0b-Paper.pdf](https://papers.nips.cc/paper/2006/file/5b7d260cbeee38c7b7b3b1e0a9bf7e0b-Paper.pdf)
+1. **"Gradient Boosting Machines": [https://papers.nips.cc/paper/2006/file/5b7d260cbeee38c7b7b3b1e0a9bf7e0b-Paper.pdf](https://papers.nips.cc/paper/2006/file/5b7d260cbeee38c7b7b3b1e0a9bf7e0b-Paper.pdf)
     - 本文介绍了梯度提升树的原理和实现，是梯度提升树算法的经典论文。
-2. **\"LightGBM: A High-Efficiency Gradient Boosting Decision Tree\": [https://arxiv.org/abs/1603.02754](https://arxiv.org/abs/1603.02754)
+2. **"LightGBM: A High-Efficiency Gradient Boosting Decision Tree": [https://arxiv.org/abs/1603.02754](https://arxiv.org/abs/1603.02754)
     - 本文介绍了LightGBM算法，是梯度提升树算法的一种高效实现。
 
 ### 7.4 其他资源推荐

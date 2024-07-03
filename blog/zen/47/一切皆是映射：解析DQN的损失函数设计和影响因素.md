@@ -63,7 +63,7 @@ $$
 
 $$
 \pi(s) = \begin{cases} 
-a & \text{if } Q(s, a) = \max_{a'} Q(s, a') \\
+a & \text{if } Q(s, a) = \max_{a'} Q(s, a') \
 \text{random} & \text{otherwise}
 \end{cases}
 $$

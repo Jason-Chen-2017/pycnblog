@@ -108,9 +108,9 @@ YOLOv5使用以下公式对边界框参数进行参数化：
 
 $$
 \begin{aligned}
-b_x &= \sigma(t_x) + c_x \\
-b_y &= \sigma(t_y) + c_y \\
-b_w &= p_w e^{t_w} \\
+b_x &= \sigma(t_x) + c_x \
+b_y &= \sigma(t_y) + c_y \
+b_w &= p_w e^{t_w} \
 b_h &= p_h e^{t_h}
 \end{aligned}
 $$

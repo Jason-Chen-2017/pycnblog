@@ -119,10 +119,10 @@
 
 $$
 \begin{aligned}
-\min_{T_1,T_2,\ldots,T_N} & \quad \sum_{i=1}^N \lambda_i(T_i) + \mu_i(T_i) \\
-\text{s.t.} & \quad T_i \geq t_i, \quad \forall i=1,2,\ldots,N \\
-& \quad \sum_{i=1}^N T_i \leq T_{max}, \\
-& \quad D_i \leq C_i(T_i), \quad \forall i=1,2,\ldots,N \\
+\min_{T_1,T_2,\ldots,T_N} & \quad \sum_{i=1}^N \lambda_i(T_i) + \mu_i(T_i) \
+\text{s.t.} & \quad T_i \geq t_i, \quad \forall i=1,2,\ldots,N \
+& \quad \sum_{i=1}^N T_i \leq T_{max}, \
+& \quad D_i \leq C_i(T_i), \quad \forall i=1,2,\ldots,N \
 \end{aligned}
 $$
 

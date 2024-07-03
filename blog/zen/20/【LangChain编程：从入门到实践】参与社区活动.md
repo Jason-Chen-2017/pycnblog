@@ -96,11 +96,11 @@ LangChain的核心算法主要包括知识接入接口设计、知识整合机�
 
 #### 示例：向量空间模型
 
-假设我们有知识库中的两个文档向量表示分别为$\\mathbf{v}_1$和$\\mathbf{v}_2$，我们可以通过计算它们的余弦相似度来衡量它们之间的相似性：
+假设我们有知识库中的两个文档向量表示分别为$\mathbf{v}_1$和$\mathbf{v}_2$，我们可以通过计算它们的余弦相似度来衡量它们之间的相似性：
 
-$$sim(\\mathbf{v}_1, \\mathbf{v}_2) = \\frac{\\mathbf{v}_1 \\cdot \\mathbf{v}_2}{||\\mathbf{v}_1|| \\cdot ||\\mathbf{v}_2||}$$
+$$sim(\mathbf{v}_1, \mathbf{v}_2) = \frac{\mathbf{v}_1 \cdot \mathbf{v}_2}{||\mathbf{v}_1|| \cdot ||\mathbf{v}_2||}$$
 
-其中，$\\mathbf{v}_1 \\cdot \\mathbf{v}_2$表示两个向量的点积，$||\\mathbf{v}_i||$是向量$\\mathbf{v}_i$的欧氏范数。
+其中，$\mathbf{v}_1 \cdot \mathbf{v}_2$表示两个向量的点积，$||\mathbf{v}_i||$是向量$\mathbf{v}_i$的欧氏范数。
 
 ### 4.3 案例分析与讲解
 
@@ -161,10 +161,10 @@ INDEX_NAME = 'knowledge'
 def search_index(query):
     es = Elasticsearch()
     results = es.search(index=INDEX_NAME, body={
-        \"query\": {
-            \"multi_match\": {
-                \"query\": query,
-                \"fields\": [\"title\", \"content\"]
+        "query": {
+            "multi_match": {
+                "query": query,
+                "fields": ["title", "content"]
             }
         }
     })

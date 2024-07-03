@@ -170,7 +170,7 @@ $$
 
 $$
 \begin{align*}
-\mathbb{E}_{q_\phi(z|x)}[f(x; \theta)] &= \int q_\phi(z|x) f(x; \theta) dz \\
+\mathbb{E}_{q_\phi(z|x)}[f(x; \theta)] &= \int q_\phi(z|x) f(x; \theta) dz \
 \mathbb{E}_{p(x)}[f(x; \theta)] &= \int p(x) f(x; \theta) dx
 \end{align*}
 $$

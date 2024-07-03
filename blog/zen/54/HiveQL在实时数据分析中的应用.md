@@ -188,7 +188,7 @@ CREATE TABLE web_logs (
 )
 ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.RegexSerDe'
 WITH SERDEPROPERTIES (
-    'input.regex' = '([^ ]*) ([^ ]*) ([^ ]*) (-|\\[[^\\]]*\\]) ([^ \\\"]*|\\\"[^\\\"]*\\\") ([^ ]*) ([^ ]*)'
+    'input.regex' = '([^ ]*) ([^ ]*) ([^ ]*) (-|$$[^$$]*$$) ([^ \"]*|\"[^\"]*\") ([^ ]*) ([^ ]*)'
 )
 STORED AS TEXTFILE;
 ```

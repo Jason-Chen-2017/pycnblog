@@ -92,7 +92,7 @@ $$\sigma^{\prime}(x)=\sigma(x)(1-\sigma(x))$$
 对于 ReLU 激活函数 $\sigma(x)=\max (0, x)$，其导数为：
 
 $$\sigma^{\prime}(x)=\left\{\begin{array}{ll}
-1, & x>0 \\
+1, & x>0 \
 0, & x \leq 0
 \end{array}\right.$$
 
@@ -101,7 +101,7 @@ ReLU 函数在正区间内导数恒为1，缓解了梯度消失问题，但在�
 梯度裁剪对梯度 $g$ 进行如下操作：
 
 $$\hat{g}=\left\{\begin{array}{ll}
-\frac{g}{\|g\|} \cdot c, & \text { if }\|g\|>c \\
+\frac{g}{\|g\|} \cdot c, & \text { if }\|g\|>c \
 g, & \text { otherwise }
 \end{array}\right.$$
 

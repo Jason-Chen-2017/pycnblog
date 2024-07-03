@@ -97,7 +97,7 @@ AI系统SecOps适用于任何涉及AI技术的行业和场景，包括但不限�
 
 #### 自动化安全监控：
 
-- **监控指标公式**：$S = \\sum_{i=1}^{n} W_i * X_i$，其中$W_i$是指标权重，$X_i$是第$i$个监控指标的值。通过加权求和的方式来综合评估系统运行状态，及时发现异常情况。
+- **监控指标公式**：$S = \sum_{i=1}^{n} W_i * X_i$，其中$W_i$是指标权重，$X_i$是第$i$个监控指标的值。通过加权求和的方式来综合评估系统运行状态，及时发现异常情况。
 
 ### 4.3 案例分析与讲解
 
@@ -154,7 +154,7 @@ def train_model_with_security_constraints(X_train, y_train, model, constraints):
     if mse < security_threshold:
         return model
     else:
-        raise ValueError(\"Model does not meet security standards\")
+        raise ValueError("Model does not meet security standards")
 
 def check_model_security(model, input_data):
     # 模型异常检测函数
@@ -195,7 +195,7 @@ def monitor():
     data = request.json
     # 调用监控逻辑
     status = monitor_logic(data)
-    response = {\"status\": status}
+    response = {"status": status}
     return response
 
 if __name__ == '__main__':

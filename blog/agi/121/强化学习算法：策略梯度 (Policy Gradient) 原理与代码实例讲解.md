@@ -133,8 +133,8 @@ $$
 
 $$
 \pi(a|s) = \begin{cases} 
-0.5 & \text{if } s = 0 \\
-1 & \text{if } s = 1 \\
+0.5 & \text{if } s = 0 \
+1 & \text{if } s = 1 \
 0.5 & \text{if } s = 2 
 \end{cases}
 $$

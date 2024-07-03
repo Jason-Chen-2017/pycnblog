@@ -179,7 +179,7 @@ $$
 
 $$
 \begin{aligned}
-\mathcal{M}_\text{RL} &= (\mathcal{S}, \mathcal{A}, R, P, \theta) \\
+\mathcal{M}_\text{RL} &= (\mathcal{S}, \mathcal{A}, R, P, \theta) \
 \theta &= \mathop{\arg\min}_{\theta} J(\theta) = \mathop{\arg\min}_{\theta} \mathbb{E}[\sum_{t=0}^\infty \gamma^t R_t]
 \end{aligned}
 $$
@@ -199,7 +199,7 @@ $$
 
 $$
 \begin{aligned}
-\mathcal{M}_\text{SS} &= (\mathcal{S}, \mathcal{A}, \mathcal{T}, \mathcal{P}, \mathcal{C}) \\
+\mathcal{M}_\text{SS} &= (\mathcal{S}, \mathcal{A}, \mathcal{T}, \mathcal{P}, \mathcal{C}) \
 \mathcal{P}_\text{opt} &= \mathop{\arg\min}_{\mathcal{P}} \sum_{\mathcal{S}_0 \in \mathcal{S}} d(\mathcal{S}_0, \mathcal{T}) \cdot \mathbb{E}_{\mathcal{P}}[d(\mathcal{S}_0, \mathcal{T})]
 \end{aligned}
 $$

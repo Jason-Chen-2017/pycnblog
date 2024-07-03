@@ -140,11 +140,11 @@ $$P(w_n|w_1, ..., w_{n-1}) \approx P(w_n|w_{n-N+1}, ..., w_{n-1})$$
 LSTM是一种特殊的RNN(循环神经网络),旨在解决长期依赖问题。它包含一个记忆细胞状态$c_t$,通过遗忘门$f_t$、输入门$i_t$和输出门$o_t$控制信息的流动:
 
 $$\begin{aligned}
-f_t &= \sigma(W_f\cdot[h_{t-1}, x_t] + b_f) \\
-i_t &= \sigma(W_i\cdot[h_{t-1}, x_t] + b_i) \\
-\tilde{C}_t &= \tanh(W_C\cdot[h_{t-1}, x_t] + b_C) \\
-C_t &= f_t \odot C_{t-1} + i_t \odot \tilde{C}_t \\
-o_t &= \sigma(W_o\cdot[h_{t-1}, x_t] + b_o) \\
+f_t &= \sigma(W_f\cdot[h_{t-1}, x_t] + b_f) \
+i_t &= \sigma(W_i\cdot[h_{t-1}, x_t] + b_i) \
+\tilde{C}_t &= \tanh(W_C\cdot[h_{t-1}, x_t] + b_C) \
+C_t &= f_t \odot C_{t-1} + i_t \odot \tilde{C}_t \
+o_t &= \sigma(W_o\cdot[h_{t-1}, x_t] + b_o) \
 h_t &= o_t \odot \tanh(C_t)
 \end{aligned}$$
 

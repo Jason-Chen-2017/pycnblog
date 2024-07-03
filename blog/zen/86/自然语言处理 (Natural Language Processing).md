@@ -87,10 +87,10 @@ Transformer的数学模型可表示为:
 
 $$
 \begin{aligned}
-\mathrm{Attention}(Q,K,V) &= \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V \\
-\mathrm{MultiHead}(Q,K,V) &= \mathrm{Concat}(\mathrm{head_1},\dots,\mathrm{head_h})W^O \\
-\mathrm{head_i} &= \mathrm{Attention}(QW_i^Q, KW_i^K, VW_i^V) \\
-\mathrm{FFN}(x) &= \max(0, xW_1 + b_1)W_2 + b_2 \\
+\mathrm{Attention}(Q,K,V) &= \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V \
+\mathrm{MultiHead}(Q,K,V) &= \mathrm{Concat}(\mathrm{head_1},\dots,\mathrm{head_h})W^O \
+\mathrm{head_i} &= \mathrm{Attention}(QW_i^Q, KW_i^K, VW_i^V) \
+\mathrm{FFN}(x) &= \max(0, xW_1 + b_1)W_2 + b_2 \
 \mathrm{LayerNorm}(x) &= \frac{x-\mathrm{E}[x]}{\sqrt{\mathrm{Var}[x]+\epsilon}} * \gamma + \beta
 \end{aligned}
 $$
@@ -131,15 +131,15 @@ $$
 
 $$
 Q = \begin{bmatrix}
-1 & 0 \\
+1 & 0 \
 0 & 1
 \end{bmatrix},
 K = \begin{bmatrix}
-1 & 0 \\
+1 & 0 \
 1 & 0  
 \end{bmatrix},
 V = \begin{bmatrix}
-1 & 0 \\
+1 & 0 \
 0 & 1
 \end{bmatrix}
 $$
@@ -148,7 +148,7 @@ $$
 
 $$
 \frac{QK^T}{\sqrt{d_k}} = \begin{bmatrix}
-1 & 1 \\ 
+1 & 1 \ 
 0 & 0
 \end{bmatrix}
 $$
@@ -157,7 +157,7 @@ $$
 
 $$
 \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}}) = \begin{bmatrix}
-0.5 & 0.5 \\
+0.5 & 0.5 \
 0.5 & 0.5
 \end{bmatrix}
 $$
@@ -166,15 +166,15 @@ $$
 
 $$
 \mathrm{Attention}(Q,K,V) = \begin{bmatrix}
-0.5 & 0.5 \\ 
+0.5 & 0.5 \ 
 0.5 & 0.5
 \end{bmatrix}
 \begin{bmatrix}
-1 & 0 \\
+1 & 0 \
 0 & 1
 \end{bmatrix} 
 = \begin{bmatrix}
-0.5 & 0.5 \\
+0.5 & 0.5 \
 0.5 & 0.5
 \end{bmatrix}
 $$

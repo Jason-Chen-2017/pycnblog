@@ -116,7 +116,7 @@ $$
 $$
 \begin{cases}
 \
-abla_{\mathbf{w}}L(\mathbf{w}, b, \alpha) = \mathbf{w} - \sum_{i=1}^{n}\alpha_i y_i \mathbf{x}_i = 0 \\
+abla_{\mathbf{w}}L(\mathbf{w}, b, \alpha) = \mathbf{w} - \sum_{i=1}^{n}\alpha_i y_i \mathbf{x}_i = 0 \
 \
 abla_{b}L(\mathbf{w}, b, \alpha) = \sum_{i=1}^{n}\alpha_i y_i = 0
 \end{cases}
@@ -136,11 +136,11 @@ $$
 
 $$
 \begin{align*}
-\mathbf{x}_1 &= (1, 2) \\
-\mathbf{x}_2 &= (2, 3) \\
-\mathbf{x}_3 &= (3, 4) \\
-\mathbf{x}_4 &= (4, 5) \\
-\mathbf{x}_5 &= (5, 6) \\
+\mathbf{x}_1 &= (1, 2) \
+\mathbf{x}_2 &= (2, 3) \
+\mathbf{x}_3 &= (3, 4) \
+\mathbf{x}_4 &= (4, 5) \
+\mathbf{x}_5 &= (5, 6) \
 \mathbf{x}_6 &= (6, 7)
 \end{align*}
 $$
@@ -157,7 +157,7 @@ $$
 
 $$
 \begin{align*}
-\mathbf{w} &= (1, 2) \\
+\mathbf{w} &= (1, 2) \
 b &= 1
 \end{align*}
 $$

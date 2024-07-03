@@ -46,7 +46,7 @@
 
 自动编码器的目标是学习一个从输入空间到输出空间的可逆变换，使得重构误差最小。在数学上，这个问题可以表述为：
 
-$$ \\min_{W, W'} \\mathbb{E}_{x \\sim p_{data}(x)} [\\|f_W(x) - g_{W'}(f_W(x))\\|^2] $$
+$$ \min_{W, W'} \mathbb{E}_{x \sim p_{data}(x)} [\|f_W(x) - g_{W'}(f_W(x))\|^2] $$
 
 其中，$f_W(x)$ 是编码器，$g_{W'}(x)$ 是解码器，$W$ 和 $W'$ 分别是编码器和解码器的权重参数。
 
@@ -79,23 +79,23 @@ $$ \\min_{W, W'} \\mathbb{E}_{x \\sim p_{data}(x)} [\\|f_W(x) - g_{W'}(f_W(x))\\
 
 编码器（Encoder）：
 
-$$ h = \\sigma(W_1x + b_1) $$
+$$ h = \sigma(W_1x + b_1) $$
 
-$$ z = \\sigma(W_2h + b_2) $$
+$$ z = \sigma(W_2h + b_2) $$
 
 解码器（Decoder）：
 
-$$ \\hat{x} = \\sigma(W'_2z + b'_2) $$
+$$ \hat{x} = \sigma(W'_2z + b'_2) $$
 
-$$ \\hat{x} = \\sigma(W'_1\\hat{x} + b'_1) $$
+$$ \hat{x} = \sigma(W'_1\hat{x} + b'_1) $$
 
-其中，$\\sigma$ 是激活函数，$W_1, W_2, W'_1, W'_2$ 是权重矩阵，$b_1, b_2, b'_1, b'_2$ 是偏置向量。
+其中，$\sigma$ 是激活函数，$W_1, W_2, W'_1, W'_2$ 是权重矩阵，$b_1, b_2, b'_1, b'_2$ 是偏置向量。
 
 ### 4.2 公式推导过程
 
 自动编码器的损失函数通常采用均方误差（MSE）：
 
-$$ L = \\frac{1}{n} \\sum_{i=1}^{n} \\|f_W(x_i) - g_{W'}(f_W(x_i))\\|^2 $$
+$$ L = \frac{1}{n} \sum_{i=1}^{n} \|f_W(x_i) - g_{W'}(f_W(x_i))\|^2 $$
 
 其中，$x_i$ 是第$i$个样本，$f_W(x_i)$ 和 $g_{W'}(f_W(x_i))$ 分别是编码器和解码器的输出。
 
@@ -226,8 +226,8 @@ plt.show()
 
 ### 7.3 相关论文推荐
 
-- **\"Auto-Encoding Variational Bayes\"**：D. Kingma, M. Welling, ICLR 2014。
-- **\"Variational Autoencoders\"**：M. Arjovsky, L. Dumoulin, D. Belghazi, arXiv 2017。
+- **"Auto-Encoding Variational Bayes"**：D. Kingma, M. Welling, ICLR 2014。
+- **"Variational Autoencoders"**：M. Arjovsky, L. Dumoulin, D. Belghazi, arXiv 2017。
 
 ### 7.4 其他资源推荐
 

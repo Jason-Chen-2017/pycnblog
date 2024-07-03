@@ -80,9 +80,9 @@ AIGC技术不仅能够提高内容生产效率，还能激发创造力，创造�
 
 以VAE为例，构建一个基本的变分自编码器模型：
 
-- **编码器**：$q(z|x) = \\mathcal{N}(z; \\mu(x), \\sigma^2(x))$，其中$\\mu(x)$和$\\sigma(x)$分别是隐变量$z$的均值和方差。
-- **潜在空间**：$z \\sim \\mathcal{N}(0, I)$。
-- **解码器**：$p(x|z) = \\mathcal{N}(x; \\phi(z), \\Gamma)$，其中$\\phi(z)$是解码后的均值，$\\Gamma$是方差。
+- **编码器**：$q(z|x) = \mathcal{N}(z; \mu(x), \sigma^2(x))$，其中$\mu(x)$和$\sigma(x)$分别是隐变量$z$的均值和方差。
+- **潜在空间**：$z \sim \mathcal{N}(0, I)$。
+- **解码器**：$p(x|z) = \mathcal{N}(x; \phi(z), \Gamma)$，其中$\phi(z)$是解码后的均值，$\Gamma$是方差。
 
 ### 4.2 公式推导过程
 
@@ -90,9 +90,9 @@ AIGC技术不仅能够提高内容生产效率，还能激发创造力，创造�
 
 ELBO是衡量VAE性能的重要指标，定义为：
 
-$$\\mathcal{L}(x) = \\mathbb{E}_{q(z|x)}[\\log p(x|z)] - \\mathbb{D}_{KL}(q(z|x)||p(z))$$
+$$\mathcal{L}(x) = \mathbb{E}_{q(z|x)}[\log p(x|z)] - \mathbb{D}_{KL}(q(z|x)||p(z))$$
 
-其中，$\\mathbb{E}_{q(z|x)}[\\cdot]$表示期望运算，$\\mathbb{D}_{KL}$是Kullback-Leibler散度。
+其中，$\mathbb{E}_{q(z|x)}[\cdot]$表示期望运算，$\mathbb{D}_{KL}$是Kullback-Leibler散度。
 
 ### 4.3 案例分析与讲解
 
@@ -187,7 +187,7 @@ def train_vae(vae, dataloader, epochs=10):
             loss = recon_loss + kl_div
             loss.backward()
             optimizer.step()
-        print(f\"Epoch {epoch+1}: Loss {loss.item()}\")
+        print(f"Epoch {epoch+1}: Loss {loss.item()}")
 ```
 
 ### 5.4 运行结果展示

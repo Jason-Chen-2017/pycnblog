@@ -72,15 +72,15 @@
 
 在算子代数中，理想和商c代数可以通过数学模型来构建和描述。例如，理想可以用以下形式表示：
 
-$$ I = \\{A \\in \\mathcal{A} : \\forall B \\in \\mathcal{A}, AB \\in I \\land BA \\in I \\} $$
+$$ I = \{A \in \mathcal{A} : \forall B \in \mathcal{A}, AB \in I \land BA \in I \} $$
 
-其中，$\\mathcal{A}$ 是算子代数，$I$ 是理想。
+其中，$\mathcal{A}$ 是算子代数，$I$ 是理想。
 
-商c代数 $\\mathcal{A}/I$ 的定义如下：
+商c代数 $\mathcal{A}/I$ 的定义如下：
 
-$$ (\\mathcal{A}/I, +, \\cdot) := \\{A + I : A \\in \\mathcal{A}\\} $$
+$$ (\mathcal{A}/I, +, \cdot) := \{A + I : A \in \mathcal{A}\} $$
 
-其中，$+$ 和 $\\cdot$ 分别表示商c代数中的加法和乘法。
+其中，$+$ 和 $\cdot$ 分别表示商c代数中的加法和乘法。
 
 ### 公式推导过程
 
@@ -88,7 +88,7 @@ $$ (\\mathcal{A}/I, +, \\cdot) := \\{A + I : A \\in \\mathcal{A}\\} $$
 
 ### 案例分析与讲解
 
-考虑一个简单的例子：设 $\\mathcal{A}$ 是一个由所有线性算子组成的代数，理想 $I$ 是所有零算子的集合。在这种情况下，商c代数 $\\mathcal{A}/I$ 只包含单个元素，即 $\\mathcal{A}$ 中的每个算子加上理想 $I$。这意味着任何两个算子之间的差仅由零算子组成，从而简化了代数结构。
+考虑一个简单的例子：设 $\mathcal{A}$ 是一个由所有线性算子组成的代数，理想 $I$ 是所有零算子的集合。在这种情况下，商c代数 $\mathcal{A}/I$ 只包含单个元素，即 $\mathcal{A}$ 中的每个算子加上理想 $I$。这意味着任何两个算子之间的差仅由零算子组成，从而简化了代数结构。
 
 ### 常见问题解答
 
@@ -128,7 +128,7 @@ class LinearOperator:
         return LinearOperator(f'({scalar} * {self.symbol})')
     
     def __repr__(self):
-        return f\"Linear Operator: {self.symbol}\"
+        return f"Linear Operator: {self.symbol}"
 
 # 创建算子
 operator_a = LinearOperator('A')

@@ -111,9 +111,9 @@ SparkStreaming在以下领域得到广泛应用：
 
 以均方误差(Mean Squared Error, MSE)为例，其计算公式如下：
 
-$$MSE = \\frac{1}{N} \\sum_{i=1}^N (y_i - \\hat{y}_i)^2$$
+$$MSE = \frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2$$
 
-其中，$y_i$表示真实值，$\\hat{y}_i$表示预测值，$N$表示数据样本数量。
+其中，$y_i$表示真实值，$\hat{y}_i$表示预测值，$N$表示数据样本数量。
 
 ### 4.3 案例分析与讲解
 
@@ -128,10 +128,10 @@ $$MSE = \\frac{1}{N} \\sum_{i=1}^N (y_i - \\hat{y}_i)^2$$
 
 使用MSE公式计算均方误差：
 
-$$MSE = \\frac{1}{100} \\sum_{i=1}^{100} (y_i - \\hat{y}_i)^2$$
-$$= \\frac{1}{100} \\sum_{i=1}^{100} (i - (i+1))^2$$
-$$= \\frac{1}{100} \\sum_{i=1}^{100} (-1)^2$$
-$$= \\frac{100}{100}$$
+$$MSE = \frac{1}{100} \sum_{i=1}^{100} (y_i - \hat{y}_i)^2$$
+$$= \frac{1}{100} \sum_{i=1}^{100} (i - (i+1))^2$$
+$$= \frac{1}{100} \sum_{i=1}^{100} (-1)^2$$
+$$= \frac{100}{100}$$
 $$= 1$$
 
 由此可知，该数据集的均方误差为1。
@@ -171,22 +171,22 @@ import org.apache.kafka.common.serialization.StringDeserializer
 
 object SparkStreamingDataGovernance {
   def main(args: Array[String]): Unit = {
-    val conf = new SparkConf().setAppName(\"SparkStreamingDataGovernance\").setMaster(\"local[*]\")
+    val conf = new SparkConf().setAppName("SparkStreamingDataGovernance").setMaster("local[*]")
     val ssc = new StreamingContext(conf, Seconds(1))
 
     // 创建Kafka输入源
     val kafkaParams = Map[String, Object](
-      \"bootstrap.servers\" -> \"localhost:9092\",
-      \"key.deserializer\" -> classOf[StringDeserializer],
-      \"value.deserializer\" -> classOf[StringDeserializer],
-      \"group.id\" -> \"group1\",
-      \"auto.offset.reset\" -> \"latest\",
-      \"enable.auto.commit\" -> (false: java.lang.Boolean)
+      "bootstrap.servers" -> "localhost:9092",
+      "key.deserializer" -> classOf[StringDeserializer],
+      "value.deserializer" -> classOf[StringDeserializer],
+      "group.id" -> "group1",
+      "auto.offset.reset" -> "latest",
+      "enable.auto.commit" -> (false: java.lang.Boolean)
     )
     val stream = KafkaUtils.createDirectStream[String, String](
       ssc,
       LocationStrategies.PreferConsistent,
-      ConsumerStrategies.Subscribe[String, String](Array(\"topic1\"), kafkaParams)
+      ConsumerStrategies.Subscribe[String, String](Array("topic1"), kafkaParams)
     )
 
     // 数据清洗
@@ -195,7 +195,7 @@ object SparkStreamingDataGovernance {
       if (data != null && !data.isEmpty) {
         data.trim()
       } else {
-        \"\"
+        ""
       }
     })
 
@@ -262,8 +262,8 @@ object SparkStreamingDataGovernance {
 
 ### 7.3 相关论文推荐
 
-1. **\"Spark Streaming: Large-Scale Streaming Computation Using Micro-Batching\"**: 作者：Matei Zaharia等
-2. **\"Data Cleaning: Concepts and Techniques for Management and Analysis of Large Data Sets\"**: 作者：W. H. Hsu
+1. **"Spark Streaming: Large-Scale Streaming Computation Using Micro-Batching"**: 作者：Matei Zaharia等
+2. **"Data Cleaning: Concepts and Techniques for Management and Analysis of Large Data Sets"**: 作者：W. H. Hsu
 
 ### 7.4 其他资源推荐
 

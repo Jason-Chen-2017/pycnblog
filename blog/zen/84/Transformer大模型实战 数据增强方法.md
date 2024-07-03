@@ -95,7 +95,7 @@ Transformer架构是一种基于自注意力机制的深度神经网络模型，
 $$
 \text{word\_piece\_split}(word) = \left\{
 \begin{aligned}
-&word & \text{if word not in vocabulary} \\
+&word & \text{if word not in vocabulary} \
 &\text{piece1}[CLS]\text{piece2}[SEP] & \text{if word in vocabulary}
 \end{aligned}
 \right.

@@ -102,9 +102,9 @@ Faster R-CNN的数学模型可以表示为：
 
 $$
 \begin{aligned}
-& \text{输入图像} \rightarrow \text{CNN} \rightarrow \text{特征图} \\
-& \text{特征图} \rightarrow \text{RPN} \rightarrow \text{区域建议} \\
-& \text{区域建议} \rightarrow \text{RoI池化} \rightarrow \text{特征向量} \\
+& \text{输入图像} \rightarrow \text{CNN} \rightarrow \text{特征图} \
+& \text{特征图} \rightarrow \text{RPN} \rightarrow \text{区域建议} \
+& \text{区域建议} \rightarrow \text{RoI池化} \rightarrow \text{特征向量} \
 & \text{特征向量} \rightarrow \text{全连接层} \rightarrow \text{目标分类和定位}
 \end{aligned}
 $$

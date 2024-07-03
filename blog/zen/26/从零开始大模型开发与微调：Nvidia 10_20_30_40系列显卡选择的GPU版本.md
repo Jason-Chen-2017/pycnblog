@@ -66,19 +66,19 @@ GPU（Graphics Processing Unit）最初设计用于图形渲染，但因其并�
 
 构建数学模型时，通常涉及损失函数（如交叉熵、均方误差等）和优化目标（最小化损失）。对于深度学习模型，优化过程可以表示为：
 
-$$ \\min_{\\theta} \\mathcal{L}(f(x; \\theta), y) $$
+$$ \min_{\theta} \mathcal{L}(f(x; \theta), y) $$
 
-其中，$\\mathcal{L}$是损失函数，$f(x; \\theta)$是模型函数，$\\theta$是模型参数，$y$是真实值或标签。
+其中，$\mathcal{L}$是损失函数，$f(x; \theta)$是模型函数，$\theta$是模型参数，$y$是真实值或标签。
 
 ### 4.2 公式推导过程
 
 在大模型训练中，我们使用梯度下降法来更新参数：
 
-$$ \\theta := \\theta - \\eta \\cdot \
-abla_{\\theta} \\mathcal{L}(f(x; \\theta), y) $$
+$$ \theta := \theta - \eta \cdot \
+abla_{\theta} \mathcal{L}(f(x; \theta), y) $$
 
-其中，$\\eta$是学习率，$\
-abla_{\\theta} \\mathcal{L}$是损失函数关于参数$\\theta$的梯度。
+其中，$\eta$是学习率，$\
+abla_{\theta} \mathcal{L}$是损失函数关于参数$\theta$的梯度。
 
 ### 4.3 案例分析与讲解
 
@@ -110,7 +110,7 @@ model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_l
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
 # 分布式训练设置
-device = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = DistributedDataParallel(model.to(device))
 
 # 数据加载和预处理

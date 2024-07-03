@@ -82,17 +82,17 @@ DQN的核心在于通过深度神经网络近似Q函数，从而在不完全信�
 
 DQN基于Q-learning算法，通过引入深度神经网络来近似Q函数。Q函数定义为：
 
-$$Q(s, a) = \\mathbb{E}[R_t + \\gamma \\max_{a'} Q(s', a')]$$
+$$Q(s, a) = \mathbb{E}[R_t + \gamma \max_{a'} Q(s', a')]$$
 
-其中，$s$是状态，$a$是动作，$R_t$是即时奖励，$\\gamma$是折扣因子，$s'$是下一个状态，$a'$是下一个状态的最优动作。
+其中，$s$是状态，$a$是动作，$R_t$是即时奖励，$\gamma$是折扣因子，$s'$是下一个状态，$a'$是下一个状态的最优动作。
 
 ### 公式推导过程
 
-DQN通过深度神经网络$\\hat{Q}(s, a; \\theta)$来近似Q函数，其中$\\theta$是网络参数。学习过程的目标是最小化以下损失函数：
+DQN通过深度神经网络$\hat{Q}(s, a; \theta)$来近似Q函数，其中$\theta$是网络参数。学习过程的目标是最小化以下损失函数：
 
-$$L(\\theta) = \\mathbb{E}_{(s, a, r, s') \\sim \\mathcal{D}} \\left[ \\left( r + \\gamma \\max_{a'} \\hat{Q}(s', a'; \\theta) - \\hat{Q}(s, a; \\theta) \\right)^2 \\right]$$
+$$L(\theta) = \mathbb{E}_{(s, a, r, s') \sim \mathcal{D}} \left[ \left( r + \gamma \max_{a'} \hat{Q}(s', a'; \theta) - \hat{Q}(s, a; \theta) \right)^2 \right]$$
 
-其中，$\\mathcal{D}$是经验回放缓冲区。
+其中，$\mathcal{D}$是经验回放缓冲区。
 
 ### 案例分析与讲解
 
@@ -197,13 +197,13 @@ class DQN:
                 total_reward += reward
                 self.train()
                 
-            print(f\"Episode {episode+1}: Total Reward = {total_reward}\")
+            print(f"Episode {episode+1}: Total Reward = {total_reward}")
             
         return self.model
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     import gym
-    env = gym.make(\"CartPole-v1\")
+    env = gym.make("CartPole-v1")
     agent = DQN(env, learning_rate=0.001, gamma=0.95, exploration_rate=0.1, batch_size=32, memory_size=10000)
     agent.run(episodes=1000)
     env.close()

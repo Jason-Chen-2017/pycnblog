@@ -92,17 +92,17 @@ DQN的缺点：
 
 DQN使用深度神经网络来估计状态-动作值（Q值）：
 
-$$ Q(s,a) = E[\\sum_{t=0}^{\\infty} \\gamma^t R_t | S_t = s, A_t = a ] $$
+$$ Q(s,a) = E[\sum_{t=0}^{\infty} \gamma^t R_t | S_t = s, A_t = a ] $$
 
-其中，$Q(s,a)$是状态$s$和动作$a$的Q值，$\\gamma$是折扣因子，$R_t$是第$t$时刻的即时奖励。
+其中，$Q(s,a)$是状态$s$和动作$a$的Q值，$\gamma$是折扣因子，$R_t$是第$t$时刻的即时奖励。
 
 ### 4.2 公式推导过程
 
 DQN的Q值更新规则如下：
 
-$$ Q_{new}(s,a) = Q_{old}(s,a) + \\alpha [R + \\gamma \\max_{a'} Q_{old}(s', a') - Q_{old}(s,a)] $$
+$$ Q_{new}(s,a) = Q_{old}(s,a) + \alpha [R + \gamma \max_{a'} Q_{old}(s', a') - Q_{old}(s,a)] $$
 
-其中，$\\alpha$是学习率，$s'$是下一个状态，$a'$是下一个状态下的最佳动作。
+其中，$\alpha$是学习率，$s'$是下一个状态，$a'$是下一个状态下的最佳动作。
 
 ### 4.3 案例分析与讲解
 

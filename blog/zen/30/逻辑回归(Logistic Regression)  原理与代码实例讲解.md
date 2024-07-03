@@ -84,22 +84,22 @@
 
 逻辑回归模型可以表示为：
 
-$$ \\hat{y} = \\sigma(\\beta_0 + \\beta_1x_1 + \\beta_2x_2 + ... + \\beta_nx_n) $$
+$$ \hat{y} = \sigma(\beta_0 + \beta_1x_1 + \beta_2x_2 + ... + \beta_nx_n) $$
 
 其中，
 
-- $\\hat{y}$ 是预测的概率，
-- $\\sigma(z)$ 是Sigmoid函数，$z$ 是线性组合，
-- $\\beta_i$ 是参数，
+- $\hat{y}$ 是预测的概率，
+- $\sigma(z)$ 是Sigmoid函数，$z$ 是线性组合，
+- $\beta_i$ 是参数，
 - $x_i$ 是特征。
 
 对于多分类问题：
 
-$$ \\hat{p}_i = \\frac{e^{\\beta_0 + \\beta_1x_{i1} + \\beta_2x_{i2} + ... + \\beta_nx_{in}}}{\\sum_{j=1}^{K} e^{\\beta_0 + \\beta_1x_{j1} + \\beta_2x_{j2} + ... + \\beta_nx_{jn}}} $$
+$$ \hat{p}_i = \frac{e^{\beta_0 + \beta_1x_{i1} + \beta_2x_{i2} + ... + \beta_nx_{in}}}{\sum_{j=1}^{K} e^{\beta_0 + \beta_1x_{j1} + \beta_2x_{j2} + ... + \beta_nx_{jn}}} $$
 
 其中，
 
-- $\\hat{p}_i$ 是第$i$类的概率，
+- $\hat{p}_i$ 是第$i$类的概率，
 - $K$ 是类别的总数。
 
 ### 4.2 公式推导过程
@@ -108,21 +108,21 @@ $$ \\hat{p}_i = \\frac{e^{\\beta_0 + \\beta_1x_{i1} + \\beta_2x_{i2} + ... + \\b
 
 对于二分类问题：
 
-$$ J(\\beta) = - \\frac{1}{N} \\sum_{i=1}^{N} [y_i \\log(\\hat{y}) + (1 - y_i) \\log(1 - \\hat{y})] $$
+$$ J(\beta) = - \frac{1}{N} \sum_{i=1}^{N} [y_i \log(\hat{y}) + (1 - y_i) \log(1 - \hat{y})] $$
 
 对于多分类问题：
 
-$$ J(\\beta) = - \\frac{1}{N} \\sum_{i=1}^{N} \\sum_{k=1}^{K} y_{ik} \\log(\\hat{p}_k) $$
+$$ J(\beta) = - \frac{1}{N} \sum_{i=1}^{N} \sum_{k=1}^{K} y_{ik} \log(\hat{p}_k) $$
 
 #### 梯度计算
 
 - 对于二分类问题：
 
-$$ \\frac{\\partial J(\\beta)}{\\partial \\beta_j} = \\frac{1}{N} \\sum_{i=1}^{N} (\\hat{y}_i - y_i)x_{ij} $$
+$$ \frac{\partial J(\beta)}{\partial \beta_j} = \frac{1}{N} \sum_{i=1}^{N} (\hat{y}_i - y_i)x_{ij} $$
 
 - 对于多分类问题：
 
-$$ \\frac{\\partial J(\\beta)}{\\partial \\beta_j} = \\frac{1}{N} \\sum_{i=1}^{N} (\\hat{p}_{y_i} - y_i)x_{ij} $$
+$$ \frac{\partial J(\beta)}{\partial \beta_j} = \frac{1}{N} \sum_{i=1}^{N} (\hat{p}_{y_i} - y_i)x_{ij} $$
 
 ### 4.3 案例分析与讲解
 
@@ -154,10 +154,10 @@ y_pred = lr.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 report = classification_report(y_test, y_pred)
 
-print(f\"Accuracy: {accuracy}\")
-print(\"\
+print(f"Accuracy: {accuracy}")
+print("\
 Classification Report:\
-\", report)
+", report)
 ```
 
 ### 4.4 常见问题解答
@@ -214,12 +214,12 @@ accuracy = accuracy_score(y_test, y_pred)
 cm = confusion_matrix(y_test, y_pred)
 report = classification_report(y_test, y_pred)
 
-print(f\"Accuracy: {accuracy}\")
-print(\"Confusion Matrix:\
-\", cm)
-print(\"\
+print(f"Accuracy: {accuracy}")
+print("Confusion Matrix:\
+", cm)
+print("\
 Classification Report:\
-\", report)
+", report)
 ```
 
 ### 5.3 代码解读与分析
@@ -248,8 +248,8 @@ Classification Report:\
 
 ### 7.3 相关论文推荐
 
-- **\"Logistic Regression\" by Frank Harrell**：详细介绍了逻辑回归模型及其应用。
-- **\"The Elements of Statistical Learning\" by Trevor Hastie, Robert Tibshirani, Jerome Friedman**：全面覆盖统计学习理论和技术。
+- **"Logistic Regression" by Frank Harrell**：详细介绍了逻辑回归模型及其应用。
+- **"The Elements of Statistical Learning" by Trevor Hastie, Robert Tibshirani, Jerome Friedman**：全面覆盖统计学习理论和技术。
 
 ### 7.4 其他资源推荐
 
