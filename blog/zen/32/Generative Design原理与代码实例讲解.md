@@ -93,9 +93,9 @@ F --> G[输出最优设计]
 
 $$
 \begin{align}
-\min \limits_{x} \quad & f(x) \\
-\mbox{s.t.} \quad & g_i(x) \leq 0, \quad i=1,2,\ldots,m \\
-& h_j(x) = 0, \quad j=1,2,\ldots,n \\
+\min \limits_{x} \quad & f(x) \
+\mbox{s.t.} \quad & g_i(x) \leq 0, \quad i=1,2,\ldots,m \
+& h_j(x) = 0, \quad j=1,2,\ldots,n \
 & x^{(L)} \leq x \leq x^{(U)}
 \end{align}
 $$
@@ -139,8 +139,8 @@ $$
 
 $$
 \begin{align}
-\min \limits_{A_i} \quad & \sum_{i=1}^{5} \rho L_i A_i \\
-\mbox{s.t.} \quad & |\sigma_i| \leq [\sigma], \quad i=1,2,\ldots,5 \\
+\min \limits_{A_i} \quad & \sum_{i=1}^{5} \rho L_i A_i \
+\mbox{s.t.} \quad & |\sigma_i| \leq [\sigma], \quad i=1,2,\ldots,5 \
 & A_i \geq 0
 \end{align}
 $$
@@ -189,8 +189,8 @@ A: 生成式设计得到的结构往往具有复杂的拓扑和几何形状,给�
 
 $$
 \begin{align}
-\min \quad & L \cdot W \\
-\mbox{s.t.} \quad & 2 \leq L/W \leq 4 \\
+\min \quad & L \cdot W \
+\mbox{s.t.} \quad & 2 \leq L/W \leq 4 \
 & L,W \geq 0
 \end{align}
 $$

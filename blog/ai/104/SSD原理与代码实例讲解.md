@@ -104,15 +104,15 @@ SSD算法的数学模型可以表示为：
 
 $$
 \begin{aligned}
-& \text{输入图像} : I \\
-& \text{特征图} : F_i \\
-& \text{默认框} : D_i \\
-& \text{分类预测器} : C_i \\
-& \text{位置预测器} : B_i \\
-& \text{目标类别} : c \\
-& \text{目标位置} : b \\
-& \text{预测类别} : \hat{c} \\
-& \text{预测位置} : \hat{b} \\
+& \text{输入图像} : I \
+& \text{特征图} : F_i \
+& \text{默认框} : D_i \
+& \text{分类预测器} : C_i \
+& \text{位置预测器} : B_i \
+& \text{目标类别} : c \
+& \text{目标位置} : b \
+& \text{预测类别} : \hat{c} \
+& \text{预测位置} : \hat{b} \
 \end{aligned}
 $$
 

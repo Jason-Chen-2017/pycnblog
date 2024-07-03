@@ -79,8 +79,8 @@ Logstash的数据处理可以抽象为一个多级队列系统，假设有m个Pi
 
 $$
 \begin{aligned}
-\frac{dQ_i(t)}{dt} &= \lambda_i(t) - \mu_i(t) \\
-Q_i(t) &\ge 0, \quad i=1,2,\cdots,m \\
+\frac{dQ_i(t)}{dt} &= \lambda_i(t) - \mu_i(t) \
+Q_i(t) &\ge 0, \quad i=1,2,\cdots,m \
 \mu_i(t) &= \sum_{j=1}^{n} \mu_{ij}(t)
 \end{aligned}
 $$

@@ -144,7 +144,7 @@ $$
 
 $$
 R = \begin{bmatrix}
-5 & 3 \\
+5 & 3 \
 4 & 5
 \end{bmatrix}
 $$
@@ -153,10 +153,10 @@ $$
 
 $$
 U = \begin{bmatrix}
-1 & 0 \\
+1 & 0 \
 0 & 1
 \end{bmatrix}, \quad V = \begin{bmatrix}
-3 & 1 \\
+3 & 1 \
 1 & 3
 \end{bmatrix}
 $$

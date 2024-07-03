@@ -100,8 +100,8 @@ Transformer模型的自注意力机制主要基于以下公式：
 1. **查询-键-值计算**：
 
 $$
-Q = W_Q \cdot X \\
-K = W_K \cdot X \\
+Q = W_Q \cdot X \
+K = W_K \cdot X \
 V = W_V \cdot X
 $$
 

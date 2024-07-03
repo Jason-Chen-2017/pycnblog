@@ -97,7 +97,7 @@ graph TD
 
 $$
 \begin{aligned}
-\text{SELECT * FROM table} \\
+\text{SELECT * FROM table} \
 \text{WHERE last_modified > last\_value}
 \end{aligned}
 $$
@@ -108,7 +108,7 @@ $$
 
 $$
 \begin{aligned}
-\text{new\_last\_value} &= \max(\text{last\_modified}) \\
+\text{new\_last\_value} &= \max(\text{last\_modified}) \
 &\text{FROM 本次导入的数据}
 \end{aligned}
 $$

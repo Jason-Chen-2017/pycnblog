@@ -138,7 +138,7 @@ Oozie的调度算法广泛应用于以下领域:
 
 $$
 dp(v, i) = \begin{cases}
-0 & \text{if } i = 1\\
+0 & \text{if } i = 1\
 \min\limits_{u \in pred(v)} \{dp(u, i-1)\} + w(u, v) & \text{if } i > 1
 \end{cases}
 $$

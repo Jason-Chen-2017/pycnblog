@@ -122,8 +122,8 @@ Transformer模型的数学模型如下：
 
 $$
 \begin{aligned}
-\text{Output} &= \text{LayerNorm}(\text{FFN}(\text{LayerNorm}(\text{Self-Attention}(\text{Input}) + \text{Input})) + \text{Input} \\
-\text{Self-Attention} &= \text{Concat}(\text{Attention}(\text{Query}, \text{Key}, \text{Value}), \text{Attention}(\text{Key}, \text{Query}, \text{Value}), \text{Attention}(\text{Value}, \text{Key}, \text{Query})) \\
+\text{Output} &= \text{LayerNorm}(\text{FFN}(\text{LayerNorm}(\text{Self-Attention}(\text{Input}) + \text{Input})) + \text{Input} \
+\text{Self-Attention} &= \text{Concat}(\text{Attention}(\text{Query}, \text{Key}, \text{Value}), \text{Attention}(\text{Key}, \text{Query}, \text{Value}), \text{Attention}(\text{Value}, \text{Key}, \text{Query})) \
 \text{Attention} &= \text{ScaledDotProductAttention}(\text{Query}, \text{Key}, \text{Value})
 \end{aligned}
 $$

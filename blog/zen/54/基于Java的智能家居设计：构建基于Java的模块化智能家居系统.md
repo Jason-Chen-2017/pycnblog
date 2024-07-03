@@ -92,16 +92,16 @@ $$T_{in} = a_0 + a_1 T_{out} + a_2 T_{set} + a_3 V_{ac} + a_4 t$$
 我们需要收集一段时间内的历史数据，包括每个时刻的室内温度、室外温度、空调设置温度、空调风速等。将这些数据整理成一个矩阵 $X$ 和一个向量 $y$：
 
 $$X = \begin{bmatrix}
-1 & T_{out}^{(1)} & T_{set}^{(1)} & V_{ac}^{(1)} & t^{(1)}\\
-1 & T_{out}^{(2)} & T_{set}^{(2)} & V_{ac}^{(2)} & t^{(2)}\\
-\vdots & \vdots & \vdots & \vdots & \vdots\\
+1 & T_{out}^{(1)} & T_{set}^{(1)} & V_{ac}^{(1)} & t^{(1)}\
+1 & T_{out}^{(2)} & T_{set}^{(2)} & V_{ac}^{(2)} & t^{(2)}\
+\vdots & \vdots & \vdots & \vdots & \vdots\
 1 & T_{out}^{(m)} & T_{set}^{(m)} & V_{ac}^{(m)} & t^{(m)}
 \end{bmatrix}$$
 
 $$y = \begin{bmatrix}
-T_{in}^{(1)}\\
-T_{in}^{(2)}\\
-\vdots\\
+T_{in}^{(1)}\
+T_{in}^{(2)}\
+\vdots\
 T_{in}^{(m)}
 \end{bmatrix}$$
 

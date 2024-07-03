@@ -120,8 +120,8 @@ Imagen模型的数学模型可以表示为以下公式：
 
 $$
 \begin{align*}
-G(z, \text{prompt}) & = \text{Image} \\
-D(x) & = \sigma(W_Dx + b_D) \\
+G(z, \text{prompt}) & = \text{Image} \
+D(x) & = \sigma(W_Dx + b_D) \
 \end{align*}
 $$
 

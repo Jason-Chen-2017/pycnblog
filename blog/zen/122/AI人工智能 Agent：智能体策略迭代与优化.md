@@ -120,7 +120,7 @@ $$V^\pi(s) = \max_a \sum_{s', r} P(s', r | s, a) [R(s, a) + \gamma V^\pi(s')]$$
 策略迭代公式用于更新策略。
 
 $$\pi'(a | s) = \begin{cases}
-1, & \text{if } a = \arg\max_a \sum_{s', r} P(s', r | s, a) [R(s, a) + \gamma V^\pi(s')] \\
+1, & \text{if } a = \arg\max_a \sum_{s', r} P(s', r | s, a) [R(s, a) + \gamma V^\pi(s')] \
 0, & \text{otherwise}
 \end{cases}$$
 

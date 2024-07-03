@@ -132,8 +132,8 @@
 
 $$
 \begin{align*}
-\textbf{Input: } & (X_{\text{text}}, X_{\text{image}}, X_{\text{audio}}) \\
-\textbf{Output: } & Y \\
+\textbf{Input: } & (X_{\text{text}}, X_{\text{image}}, X_{\text{audio}}) \
+\textbf{Output: } & Y \
 \textbf{Model: } & f(X_{\text{text}}, X_{\text{image}}, X_{\text{audio}}) = Y
 \end{align*}
 $$

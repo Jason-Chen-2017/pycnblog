@@ -146,7 +146,7 @@ $$
 
 $$
 \text{SmoothL1}(x) = \begin{cases}
-0.5x^2, & \text{if } |x| < 1 \\
+0.5x^2, & \text{if } |x| < 1 \
 |x| - 0.5, & \text{otherwise}
 \end{cases}
 $$

@@ -116,8 +116,8 @@ Chinchilla模型的公式推导过程涉及预训练语言模型、特征提取�
 
 $$
 \begin{align*}
-\hat{y} &= f_{\text{classifier}}(f_{\text{feature\_extractor}}(x)) \\
-f_{\text{feature\_extractor}}(x) &= \text{distill\_model}(f_{\text{pre\_trained\_model}}(x)) \\
+\hat{y} &= f_{\text{classifier}}(f_{\text{feature\_extractor}}(x)) \
+f_{\text{feature\_extractor}}(x) &= \text{distill\_model}(f_{\text{pre\_trained\_model}}(x)) \
 f_{\text{pre\_trained\_model}}(x) &= \sum_{i=1}^{N} w_i f_i(x)
 \end{align*}
 $$

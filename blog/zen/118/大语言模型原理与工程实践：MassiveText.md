@@ -139,7 +139,7 @@ MLM的主要公式如下：
 
 $$
 \text{mask}(x) = \begin{cases}
-x & \text{if } x \neq \text{[MASK]} \\
+x & \text{if } x \neq \text{[MASK]} \
 \text{[MASK]} & \text{if } x = \text{[MASK]}
 \end{cases}
 $$

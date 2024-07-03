@@ -78,8 +78,8 @@ SIR模型的数学表达式如下：
 
 $$
 \begin{aligned}
-\frac{dS}{dt} &= -\beta SI \\
-\frac{dI}{dt} &= \beta SI - \gamma I \\
+\frac{dS}{dt} &= -\beta SI \
+\frac{dI}{dt} &= \beta SI - \gamma I \
 \frac{dR}{dt} &= \gamma I
 \end{aligned}
 $$

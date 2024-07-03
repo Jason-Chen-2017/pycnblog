@@ -109,9 +109,9 @@ $$
 支持向量机(SVM)是一种经典的判别式模型,其目标是在特征空间中找到一个最大间隔超平面,将不同类别的样本分开。引入松弛变量$\xi_i$后,半监督SVM的优化目标可以表示为:
 
 $$
-\min_{w,b,\xi}\frac{1}{2}\|w\|^2+C_l\sum_{i=1}^l\xi_i+C_u\sum_{j=l+1}^{l+u}\xi_j \\
-s.t. \ y_i(w^Tx_i+b)\ge1-\xi_i, \forall (x_i,y_i)\in D_l \\
-|w^Tx_j+b|\ge1-\xi_j, \forall x_j\in D_u \\
+\min_{w,b,\xi}\frac{1}{2}\|w\|^2+C_l\sum_{i=1}^l\xi_i+C_u\sum_{j=l+1}^{l+u}\xi_j \
+s.t. \ y_i(w^Tx_i+b)\ge1-\xi_i, \forall (x_i,y_i)\in D_l \
+|w^Tx_j+b|\ge1-\xi_j, \forall x_j\in D_u \
 \xi_i\ge0, \forall i=1,...,l+u
 $$
 

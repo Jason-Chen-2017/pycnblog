@@ -87,8 +87,8 @@ $$
 在多头自注意力中，我们首先将查询、键和值进行线性变换，得到新的表示：
 
 $$
-Q = W_Q \cdot \text{MLP}(X) \\
-K = W_K \cdot \text{MLP}(X) \\
+Q = W_Q \cdot \text{MLP}(X) \
+K = W_K \cdot \text{MLP}(X) \
 V = W_V \cdot \text{MLP}(X)
 $$
 
@@ -97,8 +97,8 @@ $$
 接着，我们将这三者分别进行归一化处理：
 
 $$
-Q_{norm} = Q \cdot \text{LayerNorm}(Q) \\
-K_{norm} = K \cdot \text{LayerNorm}(K) \\
+Q_{norm} = Q \cdot \text{LayerNorm}(Q) \
+K_{norm} = K \cdot \text{LayerNorm}(K) \
 V_{norm} = V \cdot \text{LayerNorm}(V)
 $$
 

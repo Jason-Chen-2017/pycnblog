@@ -64,8 +64,8 @@ $$
 例如，对于乘法运算，如果\(A\)是N半单代数，则对于任意\(a, b \in A\)，乘法运算满足：
 
 $$
-(a \cdot b) \in A \\
-(a \cdot b) \cdot c = a \cdot (b \cdot c) \\
+(a \cdot b) \in A \
+(a \cdot b) \cdot c = a \cdot (b \cdot c) \
 a \cdot b = b \cdot a \quad (\text{如果N半单代数是半单环})
 $$
 

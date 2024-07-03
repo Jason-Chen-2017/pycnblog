@@ -163,7 +163,7 @@ ROC曲线算法广泛应用于以下领域:
 
 $$
 \hat{y} = \begin{cases}
-1, & \text{if } s \geq t \\
+1, & \text{if } s \geq t \
 0, & \text{if } s < t
 \end{cases}
 $$
@@ -174,7 +174,7 @@ $$
 
 $$
 \begin{aligned}
-\text{TPR}(t) &= \frac{\sum_{i=1}^{N} \mathbb{1}(s_i \geq t, y_i = 1)}{\sum_{i=1}^{N} \mathbb{1}(y_i = 1)} \\
+\text{TPR}(t) &= \frac{\sum_{i=1}^{N} \mathbb{1}(s_i \geq t, y_i = 1)}{\sum_{i=1}^{N} \mathbb{1}(y_i = 1)} \
 \text{FPR}(t) &= \frac{\sum_{i=1}^{N} \mathbb{1}(s_i \geq t, y_i = 0)}{\sum_{i=1}^{N} \mathbb{1}(y_i = 0)}
 \end{aligned}
 $$

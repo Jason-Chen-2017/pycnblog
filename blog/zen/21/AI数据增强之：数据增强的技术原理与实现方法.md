@@ -105,8 +105,8 @@ $$ y' = y $$
 
 ```latex
 I' = \begin{cases}
-R_{90^\circ}(I) & \text{if } rotation=90 \\
-F(I) & \text{if } flip=horizontal \\
+R_{90^\circ}(I) & \text{if } rotation=90 \
+F(I) & \text{if } flip=horizontal \
 I & \text{otherwise}
 \end{cases}
 ```

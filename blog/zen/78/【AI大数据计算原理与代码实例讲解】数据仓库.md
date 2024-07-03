@@ -160,7 +160,7 @@ $$\sum\limits_{\substack{t \in F \ d_j^i(t)=a}} \sum\limits_{1 \leq l \leq k} m_
 
 $$
 \begin{align*}
-SALES = &(sale\_id, date\_id, product\_id, store\_id, customer\_id,\\
+SALES = &(sale\_id, date\_id, product\_id, store\_id, customer\_id,\
         &qty, amount)
 \end{align*}
 $$

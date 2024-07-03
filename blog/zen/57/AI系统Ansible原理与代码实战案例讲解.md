@@ -72,7 +72,7 @@ Ansible的工作原理可以简单概括为:通过SSH协议在Control Node上发
 设Playbook中有$n$个任务,第$i$个任务记为$T_i$,如果任务$T_i$依赖于任务$T_j$,则记为$T_i \rightarrow T_j$。所有任务及其依赖关系构成一个DAG图$G=(V,E)$:
 
 $$
-V=\lbrace T_1,T_2,...,T_n \rbrace \\
+V=\lbrace T_1,T_2,...,T_n \rbrace \
 E=\lbrace (T_i,T_j) | T_i \rightarrow T_j \rbrace
 $$
 

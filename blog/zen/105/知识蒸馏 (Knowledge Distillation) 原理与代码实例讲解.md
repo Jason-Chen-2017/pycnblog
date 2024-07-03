@@ -69,7 +69,7 @@ B --蒸馏学习--> F[接近教师网络的性能]
 设教师网络为 $T$,学生网络为 $S$,训练样本为 $(x,y)$。教师网络和学生网络的输出概率分布分别为 $P_T$ 和 $P_S$:
 
 $$
-P_T(x) = \text{softmax}(\frac{z_T}{T}) \\
+P_T(x) = \text{softmax}(\frac{z_T}{T}) \
 P_S(x) = \text{softmax}(\frac{z_S}{T})
 $$
 

@@ -82,9 +82,9 @@ $$
 假设最优路径为 $s \rightarrow \cdots \rightarrow n \rightarrow \cdots \rightarrow t$,则有:
 $$
 \begin{aligned}
-g(t) &= g(n) + c(n, t) \\
-f(t) &= g(t) + h(t) = g(t) \\
-f(n) &= g(n) + h(n) \\
+g(t) &= g(n) + c(n, t) \
+f(t) &= g(t) + h(t) = g(t) \
+f(n) &= g(n) + h(n) \
 \end{aligned}
 $$
 其中,$c(n,t)$ 表示从节点 $n$ 到节点 $t$ 的实际代价。
@@ -96,9 +96,9 @@ $$
 将其代入上式,得:
 $$
 \begin{aligned}
-f(n) &= g(n) + h(n) \\
-     &\leq g(n) + c(n, t) \\
-     &= g(t) \\
+f(n) &= g(n) + h(n) \
+     &\leq g(n) + c(n, t) \
+     &= g(t) \
      &= f(t)
 \end{aligned}
 $$

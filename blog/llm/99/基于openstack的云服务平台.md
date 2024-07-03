@@ -134,8 +134,8 @@ $$
 1. 首先，计算每个计算节点的可用资源数量：
 
 $$
-\text{available\_cores} = \text{total\_cores} - \text{used\_cores} \\
-\text{available\_memory} = \text{total\_memory} - \text{used\_memory} \\
+\text{available\_cores} = \text{total\_cores} - \text{used\_cores} \
+\text{available\_memory} = \text{total\_memory} - \text{used\_memory} \
 \text{available\_disk} = \text{total\_disk} - \text{used\_disk}
 $$
 

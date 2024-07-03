@@ -78,12 +78,12 @@ $$(I*K)(i,j)=\sum_m\sum_nI(i-m,j-n)K(m,n)$$
 假设有一个3x3的图像$I$和一个2x2的卷积核$K$:
 
 $$I=\begin{bmatrix}
-1 & 2 & 3\\
-4 & 5 & 6\\
+1 & 2 & 3\
+4 & 5 & 6\
 7 & 8 & 9
 \end{bmatrix},
 K=\begin{bmatrix}
-1 & 0\\
+1 & 0\
 0 & 1
 \end{bmatrix}$$
 
@@ -96,7 +96,7 @@ $$(I*K)(1,1)=5\times1+6\times0+8\times0+9\times1=14$$
 
 卷积结果为:
 $$\begin{bmatrix}
-6 & 8\\
+6 & 8\
 12 & 14
 \end{bmatrix}$$
 

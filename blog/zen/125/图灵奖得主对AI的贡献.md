@@ -95,7 +95,7 @@ AI算法通常基于数学模型，例如：
 1. **假设函数**: $h(x) = wx + b$
 2. **损失函数**: $J(w, b) = \frac{1}{2m} \sum_{i=1}^{m} (h(x^{(i)}) - y^{(i)})^2$
 3. **梯度下降**: $\begin{aligned}
-w &= w - \alpha \frac{\partial J(w, b)}{\partial w} \\
+w &= w - \alpha \frac{\partial J(w, b)}{\partial w} \
 b &= b - \alpha \frac{\partial J(w, b)}{\partial b}
 \end{aligned}$
 

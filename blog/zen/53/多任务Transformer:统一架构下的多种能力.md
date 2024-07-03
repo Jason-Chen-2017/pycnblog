@@ -71,8 +71,8 @@
 #### 4.1.1 查询、键、值的计算
 $$
 \begin{aligned}
-Q &= X W^Q \\
-K &= X W^K \\
+Q &= X W^Q \
+K &= X W^K \
 V &= X W^V
 \end{aligned}
 $$
@@ -88,7 +88,7 @@ $$
 #### 4.2.1 多头注意力的计算
 $$
 \begin{aligned}
-\text{MultiHead}(Q, K, V) &= \text{Concat}(\text{head}_1, \ldots, \text{head}_h)W^O \\
+\text{MultiHead}(Q, K, V) &= \text{Concat}(\text{head}_1, \ldots, \text{head}_h)W^O \
 \text{head}_i &= \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
 \end{aligned}
 $$
@@ -104,8 +104,8 @@ $$
 #### 4.3.2 任务感知查询生成
 $$
 \begin{aligned}
-Q_t &= Q + e_t W^Q_t \\
-K_t &= K + e_t W^K_t \\
+Q_t &= Q + e_t W^Q_t \
+K_t &= K + e_t W^K_t \
 V_t &= V + e_t W^V_t
 \end{aligned}
 $$
@@ -126,7 +126,7 @@ $$
 #### 4.4.2 Gumbel-Softmax采样
 $$
 \begin{aligned}
-g_t &\sim \text{Gumbel}(0, 1) \\
+g_t &\sim \text{Gumbel}(0, 1) \
 p_t &= \text{softmax}((s_t + g_t) / \tau)
 \end{aligned}
 $$
@@ -135,7 +135,7 @@ $$
 #### 4.4.3 路由策略更新
 $$
 \begin{aligned}
-\hat{h}_l &= \sum_{t=1}^T p_t h_{l,t} \\
+\hat{h}_l &= \sum_{t=1}^T p_t h_{l,t} \
 h_{l+1} &= \text{LayerNorm}(\hat{h}_l + \text{FFN}(\hat{h}_l))
 \end{aligned}
 $$

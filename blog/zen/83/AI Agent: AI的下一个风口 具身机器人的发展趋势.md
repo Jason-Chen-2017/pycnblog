@@ -132,7 +132,7 @@
 
 $$
 \begin{aligned}
-h^{(l+1)} &= \sigma(W^{(l)} \cdot h^{(l)} + b^{(l)}) \\
+h^{(l+1)} &= \sigma(W^{(l)} \cdot h^{(l)} + b^{(l)}) \
 \end{aligned}
 $$
 
@@ -144,7 +144,7 @@ $$
 
 $$
 \begin{aligned}
-\mathbf{F} &= m\mathbf{a} \\
+\mathbf{F} &= m\mathbf{a} \
 \end{aligned}
 $$
 
@@ -156,7 +156,7 @@ $$
 
 $$
 \begin{aligned}
-h_t &= \sigma(W_h \cdot (h_{t-1} \odot h_{x_t}) + b_h) \\
+h_t &= \sigma(W_h \cdot (h_{t-1} \odot h_{x_t}) + b_h) \
 \end{aligned}
 $$
 

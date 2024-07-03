@@ -242,8 +242,8 @@ from pyspark.streaming.kafka import KafkaUtils
 from pyspark.sql import SparkSession
 
 # 创建SparkSession
-spark = SparkSession.builder \\
-    .appName("SparkStreamingVisualization") \\
+spark = SparkSession.builder \
+    .appName("SparkStreamingVisualization") \
     .getOrCreate()
 
 # 创建StreamingContext

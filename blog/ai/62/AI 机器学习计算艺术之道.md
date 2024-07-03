@@ -148,7 +148,7 @@ $$
 为了求解最小损失，我们对 $w_0$ 和 $w_1$ 分别求偏导，并令偏导数等于0，得到以下方程组：
 
 $$
-\frac{\partial L}{\partial w_0} = -\sum_{i=1}^N (y_i - w_0 - w_1x_i) = 0 \\
+\frac{\partial L}{\partial w_0} = -\sum_{i=1}^N (y_i - w_0 - w_1x_i) = 0 \
 \frac{\partial L}{\partial w_1} = -\sum_{i=1}^N x_i(y_i - w_0 - w_1x_i) = 0
 $$
 

@@ -151,8 +151,8 @@ $$
 
 $$
 \begin{aligned}
-Q &= XW^Q \\
-K &= XW^K \\
+Q &= XW^Q \
+K &= XW^K \
 V &= XW^V
 \end{aligned}
 $$

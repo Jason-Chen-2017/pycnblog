@@ -64,7 +64,7 @@ Transformer编码器的核心是多头自注意力机制,其计算过程如下:
 4. 将注意力输出与输入相加,得到编码器的输出表示。
 
 $$\begin{aligned}
-\text{MultiHead}(Q, K, V) &= \text{Concat}(head_1, \dots, head_h)W^O \\
+\text{MultiHead}(Q, K, V) &= \text{Concat}(head_1, \dots, head_h)W^O \
 \text{where } head_i &= \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
 \end{aligned}$$
 
@@ -109,7 +109,7 @@ $$\text{Attention}(q, K, V) = \text{softmax}(\frac{qK^T}{\sqrt{d_k}})V$$
 为了捕捉不同子空间的依赖关系,Transformer采用了多头注意力机制。具体来说,将查询、键和值先分别线性投影到不同的子空间,然后在每个子空间内计算注意力,最后将所有子空间的注意力输出拼接起来:
 
 $$\begin{aligned}
-\text{MultiHead}(Q, K, V) &= \text{Concat}(head_1, \dots, head_h)W^O \\
+\text{MultiHead}(Q, K, V) &= \text{Concat}(head_1, \dots, head_h)W^O \
 \text{where } head_i &= \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
 \end{aligned}$$
 
@@ -120,7 +120,7 @@ $$\begin{aligned}
 由于Transformer没有捕捉序列顺序的内在机制,因此需要为每个token添加位置信息。位置编码可以通过预定义的函数生成,例如正弦/余弦函数:
 
 $$\begin{aligned}
-\text{PE}_{(pos, 2i)} &= \sin(pos / 10000^{2i / d_\text{model}}) \\
+\text{PE}_{(pos, 2i)} &= \sin(pos / 10000^{2i / d_\text{model}}) \
 \text{PE}_{(pos, 2i+1)} &= \cos(pos / 10000^{2i / d_\text{model}})
 \end{aligned}$$
 

@@ -123,7 +123,7 @@ task1_loss = tf.keras.losses.CategoricalCrossentropy()
 task2_loss = tf.keras.losses.CategoricalCrossentropy()
 
 # 定义联合损失函数
-joint_loss = task1_weights['loss_weight'] * task1_loss(task1_output, task1_target) + \\
+joint_loss = task1_weights['loss_weight'] * task1_loss(task1_output, task1_target) + \
              task2_weights['loss_weight'] * task2_loss(task2_output, task2_target)
 
 # 构建模型

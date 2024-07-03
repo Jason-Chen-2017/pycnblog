@@ -174,9 +174,9 @@ $$w_{ij}=tf_{ij}\times\log\frac{N}{df_j}$$
 协同过滤模型常用于推荐系统,通过分析用户之间的相似性,为目标用户推荐其他相似用户喜欢的物品。
 
 假设我们有用户集合$U=\{u_1,u_2,...,u_m\}$,物品集合$I=\{i_1,i_2,...,i_n\}$,用户对物品的评分矩阵为$R=\begin{bmatrix}
-r_{11} & r_{12} & \cdots & r_{1n}\\
-r_{21} & r_{22} & \cdots & r_{2n}\\
-\vdots & \vdots & \ddots & \vdots\\
+r_{11} & r_{12} & \cdots & r_{1n}\
+r_{21} & r_{22} & \cdots & r_{2n}\
+\vdots & \vdots & \ddots & \vdots\
 r_{m1} & r_{m2} & \cdots & r_{mn}
 \end{bmatrix}$
 

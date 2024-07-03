@@ -48,9 +48,9 @@ $$\text{Positional Encoding: } X_\text{pos} = X + \text{PositionalEncoding}(1, 2
 在ROOTS模型的每一个Transformer块中,自注意力机制扮演着核心角色。它通过计算查询(Query)、键(Key)和值(Value)之间的相似性,动态地调整每个位置对其他位置的关注程度,从而实现了有效的信息融合。
 
 $$\begin{aligned}
-Q &= X_\text{pos} W^Q \\
-K &= X_\text{pos} W^K \\
-V &= X_\text{pos} W^V \\
+Q &= X_\text{pos} W^Q \
+K &= X_\text{pos} W^K \
+V &= X_\text{pos} W^V \
 \text{Attention}(Q, K, V) &= \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
 \end{aligned}$$
 
@@ -92,8 +92,8 @@ $$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\rig
 其中,$Q$、$K$和$V$分别表示查询(Query)、键(Key)和值(Value)矩阵,它们是通过线性变换从输入序列的embedding向量计算得出的:
 
 $$\begin{aligned}
-Q &= X_\text{pos} W^Q \\
-K &= X_\text{pos} W^K \\
+Q &= X_\text{pos} W^Q \
+K &= X_\text{pos} W^K \
 V &= X_\text{pos} W^V
 \end{aligned}$$
 

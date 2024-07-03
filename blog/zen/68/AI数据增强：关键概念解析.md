@@ -80,7 +80,7 @@ $$
 
 $$
 \begin{aligned}
-x' &= \lambda x_1 + (1 - \lambda) x_2 \\
+x' &= \lambda x_1 + (1 - \lambda) x_2 \
 y' &= \lambda y_1 + (1 - \lambda) y_2
 \end{aligned}
 $$

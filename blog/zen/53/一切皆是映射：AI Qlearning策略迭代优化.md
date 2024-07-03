@@ -74,8 +74,8 @@ $$Q^*(s,a) = \mathbb{E}[r_t + \gamma \max_{a'}Q^*(s_{t+1},a')|s_t=s,a_t=a]$$
 
 Q-learning的更新公式可以看作是利用时序差分(TD)误差来逼近Bellman最优方程:
 $$\begin{aligned}
-Q(s_t,a_t) &\leftarrow Q(s_t,a_t) + \alpha [r_t + \gamma \max_a Q(s_{t+1},a) - Q(s_t,a_t)]\\
-&\approx Q(s_t,a_t) + \alpha [r_t + \gamma \max_a Q^*(s_{t+1},a) - Q(s_t,a_t)]\\
+Q(s_t,a_t) &\leftarrow Q(s_t,a_t) + \alpha [r_t + \gamma \max_a Q(s_{t+1},a) - Q(s_t,a_t)]\
+&\approx Q(s_t,a_t) + \alpha [r_t + \gamma \max_a Q^*(s_{t+1},a) - Q(s_t,a_t)]\
 &\approx Q(s_t,a_t) + \alpha [Q^*(s_t,a_t) - Q(s_t,a_t)]
 \end{aligned}$$
 可以看出,Q-learning利用TD误差 $r_t + \gamma \max_a Q(s_{t+1},a) - Q(s_t,a_t)$ 来逐步校正Q函数的估计值,最终收敛到最优值函数 $Q^*$。

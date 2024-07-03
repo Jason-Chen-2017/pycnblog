@@ -123,7 +123,7 @@ $$
 
 $$
 \begin{cases}
-\frac{\partial \mathcal{L}}{\partial \boldsymbol{w}} = -\frac{1}{N} \sum_{i=1}^N 2(y_i - (\boldsymbol{w}^T \boldsymbol{x}_i + b))\boldsymbol{x}_i = 0 \\
+\frac{\partial \mathcal{L}}{\partial \boldsymbol{w}} = -\frac{1}{N} \sum_{i=1}^N 2(y_i - (\boldsymbol{w}^T \boldsymbol{x}_i + b))\boldsymbol{x}_i = 0 \
 \frac{\partial \mathcal{L}}{\partial b} = -\frac{1}{N} \sum_{i=1}^N 2(y_i - (\boldsymbol{w}^T \boldsymbol{x}_i + b)) = 0
 \end{cases}
 $$
@@ -132,7 +132,7 @@ $$
 
 $$
 \begin{cases}
-\boldsymbol{w} = \frac{1}{N}\sum_{i=1}^N \boldsymbol{x}_i(y_i - (\boldsymbol{w}^T \boldsymbol{x}_i + b)) \\
+\boldsymbol{w} = \frac{1}{N}\sum_{i=1}^N \boldsymbol{x}_i(y_i - (\boldsymbol{w}^T \boldsymbol{x}_i + b)) \
 b = \frac{1}{N}\sum_{i=1}^N y_i - \boldsymbol{w}^T \frac{1}{N}\sum_{i=1}^N \boldsymbol{x}_i
 \end{cases}
 $$

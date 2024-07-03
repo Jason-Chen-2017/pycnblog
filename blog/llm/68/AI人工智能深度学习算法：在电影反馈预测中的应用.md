@@ -123,9 +123,9 @@ graph TD
 嵌入层的作用是将离散的特征值映射到一个连续的向量空间中。设有一个离散值特征$x$,其可取值的空间为$\mathcal{X} = \{1,2,\ldots,|\mathcal{X}|\}$,我们可以为每个值$x_i$分配一个$d$维的嵌入向量$\mathbf{v}_{x_i} \in \mathbb{R}^d$。所有嵌入向量组成一个$|\mathcal{X}| \times d$维的嵌入矩阵$\mathbf{M}_x$:
 
 $$\mathbf{M}_x = \begin{bmatrix}
-\mathbf{v}_{x_1}\\
-\mathbf{v}_{x_2}\\
-\vdots\\
+\mathbf{v}_{x_1}\
+\mathbf{v}_{x_2}\
+\vdots\
 \mathbf{v}_{x_{|\mathcal{X}|}}
 \end{bmatrix}$$
 
@@ -138,7 +138,7 @@ $$\mathbf{M}_x = \begin{bmatrix}
 设输入序列为$\mathbf{X} = (\mathbf{x}_1, \mathbf{x}_2, \ldots, \mathbf{x}_T)$,其中$\mathbf{x}_t \in \mathbb{R}^n$为第$t$个时间步的输入向量。我们首先计算出每个时间步的注意力权重:
 
 $$
-e_t = \mathbf{v}^\top \tanh(\mathbf{W}\mathbf{x}_t + \mathbf{b})\\
+e_t = \mathbf{v}^\top \tanh(\mathbf{W}\mathbf{x}_t + \mathbf{b})\
 \alpha_t = \dfrac{\exp(e_t)}{\sum_{k=1}^T\exp(e_k)}
 $$
 
@@ -156,10 +156,10 @@ LSTM(Long Short-Term Memory)是一种特殊设计的循环神经网络,能够有
 
 $$
 \begin{aligned}
-\mathbf{f}_t &= \sigma(\mathbf{W}_f\cdot[\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_f) & &\text{(forget gate)}\\
-\mathbf{i}_t &= \sigma(\mathbf{W}_i\cdot[\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_i) & &\text{(input gate)}\\
-\mathbf{o}_t &= \sigma(\mathbf{W}_o\cdot[\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_o) & &\text{(output gate)}\\
-\mathbf{c}_t &= \mathbf{f}_t\odot\mathbf{c}_{t-1} + \mathbf{i}_t\odot\tanh(\mathbf{W}_c\cdot[\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_c) & &\text{(cell state)}\\
+\mathbf{f}_t &= \sigma(\mathbf{W}_f\cdot[\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_f) & &\text{(forget gate)}\
+\mathbf{i}_t &= \sigma(\mathbf{W}_i\cdot[\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_i) & &\text{(input gate)}\
+\mathbf{o}_t &= \sigma(\mathbf{W}_o\cdot[\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_o) & &\text{(output gate)}\
+\mathbf{c}_t &= \mathbf{f}_t\odot\mathbf{c}_{t-1} + \mathbf{i}_t\odot\tanh(\mathbf{W}_c\cdot[\mathbf{h}_{t-1}, \mathbf{x}_t] + \mathbf{b}_c) & &\text{(cell state)}\
 \mathbf{h}_t &= \mathbf{o}_t\odot\tanh(\mathbf{c}_t) & &\text{(hidden state)}
 \end{aligned}
 $$

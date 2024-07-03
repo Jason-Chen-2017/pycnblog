@@ -97,8 +97,8 @@ Transformer模型的数学模型主要包括以下部分：
 1. **查询（Query, Q）、键（Key, K）和值（Value, V）**：
 
 $$
-Q = W_Q \cdot X \\
-K = W_K \cdot X \\
+Q = W_Q \cdot X \
+K = W_K \cdot X \
 V = W_V \cdot X
 $$
 
@@ -139,8 +139,8 @@ $$
 则词向量表示为：
 
 $$
-W_Q = \begin{bmatrix} 0.1 & 0.2 & 0.3 & 0.4 & 0.5 \end{bmatrix} \\
-W_K = \begin{bmatrix} 0.1 & 0.2 & 0.3 & 0.4 & 0.5 \end{bmatrix} \\
+W_Q = \begin{bmatrix} 0.1 & 0.2 & 0.3 & 0.4 & 0.5 \end{bmatrix} \
+W_K = \begin{bmatrix} 0.1 & 0.2 & 0.3 & 0.4 & 0.5 \end{bmatrix} \
 W_V = \begin{bmatrix} 0.1 & 0.2 & 0.3 & 0.4 & 0.5 \end{bmatrix}
 $$
 

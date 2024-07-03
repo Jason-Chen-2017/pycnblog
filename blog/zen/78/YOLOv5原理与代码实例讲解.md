@@ -192,7 +192,7 @@ YOLOv5算法的数学模型主要包括以下几个部分:
 
 $$
 \begin{aligned}
-b_x &= \sigma(t_x) + c_x \\
-b_y &= \sigma(t_y) + c_y \\
-b_w &= p_w e^{t_w} \\
+b_x &= \sigma(t_x) + c_x \
+b_y &= \sigma(t_y) + c_y \
+b_w &= p_w e^{t_w} \
 b_h &= p_h e^{t_h

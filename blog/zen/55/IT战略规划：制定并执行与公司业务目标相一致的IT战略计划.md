@@ -126,9 +126,9 @@ $$TCO = 采购成本 + 实施成本 + 运营成本 + 维护成本 + 退役成本
 
 $$
 \begin{aligned}
-\max \quad & \sum_{i=1}^{n} r_i x_i \\
-\text{s.t.} \quad & \sum_{i=1}^{n} c_i x_i \leq B \\
-& \sum_{i=1}^{n} w_i x_i \leq W \\
+\max \quad & \sum_{i=1}^{n} r_i x_i \
+\text{s.t.} \quad & \sum_{i=1}^{n} c_i x_i \leq B \
+& \sum_{i=1}^{n} w_i x_i \leq W \
 & x_i \in \{0, 1\}, \quad i = 1, 2, \ldots, n
 \end{aligned}
 $$

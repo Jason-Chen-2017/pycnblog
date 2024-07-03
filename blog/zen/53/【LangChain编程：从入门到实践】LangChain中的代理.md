@@ -76,8 +76,8 @@ $$
 $$
 f(i) =
 \begin{cases}
-    \text{天气查询工具,} & \text{如果 "天气" } \in i \\
-    \text{股票查询工具,} & \text{如果 "股票" } \in i \\
+    \text{天气查询工具,} & \text{如果 "天气" } \in i \
+    \text{股票查询工具,} & \text{如果 "股票" } \in i \
     \text{默认工具,} & \text{否则}
 \end{cases}
 $$

@@ -187,11 +187,11 @@ $$
 
 $$
 \begin{aligned}
-\text{net}_1 &= w_{11} x_1 + w_{12} x_2 + b_1 \\
-h_1 &= \sigma(\text{net}_1) \\
-\text{net}_2 &= w_{21} x_1 + w_{22} x_2 + b_2 \\
-h_2 &= \sigma(\text{net}_2) \\
-\text{net}_3 &= w_{31} x_1 + w_{32} x_2 + b_3 \\
+\text{net}_1 &= w_{11} x_1 + w_{12} x_2 + b_1 \
+h_1 &= \sigma(\text{net}_1) \
+\text{net}_2 &= w_{21} x_1 + w_{22} x_2 + b_2 \
+h_2 &= \sigma(\text{net}_2) \
+\text{net}_3 &= w_{31} x_1 + w_{32} x_2 + b_3 \
 h_3 &= \sigma(\text{net}_3)
 \end{aligned}
 $$
@@ -214,9 +214,9 @@ $$
 
 $$
 \begin{aligned}
-\frac{\partial E}{\partial w_1} &= (t - y) \cdot y \cdot (1 - y) \cdot h_1 \\
-\frac{\partial E}{\partial w_2} &= (t - y) \cdot y \cdot (1 - y) \cdot h_2 \\
-\frac{\partial E}{\partial w_3} &= (t - y) \cdot y \cdot (1 - y) \cdot h_3 \\
+\frac{\partial E}{\partial w_1} &= (t - y) \cdot y \cdot (1 - y) \cdot h_1 \
+\frac{\partial E}{\partial w_2} &= (t - y) \cdot y \cdot (1 - y) \cdot h_2 \
+\frac{\partial E}{\partial w_3} &= (t - y) \cdot y \cdot (1 - y) \cdot h_3 \
 \frac{\partial E}{\partial b_\text{out}} &= (t - y) \cdot y \cdot (1 - y)
 \end{aligned}
 $$
@@ -225,7 +225,7 @@ $$
 
 $$
 \begin{aligned}
-\frac{\partial E}{\partial w_{ij}} &= (t - y) \cdot y \cdot (1 - y) \cdot w_j \cdot h_i \cdot (1 - h_i) \cdot x_j \\
+\frac{\partial E}{\partial w_{ij}} &= (t - y) \cdot y \cdot (1 - y) \cdot w_j \cdot h_i \cdot (1 - h_i) \cdot x_j \
 \frac{\partial E}{\partial b_i} &= (t - y) \cdot y \cdot (1 - y) \cdot w_i \cdot h_i \cdot (1 - h_i)
 \end{aligned}
 $$

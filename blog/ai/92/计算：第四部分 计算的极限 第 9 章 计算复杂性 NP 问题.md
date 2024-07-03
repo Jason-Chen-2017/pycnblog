@@ -130,9 +130,9 @@ otin S$，至少存在一个 $v \in S$ 使得 $(u, v) \in E$
 
 $$
 \begin{align*}
-|S| &= k \\
+|S| &= k \
 \forall u, v \in S, (u, v) &\
-otin E \\
+otin E \
 \forall u \
 otin S, \exists v \in S, (u, v) &\in E
 \end{align*}

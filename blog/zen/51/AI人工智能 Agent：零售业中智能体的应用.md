@@ -51,8 +51,8 @@ Agent通过感知器获取环境信息,通过执行器对环境施加影响。�
 
 $$
 \begin{aligned}
-\text{Agent与环境进行交互} \\
-\text{Agent获得奖励信号,调整策略} \\
+\text{Agent与环境进行交互} \
+\text{Agent获得奖励信号,调整策略} \
 \text{最大化预期的长期累积奖励}
 \end{aligned}
 $$

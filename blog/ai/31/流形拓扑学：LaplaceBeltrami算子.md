@@ -97,7 +97,7 @@ $$\star df = \sum_{i,j} \sqrt{G} g^{ij} (\partial f/\partial x_j) \star dx^i$$
 对上式再做外微分,得到
 
 $$\begin{aligned}
-d \star df &= \sum_{i,j,k} \frac{\partial}{\partial x^k} \left(\sqrt{G} g^{ij} \frac{\partial f}{\partial x^j}\right) dx^k \wedge \star dx^i \\
+d \star df &= \sum_{i,j,k} \frac{\partial}{\partial x^k} \left(\sqrt{G} g^{ij} \frac{\partial f}{\partial x^j}\right) dx^k \wedge \star dx^i \
 &= \sum_{i,j} \frac{1}{\sqrt{G}} \frac{\partial}{\partial x^i} \left(\sqrt{G} g^{ij} \frac{\partial f}{\partial x^j}\right) \star 1
 \end{aligned}$$
 

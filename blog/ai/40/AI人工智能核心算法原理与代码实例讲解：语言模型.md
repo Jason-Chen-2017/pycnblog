@@ -172,10 +172,10 @@ LSTM模型的公式如下：
 
 $$
 \begin{align*}
-i_t & = \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i) \\
-f_t & = \sigma(W_{xf}x_t + W_{hf}h_{t-1} + b_f) \\
-c_t & = f_t \circ c_{t-1} + i_t \circ \tanh(W_{xc}x_t + W_{hc}h_{t-1} + b_c) \\
-o_t & = \sigma(W_{xo}x_t + W_{ho}h_{t-1} + b_o) \\
+i_t & = \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i) \
+f_t & = \sigma(W_{xf}x_t + W_{hf}h_{t-1} + b_f) \
+c_t & = f_t \circ c_{t-1} + i_t \circ \tanh(W_{xc}x_t + W_{hc}h_{t-1} + b_c) \
+o_t & = \sigma(W_{xo}x_t + W_{ho}h_{t-1} + b_o) \
 h_t & = o_t \circ \tanh(c_t)
 \end{align*}
 $$
@@ -188,11 +188,11 @@ Transformer模型的注意力机制公式如下：
 
 $$
 \begin{align*}
-Q &= W_QQ \\
-K &= W_KK \\
-V &= W_VV \\
-\text{Attention}(Q, K, V) &= \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V \\
-\text{Multi-head Attention}(Q, K, V) &= \text{Concat}(\text{Attention}(Q, K, V_1), \text{Attention}(Q, K, V_2), \dots, \text{Attention}(Q, K, V_h)) \\
+Q &= W_QQ \
+K &= W_KK \
+V &= W_VV \
+\text{Attention}(Q, K, V) &= \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V \
+\text{Multi-head Attention}(Q, K, V) &= \text{Concat}(\text{Attention}(Q, K, V_1), \text{Attention}(Q, K, V_2), \dots, \text{Attention}(Q, K, V_h)) \
 \end{align*}
 $$
 

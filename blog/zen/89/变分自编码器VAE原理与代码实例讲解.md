@@ -94,8 +94,8 @@ VAE在以下领域有广泛应用：
 VAE的数学模型可以表示为：
 
 $$\begin{align*}
-p(x) &= \int_{z} p(x|z) p(z) dz \\
-p(x|z) &= p_\phi(x|z) \\
+p(x) &= \int_{z} p(x|z) p(z) dz \
+p(x|z) &= p_\phi(x|z) \
 p(z) &= p_\theta(z)
 \end{align*}$$
 

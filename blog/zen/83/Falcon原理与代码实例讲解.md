@@ -99,8 +99,8 @@ Falcon的数学模型可以概括为以下公式：
 
 $$
 \begin{aligned}
-\text{性能} &= \frac{\text{数据处理速度}}{\text{数据量}} \\
-\text{可扩展性} &= \frac{\text{最大数据量}}{\text{单个节点处理能力}} \\
+\text{性能} &= \frac{\text{数据处理速度}}{\text{数据量}} \
+\text{可扩展性} &= \frac{\text{最大数据量}}{\text{单个节点处理能力}} \
 \text{内存占用} &= \frac{\text{数据量}}{\text{内存带宽}}
 \end{aligned}
 $$

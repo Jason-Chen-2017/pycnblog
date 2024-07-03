@@ -108,7 +108,7 @@
 
 $$
 \begin{aligned}
-\mathbf{h}_t &= \text{Encoder}(\mathbf{x}_t, \mathbf{h}_{t-1}) \\
+\mathbf{h}_t &= \text{Encoder}(\mathbf{x}_t, \mathbf{h}_{t-1}) \
 \mathbf{y}_t &= \text{Decoder}(\mathbf{h}_T, \mathbf{y}_{t-1})
 \end{aligned}
 $$

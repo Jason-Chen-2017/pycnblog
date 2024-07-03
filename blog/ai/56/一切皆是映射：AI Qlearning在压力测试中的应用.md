@@ -84,8 +84,8 @@ $$a=(concurrent\_users, request\_rate)$$
 奖励函数的设计需要综合考虑系统的各项性能指标，以引导智能体学习到最优的压力测试策略。一个简单的奖励函数设计可以是：
 
 $$R(s,a)=\begin{cases}
--1, & \text{if } response\_time > threshold \\
-1, & \text{if } cpu\_usage < 80\% \text{ and } memory\_usage < 80\% \\
+-1, & \text{if } response\_time > threshold \
+1, & \text{if } cpu\_usage < 80\% \text{ and } memory\_usage < 80\% \
 0, & \text{otherwise}
 \end{cases}$$
 

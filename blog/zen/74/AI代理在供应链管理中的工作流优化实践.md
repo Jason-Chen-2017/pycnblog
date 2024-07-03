@@ -160,8 +160,8 @@ AI代理优化算法可应用于供应链管理的多个领域:
 
 $$
 \begin{aligned}
-\text{minimize}  \quad & f(x) \\
-\text{subject to} \quad & g_i(x) \leq 0, \quad i=1,2,...,m \\
+\text{minimize}  \quad & f(x) \
+\text{subject to} \quad & g_i(x) \leq 0, \quad i=1,2,...,m \
                        & h_j(x) = 0, \quad j=1,2,...,p
 \end{aligned}
 $$
@@ -199,8 +199,8 @@ $$\min \sum_{i=1}^n c_i x_i + p_i \max(0, d_i - x_i)$$
 
 $$
 \begin{aligned}
-\min \quad & \sum_{i=1}^n c_i x_i + p_i \max(0, d_i - x_i) \\
-\text{s.t.} \quad & x_i \geq 0, \quad i=1,2,...,n \\
+\min \quad & \sum_{i=1}^n c_i x_i + p_i \max(0, d_i - x_i) \
+\text{s.t.} \quad & x_i \geq 0, \quad i=1,2,...,n \
              & x_i \leq M_i, \quad i=1,2,...,n
 \end{aligned}
 $$
@@ -221,10 +221,10 @@ $$
 
 $$
 \begin{aligned}
-\min \quad & 5x_1 + 50\max(0, 200-x_1) + 8x_2 + 80\max(0, 150-x_2) \\
-           & + 6x_3 + 70\max(0, 180-x_3) \\
-\text{s.t.} \quad & x_1 \geq 0, \quad x_1 \leq 300 \\
-             & x_2 \geq 0, \quad x_2 \leq 250 \\
+\min \quad & 5x_1 + 50\max(0, 200-x_1) + 8x_2 + 80\max(0, 150-x_2) \
+           & + 6x_3 + 70\max(0, 180-x_3) \
+\text{s.t.} \quad & x_1 \geq 0, \quad x_1 \leq 300 \
+             & x_2 \geq 0, \quad x_2 \leq 250 \
              & x_3 \geq 0, \quad x_3 \leq 280
 \end{aligned}
 $$

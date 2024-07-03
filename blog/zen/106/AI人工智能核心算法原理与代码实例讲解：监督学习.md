@@ -102,7 +102,7 @@ $$
 
 $$
 \begin{aligned}
-L(\theta)&=\prod_{i=1}^{m}P(y^{(i)}|x^{(i)};\theta) \\
+L(\theta)&=\prod_{i=1}^{m}P(y^{(i)}|x^{(i)};\theta) \
 &=\prod_{i=1}^{m}(h_{\theta}(x^{(i)}))^{y^{(i)}}(1-h_{\theta}(x^{(i)}))^{1-y^{(i)}}
 \end{aligned}
 $$
@@ -111,7 +111,7 @@ $$
 
 $$
 \begin{aligned}
-l(\theta)&=\log L(\theta) \\
+l(\theta)&=\log L(\theta) \
 &=\sum_{i=1}^{m}y^{(i)}\log h_{\theta}(x^{(i)})+(1-y^{(i)})\log (1-h_{\theta}(x^{(i)}))
 \end{aligned}
 $$

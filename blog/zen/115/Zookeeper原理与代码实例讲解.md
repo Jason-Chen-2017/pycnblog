@@ -81,7 +81,7 @@ $$
 $$
 L_i[x] =
 \begin{cases}
-T_x & \text{if } i \text{ receives } T_x \text{ from Leader} \\
+T_x & \text{if } i \text{ receives } T_x \text{ from Leader} \
 L_i[x-1] & \text{otherwise}
 \end{cases}
 $$
@@ -91,8 +91,8 @@ $$
 
 $$
 \begin{aligned}
-L_1 &= [T_1] \\
-L_2 &= [T_1] \\
+L_1 &= [T_1] \
+L_2 &= [T_1] \
 L_3 &= []
 \end{aligned}
 $$

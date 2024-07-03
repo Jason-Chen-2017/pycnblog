@@ -157,7 +157,7 @@ graph BT
 
 $$
 \begin{aligned}
-\pi: V &\rightarrow \{0, 1, \ldots, k-1\} \\
+\pi: V &\rightarrow \{0, 1, \ldots, k-1\} \
 (u, v) &\in E, \pi(u) \neq \pi(v) \Rightarrow (u, v) \in E_{\text{cross}}
 \end{aligned}
 $$
@@ -184,8 +184,8 @@ $$
 
 $$
 \begin{aligned}
-\pi_1: V_1 &\rightarrow \{0, 1, \ldots, k-1\} \\
-\pi_2: V_2 &\rightarrow \{0, 1, \ldots, k-1\} \\
+\pi_1: V_1 &\rightarrow \{0, 1, \ldots, k-1\} \
+\pi_2: V_2 &\rightarrow \{0, 1, \ldots, k-1\} \
 \pi_1(u) &= \pi_2(v) \iff f(u) = f(v)
 \end{aligned}
 $$

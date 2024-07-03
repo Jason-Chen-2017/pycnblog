@@ -123,7 +123,7 @@ $$
 
 $$
 \begin{cases}
-a_{11} x_1 + a_{12} x_2 \leq b_1 \\
+a_{11} x_1 + a_{12} x_2 \leq b_1 \
 a_{21} x_1 + a_{22} x_2 \leq b_2
 \end{cases}
 $$
@@ -138,9 +138,9 @@ $$
 
 $$
 \begin{cases}
-c_1 - \lambda_1 a_{11} - \lambda_2 a_{21} = 0 \\
-c_2 - \lambda_1 a_{12} - \lambda_2 a_{22} = 0 \\
-b_1 - a_{11} x_1 - a_{12} x_2 = 0 \\
+c_1 - \lambda_1 a_{11} - \lambda_2 a_{21} = 0 \
+c_2 - \lambda_1 a_{12} - \lambda_2 a_{22} = 0 \
+b_1 - a_{11} x_1 - a_{12} x_2 = 0 \
 b_2 - a_{21} x_1 - a_{22} x_2 = 0
 \end{cases}
 $$

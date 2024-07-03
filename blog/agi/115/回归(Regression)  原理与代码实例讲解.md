@@ -213,7 +213,7 @@ $$
 
 $$
 \beta_j = \begin{cases}
-\frac{\sum_{i=1}^n(x_{ij} - \frac{1}{n}\sum_{i=1}^nx_{ij})(y_i - (\beta_0 + \beta_1x_{i1} + ... + \beta_nx_{in}))}{1 + \alpha} & \text{if } |\beta_j| < \alpha \\
+\frac{\sum_{i=1}^n(x_{ij} - \frac{1}{n}\sum_{i=1}^nx_{ij})(y_i - (\beta_0 + \beta_1x_{i1} + ... + \beta_nx_{in}))}{1 + \alpha} & \text{if } |\beta_j| < \alpha \
 \text{sign}(\beta_j) \times (\alpha - |\beta_j|) & \text{if } |\beta_j| \geq \alpha
 \end{cases}
 $$

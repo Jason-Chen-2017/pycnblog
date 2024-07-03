@@ -156,12 +156,12 @@ Ellis半群$E(X, T)$是$X/\sim$上的一个半群,它描述了$(X, T)$中所有�
 
 $$
 \begin{aligned}
-\overline{\mathrm{Orb}^+(T^n(x))} &= \overline{\{T^m(T^n(x)) | m \geq 0\}} \\
-&= \overline{\{T^{m+n}(x) | m \geq 0\}} \\
-&= \overline{\mathrm{Orb}^+(x)} \\
-&= \overline{\mathrm{Orb}^+(y)} \\
-&= \overline{\{T^{m+n}(y) | m \geq 0\}} \\
-&= \overline{\{T^m(T^n(y)) | m \geq 0\}} \\
+\overline{\mathrm{Orb}^+(T^n(x))} &= \overline{\{T^m(T^n(x)) | m \geq 0\}} \
+&= \overline{\{T^{m+n}(x) | m \geq 0\}} \
+&= \overline{\mathrm{Orb}^+(x)} \
+&= \overline{\mathrm{Orb}^+(y)} \
+&= \overline{\{T^{m+n}(y) | m \geq 0\}} \
+&= \overline{\{T^m(T^n(y)) | m \geq 0\}} \
 &= \overline{\mathrm{Orb}^+(T^n(y))}
 \end{aligned}
 $$

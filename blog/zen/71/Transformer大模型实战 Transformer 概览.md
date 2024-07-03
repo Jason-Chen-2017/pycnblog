@@ -77,9 +77,9 @@ Transformer算法基于自注意力机制，通过在输入序列上进行多次
 ### 4.1 数学模型构建
 
 - **多头自注意力公式**：
-  $$ Q = W_Q \cdot \text{emb}(x) \\
-  K = W_K \cdot \text{emb}(x) \\
-  V = W_V \cdot \text{emb}(x) \\
+  $$ Q = W_Q \cdot \text{emb}(x) \
+  K = W_K \cdot \text{emb}(x) \
+  V = W_V \cdot \text{emb}(x) \
   A = \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V $$
 
   其中，$W_Q$、$W_K$、$W_V$分别是查询、键、值的权重矩阵，$\text{emb}(x)$是输入序列$x$的位置编码和词嵌入，$d_k$是键的维度，$A$是注意力权重矩阵。

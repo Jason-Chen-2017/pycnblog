@@ -334,8 +334,8 @@ Positive semi-definite matrix eigenvalues: [2. 1.]
 
 $$
 \begin{align*}
-\min_{x} & \quad x_1^2 + 2x_2^2 \\
-\text{s.t.} & \quad x_1^2 + x_2^2 = 1 \\
+\min_{x} & \quad x_1^2 + 2x_2^2 \
+\text{s.t.} & \quad x_1^2 + x_2^2 = 1 \
 & \quad x_1 + x_2 \leq 2
 \end{align*}
 $$
@@ -360,7 +360,7 @@ $$
 
 $$
 \begin{align*}
-\dot{x} &= Ax + Bu \\
+\dot{x} &= Ax + Bu \
 y &= Cx
 \end{align*}
 $$

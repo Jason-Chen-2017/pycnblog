@@ -139,10 +139,10 @@ kafka_stream = KafkaUtils.createDirectStream(
 parsed_stream = kafka_stream.map(lambda x: x[1].split(",")).map(lambda fields: (fields[0], float(fields[1])))
 
 # 计算每分钟平均温度
-average_temperatures = parsed_stream \\
-    .map(lambda x: (int(x[0]), x[1])) \\
-    .map(lambda x: ((x[0] // 60 * 60, x[1]), x[1])) \\
-    .reduceByKey(lambda x, y: x + y) \\
+average_temperatures = parsed_stream \
+    .map(lambda x: (int(x[0]), x[1])) \
+    .map(lambda x: ((x[0] // 60 * 60, x[1]), x[1])) \
+    .reduceByKey(lambda x, y: x + y) \
     .mapValues(lambda x: x / 60)
 
 # 打印每分钟平均温度

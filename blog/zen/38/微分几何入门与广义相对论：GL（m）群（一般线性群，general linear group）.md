@@ -104,36 +104,36 @@ eq 0$。
 1. 定义新的坐标系中的基向量：
    $$
    \begin{bmatrix}
-   x' \\
-   y' \\
-   z' \\
+   x' \
+   y' \
+   z' \
    t'
    \end{bmatrix} =
    \begin{bmatrix}
-   \cos(\theta) & -\sin(\theta) & 0 & 0 \\
-   \sin(\theta) & \cos(\theta) & 0 & 0 \\
-   0 & 0 & 1 & 0 \\
+   \cos(\theta) & -\sin(\theta) & 0 & 0 \
+   \sin(\theta) & \cos(\theta) & 0 & 0 \
+   0 & 0 & 1 & 0 \
    0 & 0 & 0 & 1
    \end{bmatrix}
    \begin{bmatrix}
-   x \\
-   y \\
-   z \\
+   x \
+   y \
+   z \
    t
    \end{bmatrix}
    $$
 2. 计算新的坐标值：
    $$
    \begin{bmatrix}
-   x' \\
-   y' \\
-   z' \\
+   x' \
+   y' \
+   z' \
    t'
    \end{bmatrix} =
    \begin{bmatrix}
-   x\cos(\theta) - y\sin(\theta) \\
-   x\sin(\theta) + y\cos(\theta) \\
-   z \\
+   x\cos(\theta) - y\sin(\theta) \
+   x\sin(\theta) + y\cos(\theta) \
+   z \
    t
    \end{bmatrix}
    $$

@@ -161,8 +161,8 @@ GPT大语言模型的核心是基于Transformer的自注意力机制。我们先
 
 $$
 \begin{aligned}
-\boldsymbol{Q} &= \boldsymbol{z} \boldsymbol{W}^Q \\
-\boldsymbol{K} &= \boldsymbol{z} \boldsymbol{W}^K \\
+\boldsymbol{Q} &= \boldsymbol{z} \boldsymbol{W}^Q \
+\boldsymbol{K} &= \boldsymbol{z} \boldsymbol{W}^K \
 \boldsymbol{V} &= \boldsymbol{z} \boldsymbol{W}^V
 \end{aligned}
 $$
@@ -191,5 +191,5 @@ $$
 
 $$
 \begin{aligned}
-\mathcal{L}(\theta) &= \mathbb{E}_{x \sim \mathcal{D}}\left[\log P(x|\theta)\right] \\
+\mathcal{L}(\theta) &= \mathbb{E}_{x \sim \mathcal{D}}\left[\log P(x|\theta)\right] \
                    &= \mathbb{E}_{x \sim \mathcal{D}}\left[\sum_{t=1}^{|x|} \log P(x_t|x_{<t}, \theta)\right

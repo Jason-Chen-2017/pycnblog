@@ -132,7 +132,7 @@ $$
 通过梯度下降法更新权重和偏置：
 
 $$
-W_j := W_j - \eta \frac{\partial E}{\partial W_j}, \quad j=1,2 \\
+W_j := W_j - \eta \frac{\partial E}{\partial W_j}, \quad j=1,2 \
 b_j := b_j - \eta \frac{\partial E}{\partial b_j}
 $$
 

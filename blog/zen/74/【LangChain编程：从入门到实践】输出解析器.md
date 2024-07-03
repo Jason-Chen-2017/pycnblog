@@ -74,7 +74,7 @@ LangChain的模式匹配过程可以构建为一个基于正则表达式或模�
 
 $$
 M(S, P) = \begin{cases}
-true & \text{如果 } P \text{ 匹配 } S \\
+true & \text{如果 } P \text{ 匹配 } S \
 false & \text{否则}
 \end{cases}
 $$

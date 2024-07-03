@@ -111,8 +111,8 @@
 
 $$
 \begin{aligned}
-& \text{maximize } & & \frac{1}{||w||} \\
-& \text{subject to } & & y_i(w \cdot x_i + b) \geq 1, \quad \forall i \\
+& \text{maximize } & & \frac{1}{||w||} \
+& \text{subject to } & & y_i(w \cdot x_i + b) \geq 1, \quad \forall i \
 \end{aligned}
 $$
 

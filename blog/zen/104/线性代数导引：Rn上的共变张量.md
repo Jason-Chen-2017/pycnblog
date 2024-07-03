@@ -131,8 +131,8 @@ $$
 
 $$
 \begin{cases}
-x' = x'(\alpha, \beta, \gamma) \\
-y' = y'(\alpha, \beta, \gamma) \\
+x' = x'(\alpha, \beta, \gamma) \
+y' = y'(\alpha, \beta, \gamma) \
 z' = z'(\alpha, \beta, \gamma)
 \end{cases}
 $$

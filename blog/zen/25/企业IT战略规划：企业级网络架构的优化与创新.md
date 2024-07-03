@@ -92,7 +92,7 @@ $$
 $$
 s.t.
 \begin{cases}
-Ax \leq b \\
+Ax \leq b \
 x \geq 0
 \end{cases}
 $$

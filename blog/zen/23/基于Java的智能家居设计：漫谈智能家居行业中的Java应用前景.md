@@ -95,9 +95,9 @@ Java凭借其开放性、多平台兼容性、强大的内存管理能力和丰�
 
 $$
 M = \begin{bmatrix}
-m_{11} & m_{12} & \cdots & m_{1n}\\
-m_{21} & m_{22} & \cdots & m_{2n}\\
-\vdots & \vdots & \ddots & \vdots\\
+m_{11} & m_{12} & \cdots & m_{1n}\
+m_{21} & m_{22} & \cdots & m_{2n}\
+\vdots & \vdots & \ddots & \vdots\
 m_{n1} & m_{n2} & \cdots & m_{nn}
 \end{bmatrix}
 $$
@@ -123,8 +123,8 @@ $$
 
 $$
 M = \begin{bmatrix}
-0 & 0 & 1\\
-1 & 0 & -1\\
+0 & 0 & 1\
+1 & 0 & -1\
 -1 & 1 & 0
 \end{bmatrix}
 $$
@@ -133,19 +133,19 @@ $$
 
 $$
 S(1) = M \cdot S(0) = \begin{bmatrix}
-0 & 0 & 1\\
-1 & 0 & -1\\
+0 & 0 & 1\
+1 & 0 & -1\
 -1 & 1 & 0
 \end{bmatrix}
     \cdot
     \begin{bmatrix}
-    1 \\
-    0 \\
+    1 \
+    0 \
     0
     \end{bmatrix}
 = \begin{bmatrix}
-0 \\
-1 \\
+0 \
+1 \
 -1
 \end{bmatrix}
 $$

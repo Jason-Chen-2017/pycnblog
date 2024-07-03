@@ -130,8 +130,8 @@ Transformer是一种基于自注意力机制的神经网络模型，最早由Vas
 
     $$
     \begin{aligned}
-    q_i &= x_i W_Q \\
-    k_i &= x_i W_K \\
+    q_i &= x_i W_Q \
+    k_i &= x_i W_K \
     v_i &= x_i W_V
     \end{aligned}
     $$

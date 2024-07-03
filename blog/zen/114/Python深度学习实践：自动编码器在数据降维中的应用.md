@@ -62,7 +62,7 @@
 
 $$
 \begin{aligned}
-z &= f_{\theta}(x) \\
+z &= f_{\theta}(x) \
 \tilde{x} &= g_{\phi}(z)
 \end{aligned}
 $$

@@ -149,8 +149,8 @@ AI代理工作流的数学模型主要包括以下部分：
 
 $$
 \begin{align*}
-R_1: & \quad A \land B \rightarrow C \\
-R_2: & \quad D \lor E \rightarrow F \\
+R_1: & \quad A \land B \rightarrow C \
+R_2: & \quad D \lor E \rightarrow F \
 \end{align*}
 $$
 

@@ -86,8 +86,8 @@ HOD(Ω)内模型的构造过程可以概括为以下几个关键步骤:
 可构造层级$L_\alpha$是一个递归定义的集合序列,其中$\alpha$为序数。具体定义如下:
 
 $$
-L_0 = \emptyset \\
-L_{\alpha+1} = Def(L_\alpha) \\
+L_0 = \emptyset \
+L_{\alpha+1} = Def(L_\alpha) \
 L_\lambda = \bigcup_{\beta<\lambda}L_\beta \quad (\lambda为极限序数)
 $$
 
@@ -99,7 +99,7 @@ $$
 
 $$
 \begin{align*}
-\langle x_1, x_2, \ldots, x_n \rangle &= 2^{x_1} \cdot 3^{x_2} \cdot \ldots \cdot p_n^{x_n} \\
+\langle x_1, x_2, \ldots, x_n \rangle &= 2^{x_1} \cdot 3^{x_2} \cdot \ldots \cdot p_n^{x_n} \
 &= \prod_{i=1}^n p_i^{x_i}
 \end{align*}
 $$
@@ -181,8 +181,8 @@ HOD内模型不仅在集合论领域具有重要意义,而且在其他数学领�
 3. **可构造层级定义**:
 
 $$
-L_0 = \emptyset \\
-L_{\alpha+1} = Def(L_\alpha) \\
+L_0 = \emptyset \
+L_{\alpha+1} = Def(L_\alpha) \
 L_\lambda = \bigcup_{\beta<\lambda}L_\beta \quad (\lambda为极限序数)
 $$
 
@@ -192,7 +192,7 @@ $$
 
 $$
 \begin{align*}
-\langle x_1, x_2, \ldots, x_n \rangle &= 2^{x_1} \cdot 3^{x_2} \cdot \ldots \cdot p_n^{x_n} \\
+\langle x_1, x_2, \ldots, x_n \rangle &= 2^{x_1} \cdot 3^{x_2} \cdot \ldots \cdot p_n^{x_n} \
 &= \prod_{i=1}^n p_i^{x_i}
 \end{align*}
 $$
@@ -219,10 +219,10 @@ $$
 
 $$
 \begin{align*}
-L_0 &= \emptyset \\
-L_1 &= Def(L_0) = \{\emptyset\} \\
-L_2 &= Def(L_1) = \{\emptyset, \{\emptyset\}\} \\
-&\vdots \\
+L_0 &= \emptyset \
+L_1 &= Def(L_0) = \{\emptyset\} \
+L_2 &= Def(L_1) = \{\emptyset, \{\emptyset\}\} \
+&\vdots \
 L_\omega &= \bigcup_{n<\omega}L_n = \text{所有有限序数集合}
 \end{align*}
 $$
@@ -233,9 +233,9 @@ $$
 
 $$
 \begin{align*}
-\langle\rangle &= 1 \\
-\langle 0 \rangle &= 2^0 \cdot 3^1 = 3 \\
-\langle 1 \rangle &= 2^1 \cdot 3^1 = 6 \\
+\langle\rangle &= 1 \
+\langle 0 \rangle &= 2^0 \cdot 3^1 = 3 \
+\langle 1 \rangle &= 2^1 \cdot 3^1 = 6 \
 \langle 0, 1 \rangle &= 2^0 \cdot 3^1 \cdot 5^2 = 75
 \end{align*}
 $$

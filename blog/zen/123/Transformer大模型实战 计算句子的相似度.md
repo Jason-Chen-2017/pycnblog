@@ -167,8 +167,8 @@ $$
 1. **线性变换:** 将每个词的词向量 $x_i$ 分别线性变换成三个向量：查询向量 $q_i$、键向量 $k_i$ 和值向量 $v_i$。
 
    $$
-   q_i = W_q x_i \\
-   k_i = W_k x_i \\
+   q_i = W_q x_i \
+   k_i = W_k x_i \
    v_i = W_v x_i
    $$
 
@@ -233,7 +233,7 @@ $$
 Transformer 模型使用正弦和余弦函数生成位置编码，具体公式如下：
 
 $$
-PE_{(pos, 2i)} = \sin(pos / 10000^{2i / d_{model}}) \\
+PE_{(pos, 2i)} = \sin(pos / 10000^{2i / d_{model}}) \
 PE_{(pos, 2i+1)} = \cos(pos / 10000^{2i / d_{model}})
 $$
 

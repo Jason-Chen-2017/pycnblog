@@ -79,8 +79,8 @@ $$
 ### 4.2 模型缩放公式
 
 $$
-\text{depth} = \alpha^{\phi} \cdot \text{depth}_0 \\
-\text{width} = \beta^{\phi} \cdot \text{width}_0 \\
+\text{depth} = \alpha^{\phi} \cdot \text{depth}_0 \
+\text{width} = \beta^{\phi} \cdot \text{width}_0 \
 \text{resolution} = \gamma^{\phi} \cdot \text{resolution}_0
 $$
 
@@ -89,8 +89,8 @@ $$
 假设 EfficientNet-B0 的深度为 16，宽度为 32，分辨率为 224，则 EfficientNet-B1 的深度、宽度和分辨率分别为：
 
 $$
-\text{depth} = 1.2^1 \cdot 16 = 19.2 \approx 20 \\
-\text{width} = 1.1^1 \cdot 32 = 35.2 \approx 36 \\
+\text{depth} = 1.2^1 \cdot 16 = 19.2 \approx 20 \
+\text{width} = 1.1^1 \cdot 32 = 35.2 \approx 36 \
 \text{resolution} = 1.15^1 \cdot 224 = 257.6 \approx 258
 $$
 

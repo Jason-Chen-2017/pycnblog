@@ -125,7 +125,7 @@ MDP可以用以下数学模型表示：
 
 $$
 \begin{align*}
-P(s_{t+1}|s_t,a_t) &= P(s_{t+1}|s_t) \\
+P(s_{t+1}|s_t,a_t) &= P(s_{t+1}|s_t) \
 R_t &= R(s_t,a_t)
 \end{align*}
 $$
@@ -144,7 +144,7 @@ $$
 
 $$
 \begin{align*}
-V_t(s_t) &= \sum_{a_t \in A} \sum_{s_{t+1} \in S} P(s_{t+1}|s_t,a_t) [R_t + V_{t+1}(s_{t+1})] \\
+V_t(s_t) &= \sum_{a_t \in A} \sum_{s_{t+1} \in S} P(s_{t+1}|s_t,a_t) [R_t + V_{t+1}(s_{t+1})] \
 &= \sum_{a_t \in A} P(s_{t+1}|s_t,a_t) [R_t + V_{t+1}(s_{t+1})]
 \end{align*}
 $$

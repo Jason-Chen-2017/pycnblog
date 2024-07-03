@@ -48,7 +48,7 @@ Batch Normalization 的算法步骤如下:
 
 1. **计算mini-batch数据的均值和方差:**
    $$
-   \mu_B = \frac{1}{m}\sum_{i=1}^{m}x_i \\
+   \mu_B = \frac{1}{m}\sum_{i=1}^{m}x_i \
    \sigma_B^2 = \frac{1}{m}\sum_{i=1}^{m}(x_i - \mu_B)^2
    $$
 

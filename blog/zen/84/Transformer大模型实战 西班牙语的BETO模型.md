@@ -101,8 +101,8 @@ BETO模型采用Transformer模型结构，主要包括以下数学模型：
 - **自注意力机制（Self-Attention）**:
 
 $$
-Q = W_QK + W_QV + W_QO \\
-K = W_KK + W_KV + W_KO \\
+Q = W_QK + W_QV + W_QO \
+K = W_KK + W_KV + W_KO \
 V = W_VK + W_VV + W_VO
 $$
 
@@ -111,7 +111,7 @@ $$
 - **位置编码（Positional Encoding）**:
 
 $$
-PE_t^2 = \sin\left(\frac{t}{10000^{2/d_{model}}}\right) \\
+PE_t^2 = \sin\left(\frac{t}{10000^{2/d_{model}}}\right) \
 PE_t^3 = \cos\left(\frac{t}{10000^{3/d_{model}}}\right)
 $$
 

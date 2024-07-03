@@ -162,7 +162,7 @@ $$
 
 $$
 L_i = \begin{cases}
-F_i, & \text{if } i \leq m \\
+F_i, & \text{if } i \leq m \
 0, & \text{if } i > m
 \end{cases}
 $$

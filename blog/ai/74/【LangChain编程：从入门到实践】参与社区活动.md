@@ -133,8 +133,8 @@ BERT模型的数学模型如下：
 
 $$
 \begin{align*}
-\text{self-attention}(Q, K, V) &= \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V \\
-\text{MLP}(x) &= \text{ReLU}\left(W_2 \text{ReLU}(W_1x + b_1)\right) + b_2 \\
+\text{self-attention}(Q, K, V) &= \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V \
+\text{MLP}(x) &= \text{ReLU}\left(W_2 \text{ReLU}(W_1x + b_1)\right) + b_2 \
 \text{BERT}(x) &= \text{LayerNorm}(x + \text{self-attention}(Q, K, V) + \text{MLP}(x)) + x
 \end{align*}
 $$

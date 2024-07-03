@@ -214,21 +214,21 @@ $$
 2. 计算预测值与实际值之间的平方误差：$\left( y - \hat{y} \right)^2$
 3. 将平方误差展开并化简：
    $$\begin{aligned}
-     &\left( y - \hat{y} \right)^2 = \left( r + \gamma \max_{a'} Q_{\theta}(s',a') - Q_{\theta}(s,a) \right)^2 \\
-     &\qquad \qquad \qquad \qquad \qquad = \left( r + \gamma Q_{\theta}(s',\pi(s')) - Q_{\theta}(s,a) \right)^2 \\
-     &\qquad \qquad \qquad \qquad \qquad = \left( r + \gamma Q_{\theta}(s',a) - Q_{\theta}(s,a) \right)^2 \\
+     &\left( y - \hat{y} \right)^2 = \left( r + \gamma \max_{a'} Q_{\theta}(s',a') - Q_{\theta}(s,a) \right)^2 \
+     &\qquad \qquad \qquad \qquad \qquad = \left( r + \gamma Q_{\theta}(s',\pi(s')) - Q_{\theta}(s,a) \right)^2 \
+     &\qquad \qquad \qquad \qquad \qquad = \left( r + \gamma Q_{\theta}(s',a) - Q_{\theta}(s,a) \right)^2 \
      &\qquad \qquad \qquad \qquad \qquad = r^2 + \gamma^2 Q_{\theta}(s',a)^2 + 2r\gamma Q_{\theta}(s',a) - 2r\gamma Q_{\theta}(s,a) - 2Q_{\theta}(s,a)Q_{\theta}(s',a) - 2\gamma Q_{\theta}(s,a)^2
    \end{aligned}$$
 4. 将平方误差求和并取期望：
    $$\begin{aligned}
-     L(\theta) &= \mathbb{E}_{s,a}\left[ \left( y - \hat{y} \right)^2 \right] \\
-     &= \mathbb{E}_{s,a}\left[ r^2 + \gamma^2 Q_{\theta}(s',a)^2 + 2r\gamma Q_{\theta}(s',a) - 2r\gamma Q_{\theta}(s,a) - 2Q_{\theta}(s,a)Q_{\theta}(s',a) - 2\gamma Q_{\theta}(s,a)^2 \right] \\
+     L(\theta) &= \mathbb{E}_{s,a}\left[ \left( y - \hat{y} \right)^2 \right] \
+     &= \mathbb{E}_{s,a}\left[ r^2 + \gamma^2 Q_{\theta}(s',a)^2 + 2r\gamma Q_{\theta}(s',a) - 2r\gamma Q_{\theta}(s,a) - 2Q_{\theta}(s,a)Q_{\theta}(s',a) - 2\gamma Q_{\theta}(s,a)^2 \right] \
      &= \mathbb{E}_{s,a}\left[ r^2 \right] + \mathbb{E}_{s,a}\left[ \gamma^2 Q_{\theta}(s',a)^2 \right] + 2\mathbb{E}_{s,a}\left[ r\gamma Q_{\theta}(s',a) \right] - 2\mathbb{E}_{s,a}\left[ r\gamma Q_{\theta}(s,a) \right] - 2\mathbb{E}_{s,a}\left[ Q_{\theta}(s,a)Q_{\theta}(s',a) \right] - 2\mathbb{E}_{s,a}\left[ \gamma Q_{\theta}(s,a)^2 \right]
    \end{aligned}$$
 5. 根据Q学习的性质，有$\mathbb{E}_{s,a}\left[ Q_{\theta}(s,a)Q_{\theta}(s',a) \right] = \mathbb{E}_{s,a}\left[ Q_{\theta}(s,a)^2 \right]$，因此：
    $$\begin{aligned}
-     L(\theta) &= \mathbb{E}_{s,a}\left[ r^2 \right] + \mathbb{E}_{s,a}\left[ \gamma^2 Q_{\theta}(s',a)^2 \right] + 2\mathbb{E}_{s,a}\left[ r\gamma Q_{\theta}(s',a) \right] - 2\mathbb{E}_{s,a}\left[ r\gamma Q_{\theta}(s,a) \right] - 4\mathbb{E}_{s,a}\left[ \gamma Q_{\theta}(s,a)^2 \right] \\
-     &= \mathbb{E}_{s,a}\left[ r^2 \right] + \mathbb{E}_{s,a}\left[ \gamma^2 Q_{\theta}(s',a)^2 \right] - 2\mathbb{E}_{s,a}\left[ \gamma Q_{\theta}(s,a) \right] - 4\mathbb{E}_{s,a}\left[ \gamma Q_{\theta}(s,a)^2 \right] \\
+     L(\theta) &= \mathbb{E}_{s,a}\left[ r^2 \right] + \mathbb{E}_{s,a}\left[ \gamma^2 Q_{\theta}(s',a)^2 \right] + 2\mathbb{E}_{s,a}\left[ r\gamma Q_{\theta}(s',a) \right] - 2\mathbb{E}_{s,a}\left[ r\gamma Q_{\theta}(s,a) \right] - 4\mathbb{E}_{s,a}\left[ \gamma Q_{\theta}(s,a)^2 \right] \
+     &= \mathbb{E}_{s,a}\left[ r^2 \right] + \mathbb{E}_{s,a}\left[ \gamma^2 Q_{\theta}(s',a)^2 \right] - 2\mathbb{E}_{s,a}\left[ \gamma Q_{\theta}(s,a) \right] - 4\mathbb{E}_{s,a}\left[ \gamma Q_{\theta}(s,a)^2 \right] \
      &= \mathbb{E}_{s,a}\left[ r^2 \right] + \mathbb{E}_{s,a}\left[ \gamma^2 Q_{\theta}(s',a)^2 \right] - 2\mathbb{E}_{s,a}\left[ \gamma Q_{\theta}(s,a) \right] \left( 1 + 2\gamma \right)
    \end{aligned}$$
 6. 由于$\mathbb{E}_{s,a}\left[ \gamma Q_{\theta}(s,a) \right] = V_{\theta}(s)$，因此：

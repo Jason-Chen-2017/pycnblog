@@ -83,8 +83,8 @@ $$
 
 $$
 \begin{aligned}
-& \min_{w, b} \frac{1}{2} \|w\|^2 + C \sum_{i=1}^n L_\epsilon(y_i, f(x_i)) \\
-& \text{subject to } |y_i - f(x_i)| \le \epsilon + \xi_i, \\
+& \min_{w, b} \frac{1}{2} \|w\|^2 + C \sum_{i=1}^n L_\epsilon(y_i, f(x_i)) \
+& \text{subject to } |y_i - f(x_i)| \le \epsilon + \xi_i, \
 & \xi_i \ge 0, i = 1, 2, ..., n
 \end{aligned}
 $$

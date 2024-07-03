@@ -121,11 +121,11 @@
 
 $$
 \begin{aligned}
-&i_t = \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i) \\
-&f_t = \sigma(W_{xf}x_t + W_{hf}h_{t-1} + b_f) \\
-&o_t = \sigma(W_{xo}x_t + W_{ho}h_{t-1} + b_o) \\
-&g_t = \tanh(W_{xg}x_t + W_{hg}h_{t-1} + b_g) \\
-&c_t = f_t \odot c_{t-1} + i_t \odot g_t \\
+&i_t = \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i) \
+&f_t = \sigma(W_{xf}x_t + W_{hf}h_{t-1} + b_f) \
+&o_t = \sigma(W_{xo}x_t + W_{ho}h_{t-1} + b_o) \
+&g_t = \tanh(W_{xg}x_t + W_{hg}h_{t-1} + b_g) \
+&c_t = f_t \odot c_{t-1} + i_t \odot g_t \
 &h_t = o_t \odot \tanh(c_t)
 \end{aligned}
 $$

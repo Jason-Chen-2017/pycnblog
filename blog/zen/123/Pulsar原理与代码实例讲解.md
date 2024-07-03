@@ -115,8 +115,8 @@ $$
 
 $$
 \begin{aligned}
-T &= \frac{L}{\lambda} \\
-&= \frac{\frac{\lambda}{\mu-\lambda}}{\lambda} \\
+T &= \frac{L}{\lambda} \
+&= \frac{\frac{\lambda}{\mu-\lambda}}{\lambda} \
 &= \frac{1}{\mu - \lambda}
 \end{aligned}
 $$

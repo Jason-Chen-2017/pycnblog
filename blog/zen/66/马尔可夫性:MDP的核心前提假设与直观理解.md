@@ -113,7 +113,7 @@ $$
 
 $$
 P = \begin{bmatrix}
-0.7 & 0.3 \\
+0.7 & 0.3 \
 0.4 & 0.6
 \end{bmatrix}
 $$
@@ -130,9 +130,9 @@ $$
 
 $$
 \begin{aligned}
-R(A, a_1) &= 1 \\
-R(A, a_2) &= 0 \\
-R(B, a_1) &= 0 \\
+R(A, a_1) &= 1 \
+R(A, a_2) &= 0 \
+R(B, a_1) &= 0 \
 R(B, a_2) &= 2
 \end{aligned}
 $$
@@ -153,7 +153,7 @@ Bellman方程是MDP的核心方程，它描述了状态价值和动作价值之�
 
 $$
 \begin{aligned}
-V(s) &= \max_{a} Q(s, a) \\
+V(s) &= \max_{a} Q(s, a) \
 Q(s, a) &= R(s, a) + \gamma \sum_{s'} P(s' | s, a) V(s')
 \end{aligned}
 $$

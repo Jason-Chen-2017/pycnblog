@@ -173,8 +173,8 @@ $$
 
 $$
 \begin{aligned}
-avg(S, n) &= \frac{sum(S, n)}{count(S, n)} \\
-          &= \frac{\sum_{i=1}^{n} x_i}{\sum_{i=1}^{n} 1} \\
+avg(S, n) &= \frac{sum(S, n)}{count(S, n)} \
+          &= \frac{\sum_{i=1}^{n} x_i}{\sum_{i=1}^{n} 1} \
           &= \frac{\sum_{i=1}^{n} x_i}{n}
 \end{aligned}
 $$

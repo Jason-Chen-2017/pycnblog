@@ -84,10 +84,10 @@ ApplicationMaster 负责监控任务的执行进度，并在任务失败时进�
 
 $$
 \begin{aligned}
-\text{maximize} \quad & \sum_{i=1}^m x_i \\
-\text{subject to} \quad & \sum_{i=1}^m x_i c_i \ge C \\
-& \sum_{i=1}^m x_i m_i \ge M \\
-& \sum_{i=1}^m x_i d_i \ge D \\
+\text{maximize} \quad & \sum_{i=1}^m x_i \
+\text{subject to} \quad & \sum_{i=1}^m x_i c_i \ge C \
+& \sum_{i=1}^m x_i m_i \ge M \
+& \sum_{i=1}^m x_i d_i \ge D \
 & 0 \le x_i \le 1, \quad i = 1, 2, ..., m
 \end{aligned}
 $$
@@ -102,11 +102,11 @@ $$
 
 $$
 \begin{aligned}
-\text{minimize} \quad & \sum_{i=1}^m \sum_{j=1}^n x_{ij} l_i \\
-\text{subject to} \quad & \sum_{i=1}^m x_{ij} = 1, \quad j = 1, 2, ..., n \\
-& \sum_{j=1}^n x_{ij} c_j \le c_i, \quad i = 1, 2, ..., m \\
-& \sum_{j=1}^n x_{ij} m_j \le m_i, \quad i = 1, 2, ..., m \\
-& \sum_{j=1}^n x_{ij} d_j \le d_i, \quad i = 1, 2, ..., m \\
+\text{minimize} \quad & \sum_{i=1}^m \sum_{j=1}^n x_{ij} l_i \
+\text{subject to} \quad & \sum_{i=1}^m x_{ij} = 1, \quad j = 1, 2, ..., n \
+& \sum_{j=1}^n x_{ij} c_j \le c_i, \quad i = 1, 2, ..., m \
+& \sum_{j=1}^n x_{ij} m_j \le m_i, \quad i = 1, 2, ..., m \
+& \sum_{j=1}^n x_{ij} d_j \le d_i, \quad i = 1, 2, ..., m \
 & x_{ij} \in \{0, 1\}, \quad i = 1, 2, ..., m, j = 1, 2, ..., n
 \end{aligned}
 $$

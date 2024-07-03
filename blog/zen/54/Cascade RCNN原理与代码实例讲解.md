@@ -81,9 +81,9 @@ $t_i$为预测边界框参数,$t_i^*$为真实边界框参数。$\lambda$为平�
 
 $$
 \begin{aligned}
-t_x &= (G_x - P_x) / P_w \\
-t_y &= (G_y - P_y) / P_h \\
-t_w &= \log(G_w / P_w) \\
+t_x &= (G_x - P_x) / P_w \
+t_y &= (G_y - P_y) / P_h \
+t_w &= \log(G_w / P_w) \
 t_h &= \log(G_h / P_h)
 \end{aligned}
 $$

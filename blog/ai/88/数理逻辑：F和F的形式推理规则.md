@@ -95,7 +95,7 @@ F和F*的形式推理规则可以表示为以下数学模型：
 
 $$
 \begin{align*}
-\Gamma, A &\vdash B \\
+\Gamma, A &\vdash B \
 \Gamma &\vdash A \rightarrow B
 \end{align*}
 $$

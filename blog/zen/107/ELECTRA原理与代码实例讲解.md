@@ -75,7 +75,7 @@ ELECTRA的核心数学模型构建基于以下假设和目标：
 - **损失函数**：生成器和鉴别器通过共享损失函数进行联合优化。生成器试图最小化$\mathcal{L}_G$，鉴别器试图最小化$\mathcal{L}_D$，其中：
 
 $$
-\mathcal{L}_G = -\mathbb{E}_{x,y}\left[\log D_\phi(y)\right] \\
+\mathcal{L}_G = -\mathbb{E}_{x,y}\left[\log D_\phi(y)\right] \
 \mathcal{L}_D = -\mathbb{E}_{x,y}\left[\log D_\phi(x)\right] - \mathbb{E}_{x,y'}\left[\log (1 - D_\phi(y'))\right]
 $$
 

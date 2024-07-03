@@ -88,7 +88,7 @@ $$
 2. 输入门(Input Gate)决定了当前时刻的输入有多少写入细胞状态:
 
 $$
-i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \\
+i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \
 \tilde{C}_t = \tanh(W_C \cdot [h_{t-1}, x_t] + b_C)
 $$
 
@@ -101,7 +101,7 @@ $$
 4. 输出门(Output Gate)决定了细胞状态有多少输出:
 
 $$
-o_t = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) \\
+o_t = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) \
 h_t = o_t * \tanh(C_t)
 $$
 
@@ -163,7 +163,7 @@ $$
 1. 将输入序列转化为记忆向量,存入记忆矩阵$M$:
 
 $$
-m_i = Ax_i, \forall i \in [1,n] \\
+m_i = Ax_i, \forall i \in [1,n] \
 M = [m_1, ..., m_n]^T
 $$
 
@@ -214,13 +214,13 @@ $$
 其中$|V|$是词表大小。根据链式法则,损失对网络参数的梯度为:
 
 $$
-\frac{\partial \mathcal{L}}{\partial W} = (\hat{a} - a)o^T \\
-\frac{\partial \mathcal{L}}{\partial C} = (\hat{a} - a)W^Tp \\
+\frac{\partial \mathcal{L}}{\partial W} = (\hat{a} - a)o^T \
+\frac{\partial \mathcal{L}}{\partial C} = (\hat{a} - a)W^Tp \
 \frac{\partial \mathcal{L}}{\partial A} = (\hat{a} - a)W^T(\sum_{i=1}^n p_i \frac{\partial C_i}{\partial A}) + (\hat{a} - a)W^T(\sum_{i=1}^n C_i \frac{\partial p_i}{\partial A})
 $$
 
 其中:
 
 $$
-\frac{\partial C_i}{\partial A} = \frac{\partial C_i}{\partial m_i} \frac{\partial m_i}{\partial A} = (x_i)^T \\
+\frac{\partial C_i}{\partial A} = \frac{\partial C_i}{\partial m_i} \frac{\partial m_i}{\partial A} = (x_i)^T \
 \frac{\partial p_i}{\partial A} = p_i(1-p_i

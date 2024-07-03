@@ -171,7 +171,7 @@ Generative Design的核心算法通常采用基于种群的优化算法,如遗�
 
    $$
    \begin{aligned}
-   g_i(\vec{x}) &= 0, \quad i = 1, 2, \ldots, m \\
+   g_i(\vec{x}) &= 0, \quad i = 1, 2, \ldots, m \
    h_j(\vec{x}) &\leq 0, \quad j = 1, 2, \ldots, p
    \end{aligned}
    $$
@@ -192,9 +192,9 @@ Generative Design的核心算法通常采用基于种群的优化算法,如遗�
 
 $$
 \begin{aligned}
-\min\limits_{\vec{x}} \quad & f(\vec{x}) \\
-\text{s.t.} \quad & g_i(\vec{x}) = 0, \quad i = 1, 2, \ldots, m \\
-& h_j(\vec{x}) \leq 0, \quad j = 1, 2, \ldots, p \\
+\min\limits_{\vec{x}} \quad & f(\vec{x}) \
+\text{s.t.} \quad & g_i(\vec{x}) = 0, \quad i = 1, 2, \ldots, m \
+& h_j(\vec{x}) \leq 0, \quad j = 1, 2, \ldots, p \
 & l_k \leq x_k \leq u_k, \quad k = 1, 2, \ldots, n
 \end{aligned}
 $$
@@ -215,8 +215,8 @@ $$
 
 $$
 \begin{aligned}
-\min\limits_{\vec{x}} \quad & f(\vec{x}) = x_1 x_2 x_3 - V_0 \\
-\text{s.t.} \quad & x_1 + x_2 + x_3 \leq L_0 \\
-& r_1 \leq \frac{x_1}{x_2} \leq r_2 \\
-& r_1 \leq \frac{x_1}{x_3} \leq r_2 \\
+\min\limits_{\vec{x}} \quad & f(\vec{x}) = x_1 x_2 x_3 - V_0 \
+\text{s.t.} \quad & x_1 + x_2 + x_3 \leq L_0 \
+& r_1 \leq \frac{x_1}{x_2} \leq r_2 \
+& r_1 \leq \frac{x_1}{x_3} \leq r_2 \
 & r_1 \leq \frac{x_2}{x_3} \leq r

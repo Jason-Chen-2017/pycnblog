@@ -119,7 +119,7 @@ Stable Diffusion的核心是学习从噪声 $x_T$ 到图像 $x_0$ 的映射 $p_\
 
 $$
 \begin{aligned}
-\log p_\theta(x_0) &\geq \mathbb{E}_{q(x_{1:T}|x_0,x_T)}\left[\log\frac{p_\theta(x_{0:T})}{q(x_{1:T}|x_0,x_T)}\right] \\
+\log p_\theta(x_0) &\geq \mathbb{E}_{q(x_{1:T}|x_0,x_T)}\left[\log\frac{p_\theta(x_{0:T})}{q(x_{1:T}|x_0,x_T)}\right] \
 &= \mathbb{E}_{q(x_{1:T}|x_0,x_T)}\left[\sum_{t=2}^T\log\frac{p_\theta(x_{t-1}|x_t)p_\theta(x_T)}{q(x_t|x_{t-1},x_T)}\right]
 \end{aligned}
 $$
@@ -150,7 +150,7 @@ $$
 
 $$
 \begin{aligned}
-q(x_{t}|x_{t-1}) &= \mathcal{N}(x_t; \sqrt{\bar{\alpha}_{t-1}}x_{t-1}, (1-\bar{\alpha}_{t-1})\mathbf{I}) \\
+q(x_{t}|x_{t-1}) &= \mathcal{N}(x_t; \sqrt{\bar{\alpha}_{t-1}}x_{t-1}, (1-\bar{\alpha}_{t-1})\mathbf{I}) \
 &= \mathcal{N}(x_t; \sqrt{\alpha_t}\sqrt{\bar{\alpha}_{t-1}}x_0 + \sqrt{1-\alpha_t}\sqrt{\bar{\alpha}_{t-1}}\epsilon_{t-1}, (1-\bar{\alpha}_{t-1})\mathbf{I})
 \end{aligned}
 $$
@@ -161,8 +161,8 @@ $$
 
 $$
 \begin{aligned}
-\mu_\theta(x_t, t) &= \mathbb{E}_{p_\theta(x_{t-1}|x_t)}[x_{t-1}] \\
-&= \mathbb{E}_{p_\theta(x_{t-1}|x_t)}\left[\frac{x_t - \sqrt{1-\alpha_t}\epsilon_t}{\sqrt{\alpha_t}}\right] \\
+\mu_\theta(x_t, t) &= \mathbb{E}_{p_\theta(x_{t-1}|x_t)}[x_{t-1}] \
+&= \mathbb{E}_{p_\theta(x_{t-1}|x_t)}\left[\frac{x_t - \sqrt{1-\alpha_t}\epsilon_t}{\sqrt{\alpha_t}}\right] \
 &= \frac{1}{\sqrt{\alpha_t}}(x_t - \sqrt{1-\alpha_t}\epsilon_\theta(x_t, t))
 \end{aligned}
 $$

@@ -81,7 +81,7 @@
 
 $$
 \begin{align*}
-z &= f_e(x) \\
+z &= f_e(x) \
 \tilde{x} &= f_d(z)
 \end{align*}
 $$

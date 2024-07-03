@@ -206,7 +206,7 @@ $$
 
 $$
 \begin{aligned}
-\boldsymbol{x} &= \boldsymbol{f}(\boldsymbol{q}) \\
+\boldsymbol{x} &= \boldsymbol{f}(\boldsymbol{q}) \
 \dot{\boldsymbol{x}} &= \boldsymbol{J}(\boldsymbol{q})\dot{\boldsymbol{q}}
 \end{aligned}
 $$

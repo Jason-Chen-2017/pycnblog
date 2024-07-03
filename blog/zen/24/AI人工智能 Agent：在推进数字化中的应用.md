@@ -90,7 +90,7 @@ AI Agent常使用以下数学模型：
 - **马尔科夫决策过程（MDP）**：定义了决策过程中的状态转移概率和回报函数。
 $$
 \begin{aligned}
-& P(S_{t+1}|S_t, A_t) \\
+& P(S_{t+1}|S_t, A_t) \
 & R(S_t, A_t)
 \end{aligned}
 $$

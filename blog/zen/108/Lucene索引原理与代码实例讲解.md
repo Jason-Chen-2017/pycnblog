@@ -196,11 +196,11 @@ Lucene 的倒排索引算法可以广泛应用于各种需要全文检索功能�
 $$
 \begin{align*}
 \text{相关性}(Q, D) &= \begin{cases}
-1, & \text{if } Q \cap D \neq \emptyset\\
+1, & \text{if } Q \cap D \neq \emptyset\
 0, & \text{if } Q \cap D = \emptyset
-\end{cases}\\
+\end{cases}\
 &= \begin{cases}
-1, & \text{文档包含查询中的任意一个词条}\\
+1, & \text{文档包含查询中的任意一个词条}\
 0, & \text{文档不包含查询中的任何词条}
 \end{cases}
 \end{align*}

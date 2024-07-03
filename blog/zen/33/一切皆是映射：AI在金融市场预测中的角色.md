@@ -130,11 +130,11 @@ graph TD;
 以LSTM模型为例，其核心结构为循环神经网络（RNN）加上门控机制，用于控制信息流。关键公式如下：
 
 $$\begin{aligned}
-&f_t = \sigma(W_f [h_{t-1}, x_t] + b_f) \\
-&i_t = \sigma(W_i [h_{t-1}, x_t] + b_i) \\
-&o_t = \sigma(W_o [h_{t-1}, x_t] + b_o) \\
-&\tilde{c}_t = \tanh(W_c [h_{t-1}, x_t] + b_c) \\
-&c_t = f_t * c_{t-1} + i_t * \tilde{c}_t \\
+&f_t = \sigma(W_f [h_{t-1}, x_t] + b_f) \
+&i_t = \sigma(W_i [h_{t-1}, x_t] + b_i) \
+&o_t = \sigma(W_o [h_{t-1}, x_t] + b_o) \
+&\tilde{c}_t = \tanh(W_c [h_{t-1}, x_t] + b_c) \
+&c_t = f_t * c_{t-1} + i_t * \tilde{c}_t \
 &h_t = o_t * \tanh(c_t)
 \end{aligned}$$
 

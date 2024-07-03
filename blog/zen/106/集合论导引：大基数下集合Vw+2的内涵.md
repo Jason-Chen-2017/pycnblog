@@ -56,8 +56,8 @@ Vw+2集合的构造基于超限递归和巨基数的思想。简而言之,我们
 对任意 $\alpha\in\mathbf{Ord}$ 且 $\alpha<\aleph_{\omega+2}$,定义集合 $V_\alpha$ 如下:
 $$
 V_\alpha=\begin{cases}
-\emptyset & \alpha=0 \\
-\mathcal{P}(V_\beta) & \alpha=\beta+1 \\
+\emptyset & \alpha=0 \
+\mathcal{P}(V_\beta) & \alpha=\beta+1 \
 \bigcup_{\beta<\alpha}V_\beta & \alpha \text{ 是极限序数}
 \end{cases}
 $$

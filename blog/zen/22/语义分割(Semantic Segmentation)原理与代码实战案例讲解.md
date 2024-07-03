@@ -38,8 +38,8 @@
 U-Net是一种自编码器架构，特别适用于图像分割任务。它采用反向金字塔的结构，上半部分用于特征提取，下半部分负责重建像素级别的输出。这种设计允许模型在保持上下文信息的同时进行精确的边界预测。
 
 $$ \text{U-Net} = \begin{cases}
-\text{Encoder (Feature Extraction)} \\
-\text{Decoder (Reconstruction)} \\
+\text{Encoder (Feature Extraction)} \
+\text{Decoder (Reconstruction)} \
 \end{cases} $$
 
 #### Mask R-CNN

@@ -139,7 +139,7 @@ RetinaNet 算法是一种单阶段目标检测算法，其主要特点是使用�
 $$
 Smooth_{L1}(x) =
 \begin{cases}
-0.5x^2, & |x| < 1 \\
+0.5x^2, & |x| < 1 \
 |x| - 0.5, & otherwise
 \end{cases}
 $$
@@ -150,9 +150,9 @@ $$
 
 $$
 \begin{aligned}
-x_{gt} &= x_p + t_x w_p \\
-y_{gt} &= y_p + t_y h_p \\
-w_{gt} &= w_p \exp(t_w) \\
+x_{gt} &= x_p + t_x w_p \
+y_{gt} &= y_p + t_y h_p \
+w_{gt} &= w_p \exp(t_w) \
 h_{gt} &= h_p \exp(t_h)
 \end{aligned}
 $$

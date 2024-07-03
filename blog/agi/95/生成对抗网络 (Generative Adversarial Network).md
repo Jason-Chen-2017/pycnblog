@@ -98,8 +98,8 @@ GAN的数学模型可以表示为：
 
 $$
 \begin{align*}
-G(z) &= \text{Generator}(z) \quad \text{其中 } z \sim \mathcal{N}(0,1) \\
-D(x) &= \text{Discriminator}(x) \\
+G(z) &= \text{Generator}(z) \quad \text{其中 } z \sim \mathcal{N}(0,1) \
+D(x) &= \text{Discriminator}(x) \
 D(G(z)) &= \text{Discriminator}(G(z))
 \end{align*}
 $$
@@ -112,8 +112,8 @@ $$
 
 $$
 \begin{align*}
-G(z) &= f_G(z) \\
-D(x) &= f_D(x) \\
+G(z) &= f_G(z) \
+D(x) &= f_D(x) \
 D(G(z)) &= f_D(G(z))
 \end{align*}
 $$

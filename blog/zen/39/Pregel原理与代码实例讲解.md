@@ -99,7 +99,7 @@ Pregel算法的数学模型可以表示为：
 
 $$
 \begin{align*}
-V_t(v) &= \text{Initial Value}(v) + \sum_{u \in N(v)} \text{Message}(u, v) \\
+V_t(v) &= \text{Initial Value}(v) + \sum_{u \in N(v)} \text{Message}(u, v) \
 \text{Message}(u, v) &= \text{Current Value}(u) - \text{Initial Value}(u)
 \end{align*}
 $$
@@ -116,7 +116,7 @@ Pregel算法的推导过程如下：
     - 每个节点根据收到的邻居信息更新自己的顶点值和边值：
         $$
         \begin{align*}
-        V_t(v) &= \text{Initial Value}(v) + \sum_{u \in N(v)} \text{Message}(u, v) \\
+        V_t(v) &= \text{Initial Value}(v) + \sum_{u \in N(v)} \text{Message}(u, v) \
         \end{align*}
         $$
     - 每个节点根据自身更新后的顶点值，向所有邻居发送新的消息：

@@ -169,12 +169,12 @@ Levenshtein距离是一种用于衡量两个字符串之间差异的度量,它�
 
 $$
 d(s_1, s_2) = \begin{cases}
-    m & \text{if } n = 0 \\
-    n & \text{if } m = 0 \\
-    d(s_1[0..m-2], s_2[0..n-1]) + 1 & \text{if } s_1[m-1] \neq s_2[n-1] \\
+    m & \text{if } n = 0 \
+    n & \text{if } m = 0 \
+    d(s_1[0..m-2], s_2[0..n-1]) + 1 & \text{if } s_1[m-1] \neq s_2[n-1] \
     d(s_1[0..m-2], s_2[0..n-2]) + \min\begin{cases}
-        1 & \text{(插入)} \\
-        1 & \text{(删除)} \\
+        1 & \text{(插入)} \
+        1 & \text{(删除)} \
         \text{sub}(s_1[m-1], s_2[n-1]) & \text{(替换)}
     \end{cases} & \text{if } s_1[m-1] = s_2[n-1]
 \end{cases}

@@ -116,7 +116,7 @@ $$
 - $f(\cdot)$ 为激活函数，通常为阶跃函数：
   $$
   f(x) = \begin{cases}
-  1, & x \ge 0 \\
+  1, & x \ge 0 \
   0, & x < 0
   \end{cases}
   $$

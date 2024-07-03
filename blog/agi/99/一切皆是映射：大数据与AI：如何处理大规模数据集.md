@@ -220,7 +220,7 @@ $$L(\beta) = \sum_{i=1}^{m}(y_i - \hat{y_i})^2 = \sum_{i=1}^{m}(y_i - \beta_0 - 
 
 $$
 \begin{cases}
-\sum_{i=1}^{m}(y_i - \beta_0 - \sum_{j=1}^{n}\beta_j x_{ij}) = 0\\
+\sum_{i=1}^{m}(y_i - \beta_0 - \sum_{j=1}^{n}\beta_j x_{ij}) = 0\
 \sum_{i=1}^{m}x_{ik}(y_i - \beta_0 - \sum_{j=1}^{n}\beta_j x_{ij}) = 0, \quad k=1,2,...,n
 \end{cases}
 $$

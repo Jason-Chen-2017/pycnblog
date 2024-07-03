@@ -149,7 +149,7 @@ BERT 使用正弦和余弦函数为每个单词添加位置信息。位置编码
 
 $$
 \begin{aligned}
-PE_{(pos, 2i)} &= sin(pos / 10000^{2i/d_{model}}) \\
+PE_{(pos, 2i)} &= sin(pos / 10000^{2i/d_{model}}) \
 PE_{(pos, 2i+1)} &= cos(pos / 10000^{2i/d_{model}})
 \end{aligned}
 $$

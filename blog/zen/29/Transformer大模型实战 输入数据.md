@@ -71,7 +71,7 @@ Transformer模型的输入数据处理方式广泛应用于自然语言处理、
 $$
 P_{i,j} =
 \begin{cases}
-\sin(i / 10000^{2j/d}) & \text{if } j \text{ is even} \\
+\sin(i / 10000^{2j/d}) & \text{if } j \text{ is even} \
 \cos(i / 10000^{2j/d}) & \text{if } j \text{ is odd}
 \end{cases}
 $$

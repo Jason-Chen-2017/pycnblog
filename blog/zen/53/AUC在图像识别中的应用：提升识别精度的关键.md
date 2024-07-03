@@ -74,7 +74,7 @@ E --> F[F1值]
 
 $
 I(x, y) = \begin{cases}
-1, & \text{if } x > y \\
+1, & \text{if } x > y \
 0, & \text{otherwise}
 \end{cases}
 $

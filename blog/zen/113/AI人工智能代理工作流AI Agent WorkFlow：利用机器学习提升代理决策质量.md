@@ -119,7 +119,7 @@ $$Q^*(s,a) = \mathcal{R}_s^a + \gamma \sum_{s' \in \mathcal{S}} \mathcal{P}_{ss'
 因此,最优策略$\pi^*$可表示为:
 
 $$\pi^*(a|s) = \begin{cases}
-1 & \text{if } a = \arg\max_{a' \in \mathcal{A}} Q^*(s,a') \\
+1 & \text{if } a = \arg\max_{a' \in \mathcal{A}} Q^*(s,a') \
 0 & \text{otherwise}
 \end{cases}$$
 
@@ -149,7 +149,7 @@ $$\pi^*(a|s) = \begin{cases}
 
 $$
 \begin{aligned}
-V_{k+1}(s) & = \max_{a \in \mathcal{A}} \left\{ \mathcal{R}_s^a + \gamma \sum_{s' \in \mathcal{S}} \mathcal{P}_{ss'}^a V_k(s') \right\} \\
+V_{k+1}(s) & = \max_{a \in \mathcal{A}} \left\{ \mathcal{R}_s^a + \gamma \sum_{s' \in \mathcal{S}} \mathcal{P}_{ss'}^a V_k(s') \right\} \
 & = \max_{a \in \mathcal{A}} Q_{k+1}(s,a)
 \end{aligned}
 $$

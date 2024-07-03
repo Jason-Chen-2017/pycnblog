@@ -172,5 +172,5 @@ $$\max\limits_D V(D,G) = \mathbb{E}_{x\sim p_{\text{data}}(x)}[\log D(x)] + \mat
 由于对数函数是凸函数,根据Jensen不等式,我们有:
 
 \begin{align*}
-\mathbb{E}_{x\sim p_{\text{data}}(x)}[\log D(x)] &\leq \log\left(\mathbb{E}_{x\sim p_{\text{data}}(x)}[D(x)]\right) \\
+\mathbb{E}_{x\sim p_{\text{data}}(x)}[\log D(x)] &\leq \log\left(\mathbb{E}_{x\sim p_{\text{data}}(x)}[D(x)]\right) \
 \mathbb{E}_{z\sim p_z(z)}[\log(1-D(G(z)))] &\leq \log\left(1-\mathbb{E}_{z\sim p_

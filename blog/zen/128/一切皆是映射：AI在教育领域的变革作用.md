@@ -135,7 +135,7 @@ BKT模型将学生的知识状态视为一个隐藏的二值随机变量,用$L_t
 
 $$
 P(L_{t+1}=1|L_t,O_t) = \begin{cases}
-P(L_t=1)(1-\alpha_s) & \text{if } O_t=1\\
+P(L_t=1)(1-\alpha_s) & \text{if } O_t=1\
 P(L_t=0)(1-\alpha_g) & \text{if } O_t=0
 \end{cases}
 $$
@@ -155,7 +155,7 @@ $$
 
 $$
 \begin{aligned}
-\mathcal{L}(\alpha_s,\alpha_g|\mathcal{D})&=\log P(\mathcal{D}|\alpha_s,\alpha_g)\\
+\mathcal{L}(\alpha_s,\alpha_g|\mathcal{D})&=\log P(\mathcal{D}|\alpha_s,\alpha_g)\
 &=\sum_{t=1}^T\log\sum_{l_t}P(O_t|l_t,\alpha_s,\alpha_g)P(l_t|\alpha_s,\alpha_g)
 \end{aligned}
 $$
@@ -166,7 +166,7 @@ $$
 
 $$
 \begin{aligned}
-\alpha_s&=\frac{\sum_t\gamma_t(1-O_t)}{\sum_t\gamma_t}\\
+\alpha_s&=\frac{\sum_t\gamma_t(1-O_t)}{\sum_t\gamma_t}\
 \alpha_g&=\frac{\sum_t(1-\gamma_t)O_t}{\sum_t(1-\gamma_t)}
 \end{aligned}
 $$
@@ -195,7 +195,7 @@ $$
 
 $$
 \begin{aligned}
-\alpha_s&=\frac{0.18+0+0.36+0+0.28+0}{3.64}=0.176\\
+\alpha_s&=\frac{0.18+0+0.36+0+0.28+0}{3.64}=0.176\
 \alpha_g&=\frac{0.37+0.3+0.36+0.28}{2.36}=0.277
 \end{aligned}
 $$

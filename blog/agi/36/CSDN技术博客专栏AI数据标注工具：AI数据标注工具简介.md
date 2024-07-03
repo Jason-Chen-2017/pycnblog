@@ -118,13 +118,13 @@ AI数据标注工具涉及到的数学模型主要包括以下几类：
 
 $$
 \begin{align*}
-\text{特征提取} &: F(\text{image}) = \text{CNN}(x) \\
-\text{RPN} &: \text{rpn\_cls\_score} = \text{fc}(rpn\_cls\_feature) \\
-\text{RPN} &: \text{rpn\_box\_pred} = \text{fc}(rpn\_box\_feature) \\
-\text{RoI Pooling} &: \text{roi\_pool} = \text{RoIPooling}(\text{feature\_map}, \text{roi}) \\
-\text{分类与边界框回归} &: \text{cls\_score} = \text{fc}(roi\_pool) \\
-\text{cls\_prob} = \text{Sigmoid}(\text{cls\_score}) \\
-\text{box\_pred} = \text{Regress}(\text{cls\_prob}, \text{cls\_score}, \text{box\_pred}) \\
+\text{特征提取} &: F(\text{image}) = \text{CNN}(x) \
+\text{RPN} &: \text{rpn\_cls\_score} = \text{fc}(rpn\_cls\_feature) \
+\text{RPN} &: \text{rpn\_box\_pred} = \text{fc}(rpn\_box\_feature) \
+\text{RoI Pooling} &: \text{roi\_pool} = \text{RoIPooling}(\text{feature\_map}, \text{roi}) \
+\text{分类与边界框回归} &: \text{cls\_score} = \text{fc}(roi\_pool) \
+\text{cls\_prob} = \text{Sigmoid}(\text{cls\_score}) \
+\text{box\_pred} = \text{Regress}(\text{cls\_prob}, \text{cls\_score}, \text{box\_pred}) \
 \end{align*}
 $$
 

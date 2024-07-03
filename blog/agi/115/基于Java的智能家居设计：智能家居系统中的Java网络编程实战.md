@@ -184,8 +184,8 @@ $$
 
 $$
 u(t) = \begin{cases}
-1, & \text{if } T(t) > T_0 + \epsilon_1 \\
-1, & \text{if } T(t) < T_0 - \epsilon_2 \\
+1, & \text{if } T(t) > T_0 + \epsilon_1 \
+1, & \text{if } T(t) < T_0 - \epsilon_2 \
 0, & \text{otherwise}
 \end{cases}
 $$
@@ -194,8 +194,8 @@ $$
 
 $$
 \frac{dT(t)}{dt} = \begin{cases}
-\alpha(T_\text{out}(t) - T(t)) + \beta, & \text{if } T(t) > T_0 + \epsilon_1 \\
-\alpha(T_\text{out}(t) - T(t)) + \beta, & \text{if } T(t) < T_0 - \epsilon_2 \\
+\alpha(T_\text{out}(t) - T(t)) + \beta, & \text{if } T(t) > T_0 + \epsilon_1 \
+\alpha(T_\text{out}(t) - T(t)) + \beta, & \text{if } T(t) < T_0 - \epsilon_2 \
 \alpha(T_\text{out}(t) - T(t)), & \text{otherwise}
 \end{cases}
 $$

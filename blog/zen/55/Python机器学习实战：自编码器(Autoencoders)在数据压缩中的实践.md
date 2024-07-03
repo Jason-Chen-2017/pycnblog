@@ -65,7 +65,7 @@
 
 $$
 \begin{aligned}
-h &= f(x) \\
+h &= f(x) \
 \hat{x} &= g(h)
 \end{aligned}
 $$

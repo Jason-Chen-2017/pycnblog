@@ -148,7 +148,7 @@ GAN及其变体模型已被广泛应用于多个领域:
 在GAN模型中,生成器$G$和判别器$D$的目标函数可以形式化为:
 
 $$\begin{aligned}
-\underset{G}{\operatorname{min}} \, \underset{D}{\operatorname{max}} \, V(D,G) &= \mathbb{E}_{x \sim p_{\text{data}}(x)}\big[\log D(x)\big] + \mathbb{E}_{z \sim p_z(z)}\big[\log(1-D(G(z)))\big] \\
+\underset{G}{\operatorname{min}} \, \underset{D}{\operatorname{max}} \, V(D,G) &= \mathbb{E}_{x \sim p_{\text{data}}(x)}\big[\log D(x)\big] + \mathbb{E}_{z \sim p_z(z)}\big[\log(1-D(G(z)))\big] \
 &= \int_{x} p_{\text{data}}(x) \log D(x) \, dx + \int_{z} p_z(z) \log(1-D(G(z))) \, dz
 \end{aligned}$$
 
@@ -184,6 +184,6 @@ $$\mathbb{E}_{x \sim P}[-\log x] \geq -\log \mathbb{E}_{x \sim P}[x] \geq 0$$
 将上式代入GAN目标函数,可得:
 
 $$\begin{aligned}
-V(D,G) &= \mathbb{E}_{x \sim p_{\text{data}}(x)}\big[\log D(x)\big] + \mathbb{E}_{z \sim p_z(z)}\big[\log(1-D(G(z)))\big] \\
-&= \mathbb{E}_{x \sim p_{\text{data}}(x)}\big[-\log \frac{1}{D(x)}\big] + \mathbb{E}_{z \sim p_z(z)}\big[-\log(1-D(G(z)))\big] \\
+V(D,G) &= \mathbb{E}_{x \sim p_{\text{data}}(x)}\big[\log D(x)\big] + \mathbb{E}_{z \sim p_z(z)}\big[\log(1-D(G(z)))\big] \
+&= \mathbb{E}_{x \sim p_{\text{data}}(x)}\big[-\log \frac{1}{D(x)}\big] + \mathbb{E}_{z \sim p_z(z)}\big[-\log(1-D(G(z)))\big] \
 &\geq -\log \mathbb{E}_{x \sim p_{\text{data}}(x)}\big[\frac{1}{D(x)}\big] - \log(1-\mathbb{E}_{z \sim p_z(z)}[D(G(

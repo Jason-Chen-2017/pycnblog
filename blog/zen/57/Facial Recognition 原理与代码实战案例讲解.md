@@ -69,18 +69,18 @@ $$
 ### 4.3 仿射变换矩阵
 $$
 \begin{bmatrix}
-x' \\
-y' \\
+x' \
+y' \
 1
 \end{bmatrix} =
 \begin{bmatrix}
-a & b & t_x \\
-c & d & t_y \\
+a & b & t_x \
+c & d & t_y \
 0 & 0 & 1
 \end{bmatrix}
 \begin{bmatrix}
-x \\
-y \\
+x \
+y \
 1
 \end{bmatrix}
 $$

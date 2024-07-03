@@ -65,7 +65,7 @@ Python是一种流行的编程语言，拥有丰富的科学计算库和工具�
 $$
 P(s'|s, a) =
 \begin{cases}
-1, & \text{如果执行行动 } a \text{ 后从状态 } s \text{ 转移到状态 } s' \\
+1, & \text{如果执行行动 } a \text{ 后从状态 } s \text{ 转移到状态 } s' \
 0, & \text{否则}
 \end{cases}
 $$
@@ -77,8 +77,8 @@ $$
 $$
 R(s) =
 \begin{cases}
-1, & \text{如果状态 } s \text{ 是目标位置} \\
--1, & \text{如果状态 } s \text{ 是障碍物位置} \\
+1, & \text{如果状态 } s \text{ 是目标位置} \
+-1, & \text{如果状态 } s \text{ 是障碍物位置} \
 0, & \text{否则}
 \end{cases}
 $$

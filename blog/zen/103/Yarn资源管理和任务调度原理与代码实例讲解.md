@@ -173,8 +173,8 @@ YARN资源管理和任务调度算法可以抽象为一个数学模型。假设�
 
 $$
 \begin{align*}
-\text{minimize} & \quad \sum_{i=1}^K \ell(x_i) \\
-\text{subject to} & \quad \sum_{i=1}^K x_i \leq NM \\
+\text{minimize} & \quad \sum_{i=1}^K \ell(x_i) \
+\text{subject to} & \quad \sum_{i=1}^K x_i \leq NM \
 & \quad x_i \in \{0,1\}
 \end{align*}
 $$
@@ -196,7 +196,7 @@ YARN采用抢占式资源分配策略，即在资源紧张的情况下，抢占�
 $$
 \begin{align*}
 x_i &= \begin{cases}
-1 & \text{if } \sum_{j=1}^L M_j > NM - \sum_{j=1}^K R_j \\
+1 & \text{if } \sum_{j=1}^L M_j > NM - \sum_{j=1}^K R_j \
 0 & \text{otherwise}
 \end{cases}
 \end{align*}

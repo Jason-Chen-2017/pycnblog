@@ -100,7 +100,7 @@ AIGC算法在许多领域都有应用，例如：
 
 $$
 \begin{aligned}
-&G(z) \rightarrow x \\
+&G(z) \rightarrow x \
 &D(x) \rightarrow p
 \end{aligned}
 $$

@@ -148,7 +148,7 @@ $$L(\theta) = \mathbb{E}_{(s,a,r,s')\sim D}\left[\left(r + \gamma \max_{a'}Q(s',
 Huber损失是均方误差损失的一种变体，它对小误差采用均方误差，对大误差采用线性误差，具有更好的鲁棒性。Huber损失可以表示为：
 
 $$L_\delta(x) = \begin{cases}
-\frac{1}{2}x^2 & \text{if } |x| \leq \delta \\
+\frac{1}{2}x^2 & \text{if } |x| \leq \delta \
 \delta(|x| - \frac{1}{2}\delta) & \text{otherwise}
 \end{cases}$$
 

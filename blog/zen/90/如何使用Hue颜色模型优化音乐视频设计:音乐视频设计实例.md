@@ -98,8 +98,8 @@ Hue颜色模型是一种基于色相（Hue）、饱和度（Saturation）和亮�
 
 $$
 \begin{align*}
-H(t) &= H_{base} + \alpha \cdot F(t) \\
-S(t) &= S_{base} + \beta \cdot F(t) \cdot R(t) \\
+H(t) &= H_{base} + \alpha \cdot F(t) \
+S(t) &= S_{base} + \beta \cdot F(t) \cdot R(t) \
 V(t) &= V_{base} + \gamma \cdot F(t) \cdot R(t)^2
 \end{align*}
 $$

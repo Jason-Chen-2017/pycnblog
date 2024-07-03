@@ -123,9 +123,9 @@ KL散度损失 $\mathcal{L}_{KD}$ 的推导如下:
 
 $$
 \begin{aligned}
-\mathcal{L}_{KD} &= \tau^2 \cdot \sum_i \text{KL}(P_T(x_i) || P_S(x_i)) \\
-&= \tau^2 \cdot \sum_i \sum_j P_T(x_i)_j \log \frac{P_T(x_i)_j}{P_S(x_i)_j} \\
-&= \tau^2 \cdot \sum_i \sum_j P_T(x_i)_j (\log P_T(x_i)_j - \log P_S(x_i)_j) \\
+\mathcal{L}_{KD} &= \tau^2 \cdot \sum_i \text{KL}(P_T(x_i) || P_S(x_i)) \
+&= \tau^2 \cdot \sum_i \sum_j P_T(x_i)_j \log \frac{P_T(x_i)_j}{P_S(x_i)_j} \
+&= \tau^2 \cdot \sum_i \sum_j P_T(x_i)_j (\log P_T(x_i)_j - \log P_S(x_i)_j) \
 &= \tau^2 \cdot \sum_i (\sum_j P_T(x_i)_j \log P_T(x_i)_j - \sum_j P_T(x_i)_j \log P_S(x_i)_j)
 \end{aligned}
 $$

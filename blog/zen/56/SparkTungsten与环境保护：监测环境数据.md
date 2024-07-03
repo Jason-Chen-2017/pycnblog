@@ -51,7 +51,7 @@ C -->|数据采集| F[土壤]
 - 定义:基于空气污染物浓度对空气质量的定量评价
 - 计算公式:
 $$
-AQI = max(IAQI_1,IAQI_2,...,IAQI_n) \\
+AQI = max(IAQI_1,IAQI_2,...,IAQI_n) \
 IAQI_p = \frac{I_{high}-I_{low}}{C_{high}-C_{low}}(C_p-C_{low})+I_{low}
 $$
 其中,$IAQI_p$为污染物$p$的空气质量分指数,$C_p$为污染物$p$的实测浓度,$C_{low}$和$C_{high}$分别为污染物$p$对应的浓度限值。

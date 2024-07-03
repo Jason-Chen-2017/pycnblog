@@ -139,8 +139,8 @@ ApplicationMaster的资源申请和分配过程可以抽象为以下数学模型
 
 $$
 \begin{aligned}
-\min_{x_{ij}} & \quad \sum_{i=1}^{n} \sum_{j=1}^{m} f(x_{ij}) \\
-\text{s.t.} & \quad \sum_{j=1}^{m} x_{ij}R_i \leq C_j, \quad \forall i \in [1,n] \\
+\min_{x_{ij}} & \quad \sum_{i=1}^{n} \sum_{j=1}^{m} f(x_{ij}) \
+\text{s.t.} & \quad \sum_{j=1}^{m} x_{ij}R_i \leq C_j, \quad \forall i \in [1,n] \
 & \quad x_{ij} \in \{0, 1\}, \quad \forall i \in [1,n], j \in [1,m]
 \end{aligned}
 $$

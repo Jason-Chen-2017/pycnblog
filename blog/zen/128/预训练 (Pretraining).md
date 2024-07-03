@@ -150,7 +150,7 @@ $$
 
 $$
 \begin{aligned}
-\mathcal{L}_{\text{MLM}} &= -\frac{1}{1} \left[ \log 0.8 - \log (0.8 + 99 \times 0.01) \right] \\
+\mathcal{L}_{\text{MLM}} &= -\frac{1}{1} \left[ \log 0.8 - \log (0.8 + 99 \times 0.01) \right] \
 &\approx 0.223.
 \end{aligned}
 $$

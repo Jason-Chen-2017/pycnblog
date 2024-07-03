@@ -84,11 +84,11 @@ $$ \mathbf{h}_t = \sigma(\mathbf{W}[\mathbf{x}_t, \mathbf{h}_{t-1}] + \mathbf{b}
 #### LSTM公式：
 
 $$ \begin{align*}
-\mathbf{i_t} &= \sigma(\mathbf{W}[ \mathbf{x}_t, \mathbf{h}_{t-1}] + \mathbf{U}[ \mathbf{x}_{t-1}, \mathbf{h}_{t-2}] + \mathbf{b}_i) \\
-\mathbf{f_t} &= \sigma(\mathbf{W}[ \mathbf{x}_t, \mathbf{h}_{t-1}] + \mathbf{U}[ \mathbf{x}_{t-1}, \mathbf{h}_{t-2}] + \mathbf{b}_f) \\
-\mathbf{g_t} &= \tanh(\mathbf{W}[ \mathbf{x}_t, \mathbf{h}_{t-1}] + \mathbf{U}[ \mathbf{x}_{t-1}, \mathbf{h}_{t-2}] + \mathbf{b}_g) \\
-\mathbf{c_t} &= \mathbf{f_t} \odot \mathbf{c}_{t-1} + \mathbf{i_t} \odot \mathbf{g_t} \\
-\mathbf{o_t} &= \sigma(\mathbf{W}[ \mathbf{x}_t, \mathbf{h}_{t-1}] + \mathbf{U}[ \mathbf{x}_{t-1}, \mathbf{h}_{t-2}] + \mathbf{b}_o) \\
+\mathbf{i_t} &= \sigma(\mathbf{W}[ \mathbf{x}_t, \mathbf{h}_{t-1}] + \mathbf{U}[ \mathbf{x}_{t-1}, \mathbf{h}_{t-2}] + \mathbf{b}_i) \
+\mathbf{f_t} &= \sigma(\mathbf{W}[ \mathbf{x}_t, \mathbf{h}_{t-1}] + \mathbf{U}[ \mathbf{x}_{t-1}, \mathbf{h}_{t-2}] + \mathbf{b}_f) \
+\mathbf{g_t} &= \tanh(\mathbf{W}[ \mathbf{x}_t, \mathbf{h}_{t-1}] + \mathbf{U}[ \mathbf{x}_{t-1}, \mathbf{h}_{t-2}] + \mathbf{b}_g) \
+\mathbf{c_t} &= \mathbf{f_t} \odot \mathbf{c}_{t-1} + \mathbf{i_t} \odot \mathbf{g_t} \
+\mathbf{o_t} &= \sigma(\mathbf{W}[ \mathbf{x}_t, \mathbf{h}_{t-1}] + \mathbf{U}[ \mathbf{x}_{t-1}, \mathbf{h}_{t-2}] + \mathbf{b}_o) \
 \mathbf{h_t} &= \mathbf{o_t} \odot \tanh(\mathbf{c_t})
 \end{align*} $$
 

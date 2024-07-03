@@ -49,15 +49,15 @@
 #### 4.1.1 原始问题的数学表述
 $$
 \begin{aligned}
-\min_{w,b} & \quad \frac{1}{2}\|w\|^2 \\
+\min_{w,b} & \quad \frac{1}{2}\|w\|^2 \
 s.t. & \quad y_i(w^Tx_i+b) \geq 1, \quad i=1,2,\dots,n
 \end{aligned}
 $$
 #### 4.1.2 对偶问题的数学表述
 $$
 \begin{aligned}
-\max_{\alpha} & \quad \sum_{i=1}^n \alpha_i - \frac{1}{2}\sum_{i,j=1}^n \alpha_i \alpha_j y_i y_j \langle x_i, x_j \rangle \\
-s.t. & \quad \sum_{i=1}^n \alpha_i y_i = 0 \\
+\max_{\alpha} & \quad \sum_{i=1}^n \alpha_i - \frac{1}{2}\sum_{i,j=1}^n \alpha_i \alpha_j y_i y_j \langle x_i, x_j \rangle \
+s.t. & \quad \sum_{i=1}^n \alpha_i y_i = 0 \
      & \quad \alpha_i \geq 0, \quad i=1,2,\dots,n
 \end{aligned}
 $$
@@ -77,8 +77,8 @@ $$K(x,z)=\langle \phi(x),\phi(z) \rangle$$
 #### 4.2.3 非线性SVM的对偶问题
 $$
 \begin{aligned}
-\max_{\alpha} & \quad \sum_{i=1}^n \alpha_i - \frac{1}{2}\sum_{i,j=1}^n \alpha_i \alpha_j y_i y_j K(x_i,x_j) \\
-s.t. & \quad \sum_{i=1}^n \alpha_i y_i = 0 \\
+\max_{\alpha} & \quad \sum_{i=1}^n \alpha_i - \frac{1}{2}\sum_{i,j=1}^n \alpha_i \alpha_j y_i y_j K(x_i,x_j) \
+s.t. & \quad \sum_{i=1}^n \alpha_i y_i = 0 \
      & \quad 0 \leq \alpha_i \leq C, \quad i=1,2,\dots,n
 \end{aligned}
 $$

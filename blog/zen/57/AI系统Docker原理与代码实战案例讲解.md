@@ -138,11 +138,11 @@ $$V = L_w \cup L_n \cup ... \cup L_2 \cup L_1$$
 读操作$read(f)$查找文件$f$的过程:
 
 $$read(f) = \begin{cases}
-f & \text{if } f \in L_w\\
-f & \text{if } f \in L_n\\
-... \\
-f & \text{if } f \in L_2\\
-f & \text{if } f \in L_1\\
+f & \text{if } f \in L_w\
+f & \text{if } f \in L_n\
+... \
+f & \text{if } f \in L_2\
+f & \text{if } f \in L_1\
 \text{FileNotFound} & \text{otherwise}
 \end{cases}$$
 

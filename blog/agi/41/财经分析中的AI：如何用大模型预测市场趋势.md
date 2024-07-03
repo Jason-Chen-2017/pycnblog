@@ -77,11 +77,11 @@
 #### LSTM单元公式：
 $$
 \begin{align*}
-i &= \sigma(W_i[x_t, h_{t-1}] + b_i) \\
-f &= \sigma(W_f[x_t, h_{t-1}] + b_f) \\
-o &= \sigma(W_o[x_t, h_{t-1}] + b_o) \\
-g &= \tanh(W_g[x_t, h_{t-1}] + b_g) \\
-c_t &= f \odot c_{t-1} + i \odot g \\
+i &= \sigma(W_i[x_t, h_{t-1}] + b_i) \
+f &= \sigma(W_f[x_t, h_{t-1}] + b_f) \
+o &= \sigma(W_o[x_t, h_{t-1}] + b_o) \
+g &= \tanh(W_g[x_t, h_{t-1}] + b_g) \
+c_t &= f \odot c_{t-1} + i \odot g \
 h_t &= o \odot \tanh(c_t)
 \end{align*}
 $$

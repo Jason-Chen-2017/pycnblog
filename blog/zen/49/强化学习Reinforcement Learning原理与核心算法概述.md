@@ -197,8 +197,8 @@ $$
 
 $$
 \begin{aligned}
-V^\pi(s)&=\mathbb{E}_\pi\left[\sum_{k=0}^\infty \gamma^k R_{t+k+1}\mid S_t=s\right]\\
-        &=\mathbb{E}_\pi\left[R_{t+1}+\gamma V^\pi(S_{t+1})\mid S_t=s\right]\\
+V^\pi(s)&=\mathbb{E}_\pi\left[\sum_{k=0}^\infty \gamma^k R_{t+k+1}\mid S_t=s\right]\
+        &=\mathbb{E}_\pi\left[R_{t+1}+\gamma V^\pi(S_{t+1})\mid S_t=s\right]\
         &=\sum_a\pi(a\mid s)\sum_{s'}\mathcal{P}_{ss'}^a\left(\mathcal{R}_s^a+\gamma V^\pi(s')\right)
 \end{aligned}
 $$
@@ -207,7 +207,7 @@ $$
 
 $$
 \begin{aligned}
-Q^\pi(s,a)&=\mathbb{E}_\pi\left[\sum_{k=0}^\infty \gamma^k R_{t+k+1}\mid S_t=s,A_t=a\right]\\
+Q^\pi(s,a)&=\mathbb{E}_\pi\left[\sum_{k=0}^\infty \gamma^k R_{t+k+1}\mid S_t=s,A_t=a\right]\
            &=\mathcal{R}_s^a+\gamma\sum_{s'}\mathcal{P}_{ss'}^aV^\pi(s')
 \end{aligned}
 $$
@@ -216,7 +216,7 @@ $$
 
 $$
 \begin{aligned}
-V^*(s)&=\max_\pi V^\pi(s)\\
+V^*(s)&=\max_\pi V^\pi(s)\
        &=\max_a\sum_{s'}\mathcal{P}_{ss'}^a\left(\mathcal{R}_s^a+\gamma V^*(s')\right)
 \end{aligned}
 $$

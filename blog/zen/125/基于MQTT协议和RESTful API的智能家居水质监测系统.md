@@ -151,7 +151,7 @@ EM算法的目标是找到模型参数$\theta$的最大似然估计,即最大化
 
 $$
 \begin{align}
-\ln p(X|\theta)&=\sum_{n=1}^N\ln\left\{\sum_{k=1}^K\pi_k\mathcal{N}(x_n|\mu_k,\Sigma_k)\right\}\\
+\ln p(X|\theta)&=\sum_{n=1}^N\ln\left\{\sum_{k=1}^K\pi_k\mathcal{N}(x_n|\mu_k,\Sigma_k)\right\}\
 &=\sum_{n=1}^N\ln\left\{\sum_{k=1}^K\pi_k\frac{1}{(2\pi)^{D/2}|\Sigma_k|^{1/2}}\exp\left(-\frac{1}{2}(x_n-\mu_k)^T\Sigma_k^{-1}(x_n-\mu_k)\right)\right\}
 \end{align}
 $$

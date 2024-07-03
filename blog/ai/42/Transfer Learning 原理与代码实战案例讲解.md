@@ -78,8 +78,8 @@
 
 $$
 \begin{align*}
-\text{特征提取} & : f(x) = \phi(x) \quad \text{(其中$\phi$为预训练模型)} \\
-\text{特征迁移} & : F_{\theta}(f(x)) = g(\theta, f(x)) \quad \text{(其中$g$为迁移学习模型)} \\
+\text{特征提取} & : f(x) = \phi(x) \quad \text{(其中$\phi$为预训练模型)} \
+\text{特征迁移} & : F_{\theta}(f(x)) = g(\theta, f(x)) \quad \text{(其中$g$为迁移学习模型)} \
 \text{目标域模型训练} & : \hat{y} = h(\theta, F_{\theta}(f(x))) \quad \text{(其中$h$为目标域模型)}
 \end{align*}
 $$

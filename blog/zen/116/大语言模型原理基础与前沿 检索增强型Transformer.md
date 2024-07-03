@@ -121,7 +121,7 @@ $$s_i=Sim(H^X,k_i),\quad k_i\in\mathcal{K}$$
      其中$CrossAttention$为交叉注意力机制,用于融合两个序列的表示。
 
    - **知识存储读写**:
-     $$M'=Write(M,\mathcal{R})\\
+     $$M'=Write(M,\mathcal{R})\
      \hat{H}=TransformerEncoder(X,M')$$
      首先将知识片段$\mathcal{R}$写入外部记忆库$M$,得到更新后的记忆库$M'$;然后Transformer编码器在编码输入$X$的同时,可读写记忆库$M'$,生成知识增强的序列表示$\hat{H}$。
 

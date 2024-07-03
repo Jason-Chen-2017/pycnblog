@@ -95,9 +95,9 @@ DQN是一种基于Q学习的强化学习算法。它使用深度神经网络来�
 
 $$
 \begin{align*}
-h_t &= \text{RNN}(x_1, x_2, \dots, x_t) \\
-Q(s, a) &= \text{DQN}(h_t) \\
-Q^*(s, a) &= \max_{a'} Q^*(s, a') \\
+h_t &= \text{RNN}(x_1, x_2, \dots, x_t) \
+Q(s, a) &= \text{DQN}(h_t) \
+Q^*(s, a) &= \max_{a'} Q^*(s, a') \
 a &= \arg\max_a Q(s, a)
 \end{align*}
 $$

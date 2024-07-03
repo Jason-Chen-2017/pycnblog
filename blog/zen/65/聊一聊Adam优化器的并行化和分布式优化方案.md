@@ -65,10 +65,10 @@ Adam优化器的参数更新公式如下：
 
 $$
 \begin{aligned}
-m_t &= \beta_1 m_{t-1} + (1 - \beta_1) g_t \\
-v_t &= \beta_2 v_{t-1} + (1 - \beta_2) g_t^2 \\
-\hat{m}_t &= \frac{m_t}{1 - \beta_1^t} \\
-\hat{v}_t &= \frac{v_t}{1 - \beta_2^t} \\
+m_t &= \beta_1 m_{t-1} + (1 - \beta_1) g_t \
+v_t &= \beta_2 v_{t-1} + (1 - \beta_2) g_t^2 \
+\hat{m}_t &= \frac{m_t}{1 - \beta_1^t} \
+\hat{v}_t &= \frac{v_t}{1 - \beta_2^t} \
 \theta_t &= \theta_{t-1} - \frac{\alpha \hat{m}_t}{\sqrt{\hat{v}_t} + \epsilon}
 \end{aligned}
 $$

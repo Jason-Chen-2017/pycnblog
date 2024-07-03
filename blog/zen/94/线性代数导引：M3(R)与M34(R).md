@@ -36,8 +36,8 @@ M3(R)表示一个三维欧几里得空间，它是由三个线性无关的向量
 
 $$
 \begin{bmatrix}
-x_1 \\
-x_2 \\
+x_1 \
+x_2 \
 x_3
 \end{bmatrix}
 $$
@@ -50,9 +50,9 @@ M34(R)表示一个四维实数线性空间，它是由三个线性无关的向�
 
 $$
 \begin{bmatrix}
-x_1 \\
-x_2 \\
-x_3 \\
+x_1 \
+x_2 \
+x_3 \
 x_4
 \end{bmatrix}
 $$
@@ -65,19 +65,19 @@ M3(R)和M34(R)都是线性空间，它们之间的关系可以通过矩阵运算
 
 $$
 \begin{bmatrix}
-x_1 \\
-x_2 \\
-x_3 \\
+x_1 \
+x_2 \
+x_3 \
 x_4
 \end{bmatrix} \rightarrow
 \begin{bmatrix}
-x_1 \\
-x_2 \\
+x_1 \
+x_2 \
 x_3
 \end{bmatrix} \cdot
 \begin{bmatrix}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
+1 & 0 & 0 \
+0 & 1 & 0 \
 0 & 0 & 1
 \end{bmatrix}
 $$
@@ -171,42 +171,42 @@ M3(R)和M34(R)的核心算法在许多领域都有广泛的应用，例如：
 
 $$
 A+B = \begin{bmatrix}
-a_{11} & a_{12} & \cdots & a_{1n} \\
-a_{21} & a_{22} & \cdots & a_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
+a_{11} & a_{12} & \cdots & a_{1n} \
+a_{21} & a_{22} & \cdots & a_{2n} \
+\vdots & \vdots & \ddots & \vdots \
 a_{m1} & a_{m2} & \cdots & a_{mn}
 \end{bmatrix} +
 \begin{bmatrix}
-b_{11} & b_{12} & \cdots & b_{1n} \\
-b_{21} & b_{22} & \cdots & b_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
+b_{11} & b_{12} & \cdots & b_{1n} \
+b_{21} & b_{22} & \cdots & b_{2n} \
+\vdots & \vdots & \ddots & \vdots \
 b_{m1} & b_{m2} & \cdots & b_{mn}
 \end{bmatrix} =
 \begin{bmatrix}
-a_{11}+b_{11} & a_{12}+b_{12} & \cdots & a_{1n}+b_{1n} \\
-a_{21}+b_{21} & a_{22}+b_{22} & \cdots & a_{2n}+b_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
+a_{11}+b_{11} & a_{12}+b_{12} & \cdots & a_{1n}+b_{1n} \
+a_{21}+b_{21} & a_{22}+b_{22} & \cdots & a_{2n}+b_{2n} \
+\vdots & \vdots & \ddots & \vdots \
 a_{m1}+b_{m1} & a_{m2}+b_{m2} & \cdots & a_{mn}+b_{mn}
 \end{bmatrix}
 $$
 
 $$
 AB = \begin{bmatrix}
-a_{11} & a_{12} & \cdots & a_{1n} \\
-a_{21} & a_{22} & \cdots & a_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
+a_{11} & a_{12} & \cdots & a_{1n} \
+a_{21} & a_{22} & \cdots & a_{2n} \
+\vdots & \vdots & \ddots & \vdots \
 a_{m1} & a_{m2} & \cdots & a_{mn}
 \end{bmatrix}
 \begin{bmatrix}
-b_{11} & b_{12} & \cdots & b_{1n} \\
-b_{21} & b_{22} & \cdots & b_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
+b_{11} & b_{12} & \cdots & b_{1n} \
+b_{21} & b_{22} & \cdots & b_{2n} \
+\vdots & \vdots & \ddots & \vdots \
 b_{m1} & b_{m2} & \cdots & b_{mn}
 \end{bmatrix} =
 \begin{bmatrix}
-a_{11}b_{11}+a_{12}b_{21}+\cdots+a_{1n}b_{n1} & a_{11}b_{12}+a_{12}b_{22}+\cdots+a_{1n}b_{n2} & \cdots & a_{11}b_{1n}+a_{12}b_{2n}+\cdots+a_{1n}b_{nn} \\
-a_{21}b_{11}+a_{22}b_{21}+\cdots+a_{2n}b_{n1} & a_{21}b_{12}+a_{22}b_{22}+\cdots+a_{2n}b_{n2} & \cdots & a_{21}b_{1n}+a_{22}b_{2n}+\cdots+a_{2n}b_{nn} \\
-\vdots & \vdots & \ddots & \vdots \\
+a_{11}b_{11}+a_{12}b_{21}+\cdots+a_{1n}b_{n1} & a_{11}b_{12}+a_{12}b_{22}+\cdots+a_{1n}b_{n2} & \cdots & a_{11}b_{1n}+a_{12}b_{2n}+\cdots+a_{1n}b_{nn} \
+a_{21}b_{11}+a_{22}b_{21}+\cdots+a_{2n}b_{n1} & a_{21}b_{12}+a_{22}b_{22}+\cdots+a_{2n}b_{n2} & \cdots & a_{21}b_{1n}+a_{22}b_{2n}+\cdots+a_{2n}b_{nn} \
+\vdots & \vdots & \ddots & \vdots \
 a_{m1}b_{11}+a_{m2}b_{21}+\cdots+a_{mn}b_{n1} & a_{m1}b_{12}+a_{m2}b_{22}+\cdots+a_{mn}b_{n2} & \cdots & a_{m1}b_{1n}+a_{m2}b_{2n}+\cdots+a_{mn}b_{nn}
 \end{bmatrix}
 $$
@@ -241,11 +241,11 @@ $$
 
 $$
 A = \begin{bmatrix}
-1 & 2 \\
+1 & 2 \
 3 & 4
 \end{bmatrix}, \quad
 B = \begin{bmatrix}
-5 & 6 \\
+5 & 6 \
 7 & 8
 \end{bmatrix}
 $$
@@ -254,19 +254,19 @@ $$
 
 $$
 A+B = \begin{bmatrix}
-1 & 2 \\
+1 & 2 \
 3 & 4
 \end{bmatrix} +
 \begin{bmatrix}
-5 & 6 \\
+5 & 6 \
 7 & 8
 \end{bmatrix} =
 \begin{bmatrix}
-1+5 & 2+6 \\
+1+5 & 2+6 \
 3+7 & 4+8
 \end{bmatrix} =
 \begin{bmatrix}
-6 & 8 \\
+6 & 8 \
 10 & 12
 \end{bmatrix}
 $$
@@ -277,11 +277,11 @@ $$
 
 $$
 A = \begin{bmatrix}
-1 & 2 \\
+1 & 2 \
 3 & 4
 \end{bmatrix}, \quad
 B = \begin{bmatrix}
-5 & 6 \\
+5 & 6 \
 7 & 8
 \end{bmatrix}
 $$
@@ -290,19 +290,19 @@ $$
 
 $$
 AB = \begin{bmatrix}
-1 & 2 \\
+1 & 2 \
 3 & 4
 \end{bmatrix}
 \begin{bmatrix}
-5 & 6 \\
+5 & 6 \
 7 & 8
 \end{bmatrix} =
 \begin{bmatrix}
-1 \cdot 5 + 2 \cdot 7 & 1 \cdot 6 + 2 \cdot 8 \\
+1 \cdot 5 + 2 \cdot 7 & 1 \cdot 6 + 2 \cdot 8 \
 3 \cdot 5 + 4 \cdot 7 & 3 \cdot 6 + 4 \cdot 8
 \end{bmatrix} =
 \begin{bmatrix}
-19 & 22 \\
+19 & 22 \
 43 & 50
 \end{bmatrix}
 $$
@@ -313,7 +313,7 @@ $$
 
 $$
 A = \begin{bmatrix}
-2 & 1 \\
+2 & 1 \
 -1 & 2
 \end{bmatrix}
 $$
@@ -330,7 +330,7 @@ $$
 
 $$
 \begin{cases}
-2x + y = 3 \\
+2x + y = 3 \
 x - y = 1
 \end{cases}
 $$
@@ -341,7 +341,7 @@ $$
 
 $$
 \begin{bmatrix}
-2 & 1 & | & 3 \\
+2 & 1 & | & 3 \
 1 & -1 & | & 1
 \end{bmatrix}
 $$
@@ -350,7 +350,7 @@ $$
 
 $$
 \begin{bmatrix}
-1 & -\frac{1}{2} & | & \frac{1}{2} \\
+1 & -\frac{1}{2} & | & \frac{1}{2} \
 0 & 1 & | & \frac{3}{2}
 \end{bmatrix}
 $$
@@ -359,7 +359,7 @@ $$
 
 $$
 \begin{bmatrix}
-1 & 0 & | & 2 \\
+1 & 0 & | & 2 \
 0 & 1 & | & \frac{3}{2}
 \end{bmatrix}
 $$
@@ -378,11 +378,11 @@ $$
 
 $$
 A = \begin{bmatrix}
-1 & 2 \\
+1 & 2 \
 3 & 4
 \end{bmatrix}, \quad
 B = \begin{bmatrix}
-5 & 6 \\
+5 & 6 \
 7 & 8
 \end{bmatrix}
 $$
@@ -393,30 +393,30 @@ $$
 
 $$
 A+B = \begin{bmatrix}
-1 & 2 \\
+1 & 2 \
 3 & 4
 \end{bmatrix} +
 \begin{bmatrix}
-5 & 6 \\
+5 & 6 \
 7 & 8
 \end{bmatrix} =
 \begin{bmatrix}
-6 & 8 \\
+6 & 8 \
 10 & 12
 \end{bmatrix}
 $$
 
 $$
 AB = \begin{bmatrix}
-1 & 2 \\
+1 & 2 \
 3 & 4
 \end{bmatrix}
 \begin{bmatrix}
-5 & 6 \\
+5 & 6 \
 7 & 8
 \end{bmatrix} =
 \begin{bmatrix}
-19 & 22 \\
+19 & 22 \
 43 & 50
 \end{bmatrix}
 $$
@@ -427,7 +427,7 @@ $$
 
 $$
 A = \begin{bmatrix}
-2 & 1 \\
+2 & 1 \
 -1 & 2
 \end{bmatrix}
 $$
@@ -446,7 +446,7 @@ $$
 
 $$
 \begin{cases}
-2x + y = 3 \\
+2x + y = 3 \
 x - y = 1
 \end{cases}
 $$
@@ -459,7 +459,7 @@ $$
 
 $$
 \begin{bmatrix}
-2 & 1 & | & 3 \\
+2 & 1 & | & 3 \
 1 & -1 & | & 1
 \end{bmatrix}
 $$
@@ -468,7 +468,7 @@ $$
 
 $$
 \begin{bmatrix}
-1 & -\frac{1}{2} & | & \frac{1}{2} \\
+1 & -\frac{1}{2} & | & \frac{1}{2} \
 0 & 1 & | & \frac{3}{2}
 \end{bmatrix}
 $$
@@ -477,7 +477,7 @@ $$
 
 $$
 \begin{bmatrix}
-1 & 0 & | & 2 \\
+1 & 0 & | & 2 \
 0 & 1 & | & \frac{3}{2}
 \end{bmatrix}
 $$

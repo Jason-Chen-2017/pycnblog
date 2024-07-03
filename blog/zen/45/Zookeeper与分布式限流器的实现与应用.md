@@ -86,7 +86,7 @@ Zookeeper可以作为分布式限流器中的共享资源计数器，通过Zooke
 $$
 \text{限流器状态} = \left\{
 \begin{array}{ll}
-\text{允许请求} & \text{计数器值} > \text{阈值} \\
+\text{允许请求} & \text{计数器值} > \text{阈值} \
 \text{拒绝请求} & \text{计数器值} \leq \text{阈值}
 \end{array}
 \right.

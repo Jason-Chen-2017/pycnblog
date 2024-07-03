@@ -39,7 +39,7 @@ Parti的核心算法可以概括为以下几个关键步骤:
 将输入文本$X=(x_1,\cdots,x_n)$通过Embedding层和Positional Encoding映射为隐向量序列$H^0=(h^0_1,\cdots,h^0_n)$。然后,通过堆叠的Transformer Block对$H^0$进行编码:
 $$
 \begin{aligned}
-H^l &= \text{TransformerBlock}(H^{l-1}), \quad l=1,\cdots,L \\
+H^l &= \text{TransformerBlock}(H^{l-1}), \quad l=1,\cdots,L \
 \text{where}~~ H^l &= (h^l_1,\cdots,h^l_n)
 \end{aligned}
 $$
@@ -64,7 +64,7 @@ Prefix LM是一种面向任务的微调方法。它在Decoder的输入中添加�
 开始时,Decoder的输入是一个特殊的起始符<BOS>。之后,模型根据当前的隐状态预测下一个单词的概率分布,并采样生成实际的单词。生成的单词会作为下一时刻Decoder的输入,直到生成终止符<EOS>或达到最大长度为止。整个解码过程可以表示为:
 $$
 \begin{aligned}
-\hat{y}_t &= \arg\max_{y_t} P(y_t|y_{<t},X) \\
+\hat{y}_t &= \arg\max_{y_t} P(y_t|y_{<t},X) \
 &= \arg\max_{y_t} \text{softmax}(\text{Linear}(h^L_t))
 \end{aligned}
 $$
@@ -94,8 +94,8 @@ Parti可以应用于以下几个主要领域:
 Parti的数学模型可以用如下公式表示:
 $$
 \begin{aligned}
-P(Y|X) &= \prod_{t=1}^T P(y_t|y_{<t},X) \\
-&= \prod_{t=1}^T \text{softmax}(\text{Linear}(h^L_t)) \\
+P(Y|X) &= \prod_{t=1}^T P(y_t|y_{<t},X) \
+&= \prod_{t=1}^T \text{softmax}(\text{Linear}(h^L_t)) \
 \text{where}~~ h^L_t &= \text{Decoder}(\text{Encoder}(X), y_{<t})
 \end{aligned}
 $$
@@ -111,9 +111,9 @@ $$
 为了优化模型参数,我们需要计算损失函数$\mathcal{L}$对各个参数的梯度。以Decoder的线性层参数$W$为例,梯度计算如下:
 $$
 \begin{aligned}
-\frac{\partial\mathcal{L}}{\partial W} &= \sum_{(X,Y)\in\mathcal{D}} \frac{\partial\log P(Y|X)}{\partial W} \\
-&= \sum_{(X,Y)\in\mathcal{D}} \sum_{t=1}^T \frac{\partial\log P(y_t|y_{<t},X)}{\partial W} \\
-&= \sum_{(X,Y)\in\mathcal{D}} \sum_{t=1}^T \frac{\partial\log \text{softmax}(\text{Linear}(h^L_t))}{\partial W} \\
+\frac{\partial\mathcal{L}}{\partial W} &= \sum_{(X,Y)\in\mathcal{D}} \frac{\partial\log P(Y|X)}{\partial W} \
+&= \sum_{(X,Y)\in\mathcal{D}} \sum_{t=1}^T \frac{\partial\log P(y_t|y_{<t},X)}{\partial W} \
+&= \sum_{(X,Y)\in\mathcal{D}} \sum_{t=1}^T \frac{\partial\log \text{softmax}(\text{Linear}(h^L_t))}{\partial W} \
 &= \sum_{(X,Y)\in\mathcal{D}} \sum_{t=1}^T (y_t - \hat{y}_t) \cdot (h^L_t)^T
 \end{aligned}
 $$
@@ -139,7 +139,7 @@ P(y_1|X) = \text{softmax}(\text{Linear}(h'^L_1))
 $$
 其中$h'^L_1=\text{Decoder}(H^L,<BOS>)$。假设采样得到的单词是"mat",则在t=2时刻,Decoder的输入为"mat",输出为:
 $$
-P(y_2|y_1,X) = \text{softmax}(\text{Linear}(h'^L_2)) \\
+P(y_2|y_1,X) = \text{softmax}(\text{Linear}(h'^L_2)) \
 \text{where}~~ h'^L_2=\text{Decoder}(H^L,\text{mat})
 $$
 

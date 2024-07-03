@@ -174,8 +174,8 @@ $$
 我们的目标是在给定风险水平 $\sigma_0$ 下,最大化投资组合的预期收益率:
 
 $$
-\max_{w} \quad w^T r \\
-\text{s.t.} \quad w^T \Sigma w \leq \sigma_0^2 \\
+\max_{w} \quad w^T r \
+\text{s.t.} \quad w^T \Sigma w \leq \sigma_0^2 \
 \sum_{i=1}^n w_i = 1
 $$
 
@@ -239,6 +239,6 @@ $N(\cdot)$ 为标准正态分布函数。
 
 $$
 r = \begin{bmatrix}
-0.12\\
-0.15\\
+0.12\
+0.15\
 0.10

@@ -68,7 +68,7 @@ Cascade R-CNN使用smooth L1损失函数来训练回归器。smooth L1损失函�
 $$
 smooth_{L_1}(x) =
 \begin{cases}
-0.5x^2, & \text{if } |x| < 1 \\
+0.5x^2, & \text{if } |x| < 1 \
 |x| - 0.5, & \text{otherwise}
 \end{cases}
 $$

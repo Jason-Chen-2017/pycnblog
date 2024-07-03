@@ -154,7 +154,7 @@ graph TD
    特征级融合直接将不同模态的表示向量进行拼接或加权求和,得到融合后的多模态表示。
 
    $$\boldsymbol{h}_\text{fused} = \begin{cases}
-   \text{Concat}(\boldsymbol{h}_\text{text}, \boldsymbol{h}_\text{image}) \\
+   \text{Concat}(\boldsymbol{h}_\text{text}, \boldsymbol{h}_\text{image}) \
    \alpha \boldsymbol{h}_\text{text} + \beta \boldsymbol{h}_\text{image}
    \end{cases}$$
 

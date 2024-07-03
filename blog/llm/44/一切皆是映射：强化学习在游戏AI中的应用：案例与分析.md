@@ -76,9 +76,9 @@
 
 $$
 \begin{aligned}
-& S_t = f(S_{t-1}, A_{t-1}, W) \\
-& A_t = \pi(A_t|S_t, \theta) \\
-& R_t = g(S_t, A_t, W) \\
+& S_t = f(S_{t-1}, A_{t-1}, W) \
+& A_t = \pi(A_t|S_t, \theta) \
+& R_t = g(S_t, A_t, W) \
 & S_{t+1} = h(S_t, A_t, W)
 \end{aligned}
 $$

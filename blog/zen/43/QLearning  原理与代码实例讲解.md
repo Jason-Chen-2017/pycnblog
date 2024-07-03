@@ -108,13 +108,13 @@ $$Q(s, a) \leftarrow Q(s, a) + \alpha [R(s, a) + \gamma \max_{a' \in A} Q(s', a'
 $$
 \begin{array}{|c|c|c|c|c|}
 \hline
-s & u & d & l & r \\
+s & u & d & l & r \
 \hline
-s_1 & -1 & -1 & -1 & -1 \\
+s_1 & -1 & -1 & -1 & -1 \
 \hline
-s_2 & -1 & -1 & -1 & -1 \\
+s_2 & -1 & -1 & -1 & -1 \
 \hline
-s_3 & -1 & -1 & -1 & 1 \\
+s_3 & -1 & -1 & -1 & 1 \
 \hline
 \end{array}
 $$

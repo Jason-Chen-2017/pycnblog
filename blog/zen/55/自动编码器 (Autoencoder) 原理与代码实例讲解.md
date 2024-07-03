@@ -101,7 +101,7 @@ $$
 
 $$
 \begin{aligned}
-z &= f(x) \\
+z &= f(x) \
 \hat{x} &= g(z)
 \end{aligned}
 $$
@@ -162,7 +162,7 @@ $$
 
 $$
 \begin{aligned}
-h_1 &= \sigma(W_1 x + b_1) \\
+h_1 &= \sigma(W_1 x + b_1) \
 z &= \sigma(W_2 h_1 + b_2)
 \end{aligned}
 $$
@@ -171,7 +171,7 @@ $$
 
 $$
 \begin{aligned}
-h_2 &= \sigma(W_3 z + b_3) \\
+h_2 &= \sigma(W_3 z + b_3) \
 \hat{x} &= \sigma(W_4 h_2 + b_4)
 \end{aligned}
 $$

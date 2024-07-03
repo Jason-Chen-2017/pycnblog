@@ -72,8 +72,8 @@ LLaMA 的另一个预训练任务是句子顺序预测（NSP）。NSP 任务要�
 
 $$
 \begin{aligned}
-q_i &= W_q x_i \\
-k_i &= W_k x_i \\
+q_i &= W_q x_i \
+k_i &= W_k x_i \
 v_i &= W_v x_i
 \end{aligned}
 $$

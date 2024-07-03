@@ -162,8 +162,8 @@ graph TD
 
 $$
 \begin{aligned}
-\max \quad & \sum_{i=1}^n v_i x_i \\
-\text{s.t.}\quad & \sum_{i=1}^n w_i x_i \leq W\\
+\max \quad & \sum_{i=1}^n v_i x_i \
+\text{s.t.}\quad & \sum_{i=1}^n w_i x_i \leq W\
 & x_i \in \{0, 1\}, \quad i = 1, 2, \cdots, n
 \end{aligned}
 $$
@@ -174,8 +174,8 @@ $$
 
 $$
 \begin{aligned}
-\max \quad & f(x) = \sum_{i=1}^n v_i x_i \\
-\text{s.t.}\quad & g(x) = \sum_{i=1}^n w_i x_i \leq W\\
+\max \quad & f(x) = \sum_{i=1}^n v_i x_i \
+\text{s.t.}\quad & g(x) = \sum_{i=1}^n w_i x_i \leq W\
 & x_i \in \{0, 1\}, \quad i = 1, 2, \cdots, n
 \end{aligned}
 $$

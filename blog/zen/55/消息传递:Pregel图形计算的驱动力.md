@@ -88,7 +88,7 @@ $$P: G \rightarrow G'$$
   $$
   I(v) =
   \begin{cases}
-  0 & v = s \\
+  0 & v = s \
   \infty & v \neq s
   \end{cases}
   $$
@@ -105,7 +105,7 @@ $$P: G \rightarrow G'$$
 $$
 S^{(i+1)}(v) =
 \begin{cases}
-C(v) & S^{(i)}(v) \neq C(v) \\
+C(v) & S^{(i)}(v) \neq C(v) \
 S^{(i)}(v) & S^{(i)}(v) = C(v)
 \end{cases}
 $$

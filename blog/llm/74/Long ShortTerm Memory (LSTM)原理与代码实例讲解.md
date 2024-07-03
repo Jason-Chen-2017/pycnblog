@@ -91,12 +91,12 @@ LSTM的数学模型如下：
 
 $$
 \begin{aligned}
-&\text{遗忘门:} \\
-&\text{遗忘门状态}: f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \\
-&\text{遗忘门输入}: i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \\
-&\text{遗忘门输出}: g_t = \tanh(W_g \cdot [h_{t-1}, x_t] + b_g) \\
-&\text{存储单元更新}: c_t = f_t \cdot c_{t-1} + i_t \cdot g_t \\
-&\text{输出门控制}: o_t = \sigma(W_o \cdot [h_{t-1}, \tanh(c_t)] + b_o) \\
+&\text{遗忘门:} \
+&\text{遗忘门状态}: f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \
+&\text{遗忘门输入}: i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \
+&\text{遗忘门输出}: g_t = \tanh(W_g \cdot [h_{t-1}, x_t] + b_g) \
+&\text{存储单元更新}: c_t = f_t \cdot c_{t-1} + i_t \cdot g_t \
+&\text{输出门控制}: o_t = \sigma(W_o \cdot [h_{t-1}, \tanh(c_t)] + b_o) \
 &\text{隐藏状态更新}: h_t = o_t \cdot \tanh(c_t)
 \end{aligned}
 $$

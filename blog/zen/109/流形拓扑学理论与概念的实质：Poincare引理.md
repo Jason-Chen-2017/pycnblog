@@ -75,8 +75,8 @@ $$
 
 $$
 \begin{aligned}
-(K\omega)_1&=\int_0^1(3tx_1^2x_1+tx_2^2)\,dt=x_1^3+\frac{1}{3}x_2^2\\
-(K\omega)_2&=\int_0^1(tx_3^2)\,dt=\frac{1}{2}x_3^2\\
+(K\omega)_1&=\int_0^1(3tx_1^2x_1+tx_2^2)\,dt=x_1^3+\frac{1}{3}x_2^2\
+(K\omega)_2&=\int_0^1(tx_3^2)\,dt=\frac{1}{2}x_3^2\
 (K\omega)_3&=\int_0^1(2tx_3x_1)\,dt=x_1x_3
 \end{aligned}
 $$

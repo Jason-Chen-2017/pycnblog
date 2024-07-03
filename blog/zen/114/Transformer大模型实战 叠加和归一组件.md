@@ -99,7 +99,7 @@ $$
 层规范化的目标是标准化每一层的输入和输出：
 
 $$
-\hat{x} = \frac{x - \mu_x}{\sqrt{\sigma_x^2 + \epsilon}} \\
+\hat{x} = \frac{x - \mu_x}{\sqrt{\sigma_x^2 + \epsilon}} \
 \text{Normalized\_Output} = \hat{x} \times \gamma + \beta
 $$
 

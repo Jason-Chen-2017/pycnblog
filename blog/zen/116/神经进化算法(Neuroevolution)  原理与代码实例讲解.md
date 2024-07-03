@@ -182,5 +182,5 @@ graph TD
 为了形式化描述神经进化算法,我们需要构建数学模型。假设我们要优化的神经网络为$f(x; \theta)$,其中$x$为输入,$\theta$为所有可训练参数(包括权重和结构参数)的集合。我们的目标是找到最优参数$\theta^*$,使得在训练数据或任务上的某个性能指标$J(f(x; \theta))$最大化(或最小化)。
 
 $$\begin{align*}
-\theta^* &= \underset{\theta}{\operatorname{argmax}}\ J(f(x; \theta)) \\
+\theta^* &= \underset{\theta}{\operatorname{argmax}}\ J(f(x; \theta)) \
          &= \underset{\theta}{\operatorname{argmax}}\ \math

@@ -189,8 +189,8 @@ graph TD
 大型语言模型通常采用自注意力机制(Self-Attention)和Transformer架构,能够有效捕获长距离依赖关系。其中,自注意力机制是模型的核心,可以用以下公式表示:
 
 $$\begin{aligned}
-\text{Attention}(Q, K, V) &= \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V \\
-\text{MultiHead}(Q, K, V) &= \text{Concat}(head_1, \ldots, head_h)W^O\\
+\text{Attention}(Q, K, V) &= \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V \
+\text{MultiHead}(Q, K, V) &= \text{Concat}(head_1, \ldots, head_h)W^O\
 \text{where}&\; \text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
 \end{aligned}$$
 

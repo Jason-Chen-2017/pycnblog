@@ -62,8 +62,8 @@ Transformer 的数学模型是：
 
 $$
 \begin{aligned}
-&\text{MultiHead}(Q, K, V ) = \text{Concat}(\text{head}_1, ..., \text{head}_h)W_O \\
-&\text{where} \quad \text{head}_i = \text{Attention}(QW_{Qi}, KW_{Ki}, VW_{Vi}) \\
+&\text{MultiHead}(Q, K, V ) = \text{Concat}(\text{head}_1, ..., \text{head}_h)W_O \
+&\text{where} \quad \text{head}_i = \text{Attention}(QW_{Qi}, KW_{Ki}, VW_{Vi}) \
 &\text{and} \quad \text{Attention}(Q, K, V ) = \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V
 \end{aligned}
 $$
@@ -72,7 +72,7 @@ $$
 
 $$
 \begin{aligned}
-&\text{maximize} \quad \sum_{i=1}^{n}\log P(w_i | w_{<i}) \\
+&\text{maximize} \quad \sum_{i=1}^{n}\log P(w_i | w_{<i}) \
 &\text{where} \quad P(w_i | w_{<i}) = \text{softmax}(W_h h_i + b)
 \end{aligned}
 $$

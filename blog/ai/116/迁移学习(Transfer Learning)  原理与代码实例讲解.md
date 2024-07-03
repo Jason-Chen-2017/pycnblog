@@ -120,8 +120,8 @@
 
 $$
 \begin{aligned}
-& \mathcal{D}_S = \{ (x_i^S, y_i^S) \}_{i=1}^{n_S} \\
-& \mathcal{D}_T = \{ (x_i^T, y_i^T) \}_{i=1}^{n_T} \\
+& \mathcal{D}_S = \{ (x_i^S, y_i^S) \}_{i=1}^{n_S} \
+& \mathcal{D}_T = \{ (x_i^T, y_i^T) \}_{i=1}^{n_T} \
 & \mathcal{T}: \mathcal{D}_S \rightarrow \mathcal{D}_T
 \end{aligned}
 $$

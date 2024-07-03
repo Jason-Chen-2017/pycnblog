@@ -146,7 +146,7 @@ $$
 对$f(x)$求导，设置导数等于0来寻找最小值：
 
 $$
-\frac{\partial \mathcal{L}}{\partial w} = \frac{2}{n}\sum_{i=1}^{n}(wx_i + b - y_i)x_i = 0 \\
+\frac{\partial \mathcal{L}}{\partial w} = \frac{2}{n}\sum_{i=1}^{n}(wx_i + b - y_i)x_i = 0 \
 \frac{\partial \mathcal{L}}{\partial b} = \frac{2}{n}\sum_{i=1}^{n}(wx_i + b - y_i) = 0
 $$
 
@@ -165,7 +165,7 @@ $$
 通过求导并设置导数为0，可以得到最小二乘解：
 
 $$
-w = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^{n}(x_i - \bar{x})^2} \\
+w = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^{n}(x_i - \bar{x})^2} \
 b = \bar{y} - w\bar{x}
 $$
 

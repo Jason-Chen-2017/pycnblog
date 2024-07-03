@@ -86,7 +86,7 @@ SVM的数学模型可以表示为：
 
 $$
 \begin{align*}
-\min_{\boldsymbol{w}, b} & \quad \frac{1}{2} \|\boldsymbol{w}\|^2 \\
+\min_{\boldsymbol{w}, b} & \quad \frac{1}{2} \|\boldsymbol{w}\|^2 \
 \text{s.t.} & \quad y_i (\boldsymbol{w} \cdot \boldsymbol{x}_i + b) \geq 1, \quad \forall i
 \end{align*}
 $$

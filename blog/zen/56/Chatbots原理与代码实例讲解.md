@@ -103,7 +103,7 @@ $$
 其中$Q$、$K$、$V$分别为查询向量、键向量和值向量，$d_k$为向量维度。
 #### 4.2.2 Multi-Head Attention
 $$
-\mathrm{MultiHead}(Q, K, V) = \mathrm{Concat}(\mathrm{head_1}, ..., \mathrm{head_h})W^O \\
+\mathrm{MultiHead}(Q, K, V) = \mathrm{Concat}(\mathrm{head_1}, ..., \mathrm{head_h})W^O \
 \mathrm{head_i} = \mathrm{Attention}(QW_i^Q, KW_i^K, VW_i^V)
 $$
 其中$W_i^Q$、$W_i^K$、$W_i^V$为线性变换矩阵，$W^O$为输出线性变换矩阵。

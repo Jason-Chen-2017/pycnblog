@@ -185,5 +185,5 @@ LSTM的数学模型可以表示为以下形式:
 
 $$
 \begin{aligned}
-f_t &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \\
+f_t &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \
 i_t &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i

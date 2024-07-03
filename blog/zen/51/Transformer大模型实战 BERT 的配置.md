@@ -61,8 +61,8 @@ graph LR
 注意力机制是Transformer模型的核心,它能够捕捉输入序列中任意两个位置之间的长程依赖关系。具体来说,对于序列中的每个词,注意力机制会计算其与所有其他词的注意力权重,然后将所有词的词嵌入加权求和,作为该词的注意力表示。
 
 $$\begin{aligned}
-\text{Attention}(Q, K, V) &= \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V \\
-\text{MultiHead}(Q, K, V) &= \text{Concat}(head_1, ..., head_h)W^O\\
+\text{Attention}(Q, K, V) &= \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V \
+\text{MultiHead}(Q, K, V) &= \text{Concat}(head_1, ..., head_h)W^O\
 \text{where } head_i &= \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
 \end{aligned}$$
 
@@ -73,7 +73,7 @@ $$\begin{aligned}
 由于Transformer模型没有捕捉序列顺序的机制,因此需要为序列中的每个词添加位置编码,以区分不同位置的词。位置编码是一个与词嵌入同维度的向量,可以通过不同的函数生成,如三角函数等。在计算注意力时,位置编码会被加到词嵌入上。
 
 $$\begin{aligned}
-\text{PE}_{(pos, 2i)} &= \sin(pos/10000^{2i/d_{model}}) \\
+\text{PE}_{(pos, 2i)} &= \sin(pos/10000^{2i/d_{model}}) \
 \text{PE}_{(pos, 2i+1)} &= \cos(pos/10000^{2i/d_{model}})
 \end{aligned}$$
 
@@ -128,7 +128,7 @@ $$X' = E^X + E^{pos}$$
 接下来,我们对$X'$进行多头注意力计算:
 
 $$\begin{aligned}
-\text{head}_i &= \text{Attention}(X'W_i^Q, X'W_i^K, X'W_i^V) \\
+\text{head}_i &= \text{Attention}(X'W_i^Q, X'W_i^K, X'W_i^V) \
 \text{MultiHead}(X') &= \text{Concat}(\text{head}_1, ..., \text{head}_h)W^O
 \end{aligned}$$
 
@@ -147,7 +147,7 @@ $$\text{FFN}(\text{MultiHead}(X')) = \max(0, \text{MultiHead}(X')W_1 + b_1)W_2 +
 最后,我们对前馈神经网络的输出进行残差连接和层归一化:
 
 $$\begin{aligned}
-Z' &= \text{LayerNorm}(\text{FFN}(\text{MultiHead}(X')) + X') \\
+Z' &= \text{LayerNorm}(\text{FFN}(\text{MultiHead}(X')) + X') \
 Z &= \text{LayerNorm}(Z' + \text{MultiHead}(Z'))
 \end{aligned}$$
 

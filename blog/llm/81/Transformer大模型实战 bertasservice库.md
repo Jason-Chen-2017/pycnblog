@@ -113,9 +113,9 @@ BERT模型的核心是Transformer编码器，其数学模型如下：
 
 $$
 \begin{aligned}
-&\text{PositionalEncoding}(x) = PE_{(0)}(pos) + \text{PositionalEncoding}(pos)\cdot \mathbb{W}_{pos}\\
-&\text{MultiHeadAttention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) \cdot V\\
-&\text{EncoderLayer}(x) = \text{LayerNorm}(x + \text{MultiHeadAttention}(Q, K, V)) + \text{LayerNorm}(x + \text{FeedForwardNetwork}(x))\\
+&\text{PositionalEncoding}(x) = PE_{(0)}(pos) + \text{PositionalEncoding}(pos)\cdot \mathbb{W}_{pos}\
+&\text{MultiHeadAttention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) \cdot V\
+&\text{EncoderLayer}(x) = \text{LayerNorm}(x + \text{MultiHeadAttention}(Q, K, V)) + \text{LayerNorm}(x + \text{FeedForwardNetwork}(x))\
 &\text{Transformer}(x) = \text{EncoderLayer}(x)
 \end{aligned}
 $$

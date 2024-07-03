@@ -109,9 +109,9 @@ BiSeNet的数学模型可以表示为：
 
 $$
 \begin{aligned}
-f(x) &= f_c(x) + f_u(x) \\
-f_c(x) &= h^{(1)}(h^{(0)}(h^{(-1)}(x))) \\
-f_u(x) &= h^{(2)}(h^{(1)}(h^{(-1)}(x))) \\
+f(x) &= f_c(x) + f_u(x) \
+f_c(x) &= h^{(1)}(h^{(0)}(h^{(-1)}(x))) \
+f_u(x) &= h^{(2)}(h^{(1)}(h^{(-1)}(x))) \
 \end{aligned}
 $$
 
@@ -129,8 +129,8 @@ $$
 
 $$
 \begin{aligned}
-h^{(i)}(x) &= \sigma(W^{(i)}h^{(i-1)}(x) + b^{(i)}) \\
-W^{(i)} &= \frac{1}{\sqrt{F_{in}F_{out}}}W^{(i-1)} \\
+h^{(i)}(x) &= \sigma(W^{(i)}h^{(i-1)}(x) + b^{(i)}) \
+W^{(i)} &= \frac{1}{\sqrt{F_{in}F_{out}}}W^{(i-1)} \
 \end{aligned}
 $$
 

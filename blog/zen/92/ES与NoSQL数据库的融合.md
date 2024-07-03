@@ -145,8 +145,8 @@ $$
 
 $$
 \begin{align*}
-S(t) &= F(t) + \Delta S(t) \\
-\Delta S(t) &= S(t) - S(t-1) \\
+S(t) &= F(t) + \Delta S(t) \
+\Delta S(t) &= S(t) - S(t-1) \
 &= \sum_{i=1}^{N} \Delta S_i(t)
 \end{align*}
 $$
@@ -159,7 +159,7 @@ $$
 
 $$
 \begin{align*}
-I(t) &= G(t) \times H(t) \\
+I(t) &= G(t) \times H(t) \
 I(t) &= \sum_{i=1}^{G(t)} h_i(t)
 \end{align*}
 $$
@@ -174,8 +174,8 @@ $$
 
 $$
 \begin{align*}
-\Delta S(1) &= 1500 - 800 = 700 \\
-\Delta S(0) &= 800 - 800 = 0 \\
+\Delta S(1) &= 1500 - 800 = 700 \
+\Delta S(0) &= 800 - 800 = 0 \
 I(1) &= 1200 \times 0.85 = 1020
 \end{align*}
 $$

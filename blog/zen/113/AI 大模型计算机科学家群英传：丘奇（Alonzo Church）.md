@@ -78,19 +78,19 @@ graph TD
    - 定义一个函数`inc`,它接受一个数字n并返回n+1:
 
         $$\begin{aligned}
-        inc &= \lambda n.(\lambda f. \lambda x. f(f\,x))(\lambda g.\lambda y. (g\,(g\,y)))\\
-            &= \lambda n.(\lambda f.\lambda x.f(f\,x))(\lambda y.((\lambda z.z\,z)\,y))\\
+        inc &= \lambda n.(\lambda f. \lambda x. f(f\,x))(\lambda g.\lambda y. (g\,(g\,y)))\
+            &= \lambda n.(\lambda f.\lambda x.f(f\,x))(\lambda y.((\lambda z.z\,z)\,y))\
             &= \lambda n.(\lambda f.\lambda x.f(f\,x))(\lambda y.y\,y)
         \end{aligned}$$
 
    - 应用`inc`函数:
 
         $$\begin{aligned}
-        (inc\,3) &= (\lambda n.(\lambda f.\lambda x.f(f\,x))(\lambda y.y\,y))\,3\\
-                &= (\lambda f.\lambda x.f(f\,x))(\lambda y.y\,y)\\
-                &= \lambda x.(\lambda y.y\,y)((\lambda y.y\,y)\,x)\\
-                &= \lambda x.((\lambda y.y\,y)\,x)\,((\lambda y.y\,y)\,x)\\
-                &= \lambda x.x\,x\\
+        (inc\,3) &= (\lambda n.(\lambda f.\lambda x.f(f\,x))(\lambda y.y\,y))\,3\
+                &= (\lambda f.\lambda x.f(f\,x))(\lambda y.y\,y)\
+                &= \lambda x.(\lambda y.y\,y)((\lambda y.y\,y)\,x)\
+                &= \lambda x.((\lambda y.y\,y)\,x)\,((\lambda y.y\,y)\,x)\
+                &= \lambda x.x\,x\
                 &= 4
         \end{aligned}$$
 
@@ -110,7 +110,7 @@ graph TD
 3. **示例**
    - 定义加法函数:
      $$\begin{aligned}
-     \text{Add}(x, y) &= \mu r.\exists s.\forall t.((t=0 \land r=y) \lor \\
+     \text{Add}(x, y) &= \mu r.\exists s.\forall t.((t=0 \land r=y) \lor \
                        &\qquad\qquad\qquad(t>0 \land (\exists u,v.(t=\text{Succ}(u) \land r=\text{Succ}(v) \land u=s \land v=\text{Add}(x, s)))))
      \end{aligned}$$
 
@@ -157,7 +157,7 @@ graph TD
 例如,加法函数可以通过原始递归的方式定义:
 
 $$\begin{aligned}
-\text{Add}(x, 0) &= x\\
+\text{Add}(x, 0) &= x\
 \text{Add}(x, \text{Succ}(y)) &= \text{Succ}(\text{Add}(x, y))
 \end{aligned}$$
 
@@ -172,12 +172,12 @@ $$\begin{aligned}
 例如,我们可以推导出之前定义的`inc`函数的计算过程:
 
 $$\begin{aligned}
-(inc\,3) &= (\lambda n.(\lambda f.\lambda x.f(f\,x))(\lambda y.y\,y))\,3\\
-         &\stackrel{\beta}{\rightarrow} (\lambda f.\lambda x.f(f\,x))(\lambda y.y\,y)\\
-         &\stackrel{\beta}{\rightarrow} \lambda x.(\lambda y.y\,y)((\lambda y.y\,y)\,x)\\
-         &\stackrel{\beta}{\rightarrow} \lambda x.((\lambda y.y\,y)\,x)\,((\lambda y.y\,y)\,x)\\
-         &\stackrel{\beta}{\rightarrow} \lambda x.x\,x\\
-         &\stackrel{\beta}{\rightarrow} 3\,3\\
+(inc\,3) &= (\lambda n.(\lambda f.\lambda x.f(f\,x))(\lambda y.y\,y))\,3\
+         &\stackrel{\beta}{\rightarrow} (\lambda f.\lambda x.f(f\,x))(\lambda y.y\,y)\
+         &\stackrel{\beta}{\rightarrow} \lambda x.(\lambda y.y\,y)((\lambda y.y\,y)\,x)\
+         &\stackrel{\beta}{\rightarrow} \lambda x.((\lambda y.y\,y)\,x)\,((\lambda y.y\,y)\,x)\
+         &\stackrel{\beta}{\rightarrow} \lambda x.x\,x\
+         &\stackrel{\beta}{\rightarrow} 3\,3\
          &= 4
 \end{aligned}$$
 
@@ -190,8 +190,8 @@ $$\begin{aligned}
 例如,我们可以推导出加法函数的定义:
 
 $$\begin{aligned}
-\text{Add}(x, y) &= \mu r.\exists s.\forall t.((t=0 \land r=y) \lor \\
-                 &\qquad\qquad\qquad(t>0 \land (\exists u,v.(t=\text{Succ}(u) \land r=\text{Succ}(v) \land u=s \land v=\text{Add}(x, s)))))\\
-                 &= \text{the least } r \text{ such that for all } t,\\
-                 &\qquad\text{if } t=0 \text{ then } r=y,\\
+\text{Add}(x, y) &= \mu r.\exists s.\forall t.((t=0 \land r=y) \lor \
+                 &\qquad\qquad\qquad(t>0 \land (\exists u,v.(t=\text{Succ}(u) \land r=\text{Succ}(v) \land u=s \land v=\text{Add}(x, s)))))\
+                 &= \text{the least } r \text{ such that for all } t,\
+                 &\qquad\text{if } t=0 \text{ then } r=y,\
                  &\qquad\text{if } t

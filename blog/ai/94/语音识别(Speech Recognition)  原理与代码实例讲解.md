@@ -193,7 +193,7 @@
 
 $$
 \begin{aligned}
-P(\mathbf{X}|\mathbf{Y}) &= \prod_{t=1}^T p(\mathbf{x}_t|\mathbf{y}_t) \\
+P(\mathbf{X}|\mathbf{Y}) &= \prod_{t=1}^T p(\mathbf{x}_t|\mathbf{y}_t) \
 &= p(\mathbf{x}_1|\mathbf{y}_1) \times p(\mathbf{x}_2|\mathbf{y}_2) \times \cdots \times p(\mathbf{x}_T|\mathbf{y}_T)
 \end{aligned}
 $$
@@ -206,7 +206,7 @@ $$
 
 $$
 \begin{aligned}
-P(\mathbf{Y}) &= \prod_{t=1}^T p(y_t|\mathbf{Y}_{t-1}) \\
+P(\mathbf{Y}) &= \prod_{t=1}^T p(y_t|\mathbf{Y}_{t-1}) \
 &= p(y_1|\mathbf{Y}_{0}) \times p(y_2|\mathbf{Y}_{1}) \times \cdots \times p(y_T|\mathbf{Y}_{T-1})
 \end{aligned}
 $$
@@ -219,7 +219,7 @@ $$
 
 $$
 \begin{aligned}
-P(\mathbf{Y}|\mathbf{X}) &= \prod_{t=1}^T p(y_t|\mathbf{X}_{t-1}, \mathbf{Y}_{t-1}) \\
+P(\mathbf{Y}|\mathbf{X}) &= \prod_{t=1}^T p(y_t|\mathbf{X}_{t-1}, \mathbf{Y}_{t-1}) \
 &= p(y_1|\mathbf{X}_{0}, \mathbf{Y}_{0}) \times p(y_2|\mathbf{X}_{1}, \mathbf{Y}_{1}) \times \cdots \times p(y_T|\mathbf{X}_{T-1}, \mathbf{Y}_{T-1})
 \end{aligned}
 $$

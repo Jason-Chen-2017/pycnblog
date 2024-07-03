@@ -86,8 +86,8 @@ GPT模型是一种基于Transformer的生成式模型，其核心思想是使用
 
 $$
 \begin{align*}
-\hat{y} &= \text{Generator}(x) \\
-L &= \text{Loss}(y, \hat{y}) \\
+\hat{y} &= \text{Generator}(x) \
+L &= \text{Loss}(y, \hat{y}) \
 \theta &= \text{Optimizer}(\theta, L)
 \end{align*}
 $$

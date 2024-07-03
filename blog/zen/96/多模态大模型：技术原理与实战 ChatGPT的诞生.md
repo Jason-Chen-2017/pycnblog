@@ -186,10 +186,10 @@ graph
 
 ```latex
 \begin{align*}
-f_{\text{feature}}(x_{\text{txt}}, x_{\text{img}}, x_{\text{vid}}, x_{\text{aud}}) &= \text{feature\_extraction}(x_{\text{txt}}, x_{\text{img}}, x_{\text{vid}}, x_{\text{aud}}) \\
-F_{\text{fusion}}(f_{\text{txt}}, f_{\text{img}}, f_{\text{vid}}, f_{\text{aud}}) &= \text{fusion\_method}(f_{\text{txt}}, f_{\text{img}}, f_{\text{vid}}, f_{\text{aud}}) \\
-F_{\text{pretrain}}(F_{\text{fusion}}) &= \text{pretrain\_model}(F_{\text{fusion}}) \\
-F_{\text{finetune}}(F_{\text{pretrain}}) &= \text{finetune\_model}(F_{\text{pretrain}}) \\
+f_{\text{feature}}(x_{\text{txt}}, x_{\text{img}}, x_{\text{vid}}, x_{\text{aud}}) &= \text{feature\_extraction}(x_{\text{txt}}, x_{\text{img}}, x_{\text{vid}}, x_{\text{aud}}) \
+F_{\text{fusion}}(f_{\text{txt}}, f_{\text{img}}, f_{\text{vid}}, f_{\text{aud}}) &= \text{fusion\_method}(f_{\text{txt}}, f_{\text{img}}, f_{\text{vid}}, f_{\text{aud}}) \
+F_{\text{pretrain}}(F_{\text{fusion}}) &= \text{pretrain\_model}(F_{\text{fusion}}) \
+F_{\text{finetune}}(F_{\text{pretrain}}) &= \text{finetune\_model}(F_{\text{pretrain}}) \
 y &= \text{inference}(F_{\text{finetune}}(x_{\text{txt}}, x_{\text{img}}, x_{\text{vid}}, x_{\text{aud}}))
 \end{align*}
 ```

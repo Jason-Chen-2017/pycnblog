@@ -96,7 +96,7 @@ Pregel的数学模型可以描述为：
 
 $$
 \begin{align*}
-M_{t+1} &= M_t + f(M_t, g(x_i)) \\
+M_{t+1} &= M_t + f(M_t, g(x_i)) \
 \end{align*}
 $$
 
@@ -110,7 +110,7 @@ PageRank算法的目标是计算图中节点的排名。其迭代公式如下：
 
 $$
 \begin{align*}
-r_i(t+1) &= \frac{\alpha}{N} + (1-\alpha)\sum_{j \in \text{邻居}} \frac{r_j(t)}{\text{度数}(j)} \\
+r_i(t+1) &= \frac{\alpha}{N} + (1-\alpha)\sum_{j \in \text{邻居}} \frac{r_j(t)}{\text{度数}(j)} \
 \end{align*}
 $$
 
@@ -120,7 +120,7 @@ $$
 
 $$
 \begin{align*}
-r_i(t+1) &= r_i(t) + \frac{\alpha}{N} + (1-\alpha)\sum_{j \in \text{邻居}} \frac{r_j(t)}{\text{度数}(j)} \\
+r_i(t+1) &= r_i(t) + \frac{\alpha}{N} + (1-\alpha)\sum_{j \in \text{邻居}} \frac{r_j(t)}{\text{度数}(j)} \
 \end{align*}
 $$
 

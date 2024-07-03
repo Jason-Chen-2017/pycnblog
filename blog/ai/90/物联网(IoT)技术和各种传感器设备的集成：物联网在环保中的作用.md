@@ -125,7 +125,7 @@ $$
 
 $$
 \begin{cases}
-\frac{\partial}{\partial a}\sum_{i=1}^n (y_i - f(x_i))^2 = 0 \\
+\frac{\partial}{\partial a}\sum_{i=1}^n (y_i - f(x_i))^2 = 0 \
 \frac{\partial}{\partial b}\sum_{i=1}^n (y_i - f(x_i))^2 = 0
 \end{cases}
 $$
@@ -133,7 +133,7 @@ $$
 解上述方程组，得到线性回归模型的参数：
 
 $$
-a = \frac{\sum_{i=1}^n y_i - b\sum_{i=1}^n x_i}{n} \\
+a = \frac{\sum_{i=1}^n y_i - b\sum_{i=1}^n x_i}{n} \
 b = \frac{n\sum_{i=1}^n x_iy_i - \sum_{i=1}^n x_i\sum_{i=1}^n y_i}{n\sum_{i=1}^n x_i^2 - (\sum_{i=1}^n x_i)^2}
 $$
 

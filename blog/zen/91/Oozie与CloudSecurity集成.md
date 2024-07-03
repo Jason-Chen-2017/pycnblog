@@ -155,7 +155,7 @@ Oozie与CloudSecurity集成涉及多个安全机制，以下为数学模型构�
 
 $$
 \text{AccessControl}(User, Resource, Permission) = \begin{cases}
-\text{allow} & \text{if } User \in \text{Group} \cap \text{Permission} \in \text{ResourcePermission}\\
+\text{allow} & \text{if } User \in \text{Group} \cap \text{Permission} \in \text{ResourcePermission}\
 \text{deny} & \text{otherwise}
 \end{cases}
 $$
@@ -166,7 +166,7 @@ $$
 
 $$
 \text{Authentication}(User, Credentials) = \begin{cases}
-\text{true} & \text{if } User \in \text{UserStore} \cap Credentials \in \text{UserCredentials}\\
+\text{true} & \text{if } User \in \text{UserStore} \cap Credentials \in \text{UserCredentials}\
 \text{false} & \text{otherwise}
 \end{cases}
 $$

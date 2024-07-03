@@ -90,9 +90,9 @@ D --> I[模型集成]
 泛化误差可分解为:
 $$
 \begin{aligned}
-E\left[(y-\hat{f}(x))^{2}\right] &=E\left[\left(y-f(x)+f(x)-\hat{f}(x)\right)^{2}\right] \\
-&=E\left[\left(y-f(x)\right)^{2}\right]+E\left[\left(f(x)-\hat{f}(x)\right)^{2}\right] \\
-&=\text { Var }[y]+\text { Bias }^{2}[\hat{f}(x)]+\text { Var }[\hat{f}(x)] \\
+E\left[(y-\hat{f}(x))^{2}\right] &=E\left[\left(y-f(x)+f(x)-\hat{f}(x)\right)^{2}\right] \
+&=E\left[\left(y-f(x)\right)^{2}\right]+E\left[\left(f(x)-\hat{f}(x)\right)^{2}\right] \
+&=\text { Var }[y]+\text { Bias }^{2}[\hat{f}(x)]+\text { Var }[\hat{f}(x)] \
 &=\text { Noise }+\text { Bias }^{2}+\text { Variance }
 \end{aligned}
 $$

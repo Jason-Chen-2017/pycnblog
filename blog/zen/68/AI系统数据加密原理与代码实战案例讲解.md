@@ -74,7 +74,7 @@ RSA加密算法的数学模型可以表示为：
 
 $$
 \begin{aligned}
-C &= M^e \pmod{n} \\
+C &= M^e \pmod{n} \
 M &= C^d \pmod{n}
 \end{aligned}
 $$

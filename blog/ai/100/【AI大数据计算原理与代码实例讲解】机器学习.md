@@ -158,7 +158,7 @@ $$
 
 $$
 \begin{align*}
-\text{if } x_1 \text{ is small and } x_2 \text{ is large} \text{ then } y = 0 \\
+\text{if } x_1 \text{ is small and } x_2 \text{ is large} \text{ then } y = 0 \
 \text{if } x_1 \text{ is large and } x_2 \text{ is small} \text{ then } y = 1
 \end{align*}
 $$

@@ -193,8 +193,8 @@ while (不满足终止条件) {
 遗传算法求解的是一个约束优化问题,可以用如下数学模型表示:
 
 $$\begin{cases}
-\max\limits_{x\in X} & f(x)\\
-\text{s.t.} & g_i(x)\leq 0, i=1,2,...,m \\
+\max\limits_{x\in X} & f(x)\
+\text{s.t.} & g_i(x)\leq 0, i=1,2,...,m \
             & h_j(x)=0, j=1,2,...,p
 \end{cases}$$
 

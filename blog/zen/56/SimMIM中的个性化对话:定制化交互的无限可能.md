@@ -73,7 +73,7 @@ $$
 其中$Q$,$K$,$V$分别表示查询、键、值向量,$d_k$为向量维度。多头自注意力将$Q$,$K$,$V$线性投影到$h$个不同的子空间,然后并行计算注意力,最后将结果拼接起来:
 
 $$
-\text{MultiHead}(Q,K,V) = \text{Concat}(\text{head}_1,...,\text{head}_h)W^O \\
+\text{MultiHead}(Q,K,V) = \text{Concat}(\text{head}_1,...,\text{head}_h)W^O \
 \text{head}_i=\text{Attention}(QW_i^Q,KW_i^K,VW_i^V)
 $$
 

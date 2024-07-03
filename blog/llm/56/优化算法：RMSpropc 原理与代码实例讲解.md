@@ -29,7 +29,7 @@ RMSprop算法的核心思想是利用指数加权移动平均 (Exponentially Wei
 
 $$
 \begin{aligned}
-v_t &= \beta v_{t-1} + (1-\beta) x_t \\
+v_t &= \beta v_{t-1} + (1-\beta) x_t \
 &= (1-\beta) \sum_{i=1}^t \beta^{t-i} x_i
 \end{aligned}
 $$

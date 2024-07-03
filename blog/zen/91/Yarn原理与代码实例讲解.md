@@ -117,8 +117,8 @@ Yarn的资源调度策略可以通过以下数学模型进行描述：
 
 $$
 \begin{align*}
-\max_{x} & \quad f(x) \\
-\text{s.t.} & \quad \sum_{i=1}^{n} x_i \leq r \\
+\max_{x} & \quad f(x) \
+\text{s.t.} & \quad \sum_{i=1}^{n} x_i \leq r \
 & \quad x_i \geq 0, \quad \forall i
 \end{align*}
 $$

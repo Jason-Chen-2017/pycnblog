@@ -132,7 +132,7 @@ $$
 神经语言模型使用神经网络对词序列W的概率P(W)进行建模。常用的网络结构有前馈神经网络、循环神经网络(RNN)和transformer等。以RNN为例,对于长度为T的词序列$W=(w_1,w_2,...,w_T)$,我们有:
 
 $$
-h_t = \text{RNN}(w_t, h_{t-1}) \\
+h_t = \text{RNN}(w_t, h_{t-1}) \
 P(w_t|w_1,...,w_{t-1}) = \text{softmax}(W_oh_t + b_o)
 $$
 

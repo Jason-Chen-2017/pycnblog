@@ -95,8 +95,8 @@ Transformer模型的基本原理是自注意力机制（Self-Attention）和前�
 1. **Query、Key、Value**：对于输入序列$\text{X} = (x_1, x_2, \dots, x_n)$，分别计算对应的Query、Key、Value矩阵：
 
 $$
-Q = \text{W}_Q \times X \\
-K = \text{W}_K \times X \\
+Q = \text{W}_Q \times X \
+K = \text{W}_K \times X \
 V = \text{W}_V \times X
 $$
 

@@ -99,8 +99,8 @@ graph LR
 
 $$
 \begin{aligned}
-\mathrm{Attention}(Q, K, V) &= \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V \\
-\mathrm{head}_i &= \mathrm{Attention}(QW_i^Q, KW_i^K, VW_i^V) \\
+\mathrm{Attention}(Q, K, V) &= \mathrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V \
+\mathrm{head}_i &= \mathrm{Attention}(QW_i^Q, KW_i^K, VW_i^V) \
 \mathrm{MultiHead}(Q, K, V) &= \mathrm{Concat}(\mathrm{head}_1, \dots, \mathrm{head}_h)W^O
 \end{aligned}
 $$
@@ -115,7 +115,7 @@ $$
 
 $$
 \begin{aligned}
-\mathrm{PE}_{(pos, 2i)} &= \sin(pos / 10000^{2i / d_{\mathrm{model}}}) \\
+\mathrm{PE}_{(pos, 2i)} &= \sin(pos / 10000^{2i / d_{\mathrm{model}}}) \
 \mathrm{PE}_{(pos, 2i+1)} &= \cos(pos / 10000^{2i / d_{\mathrm{model}}})
 \end{aligned}
 $$
@@ -128,8 +128,8 @@ $$
 
 $$
 \begin{aligned}
-\mu &= \frac{1}{H}\sum_{i=1}^{H}x_i \\
-\sigma^2 &= \frac{1}{H}\sum_{i=1}^{H}(x_i - \mu)^2 \\
+\mu &= \frac{1}{H}\sum_{i=1}^{H}x_i \
+\sigma^2 &= \frac{1}{H}\sum_{i=1}^{H}(x_i - \mu)^2 \
 \hat{x}_i &= \gamma\left(\frac{x_i - \mu}{\sqrt{\sigma^2 + \epsilon}}\right) + \beta
 \end{aligned}
 $$

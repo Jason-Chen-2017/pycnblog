@@ -89,7 +89,7 @@
 
   $$
   \begin{aligned}
-  &\max_{w,b} \frac{1}{||w||} \\
+  &\max_{w,b} \frac{1}{||w||} \
   &s.t. \ y_i(w^Tx_i + b) \ge 1, \ i=1,2,...,n
   \end{aligned}
   $$
@@ -118,8 +118,8 @@
 
   $$
   \begin{aligned}
-  &\min_{w,b,\xi} \frac{1}{2}||w||^2 + C\sum_{i=1}^n\xi_i \\
-  &s.t. \ y_i(w^Tx_i + b) \ge 1 - \xi_i, \ i=1,2,...,n \\
+  &\min_{w,b,\xi} \frac{1}{2}||w||^2 + C\sum_{i=1}^n\xi_i \
+  &s.t. \ y_i(w^Tx_i + b) \ge 1 - \xi_i, \ i=1,2,...,n \
   &\xi_i \ge 0, \ i=1,2,...,n
   \end{aligned}
   $$
@@ -159,8 +159,8 @@
 
 $$
 \begin{aligned}
-&\min_{w,b,\xi} \frac{1}{2}||w||^2 + C\sum_{i=1}^n\xi_i \\
-&s.t. \ y_i(w^Tx_i + b) \ge 1 - \xi_i, \ i=1,2,...,n \\
+&\min_{w,b,\xi} \frac{1}{2}||w||^2 + C\sum_{i=1}^n\xi_i \
+&s.t. \ y_i(w^Tx_i + b) \ge 1 - \xi_i, \ i=1,2,...,n \
 &\xi_i \ge 0, \ i=1,2,...,n
 \end{aligned}
 $$
@@ -183,7 +183,7 @@ $$
 
   $$
   \begin{aligned}
-  &\max_{\alpha,\beta} \min_{w,b,\xi} L(w,b,\xi,\alpha,\beta) \\
+  &\max_{\alpha,\beta} \min_{w,b,\xi} L(w,b,\xi,\alpha,\beta) \
   &s.t. \ \alpha_i \ge 0, \ \beta_i \ge 0, \ i=1,2,...,n
   \end{aligned}
   $$
@@ -192,11 +192,11 @@ $$
 
   $$
   \begin{aligned}
-  &\frac{\partial L}{\partial w} = w - \sum_{i=1}^n\alpha_iy_ix_i = 0 \\
-  &\frac{\partial L}{\partial b} = -\sum_{i=1}^n\alpha_iy_i = 0 \\
-  &\frac{\partial L}{\partial \xi_i} = C - \alpha_i - \beta_i = 0 \\
-  &\alpha_i[y_i(w^Tx_i + b) - 1 + \xi_i] = 0 \\
-  &\beta_i\xi_i = 0 \\
+  &\frac{\partial L}{\partial w} = w - \sum_{i=1}^n\alpha_iy_ix_i = 0 \
+  &\frac{\partial L}{\partial b} = -\sum_{i=1}^n\alpha_iy_i = 0 \
+  &\frac{\partial L}{\partial \xi_i} = C - \alpha_i - \beta_i = 0 \
+  &\alpha_i[y_i(w^Tx_i + b) - 1 + \xi_i] = 0 \
+  &\beta_i\xi_i = 0 \
   &\alpha_i \ge 0, \ \beta_i \ge 0, \ i=1,2,...,n
   \end{aligned}
   $$

@@ -76,7 +76,7 @@ G --> E
 在策略梯度方法中，智能体的行为由策略函数 $\pi(\theta)$ 决定，其中 $\theta$ 为策略参数。策略函数 $\pi(\theta)$ 定义了在给定状态下选择特定动作的概率分布。例如，对于一个离散动作空间，策略函数可以表示为：
 
 $$\pi(\theta)(a_t | s_t) = \begin{cases}
-\frac{\exp(\theta^T\phi(s_t, a_t))}{\sum_a \exp(\theta^T\phi(s_t, a_t))}, & \text{if } a_t \in A_t \\
+\frac{\exp(\theta^T\phi(s_t, a_t))}{\sum_a \exp(\theta^T\phi(s_t, a_t))}, & \text{if } a_t \in A_t \
 0, & \text{otherwise}
 \end{cases}$$
 

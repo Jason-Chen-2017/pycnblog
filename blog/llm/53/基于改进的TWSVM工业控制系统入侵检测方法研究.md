@@ -71,10 +71,10 @@ TWSVM的数学模型可以表示为以下优化问题：
 
 $$
 \begin{aligned}
-& \min_{\mathbf{w}_1, \mathbf{w}_2, b_1, b_2, \xi_i, \eta_j} \frac{1}{2} (\|\mathbf{w}_1\|^2 + \|\mathbf{w}_2\|^2) + c_1 \sum_{i=1}^{m_1} \xi_i + c_2 \sum_{j=1}^{m_2} \eta_j \\
-& \text{s.t.} \quad \mathbf{w}_1^T \phi(\mathbf{x}_i) + b_1 \geq 1 - \xi_i, \quad i = 1, \dots, m_1 \\
-& \qquad \mathbf{w}_2^T \phi(\mathbf{y}_j) + b_2 \leq -1 + \eta_j, \quad j = 1, \dots, m_2 \\
-& \qquad \xi_i \geq 0, \quad i = 1, \dots, m_1 \\
+& \min_{\mathbf{w}_1, \mathbf{w}_2, b_1, b_2, \xi_i, \eta_j} \frac{1}{2} (\|\mathbf{w}_1\|^2 + \|\mathbf{w}_2\|^2) + c_1 \sum_{i=1}^{m_1} \xi_i + c_2 \sum_{j=1}^{m_2} \eta_j \
+& \text{s.t.} \quad \mathbf{w}_1^T \phi(\mathbf{x}_i) + b_1 \geq 1 - \xi_i, \quad i = 1, \dots, m_1 \
+& \qquad \mathbf{w}_2^T \phi(\mathbf{y}_j) + b_2 \leq -1 + \eta_j, \quad j = 1, \dots, m_2 \
+& \qquad \xi_i \geq 0, \quad i = 1, \dots, m_1 \
 & \qquad \eta_j \geq 0, \quad j = 1, \dots, m_2
 \end{aligned}
 $$

@@ -79,7 +79,7 @@ Cascade R-CNN 使用 Smooth L1 损失函数作为回归损失函数。Smooth L1 
 
 $$
 smooth_{L_1}(x) = \begin{cases}
-0.5x^2 & \text{if } |x| < 1 \\
+0.5x^2 & \text{if } |x| < 1 \
 |x| - 0.5 & \text{otherwise}
 \end{cases}
 $$

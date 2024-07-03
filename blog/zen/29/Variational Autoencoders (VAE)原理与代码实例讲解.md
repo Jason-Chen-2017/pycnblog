@@ -155,5 +155,5 @@ VAE的目标是最大化输入数据 $\boldsymbol{x}$ 的边际对数似然函�
 
 $$
 \begin{aligned}
-\log p_{\theta}(\boldsymbol{x}) &= \log \int p_{\theta}(\boldsymbol{x}, \boldsymbol{z}) \mathrm{d}\boldsymbol{z} \\
+\log p_{\theta}(\boldsymbol{x}) &= \log \int p_{\theta}(\boldsymbol{x}, \boldsymbol{z}) \mathrm{d}\boldsymbol{z} \
 &= \log \int \frac{q_{\phi}(\boldsymbol{z}|\bol

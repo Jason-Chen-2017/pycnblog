@@ -103,7 +103,7 @@ graph LR
 
 $$
 \begin{aligned}
-\frac{\partial L}{\partial \theta^l} &= \frac{\partial L}{\partial z^l} \frac{\partial z^l}{\partial \theta^l} \\
+\frac{\partial L}{\partial \theta^l} &= \frac{\partial L}{\partial z^l} \frac{\partial z^l}{\partial \theta^l} \
 \frac{\partial L}{\partial z^l} &= \frac{\partial L}{\partial a^l} \frac{\partial a^l}{\partial z^l}
 \end{aligned}
 $$
@@ -118,8 +118,8 @@ $$
 
 $$
 \begin{aligned}
-z^{(2)} &= f_{\theta^{(1)}}(x) \\
-a^{(2)} &= f_{\theta^{(2)}}(z^{(2)}) \\
+z^{(2)} &= f_{\theta^{(1)}}(x) \
+a^{(2)} &= f_{\theta^{(2)}}(z^{(2)}) \
 y &= f_{\theta^{(2)}}(z^{(2)})
 \end{aligned}
 $$
@@ -138,7 +138,7 @@ $$
 
 $$
 \begin{aligned}
-\frac{\partial L(\theta^{(2)})}{\partial z^{(2)}} &= 2(y - \hat{y}) \\
+\frac{\partial L(\theta^{(2)})}{\partial z^{(2)}} &= 2(y - \hat{y}) \
 \frac{\partial L(\theta^{(2)})}{\partial \theta^{(2)}} &= \frac{\partial L(\theta^{(2)})}{\partial z^{(2)}} \frac{\partial z^{(2)}}{\partial \theta^{(2)}}
 \end{aligned}
 $$

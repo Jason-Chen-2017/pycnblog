@@ -91,12 +91,12 @@ ALBERT模型采用嵌套的Transformer结构，其数学模型如下：
 
 $$
 \begin{align*}
-x^{(0)} &= \text{Word Embeddings} \\
-h^{(0)} &= W_{\text{emb}}x^{(0)} \\
-h^{(1)} &= \text{Multi-Head Attention}(h^{(0)}, h^{(0)}, h^{(0)}) + \text{Layer Normalization}(h^{(0)}) \\
-h^{(2)} &= \text{Multi-Head Attention}(h^{(1)}, h^{(1)}, h^{(1)}) + \text{Layer Normalization}(h^{(1)}) \\
-&\vdots \\
-h^{(L)} &= \text{Multi-Head Attention}(h^{(L-1)}, h^{(L-1)}, h^{(L-1)}) + \text{Layer Normalization}(h^{(L-1)}) \\
+x^{(0)} &= \text{Word Embeddings} \
+h^{(0)} &= W_{\text{emb}}x^{(0)} \
+h^{(1)} &= \text{Multi-Head Attention}(h^{(0)}, h^{(0)}, h^{(0)}) + \text{Layer Normalization}(h^{(0)}) \
+h^{(2)} &= \text{Multi-Head Attention}(h^{(1)}, h^{(1)}, h^{(1)}) + \text{Layer Normalization}(h^{(1)}) \
+&\vdots \
+h^{(L)} &= \text{Multi-Head Attention}(h^{(L-1)}, h^{(L-1)}, h^{(L-1)}) + \text{Layer Normalization}(h^{(L-1)}) \
 \end{align*}
 $$
 

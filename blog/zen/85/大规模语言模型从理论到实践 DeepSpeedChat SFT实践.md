@@ -100,7 +100,7 @@ DeepSpeed在LLMs训练中具有广泛的应用领域，如：
 
 $$
 \begin{align*}
-\theta^{(t+1)} &= \theta^{(t)} - \alpha \frac{\partial L}{\partial \theta^{(t)}} \\
+\theta^{(t+1)} &= \theta^{(t)} - \alpha \frac{\partial L}{\partial \theta^{(t)}} \
 L &= \frac{1}{N} \sum_{i=1}^{N} L_i(\theta^{(t)})
 \end{align*}
 $$

@@ -225,7 +225,7 @@ $$
 
 $$
 \begin{aligned}
-& f_i(x) \ge f_i(y), \forall i \in {1, 2, ..., n} \\
+& f_i(x) \ge f_i(y), \forall i \in {1, 2, ..., n} \
 & f_j(x) > f_j(y), \exists j \in {1, 2, ..., n}
 \end{aligned}
 $$

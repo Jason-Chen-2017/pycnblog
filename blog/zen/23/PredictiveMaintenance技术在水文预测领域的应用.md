@@ -117,7 +117,7 @@ $$
 通过求偏导数并令其为零得到：
 
 $$
-\frac{\partial}{\partial \beta_0}\sum_{i=1}^n(T_i-(\beta_0+\beta_1t_i))^2=-2\sum_{i=1}^{n}(T_i-(\beta_0+\beta_1t_i))=0 \\
+\frac{\partial}{\partial \beta_0}\sum_{i=1}^n(T_i-(\beta_0+\beta_1t_i))^2=-2\sum_{i=1}^{n}(T_i-(\beta_0+\beta_1t_i))=0 \
 \frac{\partial}{\partial \beta_1}\sum_{i=1}^n(T_i-(\beta_0+\beta_1t_i))^2=-2\sum_{i=1}^{n}(T_i-(\beta_0+\beta_1t_i)t_i)=0
 $$
 

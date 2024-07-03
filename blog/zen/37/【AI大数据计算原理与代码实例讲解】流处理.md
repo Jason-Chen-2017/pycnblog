@@ -189,9 +189,9 @@ def count_window_function(window):
     return (window.count(), sum(window))
 
 # 应用窗口函数
-windowed_stream = data_stream \\
-    .assign_timestamps_and_watermarks(lambda x: x) \\
-    .window(All()) \\
+windowed_stream = data_stream \
+    .assign_timestamps_and_watermarks(lambda x: x) \
+    .window(All()) \
     .apply(count_window_function)
 
 # 打印结果

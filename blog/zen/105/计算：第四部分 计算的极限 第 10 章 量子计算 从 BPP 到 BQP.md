@@ -231,8 +231,8 @@ BQP 算法的公式推导过程与 BPP 算法类似，只是在 BQP 算法中，
 
 $$
 \begin{cases}
-a_1x_1 + a_2x_2 + \cdots + a_nx_n = b \\
-\vdots \\
+a_1x_1 + a_2x_2 + \cdots + a_nx_n = b \
+\vdots \
 a_{n-1}x_1 + a_{n-1}x_2 + \cdots + a_nx_n = b_n
 \end{cases}
 $$

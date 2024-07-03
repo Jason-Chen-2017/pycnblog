@@ -109,10 +109,10 @@ A = [[0, 1, 1, 0],
 
 $$
 \begin{aligned}
-Q &= \frac{1}{2\times6}\sum_{ij}[A_{ij}-\frac{k_ik_j}{6}]\delta(c_i,c_j) \\
-&= \frac{1}{12}[(1-\frac{2\times2}{6})\delta(1,1)+(1-\frac{2\times2}{6})\delta(2,2)+(1-\frac{3\times1}{6})\delta(3,3)+(1-\frac{1\times3}{6})\delta(4,4)] \\
-&= \frac{1}{12}[(1-\frac{2}{3})\times2+(1-\frac{1}{2})\times2] \\
-&= \frac{1}{12}[\frac{2}{3}+\frac{1}{2}] \\
+Q &= \frac{1}{2\times6}\sum_{ij}[A_{ij}-\frac{k_ik_j}{6}]\delta(c_i,c_j) \
+&= \frac{1}{12}[(1-\frac{2\times2}{6})\delta(1,1)+(1-\frac{2\times2}{6})\delta(2,2)+(1-\frac{3\times1}{6})\delta(3,3)+(1-\frac{1\times3}{6})\delta(4,4)] \
+&= \frac{1}{12}[(1-\frac{2}{3})\times2+(1-\frac{1}{2})\times2] \
+&= \frac{1}{12}[\frac{2}{3}+\frac{1}{2}] \
 &= \frac{7}{36}
 \end{aligned}
 $$

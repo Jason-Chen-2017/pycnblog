@@ -52,9 +52,9 @@ LSA（Latent Semantic Analysis）是一种经典的主题模型算法，基于�
 设有m个文档和n个词，词-文档矩阵A可表示为：
 
 $$A=\begin{bmatrix}
-a_{11} & a_{12} & \cdots & a_{1n}\\
-a_{21} & a_{22} & \cdots & a_{2n}\\
-\vdots & \vdots & \ddots & \vdots\\
+a_{11} & a_{12} & \cdots & a_{1n}\
+a_{21} & a_{22} & \cdots & a_{2n}\
+\vdots & \vdots & \ddots & \vdots\
 a_{m1} & a_{m2} & \cdots & a_{mn}
 \end{bmatrix}$$
 

@@ -20,7 +20,7 @@ Mixup的核心思想是通过线性插值的方式组合不同的训练样本，
 
 $$
 \begin{aligned}
-x' &= \lambda x_i + (1 - \lambda) x_j \\
+x' &= \lambda x_i + (1 - \lambda) x_j \
 y' &= \lambda y_i + (1 - \lambda) y_j
 \end{aligned}
 $$
@@ -72,7 +72,7 @@ Mixup公式如下：
 
 $$
 \begin{aligned}
-x' &= \lambda x_i + (1 - \lambda) x_j \\
+x' &= \lambda x_i + (1 - \lambda) x_j \
 y' &= \lambda y_i + (1 - \lambda) y_j
 \end{aligned}
 $$
@@ -85,7 +85,7 @@ $$
 
 $$
 \begin{aligned}
-x' &= 0.6 x_1 + 0.4 x_2 \\
+x' &= 0.6 x_1 + 0.4 x_2 \
 y' &= 0.6 [1, 0] + 0.4 [0, 1] = [0.6, 0.4]
 \end{aligned}
 $$

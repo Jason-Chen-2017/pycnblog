@@ -95,7 +95,7 @@
 
 $$
 \begin{aligned}
-& G(z) \rightarrow x \\
+& G(z) \rightarrow x \
 & D(x) \rightarrow p
 \end{aligned}
 $$

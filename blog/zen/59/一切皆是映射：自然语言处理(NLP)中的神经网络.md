@@ -142,10 +142,10 @@ LSTM 模型通过引入门控机制来解决 RNN 中的梯度消失问题。LSTM
 
 $$
 \begin{aligned}
-i_t &= \sigma(W_i [h_{t-1}, x_t] + b_i) \\
-f_t &= \sigma(W_f [h_{t-1}, x_t] + b_f) \\
-o_t &= \sigma(W_o [h_{t-1}, x_t] + b_o) \\
-c_t &= f_t \odot c_{t-1} + i_t \odot \tanh(W_c [h_{t-1}, x_t] + b_c) \\
+i_t &= \sigma(W_i [h_{t-1}, x_t] + b_i) \
+f_t &= \sigma(W_f [h_{t-1}, x_t] + b_f) \
+o_t &= \sigma(W_o [h_{t-1}, x_t] + b_o) \
+c_t &= f_t \odot c_{t-1} + i_t \odot \tanh(W_c [h_{t-1}, x_t] + b_c) \
 h_t &= o_t \odot \tanh(c_t)
 \end{aligned}
 $$

@@ -127,7 +127,7 @@ $$ \text{Score} = \mathcal{C}(f(x)) \quad \text{and} \quad \Delta\mathbf{b} = \m
 
 - 回归损失（Smooth L1 Loss）：
   $$ L_{reg} = \begin{cases}
-    0.5 \times (\delta_{ij})^2, & |\delta_{ij}| < 1 \\
+    0.5 \times (\delta_{ij})^2, & |\delta_{ij}| < 1 \
     |(\delta_{ij})| - 0.5, & \text{otherwise}
   \end{cases} $$
 

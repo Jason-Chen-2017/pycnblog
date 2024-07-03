@@ -98,10 +98,10 @@ O群的不可约基可以通过以下数学模型进行构建：
 
 $$
 \begin{align*}
-&V = \mathbb{C}^n, \\
-&R \in O(n), \\
-&Rv = \sum_{j=1}^n \alpha_j R_j v, \\
-&RJ = J, \\
+&V = \mathbb{C}^n, \
+&R \in O(n), \
+&Rv = \sum_{j=1}^n \alpha_j R_j v, \
+&RJ = J, \
 &R_{-1} = R^T.
 \end{align*}
 $$

@@ -108,7 +108,7 @@ YARN Fair Scheduler的数学模型可以表示为：
 
 $$
 \begin{align*}
-\text{公平性指标} &= \frac{\sum_{i=1}^{n}\frac{C_i}{R_i}}{\sum_{i=1}^{n}C_i} \\
+\text{公平性指标} &= \frac{\sum_{i=1}^{n}\frac{C_i}{R_i}}{\sum_{i=1}^{n}C_i} \
 R_i &= R_{max} \times \left(1 - \sum_{j=1}^{i-1} \frac{C_j}{R_j}\right)
 \end{align*}
 $$

@@ -130,18 +130,18 @@ $$
 
 $$
 Q = \begin{bmatrix}
-q_1 & q_2 \\
-q_3 & q_4 \\
+q_1 & q_2 \
+q_3 & q_4 \
 q_5 & q_6
 \end{bmatrix}, \quad
 K = \begin{bmatrix}
-k_1 & k_2 \\
-k_3 & k_4 \\
+k_1 & k_2 \
+k_3 & k_4 \
 k_5 & k_6
 \end{bmatrix}, \quad
 V = \begin{bmatrix}
-v_1 & v_2 \\
-v_3 & v_4 \\
+v_1 & v_2 \
+v_3 & v_4 \
 v_5 & v_6
 \end{bmatrix}
 $$

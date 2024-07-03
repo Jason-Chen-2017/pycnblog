@@ -165,7 +165,7 @@ $$
 SVM的目标是最小化间隔最大化，通过拉格朗日乘子法求解得到支持向量和最优超平面：
 
 $$
-\min_{w, b, \xi} \frac{1}{2} w^T w + C \sum_{i=1}^{n} \xi_i \\
+\min_{w, b, \xi} \frac{1}{2} w^T w + C \sum_{i=1}^{n} \xi_i \
 s.t. \quad y_i (w^T \phi(x_i) + b) \geq 1 - \xi_i, \quad \xi_i \geq 0, \quad i = 1, \ldots, n
 $$
 

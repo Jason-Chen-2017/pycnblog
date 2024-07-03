@@ -113,10 +113,10 @@ $$
 
 $$
 \begin{aligned}
-& visit(v) \\
-& for \ each \ neighbor \ u \ of \ v: \\
-& \ \ \ if \ u \ is \ not \ visited: \\
-& \ \ \ \ \ DFS(u) \\
+& visit(v) \
+& for \ each \ neighbor \ u \ of \ v: \
+& \ \ \ if \ u \ is \ not \ visited: \
+& \ \ \ \ \ DFS(u) \
 \end{aligned}
 $$
 

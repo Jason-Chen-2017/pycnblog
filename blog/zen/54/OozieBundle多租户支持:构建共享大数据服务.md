@@ -76,9 +76,9 @@ Oozie Bundle是Oozie工作流调度系统中的一个重要组件。它允许将
 
 $$
 \begin{align}
-\max \quad & \sum_{i=1}^n x_i \\
-\text{s.t.} \quad & \sum_{i=1}^n r_i x_i \leq R \\
-& 0 \leq x_i \leq 1, \quad \forall i \in \{1, \ldots, n\} \\
+\max \quad & \sum_{i=1}^n x_i \
+\text{s.t.} \quad & \sum_{i=1}^n r_i x_i \leq R \
+& 0 \leq x_i \leq 1, \quad \forall i \in \{1, \ldots, n\} \
 & x_i \in \mathbb{Z}, \quad \forall i \in \{1, \ldots, n\}
 \end{align}
 $$

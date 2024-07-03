@@ -41,7 +41,7 @@ Momentum 优化器的更新规则如下：
 
 $$
 \begin{aligned}
-v_t &= \beta v_{t-1} + (1 - \beta) \nabla_{\theta} J(\theta_t) \\
+v_t &= \beta v_{t-1} + (1 - \beta) \nabla_{\theta} J(\theta_t) \
 \theta_{t+1} &= \theta_t - \alpha v_t
 \end{aligned}
 $$
@@ -98,7 +98,7 @@ Momentum 优化器的更新规则如下：
 
 $$
 \begin{aligned}
-v_t &= \beta v_{t-1} + (1 - \beta) \nabla_{\theta} J(\theta_t) \\
+v_t &= \beta v_{t-1} + (1 - \beta) \nabla_{\theta} J(\theta_t) \
 \theta_{t+1} &= \theta_t - \alpha v_t
 \end{aligned}
 $$

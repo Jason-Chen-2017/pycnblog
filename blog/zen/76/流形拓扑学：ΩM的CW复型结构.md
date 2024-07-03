@@ -144,7 +144,7 @@ $$
 
 $$
 Γ(r, θ) = \begin{cases}
-γ(θ), & r = 1\\
+γ(θ), & r = 1\
 *, & r < 1
 \end{cases}
 $$
@@ -161,7 +161,7 @@ $$
 
 $$
 φ(r, θ) = \begin{cases}
-γ(θ)(*), & r = 1\\
+γ(θ)(*), & r = 1\
 *, & r < 1
 \end{cases}
 $$
@@ -186,7 +186,7 @@ $$
 
 $$
 Γ_n: D^1 \rightarrow ΩS^1, \quad Γ_n(r, θ) = \begin{cases}
-γ_n(θ) = nθ \mod 2π, & r = 1\\
+γ_n(θ) = nθ \mod 2π, & r = 1\
 *, & r < 1
 \end{cases}
 $$

@@ -51,7 +51,7 @@ B --> C[输出层]
 ### 4.1 感知机模型
 #### 4.1.1 感知机的数学定义
 $$ f(x)=\begin{cases}
-1 & \text{if } w \cdot x+b>0 \\
+1 & \text{if } w \cdot x+b>0 \
 0 & \text{otherwise}
 \end{cases} $$
 #### 4.1.2 感知机学习规则
@@ -64,7 +64,7 @@ $$ a_j^{(l)}=\sigma\left(\sum_{k} w_{jk}^{(l)} a_k^{(l-1)}+b_j^{(l)}\right) $$
 $$ \frac{\partial C}{\partial w_{jk}^{(l)}}=a_k^{(l-1)} \delta_j^{(l)} $$
 $$ \frac{\partial C}{\partial b_j^{(l)}}=\delta_j^{(l)} $$
 $$ \delta_j^{(l)}=\begin{cases}
-\frac{\partial C}{\partial a_j^{(L)}} \sigma'\left(z_j^{(L)}\right) & \text{if } l=L \\
+\frac{\partial C}{\partial a_j^{(L)}} \sigma'\left(z_j^{(L)}\right) & \text{if } l=L \
 \left(\sum_k w_{kj}^{(l+1)} \delta_k^{(l+1)}\right) \sigma'\left(z_j^{(l)}\right) & \text{if } l<L
 \end{cases} $$
 

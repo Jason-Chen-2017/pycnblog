@@ -96,8 +96,8 @@ AIGC技术的应用领域包括：
 
 $$
 \begin{align*}
-z &= \mu(\theta_{\phi}, x) + \sigma(\theta_{\phi}) \odot \epsilon \\
-x &= \phi_{\phi}(z) \\
+z &= \mu(\theta_{\phi}, x) + \sigma(\theta_{\phi}) \odot \epsilon \
+x &= \phi_{\phi}(z) \
 \end{align*}
 $$
 

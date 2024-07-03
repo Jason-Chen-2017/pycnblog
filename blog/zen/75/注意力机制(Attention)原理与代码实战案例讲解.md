@@ -88,9 +88,9 @@ $$\mathbf{A} = \operatorname{softmax}\left(\frac{\mathbf{Q} \mathbf{K}^T}{\sqrt{
 - **相似度计算**：查询向量 $\mathbf{Q}$ 和键向量 $\mathbf{K}$ 的点积为：
 
 $$\mathbf{QK}^T = \begin{bmatrix}
-q_1k_1 & q_1k_2 & ... & q_1k_T \\
-q_2k_1 & q_2k_2 & ... & q_2k_T \\
-... & ... & ... & ... \\
+q_1k_1 & q_1k_2 & ... & q_1k_T \
+q_2k_1 & q_2k_2 & ... & q_2k_T \
+... & ... & ... & ... \
 q_Tk_1 & q_Tk_2 & ... & q_Tk_T
 \end{bmatrix}$$
 

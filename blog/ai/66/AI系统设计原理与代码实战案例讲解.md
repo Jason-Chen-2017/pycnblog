@@ -134,10 +134,10 @@ AI系统设计涉及多种算法，以下列举几种常见的算法及其原理
 
 $$
 \begin{aligned}
-L &= -\frac{1}{N} \sum_{i=1}^N \sum_{k=1}^K \hat{y}_k^{(i)} \log y_k^{(i)} \\
-&= -\frac{1}{N} \sum_{i=1}^N \sum_{k=1}^K \hat{y}_k^{(i)} \log \frac{e^{y_k^{(i)}}{\sum_{j=1}^K e^{y_j^{(i)}}} \\
-&= -\frac{1}{N} \sum_{i=1}^N \sum_{k=1}^K y_k^{(i)} \log \frac{\hat{y}_k^{(i)}}{\sum_{j=1}^K \hat{y}_j^{(i)}} \\
-&= -\frac{1}{N} \sum_{i=1}^N \sum_{k=1}^K y_k^{(i)} \log \hat{y}_k^{(i)} + \frac{1}{N} \sum_{i=1}^N \sum_{k=1}^K y_k^{(i)} \log \sum_{j=1}^K \hat{y}_j^{(i)} \\
+L &= -\frac{1}{N} \sum_{i=1}^N \sum_{k=1}^K \hat{y}_k^{(i)} \log y_k^{(i)} \
+&= -\frac{1}{N} \sum_{i=1}^N \sum_{k=1}^K \hat{y}_k^{(i)} \log \frac{e^{y_k^{(i)}}{\sum_{j=1}^K e^{y_j^{(i)}}} \
+&= -\frac{1}{N} \sum_{i=1}^N \sum_{k=1}^K y_k^{(i)} \log \frac{\hat{y}_k^{(i)}}{\sum_{j=1}^K \hat{y}_j^{(i)}} \
+&= -\frac{1}{N} \sum_{i=1}^N \sum_{k=1}^K y_k^{(i)} \log \hat{y}_k^{(i)} + \frac{1}{N} \sum_{i=1}^N \sum_{k=1}^K y_k^{(i)} \log \sum_{j=1}^K \hat{y}_j^{(i)} \
 &= -\frac{1}{N} \sum_{i=1}^N \sum_{k=1}^K y_k^{(i)} \log \hat{y}_k^{(i)} + \frac{1}{N} \sum_{i=1}^N \log \sum_{j=1}^K \hat{y}_j^{(i)}
 \end{aligned}
 $$
@@ -154,9 +154,9 @@ $$
 
 $$
 \begin{aligned}
-f(x) &= \sigma(\mathbf{W}^T \mathbf{h} + b) \\
-\mathbf{h} &= \mathbf{W} \mathbf{g}(\mathbf{x}) + b \\
-\mathbf{g}(\mathbf{x}) &= \text{conv}(\mathbf{x}) \\
+f(x) &= \sigma(\mathbf{W}^T \mathbf{h} + b) \
+\mathbf{h} &= \mathbf{W} \mathbf{g}(\mathbf{x}) + b \
+\mathbf{g}(\mathbf{x}) &= \text{conv}(\mathbf{x}) \
 \sigma &= \text{ReLU}
 \end{aligned}
 $$

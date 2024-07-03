@@ -105,17 +105,17 @@ $$
 
 对于 \(S_1\)：
 $$
-V(S_1) = \max \{ R(S_1, A_1) + \gamma \cdot V(S_2), R(S_1, A_2) + \gamma \cdot V(S'_2) \} \\
-V(S_1) = \max \{ 0 + 0.9 \cdot V(S_2), 1 + 0.9 \cdot (-1) \} \\
-V(S_1) = \max \{ 0, 0 \} \\
+V(S_1) = \max \{ R(S_1, A_1) + \gamma \cdot V(S_2), R(S_1, A_2) + \gamma \cdot V(S'_2) \} \
+V(S_1) = \max \{ 0 + 0.9 \cdot V(S_2), 1 + 0.9 \cdot (-1) \} \
+V(S_1) = \max \{ 0, 0 \} \
 V(S_1) = 0
 $$
 
 对于 \(S_2\)：
 $$
-V(S_2) = \max \{ R(S_2, A_1) + \gamma \cdot V(S'_1), R(S_2, A_2) + \gamma \cdot V(S'_1) \} \\
-V(S_2) = \max \{ -1 + 0.9 \cdot V(S_1), 0 + 0.9 \cdot V(S_1) \} \\
-V(S_2) = \max \{ -1 + 0, 0 \} \\
+V(S_2) = \max \{ R(S_2, A_1) + \gamma \cdot V(S'_1), R(S_2, A_2) + \gamma \cdot V(S'_1) \} \
+V(S_2) = \max \{ -1 + 0.9 \cdot V(S_1), 0 + 0.9 \cdot V(S_1) \} \
+V(S_2) = \max \{ -1 + 0, 0 \} \
 V(S_2) = -1
 $$
 

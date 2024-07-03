@@ -203,7 +203,7 @@ $$
 
 $$
 \phi_{\text{RBAC}}(u, r, p) = \begin{cases}
-1, & \text{if } \exists (u, r) \in UA \text{ and } (r, p) \in PA\\
+1, & \text{if } \exists (u, r) \in UA \text{ and } (r, p) \in PA\
 0, & \text{otherwise}
 \end{cases}
 $$
@@ -212,7 +212,7 @@ $$
 
 $$
 \phi_{\text{RBAC}}(u, r, p, s) = \begin{cases}
-1, & \text{if } \exists (u, r) \in UA, (r, p) \in PA, (s, p) \in SPA\\
+1, & \text{if } \exists (u, r) \in UA, (r, p) \in PA, (s, p) \in SPA\
 0, & \text{otherwise}
 \end{cases}
 $$

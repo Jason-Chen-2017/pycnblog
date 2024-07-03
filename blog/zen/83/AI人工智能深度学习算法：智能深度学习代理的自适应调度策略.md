@@ -120,8 +120,8 @@
 
 $$
 \begin{aligned}
-\text{资源监控} &= \{ \text{CPU利用率}, \text{内存利用率}, \text{GPU显存利用率} \} \\
-\text{资源评估} &= \text{资源状态评估函数}(\text{资源监控}) \\
+\text{资源监控} &= \{ \text{CPU利用率}, \text{内存利用率}, \text{GPU显存利用率} \} \
+\text{资源评估} &= \text{资源状态评估函数}(\text{资源监控}) \
 \text{资源调整} &= \text{任务分配策略}(\text{资源状态评估函数})
 \end{aligned}
 $$

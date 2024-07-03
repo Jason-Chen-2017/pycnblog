@@ -153,7 +153,7 @@ $$P(D|S,T) = \frac{P(S,T|D)P(D)}{P(S,T)}$$
 接下来,我们可以计算进一步检查和不检查两个行动的期望效用:
 
 $$\begin{align*}
-EU(\text{检查}) &= P(D|S,T)U(\text{正确治疗}) + (1-P(D|S,T))U(\text{避免不必要检查}) - C_\text{检查}\\
+EU(\text{检查}) &= P(D|S,T)U(\text{正确治疗}) + (1-P(D|S,T))U(\text{避免不必要检查}) - C_\text{检查}\
 EU(\text{不检查}) &= P(D|S,T)U(\text{疾病恶化}) + (1-P(D|S,T))U(\text{无事发生})
 \end{align*}$$
 

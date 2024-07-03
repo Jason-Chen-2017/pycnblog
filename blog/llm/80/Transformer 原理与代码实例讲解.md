@@ -90,9 +90,9 @@ Transformer模型在NLP领域得到了广泛应用，包括：
 
 $$
 \begin{aligned}
-    H &= \text{Transformer}(X, P) \\
-    &= \text{Encoder}(X, P) \\
-    &= \text{MultiHeadAttention}(X, X, X, P) + \text{FeedForward}(X) \\
+    H &= \text{Transformer}(X, P) \
+    &= \text{Encoder}(X, P) \
+    &= \text{MultiHeadAttention}(X, X, X, P) + \text{FeedForward}(X) \
     &= \text{Encoder}(MultiHeadAttention(Q, K, V, P) + \text{FeedForward}(X))
 \end{aligned}
 $$
@@ -109,7 +109,7 @@ $$
 
 $$
 \begin{aligned}
-    \text{MultiHeadAttention}(Q, K, V, P) &= \text{Concat}(\text{head}_1, ..., \text{head}_h)W^O \\
+    \text{MultiHeadAttention}(Q, K, V, P) &= \text{Concat}(\text{head}_1, ..., \text{head}_h)W^O \
     \text{head}_i &= \text{Attention}(QW_iQ, KW_iK, VW_iV)
 \end{aligned}
 $$
@@ -122,7 +122,7 @@ $$
 
 $$
 \begin{aligned}
-    \text{Attention}(Q, K, V) &= \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V \\
+    \text{Attention}(Q, K, V) &= \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V \
     \text{softmax}(z) &= \text{softmax}(z - \text{max}(z))e^z
 \end{aligned}
 $$

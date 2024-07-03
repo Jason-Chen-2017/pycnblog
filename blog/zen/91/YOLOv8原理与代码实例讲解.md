@@ -122,9 +122,9 @@ Conv-BN-ReLU
 预测边界框的公式如下：
 
 $$
-\text{center\_x} = \frac{x + \hat{x}}{2} \\
-\text{center\_y} = \frac{y + \hat{y}}{2} \\
-\text{width} = \exp(\hat{w}) \times \text{anchor\_width} \\
+\text{center\_x} = \frac{x + \hat{x}}{2} \
+\text{center\_y} = \frac{y + \hat{y}}{2} \
+\text{width} = \exp(\hat{w}) \times \text{anchor\_width} \
 \text{height} = \exp(\hat{h}) \times \text{anchor\_height}
 $$
 
@@ -143,9 +143,9 @@ $$
 YOLOv8对预测的边界框进行回归，使其更准确地反映目标的真实位置。回归公式如下：
 
 $$
-\text{delta\_x} = \hat{x} \times \text{scale\_x} + \text{shift\_x} \\
-\text{delta\_y} = \hat{y} \times \text{scale\_y} + \text{shift\_y} \\
-\text{delta\_w} = \exp(\hat{w}) \times \text{scale\_w} + \text{shift\_w} \\
+\text{delta\_x} = \hat{x} \times \text{scale\_x} + \text{shift\_x} \
+\text{delta\_y} = \hat{y} \times \text{scale\_y} + \text{shift\_y} \
+\text{delta\_w} = \exp(\hat{w}) \times \text{scale\_w} + \text{shift\_w} \
 \text{delta\_h} = \exp(\hat{h}) \times \text{scale\_h} + \text{shift\_h}
 $$
 
@@ -220,9 +220,9 @@ $$
 预测中心点、宽度和高度的公式如下：
 
 $$
-\text{center\_x} = \frac{x + \hat{x}}{2} \\
-\text{center\_y} = \frac{y + \hat{y}}{2} \\
-\text{width} = \exp(\hat{w}) \times \text{anchor\_width} \\
+\text{center\_x} = \frac{x + \hat{x}}{2} \
+\text{center\_y} = \frac{y + \hat{y}}{2} \
+\text{width} = \exp(\hat{w}) \times \text{anchor\_width} \
 \text{height} = \exp(\hat{h}) \times \text{anchor\_height}
 $$
 
@@ -241,9 +241,9 @@ $$
 对预测的边界框进行回归的公式如下：
 
 $$
-\text{delta\_x} = \hat{x} \times \text{scale\_x} + \text{shift\_x} \\
-\text{delta\_y} = \hat{y} \times \text{scale\_y} + \text{shift\_y} \\
-\text{delta\_w} = \exp(\hat{w}) \times \text{scale\_w} + \text{shift\_w} \\
+\text{delta\_x} = \hat{x} \times \text{scale\_x} + \text{shift\_x} \
+\text{delta\_y} = \hat{y} \times \text{scale\_y} + \text{shift\_y} \
+\text{delta\_w} = \exp(\hat{w}) \times \text{scale\_w} + \text{shift\_w} \
 \text{delta\_h} = \exp(\hat{h}) \times \text{scale\_h} + \text{shift\_h}
 $$
 

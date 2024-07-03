@@ -108,9 +108,9 @@ TensorFlow是Google开发的开源深度学习框架，具有以下特点：
 
 $$
 \begin{align*}
-z &= W_1 \cdot x + b_1 \\
-a &= \sigma(z) \\
-z_2 &= W_2 \cdot a + b_2 \\
+z &= W_1 \cdot x + b_1 \
+a &= \sigma(z) \
+z_2 &= W_2 \cdot a + b_2 \
 a_2 &= \sigma(z_2)
 \end{align*}
 $$

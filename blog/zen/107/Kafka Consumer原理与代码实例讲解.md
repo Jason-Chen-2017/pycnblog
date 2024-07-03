@@ -165,9 +165,9 @@ Kafka Consumer的核心算法不仅应用于Kafka自身,也被广泛应用于其
 
 $$
 \begin{align*}
-numPartitionsPerConsumer &= \left\lceil \frac{n}{m} \right\rceil \\
-startPartition(c_i) &= (i - 1) \times numPartitionsPerConsumer \\
-endPartition(c_i) &= \min\left(startPartition(c_i) + numPartitionsPerConsumer - 1, n - 1\right) \\
+numPartitionsPerConsumer &= \left\lceil \frac{n}{m} \right\rceil \
+startPartition(c_i) &= (i - 1) \times numPartitionsPerConsumer \
+endPartition(c_i) &= \min\left(startPartition(c_i) + numPartitionsPerConsumer - 1, n - 1\right) \
 partitions(c_i) &= \left\{p_j \mid startPartition(c_i) \leq j \leq endPartition(c_i)\right\}
 \end{align*}
 $$
@@ -184,7 +184,7 @@ $$
 
 $$
 \begin{align*}
-key &= \text{encode}(groupId, topic, partition) \\
+key &= \text{encode}(groupId, topic, partition) \
 value &= \text{encode}(offset, metadata, timestamp)
 \end{align*}
 $$

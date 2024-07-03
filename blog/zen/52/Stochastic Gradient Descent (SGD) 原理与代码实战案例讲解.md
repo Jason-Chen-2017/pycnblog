@@ -107,7 +107,7 @@ $$
 
 $$
 \begin{aligned}
-\frac{∂L}{∂w} &= (\hat{y} - y)x \\
+\frac{∂L}{∂w} &= (\hat{y} - y)x \
 \frac{∂L}{∂b} &= \hat{y} - y
 \end{aligned}
 $$
@@ -116,7 +116,7 @@ $$
 
 $$
 \begin{aligned}
-w_{t+1} &= w_t - η·(\hat{y} - y)x \\
+w_{t+1} &= w_t - η·(\hat{y} - y)x \
 b_{t+1} &= b_t - η·(\hat{y} - y)
 \end{aligned}
 $$
@@ -139,7 +139,7 @@ $$
 
 $$
 \begin{aligned}
-\frac{∂L}{∂w} &= (\hat{y} - y)x \\
+\frac{∂L}{∂w} &= (\hat{y} - y)x \
 \frac{∂L}{∂b} &= \hat{y} - y
 \end{aligned}
 $$
@@ -148,7 +148,7 @@ SGD的参数更新公式与二元分类问题相同:
 
 $$
 \begin{aligned}
-w_{t+1} &= w_t - η·(\hat{y} - y)x \\
+w_{t+1} &= w_t - η·(\hat{y} - y)x \
 b_{t+1} &= b_t - η·(\hat{y} - y)
 \end{aligned}
 $$

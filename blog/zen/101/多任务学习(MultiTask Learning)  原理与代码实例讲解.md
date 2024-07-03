@@ -119,7 +119,7 @@ MTL在以下领域有广泛的应用：
 
 $$
 \begin{align*}
-\hat{y}_i &= f_{\theta_i}(x) & \text{，其中} & i=1,2,\ldots,k \\
+\hat{y}_i &= f_{\theta_i}(x) & \text{，其中} & i=1,2,\ldots,k \
 \hat{y}_j &= g_{\theta_j}(x) & \text{，其中} & j=1,2,\ldots,l
 \end{align*}
 $$

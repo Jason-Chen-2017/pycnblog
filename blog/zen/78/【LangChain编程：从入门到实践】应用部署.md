@@ -121,8 +121,8 @@ $$
 $$
 \mathrm{scores} = \frac{QK^T}{\sqrt{d_k}} =
 \begin{bmatrix}
-0.8 & 0.2 & 0.3 \\
-0.1 & 0.9 & 0.4 \\
+0.8 & 0.2 & 0.3 \
+0.1 & 0.9 & 0.4 \
 0.2 & 0.3 & 0.7
 \end{bmatrix}
 $$
@@ -132,8 +132,8 @@ $$
 $$
 \mathrm{weights} = \mathrm{softmax}(\mathrm{scores}) =
 \begin{bmatrix}
-0.4 & 0.2 & 0.3 \\
-0.1 & 0.6 & 0.3 \\
+0.4 & 0.2 & 0.3 \
+0.1 & 0.6 & 0.3 \
 0.2 & 0.3 & 0.5
 \end{bmatrix}
 $$
@@ -143,8 +143,8 @@ $$
 $$
 \mathrm{output} = \mathrm{weights} \cdot V =
 \begin{bmatrix}
-v_1' \\
-v_2' \\
+v_1' \
+v_2' \
 v_3'
 \end{bmatrix}
 $$

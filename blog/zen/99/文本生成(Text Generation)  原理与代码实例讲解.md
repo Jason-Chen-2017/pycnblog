@@ -155,8 +155,8 @@ transformer的自注意力机制使用了查询(Query)、键(Key)和值(Value)�
 1. 线性投影将输入映射为查询$Q$、键$K$和值$V$:
 
 $$\begin{aligned}
-Q &= XW_Q \\
-K &= XW_K \\
+Q &= XW_Q \
+K &= XW_K \
 V &= XW_V
 \end{aligned}$$
 
@@ -183,8 +183,8 @@ $$\text{Attention}(Q, K, V) = \text{Softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
 对于多头注意力,我们将查询/键/值先进行线性投影,得到不同的表示子空间:
 
 $$\begin{aligned}
-Q_i &= QW_i^Q &\in \mathbb{R}^{n \times d_k} \\
-K_i &= KW_i^K &\in \mathbb{R}^{n \times d_k} \\
+Q_i &= QW_i^Q &\in \mathbb{R}^{n \times d_k} \
+K_i &= KW_i^K &\in \mathbb{R}^{n \times d_k} \
 V_i &= VW_i^V &\in \mathbb{R}^{n \times d_v}
 \end{aligned}$$
 

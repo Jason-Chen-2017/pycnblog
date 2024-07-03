@@ -125,7 +125,7 @@ ROC曲线可以表示为如下参数方程：
 
 $$
 \begin{aligned}
-FPR(t) &= \frac{FP(t)}{N} \\
+FPR(t) &= \frac{FP(t)}{N} \
 TPR(t) &= \frac{TP(t)}{P}
 \end{aligned}
 $$

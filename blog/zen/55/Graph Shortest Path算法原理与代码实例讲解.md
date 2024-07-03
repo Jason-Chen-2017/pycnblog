@@ -112,7 +112,7 @@ graph LR
 
 $$
 d_{ij} = \begin{cases}
-0 & \text{if } i = j \\
+0 & \text{if } i = j \
 \min\limits_{k}\{d_{ik} + w_{kj}\} & \text{if } i \neq j
 \end{cases}
 $$
@@ -125,7 +125,7 @@ $$
 
 $$
 d_{ij}^{(k)} = \begin{cases}
-d_{ij}^{(k-1)} & \text{if } d_{ij}^{(k-1)} < d_{ik}^{(k-1)} + d_{kj}^{(k-1)} \\
+d_{ij}^{(k-1)} & \text{if } d_{ij}^{(k-1)} < d_{ik}^{(k-1)} + d_{kj}^{(k-1)} \
 d_{ik}^{(k-1)} + d_{kj}^{(k-1)} & \text{otherwise}
 \end{cases}
 $$

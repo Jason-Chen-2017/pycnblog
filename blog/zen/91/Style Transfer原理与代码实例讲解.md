@@ -110,7 +110,7 @@ GAN的训练过程可以通过以下公式进行描述：
 
 ```
 \begin{align*}
-\min_{G} & \mathbb{E}_{z\sim p(z)}[D(G(z))] \\
+\min_{G} & \mathbb{E}_{z\sim p(z)}[D(G(z))] \
 \max_{D} & \mathbb{E}_{x\sim p(x)}[D(x)] + \mathbb{E}_{z\sim p(z)}[D(G(z))]
 \end{align*}
 ```

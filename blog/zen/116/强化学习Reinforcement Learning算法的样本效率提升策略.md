@@ -133,7 +133,7 @@ $$V^\pi(s) = \mathbb{E}_\pi \left[ \sum_{t=0}^\infty \gamma^t R(s_t, a_t, s_{t+1
 我们可以使用贝尔曼方程(Bellman Equation)来计算价值函数 $V^\pi(s)$。对于任意状态 $s$,我们有:
 
 $$\begin{aligned}
-V^\pi(s) &= \mathbb{E}_\pi \left[ R(s, a, s') + \gamma V^\pi(s') | s_0 = s, a \sim \pi(s), s' \sim P(s'|s, a) \right] \\
+V^\pi(s) &= \mathbb{E}_\pi \left[ R(s, a, s') + \gamma V^\pi(s') | s_0 = s, a \sim \pi(s), s' \sim P(s'|s, a) \right] \
 &= \sum_{a \in A} \pi(a|s) \sum_{s' \in S} P(s'|s, a) \left[ R(s, a, s') + \gamma V^\pi(s') \right]
 \end{aligned}$$
 

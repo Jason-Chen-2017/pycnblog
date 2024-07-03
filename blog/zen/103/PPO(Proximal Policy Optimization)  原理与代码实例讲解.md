@@ -119,7 +119,7 @@ PPO算法的公式推导过程如下：
 
 $$
 \begin{aligned}
-\hat{\alpha}(a|s) &= \frac{\pi_{\theta}(a|s)}{\pi_{\theta'}(a|s)} \cdot \sum_{a'} \pi_{\theta'}(a'|s) \\
+\hat{\alpha}(a|s) &= \frac{\pi_{\theta}(a|s)}{\pi_{\theta'}(a|s)} \cdot \sum_{a'} \pi_{\theta'}(a'|s) \
 \alpha &= \arg\max_{\alpha} \ln \hat{\alpha}(a|s)
 \end{aligned}
 $$

@@ -219,7 +219,7 @@ Transformer编码器由多层相同的编码器层堆叠而成,每一层的输�
 具体计算过程如下:
 
 $$\begin{aligned}
-\text{MultiHead}(Q,K,V) &= \text{Concat}(\text{head}_1, \ldots, \text{head}_h)W^O\\
+\text{MultiHead}(Q,K,V) &= \text{Concat}(\text{head}_1, \ldots, \text{head}_h)W^O\
 \text{where\ head}_i &= \text{Attention}(QW_i^Q,KW_i^K,VW_i^V)
 \end{aligned}$$
 
@@ -244,16 +244,16 @@ $$\text{FFN}(x)=\max(0,xW_1+b_1)W_2+b_2$$
 1) 首先计算 Query 与 Key 向量的点积:
 
 $$Q \cdot K^T = \begin{bmatrix}
-q_1\\
-q_2\\
-\vdots\\
+q_1\
+q_2\
+\vdots\
 q_n
 \end{bmatrix} \cdot \begin{bmatrix}
 k_1^T & k_2^T & \cdots & k_n^T
 \end{bmatrix} = \begin{bmatrix}
-q_1 \cdot k_1^T & q_1 \cdot k_2^T & \cdots & q_1 \cdot k_n^T\\
-q_2 \cdot k_1^T & q_2 \cdot k_2^T & \cdots & q_2 \cdot k_n^T\\
-\vdots & \vdots & \ddots & \vdots\\
+q_1 \cdot k_1^T & q_1 \cdot k_2^T & \cdots & q_1 \cdot k_n^T\
+q_2 \cdot k_1^T & q_2 \cdot k_2^T & \cdots & q_2 \cdot k_n^T\
+\vdots & \vdots & \ddots & \vdots\
 q_n \cdot k_1^T & q_n \cdot k_2^T & \cdots & q_n \cdot k_n^T
 \end{bmatrix}$$
 
@@ -270,9 +270,9 @@ $$\text{softmax}(a_i) = \frac{e^{a_i}}{\sum_j e^{a_j}}$$
 $$\text{Attention}(Q,K,V) = \begin{bmatrix}
 \beta_{1,1} & \beta_{1,2} & \cdots & \beta_{1,n}
 \end{bmatrix} \begin{bmatrix}
-v_1\\
-v_2\\
-\vdots\\
+v_1\
+v_2\
+\vdots\
 v_n
 \end{bmatrix} = \beta_{1,1}v_1 + \beta_{1,2}v_2 + \cdots + \beta_{1,n}v_n$$
 

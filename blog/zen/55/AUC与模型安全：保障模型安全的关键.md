@@ -58,8 +58,8 @@ AUC的数学模型基于曼-惠特尼U检验(Mann-Whitney U test)。该检验是
 
 $$
 \phi(x, y) = \begin{cases}
-1, & \text{if } x > y \\
-0.5, & \text{if } x = y \\
+1, & \text{if } x > y \
+0.5, & \text{if } x = y \
 0, & \text{if } x < y
 \end{cases}
 $$

@@ -125,7 +125,7 @@ VAE的数学模型如下：
 
 $$
 \begin{align*}
-\mu &= \mu_\theta(x) \\
+\mu &= \mu_\theta(x) \
 \sigma^2 &= \sigma^2_\theta(x)
 \end{align*}
 $$

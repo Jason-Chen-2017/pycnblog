@@ -166,7 +166,7 @@ $$
 
 $$
 \begin{aligned}
-V^\pi(s) &= \mathbb{E}_\pi \left[ \sum_{t=0}^\infty \gamma^t R(s_t, a_t) \mid s_0 = s \right] \\
+V^\pi(s) &= \mathbb{E}_\pi \left[ \sum_{t=0}^\infty \gamma^t R(s_t, a_t) \mid s_0 = s \right] \
 Q^\pi(s, a) &= \mathbb{E}_\pi \left[ \sum_{t=0}^\infty \gamma^t R(s_t, a_t) \mid s_0 = s, a_0 = a \right]
 \end{aligned}
 $$

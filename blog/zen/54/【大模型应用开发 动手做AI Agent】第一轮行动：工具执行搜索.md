@@ -127,8 +127,8 @@ NLG的核心是序列生成问题,常用的算法有:
 注意力机制的数学表达式如下:
 
 $$\begin{aligned}
-\text{Attention}(Q, K, V) &= \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V \\
-\text{head}_i &= \text{Attention}(QW_i^Q, KW_i^K, VW_i^V) \\
+\text{Attention}(Q, K, V) &= \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V \
+\text{head}_i &= \text{Attention}(QW_i^Q, KW_i^K, VW_i^V) \
 \text{MultiHead}(Q, K, V) &= \text{Concat}(\text{head}_1, \ldots, \text{head}_h)W^O
 \end{aligned}$$
 

@@ -150,8 +150,8 @@ $$
 
 $$
 \begin{align}
-S &= \sum_\Delta A_\Delta \epsilon_\Delta \\
-  &= \sum_\Delta A_\Delta \left( \pi - \sum_\alpha \theta_\alpha^\Delta \right) \\
+S &= \sum_\Delta A_\Delta \epsilon_\Delta \
+  &= \sum_\Delta A_\Delta \left( \pi - \sum_\alpha \theta_\alpha^\Delta \right) \
   &= \sum_h A_h \left( \pi - \sum_\alpha \phi_{h\alpha} \right)
 \end{align}
 $$

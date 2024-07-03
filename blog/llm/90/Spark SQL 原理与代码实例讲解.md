@@ -150,15 +150,15 @@ Spark SQL主要涉及以下数学模型：
 
 $$
 df1 = \begin{bmatrix}
-a_1 & b_1 \\
-c_1 & d_1 \\
+a_1 & b_1 \
+c_1 & d_1 \
 \end{bmatrix}
 $$
 
 $$
 df2 = \begin{bmatrix}
-e_2 & f_2 \\
-g_2 & h_2 \\
+e_2 & f_2 \
+g_2 & h_2 \
 \end{bmatrix}
 $$
 
@@ -166,8 +166,8 @@ $$
 
 $$
 df1 + df2 = \begin{bmatrix}
-a_1+e_2 & b_1+f_2 \\
-c_1+g_2 & d_1+h_2 \\
+a_1+e_2 & b_1+f_2 \
+c_1+g_2 & d_1+h_2 \
 \end{bmatrix}
 $$
 

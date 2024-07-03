@@ -64,7 +64,7 @@ Lucene 广泛应用于需要添加搜索功能的场景,如网站搜索、文档
 
 $$
 score(d, q) = \begin{cases}
-1, & \text{if } d \text{ matches } q \\
+1, & \text{if } d \text{ matches } q \
 0, & \text{otherwise}
 \end{cases}
 $$

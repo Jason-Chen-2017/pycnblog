@@ -183,9 +183,9 @@ Grok的匹配过程可以用如下公式表示：
 
 $$
 \begin{aligned}
-G(s, p) &= M \\
-M &= \{(k_1, v_1), (k_2, v_2), ..., (k_n, v_n)\} \\
-k_i &= p_i.name \\
+G(s, p) &= M \
+M &= \{(k_1, v_1), (k_2, v_2), ..., (k_n, v_n)\} \
+k_i &= p_i.name \
 v_i &= s.substring(p_i.start, p_i.end)
 \end{aligned}
 $$

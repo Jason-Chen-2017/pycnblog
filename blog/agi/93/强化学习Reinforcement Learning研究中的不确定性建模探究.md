@@ -272,8 +272,8 @@ $$
 
 $$
 Q(s,a) = \begin{cases}
-10 & \text{if } (s=(3,4)) \\
--1 & \text{if } (s=(0,0),s=(0,1),s=(1,0),s=(1,1)) \\
+10 & \text{if } (s=(3,4)) \
+-1 & \text{if } (s=(0,0),s=(0,1),s=(1,0),s=(1,1)) \
 0 & \text{otherwise}
 \end{cases}
 $$

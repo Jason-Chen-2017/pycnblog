@@ -127,7 +127,7 @@ AIGC在音频和视频创作中涉及的数学模型主要包括以下几种：
 
 $$
 \begin{aligned}
-\min_{G} \max_{D} V(G, D) &= \min_{G} \max_{D} \left\{ -\log D(G(z)) + \log D(x) \right\} \\
+\min_{G} \max_{D} V(G, D) &= \min_{G} \max_{D} \left\{ -\log D(G(z)) + \log D(x) \right\} \
 \end{aligned}
 $$
 
@@ -145,7 +145,7 @@ $$
 
 $$
 \begin{aligned}
-\text{激活函数}(x) &= \max(0, x + b) \\
+\text{激活函数}(x) &= \max(0, x + b) \
 \end{aligned}
 $$
 

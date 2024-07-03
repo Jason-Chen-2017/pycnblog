@@ -138,7 +138,7 @@ $$
 
 $$
 \begin{aligned}
-\max_{\theta_D} \mathbb{E}_{x\sim p_{data}(x)}[\log D(x)] + \max_{\theta_G} \mathbb{E}_{z\sim p_z(z)}[\log(1-D(G(z))] &= \max_{\theta_D} \int_{-\infty}^{+\infty} \log D(x) p_{data}(x) dx + \max_{\theta_G} \int_{-\infty}^{+\infty} \log(1-D(G(z))) p_z(z) dz \\
+\max_{\theta_D} \mathbb{E}_{x\sim p_{data}(x)}[\log D(x)] + \max_{\theta_G} \mathbb{E}_{z\sim p_z(z)}[\log(1-D(G(z))] &= \max_{\theta_D} \int_{-\infty}^{+\infty} \log D(x) p_{data}(x) dx + \max_{\theta_G} \int_{-\infty}^{+\infty} \log(1-D(G(z))) p_z(z) dz \
 &= \max_{\theta_D} \int_{-\infty}^{+\infty} \log \frac{1}{1+e^{-D(x)}} p_{data}(x) dx + \max_{\theta_G} \int_{-\infty}^{+\infty} \log \frac{1}{1+e^{-D(G(z))}} p_z(z) dz
 \end{aligned}
 $$
@@ -147,14 +147,14 @@ $$
 
 $$
 \begin{aligned}
-\frac{\partial}{\partial \theta_D} \mathbb{E}_{x\sim p_{data}(x)}[\log D(x)] &= \mathbb{E}_{x\sim p_{data}(x)}\left[\frac{\partial}{\partial D(x)} \log D(x)\right] p_{data}(x) \\
+\frac{\partial}{\partial \theta_D} \mathbb{E}_{x\sim p_{data}(x)}[\log D(x)] &= \mathbb{E}_{x\sim p_{data}(x)}\left[\frac{\partial}{\partial D(x)} \log D(x)\right] p_{data}(x) \
 &= \mathbb{E}_{x\sim p_{data}(x)}\left[\frac{D(x)}{1+e^{-D(x)}}\right] p_{data}(x)
 \end{aligned}
 $$
 
 $$
 \begin{aligned}
-\frac{\partial}{\partial \theta_G} \mathbb{E}_{z\sim p_z(z)}[\log(1-D(G(z)))] &= \mathbb{E}_{z\sim p_z(z)}\left[\frac{\partial}{\partial D(G(z))} \log(1-D(G(z)))\right] p_z(z) \\
+\frac{\partial}{\partial \theta_G} \mathbb{E}_{z\sim p_z(z)}[\log(1-D(G(z)))] &= \mathbb{E}_{z\sim p_z(z)}\left[\frac{\partial}{\partial D(G(z))} \log(1-D(G(z)))\right] p_z(z) \
 &= \mathbb{E}_{z\sim p_z(z)}\left[\frac{1}{1-D(G(z))}\right] p_z(z)
 \end{aligned}
 $$

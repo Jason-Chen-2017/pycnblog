@@ -39,7 +39,7 @@
 
 $$
 \begin{align*}
-x = fX/Z + u_0 \\
+x = fX/Z + u_0 \
 y = fY/Z + v_0
 \end{align*}
 $$

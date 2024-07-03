@@ -68,9 +68,9 @@ J --> M[跨模态对齐]
 
 $$
 \begin{aligned}
-Q &= XW_Q \\
-K &= XW_K \\
-V &= XW_V \\
+Q &= XW_Q \
+K &= XW_K \
+V &= XW_V \
 Attention(Q,K,V) &= softmax(\frac{QK^T}{\sqrt{d_k}})V
 \end{aligned}
 $$
@@ -84,7 +84,7 @@ $$
 
 $$
 \begin{aligned}
-PE_{(pos,2i)} &= sin(pos/10000^{2i/d_{model}}) \\
+PE_{(pos,2i)} &= sin(pos/10000^{2i/d_{model}}) \
 PE_{(pos,2i+1)} &= cos(pos/10000^{2i/d_{model}})
 \end{aligned}
 $$

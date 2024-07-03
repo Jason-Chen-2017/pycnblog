@@ -95,8 +95,8 @@ AIGC 的应用领域非常广泛，包括：
 
 $$
 \begin{aligned}
-& G(z) \rightarrow x \\
-& D(x) \rightarrow p \\
+& G(z) \rightarrow x \
+& D(x) \rightarrow p \
 \end{aligned}
 $$
 

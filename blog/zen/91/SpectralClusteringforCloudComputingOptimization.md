@@ -116,7 +116,7 @@ graph LR
 
 $$
 \begin{align*}
-\text{Minimize} & \quad J(x) = \sum_{i=1}^n \lambda_i(x_i - c_i)^2 \\
+\text{Minimize} & \quad J(x) = \sum_{i=1}^n \lambda_i(x_i - c_i)^2 \
 \text{Subject to} & \quad x_i \in S_i, \quad i = 1,2,...,k
 \end{align*}
 $$

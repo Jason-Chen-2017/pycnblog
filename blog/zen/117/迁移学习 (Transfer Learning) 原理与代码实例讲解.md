@@ -169,10 +169,10 @@ graph TD
 
 $$
 \begin{aligned}
-\boldsymbol{x} &\in \mathbb{R}^{H \times W \times C} &&\text{输入图像} \\
-\boldsymbol{z} &= f_\text{enc}(\boldsymbol{x}; \boldsymbol{\theta}_\text{enc}) &&\text{特征提取} \\
-\boldsymbol{y} &= f_\text{cls}(\boldsymbol{z}; \boldsymbol{\theta}_\text{cls}) &&\text{分类预测} \\
-\mathcal{L}(\boldsymbol{y}, \boldsymbol{y}_\text{true}) &= \sum_{i=1}^{N} -\boldsymbol{y}_\text{true}^{(i)} \log \boldsymbol{y}^{(i)} &&\text{交叉熵损失} \\
+\boldsymbol{x} &\in \mathbb{R}^{H \times W \times C} &&\text{输入图像} \
+\boldsymbol{z} &= f_\text{enc}(\boldsymbol{x}; \boldsymbol{\theta}_\text{enc}) &&\text{特征提取} \
+\boldsymbol{y} &= f_\text{cls}(\boldsymbol{z}; \boldsymbol{\theta}_\text{cls}) &&\text{分类预测} \
+\mathcal{L}(\boldsymbol{y}, \boldsymbol{y}_\text{true}) &= \sum_{i=1}^{N} -\boldsymbol{y}_\text{true}^{(i)} \log \boldsymbol{y}^{(i)} &&\text{交叉熵损失} \
 \boldsymbol{\theta}^* &= \operatorname*{argmin}_{\boldsymbol{\theta}} \mathcal{L}(\boldsymbol{y}, \boldsymbol{y}_\text{true}) + \lambda \Omega(\boldsymbol{\theta}) &&\text{优化目标}
 \end{aligned}
 $$

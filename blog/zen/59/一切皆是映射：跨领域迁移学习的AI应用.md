@@ -83,9 +83,9 @@ DANN 的损失函数包含三个部分:
 
 $$
 \begin{aligned}
-L &= L_{label} + L_{domain} + L_{adv} \\
-L_{label} &= -\sum_{i=1}^n y_i \log p(y_i | x_i) \\
-L_{domain} &= -\sum_{i=1}^n d_i \log p(d_i | x_i) \\
+L &= L_{label} + L_{domain} + L_{adv} \
+L_{label} &= -\sum_{i=1}^n y_i \log p(y_i | x_i) \
+L_{domain} &= -\sum_{i=1}^n d_i \log p(d_i | x_i) \
 L_{adv} &= -\sum_{i=1}^n (1-d_i) \log p(d_i | x_i)
 \end{aligned}
 $$

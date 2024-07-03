@@ -93,7 +93,7 @@ $$softmax(z_i) = \frac{e^{z_i}}{\sum_{j=1}^{K}e^{z_j}}$$
 其中,$z_i$是第$i$个元素的值,$K$是向量的维度。将其应用于ChatGPT的生成概率公式,可得:
 
 $$\begin{aligned}
-P(w_t|w_{1:t-1}) &= softmax(h_t^T W_e + b_e) \\
+P(w_t|w_{1:t-1}) &= softmax(h_t^T W_e + b_e) \
 &= \frac{exp(h_t^T W_e^{(w_t)} + b_e^{(w_t)})}{\sum_{j=1}^{|V|}exp(h_t^T W_e^{(j)} + b_e^{(j)})}
 \end{aligned}$$
 

@@ -126,8 +126,8 @@ Transformer的核心算法原理是基于自注意力机制(Self-Attention)来�
 
    $$
    \begin{aligned}
-   Q &= XW^Q \\
-   K &= XW^K \\
+   Q &= XW^Q \
+   K &= XW^K \
    V &= XW^V
    \end{aligned}
    $$

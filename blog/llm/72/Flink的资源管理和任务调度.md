@@ -253,7 +253,7 @@ $$
 
 $$
 X_{ij} = \begin{cases}
-1 & \text{如果Task } i \text{ 分配到TaskManager } j \text{上} \\
+1 & \text{如果Task } i \text{ 分配到TaskManager } j \text{上} \
 0 & \text{否则}
 \end{cases}
 $$

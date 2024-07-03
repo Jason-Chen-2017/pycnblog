@@ -116,8 +116,8 @@ LangChain中的NLP模型通常采用深度神经网络（Deep Neural Network, DN
 
 $$
 \begin{align*}
-\text{output} &= W_1 \text{hidden} + b_1 \\
-\text{hidden} &= W_2 \text{input} + b_2 \\
+\text{output} &= W_1 \text{hidden} + b_1 \
+\text{hidden} &= W_2 \text{input} + b_2 \
 \text{input} &= W_3 \text{ Embedding} + b_3
 \end{align*}
 $$

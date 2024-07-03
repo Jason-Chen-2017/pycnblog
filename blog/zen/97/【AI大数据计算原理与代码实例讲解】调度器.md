@@ -152,8 +152,8 @@
 
 $$
 \begin{align*}
-\max_{\boldsymbol{x}} & f(\boldsymbol{x}) \\
-\text{subject to} & \sum_{i=1}^n x_i \leq m \\
+\max_{\boldsymbol{x}} & f(\boldsymbol{x}) \
+\text{subject to} & \sum_{i=1}^n x_i \leq m \
 & p_i \geq p_j \quad \forall i < j, x_i \
 eq x_j
 \end{align*}

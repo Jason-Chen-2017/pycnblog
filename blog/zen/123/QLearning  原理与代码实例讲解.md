@@ -158,7 +158,7 @@ $$
 
 $$
 \begin{aligned}
-Q(s, a) &= \mathbb{E}[R_t + \gamma (R_{t+1} + \gamma R_{t+2} + ...) | S_t = s, A_t = a] \\
+Q(s, a) &= \mathbb{E}[R_t + \gamma (R_{t+1} + \gamma R_{t+2} + ...) | S_t = s, A_t = a] \
 &= \mathbb{E}[R_t + \gamma Q(S_{t+1}, A_{t+1}) | S_t = s, A_t = a]
 \end{aligned}
 $$
@@ -167,7 +167,7 @@ $$
 
 $$
 \begin{aligned}
-\mathbb{E}[R_t + \gamma Q(S_{t+1}, A_{t+1}) | S_t = s, A_t = a] &= \sum_{s'} P_{ss'}^{a} [R(s, a) + \gamma \sum_{a'} \pi(a'|s') Q(s', a')] \\
+\mathbb{E}[R_t + \gamma Q(S_{t+1}, A_{t+1}) | S_t = s, A_t = a] &= \sum_{s'} P_{ss'}^{a} [R(s, a) + \gamma \sum_{a'} \pi(a'|s') Q(s', a')] \
 &= R(s, a) + \gamma \sum_{s'} P_{ss'}^{a} \max_{a'} Q(s', a')
 \end{aligned}
 $$

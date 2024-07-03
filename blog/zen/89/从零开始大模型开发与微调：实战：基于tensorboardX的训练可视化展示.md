@@ -198,7 +198,7 @@ TensorboardX的可视化功能可以应用于多个领域,包括但不限于:
 
 $$
 \begin{aligned}
-\mathbf{h} &= \sigma(\mathbf{W}^{(1)}\mathbf{x} + \mathbf{b}^{(1)}) \\
+\mathbf{h} &= \sigma(\mathbf{W}^{(1)}\mathbf{x} + \mathbf{b}^{(1)}) \
 \mathbf{y} &= \mathbf{W}^{(2)}\mathbf{h} + \mathbf{b}^{(2)}
 \end{aligned}
 $$

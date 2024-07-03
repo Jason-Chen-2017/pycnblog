@@ -96,27 +96,27 @@ PageRank 算法的数学模型可以表示为一个线性方程组：
 
 $$
 \begin{bmatrix}
-PR(A_1) \\
-PR(A_2) \\
-\vdots \\
+PR(A_1) \
+PR(A_2) \
+\vdots \
 PR(A_N)
 \end{bmatrix} =
 (1-d) \begin{bmatrix}
-1 \\
-1 \\
-\vdots \\
+1 \
+1 \
+\vdots \
 1
 \end{bmatrix} +
 d \begin{bmatrix}
-0 & \frac{1}{C(A_2)} & \cdots & \frac{1}{C(A_N)} \\
-\frac{1}{C(A_1)} & 0 & \cdots & \frac{1}{C(A_N)} \\
-\vdots & \vdots & \ddots & \vdots \\
+0 & \frac{1}{C(A_2)} & \cdots & \frac{1}{C(A_N)} \
+\frac{1}{C(A_1)} & 0 & \cdots & \frac{1}{C(A_N)} \
+\vdots & \vdots & \ddots & \vdots \
 \frac{1}{C(A_1)} & \frac{1}{C(A_2)} & \cdots & 0
 \end{bmatrix}
 \begin{bmatrix}
-PR(A_1) \\
-PR(A_2) \\
-\vdots \\
+PR(A_1) \
+PR(A_2) \
+\vdots \
 PR(A_N)
 \end{bmatrix}
 $$

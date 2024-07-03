@@ -104,8 +104,8 @@ K-均值聚类算法的数学模型可以表示为：
 
 $$
 \begin{align*}
-\text{目标函数} & : \quad \min_{\mu} \sum_{i=1}^N \sum_{k=1}^K d(x_i, \mu_k)^2 \\
-\text{约束条件} & : \quad \sum_{k=1}^K x_i \in C_k, \quad \forall i=1,2,\ldots,N \\
+\text{目标函数} & : \quad \min_{\mu} \sum_{i=1}^N \sum_{k=1}^K d(x_i, \mu_k)^2 \
+\text{约束条件} & : \quad \sum_{k=1}^K x_i \in C_k, \quad \forall i=1,2,\ldots,N \
 \end{align*}
 $$
 

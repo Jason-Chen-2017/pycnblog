@@ -228,8 +228,8 @@ LIMIT 5;
    假设聚合操作符需要处理2GB的数据,聚合表达式的复杂度为2,则聚合操作符的成本为:
 
    $$
-   CPU\_Cost = 2 \times 10^9 \times 2 = 4 \times 10^9 \\
-   Memory\_Cost = 0.1 \times 2 \times 10^9 = 2 \times 10^8 \\
+   CPU\_Cost = 2 \times 10^9 \times 2 = 4 \times 10^9 \
+   Memory\_Cost = 0.1 \times 2 \times 10^9 = 2 \times 10^8 \
    Cost(AggregationNode) = CPU\_Cost + Memory\_Cost = 4.2 \times 10^9
    $$
 

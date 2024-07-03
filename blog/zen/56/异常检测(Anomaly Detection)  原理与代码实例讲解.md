@@ -46,7 +46,7 @@ B --> D[异常分数]
 
 1. 参数估计:分别估计每个特征的均值 $\mu_j$ 和方差 $\sigma_j^2$
 $$
-\mu_j = \frac{1}{m} \sum_{i=1}^m x_j^{(i)} \\
+\mu_j = \frac{1}{m} \sum_{i=1}^m x_j^{(i)} \
 \sigma_j^2 = \frac{1}{m} \sum_{i=1}^m (x_j^{(i)} - \mu_j)^2
 $$
 
@@ -87,7 +87,7 @@ $$
 我们希望通过这些数据学习一个异常检测模型。首先估计各特征的均值和方差:
 
 $$
-\mu_1 = 0.3, \ \sigma_1 = 0.2 \\
+\mu_1 = 0.3, \ \sigma_1 = 0.2 \
 \mu_2 = 42, \ \sigma_2 = 3
 $$
 
@@ -95,8 +95,8 @@ $$
 
 $$
 \begin{align*}
-p(x) &= p(x_1; 0.3, 0.2^2) \cdot p(x_2; 42, 3^2) \\
-&= \frac{1}{\sqrt{2\pi}0.2} \exp \left(-\frac{(0.6-0.3)^2}{2\cdot0.2^2}\right) \cdot \frac{1}{\sqrt{2\pi}3} \exp \left(-\frac{(50-42)^2}{2\cdot3^2}\right) \\
+p(x) &= p(x_1; 0.3, 0.2^2) \cdot p(x_2; 42, 3^2) \
+&= \frac{1}{\sqrt{2\pi}0.2} \exp \left(-\frac{(0.6-0.3)^2}{2\cdot0.2^2}\right) \cdot \frac{1}{\sqrt{2\pi}3} \exp \left(-\frac{(50-42)^2}{2\cdot3^2}\right) \
 &\approx 0.0063
 \end{align*}
 $$

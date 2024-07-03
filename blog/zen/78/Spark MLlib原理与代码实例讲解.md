@@ -115,7 +115,7 @@ $$f(x) = P(Y=1|X) = \frac{1}{1+e^{-w^Tx}}$$
 逻辑回归通常使用最大似然估计的方法来训练模型参数w。给定训练数据集D={(x1,y1),(x2,y2),...,(xn,yn)},我们需要最大化似然函数:
 
 $$\begin{aligned}
-L(w) &= \sum_{i=1}^n y_i\log P(y_i=1|x_i) + (1-y_i)\log P(y_i=0|x_i) \\
+L(w) &= \sum_{i=1}^n y_i\log P(y_i=1|x_i) + (1-y_i)\log P(y_i=0|x_i) \
      &= \sum_{i=1}^n [y_i\log\frac{1}{1+e^{-w^Tx_i}} + (1-y_i)\log\frac{e^{-w^Tx_i}}{1+e^{-w^Tx_i}}]
 \end{aligned}$$
 

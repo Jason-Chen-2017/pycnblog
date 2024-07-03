@@ -125,14 +125,14 @@ $$
 
 $$
 \begin{aligned}
-P(Spam|"赢钱") &\propto P(Spam) \times P("赢钱"|Spam) \\
+P(Spam|"赢钱") &\propto P(Spam) \times P("赢钱"|Spam) \
 &= 0.1 \times 0.9 = 0.09
 \end{aligned}
 $$
 
 $$
 \begin{aligned}
-P(Ham|"赢钱") &\propto P(Ham) \times P("赢钱"|Ham) \\
+P(Ham|"赢钱") &\propto P(Ham) \times P("赢钱"|Ham) \
 &= 0.9 \times 0.01 = 0.009
 \end{aligned}
 $$

@@ -108,8 +108,8 @@ graph TD
 2. **优化**: 在给定的时间horizon $N$内,求解一个优化问题,找到最优控制序列$\mathbf{u}^*=\{u_t^*,u_{t+1}^*,\dots,u_{t+N-1}^*\}$,使得某个代价函数$J$最小化:
 
 $$\begin{aligned}
-\mathbf{u}^* &= \arg\min_{\mathbf{u}} J(x_t,\mathbf{u})\\
-&\text{s.t.}\quad x_{t+k+1}=f(x_{t+k},u_{t+k}),\quad k=0,1,\dots,N-1\\
+\mathbf{u}^* &= \arg\min_{\mathbf{u}} J(x_t,\mathbf{u})\
+&\text{s.t.}\quad x_{t+k+1}=f(x_{t+k},u_{t+k}),\quad k=0,1,\dots,N-1\
 &\qquad\qquad x_t\text{ given}
 \end{aligned}$$
 

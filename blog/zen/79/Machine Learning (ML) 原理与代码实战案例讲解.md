@@ -160,7 +160,7 @@ $$J(w) = \frac{1}{2m}\sum_{i=1}^m(y^{(i)} - (w_0 + w_1x_1^{(i)} + ... + w_nx_n^{
 我们需要找到$w$使$J(w)$最小。通过对$w_j$求偏导数并令其等于0,可以得到Normal方程组:
 
 $$\begin{cases}
-\frac{\partial J(w)}{\partial w_0} = \frac{1}{m}\sum_{i=1}^m(y^{(i)} - (w_0 + w_1x_1^{(i)} + ... + w_nx_n^{(i)})) = 0\\
+\frac{\partial J(w)}{\partial w_0} = \frac{1}{m}\sum_{i=1}^m(y^{(i)} - (w_0 + w_1x_1^{(i)} + ... + w_nx_n^{(i)})) = 0\
 \frac{\partial J(w)}{\partial w_j} = \frac{1}{m}\sum_{i=1}^m(y^{(i)} - (w_0 + w_1x_1^{(i)} + ... + w_nx_n^{(i)}))(-x_j^{(i)}) = 0 \quad (j = 1, 2, ..., n)
 \end{cases}$$
 

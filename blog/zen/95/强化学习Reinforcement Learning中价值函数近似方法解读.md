@@ -163,11 +163,11 @@ $$
 假设神经网络模型包含 $L$ 个层，其中第一层输入为状态 $s$，最后一层输出为价值函数 $v(s,a;\theta)$。则前向传播过程如下：
 
 $$
-z_0 = s \\
-h_0 = \text{ReLU}(W_0 z_0 + b_0) \\
-h_1 = \text{ReLU}(W_1 h_0 + b_1) \\
-\ldots \\
-h_{L-1} = \text{ReLU}(W_{L-1} h_{L-2} + b_{L-1}) \\
+z_0 = s \
+h_0 = \text{ReLU}(W_0 z_0 + b_0) \
+h_1 = \text{ReLU}(W_1 h_0 + b_1) \
+\ldots \
+h_{L-1} = \text{ReLU}(W_{L-1} h_{L-2} + b_{L-1}) \
 v(s,a;\theta) = f(h_{L-1})
 $$
 
@@ -178,7 +178,7 @@ $$
 假设输出层激活函数为 $f$，损失函数为 $L(v(s,a;\theta), \hat{v}(s,a))$。则反向传播过程如下：
 
 $$
-\frac{\partial L}{\partial \theta} = \frac{\partial L}{\partial v} \cdot \frac{\partial v}{\partial \theta} \\
+\frac{\partial L}{\partial \theta} = \frac{\partial L}{\partial v} \cdot \frac{\partial v}{\partial \theta} \
 \frac{\partial L}{\partial v} = \hat{v}(s,a) - v(s,a;\theta)
 $$
 

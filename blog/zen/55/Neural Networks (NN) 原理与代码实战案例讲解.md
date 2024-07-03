@@ -91,7 +91,7 @@ graph LR
 对于单个神经元,前向传播的数学表达式如下:
 
 $$
-z = \sum_{i} w_i x_i + b \\
+z = \sum_{i} w_i x_i + b \
 a = \sigma(z)
 $$
 
@@ -112,7 +112,7 @@ $$
 对于单个神经元,反向传播的梯度计算公式如下:
 
 $$
-\frac{\partial E}{\partial w_i} = \frac{\partial E}{\partial a} \cdot \frac{\partial a}{\partial z} \cdot \frac{\partial z}{\partial w_i} \\
+\frac{\partial E}{\partial w_i} = \frac{\partial E}{\partial a} \cdot \frac{\partial a}{\partial z} \cdot \frac{\partial z}{\partial w_i} \
 \frac{\partial E}{\partial b} = \frac{\partial E}{\partial a} \cdot \frac{\partial a}{\partial z}
 $$
 
@@ -125,7 +125,7 @@ $$
 通过梯度下降法,权重和偏置项的更新公式为:
 
 $$
-w_i \leftarrow w_i - \eta \frac{\partial E}{\partial w_i} \\
+w_i \leftarrow w_i - \eta \frac{\partial E}{\partial w_i} \
 b \leftarrow b - \eta \frac{\partial E}{\partial b}
 $$
 

@@ -166,7 +166,7 @@ $$ 其中，α为学习率。
 奖励函数为：$$
 r(s,a) = -L(s,a) = -\begin{cases}
 1, & \text{if } a \
-eq s \\
+eq s \
 0, & \text{if } a = s
 \end{cases}
 $$

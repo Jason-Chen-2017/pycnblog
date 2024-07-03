@@ -119,9 +119,9 @@
 
 $$
 \begin{cases}
-\frac{\partial L}{\partial \beta_0} = 0 \\
-\frac{\partial L}{\partial \beta_1} = 0 \\
-\vdots \\
+\frac{\partial L}{\partial \beta_0} = 0 \
+\frac{\partial L}{\partial \beta_1} = 0 \
+\vdots \
 \frac{\partial L}{\partial \beta_n} = 0
 \end{cases}
 $$

@@ -57,7 +57,7 @@ Giraph实现的SSSP算法具有良好的可扩展性,可以处理百亿规模的
 $$
 d(v) =
 \begin{cases}
-0, & \text{if } v = s \\
+0, & \text{if } v = s \
 \infty, & \text{otherwise}
 \end{cases}
 $$

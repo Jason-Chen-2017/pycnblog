@@ -184,7 +184,7 @@
 
 $$
 \begin{aligned}
-V^{\pi}(s) &= \sum_{a \in A} \pi(a|s) \sum_{s' \in S} P(s'|s, a) [R(s, a, s') + \gamma V^{\pi}(s')] \\
+V^{\pi}(s) &= \sum_{a \in A} \pi(a|s) \sum_{s' \in S} P(s'|s, a) [R(s, a, s') + \gamma V^{\pi}(s')] \
 Q^{\pi}(s, a) &= \sum_{s' \in S} P(s'|s, a) [R(s, a, s') + \gamma \sum_{a' \in A} \pi(a'|s') Q^{\pi}(s', a')]
 \end{aligned}
 $$

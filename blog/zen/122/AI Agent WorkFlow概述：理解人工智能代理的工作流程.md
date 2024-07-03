@@ -167,9 +167,9 @@ AI工作流程框架的核心算法可以应用于各种AI系统的开发和部�
 
 $$
 \begin{aligned}
-\text{minimize} \quad & \sum_{i=1}^{n} w_i t_i \\
-\text{subject to} \quad & \sum_{i=1}^{n} r_{ij} \leq R_j, \quad j=1,\ldots,m \\
-& t_i \geq p_i, \quad i=1,\ldots,n \\
+\text{minimize} \quad & \sum_{i=1}^{n} w_i t_i \
+\text{subject to} \quad & \sum_{i=1}^{n} r_{ij} \leq R_j, \quad j=1,\ldots,m \
+& t_i \geq p_i, \quad i=1,\ldots,n \
 & t_i \geq t_k + p_i, \quad \forall (k,i) \in E
 \end{aligned}
 $$

@@ -76,8 +76,8 @@ Transformer编码器模块的数学模型如下：
 
 $$
 \begin{align*}
-\text{encoder\_output} &= \text{LayerNorm}(\text{LayerNorm(x\_layerNormed) + \text{Attention}(Q, K, V) + \text{FeedForward}(x\_intermediate)}) \\
-\text{x\_layerNormed} &= \text{LayerNorm}(x) \\
+\text{encoder\_output} &= \text{LayerNorm}(\text{LayerNorm(x\_layerNormed) + \text{Attention}(Q, K, V) + \text{FeedForward}(x\_intermediate)}) \
+\text{x\_layerNormed} &= \text{LayerNorm}(x) \
 \text{x\_intermediate} &= \text{MLP(x\_intermediate\_hidden)}
 \end{align*}
 $$
@@ -90,10 +90,10 @@ $$
 
 $$
 \begin{align*}
-\text{Q} &= \text{WQ}^T\text{X} \\
-\text{K} &= \text{WK}^T\text{X} \\
-\text{V} &= \text{WV}^T\text{X} \\
-\text{Q}^*\text{K}^T &= \text{S} \\
+\text{Q} &= \text{WQ}^T\text{X} \
+\text{K} &= \text{WK}^T\text{X} \
+\text{V} &= \text{WV}^T\text{X} \
+\text{Q}^*\text{K}^T &= \text{S} \
 \text{S} &= \text{softmax(\frac{S}{\sqrt{d_k}})}
 \end{align*}
 $$

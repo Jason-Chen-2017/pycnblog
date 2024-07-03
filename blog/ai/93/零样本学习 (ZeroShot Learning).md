@@ -116,8 +116,8 @@ ZSL算法在以下领域具有广泛的应用前景：
 
 $$
 \begin{align*}
-\text{原型网络} &= M_{\theta}(x) \\
-f(x) &= W \cdot x + b \\
+\text{原型网络} &= M_{\theta}(x) \
+f(x) &= W \cdot x + b \
 \hat{c} &= \arg\min_{c} \sum_{i=1}^N (f(x) - f(c_i))^2
 \end{align*}
 $$

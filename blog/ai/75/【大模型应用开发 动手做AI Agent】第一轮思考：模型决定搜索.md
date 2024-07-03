@@ -119,7 +119,7 @@
 
 $$
 \begin{aligned}
-&\text{目标函数}：f(\theta) = \sum_{i=1}^N \ell(\theta, x_i, y_i) \\
+&\text{目标函数}：f(\theta) = \sum_{i=1}^N \ell(\theta, x_i, y_i) \
 &\text{搜索过程}：\theta^* = \mathop{\arg\min}_{\theta} f(\theta)
 \end{aligned}
 $$

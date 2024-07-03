@@ -115,7 +115,7 @@
 
 $$
 \begin{align*}
-\text{Teacher Model:} & \quad M_{T}(x) = f_{\theta_T}(x) \\
+\text{Teacher Model:} & \quad M_{T}(x) = f_{\theta_T}(x) \
 \text{Student Model:} & \quad M_{S}(x) = f_{\theta_S}(x)
 \end{align*}
 $$
@@ -128,7 +128,7 @@ $$
 
 $$
 \begin{align*}
-L_{T}(x) &= \ell(M_{T}(x), y) \\
+L_{T}(x) &= \ell(M_{T}(x), y) \
 L_{S}(x) &= \ell(M_{S}(x), M_{T}(x))
 \end{align*}
 $$

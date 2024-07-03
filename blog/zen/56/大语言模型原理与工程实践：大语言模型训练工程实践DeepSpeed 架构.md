@@ -61,7 +61,7 @@ ZeRO的操作步骤如下：
 $$
 p_j^i =
 \begin{cases}
-p_j, & \text{if } i = \text{device of } p_j \\
+p_j, & \text{if } i = \text{device of } p_j \
 0, & \text{otherwise}
 \end{cases}
 $$
@@ -73,7 +73,7 @@ $$
 $$
 p_j^i =
 \begin{cases}
-p_j, & \text{if } i = \text{device of } p_j \\
+p_j, & \text{if } i = \text{device of } p_j \
 0, & \text{otherwise}
 \end{cases}
 $$
@@ -81,7 +81,7 @@ $$
 $$
 g_j^i =
 \begin{cases}
-g_j, & \text{if } i = \text{device of } g_j \\
+g_j, & \text{if } i = \text{device of } g_j \
 0, & \text{otherwise}
 \end{cases}
 $$

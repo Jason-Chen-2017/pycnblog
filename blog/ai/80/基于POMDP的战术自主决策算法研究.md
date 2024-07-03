@@ -124,7 +124,7 @@ POMDP的数学模型可以用以下公式表示：
 
 $$
 \begin{align*}
-P(s'|s,a) &= \sum_{o} P(s'|s,a,o) \\
+P(s'|s,a) &= \sum_{o} P(s'|s,a,o) \
 P(o|s,a) &= \sum_{s'} P(o|s,a,s')
 \end{align*}
 $$

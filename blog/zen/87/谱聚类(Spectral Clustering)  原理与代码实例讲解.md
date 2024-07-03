@@ -139,10 +139,10 @@ $$
 
 $$
 W = \begin{bmatrix}
-w_{11} & w_{12} & \dots & w_{1n} \\
-w_{21} & w_{22} & \dots & w_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
-w_{n1} & w_{n2} & \dots & w_{nn} \\
+w_{11} & w_{12} & \dots & w_{1n} \
+w_{21} & w_{22} & \dots & w_{2n} \
+\vdots & \vdots & \ddots & \vdots \
+w_{n1} & w_{n2} & \dots & w_{nn} \
 \end{bmatrix}
 $$
 
@@ -152,10 +152,10 @@ $$
 
 $$
 W' = \begin{bmatrix}
-w_{11}' & w_{12}' & \dots & w_{1n}' \\
-w_{21}' & w_{22}' & \dots & w_{2n}' \\
-\vdots & \vdots & \ddots & \vdots \\
-w_{n1}' & w_{n2}' & \dots & w_{nn}' \\
+w_{11}' & w_{12}' & \dots & w_{1n}' \
+w_{21}' & w_{22}' & \dots & w_{2n}' \
+\vdots & \vdots & \ddots & \vdots \
+w_{n1}' & w_{n2}' & \dots & w_{nn}' \
 \end{bmatrix}
 $$
 
@@ -165,10 +165,10 @@ $$
 
 $$
 \boldsymbol{D} = \begin{bmatrix}
-d_1 \\
-d_2 \\
-\vdots \\
-d_n \\
+d_1 \
+d_2 \
+\vdots \
+d_n \
 \end{bmatrix}
 $$
 

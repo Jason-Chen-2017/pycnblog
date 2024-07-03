@@ -132,9 +132,9 @@ GRU的数学模型可以表示为:
 
 $$
 \begin{aligned}
-z_t &= \sigma(W_z \cdot [h_{t-1}, x_t] + b_z) \\
-r_t &= \sigma(W_r \cdot [h_{t-1}, x_t] + b_r) \\
-\tilde{h}_t &= \tanh(W \cdot [r_t \odot h_{t-1}, x_t] + b) \\
+z_t &= \sigma(W_z \cdot [h_{t-1}, x_t] + b_z) \
+r_t &= \sigma(W_r \cdot [h_{t-1}, x_t] + b_r) \
+\tilde{h}_t &= \tanh(W \cdot [r_t \odot h_{t-1}, x_t] + b) \
 h_t &= (1 - z_t) \odot h_{t-1} + z_t \odot \tilde{h}_t
 \end{aligned}
 $$

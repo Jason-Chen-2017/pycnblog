@@ -81,8 +81,8 @@ SSM框架的整合是指将Spring、SpringMVC和MyBatis三个框架整合在一�
 
 $$
 \begin{aligned}
-\max & \sum_{i=1}^n c_i x_i \\
-\text{s.t.} & \sum_{i=1}^n a_{ij} x_i \le b_j, \forall j=1,2,...,m \\
+\max & \sum_{i=1}^n c_i x_i \
+\text{s.t.} & \sum_{i=1}^n a_{ij} x_i \le b_j, \forall j=1,2,...,m \
 & x_i \ge 0, \forall i=1,2,...,n
 \end{aligned}
 $$
@@ -97,9 +97,9 @@ $$
 
 $$
 \begin{aligned}
-\max & 1000x_1 + 800x_2 \\
-\text{s.t.} & 1.5x_1 + x_2 \le 1000 \\
-& 0.8x_1 + 0.5x_2 \le 500 \\
+\max & 1000x_1 + 800x_2 \
+\text{s.t.} & 1.5x_1 + x_2 \le 1000 \
+& 0.8x_1 + 0.5x_2 \le 500 \
 & x_1 \ge 0, x_2 \ge 0
 \end{aligned}
 $$

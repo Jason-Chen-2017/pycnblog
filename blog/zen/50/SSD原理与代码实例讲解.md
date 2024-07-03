@@ -143,9 +143,9 @@ SSD算法的数学模型主要包括以下几个部分:
    默认框的生成可以通过以下公式描述:
 
    $$
-   d_k^{cx} = (i + f_k^{cx}) / f_w \\
-   d_k^{cy} = (j + f_k^{cy}) / f_h \\
-   d_k^w = e^{f_k^w} \\
+   d_k^{cx} = (i + f_k^{cx}) / f_w \
+   d_k^{cy} = (j + f_k^{cy}) / f_h \
+   d_k^w = e^{f_k^w} \
    d_k^h = e^{f_k^h}
    $$
 
@@ -174,9 +174,9 @@ SSD算法的数学模型主要包括以下几个部分:
 
    $$
    \begin{aligned}
-   t_x &= (g_x - d_x) / d_w \\
-   t_y &= (g_y - d_y) / d_h \\
-   t_w &= \log(g_w / d_w) \\
+   t_x &= (g_x - d_x) / d_w \
+   t_y &= (g_y - d_y) / d_h \
+   t_w &= \log(g_w / d_w) \
    t_h &= \log(g_h / d_h)
    \end{aligned}
    $$
@@ -196,9 +196,9 @@ SSD算法的数学模型主要包括以下几个部分:
 
    $$
    \begin{aligned}
-   d_k^{cx} &= \frac{i + f_k^{cx}}{f_w} \\
-   d_k^{cy} &= \frac{j + f_k^{cy}}{f_h} \\
-   d_k^w &= f_w \cdot e^{f_k^w} \\
+   d_k^{cx} &= \frac{i + f_k^{cx}}{f_w} \
+   d_k^{cy} &= \frac{j + f_k^{cy}}{f_h} \
+   d_k^w &= f_w \cdot e^{f_k^w} \
    d_k^h &= f_h \cdot e^{f_k^h}
    \end{aligned}
    $$
@@ -226,9 +226,9 @@ SSD算法的数学模型主要包括以下几个部分:
 
    $$
    \begin{aligned}
-   t_x &= (g_x - d_x) / d_w \\
-   t_y &= (g_y - d_y) / d_h \\
-   t_w &= \log(g_w / d_w) \\
+   t_x &= (g_x - d_x) / d_w \
+   t_y &= (g_y - d_y) / d_h \
+   t_w &= \log(g_w / d_w) \
    t_h &= \log(g_h / d_h)
    \end{aligned}
    $$

@@ -109,7 +109,7 @@ Flink Checkpoint机制可以使用以下数学模型进行描述：
 
 $$
 \begin{aligned}
-&\text{状态} \xrightarrow{\text{Checkpoint}} \text{状态快照} \xrightarrow{\text{故障}} \text{状态恢复} \\
+&\text{状态} \xrightarrow{\text{Checkpoint}} \text{状态快照} \xrightarrow{\text{故障}} \text{状态恢复} \
 &\text{状态} = \{S_1, S_2, \ldots, S_n\}
 \end{aligned}
 $$

@@ -136,7 +136,7 @@ $$
 $$
 y_t =
 \begin{cases}
-R(s_t, a_t) & \text{if episode terminates at } t+1 \\
+R(s_t, a_t) & \text{if episode terminates at } t+1 \
 R(s_t, a_t) + \gamma \max_{a'} Q(s_{t+1}, a'; \theta^-) & \text{otherwise}
 \end{cases}
 $$

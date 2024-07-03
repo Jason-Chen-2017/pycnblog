@@ -91,8 +91,8 @@ VAE的数学模型如下：
 
 $$
 \begin{align*}
-\mathcal{Q}(q_{\phi}(\theta|x)) &= \prod_{i=1}^{N} N(\mu(x_i;\phi), \sigma(x_i;\phi)) \\
-\mathcal{P}(z|x) &= \prod_{i=1}^{N} N(z_i|\mu(x;\phi), \sigma(x;\phi)) \\
+\mathcal{Q}(q_{\phi}(\theta|x)) &= \prod_{i=1}^{N} N(\mu(x_i;\phi), \sigma(x_i;\phi)) \
+\mathcal{P}(z|x) &= \prod_{i=1}^{N} N(z_i|\mu(x;\phi), \sigma(x;\phi)) \
 \end{align*}
 $$
 

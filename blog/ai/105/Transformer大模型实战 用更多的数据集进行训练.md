@@ -104,7 +104,7 @@ Transformer 模型是一种基于注意力机制的神经网络模型，它在�
 
 $$
 \begin{aligned}
-\mathcal{L}(\theta) &= \sum_{i=1}^{N} \mathcal{L}_i(\theta) \\
+\mathcal{L}(\theta) &= \sum_{i=1}^{N} \mathcal{L}_i(\theta) \
 &= \sum_{i=1}^{N} \sum_{j=1}^{M_i} \mathcal{L}_{i,j}(\theta)
 \end{aligned}
 $$

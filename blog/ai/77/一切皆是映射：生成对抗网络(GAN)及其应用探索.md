@@ -82,8 +82,8 @@ GAN的数学模型可以表示为：
 
 $$
 \begin{align*}
-x &= G(z) \\
-y &= D(x) \\
+x &= G(z) \
+y &= D(x) \
 D^*(x) &= 1 - D(G(z))
 \end{align*}
 $$

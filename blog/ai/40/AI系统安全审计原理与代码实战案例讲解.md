@@ -188,7 +188,7 @@ $$x' = x + \epsilon\text{sign}(\nabla_xJ(x,y))$$
 我们定义对抗鲁棒性得分为:
 
 $$R(f,x,y) = \begin{cases}
-1, & \text{if } f(x') = y\\
+1, & \text{if } f(x') = y\
 0, & \text{otherwise}
 \end{cases}$$
 

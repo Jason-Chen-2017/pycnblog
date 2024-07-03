@@ -103,7 +103,7 @@
 
 $$
 F(T, S, V) = \begin{cases}
-\text{true}, & \text{if } T - T_{last} \geq T_{interval} \text{ or } S - S_{last} \geq S_{size} \\
+\text{true}, & \text{if } T - T_{last} \geq T_{interval} \text{ or } S - S_{last} \geq S_{size} \
 \text{false}, & \text{otherwise}
 \end{cases}
 $$
@@ -118,7 +118,7 @@ $$
 
 $$
 F(T_{now}, S, V) = \begin{cases}
-\text{true}, & \text{if } T_{now} - T_{last} \geq 600 \text{ or } 100 - 1 \geq 0 \\
+\text{true}, & \text{if } T_{now} - T_{last} \geq 600 \text{ or } 100 - 1 \geq 0 \
 \text{false}, & \text{otherwise}
 \end{cases}
 $$

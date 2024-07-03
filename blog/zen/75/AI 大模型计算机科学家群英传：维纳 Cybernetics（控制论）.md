@@ -58,7 +58,7 @@
 
 $$
 \begin{align*}
-\dot{x}(t) &= Ax(t) + Bu(t) \\
+\dot{x}(t) &= Ax(t) + Bu(t) \
 y(t) &= Cx(t) + Du(t)
 \end{align*}
 $$
@@ -79,7 +79,7 @@ $$
 
 $$
 \begin{align*}
-\dot{x}(t) &= ax(t) + bu(t) \\
+\dot{x}(t) &= ax(t) + bu(t) \
 y(t) &= cx(t)
 \end{align*}
 $$

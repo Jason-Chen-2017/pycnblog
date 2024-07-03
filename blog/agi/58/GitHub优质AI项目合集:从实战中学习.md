@@ -75,7 +75,7 @@ $$
 
 $$
 \begin{aligned}
-w &:= w - \alpha \frac{\partial J(w,b)}{\partial w} \\
+w &:= w - \alpha \frac{\partial J(w,b)}{\partial w} \
 b &:= b - \alpha \frac{\partial J(w,b)}{\partial b}
 \end{aligned}
 $$
@@ -121,8 +121,8 @@ $$
 
 $$
 \begin{aligned}
-\min_{w,b,\xi} & \quad \frac{1}{2}\|w\|^2 + C\sum_{i=1}^m \xi_i \\
-\text{s.t.} & \quad y_i(w^Tx_i+b) \geq 1-\xi_i, \quad i=1,...,m \\
+\min_{w,b,\xi} & \quad \frac{1}{2}\|w\|^2 + C\sum_{i=1}^m \xi_i \
+\text{s.t.} & \quad y_i(w^Tx_i+b) \geq 1-\xi_i, \quad i=1,...,m \
 & \quad \xi_i \geq 0, \quad i=1,...,m
 \end{aligned}
 $$

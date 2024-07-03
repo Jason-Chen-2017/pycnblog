@@ -219,7 +219,7 @@ $$
 对损失函数求偏导，并令偏导等于0，可得：
 
 $$
-\beta_0 = \frac{\sum_{i=1}^n (y_i - \sum_{j=1}^m \beta_j x_{ij})}{n} \\
+\beta_0 = \frac{\sum_{i=1}^n (y_i - \sum_{j=1}^m \beta_j x_{ij})}{n} \
 \beta_j = \frac{\sum_{i=1}^n (y_i - \sum_{k=1}^m \beta_k x_{ik}) x_{ij}}{\sum_{i=1}^n x_{ij}^2}
 $$
 

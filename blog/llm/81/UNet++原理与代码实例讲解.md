@@ -116,16 +116,16 @@ U-Net++的数学模型可以表示为：
 
 $$
 \begin{align*}
-\text{特征图1} &= \text{卷积层1}(x) \\
-\text{特征图2} &= \text{卷积层2}(\text{特征图1}) \\
-&\vdots \\
-\text{特征图N} &= \text{卷积层N}(\text{特征图N-1}) \\
-\text{跳跃连接1} &= \text{拼接}(\text{特征图N}, \text{特征图N-2}) \\
-&\vdots \\
-\text{跳跃连接M} &= \text{拼接}(\text{特征图M+1}, \text{特征图1}) \\
-\text{解码器1} &= \text{卷积层}(\text{跳跃连接M}) \\
-&\vdots \\
-\text{解码器N} &= \text{卷积层}(\text{解码器N-1}) \\
+\text{特征图1} &= \text{卷积层1}(x) \
+\text{特征图2} &= \text{卷积层2}(\text{特征图1}) \
+&\vdots \
+\text{特征图N} &= \text{卷积层N}(\text{特征图N-1}) \
+\text{跳跃连接1} &= \text{拼接}(\text{特征图N}, \text{特征图N-2}) \
+&\vdots \
+\text{跳跃连接M} &= \text{拼接}(\text{特征图M+1}, \text{特征图1}) \
+\text{解码器1} &= \text{卷积层}(\text{跳跃连接M}) \
+&\vdots \
+\text{解码器N} &= \text{卷积层}(\text{解码器N-1}) \
 \text{输出} &= \text{激活函数}(\text{解码器N})
 \end{align*}
 $$

@@ -88,7 +88,7 @@ Pulsar的Segment存储算法特别适用于以下场景:
 
 $$
 P_i = \begin{cases}
-\frac{1-\rho}{1-\rho^{k+1}} \rho^i, & \text{if } i=0,1,2,...,k \\
+\frac{1-\rho}{1-\rho^{k+1}} \rho^i, & \text{if } i=0,1,2,...,k \
 0, & \text{if } i>k
 \end{cases}
 $$

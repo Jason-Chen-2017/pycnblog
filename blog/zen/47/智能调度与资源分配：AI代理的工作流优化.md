@@ -97,8 +97,8 @@ AI代理工作流优化算法可以应用于以下领域：
 
 $$
 \begin{align*}
-\max_{x} & \quad Z = c^T x \\
-\text{s.t.} & \quad Ax \leq b \\
+\max_{x} & \quad Z = c^T x \
+\text{s.t.} & \quad Ax \leq b \
 & \quad x \geq 0
 \end{align*}
 $$
@@ -119,7 +119,7 @@ $$
 
 $$
 \begin{align*}
-Z &= \sum_{i=1}^n \sum_{j=1}^n c_{ij} x_{ij} \\
+Z &= \sum_{i=1}^n \sum_{j=1}^n c_{ij} x_{ij} \
 &= c^T x
 \end{align*}
 $$
@@ -132,24 +132,24 @@ $$
 
 $$
 \begin{align*}
-Ax & \leq b \\
+Ax & \leq b \
 \begin{bmatrix}
-a_{11} & a_{12} & \dots & a_{1n} \\
-a_{21} & a_{22} & \dots & a_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
+a_{11} & a_{12} & \dots & a_{1n} \
+a_{21} & a_{22} & \dots & a_{2n} \
+\vdots & \vdots & \ddots & \vdots \
 a_{m1} & a_{m2} & \dots & a_{mn}
 \end{bmatrix}
 \begin{bmatrix}
-x_{11} \\
-x_{12} \\
-\vdots \\
+x_{11} \
+x_{12} \
+\vdots \
 x_{1n}
 \end{bmatrix}
 & \leq
 \begin{bmatrix}
-b_1 \\
-b_2 \\
-\vdots \\
+b_1 \
+b_2 \
+\vdots \
 b_m
 \end{bmatrix}
 \end{align*}

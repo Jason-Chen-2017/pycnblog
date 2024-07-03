@@ -101,7 +101,7 @@ def reverse_diffusion(x_t, t, model, alpha_bar_t, beta_t):
 
 $$
 \begin{aligned}
-\text{前向扩散:} \quad x_t &= \sqrt{1 - \beta_t} x_{t-1} + \sqrt{\beta_t} \epsilon \\
+\text{前向扩散:} \quad x_t &= \sqrt{1 - \beta_t} x_{t-1} + \sqrt{\beta_t} \epsilon \
 \text{反向扩散:} \quad x_{t-1} &= \frac{1}{\sqrt{1 - \beta_t}} (x_t - \frac{\beta_t}{\sqrt{\alpha_bar_t}} \epsilon_\theta(x_t, t))
 \end{aligned}
 $$

@@ -150,8 +150,8 @@ Petri网模型可以用以下公式表示：
 
 $$
 \begin{cases}
-P_i \rightarrow T_i \rightarrow P_j & \text{表示变迁 $T_i$ 从库所 $P_i$ 转换为库所 $P_j$} \\
-\text{库所 $P_i$ 中的 token 数量} & \text{表示该库所中可用的资源数量} \\
+P_i \rightarrow T_i \rightarrow P_j & \text{表示变迁 $T_i$ 从库所 $P_i$ 转换为库所 $P_j$} \
+\text{库所 $P_i$ 中的 token 数量} & \text{表示该库所中可用的资源数量} \
 \text{变迁 $T_i$ 的执行条件} & \text{表示该变迁何时能够执行}
 \end{cases}
 $$

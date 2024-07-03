@@ -195,6 +195,6 @@ RoBERTa的核心是基于Transformer的编码器结构,因此我们首先需要�
 自注意力机制的核心思想是将输入序列中的每个单词映射为三个向量:Query(查询)向量 $\boldsymbol{q}$、Key(键)向量 $\boldsymbol{k}$ 和 Value(值)向量 $\boldsymbol{v}$,通过计算查询向量与所有键向量之间的相似性得分,对值向量进行加权求和,得到该单词的注意力表示。具体计算过程如下:
 
 $$\begin{aligned}
-\text{Attention}(\boldsymbol{Q}, \boldsymbol{K}, \boldsymbol{V}) &= \text{softmax}\left(\frac{\boldsymbol{Q}\boldsymbol{K}^\top}{\sqrt{d_k}}\right)\boldsymbol{V} \\
-\text{where } \boldsymbol{Q} &= \boldsymbol{X}\boldsymbol{W}^Q \\
+\text{Attention}(\boldsymbol{Q}, \boldsymbol{K}, \boldsymbol{V}) &= \text{softmax}\left(\frac{\boldsymbol{Q}\boldsymbol{K}^\top}{\sqrt{d_k}}\right)\boldsymbol{V} \
+\text{where } \boldsymbol{Q} &= \boldsymbol{X}\boldsymbol{W}^Q \
 \boldsymbol

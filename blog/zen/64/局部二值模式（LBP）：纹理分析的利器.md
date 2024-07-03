@@ -61,7 +61,7 @@ LBP 算子与其他纹理描述算子（例如 Gabor 滤波器、Haralick 特征
 2. 对于每个邻域像素 $(x_p, y_p)$，计算其与中心像素的灰度值差异：
    $$
    s(g_p - g_c) = \begin{cases}
-   1, & \text{if } g_p - g_c \ge 0 \\
+   1, & \text{if } g_p - g_c \ge 0 \
    0, & \text{otherwise}
    \end{cases}
    $$
@@ -114,7 +114,7 @@ $$
 * $s(\cdot)$ 表示符号函数，定义为：
    $$
    s(x) = \begin{cases}
-   1, & \text{if } x \ge 0 \\
+   1, & \text{if } x \ge 0 \
    0, & \text{otherwise}
    \end{cases}
    $$

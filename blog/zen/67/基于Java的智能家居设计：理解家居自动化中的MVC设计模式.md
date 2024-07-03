@@ -47,9 +47,9 @@ $E=\sum_{i=1}^{n} P_i \times t_i$
 $$
 P=
 \begin{bmatrix}
-p_{11} & p_{12} & \cdots & p_{1n}\\
-p_{21} & p_{22} & \cdots & p_{2n}\\
-\vdots & \vdots & \ddots & \vdots\\
+p_{11} & p_{12} & \cdots & p_{1n}\
+p_{21} & p_{22} & \cdots & p_{2n}\
+\vdots & \vdots & \ddots & \vdots\
 p_{n1} & p_{n2} & \cdots & p_{nn}
 \end{bmatrix}
 $$

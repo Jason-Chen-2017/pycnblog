@@ -124,7 +124,7 @@ $$ x = \frac{i}{H} \cdot h, \quad y = \frac{j}{W} \cdot w $$
 
 $$
 \begin{aligned}
-f(i,j) &= (1-\Delta x)(1-\Delta y)Q_{11} + (1-\Delta x)\Delta yQ_{12} \\
+f(i,j) &= (1-\Delta x)(1-\Delta y)Q_{11} + (1-\Delta x)\Delta yQ_{12} \
 &+ \Delta x(1-\Delta y)Q_{21} + \Delta x\Delta yQ_{22}
 \end{aligned}
 $$

@@ -101,7 +101,7 @@ $$
 多头注意力机制将输入的词向量映射到多个不同的子空间，并在每个子空间中计算注意力权重。
 
 $$
-MultiHead(Q, K, V) = Concat(head_1, ..., head_h)W^O \\
+MultiHead(Q, K, V) = Concat(head_1, ..., head_h)W^O \
 where \ head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)
 $$
 

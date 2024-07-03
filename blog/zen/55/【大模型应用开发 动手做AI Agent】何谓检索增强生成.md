@@ -85,7 +85,7 @@ graph TD
 
 $$
 \begin{aligned}
-\mathbf{q} &= E_Q(q) \\
+\mathbf{q} &= E_Q(q) \
 \mathbf{d_i} &= E_D(d_i)
 \end{aligned}
 $$

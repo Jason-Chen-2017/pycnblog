@@ -131,7 +131,7 @@ $$I_{x} = \frac{\partial I}{\partial x}, \quad I_{y} = \frac{\partial I}{\partia
 
 $$
 \begin{align*}
-f*g &= (f * g)(x, y) \\
+f*g &= (f * g)(x, y) \
 &= \sum_{x', y'} f(x'-x, y'-y) g(x', y')
 \end{align*}
 $$
@@ -140,7 +140,7 @@ $$
 
 $$
 \begin{align*}
-w &= \arg\min_{w} \frac{1}{2}||w||^2 + C\sum_{i=1}^{n} \xi_i \\
+w &= \arg\min_{w} \frac{1}{2}||w||^2 + C\sum_{i=1}^{n} \xi_i \
 s.t. \quad y_i(w^T x_i + b) \geq 1 - \xi_i, \quad \xi_i \geq 0
 \end{align*}
 $$

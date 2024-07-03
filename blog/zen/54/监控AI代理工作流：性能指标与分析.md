@@ -92,7 +92,7 @@ C --> B
 $$
 f(x)=
 \begin{cases}
-\lambda e^{-\lambda x},& x \geq 0 \\
+\lambda e^{-\lambda x},& x \geq 0 \
 0,& x < 0
 \end{cases}
 $$

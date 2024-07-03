@@ -109,7 +109,7 @@ graph TD
 
 $$
 \begin{aligned}
-\hat{x}_{k|k-1} &= A\hat{x}_{k-1|k-1} + Bu_{k-1}\\
+\hat{x}_{k|k-1} &= A\hat{x}_{k-1|k-1} + Bu_{k-1}\
 P_{k|k-1} &= AP_{k-1|k-1}A^T + Q
 \end{aligned}
 $$
@@ -126,8 +126,8 @@ $$
 
 $$
 \begin{aligned}
-K_k &= P_{k|k-1}H^T(HP_{k|k-1}H^T + R)^{-1}\\
-\hat{x}_{k|k} &= \hat{x}_{k|k-1} + K_k(z_k - H\hat{x}_{k|k-1})\\
+K_k &= P_{k|k-1}H^T(HP_{k|k-1}H^T + R)^{-1}\
+\hat{x}_{k|k} &= \hat{x}_{k|k-1} + K_k(z_k - H\hat{x}_{k|k-1})\
 P_{k|k} &= (I - K_kH)P_{k|k-1}
 \end{aligned}
 $$

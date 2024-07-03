@@ -116,8 +116,8 @@ ZSL可以应用于以下领域：
 
 $$
 \begin{align*}
-\text{预训练模型}:\quad f_{\theta}(x) & = \text{嵌入}x \text{的通用特征表示} \\
-\text{任务特定参数}:\quad \omega & = \text{学习任务特定参数} \\
+\text{预训练模型}:\quad f_{\theta}(x) & = \text{嵌入}x \text{的通用特征表示} \
+\text{任务特定参数}:\quad \omega & = \text{学习任务特定参数} \
 \text{预测}:\quad \hat{y} = f_{\theta}(x) \cdot \omega & = \text{预测结果}
 \end{align*}
 $$

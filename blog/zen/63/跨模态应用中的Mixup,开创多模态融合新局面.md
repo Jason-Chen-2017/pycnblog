@@ -20,7 +20,7 @@ Mixup的原理非常简单，即对于两个随机样本 $(x_i, y_i)$ 和 $(x_j,
 
 $$
 \begin{aligned}
-\tilde{x} &= \lambda x_i + (1 - \lambda) x_j \\
+\tilde{x} &= \lambda x_i + (1 - \lambda) x_j \
 \tilde{y} &= \lambda y_i + (1 - \lambda) y_j
 \end{aligned}
 $$
@@ -51,7 +51,7 @@ Mixup技术具有以下优势：
 
 $$
 \begin{aligned}
-\tilde{image} &= \lambda image_i + (1 - \lambda) image_j \\
+\tilde{image} &= \lambda image_i + (1 - \lambda) image_j \
 \tilde{text} &= \lambda text_i + (1 - \lambda) text_j
 \end{aligned}
 $$

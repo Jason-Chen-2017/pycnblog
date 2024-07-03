@@ -125,7 +125,7 @@ AutoML并非取代传统机器学习，而是对其进行补充和增强。AutoM
 
 $$
 \begin{aligned}
-m(x) &= \mathbb{E}[f(x)] \\
+m(x) &= \mathbb{E}[f(x)] \
 k(x, x') &= \text{Cov}[f(x), f(x')]
 \end{aligned}
 $$

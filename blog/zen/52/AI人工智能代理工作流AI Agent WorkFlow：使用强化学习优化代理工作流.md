@@ -89,7 +89,7 @@ C --> |a2| B
 定义状态空间S={A,B,C}，动作空间A={a1,a2}，奖励函数如下：
 
 $R(s,a)=\begin{cases}
-1, & \text{if } s=C \text{ and } a=a2 \\
+1, & \text{if } s=C \text{ and } a=a2 \
 0, & \text{otherwise}
 \end{cases}$
 

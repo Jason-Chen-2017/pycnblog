@@ -78,9 +78,9 @@ VAE的数学模型如下：
 
 $$
 \begin{align*}
-\mu &= \mu(z|x) = \phi_\theta(x) \\
-\sigma^2 &= \sigma^2(z|x) = \phi_\theta(x) \\
-x &= q_\phi(z) = \sigma z + \mu \\
+\mu &= \mu(z|x) = \phi_\theta(x) \
+\sigma^2 &= \sigma^2(z|x) = \phi_\theta(x) \
+x &= q_\phi(z) = \sigma z + \mu \
 z &= p(z) = \mathcal{N}(0, I)
 \end{align*}
 $$

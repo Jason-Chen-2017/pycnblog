@@ -54,8 +54,8 @@ GraphX采用消息传递模型(Message Passing Model)来实现图形算法。该
 2. **sendMsg**:将消息从源顶点发送到目标顶点。
 3. **mergeMsg**:目标顶点根据收到的消息更新自身属性。
 
-$$\text{vertexProgram}(v, vdata, msg) \\
-\text{sendMsg}(srcId, dstId, msg) \\
+$$\text{vertexProgram}(v, vdata, msg) \
+\text{sendMsg}(srcId, dstId, msg) \
 \text{mergeMsg}(v, vdata, msg)$$
 
 这种模型支持迭代计算,直到满足收敛条件。许多经典图算法如PageRank、连通分量等都可以用消息传递模型实现。
