@@ -137,7 +137,7 @@ import numpy as np
 from sklearn.linear_model import LinearRegression
 
 # 样本数据
-X = np.array([[65, 2.5, 8.1], 
+X = np.array([[65, 2.5, 8.1],
               [72, 3.8, 6.3],
               [63, 3.1, 7.9],
               [68, 2.7, 7.2]])

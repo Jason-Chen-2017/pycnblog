@@ -143,9 +143,9 @@ HBase二级索引算法适用于以下场景：
 
 $$
 T(C,x_i) = \begin{cases}
-x_i \in [l,r] \quad \text{if } C \in C_{i} \\
+x_i \in [l,r] \quad \text{if } C \in C_{i} \
 T_{i+1}(C',x_i) \quad \text{if } x_i \
-otin [l,r] \text{ and } C' = C_{i+1} \\
+otin [l,r] \text{ and } C' = C_{i+1} \
 \emptyset \quad \text{if } x_i \
 otin [l,r] \text{ and } C \
 otin C_i
@@ -160,7 +160,7 @@ $$
 
 $$
 Q(C,D) = \begin{cases}
-Q_{i+1}(C',D') \quad \text{if } C \in C_i \\
+Q_{i+1}(C',D') \quad \text{if } C \in C_i \
 \emptyset \quad \text{if } C \
 otin C_i
 \end{cases}

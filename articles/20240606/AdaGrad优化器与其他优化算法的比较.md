@@ -41,8 +41,7 @@ AdaGrad优化器将每个参数的梯度累积起来，形成累积梯度。
 
 假设函数 \\( f(\\theta) \\) 是参数 \\( \\theta \\) 的函数，梯度下降的更新公式如下：
 
-\\[ \\theta_{t+1} = \\theta_t - \\alpha \\cdot \
-abla f(\\theta_t) \\]
+\\[ \\theta_{t+1} = \\theta_t - \\alpha \\cdot \nabla f(\\theta_t) \\]
 
 其中，\\( \\alpha \\) 表示学习率。
 

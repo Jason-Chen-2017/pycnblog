@@ -9,14 +9,14 @@
 #### 1.1.2 性能优化
 #### 1.1.3 异常检测
 
-### 1.2 传统方法的局限性  
+### 1.2 传统方法的局限性
 #### 1.2.1 批处理的延迟
 #### 1.2.2 无法实时响应
 #### 1.2.3 难以处理海量数据
 
 ### 1.3 SparkStreaming的优势
 #### 1.3.1 实时流处理
-#### 1.3.2 高吞吐低延迟  
+#### 1.3.2 高吞吐低延迟
 #### 1.3.3 可扩展和容错
 
 ## 2. 核心概念与联系
@@ -124,30 +124,30 @@ object NetworkMonitor {
   def main(args: Array[String]) {
     val conf = new SparkConf().setAppName("NetworkMonitor")
     val ssc = new StreamingContext(conf, Seconds(10))
-    
+
     // 自定义的网络流量Receiver
     val networkStream = ssc.receiverStream(new NetworkTrafficReceiver(port))
-    
+
     // 流量聚合统计
     val ipTrafficStats = networkStream
       .map(packet => (packet.srcIP, packet.bytes))
       .reduceByKeyAndWindow(_ + _, Seconds(60))
-      
-    // 实时输出聚合结果  
+
+    // 实时输出聚合结果
     ipTrafficStats.print()
-    
+
     // 定义异常检测规则
-    val threshold = 1000000 
+    val threshold = 1000000
     val anomalies = ipTrafficStats.filter(_._2 > threshold)
-    
+
     // 实时输出异常事件
     anomalies.foreachRDD(rdd => {
       rdd.foreach(event => {
         // 发送告警邮件或调用API
         println(s"Anomaly detected: ${event}")
-      })  
+      })
     })
-    
+
     ssc.start()
     ssc.awaitTermination()
   }
@@ -190,7 +190,7 @@ ISP可以实时监控骨干网的流量分布和异常,及时定位和解决网�
 
 ### 7.3 部署工具
 - YARN：Hadoop生态的资源管理系统
-- Mesos：通用的集群资源管理系统 
+- Mesos：通用的集群资源管理系统
 - Kubernetes：容器编排平台
 
 ### 7.4 学习资源

@@ -22,15 +22,15 @@
 
 线性回归模型试图建立一个线性关系来预测因变量（通常表示为 `y`）与一个或多个自变量（表示为 `x`）之间的关系。这个关系可以用以下形式表达：
 
-$$ y = \\beta_0 + \\beta_1 x_1 + \\beta_2 x_2 + ... + \\beta_n x_n + \\epsilon $$
+$$ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x_n + \epsilon $$
 
-其中，$\\beta_i$ 是回归系数，$\\epsilon$ 是误差项。线性回归的目标是找到一组 $\\beta_i$ 的值，使得预测值尽可能接近实际值。
+其中，$\beta_i$ 是回归系数，$\epsilon$ 是误差项。线性回归的目标是找到一组 $\beta_i$ 的值，使得预测值尽可能接近实际值。
 
 ### 关键概念
 
-- **拟合（Fitting）**：通过最小化预测值与实际值之间的差异来寻找最佳的 $\\beta_i$ 值。
+- **拟合（Fitting）**：通过最小化预测值与实际值之间的差异来寻找最佳的 $\beta_i$ 值。
 - **损失函数（Loss Function）**：衡量预测值与实际值之间的差距，常用的损失函数有均方误差（Mean Squared Error, MSE）和均绝对误差（Mean Absolute Error, MAE）。
-- **最小二乘法（Least Squares Method）**：最常用的方法之一，通过最小化平方误差来求解 $\\beta_i$ 的值。
+- **最小二乘法（Least Squares Method）**：最常用的方法之一，通过最小化平方误差来求解 $\beta_i$ 的值。
 
 ## 3. 核心算法原理 & 具体操作步骤
 
@@ -47,9 +47,9 @@ $$ y = \\beta_0 + \\beta_1 x_1 + \\beta_2 x_2 + ... + \\beta_n x_n + \\epsilon $
 
 #### 模型构建：
 
-1. **初始化参数**：设定初始的 $\\beta_i$ 值（例如，零向量）。
+1. **初始化参数**：设定初始的 $\beta_i$ 值（例如，零向量）。
 2. **损失函数**：定义均方误差（MSE）作为损失函数。
-3. **梯度下降**：迭代更新 $\\beta_i$ 的值，使得损失函数最小化。通常采用批量梯度下降、随机梯度下降或小批量梯度下降。
+3. **梯度下降**：迭代更新 $\beta_i$ 的值，使得损失函数最小化。通常采用批量梯度下降、随机梯度下降或小批量梯度下降。
 
 #### 训练过程：
 
@@ -58,7 +58,7 @@ $$ y = \\beta_0 + \\beta_1 x_1 + \\beta_2 x_2 + ... + \\beta_n x_n + \\epsilon $
 
 #### 预测：
 
-1. **应用模型**：使用训练好的 $\\beta_i$ 值预测新数据集中的 `y` 值。
+1. **应用模型**：使用训练好的 $\beta_i$ 值预测新数据集中的 `y` 值。
 
 ### 3.3 算法优缺点
 
@@ -88,19 +88,19 @@ $$ y = \\beta_0 + \\beta_1 x_1 + \\beta_2 x_2 + ... + \\beta_n x_n + \\epsilon $
 
 线性回归模型可以通过最小化均方误差（MSE）来构建：
 
-$$ MSE(\\beta) = \\frac{1}{n} \\sum_{i=1}^{n} (y_i - (\\beta_0 + \\beta_1 x_{i1} + \\beta_2 x_{i2} + ... + \\beta_n x_{in}))^2 $$
+$$ MSE(\beta) = \frac{1}{n} \sum_{i=1}^{n} (y_i - (\beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + ... + \beta_n x_{in}))^2 $$
 
 其中，$n$ 是样本数量，$y_i$ 是第 $i$ 个样本的因变量值，$x_{ij}$ 是第 $j$ 个特征的第 $i$ 个样本值。
 
 ### 4.2 公式推导过程
 
-最小化 MSE 的过程可以通过微积分中的偏导数来实现。对于每个回归系数 $\\beta_j$，我们可以找到使得导数为零的 $\\beta_j$ 值，从而找到最小化的 $\\beta_j$ 解。对于线性回归，这个过程通常通过梯度下降法来完成，具体步骤如下：
+最小化 MSE 的过程可以通过微积分中的偏导数来实现。对于每个回归系数 $\beta_j$，我们可以找到使得导数为零的 $\beta_j$ 值，从而找到最小化的 $\beta_j$ 解。对于线性回归，这个过程通常通过梯度下降法来完成，具体步骤如下：
 
 #### 梯度下降法：
 
-$$ \\beta_j := \\beta_j - \\alpha \\cdot \\frac{\\partial MSE}{\\partial \\beta_j} $$
+$$ \beta_j := \beta_j - \alpha \cdot \frac{\partial MSE}{\partial \beta_j} $$
 
-其中，$\\alpha$ 是学习率，决定了每次迭代更新的步长。
+其中，$\alpha$ 是学习率，决定了每次迭代更新的步长。
 
 ### 4.3 案例分析与讲解
 
@@ -120,7 +120,7 @@ model.fit(X, y)
 
 # 预测
 predictions = model.predict(X)
-print(\"预测值:\", predictions)
+print("预测值:", predictions)
 ```
 
 ### 4.4 常见问题解答
@@ -165,7 +165,7 @@ model.fit(X_train, y_train)
 # 预测并评估
 predictions = model.predict(X_test)
 mse = mean_squared_error(y_test, predictions)
-print(\"均方误差:\", mse)
+print("均方误差:", mse)
 ```
 
 ### 5.3 代码解读与分析

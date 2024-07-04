@@ -224,7 +224,7 @@ class QLearning(nn.Module):
         super(QLearning, self).__init__()
         self.fc1 = nn.Linear(num_states, 128)
         self.fc2 = nn.Linear(128, num_actions)
-        
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)
@@ -235,26 +235,26 @@ class VideoEnvironment:
     def __init__(self, video_path):
         self.video_path = video_path
         self.cap = cv2.VideoCapture(video_path)
-        
+
     def reset(self):
         ret, frame = self.cap.read()
         if not ret:
             self.cap.release()
             raise ValueError("视频文件读取失败")
         return frame
-        
+
     def step(self, action):
         ret, frame = self.cap.read()
         if not ret:
             self.cap.release()
             raise ValueError("视频文件读取失败")
-        
+
         # 对帧进行预处理
         frame = cv2.resize(frame, (224, 224))
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         frame = np.transpose(frame, (2, 0, 1))
         frame = torch.tensor(frame, dtype=torch.float32) / 255.0
-        
+
         # 执行动作
         if action == 0:
             # 向右移动
@@ -263,14 +263,14 @@ class VideoEnvironment:
             # 向左移动
             pass
         # ... 其他动作
-        
+
         # 计算奖励
         reward = 0
         if detect_target(frame):
             reward = 1.0
         else:
             reward = -1.0
-        
+
         return frame, reward
 
 # 检测目标

@@ -91,9 +91,9 @@ $$
 
 $$
 C = \begin{bmatrix}
-    \mathbf{a}_1 \cdot \mathbf{b}_1 & \mathbf{a}_1 \cdot \mathbf{b}_2 & \cdots & \mathbf{a}_1 \cdot \mathbf{b}_n \\
-    \mathbf{a}_2 \cdot \mathbf{b}_1 & \mathbf{a}_2 \cdot \mathbf{b}_2 & \cdots & \mathbf{a}_2 \cdot \mathbf{b}_n \\
-    \vdots & \vdots & \ddots & \vdots \\
+    \mathbf{a}_1 \cdot \mathbf{b}_1 & \mathbf{a}_1 \cdot \mathbf{b}_2 & \cdots & \mathbf{a}_1 \cdot \mathbf{b}_n \
+    \mathbf{a}_2 \cdot \mathbf{b}_1 & \mathbf{a}_2 \cdot \mathbf{b}_2 & \cdots & \mathbf{a}_2 \cdot \mathbf{b}_n \
+    \vdots & \vdots & \ddots & \vdots \
     \mathbf{a}_m \cdot \mathbf{b}_1 & \mathbf{a}_m \cdot \mathbf{b}_2 & \cdots & \mathbf{a}_m \cdot \mathbf{b}_n
 \end{bmatrix}
 $$
@@ -105,12 +105,12 @@ $$
 
 $$
 A = \begin{bmatrix}
-    1 & 2 & 3 \\
+    1 & 2 & 3 \
     4 & 5 & 6
 \end{bmatrix}, \quad
 B = \begin{bmatrix}
-    7 & 8 \\
-    9 & 10 \\
+    7 & 8 \
+    9 & 10 \
     11 & 12
 \end{bmatrix}
 $$
@@ -119,10 +119,10 @@ $$
 
 $$
 C = \begin{bmatrix}
-    1 \times 7 + 2 \times 9 + 3 \times 11 & 1 \times 8 + 2 \times 10 + 3 \times 12 \\
+    1 \times 7 + 2 \times 9 + 3 \times 11 & 1 \times 8 + 2 \times 10 + 3 \times 12 \
     4 \times 7 + 5 \times 9 + 6 \times 11 & 4 \times 8 + 5 \times 10 + 6 \times 12
 \end{bmatrix} = \begin{bmatrix}
-    58 & 64 \\
+    58 & 64 \
     139 & 154
 \end{bmatrix}
 $$

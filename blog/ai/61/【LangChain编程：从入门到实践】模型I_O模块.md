@@ -104,7 +104,7 @@ $$\mathbf{x}_i = [w_1, w_2, \ldots, w_d]$$
 
 - 序列填充（Padding）：将变长的文本序列补零，使其长度一致，方便批量处理。
 
-$$\mathbf{X} = \begin{bmatrix} 
+$$\mathbf{X} = \begin{bmatrix}
 x_{11} & x_{12} & \dots & x_{1T} & 0 & \dots & 0 \\
 x_{21} & x_{22} & \dots & 0 & 0 & \dots & 0 \\
 \vdots & \vdots & \ddots & \vdots & \vdots & \ddots & \vdots \\

@@ -1,4 +1,4 @@
-                 
+
 # AI人工智能核心算法原理与代码实例讲解：模型优化
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -59,7 +59,7 @@ $$ \theta := \theta - \alpha \nabla_\theta J(\theta) $$
 为了改善梯度下降的速度和稳定性，动态优化器引入了动量、自适应学习率等因素，例如：
 
 - **Momentum**: 加入动量项加速收敛，防止震荡：
-  
+
   $$
   v_{t+1} = \beta v_t + (1-\beta)g_t \\
   w_{t+1} = w_t - \eta v_{t+1}
@@ -68,7 +68,7 @@ $$ \theta := \theta - \alpha \nabla_\theta J(\theta) $$
   其中$v_t$是动量累积，$\beta$是动量系数，$g_t$是梯度。
 
 - **Adaptive Learning Rate**:
-  
+
   - Adam
     $$
     m_t = \beta_1 m_{t-1} + (1-\beta_1)g_t \\
@@ -77,11 +77,11 @@ $$ \theta := \theta - \alpha \nabla_\theta J(\theta) $$
     \hat{v}_t = \frac{v_t}{1-\beta_2^t} \\
     w_{t+1} = w_t - \eta\frac{\hat{m}_t}{\sqrt{\hat{v}_t}+\epsilon}
     $$
-    
+
   - RMSprop
-  
+
   - Adagrad
-  
+
 ### 2.3 直观理解与应用场景
 
 直观而言，梯度下降通过迭代更新模型参数，逐渐逼近损失函数的局部或全局最小值；反向传播则提供了计算梯度的有效方式，尤其是对于深层网络至关重要。动态优化器在此基础上进一步提升了优化效率和效果。
@@ -131,24 +131,24 @@ $$ L(y, f(x)) = \frac{1}{N}\sum_{i=1}^{N}(y_i - f(x_i))^2 $$
 考虑使用梯度下降法求解$\theta_0$和$\theta_1$：
 
 1. 计算梯度：
-   
-   \[
+
+   $$
    \frac{\partial L}{\partial \theta_0} = \frac{1}{N}\sum_{i=1}^{N}(y_i - (\theta_0 + \theta_1 x_i))
-   \]
-   
-   \[
+   $$
+
+   $$
    \frac{\partial L}{\partial \theta_1} = \frac{1}{N}\sum_{i=1}^{N}(y_i - (\theta_0 + \theta_1 x_i))x_i
-   \]
+   $$
 
 2. 更新规则：
-   
-   \[
+
+   $$
    \theta_0 := \theta_0 - \alpha \frac{\partial L}{\partial \theta_0}
-   \]
-   
-   \[
+   $$
+
+   $$
    \theta_1 := \theta_1 - \alpha \frac{\partial L}{\partial \theta_1}
-   \]
+   $$
 
 其中$\alpha$为学习率。
 
@@ -160,10 +160,10 @@ $$ L(y, f(x)) = \frac{1}{N}\sum_{i=1}^{N}(y_i - f(x_i))^2 $$
 
 - **如何选择合适的超参数？**
   超参数的选择依赖于具体任务和数据集，常用方法包括网格搜索、随机搜索以及贝叶斯优化等。
-  
+
 - **过拟合如何解决？**
   可以通过增加正则化项、使用Dropout、增大训练数据量等方式减少过拟合风险。
-  
+
 - **模型收敛速度慢怎么办？**
   调整学习率、引入动量、优化器类型，或者使用批量梯度下降而非梯度下降等方法均可提升收敛速度。
 

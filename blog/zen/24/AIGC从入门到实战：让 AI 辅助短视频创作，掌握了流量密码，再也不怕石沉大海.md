@@ -1,4 +1,4 @@
-                 
+
 # AIGC from Basics to Practice: Leveraging AI for Video Creation to Unlock Traffic Secrets and Avoid Being Overlooked
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -125,7 +125,7 @@ AI辅助视频创作广泛应用于广告营销、教育娱乐、社交分享等
 
 ```latex
 \begin{align*}
-\text{输入} & \quad \text{"一只小猴子在丛林中寻找失落的宝藏。"} \\
+\text{输入} & \quad \text{"一只小猴子在丛林中寻找失落的宝藏。"} \
 \text{输出} & \quad \text{"[画面展示猴子攀爬树木、穿越茂密丛林, 随着镜头推进, 出现闪闪发光的宝石]"}
 \end{align*}
 ```
@@ -184,20 +184,20 @@ def generate_video_from_text(text):
         truncation=True,
         return_tensors='tf'
     )
-    
+
     # 使用Bert提取特征
     sequence_output = bert_model(encoded_input['input_ids'])[0]
     features = sequence_output.numpy()
-    
+
     # 视频生成部分
     generator = StyleGAN2Generator()  # 加载图像生成模型
-    
+
     # 根据文本特征生成视频帧序列
     frames = []
     for _ in range(60):  # 假设每秒生成一帧，共60帧
         frame = generator.generate_frame(features)  # 假设此方法根据特征生成单帧图片
         frames.append(frame)
-    
+
     # 后期制作与输出
     video_writer = cv2.VideoWriter('output.mp4', cv2.VideoWriter_fourcc(*'mp4v'), 30, (frame.shape[1], frame.shape[0]))
     for frame in frames:

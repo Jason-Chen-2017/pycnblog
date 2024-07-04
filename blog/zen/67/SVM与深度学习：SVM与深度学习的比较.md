@@ -76,7 +76,7 @@ SVM 算法的目标是找到一个最大间隔超平面，将不同类别的数�
 
 $$
 \begin{aligned}
-&\min_{w, b} \frac{1}{2}||w||^2 \\
+&\min_{w, b} \frac{1}{2}||w||^2 \
 &s.t. \ y_i(w^Tx_i + b) \ge 1, \ i = 1, 2, ..., n
 \end{aligned}
 $$
@@ -89,8 +89,8 @@ $$
 
 $$
 \begin{aligned}
-&\min_{\alpha} \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n \alpha_i\alpha_jy_iy_jK(x_i, x_j) - \sum_{i=1}^n\alpha_i \\
-&s.t. \ \sum_{i=1}^n\alpha_iy_i = 0 \\
+&\min_{\alpha} \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n \alpha_i\alpha_jy_iy_jK(x_i, x_j) - \sum_{i=1}^n\alpha_i \
+&s.t. \ \sum_{i=1}^n\alpha_iy_i = 0 \
 &0 \le \alpha_i \le C, \ i = 1, 2, ..., n
 \end{aligned}
 $$

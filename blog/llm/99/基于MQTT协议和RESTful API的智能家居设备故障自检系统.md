@@ -138,7 +138,7 @@ RESTful API（Representational State Transfer）是一种基于HTTP协议的架�
 3. 设备正常时，电流 $X$ 和 $Y$ 的概率密度函数如下：
 
 $$
-f_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} = \frac{1}{\sqrt{2\pi}} e^{-\frac{(x-10)^2}{2}} 
+f_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} = \frac{1}{\sqrt{2\pi}} e^{-\frac{(x-10)^2}{2}}
 $$
 
 $$

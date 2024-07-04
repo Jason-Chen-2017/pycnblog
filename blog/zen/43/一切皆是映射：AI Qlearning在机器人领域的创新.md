@@ -185,12 +185,12 @@ for epoch in range(1000):
     # 生成一批数据
     x = np.random.random((32, 4))
     y = np.random.random((32, 4))
-    
+
     # 计算损失
     with tf.GradientTape() as tape:
         predictions = model(x)
         loss = loss_fn(y, predictions)
-    
+
     # 更新网络参数
     gradients = tape.gradient(loss, model.trainable_variables)
     optimizer.apply_gradients(zip(gradients, model.trainable_variables))

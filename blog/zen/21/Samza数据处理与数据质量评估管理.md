@@ -1,4 +1,4 @@
-                 
+
 # Samza数据处理与数据质量评估管理
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -111,7 +111,7 @@ $$ E = \{ e_1, e_2, ..., e_n \} $$
 
 以简单的过滤操作为例：
 
-$$ r_i = F(e_i, S) = \begin{cases} 
+$$ r_i = F(e_i, S) = \begin{cases}
 output\_event & (满足条件) \\
 \text{忽略} & (\text{不满足条件})
 \end{cases} $$
@@ -174,7 +174,7 @@ public class SimpleSamzaApplication {
         // 初始化配置参数
         Configuration conf = new Configuration();
         conf.set("samza.samza.app.name", "simple-app");
-        
+
         // 注册处理器
         StreamGraphBuilder builder = new StreamGraphBuilder(conf);
         GraphDef graph = builder.createGraph();

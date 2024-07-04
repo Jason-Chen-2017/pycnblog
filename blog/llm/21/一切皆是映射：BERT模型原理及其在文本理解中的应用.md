@@ -80,20 +80,20 @@ BERT模型通过多层Transformer编码器堆叠，每层编码器包含自注�
 BERT的核心是基于Transformer的多层编码器。在每一层中，自注意力机制（Attention）和前馈神经网络（Feed-Forward Network，FFN）交替出现。自注意力机制可以被表示为：
 
 $$
-\\text{Attention}(Q, K, V) = \\text{Softmax}(\\frac{QK^T}{\\sqrt{d_k}})V
+\text{Attention}(Q, K, V) = \text{Softmax}(\frac{QK^T}{\sqrt{d_k}})V
 $$
 
-其中，\\(Q\\)、\\(K\\)和\\(V\\)分别代表查询(query)、键(key)和值(value)，\\(d_k\\)是键的维度。
+其中，\(Q\)、\(K\)和\(V\)分别代表查询(query)、键(key)和值(value)，\(d_k\)是键的维度。
 
 ### 4.2 公式推导过程
 
 在BERT中，每个词向量经过两层自注意力机制后，通过加权求和的方式进行融合：
 
 $$
-\\text{MultiHead}(W_1Q + W_2K + W_3V)^T = \\text{Concat}(W_4W_1Q, W_4W_2K, W_4W_3V)^T
+\text{MultiHead}(W_1Q + W_2K + W_3V)^T = \text{Concat}(W_4W_1Q, W_4W_2K, W_4W_3V)^T
 $$
 
-这里的\\(W_i\\)是权重矩阵，用于线性变换。
+这里的\(W_i\)是权重矩阵，用于线性变换。
 
 ### 4.3 案例分析与讲解
 
@@ -123,7 +123,7 @@ model = BertForSequenceClassification.from_pretrained('bert-base-uncased')
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
 # 准备输入数据
-input_text = \"I love programming.\"
+input_text = "I love programming."
 tokens = tokenizer.encode(input_text, add_special_tokens=True)
 
 # 进行微调前的预处理
@@ -162,8 +162,8 @@ predictions = torch.argmax(outputs.logits, dim=-1)
 
 ### 7.3 相关论文推荐
 
-- [\"BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding\"](https://arxiv.org/abs/1810.04805) - Google Brain团队发布的原始论文。
-- [\"RoBERTa: A Robustly Optimized BERT Pretraining Approach\"](https://arxiv.org/abs/1907.11692) - Facebook AI Research团队的论文。
+- ["BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"](https://arxiv.org/abs/1810.04805) - Google Brain团队发布的原始论文。
+- ["RoBERTa: A Robustly Optimized BERT Pretraining Approach"](https://arxiv.org/abs/1907.11692) - Facebook AI Research团队的论文。
 
 ### 7.4 其他资源推荐
 

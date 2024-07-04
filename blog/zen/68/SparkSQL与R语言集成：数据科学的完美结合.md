@@ -120,8 +120,8 @@ df <- read.df(spark, "user_behavior.csv", source = "csv", header = TRUE, inferSc
 df <- withColumn(df, "purchase_time", to_timestamp(df$purchase_time))
 
 # 统计每个用户的购买次数和总金额
-user_stats <- df %>% 
-  groupBy("user_id") %>% 
+user_stats <- df %>%
+  groupBy("user_id") %>%
   agg(
     count("*") as "purchase_count",
     sum("purchase_amount") as "total_amount"

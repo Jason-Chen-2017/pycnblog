@@ -58,28 +58,26 @@ RL is a type of ML where an agent learns to make decisions by interacting with i
 
 Q-learning is a popular RL algorithm that estimates the expected cumulative reward for each state-action pair.
 
-$$Q(s, a) \\leftarrow Q(s, a) + \\alpha [r + \\gamma \\max_{a'} Q(s', a') - Q(s, a)]$$
+$$Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a') - Q(s, a)]$$
 
 Where:
 - $Q(s, a)$ is the estimated cumulative reward for state $s$ and action $a$.
-- $\\alpha$ is the learning rate.
+- $\alpha$ is the learning rate.
 - $r$ is the immediate reward.
-- $\\gamma$ is the discount factor.
+- $\gamma$ is the discount factor.
 - $s'$ and $a'$ are the new state and action after taking action $a$ in state $s$.
 
 ### 4.2 Policy Gradient
 
 Policy gradient methods directly optimize the policy function to maximize the expected cumulative reward.
 
-$$\\theta \\leftarrow \\theta + \\alpha \
-abla_\\theta J(\\theta)$$
+$$\theta \leftarrow \theta + \alpha \nabla_\theta J(\theta)$$
 
 Where:
-- $\\theta$ is the policy parameters.
-- $\\alpha$ is the learning rate.
-- $J(\\theta)$ is the expected cumulative reward under policy $\\theta$.
-- $\
-abla_\\theta J(\\theta)$ is the gradient of $J(\\theta)$ with respect to $\\theta$.
+- $\theta$ is the policy parameters.
+- $\alpha$ is the learning rate.
+- $J(\theta)$ is the expected cumulative reward under policy $\theta$.
+- $\nabla_\theta J(\theta)$ is the gradient of $J(\theta)$ with respect to $\theta$.
 
 ## 5. Project Practice: Code Examples and Detailed Explanations
 
@@ -131,7 +129,7 @@ The AI agent developed in this article can be applied to various practical scena
 - **OpenAI Gym**: A popular tool for developing and testing RL agents.
 - **TensorFlow**: A powerful open-source library for ML and DL.
 - **PyTorch**: Another popular open-source library for ML and DL.
-- **\"Reinforcement Learning: An Introduction\" by Richard S. Sutton and Andrew G. Barto**: A comprehensive book on reinforcement learning.
+- **"Reinforcement Learning: An Introduction" by Richard S. Sutton and Andrew G. Barto**: A comprehensive book on reinforcement learning.
 
 ## 8. Summary: Future Development Trends and Challenges
 
@@ -155,7 +153,7 @@ A: Supervised learning involves learning from labeled data, while reinforcement 
 
 **Q: What is the role of the discount factor in Q-learning?**
 
-A: The discount factor $\\gamma$ determines the importance of future rewards compared to immediate rewards. A higher $\\gamma$ values place more emphasis on future rewards.
+A: The discount factor $\gamma$ determines the importance of future rewards compared to immediate rewards. A higher $\gamma$ values place more emphasis on future rewards.
 
 **Q: How can I improve the performance of my AI agent?**
 

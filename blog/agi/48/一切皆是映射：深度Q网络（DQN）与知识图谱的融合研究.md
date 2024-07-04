@@ -203,17 +203,17 @@ def main():
     kg = nx.Graph()  # 创建知识图谱实例
     kg.add_node('node1', attributes={'feature1': 'value1'})
     kg.add_edge('node1', 'node2', relationship='relation1')
-    
+
     features_to_extract = ['feature1', 'relationship']  # 需要提取的特征列表
-    
+
     kg_features = process_knowledge_graph(kg, features_to_extract)
-    
+
     input_shape = (len(kg_features),)
     action_space = len(actions)  # 假设的动作空间大小
-    
+
     dqn_model = create_dqn_model(input_shape, action_space)
     data = prepare_data()  # 准备训练数据集
-    
+
     train_dqn_with_kg(kg, dqn_model, data, epochs=100)
 
 if __name__ == '__main__':
@@ -291,7 +291,7 @@ if __name__ == '__main__':
 
 - **Q：如何确保知识图谱的实时更新？**
   A：通过定期数据收集和自动化的质量检查流程，确保知识图谱的时效性和准确性。
-  
+
 - **Q：如何平衡知识图谱的复杂性和DQN的计算效率？**
   A：优化知识图谱特征的选择和提取过程，减少不必要的特征，同时提高DQN模型的参数效率和训练速度。
 

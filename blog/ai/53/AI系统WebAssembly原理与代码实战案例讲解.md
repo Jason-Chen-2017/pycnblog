@@ -245,4 +245,4 @@ WebAssembly 将在性能优化、生态系统建设、标准化等方面继续�
 
 ### 9.5 WebAssembly 面临哪些挑战？
 
-WebAssembly 面临的挑战包括安全性、调试、生态系统碎片化等。 
+WebAssembly 面临的挑战包括安全性、调试、生态系统碎片化等。

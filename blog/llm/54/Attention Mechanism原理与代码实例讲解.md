@@ -5,7 +5,7 @@
 ## 1. 背景介绍
 
 ### 1.1 注意力机制的起源与发展
-#### 1.1.1 注意力机制的生物学启发  
+#### 1.1.1 注意力机制的生物学启发
 #### 1.1.2 注意力机制在深度学习中的应用历史
 #### 1.1.3 注意力机制的重要里程碑
 
@@ -28,7 +28,7 @@
 
 ### 2.2 Attention与其他机制的关系
 #### 2.2.1 Attention与RNN的关系
-#### 2.2.2 Attention与CNN的关系 
+#### 2.2.2 Attention与CNN的关系
 #### 2.2.3 Attention与记忆网络的关系
 
 ### 2.3 常见的Attention变体
@@ -48,7 +48,7 @@
 #### 3.2.2 计算Self-Attention权重矩阵
 #### 3.2.3 加权求和得到输出
 
-### 3.3 Multi-Head Attention的计算过程  
+### 3.3 Multi-Head Attention的计算过程
 #### 3.3.1 构造多个Head的Query、Key、Value
 #### 3.3.2 并行计算各个Head的Attention
 #### 3.3.3 拼接各Head结果并线性变换
@@ -78,7 +78,7 @@ $$
 
 $$
 \begin{aligned}
-MultiHead(Q,K,V) &= Concat(head_1,...,head_h)W^O \\
+MultiHead(Q,K,V) &= Concat(head_1,...,head_h)W^O \
 head_i &= Attention(QW_i^Q, KW_i^K, VW_i^V)
 \end{aligned}
 $$
@@ -113,7 +113,7 @@ class Attention(nn.Module):
         return F.softmax(attn_energies, dim=1).unsqueeze(1)
 
     def score(self, hidden, encoder_outputs):
-        energy = torch.tanh(self.attn(torch.cat([hidden, encoder_outputs], 2))) 
+        energy = torch.tanh(self.attn(torch.cat([hidden, encoder_outputs], 2)))
         energy = energy.transpose(1, 2)
         v = self.v.repeat(encoder_outputs.size(0), 1).unsqueeze(1)
         energy = torch.bmm(v, energy)
@@ -139,11 +139,11 @@ class MultiHeadAttention(tf.keras.layers.Layer):
         self.wk = tf.keras.layers.Dense(d_model)
         self.wv = tf.keras.layers.Dense(d_model)
         self.dense = tf.keras.layers.Dense(d_model)
-        
+
     def split_heads(self, x, batch_size):
         x = tf.reshape(x, (batch_size, -1, self.num_heads, self.depth))
         return tf.transpose(x, perm=[0, 2, 1, 3])
-    
+
     def call(self, v, k, q, mask):
         batch_size = tf.shape(q)[0]
         q = self.wq(q)
@@ -155,7 +155,7 @@ class MultiHeadAttention(tf.keras.layers.Layer):
         scaled_attention, attention_weights = scaled_dot_product_attention(
             q, k, v, mask)
         scaled_attention = tf.transpose(scaled_attention, perm=[0, 2, 1, 3])
-        concat_attention = tf.reshape(scaled_attention, 
+        concat_attention = tf.reshape(scaled_attention,
                                       (batch_size, -1, self.d_model))
         output = self.dense(concat_attention)
         return output, attention_weights
@@ -173,7 +173,7 @@ class MultiHeadAttention(tf.keras.layers.Layer):
 #### 6.1.2 Transformer在机器翻译中的应用
 #### 6.1.3 Attention提升翻译质量的案例分析
 
-### 6.2 文本摘要中的应用 
+### 6.2 文本摘要中的应用
 #### 6.2.1 抽取式摘要中的Attention机制
 #### 6.2.2 生成式摘要中的Attention机制
 #### 6.2.3 Attention在摘要任务中的效果提升

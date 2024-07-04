@@ -143,8 +143,7 @@ $$
 2. **梯度下降**：使用梯度下降算法更新LLM的参数：
 
 $$
-\theta \leftarrow \theta - \eta \
-abla_{\theta}\mathcal{L}(\theta)
+\theta \leftarrow \theta - \eta \nabla_{\theta}\mathcal{L}(\theta)
 $$
 
 其中，$\eta$ 表示学习率。

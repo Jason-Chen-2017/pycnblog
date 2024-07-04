@@ -151,10 +151,10 @@ import numpy as np
 def louvain(G):
     # 初始化每个节点为一个独立的社区
     communities = {n: i for i, n in enumerate(G.nodes())}
-    
+
     # 计算初始模块度
     Q = modularity(G, communities)
-    
+
     while True:
         # 阶段1：模块度优化
         while True:
@@ -174,20 +174,20 @@ def louvain(G):
                     changed = True
             if not changed:
                 break
-        
+
         # 阶段2：社区聚合
         new_communities = {}
         for n, c in communities.items():
             if c not in new_communities:
                 new_communities[c] = len(new_communities)
         communities = {n: new_communities[c] for n, c in communities.items()}
-        
+
         # 计算新的模块度
         new_Q = modularity(G, communities)
         if new_Q <= Q:
             break
         Q = new_Q
-    
+
     return communities
 
 def modularity(G, communities):
@@ -207,4 +207,4 @@ def modularity_gain(G, communities, n, c):
     sum_in = sum(G.edges[u, v]['weight'] for u, v in G.edges() if communities[u] == c and communities[v] == c)
     sum_tot = sum(G.edges[u, v]['weight'] for u, v in G.edges() if communities[u] == c or communities[v] == c)
     k_i_c = sum(G.edges[n, v]['weight'] for v in G.neighbors(n) if communities[v] == communities[n])
-    delta_Q = (sum_in + 2 * k_i_in) / (2 * m) - ((sum_tot + k_i) / (2 
+    delta_Q = (sum_in + 2 * k_i_in) / (2 * m) - ((sum_tot + k_i) / (2

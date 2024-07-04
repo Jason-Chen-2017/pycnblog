@@ -102,7 +102,7 @@
 
 $$
 \begin{aligned}
-h &= f(x) \\
+h &= f(x) \
 \hat{x} &= g(h)
 \end{aligned}
 $$
@@ -123,7 +123,7 @@ RNN的数学模型可以表示为：
 
 $$
 \begin{aligned}
-h_t &= f(x_t, h_{t-1}) \\
+h_t &= f(x_t, h_{t-1}) \
 y_t &= g(h_t)
 \end{aligned}
 $$

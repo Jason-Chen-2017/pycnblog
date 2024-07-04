@@ -93,29 +93,25 @@
 
 ### 4.1 数学模型构建
 
-设参与者$i$的本地损失函数为$L_i(w)$，其中$w$是模型参数，$\\eta$是学习率，则参与者$i$的梯度更新规则为：
+设参与者$i$的本地损失函数为$L_i(w)$，其中$w$是模型参数，$\eta$是学习率，则参与者$i$的梯度更新规则为：
 
-$$ \\Delta w_i = -\\eta \\cdot \
-abla L_i(w) $$
+$$ \Delta w_i = -\eta \cdot \nabla L_i(w) $$
 
 ### 4.2 公式推导过程
 
-在联邦学习中，参与者$i$将更新后的模型参数$w_i + \\Delta w_i$发送给中央服务器。中央服务器对所有参与者的参数进行加权平均，得到全局模型的新参数：
+在联邦学习中，参与者$i$将更新后的模型参数$w_i + \Delta w_i$发送给中央服务器。中央服务器对所有参与者的参数进行加权平均，得到全局模型的新参数：
 
-$$ w_{global} = \\frac{\\sum_{i=1}^N w_i + \\Delta w_i}{N} $$
+$$ w_{global} = \frac{\sum_{i=1}^N w_i + \Delta w_i}{N} $$
 
 ### 4.3 案例分析与讲解
 
 假设我们有一个包含三个参与者的联邦学习场景，参与者分别拥有不同的数据集。中央服务器收到的参数更新为：
 
-$$ \\Delta w_1 = -\\eta \\cdot \
-abla L_1(w), \\quad \\Delta w_2 = -\\eta \\cdot \
-abla L_2(w), \\quad \\Delta w_3 = -\\eta \\cdot \
-abla L_3(w) $$
+$$ \Delta w_1 = -\eta \cdot \nabla L_1(w), \quad \Delta w_2 = -\eta \cdot \nabla L_2(w), \quad \Delta w_3 = -\eta \cdot \nabla L_3(w) $$
 
 中央服务器将这些参数进行加权平均：
 
-$$ w_{global} = \\frac{w_1 + \\Delta w_1 + w_2 + \\Delta w_2 + w_3 + \\Delta w_3}{3} $$
+$$ w_{global} = \frac{w_1 + \Delta w_1 + w_2 + \Delta w_2 + w_3 + \Delta w_3}{3} $$
 
 ### 4.4 常见问题解答
 

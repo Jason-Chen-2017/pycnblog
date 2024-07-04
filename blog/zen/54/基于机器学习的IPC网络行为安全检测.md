@@ -107,7 +107,7 @@ $$
 对于一个数据点$x$,其在隔离树$T$中的路径长度$h(x, T)$可以递归计算:
 
 $$
-h(x, T) = 0 \quad \text{if } |T| = 1 \\
+h(x, T) = 0 \quad \text{if } |T| = 1 \
 h(x, T) = c(size(T_{left}), size(T_{right})) + h(x, T_{child(x)}) \quad \text{otherwise}
 $$
 

@@ -42,8 +42,8 @@
 2. **前向传播**：
    - 将输入数据 $x$ 乘以权重矩阵 $W$ 并加上偏置 $b$。
    - 应用激活函数（如sigmoid、ReLU或tanh）得到隐藏层的输出。
-   - 反复执行此过程直至输出层，得到最终预测值 $\\hat{y}$。
-3. **计算损失**：使用均方误差（MSE）或交叉熵（CE）等损失函数计算预测值 $\\hat{y}$ 与实际标签 $y$ 的差异。
+   - 反复执行此过程直至输出层，得到最终预测值 $\hat{y}$。
+3. **计算损失**：使用均方误差（MSE）或交叉熵（CE）等损失函数计算预测值 $\hat{y}$ 与实际标签 $y$ 的差异。
 4. **反向传播**：
    - 计算损失对每个权重和偏置的梯度。
    - 更新权重和偏置，减少损失。
@@ -84,11 +84,11 @@
 
 ### 4.2 公式推导过程
 
-以单层感知机为例，假设输入数据 $\\mathbf{x}$，权重 $\\mathbf{w}$ 和偏置 $b$，激活函数为 $f(\\cdot)$，则输出 $\\hat{y}$ 可以通过以下公式计算：
+以单层感知机为例，假设输入数据 $\mathbf{x}$，权重 $\mathbf{w}$ 和偏置 $b$，激活函数为 $f(\cdot)$，则输出 $\hat{y}$ 可以通过以下公式计算：
 
-$$\\hat{y} = f(\\mathbf{w} \\cdot \\mathbf{x} + b)$$
+$$\hat{y} = f(\mathbf{w} \cdot \mathbf{x} + b)$$
 
-其中，$\\cdot$ 表示矩阵乘法。
+其中，$\cdot$ 表示矩阵乘法。
 
 ### 4.3 案例分析与讲解
 
@@ -138,7 +138,7 @@ history = model.fit(X_train, y_train, epochs=100, validation_data=(X_test, y_tes
 
 # 评估模型
 scores = model.evaluate(X_test, y_test)
-print(f\"Test loss: {scores[0]}, Test accuracy: {scores[1]}\")
+print(f"Test loss: {scores[0]}, Test accuracy: {scores[1]}")
 ```
 
 ### 5.3 代码解读与分析
@@ -212,5 +212,5 @@ print(f\"Test loss: {scores[0]}, Test accuracy: {scores[1]}\")
   - 根据任务需求调整层数、神经元数量，通过实验寻找最佳配置。
 - **如何解决过拟合问题？**
   - 使用正则化、Dropout、数据增强等方法。
-  
+
 本文详细阐述了神经网络的基本原理、算法、数学模型、代码实现、应用案例、工具资源，以及对其未来的展望。通过理论与实践相结合的方式，帮助读者深入理解神经网络，并激发其探索更多可能性的兴趣。

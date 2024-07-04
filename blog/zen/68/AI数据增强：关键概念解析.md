@@ -70,9 +70,9 @@
 假设原始图像的坐标为 $(x, y)$，旋转后的坐标为 $(x', y')$，旋转角度为 $\theta$，则旋转变换的公式如下：
 
 $$
-\begin{bmatrix} x' \\ y' \end{bmatrix} =
-\begin{bmatrix} cos\theta & -sin\theta \\ sin\theta & cos\theta \end{bmatrix}
-\begin{bmatrix} x \\ y \end{bmatrix}
+\begin{bmatrix} x' \ y' \end{bmatrix} =
+\begin{bmatrix} cos\theta & -sin\theta \ sin\theta & cos\theta \end{bmatrix}
+\begin{bmatrix} x \ y \end{bmatrix}
 $$
 
 ### 4.2.  Mixup
@@ -80,7 +80,7 @@ $$
 
 $$
 \begin{aligned}
-x' &= \lambda x_1 + (1 - \lambda) x_2 \\
+x' &= \lambda x_1 + (1 - \lambda) x_2 \
 y' &= \lambda y_1 + (1 - \lambda) y_2
 \end{aligned}
 $$

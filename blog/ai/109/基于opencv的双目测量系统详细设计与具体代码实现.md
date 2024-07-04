@@ -126,25 +126,25 @@ SGBM 算法广泛应用于机器人导航、自动驾驶、三维重建等领域
 
 $$
 \begin{bmatrix}
-x \\
-y \\
+x \
+y \
 1
 \end{bmatrix}
 =
 \lambda
 \begin{bmatrix}
-f_x & 0 & c_x \\
-0 & f_y & c_y \\
+f_x & 0 & c_x \
+0 & f_y & c_y \
 0 & 0 & 1
 \end{bmatrix}
 \begin{bmatrix}
-R & t \\
+R & t \
 0 & 1
 \end{bmatrix}
 \begin{bmatrix}
-X \\
-Y \\
-Z \\
+X \
+Y \
+Z \
 1
 \end{bmatrix}
 $$
@@ -197,7 +197,7 @@ $$
 
 $$
 \begin{aligned}
-x_l &= \frac{fX}{Z} + c_x \\
+x_l &= \frac{fX}{Z} + c_x \
 x_r &= \frac{f(X-b)}{Z} + c_x
 \end{aligned}
 $$
@@ -392,4 +392,4 @@ cv2.waitKey(0)
 * 研究多传感器融合技术，提高系统的可靠性和鲁棒性。
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

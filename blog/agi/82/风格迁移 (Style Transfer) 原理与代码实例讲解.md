@@ -77,8 +77,8 @@ $$
 
 $$
 \begin{aligned}
-\text{风格迁移}(X, Y) &= \text{内容}(X) + \alpha \cdot \text{风格}(Y) \\
-\text{内容}(X) &= \text{CNN}_{\text{内容}}(X) \\
+\text{风格迁移}(X, Y) &= \text{内容}(X) + \alpha \cdot \text{风格}(Y) \
+\text{内容}(X) &= \text{CNN}_{\text{内容}}(X) \
 \text{风格}(Y) &= \text{CNN}_{\text{风格}}(Y)
 \end{aligned}
 $$

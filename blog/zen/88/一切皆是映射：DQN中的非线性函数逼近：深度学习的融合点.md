@@ -177,7 +177,7 @@ class DQN(nn.Module):
         self.fc1 = nn.Linear(input_size, 64)
         self.fc2 = nn.Linear(64, 64)
         self.fc3 = nn.Linear(64, output_size)
-        
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = torch.relu(self.fc2(x))
@@ -193,15 +193,15 @@ class DQNAlgorithm:
         self.gamma = gamma
         self.memory = []
         self.batch_size = 32
-    
+
     def remember(self, state, action, reward, next_state, done):
         self.memory.append((state, action, reward, next_state, done))
-    
+
     def act(self, state):
         state = torch.from_numpy(state).float().unsqueeze(0)
         action = self.model(state).argmax()
         return action.item()
-    
+
     def replay(self):
         if len(self.memory) < self.batch_size:
             return
@@ -212,19 +212,19 @@ class DQNAlgorithm:
         actions = torch.from_numpy(np.array(actions)).long()
         rewards = torch.from_numpy(np.array(rewards)).float()
         dones = torch.from_numpy(np.array(dones)).float()
-        
+
         Q_targets = self.target_model(next_states).detach()
         Q_targets[dones] = 0.0
         Q_expected = self.model(states).gather(1, actions.unsqueeze(1))
-        
+
         loss = F.mse_loss(Q_expected, Q_targets)
         self.optimizer.zero_grad()
         loss.backward()
         self.optimizer.step()
-        
+
     def load(self, name):
         self.model.load_state_dict(torch.load(name))
-    
+
     def save(self, name):
         torch.save(self.model.state_dict(), name)
 
@@ -248,7 +248,7 @@ for episode in range(1000):
         next_state = np.reshape(next_state, [1, input_size])
         dqn.remember(state, action, reward, next_state, done)
         state = next_state
-        
+
         if done:
             break
     if episode % 100 == 0:

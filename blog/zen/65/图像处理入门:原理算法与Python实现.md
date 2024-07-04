@@ -284,4 +284,4 @@ cv2.waitKey(0)
 
 * **在线课程**:  Coursera、Udacity等平台提供丰富的图像处理课程。
 * **书籍**:  冈萨雷斯《数字图像处理》、Rafael C. Gonzalez《数字图像处理(MATLAB版)》等经典书籍。
-* **开源项目**:  OpenCV、Scikit-image等开源项目提供丰富的代码示例和文档。 
+* **开源项目**:  OpenCV、Scikit-image等开源项目提供丰富的代码示例和文档。

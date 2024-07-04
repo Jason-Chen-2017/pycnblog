@@ -1,4 +1,4 @@
-                 
+
 # Oozie工作流调度原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -158,7 +158,7 @@ graph TD;
      <version>版本号</version>
    </dependency>`
    - 启动Oozie服务器：`./bin/oozie-daemon.sh start`
-   
+
 ### 5.2 源代码详细实现
 
 接下来，我们创建一个简单的Oozie工作流XML文件示例：
@@ -172,12 +172,12 @@ graph TD;
         <call href="job_flow"/>
     </sequence>
     <end/>
-    
+
     <!-- Job Flow -->
     <job-flow name="Job Flow">
         <job action="submit" xmlns="uri:hadoop:0.90"/>
         <kill on-error="true"/>
-        
+
         <!-- MapReduce Job -->
         <map-reduce xmlns="uri:hadoop:0.90">
             <jar>/path/to/mapper.jar</jar>

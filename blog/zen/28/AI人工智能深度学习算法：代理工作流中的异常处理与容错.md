@@ -1,6 +1,6 @@
 # AI人工智能深度学习算法：代理工作流中的异常处理与容错
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：深度学习、代理、工作流、异常处理、容错机制、人工智能
 
@@ -82,17 +82,17 @@
 
 #### 异常检测：
 
-假设特征向量$x$表示代理行为，$f(x)$为异常检测模型的输出。对于基于阈值的方法，如果$f(x) > \\theta$（$\\theta$为阈值），则认为行为异常。
+假设特征向量$x$表示代理行为，$f(x)$为异常检测模型的输出。对于基于阈值的方法，如果$f(x) > \theta$（$\theta$为阈值），则认为行为异常。
 
 #### 容错策略：
 
-对于故障树分析，$T$表示故障树，$S$表示系统状态，$R_i$表示第$i$级故障的修复策略，$P(T)$为$T$发生的概率，$P(R_i|T)$为在$T$发生的情况下执行策略$R_i$的概率，则修复策略的选择可依据最小化$P(T) \\times \\sum_{i} P(R_i|T)$来决定。
+对于故障树分析，$T$表示故障树，$S$表示系统状态，$R_i$表示第$i$级故障的修复策略，$P(T)$为$T$发生的概率，$P(R_i|T)$为在$T$发生的情况下执行策略$R_i$的概率，则修复策略的选择可依据最小化$P(T) \times \sum_{i} P(R_i|T)$来决定。
 
 ### 4.3 案例分析与讲解
 
 #### 异常检测案例：
 
-- **异常数据点识别**: 使用Z分数（$Z = \\frac{(x-\\mu)}{\\sigma}$）来识别异常值，其中$\\mu$为均值，$\\sigma$为标准差。若$|Z|$超过设定阈值（如3），则数据点被认为是异常。
+- **异常数据点识别**: 使用Z分数（$Z = \frac{(x-\mu)}{\sigma}$）来识别异常值，其中$\mu$为均值，$\sigma$为标准差。若$|Z|$超过设定阈值（如3），则数据点被认为是异常。
 
 #### 容错策略案例：
 
@@ -158,10 +158,10 @@ class FaultTolerance:
             self.reset_component()
 
     def start_backup(self):
-        print(\"Starting backup component\")
+        print("Starting backup component")
 
     def reset_component(self):
-        print(\"Resetting component\")
+        print("Resetting component")
 
     def switch_components(self):
         self.backup_component = not self.backup_component

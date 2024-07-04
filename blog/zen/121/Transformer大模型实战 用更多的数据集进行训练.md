@@ -141,12 +141,12 @@ A：选择合适的增强方法需要考虑数据集的特点、任务类型等�
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n transformer-env python=3.8 
+conda create -n transformer-env python=3.8
 conda activate transformer-env
 ```
 3. 安装PyTorch和Transformers库：
 ```bash
-conda install pytorch torchvision torchaudio -c pytorch 
+conda install pytorch torchvision torchaudio -c pytorch
 pip install transformers
 ```
 
@@ -205,11 +205,11 @@ train_encodings = tokenizer(train_texts, truncation=True, padding=True)
 test_encodings = tokenizer(test_texts, truncation=True, padding=True)
 
 # 创建DataLoader
-train_dataset = torch.utils.data.TensorDataset(torch.tensor(train_encodings['input_ids']), 
-                                             torch.tensor(train_encodings['attention_mask']), 
+train_dataset = torch.utils.data.TensorDataset(torch.tensor(train_encodings['input_ids']),
+                                             torch.tensor(train_encodings['attention_mask']),
                                              torch.tensor(train_labels))
-test_dataset = torch.utils.data.TensorDataset(torch.tensor(test_encodings['input_ids']), 
-                                             torch.tensor(test_encodings['attention_mask']), 
+test_dataset = torch.utils.data.TensorDataset(torch.tensor(test_encodings['input_ids']),
+                                             torch.tensor(test_encodings['attention_mask']),
                                              torch.tensor(test_labels))
 train_dataloader = DataLoader(train_dataset, batch_size=32, shuffle=True)
 test_dataloader = DataLoader(test_dataset, batch_size=32, shuffle=False)
@@ -225,7 +225,7 @@ epochs = 3
 for epoch in range(epochs):
     train_loss = train(model, train_dataloader, optimizer, device)
     print(f"Epoch {epoch+1}, train loss: {train_loss:.3f}")
-    
+
     test_loss = evaluate(model, test_dataloader, device)
     print(f"Epoch {epoch+1}, test loss: {test_loss:.3f}")
 ```

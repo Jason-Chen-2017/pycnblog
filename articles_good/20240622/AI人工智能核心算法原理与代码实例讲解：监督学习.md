@@ -120,8 +120,7 @@ $$L(\theta) = \frac{1}{2m} \sum_{i=1}^m (y_i - X_i\theta)^2$$
 
 为了找到最优的模型参数$\theta$，我们可以使用梯度下降法进行求解：
 
-$$\theta_{t+1} = \theta_t - \alpha \
-abla_\theta L(\theta_t)$$
+$$\theta_{t+1} = \theta_t - \alpha \nabla_\theta L(\theta_t)$$
 
 其中，$\alpha$表示学习率。
 

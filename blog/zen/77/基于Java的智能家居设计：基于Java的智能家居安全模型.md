@@ -174,7 +174,7 @@ $$
 其中:
 
 - $U$ 表示用户集合
-- $R$ 表示角色集合 
+- $R$ 表示角色集合
 - $P$ 表示权限集合
 - $S$ 表示智能设备集合
 - $E$ 表示环境属性集合
@@ -203,7 +203,7 @@ $$
 
 $$
 \phi_{\text{RBAC}}(u, r, p) = \begin{cases}
-1, & \text{if } \exists (u, r) \in UA \text{ and } (r, p) \in PA\\
+1, & \text{if } \exists (u, r) \in UA \text{ and } (r, p) \in PA\
 0, & \text{otherwise}
 \end{cases}
 $$
@@ -212,7 +212,7 @@ $$
 
 $$
 \phi_{\text{RBAC}}(u, r, p, s) = \begin{cases}
-1, & \text{if } \exists (u, r) \in UA, (r, p) \in PA, (s, p) \in SPA\\
+1, & \text{if } \exists (u, r) \in UA, (r, p) \in PA, (s, p) \in SPA\
 0, & \text{otherwise}
 \end{cases}
 $$

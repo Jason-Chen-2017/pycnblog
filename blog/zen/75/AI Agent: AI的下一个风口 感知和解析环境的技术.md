@@ -105,11 +105,11 @@
 强化学习中的核心数学模型是**马尔可夫决策过程（MDP）**：
 
 $$
-\text{MDP} = \langle S, A, P, R, \gamma \rangle \\
-S: \text{状态空间} \\
-A: \text{动作空间} \\
-P(s'|s,a): \text{转移概率，给定状态s和动作a后转移到状态s'} \\
-R(s,a,s'): \text{奖励函数，表示从状态s执行动作a转移到状态s'获得的奖励} \\
+\text{MDP} = \langle S, A, P, R, \gamma \rangle \
+S: \text{状态空间} \
+A: \text{动作空间} \
+P(s'|s,a): \text{转移概率，给定状态s和动作a后转移到状态s'} \
+R(s,a,s'): \text{奖励函数，表示从状态s执行动作a转移到状态s'获得的奖励} \
 \gamma \in [0,1]: \text{折扣因子，用于折现未来奖励}
 $$
 

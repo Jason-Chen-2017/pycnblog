@@ -21,7 +21,7 @@
 ## 2.核心概念与联系
 ### 2.1 机器学习
 #### 2.1.1 监督学习
-#### 2.1.2 无监督学习  
+#### 2.1.2 无监督学习
 #### 2.1.3 强化学习
 
 ### 2.2 深度学习
@@ -75,7 +75,7 @@ $$
 
 $$
 \begin{aligned}
-w &:= w - \alpha \frac{\partial J(w,b)}{\partial w} \\
+w &:= w - \alpha \frac{\partial J(w,b)}{\partial w} \
 b &:= b - \alpha \frac{\partial J(w,b)}{\partial b}
 \end{aligned}
 $$
@@ -121,8 +121,8 @@ $$
 
 $$
 \begin{aligned}
-\min_{w,b,\xi} & \quad \frac{1}{2}\|w\|^2 + C\sum_{i=1}^m \xi_i \\
-\text{s.t.} & \quad y_i(w^Tx_i+b) \geq 1-\xi_i, \quad i=1,...,m \\
+\min_{w,b,\xi} & \quad \frac{1}{2}\|w\|^2 + C\sum_{i=1}^m \xi_i \
+\text{s.t.} & \quad y_i(w^Tx_i+b) \geq 1-\xi_i, \quad i=1,...,m \
 & \quad \xi_i \geq 0, \quad i=1,...,m
 \end{aligned}
 $$
@@ -189,7 +189,7 @@ class LogisticRegression(nn.Module):
     def __init__(self, input_dim):
         super(LogisticRegression, self).__init__()
         self.linear = nn.Linear(input_dim, 1)
-        
+
     def forward(self, x):
         out = torch.sigmoid(self.linear(x))
         return out
@@ -207,12 +207,12 @@ for epoch in range(num_epochs):
     # 前向传播
     y_pred = model(X_train)
     loss = criterion(y_pred, y_train)
-    
+
     # 反向传播和优化
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
-    
+
     if (epoch+1) % 10 == 0:
         print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
 

@@ -91,7 +91,7 @@ $$
 GAN由两个神经网络组成：生成器（Generator）和判别器（Discriminator）。生成器的目标是生成与真实数据分布相近的假数据，而判别器则尝试区分真实数据和生成的数据。损失函数通常定义为：
 
 $$
-L_G = \mathbb{E}_{z \sim p_z(z)}[\log G(z)] \\
+L_G = \mathbb{E}_{z \sim p_z(z)}[\log G(z)] \
 L_D = \mathbb{E}_{x \sim p_x(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log (1 - D(G(z)))]
 $$
 

@@ -99,7 +99,7 @@
 
 知识蒸馏的目标是使得学生模型$S$的输出$p_S$接近教师模型$T$的输出$p_T$。通过定义交叉熵损失$CE$来衡量这两个输出之间的差距：
 
-$$ CE(p_T, p_S) = -\\frac{1}{|V|} \\sum_{v \\in V} p_T(v) \\log p_S(v) $$
+$$ CE(p_T, p_S) = -\frac{1}{|V|} \sum_{v \in V} p_T(v) \log p_S(v) $$
 
 其中，$V$是输出类别的集合，$|V|$是类别数量。
 
@@ -109,9 +109,9 @@ $$ CE(p_T, p_S) = -\\frac{1}{|V|} \\sum_{v \\in V} p_T(v) \\log p_S(v) $$
 
 知识蒸馏的目标是通过最小化交叉熵损失$CE$来调整学生模型$S$的参数，使得其输出$p_S$尽可能接近教师模型$T$的输出$p_T$：
 
-$$ \\min_{\\theta_S} CE(p_T, p_S(\\theta_S)) $$
+$$ \min_{\theta_S} CE(p_T, p_S(\theta_S)) $$
 
-这里$\\theta_S$是学生模型$S$的参数集。
+这里$\theta_S$是学生模型$S$的参数集。
 
 ### 4.3 案例分析与讲解
 
@@ -188,7 +188,7 @@ for epoch in range(10):
         student_outputs = target_model(bert_outputs.last_hidden_state)
         teacher_outputs = bert_model(batch['teacher_input_ids'], attention_mask=batch['teacher_attention_mask']).last_hidden_state
         loss = knowledge_distillation_loss(student_outputs, teacher_outputs)
-        
+
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
@@ -215,7 +215,7 @@ for epoch in range(10):
 #### 1. 情感分析
 
 - **案例**：将情感分析任务中的知识迁移到新模型，提升模型性能，减少训练时间。
-  
+
 #### 2. 图像描述生成
 
 - **案例**：从预训练的视觉模型中迁移知识，增强图像描述生成模型的能力。

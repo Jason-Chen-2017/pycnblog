@@ -207,20 +207,20 @@ def dijkstra(graph, source):
     distances = {node: float('infinity') for node in graph}
     distances[source] = 0
     priority_queue = [(0, source)]
-    
+
     while priority_queue:
         current_distance, current_node = heapq.heappop(priority_queue)
-        
+
         if current_distance > distances[current_node]:
             continue
-        
+
         for neighbor, weight in graph[current_node].items():
             distance = current_distance + weight
-            
+
             if distance < distances[neighbor]:
                 distances[neighbor] = distance
                 heapq.heappush(priority_queue, (distance, neighbor))
-                
+
     return distances
 
 def a_star(graph, start, goal, heuristic):
@@ -230,23 +230,23 @@ def a_star(graph, start, goal, heuristic):
     g_score[start] = 0
     f_score = {node: float('infinity') for node in graph}
     f_score[start] = heuristic(start, goal)
-    
+
     while open_set:
         current = min(open_set, key=lambda node: f_score[node])
         open_set.remove(current)
-        
+
         if current == goal:
             return reconstruct_path(came_from, current)
-        
+
         for neighbor in graph[current]:
             tentative_g_score = g_score[current] + graph[current][neighbor]
-            
+
             if tentative_g_score < g_score[neighbor]:
                 came_from[neighbor] = current
                 g_score[neighbor] = tentative_g_score
                 f_score[neighbor] = tentative_g_score + heuristic(neighbor, goal)
                 open_set.add(neighbor)
-                
+
     return None
 
 def reconstruct_path(came_from, current):

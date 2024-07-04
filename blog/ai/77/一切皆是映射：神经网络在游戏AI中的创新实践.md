@@ -1,7 +1,7 @@
 
 # 一切皆是映射：神经网络在游戏AI中的创新实践
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 关键词：
 

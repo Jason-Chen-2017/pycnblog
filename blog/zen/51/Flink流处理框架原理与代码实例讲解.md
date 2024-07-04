@@ -29,7 +29,7 @@ Flink 采用主从架构,由一个 JobManager(主节点)和多个 TaskManager(�
 ```mermaid
 graph TD
     A[JobManager] -->|schedules tasks| B(TaskManager)
-    A -->|schedules tasks| C(TaskManager) 
+    A -->|schedules tasks| C(TaskManager)
     A -->|schedules tasks| D(TaskManager)
 ```
 
@@ -67,7 +67,7 @@ Flink 提供了 Fault-Tolerant State 机制,支持:
 - 一致性检查点(Checkpointing)
 - 状态恢复
 
-## 3.核心算法原理具体操作步骤  
+## 3.核心算法原理具体操作步骤
 
 ### 3.1 流执行模型
 
@@ -119,14 +119,14 @@ Flink 使用异步快照机制实现状态一致性,包括以下步骤:
 设无限数据流为 $S = \{s_1, s_2, s_3, ...\}$,窗口函数为 $W$,窗口长度为 $w$,滑动步长为 $s$,则滚动窗口可表示为:
 
 $$
-W(S, w, s) = \{w_1, w_2, w_3, ...\}\\
+W(S, w, s) = \{w_1, w_2, w_3, ...\}\
 w_i = \{s_j | j \in [(i-1)s+1, (i-1)s+w]\}
 $$
 
 滑动窗口可表示为:
 
 $$
-W(S, w, s) = \{w_1, w_2, w_3, ...\} \\
+W(S, w, s) = \{w_1, w_2, w_3, ...\} \
 w_i = \{s_j | j \in [i, i+w-1]\}
 $$
 
@@ -143,7 +143,7 @@ $$
 
 $$
 \text{Trigger}(w) = \begin{cases}
-    \textbf{true} & \text{if } \exists s_i, s_j \in w, |ts(s_i) - ts(s_j)| > \Delta\\
+    \textbf{true} & \text{if } \exists s_i, s_j \in w, |ts(s_i) - ts(s_j)| > \Delta\
     \textbf{false} & \text{otherwise}
 \end{cases}
 $$
@@ -255,7 +255,7 @@ public class ViewCountsJob {
 - 智能家居: 分析家电传感器数据,实现智能控制
 - 预测性维护: 分析工业设备数据,提前发现故障隐患
 
-### 6.3 金融服务 
+### 6.3 金融服务
 
 - 交易监控: 实时检测可疑交易活动
 - 欺诈检测: 分析交易数据流,识别欺诈行为

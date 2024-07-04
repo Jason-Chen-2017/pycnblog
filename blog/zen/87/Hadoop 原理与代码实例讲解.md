@@ -83,8 +83,8 @@ Hadoop的数学模型主要涉及MapReduce算法中的键值对生成、排序�
 
 $$
 \begin{aligned}
-S &= \{(k_1, (v_1, v_2, \dots, v_n)), (k_2, (v_{n+1}, v_{n+2}, \dots, v_{2n})) \\
-&\quad \vdots \\
+S &= \{(k_1, (v_1, v_2, \dots, v_n)), (k_2, (v_{n+1}, v_{n+2}, \dots, v_{2n})) \
+&\quad \vdots \
 &\quad (k_m, (v_{mn+1}, v_{mn+2}, \dots, v_{m^2n}))\}
 \end{aligned}
 $$
@@ -180,7 +180,7 @@ public class StudentAverage {
     public static class StudentMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
         @Override
         protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-            String[] scores = value.toString().split("\\s+");
+            String[] scores = value.toString().split("\s+");
             context.write(new Text(scores[0]), new IntWritable(Integer.parseInt(scores[1])));
         }
     }

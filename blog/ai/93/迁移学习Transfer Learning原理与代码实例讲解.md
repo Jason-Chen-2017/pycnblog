@@ -1,7 +1,7 @@
 
 # 迁移学习Transfer Learning原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 ### 1.1 问题的由来
@@ -237,7 +237,7 @@ for epoch in range(10):
             test_loss += loss.item()
             pred = outputs.argmax(dim=1, keepdim=True)
             correct += pred.eq(labels.view_as(pred)).sum().item()
-    
+
     print(f"Epoch {epoch+1}, Test Loss: {test_loss/len(test_loader)}, Accuracy: {correct/len(test_loader)}")
 ```
 

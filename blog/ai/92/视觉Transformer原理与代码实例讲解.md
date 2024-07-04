@@ -1,7 +1,7 @@
 
 # 视觉Transformer原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -239,43 +239,43 @@ class ViT(nn.Module):
         self.patch_size = patch_size
         self.num_classes = num_classes
         self.in_ch = in_ch
-        
+
         # 初始化嵌入层
         self.patch_embedding = nn.Linear(in_ch * patch_size * patch_size, 768)  # 修改为合适的维度
         self.positional_encoding = PositionalEncoding(768)
-        
+
         # 初始化Transformer编码器
         self.encoder = nn.ModuleList([
             nn.LayerNorm(768),
             nn.MultiheadAttention(768, 12, 12),
             nn.Linear(768, 768),
         ])
-        
+
         # 初始化解码器
         self.decoder = nn.ModuleList([
             nn.LayerNorm(768),
             nn.Linear(768, 768),
             nn.MultiheadAttention(768, 12, 12),
         ])
-        
+
     def forward(self, x):
         # 图像patch划分
         x = x.flatten(2).permute(0, 2, 1)
         x = self.patch_embedding(x)
         x = self.positional_encoding(x)
-        
+
         # Transformer编码器
         for layer in self.encoder:
             x = layer(x)
-        
+
         # Transformer解码器
         for layer in self.decoder:
             x = layer(x)
-        
+
         # 分类器
         x = x.mean(dim=1)
         x = nn.Linear(768, self.num_classes)
-        
+
         return x
 ```
 

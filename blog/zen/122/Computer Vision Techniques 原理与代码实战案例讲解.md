@@ -292,24 +292,24 @@ $$
 时刻 1:
 输入: "h"
 隐藏状态: 0
-输出: 
+输出:
 
 时刻 2:
 输入: "e"
 隐藏状态: f(W_{xh} "e" + W_{hh} 0 + b_h)
-输出: 
+输出:
 
 时刻 3:
 输入: "l"
 隐藏状态: f(W_{xh} "l" + W_{hh} h_2 + b_h)
-输出: 
+输出:
 
 ...
 
 时刻 5:
 输入: "o"
 隐藏状态: f(W_{xh} "o" + W_{hh} h_4 + b_h)
-输出: 
+输出:
 ```
 
 #### 4.2.4 常见问题解答
@@ -563,4 +563,4 @@ print('\nTest accuracy:', test_acc)
 * 对抗生成网络（GAN）
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

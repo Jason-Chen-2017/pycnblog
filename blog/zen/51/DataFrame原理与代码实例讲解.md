@@ -57,7 +57,7 @@ B --> D[Row Labels]
 C --> E[Column Labels]
 ```
 
-### 2.3 DataFrame与Series的关系 
+### 2.3 DataFrame与Series的关系
 
 Series是一维标记的数组,可以看作是DataFrame的一个列或一个行。实际上,DataFrame可以看作是由多个Series组成的字典(dict of Series)。
 
@@ -97,7 +97,7 @@ df = pd.DataFrame(data)
 ```python
 data = [
     ['Alice', 25, 'Female'],
-    ['Bob', 30, 'Male'], 
+    ['Bob', 30, 'Male'],
     ['Charlie', 35, 'Male']
 ]
 df = pd.DataFrame(data, columns=['name', 'age', 'gender'])
@@ -122,7 +122,7 @@ DataFrame提供了灵活便捷的数据选取方式,主要有以下几种:
 
 ```python
 # 选取单列
-df['name'] 
+df['name']
 # 选取多列
 df[['name', 'age']]
 ```
@@ -157,7 +157,7 @@ df[(df['age'] > 30) & (df['gender'] == 'Male')]
 
 ```python
 # 按年龄升序排序
-df.sort_values('age') 
+df.sort_values('age')
 # 按年龄降序排序
 df.sort_values('age', ascending=False)
 ```

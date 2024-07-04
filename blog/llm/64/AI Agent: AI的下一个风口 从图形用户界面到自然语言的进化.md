@@ -183,10 +183,10 @@ actions:
 
 ```yaml
 stories:
-  1: 
+  1:
     - intent: greet
     - action: utter_greet
-  2: 
+  2:
     - intent: goodbye
     - action: utter_goodbye
 ```

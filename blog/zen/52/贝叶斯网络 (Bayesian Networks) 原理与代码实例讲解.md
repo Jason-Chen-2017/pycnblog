@@ -148,9 +148,9 @@ S --> T[测试结果]
 现在,如果我们观测到测试结果为阳性($ T=\text{positive} $),我们可以计算患病的后验概率:
 
 $$\begin{aligned}
-P(D=\text{true} | T=\text{positive}) &= \frac{P(T=\text{positive} | D=\text{true}) P(D=\text{true})}{P(T=\text{positive})} \\
-&= \frac{\sum_S P(T=\text{positive} | S) P(S | D=\text{true}) P(D=\text{true})}{P(T=\text{positive})} \\
-&= \frac{0.9 \times 0.8 \times 0.2 + 0.1 \times 0.2 \times 0.8}{0.9 \times 0.8 \times 0.2 + 0.1 \times 0.7 \times 0.8} \\
+P(D=\text{true} | T=\text{positive}) &= \frac{P(T=\text{positive} | D=\text{true}) P(D=\text{true})}{P(T=\text{positive})} \
+&= \frac{\sum_S P(T=\text{positive} | S) P(S | D=\text{true}) P(D=\text{true})}{P(T=\text{positive})} \
+&= \frac{0.9 \times 0.8 \times 0.2 + 0.1 \times 0.2 \times 0.8}{0.9 \times 0.8 \times 0.2 + 0.1 \times 0.7 \times 0.8} \
 &\approx 0.62
 \end{aligned}$$
 
@@ -193,7 +193,7 @@ weather_cpd = TabularCPD('Weather', 2, [[0.6], [0.4]])
 weather_model.add_cpds(weather_cpd)
 
 # 气压节点的 CPT
-barometer_cpd = TabularCPD('Barometer', 2, 
+barometer_cpd = TabularCPD('Barometer', 2,
                            [[0.9, 0.2], [0.1, 0.8]],
                            evidence=['Weather'],
                            evidence_card=[2])
@@ -218,7 +218,7 @@ from pgmpy.inference import VariableElimination
 infer = VariableElimination(weather_model)
 
 # 计算后验概率
-posterior_weather = infer.query(['Weather'], 
+posterior_weather = infer.query(['Weather'],
                                 evidence={'Barometer': 1})
 print(posterior_weather)
 ```

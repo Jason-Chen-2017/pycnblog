@@ -57,12 +57,10 @@ $$
 使用梯度下降法更新权重：
 
 $$
-w_{new} = w_{old} - \\eta \\cdot \
-abla L(w_{old})
+w_{new} = w_{old} - \\eta \\cdot \nabla L(w_{old})
 $$
 
-其中$w_{new}$是更新后的权重，$w_{old}$是旧权重，$\\eta$是学习率，$\
-abla L(w_{old})$是损失函数关于权重的梯度。
+其中$w_{new}$是更新后的权重，$w_{old}$是旧权重，$\\eta$是学习率，$\nabla L(w_{old})$是损失函数关于权重的梯度。
 
 ## 项目实践：代码实例和详细解释说明
 

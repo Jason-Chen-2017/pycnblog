@@ -110,8 +110,8 @@ $$L(\mathbf{w}, b, \alpha) = \frac{1}{2} \|\mathbf{w}\|^2 + C \sum_{i=1}^{N} \al
 对拉格朗日函数求偏导，并令偏导数为0，得到以下方程组：
 
 $$\begin{cases}
-\frac{\partial L}{\partial \mathbf{w}} = \mathbf{w} - \sum_{i=1}^{N} \alpha_i y_i \mathbf{x}_i = 0 \\
-\frac{\partial L}{\partial b} = 0 \\
+\frac{\partial L}{\partial \mathbf{w}} = \mathbf{w} - \sum_{i=1}^{N} \alpha_i y_i \mathbf{x}_i = 0 \
+\frac{\partial L}{\partial b} = 0 \
 \frac{\partial L}{\partial \alpha_i} = C(1 - y_i(\mathbf{w}^T \mathbf{x}_i + b)) - \alpha_i = 0
 \end{cases}$$
 

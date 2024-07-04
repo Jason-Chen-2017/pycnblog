@@ -240,15 +240,12 @@ $$
 
 1. **随机梯度下降（Stochastic Gradient Descent, SGD）**：
 $$
-\mathbf{w} \leftarrow \mathbf{w} - \alpha \
-abla_L(\mathbf{w})
+\mathbf{w} \leftarrow \mathbf{w} - \alpha \nabla_L(\mathbf{w})
 $$
-其中，$\mathbf{w}$表示模型参数，$\alpha$表示学习率，$\
-abla_L(\mathbf{w})$表示损失函数对参数的梯度。
+其中，$\mathbf{w}$表示模型参数，$\alpha$表示学习率，$\nabla_L(\mathbf{w})$表示损失函数对参数的梯度。
 2. **Adam优化器**：
 $$
-\mathbf{w} \leftarrow \mathbf{w} - \alpha (\frac{1}{\sqrt{m}}\
-abla_L(\mathbf{w}) + \beta_1 \epsilon_1 \text{grad}_t - \beta_2 \epsilon_2 \text{grad}_{t-1})
+\mathbf{w} \leftarrow \mathbf{w} - \alpha (\frac{1}{\sqrt{m}}\nabla_L(\mathbf{w}) + \beta_1 \epsilon_1 \text{grad}_t - \beta_2 \epsilon_2 \text{grad}_{t-1})
 $$
 其中，$\mathbf{w}$表示模型参数，$\alpha$表示学习率，$\beta_1, \beta_2$表示动量系数，$\epsilon_1, \epsilon_2$表示正则化参数。
 

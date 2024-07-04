@@ -90,8 +90,7 @@ Stable Diffusion模型广泛应用于：
 
 Stable Diffusion模型可以构建为一个随机微分方程（SDE）来描述图像状态随时间的变化过程。设$X_t$为时间$t$上的图像状态，$\\beta_t$为时间步长，$\\epsilon_t$为噪声，则模型可以表示为：
 
-$$ dX_t = \\sqrt{\\beta_t} \\cdot dB_t + \\frac{1}{2} \\cdot (\
-abla \\cdot \\Lambda(X_t)) \\cdot dt $$
+$$ dX_t = \\sqrt{\\beta_t} \\cdot dB_t + \\frac{1}{2} \\cdot (\nabla \\cdot \\Lambda(X_t)) \\cdot dt $$
 
 其中，$dB_t$是布朗运动，$\\Lambda(X_t)$是正则化项，用于限制图像的改变。
 
@@ -101,8 +100,7 @@ abla \\cdot \\Lambda(X_t)) \\cdot dt $$
 
 在正向传播阶段，通过引入噪声$\\epsilon_t$，我们可以得到：
 
-$$ X_{t+\\Delta t} = X_t + \\sqrt{\\beta_t} \\cdot \\epsilon_t + \\frac{1}{2} \\cdot (\
-abla \\Lambda(X_t)) \\cdot \\Delta t $$
+$$ X_{t+\\Delta t} = X_t + \\sqrt{\\beta_t} \\cdot \\epsilon_t + \\frac{1}{2} \\cdot (\nabla \\Lambda(X_t)) \\cdot \\Delta t $$
 
 #### 反向传播
 
@@ -114,8 +112,7 @@ abla \\Lambda(X_t)) \\cdot \\Delta t $$
 
 1. **初始化**：$X_0$
 2. **循环**：对于$t = 0, \\ldots, T$：
-   - **扩散**：$X_{t+\\Delta t} = X_t + \\sqrt{\\beta_t} \\cdot \\epsilon_t + \\frac{1}{2} \\cdot (\
-abla \\Lambda(X_t)) \\cdot \\Delta t$
+   - **扩散**：$X_{t+\\Delta t} = X_t + \\sqrt{\\beta_t} \\cdot \\epsilon_t + \\frac{1}{2} \\cdot (\nabla \\Lambda(X_t)) \\cdot \\Delta t$
    - **正则化**：确保$\\Lambda(X_t)$不超过预设阈值
 3. **逆向传播**：通过反向传播学习如何从$X_T$恢复到$X_0$
 

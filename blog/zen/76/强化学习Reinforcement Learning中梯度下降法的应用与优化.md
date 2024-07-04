@@ -97,31 +97,23 @@ $$ J(\pi) = \mathbb{E}_{\tau \sim \pi}[G(\tau)] $$
 
 - **梯度估计**：对于策略π，累积奖励的梯度可以近似为：
 
-$$ \
-abla_\theta J(\pi) \approx \mathbb{E}_{\tau \sim \pi}[\
-abla_\theta \ln \pi(a|\theta) G(\tau)] $$
+$$ \nabla_\theta J(\pi) \approx \mathbb{E}_{\tau \sim \pi}[\nabla_\theta \ln \pi(a|\theta) G(\tau)] $$
 
 #### Natural Policy Gradient
 
 - **自然梯度**：考虑策略空间的几何结构，自然梯度定义为：
 
-$$ \
-abla_{\theta} \cdot \
-abla_{\theta'} \mathbb{E}_{\tau \sim \pi}[\ln \pi(a|\theta')] $$
+$$ \nabla_{\theta} \cdot \nabla_{\theta'} \mathbb{E}_{\tau \sim \pi}[\ln \pi(a|\theta')] $$
 
 - **更新规则**：更新策略参数θ时，考虑自然梯度：
 
-$$ \theta \leftarrow \theta - \alpha \
-abla_{\theta} \ln \pi(a|\theta) \mathbb{E}_{\tau \sim \pi}[\
-abla_\theta \ln \pi(a|\theta) G(\tau)] $$
+$$ \theta \leftarrow \theta - \alpha \nabla_{\theta} \ln \pi(a|\theta) \mathbb{E}_{\tau \sim \pi}[\nabla_\theta \ln \pi(a|\theta) G(\tau)] $$
 
 #### Proximal Policy Optimization
 
 - **辅助策略**：引入辅助策略π'(a|s)，确保策略更新保持在一定范围内：
 
-$$ \theta \leftarrow \theta - \alpha [\
-abla_\theta \ln \pi(a|\theta) \mathbb{E}_{\tau \sim \pi}[\
-abla_\theta \ln \pi(a|\theta) G(\tau)] - \beta (\theta - \theta_{old})] $$
+$$ \theta \leftarrow \theta - \alpha [\nabla_\theta \ln \pi(a|\theta) \mathbb{E}_{\tau \sim \pi}[\nabla_\theta \ln \pi(a|\theta) G(\tau)] - \beta (\theta - \theta_{old})] $$
 
 ### 4.3 案例分析与讲解
 

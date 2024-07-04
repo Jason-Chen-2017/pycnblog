@@ -109,14 +109,14 @@
 资源调度问题可以建模为一个线性规划问题：
 
 $$
-\min \sum_{i=1}^N f(i) 
+\min \sum_{i=1}^N f(i)
 $$
 
 $$
-\text{s.t.} 
-\begin{cases} 
+\text{s.t.}
+\begin{cases}
 r_1 + r_2 + \cdots + r_N \leq R \\
-i \in \{1,2,\cdots,N\} 
+i \in \{1,2,\cdots,N\}
 \end{cases}
 $$
 
@@ -140,14 +140,14 @@ $$
 根据上述数学模型，我们可以将资源调度问题转化为以下线性规划问题：
 
 $$
-\min \sum_{i=1}^4 f(i) 
+\min \sum_{i=1}^4 f(i)
 $$
 
 $$
-\text{s.t.} 
-\begin{cases} 
+\text{s.t.}
+\begin{cases}
 2 + 1 + 3 + 2 \leq 4 \\
-1 \leq i \leq 4 
+1 \leq i \leq 4
 \end{cases}
 $$
 

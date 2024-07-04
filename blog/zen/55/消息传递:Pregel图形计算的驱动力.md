@@ -17,7 +17,7 @@
 
 ### 2.1 Pregel编程模型
 Pregel采用了类似于BSP(Bulk Synchronous Parallel)的计算模型。在Pregel中,计算被组织为一系列超步(Superstep),每个超步包含如下三个阶段:
-1. 每个顶点并行地执行用户自定义的Compute函数,对收到的消息进行处理,并可能向其他顶点发送消息。 
+1. 每个顶点并行地执行用户自定义的Compute函数,对收到的消息进行处理,并可能向其他顶点发送消息。
 2. 消息在网络中传递,被发送到目标顶点。
 3. 屏障同步,等待所有顶点完成计算。
 
@@ -41,10 +41,10 @@ Pregel与MapReduce有一些相似之处,如都采用了"分治"的思想,都提�
 graph TD
   A[数据源] --> B[Map]
   B --> C[Shuffle]
-  C --> D[Reduce] 
+  C --> D[Reduce]
   D --> E[输出]
   E -.->|迭代| A
-  
+
   F[顶点状态] --> G[Compute]
   G --> |消息| F
   G -.->|迭代| F
@@ -86,9 +86,9 @@ $$P: G \rightarrow G'$$
 对于SSSP问题,我们可以按如下方式设计Pregel模型:
 - 初始化函数 $I$:
   $$
-  I(v) = 
+  I(v) =
   \begin{cases}
-  0 & v = s \\
+  0 & v = s \
   \infty & v \neq s
   \end{cases}
   $$
@@ -103,9 +103,9 @@ $$P: G \rightarrow G'$$
 根据上述定义,Pregel的计算过程可以用如下公式表示:
 
 $$
-S^{(i+1)}(v) = 
+S^{(i+1)}(v) =
 \begin{cases}
-C(v) & S^{(i)}(v) \neq C(v) \\
+C(v) & S^{(i)}(v) \neq C(v) \
 S^{(i)}(v) & S^{(i)}(v) = C(v)
 \end{cases}
 $$
@@ -142,11 +142,11 @@ public interface Vertex<V, E, M> {
 public class Pregel<V, E, M> {
     private Map<V, Vertex<V, E, M>> vertices;
     private Map<V, List<M>> messages;
-    
+
     public void addVertex(Vertex<V, E, M> vertex) {
         vertices.put(vertex.getId(), vertex);
     }
-    
+
     public void run() {
         while (true) {
             for (Vertex<V, E, M> vertex : vertices.values()) {
@@ -158,7 +158,7 @@ public class Pregel<V, E, M> {
             messages.clear();
         }
     }
-    
+
     public void sendMessage(V targetId, M message) {
         messages.computeIfAbsent(targetId, k -> new ArrayList<>()).add(message);
     }
@@ -175,18 +175,18 @@ public class SSSPVertex implements Vertex<Long, Double, Double> {
     private long id;
     private double distance;
     private Pregel<Long, Double, Double> pregel;
-    
+
     public SSSPVertex(long id, double distance, Pregel<Long, Double, Double> pregel) {
         this.id = id;
         this.distance = distance;
         this.pregel = pregel;
     }
-    
+
     @Override
     public Long getId() {
         return id;
     }
-    
+
     @Override
     public void compute(Iterable<Double> messages) {
         double minDist = distance;
@@ -202,12 +202,12 @@ public class SSSPVertex implements Vertex<Long, Double, Double> {
             voteToHalt();
         }
     }
-    
+
     @Override
     public void sendMessage(Long targetId, Double message) {
         pregel.sendMessage(targetId, message);
     }
-    
+
     @Override
     public void voteToHalt() {
         // Do nothing

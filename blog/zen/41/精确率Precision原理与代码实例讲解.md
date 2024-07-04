@@ -22,7 +22,7 @@
 
 精确率的计算公式为：
 
-$$ Precision = \\frac{TP}{TP + FP} $$
+$$ Precision = \frac{TP}{TP + FP} $$
 
 其中：
 - TP（True Positives）表示正确预测为正类的数量。
@@ -92,7 +92,7 @@ $$ Precision = \\frac{TP}{TP + FP} $$
 
 精确率的公式为：
 
-$$ Precision = \\frac{TP}{TP + FP} $$
+$$ Precision = \frac{TP}{TP + FP} $$
 
 ### 4.3 案例分析与讲解
 
@@ -105,7 +105,7 @@ $$ Precision = \\frac{TP}{TP + FP} $$
 
 精确率为：
 
-$$ Precision = \\frac{280}{280 + 70} = \\frac{280}{350} = 0.8 $$
+$$ Precision = \frac{280}{280 + 70} = \frac{280}{350} = 0.8 $$
 
 ### 4.4 常见问题解答
 
@@ -143,9 +143,9 @@ y_pred = [0, 1, 1, 1, 1, 0, 1, 0, 1, 0]
 cm = confusion_matrix(y_true, y_pred)
 precision = precision_score(y_true, y_pred)
 
-print(\"混淆矩阵:\
-\", cm)
-print(\"精确率:\", precision)
+print("混淆矩阵:\
+", cm)
+print("精确率:", precision)
 ```
 
 ### 5.3 代码解读与分析

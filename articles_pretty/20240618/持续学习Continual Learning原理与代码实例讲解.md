@@ -72,8 +72,7 @@
 
 ### 4.2 公式推导过程
 
-- **策略梯度更新**：$\\theta_{new} = \\theta_{old} + \\alpha \\cdot \
-abla_{\\theta} L(\\theta, \\hat{\\theta})$
+- **策略梯度更新**：$\\theta_{new} = \\theta_{old} + \\alpha \\cdot \nabla_{\\theta} L(\\theta, \\hat{\\theta})$
 
 ### 4.3 案例分析与讲解
 

@@ -1,4 +1,4 @@
-                 
+
 # 人工智能(AI)原理与代码实战案例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -52,7 +52,7 @@ digraph DecisionTree {
     node [shape=box, style=filled];
     start [label="初始节点"];
     leaf [label="叶节点"];
-    
+
     start -> question1 [label="特征A?"];
     question1 -> "是" -> leaf1 [label="类别B"];
     question1 -> "否" -> leaf2 [label="类别C"];
@@ -73,7 +73,7 @@ digraph LogisticRegression {
     weight [label="权重向量"];
     bias [label="偏置项"];
     sigmoid [label="Sigmoid函数"];
-    
+
     input -> multiply [label="权重乘积"];
     multiply -> add [label="加权和"];
     add -> sigmoid [label="sigmoid变换"];

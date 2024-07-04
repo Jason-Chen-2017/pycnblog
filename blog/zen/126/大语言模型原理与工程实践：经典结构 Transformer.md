@@ -133,15 +133,15 @@ class Transformer(nn.Module):
         src = self.pos_encoder(src)
         tgt = self.embedding(tgt) * torch.sqrt(torch.tensor(self.embedding.embedding_dim))
         tgt = self.pos_encoder(tgt)
-        
+
         encoder_output = src
         for layer in self.encoder_layers:
             encoder_output = layer(encoder_output, src_mask)
-        
+
         decoder_output = tgt
         for layer in self.decoder_layers:
             decoder_output = layer(decoder_output, encoder_output, tgt_mask)
-        
+
         output = self.linear(decoder_output)
         return output
 ```
@@ -229,5 +229,5 @@ Transformer 模型使用自注意力机制，而 RNN 模型使用循环结构。
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

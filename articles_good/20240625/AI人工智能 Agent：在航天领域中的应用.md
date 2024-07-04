@@ -241,8 +241,7 @@ $$
 3. **梯度下降**：使用梯度下降算法更新Q值函数，以最小化Q学习目标函数。梯度下降算法可以表示为：
 
     $$
- Q(s, a) \leftarrow Q(s, a) - \alpha \
-abla_{Q(s, a)} L(Q) 
+ Q(s, a) \leftarrow Q(s, a) - \alpha \nabla_{Q(s, a)} L(Q) 
 $$
 
     其中 $ \alpha $ 表示学习率。

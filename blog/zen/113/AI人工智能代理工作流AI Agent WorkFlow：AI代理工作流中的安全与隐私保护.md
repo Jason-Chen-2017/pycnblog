@@ -12,7 +12,7 @@
 
 目前,学术界和工业界都在积极探索AI系统安全和隐私保护的解决方案。谷歌、微软等科技巨头纷纷推出了自己的AI隐私保护框架。学术界提出了多种隐私保护技术,如差分隐私、同态加密、安全多方计算等。但现有的方案大多针对特定场景,缺乏通用性。如何在AI代理工作流中全面保障数据安全和隐私,仍是一个开放性问题。
 
-### 1.3  研究意义  
+### 1.3  研究意义
 
 AI代理工作流涉及数据采集、存储、计算、应用等多个环节,每个环节都存在安全隐患。系统性地分析AI代理工作流的安全隐私风险,并提出相应的防护措施,对于推动AI技术的健康发展具有重要意义。本文的研究可为构建安全可信的AI系统提供理论指导和技术参考。
 
@@ -23,7 +23,7 @@ AI代理工作流涉及数据采集、存储、计算、应用等多个环节,�
 ## 2. 核心概念与联系
 
 - AI代理：能够感知环境,根据设定目标自主作出决策,解决特定任务的智能体。
-- 工作流：一系列任务按照一定规则和顺序组织起来,共同完成特定业务目标的过程。 
+- 工作流：一系列任务按照一定规则和顺序组织起来,共同完成特定业务目标的过程。
 - 安全：保护系统免受恶意攻击,确保数据的机密性、完整性和可用性。
 - 隐私：防止敏感信息在未经授权的情况下被访问、使用和泄露。
 
@@ -38,7 +38,7 @@ AI代理工作流涉及数据采集、存储、计算、应用等多个环节,�
 ### 3.2 算法步骤详解
 
 1. 定义AI代理工作流,明确任务目标和数据需求。
-2. 各参与方使用同态加密算法加密本地数据。  
+2. 各参与方使用同态加密算法加密本地数据。
 3. 启动联邦学习,各方在加密状态下共享模型参数,协同训练全局模型。
 4. 工作流管理器对训练好的全局模型进行同态加密。
 5. AI代理使用同态加密的全局模型对加密数据进行推理计算。
@@ -54,7 +54,7 @@ AI代理工作流涉及数据采集、存储、计算、应用等多个环节,�
 
 缺点：
 - 同态加密计算效率较低,存在一定性能开销。
-- 联邦学习对参与方的数据分布有一定要求。  
+- 联邦学习对参与方的数据分布有一定要求。
 - 算法实现复杂,对参与方的技术能力有较高要求。
 
 ### 3.4 算法应用领域
@@ -113,10 +113,10 @@ $$y = Dec(sk, [[y]])$$
 
 ### 4.4 常见问题解答
 
-Q：同态加密的性能开销如何？  
+Q：同态加密的性能开销如何？
 A：全同态加密的计算效率较低，但半同态加密（如Paillier）可在可接受的开销下实现加法和乘法运算。可根据实际需求选择适当的同态加密方案。
 
-Q：联邦学习对数据分布有什么要求？  
+Q：联邦学习对数据分布有什么要求？
 A：联邦学习要求各参与方的数据分布尽量一致，否则可能影响全局模型的性能。可采用数据增强、迁移学习等技术缓解数据分布不一致问题。
 
 ## 5. 项目实践：代码实例和详细解释说明
@@ -124,7 +124,7 @@ A：联邦学习要求各参与方的数据分布尽量一致，否则可能影�
 ### 5.1 开发环境搭建
 
 - Python 3.7
-- PySyft 0.2.9 (联邦学习框架)  
+- PySyft 0.2.9 (联邦学习框架)
 - TenSEAL 0.3.0 (同态加密库)
 
 ### 5.2 源代码详细实现
@@ -153,18 +153,18 @@ def train(model, datasets):
             encrypted_data = ts.ckks_vector(context, data)
             encrypted_dataset.append(encrypted_data)
         encrypted_datasets.append(encrypted_dataset)
-    
+
     # 联邦学习过程
     for epoch in range(num_epochs):
         model_updates = []
         for dataset in encrypted_datasets:
             update = model.update(dataset)  # 模型更新
             model_updates.append(update)
-        
+
         # 聚合模型更新
         aggregated_update = sum(model_updates) / len(model_updates)
         model.apply_update(aggregated_update)  # 应用更新
-    
+
     # 加密全局模型
     encrypted_model = model.encrypt(public_key)
     return encrypted_model
@@ -173,7 +173,7 @@ def train(model, datasets):
 def workflow(encrypted_model, encrypted_data):
     # 模型推理
     encrypted_result = encrypted_model.predict(encrypted_data)
-    
+
     # 解密结果
     result = encrypted_result.decrypt(secret_key)
     return result

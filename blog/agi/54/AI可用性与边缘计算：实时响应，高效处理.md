@@ -5,7 +5,7 @@
 ## 1. 背景介绍
 ### 1.1 人工智能的发展现状
 #### 1.1.1 AI技术的快速进步
-#### 1.1.2 AI应用领域的不断拓展  
+#### 1.1.2 AI应用领域的不断拓展
 #### 1.1.3 AI面临的挑战与瓶颈
 ### 1.2 边缘计算的兴起
 #### 1.2.1 云计算的局限性
@@ -193,14 +193,14 @@ for epoch in range(10):
     # 工作器本地训练
     model_alice = model.copy().send(alice)
     model_bob = model.copy().send(bob)
-    
+
     model_alice.fit(data_alice_ptr, epochs=1)
     model_bob.fit(data_bob_ptr, epochs=1)
-    
+
     # 聚合模型参数
     model_alice = model_alice.get()
     model_bob = model_bob.get()
-    
+
     model.weight.data = (model_alice.weight.data + model_bob.weight.data) / 2
     model.bias.data = (model_alice.bias.data + model_bob.bias.data) / 2
 

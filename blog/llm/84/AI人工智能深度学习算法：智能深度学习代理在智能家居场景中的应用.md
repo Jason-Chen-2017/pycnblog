@@ -110,7 +110,7 @@ graph LR
 - **卷积层**：卷积层通过卷积操作提取图像特征。
 
 $$
-h^{(l)} = f(W^{(l)} * h^{(l-1)} + b^{(l)}) 
+h^{(l)} = f(W^{(l)} * h^{(l-1)} + b^{(l)})
 $$
 
 其中，$h^{(l)}$ 为卷积层输出，$W^{(l)}$ 为卷积核权重，$b^{(l)}$ 为偏置，$*$ 为卷积操作，$f$ 为激活函数。
@@ -118,7 +118,7 @@ $$
 - **池化层**：池化层用于降低特征图分辨率，减少模型参数量。
 
 $$
-p^{(l)} = g(p_{i,j}^{(l-1)}) 
+p^{(l)} = g(p_{i,j}^{(l-1)})
 $$
 
 其中，$p^{(l)}$ 为池化层输出，$p_{i,j}^{(l-1)}$ 为池化窗口内的特征值，$g$ 为池化函数。
@@ -126,7 +126,7 @@ $$
 - **全连接层**：全连接层将特征图展平后进行分类。
 
 $$
-\hat{y} = \sigma(W^{(L)}h^{(L-1)} + b^{(L)}) 
+\hat{y} = \sigma(W^{(L)}h^{(L-1)} + b^{(L)})
 $$
 
 其中，$\hat{y}$ 为全连接层输出，$W^{(L)}$ 为全连接层权重，$b^{(L)}$ 为偏置，$\sigma$ 为激活函数。
@@ -138,7 +138,7 @@ $$
 卷积操作可以看作是两个矩阵的乘积。设输入图像为 $X$，卷积核为 $W$，则卷积输出为：
 
 $$
-h = X \times W 
+h = X \times W
 $$
 
 其中，$\times$ 表示矩阵乘积。
@@ -208,12 +208,12 @@ class EnvironmentDataset(Dataset):
     def __init__(self, image_paths, labels):
         self.image_paths = image_paths
         self.labels = labels
-        self.transform = transforms.Compose([transforms.Resize((224, 224)), 
+        self.transform = transforms.Compose([transforms.Resize((224, 224)),
                                            transforms.ToTensor()])
-    
+
     def __len__(self):
         return len(self.image_paths)
-    
+
     def __getitem__(self, index):
         image = cv2.imread(self.image_paths[index])
         image = self.transform(image)
@@ -226,7 +226,7 @@ class ResNet18(nn.Module):
         super(ResNet18, self).__init__()
         self.resnet = torchvision.models.resnet18(pretrained=True)
         self.fc = nn.Linear(512, num_classes)
-    
+
     def forward(self, x):
         x = self.resnet(x)
         x = self.fc(x)

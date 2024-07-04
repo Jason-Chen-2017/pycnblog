@@ -109,7 +109,7 @@ $$\mathcal{L}=-\sum_{t=1}^{T} \log P\left(x_{t} | x_{<t}\right)$$
 
 此外,还可以采用一些特殊技术来提高对话质量,如注意力掩码、知识增强和反馈优化等。
 
-## 4. 数学模型和公式详细讲解举例说明 
+## 4. 数学模型和公式详细讲解举例说明
 
 ### 4.1 Transformer架构
 
@@ -130,7 +130,7 @@ $$\operatorname{Attention}(Q, K, V)=\operatorname{softmax}\left(\frac{Q K^{\top}
 多头注意力允许模型从不同的表示子空间捕获不同的相关性,提高了模型的表达能力。它将查询、键和值线性投影到不同的子空间,并在每个子空间中计算缩放点积注意力,最后将结果连接起来。
 
 $$\begin{aligned}
-\operatorname{MultiHead}(Q, K, V) &=\operatorname{Concat}\left(\operatorname{head}_{1}, \ldots, \operatorname{head}_{h}\right) W^{O} \\
+\operatorname{MultiHead}(Q, K, V) &=\operatorname{Concat}\left(\operatorname{head}_{1}, \ldots, \operatorname{head}_{h}\right) W^{O} \
 \text { where } \operatorname{head}_{i} &=\operatorname{Attention}\left(Q W_{i}^{Q}, K W_{i}^{K}, V W_{i}^{V}\right)
 \end{aligned}$$
 

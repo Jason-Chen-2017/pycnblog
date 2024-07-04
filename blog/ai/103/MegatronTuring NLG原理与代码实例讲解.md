@@ -336,4 +336,4 @@ MT-NLG 可以应用于文本生成、机器翻译、问答系统、代码生成�
 * **MT-NLG 的未来发展趋势是什么？**
 未来大型语言模型的发展趋势包括模型规模不断增大、训练数据规模不断扩大、模型架构不断优化、应用领域不断拓展等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

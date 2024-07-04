@@ -135,7 +135,7 @@ $$
 
    $$
 \begin{cases}
-x_{t+1} = x_t + v_{xt} \cdot \Delta t \\
+x_{t+1} = x_t + v_{xt} \cdot \Delta t \
 y_{t+1} = y_t + v_{yt} \cdot \Delta t
 \end{cases}
 $$
@@ -143,7 +143,7 @@ $$
 2. **决策模型**：智能体根据预设规则进行决策，例如，当智能体到达目标位置时，停止移动。
 
    $$
-\text{if } x_t = x_{\text{目标}} \text{ and } y_t = y_{\text{目标}} \text{ then} \\
+\text{if } x_t = x_{\text{目标}} \text{ and } y_t = y_{\text{目标}} \text{ then} \
 \text{停止移动}
 \end{cases}
 $$

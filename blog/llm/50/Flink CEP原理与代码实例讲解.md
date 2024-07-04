@@ -66,7 +66,7 @@ Flink CEP会为每个模式的每个状态创建一个共享缓冲区,用于存�
 ### 3.3 事件处理
 对于流中的每个事件,Flink CEP会执行以下操作:
 
-1. 根据事件的属性,将事件放入对应状态的缓冲区中 
+1. 根据事件的属性,将事件放入对应状态的缓冲区中
 2. 检查缓冲区中的事件序列是否匹配定义的模式
 3. 如果找到匹配,则将匹配的事件序列作为复杂事件输出
 4. 根据策略(如超时时间)清理缓冲区中过期的事件
@@ -122,7 +122,7 @@ $$
 public class Event {
     private String type;
     private long timestamp;
-    
+
     public Event(String type, long timestamp) {
         this.type = type;
         this.timestamp = timestamp;

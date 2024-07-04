@@ -1,4 +1,4 @@
-                 
+
 # AI Agent: AI的下一个风口 NLP
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -172,14 +172,14 @@ def plan_and_solve(task_description):
     tasks = parse_task_description(task_description)
 
     solutions = []
-    
+
     for task in tasks:
         prompt = prepare_prompt(task)
         solution = generate_solution(prompt)
         solutions.append(solution)
 
     final_output = integrate_solutions(solutions)
-    
+
     return final_output
 
 # 示例函数实现
@@ -198,10 +198,10 @@ def generate_solution(prompt):
     model_path = "path/to/your/model"
     tokenizer = GPT2Tokenizer.from_pretrained(model_path)
     model = GPT2LMHeadModel.from_pretrained(model_path).cuda()
-    
+
     inputs = tokenizer.encode(prompt, return_tensors="pt").to('cuda')
     output_sequences = model.generate(inputs, max_length=1000, num_return_sequences=1)
-    
+
     generated_text = tokenizer.decode(output_sequences[0], skip_special_tokens=True)
     return generated_text
 
@@ -217,7 +217,7 @@ if __name__ == "__main__":
                 "正文撰写: 根据提纲完成文章主体; " \
                 "引用整合: 集合相关文献进行适当引用; " \
                 "审阅与修订: 进行文章质量审查和修改。"
-                
+
     result = plan_and_solve(task_desc)
     print(result)
 ```

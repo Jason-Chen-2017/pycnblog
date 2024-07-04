@@ -208,7 +208,7 @@ class Transformer(nn.Module):
         self.embedding = nn.Embedding(vocab_size, d_model)
         self.transformer = nn.Transformer(d_model, nhead, num_layers)
         self.fc = nn.Linear(d_model, vocab_size)
-        
+
     def forward(self, src):
         src = self.embedding(src)
         output = self.transformer(src)

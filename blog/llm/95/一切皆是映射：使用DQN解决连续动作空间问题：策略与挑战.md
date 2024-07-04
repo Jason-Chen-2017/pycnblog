@@ -1,7 +1,7 @@
 
 # 一切皆是映射：使用DQN解决连续动作空间问题：策略与挑战
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 关键词：
@@ -147,7 +147,7 @@ $$
 
 $$
 r = \begin{cases}
-1 & \text{if } |v_{next} - v_{current}| \leq 0.1 \\
+1 & \text{if } |v_{next} - v_{current}| \leq 0.1 \
 -1 & \text{else}
 \end{cases}
 $$

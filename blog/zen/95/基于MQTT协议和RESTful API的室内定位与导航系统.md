@@ -152,7 +152,7 @@ $$
 
 $$
 \begin{cases}
-0.282 = 100 \cdot e^{-\alpha \cdot x^2 + 2\alpha \cdot x y} \\
+0.282 = 100 \cdot e^{-\alpha \cdot x^2 + 2\alpha \cdot x y} \
 1.995 \times 10^{-5} = 100 \cdot e^{-\alpha \cdot (x - 10)^2 + 2\alpha \cdot (x - 10) y}
 \end{cases}
 $$

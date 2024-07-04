@@ -42,14 +42,14 @@ Catalyst是SparkSQL的核心组件之一,它是一个查询优化器,负责将SQ
 // 从Hive表读取数据
 val hiveDF = spark.table("hive_table")
 
-// 从Parquet文件读取数据 
+// 从Parquet文件读取数据
 val parquetDF = spark.read.parquet("path/to/parquet")
 
 // 从JSON文件读取数据
 val jsonDF = spark.read.json("path/to/json")
 ```
 
-### 3.2 数据转换(Transform)  
+### 3.2 数据转换(Transform)
 数据转换是ETL过程的核心,将原始数据按照业务需求进行清洗、转换和聚合。SparkSQL提供了丰富的DataFrame操作和SQL函数,可以方便地进行数据转换。
 
 ```scala
@@ -76,7 +76,7 @@ transformedDF.write.mode("overwrite").saveAsTable("hive_table")
 // 写入Parquet文件
 transformedDF.write.mode("overwrite").parquet("path/to/parquet")
 
-// 写入JSON文件 
+// 写入JSON文件
 transformedDF.write.mode("overwrite").json("path/to/json")
 ```
 
@@ -102,7 +102,7 @@ val selectedDF = userDF.filter($"age" > 18)
 投影操作从数据集中选择指定的列。数学表示为:
 
 $$
-\pi_{column1, column2, ...}(R)  
+\pi_{column1, column2, ...}(R)
 $$
 
 其中,$\pi$表示投影操作,$column1, column2, ...$表示要选择的列,R表示关系(数据集)。

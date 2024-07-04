@@ -74,11 +74,9 @@ Reptile算法广泛应用于多个领域，包括但不限于自然语言处理�
 
 设 $M_i$ 表示第 $i$ 个任务学习到的模型参数，$L_i(\\theta)$ 是第 $i$ 个任务的损失函数，$\\theta$ 是模型参数。Reptile算法的目标是通过学习新任务 $j$ 来更新模型参数，同时利用之前任务的信息。更新过程可以表示为：
 
-$$ \\theta_j = \\theta_{j-1} + \\alpha \\cdot \\sum_{i=1}^{j-1} \
-abla_{\\theta_{j-1}} L_i(\\theta_{j-1}) $$
+$$ \\theta_j = \\theta_{j-1} + \\alpha \\cdot \\sum_{i=1}^{j-1} \nabla_{\\theta_{j-1}} L_i(\\theta_{j-1}) $$
 
-其中，$\\alpha$ 是学习率，$\
-abla_{\\theta_{j-1}} L_i(\\theta_{j-1})$ 表示第 $i$ 个任务损失相对于第 $j-1$ 个任务参数的梯度。
+其中，$\\alpha$ 是学习率，$\nabla_{\\theta_{j-1}} L_i(\\theta_{j-1})$ 表示第 $i$ 个任务损失相对于第 $j-1$ 个任务参数的梯度。
 
 ### 4.2 公式推导过程
 

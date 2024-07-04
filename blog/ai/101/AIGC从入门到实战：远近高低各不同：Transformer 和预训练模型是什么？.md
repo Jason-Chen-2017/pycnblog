@@ -1,6 +1,6 @@
 # AIGC从入门到实战：远近高低各不同：Transformer 和预训练模型是什么？
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -350,4 +350,4 @@ GPT 模型是一种基于 Transformer 架构的生成式预训练模型，它能
 
 AIGC 技术的未来发展方向包括提高模型的效率和可解释性、增强模型的安全性、探索新的应用场景等。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

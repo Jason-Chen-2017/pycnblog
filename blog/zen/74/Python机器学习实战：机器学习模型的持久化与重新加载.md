@@ -20,7 +20,7 @@
 
 模型持久化的核心是序列化(Serialization),即将对象的状态信息转换为可存储或传输的形式的过程。Python提供了多种序列化的方法,其中Pickle和Joblib是应用最广泛的两个库。
 
-- Pickle:Python的原生对象序列化模块,可以将大部分Python对象转换为字节流,并保存到磁盘文件中。Pickle是一种通用的序列化方案。 
+- Pickle:Python的原生对象序列化模块,可以将大部分Python对象转换为字节流,并保存到磁盘文件中。Pickle是一种通用的序列化方案。
 - Joblib:是一个专门用于数组和大规模科学计算的工具包。Joblib内部使用Pickle实现序列化,但对于大规模的数值数组有更好的效率。
 
 ## 3. 核心算法原理 & 具体操作步骤
@@ -35,19 +35,19 @@ Pickle和Joblib的工作原理都是将Python对象序列化为二进制格式,�
 import pickle
 
 # 待保存的模型对象
-model = trained_model()  
+model = trained_model()
 
 with open('model.pkl', 'wb') as f:
     pickle.dump(model, f)
 ```
 
-2. 加载模型(pickle.load)  
+2. 加载模型(pickle.load)
 ```python
 import pickle
 
 with open('model.pkl', 'rb') as f:
     loaded_model = pickle.load(f)
-    
+
 # 使用加载后的模型进行预测
 loaded_model.predict(test_data)
 ```
@@ -58,7 +58,7 @@ Joblib的接口与Pickle类似,只需将`pickle.dump`和`pickle.load`替换为`j
 from joblib import dump, load
 
 #保存模型
-dump(model, 'model.joblib') 
+dump(model, 'model.joblib')
 
 #加载模型
 loaded_model = load('model.joblib')
@@ -118,7 +118,7 @@ model.fit(X, y)
 
 # 保存模型参数
 dump(model.coef_, 'model_coef.joblib')
-dump(model.intercept_, 'model_intercept.joblib') 
+dump(model.intercept_, 'model_intercept.joblib')
 
 # 加载模型参数
 coef = load('model_coef.joblib')
@@ -133,7 +133,7 @@ print(np.dot(np.array([[3, 5]]), coef) + intercept)
 - 问:为什么要对模型进行持久化?
 - 答:模型训练是一个耗时的过程,将训练好的模型持久化,可以方便地在不同环境中复用,提高开发和生产效率。
 
-- 问:Pickle能否跨Python版本使用? 
+- 问:Pickle能否跨Python版本使用?
 - 答:Pickle序列化的数据,在不同Python版本中可能无法兼容。因此在使用Pickle时,保存和加载环境的Python版本最好保持一致。
 
 ## 5. 项目实践：代码实例和详细解释说明
@@ -173,7 +173,7 @@ rfc.fit(X_train, y_train)
 # 持久化模型
 dump(rfc, 'rf_model.joblib')
 
-# 加载模型 
+# 加载模型
 loaded_rfc = load('rf_model.joblib')
 
 # 预测

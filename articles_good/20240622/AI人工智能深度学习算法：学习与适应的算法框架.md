@@ -116,8 +116,7 @@
 
 1. **神经网络模型**：表示为$F(\\theta; X)$，其中$\\theta$为模型参数，$X$为输入数据。
 2. **损失函数**：表示为$L(\\theta; X, Y)$，其中$Y$为真实标签。
-3. **学习算法**：表示为$\\theta_{t+1} = \\theta_t - \\alpha \
-abla_{\\theta}L(\\theta_t; X, Y)$，其中$\\alpha$为学习率。
+3. **学习算法**：表示为$\\theta_{t+1} = \\theta_t - \\alpha \nabla_{\\theta}L(\\theta_t; X, Y)$，其中$\\alpha$为学习率。
 
 ### 4.2 公式推导过程
 
@@ -135,8 +134,7 @@ $$L(\\theta; X, Y) = \\frac{1}{2} \\sum_{i=1}^n (F(\\theta; x^{(i)}) - y^{(i)})^
 
 3. **学习算法**：根据梯度下降法，模型参数更新公式为：
 
-$$\\theta_{t+1} = \\theta_t - \\alpha \
-abla_{\\theta}L(\\theta_t; X, Y)$$
+$$\\theta_{t+1} = \\theta_t - \\alpha \nabla_{\\theta}L(\\theta_t; X, Y)$$
 
 其中，$\\alpha$为学习率。
 

@@ -20,7 +20,7 @@
 #### 2.1.2 机器学习的概念和分类
 #### 2.1.3 人工智能与机器学习的关系
 ### 2.2 深度学习
-#### 2.2.1 深度学习的概念和特点 
+#### 2.2.1 深度学习的概念和特点
 #### 2.2.2 深度学习与传统机器学习的区别
 #### 2.2.3 深度学习的典型网络架构
 ### 2.3 诈骗侦测
@@ -35,7 +35,7 @@
 #### 3.1.3 在线预测阶段
 ### 3.2 数据预处理
 #### 3.2.1 数据清洗
-#### 3.2.2 特征工程 
+#### 3.2.2 特征工程
 #### 3.2.3 数据增强
 ### 3.3 深度学习模型设计
 #### 3.3.1 输入层设计
@@ -63,7 +63,7 @@ $$ da^{[l-1]} = W^{[l]T}dz^{[l]} $$
 ### 4.2 卷积神经网络
 #### 4.2.1 卷积层
 $$ a^{[l]} = g(W^{[l]} * a^{[l-1]} + b^{[l]}) $$
-#### 4.2.2 池化层 
+#### 4.2.2 池化层
 $$ a^{[l]} = pool(a^{[l-1]}) $$
 ### 4.3 循环神经网络
 #### 4.3.1 基本RNN
@@ -92,19 +92,19 @@ class FraudDetector(nn.Module):
     def __init__(self):
         super(FraudDetector, self).__init__()
         self.embedding = nn.Embedding(num_embeddings, embedding_dim)
-        self.lstm = nn.LSTM(embedding_dim, hidden_size, num_layers, batch_first=True)  
+        self.lstm = nn.LSTM(embedding_dim, hidden_size, num_layers, batch_first=True)
         self.fc = nn.Linear(hidden_size, num_classes)
-        
+
     def forward(self, x):
-        x = self.embedding(x)  
+        x = self.embedding(x)
         _, (h_n, _) = self.lstm(x)
-        output = self.fc(h_n[-1]) 
+        output = self.fc(h_n[-1])
         return output
 ```
 #### 5.3.2 模型训练
 ```python
 model = FraudDetector()
-criterion = nn.CrossEntropyLoss()  
+criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
 for epoch in range(num_epochs):
@@ -116,7 +116,7 @@ for epoch in range(num_epochs):
         optimizer.step()
 ```
 #### 5.3.3 模型评估
-```python 
+```python
 model.eval()
 with torch.no_grad():
     correct = 0
@@ -141,7 +141,7 @@ with torch.no_grad():
 #### 6.1.3 模型应用
 ### 6.2 电信诈骗检测
 #### 6.2.1 业务背景
-#### 6.2.2 数据准备 
+#### 6.2.2 数据准备
 #### 6.2.3 模型应用
 ### 6.3 保险欺诈检测
 #### 6.3.1 业务背景
@@ -167,7 +167,7 @@ with torch.no_grad():
 #### 8.1.1 提高诈骗侦测的准确率和效率
 #### 8.1.2 实现诈骗侦测的智能化和自动化
 #### 8.1.3 与其他技术的结合应用
-### 8.2 技术挑战和未来研究方向  
+### 8.2 技术挑战和未来研究方向
 #### 8.2.1 数据质量和标注成本
 #### 8.2.2 模型的可解释性
 #### 8.2.3 对抗样本攻击

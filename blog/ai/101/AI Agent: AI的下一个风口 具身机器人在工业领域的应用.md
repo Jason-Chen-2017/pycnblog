@@ -366,4 +366,4 @@ AI Agent的研究前景非常广阔，未来将会有更多的研究方向和应
 * **人机协作:**  研究人机协作的AI Agent，使其能够与人类共同完成任务。
 * **情感计算:**  研究能够理解和表达情感的AI Agent，使其能够与人类进行更自然、更有效的交流。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -107,7 +107,7 @@ $$
 
 $$
 \begin{aligned}
-\frac{∂L}{∂w} &= (\hat{y} - y)x \\
+\frac{∂L}{∂w} &= (\hat{y} - y)x \
 \frac{∂L}{∂b} &= \hat{y} - y
 \end{aligned}
 $$
@@ -116,7 +116,7 @@ $$
 
 $$
 \begin{aligned}
-w_{t+1} &= w_t - η·(\hat{y} - y)x \\
+w_{t+1} &= w_t - η·(\hat{y} - y)x \
 b_{t+1} &= b_t - η·(\hat{y} - y)
 \end{aligned}
 $$
@@ -139,7 +139,7 @@ $$
 
 $$
 \begin{aligned}
-\frac{∂L}{∂w} &= (\hat{y} - y)x \\
+\frac{∂L}{∂w} &= (\hat{y} - y)x \
 \frac{∂L}{∂b} &= \hat{y} - y
 \end{aligned}
 $$
@@ -148,7 +148,7 @@ SGD的参数更新公式与二元分类问题相同:
 
 $$
 \begin{aligned}
-w_{t+1} &= w_t - η·(\hat{y} - y)x \\
+w_{t+1} &= w_t - η·(\hat{y} - y)x \
 b_{t+1} &= b_t - η·(\hat{y} - y)
 \end{aligned}
 $$
@@ -265,4 +265,4 @@ y_pred = regressor.predict(X_test)
 - SGD的收敛性分析:在凸优化问题上,SGD能够以$O(1/\sqrt{T})$的速率收敛到最优解
 - SGD在非凸优化问题(如深度学习)中的收敛性尚未完全解决
 - 噪声对SGD收敛速度的影响:适当的噪声有助于加速SGD收敛并逃离鞍点
-- 
+-

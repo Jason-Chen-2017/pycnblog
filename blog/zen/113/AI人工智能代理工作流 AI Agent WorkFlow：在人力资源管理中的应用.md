@@ -156,8 +156,8 @@ class AIAgent:
 
     def train(self, data, labels):
         # 训练模型
-        self.model.compile(optimizer='adam', 
-                           loss='sparse_categorical_crossentropy', 
+        self.model.compile(optimizer='adam',
+                           loss='sparse_categorical_crossentropy',
                            metrics=['accuracy'])
         self.model.fit(data, labels, epochs=5)
 

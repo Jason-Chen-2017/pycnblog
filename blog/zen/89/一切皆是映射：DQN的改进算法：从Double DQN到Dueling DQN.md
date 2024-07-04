@@ -273,7 +273,7 @@ class DuelingDQN(nn.Module):
         self.fc1 = nn.Linear(state_dim, 512)
         self.fc2 = nn.Linear(512, 256)
         self.fc3 = nn.Linear(256, action_dim + 1)
-        
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = torch.relu(self.fc2(x))
@@ -295,15 +295,15 @@ def train(model, optimizer, criterion, states, actions, rewards, next_states, do
     rewards = torch.tensor(rewards).float()
     next_states = torch.tensor(next_states).float()
     dones = torch.tensor(dones).float()
-    
+
     # 计算预测值和目标值
     q_values = model(states)
     q_next = model(next_states)
     q_next_target = rewards + (1 - dones) * 0.99 * q_next_target.max(dim=1, keepdim=True)[0]
-    
+
     # 计算损失
     loss = criterion(q_values[actions], q_next_target)
-    
+
     # 梯度清零
     optimizer.zero_grad()
     loss.backward()

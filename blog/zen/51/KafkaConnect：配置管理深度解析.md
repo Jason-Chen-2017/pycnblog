@@ -35,19 +35,19 @@ graph LR
         Worker1[Worker 1]
         Worker2[Worker 2]
         Worker3[Worker 3]
-        
+
         Connector1[Source Connector]
         Connector2[Sink Connector]
-        
+
         Worker1 --> Connector1
         Worker2 --> Connector2
         Worker3 --> Connector1
         Worker3 --> Connector2
     end
-    
+
     Source[(Source System)]
     Destination[(Destination System)]
-    
+
     Source --> Connector1
     Connector2 --> Destination
 ```
@@ -72,7 +72,7 @@ bootstrap.servers=localhost:9092
 key.converter=org.apache.kafka.connect.json.JsonConverter
 value.converter=org.apache.kafka.connect.json.JsonConverter
 
-# 集群配置 
+# 集群配置
 group.id=connect-cluster
 offset.storage.topic=connect-offsets
 config.storage.topic=connect-configs
@@ -134,7 +134,7 @@ POST /connectors/mysql-source/restart
 假设每个任务的平均吞吐量为$T_t$,平均延迟为$L_t$,则总吞吐量$T$和平均延迟$L$可表示为:
 
 $$
-T = n \times T_t \\
+T = n \times T_t \
 L = \frac{1}{n} \sum_{i=1}^{n} L_t
 $$
 

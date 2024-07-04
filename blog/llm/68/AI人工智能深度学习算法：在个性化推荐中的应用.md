@@ -196,16 +196,16 @@ from tensorflow.keras.models import Model
 def create_model(num_users, num_items, embedding_size):
     user_input = Input(shape=(1,))
     item_input = Input(shape=(1,))
-    
+
     user_embedding = Embedding(num_users, embedding_size)(user_input)
     item_embedding = Embedding(num_items, embedding_size)(item_input)
-    
+
     dot_product = Dot(axes=1)([user_embedding, item_embedding])
     output = Flatten()(dot_product)
-    
+
     model = Model(inputs=[user_input, item_input], outputs=output)
     model.compile(optimizer='adam', loss='mse')
-    
+
     return model
 
 # 创建模型

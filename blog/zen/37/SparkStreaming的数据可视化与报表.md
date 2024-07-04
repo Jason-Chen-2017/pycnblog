@@ -155,11 +155,11 @@ SparkStreaming的数据可视化与报表生成适用于以下领域：
 
 - **均值(Mean)**: 表示一组数据的平均数，公式为：
 
-  $$\\mu = \\frac{\\sum_{i=1}^n x_i}{n}$$
+  $$\mu = \frac{\sum_{i=1}^n x_i}{n}$$
 
 - **中位数(Median)**: 表示一组数据中间位置的值，公式为：
 
-  $$\\text{Median}(X) = \\begin{cases} x_{\\frac{n+1}{2}} & \\text{若 } n \\text{ 为奇数} \\\\ \\frac{x_{\\frac{n}{2}} + x_{\\frac{n}{2}+1}}{2} & \\text{若 } n \\text{ 为偶数} \\end{cases}$$
+  $$\text{Median}(X) = \begin{cases} x_{\frac{n+1}{2}} & \text{若 } n \text{ 为奇数} \\ \frac{x_{\frac{n}{2}} + x_{\frac{n}{2}+1}}{2} & \text{若 } n \text{ 为偶数} \end{cases}$$
 
 - **众数(Mode)**: 表示一组数据中出现次数最多的数值。
 
@@ -167,7 +167,7 @@ SparkStreaming的数据可视化与报表生成适用于以下领域：
 
 - **线性回归(Linear Regression)**: 用于预测连续值，公式为：
 
-  $$y = \\beta_0 + \\beta_1 x_1 + \\beta_2 x_2 + \\cdots + \\beta_n x_n$$
+  $$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_n x_n$$
 
 - **决策树(Decision Tree)**: 用于分类和回归，通过一系列规则将数据分为不同的类别或预测连续值。
 
@@ -179,13 +179,13 @@ SparkStreaming的数据可视化与报表生成适用于以下领域：
 
 线性回归的损失函数为均方误差(Mean Squared Error, MSE)，公式为：
 
-$$MSE = \\frac{1}{n} \\sum_{i=1}^n (y_i - \\hat{y}_i)^2$$
+$$MSE = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2$$
 
-其中，$\\hat{y}_i$为预测值，$y_i$为真实值。
+其中，$\hat{y}_i$为预测值，$y_i$为真实值。
 
 通过求损失函数的最小值，可以得到线性回归的参数：
 
-$$\\beta = (X^T X)^{-1} X^T y$$
+$$\beta = (X^T X)^{-1} X^T y$$
 
 ### 4.3 案例分析与讲解
 
@@ -242,8 +242,8 @@ from pyspark.streaming.kafka import KafkaUtils
 from pyspark.sql import SparkSession
 
 # 创建SparkSession
-spark = SparkSession.builder \\
-    .appName("SparkStreamingVisualization") \\
+spark = SparkSession.builder \
+    .appName("SparkStreamingVisualization") \
     .getOrCreate()
 
 # 创建StreamingContext

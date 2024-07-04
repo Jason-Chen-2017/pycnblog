@@ -157,12 +157,12 @@ for epoch in range(num_epochs):
         # 前向传播
         outputs = model(images)
         loss = criterion(outputs, labels)
-        
+
         # 反向传播和优化
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-        
+
     # 评估模型并记录指标
     ...
 ```

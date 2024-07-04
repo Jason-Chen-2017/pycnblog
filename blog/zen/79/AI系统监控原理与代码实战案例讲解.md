@@ -14,7 +14,7 @@ AI系统监控对保障AI系统的安全稳定运行至关重要。通过实时�
 
 ## 2. 核心概念与联系
 AI系统监控的核心概念包括:
-- 监控对象:AI系统的各个组件,如模型、数据、基础设施等 
+- 监控对象:AI系统的各个组件,如模型、数据、基础设施等
 - 监控指标:反映AI系统运行状态的定量测量,如准确率、响应时间、资源利用率等
 - 日志:记录AI系统运行过程中的事件信息,如训练日志、预测日志、错误日志等
 - 异常检测:基于监控指标和日志,识别AI系统运行过程中的异常行为,如性能下降、数据漂移等
@@ -27,7 +27,7 @@ AI系统监控的核心概念包括:
 graph LR
 A[监控对象] --> B[监控指标]
 A[监控对象] --> C[日志]
-B[监控指标] --> D[异常检测]  
+B[监控指标] --> D[异常检测]
 C[日志] --> D[异常检测]
 D[异常检测] --> E[可视化]
 D[异常检测] --> F[告警通知]
@@ -131,27 +131,27 @@ from scipy.stats import multivariate_normal
 
 class GaussianAD:
     """基于高斯分布的异常检测算法"""
-    
+
     def __init__(self, threshold=None):
         self.threshold = threshold
         self.mu = None
         self.sigma = None
-        
+
     def fit(self, X):
         """拟合高斯分布参数"""
         self.mu = np.mean(X, axis=0)
         self.sigma = np.cov(X.T)
-        
+
     def predict(self, X):
         """异常检测"""
         p = multivariate_normal.pdf(X, mean=self.mu, cov=self.sigma)
         scores = -np.log(p)
-        
+
         if self.threshold is None:
             return scores
         else:
             return (scores > self.threshold).astype(int)
-        
+
     def fit_predict(self, X):
         """拟合并预测"""
         self.fit(X)
@@ -198,7 +198,7 @@ print(X[y_pred == 1])
 AI系统监控在许多实际场景中得到应用,例如:
 
 - 智能客服系统:通过监控对话意图识别、情感分析等模型的性能指标,及时发现模型质量下降,避免引起用户投诉。
-- 无人驾驶系统:通过监控环境感知、路径规划、车辆控制等模块的关键指标,及时预警故障风险,保障行车安全。  
+- 无人驾驶系统:通过监控环境感知、路径规划、车辆控制等模块的关键指标,及时预警故障风险,保障行车安全。
 - 工业质检系统:通过监控缺陷检测模型的准确率、召回率等指标,发现模型漂移现象,提示及时更新迭代。
 - 金融反欺诈系统:通过监控交易反欺诈模型的性能指标和业务指标,发现可疑异常,防范金融风险。
 

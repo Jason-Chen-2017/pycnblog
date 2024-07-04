@@ -145,19 +145,19 @@ Kafka Partition的数学模型主要包括以下几个方面：
 
 假设有N个Partition和M个消息，消息Key的哈希值为H(Key)，则消息分配到Partition P的计算公式如下：
 
-$$ P = H(Key) \\mod N $$
+$$ P = H(Key) \mod N $$
 
 #### 4.2.2 Partition负载均衡模型
 
 假设有N个Partition，每个Partition的存储空间为S(i)，CPU使用率为U(i)，则需要迁移的Partition P(i)的计算公式如下：
 
-$$ P(i) = \\min_{1 \\leq j \\leq N} \\left\\{ \\frac{S(j)}{U(j)} \\right\\} $$
+$$ P(i) = \min_{1 \leq j \leq N} \left\{ \frac{S(j)}{U(j)} \right\} $$
 
 #### 4.2.3 Partition的读写性能模型
 
 假设Partition的磁盘IO吞吐量为I/O，内存缓存容量为M，并行处理线程数为T，则Partition的读写性能P的计算公式如下：
 
-$$ P = \\frac{I/O + M}{I/O + M + T \\times I/O} $$
+$$ P = \frac{I/O + M}{I/O + M + T \times I/O} $$
 
 ### 4.3 案例分析与讲解
 
@@ -264,8 +264,8 @@ Kafka Partition可以用于实现大规模数据存储和处理。通过将数�
 
 ### 7.3 相关论文推荐
 
-1. \"Kafka: A Distributed Streaming Platform\" by Neha Narkhede, Jay Kreps, and Neha Narkhede
-2. \"Scalable and Efficient Distribution of Stream Processing Workloads\" by Ashish Thusoo, Joydeep Sen Sarma, and Kunal Talwar
+1. "Kafka: A Distributed Streaming Platform" by Neha Narkhede, Jay Kreps, and Neha Narkhede
+2. "Scalable and Efficient Distribution of Stream Processing Workloads" by Ashish Thusoo, Joydeep Sen Sarma, and Kunal Talwar
 
 ### 7.4 其他资源推荐
 

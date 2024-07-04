@@ -123,7 +123,7 @@ $$X = [1, 2, 3, 4, 5]$$
 
 隐藏层权重和偏置为：
 
-$$W_h = \begin{bmatrix} 0.1 & 0.2 \\ 0.3 & 0.4 \end{bmatrix}, b_h = \begin{bmatrix} 0.5 \\ 0.6 \end{bmatrix}$$
+$$W_h = \begin{bmatrix} 0.1 & 0.2 \ 0.3 & 0.4 \end{bmatrix}, b_h = \begin{bmatrix} 0.5 \ 0.6 \end{bmatrix}$$
 
 输出层权重和偏置为：
 

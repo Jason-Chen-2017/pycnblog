@@ -1,7 +1,7 @@
 
 # 维护学习 (Curriculum Learning) 原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -125,8 +125,7 @@ graph
 
 $$
 \begin{align*}
-\theta_{t+1} &= \theta_t + \alpha \cdot \
-abla_{\theta_t} L(x_t, y_t) \\
+\theta_{t+1} &= \theta_t + \alpha \cdot \nabla_{\theta_t} L(x_t, y_t) \\
 y_{t+1} &= f(\theta_{t+1}, x_{t+1})
 \end{align*}
 $$

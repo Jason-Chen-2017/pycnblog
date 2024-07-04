@@ -22,11 +22,11 @@
 ### 3.1 硬参数共享
 所有任务共享同一组参数,相当于在同一个网络上同时训练多个任务。具体步骤如下:
 1. 定义共享的网络结构
-2. 定义每个任务的损失函数 
+2. 定义每个任务的损失函数
 3. 将多个任务的损失函数相加得到总的损失函数
 4. 联合优化总的损失函数来更新共享参数
 
-### 3.2 软参数共享 
+### 3.2 软参数共享
 每个任务有自己独立的参数,通过正则化项约束不同任务参数的相似性。常见方法有:
 - L2正则化:约束不同任务参数的欧氏距离
 - 迹范数正则化:约束不同任务参数矩阵的迹范数
@@ -50,7 +50,7 @@ $$\mathop{\min}_{\{\Theta_t\}_{t=1}^T} \sum_{t=1}^T \sum_{i=1}^{N_t} L(\Theta_t;
 
 通过约束不同任务参数的欧氏距离,鼓励不同任务学到相似的参数。其他软共享正则化项如迹范数正则化、𝜃-MTL等类似,只是换了不同的任务相关性度量。
 
-### 4.3 层次化共享的数学模型 
+### 4.3 层次化共享的数学模型
 设共享参数为 $\Theta_s$,任务 $t$ 的特定参数为 $\Theta_t$,则层次化共享的目标函数为:
 
 $$\mathop{\min}_{\Theta_s,\{\Theta_t\}_{t=1}^T} \sum_{t=1}^T \sum_{i=1}^{N_t} L(\Theta_s,\Theta_t;x_i^t,y_i^t) + \lambda_s R(\Theta_s) + \lambda \sum_{t=1}^T R(\Theta_t)$$
@@ -81,24 +81,24 @@ y_test_f = keras.utils.to_categorical(y_test_f)
 
 # 定义共享网络
 shared_conv = keras.models.Sequential()
-shared_conv.add(keras.layers.Conv2D(32, kernel_size=3, activation='relu', input_shape=(28,28,1))) 
+shared_conv.add(keras.layers.Conv2D(32, kernel_size=3, activation='relu', input_shape=(28,28,1)))
 shared_conv.add(keras.layers.Conv2D(64, kernel_size=3, activation='relu'))
 shared_conv.add(keras.layers.MaxPooling2D(pool_size=(2, 2)))
 shared_conv.add(keras.layers.Dropout(0.25))
 shared_conv.add(keras.layers.Flatten())
-    
+
 # 数字分类任务
 mnist_clf = keras.models.Sequential()
 mnist_clf.add(shared_conv)
-mnist_clf.add(keras.layers.Dense(128, activation='relu'))  
+mnist_clf.add(keras.layers.Dense(128, activation='relu'))
 mnist_clf.add(keras.layers.Dropout(0.5))
 mnist_clf.add(keras.layers.Dense(10, activation='softmax'))
 
 # 服饰分类任务
-fashion_clf = keras.models.Sequential()  
+fashion_clf = keras.models.Sequential()
 fashion_clf.add(shared_conv)
 fashion_clf.add(keras.layers.Dense(128, activation='relu'))
-fashion_clf.add(keras.layers.Dropout(0.5))  
+fashion_clf.add(keras.layers.Dropout(0.5))
 fashion_clf.add(keras.layers.Dense(10, activation='softmax'))
 
 # 编译模型
@@ -131,7 +131,7 @@ fashion_clf.fit(x_train_f, y_train_f, batch_size=128, epochs=10, validation_data
   - https://github.com/hellbell/AdaShare 自适应层共享的多任务学习模型
 - 多任务学习相关的综述论文:
   - Multi-Task Learning (1997)
-  - An Overview of Multi-Task Learning in Deep Neural Networks (2017) 
+  - An Overview of Multi-Task Learning in Deep Neural Networks (2017)
   - A Survey on Multi-Task Learning (2018)
 
 ## 8.总结：未来发展趋势与挑战
@@ -157,7 +157,7 @@ A:可以根据任务的相关程度和数据量来决定。一般来说,任务�
 ### Q3:多任务学习的任务权重如何设置?
 A:可以简单地平均所有任务的损失函数,或者根据任务的重要性和难度来调整权重。一些自适应权重的方法如DWA、GradNorm等,可以自动学习任务权重。但权重的设置需要通过实验来验证效果。
 
-### Q4:如何避免多任务学习的负迁移? 
+### Q4:如何避免多任务学习的负迁移?
 A:可以采用一些对抗负迁移的方法,如对抗性训练、梯度剪裁、添加任务特定层等。或者在训练过程中监控每个任务的性能,如果发现某个任务的性能下降,可以减小其权重或单独微调。
 
 ### Q5:多任务学习的收敛速度如何?

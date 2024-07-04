@@ -168,7 +168,7 @@ A：AIGC技术可以应用于各种实际场景，如内容创作、广告营销
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n aigc-env python=3.8 
+conda create -n aigc-env python=3.8
 conda activate aigc-env
 ```
 

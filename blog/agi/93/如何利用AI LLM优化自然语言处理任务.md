@@ -258,7 +258,7 @@ def load_data():
             text, label = line.strip().split('\t')
             texts.append(text)
             labels.append(label)
-    
+
     # 划分数据集
     train_texts, dev_texts, train_labels, dev_labels = train_test_split(texts, labels, test_size=0.2)
 

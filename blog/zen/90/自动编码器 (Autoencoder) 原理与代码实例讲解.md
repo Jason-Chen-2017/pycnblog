@@ -98,7 +98,7 @@
 
 $$
 \begin{aligned}
-\text{编码器：} & \quad Z = \phi(X) \\
+\text{编码器：} & \quad Z = \phi(X) \
 \text{解码器：} & \quad Y = \psi(Z)
 \end{aligned}
 $$

@@ -91,7 +91,7 @@ from scipy.integrate import quad
 def stokes_formula(M, X, omega):
     # 计算微分形式dω的积分
     d_omega_integral = quad(lambda x: np.gradient(omega, axis=0), M)
-    
+
     # 计算边界上的积分
     boundary_integral = quad(lambda x: omega(x), M)
 

@@ -145,9 +145,9 @@ $$ [x \otimes a, y \otimes b] = (\phi(x) \cdot \phi(y)) \otimes (ab) $$
 
 设 $\mathfrak{g} = \mathfrak{sl}_2(\mathbb{C})$ 是二维复杂简单李代数，$m = \mathbb{C}$ 是复数域，则Cartan型模李超代数 $(\mathfrak{g}_m, [\cdot, \cdot], m)$ 可以表示为：
 
-$$ \mathfrak{g}_m = \mathfrak{sl}_2(\mathbb{C}) \otimes \mathbb{C} = \left\{ \begin{pmatrix} a & b \\ c & d \end{pmatrix} \otimes \lambda \mid a, b, c, d \in \mathbb{C}, \lambda \in \mathbb{C} \right\} $$
+$$ \mathfrak{g}_m = \mathfrak{sl}_2(\mathbb{C}) \otimes \mathbb{C} = \left\{ \begin{pmatrix} a & b \ c & d \end{pmatrix} \otimes \lambda \mid a, b, c, d \in \mathbb{C}, \lambda \in \mathbb{C} \right\} $$
 
-$$ [\cdot, \cdot]_m = [\cdot, \cdot] \otimes 1 = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \cdot \begin{pmatrix} e & f \\ g & h \end{pmatrix} \otimes \lambda = \begin{pmatrix} ae + bg & af + bh \\ ce + dg & cf + dh \end{pmatrix} \otimes \lambda $$
+$$ [\cdot, \cdot]_m = [\cdot, \cdot] \otimes 1 = \begin{pmatrix} a & b \ c & d \end{pmatrix} \cdot \begin{pmatrix} e & f \ g & h \end{pmatrix} \otimes \lambda = \begin{pmatrix} ae + bg & af + bh \ ce + dg & cf + dh \end{pmatrix} \otimes \lambda $$
 
 ### 4.2 公式推导过程
 

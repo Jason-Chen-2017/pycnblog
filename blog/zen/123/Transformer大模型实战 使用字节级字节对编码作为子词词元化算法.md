@@ -323,4 +323,4 @@ BBPE 算法可以应用于更多 NLP 任务，例如：
 
    - 可以使用词汇量、词元数量、语义信息保留率等指标来评估子词词元化算法的性能。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

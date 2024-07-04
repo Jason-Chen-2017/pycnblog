@@ -144,7 +144,7 @@ $$
 Flink CEP的触发条件判断主要基于事件序列和触发器定义。以时间触发器为例，其触发条件可以表示为：
 
 $$
-T(s) = \begin{cases} 
+T(s) = \begin{cases}
 \text{True} & \text{if } s \text{ satisfies the time window condition} \\
 \text{False} & \text{otherwise}
 \end{cases}

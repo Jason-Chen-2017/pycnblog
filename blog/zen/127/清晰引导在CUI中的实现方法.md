@@ -8,7 +8,7 @@
 
 相比之下,命令行界面(CLI)和文本用户界面(TUI)则更加简洁高效,在某些场景下更受欢迎。然而,这些界面缺乏直观的视觉引导,用户很容易迷失在复杂的命令和选项中。因此,如何在CLI/TUI中提供清晰的引导,成为了一个亟待解决的问题。
 
-### 1.2 研究现状  
+### 1.2 研究现状
 
 目前,已有一些方法被用于提高CLI/TUI的可用性,比如:
 
@@ -103,23 +103,23 @@ grammar = initialize_grammar()
 while True:
     // 获取当前状态
     current_state = get_current_state(state_machine)
-    
+
     // 获取用户输入
     user_input = get_user_input()
-    
+
     // 自然语言处理
     parsed_input = parse_natural_language(user_input, grammar)
-    
+
     // 根据状态和用户输入,生成交互策略
     interaction_strategy = generate_strategy(current_state, parsed_input)
-    
+
     // 执行交互策略,生成响应
     response = execute_strategy(interaction_strategy)
-    
+
     // 输出响应,获取反馈
     print(response)
     user_feedback = get_user_feedback()
-    
+
     // 更新状态机
     state_machine = update_state_machine(state_machine, user_feedback)
 ```
@@ -181,7 +181,7 @@ while True:
 FSM由一个五元组(Q,Σ,δ,q0,F)组成,其中:
 
 - Q是一个有限状态集合
-- Σ是一个有限输入符号集合 
+- Σ是一个有限输入符号集合
 - δ是一个状态转移函数,δ:Q×Σ→Q
 - q0是初始状态,q0∈Q
 - F是一个终止状态集合,F⊆Q

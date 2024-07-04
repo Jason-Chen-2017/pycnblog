@@ -130,13 +130,13 @@ class TransformerModel(nn.Module):
         self.pos_encoder = PositionalEncoding(d_model)
         self.transformer = nn.Transformer(d_model, nhead, num_layers)
         self.fc = nn.Linear(d_model, vocab_size)
-        
+
     def forward(self, src, tgt, src_mask, tgt_mask):
         src = self.embedding(src) * math.sqrt(d_model)
         src = self.pos_encoder(src)
         tgt = self.embedding(tgt) * math.sqrt(d_model)
         tgt = self.pos_encoder(tgt)
-        
+
         output = self.transformer(src, tgt, src_mask, tgt_mask)
         output = self.fc(output)
         return output
@@ -152,7 +152,7 @@ def generate_text(model, tokenizer, max_length, device, prompt=None):
     if prompt is None:
         prompt = "<bos>"
     input_ids = tokenizer.encode(prompt, return_tensors="pt").to(device)
-    
+
     with torch.no_grad():
         for _ in range(max_length):
             mask = generate_square_subsequent_mask(input_ids.size(-1)).to(device)
@@ -162,7 +162,7 @@ def generate_text(model, tokenizer, max_length, device, prompt=None):
             input_ids = torch.cat([input_ids, next_token], dim=-1)
             if next_token == tokenizer.eos_token_id:
                 break
-                
+
     return tokenizer.decode(input_ids.squeeze().tolist())
 ```
 

@@ -47,7 +47,7 @@ graph TD
     A --> D(微服务架构)
 ```
 
-## 3.核心算法原理具体操作步骤  
+## 3.核心算法原理具体操作步骤
 
 ### 3.1 模型并行
 
@@ -122,7 +122,7 @@ $$\nabla = \frac{1}{N}\sum_{i=1}^N\nabla_i$$
 量化是将浮点数权重转换为低比特表示,以减小模型大小和计算量。常见的量化方法是线性量化,将权重$w$映射到一个有限的离散值集合$Q$:
 
 $$Q(w) = \begin{cases}
-\lfloor\frac{w}{s}\rceil, & \text{if } s > 0\\
+\lfloor\frac{w}{s}\rceil, & \text{if } s > 0\
 0, & \text{if } s = 0
 \end{cases}$$
 

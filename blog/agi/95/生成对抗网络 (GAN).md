@@ -96,7 +96,7 @@ GAN的数学模型可以表示为：
 
 $$
 \begin{align*}
-G(z) &= \mathbb{R}^{D \times H \times W} \\
+G(z) &= \mathbb{R}^{D \times H \times W} \
 D(x) &= \mathbb{R}
 \end{align*}
 $$
@@ -109,7 +109,7 @@ GAN的目标是最小化以下两个损失函数：
 
 $$
 \begin{align*}
-\text{loss\_G} &= \mathbb{E}_{z \sim p(z)}[\log D(G(z))] \\
+\text{loss\_G} &= \mathbb{E}_{z \sim p(z)}[\log D(G(z))] \
 \text{loss\_D} &= \mathbb{E}_{x \sim p(x)}[\log D(x)] + \mathbb{E}_{z \sim p(z)}[\log (1 - D(G(z))]
 \end{align*}
 $$
@@ -187,20 +187,20 @@ for epoch in range(epochs):
         optimizer_D.zero_grad()
         real_data = x.view(-1, 784)
         fake_data = generator(torch.randn(x.size(0), 100)).view(-1, 784)
-        
+
         real_loss = nn.BCELoss()(discriminator(real_data).squeeze(), torch.ones_like(real_loss))
         fake_loss = nn.BCELoss()(discriminator(fake_data).squeeze(), torch.zeros_like(fake_loss))
         d_loss = real_loss + fake_loss
         d_loss.backward()
         optimizer_D.step()
-        
+
         # 训练生成器
         optimizer_G.zero_grad()
         fake_loss = nn.BCELoss()(discriminator(fake_data).squeeze(), torch.ones_like(fake_loss))
         g_loss = fake_loss
         g_loss.backward()
         optimizer_G.step()
-        
+
         if i % 100 == 0:
             print(f'Epoch: {epoch}, Step: {i}, D Loss: {d_loss.item()}, G Loss: {g_loss.item()}')
 
@@ -234,7 +234,7 @@ A2：评估GAN的生成数据质量可以通过以下几种方法：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n gan-env python=3.8 
+conda create -n gan-env python=3.8
 conda activate gan-env
 ```
 

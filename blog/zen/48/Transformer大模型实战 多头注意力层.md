@@ -94,8 +94,8 @@ graph TD
 
 $$
 \begin{aligned}
-Q &= XW^Q \\
-K &= XW^K \\
+Q &= XW^Q \
+K &= XW^K \
 V &= XW^V
 \end{aligned}
 $$
@@ -108,8 +108,8 @@ $$
 
 $$
 \begin{aligned}
-Q &= \text{concat}(Q_1, Q_2, \dots, Q_h) \\
-K &= \text{concat}(K_1, K_2, \dots, K_h) \\
+Q &= \text{concat}(Q_1, Q_2, \dots, Q_h) \
+K &= \text{concat}(K_1, K_2, \dots, K_h) \
 V &= \text{concat}(V_1, V_2, \dots, V_h)
 \end{aligned}
 $$

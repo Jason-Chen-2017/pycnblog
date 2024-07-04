@@ -1,7 +1,7 @@
 
 # Presto原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -141,9 +141,9 @@ $$
 
 $$
 A = \begin{bmatrix}
-1 & 0 \\
-0 & 1 \\
-1 & 1 \\
+1 & 0 \
+0 & 1 \
+1 & 1 \
 \end{bmatrix}
 $$
 

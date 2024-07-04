@@ -90,15 +90,15 @@
 
 以下是一个简单的终身学习算法的数学模型示例：
 
-$$ \\theta^{new} = \\theta^{old} + \\alpha (f(x, \\theta^{old}) - \\theta^{old}) $$
+$$ \theta^{new} = \theta^{old} + \alpha (f(x, \theta^{old}) - \theta^{old}) $$
 
 其中：
 
-- $\\theta^{old}$是旧模型的参数。
-- $\\theta^{new}$是新模型的参数。
+- $\theta^{old}$是旧模型的参数。
+- $\theta^{new}$是新模型的参数。
 - $x$是新的输入数据。
-- $f(x, \\theta^{old})$是旧模型在输入数据$x$上的输出。
-- $\\alpha$是学习率。
+- $f(x, \theta^{old})$是旧模型在输入数据$x$上的输出。
+- $\alpha$是学习率。
 
 ### 4.3 案例分析与讲解
 
@@ -261,17 +261,17 @@ train(model, new_loader, criterion, optimizer, 2)
 ### 7.3 相关论文推荐
 
 - **机器学习**：
-  - \"Transfer Learning\"
-  - \"Domain Adaptation\"
-  - \"Multi-Task Learning\"
+  - "Transfer Learning"
+  - "Domain Adaptation"
+  - "Multi-Task Learning"
 - **自然语言处理**：
-  - \"Neural Machine Translation\"
-  - \"Text Classification\"
-  - \"Summarization\"
+  - "Neural Machine Translation"
+  - "Text Classification"
+  - "Summarization"
 - **计算机视觉**：
-  - \"Image Classification\"
-  - \"Object Detection\"
-  - \"Image Generation\"
+  - "Image Classification"
+  - "Object Detection"
+  - "Image Generation"
 
 ### 7.4 其他资源推荐
 

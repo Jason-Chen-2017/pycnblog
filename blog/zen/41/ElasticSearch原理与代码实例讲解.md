@@ -87,27 +87,27 @@ ElasticSearch采用了一系列先进的算法和技术来实现其功能：
 
 ElasticSearch使用**倒排索引**模型来构建索引，通过**TF-IDF**算法来衡量关键词的重要性。TF-IDF公式如下：
 
-$$ TF-IDF(t,d) = \\frac{TF(t,d)}{\\sum_{w \\in d} TF(w,d)} \\times \\log\\left(\\frac{N}{DF(t)}\\right) $$
+$$ TF-IDF(t,d) = \frac{TF(t,d)}{\sum_{w \in d} TF(w,d)} \times \log\left(\frac{N}{DF(t)}\right) $$
 
 其中：
 
-- \\( TF(t,d) \\) 是文档 \\( d \\) 中词 \\( t \\) 的词频。
-- \\( N \\) 是文档总数。
-- \\( DF(t) \\) 是词 \\( t \\) 在所有文档中的文档频率。
+- \( TF(t,d) \) 是文档 \( d \) 中词 \( t \) 的词频。
+- \( N \) 是文档总数。
+- \( DF(t) \) 是词 \( t \) 在所有文档中的文档频率。
 
 ### 4.2 公式推导过程
 
 #### TF-IDF计算步骤：
 
-1. **计算词频**：\\( TF(t,d) = \\frac{\\text{词 \\( t \\) 出现次数}}{\\text{文档 \\( d \\) 的总词数}} \\)
-2. **计算逆文档频率**：\\( \\log\\left(\\frac{N}{DF(t)}\\right) \\)，其中 \\( DF(t) \\) 是在所有文档中包含词 \\( t \\) 的文档数。
-3. **计算TF-IDF值**：\\( TF-IDF(t,d) = TF(t,d) \\times \\log\\left(\\frac{N}{DF(t)}\\right) \\)
+1. **计算词频**：\( TF(t,d) = \frac{\text{词 \( t \) 出现次数}}{\text{文档 \( d \) 的总词数}} \)
+2. **计算逆文档频率**：\( \log\left(\frac{N}{DF(t)}\right) \)，其中 \( DF(t) \) 是在所有文档中包含词 \( t \) 的文档数。
+3. **计算TF-IDF值**：\( TF-IDF(t,d) = TF(t,d) \times \log\left(\frac{N}{DF(t)}\right) \)
 
 ### 4.3 案例分析与讲解
 
-假设文档集 \\( D \\) 包含 \\( N \\) 个文档，其中文档 \\( d \\) 包含关键词 \\( t \\) 的词频为 \\( TF(t,d) = 3 \\)，且文档 \\( d \\) 的总词数为 \\( \\sum_{w \\in d} TF(w,d) = 10 \\)。假设词 \\( t \\) 在所有文档中的文档频率 \\( DF(t) = 5 \\)，那么：
+假设文档集 \( D \) 包含 \( N \) 个文档，其中文档 \( d \) 包含关键词 \( t \) 的词频为 \( TF(t,d) = 3 \)，且文档 \( d \) 的总词数为 \( \sum_{w \in d} TF(w,d) = 10 \)。假设词 \( t \) 在所有文档中的文档频率 \( DF(t) = 5 \)，那么：
 
-$$ TF-IDF(t,d) = \\frac{3}{10} \\times \\log\\left(\\frac{N}{5}\\right) $$
+$$ TF-IDF(t,d) = \frac{3}{10} \times \log\left(\frac{N}{5}\right) $$
 
 ### 4.4 常见问题解答
 
@@ -149,9 +149,9 @@ import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;
 
 Client client = ... // Elasticsearch客户端实例
 
-CreateIndexRequest request = new CreateIndexRequest(\"my_index\");
+CreateIndexRequest request = new CreateIndexRequest("my_index");
 request.settings(settings);
-request.mapping(\"my_mapping\");
+request.mapping("my_mapping");
 
 client.admin().indices().create(request);
 ```
@@ -164,8 +164,8 @@ import org.elasticsearch.action.index.IndexRequest;
 
 Client client = ... // Elasticsearch客户端实例
 
-IndexRequest request = new IndexRequest(\"my_index\").id(\"1\");
-request.source(\"field\", \"value\");
+IndexRequest request = new IndexRequest("my_index").id("1");
+request.source("field", "value");
 
 client.index(request);
 ```
@@ -181,7 +181,7 @@ Client client = ... // Elasticsearch客户端实例
 SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
 sourceBuilder.query(query);
 
-client.search(new SearchRequest(\"my_index\"), sourceBuilder);
+client.search(new SearchRequest("my_index"), sourceBuilder);
 ```
 
 ### 5.3 代码解读与分析

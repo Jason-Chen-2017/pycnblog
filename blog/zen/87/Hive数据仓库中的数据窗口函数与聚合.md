@@ -76,12 +76,12 @@ Hive数据窗口函数与聚合的原理主要基于窗口函数和窗口聚合�
 以下是一个简单的示例，展示如何使用Hive数据窗口函数：
 
 ```sql
-SELECT 
+SELECT
     department_id,
     employee_id,
     salary,
     SUM(salary) OVER (PARTITION BY department_id ORDER BY salary) as total_salary
-FROM 
+FROM
     employees;
 ```
 
@@ -126,11 +126,11 @@ $$
 以下是一个使用窗口函数进行排名的案例：
 
 ```sql
-SELECT 
+SELECT
     employee_id,
     salary,
     DENSE_RANK() OVER (ORDER BY salary DESC) as rank
-FROM 
+FROM
     employees;
 ```
 
@@ -169,19 +169,19 @@ A：优化窗口函数与聚合操作的性能可以采取以下措施：
 以下是一个使用Hive数据窗口函数和聚合的示例：
 
 ```sql
-SELECT 
+SELECT
     department_id,
     employee_id,
     salary,
     total_salary,
     DENSE_RANK() OVER (PARTITION BY department_id ORDER BY salary DESC) as rank
-FROM 
-    (SELECT 
+FROM
+    (SELECT
         department_id,
         employee_id,
         salary,
         SUM(salary) OVER (PARTITION BY department_id) as total_salary
-    FROM 
+    FROM
         employees) t;
 ```
 

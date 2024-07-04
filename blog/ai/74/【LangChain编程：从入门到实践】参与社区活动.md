@@ -133,8 +133,8 @@ BERT模型的数学模型如下：
 
 $$
 \begin{align*}
-\text{self-attention}(Q, K, V) &= \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V \\
-\text{MLP}(x) &= \text{ReLU}\left(W_2 \text{ReLU}(W_1x + b_1)\right) + b_2 \\
+\text{self-attention}(Q, K, V) &= \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V \
+\text{MLP}(x) &= \text{ReLU}\left(W_2 \text{ReLU}(W_1x + b_1)\right) + b_2 \
 \text{BERT}(x) &= \text{LayerNorm}(x + \text{self-attention}(Q, K, V) + \text{MLP}(x)) + x
 \end{align*}
 $$
@@ -188,7 +188,7 @@ A3：LangChain可以通过截断或拼接的方式处理长文本。
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n langchain-env python=3.8 
+conda create -n langchain-env python=3.8
 conda activate langchain-env
 ```
 

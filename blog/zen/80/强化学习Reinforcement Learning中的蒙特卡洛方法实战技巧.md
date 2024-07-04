@@ -85,9 +85,9 @@
 
 $$
 \begin{aligned}
-& S, A \\
-& P(s'|s,a), R(s,a,s') \\
-& \pi(a|s) \\
+& S, A \
+& P(s'|s,a), R(s,a,s') \
+& \pi(a|s) \
 \end{aligned}
 $$
 

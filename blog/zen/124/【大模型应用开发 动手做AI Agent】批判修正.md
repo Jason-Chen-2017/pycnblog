@@ -1,6 +1,6 @@
 # 【大模型应用开发 动手做AI Agent】批判修正
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -509,4 +509,4 @@ env.close()
 * 可以制定 AI Agent 的伦理规范，例如，数据隐私保护、公平公正等。
 * 可以开发 AI Agent 的伦理评估工具，评估 Agent 的行为是否符合伦理规范。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

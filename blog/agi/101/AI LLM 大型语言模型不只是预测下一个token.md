@@ -1,7 +1,7 @@
 
 # AI LLM 大型语言模型不只是预测下一个token
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -128,7 +128,7 @@ Transformer模型是一种基于自注意力机制的深度神经网络模型，
 
 $$
 \begin{align*}
-\text{encoder}(X) &= \text{LayerNorm}(X + \text{LayerNorm}(W_{\text{pos}}(X) + \text{MultiHeadAttention}(Q, K, V))) \\
+\text{encoder}(X) &= \text{LayerNorm}(X + \text{LayerNorm}(W_{\text{pos}}(X) + \text{MultiHeadAttention}(Q, K, V))) \
 X &= \text{encoder}(X)
 \end{align*}
 $$
@@ -147,7 +147,7 @@ $$
 
 $$
 \begin{align*}
-\text{decoder}(Y) &= \text{LayerNorm}(Y + \text{LayerNorm}(W_{\text{pos}}(Y) + \text{MultiHeadAttention}(Q, K, V))) \\
+\text{decoder}(Y) &= \text{LayerNorm}(Y + \text{LayerNorm}(W_{\text{pos}}(Y) + \text{MultiHeadAttention}(Q, K, V))) \
 Y &= \text{encoder}(Y)
 \end{align*}
 $$

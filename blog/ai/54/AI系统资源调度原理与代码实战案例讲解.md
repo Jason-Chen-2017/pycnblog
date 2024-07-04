@@ -45,7 +45,7 @@
 #### 4.2.1 适应度函数设计
 #### 4.2.2 种群更新机制
 #### 4.2.3 收敛性分析
-### 4.3 博弈论中的数学模型 
+### 4.3 博弈论中的数学模型
 #### 4.3.1 效用函数设计
 #### 4.3.2 纳什均衡求解
 #### 4.3.3 最优响应策略
@@ -55,7 +55,7 @@
 #### 5.1.1 环境构建
 #### 5.1.2 神经网络设计
 #### 5.1.3 训练过程与结果分析
-### 5.2 基于遗传算法的资源调度代码实现  
+### 5.2 基于遗传算法的资源调度代码实现
 #### 5.2.1 染色体编码
 #### 5.2.2 交叉变异操作
 #### 5.2.3 实验结果与分析
@@ -131,11 +131,11 @@ class DQNScheduler:
         self.epsilon = epsilon
         self.epsilon_min = epsilon_min
         self.epsilon_decay = epsilon_decay
-        
+
         self.model = self._build_model()
         self.target_model = self._build_model()
         self.update_target_model()
-        
+
     def _build_model(self):
         model = tf.keras.Sequential([
             tf.keras.layers.Dense(64, input_dim=self.state_dim, activation='relu'),
@@ -144,17 +144,17 @@ class DQNScheduler:
         ])
         model.compile(loss='mse', optimizer=tf.keras.optimizers.Adam(lr=self.learning_rate))
         return model
-    
+
     def update_target_model(self):
         self.target_model.set_weights(self.model.get_weights())
-        
+
     def act(self, state):
         if np.random.rand() <= self.epsilon:
             return np.random.randint(self.action_dim)
         else:
             q_values = self.model.predict(state)[0]
             return np.argmax(q_values)
-        
+
     def train(self, state, action, reward, next_state, done):
         target = self.model.predict(state)
         if done:
@@ -162,10 +162,10 @@ class DQNScheduler:
         else:
             target[0][action] = reward + self.gamma * np.amax(self.target_model.predict(next_state)[0])
         self.model.fit(state, target, epochs=1, verbose=0)
-        
+
         if self.epsilon > self.epsilon_min:
             self.epsilon *= self.epsilon_decay
-            
+
     def load(self, name):
         self.model.load_weights(name)
 

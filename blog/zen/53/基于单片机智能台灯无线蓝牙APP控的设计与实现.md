@@ -68,13 +68,13 @@ $$
 
 $$
 \begin{aligned}
-x &= -0.2661239 \times 10^9 / CT^3 - 0.2343580 \times 10^6 / CT^2 + 0.8776956 \times 10^3 / CT + 0.179910 \\
-y &= -1.1063814 \times x^3 - 1.34811020 \times x^2 + 2.18555832 \times x - 0.20219683 \\
-X &= x \times (y / 0.17697) \\
-Y &= y \times (y / 0.17697) \\
-Z &= (1 - x - y) \times (y / 0.17697) \\
-R &= 3.2406 \times X - 1.5372 \times Y - 0.4986 \times Z \\
-G &= -0.9689 \times X + 1.8758 \times Y + 0.0415 \times Z \\
+x &= -0.2661239 \times 10^9 / CT^3 - 0.2343580 \times 10^6 / CT^2 + 0.8776956 \times 10^3 / CT + 0.179910 \
+y &= -1.1063814 \times x^3 - 1.34811020 \times x^2 + 2.18555832 \times x - 0.20219683 \
+X &= x \times (y / 0.17697) \
+Y &= y \times (y / 0.17697) \
+Z &= (1 - x - y) \times (y / 0.17697) \
+R &= 3.2406 \times X - 1.5372 \times Y - 0.4986 \times Z \
+G &= -0.9689 \times X + 1.8758 \times Y + 0.0415 \times Z \
 B &= 0.0557 \times X - 0.2040 \times Y + 1.0570 \times Z
 \end{aligned}
 $$
@@ -97,14 +97,14 @@ void setup() {
   pinMode(COLD_PIN, OUTPUT);
   pinMode(WARM_PIN, OUTPUT);
   pinMode(LIGHT_PIN, INPUT);
-  
+
   bluetooth.begin(9600);
 }
 
 void loop() {
   if (bluetooth.available()) {
     char cmd = bluetooth.read();
-    
+
     if (cmd == 'B') { // 设置亮度
       int brightness = bluetooth.parseInt();
       analogWrite(COLD_PIN, brightness);
@@ -116,11 +116,11 @@ void loop() {
       analogWrite(WARM_PIN, warmness);
     }
   }
-  
+
   int lightValue = analogRead(LIGHT_PIN);
   bluetooth.print("L");
   bluetooth.println(lightValue);
-  
+
   delay(100);
 }
 ```

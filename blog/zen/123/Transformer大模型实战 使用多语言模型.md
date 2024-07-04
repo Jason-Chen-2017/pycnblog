@@ -243,7 +243,7 @@ $$
 $$
 p_i(j) = \left\{
 \begin{aligned}
-\sin(\frac{i}{10000^{2j/d}}) & \quad \text{if } j \text{ is even} \\
+\sin(\frac{i}{10000^{2j/d}}) & \quad \text{if } j \text{ is even} \
 \cos(\frac{i}{10000^{2j/d}}) & \quad \text{if } j \text{ is odd}
 \end{aligned}
 \right.
@@ -326,7 +326,7 @@ $$
 $$
 W_e =
 \begin{bmatrix}
-1 & 0 \\
+1 & 0 \
 0 & 1
 \end{bmatrix}
 $$
@@ -336,16 +336,16 @@ $$
 $$
 X =
 \begin{bmatrix}
-1 & 0 \\
+1 & 0 \
 0 & 1
 \end{bmatrix}
 \begin{bmatrix}
-\text{Thinking} \\
+\text{Thinking} \
 \text{Machines}
 \end{bmatrix}
 =
 \begin{bmatrix}
-1 \\
+1 \
 1
 \end{bmatrix}
 $$
@@ -355,7 +355,7 @@ $$
 $$
 W_Q =
 \begin{bmatrix}
-1 & 1 \\
+1 & 1 \
 0 & 1
 \end{bmatrix}
 $$
@@ -363,7 +363,7 @@ $$
 $$
 W_K =
 \begin{bmatrix}
-1 & 0 \\
+1 & 0 \
 1 & 1
 \end{bmatrix}
 $$
@@ -371,7 +371,7 @@ $$
 $$
 W_V =
 \begin{bmatrix}
-0 & 1 \\
+0 & 1 \
 1 & 0
 \end{bmatrix}
 $$
@@ -381,16 +381,16 @@ $$
 $$
 Q =
 \begin{bmatrix}
-1 \\
+1 \
 1
 \end{bmatrix}
 \begin{bmatrix}
-1 & 1 \\
+1 & 1 \
 0 & 1
 \end{bmatrix}
 =
 \begin{bmatrix}
-1 & 2 \\
+1 & 2 \
 0 & 1
 \end{bmatrix}
 $$
@@ -398,16 +398,16 @@ $$
 $$
 K =
 \begin{bmatrix}
-1 \\
+1 \
 1
 \end{bmatrix}
 \begin{bmatrix}
-1 & 0 \\
+1 & 0 \
 1 & 1
 \end{bmatrix}
 =
 \begin{bmatrix}
-2 & 1 \\
+2 & 1 \
 1 & 1
 \end{bmatrix}
 $$
@@ -415,16 +415,16 @@ $$
 $$
 V =
 \begin{bmatrix}
-1 \\
+1 \
 1
 \end{bmatrix}
 \begin{bmatrix}
-0 & 1 \\
+0 & 1 \
 1 & 0
 \end{bmatrix}
 =
 \begin{bmatrix}
-1 & 1 \\
+1 & 1 \
 1 & 1
 \end{bmatrix}
 $$
@@ -434,16 +434,16 @@ $$
 $$
 Q K^T =
 \begin{bmatrix}
-1 & 2 \\
+1 & 2 \
 0 & 1
 \end{bmatrix}
 \begin{bmatrix}
-2 & 1 \\
+2 & 1 \
 1 & 1
 \end{bmatrix}
 =
 \begin{bmatrix}
-4 & 3 \\
+4 & 3 \
 1 & 1
 \end{bmatrix}
 $$
@@ -454,14 +454,14 @@ $$
 A = \text{Softmax}
 \begin{pmatrix}
 \begin{bmatrix}
-4 & 3 \\
+4 & 3 \
 1 & 1
 \end{bmatrix}
 / \sqrt{2}
 \end{pmatrix}
 =
 \begin{bmatrix}
-0.88 & 0.12 \\
+0.88 & 0.12 \
 0.5 & 0.5
 \end{bmatrix}
 $$
@@ -471,16 +471,16 @@ $$
 $$
 O =
 \begin{bmatrix}
-0.88 & 0.12 \\
+0.88 & 0.12 \
 0.5 & 0.5
 \end{bmatrix}
 \begin{bmatrix}
-1 & 1 \\
+1 & 1 \
 1 & 1
 \end{bmatrix}
 =
 \begin{bmatrix}
-1 & 1 \\
+1 & 1 \
 1 & 1
 \end{bmatrix}
 $$
@@ -701,4 +701,4 @@ Recall: 0.5
 
 评估多语言 Transformer 模型的性能可以使用目标任务的评估指标，例如准确率、精确率、召回率等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -1,4 +1,4 @@
-                 
+
 # SwinTransformer简介与背景
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -105,8 +105,8 @@ $$
 其中，$W_i$是第$i$个头部的线性投影权重矩阵，$\text{Attention}(Q, K, V)$表示标准的多头注意力机制，计算过程如下：
 
 $$
-Q = xW_Q, \quad K = xW_K, \quad V = xW_V \\
-\alpha_{ij} = \frac{\exp(\langle Q_i, K_j \rangle)}{\sqrt{d}} \\
+Q = xW_Q, \quad K = xW_K, \quad V = xW_V \
+\alpha_{ij} = \frac{\exp(\langle Q_i, K_j \rangle)}{\sqrt{d}} \
 O = \sum_{j=1}^N \alpha_{ij}V_j
 $$
 
@@ -147,7 +147,7 @@ $$
 
 - **为何采用分组策略？**
   分组策略可以减少计算成本，提高模型效率。通过将输入分为多个子组，每个子组独立执行注意力操作，从而降低了内存访问频率和计算复杂度。
-  
+
 - **如何选择头部数量和维度？**
   头部数量$m$和每个头部的维度$d_h$的选择取决于具体任务需求和数据特性。一般而言，增加头部数量可以帮助模型捕获更丰富的特征，但也会带来更高的计算开销。通常，可以通过实验确定最佳配置。
 
@@ -179,12 +179,12 @@ class SwinTransformerBlock(Layer):
         self.window_size = window_size
         self.shift_size = shift_size
         self.dropout_rate = dropout_rate
-        
+
         self.norm1 = LayerNormalization(epsilon=1e-6)
         self.attn = WindowAttention(embed_dim, num_heads, window_size=self.window_size, shift_size=self.shift_size, dropout_rate=self.dropout_rate)
         self.drop_path = Dropout(self.dropout_rate)
         self.norm2 = LayerNormalization(epsilon=1e-6)
-        
+
         if self.shift_size > 0:
             # Calculate padding for the shifted windows
             pad_left = (window_size - self.shift_size) // 2
@@ -192,25 +192,25 @@ class SwinTransformerBlock(Layer):
             padding = [[pad_left, pad_right], [pad_left, pad_right], [0, 0]]
         else:
             padding = None
-            
+
         self.mlp = MLPBlock(embed_dim * num_heads, mlp_ratio=4.)
-        
+
     def call(self, x):
         shortcut = x
         x = self.norm1(x)
-        
+
         if self.shift_size > 0:
             shifted_x = tf.roll(x, shifts=(-self.shift_size), axis=-2)
         else:
             shifted_x = x
-        
+
         attn_windows = self.attn(shifted_x)
 
         if self.shift_size > 0:
             x = tf.roll(attn_windows, shifts=(self.shift_size), axis=-2)
         else:
             x = attn_windows
-        
+
         x = shortcut + self.drop_path(x)
         x = x + self.drop_path(self.mlp(self.norm2(x)))
         return x
@@ -225,7 +225,7 @@ class MLPBlock(Layer):
         self.act = act_layer()
         self.fc2 = Dense(out_features)
         self.drop = Dropout(drop)
-    
+
     def call(self, x):
         x = self.fc1(x)
         x = self.act(x)
@@ -233,7 +233,7 @@ class MLPBlock(Layer):
         x = self.fc2(x)
         x = self.drop(x)
         return x
-    
+
 # 使用SwinTransformerBlock构建完整的网络架构，并训练及测试模型的过程将被省略，
 # 实际应用中需根据具体任务需求调整参数、优化算法等细节。
 ```

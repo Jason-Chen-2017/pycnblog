@@ -101,8 +101,7 @@ $$a \\sim \\pi(a|s;\\theta)$$
 
 #### 策略更新：
 
-$$\\theta \\leftarrow \\theta + \\alpha \
-abla_\\theta J(\\theta)$$
+$$\\theta \\leftarrow \\theta + \\alpha \nabla_\\theta J(\\theta)$$
 
 ### 4.2 公式推导过程
 

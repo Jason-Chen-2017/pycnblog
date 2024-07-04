@@ -137,7 +137,7 @@
 
 以下是一个简单的分割决策函数的推导过程：
 
-$$f(x) = \begin{cases} 
+$$f(x) = \begin{cases}
 1 & \text{if } \text{dist}(x, R_1) < \text{dist}(x, R_2) \\
 0 & \text{if } \text{dist}(x, R_1) > \text{dist}(x, R_2)
 \end{cases}$$

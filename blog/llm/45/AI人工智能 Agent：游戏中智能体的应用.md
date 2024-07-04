@@ -88,8 +88,7 @@ $$Q(s,a) \leftarrow Q(s,a) + \alpha [r + \gamma \max_{a'} Q(s',a') - Q(s,a)]$$
 
 **策略梯度学习**中的REINFORCE公式为：
 
-$$\pi(a|s) \propto \exp(\
-abla_{\theta} \mathbb{E}_{\pi}[\log \pi(a|s) R(s,a)])$$
+$$\pi(a|s) \propto \exp(\nabla_{\theta} \mathbb{E}_{\pi}[\log \pi(a|s) R(s,a)])$$
 
 其中，$\theta$为策略参数。
 
@@ -216,7 +215,7 @@ env.close()
 - **Q：如何提高智能体的学习效率？**
 
   **A：** 采用更先进的学习算法，如TD3、PPO等，同时优化网络结构和参数，提高学习速度和稳定性。
-  
+
 - **Q：如何确保智能体的行为符合伦理标准？**
 
   **A：** 设计和实施道德框架，确保智能体决策过程中的公平性、责任性和可追溯性。

@@ -1,6 +1,6 @@
 # 流形拓扑学：Riemann流形
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -64,11 +64,11 @@ Riemann流形及其相关计算在理论物理学、几何学、数据科学、�
 
 ### 公式推导过程
 
-度量张量 $g_{ij}$ 描述了流形上的局部欧几里得度量，联络张量 $\\Gamma^k_{ij}$ 描述了向量场沿路径的变化，曲率张量 $R^l_{ijk}$ 描述了度量张量的变化率。这些概念通过微积分和张量分析的理论进行定义和推导。
+度量张量 $g_{ij}$ 描述了流形上的局部欧几里得度量，联络张量 $\Gamma^k_{ij}$ 描述了向量场沿路径的变化，曲率张量 $R^l_{ijk}$ 描述了度量张量的变化率。这些概念通过微积分和张量分析的理论进行定义和推导。
 
 ### 案例分析与讲解
 
-假设我们有一个二维Riemann流形，我们可以用度量张量 $g_{ij} = \\begin{pmatrix} 1 & 0 \\\\ 0 & \\cos(\\phi) \\end{pmatrix}$ 来描述该流形上的几何结构。这里的度量张量描述了一个弯曲的球面。我们可以计算联络张量和曲率张量来了解流形上的几何性质。
+假设我们有一个二维Riemann流形，我们可以用度量张量 $g_{ij} = \begin{pmatrix} 1 & 0 \\ 0 & \cos(\phi) \end{pmatrix}$ 来描述该流形上的几何结构。这里的度量张量描述了一个弯曲的球面。我们可以计算联络张量和曲率张量来了解流形上的几何性质。
 
 ### 常见问题解答
 
@@ -109,9 +109,9 @@ def curvature_tensor(g, gamma):
         for j in range(len(g)):
             for k in range(len(g)):
                 for l in range(len(g)):
-                    R[i][j][k][l] = np.sum([np.sum([gamma[i][m][l] * gamma[m][n][k] * g[n][p] * g[p][j] - gamma[i][m][n] * gamma[m][n][l] * g[p][j] * g[p][k] for m in range(len(g))] 
-                        + np.sum([gamma[i][m][n] * gamma[m][p][k] * g[n][l] * g[p][j] - gamma[i][m][p] * gamma[m][n][k] * g[n][l] * g[p][j] for m in range(len(g))]) 
-                        + np.sum([gamma[i][m][n] * gamma[m][p][l] * g[n][k] * g[p][j] - gamma[i][m][p] * gamma[m][n][l] * g[n][k] * g[p][j] for m in range(len(g))]) 
+                    R[i][j][k][l] = np.sum([np.sum([gamma[i][m][l] * gamma[m][n][k] * g[n][p] * g[p][j] - gamma[i][m][n] * gamma[m][n][l] * g[p][j] * g[p][k] for m in range(len(g))]
+                        + np.sum([gamma[i][m][n] * gamma[m][p][k] * g[n][l] * g[p][j] - gamma[i][m][p] * gamma[m][n][k] * g[n][l] * g[p][j] for m in range(len(g))])
+                        + np.sum([gamma[i][m][n] * gamma[m][p][l] * g[n][k] * g[p][j] - gamma[i][m][p] * gamma[m][n][l] * g[n][k] * g[p][j] for m in range(len(g))])
                         + np.sum([gamma[i][m][n] * gamma[m][p][l] * g[n][k] * g[p][j] - gamma[i][m][p] * gamma[m][n][l] * g[n][k] * g[p][j] for m in range(len(g))])
                     ])
     return R

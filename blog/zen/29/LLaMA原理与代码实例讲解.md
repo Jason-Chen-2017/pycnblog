@@ -1,4 +1,4 @@
-                 
+
 # LLaMA原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -170,15 +170,15 @@ loss_fn = CrossEntropyLoss()
 for epoch in range(epochs):
     for batch in dataloader:
         input_ids, attention_mask, target_ids = [t.to(device) for t in batch]
-        
+
         optimizer.zero_grad()
         output = model(input_ids, attention_mask=attention_mask)
         loss = loss_fn(output.logits.view(-1, output.logits.size(-1)), target_ids.view(-1))
         loss.backward()
         optimizer.step()
-        
+
     print(f"Epoch {epoch+1}/{epochs}, Loss: {loss.item()}")
-    
+
 # 保存模型
 model.save_pretrained('fine_tuned_model')
 ```

@@ -1,4 +1,4 @@
-                 
+
 # ShuffleNet原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -161,13 +161,13 @@ class ShuffleBlock(nn.Module):
     def forward(self, x):
         batchsize, num_channels, height, width = x.data.size()
         channels_per_group = num_channels // self.groups
-        
+
         # 将输入张量拆分为group个组
         x = x.view(batchsize, self.groups, channels_per_group, height, width)
-        
+
         # 对每个组的channel进行shuffle操作
         x = x.permute(0, 2, 1, 3, 4).contiguous()
-        
+
         # 将shuffled张量重新组合并返回
         return x.view(batchsize, num_channels, height, width)
 
@@ -195,13 +195,13 @@ class ChannelSelection(nn.Module):
 def shuffle_unit(in_channels, out_channels, stride):
     if in_channels == out_channels and stride == 1:
         return ShuffleBlock(groups=in_channels)
-    
+
     return nn.Sequential(
         # Depthwise Convolution
         nn.Conv2d(in_channels, in_channels, kernel_size=3, stride=stride, padding=1, groups=in_channels, bias=False),
         nn.BatchNorm2d(in_channels),
         nn.ReLU(inplace=True),
-        
+
         # Pointwise Convolution with Channel Selection
         nn.Conv2d(in_channels, out_channels, kernel_size=1, stride=1, padding=0, bias=False),
         ChannelSelection(in_channels, out_channels),

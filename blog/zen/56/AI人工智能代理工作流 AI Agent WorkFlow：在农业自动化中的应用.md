@@ -87,7 +87,7 @@ class DQN(nn.Module):
     def __init__(self, state_dim, action_dim):
         super(DQN, self).__init__()
         self.fc1 = nn.Linear(state_dim, 64)
-        self.fc2 = nn.Linear(64, 64)  
+        self.fc2 = nn.Linear(64, 64)
         self.fc3 = nn.Linear(64, action_dim)
 
     def forward(self, x):
@@ -102,11 +102,11 @@ class DQNAgent:
         self.action_dim = action_dim
         self.gamma = gamma
         self.epsilon = epsilon
-        
+
         self.dqn = DQN(state_dim, action_dim)
         self.optimizer = optim.Adam(self.dqn.parameters(), lr=lr)
         self.criterion = nn.MSELoss()
-        
+
     def choose_action(self, state):
         if np.random.uniform() < self.epsilon:
             action = np.random.randint(self.action_dim)
@@ -115,21 +115,21 @@ class DQNAgent:
             q_value = self.dqn(state)
             action = q_value.argmax().item()
         return action
-        
+
     def update(self, state, action, reward, next_state, done):
         state = torch.tensor(state, dtype=torch.float32)
         next_state = torch.tensor(next_state, dtype=torch.float32)
         action = torch.tensor(action, dtype=torch.int64)
         reward = torch.tensor(reward, dtype=torch.float32)
-        
+
         if done:
             q_target = reward
         else:
             q_target = reward + self.gamma * self.dqn(next_state).max()
-            
+
         q_value = self.dqn(state)[action]
         loss = self.criterion(q_value, q_target)
-        
+
         self.optimizer.zero_grad()
         loss.backward()
         self.optimizer.step()
@@ -161,7 +161,7 @@ AI Agent可以通过分析农作物图像,检测病虫害发生情况,并根据�
 - PyTorch: https://pytorch.org/
 - Keras: https://keras.io/
 
-### 7.2 强化学习库  
+### 7.2 强化学习库
 - OpenAI Gym: https://gym.openai.com/
 - Stable Baselines: https://github.com/hill-a/stable-baselines
 

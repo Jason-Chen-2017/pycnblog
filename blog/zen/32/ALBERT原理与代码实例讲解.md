@@ -60,7 +60,7 @@ $$
 
 $$
 \begin{aligned}
-& L_{\text{MLM}} = -\log P(w_i | w_{\backslash i}; \theta) \\
+& L_{\text{MLM}} = -\log P(w_i | w_{\backslash i}; \theta) \
 & L_{\text{NSP}} = -\log P(y | w_1, w_2; \theta)
 \end{aligned}
 $$

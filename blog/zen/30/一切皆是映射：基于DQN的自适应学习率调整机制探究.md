@@ -179,7 +179,7 @@ class DQN_Agent:
     def load_weights(self, filepath):
         self.model.load_weights(filepath)
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     # 示例代码：略去细节，用于演示框架和流程
     agent = DQN_Agent(state_size=(4,), action_size=2, learning_rate=0.001, gamma=0.99, epsilon=0.1)
     # 初始化和训练过程

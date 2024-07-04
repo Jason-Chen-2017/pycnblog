@@ -10,7 +10,7 @@
 ## 2. 核心概念与联系
 ### 2.1 AI系统架构与日志类型
 #### 2.1.1 数据采集与预处理日志
-#### 2.1.2 模型训练与评估日志  
+#### 2.1.2 模型训练与评估日志
 #### 2.1.3 在线推理与服务日志
 ### 2.2 日志格式与结构化
 #### 2.2.1 常见的日志格式
@@ -43,7 +43,7 @@
 ### 4.1 异常检测算法
 #### 4.1.1 统计过程控制
 $$ CL=\overline{X} $$
-$$ UCL=\overline{X}+3\frac{\overline{MR}}{d_2} $$  
+$$ UCL=\overline{X}+3\frac{\overline{MR}}{d_2} $$
 $$ LCL=\overline{X}-3\frac{\overline{MR}}{d_2} $$
 #### 4.1.2 时序分解异常检测
 $$ y_t = \underbrace{T_t}_\text{trend} + \underbrace{S_t}_\text{seasonal} + \underbrace{R_t}_\text{residual} $$
@@ -66,17 +66,17 @@ import re
 
 def parse_log(log):
   # 使用正则表达式解析日志
-  pattern = r'(\d+\.\d+\.\d+\.\d+)\s-\s-\s\[(\d{2}/\w{3}/\d{4}:\d{2}:\d{2}:\d{2}\s\+\d{4})\]\s"(\w+)\s(\S+)\s(\S+)"\s(\d+)\s(\d+)'
+  pattern = r'(\d+\.\d+\.\d+\.\d+)\s-\s-\s$$(\d{2}/\w{3}/\d{4}:\d{2}:\d{2}:\d{2}\s\+\d{4})$$\s"(\w+)\s(\S+)\s(\S+)"\s(\d+)\s(\d+)'
   match = re.match(pattern, log)
   if match:
-    ip = match.group(1) 
+    ip = match.group(1)
     timestamp = match.group(2)
     method = match.group(3)
     url = match.group(4)
     protocol = match.group(5)
     status = int(match.group(6))
     size = int(match.group(7))
-    return {'ip':ip, 'timestamp':timestamp, 'method':method, 'url':url, 
+    return {'ip':ip, 'timestamp':timestamp, 'method':method, 'url':url,
             'protocol':protocol, 'status':status, 'size':size}
   else:
     return None
@@ -90,7 +90,7 @@ import matplotlib.pyplot as plt
 logs = []
 with open('access.log', 'r') as f:
   for line in f:
-    log = parse_log(line) 
+    log = parse_log(line)
     if log:
       logs.append(log)
 
@@ -111,7 +111,7 @@ plt.show()
 #### 6.1.1 用户行为分析
 #### 6.1.2 异常订单检测
 #### 6.1.3 系统性能分析
-### 6.2 视频推荐系统日志分析  
+### 6.2 视频推荐系统日志分析
 #### 6.2.1 用户画像分析
 #### 6.2.2 推荐质量评估
 #### 6.2.3 推荐系统优化
@@ -123,7 +123,7 @@ plt.show()
 ## 7. 工具和资源推荐
 ### 7.1 日志分析平台
 #### 7.1.1 ELK Stack
-#### 7.1.2 Splunk 
+#### 7.1.2 Splunk
 #### 7.1.3 Fluentd + Kafka + ClickHouse
 ### 7.2 日志分析类库
 #### 7.2.1 Python: logging, loguru
@@ -136,7 +136,7 @@ plt.show()
 
 ## 8. 总结：未来发展趋势与挑战
 ### 8.1 AIOps的发展
-### 8.2 实时日志流处理 
+### 8.2 实时日志流处理
 ### 8.3 机器学习驱动的智能运维
 ### 8.4 日志分析面临的数据隐私与安全问题
 

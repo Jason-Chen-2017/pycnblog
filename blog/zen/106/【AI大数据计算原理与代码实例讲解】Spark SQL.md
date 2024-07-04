@@ -120,7 +120,7 @@ SELECT * FROM sales WHERE year = 2020 AND month = 12;
    ```sql
    SELECT * FROM S WHERE year = 2020;
    ```
-   
+
    **数学模型**：
    ```latex
    Select_{year=2020}(S)
@@ -130,7 +130,7 @@ SELECT * FROM sales WHERE year = 2020 AND month = 12;
    ```sql
    SELECT * FROM S WHERE month = 12;
    ```
-   
+
    **数学模型**：
    ```latex
    Select_{month=12}(S)
@@ -140,7 +140,7 @@ SELECT * FROM sales WHERE year = 2020 AND month = 12;
    ```sql
    SELECT * FROM Select_{year=2020}(S) WHERE month = 12;
    ```
-   
+
    **数学模型**：
    ```latex
    Select_{month=12}(Select_{year=2020}(S))

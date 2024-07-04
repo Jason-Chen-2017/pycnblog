@@ -58,13 +58,13 @@ Spark的关键特性包括内存计算、容错机制、任务调度和数据分
 
 假设数据流为$f(t)$，其中$t$为时间，$f(t)$为在时间$t$到达的数据量。我们可以用微积分的概念来描述数据流的累积量，即：
 
-$$F(t) = \\int_{0}^{t} f(\\tau) d\\tau$$
+$$F(t) = \int_{0}^{t} f(\tau) d\tau$$
 
 ### 数据仓库中的统计分析
 
-假设数据仓库中存储的是关于销售量的数据，可以用均值、方差等统计量来描述销售情况。例如，均值$\\mu$的计算公式为：
+假设数据仓库中存储的是关于销售量的数据，可以用均值、方差等统计量来描述销售情况。例如，均值$\mu$的计算公式为：
 
-$$\\mu = \\frac{\\sum_{i=1}^{n} x_i}{n}$$
+$$\mu = \frac{\sum_{i=1}^{n} x_i}{n}$$
 
 其中$x_i$为第$i$个销售记录的销售额，$n$为总记录数。
 
@@ -80,13 +80,13 @@ $$\\mu = \\frac{\\sum_{i=1}^{n} x_i}{n}$$
 from pyspark.streaming import StreamingContext
 from pyspark import SparkConf, SparkContext
 
-conf = SparkConf().setAppName(\"SimpleStreaming\").setMaster(\"local[2]\")
+conf = SparkConf().setAppName("SimpleStreaming").setMaster("local[2]")
 sc = SparkContext(conf=conf)
 ssc = StreamingContext(sc, 1)  # 创建一个流上下文，每个批次间隔为1秒
 
-lines = ssc.socketTextStream(\"localhost\", 9999)  # 假设从本地主机的端口9999接收数据
+lines = ssc.socketTextStream("localhost", 9999)  # 假设从本地主机的端口9999接收数据
 
-words = lines.flatMap(lambda line: line.split(\" \"))  # 将每行拆分成单词列表
+words = lines.flatMap(lambda line: line.split(" "))  # 将每行拆分成单词列表
 
 pairs = words.map(lambda word: (word, 1))  # 创建键值对（单词，计数值）
 
@@ -128,8 +128,8 @@ ssc.awaitTermination()  # 等待流处理结束
 
 ### 相关论文推荐
 
-- **大数据处理**：\"The MapReduce Programmer's Guide\" by Jeffrey Dean and Sanjay Ghemawat，介绍MapReduce的编程指南。
-- **AI与机器学习**：\"Deep Learning\" by Ian Goodfellow, Yoshua Bengio, and Aaron Courville，深入讲解深度学习理论和技术。
+- **大数据处理**："The MapReduce Programmer's Guide" by Jeffrey Dean and Sanjay Ghemawat，介绍MapReduce的编程指南。
+- **AI与机器学习**："Deep Learning" by Ian Goodfellow, Yoshua Bengio, and Aaron Courville，深入讲解深度学习理论和技术。
 
 ### 其他资源推荐
 

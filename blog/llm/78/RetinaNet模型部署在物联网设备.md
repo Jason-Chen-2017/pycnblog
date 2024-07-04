@@ -103,7 +103,7 @@ RetinaNet模型的核心数学模型包括：
  G(x) = \left\{R_{ij}^l = (x_{ij}^l, y_{ij}^l, x_{ij}^l + w, y_{ij}^l + h) \right\}, \quad i = 1,2,\cdots,N; j = 1,2,\cdots,M
 $$
      其中，$x_{ij}^l$和$y_{ij}^l$为滑动窗口的中心坐标，$w$和$h$为滑动窗口的尺寸。
-   
+
 2. **Faster R-CNN的分类和回归**：
    - 假设候选区域特征为$f(x)$，类别为$c$，则分类和回归公式为：
      $$

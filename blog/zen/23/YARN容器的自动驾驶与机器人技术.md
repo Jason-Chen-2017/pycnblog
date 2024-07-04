@@ -1,4 +1,4 @@
-                 
+
 # YARN容器的自动驾驶与机器人技术
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -99,8 +99,8 @@ F --> A;
 设 $R = \{r_1, r_2, ..., r_n\}$ 为集群中的资源集合，$T = \{t_1, t_2, ..., t_m\}$ 为任务集合。目标函数 $f(R, T)$ 表示整体系统的性能度量（例如，总任务完成时间、资源闲置率等）。约束条件包括资源上限、任务依赖关系等。
 
 $$
-f(R, T) = \min_{R', T'} \sum_{i=1}^{m} f_i(T'_i), s.t. \\
-\sum_{j \in R'} r_j - \sum_{k \in T'} d_k \leq 0 \\
+f(R, T) = \min_{R', T'} \sum_{i=1}^{m} f_i(T'_i), s.t. \
+\sum_{j \in R'} r_j - \sum_{k \in T'} d_k \leq 0 \
 d_k \text{ 是任务 } k \text{ 的资源需求}
 $$
 
@@ -109,9 +109,9 @@ $$
 通过引入决策变量 $x_{ij}$ （表示资源 $r_i$ 分配给任务 $t_j$），可以将上述模型转化为整数规划问题：
 
 $$
-\min \sum_{i,j} c_{ij} x_{ij}, \\
-s.t. \sum_{j} x_{ij} \leq r_i, \\
-\sum_{i} x_{ij} \leq d_j, \\
+\min \sum_{i,j} c_{ij} x_{ij}, \
+s.t. \sum_{j} x_{ij} \leq r_i, \
+\sum_{i} x_{ij} \leq d_j, \
 x_{ij} \in \{0, 1\}.
 $$
 
@@ -141,7 +141,7 @@ $$
 class DynamicScheduler:
     def __init__(self):
         self.resource_model = None  # 初始化资源分配模型
-    
+
     def train_resource_allocation(self, dataset):
         # 这里可以加入模型训练逻辑
         pass

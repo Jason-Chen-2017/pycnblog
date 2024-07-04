@@ -1,6 +1,6 @@
 # AIGC从入门到实战：算法、算力、数据三驾马车的发力狂奔
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -294,4 +294,4 @@ AIGC 技术近年来取得了重大进展，在图像生成、文本创作、语
 
 ---
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

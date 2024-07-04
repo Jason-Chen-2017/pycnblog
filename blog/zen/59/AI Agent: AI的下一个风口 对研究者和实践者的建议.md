@@ -85,7 +85,7 @@ Bellman方程可以表示为：
 
 $$
 \begin{aligned}
-V^\pi(s) &= \sum_{a \in A} \pi(a|s) \left[ R(s,a) + \gamma \sum_{s' \in S} P(s'|s,a) V^\pi(s') \right] \\
+V^\pi(s) &= \sum_{a \in A} \pi(a|s) \left[ R(s,a) + \gamma \sum_{s' \in S} P(s'|s,a) V^\pi(s') \right] \
 Q^\pi(s,a) &= R(s,a) + \gamma \sum_{s' \in S} P(s'|s,a) \sum_{a' \in A} \pi(a'|s') Q^\pi(s',a')
 \end{aligned}
 $$
@@ -104,7 +104,7 @@ $$
 
 $$
 \begin{aligned}
-V(A) &= \max \{ 0 + 0.9 V(A), 1 + 0.9 V(B) \} \\
+V(A) &= \max \{ 0 + 0.9 V(A), 1 + 0.9 V(B) \} \
 V(B) &= 0 + 0.9 V(A)
 \end{aligned}
 $$

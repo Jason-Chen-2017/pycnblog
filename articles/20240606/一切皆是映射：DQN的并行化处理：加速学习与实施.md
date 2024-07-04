@@ -76,11 +76,9 @@ $$ \\theta(s, a) = \\prod_{i=1}^M \\theta_i(s, a) $$
 
 梯度并行的数学模型如下：
 
-$$ \\theta(s, a) = \\theta(s, a) - \\alpha \\cdot \\frac{\\sum_{i=1}^N \
-abla_{\\theta(s, a)} L_i}{N} $$
+$$ \\theta(s, a) = \\theta(s, a) - \\alpha \\cdot \\frac{\\sum_{i=1}^N \nabla_{\\theta(s, a)} L_i}{N} $$
 
-其中，$\
-abla_{\\theta(s, a)} L_i$ 表示第 $i$ 个处理器或计算单元上计算得到的梯度，$\\alpha$ 表示学习率。
+其中，$\nabla_{\\theta(s, a)} L_i$ 表示第 $i$ 个处理器或计算单元上计算得到的梯度，$\\alpha$ 表示学习率。
 
 ## 5. 项目实践：代码实例和详细解释说明
 

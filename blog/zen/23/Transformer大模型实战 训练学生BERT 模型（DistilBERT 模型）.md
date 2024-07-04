@@ -1,4 +1,4 @@
-                 
+
 # Transformer大模型实战 训练学生BERT 模型（DistilBERT 模型）
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -91,10 +91,10 @@ DistilBERT中的数学模型主要涉及自注意力机制和前馈神经网络�
 
 ```latex
 \begin{align*}
-    \text{Self-Attention}(Q, K, V) &= \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V \\
-    \text{FFN}(x) &= \sigma(W_3 \cdot \text{ReLU}(W_2 \cdot x + b_2)) + W_1 \cdot x + b_1 \\
-    \text{EncoderLayer}(x) &= \text{LayerNorm}(x + \text{Self-Attention}(Q, K, V)) \\
-                              &+ \text{LayerNorm}(x + \text{FFN}(\text{MultiHeadAttention}(x))) \\
+    \text{Self-Attention}(Q, K, V) &= \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V \
+    \text{FFN}(x) &= \sigma(W_3 \cdot \text{ReLU}(W_2 \cdot x + b_2)) + W_1 \cdot x + b_1 \
+    \text{EncoderLayer}(x) &= \text{LayerNorm}(x + \text{Self-Attention}(Q, K, V)) \
+                              &+ \text{LayerNorm}(x + \text{FFN}(\text{MultiHeadAttention}(x))) \
 \end{align*}
 ```
 

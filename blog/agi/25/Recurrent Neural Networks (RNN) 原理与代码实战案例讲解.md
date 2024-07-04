@@ -83,7 +83,7 @@ RNN 广泛应用于自然语言处理（如语言模型、机器翻译）、时�
 
 假设 RNN 在时刻 t 的状态为 `h_t`，输入为 `x_t`，隐藏层的权重矩阵为 `W` 和 `U`，以及输入到隐藏层的偏置 `b_h` 和 `b_x`，则 RNN 的状态更新公式可以表示为：
 
-$$ h_t = \\tanh(Wx_t + Uh_{t-1} + b_h) $$
+$$ h_t = \tanh(Wx_t + Uh_{t-1} + b_h) $$
 
 输出 `y_t` 则由 `h_t` 经过另一个线性变换得到：
 
@@ -128,7 +128,7 @@ for epoch in range(epochs):
         h = np.tanh(np.dot(input_data[i], W) + np.dot(h_prev, U) + b_h)
         y = np.dot(h, V) + b_y
         h_prev = h
-        print(f\"Epoch {epoch}, Step {i}, Prediction: {y}\")
+        print(f"Epoch {epoch}, Step {i}, Prediction: {y}")
 ```
 
 ### 4.4 常见问题解答
@@ -194,7 +194,7 @@ model.fit(train_data, train_labels, epochs=epochs, batch_size=32)
 
 ```python
 predictions = model.predict(test_data)
-print(\"预测结果:\", predictions)
+print("预测结果:", predictions)
 ```
 
 ## 6. 实际应用场景
@@ -219,7 +219,7 @@ RNN 在以下领域有着广泛的应用：
 
 ### 7.3 相关论文推荐
 
-- **经典论文**: \"Neural Turing Machines\"、\"LSTM can Solve Hard One-Shot Learning Tasks\"。
+- **经典论文**: "Neural Turing Machines"、"LSTM can Solve Hard One-Shot Learning Tasks"。
 
 ### 7.4 其他资源推荐
 

@@ -106,29 +106,29 @@ meta_optimizer = torch.optim.Adam(model.parameters(), lr=meta_lr)
 for batch in batches:
     # 采样任务
     tasks = sample_tasks(batch)
-    
+
     # 计算元梯度
     meta_grads = []
     for task in tasks:
         # 采样支持集和查询集
         support_set, query_set = task
-        
+
         # 计算支持集损失和梯度
         support_loss = model.forward_loss(support_set)
         grads = torch.autograd.grad(support_loss, model.parameters())
-        
+
         # 更新模型参数
         updated_params = []
         for param, grad in zip(model.parameters(), grads):
             updated_param = param - task_lr * grad
             updated_params.append(updated_param)
-        
+
         # 计算查询集损失
         query_loss = model.forward_loss(query_set, params=updated_params)
-        
+
         # 计算元梯度
         meta_grads.append(torch.autograd.grad(query_loss, model.parameters()))
-    
+
     # 平均元梯度并更新模型
     meta_grads = torch.mean(torch.stack(meta_grads), dim=0)
     meta_optimizer.zero_grad()
@@ -159,21 +159,21 @@ meta_optimizer = torch.optim.SGD(model.parameters(), lr=meta_lr)
 for batch in batches:
     # 采样任务
     tasks = sample_tasks(batch)
-    
+
     # 初始化参数
     original_params = [param.clone() for param in model.parameters()]
-    
+
     # 在每个任务上进行SGD更新
     for task in tasks:
         support_set, query_set = task
-        
+
         # 在支持集上优化
         for _ in range(num_steps):
             loss = model.forward_loss(support_set)
             loss.backward()
             meta_optimizer.step()
             meta_optimizer.zero_grad()
-    
+
     # 将参数移动到所有任务的平均方向
     new_params = [param.clone() for param in model.parameters()]
     for orig_param, new_param in zip(original_params, new_params):

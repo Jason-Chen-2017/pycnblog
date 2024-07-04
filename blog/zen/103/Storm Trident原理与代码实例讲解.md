@@ -354,11 +354,11 @@ public class LogAnalysisToplogy {
         // 定义窗口，按照小时划分
         builder.setBolt("hourly_window_bolt", new HourlyWindowBolt(), 1)
             .fieldsGrouping("log_parse_bolt", new Fields("timestamp"));
-        
+
         // 定义聚合Bolt，计算错误日志数量
         builder.setBolt("error_count_bolt", new ErrorCountBolt(), 1)
             .fieldsGrouping("hourly_window_bolt", new Fields("error_count"));
-        
+
         // 启动拓扑
         LocalCluster cluster = new LocalCluster();
         cluster.submitTopology("log_analysis_topology", new Config(), builder.createTopology());
@@ -446,7 +446,7 @@ public class LogAnalysisToplogy {
             collector.emit(new Values(timestamp, count.count));
         }
     }
-    
+
     // 状态信息
     public static class Count {
         public int count = 0;

@@ -1,6 +1,6 @@
 # Generative Adversarial Networks 原理与代码实战案例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：GANs, Generative Model, Discriminator, Generator, Deep Learning
 
@@ -97,22 +97,22 @@ GANs 的核心原理在于通过构建一个对抗性的训练过程，使得生
 
 GANs 的数学模型可以表示为：
 
-- **生成器**函数：$G(z)$，将随机噪声 $z$ 映射到数据空间 $\\mathcal{X}$ 中。
+- **生成器**函数：$G(z)$，将随机噪声 $z$ 映射到数据空间 $\mathcal{X}$ 中。
 - **判别器**函数：$D(x)$，评估输入 $x$ 是否为真实样本，输出概率值。
 
 理想情况下，我们希望生成器和判别器满足以下关系：
 
-$$ \\min_G \\max_D V(D,G) = \\mathbb{E}_{x \\sim p_{data}(x)}[\\log D(x)] + \\mathbb{E}_{z \\sim p_z(z)}[\\log(1 - D(G(z)))] $$
+$$ \min_G \max_D V(D,G) = \mathbb{E}_{x \sim p_{data}(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log(1 - D(G(z)))] $$
 
 其中，$p_{data}(x)$ 是真实数据分布，$p_z(z)$ 是噪声分布，$V(D,G)$ 表示生成器和判别器之间的价值函数。
 
 ### 4.2 公式推导过程
 
 - **生成器损失**：最大化生成样本被判别器误判为真实的概率，即：
-$$ \\mathbb{E}_{z \\sim p_z(z)}[\\log D(G(z))] $$
+$$ \mathbb{E}_{z \sim p_z(z)}[\log D(G(z))] $$
 
 - **判别器损失**：最小化真实样本被正确分类的概率和生成样本被误分类的概率，即：
-$$ \\mathbb{E}_{x \\sim p_{data}(x)}[\\log D(x)] + \\mathbb{E}_{z \\sim p_z(z)}[\\log(1 - D(G(z)))] $$
+$$ \mathbb{E}_{x \sim p_{data}(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log(1 - D(G(z)))] $$
 
 ### 4.3 案例分析与讲解
 
@@ -286,7 +286,7 @@ def train_step(real_images, generator, discriminator, generator_optimizer, discr
 
 - **问题**：如何避免模式崩溃？
   **解答**：通过引入正则化技术（如梯度惩罚、特征匹配）、渐进训练策略，以及增加生成器的复杂度，可以有效地缓解模式崩溃的问题。
-  
+
 - **问题**：如何提高训练效率？
   **解答**：优化网络结构设计、使用更高效的优化算法、减少过拟合、合理选择超参数配置，以及利用硬件加速（如 GPU、TPU）都能提高训练效率。
 

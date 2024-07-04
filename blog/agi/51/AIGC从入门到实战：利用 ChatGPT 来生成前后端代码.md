@@ -164,10 +164,10 @@ button[type="submit"] {
 // Prompt: 为登录页面生成JavaScript代码，实现点击登录按钮时，验证用户名和密码是否为空，如果为空则弹出提示框，否则弹出登录成功的消息
 document.querySelector('form').addEventListener('submit', function(event) {
   event.preventDefault();
-  
+
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
-  
+
   if (username.trim() === '' || password.trim() === '') {
     alert('用户名和密码不能为空！');
   } else {
@@ -181,7 +181,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
 ### 5.2 后端代码生成实例
 #### 5.2.1 使用ChatGPT生成Express.js服务器代码
 ```javascript
-// Prompt: 生成一个Express.js服务器，监听3000端口，并在根路径返回 "Hello, World!" 
+// Prompt: 生成一个Express.js服务器，监听3000端口，并在根路径返回 "Hello, World!"
 const express = require('express');
 const app = express();
 

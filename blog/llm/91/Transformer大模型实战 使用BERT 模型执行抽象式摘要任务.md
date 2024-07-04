@@ -99,23 +99,23 @@ BERT模型主要由以下组件组成：
 以下为BERT模型中多头自注意力机制的公式推导过程：
 
 $$
-\text{Q} = W_Q \text{X} 
+\text{Q} = W_Q \text{X}
 $$
 
 $$
-\text{K} = W_K \text{X} 
+\text{K} = W_K \text{X}
 $$
 
 $$
-\text{V} = W_V \text{X} 
+\text{V} = W_V \text{X}
 $$
 
 $$
-\text{A} = \frac{\text{QK}^T}{\sqrt{d_k}} \odot \text{V} 
+\text{A} = \frac{\text{QK}^T}{\sqrt{d_k}} \odot \text{V}
 $$
 
 $$
-\text{A}^{\text{w}} = \text{W}_\text{O} \text{A} + \text{W}_\text{C} \text{X} 
+\text{A}^{\text{w}} = \text{W}_\text{O} \text{A} + \text{W}_\text{C} \text{X}
 $$
 
 其中：

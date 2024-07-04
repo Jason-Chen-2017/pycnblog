@@ -137,7 +137,7 @@ def financial_report_to_vector(report_text):
         return_attention_mask=True,
         return_tensors='tf'
     )
-    
+
     # 获取特征向量
     input_ids = encoded_input['input_ids']
     attention_mask = encoded_input['attention_mask']
@@ -217,7 +217,7 @@ print("向量表示:", vector_representation)
 
 - **Q：如何确保转换的准确性和有效性？**
   - **A：** 通过增加训练数据的多样性和质量、优化特征提取方法、持续更新和微调模型来提高转换的准确性和有效性。
-  
+
 - **Q：如何处理数据不平衡的问题？**
   - **A：** 使用过采样、欠采样、合成样本生成（如SMOTE）等技术来平衡数据集，确保模型在不同类别上都能达到较好的性能。
 

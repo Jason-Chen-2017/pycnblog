@@ -100,8 +100,8 @@ Transformer模型的自注意力机制主要基于以下公式：
 1. **查询-键-值计算**：
 
 $$
-Q = W_Q \cdot X \\
-K = W_K \cdot X \\
+Q = W_Q \cdot X \
+K = W_K \cdot X \
 V = W_V \cdot X
 $$
 
@@ -166,18 +166,18 @@ class SentimentDataset(Dataset):
         self.labels = labels
         self.tokenizer = tokenizer
         self.max_len = max_len
-        
+
     def __len__(self):
         return len(self.texts)
-    
+
     def __getitem__(self, item):
         text = self.texts[item]
         labels = self.labels[item]
-        
+
         encoding = self.tokenizer(text, return_tensors='pt', max_length=self.max_len, padding=True, truncation=True)
         input_ids = encoding['input_ids'].squeeze(0)
         attention_mask = encoding['attention_mask'].squeeze(0)
-        
+
         return {'input_ids': input_ids,
                 'attention_mask': attention_mask,
                 'labels': labels}
@@ -205,7 +205,7 @@ model.train()
 for epoch in range(3):
     for batch in train_dataloader:
         input_ids, attention_mask, labels = batch['input_ids'], batch['attention_mask'], batch['labels']
-        
+
         optimizer.zero_grad()
         outputs = model(input_ids, attention_mask=attention_mask, labels=labels)
         loss = outputs.loss

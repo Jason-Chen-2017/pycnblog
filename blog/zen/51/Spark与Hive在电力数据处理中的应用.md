@@ -50,7 +50,7 @@ B --> C[DataSet]
 
 DataFrame和DataSet与RDD相比,具有更多的优化机会,如钨丝计划(Tungsten)、基于代价的优化器(Catalyst)等。
 
-### 2.2 Hive核心概念 
+### 2.2 Hive核心概念
 #### 2.2.1 表(Table)
 Hive采用关系型数据库的方式来管理数据,支持对表的创建、查询等操作。Hive中的表可以分为以下几类:
 
@@ -62,7 +62,7 @@ Hive采用关系型数据库的方式来管理数据,支持对表的创建、查
 #### 2.2.2 HQL
 HQL(Hive Query Language)是Hive提供的类SQL语言,用户可以使用HQL进行数据查询和分析。HQL支持的语法包括:
 
-- DDL语句:如CREATE、ALTER 
+- DDL语句:如CREATE、ALTER
 - DML语句:如LOAD、INSERT、SELECT
 - 内置函数和用户自定义函数(UDF)
 - 复杂数据类型:如ARRAY、MAP、STRUCT
@@ -74,9 +74,9 @@ Spark SQL可以直接加载Hive的元数据并执行HQL,也支持读写Hive表�
 
 ```mermaid
 graph TD
-A[HDFS] --> B[Hive元数据] 
+A[HDFS] --> B[Hive元数据]
 A --> C[Hive表数据]
-B --> D[Spark SQL] 
+B --> D[Spark SQL]
 C --> D
 D --> E[查询结果]
 ```
@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS employee ( eid int, name String,
     FIELDS TERMINATED BY '\t'
     LINES TERMINATED BY '\n'
     STORED AS TEXTFILE;
-    
+
 LOAD DATA LOCAL INPATH '/home/employee.txt' OVERWRITE INTO TABLE employee;
 ```
 
@@ -128,11 +128,11 @@ HQL支持多种查询语句,包括SELECT、JOIN、GROUP BY等。下面是一些�
 -- 选择薪资最高的10位员工
 SELECT * FROM employee ORDER BY salary DESC LIMIT 10;
 
--- 统计各部门员工的平均薪资 
+-- 统计各部门员工的平均薪资
 SELECT destination, AVG(salary) AS avg_salary FROM employee GROUP BY destination;
 
 -- 与部门表联结查询员工信息
-SELECT e.name, d.dept_name 
+SELECT e.name, d.dept_name
 FROM employee e JOIN department d
 ON e.destination = d.dept_id;
 ```
@@ -146,7 +146,7 @@ ON e.destination = d.dept_id;
   $d(u,v)=\sqrt{\sum_{i=1}^{n}(x_{u,i}-x_{v,i})^2}$
 - 皮尔逊相关系数:
   $s(u,v)=\frac{\sum_{i=1}^{n}(x_{u,i}-\bar{x}_u)(x_{v,i}-\bar{x}_v)}{\sqrt{\sum_{i=1}^{n}(x_{u,i}-\bar{x}_u)^2}\sqrt{\sum_{i=1}^{n}(x_{v,i}-\bar{x}_v)^2}}$
-  
+
 2. 选取与目标用户最相似的K个用户,计算他们对各个物品的加权评分:
 $$p(u,i)=\bar{x}_u+\frac{\sum_{v\in S}s(u,v)(x_{v,i}-\bar{x}_v)}{\sum_{v\in S}|s(u,v)|}$$
 
@@ -177,7 +177,7 @@ val textFile = sc.textFile("hdfs://...")
 val counts = textFile.flatMap(line => line.split(" "))
                  .map(word => (word, 1))
                  .reduceByKey(_ + _)
-                 
+
 counts.saveAsTextFile("hdfs://...")
 ```
 
@@ -191,17 +191,17 @@ counts.saveAsTextFile("hdfs://...")
 
 ### 5.2 使用Hive统计员工平均薪资
 ```sql
-CREATE TABLE IF NOT EXISTS employee ( eid int, name String, 
+CREATE TABLE IF NOT EXISTS employee ( eid int, name String,
     salary float, destination String)
     COMMENT 'Employee details'
     ROW FORMAT DELIMITED
     FIELDS TERMINATED BY '\t'
     LINES TERMINATED BY '\n'
     STORED AS TEXTFILE;
-    
+
 LOAD DATA LOCAL INPATH '/home/employee.txt' OVERWRITE INTO TABLE employee;
 
-SELECT destination, AVG(salary) AS avg_salary 
+SELECT destination, AVG(salary) AS avg_salary
 FROM employee
 GROUP BY destination;
 ```
@@ -221,7 +221,7 @@ val employeeDF = hiveCtx.sql("SELECT * FROM employee")
 
 val deptSalary = employeeDF.groupBy("destination")
                         .agg(avg("salary").alias("avg_salary"))
-                        
+
 deptSalary.show()
 ```
 

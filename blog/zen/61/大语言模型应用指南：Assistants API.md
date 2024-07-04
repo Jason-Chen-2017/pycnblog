@@ -50,7 +50,7 @@
 
 ### 3.3 微调算法
 #### 3.3.1 分类任务微调
-#### 3.3.2 序列标注任务微调 
+#### 3.3.2 序列标注任务微调
 #### 3.3.3 文本生成任务微调
 
 ### 3.4 Assistants API的实现步骤
@@ -63,7 +63,7 @@
 ### 4.1 Transformer的数学表示
 #### 4.1.1 Scaled Dot-Product Attention
 $Attention(Q,K,V) = softmax(\frac{QK^T}{\sqrt{d_k}})V$
-#### 4.1.2 Multi-Head Attention  
+#### 4.1.2 Multi-Head Attention
 $MultiHead(Q,K,V) = Concat(head_1,...,head_h)W^O$
 $head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)$
 #### 4.1.3 Position-wise Feed-Forward Networks
@@ -127,7 +127,7 @@ class SelfAttention(nn.Module):
     def __init__(self, embed_dim, num_heads):
         super().__init__()
         self.q = nn.Linear(embed_dim, embed_dim)
-        self.k = nn.Linear(embed_dim, embed_dim)  
+        self.k = nn.Linear(embed_dim, embed_dim)
         self.v = nn.Linear(embed_dim, embed_dim)
         self.num_heads = num_heads
         self.head_dim = embed_dim // num_heads
@@ -165,7 +165,7 @@ def generate_response(text):
     return response
 ```
 #### 5.3.3 启动API服务
-```python  
+```python
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 ```
@@ -177,7 +177,7 @@ if __name__ == '__main__':
 #### 6.1.2 客户情绪分析与安抚
 #### 6.1.3 个性化产品推荐
 
-### 6.2 智能写作助手  
+### 6.2 智能写作助手
 #### 6.2.1 文章写作辅助
 #### 6.2.2 文本纠错与润色
 #### 6.2.3 创意灵感生成

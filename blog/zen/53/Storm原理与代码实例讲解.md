@@ -6,7 +6,7 @@
 
 ### 1.1 实时流式计算的重要性
 #### 1.1.1 实时数据洞察
-#### 1.1.2 快速响应业务需求 
+#### 1.1.2 快速响应业务需求
 #### 1.1.3 提升用户体验
 
 ### 1.2 Apache Storm的诞生
@@ -28,7 +28,7 @@
 #### 2.2.2 Spout的类型
 #### 2.2.3 自定义Spout
 
-### 2.3 Bolt（处理单元）  
+### 2.3 Bolt（处理单元）
 #### 2.3.1 Bolt的功能
 #### 2.3.2 Bolt的分类
 #### 2.3.3 自定义Bolt
@@ -103,7 +103,7 @@ $$ Hash(Key) \% NumberOfPartitions $$
 #### 5.2.1 Topology构建
 ```java
 TopologyBuilder builder = new TopologyBuilder();
-builder.setSpout("spout", new RandomSentenceSpout(), 5); 
+builder.setSpout("spout", new RandomSentenceSpout(), 5);
 builder.setBolt("split", new SplitSentence(), 8)
         .shuffleGrouping("spout");
 builder.setBolt("count", new WordCount(), 12)
@@ -118,16 +118,16 @@ public class RandomSentenceSpout extends BaseRichSpout {
         "an apple a day keeps the doctor away",
         "four score and seven years ago"
     };
-    
+
     public void open(Map conf, TopologyContext context, SpoutOutputCollector collector) {
         this.collector = collector;
     }
-    
+
     public void nextTuple() {
         String sentence = sentences[new Random().nextInt(sentences.length)];
         collector.emit(new Values(sentence));
     }
-    
+
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
         declarer.declare(new Fields("sentence"));
     }
@@ -142,7 +142,7 @@ public class SplitSentence extends BaseBasicBolt {
             collector.emit(new Values(word));
         }
     }
-    
+
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
         declarer.declare(new Fields("word"));
     }
@@ -150,7 +150,7 @@ public class SplitSentence extends BaseBasicBolt {
 
 public class WordCount extends BaseBasicBolt {
     Map<String, Integer> counts = new HashMap<String, Integer>();
-    
+
     public void execute(Tuple tuple, BasicOutputCollector collector) {
         String word = tuple.getString(0);
         Integer count = counts.get(word);
@@ -160,7 +160,7 @@ public class WordCount extends BaseBasicBolt {
         counts.put(word, count);
         collector.emit(new Values(word, count));
     }
-    
+
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
         declarer.declare(new Fields("word", "count"));
     }
@@ -220,7 +220,7 @@ Storm在实际生产环境中有广泛的应用,本节将介绍几个典型的�
 #### 8.1.3 Storm vs Samza
 
 ### 8.2 Storm的发展趋势
-#### 8.2.1 与云计算平台的集成 
+#### 8.2.1 与云计算平台的集成
 #### 8.2.2 SQL on Stream的支持
 #### 8.2.3 机器学习的实时应用
 

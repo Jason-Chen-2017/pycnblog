@@ -87,22 +87,22 @@ ELECTRA模型在以下NLP任务中具有广泛的应用：
 
 ELECTRA模型主要由以下两部分组成：
 
-1. 随机掩码语言模型：$\\text{MLM}(z | x)$，其中$z$为被掩码的单词，$x$为输入文本。
-2. 预测掩码分类器：$\\text{Pred}(z | x)$，其中$z$为被掩码的单词，$x$为输入文本。
+1. 随机掩码语言模型：$\text{MLM}(z | x)$，其中$z$为被掩码的单词，$x$为输入文本。
+2. 预测掩码分类器：$\text{Pred}(z | x)$，其中$z$为被掩码的单词，$x$为输入文本。
 
 ### 4.2 公式推导过程
 
 1. **掩码语言模型**：
 
-$$\\text{MLM}(z | x) = \\text{softmax}(\\text{W}_\\text{MLM}^T \\text{h}_z)$$
+$$\text{MLM}(z | x) = \text{softmax}(\text{W}_\text{MLM}^T \text{h}_z)$$
 
-其中，$\\text{W}_\\text{MLM}$为掩码语言模型的权重矩阵，$\\text{h}_z$为编码器对掩码单词$z$的编码。
+其中，$\text{W}_\text{MLM}$为掩码语言模型的权重矩阵，$\text{h}_z$为编码器对掩码单词$z$的编码。
 
 2. **预测掩码分类器**：
 
-$$\\text{Pred}(z | x) = \\text{softmax}(\\text{W}_\\text{Pred}^T \\text{h}_x)$$
+$$\text{Pred}(z | x) = \text{softmax}(\text{W}_\text{Pred}^T \text{h}_x)$$
 
-其中，$\\text{W}_\\text{Pred}$为预测掩码分类器的权重矩阵，$\\text{h}_x$为编码器对输入文本$x$的编码。
+其中，$\text{W}_\text{Pred}$为预测掩码分类器的权重矩阵，$\text{h}_x$为编码器对输入文本$x$的编码。
 
 ### 4.3 案例分析与讲解
 
@@ -143,7 +143,7 @@ tokenizer = ElectraTokenizer.from_pretrained('google/electra-base-discriminator'
 model = ElectraForMaskedLM.from_pretrained('google/electra-base-discriminator')
 
 # 加载数据
-text = \"这是一段示例文本，用于展示ELECTRA模型在文本分类任务中的应用。\"
+text = "这是一段示例文本，用于展示ELECTRA模型在文本分类任务中的应用。"
 
 # 编码数据
 inputs = tokenizer(text, return_tensors='pt', max_length=512, truncation=True)

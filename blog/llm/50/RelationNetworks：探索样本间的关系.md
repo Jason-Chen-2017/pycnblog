@@ -144,7 +144,7 @@ class Encoder(nn.Module):
         super(Encoder, self).__init__()
         self.fc1 = nn.Linear(input_size, hidden_size)
         self.fc2 = nn.Linear(hidden_size, output_size)
-        
+
     def forward(self, x):
         x = F.relu(self.fc1(x))
         x = self.fc2(x)
@@ -159,7 +159,7 @@ class Encoder(nn.Module):
 class RelationModule(nn.Module):
     def __init__(self):
         super(RelationModule, self).__init__()
-        
+
     def forward(self, query, support):
         # 计算查询样本与每个支持样本之间的关系分数
         scores = torch.matmul(query, support.t())
@@ -176,15 +176,15 @@ class RelationNetworks(nn.Module):
         super(RelationNetworks, self).__init__()
         self.encoder = Encoder(input_size, hidden_size, output_size)
         self.relation_module = RelationModule()
-        
+
     def forward(self, support_x, support_y, query_x):
         # 编码支持集和查询集
         support_features = self.encoder(support_x)
         query_features = self.encoder(query_x)
-        
+
         # 计算关系分数
         scores = self.relation_module(query_features, support_features)
-        
+
         # 预测查询样本的标签
         pred_y = torch.matmul(scores, support_y)
         return pred_y
@@ -209,13 +209,13 @@ for epoch in range(num_epochs):
     for support_x, support_y, query_x, query_y in data_loader:
         # 前向传播
         pred_y = model(support_x, support_y, query_x)
-        
+
         # 计算损失
         loss = criterion(pred_y, query_y)
-        
+
         # 反向传播和优化
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-        
+
     #

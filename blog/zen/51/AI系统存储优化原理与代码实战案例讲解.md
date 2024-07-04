@@ -37,7 +37,7 @@
 - 游程编码(Run-length Encoding):将重复数据用表示符号和重复次数来描述,适合存在大量重复数据的场景
 - LZ77/LZ78:基于字典的压缩方法,通过滑动窗口实现重复序列的编码
 
-#### 3.1.2 有损压缩算法 
+#### 3.1.2 有损压缩算法
 - 离散余弦变换(DCT):将图像从空间域转换到频率域,剔除高频分量
 - 小波变换(Wavelet Transform):通过小波基的多尺度分析,实现图像的多分辨率表示
 
@@ -102,7 +102,7 @@ def huffman_encode(text):
     freq = defaultdict(int)
     for ch in text:
         freq[ch] += 1
-    
+
     # 构建Huffman树
     heap = [[wt, [sym, ""]] for sym, wt in freq.items()]
     heapq.heapify(heap)
@@ -114,10 +114,10 @@ def huffman_encode(text):
         for pair in hi[1:]:
             pair[1] = '1' + pair[1]
         heapq.heappush(heap, [lo[0] + hi[0]] + lo[1:] + hi[1:])
-    
+
     # 生成编码表
     code_table = dict(heapq.heappop(heap)[1:])
-    
+
     # 编码压缩
     encoded = "".join([code_table[ch] for ch in text])
     return encoded, code_table
@@ -147,7 +147,7 @@ class ConsistentHash:
         for i in range(self.virtual_num):
             key = self.gen_key(f"{node}VN{i}")
             del self.ring[key]
-    
+
     def get_node(self, key):
         if not self.ring:
             return None
@@ -194,11 +194,11 @@ class LRUCache:
             lru_node = self.head.next
             self.remove(lru_node)
             del self.cache[lru_node.key]
-    
+
     def remove(self, node):
         node.prev.next = node.next
         node.next.prev = node.prev
-    
+
     def add(self, node):
         node.prev = self.tail.prev
         node.next = self.tail

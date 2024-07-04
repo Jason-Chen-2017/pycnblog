@@ -6,7 +6,7 @@
 
 随着深度学习的快速发展,自然语言处理(NLP)领域取得了巨大的进步。传统的NLP模型如n-gram、条件随机场等很难捕捉长距离依赖关系,并且需要大量的人工特征工程。2017年,Transformer模型的提出彻底改变了NLP的发展方向。Transformer完全基于注意力机制,不需要复杂的序列对齐,能够有效地捕捉长距离依赖关系,在机器翻译等任务上取得了非常出色的表现。
 
-### 1.2 研究现状  
+### 1.2 研究现状
 
 基于Transformer模型的BERT(Bidirectional Encoder Representations from Transformers)在2018年问世,通过预训练和微调的方式,在多项NLP任务上取得了最先进的成绩,成为NLP领域的里程碑式模型。BERT的核心在于利用Transformer的Encoder部分,对大规模语料进行双向建模预训练,学习通用的语义表示,再将这些语义知识迁移到下游的NLP任务中。
 
@@ -65,7 +65,7 @@ BERT模型的核心算法原理可以概括为两个阶段:预训练(Pre-trainin
    - **掩码语言模型(Masked Language Model)**
      在输入序列中随机选择15%的单词进行遮掩,模型需要根据上下文预测这些被遮掩的单词。这个过程能够让模型学习双向语义表示。
 
-   - **下一句预测(Next Sentence Prediction)** 
+   - **下一句预测(Next Sentence Prediction)**
      为了捕捉更大范围的语义关系,BERT在预训练时还加入了一个二分类任务,判断两个句子是否为连续句子。
 
    通过上述两个任务的联合训练,BERT模型能够在大规模语料上学习通用的语义表示。
@@ -111,7 +111,7 @@ BERT模型的核心算法原理可以概括为两个阶段:预训练(Pre-trainin
      - 使用编码器层输出对应位置的向量表示预测被遮掩单词
      - 最小化被遮掩单词的交叉熵损失函数
 
-   - **下一句预测(NSP)任务**  
+   - **下一句预测(NSP)任务**
      - 为输入序列添加一个二元分类标签,表示两个句子是否相邻
      - 使用编码器最终层的CLS向量输出进行二分类
      - 最小化下一句预测任务的交叉熵损失函数
@@ -167,7 +167,7 @@ BERT模型的核心算法原理可以概括为两个阶段:预训练(Pre-trainin
    如新闻分类、情感分析、垃圾邮件检测等
 
 2. **序列标注**
-   如命名实体识别、词性标注、关系抽取等  
+   如命名实体识别、词性标注、关系抽取等
 
 3. **阅读理解**
    如问答系统、机器阅读理解、多选题解答等
@@ -194,7 +194,7 @@ BERT模型的核心是基于Transformer的编码器结构,主要包括以下几�
 
    其中 $\boldsymbol{x}_i \in \mathbb{R}^{d_\text{model}}$ 是第 $i$ 个单词的词嵌入向量, $w_i$ 是该单词, $\text{embed}(\cdot)$ 是词嵌入查找表。
 
-2. **位置编码(Positional Encoding)** 
+2. **位置编码(Positional Encoding)**
 
    由于Transformer没有循环或卷积结构,需要显式地为每个位置添加位置信息:
 
@@ -206,7 +206,7 @@ BERT模型的核心是基于Transformer的编码器结构,主要包括以下几�
 3. **多头注意力(Multi-Head Attention)**
 
    注意力机制能够捕捉序列中任意距离的依赖关系,是Transformer的核心:
-   
+
    $$\text{MultiHead}(Q, K, V) = \text{Concat}({\text{head}_1, \dots, \text{head}_h})W^O$$
    $$\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)$$
    $$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V$$

@@ -41,8 +41,7 @@
 
 策略梯度方法的核心思想是直接优化策略参数$\theta$，使得智能体在执行策略$\pi(\theta; s)$时能够获得最大的预期奖励$J(\theta)$。具体来说，策略梯度方法通过计算策略梯度和更新策略参数，实现以下目标：
 
-1. 计算策略梯度$\
-abla_\theta J(\theta)$。
+1. 计算策略梯度$\nabla_\theta J(\theta)$。
 2. 使用梯度下降等优化算法更新策略参数$\theta$，使得$J(\theta)$最大化。
 
 ### 3.2 算法步骤详解
@@ -52,8 +51,7 @@ abla_\theta J(\theta)$。
 1. **初始化策略参数**：随机初始化策略参数$\theta$。
 2. **策略执行**：使用策略$\pi(\theta; s)$生成一系列动作序列。
 3. **环境交互**：智能体与环境交互，获取奖励和下一状态。
-4. **更新策略参数**：根据获取的奖励和下一状态，计算策略梯度$\
-abla_\theta J(\theta)$，并使用梯度下降等优化算法更新策略参数$\theta$。
+4. **更新策略参数**：根据获取的奖励和下一状态，计算策略梯度$\nabla_\theta J(\theta)$，并使用梯度下降等优化算法更新策略参数$\theta$。
 5. **重复步骤2-4**：不断重复策略执行、环境交互和策略参数更新的过程，直至满足终止条件。
 
 ### 3.3 算法优缺点
@@ -92,9 +90,7 @@ $$J(\theta) = \sum_{t=0}^T \gamma^t R_t$$
 
 1. **策略梯度定义**：
 
-$$\
-abla_\theta J(\theta) = \
-abla_\theta \sum_{t=0}^T \gamma^t R_t$$
+$$\nabla_\theta J(\theta) = \nabla_\theta \sum_{t=0}^T \gamma^t R_t$$
 
 2. **期望值展开**：
 
@@ -106,12 +102,9 @@ $$\mathbb{E}_{\pi(\theta; s)}[R_t] = \sum_{a \in A} \pi(a|s, \theta) R(s, a)$$
 
 4. **策略梯度计算**：
 
-$$\
-abla_\theta J(\theta) = \
-abla_\theta \sum_{t=0}^T \gamma^t \sum_{a \in A} \pi(a|s, \theta) R(s, a)$$
+$$\nabla_\theta J(\theta) = \nabla_\theta \sum_{t=0}^T \gamma^t \sum_{a \in A} \pi(a|s, \theta) R(s, a)$$
 
-$$= \sum_{t=0}^T \gamma^t \sum_{a \in A} \pi(a|s, \theta) \
-abla_\theta \pi(a|s, \theta) R(s, a)$$
+$$= \sum_{t=0}^T \gamma^t \sum_{a \in A} \pi(a|s, \theta) \nabla_\theta \pi(a|s, \theta) R(s, a)$$
 
 ### 4.3 案例分析与讲解
 

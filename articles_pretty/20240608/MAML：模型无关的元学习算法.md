@@ -21,17 +21,14 @@ MAML的目标是在不同任务之间构建泛化能力。它基于这样一个�
 对于每个任务$T_i$：
 
 1. 从任务$T_i$中随机抽取一小批数据$x^{(i)}$和期望输出$y^{(i)}$。
-2. 使用反向传播计算损失函数$L(f(\\theta), y^{(i)})$相对于模型参数$\\theta$的梯度$\
-abla_\\theta L$。
-3. 更新模型参数$\\theta$，通常是通过梯度下降的方式：$\\theta_{new} = \\theta - \\alpha \
-abla_\\theta L$，其中$\\alpha$是学习率。
+2. 使用反向传播计算损失函数$L(f(\\theta), y^{(i)})$相对于模型参数$\\theta$的梯度$\nabla_\\theta L$。
+3. 更新模型参数$\\theta$，通常是通过梯度下降的方式：$\\theta_{new} = \\theta - \\alpha \nabla_\\theta L$，其中$\\alpha$是学习率。
 
 ### 步骤三：元优化阶段
 
 对于整个任务集$\\mathcal{T}$：
 
-1. 计算“元梯度”$\\Delta\\theta_i = \
-abla_\\theta f(\\theta_{new})$，其中$\\theta_{new}$是快适应阶段得到的新模型参数。
+1. 计算“元梯度”$\\Delta\\theta_i = \nabla_\\theta f(\\theta_{new})$，其中$\\theta_{new}$是快适应阶段得到的新模型参数。
 2. 使用所有任务的“元梯度”来更新原始模型参数$\\theta$：$\\theta_{meta} = \\theta - \\beta \\sum_{i=1}^N \\Delta\\theta_i$，其中$\\beta$是元学习率。
 
 ## 数学模型和公式详细讲解举例说明

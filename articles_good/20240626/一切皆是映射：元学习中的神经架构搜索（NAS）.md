@@ -115,8 +115,7 @@ $$
 假设网络架构的损失函数为 $L(\theta)$，则梯度上升的优化目标可以表示为：
 
 $$
-\theta^{(t+1)} = \theta^{(t)} - \alpha \
-abla_{\theta}L(\theta^{(t)})
+\theta^{(t+1)} = \theta^{(t)} - \alpha \nabla_{\theta}L(\theta^{(t)})
 $$
 
 其中 $\alpha$ 为学习率。

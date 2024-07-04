@@ -1,4 +1,4 @@
-                 
+
 # 一切皆是映射：比较SARSA与DQN：区别与实践优化
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -149,7 +149,7 @@ $$ y_i = r_i + \gamma \max_a Q(s_{i+1}, a; \theta') $$
 
 - **如何调整学习率？**
   学习率应该逐渐减小，例如使用线性衰减策略，以确保算法在早期有足够探索，在后期能够稳定收敛。
-  
+
 - **为什么DQN需要经验回放机制？**
   经验回放允许智能体在不同的上下文中重用经验，避免由于序列依赖导致的过度拟合问题，同时加速学习过程。
 
@@ -179,7 +179,7 @@ class SARSAAgent:
         self.discount_factor = 0.9
         self.epsilon = 0.1
         self.q_table = {}
-    
+
     def choose_action(self, state, available_actions):
         if np.random.rand() < self.epsilon:
             return self.env.action_space.sample()
@@ -192,13 +192,13 @@ class SARSAAgent:
                     max_q = q_value
                     action = action_id
             return action
-    
+
     def learn(self, current_state, chosen_action, reward, next_state, done):
         future_max_q = 0 if done else self.q_table.get((next_state, chosen_action), 0)
         current_q = self.q_table.get((current_state, chosen_action), 0)
         new_q = (1 - self.learning_rate) * current_q + self.learning_rate * (reward + self.discount_factor * future_max_q)
         self.q_table[(current_state, chosen_action)] = new_q
-        
+
     def run_episode(self):
         done = False
         total_reward = 0
@@ -252,17 +252,17 @@ class DQNTrainer:
         self.net = DQN(self.env.observation_space.shape[0], self.env.action_space.n).to(self.device)
         self.target_net = DQN(self.env.observation_space.shape[0], self.env.action_space.n).to(self.device)
         self.optimizer = optim.Adam(self.net.parameters(), lr=0.001)
-        
+
     def update_target_network(self):
         self.target_net.load_state_dict(self.net.state_dict())
-    
+
     def add_to_replay_buffer(self, experience):
         self.replay_buffer.append(experience)
-    
+
     def sample_batch(self):
         batch = np.array(random.choices(self.replay_buffer, k=self.batch_size))
         return batch[:, 0], batch[:, 1], batch[:, 2], batch[:, 3], batch[:, 4]
-    
+
     def optimize_model(self):
         if len(self.replay_buffer) < self.batch_size:
             return
@@ -272,12 +272,12 @@ class DQNTrainer:
         rewards = torch.FloatTensor(rewards).unsqueeze(-1).to(self.device)
         next_states = torch.FloatTensor(next_states).to(self.device)
         dones = torch.FloatTensor(dones).unsqueeze(-1).to(self.device)
-        
+
         Q_current = self.net(states).gather(1, actions)
         with torch.no_grad():
             Q_next = self.target_net(next_states).max(dim=1)[0].detach()
         target_Q = rewards + (1 - dones) * self.gamma * Q_next
-        
+
         loss = F.smooth_l1_loss(Q_current, target_Q.unsqueeze(1))
         self.optimizer.zero_grad()
         loss.backward()
@@ -300,16 +300,16 @@ def main():
             next_state = torch.from_numpy(next_state).float().unsqueeze(0)
             next_state = next_state.to(trainer.device)
             trainer.add_to_replay_buffer((state, action, reward, next_state.float(), float(done)))
-            
+
             if len(trainer.replay_buffer) > trainer.batch_size:
                 trainer.optimize_model()
-                
+
             state = next_state.clone()
             total_reward += reward
-            
+
             if done:
                 break
-                
+
         rewards_history.append(total_reward)
         print(f"Episode {episode} | Total Reward: {total_reward}")
 

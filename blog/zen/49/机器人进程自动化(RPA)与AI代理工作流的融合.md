@@ -199,10 +199,10 @@ def provide_service():
 def main():
     # 获取客户信息
     customer_info = get_customer_info()
-    
+
     # 分析客户需求
     customer_demand = analyze_customer_demand()
-    
+
     # 提供服务
     provide_service()
 

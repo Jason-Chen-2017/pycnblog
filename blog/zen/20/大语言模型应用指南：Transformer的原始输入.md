@@ -1,6 +1,6 @@
 # 大语言模型应用指南：Transformer的原始输入
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -75,9 +75,9 @@ Transformer算法的核心在于多头自注意力机制，它通过将输入序
 
 假设输入序列长度为$T$，词汇表大小为$V$，隐藏层大小为$H$，多头数量为$M$，那么Transformer模型的数学模型可以构建如下：
 
-对于输入序列$x \\in \\{1, 2, ..., V\\}^{T \\times 1}$，位置编码$p \\in \\mathbb{R}^{T \\times H}$，多头注意力机制可以表示为：
+对于输入序列$x \in \{1, 2, ..., V\}^{T \times 1}$，位置编码$p \in \mathbb{R}^{T \times H}$，多头注意力机制可以表示为：
 
-$$\\text{MultiHead}(Q, K, V) = \\text{Concat}(W_Q \\cdot Q, W_K \\cdot K, W_V \\cdot V)^{\\frac{1}{\\sqrt{d}}},$$
+$$\text{MultiHead}(Q, K, V) = \text{Concat}(W_Q \cdot Q, W_K \cdot K, W_V \cdot V)^{\frac{1}{\sqrt{d}}},$$
 
 其中，$W_Q$、$W_K$和$W_V$是权重矩阵，$d$是每个头的隐藏维度。
 
@@ -85,19 +85,19 @@ $$\\text{MultiHead}(Q, K, V) = \\text{Concat}(W_Q \\cdot Q, W_K \\cdot K, W_V \\
 
 多头自注意力的具体计算过程如下：
 
-1. **查询（Query）**：$Q = x \\cdot W_Q$
-2. **键（Key）**：$K = x \\cdot W_K$
-3. **值（Value）**：$V = x \\cdot W_V$
+1. **查询（Query）**：$Q = x \cdot W_Q$
+2. **键（Key）**：$K = x \cdot W_K$
+3. **值（Value）**：$V = x \cdot W_V$
 
 对于每个头$m$，计算注意力权重：
 
-$$e_{ij} = \\text{softmax}(\\text{scale} \\cdot \\text{Q}_i \\cdot \\text{K}_j^T)$$
+$$e_{ij} = \text{softmax}(\text{scale} \cdot \text{Q}_i \cdot \text{K}_j^T)$$
 
-其中，$\\text{scale} = \\frac{1}{\\sqrt{d}}$，$\\text{Q}_i$和$\\text{K}_j$分别是第$i$个位置的查询和第$j$个位置的键。
+其中，$\text{scale} = \frac{1}{\sqrt{d}}$，$\text{Q}_i$和$\text{K}_j$分别是第$i$个位置的查询和第$j$个位置的键。
 
 然后，通过注意力权重加权平均得到值：
 
-$$\\text{Att}(Q, K, V) = e_{ij} \\cdot V_j$$
+$$\text{Att}(Q, K, V) = e_{ij} \cdot V_j$$
 
 最后，将所有头的结果拼接并进行全连接层处理。
 
@@ -183,7 +183,7 @@ def create_transformer(input_vocab_size, output_vocab_size, d_model, num_layers,
     model = tf.keras.Model(inputs=[encoder_inputs, decoder_inputs], outputs=decoder_output)
     return model
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     model = create_transformer(input_vocab_size=10000, output_vocab_size=10000, d_model=512, num_layers=6,
                               num_heads=8, dff=2048)
     model.summary()
@@ -223,8 +223,8 @@ if __name__ == \"__main__\":
 
 ### 7.3 相关论文推荐
 
-- **\"Attention is All You Need\"**：Vaswani等人于2017年发表的论文，详细介绍了Transformer模型及其在多任务上的应用。
-- **\"BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding\"**：Devlin等人于2018年发表的论文，介绍了BERT模型及其在语言理解任务上的应用。
+- **"Attention is All You Need"**：Vaswani等人于2017年发表的论文，详细介绍了Transformer模型及其在多任务上的应用。
+- **"BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"**：Devlin等人于2018年发表的论文，介绍了BERT模型及其在语言理解任务上的应用。
 
 ### 7.4 其他资源推荐
 

@@ -1,4 +1,4 @@
-                 
+
 # AI人工智能深度学习算法：未来应用的可能性
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -160,7 +160,7 @@ def train_step(images, labels):
 for step in range(1, training_steps+1):
     batch_x, batch_y = x_train.take(batch_size), y_train.take(batch_size)
     train_step(batch_x, batch_y)
-    
+
     if step % display_step == 0:
         print(f'Step: {step}, Loss: {loss.numpy()}, Accuracy: {accuracy.numpy()}')
 

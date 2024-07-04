@@ -98,11 +98,11 @@
 
 #### SIFT描述符构建公式：
 
-$$\\text{Descriptor} = \\sum_{x \\in \\text{Region}} \\sum_{y \\in \\text{Direction}} \\text{Gradient}(x,y) \\cdot \\text{Orientation}(x,y)$$
+$$\text{Descriptor} = \sum_{x \in \text{Region}} \sum_{y \in \text{Direction}} \text{Gradient}(x,y) \cdot \text{Orientation}(x,y)$$
 
 其中，
-- $\\text{Gradient}(x,y)$ 是像素 $(x,y)$ 的梯度向量。
-- $\\text{Orientation}(x,y)$ 是该位置的主方向。
+- $\text{Gradient}(x,y)$ 是像素 $(x,y)$ 的梯度向量。
+- $\text{Orientation}(x,y)$ 是该位置的主方向。
 
 #### SURF描述符构建公式：
 
@@ -180,7 +180,7 @@ def sift_match(img1, img2):
 #### 主函数：
 
 ```python
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     img1 = cv2.imread('image1.jpg', 0)
     img2 = cv2.imread('image2.jpg', 0)
     kp1, kp2, matches = sift_match(img1, img2)

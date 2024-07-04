@@ -78,9 +78,7 @@ $$
 在推导过程中，我们通常会引入共享参数矩阵$W$，用于在不同任务间共享。假设$W$的更新依赖于所有任务的梯度：
 
 $$
-\\Delta W = \\alpha \\left( \
-abla_{W} L_1 + \
-abla_{W} L_2 + \\beta \\cdot \\text{Shared\\_Gradient}(W) \\right)
+\\Delta W = \\alpha \\left( \nabla_{W} L_1 + \nabla_{W} L_2 + \\beta \\cdot \\text{Shared\\_Gradient}(W) \\right)
 $$
 
 其中，$\\alpha$是学习率，$\\text{Shared\\_Gradient}(W)$是共享参数的梯度。

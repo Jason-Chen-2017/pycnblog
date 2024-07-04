@@ -51,8 +51,7 @@ SGD的核心思想是在每一步迭代中，选择一个或一小批样本来�
 
 #### 步骤4：更新参数
 
-- 根据梯度和学习率更新参数：$\\theta \\leftarrow \\theta - \\eta \\cdot \
-abla_\\theta J(\\theta)$。
+- 根据梯度和学习率更新参数：$\\theta \\leftarrow \\theta - \\eta \\cdot \nabla_\\theta J(\\theta)$。
 
 #### 步骤5：重复迭代
 
@@ -81,14 +80,12 @@ abla_\\theta J(\\theta)$。
 
 设损失函数为 $J(\\theta)$，其中 $\\theta$ 是模型参数。SGD的目标是最小化 $J(\\theta)$。在第 $t$ 次迭代中，我们使用一个样本或小批量样本 $x_i$ 和其对应的标签 $y_i$ 来更新参数：
 
-$$ \\theta_{t+1} = \\theta_t - \\eta \\cdot \
-abla_\\theta J(\\theta_t; x_i, y_i) $$
+$$ \\theta_{t+1} = \\theta_t - \\eta \\cdot \nabla_\\theta J(\\theta_t; x_i, y_i) $$
 
 其中：
 
 - $\\eta$ 是学习率。
-- $\
-abla_\\theta J(\\theta_t; x_i, y_i)$ 是损失函数关于参数 $\\theta$ 在样本 $(x_i, y_i)$ 上的梯度。
+- $\nabla_\\theta J(\\theta_t; x_i, y_i)$ 是损失函数关于参数 $\\theta$ 在样本 $(x_i, y_i)$ 上的梯度。
 
 ### 4.2 公式推导过程
 
@@ -102,13 +99,11 @@ $$ J(\\theta) = \\frac{1}{n} \\sum_{i=1}^{n} (y_i - (\\theta_0 + \\theta_1 x_i))
 
 对于单个样本 $(x_i, y_i)$，损失函数的梯度是：
 
-$$ \
-abla_\\theta J(\\theta; x_i, y_i) = \\begin{bmatrix} -2(x_i)(y_i - (\\theta_0 + \\theta_1 x_i)) \\\\ -2(y_i - (\\theta_0 + \\theta_1 x_i)) \\end{bmatrix} $$
+$$ \nabla_\\theta J(\\theta; x_i, y_i) = \\begin{bmatrix} -2(x_i)(y_i - (\\theta_0 + \\theta_1 x_i)) \\\\ -2(y_i - (\\theta_0 + \\theta_1 x_i)) \\end{bmatrix} $$
 
 在SGD中，我们使用这个梯度来更新参数：
 
-$$ \\theta_{t+1} = \\theta_t - \\eta \\cdot \
-abla_\\theta J(\\theta_t; x_i, y_i) $$
+$$ \\theta_{t+1} = \\theta_t - \\eta \\cdot \nabla_\\theta J(\\theta_t; x_i, y_i) $$
 
 ### 4.3 案例分析与讲解
 
@@ -120,8 +115,7 @@ abla_\\theta J(\\theta_t; x_i, y_i) $$
 
 1. 初始化 $\\theta = \\begin{bmatrix} 0 \\\\ 0 \\end{bmatrix}$。
 2. 选择一个样本 $(x, y)$，并计算损失函数的梯度。
-3. 使用梯度更新参数：$\\theta \\leftarrow \\theta - \\eta \\cdot \
-abla_\\theta J(\\theta)$。
+3. 使用梯度更新参数：$\\theta \\leftarrow \\theta - \\eta \\cdot \nabla_\\theta J(\\theta)$。
 4. 重复步骤2和步骤3直到达到预定的迭代次数或损失函数收敛。
 
 ### 4.4 常见问题解答

@@ -99,27 +99,27 @@ AlphaZero的核心数学模型包括策略网络、价值网络和蒙特卡洛�
 策略网络是一个概率图神经网络，用于生成动作的概率分布。假设状态空间为$S$，动作空间为$A$，策略网络可以表示为：
 
 $$
-\\pi(s) = \\prod_{a \\in A} \\pi_a(s) = \\prod_{a \\in A} \\sigma(W_{\\pi} \\cdot \\phi(s, a))
+\pi(s) = \prod_{a \in A} \pi_a(s) = \prod_{a \in A} \sigma(W_{\pi} \cdot \phi(s, a))
 $$
 
-其中，$\\sigma$为Sigmoid函数，$W_{\\pi}$为策略网络的权重，$\\phi(s, a)$为状态-动作特征。
+其中，$\sigma$为Sigmoid函数，$W_{\pi}$为策略网络的权重，$\phi(s, a)$为状态-动作特征。
 
 #### 价值网络
 
 价值网络是一个深度神经网络，用于评估状态的价值。假设状态空间为$S$，价值网络可以表示为：
 
 $$
-V(s) = f(W_v \\cdot \\phi(s))
+V(s) = f(W_v \cdot \phi(s))
 $$
 
-其中，$W_v$为价值网络的权重，$\\phi(s)$为状态特征。
+其中，$W_v$为价值网络的权重，$\phi(s)$为状态特征。
 
 #### 蒙特卡洛树搜索
 
 蒙特卡洛树搜索是一种基于概率的搜索算法，用于探索和评估动作序列。假设当前节点为$n$，子节点集合为$C(n)$，子节点$n_i$的概率为$p_i$，子节点$n_i$的回报为$r_i$，蒙特卡洛树搜索的递归公式为：
 
 $$
-U(n) = \\frac{R(n)}{N(n)} + c \\cdot \\sqrt{\\frac{2 \\ln(N(n))}{N(n_i)}}
+U(n) = \frac{R(n)}{N(n)} + c \cdot \sqrt{\frac{2 \ln(N(n))}{N(n_i)}}
 $$
 
 其中，$R(n)$为节点$n$的回报，$N(n)$为节点$n$的访问次数，$N(n_i)$为子节点$n_i$的访问次数，$c$为常数。
@@ -130,25 +130,23 @@ AlphaZero的公式推导过程主要涉及到策略梯度算法和价值网络�
 
 #### 策略梯度
 
-策略梯度算法是一种基于梯度的优化方法，用于更新策略网络参数。假设策略网络的损失函数为$L(\\theta)$，参数为$\\theta$，则策略梯度可以表示为：
+策略梯度算法是一种基于梯度的优化方法，用于更新策略网络参数。假设策略网络的损失函数为$L(\theta)$，参数为$\theta$，则策略梯度可以表示为：
 
 $$
-\\theta_{new} = \\theta_{old} - \\alpha \\cdot \
-abla_{\\theta}L(\\theta)
+\theta_{new} = \theta_{old} - \alpha \cdot \nabla_{\theta}L(\theta)
 $$
 
-其中，$\\alpha$为学习率。
+其中，$\alpha$为学习率。
 
 #### 价值网络训练
 
-价值网络训练是一种基于梯度的优化方法，用于更新价值网络参数。假设价值网络的损失函数为$L_v(\\theta_v)$，参数为$\\theta_v$，则价值网络梯度可以表示为：
+价值网络训练是一种基于梯度的优化方法，用于更新价值网络参数。假设价值网络的损失函数为$L_v(\theta_v)$，参数为$\theta_v$，则价值网络梯度可以表示为：
 
 $$
-\\theta_{v\\_new} = \\theta_{v\\_old} - \\alpha_v \\cdot \
-abla_{\\theta_v}L_v(\\theta_v)
+\theta_{v\_new} = \theta_{v\_old} - \alpha_v \cdot \nabla_{\theta_v}L_v(\theta_v)
 $$
 
-其中，$\\alpha_v$为学习率。
+其中，$\alpha_v$为学习率。
 
 ### 4.3 案例分析与讲解
 

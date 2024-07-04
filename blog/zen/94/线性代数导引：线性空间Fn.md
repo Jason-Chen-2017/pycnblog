@@ -155,7 +155,7 @@ $$
 
 $$
 \begin{cases}
-x + 2y = 1 \\
+x + 2y = 1 \
 3x + y = 3
 \end{cases}
 $$
@@ -164,7 +164,7 @@ $$
 
 $$
 \begin{bmatrix}
-1 & 2 & | & 1 \\
+1 & 2 & | & 1 \
 3 & 1 & | & 3
 \end{bmatrix}
 $$
@@ -173,7 +173,7 @@ $$
 
 $$
 \begin{bmatrix}
-1 & 2 & | & 1 \\
+1 & 2 & | & 1 \
 0 & -5 & | & 0
 \end{bmatrix}
 $$
@@ -186,33 +186,33 @@ $$
 
 $$
 \begin{bmatrix}
-1 & 2 \\
+1 & 2 \
 3 & 4
 \end{bmatrix}
 +
 \begin{bmatrix}
-5 & 6 \\
+5 & 6 \
 7 & 8
 \end{bmatrix}
 =
 \begin{bmatrix}
-6 & 8 \\
+6 & 8 \
 10 & 12
 \end{bmatrix}
 $$
 
 $$
 \begin{bmatrix}
-1 & 2 \\
+1 & 2 \
 3 & 4
 \end{bmatrix}
 \begin{bmatrix}
-1 & 0 \\
+1 & 0 \
 0 & 1
 \end{bmatrix}
 =
 \begin{bmatrix}
-1 & 2 \\
+1 & 2 \
 3 & 4
 \end{bmatrix}
 $$

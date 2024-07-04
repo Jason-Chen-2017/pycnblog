@@ -62,21 +62,21 @@
 
 Q-learning的目标是寻找一个Q函数，使得对于所有状态s和动作a：
 
-$$Q(s, a) = \\mathbb{E}[R + \\gamma \\max_{a'} Q(s', a')]$$
+$$Q(s, a) = \mathbb{E}[R + \gamma \max_{a'} Q(s', a')]$$
 
 其中：
 
 - $R$ 是即时奖励，
-- $\\gamma$ 是折扣因子，
+- $\gamma$ 是折扣因子，
 - $s'$ 是下一个状态。
 
 ### 4.2 公式推导过程
 
 DQN通过深度学习模型逼近Q函数：
 
-$$Q(s, a) \\approx Q_\\theta(s, a)$$
+$$Q(s, a) \approx Q_\theta(s, a)$$
 
-其中$\\theta$是模型参数。
+其中$\theta$是模型参数。
 
 ### 4.3 案例分析与讲解
 

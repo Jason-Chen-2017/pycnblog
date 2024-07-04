@@ -162,14 +162,14 @@ for _ in range(epochs):
             action = env.action_space.sample()
         else:
             action = np.argmax(Q_table[state])
-        
+
         next_state, reward, done, _ = env.step(action)
         old_value = Q_table[state, action]
         next_max_q = np.max(Q_table[next_state])
-        
+
         new_value = (1 - learning_rate) * old_value + learning_rate * (reward + discount_factor * next_max_q)
         Q_table[state, action] = new_value
-        
+
         state = next_state
 
 env.close()

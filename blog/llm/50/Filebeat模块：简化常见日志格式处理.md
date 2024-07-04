@@ -22,7 +22,7 @@ Elastic Stack是目前广泛使用的一套开源日志分析平台，其中File
 #### 2.1.2 Filebeat的工作流程
 1. Prospector在Input中定义数据源，发现并读取新的日志数据
 2. Harvester负责打开并读取单个日志文件的内容
-3. Processor根据配置规则对日志数据进行处理，如多行合并、字段提取等  
+3. Processor根据配置规则对日志数据进行处理，如多行合并、字段提取等
 4. Output将处理后的数据发送到指定的下游服务
 
 ### 2.2 Filebeat模块概述
@@ -41,14 +41,14 @@ Filebeat模块是Filebeat的一项功能，提供了一组预定义的配置文�
 - 加速数据分析：内置的Kibana仪表板可以直接展示模块采集的数据，加速数据可视化分析
 - 易于扩展：用户可以基于模块提供的配置模板，进一步自定义和优化日志采集方案
 
-### 2.3 常见日志格式与Filebeat模块 
+### 2.3 常见日志格式与Filebeat模块
 
 #### 2.3.1 常见的日志格式
 - Apache Access Log
 - Nginx Access Log
 - MySQL Error Log
 - Redis Log
-- Syslog 
+- Syslog
 - IIS Access Log
 - ...
 
@@ -69,7 +69,7 @@ Filebeat模块是Filebeat的一项功能，提供了一组预定义的配置文�
 一个典型的Filebeat模块配置结构如下：
 
 ```yaml
-module: apache 
+module: apache
 access:
   enabled: true
   var.paths: ["/var/log/apache2/access.log*"]
@@ -183,9 +183,9 @@ Grok的匹配过程可以用如下公式表示：
 
 $$
 \begin{aligned}
-G(s, p) &= M \\
-M &= \{(k_1, v_1), (k_2, v_2), ..., (k_n, v_n)\} \\
-k_i &= p_i.name \\
+G(s, p) &= M \
+M &= \{(k_1, v_1), (k_2, v_2), ..., (k_n, v_n)\} \
+k_i &= p_i.name \
 v_i &= s.substring(p_i.start, p_i.end)
 \end{aligned}
 $$

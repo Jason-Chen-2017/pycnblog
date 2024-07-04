@@ -92,7 +92,7 @@ Seq2Seq模型的工作原理基于以下步骤：
 
 编码器和解码器之间的交互可通过以下公式表示：
 
-- **编码器**：$q = f(x)$，其中$q \\in \\mathbb{R}^D$，$D$为向量维度。
+- **编码器**：$q = f(x)$，其中$q \in \mathbb{R}^D$，$D$为向量维度。
 - **解码器**：$y = g(q)$，生成输出序列$y$。
 
 ### 4.3 案例分析与讲解
@@ -127,15 +127,15 @@ class Seq2SeqModel:
         self.encoder = encoder
         self.decoder = decoder
         self.config = config
-    
+
     def train_step(self, input_data, target_data, loss_function):
         # 实现训练步骤的具体逻辑
         pass
-    
+
     def evaluate(self, input_data, target_data, loss_function):
         # 实现评估步骤的具体逻辑
         pass
-    
+
     def predict(self, input_data):
         # 实现预测步骤的具体逻辑
         pass

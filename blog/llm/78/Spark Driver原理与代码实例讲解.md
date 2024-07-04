@@ -126,7 +126,7 @@ Spark Driver在以下领域得到广泛应用：
 Spark Driver的数学模型可以概括为以下公式：
 
 $$
-\text{结果} = \text{Spark Driver}(\text{作业}, \text{集群资源}) 
+\text{结果} = \text{Spark Driver}(\text{作业}, \text{集群资源})
 $$
 
 其中，作业表示用户提交的任务，集群资源表示计算节点、内存、CPU等。

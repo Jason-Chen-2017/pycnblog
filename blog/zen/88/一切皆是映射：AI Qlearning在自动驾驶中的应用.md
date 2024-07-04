@@ -162,11 +162,11 @@ $$Q(s, a) = \sum_{a' \in A} \pi(a' | s) [r + \gamma \max_{a'' \in A} Q(s', a'')]
 $$
 \begin{array}{|c|c|c|c|}
 \hline
- & \text{直行} & \text{左转} & \text{右转} \\
+ & \text{直行} & \text{左转} & \text{右转} \
 \hline
-\text{直行} & 0 & 0 & 0 \\
-\text{左转} & 0 & 0 & 0 \\
-\text{右转} & 0 & 0 & 0 \\
+\text{直行} & 0 & 0 & 0 \
+\text{左转} & 0 & 0 & 0 \
+\text{右转} & 0 & 0 & 0 \
 \hline
 \end{array}
 $$
@@ -176,11 +176,11 @@ $$
 $$
 \begin{array}{|c|c|c|c|}
 \hline
- & \text{直行} & \text{左转} & \text{右转} \\
+ & \text{直行} & \text{左转} & \text{右转} \
 \hline
-\text{直行} & 10.2 & 4.8 & -1.2 \\
-\text{左转} & 9.5 & 5.2 & -2.2 \\
-\text{右转} & 8.0 & 4.7 & -3.0 \\
+\text{直行} & 10.2 & 4.8 & -1.2 \
+\text{左转} & 9.5 & 5.2 & -2.2 \
+\text{右转} & 8.0 & 4.7 & -3.0 \
 \hline
 \end{array}
 $$
@@ -230,7 +230,7 @@ class QNetwork(nn.Module):
         super(QNetwork, self).__init__()
         self.fc1 = nn.Linear(input_size, hidden_size)
         self.fc2 = nn.Linear(hidden_size, output_size)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)
@@ -239,32 +239,32 @@ class QNetwork(nn.Module):
 # 定义Q-learning算法
 def q_learning(env, q_network, learning_rate, gamma, num_episodes):
     optimizer = optim.Adam(q_network.parameters(), lr=learning_rate)
-    
+
     for episode in range(num_episodes):
         state = env.reset()
         done = False
-        
+
         while not done:
             # 选择行为
             with torch.no_grad():
                 q_values = q_network(state)
                 action = torch.argmax(q_values).item()
-            
+
             # 执行行为
             next_state, reward, done, _ = env.step(action)
-            
+
             # 更新Q值
             target_q = reward + gamma * torch.max(q_network(next_state)).item()
             expected_q = q_values.clone()
             expected_q.scatter_(1, action.unsqueeze(0), target_q.unsqueeze(0))
-            
+
             loss = nn.MSELoss()(expected_q, q_values)
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-            
+
             state = next_state
-    
+
     return q_network
 
 # 训练模型

@@ -212,13 +212,13 @@ def task_scheduler(data_chunks):
 def main():
     # 生成示例数据
     data = np.random.rand(1000, 10)
-    
+
     # 数据分片
     data_chunks = data_split(data, 10)
-    
+
     # 任务调度
     results = task_scheduler(data_chunks)
-    
+
     # 输出结果
     print(results)
 

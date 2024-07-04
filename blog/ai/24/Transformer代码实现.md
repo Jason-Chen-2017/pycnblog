@@ -26,9 +26,9 @@ Transformer模型的核心在于自注意力机制（Self-Attention），它允�
 
 自注意力机制通过计算输入序列中每个元素与其他元素之间的相关性来产生加权向量，进而更新每个元素的表示。公式表示为：
 
-$$\\text{Attention}(Q, K, V) = \\text{softmax}(\\frac{QK^T}{\\sqrt{d_k}})V$$
+$$\text{Attention}(Q, K, V) = \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
 
-其中，$Q$是查询矩阵，$K$是键矩阵，$V$是值矩阵，$d_k$是键的维度，$\\text{softmax}$函数用于计算每个键的权重。
+其中，$Q$是查询矩阵，$K$是键矩阵，$V$是值矩阵，$d_k$是键的维度，$\text{softmax}$函数用于计算每个键的权重。
 
 ### 2.2 多头注意力（Multi-Head Attention）
 
@@ -50,7 +50,7 @@ Transformer模型主要包括四个关键组件：多头自注意力（Multi-Hea
 
 #### 多头自注意力（Multi-Head Attention）
 - **计算查询、键和值**：对于每个头，分别计算查询、键和值向量。
-- **能量函数**：通过计算查询和键的点积，除以根号下键的维度，再应用$\\text{softmax}$函数，得到注意力权重。
+- **能量函数**：通过计算查询和键的点积，除以根号下键的维度，再应用$\text{softmax}$函数，得到注意力权重。
 - **加权求和**：将值向量与注意力权重相乘，再求和得到最终的多头自注意力输出。
 
 #### 前馈神经网络（Feed-Forward Network）
@@ -102,13 +102,13 @@ Transformer模型因其强大的表征能力，在多个领域得到了广泛应
 
 对于多头自注意力机制，假设我们有$n$个头，每个头的输入是$q_i$、$k_i$和$v_i$，则自注意力的计算可以表示为：
 
-$$\\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V$$
+$$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
 
-其中，$Q$和$K$是查询矩阵和键矩阵，$V$是值矩阵，$d_k$是键的维度，$\\text{softmax}$函数用于计算每个键的权重。
+其中，$Q$和$K$是查询矩阵和键矩阵，$V$是值矩阵，$d_k$是键的维度，$\text{softmax}$函数用于计算每个键的权重。
 
 ### 4.2 公式推导过程
 
-推导过程涉及线性变换、能量函数计算和$\\text{softmax}$函数应用，以确保权重总和为1，并能够将查询、键和值进行有效的匹配。
+推导过程涉及线性变换、能量函数计算和$\text{softmax}$函数应用，以确保权重总和为1，并能够将查询、键和值进行有效的匹配。
 
 ### 4.3 案例分析与讲解
 
@@ -116,8 +116,8 @@ $$\\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\
 
 ### 4.4 常见问题解答
 
-- **为什么选择$\\sqrt{d_k}$？**
-  选择$\\sqrt{d_k}$是为了平衡不同头之间的能量值，避免能量值过大导致$\\text{softmax}$函数在计算中溢出，或者过小导致权重过于分散。
+- **为什么选择$\sqrt{d_k}$？**
+  选择$\sqrt{d_k}$是为了平衡不同头之间的能量值，避免能量值过大导致$\text{softmax}$函数在计算中溢出，或者过小导致权重过于分散。
 
 ## 5. 项目实践：代码实例和详细解释说明
 
@@ -143,7 +143,7 @@ class MultiHeadAttention(nn.Module):
         self.d_model = d_model
         self.n_heads = n_heads
         self.head_dim = d_model // n_heads
-        assert self.head_dim * n_heads == self.d_model, \"d_model must be divisible by n_heads\"
+        assert self.head_dim * n_heads == self.d_model, "d_model must be divisible by n_heads"
 
         self.q_linear = nn.Linear(d_model, d_model)
         self.k_linear = nn.Linear(d_model, d_model)

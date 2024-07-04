@@ -285,4 +285,4 @@ The quick brown fox jumps over the lazy fox.
 
 答：可以使用 BLEU、ROUGE 等指标评估 GPT 模型的生成质量。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

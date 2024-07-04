@@ -229,9 +229,9 @@ public class CalculatorTest {
 ```
 [INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ apidemo
 [INFO] Results:
-[INFO] 
+[INFO]
 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
-[INFO] 
+[INFO]
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------

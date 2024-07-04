@@ -37,7 +37,7 @@
 1. 背景介绍
 2. 核心概念与联系
 3. 核心算法原理与具体操作步骤
-4. 数学模型和公式详细讲解与案例分析  
+4. 数学模型和公式详细讲解与案例分析
 5. 项目实践:代码实例和详细解释说明
 6. 实际应用场景
 7. 工具和资源推荐
@@ -186,7 +186,7 @@ graph TD
 MDP模型是强化学习算法的理论基础,用于描述智能体与环境的交互过程。一个MDP可以用一个四元组 $(S, A, P, R)$ 来表示:
 
 - $S$ 是状态空间集合
-- $A$ 是行为空间集合  
+- $A$ 是行为空间集合
 - $P(s'|s,a)$ 是状态转移概率,表示在状态 $s$ 下执行行为 $a$ 后,转移到状态 $s'$ 的概率
 - $R(s,a)$ 是在状态 $s$ 执行行为 $a$ 所获得的即时奖励
 
@@ -206,7 +206,7 @@ $$
 
 $$
 \begin{aligned}
-\boldsymbol{x} &= \boldsymbol{f}(\boldsymbol{q}) \\
+\boldsymbol{x} &= \boldsymbol{f}(\boldsymbol{q}) \
 \dot{\boldsymbol{x}} &= \boldsymbol{J}(\boldsymbol{q})\dot{\boldsymbol{q}}
 \end{aligned}
 $$

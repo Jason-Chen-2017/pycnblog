@@ -95,14 +95,14 @@
 
 简版GPT基于以下数学模型构建：
 
-$$ P(w_{i}|w_{i-1}, ..., w_{1}) = \\frac{1}{Z}\\exp\\left(\\sum_{j=1}^{k} \\operatorname{softmax}(W_{\\text{out}} \\cdot \\text{MLP}(W_{\\text{ff}} \\cdot \\text{self\\_attention}(W_{\\text{in}} \\cdot w_{i-1}, ..., w_{1}))\\right) $$
+$$ P(w_{i}|w_{i-1}, ..., w_{1}) = \frac{1}{Z}\exp\left(\sum_{j=1}^{k} \operatorname{softmax}(W_{\text{out}} \cdot \text{MLP}(W_{\text{ff}} \cdot \text{self\_attention}(W_{\text{in}} \cdot w_{i-1}, ..., w_{1}))\right) $$
 
 其中，
-- \\(w_i\\) 是第 \\(i\\) 个令牌，
-- \\(W_{\\text{in}}\\)、\\(W_{\\text{ff}}\\)、\\(W_{\\text{out}}\\) 是权重矩阵，
-- \\(\\text{self\\_attention}\\) 是自我注意力层，
-- \\(\\text{MLP}\\) 是多层感知机，
-- \\(Z\\) 是规范化常数。
+- \(w_i\) 是第 \(i\) 个令牌，
+- \(W_{\text{in}}\)、\(W_{\text{ff}}\)、\(W_{\text{out}}\) 是权重矩阵，
+- \(\text{self\_attention}\) 是自我注意力层，
+- \(\text{MLP}\) 是多层感知机，
+- \(Z\) 是规范化常数。
 
 ### 4.2 公式推导过程
 
@@ -119,13 +119,13 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # 初始化模型和分词器
-model_name = \"distilgpt2\"
+model_name = "distilgpt2"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
 # 输入文本序列
-input_text = \"The quick brown fox jumps over the lazy dog.\"
-input_ids = tokenizer.encode(input_text, return_tensors=\"pt\")
+input_text = "The quick brown fox jumps over the lazy dog."
+input_ids = tokenizer.encode(input_text, return_tensors="pt")
 
 # 进行预测
 output = model(input_ids)
@@ -135,7 +135,7 @@ logits = output.logits
 predicted_ids = torch.argmax(logits, dim=-1)
 decoded_text = tokenizer.decode(predicted_ids[0])
 
-print(\"Generated Text:\", decoded_text)
+print("Generated Text:", decoded_text)
 ```
 
 ### 4.4 常见问题解答
@@ -169,13 +169,13 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # 初始化模型和分词器
-model_name = \"distilgpt2\"
+model_name = "distilgpt2"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
 # 输入文本序列
-input_text = \"The quick brown fox jumps over the lazy dog.\"
-input_ids = tokenizer.encode(input_text, return_tensors=\"pt\")
+input_text = "The quick brown fox jumps over the lazy dog."
+input_ids = tokenizer.encode(input_text, return_tensors="pt")
 
 # 进行预测
 output = model(input_ids)
@@ -185,7 +185,7 @@ logits = output.logits
 predicted_ids = torch.argmax(logits, dim=-1)
 decoded_text = tokenizer.decode(predicted_ids[0])
 
-print(\"Generated Text:\", decoded_text)
+print("Generated Text:", decoded_text)
 ```
 
 ### 5.4 运行结果展示

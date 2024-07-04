@@ -122,7 +122,7 @@ $$
 2. **量子逻辑门**：实现量子运算的数学模型。例如，Hadamard门（Hadamard Gate）的矩阵表示为：
 
 $$
-H = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix}
+H = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \ 1 & -1 \end{bmatrix}
 $$
 
 3. **量子优化算法**：例如，量子梯度下降算法（Quantum Gradient Descent）的数学模型如下：

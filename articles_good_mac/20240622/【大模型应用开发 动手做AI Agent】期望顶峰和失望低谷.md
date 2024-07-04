@@ -109,12 +109,10 @@ $$
 梯度下降算法用于最小化损失函数：
 
 $$
-\\theta := \\theta - \\alpha \\cdot \
-abla J(\\theta)
+\\theta := \\theta - \\alpha \\cdot \nabla J(\\theta)
 $$
 
-其中，$\\theta$是参数向量，$\\alpha$是学习率，$\
-abla J(\\theta)$是损失函数关于参数的梯度。
+其中，$\\theta$是参数向量，$\\alpha$是学习率，$\nabla J(\\theta)$是损失函数关于参数的梯度。
 
 ### 4.3 案例分析与讲解
 

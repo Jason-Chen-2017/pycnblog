@@ -20,10 +20,10 @@ SegNet采用了编码-解码(Encoder-Decoder)的网络结构。编码阶段通�
 
 #### 2.1.1 编码器
 - 作用：提取图像的高层语义特征
-- 结构：由卷积层和下采样层交替堆叠而成  
+- 结构：由卷积层和下采样层交替堆叠而成
 - 特点：特征图尺寸逐层降低,感受野逐层扩大
 
-#### 2.1.2 解码器  
+#### 2.1.2 解码器
 - 作用：恢复特征图的空间分辨率
 - 结构：由上采样层和卷积层交替堆叠而成
 - 特点：特征图尺寸逐层升高,与编码器的结构对称
@@ -40,7 +40,7 @@ SegNet在编码阶段的下采样层中引入了Pooling Indices的概念。与�
 
 ### 3.1 编码器
 1. 以VGG16的13个卷积层作为骨干网络,逐层提取特征
-2. 去除VGG16的全连接层,仅保留5个卷积块  
+2. 去除VGG16的全连接层,仅保留5个卷积块
 3. 每个卷积块由2~3个卷积层和1个下采样层组成
 4. 卷积层采用3x3的卷积核,激活函数为ReLU
 5. 下采样层采用2x2的Max Pooling,步长为2
@@ -49,7 +49,7 @@ SegNet在编码阶段的下采样层中引入了Pooling Indices的概念。与�
 
 ### 3.2 解码器
 1. 解码器与编码器的结构完全对称
-2. 每个解码块由1个上采样层和2~3个卷积层组成  
+2. 每个解码块由1个上采样层和2~3个卷积层组成
 3. 上采样层利用对应下采样层的Pooling Indices进行非线性上采样
 4. 卷积层采用3x3的卷积核,激活函数为ReLU
 5. 卷积块的输出依次恢复为1/16、1/8、1/4、1/2、1的输入尺寸
@@ -57,7 +57,7 @@ SegNet在编码阶段的下采样层中引入了Pooling Indices的概念。与�
 
 ### 3.3 损失函数与优化策略
 1. 采用交叉熵(Cross Entropy)作为损失函数,度量预测值与真实值的差异
-2. 使用SGD优化器对模型权重进行更新,学习率初始值为0.001  
+2. 使用SGD优化器对模型权重进行更新,学习率初始值为0.001
 3. 采用Step decay策略动态调整学习率,每次降低幅度为0.1
 4. 设置Momentum为0.9,增强优化方向的稳定性
 5. 设置Weight decay为0.0005,对权重施加L2正则化,降低过拟合风险
@@ -84,7 +84,7 @@ $$P^l_{i,j} = \mathop{\arg\max}_{0 \leq m,n < k} X^{l-1}_{ski+m,skj+n}$$
 
 在解码阶段,SegNet利用Pooling Indices对下采样的特征图进行非线性上采样。设上采样后的特征图为$Y^l$,非线性上采样操作可以表示为:
 
-$$Y^l_{si+m,sj+n} = \begin{cases} 
+$$Y^l_{si+m,sj+n} = \begin{cases}
 X^l_{i,j}, & \text{if } (m,n)=P^l_{i,j} \\
 0, & \text{otherwise}
 \end{cases}$$
@@ -102,7 +102,7 @@ import torch.nn as nn
 class SegNet(nn.Module):
     def __init__(self, num_classes):
         super(SegNet, self).__init__()
-        
+
         # 编码器
         self.encoder = nn.Sequential(
             self._make_enc_block(3, 64),
@@ -111,8 +111,8 @@ class SegNet(nn.Module):
             self._make_enc_block(256, 512),
             self._make_enc_block(512, 512)
         )
-        
-        # 解码器  
+
+        # 解码器
         self.decoder = nn.Sequential(
             self._make_dec_block(512, 512),
             self._make_dec_block(512, 256),
@@ -120,7 +120,7 @@ class SegNet(nn.Module):
             self._make_dec_block(128, 64),
             self._make_dec_block(64, num_classes)
         )
-        
+
     def _make_enc_block(self, in_channels, out_channels):
         return nn.Sequential(
             nn.Conv2d(in_channels, out_channels, 3, padding=1),
@@ -131,31 +131,31 @@ class SegNet(nn.Module):
             nn.ReLU(inplace=True),
             nn.MaxPool2d(2, 2, return_indices=True)
         )
-    
+
     def _make_dec_block(self, in_channels, out_channels):
         return nn.Sequential(
             nn.MaxUnpool2d(2, 2),
-            nn.Conv2d(in_channels, out_channels, 3, padding=1),   
+            nn.Conv2d(in_channels, out_channels, 3, padding=1),
             nn.BatchNorm2d(out_channels),
             nn.ReLU(inplace=True),
             nn.Conv2d(out_channels, out_channels, 3, padding=1),
             nn.BatchNorm2d(out_channels),
             nn.ReLU(inplace=True)
         )
-        
+
     def forward(self, x):
         indices_list = []
-        
+
         # 编码
         for enc_block in self.encoder:
             x, indices = enc_block(x)
             indices_list.append(indices)
-        
-        # 解码  
+
+        # 解码
         for i, dec_block in enumerate(self.decoder):
             x = dec_block[0](x, indices_list[-i-1])
             x = dec_block[1:](x)
-        
+
         return x
 ```
 
@@ -165,7 +165,7 @@ class SegNet(nn.Module):
 
 2. `_make_enc_block`方法定义了编码器卷积块的结构。每个卷积块由两个3x3卷积层、批归一化层和ReLU激活函数组成,最后通过步长为2的Max Pooling进行下采样。其中`return_indices=True`表示记录Pooling Indices。
 
-3. `_make_dec_block`方法定义了解码器卷积块的结构。每个卷积块首先利用`MaxUnpool2d`进行非线性上采样,随后通过两个3x3卷积层、批归一化层和ReLU激活函数恢复特征图。 
+3. `_make_dec_block`方法定义了解码器卷积块的结构。每个卷积块首先利用`MaxUnpool2d`进行非线性上采样,随后通过两个3x3卷积层、批归一化层和ReLU激活函数恢复特征图。
 
 4. `forward`方法定义了SegNet的前向传播过程。在编码阶段,依次通过编码器的5个卷积块,并记录每个下采样层的Pooling Indices。在解码阶段,利用记录的Pooling Indices对特征图进行非线性上采样,并通过解码器的5个卷积块逐步恢复空间分辨率。最后得到与输入尺寸一致的分割预测图。
 

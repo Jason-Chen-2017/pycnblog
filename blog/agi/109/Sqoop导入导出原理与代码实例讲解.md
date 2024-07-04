@@ -1,7 +1,7 @@
 
 # Sqoop导入导出原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -173,7 +173,7 @@ $$
 
 $$
 S'
-= \begin{cases} 
+= \begin{cases}
 S & \text{当 } S' \leq S \\
 \max\{S, \lceil \frac{S}{R} \rceil \} & \text{当 } S' > S
 \end{cases}

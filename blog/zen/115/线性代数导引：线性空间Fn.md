@@ -98,7 +98,7 @@ $$AA⁻¹ = A⁻¹A = I$$
 
 **问题:**  假设有一个物体在三维空间中进行旋转，如何计算旋转后的物体位置？
 
-**解决方案:**  
+**解决方案:**
 
 1. 将物体的位置向量表示为一个三维向量。
 2. 将旋转操作表示为一个旋转矩阵。
@@ -222,5 +222,5 @@ print(C)
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

@@ -152,9 +152,9 @@ YARN的资源调度和容器启动算法广泛应用于以下领域:
 
 $$
 \begin{aligned}
-\max \quad & \sum_{i=1}^n \sum_{j=1}^m x_{ij} \\
-\text{s.t.} \quad & \sum_{j=1}^m r_j x_{ij} \leq R_i, \quad \forall i \in \{1, \ldots, n\} \\
-& \sum_{i=1}^n x_{ij} = 1, \quad \forall j \in \{1, \ldots, m\} \\
+\max \quad & \sum_{i=1}^n \sum_{j=1}^m x_{ij} \
+\text{s.t.} \quad & \sum_{j=1}^m r_j x_{ij} \leq R_i, \quad \forall i \in \{1, \ldots, n\} \
+& \sum_{i=1}^n x_{ij} = 1, \quad \forall j \in \{1, \ldots, m\} \
 & x_{ij} \in \{0, 1\}, \quad \forall i \in \{1, \ldots, n\}, j \in \{1, \ldots, m\}
 \end{aligned}
 $$
@@ -194,7 +194,7 @@ $$
 假设我们有一个3节点的YARN集群,每个节点拥有8个CPU核和16GB内存。现在有4个应用程序需要运行,它们的资源需求如下:
 
 - 应用程序1: 3 CPU核,6GB内存
-- 应用程序2: 2 CPU核,4GB内存  
+- 应用程序2: 2 CPU核,4GB内存
 - 应用程序3: 4 CPU核,8GB内存
 - 应用程序4: 5 CPU核,10GB内存
 

@@ -9,7 +9,7 @@
 ### 1.2  研究现状
 目前,AI可靠性已成为学术界和工业界的研究热点。国内外众多高校、研究机构和企业纷纷开展AI可靠性方面的研究,力图从不同角度提升AI系统的可靠性。然而,由于AI可靠性涉及计算机科学、数学、心理学等多个学科,目前的研究大多局限在单一学科内,缺乏系统性和综合性。因此,亟需开展跨学科的AI可靠性研究,实现不同学科的交叉融合。
 
-### 1.3  研究意义 
+### 1.3  研究意义
 开展AI可靠性的跨学科研究具有重要意义。首先,它有助于全面审视AI可靠性问题,揭示其内在机理和影响因素,为构建可靠的AI系统奠定理论基础。其次,跨学科研究可以整合不同学科的理论、方法和技术,形成协同创新,催生新的解决方案。最后,提升AI可靠性是实现AI规模化应用和可持续发展的必由之路,对保障国家安全、促进经济发展、造福人类社会具有深远影响。
 
 ### 1.4  本文结构
@@ -20,7 +20,7 @@ AI可靠性是一个涵盖安全性、可解释性、鲁棒性等多个维度的
 
 ```mermaid
 graph TD
-A[AI可靠性] --> B[安全性] 
+A[AI可靠性] --> B[安全性]
 A --> C[可解释性]
 A --> D[鲁棒性]
 B --> E[故障预防]
@@ -43,7 +43,7 @@ D --> J[对抗防御]
 
 基于测试的动态验证一般包括以下步骤：
 1. 测试样例生成：采样真实数据或合成对抗样本,构建测试数据集。
-2. 测试执行：将测试样例输入AI系统,记录其输出结果。 
+2. 测试执行：将测试样例输入AI系统,记录其输出结果。
 3. 覆盖率分析：评估测试样例对AI系统的覆盖全面性,生成覆盖率报告。
 4. 结果判定：分析测试执行结果,判断AI系统是否满足可靠性要求。
 
@@ -58,7 +58,7 @@ AI可靠性算法在智能金融、自动驾驶、智慧医疗、智能制造等
 为刻画AI系统的可靠性,我们引入以下数学符号：
 - $S$: AI系统
 - $X$: 输入空间
-- $Y$: 输出空间 
+- $Y$: 输出空间
 - $f: X \rightarrow Y$: AI系统的映射函数
 - $P_X$: 输入空间的概率分布
 - $P_Y$: 输出空间的概率分布
@@ -113,7 +113,7 @@ class AIModel(torch.nn.Module):
         super(AIModel, self).__init__()
         self.fc1 = torch.nn.Linear(10, 20)
         self.fc2 = torch.nn.Linear(20, 1)
-        
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)
@@ -136,7 +136,7 @@ def evaluate_reliability(model, data, threshold):
     return reliability, lower_bound
 
 # 生成测试数据
-test_data = torch.randn(10000, 10)  
+test_data = torch.randn(10000, 10)
 
 # 加载训练好的AI模型
 model = AIModel()
@@ -150,7 +150,7 @@ print(f'Lower Bound (99% confidence): {lower_bound:.4f}')
 
 # 可视化结果
 plt.figure(figsize=(6,4))
-plt.hist(model(test_data).detach().numpy(), bins=50, density=True, 
+plt.hist(model(test_data).detach().numpy(), bins=50, density=True,
          edgecolor='black', alpha=0.7)
 plt.axvspan(-1, 1, color='green', alpha=0.3, label='Safe Region')
 plt.xlabel('Model Output')

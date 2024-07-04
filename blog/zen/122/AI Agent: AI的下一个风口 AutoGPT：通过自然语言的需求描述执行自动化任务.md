@@ -336,4 +336,4 @@ AutoGPT作为一种基于大型语言模型的AI Agent，能够通过自然语�
 
 **A：** AutoGPT的未来发展方向是更加智能、更加安全、更加人性化。它将成为我们生活和工作中不可或缺的一部分，帮助我们解决各种问题，创造更美好的未来。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

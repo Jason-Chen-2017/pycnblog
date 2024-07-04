@@ -68,7 +68,7 @@
 
 生成式AI算法各有优缺点：
 
-* **GAN:** 
+* **GAN:**
     * **优点:** 能够生成高质量的样本，具有较强的生成能力。
     * **缺点:** 训练过程不稳定，容易出现模式崩溃问题。
 * **VAE:**
@@ -95,7 +95,7 @@
 
 $$
 \begin{aligned}
-& G(z) \rightarrow x \\
+& G(z) \rightarrow x \
 & D(x) \rightarrow p
 \end{aligned}
 $$
@@ -295,4 +295,4 @@ def train_step(images):
 * **生成式AI模型如何进行部署？** 可以使用云平台或本地服务器来部署生成式AI模型。
 * **生成式AI模型如何进行优化？** 可以尝试使用不同的训练技巧，例如使用更稳定的优化器、更小的学习率、更合理的损失函数等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

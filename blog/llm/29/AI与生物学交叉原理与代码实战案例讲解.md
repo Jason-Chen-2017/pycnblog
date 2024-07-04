@@ -52,9 +52,9 @@ AI在生物学的应用覆盖了从基因组分析、蛋白质结构预测、药
 
 在蛋白质结构预测中，常用到的数学模型之一是能量最小化模型。该模型试图找到一个能量最低的结构，以模拟自然界中的蛋白质折叠过程。能量函数通常包括范德华力、氢键、疏水性效应等项。
 
-$$ E(\\mathbf{x}) = \\sum_{i<j} V_{ij}(\\mathbf{x}_i,\\mathbf{x}_j) + \\sum_i W_i(\\mathbf{x}_i) $$
+$$ E(\mathbf{x}) = \sum_{i<j} V_{ij}(\mathbf{x}_i,\mathbf{x}_j) + \sum_i W_i(\mathbf{x}_i) $$
 
-其中，$\\mathbf{x}_i$和$\\mathbf{x}_j$分别代表第$i$个和第$j$个原子的位置，$V_{ij}$表示两个原子之间的相互作用势能，$W_i$表示第$i$个原子的局部能量贡献。
+其中，$\mathbf{x}_i$和$\mathbf{x}_j$分别代表第$i$个和第$j$个原子的位置，$V_{ij}$表示两个原子之间的相互作用势能，$W_i$表示第$i$个原子的局部能量贡献。
 
 ### 4.2 公式推导过程
 
@@ -95,23 +95,23 @@ def preprocess_data(sequence, labels):
     # 序列预处理
     sequence = Bio.Seq(sequence)
     protein_features = Bio.PairwiseAlignments(seq1=sequence, seq2=sequence)
-    
+
     # 特征提取
     features = []
     for alignment in protein_features:
         features.append(alignment.score)
-    
+
     # 标签预处理
     labels = np.array(labels).reshape(-1, 1)
-    
+
     # 数据分割
     X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.2, random_state=42)
-    
+
     # 数据标准化
     scaler = StandardScaler()
     X_train = scaler.fit_transform(X_train)
     X_test = scaler.transform(X_test)
-    
+
     return X_train, X_test, y_train, y_test
 
 # 创建模型
@@ -141,7 +141,7 @@ def evaluate(model, X_test, y_test):
 def main():
     sequences = ['...']  # 输入序列列表
     labels = [1.0]       # 输入标签列表
-    
+
     X_train, X_test, y_train, y_test = preprocess_data(sequences, labels)
     model = create_model(X_train.shape[1:])
     train(model, X_train, y_train)

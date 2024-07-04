@@ -99,7 +99,7 @@ tflite_model = converter.convert()
 # 保存量化模型
 with open('model.tflite', 'wb') as f:
     f.write(tflite_model)
-``` 
+```
 
 ### 5.2 使用 Hugging Face Transformers 进行知识蒸馏
 
@@ -173,4 +173,4 @@ trainer.train()
 
 *   **数据加密**：对用户数据进行加密存储和传输。
 *   **差分隐私**：在模型训练过程中添加噪声，以保护用户隐私。
-*   **联邦学习**：在多个设备上分布式训练模型，避免将用户数据集中存储。 
+*   **联邦学习**：在多个设备上分布式训练模型，避免将用户数据集中存储。

@@ -42,7 +42,7 @@ graph TD
     C --> C2[查询重写]
     C --> C3[连接重排序]
     D --> D1[Hive连接器]
-    D --> D2[Kafka连接器] 
+    D --> D2[Kafka连接器]
     D --> D3[MySQL连接器]
     E --> E1[并行管道]
     E --> E2[数据分区]
@@ -222,9 +222,9 @@ $$
 
   $$
   \begin{aligned}
-  C_{cpu} &= 10^9 \cdot \log 10^6 + 10^9 \cdot 10^8 / 10^6 \approx 2.8 \times 10^{10} \\
-  C_{io} &= 1TB + 100GB \approx 1.1TB \\
-  C_{net} &= \frac{10^9 + 10^8}{n} \\
+  C_{cpu} &= 10^9 \cdot \log 10^6 + 10^9 \cdot 10^8 / 10^6 \approx 2.8 \times 10^{10} \
+  C_{io} &= 1TB + 100GB \approx 1.1TB \
+  C_{net} &= \frac{10^9 + 10^8}{n} \
   C_1 &= \alpha_1 \left( \frac{2.8 \times 10^{10}}{P_{cpu}} \right) + \alpha_2 \left( \frac{1.1TB}{P_{io}} \right) + \alpha_3 \left( \frac{1.1 \times 10^9}{n \cdot P_{net}} \right)
   \end{aligned}
   $$

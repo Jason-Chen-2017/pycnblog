@@ -6,7 +6,7 @@
 ### 1.1 问题的由来
 在现实世界中,数据分布往往是动态变化的。这种现象被称为"概念漂移"(Concept Drift),即数据的统计特性随时间而改变。传统的机器学习模型通常假设训练数据和测试数据来自相同的分布,但在概念漂移的情况下,这一假设不再成立。因此,如何设计能够适应概念漂移的机器学习算法,成为了一个亟待解决的问题。
 
-### 1.2 研究现状 
+### 1.2 研究现状
 目前,针对概念漂移问题的研究主要集中在以下几个方面:
 1. 漂移检测:及时发现数据分布的变化,为模型更新提供依据。常用方法包括统计检验、数据分布距离度量等。
 2. 模型更新:根据检测到的漂移情况,调整模型参数或结构,使其适应新的数据分布。代表性方法有增量学习、集成学习等。
@@ -157,22 +157,22 @@ class DDM(BaseEstimator, ClassifierMixin):
 
     def predict(self, X):
         return self.base_estimator.predict(X)
-    
+
     def update(self, X, y):
         y_pred = self.predict(X)
         self.t += 1
         p = np.mean(y_pred != y)
         s = np.sqrt(p * (1 - p) / self.t)
-        
+
         if p + s < self.p_min + self.s_min:
             self.p_min = p
             self.s_min = s
-            
+
         Z = (p - self.p_0) / np.sqrt(self.s_0**2 + s**2)
-        
+
         if Z > self.alpha_w and not self.drift_detected:
             self.drift_detected = True
-            
+
         if Z > self.alpha_d:
             self.base_estimator.fit(X, y)
             self.p_0 = self.p_min
@@ -180,7 +180,7 @@ class DDM(BaseEstimator, ClassifierMixin):
             self.p_min = float('inf')
             self.s_min = float('inf')
             self.drift_detected = False
-            
+
         return self
 ```
 
@@ -215,10 +215,10 @@ drift_points = []
 for i in range(len(X)):
     y_pred.append(ddm.predict([X[i]])[0])
     ddm.update([X[i]], [y[i]])
-    
+
     if ddm.drift_detected:
         drift_points.append(i)
-        
+
 # 绘制错误率和漂移点
 fig, ax = plt.subplots(figsize=(10, 4))
 ax.plot(range(len(X)), (y_pred != y), label='Error')

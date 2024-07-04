@@ -119,7 +119,7 @@ class EpsilonGreedy:
             self.q_table[state] = {a: 0 for a in self.actions}
         if next_state not in self.q_table:
             self.q_table[next_state] = {a: 0 for a in self.actions}
-        
+
         max_q_next = max(self.q_table[next_state].values())
         self.q_table[state][action] += alpha * (reward + gamma * max_q_next - self.q_table[state][action])
 

@@ -113,7 +113,7 @@ GP 回归的预测公式为：
 
 $$
 \begin{aligned}
-\hat{f}(x_*) &= m(x_*) + k(x_*, X)(K + \sigma_n^2I)^{-1}(y - m(X)) \\
+\hat{f}(x_*) &= m(x_*) + k(x_*, X)(K + \sigma_n^2I)^{-1}(y - m(X)) \
 \hat{\sigma}^2(x_*) &= k(x_*, x_*) - k(x_*, X)(K + \sigma_n^2I)^{-1}k(X, x_*)
 \end{aligned}
 $$

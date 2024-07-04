@@ -115,9 +115,9 @@ Transformer模型的核心数学模型包括自注意力机制、位置编码和
 自注意力机制的计算公式如下：
 
 $$
-Q = W_QKX \\
-K = W_KX \\
-V = W_VX \\
+Q = W_QKX \
+K = W_KX \
+V = W_VX \
 Attention(Q, K, V) = \frac{(QK)^T}{\sqrt{d_k}} \times V
 $$
 
@@ -128,7 +128,7 @@ $$
 位置编码通常使用正弦和余弦函数生成，公式如下：
 
 $$
-PE_{(pos, 2i)} = sin(pos / 10000^{2i/d_{\text{model}}}) \\
+PE_{(pos, 2i)} = sin(pos / 10000^{2i/d_{\text{model}}}) \
 PE_{(pos, 2i+1)} = cos(pos / 10000^{2i/d_{\text{model}}})
 $$
 

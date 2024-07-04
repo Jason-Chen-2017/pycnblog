@@ -23,7 +23,7 @@ AIGC技术的研究和应用具有重要意义。首先，AIGC可以极大地提
 本文将从以下几个方面对AIGC技术进行全面介绍和探讨：
 
 1. 背景介绍：介绍AIGC技术的研究背景、现状和意义。
-2. 核心概念与联系：阐述AIGC技术的核心概念及其之间的联系。 
+2. 核心概念与联系：阐述AIGC技术的核心概念及其之间的联系。
 3. 核心算法原理与操作步骤：详细介绍AIGC的关键算法原理和具体实现步骤。
 4. 数学模型和公式讲解：深入分析AIGC所涉及的数学模型和公式，并给出详细的推导过程和案例分析。
 5. 项目实践：提供AIGC的代码实例，并对其进行详细的解释和分析。
@@ -189,7 +189,7 @@ class Generator(nn.Module):
         self.fc2 = nn.Linear(256, 512)
         self.fc3 = nn.Linear(512, 1024)
         self.fc4 = nn.Linear(1024, 784)
-        
+
     def forward(self, z):
         x = nn.functional.relu(self.fc1(z))
         x = nn.functional.relu(self.fc2(x))
@@ -197,6 +197,5 @@ class Generator(nn.Module):
         x = torch.tanh(self.fc4(x))
         return x.view(-1, 1, 28, 28)
 
-# 定义判别器 
+# 定义判别器
 class Discriminator(nn.Module):
-    

@@ -8,7 +8,7 @@
 
 在大数据时代，海量数据的存储和处理成为了一个巨大的挑战。Apache Pig作为一种高级数据流语言,旨在简化MapReduce编程,提高开发效率。然而,随着数据量的不断增长和计算需求的复杂化,Pig作业的执行效率也成为了一个瓶颈。因此,优化Pig作业的执行效率变得越来越重要。
 
-### 1.2 研究现状 
+### 1.2 研究现状
 
 目前,Pig优化策略主要集中在以下几个方面:
 
@@ -29,7 +29,7 @@
 
 因此,研究Pig优化策略具有重要的理论意义和实际应用价值。
 
-### 1.4 本文结构  
+### 1.4 本文结构
 
 本文将从以下几个方面对Pig优化策略进行介绍:
 
@@ -156,10 +156,10 @@ $$
 这些开销可以通过一些公式进行估算,例如:
 
 $$
-CPU(P) = \sum\limits_{i=1}^{n} CPU_i(P) \\
-IO(P) = \sum\limits_{i=1}^{n} IO_i(P) \\
-MEMORY(P) = \max\limits_{i=1}^{n} MEMORY_i(P) \\
-NETWORK(P) = \sum\limits_{i=1}^{n} NETWORK_i(P) \\
+CPU(P) = \sum\limits_{i=1}^{n} CPU_i(P) \
+IO(P) = \sum\limits_{i=1}^{n} IO_i(P) \
+MEMORY(P) = \max\limits_{i=1}^{n} MEMORY_i(P) \
+NETWORK(P) = \sum\limits_{i=1}^{n} NETWORK_i(P) \
 DATA(P) = \prod\limits_{i=1}^{n} DATA_i(P)
 $$
 
@@ -199,9 +199,9 @@ $$
 
 $$
 \begin{aligned}
-Cost_1 &= IO(R) + CPU(\sigma_{C>10}) + IO(\sigma_{C>10}(R)) \\
-       &+ CPU(\pi_{A,B}) + IO(\pi_{A,B}(\sigma_{C>10}(R))) \\
-Cost_2 &= IO(R) + CPU(\pi_{A,B,C}) + IO(\pi_{A,B,C}(R)) \\
+Cost_1 &= IO(R) + CPU(\sigma_{C>10}) + IO(\sigma_{C>10}(R)) \
+       &+ CPU(\pi_{A,B}) + IO(\pi_{A,B}(\sigma_{C>10}(R))) \
+Cost_2 &= IO(R) + CPU(\pi_{A,B,C}) + IO(\pi_{A,B,C}(R)) \
        &+ CPU(\sigma_{C>10}) + IO(\sigma_{C>10}(\pi_{A,B,C}(R)))
 \end{aligned}
 $$

@@ -132,10 +132,10 @@ $$
 策略函数为：
 
 $$
-\pi(a|s) = \begin{cases} 
+\pi(a|s) = \begin{cases}
 0.5 & \text{if } s = 0 \\
 1 & \text{if } s = 1 \\
-0.5 & \text{if } s = 2 
+0.5 & \text{if } s = 2
 \end{cases}
 $$
 
@@ -214,7 +214,7 @@ class PolicyNetwork(nn.Module):
         super(PolicyNetwork, self).__init__()
         self.fc1 = nn.Linear(input_dim, 32)
         self.fc2 = nn.Linear(32, output_dim)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = torch.softmax(self.fc2(x), dim=1)

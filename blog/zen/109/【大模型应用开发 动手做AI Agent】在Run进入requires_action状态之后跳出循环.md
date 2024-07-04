@@ -102,11 +102,11 @@ graph TD
 那么，Run的状态转移可以用以下公式表示：
 
 $$
-s(t+1) = 
+s(t+1) =
 \begin{cases}
-0, & s(t)=0 \\
-0, & s(t)=1 \text{ and } a(t)=1 \\
-0, & s(t)=1 \text{ and } a(t)=0 \text{ and } t-t_0 \geq T \\
+0, & s(t)=0 \
+0, & s(t)=1 \text{ and } a(t)=1 \
+0, & s(t)=1 \text{ and } a(t)=0 \text{ and } t-t_0 \geq T \
 1, & s(t)=1 \text{ and } a(t)=0 \text{ and } t-t_0 < T
 \end{cases}
 $$
@@ -162,27 +162,27 @@ import timeout_decorator
 class Agent:
     def __init__(self):
         self.status = 0  # 0: normal, 1: requires_action
-        
+
     def run(self):
         while True:
             if self.status == 0:
                 self.execute_normal_task()
             else:
                 self.execute_action_task()
-            
+
             if self.is_finished():
                 break
-            
+
     def execute_normal_task(self):
         print("Executing normal task...")
         time.sleep(1)
         self.status = 1  # 进入requires_action状态
-        
+
     @timeout_decorator.timeout(5, use_signals=False)
     def wait_for_user_action(self):
         print("Waiting for user action...")
         time.sleep(10)  # 模拟等待用户响应
-        
+
     def execute_action_task(self):
         try:
             self.wait_for_user_action()
@@ -192,10 +192,10 @@ class Agent:
             print("Timeout, executing default action...")
             time.sleep(1)
         self.status = 0  # 退出requires_action状态
-        
+
     def is_finished(self):
         return True
-        
+
 agent = Agent()
 agent.run()
 ```

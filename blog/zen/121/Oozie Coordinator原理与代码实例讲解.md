@@ -109,7 +109,7 @@ Oozie Coordinator的数学模型可以通过以下公式进行推导：
 
 $$
 \begin{align*}
-S_{next} &= T(S_{current}, event) \\
+S_{next} &= T(S_{current}, event) \
 S_{current} &= S_{next}
 \end{align*}
 $$

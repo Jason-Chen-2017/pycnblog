@@ -174,7 +174,7 @@ def csv_to_json(csv_file):
     with open(csv_file, 'r') as file:
         reader = csv.DictReader(file)
         data = [row for row in reader]
-    
+
     with open('data.json', 'w') as file:
         json.dump(data, file)
 

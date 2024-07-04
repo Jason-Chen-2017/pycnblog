@@ -1,6 +1,6 @@
 # 一切皆是映射：AI人工智能原理与应用实战简介
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -351,4 +351,4 @@ pickle.dump(model, open('house_price_model.pkl', 'wb'))
 
 需要制定人工智能伦理规范，确保人工智能技术的健康发展，避免其被滥用或误用。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

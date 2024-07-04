@@ -117,7 +117,7 @@ AI Agent的数学模型主要包括以下部分：
 设输入数据为 $X \in \mathbb{R}^{m \times n}$，其中 $m$ 为样本数量，$n$ 为特征维度。设神经网络包含 $L$ 个层，第 $l$ 层的输入为 $X^{(l)} \in \mathbb{R}^{m \times n}$，输出为 $Y^{(l)} \in \mathbb{R}^{m \times n}$。则神经网络的特征提取公式如下：
 
 $$
-Y^{(l)} = \sigma(W^{(l)} \cdot X^{(l)}) 
+Y^{(l)} = \sigma(W^{(l)} \cdot X^{(l)})
 $$
 
 其中，$\sigma$ 为激活函数，$W^{(l)}$ 为第 $l$ 层的权重矩阵。

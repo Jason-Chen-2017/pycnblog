@@ -150,7 +150,7 @@ $$
 
 $$
 \begin{aligned}
-\mathcal{L}_{\text{MLM}} &= -\frac{1}{1} \left[ \log 0.8 - \log (0.8 + 99 \times 0.01) \right] \\
+\mathcal{L}_{\text{MLM}} &= -\frac{1}{1} \left[ \log 0.8 - \log (0.8 + 99 \times 0.01) \right] \
 &\approx 0.223.
 \end{aligned}
 $$
@@ -347,4 +347,4 @@ A: 选择合适的预训练模型需要考虑以下因素：
 * **数据集规模：** 数据集规模越大，可以选择更大规模的预训练模型。
 * **计算资源：** 预训练模型的规模越大，需要的计算资源越多。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

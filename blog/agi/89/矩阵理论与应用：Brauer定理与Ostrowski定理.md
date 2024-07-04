@@ -1,7 +1,7 @@
 
 # 矩阵理论与应用：Brauer定理与Ostrowski定理
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 > 关键词：矩阵理论，Brauer定理，Ostrowski定理，线性代数，数值分析，应用数学
 
@@ -175,15 +175,15 @@ $$
 
 #### Brauer定理案例
 
-设 $A = \begin{bmatrix} 2 & 1 \\ -1 & 2 \end{bmatrix}$，则 $A$ 的特征值和特征向量分别为 $r_1 = 3$，$v_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$ 和 $r_2 = 1$，$v_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}$。根据Brauer定理，有：
+设 $A = \begin{bmatrix} 2 & 1 \ -1 & 2 \end{bmatrix}$，则 $A$ 的特征值和特征向量分别为 $r_1 = 3$，$v_1 = \begin{bmatrix} 1 \ 1 \end{bmatrix}$ 和 $r_2 = 1$，$v_2 = \begin{bmatrix} 1 \ -1 \end{bmatrix}$。根据Brauer定理，有：
 
 $$
-(A - r_1I)^{-1} = \begin{bmatrix} \frac{1}{2} & \frac{1}{2} \\ -\frac{1}{2} & \frac{1}{2} \end{bmatrix}
+(A - r_1I)^{-1} = \begin{bmatrix} \frac{1}{2} & \frac{1}{2} \ -\frac{1}{2} & \frac{1}{2} \end{bmatrix}
 $$
 
 #### Ostrowski定理案例
 
-设 $A = \begin{bmatrix} 2 & 1 \\ -1 & 2 \end{bmatrix}$，则 $A$ 的谱半径为 $R(A) = 3$。根据Ostrowski定理，有：
+设 $A = \begin{bmatrix} 2 & 1 \ -1 & 2 \end{bmatrix}$，则 $A$ 的谱半径为 $R(A) = 3$。根据Ostrowski定理，有：
 
 $$
 3^n + 3^{n-1} + \cdots + 1 = \frac{3^{n+1} - 1}{2} > 0

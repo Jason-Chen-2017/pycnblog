@@ -1,4 +1,4 @@
-                 
+
 # 生成对抗网络 (Generative Adversarial Network)
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -53,7 +53,7 @@
 #### 训练过程
 
 1. **初始化**：设置生成器G和判别器D的初始参数值。
-   
+
    - **生成器**$G$: $G \sim P_G$
    - **判别器**$D$: $D \sim P_D$
 
@@ -61,7 +61,7 @@
    - 对于每一个训练周期t，执行以下步骤：
      a. **更新生成器**：根据当前判别器的反馈调整生成器参数，使其能够生成更多被判别器误判为真的样本。
      b. **更新判别器**：根据生成器产生的样本和真实数据集中的样本，调整判别器参数，提高其鉴别准确度。
-     
+
    这个过程中，生成器和判别器交替更新参数，形成一个动态博弈的过程。
 
 ### 3.2 算法步骤详解
@@ -71,7 +71,7 @@
    sequenceDiagram
        participant Generator as G
        participant Discriminator as D
-       
+
        G ->> D: Initialize weights with random values
        D ->> G: Initialize weights with random values
    ```
@@ -82,7 +82,7 @@
        participant Generator as G
        participant Real Data as R
        participant Fake Data as F
-   
+
    loop Training Iteration
        note left of G "Generate samples"
        G->>F: Generate samples from noise
@@ -99,13 +99,13 @@
    sequenceDiagram
        participant Generator as G
        participant Discriminator as D
-   
+
    loop Training Iteration
        note left of D "Train on real data"
        D->>R: Judge real data's probability
        note right of D "Adjust parameters to maximize log(D(R))"
        D-->>R: Update based on gradients
-      
+
        note right of D "Train on fake data"
        D->>F: Judge fake data's probability
        note right of D "Adjust parameters to minimize log(1-D(F))"
@@ -197,10 +197,10 @@ def discriminator_model():
 @tf.function
 def train_step(real_images):
     noise = tf.random.normal([BATCH_SIZE, NOISE_DIM])
-    
+
     with tf.GradientTape() as gen_tape, tf.GradientTape() as disc_tape:
         generated_images = generator(noise)
-        
+
         real_output = discriminator(real_images)
         fake_output = discriminator(generated_images)
 

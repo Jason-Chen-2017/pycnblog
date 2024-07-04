@@ -399,4 +399,4 @@ Total reward: 1.0
 * **NASA利用强化学习算法开发了自主导航系统，成功应用于火星探测器“好奇号”和“毅力号”。**
 * **欧洲航天局利用强化学习算法优化卫星轨道控制，提高了卫星的观测效率。**
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

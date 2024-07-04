@@ -94,8 +94,7 @@ $$
    - 使用梯度下降算法更新Q网络参数，即：
 
 $$
-\theta \leftarrow \theta - \alpha \
-abla_\theta \ell(\theta)
+\theta \leftarrow \theta - \alpha \nabla_\theta \ell(\theta)
 $$
 
 其中，$\alpha$ 为学习率。
@@ -150,12 +149,10 @@ $$
 - **参数更新**：
 
 $$
-\theta \leftarrow \theta - \alpha \
-abla_\theta \ell(\theta)
+\theta \leftarrow \theta - \alpha \nabla_\theta \ell(\theta)
 $$
 
-其中，$\ell(\theta)$ 为损失函数，$\
-abla_\theta \ell(\theta)$ 为损失函数对参数 $\theta$ 的梯度。
+其中，$\ell(\theta)$ 为损失函数，$\nabla_\theta \ell(\theta)$ 为损失函数对参数 $\theta$ 的梯度。
 
 ### 4.3 案例分析与讲解
 

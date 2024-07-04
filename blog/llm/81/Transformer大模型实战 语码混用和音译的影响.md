@@ -144,13 +144,13 @@ A：对于音译文本，可以采用以下方法：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n transformer-env python=3.8 
+conda create -n transformer-env python=3.8
 conda activate transformer-env
 ```
 
 3. 安装PyTorch和Transformers库：
 ```bash
-conda install pytorch torchvision torchaudio -c pytorch 
+conda install pytorch torchvision torchaudio -c pytorch
 pip install transformers
 ```
 

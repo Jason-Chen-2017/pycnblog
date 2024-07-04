@@ -239,5 +239,5 @@ Q-learning在生物信息学中的应用取得了初步成果，为解决复杂�
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

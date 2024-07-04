@@ -156,7 +156,7 @@ class RNNModel(tf.keras.Model):
         super(RNNModel, self).__init__()
         self.rnn = tf.keras.layers.SimpleRNN(input_shape=input_shape, units=50, activation='relu')
         self.fc = tf.keras.layers.Dense(1)
-    
+
     def call(self, inputs):
         x = self.rnn(inputs)
         return self.fc(x)

@@ -46,7 +46,7 @@ YARN的核心组件包括ResourceManager(RM)、NodeManager(NM)和ApplicationMast
 
 Container是YARN中资源抽象和分配的基本单位,包含CPU、内存等资源。AM根据需求向RM申请Container,NM接收指令在本节点上启动和管理Container。因此,Container是连接YARN各组件的纽带,是实现资源统一管理和调度的关键所在。
 
-## 3. 核心算法原理 & 具体操作步骤  
+## 3. 核心算法原理 & 具体操作步骤
 
 ### 3.1 算法原理概述
 
@@ -67,7 +67,7 @@ graph TD
     B --> |2. 分配资源| C(NodeManager)
     C --> |3. 启动Container| D[Container运行]
     D --> |4. 监控状态| C
-    C --> |5. 上报状态| B  
+    C --> |5. 上报状态| B
     D --> |6. 任务完成| E[停止Container]
 ```
 
@@ -84,7 +84,7 @@ graph TD
 
 YARN采用容量调度器CapacityScheduler进行多维度资源分配。
 
-```mermaid 
+```mermaid
 graph TD
     A[资源请求] --> B(CapacityScheduler)
     B --> |1. 分配队列资源| C1(Root队列)
@@ -141,8 +141,8 @@ YARN的资源管理和任务调度能力使其可广泛应用于:
 
 $$
 \begin{align}
-\sum_{q \in Q} q.quota &\le 1 \\
-\sum_{u \in U} u.quota_q &\le 1 \quad \forall q \in Q\\
+\sum_{q \in Q} q.quota &\le 1 \
+\sum_{u \in U} u.quota_q &\le 1 \quad \forall q \in Q\
 \sum_{a \in A} a.request &\le R
 \end{align}
 $$
@@ -167,14 +167,14 @@ $$\max \sum_{a \in A} f(x_{a,cpu}, x_{a,mem})$$
 
 $$
 \begin{align}
-\max & -\left(10x_{a_1,cpu} + 100x_{a_1,mem} + 20x_{a_2,cpu} + 200x_{a_2,mem} + 15x_{a_3,cpu} + 150x_{a_3,mem}\right) \\
-\text{s.t. } & x_{a_1,cpu} + x_{a_2,cpu} + x_{a_3,cpu} \le 100 \\
-           & x_{a_1,mem} + x_{a_2,mem} + x_{a_3,mem} \le 1000 \\
-           & 0.7(x_{a_1,cpu} + x_{a_2,cpu}) + 0.3x_{a_3,cpu} \le 60 \\
-           & 0.7(x_{a_1,mem} + x_{a_2,mem}) + 0.3x_{a_3,mem} \le 600 \\
-           & x_{a_1,cpu} \le 10, x_{a_1,mem} \le 100\\
-           & x_{a_2,cpu} \le 20, x_{a_2,mem} \le 200\\
-           & x_{a_3,cpu} \le 15, x_{a_3,mem} \le 150\\
+\max & -\left(10x_{a_1,cpu} + 100x_{a_1,mem} + 20x_{a_2,cpu} + 200x_{a_2,mem} + 15x_{a_3,cpu} + 150x_{a_3,mem}\right) \
+\text{s.t. } & x_{a_1,cpu} + x_{a_2,cpu} + x_{a_3,cpu} \le 100 \
+           & x_{a_1,mem} + x_{a_2,mem} + x_{a_3,mem} \le 1000 \
+           & 0.7(x_{a_1,cpu} + x_{a_2,cpu}) + 0.3x_{a_3,cpu} \le 60 \
+           & 0.7(x_{a_1,mem} + x_{a_2,mem}) + 0.3x_{a_3,mem} \le 600 \
+           & x_{a_1,cpu} \le 10, x_{a_1,mem} \le 100\
+           & x_{a_2,cpu} \le 20, x_{a_2,mem} \le 200\
+           & x_{a_3,cpu} \le 15, x_{a_3,mem} \le 150\
            & x \ge 0
 \end{align}
 $$
@@ -220,7 +220,7 @@ public class ContainerExecutor {
     public void startContainer(Container container) {
         // 设置Container运行环境
         setupContainerEnv(container);
-        
+
         // 启动Container进程
         startContainerProcess(container);
     }
@@ -229,7 +229,7 @@ public class ContainerExecutor {
     public void monitorContainer(Container container) {
         // 获取Container进程状态
         ContainerStatus status = getContainerStatus(container);
-        
+
         // 上报状态给ResourceManager
         reportStatus(container, status);
     }
@@ -238,7 +238,7 @@ public class ContainerExecutor {
     public void stopContainer(Container container) {
         // 终止Container进程
         terminateContainerProcess(container);
-        
+
         // 清理Container环境
         cleanupContainerEnv(container);
     }
@@ -250,7 +250,7 @@ public class ContainerExecutor {
 ```java
 public class ContainerManager {
     private final ContainerExecutor executor;
-    
+
     // 启动Container
     public void startContainer(Container container) {
         executor.startContainer(container);

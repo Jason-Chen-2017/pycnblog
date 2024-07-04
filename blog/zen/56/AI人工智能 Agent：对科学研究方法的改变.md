@@ -60,7 +60,7 @@ D --> G[自主学习优化]
 
 - $S$：状态空间，表示Agent所处的环境状态集合。
 - $A$：动作空间，表示Agent可以采取的动作集合。
-- $P$：状态转移概率矩阵，$P(s'|s,a)$ 表示在状态 $s$ 下执行动作 $a$ 后转移到状态 $s'$ 的概率。 
+- $P$：状态转移概率矩阵，$P(s'|s,a)$ 表示在状态 $s$ 下执行动作 $a$ 后转移到状态 $s'$ 的概率。
 - $R$：奖励函数，$R(s,a)$ 表示在状态 $s$ 下执行动作 $a$ 后获得的即时奖励。
 - $\gamma$：折扣因子，$\gamma \in [0,1]$，表示未来奖励的折扣比例。
 
@@ -108,14 +108,14 @@ class QLearning:
         self.gamma = gamma  # 折扣因子
         self.epsilon = epsilon  # epsilon-greedy 策略
         self.Q = torch.zeros(state_dim, action_dim)  # Q表格
-        
+
     def choose_action(self, state):
         if np.random.uniform() < self.epsilon:
             action = np.random.choice(self.action_dim)
         else:
             action = self.Q[state].argmax().item()
         return action
-        
+
     def update(self, state, action, reward, next_state):
         td_error = reward + self.gamma * self.Q[next_state].max() - self.Q[state, action]
         self.Q[state, action] += self.lr * td_error
@@ -153,16 +153,16 @@ def maml(model, tasks, loss_fn, alpha, beta, num_iterations):
         for X, y in tasks:
             model.parameters = gradient_update(model, loss_fn(model(X), y), alpha)
             new_params.append(model.parameters)
-            
+
         outgrads = []
         for new_param, (X, y) in zip(new_params, tasks):
             model.parameters = new_param
             loss = loss_fn(model(X), y)
             outgrads.append(torch.autograd.grad(loss, model.parameters()))
-            
+
         for param, outgrad in zip(model.parameters(), outgrads):
             param.grad = torch.stack([grad for grad in outgrad]).mean(dim=0)
-            
+
         for param in model.parameters():
             param.data -= beta * param.grad
 ```

@@ -85,7 +85,7 @@ $$
 
 $$
 \begin{aligned}
-NP &= \{(P, L) \mid \exists G \in NP, P \Rightarrow L, G(L) = \top\} \\
+NP &= \{(P, L) \mid \exists G \in NP, P \Rightarrow L, G(L) = \top\} \
 &= \{(P, L) \mid \exists G \in NP, P \Rightarrow L, \forall (u, v) \in E(G), color(u) \
 eq color(v)\}
 \end{aligned}

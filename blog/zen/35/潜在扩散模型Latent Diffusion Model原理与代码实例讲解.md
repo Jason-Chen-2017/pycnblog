@@ -84,32 +84,32 @@
 
 潜在扩散模型通常构建在概率框架下，通过定义潜在空间内的扩散过程来生成新样本。以下是一个基本的潜在扩散模型的数学表示：
 
-设潜在空间为$\\mathcal{Z}$，扩散过程定义为一个函数$f(\\cdot)$，初始状态为$\\mathbf{z}_0$，时间步长为$\\tau$，生成样本的目标分布为$p(x)$。潜在扩散模型的目标是找到一个函数$f(\\cdot)$，使得生成的样本$\\mathbf{x}$尽可能接近目标分布$p(x)$。
+设潜在空间为$\mathcal{Z}$，扩散过程定义为一个函数$f(\cdot)$，初始状态为$\mathbf{z}_0$，时间步长为$\tau$，生成样本的目标分布为$p(x)$。潜在扩散模型的目标是找到一个函数$f(\cdot)$，使得生成的样本$\mathbf{x}$尽可能接近目标分布$p(x)$。
 
 - **扩散方程**：定义扩散过程的动态演化，通常采用高斯扩散过程：
 
-$$\\mathbf{z}_{t} = \\mathbf{z}_{t-1} + \\sqrt{\\tau} \\mathbf{w}_t$$
+$$\mathbf{z}_{t} = \mathbf{z}_{t-1} + \sqrt{\tau} \mathbf{w}_t$$
 
-其中，$\\mathbf{w}_t \\sim \\mathcal{N}(0, I)$是高斯噪声。
+其中，$\mathbf{w}_t \sim \mathcal{N}(0, I)$是高斯噪声。
 
 - **逆扩散过程**：在生成样本时，通过逆向传播来恢复潜在变量：
 
-$$\\mathbf{z}_{t} = \\mathbf{z}_{t+1} - \\sqrt{\\tau} \\mathbf{w}_{t+1}$$
+$$\mathbf{z}_{t} = \mathbf{z}_{t+1} - \sqrt{\tau} \mathbf{w}_{t+1}$$
 
 ### 4.2 公式推导过程
 
-以高斯扩散为例，公式推导过程涉及到概率密度函数的积分和微分运算。对于高斯扩散过程，假设初始状态$\\mathbf{z}_0$的分布为$\\mathcal{N}(\\mathbf{m}_0, \\sigma_0^2I)$，则经过$t$步扩散后的状态$\\mathbf{z}_t$的分布为：
+以高斯扩散为例，公式推导过程涉及到概率密度函数的积分和微分运算。对于高斯扩散过程，假设初始状态$\mathbf{z}_0$的分布为$\mathcal{N}(\mathbf{m}_0, \sigma_0^2I)$，则经过$t$步扩散后的状态$\mathbf{z}_t$的分布为：
 
-$$\\mathbf{z}_t \\sim \\mathcal{N}(\\mathbf{m}_t, \\sigma_t^2I)$$
+$$\mathbf{z}_t \sim \mathcal{N}(\mathbf{m}_t, \sigma_t^2I)$$
 
 其中，
 
-$$\\mathbf{m}_t = \\mathbf{m}_0 + \\tau \\mathbf{m}_1$$
-$$\\sigma_t^2 = \\sigma_0^2 + \\tau (\\sigma_0^2 + \\sigma_1^2)$$
+$$\mathbf{m}_t = \mathbf{m}_0 + \tau \mathbf{m}_1$$
+$$\sigma_t^2 = \sigma_0^2 + \tau (\sigma_0^2 + \sigma_1^2)$$
 
 ### 4.3 案例分析与讲解
 
-假设我们使用潜在扩散模型生成一幅图像。首先，从潜在空间$\\mathcal{Z}$中随机选择初始状态$\\mathbf{z}_0$，然后按照预先定义的扩散过程进行$t$步扩散，得到最终状态$\\mathbf{z}_t$。通过逆过程，从$\\mathbf{z}_t$中采样得到最终的图像样本。
+假设我们使用潜在扩散模型生成一幅图像。首先，从潜在空间$\mathcal{Z}$中随机选择初始状态$\mathbf{z}_0$，然后按照预先定义的扩散过程进行$t$步扩散，得到最终状态$\mathbf{z}_t$。通过逆过程，从$\mathbf{z}_t$中采样得到最终的图像样本。
 
 ### 4.4 常见问题解答
 
@@ -184,9 +184,9 @@ def main():
     epochs = 10
     for epoch in range(epochs):
         loss = train(model, dataloader, criterion, optimizer, device)
-        print(f\"Epoch {epoch+1}/{epochs}, Loss: {loss:.4f}\")
+        print(f"Epoch {epoch+1}/{epochs}, Loss: {loss:.4f}")
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     main()
 ```
 
@@ -224,8 +224,8 @@ if __name__ == \"__main__\":
 
 ### 7.3 相关论文推荐
 
-- **\"Diffusion Models Beat GANs on Image Synthesis\"**：介绍潜在扩散模型在图像合成方面的优势。
-- **\"Improving Generative Models with Diffusion-Based Training\"**：探索通过扩散过程改进生成模型的方法。
+- **"Diffusion Models Beat GANs on Image Synthesis"**：介绍潜在扩散模型在图像合成方面的优势。
+- **"Improving Generative Models with Diffusion-Based Training"**：探索通过扩散过程改进生成模型的方法。
 
 ### 7.4 其他资源推荐
 

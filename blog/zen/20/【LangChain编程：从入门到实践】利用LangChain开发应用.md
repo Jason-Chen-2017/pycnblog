@@ -1,6 +1,6 @@
 # 【LangChain编程：从入门到实践】利用LangChain开发应用
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：LangChain，自然语言处理，API开发，自动化，代码生成，机器学习
 
@@ -83,7 +83,7 @@ LangChain适用于各类应用，包括但不限于：
 LangChain基于Transformer架构构建，Transformer的核心是多头自注意力（Multi-Head Attention）机制。多头自注意力模型通过多个并行的注意力机制，分别关注输入序列的不同方面，从而增强模型的表达能力。以下是多头自注意力的基本公式：
 
 $$
-\\text{MultiHead}(Q, K, V) = \\text{Concat}(\\text{head}_1, \\dots, \\text{head}_m)W^{'}
+\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \dots, \text{head}_m)W^{'}
 
 $$
 
@@ -94,7 +94,7 @@ $$
 多头自注意力的具体推导过程涉及多层变换、缩放点积注意力、线性变换和拼接操作。具体而言，每个注意力头$h_i$的输出计算如下：
 
 $$
-\\text{Attention}(Q, K, V) = \\text{Softmax}(\\frac{QK^T}{\\sqrt{d_k}})V
+\text{Attention}(Q, K, V) = \text{Softmax}(\frac{QK^T}{\sqrt{d_k}})V
 
 $$
 
@@ -124,11 +124,11 @@ from langchain import TextClassifier
 
 def main():
     classifier = TextClassifier()
-    text = \"Hello, world!\"
+    text = "Hello, world!"
     prediction = classifier.predict(text)
-    print(f\"Predicted label: {prediction}\")
+    print(f"Predicted label: {prediction}")
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     main()
 ```
 

@@ -80,17 +80,16 @@ Agent（智能体）是指能够感知环境、做出决策并采取行动以达
 在基于大模型的Agent框架中，数学模型通常基于强化学习理论，特别是策略梯度方法。关键数学模型包括：
 
 - **价值函数**：$V(s)$，表示在状态$s$处采取任意动作后的预期累积奖励。
-- **策略函数**：$\\pi(a|s)$，表示在状态$s$时采取动作$a$的概率。
+- **策略函数**：$\pi(a|s)$，表示在状态$s$时采取动作$a$的概率。
 - **动态规划**：通过递归公式计算最优策略和价值函数，确保决策的全局最优性。
 
 ### 4.2 公式推导过程
 
 在策略梯度方法中，目标是最大化期望累积奖励，可以通过梯度上升法来实现：
 
-$$ \\theta_{t+1} = \\theta_t + \\alpha \\cdot \
-abla_\\theta J(\\theta_t) $$
+$$ \theta_{t+1} = \theta_t + \alpha \cdot \nabla_\theta J(\theta_t) $$
 
-其中，$\\theta$是策略参数，$\\alpha$是学习率，$J(\\theta)$是策略的性能指标（通常为期望累积奖励）。
+其中，$\theta$是策略参数，$\alpha$是学习率，$J(\theta)$是策略的性能指标（通常为期望累积奖励）。
 
 ### 4.3 案例分析与讲解
 
@@ -147,7 +146,7 @@ def main():
         action = agent_action(state, reward)
         state, reward, done = environment.step(action)
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     main()
 ```
 

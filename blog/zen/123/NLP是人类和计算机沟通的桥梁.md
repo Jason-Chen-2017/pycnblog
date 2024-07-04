@@ -295,4 +295,4 @@ NLP技术的发展也面临着一些挑战：
 * **NLP技术未来发展趋势如何？**
     * 未来，NLP技术将会更加智能、更加人性化、更加便捷，并应用于更多领域。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

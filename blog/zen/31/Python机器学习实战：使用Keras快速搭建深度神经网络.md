@@ -23,7 +23,7 @@ Keras在促进机器学习和深度学习的普及方面发挥了重要作用。
 Keras的核心概念包括模型构建、层（layer）、损失函数（loss function）、优化器（optimizer）和编译（compilation）。以下是这些概念之间的联系：
 
 - **模型构建**：模型是Keras中用来组织和执行机器学习任务的核心组件。你可以通过添加层来构建模型，每个层执行特定的计算任务。
-  
+
 - **层**：Keras支持多种类型的层，包括卷积层、全连接层、循环层等，每种层都负责不同的功能。例如，卷积层用于处理图像数据，而循环层则用于处理序列数据。
 
 - **损失函数**：损失函数衡量模型预测值与实际值之间的差距。选择合适的损失函数对于模型训练至关重要，因为这直接影响了模型学习的方向和速度。
@@ -98,7 +98,7 @@ history = model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=1
 
 ```python
 loss, accuracy = model.evaluate(X_test, y_test)
-print(f\"Test loss: {loss:.4f}\")
+print(f"Test loss: {loss:.4f}")
 ```
 
 #### 步骤九：预测新数据
@@ -136,15 +136,15 @@ predictions = model.predict(X_test)
 
 $$ y = wx + b $$
 
-其中，\\( w \\) 是权重，\\( b \\) 是偏置项。
+其中，\( w \) 是权重，\( b \) 是偏置项。
 
 ### 4.2 公式推导过程
 
 在深度学习中，我们通常使用均方误差（Mean Squared Error, MSE）作为损失函数：
 
-$$ Loss = \\frac{1}{n} \\sum_{i=1}^{n} (y_i - \\hat{y}_i)^2 $$
+$$ Loss = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 $$
 
-其中，\\( n \\) 是样本数量，\\( y_i \\) 是实际值，\\( \\hat{y}_i \\) 是预测值。
+其中，\( n \) 是样本数量，\( y_i \) 是实际值，\( \hat{y}_i \) 是预测值。
 
 ### 4.3 案例分析与讲解
 
@@ -197,7 +197,7 @@ history = model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=1
 
 # 评估模型
 loss, accuracy = model.evaluate(X_test, y_test)
-print(f\"Test loss: {loss:.4f}\")
+print(f"Test loss: {loss:.4f}")
 
 # 预测新数据
 predictions = model.predict(X_test)

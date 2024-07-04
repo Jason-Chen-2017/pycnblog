@@ -71,11 +71,9 @@
 
 梯度下降的公式为：
 
-\\[ \\theta := \\theta - \\alpha \\cdot \
-abla J(\\theta) \\]
+\\[ \\theta := \\theta - \\alpha \\cdot \nabla J(\\theta) \\]
 
-其中，\\(\\alpha\\) 是学习率，\\(\
-abla J(\\theta)\\) 是 \\(J(\\theta)\\) 关于 \\(\\theta\\) 的梯度。
+其中，\\(\\alpha\\) 是学习率，\\(\nabla J(\\theta)\\) 是 \\(J(\\theta)\\) 关于 \\(\\theta\\) 的梯度。
 
 ### 4.3 案例分析与讲解
 
@@ -85,8 +83,7 @@ abla J(\\theta)\\) 是 \\(J(\\theta)\\) 关于 \\(\\theta\\) 的梯度。
 
 其中，\\(h_\\theta(x_i)\\) 是预测值，\\(y_i\\) 是实际值。梯度为：
 
-\\[ \
-abla J(\\theta) = \\begin{bmatrix} \\frac{\\partial J}{\\partial \\theta_0} \\\\ \\frac{\\partial J}{\\partial \\theta_1} \\end{bmatrix} = \\begin{bmatrix} \\frac{1}{n} \\sum_{i=1}^{n} (h_\\theta(x_i) - y_i) \\\\ \\frac{1}{n} \\sum_{i=1}^{n} (h_\\theta(x_i) - y_i) \\cdot x_i \\end{bmatrix} \\]
+\\[ \nabla J(\\theta) = \\begin{bmatrix} \\frac{\\partial J}{\\partial \\theta_0} \\\\ \\frac{\\partial J}{\\partial \\theta_1} \\end{bmatrix} = \\begin{bmatrix} \\frac{1}{n} \\sum_{i=1}^{n} (h_\\theta(x_i) - y_i) \\\\ \\frac{1}{n} \\sum_{i=1}^{n} (h_\\theta(x_i) - y_i) \\cdot x_i \\end{bmatrix} \\]
 
 ### 4.4 常见问题解答
 

@@ -513,7 +513,7 @@ A：深度学习、强化学习、自然语言处理和计算机视觉是人工�
 
 2. **创建并激活虚拟环境**：
 ```bash
-conda create -n deeplearning-env python=3.8 
+conda create -n deeplearning-env python=3.8
 conda activate deeplearning-env
 ```
 

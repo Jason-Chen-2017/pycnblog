@@ -94,8 +94,8 @@ GAN的数学模型如下：
 
 $$
 \begin{aligned}
-D(x) &= \sigma(W_Dx+b_D) \\
-G(z) &= \sigma(W_Gz+b_G) \\
+D(x) &= \sigma(W_Dx+b_D) \
+G(z) &= \sigma(W_Gz+b_G) \
 G' &= D(G(z))
 \end{aligned}
 $$

@@ -88,7 +88,7 @@ $\mu_j$ 和 $\sigma_j$ 分别是第 j 个特征的均值和标准差。
 计算标准化后数据的协方差矩阵 $\Sigma$：
 
 $$\Sigma=\frac{1}{m}\sum_{i=1}^m\hat{x}_i\hat{x}_i^T=\begin{bmatrix}
-\sigma_{11} & \sigma_{12} \\
+\sigma_{11} & \sigma_{12} \
 \sigma_{21} & \sigma_{22}
 \end{bmatrix}$$
 

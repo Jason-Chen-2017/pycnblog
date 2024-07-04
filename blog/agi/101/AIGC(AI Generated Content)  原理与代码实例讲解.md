@@ -187,7 +187,7 @@ class GPT(nn.Module):
         self.embedding = nn.Embedding(vocab_size, embedding_dim)
         self.rnn = nn.LSTM(embedding_dim, hidden_dim, n_layers, dropout=dropout)
         self.fc = nn.Linear(hidden_dim, vocab_size)
-        
+
     def forward(self, x, hidden):
         x = self.embedding(x)
         x, hidden = self.rnn(x, hidden)

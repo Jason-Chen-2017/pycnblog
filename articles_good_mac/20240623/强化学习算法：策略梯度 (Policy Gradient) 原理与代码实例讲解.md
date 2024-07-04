@@ -94,9 +94,7 @@ $$V(s) = \mathbb{E}_{\pi}[G_t | S_t = s]$$
 
 策略梯度算法使用以下公式来估计梯度：
 
-$$\
-abla_\theta J(\theta) \approx \mathbb{E}_{\pi}[\
-abla_\theta \ln \pi(a|s;\theta) \cdot R]$$
+$$\nabla_\theta J(\theta) \approx \mathbb{E}_{\pi}[\nabla_\theta \ln \pi(a|s;\theta) \cdot R]$$
 
 其中，$J(\theta)$是策略的性能指标，$R$是从时间步$t$到结束的总回报。
 

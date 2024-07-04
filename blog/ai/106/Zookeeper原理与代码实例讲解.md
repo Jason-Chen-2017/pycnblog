@@ -454,4 +454,4 @@ Zookeeper的未来发展趋势包括：
 * 性能优化
 * 功能扩展
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

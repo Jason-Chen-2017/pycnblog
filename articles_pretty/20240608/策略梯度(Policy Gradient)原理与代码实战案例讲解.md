@@ -46,12 +46,9 @@ $$ J(\\theta) = \\mathbb{E}_{\\tau \\sim \\pi} \\left[ \\sum_{t=0}^T \\gamma^t R
 
 策略梯度的梯度估计通常采用以下公式：
 
-$$ \
-abla_\\theta J(\\theta) \\approx \\frac{1}{N} \\sum_{i=1}^N \
-abla_\\theta \\log \\pi_\\theta(a_i|s_i) R(s_i, a_i) $$
+$$ \nabla_\\theta J(\\theta) \\approx \\frac{1}{N} \\sum_{i=1}^N \nabla_\\theta \\log \\pi_\\theta(a_i|s_i) R(s_i, a_i) $$
 
-这里N是轨迹的数量，$\
-abla_\\theta \\log \\pi_\\theta(a_i|s_i)$是动作选择的对数比例偏导，这代表了动作选择相对于策略参数的敏感度。
+这里N是轨迹的数量，$\nabla_\\theta \\log \\pi_\\theta(a_i|s_i)$是动作选择的对数比例偏导，这代表了动作选择相对于策略参数的敏感度。
 
 ## 项目实践：代码实例和详细解释说明
 

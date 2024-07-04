@@ -366,4 +366,4 @@ env.close()
 
   * **A:** 可以使用一些技巧来处理非马尔可夫环境，例如使用递归神经网络 (RNN) 来捕获历史信息。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

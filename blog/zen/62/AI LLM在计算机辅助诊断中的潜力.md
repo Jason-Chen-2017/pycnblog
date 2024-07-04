@@ -26,7 +26,7 @@
 #### 2.2.2 CAD的发展历程
 #### 2.2.3 CAD的主要任务
 ### 2.3 AI LLM与CAD的结合
-#### 2.3.1 LLM在医疗文本数据处理中的优势  
+#### 2.3.1 LLM在医疗文本数据处理中的优势
 #### 2.3.2 LLM与医学知识库的结合
 #### 2.3.3 LLM在医患对话系统中的应用
 
@@ -57,7 +57,7 @@ $PE_{(pos,2i+1)} = cos(pos/10000^{2i/d_{model}})$
 ### 4.2 BERT模型
 #### 4.2.1 Masked Language Model(MLM)
 #### 4.2.2 Next Sentence Prediction(NSP)
-### 4.3 GPT模型  
+### 4.3 GPT模型
 #### 4.3.1 因果语言建模
 #### 4.3.2 零样本学习
 
@@ -71,7 +71,7 @@ tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 model = BertForTokenClassification.from_pretrained('bert-base-uncased', num_labels=num_labels)
 
 inputs = tokenizer(text, return_tensors="pt")
-labels = torch.tensor([1] * inputs["input_ids"].size(1)).unsqueeze(0)  
+labels = torch.tensor([1] * inputs["input_ids"].size(1)).unsqueeze(0)
 
 outputs = model(**inputs, labels=labels)
 loss = outputs.loss
@@ -161,7 +161,7 @@ class MedicalChatbot:
 ## 9. 附录：常见问题与解答
 ### 9.1 AI诊断是否会取代医生？
 AI诊断系统旨在辅助医生工作，提高诊断效率和准确性，但不会完全取代医生。医生的临床经验和综合判断能力是不可替代的。
-### 9.2 AI诊断的准确性如何？ 
+### 9.2 AI诊断的准确性如何？
 AI诊断的准确性取决于训练数据的质量和模型的设计。目前在一些特定疾病的诊断上，AI已经达到了与医生相当甚至更高的准确性，但在全面诊断能力上还有待提高。
 ### 9.3 AI诊断是否有法律风险？
 AI诊断系统应当作为辅助工具使用，最终诊断责任仍在医生。需要建立完善的法律法规来规范AI诊断系统的使用，明确各方责任。同时，要加强对医生的培训，提高他们使用AI系统的能力。

@@ -164,10 +164,10 @@ YOLO算法采用卷积神经网络（CNN）作为特征提取器，并使用锚�
 
 $$
 \begin{align*}
-\hat{c}_i &= \hat{p}(x_i, y_i) \\
-\hat{b}_x &= \hat{w}_x(x_i, y_i) \\
-\hat{b}_y &= \hat{w}_y(x_i, y_i) \\
-\hat{b}_h &= \hat{w}_h(x_i, y_i) \\
+\hat{c}_i &= \hat{p}(x_i, y_i) \
+\hat{b}_x &= \hat{w}_x(x_i, y_i) \
+\hat{b}_y &= \hat{w}_y(x_i, y_i) \
+\hat{b}_h &= \hat{w}_h(x_i, y_i) \
 \hat{b}_w &= \hat{w}_w(x_i, y_i)
 \end{align*}
 $$

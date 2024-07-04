@@ -206,10 +206,10 @@ print(decoded_output)
 运行以上代码，可以得到如下结果：
 
 ```
-The weather is sunny. It is a perfect day for a picnic with friends. 
-The sun is shining brightly, and the sky is clear blue. 
-You can feel the warm sun rays on your skin as you enjoy the delicious food and drinks. 
-The birds are chirping happily in the trees, and the flowers are blooming beautifully. 
+The weather is sunny. It is a perfect day for a picnic with friends.
+The sun is shining brightly, and the sky is clear blue.
+You can feel the warm sun rays on your skin as you enjoy the delicious food and drinks.
+The birds are chirping happily in the trees, and the flowers are blooming beautifully.
 It is a wonderful day to be outside and enjoy the fresh air.
 ```
 

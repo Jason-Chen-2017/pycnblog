@@ -79,7 +79,7 @@ $$
 
 $$
 \begin{aligned}
-\frac{\partial J}{\partial w} &= \frac{1}{m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})x^{(i)} \\
+\frac{\partial J}{\partial w} &= \frac{1}{m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})x^{(i)} \
 \frac{\partial J}{\partial b} &= \frac{1}{m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})
 \end{aligned}
 $$
@@ -90,7 +90,7 @@ SGD 使用以下公式更新参数：
 
 $$
 \begin{aligned}
-w &= w - \alpha \frac{\partial J}{\partial w} \\
+w &= w - \alpha \frac{\partial J}{\partial w} \
 b &= b - \alpha \frac{\partial J}{\partial b}
 \end{aligned}
 $$

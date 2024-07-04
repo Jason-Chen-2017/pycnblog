@@ -83,8 +83,8 @@
 ### 4.1 数学模型构建
 
 - **自注意力机制**：通过权重矩阵计算输入序列各个元素之间的关系，公式为：
-  
-  $$\\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V$$
+
+  $$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
 
 - **多头自注意力**：将注意力机制扩展为多个独立的注意力子层，增加模型的表达能力。
 
@@ -123,7 +123,7 @@ training_args = TrainingArguments(output_dir='./results',
                                  per_device_eval_batch_size=4,
                                  logging_steps=10,
                                  save_steps=100,
-                                 evaluation_strategy=\"epoch\",
+                                 evaluation_strategy="epoch",
                                  learning_rate=3e-5,
                                  weight_decay=0.01,
                                  seed=42)
@@ -132,7 +132,7 @@ training_args = TrainingArguments(output_dir='./results',
 trainer = Trainer(model=model,
                   args=training_args,
                   train_dataset=dataset,
-                  compute_metrics=lambda x: {\"bleu\": calculate_bleu(x.predictions, x.label_ids)})
+                  compute_metrics=lambda x: {"bleu": calculate_bleu(x.predictions, x.label_ids)})
 
 trainer.train()
 ```
@@ -169,7 +169,7 @@ def preprocess_text(text):
     return input_ids, attention_mask
 
 # 预处理文本
-text = \"Hello, world!\"
+text = "Hello, world!"
 input_ids, attention_mask = preprocess_text(text)
 
 # 解码文本
@@ -251,7 +251,7 @@ print(decoded_text)
 
 - **Q：如何提高翻译质量？**
   - **A：** 提高翻译质量的关键在于训练数据的质量、模型结构的设计以及多模态信息的整合。引入更多的高质量双语平行语料库、优化模型架构和参数配置、以及探索多模态翻译技术都能有效提升翻译质量。
-  
+
 - **Q：如何处理罕见词汇？**
   - **A：** 处理罕见词汇的一个策略是利用上下文信息和语义相似性。通过语义表示学习（如Word2Vec、BERT等）和统计语言模型，机器翻译系统可以更好地推测罕见词的含义。此外，还可以采用预训练模型来扩展词汇表，或者在模型中引入罕见词处理机制，如增加罕见词的曝光度或使用多语种联合训练策略。
 

@@ -96,7 +96,7 @@ BERT在预训练阶段通过大量无标签文本学习到丰富的语义信息�
 自注意力（Self-Attention）是Transformer架构的核心，通过计算每个位置与其他位置之间的相似度来建立上下文关系。设输入序列 $X \in \mathbb{R}^{L \times d}$，其中$L$是序列长度，$d$是隐藏维度，自注意力函数定义为：
 
 $$
-A_{ij} = \frac{e^{Q_iK_j^T}}{\sqrt{d}} 
+A_{ij} = \frac{e^{Q_iK_j^T}}{\sqrt{d}}
 $$
 
 其中：

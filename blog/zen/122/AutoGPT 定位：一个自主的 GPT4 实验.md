@@ -1,6 +1,6 @@
 # Auto-GPT 定位：一个自主的 GPT-4 实验
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -72,7 +72,7 @@ Auto-GPT 的核心算法基于 GPT-4 的文本生成能力，并结合了以下�
 
 以下是对 Auto-GPT 算法步骤的更详细解释：
 
-1. **目标分解：** 
+1. **目标分解：**
     * 用户输入目标，例如：“写一篇关于 Auto-GPT 的博客文章”。
     * Auto-GPT 使用 GPT-4 的文本生成能力，将目标分解为一系列更小的、可执行的任务，例如：
         * 确定博客文章的主题。

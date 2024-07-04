@@ -117,7 +117,7 @@ STORE trimmed_data INTO 'output.txt';
 data = LOAD 'input.txt' AS (name:chararray, email:chararray);
 
 -- 检查 email 字段是否符合邮箱格式
-validated_data = FILTER data BY REGEX_EXTRACT(email, '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$') IS NOT NULL;
+validated_data = FILTER data BY REGEX_EXTRACT(email, '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$') IS NOT NULL;
 
 -- 将验证后的数据存储到输出文件中
 STORE validated_data INTO 'output.txt';
@@ -157,7 +157,7 @@ STORE diff_data INTO 'output.txt';
 
 Apache Pig 官方网站提供了 Pig 的详细文档、教程和示例代码。
 
-### 7.2 Cloudera Hadoop 
+### 7.2 Cloudera Hadoop
 
 Cloudera Hadoop 是一个流行的 Hadoop 发行版，它包含 Pig 和其他大数据工具。
 

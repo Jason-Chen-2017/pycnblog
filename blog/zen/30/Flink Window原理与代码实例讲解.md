@@ -45,7 +45,7 @@ Flink在时间窗口处理方面引入了多种窗口类型，如滚动窗口（
 - **滚动窗口（Tumbling Window）**：窗口大小固定，窗口之间不重叠。新数据流进入时，窗口向前移动，直到达到固定大小。
 - **会话窗口（Session Window）**：基于事件之间的间隔来划分窗口。当事件间隔超过阈值时，窗口关闭并触发处理。
 - **滑动窗口（Sliding Window）**：窗口大小固定，但窗口之间存在重叠。新数据流进入时，窗口向前移动，直到达到固定大小或满足其他条件。
-  
+
 ### 窗口函数
 
 窗口函数用于在指定的时间窗口内执行数据聚合操作，如计数、求和、平均值等。Flink提供了丰富的窗口函数，如`count()`、`sum()`、`avg()`等，以及自定义函数的能力。
@@ -84,14 +84,14 @@ public class WindowFunctionExample {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
-        DataStream<String> stream = env.socketTextStream(\"localhost\", 9999);
+        DataStream<String> stream = env.socketTextStream("localhost", 9999);
 
         stream
             .window(TumblingEventTimeWindows.of(Time.seconds(10)))
             .count()
             .print();
 
-        env.execute(\"Window Function Example\");
+        env.execute("Window Function Example");
     }
 }
 ```
@@ -147,7 +147,7 @@ public class WindowedStreamProcessing {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         // 创建数据源
-        DataStream<String> sourceStream = env.socketTextStream(\"localhost\", 9999);
+        DataStream<String> sourceStream = env.socketTextStream("localhost", 9999);
 
         // 应用滚动窗口，窗口大小为10秒，滑动步长为5秒
         DataStream<Tuple2<Long, Integer>> windowedStream = sourceStream
@@ -171,7 +171,7 @@ public class WindowedStreamProcessing {
         windowedStream.print();
 
         // 执行任务
-        env.execute(\"Windowed Stream Processing\");
+        env.execute("Windowed Stream Processing");
     }
 }
 ```
@@ -208,8 +208,8 @@ public class WindowedStreamProcessing {
 
 ### 相关论文推荐
 
-- **\"Apache Flink: A Distributed Engine for Stream and Batch Processing\"**：深入理解Flink的架构和技术细节。
-- **\"Window Functions in Apache Flink\"**：详细探讨窗口函数在Flink中的实现和应用。
+- **"Apache Flink: A Distributed Engine for Stream and Batch Processing"**：深入理解Flink的架构和技术细节。
+- **"Window Functions in Apache Flink"**：详细探讨窗口函数在Flink中的实现和应用。
 
 ### 其他资源推荐
 

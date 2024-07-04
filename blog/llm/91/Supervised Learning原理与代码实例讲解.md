@@ -110,7 +110,7 @@ $$
 
 $$
 \begin{cases}
-\frac{\partial L}{\partial w} = \mathbf{x}_i - \mathbf{w} = 0 \\
+\frac{\partial L}{\partial w} = \mathbf{x}_i - \mathbf{w} = 0 \
 \frac{\partial L}{\partial b} = -2 \sum_{i=1}^n (y_i - \mathbf{w}^\top \mathbf{x}_i - b) = 0
 \end{cases}
 $$

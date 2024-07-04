@@ -91,7 +91,7 @@ k-NN算法基于“近似”原则，即预测未知样本的标签取决于其�
 设$x_i$为训练集中的样本，$y_i$为其对应的标签（分类任务）或值（回归任务）。新样本$x$的预测值$f(x)$基于其最近的$k$个邻居，定义为：
 
 $$f(x) = \begin{cases}
-\text{mode}(y_1,y_2,...,y_k) & \text{for classification} \\
+\text{mode}(y_1,y_2,...,y_k) & \text{for classification} \
 \frac{1}{k}\sum_{i=1}^{k} y_i & \text{for regression}
 \end{cases}$$
 

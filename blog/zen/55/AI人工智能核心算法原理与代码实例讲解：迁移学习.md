@@ -9,21 +9,21 @@
 迁移学习可分为以下三类:
 
 1. 基于实例的迁移学习(Instance based Transfer Learning)：通过权重重用 source domain 的样本来辅助 target domain 的学习。
-2. 基于特征的迁移学习(Feature based Transfer Learning)：将 source domain 和 target domain 的数据映射到一个公共特征空间，利用 source domain 的特征表示来辅助 target domain 的学习。 
+2. 基于特征的迁移学习(Feature based Transfer Learning)：将 source domain 和 target domain 的数据映射到一个公共特征空间，利用 source domain 的特征表示来辅助 target domain 的学习。
 3. 基于模型的迁移学习(Model based Transfer Learning)：利用 source domain 学习到的模型参数来初始化 target domain 的模型参数，加速目标模型的学习。
 
 #### 1.1.3 迁移学习的优势
 与传统机器学习相比，迁移学习的主要优势在于：
 
 1. 显著降低对目标领域标注数据的需求
-2. 加速目标领域模型的学习速度  
+2. 加速目标领域模型的学习速度
 3. 提高目标领域模型的性能表现
 
 ### 1.2 迁移学习的应用场景
 迁移学习在很多领域都有广泛的应用，例如：
 
 1. 计算机视觉：利用 ImageNet 预训练模型进行迁移学习是提高小样本图像分类性能的重要手段。
-2. 自然语言处理：利用在大规模语料上预训练的词向量如 word2vec、Glove 等进行迁移学习，可以显著提高下游任务的性能。 
+2. 自然语言处理：利用在大规模语料上预训练的词向量如 word2vec、Glove 等进行迁移学习，可以显著提高下游任务的性能。
 3. 语音识别：利用在大规模语料库训练的声学模型进行迁移学习，可以提高特定场景下语音识别的精度。
 4. 推荐系统：利用用户在不同平台、场景下的行为数据进行迁移，可以提高冷启动用户的推荐质量。
 
@@ -45,8 +45,8 @@ TrAdaBoost 的核心思想是利用 AdaBoost 的 Boosting 思想来调整 Source
 
 算法的主要步骤如下：
 
-1. 初始化 Source Domain 和 Target Domain 样本的权重分布 
-2. 针对当前样本分布，训练出一个弱分类器 
+1. 初始化 Source Domain 和 Target Domain 样本的权重分布
+2. 针对当前样本分布，训练出一个弱分类器
 3. 计算该分类器在 Source Domain 和 Target Domain 上的分类错误率
 4. 利用错误率来更新 Source Domain 和 Target Domain 样本的权重
 5. 重复步骤2-4，直到达到预设的迭代次数
@@ -55,7 +55,7 @@ TrAdaBoost 的核心思想是利用 AdaBoost 的 Boosting 思想来调整 Source
 ### 3.2 算法流程图
 ```mermaid
 graph TD
-A[输入 Source Domain 和 Target Domain 数据] --> B[初始化样本权重分布] 
+A[输入 Source Domain 和 Target Domain 数据] --> B[初始化样本权重分布]
 B --> C[训练弱分类器]
 C --> D[计算分类错误率]
 D --> E{达到迭代次数?}
@@ -67,7 +67,7 @@ G --> C
 ## 4. 数学模型和公式详细讲解举例说明
 ### 4.1 记号说明
 - DSX, DSY: Source Domain 的样本集和标签集
-- DTX, DTY: Target Domain 的样本集和标签集 
+- DTX, DTY: Target Domain 的样本集和标签集
 - T: 最大迭代次数
 - ht: 第 t 轮迭代得到的弱分类器
 - $\epsilon_t^S$, $\epsilon_t^T$: ht 在 Source/Target Domain 上的分类错误率
@@ -112,7 +112,7 @@ $$
 $$
 \begin{aligned}
 Z_t^S =& \sum_{i=1}^{n} w_{ti}^{S} \cdot \exp (-\alpha_t \cdot \mathbb{I}(h_t(x_i^S)=y_i^S))  \\
-Z_t^T =& \sum_{i=1}^{m} w_{ti}^{T} \cdot \exp (\alpha_t \cdot \mathbb{I}(h_t(x_i^T) \neq y_i^T)) 
+Z_t^T =& \sum_{i=1}^{m} w_{ti}^{T} \cdot \exp (\alpha_t \cdot \mathbb{I}(h_t(x_i^T) \neq y_i^T))
 \end{aligned}
 $$
 
@@ -139,7 +139,7 @@ class TrAdaBoost:
         self.T = T
         self.weak_clfs = []
         self.betas = []
-        
+
     def fit(self, Xs, ys, Xt, yt):
         """
         Xs: Source Domain 特征
@@ -149,30 +149,30 @@ class TrAdaBoost:
         """
         ns, nt = len(Xs), len(Xt)
         ws, wt = np.ones(ns) / ns, np.ones(nt) / nt
-        
+
         for t in range(self.T):
             # 训练弱分类器
             clf = DecisionTreeClassifier(max_depth=3)
-            clf.fit(np.concatenate([Xs, Xt]), np.concatenate([ys, yt]), 
+            clf.fit(np.concatenate([Xs, Xt]), np.concatenate([ys, yt]),
                     sample_weight=np.concatenate([ws, wt]))
-            
+
             # 计算错误率
             es = np.sum(ws * (clf.predict(Xs) != ys)) / np.sum(ws)
             et = np.sum(wt * (clf.predict(Xt) != yt)) / np.sum(wt)
-            
+
             # 计算 alpha
             alpha = np.log((1-es) / es) / 2
-            
+
             # 更新权重
             ws *= np.exp(-alpha * (clf.predict(Xs) == ys))
             ws /= np.sum(ws)
             wt *= np.exp(alpha * (clf.predict(Xt) != yt))
             wt /= np.sum(wt)
-            
+
             # 保存弱分类器和 beta
             self.weak_clfs.append(clf)
             self.betas.append(np.log((1-et) / et) / 2)
-        
+
     def predict(self, X):
         preds = np.array([clf.predict(X) for clf in self.weak_clfs])
         return np.sign(np.sum(preds.T * self.betas, axis=1))

@@ -46,7 +46,7 @@ Storm provides fault tolerance by replicating tasks and maintaining a backup of 
 The microbatch size can be calculated using the following formula:
 
 $$
-MicrobatchSize = \\frac{TotalDataSize}{NumberOfTasks}
+MicrobatchSize = \frac{TotalDataSize}{NumberOfTasks}
 $$
 
 ### 4.2 Data Processing Latency
@@ -54,7 +54,7 @@ $$
 The data processing latency can be calculated using the following formula:
 
 $$
-Latency = \\frac{MicrobatchSize}{Throughput}
+Latency = \frac{MicrobatchSize}{Throughput}
 $$
 
 ## 5. Project Practice: Code Examples and Detailed Explanations
@@ -80,10 +80,10 @@ public class SimpleTridentTopology {
 
         // Build the topology
         return new TridentTopology()
-            .newStream(\"spout\", spout)
-            .each(new Fields(\"data\"), new ExtractDataFunction(), new Fields(\"data\"))
-            .peek(\"peek\")
-            .each(new Fields(\"data\"), bolt, new Fields(\"result\"))
+            .newStream("spout", spout)
+            .each(new Fields("data"), new ExtractDataFunction(), new Fields("data"))
+            .peek("peek")
+            .each(new Fields("data"), bolt, new Fields("result"))
             .build();
     }
 
@@ -91,7 +91,7 @@ public class SimpleTridentTopology {
     public static class ExtractDataFunction extends BaseFunction {
         @Override
         public void execute(TridentTuple tuple, TridentCollector collector) {
-            String data = tuple.getStringByField(\"data\");
+            String data = tuple.getStringByField("data");
             collector.emit(new Values(data));
         }
     }
@@ -102,9 +102,9 @@ public class SimpleTridentTopology {
 
         @Override
         public void execute(TridentTuple tuple, TridentCollector collector) {
-            String data = tuple.getStringByField(\"data\");
+            String data = tuple.getStringByField("data");
             count++;
-            collector.emit(new Values(count + \": \" + data));
+            collector.emit(new Values(count + ": " + data));
         }
 
         @Override
@@ -138,9 +138,9 @@ public class SimpleCoreStormTopology {
 
         // Create a Kafka spout that consumes messages from a topic
         SpoutConfig kafkaSpoutConfig = new SpoutConfig(
-            \"my-kafka-topic\",
-            \"/path/to/kafka-zookeeper-connection\",
-            \"/path/to/kafka-consumer-properties\"
+            "my-kafka-topic",
+            "/path/to/kafka-zookeeper-connection",
+            "/path/to/kafka-consumer-properties"
         );
         KafkaSpout kafkaSpout = new KafkaSpout(kafkaSpoutConfig);
 
@@ -148,8 +148,8 @@ public class SimpleCoreStormTopology {
         SimpleBolt bolt = new SimpleBolt();
 
         // Build the topology
-        builder.setSpout(\"kafka-spout\", kafkaSpout, 10);
-        builder.setBolt(\"simple-bolt\", bolt, 10).shuffleGrouping(\"kafka-spout\");
+        builder.setSpout("kafka-spout", kafkaSpout, 10);
+        builder.setBolt("simple-bolt", bolt, 10).shuffleGrouping("kafka-spout");
 
         return builder;
     }
@@ -162,12 +162,12 @@ public class SimpleCoreStormTopology {
         public void execute(Tuple input, BasicOutputCollector collector) {
             String data = input.getString(0);
             count++;
-            collector.emit(new Values(count + \": \" + data));
+            collector.emit(new Values(count + ": " + data));
         }
 
         @Override
         public void declareOutputFields(OutputFieldsDeclarer declarer) {
-            declarer.declare(new Fields(\"result\"));
+            declarer.declare(new Fields("result"));
         }
     }
 }

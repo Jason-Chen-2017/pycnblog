@@ -62,7 +62,7 @@ DDPG算法通过以下步骤实现强化学习：
 2. **探索与利用**：
 
     a. 根据探索策略，选择动作。常见的探索策略包括epsilon贪婪策略和均匀随机策略。
-    
+
     b. 执行动作，观察环境状态和奖励。
 
 3. **收集数据**：
@@ -116,22 +116,19 @@ DDPG算法的数学模型主要包括以下部分：
 
 1. **策略网络**：$f(\theta_{\pi}|s)$通过最大化期望奖励来更新参数$\theta_{\pi}$：
 
-$$\theta_{\pi} \leftarrow \theta_{\pi} + \alpha_{\pi} \
-abla_{\theta_{\pi}} J(\theta_{\pi})$$
+$$\theta_{\pi} \leftarrow \theta_{\pi} + \alpha_{\pi} \nabla_{\theta_{\pi}} J(\theta_{\pi})$$
 
 其中，$J(\theta_{\pi})$是策略网络的目标函数，$\alpha_{\pi}$是学习率。
 
 2. **值网络**：$V(\theta_{V}|s)$通过最小化预测误差来更新参数$\theta_{V}$：
 
-$$\theta_{V} \leftarrow \theta_{V} + \alpha_{V} \
-abla_{\theta_{V}} J(\theta_{V})$$
+$$\theta_{V} \leftarrow \theta_{V} + \alpha_{V} \nabla_{\theta_{V}} J(\theta_{V})$$
 
 其中，$J(\theta_{V})$是值网络的目标函数，$\alpha_{V}$是学习率。
 
 3. **目标网络**：$V(\theta_{V}^{*}|s)$通过最小化预测误差来更新参数$\theta_{V}^{*}$：
 
-$$\theta_{V}^{*} \leftarrow \theta_{V}^{*} + \alpha_{V}^{*} \
-abla_{\theta_{V}^{*}} J(\theta_{V}^{*})$$
+$$\theta_{V}^{*} \leftarrow \theta_{V}^{*} + \alpha_{V}^{*} \nabla_{\theta_{V}^{*}} J(\theta_{V}^{*})$$
 
 其中，$J(\theta_{V}^{*})$是目标网络的目标函数，$\alpha_{V}^{*}$是学习率。
 

@@ -65,7 +65,7 @@
 **迭代法:**
 
 1. **初始化:** 给定一个初始矩阵 $X_0$。
-2. **迭代计算:** 
+2. **迭代计算:**
     - 计算 $X_{k+1} = M X_k + N$, 其中 $M$ 和 $N$ 是根据迭代方法计算得到的矩阵。
 3. **判断收敛:** 当 $||X_{k+1} - X_k|| < \epsilon$ 时，迭代结束，$X_{k+1}$ 为方程的解。
 
@@ -103,7 +103,7 @@
 
 $$
 \begin{aligned}
-AX + XB &= C \\
+AX + XB &= C \
 \end{aligned}
 $$
 
@@ -141,15 +141,15 @@ $$
 $$
 \begin{aligned}
 A &= \begin{bmatrix}
-1 & 2 \\
+1 & 2 \
 3 & 4
-\end{bmatrix} \\
+\end{bmatrix} \
 B &= \begin{bmatrix}
-5 & 6 \\
+5 & 6 \
 7 & 8
-\end{bmatrix} \\
+\end{bmatrix} \
 C &= \begin{bmatrix}
-9 & 10 \\
+9 & 10 \
 11 & 12
 \end{bmatrix}
 \end{aligned}
@@ -164,11 +164,11 @@ $$
     $$
     \begin{aligned}
     L &= \begin{bmatrix}
-    1 & 0 \\
+    1 & 0 \
     3 & 1
-    \end{bmatrix} \\
+    \end{bmatrix} \
     U &= \begin{bmatrix}
-    1 & 2 \\
+    1 & 2 \
     0 & -2
     \end{bmatrix}
     \end{aligned}
@@ -179,11 +179,11 @@ $$
     $$
     \begin{aligned}
     L_B &= \begin{bmatrix}
-    1 & 0 \\
+    1 & 0 \
     7/5 & 1
-    \end{bmatrix} \\
+    \end{bmatrix} \
     U_B &= \begin{bmatrix}
-    5 & 6 \\
+    5 & 6 \
     0 & 2/5
     \end{bmatrix}
     \end{aligned}
@@ -195,7 +195,7 @@ $$
 
     $$
     \begin{aligned}
-    LU X + X L_B U_B &= C \\
+    LU X + X L_B U_B &= C \
     \end{aligned}
     $$
 
@@ -203,7 +203,7 @@ $$
 
     $$
     \begin{aligned}
-    LY + Y L_B U_B &= C \\
+    LY + Y L_B U_B &= C \
     \end{aligned}
     $$
 
@@ -212,7 +212,7 @@ $$
     $$
     \begin{aligned}
     Y &= \begin{bmatrix}
-    9 & 10 \\
+    9 & 10 \
     -2 & -4
     \end{bmatrix}
     \end{aligned}
@@ -223,7 +223,7 @@ $$
     $$
     \begin{aligned}
     X &= \begin{bmatrix}
-    1 & 1 \\
+    1 & 1 \
     -1 & -2
     \end{bmatrix}
     \end{aligned}
@@ -314,7 +314,7 @@ print(X)
 
 $$
 \begin{aligned}
-\dot{x}(t) &= Ax(t) + Bu(t) \\
+\dot{x}(t) &= Ax(t) + Bu(t) \
 y(t) &= Cx(t) + Du(t)
 \end{aligned}
 $$
@@ -468,4 +468,4 @@ $$
     - 图像处理
     - 机器学习
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

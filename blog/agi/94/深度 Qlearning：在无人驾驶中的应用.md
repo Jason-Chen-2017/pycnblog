@@ -290,7 +290,7 @@ class DQN(nn.Module):
         self.fc1 = nn.Linear(state_dim, hidden_dim)
         self.fc2 = nn.Linear(hidden_dim, hidden_dim)
         self.fc3 = nn.Linear(hidden_dim, action_dim)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = torch.relu(self.fc2(x))
@@ -312,22 +312,22 @@ def train(model, optimizer, criterion, episodes=1000):
             with torch.no_grad():
                 q_values = model(state)
                 action = q_values.argmax().item()
-            
+
             # 执行动作
             next_state, reward, done, _ = env.step(action)
-            
+
             # 计算损失
             target = reward + 0.99 * model(next_state).max()
             loss = criterion(q_values[0], target.unsqueeze(0))
-            
+
             # 反向传播和优化
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-            
+
             # 更新状态
             state = next_state
-        
+
         print(f"Episode {episode+1}, Reward: {env._elapsed_steps}")
 
 # 运行训练

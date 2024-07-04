@@ -1,4 +1,4 @@
-                 
+
 # 人工神经网络：巴普蒂塔（BapTite）算法与应用
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -149,11 +149,11 @@ class BapTiteNetwork:
         self.input_size = input_size
         self.hidden_layers = [hidden_layers]
         self.output_size = output_size
-        
+
         # 初始化权重和偏置
         self.weights = []
         self.biases = []
-        
+
         for i in range(len(self.hidden_layers)):
             w = np.random.randn(self.hidden_layers[i], self.hidden_layers[i-1] if i > 0 else self.input_size)
             b = np.zeros((self.hidden_layers[i], 1))
@@ -178,7 +178,7 @@ class BapTiteNetwork:
         final_z = np.dot(self.weights[-1], activations[-1]) + self.biases[-1]
         final_a = softmax(final_z)
         return final_a, zs
-    
+
 def relu(x):
     return np.maximum(0, x)
 

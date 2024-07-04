@@ -11,7 +11,7 @@
 ### 2.1 AI系统Chef的定义
 ### 2.2 AI系统Chef的核心组成部分
 #### 2.2.1 数据处理模块
-#### 2.2.2 算法模型模块 
+#### 2.2.2 算法模型模块
 #### 2.2.3 知识库模块
 ### 2.3 AI系统Chef与传统菜谱推荐系统的区别
 
@@ -73,7 +73,7 @@ $$\mathbf{h}_{i,j}^{(l)} = \max_{0 \leq m < M, 0 \leq n < N}\mathbf{h}_{i \times
 import pandas as pd
 
 # 读取用户-菜谱交互数据
-user_recipe_df = pd.read_csv('user_recipe.csv') 
+user_recipe_df = pd.read_csv('user_recipe.csv')
 # 读取菜谱元数据
 recipe_meta_df = pd.read_csv('recipe_meta.csv')
 ```
@@ -200,7 +200,7 @@ exp_group_recommendations = new_model.recommend(exp_group_users)
 control_group_recommendations = baseline_model.recommend(control_group_users)
 
 # 比较两组的CTR、转化率等指标
-exp_group_ctr = exp_group_recommendations['click'].sum() / len(exp_group_recommendations)  
+exp_group_ctr = exp_group_recommendations['click'].sum() / len(exp_group_recommendations)
 control_group_ctr = control_group_recommendations['click'].sum() / len(control_group_recommendations)
 print(f'实验组CTR: {exp_group_ctr:.4f}, 对照组CTR: {control_group_ctr:.4f}')
 ```

@@ -1,4 +1,4 @@
-                 
+
 # 层次聚类(Hierarchical Clustering) - 原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -66,7 +66,7 @@
 - **优点**：
   - 直观且易于解释：层次聚类的结果可以通过树状图形式展示，便于用户理解聚类过程和结果。
   - 灵活性高：可以动态决定簇的数量，同时提供了一个连续的分层视图，便于用户根据需求调整分层级别。
-  
+
 - **缺点**：
   - 计算复杂度高：随着数据规模的增加，计算成本迅速上升，尤其是在大规模数据集上表现明显。
   - 缺乏明确的停止准则：如何确定最优的聚类数目没有严格的标准，这依赖于用户的主观判断或特定指标的优化。
@@ -133,7 +133,7 @@ $$ d(C_i, C_j) = \min_{i=1,...,m; j=1,...,n} d(x_i, y_j) $$
 
 - **如何选择合适的链接类型？**
   根据数据特点和聚类目的选择不同的链接类型。例如，在物理距离较近的数据集中，单链可能更合适；而在需要最大化簇间差异的情况下，全链可能会更好。
-  
+
 - **如何处理大尺度数据？**
   对于大数据集，可以选择快速距离估计算法或者基于样本的近似距离矩阵来降低计算复杂度。
 
@@ -206,7 +206,7 @@ plt.show()
 
 - **官方文档**：
   - [Scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html) - 提供详细的API文档和用法示例。
-  
+
 - **在线教程**：
   - [DataCamp](https://www.datacamp.com/courses/cluster-analysis-with-python)
   - [Towards Data Science](https://towardsdatascience.com/hierarchical-clustering-explained-in-simple-steps-8a1b9fddd6eb) - 文章提供了层次聚类的深入解释和实例。

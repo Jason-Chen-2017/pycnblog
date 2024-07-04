@@ -22,7 +22,7 @@ A(Topic) --> B(Partition 0)
 A(Topic) --> C(Partition 1)
 A(Topic) --> D(Partition 2)
 B --> E(Broker 0)
-C --> F(Broker 1)  
+C --> F(Broker 1)
 D --> G(Broker 2)
 H(Consumer Group) --> E
 H --> F
@@ -45,7 +45,7 @@ Kafka Partition分区机制的核心是将Topic划分为多个Partition,并将�
 2. 生产者发送消息:
    - 生产者根据分区算法(如Hash、Round-Robin等),确定消息发送到哪个Partition。
    - 将消息追加到对应Partition的本地日志中。
-3. 消费者消费消息:  
+3. 消费者消费消息:
    - 消费者加入Consumer Group,并订阅Topic。
    - Consumer Group根据Partition数量和消费者数量,为每个消费者分配Partition。
    - 每个消费者从分配到的Partition中拉取消息进行消费。
@@ -57,12 +57,12 @@ Kafka Partition分区机制的核心是将Topic划分为多个Partition,并将�
 ### 3.3 算法优缺点
 - 优点:
   - 负载均衡:Partition分布在不同Broker上,实现负载均衡。
-  - 高吞吐:消息分散在多个Partition,可并行读写,提高吞吐量。  
+  - 高吞吐:消息分散在多个Partition,可并行读写,提高吞吐量。
   - 可扩展:增加Broker和Partition数量,可线性扩展系统性能。
-- 缺点:  
+- 缺点:
   - 复杂性:Partition机制增加了系统复杂性,如Partition再平衡。
   - 消息顺序:相同Key的消息可能分布在不同Partition,不保证顺序。
-  
+
 ### 3.4 算法应用领域
 Partition机制广泛应用于Kafka的数据存储、消息队列、流处理等各个方面,是Kafka实现高吞吐、高可用、可扩展的核心基石。
 
@@ -72,7 +72,7 @@ Partition机制广泛应用于Kafka的数据存储、消息队列、流处理等
 
 - 定义Topic $T$,Partition数量为$N$,Broker数量为$M$。
 - 第$i$个Partition表示为$P_i$,其中$0 \leq i < N$。
-- 第$j$个Broker表示为$B_j$,其中$0 \leq j < M$。  
+- 第$j$个Broker表示为$B_j$,其中$0 \leq j < M$。
 - Partition到Broker的映射关系表示为:$f: P_i \rightarrow B_j$。
 
 ### 4.2 公式推导过程
@@ -85,7 +85,7 @@ $$f(P_i) = B_{i \bmod M}$$
 ### 4.3 案例分析与讲解
 举例说明,假设有一个Topic,4个Partition,3个Broker,则Partition到Broker的映射关系为:
 
-- $P_0 \rightarrow B_0$  
+- $P_0 \rightarrow B_0$
 - $P_1 \rightarrow B_1$
 - $P_2 \rightarrow B_2$
 - $P_3 \rightarrow B_0$
@@ -95,7 +95,7 @@ $$f(P_i) = B_{i \bmod M}$$
 ### 4.4 常见问题解答
 - 问题1:Partition数量和Broker数量是否需要相等?
   - 答:不需要,Partition数量可以大于Broker数量,以实现更好的负载均衡。
-- 问题2:Partition数量是否可以动态调整?  
+- 问题2:Partition数量是否可以动态调整?
   - 答:可以,但调整Partition数量需要重新分配数据,较为复杂,建议提前规划好。
 
 ## 5. 项目实践：代码实例和详细解释说明
@@ -160,7 +160,7 @@ while (true) {
 - 创建Topic:
   - 指定Topic名称、Partition数量、副本因子。
   - 使用AdminClient创建Topic。
-- 发送消息:  
+- 发送消息:
   - 创建KafkaProducer,指定Broker地址和序列化器。
   - 创建ProducerRecord,指定Topic、Key、Value。
   - 发送消息到Kafka。
@@ -168,7 +168,7 @@ while (true) {
   - 创建KafkaConsumer,指定Broker地址、Group ID、反序列化器。
   - 订阅Topic。
   - 轮询消息,打印Partition、Offset、Key、Value等信息。
-  
+
 ### 5.4 运行结果展示
 运行Consumer后,可以看到类似如下输出:
 

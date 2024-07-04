@@ -166,7 +166,7 @@ A：Transformer模型具有以下优势：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n chatgpt-env python=3.8 
+conda create -n chatgpt-env python=3.8
 conda activate chatgpt-env
 ```
 

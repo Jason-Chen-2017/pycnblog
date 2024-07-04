@@ -28,7 +28,7 @@
 
 - Event：Flume数据传输的基本单元，包含headers和body两部分。
 - Source：数据收集组件，用于接收传入的数据。
-- Channel：中转存储组件，用于临时存储传输中的数据。 
+- Channel：中转存储组件，用于临时存储传输中的数据。
 - Sink：数据发送组件，用于将事件传递到下一个Flume Agent或最终目标。
 - Agent：一个独立的Flume进程，包含Source、Channel和Sink三个组件。
 
@@ -39,7 +39,7 @@
 ```mermaid
 graph LR
 A[Source] --> B[Interceptor]
-B --> C[Channel] 
+B --> C[Channel]
 C --> D[Sink]
 ```
 
@@ -102,8 +102,8 @@ $$F(e) = f_n(...f_2(f_1(e))...)$$
 
 举个例子，假设有一个日志采集场景，我们需要过滤掉某些不重要的日志，并对剩余日志添加时间戳和主机名。可以定义以下两个Interceptor：
 
-- LogFilterInterceptor: 
-$$f_1(e) = \begin{cases} 
+- LogFilterInterceptor:
+$$f_1(e) = \begin{cases}
 e, & \text{if } e \text{ satisfies filter criteria} \\
 \emptyset, & \text{otherwise}
 \end{cases}$$
@@ -145,20 +145,20 @@ $$F = f_2 \circ f_1$$
 
 ```java
 public class EventFilterInterceptor implements Interceptor {
-    
+
     private String excludePattern;
-    
+
     @Override
     public void initialize() {
         // 从配置文件中读取过滤正则表达式
         excludePattern = Context.getString("exclude.pattern");
     }
-    
+
     @Override
     public Event intercept(Event event) {
         // 获取Event的body
         String body = new String(event.getBody(), Charsets.UTF_8);
-        
+
         // 判断body是否匹配过滤条件
         if (body.matches(excludePattern)) {
             // 如果匹配，返回null表示丢弃该Event
@@ -168,7 +168,7 @@ public class EventFilterInterceptor implements Interceptor {
             return event;
         }
     }
-    
+
     @Override
     public List<Event> intercept(List<Event> events) {
         List<Event> intercepted = new ArrayList<>();
@@ -180,12 +180,12 @@ public class EventFilterInterceptor implements Interceptor {
         }
         return intercepted;
     }
-    
+
     @Override
     public void close() {
         // 清理资源
     }
-    
+
 }
 ```
 

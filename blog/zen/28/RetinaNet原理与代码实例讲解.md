@@ -78,29 +78,29 @@ RetinaNet 主要应用于自动驾驶、安防监控、机器人视觉等领域�
 #### RetinaNet 的损失函数：
 
 $$
-L = \\lambda_{cls} \\cdot \\mathcal{L}_{cls} + \\lambda_{box} \\cdot \\mathcal{L}_{box}
+L = \lambda_{cls} \cdot \mathcal{L}_{cls} + \lambda_{box} \cdot \mathcal{L}_{box}
 $$
 
 其中：
 
-- $\\mathcal{L}_{cls}$ 是分类损失，通过 Focal Loss 计算。
-- $\\mathcal{L}_{box}$ 是回归损失，通常采用 Smooth L1 loss 或其他回归损失函数计算。
-- $\\lambda_{cls}$ 和 $\\lambda_{box}$ 是权重系数，分别控制分类损失和回归损失的重要性。
+- $\mathcal{L}_{cls}$ 是分类损失，通过 Focal Loss 计算。
+- $\mathcal{L}_{box}$ 是回归损失，通常采用 Smooth L1 loss 或其他回归损失函数计算。
+- $\lambda_{cls}$ 和 $\lambda_{box}$ 是权重系数，分别控制分类损失和回归损失的重要性。
 
 ### 4.2 公式推导过程
 
 #### Focal Loss：
 
 $$
-FL(p_t) = -\\alpha_t \\cdot [1-p_t]^{\\gamma} \\cdot \\log(p_t)
+FL(p_t) = -\alpha_t \cdot [1-p_t]^{\gamma} \cdot \log(p_t)
 $$
 
 其中：
 
 - $p_t$ 是预测概率。
-- $\\alpha_t$ 是类别权重，可选为 $\\alpha_t = \\begin{cases} \\alpha & \\text{if } t = \\text{背景} \\\\ 1-\\alpha & \\text{if } t \
-eq \\text{背景} \\end{cases}$，$\\alpha$ 是平衡参数。
-- $\\gamma$ 是衰减参数，用于强调难分类样本。
+- $\alpha_t$ 是类别权重，可选为 $\alpha_t = \begin{cases} \alpha & \text{if } t = \text{背景} \\ 1-\alpha & \text{if } t \
+eq \text{背景} \end{cases}$，$\alpha$ 是平衡参数。
+- $\gamma$ 是衰减参数，用于强调难分类样本。
 
 ### 4.3 案例分析与讲解
 
@@ -111,8 +111,8 @@ eq \\text{背景} \\end{cases}$，$\\alpha$ 是平衡参数。
 #### Q：为什么 RetinaNet 使用 FPN？
 A：FPN 支持多尺度特征提取，使得 RetinaNet 能够检测不同大小的物体，同时减少计算成本。
 
-#### Q：如何选择 Focal Loss 中的 $\\alpha$ 和 $\\gamma$ 参数？
-A：$\\alpha$ 和 $\\gamma$ 可以通过交叉验证来调整，以找到最适合当前数据集的值。
+#### Q：如何选择 Focal Loss 中的 $\alpha$ 和 $\gamma$ 参数？
+A：$\alpha$ 和 $\gamma$ 可以通过交叉验证来调整，以找到最适合当前数据集的值。
 
 ## 5. 项目实践：代码实例和详细解释说明
 
@@ -187,7 +187,7 @@ RetinaNet 在实际应用中展现出强大的性能，适用于自动驾驶中�
 
 ### 7.3 相关论文推荐
 
-- **\"RetinaNet: Improving Object Detection with Fully Convolutional Networks\"**：了解 RetinaNet 的详细设计和性能提升。
+- **"RetinaNet: Improving Object Detection with Fully Convolutional Networks"**：了解 RetinaNet 的详细设计和性能提升。
 
 ### 7.4 其他资源推荐
 

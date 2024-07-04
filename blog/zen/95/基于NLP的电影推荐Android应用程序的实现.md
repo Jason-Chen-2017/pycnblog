@@ -1,7 +1,7 @@
 
 # 基于NLP的电影推荐Android应用程序的实现
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 

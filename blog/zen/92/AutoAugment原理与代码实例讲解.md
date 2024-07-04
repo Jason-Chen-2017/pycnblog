@@ -159,7 +159,7 @@ class Generator(nn.Module):
             nn.ConvTranspose2d(64, 3, 2, stride=2),
             nn.Tanh()
         )
-    
+
     def forward(self, z):
         return self.model(z)
 
@@ -177,7 +177,7 @@ class Discriminator(nn.Module):
             nn.Linear(256 * 2 * 2, 1),
             nn.Sigmoid()
         )
-    
+
     def forward(self, x):
         return self.model(x)
 
@@ -199,22 +199,22 @@ for epoch in range(epochs):
         z = torch.randn(batch_size, z_dim).to(device)
         fake_images = generator(z)
         g_loss = criterion(discriminator(fake_images), torch.ones_like(discriminator(fake_images)))
-        
+
         optimizer_G.zero_grad()
         g_loss.backward()
         optimizer_G.step()
-        
+
         # 训练判别器
         real_images = real_images.to(device)
         d_loss_real = criterion(discriminator(real_images), torch.ones_like(discriminator(real_images)))
         fake_images = generator(z)
         d_loss_fake = criterion(discriminator(fake_images.detach()), torch.zeros_like(discriminator(fake_images)))
         d_loss = (d_loss_real + d_loss_fake) / 2
-        
+
         optimizer_D.zero_grad()
         d_loss.backward()
         optimizer_D.step()
-        
+
         if i % 100 == 0:
             print(f"Epoch {epoch+1}, Iteration {i}, G Loss: {g_loss.item()}, D Loss: {d_loss.item()}")
             save_image(fake_images.data[:10], f'images/fake_images_{epoch+1}_{i}.png', nrow=10)
@@ -247,13 +247,13 @@ for epoch in range(epochs):
     for i, (images, labels) in enumerate(train_loader):
         images = images.to(device)
         labels = labels.to(device)
-        
+
         optimizer.zero_grad()
         outputs = model(images)
         loss = nn.CrossEntropyLoss()(outputs, labels)
         loss.backward()
         optimizer.step()
-        
+
         if i % 100 == 0:
             print(f"Epoch {epoch+1}, Iteration {i}, Loss: {loss.item()}")
 ```
@@ -312,7 +312,7 @@ class AutoAugment(nn.Module):
     def __init__(self, operations):
         super(AutoAugment, self).__init__()
         self.operations = nn.Sequential(*operations)
-    
+
     def forward(self, x):
         return self.operations(x)
 
@@ -322,7 +322,7 @@ def train(model, dataloader, optimizer, criterion):
     for images, labels in dataloader:
         images = images.to(device)
         labels = labels.to(device)
-        
+
         optimizer.zero_grad()
         outputs = model(images)
         loss = criterion(outputs, labels)

@@ -1,6 +1,6 @@
 # 创业者在AI浪潮中的机会
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -249,4 +249,4 @@ AI技术近年来取得了巨大的进步，并在各个领域展现出巨大的
 * **如何提高AI创业的成功率？**
     * 需要组建优秀的团队、选择合适的商业模式、进行有效的市场推广。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

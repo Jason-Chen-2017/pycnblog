@@ -119,10 +119,8 @@ $$ \mathcal{L}(U, V) = \frac{1}{2}\sum_{(u, i) \in \Omega} \left(R_{ui} - UV^\to
 
 通过梯度下降法最小化损失函数，得到更新规则：
 
-$$ U \leftarrow U - \eta \
-abla_U \mathcal{L}(U, V) $$
-$$ V \leftarrow V - \eta \
-abla_V \mathcal{L}(U, V) $$
+$$ U \leftarrow U - \eta \nabla_U \mathcal{L}(U, V) $$
+$$ V \leftarrow V - \eta \nabla_V \mathcal{L}(U, V) $$
 
 ### 4.3 案例分析与讲解
 

@@ -121,8 +121,8 @@ $$
 
 $$
 \begin{aligned}
-Gain(S, F) &= Entropy(S) - \sum_{v \in Values(F)}\frac{|S_v|}{|S|}Entropy(S_v) \\
-&= 1 - \frac{3}{10}(-\frac{2}{3}\log_2(\frac{2}{3}) - \frac{1}{3}\log_2(\frac{1}{3})) - \frac{7}{10}(-\frac{3}{7}\log_2(\frac{3}{7}) - \frac{4}{7}\log_2(\frac{4}{7})) \\
+Gain(S, F) &= Entropy(S) - \sum_{v \in Values(F)}\frac{|S_v|}{|S|}Entropy(S_v) \
+&= 1 - \frac{3}{10}(-\frac{2}{3}\log_2(\frac{2}{3}) - \frac{1}{3}\log_2(\frac{1}{3})) - \frac{7}{10}(-\frac{3}{7}\log_2(\frac{3}{7}) - \frac{4}{7}\log_2(\frac{4}{7})) \
 &= 0.16
 \end{aligned}
 $$

@@ -251,7 +251,7 @@ A：不同的损失函数适用于不同的任务。交叉熵损失函数适用�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 

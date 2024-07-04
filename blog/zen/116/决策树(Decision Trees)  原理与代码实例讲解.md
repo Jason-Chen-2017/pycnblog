@@ -62,7 +62,7 @@
 决策树算法的数学模型主要基于信息论和概率论的原理。
 
 ### 4.2  公式推导过程
-* **信息增益:** 
+* **信息增益:**
 $$
 Gain(S,A) = H(S) - \sum_{v \in V} \frac{|S_v|}{|S|} H(S_v)
 $$
@@ -167,7 +167,7 @@ plt.show()
     * edX: Introduction to Machine Learning
 
 ### 7.2  开发工具推荐
-* **Python:** 
+* **Python:**
     * scikit-learn
     * pandas
     * matplotlib
@@ -210,5 +210,5 @@ plt.show()
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

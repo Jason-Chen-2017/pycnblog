@@ -14,7 +14,7 @@
 
 对抗样本(Adversarial Example)是添加了对抗性扰动的输入数据样本。生成对抗样本的过程被称为对抗样本生成(Adversarial Example Generation)。研究人员已经提出了多种对抗样本生成算法,如快速梯度符号法(FGSM)、Jacobian矩阵数据集攻击(JSMA)等,能够有效地攻破现有的AI系统。
 
-## 2.核心概念与联系  
+## 2.核心概念与联系
 
 ### 2.1 对抗攻击与机器学习模型
 
@@ -66,7 +66,7 @@ JSMA的关键在于利用Jacobian矩阵来评估每个特征对输出的影响�
 graph TD
     A[输入样本x] --> B[计算Jacobian矩阵]
     B --> C[构造针对性扰动矩阵]
-    C --> D[添加扰动到输入] 
+    C --> D[添加扰动到输入]
     D --> E[输出对抗样本]
 ```
 
@@ -103,8 +103,8 @@ $$\eta = \epsilon \ \text{sign}(\nabla_x J(\theta, x, y=\text{cat}))$$
 在JSMA算法中,扰动 $\gamma$ 的构造过程较为复杂。首先需要计算Jacobian矩阵:
 
 $$J_F(x) = \begin{bmatrix}
-\frac{\partial F_1(x)}{\partial x_1} & \cdots & \frac{\partial F_1(x)}{\partial x_n} \\
-\vdots & \ddots & \vdots \\
+\frac{\partial F_1(x)}{\partial x_1} & \cdots & \frac{\partial F_1(x)}{\partial x_n} \
+\vdots & \ddots & \vdots \
 \frac{\partial F_m(x)}{\partial x_1} & \cdots & \frac{\partial F_m(x)}{\partial x_n}
 \end{bmatrix}$$
 
@@ -116,7 +116,7 @@ $$J_F(x) = \begin{bmatrix}
 
 通过将扰动 $\gamma$ 添加到原始输入 $x$ 中,我们可以得到对抗样本 $x' = x + \gamma$,使得 $F(x') \neq F(x)$。
 
-## 5.项目实践:代码实例和详细解释说明  
+## 5.项目实践:代码实例和详细解释说明
 
 为了帮助读者更好地理解对抗样本生成的过程,我们将使用Python和PyTorch库,基于MNIST手写数字数据集实现FGSM算法。代码如下:
 
@@ -181,7 +181,7 @@ import matplotlib.pyplot as plt
 fig, axes = plt.subplots(1, 2, figsize=(10, 5))
 axes[0].imshow(data[0,0], cmap='gray')
 axes[0].set_title('Original Image')
-axes[1].imshow(data_adv[0,0], cmap='gray') 
+axes[1].imshow(data_adv[0,0], cmap='gray')
 axes[1].set_title('Adversarial Example')
 plt.show()
 ```

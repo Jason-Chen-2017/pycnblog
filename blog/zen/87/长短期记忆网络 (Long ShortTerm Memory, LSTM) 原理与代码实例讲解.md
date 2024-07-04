@@ -95,11 +95,11 @@ LSTM的数学模型主要包括以下公式：
 
 $$
 \begin{align*}
-i_t &= \sigma(W_{ix}x_t + W_{ih}h_{t-1} + b_i) \\
-f_t &= \sigma(W_{fx}x_t + W_{fh}h_{t-1} + b_f) \\
-o_t &= \sigma(W_{ox}x_t + W_{oh}h_{t-1} + b_o) \\
-g_t &= tanh(W_{gx}x_t + W_{gh}h_{t-1} + b_g) \\
-c_t &= f_t \odot c_{t-1} + i_t \odot g_t \\
+i_t &= \sigma(W_{ix}x_t + W_{ih}h_{t-1} + b_i) \
+f_t &= \sigma(W_{fx}x_t + W_{fh}h_{t-1} + b_f) \
+o_t &= \sigma(W_{ox}x_t + W_{oh}h_{t-1} + b_o) \
+g_t &= tanh(W_{gx}x_t + W_{gh}h_{t-1} + b_g) \
+c_t &= f_t \odot c_{t-1} + i_t \odot g_t \
 h_t &= o_t \odot tanh(c_t)
 \end{align*}
 $$

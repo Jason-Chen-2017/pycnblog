@@ -6,7 +6,7 @@
 #### 1.1.2 BERT等预训练语言模型的发展
 #### 1.1.3 T5的诞生
 ### 1.2 T5的创新点
-#### 1.2.1 统一的文本到文本框架 
+#### 1.2.1 统一的文本到文本框架
 #### 1.2.2 多任务学习能力
 #### 1.2.3 更大规模的预训练语料库
 
@@ -25,7 +25,7 @@
 ## 3. 核心算法原理具体操作步骤
 ### 3.1 T5模型结构
 #### 3.1.1 编码器(Encoder)
-#### 3.1.2 解码器(Decoder) 
+#### 3.1.2 解码器(Decoder)
 #### 3.1.3 模型参数规模
 ### 3.2 预训练目标与过程
 #### 3.2.1 去噪自编码预训练目标
@@ -82,28 +82,28 @@ import torch.nn as nn
 class T5Model(nn.Module):
     def __init__(self, vocab_size, d_model, nhead, num_layers):
         super().__init__()
-        
+
         self.embedding = nn.Embedding(vocab_size, d_model)
-        self.pos_encoder = PositionalEncoding(d_model) 
-        
+        self.pos_encoder = PositionalEncoding(d_model)
+
         encoder_layer = nn.TransformerEncoderLayer(d_model, nhead)
         self.encoder = nn.TransformerEncoder(encoder_layer, num_layers)
-        
+
         decoder_layer = nn.TransformerDecoderLayer(d_model, nhead)
         self.decoder = nn.TransformerDecoder(decoder_layer, num_layers)
-        
+
         self.fc = nn.Linear(d_model, vocab_size)
-        
+
     def forward(self, src, tgt, src_mask, tgt_mask):
         src = self.embedding(src) * math.sqrt(d_model)
         src = self.pos_encoder(src)
-        
+
         tgt = self.embedding(tgt) * math.sqrt(d_model)
         tgt = self.pos_encoder(tgt)
-        
+
         memory = self.encoder(src, src_mask)
         output = self.decoder(tgt, memory, tgt_mask, None)
-        
+
         output = self.fc(output)
         return output
 ```
@@ -117,10 +117,10 @@ for epoch in range(num_epochs):
     for batch in data_loader:
         src, tgt = batch
         src_mask, tgt_mask = create_masks(src, tgt)
-        
+
         outputs = model(src, tgt, src_mask, tgt_mask)
         loss = criterion(outputs.reshape(-1, vocab_size), tgt.reshape(-1))
-        
+
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()

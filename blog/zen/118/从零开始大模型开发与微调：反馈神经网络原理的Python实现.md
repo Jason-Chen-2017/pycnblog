@@ -101,7 +101,7 @@
 
 $$
 \begin{aligned}
-&h^{(l)}_{ij} = f(W^{(l)}_{ij} \cdot x_i + b^{(l)}_{ij}) \\
+&h^{(l)}_{ij} = f(W^{(l)}_{ij} \cdot x_i + b^{(l)}_{ij}) \
 &y_j = f(W^{(l+1)}_{ji} \cdot h^{(l)}_{i} + b^{(l+1)}_{ji})
 \end{aligned}
 $$
@@ -130,7 +130,7 @@ $$
 
 $$
 \begin{aligned}
-&\frac{\partial L}{\partial y'} = \frac{y-y'}{y'(1-y')} \\
+&\frac{\partial L}{\partial y'} = \frac{y-y'}{y'(1-y')} \
 &\frac{\partial L}{\partial y} = \frac{y'-y}{y'(1-y')}
 \end{aligned}
 $$
@@ -139,7 +139,7 @@ $$
 
 $$
 \begin{aligned}
-&\frac{\partial L}{\partial W} = \frac{\partial L}{\partial y'} \cdot \frac{\partial y'}{\partial y} \cdot \frac{\partial y}{\partial W} \\
+&\frac{\partial L}{\partial W} = \frac{\partial L}{\partial y'} \cdot \frac{\partial y'}{\partial y} \cdot \frac{\partial y}{\partial W} \
 &\frac{\partial L}{\partial b} = \frac{\partial L}{\partial y'} \cdot \frac{\partial y'}{\partial y} \cdot \frac{\partial y}{\partial b}
 \end{aligned}
 $$
@@ -160,7 +160,7 @@ class LogisticRegression(nn.Module):
     def __init__(self, input_size, output_size):
         super(LogisticRegression, self).__init__()
         self.linear = nn.Linear(input_size, output_size)
-    
+
     def forward(self, x):
         out = self.linear(x)
         return torch.sigmoid(out)
@@ -230,7 +230,7 @@ class FeedbackNeuralNetwork(nn.Module):
         self.linear1 = nn.Linear(input_size, hidden_size)
         self.linear2 = nn.Linear(hidden_size, output_size)
         self.linear3 = nn.Linear(output_size, input_size)
-    
+
     def forward(self, x):
         x = self.linear1(x)
         x = torch.tanh(x)

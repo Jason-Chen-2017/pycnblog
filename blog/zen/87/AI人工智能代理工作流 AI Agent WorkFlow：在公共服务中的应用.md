@@ -225,7 +225,7 @@ def submit_task():
     data = request.get_json()
     task_type = data['task_type']
     task_data = data['task_data']
-    
+
     # 分解任务
     if task_type == 'enterprise_registration':
         subtasks = [
@@ -235,13 +235,13 @@ def submit_task():
         ]
     else:
         return jsonify({'error': 'Unsupported task type'}), 400
-    
+
     # 调度任务
     for subtask in subtasks:
         url = f'http://task_scheduler.com/{subtask["task"]}'
         response = requests.post(url, json=subtask)
         print(response.text)
-    
+
     return jsonify({'message': 'Task submitted successfully'}), 200
 
 if __name__ == '__main__':

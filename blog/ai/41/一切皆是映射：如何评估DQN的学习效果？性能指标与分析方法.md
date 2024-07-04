@@ -136,7 +136,7 @@ $$
 
 $$
 \pi(a | s; \theta) = \begin{cases}
-1 - \epsilon, & \text{if } a = \text{argmax}_a Q(s, a; \theta) \\
+1 - \epsilon, & \text{if } a = \text{argmax}_a Q(s, a; \theta) \
 \frac{\epsilon}{|\{a | Q(s, a; \theta) = \text{argmax}_a Q(s, a; \theta)\}|}, & \text{otherwise}
 \end{cases}
 $$

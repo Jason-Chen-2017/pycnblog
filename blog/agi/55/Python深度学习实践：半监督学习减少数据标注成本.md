@@ -8,7 +8,7 @@
 #### 1.1.2 人工标注数据的高昂成本
 #### 1.1.3 数据标注成为深度学习应用的瓶颈
 ### 1.2 半监督学习的优势
-#### 1.2.1 利用未标注数据降低标注成本  
+#### 1.2.1 利用未标注数据降低标注成本
 #### 1.2.2 提高模型泛化能力
 #### 1.2.3 适用于标注数据稀缺的场景
 
@@ -98,13 +98,13 @@ class Net(nn.Module):
         super(Net, self).__init__()
         self.fc1 = nn.Linear(64, 32)
         self.fc2 = nn.Linear(32, 10)
-        
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)
         return x
 
-# 初始化模型、损失函数和优化器    
+# 初始化模型、损失函数和优化器
 model = Net()
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.01)
@@ -120,7 +120,7 @@ for epoch in range(50):
     loss = criterion(outputs, y_labeled_tensor)
     loss.backward()
     optimizer.step()
-    
+
     # 用训练的模型标注未标注数据
     model.eval()
     X_unlabeled_tensor = torch.from_numpy(X_unlabeled).float()
@@ -128,7 +128,7 @@ for epoch in range(50):
         outputs = model(X_unlabeled_tensor)
     _, pseudo_labels = torch.max(outputs, 1)
     pseudo_labels = pseudo_labels.numpy()
-    
+
     # 选择置信度高的样本加入训练集
     probs = torch.softmax(outputs, dim=1)
     conf_thres = 0.95
@@ -137,9 +137,9 @@ for epoch in range(50):
     y_add = pseudo_labels[conf_mask]
     X_labeled = np.concatenate((X_labeled, X_add))
     y_labeled = np.concatenate((y_labeled, y_add))
-    
+
     # 评估模型在测试集上的性能
-    X_test_tensor = torch.from_numpy(X_test).float() 
+    X_test_tensor = torch.from_numpy(X_test).float()
     with torch.no_grad():
         outputs = model(X_test_tensor)
     _, predictions = torch.max(outputs, 1)
@@ -180,4 +180,4 @@ for epoch in range(50):
 利用深度神经网络强大的特征学习能力，结合半监督学习，可以进一步提高模型性能，是目前的研究热点。
 ### 8.2 半监督主动学习
 主动学习可以选择最有价值的样本进行标注，与半监督学习结合，有望以最小标注代价获得高性能模型。
-### 
+###

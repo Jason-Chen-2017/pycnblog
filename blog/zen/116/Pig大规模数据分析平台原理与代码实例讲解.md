@@ -41,7 +41,7 @@ graph TD
     C --> |执行| D[MapReduce作业]
     D --> E[HDFS]
     E --> |输入| D
-    
+
     F[数据操作符] --> A
     G[函数] --> A
     H[数据模型] --> A
@@ -254,4 +254,4 @@ $$\rho_{A_i}(R), \rho_{B_j}(S)$$
 #### 4.3.1 Pig Latin脚本
 
 ```pig
-users = LOAD 
+users = LOAD

@@ -6,7 +6,7 @@
 
 在计算机科学和数理逻辑的发展历程中,有一些杰出的科学家和思想家为这一领域做出了卓越的贡献。其中,阿隆佐·丘奇(Alonzo Church)无疑是最具影响力和开创性的人物之一。他的工作不仅为计算理论奠定了坚实的基础,而且对人工智能(AI)和现代计算机的发展产生了深远的影响。
 
-### 1.2 研究现状  
+### 1.2 研究现状
 
 近年来,随着人工智能技术的不断突破,大型语言模型(Large Language Models,LLMs)成为了研究的热点。这些模型通过消化海量的文本数据,展现出惊人的自然语言理解和生成能力。而丘奇对于计算理论和逻辑学的贡献,为这些模型的发展奠定了理论基础。
 
@@ -78,19 +78,19 @@ graph TD
    - 定义一个函数`inc`,它接受一个数字n并返回n+1:
 
         $$\begin{aligned}
-        inc &= \lambda n.(\lambda f. \lambda x. f(f\,x))(\lambda g.\lambda y. (g\,(g\,y)))\\
-            &= \lambda n.(\lambda f.\lambda x.f(f\,x))(\lambda y.((\lambda z.z\,z)\,y))\\
+        inc &= \lambda n.(\lambda f. \lambda x. f(f\,x))(\lambda g.\lambda y. (g\,(g\,y)))\
+            &= \lambda n.(\lambda f.\lambda x.f(f\,x))(\lambda y.((\lambda z.z\,z)\,y))\
             &= \lambda n.(\lambda f.\lambda x.f(f\,x))(\lambda y.y\,y)
         \end{aligned}$$
 
    - 应用`inc`函数:
 
         $$\begin{aligned}
-        (inc\,3) &= (\lambda n.(\lambda f.\lambda x.f(f\,x))(\lambda y.y\,y))\,3\\
-                &= (\lambda f.\lambda x.f(f\,x))(\lambda y.y\,y)\\
-                &= \lambda x.(\lambda y.y\,y)((\lambda y.y\,y)\,x)\\
-                &= \lambda x.((\lambda y.y\,y)\,x)\,((\lambda y.y\,y)\,x)\\
-                &= \lambda x.x\,x\\
+        (inc\,3) &= (\lambda n.(\lambda f.\lambda x.f(f\,x))(\lambda y.y\,y))\,3\
+                &= (\lambda f.\lambda x.f(f\,x))(\lambda y.y\,y)\
+                &= \lambda x.(\lambda y.y\,y)((\lambda y.y\,y)\,x)\
+                &= \lambda x.((\lambda y.y\,y)\,x)\,((\lambda y.y\,y)\,x)\
+                &= \lambda x.x\,x\
                 &= 4
         \end{aligned}$$
 
@@ -110,7 +110,7 @@ graph TD
 3. **示例**
    - 定义加法函数:
      $$\begin{aligned}
-     \text{Add}(x, y) &= \mu r.\exists s.\forall t.((t=0 \land r=y) \lor \\
+     \text{Add}(x, y) &= \mu r.\exists s.\forall t.((t=0 \land r=y) \lor \
                        &\qquad\qquad\qquad(t>0 \land (\exists u,v.(t=\text{Succ}(u) \land r=\text{Succ}(v) \land u=s \land v=\text{Add}(x, s)))))
      \end{aligned}$$
 
@@ -157,7 +157,7 @@ graph TD
 例如,加法函数可以通过原始递归的方式定义:
 
 $$\begin{aligned}
-\text{Add}(x, 0) &= x\\
+\text{Add}(x, 0) &= x\
 \text{Add}(x, \text{Succ}(y)) &= \text{Succ}(\text{Add}(x, y))
 \end{aligned}$$
 
@@ -172,12 +172,12 @@ $$\begin{aligned}
 例如,我们可以推导出之前定义的`inc`函数的计算过程:
 
 $$\begin{aligned}
-(inc\,3) &= (\lambda n.(\lambda f.\lambda x.f(f\,x))(\lambda y.y\,y))\,3\\
-         &\stackrel{\beta}{\rightarrow} (\lambda f.\lambda x.f(f\,x))(\lambda y.y\,y)\\
-         &\stackrel{\beta}{\rightarrow} \lambda x.(\lambda y.y\,y)((\lambda y.y\,y)\,x)\\
-         &\stackrel{\beta}{\rightarrow} \lambda x.((\lambda y.y\,y)\,x)\,((\lambda y.y\,y)\,x)\\
-         &\stackrel{\beta}{\rightarrow} \lambda x.x\,x\\
-         &\stackrel{\beta}{\rightarrow} 3\,3\\
+(inc\,3) &= (\lambda n.(\lambda f.\lambda x.f(f\,x))(\lambda y.y\,y))\,3\
+         &\stackrel{\beta}{\rightarrow} (\lambda f.\lambda x.f(f\,x))(\lambda y.y\,y)\
+         &\stackrel{\beta}{\rightarrow} \lambda x.(\lambda y.y\,y)((\lambda y.y\,y)\,x)\
+         &\stackrel{\beta}{\rightarrow} \lambda x.((\lambda y.y\,y)\,x)\,((\lambda y.y\,y)\,x)\
+         &\stackrel{\beta}{\rightarrow} \lambda x.x\,x\
+         &\stackrel{\beta}{\rightarrow} 3\,3\
          &= 4
 \end{aligned}$$
 
@@ -190,8 +190,8 @@ $$\begin{aligned}
 例如,我们可以推导出加法函数的定义:
 
 $$\begin{aligned}
-\text{Add}(x, y) &= \mu r.\exists s.\forall t.((t=0 \land r=y) \lor \\
-                 &\qquad\qquad\qquad(t>0 \land (\exists u,v.(t=\text{Succ}(u) \land r=\text{Succ}(v) \land u=s \land v=\text{Add}(x, s)))))\\
-                 &= \text{the least } r \text{ such that for all } t,\\
-                 &\qquad\text{if } t=0 \text{ then } r=y,\\
+\text{Add}(x, y) &= \mu r.\exists s.\forall t.((t=0 \land r=y) \lor \
+                 &\qquad\qquad\qquad(t>0 \land (\exists u,v.(t=\text{Succ}(u) \land r=\text{Succ}(v) \land u=s \land v=\text{Add}(x, s)))))\
+                 &= \text{the least } r \text{ such that for all } t,\
+                 &\qquad\text{if } t=0 \text{ then } r=y,\
                  &\qquad\text{if } t

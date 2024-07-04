@@ -63,19 +63,19 @@ Poincaré对偶定理本身不是一个具体的算法，而是定理，它基�
 
 ### 4.1 数学模型构建
 
-设 $M$ 是一个 n 维流形，$\\mathbf{v}: M \\to \\mathbb{R}^n$ 是一个向量场，定义为 $\\mathbf{v}(p) \\in T_pM$ 对于每个 $p \\in M$，其中 $T_pM$ 是在点 $p$ 处 $M$ 的切空间。
+设 $M$ 是一个 n 维流形，$\mathbf{v}: M \to \mathbb{R}^n$ 是一个向量场，定义为 $\mathbf{v}(p) \in T_pM$ 对于每个 $p \in M$，其中 $T_pM$ 是在点 $p$ 处 $M$ 的切空间。
 
 ### 4.2 公式推导过程
 
 Poincaré-Hopf定理的陈述如下：
 
-**定理**：对于任意的光滑向量场 $\\mathbf{v}$ 在闭流形 $M$ 上，若 $\\mathbf{v}$ 是一致正向的，则 $\\mathbf{v}$ 必存在至少一个奇点。
+**定理**：对于任意的光滑向量场 $\mathbf{v}$ 在闭流形 $M$ 上，若 $\mathbf{v}$ 是一致正向的，则 $\mathbf{v}$ 必存在至少一个奇点。
 
 证明过程通常涉及微分几何和拓扑学的基本概念，包括流形上的积分、度量、同伦理论等。具体证明过程较为复杂，涉及到高深的数学理论，通常在专业教材中详细展开。
 
 ### 4.3 案例分析与讲解
 
-考虑一个二维球面 $S^2$，其上的向量场 $\\mathbf{v}(x, y) = (-y, x)$。直观上，这个向量场在赤道处为零，因此在球面上存在奇点。
+考虑一个二维球面 $S^2$，其上的向量场 $\mathbf{v}(x, y) = (-y, x)$。直观上，这个向量场在赤道处为零，因此在球面上存在奇点。
 
 ### 4.4 常见问题解答
 
@@ -97,17 +97,17 @@ import numpy as np
 from scipy.optimize import minimize
 
 def find_vortex_points(vector_field, mesh, threshold=1e-6):
-    \"\"\"
+    """
     Detects vortex points on a mesh given a vector field.
-    
+
     Args:
         vector_field (function): The vector field function defined over the mesh.
         mesh (numpy array): The mesh representing the flow domain.
         threshold (float): The tolerance for considering a point as a vortex.
-        
+
     Returns:
         numpy array: Indices of the vortex points.
-    \"\"\"
+    """
     # Implementation details...
     pass
 ```

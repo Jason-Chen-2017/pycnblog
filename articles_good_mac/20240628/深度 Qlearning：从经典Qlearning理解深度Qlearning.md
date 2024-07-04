@@ -92,16 +92,14 @@ $$
 深度 Q-learning 的目标是学习一个最优的 Q 函数，使得智能体在任何状态下都能选择最优动作。为了实现这一目标，深度 Q-learning 使用梯度下降算法来更新 Q 函数的权重。
 
 $$
-\theta_{t+1} = \theta_t - \alpha \
-abla_ \theta Q(s_t, a_t)
+\theta_{t+1} = \theta_t - \alpha \nabla_ \theta Q(s_t, a_t)
 $$
 
 其中：
 
 * $\theta$ 表示深度神经网络的权重。
 * $\alpha$ 表示学习率。
-* $\
-abla_ \theta Q(s_t, a_t)$ 表示 Q 函数关于权重的梯度。
+* $\nabla_ \theta Q(s_t, a_t)$ 表示 Q 函数关于权重的梯度。
 
 ### 4.3  案例分析与讲解
 假设一个智能体在玩游戏，需要学习如何控制角色移动。游戏环境的状态包括角色的位置、敌人的位置等信息。智能体可以采取移动、攻击等动作。

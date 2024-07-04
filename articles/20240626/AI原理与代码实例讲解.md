@@ -80,13 +80,11 @@
 ## 4. 数学模型和公式
 ### 4.1 线性回归
 - 目标函数：$J(\theta) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2$
-- 梯度：$\
-abla_{\theta}J(\theta) = \frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})x^{(i)}$
+- 梯度：$\nabla_{\theta}J(\theta) = \frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})x^{(i)}$
 
 ### 4.2 支持向量机
 - 目标函数：$\min_{\theta} \frac{1}{2}\theta^T \theta + C\sum_{i=1}^{m} \alpha_i(y_i - \theta^T \phi(x_i))^2$
-- 梯度：$\
-abla_{\theta}J(\theta) = \theta - C\sum_{i=1}^{m} \alpha_i(y_i - \theta^T \phi(x_i))\phi(x_i)$
+- 梯度：$\nabla_{\theta}J(\theta) = \theta - C\sum_{i=1}^{m} \alpha_i(y_i - \theta^T \phi(x_i))\phi(x_i)$
 
 ### 4.3 深度神经网络
 - 前向传播：$a^{(l)} = g(W^{(l)}a^{(l-1)} + b^{(l)})$
@@ -94,8 +92,7 @@ abla_{\theta}J(\theta) = \theta - C\sum_{i=1}^{m} \alpha_i(y_i - \theta^T \phi(x
 
 ### 4.4 强化学习
 - Q值函数：$Q(s, a) = r + \gamma \max_{a'} Q(s', a')$
-- 梯度下降：$\
-abla_{\theta}J(\theta) = \sum_{i=1}^{N}(\theta^T \phi(s_i, a_i) - r_i - \gamma \max_{a'} Q(s', a'))^T \phi(s_i, a_i)$
+- 梯度下降：$\nabla_{\theta}J(\theta) = \sum_{i=1}^{N}(\theta^T \phi(s_i, a_i) - r_i - \gamma \max_{a'} Q(s', a'))^T \phi(s_i, a_i)$
 
 ## 5. 项目实践：代码实例和详细解释说明
 ### 5.1 开发环境搭建

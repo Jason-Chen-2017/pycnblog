@@ -95,7 +95,7 @@ $$\Theta = \arg\min_\Theta L(\Theta)$$
 假设用户请求生成一段关于天气的对话：
 
 - 输入$x$：{"指令": "生成天气对话", "上下文": "今天北京的天气", "意图": "友好"}
-  
+
 模型根据$x$生成对话：
 
 - 输出$y$：["今天北京的天气怎么样？", "挺好的，阳光明媚，适合外出。"]
@@ -136,7 +136,7 @@ $$\Theta = \arg\min_\Theta L(\Theta)$$
 2. **加载预训练模型**：
    ```python
    from transformers import AutoModelForCausalLM, AutoTokenizer
-   
+
    model_name = "your_model_name"
    model = AutoModelForCausalLM.from_pretrained(model_name)
    tokenizer = AutoTokenizer.from_pretrained(model_name)

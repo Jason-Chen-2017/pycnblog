@@ -221,7 +221,7 @@ def load_text_data(data_path):
 def train_rag_model(knowledge_graph, texts, labels, model_path):
     tokenizer = BertTokenizer.from_pretrained(model_path)
     model = BertForQuestionAnswering.from_pretrained(model_path)
-    
+
     # 构建问答数据集
     def create_qa_data(text, label):
         question = f"什么是{label}？"

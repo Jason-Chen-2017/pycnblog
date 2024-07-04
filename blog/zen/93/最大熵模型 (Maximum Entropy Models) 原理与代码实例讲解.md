@@ -197,7 +197,7 @@ A：正则化参数的选择可以通过交叉验证等方法进行优化。一�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n max-entropy-env python=3.8 
+conda create -n max-entropy-env python=3.8
 conda activate max-entropy-env
 ```
 

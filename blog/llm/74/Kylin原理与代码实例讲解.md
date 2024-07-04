@@ -139,9 +139,9 @@ Kylin的公式推导过程主要涉及以下步骤：
 以下是一个简单的Kylin查询示例：
 
 ```sql
-SELECT sum(sales) as total_sales 
-FROM sales_fact 
-WHERE region = 'North America' 
+SELECT sum(sales) as total_sales
+FROM sales_fact
+WHERE region = 'North America'
 AND time = '2022-01-01'
 GROUP BY product;
 ```
@@ -215,9 +215,9 @@ GROUP BY
 在Kylin的图形化界面中，执行以下查询：
 
 ```sql
-SELECT sum(sales) as total_sales 
-FROM sales_cube 
-WHERE region = 'North America' 
+SELECT sum(sales) as total_sales
+FROM sales_cube
+WHERE region = 'North America'
 AND time = '2022-01-01'
 GROUP BY product;
 ```

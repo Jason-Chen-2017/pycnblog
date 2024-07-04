@@ -66,16 +66,16 @@
 ### 4.1 数学模型构建
 
 状态估计可以构建为一个时间序列预测模型，例如：
-$$ \\hat{s}_{t+1} = f(s_t, a_t, r_t, s_{t+1}) $$
+$$ \hat{s}_{t+1} = f(s_t, a_t, r_t, s_{t+1}) $$
 其中，$f$是一个预测函数，$s_t$是当前状态，$a_t$是采取的动作，$r_t$是收到的奖励，$s_{t+1}$是预测的下一状态。
 
 ### 4.2 公式推导过程
 
 以简单的线性回归为例，假设状态估计模型为：
-$$ \\hat{s}_{t+1} = w \\cdot s_t + b $$
+$$ \hat{s}_{t+1} = w \cdot s_t + b $$
 其中，$w$是权重向量，$b$是偏置项。通过最小化均方误差来更新参数：
-$$ \\Delta w = -\\eta \\cdot \\frac{\\partial MSE}{\\partial w}, \\quad \\Delta b = -\\eta \\cdot \\frac{\\partial MSE}{\\partial b} $$
-其中，$\\eta$是学习率，$MSE$是均方误差。
+$$ \Delta w = -\eta \cdot \frac{\partial MSE}{\partial w}, \quad \Delta b = -\eta \cdot \frac{\partial MSE}{\partial b} $$
+其中，$\eta$是学习率，$MSE$是均方误差。
 
 ### 4.3 案例分析与讲解
 

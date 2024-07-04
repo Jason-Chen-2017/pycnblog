@@ -17,7 +17,7 @@ Lucene的核心概念包括：
 - Document：文档，即要检索的基本单元，包含多个Field。
 - Field：域，文档的一个属性，由name和value构成，支持存储、索引、分词等。
 - Term：词项，索引的最小单位，由Field和value唯一确定。
-- Posting：倒排记录，记录了某个词项在哪些文档中出现过。 
+- Posting：倒排记录，记录了某个词项在哪些文档中出现过。
 - Segment：段，即索引文件的基本存储单元。
 
 它们的关系可以用下图表示：
@@ -42,7 +42,7 @@ Lucene的核心是倒排索引，通过Term来检索Document。具体来说，�
 3. 分析Document，对Document的各个Field进行分词处理，得到Term
 4. 创建索引，将Term统一写入索引文件，并记录Posting信息
 
-#### 3.2.2 搜索阶段  
+#### 3.2.2 搜索阶段
 1. 用户输入查询语句，构建Query对象
 2. 对Query分词，得到Term
 3. 查找Term的Posting信息，获取包含该Term的Document列表
@@ -100,7 +100,7 @@ $sim(Q,D) = \cos \theta = \frac{\sum_{i=1}^m q_i w_i}{\sqrt{\sum_{i=1}^m q_i^2} 
 然后，计算每个Document的TF-IDF向量，假设结果为：
 
 - D1 = {0.5, 0.8}
-- D2 = {0.3, 0.7} 
+- D2 = {0.3, 0.7}
 - D3 = {0.6, 0.1}
 
 接下来，分别计算Query与每个Document的夹角余弦值：
@@ -115,7 +115,7 @@ $sim(Q,D) = \cos \theta = \frac{\sum_{i=1}^m q_i w_i}{\sqrt{\sum_{i=1}^m q_i^2} 
 
 ### 4.4 常见问题解答
 - 为什么要用倒排索引？
-  
+
   倒排索引可以根据Term快速定位包含它的Document，避免了全表扫描，是常见的信息检索手段。
 
 - 除了TF-IDF，还有哪些计算权重的方法？

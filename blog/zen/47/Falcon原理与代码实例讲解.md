@@ -99,8 +99,7 @@ $$
 对抗噪声的生成方法如下：
 
 $$
-x_{\text{noise}} = x + \epsilon \odot \text{sign}(\
-abla_x L(x, y))
+x_{\text{noise}} = x + \epsilon \odot \text{sign}(\nabla_x L(x, y))
 $$
 
 其中，
@@ -108,8 +107,7 @@ $$
 - $x$为原始输入数据。
 - $x_{\text{noise}}$为添加了对抗噪声的输入数据。
 - $\epsilon$为噪声强度。
-- $\
-abla_x L(x, y)$为损失函数$L(x, y)$对输入数据$x$的梯度。
+- $\nabla_x L(x, y)$为损失函数$L(x, y)$对输入数据$x$的梯度。
 - $\text{sign}(x)$为符号函数，当$x > 0$时返回1，当$x \leq 0$时返回0。
 
 ### 4.3 案例分析与讲解

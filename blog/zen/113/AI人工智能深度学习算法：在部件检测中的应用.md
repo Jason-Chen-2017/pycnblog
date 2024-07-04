@@ -147,7 +147,7 @@ $$
 
 $$
 L_{reg}(\hat{b}, b) = \begin{cases}
-0.5 \cdot (\hat{b}_x - b_x)^2 & \text{if } |(\hat{b}_x - b_x)| < \delta \\
+0.5 \cdot (\hat{b}_x - b_x)^2 & \text{if } |(\hat{b}_x - b_x)| < \delta \
 (\hat{b}_x - b_x)^2 & \text{otherwise}
 \end{cases}
 $$

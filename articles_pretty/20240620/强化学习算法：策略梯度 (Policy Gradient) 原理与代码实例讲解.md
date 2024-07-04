@@ -103,15 +103,13 @@
 
 策略梯度算法的核心公式是梯度上升法则：
 
-$$ \\theta \\leftarrow \\theta + \\alpha \
-abla_\\theta J(\\pi_\\theta) $$
+$$ \\theta \\leftarrow \\theta + \\alpha \nabla_\\theta J(\\pi_\\theta) $$
 
 其中：
 
 - $\\theta$ 是策略函数的参数。
 - $\\alpha$ 是学习率。
-- $\
-abla_\\theta J(\\pi_\\theta)$ 是策略函数 $J(\\pi)$ 关于参数 $\\theta$ 的梯度。
+- $\nabla_\\theta J(\\pi_\\theta)$ 是策略函数 $J(\\pi)$ 关于参数 $\\theta$ 的梯度。
 
 ### 4.3 案例分析与讲解
 

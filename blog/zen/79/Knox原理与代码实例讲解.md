@@ -115,15 +115,15 @@ public class Calculator {
     private int add(int a, int b) {
         return a + b;
     }
-    
+
     private int subtract(int a, int b) {
         return a - b;
     }
-    
+
     private int multiply(int a, int b) {
         return a * b;
     }
-    
+
     private int divide(int a, int b) {
         if (b == 0) {
             throw new IllegalArgumentException("Division by zero is not allowed.");
@@ -138,7 +138,7 @@ public class Calculator {
 ```java
 public class MathOperations {
     private final Map<String, BiFunction<Integer, Integer, Integer>> operations = new HashMap<>();
-    
+
     public MathOperations() {
         operations.put("add", (a, b) -> a + b);
         operations.put("subtract", (a, b) -> a - b);
@@ -150,7 +150,7 @@ public class MathOperations {
             return a / b;
         });
     }
-    
+
     public int performOperation(String operation, int a, int b) {
         return operations.get(operation).apply(a, b);
     }

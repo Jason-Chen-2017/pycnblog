@@ -1,7 +1,7 @@
 
 # OAuth 2.0 的跨应用集成
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 ### 1.1 问题的由来
@@ -245,11 +245,11 @@ def get_user_info(access_token):
 def main():
     authorization_url = get_authorization_url()
     print(f"请点击以下链接进行微博登录：{authorization_url}")
-    
+
     code = input("请输入授权码：")
     access_token = get_access_token(code)
     print(f"获取到的访问令牌：{access_token['access_token']}")
-    
+
     user_info = get_user_info(access_token['access_token'])
     print(f"获取到的用户信息：{user_info}")
 

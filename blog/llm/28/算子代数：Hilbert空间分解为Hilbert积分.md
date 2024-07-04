@@ -70,57 +70,57 @@ Hilbert空间中的算子可以通过其谱理论被分解为一系列基本元�
 
 ### 4.1 数学模型构建
 
-设$H$为希尔伯特空间，$T:H\\to H$为线性算子，$T$的谱集为$\\sigma(T)$，$T$的本征值为$\\lambda$，$T$的本征函数为$\\phi$，则$T$的谱分解可以表示为：
+设$H$为希尔伯特空间，$T:H\to H$为线性算子，$T$的谱集为$\sigma(T)$，$T$的本征值为$\lambda$，$T$的本征函数为$\phi$，则$T$的谱分解可以表示为：
 
-$$T=\\sum_{\\lambda\\in\\sigma(T)}\\lambda P_\\lambda$$
+$$T=\sum_{\lambda\in\sigma(T)}\lambda P_\lambda$$
 
-其中$P_\\lambda$为$\\lambda$的投影算子，满足：
+其中$P_\lambda$为$\lambda$的投影算子，满足：
 
-$$P_\\lambda\\phi=\\lambda\\phi$$
+$$P_\lambda\phi=\lambda\phi$$
 
 ### 4.2 公式推导过程
 
 考虑一个线性算子$T$在Hilbert空间$H$上的作用，其谱分解的过程涉及以下步骤：
 
-#### 寻找本征值$\\lambda$
-对于任意向量$x\\in H$，若存在常数$\\lambda$和非零向量$\\phi$使得：
+#### 寻找本征值$\lambda$
+对于任意向量$x\in H$，若存在常数$\lambda$和非零向量$\phi$使得：
 
-$$Tx=\\lambda\\phi$$
+$$Tx=\lambda\phi$$
 
-则$\\lambda$是$T$的一个本征值，$\\phi$是相应的本征向量。
+则$\lambda$是$T$的一个本征值，$\phi$是相应的本征向量。
 
-#### 构造投影算子$P_\\lambda$
-对于每个本征值$\\lambda$，定义投影算子$P_\\lambda$为：
+#### 构造投影算子$P_\lambda$
+对于每个本征值$\lambda$，定义投影算子$P_\lambda$为：
 
-$$P_\\lambda=\\langle\\cdot,\\phi\\rangle\\phi$$
+$$P_\lambda=\langle\cdot,\phi\rangle\phi$$
 
-其中$\\langle\\cdot,\\phi\\rangle$是内积函数。
+其中$\langle\cdot,\phi\rangle$是内积函数。
 
 #### 谱分解表达式
-利用$\\lambda$的本征值和$P_\\lambda$的投影算子，算子$T$的谱分解表达式为：
+利用$\lambda$的本征值和$P_\lambda$的投影算子，算子$T$的谱分解表达式为：
 
-$$T=\\sum_{\\lambda\\in\\sigma(T)}\\lambda P_\\lambda$$
+$$T=\sum_{\lambda\in\sigma(T)}\lambda P_\lambda$$
 
 ### 4.3 案例分析与讲解
 
 #### 示例一：量子力学中的哈密顿算子
 在量子力学中，哈密顿算子$H$描述了一个量子系统的能量。考虑$H$的谱分解，可以将$H$表示为：
 
-$$H=\\int_{-\\infty}^{+\\infty}\\lambda dE_\\lambda$$
+$$H=\int_{-\infty}^{+\infty}\lambda dE_\lambda$$
 
-其中$E_\\lambda$是$H$的本征值分布函数，$\\lambda$是相应的本征值。
+其中$E_\lambda$是$H$的本征值分布函数，$\lambda$是相应的本征值。
 
 #### 示例二：信号处理中的傅里叶变换
 在信号处理中，傅里叶变换将信号从时间域转换到频率域，其本质是一个线性算子。通过谱分解，可以将信号表示为不同频率成分的线性组合：
 
-$$f(t)=\\int_{-\\infty}^{+\\infty}\\hat{f}(\\omega)e^{i\\omega t}d\\omega$$
+$$f(t)=\int_{-\infty}^{+\infty}\hat{f}(\omega)e^{i\omega t}d\omega$$
 
-其中$\\hat{f}(\\omega)$是$f(t)$的傅里叶变换，表示为频率$\\omega$的本征函数的系数。
+其中$\hat{f}(\omega)$是$f(t)$的傅里叶变换，表示为频率$\omega$的本征函数的系数。
 
 ### 4.4 常见问题解答
 
 #### Q：如何判断一个算子是否有本征值？
-A：对于线性算子$T$，如果存在非零向量$\\phi$和常数$\\lambda$，使得$T\\phi=\\lambda\\phi$成立，则$\\lambda$是$T$的一个本征值，$\\phi$是相应的本征向量。
+A：对于线性算子$T$，如果存在非零向量$\phi$和常数$\lambda$，使得$T\phi=\lambda\phi$成立，则$\lambda$是$T$的一个本征值，$\phi$是相应的本征向量。
 
 #### Q：谱分解在什么情况下不适用？
 A：谱分解主要适用于自伴算子（实自伴或复自伴算子），即$T=T^*$的情况。对于非自伴算子，谱分解可能不完全或不存在。
@@ -156,9 +156,9 @@ def main():
     matrix = np.array([[4, -1], [-1, 3]])
     eigenvalues = find_eigenvalues(matrix)
 
-    print(\"Eigenvalues:\", eigenvalues)
+    print("Eigenvalues:", eigenvalues)
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     main()
 ```
 

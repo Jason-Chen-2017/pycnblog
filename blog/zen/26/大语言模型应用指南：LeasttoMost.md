@@ -71,26 +71,26 @@
 - **初始向量**：表示初始描述的向量形式，如$X_0$。
 - **变换矩阵**：用于根据反馈调整描述的矩阵，如$W$。
 - **迭代次数**：表示迭代次数的变量，如$n$。
-- **收敛阈值**：定义迭代结束的条件，如$\\epsilon$。
+- **收敛阈值**：定义迭代结束的条件，如$\epsilon$。
 
 ### 4.2 公式推导过程
 
 假设描述向量的变化可以用矩阵$W$来表示，每次迭代可以更新为：
 
-$$X_{n+1} = W \\cdot X_n + \\Delta X_n$$
+$$X_{n+1} = W \cdot X_n + \Delta X_n$$
 
-其中，$\\Delta X_n$表示基于上一次生成结果的反馈调整。
+其中，$\Delta X_n$表示基于上一次生成结果的反馈调整。
 
 ### 4.3 案例分析与讲解
 
 #### 示例1：生成一篇文章
 
-- **初始描述**：$X_0 = \\text{\"生成一篇文章\"}$
+- **初始描述**：$X_0 = \text{"生成一篇文章"}$
 - **反馈**：文章不具针对性，需要更具体的方向。
-- **调整描述**：$X_1 = \\text{\"生成一篇关于科技发展的文章\"}$
+- **调整描述**：$X_1 = \text{"生成一篇关于科技发展的文章"}$
 - **生成**：基于新描述生成文章。
 - **评估**：文章覆盖了科技发展的基本概念，但缺乏深入分析。
-- **进一步细化**：$X_2 = \\text{\"生成一篇关于人工智能在医疗领域的发展趋势的文章\"}$
+- **进一步细化**：$X_2 = \text{"生成一篇关于人工智能在医疗领域的发展趋势的文章"}$
 
 通过多次迭代，文章的内容逐渐聚焦于特定主题，生成的质量也得到了提升。
 
@@ -112,32 +112,32 @@ $$X_{n+1} = W \\cdot X_n + \\Delta X_n$$
 import requests
 import json
 
-def generate_article(initial_prompt=\"生成一篇文章\"):
+def generate_article(initial_prompt="生成一篇文章"):
     # 初始化参数
-    delta = \"\"
+    delta = ""
     convergence_threshold = 0.05
     iterations = 0
-    
+
     # 开始迭代过程
     while True:
-        response = requests.post(\"http://example.com/api/generate\", json={\"prompt\": initial_prompt})
-        article = response.json()[\"article\"]
-        
-        print(f\"迭代 {iterations}: {article}\")
-        
-        if \"人工智能\" not in article or \"医疗领域\" not in article:
-            delta = input(\"请提供反馈：\")
+        response = requests.post("http://example.com/api/generate", json={"prompt": initial_prompt})
+        article = response.json()["article"]
+
+        print(f"迭代 {iterations}: {article}")
+
+        if "人工智能" not in article or "医疗领域" not in article:
+            delta = input("请提供反馈：")
             initial_prompt += delta
         else:
             break
-        
+
         iterations += 1
-    
+
     return article
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     generated_article = generate_article()
-    print(\"最终生成的文章：\")
+    print("最终生成的文章：")
     print(generated_article)
 ```
 

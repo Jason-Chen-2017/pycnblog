@@ -57,7 +57,7 @@ graph TD
 - Step3：调用`format`方法，传入具体参数值，生成最终的Prompt文本
 
 ### 3.2 集成LLM
-- Step1：选择LLM提供商（如OpenAI、Anthropic等），并配置API认证信息  
+- Step1：选择LLM提供商（如OpenAI、Anthropic等），并配置API认证信息
 - Step2：创建对应的LLM实例（如`OpenAI`、`ChatOpenAI`等）
 - Step3：调用LLM实例的`__call__`方法，传入Prompt文本，获取LLM输出
 
@@ -75,7 +75,7 @@ graph TD
 
 ### 3.5 配置Memory
 - Step1：选择合适的Memory类（如`ConversationBufferMemory`、`ConversationSummaryMemory`等）
-- Step2：创建Memory实例，提供必要的配置（如最大记忆长度等）  
+- Step2：创建Memory实例，提供必要的配置（如最大记忆长度等）
 - Step3：将Memory实例传递给Chain或Agent，以支持多轮对话
 
 ## 4.数学模型和公式详细讲解举例说明
@@ -149,7 +149,7 @@ print(result)
 
 3. 然后创建了一个`OpenAI`的LLM实例，并设置`temperature`参数为0，表示生成结果的随机性较低。
 
-4. 使用`LLMChain`将`PromptTemplate`和`OpenAI`实例组合成一个Chain。  
+4. 使用`LLMChain`将`PromptTemplate`和`OpenAI`实例组合成一个Chain。
 
 5. 最后，提供背景信息和问题，调用Chain的`run`方法，获取LLM生成的答案。
 
@@ -226,4 +226,4 @@ LangChain支持多种主流LLM提供商，如OpenAI、Anthropic、Hugging Face�
 ### 8.2 LangChain是否支持本地部署LLM？
 是的，LangChain支持使用本地部署的LLM，如GPT4All、Llama.cpp等。这对数据隐私和成本控制很有帮助。
 
-### 
+###

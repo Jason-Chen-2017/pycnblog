@@ -10,7 +10,7 @@
 #### 1.1.3 神经网络的发展历程
 
 ### 1.2 神经网络的生物学启发
-#### 1.2.1 生物神经元的结构与功能  
+#### 1.2.1 生物神经元的结构与功能
 #### 1.2.2 生物神经网络的组织方式
 #### 1.2.3 生物神经网络的学习机制
 
@@ -26,14 +26,14 @@
 #### 2.1.2 Sigmoid神经元
 #### 2.1.3 ReLU神经元
 
-### 2.2 神经网络的基本结构 
+### 2.2 神经网络的基本结构
 #### 2.2.1 前馈神经网络
 #### 2.2.2 递归神经网络
 #### 2.2.3 图神经网络
 
 ### 2.3 神经网络的学习方式
 #### 2.3.1 监督学习
-#### 2.3.2 无监督学习 
+#### 2.3.2 无监督学习
 #### 2.3.3 强化学习
 
 ### 2.4 损失函数与优化算法
@@ -70,7 +70,7 @@
 神经元接收一组输入信号 $x_1,x_2,...,x_n$,每个信号都有一个权重 $w_i$,神经元的输出为:
 
 $$
-y = f(\sum_{i=1}^n w_i x_i + b) 
+y = f(\sum_{i=1}^n w_i x_i + b)
 $$
 
 其中 $f$ 为激活函数,$b$ 为偏置项。常见的激活函数有:
@@ -81,7 +81,7 @@ f(x) = \frac{1}{1+e^{-x}}
 $$
 
 ReLU函数:
-$$ 
+$$
 f(x) = max(0, x)
 $$
 
@@ -113,9 +113,9 @@ $$
 对于一个L层的神经网络,第 $l$ 层第 $j$ 个神经元的误差项为:
 
 $$
-\delta_j^l = 
+\delta_j^l =
 \begin{cases}
-\frac{\partial L}{\partial z_j^L}, & l = L \\
+\frac{\partial L}{\partial z_j^L}, & l = L \
 (\sum_{k} w_{kj}^{l+1} \delta_k^{l+1}) \sigma'(z_j^l), & l < L
 \end{cases}
 $$
@@ -155,47 +155,47 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 ```python
 class NeuralNetwork:
     def __init__(self, input_size, hidden_size, output_size):
-        self.W1 = np.random.randn(input_size, hidden_size) 
+        self.W1 = np.random.randn(input_size, hidden_size)
         self.b1 = np.zeros(hidden_size)
         self.W2 = np.random.randn(hidden_size, output_size)
         self.b2 = np.zeros(output_size)
-        
+
     def sigmoid(self, x):
         return 1 / (1 + np.exp(-x))
-    
+
     def softmax(self, x):
         exp_x = np.exp(x)
         return exp_x / np.sum(exp_x, axis=1, keepdims=True)
-    
+
     def forward(self, X):
         self.z1 = np.dot(X, self.W1) + self.b1
         self.a1 = self.sigmoid(self.z1)
         self.z2 = np.dot(self.a1, self.W2) + self.b2
         self.probs = self.softmax(self.z2)
         return self.probs
-    
+
     def backward(self, X, y, probs, learning_rate):
         n_samples = len(X)
-        
+
         delta3 = probs
         delta3[range(n_samples), y] -= 1
         dW2 = (self.a1.T).dot(delta3)
         db2 = np.sum(delta3, axis=0, keepdims=True)
-        
+
         delta2 = delta3.dot(self.W2.T) * (self.a1 * (1 - self.a1))
         dW1 = np.dot(X.T, delta2)
         db1 = np.sum(delta2, axis=0)
-        
+
         self.W1 -= learning_rate * dW1
         self.b1 -= learning_rate * db1
         self.W2 -= learning_rate * dW2
         self.b2 -= learning_rate * db2
-        
+
     def train(self, X, y, learning_rate, n_epochs):
         for i in range(n_epochs):
             probs = self.forward(X)
             self.backward(X, y, probs, learning_rate)
-            
+
     def predict(self, X):
         probs = self.forward(X)
         return np.argmax(probs, axis=1)
@@ -222,7 +222,7 @@ print("Accuracy:", accuracy_score(y_test, y_pred))
 - 语义分割
 - 人脸识别
 
-### 6.2 自然语言处理  
+### 6.2 自然语言处理
 - 文本分类
 - 情感分析
 - 机器翻译

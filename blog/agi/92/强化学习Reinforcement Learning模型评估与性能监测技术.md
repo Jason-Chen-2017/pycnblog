@@ -198,8 +198,7 @@ graph LR
 策略梯度是一种通过梯度下降优化策略的方法。假设智能体的策略为 $\pi(\boldsymbol{s})$，其中 $\boldsymbol{s} \in S$，则策略梯度可以表示为：
 
 $$
-\
-abla_{\pi} J(\pi) = \mathbb{E}_{\boldsymbol{s}, \boldsymbol{a} \sim \pi} \left[ \frac{\partial J(\pi)}{\partial \pi(\boldsymbol{s}, \boldsymbol{a})} \right]
+\nabla_{\pi} J(\pi) = \mathbb{E}_{\boldsymbol{s}, \boldsymbol{a} \sim \pi} \left[ \frac{\partial J(\pi)}{\partial \pi(\boldsymbol{s}, \boldsymbol{a})} \right]
 $$
 
 其中 $J(\pi)$ 表示策略 $\pi$ 的性能指标。
@@ -230,9 +229,7 @@ $$
 对损失函数 $L(\theta)$ 求梯度，得：
 
 $$
-\
-abla_{\theta} L(\theta) = \sum_{\boldsymbol{s}, \boldsymbol{a} \in \mathbb{S} \times \mathbb{A}} \left[ \left( R_{\boldsymbol{s}, \boldsymbol{a}} + \gamma \max_{\boldsymbol{a}'} Q(\theta, \boldsymbol{s}', \boldsymbol{a}') - Q(\theta, \boldsymbol{s}, \boldsymbol{a}) \right) \
-abla_{\theta} Q(\theta, \boldsymbol{s}, \boldsymbol{a}) \right]
+\nabla_{\theta} L(\theta) = \sum_{\boldsymbol{s}, \boldsymbol{a} \in \mathbb{S} \times \mathbb{A}} \left[ \left( R_{\boldsymbol{s}, \boldsymbol{a}} + \gamma \max_{\boldsymbol{a}'} Q(\theta, \boldsymbol{s}', \boldsymbol{a}') - Q(\theta, \boldsymbol{s}, \boldsymbol{a}) \right) \nabla_{\theta} Q(\theta, \boldsymbol{s}, \boldsymbol{a}) \right]
 $$
 
 通过梯度下降优化参数 $\theta$，即可得到Q-learning算法。
@@ -294,7 +291,7 @@ A：可视化监测可以通过以下几种方式进行：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n rl-env python=3.8 
+conda create -n rl-env python=3.8
 conda activate rl-env
 ```
 3. 安装PyTorch、OpenAI Gym等库：

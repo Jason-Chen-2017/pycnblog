@@ -1,7 +1,7 @@
 
 # 一切皆是映射：AI Q-learning在作物病虫害预防中的实践
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍

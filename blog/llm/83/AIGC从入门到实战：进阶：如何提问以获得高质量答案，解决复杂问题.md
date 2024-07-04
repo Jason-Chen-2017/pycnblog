@@ -142,7 +142,7 @@ $$ D(x) = \mathcal{F}(x; \theta_D) $$
 
 $$
 \begin{aligned}
-\min_{\theta_G} \max_{\theta_D} \mathbb{E}_{\mathbf{z}}[D(G(\mathbf{z}))] - D(x) 
+\min_{\theta_G} \max_{\theta_D} \mathbb{E}_{\mathbf{z}}[D(G(\mathbf{z}))] - D(x)
 \end{aligned}
 $$
 

@@ -197,7 +197,7 @@ A：可以采取以下方法提高模型的泛化能力：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n iot-env python=3.8 
+conda create -n iot-env python=3.8
 conda activate iot-env
 ```
 

@@ -188,4 +188,4 @@ Q: 这两个概念在计算机科学中有什么应用？
 
 A: 在计算机科学中，这两个概念可以用于解决各种问题，如约束满足问题、程序验证等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

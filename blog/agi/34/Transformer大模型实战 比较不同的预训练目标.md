@@ -86,13 +86,13 @@
 #### 自监督学习模型构建：
 
 $$
-L_{LM}(θ) = -\\frac{1}{N}\\sum_{i=1}^{N}\\sum_{j=1}^{L}\\log p(w_j|w_{<j}; θ)
+L_{LM}(θ) = -\frac{1}{N}\sum_{i=1}^{N}\sum_{j=1}^{L}\log p(w_j|w_{<j}; θ)
 $$
 
 #### 特定任务预训练模型构建：
 
 $$
-L_{Task}(θ) = \\mathbb{E}_{(x,y)∼D}[l(f(x, θ), y)]
+L_{Task}(θ) = \mathbb{E}_{(x,y)∼D}[l(f(x, θ), y)]
 $$
 
 ### 4.2 公式推导过程
@@ -151,10 +151,10 @@ model = BertModel.from_pretrained('bert-base-uncased')
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
 # 定义输入文本
-text = \"This is an example sentence.\"
+text = "This is an example sentence."
 
 # 编码输入文本
-inputs = tokenizer(text, return_tensors=\"pt\")
+inputs = tokenizer(text, return_tensors="pt")
 
 # 进行前向传播
 outputs = model(**inputs)

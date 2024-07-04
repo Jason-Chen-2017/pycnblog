@@ -3,7 +3,7 @@
 ## 1. 背景介绍
 ### 1.1 情感分析的重要性
 #### 1.1.1 商业应用
-#### 1.1.2 社交媒体监测 
+#### 1.1.2 社交媒体监测
 #### 1.1.3 舆情分析
 
 ### 1.2 多模态情感分析的兴起
@@ -131,7 +131,7 @@ class TextEncoder(nn.Module):
         super().__init__()
         self.embedding = nn.Embedding(vocab_size, embed_dim)
         self.lstm = nn.LSTM(embed_dim, hidden_dim, batch_first=True)
-    
+
     def forward(self, x):
         x = self.embedding(x)
         _, (h, _) = self.lstm(x)
@@ -143,13 +143,13 @@ class ImageEncoder(nn.Module):
         super().__init__()
         model = torchvision.models.resnet50(pretrained=pretrained)
         self.features = nn.Sequential(*list(model.children())[:-1])
-        
+
     def forward(self, x):
         x = self.features(x)
         x = x.view(x.size(0), -1)
         return x
 
-# 音频特征提取器  
+# 音频特征提取器
 class AudioEncoder(nn.Module):
     def __init__(self):
         super().__init__()
@@ -184,7 +184,7 @@ class MultimodalFusion(nn.Module):
         audio = self.audio_layer(audio)
 
         attn_text = self.attention(text)
-        attn_image = self.attention(image)  
+        attn_image = self.attention(image)
         attn_audio = self.attention(audio)
 
         attn_weights = F.softmax(torch.cat([attn_text, attn_image, attn_audio], dim=1), dim=1)
@@ -252,7 +252,7 @@ def train(text_encoder, image_encoder, audio_encoder, fusion_model, byol_model, 
         update_target_network(byol_model.parameters(), byol_model.parameters(), tau=0.99)
 
 # 微调
-def finetune(fusion_model, classifier, dataloader, criterion, optimizer, device):  
+def finetune(fusion_model, classifier, dataloader, criterion, optimizer, device):
     fusion_model.eval()
     classifier.train()
 

@@ -91,47 +91,47 @@ Hadoop的MapReduce框架广泛应用于数据密集型应用，如日志分析�
 
 #### 输入数据模型：
 
-设输入数据集为$D$，可以表示为一个键值对集合$D=\\{(k_1, v_1), ..., (k_n, v_n)\\}$。
+设输入数据集为$D$，可以表示为一个键值对集合$D=\{(k_1, v_1), ..., (k_n, v_n)\}$。
 
 #### Map函数：
 
 对于Map函数$f(k, v)$，可以定义为：
-$$f: (k, v) \\rightarrow (k', v')$$
+$$f: (k, v) \rightarrow (k', v')$$
 其中$k'$是映射后的键，$v'$是映射后的值。
 
 #### Reduce函数：
 
-对于Reduce函数$g(k, \\{v'_1, ..., v'_m\\})$，可以定义为：
-$$g: (k, \\{v'_1, ..., v'_m\\}) \\rightarrow v''$$
+对于Reduce函数$g(k, \{v'_1, ..., v'_m\})$，可以定义为：
+$$g: (k, \{v'_1, ..., v'_m\}) \rightarrow v''$$
 其中$v''$是聚合后的值。
 
 ### 4.2 公式推导过程
 
 在Map阶段，对于输入数据集$D$，通过Map函数$f$将数据映射为中间结果集$M$：
-$$M = \\{f(k_i, v_i)\\}_{i=1}^n$$
+$$M = \{f(k_i, v_i)\}_{i=1}^n$$
 
 在Reduce阶段，对于中间结果集$M$，通过Reduce函数$g$对相同键的元素进行聚合：
-$$\\text{Reduce}(M) = \\{g(k_j, \\{v'_j\\})\\}_{j=1}^m$$
+$$\text{Reduce}(M) = \{g(k_j, \{v'_j\})\}_{j=1}^m$$
 
 ### 4.3 案例分析与讲解
 
 假设我们有一个输入数据集$D$，包含以下键值对：
-$$D = \\{(k_1, v_1), (k_1, v_2), (k_2, v_3), (k_3, v_4)\\}$$
+$$D = \{(k_1, v_1), (k_1, v_2), (k_2, v_3), (k_3, v_4)\}$$
 
 Map函数$f(k, v)$定义为：
-$$f(k, v) = \\begin{cases}  
-(k, v^2) & \\text{if } k \\text{ is odd} \\\\
-(k, v^3) & \\text{if } k \\text{ is even}
-\\end{cases}$$
+$$f(k, v) = \begin{cases}
+(k, v^2) & \text{if } k \text{ is odd} \\\
+(k, v^3) & \text{if } k \text{ is even}
+\end{cases}$$
 
 Map阶段处理结果为：
-$$M = \\{(k_1, v_1^2), (k_1, v_2^2), (k_2, v_3^3), (k_3, v_4^3)\\}$$
+$$M = \{(k_1, v_1^2), (k_1, v_2^2), (k_2, v_3^3), (k_3, v_4^3)\}$$
 
-假设Reduce函数$g(k, \\{v'_1, v'_2\\})$定义为：
-$$g(k, \\{v'_1, v'_2\\}) = \\text{average}(v'_1, v'_2)$$
+假设Reduce函数$g(k, \{v'_1, v'_2\})$定义为：
+$$g(k, \{v'_1, v'_2\}) = \text{average}(v'_1, v'_2)$$
 
 Reduce阶段处理结果为：
-$$\\text{Reduce}(M) = \\{(k_1, \\text{average}(v_1^2, v_2^2)), (k_2, v_3^3), (k_3, v_4^3)\\}$$
+$$\text{Reduce}(M) = \{(k_1, \text{average}(v_1^2, v_2^2)), (k_2, v_3^3), (k_3, v_4^3)\}$$
 
 ### 4.4 常见问题解答
 
@@ -178,7 +178,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 public class WordCount {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
-        Job job = Job.getInstance(conf, \"word count\");
+        Job job = Job.getInstance(conf, "word count");
         job.setJarByClass(WordCount.class);
         job.setMapperClass(Map.class);
         job.setCombinerClass(Reduce.class);
@@ -196,7 +196,7 @@ public class WordCount {
 
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
             String line = value.toString();
-            String[] words = line.split(\"\\\\W+\");
+            String[] words = line.split("\\W+");
             for (String w : words) {
                 if (!w.isEmpty()) {
                     word.set(w);
@@ -260,7 +260,7 @@ Hadoop在生物信息学领域用于处理基因组数据，支持基因序列�
 
 ### 相关论文推荐：
 
-- **\"MapReduce: Simplified Data Processing on Large Clusters\"** by Jeffrey Dean and Sanjay Ghemawat。
+- **"MapReduce: Simplified Data Processing on Large Clusters"** by Jeffrey Dean and Sanjay Ghemawat。
 
 ### 其他资源推荐：
 

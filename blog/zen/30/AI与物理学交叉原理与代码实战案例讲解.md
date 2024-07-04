@@ -90,15 +90,15 @@
 
 #### 牛顿第二定律（动力学）：
 
-$$ \\vec{F} = m\\vec{a} $$
+$$ \vec{F} = m\vec{a} $$
 
-其中，$\\vec{F}$ 是作用力向量，$m$ 是物体的质量，$\\vec{a}$ 是加速度向量。
+其中，$\vec{F}$ 是作用力向量，$m$ 是物体的质量，$\vec{a}$ 是加速度向量。
 
 #### 薛定谔方程（量子力学）：
 
-$$ i\\hbar\\frac{\\partial \\psi}{\\partial t} = \\hat{H}\\psi $$
+$$ i\hbar\frac{\partial \psi}{\partial t} = \hat{H}\psi $$
 
-其中，$\\psi$ 是波函数，$\\hbar$ 是约化普朗克常数，$\\hat{H}$ 是哈密顿算符。
+其中，$\psi$ 是波函数，$\hbar$ 是约化普朗克常数，$\hat{H}$ 是哈密顿算符。
 
 ### 4.3 案例分析与讲解
 

@@ -155,16 +155,16 @@ Swin模型的数学模型主要包括以下几个部分：
 
 $$
 \begin{align*}
-\text{conv\_1\_1} & : \text{Conv2d}(3, 16, kernel\_size=3, stride=1, padding=1) \\
-\text{bn1} & : \text{BatchNorm2d}(16) \\
-\text{relu} & : \text{ReLU} \\
-\text{conv\_1\_2} & : \text{Conv2d}(16, 16, kernel\_size=3, stride=1, padding=1) \\
-\text{bn2} & : \text{BatchNorm2d}(16) \\
-\text{relu} & : \text{ReLU} \\
-\vdots & \vdots \\
-\text{conv\_1\_6} & : \text{Conv2d}(16, 16, kernel\_size=3, stride=1, padding=1) \\
-\text{bn6} & : \text{BatchNorm2d}(16) \\
-\text{relu} & : \text{ReLU} \\
+\text{conv\_1\_1} & : \text{Conv2d}(3, 16, kernel\_size=3, stride=1, padding=1) \
+\text{bn1} & : \text{BatchNorm2d}(16) \
+\text{relu} & : \text{ReLU} \
+\text{conv\_1\_2} & : \text{Conv2d}(16, 16, kernel\_size=3, stride=1, padding=1) \
+\text{bn2} & : \text{BatchNorm2d}(16) \
+\text{relu} & : \text{ReLU} \
+\vdots & \vdots \
+\text{conv\_1\_6} & : \text{Conv2d}(16, 16, kernel\_size=3, stride=1, padding=1) \
+\text{bn6} & : \text{BatchNorm2d}(16) \
+\text{relu} & : \text{ReLU} \
 \end{align*}
 $$
 
@@ -174,10 +174,10 @@ FPN融合不同尺度的特征图，其网络结构如下：
 
 $$
 \begin{align*}
-\text{fpn\_1} & : \text{Conv2d}(16, 16, kernel\_size=1, stride=1, padding=0) \\
-\text{fpn\_2} & : \text{Conv2d}(32, 16, kernel\_size=3, stride=2, padding=1) \\
-\text{fpn\_3} & : \text{Conv2d}(64, 16, kernel\_size=3, stride=2, padding=1) \\
-\text{fpn\_4} & : \text{Conv2d}(128, 16, kernel\_size=3, stride=2, padding=1) \\
+\text{fpn\_1} & : \text{Conv2d}(16, 16, kernel\_size=1, stride=1, padding=0) \
+\text{fpn\_2} & : \text{Conv2d}(32, 16, kernel\_size=3, stride=2, padding=1) \
+\text{fpn\_3} & : \text{Conv2d}(64, 16, kernel\_size=3, stride=2, padding=1) \
+\text{fpn\_4} & : \text{Conv2d}(128, 16, kernel\_size=3, stride=2, padding=1) \
 \end{align*}
 $$
 
@@ -187,10 +187,10 @@ PAN聚合不同路径提取的特征，其网络结构如下：
 
 $$
 \begin{align*}
-\text{pan\_1} & : \text{Conv2d}(16, 16, kernel\_size=1, stride=1, padding=0) \\
-\text{pan\_2} & : \text{Conv2d}(16+32, 16, kernel\_size=3, stride=2, padding=1) \\
-\text{pan\_3} & : \text{Conv2d}(16+64, 16, kernel\_size=3, stride=2, padding=1) \\
-\text{pan\_4} & : \text{Conv2d}(16+128, 16, kernel\_size=3, stride=2, padding=1) \\
+\text{pan\_1} & : \text{Conv2d}(16, 16, kernel\_size=1, stride=1, padding=0) \
+\text{pan\_2} & : \text{Conv2d}(16+32, 16, kernel\_size=3, stride=2, padding=1) \
+\text{pan\_3} & : \text{Conv2d}(16+64, 16, kernel\_size=3, stride=2, padding=1) \
+\text{pan\_4} & : \text{Conv2d}(16+128, 16, kernel\_size=3, stride=2, padding=1) \
 \end{align*}
 $$
 
@@ -200,10 +200,10 @@ Swin Transformer模块包括位置编码、自注意力机制、交叉注意力�
 
 $$
 \begin{align*}
-\text{swin\_1} & : \text{Swin Transformer Block} \\
-\text{swin\_2} & : \text{Swin Transformer Block} \\
-\vdots & \vdots \\
-\text{swin\_N} & : \text{Swin Transformer Block} \\
+\text{swin\_1} & : \text{Swin Transformer Block} \
+\text{swin\_2} & : \text{Swin Transformer Block} \
+\vdots & \vdots \
+\text{swin\_N} & : \text{Swin Transformer Block} \
 \end{align*}
 $$
 
@@ -213,8 +213,8 @@ $$
 
 $$
 \begin{align*}
-\text{cls} & : \text{Conv2d}(16, \text{num\_classes}, kernel\_size=1, stride=1, padding=0) \\
-\text{box} & : \text{Conv2d}(16, 4, kernel\_size=1, stride=1, padding=0) \\
+\text{cls} & : \text{Conv2d}(16, \text{num\_classes}, kernel\_size=1, stride=1, padding=0) \
+\text{box} & : \text{Conv2d}(16, 4, kernel\_size=1, stride=1, padding=0) \
 \end{align*}
 $$
 
@@ -331,7 +331,7 @@ A：Swin模型采用PAN的思想进行多路径特征聚合，将不同路径提
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n swin-env python=3.8 
+conda create -n swin-env python=3.8
 conda activate swin-env
 ```
 

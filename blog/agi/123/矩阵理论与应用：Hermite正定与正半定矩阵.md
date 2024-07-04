@@ -334,8 +334,8 @@ Positive semi-definite matrix eigenvalues: [2. 1.]
 
 $$
 \begin{align*}
-\min_{x} & \quad x_1^2 + 2x_2^2 \\
-\text{s.t.} & \quad x_1^2 + x_2^2 = 1 \\
+\min_{x} & \quad x_1^2 + 2x_2^2 \
+\text{s.t.} & \quad x_1^2 + x_2^2 = 1 \
 & \quad x_1 + x_2 \leq 2
 \end{align*}
 $$
@@ -343,13 +343,13 @@ $$
 目标函数 $f(x) = x_1^2 + 2x_2^2$ 可以表示为Hermite正定矩阵的形式：
 
 $$
-f(x) = \begin{bmatrix} x_1 & x_2 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & 2 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
+f(x) = \begin{bmatrix} x_1 & x_2 \end{bmatrix} \begin{bmatrix} 1 & 0 \ 0 & 2 \end{bmatrix} \begin{bmatrix} x_1 \ x_2 \end{bmatrix}
 $$
 
 约束条件 $x_1^2 + x_2^2 = 1$ 可以表示为正半定矩阵的形式：
 
 $$
-x_1^2 + x_2^2 = \begin{bmatrix} x_1 & x_2 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
+x_1^2 + x_2^2 = \begin{bmatrix} x_1 & x_2 \end{bmatrix} \begin{bmatrix} 1 & 0 \ 0 & 1 \end{bmatrix} \begin{bmatrix} x_1 \ x_2 \end{bmatrix}
 $$
 
 ### 6.2 控制理论
@@ -360,7 +360,7 @@ $$
 
 $$
 \begin{align*}
-\dot{x} &= Ax + Bu \\
+\dot{x} &= Ax + Bu \
 y &= Cx
 \end{align*}
 $$

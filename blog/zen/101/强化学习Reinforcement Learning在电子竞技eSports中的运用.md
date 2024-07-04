@@ -184,7 +184,7 @@ A：解决强化学习在电子竞技领域的应用难点可以从以下几个�
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n rl-env python=3.8 
+conda create -n rl-env python=3.8
 conda activate rl-env
 ```
 3. 安装PyTorch：

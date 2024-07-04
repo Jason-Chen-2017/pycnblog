@@ -30,9 +30,9 @@ Poisson流形的研究不仅加深了我们对几何结构的理解，还为理�
 
 ### 2.1 Poisson结构的定义
 
-Poisson结构是由一个光滑流形\\(M\\)上的双线性形式\\(\\{ \\cdot , \\cdot \\}\\)定义的，满足以下性质：
-1. \\(\\{f, g\\} = \\{f, h\\}g + f\\{g, h\\}\\)，对于所有光滑函数\\(f, g, h\\)；
-2. \\(\\{f, g\\}\\)是\\(M\\)上的光滑函数。
+Poisson结构是由一个光滑流形\(M\)上的双线性形式\(\{ \cdot , \cdot \}\)定义的，满足以下性质：
+1. \(\{f, g\} = \{f, h\}g + f\{g, h\}\)，对于所有光滑函数\(f, g, h\)；
+2. \(\{f, g\}\)是\(M\)上的光滑函数。
 
 ### 2.2 Poisson流形
 
@@ -50,7 +50,7 @@ Poisson群是带有Poisson结构的群，其上的Poisson结构满足群运算�
 
 ### 3.2 算法步骤详解
 
-1. **定义Poisson结构**：首先明确流形\\(M\\)上的Poisson结构，即双线性形式\\(\\{ \\cdot , \\cdot \\}\\)。
+1. **定义Poisson结构**：首先明确流形\(M\)上的Poisson结构，即双线性形式\(\{ \cdot , \cdot \}\)。
 2. **构建Poisson核**：找出满足Poisson结构闭合性的函数集，用于定义Poisson微积分。
 3. **微积分运算**：基于Poisson核，定义Poisson流形上的微积分运算，包括Poisson积分、Poisson微分等。
 4. **动力系统研究**：利用Poisson结构和微积分运算，研究动力系统的稳定性、周期性、混沌性等特性。
@@ -76,17 +76,17 @@ Poisson流形理论在数学物理、控制理论、机器学习等多个领域�
 
 ### 4.1 数学模型构建
 
-考虑一个二维Poisson流形\\(M\\)，其上的Poisson结构由双线性形式\\(\\{ \\cdot , \\cdot \\}\\)给出。令\\(f, g\\)为\\(M\\)上的两个光滑函数，则\\(\\{f, g\\}\\)定义了\\(f\\)和\\(g\\)之间的Poisson乘积。
+考虑一个二维Poisson流形\(M\)，其上的Poisson结构由双线性形式\(\{ \cdot , \cdot \}\)给出。令\(f, g\)为\(M\)上的两个光滑函数，则\(\{f, g\}\)定义了\(f\)和\(g\)之间的Poisson乘积。
 
 ### 4.2 公式推导过程
 
-在二维Poisson流形上，考虑函数\\(f(x, y)\\)和\\(g(x, y)\\)，Poisson乘积\\(\\{f, g\\}\\)可通过以下公式计算：
-$$ \\{f, g\\} = \\frac{\\partial f}{\\partial x} \\frac{\\partial g}{\\partial y} - \\frac{\\partial f}{\\partial y} \\frac{\\partial g}{\\partial x} $$
+在二维Poisson流形上，考虑函数\(f(x, y)\)和\(g(x, y)\)，Poisson乘积\(\{f, g\}\)可通过以下公式计算：
+$$ \{f, g\} = \frac{\partial f}{\partial x} \frac{\partial g}{\partial y} - \frac{\partial f}{\partial y} \frac{\partial g}{\partial x} $$
 
 ### 4.3 案例分析与讲解
 
-考虑一个简单的例子，设\\(f(x, y) = xy\\)，\\(g(x, y) = x^2 + y^2\\)。计算它们的Poisson乘积：
-$$ \\{f, g\\} = \\frac{\\partial f}{\\partial x} \\frac{\\partial g}{\\partial y} - \\frac{\\partial f}{\\partial y} \\frac{\\partial g}{\\partial x} = y \\cdot 2y - x \\cdot 2x = 2xy^2 - 2x^2y $$
+考虑一个简单的例子，设\(f(x, y) = xy\)，\(g(x, y) = x^2 + y^2\)。计算它们的Poisson乘积：
+$$ \{f, g\} = \frac{\partial f}{\partial x} \frac{\partial g}{\partial y} - \frac{\partial f}{\partial y} \frac{\partial g}{\partial x} = y \cdot 2y - x \cdot 2x = 2xy^2 - 2x^2y $$
 
 ### 4.4 常见问题解答
 
@@ -129,7 +129,7 @@ print(result)
 
 ### 5.4 运行结果展示
 
-运行上述代码，得到的结果应为\\(2xy^2 - 2x^2y\\)，与理论计算一致。
+运行上述代码，得到的结果应为\(2xy^2 - 2x^2y\)，与理论计算一致。
 
 ## 6. 实际应用场景
 

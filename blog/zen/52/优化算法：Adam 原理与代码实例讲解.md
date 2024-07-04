@@ -41,7 +41,7 @@ Adam算法的具体操作步骤如下:
 2) 对于 $t=1,2,3,...$:
     a) 计算梯度 $g_t = \nabla_\theta f_t(\theta_{t-1})$
     b) 更新一阶动量向量 $m_t = \beta_1 m_{t-1} + (1-\beta_1)g_t$
-    c) 更新二阶动量向量 $v_t = \beta_2 v_{t-1} + (1-\beta_2)g_t^2$  
+    c) 更新二阶动量向量 $v_t = \beta_2 v_{t-1} + (1-\beta_2)g_t^2$
     d) 计算偏置修正的一阶动量 $\hat{m}_t = \frac{m_t}{1-\beta_1^t}$
     e) 计算偏置修正的二阶动量 $\hat{v}_t = \frac{v_t}{1-\beta_2^t}$
     f) 更新参数 $\theta_t = \theta_{t-1} - \alpha \frac{\hat{m}_t}{\sqrt{\hat{v}_t}+\epsilon}$
@@ -50,7 +50,7 @@ Adam算法的具体操作步骤如下:
 
 以上就是Adam算法的核心步骤,下面我们来看一下算法中涉及到的数学模型和公式。
 
-## 4.数学模型和公式详细讲解举例说明 
+## 4.数学模型和公式详细讲解举例说明
 
 ### 4.1 一阶动量更新公式
 
@@ -155,21 +155,21 @@ class Adam(Optimizer):
 2. 在`__init__`方法中,初始化超参数学习率lr、动量衰减因子betas、防止除0的小常数eps、权重衰减因子weight_decay。
 
 3. `step`方法是优化器的核心,用于更新网络参数。
-   
+
    a) 首先判断是否传入了闭包函数closure,如果有则计算损失loss。
-   
+
    b) 遍历所有参数组group。
-   
+
    c) 对每个参数p,首先获取其梯度grad。
-   
+
    d) 从state字典中获取该参数的状态,包括当前步数step、一阶动量exp_avg和二阶动量exp_avg_sq。如果是第一次更新,则初始化这些状态。
-   
+
    e) 根据Adam算法的公式,更新一阶动量exp_avg和二阶动量exp_avg_sq。
-   
+
    f) 计算偏置修正因子bias_correction1和bias_correction2。
-   
+
    g) 计算当前步长step_size。
-   
+
    h) 根据Adam算法的参数更新公式,更新参数p的值。
 
 4. 最后返回损失loss(如果有的话)。

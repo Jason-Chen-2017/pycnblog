@@ -139,7 +139,7 @@ $$\frac{\partial T_i}{\partial \theta_i} = \frac{\partial}{\partial \theta_i} \l
 
 对上式进行求导，得到：
 
-$$\frac{\partial T_i}{\partial \theta_i} = \frac{1}{v_i^2} \cdot \sum_{j=1}^n \left[\begin{matrix} -1 & \text{if } v_j > v_i \\ 0 & \text{if } v_j \leq v_i \end{matrix}\right]$$
+$$\frac{\partial T_i}{\partial \theta_i} = \frac{1}{v_i^2} \cdot \sum_{j=1}^n \left[\begin{matrix} -1 & \text{if } v_j > v_i \ 0 & \text{if } v_j \leq v_i \end{matrix}\right]$$
 
 ### 4.3 案例分析与讲解
 

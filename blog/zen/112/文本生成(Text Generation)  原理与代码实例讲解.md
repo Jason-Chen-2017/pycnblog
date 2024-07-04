@@ -151,9 +151,9 @@ input_ids = tokenizer.encode(prompt, return_tensors='pt')
 
 # 生成文本
 max_length = 50
-output_sequences = model.generate(input_ids, 
-                                  do_sample=True, 
-                                  max_length=max_length, 
+output_sequences = model.generate(input_ids,
+                                  do_sample=True,
+                                  max_length=max_length,
                                   temperature=0.7,
                                   top_k=50,
                                   top_p=0.95,

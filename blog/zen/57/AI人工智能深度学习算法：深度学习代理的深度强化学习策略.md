@@ -3,7 +3,7 @@
 ## 1. 背景介绍
 ### 1.1 人工智能的发展历程
 #### 1.1.1 早期人工智能
-#### 1.1.2 专家系统时代  
+#### 1.1.2 专家系统时代
 #### 1.1.3 机器学习崛起
 ### 1.2 深度学习的兴起
 #### 1.2.1 深度学习的起源
@@ -25,7 +25,7 @@
 #### 2.2.3 探索与利用
 ### 2.3 深度强化学习
 #### 2.3.1 深度Q网络（DQN）
-#### 2.3.2 深度确定性策略梯度（DDPG）  
+#### 2.3.2 深度确定性策略梯度（DDPG）
 #### 2.3.3 异步优势Actor-Critic（A3C）
 
 ## 3. 核心算法原理具体操作步骤
@@ -82,7 +82,7 @@ $\nabla_{\theta} J(\theta) = E_{s \sim \rho^{\beta}}[\nabla_{\theta} \mu_{\theta
 #### 5.1.1 游戏环境搭建
 #### 5.1.2 DQN网络结构设计
 #### 5.1.3 训练过程与结果分析
-### 5.2 DDPG在连续控制任务中的应用  
+### 5.2 DDPG在连续控制任务中的应用
 #### 5.2.1 连续控制环境介绍
 #### 5.2.2 DDPG算法实现
 #### 5.2.3 实验结果与分析
@@ -102,10 +102,10 @@ class DQN(nn.Module):
         self.fc1 = nn.Linear(state_dim, 64)
         self.fc2 = nn.Linear(64, 64)
         self.fc3 = nn.Linear(64, action_dim)
-        
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
-        x = torch.relu(self.fc2(x)) 
+        x = torch.relu(self.fc2(x))
         x = self.fc3(x)
         return x
 
@@ -120,26 +120,26 @@ def train(model, env, optimizer, gamma, epsilon, num_episodes):
                 state_tensor = torch.FloatTensor(state).unsqueeze(0)
                 q_values = model(state_tensor)
                 action = torch.argmax(q_values).item()
-            
+
             next_state, reward, done, _ = env.step(action)
-            
+
             state_tensor = torch.FloatTensor(state).unsqueeze(0)
             next_state_tensor = torch.FloatTensor(next_state).unsqueeze(0)
             q_values = model(state_tensor)
             next_q_values = model(next_state_tensor)
-            
+
             target = reward + gamma * torch.max(next_q_values)
             loss = nn.MSELoss()(q_values[0, action], target)
-            
+
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-            
+
             state = next_state
-        
+
         if episode % 100 == 0:
             print(f"Episode: {episode}, Loss: {loss.item()}")
-            
+
     return model
 ```
 
@@ -157,7 +157,7 @@ def train(model, env, optimizer, gamma, epsilon, num_episodes):
 #### 6.3.2 对话管理与策略学习
 #### 6.3.3 语言生成与交互优化
 
-## 7. 工具和资源推荐 
+## 7. 工具和资源推荐
 ### 7.1 深度学习框架
 #### 7.1.1 TensorFlow
 #### 7.1.2 PyTorch
@@ -187,7 +187,7 @@ def train(model, env, optimizer, gamma, epsilon, num_episodes):
 
 ## 9. 附录：常见问题与解答
 ### 9.1 深度强化学习与监督学习、无监督学习的区别？
-### 9.2 深度强化学习算法的收敛性如何保证？ 
+### 9.2 深度强化学习算法的收敛性如何保证？
 ### 9.3 如何平衡探索与利用？
 ### 9.4 深度强化学习在实际应用中面临哪些挑战？
 ### 9.5 深度强化学习的未来发展方向有哪些？

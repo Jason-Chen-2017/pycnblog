@@ -13,7 +13,7 @@ Docker可以让开发者打包应用以及依赖包到一个可移植的容器�
 Docker优势:
 
 - 更高效的利用系统资源
-- 更快速的启动时间 
+- 更快速的启动时间
 - 一致的运行环境
 - 持续交付和部署
 - 更轻松的迁移
@@ -35,7 +35,7 @@ Docker的主要组件:
 - Docker Client客户端
 - Docker Host主机
 - Docker Daemon
-- Docker Image 
+- Docker Image
 - Docker Container
 
 ```mermaid
@@ -99,7 +99,7 @@ UnionFS的工作原理:
 graph BT
   subgraph UnionFS工作原理
     A[只读层1]
-    B[只读层2] 
+    B[只读层2]
     C[可写层]
     D[虚拟联合文件系统] --> A & B & C
   end
@@ -138,11 +138,11 @@ $$V = L_w \cup L_n \cup ... \cup L_2 \cup L_1$$
 读操作$read(f)$查找文件$f$的过程:
 
 $$read(f) = \begin{cases}
-f & \text{if } f \in L_w\\
-f & \text{if } f \in L_n\\
-... \\
-f & \text{if } f \in L_2\\
-f & \text{if } f \in L_1\\
+f & \text{if } f \in L_w\
+f & \text{if } f \in L_n\
+... \
+f & \text{if } f \in L_2\
+f & \text{if } f \in L_1\
 \text{FileNotFound} & \text{otherwise}
 \end{cases}$$
 
@@ -186,7 +186,7 @@ sudo docker run hello-world
 docker images
 
 # 从DockerHub拉取镜像
-docker pull ubuntu:18.04 
+docker pull ubuntu:18.04
 
 # 运行容器并进入bash
 docker run -it ubuntu:18.04 bash
@@ -212,7 +212,7 @@ FROM python:3.7
 COPY . /app
 
 # 设置工作目录
-WORKDIR /app  
+WORKDIR /app
 
 # 安装依赖
 RUN pip install -r requirements.txt
@@ -249,7 +249,7 @@ Docker在以下场景中得到了广泛应用:
 - **微服务架构**: Docker非常适合微服务架构,每个微服务运行在一个独立的容器中,易于横向扩展和管理。
 - **大数据/机器学习**: Docker可以封装复杂的数据处理管道和机器学习模型,确保一致的运行环境。
 
-## 7.工具和资源推荐  
+## 7.工具和资源推荐
 
 - **Docker Hub**: Docker官方的公共镜像仓库,拥有海量的预构建镜像。
 - **Docker Compose**: 用于定义和运行多容器Docker应用程序。

@@ -73,13 +73,13 @@ AI的发展对社会经济产生了深远影响，它不仅可以提高生产效
 
 对于监督学习任务，通常构建预测模型，以最小化预测值与实际值之间的差异。以线性回归为例，目标是最小化均方误差：
 
-$$ \\min_{\\theta} \\frac{1}{N} \\sum_{i=1}^{N} (y_i - \\hat{y}_i)^2 $$
+$$ \min_{\theta} \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2 $$
 
 ### 4.2 公式推导过程
 
-线性回归通过最小二乘法求解权重系数 $\\theta$：
+线性回归通过最小二乘法求解权重系数 $\theta$：
 
-$$ \\theta = (X^TX)^{-1}X^Ty $$
+$$ \theta = (X^TX)^{-1}X^Ty $$
 
 ### 4.3 案例分析与讲解
 
@@ -122,7 +122,7 @@ predictions = model.predict(X_test)
 
 # 评估模型
 mse = mean_squared_error(y_test, predictions)
-print(f\"Mean Squared Error: {mse}\")
+print(f"Mean Squared Error: {mse}")
 ```
 
 ### 5.3 代码解读与分析

@@ -209,14 +209,14 @@ Lucene的算法可以应用于多个领域,包括但不限于:
 设文档 $d$ 由词项 $t_1, t_2, \ldots, t_n$ 组成,查询 $q$ 由词项 $t_1', t_2', \ldots, t_m'$ 组成,则文档向量 $\vec{d}$ 和查询向量 $\vec{q}$ 可以表示为:
 
 $$
-\vec{d} = (w_{t_1, d}, w_{t_2, d}, \ldots, w_{t_n, d})\\
+\vec{d} = (w_{t_1, d}, w_{t_2, d}, \ldots, w_{t_n, d})\
 \vec{q} = (w_{t_1', q}, w_{t_2', q}, \ldots, w_{t_m', q})
 $$
 
 其中 $w_{t_i, d}$ 和 $w_{t_j', q}$ 分别表示词项 $t_i$ 在文档 $d$ 中的权重,和词项 $t_j'$ 在查询 $q$ 中的权重。常用的权重计算方法是 TF-IDF:
 
 $$
-w_{t_i, d} = tf_{t_i, d} \times idf_{t_i}\\
+w_{t_i, d} = tf_{t_i, d} \times idf_{t_i}\
 idf_{t_i} = \log \frac{N}{df_{t_i}}
 $$
 

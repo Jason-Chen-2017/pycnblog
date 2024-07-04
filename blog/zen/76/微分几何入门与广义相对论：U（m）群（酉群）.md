@@ -9,7 +9,7 @@
 ### 1.2  研究现状
 目前,微分几何和广义相对论都是数学和物理学研究的热点领域。许多学者致力于研究U(m)群在广义相对论中的应用,以及它与其他数学概念(如黎曼几何、张量分析等)之间的联系。这些研究加深了我们对时空本质的认识,推动了广义相对论的发展。
 
-### 1.3  研究意义 
+### 1.3  研究意义
 深入理解U(m)群在微分几何和广义相对论中的作用,对于掌握这两个学科的理论基础至关重要。同时,这些知识在现代物理学、天文学、宇宙学等领域也有广泛应用。因此,系统学习微分几何和酉群的相关概念,对于科研工作者和爱好者都很有益处。
 
 ### 1.4  本文结构
@@ -49,7 +49,7 @@ I --> J[张量分析]
 
 ### 3.2  算法步骤详解
 1. 选择合适的坐标系,建立时空流形的黎曼度量。
-2. 根据度量计算出黎曼曲率张量、里奇张量等几何量。 
+2. 根据度量计算出黎曼曲率张量、里奇张量等几何量。
 3. 将物质场与几何量联系起来,构造爱因斯坦场方程。
 4. 利用张量分析和李群表示论化简方程,得到最终的表达式。
 5. 求解方程,得到时空的度规,进而分析物理效应。
@@ -129,7 +129,7 @@ A：目前,将广义相对论量子化仍面临诸多困难。但人们提出了
 下面是计算史瓦西度规的示例代码：
 
 ```python
-from sympy import * 
+from sympy import *
 
 # 定义坐标变量
 t, r, theta, phi = symbols('t r theta phi')
@@ -149,7 +149,7 @@ def christoffel(g, i, j, k):
 
 # 计算黎曼张量
 def riemann(g, i, j, k, l):
-    return (christoffel(g,i,k,l).diff(symbols('x'+str(j))) - christoffel(g,i,j,l).diff(symbols('x'+str(k))) + 
+    return (christoffel(g,i,k,l).diff(symbols('x'+str(j))) - christoffel(g,i,j,l).diff(symbols('x'+str(k))) +
             sum(christoffel(g,i,j,m)*christoffel(g,m,k,l) - christoffel(g,i,k,m)*christoffel(g,m,j,l) for m in range(4)))
 
 # 计算里奇张量

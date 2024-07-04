@@ -84,7 +84,7 @@ Transformer大模型在自然语言处理领域具有广泛的应用，包括：
 Transformer大模型的数学模型如下：
 
 $$
-\text{y} = f(\text{x}, \text{W}) 
+\text{y} = f(\text{x}, \text{W})
 $$
 
 其中，$\text{x}$ 为输入文本，$\text{y}$ 为输出结果，$\text{W}$ 为模型参数。
@@ -96,7 +96,7 @@ $$
 1. **词嵌入**：
 
 $$
-\text{z} = \text{W}^{\text{T}}\text{x} 
+\text{z} = \text{W}^{\text{T}}\text{x}
 $$
 
 其中，$\text{z}$ 为词嵌入向量。
@@ -104,7 +104,7 @@ $$
 2. **自注意力**：
 
 $$
-\text{A} = \text{softmax}(\text{QW}_k\text{K} + \text{K}W_k^{\text{T}}) 
+\text{A} = \text{softmax}(\text{QW}_k\text{K} + \text{K}W_k^{\text{T}})
 $$
 
 其中，$\text{Q}$、$\text{K}$、$\text{V}$ 为查询、键和值矩阵，$\text{softmax}$ 为归一化函数。
@@ -112,7 +112,7 @@ $$
 3. **前馈神经网络**：
 
 $$
-\text{h} = \text{W}^{\text{h}}\text{h}^{\prime} 
+\text{h} = \text{W}^{\text{h}}\text{h}^{\prime}
 $$
 
 其中，$\text{h}^{\prime}$ 为前馈神经网络输出。
@@ -120,7 +120,7 @@ $$
 4. **输出层**：
 
 $$
-\text{y} = \text{softmax}(\text{W}_y\text{h}) 
+\text{y} = \text{softmax}(\text{W}_y\text{h})
 $$
 
 ### 4.3 案例分析与讲解

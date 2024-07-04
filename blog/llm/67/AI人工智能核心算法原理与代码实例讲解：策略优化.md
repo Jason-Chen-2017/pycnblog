@@ -116,8 +116,7 @@ $$
 策略函数的梯度为：
 
 $$
-\
-abla_\theta \log \pi(a|s;\theta) = \phi(s,a) - \sum_{a'\in\mathcal{A}} \pi(a'|s;\theta) \phi(s,a')
+\nabla_\theta \log \pi(a|s;\theta) = \phi(s,a) - \sum_{a'\in\mathcal{A}} \pi(a'|s;\theta) \phi(s,a')
 $$
 
 其中，$\pi(a'|s;\theta)$ 为智能体在状态 $s$ 下选择动作 $a'$ 的概率。
@@ -141,8 +140,7 @@ $$
 1. 初始化策略函数参数 $\theta$。
 2. 随机选择一个状态 $s$，根据策略函数选择动作 $a$。
 3. 根据动作与状态 $s$ 的差值获得回报 $R(s,a)$。
-4. 计算策略函数的梯度 $\
-abla_\theta \log \pi(a|s;\theta)$。
+4. 计算策略函数的梯度 $\nabla_\theta \log \pi(a|s;\theta)$。
 5. 使用梯度下降算法更新策略函数参数 $\theta$。
 6. 重复步骤2-5，直到满足停止条件。
 

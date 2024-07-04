@@ -182,8 +182,8 @@ $$J(\boldsymbol{w},b)=-\frac{1}{m}\sum_{i=1}^m\big[y^{(i)}\log\sigma(z^{(i)})+(1
 团队组建优化问题可以建模为一个约束优化问题:
 
 $$\begin{array}{ll}
-\underset{\boldsymbol{x}}{\text{maximize}} & f(\boldsymbol{x})\\
-\text{subject to} & g_i(\boldsymbol{x})\leq 0,\quad i=1,\ldots,m\\
+\underset{\boldsymbol{x}}{\text{maximize}} & f(\boldsymbol{x})\
+\text{subject to} & g_i(\boldsymbol{x})\leq 0,\quad i=1,\ldots,m\
 & h_j(\boldsymbol{x})=0,\quad j=1,\ldots,p
 \end{array}$$
 

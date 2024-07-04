@@ -1,6 +1,6 @@
 # 卷积层 (Convolutional Layer) 原理与代码实例讲解
 
-关键词：卷积层, 卷积神经网络, 深度学习, 特征提取, 图像识别 
+关键词：卷积层, 卷积神经网络, 深度学习, 特征提取, 图像识别
 
 ## 1. 背景介绍
 ### 1.1 问题的由来
@@ -22,7 +22,7 @@
 
 ```mermaid
 graph LR
-A[输入层] --> B[卷积层] 
+A[输入层] --> B[卷积层]
 B --> C[激活层]
 C --> D[池化层]
 D --> E[全连接层]
@@ -74,8 +74,8 @@ $$
 
 $$
 \begin{aligned}
-H' &= \lfloor\frac{H+2P-K}{S}\rfloor + 1 \\
-W' &= \lfloor\frac{W+2P-K}{S}\rfloor + 1 \\
+H' &= \lfloor\frac{H+2P-K}{S}\rfloor + 1 \
+W' &= \lfloor\frac{W+2P-K}{S}\rfloor + 1 \
 C' &= N
 \end{aligned}
 $$
@@ -97,9 +97,9 @@ $$
 输入特征图 $X$:
 $$
 X = \begin{bmatrix}
-1 & 2 & 3 & 4 \\
-5 & 6 & 7 & 8 \\
-9 & 10 & 11 & 12 \\
+1 & 2 & 3 & 4 \
+5 & 6 & 7 & 8 \
+9 & 10 & 11 & 12 \
 13 & 14 & 15 & 16
 \end{bmatrix}
 $$
@@ -107,8 +107,8 @@ $$
 卷积核 $W$:
 $$
 W = \begin{bmatrix}
-1 & 0 & -1 \\
-2 & 0 & -2 \\
+1 & 0 & -1 \
+2 & 0 & -2 \
 1 & 0 & -1
 \end{bmatrix}
 $$
@@ -117,8 +117,8 @@ $$
 
 $$
 \begin{aligned}
-y_{0,0,0} &= \sum_{m=0}^{2}\sum_{n=0}^{2} x_{0+m,0+n,0} \cdot w_{m,n,0,0} \\
-&= 1\cdot1 + 2\cdot0 + 3\cdot(-1) + 5\cdot2 + 6\cdot0 + 7\cdot(-2) + 9\cdot1 + 10\cdot0 + 11\cdot(-1) \\
+y_{0,0,0} &= \sum_{m=0}^{2}\sum_{n=0}^{2} x_{0+m,0+n,0} \cdot w_{m,n,0,0} \
+&= 1\cdot1 + 2\cdot0 + 3\cdot(-1) + 5\cdot2 + 6\cdot0 + 7\cdot(-2) + 9\cdot1 + 10\cdot0 + 11\cdot(-1) \
 &= -5
 \end{aligned}
 $$
@@ -126,7 +126,7 @@ $$
 类似地可以计算出:
 $$
 Y = \begin{bmatrix}
--5 & -4 \\
+-5 & -4 \
 -5 & -4
 \end{bmatrix}
 $$
@@ -162,7 +162,7 @@ class ConvLayer(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size, stride=1, padding=0):
         super(ConvLayer, self).__init__()
         self.conv = nn.Conv2d(in_channels, out_channels, kernel_size, stride, padding)
-        
+
     def forward(self, x):
         return self.conv(x)
 

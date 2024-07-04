@@ -1,4 +1,4 @@
-                 
+
 # 强化学习Reinforcement Learning的动态规划基础与实践技巧
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -76,7 +76,7 @@
 - **优点**：
     - 对于小到中等规模的问题，动态规划能够找到全局最优解。
     - 提供了清晰的数学框架用于分析和优化策略。
-    
+
 - **缺点**：
     - 当状态空间和动作空间非常大时，计算量变得巨大。
     - 不适用于连续状态或动作空间的情况。
@@ -138,10 +138,10 @@ def value_iteration(transitions, rewards, gamma):
                                  for p, next_state, reward in zip(*transitions[state])], 0))
             delta = max(delta, abs(values[state] - new_value))
             values[state] = new_value
-        
+
         if delta < 1e-6:
             break
-    
+
     return values
 
 

@@ -59,13 +59,13 @@
 
 ### 4.1 回调函数的数学模型
 
-可以将回调函数视为函数$f(x)$，其中$x$是事件触发条件，$f(x)$是事件触发后的操作。数学上，回调可以表示为$f: \\Omega \\rightarrow \\Lambda$，其中$\\Omega$是事件空间，$\\Lambda$是操作空间。
+可以将回调函数视为函数$f(x)$，其中$x$是事件触发条件，$f(x)$是事件触发后的操作。数学上，回调可以表示为$f: \Omega \rightarrow \Lambda$，其中$\Omega$是事件空间，$\Lambda$是操作空间。
 
 ### 4.2 公式推导过程
 
 在某些情况下，回调函数可能涉及到复杂数学运算或统计分析。例如，在计算平均值时，可以定义一个回调函数来更新总和和计数，然后在事件结束后计算平均值：
 
-$$\\text{average}(x, \\text{count}) = \\frac{\\text{totalSum}(x) + x}{\\text{count} + 1}$$
+$$\text{average}(x, \text{count}) = \frac{\text{totalSum}(x) + x}{\text{count} + 1}$$
 
 ### 4.3 案例分析与讲解
 
@@ -112,9 +112,9 @@ def fetch_data(url, callback):
     callback(data)
 
 def process_data(data):
-    print(f\"Data received: {data}\")
+    print(f"Data received: {data}")
 
-url = \"http://example.com/api/data\"
+url = "http://example.com/api/data"
 fetch_data(url, process_data)
 ```
 

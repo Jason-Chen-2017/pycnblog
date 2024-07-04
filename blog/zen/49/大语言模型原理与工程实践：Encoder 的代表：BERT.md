@@ -136,7 +136,7 @@ graph TD
     MLM[Masked Language Model] --> BERT
     NSP[Next Sentence Prediction] --> BERT
     end
-    
+
     subgraph 微调
     BERT --> FineTuning[Fine-tuning]
     FineTuning --> DownstreamTask[下游任务]

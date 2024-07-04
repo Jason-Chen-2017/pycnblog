@@ -103,9 +103,9 @@
 
 设$f(x)$为输入$x$经过模型后的输出，对于CIFAR-10任务，我们可以定义模型$f(x)$为：
 
-$$f(x) = W \\cdot g(W \\cdot x + b) + c$$
+$$f(x) = W \cdot g(W \cdot x + b) + c$$
 
-其中，$W$是权重矩阵，$b$是偏置向量，$c$是偏置项，$g(\\cdot)$是激活函数（如ReLU）。
+其中，$W$是权重矩阵，$b$是偏置向量，$c$是偏置项，$g(\cdot)$是激活函数（如ReLU）。
 
 ### 4.2 公式推导过程
 
@@ -113,7 +113,7 @@ $$f(x) = W \\cdot g(W \\cdot x + b) + c$$
 
 在微调过程中，我们使用交叉熵损失函数$L$来衡量预测值$p$与真实标签$t$之间的差异：
 
-$$L(p, t) = -\\sum_{i=1}^{K} t_i \\log p_i$$
+$$L(p, t) = -\sum_{i=1}^{K} t_i \log p_i$$
 
 其中，$K$是类别的数量，$t_i$是类别$i$的真实标签，$p_i$是模型预测类别$i$的概率。
 
@@ -165,7 +165,7 @@ model = models.resnet18(pretrained=True)
 num_ftrs = model.fc.in_features
 model.fc = nn.Linear(num_ftrs, 10)  # 更改输出层以匹配CIFAR-10的类数量
 
-device = torch.device(\"cuda:0\" if torch.cuda.is_available() else \"cpu\")
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 model.to(device)
 
 # 优化器和损失函数

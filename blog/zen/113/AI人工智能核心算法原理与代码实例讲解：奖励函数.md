@@ -127,7 +127,7 @@ $$ R(s, a) $$
 
 #### 简单奖励函数
 
-$$ R(s, a) = \begin{cases} 
+$$ R(s, a) = \begin{cases}
 +1 & \text{如果动作 a 导致目标状态} \\
 -1 & \text{如果动作 a 导致非目标状态} \\
 0 & \text{其他情况}

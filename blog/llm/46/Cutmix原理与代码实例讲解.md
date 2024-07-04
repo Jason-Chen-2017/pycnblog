@@ -82,7 +82,7 @@ $$
 
 $$
 C_k = \begin{cases}
-C_i & \text{if } λ < θ \\
+C_i & \text{if } λ < θ \
 C_j & \text{if } λ ≥ θ
 \end{cases}
 $$

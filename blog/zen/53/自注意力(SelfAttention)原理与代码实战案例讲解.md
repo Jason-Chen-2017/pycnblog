@@ -36,27 +36,27 @@ graph LR
     Q[Query] -->|线性投影| QH1[Head1 Q]
     Q -->|线性投影| QH2[Head2 Q]
     Q -->|线性投影| QH3[Head3 Q]
-    
-    K[Key] -->|线性投影| KH1[Head1 K] 
+
+    K[Key] -->|线性投影| KH1[Head1 K]
     K -->|线性投影| KH2[Head2 K]
     K -->|线性投影| KH3[Head3 K]
-    
+
     V[Value] -->|线性投影| VH1[Head1 V]
-    V -->|线性投影| VH2[Head2 V] 
+    V -->|线性投影| VH2[Head2 V]
     V -->|线性投影| VH3[Head3 V]
-    
+
     QH1 --> AH1[Attention Head 1]
     KH1 --> AH1
     VH1 --> AH1
-    
+
     QH2 --> AH2[Attention Head 2]
     KH2 --> AH2
     VH2 --> AH2
-    
-    QH3 --> AH3[Attention Head 3] 
+
+    QH3 --> AH3[Attention Head 3]
     KH3 --> AH3
     VH3 --> AH3
-    
+
     AH1 --> Concat[Concatenate]
     AH2 --> Concat
     AH3 --> Concat
@@ -65,7 +65,7 @@ graph LR
 
 通过多头注意力机制,模型能够关注输入序列的不同位置,从而更好地捕捉序列内部的长程依赖关系。
 
-## 3.核心算法原理具体操作步骤 
+## 3.核心算法原理具体操作步骤
 
 自注意力机制的计算过程可以分为以下几个步骤:
 
@@ -111,7 +111,7 @@ $$
 
 $$
 X = \begin{bmatrix}
-x_1 \\ 
+x_1 \\
 x_2 \\
 x_3 \\
 x_4
@@ -197,13 +197,13 @@ class ScaledDotProductAttention(nn.Module):
     def forward(self, Q, K, V):
         # 计算注意力分数
         scores = torch.matmul(Q, K.transpose(-2, -1)) / (self.d_k ** 0.5)
-        
+
         # 计算注意力权重
         attn_weights = torch.softmax(scores, dim=-1)
-        
+
         # 计算注意力表示
         attn_output = torch.matmul(attn_weights, V)
-        
+
         return attn_output
 
 class MultiHeadAttention(nn.Module):
@@ -211,29 +211,29 @@ class MultiHeadAttention(nn.Module):
         super().__init__()
         self.num_heads = num_heads
         self.head_dim = d_model // num_heads
-        
+
         self.q_proj = nn.Linear(d_model, d_model)
         self.k_proj = nn.Linear(d_model, d_model)
         self.v_proj = nn.Linear(d_model, d_model)
-        
+
         self.attention = ScaledDotProductAttention(self.head_dim)
         self.out_proj = nn.Linear(d_model, d_model)
 
     def forward(self, Q, K, V):
         batch_size = Q.size(0)
-        
+
         # 线性投影
         q = self.q_proj(Q).view(batch_size, -1, self.num_heads, self.head_dim).transpose(1, 2)
         k = self.k_proj(K).view(batch_size, -1, self.num_heads, self.head_dim).transpose(1, 2)
         v = self.v_proj(V).view(batch_size, -1, self.num_heads, self.head_dim).transpose(1, 2)
-        
+
         # 计算多头注意力
         attn_output = self.attention(q, k, v)
         attn_output = attn_output.transpose(1, 2).contiguous().view(batch_size, -1, self.num_heads * self.head_dim)
-        
+
         # 线性变换
         attn_output = self.out_proj(attn_output)
-        
+
         return attn_output
 ```
 

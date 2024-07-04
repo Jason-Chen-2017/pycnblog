@@ -192,7 +192,7 @@ A：提高对话系统性能可以从以下几方面入手：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n chatbot-env python=3.8 
+conda create -n chatbot-env python=3.8
 conda activate chatbot-env
 ```
 

@@ -116,14 +116,14 @@ CREATE PROJECT learn_kylin;
 
 ```sql
 CREATE MODEL learn_kylin.sales_model
-WITH 
-DIMENSIONS AS 
+WITH
+DIMENSIONS AS
  (
    time,
    product,
    region
  )
-MEASURES AS 
+MEASURES AS
  (
    SUM(sales) AS total_sales
  )
@@ -134,7 +134,7 @@ FROM learn_kylin.sales_table;
 
 ```sql
 BUILD CUBE learn_kylin.sales_cube
-WITH 
+WITH
 MODEL learn_kylin.sales_model
 DIMENSIONS (
   time,

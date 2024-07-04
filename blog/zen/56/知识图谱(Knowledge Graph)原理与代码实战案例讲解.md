@@ -7,14 +7,14 @@
 #### 1.1.3 知识图谱的现状与挑战
 ### 1.2 知识图谱的应用领域
 #### 1.2.1 搜索引擎领域
-#### 1.2.2 问答系统领域  
+#### 1.2.2 问答系统领域
 #### 1.2.3 推荐系统领域
 
 ## 2. 核心概念与联系
 ### 2.1 知识图谱的定义
 ### 2.2 知识图谱的核心组成要素
 #### 2.2.1 实体(Entity)
-#### 2.2.2 关系(Relation) 
+#### 2.2.2 关系(Relation)
 #### 2.2.3 属性(Attribute)
 ### 2.3 知识图谱与其他知识表示方法的区别
 #### 2.3.1 知识图谱与本体的区别
@@ -25,7 +25,7 @@
 ### 3.1 知识抽取
 #### 3.1.1 命名实体识别(NER)
 #### 3.1.2 关系抽取(Relation Extraction)
-#### 3.1.3 属性抽取(Attribute Extraction)  
+#### 3.1.3 属性抽取(Attribute Extraction)
 ### 3.2 知识表示与存储
 #### 3.2.1 RDF(Resource Description Framework)
 #### 3.2.2 知识库存储与查询
@@ -42,12 +42,12 @@
 #### 4.1.1 TransE模型原理
 #### 4.1.2 TransE模型公式推导
 #### 4.1.3 TransE模型优缺点分析
-### 4.2 TransR模型 
+### 4.2 TransR模型
 #### 4.2.1 TransR模型原理
 #### 4.2.2 TransR模型公式推导
 #### 4.2.3 TransR模型优缺点分析
 ### 4.3 RESCAL模型
-#### 4.3.1 RESCAL模型原理 
+#### 4.3.1 RESCAL模型原理
 #### 4.3.2 RESCAL模型公式推导
 #### 4.3.3 RESCAL模型优缺点分析
 
@@ -92,7 +92,7 @@
 #### 7.4.3 知识图谱开源项目
 
 ## 8. 总结：未来发展趋势与挑战
-### 8.1 知识图谱的未来发展趋势 
+### 8.1 知识图谱的未来发展趋势
 #### 8.1.1 多模态知识图谱
 #### 8.1.2 动态演化知识图谱
 #### 8.1.3 个性化知识图谱
@@ -104,7 +104,7 @@
 ## 9. 附录：常见问题与解答
 ### 9.1 知识图谱与知识库有什么区别？
 ### 9.2 知识图谱构建需要哪些数据？
-### 9.3 知识图谱存储一般采用什么数据库？ 
+### 9.3 知识图谱存储一般采用什么数据库？
 ### 9.4 知识图谱如何解决实体歧义问题？
 ### 9.5 知识图谱能否处理多语言数据？
 
@@ -155,12 +155,12 @@ from openke.module.strategy import NegativeSampling
 
 # dataloader for training
 train_dataloader = openke.data.TrainDataLoader(
-	in_path = "./benchmarks/FB15K/", 
+	in_path = "./benchmarks/FB15K/",
 	nbatches = 100,
-	threads = 8, 
-	sampling_mode = "normal", 
-	bern_flag = 1, 
-	filter_flag = 1, 
+	threads = 8,
+	sampling_mode = "normal",
+	bern_flag = 1,
+	filter_flag = 1,
 	neg_ent = 25,
 	neg_rel = 0
 )
@@ -169,14 +169,14 @@ train_dataloader = openke.data.TrainDataLoader(
 transe = TransE(
 	ent_tot = train_dataloader.get_ent_tot(),
 	rel_tot = train_dataloader.get_rel_tot(),
-	dim = 200, 
-	p_norm = 1, 
+	dim = 200,
+	p_norm = 1,
 	norm_flag = True
 )
 
 # define the loss function
 model = NegativeSampling(
-	model = transe, 
+	model = transe,
 	loss = MarginLoss(margin = 5.0),
 	batch_size = train_dataloader.get_batch_size()
 )

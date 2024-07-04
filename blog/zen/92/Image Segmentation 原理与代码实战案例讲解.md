@@ -224,7 +224,7 @@ class UNet(nn.Module):
         self.conv1 = nn.Conv2d(3, 64, kernel_size=3, stride=1, padding=1)
         self.relu = nn.ReLU()
         # ... 其他层 ...
-        
+
     def forward(self, x):
         # ... 前向传播 ...
         return output

@@ -1,6 +1,6 @@
 # AIGC从入门到实战：AIGC 在金融行业的创新场景—银行零售新范式
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -123,7 +123,7 @@ AIGC技术在金融行业的应用可以建立以下数学模型：
 
 $$
 \begin{aligned}
-& \text{目标函数} = \text{最大化生成内容的质量} + \text{最小化生成内容的成本} \\
+& \text{目标函数} = \text{最大化生成内容的质量} + \text{最小化生成内容的成本} \
 & \text{约束条件} = \text{数据安全与隐私保护} + \text{模型可解释性} + \text{技术成熟度}
 \end{aligned}
 $$

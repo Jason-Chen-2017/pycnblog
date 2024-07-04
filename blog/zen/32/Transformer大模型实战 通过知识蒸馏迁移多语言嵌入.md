@@ -1,4 +1,4 @@
-                 
+
 # Transformer大模型实战 通过知识蒸馏迁移多语言嵌入
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -167,18 +167,18 @@ for epoch in range(num_epochs):
     for batch in train_dataloader:
         inputs = tokenizer(batch['text'], padding=True, truncation=True, max_length=max_seq_len, return_tensors="pt")
         outputs_teacher = teacher_model(**inputs)
-        
+
         # 提取教师模型的中间层特征或输出分布
         intermediate_outputs = outputs_teacher[0]
         student_outputs = student_model(**inputs)
-        
+
         # 计算知识蒸馏损失，并优化参数
         loss = calculate_knowledge_distillation_loss(intermediate_outputs, student_outputs)
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
         scheduler.step()
-    
+
     evaluate_on_validation_set(eval_dataset)
 ```
 

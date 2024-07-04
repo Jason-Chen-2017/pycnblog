@@ -108,7 +108,7 @@ $$
 
 $$
 \begin{aligned}
-q(\mathbf{x}_t | \mathbf{x}_{t-1}) &= \mathcal{N}(\mathbf{x}_t; \sqrt{1 - \beta_t} \mathbf{x}_{t-1}, \beta_t \mathbf{I}) \\
+q(\mathbf{x}_t | \mathbf{x}_{t-1}) &= \mathcal{N}(\mathbf{x}_t; \sqrt{1 - \beta_t} \mathbf{x}_{t-1}, \beta_t \mathbf{I}) \
 &= \mathcal{N}(\sqrt{\alpha_t} \mathbf{x}_t; \sqrt{\alpha_t} \sqrt{1 - \beta_t} \mathbf{x}_{t-1}, \beta_t \mathbf{I})
 \end{aligned}
 $$

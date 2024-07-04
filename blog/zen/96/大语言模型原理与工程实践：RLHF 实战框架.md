@@ -200,10 +200,10 @@ for epoch in range(num_epochs):
         input_ids = tokenizer(prompt, return_tensors='tf')
         outputs = model.generate(**input_ids, num_return_sequences=1)
         response = tokenizer.decode(outputs[0], skip_special_tokens=True)
-        
+
         # 计算奖励
         reward = reward_function(prompt, response)
-        
+
         # 更新模型参数
         optimizer.minimize(lambda: loss_function(prompt, response), model)
 ```

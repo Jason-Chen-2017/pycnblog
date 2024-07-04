@@ -58,8 +58,8 @@ AUC的数学模型基于曼-惠特尼U检验(Mann-Whitney U test)。该检验是
 
 $$
 \phi(x, y) = \begin{cases}
-1, & \text{if } x > y \\
-0.5, & \text{if } x = y \\
+1, & \text{if } x > y \
+0.5, & \text{if } x = y \
 0, & \text{if } x < y
 \end{cases}
 $$
@@ -86,15 +86,15 @@ import numpy as np
 def auc(y_true, y_score):
     n_pos = np.sum(y_true)  # 正例数量
     n_neg = len(y_true) - n_pos  # 负例数量
-    
+
     y_score_pos = y_score[y_true == 1]
     y_score_neg = y_score[y_true == 0]
-    
+
     u = 0
     for score_pos in y_score_pos:
         u += np.sum(score_pos > y_score_neg)
         u += 0.5 * np.sum(score_pos == y_score_neg)
-    
+
     return u / (n_pos * n_neg)
 ```
 

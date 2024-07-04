@@ -356,4 +356,4 @@ IT战略规划面临以下挑战：
 
   需要企业高层领导的重视和支持，并建立有效的沟通机制、项目管理机制、风险管理机制等，才能保证IT战略规划的顺利实施。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

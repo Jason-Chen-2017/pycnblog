@@ -88,8 +88,8 @@ GANs在视频生成领域的应用主要包括：
 GANs的数学模型可以表示为以下公式：
 
 $$\begin{aligned}
-\text{Generator}:\quad G(z) &\sim q_G(z) = p_G(G(z)) \\
-\text{Discriminator}:\quad D(x) &\sim q_D(x) = p_D(D(x)) \\
+\text{Generator}:\quad G(z) &\sim q_G(z) = p_G(G(z)) \
+\text{Discriminator}:\quad D(x) &\sim q_D(x) = p_D(D(x)) \
 \end{aligned}$$
 
 其中，$G(z)$是生成器，$z$是噪声样本，$q_G(z)$是生成器的先验分布，$p_G(G(z))$是生成器生成的数据分布；$D(x)$是判别器，$x$是真实数据，$q_D(x)$是判别器的先验分布，$p_D(D(x))$是判别器识别的真实数据分布。

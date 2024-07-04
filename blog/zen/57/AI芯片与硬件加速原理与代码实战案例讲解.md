@@ -32,7 +32,7 @@ A --> I[硬件加速]
 ## 3. 核心算法原理具体操作步骤
 ### 3.1 卷积神经网络(CNN)加速
 #### 3.1.1 卷积(Convolution)操作加速
-#### 3.1.2 池化(Pooling)操作加速 
+#### 3.1.2 池化(Pooling)操作加速
 #### 3.1.3 激活(Activation)函数加速
 ### 3.2 循环神经网络(RNN)加速
 #### 3.2.1 门控循环单元(GRU)加速
@@ -47,7 +47,7 @@ A --> I[硬件加速]
 
 $$
 \begin{aligned}
-\operatorname{Conv}(I, K)_{x, y} &=\sum_{i} \sum_{j} I(x+i, y+j) K(i, j) \\
+\operatorname{Conv}(I, K)_{x, y} &=\sum_{i} \sum_{j} I(x+i, y+j) K(i, j) \
 &=\sum_{i} \sum_{j} I(i, j) K(x-i, y-j)
 \end{aligned}
 $$
@@ -74,9 +74,9 @@ GRU的数学公式如下：
 
 $$
 \begin{aligned}
-z_t &=\sigma\left(W_z \cdot\left[h_{t-1}, x_t\right]\right) \\
-r_t &=\sigma\left(W_r \cdot\left[h_{t-1}, x_t\right]\right) \\
-\tilde{h}_t &=\tanh \left(W \cdot\left[r_t * h_{t-1}, x_t\right]\right) \\
+z_t &=\sigma\left(W_z \cdot\left[h_{t-1}, x_t\right]\right) \
+r_t &=\sigma\left(W_r \cdot\left[h_{t-1}, x_t\right]\right) \
+\tilde{h}_t &=\tanh \left(W \cdot\left[r_t * h_{t-1}, x_t\right]\right) \
 h_t &=\left(1-z_t\right) * h_{t-1}+z_t * \tilde{h}_t
 \end{aligned}
 $$
@@ -93,7 +93,7 @@ class ConvLayer(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size, stride=1, padding=0):
         super(ConvLayer, self).__init__()
         self.conv = nn.Conv2d(in_channels, out_channels, kernel_size, stride, padding)
-    
+
     def forward(self, x):
         x = self.conv(x)
         return x

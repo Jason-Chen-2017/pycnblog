@@ -6,7 +6,7 @@
 ### 1.1 问题的由来
 随着大数据时代的到来,海量数据的实时处理成为了企业的迫切需求。Apache Flink作为新一代大数据流式计算引擎,以其低延迟、高吞吐、exactly-once语义保证等特点,受到越来越多企业的青睐。然而,要充分发挥Flink的性能,高效管理集群资源至关重要。而Flink ResourceManager正是Flink资源管理的核心组件。
 
-### 1.2 研究现状 
+### 1.2 研究现状
 目前对Flink ResourceManager的研究主要集中在:
 1. ResourceManager在Flink架构中的作用和工作原理
 2. ResourceManager如何与YARN、Kubernetes等资源管理平台集成
@@ -26,7 +26,7 @@
 本文将从以下几方面对Flink ResourceManager展开讨论:
 1. ResourceManager在Flink架构中的位置和作用
 2. ResourceManager的核心概念和设计原理
-3. ResourceManager的工作流程和状态转换 
+3. ResourceManager的工作流程和状态转换
 4. ResourceManager的主要组件和关键代码分析
 5. 基于ResourceManager的常见应用场景
 6. ResourceManager的调优和最佳实践
@@ -43,7 +43,7 @@
 ```mermaid
 graph TD
 A[Client] -->|提交Job| B(JobManager)
-B -->|申请资源| C(ResourceManager) 
+B -->|申请资源| C(ResourceManager)
 C -->|分配Slot| B
 C -->|管理Slot| D(TaskManager)
 B -->|部署Task| D
@@ -57,10 +57,10 @@ D -->|汇报状态| B
 ### 3.1 算法原理概述
 ResourceManager的核心是Slot资源的分配与管理。它基于一系列分配策略,将Slot资源分配给JobManager,并动态调整分配方案,以满足Job的资源需求。
 
-### 3.2 算法步骤详解  
+### 3.2 算法步骤详解
 ResourceManager的工作流程可以分为以下几个步骤:
 
-1. TaskManager启动后,会向ResourceManager注册Slot。ResourceManager会维护一个Slot池。 
+1. TaskManager启动后,会向ResourceManager注册Slot。ResourceManager会维护一个Slot池。
 2. JobManager向ResourceManager申请Slot资源。
 3. ResourceManager根据分配策略,从Slot池中选取符合条件的Slot分配给JobManager。
 4. 如果现有Slot不能满足JobManager的需求,ResourceManager会向TaskManager申请新的Slot。
@@ -74,7 +74,7 @@ ResourceManager的工作流程可以分为以下几个步骤:
 - 支持动态调整Slot分配,可以适应Job的资源需求变化。
 - 通过Slot共享,可以在有限的资源下运行更多的Task。
 
-缺点: 
+缺点:
 - Slot分配算法相对复杂,实现难度较大。
 - 对Slot的调度和迁移会引入一定的开销。
 - Slot的资源隔离性不够好,可能会有相互影响。
@@ -105,7 +105,7 @@ $$
 $$
 
 $$
-\sum_{j=1}^m x_{ij} \geq y_i, \forall i \in [1,n] 
+\sum_{j=1}^m x_{ij} \geq y_i, \forall i \in [1,n]
 $$
 
 $$
@@ -127,19 +127,19 @@ $$
 
 | Job | CPU | 内存 |
 | --- | --- | ---- |
-| J1  | 2   | 1GB  |  
+| J1  | 2   | 1GB  |
 | J2  | 1   | 2GB  |
 | J3  | 1   | 1GB  |
 
 | Slot | CPU  | 内存  |
 | ---- | ---- | ----- |
 | S1   | 2    | 2GB   |
-| S2   | 2    | 1GB   | 
+| S2   | 2    | 1GB   |
 
 按照贪心策略,分配过程如下:
 1. 按资源需求排序:J1(2,1GB) > J2(1,2GB) > J3(1,1GB)
 2. 分配J1到S1,剩余资源(0,1GB)
-3. 分配J2到S1,剩余资源(0,0)  
+3. 分配J2到S1,剩余资源(0,0)
 4. 分配J3到S2,剩余资源(1,0)
 
 最终分配结果:
@@ -149,16 +149,16 @@ $$
 可见,贪心策略尽可能将资源利用率高的Slot分配出去,避免了资源碎片化,从而提高了资源利用率。
 
 ### 4.4 常见问题解答
-Q: Slot共享机制是如何实现的?  
+Q: Slot共享机制是如何实现的?
 A: Flink允许多个Task共享同一个Slot,只要它们的资源需求之和不超过Slot的容量即可。共享Slot的Task可以来自同一个Job,也可以来自不同Job。Slot共享可以显著提高资源利用率。
 
-Q: 如何避免不同Slot上的Task相互干扰?  
+Q: 如何避免不同Slot上的Task相互干扰?
 A: Flink通过多种机制来隔离共享Slot的Task:
-1. 每个Task都在独立的线程中执行,彼此隔离 
+1. 每个Task都在独立的线程中执行,彼此隔离
 2. 通过线程组隔离不同Job的Task
 3. 对于占用大量资源的Task,可以通过配置单独占用Slot
 
-Q: ResourceManager如何容错?  
+Q: ResourceManager如何容错?
 A: ResourceManager支持多种容错机制:
 1. 可以配置多个ResourceManager实例,形成高可用集群
 2. 持久化元数据到外部存储,如HDFS、ZooKeeper
@@ -181,10 +181,10 @@ ResourceManager的核心逻辑主要在`ResourceManager.java`中实现,下面是
 public void start() throws Exception {
     // 初始化服务
     initialize();
-    
-    // 启动Slot管理器  
+
+    // 启动Slot管理器
     slotManager.start(getFencingToken(), getMainThreadExecutor(), new ResourceActionsImpl());
-    
+
     // 启动心跳服务
     startHeartbeatServices();
 
@@ -196,13 +196,13 @@ public void start() throws Exception {
 private void handleSlotRequest(SlotRequest slotRequest) {
     // 检查请求合法性
     checkSlotRequest(slotRequest);
-    
-    // 分配Slot 
+
+    // 分配Slot
     Optional<SlotAndLocality> slotAndLocality = slotManager.allocateSlot(slotRequest);
-    
+
     if (slotAndLocality.isPresent()) {
         // 分配成功,回复JobManager
-        responseSlotRequest(slotAndLocality.get());  
+        responseSlotRequest(slotAndLocality.get());
     } else {
         // 分配失败,缓存请求,等待新的Slot注册
         slotManager.addPendingRequest(slotRequest);
@@ -213,9 +213,9 @@ private void handleSlotRequest(SlotRequest slotRequest) {
 private void registerTaskManager(TaskExecutorConnection taskExecutorConnection, SlotReport slotReport) {
     // 注册TaskManager
     slotManager.registerTaskManager(taskExecutorConnection, slotReport);
-    
+
     // 分配等待中的Slot请求
-    slotManager.allocatePendingRequests();  
+    slotManager.allocatePendingRequests();
 }
 ```
 

@@ -74,12 +74,12 @@ BERT的核心在于双向编码，即它能够捕捉文本前后之间的语义�
 BERT模型可以构建为以下结构：
 
 $$
-\\begin{align*}
-\\text{Input} &= \\{x_1, x_2, ..., x_T\\} \\\\
-\\text{Mask} &= \\{m_1, m_2, ..., m_T\\} \\\\
-\\text{Next Sentence Label} &= \\{l_{ns}\\} \\\\
-\\text{Output} &= \\{o_1, o_2, ..., o_T\\}
-\\end{align*}
+\begin{align*}
+\text{Input} &= \{x_1, x_2, ..., x_T\} \\\
+\text{Mask} &= \{m_1, m_2, ..., m_T\} \\\
+\text{Next Sentence Label} &= \{l_{ns}\} \\\
+\text{Output} &= \{o_1, o_2, ..., o_T\}
+\end{align*}
 $$
 
 其中$x_i$表示输入序列的第$i$个词，$m_i$表示该词是否被掩码（0或1），$l_{ns}$表示是否是下一个句子的标签，$o_i$是经过Transformer编码后的词表示。
@@ -91,18 +91,18 @@ $$
 - **掩码语言模型（MLM）**: 目标是预测被随机掩码的单词。损失函数定义为：
 
 $$
-L_{MLM} = -\\sum_{i} \\log \\hat{P}(x_i | x_{\\backslash i})
+L_{MLM} = -\sum_{i} \log \hat{P}(x_i | x_{\backslash i})
 $$
 
-其中$\\hat{P}(x_i | x_{\\backslash i})$是预测单词$x_i$的分布，$x_{\\backslash i}$表示去除被掩码单词后的序列。
+其中$\hat{P}(x_i | x_{\backslash i})$是预测单词$x_i$的分布，$x_{\backslash i}$表示去除被掩码单词后的序列。
 
 - **下一个句子预测（NSP）**: 目标是区分给定的一对句子是否属于同一个故事。损失函数定义为：
 
 $$
-L_{NSP} = -\\log \\hat{P}(l_{ns} = 1 | \\text{Sentence}_1, \\text{Sentence}_2)
+L_{NSP} = -\log \hat{P}(l_{ns} = 1 | \text{Sentence}_1, \text{Sentence}_2)
 $$
 
-其中$\\hat{P}(l_{ns} = 1 | \\text{Sentence}_1, \\text{Sentence}_2)$是预测句子是否属于同一个故事的概率。
+其中$\hat{P}(l_{ns} = 1 | \text{Sentence}_1, \text{Sentence}_2)$是预测句子是否属于同一个故事的概率。
 
 ### 4.3 案例分析与讲解
 
@@ -137,11 +137,11 @@ tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=2)
 
 # 示例数据集（文本列表）
-texts = [\"This is a positive sentence.\", \"This is a negative sentence.\"]
+texts = ["This is a positive sentence.", "This is a negative sentence."]
 labels = [1, 0]
 
 # 预处理数据
-encodings = tokenizer(texts, truncation=True, padding=True, return_tensors=\"pt\")
+encodings = tokenizer(texts, truncation=True, padding=True, return_tensors="pt")
 
 # 微调模型
 outputs = model(**encodings, labels=torch.tensor(labels).unsqueeze(0))
@@ -177,7 +177,7 @@ loss, logits = outputs.loss, outputs.logits
 
 ### 7.3 相关论文推荐
 
-- **原始论文**：\"BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding\" by Devlin et al., 2018.
+- **原始论文**："BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding" by Devlin et al., 2018.
 - **后续工作**：关注顶级会议（如ICLR、NeurIPS、ACL）的最新论文，了解预训练模型的新发展。
 
 ### 7.4 其他资源推荐

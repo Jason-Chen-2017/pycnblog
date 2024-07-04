@@ -1,6 +1,6 @@
 # 微分几何入门与广义相对论：Kerr-Newman（克尔一纽曼）黑洞
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：微分几何，广义相对论，Kerr-Newman黑洞，时空曲率，物理定律
 
@@ -73,15 +73,15 @@ Kerr-Newman黑洞是由旋转、电荷和质量三者共同作用的结果。在
 Kerr-Newman黑洞的数学模型可以通过爱因斯坦场方程来构建，方程形式为：
 
 $$
-R_{\\mu\
-u} - \\frac{1}{2}R g_{\\mu\
-u} = \\frac{8\\pi G}{c^4} T_{\\mu\
+R_{\mu\
+u} - \frac{1}{2}R g_{\mu\
+u} = \frac{8\pi G}{c^4} T_{\mu\
 u}
 $$
 
-其中，$R_{\\mu\
-u}$是 Ricci 张量，$R$是标量曲率，$g_{\\mu\
-u}$是度量张量，$T_{\\mu\
+其中，$R_{\mu\
+u}$是 Ricci 张量，$R$是标量曲率，$g_{\mu\
+u}$是度量张量，$T_{\mu\
 u}$是能量-动量张量，$G$是引力常数，$c$是光速。
 
 ### 4.2 公式推导过程
@@ -93,10 +93,10 @@ Kerr-Newman黑洞的解涉及到复数函数和特殊函数，例如椭圆积分
 考虑一个简单的Kerr-Newman黑洞解，其时空度量可以表示为：
 
 $$
-ds^2 = -\\left(1 - \\frac{2Mr}{\\rho^2} + \\frac{Q^2}{\\rho^4} + \\frac{J^2}{\\rho^2}\\sin^2\\theta\\right)dt^2 + \\frac{\\rho^2}{\\Delta}dr^2 + \\rho^2d\\theta^2 + \\rho^2\\sin^2\\theta d\\phi^2
+ds^2 = -\left(1 - \frac{2Mr}{\rho^2} + \frac{Q^2}{\rho^4} + \frac{J^2}{\rho^2}\sin^2\theta\right)dt^2 + \frac{\rho^2}{\Delta}dr^2 + \rho^2d\theta^2 + \rho^2\sin^2\theta d\phi^2
 $$
 
-其中，$\\Delta = r^2 - 2Mr + Q^2$，$\\rho^2 = r^2 + Q^2$。
+其中，$\Delta = r^2 - 2Mr + Q^2$，$\rho^2 = r^2 + Q^2$。
 
 ### 4.4 常见问题解答
 
@@ -201,7 +201,7 @@ Kerr-Newman黑洞的研究是连接理论和实验的桥梁，未来的研究将
 
 - **问题**：如何理解黑洞的奇点？
    - **解答**：黑洞的奇点是一个密度和曲率无限大的点，物理定律在该处失效。理论研究认为奇点是物质、能量和时空结构的极限状态。
-  
+
 - **问题**：Kerr-Newman黑洞是否有实际存在的可能性？
    - **解答**：虽然理论上Kerr-Newman黑洞是广义相对论的一个解，但在实际宇宙中是否真的存在这样的黑洞尚未得到证实。科学家们正在通过天文观测寻找证据，比如银河系中心的超大质量黑洞可能具有Kerr-Newman性质。
 

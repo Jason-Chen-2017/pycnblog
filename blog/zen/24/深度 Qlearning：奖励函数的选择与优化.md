@@ -1,4 +1,4 @@
-                 
+
 # 深度 Q-learning：奖励函数的选择与优化
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -117,10 +117,10 @@ class DQN:
         self.state_size = state_size
         self.action_size = action_size
         self.memory = deque(maxlen=2000)
-        
+
         # 初始化神经网络
         self.model = self._build_model()
-    
+
     def _build_model(self):
         model = tf.keras.models.Sequential([
             tf.keras.layers.Dense(24, input_dim=self.state_size, activation='relu'),
@@ -129,14 +129,14 @@ class DQN:
         ])
         model.compile(loss='mse', optimizer=tf.keras.optimizers.Adam(lr=0.001))
         return model
-    
+
     def remember(self, state, action, reward, next_state, done):
         self.memory.append((state, action, reward, next_state, done))
-    
+
     def act(self, state):
         # 这里可以添加 epsilon-greedy 策略代码
         pass
-    
+
     def replay(self, batch_size):
         minibatch = random.sample(self.memory, batch_size)
         for state, action, reward, next_state, done in minibatch:

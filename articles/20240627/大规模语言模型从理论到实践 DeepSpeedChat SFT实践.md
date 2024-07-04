@@ -121,13 +121,10 @@ $$
 根据链式法则，损失函数对参数 $\theta$ 的梯度为：
 
 $$
-\
-abla_{\theta}L(\theta) = -\frac{1}{N}\sum_{i=1}^N \
-abla_{\theta}\hat{y}_i
+\nabla_{\theta}L(\theta) = -\frac{1}{N}\sum_{i=1}^N \nabla_{\theta}\hat{y}_i
 $$
 
-其中 $\
-abla_{\theta}\hat{y}_i$ 可进一步递归展开，利用自动微分技术完成计算。
+其中 $\nabla_{\theta}\hat{y}_i$ 可进一步递归展开，利用自动微分技术完成计算。
 
 ### 4.3 案例分析与讲解
 

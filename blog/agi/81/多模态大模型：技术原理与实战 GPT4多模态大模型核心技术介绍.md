@@ -154,7 +154,7 @@ A：可以提高多模态大模型效率的方法包括：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n tensorflow-env python=3.8 
+conda create -n tensorflow-env python=3.8
 conda activate tensorflow-env
 ```
 
@@ -245,7 +245,7 @@ epochs = 3
 for epoch in range(epochs):
     train_loss = train_epoch(model, train_dataset, batch_size=16, optimizer=optimizer)
     print(f"Epoch {epoch+1}, train loss: {train_loss:.3f}")
-    
+
     eval_loss = evaluate(model, eval_dataset)
     print(f"Epoch {epoch+1}, eval loss: {eval_loss:.3f}")
 ```

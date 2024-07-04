@@ -141,7 +141,7 @@
 #### 目标检测公式
 
 - **Box回归**：使用回归层调整检测框的位置，公式为：
-  $$ \\hat{x}, \\hat{y}, \\hat{w}, \\hat{h} = f(x, y, w, h) $$
+  $$ \hat{x}, \hat{y}, \hat{w}, \hat{h} = f(x, y, w, h) $$
   其中$f$为回归函数，$x,y$为中心点坐标，$w,h$为宽高。
 
 #### 语义分割公式
@@ -153,13 +153,13 @@
 #### 目标检测
 
 - **损失函数**：通常使用交叉熵损失或Focal Loss，公式为：
-  $$ L = - \\sum_{i=1}^{N} \\sum_{j=1}^{M} y_{ij} \\log(p_{ij}) $$
+  $$ L = - \sum_{i=1}^{N} \sum_{j=1}^{M} y_{ij} \log(p_{ij}) $$
   其中$N$为样本数量，$M$为类别的数量，$y_{ij}$为目标标签，$p_{ij}$为预测概率。
 
 #### 语义分割
 
 - **像素级分类**：采用交叉熵损失，公式为：
-  $$ L = - \\sum_{i=1}^{N} \\sum_{j=1}^{C} y_{ij} \\log(p_{ij}) $$
+  $$ L = - \sum_{i=1}^{N} \sum_{j=1}^{C} y_{ij} \log(p_{ij}) $$
   其中$N$为样本数量，$C$为类别数量，$y_{ij}$为像素真实标签，$p_{ij}$为预测概率。
 
 ### 案例分析与讲解
@@ -208,27 +208,27 @@ from tensorflow.keras.models import Model
 def build_unet(input_shape=(256, 256, 3), n_classes=1):
     # 定义编码器网络
     encoder = tf.keras.Sequential([
-        Conv2D(64, kernel_size=(3, 3), padding=\"same\", activation=\"relu\"),
+        Conv2D(64, kernel_size=(3, 3), padding="same", activation="relu"),
         MaxPooling2D(pool_size=(2, 2)),
-        Conv2D(128, kernel_size=(3, 3), padding=\"same\", activation=\"relu\"),
+        Conv2D(128, kernel_size=(3, 3), padding="same", activation="relu"),
         MaxPooling2D(pool_size=(2, 2)),
-        Conv2D(256, kernel_size=(3, 3), padding=\"same\", activation=\"relu\"),
+        Conv2D(256, kernel_size=(3, 3), padding="same", activation="relu"),
         MaxPooling2D(pool_size=(2, 2)),
-        Conv2D(512, kernel_size=(3, 3), padding=\"same\", activation=\"relu\"),
+        Conv2D(512, kernel_size=(3, 3), padding="same", activation="relu"),
         MaxPooling2D(pool_size=(2, 2))
     ])
 
     # 定义解码器网络
     decoder = tf.keras.Sequential([
         UpSampling2D(size=(2, 2)),
-        Conv2D(512, kernel_size=(3, 3), padding=\"same\", activation=\"relu\"),
+        Conv2D(512, kernel_size=(3, 3), padding="same", activation="relu"),
         UpSampling2D(size=(2, 2)),
-        Conv2D(256, kernel_size=(3, 3), padding=\"same\", activation=\"relu\"),
+        Conv2D(256, kernel_size=(3, 3), padding="same", activation="relu"),
         UpSampling2D(size=(2, 2)),
-        Conv2D(128, kernel_size=(3, 3), padding=\"same\", activation=\"relu\"),
+        Conv2D(128, kernel_size=(3, 3), padding="same", activation="relu"),
         UpSampling2D(size=(2, 2)),
-        Conv2D(64, kernel_size=(3, 3), padding=\"same\", activation=\"relu\"),
-        Conv2D(n_classes, kernel_size=(1, 1), padding=\"same\", activation=\"sigmoid\")
+        Conv2D(64, kernel_size=(3, 3), padding="same", activation="relu"),
+        Conv2D(n_classes, kernel_size=(1, 1), padding="same", activation="sigmoid")
     ])
 
     # 构建完整的U-Net模型
@@ -299,8 +299,8 @@ def build_unet(input_shape=(256, 256, 3), n_classes=1):
 
 #### 高影响力论文
 
-- **U-Net**：Ronneberger et al., \"U-Net: Convolutional Networks for Biomedical Image Segmentation\", 2015.
-- **YOLO**：Redmon et al., \"You Only Look Once: Unified, Real-Time Object Detection\", 2016.
+- **U-Net**：Ronneberger et al., "U-Net: Convolutional Networks for Biomedical Image Segmentation", 2015.
+- **YOLO**：Redmon et al., "You Only Look Once: Unified, Real-Time Object Detection", 2016.
 
 ### 其他资源推荐
 

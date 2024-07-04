@@ -101,13 +101,13 @@ graph LR
 while not stop_condition:
     # Step 2：前向传播
     output = forward_propagation(input_data, parameters)
-    
+
     # Step 3：计算损失函数
     loss = loss_function(output, target)
-    
+
     # Step 4：计算梯度
     gradients = backward_propagation(output, target, parameters)
-    
+
     # Step 5：反向传播梯度
     parameters = update_parameters(parameters, gradients)
 ```
@@ -369,7 +369,7 @@ A：是的，反向传播算法需要大量数据进行训练，以获得良好�
 2. 创建并激活虚拟环境：
 
 ```bash
-conda create -n backpropagation-env python=3.8 
+conda create -n backpropagation-env python=3.8
 conda activate backpropagation-env
 ```
 

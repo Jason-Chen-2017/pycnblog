@@ -88,7 +88,7 @@ DBSCAN(D, ε, MinPts)
 
 expandCluster(p, NeighborPts, C, ε, MinPts)
    add p to cluster C
-   for each point p' in NeighborPts 
+   for each point p' in NeighborPts
       if p' is not visited
          mark p' as visited
          NeighborPts' = regionQuery(p', ε)
@@ -114,12 +114,12 @@ DBSCAN算法中需要计算两个点之间的距离，常用的距离度量有�
 
 1. 欧几里得距离（Euclidean Distance）：
    对于两个点 $p=(p_1,p_2,...,p_n)$ 和 $q=(q_1,q_2,...,q_n)$，它们之间的欧几里得距离定义为：
-   
+
    $$d(p,q) = \sqrt{(p_1-q_1)^2 + (p_2-q_2)^2 + ... + (p_n-q_n)^2}$$
 
 2. 曼哈顿距离（Manhattan Distance）：
    对于两个点 $p=(p_1,p_2,...,p_n)$ 和 $q=(q_1,q_2,...,q_n)$，它们之间的曼哈顿距离定义为：
-   
+
    $$d(p,q) = |p_1-q_1| + |p_2-q_2| + ... + |p_n-q_n|$$
 
 例如，假设有两个二维点 $p=(1,2)$ 和 $q=(4,6)$，它们之间的欧几里得距离为：

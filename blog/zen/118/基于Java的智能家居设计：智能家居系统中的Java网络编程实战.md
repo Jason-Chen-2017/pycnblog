@@ -61,13 +61,13 @@ graph TD
         actuator[执行器]
         device[家用设备]
     end
-    
+
     subgraph 智能家居系统
         gateway[网关]
         ui[用户界面]
         cloud[云端服务]
     end
-    
+
     sensor --> gateway
     actuator --> gateway
     device --> actuator
@@ -110,13 +110,13 @@ graph TD
 
 while True:
     环境信息 = 采集环境数据()
-    
+
     for 规则 in 规则列表:
         if 规则.条件(环境信息):
             执行操作(规则.操作)
             记录日志(规则, 环境信息)
             break
-    
+
     维护规则列表()
 ```
 
@@ -184,8 +184,8 @@ $$
 
 $$
 u(t) = \begin{cases}
-1, & \text{if } T(t) > T_0 + \epsilon_1 \\
-1, & \text{if } T(t) < T_0 - \epsilon_2 \\
+1, & \text{if } T(t) > T_0 + \epsilon_1 \
+1, & \text{if } T(t) < T_0 - \epsilon_2 \
 0, & \text{otherwise}
 \end{cases}
 $$
@@ -194,8 +194,8 @@ $$
 
 $$
 \frac{dT(t)}{dt} = \begin{cases}
-\alpha(T_\text{out}(t) - T(t)) + \beta, & \text{if } T(t) > T_0 + \epsilon_1 \\
-\alpha(T_\text{out}(t) - T(t)) + \beta, & \text{if } T(t) < T_0 - \epsilon_2 \\
+\alpha(T_\text{out}(t) - T(t)) + \beta, & \text{if } T(t) > T_0 + \epsilon_1 \
+\alpha(T_\text{out}(t) - T(t)) + \beta, & \text{if } T(t) < T_0 - \epsilon_2 \
 \alpha(T_\text{out}(t) - T(t)), & \text{otherwise}
 \end{cases}
 $$

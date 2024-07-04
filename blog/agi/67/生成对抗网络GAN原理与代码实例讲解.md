@@ -129,10 +129,10 @@ GANs的应用领域非常广泛，包括：
 
 $$
 \begin{align*}
-X &\sim p_X(x) \\
-G(z) &\sim p_G(z) \\
-D(x) &\sim p_D(x) \\
-p_G(z) &\propto \int_{X}p_X(x)p_D(x|z)dx \\
+X &\sim p_X(x) \
+G(z) &\sim p_G(z) \
+D(x) &\sim p_D(x) \
+p_G(z) &\propto \int_{X}p_X(x)p_D(x|z)dx \
 D(x) &\propto \int_{Z}p_G(z)p_D(x|z)dz
 \end{align*}
 $$
@@ -149,7 +149,7 @@ $$
 
 $$
 \begin{align*}
-L_G &= \frac{1}{M} \sum_{i=1}^M \log D(g_i) \\
+L_G &= \frac{1}{M} \sum_{i=1}^M \log D(g_i) \
 L_D &= \frac{1}{N+M} \left( \sum_{i=1}^N \log D(x_i) + \sum_{i=1}^M \log (1-D(g_i)) \right)
 \end{align*}
 $$
@@ -264,7 +264,7 @@ def train(generator, discriminator, epochs):
             d_loss = (real_loss + fake_loss) / 2
             d_loss.backward()
             d_optimizer.step()
-            
+
             # 训练生成器
             generator.zero_grad()
             fake_data = generator(noise)
@@ -272,7 +272,7 @@ def train(generator, discriminator, epochs):
             g_loss = nn.BCELoss()(output, torch.ones_like(output))
             g_loss.backward()
             g_optimizer.step()
-            
+
         print(f"Epoch [{epoch+1}/{epochs}], Discriminator Loss: {d_loss.item():.4f}, Generator Loss: {g_loss.item():.4f}")
 
 # 生成图像

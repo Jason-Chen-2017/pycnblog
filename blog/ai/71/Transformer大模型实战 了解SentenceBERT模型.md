@@ -200,8 +200,8 @@ $$
 
 $$
 \begin{align*}
-h_{\text{pre}} &= [h_1, h_2, ..., h_n] \\
-h_{\text{task}} &= [h_{\text{task}1}, h_{\text{task}2}, ..., h_{\text{task}n}] \\
+h_{\text{pre}} &= [h_1, h_2, ..., h_n] \
+h_{\text{task}} &= [h_{\text{task}1}, h_{\text{task}2}, ..., h_{\text{task}n}] \
 h &= W_f \cdot h_{\text{task}}
 \end{align*}
 $$

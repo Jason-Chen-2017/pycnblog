@@ -1,7 +1,7 @@
 
 # AI人工智能深度学习算法：深度学习软件框架的掌握与应用
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -196,7 +196,7 @@ A：梯度下降是一种优化算法，用于最小化损失函数，从而更�
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 3. 安装PyTorch：

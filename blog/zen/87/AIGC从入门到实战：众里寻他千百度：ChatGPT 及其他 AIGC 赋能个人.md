@@ -126,7 +126,7 @@ ChatGPT 是基于 GPT 模型构建的，其核心模型为 Transformer。以下�
 
 $$
 \begin{align*}
-    Q &= W_{Q}V + W_{K}K \\
+    Q &= W_{Q}V + W_{K}K \
     K &= softmax(QW_{K}^T + b_{K})W_{V} + b_{V}
 \end{align*}
 $$

@@ -150,16 +150,16 @@ for episode in range(10000):
             action = env.action_space.sample()
         else:
             action = np.argmax(Q_table[state, :])
-        
+
         # 执行动作并获取下一个状态和奖励
         next_state, reward, done, info = env.step(action)
-        
+
         # 更新 Q-table
         old_value = Q_table[state, action]
         next_max = np.max(Q_table[next_state, :])
         new_value = (1 - alpha) * old_value + alpha * (reward + gamma * next_max)
         Q_table[state, action] = new_value
-        
+
         # 移动到下一个状态
         state = next_state
 

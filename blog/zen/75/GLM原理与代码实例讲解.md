@@ -150,7 +150,7 @@ print(result.summary())
 运行上述代码，我们可以得到以下的结果：
 
 ```
-                 Generalized Linear Model Regression Results                  
+                 Generalized Linear Model Regression Results
 ==============================================================================
 Dep. Variable:                 Income   No. Observations:                32561
 Model:                            GLM   Df Residuals:                    32558
@@ -159,8 +159,8 @@ Link Function:                  logit   Scale:                          1.0000
 Method:                          IRLS   Log-Likelihood:                -14867.
 Date:                Mon, 23 Jun 2024   Deviance:                       29734.
 Time:                        22:02:54   Pearson chi2:                 3.27e+04
-No. Iterations:                     5                                         
-Covariance Type:            nonrobust                                         
+No. Iterations:                     5
+Covariance Type:            nonrobust
 ==============================================================================
                  coef    std err          z      P>|z|      [0.025      0.975]
 ------------------------------------------------------------------------------

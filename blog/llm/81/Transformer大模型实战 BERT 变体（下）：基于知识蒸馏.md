@@ -1,7 +1,7 @@
 
 # Transformer大模型实战 BERT 变体（下）：基于知识蒸馏
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 关键词：BERT, 变体, 知识蒸馏, 微调, 模型压缩, 模型压缩算法
 

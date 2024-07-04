@@ -1,4 +1,4 @@
-                 
+
 # HBase原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -162,25 +162,25 @@ public class HBaseExample {
         Configuration config = HBaseConfiguration.create();
         Connection connection = ConnectionFactory.createConnection(config);
         TableName tableName = TableName.valueOf("example");
-        
+
         // Create table
         try (Admin admin = connection.getAdmin()) {
             if (!admin.tableExists(tableName)) {
                 admin.createTable(tableName, new String[]{"CF"});
             }
         }
-        
+
         // Insert data
         Put put = new Put(Bytes.toBytes("001"));
         put.addColumn(Bytes.toBytes("CF"), Bytes.toBytes("name"), Bytes.toBytes("John Doe"));
         connection.getTable(tableName).put(put);
-        
+
         // Scan and print all rows in the table
         ResultScanner scanner = connection.getTable(tableName).getScanner(new Scan());
         for (Result result : scanner) {
             System.out.println(result.getRow() + ": " + Bytes.toString(result.getValue(Bytes.toBytes("CF"), Bytes.toBytes("name"))));
         }
-        
+
         // Close resources
         scanner.close();
         connection.close();

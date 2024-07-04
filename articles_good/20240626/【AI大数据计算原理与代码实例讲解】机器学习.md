@@ -184,8 +184,7 @@ $$
 为了最小化MSE，可以使用梯度下降法求解模型参数：
 
 $$
-w = w - \alpha \
-abla_w \text{MSE}(w)
+w = w - \alpha \nabla_w \text{MSE}(w)
 $$
 
 其中 $\alpha$ 为学习率。
@@ -203,8 +202,7 @@ $$
 为了最小化CE，可以使用梯度下降法求解模型参数：
 
 $$
-w = w - \alpha \
-abla_w \text{CE}(w)
+w = w - \alpha \nabla_w \text{CE}(w)
 $$
 
 #### 4.2.3 决策树

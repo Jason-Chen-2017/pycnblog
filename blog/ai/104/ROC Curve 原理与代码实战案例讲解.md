@@ -328,4 +328,4 @@ ROC曲线主要用于评估二元分类模型的性能，不适用于回归模�
 
 ROC曲线上的每个点都代表着模型在某个特定阈值下的性能表现。例如，ROC曲线上的点(0.5, 0.8)表示当阈值为0.5时，模型的TPR为0.8，FPR为0.5。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

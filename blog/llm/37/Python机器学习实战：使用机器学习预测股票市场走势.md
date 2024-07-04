@@ -77,11 +77,11 @@
 
 $$
 \begin{align*}
-i_t &= \sigma(W_i [x_t, h_{t-1}] + b_i) \\
-f_t &= \sigma(W_f [x_t, h_{t-1}] + b_f) \\
-o_t &= \sigma(W_o [x_t, h_{t-1}] + b_o) \\
-\tilde{c}_t &= \tanh(W_c [x_t, h_{t-1}] + b_c) \\
-c_t &= f_t \circ c_{t-1} + i_t \circ \tilde{c}_t \\
+i_t &= \sigma(W_i [x_t, h_{t-1}] + b_i) \
+f_t &= \sigma(W_f [x_t, h_{t-1}] + b_f) \
+o_t &= \sigma(W_o [x_t, h_{t-1}] + b_o) \
+\tilde{c}_t &= \tanh(W_c [x_t, h_{t-1}] + b_c) \
+c_t &= f_t \circ c_{t-1} + i_t \circ \tilde{c}_t \
 h_t &= o_t \circ \tanh(c_t)
 \end{align*}
 $$

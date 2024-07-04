@@ -1,4 +1,4 @@
-                 
+
 # 强化学习Reinforcement Learning原理与核心算法概述
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -48,7 +48,7 @@
 #### 价值基算法
 
 - **Q-Learning**: Q-learning是一种经典的基于价值的强化学习算法，它通过迭代更新Q表（存储每个状态-动作对的期望累计奖励）来学习最优策略。
-  
+
 #### 策略梯度算法
 
 - **REINFORCE**: REINFORCE算法通过对策略梯度进行采样估计，更新策略参数以增加高回报事件发生的概率。
@@ -159,19 +159,19 @@ q_table = np.zeros((state_size, action_size))
 for episode in range(num_episodes):
     state = env.reset()
     done = False
-    
+
     while not done:
         # Randomly choose an action or take the one with highest expected reward
         if np.random.rand() < exploration_rate:
             action = env.action_space.sample()
         else:
             action = np.argmax(q_table[state])
-        
+
         next_state, reward, done, _ = env.step(action)
         q_table[state][action] += learning_rate * (reward + discount_factor * np.max(q_table[next_state]) - q_table[state][action])
-        
+
         state = next_state
-        
+
         # Decay exploration rate over time
         exploration_rate *= exploration_decay
 ```

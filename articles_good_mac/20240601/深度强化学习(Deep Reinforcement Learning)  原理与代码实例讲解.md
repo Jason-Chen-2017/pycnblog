@@ -70,8 +70,7 @@ $$
 PPO 算法的数学模型如下：
 
 $$
-\\theta_{new} = \\theta_{old} + \\alpha \
-abla_{\\theta} L(\\theta)
+\\theta_{new} = \\theta_{old} + \\alpha \nabla_{\\theta} L(\\theta)
 $$
 
 其中，$\\alpha$ 是学习率，$L(\\theta)$ 是策略æ¢¯度损失函数。

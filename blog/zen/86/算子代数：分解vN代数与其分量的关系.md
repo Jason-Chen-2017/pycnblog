@@ -89,11 +89,11 @@ $$A = c_1 u_1 + c_2 u_2 + \dots + c_n u_n$$
 
 假设我们有一个包含三个变量的vN代数结构$A$，其基向量为：
 
-$$V = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$
+$$V = \begin{bmatrix} 1 & 0 & 0 \ 0 & 1 & 0 \ 0 & 0 & 1 \end{bmatrix}$$
 
 我们可以选择以下基向量来分解$A$：
 
-$$U = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2 \end{bmatrix}$$
+$$U = \begin{bmatrix} 1 & 0 & 0 \ 0 & 1 & 0 \ 0 & 0 & 2 \end{bmatrix}$$
 
 则分解后的分量如下：
 
@@ -105,7 +105,7 @@ $$A = 1 \cdot u_1 + 1 \cdot u_2 + 2 \cdot u_3$$
 
 **解答**：在某些情况下，分解可能不是唯一的。例如，在上面的例子中，我们还可以选择以下基向量来分解$A$：
 
-$$U' = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 3 \end{bmatrix}$$
+$$U' = \begin{bmatrix} 1 & 0 & 0 \ 0 & 1 & 0 \ 0 & 0 & 3 \end{bmatrix}$$
 
 **问题2**：如何选择基向量？
 
@@ -132,13 +132,13 @@ def decompose_vN_algebra(V):
     """
     # 计算V的奇异值分解
     U, S, Vt = np.linalg.svd(V)
-    
+
     # 选择最大的n个奇异值对应的奇异向量作为基向量
     U = U[:, :len(S)]
-    
+
     # 计算分解后的分量
     components = np.dot(U, np.diag(S))
-    
+
     return components
 
 # 创建vN代数V

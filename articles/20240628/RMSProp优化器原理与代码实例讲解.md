@@ -89,12 +89,10 @@ $$
 RMSProp优化器的更新公式如下：
 
 $$
-\theta_{t+1} = \theta_{t} - \alpha_{t+1} \cdot \frac{\
-abla_{\theta}L(\theta_{t})}{\sqrt{v_{t+1} + \epsilon}} 
+\theta_{t+1} = \theta_{t} - \alpha_{t+1} \cdot \frac{\nabla_{\theta}L(\theta_{t})}{\sqrt{v_{t+1} + \epsilon}} 
 $$
 
-其中，$\theta$ 为模型参数，$\
-abla_{\theta}L(\theta_{t})$ 为损失函数对模型参数的梯度，$v$ 为梯度历史信息的平方，$\epsilon$ 为正则化项，防止除以0。
+其中，$\theta$ 为模型参数，$\nabla_{\theta}L(\theta_{t})$ 为损失函数对模型参数的梯度，$v$ 为梯度历史信息的平方，$\epsilon$ 为正则化项，防止除以0。
 
 ### 3.2 算法步骤详解
 
@@ -102,11 +100,9 @@ abla_{\theta}L(\theta_{t})$ 为损失函数对模型参数的梯度，$v$ 为梯
 
 1. 初始化模型参数 $\theta_{0}$，梯度历史信息 $v_{0}$，学习率 $\alpha_{0}$ 和迭代次数 $t=0$。
 
-2. 计算当前迭代次数 $t$ 的梯度 $\
-abla_{\theta}L(\theta_{t})$。
+2. 计算当前迭代次数 $t$ 的梯度 $\nabla_{\theta}L(\theta_{t})$。
 
-3. 更新梯度历史信息 $v_{t+1} = \beta v_{t} + (1-\beta) \
-abla_{\theta}L(\theta_{t})^2$。
+3. 更新梯度历史信息 $v_{t+1} = \beta v_{t} + (1-\beta) \nabla_{\theta}L(\theta_{t})^2$。
 
 4. 计算当前迭代次数 $t$ 的学习率 $\alpha_{t+1}$。
 
@@ -165,13 +161,11 @@ $$
 $$
 
 $$
-v_{t+1} = \beta v_{t} + (1-\beta) \
-abla_{\theta}L(\theta_{t})^2 
+v_{t+1} = \beta v_{t} + (1-\beta) \nabla_{\theta}L(\theta_{t})^2 
 $$
 
 $$
-\theta_{t+1} = \theta_{t} - \alpha_{t+1} \cdot \frac{\
-abla_{\theta}L(\theta_{t})}{\sqrt{v_{t+1} + \epsilon}} 
+\theta_{t+1} = \theta_{t} - \alpha_{t+1} \cdot \frac{\nabla_{\theta}L(\theta_{t})}{\sqrt{v_{t+1} + \epsilon}} 
 $$
 
 ### 4.3 案例分析与讲解

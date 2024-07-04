@@ -79,9 +79,9 @@ $$ W = [w_1, w_2, ..., w_n] $$
 
 模型通过注意力机制计算加权向量 $V$：
 
-$$ V = \\sum_{i=1}^{n} \\alpha_i w_i $$
+$$ V = \sum_{i=1}^{n} \alpha_i w_i $$
 
-其中，$\\alpha_i$ 是注意力权重，由模型计算得出。
+其中，$\alpha_i$ 是注意力权重，由模型计算得出。
 
 ### 4.3 案例分析与讲解
 
@@ -123,7 +123,7 @@ import openai
 
 def generate_text(prompt):
     response = openai.Completion.create(
-        engine=\"text-davinci-003\",
+        engine="text-davinci-003",
         prompt=prompt,
         max_tokens=50,
         n=1,
@@ -132,7 +132,7 @@ def generate_text(prompt):
     )
     return response.choices[0].text.strip()
 
-prompt = \"秋天的落叶，金色的阳光，丰收的田野，温暖的围巾\"
+prompt = "秋天的落叶，金色的阳光，丰收的田野，温暖的围巾"
 generated_text = generate_text(prompt)
 print(generated_text)
 ```

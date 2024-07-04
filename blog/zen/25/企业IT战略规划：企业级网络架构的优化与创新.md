@@ -1,4 +1,4 @@
-                 
+
 # 企业IT战略规划：企业级网络架构的优化与创新
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -86,16 +86,16 @@ NFV系统使用资源调度算法，考虑性能、成本和延迟等因素，�
 #### 4.1.1 资源利用率优化模型
 通过线性规划求解最小化资源消耗和最大化服务效能的问题。
 
-\[
+$$
 \min_{x} \sum_{i=1}^{n} c_i x_i
-\]
-\[
+$$
+$$
 s.t.
 \begin{cases}
-Ax \leq b \\
+Ax \leq b \
 x \geq 0
 \end{cases}
-\]
+$$
 
 其中，$c_i$表示第$i$个资源的成本，$x_i$表示分配给该资源的比例，$A$和$b$定义了资源约束条件。
 
@@ -103,9 +103,9 @@ x \geq 0
 
 以资源利用率优化为例，通过建立上述线性规划模型，利用拉格朗日乘数法求解最优解。首先引入松弛变量和拉格朗日乘子，构造拉格朗日函数：
 
-\[
+$$
 L(x, \lambda) = \sum_{i=1}^{n} c_i x_i + \sum_{j=1}^{m} \lambda_j (b_j - Ax_j)
-\]
+$$
 
 求偏导数并令其等于零得到极值条件，然后通过求解来找到最佳分配方案$x^*$。
 
@@ -185,7 +185,7 @@ print("Optimal resource allocation:", optimal_allocation)
 - **开源课程**：
   - Coursera's "Computer Networking" by Stanford University
   - edX's "Introduction to Network Engineering" by Georgia Tech
-  
+
 - **专业书籍**：
   - "Networks, Crowds, and Markets: Reasoning About a Highly Connected World" by David Easley and Jon Kleinberg
   - "Data-Driven Network Design" by Jinjun Chen

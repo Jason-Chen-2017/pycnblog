@@ -179,11 +179,11 @@ def generate_code(description):
     """
     # 构建自然语言理解管道
     nlu_pipeline = pipeline("text2text-generation", model="your_model_path", tokenizer="your_tokenizer_path")
-    
+
     # 解析描述并生成代码
     code_description = description.replace(" ", "").lower()
     response = nlu_pipeline(code_description, max_length=50, do_sample=True)
-    
+
     return response[0]["generated_text"]
 
 description = "create a function that takes two arguments and returns their sum"

@@ -1,4 +1,4 @@
-                 
+
 # PredictiveMaintenance的基本原理与概念
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -127,7 +127,7 @@ $$L(w, b; X, y) = \sum_{i=1}^{n}(y_i - (\mathbf{w}^T\mathbf{x}_i + b))^2$$
 对$w$和$b$求偏导数，并令其等于零得到最小二乘解：
 
 $$\begin{align*}
-\frac{\partial L}{\partial w} &= -2\sum_{i=1}^{n}(y_i - (\mathbf{w}^T\mathbf{x}_i + b))x_i \\
+\frac{\partial L}{\partial w} &= -2\sum_{i=1}^{n}(y_i - (\mathbf{w}^T\mathbf{x}_i + b))x_i \
 \frac{\partial L}{\partial b} &= -2\sum_{i=1}^{n}(y_i - (\mathbf{w}^T\mathbf{x}_i + b))
 \end{align*}$$
 
@@ -221,7 +221,7 @@ plt.show()
   - “Predictive Maintenance and Reliability: A Practical Guide” by Chris Watters.
 - **在线课程**：
   - Coursera上的“Machine Learning”课程由Andrew Ng教授主讲，涵盖大量机器学习原理和实战案例。
-  
+
 ### 7.2 开发工具推荐
 - **数据处理与分析**：Pandas、NumPy
 - **机器学习框架**：Scikit-learn、TensorFlow、Keras

@@ -23,7 +23,7 @@
 要理解ElasticSearch的工作原理,首先需要了解其几个核心概念:
 
 - 文档(Document):可以被索引的基本数据单元。通常是一个JSON对象,包含多个字段。
-- 索引(Index):文档的容器,类似于关系数据库中的database。一个索引包含多个文档,文档的字段可以被索引以加快搜索。  
+- 索引(Index):文档的容器,类似于关系数据库中的database。一个索引包含多个文档,文档的字段可以被索引以加快搜索。
 - 节点(Node):运行ElasticSearch实例的单个服务器。可以在同一台机器上运行多个节点。
 - 集群(Cluster):一组具有相同cluster.name的节点集合,协同工作,共享数据,提供故障转移和扩展性。
 - 分片(Shard):索引可以被拆分为多个分片,分布在集群的各个节点上,从而实现数据的分布式存储和并行处理。
@@ -35,21 +35,21 @@ graph LR
   Cluster-->Node1
   Cluster-->Node2
   Cluster-->Node3
-  
+
   Node1-->Index1
   Node1-->Index2
   Node2-->Index1
   Node2-->Index3
   Node3-->Index2
   Node3-->Index3
-  
+
   Index1-->Shard1
   Index1-->Shard2
   Index2-->Shard3
   Index2-->Shard4
   Index3-->Shard5
   Index3-->Shard6
-  
+
   Shard1-->Document1
   Shard1-->Document2
   Shard2-->Document3
@@ -73,7 +73,7 @@ ElasticSearch的核心是建立在Lucene库之上的倒排索引。倒排索引�
 1. 文档分析:将输入的文本文档切分为一系列单词(term),经过标准化处理(如大小写转换、同义词处理等)后得到词条(token)。
 2. 词条索引:对每个词条,记录包含该词条的文档ID,词频TF(Term Frequency),位置等信息,建立倒排列表(Posting List)。
 3. 倒排文件:将倒排列表写入磁盘,形成倒排文件(Inverted File),包括词典(Term Dictionary)和倒排列表两部分。
-4. 查询解析:将用户输入的查询语句进行词法和语法分析,转换为Lucene的内部查询结构。  
+4. 查询解析:将用户输入的查询语句进行词法和语法分析,转换为Lucene的内部查询结构。
 5. 倒排索引扫描:对查询语句中每个词条,在倒排索引中查找对应的倒排列表。
 6. 文档评分:根据词条在文档中的频率、位置等信息,对每个文档进行相关性评分,常用的评分模型有TF-IDF、BM25等。
 7. 结果排序:对候选文档按照评分进行排序,返回Top-K个最相关的文档。
@@ -82,10 +82,10 @@ ElasticSearch的核心是建立在Lucene库之上的倒排索引。倒排索引�
 
 优点:
 - 索引结构紧凑,查询速度快。
-- 支持复杂的查询语法,如布尔查询、短语查询、模糊查询等。  
+- 支持复杂的查询语法,如布尔查询、短语查询、模糊查询等。
 - 可以对查询结果进行高效的排序和过滤。
 
-缺点:  
+缺点:
 - 索引文件庞大,占用存储空间。
 - 实时索引更新开销大。
 - 不适合处理海量的连续数值数据。
@@ -138,7 +138,7 @@ $$
 假设我们有以下3个文档和1个查询:
 
 - d1: "The quick brown fox jumps over the lazy dog"
-- d2: "quick fox lazy jumps"  
+- d2: "quick fox lazy jumps"
 - d3: "brown fox lazy quick dog"
 - q: "quick fox"
 
@@ -153,12 +153,12 @@ $$
 
 对于d2:
 - "quick"的TF为1,文档长度为4,IDF为0.477
-- "fox"的TF为1,IDF为0.176  
+- "fox"的TF为1,IDF为0.176
 $$
 score(q,d_2) = 0.477*\frac{2.5*1}{1.5*0.458+1} + 0.176*\frac{2.5*1}{1.5*0.458+1} = 1.030
 $$
 
-对于d3:  
+对于d3:
 - "quick"的TF为1,文档长度为5,IDF为0.477
 - "fox"的TF为1,IDF为0.176
 $$
@@ -168,13 +168,13 @@ $$
 因此,最终的相关性排序为:d2 > d3 > d1。可以看出,BM25对查询词出现频率高、文档长度适中的文档给予了较高的分值。
 
 ### 4.4 常见问题解答
-1. 为什么要对TF进行饱和归一化?  
+1. 为什么要对TF进行饱和归一化?
 答:当一个词条在文档中出现频率很高时,其对相关性的贡献会趋于一个上限,继续增大TF并不会带来分值的显著提升。饱和归一化可以模拟这一特性,避免分值过大。
 
-2. BM25的参数k1和b如何调节?  
+2. BM25的参数k1和b如何调节?
 答:k1控制TF的饱和程度,k1越大,饱和越慢;b控制文档长度归一化的强度,b越大,惩罚越强。一般取值范围是:k1∈[1.2,2.0],b∈[0.5,0.8]。可以通过交叉验证等方法在特定数据集上进行调参。
 
-3. ElasticSearch中除了BM25,还有哪些相关性算法?  
+3. ElasticSearch中除了BM25,还有哪些相关性算法?
 答:ElasticSearch还支持其他一些相关性算法,如Dirichlet LM、DFR等。可以通过similarity参数进行配置。但BM25是最常用的默认算法。
 
 ## 5. 项目实践：代码实例和详细解释说明
@@ -208,7 +208,7 @@ es = Elasticsearch()
 index_name = "my_index"
 if not es.indices.exists(index=index_name):
     es.indices.create(index=index_name)
-    
+
 # 插入文档
 doc1 = {"title":"ElasticSearch原理","author":"John","content":"ElasticSearch是一个基于Lucene的搜索服务器。它提供了一个分布式多用户能力的全文搜索引擎。"}
 doc2 = {"title":"Python入门","author":"Mary","content":"Python是一种解释型、面向对象、动态数据类型的高级程序设计语言。"}

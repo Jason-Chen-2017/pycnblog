@@ -1,7 +1,7 @@
 
 # AI人工智能核心算法原理与代码实例讲解：语言生成
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 关键词：
@@ -133,10 +133,10 @@ LSTM单元的输入为 $[h_{t-1}, x_t]$，输出为 $[h_t, y_t]$。其中，$h_t
 LSTM单元的数学模型如下：
 
 $$
-i_t = \sigma(W_i h_{t-1} x_t + b_i) \\
-f_t = \sigma(W_f h_{t-1} x_t + b_f) \\
-o_t = \sigma(W_o h_{t-1} x_t + b_o) \\
-h_t = f_t \circ h_{t-1} + i_t \circ \tanh(W_c h_{t-1} x_t + b_c) \\
+i_t = \sigma(W_i h_{t-1} x_t + b_i) \
+f_t = \sigma(W_f h_{t-1} x_t + b_f) \
+o_t = \sigma(W_o h_{t-1} x_t + b_o) \
+h_t = f_t \circ h_{t-1} + i_t \circ \tanh(W_c h_{t-1} x_t + b_c) \
 y_t = o_t \circ \tanh(h_t)
 $$
 

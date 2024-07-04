@@ -72,23 +72,23 @@
 假设我们有一个回归任务，目标是预测房价（$y$）基于房屋面积（$x$）。损失函数可以是均方误差（MSE），定义如下：
 
 $$
-L(\\hat{y}, y) = \\frac{1}{n} \\sum_{i=1}^{n} (y_i - \\hat{y}_i)^2
+L(\hat{y}, y) = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
 $$
 
-其中，$n$是样本数量，$\\hat{y}_i$是第$i$个样本的预测值，$y_i$是实际值。
+其中，$n$是样本数量，$\hat{y}_i$是第$i$个样本的预测值，$y_i$是实际值。
 
 ### 4.2 公式推导过程
 
-以交叉熵损失为例，假设我们有一个二分类问题，模型预测输出是概率$p$（$p = \\frac{1}{1 + e^{-z}}$，其中$z$是模型的输出），而真实的标签是$b$（$b=0$或$1$）：
+以交叉熵损失为例，假设我们有一个二分类问题，模型预测输出是概率$p$（$p = \frac{1}{1 + e^{-z}}$，其中$z$是模型的输出），而真实的标签是$b$（$b=0$或$1$）：
 
 $$
-L(p, b) = -b \\log(p) - (1-b) \\log(1-p)
+L(p, b) = -b \log(p) - (1-b) \log(1-p)
 $$
 
 对于多分类问题，交叉熵损失可以扩展为：
 
 $$
-L(p, y) = -\\sum_{c} y_c \\log(p_c)
+L(p, y) = -\sum_{c} y_c \log(p_c)
 $$
 
 其中，$y_c$是类别$c$的真实标签（$y_c = 1$如果样本属于类别$c$，否则$y_c = 0$），而$p_c$是模型预测类别$c$的概率。
@@ -98,17 +98,17 @@ $$
 假设我们使用交叉熵损失函数训练一个简单的二分类问题，模型为线性回归模型：
 
 $$
-\\hat{y} = w \\cdot x + b
+\hat{y} = w \cdot x + b
 $$
 
 我们可以通过梯度下降法来最小化交叉熵损失函数。计算梯度时，我们得到：
 
 $$
-\\frac{\\partial L}{\\partial w} = \\sum_{i=1}^{n} (x_i \\cdot (\\hat{y}_i - y_i))
+\frac{\partial L}{\partial w} = \sum_{i=1}^{n} (x_i \cdot (\hat{y}_i - y_i))
 $$
 
 $$
-\\frac{\\partial L}{\\partial b} = \\sum_{i=1}^{n} (\\hat{y}_i - y_i)
+\frac{\partial L}{\partial b} = \sum_{i=1}^{n} (\hat{y}_i - y_i)
 $$
 
 通过迭代更新权重$w$和偏置$b$，我们可以最小化损失函数，提高模型性能。
@@ -149,7 +149,7 @@ y_pred = model.predict(X_test)
 
 # 计算均方误差
 mse = mean_squared_error(y_test, y_pred)
-print(f\"MSE: {mse}\")
+print(f"MSE: {mse}")
 ```
 
 ### 5.2 源代码详细实现
@@ -188,8 +188,8 @@ print(f\"MSE: {mse}\")
 
 ### 7.3 相关论文推荐
 
-- **经典论文**：\"Gradient-Based Learning Applied to Document Recognition\"（Yann LeCun等人）
-- **最新研究**：\"Deep Learning for Computer Vision\"（Andrew Ng）
+- **经典论文**："Gradient-Based Learning Applied to Document Recognition"（Yann LeCun等人）
+- **最新研究**："Deep Learning for Computer Vision"（Andrew Ng）
 
 ### 7.4 其他资源推荐
 

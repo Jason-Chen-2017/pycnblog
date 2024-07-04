@@ -79,8 +79,8 @@ class ConfigurableField:
 
 ```python
 config_fields = {
-    \"field1\": ConfigurableField(\"field1\", str, \"A description for field1\", \"default_value\"),
-    \"field2\": ConfigurableField(\"field2\", int, \"A description for field2\", 42),
+    "field1": ConfigurableField("field1", str, "A description for field1", "default_value"),
+    "field2": ConfigurableField("field2", int, "A description for field2", 42),
     # ...
 }
 ```
@@ -89,10 +89,10 @@ config_fields = {
 
 ```python
 def build_prompt_template(config_fields):
-    prompt_template = \"\"
+    prompt_template = ""
     for field in config_fields.values():
-        prompt_template += f\"[{field.name}]: {field.default}\
-\"
+        prompt_template += f"[{field.name}]: {field.default}\
+"
     return prompt_template
 ```
 
@@ -242,7 +242,7 @@ model = BertForSequenceClassification.from_pretrained('bert-base-uncased')
 lang_chain = LangChain(tokenizer=tokenizer, model=model)
 
 # 创建ConfigurableField实例
-config_field = TextClassificationConfigurableField(label=\"positive\", text=\"这是一个非常有趣的文本。\")
+config_field = TextClassificationConfigurableField(label="positive", text="这是一个非常有趣的文本。")
 
 # 使用ConfigurableField进行文本分类
 output = lang_chain.predict(config_field)

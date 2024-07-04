@@ -100,8 +100,8 @@ Yarn的资源管理可以用以下数学模型表示：
 
 $$
 \begin{align*}
-\text{Maximize} \quad & \text{Total Resource Utilization} \\
-\text{Subject to} \quad & \text{Resource Availability} \\
+\text{Maximize} \quad & \text{Total Resource Utilization} \
+\text{Subject to} \quad & \text{Resource Availability} \
 & \text{Resource Allocation Constraints}
 \end{align*}
 $$
@@ -175,7 +175,7 @@ public class YarnApp {
         // 设置应用程序的jar包路径、主类、内存、CPU等参数
         application.setJarByClass(YarnApp.class);
         application.setNumContainers(1);
-        application.setResourceRequest(YarnClient.ApplicationAttemptId.newInstance(appId, 0), 
+        application.setResourceRequest(YarnClient.ApplicationAttemptId.newInstance(appId, 0),
             new Capacity("1024", "1G"), Capacity.newInstance("1024", "1G"));
 
         ApplicationMasterProxy amProxy = application.submitApplication();

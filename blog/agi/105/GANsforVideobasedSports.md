@@ -178,9 +178,9 @@ $$
 
 $$
 \begin{align*}
-\frac{\partial L_G}{\partial W_G} &= \frac{\partial}{\partial W_G}\mathbb{E}_{z \sim p_z(z)}[D(G(z))] - \frac{\partial}{\partial W_G}\mathbb{E}_{X \sim p_X(X)}[D(X)] \\
-&= \mathbb{E}_{z \sim p_z(z)}[\frac{\partial}{\partial W_G}D(G(z))] - \mathbb{E}_{X \sim p_X(X)}[\frac{\partial}{\partial W_G}D(X)] \\
-&= \mathbb{E}_{z \sim p_z(z)}[D'(G(z)) \cdot \frac{\partial}{\partial W_G}G(z)] - \mathbb{E}_{X \sim p_X(X)}[D'(X) \cdot \frac{\partial}{\partial W_G}X] \\
+\frac{\partial L_G}{\partial W_G} &= \frac{\partial}{\partial W_G}\mathbb{E}_{z \sim p_z(z)}[D(G(z))] - \frac{\partial}{\partial W_G}\mathbb{E}_{X \sim p_X(X)}[D(X)] \
+&= \mathbb{E}_{z \sim p_z(z)}[\frac{\partial}{\partial W_G}D(G(z))] - \mathbb{E}_{X \sim p_X(X)}[\frac{\partial}{\partial W_G}D(X)] \
+&= \mathbb{E}_{z \sim p_z(z)}[D'(G(z)) \cdot \frac{\partial}{\partial W_G}G(z)] - \mathbb{E}_{X \sim p_X(X)}[D'(X) \cdot \frac{\partial}{\partial W_G}X] \
 &= \mathbb{E}_{z \sim p_z(z)}[D'(G(z))] \cdot \frac{\partial}{\partial W_G}G(z) - \mathbb{E}_{X \sim p_X(X)}[D'(X)]
 \end{align*}
 $$
@@ -197,8 +197,8 @@ $$
 
 $$
 \begin{align*}
-\frac{\partial L_D}{\partial W_D} &= \frac{\partial}{\partial W_D}\mathbb{E}_{X \sim p_X(X)}[D(X)] - \frac{\partial}{\partial W_D}\mathbb{E}_{z \sim p_z(z)}[D(G(z))] \\
-&= \mathbb{E}_{X \sim p_X(X)}[\frac{\partial}{\partial W_D}D(X)] - \mathbb{E}_{z \sim p_z(z)}[\frac{\partial}{\partial W_D}D(G(z))] \\
+\frac{\partial L_D}{\partial W_D} &= \frac{\partial}{\partial W_D}\mathbb{E}_{X \sim p_X(X)}[D(X)] - \frac{\partial}{\partial W_D}\mathbb{E}_{z \sim p_z(z)}[D(G(z))] \
+&= \mathbb{E}_{X \sim p_X(X)}[\frac{\partial}{\partial W_D}D(X)] - \mathbb{E}_{z \sim p_z(z)}[\frac{\partial}{\partial W_D}D(G(z))] \
 &= \mathbb{E}_{X \sim p_X(X)}[D'(X)] \cdot \frac{\partial}{\partial W_D}X - \mathbb{E}_{z \sim p_z(z)}[D'(G(z))] \cdot \frac{\partial}{\partial W_D}G(z)
 \end{align*}
 $$

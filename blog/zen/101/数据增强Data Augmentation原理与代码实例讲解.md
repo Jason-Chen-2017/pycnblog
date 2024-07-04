@@ -1,7 +1,7 @@
 
 # 数据增强Data Augmentation原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -119,10 +119,10 @@ $$
 其中 $R(\theta)$ 为旋转矩阵：
 
 $$
-R(\theta) = 
+R(\theta) =
 \begin{bmatrix}
 \cos\theta & -\sin\theta \\
-\sin\theta & \cos\theta 
+\sin\theta & \cos\theta
 \end{bmatrix}
 $$
 
@@ -135,7 +135,7 @@ $$
 $$
 \begin{cases}
 x' = x\cos\theta + y\sin\theta \\
-y' = -x\sin\theta + y\cos\theta 
+y' = -x\sin\theta + y\cos\theta
 \end{cases}
 $$
 

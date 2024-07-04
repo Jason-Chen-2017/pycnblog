@@ -6,7 +6,7 @@ Samza是由Apache软件基金会开发的一个分布式流处理框架,用于�
 
 ### 1.2 Samza的特点
 - 简单易用:Samza提供了简单的API和编程模型,使得开发者可以快速上手构建流处理应用。
-- 可扩展性:Samza基于Kafka的分区机制,可以轻松实现水平扩展,以应对不断增长的数据量。  
+- 可扩展性:Samza基于Kafka的分区机制,可以轻松实现水平扩展,以应对不断增长的数据量。
 - 容错性:Samza利用Kafka的持久化特性,保证了数据的可靠性。即使处理过程中出现故障,也能从checkpoint恢复,避免数据丢失。
 - 灵活部署:Samza可以运行在YARN等资源管理平台上,支持灵活的部署方式。
 
@@ -28,10 +28,10 @@ Samza广泛应用于需要实时处理海量数据的场景,例如:
 graph LR
 A[Input Streams] --> B[SystemConsumer]
 B --> C[StreamTask]
-C --> D[SystemProducer] 
+C --> D[SystemProducer]
 D --> E[Output Streams]
 ```
-1. SystemConsumer从输入流(如Kafka)读取消息。 
+1. SystemConsumer从输入流(如Kafka)读取消息。
 2. SystemConsumer将消息传递给StreamTask处理。
 3. StreamTask执行用户定义的处理逻辑,转换消息。
 4. SystemProducer将处理后的消息写入输出流。
@@ -81,26 +81,26 @@ $\forall m_i, \, t(m_i) \leq w$
 public class WordCountTask implements StreamTask, InitableTask, WindowableTask {
 
   private static final SystemStream OUTPUT_STREAM = new SystemStream("kafka", "word-count-output");
-  
+
   private int maxMsgInFlight = 1; // 最大处理中消息数
-  
+
   private IncomingMessageEnvelope envelope; // 输入消息
-  
+
   @Override
   public void init(Config config, TaskContext context) {
     this.maxMsgInFlight = config.getInt("task.max.concurrency", 1);
   }
-  
+
   @Override
   public void process(IncomingMessageEnvelope envelope, MessageCollector collector, TaskCoordinator coordinator) {
     this.envelope = envelope; // 缓存消息
-    
+
     String[] tokens = ((String) envelope.getMessage()).split(" ");
     for (String word : tokens) {
       collector.send(new OutgoingMessageEnvelope(OUTPUT_STREAM, word, 1)); // 输出单词计数
     }
   }
-  
+
   @Override
   public void window(MessageCollector collector, TaskCoordinator coordinator) {
     // 定期提交偏移量,标记消息已处理

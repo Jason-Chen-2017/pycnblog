@@ -97,11 +97,9 @@ LangChain的核心是集成大模型，而大模型通常基于深度学习技�
 
 - **神经网络权重更新公式**：
 
-  $$\Delta w = \eta \cdot \
-abla J(w)$$
+  $$\Delta w = \eta \cdot \nabla J(w)$$
 
-  其中，$\Delta w$是权重更新量，$\eta$是学习率，$\
-abla J(w)$是损失函数对权重的梯度。
+  其中，$\Delta w$是权重更新量，$\eta$是学习率，$\nabla J(w)$是损失函数对权重的梯度。
 
 - **卷积公式**：
 

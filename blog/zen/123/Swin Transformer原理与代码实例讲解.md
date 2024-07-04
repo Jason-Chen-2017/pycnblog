@@ -197,4 +197,3 @@ class SwinTransformerBlock(nn.Module):
         super().__init__()
         self.dim = dim
         self.input_resolution = input_resolution
-        

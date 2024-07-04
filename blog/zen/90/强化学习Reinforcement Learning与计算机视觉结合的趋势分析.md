@@ -157,16 +157,13 @@ $$J(\pi) = \mathbb{E}_{s_0 \sim \pi} \left[ \sum_{t=0}^\infty \gamma^t R(s_t, a_
 
 策略梯度是一种优化策略参数的方法，其公式如下：
 
-$$\
-abla_{\theta} J(\pi(\theta)) = \mathbb{E}_{s \sim \pi} \left[ \
-abla_a J(\pi(\theta)) \right]$$
+$$\nabla_{\theta} J(\pi(\theta)) = \mathbb{E}_{s \sim \pi} \left[ \nabla_a J(\pi(\theta)) \right]$$
 
 其中，
 
 - $\theta$表示策略参数。
 - $J(\pi(\theta))$表示策略$\pi(\theta)$的期望回报。
-- $\
-abla_a J(\pi(\theta))$表示在动作$a$处对期望回报的梯度。
+- $\nabla_a J(\pi(\theta))$表示在动作$a$处对期望回报的梯度。
 
 #### 4.2.2 价值函数
 
@@ -246,7 +243,7 @@ class DQN(nn.Module):
         self.fc1 = nn.Linear(state_dim, hidden_dim)
         self.fc2 = nn.Linear(hidden_dim, hidden_dim)
         self.fc3 = nn.Linear(hidden_dim, action_dim)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = torch.relu(self.fc2(x))
@@ -267,25 +264,25 @@ def main():
     hidden_dim = 128
     model = DQN(state_dim, action_dim, hidden_dim)
     optimizer = optim.Adam(model.parameters(), lr=0.001)
-    
+
     # 训练模型
     for epoch in range(1000):
         # 获取状态和奖励
         state = get_state(cv2.imread('image.jpg'))
         action = torch.randint(0, action_dim, (1,))
         reward = ...  # 根据动作计算奖励
-        
+
         # 前向传播
         q_values = model(state)
-        
+
         # 计算损失
         loss = torch.nn.MSELoss()(q_values[:, action], reward)
-        
+
         # 反向传播和优化
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-    
+
     # 保存模型
     torch.save(model.state_dict(), 'dqn.pth')
 

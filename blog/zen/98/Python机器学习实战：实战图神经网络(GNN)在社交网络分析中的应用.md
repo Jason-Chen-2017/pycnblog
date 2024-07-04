@@ -142,15 +142,15 @@ for epoch in range(10): # 这里设置10轮训练
     for _ in range(2): # 这里设置两层聚合
         h = gat(G, h).flatten(start_dim=1)
     out = h
-    
+
     # 计算损失
     loss = F.binary_cross_entropy_with_logits(out, labels.float())
-    
+
     # 后向传播
     loss.backward()
     optimizer.step()
     optimizer.zero_grad()
-    
+
     # 打印损失
     print(f'Epoch {epoch+1}, Loss: {loss.item()}')
 ```
@@ -223,15 +223,15 @@ for epoch in range(10):
     for _ in range(2): # 这里设置两层聚合
         h = gat(G, h).flatten(start_dim=1)
     out = h
-    
+
     # 计算损失
     loss = F.binary_cross_entropy_with_logits(out, labels.float())
-    
+
     # 后向传播
     loss.backward()
     optimizer.step()
     optimizer.zero_grad()
-    
+
     # 打印损失
     print(f'Epoch {epoch+1}, Loss: {loss.item()}')
 ```

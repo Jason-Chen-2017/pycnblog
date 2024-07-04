@@ -100,7 +100,7 @@ end
 
 ### 3.2 算法步骤详解
 
-1. **文本预处理:** 
+1. **文本预处理:**
    - 使用分词工具将句子分割成词语列表。
    - 对每个词语进行词干提取，将其转换为词根形式。
    - 去除停用词，例如 "的"、"是"、"在" 等。
@@ -167,8 +167,8 @@ $$
 1. **线性变换:** 将每个词的词向量 $x_i$ 分别线性变换成三个向量：查询向量 $q_i$、键向量 $k_i$ 和值向量 $v_i$。
 
    $$
-   q_i = W_q x_i \\
-   k_i = W_k x_i \\
+   q_i = W_q x_i \
+   k_i = W_k x_i \
    v_i = W_v x_i
    $$
 
@@ -233,7 +233,7 @@ $$
 Transformer 模型使用正弦和余弦函数生成位置编码，具体公式如下：
 
 $$
-PE_{(pos, 2i)} = \sin(pos / 10000^{2i / d_{model}}) \\
+PE_{(pos, 2i)} = \sin(pos / 10000^{2i / d_{model}}) \
 PE_{(pos, 2i+1)} = \cos(pos / 10000^{2i / d_{model}})
 $$
 
@@ -430,4 +430,4 @@ print(f"相似度: {similarity}")
 * **使用多任务学习方法训练模型。**
 * **对模型进行微调。**
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

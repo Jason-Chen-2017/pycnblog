@@ -3,7 +3,7 @@
 ## 1. 背景介绍
 ### 1.1 问题的由来
 随着大数据时代的到来,企业需要处理海量的实时数据流。传统的批处理系统如Hadoop已经无法满足实时性要求,而Storm、Spark Streaming等流处理框架也存在一定局限性。在这样的背景下,Pulsar应运而生。
-### 1.2 研究现状 
+### 1.2 研究现状
 Pulsar是由Yahoo开源的新一代分布式发布订阅消息系统,具有高吞吐、低延迟、高可扩展等特点。目前已经在Yahoo、Oath、Tencent、Verizon Media等公司的生产环境中广泛应用。学术界对Pulsar的研究还处于起步阶段,主要集中在性能评测、架构分析等方面。
 ### 1.3 研究意义
 深入研究Pulsar的原理和应用,对于构建下一代流数据处理平台具有重要意义:
@@ -39,7 +39,7 @@ graph LR
 ### 3.1 算法原理概述
 Pulsar基于Pub-Sub消息模型,采用分区(Partition)和段(Segment)相结合的存储机制,利用BookKeeper实现数据持久化。同时使用Zookeeper进行元数据管理和协调。
 ### 3.2 算法步骤详解
-1. 消息发布:Producer将消息发送到指定Topic。Broker接收消息,追加到当前Segment。 
+1. 消息发布:Producer将消息发送到指定Topic。Broker接收消息,追加到当前Segment。
 2. 消息存储:Segment写满后,Broker封闭该Segment,并创建新Segment。老的Segment数据持久化到BookKeeper。
 3. 消息消费:Consumer从Broker拉取消息。Broker根据Consumer的消费进度从BookKeeper或Segment中读取数据返回。
 4. 消息确认:Consumer消费完消息后向Broker发送ACK确认。Broker更新Consumer的消费进度。
@@ -51,7 +51,7 @@ Pulsar基于Pub-Sub消息模型,采用分区(Partition)和段(Segment)相结合�
 - 服务器端过滤,节省网络带宽
 - 水平扩展性好
 
-缺点: 
+缺点:
 - 元数据依赖外部系统Zookeeper
 - 暂不支持事务性消息
 ### 3.4 算法应用领域
@@ -72,7 +72,7 @@ $$Latency = \frac{C}{T} + \frac{M \times S}{T} + \frac{N \times S}{T}$$
 
 ### 4.2 公式推导过程
 1. 第一项 $\frac{C}{T}$ 表示消息在Broker缓存中等待的时间。
-2. 第二项 $\frac{M \times S}{T}$ 表示 $M$ 个Producer发送消息到Broker的时间。  
+2. 第二项 $\frac{M \times S}{T}$ 表示 $M$ 个Producer发送消息到Broker的时间。
 3. 第三项 $\frac{N \times S}{T}$ 表示Broker将消息发送给 $N$ 个Consumer的时间。
 
 将三项相加即得到总延迟。
@@ -117,7 +117,7 @@ Producer示例:
 PulsarClient client = PulsarClient.builder()
         .serviceUrl("pulsar://localhost:6650")
         .build();
-        
+
 Producer<byte[]> producer = client.newProducer()
         .topic("my-topic")
         .create();
@@ -135,12 +135,12 @@ Consumer示例:
 PulsarClient client = PulsarClient.builder()
         .serviceUrl("pulsar://localhost:6650")
         .build();
-        
+
 Consumer consumer = client.newConsumer()
         .topic("my-topic")
         .subscriptionName("my-subscription")
         .subscribe();
-        
+
 while (true) {
     Message msg = consumer.receive();
     System.out.println("Received message: " + new String(msg.getData()));
@@ -158,7 +158,7 @@ Producer代码解析:
 3. 调用producer.send方法发送消息。
 4. 最后关闭Producer和PulsarClient。
 
-Consumer代码解析:  
+Consumer代码解析:
 1. 首先创建一个PulsarClient,指定Pulsar服务地址。
 2. 接着创建一个Consumer,指定要订阅的Topic和订阅名称。
 3. 调用consumer.receive方法接收消息,调用consumer.acknowledge方法确认消息。
@@ -191,7 +191,7 @@ Pulsar可应用于多种实时流数据处理场景,例如:
 - Pulsar官方博客:https://pulsar.apache.org/blog/
 - StreamNative官方公众号:分享Pulsar及流计算相关技术文章
 ### 7.2 开发工具推荐
-- Pulsar Manager:Pulsar的Web管理工具 
+- Pulsar Manager:Pulsar的Web管理工具
 - Pulsar Perf:Pulsar性能测试工具
 - Pulsar Adaptor:连接Pulsar与其他系统的适配器
 - AMQP on Pulsar:AMQP协议适配
@@ -217,7 +217,7 @@ Pulsar可应用于多种实时流数据处理场景,例如:
 2. 统一消息模型:统一支持队列、流、主题等多种消息模型。
 3. 多语言支持:提供更多语言的客户端SDK,降低接入成本。
 4. 扩展性增强:支持更多自定义插件,如认证、监控等。
-### 8.3 面临的挑战 
+### 8.3 面临的挑战
 Pulsar要进一步发展还面临一些挑战:
 1. 生态建设:需要构建更加完善的生态,包括连接器、工具等。
 2. 性能优化:在超大规模场景下还需要进一步优化性能。
@@ -231,7 +231,7 @@ Pulsar要进一步发展还面临一些挑战:
 
 ## 9. 附录：常见问题与解答
 Q: Pulsar与Kafka相比有哪些优势?
-A: 
+A:
 1. Pulsar采用计算存储分离架构,而Kafka是紧耦合的,在可扩展性上Pulsar更优。
 2. Pulsar支持更灵活的消息模型,如Shared、Failover、Key_Shared等。
 3. Pulsar原生支持跨地域复制,更适合云环境。

@@ -337,4 +337,4 @@ CNN是一种专门用于处理图像数据的深度学习模型，其核心是�
 
 深度学习算法在部件检测领域有着广泛的应用，例如电子产品制造、汽车制造、航空航天、医疗器械等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

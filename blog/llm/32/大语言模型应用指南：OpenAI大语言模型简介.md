@@ -72,7 +72,7 @@ OpenAI于2018年提出的GPT(Generative Pre-trained Transformer)大语言模型,
 
 GPT系列模型按时间顺序包括GPT、GPT-2和GPT-3三个版本,参数规模从最初的1.1亿增长到了惊人的1750亿,展现了大模型的强大潜力。GPT-3已经能够在不少自然语言任务上达到人类水平,被认为是通向人工通用智能(AGI)的一个重要里程碑。
 
-## 3. 核心算法原理与具体操作步骤  
+## 3. 核心算法原理与具体操作步骤
 
 ### 3.1 算法原理概述
 
@@ -161,8 +161,8 @@ GPT大语言模型的核心是基于Transformer的自注意力机制。我们先
 
 $$
 \begin{aligned}
-\boldsymbol{Q} &= \boldsymbol{z} \boldsymbol{W}^Q \\
-\boldsymbol{K} &= \boldsymbol{z} \boldsymbol{W}^K \\
+\boldsymbol{Q} &= \boldsymbol{z} \boldsymbol{W}^Q \
+\boldsymbol{K} &= \boldsymbol{z} \boldsymbol{W}^K \
 \boldsymbol{V} &= \boldsymbol{z} \boldsymbol{W}^V
 \end{aligned}
 $$
@@ -185,11 +185,11 @@ $$
 
 在实际应用中,我们会使用多头注意力机制,将注意力层的计算过程分成多个并行的"头",然后将每个头的输出拼接起来,从而捕捉不同的依赖关系模式。
 
-### 4.2 公式推导过程  
+### 4.2 公式推导过程
 
 现在让我们推导一下GPT中用于语言模型的损失函数。我们的目标是最大化语料库$\mathcal{D}$中所有文本序列的条件概率:
 
 $$
 \begin{aligned}
-\mathcal{L}(\theta) &= \mathbb{E}_{x \sim \mathcal{D}}\left[\log P(x|\theta)\right] \\
+\mathcal{L}(\theta) &= \mathbb{E}_{x \sim \mathcal{D}}\left[\log P(x|\theta)\right] \
                    &= \mathbb{E}_{x \sim \mathcal{D}}\left[\sum_{t=1}^{|x|} \log P(x_t|x_{<t}, \theta)\right

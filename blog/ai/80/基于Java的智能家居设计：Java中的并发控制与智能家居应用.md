@@ -138,7 +138,7 @@ $$
 对损失函数 $L(\theta)$ 求导，并令导数为0，可以得到模型参数的求解公式：
 
 $$
-\theta_0 = \frac{1}{N}\sum_{i=1}^N (y_i - \theta_1x_{i1} - \theta_2x_{i2} - \ldots - \theta_nx_{in}) 
+\theta_0 = \frac{1}{N}\sum_{i=1}^N (y_i - \theta_1x_{i1} - \theta_2x_{i2} - \ldots - \theta_nx_{in})
 $$
 $$
 \theta_1 = \frac{1}{N}\sum_{i=1}^N (y_i - \theta_0 - \theta_2x_{i2} - \ldots - \theta_nx_{in})x_{i1}
@@ -177,7 +177,7 @@ $$
 然后，根据上述公式，计算模型参数：
 
 $$
-\theta_0 = \frac{1}{N}\sum_{i=1}^N (y_i - \theta_1x_i) 
+\theta_0 = \frac{1}{N}\sum_{i=1}^N (y_i - \theta_1x_i)
 $$
 $$
 \theta_1 = \frac{1}{N}\sum_{i=1}^N (y_i - \theta_0)x_i

@@ -127,7 +127,7 @@ $$
 使用线性SVM进行分类，我们可以得到以下超平面：
 
 $$
-\boldsymbol{w} = \begin{pmatrix} 1 \\ 1 \end{pmatrix}, \quad \boldsymbol{b} = -2
+\boldsymbol{w} = \begin{pmatrix} 1 \ 1 \end{pmatrix}, \quad \boldsymbol{b} = -2
 $$
 
 超平面方程为：

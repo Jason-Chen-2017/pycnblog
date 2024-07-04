@@ -1,4 +1,4 @@
-                 
+
 # 一切皆是映射：AI Q-learning在无人机路径规划的应用
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -151,7 +151,7 @@ class DroneEnvironment(gym.Env):
         self.goal = np.array([10, 10])   # 目标位置
         self.action_space = spaces.Discrete(4)  # 四个基本动作
         self.observation_space = spaces.Box(low=-np.inf, high=np.inf, shape=(2,), dtype=np.float32)
-    
+
     def step(self, action):
         # 更新无人机位置
         if action == 0:  # 向前
@@ -162,11 +162,11 @@ class DroneEnvironment(gym.Env):
             self.position -= np.array([0, 1])
         elif action == 3:  # 右转
             self.position += np.array([0, 1])
-        
+
         reward = self.compute_reward()
         done = bool(np.allclose(self.position, self.goal))
         return np.array(self.position), reward, done, {}
-    
+
     def reset(self):
         self.position = np.array([0, 0])
         return np.array(self.position)
@@ -174,7 +174,7 @@ class DroneEnvironment(gym.Env):
     def compute_reward(self):
         distance_to_goal = np.linalg.norm(self.position - self.goal)
         return 1 / (distance_to_goal + 1e-6)  # 避免除零错误
-    
+
     def render(self):
         print(f"Position: {self.position}, Reward: {self.compute_reward()}")
 ```

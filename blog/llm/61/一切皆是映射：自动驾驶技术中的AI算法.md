@@ -315,7 +315,7 @@ $$
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n tensorflow-env python=3.7 
+conda create -n tensorflow-env python=3.7
 conda activate tensorflow-env
 ```
 

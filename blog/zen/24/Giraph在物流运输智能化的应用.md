@@ -1,4 +1,4 @@
-                 
+
 # Giraph在物流运输智能化的应用
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -100,8 +100,8 @@ Giraph是一种分布式图处理系统，特别适用于处理大规模的图�
 考虑路径优化问题，采用Dijkstra算法求解最短路径：
 
 $$
-\text{Distance}(s, t) = 
-\begin{cases} 
+\text{Distance}(s, t) =
+\begin{cases}
 0 & \text{if } s = t \\
 \min_{v \in N(s)}(\text{Distance}(s', v) + w(v)) & \text{otherwise}
 \end{cases}
@@ -136,7 +136,7 @@ import org.apache.giraph.Vertex;
 
 public class TransportVertex extends Vertex {
     private static final long serialVersionUID = 1L;
-    
+
     public void compute() {
         // 计算逻辑，例如调用特定的计算任务或算法
     }

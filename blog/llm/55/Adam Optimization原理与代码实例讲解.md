@@ -24,7 +24,7 @@ Momentum 算法通过引入动量来加速梯度下降，它在每次迭代时�
 
 $$
 \begin{aligned}
-v_t &= \beta v_{t-1} + (1-\beta) \nabla f(w_t) \\
+v_t &= \beta v_{t-1} + (1-\beta) \nabla f(w_t) \
 w_{t+1} &= w_t - \alpha v_t
 \end{aligned}
 $$
@@ -37,7 +37,7 @@ RMSProp 算法通过引入梯度平方的指数加权平均值来调整学习率
 
 $$
 \begin{aligned}
-s_t &= \beta s_{t-1} + (1-\beta) (\nabla f(w_t))^2 \\
+s_t &= \beta s_{t-1} + (1-\beta) (\nabla f(w_t))^2 \
 w_{t+1} &= w_t - \alpha \frac{\nabla f(w_t)}{\sqrt{s_t + \epsilon}}
 \end{aligned}
 $$
@@ -50,10 +50,10 @@ Adam 算法结合了 Momentum 和 RMSProp 算法的优点，它同时使用动�
 
 $$
 \begin{aligned}
-m_t &= \beta_1 m_{t-1} + (1-\beta_1) \nabla f(w_t) \\
-v_t &= \beta_2 v_{t-1} + (1-\beta_2) (\nabla f(w_t))^2 \\
-\hat{m}_t &= \frac{m_t}{1-\beta_1^t} \\
-\hat{v}_t &= \frac{v_t}{1-\beta_2^t} \\
+m_t &= \beta_1 m_{t-1} + (1-\beta_1) \nabla f(w_t) \
+v_t &= \beta_2 v_{t-1} + (1-\beta_2) (\nabla f(w_t))^2 \
+\hat{m}_t &= \frac{m_t}{1-\beta_1^t} \
+\hat{v}_t &= \frac{v_t}{1-\beta_2^t} \
 w_{t+1} &= w_t - \alpha \frac{\hat{m}_t}{\sqrt{\hat{v}_t + \epsilon}}
 \end{aligned}
 $$
@@ -89,7 +89,7 @@ $$
 在 Adam 算法中，动量和梯度平方指数加权平均值在初始阶段会偏向于零，这是因为它们的初始值为零。为了解决这个问题，Adam 算法使用偏差修正来调整动量和梯度平方指数加权平均值。偏差修正的计算公式如下：
 
 $$
-\hat{m}_t = \frac{m_t}{1-\beta_1^t} \\
+\hat{m}_t = \frac{m_t}{1-\beta_1^t} \
 \hat{v}_t = \frac{v_t}{1-\beta_2^t}
 $$
 

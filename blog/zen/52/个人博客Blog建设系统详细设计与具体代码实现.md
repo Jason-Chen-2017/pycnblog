@@ -9,7 +9,7 @@
 个人博客不仅仅是一个展示自我的平台,更是一个连接作者与读者的桥梁。通过博客,我们可以:
 
 - 记录和分享自己的学习心得、生活感悟、旅行见闻等
-- 与志同道合的读者交流想法,碰撞思想的火花  
+- 与志同道合的读者交流想法,碰撞思想的火花
 - 提升自己的写作能力和逻辑思维能力
 - 积累知识和经验,为未来的发展奠定基础
 
@@ -30,7 +30,7 @@
 
 前端指的是博客网站的用户界面部分,主要由HTML、CSS、JavaScript等Web技术构成,负责数据展示和交互。
 
-### 2.2 后端(Backend)  
+### 2.2 后端(Backend)
 
 后端指的是服务器端,负责处理前端的请求,提供数据支持,通常采用某种服务端编程语言如Java、Python、Node.js等。
 
@@ -62,7 +62,7 @@ graph LR
 博客文章数量多时需要分页展示,后端需要实现分页查询算法。以MySQL数据库为例:
 
 ```sql
-SELECT * FROM article 
+SELECT * FROM article
 ORDER BY create_time DESC
 LIMIT (pageNum - 1) * pageSize, pageSize
 ```
@@ -179,7 +179,7 @@ app.get('/api/articles/:id', async (req, res) => {
 // 更新文章
 app.put('/api/articles/:id', async (req, res) => {
   const article = await Article.findByIdAndUpdate(
-    req.params.id, 
+    req.params.id,
     req.body,
     {new: true}
   );
@@ -270,7 +270,7 @@ client.search({
 个人博客系统可以应用于以下几个场景:
 
 - 个人知识管理:通过写博客总结学习过程中的心得体会,方便日后复习回顾
-- 技术分享:撰写技术博客分享自己的开发经验,帮助他人解决问题 
+- 技术分享:撰写技术博客分享自己的开发经验,帮助他人解决问题
 - 个人品牌打造:高质量的博客有助于提升个人影响力,为未来的职业发展奠定基础
 - 商业变现:优质的博客可以通过接广告、写付费专栏、出版图书等方式实现商业价值
 
@@ -279,7 +279,7 @@ client.search({
 - 前端框架:Vue.js、React、Angular
 - UI组件库:Element UI、Ant Design、Bootstrap
 - 后端框架:Express、Koa、Egg
-- 服务器环境:Node.js、Nginx  
+- 服务器环境:Node.js、Nginx
 - 数据库:MongoDB、MySQL
 - 部署工具:Docker、Git
 - Markdown编辑器:SimpleMDE、Typora
@@ -297,7 +297,7 @@ client.search({
 
 ## 9. 附录:常见问题与解答
 
-### 问题1:如何备份博客数据? 
+### 问题1:如何备份博客数据?
 
 定期将数据库导出为SQL文件或者JSON文件,保存在本地或者云端。
 
@@ -305,7 +305,7 @@ client.search({
 
 - 开启gzip压缩
 - 配置CDN加速
-- 优化数据库查询  
+- 优化数据库查询
 - 减小页面体积,压缩JS/CSS文件
 
 ### 问题3:如何防止博客被恶意攻击?

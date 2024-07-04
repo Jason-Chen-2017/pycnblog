@@ -325,7 +325,7 @@ print("节点度分布:", degree_distribution)
 ```
 平均路径长度: 2.0
 聚类系数: 0.8333333333333334
-节点度分布: Degree Distribution: 
+节点度分布: Degree Distribution:
         0: 0
         1: 0
         2: 0

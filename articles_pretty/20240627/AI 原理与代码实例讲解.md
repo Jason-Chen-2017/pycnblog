@@ -114,8 +114,7 @@ model.fit(X_train, y_train, epochs=10, batch_size=32, validation_data=(X_test, y
 #### 逻辑回归的代价函数和梯度
 
 - **代价函数**：\(J(\theta) = -\frac{1}{m} \sum_{i=1}^{m} [y^{(i)} \log h_\theta(x^{(i)}) + (1 - y^{(i)}) \log(1 - h_\theta(x^{(i)}))]\)，其中\(h_\theta(x) = \frac{1}{1 + e^{-\theta^Tx}}\)。
-- **梯度**：\(\
-abla J(\theta) = \frac{1}{m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})x^{(i)}\)。
+- **梯度**：\(\nabla J(\theta) = \frac{1}{m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})x^{(i)}\)。
 
 #### CNN的前向传播
 

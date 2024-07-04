@@ -74,11 +74,9 @@ $$ \\min_{\\theta} \\mathcal{L}(f(x; \\theta), y) $$
 
 在大模型训练中，我们使用梯度下降法来更新参数：
 
-$$ \\theta := \\theta - \\eta \\cdot \
-abla_{\\theta} \\mathcal{L}(f(x; \\theta), y) $$
+$$ \\theta := \\theta - \\eta \\cdot \nabla_{\\theta} \\mathcal{L}(f(x; \\theta), y) $$
 
-其中，$\\eta$是学习率，$\
-abla_{\\theta} \\mathcal{L}$是损失函数关于参数$\\theta$的梯度。
+其中，$\\eta$是学习率，$\nabla_{\\theta} \\mathcal{L}$是损失函数关于参数$\\theta$的梯度。
 
 ### 4.3 案例分析与讲解
 

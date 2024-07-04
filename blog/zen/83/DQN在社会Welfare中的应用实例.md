@@ -73,7 +73,7 @@ DQN算法主要包括以下几个步骤：
    q_network = build_q_network()
    target_network = build_target_network()
    optimizer = build_optimizer()
-   
+
    # 初始化经验回放缓冲区
    replay_buffer = ReplayBuffer()
    ```
@@ -83,7 +83,7 @@ DQN算法主要包括以下几个步骤：
    ```python
    # 采样动作
    action = q_network.sample_action(state)
-   
+
    # 执行动作
    next_state, reward, done = environment.step(action)
    ```
@@ -99,7 +99,7 @@ DQN算法主要包括以下几个步骤：
    ```python
    # 从缓冲区中随机采样一组经验
    experiences = replay_buffer.sample(batch_size)
-   
+
    # 解包经验
    states, actions, rewards, next_states, dones = experiences
    ```
@@ -110,10 +110,10 @@ DQN算法主要包括以下几个步骤：
    # 计算目标Q值
    target_q_values = target_network(next_states).detach().max(1)[0]
    expected_q_values = rewards + discount * target_q_values * (1 - dones)
-   
+
    # 计算损失函数
    loss = criterion(q_network(states), actions, expected_q_values.unsqueeze(1))
-   
+
    # 更新神经网络参数
    optimizer.zero_grad()
    loss.backward()
@@ -251,21 +251,21 @@ replay_buffer = ReplayBuffer()
 for episode in range(num_episodes):
     # 初始化状态
     state = environment.reset()
-    
+
     # 重复执行动作
     while True:
         # 选择动作
         action = q_network.sample_action(state)
-        
+
         # 执行动作
         next_state, reward, done = environment.step(action)
-        
+
         # 存储经验
         replay_buffer.add(state, action, reward, next_state, done)
-        
+
         # 更新状态
         state = next_state
-        
+
         # 检查是否完成游戏
         if done:
             break

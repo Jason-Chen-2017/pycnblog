@@ -177,8 +177,7 @@ $$
 actor网络的目标是最小化策略梯度损失，即：
 
 $$
-\min_{\theta_{actor}} \mathcal{L}_{actor} = \mathbb{E}_{s \sim \pi(\theta_{actor})}[\
-abla_{\theta_{actor}} \log \pi(\theta_{actor})(s) \cdot R + \gamma V^*(s, \pi(\theta_{actor})(s))]
+\min_{\theta_{actor}} \mathcal{L}_{actor} = \mathbb{E}_{s \sim \pi(\theta_{actor})}[\nabla_{\theta_{actor}} \log \pi(\theta_{actor})(s) \cdot R + \gamma V^*(s, \pi(\theta_{actor})(s))]
 $$
 
 通过链式法则，可以推导出actor网络的公式：
@@ -280,20 +279,20 @@ replay_buffer = []
 def train(actor, critic, replay_buffer, batch_size, gamma):
     # 从replay buffer中采样batch_size个数据
     # ...
-    
+
     # 计算actor和critic的输出
     # ...
-    
+
     # 计算损失函数
     # ...
-    
+
     # 更新actor和critic的参数
     # ...
 
 def update(actor, critic, replay_buffer, batch_size, gamma):
     # 调用train函数进行训练
     # ...
-    
+
     # 针对actor和critic更新参数
     # ...
 ```
@@ -309,30 +308,30 @@ episodes = 1000
 for episode in range(episodes):
     # 初始化环境
     state = env.reset()
-    
+
     # 初始化奖励总和
     total_reward = 0
-    
+
     while True:
         # 使用actor网络生成动作
         action = actor(torch.tensor(state).float()).detach().numpy()
-        
+
         # 执行动作
         next_state, reward, done, _ = env.step(action)
-        
+
         # 将当前状态、动作、奖励和下一个状态存储到replay buffer中
         replay_buffer.append((state, action, reward, next_state, done))
-        
+
         # 更新状态
         state = next_state
-        
+
         # 累加奖励
         total_reward += reward
-        
+
         # 当达到一定步数或满足终止条件时，退出循环
         if done or total_reward >= 100:
             break
-    
+
     # 更新DDPG算法参数
     update(actor, critic, replay_buffer, batch_size, gamma)
 
@@ -369,7 +368,7 @@ A：DDPG算法的收敛速度相对较慢，需要较长的训练时间。不过
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n ddpg-env python=3.7 
+conda create -n ddpg-env python=3.7
 conda activate ddpg-env
 ```
 

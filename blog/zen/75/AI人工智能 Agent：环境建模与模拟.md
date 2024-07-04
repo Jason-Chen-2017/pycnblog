@@ -1,6 +1,6 @@
 # AI人工智能 Agent：环境建模与模拟
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 关键词：
 

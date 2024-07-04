@@ -113,26 +113,26 @@ data = pd.read_csv('dataset.csv')
 def preprocess_data(df):
     # 去除重复数据
     df.drop_duplicates(inplace=True)
-    
+
     # 填充缺失值
     df.fillna(df.mean(), inplace=True)
-    
+
     # 异常值处理（例如使用 IQR 方法）
     Q1 = df.quantile(0.25)
     Q3 = df.quantile(0.75)
     IQR = Q3 - Q1
     df = df[(Q1 - 1.5 * IQR) < df] & (df < (Q3 + 1.5 * IQR))
-    
+
     # 特征选择
     features = ['feature1', 'feature2', 'feature3']
     df = df[features]
-    
+
     # 数据划分
     from sklearn.model_selection import train_test_split
     X = df.drop('target', axis=1)
     y = df['target']
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    
+
     return X_train, X_test, y_train, y_test
 
 X_train, X_test, y_train, y_test = preprocess_data(data)

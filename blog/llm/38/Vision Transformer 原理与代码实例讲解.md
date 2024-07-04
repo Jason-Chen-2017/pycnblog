@@ -151,7 +151,7 @@ $$Q = WX_q, K = WX_k, V = WX_v$$
 
 其中，
 
-$$W_q = \begin{bmatrix} W_{q1} \\ W_{q2} \\ ... \\ W_{qh} \end{bmatrix}, \quad W_k = \begin{bmatrix} W_{k1} \\ W_{k2} \\ ... \\ W_{kh} \end{bmatrix}, \quad W_v = \begin{bmatrix} W_{v1} \\ W_{v2} \\ ... \\ W_{vh} \end{bmatrix}$$
+$$W_q = \begin{bmatrix} W_{q1} \ W_{q2} \ ... \ W_{qh} \end{bmatrix}, \quad W_k = \begin{bmatrix} W_{k1} \ W_{k2} \ ... \ W_{kh} \end{bmatrix}, \quad W_v = \begin{bmatrix} W_{v1} \ W_{v2} \ ... \ W_{vh} \end{bmatrix}$$
 
 分别对应每个头的查询、键和值矩阵。那么，
 

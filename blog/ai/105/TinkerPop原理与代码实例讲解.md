@@ -324,4 +324,4 @@ TinkerPop 作为图数据库领域的行业标准，提供了一套灵活、高�
 
 答：TinkerPop 本身不提供事务支持，但是它可以与支持事务的图数据库一起使用，例如 Neo4j。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

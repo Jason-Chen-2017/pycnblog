@@ -24,7 +24,7 @@
 
 Spring是一个轻量级的Java开发框架,提供了IoC(Inversion of Control,控制反转)和AOP(Aspect Oriented Programming,面向切面编程)等核心功能,简化了企业级应用开发。
 
-#### 2.1.2 Spring MVC框架  
+#### 2.1.2 Spring MVC框架
 
 Spring MVC是一个基于MVC(Model-View-Controller,模型-视图-控制器)设计模式的Web应用开发框架,提供了灵活的配置和强大的功能,使得Web应用开发更加高效和可维护。
 
@@ -116,7 +116,7 @@ $$R=\frac{M}{N}\times 100\%$$
 </bean>
 
 <!-- 配置事务管理器 -->
-<bean id="transactionManager" 
+<bean id="transactionManager"
       class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
     <property name="dataSource" ref="dataSource"/>
 </bean>
@@ -155,17 +155,17 @@ $$R=\frac{M}{N}\times 100\%$$
     <select id="selectById" resultType="com.petition.entity.Petition">
         SELECT * FROM petition WHERE id = #{id}
     </select>
-    
+
     <insert id="insert" parameterType="com.petition.entity.Petition">
         INSERT INTO petition(title, content, petitioner_id, create_time)
         VALUES (#{title}, #{content}, #{petitionerId}, #{createTime})
     </insert>
-    
+
     <update id="update" parameterType="com.petition.entity.Petition">
         UPDATE petition SET title=#{title}, content=#{content}
         WHERE id=#{id}
     </update>
-    
+
     <delete id="deleteById">
         DELETE FROM petition WHERE id=#{id}
     </delete>
@@ -180,30 +180,30 @@ $$R=\frac{M}{N}\times 100\%$$
 @Controller
 @RequestMapping("/petition")
 public class PetitionController {
-    
+
     @Autowired
     private PetitionService petitionService;
-    
+
     @GetMapping("/{id}")
     public String view(@PathVariable Long id, Model model) {
         Petition petition = petitionService.getPetitionById(id);
         model.addAttribute("petition", petition);
         return "petition_view";
     }
-    
+
     @PostMapping("/")
     public String add(Petition petition) {
         petitionService.addPetition(petition);
         return "redirect:/petition/list";
     }
-    
+
     @PutMapping("/{id}")
     public String modify(@PathVariable Long id, Petition petition) {
         petition.setId(id);
         petitionService.modifyPetition(petition);
         return "redirect:/petition/list";
     }
-    
+
     @DeleteMapping("/{id}")
     public String remove(@PathVariable Long id) {
         petitionService.removePetitionById(id);
@@ -217,7 +217,7 @@ public class PetitionController {
 信访投诉管理系统可应用于各级政府部门、公共服务机构等,具体场景包括:
 
 - 政府信访局:受理人民群众的来信来访,及时处理和答复群众诉求。
-- 企业客服中心:受理客户投诉和建议,提供售后服务和支持。  
+- 企业客服中心:受理客户投诉和建议,提供售后服务和支持。
 - 学校师生服务平台:受理师生员工的咨询、申请和投诉,提供便捷服务。
 - 社区服务中心:受理社区居民的诉求和意见,改善社区管理和服务。
 
@@ -261,7 +261,7 @@ public class PetitionController {
 ### 9.1 如何提高信访投诉的办理效率?
 
 - 优化业务流程,减少不必要的审批环节。
-- 加强部门协调,建立快速响应和会商机制。  
+- 加强部门协调,建立快速响应和会商机制。
 - 引入智能分单、限时办结等管理措施。
 - 定期开展业务培训,提高工作人员的业务能力。
 

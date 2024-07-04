@@ -87,25 +87,25 @@ ViT的数学模型主要包括以下部分：
 3. **Transformer编码器**：使用自注意力机制提取图像特征。自注意力机制的计算公式如下：
 
    $$
-   Q = W_Q \cdot X 
+   Q = W_Q \cdot X
 $$
    $$
-   K = W_K \cdot X 
+   K = W_K \cdot X
 $$
    $$
-   V = W_V \cdot X 
+   V = W_V \cdot X
 $$
 
    其中 $X$ 为token嵌入，$Q$、$K$、$V$ 分别为查询、键和值。注意力权重 $A$ 的计算公式如下：
 
    $$
-   A = \frac{Q \cdot K^T}{\sqrt{d_k}} \cdot softmax(\frac{K \cdot V^T}{\sqrt{d_k}}) 
+   A = \frac{Q \cdot K^T}{\sqrt{d_k}} \cdot softmax(\frac{K \cdot V^T}{\sqrt{d_k}})
 $$
 
    其中 $d_k$ 为注意力维度。最终的输出为：
 
    $$
-   \text{output} = \text{softmax}(A \cdot V) \cdot W_O 
+   \text{output} = \text{softmax}(A \cdot V) \cdot W_O
    $$
 
    其中 $W_O$ 为全连接层。

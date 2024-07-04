@@ -260,7 +260,7 @@ class TransformerLayer(nn.Module):
         #多头Self-Attention
         attention_output, _ = self多头注意力(x, x, x, attn_mask=mask)
         x = self.layer_norm1(x + attention_output)
-        
+
         #Feed Forward Networks
         ffn_output = self.FFN(x)
         x = self.layer_norm2(x + ff

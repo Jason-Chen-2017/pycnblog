@@ -107,22 +107,20 @@ MNIST数据集包含了手写数字的大量样本，分为训练集和测试集
 常用的损失函数有交叉熵损失（Cross Entropy Loss）：
 
 $$
-L = - \\sum_{i=1}^{N} \\sum_{j=1}^{C} y_i^{(j)} \\log \\hat{y}_i^{(j)}
+L = - \sum_{i=1}^{N} \sum_{j=1}^{C} y_i^{(j)} \log \hat{y}_i^{(j)}
 $$
 
-其中，$N$是样本数量，$C$是类别数量，$y_i^{(j)}$是真实标签，$\\hat{y}_i^{(j)}$是预测概率。
+其中，$N$是样本数量，$C$是类别数量，$y_i^{(j)}$是真实标签，$\hat{y}_i^{(j)}$是预测概率。
 
 #### 梯度下降法
 
 梯度下降是最常用的优化方法，用于最小化损失函数：
 
 $$
-\\theta := \\theta - \\eta \\cdot \
-abla_\\theta J(\\theta)
+\theta := \theta - \eta \cdot \nabla_\theta J(\theta)
 $$
 
-其中，$\\theta$是模型参数，$\\eta$是学习率，$\
-abla_\\theta J(\\theta)$是损失函数关于参数$\\theta$的梯度。
+其中，$\theta$是模型参数，$\eta$是学习率，$\nabla_\theta J(\theta)$是损失函数关于参数$\theta$的梯度。
 
 ### 4.2 公式推导过程
 
@@ -222,7 +220,7 @@ def train(model, device, train_loader, optimizer, epoch):
         loss.backward()
         optimizer.step()
         if batch_idx % 10 == 0:
-            print('Train Epoch: {} [{}/{} ({:.0f}%)]\\tLoss: {:.6f}'.format(
+            print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
                 epoch, batch_idx * len(data), len(train_loader.dataset),
                 100. * batch_idx / len(train_loader), loss.item()))
 

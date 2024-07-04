@@ -49,7 +49,7 @@
 #### 4.1.1 马尔可夫决策过程(MDP)
 MDP可以用一个五元组 $(S,A,P,R,\gamma)$ 来表示：
 - $S$: 有限状态集合
-- $A$: 有限动作集合 
+- $A$: 有限动作集合
 - $P$: 状态转移概率矩阵，$P_{ss'}^a=P[S_{t+1}=s'|S_t=s,A_t=a]$
 - $R$: 奖励函数，$R_s^a=E[R_{t+1}|S_t=s,A_t=a]$
 - $\gamma$: 折扣因子，$\gamma \in [0,1]$
@@ -84,8 +84,8 @@ $$a=(concurrent\_users, request\_rate)$$
 奖励函数的设计需要综合考虑系统的各项性能指标，以引导智能体学习到最优的压力测试策略。一个简单的奖励函数设计可以是：
 
 $$R(s,a)=\begin{cases}
--1, & \text{if } response\_time > threshold \\
-1, & \text{if } cpu\_usage < 80\% \text{ and } memory\_usage < 80\% \\
+-1, & \text{if } response\_time > threshold \
+1, & \text{if } cpu\_usage < 80\% \text{ and } memory\_usage < 80\% \
 0, & \text{otherwise}
 \end{cases}$$
 

@@ -288,4 +288,4 @@ Llama 模型的应用领域将会不断扩展，未来可能会应用于以下�
 
 **解答:** Llama 模型的未来发展趋势是模型规模持续扩大、应用领域不断扩展、开源化趋势更加明显。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -28,7 +28,7 @@ AI Agent,即人工智能代理,是一种能够感知环境、自主行动,并通
 
 AI Agent与分享经济有很多契合点:
 
-1. 海量数据处理:分享经济平台每天产生海量数据,AI Agent可以高效处理和分析。 
+1. 海量数据处理:分享经济平台每天产生海量数据,AI Agent可以高效处理和分析。
 
 2. 实时匹配与调度:AI Agent可以根据实时的供需信息,进行智能匹配和动态定价。
 
@@ -57,14 +57,14 @@ AI Agent的核心能力之一是自主学习和决策,其主要算法范式是�
 强化学习的基本步骤如下:
 
 1. Agent观察当前环境状态 $s_t$
-2. 根据策略 $\pi$ 选择一个行动 $a_t$  
+2. 根据策略 $\pi$ 选择一个行动 $a_t$
 3. 环境根据 $a_t$ 反馈下一个状态 $s_{t+1}$ 和奖励 $r_t$
-4. Agent根据 $s_t$、$a_t$、$r_t$、$s_{t+1}$ 更新策略 $\pi$ 
+4. Agent根据 $s_t$、$a_t$、$r_t$、$s_{t+1}$ 更新策略 $\pi$
 5. 重复步骤1-4,直到满足终止条件
 
 常见的强化学习算法有Q-Learning、SARSA、DQN等。
 
-### 3.2 多智能体强化学习 
+### 3.2 多智能体强化学习
 
 在多Agent场景下,每个Agent不仅要学习自身的最优策略,还要考虑其他Agent的行为。多智能体强化学习(Multi-Agent Reinforcement Learning,MARL)算法如下:
 
@@ -87,7 +87,7 @@ AI Agent的核心能力之一是自主学习和决策,其主要算法范式是�
 强化学习问题可以用马尔可夫决策过程(Markov Decision Process,MDP)来建模。一个MDP由以下元素构成:
 
 - 状态空间 $\mathcal{S}$
-- 行动空间 $\mathcal{A}$ 
+- 行动空间 $\mathcal{A}$
 - 状态转移概率 $\mathcal{P}(s'|s,a)$
 - 奖励函数 $\mathcal{R}(s,a)$
 - 折扣因子 $\gamma \in [0,1]$
@@ -137,23 +137,23 @@ class QLearning:
     def __init__(self, n_stations, n_actions, epsilon, alpha, gamma):
         self.n_stations = n_stations  # 站点数
         self.n_actions = n_actions    # 行动数(调度单车数)
-        self.epsilon = epsilon        # 探索率 
+        self.epsilon = epsilon        # 探索率
         self.alpha = alpha            # 学习率
         self.gamma = gamma            # 折扣因子
         self.Q = np.zeros((n_stations, n_actions)) # Q表
-        
+
     def choose_action(self, state):
         if np.random.uniform() < self.epsilon:
             action = np.random.choice(self.n_actions)
         else:
             action = np.argmax(self.Q[state, :])
         return action
-        
+
     def update(self, state, action, reward, next_state):
         td_error = reward + self.gamma * np.max(self.Q[next_state, :]) - self.Q[state, action]
         self.Q[state, action] += self.alpha * td_error
-        
-# 初始化环境和Agent        
+
+# 初始化环境和Agent
 n_stations = 10
 n_actions = 5
 epsilon = 0.1

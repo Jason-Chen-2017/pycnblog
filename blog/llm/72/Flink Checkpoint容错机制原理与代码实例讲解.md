@@ -125,8 +125,8 @@ Flink Checkpoint 容错机制的数学模型可以描述为：
 
 $$
 \begin{align*}
-& \text{状态保存} & : S(t) = \{s_1(t), s_2(t), ..., s_n(t)\} \\
-& \text{状态恢复} & : S'(t) = \{s_1'(t), s_2'(t), ..., s_n'(t)\} \\
+& \text{状态保存} & : S(t) = \{s_1(t), s_2(t), ..., s_n(t)\} \
+& \text{状态恢复} & : S'(t) = \{s_1'(t), s_2'(t), ..., s_n'(t)\} \
 & \text{一致性保证} & : S(t) \approx S'(t)
 \end{align*}
 $$

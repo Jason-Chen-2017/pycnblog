@@ -5,8 +5,7 @@ Gradient Descent（梯度下降法）是机器学习和优化算法中最为基�
 ## 核心概念与联系
 
 ### 梯度的概念
-在多变量分析中，梯度是一个向量，代表函数在某一点上的方向导数。在直觉上，梯度的方向是函数增长最快的方向，而其大小则是该方向上的增长速率。对于一个二维函数$f(x,y)$，梯度可以用向量表示为$\
-abla f = (\\frac{\\partial f}{\\partial x}, \\frac{\\partial f}{\\partial y})$。
+在多变量分析中，梯度是一个向量，代表函数在某一点上的方向导数。在直觉上，梯度的方向是函数增长最快的方向，而其大小则是该方向上的增长速率。对于一个二维函数$f(x,y)$，梯度可以用向量表示为$\nabla f = (\\frac{\\partial f}{\\partial x}, \\frac{\\partial f}{\\partial y})$。
 
 ### 梯度下降法的基本思想
 梯度下降法的核心思想是沿着负梯度的方向移动，因为负梯度指向函数值减少最快的方向。通过迭代更新参数，最终希望达到局部极小值或者全局极小值的位置。
@@ -28,11 +27,9 @@ abla f = (\\frac{\\partial f}{\\partial x}, \\frac{\\partial f}{\\partial y})$�
 ### 具体数学公式
 设损失函数为$L(\\theta)$，参数为$\\theta$，学习率为$\\alpha$，则梯度下降法的更新规则为：
 
-$$\\theta_{new} = \\theta_{old} - \\alpha \\cdot \
-abla L(\\theta_{old})$$
+$$\\theta_{new} = \\theta_{old} - \\alpha \\cdot \nabla L(\\theta_{old})$$
 
-其中，$\
-abla L(\\theta_{old})$是关于$\\theta_{old}$的梯度。
+其中，$\nabla L(\\theta_{old})$是关于$\\theta_{old}$的梯度。
 
 ## 数学模型和公式详细讲解举例说明
 

@@ -183,7 +183,7 @@ $$
 
 $$
 \begin{aligned}
-p_{\theta}\left(x_{t-1} | x_t, x_0\right) &=\frac{p_{\theta}\left(x_t | x_{t-1}, x_0\right) p_{\theta}\left(x_{t-1} | x_0\right)}{p_{\theta}\left(x_t | x_0\right)} \\
+p_{\theta}\left(x_{t-1} | x_t, x_0\right) &=\frac{p_{\theta}\left(x_t | x_{t-1}, x_0\right) p_{\theta}\left(x_{t-1} | x_0\right)}{p_{\theta}\left(x_t | x_0\right)} \
 &=\frac{p_{\theta}\left(x_t | x_{t-1}, x_0\right) p_{\theta}\left(x_{t-1}\right)}{p_{\theta}\left(x_t\right)}
 \end{aligned}
 $$

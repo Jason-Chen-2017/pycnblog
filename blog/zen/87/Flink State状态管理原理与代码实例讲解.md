@@ -164,7 +164,7 @@ public class StateManagementExample {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setRestartStrategy(RestartStrategies.fixedDelayRestart(3, 10000));
-        
+
         env.fromElements("key1", "key2", "key1", "key3", "key2", "key1")
                 .map(new MapFunction<String, Tuple2<String, Integer>>() {
                     private transient CounterState state;

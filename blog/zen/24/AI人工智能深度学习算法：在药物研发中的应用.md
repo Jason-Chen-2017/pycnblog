@@ -1,4 +1,4 @@
-                 
+
 # AI人工智能深度学习算法：在药物研发中的应用
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -164,10 +164,10 @@ for epoch in range(epochs):
     loss = criterion(outputs.squeeze(), torch.tensor(y_train.values).float())
     loss.backward()
     optimizer.step()
-    
+
     if (epoch+1) % 10 == 0:
         print(f'Epoch [{epoch+1}/{epochs}], Loss: {loss.item():.4f}')
-        
+
 # 验证模型
 with torch.no_grad():
     predicted = model(torch.tensor(X_test.values).float()).numpy()

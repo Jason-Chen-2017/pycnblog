@@ -19,7 +19,7 @@
 深度强化学习用于音乐生成具有重要的研究意义：
 
 1. 丰富音乐创作的表现力，激发更多的创造灵感
-2. 降低音乐创作门槛，让更多人参与到音乐创作中来  
+2. 降低音乐创作门槛，让更多人参与到音乐创作中来
 3. 推动人工智能在艺术创作领域的应用，拓展AI的边界
 4. 为其他艺术创作领域提供借鉴，如绘画、舞蹈等
 
@@ -55,7 +55,7 @@
       3. 将转移样本$(s_t,a_t,r_t,s_{t+1})$存入$D$
       4. 从$D$中随机采样一个批次的转移样本$(s_j,a_j,r_j,s_{j+1})$
       5. 计算TD目标：$y_j=\begin{cases}
-r_j & \text{if episode terminates at j+1} \\
+r_j & \text{if episode terminates at j+1} \
 r_j+\gamma \max_{a'}Q(s_{j+1},a';\theta^-) & \text{otherwise}
 \end{cases}$
       6. 最小化TD误差，更新Q网络：$\theta \leftarrow \theta - \alpha \nabla_\theta \frac{1}{N}\sum_j(y_j-Q(s_j,a_j;\theta))^2$

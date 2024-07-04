@@ -171,7 +171,7 @@ class Feedforward(nn.Module):
         self.linear1 = nn.Linear(d_model, d_ff)
         self.dropout = nn.Dropout(dropout)
         self.linear2 = nn.Linear(d_ff, d_model)
-    
+
     def forward(self, x):
         x = torch.relu(self.linear1(x))
         x = self.dropout(x)
@@ -235,7 +235,7 @@ class Feedforward(nn.Module):
         self.linear1 = nn.Linear(d_model, d_ff)
         self.dropout = nn.Dropout(dropout)
         self.linear2 = nn.Linear(d_ff, d_model)
-    
+
     def forward(self, x):
         x = torch.relu(self.linear1(x))
         x = self.dropout(x)
@@ -280,7 +280,7 @@ class TextClassifier(nn.Module):
         self.embedding = nn.Embedding(vocab_size, d_model)
         self.ffn = Feedforward(d_model, d_ff)
         self.fc = nn.Linear(d_model, num_classes)
-    
+
     def forward(self, x):
         x = self.embedding(x)
         x = self.ffn(x)
@@ -306,7 +306,7 @@ class MachineTranslation(nn.Module):
         self.src_embedding = nn.Embedding(src_vocab_size, d_model)
         self.trg_embedding = nn.Embedding(trg_vocab_size, d_model)
         self.ffn = Feedforward(d_model, d_ff)
-    
+
     def forward(self, src, trg):
         src = self.src_embedding(src)
         trg = self.trg_embedding(trg)

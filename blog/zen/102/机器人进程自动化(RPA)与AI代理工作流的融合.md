@@ -152,12 +152,12 @@ RPA与AI代理工作流融合的数学模型主要包括以下部分：
 
 $$
 \begin{align*}
-P &= \{p_1, p_2, ..., p_n\} \\
-A &= \{a_1, a_2, ..., a_m\} \\
-O &= \{o_1, o_2, ..., o_n\} \\
+P &= \{p_1, p_2, ..., p_n\} \
+A &= \{a_1, a_2, ..., a_m\} \
+O &= \{o_1, o_2, ..., o_n\} \
 f(p, a, o) &= \begin{cases}
-\text{执行动作} & \text{若} a \in A \\
-\text{等待} & \text{若} a = \text{等待} \\
+\text{执行动作} & \text{若} a \in A \
+\text{等待} & \text{若} a = \text{等待} \
 \text{结束} & \text{若} p \in P, o \in O
 \end{cases}
 \end{align*}
@@ -173,8 +173,8 @@ $$
 
 $$
 \begin{align*}
-\text{minimize} & \quad T \\
-\text{subject to} & \quad \sum_{i=1}^n a_{ij} = 1, \quad \forall j \\
+\text{minimize} & \quad T \
+\text{subject to} & \quad \sum_{i=1}^n a_{ij} = 1, \quad \forall j \
 & \quad a_{ij} \in \{0, 1\}, \quad \forall i, j
 \end{align*}
 $$
@@ -185,9 +185,9 @@ $$
 
 $$
 \begin{align*}
-\text{minimize} & \quad \sum_{i=1}^n \sum_{j=1}^n c_{ij} x_{ij} \\
-\text{subject to} & \quad \sum_{j=1}^n x_{ij} = 1, \quad \forall i \\
-& \quad \sum_{i=1}^n x_{ij} = 1, \quad \forall j \\
+\text{minimize} & \quad \sum_{i=1}^n \sum_{j=1}^n c_{ij} x_{ij} \
+\text{subject to} & \quad \sum_{j=1}^n x_{ij} = 1, \quad \forall i \
+& \quad \sum_{i=1}^n x_{ij} = 1, \quad \forall j \
 & \quad x_{ij} \in \{0, 1\}, \quad \forall i, j
 \end{align*}
 $$
@@ -267,7 +267,7 @@ ai_model = AIModel()
 def process_task(data):
     # 使用AI模型进行数据分析
     result = ai_model.predict(data)
-    
+
     # 根据分析结果执行相应操作
     if result['valid']:
         robot.execute('Task1')
@@ -279,7 +279,7 @@ def process_task(data):
 if __name__ == '__main__':
     # 从数据库获取数据
     data = get_data_from_database()
-    
+
     # 处理任务
     process_task(data)
 ```

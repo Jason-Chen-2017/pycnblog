@@ -96,8 +96,8 @@
 
 $$
 \begin{align*}
-z &= \sigma(W_1 \cdot x + b_1) \\
-\hat{x} &= \sigma(W_2 \cdot z + b_2) \\
+z &= \sigma(W_1 \cdot x + b_1) \
+\hat{x} &= \sigma(W_2 \cdot z + b_2) \
 L &= \frac{1}{2} ||\hat{x} - x||^2_2
 \end{align*}
 $$
@@ -116,8 +116,8 @@ $$
 
 $$
 \begin{align*}
-L &= \frac{1}{2} ||\hat{x} - x||^2_2 \\
-&= \frac{1}{2} ||W_2 \cdot (W_1 \cdot x + b_1) - x||^2_2 \\
+L &= \frac{1}{2} ||\hat{x} - x||^2_2 \
+&= \frac{1}{2} ||W_2 \cdot (W_1 \cdot x + b_1) - x||^2_2 \
 &= \frac{1}{2} ||(W_2W_1 - I) \cdot x + (W_2b_1 - b_2)||^2_2
 \end{align*}
 $$

@@ -148,12 +148,12 @@ def train(train_data, train_labels):
     prior_probs = np.zeros(num_classes)
     for i in range(num_classes):
         prior_probs[i] = np.sum(train_labels == i) / len(train_labels)
-    
+
     # 计算条件概率
     cond_probs = np.zeros((num_classes, train_data.shape[1]))
     for i in range(num_classes):
         cond_probs[i] = np.log(np.sum(train_data[train_labels == i], axis=0) / np.sum(train_labels == i))
-    
+
     return prior_probs, cond_probs
 
 def predict(test_data, prior_probs, cond_probs):

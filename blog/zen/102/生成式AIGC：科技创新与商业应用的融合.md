@@ -114,7 +114,7 @@
 
 $$
 \begin{align*}
-P(w_{t} | w_{t-1}, ..., w_{1}) &= \frac{P(w_{t} | w_{t-1}, ..., w_{1}; \theta)}{P(w_{1}, ..., w_{t}; \theta)} \\
+P(w_{t} | w_{t-1}, ..., w_{1}) &= \frac{P(w_{t} | w_{t-1}, ..., w_{1}; \theta)}{P(w_{1}, ..., w_{t}; \theta)} \
 &= \frac{\exp(E(w_{t} | w_{t-1}, ..., w_{1}; \theta))}{\sum_{w' \in V} \exp(E(w' | w_{t-1}, ..., w_{1}; \theta))}
 \end{align*}
 $$
@@ -125,7 +125,7 @@ $$
 
 $$
 \begin{align*}
-\min_{\mathbf{G}} \max_{\mathbf{D}} \mathcal{L}_{\mathrm{GAN}}(\mathbf{G}, \mathbf{D}) &= \min_{\mathbf{G}} \max_{\mathbf{D}} \mathbb{E}_{\mathbf{z} \sim p_{z}}[\log \mathbf{D}(\mathbf{G}(\mathbf{z}))] - \mathbb{E}_{x \sim p_{x}}[\log \mathbf{D}(x)] \\
+\min_{\mathbf{G}} \max_{\mathbf{D}} \mathcal{L}_{\mathrm{GAN}}(\mathbf{G}, \mathbf{D}) &= \min_{\mathbf{G}} \max_{\mathbf{D}} \mathbb{E}_{\mathbf{z} \sim p_{z}}[\log \mathbf{D}(\mathbf{G}(\mathbf{z}))] - \mathbb{E}_{x \sim p_{x}}[\log \mathbf{D}(x)] \
 \end{align*}
 $$
 

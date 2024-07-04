@@ -1,6 +1,6 @@
 # 【大模型应用开发 动手做AI Agent】具身智能的发展
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：具身智能，具身代理，物理交互，自主行动，多模态感知
 
@@ -95,7 +95,7 @@
 
 #### 情境理解模型
 
-情境理解可以使用基于图的模型或者状态空间模型。例如，可以构建一个场景图 $S$，其中 $S = (\\mathcal{N}, \\mathcal{E})$，$\\mathcal{N}$ 是节点集，$\\mathcal{E}$ 是边集，边代表节点之间的关系。
+情境理解可以使用基于图的模型或者状态空间模型。例如，可以构建一个场景图 $S$，其中 $S = (\mathcal{N}, \mathcal{E})$，$\mathcal{N}$ 是节点集，$\mathcal{E}$ 是边集，边代表节点之间的关系。
 
 ### 4.2 公式推导过程
 
@@ -117,7 +117,7 @@ $$F(V, A) = w_VV + w_AV$$
 
 对于视觉和听觉数据的融合，可以通过加权平均的方式实现：
 
-$$F(V, A) = \\frac{w_VV + w_AV}{w_V + w_A}$$
+$$F(V, A) = \frac{w_VV + w_AV}{w_V + w_A}$$
 
 其中，$w_V$ 和 $w_A$ 反映了视觉和听觉数据的重要性。
 
@@ -125,9 +125,9 @@ $$F(V, A) = \\frac{w_VV + w_AV}{w_V + w_A}$$
 
 构建场景图时，可以定义节点为环境中的物体或位置，边表示物体之间的关系或物体与位置的关系：
 
-$$S = (\\mathcal{N}, \\mathcal{E})$$
+$$S = (\mathcal{N}, \mathcal{E})$$
 
-其中，$\\mathcal{N} = \\{n_1, n_2, ..., n_N\\}$ 是节点集，$\\mathcal{E} = \\{(n_i, n_j)\\}$ 是边集。
+其中，$\mathcal{N} = \{n_1, n_2, ..., n_N\}$ 是节点集，$\mathcal{E} = \{(n_i, n_j)\}$ 是边集。
 
 ### 4.4 常见问题解答
 
@@ -177,9 +177,9 @@ def train_and_evaluate_model(X_train, y_train, X_test, y_test):
     model = build_model(input_shape=(X_train.shape[1],))
     model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=10, batch_size=32)
     _, accuracy = model.evaluate(X_test, y_test)
-    print(f\"Test accuracy: {accuracy * 100}%\")
+    print(f"Test accuracy: {accuracy * 100}%")
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     # 假设的数据集
     X_train, y_train, X_test, y_test = load_data()
     train_and_evaluate_model(X_train, y_train, X_test, y_test)

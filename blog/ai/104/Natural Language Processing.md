@@ -305,4 +305,4 @@ NLP 技术也面临着一些挑战，例如：
 * **如何选择合适的 NLP 算法？**  需要根据具体任务选择合适的算法，例如文本分类、情感分析、机器翻译等。
 * **如何评估 NLP 模型的性能？**  可以使用各种指标来评估 NLP 模型的性能，例如准确率、召回率、F1 值、困惑度等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

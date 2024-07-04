@@ -1,4 +1,4 @@
-                 
+
 # Triangle Counting三角形计数原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -134,10 +134,10 @@ import numpy as np
 def triangle_count(graph):
     """
     计算给定无向图中的三角形数量。
-    
+
     参数:
         graph: numpy.ndarray - 图的邻接矩阵。
-        
+
     返回:
         int - 三角形的数量。
     """
@@ -160,7 +160,7 @@ if __name__ == "__main__":
                                  [1, 0, 1, 0],
                                  [1, 1, 0, 1],
                                  [0, 0, 1, 0]])
-    
+
     print("三角形数量:", triangle_count(adjacency_matrix))
 ```
 

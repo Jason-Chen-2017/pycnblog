@@ -198,7 +198,7 @@ class QLearningAgent:
         self.exploration_rate = exploration_rate
         self.iterations = iterations
         self.q_table = np.zeros([env.observation_space.n, env.action_space.n])
-        
+
     def learn(self):
         for _ in range(self.iterations):
             state = self.env.reset()

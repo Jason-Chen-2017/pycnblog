@@ -163,7 +163,7 @@ def user_based_collaborative_filtering(R, user_ratings, item_ratings):
     for user, items in user_ratings.items():
         for item, rating in items.items():
             user_matrix[user, item] = rating
-    
+
     # 计算用户相似度矩阵
     user_similarities = cosine_similarity(user_matrix)
 
@@ -177,7 +177,7 @@ def user_based_collaborative_filtering(R, user_ratings, item_ratings):
             if item not in item_ratings.keys(): continue
             item_vec = user_matrix[item_ratings[item]]
             predicted_ratings[user, item] = np.dot(user_vec, item_vec) / np.linalg.norm(user_vec) / np.linalg.norm(item_vec)
-    
+
     return predicted_ratings
 
 # 示例数据

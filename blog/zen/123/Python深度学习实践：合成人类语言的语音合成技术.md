@@ -164,10 +164,10 @@ audio.save('output.wav')
     * Udacity
 
 ### 7.2  开发工具推荐
-* **Python:** 
-* **TensorFlow:** 
-* **PyTorch:** 
-* **Librosa:** 
+* **Python:**
+* **TensorFlow:**
+* **PyTorch:**
+* **Librosa:**
 * **PyAudio:**
 
 ### 7.3  相关论文推荐
@@ -204,5 +204,5 @@ audio.save('output.wav')
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

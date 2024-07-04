@@ -101,8 +101,7 @@ $$
 根据InfoNCE损失函数计算梯度，更新模型参数：
 
 $$
-\theta \leftarrow \theta - \eta \
-abla_{\theta}L(\theta)
+\theta \leftarrow \theta - \eta \nabla_{\theta}L(\theta)
 $$
 
 其中 $\eta$ 为学习率。
@@ -178,8 +177,7 @@ $$
 对损失函数求梯度，得：
 
 $$
-\
-abla_{\theta}\ell(\sim(x,x')) = \frac{1}{\exp(\sim(x,x'))} - \frac{\sum_{k=1}^K \exp(\sim(x,x_k))}{\left(\sum_{k=1}^K \exp(\sim(x,x_k))\right)^2}
+\nabla_{\theta}\ell(\sim(x,x')) = \frac{1}{\exp(\sim(x,x'))} - \frac{\sum_{k=1}^K \exp(\sim(x,x_k))}{\left(\sum_{k=1}^K \exp(\sim(x,x_k))\right)^2}
 $$
 
 其中 $\theta$ 为特征提取器参数。

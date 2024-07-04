@@ -1,4 +1,4 @@
-                 
+
 # AI人工智能核心算法原理与代码实例讲解：策略优化
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -67,17 +67,17 @@ $$V^\star(S) = \max_{a} \left\{ R(S,A) + \gamma V^\star(S') \right\}$$
 **Q-Learning**是一种基于价值函数的强化学习方法，目标是学习一个动作值表（Q-table），该表包含了每个状态-动作对的期望累计回报。
 
 1. **初始化**：设置初始Q值，通常是0或随机值。
-   
+
    $$Q(s,a) = 0$$
-   
+
 2. **经验回放**：智能体在其环境中执行动作，接收回报和新状态，存储于经验池中。
-   
+
    $(s, a, r, s')$
-   
+
 3. **更新Q值**：利用经验池中的样本更新Q值，采用以下公式：
-   
+
    $$Q(s, a) := Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a') - Q(s, a)]$$
-   
+
    其中，$\alpha$是学习率，控制更新的速度。
 
 ### 3.3 公式推导过程
@@ -127,7 +127,7 @@ experience_buffer_size = 1000
 for episode in range(num_episodes):
     state = env.reset()
     done = False
-    
+
     while not done:
         # 从经验池采样或随机行动
         if len(Q) < experience_buffer_size:
@@ -136,14 +136,14 @@ for episode in range(num_episodes):
             # 行动选择策略
             q_values = Q[state]
             action = np.argmax(q_values)
-        
+
         next_state, reward, done, _ = env.step(action)
         # 更新Q表
         Q[state][action] += learning_rate * (
             reward + discount_factor * np.max(Q[next_state]) - Q[state][action])
-        
+
         state = next_state
-        
+
         # 进度条
         print(f"\rEpisode {episode+1}/{num_episodes}", end="")
         sleep(0.1)
@@ -224,31 +224,31 @@ epochs = 10000
 # 训练循环
 for episode in range(epochs):
     state = env.reset()
-    
+
     while True:
         # Epsilon-greedy策略
         if random.uniform(0, 1) < epsilon:
             action = env.action_space.sample()
         else:
             action = np.argmax(q_table[state])
-        
+
         new_state, _, done, info = env.step(action)
-        
+
         # Q-learning更新规则
         best_future_action = np.argmax(q_table[new_state])
         current_q_value = q_table[state, action]
         new_q_value = (1 - alpha) * current_q_value + alpha * \
                       (env.reward + gamma * q_table[new_state, best_future_action])
-        
+
         q_table[state, action] = new_q_value
-        
+
         if done:
             break
         state = new_state
-    
+
     # 减小随机性
     epsilon *= 0.99
-    
+
 print("Learning complete!")
 ```
 

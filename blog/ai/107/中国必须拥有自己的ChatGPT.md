@@ -288,4 +288,4 @@ ChatGPT的应用场景非常广泛，未来将会在以下几个领域得到更�
 * **模型训练效率：** 中国在硬件和软件技术方面都具有优势，可以提高模型训练效率。
 * **应用场景：** 中国拥有广阔的市场，可以为ChatGPT的应用提供更多场景。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

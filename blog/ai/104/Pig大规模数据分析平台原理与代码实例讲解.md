@@ -6,7 +6,7 @@
 
 在大数据时代,海量的结构化和非结构化数据不断产生和积累。传统的数据处理方式已经无法满足大规模数据分析的需求。如何高效、便捷地处理和分析大规模数据集成为当前企业和组织面临的重大挑战。
 
-### 1.2 研究现状  
+### 1.2 研究现状
 
 Apache Pig作为一种高级数据流语言,为大规模数据分析提供了一种简单、高效的解决方案。Pig可以在Apache Hadoop集群上运行,利用Hadoop的HDFS和MapReduce框架进行大规模数据处理和分析。Pig的出现大大降低了大数据分析的门槛,使得数据分析师和开发人员无需直接编写复杂的MapReduce程序,就能够快速编写数据分析脚本进行大规模数据处理。
 
@@ -34,7 +34,7 @@ Pig是一种基于Hadoop的大规模数据分析平台,主要包括以下核心�
 
 这些核心概念相互关联、协同工作,共同构建了Pig大规模数据分析平台。下面将对每个概念进行详细阐述。
 
-## 3. 核心算法原理 & 具体操作步骤  
+## 3. 核心算法原理 & 具体操作步骤
 
 ### 3.1 算法原理概述
 
@@ -71,7 +71,7 @@ Pig的核心算法原理可以概括为以下几个方面:
 
    物理计划生成器将优化后的逻辑计划转换为一个或多个MapReduce任务的物理计划。每个MapReduce任务包含Map端和Reduce端的具体实现。
 
-4. **MapReduce执行**  
+4. **MapReduce执行**
 
    Pig将生成的物理计划提交到Hadoop集群上执行。MapReduce任务在集群上并行处理输入数据,生成中间结果。
 
@@ -148,7 +148,7 @@ Pig支持标准的关系代数操作,如:
 Map阶段:
 
 $$\begin{align*}
-map(k_1, v_1) &\rightarrow \langle\text{word}, 1\rangle \\
+map(k_1, v_1) &\rightarrow \langle\text{word}, 1\rangle \
                &\rightarrow list(\langle\text{word}_1, 1\rangle, \langle\text{word}_2, 1\rangle, ...)
 \end{align*}$$
 
@@ -157,7 +157,7 @@ map(k_1, v_1) &\rightarrow \langle\text{word}, 1\rangle \\
 Reduce阶段:
 
 $$\begin{align*}
-reduce(\text{word}, \langle1, 1, ..., 1\rangle) &\rightarrow \langle\text{word}, \sum{count}\rangle \\
+reduce(\text{word}, \langle1, 1, ..., 1\rangle) &\rightarrow \langle\text{word}, \sum{count}\rangle \
                                    &\rightarrow list(\langle\text{word}_1, count_1\rangle, \langle\text{word}_2, count_2\rangle, ...)
 \end{align*}$$
 
@@ -167,7 +167,7 @@ $$Output = \bigcup_{word}\langle\text{word}, count\rangle$$
 
 通过这种数学模型,我们可以清晰地描述和推导MapReduce作业的执行过程。
 
-### 4.3 案例分析与讲解  
+### 4.3 案例分析与讲解
 
 下面以一个网页点击流日志分析的案例,说明如何使用Pig Latin进行数据处理:
 

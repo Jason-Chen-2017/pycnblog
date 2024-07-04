@@ -45,10 +45,8 @@ Adam优化器通过计算一阶矩估计（mean of the first moment，m）和二
 
 $$
 \begin{align*}
-m_t & = \beta_1 m_{t-1} + (1 - \beta_1)(\
-abla L(\theta_{t-1})) \\
-v_t & = \beta_2 v_{t-1} + (1 - \beta_2) (\
-abla L(\theta_{t-1}))^2 \\
+m_t & = \beta_1 m_{t-1} + (1 - \beta_1)(\nabla L(\theta_{t-1})) \\
+v_t & = \beta_2 v_{t-1} + (1 - \beta_2) (\nabla L(\theta_{t-1}))^2 \\
 \theta_t & = \theta_{t-1} - \frac{\alpha}{\sqrt{v_t} + \epsilon} (m_t + \epsilon)
 \end{align*}
 $$
@@ -63,8 +61,7 @@ $$
 ### 3.2 算法步骤详解
 
 1. 初始化参数：设定初始学习率 $\alpha$、动量系数 $\beta_1$ 和 $\beta_2$，以及正则化参数 $\epsilon$。
-2. 计算梯度：计算损失函数关于参数 $\theta$ 的梯度 $\
-abla L(\theta_{t-1})$。
+2. 计算梯度：计算损失函数关于参数 $\theta$ 的梯度 $\nabla L(\theta_{t-1})$。
 3. 更新一阶矩估计：根据公式 $m_t$ 更新一阶矩估计。
 4. 更新二阶矩估计：根据公式 $v_t$ 更新二阶矩估计。
 5. 更新参数：根据公式 $\theta_t$ 更新模型参数。
@@ -98,10 +95,8 @@ Adam优化器的数学模型基于以下公式：
 
 $$
 \begin{align*}
-m_t & = \beta_1 m_{t-1} + (1 - \beta_1)(\
-abla L(\theta_{t-1})) \\
-v_t & = \beta_2 v_{t-1} + (1 - \beta_2) (\
-abla L(\theta_{t-1}))^2 \\
+m_t & = \beta_1 m_{t-1} + (1 - \beta_1)(\nabla L(\theta_{t-1})) \\
+v_t & = \beta_2 v_{t-1} + (1 - \beta_2) (\nabla L(\theta_{t-1}))^2 \\
 \theta_t & = \theta_{t-1} - \frac{\alpha}{\sqrt{v_t} + \epsilon} (m_t + \epsilon)
 \end{align*}
 $$
@@ -113,15 +108,13 @@ Adam优化器的公式推导过程如下：
 1. **一阶矩估计**：利用指数衰减技术来估计梯度的一阶矩。
 
    $$
-m_t = \beta_1 m_{t-1} + (1 - \beta_1)(\
-abla L(\theta_{t-1}))
+m_t = \beta_1 m_{t-1} + (1 - \beta_1)(\nabla L(\theta_{t-1}))
 $$
 
 2. **二阶矩估计**：利用指数衰减技术来估计梯度的二阶矩。
 
    $$
-v_t = \beta_2 v_{t-1} + (1 - \beta_2) (\
-abla L(\theta_{t-1}))^2
+v_t = \beta_2 v_{t-1} + (1 - \beta_2) (\nabla L(\theta_{t-1}))^2
 $$
 
 3. **参数更新**：根据一阶矩估计和二阶矩估计来更新参数。

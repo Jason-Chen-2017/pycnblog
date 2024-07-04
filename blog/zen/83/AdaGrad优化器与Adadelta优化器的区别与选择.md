@@ -58,8 +58,8 @@ Adadelta优化器的算法原理可以概括为以下公式：
 
 $$
 \begin{align*}
-\theta_{t+1} &= \theta_t - \frac{\rho \Delta_t}{\sqrt{E_t + \epsilon}} \\
-\Delta_{t+1} &= \rho \Delta_t + (1 - \rho) (\frac{\partial L}{\partial \theta_t} - \Delta_t) \\
+\theta_{t+1} &= \theta_t - \frac{\rho \Delta_t}{\sqrt{E_t + \epsilon}} \
+\Delta_{t+1} &= \rho \Delta_t + (1 - \rho) (\frac{\partial L}{\partial \theta_t} - \Delta_t) \
 E_{t+1} &= \rho E_t + (1 - \rho) \frac{\partial L}{\partial \theta_t}^2
 \end{align*}
 $$
@@ -137,8 +137,8 @@ Adadelta优化器的数学模型可以表示为：
 
 $$
 \begin{align*}
-\theta_{t+1} &= \theta_t - \frac{\rho \Delta_t}{\sqrt{E_t + \epsilon}} \\
-\Delta_{t+1} &= \rho \Delta_t + (1 - \rho) (\frac{\partial L}{\partial \theta_t} - \Delta_t) \\
+\theta_{t+1} &= \theta_t - \frac{\rho \Delta_t}{\sqrt{E_t + \epsilon}} \
+\Delta_{t+1} &= \rho \Delta_t + (1 - \rho) (\frac{\partial L}{\partial \theta_t} - \Delta_t) \
 E_{t+1} &= \rho E_t + (1 - \rho) \frac{\partial L}{\partial \theta_t}^2
 \end{align*}
 $$

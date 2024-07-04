@@ -1,7 +1,7 @@
 
 # AI 神经网络计算艺术之禅：通用智能理论
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -125,8 +125,7 @@ $$
 对损失函数求梯度，得：
 
 $$
-\
-abla_{\theta}L(\theta) = -2(y_{true} - y_{pred})\frac{\partial f}{\partial y}
+\nabla_{\theta}L(\theta) = -2(y_{true} - y_{pred})\frac{\partial f}{\partial y}
 $$
 
 ### 4.3 案例分析与讲解

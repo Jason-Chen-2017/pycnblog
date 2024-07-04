@@ -114,10 +114,10 @@ DQN是一种基于深度学习的强化学习算法，其核心思想是利用�
 ϵ-贪心算法的数学模型如下：
 
 $$
-\hat{a} = 
-\begin{cases} 
+\hat{a} =
+\begin{cases}
 a_{\text{random}} & \text{with probability } \epsilon \\
-a_{\text{greedy}} & \text{with probability } 1-\epsilon 
+a_{\text{greedy}} & \text{with probability } 1-\epsilon
 \end{cases}
 $$
 
@@ -134,10 +134,10 @@ $$
 5. 则ϵ-贪心算法的决策过程可以表示为：
 
 $$
-\hat{a} = 
-\begin{cases} 
+\hat{a} =
+\begin{cases}
 a_{\text{random}} & \text{with probability } \epsilon \\
-\text{argmax}_{a}Q(s,a) & \text{with probability } 1-\epsilon 
+\text{argmax}_{a}Q(s,a) & \text{with probability } 1-\epsilon
 \end{cases}
 $$
 

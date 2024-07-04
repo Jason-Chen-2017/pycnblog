@@ -88,9 +88,9 @@
 
 #### 示例：复变函数在黎曼曲面上的积分
 
-设$f(z)$为复变函数，$C$为黎曼曲面上的一条闭曲线，其参数化为$c(t)$，$t \\in [a, b]$。黎曼积分定义为：
+设$f(z)$为复变函数，$C$为黎曼曲面上的一条闭曲线，其参数化为$c(t)$，$t \in [a, b]$。黎曼积分定义为：
 
-$$\\int_C f(z) dz = \\int_a^b f(c(t)) c'(t) dt$$
+$$\int_C f(z) dz = \int_a^b f(c(t)) c'(t) dt$$
 
 ### 4.3 案例分析与讲解
 
@@ -98,7 +98,7 @@ $$\\int_C f(z) dz = \\int_a^b f(c(t)) c'(t) dt$$
 
 考虑黎曼曲面上的调和函数$h(z)$，其满足Laplace方程：
 
-$$\\Delta h(z) = \\frac{\\partial^2 h}{\\partial z\\partial \\bar{z}} = 0$$
+$$\Delta h(z) = \frac{\partial^2 h}{\partial z\partial \bar{z}} = 0$$
 
 通过调和映射理论，可以研究$h(z)$在不同黎曼曲面间的映射关系。
 
@@ -127,17 +127,17 @@ $$\\Delta h(z) = \\frac{\\partial^2 h}{\\partial z\\partial \\bar{z}} = 0$$
 import numpy as np
 
 def laplace_operator(h, z, dz):
-    \"\"\"
+    """
     计算Laplace算子的近似值。
-    \"\"\"
+    """
     delta_h = (h(z + dz) - h(z)) / dz
     delta_h_bar = (h(np.conj(z + dz)) - h(np.conj(z))) / dz
     return delta_h * delta_h_bar
 
 def check_harmonicity(h, z, dz):
-    \"\"\"
+    """
     检查函数是否满足Laplace方程。
-    \"\"\"
+    """
     if np.allclose(laplace_operator(h, z, dz), 0):
         return True
     else:
@@ -153,7 +153,7 @@ dz = 0.01
 
 # 检查函数的谐和性
 is_harmonic = check_harmonicity(example_function, z, dz)
-print(f\"The function is harmonic: {is_harmonic}\")
+print(f"The function is harmonic: {is_harmonic}")
 ```
 
 ### 5.3 代码解读与分析

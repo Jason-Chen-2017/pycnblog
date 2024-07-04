@@ -98,9 +98,9 @@
 考虑一个有限齐次Markov链，状态空间为{1, 2, ..., n}，转移概率矩阵为：
 
 $$ P = \begin{bmatrix}
-p_{11} & p_{12} & \cdots & p_{1n} \\
-p_{21} & p_{22} & \cdots & p_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
+p_{11} & p_{12} & \cdots & p_{1n} \
+p_{21} & p_{22} & \cdots & p_{2n} \
+\vdots & \vdots & \ddots & \vdots \
 p_{n1} & p_{n2} & \cdots & p_{nn}
 \end{bmatrix} $$
 
@@ -139,8 +139,8 @@ $$ \sum_{i=1}^{n} \pi_i = 1 $$
 构建转移矩阵P：
 
 $$ P = \begin{bmatrix}
-0.6 & 0.3 & 0.1 \\
-0.4 & 0.4 & 0.2 \\
+0.6 & 0.3 & 0.1 \
+0.4 & 0.4 & 0.2 \
 0.5 & 0.3 & 0.2
 \end{bmatrix} $$
 
@@ -195,13 +195,13 @@ def analyze_markov_chain(P, initial_state=None):
     max_eigenvalue = np.max(np.abs(eigenvalues))
     max_eigenvector = eigenvectors[:, np.argmax(np.abs(eigenvalues))]
     stationary_distribution = compute_stationary_distribution(P)
-    
+
     print("特征值:", eigenvalues)
     print("特征向量:", eigenvectors)
     print("最大特征值:", max_eigenvalue)
     print("最大特征向量:", max_eigenvector)
     print("平稳分布:", stationary_distribution)
-    
+
     return eigenvalues, eigenvectors, max_eigenvalue, max_eigenvector, stationary_distribution
 
 # 示例：网站链接分析

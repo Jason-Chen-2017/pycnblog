@@ -73,7 +73,7 @@ ChatGPT的核心算法基于自回归语言模型，通过注意力机制来预�
 
 设输入为对话历史序列$\mathbf{X} = (x_1, x_2, ..., x_T)$，目标生成的文本为$\mathbf{Y} = (y_1, y_2, ..., y_M)$。模型的目标是学习从输入序列到输出序列的映射$f(\mathbf{X}) = \mathbf{Y}$。在深度学习框架中，模型通常采用概率分布形式表示：
 
-\[P(\mathbf{Y}|\mathbf{X}; \theta) = \prod_{t=1}^{M} p(y_t|\mathbf{X}, \mathbf{Y}_{<t}; \theta)\]
+$$P(\mathbf{Y}|\mathbf{X}; \theta) = \prod_{t=1}^{M} p(y_t|\mathbf{X}, \mathbf{Y}_{<t}; \theta)$$
 
 其中$\theta$是模型参数，$p(y_t|\mathbf{X}, \mathbf{Y}_{<t}; \theta)$表示在给定历史对话和当前生成文本的基础上预测下一个词的概率分布。
 

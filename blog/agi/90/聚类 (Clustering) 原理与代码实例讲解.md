@@ -229,21 +229,21 @@ import numpy as np
 def k_means(X, k, max_iter=100):
     # 随机初始化簇中心
     centroids = X[np.random.choice(X.shape[0], k, replace=False)]
-    
+
     for _ in range(max_iter):
         # 计算每个数据点到簇中心的距离，并分配簇
         distances = np.linalg.norm(X[:, np.newaxis] - centroids, axis=2)
         labels = np.argmin(distances, axis=1)
-        
+
         # 计算新的簇中心
         new_centroids = np.array([X[labels == j].mean(axis=0) for j in range(k)])
-        
+
         # 判断簇中心是否发生变化，如果变化较小，则停止迭代
         if np.linalg.norm(new_centroids - centroids) < 1e-6:
             break
-        
+
         centroids = new_centroids
-    
+
     return centroids, labels
 
 # 示例数据
@@ -295,7 +295,7 @@ A：层次聚类和DBSCAN算法适用于各种类型的数据集，包括高维�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n clustering-env python=3.8 
+conda create -n clustering-env python=3.8
 conda activate clustering-env
 ```
 
@@ -316,21 +316,21 @@ import numpy as np
 def k_means(X, k, max_iter=100):
     # 随机初始化簇中心
     centroids = X[np.random.choice(X.shape[0], k, replace=False)]
-    
+
     for _ in range(max_iter):
         # 计算每个数据点到簇中心的距离，并分配簇
         distances = np.linalg.norm(X[:, np.newaxis] - centroids, axis=2)
         labels = np.argmin(distances, axis=1)
-        
+
         # 计算新的簇中心
         new_centroids = np.array([X[labels == j].mean(axis=0) for j in range(k)])
-        
+
         # 判断簇中心是否发生变化，如果变化较小，则停止迭代
         if np.linalg.norm(new_centroids - centroids) < 1e-6:
             break
-        
+
         centroids = new_centroids
-    
+
     return centroids, labels
 
 # 示例数据

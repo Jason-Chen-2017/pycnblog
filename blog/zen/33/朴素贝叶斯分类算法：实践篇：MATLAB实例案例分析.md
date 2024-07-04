@@ -1,4 +1,4 @@
-                 
+
 # 朴素贝叶斯分类算法：实践篇：MATLAB实例案例分析
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -140,26 +140,26 @@ graph TD;
 function predict = naiveBayesClassifier(trainData, trainLabels, testData)
     % 训练数据准备
     [numFeatures, numTrainSamples] = size(trainData);
-    
+
     % 参数初始化
     priorProb = zeros(1,numClasses);
     classConditionalProb = cell(numClasses, numFeatures);
-    
+
     % 先验概率计算
     for i = 1:numClasses
         indices = strcmp(trainLabels, str(i));
         priorProb(i) = sum(indices)/numTrainSamples;
-        
+
         if ~isempty(classConditionalProb{i})
             classConditionalProb{i}(:,trainLabels==str(i)) = classConditionalProb{i}(:,trainLabels==str(i))+trainData(:,indices);
         else
             classConditionalProb{i} = trainData(:,indices);
         end
     end
-    
+
     % 特征归一化（可选）
     % classConditionalProb{i} = normalize(classConditionalProb{i}, 'norm', inf);
-    
+
     % 预测
     predictions = zeros(size(testData,2), 1);
     for i = 1:size(testData,2)
@@ -171,7 +171,7 @@ function predict = naiveBayesClassifier(trainData, trainLabels, testData)
         [~, predictedClass] = max(logPosteriorProb);
         predictions(i) = predictedClass;
     end
-    
+
     predict = predictions;
 end
 ```

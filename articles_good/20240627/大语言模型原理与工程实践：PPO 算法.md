@@ -74,9 +74,7 @@ PPO算法的具体步骤如下：
 3. 对智能体进行仿真，收集数据集 $D=\{(s,a,r,s')\}_{i=1}^N$。
 4. 计算目标值函数 $J(\theta,\phi) = \mathbb{E}_{\pi(\cdot|\theta)}[R_t]$。
 5. 使用重要性采样，计算重要性权重 $\alpha_i$。
-6. 计算梯度 $\
-abla_{\theta}J(\theta,\phi)$ 和 $\
-abla_{\phi}J(\theta,\phi)$。
+6. 计算梯度 $\nabla_{\theta}J(\theta,\phi)$ 和 $\nabla_{\phi}J(\theta,\phi)$。
 7. 使用近端策略优化方法更新策略参数 $\theta$ 和优势函数参数 $\phi$。
 8. 重复步骤 2-7，直到达到预设的迭代次数。
 

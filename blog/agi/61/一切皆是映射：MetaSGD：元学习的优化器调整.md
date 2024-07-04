@@ -111,7 +111,7 @@ Meta-SGD方法在以下领域有着广泛的应用：
 我们可以将Meta-SGD方法的目标函数定义为：
 
 $$
-L(\theta) = \mathbb{E}_{\mathcal{D}}[L(f(x; \theta), y)] 
+L(\theta) = \mathbb{E}_{\mathcal{D}}[L(f(x; \theta), y)]
 $$
 
 其中 $ \mathcal{D} $ 为元学习任务上的数据分布，$ L(f(x; \theta), y) $ 为损失函数。
@@ -123,7 +123,7 @@ $$
 假设MAML的优化器为 $ \mathcal{O}(\theta) = \mathcal{O}_{\text{MAML}} $，则Meta-SGD的目标函数可以表示为：
 
 $$
-L(\theta) = \mathbb{E}_{\mathcal{D}}\left[ \mathbb{E}_{\mathbf{x}', y'}\left[ L\left(f(x'; \theta), y'\right) \right] \right] 
+L(\theta) = \mathbb{E}_{\mathcal{D}}\left[ \mathbb{E}_{\mathbf{x}', y'}\left[ L\left(f(x'; \theta), y'\right) \right] \right]
 $$
 
 其中 $ \mathbf{x}' $ 和 $ y' $ 为新任务上的样本。
@@ -131,8 +131,7 @@ $$
 为了最小化目标函数 $ L(\theta) $，我们对 $ \theta $ 进行梯度下降：
 
 $$
-\theta \leftarrow \theta - \eta \
-abla_{\theta} L(\theta) 
+\theta \leftarrow \theta - \eta \nabla_{\theta} L(\theta)
 $$
 
 其中 $ \eta $ 为学习率。
@@ -205,7 +204,7 @@ class MAML(nn.Module):
         super(MAML, self).__init__()
         self.fc1 = nn.Linear(4, 64)
         self.fc2 = nn.Linear(64, 1)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         return self.fc2(x)
@@ -252,7 +251,7 @@ class MetaSGD(Optimizer):
         super().__init__(params)
         self.lr = lr
         self.meta_lr = meta_lr
-    
+
     def step(self):
         for group in self.param_groups:
             for p in group['params']:
@@ -274,15 +273,15 @@ def meta_sgd_train_and_evaluate():
     # 创建环境
     env = gym.make('CartPole-v1')
     vec_env = DummyVecEnv([lambda: env])
-    
+
     # 创建MAML模型
     maml = MAML()
     optimizer = MetaSGD(maml.parameters(), lr=1e-3, meta_lr=1e-2)
-    
+
     # 训练MAML模型
     for epoch in range(10):
         meta_sgd_train(maml, optimizer, meta_lr=1e-2, task=vec_env, episodes=10, num_steps=50)
-    
+
     # 评估MAML模型
     obs = env.reset()
     total_reward = 0
@@ -292,7 +291,7 @@ def meta_sgd_train_and_evaluate():
         total_reward += reward
         if done:
             break
-    
+
     print(f"Total reward: {total_reward}")
     env.close()
 

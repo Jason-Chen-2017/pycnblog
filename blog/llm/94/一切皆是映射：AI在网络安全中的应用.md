@@ -149,9 +149,9 @@ AI在网络安全中的应用领域包括：
 假设网络流量数据可以表示为一个向量 $\mathbf{x} \in \mathbb{R}^n$，其中 $n$ 是特征数量。机器学习模型的目标是学习一个函数 $f: \mathbb{R}^n \rightarrow \{0, 1\}$，用于判断输入数据是否为异常行为。
 
 $$
-f(\mathbf{x}) = \begin{cases} 
+f(\mathbf{x}) = \begin{cases}
 1 & \text{如果 } \mathbf{x} \text{ 表示异常行为} \\
-0 & \text{如果 } \mathbf{x} \text{ 表示正常行为} 
+0 & \text{如果 } \mathbf{x} \text{ 表示正常行为}
 \end{cases}
 $$
 

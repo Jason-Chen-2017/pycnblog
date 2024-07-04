@@ -1,7 +1,7 @@
 
 # 一切皆是映射：增强现实(AR)中的AI驱动技术
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 > 关键词：增强现实(AR)，人工智能(AI)，计算机视觉，深度学习，SLAM，目标检测，图像识别，映射，融合
 
@@ -342,25 +342,25 @@ $$
 假设从帧0到帧1的变换矩阵为：
 
 $$
-T_{0\rightarrow1} = \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 1 \\ 0 & 0 & 0 & 1 \end{bmatrix}
+T_{0\rightarrow1} = \begin{bmatrix} 1 & 0 & 0 & 0 \ 0 & 1 & 0 & 0 \ 0 & 0 & 1 & 1 \ 0 & 0 & 0 & 1 \end{bmatrix}
 $$
 
 从帧0到初始帧的变换矩阵为：
 
 $$
-T_{0\rightarrow0} = \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}
+T_{0\rightarrow0} = \begin{bmatrix} 1 & 0 & 0 & 0 \ 0 & 1 & 0 & 0 \ 0 & 0 & 1 & 0 \ 0 & 0 & 0 & 1 \end{bmatrix}
 $$
 
 从帧1到初始帧的变换矩阵为：
 
 $$
-T_{1\rightarrow0} = \begin{bmatrix} 1 & 0 & 0 & 1 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}
+T_{1\rightarrow0} = \begin{bmatrix} 1 & 0 & 0 & 1 \ 0 & 1 & 0 & 0 \ 0 & 0 & 1 & 0 \ 0 & 0 & 0 & 1 \end{bmatrix}
 $$
 
 则有：
 
 $$
-T_{0\rightarrow1} = T_{0\rightarrow0}^{-1}T_{1\rightarrow0} = \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 1 \\ 0 & 0 & 0 & 1 \end{bmatrix}
+T_{0\rightarrow1} = T_{0\rightarrow0}^{-1}T_{1\rightarrow0} = \begin{bmatrix} 1 & 0 & 0 & 0 \ 0 & 1 & 0 & 0 \ 0 & 0 & 1 & 1 \ 0 & 0 & 0 & 1 \end{bmatrix}
 $$
 
 #### 4.3.2 目标检测与识别
@@ -444,7 +444,7 @@ A：姿态估计与跟踪技术可以应用于以下领域：
 2. 创建并激活虚拟环境：
 
 ```bash
-conda create -n ar-env python=3.8 
+conda create -n ar-env python=3.8
 conda activate ar-env
 ```
 

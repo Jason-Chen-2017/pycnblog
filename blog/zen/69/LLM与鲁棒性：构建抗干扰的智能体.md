@@ -8,7 +8,7 @@
 #### 1.1.2 Transformer的出现
 #### 1.1.3 预训练语言模型的崛起
 
-### 1.2 LLM面临的鲁棒性挑战  
+### 1.2 LLM面临的鲁棒性挑战
 #### 1.2.1 对抗性攻击
 #### 1.2.2 数据偏差和分布外泛化
 #### 1.2.3 可解释性和可控性不足
@@ -31,7 +31,7 @@
 
 ### 2.3 LLM鲁棒性评估
 #### 2.3.1 对抗性攻击下的性能评估
-#### 2.3.2 分布外数据上的泛化能力评估 
+#### 2.3.2 分布外数据上的泛化能力评估
 #### 2.3.3 可解释性和可控性评估
 
 ## 3. 核心算法原理具体操作步骤
@@ -69,7 +69,7 @@ $$ X_i := f_i(PA_i,U_i), i=1,\dots,n $$
 $$ P(Y|do(X=x)) = \sum_{z}P(Y|X=x,Z=z)P(Z=z) $$
 其中$do(X=x)$表示干预$X$为$x$，$Z$为协变量集合。
 
-### 4.3 主动学习的数学模型 
+### 4.3 主动学习的数学模型
 #### 4.3.1 不确定性采样
 $$ x^* = \arg\max_{x} H(y|x,\mathcal{D}) $$
 其中$H(y|x,\mathcal{D})$为给定数据集$\mathcal{D}$下样本$x$的标签不确定性。
@@ -90,7 +90,7 @@ def adv_loss(model, x, y, criterion, eps):
         loss.backward()
         delta.data = (delta + eps*delta.grad.sign()).clamp(-eps, eps)
         delta.grad.zero_()
-    
+
     # 对抗训练
     adv_loss = criterion(model(x+delta), y)
     return adv_loss

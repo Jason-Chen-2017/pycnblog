@@ -190,7 +190,7 @@ def louvain(G):
         for c in communities.values():
             d_sum = sum([G.degree(i) for i in c])
             Q += d_sum * (d_sum - 1) / 2 - sum([G.degree(i) * G.degree(i) for i in c])
-        
+
         best_communities = {}
         for i in G.nodes():
             max_Q = 0
@@ -202,10 +202,10 @@ def louvain(G):
                     max_Q = delta_Q
                     best_c = c
             best_communities[i] = best_c
-        
+
         if max_Q <= 0:
             break
-        
+
         communities = best_communities
 
     return communities

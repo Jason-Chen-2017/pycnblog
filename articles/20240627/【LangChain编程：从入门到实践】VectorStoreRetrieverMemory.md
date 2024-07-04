@@ -209,8 +209,7 @@ $$
 记忆更新的公式如下：
 
 $$
-\Delta \theta = \eta \
-abla_{\theta} J(\theta)
+\Delta \theta = \eta \nabla_{\theta} J(\theta)
 $$
 
 其中 $\eta$ 为学习率，$J(\theta)$ 为损失函数。

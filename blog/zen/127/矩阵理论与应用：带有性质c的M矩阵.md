@@ -1,6 +1,6 @@
 # 矩阵理论与应用：带有“性质c”的M-矩阵
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -119,9 +119,9 @@ M-矩阵，也称为非负矩阵，是指满足以下条件的方阵：
 
 $$
 A = \begin{bmatrix}
-a_{11} & a_{12} & \cdots & a_{1n} \\
-a_{21} & a_{22} & \cdots & a_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
+a_{11} & a_{12} & \cdots & a_{1n} \
+a_{21} & a_{22} & \cdots & a_{2n} \
+\vdots & \vdots & \ddots & \vdots \
 a_{n1} & a_{n2} & \cdots & a_{nn}
 \end{bmatrix}
 $$
@@ -149,8 +149,8 @@ $$
 **例题：**
 
 设 $A = \begin{bmatrix}
-2 & -1 & 0 \\
--1 & 2 & -1 \\
+2 & -1 & 0 \
+-1 & 2 & -1 \
 0 & -1 & 2
 \end{bmatrix}$，判断 $A$ 是否为带有“性质c”的M-矩阵，其中“性质c”的约束条件为 $a_{ij} + a_{ji} \le 0$。
 

@@ -1,4 +1,4 @@
-                 
+
 # 马尔可夫决策过程中的DuelingDQN
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -154,7 +154,7 @@ import gym
 class DuelingDQN(nn.Module):
     def __init__(self, state_size, action_size):
         super(DuelingDQN, self).__init__()
-        
+
         # 初始化Q网络参数
         self.fc1 = nn.Linear(state_size, 64)
         self.advantage = nn.Sequential(
@@ -179,15 +179,15 @@ def train_dueling_dqn(env_name, num_episodes=1000):
 
     state_size = env.observation_space.shape[0]
     action_size = env.action_space.n
-    
+
     agent = DuelingDQN(state_size, action_size)
     optimizer = optim.Adam(agent.parameters(), lr=0.001)
-    
+
     for episode in range(num_episodes):
         state = env.reset()
         done = False
         total_reward = 0
-        
+
         while not done:
             # 根据当前状态选择动作
             state_tensor = torch.tensor(state).float().unsqueeze(0)
@@ -195,24 +195,24 @@ def train_dueling_dqn(env_name, num_episodes=1000):
             probabilities = torch.softmax(q_values, dim=-1)
             m = Categorical(probabilities)
             action = m.sample().item()
-            
+
             next_state, reward, done, _ = env.step(action)
-            
+
             if done and reward != 0:  # 非零奖励的情况表示游戏结束
                 reward = reward
-            
+
             total_reward += reward
-            
+
             # 更新Q函数
             target_q = reward + 0.99 * max(agent(torch.tensor(next_state).float())) if not done else reward
             loss = nn.MSELoss()(q_values[action], target_q.unsqueeze(0))
-            
+
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-            
+
             state = next_state
-    
+
     print(f"Training complete after {episode+1} episodes.")
     return agent
 
@@ -247,7 +247,7 @@ DuelingDQN在实际中广泛应用于以下领域：
 
 - **在线课程**：
   - [强化学习](https://www.coursera.org/specializations/reinforcement-learning) on Coursera by David Silver from DeepMind.
-  
+
 - **书籍**：
   - "Reinforcement Learning: An Introduction" by Richard S. Sutton and Andrew G. Barto.
 

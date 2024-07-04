@@ -39,8 +39,7 @@ Laplace-Beltrami算子对于理解和处理流形上的几何问题具有重要�
 Laplace-Beltrami算子是一个定义在流形上的二阶偏微分算子。它可以通过以下方式定义：
 
 $$
-\Delta f = \
-abla^2 f = \sum_{i=1}^n \frac{\partial^2 f}{\partial x_i^2}
+\Delta f = \nabla^2 f = \sum_{i=1}^n \frac{\partial^2 f}{\partial x_i^2}
 $$
 
 其中，$f$ 是流形上的标量函数，$x_i$ 是流形上的坐标。
@@ -113,14 +112,13 @@ $$
 接着，计算梯度：
 
 $$
-\
-abla f = \begin{bmatrix} 2x \\ 2y \end{bmatrix}
+\nabla f = \begin{bmatrix} 2x \ 2y \end{bmatrix}
 $$
 
 最后，计算Hessian矩阵：
 
 $$
-H(f) = \begin{bmatrix} \frac{\partial^2 f}{\partial x^2} & \frac{\partial^2 f}{\partial x \partial y} \\ \frac{\partial^2 f}{\partial y \partial x} & \frac{\partial^2 f}{\partial y^2} \end{bmatrix} = \begin{bmatrix} 2 & 0 \\ 0 & 2 \end{bmatrix}
+H(f) = \begin{bmatrix} \frac{\partial^2 f}{\partial x^2} & \frac{\partial^2 f}{\partial x \partial y} \ \frac{\partial^2 f}{\partial y \partial x} & \frac{\partial^2 f}{\partial y^2} \end{bmatrix} = \begin{bmatrix} 2 & 0 \ 0 & 2 \end{bmatrix}
 $$
 
 因此，Laplace-Beltrami算子为：
@@ -164,16 +162,16 @@ def laplace_beltrami_operator(x, y, f):
   df_dx = np.gradient(f, x)
   df_dy = np.gradient(f, y)
   grad_f = np.column_stack((df_dx, df_dy))
-  
+
   # 计算Hessian矩阵
   hess_f = np.array([df_dx**2, 2 * df_dx * df_dy, df_dy**2])
-  
+
   # 计算特征值和特征向量
   eigenvalues, eigenvectors = eigh(hess_f)
-  
+
   # 计算Laplace-Beltrami算子
   lb = -np.sum(eigenvalues)
-  
+
   return lb
 
 # 测试代码

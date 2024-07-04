@@ -135,27 +135,27 @@ from scipy.sparse import csgraph
 def spectral_clustering(adj_matrix, n_clusters=2):
     """
     谱聚类算法
-    
+
     参数:
     adj_matrix: 邻接矩阵
     n_clusters: 聚类数目
-    
+
     返回:
     labels: 节点的簇标签
     """
     # 计算拉普拉斯矩阵
     deg_matrix = np.diag(np.sum(adj_matrix, axis=1))
     lap_matrix = deg_matrix - adj_matrix
-    
+
     # 计算前n_clusters个最小非零特征值对应的特征向量
     eigenvalues, eigenvectors = np.linalg.eigh(lap_matrix)
     sorted_indices = np.argsort(eigenvalues)[1:n_clusters+1]
     embedding = eigenvectors[:, sorted_indices]
-    
+
     # 在嵌入空间中使用K-Means聚类
     kmeans = KMeans(n_clusters=n_clusters)
     labels = kmeans.fit_predict(embedding)
-    
+
     return labels
 ```
 

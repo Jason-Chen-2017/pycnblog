@@ -108,7 +108,7 @@
 
 $$
 \begin{aligned}
-\mathbf{h}_t &= \text{Encoder}(\mathbf{x}_t, \mathbf{h}_{t-1}) \\
+\mathbf{h}_t &= \text{Encoder}(\mathbf{x}_t, \mathbf{h}_{t-1}) \
 \mathbf{y}_t &= \text{Decoder}(\mathbf{h}_T, \mathbf{y}_{t-1})
 \end{aligned}
 $$
@@ -413,4 +413,4 @@ def translate(sentence):
 * **阅读相关论文:**  阅读机器翻译领域的最新研究成果。
 * **参与开源项目:**  参与机器翻译相关的开源项目，积累实践经验。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

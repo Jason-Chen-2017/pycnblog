@@ -186,10 +186,8 @@ $$
 梯度下降法是一种优化算法，用于求解最小化目标函数的参数。其原理如下：
 
 1. 初始化参数 $\theta$。
-2. 计算目标函数关于参数 $\theta$ 的梯度 $\
-abla_{\theta}J(\theta)$。
-3. 更新参数 $\theta$：$\theta \leftarrow \theta - \alpha \
-abla_{\theta}J(\theta)$，其中 $\alpha$ 为学习率。
+2. 计算目标函数关于参数 $\theta$ 的梯度 $\nabla_{\theta}J(\theta)$。
+3. 更新参数 $\theta$：$\theta \leftarrow \theta - \alpha \nabla_{\theta}J(\theta)$，其中 $\alpha$ 为学习率。
 
 #### 4.1.2 正则化
 

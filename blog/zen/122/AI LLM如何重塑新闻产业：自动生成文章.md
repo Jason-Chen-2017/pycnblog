@@ -1,6 +1,6 @@
 # AI LLM如何重塑新闻产业：自动生成文章
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -291,4 +291,4 @@ AI LLM在新闻产业的应用仍处于早期阶段，未来还有很多研究�
 * **Q: LLM新闻生成模型会传播偏见吗？**
     * A: LLM新闻生成模型可能会传播偏见，需要使用平衡的数据集来训练模型，并使用人工干预来避免模型学习到偏见。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

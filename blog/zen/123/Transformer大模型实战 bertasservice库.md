@@ -138,8 +138,8 @@ Transformer 模型的核心公式是自注意力机制，其计算过程如下�
 
 $$
 \begin{aligned}
-Q &= XW_Q \\
-K &= XW_K \\
+Q &= XW_Q \
+K &= XW_K \
 V &= XW_V
 \end{aligned}
 $$
@@ -338,4 +338,4 @@ print(embeddings.shape)
 - 减少服务端的 worker 数量。
 - 使用量化技术压缩模型。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

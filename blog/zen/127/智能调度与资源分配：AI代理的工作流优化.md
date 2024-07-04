@@ -539,4 +539,4 @@ Task 3 assigned to resource 2 with finish time 8.0
 
 * **A:** 面临的挑战包括数据质量、模型可解释性、系统安全等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

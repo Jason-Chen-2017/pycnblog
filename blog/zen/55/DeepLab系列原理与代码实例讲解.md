@@ -16,7 +16,7 @@ DeepLab系列模型在多个公开数据集如PASCAL VOC、Cityscapes等上取�
 ### 2.1 全卷积网络(Fully Convolutional Network, FCN)
 FCN是语义分割的开山之作,将分类网络改造为全卷积形式,实现端到端、像素到像素的密集预测。DeepLab系列模型都是基于FCN架构。
 
-### 2.2 空洞卷积(Atrous/Dilated Convolution) 
+### 2.2 空洞卷积(Atrous/Dilated Convolution)
 空洞卷积通过在卷积核内插入"洞",扩大感受野而不增加参数量和计算量。DeepLab利用空洞卷积提取多尺度上下文信息。
 
 ### 2.3 空间金字塔池化(Spatial Pyramid Pooling, SPP)
@@ -37,7 +37,7 @@ CRF通过建模像素间的关系进行后处理优化,平滑分割结果,提高
 
 ### 3.2 DeepLabv2
 1. 使用ResNet作为主干网络
-2. 在主干网络末端并行使用不同采样率的空洞卷积(ASPP) 
+2. 在主干网络末端并行使用不同采样率的空洞卷积(ASPP)
 3. 使用CRF后处理优化分割结果
 
 ### 3.3 DeepLabv3
@@ -123,7 +123,7 @@ class ASPP(nn.Module):
             nn.BatchNorm2d(out_channels),
             nn.ReLU(inplace=True)
         )
-        
+
     def forward(self, x):
         res = []
         for conv in self.convs:
@@ -143,7 +143,7 @@ class DeepLabV3Plus(nn.Module):
             nn.ReLU(inplace=True),
             nn.Conv2d(256, num_classes, kernel_size=1)
         )
-        
+
     def forward(self, x):
         h, w = x.shape[2:]
         low_level_features, x = self.backbone(x)
@@ -199,14 +199,14 @@ DeepLab系列模型在语义分割领域取得了巨大成功,但仍然存在一
 ## 9. 附录：常见问题与解答
 
 ### 9.1 Q: DeepLab系列的优缺点是什么?
-A: 
+A:
 优点:
 - 引入空洞卷积,扩大感受野,提取多尺度信息
 - 使用ASPP模块,融合不同感受野的特征
 - 使用CRF后处理,优化分割边界
 - 准确率高,多次刷新SOTA
 
-缺点:  
+缺点:
 - 计算量大,推理速度慢
 - 对小目标和不规则物体分割效果欠佳
 - 需要预训练骨干网络,训练周期长

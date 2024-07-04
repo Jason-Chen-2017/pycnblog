@@ -16,7 +16,7 @@ BYOL(Bootstrap Your Own Latent)是DeepMind在2020年提出的一种自监督表�
 
 BYOL采用了Siamese Network的架构,即使用两个编码器(online encoder和target encoder)分别对同一幅图像的两个随机增强版本进行特征提取。其中online encoder的参数是可训练的,而target encoder的参数是online encoder的指数移动平均(EMA)。
 
-### 2.2 Predictor 
+### 2.2 Predictor
 
 BYOL引入了一个随机初始化的MLP预测器(predictor)。该预测器接收online encoder的输出,并预测target encoder的输出。通过最小化预测值和target encoder输出的均方误差(MSE),可以使online encoder学习到与target encoder一致的特征表示。
 
@@ -106,7 +106,7 @@ class Encoder(nn.Module):
         resnet = torchvision.models.resnet50(pretrained=False)
         self.encoder = nn.Sequential(*list(resnet.children())[:-1])
         self.projector = nn.Sequential(nn.Linear(2048, 4096), nn.BatchNorm1d(4096), nn.ReLU(), nn.Linear(4096, 256))
-        
+
     def forward(self, x):
         x = self.encoder(x)
         x = torch.flatten(x, 1)
@@ -118,42 +118,42 @@ class Predictor(nn.Module):
     def __init__(self):
         super().__init__()
         self.predictor = nn.Sequential(nn.Linear(256, 4096), nn.BatchNorm1d(4096), nn.ReLU(), nn.Linear(4096, 256))
-        
+
     def forward(self, x):
         x = self.predictor(x)
         return x
 
-# 定义BYOL模型  
+# 定义BYOL模型
 class BYOL(nn.Module):
     def __init__(self):
         super().__init__()
         self.online_encoder = Encoder()
         self.target_encoder = Encoder()
         self.predictor = Predictor()
-        
+
         # 初始化target encoder
         for param_o, param_t in zip(self.online_encoder.parameters(), self.target_encoder.parameters()):
             param_t.data.copy_(param_o.data)
             param_t.requires_grad = False
-            
+
     def forward(self, v1, v2):
         # 计算online encoder的输出
         y1 = self.online_encoder(v1)
         y2 = self.online_encoder(v2)
-        
+
         # 计算target encoder的输出
         with torch.no_grad():
             t1 = self.target_encoder(v1)
             t2 = self.target_encoder(v2)
-        
+
         # 计算predictor的输出
         p1 = self.predictor(y1)
         p2 = self.predictor(y2)
-        
+
         # 计算损失
-        loss = 2 - 2 * (F.cosine_similarity(p1, t2.detach(), dim=-1).mean() + 
+        loss = 2 - 2 * (F.cosine_similarity(p1, t2.detach(), dim=-1).mean() +
                         F.cosine_similarity(p2, t1.detach(), dim=-1).mean())
-        
+
         return loss
 
 # 定义图像增强
@@ -168,21 +168,21 @@ augmentation = transforms.Compose([
 # 训练BYOL
 def train_byol(model, dataloader, optimizer, epoch, tau=0.996):
     model.train()
-    
+
     for images, _ in dataloader:
         v1 = augmentation(images)
         v2 = augmentation(images)
-        
+
         loss = model(v1, v2)
-        
+
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-        
+
         # EMA更新target encoder
         for param_o, param_t in zip(model.online_encoder.parameters(), model.target_encoder.parameters()):
             param_t.data = tau * param_t.data + (1 - tau) * param_o.data
-            
+
     print(f"Epoch [{epoch}]: Loss: {loss.item():.4f}")
 ```
 

@@ -84,8 +84,8 @@ SwinTransformer的数学模型主要基于以下三个关键组件：
 
 1. **自注意力机制（Self-Attention）**：
 $$
-Q = W_Q \cdot X \\
-K = W_K \cdot X \\
+Q = W_Q \cdot X \
+K = W_K \cdot X \
 V = W_V \cdot X
 $$
 $$

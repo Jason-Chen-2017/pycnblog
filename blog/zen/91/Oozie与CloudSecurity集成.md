@@ -155,7 +155,7 @@ Oozie与CloudSecurity集成涉及多个安全机制，以下为数学模型构�
 
 $$
 \text{AccessControl}(User, Resource, Permission) = \begin{cases}
-\text{allow} & \text{if } User \in \text{Group} \cap \text{Permission} \in \text{ResourcePermission}\\
+\text{allow} & \text{if } User \in \text{Group} \cap \text{Permission} \in \text{ResourcePermission}\
 \text{deny} & \text{otherwise}
 \end{cases}
 $$
@@ -166,7 +166,7 @@ $$
 
 $$
 \text{Authentication}(User, Credentials) = \begin{cases}
-\text{true} & \text{if } User \in \text{UserStore} \cap Credentials \in \text{UserCredentials}\\
+\text{true} & \text{if } User \in \text{UserStore} \cap Credentials \in \text{UserCredentials}\
 \text{false} & \text{otherwise}
 \end{cases}
 $$
@@ -207,7 +207,7 @@ $$
 
 **案例：** 某企业使用Oozie和Hadoop进行数据处理，需要保障数据安全。
 
-**分析：** 
+**分析：**
 
 1. 配置Oozie服务器访问控制策略，限制IP地址、用户名和密码等，实现访问权限控制。
 

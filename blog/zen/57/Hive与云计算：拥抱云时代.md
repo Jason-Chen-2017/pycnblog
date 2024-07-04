@@ -7,7 +7,7 @@
 #### 1.1.3 大数据技术的兴起
 
 ### 1.2 云计算的发展
-#### 1.2.1 云计算的定义与特点  
+#### 1.2.1 云计算的定义与特点
 #### 1.2.2 云计算的服务模式
 #### 1.2.3 云计算平台的发展现状
 
@@ -87,7 +87,7 @@ $Cost_{Network} = \sum_{i=1}^{n} (size(shuffle_i) + size(broadcast_i))$
 #### 4.2.1 RBO（基于规则的优化）
 Hive使用一系列启发式规则对查询进行优化，如谓词下推、列剪枝、分区剪枝等。优化后的查询执行计划可以大大减少不必要的I/O和计算开销。
 
-#### 4.2.2 CBO（基于成本的优化）  
+#### 4.2.2 CBO（基于成本的优化）
 Hive的CBO基于统计信息和成本模型，评估不同查询计划的代价，选择执行代价最小的计划。CBO需要收集表和列的统计信息，并使用动态规划算法搜索最优计划。
 
 设查询计划空间为$P$，第$i$个查询计划为$p_i$，则最优查询计划$p_{opt}$满足：
@@ -137,7 +137,7 @@ aws emr create-cluster --name "Hive Cluster" \
 ```sql
 CREATE TABLE sales(
   date STRING,
-  product STRING, 
+  product STRING,
   category STRING,
   amount DOUBLE
 )
@@ -150,7 +150,7 @@ LOAD DATA INPATH '/data/sales.csv' INTO TABLE sales;
 统计每个产品类别的销售总额，并按金额降序排列：
 
 ```sql
-SELECT category, SUM(amount) AS total_amount 
+SELECT category, SUM(amount) AS total_amount
 FROM sales
 GROUP BY category
 ORDER BY total_amount DESC;
@@ -197,7 +197,7 @@ category   total_amount
 #### 7.2.2 Zeppelin Notebook
 #### 7.2.3 DataGrip等IDE插件
 
-### 7.3 云平台Hive服务  
+### 7.3 云平台Hive服务
 #### 7.3.1 AWS EMR
 #### 7.3.2 阿里云EMR
 #### 7.3.3 Azure HDInsight
@@ -220,7 +220,7 @@ category   total_amount
 
 ## 9.附录：常见问题与解答
 ### 9.1 Hive与HBase的区别与联系？
-### 9.2 如何优化Hive查询性能？ 
+### 9.2 如何优化Hive查询性能？
 ### 9.3 Hive适合哪些使用场景？
 ### 9.4 如何处理Hive中的数据倾斜问题？
 ### 9.5 Hive与Presto、Impala等SQL on Hadoop引擎的对比？

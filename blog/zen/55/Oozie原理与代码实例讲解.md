@@ -130,7 +130,7 @@ $$
 ```xml
 <workflow-app name="map-reduce-wf" xmlns="uri:oozie:workflow:0.5">
   <start to="mr-node"/>
-  
+
   <action name="mr-node">
     <map-reduce>
       <job-tracker>${jobTracker}</job-tracker>
@@ -157,11 +157,11 @@ $$
     <ok to="end"/>
     <error to="kill"/>
   </action>
-  
+
   <kill name="kill">
     <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
   </kill>
-  
+
   <end name="end"/>
 </workflow-app>
 ```
@@ -179,7 +179,7 @@ oozie job -oozie http://oozie.server:11000/oozie -config job.properties -dryrun
 # 启动工作流
 oozie job -start <jobId>
 
-# 查看工作流状态  
+# 查看工作流状态
 oozie job -info <jobId>
 
 # 杀死工作流

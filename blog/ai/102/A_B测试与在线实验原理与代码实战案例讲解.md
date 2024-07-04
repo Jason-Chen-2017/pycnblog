@@ -356,4 +356,4 @@ p值: 0.02534833621855478
 
 需要根据实验结果和业务目标进行解释，例如新功能是否显著提高了用户注册率，是否值得推广。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

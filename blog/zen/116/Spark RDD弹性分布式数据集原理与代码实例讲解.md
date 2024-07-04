@@ -182,10 +182,10 @@ $$R' = f_n(f_{n-1}(\ldots f_2(f_1(R))\ldots))$$
 
 $$
 \begin{aligned}
-R_1 &= f_1(R) \\
-R_2 &= f_2(R_1) \\
-&\vdots \\
-R_n &= f_n(R_{n-1}) \\
+R_1 &= f_1(R) \
+R_2 &= f_2(R_1) \
+&\vdots \
+R_n &= f_n(R_{n-1}) \
 R' &= R_n
 \end{aligned}
 $$
@@ -204,8 +204,8 @@ $$
 
 $$
 \begin{aligned}
-R_1 &= \{x \in R \mid x \geq 5\} \\
-R_2 &= \{x^2 \mid x \in R_1\} \\
+R_1 &= \{x \in R \mid x \geq 5\} \
+R_2 &= \{x^2 \mid x \in R_1\} \
 R' &= \sum_{x \in R_2} x
 \end{aligned}
 $$

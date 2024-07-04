@@ -30,7 +30,7 @@
 #### 3.2.3 在客户端与服务端中使用生成的代码
 ### 3.3 gRPC的四种通信模式
 #### 3.3.1 一元RPC（Unary RPC）
-#### 3.3.2 服务端流式RPC（Server streaming RPC）  
+#### 3.3.2 服务端流式RPC（Server streaming RPC）
 #### 3.3.3 客户端流式RPC（Client streaming RPC）
 #### 3.3.4 双向流式RPC（Bidirectional streaming RPC）
 
@@ -47,7 +47,7 @@
 #### 4.3.2 令牌桶算法
 #### 4.3.3 漏桶算法
 
-## 5. 项目实践：代码实例和详细解释说明 
+## 5. 项目实践：代码实例和详细解释说明
 ### 5.1 环境准备与工具安装
 #### 5.1.1 安装gRPC与Protocol Buffers
 #### 5.1.2 选择合适的编程语言与IDE
@@ -58,7 +58,7 @@
 #### 5.2.4 编写客户端调用代码
 #### 5.2.5 运行与测试
 ### 5.3 实现一个AI系统的gRPC服务
-#### 5.3.1 设计AI系统的接口与数据结构  
+#### 5.3.1 设计AI系统的接口与数据结构
 #### 5.3.2 定义Protocol Buffers消息与服务
 #### 5.3.3 实现AI系统的服务端
 #### 5.3.4 实现调用AI服务的客户端
@@ -108,7 +108,7 @@ gRPC是一种高性能、开源的通用RPC框架,由Google开发并于2015年�
 在AI系统中,gRPC通常用于以下场景:
 
 1. 前后端通信:将AI算法部署在服务端,通过gRPC接口提供给前端应用调用。
-2. 微服务间通信:将AI系统拆分为多个微服务,通过gRPC进行服务间的高效通信。 
+2. 微服务间通信:将AI系统拆分为多个微服务,通过gRPC进行服务间的高效通信。
 3. 与其他组件交互:AI系统通过gRPC与其他系统组件(如数据库、消息队列等)进行交互。
 
 相比传统的RESTful API,gRPC有以下优势:
@@ -210,7 +210,7 @@ message PredictResponse {
 ```python
 class Predictor(predictor_pb2_grpc.PredictorServicer):
     def __init__(self):
-        self.model = load_model()  
+        self.model = load_model()
 
     def Predict(self, request, context):
         features = np.array(request.features)

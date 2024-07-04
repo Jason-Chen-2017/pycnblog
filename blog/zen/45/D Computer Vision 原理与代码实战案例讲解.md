@@ -166,7 +166,7 @@
     - **公式**：
 
     $$\begin{align*}
-    x &= X \cos(\theta_x) \cos(\theta_y) + Y \cos(\theta_x) \sin(\theta_y) + Z \sin(\theta_x) \\
+    x &= X \cos(\theta_x) \cos(\theta_y) + Y \cos(\theta_x) \sin(\theta_y) + Z \sin(\theta_x) \
     y &= X \sin(\theta_y) + Y \sin(\theta_y) \cos(\theta_z) - Z \cos(\theta_y) \cos(\theta_z)
     \end{align*}$$
 
@@ -177,7 +177,7 @@
     - **公式**：
 
     $$\begin{align*}
-    x_i &= \frac{X_i}{Z_i} x_0 \\
+    x_i &= \frac{X_i}{Z_i} x_0 \
     y_i &= \frac{Y_i}{Z_i} y_0
     \end{align*}$$
 

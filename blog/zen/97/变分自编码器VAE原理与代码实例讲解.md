@@ -220,7 +220,7 @@ A：VAE的优点是可以学习数据的潜在分布，为数据可视化、降�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n vae-env python=3.8 
+conda create -n vae-env python=3.8
 conda activate vae-env
 ```
 
@@ -253,7 +253,7 @@ class Encoder(nn.Module):
         super(Encoder, self).__init__()
         self.fc1 = nn.Linear(input_dim, 128)
         self.fc2 = nn.Linear(128, latent_dim)
-        
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)
@@ -265,7 +265,7 @@ class Decoder(nn.Module):
         super(Decoder, self).__init__()
         self.fc1 = nn.Linear(latent_dim, 128)
         self.fc2 = nn.Linear(128, output_dim)
-        
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)
@@ -277,13 +277,13 @@ class VAE(nn.Module):
         super(VAE, self).__init__()
         self.encoder = Encoder(input_dim, latent_dim)
         self.decoder = Decoder(latent_dim, output_dim)
-        
+
     def encode(self, x):
         return self.encoder(x)
-    
+
     def decode(self, z):
         return self.decoder(z)
-    
+
     def forward(self, x):
         z = self.encode(x)
         x_hat = self.decode(z)
@@ -310,13 +310,13 @@ for epoch in range(50):
     for data in dataloader:
         x, _ = data
         x = x.to('cuda')
-        
+
         optimizer.zero_grad()
         x_hat, z = vae(x)
         loss = loss_fn(x_hat, x)
         loss.backward()
         optimizer.step()
-    
+
     print(f"Epoch {epoch+1}, loss: {loss.item()}")
 
 # 保存模型

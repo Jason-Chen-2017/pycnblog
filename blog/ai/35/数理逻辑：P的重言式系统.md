@@ -41,14 +41,14 @@
 
 一个重言式是满足以下条件的逻辑表达式：
 
-$$ \\phi \\Rightarrow \\phi $$
+$$ \phi \Rightarrow \phi $$
 
-其中，$\\phi$ 是一个逻辑公式，满足对于所有可能的真值分配，$\\phi$ 的值总是真（T）。
+其中，$\phi$ 是一个逻辑公式，满足对于所有可能的真值分配，$\phi$ 的值总是真（T）。
 
 ### 2.2 常见重言式
 
-- **析取重言式**：形如 $P \\lor Q$，其中 $P$ 和 $Q$ 是任意命题。
-- **合取重言式**：形如 $P \\land Q$，同样，$P$ 和 $Q$ 是任意命题。
+- **析取重言式**：形如 $P \lor Q$，其中 $P$ 和 $Q$ 是任意命题。
+- **合取重言式**：形如 $P \land Q$，同样，$P$ 和 $Q$ 是任意命题。
 - **否定重言式**：形如 $\
 eg (\
 eg P)$，表明命题 $P$ 的否定的否定始终为真。
@@ -99,27 +99,27 @@ eg P)$，表明命题 $P$ 的否定的否定始终为真。
 
 ### 4.1 数学模型构建
 
-对于逻辑公式 $\\phi$，构建数学模型以表示其真值情况：
+对于逻辑公式 $\phi$，构建数学模型以表示其真值情况：
 
-$$ M(\\phi) = \\begin{cases} 
-T & \\text{如果 } \\phi \\text{ 在所有可能的真值分配下为真} \\\\
-F & \\text{否则}
-\\end{cases} $$
+$$ M(\phi) = \begin{cases}
+T & \text{如果 } \phi \text{ 在所有可能的真值分配下为真} \\\
+F & \text{否则}
+\end{cases} $$
 
 ### 4.2 公式推导过程
 
-以公式 $(P \\land Q) \\lor (\
-eg P \\land \
+以公式 $(P \land Q) \lor (\
+eg P \land \
 eg Q)$ 为例：
 
 #### 步骤一：构建真值表
 
-| $P$ | $Q$ | $P \\land Q$ | $\
+| $P$ | $Q$ | $P \land Q$ | $\
 eg P$ | $\
 eg Q$ | $\
-eg P \\land \
-eg Q$ | $(P \\land Q) \\lor (\
-eg P \\land \
+eg P \land \
+eg Q$ | $(P \land Q) \lor (\
+eg P \land \
 eg Q)$ |
 |---|---|---|---|---|---|---|
 | T | T | T | F | F | F | T |
@@ -131,26 +131,26 @@ eg Q)$ |
 
 通过逻辑等价变换：
 
-- $(P \\land Q) \\lor (\
-eg P \\land \
+- $(P \land Q) \lor (\
+eg P \land \
 eg Q)$
-- $\\Leftrightarrow (\
+- $\Leftrightarrow (\
 eg \
-eg P \\lor \
-eg Q) \\land (\
-eg P \\lor \
+eg P \lor \
+eg Q) \land (\
+eg P \lor \
 eg \
 eg Q)$ （分配律）
-- $\\Leftrightarrow (\
+- $\Leftrightarrow (\
 eg \
-eg P \\lor \
-eg Q) \\land (\
-eg P \\lor Q)$ （双负律）
-- $\\Leftrightarrow (\
+eg P \lor \
+eg Q) \land (\
+eg P \lor Q)$ （双负律）
+- $\Leftrightarrow (\
 eg \
-eg P \\lor \
-eg Q) \\land (\
-eg P \\lor \
+eg P \lor \
+eg Q) \land (\
+eg P \lor \
 eg Q)$ （结合律）
 
 简化后仍为原公式，表明它是重言式。
@@ -159,33 +159,33 @@ eg Q)$ （结合律）
 
 #### 示例一：析取重言式验证
 
-公式：$P \\lor \
+公式：$P \lor \
 eg P$
 
 - 真值表：
 | $P$ | $\
-eg P$ | $P \\lor \
+eg P$ | $P \lor \
 eg P$ |
 |---|---|---|
 | T | F | T |
 | F | T | T |
 
-- 结论：无论 $P$ 取何值，$P \\lor \
+- 结论：无论 $P$ 取何值，$P \lor \
 eg P$ 总为真，因此是重言式。
 
 #### 示例二：合取重言式验证
 
-公式：$P \\land Q$
+公式：$P \land Q$
 
 - 真值表：
-| $P$ | $Q$ | $P \\land Q$ |
+| $P$ | $Q$ | $P \land Q$ |
 |---|---|---|
 | T | T | T |
 | T | F | F |
 | F | T | F |
 | F | F | F |
 
-- 结论：只有当 $P$ 和 $Q$ 都为真时，$P \\land Q$ 才为真，因此不是重言式。
+- 结论：只有当 $P$ 和 $Q$ 都为真时，$P \land Q$ 才为真，因此不是重言式。
 
 ### 4.4 常见问题解答
 
@@ -225,7 +225,7 @@ def is_tautology(formula):
 
 formula = '(P or not P)'
 result = is_tautology(formula)
-print(f\"The formula '{formula}' is {'a tautology' if result else 'not a tautology'}.\")
+print(f"The formula '{formula}' is {'a tautology' if result else 'not a tautology'}.")
 ```
 
 ### 5.3 代码解读与分析

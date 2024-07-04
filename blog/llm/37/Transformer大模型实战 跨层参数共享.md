@@ -133,35 +133,35 @@ class SharedHeadSelfAttention(nn.Module):
         self.heads = heads
         self.d_model = d_model
         self.shared_params = shared_params if shared_params else nn.ParameterDict()
-        
+
         # 初始化共享参数矩阵
         self.shared_qkvw = nn.Parameter(torch.empty(heads * 3, d_model))
         self.shared_vw = nn.Parameter(torch.empty(heads, d_model))
         self.register_parameter('shared_qkvw', self.shared_qkvw)
         self.register_parameter('shared_vw', self.shared_vw)
-        
+
         # 初始化特定参数矩阵（每个头）
         self.qkvw = nn.ParameterDict()
         self.vw = nn.ParameterDict()
         for i in range(heads):
             self.qkvw[i] = nn.Parameter(torch.empty(d_model))
             self.vw[i] = nn.Parameter(torch.empty(d_model))
-    
+
     def forward(self, query, key, value):
         batch_size, seq_len, _ = query.size()
-        
+
         # 参数映射
         qkvw = self.shared_qkvw.view(-1, self.heads, seq_len, self.d_model).transpose(1, 2)
         vw = self.shared_vw.view(-1, self.heads, seq_len, self.d_model).transpose(1, 2)
         for i in range(self.heads):
             qkvw[i] += self.qkvw[i].view(1, 1, self.d_model)
             vw[i] += self.vw[i].view(1, self.heads, self.d_model)
-        
+
         # 注意力计算
         scores = torch.matmul(query, qkvw.transpose(-2, -1)) / (self.d_model ** 0.5)
         attn = torch.softmax(scores, dim=-1)
         out = torch.matmul(attn, value + vw)
-        
+
         return out
 ```
 

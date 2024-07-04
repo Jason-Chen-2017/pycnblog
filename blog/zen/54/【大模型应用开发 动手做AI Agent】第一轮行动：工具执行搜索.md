@@ -14,7 +14,7 @@
 
 AI Agent可以被视为大模型的终极形态。它不仅具备大模型的语言理解和生成能力,还能够根据用户的指令,执行各种复杂的任务,如搜索、分析、规划、决策等,展现出类人工智能的能力。AI Agent的出现标志着人工智能迈向通用人工智能(Artificial General Intelligence,AGI)的重要一步。
 
-## 2.核心概念与联系  
+## 2.核心概念与联系
 
 ### 2.1 什么是AI Agent?
 
@@ -53,7 +53,7 @@ graph TD
 3. 任务分析模块确定需要执行的具体任务类型
 4. 根据任务类型,调用相应的功能模块执行任务
    - 搜索:信息检索模块从知识库或互联网中查找相关信息
-   - 分析:数据处理模块对信息进行清洗、整理、分析等操作 
+   - 分析:数据处理模块对信息进行清洗、整理、分析等操作
    - 规划:路径规划模块制定行动计划
    - 其他:其他特殊任务模块
 5. 结果整合模块将各模块的输出进行融合
@@ -127,8 +127,8 @@ NLG的核心是序列生成问题,常用的算法有:
 注意力机制的数学表达式如下:
 
 $$\begin{aligned}
-\text{Attention}(Q, K, V) &= \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V \\
-\text{head}_i &= \text{Attention}(QW_i^Q, KW_i^K, VW_i^V) \\
+\text{Attention}(Q, K, V) &= \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V \
+\text{head}_i &= \text{Attention}(QW_i^Q, KW_i^K, VW_i^V) \
 \text{MultiHead}(Q, K, V) &= \text{Concat}(\text{head}_1, \ldots, \text{head}_h)W^O
 \end{aligned}$$
 
@@ -219,7 +219,7 @@ def query_handler(semantic_repr):
     ...
     return query_result
 
-# 操作处理模块 
+# 操作处理模块
 def operation_handler(semantic_repr):
     # 执行相应操作
     ...

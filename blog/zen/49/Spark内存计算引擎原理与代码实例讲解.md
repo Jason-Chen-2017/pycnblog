@@ -60,14 +60,14 @@ Spark的内存计算引擎基于RDD的概念。用户通过对RDD的一系列Tra
    - take(n):返回RDD的前n个元素
    - foreach(func):对RDD每个元素执行func,无返回值
 4. 生成DAG图:根据用户代码中的RDD依赖关系构建DAG图,如下图所示:
-   
+
 ```mermaid
 graph LR
     A[textFile] --> B[flatMap]
-    B --> C[map] 
+    B --> C[map]
     C --> D[reduceByKey]
 ```
-   
+
 5. 划分Stage:Spark根据RDD之间的宽依赖将DAG图切分成不同的Stage。每个Stage包含一组窄依赖(如map、filter)的RDD操作,Stage之间以宽依赖(如reduceByKey引起的Shuffle)为边界。
 6. 生成Task:Spark为每个Stage中的分区生成一个Task,分发到Executor节点执行。
 7. 任务调度与执行:Driver根据特定的调度策略将Task分发给Executor,在Executor上执行计算逻辑,完成后Driver回收结果。
@@ -88,7 +88,7 @@ Spark内存计算的优点:
 ### 3.4  算法应用领域
 Spark被广泛应用于各种数据处理和分析场景,如:
 - 批处理:ETL、数据分析等
-- 交互式查询:即席查询、数据探索等  
+- 交互式查询:即席查询、数据探索等
 - 流处理:实时数据处理,如实时推荐、异常检测等
 - 图计算:社交网络分析、欺诈检测等
 - 机器学习:特征工程、模型训练等
@@ -116,9 +116,9 @@ $$f_c(\{(w_1,c_1),(w_2,c_2),...\})=\{(w_1,\sum c_1),(w_2,\sum c_2),...\}$$
 
 $$\begin{aligned}
 WordCount(D) &= f_c \circ f_w(D) \\
-&= f_c(\bigcup_{i=1}^nf_w(d_i)) \\  
+&= f_c(\bigcup_{i=1}^nf_w(d_i)) \\
 &= f_c(\bigcup_{i=1}^n\{(w_1,1),(w_2,1),...,(w_m,1)\}) \\
-&= f_c(\{(w_1,c_1),(w_2,c_2),...\}) \\ 
+&= f_c(\{(w_1,c_1),(w_2,c_2),...\}) \\
 &= \{(w_1,\sum c_1),(w_2,\sum c_2),...\}
 \end{aligned}$$
 
@@ -126,12 +126,12 @@ WordCount(D) &= f_c \circ f_w(D) \\
 我们以一个简单的文本为例:
 ```
 hello world
-hello spark 
+hello spark
 hello hadoop
 ```
 根据WordCount的数学模型,映射函数$f_w$将文本转换为:
 ```
-(hello, 1), (world, 1)  
+(hello, 1), (world, 1)
 (hello, 1), (spark, 1)
 (hello, 1), (hadoop, 1)
 ```
@@ -167,10 +167,10 @@ val sc = new SparkContext(conf)
 val textRDD = sc.textFile("input.txt")
 val wordCountRDD = textRDD
   .flatMap(_.split(" "))
-  .map((_, 1))  
+  .map((_, 1))
   .reduceByKey(_ + _)
 
-wordCountRDD.collect().foreach(println)  
+wordCountRDD.collect().foreach(println)
 
 sc.stop()
 ```
@@ -195,7 +195,7 @@ sc.stop()
 ```
 hello world
 hello spark
-hello hadoop 
+hello hadoop
 ```
 运行WordCount程序,输出结果为:
 ```

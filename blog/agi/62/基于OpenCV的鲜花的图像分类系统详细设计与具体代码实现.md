@@ -129,9 +129,9 @@ OpenCV是一个跨平台的计算机视觉库，提供了丰富的图像处理�
 
 $$
 \begin{align*}
-h_1 &= f_1(x) = f(W_1 \cdot h_0 + b_1) \\
-h_2 &= f_2(h_1) = f(W_2 \cdot h_1 + b_2) \\
-\vdots \\
+h_1 &= f_1(x) = f(W_1 \cdot h_0 + b_1) \
+h_2 &= f_2(h_1) = f(W_2 \cdot h_1 + b_2) \
+\vdots \
 h_L &= f_L(h_{L-1}) = f(W_L \cdot h_{L-1} + b_L)
 \end{align*}
 $$

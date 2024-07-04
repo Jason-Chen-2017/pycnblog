@@ -151,7 +151,7 @@
 卷积神经网络是一种用于图像识别、图像分割等任务的深度学习模型。
 
 $$
-h_{l}^{(w)}(x) = \text{ReLU}(\mathbf{W}^{(l)}h_{l-1}^{(w-1)} + \mathbf{b}^{(l)}) 
+h_{l}^{(w)}(x) = \text{ReLU}(\mathbf{W}^{(l)}h_{l-1}^{(w-1)} + \mathbf{b}^{(l)})
 $$
 
 其中，$h_{l}^{(w)}$ 表示第 $l$ 层第 $w$ 个神经元，$\mathbf{W}^{(l)}$ 表示第 $l$ 层的权重矩阵，$\mathbf{b}^{(l)}$ 表示第 $l$ 层的偏置向量，$h_{l-1}^{(w-1)}$ 表示前一层的输出。
@@ -161,7 +161,7 @@ $$
 循环神经网络是一种用于序列数据处理任务的深度学习模型。
 
 $$
-h_{t} = \text{ReLU}(W \cdot h_{t-1} + U \cdot x_t + b) 
+h_{t} = \text{ReLU}(W \cdot h_{t-1} + U \cdot x_t + b)
 $$
 
 其中，$h_{t}$ 表示当前时刻的隐藏状态，$x_t$ 表示当前时刻的输入，$W$ 表示循环连接权重，$U$ 表示输入连接权重，$b$ 表示偏置向量。
@@ -171,16 +171,16 @@ $$
 长短期记忆网络是一种改进的循环神经网络，能够有效学习长序列数据中的长期依赖关系。
 
 $$
-i_t = \sigma(W_{xi}x_t + W_{hi}h_{t-1} + W_{ci}c_{t-1} + b_i) 
+i_t = \sigma(W_{xi}x_t + W_{hi}h_{t-1} + W_{ci}c_{t-1} + b_i)
 $$
 $$
-f_t = \sigma(W_{xf}x_t + W_{hf}h_{t-1} + W_{cf}c_{t-1} + b_f) 
+f_t = \sigma(W_{xf}x_t + W_{hf}h_{t-1} + W_{cf}c_{t-1} + b_f)
 $$
 $$
-c_t = f_t \circ c_{t-1} + i_t \circ \tanh(W_{xc}x_t + W_{hc}h_{t-1} + b_c) 
+c_t = f_t \circ c_{t-1} + i_t \circ \tanh(W_{xc}x_t + W_{hc}h_{t-1} + b_c)
 $$
 $$
-h_t = \sigma(W_{xh}x_t + W_{hh}h_{t-1} + c_t + b_h) 
+h_t = \sigma(W_{xh}x_t + W_{hh}h_{t-1} + c_t + b_h)
 $$
 
 其中，$i_t$、$f_t$、$c_t$、$h_t$ 分别表示当前时刻的输入门、遗忘门、细胞状态和隐藏状态，$\sigma$ 表示Sigmoid激活函数，$\circ$ 表示逐元素乘法。

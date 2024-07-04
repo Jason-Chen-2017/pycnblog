@@ -18,10 +18,10 @@
 ## 2. 核心概念与联系
 Scikit-learn 的核心概念可以总结为:
 - Estimator(估计器):所有算法的基类,分为 Classifier(分类器)、 Regressor(回归器)、Clusterer(聚类器)、Transformer(转换器)等子类。
-- Predictor(预测器):实现 predict 方法的估计器,如分类器和回归器。  
+- Predictor(预测器):实现 predict 方法的估计器,如分类器和回归器。
 - Transformer(转换器):实现 transform 方法的估计器,可用于特征提取、数据预处理、降维等。
 - Pipeline(管道):将多个估计器串联成工作流,实现端到端的训练和预测。
-- Model selection(模型选择):通过参数搜索、交叉验证等方法选择最优模型。  
+- Model selection(模型选择):通过参数搜索、交叉验证等方法选择最优模型。
 - Dataset(数据集):scikit-learn 提供了一些标准数据集。
 - Evaluation metrics(评估指标):模型性能的定量评估指标。
 
@@ -70,7 +70,7 @@ Scikit-learn 实现了多种经典机器学习算法,可分为监督学习和无
 - 回归算法:线性回归、岭回归、Lasso回归、多项式回归等
 
 无监督学习算法包括:
-- 聚类算法:K-means、DBSCAN、层次聚类等  
+- 聚类算法:K-means、DBSCAN、层次聚类等
 - 降维算法:PCA、LDA、MDS等
 
 此外还有一些集成学习算法如Adaboost、GBDT等。
@@ -79,7 +79,7 @@ Scikit-learn 实现了多种经典机器学习算法,可分为监督学习和无
 以 SVM 分类算法为例,其基本步骤如下:
 1. 将数据集表示为特征空间中的点集
 2. 寻找一个最优分割超平面,使得不同类别的点尽可能分开,且离超平面尽可能远
-3. 引入松弛变量,允许少量点分类错误,提高泛化能力  
+3. 引入松弛变量,允许少量点分类错误,提高泛化能力
 4. 用核技巧将数据映射到高维空间,构造非线性分类器
 5. 用SMO等优化算法求解对偶问题,得到分类决策函数
 6. 用决策函数对新样本进行分类预测
@@ -96,7 +96,7 @@ SVM的主要优点有:
 - 训练时间较长,难以处理大规模数据集
 - 参数调优复杂,黑盒性强
 
-### 3.4 算法应用领域  
+### 3.4 算法应用领域
 SVM 在文本分类、图像识别、生物信息学等领域有广泛应用。如垃圾邮件识别、人脸识别、蛋白质结构预测等。
 
 ## 4. 数学模型和公式 & 详细讲解 & 举例说明
@@ -106,7 +106,7 @@ SVM 的数学模型可描述为以下优化问题:
 $$
 \begin{aligned}
 \min_{w,b,\xi} \quad & \frac{1}{2}||w||^2 + C\sum_{i=1}^N \xi_i \\
-s.t. \quad & y_i(w^Tx_i+b) \geq 1-\xi_i, \quad i=1,2,...,N \\  
+s.t. \quad & y_i(w^Tx_i+b) \geq 1-\xi_i, \quad i=1,2,...,N \\
 & \xi_i \geq 0, \quad i=1,2,...,N
 \end{aligned}
 $$
@@ -119,8 +119,8 @@ $$
 $$
 \begin{aligned}
 \max_\alpha \quad & \sum_{i=1}^N \alpha_i - \frac{1}{2}\sum_{i,j=1}^N \alpha_i \alpha_j y_i y_j \langle x_i,x_j \rangle \\
-s.t. \quad & \sum_{i=1}^N \alpha_i y_i = 0 \\ 
-& 0 \leq \alpha_i \leq C, \quad i=1,2,...,N  
+s.t. \quad & \sum_{i=1}^N \alpha_i y_i = 0 \\
+& 0 \leq \alpha_i \leq C, \quad i=1,2,...,N
 \end{aligned}
 $$
 
@@ -139,7 +139,7 @@ import matplotlib.pyplot as plt
 from sklearn import datasets
 
 iris = datasets.load_iris()
-X = iris.data[:, :2] 
+X = iris.data[:, :2]
 y = iris.target
 
 plt.scatter(X[:, 0], X[:, 1], c=y, cmap=plt.cm.coolwarm)
@@ -152,7 +152,7 @@ plt.show()
 可以看到不同类别的样本在特征空间中呈现一定的线性可分性。我们用 SVM 建模并画出决策边界:
 
 ```python
-from sklearn.svm import SVC 
+from sklearn.svm import SVC
 
 svc = SVC(kernel='linear').fit(X, y)
 
@@ -178,7 +178,7 @@ plt.show()
 
 可以看到 SVM 找到了一个很好的分割超平面,并且支持向量都落在边界上。
 
-### 4.4 常见问题解答  
+### 4.4 常见问题解答
 Q: SVM对缺失值和异常值敏感吗?
 A: 是的,SVM 假设数据是规范化的,缺失值和异常值会影响模型性能,需要先进行数据清洗。
 
@@ -211,7 +211,7 @@ X, y = load_breast_cancer(return_X_y=True)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # 创建 SVM 分类器
-svc = SVC(kernel='rbf', C=1.0, gamma='scale') 
+svc = SVC(kernel='rbf', C=1.0, gamma='scale')
 
 # 训练模型
 svc.fit(X_train, y_train)
@@ -242,6 +242,6 @@ Accuracy: 0.956
 Scikit-learn 在工业界有非常广泛的应用,下面列举几个典型场景:
 - 客户流失预测:通过客户的历史交易、行为等特征,预测其是否可能流失,从而采取针对性的营销策略。
 - 信用评分:根据用户的收入、负债、信用记录等,对其信用等级进行评分,为贷款决策提供参考。
-- 故障诊断:通过设备的各项参数指标,判断其是否存在故障以及故障类型,指导维修。  
+- 故障诊断:通过设备的各项参数指标,判断其是否存在故障以及故障类型,指导维修。
 - 情感分析:对用户评论、留言等文本数据进行情感倾向性分析,了解用户对产品的喜好程度。
 - 推荐系统:利用用户的历史行为、偏好等信息,为其推荐可能感兴趣

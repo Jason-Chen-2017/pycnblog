@@ -134,8 +134,7 @@ $$
 2. 梯度下降法：
 
 $$
-w_{t+1} = w_t - \eta \
-abla_w L(y, \hat{y})
+w_{t+1} = w_t - \eta \nabla_w L(y, \hat{y})
 $$
 
 其中，$\eta$ 是学习率。
@@ -143,8 +142,7 @@ $$
 3. 梯度计算：
 
 $$
-\
-abla_w L(y, \hat{y}) = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i) x_i
+\nabla_w L(y, \hat{y}) = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i) x_i
 $$
 
 4. 梯度下降迭代：

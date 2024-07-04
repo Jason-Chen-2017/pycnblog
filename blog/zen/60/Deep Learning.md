@@ -88,7 +88,7 @@ LSTM 是一种改进的 RNN，它能够解决 RNN 的梯度消失问题，更好
 
 $$
 \begin{aligned}
-h &= \sigma(W_1 x + b_1) \\
+h &= \sigma(W_1 x + b_1) \
 y &= \sigma(W_2 h + b_2)
 \end{aligned}
 $$

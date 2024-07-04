@@ -83,15 +83,15 @@ $$
 
 如果我们设置最小支持度为0.5，那么我们可以通过以下步骤挖掘频繁项集：
 
-1. **长度为1的项集**: 
+1. **长度为1的项集**:
     * 牛奶: Support(牛奶) = 3/4 = 0.75
     * 面包: Support(面包) = 3/4 = 0.75
     * 鸡蛋: Support(鸡蛋) = 3/4 = 0.75
-2. **长度为2的项集**: 
+2. **长度为2的项集**:
     * {牛奶, 面包}: Support({牛奶, 面包}) = 2/4 = 0.5
     * {牛奶, 鸡蛋}: Support({牛奶, 鸡蛋}) = 2/4 = 0.5
     * {面包, 鸡蛋}: Support({面包, 鸡蛋}) = 1/4 = 0.25
-3. **长度为3的项集**: 
+3. **长度为3的项集**:
     * {牛奶, 面包, 鸡蛋}: Support({牛奶, 面包, 鸡蛋}) = 1/4 = 0.25
 
 因此，频繁项集为:{牛奶}, {面包}, {鸡蛋}, {牛奶, 面包}, {牛奶, 鸡蛋}。
@@ -124,7 +124,7 @@ public class MahoutFrequentItemset {
     public static void main(String[] args) throws IOException, TasteException {
         // 数据集
         List<String[]> transactions = TransactionListConverter.stringToTransactionList(
-                "{\"牛奶, 面包\", \"牛奶, 鸡蛋\", \"面包, 鸡蛋\", \"牛奶, 面包, 鸡蛋\"}"
+                "{"牛奶, 面包", "牛奶, 鸡蛋", "面包, 鸡蛋", "牛奶, 面包, 鸡蛋"}"
         );
 
         // 设置最小支持度
@@ -226,5 +226,5 @@ Mahout频繁项挖掘算法是一种高效的频繁项集挖掘算法，能够�
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

@@ -54,7 +54,7 @@ $$
 
 输出门:
 $$
-o_t = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) 
+o_t = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o)
 $$
 
 其中,$\sigma$是sigmoid激活函数,$W$和$b$分别是权重矩阵和偏置向量。
@@ -105,7 +105,7 @@ class LSTMClassifier(nn.Module):
         self.embedding = nn.Embedding(vocab_size, embed_dim)
         self.lstm = nn.LSTM(embed_dim, hidden_dim, batch_first=True)
         self.fc = nn.Linear(hidden_dim, num_classes)
-        
+
     def forward(self, x):
         x = self.embedding(x)
         _, (h_n, _) = self.lstm(x)
@@ -129,7 +129,7 @@ optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
 for epoch in range(num_epochs):
     for batch in dataloader:
         inputs, labels = batch
-        
+
         optimizer.zero_grad()
         outputs = model(inputs)
         loss = criterion(outputs, labels)

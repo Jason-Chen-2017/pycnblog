@@ -58,12 +58,10 @@ $$
 #### 4.2.1 公式
 
 $$
-\\theta_{\\text{new}} = \\theta_{\\text{old}} + \\alpha \\cdot \
-abla \\theta_{\\text{old}}
+\\theta_{\\text{new}} = \\theta_{\\text{old}} + \\alpha \\cdot \nabla \\theta_{\\text{old}}
 $$
 
-其中，$\\theta_{\\text{new}}$ 表示新参数，$\\theta_{\\text{old}}$ 表示旧参数，$\\alpha$ 表示学习率，$\
-abla \\theta_{\\text{old}}$ 表示梯度。
+其中，$\\theta_{\\text{new}}$ 表示新参数，$\\theta_{\\text{old}}$ 表示旧参数，$\\alpha$ 表示学习率，$\nabla \\theta_{\\text{old}}$ 表示梯度。
 
 ## 5. 项目实践：代码实例和详细解释说明
 

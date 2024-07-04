@@ -287,7 +287,7 @@ class Encoder(nn.Module):
     def __init__(self, model_name='bert-base-cased'):
         super(Encoder, self).__init__()
         self.bert = BertModel.from_pretrained(model_name)
-        
+
     def forward(self, input_ids, attention_mask):
         return self.bert(input_ids, attention_mask=attention_mask)
 ```
@@ -302,7 +302,7 @@ class Decoder(nn.Module):
     def __init__(self, model_name='bert-base-cased'):
         super(Decoder, self).__init__()
         self.bert = BertLMHeadModel.from_pretrained(model_name)
-        
+
     def forward(self, input_ids, attention_mask, decoder_input_ids, decoder_attention_mask):
         return self.bert(input_ids, attention_mask=attention_mask, decoder_input_ids=decoder_input_ids, decoder_attention_mask=decoder_attention_mask)
 ```
@@ -317,7 +317,7 @@ class Classifier(nn.Module):
     def __init__(self, model_name='bert-base-cased', num_labels=2):
         super(Classifier, self).__init__()
         self.bert = BertForSequenceClassification.from_pretrained(model_name, num_labels=num_labels)
-        
+
     def forward(self, input_ids, attention_mask):
         return self.bert(input_ids, attention_mask=attention_mask)
 ```
@@ -331,7 +331,7 @@ class MachineTranslation(nn.Module):
         self.encoder = Encoder()
         self.decoder = Decoder()
         self.classifier = Classifier()
-        
+
     def forward(self, src, tgt):
         src_emb = self.encoder(src)
         tgt_emb = self.decoder(src_emb, src_emb, tgt, tgt)

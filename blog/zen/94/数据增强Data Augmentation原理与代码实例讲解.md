@@ -117,9 +117,9 @@ $$
 其中 $R(\theta)$ 为旋转矩阵，具体表达式为：
 
 $$
-R(\theta) = 
+R(\theta) =
 \begin{bmatrix}
-\cos(\theta) & -\sin(\theta) \\
+\cos(\theta) & -\sin(\theta) \
 \sin(\theta) & \cos(\theta)
 \end{bmatrix}
 $$
@@ -133,7 +133,7 @@ $$
 
 $$
 \begin{cases}
-x' = x\cos(\theta) - y\sin(\theta) \\
+x' = x\cos(\theta) - y\sin(\theta) \
 y' = x\sin(\theta) + y\cos(\theta)
 \end{cases}
 $$

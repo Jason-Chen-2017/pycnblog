@@ -254,7 +254,7 @@ A：深度强化学习在以下领域有广泛应用：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n rl-env python=3.8 
+conda create -n rl-env python=3.8
 conda activate rl-env
 ```
 

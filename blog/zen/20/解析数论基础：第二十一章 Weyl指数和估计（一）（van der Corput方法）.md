@@ -24,16 +24,16 @@ Weyl指数和估计方法的意义在于提供了一种衡量函数复杂性的�
 
 Weyl指数用于描述周期函数在某区间内的平均值偏离其期望值的程度。它定义为函数在该区间上的积分与区间长度的比例。在更严格的数学表述中，对于周期函数$f(x)$，其Weyl指数可以通过积分来定义：
 
-$$W(f) = \\lim_{N \\to \\infty} \\frac{1}{N} \\int_0^N |f(x) - \\langle f \\rangle| dx$$
+$$W(f) = \lim_{N \to \infty} \frac{1}{N} \int_0^N |f(x) - \langle f \rangle| dx$$
 
-其中$\\langle f \\rangle$表示函数$f(x)$在$[0, N]$区间上的平均值。
+其中$\langle f \rangle$表示函数$f(x)$在$[0, N]$区间上的平均值。
 
 ### van der Corput方法
 
 van der Corput方法是一种用于估计Weyl指数的高效算法。该方法通过构造递归序列来减少函数的波动性，从而简化了Weyl指数的计算过程。具体步骤包括：
 
-1. 对于给定的周期函数$f(x)$，选取一个基$\\{b_i\\}$（通常取$b_i$为正整数）和一个递增序列$\\{x_i\\}$，其中$x_i$满足$x_i \\equiv i \\mod b_i$。
-2. 定义递归序列$\\{x'_i\\}$，使得$x'_i = \\frac{x_i}{b_i}$。
+1. 对于给定的周期函数$f(x)$，选取一个基$\{b_i\}$（通常取$b_i$为正整数）和一个递增序列$\{x_i\}$，其中$x_i$满足$x_i \equiv i \mod b_i$。
+2. 定义递归序列$\{x'_i\}$，使得$x'_i = \frac{x_i}{b_i}$。
 3. 计算函数$f(x'_i)$的平均值和差值，进而估计Weyl指数。
 
 ## 3. 核心算法原理 & 具体操作步骤
@@ -46,13 +46,13 @@ van der Corput方法的核心在于通过构造递归序列来消除函数的周
 
 #### 第一步：选择递增序列
 
-选取一组正整数$b_i$和相应的序列$\\{x_i\\}$，其中$x_i$满足$x_i \\equiv i \\mod b_i$。序列$\\{x_i\\}$应满足周期性，以便于与原函数$f(x)$进行比较。
+选取一组正整数$b_i$和相应的序列$\{x_i\}$，其中$x_i$满足$x_i \equiv i \mod b_i$。序列$\{x_i\}$应满足周期性，以便于与原函数$f(x)$进行比较。
 
 #### 第二步：构造递归序列
 
-定义递归序列$\\{x'_i\\}$如下：
+定义递归序列$\{x'_i\}$如下：
 
-$$x'_i = \\frac{x_i}{b_i}$$
+$$x'_i = \frac{x_i}{b_i}$$
 
 #### 第三步：计算函数值
 
@@ -62,9 +62,9 @@ $$x'_i = \\frac{x_i}{b_i}$$
 
 通过比较$f(x'_i)$与$f(x)$的平均值和差值，可以估计Weyl指数。具体而言，计算：
 
-$$W(f) = \\lim_{N \\to \\infty} \\frac{1}{N} \\sum_{i=1}^{N} |f(x'_i) - \\langle f \\rangle|$$
+$$W(f) = \lim_{N \to \infty} \frac{1}{N} \sum_{i=1}^{N} |f(x'_i) - \langle f \rangle|$$
 
-其中$\\langle f \\rangle$是函数$f(x)$在原序列上的平均值。
+其中$\langle f \rangle$是函数$f(x)$在原序列上的平均值。
 
 ### 算法优缺点
 
@@ -86,32 +86,32 @@ Weyl指数和van der Corput方法在以下领域有广泛应用：
 
 为了构建数学模型，我们首先定义周期函数$f(x)$和其Weyl指数$W(f)$：
 
-$$f(x) = \\sin(2\\pi x), \\quad x \\in [0,1)$$
+$$f(x) = \sin(2\pi x), \quad x \in [0,1)$$
 
-$$W(f) = \\lim_{N \\to \\infty} \\frac{1}{N} \\int_0^N |\\sin(2\\pi x) - \\langle \\sin(2\\pi x) \\rangle| dx$$
+$$W(f) = \lim_{N \to \infty} \frac{1}{N} \int_0^N |\sin(2\pi x) - \langle \sin(2\pi x) \rangle| dx$$
 
-其中$\\langle \\sin(2\\pi x) \\rangle$表示函数$\\sin(2\\pi x)$在$[0, N]$区间上的平均值。
+其中$\langle \sin(2\pi x) \rangle$表示函数$\sin(2\pi x)$在$[0, N]$区间上的平均值。
 
 ### 公式推导过程
 
-对于上述函数$f(x)$，其周期为$T=1$，平均值$\\langle f \\rangle$为：
+对于上述函数$f(x)$，其周期为$T=1$，平均值$\langle f \rangle$为：
 
-$$\\langle f \\rangle = \\frac{1}{N} \\int_0^N \\sin(2\\pi x) dx = 0$$
+$$\langle f \rangle = \frac{1}{N} \int_0^N \sin(2\pi x) dx = 0$$
 
-因为$\\sin(2\\pi x)$在$[0,1]$区间内对称，其积分平均值为零。因此，
+因为$\sin(2\pi x)$在$[0,1]$区间内对称，其积分平均值为零。因此，
 
-$$W(f) = \\lim_{N \\to \\infty} \\frac{1}{N} \\int_0^N |\\sin(2\\pi x)| dx = \\frac{1}{N} \\times \\frac{2}{N} \\times N = \\frac{2}{N}$$
+$$W(f) = \lim_{N \to \infty} \frac{1}{N} \int_0^N |\sin(2\pi x)| dx = \frac{1}{N} \times \frac{2}{N} \times N = \frac{2}{N}$$
 
-随着$N$趋向于无穷大，$W(f)$趋于$0$，表明函数$\\sin(2\\pi x)$在$[0,1]$区间上的波动性随着序列长度增加而减少。
+随着$N$趋向于无穷大，$W(f)$趋于$0$，表明函数$\sin(2\pi x)$在$[0,1]$区间上的波动性随着序列长度增加而减少。
 
 ### 案例分析与讲解
 
-考虑函数$f(x) = \\sin(2\\pi x)$，应用van der Corput方法构造递归序列$\\{x'_i\\}$。取$b_i = 2^i$，则序列$\\{x_i\\}$为$x_i = i \\mod 2^i$。构造序列$\\{x'_i\\}$，并计算$f(x'_i)$的平均值和差值，可以估计Weyl指数接近于$0$，表明函数的波动性较小。
+考虑函数$f(x) = \sin(2\pi x)$，应用van der Corput方法构造递归序列$\{x'_i\}$。取$b_i = 2^i$，则序列$\{x_i\}$为$x_i = i \mod 2^i$。构造序列$\{x'_i\}$，并计算$f(x'_i)$的平均值和差值，可以估计Weyl指数接近于$0$，表明函数的波动性较小。
 
 ### 常见问题解答
 
-Q: 如何选择递增序列$\\{x_i\\}$以提高van der Corput方法的效率？
-A: 选择序列$\\{x_i\\}$时，应确保序列具有良好的分布特性，比如均匀分布或者最小距离序列，以减少函数的波动性。
+Q: 如何选择递增序列$\{x_i\}$以提高van der Corput方法的效率？
+A: 选择序列$\{x_i\}$时，应确保序列具有良好的分布特性，比如均匀分布或者最小距离序列，以减少函数的波动性。
 
 Q: Weyl指数和估计方法适用于所有类型的函数吗？
 A: Weyl指数和估计方法主要用于周期函数，对于非周期函数或者函数分布不均匀的情况，需要额外的处理或者变换才能应用。
@@ -133,19 +133,19 @@ import numpy as np
 from scipy.integrate import quad
 
 def weyl_index(f, x, b):
-    \"\"\"
+    """
     计算函数f在区间[x, x+b)上的Weyl指数。
-    \"\"\"
+    """
     def f_scaled(t):
         return abs(f((t - x) / b) - np.mean(f))
-    
+
     integral, _ = quad(f_scaled, 0, b)
     return integral / b
 
 def van_der_corput(f, n):
-    \"\"\"
+    """
     使用van der Corput方法估计Weyl指数。
-    \"\"\"
+    """
     b = 2
     x = np.arange(n)
     x_prime = x / b
@@ -157,23 +157,23 @@ def main():
     # 定义周期函数f(x) = sin(2πx)
     def f(x):
         return np.sin(2 * np.pi * x)
-    
+
     # 计算Weyl指数
     n = 1000
     weyl_estimated = van_der_corput(f, n)
-    print(f\"Weyl指数估计: {weyl_estimated}\")
-    
+    print(f"Weyl指数估计: {weyl_estimated}")
+
     # 验证结果
     weyl_theoretical = quad(lambda x: abs(np.sin(2 * np.pi * x)), 0, 1)[0]
-    print(f\"Weyl指数理论值: {weyl_theoretical}\")
+    print(f"Weyl指数理论值: {weyl_theoretical}")
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     main()
 ```
 
 ### 代码解读与分析
 
-这段代码实现了van der Corput方法来估计Weyl指数，并通过周期函数$f(x) = \\sin(2\\pi x)$进行验证。首先定义了周期函数$f(x)$，接着实现了计算Weyl指数的函数`weyl_index`和van der Corput方法的实现`van_der_corput`。最后，通过`main`函数执行了代码，输出了估计的Weyl指数和理论值进行对比。
+这段代码实现了van der Corput方法来估计Weyl指数，并通过周期函数$f(x) = \sin(2\pi x)$进行验证。首先定义了周期函数$f(x)$，接着实现了计算Weyl指数的函数`weyl_index`和van der Corput方法的实现`van_der_corput`。最后，通过`main`函数执行了代码，输出了估计的Weyl指数和理论值进行对比。
 
 ### 运行结果展示
 

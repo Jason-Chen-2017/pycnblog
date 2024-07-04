@@ -110,7 +110,7 @@ class LSTMClassifier(nn.Module):
         self.word_embeddings = nn.Embedding(vocab_size, embedding_dim)
         self.lstm = nn.LSTM(embedding_dim, hidden_dim, n_layers, dropout=dropout, batch_first=True)
         self.fc = nn.Linear(hidden_dim, output_dim)
-    
+
     def forward(self, sentences):
         embeds = self.word_embeddings(sentences)
         h0 = torch.zeros(self.n_layers, sentences.size(0), self.hidden_dim).requires_grad_()
@@ -159,7 +159,7 @@ class SentimentLSTM(nn.Module):
         self.word_embeddings = nn.Embedding(vocab_size, embedding_dim)
         self.lstm = nn.LSTM(embedding_dim, hidden_dim, n_layers, dropout=dropout, batch_first=True)
         self.fc = nn.Linear(hidden_dim, output_dim)
-    
+
     def forward(self, sentences):
         embeds = self.word_embeddings(sentences)
         h0 = torch.zeros(self.n_layers, sentences.size(0), self.hidden_dim).requires_grad_()

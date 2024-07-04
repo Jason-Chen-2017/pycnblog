@@ -106,8 +106,7 @@ Meta-SGD算法在以下领域具有潜在的应用价值：
 假设优化器参数为 $\theta$，预训练参数为 $\Theta$，映射关系为 $\phi$，则Meta-SGD的数学模型可以表示为：
 
 $$
-\theta_{\text{new}} = \phi(\theta_{\text{old}}, \
-abla_{\theta}J(\theta_{\text{old}}))
+\theta_{\text{new}} = \phi(\theta_{\text{old}}, \nabla_{\theta}J(\theta_{\text{old}}))
 $$
 
 其中，$J(\theta)$ 为预训练任务的损失函数。
@@ -119,8 +118,7 @@ $$
 1. **优化器参数更新**：
 
 $$
-\theta_{\text{new}} = \theta_{\text{old}} - \alpha \
-abla_{\theta}J(\theta_{\text{old}})
+\theta_{\text{new}} = \theta_{\text{old}} - \alpha \nabla_{\theta}J(\theta_{\text{old}})
 $$
 
 其中，$\alpha$ 为学习率。
@@ -128,8 +126,7 @@ $$
 2. **映射关系**：
 
 $$
-\phi(\theta_{\text{old}}, \
-abla_{\theta}J(\theta_{\text{old}})) = \Theta - \alpha \frac{\partial J(\theta_{\text{old}})}{\partial \theta}
+\phi(\theta_{\text{old}}, \nabla_{\theta}J(\theta_{\text{old}})) = \Theta - \alpha \frac{\partial J(\theta_{\text{old}})}{\partial \theta}
 $$
 
 3. **结合两个公式**：

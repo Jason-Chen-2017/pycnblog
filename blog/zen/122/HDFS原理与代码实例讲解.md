@@ -292,4 +292,4 @@ HDFS 通过数据副本机制进行数据备份，可以将数据复制到多个
 
 如果 DataNode 出现故障，HDFS 可以从其他 DataNode 上恢复数据。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

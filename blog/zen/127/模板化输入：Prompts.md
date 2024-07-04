@@ -402,4 +402,4 @@ Predicted label: 1
 
 **A: ** 未来，模板化 Prompt 的研究将朝着更强大的模板、自动参数配置、多模态 Prompt 等方向发展。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -119,10 +119,10 @@ $$
 在多头自注意力中，我们将 $\mathbf{x}$ 转换为 $Q$、$K$、$V$ 三个矩阵，并计算注意力分数矩阵：
 
 $$
-\mathrm{scores} = \frac{QK^T}{\sqrt{d_k}} = 
+\mathrm{scores} = \frac{QK^T}{\sqrt{d_k}} =
 \begin{bmatrix}
-0.8 & 0.2 & 0.3 \\
-0.1 & 0.9 & 0.4 \\
+0.8 & 0.2 & 0.3 \
+0.1 & 0.9 & 0.4 \
 0.2 & 0.3 & 0.7
 \end{bmatrix}
 $$
@@ -130,10 +130,10 @@ $$
 应用 softmax 函数后，得到注意力权重矩阵：
 
 $$
-\mathrm{weights} = \mathrm{softmax}(\mathrm{scores}) = 
+\mathrm{weights} = \mathrm{softmax}(\mathrm{scores}) =
 \begin{bmatrix}
-0.4 & 0.2 & 0.3 \\
-0.1 & 0.6 & 0.3 \\
+0.4 & 0.2 & 0.3 \
+0.1 & 0.6 & 0.3 \
 0.2 & 0.3 & 0.5
 \end{bmatrix}
 $$
@@ -141,10 +141,10 @@ $$
 最后，将注意力权重矩阵与 $V$ 相乘，得到加权和：
 
 $$
-\mathrm{output} = \mathrm{weights} \cdot V = 
+\mathrm{output} = \mathrm{weights} \cdot V =
 \begin{bmatrix}
-v_1' \\
-v_2' \\
+v_1' \
+v_2' \
 v_3'
 \end{bmatrix}
 $$

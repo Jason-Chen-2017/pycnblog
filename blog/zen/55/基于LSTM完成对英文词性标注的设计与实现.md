@@ -63,11 +63,11 @@ LSTM单元的核心是一个携带信息的细胞状态$c_t$,以及控制信息�
 
 $$
 \begin{aligned}
-f_t &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \\
-i_t &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \\
-\tilde{c}_t &= \tanh(W_c \cdot [h_{t-1}, x_t] + b_c) \\
-c_t &= f_t \odot c_{t-1} + i_t \odot \tilde{c}_t \\
-o_t &= \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) \\
+f_t &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \
+i_t &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \
+\tilde{c}_t &= \tanh(W_c \cdot [h_{t-1}, x_t] + b_c) \
+c_t &= f_t \odot c_{t-1} + i_t \odot \tilde{c}_t \
+o_t &= \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) \
 h_t &= o_t \odot \tanh(c_t)
 \end{aligned}
 $$
@@ -144,7 +144,7 @@ word2idx = {...} # 词表
 tag2idx = {...} # 标记表
 
 # 构建数据集
-train_data = [(torch.tensor([word2idx[w] for w in sent]), 
+train_data = [(torch.tensor([word2idx[w] for w in sent]),
                torch.tensor([tag2idx[t] for t in tags]))
               for sent, tags in zip(train_sentences, train_tags)]
 

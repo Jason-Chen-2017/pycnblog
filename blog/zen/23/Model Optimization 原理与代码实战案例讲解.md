@@ -1,4 +1,4 @@
-                 
+
 # Model Optimization 原理与代码实战案例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -201,24 +201,24 @@ def optimize_linear_regression(X, y):
     # 初始化模型和参数
     model = LinearRegression()
     model.fit(X, y)
-    
+
     # 计算损失函数值
     loss = np.mean((model.predict(X) - y) ** 2)
-    
+
     print("原始损失:", loss)
-    
+
     # 调整参数以优化模型
     for i in range(10):  # 仅作为示例，实际使用更复杂的优化算法
         learning_rate = 0.1 / (1 + 0.01 * i)
         model.set_params(**{'fit_intercept': True})  # 保证模型可以调整截距
         model.fit(X, y)
-        
+
         new_loss = np.mean((model.predict(X) - y) ** 2)
         if new_loss < loss:
             loss = new_loss
         else:
             break
-    
+
     print("优化后的损失:", loss)
     return model
 

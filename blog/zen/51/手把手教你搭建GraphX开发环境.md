@@ -53,7 +53,7 @@ GraphX提供了一个Graph视图,作为对底层顶点RDD和边RDD的抽象。�
 ```mermaid
 graph LR
     A[属性图] --> B[顶点RDD]
-    A --> C[边RDD] 
+    A --> C[边RDD]
     B --> D[Graph视图]
     C --> D
 ```
@@ -80,7 +80,7 @@ val vertexRDD = sc.parallelize(vertexArray)
 
 // 创建边集合
 val edgeArray = Array(
-  Edge(1L, 2L, 7), 
+  Edge(1L, 2L, 7),
   Edge(2L, 3L, 5),
   Edge(3L, 4L, 9),
   Edge(1L, 4L, 3)
@@ -200,7 +200,7 @@ import org.apache.spark.graphx._
 
 // 创建顶点RDD
 val vertexArray = Array(
-  (1L, ("Alice", 28)), 
+  (1L, ("Alice", 28)),
   (2L, ("Bob", 27)),
   (3L, ("Charlie", 65)),
   (4L, ("David", 42))
@@ -210,7 +210,7 @@ val vertexRDD = sc.parallelize(vertexArray)
 // 创建边RDD
 val edgeArray = Array(
   Edge(1L, 2L, 7),
-  Edge(2L, 3L, 5), 
+  Edge(2L, 3L, 5),
   Edge(3L, 4L, 9),
   Edge(1L, 4L, 3)
 )

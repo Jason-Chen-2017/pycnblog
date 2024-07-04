@@ -80,15 +80,15 @@ DQN及其变种在多个领域得到应用，包括但不限于：
 
 DQN的目标是通过学习状态-动作价值函数Q(s, a)，来预测在给定状态下采取动作a所能获得的最大期望回报。Q函数的定义如下：
 
-$$ Q(s, a) = \\mathbb{E}_{\\pi} [r + \\gamma \\cdot \\max_{a'} Q(s', a')] $$
+$$ Q(s, a) = \mathbb{E}_{\pi} [r + \gamma \cdot \max_{a'} Q(s', a')] $$
 
 其中：
 
-- \\( \\mathbb{E}_{\\pi} \\) 是期望值，表示在策略π下对未来回报的期望。
-- \\( r \\) 是即时奖励。
-- \\( \\gamma \\) 是折扣因子，用于权衡即时奖励与未来奖励的重要性。
-- \\( s \\) 是当前状态。
-- \\( a \\) 和 \\( a' \\) 分别是当前动作和下一个动作。
+- \( \mathbb{E}_{\pi} \) 是期望值，表示在策略π下对未来回报的期望。
+- \( r \) 是即时奖励。
+- \( \gamma \) 是折扣因子，用于权衡即时奖励与未来奖励的重要性。
+- \( s \) 是当前状态。
+- \( a \) 和 \( a' \) 分别是当前动作和下一个动作。
 
 ### 4.2 公式推导过程
 
@@ -96,26 +96,24 @@ DQN的学习过程涉及到两个主要步骤：预测Q值和更新Q值。
 
 #### 预测Q值：
 
-在每个时间步\\( t \\)，DQN根据当前状态\\( s_t \\)和选择的动作\\( a_t \\)来预测Q值：
+在每个时间步\( t \)，DQN根据当前状态\( s_t \)和选择的动作\( a_t \)来预测Q值：
 
-$$ \\hat{Q}(s_t, a_t) = Q(s_t, a_t) $$
+$$ \hat{Q}(s_t, a_t) = Q(s_t, a_t) $$
 
 #### 更新Q值：
 
 通过经验回放缓冲区中的经验来更新Q值：
 
-$$ \\delta_t = r_t + \\gamma \\cdot \\max_{a'} Q(s_{t+1}, a') - \\hat{Q}(s_t, a_t) $$
+$$ \delta_t = r_t + \gamma \cdot \max_{a'} Q(s_{t+1}, a') - \hat{Q}(s_t, a_t) $$
 
 然后根据梯度下降原则更新Q网络：
 
-$$ \\theta \\leftarrow \\theta - \\alpha \\cdot \
-abla_{\\theta} \\delta_t $$
+$$ \theta \leftarrow \theta - \alpha \cdot \nabla_{\theta} \delta_t $$
 
 其中：
 
-- \\( \\alpha \\) 是学习率。
-- \\( \
-abla_{\\theta} \\) 是对参数θ的梯度。
+- \( \alpha \) 是学习率。
+- \( \nabla_{\theta} \) 是对参数θ的梯度。
 
 ### 4.3 案例分析与讲解
 
@@ -153,7 +151,7 @@ class DQN:
         self.learning_rate = learning_rate
         self.discount_factor = discount_factor
         self.model = self.build_model()
-    
+
     def build_model(self):
         model = tf.keras.Sequential([
             layers.Dense(24, input_shape=(self.state_size,), activation='relu'),
@@ -162,19 +160,19 @@ class DQN:
         ])
         model.compile(optimizer=tf.optimizers.Adam(learning_rate=self.learning_rate), loss='mse')
         return model
-    
+
     def train(self, states, actions, rewards, next_states, dones):
         # Predicted Q-values
         predicted_q_values = self.model.predict(states)
         target_q_values = predicted_q_values.copy()
-        
+
         # Update Q-values based on new information
         for i in range(len(rewards)):
             if not dones[i]:
                 target_q_values[i][np.argmax(actions[i])] = rewards[i] + self.discount_factor * np.max(self.model.predict(next_states)[i])
             else:
                 target_q_values[i][np.argmax(actions[i])] = rewards[i]
-        
+
         # Train the model
         self.model.fit(states, target_q_values, epochs=1, verbose=0)
 

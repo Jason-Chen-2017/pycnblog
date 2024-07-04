@@ -52,17 +52,17 @@
 常用的数学模型包括逻辑回归、支持向量机、随机森林、神经网络等。以逻辑回归为例，其基本公式为：
 
 $$
-\\hat{y} = \\sigma(w_1x_1 + w_2x_2 + ... + w_nx_n + b)
+\hat{y} = \sigma(w_1x_1 + w_2x_2 + ... + w_nx_n + b)
 $$
 
-其中，$\\hat{y}$是预测值，$w_i$是权重，$x_i$是特征，$b$是截距项，$\\sigma(z)$是Sigmoid函数，用于将线性组合映射到(0, 1)区间内。
+其中，$\hat{y}$是预测值，$w_i$是权重，$x_i$是特征，$b$是截距项，$\sigma(z)$是Sigmoid函数，用于将线性组合映射到(0, 1)区间内。
 
 ### 4.2 公式推导过程
 
 以支持向量机为例，其目标是在不同类别之间创建最大间隔的超平面。在非线性情况下，通过核技巧（如径向基函数RBF）将数据映射到高维空间，公式如下：
 
 $$
-K(x, x') = \\phi(x) \\cdot \\phi(x')
+K(x, x') = \phi(x) \cdot \phi(x')
 $$
 
 ### 4.3 案例分析与讲解
@@ -92,7 +92,7 @@ predictions = model.predict(X_test)
 
 # 计算准确率
 accuracy = accuracy_score(y_test, predictions)
-print(f\"Accuracy: {accuracy}\")
+print(f"Accuracy: {accuracy}")
 ```
 
 ### 4.4 常见问题解答

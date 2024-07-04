@@ -1,4 +1,4 @@
-                 
+
 # Yarn资源管理和任务调度原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -114,22 +114,22 @@ def allocate_resources(tasks):
     # 构建线性规划模型
     model = Model()
     variables = {}
-    
+
     for task in tasks:
         resource_requirements = task.resource_requirements
         # 添加变量和约束条件
         for resource_type, amount in resource_requirements.items():
             if resource_type not in variables:
                 variables[resource_type] = model.addVar(lb=0)
-            
+
             model.addConstr(variables[resource_type], GRB.LESS_EQUAL, amount)
-    
+
     # 设置目标函数（最小化总等待时间）
     model.setObjective(sum(task.wait_time * variables[task.resource_type] for task in tasks), GRB.MINIMIZE)
-    
+
     # 解决线性规划问题
     model.optimize()
-    
+
     # 输出分配结果
     allocation_result = {resource_type: var.x for resource_type, var in variables.items()}
     return allocation_result
@@ -165,28 +165,28 @@ public class YarnJobSubmitter {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
         YarnClient yarnClient = YarnClientFactory.createYarnClient(conf);
-        
+
         // 创建application的元数据对象
         ApplicationSubmissionContext appContext = new ApplicationSubmissionContext(conf);
         appContext.setApplicationName("MyJob");
         appContext.setNumNodes(2); // 需要的节点数量
-        
+
         // 添加MapReduce任务描述
         Map<ApplicationAttemptId, JobSpec> jobSpecs = new HashMap<>();
         jobSpecs.put(new ApplicationAttemptId(), createJobSpec());
         appContext.setMapReduceApp(jobSpecs);
-        
+
         // 提交应用程序
         yarnClient.submitApplication(appContext);
-        
+
         // 监控应用程序状态
         while (!yarnClient.isApplicationAlive(new ApplicationId(appContext.getApplicationId()))) {
             Thread.sleep(5000);
         }
-        
+
         // 查看应用程序信息
         System.out.println(yarnClient.getApplicationReport(new ApplicationId(appContext.getApplicationId())));
-        
+
         yarnClient.close();
     }
 
@@ -194,23 +194,23 @@ public class YarnJobSubmitter {
         JobSpec jobSpec = new JobSpec();
         jobSpec.setUser("user");
         jobSpec.setName("MyJob");
-        
+
         // 定义Map阶段任务
         TaskSpec mapTaskSpec = new TaskSpec();
         mapTaskSpec.setKind(TaskConstants.KIND_MAP);
         mapTaskSpec.setClass("org.example.MapFunction");
         mapTaskSpec.setArgs(new String[]{"arg1", "arg2"});
-        
+
         // 定义Reduce阶段任务
         TaskSpec reduceTaskSpec = new TaskSpec();
         reduceTaskSpec.setKind(TaskConstants.KIND_REDUCE);
         reduceTaskSpec.setClass("org.example.ReduceFunction");
         reduceTaskSpec.setArgs(new String[]{"arg1", "arg2"});
-        
+
         // 将任务添加到作业中
         jobSpec.addTaskSpecs(mapTaskSpec);
         jobSpec.addTaskSpecs(reduceTaskSpec);
-        
+
         return jobSpec;
     }
 }

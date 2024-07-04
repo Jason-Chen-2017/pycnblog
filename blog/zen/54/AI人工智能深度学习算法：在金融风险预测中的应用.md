@@ -10,7 +10,7 @@
 
 随着大数据和人工智能技术的快速发展,将人工智能应用于金融风险预测和管理已成为一个新兴热点。人工智能算法能够从海量历史数据中提取隐藏的模式和规律,捕捉传统方法难以发现的细微信号,从而提高风险识别的准确性和及时性。其中,深度学习作为人工智能的一个重要分支,展现出了强大的数据挖掘和模式识别能力,在金融风险预测领域备受关注。
 
-## 2. 核心概念与联系  
+## 2. 核心概念与联系
 
 ### 2.1 深度学习简介
 
@@ -122,7 +122,7 @@ $$\mathbf{y} = f(\mathbf{x}; \mathbf{W}, \mathbf{b})$$
 
    除了SGD,还有一些自适应调整学习率的优化算法,如AdaGrad、RMSProp、Adam等,能够进一步提高优化效率。
 
-## 5. 项目实践:代码实例和详细解释说明  
+## 5. 项目实践:代码实例和详细解释说明
 
 以下是使用PyTorch框架实现前馈神经网络对信用违约风险进行二分类预测的代码示例:
 
@@ -135,10 +135,10 @@ import torch.optim as optim
 class FeedforwardNeuralNet(nn.Module):
     def __init__(self, input_size, hidden_size, num_classes):
         super(FeedforwardNeuralNet, self).__init__()
-        self.fc1 = nn.Linear(input_size, hidden_size) 
+        self.fc1 = nn.Linear(input_size, hidden_size)
         self.relu = nn.ReLU()
-        self.fc2 = nn.Linear(hidden_size, num_classes)  
-    
+        self.fc2 = nn.Linear(hidden_size, num_classes)
+
     def forward(self, x):
         out = self.fc1(x)
         out = self.relu(out)
@@ -162,7 +162,7 @@ for epoch in range(num_epochs):
         loss = criterion(outputs, labels)
         loss.backward()
         optimizer.step()
-    
+
     # 在测试集上评估模型
     # ...
 

@@ -96,11 +96,11 @@ LSTM 的数学模型如下：
 
 $$
 \begin{aligned}
-f_t &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \\
-i_t &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \\
-\tilde{c}_t &= \tanh(W_c \cdot [h_{t-1}, x_t] + b_c) \\
-c_t &= f_t \circ c_{t-1} + i_t \circ \tilde{c}_t \\
-o_t &= \sigma(W_o \cdot [h_{t-1}, c_t] + b_o) \\
+f_t &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \
+i_t &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \
+\tilde{c}_t &= \tanh(W_c \cdot [h_{t-1}, x_t] + b_c) \
+c_t &= f_t \circ c_{t-1} + i_t \circ \tilde{c}_t \
+o_t &= \sigma(W_o \cdot [h_{t-1}, c_t] + b_o) \
 h_t &= o_t \circ \tanh(c_t)
 \end{aligned}
 $$
@@ -123,7 +123,7 @@ $$
 
    $$
 \begin{aligned}
-\tilde{c}_t &= \tanh(W_c \cdot [h_{t-1}, x_t] + b_c) \\
+\tilde{c}_t &= \tanh(W_c \cdot [h_{t-1}, x_t] + b_c) \
 c_t &= f_t \circ c_{t-1} + i_t \circ \tilde{c}_t
 \end{aligned}
 $$

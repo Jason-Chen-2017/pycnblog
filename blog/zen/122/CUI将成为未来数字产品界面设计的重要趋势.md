@@ -102,8 +102,8 @@ CUI的算法可以用数学模型来描述，例如：
 $$
 CUI = \left\{
 \begin{aligned}
-& 命令解析器(parser) \\
-& 指令执行器(executor) \\
+& 命令解析器(parser) \
+& 指令执行器(executor) \
 & 输出器(outputter)
 \end{aligned}
 \right.
@@ -307,4 +307,4 @@ CUI也面临着一些挑战：
 - **Q：CUI的未来发展方向是什么？**
   - A：CUI的未来发展方向是与人工智能技术深度融合，实现更自然、更便捷的用户交互。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

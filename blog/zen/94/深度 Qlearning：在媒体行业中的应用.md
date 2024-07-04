@@ -111,7 +111,7 @@ graph LR
 深度 Q-learning的数学模型如下：
 
 $$
-Q(s,a;\theta) = \sum_{r \in \mathcal{R}} r \pi(a|r,s;\theta) \prod_{k=0}^{T-1} \gamma^{k} 
+Q(s,a;\theta) = \sum_{r \in \mathcal{R}} r \pi(a|r,s;\theta) \prod_{k=0}^{T-1} \gamma^{k}
 $$
 
 其中，$s$ 表示当前状态，$a$ 表示动作，$r$ 表示奖励，$\theta$ 表示模型参数，$T$ 表示动作序列长度，$\gamma$ 表示折扣因子。
@@ -155,7 +155,7 @@ $$
 5. **最终公式**：
 
 $$
-Q(s,a;\theta) = \sum_{r \in \mathcal{R}} r \pi(a|r,s;\theta) \prod_{k=0}^{T-1} \gamma^{k} 
+Q(s,a;\theta) = \sum_{r \in \mathcal{R}} r \pi(a|r,s;\theta) \prod_{k=0}^{T-1} \gamma^{k}
 $$
 
 ### 4.3 案例分析与讲解
@@ -228,34 +228,34 @@ memory = ReplayMemory(10000)
 for episode in range(1000):
     # 获取初始状态
     state = torch.tensor(state_space, dtype=torch.float32)
-    
+
     # 选择动作
     action = dqn(state).argmax(dim=1).item()
-    
+
     # 执行动作
     next_state, reward, done = environment.step(action)
-    
+
     # 将经验存入经验回放
     memory.push(state, action, reward, next_state, done)
-    
+
     # 从经验回放中采样经验
     batch = memory.sample(batch_size)
-    
+
     # 前向传播
     state_batch, action_batch, reward_batch, next_state_batch, done_batch = batch
     q_values = dqn(state_batch).gather(1, action_batch)
-    
+
     # 计算目标值
     next_q_values = dqn(next_state_batch).max(1)[0].unsqueeze(1)
     next_q_values[done_batch] = 0.0
     expected_q_values = reward_batch + discount * next_q_values
-    
+
     # 反向传播
     loss = criterion(q_values, expected_q_values)
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
-    
+
     # 打印训练信息
     if episode % 100 == 0:
         print(f"Episode {episode}, Loss: {loss.item()}")

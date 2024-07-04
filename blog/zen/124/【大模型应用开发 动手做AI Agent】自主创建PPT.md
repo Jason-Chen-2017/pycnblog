@@ -1,6 +1,6 @@
 ##  【大模型应用开发 动手做AI Agent】自主创建PPT
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 **关键词：** 大模型，AI Agent，PPT，应用开发，自主创建，技术分享，实战案例，未来趋势
 
@@ -373,4 +373,4 @@ AI Agent 的发展也面临着一些挑战，例如：
 
 希望本文能够帮助您更好地理解 AI Agent 自主创建平台的设计与实现，并为您的 AI Agent 开发提供一些启发。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

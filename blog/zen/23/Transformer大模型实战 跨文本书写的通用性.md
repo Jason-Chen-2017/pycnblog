@@ -1,4 +1,4 @@
-                 
+
 # Transformer大模型实战 跨文本书写的通用性
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -109,8 +109,8 @@ $$
 
 ```latex
 \begin{align*}
-\text{Input: } & "The city is bustling with energy," \\
-& "\text{The sun sets behind the skyscrapers}," \\
+\text{Input: } & "The city is bustling with energy," \
+& "\text{The sun sets behind the skyscrapers}," \
 \text{Output: } & "as the night sky begins to paint a canvas of stars and shadows."
 \end{align*}
 ```
@@ -156,12 +156,12 @@ class MultiHeadAttention(nn.Module):
         q = self.Wq(query).view(-1, query.size(1), self.n_heads, self.d_head)
         k = self.Wk(key).view(-1, key.size(1), self.n_heads, self.d_head)
         v = self.Wv(value).view(-1, value.size(1), self.n_heads, self.d_head)
-        
+
         # 计算自注意力
         att_scores = q.transpose(1, 2) @ k.transpose(1, 2)
         att_scores /= self.d_head ** 0.5
         att_probs = F.softmax(att_scores, dim=-1)
-        
+
         out = att_probs @ v.transpose(1, 2).transpose(2, 3).contiguous().view(*query.size())
         return self.Wo(out)
 
@@ -181,7 +181,7 @@ class EncoderLayer(nn.Module):
         super(EncoderLayer, self).__init__()
         self.self_attn = MultiHeadAttention(d_model, n_heads)
         self.ffn = PositionwiseFeedForward(d_model, d_ff)
-    
+
     def forward(self, src):
         attn_out = self.self_attn(src, src, src)
         ffn_out = self.ffn(attn_out)

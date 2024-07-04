@@ -66,7 +66,7 @@ for epoch in range(num_epochs):
     for i, (inputs, labels) in enumerate(dataloader):
         # 训练代码
         # ...
-        
+
         # 写入标量数据
         writer.add_scalar('Loss/train', loss.item(), global_step)
         writer.add_scalar('Accuracy/train', acc, global_step)
@@ -131,16 +131,16 @@ class MyModel(nn.Module):
     def __init__(self):
         super(MyModel, self).__init__()
         self.fc = nn.Linear(100, 10)
-        
+
     def forward(self, x):
         return self.fc(x)
 
-# 创建模型、优化器、损失函数    
+# 创建模型、优化器、损失函数
 model = MyModel()
 optimizer = optim.SGD(model.parameters(), lr=0.01)
 criterion = nn.CrossEntropyLoss()
 
-# 创建SummaryWriter  
+# 创建SummaryWriter
 writer = SummaryWriter('./runs')
 
 # 训练循环
@@ -152,18 +152,18 @@ for epoch in range(10):
         loss = criterion(outputs, labels)
         loss.backward()
         optimizer.step()
-        
+
         # 计算准确率
         _, preds = torch.max(outputs, 1)
         acc = torch.sum(preds == labels).item() / len(labels)
-        
+
         # 写入事件文件
         writer.add_scalar('Loss/train', loss.item(), global_step)
         writer.add_scalar('Accuracy/train', acc, global_step)
-        
+
         global_step += 1
 
-# 关闭SummaryWriter        
+# 关闭SummaryWriter
 writer.close()
 ```
 

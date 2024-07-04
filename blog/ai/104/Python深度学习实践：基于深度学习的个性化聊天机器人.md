@@ -124,7 +124,7 @@ RNN 的数学模型可以表示为：
 
 $$
 \begin{aligned}
-h_t &= f(W_{xh} x_t + W_{hh} h_{t-1} + b_h) \\
+h_t &= f(W_{xh} x_t + W_{hh} h_{t-1} + b_h) \
 y_t &= g(W_{hy} h_t + b_y)
 \end{aligned}
 $$
@@ -146,11 +146,11 @@ LSTM 的数学模型可以表示为：
 
 $$
 \begin{aligned}
-i_t &= \sigma(W_{xi} x_t + W_{hi} h_{t-1} + b_i) \\
-f_t &= \sigma(W_{xf} x_t + W_{hf} h_{t-1} + b_f) \\
-o_t &= \sigma(W_{xo} x_t + W_{ho} h_{t-1} + b_o) \\
-\tilde{c}_t &= \tanh(W_{xc} x_t + W_{hc} h_{t-1} + b_c) \\
-c_t &= f_t * c_{t-1} + i_t * \tilde{c}_t \\
+i_t &= \sigma(W_{xi} x_t + W_{hi} h_{t-1} + b_i) \
+f_t &= \sigma(W_{xf} x_t + W_{hf} h_{t-1} + b_f) \
+o_t &= \sigma(W_{xo} x_t + W_{ho} h_{t-1} + b_o) \
+\tilde{c}_t &= \tanh(W_{xc} x_t + W_{hc} h_{t-1} + b_c) \
+c_t &= f_t * c_{t-1} + i_t * \tilde{c}_t \
 h_t &= o_t * \tanh(c_t)
 \end{aligned}
 $$

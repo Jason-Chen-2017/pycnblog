@@ -98,9 +98,7 @@ $$\pi(a|s) = \frac{\exp\left(\theta^T f(s,a)\right)}{\sum_{a'}\exp\left(\theta^T
 
 自然对数的引入简化了梯度计算：
 
-$$\
-abla_\theta \ln \pi(a_t|s_t) = \frac{\
-abla_\theta \pi(a_t|s_t)}{\pi(a_t|s_t)}$$
+$$\nabla_\theta \ln \pi(a_t|s_t) = \frac{\nabla_\theta \pi(a_t|s_t)}{\pi(a_t|s_t)}$$
 
 ### 4.3 案例分析与讲解
 
@@ -126,16 +124,16 @@ def policy_gradient(observations, actions, rewards, theta, learning_rate=0.01):
     log_probs = np.zeros(n)
     advantages = np.zeros(n)
     G = 0
-    
+
     for t in reversed(range(n)):
         G = rewards[t] + 0.95 * G
         advantages[t] = G - log_probs[t]
         log_probs[t] = np.log(softmax(np.dot(theta, observations[t]))[actions[t]])
-        
+
     grad = np.zeros(len(theta))
     for t in range(n):
         grad += observations[t] * advantages[t]
-        
+
     theta -= learning_rate * grad
     return theta
 

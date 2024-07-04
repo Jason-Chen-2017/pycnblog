@@ -14,7 +14,7 @@ Lucene是Apache软件基金会的一个开源全文搜索引擎工具包,提供�
 ### 2.1 索引(Index)
 索引是Lucene中最核心的概念之一。它是对原始文档进行分析、提取关键信息后得到的一种数据结构,旨在加速文档搜索的过程。Lucene索引由多个独立的Segment组成,每个Segment中包含了一部分文档的索引数据。
 
-### 2.2 文档(Document) 
+### 2.2 文档(Document)
 文档是Lucene中信息的基本单元。一个文档包含了一组域(Field),每个域中存储了文档的一项属性,如标题、作者、内容等。在索引时,Lucene会对文档的各个域进行分析,提取出关键词信息用于创建索引。
 
 ### 2.3 词条(Term)
@@ -65,7 +65,7 @@ $$
 其中,$tf(q_i,D)$表示词条$q_i$在文档D中的词频,$idf(q_i)$表示词条$q_i$的逆文档频率,用于衡量词条的重要性:
 
 $$
-idf(q_i) = 1 + log(\frac{numDocs}{docFreq(q_i)+1}) 
+idf(q_i) = 1 + log(\frac{numDocs}{docFreq(q_i)+1})
 $$
 
 $numDocs$为索引中的总文档数,$docFreq(q_i)$为包含词条$q_i$的文档数。$norm(q_i,D)$为文档D的归一化因子,用于平衡不同长度文档的得分:
@@ -88,7 +88,7 @@ $$
 举例来说,假设有两个文档A和B,它们对查询词条"Lucene"的词频都为2次,但A的总词条数为100,B的总词条数为1000,则它们的归一化因子分别为:
 
 $$
-norm(A) = \frac{1}{\sqrt{100}} = 0.1 \\
+norm(A) = \frac{1}{\sqrt{100}} = 0.1 \
 norm(B) = \frac{1}{\sqrt{1000}} \approx 0.032
 $$
 
@@ -103,10 +103,10 @@ $$
 String[] docs = {"Lucene is a Java full-text search engine",
     "Lucene is an open source project"};
 
-//2.创建文档对象  
+//2.创建文档对象
 Document doc1 = new Document();
 doc1.add(new TextField("content", docs[0], Field.Store.YES));
-Document doc2 = new Document();  
+Document doc2 = new Document();
 doc2.add(new TextField("content", docs[1], Field.Store.YES));
 
 //3.创建分析器
@@ -117,7 +117,7 @@ IndexWriterConfig config = new IndexWriterConfig(analyzer);
 IndexWriter indexWriter = new IndexWriter(indexDir, config);
 
 //5.写入文档到索引
-indexWriter.addDocument(doc1);  
+indexWriter.addDocument(doc1);
 indexWriter.addDocument(doc2);
 
 //6.提交并关闭索引写入器
@@ -199,7 +199,7 @@ Lucene是众多互联网搜索引擎的基础,如百度、Elasticsearch等。这
 
 ### 7.3 社区资源
 - Lucene官网:https://lucene.apache.org
-- Lucene邮件列表:https://lucene.apache.org/core/discussion.html  
+- Lucene邮件列表:https://lucene.apache.org/core/discussion.html
 - Lucene Wiki:https://cwiki.apache.org/confluence/display/lucene
 - Lucene Javadoc:https://lucene.apache.org/core/8_8_2/core/index.html
 

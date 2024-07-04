@@ -5,19 +5,19 @@
 ## 1. 背景介绍
 ### 1.1 人工智能的发展历程
 #### 1.1.1 早期人工智能
-#### 1.1.2 机器学习的兴起  
+#### 1.1.2 机器学习的兴起
 #### 1.1.3 深度学习的突破
 ### 1.2 大语言模型(LLM)的崛起
 #### 1.2.1 Transformer架构的提出
 #### 1.2.2 GPT系列模型的发展
 #### 1.2.3 LLM在各领域的应用
 ### 1.3 LLM赋能智能Agent
-#### 1.3.1 智能Agent的定义与特点  
+#### 1.3.1 智能Agent的定义与特点
 #### 1.3.2 LLM在智能Agent中的作用
 #### 1.3.3 LLM-basedAgent的发展现状
 
 ## 2. 核心概念与联系
-### 2.1 大语言模型(LLM) 
+### 2.1 大语言模型(LLM)
 #### 2.1.1 LLM的定义与原理
 #### 2.1.2 LLM的训练方法
 #### 2.1.3 LLM的评估指标
@@ -95,7 +95,7 @@ class TransformerBlock(nn.Module):
         self.norm2 = nn.LayerNorm(d_model)
         self.dropout1 = nn.Dropout(dropout)
         self.dropout2 = nn.Dropout(dropout)
-        
+
     def forward(self, src, src_mask=None, src_key_padding_mask=None):
         src2 = self.self_attn(src, src, src, attn_mask=src_mask,
                               key_padding_mask=src_key_padding_mask)[0]
@@ -173,7 +173,7 @@ print(generated_text)
 LLM-basedAgent具有更强的语言理解与生成能力，能够处理非结构化的自然语言数据，实现更加灵活、智能的交互方式。传统软件系统则更侧重结构化数据的处理，交互方式相对固定和受限。
 ### 9.2 LLM-basedAgent会取代人类的工作吗？
 LLM-basedAgent在某些特定领域和任务上可以达到甚至超越人类的表现，但它们更多是作为人类智能的补充和延伸，协助人类完成复杂的认知任务。人类在创造力、情感交流、决策判断等方面仍然具有独特的优势。人机协作将是未来的主要模式。
-### 9.3 如何评估LLM-basedAgent的性能？ 
+### 9.3 如何评估LLM-basedAgent的性能？
 评估LLM-basedAgent的性能需要综合考虑多个维度，包括语言理解与生成的准确性、流畅性、连贯性，任务完成的有效性与效率，用户交互的自然性与满意度等。针对不同的应用场景，需要设计特定的评测指标和基准测试。同时，人工评估与用户反馈也是重要的评估手段。
 
 LLM-basedAgent代表了人工智能技术发展的新方向，它融合了大语言模型的强大语言能力与智能Agent的交互与决策能力，为实现更加智能、自然的人机交互提供了新的可能性。随着技术的不断进步与完善，LLM-basedAgent有望在更广泛的领域得到应用，并对社会经济产生深远的影响。同时，我们也需要审慎地应对其带来的挑战，在发展的过程中注重伦理、安全、隐私等问题。只有在人机协作、共赢发展的道路上不断探索前行，人工智能才能真正造福人类社会。

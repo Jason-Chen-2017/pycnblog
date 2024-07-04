@@ -178,14 +178,8 @@ $$
 &\theta^* = \mathop{\arg\min}_{\theta} L_1(\theta) + \lambda L_2(\theta) \\
 &\text{设} \quad f(\theta) = L_1(\theta) + \lambda L_2(\theta) \\
 &\text{则} \quad \theta^* = \mathop{\arg\min}_{\theta} f(\theta) \\
-&\text{求导得} \quad \
-abla f(\theta) = \
-abla L_1(\theta) + \lambda \
-abla L_2(\theta) \\
-&\text{令} \quad \
-abla f(\theta) = 0 \quad \text{得} \quad \theta^* = \mathop{\arg\min}_{\theta} \
-abla L_1(\theta) + \lambda \
-abla L_2(\theta)
+&\text{求导得} \quad \nabla f(\theta) = \nabla L_1(\theta) + \lambda \nabla L_2(\theta) \\
+&\text{令} \quad \nabla f(\theta) = 0 \quad \text{得} \quad \theta^* = \mathop{\arg\min}_{\theta} \nabla L_1(\theta) + \lambda \nabla L_2(\theta)
 \end{aligned}
 $$
 
@@ -198,12 +192,8 @@ $$
 &\theta^* = \mathop{\arg\min}_{\theta} \sum_{i=1}^M L_i(\theta) \\
 &\text{设} \quad f(\theta) = \sum_{i=1}^M L_i(\theta) \\
 &\text{则} \quad \theta^* = \mathop{\arg\min}_{\theta} f(\theta) \\
-&\text{求导得} \quad \
-abla f(\theta) = \sum_{i=1}^M \
-abla L_i(\theta) \\
-&\text{令} \quad \
-abla f(\theta) = 0 \quad \text{得} \quad \theta^* = \mathop{\arg\min}_{\theta} \sum_{i=1}^M \
-abla L_i(\theta)
+&\text{求导得} \quad \nabla f(\theta) = \sum_{i=1}^M \nabla L_i(\theta) \\
+&\text{令} \quad \nabla f(\theta) = 0 \quad \text{得} \quad \theta^* = \mathop{\arg\min}_{\theta} \sum_{i=1}^M \nabla L_i(\theta)
 \end{aligned}
 $$
 

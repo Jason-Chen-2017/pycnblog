@@ -170,7 +170,7 @@ for i in range(10000):
     action = np.random.randint(0, 10)
     reward = 1 if state == action else 0
     next_state = np.random.randint(0, 10)
-    
+
     Q[state, action] = Q[state, action] + alpha * (reward + gamma * np.max(Q[next_state, :]) - Q[state, action])
     policy[state] = np.argmax(Q[state, :])
 
@@ -289,7 +289,7 @@ print(f"Mean reward: {mean_reward:.2f} +/- {std_reward:.2f}")
 [INFO] Started learning process...
 [INFO] Starting worker 3 for cpu 3.
 [INFO] Starting worker 4 for cpu 4.
-[INFO] [PPO] Training... 
+[INFO] [PPO] Training...
 [INFO] [PPO] Step 0: Episodic Return: 7, Length: 200, Loss: 0.0472
 [INFO] [PPO] Step 1: Episodic Return: 7, Length: 200, Loss: 0.0472
 [INFO] [PPO] Step 2: Episodic Return: 7, Length: 200, Loss: 0.0472

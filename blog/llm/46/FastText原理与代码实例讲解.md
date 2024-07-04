@@ -159,8 +159,8 @@ def create_word_vectors(vocab, size):
 
 # 创建并训练快速文本模型
 def train_fasttext_model(word_vectors, labels):
-    model = FastText(sentences=[preprocess_data(x) for x in data], 
-                     size=word_vectors.vector_size, 
+    model = FastText(sentences=[preprocess_data(x) for x in data],
+                     size=word_vectors.vector_size,
                      epochs=epochs)
     return model
 

@@ -60,7 +60,7 @@ AIGC模型通常基于概率生成模型，如变分自动编码器（VAE）或�
 以Transformer为例，其关键步骤包括自注意力（Self-Attention）和多头注意力（Multi-Head Attention）。这些步骤涉及到矩阵运算和权重加权，具体公式为：
 
 $$
-\\text{MultiHead}(Q, K, V) = \\text{Concat}(head_1, head_2, ..., head_h)W^O
+\text{MultiHead}(Q, K, V) = \text{Concat}(head_1, head_2, ..., head_h)W^O
 $$
 
 其中，$head_i$是第$i$个头的输出，$W^O$是最终的输出矩阵。
@@ -89,12 +89,12 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 # 加载预训练模型和分词器
-tokenizer = AutoTokenizer.from_pretrained(\"gpt2\")
-model = AutoModelForCausalLM.from_pretrained(\"gpt2\")
+tokenizer = AutoTokenizer.from_pretrained("gpt2")
+model = AutoModelForCausalLM.from_pretrained("gpt2")
 
 # 输入提示
-prompt = \"海边的夕阳\"
-inputs = tokenizer(prompt, return_tensors=\"pt\")
+prompt = "海边的夕阳"
+inputs = tokenizer(prompt, return_tensors="pt")
 
 # 生成文本
 output = model.generate(inputs.input_ids, max_length=100)

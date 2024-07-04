@@ -98,11 +98,11 @@ P*重言式系统的数学模型主要包括以下几个方面：
 
 $$
 \begin{align*}
-1. & \quad P \rightarrow Q \quad & (\text{前提1}) \\
-2. & \quad \neg P \quad & (\text{前提2}) \\
-3. & \quad \neg Q \quad & (\text{由1和2，使用重言式规则}) \\
-4. & \quad P \quad & (\text{由3，使用演绎规则}) \\
-5. & \quad \neg P \wedge P \quad & (\text{由4和2，使用合取规则}) \\
+1. & \quad P \rightarrow Q \quad & (\text{前提1}) \
+2. & \quad \neg P \quad & (\text{前提2}) \
+3. & \quad \neg Q \quad & (\text{由1和2，使用重言式规则}) \
+4. & \quad P \quad & (\text{由3，使用演绎规则}) \
+5. & \quad \neg P \wedge P \quad & (\text{由4和2，使用合取规则}) \
 6. & \quad \bot \quad & (\text{由5，使用矛盾律})
 \end{align*}
 $$
@@ -121,8 +121,8 @@ $$
 
 $$
 \begin{align*}
-1. & \quad P \rightarrow Q \quad & (\text{前提1}) \\
-2. & \quad Q \rightarrow P \quad & (\text{由1，使用重言式规则}) \\
+1. & \quad P \rightarrow Q \quad & (\text{前提1}) \
+2. & \quad Q \rightarrow P \quad & (\text{由1，使用重言式规则}) \
 3. & \quad P \rightarrow (Q \rightarrow P) \quad & (\text{由2，使用同义词规则})
 \end{align*}
 $$

@@ -90,10 +90,10 @@ Schur-Cohn算法的核心思想是构造一个矩阵,称为Schur矩阵或Cohn矩
 2. 构造Schur矩阵$\mathbf{S}$:
 
    $$\mathbf{S} = \begin{bmatrix}
-   a_0 & a_2 & a_4 & \cdots & 0 \\
-   a_1 & a_3 & a_5 & \cdots & 0 \\
-   0 & a_2 & a_4 & \cdots & 0 \\
-   \vdots & \vdots & \vdots & \ddots & \vdots \\
+   a_0 & a_2 & a_4 & \cdots & 0 \
+   a_1 & a_3 & a_5 & \cdots & 0 \
+   0 & a_2 & a_4 & \cdots & 0 \
+   \vdots & \vdots & \vdots & \ddots & \vdots \
    0 & 0 & 0 & \cdots & a_n
    \end{bmatrix}$$
 
@@ -189,6 +189,6 @@ $$c_k = \frac{b_{k+1} a_{n-2k-2} - b_k a_{n-2k}}{a_{n-2k-1}}$$
 对于Schur-Cohn问题,我们构造Schur矩阵$\mathbf{S}$:
 
 $$\mathbf{S} = \begin{bmatrix}
-a_0 & a_2 & a_4 & \cdots & 0 \\
-a_1 & a_3 & a_5 & \cdots & 0 \\
+a_0 & a_2 & a_4 & \cdots & 0 \
+a_1 & a_3 & a_5 & \cdots & 0 \
 0 & a_2 & a_

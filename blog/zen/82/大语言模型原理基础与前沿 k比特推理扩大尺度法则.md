@@ -99,9 +99,9 @@ k比特推理是指在推理过程中，使用k比特来表示每一项模型参
 
 $$
 \mathbf{W} = \begin{bmatrix}
-w_{11} & w_{12} & \cdots & w_{1n} \\
-w_{21} & w_{22} & \cdots & w_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
+w_{11} & w_{12} & \cdots & w_{1n} \
+w_{21} & w_{22} & \cdots & w_{2n} \
+\vdots & \vdots & \ddots & \vdots \
 w_{m1} & w_{m2} & \cdots & w_{mn}
 \end{bmatrix}
 $$
@@ -110,9 +110,9 @@ $$
 
 $$
 \mathbf{W_q} = \begin{bmatrix}
-q(w_{11}) & q(w_{12}) & \cdots & q(w_{1n}) \\
-q(w_{21}) & q(w_{22}) & \cdots & q(w_{2n}) \\
-\vdots & \vdots & \ddots & \vdots \\
+q(w_{11}) & q(w_{12}) & \cdots & q(w_{1n}) \
+q(w_{21}) & q(w_{22}) & \cdots & q(w_{2n}) \
+\vdots & \vdots & \ddots & \vdots \
 q(w_{m1}) & q(w_{m2}) & \cdots & q(w_{mn})
 \end{bmatrix}
 $$

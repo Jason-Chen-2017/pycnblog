@@ -1,4 +1,4 @@
-                 
+
 # 迁移学习Transfer Learning原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -203,12 +203,12 @@ model.to(device)
 for epoch in range(10):  # 额外微调轮数
     for inputs, labels in train_loader:
         inputs, labels = inputs.to(device), labels.to(device)
-        
+
         optimizer.zero_grad()
 
         outputs = model(inputs)
         loss = criterion(outputs, labels)
-        
+
         loss.backward()
         optimizer.step()
 

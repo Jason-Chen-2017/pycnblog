@@ -84,9 +84,9 @@ $$
 *   **Huber 损失函数:**
 
 $$
-L_{\delta}(y, \hat{y}) = 
+L_{\delta}(y, \hat{y}) =
 \begin{cases}
-\frac{1}{2}(y - \hat{y})^2 & \text{if } |y - \hat{y}| \leq \delta, \\
+\frac{1}{2}(y - \hat{y})^2 & \text{if } |y - \hat{y}| \leq \delta, \
 \delta (|y - \hat{y}| - \frac{1}{2}\delta) & \text{otherwise}.
 \end{cases}
 $$
@@ -184,4 +184,4 @@ DQN 及其变种算法在许多实际应用场景中取得了成功，例如：
 
 *   **仅适用于离散动作空间:** DQN 无法直接处理连续动作空间。
 *   **对超参数敏感:** DQN 的性能对学习率、折扣因子等超参数很敏感。
-*   **泛化能力有限:** DQN 的泛化能力仍然有限，需要进一步研究如何提高算法的鲁棒性和泛化能力。 
+*   **泛化能力有限:** DQN 的泛化能力仍然有限，需要进一步研究如何提高算法的鲁棒性和泛化能力。

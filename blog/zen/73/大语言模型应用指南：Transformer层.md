@@ -60,7 +60,7 @@ Transformer通过以下步骤处理输入序列：
 
 Transformer的数学模型可以表示为：
 
-- **多头自注意力**：$Attention(Q,K,V) = \\operatorname{softmax}\\left(\\frac{Q K^{T}}{\\sqrt{d_{k}}}\\right)V$
+- **多头自注意力**：$Attention(Q,K,V) = \operatorname{softmax}\left(\frac{Q K^{T}}{\sqrt{d_{k}}}\right)V$
 
 其中，$Q$、$K$、$V$分别为查询、键、值向量，$d_k$为键向量的维度。
 
@@ -72,7 +72,7 @@ Transformer的数学模型可以表示为：
 
 考虑一个简单的多头自注意力例子，假设我们有3个头，每个头的维度为$d_k = 64$，查询、键、值向量都为$Q$、$K$、$V$，长度为$n$。每个头的计算过程如下：
 
-$$\\text{Head}_i = \\operatorname{softmax}\\left(\\frac{Q K_i^{T}}{\\sqrt{d_k}}\\right)V_i$$
+$$\text{Head}_i = \operatorname{softmax}\left(\frac{Q K_i^{T}}{\sqrt{d_k}}\right)V_i$$
 
 其中，$K_i$是第$i$个头的键向量，$V_i$是第$i$个头的值向量。
 
@@ -188,10 +188,10 @@ def train_transformer(model, dataloader, optimizer, device, epochs=10):
             loss.backward()
             optimizer.step()
             total_loss += loss.item()
-        print(f\"Epoch {epoch + 1}/{epochs}, Loss: {total_loss / len(dataloader)}\")
+        print(f"Epoch {epoch + 1}/{epochs}, Loss: {total_loss / len(dataloader)}")
 
-if __name__ == \"__main__\":
-    device = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")
+if __name__ == "__main__":
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = TransformerLayer(d_model=768, n_heads=12).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
     dataloader = load_data()  # Assume this function loads data and returns DataLoader

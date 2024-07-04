@@ -146,10 +146,10 @@ $$
 
 **案例：** 使用GPT-3模型生成文本。
 
-**输入：** 
+**输入：**
 
 ```
-The cat sat on the 
+The cat sat on the
 ```
 
 **输出：**
@@ -307,4 +307,4 @@ AIGC作为一项新兴技术，正处于快速发展阶段，其应用范围不�
 
 **回答：** 需要加强对AIGC的伦理规范和监管，例如制定AIGC的使用规范、建立AIGC伦理审查机制等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

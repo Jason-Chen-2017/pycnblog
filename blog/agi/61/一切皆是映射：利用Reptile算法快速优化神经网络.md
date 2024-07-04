@@ -94,12 +94,10 @@ Reptile算法可以应用于以下领域：
 Reptile算法的数学模型如下：
 
 $$
-\theta_{new} = \theta_{old} + \eta \cdot \
-abla_{\theta}L(x)
+\theta_{new} = \theta_{old} + \eta \cdot \nabla_{\theta}L(x)
 $$
 
-其中，$\theta_{old}$ 为原参数，$\theta_{new}$ 为更新后的参数，$\eta$ 为学习率，$L(x)$ 为损失函数，$\
-abla_{\theta}L(x)$ 为损失函数对参数的梯度。
+其中，$\theta_{old}$ 为原参数，$\theta_{new}$ 为更新后的参数，$\eta$ 为学习率，$L(x)$ 为损失函数，$\nabla_{\theta}L(x)$ 为损失函数对参数的梯度。
 
 ### 4.2 公式推导过程
 
@@ -107,10 +105,8 @@ Reptile算法的推导过程如下：
 
 1. 假设原参数空间为 $X$，映射后的空间为 $Y$。
 2. 将原参数 $\theta_{old}$ 映射到映射后空间，得到 $\theta_{old}^*$。
-3. 计算损失函数在 $\theta_{old}^*$ 上的梯度，得到 $\
-abla_{\theta}L(\theta_{old}^*)$。
-4. 将梯度映射回原参数空间，得到 $\
-abla_{\theta}L(\theta_{old})$。
+3. 计算损失函数在 $\theta_{old}^*$ 上的梯度，得到 $\nabla_{\theta}L(\theta_{old}^*)$。
+4. 将梯度映射回原参数空间，得到 $\nabla_{\theta}L(\theta_{old})$。
 5. 更新参数，得到 $\theta_{new}$。
 
 ### 4.3 案例分析与讲解
@@ -129,7 +125,7 @@ class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
         self.fc = nn.Linear(2, 1)
-    
+
     def forward(self, x):
         x = self.fc(x)
         return x
@@ -179,7 +175,7 @@ A3：Reptile算法的优点是提高优化速度，降低计算复杂度；缺�
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n reptile-env python=3.8 
+conda create -n reptile-env python=3.8
 conda activate reptile-env
 ```
 3. 安装PyTorch：
@@ -205,7 +201,7 @@ class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
         self.fc = nn.Linear(2, 1)
-    
+
     def forward(self, x):
         x = self.fc(x)
         return x

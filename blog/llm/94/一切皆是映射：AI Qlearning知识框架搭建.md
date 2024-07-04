@@ -137,9 +137,9 @@ $$
 假设智能体采用ε-greedy策略，在状态 $s$ 下选择动作 $a$ 的概率为：
 
 $$
-\pi(a|s) = 
+\pi(a|s) =
 \begin{cases}
-\frac{1}{|A|}, & \text{if } a = \underset{a \in A}{\mathrm{arg\,max}} Q^{\pi}(s, a) \text{ with probability } 1-\varepsilon \\
+\frac{1}{|A|}, & \text{if } a = \underset{a \in A}{\mathrm{arg\,max}} Q^{\pi}(s, a) \text{ with probability } 1-\varepsilon \
 \varepsilon \frac{1}{|A|}, & \text{otherwise}
 \end{cases}
 $$

@@ -199,12 +199,12 @@ public class FlinkWatermarkExample {
     public static void main(String[] args) throws Exception {
         // 创建 Flink 执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        
+
         // 创建 Watermark 生成器
         WatermarkStrategy<sensorData> watermarkStrategy = WatermarkStrategy
                 .<sensorData>forBoundedOutOfOrderness(Duration.ofSeconds(5))
                 .withTimestampAssigner((event, timestamp) -> event.getTimestamp());
-        
+
         // 创建数据流
         DataStream<sensorData> stream = env.fromElements(
                 new sensorData(1, 1000),
@@ -214,63 +214,63 @@ public class FlinkWatermarkExample {
                 new sensorData(1, 1004),
                 new sensorData(1, 1005)
         ).assignTimestampsAndWatermarks(watermarkStrategy);
-        
+
         // 定义窗口计算逻辑
         DataStream<TemperatureAggregate> result = stream
                 .keyBy(sensorData::getSensorId)
                 .timeWindow(Time.seconds(5))
                 .aggregate(new TempAggregate(), new TempWindowFunction());
-        
+
         // 输出结果
         result.print();
-        
+
         // 执行任务
         env.execute("Flink Watermark Example");
     }
-    
+
     // 事件数据类
     public static class sensorData {
         private int id;
         private long timestamp;
         private double temperature;
-        
+
         public sensorData(int id, long timestamp) {
             this.id = id;
             this.timestamp = timestamp;
         }
-        
+
         public int getSensorId() {
             return id;
         }
-        
+
         public long getTimestamp() {
             return timestamp;
         }
-        
+
         public double getTemperature() {
             return temperature;
         }
     }
-    
+
     // 聚合函数
     public static class TempAggregate implements AggregateFunction<sensorData, TempAggregateState, TemperatureAggregate> {
         @Override
         public TempAggregateState createAccumulator() {
             return new TempAggregateState();
         }
-        
+
         @Override
         public TempAggregateState add(sensorData value, TempAggregateState accumulator) {
             accumulator.count++;
             accumulator.sum += value.getTemperature();
             return accumulator;
         }
-        
+
         @Override
         public TemperatureAggregate getResult(TempAggregateState accumulator) {
             return new TemperatureAggregate(accumulator.count, accumulator.sum);
         }
-        
+
         @Override
         public TempAggregateState merge(TempAggregateState a, TempAggregateState b) {
             a.count += b.count;
@@ -278,7 +278,7 @@ public class FlinkWatermarkExample {
             return a;
         }
     }
-    
+
     // 窗口函数
     public static class TempWindowFunction extends WindowFunction<TemperatureAggregate, String, Integer, TimeWindow> {
         @Override
@@ -287,19 +287,19 @@ public class FlinkWatermarkExample {
             out.collect(String.format("Window: %s, Temp: %s", window, result));
         }
     }
-    
+
     // 温度聚合结果类
     public static class TemperatureAggregate {
         private int count;
         private double sum;
-        
+
         public TemperatureAggregate() {}
-        
+
         public TemperatureAggregate(int count, double sum) {
             this.count = count;
             this.sum = sum;
         }
-        
+
         public double getAvg() {
             return sum / count;
         }

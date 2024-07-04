@@ -197,8 +197,7 @@ $$
 Policy Gradient算法的核心是策略梯度的计算。策略梯度的计算公式如下：
 
 $$
-\
-abla_{\theta} J(\theta) = \sum_{s,a} \pi(a|s;\theta) [R(s,a) + \gamma \max_{a'} Q(s',a';\theta') - \log \pi(a|s;\theta)]
+\nabla_{\theta} J(\theta) = \sum_{s,a} \pi(a|s;\theta) [R(s,a) + \gamma \max_{a'} Q(s',a';\theta') - \log \pi(a|s;\theta)]
 $$
 
 其中 $J(\theta)$ 为策略的期望回报。
@@ -319,14 +318,14 @@ for epoch in range(num_epochs):
         # 前向传播
         q_values = dqn_model(state)
         next_q_values = dqn_model(next_state)
-        
+
         # 选择动作
         action_values = q_values[torch.arange(len(state)), action]
-        
+
         # 计算损失
         target_q_values = reward + gamma * next_q_values.max(dim=1)[0] * (1 - done)
         loss = criterion(action_values, target_q_values)
-        
+
         # 反向传播
         optimizer.zero_grad()
         loss.backward()

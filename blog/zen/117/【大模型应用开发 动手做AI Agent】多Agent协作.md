@@ -1,7 +1,7 @@
 
 # 【大模型应用开发 动手做AI Agent】多Agent协作
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 > 关键词：大模型，多Agent协作，人工智能，强化学习，机器学习，对话系统，协同工作
 
@@ -195,7 +195,7 @@ A2：以下是一些提高收敛速度的方法：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n multi-agent-env python=3.8 
+conda create -n multi-agent-env python=3.8
 conda activate multi-agent-env
 ```
 3. 安装PyTorch、DQN等库：

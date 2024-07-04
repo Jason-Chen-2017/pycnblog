@@ -117,12 +117,10 @@ $$
 梯度下降是最常用的优化方法，用于最小化损失函数：
 
 $$
-\\theta := \\theta - \\eta \\cdot \
-abla_\\theta J(\\theta)
+\\theta := \\theta - \\eta \\cdot \nabla_\\theta J(\\theta)
 $$
 
-其中，$\\theta$是模型参数，$\\eta$是学习率，$\
-abla_\\theta J(\\theta)$是损失函数关于参数$\\theta$的梯度。
+其中，$\\theta$是模型参数，$\\eta$是学习率，$\nabla_\\theta J(\\theta)$是损失函数关于参数$\\theta$的梯度。
 
 ### 4.2 公式推导过程
 

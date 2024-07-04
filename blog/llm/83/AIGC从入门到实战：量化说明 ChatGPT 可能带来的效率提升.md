@@ -123,13 +123,13 @@ ChatGPT 的数学模型主要包括以下部分：
 - **编码器**：
 
 ```latex
-\[ h_{t} = \text{transformer}(h_{t-1}, x_{t}) \]
+$$ h_{t} = \text{transformer}(h_{t-1}, x_{t}) $$
 ```
 
 - **解码器**：
 
 ```latex
-\[ y_{t} = \text{transformer}(y_{t-1}, h_{t}) \]
+$$ y_{t} = \text{transformer}(y_{t-1}, h_{t}) $$
 ```
 
 其中，$h_{t}$ 和 $y_{t}$ 分别为编码器和解码器在时间步 $t$ 的输出，$x_{t}$ 为输入文本，$y_{t}$ 为输出文本。
@@ -172,8 +172,8 @@ input_text = "今天，我国在载人航天领域取得了重大突破，成功
 
 # 生成文本
 output_ids = model.generate(
-    tokenizer.encode(input_text, return_tensors='pt'), 
-    max_length=100, 
+    tokenizer.encode(input_text, return_tensors='pt'),
+    max_length=100,
     num_return_sequences=1
 )
 

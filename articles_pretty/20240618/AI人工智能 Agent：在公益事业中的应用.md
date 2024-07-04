@@ -107,9 +107,7 @@ AI代理在公益事业中的应用广泛，包括但不限于：
 #### 强化学习算法推导：
 
 - **价值函数**：\\(V^{\\pi}(s) = \\mathbb{E}[G_t|\\pi]\\)，表示在策略\\(\\pi\\)下从状态\\(s\\)出发的期望总奖励。
-- **策略梯度**：\\(\
-abla_\\theta J(\\theta) = \\mathbb{E}_{\\tau \\sim \\pi}[\
-abla_\\theta \\log \\pi_\\theta(a|\\tau) \\cdot R(\\tau)]\\)，表示策略改进的方向。
+- **策略梯度**：\\(\nabla_\\theta J(\\theta) = \\mathbb{E}_{\\tau \\sim \\pi}[\nabla_\\theta \\log \\pi_\\theta(a|\\tau) \\cdot R(\\tau)]\\)，表示策略改进的方向。
 
 ### 4.3 案例分析与讲解
 

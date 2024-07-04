@@ -102,9 +102,9 @@ Faster R-CNN的数学模型可以表示为：
 
 $$
 \begin{aligned}
-& \text{输入图像} \rightarrow \text{CNN} \rightarrow \text{特征图} \\
-& \text{特征图} \rightarrow \text{RPN} \rightarrow \text{区域建议} \\
-& \text{区域建议} \rightarrow \text{RoI池化} \rightarrow \text{特征向量} \\
+& \text{输入图像} \rightarrow \text{CNN} \rightarrow \text{特征图} \
+& \text{特征图} \rightarrow \text{RPN} \rightarrow \text{区域建议} \
+& \text{区域建议} \rightarrow \text{RoI池化} \rightarrow \text{特征向量} \
 & \text{特征向量} \rightarrow \text{全连接层} \rightarrow \text{目标分类和定位}
 \end{aligned}
 $$
@@ -456,4 +456,4 @@ Faster R-CNN与其他目标检测算法相比，具有以下优势：
 * **使用轻量化模型**：使用更小的模型，例如MobileNet、ShuffleNet等。
 * **使用硬件加速**：使用GPU、FPGA等硬件加速器来加速模型的推理过程。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

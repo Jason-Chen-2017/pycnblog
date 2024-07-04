@@ -96,7 +96,7 @@
 假设我们有一个包含n个元素的数组A，对其进行单级索引，构建B+树索引结构。以下为B+树索引的数学模型：
 
 $$
-\\text{B+树} = (\\text{根节点}, \\text{中间节点}, \\text{叶子节点}, \\text{叶子节点中的键值对})
+\text{B+树} = (\text{根节点}, \text{中间节点}, \text{叶子节点}, \text{叶子节点中的键值对})
 $$
 
 其中：
@@ -111,7 +111,7 @@ $$
 假设数组A中的元素为：
 
 $$
-A = \\{a_1, a_2, \\ldots, a_n\\}
+A = \{a_1, a_2, \ldots, a_n\}
 $$
 
 则B+树索引的构建过程如下：
@@ -197,33 +197,33 @@ connection = phoenixdb.connect(host='localhost', port=8765, user='user', passwor
 
 # 创建示例表
 cursor = connection.cursor()
-cursor.execute(\"\"\"
+cursor.execute("""
     CREATE TABLE IF NOT EXISTS example (
         id INT,
         name VARCHAR,
         age INT
     )
-\"\"\")
+""")
 connection.commit()
 
 # 插入数据
 data = [(1, 'Alice', 28), (2, 'Bob', 32), (3, 'Charlie', 24), (4, 'David', 30), (5, 'Eve', 22)]
 for row in data:
-    cursor.execute(\"INSERT INTO example (id, name, age) VALUES (?, ?, ?)\", row)
+    cursor.execute("INSERT INTO example (id, name, age) VALUES (?, ?, ?)", row)
 connection.commit()
 
 # 创建二级索引
 def create_index(cursor, table, field):
-    index_name = f\"index_{field}\"
-    cursor.execute(f\"CREATE INDEX IF NOT EXISTS {index_name} ON {table} ({field})\")
+    index_name = f"index_{field}"
+    cursor.execute(f"CREATE INDEX IF NOT EXISTS {index_name} ON {table} ({field})")
 
 create_index(cursor, 'example', 'name')
 create_index(cursor, 'example', 'age')
 
 # 查询数据
 def query_data(cursor, table, field, value):
-    index_name = f\"index_{field}\"
-    cursor.execute(f\"SELECT * FROM {table} WHERE {field} = ?\", (value,))
+    index_name = f"index_{field}"
+    cursor.execute(f"SELECT * FROM {table} WHERE {field} = ?", (value,))
     result = cursor.fetchall()
     return result
 
@@ -278,8 +278,8 @@ connection.close()
 
 ### 7.3 相关论文推荐
 
-1. \"B+-tree: A Self-Tuning Tree Structure\" by Rudolf Bayer and E. McCreight
-2. \"The Practice of Database Indexing\" by Michael J. Carey
+1. "B+-tree: A Self-Tuning Tree Structure" by Rudolf Bayer and E. McCreight
+2. "The Practice of Database Indexing" by Michael J. Carey
 
 ### 7.4 其他资源推荐
 

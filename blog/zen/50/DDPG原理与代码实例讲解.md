@@ -176,7 +176,7 @@ class PolicyNetwork(nn.Module):
         self.fc1 = nn.Linear(state_dim, hidden_dim)
         self.fc2 = nn.Linear(hidden_dim, hidden_dim)
         self.fc3 = nn.Linear(hidden_dim, action_dim)
-    
+
     def forward(self, state):
         x = torch.relu(self.fc1(state))
         x = torch.relu(self.fc2(x))
@@ -189,7 +189,7 @@ class ValueNetwork(nn.Module):
         self.fc1 = nn.Linear(state_dim + action_dim, hidden_dim)
         self.fc2 = nn.Linear(hidden_dim, hidden_dim)
         self.fc3 = nn.Linear(hidden_dim, 1)
-    
+
     def forward(self, state, action):
         x = torch.cat([state, action], dim=-1)
         x = torch.relu(self.fc1(x))

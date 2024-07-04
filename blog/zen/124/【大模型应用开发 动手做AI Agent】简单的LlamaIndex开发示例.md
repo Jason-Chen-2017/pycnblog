@@ -1,6 +1,6 @@
 ## 【大模型应用开发 动手做AI Agent】简单的LlamaIndex开发示例
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -324,4 +324,4 @@ LlamaIndex的应用场景非常广泛，未来可以应用于更多领域，例�
 * **如何提高模型性能?** 可以通过优化索引策略、使用更强大的LLM、增加训练数据等方式提高模型性能。
 * **如何保证模型的安全性和可靠性?** 需要对LLM进行安全性和可靠性测试，并采取相应的安全措施。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

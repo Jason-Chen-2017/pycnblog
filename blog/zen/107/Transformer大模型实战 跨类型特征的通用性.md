@@ -109,10 +109,10 @@ $$
 
 $$
 QK^T = \begin{bmatrix}
-q_1k_1^T & q_1k_2^T & \cdots & q_1k_m^T \\
-q_2k_1^T & q_2k_2^T & \cdots & q_2k_m^T \\
-\vdots & \vdots & \ddots & \vdots \\
-q_mk_1^T & q_mk_2^T & \cdots & q_mk_m^T \\
+q_1k_1^T & q_1k_2^T & \cdots & q_1k_m^T \
+q_2k_1^T & q_2k_2^T & \cdots & q_2k_m^T \
+\vdots & \vdots & \ddots & \vdots \
+q_mk_1^T & q_mk_2^T & \cdots & q_mk_m^T \
 \end{bmatrix}
 $$
 
@@ -267,7 +267,7 @@ model.evaluate(test_data, test_labels)
 
 - **Q**: 如何评估跨类型特征的有效性？
    - **A**: 通过比较微调前后模型在特定任务上的性能提升，以及与专用模型的基准比较。
-   
+
 - **Q**: 预训练模型如何适应不同的任务需求？
    - **A**: 通过特征提取、微调和领域自适应策略，预训练模型能够捕捉和适应任务的特定需求，同时保持通用性。
 

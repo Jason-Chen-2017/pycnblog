@@ -113,8 +113,8 @@ In-Context 学习的公式推导过程如下：
 
 $$
 \begin{aligned}
-P(y|x, D) &= \frac{P(x, y, D)}{P(x, D)} \\
-&= \frac{P(y|x, D)P(x, D)}{P(x, D)} \\
+P(y|x, D) &= \frac{P(x, y, D)}{P(x, D)} \
+&= \frac{P(y|x, D)P(x, D)}{P(x, D)} \
 &= P(y|x, D)
 \end{aligned}
 $$
@@ -236,11 +236,11 @@ In-Context 学习可以用于机器翻译任务，例如：
 
 ### 7.1 学习资源推荐
 
-* **书籍**:  
+* **书籍**:
     * 《深度学习》（Deep Learning）：Ian Goodfellow 等著
     * 《神经网络与深度学习》（Neural Networks and Deep Learning）：Michael Nielsen 著
 
-* **课程**:  
+* **课程**:
     * 斯坦福大学 CS224n: Natural Language Processing with Deep Learning
     * 谷歌机器学习速成课程
 
@@ -296,7 +296,7 @@ In-Context 学习作为人工智能领域的前沿技术，具有巨大的发展
 
 **1. 原理:**
 
-* **Fine-tuning (微调):**  
+* **Fine-tuning (微调):**
     * 在预训练模型的基础上，使用新的标注数据对模型参数进行微调，使模型适应新的任务。
     * 需要更新模型参数，并进行梯度下降训练。
 * **In-Context 学习:**
@@ -361,4 +361,4 @@ In-Context 学习作为一种新兴的学习范式，未来发展趋势 promisin
 
 总而言之，In-Context 学习作为一种灵活高效的学习范式，在未来的人工智能领域将会扮演越来越重要的角色。
 
-## 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+## 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

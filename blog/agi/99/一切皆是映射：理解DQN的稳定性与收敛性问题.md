@@ -214,7 +214,7 @@ A：经验回放池的作用是存储历史经验样本，用于训练动作值�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n tensorflow-env python=3.8 
+conda create -n tensorflow-env python=3.8
 conda activate tensorflow-env
 ```
 

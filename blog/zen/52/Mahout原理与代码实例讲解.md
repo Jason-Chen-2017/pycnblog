@@ -65,14 +65,14 @@ repeat:
     for each 样本x:
       查找最近聚类中心c
       emit <c,x>
-  Job 1:reduce:  
+  Job 1:reduce:
     for <c,x>:
       emit <c,x>
   Job 2:map:
     for <c,x>:
       emit <c,x>
   Job 2:reduce:
-    for <c,x>:  
+    for <c,x>:
       newCenter = sum(x)/count(x)
       emit <c,newCenter>
 until 聚类中心不再变化或达到最大迭代轮数
@@ -125,11 +125,11 @@ $$
 ```
 # 输入数据路径
 mahout.input.dir=hdfs://localhost:9000/input
-# 聚类结果输出路径  
+# 聚类结果输出路径
 mahout.output.dir=hdfs://localhost:9000/output
 # 聚类簇数K
 mahout.clustering.K=3
-# 收敛阈值  
+# 收敛阈值
 mahout.convergence.delta=0.5
 # 最大迭代次数
 mahout.max.iterations=10
@@ -152,7 +152,7 @@ $ mahout kmeans \
 其中各选项的含义如下:
 
 - `-i`:输入数据路径
-- `-o`:输出结果路径  
+- `-o`:输出结果路径
 - `-k`:聚类簇数K
 - `-cd`:收敛阈值
 - `-x`:最大迭代次数
@@ -185,7 +185,7 @@ $ hadoop fs -cat /output/clusteredPoints/part-m-*
 
 输出格式为:
 
-```  
+```
 样本ID<tab>簇ID
 ```
 

@@ -167,9 +167,9 @@ SARSA算法的公式推导过程如下：
 智能体的策略可以用以下公式表示：
 
 $$
- \pi(s) = 
+ \pi(s) =
 \begin{cases}
- P(a=是) = 0.6, & \text{if } s \text{ is "I feel lucky"} \\
+ P(a=是) = 0.6, & \text{if } s \text{ is "I feel lucky"} \
  P(a=否) = 0.4, & \text{if } s \text{ is "I feel unlucky"}
 \end{cases}
 $$

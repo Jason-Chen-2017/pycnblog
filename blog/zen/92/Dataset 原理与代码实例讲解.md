@@ -163,7 +163,7 @@ $$
 根据线性回归模型公式，我们可以得到以下参数估计：
 
 $$
-\theta = \begin{pmatrix} \theta_0 \\ \theta_1 \\ \theta_2 \end{pmatrix} = \begin{pmatrix} 1 & 1 & 2 \\ 2 & 2 & 3 \\ 3 & 3 & 4 \end{pmatrix}^{-1} \begin{pmatrix} 1 & 1 & 2 \\ 2 & 2 & 3 \\ 3 & 3 & 4 \end{pmatrix} \begin{pmatrix} 3 \\ 4 \\ 5 \end{pmatrix} = \begin{pmatrix} 1 \\ -1 \\ 1 \end{pmatrix}
+\theta = \begin{pmatrix} \theta_0 \ \theta_1 \ \theta_2 \end{pmatrix} = \begin{pmatrix} 1 & 1 & 2 \ 2 & 2 & 3 \ 3 & 3 & 4 \end{pmatrix}^{-1} \begin{pmatrix} 1 & 1 & 2 \ 2 & 2 & 3 \ 3 & 3 & 4 \end{pmatrix} \begin{pmatrix} 3 \ 4 \ 5 \end{pmatrix} = \begin{pmatrix} 1 \ -1 \ 1 \end{pmatrix}
 $$
 
 因此，线性回归模型的预测公式为：

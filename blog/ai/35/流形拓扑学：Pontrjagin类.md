@@ -28,11 +28,11 @@ Pontrjagin类的研究意义在于加深我们对流形内在结构的理解。�
 
 ### 2.2 Pontrjagin类的定义
 
-设$M$为$n$维的闭流形，$TM$为其切空间，$\\Lambda^n TM$为$n$阶全外微分形式的空间。若$M$具有正交结构$J$，则$J$诱导出$TM$上的一个双线性形式，使得$\\Lambda^n TM$变为一个复向量空间。Pontrjagin类$P(M)$定义为$\\Lambda^n TM$上的齐次线性映射，满足：
+设$M$为$n$维的闭流形，$TM$为其切空间，$\Lambda^n TM$为$n$阶全外微分形式的空间。若$M$具有正交结构$J$，则$J$诱导出$TM$上的一个双线性形式，使得$\Lambda^n TM$变为一个复向量空间。Pontrjagin类$P(M)$定义为$\Lambda^n TM$上的齐次线性映射，满足：
 
-$$P(M) = \\frac{1}{n!} \\sum_{i_1 < i_2 < \\cdots < i_n} (-1)^{i_1+i_2+\\cdots+i_n} \\omega_{i_1i_2\\cdots i_n}$$
+$$P(M) = \frac{1}{n!} \sum_{i_1 < i_2 < \cdots < i_n} (-1)^{i_1+i_2+\cdots+i_n} \omega_{i_1i_2\cdots i_n}$$
 
-其中$\\omega_{i_1i_2\\cdots i_n}$是$\\Lambda^n TM$上的一个基元。
+其中$\omega_{i_1i_2\cdots i_n}$是$\Lambda^n TM$上的一个基元。
 
 ### 2.3 Pontrjagin类的性质
 
@@ -49,7 +49,7 @@ $$P(M) = \\frac{1}{n!} \\sum_{i_1 < i_2 < \\cdots < i_n} (-1)^{i_1+i_2+\\cdots+i
 ### 3.2 算法步骤详解
 
 1. **定义流形和正交结构**：明确流形的几何结构和正交结构。
-2. **选择基元**：选取$\\Lambda^n TM$上的基元，通常是全外微分形式的基。
+2. **选择基元**：选取$\Lambda^n TM$上的基元，通常是全外微分形式的基。
 3. **计算映射**：根据Pontrjagin类的定义，计算基元之间的线性组合。
 4. **简化表达**：利用代数运算简化最终的线性映射表达式。
 
@@ -71,9 +71,9 @@ Pontrjagin类的应用广泛，包括但不限于：
 
 构建数学模型时，考虑流形$M$的几何结构和拓扑性质是关键。例如，对于一个二维球面$S^2$，其Pontrjagin类可以通过以下步骤计算：
 
-1. **选择基元**：选取全外微分形式的基元，例如$\\omega_1 = dx \\wedge dy$。
-2. **计算映射**：根据Pontrjagin类的定义，计算映射$P(S^2) = \\frac{1}{2!} \\sum_{i_1 < i_2} (-1)^{i_1+i_2} \\omega_{i_1i_2} = \\frac{1}{2} \\omega_1$。
-3. **简化表达**：得到$P(S^2) = \\frac{1}{2} dx \\wedge dy$。
+1. **选择基元**：选取全外微分形式的基元，例如$\omega_1 = dx \wedge dy$。
+2. **计算映射**：根据Pontrjagin类的定义，计算映射$P(S^2) = \frac{1}{2!} \sum_{i_1 < i_2} (-1)^{i_1+i_2} \omega_{i_1i_2} = \frac{1}{2} \omega_1$。
+3. **简化表达**：得到$P(S^2) = \frac{1}{2} dx \wedge dy$。
 
 ### 4.2 公式推导过程
 
@@ -119,7 +119,7 @@ result = pontrjagin_class(basis, 2)
 
 ### 5.4 运行结果展示
 
-运行此代码后，结果应显示出二维球面$S^2$的Pontrjagin类为$\\frac{1}{2} dxdy$。
+运行此代码后，结果应显示出二维球面$S^2$的Pontrjagin类为$\frac{1}{2} dxdy$。
 
 ## 6. 实际应用场景
 

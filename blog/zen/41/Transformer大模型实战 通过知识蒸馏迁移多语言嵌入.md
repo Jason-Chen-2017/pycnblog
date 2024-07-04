@@ -104,12 +104,12 @@
 
 假设教师模型$F$和学生模型$G$，在给定输入$x$和真实标签$y$时，分别输出概率分布$p$和$q$，则知识蒸馏损失函数$L$可以定义为：
 
-$$L = \\alpha \\cdot L_{CE}(p, y) + \\beta \\cdot KL(p||q)$$
+$$L = \alpha \cdot L_{CE}(p, y) + \beta \cdot KL(p||q)$$
 
 其中，
 - $L_{CE}$是交叉熵损失函数，衡量学生模型$q$与教师模型$p$之间的差异；
 - $KL$是Kullback-Leibler散度，用于衡量$q$相对于$p$的分布差异；
-- $\\alpha$和$\\beta$是损失权重，用于调整交叉熵损失和KL散度的相对重要性。
+- $\alpha$和$\beta$是损失权重，用于调整交叉熵损失和KL散度的相对重要性。
 
 ### 4.2 公式推导过程
 
@@ -117,7 +117,7 @@ $$L = \\alpha \\cdot L_{CE}(p, y) + \\beta \\cdot KL(p||q)$$
 
 对于交叉熵损失函数$L_{CE}(p, y)$，在二分类场景下，可以表示为：
 
-$$L_{CE}(p, y) = -y \\log(p) - (1-y) \\log(1-p)$$
+$$L_{CE}(p, y) = -y \log(p) - (1-y) \log(1-p)$$
 
 其中，$y$是真实的标签（0或1），$p$是预测的概率值。
 
@@ -125,7 +125,7 @@ $$L_{CE}(p, y) = -y \\log(p) - (1-y) \\log(1-p)$$
 
 Kullback-Leibler散度$KL(p||q)$衡量的是分布$p$相对于分布$q$的差异，定义为：
 
-$$KL(p||q) = \\sum_{x} p(x) \\log\\left(\\frac{p(x)}{q(x)}\\right)$$
+$$KL(p||q) = \sum_{x} p(x) \log\left(\frac{p(x)}{q(x)}\right)$$
 
 ### 4.3 案例分析与讲解
 
@@ -176,7 +176,7 @@ def knowledge_distillation(model_teacher, model_student, data_loader, device, te
     # 训练过程细节
     pass
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     # 数据预处理、模型初始化、训练流程等
     pass
 ```
@@ -218,8 +218,8 @@ if __name__ == \"__main__\":
 
 ### 7.3 相关论文推荐
 
-- **\"Efficient Multilingual Pretraining with Knowledge Distillation\"**
-- **\"Cross-lingual Knowledge Distillation for Multilingual NLP Tasks\"**
+- **"Efficient Multilingual Pretraining with Knowledge Distillation"**
+- **"Cross-lingual Knowledge Distillation for Multilingual NLP Tasks"**
 
 ### 7.4 其他资源推荐
 

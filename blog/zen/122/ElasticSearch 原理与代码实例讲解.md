@@ -129,7 +129,7 @@ public class ElasticSearchExample {
         // 创建索引请求
         IndexRequest request = new IndexRequest("my_index")
                 .id("1")
-                .source("{\"name\":\"John Doe\",\"age\":30}", XContentType.JSON);
+                .source("{"name":"John Doe","age":30}", XContentType.JSON);
 
         // 添加文档
         IndexResponse response = client.index(request, RequestOptions.DEFAULT);

@@ -174,19 +174,19 @@ $$D_i = (TF_i, IDF_i)$$
 | Elasticsearch | 1 | 1.0986 |
 | 是 | 1 | 0.6931 |
 | 一个 | 1 | 0.6931 |
-| 分布式 | 2 | 0.415 | 
-| 搜索引擎 | 2 | 0.415 | 
+| 分布式 | 2 | 0.415 |
+| 搜索引擎 | 2 | 0.415 |
 | 可以 | 1 | 0.6931 |
 | 用来 | 1 | 0.6931 |
-| 搜索 | 2 | 0.415 | 
-| 结构化 | 1 | 0.415 | 
-| 非结构化 | 1 | 0.415 | 
-| 数据 | 2 | 0.415 | 
+| 搜索 | 2 | 0.415 |
+| 结构化 | 1 | 0.415 |
+| 非结构化 | 1 | 0.415 |
+| 数据 | 2 | 0.415 |
 | 基于 | 1 | 0.6931 |
 | Zookeeper | 1 | 0.6931 |
-| 技术 | 1 | 0.6931 | 
+| 技术 | 1 | 0.6931 |
 | 非常 | 1 | 0.6931 |
-| 强大 | 1 | 0.6931 | 
+| 强大 | 1 | 0.6931 |
 
 最后，将每个单词与包含该单词的文档列表关联起来，形成倒排索引：
 
@@ -239,12 +239,12 @@ from collections import defaultdict
 class InvertedIndex:
     def __init__(self):
         self.index = defaultdict(list)
-    
+
     def add_document(self, doc_id, content):
         words = content.split()
         for word in words:
             self.index[word].append(doc_id)
-    
+
     def search(self, query):
         query_words = query.split()
         result = set()

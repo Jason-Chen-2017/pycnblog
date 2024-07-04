@@ -33,7 +33,7 @@ HBase的数据模型包括表、行、列族和列等概念。RowKey与这些概
 - 列族:相同列族的数据会存储在一起,可利用于RowKey设计
 - 列:列限定符可用于设计复合RowKey
 
-## 3.核心算法原理具体操作步骤 
+## 3.核心算法原理具体操作步骤
 
 ### 3.1 生成递增序列RowKey
 
@@ -43,7 +43,7 @@ HBase的数据模型包括表、行、列族和列等概念。RowKey与这些概
 // 使用数字作为RowKey
 String rowKey = String.format("%019d", sequenceId);
 
-// 使用时间戳作为RowKey 
+// 使用时间戳作为RowKey
 String rowKey = String.format("%019d", System.currentTimeMillis());
 
 // 使用UUID作为RowKey
@@ -56,7 +56,7 @@ String rowKey = UUID.randomUUID().toString();
 
 ```java
 // 使用MD5散列前缀
-String salt = "salt_" + RandomStringUtils.randomAlphanumeric(3); 
+String salt = "salt_" + RandomStringUtils.randomAlphanumeric(3);
 String rowKey = salt + "_" + MD5Hash(data);
 
 // 使用Murmur Hash散列前缀
@@ -73,7 +73,7 @@ String rowKey = salt + "_" + murmurHash(data);
 String rowKey = city + "_" + ageGroup + "_" + gender + "_" + userId;
 
 // 复合RowKey示例: 时间戳_设备ID_数据类型
-String rowKey = timestamp + "_" + deviceId + "_" + dataType; 
+String rowKey = timestamp + "_" + deviceId + "_" + dataType;
 ```
 
 ## 4.数学模型和公式详细讲解举例说明
@@ -86,7 +86,7 @@ MD5是一种广泛使用的加密散列函数,它可以将任意长度的输入�
 
 $$
 \begin{aligned}
-\text{MD5}(X) &= H(X) \\
+\text{MD5}(X) &= H(X) \
 &= 0x\{32\text{位十六进制数}\}
 \end{aligned}
 $$
@@ -99,7 +99,7 @@ Murmur哈希是一种非加密型哈希函数,它的计算速度比MD5快,而且
 
 $$
 \begin{aligned}
-\text{murmur64}(X) &= H(X) \\
+\text{murmur64}(X) &= H(X) \
 &= 0x\{64\text{位十六进制数}\}
 \end{aligned}
 $$
@@ -129,7 +129,7 @@ public class RowKeyDesignExample {
         return salt + "_" + md5;
     }
 
-    // 生成带Murmur哈希前缀的RowKey 
+    // 生成带Murmur哈希前缀的RowKey
     public static String generateMurmurHashPrefixRowKey(String data) {
         String salt = "salt_" + RandomStringUtils.randomAlphanumeric(3);
         long hash = MurmurHash3.hash64(data.getBytes());

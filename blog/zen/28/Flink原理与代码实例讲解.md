@@ -100,17 +100,17 @@ Flink 的核心算法基于**有界数据流**和**无界数据流**的处理模
 
 #### 时间感知模型：
 
-- **事件时间**：$$ \\tau_e = t + \\Delta t $$
-- **处理时间**：$$ \\tau_p = t $$
+- **事件时间**：$$ \tau_e = t + \Delta t $$
+- **处理时间**：$$ \tau_p = t $$
 
-其中，$$t$$ 是事件发生的时间，$$\\Delta t$$ 是事件到达接收点的时间延迟。
+其中，$$t$$ 是事件发生的时间，$$\Delta t$$ 是事件到达接收点的时间延迟。
 
 #### 窗口操作：
 
-- **时间窗口**：$$ W(t) = [t - \\Delta t, t] $$
-- **滑动窗口**：$$ W_{slide}(t) = [t - \\Delta t, t + \\Delta t] $$
+- **时间窗口**：$$ W(t) = [t - \Delta t, t] $$
+- **滑动窗口**：$$ W_{slide}(t) = [t - \Delta t, t + \Delta t] $$
 
-其中，$$\\Delta t$$ 是窗口长度。
+其中，$$\Delta t$$ 是窗口长度。
 
 ### 公式推导过程
 
@@ -151,7 +151,7 @@ public class SimpleStream {
         env.enableCheckpointing(Time.seconds(5));
         env.setParallelism(1);
 
-        DataStream<String> stream = env.socketTextStream(\"localhost\", 9999);
+        DataStream<String> stream = env.socketTextStream("localhost", 9999);
 
         stream.print().setParallelism(1);
     }

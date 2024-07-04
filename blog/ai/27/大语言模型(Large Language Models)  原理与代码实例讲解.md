@@ -99,7 +99,7 @@
 
 大语言模型通常基于概率模型，通过定义概率分布来描述文本生成的过程。以Transformer为例，其核心是自注意力机制，可以表示为：
 
-$$P(x_1, x_2, ..., x_T) = \\prod_{t=1}^{T} p(x_t|x_{<t})$$
+$$P(x_1, x_2, ..., x_T) = \prod_{t=1}^{T} p(x_t|x_{<t})$$
 
 其中，$p(x_t|x_{<t})$是基于先前词$x_{<t}$的概率分布。
 
@@ -109,7 +109,7 @@ $$P(x_1, x_2, ..., x_T) = \\prod_{t=1}^{T} p(x_t|x_{<t})$$
 
 自注意力机制通过计算每个词与其序列中其他词的相关性来更新词向量：
 
-$$W_q \\cdot \\text{Query} + W_k \\cdot \\text{Key} + W_v \\cdot \\text{Value}$$
+$$W_q \cdot \text{Query} + W_k \cdot \text{Key} + W_v \cdot \text{Value}$$
 
 其中，$W_q$、$W_k$、$W_v$是权重矩阵，分别对应查询、键和值。
 
@@ -152,14 +152,14 @@ $$W_q \\cdot \\text{Query} + W_k \\cdot \\text{Key} + W_v \\cdot \\text{Value}$$
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # 加载预训练模型和分词器
-tokenizer = AutoTokenizer.from_pretrained(\"gpt2\")
-model = AutoModelForCausalLM.from_pretrained(\"gpt2\")
+tokenizer = AutoTokenizer.from_pretrained("gpt2")
+model = AutoModelForCausalLM.from_pretrained("gpt2")
 
 # 输入文本序列
-input_text = \"Hello, world!\"
+input_text = "Hello, world!"
 
 # 分词
-input_ids = tokenizer.encode(input_text, return_tensors=\"pt\")
+input_ids = tokenizer.encode(input_text, return_tensors="pt")
 
 # 预测下一个令牌
 output = model(input_ids, output_hidden_states=True)

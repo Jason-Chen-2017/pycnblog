@@ -90,24 +90,24 @@
 
 多模态大模型的数学模型通常由以下部分组成：
 
-- **多模态数据输入**：设$X_1, X_2, \\dots, X_M$为来自不同模态的数据，其中$M$为模态数量。
+- **多模态数据输入**：设$X_1, X_2, \dots, X_M$为来自不同模态的数据，其中$M$为模态数量。
 - **多模态特征提取**：使用卷积神经网络（CNN）提取图像特征，循环神经网络（RNN）提取文本特征，等等。
 - **模型融合**：将不同模态的特征进行融合，形成统一表示，如使用图神经网络（GNN）或自编码器（AE）。
 - **任务输出**：根据统一表示生成最终的输出，如使用神经网络（NN）进行分类或生成。
 
 ### 4.2 公式推导过程
 
-假设我们有一个多模态数据集$\\mathcal{D} = \\{(X_1^{(i)}, X_2^{(i)}, \\dots, X_M^{(i)}) | i = 1, \\dots, N\\}$，其中$X_1^{(i)}$，$X_2^{(i)}$，$\\dots$，$X_M^{(i)}$分别为第$i$个样本在不同模态上的数据。
+假设我们有一个多模态数据集$\mathcal{D} = \{(X_1^{(i)}, X_2^{(i)}, \dots, X_M^{(i)}) | i = 1, \dots, N\}$，其中$X_1^{(i)}$，$X_2^{(i)}$，$\dots$，$X_M^{(i)}$分别为第$i$个样本在不同模态上的数据。
 
-对于每个模态，我们使用相应的特征提取模型$F_{1}(\\cdot), F_{2}(\\cdot), \\dots, F_{M}(\\cdot)$提取特征，得到特征向量$F_{1}(X_1^{(i)}), F_{2}(X_2^{(i)}), \\dots, F_{M}(X_M^{(i)})$。
+对于每个模态，我们使用相应的特征提取模型$F_{1}(\cdot), F_{2}(\cdot), \dots, F_{M}(\cdot)$提取特征，得到特征向量$F_{1}(X_1^{(i)}), F_{2}(X_2^{(i)}), \dots, F_{M}(X_M^{(i)})$。
 
-然后，我们使用模型融合模型$F_{\\text{merge}}(\\cdot)$将特征向量融合成统一表示：
+然后，我们使用模型融合模型$F_{\text{merge}}(\cdot)$将特征向量融合成统一表示：
 
-$$Y^{(i)} = F_{\\text{merge}}(F_{1}(X_1^{(i)}), F_{2}(X_2^{(i)}), \\dots, F_{M}(X_M^{(i)}))$$
+$$Y^{(i)} = F_{\text{merge}}(F_{1}(X_1^{(i)}), F_{2}(X_2^{(i)}), \dots, F_{M}(X_M^{(i)}))$$
 
-最后，我们使用任务输出模型$F_{\\text{output}}(\\cdot)$生成最终的输出：
+最后，我们使用任务输出模型$F_{\text{output}}(\cdot)$生成最终的输出：
 
-$$\\hat{Y}^{(i)} = F_{\\text{output}}(Y^{(i)})$$
+$$\hat{Y}^{(i)} = F_{\text{output}}(Y^{(i)})$$
 
 ### 4.3 案例分析与讲解
 
@@ -204,7 +204,7 @@ def test():
             _, predicted = torch.max(outputs.data, 1)
             total += labels.size(0)
             correct += (predicted == labels).sum().item()
-    print(f\"Test Accuracy: {100 * correct / total}%\")
+    print(f"Test Accuracy: {100 * correct / total}%")
 
 if __name__ == '__main__':
     test()
@@ -274,10 +274,10 @@ if __name__ == '__main__':
 
 ### 7.3 相关论文推荐
 
-- **\"Generative Adversarial Nets\"**: 作者：Ian Goodfellow et al.
+- **"Generative Adversarial Nets"**: 作者：Ian Goodfellow et al.
   - 这篇论文介绍了生成对抗网络（GAN）的基本原理和实现，是深度学习领域的重要里程碑。
 
-- **\"BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding\"**: 作者：Jacob Devlin et al.
+- **"BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"**: 作者：Jacob Devlin et al.
   - 这篇论文介绍了BERT模型的原理和实现，是自然语言处理领域的重要进展。
 
 ### 7.4 其他资源推荐

@@ -54,8 +54,8 @@ SMO算法每次迭代选择两个α参数进行更新，这两个参数需要满
 
 $$
 \begin{aligned}
-&\min_{\mathbf{w},b,\xi} \frac{1}{2}||\mathbf{w}||^2 + C\sum_{i=1}^{n}\xi_i \\
-&\text{s.t. } y_i(\mathbf{w}^T\mathbf{x}_i + b) \ge 1 - \xi_i, i=1,2,...,n \\
+&\min_{\mathbf{w},b,\xi} \frac{1}{2}||\mathbf{w}||^2 + C\sum_{i=1}^{n}\xi_i \
+&\text{s.t. } y_i(\mathbf{w}^T\mathbf{x}_i + b) \ge 1 - \xi_i, i=1,2,...,n \
 &\xi_i \ge 0, i=1,2,...,n
 \end{aligned}
 $$
@@ -66,8 +66,8 @@ $$
 
 $$
 \begin{aligned}
-&\max_{\alpha} \sum_{i=1}^{n}\alpha_i - \frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{n}\alpha_i\alpha_jy_iy_j\mathbf{x}_i^T\mathbf{x}_j \\
-&\text{s.t. } \sum_{i=1}^{n}\alpha_iy_i = 0 \\
+&\max_{\alpha} \sum_{i=1}^{n}\alpha_i - \frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{n}\alpha_i\alpha_jy_iy_j\mathbf{x}_i^T\mathbf{x}_j \
+&\text{s.t. } \sum_{i=1}^{n}\alpha_iy_i = 0 \
 &0 \le \alpha_i \le C, i=1,2,...,n
 \end{aligned}
 $$
@@ -80,7 +80,7 @@ $$
 
 $$
 \begin{aligned}
-\alpha_2^{new} &= \alpha_2 + \frac{y_2(E_1 - E_2)}{\eta} \\
+\alpha_2^{new} &= \alpha_2 + \frac{y_2(E_1 - E_2)}{\eta} \
 \alpha_1^{new} &= \alpha_1 + y_1y_2(\alpha_2 - \alpha_2^{new})
 \end{aligned}
 $$

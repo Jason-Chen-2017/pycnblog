@@ -1,7 +1,7 @@
 
 # AI人工智能 Agent：利用强化学习进行决策优化
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 ### 1.1 问题的由来

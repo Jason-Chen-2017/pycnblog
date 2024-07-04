@@ -14,7 +14,7 @@
 本文将围绕Flink展开深入讨论,内容涵盖:
 - Flink的核心概念与设计原理
 - DataStream和DataSet API的使用
-- 时间概念与窗口机制 
+- 时间概念与窗口机制
 - 状态管理与检查点机制
 - Flink的部署与配置
 - 常见的Flink应用场景
@@ -155,28 +155,28 @@ public class WordCount {
     public static void main(String[] args) throws Exception {
         // 创建执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        
+
         // 从文本文件读取数据
         DataStream<String> inputStream = env.readTextFile("input.txt");
-        
+
         // 对数据进行转换处理
         DataStream<Tuple2<String, Integer>> resultStream = inputStream
             .flatMap(new Tokenizer())
             .keyBy(value -> value.f0)
             .sum(1);
-        
+
         // 打印结果
         resultStream.print();
-        
+
         // 执行任务
         env.execute("Word Count");
     }
-    
+
     // 自定义函数,将文本行拆分为单词
     public static class Tokenizer implements FlatMapFunction<String, Tuple2<String, Integer>> {
         @Override
         public void flatMap(String value, Collector<Tuple2<String, Integer>> out) {
-            String[] tokens = value.toLowerCase().split("\\W+");
+            String[] tokens = value.toLowerCase().split("\W+");
             for (String token : tokens) {
                 if (token.length() > 0) {
                     out.collect(new Tuple2<>(token, 1));

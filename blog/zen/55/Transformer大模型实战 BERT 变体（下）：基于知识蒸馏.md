@@ -63,11 +63,11 @@ $$head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)$$
 $$PE_{(pos,2i)} = sin(pos/10000^{2i/d_{model}})$$
 $$PE_{(pos,2i+1)} = cos(pos/10000^{2i/d_{model}})$$
 其中，$pos$表示位置，$i$表示维度，$d_{model}$表示词嵌入的维度。
-### 4.2 BERT模型的数学表示  
+### 4.2 BERT模型的数学表示
 #### 4.2.1 MLM任务的数学公式
 $$L_{MLM} = -\sum_{i=1}^nm_i\log p(w_i|w_{\backslash i})$$
 其中，$m_i$表示第$i$个token是否被mask，$w_i$表示第$i$个token，$w_{\backslash i}$表示除第$i$个token之外的其他token。
-#### 4.2.2 NSP任务的数学公式 
+#### 4.2.2 NSP任务的数学公式
 $$L_{NSP} = -y\log p(y=1|s_1,s_2) - (1-y)\log p(y=0|s_1,s_2)$$
 其中，$y$表示两个句子是否相邻，$s_1$和$s_2$分别表示两个句子。
 ### 4.3 知识蒸馏的数学表示
@@ -107,11 +107,11 @@ tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 # 准备训练数据
 texts = [...]
 labels = [...]
-inputs = tokenizer(texts, return_tensors='pt', max_length=512, truncation=True, padding='max_length') 
+inputs = tokenizer(texts, return_tensors='pt', max_length=512, truncation=True, padding='max_length')
 inputs['labels'] = torch.LongTensor(labels)
 
 # 微调模型
-outputs = model(**inputs)  
+outputs = model(**inputs)
 loss = outputs.loss
 loss.backward()
 ```
@@ -129,7 +129,7 @@ class StudentModel(nn.Module):
         super().__init__()
         self.bert = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=2)
         self.bert.bert.encoder.layer = self.bert.bert.encoder.layer[:3]  # 只保留前3层transformer block
-        
+
     def forward(self, input_ids, attention_mask, labels=None):
         outputs = self.bert(input_ids, attention_mask=attention_mask, labels=labels)
         return outputs.logits, outputs.loss

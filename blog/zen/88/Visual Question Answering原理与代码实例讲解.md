@@ -1,7 +1,7 @@
 
 # Visual Question Answering原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -180,7 +180,7 @@ A：优化问答模型可以从以下几个方面进行：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n vqa-env python=3.8 
+conda create -n vqa-env python=3.8
 conda activate vqa-env
 ```
 3. 安装PyTorch：

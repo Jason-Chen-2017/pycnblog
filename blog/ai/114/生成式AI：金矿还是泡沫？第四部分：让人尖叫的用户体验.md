@@ -1,6 +1,6 @@
 # 生成式AI：金矿还是泡沫？第四部分：“让人尖叫”的用户体验
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -300,4 +300,4 @@ for epoch in range(epochs):
 * **如何评估生成式AI模型的性能？**
 * **生成式AI的未来发展趋势是什么？**
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

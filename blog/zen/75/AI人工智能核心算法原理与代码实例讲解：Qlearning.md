@@ -1,6 +1,6 @@
 # AI人工智能核心算法原理与代码实例讲解：Q-learning
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：Q-learning,强化学习,价值函数,智能体决策
 
@@ -148,17 +148,17 @@ num_episodes = 10000
 for episode in range(num_episodes):
     state = env.reset()
     done = False
-    
+
     while not done:
         action = np.argmax(q_table[state, :] + np.random.randn(1, env.action_space.n) * (1./episode))
         next_state, reward, done, _ = env.step(action)
-        
+
         # 更新Q-table
         old_value = q_table[state, action]
         next_max = np.max(q_table[next_state, :])
         new_value = (1 - learning_rate) * old_value + learning_rate * (reward + discount_factor * next_max)
         q_table[state, action] = new_value
-        
+
         state = next_state
 
 print("Q-table:\

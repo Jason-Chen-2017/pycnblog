@@ -128,9 +128,9 @@ DQN算法的数学模型主要包括以下部分：
 
 - 目标Q值函数：$Q'(s, a) = \max_{a'} Q'(s', a')$
 
-- 策略：$P(a|s) = \begin{cases} 
+- 策略：$P(a|s) = \begin{cases}
 1 - \epsilon & \text{以概率} 1 - \epsilon \text{选择随机动作} \\
-\frac{1}{Z} \sum_{a \in A} \exp(\alpha Q(s, a)) & \text{以概率} \frac{1}{Z} \exp(\alpha Q(s, a)) \text{选择动作} 
+\frac{1}{Z} \sum_{a \in A} \exp(\alpha Q(s, a)) & \text{以概率} \frac{1}{Z} \exp(\alpha Q(s, a)) \text{选择动作}
 \end{cases}$
 
 其中，$Z = \sum_{a \in A} \exp(\alpha Q(s, a))$，$\epsilon$ 表示探索率，$\alpha$ 表示温度参数。
@@ -164,9 +164,9 @@ $$
 策略 $P(a|s)$ 用于选择动作。具体推导过程如下：
 
 $$
-P(a|s) = \begin{cases} 
+P(a|s) = \begin{cases}
 1 - \epsilon & \text{以概率} 1 - \epsilon \text{选择随机动作} \\
-\frac{1}{Z} \sum_{a \in A} \exp(\alpha Q(s, a)) & \text{以概率} \frac{1}{Z} \exp(\alpha Q(s, a)) \text{选择动作} 
+\frac{1}{Z} \sum_{a \in A} \exp(\alpha Q(s, a)) & \text{以概率} \frac{1}{Z} \exp(\alpha Q(s, a)) \text{选择动作}
 \end{cases}
 $$
 

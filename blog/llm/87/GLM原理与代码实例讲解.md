@@ -150,8 +150,7 @@ $$
 对于交叉熵损失函数，其梯度可以表示为：
 
 $$
-\
-abla_{\theta}L(\theta) = -\sum_{i=1}^{N} \frac{y_i}{P(y_i|x_i, \theta)} - \frac{(1-y_i)}{1-P(y_i|x_i, \theta)}
+\nabla_{\theta}L(\theta) = -\sum_{i=1}^{N} \frac{y_i}{P(y_i|x_i, \theta)} - \frac{(1-y_i)}{1-P(y_i|x_i, \theta)}
 $$
 
 ### 4.3 案例分析与讲解
@@ -183,8 +182,7 @@ $$
 最后，使用梯度下降等优化算法更新模型参数 $\theta$：
 
 $$
-\theta \leftarrow \theta - \eta \
-abla_{\theta}L(\theta)
+\theta \leftarrow \theta - \eta \nabla_{\theta}L(\theta)
 $$
 
 通过上述步骤，我们可以对文本数据进行分类。
@@ -299,7 +297,7 @@ for epoch in range(epochs):
         loss.backward()
         optimizer.step()
         optimizer.zero_grad()
-    
+
     # 评估模型
     model.eval()
     with torch.no_grad():

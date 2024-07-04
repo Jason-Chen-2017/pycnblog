@@ -108,13 +108,13 @@ def predict_rating(user, item, cosine_sim, user_neighbors):
     neighbors = user_neighbors.kneighbors([cosine_sim[user, :]])
     neighbors = neighbors[0][1]
     neighbor_ratings = ratings_matrix.iloc[neighbors].values
-    
+
     weighted_sum = np.sum(neighbor_ratings * cosine_sim[neighbors])
     total_weight = np.sum(cosine_sim[neighbors])
-    
+
     if total_weight == 0:
         return ratings.loc[user, item]  # 如果没有邻居，则返回当前用户的评分
-    
+
     return weighted_sum / total_weight
 
 predicted_rating = predict_rating('u', 'C', cosine_sim, user_neighbors)

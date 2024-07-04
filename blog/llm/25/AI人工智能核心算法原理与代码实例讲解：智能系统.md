@@ -91,19 +91,19 @@ AI技术的发展对于推动社会进步、提升生活质量具有重大意义
 
 #### 示例：逻辑回归
 
-假设数据集为$D=\\{(x_i,y_i)\\}_{i=1}^n$，其中$x_i$为特征向量，$y_i$为类别标签（0或1）。逻辑回归的目标是找到参数$\\theta$，使得预测概率$p(y=1|x;\\theta)$最大化。通过极大似然估计，可以得到以下目标函数：
+假设数据集为$D=\{(x_i,y_i)\}_{i=1}^n$，其中$x_i$为特征向量，$y_i$为类别标签（0或1）。逻辑回归的目标是找到参数$\theta$，使得预测概率$p(y=1|x;\theta)$最大化。通过极大似然估计，可以得到以下目标函数：
 
-$$\\hat{\\theta} = \\arg\\max_\\theta \\prod_{i=1}^n p(y_i|x_i;\\theta)^{y_i}(1-p(y_i|x_i;\\theta))^{1-y_i}$$
+$$\hat{\theta} = \arg\max_\theta \prod_{i=1}^n p(y_i|x_i;\theta)^{y_i}(1-p(y_i|x_i;\theta))^{1-y_i}$$
 
 简化为：
 
-$$\\hat{\\theta} = \\arg\\max_\\theta \\sum_{i:y_i=1}\\log p(y_i|x_i;\\theta) + \\sum_{i:y_i=0}\\log(1-p(y_i|x_i;\\theta))$$
+$$\hat{\theta} = \arg\max_\theta \sum_{i:y_i=1}\log p(y_i|x_i;\theta) + \sum_{i:y_i=0}\log(1-p(y_i|x_i;\theta))$$
 
 #### 示例：神经网络
 
 对于多层感知机（MLP），假设输入为$x$，输出为$y$，隐藏层有$l$个节点，激活函数为$f$，权重为$W$和$b$，则前向传播过程可以表示为：
 
-$$z_l = W_l \\cdot f(W_{l-1} \\cdot f(...f(W_1 \\cdot x + b_1) + ...)) + b_l$$
+$$z_l = W_l \cdot f(W_{l-1} \cdot f(...f(W_1 \cdot x + b_1) + ...)) + b_l$$
 
 $$a_l = g(z_l)$$
 
@@ -115,15 +115,15 @@ $$a_l = g(z_l)$$
 
 设损失函数为交叉熵损失：
 
-$$L(\\theta) = -\\frac{1}{n}\\sum_{i=1}^n[y_i\\log(p(y_i|x_i;\\theta)) + (1-y_i)\\log(1-p(y_i|x_i;\\theta))]$$
+$$L(\theta) = -\frac{1}{n}\sum_{i=1}^n[y_i\log(p(y_i|x_i;\theta)) + (1-y_i)\log(1-p(y_i|x_i;\theta))]$$
 
 求导得：
 
-$$\\frac{\\partial L}{\\partial \\theta_j} = \\frac{1}{n}\\sum_{i=1}^n[x_ji(y_i - p(y_i|x_i;\\theta))]$$
+$$\frac{\partial L}{\partial \theta_j} = \frac{1}{n}\sum_{i=1}^n[x_ji(y_i - p(y_i|x_i;\theta))]$$
 
-通过梯度下降法更新$\\theta$：
+通过梯度下降法更新$\theta$：
 
-$$\\theta := \\theta - \\eta \\frac{\\partial L}{\\partial \\theta}$$
+$$\theta := \theta - \eta \frac{\partial L}{\partial \theta}$$
 
 ### 4.3 案例分析与讲解
 
@@ -197,9 +197,9 @@ def main():
 
     # 评估模型性能
     accuracy = accuracy_score(y_test, y_pred)
-    print(f\"Accuracy: {accuracy}\")
+    print(f"Accuracy: {accuracy}")
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     main()
 ```
 

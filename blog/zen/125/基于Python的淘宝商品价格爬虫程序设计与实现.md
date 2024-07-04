@@ -322,4 +322,4 @@ if __name__ == "__main__":
     * 使用加密技术，保护爬虫程序的代码和数据。
     * 使用安全协议，例如HTTPS，保护数据传输安全。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

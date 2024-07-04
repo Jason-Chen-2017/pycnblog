@@ -1,6 +1,6 @@
 # 强化学习Reinforcement Learning中的蒙特卡洛方法实战技巧
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：强化学习，蒙特卡洛方法，Q学习，价值迭代，策略改进，探索与利用
 
@@ -92,14 +92,14 @@
 #### 蒙特卡洛值迭代
 
 - **价值函数更新**：对于每个状态-动作对$(s,a)$，
-  $$ Q(s,a) \\leftarrow \\frac{1}{N} \\sum_{i=1}^{N} \\sum_{t=0}^{T_i} R(s_t,a_t) $$
+  $$ Q(s,a) \leftarrow \frac{1}{N} \sum_{i=1}^{N} \sum_{t=0}^{T_i} R(s_t,a_t) $$
   其中$N$是轨迹数量，$T_i$是第$i$条轨迹的长度。
 
 #### 蒙特卡洛策略迭代
 
 - **策略改进**：通过策略评估得到的期望值来更新策略，
-  $$ \\pi(a|s) \\propto \\exp \\left( \\frac{\\sum_{s'} P(s'|s,a) \\left[ \\sum_{t=0}^{T_i} R(s_t,a_t) \\right]}{\\sum_{a'} \\pi(a'|s') \\sum_{s'} P(s'|s,a') \\left[ \\sum_{t=0}^{T_i} R(s_t,a_t) \\right]} \\right) $$
-  其中$\\pi$是策略函数，$\\exp$是指数函数。
+  $$ \pi(a|s) \propto \exp \left( \frac{\sum_{s'} P(s'|s,a) \left[ \sum_{t=0}^{T_i} R(s_t,a_t) \right]}{\sum_{a'} \pi(a'|s') \sum_{s'} P(s'|s,a') \left[ \sum_{t=0}^{T_i} R(s_t,a_t) \right]} \right) $$
+  其中$\pi$是策略函数，$\exp$是指数函数。
 
 ### 4.3 案例分析与讲解
 
@@ -128,14 +128,14 @@ import gym
 env = gym.make('MountainCar-v0')  # 创建环境实例
 
 def monte_carlo_value_iteration(env, episodes=1000, gamma=0.99, epsilon=0.1):
-    \"\"\"
+    """
     实现蒙特卡洛值迭代算法。
     参数：
     env：环境实例。
     episodes：迭代次数。
     gamma：折扣因子。
     epsilon：探索率。
-    \"\"\"
+    """
     states = env.observation_space.shape[0]
     actions = env.action_space.n
     Q = np.zeros((states, actions))
@@ -163,8 +163,8 @@ def monte_carlo_value_iteration(env, episodes=1000, gamma=0.99, epsilon=0.1):
     return policy, Q
 
 policy, Q = monte_carlo_value_iteration(env)
-print(\"Optimal Policy:\", policy)
-print(\"Value Function:\", Q)
+print("Optimal Policy:", policy)
+print("Value Function:", Q)
 ```
 
 ### 5.3 代码解读与分析

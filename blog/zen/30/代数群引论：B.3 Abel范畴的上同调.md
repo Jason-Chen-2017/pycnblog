@@ -85,20 +85,20 @@
 
 ### 4.1 数学模型构建
 
-- **模的复合序列**：$M_1 \\rightarrow M_2 \\rightarrow \\cdots \\rightarrow M_n$
-- **Cech复合序列**：$\\cdots \\rightarrow C^*(M) \\rightarrow C^*(M \\times M) \\rightarrow \\cdots$
+- **模的复合序列**：$M_1 \rightarrow M_2 \rightarrow \cdots \rightarrow M_n$
+- **Cech复合序列**：$\cdots \rightarrow C^*(M) \rightarrow C^*(M \times M) \rightarrow \cdots$
 
 ### 4.2 公式推导过程
 
 #### 推导过程一：模的上同调群
-$$H^i(M) = \\ker(\\delta_i)/\\operatorname{im}(\\delta_{i+1})$$
+$$H^i(M) = \ker(\delta_i)/\operatorname{im}(\delta_{i+1})$$
 
 #### 推导过程二：Cech同调群的定义
-$$H^i(U, F) = \\ker(\\delta_i)/(F \\cap \\operatorname{im}(\\delta_{i+1}))$$
+$$H^i(U, F) = \ker(\delta_i)/(F \cap \operatorname{im}(\delta_{i+1}))$$
 
 ### 4.3 案例分析与讲解
 
-- **案例一：**考虑一个具体的模$M$和一组开覆盖$\\{U_i\\}$，通过构造Cech复合序列计算模的某个特定上同调群。
+- **案例一：**考虑一个具体的模$M$和一组开覆盖$\{U_i\}$，通过构造Cech复合序列计算模的某个特定上同调群。
 - **案例二：**分析模的复合序列在特定情况下如何反映模的结构变化。
 
 ### 4.4 常见问题解答
@@ -122,14 +122,14 @@ from sage.categories.morphism import Morphism
 from sage.categories.modules_with_basis import ModulesWithBasis
 
 def compute_cohomology(M, differential):
-    \"\"\"
+    """
     计算模M的上同调群。
     参数：
     M -- 模的实例
     differential -- 差分映射的列表，描述模的复合序列
     返回值：
     上同调群的列表
-    \"\"\"
+    """
     # 初始化上同调群列表
     cohomology_groups = []
 

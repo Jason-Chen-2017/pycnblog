@@ -254,10 +254,10 @@ tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 def generate_text(prompt, length=50):
     input_ids = tokenizer.encode(prompt, return_tensors='pt')
     output_ids = model.generate(
-        input_ids, 
-        max_length=length, 
-        num_beams=5, 
-        no_repeat_ngram_size=2, 
+        input_ids,
+        max_length=length,
+        num_beams=5,
+        no_repeat_ngram_size=2,
         repetition_penalty=1.2
     )
     return tokenizer.decode(output_ids[0], skip_special_tokens=True)
@@ -287,10 +287,10 @@ tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 def generate_text(prompt, length=50):
     input_ids = tokenizer.encode(prompt, return_tensors='pt')
     output_ids = model.generate(
-        input_ids, 
-        max_length=length, 
-        num_beams=5, 
-        no_repeat_ngram_size=2, 
+        input_ids,
+        max_length=length,
+        num_beams=5,
+        no_repeat_ngram_size=2,
         repetition_penalty=1.2
     )
     return tokenizer.decode(output_ids[0], skip_special_tokens=True)

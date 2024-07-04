@@ -57,7 +57,7 @@ graph TD
 
 需要注意的是,神经进化算法不仅可以优化神经网络的权重,还可以同时优化网络的拓扑结构和学习规则,从而实现真正的自动机器学习(AutoML)。这使得神经进化算法在处理复杂问题时具有更大的灵活性和适应性。
 
-# 3. 核心算法原理与具体操作步骤  
+# 3. 核心算法原理与具体操作步骤
 
 ## 3.1 算法原理概述
 
@@ -182,5 +182,5 @@ graph TD
 为了形式化描述神经进化算法,我们需要构建数学模型。假设我们要优化的神经网络为$f(x; \theta)$,其中$x$为输入,$\theta$为所有可训练参数(包括权重和结构参数)的集合。我们的目标是找到最优参数$\theta^*$,使得在训练数据或任务上的某个性能指标$J(f(x; \theta))$最大化(或最小化)。
 
 $$\begin{align*}
-\theta^* &= \underset{\theta}{\operatorname{argmax}}\ J(f(x; \theta)) \\
+\theta^* &= \underset{\theta}{\operatorname{argmax}}\ J(f(x; \theta)) \
          &= \underset{\theta}{\operatorname{argmax}}\ \math

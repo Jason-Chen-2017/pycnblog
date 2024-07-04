@@ -123,7 +123,7 @@
 
 - **重复项去除**: 设$D$为数据集，$R$为重复记录集合，则$D' = D - R$。
 - **缺失值处理**: 设$x$为特征，$m_x$为均值，$s_x$为标准差，则$x' = \begin{cases} \frac{x-m_x}{s_x} & \text{if } s_x \
-eq 0 \\ m_x & \text{if } s_x = 0 \end{cases}$。
+eq 0 \ m_x & \text{if } s_x = 0 \end{cases}$。
 
 #### 特征工程公式
 

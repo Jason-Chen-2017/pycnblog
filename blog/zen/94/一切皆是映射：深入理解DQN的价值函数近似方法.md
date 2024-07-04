@@ -107,8 +107,7 @@ DQN通过神经网络近似价值函数，实现对状态的评估，从而指�
 - 使用以下公式更新神经网络权重：
 
 $$
-\theta \leftarrow \theta - \alpha \
-abla_{\theta}J(\theta)
+\theta \leftarrow \theta - \alpha \nabla_{\theta}J(\theta)
 $$
 
 其中，$\alpha$ 为学习率，$J(\theta)$ 为损失函数，定义为：
@@ -187,15 +186,12 @@ $$
 根据均方误差损失函数的定义，我们可以得到以下梯度：
 
 $$
-\
-abla_{\theta}L(\theta) = \frac{1}{N} \sum_{t=1}^N 2(Q(s_t, a_t; \theta) - y_t) \
-abla_{\theta}Q(s_t, a_t; \theta)
+\nabla_{\theta}L(\theta) = \frac{1}{N} \sum_{t=1}^N 2(Q(s_t, a_t; \theta) - y_t) \nabla_{\theta}Q(s_t, a_t; \theta)
 $$
 
 其中：
 
-- $\
-abla_{\theta}L(\theta)$ 为损失函数对参数 $\theta$ 的梯度。
+- $\nabla_{\theta}L(\theta)$ 为损失函数对参数 $\theta$ 的梯度。
 
 ### 4.3 案例分析与讲解
 
@@ -243,7 +239,7 @@ for epoch in range(100):
         pred_value = model(state)
         target_value = pred_value.clone()
         target_value[0, action] = pred_value[0, action] + 0.1 * torch.randn(1)
-        
+
         # 计算损失并更新模型参数
         loss = loss_fn(pred_value, target_value)
         optimizer.zero_grad()

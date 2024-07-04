@@ -1,7 +1,7 @@
 
 # 卷积神经网络(Convolutional Neural Network)原理与代码实战案例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -126,18 +126,18 @@ CNN的数学模型主要包括以下几个部分：
 ReLU函数定义为：
 
 $$
-\sigma(x) = \begin{cases} 
+\sigma(x) = \begin{cases}
 x & \text{if } x > 0 \\
-0 & \text{if } x \leq 0 
+0 & \text{if } x \leq 0
 \end{cases}
 $$
 
 其导数定义为：
 
 $$
-\frac{d\sigma}{dx} = \begin{cases} 
+\frac{d\sigma}{dx} = \begin{cases}
 1 & \text{if } x > 0 \\
-0 & \text{if } x \leq 0 
+0 & \text{if } x \leq 0
 \end{cases}
 $$
 
@@ -202,7 +202,7 @@ A：可以从以下几个方面改进CNN的性能：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n cnn-env python=3.8 
+conda create -n cnn-env python=3.8
 conda activate cnn-env
 ```
 

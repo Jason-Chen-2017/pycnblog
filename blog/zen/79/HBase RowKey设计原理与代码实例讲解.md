@@ -53,7 +53,7 @@ RowKey设计的核心是让相关数据尽可能地聚合在一起,又要使数�
 
 一个典型的RowKey设计过程如下:
 1. 选择合适的Row字段作为RowKey
-2. 根据数据特点选择RowKey构造方式,如盐值、哈希、反转、组合等 
+2. 根据数据特点选择RowKey构造方式,如盐值、哈希、反转、组合等
 3. 评估RowKey的散列性和数据分布
 4. 考虑RowKey的可读性和语义性
 5. 权衡RowKey的长度对存储空间的影响
@@ -68,12 +68,12 @@ RowKey设计的核心是让相关数据尽可能地聚合在一起,又要使数�
 
 ```java
 String salt = genSalt();
-String rowKey = salt + "_" + originalKey; 
+String rowKey = salt + "_" + originalKey;
 ```
 
 2. 哈希法
 - 对RowKey进行哈希,使得数据分布均匀
-- 如果是复合RowKey,可以选取其中某些字段哈希 
+- 如果是复合RowKey,可以选取其中某些字段哈希
 - 优点:散列性好;缺点:失去了RowKey的有序性,范围扫描较难
 
 ```java
@@ -144,9 +144,9 @@ $$H(x): U \rightarrow V$$
 压缩过程是MD5的核心,涉及到一系列位运算:
 
 $$\begin{aligned}
-a &= b + ((a + F(b,c,d) + M_i + K_i) <<< s) \\
-d &= a + ((d + F(a,b,c) + M_{i+1} + K_{i+1}) <<< s) \\
-c &= d + ((c + F(d,a,b) + M_{i+2} + K_{i+2}) <<< s) \\
+a &= b + ((a + F(b,c,d) + M_i + K_i) <<< s) \
+d &= a + ((d + F(a,b,c) + M_{i+1} + K_{i+1}) <<< s) \
+c &= d + ((c + F(d,a,b) + M_{i+2} + K_{i+2}) <<< s) \
 b &= c + ((b + F(c,d,a) + M_{i+3} + K_{i+3}) <<< s)
 \end{aligned}$$
 
@@ -182,7 +182,7 @@ b &= c + ((b + F(c,d,a) + M_{i+3} + K_{i+3}) <<< s)
 Java实现示例:
 
 ```java
-String rowKey = DigestUtils.md5Hex(userId).substring(0, 8) 
+String rowKey = DigestUtils.md5Hex(userId).substring(0, 8)
               + "_" + actionType
               + "_" + timestamp;
 ```

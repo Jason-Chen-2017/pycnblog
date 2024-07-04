@@ -187,7 +187,7 @@ RNN通过循环结构处理序列数据：
 
 $$
 \begin{align*}
-\hat{y}_t &= \sigma(W_4h_t + W_3x_t + b_4) \\
+\hat{y}_t &= \sigma(W_4h_t + W_3x_t + b_4) \
 h_t &= \sigma(W_2h_{t-1} + W_1x_t + b_2)
 \end{align*}
 $$
@@ -240,7 +240,7 @@ RNN通过循环结构计算输出：
 
 $$
 \begin{align*}
-\hat{y}_t &= \sigma(W_4h_t + W_3x_t + b_4) \\
+\hat{y}_t &= \sigma(W_4h_t + W_3x_t + b_4) \
 h_t &= \sigma(W_2h_{t-1} + W_1x_t + b_2)
 \end{align*}
 $$

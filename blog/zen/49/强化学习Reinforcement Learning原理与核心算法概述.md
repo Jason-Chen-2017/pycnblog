@@ -10,7 +10,7 @@
 
 强化学习(Reinforcement Learning)作为机器学习的第三大类,它的出现恰好弥补了监督学习和无监督学习的不足。强化学习不需要人工标注的训练数据,也不是简单地从数据中发现模式,而是通过与环境的交互来学习,以获取最大化的长期回报。
 
-### 1.2 研究现状  
+### 1.2 研究现状
 
 强化学习的理论基础可以追溯到20世纪50年代,但是由于当时计算能力有限,很难在实际问题中取得突破。直到近年来,计算能力的飞速提升、大数据的积累以及深度学习的兴起,为强化学习的发展带来了新的契机。
 
@@ -28,7 +28,7 @@
 
 1. 背景介绍
 2. 核心概念与联系
-3. 核心算法原理与具体操作步骤  
+3. 核心算法原理与具体操作步骤
 4. 数学模型和公式详细讲解与案例分析
 5. 项目实践:代码实例和详细解释
 6. 实际应用场景
@@ -45,7 +45,7 @@ graph TD
     A[强化学习] --> B(Agent智能体)
     A --> C(Environment环境)
     A --> D(State状态)
-    A --> E(Action行为)  
+    A --> E(Action行为)
     A --> F(Reward奖赏)
     B --> G(Observation观测)
     C --> G
@@ -75,7 +75,7 @@ graph TD
 
 强化学习算法可分为三大类:基于价值的算法(Value-based)、基于策略的算法(Policy-based)以及行为者-评论家算法(Actor-Critic)。
 
-### 3.1 算法原理概述  
+### 3.1 算法原理概述
 
 1. **基于价值的算法**
 
@@ -98,7 +98,7 @@ graph TD
     B --> C(根据策略与环境交互)
     C --> D(获取奖赏信号)
     D --> E(调整策略参数)
-    E --> B  
+    E --> B
 ```
 
 基于策略的算法直接对可能的策略进行参数化,通过最大化期望奖赏来优化策略参数。代表算法有REINFORCE、PPO等。
@@ -127,7 +127,7 @@ graph TD
 2. 对于每一个episode:
     - 初始化状态S
     - 对于每个时间步:
-        - 从S出发,选择使Q(S,a)最大的行为a  
+        - 从S出发,选择使Q(S,a)最大的行为a
         - 执行a,观测奖赏r和下一状态S'
         - 更新Q(S,a) = Q(S,a) + lr * (r + $\gamma*max_{a'}Q(S',a')$ - Q(S,a))
         - S=S'
@@ -145,7 +145,7 @@ graph TD
 
 1. **优点**:
     - 不需要人工标注的训练数据
-    - 可以解决复杂的序列决策问题 
+    - 可以解决复杂的序列决策问题
     - 具有持续学习的能力
     - 学习过程类似人类试错,有助于研究智能
 
@@ -161,7 +161,7 @@ graph TD
 
 - 机器人控制
 - 自动驾驶
-- 智能调度系统  
+- 智能调度系统
 - 游戏AI
 - 自动交易系统
 - 自然语言处理
@@ -180,9 +180,9 @@ $$
 
 其中:
 - $\mathcal{S}$是状态集合
-- $\mathcal{A}$是行为集合  
+- $\mathcal{A}$是行为集合
 - $\mathcal{P}$是状态转移概率,表示$\mathcal{P}_{ss'}^a=\Pr(S_{t+1}=s'\mid S_t=s,A_t=a)$
-- $\mathcal{R}$是奖赏函数,表示$\mathcal{R}_s^a=\mathbb{E}[R_{t+1}\mid S_t=s,A_t=a]$  
+- $\mathcal{R}$是奖赏函数,表示$\mathcal{R}_s^a=\mathbb{E}[R_{t+1}\mid S_t=s,A_t=a]$
 - $\gamma\in[0,1]$是折扣因子,控制对未来奖赏的衰减程度
 
 在MDP中,智能体的目标是学习一个最优策略$\pi^*$,使得期望的累积折扣奖赏最大:
@@ -197,8 +197,8 @@ $$
 
 $$
 \begin{aligned}
-V^\pi(s)&=\mathbb{E}_\pi\left[\sum_{k=0}^\infty \gamma^k R_{t+k+1}\mid S_t=s\right]\\
-        &=\mathbb{E}_\pi\left[R_{t+1}+\gamma V^\pi(S_{t+1})\mid S_t=s\right]\\
+V^\pi(s)&=\mathbb{E}_\pi\left[\sum_{k=0}^\infty \gamma^k R_{t+k+1}\mid S_t=s\right]\
+        &=\mathbb{E}_\pi\left[R_{t+1}+\gamma V^\pi(S_{t+1})\mid S_t=s\right]\
         &=\sum_a\pi(a\mid s)\sum_{s'}\mathcal{P}_{ss'}^a\left(\mathcal{R}_s^a+\gamma V^\pi(s')\right)
 \end{aligned}
 $$
@@ -207,7 +207,7 @@ $$
 
 $$
 \begin{aligned}
-Q^\pi(s,a)&=\mathbb{E}_\pi\left[\sum_{k=0}^\infty \gamma^k R_{t+k+1}\mid S_t=s,A_t=a\right]\\
+Q^\pi(s,a)&=\mathbb{E}_\pi\left[\sum_{k=0}^\infty \gamma^k R_{t+k+1}\mid S_t=s,A_t=a\right]\
            &=\mathcal{R}_s^a+\gamma\sum_{s'}\mathcal{P}_{ss'}^aV^\pi(s')
 \end{aligned}
 $$
@@ -216,7 +216,7 @@ $$
 
 $$
 \begin{aligned}
-V^*(s)&=\max_\pi V^\pi(s)\\
+V^*(s)&=\max_\pi V^\pi(s)\
        &=\max_a\sum_{s'}\mathcal{P}_{ss'}^a\left(\mathcal{R}_s^a+\gamma V^*(s')\right)
 \end{aligned}
 $$
@@ -269,14 +269,14 @@ value_func = np.zeros(world.shape)
 for i in range(1000):
     ...
     # 更新价值函数
-    
+
 # 从价值函数导出策略
 policy = np.zeros(world.shape, dtype=object)
 for i in range(world.shape[0]):
     for j in range(world.shape[1]):
         ...
         policy[i, j] = best_action
-        
+
 # 可视化
 ...
 ```

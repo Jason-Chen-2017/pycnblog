@@ -177,21 +177,21 @@ for epoch in range(100):
     a1 = relu(z1)
     z2 = np.dot(a1, W2) + b2
     y_pred = softmax(z2)
-    
+
     # 计算损失
     loss = np.mean(-y_train * np.log(y_pred))
-    
+
     # 反向传播
     dz2 = y_pred - y_train
     dw2 = np.dot(a1.T, dz2)
     db2 = dz2.sum(axis=0)
-    
+
     dz1 = np.dot(dz2, W2.T)
     da1 = dz1 * (da1 > 0)
-    
+
     dw1 = np.dot(X_train.T, da1)
     db1 = da1.sum(axis=0)
-    
+
     # 更新权重和偏置
     W2 -= learning_rate * dw2
     b2 -= learning_rate * db2
@@ -262,21 +262,21 @@ for epoch in range(100):
     a1 = relu(z1)
     z2 = np.dot(a1, W2) + b2
     y_pred = softmax(z2)
-    
+
     # 计算损失
     loss = np.mean(-y_train * np.log(y_pred))
-    
+
     # 反向传播
     dz2 = y_pred - y_train
     dw2 = np.dot(a1.T, dz2)
     db2 = dz2.sum(axis=0)
-    
+
     dz1 = np.dot(dz2, W2.T)
     da1 = dz1 * (da1 > 0)
-    
+
     dw1 = np.dot(X_train.T, da1)
     db1 = da1.sum(axis=0)
-    
+
     # 更新权重和偏置
     W2 -= learning_rate * dw2
     b2 -= learning_rate * db2

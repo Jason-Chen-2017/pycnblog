@@ -17,10 +17,10 @@
 - 2.1.1 梯度消失与梯度爆炸
 - 2.1.2 难以捕捉长期依赖
 
-### 2.2 LSTM 的关键组件  
+### 2.2 LSTM 的关键组件
 - 2.2.1 细胞状态(Cell State)
 - 2.2.2 遗忘门(Forget Gate)
-- 2.2.3 输入门(Input Gate)  
+- 2.2.3 输入门(Input Gate)
 - 2.2.4 输出门(Output Gate)
 
 ### 2.3 LSTM 解决 RNN 问题的方式
@@ -62,7 +62,7 @@
 ### 4.2 门控单元计算公式
 - 4.2.1 遗忘门
 $$f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)$$
-- 4.2.2 输入门  
+- 4.2.2 输入门
 $$i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i)$$
 $$\tilde{C}_t = \tanh(W_C \cdot [h_{t-1}, x_t] + b_C)$$
 - 4.2.3 细胞状态更新

@@ -317,7 +317,7 @@ class PredictiveMaintenanceModel(nn.Module):
             nn.ReLU(),
             nn.Linear(32, 1)
         )
-    
+
     def forward(self, x):
         x = self.fc(x)
         return x
@@ -326,7 +326,7 @@ class PredictiveMaintenanceModel(nn.Module):
 def train_model(model, X_train, y_train, X_val, y_val, epochs=100):
     criterion = nn.MSELoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)
-    
+
     for epoch in range(epochs):
         model.train()
         optimizer.zero_grad()
@@ -334,12 +334,12 @@ def train_model(model, X_train, y_train, X_val, y_val, epochs=100):
         loss = criterion(output, y_train)
         loss.backward()
         optimizer.step()
-        
+
         with torch.no_grad():
             model.eval()
             val_output = model(X_val)
             val_loss = criterion(val_output, y_val)
-            
+
         print(f'Epoch {epoch+1}, train loss: {loss.item()}, val loss: {val_loss.item()}')
 
 # 模型评估

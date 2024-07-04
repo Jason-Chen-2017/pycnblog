@@ -149,8 +149,7 @@ F --> B
 假设全局模型参数为 $\theta$，各个机构本地模型参数为 $\theta_i$，则模型更新公式如下：
 
 $$
-\theta_i = \theta_{i-1} - \alpha \
-abla_{\theta_i} L(\theta_i, \mathcal{D}_i)
+\theta_i = \theta_{i-1} - \alpha \nabla_{\theta_i} L(\theta_i, \mathcal{D}_i)
 $$
 
 其中，$\alpha$ 为学习率，$\mathcal{D}_i$ 为机构 $i$ 的数据集，$L(\theta_i, \mathcal{D}_i)$ 为损失函数。

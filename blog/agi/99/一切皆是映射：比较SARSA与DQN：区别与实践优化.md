@@ -290,10 +290,10 @@ class SARSA(nn.Module):
             nn.ReLU(),
             nn.Linear(64, action_dim),
         )
-    
+
     def forward(self, x):
         return self.fc(x)
-    
+
     def choose_action(self, state, epsilon):
         if torch.rand(1) < epsilon:
             action = torch.randint(0, action_dim, (1,))
@@ -307,13 +307,13 @@ def train_sarsa(sarsa, memory, batch_size, learning_rate):
     sarsa.train()
     for _ in range(batch_size):
         state, action, reward, next_state, done = memory.sample()
-        
+
         q_next = sarsa(next_state).max(dim=1)[0]
         q_target = reward + (1 - done) * q_next
-        
+
         q = sarsa(state)
         q[torch.arange(q.size(0)), action] = reward + (1 - done) * q_next
-        
+
         optimizer.zero_grad()
         loss = nn.functional.mse_loss(q, q_target)
         loss.backward()
@@ -328,14 +328,14 @@ def main():
     memory = ReplayMemory(10000)
     sarsa = SARSA(state_dim, action_dim)
     optimizer = optim.Adam(sarsa.parameters(), lr=learning_rate)
-    
+
     for episode in range(1000):
         state = [1, 1]
         while True:
             action = sarsa.choose_action(state, epsilon)
             next_state, reward, done = env.step(action)
             memory.push(state, action, reward, next_state, done)
-            
+
             state = next_state
             if done:
                 break
@@ -361,10 +361,10 @@ class DQN(nn.Module):
             nn.ReLU(),
             nn.Linear(64, action_dim),
         )
-    
+
     def forward(self, x):
         return self.fc(x)
-    
+
     def choose_action(self, state, epsilon):
         if torch.rand(1) < epsilon:
             action = torch.randint(0, action_dim, (1,))
@@ -378,15 +378,15 @@ def train_dqn(dqn, memory, batch_size, learning_rate):
     dqn.train()
     for _ in range(batch_size):
         state, action, reward, next_state, done = memory.sample()
-        
+
         with torch.no_grad():
             q_next = dqn(next_state).max(dim=1)[0]
-        
+
         q_target = reward + (1 - done) * q_next
-        
+
         q = dqn(state)
         q[torch.arange(q.size(0)), action] = q_target
-        
+
         optimizer.zero_grad()
         loss = nn.functional.mse_loss(q, q_target)
         loss.backward()
@@ -401,14 +401,14 @@ def main():
     memory = ReplayMemory(10000)
     dqn = DQN(state_dim, action_dim)
     optimizer = optim.Adam(dqn.parameters(), lr=learning_rate)
-    
+
     for episode in range(1000):
         state = [1, 1]
         while True:
             action = dqn.choose_action(state, epsilon)
             next_state, reward, done = env.step(action)
             memory.push(state, action, reward, next_state, done)
-            
+
             state = next_state
             if done:
                 break

@@ -88,7 +88,7 @@ graph TB
         C --> D(Reduce阶段)
         D --> E[输出结果]
     end
-    
+
     subgraph Map阶段
         B1[输入拆分]
         B2[Map函数执行]
@@ -98,7 +98,7 @@ graph TB
         B2 --> B3
         B3 --> B4
     end
-    
+
     subgraph Shuffle阶段
         C1[分发]
         C2[合并]
@@ -106,7 +106,7 @@ graph TB
         C1 --> C2
         C2 --> C3
     end
-    
+
     subgraph Reduce阶段
         D1[输入读取]
         D2[Reduce函数执行]

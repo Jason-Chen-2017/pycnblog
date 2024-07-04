@@ -314,7 +314,7 @@ class YOLOv6(nn.Module):
         self.head = nn.Sequential(
             # ... 定义YOLOv6头部网络
         )
-        
+
     def forward(self, x):
         x = self.backbone(x)
         x = self.head(x)
@@ -327,10 +327,10 @@ class YOLOv6Dataset(Dataset):
         self.transforms = transforms.Compose([
             # ... 定义数据预处理
         ])
-        
+
     def __len__(self):
         return len(self.img_paths)
-    
+
     def __getitem__(self, idx):
         img_path = self.img_paths[idx]
         label_path = self.label_paths[idx]
@@ -368,15 +368,15 @@ def main():
     model.to(device)
     optimizer = optim.Adam(model.parameters(), lr=0.001)
     criterion = nn.CrossEntropyLoss()
-    
+
     train_dataloader = DataLoader(YOLOv6Dataset(train_img_paths, train_label_paths), batch_size=batch_size, shuffle=True)
     val_dataloader = DataLoader(YOLOv6Dataset(val_img_paths, val_label_paths), batch_size=batch_size, shuffle=False)
-    
+
     for epoch in range(num_epochs):
         train(model, train_dataloader, optimizer, criterion, device)
         val_loss = evaluate(model, val_dataloader, device)
         print(f"Epoch {epoch+1}, train loss: {train_loss:.4f}, val loss: {val_loss:.4f}")
-        
+
         # 保存模型
         torch.save(model.state_dict(), f"yolov6_epoch_{epoch+1}.pth")
 

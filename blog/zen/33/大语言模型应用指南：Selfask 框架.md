@@ -88,15 +88,15 @@ Self-ask框架适用于以下领域：
 Self-ask框架的数学模型可以表示为：
 
 $$
-P(\\text{output} | \\text{question}, \\text{context}) = \\frac{P(\\text{output} | \\text{question}, \\text{context}, \\text{model})}{P(\\text{question}, \\text{context}, \\text{model})}
+P(\text{output} | \text{question}, \text{context}) = \frac{P(\text{output} | \text{question}, \text{context}, \text{model})}{P(\text{question}, \text{context}, \text{model})}
 $$
 
 其中：
 
-- $\\text{output}$ 表示任务输出。
-- $\\text{question}$ 表示提问。
-- $\\text{context}$ 表示任务上下文。
-- $\\text{model}$ 表示LLMs模型。
+- $\text{output}$ 表示任务输出。
+- $\text{question}$ 表示提问。
+- $\text{context}$ 表示任务上下文。
+- $\text{model}$ 表示LLMs模型。
 
 ### 4.2 公式推导过程
 
@@ -105,19 +105,19 @@ $$
 - 首先，根据贝叶斯定理，有：
 
 $$
-P(\\text{output} | \\text{question}, \\text{context}, \\text{model}) = \\frac{P(\\text{output}, \\text{question}, \\text{context} | \\text{model})}{P(\\text{question}, \\text{context} | \\text{model})}
+P(\text{output} | \text{question}, \text{context}, \text{model}) = \frac{P(\text{output}, \text{question}, \text{context} | \text{model})}{P(\text{question}, \text{context} | \text{model})}
 $$
 
-- 然后，由于$\\text{output}$是任务输出的结果，可以将其视为在$\\text{model}$的指导下生成的：
+- 然后，由于$\text{output}$是任务输出的结果，可以将其视为在$\text{model}$的指导下生成的：
 
 $$
-P(\\text{output} | \\text{question}, \\text{context}, \\text{model}) = P(\\text{output} | \\text{model})
+P(\text{output} | \text{question}, \text{context}, \text{model}) = P(\text{output} | \text{model})
 $$
 
 - 最后，根据LLMs的生成模型，有：
 
 $$
-P(\\text{question}, \\text{context} | \\text{model}) = \\frac{P(\\text{question} | \\text{context}, \\text{model}) P(\\text{context} | \\text{model})}{P(\\text{context} | \\text{model})}
+P(\text{question}, \text{context} | \text{model}) = \frac{P(\text{question} | \text{context}, \text{model}) P(\text{context} | \text{model})}{P(\text{context} | \text{model})}
 $$
 
 ### 4.3 案例分析与讲解
@@ -163,20 +163,20 @@ tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 model = GPT2LMHeadModel.from_pretrained('gpt2')
 
 # 定义初始任务
-task = \"今天天气怎么样？\"
+task = "今天天气怎么样？"
 
 # 定义初始提问序列
 questions = [
-    \"今天是什么日期？\",
-    \"今天天气查询的地点是哪里？\",
-    \"根据今天天气查询地点的天气情况，给出天气描述。\"
+    "今天是什么日期？",
+    "今天天气查询的地点是哪里？",
+    "根据今天天气查询地点的天气情况，给出天气描述。"
 ]
 
 # 迭代提问并获取答案
 for question in questions:
-    prompt = f\"{task}\
+    prompt = f"{task}\
 {question}\
-\"
+"
     inputs = tokenizer(prompt, return_tensors='pt', max_length=512, truncation=True)
     outputs = model.generate(inputs['input_ids'], max_length=100, num_return_sequences=1)
     answer = tokenizer.decode(outputs[0], skip_special_tokens=True)

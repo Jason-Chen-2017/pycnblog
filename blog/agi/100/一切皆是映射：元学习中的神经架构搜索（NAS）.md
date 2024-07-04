@@ -1,7 +1,7 @@
 
 # 一切皆是映射：元学习中的神经架构搜索（NAS）
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 关键词：
 
@@ -204,7 +204,7 @@ A：可以采用以下方法降低计算成本：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 3. 安装PyTorch：根据CUDA版本，从官网获取对应的安装命令。例如：

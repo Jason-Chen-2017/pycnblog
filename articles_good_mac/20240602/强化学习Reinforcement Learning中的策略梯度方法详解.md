@@ -75,8 +75,7 @@ $$
 为了最小化损失函数，我们使用梯度下降法来更新策略函数的参数。我们需要计算损失函数关于参数的梯度，并根据梯度进行更新：
 
 $$
-\\theta_{t+1} = \\theta_t - \\alpha \
-abla_\\theta L(\\theta)
+\\theta_{t+1} = \\theta_t - \\alpha \nabla_\\theta L(\\theta)
 $$
 
 其中，$\\alpha$是学习率。

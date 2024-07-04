@@ -94,7 +94,7 @@ K-Means算法的数学模型可以表示为：
 
 $$
 \begin{align*}
-\min_{\boldsymbol{C}} \sum_{i=1}^N d(\boldsymbol{x}_i, \boldsymbol{c}_j)^2, \quad \text{其中} \quad \boldsymbol{c}_j = \frac{1}{|\boldsymbol{S}_j|} \sum_{\boldsymbol{x}_i \in \boldsymbol{S}_j} \boldsymbol{x}_i \\
+\min_{\boldsymbol{C}} \sum_{i=1}^N d(\boldsymbol{x}_i, \boldsymbol{c}_j)^2, \quad \text{其中} \quad \boldsymbol{c}_j = \frac{1}{|\boldsymbol{S}_j|} \sum_{\boldsymbol{x}_i \in \boldsymbol{S}_j} \boldsymbol{x}_i \
 \end{align*}
 $$
 
@@ -106,7 +106,7 @@ K-Means算法的目标是最小化簇内距离平方和。为了达到这个目�
 
 $$
 \begin{align*}
-\sum_{i=1}^N d(\boldsymbol{x}_i, \boldsymbol{c}_j)^2 &= \sum_{i=1}^N (\boldsymbol{x}_i - \boldsymbol{c}_j)^T (\boldsymbol{x}_i - \boldsymbol{c}_j) \\
+\sum_{i=1}^N d(\boldsymbol{x}_i, \boldsymbol{c}_j)^2 &= \sum_{i=1}^N (\boldsymbol{x}_i - \boldsymbol{c}_j)^T (\boldsymbol{x}_i - \boldsymbol{c}_j) \
 &= \sum_{i=1}^N (\boldsymbol{x}_{1i} - c_{1j}^2 + \boldsymbol{x}_{2i} - c_{2j}^2 + ... + \boldsymbol{x}_{ni} - c_{nj}^2)
 \end{align*}
 $$
@@ -117,7 +117,7 @@ $$
 
 $$
 \begin{align*}
-\min_{c_{1j}} \sum_{i=1}^N (\boldsymbol{x}_{1i} - c_{1j})^2 &= \sum_{i=1}^N (\boldsymbol{x}_{1i} - c_{1j})^2 \\
+\min_{c_{1j}} \sum_{i=1}^N (\boldsymbol{x}_{1i} - c_{1j})^2 &= \sum_{i=1}^N (\boldsymbol{x}_{1i} - c_{1j})^2 \
 &= \sum_{i=1}^N (\boldsymbol{x}_{1i} - c_{1j})^2
 \end{align*}
 $$
@@ -126,9 +126,9 @@ $$
 
 $$
 \begin{align*}
-\min_{c_{2j}} \sum_{i=1}^N (\boldsymbol{x}_{2i} - c_{2j})^2 &= \sum_{i=1}^N (\boldsymbol{x}_{2i} - c_{2j})^2 \\
-\min_{c_{3j}} \sum_{i=1}^N (\boldsymbol{x}_{3i} - c_{3j})^2 &= \sum_{i=1}^N (\boldsymbol{x}_{3i} - c_{3j})^2 \\
-&\quad \vdots \\
+\min_{c_{2j}} \sum_{i=1}^N (\boldsymbol{x}_{2i} - c_{2j})^2 &= \sum_{i=1}^N (\boldsymbol{x}_{2i} - c_{2j})^2 \
+\min_{c_{3j}} \sum_{i=1}^N (\boldsymbol{x}_{3i} - c_{3j})^2 &= \sum_{i=1}^N (\boldsymbol{x}_{3i} - c_{3j})^2 \
+&\quad \vdots \
 \min_{c_{nj}} \sum_{i=1}^N (\boldsymbol{x}_{ni} - c_{nj})^2 &= \sum_{i=1}^N (\boldsymbol{x}_{ni} - c_{nj})^2
 \end{align*}
 $$
@@ -136,9 +136,9 @@ $$
 因此，为了最小化簇内距离平方和，我们需要最小化每个维度上数据点与簇中心之差的平方和。对于每个维度，最小值出现在数据点的该维度值上，即：
 
 $$
-c_{1j} = \frac{1}{|\boldsymbol{S}_j|} \sum_{\boldsymbol{x}_i \in \boldsymbol{S}_j} \boldsymbol{x}_{1i} \\
-c_{2j} = \frac{1}{|\boldsymbol{S}_j|} \sum_{\boldsymbol{x}_i \in \boldsymbol{S}_j} \boldsymbol{x}_{2i} \\
-\quad \vdots \\
+c_{1j} = \frac{1}{|\boldsymbol{S}_j|} \sum_{\boldsymbol{x}_i \in \boldsymbol{S}_j} \boldsymbol{x}_{1i} \
+c_{2j} = \frac{1}{|\boldsymbol{S}_j|} \sum_{\boldsymbol{x}_i \in \boldsymbol{S}_j} \boldsymbol{x}_{2i} \
+\quad \vdots \
 c_{nj} = \frac{1}{|\boldsymbol{S}_j|} \sum_{\boldsymbol{x}_i \in \boldsymbol{S}_j} \boldsymbol{x}_{ni}
 $$
 
@@ -154,21 +154,21 @@ import numpy as np
 def k_means(data, k):
     # 随机选择K个数据点作为初始簇中心
     centroids = data[np.random.choice(data.shape[0], k, replace=False)]
-    
+
     # 迭代更新簇中心和数据点分配
     while True:
         # 分配数据点
         labels = np.argmin(np.linalg.norm(data[:, np.newaxis] - centroids, axis=2), axis=1)
-        
+
         # 更新簇中心
         new_centroids = np.array([data[labels == i].mean(axis=0) for i in range(k)])
-        
+
         # 检查簇中心是否收敛
         if np.all(centroids == new_centroids):
             break
-        
+
         centroids = new_centroids
-    
+
     return centroids, labels
 
 # 示例数据
@@ -226,21 +226,21 @@ import numpy as np
 def k_means(data, k, max_iterations=100):
     # 随机选择K个数据点作为初始簇中心
     centroids = data[np.random.choice(data.shape[0], k, replace=False)]
-    
+
     # 迭代更新簇中心和数据点分配
     for _ in range(max_iterations):
         # 分配数据点
         labels = np.argmin(np.linalg.norm(data[:, np.newaxis] - centroids, axis=2), axis=1)
-        
+
         # 更新簇中心
         new_centroids = np.array([data[labels == i].mean(axis=0) for i in range(k)])
-        
+
         # 检查簇中心是否收敛
         if np.all(centroids == new_centroids):
             break
-        
+
         centroids = new_centroids
-    
+
     return centroids, labels
 
 # 示例数据

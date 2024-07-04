@@ -82,9 +82,9 @@ def aggregate_neighbors(node_features, neighbors):
 
 特征更新可以通过以下公式实现：
 
-$$h^{(t+1)}_i = \\sigma(W^{(t)}h^{(t)}_i + \\sigma(\\text{Aggregate}(\\mathcal{N}(i)))$$
+$$h^{(t+1)}_i = \sigma(W^{(t)}h^{(t)}_i + \sigma(\text{Aggregate}(\mathcal{N}(i)))$$
 
-其中，$h^{(t)}_i$表示节点$i$在$t$时刻的特征表示，$\\text{Aggregate}$表示邻居聚合函数，$\\sigma$表示激活函数（如ReLU、Sigmoid等），$W^{(t)}$表示模型参数。
+其中，$h^{(t)}_i$表示节点$i$在$t$时刻的特征表示，$\text{Aggregate}$表示邻居聚合函数，$\sigma$表示激活函数（如ReLU、Sigmoid等），$W^{(t)}$表示模型参数。
 
 #### 3.2.4 迭代更新
 
@@ -123,19 +123,19 @@ GNNs在以下领域具有广泛的应用：
 
 GNN的数学模型可以表示为：
 
-$$h^{(t+1)}_i = \\sigma(W^{(t)}h^{(t)}_i + \\text{Aggregate}(\\mathcal{N}(i)))$$
+$$h^{(t+1)}_i = \sigma(W^{(t)}h^{(t)}_i + \text{Aggregate}(\mathcal{N}(i)))$$
 
-其中，$h^{(t)}_i$表示节点$i$在$t$时刻的特征表示，$\\text{Aggregate}$表示邻居聚合函数，$\\sigma$表示激活函数，$W^{(t)}$表示模型参数。
+其中，$h^{(t)}_i$表示节点$i$在$t$时刻的特征表示，$\text{Aggregate}$表示邻居聚合函数，$\sigma$表示激活函数，$W^{(t)}$表示模型参数。
 
 ### 4.2 公式推导过程
 
-假设节点$i$的邻居节点为$\\mathcal{N}(i)$，则节点$i$的邻居特征向量为$\\{h^{(t)}_{j} | j \\in \\mathcal{N}(i)\\}$。根据邻居聚合函数，我们可以得到节点$i$的聚合特征向量为：
+假设节点$i$的邻居节点为$\mathcal{N}(i)$，则节点$i$的邻居特征向量为$\{h^{(t)}_{j} | j \in \mathcal{N}(i)\}$。根据邻居聚合函数，我们可以得到节点$i$的聚合特征向量为：
 
-$$\\text{Aggregate}(\\mathcal{N}(i)) = \\text{Aggregate}(\\{h^{(t)}_{j} | j \\in \\mathcal{N}(i)\\})$$
+$$\text{Aggregate}(\mathcal{N}(i)) = \text{Aggregate}(\{h^{(t)}_{j} | j \in \mathcal{N}(i)\})$$
 
 将聚合特征向量代入公式，得到：
 
-$$h^{(t+1)}_i = \\sigma(W^{(t)}h^{(t)}_i + \\text{Aggregate}(\\mathcal{N}(i)))$$
+$$h^{(t+1)}_i = \sigma(W^{(t)}h^{(t)}_i + \text{Aggregate}(\mathcal{N}(i)))$$
 
 ### 4.3 案例分析与讲解
 

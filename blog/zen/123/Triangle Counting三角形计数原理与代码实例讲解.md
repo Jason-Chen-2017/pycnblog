@@ -108,7 +108,7 @@
 
 $$
 A_{ij} = \begin{cases}
-1, & \text{如果节点 i 和节点 j 之间存在边} \\
+1, & \text{如果节点 i 和节点 j 之间存在边} \
 0, & \text{否则}
 \end{cases}
 $$
@@ -157,9 +157,9 @@ $$
 
 $$
 A = \begin{bmatrix}
-0 & 1 & 1 & 0 \\
-1 & 0 & 1 & 1 \\
-1 & 1 & 0 & 1 \\
+0 & 1 & 1 & 0 \
+1 & 0 & 1 & 1 \
+1 & 1 & 0 & 1 \
 0 & 1 & 1 & 0
 \end{bmatrix}
 $$
@@ -168,9 +168,9 @@ $$
 
 $$
 A^3 = \begin{bmatrix}
-2 & 4 & 4 & 2 \\
-4 & 6 & 6 & 4 \\
-4 & 6 & 6 & 4 \\
+2 & 4 & 4 & 2 \
+4 & 6 & 6 & 4 \
+4 & 6 & 6 & 4 \
 2 & 4 & 4 & 2
 \end{bmatrix}
 $$
@@ -407,4 +407,4 @@ print("使用节点迭代算法计算的三角形数量：", triangle_count_iter
 三角形计数可以应用于社交网络分析、生物信息学、推荐系统、金融风险控制、交通流量预测、自然语言处理等领域。
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

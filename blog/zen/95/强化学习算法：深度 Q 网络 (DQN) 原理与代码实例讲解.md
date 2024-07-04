@@ -220,13 +220,13 @@ def dqn(env, num_episodes=1000, max_steps=100, learning_rate=0.01, discount_fact
     target_model = DQN(env.observation_space.shape[0], env.action_space.n)
     target_model.load_state_dict(model.state_dict())
     target_model.eval()
-    
+
     # 初始化经验回放缓冲区
     replay_buffer = []
-    
+
     # 设置优化器
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
-    
+
     # 训练过程
     for episode in range(num_episodes):
         state = env.reset()
@@ -241,14 +241,14 @@ def dqn(env, num_episodes=1000, max_steps=100, learning_rate=0.01, discount_fact
                 with torch.no_grad():
                     q_values = model(state)
                     action = q_values.argmax().item()
-            
+
             # 执行动作
             next_state, reward, done, _ = env.step(action)
             total_reward += reward
-            
+
             # 将经验存储到经验回放缓冲区
             replay_buffer.append((state, action, reward, next_state, done))
-            
+
             # 从经验回放缓冲区中随机抽取经验
             if len(replay_buffer) > batch_size:
                 batch = random.sample(replay_buffer, batch_size)
@@ -258,30 +258,30 @@ def dqn(env, num_episodes=1000, max_steps=100, learning_rate=0.01, discount_fact
                 rewards = torch.tensor(rewards, dtype=torch.float32)
                 next_states = torch.tensor(next_states, dtype=torch.float32)
                 dones = torch.tensor(dones, dtype=torch.float32)
-                
+
                 # 计算目标值
                 with torch.no_grad():
                     q_values_next = target_model(next_states)
                     targets = rewards + (1 - dones) * discount_factor * q_values_next.max(dim=1)[0]
-                
+
                 # 计算损失
                 q_values = model(states)
                 loss = F.smooth_l1_loss(q_values.gather(1, actions.unsqueeze(1)), targets.unsqueeze(1))
-                
+
                 # 反向传播和优化
                 optimizer.zero_grad()
                 loss.backward()
                 optimizer.step()
-            
+
             state = next_state
-            
+
             if done:
                 break
-        
+
         # 更新目标网络参数
         if episode % target_update_freq == 0:
             target_model.load_state_dict(model.state_dict())
-    
+
     env.close()
     return model
 

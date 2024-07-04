@@ -138,7 +138,7 @@ $$ 销量 = \sum_{i=1}^{n} 数量_i $$
 -- 事实表
 CREATE TABLE IF NOT EXISTS sales (
   time_id bigint,
-  product_id bigint, 
+  product_id bigint,
   region_id bigint,
   price decimal(10,2),
   quantity int
@@ -149,7 +149,7 @@ ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
 CREATE TABLE IF NOT EXISTS time_dim (
   time_id bigint,
   year int,
-  month int,  
+  month int,
   day int
 )
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
@@ -177,7 +177,7 @@ ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
 -- 导入事实数据
 LOAD DATA LOCAL INPATH 'path/to/sales.csv' OVERWRITE INTO TABLE sales;
 
--- 导入维度数据 
+-- 导入维度数据
 LOAD DATA LOCAL INPATH 'path/to/time_dim.csv' OVERWRITE INTO TABLE time_dim;
 LOAD DATA LOCAL INPATH 'path/to/product_dim.csv' OVERWRITE INTO TABLE product_dim;
 LOAD DATA LOCAL INPATH 'path/to/region_dim.csv' OVERWRITE INTO TABLE region_dim;
@@ -189,7 +189,7 @@ LOAD DATA LOCAL INPATH 'path/to/region_dim.csv' OVERWRITE INTO TABLE region_dim;
 
 - 维度：
   - `time_dim`: `year`, `month`, `day`
-  - `product_dim`: `product_name`, `category`  
+  - `product_dim`: `product_name`, `category`
   - `region_dim`: `region_name`, `province`
 - 度量：
   - `sales_amount`: `SUM(price * quantity)`
@@ -204,9 +204,9 @@ Cube设计完成后，我们可以启动构建任务。Kylin会自动生成并�
 Cube构建完成后，我们就可以通过SQL进行多维分析了。例如，以下查询可以计算2023年1月华东地区iPhone的销售额和销量：
 
 ```sql
-SELECT 
-  t.year, 
-  t.month, 
+SELECT
+  t.year,
+  t.month,
   r.region_name,
   p.product_name,
   SUM(s.price * s.quantity) AS sales_amount,
@@ -215,12 +215,12 @@ FROM sales s
   JOIN time_dim t ON s.time_id = t.time_id
   JOIN product_dim p ON s.product_id = p.product_id
   JOIN region_dim r ON s.region_id = r.region_id
-WHERE 
-  t.year = 2023 AND 
+WHERE
+  t.year = 2023 AND
   t.month = 1 AND
   r.region_name = '华东' AND
-  p.product_name = 'iPhone'  
-GROUP BY 
+  p.product_name = 'iPhone'
+GROUP BY
   t.year,
   t.month,
   r.region_name,

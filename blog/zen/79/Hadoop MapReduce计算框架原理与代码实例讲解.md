@@ -50,15 +50,15 @@ graph TD
     B --> C{Shuffle阶段}
     C --> D(Reduce阶段)
     D --> E[输出结果]
-    
+
     B1>Map任务1]
     B2>Map任务2]
     B3>Map任务3]
     B4>Map任务4]
     B --> B1 & B2 & B3 & B4
-    
+
     D1>Reduce任务1]
-    D2>Reduce任务2] 
+    D2>Reduce任务2]
     D3>Reduce任务3]
     C --> D1 & D2 & D3
 ```

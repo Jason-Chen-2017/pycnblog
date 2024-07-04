@@ -47,8 +47,7 @@ $$
 对于给定的样本 $(\\mathbf{x}_i, y_i)$，其损失函数关于模型参数 $\\theta$ 的梯度向量可以通过以下公式求得：
 
 $$
-\
-abla_{\\theta} L(f(\\mathbf{x}_i), y_i) = \\frac{\\partial}{\\partial \\theta} (f(\\mathbf{x}_i) - y_i)^2
+\nabla_{\\theta} L(f(\\mathbf{x}_i), y_i) = \\frac{\\partial}{\\partial \\theta} (f(\\mathbf{x}_i) - y_i)^2
 $$
 
 ### 参数更新
@@ -56,8 +55,7 @@ $$
 根据梯度下降的思路，我们可以通过以下方式来更新参数：
 
 $$
-\\theta^{(t+1)} = \\theta^{(t)} - \\alpha \
-abla_{\\theta} L(f(\\mathbf{x}), y)
+\\theta^{(t+1)} = \\theta^{(t)} - \\alpha \nabla_{\\theta} L(f(\\mathbf{x}), y)
 $$
 
 其中，$\\alpha$ 为学习率。

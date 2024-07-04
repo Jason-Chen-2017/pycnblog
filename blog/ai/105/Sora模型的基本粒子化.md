@@ -250,7 +250,7 @@ class VideoGenerator(nn.Module):
 
 # 定义Sora模型
 class SoraModel(nn.Module):
-    def __init__(self, vocab_size, text_embedding_dim, text_hidden_dim, 
+    def __init__(self, vocab_size, text_embedding_dim, text_hidden_dim,
                  video_input_dim, video_hidden_dim, video_output_dim,
                  attention_dim):
         super(SoraModel, self).__init__()
@@ -376,4 +376,4 @@ Sora模型基本粒子化是一个充满挑战但也充满机遇的研究方向�
 
 答：Sora模型基本粒子化技术的未来发展方向包括更加精细化的模块划分、更加灵活的模块组合、更加广泛的应用场景等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

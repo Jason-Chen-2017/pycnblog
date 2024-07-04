@@ -77,11 +77,11 @@
 
 Q-learning的Q值更新公式为：
 
-$$Q(s, a) \\leftarrow Q(s, a) + \\alpha [r + \\gamma \\max_{a'} Q(s', a') - Q(s, a)]$$
+$$Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a') - Q(s, a)]$$
 
 其中：
-- $\\alpha$ 是学习率，
-- $\\gamma$ 是折扣因子，
+- $\alpha$ 是学习率，
+- $\gamma$ 是折扣因子，
 - $r$ 是即时奖励，
 - $s$ 是当前状态，
 - $a$ 是当前行动，

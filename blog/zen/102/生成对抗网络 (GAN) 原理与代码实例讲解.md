@@ -1,7 +1,7 @@
 
 # 生成对抗网络 (GAN) 原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 ### 1.1 问题的由来
@@ -84,8 +84,8 @@ GAN的数学模型如下：
 
 $$
 \begin{align*}
-D(x) &= \mathbb{P}(y=1|x) \\
-G(z) &= \mathbb{P}(y=1|x) \\
+D(x) &= \mathbb{P}(y=1|x) \
+G(z) &= \mathbb{P}(y=1|x) \
 \end{align*}
 $$
 
@@ -97,8 +97,8 @@ GAN的训练过程可以看作是以下优化问题：
 
 $$
 \begin{align*}
-\min_{G} & \mathbb{E}_{x\sim p_{data}(x)}[D(x)] + \mathbb{E}_{z\sim p_{z}(z)}[D(G(z))] \\
-\max_{D} & \mathbb{E}_{x\sim p_{data}(x)}[D(x)] + \mathbb{E}_{z\sim p_{z}(z)}[D(G(z))] \\
+\min_{G} & \mathbb{E}_{x\sim p_{data}(x)}[D(x)] + \mathbb{E}_{z\sim p_{z}(z)}[D(G(z))] \
+\max_{D} & \mathbb{E}_{x\sim p_{data}(x)}[D(x)] + \mathbb{E}_{z\sim p_{z}(z)}[D(G(z))] \
 \end{align*}
 $$
 

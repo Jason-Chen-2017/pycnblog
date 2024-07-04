@@ -113,8 +113,8 @@ D --> E[输出数据]
 
 $$
 \begin{aligned}
-\text{编码器：} & f_{\theta}(x) = \phi(\theta; x), \\
-\text{解码器：} & g_{\omega}(z) = \psi(\omega; z), \\
+\text{编码器：} & f_{\theta}(x) = \phi(\theta; x), \
+\text{解码器：} & g_{\omega}(z) = \psi(\omega; z), \
 \text{损失函数：} & L(x, f_{\theta}(x), g_{\omega}(f_{\theta}(x))) = \frac{1}{2} \sum_{i=1}^n (x_i - g_{\omega}(f_{\theta}(x_i)))^2.
 \end{aligned}
 $$
@@ -127,8 +127,8 @@ $$
 
 $$
 \begin{aligned}
-L(x, f_{\theta}(x), g_{\omega}(f_{\theta}(x))) &= \frac{1}{2} \sum_{i=1}^n (x_i - g_{\omega}(f_{\theta}(x_i)))^2 \\
-&= \frac{1}{2} \sum_{i=1}^n (x_i - g_{\omega}(\phi(\theta; x_i)))^2 \\
+L(x, f_{\theta}(x), g_{\omega}(f_{\theta}(x))) &= \frac{1}{2} \sum_{i=1}^n (x_i - g_{\omega}(f_{\theta}(x_i)))^2 \
+&= \frac{1}{2} \sum_{i=1}^n (x_i - g_{\omega}(\phi(\theta; x_i)))^2 \
 &= \frac{1}{2} \sum_{i=1}^n (x_i - \psi(\omega; \phi(\theta; x_i)))^2.
 \end{aligned}
 $$
@@ -214,7 +214,7 @@ A：过拟合问题可以通过以下方法进行缓解：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 

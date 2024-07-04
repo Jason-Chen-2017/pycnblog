@@ -56,19 +56,19 @@
 
 ### 3.2 算法步骤详解
 
-**步骤1：初始化策略函数**  
+**步骤1：初始化策略函数**
 - **选择**：通常选择一个简单的策略函数，如ε-贪婪策略或基于蒙特卡洛方法的策略。
 
-**步骤2：采样**  
+**步骤2：采样**
 - **选择动作**：根据当前策略函数选择动作，进入环境并执行动作。
 
-**步骤3：计算损失**  
+**步骤3：计算损失**
 - **评估**：根据环境反馈计算每条经验的回报，然后基于回报计算损失函数值。
 
-**步骤4：梯度更新**  
+**步骤4：梯度更新**
 - **计算梯度**：使用损失函数的梯度来更新策略参数，通常采用梯度上升法或变种。
 
-**步骤5：重复**  
+**步骤5：重复**
 - **迭代**：重复步骤2至4，直到达到预定的迭代次数或策略满足收敛条件。
 
 ### 3.3 算法优缺点
@@ -96,15 +96,15 @@
 
 策略梯度算法的核心是策略函数 $π(a|s)$，其中 $s$ 是状态，$a$ 是动作。假设策略函数是基于多层感知器（MLP）的，可以表示为：
 
-$$ π(a|s) = \\sigma(Ws + b) $$
+$$ π(a|s) = \sigma(Ws + b) $$
 
-其中，$W$ 和 $b$ 是参数矩阵和偏置向量，$\\sigma$ 是激活函数。
+其中，$W$ 和 $b$ 是参数矩阵和偏置向量，$\sigma$ 是激活函数。
 
 ### 4.2 公式推导过程
 
 损失函数通常基于策略函数和状态-动作对 $(s,a)$ 的期望累积奖励来定义。对于策略梯度方法，损失函数 $L$ 可以表示为：
 
-$$ L(θ) = - \\mathbb{E}_{(s,a)∼π}[\\log π(a|s) \\cdot r(s,a)] $$
+$$ L(θ) = - \mathbb{E}_{(s,a)∼π}[\log π(a|s) \cdot r(s,a)] $$
 
 其中，$θ$ 是策略参数，$r(s,a)$ 是状态 $s$ 和动作 $a$ 下的即时奖励。
 
@@ -178,7 +178,7 @@ optimizer = tf.optimizers.Adam(learning_rate=learning_rate)
 total_rewards = []
 for episode in range(1000):
     total_rewards.append(train_episode(env, policy_fn))
-    print(f\"Episode {episode}: Reward {total_rewards[-1]}\")
+    print(f"Episode {episode}: Reward {total_rewards[-1]}")
 ```
 
 ### 5.3 代码解读与分析
@@ -218,8 +218,8 @@ for episode in range(1000):
 
 ### 7.3 相关论文推荐
 
-- **\"Policy Gradient Methods for Reinforcement Learning with Function Approximation\"**
-- **\"Deep Reinforcement Learning\"**
+- **"Policy Gradient Methods for Reinforcement Learning with Function Approximation"**
+- **"Deep Reinforcement Learning"**
 
 ### 7.4 其他资源推荐
 

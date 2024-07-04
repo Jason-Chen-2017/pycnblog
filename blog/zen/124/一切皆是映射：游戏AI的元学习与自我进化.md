@@ -1,6 +1,6 @@
 # 一切皆是映射：游戏AI的元学习与自我进化
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -355,4 +355,4 @@ class Agent(nn.Module):
 
 **A：** 游戏AI的元学习和强化学习不会取代游戏开发者，而是会成为游戏开发者手中的工具，帮助开发者创造出更加智能、更加有趣的游戏。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

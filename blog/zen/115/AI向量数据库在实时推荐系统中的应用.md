@@ -29,7 +29,7 @@ graph LR
 A[用户] -->|行为序列| B(深度学习模型)
 B --> C[用户向量]
 D[物品] --> B
-B --> E[物品向量] 
+B --> E[物品向量]
 C --> F[向量数据库]
 E --> F
 G[实时推荐] --> H{近似最近邻搜索}
@@ -62,7 +62,7 @@ H --> |topk| G
 - 推荐质量好,充分利用了用户行为序列信息。
 - 灵活性强,物品库更新时只需增量建立索引。
 
-缺点:  
+缺点:
 - 离线训练耗时长,需要大量计算资源。
 - 模型设计需要经验,如塔的结构、损失函数等。
 - 向量数据库的选型和调优有难度。
@@ -80,7 +80,7 @@ H --> |topk| G
 
 $$
 \begin{aligned}
-\mathbf{u} &= f(x_u) \in \mathbb{R}^d \\
+\mathbf{u} &= f(x_u) \in \mathbb{R}^d \
 \mathbf{i} &= g(x_i) \in \mathbb{R}^d
 \end{aligned}
 $$
@@ -126,7 +126,7 @@ $\eta$为学习率。重复以上步骤直到模型收敛。
 | 用户ID | 浏览新闻 |
 |-------|---------|
 | 001   | A, B, D |
-| 002   | C, D, E | 
+| 002   | C, D, E |
 | 003   | A, E, F |
 
 首先将用户和新闻的原始特征(如ID、类别、标题等)输入双塔模型,学习到它们的embedding向量,存入向量数据库中:
@@ -180,7 +180,7 @@ class TowerModel(nn.Module):
             nn.ReLU(),
             nn.Linear(hidden_dim, output_dim)
         )
-    
+
     def forward(self, x):
         return self.net(x)
 
@@ -189,7 +189,7 @@ class DualTower(nn.Module):
         super().__init__()
         self.user_tower = TowerModel(user_dim, hidden_dim, embed_dim)
         self.item_tower = TowerModel(item_dim, hidden_dim, embed_dim)
-    
+
     def forward(self, user_feat, item_feat):
         user_embed = self.user_tower(user_feat)
         item_embed = self.item_tower(item_feat)
@@ -206,7 +206,7 @@ def train(model, train_loader, epochs, lr, device):
     model.to(device)
     criterion = nn.BCEWithLogitsLoss()
     optimizer = optim.Adam(model.parameters(), lr=lr)
-    
+
     for epoch in range(epochs):
         model.train()
         total_loss = 0
@@ -218,9 +218,9 @@ def train(model, train_loader, epochs, lr, device):
             loss.backward()
             optimizer.step()
             total_loss += loss.item()
-        
+
         print(f"Epoch {epoch+1}/{epochs}, Loss: {total_loss/len(train_loader):.4f}")
-        
+
         model.eval()
         preds, labels = [], []
         with torch.no_grad():

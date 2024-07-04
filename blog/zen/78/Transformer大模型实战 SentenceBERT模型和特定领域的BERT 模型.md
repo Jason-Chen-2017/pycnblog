@@ -155,18 +155,18 @@ def sentence_bert_similarity(text1, text2):
     # 分词和编码
     encoding1 = tokenizer(text1, return_tensors='pt', padding=True, truncation=True)
     encoding2 = tokenizer(text2, return_tensors='pt', padding=True, truncation=True)
-    
+
     # 获取模型输出
     output1 = model(**encoding1)[0]
     output2 = model(**encoding2)[0]
-    
+
     # 计算文本向量
     vector1 = output1.mean(dim=1).squeeze().detach().numpy()
     vector2 = output2.mean(dim=1).squeeze().detach().numpy()
-    
+
     # 计算余弦相似度
     similarity = cosine_similarity(vector1.reshape(1, -1), vector2.reshape(1, -1))[0][0]
-    
+
     return similarity
 
 # 示例文本
@@ -191,14 +191,14 @@ def specific_domain_bert_task(input_text, label):
     # 分词和编码
     encoding = tokenizer(input_text, return_tensors='pt', padding=True, truncation=True)
     input_ids, attention_mask = encoding['input_ids'], encoding['attention_mask']
-    
+
     # 设置标签
     labels = torch.tensor([label]).unsqueeze(0)
-    
+
     # 前向传播计算预测
     outputs = model(input_ids, attention_mask=attention_mask, labels=labels)
     logits = outputs.logits
-    
+
     # 返回预测结果和损失
     return logits, outputs.loss
 

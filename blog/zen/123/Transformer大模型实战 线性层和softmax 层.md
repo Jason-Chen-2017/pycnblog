@@ -20,7 +20,7 @@
 
 此外,本文还将探讨线性层和softmax层在实际应用中的常见问题和解决方案,为读者在实践中遇到的难题提供参考和借鉴。相信通过对这两个关键组件的深入剖析,必将为读者在Transformer模型的研究和应用方面带来诸多启发和收获。
 
-### 1.4 本文结构  
+### 1.4 本文结构
 
 本文共分为9个部分,内容安排如下:
 
@@ -57,7 +57,7 @@ graph TD
         Linear --> |Add & Norm| EncoderLayer
         EncoderLayer --> |N Layers| Encoder
         Encoder --> |Outputs| Outputs
-        
+
         Decoder --> |MultiHeadAttention| DecoderLayer
         DecoderLayer --> |Add & Norm| FeedForward2
         FeedForward2 --> |Linear| Linear2
@@ -142,7 +142,7 @@ $$b \leftarrow b - \eta \frac{\partial \mathcal{L}}{\partial b}$$
 
 以上即为线性层的基本实现步骤。在实际应用中,我们还可以引入一些技巧和优化方法,如正则化、初始化策略、参数约束等,以提高模型的性能和稳定性。
 
-#### 3.2.2 Softmax层实现步骤  
+#### 3.2.2 Softmax层实现步骤
 
 1) **计算指数值**
 

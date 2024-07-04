@@ -120,9 +120,9 @@
 
 $$
 D = \begin{bmatrix}
-d(C_1, C_1) & d(C_1, C_2) & \dots & d(C_1, C_N) \\
-d(C_2, C_1) & d(C_2, C_2) & \dots & d(C_2, C_N) \\
-\vdots & \vdots & \ddots & \vdots \\
+d(C_1, C_1) & d(C_1, C_2) & \dots & d(C_1, C_N) \
+d(C_2, C_1) & d(C_2, C_2) & \dots & d(C_2, C_N) \
+\vdots & \vdots & \ddots & \vdots \
 d(C_N, C_1) & d(C_N, C_2) & \dots & d(C_N, C_N)
 \end{bmatrix}
 $$
@@ -133,11 +133,11 @@ $$
 
 $$
 D' = \begin{bmatrix}
-d(C_1, C_1) & d(C_1, C_2) & \dots & d(C_1, C_{i+j}) & \dots & d(C_1, C_N) \\
-d(C_2, C_1) & d(C_2, C_2) & \dots & d(C_2, C_{i+j}) & \dots & d(C_2, C_N) \\
-\vdots & \vdots & \ddots & \vdots & \ddots & \vdots \\
-d(C_{i+j}, C_1) & d(C_{i+j}, C_2) & \dots & d(C_{i+j}, C_{i+j}) & \dots & d(C_{i+j}, C_N) \\
-\vdots & \vdots & \ddots & \vdots & \ddots & \vdots \\
+d(C_1, C_1) & d(C_1, C_2) & \dots & d(C_1, C_{i+j}) & \dots & d(C_1, C_N) \
+d(C_2, C_1) & d(C_2, C_2) & \dots & d(C_2, C_{i+j}) & \dots & d(C_2, C_N) \
+\vdots & \vdots & \ddots & \vdots & \ddots & \vdots \
+d(C_{i+j}, C_1) & d(C_{i+j}, C_2) & \dots & d(C_{i+j}, C_{i+j}) & \dots & d(C_{i+j}, C_N) \
+\vdots & \vdots & \ddots & \vdots & \ddots & \vdots \
 d(C_N, C_1) & d(C_N, C_2) & \dots & d(C_N, C_{i+j}) & \dots & d(C_N, C_N)
 \end{bmatrix}
 $$
@@ -150,9 +150,9 @@ $$
 
 $$
 D = \begin{bmatrix}
-d(C_1, C_1) & d(C_1, C_2) & \dots & d(C_1, C_N) \\
-d(C_2, C_1) & d(C_2, C_2) & \dots & d(C_2, C_N) \\
-\vdots & \vdots & \ddots & \vdots \\
+d(C_1, C_1) & d(C_1, C_2) & \dots & d(C_1, C_N) \
+d(C_2, C_1) & d(C_2, C_2) & \dots & d(C_2, C_N) \
+\vdots & \vdots & \ddots & \vdots \
 d(C_N, C_1) & d(C_N, C_2) & \dots & d(C_N, C_N)
 \end{bmatrix}
 $$
@@ -161,11 +161,11 @@ $$
 
 $$
 D' = \begin{bmatrix}
-d(C_1, C_1) & d(C_1, C_2) & \dots & d(C_1, C_i) & \dots & d(C_1, C_N) \\
-d(C_2, C_1) & d(C_2, C_2) & \dots & d(C_2, C_i) & \dots & d(C_2, C_N) \\
-\vdots & \vdots & \ddots & \vdots & \ddots & \vdots \\
-d(C_i, C_1) & d(C_i, C_2) & \dots & d(C_i, C_i) & \dots & d(C_i, C_N) \\
-\vdots & \vdots & \ddots & \vdots & \ddots & \vdots \\
+d(C_1, C_1) & d(C_1, C_2) & \dots & d(C_1, C_i) & \dots & d(C_1, C_N) \
+d(C_2, C_1) & d(C_2, C_2) & \dots & d(C_2, C_i) & \dots & d(C_2, C_N) \
+\vdots & \vdots & \ddots & \vdots & \ddots & \vdots \
+d(C_i, C_1) & d(C_i, C_2) & \dots & d(C_i, C_i) & \dots & d(C_i, C_N) \
+\vdots & \vdots & \ddots & \vdots & \ddots & \vdots \
 d(C_N, C_1) & d(C_N, C_2) & \dots & d(C_N, C_i) & \dots & d(C_N, C_N)
 \end{bmatrix}
 $$
@@ -198,7 +198,7 @@ plt.ylabel('Distance')
 plt.show()
 ```
 
- 
+
 
 通过观察树状图，我们可以发现以下信息：
 

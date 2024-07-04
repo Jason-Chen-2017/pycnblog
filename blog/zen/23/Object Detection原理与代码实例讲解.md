@@ -1,4 +1,4 @@
-                 
+
 # Object Detection原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -124,13 +124,13 @@ $$ \text{Score} = \mathcal{C}(f(x)) \quad \text{and} \quad \Delta\mathbf{b} = \m
 
 - 分类损失（Cross Entropy Loss）：
   $$ L_{cls} = -\sum_{i=1}^{N}\left[y_i \log(p_i) + (1-y_i)\log(1-p_i)\right] $$
-  
+
 - 回归损失（Smooth L1 Loss）：
   $$ L_{reg} = \begin{cases}
-    0.5 \times (\delta_{ij})^2, & |\delta_{ij}| < 1 \\
+    0.5 \times (\delta_{ij})^2, & |\delta_{ij}| < 1 \
     |(\delta_{ij})| - 0.5, & \text{otherwise}
   \end{cases} $$
-  
+
 其中，$y_i$表示标签，$p_i$为预测的概率，$\delta_{ij}$表示真实位置与预测位置之差。
 
 ### 4.3 案例分析与讲解
@@ -178,22 +178,22 @@ img_paths = ['path/to/image1.jpg', 'path/to/image2.jpg']
 for img_path in img_paths:
     # 加载图像
     dataset = LoadImagesAndLabels([img_path], img_size=(640, 640))
-    
+
     for _, batch, im0s, _ in dataset:
         im0s = [im0s]
-        
+
         # 将图像输入到模型
         pred = model(im0s)
         pred = non_max_suppression(pred)[0]
-        
+
         # 调整边界框坐标至原始图像比例
         pred[:, :4] = scale_coords(im.shape[2:], pred[:, :4], im0s[0].shape).round()
-        
+
         # 绘制检测框和类别标签
         for *xyxy, conf, cls in reversed(pred):
             label = f'{dataset.classes[int(cls)]} {conf:.2f}'
             plot_one_box(xyxy, im0s[0], label=label, color=colors(int(cls)), line_thickness=3)
-            
+
         # 显示或保存结果图像
         cv2.imshow('result', im0s[0])
         cv2.waitKey(0)

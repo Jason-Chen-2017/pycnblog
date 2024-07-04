@@ -1,6 +1,6 @@
 ## 【大模型应用开发 动手做AI Agent】何谓OpenAI API
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 

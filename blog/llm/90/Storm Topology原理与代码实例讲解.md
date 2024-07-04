@@ -1,7 +1,7 @@
 
 # Storm Topology原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -118,13 +118,13 @@ Storm Topology 在以下领域得到广泛应用：
 假设 Spout 在 t 时刻发送了 m 个 Tuple，每个 Bolt 处理的 Tuple 数量为 n 个，则每个 Bolt 处理的 Tuple 时间间隔为：
 
 $$
-\Delta t = \frac{t}{n} 
+\Delta t = \frac{t}{n}
 $$
 
 在 t 时刻，所有 Bolt 的状态变量 S 值为：
 
 $$
-S_t = n \times \frac{t}{n} = t 
+S_t = n \times \frac{t}{n} = t
 $$
 
 ### 4.3 案例分析与讲解

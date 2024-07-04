@@ -63,8 +63,8 @@ $$
 EfficientNet的复合缩放策略通过以下公式实现：
 
 $$
-\text{depth} = \alpha^\phi \\
-\text{width} = \beta^\phi \\
+\text{depth} = \alpha^\phi \
+\text{width} = \beta^\phi \
 \text{resolution} = \gamma^\phi
 $$
 

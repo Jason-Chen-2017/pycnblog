@@ -189,7 +189,7 @@ $$
 为了使$O_2 < O_1$,我们需要:
 
 $$
-N \times S < N \times M \times S \\
+N \times S < N \times M \times S \
 \Rightarrow 1 < M
 $$
 

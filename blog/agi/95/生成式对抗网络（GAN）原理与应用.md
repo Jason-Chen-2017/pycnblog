@@ -101,10 +101,10 @@ GANs的数学模型可以表示为以下公式：
 
 $$
 \begin{aligned}
-x_g &= G(z) \\
-x_r &= X \\
-p_r &= D(x_r) \\
-p_g &= D(x_g) \\
+x_g &= G(z) \
+x_r &= X \
+p_r &= D(x_r) \
+p_g &= D(x_g) \
 \end{aligned}
 $$
 

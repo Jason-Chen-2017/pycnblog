@@ -46,20 +46,15 @@ SAC算法的目标是最大化策略的期望回报，同时通过引入熵项�
 
 #### 策略更新步骤：
 
-$$ \
-abla_\\pi J(\\theta) = \\mathbb{E}_{s,a \\sim \\pi, q \\sim Q} \\left[ \
-abla_\\theta \\log \\pi(a|s) Q(s,a) \\right] $$
+$$ \nabla_\\pi J(\\theta) = \\mathbb{E}_{s,a \\sim \\pi, q \\sim Q} \\left[ \nabla_\\theta \\log \\pi(a|s) Q(s,a) \\right] $$
 
 #### 价值函数更新步骤：
 
-$$ \
-abla_Q J(q) = \\mathbb{E}_{s,a,r,s' \\sim \\mathcal{D}} \\left[ r + \\gamma \\min_{q'} Q'(s',a') - q(s,a) \\right] $$
+$$ \nabla_Q J(q) = \\mathbb{E}_{s,a,r,s' \\sim \\mathcal{D}} \\left[ r + \\gamma \\min_{q'} Q'(s',a') - q(s,a) \\right] $$
 
 #### 熵正则化步骤：
 
-$$ \
-abla_\\pi J(\\theta) = \\mathbb{E}_{s,a \\sim \\pi} \\left[ \
-abla_\\theta \\log \\pi(a|s) (\\alpha \\log \\pi(a|s) + Q(s,a)) \\right] $$
+$$ \nabla_\\pi J(\\theta) = \\mathbb{E}_{s,a \\sim \\pi} \\left[ \nabla_\\theta \\log \\pi(a|s) (\\alpha \\log \\pi(a|s) + Q(s,a)) \\right] $$
 
 ### 3.3 算法优缺点
 

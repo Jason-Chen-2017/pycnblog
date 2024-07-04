@@ -93,8 +93,7 @@
 
 策略梯度方法的数学模型可以表示为以下公式：
 
-$$\theta_{t+1} = \theta_t + \alpha \
-abla_{\theta} J(\theta_t)$$
+$$\theta_{t+1} = \theta_t + \alpha \nabla_{\theta} J(\theta_t)$$
 
 其中：
 
@@ -108,8 +107,7 @@ abla_{\theta} J(\theta_t)$$
 
 首先，定义策略梯度为：
 
-$$\
-abla_{\theta} J(\theta) = \frac{\partial J(\theta)}{\partial \theta}$$
+$$\nabla_{\theta} J(\theta) = \frac{\partial J(\theta)}{\partial \theta}$$
 
 然后，使用链式法则对$J(\theta)$求偏导，得到：
 
@@ -125,8 +123,7 @@ $$A(\theta) = \sum_{i=1}^n \pi(a_i | \theta)$$
 
 最后，根据策略梯度的定义，得到：
 
-$$\
-abla_{\theta} J(\theta) = \sum_{i=1}^n \pi(a_i | \theta) \frac{\partial J(\theta)}{\partial A} \frac{\partial A}{\partial \theta}$$
+$$\nabla_{\theta} J(\theta) = \sum_{i=1}^n \pi(a_i | \theta) \frac{\partial J(\theta)}{\partial A} \frac{\partial A}{\partial \theta}$$
 
 ### 4.3 案例分析与讲解
 
@@ -143,8 +140,7 @@ $$\epsilon-greedy(\theta) = \begin{cases}
 
 我们使用以下公式来更新策略参数：
 
-$$\theta_{t+1} = \theta_t + \alpha \
-abla_{\theta} J(\theta_t)$$
+$$\theta_{t+1} = \theta_t + \alpha \nabla_{\theta} J(\theta_t)$$
 
 其中，$J(\theta)$为：
 

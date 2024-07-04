@@ -1,7 +1,7 @@
 
 # 深度 Q-learning：在无人仓库中的应用
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 ### 1.1 问题的由来
@@ -150,8 +150,8 @@ $$
 定义奖励函数 $R$ 为：
 
 $$
-R(s,a) = 
-\begin{cases} 
+R(s,a) =
+\begin{cases}
 +1, & \text{if } a = a_1, s = s_1 \\
 +2, & \text{if } a = a_2, s = s_2 \\
 +3, & \text{if } a = a_3, s = s_3 \\
@@ -160,7 +160,7 @@ eq a_1, s = s_1 \\
 -2, & \text{if } a \
 eq a_2, s = s_2 \\
 -3, & \text{if } a \
-eq a_3, s = s_3 
+eq a_3, s = s_3
 \end{cases}
 $$
 
@@ -239,8 +239,8 @@ $$
 假设仓库的初始状态为 $s_0$，机器人位于A点，动作空间为 $\{a_1, a_2, a_3, a_4\}$，奖励函数 $R(s,a)$ 定义如下：
 
 $$
-R(s,a) = 
-\begin{cases} 
+R(s,a) =
+\begin{cases}
 +1, & \text{if } a = a_1, s = s_1 \\
 +1, & \text{if } a = a_2, s = s_2 \\
 +1, & \text{if } a = a_3, s = s_3 \\
@@ -252,7 +252,7 @@ eq a_2, s = s_2 \\
 -1, & \text{if } a \
 eq a_3, s = s_3 \\
 -1, & \text{if } a \
-eq a_4, s = s_4 
+eq a_4, s = s_4
 \end{cases}
 $$
 

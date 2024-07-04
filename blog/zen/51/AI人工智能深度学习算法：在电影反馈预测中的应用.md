@@ -6,7 +6,7 @@
 
 电影是一个庞大的全球产业,在娱乐、文化和经济层面都扮演着重要角色。根据统计,2022年全球电影票房收入高达411亿美元。一部成功的电影不仅能为制作公司带来可观的经济回报,还能产生广泛的社会影响力。
 
-### 1.2 电影反馈预测的意义 
+### 1.2 电影反馈预测的意义
 
 在投资和制作一部电影之前,能够准确预测其未来的票房表现和观众反馈是至关重要的。这不仅可以帮助制片方优化营销策略,更能指导内容创作,最大限度地满足观众需求。然而,预测电影反馈是一项极具挑战的任务,需要综合考虑诸多因素,如演员阵容、剧情类型、制作成本等。
 
@@ -44,7 +44,7 @@
 
 深度学习和自然语言处理在电影反馈预测任务中扮演着互补的角色。深度学习算法可以从结构化数据(如演员、导演、制作成本等)中学习电影的表示,而NLP技术则用于处理非结构化文本数据(如影评、剧情简介等)。两者的有机结合,能够为电影反馈预测提供更加全面和准确的特征输入。
 
-## 3.核心算法原理具体操作步骤  
+## 3.核心算法原理具体操作步骤
 
 ### 3.1 数据收集与预处理
 
@@ -101,7 +101,7 @@
 
 One-hot编码是词向量表示的一种简单方法,将每个词映射为一个长度为词典大小的向量,该词对应位置为1,其余位置为0。
 
-$$\operatorname{one\_hot}(x_i) = \begin{bmatrix} 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \end{bmatrix}$$
+$$\operatorname{one\_hot}(x_i) = \begin{bmatrix} 0 \ \vdots \ 1 \ \vdots \ 0 \end{bmatrix}$$
 
 其中$x_i$表示第i个词。
 
@@ -116,11 +116,11 @@ $$\max_{\theta} \frac{1}{T}\sum_{t=1}^{T}\sum_{-c \leq j \leq c, j \neq 0} \log 
 LSTM是一种常用的序列建模网络,它通过设计特殊的门控机制来缓解长期依赖问题。以前向传播为例,LSTM的隐藏状态更新公式为:
 
 $$\begin{aligned}
-f_t &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \\
-i_t &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \\
-\tilde{C}_t &= \tanh(W_C \cdot [h_{t-1}, x_t] + b_C) \\
-C_t &= f_t \odot C_{t-1} + i_t \odot \tilde{C}_t \\
-o_t &= \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) \\
+f_t &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \
+i_t &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \
+\tilde{C}_t &= \tanh(W_C \cdot [h_{t-1}, x_t] + b_C) \
+C_t &= f_t \odot C_{t-1} + i_t \odot \tilde{C}_t \
+o_t &= \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) \
 h_t &= o_t \odot \tanh(C_t)
 \end{aligned}$$
 

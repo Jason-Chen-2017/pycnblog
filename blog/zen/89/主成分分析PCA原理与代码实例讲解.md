@@ -120,7 +120,7 @@ PCA的数学模型如下：
 假设我们有一个包含两个特征的数据集，特征向量如下：
 
 $$
-X = 
+X =
 \begin{bmatrix}
 1 & 2 \\
 3 & 4 \\
@@ -136,7 +136,7 @@ Z = \frac{1}{\sqrt{2}}
 1 & 2 \\
 3 & 4 \\
 5 & 6 \\
-\end{bmatrix} = 
+\end{bmatrix} =
 \begin{bmatrix}
 \frac{1}{\sqrt{2}} & \frac{2}{\sqrt{2}} \\
 \frac{3}{\sqrt{2}} & \frac{4}{\sqrt{2}} \\

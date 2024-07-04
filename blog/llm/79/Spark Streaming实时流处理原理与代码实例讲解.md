@@ -120,18 +120,18 @@ object NetworkWordCount {
     // 创建SparkConf和StreamingContext
     val conf = new SparkConf().setAppName("NetworkWordCount")
     val ssc = new StreamingContext(conf, Seconds(1))
-    
+
     // 创建DStream,连接到Socket数据源
     val lines = ssc.socketTextStream("localhost", 9999)
-    
+
     // 对DStream进行操作
     val words = lines.flatMap(_.split(" "))
     val pairs = words.map(word => (word, 1))
     val wordCounts = pairs.reduceByKey(_ + _)
-    
+
     // 打印结果
     wordCounts.print()
-    
+
     // 启动流计算
     ssc.start()
     ssc.awaitTermination()

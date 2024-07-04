@@ -91,11 +91,9 @@ $$ \\min_{f} E_{X,Y}[L(f(X), Y)] $$
 
 使用梯度下降法或其变种（如Adam、RMSprop）来更新模型参数，最小化损失函数。具体步骤为：
 
-$$ \\theta_{t+1} = \\theta_t - \\alpha \\cdot \
-abla_\\theta L(f_\\theta(X), Y) $$
+$$ \\theta_{t+1} = \\theta_t - \\alpha \\cdot \nabla_\\theta L(f_\\theta(X), Y) $$
 
-其中，$\\theta$为模型参数，$\\alpha$为学习率，$\
-abla_\\theta$为关于$\\theta$的梯度。
+其中，$\\theta$为模型参数，$\\alpha$为学习率，$\nabla_\\theta$为关于$\\theta$的梯度。
 
 ### 4.3 案例分析与讲解
 

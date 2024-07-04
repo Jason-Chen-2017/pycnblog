@@ -54,8 +54,8 @@
 #### 4.1.1 查询、键、值的计算
 $$
 \begin{aligned}
-Q &= X W_Q \\
-K &= X W_K \\
+Q &= X W_Q \
+K &= X W_K \
 V &= X W_V
 \end{aligned}
 $$

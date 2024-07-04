@@ -222,7 +222,7 @@ print(f"模型准确率: {accuracy}")
     * Machine Learning Mastery
 
 ### 7.2  开发工具推荐
-* **Python:** 
+* **Python:**
 * **NLTK:** 自然语言处理库
 * **Scikit-learn:** 机器学习库
 * **TensorFlow:** 深度学习框架
@@ -262,7 +262,7 @@ print(f"模型准确率: {accuracy}")
 * **Q3: 如何评估模型的性能？**
     * **A3:** 可以使用准确率、召回率、F1-score等指标来评估模型的性能。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 

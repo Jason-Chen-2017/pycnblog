@@ -15,7 +15,7 @@
 LSTM在许多领域取得了巨大成功,包括:
 
 - 自然语言处理:语言建模、情感分析、命名实体识别等
-- 语音识别:语音转文本、说话人识别等  
+- 语音识别:语音转文本、说话人识别等
 - 时间序列预测:股票价格预测、天气预测等
 - 图像描述生成:根据图像生成自然语言描述
 - 手写识别:基于序列的手写字符识别
@@ -35,7 +35,7 @@ LSTM在许多领域取得了巨大成功,包括:
 - 输出门(output gate):控制记忆单元信息输出到当前隐藏状态的程度
 - 记忆单元(memory cell):存储长期记忆信息,类似于电路中的电容
 
-### 2.3 LSTM变体 
+### 2.3 LSTM变体
 
 - 窥孔连接(peephole connection):门控单元可以访问记忆单元状态
 - 耦合输入和遗忘门(coupled input and forget gate):输入门和遗忘门互补
@@ -126,7 +126,7 @@ $$h_t = o_t * \tanh(C_t)$$
 1. 将单词映射为词向量:
 
 I -> [0.1, 0.2, 0.3]
-love -> [0.4, 0.5, 0.6] 
+love -> [0.4, 0.5, 0.6]
 deep -> [0.7, 0.8, 0.9]
 learning -> [1.0, 1.1, 1.2]
 
@@ -169,7 +169,7 @@ class LSTMSentimentAnalysis(nn.Module):
         self.embedding = nn.Embedding(vocab_size, embedding_dim)
         self.lstm = nn.LSTM(embedding_dim, hidden_dim, batch_first=True)
         self.fc = nn.Linear(hidden_dim, output_dim)
-        
+
     def forward(self, x):
         x = self.embedding(x)
         _, (h_n, _) = self.lstm(x)
@@ -195,15 +195,15 @@ optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 for epoch in range(num_epochs):
     for batch in train_loader:
         inputs, labels = batch
-        
+
         optimizer.zero_grad()
-        
+
         outputs = model(inputs)
         loss = criterion(outputs, labels)
-        
+
         loss.backward()
         optimizer.step()
-        
+
     print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
 
 # 测试模型

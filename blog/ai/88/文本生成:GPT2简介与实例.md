@@ -154,7 +154,7 @@ A：GPT-2模型的微调过程需要特定任务的数据，例如机器翻译�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n gpt2-env python=3.8 
+conda create -n gpt2-env python=3.8
 conda activate gpt2-env
 ```
 

@@ -319,4 +319,4 @@ Hot-Hot 冗余设计也面临着一些挑战：
 * **故障恢复速度:**  衡量系统在出现故障时，能够快速切换到备用节点的时间。
 * **性能指标:**  衡量系统在正常运行时的性能指标，例如响应时间、吞吐量等。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

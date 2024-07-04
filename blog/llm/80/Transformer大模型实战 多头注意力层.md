@@ -47,7 +47,7 @@ graph TD
     C --> E[注意力计算]
     E --> F[线性变换]
     F --> G[Softmax]
-    G --> H[加权求和] 
+    G --> H[加权求和]
     D --> I[残差连接]
     H --> I
     I --> J[层规范化]
@@ -94,8 +94,8 @@ graph TD
 
    $$
    \begin{aligned}
-   Q &= XW^Q \\
-   K &= XW^K \\
+   Q &= XW^Q \
+   K &= XW^K \
    V &= XW^V
    \end{aligned}
    $$
@@ -183,8 +183,8 @@ graph TD
 
 $$
 \begin{aligned}
-Q &= XW^Q \\
-K &= XW^K \\
+Q &= XW^Q \
+K &= XW^K \
 V &= XW^V
 \end{aligned}
 $$

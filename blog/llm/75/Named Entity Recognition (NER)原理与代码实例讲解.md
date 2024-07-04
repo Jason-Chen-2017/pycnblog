@@ -330,7 +330,7 @@ num_epochs = 3
 for epoch in range(num_epochs):
     train_loss = train(model, dataloader, optimizer, loss_fn, device)
     print(f"Epoch {epoch+1}, train loss: {train_loss:.4f}")
-    
+
     eval_loss = evaluate(model, dataloader, device)
     print(f"Epoch {epoch+1}, eval loss: {eval_loss:.4f}")
 

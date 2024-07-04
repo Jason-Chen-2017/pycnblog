@@ -84,13 +84,13 @@ LLaMA系列模型广泛应用于：
 
 LLaMA模型构建时，主要涉及以下数学概念：
 
-- **自注意力机制**：$A = \\text{MultiHead}(W^Q \\cdot Q + W^K \\cdot K + W^V \\cdot V)$，其中$Q$、$K$、$V$分别为查询、键、值矩阵，$W^Q$、$W^K$、$W^V$为权重矩阵，$A$为注意力得分矩阵。
-- **多层变换器块**：$H = \\text{FeedForward}(L_\\text{Norm}(W^Q \\cdot Q + W^K \\cdot K + W^V \\cdot V))$，其中$L_\\text{Norm}$为层规范化操作，$W^Q$、$W^K$、$W^V$分别对应于自注意力机制中的查询、键、值矩阵。
+- **自注意力机制**：$A = \text{MultiHead}(W^Q \cdot Q + W^K \cdot K + W^V \cdot V)$，其中$Q$、$K$、$V$分别为查询、键、值矩阵，$W^Q$、$W^K$、$W^V$为权重矩阵，$A$为注意力得分矩阵。
+- **多层变换器块**：$H = \text{FeedForward}(L_\text{Norm}(W^Q \cdot Q + W^K \cdot K + W^V \cdot V))$，其中$L_\text{Norm}$为层规范化操作，$W^Q$、$W^K$、$W^V$分别对应于自注意力机制中的查询、键、值矩阵。
 
 ### 4.2 公式推导过程
 
-- **多头自注意力**：$A = \\text{Softmax}(QK^T) \\cdot V$，其中$QK^T$表示查询和键的点积，$\\text{Softmax}$函数用于归一化得分，$V$为值矩阵。
-- **前馈网络**：$FFN(x) = \\text{MLP}(x \\cdot W^1 + b_1, \\sigma) \\cdot W^2 + b_2$，其中$\\text{MLP}$为多层感知机，$\\sigma$为激活函数。
+- **多头自注意力**：$A = \text{Softmax}(QK^T) \cdot V$，其中$QK^T$表示查询和键的点积，$\text{Softmax}$函数用于归一化得分，$V$为值矩阵。
+- **前馈网络**：$FFN(x) = \text{MLP}(x \cdot W^1 + b_1, \sigma) \cdot W^2 + b_2$，其中$\text{MLP}$为多层感知机，$\sigma$为激活函数。
 
 ### 4.3 案例分析与讲解
 
@@ -118,13 +118,13 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # 初始化模型和分词器
-model_name = \"EleutherAI/gpt-neox-20b\"
+model_name = "EleutherAI/gpt-neox-20b"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
 # 输入文本和参数设置
-input_text = \"阳光照耀着碧绿的湖面，远处山峦环绕，鸟儿在空中翱翔。\"
-input_ids = tokenizer.encode(input_text, return_tensors=\"pt\")
+input_text = "阳光照耀着碧绿的湖面，远处山峦环绕，鸟儿在空中翱翔。"
+input_ids = tokenizer.encode(input_text, return_tensors="pt")
 
 # 预测生成
 output = model.generate(input_ids, max_length=100, num_return_sequences=1)
@@ -171,8 +171,8 @@ LLaMA系列模型未来将在以下领域展现出更多可能性：
 
 ### 7.3 相关论文推荐
 
-- **Transformer**：Vaswani等人，2017年，\"Attention is All You Need\"。
-- **多模态融合**：Sajjadi等人，2018年，\"Multimodal Transformers for Visual Question Answering\"。
+- **Transformer**：Vaswani等人，2017年，"Attention is All You Need"。
+- **多模态融合**：Sajjadi等人，2018年，"Multimodal Transformers for Visual Question Answering"。
 
 ### 7.4 其他资源推荐
 

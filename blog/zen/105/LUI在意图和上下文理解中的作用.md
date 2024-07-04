@@ -175,11 +175,11 @@ class CustomDataset(torch.utils.data.Dataset):
         text = str(self.data.loc[item, "text"])
         intent_id = self.data.loc[item, "intent_id"]
         inputs = self.tokenizer.encode_plus(
-            text, 
-            add_special_tokens=True, 
-            max_length=self.max_len, 
-            pad_to_max_length=True, 
-            return_token_type_ids=True, 
+            text,
+            add_special_tokens=True,
+            max_length=self.max_len,
+            pad_to_max_length=True,
+            return_token_type_ids=True,
             truncation=True
         )
         ids = inputs["input_ids"]

@@ -111,7 +111,7 @@ AI人工智能代理工作流可以构建如下数学模型：
 该模型可以使用以下公式表示：
 
 $$
-P_1 \\rightarrow P_2 \\rightarrow P_3 \\rightarrow P_4
+P_1 \rightarrow P_2 \rightarrow P_3 \rightarrow P_4
 $$
 
 其中，$P_1, P_2, P_3, P_4$分别表示任务1、任务2、任务3和任务4的状态。
@@ -212,16 +212,16 @@ class Workflow:
     def execute_task(self, task):
         with self.lock:
             task.start_time = time.time()
-        print(f\"开始执行任务：{task.name}\")
+        print(f"开始执行任务：{task.name}")
         time.sleep(task.duration)
         with self.lock:
             task.end_time = time.time()
-        print(f\"任务执行完毕：{task.name}，耗时：{task.end_time - task.start_time}秒\")
+        print(f"任务执行完毕：{task.name}，耗时：{task.end_time - task.start_time}秒")
 
 # 创建任务
-task1 = Task(\"任务1\", 2)
-task2 = Task(\"任务2\", 3)
-task3 = Task(\"任务3\", 1)
+task1 = Task("任务1", 2)
+task2 = Task("任务2", 3)
+task3 = Task("任务3", 1)
 
 # 创建工作流并添加任务
 workflow = Workflow()
@@ -292,9 +292,9 @@ AI人工智能代理工作流在实际应用中具有广泛的应用场景，以
 
 ### 7.3 相关论文推荐
 
-1. **\"A Comprehensive Survey of Workflow Management Systems\"**：作者：M. A. Athanas, J. M. Gehrke, P. M. Karrer, M. L. Skwarek
-2. **\"Automated Machine Learning: A Survey\"**：作者：Nitesh V. Chawla, Xinyi Geng, Arun Iyer
-3. **\"A Survey on Human-AI Collaboration\"**：作者：Alessandro Sordoni, Shyamal peddada, Dilek Hakkani-Tür
+1. **"A Comprehensive Survey of Workflow Management Systems"**：作者：M. A. Athanas, J. M. Gehrke, P. M. Karrer, M. L. Skwarek
+2. **"Automated Machine Learning: A Survey"**：作者：Nitesh V. Chawla, Xinyi Geng, Arun Iyer
+3. **"A Survey on Human-AI Collaboration"**：作者：Alessandro Sordoni, Shyamal peddada, Dilek Hakkani-Tür
 
 ### 7.4 其他资源推荐
 

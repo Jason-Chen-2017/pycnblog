@@ -118,8 +118,8 @@ CutMix方法在以下任务上取得了显著的效果：
 设输入图像 $A$ 和 $B$ 的像素值为 $A(x, y)$ 和 $B(x, y)$，裁剪框 $F_A$ 和 $F_B$ 的大小和位置分别为 $C \times C$ 和 $x_A, y_A; x_B, y_B$，混合系数为 $\alpha$，混合图像为 $M(x, y)$，则有：
 
 $$
-M(x, y) = 
-\begin{cases} 
+M(x, y) =
+\begin{cases}
 A(x, y) & \text{if } (x, y) \in F_A \\
 B(x, y) & \text{if } (x, y) \in F_B \\
 \alpha A(x, y) + (1 - \alpha) B(x, y) & \text{if } (x, y) \in F_A \cup F_B

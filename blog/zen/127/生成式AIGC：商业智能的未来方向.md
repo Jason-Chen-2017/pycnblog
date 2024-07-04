@@ -240,7 +240,7 @@ AIGC模型的输出结果的准确性取决于模型的训练数据质量和模�
 可以根据具体应用场景选择不同的评估指标。例如，对于文本生成任务，可以使用准确率、召回率、BLEU分数等指标来评估模型的性能。
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 

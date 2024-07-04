@@ -1,12 +1,12 @@
 # 创建一个Bigram字符预测模型
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 ### 1.1  问题的由来
 自然语言处理是人工智能和计算机科学领域的一个重要分支,旨在让计算机能够理解、生成和处理人类语言。在自然语言处理中,语言模型扮演着至关重要的角色。语言模型能够捕捉语言的统计规律,预测下一个最可能出现的单词或字符,从而在机器翻译、语音识别、文本生成等任务中发挥重要作用。
 
-### 1.2  研究现状 
+### 1.2  研究现状
 目前,主流的语言模型主要包括n-gram模型、神经网络语言模型等。其中,n-gram模型由于其简单高效的特点,在工业界得到了广泛应用。n-gram模型中,Bigram模型是最基础和常用的模型之一。Bigram模型通过统计相邻两个单词或字符的共现概率,来预测下一个最可能出现的单词或字符。
 
 ### 1.3  研究意义
@@ -119,7 +119,7 @@ D = {'a','b','a','c'}
 
 ```
 Count('a') = 2
-Count('b') = 1  
+Count('b') = 1
 Count('c') = 1
 ```
 
@@ -174,29 +174,29 @@ from collections import defaultdict, Counter
 def train_bigram_model(corpus):
     # 统计每个字符出现的频次
     char_freq = Counter(corpus)
-    
+
     # 统计Bigram的频次
     bigrams = ngrams(corpus, 2)
     bigram_freq = defaultdict(int)
     for bigram in bigrams:
         bigram_freq[bigram] += 1
-    
+
     # 计算条件概率,使用拉普拉斯平滑
     vocab_size = len(char_freq)
     bigram_prob = defaultdict(float)
     for bigram, freq in bigram_freq.items():
         bigram_prob[bigram] = (freq + 1) / (char_freq[bigram[0]] + vocab_size)
-    
+
     return bigram_prob
 
 def predict_next_char(char, bigram_prob):
     # 找出以给定字符开头的所有Bigram
     candidates = [bigram for bigram in bigram_prob.keys() if bigram[0] == char]
-    
+
     # 如果没有匹配的Bigram,返回None
     if not candidates:
         return None
-    
+
     # 根据条件概率选择最可能的下一个字符
     max_prob = 0
     next_char = None
@@ -204,7 +204,7 @@ def predict_next_char(char, bigram_prob):
         if bigram_prob[bigram] > max_prob:
             max_prob = bigram_prob[bigram]
             next_char = bigram[1]
-    
+
     return next_char
 
 # 测试代码

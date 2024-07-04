@@ -65,7 +65,7 @@ $cmd,param1,param2,...#
 
 - `SET_TIME`: 设置单片机时间,参数为年月日时分秒。
 - `SET_ON`: 设置定时开时间,参数为时分。
-- `SET_OFF`: 设置定时关时间,参数为时分。 
+- `SET_OFF`: 设置定时关时间,参数为时分。
 - `GET_STATE`: 获取插座当前状态,无参数。
 - `SWITCH_ON`: 手动开启插座,无参数。
 - `SWITCH_OFF`: 手动关闭插座,无参数。
@@ -82,7 +82,7 @@ $STATE,OFF#
 
 单片机内部利用定时器和实时时钟电路RTC实现定时控制,具体步骤如下:
 
-1. 上电初始化,读取RTC当前时间,读取EEPROM中保存的定时时间。 
+1. 上电初始化,读取RTC当前时间,读取EEPROM中保存的定时时间。
 2. 每秒钟更新一次当前时间,与定时时间比较,如果到达定时时间点,执行开关动作。
 3. 如果接收到新的定时设置指令,更新EEPROM中的定时时间。
 4. 如果接收到手动开关指令,立即执行开关动作,并清除定时。
@@ -92,7 +92,7 @@ $STATE,OFF#
 ```c
 if (current_hour == on_hour && current_minute == on_minute) {
     switch_on();
-} 
+}
 if (current_hour == off_hour && current_minute == off_minute) {
     switch_off();
 }
@@ -142,7 +142,7 @@ $$
 
 4. 进位到小时:
 
-$$  
+$$
 HH = HH + (MM + 1) / 60
 $$
 
@@ -158,7 +158,7 @@ $$
 
 ```
 SS = (59 + 1) % 60 = 0
-MM = 59 + (59 + 1) / 60 = 0  
+MM = 59 + (59 + 1) / 60 = 0
 HH = 23 + (59 + 1) / 60 = 0
 ```
 
@@ -187,13 +187,13 @@ void parse_cmd() {
         set_rtc(rx_buffer+10);
     } else if (strncmp(rx_buffer+1, "SET_ON,", 7) == 0) {
         // 设置定时开时间
-        set_ontime(rx_buffer+8);  
+        set_ontime(rx_buffer+8);
     } else if (strncmp(rx_buffer+1, "SET_OFF,", 8) == 0) {
         // 设置定时关时间
         set_offtime(rx_buffer+9);
     } else if (strcmp(rx_buffer+1, "GET_STATE#") == 0) {
         // 获取状态指令
-        get_state(); 
+        get_state();
     } else if (strcmp(rx_buffer+1, "SWITCH_ON#") == 0) {
         // 手动开指令
         switch_on();
@@ -229,17 +229,17 @@ void update_time() {
             // 小时加1
             time_buffer[3] = (time_buffer[3] + 1) % 24;
             if (time_buffer[3] == 0) {
-                // 日期加1,略  
+                // 日期加1,略
             }
         }
     }
     // 写入RTC当前时间
-    write_rtc(time_buffer);  
+    write_rtc(time_buffer);
 }
 
 void check_timer() {
     if (time_buffer[3] == on_hour && time_buffer[4] == on_minute) {
-        // 到达开启时间 
+        // 到达开启时间
         switch_on();
     }
     if (time_buffer[3] == off_hour && time_buffer[4] == off_minute) {
@@ -306,7 +306,7 @@ void check_timer() {
 
 2. Q:定时失败是什么原因?
    A:可能原因:(1)插座时间不准,用APP同步时间后再试;(2)定时时间设置错误,检查AM/PM是否弄反;(3)插座断电重启后定时设置丢失,重新设置定时。
-   
+
 3. Q:插座支持最大功率是多少?
    A:本插座额定功率为2500W,超过此功率可能烧毁继电器。使用时请注意连接设备的总功率不要超过额定值。
 

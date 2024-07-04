@@ -184,8 +184,7 @@ $$
 对损失函数求导，得到：
 
 $$
-\
-abla_{\theta}L(\theta) = -\sum_{i=1}^N \left[y_i \frac{\partial \log(\hat{y}_i)}{\partial \theta} + (1-y_i) \frac{\partial \log(1-\hat{y}_i)}{\partial \theta}\right]
+\nabla_{\theta}L(\theta) = -\sum_{i=1}^N \left[y_i \frac{\partial \log(\hat{y}_i)}{\partial \theta} + (1-y_i) \frac{\partial \log(1-\hat{y}_i)}{\partial \theta}\right]
 $$
 
 其中，$\frac{\partial \log(\hat{y}_i)}{\partial \theta}$ 和 $\frac{\partial \log(1-\hat{y}_i)}{\partial \theta}$ 分别为模型参数对预测概率的导数。

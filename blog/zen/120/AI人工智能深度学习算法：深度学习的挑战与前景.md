@@ -230,7 +230,7 @@ A：过拟合是指模型在训练数据上表现良好，但在测试数据上�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n tensorflow-env python=3.8 
+conda create -n tensorflow-env python=3.8
 conda activate tensorflow-env
 ```
 

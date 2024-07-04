@@ -175,7 +175,7 @@ Pattern<String> pattern = Pattern.<String>begin("order")
     .next("reorder").within(Time.minutes(30))
     .next("reorder").within(Time.minutes(30));
 
-PatternStream<String> patternStream = PatternStream.fromDataStream(stream, 
+PatternStream<String> patternStream = PatternStream.fromDataStream(stream,
     "user_id, amount, timestamp as event_time");
 
 patternStream.select(pattern).process(new PatternProcessFunction<String, String>() {

@@ -304,4 +304,4 @@ for item in aggregations["商品类型"]["buckets"]:
 
 **A：** ElasticSearch Aggregation可以通过设置权限控制来进行安全控制，例如限制用户访问特定索引、特定字段等。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

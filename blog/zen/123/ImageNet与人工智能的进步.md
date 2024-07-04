@@ -267,4 +267,4 @@ A: ImageNet数据集可以免费用于非商业用途。
 A: ImageNet数据集的未来发展方向包括：更大规模的数据集、更加细粒度的类别标签、更加丰富的图像信息等等。
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

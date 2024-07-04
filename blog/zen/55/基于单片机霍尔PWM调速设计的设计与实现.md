@@ -60,7 +60,7 @@ uint8_t getRotorPosition() {
     hallState |= (hallA ? 1 : 0) << 2;
     hallState |= (hallB ? 1 : 0) << 1;
     hallState |= (hallC ? 1 : 0);
-    
+
     switch(hallState) {
         case 0b101: return 1;
         case 0b001: return 2;
@@ -102,17 +102,17 @@ float ki = 0.01;
 uint16_t computePWMDuty() {
     int32_t error = targetSpeed - currentSpeed;
     integral += error;
-    
+
     // 防止积分饱和
     if(integral > 10000) integral = 10000;
     else if(integral < -10000) integral = -10000;
-    
+
     int32_t duty = kp * error + ki * integral;
-    
+
     // 限制占空比范围
     if(duty > 1000) duty = 1000;
     else if(duty < 0) duty = 0;
-    
+
     return (uint16_t)duty;
 }
 ```
@@ -195,22 +195,22 @@ graph TD
 
 // 霍尔传感器输入引脚
 #define HALL_A_PIN  PINx
-#define HALL_B_PIN  PINy 
+#define HALL_B_PIN  PINy
 #define HALL_C_PIN  PINz
 
 // PWM输出引脚
 #define PWM_OUT_PIN PWMx
 
 // 目标转速(rpm)
-#define TARGET_SPEED 1000  
+#define TARGET_SPEED 1000
 
-// PID参数  
+// PID参数
 float kp = 0.5;
 float ki = 0.01;
 
 // 全局变量
 int32_t currentSpeed = 0;
-int32_t lastError = 0; 
+int32_t lastError = 0;
 int32_t integral = 0;
 
 // 读取霍尔传感器状态
@@ -236,17 +236,17 @@ uint8_t getRotorPosition(uint8_t hallState) {
 uint16_t computePWMDuty() {
     int32_t error = TARGET_SPEED - currentSpeed;
     integral += error;
-    
+
     // 防止积分饱和
     if(integral > 10000) integral = 10000;
     else if(integral < -10000) integral = -10000;
-    
+
     int32_t duty = kp * error + ki * integral;
-    
+
     // 限制占空比范围
     if(duty > 1000) duty = 1000;
     else if(duty < 0) duty = 0;
-    
+
     return (uint16_t)duty;
 }
 
@@ -254,20 +254,20 @@ uint16_t computePWMDuty() {
 int main() {
     uint8_t hallState, rotorPos;
     uint16_t pwmDuty;
-    
+
     while(1) {
         // 读取霍尔传感器状态
         hallState = readHallState();
-        
+
         // 获取转子位置
         rotorPos = getRotorPosition(hallState);
-        
+
         // 根据位置计算PWM占空比
         pwmDuty = computePWMDuty();
-        
+
         // 设置PWM输出
         setPWM(PWM_OUT_PIN, pwmDuty);
-        
+
         // 更新当前转速
         currentSpeed = getSpeed();
     }

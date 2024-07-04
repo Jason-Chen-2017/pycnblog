@@ -81,18 +81,18 @@ OpenCV的双目测距流程可以分为以下几个步骤：
 
 $$
 \left[\begin{matrix}
-u \\ 
+u \\
 v \\
 1
-\end{matrix}\right] 
-= 
+\end{matrix}\right]
+=
 \left[\begin{matrix}
 f_x & 0 & c_x \\
 0 & f_y & c_y \\
-0 & 0 & 1 
+0 & 0 & 1
 \end{matrix}\right]
 \left[\begin{matrix}
-X \\ 
+X \\
 Y \\
 Z
 \end{matrix}\right]
@@ -119,9 +119,9 @@ $$
 有了像素点的深度,再结合像素坐标,就可以计算出物理点的三维坐标。设像素点坐标为 $(u,v)$,深度为 $Z$,相机内参为 $K$,则物理点坐标 $P$为:
 
 $$
-P = Z \cdot K^{-1} 
+P = Z \cdot K^{-1}
 \left[\begin{matrix}
-u \\ 
+u \\
 v \\
 1
 \end{matrix}\right]
@@ -133,7 +133,7 @@ $$
 K = \left[\begin{matrix}
 f_x & 0 & c_x \\
 0 & f_y & c_y \\
-0 & 0 & 1 
+0 & 0 & 1
 \end{matrix}\right]
 $$
 
@@ -154,11 +154,11 @@ h = 6
 criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 0.001)
 
 objp = np.zeros((w*h,3), np.float32)
-objp[:,:2] = np.mgrid[0:w,0:h].T.reshape(-1,2) 
+objp[:,:2] = np.mgrid[0:w,0:h].T.reshape(-1,2)
 
-objpoints = [] 
-imgpoints_l = [] 
-imgpoints_r = [] 
+objpoints = []
+imgpoints_l = []
+imgpoints_r = []
 
 images_l = glob.glob('left/*.jpg')
 images_r = glob.glob('right/*.jpg')
@@ -186,8 +186,8 @@ ret, mtx_r, dist_r, rvecs_r, tvecs_r = cv2.calibrateCamera(objpoints, imgpoints_
 ret, K1, D1, K2, D2, R, T, E, F = cv2.stereoCalibrate(objpoints, imgpoints_l, imgpoints_r, mtx_l, dist_l, mtx_r, dist_r, gray_l.shape[::-1])
 
 print("K1:",K1)
-print("D1:",D1) 
-print("K2:",K2)  
+print("D1:",D1)
+print("K2:",K2)
 print("D2:",D2)
 print("R:",R)
 print("T:",T)

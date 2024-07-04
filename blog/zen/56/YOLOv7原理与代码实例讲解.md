@@ -16,13 +16,13 @@ YOLOv7是YOLO系列算法的最新进展,在继承了YOLO系列算法速度快�
 - 2.1.2 YOLOv7骨干网络的特点
 - 2.1.3 常用的骨干网络结构
 
-### 2.2 Neck 特征融合模块  
+### 2.2 Neck 特征融合模块
 - 2.2.1 特征融合的必要性
 - 2.2.2 YOLOv7中的ELAN和TAL模块
 - 2.2.3 FPN、PAN等常见特征融合方法
 
 ### 2.3 Head 检测头
-- 2.3.1 检测头的功能 
+- 2.3.1 检测头的功能
 - 2.3.2 YOLOv7的检测头设计
 - 2.3.3 One-stage和Two-stage检测头的区别
 
@@ -112,7 +112,7 @@ from utils.general import non_max_suppression, scale_coords
 from utils.plots import plot_one_box
 
 # 加载YOLOv7模型
-model = attempt_load('yolov7.pt', map_location=device) 
+model = attempt_load('yolov7.pt', map_location=device)
 model.eval()
 
 # 加载待检测图像
@@ -121,8 +121,8 @@ dataset = LoadImages('images', img_size=640)
 for path, img, im0s, vid_cap in dataset:
     # 图像预处理
     img = torch.from_numpy(img).to(device)
-    img = img.float() 
-    img /= 255.0  
+    img = img.float()
+    img /= 255.0
     if img.ndimension() == 3:
         img = img.unsqueeze(0)
 
@@ -132,7 +132,7 @@ for path, img, im0s, vid_cap in dataset:
     # NMS去除重叠检测框
     pred = non_max_suppression(pred, conf_thres, iou_thres)
 
-    # 结果后处理与可视化    
+    # 结果后处理与可视化
     for i, det in enumerate(pred):
         im0 = im0s.copy()
         if len(det):
@@ -140,7 +140,7 @@ for path, img, im0s, vid_cap in dataset:
             for *xyxy, conf, cls in reversed(det):
                 label = f'{names[int(cls)]} {conf:.2f}'
                 plot_one_box(xyxy, im0, label=label, color=colors[int(cls)], line_thickness=3)
-        
+
         cv2.imshow(str(p), im0)
         cv2.waitKey(1)  # 1 millisecond
 ```
@@ -218,4 +218,4 @@ YOLOv7的提出进一步提升了目标检测的精度和速度,展现了巨大�
 ### 9.1 YOLOv7与之前版本相比有哪些改进？
 YOLOv7在骨干网络、检测头、损失函数等方面进行了优化,引入了E-ELAN、TAL等新模块,提升了检测精度。同时也采用了更优的数据增强和训练策略,加快了训练速度。
 
-### 
+###

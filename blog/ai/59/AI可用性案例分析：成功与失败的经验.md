@@ -7,7 +7,7 @@
 #### 1.1.1 提升用户体验
 #### 1.1.2 降低使用门槛
 #### 1.1.3 促进AI技术普及
-### 1.2 AI可用性面临的挑战  
+### 1.2 AI可用性面临的挑战
 #### 1.2.1 技术复杂性
 #### 1.2.2 用户多样性
 #### 1.2.3 伦理与安全问题
@@ -108,7 +108,7 @@ actions = ["ask_back", "give_answer", "say_goodbye"]
 # 定义奖励函数
 rewards = [
     [-1, 5, -5], # greeting
-    [-5, 5, -5], # question 
+    [-5, 5, -5], # question
     [-5, 5, 10], # answer
     [-5, -5, 10] # ending
 ]
@@ -122,7 +122,7 @@ transitions = [
 ]
 
 # 定义折扣因子和训练参数
-gamma = 0.9 
+gamma = 0.9
 num_episodes = 1000
 learning_rate = 0.1
 
@@ -133,21 +133,21 @@ Q = np.zeros((len(states), len(actions)))
 for episode in range(num_episodes):
     state = 0 # 初始状态为greeting
     done = False
-    
+
     while not done:
         # 使用epsilon-greedy策略选择动作
         if np.random.uniform() < 0.1:
             action = np.random.choice(range(len(actions)))
         else:
             action = np.argmax(Q[state])
-        
+
         # 执行动作,观察下一个状态和奖励
         next_state = np.random.choice(range(len(states)), p=transitions[state])
         reward = rewards[state][action]
-        
+
         # 更新Q表
         Q[state][action] += learning_rate * (reward + gamma * np.max(Q[next_state]) - Q[state][action])
-        
+
         state = next_state
         if state == len(states) - 1:
             done = True
@@ -164,7 +164,7 @@ while True:
     else:
         print("Goodbye!")
         break
-        
+
     state = int(input("User: "))
 ```
 
@@ -186,14 +186,14 @@ while True:
 #### 6.2.2 知识点推荐与练习
 #### 6.2.3 互动式教学与反馈
 ### 6.3 智能医疗
-#### 6.3.1 医疗问答与诊断建议  
+#### 6.3.1 医疗问答与诊断建议
 #### 6.3.2 个性化治疗方案推荐
 #### 6.3.3 医患沟通与随访管理
 
 ## 7. 工具和资源推荐
 ### 7.1 AI可用性设计工具
 #### 7.1.1 Sketch + Anima Plugin
-#### 7.1.2 Figma + Figma ML Plugin 
+#### 7.1.2 Figma + Figma ML Plugin
 #### 7.1.3 Adobe XD + Auto-Animate
 ### 7.2 AI可用性评估平台
 #### 7.2.1 UserTesting
@@ -211,7 +211,7 @@ while True:
 #### 8.1.3 跨平台与跨设备的无缝体验
 ### 8.2 多模态交互与融合
 #### 8.2.1 语音交互与对话系统
-#### 8.2.2 视觉交互与AR/VR应用  
+#### 8.2.2 视觉交互与AR/VR应用
 #### 8.2.3 生物特征识别与交互
 ### 8.3 人机协作与群智
 #### 8.3.1 人机混合智能系统

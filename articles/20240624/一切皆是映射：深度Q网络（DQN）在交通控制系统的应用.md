@@ -167,8 +167,7 @@ $$\max_{\theta} J(\theta) = \sum_{t=0}^\infty \gamma^t R(s_t, a_t)$$
 
 梯度下降法是一种优化方法，其基本思想是沿着目标函数梯度的反方向进行迭代，以找到目标函数的最小值。对于Q-learning，梯度下降法的迭代公式如下：
 
-$$\theta_{t+1} = \theta_t - \alpha \
-abla_{\theta} J(\theta_t)$$
+$$\theta_{t+1} = \theta_t - \alpha \nabla_{\theta} J(\theta_t)$$
 
 其中，$\alpha$是学习率。
 
@@ -176,8 +175,7 @@ abla_{\theta} J(\theta_t)$$
 
 DQN算法在Q-learning的基础上，使用深度神经网络来近似Q-function。具体来说，DQN算法采用以下公式来更新Q-function参数：
 
-$$\theta_{t+1} = \theta_t - \alpha \
-abla_{\theta} J(\theta_t)$$
+$$\theta_{t+1} = \theta_t - \alpha \nabla_{\theta} J(\theta_t)$$
 
 其中，$J(\theta_t)$是目标函数，其计算公式如下：
 

@@ -54,20 +54,20 @@
 Q-learning算法的数学模型可以表示为：
 
 $$
-Q(s,a) = (1 - \\alpha)Q(s,a) + \\alpha[r + \\gamma \\max_{a'}Q(s',a')]
+Q(s,a) = (1 - \alpha)Q(s,a) + \alpha[r + \gamma \max_{a'}Q(s',a')]
 $$
 
-其中，$\\alpha$是学习率，$r$是奖励，$\\gamma$是折扣因子。
+其中，$\alpha$是学习率，$r$是奖励，$\gamma$是折扣因子。
 
 ### 4.2 SARSA算法的数学模型
 
 SARSA算法的数学模型可以表示为：
 
 $$
-Q(s,a) = (1 - \\alpha)Q(s,a) + \\alpha[r + \\gamma Q(s',a')]
+Q(s,a) = (1 - \alpha)Q(s,a) + \alpha[r + \gamma Q(s',a')]
 $$
 
-其中，$\\alpha$是学习率，$r$是奖励，$\\gamma$是折扣因子。
+其中，$\alpha$是学习率，$r$是奖励，$\gamma$是折扣因子。
 
 ## 5. Project Practice: Code Examples and Detailed Explanations
 

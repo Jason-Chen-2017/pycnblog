@@ -202,7 +202,7 @@ A：评估神经网络模型性能的方法有很多，以下是一些常见的�
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n ai-self-awareness python=3.8 
+conda create -n ai-self-awareness python=3.8
 conda activate ai-self-awareness
 ```
 3. 安装TensorFlow：

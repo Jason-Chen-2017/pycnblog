@@ -71,8 +71,7 @@ $$ E(m_1) \\oplus E(m_2) = E(m_1 + m_2) $$
 
 联邦学习的数学模型如下：
 
-$$ \\theta^{(t)} = \\theta^{(t-1)} + \\alpha \\cdot \\frac{1}{N} \\sum_{i=1}^{N} \
-abla_{\\theta} L(\\theta^{(t-1)}, x_i, y_i) $$
+$$ \\theta^{(t)} = \\theta^{(t-1)} + \\alpha \\cdot \\frac{1}{N} \\sum_{i=1}^{N} \nabla_{\\theta} L(\\theta^{(t-1)}, x_i, y_i) $$
 
 其中，θ 表示模型参数；t 表示迭代次数；α 表示学习率；N 表示参与方数量；x_i 和 y_i 分别表示第i个参与方的输入和标签。
 

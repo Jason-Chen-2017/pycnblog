@@ -114,8 +114,7 @@ Actor-Critic方法广泛应用于：
 
 #### 策略梯度：
 
-- **策略更新公式**：$\theta_{\pi} \leftarrow \theta_{\pi} + \alpha \
-abla_\theta J(\theta)$，其中$J(\theta)$是策略的性能指标，$\alpha$是学习率。
+- **策略更新公式**：$\theta_{\pi} \leftarrow \theta_{\pi} + \alpha \nabla_\theta J(\theta)$，其中$J(\theta)$是策略的性能指标，$\alpha$是学习率。
 
 #### 价值函数：
 

@@ -91,12 +91,12 @@ ALBERT模型采用嵌套的Transformer结构，其数学模型如下：
 
 $$
 \begin{align*}
-x^{(0)} &= \text{Word Embeddings} \\
-h^{(0)} &= W_{\text{emb}}x^{(0)} \\
-h^{(1)} &= \text{Multi-Head Attention}(h^{(0)}, h^{(0)}, h^{(0)}) + \text{Layer Normalization}(h^{(0)}) \\
-h^{(2)} &= \text{Multi-Head Attention}(h^{(1)}, h^{(1)}, h^{(1)}) + \text{Layer Normalization}(h^{(1)}) \\
-&\vdots \\
-h^{(L)} &= \text{Multi-Head Attention}(h^{(L-1)}, h^{(L-1)}, h^{(L-1)}) + \text{Layer Normalization}(h^{(L-1)}) \\
+x^{(0)} &= \text{Word Embeddings} \
+h^{(0)} &= W_{\text{emb}}x^{(0)} \
+h^{(1)} &= \text{Multi-Head Attention}(h^{(0)}, h^{(0)}, h^{(0)}) + \text{Layer Normalization}(h^{(0)}) \
+h^{(2)} &= \text{Multi-Head Attention}(h^{(1)}, h^{(1)}, h^{(1)}) + \text{Layer Normalization}(h^{(1)}) \
+&\vdots \
+h^{(L)} &= \text{Multi-Head Attention}(h^{(L-1)}, h^{(L-1)}, h^{(L-1)}) + \text{Layer Normalization}(h^{(L-1)}) \
 \end{align*}
 $$
 
@@ -141,7 +141,7 @@ A：ALBERT模型的预训练策略包括：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n albert-env python=3.7 
+conda create -n albert-env python=3.7
 conda activate albert-env
 ```
 3. 安装PyTorch：
@@ -219,7 +219,7 @@ batch_size = 16
 for epoch in range(epochs):
     loss = train_epoch(model, train_dataset, batch_size, optimizer)
     print(f"Epoch {epoch+1}, train loss: {loss:.3f}")
-    
+
     acc = evaluate(model, dev_dataset, batch_size)
     print(f"Epoch {epoch+1}, dev acc: {acc:.3f}")
 ```

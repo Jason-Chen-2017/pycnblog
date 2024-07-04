@@ -64,17 +64,17 @@
 
 ### 4.1 数学模型构建
 
-假设存在$m$个任务，每个任务$i$的损失函数$L_i(\\theta)$依赖于参数$\\theta$。多任务学习的目标是同时最小化所有任务的损失函数，即：
+假设存在$m$个任务，每个任务$i$的损失函数$L_i(\theta)$依赖于参数$\theta$。多任务学习的目标是同时最小化所有任务的损失函数，即：
 
-$$\\min_{\\theta} \\sum_{i=1}^m \\lambda_i L_i(\\theta)$$
+$$\min_{\theta} \sum_{i=1}^m \lambda_i L_i(\theta)$$
 
-其中，$\\lambda_i$是任务$i$的权重系数，用于平衡不同任务的重要性。
+其中，$\lambda_i$是任务$i$的权重系数，用于平衡不同任务的重要性。
 
 ### 4.2 公式推导过程
 
-在联合学习中，我们通过引入共享参数$\\theta_s$和任务特定参数$\\theta_i$来构建模型。共享参数$\\theta_s$用于学习通用特征，任务特定参数$\\theta_i$用于捕捉任务特有的特征。模型的总损失函数可以表示为：
+在联合学习中，我们通过引入共享参数$\theta_s$和任务特定参数$\theta_i$来构建模型。共享参数$\theta_s$用于学习通用特征，任务特定参数$\theta_i$用于捕捉任务特有的特征。模型的总损失函数可以表示为：
 
-$$L(\\theta_s, \\theta_i) = \\sum_{i=1}^m \\lambda_i L_i(\\theta_s, \\theta_i)$$
+$$L(\theta_s, \theta_i) = \sum_{i=1}^m \lambda_i L_i(\theta_s, \theta_i)$$
 
 ### 4.3 案例分析与讲解
 
@@ -123,7 +123,7 @@ task1_loss = tf.keras.losses.CategoricalCrossentropy()
 task2_loss = tf.keras.losses.CategoricalCrossentropy()
 
 # 定义联合损失函数
-joint_loss = task1_weights['loss_weight'] * task1_loss(task1_output, task1_target) + \\
+joint_loss = task1_weights['loss_weight'] * task1_loss(task1_output, task1_target) + \
              task2_weights['loss_weight'] * task2_loss(task2_output, task2_target)
 
 # 构建模型

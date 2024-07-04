@@ -127,7 +127,7 @@
    - 计算图像梯度的幅值和方向,使用以下公式:
 
      $$
-     G = \sqrt{G_x^2 + G_y^2} \\
+     G = \sqrt{G_x^2 + G_y^2} \
      \theta = \tan^{-1}\left(\frac{G_y}{G_x}\right)
      $$
 
@@ -142,13 +142,13 @@
 
    $$
    \begin{bmatrix}
-   x'\\
-   y'\\
+   x'\
+   y'\
    w'
    \end{bmatrix} = H
    \begin{bmatrix}
-   x\\
-   y\\
+   x\
+   y\
    1
    \end{bmatrix}
    $$
@@ -165,10 +165,10 @@
 
    $$
    \nabla I = \begin{bmatrix}
-   \frac{\partial I}{\partial x} \\
+   \frac{\partial I}{\partial x} \
    \frac{\partial I}{\partial y}
    \end{bmatrix} = \begin{bmatrix}
-   G_x \\
+   G_x \
    G_y
    \end{bmatrix}
    $$
@@ -180,7 +180,7 @@
    梯度的幅值$G$和方向$\theta$可以通过以下公式计算:
 
    $$
-   G = \sqrt{G_x^2 + G_y^2} \\
+   G = \sqrt{G_x^2 + G_y^2} \
    \theta = \tan^{-1}\left(\frac{G_y}{G_x}\right)
    $$
 

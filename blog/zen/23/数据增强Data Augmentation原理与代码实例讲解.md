@@ -1,4 +1,4 @@
-                 
+
 # 数据增强Data Augmentation原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -102,7 +102,7 @@ $$ I' = R(\theta) \cdot I $$
 
 对于图像旋转来说，关键是在二维空间上应用旋转矩阵。旋转矩阵在平面坐标系中有以下形式：
 
-$$ R(\theta) = \begin{bmatrix} \cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta) \end{bmatrix} $$
+$$ R(\theta) = \begin{bmatrix} \cos(\theta) & -\sin(\theta) \ \sin(\theta) & \cos(\theta) \end{bmatrix} $$
 
 如果我们有像素 $(x, y)$，它在增强后的坐标为：
 

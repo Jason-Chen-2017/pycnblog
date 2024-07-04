@@ -1,4 +1,4 @@
-                 
+
 # 【大模型应用开发 动手做AI Agent】Function定义中的Sample是什么
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -95,7 +95,7 @@ $$
 通过梯度下降法求解最优的 $w$ 和 $b$，我们需要计算梯度：
 
 $$
-\frac{\partial L}{\partial w} = -2 \cdot \frac{1}{n} \sum_{i=1}^{n}(y_i - f(x_i))x_i \\
+\frac{\partial L}{\partial w} = -2 \cdot \frac{1}{n} \sum_{i=1}^{n}(y_i - f(x_i))x_i \
 \frac{\partial L}{\partial b} = -2 \cdot \frac{1}{n} \sum_{i=1}^{n}(y_i - f(x_i))
 $$
 
@@ -115,7 +115,7 @@ $$
 
 - **如何选择适当的超参数？**
   可以通过网格搜索、随机搜索或者贝叶斯优化等方式来寻找最佳的超参数配置。
-  
+
 - **为什么需要大量数据？**
   大量的数据有助于模型更好地捕捉复杂模式，避免过拟合现象发生。
 

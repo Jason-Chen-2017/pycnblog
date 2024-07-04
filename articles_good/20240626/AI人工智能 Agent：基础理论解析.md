@@ -165,9 +165,7 @@ $$
 策略的迭代公式如下：
 
 $$
-\pi(s,a) = \frac{\
-abla V(s)}{\sum_{a' \in A} \
-abla V(s,a')}
+\pi(s,a) = \frac{\nabla V(s)}{\sum_{a' \in A} \nabla V(s,a')}
 $$
 
 ### 4.3 案例分析与讲解

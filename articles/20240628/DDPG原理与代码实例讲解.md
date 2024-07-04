@@ -177,8 +177,7 @@ $$
 actor网络的目标是最小化策略梯度损失，即：
 
 $$
-\min_{\theta_{actor}} \mathcal{L}_{actor} = \mathbb{E}_{s \sim \pi(\theta_{actor})}[\
-abla_{\theta_{actor}} \log \pi(\theta_{actor})(s) \cdot R + \gamma V^*(s, \pi(\theta_{actor})(s))]
+\min_{\theta_{actor}} \mathcal{L}_{actor} = \mathbb{E}_{s \sim \pi(\theta_{actor})}[\nabla_{\theta_{actor}} \log \pi(\theta_{actor})(s) \cdot R + \gamma V^*(s, \pi(\theta_{actor})(s))]
 $$
 
 通过链式法则，可以推导出actor网络的公式：

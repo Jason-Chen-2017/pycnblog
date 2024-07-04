@@ -99,9 +99,9 @@ DDPG算法的数学模型如下：
 
 $$
 \begin{aligned}
-& \pi(\mathbf{s}) = \mu(\mathbf{s}, \mathbf{\theta}) \quad \text{(策略网络)} \\
-& Q(\mathbf{s}, \mathbf{a}; \mathbf{\theta}) = \mathbf{f}(\mathbf{s}, \mathbf{a}; \mathbf{\theta}) \quad \text{(值网络)} \\
-& Q^*(\mathbf{s}, \mathbf{a}; \mathbf{\theta}) = \mathbf{f}(\mathbf{s}, \mathbf{a}; \mathbf{\theta}) + \gamma \max_{\mathbf{a}} Q^*(\mathbf{s}', \mathbf{a}; \mathbf{\theta}) \quad \text{(目标值网络)} \\
+& \pi(\mathbf{s}) = \mu(\mathbf{s}, \mathbf{\theta}) \quad \text{(策略网络)} \
+& Q(\mathbf{s}, \mathbf{a}; \mathbf{\theta}) = \mathbf{f}(\mathbf{s}, \mathbf{a}; \mathbf{\theta}) \quad \text{(值网络)} \
+& Q^*(\mathbf{s}, \mathbf{a}; \mathbf{\theta}) = \mathbf{f}(\mathbf{s}, \mathbf{a}; \mathbf{\theta}) + \gamma \max_{\mathbf{a}} Q^*(\mathbf{s}', \mathbf{a}; \mathbf{\theta}) \quad \text{(目标值网络)} \
 & \text{其中，} \mathbf{s}, \mathbf{a}, \mathbf{s}' \text{ 分别表示状态、动作和下一个状态，} \mathbf{\theta} \text{ 表示网络参数，} \gamma \text{ 表示折扣因子。}
 \end{aligned}
 $$

@@ -96,8 +96,8 @@ $$
 损失函数 $L$ 包括交叉熵损失、IoU损失和正负样本平衡调整：
 
 $$
-L = \lambda_1 \cdot \sum_{i=1}^{N} \sum_{j=1}^{M} \left[ -y_j \log(\hat{y}_{ij}) + (1-y_j) \log(1-\hat{y}_{ij}) \right] \\
-+ \lambda_2 \cdot \sum_{i=1}^{N} \sum_{j=1}^{M} \left[ \text{IoU}(\hat{y}_{ij}, y_{ij}) \right] \\
+L = \lambda_1 \cdot \sum_{i=1}^{N} \sum_{j=1}^{M} \left[ -y_j \log(\hat{y}_{ij}) + (1-y_j) \log(1-\hat{y}_{ij}) \right] \
++ \lambda_2 \cdot \sum_{i=1}^{N} \sum_{j=1}^{M} \left[ \text{IoU}(\hat{y}_{ij}, y_{ij}) \right] \
 + \lambda_3 \cdot \sum_{i=1}^{N} \sum_{j=1}^{M} \left[ \text{Balanced Sampling} \right]
 $$
 

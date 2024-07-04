@@ -342,7 +342,7 @@ class DeviceData(Resource):
     def get(self, device_id, data_type):
         # 获取设备数据
         data = db.device_data.find_one({"device_id": device_id, "data_type": data_type})
-        if 
+        if
             return jsonify(data)
         else:
             return jsonify({"error": "Data not found"}), 404
@@ -512,4 +512,4 @@ if __name__ == "__main__":
 * 使用MQTT协议连接各种设备，实现设备之间的消息传递。
 * 使用云平台作为数据中心，将设备数据和控制指令集中管理。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

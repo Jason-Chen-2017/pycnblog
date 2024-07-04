@@ -1,7 +1,7 @@
 
 # Python深度学习实践：通过深度学习提高天气预测准确性
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍

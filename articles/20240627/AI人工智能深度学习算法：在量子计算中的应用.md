@@ -139,12 +139,10 @@ $$
 
 #### 4.2.2 公式推导
 
-假设优化函数为 $f(x)$，其期望梯度为 $\
-abla f(x)$。在量子计算中，期望梯度可以表示为：
+假设优化函数为 $f(x)$，其期望梯度为 $\nabla f(x)$。在量子计算中，期望梯度可以表示为：
 
 $$
-\langle \
-abla f(x) | \psi \rangle = \frac{1}{\langle \psi | \psi \rangle} \langle \psi | \frac{\partial f(x)}{\partial x} | \psi \rangle
+\langle \nabla f(x) | \psi \rangle = \frac{1}{\langle \psi | \psi \rangle} \langle \psi | \frac{\partial f(x)}{\partial x} | \psi \rangle
 $$
 
 其中 $| \psi \rangle$ 为优化问题的解向量。

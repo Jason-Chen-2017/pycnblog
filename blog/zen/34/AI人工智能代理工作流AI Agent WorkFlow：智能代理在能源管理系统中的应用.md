@@ -125,19 +125,19 @@
 
    假设能源需求与时间、温度、天气等因素相关，可以使用多元线性回归模型进行预测：
 
-   $$ Y = \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\beta_3 X_3 + \\cdots + \\beta_n X_n + \\varepsilon $$
+   $$ Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + \cdots + \beta_n X_n + \varepsilon $$
 
-   其中，$Y$代表能源需求，$X_1, X_2, \\dots, X_n$代表影响因素，$\\beta_0, \\beta_1, \\dots, \\beta_n$为回归系数，$\\varepsilon$为误差项。
+   其中，$Y$代表能源需求，$X_1, X_2, \dots, X_n$代表影响因素，$\beta_0, \beta_1, \dots, \beta_n$为回归系数，$\varepsilon$为误差项。
 
 2. **能源优化调度模型**
 
    假设能源系统由多个发电单元组成，每个发电单元的运行成本、发电能力和排放量不同，可以使用线性规划模型进行优化调度：
 
-   $$ \\min \\sum_{i=1}^n c_i x_i $$
-   
-   $$ s.t. \\quad a_{ij} x_i + b_{ij} x_j \\geq d_j, \\quad j=1,2,\\dots,m $$
-   
-   $$ x_i \\geq 0, \\quad i=1,2,\\dots,n $$
+   $$ \min \sum_{i=1}^n c_i x_i $$
+
+   $$ s.t. \quad a_{ij} x_i + b_{ij} x_j \geq d_j, \quad j=1,2,\dots,m $$
+
+   $$ x_i \geq 0, \quad i=1,2,\dots,n $$
 
    其中，$c_i$为发电单元$i$的运行成本，$x_i$为发电单元$i$的发电量，$a_{ij}$和$b_{ij}$为发电单元$i$和发电单元$j$之间的耦合系数，$d_j$为需求量。
 
@@ -218,7 +218,7 @@ y_pred = model.predict(X_test)
 
 # 评估模型性能
 score = model.score(X_test, y_test)
-print(f\"模型准确度：{score:.2f}\")
+print(f"模型准确度：{score:.2f}")
 ```
 
 ### 5.3 代码解读与分析
@@ -286,9 +286,9 @@ print(f\"模型准确度：{score:.2f}\")
 
 ### 7.3 相关论文推荐
 
-1. \"A Survey of Energy Management Systems: Challenges and Opportunities\"
-2. \"Intelligent Energy Management for Smart Grids: A Survey\"
-3. \"Artificial Intelligence in Energy Systems: A Review\"
+1. "A Survey of Energy Management Systems: Challenges and Opportunities"
+2. "Intelligent Energy Management for Smart Grids: A Survey"
+3. "Artificial Intelligence in Energy Systems: A Review"
 
 ### 7.4 其他资源推荐
 

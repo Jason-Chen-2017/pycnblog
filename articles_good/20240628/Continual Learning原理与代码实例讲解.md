@@ -129,8 +129,7 @@ $$
 假设模型在经验池上的损失为 $L(\theta)$，则梯度下降的更新公式为：
 
 $$
-\theta \leftarrow \theta - \alpha \
-abla_{\theta}L(\theta)
+\theta \leftarrow \theta - \alpha \nabla_{\theta}L(\theta)
 $$
 
 其中 $\alpha$ 为学习率。

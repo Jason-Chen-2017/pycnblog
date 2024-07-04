@@ -91,8 +91,7 @@
 - 线性模型：$y = Xw + b$
 - 激活函数：$f(x) = \text{ReLU}(x) = \max(0, x)$
 - 损失函数：如均方误差（MSE）、交叉熵损失（CE）等
-- 梯度下降：$\theta = \theta - \alpha \cdot \
-abla_\theta J(\theta)$
+- 梯度下降：$\theta = \theta - \alpha \cdot \nabla_\theta J(\theta)$
 
 ### 4.2 公式推导过程
 
@@ -101,16 +100,12 @@ abla_\theta J(\theta)$
 1. **目标函数**：假设我们有一个线性回归模型 $y = Xw + b$，其中 $X$ 是输入特征，$w$ 是模型参数，$b$ 是偏置项。目标是最小化预测值与真实值之间的差距，即最小化损失函数 $J(w, b) = \frac{1}{2} \sum_{i=1}^N (y_i - (Xw + b))^2$。
 
 2. **梯度下降**：为了找到损失函数的最小值，我们需要计算损失函数对参数 $w$ 和 $b$ 的梯度。对于线性回归，我们有：
-   - $\
-abla_w J(w, b) = X^T (y - Xw - b)$
-   - $\
-abla_b J(w, b) = y - Xw - b$
+   - $\nabla_w J(w, b) = X^T (y - Xw - b)$
+   - $\nabla_b J(w, b) = y - Xw - b$
 
 3. **参数更新**：根据梯度下降公式，我们有：
-   - $w = w - \alpha \cdot \
-abla_w J(w, b)$
-   - $b = b - \alpha \cdot \
-abla_b J(w, b)$
+   - $w = w - \alpha \cdot \nabla_w J(w, b)$
+   - $b = b - \alpha \cdot \nabla_b J(w, b)$
 
 通过迭代更新参数 $w$ 和 $b$，我们可以找到损失函数的最小值，从而得到最优的线性回归模型。
 

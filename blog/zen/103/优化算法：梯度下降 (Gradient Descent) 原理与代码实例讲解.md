@@ -78,12 +78,10 @@
 ## 4. 数学模型和公式与详细讲解与举例说明
 ### 4.1 数学模型构建
 
-假设目标函数为 $f(\theta)$，其中 $\theta$ 为参数向量，梯度为 $\
-abla f(\theta)$，则梯度下降算法的数学表达式为：
+假设目标函数为 $f(\theta)$，其中 $\theta$ 为参数向量，梯度为 $\nabla f(\theta)$，则梯度下降算法的数学表达式为：
 
 $$
-\theta_{\text{new}} = \theta_{\text{old}} - \alpha \
-abla f(\theta)
+\theta_{\text{new}} = \theta_{\text{old}} - \alpha \nabla f(\theta)
 $$
 
 其中 $\alpha$ 为学习率。
@@ -101,8 +99,7 @@ $$
 则目标函数的梯度为：
 
 $$
-\
-abla f(\theta) = A x + b
+\nabla f(\theta) = A x + b
 $$
 
 根据梯度下降算法，参数更新公式为：
@@ -128,10 +125,8 @@ $$
 其中 $\theta = [x, y]$。
 
 1. 初始化参数 $\theta = [0, 0]$。
-2. 计算梯度 $\
-abla f(\theta) = [2(x-2), 2(y-3)]$。
-3. 根据梯度更新参数 $\theta = \theta - \alpha \
-abla f(\theta)$。
+2. 计算梯度 $\nabla f(\theta) = [2(x-2), 2(y-3)]$。
+3. 根据梯度更新参数 $\theta = \theta - \alpha \nabla f(\theta)$。
 
 通过多次迭代，参数 $\theta$ 将逐渐逼近最小值点 $(2, 3)$。
 

@@ -14,7 +14,7 @@ HDFS是Hadoop生态系统的基石,是实现大数据存储和处理的关键。
 - NameNode是HDFS的核心,负责管理文件系统的命名空间和元数据。
 - NameNode维护了文件系统树和整个文件系统的元数据。
 - NameNode是HDFS的单点,需要高可用方案保证其稳定性。
-#### 2.1.2 DataNode 
+#### 2.1.2 DataNode
 - DataNode是HDFS的工作节点,负责存储实际的数据块。
 - 每个数据块默认会有多个副本,分布在不同的DataNode上,保证数据的可靠性和可用性。
 - DataNode与NameNode保持心跳,汇报自身状态。
@@ -27,9 +27,9 @@ HDFS是Hadoop生态系统的基石,是实现大数据存储和处理的关键。
 2. NameNode返回一组DataNode作为写入目标。
 3. Client以Pipeline方式将数据块写入DataNode,并记录块的位置信息。
 4. 所有块写入完成后,Client通知NameNode更新元数据。
-#### 2.2.2 数据读取流程 
+#### 2.2.2 数据读取流程
 1. Client向NameNode请求读取文件。
-2. NameNode返回文件的块信息和DataNode地址。 
+2. NameNode返回文件的块信息和DataNode地址。
 3. Client直接从最近的DataNode读取数据块。
 4. 如果某个DataNode失效,Client会尝试从其他DataNode读取副本数据。
 ### 2.3 容错与高可用
@@ -104,23 +104,23 @@ $N_{move} = \frac{|60\% - 50\%|}{128MB} \times 1 \approx 10$
 
 ```java
 public class HDFSWriter {
-    
+
     private static final String HDFS_PATH = "hdfs://localhost:9000";
     private static final String HDFS_FILE = "/test/data.txt";
-    
+
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
         FileSystem fs = FileSystem.get(new URI(HDFS_PATH), conf);
-        
+
         Path path = new Path(HDFS_FILE);
         if (fs.exists(path)) {
             fs.delete(path, true);
         }
-        
+
         FSDataOutputStream outputStream = fs.create(path);
         outputStream.writeBytes("Hello, HDFS!");
         outputStream.close();
-        
+
         fs.close();
     }
 }
@@ -139,23 +139,23 @@ public class HDFSWriter {
 
 ```java
 public class HDFSReader {
-    
+
     private static final String HDFS_PATH = "hdfs://localhost:9000";
     private static final String HDFS_FILE = "/test/data.txt";
-    
+
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
         FileSystem fs = FileSystem.get(new URI(HDFS_PATH), conf);
-        
+
         Path path = new Path(HDFS_FILE);
         FSDataInputStream inputStream = fs.open(path);
-        
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
         String line;
         while ((line = reader.readLine()) != null) {
             System.out.println(line);
         }
-        
+
         reader.close();
         inputStream.close();
         fs.close();

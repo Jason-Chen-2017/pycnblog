@@ -72,7 +72,7 @@ Goldbach猜想指出：任何大于2的偶数都可以表示为两个素数之�
 
 $$
 \begin{cases}
-x = n \cos\alpha \\
+x = n \cos\alpha \
 y = n \sin\alpha
 \end{cases}
 $$
@@ -89,7 +89,7 @@ $$
 
 $$
 \begin{cases}
-x = 28 \cos\alpha \\
+x = 28 \cos\alpha \
 y = 28 \sin\alpha
 \end{cases}
 $$
@@ -98,7 +98,7 @@ $$
 
 $$
 \begin{cases}
-x' = 28 \cos(\alpha + \delta) \\
+x' = 28 \cos(\alpha + \delta) \
 y' = 28 \sin(\alpha + \delta)
 \end{cases}
 $$

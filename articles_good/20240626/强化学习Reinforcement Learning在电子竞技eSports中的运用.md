@@ -197,8 +197,7 @@ $$
 Policy Gradient算法的核心是策略梯度的计算。策略梯度的计算公式如下：
 
 $$
-\
-abla_{\theta} J(\theta) = \sum_{s,a} \pi(a|s;\theta) [R(s,a) + \gamma \max_{a'} Q(s',a';\theta') - \log \pi(a|s;\theta)]
+\nabla_{\theta} J(\theta) = \sum_{s,a} \pi(a|s;\theta) [R(s,a) + \gamma \max_{a'} Q(s',a';\theta') - \log \pi(a|s;\theta)]
 $$
 
 其中 $J(\theta)$ 为策略的期望回报。

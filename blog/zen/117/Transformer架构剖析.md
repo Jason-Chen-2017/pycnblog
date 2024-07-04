@@ -122,15 +122,15 @@ class Transformer(nn.Module):
         src = self.pos_encoder(src)
         tgt = self.embedding(tgt) * torch.sqrt(torch.tensor(d_model, dtype=torch.float))
         tgt = self.pos_encoder(tgt)
-        
+
         encoder_output = src
         for layer in self.encoder_layers:
             encoder_output = layer(encoder_output, src_mask)
-        
+
         decoder_output = tgt
         for layer in self.decoder_layers:
             decoder_output = layer(decoder_output, encoder_output, tgt_mask)
-        
+
         output = self.linear(decoder_output)
         return output
 

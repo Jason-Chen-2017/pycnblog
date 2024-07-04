@@ -162,12 +162,12 @@ $$
 
 ### 4.5 举例说明
 
-假设我们有一个电影特征向量 $x = [0.2, 0.5, 0.8]$，一个用户特征向量 $u = [0.1, 0.7, 0.9]$，以及一个权重矩阵 $W = \begin{bmatrix} 0.1 & 0.2 \\ 0.3 & 0.4 \\ 0.5 & 0.6 \end{bmatrix}$ 和一个偏置向量 $b = [0.1, 0.2]$。
+假设我们有一个电影特征向量 $x = [0.2, 0.5, 0.8]$，一个用户特征向量 $u = [0.1, 0.7, 0.9]$，以及一个权重矩阵 $W = \begin{bmatrix} 0.1 & 0.2 \ 0.3 & 0.4 \ 0.5 & 0.6 \end{bmatrix}$ 和一个偏置向量 $b = [0.1, 0.2]$。
 
 我们可以使用全连接层计算用户对电影的评分：
 
 $$
-y = W \cdot x + b = \begin{bmatrix} 0.1 & 0.2 \\ 0.3 & 0.4 \\ 0.5 & 0.6 \end{bmatrix} \cdot \begin{bmatrix} 0.2 \\ 0.5 \\ 0.8 \end{bmatrix} + \begin{bmatrix} 0.1 \\ 0.2 \end{bmatrix} = \begin{bmatrix} 0.36 \\ 0.74 \\ 1.12 \end{bmatrix}
+y = W \cdot x + b = \begin{bmatrix} 0.1 & 0.2 \ 0.3 & 0.4 \ 0.5 & 0.6 \end{bmatrix} \cdot \begin{bmatrix} 0.2 \ 0.5 \ 0.8 \end{bmatrix} + \begin{bmatrix} 0.1 \ 0.2 \end{bmatrix} = \begin{bmatrix} 0.36 \ 0.74 \ 1.12 \end{bmatrix}
 $$
 
 最终的用户评分为 $y = [0.36, 0.74, 1.12]$。

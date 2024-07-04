@@ -103,10 +103,10 @@ KNN算法的数学模型如下：
 
 $$
 \begin{align*}
-& \text{对于待分类样本} x_{test} \in \mathbb{R}^n, \\
-& \text{计算其与训练集中样本} x_i \in \mathbb{R}^n \text{之间的距离} d(x_{test}, x_i), \\
-& \text{选择距离最近的K个样本} x_{1}, x_{2}, ..., x_{K} \in \mathbb{R}^n, \\
-& \text{根据邻居的标签，对} x_{test} \text{进行分类，即} \\
+& \text{对于待分类样本} x_{test} \in \mathbb{R}^n, \
+& \text{计算其与训练集中样本} x_i \in \mathbb{R}^n \text{之间的距离} d(x_{test}, x_i), \
+& \text{选择距离最近的K个样本} x_{1}, x_{2}, ..., x_{K} \in \mathbb{R}^n, \
+& \text{根据邻居的标签，对} x_{test} \text{进行分类，即} \
 & \text{标签} = \text{mode}(\{y_1, y_2, ..., y_K\}),
 \end{align*}
 $$

@@ -39,7 +39,7 @@ A --> H[Cache/Persist]
 Spark 内存计算引擎基于 RDD 模型,通过函数式编程的 Transformation 和 Action 操作来描述计算逻辑。Spark 会根据 RDD 之间的依赖关系构建 DAG,将 DAG 划分为多个 Stage,每个 Stage 内部是一组并行 Task。Task 在集群的 Executor 进程上运行,读写 HDFS 等分布式存储系统上的数据。
 ### 3.2 算法步骤详解
 1. 构建 RDD 对象,可以从 HDFS、HBase、Local FS 等数据源创建。
-2. 通过一系列的 Transformation(如 map、filter、join 等)构建 RDD 之间的依赖关系,形成 Lineage(血统)。这一步是 lazy 的,即不会触发真正计算。 
+2. 通过一系列的 Transformation(如 map、filter、join 等)构建 RDD 之间的依赖关系,形成 Lineage(血统)。这一步是 lazy 的,即不会触发真正计算。
 3. 当执行 Action(如 count、collect)时,Spark 会根据 RDD 的 Lineage 构建 DAG。
 4. DAG Scheduler 将 DAG 划分为多个 Stage,每个 Stage 内部是一组并行 Task,Stage 之间以 Shuffle 依赖相连。
 5. Task Scheduler 将 Task 分发到集群的 Executor 进程,Task 在分配到的分区上执行计算。
@@ -52,15 +52,15 @@ Spark 内存计算引擎基于 RDD 模型,通过函数式编程的 Transformatio
 - 容错机制和数据本地性保证了高可用性
 - 支持多种数据源和丰富的 API
 
-缺点: 
+缺点:
 - 不适合流式小批量数据处理
 - 不支持细粒度的资源隔离
 - Shuffle 可能成为性能瓶颈
-### 3.4 算法应用领域 
+### 3.4 算法应用领域
 Spark 内存计算引擎广泛应用于以下领域:
 - 大规模数据 ETL 和数据分析
 - 机器学习和图计算
-- 交互式数据查询 
+- 交互式数据查询
 - 流式数据处理
 
 ## 4. 数学模型和公式 & 详细讲解 & 举例说明
@@ -111,7 +111,7 @@ textFile ---> flatMap ---> map ---> reduceByKey ---> collect
 - Q:如何区分窄依赖和宽依赖?
 - A:窄依赖是指每个父 RDD 的 Partition 最多被子 RDD 的一个 Partition 使用,而宽依赖则是多个子 Partition 会依赖同一个父 Partition。需要引起 Shuffle 的操作如 reduceByKey、join 等都会产生宽依赖。
 
-## 5. 项目实践：代码实例和详细解释说明 
+## 5. 项目实践：代码实例和详细解释说明
 ### 5.1 开发环境搭建
 - Spark:2.4.0
 - Scala:2.12.0
@@ -137,14 +137,14 @@ object WordCount {
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf().setAppName("WordCount").setMaster("local[2]")
     val sc = new SparkContext(conf)
-    
+
     val textFile = sc.textFile("data/wordcount.txt")
     val wordCounts = textFile.flatMap(line => line.split(" "))
       .map(word => (word, 1))
       .reduceByKey(_ + _)
-      
+
     wordCounts.collect().foreach(println)
-    
+
     sc.stop()
   }
 }

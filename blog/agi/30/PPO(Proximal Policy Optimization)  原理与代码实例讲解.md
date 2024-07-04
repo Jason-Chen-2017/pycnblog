@@ -89,30 +89,29 @@ PPO广泛应用于机器人控制、游戏、自动驾驶、无人机导航、�
 
 #### 策略函数：
 
-$$\\pi(a|s;\\theta)$$
+$$\pi(a|s;\theta)$$
 
 #### 价值函数：
 
-$$V(s;\\theta_v)$$
+$$V(s;\theta_v)$$
 
 #### 动作选择：
 
-$$a \\sim \\pi(a|s;\\theta)$$
+$$a \sim \pi(a|s;\theta)$$
 
 #### 策略更新：
 
-$$\\theta \\leftarrow \\theta + \\alpha \
-abla_\\theta J(\\theta)$$
+$$\theta \leftarrow \theta + \alpha \nabla_\theta J(\theta)$$
 
 ### 4.2 公式推导过程
 
 #### 适应性优势系数：
 
-$$A(s,a) = \\hat{V}(s) - V(s)$$
+$$A(s,a) = \hat{V}(s) - V(s)$$
 
 #### KL散度限制：
 
-$$\\Delta \\theta \\leq \\epsilon \\cdot \\|\\theta\\|$$
+$$\Delta \theta \leq \epsilon \cdot \|\theta\|$$
 
 ### 4.3 案例分析与讲解
 
@@ -132,7 +131,7 @@ $$\\Delta \\theta \\leq \\epsilon \\cdot \\|\\theta\\|$$
 
 - **Q**: 如何选择合适的KL散度阈值？
    - **A**: KL散度阈值通常取为0.01到0.2之间，具体取决于任务的难度和算法的表现。
-   
+
 - **Q**: PPO如何处理离散动作空间？
    - **A**: 对于离散动作空间，PPO可以通过离散策略来实现，比如多臂老虎机或策略网络选择离散动作。
 
@@ -246,7 +245,7 @@ PPO在策略优化算法中展现出了显著的性能优势，尤其是在处�
 #### 深度整合
 
 - **集成学习**：结合多种强化学习算法，提高智能体的学习效率和适应性。
-  
+
 #### 自适应性
 
 - **自适应策略**：通过动态调整策略更新过程中的参数，提升算法的自适应能力。

@@ -205,7 +205,7 @@ input {
 ```conf
 filter {
   grok {
-    match => { "message" => "%{IP:client_ip} - %{USER:user} \[%{TIMESTAMP_ISO8601:timestamp}\] \"%{%{WORD:method} %{URI:uri} %{QUERYSTRING:query_string}\" %{{HTTPResponseStatus status_code}}%{NUMBER:bytes}" }
+    match => { "message" => "%{IP:client_ip} - %{USER:user} $$%{TIMESTAMP_ISO8601:timestamp}$$ "%{%{WORD:method} %{URI:uri} %{QUERYSTRING:query_string}" %{{HTTPResponseStatus status_code}}%{NUMBER:bytes}" }
   }
   mutate {
     add_tag => ["filtered"]
@@ -242,7 +242,7 @@ input {
 
 filter {
   grok {
-    match => { "message" => "%{IP:client_ip} - %{USER:user} \[%{TIMESTAMP_ISO8601:timestamp}\] \"%{%{WORD:method} %{URI:uri} %{QUERYSTRING:query_string}\" %{{HTTPResponseStatus status_code}}%{NUMBER:bytes}" }
+    match => { "message" => "%{IP:client_ip} - %{USER:user} $$%{TIMESTAMP_ISO8601:timestamp}$$ "%{%{WORD:method} %{URI:uri} %{QUERYSTRING:query_string}" %{{HTTPResponseStatus status_code}}%{NUMBER:bytes}" }
   }
   mutate {
     add_tag => ["filtered"]
@@ -274,7 +274,7 @@ $ bin/logstash -f path/to/logstash.conf
 
 ```json
 {
-  "message" : "192.168.1.1 - user [2022-01-01 00:00:00] \"GET /index.html HTTP/1.1 200 2345",
+  "message" : "192.168.1.1 - user [2022-01-01 00:00:00] "GET /index.html HTTP/1.1 200 2345",
   "tags" => ["filtered"]
 }
 ```
@@ -384,7 +384,7 @@ output {
 ```conf
 filter {
   grok {
-    match => { "message" => "%{IP:client_ip} - %{USER:user} \[%{TIMESTAMP_ISO8601:timestamp}\] \"%{%{WORD:method} %{URI:uri} %{QUERYSTRING:query_string}\" %{{HTTPResponseStatus status_code}}%{NUMBER:bytes}" }
+    match => { "message" => "%{IP:client_ip} - %{USER:user} $$%{TIMESTAMP_ISO8601:timestamp}$$ "%{%{WORD:method} %{URI:uri} %{QUERYSTRING:query_string}" %{{HTTPResponseStatus status_code}}%{NUMBER:bytes}" }
   }
 }
 ```

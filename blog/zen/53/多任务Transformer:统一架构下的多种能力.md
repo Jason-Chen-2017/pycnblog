@@ -6,7 +6,7 @@
 
 ### 1.1 人工智能的发展历程
 #### 1.1.1 早期的人工智能
-#### 1.1.2 机器学习的崛起  
+#### 1.1.2 机器学习的崛起
 #### 1.1.3 深度学习的突破
 
 ### 1.2 Transformer模型的诞生
@@ -26,7 +26,7 @@
 #### 2.1.2 Multi-Head Attention
 #### 2.1.3 Positional Encoding
 
-### 2.2 多任务学习的核心概念  
+### 2.2 多任务学习的核心概念
 #### 2.2.1 任务共享
 #### 2.2.2 任务特定
 #### 2.2.3 任务互补
@@ -40,7 +40,7 @@
 
 ### 3.1 多任务Transformer的整体架构
 #### 3.1.1 编码器
-#### 3.1.2 解码器  
+#### 3.1.2 解码器
 #### 3.1.3 任务感知注意力层
 
 ### 3.2 编码器的详细结构与计算过程
@@ -49,7 +49,7 @@
 #### 3.2.3 自注意力子层
 #### 3.2.4 前馈神经网络子层
 
-### 3.3 解码器的详细结构与计算过程  
+### 3.3 解码器的详细结构与计算过程
 #### 3.3.1 输出嵌入
 #### 3.3.2 自注意力子层
 #### 3.3.3 编码-解码注意力子层
@@ -71,8 +71,8 @@
 #### 4.1.1 查询、键、值的计算
 $$
 \begin{aligned}
-Q &= X W^Q \\
-K &= X W^K \\
+Q &= X W^Q \
+K &= X W^K \
 V &= X W^V
 \end{aligned}
 $$
@@ -88,7 +88,7 @@ $$
 #### 4.2.1 多头注意力的计算
 $$
 \begin{aligned}
-\text{MultiHead}(Q, K, V) &= \text{Concat}(\text{head}_1, \ldots, \text{head}_h)W^O \\
+\text{MultiHead}(Q, K, V) &= \text{Concat}(\text{head}_1, \ldots, \text{head}_h)W^O \
 \text{head}_i &= \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
 \end{aligned}
 $$
@@ -104,8 +104,8 @@ $$
 #### 4.3.2 任务感知查询生成
 $$
 \begin{aligned}
-Q_t &= Q + e_t W^Q_t \\
-K_t &= K + e_t W^K_t \\
+Q_t &= Q + e_t W^Q_t \
+K_t &= K + e_t W^K_t \
 V_t &= V + e_t W^V_t
 \end{aligned}
 $$
@@ -119,14 +119,14 @@ $$
 ### 4.4 动态任务路由的数学表示
 #### 4.4.1 任务路由分数计算
 $$
-s_t = \frac{1}{L}\sum_{l=1}^L \text{MLP}_t(h_l) 
+s_t = \frac{1}{L}\sum_{l=1}^L \text{MLP}_t(h_l)
 $$
 其中，$h_l$为第$l$层的隐藏状态，$\text{MLP}_t$为任务特定的多层感知机。
 
 #### 4.4.2 Gumbel-Softmax采样
 $$
 \begin{aligned}
-g_t &\sim \text{Gumbel}(0, 1) \\
+g_t &\sim \text{Gumbel}(0, 1) \
 p_t &= \text{softmax}((s_t + g_t) / \tau)
 \end{aligned}
 $$
@@ -135,7 +135,7 @@ $$
 #### 4.4.3 路由策略更新
 $$
 \begin{aligned}
-\hat{h}_l &= \sum_{t=1}^T p_t h_{l,t} \\
+\hat{h}_l &= \sum_{t=1}^T p_t h_{l,t} \
 h_{l+1} &= \text{LayerNorm}(\hat{h}_l + \text{FFN}(\hat{h}_l))
 \end{aligned}
 $$
@@ -155,30 +155,30 @@ class MultiHeadAttention(nn.Module):
         self.d_model = d_model
         self.num_heads = num_heads
         self.d_k = d_model // num_heads
-        
+
         self.W_Q = nn.Linear(d_model, d_model)
         self.W_K = nn.Linear(d_model, d_model)
         self.W_V = nn.Linear(d_model, d_model)
         self.W_O = nn.Linear(d_model, d_model)
-        
+
     def forward(self, Q, K, V, mask=None):
         batch_size = Q.size(0)
-        
+
         Q = self.W_Q(Q).view(batch_size, -1, self.num_heads, self.d_k).transpose(1, 2)
         K = self.W_K(K).view(batch_size, -1, self.num_heads, self.d_k).transpose(1, 2)
         V = self.W_V(V).view(batch_size, -1, self.num_heads, self.d_k).transpose(1, 2)
-        
+
         scores = torch.matmul(Q, K.transpose(-2, -1)) / torch.sqrt(torch.tensor(self.d_k))
-        
+
         if mask is not None:
             scores = scores.masked_fill(mask == 0, -1e9)
-        
+
         attn_weights = nn.functional.softmax(scores, dim=-1)
         attn_output = torch.matmul(attn_weights, V)
-        
+
         attn_output = attn_output.transpose(1, 2).contiguous().view(batch_size, -1, self.d_model)
         attn_output = self.W_O(attn_output)
-        
+
         return attn_output
 
 class TaskAwareAttention(nn.Module):
@@ -188,15 +188,15 @@ class TaskAwareAttention(nn.Module):
         self.W_Q_t = nn.Linear(d_model, d_model)
         self.W_K_t = nn.Linear(d_model, d_model)
         self.W_V_t = nn.Linear(d_model, d_model)
-        
+
     def forward(self, Q, K, V, task_id):
         task_embed = self.task_embedding(task_id)
         Q_t = Q + self.W_Q_t(task_embed)
         K_t = K + self.W_K_t(task_embed)
         V_t = V + self.W_V_t(task_embed)
-        
+
         attn_output = MultiHeadAttention(Q_t, K_t, V_t)
-        
+
         return attn_output
 
 class DynamicTaskRouting(nn.Module):
@@ -209,19 +209,19 @@ class DynamicTaskRouting(nn.Module):
         ) for _ in range(num_tasks)])
         self.num_layers = num_layers
         self.temperature = 1.0
-        
+
     def forward(self, hidden_states, task_id):
         batch_size, seq_len, _ = hidden_states.size()
-        
+
         task_scores = torch.cat([mlp(hidden_states).squeeze(-1) for mlp in self.task_mlps], dim=-1)
         task_scores = task_scores.mean(dim=1, keepdim=True)
-        
+
         gumbel_noise = -torch.log(-torch.log(torch.rand_like(task_scores)))
         task_probs = nn.functional.softmax((task_scores + gumbel_noise) / self.temperature, dim=-1)
-        
+
         task_hidden_states = torch.stack([hidden_states] * task_probs.size(-1), dim=-1)
         routed_hidden_states = (task_probs.unsqueeze(-1) * task_hidden_states).sum(dim=-2)
-        
+
         return routed_hidden_states
 ```
 

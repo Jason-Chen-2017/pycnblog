@@ -12,7 +12,7 @@
 #### 1.2.3 创新业务模式,开拓新市场
 
 ### 1.3 AI Agent的概念与意义
-#### 1.3.1 AI Agent的定义与特点 
+#### 1.3.1 AI Agent的定义与特点
 #### 1.3.2 AI Agent在企业级应用中的价值
 #### 1.3.3 AI Agent推动人工智能发展的意义
 
@@ -34,7 +34,7 @@ AI Agent需要具备学习能力,根据反馈不断优化模型和策略,适应�
 ### 2.3 AI Agent与其他AI技术的关系
 #### 2.3.1 AI Agent与机器学习的关系
 机器学习为AI Agent提供了数据驱动的建模和优化方法,使其能够从经验中学习和进化。
-#### 2.3.2 AI Agent与知识图谱的关系  
+#### 2.3.2 AI Agent与知识图谱的关系
 知识图谱为AI Agent提供了结构化的领域知识表示,支持语义理解和逻辑推理。
 #### 2.3.3 AI Agent与自然语言处理的关系
 自然语言处理使AI Agent能够理解和生成自然语言,实现人机交互和知识获取。
@@ -114,10 +114,10 @@ $$x_{k+1}^*=A_k x_k^* + B_k u_k^*$$
 其中,$\lambda_k$为协态变量。
 
 例如,考虑一个简单的二阶LTV系统,描述小车在直线上的运动:
-$$\begin{bmatrix} p_{k+1} \\ v_{k+1} \end{bmatrix} = 
-\begin{bmatrix} 1 & \Delta t \\ 0 & 1 \end{bmatrix}
-\begin{bmatrix} p_k \\ v_k \end{bmatrix} +
-\begin{bmatrix} 0 \\ \Delta t \end{bmatrix} u_k$$
+$$\begin{bmatrix} p_{k+1} \ v_{k+1} \end{bmatrix} =
+\begin{bmatrix} 1 & \Delta t \ 0 & 1 \end{bmatrix}
+\begin{bmatrix} p_k \ v_k \end{bmatrix} +
+\begin{bmatrix} 0 \ \Delta t \end{bmatrix} u_k$$
 其中,$p_k$,$v_k$分别为位置和速度,$\Delta t$为采样时间,$u_k$为加速度控制。我们可以设置代价函数权重,使用时间域配置法求解最优加速度序列,得到小车的最优运动轨迹。
 
 ## 5.项目实践：代码实例和详细解释说明
@@ -133,27 +133,27 @@ class MDPPlanner:
         self.transition_probs = transition_probs  # 转移概率
         self.rewards = rewards  # 奖励函数
         self.discount_factor = discount_factor  # 折扣因子
-        
+
     def value_iteration(self, threshold=1e-6):
         V = np.zeros(len(self.states))  # 初始化值函数
         while True:
             delta = 0
             for s in range(len(self.states)):
                 v = V[s]
-                V[s] = max(self.rewards[s][a] + self.discount_factor * 
+                V[s] = max(self.rewards[s][a] + self.discount_factor *
                            np.dot(self.transition_probs[s][a], V) for a in range(len(self.actions)))
                 delta = max(delta, abs(v - V[s]))
             if delta < threshold:
                 break
         return V
-    
+
     def get_optimal_policy(self, V):
         policy = np.zeros(len(self.states), dtype=int)
         for s in range(len(self.states)):
             policy[s] = np.argmax(self.rewards[s][a] + self.discount_factor *
                                   np.dot(self.transition_probs[s][a], V) for a in range(len(self.actions)))
         return policy
-        
+
 # 示例用法
 states = [0, 1, 2, 3]  # 状态编号
 actions = [0, 1]  # 动作编号
@@ -162,7 +162,7 @@ transition_probs = [  # 转移概率
     [[0.9, 0.1], [0.6, 0.4]],
     [[0.5, 0.5], [0.2, 0.8]],
     [[0, 1], [0, 1]]
-]  
+]
 rewards = [  # 奖励函数
     [0, 0],
     [0, 1],
@@ -175,7 +175,7 @@ planner = MDPPlanner(states, actions, transition_probs, rewards, discount_factor
 V = planner.value_iteration()
 policy = planner.get_optimal_policy(V)
 
-print("Optimal value function:", V)  
+print("Optimal value function:", V)
 print("Optimal policy:", policy)
 ```
 

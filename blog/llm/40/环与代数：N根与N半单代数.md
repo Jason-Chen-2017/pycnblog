@@ -64,8 +64,8 @@ $$
 例如，对于乘法运算，如果\(A\)是N半单代数，则对于任意\(a, b \in A\)，乘法运算满足：
 
 $$
-(a \cdot b) \in A \\
-(a \cdot b) \cdot c = a \cdot (b \cdot c) \\
+(a \cdot b) \in A \
+(a \cdot b) \cdot c = a \cdot (b \cdot c) \
 a \cdot b = b \cdot a \quad (\text{如果N半单代数是半单环})
 $$
 
@@ -90,10 +90,10 @@ class ComplexNumber:
     def __init__(self, real, imag):
         self.real = real
         self.imag = imag
-    
+
     def __add__(self, other):
         return ComplexNumber(self.real + other.real, self.imag + other.imag)
-    
+
     def __mul__(self, other):
         real_part = self.real * other.real - self.imag * other.imag
         imag_part = self.real * other.imag + self.imag * other.real

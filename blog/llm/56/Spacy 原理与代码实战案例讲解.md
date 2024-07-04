@@ -10,7 +10,7 @@
 #### 1.1.3 自然语言处理面临的挑战
 
 ### 1.2 Spacy的诞生
-#### 1.2.1 Spacy的起源与发展历程  
+#### 1.2.1 Spacy的起源与发展历程
 #### 1.2.2 Spacy的设计理念
 #### 1.2.3 Spacy的优势与特点
 
@@ -54,7 +54,7 @@
 ### 3.3 命名实体识别算法
 #### 3.3.1 命名实体识别的概念与作用
 #### 3.3.2 基于规则的命名实体识别算法
-#### 3.3.3 基于统计的命名实体识别算法 
+#### 3.3.3 基于统计的命名实体识别算法
 #### 3.3.4 Spacy的命名实体识别算法实现
 
 ### 3.4 依存句法分析算法
@@ -70,7 +70,7 @@
 #### 4.1.2 Word2Vec模型
 $$ \mathbf{v}(w) = \frac{1}{|V(w)|} \sum_{c \in V(w)} \mathbf{v}(c) $$
 其中，$\mathbf{v}(w)$表示词$w$的词向量，$V(w)$表示词$w$的上下文集合，$\mathbf{v}(c)$表示上下文词$c$的词向量。
-#### 4.1.3 GloVe模型  
+#### 4.1.3 GloVe模型
 $$ J = \sum_{i,j=1}^V f(X_{ij}) (\mathbf{w}_i^T \tilde{\mathbf{w}}_j + b_i + \tilde{b}_j - \log X_{ij})^2 $$
 其中，$X_{ij}$表示词$i$和词$j$在语料库中共同出现的次数，$\mathbf{w}_i$和$\tilde{\mathbf{w}}_j$分别表示词$i$和词$j$的词向量，$b_i$和$\tilde{b}_j$为偏置项，$f$为权重函数。
 #### 4.1.4 FastText模型
@@ -84,7 +84,7 @@ $$ p(\mathbf{y}|\mathbf{x}) = \frac{1}{Z(\mathbf{x})} \exp \left( \sum_{i=1}^n \
 其中，$\mathbf{x}$表示输入序列，$\mathbf{y}$表示输出序列，$f_k$为特征函数，$\lambda_k$为对应的权重，$Z(\mathbf{x})$为归一化因子。
 #### 4.2.3 条件随机场在Spacy中的应用
 
-### 4.3 卷积神经网络模型 
+### 4.3 卷积神经网络模型
 #### 4.3.1 卷积神经网络的概念与作用
 #### 4.3.2 一维卷积
 $$ h_i = f(\mathbf{w} \cdot \mathbf{x}_{i:i+k-1} + b) $$
@@ -136,7 +136,7 @@ for ent in doc.ents:
 from spacy.tokens import Span
 
 doc = nlp("Facebook is hiring a new VP of global policy")
-ORG = doc.vocab.strings["ORG"] 
+ORG = doc.vocab.strings["ORG"]
 new_ent = Span(doc, 0, 1, label=ORG)
 doc.ents = list(doc.ents) + [new_ent]
 ```
@@ -161,7 +161,7 @@ for token in doc:
 doc = nlp("cat dog pet")
 for token in doc:
     print(token.text, token.has_vector, token.vector_norm)
-```  
+```
 #### 5.5.2 计算相似度
 ```python
 doc1 = nlp("I like cats")

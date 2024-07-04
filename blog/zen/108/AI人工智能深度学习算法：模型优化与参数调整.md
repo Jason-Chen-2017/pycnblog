@@ -113,14 +113,14 @@ lr = 0.01
 for t in range(1000):
     # 计算损失函数
     loss = (theta**2).sum()
-    
+
     # 计算梯度
     loss.backward()
-    
+
     # 更新模型参数
     with torch.no_grad():
         theta -= lr * theta.grad
-    
+
     # 清空梯度
     theta.grad.zero_()
 ```

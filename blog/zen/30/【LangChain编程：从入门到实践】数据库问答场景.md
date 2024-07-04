@@ -163,8 +163,8 @@ $$
 根据查询意图生成的数据库查询可以表示为：
 
 ```sql
-SELECT product_name, MAX(sales) 
-FROM sales_data 
+SELECT product_name, MAX(sales)
+FROM sales_data
 WHERE year = 2022
 ```
 
@@ -226,15 +226,15 @@ def process_query(query):
     # 自然语言理解
     doc = nlp(query)
     query_intent = extract_intent(doc)
-    
+
     # 查询生成
     sql_query = generate_sql(query_intent)
-    
+
     # 查询执行
     cursor = db.cursor()
     cursor.execute(sql_query)
     result = cursor.fetchall()
-    
+
     # 答案生成
     answer = generate_answer(result)
     return answer

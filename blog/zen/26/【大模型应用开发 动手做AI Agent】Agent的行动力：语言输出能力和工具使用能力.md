@@ -1,6 +1,6 @@
 # 【大模型应用开发 动手做AI Agent】Agent的行动力：语言输出能力和工具使用能力
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：AI Agent, 语言输出能力, 工具使用能力, 自动化执行, 智能交互
 
@@ -103,7 +103,7 @@ AI Agent是指能够在特定环境中执行任务的自主实体，它可以接
 
 假设模型的目标是生成句子$x$，输入为上下文$c$，可以构建以下公式：
 
-$$\\hat{x} = G(c)$$
+$$\hat{x} = G(c)$$
 
 其中，$G$是自然语言生成模型，$c$是上下文信息。
 
@@ -111,9 +111,9 @@ $$\\hat{x} = G(c)$$
 
 对于工具选择和执行问题，可以构建策略网络$P$，输入为环境状态$s$和任务描述$d$：
 
-$$\\hat{a} = P(s, d)$$
+$$\hat{a} = P(s, d)$$
 
-其中，$\\hat{a}$是选择的行动（工具）。
+其中，$\hat{a}$是选择的行动（工具）。
 
 ### 4.2 公式推导过程
 
@@ -144,12 +144,12 @@ $$\\hat{a} = P(s, d)$$
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-model_name = \"gpt2\"
+model_name = "gpt2"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
 def generate_response(context):
-    input_ids = tokenizer.encode(context, return_tensors=\"pt\")
+    input_ids = tokenizer.encode(context, return_tensors="pt")
     output = model.generate(input_ids, max_length=50)
     response = tokenizer.decode(output[0])
     return response
@@ -162,7 +162,7 @@ import numpy as np
 
 def tool_selection(environment_state, task_description):
     # 简单示例：根据任务描述选择工具名称
-    tools = {\"screwdriver\": [\"fix\", \"assemble\"], \"hammer\": [\"build\"]}
+    tools = {"screwdriver": ["fix", "assemble"], "hammer": ["build"]}
     task_words = set(task_description.split())
     for tool, actions in tools.items():
         if set(actions).issubset(task_words):

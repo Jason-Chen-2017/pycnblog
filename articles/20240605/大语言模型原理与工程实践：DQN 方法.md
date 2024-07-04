@@ -66,8 +66,7 @@ $$
 策略梯度公式为：
 
 $$
-\\Delta \\theta = \\alpha \\cdot \
-abla_{\\theta} J(\\theta)
+\\Delta \\theta = \\alpha \\cdot \nabla_{\\theta} J(\\theta)
 $$
 
 其中，$\\Delta \\theta$为策略参数的更新量，$\\alpha$为学习率，$J(\\theta)$为损失函数。

@@ -134,15 +134,15 @@ def A_star_search(start, goal, h):
     came_from = {}
     g_score = {start: 0}
     f_score = {start: h(start, goal)}
-    
+
     while open_set:
         current = min(open_set, key=lambda o: f_score[o])
         if current == goal:
             break
-        
+
         open_set.remove(current)
         C.add(current)
-        
+
         for neighbor in neighbors(current):
             tentative_g_score = g_score[current] + c(current, neighbor)
             if neighbor not in open_set and tentative_g_score < g_score.get(neighbor, float("inf")):
@@ -150,7 +150,7 @@ def A_star_search(start, goal, h):
                 g_score[neighbor] = tentative_g_score
                 f_score[neighbor] = tentative_g_score + h(neighbor, goal)
                 open_set.add(neighbor)
-    
+
     return came_from, g_score, f_score
 ```
 
@@ -216,15 +216,15 @@ def a_star_search(graph, start, goal, heuristic):
     came_from = {}
     g_score = {start: 0}
     f_score = {start: heuristic(start, goal)}
-    
+
     while open_set:
         current = min(open_set, key=lambda o: f_score[o])
         if current == goal:
             break
-        
+
         open_set.remove(current)
         closed_set.add(current)
-        
+
         for neighbor in graph.neighbors(current):
             tentative_g_score = g_score[current] + graph[current][neighbor]['weight']
             if neighbor not in closed_set and tentative_g_score < g_score.get(neighbor, float("inf")):
@@ -232,7 +232,7 @@ def a_star_search(graph, start, goal, heuristic):
                 g_score[neighbor] = tentative_g_score
                 f_score[neighbor] = tentative_g_score + heuristic(neighbor, goal)
                 open_set.add(neighbor)
-    
+
     return came_from, g_score, f_score
 
 def reconstruct_path(came_from, start, goal):

@@ -137,7 +137,7 @@ AIGC在logo设计中的应用领域主要包括：
 **生成器G**：
 
 $$
-G(z) = \mathcal{F}(z; \theta_G) 
+G(z) = \mathcal{F}(z; \theta_G)
 $$
 
 其中，$z$为输入噪声，$\theta_G$为生成器参数，$\mathcal{F}$为生成器函数。
@@ -145,7 +145,7 @@ $$
 **判别器D**：
 
 $$
-D(x) = \mathcal{F}(x; \theta_D) 
+D(x) = \mathcal{F}(x; \theta_D)
 $$
 
 其中，$x$为输入logo图像，$\theta_D$为判别器参数，$\mathcal{F}$为判别器函数。
@@ -153,7 +153,7 @@ $$
 **损失函数**：
 
 $$
-L_D(\theta_D, \theta_G) = -\mathbb{E}_{x \sim p_data(x)}[D(x)] - \mathbb{E}_{z \sim p_z(z)}[D(G(z))] 
+L_D(\theta_D, \theta_G) = -\mathbb{E}_{x \sim p_data(x)}[D(x)] - \mathbb{E}_{z \sim p_z(z)}[D(G(z))]
 $$
 
 其中，$p_data(x)$为真实logo图像分布，$p_z(z)$为噪声分布。
@@ -170,7 +170,7 @@ $$
 
 $$
 \begin{align*}
-\mathbb{E}_{q_\phi(z|x)}[f(x; \theta)] &= \int q_\phi(z|x) f(x; \theta) dz \\
+\mathbb{E}_{q_\phi(z|x)}[f(x; \theta)] &= \int q_\phi(z|x) f(x; \theta) dz \
 \mathbb{E}_{p(x)}[f(x; \theta)] &= \int p(x) f(x; \theta) dx
 \end{align*}
 $$

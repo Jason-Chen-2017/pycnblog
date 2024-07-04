@@ -269,5 +269,5 @@ Flume Source的日志级别可以通过配置参数控制。例如，可以使�
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

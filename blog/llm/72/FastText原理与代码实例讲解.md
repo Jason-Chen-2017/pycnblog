@@ -148,7 +148,7 @@ $$
 
 $$
 \begin{align*}
-(x_1, y_1) & : "This movie is amazing" & : "positive" \\
+(x_1, y_1) & : "This movie is amazing" & : "positive" \
 (x_2, y_2) & : "I hate this movie" & : "negative"
 \end{align*}
 $$

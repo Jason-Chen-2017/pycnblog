@@ -137,9 +137,9 @@ $$
 以浴室热水器为例，其状态模型可以表示为：
 
 $$
-S = \begin{cases} 
+S = \begin{cases}
 \text{off} & \text{if } t < t_{on} \\
-\text{on} & \text{if } t \geq t_{on} 
+\text{on} & \text{if } t \geq t_{on}
 \end{cases}
 $$
 
@@ -150,9 +150,9 @@ $$
 以用户使用浴室淋浴为例，其行为模型可以表示为：
 
 $$
-B = \begin{cases} 
+B = \begin{cases}
 \text{start} & \text{if } S = \text{on} \\
-\text{stop} & \text{if } S = \text{off} 
+\text{stop} & \text{if } S = \text{off}
 \end{cases}
 $$
 
@@ -247,7 +247,7 @@ while True:
     else:
         # 模拟温度降低
         print(f"Temperature: {int(time.time())}")
-    
+
     # 每秒发送一次温度信息
     client.publish(THERMOSTAT_TOPIC, str(int(time.time())))
     time.sleep(1)

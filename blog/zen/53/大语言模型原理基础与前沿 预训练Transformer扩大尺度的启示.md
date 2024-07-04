@@ -9,7 +9,7 @@
 #### 1.1.2 神经网络语言模型
 #### 1.1.3 Transformer的出现
 
-### 1.2 预训练模型的兴起  
+### 1.2 预训练模型的兴起
 #### 1.2.1 ELMo和GPT
 #### 1.2.2 BERT的革命性突破
 #### 1.2.3 预训练模型的繁荣发展
@@ -50,7 +50,7 @@
 #### 3.1.4 前馈神经网络层
 #### 3.1.5 残差连接与层归一化
 
-### 3.2 Transformer的解码器  
+### 3.2 Transformer的解码器
 #### 3.2.1 掩码自注意力
 #### 3.2.2 编码-解码注意力
 #### 3.2.3 前馈神经网络层
@@ -64,7 +64,7 @@
 
 ### 3.4 微调与推理
 #### 3.4.1 下游任务适配
-#### 3.4.2 参数初始化策略 
+#### 3.4.2 参数初始化策略
 #### 3.4.3 推理加速技巧
 
 ## 4.数学模型和公式详细讲解举例说明
@@ -189,13 +189,13 @@ model.train()
 for epoch in range(num_epochs):
     for batch in train_dataloader:
         input_ids, attention_mask, labels = batch
-        
+
         outputs = model(input_ids, attention_mask=attention_mask)
         logits = outputs.logits
-        
+
         loss_fct = torch.nn.CrossEntropyLoss()
         loss = loss_fct(logits, labels)
-        
+
         loss.backward()
         torch.nn.utils.clip_grad_norm_(model.parameters(), max_grad_norm)
         optimizer.step()

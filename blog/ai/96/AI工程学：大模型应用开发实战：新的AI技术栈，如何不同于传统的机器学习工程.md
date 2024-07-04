@@ -165,8 +165,7 @@ $$
 - **梯度下降（GD）**：
 
 $$
-\theta_{t+1} = \theta_t - \alpha \
-abla_{\theta}J(\theta_t)
+\theta_{t+1} = \theta_t - \alpha \nabla_{\theta}J(\theta_t)
 $$
 
 其中，$\theta$ 为模型参数，$J(\theta)$ 为损失函数，$\alpha$ 为学习率。
@@ -276,7 +275,7 @@ def evaluate(model, dev_dataloader):
 def main():
     texts, labels = load_data()
     model, tokenizer = load_model()
-    
+
     # 编码数据
     encodings = tokenizer(texts, padding=True, truncation=True, return_tensors="pt")
     train_encodings = encodings["input_ids"], encodings["attention_mask"], labels
@@ -284,13 +283,13 @@ def main():
     # 创建DataLoader
     train_dataloader = DataLoader(train_encodings, batch_size=1, shuffle=True)
     dev_dataloader = DataLoader(train_encodings, batch_size=1, shuffle=True)
-    
+
     # 定义优化器
     optimizer = torch.optim.AdamW(model.parameters(), lr=5e-5)
-    
+
     # 训练模型
     train(model, train_dataloader, optimizer)
-    
+
     # 评估模型
     evaluate(model, dev_dataloader)
 

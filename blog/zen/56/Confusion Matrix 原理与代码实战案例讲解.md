@@ -22,7 +22,7 @@ Negative    FP       TN
 ```
 其中:
 - TP(True Positive):真实为正例,预测也为正例的样本数
-- FN(False Negative):真实为正例,预测为负例的样本数 
+- FN(False Negative):真实为正例,预测为负例的样本数
 - FP(False Positive):真实为负例,预测为正例的样本数
 - TN(True Negative):真实为负例,预测也为负例的样本数
 
@@ -32,7 +32,7 @@ Negative    FP       TN
 基于 Confusion Matrix,我们可以计算多个评估指标:
 - 准确率(Accuracy) = (TP+TN) / (TP+FN+FP+TN)
 - 精确率(Precision) = TP / (TP+FP)
-- 召回率(Recall) = TP / (TP+FN) 
+- 召回率(Recall) = TP / (TP+FN)
 - F1 值 = 2 * Precision * Recall / (Precision + Recall)
 
 ## 3. 核心算法原理具体操作步骤
@@ -60,7 +60,7 @@ Negative    10       90
 ```
 则各项指标为:
 - 准确率 = $\frac{80+90}{80+20+10+90} = 0.85$
-- 精确率 = $\frac{80}{80+10} = 0.89$  
+- 精确率 = $\frac{80}{80+10} = 0.89$
 - 召回率 = $\frac{80}{80+20} = 0.80$
 - F1 值 = $\frac{2 * 0.89 * 0.80}{0.89 + 0.80} = 0.84$
 
@@ -88,7 +88,7 @@ import numpy as np
 from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
 
 # 假设 y_true 为真实标签,y_pred 为预测标签
-y_true = [1, 0, 1, 1, 0, 1, 0, 0, 1, 0] 
+y_true = [1, 0, 1, 1, 0, 1, 0, 0, 1, 0]
 y_pred = [1, 1, 1, 1, 0, 0, 0, 0, 1, 0]
 
 # 计算 Confusion Matrix

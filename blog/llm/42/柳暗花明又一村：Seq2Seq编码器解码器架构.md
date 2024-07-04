@@ -81,19 +81,19 @@ Seq2Seq架构广泛应用于：
 对于编码器，假设输入序列$x = \{x_1, x_2, ..., x_T\}$，其中$x_i$是第$i$个时间步的输入，$\mathbf{h}_t$是第$t$个时间步的隐藏状态向量，$\mathbf{h}_{\text{enc}}$是最终编码向量：
 
 - **编码器**：
-  \[
+  $$
   \mathbf{h}_t = \text{RNN}(\mathbf{h}_{t-1}, x_t), \quad t = 1, 2, ..., T
-  \]
-  \[
+  $$
+  $$
   \mathbf{h}_{\text{enc}} = \text{RNN}(\mathbf{h}_{T}, \text{padding})
-  \]
+  $$
 
 对于解码器，假设输出序列$y = \{y_1, y_2, ..., y_V\}$，其中$y_i$是第$i$个时间步的输出：
 
 - **解码器**：
-  \[
+  $$
   \mathbf{h}_t = \text{RNN}(\mathbf{h}_{t-1}, \hat{y}_{t-1}), \quad t = 1, 2, ..., V
-  \]
+  $$
   其中$\hat{y}_{t-1}$是预测的前一个输出。
 
 ### 4.2 公式推导过程

@@ -1,6 +1,6 @@
 # Python深度学习实践：建立端到端的自动驾驶系统
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -333,4 +333,4 @@ print('Prediction:', prediction)
 * **Q**: 自动驾驶系统如何处理交通事故？
     * **A**: 使用深度学习技术，识别交通事故，并采取相应的措施，例如紧急制动、报警等。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

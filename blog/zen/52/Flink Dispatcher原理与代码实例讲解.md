@@ -86,23 +86,23 @@ $$\max \sum_{i=1}^n f(J_i), \text{s.t.} \sum_{i=1}^n J_i \leq R$$
 public class WordCount {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        
+
         DataStream<String> text = env.fromElements("Hello World", "Hello Flink");
-        
+
         DataStream<Tuple2<String, Integer>> counts = text
             .flatMap(new Tokenizer())
             .keyBy(value -> value.f0)
             .sum(1);
-        
+
         counts.print();
-        
+
         env.execute("WordCount Example");
     }
-    
+
     public static class Tokenizer implements FlatMapFunction<String, Tuple2<String, Integer>> {
         @Override
         public void flatMap(String value, Collector<Tuple2<String, Integer>> out) {
-            String[] tokens = value.toLowerCase().split("\\W+");
+            String[] tokens = value.toLowerCase().split("\W+");
             for (String token : tokens) {
                 if (token.length() > 0) {
                     out.collect(new Tuple2<>(token, 1));
@@ -198,7 +198,7 @@ Dispatcher本身可以进行高可用配置，从而避免单点故障。当Disp
 
 ## 7. 工具和资源推荐
 - Flink官网：https://flink.apache.org/
-- Flink Github地址：https://github.com/apache/flink  
+- Flink Github地址：https://github.com/apache/flink
 - Flink文档：https://ci.apache.org/projects/flink/flink-docs-release-1.12/
 - Flink社区：https://flink.apache.org/community.html
 - Ververica：https://www.ververica.com/ (Flink的商业化公司，提供Flink的商业支持和培训)
@@ -210,14 +210,14 @@ Dispatcher作为Flink架构中的重要组件，未来的发展趋势主要体�
 目前Dispatcher提供的REST API还比较简单，主要是提交Job、取消Job等。未来可以扩展更多的API，如更新Job配置、调整Job并行度等，让用户可以更灵活地管理Job。
 
 ### 8.2 支持多种资源调度器
-目前Dispatcher主要和Flink自带的ResourceManager进行交互。未来可以扩展支持更多的资源调度器，如Kubernetes、Yarn等，让Flink可以更好地和现有的资源管理系统集成。  
+目前Dispatcher主要和Flink自带的ResourceManager进行交互。未来可以扩展支持更多的资源调度器，如Kubernetes、Yarn等，让Flink可以更好地和现有的资源管理系统集成。
 
 ### 8.3 提供更强大的Web UI
 目前Dispatcher提供的Web UI还比较简陋，主要用于查看Job状态。未来可以扩展更多的功能，如Job配置管理、异常报警等，提供一站式的Job管理平台。
 
 ### 8.4 挑战
 - 高可用性：如何保证Dispatcher自身的高可用性，避免单点故障。
-- 可扩展性：如何让Dispatcher支持更大规模的Job提交和管理，提高并发处理能力。  
+- 可扩展性：如何让Dispatcher支持更大规模的Job提交和管理，提高并发处理能力。
 - 安全性：如何加强Dispatcher的安全性，如认证、授权等，防止非法的Job提交。
 
 ## 9. 附录：常见问题与解答

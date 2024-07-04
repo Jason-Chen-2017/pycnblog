@@ -32,22 +32,19 @@
 
 对于单个样本 \\( (x_i, y_i) \\)，损失函数的梯度可以表示为：
 
-$$ \
-abla_{w} L(w) = \\frac{\\partial L}{\\partial w}(w) $$
+$$ \nabla_{w} L(w) = \\frac{\\partial L}{\\partial w}(w) $$
 
 ### 小批量梯度
 
 对于小批量样本 \\( \\{x_1, x_2, ..., x_m\\} \\)，梯度可以表示为：
 
-$$ \
-abla_{w} L(w) = \\frac{1}{m} \\sum_{i=1}^{m} \\frac{\\partial L}{\\partial w}(w, x_i, y_i) $$
+$$ \nabla_{w} L(w) = \\frac{1}{m} \\sum_{i=1}^{m} \\frac{\\partial L}{\\partial w}(w, x_i, y_i) $$
 
 ### 更新规则
 
 参数更新遵循以下公式：
 
-$$ w_{new} = w_{old} - \\eta \\cdot \
-abla_{w} L(w) $$
+$$ w_{new} = w_{old} - \\eta \\cdot \nabla_{w} L(w) $$
 
 其中 \\( \\eta \\) 是学习率，控制了参数更新的幅度。
 

@@ -120,8 +120,7 @@ $$D(x_{\text{aug}} + \epsilon, y) = \mathbb{E}_{\epsilon \sim \epsilon(\cdot)}[D
 
 3. **对抗扰动**：
 
-$$\epsilon = \text{sign}(\
-abla_{\epsilon}D(x_{\text{aug}} + \epsilon, y))$$
+$$\epsilon = \text{sign}(\nabla_{\epsilon}D(x_{\text{aug}} + \epsilon, y))$$
 
 ### 4.3 案例分析与讲解
 

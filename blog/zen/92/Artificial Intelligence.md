@@ -123,7 +123,7 @@ $$
 
 $$
 \begin{cases}
-\frac{\partial \mathcal{L}}{\partial \boldsymbol{w}} = -\frac{1}{N} \sum_{i=1}^N 2(y_i - (\boldsymbol{w}^T \boldsymbol{x}_i + b))\boldsymbol{x}_i = 0 \\
+\frac{\partial \mathcal{L}}{\partial \boldsymbol{w}} = -\frac{1}{N} \sum_{i=1}^N 2(y_i - (\boldsymbol{w}^T \boldsymbol{x}_i + b))\boldsymbol{x}_i = 0 \
 \frac{\partial \mathcal{L}}{\partial b} = -\frac{1}{N} \sum_{i=1}^N 2(y_i - (\boldsymbol{w}^T \boldsymbol{x}_i + b)) = 0
 \end{cases}
 $$
@@ -132,7 +132,7 @@ $$
 
 $$
 \begin{cases}
-\boldsymbol{w} = \frac{1}{N}\sum_{i=1}^N \boldsymbol{x}_i(y_i - (\boldsymbol{w}^T \boldsymbol{x}_i + b)) \\
+\boldsymbol{w} = \frac{1}{N}\sum_{i=1}^N \boldsymbol{x}_i(y_i - (\boldsymbol{w}^T \boldsymbol{x}_i + b)) \
 b = \frac{1}{N}\sum_{i=1}^N y_i - \boldsymbol{w}^T \frac{1}{N}\sum_{i=1}^N \boldsymbol{x}_i
 \end{cases}
 $$
@@ -182,7 +182,7 @@ A: 可以使用均方误差、均方根误差、决定系数等指标评估模�
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n ai-env python=3.8 
+conda create -n ai-env python=3.8
 conda activate ai-env
 ```
 3. 安装PyTorch：根据CUDA版本，从官网获取对应的安装命令。

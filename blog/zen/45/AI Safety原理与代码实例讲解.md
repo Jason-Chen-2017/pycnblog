@@ -231,7 +231,7 @@ print("准确率：", accuracy)
 
 ### 7.3 相关论文推荐
 
-1. **"AI Safety: A Survey of Key Ideas and Approaches"**: 作者：Stuart J. Russell, Percy Liang, David G..convert_to_ascii("作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming") 
+1. **"AI Safety: A Survey of Key Ideas and Approaches"**: 作者：Stuart J. Russell, Percy Liang, David G..convert_to_ascii("作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming")
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 

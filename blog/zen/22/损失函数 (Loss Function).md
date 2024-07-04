@@ -1,4 +1,4 @@
-                 
+
 # 损失函数 (Loss Function)
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -47,7 +47,7 @@
 
 - **回归问题**：
     - **均方误差 (MSE)**：\(\frac{1}{n}\sum_{i=1}^{n}(y_i - f(x_i))^2\)。该损失函数适用于数值预测任务，强调较大的误差惩罚较大。
-  
+
 - **分类问题**：
     - **交叉熵损失 (Cross Entropy Loss)**：\(-\frac{1}{n}\sum_{i=1}^{n}[y_i\log(p_i)+(1-y_i)\log(1-p_i)]\)。适用于二元或多元分类任务，能够清晰地反映类别的不一致程度。
 
@@ -92,7 +92,7 @@ $$ L(\theta) = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2 $$
 #### 均方误差推导
 1. 定义预测误差：\(e_i = y_i - \hat{y}_i\)
 2. 目标是找到\(\theta\)使得\(\mathbb{E}[e^2]\)最小。
-3. 利用平方差公式展开得：\[ \mathbb{E}[e^2] = \mathbb{E}[(y_i - \hat{y}_i)^2] = \mathbb{E}[y_i^2 + \hat{y}_i^2 - 2y_i\hat{y}_i] \]
+3. 利用平方差公式展开得：$$ \mathbb{E}[e^2] = \mathbb{E}[(y_i - \hat{y}_i)^2] = \mathbb{E}[y_i^2 + \hat{y}_i^2 - 2y_i\hat{y}_i] $$
 4. 对于线性模型，有\(\hat{y}_i = w^\top x_i + b\)，代入上式并简化，得到均方误差形式。
 
 ### 4.3 案例分析与讲解

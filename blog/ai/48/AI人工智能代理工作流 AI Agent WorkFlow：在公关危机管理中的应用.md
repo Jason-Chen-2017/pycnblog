@@ -149,10 +149,10 @@ $$
 LSTM的公式如下：
 
 $$
-i_t = \sigma(W_i x_t + U_i h_{t-1} + b_i) \\
-f_t = \sigma(W_f x_t + U_f h_{t-1} + b_f) \\
-o_t = \sigma(W_o x_t + U_o h_{t-1} + b_o) \\
-c_t = f_t \odot c_{t-1} + i_t \odot \tanh(W_c x_t + U_c h_{t-1} + b_c) \\
+i_t = \sigma(W_i x_t + U_i h_{t-1} + b_i) \
+f_t = \sigma(W_f x_t + U_f h_{t-1} + b_f) \
+o_t = \sigma(W_o x_t + U_o h_{t-1} + b_o) \
+c_t = f_t \odot c_{t-1} + i_t \odot \tanh(W_c x_t + U_c h_{t-1} + b_c) \
 h_t = o_t \odot \tanh(c_t)
 $$
 

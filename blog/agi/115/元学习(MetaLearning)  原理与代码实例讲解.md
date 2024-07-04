@@ -1,7 +1,7 @@
 
 # 元学习(Meta-Learning) - 原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 ### 1.1 问题的由来
@@ -108,16 +108,13 @@ $$
 假设模型参数为 $\theta$，则在数据分布 $D$ 上的梯度为：
 
 $$
-\
-abla_{\theta} L(\theta) = \mathbb{E}_{x,y \sim D} [\
-abla_{\theta} L(y, f(x;\theta))]
+\nabla_{\theta} L(\theta) = \mathbb{E}_{x,y \sim D} [\nabla_{\theta} L(y, f(x;\theta))]
 $$
 
 为了使模型在少量样本上快速收敛，我们需要找到一个梯度小的参数更新公式：
 
 $$
-\theta_{\text{new}} = \theta - \eta \
-abla_{\theta} L(\theta)
+\theta_{\text{new}} = \theta - \eta \nabla_{\theta} L(\theta)
 $$
 
 其中，$\eta$ 为学习率。
@@ -154,7 +151,7 @@ A：模型无关的元学习是指不依赖于特定模型，通过学习通用�
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 3. 安装PyTorch：

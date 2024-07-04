@@ -1,4 +1,4 @@
-                 
+
 # 基于Java的智能家居设计：漫谈智能家居行业中的Java应用前景
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -95,9 +95,9 @@ Java凭借其开放性、多平台兼容性、强大的内存管理能力和丰�
 
 $$
 M = \begin{bmatrix}
-m_{11} & m_{12} & \cdots & m_{1n}\\
-m_{21} & m_{22} & \cdots & m_{2n}\\
-\vdots & \vdots & \ddots & \vdots\\
+m_{11} & m_{12} & \cdots & m_{1n}\
+m_{21} & m_{22} & \cdots & m_{2n}\
+\vdots & \vdots & \ddots & \vdots\
 m_{n1} & m_{n2} & \cdots & m_{nn}
 \end{bmatrix}
 $$
@@ -123,34 +123,34 @@ $$
 
 $$
 M = \begin{bmatrix}
-0 & 0 & 1\\
-1 & 0 & -1\\
+0 & 0 & 1\
+1 & 0 & -1\
 -1 & 1 & 0
 \end{bmatrix}
 $$
 
-从初始状态\[S(0) = [1, 0, 0]\]出发（表示只有A灯泡开启），经过一次转换：
+从初始状态$$S(0) = [1, 0, 0]$$出发（表示只有A灯泡开启），经过一次转换：
 
 $$
 S(1) = M \cdot S(0) = \begin{bmatrix}
-0 & 0 & 1\\
-1 & 0 & -1\\
+0 & 0 & 1\
+1 & 0 & -1\
 -1 & 1 & 0
 \end{bmatrix}
-    \cdot 
+    \cdot
     \begin{bmatrix}
-    1 \\
-    0 \\
+    1 \
+    0 \
     0
     \end{bmatrix}
 = \begin{bmatrix}
-0 \\
-1 \\
+0 \
+1 \
 -1
 \end{bmatrix}
 $$
 
-此时，我们得到新的状态\[S(1) = [0, 1, -1]\]，这意味着B灯泡开启，同时C灯泡关闭。
+此时，我们得到新的状态$$S(1) = [0, 1, -1]$$，这意味着B灯泡开启，同时C灯泡关闭。
 
 ### 4.4 常见问题解答
 
@@ -184,7 +184,7 @@ public class DeviceDiscoveryServer {
             socket.receive(packet);
             String message = new String(packet.getData(), 0, packet.getLength());
             System.out.println("Received: " + message);
-            
+
             // 对接收到的消息进行处理，如建立连接请求响应等
             if (message.contains("connect")) {
                 InetAddress clientAddress = packet.getAddress();
@@ -206,15 +206,15 @@ import org.json.JSONObject;
 
 public class DataTransmissionHandler {
     private JSONObject data;
-    
+
     public DataTransmissionHandler(JSONObject data) {
         this.data = data;
     }
-    
+
     public void processMessage() {
         // 解析JSON消息并执行相应的操作
         String action = data.getString("action");
-        
+
         switch (action) {
             case "toggleLight":
                 toggleLight(data.getInt("deviceID"));
@@ -226,11 +226,11 @@ public class DataTransmissionHandler {
                 System.out.println("Unknown action received.");
         }
     }
-    
+
     private void toggleLight(int deviceID) {
         System.out.println("Toggling light for device ID: " + deviceID);
     }
-    
+
     private void setTemperature(double temperature) {
         System.out.println("Setting temperature to: " + temperature + "°C");
     }
@@ -265,7 +265,7 @@ public class DataTransmissionHandler {
 - **书籍推荐**：
   -《Java核心技术》（第10版）by Horstmann and Cay S. Horstmann
   -《深入理解Java虚拟机》by Andrew Koenig & Barbara E. Moo
-  
+
 ### 7.2 开发工具推荐
 
 - **IDE**：Eclipse、IntelliJ IDEA、NetBeans等都是流行的Java开发工具。

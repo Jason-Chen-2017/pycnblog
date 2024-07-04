@@ -62,7 +62,7 @@ $$
 策略（Policy）是指决策者在给定状态时选择动作的规则。在DQN中，策略通常由Q值函数导出：
 
 $$
-\pi(s) = \begin{cases} 
+\pi(s) = \begin{cases}
 a & \text{if } Q(s, a) = \max_{a'} Q(s, a') \\
 \text{random} & \text{otherwise}
 \end{cases}
@@ -162,15 +162,13 @@ $$
 使用梯度下降法更新网络参数：
 
 $$
-\theta_{t+1} = \theta_t - \alpha \
-abla_\theta L(\theta_t)
+\theta_{t+1} = \theta_t - \alpha \nabla_\theta L(\theta_t)
 $$
 
 其中，
 
 - $\alpha$：学习率
-- $\
-abla_\theta L(\theta_t)$：损失函数关于网络参数$\theta$的梯度
+- $\nabla_\theta L(\theta_t)$：损失函数关于网络参数$\theta$的梯度
 
 ### 4.3 案例分析与讲解
 
@@ -246,7 +244,7 @@ class DQNNetwork(tf.keras.Model):
         self.fc1 = tf.keras.layers.Dense(24, activation='relu')
         self.fc2 = tf.keras.layers.Dense(24, activation='relu')
         self.fc3 = tf.keras.layers.Dense(action_size, activation='linear')
-        
+
     def call(self, x):
         x = self.fc1(x)
         x = self.fc2(x)
@@ -259,7 +257,7 @@ def train_dqn(model, env, epsilon, gamma, batch_size, epochs):
         # 初始化经验回放缓冲区
         replay_buffer = []
         episode_reward = 0
-        
+
         state = env.reset()
         while True:
             # 探索或利用策略
@@ -267,41 +265,41 @@ def train_dqn(model, env, epsilon, gamma, batch_size, epochs):
                 action = env.action_space.sample()
             else:
                 action = np.argmax(model(state))
-            
+
             # 执行动作，获取下一个状态和奖励
             next_state, reward, done, _ = env.step(action)
             episode_reward += reward
-            
+
             # 存储经验
             replay_buffer.append((state, action, reward, next_state, done))
-            
+
             # 如果达到经验回放缓冲区容量，或者当前步长满足条件，则进行更新
             if len(replay_buffer) >= batch_size or done:
                 # 从缓冲区中随机抽取样本
                 batch = np.random.choice(replay_buffer, batch_size, replace=False)
                 states, actions, rewards, next_states, dones = zip(*batch)
-                
+
                 # 计算目标Q值
                 target_q_values = model(next_states)
                 target_q_values = rewards + (1 - dones) * gamma * np.max(target_q_values, axis=1)
-                
+
                 # 计算预测Q值
                 pred_q_values = model(states)
                 pred_q_values[range(batch_size), actions] = target_q_values
-                
+
                 # 更新模型参数
                 with tf.GradientTape() as tape:
                     loss = tf.reduce_mean(tf.keras.losses.mse(target_q_values, pred_q_values))
                 gradients = tape.gradient(loss, model.trainable_variables)
                 model.optimizer.apply_gradients(zip(gradients, model.trainable_variables))
-                
+
                 # 重置经验回放缓冲区
                 replay_buffer = []
-            
+
             # 如果达到停止条件，则结束当前回合
             if done:
                 break
-        
+
         print(f"Epoch {epoch+1}: Reward = {episode_reward}")
 
 # 环境配置

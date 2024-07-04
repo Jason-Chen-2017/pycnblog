@@ -301,8 +301,8 @@ public class HCatalogExample implements Tool {
 
         Properties properties = new Properties();
         properties.setProperty(SerDe.SERIALIZATION_FORMAT, "1");
-        properties.setProperty(SerDe.SERIALIZATION_NULL_FORMAT, "\\N");
-        properties.setProperty(SerDe.SERIALIZATION_ESCAPE_FORMAT, "\\\\");
+        properties.setProperty(SerDe.SERIALIZATION_NULL_FORMAT, "\N");
+        properties.setProperty(SerDe.SERIALIZATION_ESCAPE_FORMAT, "\\");
         properties.setProperty(SerDe.SERIALIZATION_FIELD_DELIMITER, "\t");
         serdeInfo.setParameters(properties);
 
@@ -451,4 +451,4 @@ HCatalog 的研究展望包括：
 
 **A：** HCatalog 可以与 Spark 集成，使用 Spark 进行数据处理和分析。Spark 可以使用 HCatalog 访问表数据，并使用 Spark 的计算能力进行数据处理和分析。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

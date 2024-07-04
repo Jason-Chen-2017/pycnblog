@@ -91,10 +91,10 @@
 
 **对比损失**（Contrastive Loss）是一个常用的自监督损失函数形式：
 
-$$L = -\\frac{1}{N}\\sum_{i=1}^{N}\\sum_{j \
-eq i} \\log\\sigma\\left(\\frac{\\|f(v_i) - f(v_j)\\|^2}{\\tau}\\right)$$
+$$L = -\frac{1}{N}\sum_{i=1}^{N}\sum_{j \
+eq i} \log\sigma\left(\frac{\|f(v_i) - f(v_j)\|^2}{\tau}\right)$$
 
-其中，$\\sigma$是sigmoid函数，$\\tau$是温度参数，用来控制相似度的敏感度。
+其中，$\sigma$是sigmoid函数，$\tau$是温度参数，用来控制相似度的敏感度。
 
 ### 4.3 案例分析与讲解
 
@@ -161,7 +161,7 @@ def main():
             loss.backward()
             optimizer.step()
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     main()
 ```
 
@@ -230,7 +230,7 @@ if __name__ == \"__main__\":
 
 - **Q：如何平衡数据增强和模型复杂性？**
   **A：** 通过调整数据增强策略的强度和模型的复杂度来寻找最佳平衡，避免过拟合或欠拟合。
-  
+
 - **Q：自监督学习能否应用于实时场景？**
   **A：** 可以，通过在线学习和增量更新模型参数，自监督学习能够适应实时数据流。
 

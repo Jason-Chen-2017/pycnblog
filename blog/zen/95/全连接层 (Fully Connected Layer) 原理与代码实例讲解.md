@@ -150,18 +150,18 @@ x = [1, 0]
 
 1. 计算中间结果 $z$：
    $$
-z = Wx + b = \begin{bmatrix}1 & -1 \\ 0 & 1 \end{bmatrix} \begin{bmatrix}1 \\ 0 \end{bmatrix} + \begin{bmatrix}2 \\ 1 \end{bmatrix} = \begin{bmatrix}1 \\ 1 \end{bmatrix}
+z = Wx + b = \begin{bmatrix}1 & -1 \ 0 & 1 \end{bmatrix} \begin{bmatrix}1 \ 0 \end{bmatrix} + \begin{bmatrix}2 \ 1 \end{bmatrix} = \begin{bmatrix}1 \ 1 \end{bmatrix}
 $$
 2. 加上偏置项：
    $$
-z' = z + b = \begin{bmatrix}1 \\ 1 \end{bmatrix} + \begin{bmatrix}2 \\ 1 \end{bmatrix} = \begin{bmatrix}3 \\ 2 \end{bmatrix}
+z' = z + b = \begin{bmatrix}1 \ 1 \end{bmatrix} + \begin{bmatrix}2 \ 1 \end{bmatrix} = \begin{bmatrix}3 \ 2 \end{bmatrix}
 $$
 3. 应用激活函数：
    $$
-y = \sigma(z') = \begin{bmatrix}3 \\ 2 \end{bmatrix} \rightarrow \begin{bmatrix}3 \\ 2 \end{bmatrix}
+y = \sigma(z') = \begin{bmatrix}3 \ 2 \end{bmatrix} \rightarrow \begin{bmatrix}3 \ 2 \end{bmatrix}
 $$
 
-因此，全连接层的输出为 $\begin{bmatrix}3 \\ 2 \end{bmatrix}$。
+因此，全连接层的输出为 $\begin{bmatrix}3 \ 2 \end{bmatrix}$。
 
 ### 4.4 常见问题解答
 

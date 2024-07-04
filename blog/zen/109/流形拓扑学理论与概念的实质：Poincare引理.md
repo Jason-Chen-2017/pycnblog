@@ -18,7 +18,7 @@ Poincare引理建立了微分形式与同调的桥梁,是流形拓扑学的理�
 ## 2. 核心概念与联系
 要理解Poincare引理,首先需要掌握以下核心概念:
 - 流形:局部同胚于欧几里得空间$\mathbb{R}^n$的拓扑空间。
-- 微分形式:定义在流形上的反称协变张量场,是流形上的一种特殊函数。 
+- 微分形式:定义在流形上的反称协变张量场,是流形上的一种特殊函数。
 - 外微分:将$k$次微分形式变为$k+1$次微分形式的运算,满足$d^2=0$。
 - 闭形式:外微分为零的微分形式,即$d\omega=0$。
 - 恰当形式:存在一个低一阶微分形式,使得外微分后得到原形式。
@@ -75,8 +75,8 @@ $$
 
 $$
 \begin{aligned}
-(K\omega)_1&=\int_0^1(3tx_1^2x_1+tx_2^2)\,dt=x_1^3+\frac{1}{3}x_2^2\\
-(K\omega)_2&=\int_0^1(tx_3^2)\,dt=\frac{1}{2}x_3^2\\
+(K\omega)_1&=\int_0^1(3tx_1^2x_1+tx_2^2)\,dt=x_1^3+\frac{1}{3}x_2^2\
+(K\omega)_2&=\int_0^1(tx_3^2)\,dt=\frac{1}{2}x_3^2\
 (K\omega)_3&=\int_0^1(2tx_3x_1)\,dt=x_1x_3
 \end{aligned}
 $$
@@ -101,23 +101,23 @@ pip install sympy
 下面的代码定义了微分形式类,实现了wedge积和外微分运算。然后构造Poincare算子,验证Poincare引理。
 
 ```python
-from sympy import * 
+from sympy import *
 
 class DifferentialForm:
     def __init__(self, coeff, basis):
         self.coeff = coeff
         self.basis = basis
-        
+
     def __add__(self, other):
         return DifferentialForm(self.coeff + other.coeff, self.basis)
-    
+
     def __sub__(self, other):
         return DifferentialForm(self.coeff - other.coeff, self.basis)
-    
+
     def wedge(self, other):
-        return DifferentialForm(self.coeff * other.coeff, 
+        return DifferentialForm(self.coeff * other.coeff,
                                 self.basis + other.basis)
-        
+
     def diff(self):
         n = len(self.basis)
         result = DifferentialForm(0, [])
@@ -148,7 +148,7 @@ omega = DifferentialForm(3*x0**2, [x1, x2]) + \
         DifferentialForm(x1, [x2, x0]) + \
         DifferentialForm(2*x2, [x0, x1])
 
-print('omega =', omega.coeff) 
+print('omega =', omega.coeff)
 print('d omega =', omega.diff().coeff)
 
 eta = poincare_operator(omega)
@@ -184,7 +184,7 @@ Poincare引理作为现代微分几何的基石,在拓扑、动力系统等领�
 ## 7. 工具和资源推荐
 ### 7.1 学习资源推荐
 - 《微分流形》 - 卢昌海
-- 《代数拓扑与微分形式》 - Bott & Tu 
+- 《代数拓扑与微分形式》 - Bott & Tu
 - 可汗学院公开课:Differential Forms
 
 ### 7.2 开发工具推荐
@@ -194,7 +194,7 @@ Poincare引理作为现代微分几何的基石,在拓扑、动力系统等领�
 
 ### 7.3 相关论文推荐
 - Poincare, H. (1895). Analysis situs. Journal de l'École polytechnique.
-- Arnold, V. I. (1989). Mathematical methods of classical mechanics. 
+- Arnold, V. I. (1989). Mathematical methods of classical mechanics.
 - Morita, S. (2001). Geometry of differential forms.
 
 ### 7.4 其他资源推荐
@@ -203,7 +203,7 @@ Poincare引理作为现代微分几何的基石,在拓扑、动力系统等领�
 - YouTube上的拓扑与几何课程
 
 ## 8. 总结：未来发展趋势与挑战
-### 8.1 研究成果总结 
+### 8.1 研究成果总结
 本文从问题背景出发,介绍了流形、微分形式等核心概念,给出了Poincare引理的严格表述与证明思路。通过具体算例说明了该定理的几何意义。并讨论了Poincare引理的应用及推广。
 
 ### 8.2 未来发展趋势

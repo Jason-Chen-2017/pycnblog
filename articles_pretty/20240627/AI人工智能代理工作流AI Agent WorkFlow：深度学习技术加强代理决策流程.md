@@ -112,8 +112,7 @@
 
 - **Q学习**：$Q(s,a) \leftarrow Q(s,a) + \alpha [r + \gamma \max_{a'}Q(s',a') - Q(s,a)]$
 
-- **策略梯度**：$\Delta \theta \propto \mathbb{E}_{s,a \sim \pi, s' \sim P}[Q(s,a) \cdot \
-abla \log \pi(a|s)]$
+- **策略梯度**：$\Delta \theta \propto \mathbb{E}_{s,a \sim \pi, s' \sim P}[Q(s,a) \cdot \nabla \log \pi(a|s)]$
 
 ### 4.3 案例分析与讲解
 

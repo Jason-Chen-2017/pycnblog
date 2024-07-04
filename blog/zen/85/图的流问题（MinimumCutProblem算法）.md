@@ -83,9 +83,9 @@
 最小割问题的数学模型可以表示为以下线性规划问题：
 
 $$\begin{aligned}
-\min & \quad \sum_{(u,v) \in E} c_{u,v}x_{u,v} \\
-\text{s.t.} & \quad \sum_{v \in V} x_{u,v} = s_u & (u \in V) \\
-& \quad \sum_{v \in V} x_{v,u} = t_v & (v \in V) \\
+\min & \quad \sum_{(u,v) \in E} c_{u,v}x_{u,v} \
+\text{s.t.} & \quad \sum_{v \in V} x_{u,v} = s_u & (u \in V) \
+& \quad \sum_{v \in V} x_{v,u} = t_v & (v \in V) \
 & \quad x_{u,v} \geq 0 & (u,v \in E)
 \end{aligned}$$
 

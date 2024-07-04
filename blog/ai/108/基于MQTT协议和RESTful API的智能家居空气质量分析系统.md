@@ -357,4 +357,4 @@ if __name__ == "__main__":
 * **使用标准协议：** 使用标准协议，例如MQTT、RESTful API等。
 * **提供多种平台版本：** 为不同平台提供不同的版本。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

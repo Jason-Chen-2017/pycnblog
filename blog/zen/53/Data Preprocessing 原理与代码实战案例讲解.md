@@ -18,7 +18,7 @@
 数据预处理涉及的核心概念包括:
 
 - 数据清洗(Data Cleaning):处理无效值、缺失值、异常值等。
-- 数据集成(Data Integration):整合多个数据源、解决数据冗余等问题。 
+- 数据集成(Data Integration):整合多个数据源、解决数据冗余等问题。
 - 数据变换(Data Transformation):规范化、聚集、泛化数据。
 - 数据归约(Data Reduction):降维、数值归约、数据压缩等。
 
@@ -107,8 +107,8 @@ import numpy as np
 import pandas as pd
 
 # 创建含缺失值的数据集
-df = pd.DataFrame({'A': [1, 2, np.nan, 4], 
-                   'B': [5, np.nan, np.nan, 8], 
+df = pd.DataFrame({'A': [1, 2, np.nan, 4],
+                   'B': [5, np.nan, np.nan, 8],
                    'C': [9, 10, 11, 12]})
 
 # 删除含缺失值的行
@@ -127,8 +127,8 @@ df_mean = df.fillna(df.mean())
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 
 # 创建数据集
-X = np.array([[1, 2], 
-              [3, 4], 
+X = np.array([[1, 2],
+              [3, 4],
               [5, 6]])
 
 # 最小-最大规范化
@@ -146,8 +146,8 @@ X_std = scaler.fit_transform(X)
 from sklearn.decomposition import PCA
 
 # 创建数据集
-X = np.array([[1, 2], 
-              [3, 4], 
+X = np.array([[1, 2],
+              [3, 4],
               [5, 6]])
 
 # 创建PCA对象,指定降维后的维数

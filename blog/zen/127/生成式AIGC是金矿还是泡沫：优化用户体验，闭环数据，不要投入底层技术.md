@@ -1,6 +1,6 @@
 # 生成式AIGC是金矿还是泡沫：优化用户体验，闭环数据，不要投入底层技术
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 

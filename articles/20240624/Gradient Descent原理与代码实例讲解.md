@@ -55,12 +55,10 @@
 3. **更新参数**：根据梯度更新参数，使得损失函数值减小。通常使用以下公式进行参数更新：
 
    $$
- \theta = \theta - \alpha \cdot \
-abla_{\theta} J(\theta) 
+ \theta = \theta - \alpha \cdot \nabla_{\theta} J(\theta) 
 $$
 
-   其中，$\theta$ 表示参数，$\alpha$ 表示学习率，$J(\theta)$ 表示损失函数，$\
-abla_{\theta} J(\theta)$ 表示损失函数对参数$\theta$的梯度。
+   其中，$\theta$ 表示参数，$\alpha$ 表示学习率，$J(\theta)$ 表示损失函数，$\nabla_{\theta} J(\theta)$ 表示损失函数对参数$\theta$的梯度。
 
 4. **重复步骤2和3**：重复计算梯度并更新参数，直到满足停止条件，如损失值收敛或达到预设的迭代次数。
 
@@ -98,12 +96,10 @@ $$
 
 ### 4.2 公式推导过程
 
-在梯度下降算法中，我们需要计算损失函数$ J(\theta) $对参数$\theta$的梯度，即$\
-abla_{\theta} J(\theta)$。根据损失函数的定义，我们可以推导出以下公式：
+在梯度下降算法中，我们需要计算损失函数$ J(\theta) $对参数$\theta$的梯度，即$\nabla_{\theta} J(\theta)$。根据损失函数的定义，我们可以推导出以下公式：
 
 $$
- \
-abla_{\theta} J(\theta) = \frac{1}{N} \sum_{i=1}^N \frac{\partial}{\partial \theta}(f(\theta; x_i) - y_i)^2 
+ \nabla_{\theta} J(\theta) = \frac{1}{N} \sum_{i=1}^N \frac{\partial}{\partial \theta}(f(\theta; x_i) - y_i)^2 
 $$
 
 ### 4.3 案例分析与讲解

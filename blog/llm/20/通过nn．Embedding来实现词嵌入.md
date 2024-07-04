@@ -58,13 +58,13 @@ nn.Embedding的工作原理基于预定义的词表，每种语言或任务可�
 
 ### 4.1 数学模型构建
 
-设$V$为词表大小，$D$为向量维度，对于文本序列$x = (x_1, x_2, ..., x_T)$，其中$x_i \\in \\{1, 2, ..., V\\}$表示第$i$个词的索引，则词嵌入表示可以表示为：
+设$V$为词表大小，$D$为向量维度，对于文本序列$x = (x_1, x_2, ..., x_T)$，其中$x_i \in \{1, 2, ..., V\}$表示第$i$个词的索引，则词嵌入表示可以表示为：
 
 $$
 E(x) = [Wx_1, Wx_2, ..., WX_T]
 $$
 
-其中，$W \\in \\mathbb{R}^{V \\times D}$是权重矩阵，$E(x) \\in \\mathbb{R}^{T \\times D}$是文本序列的嵌入表示。
+其中，$W \in \mathbb{R}^{V \times D}$是权重矩阵，$E(x) \in \mathbb{R}^{T \times D}$是文本序列的嵌入表示。
 
 ### 4.2 公式推导过程
 
@@ -123,7 +123,7 @@ class WordEmbeddingDemo:
         word_vectors = self.embedding(input_indices)
         return word_vectors
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     demo = WordEmbeddingDemo(vocab_size=10000, embedding_dim=100)
     input_indices = torch.tensor([1, 2, 3, 4])
     output = demo.forward(input_indices)
@@ -161,8 +161,8 @@ if __name__ == \"__main__\":
 
 ### 7.3 相关论文推荐
 
-- **\"Word Vectors Represent Similar Words Closely Together\"**: 论述了词向量如何在向量空间中捕捉词语间的语义相似性。
-- **\"GloVe: Global Vectors for Word Representation\"**: 推出了GloVe算法，提供了一种基于全局统计的方法来生成词向量。
+- **"Word Vectors Represent Similar Words Closely Together"**: 论述了词向量如何在向量空间中捕捉词语间的语义相似性。
+- **"GloVe: Global Vectors for Word Representation"**: 推出了GloVe算法，提供了一种基于全局统计的方法来生成词向量。
 
 ### 7.4 其他资源推荐
 

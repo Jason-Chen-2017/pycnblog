@@ -34,7 +34,7 @@ D-ID算法分为两部分：数据生成和验证。数据生成部分通过训�
 
 1. **数据集准备**：收集大量真实身份验证材料作为训练数据集。
 2. **GAN训练**：利用GAN训练过程生成与真实数据分布相近的假数据集，同时确保生成的数据不会泄露个人身份信息。
-   
+
 #### 数据验证步骤：
 
 1. **差分隐私添加**：在验证用户输入的数据之前，通过差分隐私技术对数据进行扰动处理，以保护个人隐私。
@@ -80,13 +80,13 @@ D-ID技术中的核心数学模型包括：
 
 #### 差分隐私：
 
-$$|Pr_{D}(f(D(x))) - Pr_{D'}(f(D'(x)))| \\leq ε$$
+$$|Pr_{D}(f(D(x))) - Pr_{D'}(f(D'(x)))| \leq ε$$
 
 其中，$D$和$D'$是相邻的数据集，$f$是函数，$Pr$表示概率。
 
 #### GAN：
 
-$$\\min_G \\max_D V(D,G) = \\mathbb{E}_{x\\sim p_{data}}[\\log D(x)] + \\mathbb{E}_{z\\sim p_z}[ \\log(1-D(G(z)))]$$
+$$\min_G \max_D V(D,G) = \mathbb{E}_{x\sim p_{data}}[\log D(x)] + \mathbb{E}_{z\sim p_z}[ \log(1-D(G(z)))]$$
 
 其中，$V(D,G)$是损失函数，$p_{data}$是真实数据分布，$p_z$是噪声分布。
 
@@ -120,25 +120,25 @@ def build_generator():
     model.add(Dense(128 * 7 * 7, input_dim=100))
     model.add(Reshape((7, 7, 128)))
     model.add(BatchNormalization(momentum=0.8))
-    model.add(Conv2DTranspose(128, kernel_size=4, strides=2, padding=\"same\"))
+    model.add(Conv2DTranspose(128, kernel_size=4, strides=2, padding="same"))
     model.add(BatchNormalization(momentum=0.8))
     model.add(LeakyReLU(alpha=0.2))
-    model.add(Conv2DTranspose(64, kernel_size=4, strides=2, padding=\"same\"))
+    model.add(Conv2DTranspose(64, kernel_size=4, strides=2, padding="same"))
     model.add(BatchNormalization(momentum=0.8))
     model.add(LeakyReLU(alpha=0.2))
-    model.add(Conv2D(3, kernel_size=4, padding=\"same\", activation=\"tanh\"))
+    model.add(Conv2D(3, kernel_size=4, padding="same", activation="tanh"))
     return model
 
 # 定义判别器模型
 def build_discriminator():
     model = Sequential()
-    model.add(Conv2D(64, kernel_size=4, strides=2, input_shape=(64, 64, 3), padding=\"same\"))
+    model.add(Conv2D(64, kernel_size=4, strides=2, input_shape=(64, 64, 3), padding="same"))
     model.add(LeakyReLU(alpha=0.2))
-    model.add(Conv2D(128, kernel_size=4, strides=2, padding=\"same\"))
+    model.add(Conv2D(128, kernel_size=4, strides=2, padding="same"))
     model.add(BatchNormalization(momentum=0.8))
     model.add(LeakyReLU(alpha=0.2))
     model.add(Flatten())
-    model.add(Dense(1, activation=\"sigmoid\"))
+    model.add(Dense(1, activation="sigmoid"))
     return model
 
 # 创建GAN模型
@@ -184,8 +184,8 @@ D-ID技术在实际应用中具有广泛的应用前景，尤其在需要高度�
 
 ### 7.3 相关论文推荐
 
-- **差分隐私**：\"Differential Privacy\" by Cynthia Dwork, et al.
-- **GAN**：\"Generative Adversarial Networks\" by Ian Goodfellow, et al.
+- **差分隐私**："Differential Privacy" by Cynthia Dwork, et al.
+- **GAN**："Generative Adversarial Networks" by Ian Goodfellow, et al.
 
 ### 7.4 其他资源推荐
 

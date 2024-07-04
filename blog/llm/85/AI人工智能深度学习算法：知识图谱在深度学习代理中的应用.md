@@ -196,10 +196,10 @@ $$
 - 初始化节点表示 $h^0 = [1, 0, 0]^T$
 - 计算节点 $h^1$：
 $$
-h^1 = \sigma([1, 0, 0]^T \cdot \begin{bmatrix} 1 & 1 \\ 1 & 1 \\ 1 & 1 \end{bmatrix} \cdot [1, 0, 0]^T \cdot \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix} \cdot [1, 0, 0]^T \cdot \begin{bmatrix} 1 \\ 1 \end{bmatrix})
+h^1 = \sigma([1, 0, 0]^T \cdot \begin{bmatrix} 1 & 1 \ 1 & 1 \ 1 & 1 \end{bmatrix} \cdot [1, 0, 0]^T \cdot \begin{bmatrix} 1 & 1 \ 1 & 1 \end{bmatrix} \cdot [1, 0, 0]^T \cdot \begin{bmatrix} 1 \ 1 \end{bmatrix})
 $$
 $$
-h^1 = \sigma([1, 0, 0]^T \cdot \begin{bmatrix} 2 \\ 2 \end{bmatrix} \cdot \begin{bmatrix} 2 \\ 2 \end{bmatrix} \cdot \begin{bmatrix} 1 \\ 1 \end{bmatrix})
+h^1 = \sigma([1, 0, 0]^T \cdot \begin{bmatrix} 2 \ 2 \end{bmatrix} \cdot \begin{bmatrix} 2 \ 2 \end{bmatrix} \cdot \begin{bmatrix} 1 \ 1 \end{bmatrix})
 $$
 $$
 h^1 = \sigma([2, 2, 2]^T)

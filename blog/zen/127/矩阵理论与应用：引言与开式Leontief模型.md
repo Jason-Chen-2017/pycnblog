@@ -1,6 +1,6 @@
 # 矩阵理论与应用：引言与开式Leontief模型
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -89,8 +89,8 @@
 
 $$
 \begin{aligned}
-Ax + d &= x \\
-(I - A)x &= d \\
+Ax + d &= x \
+(I - A)x &= d \
 x &= (I - A)^{-1}d
 \end{aligned}
 $$
@@ -116,8 +116,8 @@ $$
 
 $$
 A = \begin{pmatrix}
-0.2 & 0.1 & 0.3 \\
-0.4 & 0.3 & 0.2 \\
+0.2 & 0.1 & 0.3 \
+0.4 & 0.3 & 0.2 \
 0.1 & 0.2 & 0.1
 \end{pmatrix}
 $$
@@ -126,8 +126,8 @@ $$
 
 $$
 d = \begin{pmatrix}
-100 \\
-200 \\
+100 \
+200 \
 300
 \end{pmatrix}
 $$
@@ -136,19 +136,19 @@ $$
 
 $$
 \begin{aligned}
-x &= (I - A)^{-1}d \\
+x &= (I - A)^{-1}d \
 &= \begin{pmatrix}
-0.8 & -0.1 & -0.3 \\
--0.4 & 0.7 & -0.2 \\
+0.8 & -0.1 & -0.3 \
+-0.4 & 0.7 & -0.2 \
 -0.1 & -0.2 & 0.9
 \end{pmatrix}^{-1} \begin{pmatrix}
-100 \\
-200 \\
+100 \
+200 \
 300
-\end{pmatrix} \\
+\end{pmatrix} \
 &= \begin{pmatrix}
-250 \\
-400 \\
+250 \
+400 \
 450
 \end{pmatrix}
 \end{aligned}

@@ -134,7 +134,7 @@ $$
 首先，将类别标签映射到一个高维空间中：
 
 $$
-c_1 = \begin{bmatrix} 0.1 \\ 0.2 \\ 0.3 \end{bmatrix}, \quad c_2 = \begin{bmatrix} 0.4 \\ 0.5 \\ 0.6 \end{bmatrix}
+c_1 = \begin{bmatrix} 0.1 \ 0.2 \ 0.3 \end{bmatrix}, \quad c_2 = \begin{bmatrix} 0.4 \ 0.5 \ 0.6 \end{bmatrix}
 $$
 
 然后，计算输入样本和每个类别概念之间的余弦相似度：
@@ -198,7 +198,7 @@ class ZeroShotLearning(nn.Module):
         self.tokenizer = BertTokenizer.from_pretrained(model_name)
         self.bert_model = BertModel.from_pretrained(model_name)
         self.fc = nn.Linear(768, num_labels)
-        
+
     def forward(self, text, labels):
         encodings = self.tokenizer(text, return_tensors='pt', padding=True)
         outputs = self.bert_model(**encodings)

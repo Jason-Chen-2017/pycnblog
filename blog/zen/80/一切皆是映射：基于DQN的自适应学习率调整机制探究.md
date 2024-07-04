@@ -87,8 +87,8 @@ $$ \alpha_{t+1} = \alpha_t \times \text{adjustment\_factor}(s_t, a_t, r_t) $$
 
 以一个简单的线性调整策略为例，假设$adjustment\_factor(s_t, a_t, r_t)$为：
 
-$$ adjustment\_factor(s_t, a_t, r_t) = 
-\begin{cases} 
+$$ adjustment\_factor(s_t, a_t, r_t) =
+\begin{cases}
 1 + \beta \times r_t & \text{if } r_t > \text{threshold} \\
 1 - \delta \times |r_t| & \text{if } r_t \leq \text{threshold} \\
 \end{cases} $$

@@ -149,8 +149,7 @@ $$
 元学习模型可以使用在线学习、迁移学习等方法。以下是一个简单的元学习模型公式：
 
 $$
-\theta_{t+1} = \theta_t + \alpha \cdot \
-abla_\theta J(\theta_t, X_t, Y_t)
+\theta_{t+1} = \theta_t + \alpha \cdot \nabla_\theta J(\theta_t, X_t, Y_t)
 $$
 
 其中，$\theta_t$表示第$t$次迭代的模型参数，$\alpha$是学习率，$X_t$表示输入数据，$Y_t$表示目标数据。

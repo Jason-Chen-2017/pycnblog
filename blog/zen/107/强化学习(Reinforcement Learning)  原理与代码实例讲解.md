@@ -115,7 +115,7 @@ Q-Learning是一种基于时间差分(Temporal Difference, TD)的无模型强化
         iv. 从经验回放池中随机采样一个小批量的转移 $(s_j, a_j, r_j, s_{j+1})$
         v. 计算目标Q值:
             $$y_j = \begin{cases}
-                r_j, & \text{if episode terminates at } j+1 \\
+                r_j, & \text{if episode terminates at } j+1 \
                 r_j + \gamma \max_{a'} Q(s_{j+1}, a'; \theta^-), & \text{otherwise}
             \end{cases}$$
             其中 $\theta^-$ 是目标Q网络的权重,用于计算下一状态的Q值。

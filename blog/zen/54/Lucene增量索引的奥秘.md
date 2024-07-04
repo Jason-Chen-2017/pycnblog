@@ -96,10 +96,10 @@ writer.commit();
 ```java
 // 创建新文档
 Document doc2 = new Document();
-doc2.add(new TextField("title", "Apache Solr", Field.Store.YES));  
+doc2.add(new TextField("title", "Apache Solr", Field.Store.YES));
 doc2.add(new TextField("content", "Solr is a search engine built on Lucene.", Field.Store.YES));
 
-// 增量添加文档到索引  
+// 增量添加文档到索引
 writer.addDocument(doc2);
 writer.commit();
 ```
@@ -110,7 +110,7 @@ writer.commit();
 Term delTerm = new Term("title", "Apache Solr");
 
 // 删除包含指定词项的文档
-writer.deleteDocuments(delTerm);  
+writer.deleteDocuments(delTerm);
 writer.commit();
 ```
 

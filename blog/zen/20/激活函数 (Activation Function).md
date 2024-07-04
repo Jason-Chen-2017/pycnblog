@@ -22,35 +22,35 @@
 
 ### 濡染函数 (Sigmoid)：Sigmoid函数是最早用于神经网络中的激活函数之一，它将实数输入映射到（0,1）区间内，常用于二分类问题的输出层。其公式为：
 
-$$ f(x) = \\frac{1}{1 + e^{-x}} $$
+$$ f(x) = \frac{1}{1 + e^{-x}} $$
 
 ### 修正线性单元 (ReLU)：ReLU函数是一个简单且有效的激活函数，其公式为：
 
-$$ f(x) = \\max(0, x) $$
+$$ f(x) = \max(0, x) $$
 
 ### Leaky ReLU：为了解决ReLU函数在零值处的“死亡”问题，引入了Leaky ReLU，其公式为：
 
-$$ f(x) = \\begin{cases} 
-      x & \\text{if } x > 0 \\\\
-      \\alpha x & \\text{if } x \\leq 0 \\\\
-   \\end{cases} $$
+$$ f(x) = \begin{cases}
+      x & \text{if } x > 0 \\\
+      \alpha x & \text{if } x \leq 0 \\\
+   \end{cases} $$
 
 ### ELU：ELU函数试图解决ReLU的“死亡”问题，并引入了负指数项，其公式为：
 
-$$ f(x) = \\begin{cases} 
-      x & \\text{if } x > 0 \\\\
-      \\alpha(e^x - 1) & \\text{if } x \\leq 0 \\\\
-   \\end{cases} $$
+$$ f(x) = \begin{cases}
+      x & \text{if } x > 0 \\\
+      \alpha(e^x - 1) & \text{if } x \leq 0 \\\
+   \end{cases} $$
 
 ### Swish：Swish函数是一种自适应激活函数，通过乘以输入来调整输出，其公式为：
 
-$$ f(x) = x \\cdot \\sigma(x) $$
+$$ f(x) = x \cdot \sigma(x) $$
 
 ### SELU：SELU函数结合了正向激励和负向抑制，旨在提高神经网络的稳定性，其公式为：
 
-$$ f(x) = \\lambda (\\phi(x)) $$
+$$ f(x) = \lambda (\phi(x)) $$
 
-其中，$\\phi(x)$是Sigmoid函数，$\\lambda = 1.0507$。
+其中，$\phi(x)$是Sigmoid函数，$\lambda = 1.0507$。
 
 ## 3. 核心算法原理 & 具体操作步骤
 
@@ -62,7 +62,7 @@ $$ f(x) = \\lambda (\\phi(x)) $$
 
 对于每个神经元 $i$ 和输入 $x_j$ 的权重 $w_{ij}$，计算加权和 $z_i$：
 
-$$ z_i = \\sum_{j=1}^{n} w_{ij}x_j + b_i $$
+$$ z_i = \sum_{j=1}^{n} w_{ij}x_j + b_i $$
 
 其中 $b_i$ 是偏置项。然后应用激活函数 $f(z_i)$ 得到神经元的输出：
 
@@ -83,25 +83,25 @@ $$ a_i = f(z_i) $$
 
 以ReLU为例，构建一个简单的线性变换模型：
 
-$$ y = \\theta_1x_1 + \\theta_2x_2 + \\theta_3x_3 + \\theta_0 $$
+$$ y = \theta_1x_1 + \theta_2x_2 + \theta_3x_3 + \theta_0 $$
 
-其中 $\\theta_i$ 是参数，$x_i$ 是输入特征。应用ReLU激活函数：
+其中 $\theta_i$ 是参数，$x_i$ 是输入特征。应用ReLU激活函数：
 
-$$ y' = \\max(0, y) $$
+$$ y' = \max(0, y) $$
 
 ### 公式推导过程
 
 以Swish函数为例，推导其激活过程：
 
-$$ g(x) = x \\cdot \\sigma(x) $$
+$$ g(x) = x \cdot \sigma(x) $$
 
-其中 $\\sigma(x)$ 是Sigmoid函数：
+其中 $\sigma(x)$ 是Sigmoid函数：
 
-$$ \\sigma(x) = \\frac{1}{1 + e^{-x}} $$
+$$ \sigma(x) = \frac{1}{1 + e^{-x}} $$
 
 因此：
 
-$$ g(x) = x \\cdot \\frac{1}{1 + e^{-x}} $$
+$$ g(x) = x \cdot \frac{1}{1 + e^{-x}} $$
 
 ### 案例分析与讲解
 
@@ -110,7 +110,7 @@ $$ g(x) = x \\cdot \\frac{1}{1 + e^{-x}} $$
 ### 常见问题解答
 
 - **如何选择合适的激活函数？**：选择依赖于具体任务和模型结构。例如，对于分类任务，Sigmoid或Softmax常用于输出层；对于隐藏层，ReLU因其易于训练而流行。
-  
+
 ## 5. 项目实践：代码实例和详细解释说明
 
 ### 开发环境搭建

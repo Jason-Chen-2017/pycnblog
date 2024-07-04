@@ -168,12 +168,10 @@ $$
 3. **梯度下降**：
 
 $$
-\theta = \theta - \alpha \
-abla_\theta L
+\theta = \theta - \alpha \nabla_\theta L
 $$
 
-其中 $\theta$ 为模型参数，$\alpha$ 为学习率，$\
-abla_\theta L$ 为损失函数对参数的梯度。
+其中 $\theta$ 为模型参数，$\alpha$ 为学习率，$\nabla_\theta L$ 为损失函数对参数的梯度。
 
 ### 4.3 案例分析与讲解
 

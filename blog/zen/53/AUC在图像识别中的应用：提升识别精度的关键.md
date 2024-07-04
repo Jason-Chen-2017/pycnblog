@@ -59,7 +59,7 @@ E --> F[F1值]
 1. 将样本按照预测概率从高到低排序。
 2. 初始化变量:
    - P = 0 (正样本数)
-   - N = 0 (负样本数) 
+   - N = 0 (负样本数)
    - acc = 0 (累积的AUC值)
 3. 遍历排序后的样本列表,对每个样本:
    - 如果当前样本是正样本,P += 1。
@@ -74,7 +74,7 @@ E --> F[F1值]
 
 $
 I(x, y) = \begin{cases}
-1, & \text{if } x > y \\
+1, & \text{if } x > y \
 0, & \text{otherwise}
 \end{cases}
 $
@@ -160,12 +160,12 @@ def auc(y_true, y_pred):
     # 对样本按照预测概率从高到低排序
     sorted_indices = np.argsort(y_pred)[::-1]
     y_true = np.array(y_true)[sorted_indices]
-    
+
     # 初始化变量
     P = 0
     N = 0
     acc = 0
-    
+
     # 遍历排序后的样本
     for label in y_true:
         if label == 1:
@@ -173,7 +173,7 @@ def auc(y_true, y_pred):
         else:
             N += 1
             acc += P
-    
+
     # 计算AUC
     auc = acc / (P * N)
     return auc

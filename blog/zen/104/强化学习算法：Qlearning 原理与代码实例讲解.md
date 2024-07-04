@@ -265,7 +265,7 @@ class QNetwork(nn.Module):
         super(QNetwork, self).__init__()
         self.fc1 = nn.Linear(input_size, 64)
         self.fc2 = nn.Linear(64, action_size)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)
@@ -281,7 +281,7 @@ class QLearningAgent:
         self.epsilon = epsilon
         self.model = QNetwork(state_size, action_size)
         self.memory = deque(maxlen=2000)
-    
+
     def act(self, state):
         if random.random() < self.epsilon:
             return random.randrange(self.action_size)
@@ -289,10 +289,10 @@ class QLearningAgent:
             state = torch.FloatTensor(state).unsqueeze(0)
             actions = self.model(state)
             return torch.argmax(actions, dim=1).item()
-    
+
     def remember(self, state, action, reward, next_state, done):
         self.memory.append((state, action, reward, next_state, done))
-    
+
     def replay(self, batch_size):
         states, actions, rewards, next_states, dones = zip(*random.sample(self.memory, batch_size))
         states = torch.FloatTensor(states)
@@ -300,17 +300,17 @@ class QLearningAgent:
         rewards = torch.tensor(rewards)
         next_states = torch.FloatTensor(next_states)
         dones = torch.tensor(dones).unsqueeze(1)
-        
+
         q_values_next = self.model(next_states).max(1, keepdim=True)[0].detach()
         q_values_next[dones] = 0
         q_values = self.model(states).gather(1, actions.unsqueeze(1)).squeeze(1)
         q_values = q_values + self.gamma * q_values_next
-        
+
         optimizer.zero_grad()
         loss = nn.functional.mse_loss(q_values, q_values_next)
         loss.backward()
         optimizer.step()
-    
+
     def load(self, name):
         checkpoint = torch.load(name)
         self.model.load_state_dict(checkpoint['model_state_dict'])

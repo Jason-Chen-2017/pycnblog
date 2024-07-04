@@ -1,7 +1,7 @@
 # Logstash原理与代码实例讲解
 
 ## 1. 背景介绍
-### 1.1 问题的由来  
+### 1.1 问题的由来
 在大数据时代，海量的数据正以前所未有的速度增长。如何高效地收集、处理和分析这些数据，已经成为各行各业面临的重大挑战。传统的数据处理方式已经无法满足实时性和可扩展性的要求。因此，亟需一种高效、灵活的数据处理工具。
 
 ### 1.2 研究现状
@@ -14,7 +14,7 @@ Logstash是Elastic Stack家族的重要成员，是一个开源的数据处理�
 本文将从以下几个方面对Logstash进行深入探讨：
 
 1. Logstash的核心概念与工作原理
-2. Logstash的插件体系与配置语法  
+2. Logstash的插件体系与配置语法
 3. Logstash的数据处理流程和内部机制
 4. Logstash的实战案例与最佳实践
 5. Logstash的性能调优与问题排查
@@ -55,7 +55,7 @@ Logstash的数据处理流程可以分为以下几个步骤：
 Logstash的优点有：
 
 - 插件化的架构，灵活可扩展
-- 支持多种数据源和目标存储  
+- 支持多种数据源和目标存储
 - 内置丰富的数据转换能力
 - 配置简单，学习门槛低
 
@@ -65,11 +65,11 @@ Logstash的优点有：
 - 不支持数据的连接和聚合操作
 - 需要额外的监控和管理组件，运维成本高
 
-### 3.4 算法应用领域  
+### 3.4 算法应用领域
 Logstash最常见的应用场景包括：
 
 - 日志收集与解析
-- 数据同步与迁移  
+- 数据同步与迁移
 - 安全信息和事件管理
 - 物联网数据采集与处理
 
@@ -79,8 +79,8 @@ Logstash的数据处理可以抽象为一个多级队列系统，假设有m个Pi
 
 $$
 \begin{aligned}
-\frac{dQ_i(t)}{dt} &= \lambda_i(t) - \mu_i(t) \\
-Q_i(t) &\ge 0, \quad i=1,2,\cdots,m \\
+\frac{dQ_i(t)}{dt} &= \lambda_i(t) - \mu_i(t) \
+Q_i(t) &\ge 0, \quad i=1,2,\cdots,m \
 \mu_i(t) &= \sum_{j=1}^{n} \mu_{ij}(t)
 \end{aligned}
 $$
@@ -121,20 +121,20 @@ $$
 根据上述公式，可以计算出：
 
 - Pipeline 1的平均处理时间：$\overline{S_1} = 10 + 20 + 30 = 60ms$
-- Pipeline 1的利用率：$\rho_1 = 100 \times 0.06 = 0.6$  
+- Pipeline 1的利用率：$\rho_1 = 100 \times 0.06 = 0.6$
 - Pipeline 1的平均等待时间：$\overline{W_1} = \frac{100 \times 0.06^2}{2(1-0.6)} + 0.06 = 0.105s$
 - Pipeline 1的平均队列长度：$\overline{Q_1} = 100 \times 0.105 = 10.5$
 
 - Pipeline 2的平均处理时间：$\overline{S_2} = 20 + 30 + 40 = 90ms$
 - Pipeline 2的利用率：$\rho_2 = 50 \times 0.09 = 0.45$
-- Pipeline 2的平均等待时间：$\overline{W_2} = \frac{50 \times 0.09^2}{2(1-0.45)} + 0.09 = 0.1145s$  
+- Pipeline 2的平均等待时间：$\overline{W_2} = \frac{50 \times 0.09^2}{2(1-0.45)} + 0.09 = 0.1145s$
 - Pipeline 2的平均队列长度：$\overline{Q_2} = 50 \times 0.1145 = 5.725$
 
 ### 4.4 常见问题解答
-Q: Logstash的性能瓶颈在哪里？  
+Q: Logstash的性能瓶颈在哪里？
 A: Logstash的性能主要取决于Filter的处理速度和Output的写入速度。可以通过增加Worker线程数、优化正则表达式、使用高性能的编解码器等方式来提升性能。
 
-Q: 如何避免Logstash出现数据丢失？  
+Q: 如何避免Logstash出现数据丢失？
 A: 可以在Output中启用`flush_interval`参数，定期将内存中的数据刷新到磁盘。同时，还可以配置`retry_limit`和`retry_delay`参数，自动重试失败的写入操作。
 
 ## 5. 项目实践：代码实例和详细解释说明

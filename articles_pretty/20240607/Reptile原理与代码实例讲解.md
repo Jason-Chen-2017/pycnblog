@@ -40,8 +40,7 @@ Reptile算法的核心步骤包括：
 
 设 $M$ 表示任务集合，$f_i$ 是第 $i$ 个任务的目标函数，$\\theta$ 是模型参数。Reptile算法的目标是在任务集上学习一个函数 $\\hat{f}$，使得 $\\hat{f}$ 在新任务上的表现接近最佳。具体公式如下：
 
-$$\\hat{\\theta} = \\argmin_{\\theta} \\sum_{i \\in M} L(\\theta; f_i) + \\lambda \\left\\| \
-abla_{\\theta} \\sum_{i \\in M} L(\\theta; f_i) \\right\\|^2$$
+$$\\hat{\\theta} = \\argmin_{\\theta} \\sum_{i \\in M} L(\\theta; f_i) + \\lambda \\left\\| \nabla_{\\theta} \\sum_{i \\in M} L(\\theta; f_i) \\right\\|^2$$
 
 其中，$L(\\theta; f_i)$ 是第 $i$ 个任务上的损失函数，$\\lambda$ 是正则化系数，用于平衡学习过程中的拟合误差和参数变化。
 

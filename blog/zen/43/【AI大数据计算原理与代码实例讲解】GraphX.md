@@ -201,8 +201,8 @@ def community_detection(graph, maxCommunities):
             return Community(max(c1.id, c2.id), c1.size + c2.size, c1.members + c2.members)
 
         return rdd.aggregate(
-            (0, 0, []), 
-            (Community(0, 0, []), mark_partitioned), 
+            (0, 0, []),
+            (Community(0, 0, []), mark_partitioned),
             merge_communities_func)
 
     def mark_new_communities(g, rdd):
@@ -213,8 +213,8 @@ def community_detection(graph, maxCommunities):
                 return Community(max(c1.id, c2.id), c1.size + c2.size, c1.members + c2.members)
 
         return rdd.aggregate(
-            (0, 0, []), 
-            (Community(0, 0, []), merge_communities_func), 
+            (0, 0, []),
+            (Community(0, 0, []), merge_communities_func),
             merge_communities_func)
 
     partitions = range(maxCommunities)

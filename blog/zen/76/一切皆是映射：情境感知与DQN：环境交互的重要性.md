@@ -109,7 +109,7 @@ DQN及其变种在多个领域展现出强大的应用潜力，包括但不限�
 DQN算法基于强化学习框架，其核心数学模型可以表示为：
 
 $$
-Q(s,a;\theta) = E[r_t + \gamma \max_{a'}Q(s',a';\theta')] 
+Q(s,a;\theta) = E[r_t + \gamma \max_{a'}Q(s',a';\theta')]
 $$
 
 其中，$s$ 是状态，$a$ 是动作，$\theta$ 是Q网络的参数，$\gamma$ 是折扣因子，$r_t$ 是即时奖励，$s'$ 是新状态，$\theta'$ 是目标网络的参数。
@@ -174,11 +174,11 @@ class DQN:
         self.batch_size = batch_size
         self.buffer_size = buffer_size
         self.memory = deque(maxlen=buffer_size)
-        
+
         self.model = self.build_model()
         self.target_model = self.build_model()
         self.target_model.set_weights(self.model.get_weights())
-        
+
     def build_model(self):
         model = tf.keras.models.Sequential([
             Dense(24, input_shape=(self.state_size,), activation='relu'),
@@ -186,16 +186,16 @@ class DQN:
         ])
         model.compile(optimizer=tf.optimizers.Adam(lr=self.learning_rate), loss='mse')
         return model
-    
+
     def remember(self, state, action, reward, next_state, done):
         self.memory.append((state, action, reward, next_state, done))
-        
+
     def act(self, state):
         if np.random.rand() <= self.epsilon:
             return random.randrange(self.action_size)
         act_values = self.model.predict(state)
         return np.argmax(act_values[0])
-    
+
     def replay(self):
         minibatch = random.sample(self.memory, self.batch_size)
         for state, action, reward, next_state, done in minibatch:
@@ -207,10 +207,10 @@ class DQN:
             self.model.fit(state, target_f, epochs=1, verbose=0)
         if self.epsilon > 0.05:
             self.epsilon -= 0.01
-            
+
     def load(self, name):
         self.model.load_weights(name)
-        
+
     def save(self, name):
         self.model.save_weights(name)
 ```

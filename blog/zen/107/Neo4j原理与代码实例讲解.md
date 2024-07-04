@@ -137,7 +137,7 @@ Neo4j的图形数据库技术在以下领域有广泛应用:
 Neo4j的数学模型基于图论,将现实世界的实体和关系抽象为图形结构。一个图形$G$可以表示为$G=(V, E)$,其中$V$是节点集合,而$E$是边集合。
 
 $$
-V = \{v_1, v_2, \ldots, v_n\} \\
+V = \{v_1, v_2, \ldots, v_n\} \
 E = \{e_1, e_2, \ldots, e_m\}
 $$
 
@@ -164,8 +164,8 @@ shortest_path算法用于计算两个节点之间的最短路径。我们可以�
 
 $$
 \begin{align*}
-&\forall v \in V: \\
-&d[v] = \infty \\
+&\forall v \in V: \
+&d[v] = \infty \
 &prev[v] = \text{undefined}
 \end{align*}
 $$
@@ -178,16 +178,16 @@ $$
 
 1. 找到未访问节点中距离$s$最近的节点$u$,即$d[u]$最小
 2. 对于$u$的每个相邻节点$v$:
-   
+
    $$
    \text{alt} = d[u] + w(u, v)
    $$
-   
+
    如果$\text{alt} < d[v]$,则更新$d[v]$和$prev[v]$:
-   
+
    $$
    \begin{align*}
-   &d[v] = \text{alt} \\
+   &d[v] = \text{alt} \
    &prev[v] = u
    \end{align*}
    $$

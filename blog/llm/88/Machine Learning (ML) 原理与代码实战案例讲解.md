@@ -320,7 +320,7 @@ A：支持向量机通过最大化分类边界，使分类间隔最大。具体�
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n ml-env python=3.8 
+conda create -n ml-env python=3.8
 conda activate ml-env
 ```
 3. 安装常用的Python包：

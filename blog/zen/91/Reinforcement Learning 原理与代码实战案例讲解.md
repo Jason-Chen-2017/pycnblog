@@ -171,7 +171,7 @@ class DQN(tf.keras.Model):
     def __init__(self, state_dim, action_dim):
         super(DQN, self).__init__()
         self.fc = tf.keras.layers.Dense(action_dim, input_dim=state_dim)
-    
+
     def call(self, x):
         return self.fc(x)
 
@@ -184,16 +184,16 @@ class DQNAgent:
         self.model = DQN(state_dim, action_dim)
         self.optimizer = tf.keras.optimizers.Adam(learning_rate=learning_rate)
         self.memory = []
-    
+
     def remember(self, state, action, reward, next_state, done):
         self.memory.append([state, action, reward, next_state, done])
-    
+
     def act(self, state):
         state = tf.convert_to_tensor(state, dtype=tf.float32)
         act_values = self.model(state)
         act_values = tf.nn.softmax(act_values).numpy()
         return np.random.choice(self.action_dim, p=act_values)
-    
+
     def replay(self, batch_size):
         minibatch = random.sample(self.memory, batch_size)
         for state, action, reward, next_state, done in minibatch:

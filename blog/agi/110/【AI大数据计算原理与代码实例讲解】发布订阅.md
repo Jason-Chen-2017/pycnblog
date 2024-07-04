@@ -155,18 +155,18 @@ public class KafkaProducerExample {
     public static void main(String[] args) {
         // 创建Kafka生产者
         KafkaProducer<String, String> producer = new KafkaProducer<String, String>(ConfigBuilder());
-        
+
         // 发布消息
         for (int i = 0; i < 10; i++) {
             String message = "Message " + i;
             producer.send(new ProducerRecord<String, String>("test-topic", message));
             System.out.println("Sent: " + message);
         }
-        
+
         // 关闭生产者
         producer.close();
     }
-    
+
     public static Properties ConfigBuilder() {
         Properties props = new Properties();
         props.put("bootstrap.servers", "localhost:9092");
@@ -196,10 +196,10 @@ public class KafkaConsumerExample {
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
         KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(props);
-        
+
         // 订阅主题
         consumer.subscribe(Arrays.asList("test-topic"));
-        
+
         // 拉取消息
         while (true) {
             ConsumerRecord<String, String> record = consumer.poll(100);

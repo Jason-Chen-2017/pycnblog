@@ -135,26 +135,26 @@ class ServiceRobot:
         self.environment = environment
         self.position = self.environment.start_position
         self.direction = np.array([np.cos(np.pi/2), np.sin(np.pi/2)])  # 北方向
-        
+
     def sense_environment(self):
         obstacles = self.environment.get_obstacles()
         clean_areas = self.environment.get_clean_areas()
         return obstacles, clean_areas
-    
+
     def move_to(self, target):
         direction = target - self.position
         self.position += direction * self.environment.speed
         self.direction = direction / np.linalg.norm(direction)
         return self.position
-    
+
     def clean_area(self, area):
         # 执行清洁动作，假定清洁动作已经定义好
         pass
-    
+
     def learn_from_experience(self, experiences):
         # 强化学习算法实现，如Q-learning
         pass
-    
+
     def main_loop(self):
         while True:
             obstacles, clean_areas = self.sense_environment()

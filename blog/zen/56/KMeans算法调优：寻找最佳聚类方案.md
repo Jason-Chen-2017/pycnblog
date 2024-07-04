@@ -17,7 +17,7 @@
 K-Means是一种典型的基于划分的聚类算法。它通过迭代的方式,不断更新簇的中心点和每个样本的簇标记,最终收敛得到聚类结果。其基本步骤如下:
 1. 随机选择K个初始聚类中心点
 2. 计算每个样本到各个中心点的距离,将其分配到距离最近的簇
-3. 更新每个簇的中心点为该簇内所有样本的均值 
+3. 更新每个簇的中心点为该簇内所有样本的均值
 4. 重复步骤2-3,直到簇的中心点不再变化或达到最大迭代次数
 
 #### 1.2.2 K-Means的优缺点分析
@@ -130,27 +130,27 @@ class KMeans:
         self.max_iter = max_iter
         self.centroids = None
         self.labels = None
-        
+
     def fit(self, X):
         # 随机选择初始中心点
         idx = np.random.choice(X.shape[0], self.n_clusters, replace=False)
         self.centroids = X[idx]
-        
+
         for _ in range(self.max_iter):
             # 样本分配
             distances = self._calc_distances(X)
             self.labels = np.argmin(distances, axis=1)
-            
+
             # 中心点更新
             for i in range(self.n_clusters):
                 self.centroids[i] = X[self.labels == i].mean(axis=0)
-                
+
     def _calc_distances(self, X):
         distances = np.zeros((X.shape[0], self.n_clusters))
         for i in range(self.n_clusters):
             distances[:, i] = np.linalg.norm(X - self.centroids[i], axis=1)
         return distances
-    
+
     def predict(self, X):
         distances = self._calc_distances(X)
         return np.argmin(distances, axis=1)

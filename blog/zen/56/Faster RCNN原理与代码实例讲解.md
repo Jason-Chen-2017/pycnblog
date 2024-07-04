@@ -62,9 +62,9 @@ RPN的主要作用是从输入图像中生成高质量的候选目标边界框�
 
 $$
 \begin{aligned}
-t_x &= (G_x - P_x) / P_w \\
-t_y &= (G_y - P_y) / P_h \\
-t_w &= \log(G_w / P_w) \\
+t_x &= (G_x - P_x) / P_w \
+t_y &= (G_y - P_y) / P_h \
+t_w &= \log(G_w / P_w) \
 t_h &= \log(G_h / P_h)
 \end{aligned}
 $$
@@ -81,7 +81,7 @@ $$
 
 $$
 \text{smooth}_{L_1}(x) = \begin{cases}
-0.5x^2 & \text{if } |x| < 1 \\
+0.5x^2 & \text{if } |x| < 1 \
 |x| - 0.5 & \text{otherwise}
 \end{cases}
 $$

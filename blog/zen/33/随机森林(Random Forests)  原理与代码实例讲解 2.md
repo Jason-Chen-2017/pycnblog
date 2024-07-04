@@ -97,15 +97,15 @@
 
 随机森林的数学模型可以表示为：
 
-$$f(\\mathbf{x}) = \\sum_{i=1}^{n} w_i f_i(\\mathbf{x})$$
+$$f(\mathbf{x}) = \sum_{i=1}^{n} w_i f_i(\mathbf{x})$$
 
-其中，$f_i(\\mathbf{x})$表示第$i$个决策树的预测结果，$w_i$表示第$i$个决策树的权重。
+其中，$f_i(\mathbf{x})$表示第$i$个决策树的预测结果，$w_i$表示第$i$个决策树的权重。
 
 ### 4.2 公式推导过程
 
 随机森林的权重可以通过以下公式计算：
 
-$$w_i = \\frac{1}{n}$$
+$$w_i = \frac{1}{n}$$
 
 其中，$n$表示决策树的数量。
 
@@ -190,7 +190,7 @@ clf.fit(X, y)
 y_pred = clf.predict(X)
 
 # 评估模型
-print(\"准确率：\", accuracy_score(y, y_pred))
+print("准确率：", accuracy_score(y, y_pred))
 ```
 
 ### 5.3 代码解读与分析
@@ -248,9 +248,9 @@ print(\"准确率：\", accuracy_score(y, y_pred))
 
 ### 7.3 相关论文推荐
 
-1. **\"Random Forests\": by Leo Breiman, 2001
+1. **"Random Forests": by Leo Breiman, 2001
     - 这篇论文介绍了随机森林算法的原理和实现。
-2. **\"Random Forests for Classification and Regression\": by Leo Breiman, 1996
+2. **"Random Forests for Classification and Regression": by Leo Breiman, 1996
     - 这篇论文详细介绍了随机森林在分类和回归任务中的应用。
 
 ### 7.4 其他资源推荐

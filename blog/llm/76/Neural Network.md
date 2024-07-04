@@ -1,7 +1,7 @@
 
 # Neural Network
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -229,15 +229,15 @@ class Net(nn.Module):
 # 加载MNIST数据集
 train_loader = torch.utils.data DataLoader(
     datasets.MNIST(
-        root='./data', 
-        train=True, 
-        download=True, 
+        root='./data',
+        train=True,
+        download=True,
         transform=torch.transforms.Compose([
-            transforms.ToTensor(), 
+            transforms.ToTensor(),
             transforms.Normalize((0.1307,), (0.3081,))
         ])
-    ), 
-    batch_size=64, 
+    ),
+    batch_size=64,
     shuffle=True
 )
 
@@ -260,14 +260,14 @@ for epoch in range(10):
 # 评估模型
 test_loader = torch.utils.data DataLoader(
     datasets.MNIST(
-        root='./data', 
-        train=False, 
+        root='./data',
+        train=False,
         transform=torch.transforms.Compose([
-            transforms.ToTensor(), 
+            transforms.ToTensor(),
             transforms.Normalize((0.1307,), (0.3081,))
         ])
-    ), 
-    batch_size=1000, 
+    ),
+    batch_size=1000,
     shuffle=True
 )
 

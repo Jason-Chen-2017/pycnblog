@@ -98,9 +98,7 @@ $$\pi(a|s) = \frac{\exp\left(\theta^T f(s,a)\right)}{\sum_{a'}\exp\left(\theta^T
 
 自然对数的引入简化了梯度计算：
 
-$$\
-abla_\theta \ln \pi(a_t|s_t) = \frac{\
-abla_\theta \pi(a_t|s_t)}{\pi(a_t|s_t)}$$
+$$\nabla_\theta \ln \pi(a_t|s_t) = \frac{\nabla_\theta \pi(a_t|s_t)}{\pi(a_t|s_t)}$$
 
 ### 4.3 案例分析与讲解
 

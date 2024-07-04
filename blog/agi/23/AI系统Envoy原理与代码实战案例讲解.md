@@ -69,30 +69,30 @@ Envoy广泛应用于智能推荐、自动驾驶、医疗诊断、金融风控、
 数据预处理通常涉及数据清洗和转换，可以表示为：
 
 $$
-D_{clean} = D_{raw} \\circ \\text{clean}(D_{raw})
+D_{clean} = D_{raw} \circ \text{clean}(D_{raw})
 $$
 
-其中，$D_{raw}$表示原始数据集，$\\text{clean}(D_{raw})$表示清洗操作。
+其中，$D_{raw}$表示原始数据集，$\text{clean}(D_{raw})$表示清洗操作。
 
 #### 模型服务层：
 
 模型训练通常涉及最小化损失函数，例如交叉熵损失函数：
 
 $$
-L = -\\sum_{i=1}^{n} y_i \\log(\\hat{y}_i)
+L = -\sum_{i=1}^{n} y_i \log(\hat{y}_i)
 $$
 
-其中，$y_i$表示真实的标签，$\\hat{y}_i$表示模型预测的概率。
+其中，$y_i$表示真实的标签，$\hat{y}_i$表示模型预测的概率。
 
 #### 决策引擎：
 
 决策制定基于模型输出和业务规则，可以表示为：
 
 $$
-\\text{Decision} = \\text{rule}(M, \\text{context})
+\text{Decision} = \text{rule}(M, \text{context})
 $$
 
-其中，$M$表示模型输出，$\\text{context}$表示业务上下文。
+其中，$M$表示模型输出，$\text{context}$表示业务上下文。
 
 ### 4.2 公式推导过程
 
@@ -101,10 +101,10 @@ $$
 监控指标可以是系统性能指标，如响应时间、错误率等，通过统计计算得出：
 
 $$
-\\text{Response Time} = \\frac{\\sum_{i=1}^{n} \\text{time}(request_i)}{n}
+\text{Response Time} = \frac{\sum_{i=1}^{n} \text{time}(request_i)}{n}
 $$
 
-其中，$n$表示请求次数，$\\text{time}(request_i)$表示第$i$个请求的响应时间。
+其中，$n$表示请求次数，$\text{time}(request_i)$表示第$i$个请求的响应时间。
 
 ### 4.3 案例分析与讲解
 
@@ -162,8 +162,8 @@ public class EnvoySystem {
         String decision = decisionEngine.makeDecision(predictions);
 
         // 监控与日志流程
-        monitoringLogger.log(\"Processed data\", predictions);
-        monitoringLogger.log(\"Made decision\", decision);
+        monitoringLogger.log("Processed data", predictions);
+        monitoringLogger.log("Made decision", decision);
     }
 }
 ```

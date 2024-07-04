@@ -200,7 +200,7 @@ import numpy as np
 def q_learning(env, episodes=1000, learning_rate=0.1, discount_factor=0.9, exploration_rate=1.0, decay_rate=0.99, min_exploration=0.01):
     # 初始化 Q 表
     q_table = np.zeros((env.observation_space.n, env.action_space.n))
-    
+
     for episode in range(episodes):
         state = env.reset()
         done = False
@@ -243,10 +243,10 @@ def dqn(env, episodes=1000, batch_size=64, learning_rate=0.001, gamma=0.99, epsi
     ])
     target_model.set_weights(model.get_weights())
     model.compile(optimizer=tf.optimizers.Adam(learning_rate), loss='mse')
-    
+
     # 创建经验回放缓冲区
     memory = deque(maxlen=memory_size)
-    
+
     for episode in range(episodes):
         state = env.reset()
         done = False

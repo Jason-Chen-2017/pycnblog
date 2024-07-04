@@ -155,17 +155,17 @@ RNN是一种适用于序列数据的深度学习模型，能够处理具有时�
 
 #### 卷积层
 
-假设输入图像为$X \\in \\mathbb{R}^{W \\times H \\times C}$，卷积核为$K \\in \\mathbb{R}^{K_w \\times K_h \\times C}$，步长为$s$，则卷积层输出的特征图$F$可以表示为：
+假设输入图像为$X \in \mathbb{R}^{W \times H \times C}$，卷积核为$K \in \mathbb{R}^{K_w \times K_h \times C}$，步长为$s$，则卷积层输出的特征图$F$可以表示为：
 
-$$F_{ij} = \\sum_{c} (X_{i:i+s, j:j+s, c} \\cdot K_{c})$$
+$$F_{ij} = \sum_{c} (X_{i:i+s, j:j+s, c} \cdot K_{c})$$
 
 其中，$i, j$表示特征图的位置，$c$表示卷积核的通道。
 
 #### 池化层
 
-假设输入特征图为$F \\in \\mathbb{R}^{W \\times H \\times C}$，池化窗口为$W_p \\times H_p$，步长为$s_p$，则池化层输出的特征图$G$可以表示为：
+假设输入特征图为$F \in \mathbb{R}^{W \times H \times C}$，池化窗口为$W_p \times H_p$，步长为$s_p$，则池化层输出的特征图$G$可以表示为：
 
-$$G_{ij} = \\max_{c} F_{i:i+s_p, j:j+s_p, c}$$
+$$G_{ij} = \max_{c} F_{i:i+s_p, j:j+s_p, c}$$
 
 其中，$i, j$表示特征图的位置。
 

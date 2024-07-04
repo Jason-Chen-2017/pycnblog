@@ -192,20 +192,20 @@ $$
 
 #### 4.3 案例分析与讲解
 
-**例 1：** 计算矩阵 $A = \begin{bmatrix} 2 & 1 \\ 0 & 2 \end{bmatrix}$ 的指数函数 $e^A$。
+**例 1：** 计算矩阵 $A = \begin{bmatrix} 2 & 1 \ 0 & 2 \end{bmatrix}$ 的指数函数 $e^A$。
 
 **解：**
 
 **步骤 1：** 矩阵 $A$ 的 Jordan 标准型为：
 
 $$
-J = \begin{bmatrix} 2 & 1 \\ 0 & 2 \end{bmatrix}.
+J = \begin{bmatrix} 2 & 1 \ 0 & 2 \end{bmatrix}.
 $$
 
 **步骤 2：** 计算 Jordan 块 $J$ 的指数函数：
 
 $$
-e^J = \begin{bmatrix} e^2 & e^2 \\ 0 & e^2 \end{bmatrix}.
+e^J = \begin{bmatrix} e^2 & e^2 \ 0 & e^2 \end{bmatrix}.
 $$
 
 **步骤 3：** 计算矩阵指数函数 $e^A$：
@@ -214,8 +214,8 @@ $$
 \begin{aligned}
 e^A &= e^{PJP^{-1}} \\
 &= P e^J P^{-1} \\
-&= \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} e^2 & e^2 \\ 0 & e^2 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \\
-&= \begin{bmatrix} e^2 & e^2 \\ 0 & e^2 \end{bmatrix}.
+&= \begin{bmatrix} 1 & 0 \ 0 & 1 \end{bmatrix} \begin{bmatrix} e^2 & e^2 \ 0 & e^2 \end{bmatrix} \begin{bmatrix} 1 & 0 \ 0 & 1 \end{bmatrix} \\
+&= \begin{bmatrix} e^2 & e^2 \ 0 & e^2 \end{bmatrix}.
 \end{aligned}
 $$
 
@@ -388,4 +388,4 @@ $$
 
 **回答：** 矩阵函数在控制理论、量子力学、机器学习等领域都有着广泛的应用。
 
-## 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+## 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

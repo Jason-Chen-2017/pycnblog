@@ -112,15 +112,15 @@ $$
 其中，$T_1$、$T_2$ 和 $T_3$ 可分别表示为：
 
 $$
-T_1 = \frac{L}{B \times R_1} 
+T_1 = \frac{L}{B \times R_1}
 $$
 
 $$
-T_2 = \frac{L}{B \times R_2} 
+T_2 = \frac{L}{B \times R_2}
 $$
 
 $$
-T_3 = \frac{L}{B \times R_3} 
+T_3 = \frac{L}{B \times R_3}
 $$
 
 其中，$L$ 为数据长度，$B$ 为数据传输速率，$R_1$、$R_2$ 和 $R_3$ 分别为设备模块、网关模块和云平台模块的数据传输速率。

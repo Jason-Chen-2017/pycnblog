@@ -147,10 +147,8 @@ $$\\min_{\\beta} \\sum_{i=1}^n (y_i - f(x_i))^2$$
 2. 传播误差到前一层：
    $$\\delta_{l-1} = \\frac{\\partial L}{\\partial x_{l-1}} = \\frac{\\partial L}{\\partial f(x_{l-1})} \\cdot \\frac{\\partial f(x_{l-1})}{\\partial x_{l-1}}$$
 3. 更新权重和偏置：
-   $$W_{l-1} \\leftarrow W_{l-1} - \\alpha \\cdot \
-abla_{W_{l-1}} L$$
-   $$b_{l-1} \\leftarrow b_{l-1} - \\alpha \\cdot \
-abla_{b_{l-1}} L$$
+   $$W_{l-1} \\leftarrow W_{l-1} - \\alpha \\cdot \nabla_{W_{l-1}} L$$
+   $$b_{l-1} \\leftarrow b_{l-1} - \\alpha \\cdot \nabla_{b_{l-1}} L$$
 
 ### 4.3 案例分析与讲解
 

@@ -3,7 +3,7 @@
 ## 1.背景介绍
 ### 1.1 人工智能的发展历程
 #### 1.1.1 早期人工智能
-#### 1.1.2 专家系统时代  
+#### 1.1.2 专家系统时代
 #### 1.1.3 机器学习与深度学习崛起
 
 ### 1.2 AI Agent的诞生
@@ -44,7 +44,7 @@ D --> A
 #### 3.1.2 Policy Gradient
 #### 3.1.3 Actor-Critic
 
-### 3.2 深度强化学习  
+### 3.2 深度强化学习
 #### 3.2.1 DQN Deep Q-Network
 #### 3.2.2 DDPG Deep Deterministic Policy Gradient
 #### 3.2.3 A3C Asynchronous Advantage Actor-Critic
@@ -55,13 +55,13 @@ D --> A
 #### 3.3.3 Decentralized Actor, Centralized Critic
 
 ## 4.数学模型和公式详细讲解举例说明
-### 4.1 马尔可夫决策过程MDP 
+### 4.1 马尔可夫决策过程MDP
 一个MDP可以表示为一个五元组 $\langle S,A,P,R,\gamma \rangle$：
 
 - $S$ 是有限的状态集合
-- $A$ 是有限的动作集合  
+- $A$ 是有限的动作集合
 - $P$ 是状态转移概率矩阵，$P_{ss'}^a=P[S_{t+1}=s'|S_t=s,A_t=a]$
-- $R$ 是回报函数，$R_s^a=E[R_{t+1}|S_t=s,A_t=a]$  
+- $R$ 是回报函数，$R_s^a=E[R_{t+1}|S_t=s,A_t=a]$
 - $\gamma$ 是折扣因子，$\gamma \in [0,1]$
 
 求解MDP的目标是寻找一个最优策略 $\pi^*$，使得期望总回报最大化：
@@ -75,7 +75,7 @@ $$Q(S_t,A_t) \leftarrow Q(S_t,A_t)+\alpha[R_{t+1}+\gamma \max_a Q(S_{t+1},a)-Q(S
 
 其中，$\alpha \in (0,1]$ 是学习率，$\gamma \in [0,1]$ 是折扣因子。
 
-### 4.3 Policy Gradient 
+### 4.3 Policy Gradient
 Policy Gradient方法直接对策略函数 $\pi_\theta(a|s)$ 的参数 $\theta$ 进行优化，其目标函数为：
 
 $$J(\theta)=E_{s_0,a_0,...}[\sum_{t=0}^\infty \gamma^t r_t]$$
@@ -100,23 +100,23 @@ class GridWorld:
         self.start = start
         self.goal = goal
         self.agent_pos = start
-        
+
     def reset(self):
         self.agent_pos = self.start
         return self.agent_pos
-    
+
     def step(self, action):
         if action == 0:  # 上
             next_pos = (self.agent_pos[0], max(0, self.agent_pos[1]-1))
         elif action == 1:  # 下
             next_pos = (self.agent_pos[0], min(self.height-1, self.agent_pos[1]+1))
         elif action == 2:  # 左
-            next_pos = (max(0, self.agent_pos[0]-1), self.agent_pos[1]) 
+            next_pos = (max(0, self.agent_pos[0]-1), self.agent_pos[1])
         elif action == 3:  # 右
             next_pos = (min(self.width-1, self.agent_pos[0]+1), self.agent_pos[1])
         else:
             raise ValueError("Invalid action!")
-        
+
         self.agent_pos = next_pos
         reward = 0
         done = False
@@ -133,14 +133,14 @@ class QLearningAgent:
         self.gamma = gamma
         self.epsilon = epsilon
         self.Q = np.zeros((env.width, env.height, 4))
-        
+
     def choose_action(self, state):
         if np.random.uniform() < self.epsilon:
             action = np.random.choice(4)
         else:
             action = np.argmax(self.Q[state[0], state[1], :])
         return action
-        
+
     def learn(self, state, action, reward, next_state, done):
         td_target = reward + self.gamma * np.max(self.Q[next_state[0], next_state[1], :]) * (1-done)
         td_error = td_target - self.Q[state[0], state[1], action]
@@ -150,7 +150,7 @@ class QLearningAgent:
 if __name__ == "__main__":
     env = GridWorld(5, 5, (0, 0), (4, 4))
     agent = QLearningAgent(env, alpha=0.1, gamma=0.9, epsilon=0.1)
-    
+
     num_episodes = 500
     for _ in range(num_episodes):
         state = env.reset()
@@ -160,7 +160,7 @@ if __name__ == "__main__":
             next_state, reward, done = env.step(action)
             agent.learn(state, action, reward, next_state, done)
             state = next_state
-            
+
     print(agent.Q)  # 输出学到的Q表
 ```
 
@@ -204,7 +204,7 @@ AI Agent可以应用于工业生产领域，通过分析设备运行数据，优
 ## 8.总结：未来发展趋势与挑战
 ### 8.1 AI Agent的发展趋势
 - 多模态感知与交互
-- 持续学习与自主进化  
+- 持续学习与自主进化
 - 群体协作与涌现智能
 - 安全可控与伦理道德
 
@@ -228,7 +228,7 @@ AI Agent的核心算法主要包括强化学习、深度强化学习和多智能
 设计AI Agent系统需要考虑以下几个关键因素：
 1. 明确系统目标和应用场景
 2. 选择合适的环境模型和状态表示
-3. 设计有效的奖励函数引导智能体学习  
+3. 设计有效的奖励函数引导智能体学习
 4. 权衡探索和利用，平衡样本效率和策略优化
 5. 采用稳定高效的学习算法更新策略
 6. 引入先验知识和人类反馈提升学习效果

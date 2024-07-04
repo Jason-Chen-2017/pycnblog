@@ -304,7 +304,7 @@ A：可以使用均方误差(MSE)、均方根误差(RMSE)等指标评估时间�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n timeseries-env python=3.8 
+conda create -n timeseries-env python=3.8
 conda activate timeseries-env
 ```
 

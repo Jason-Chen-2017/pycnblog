@@ -72,13 +72,11 @@ Reptile算法广泛应用于多个领域，包括但不限于自然语言处理�
 
 ### 4.1 数学模型构建
 
-设 $M_i$ 表示第 $i$ 个任务学习到的模型参数，$L_i(\\theta)$ 是第 $i$ 个任务的损失函数，$\\theta$ 是模型参数。Reptile算法的目标是通过学习新任务 $j$ 来更新模型参数，同时利用之前任务的信息。更新过程可以表示为：
+设 $M_i$ 表示第 $i$ 个任务学习到的模型参数，$L_i(\theta)$ 是第 $i$ 个任务的损失函数，$\theta$ 是模型参数。Reptile算法的目标是通过学习新任务 $j$ 来更新模型参数，同时利用之前任务的信息。更新过程可以表示为：
 
-$$ \\theta_j = \\theta_{j-1} + \\alpha \\cdot \\sum_{i=1}^{j-1} \
-abla_{\\theta_{j-1}} L_i(\\theta_{j-1}) $$
+$$ \theta_j = \theta_{j-1} + \alpha \cdot \sum_{i=1}^{j-1} \nabla_{\theta_{j-1}} L_i(\theta_{j-1}) $$
 
-其中，$\\alpha$ 是学习率，$\
-abla_{\\theta_{j-1}} L_i(\\theta_{j-1})$ 表示第 $i$ 个任务损失相对于第 $j-1$ 个任务参数的梯度。
+其中，$\alpha$ 是学习率，$\nabla_{\theta_{j-1}} L_i(\theta_{j-1})$ 表示第 $i$ 个任务损失相对于第 $j-1$ 个任务参数的梯度。
 
 ### 4.2 公式推导过程
 
@@ -92,7 +90,7 @@ abla_{\\theta_{j-1}} L_i(\\theta_{j-1})$ 表示第 $i$ 个任务损失相对于�
 
 - **为什么使用Reptile算法时性能有时会下降？**
   - 过度依赖旧任务的知识可能导致新任务的特定特征没有得到充分学习。在某些情况下，新任务可能需要更特定的参数调整，而Reptile算法倾向于保持旧任务的普遍性，这可能导致性能下降。
-  
+
 ## 5. 项目实践：代码实例和详细解释说明
 
 ### 5.1 开发环境搭建
@@ -121,7 +119,7 @@ class Reptile:
         # 学习新任务
         for _ in range(self.memory_size):
             self.model.train_on_memory()
-        
+
         # 返回新任务的预测结果
         predictions = self.model.predict(new_task_data)
         return predictions
@@ -130,7 +128,7 @@ class Reptile:
         # 计算损失相对于旧任务的梯度
         loss = self.model.compute_loss(new_task_data, new_task_labels)
         gradients = tf.gradients(loss, self.model.trainable_variables)
-        
+
         # 更新知识库
         self.memory.append(gradients)
 

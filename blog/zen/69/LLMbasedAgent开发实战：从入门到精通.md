@@ -158,4 +158,4 @@ A：LLM-based Agent 的性能评估指标包括任务完成率、用户满意度
 
 **Q：LLM-based Agent 会取代人类吗？**
 
-A：LLM-based Agent 是人类智能的补充，而非替代。LLM-based Agent 可以帮助人类完成重复性、繁琐的任务，但无法取代人类的创造力和判断力。 
+A：LLM-based Agent 是人类智能的补充，而非替代。LLM-based Agent 可以帮助人类完成重复性、繁琐的任务，但无法取代人类的创造力和判断力。

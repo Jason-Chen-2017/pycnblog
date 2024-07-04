@@ -43,7 +43,7 @@
 
 同时,我们还可以通过度量学习(Metric Learning)的方式,学习一个更有区分能力的距离度量,从而提高零射学习的性能。
 
-## 3.核心算法原理具体操作步骤 
+## 3.核心算法原理具体操作步骤
 
 零射学习算法的核心步骤可以概括为以下几个方面:
 
@@ -149,7 +149,7 @@ semantic_projector = nn.Linear(hidden_size, common_dim)
 ```python
 def contrastive_loss(visual_out, semantic_out, targets, margin=1.0):
     distances = (visual_out - semantic_out).pow(2).sum(1)
-    losses = 0.5 * (targets.float() * distances + 
+    losses = 0.5 * (targets.float() * distances +
                     (1 - targets.float()) * torch.clamp(margin - distances, min=0.0))
     return losses.mean()
 ```
@@ -164,12 +164,12 @@ for epoch in range(num_epochs):
         # 计算视觉特征
         visual_feats = visual_encoder(images)
         visual_out = visual_projector(visual_feats)
-        
+
         # 计算语义向量
         semantic_input = word_embeddings(descriptions)
         semantic_out, _ = semantic_encoder(semantic_input)
         semantic_out = semantic_projector(semantic_out[:, -1])
-        
+
         # 计算损失并反向传播
         loss = contrastive_loss(visual_out, semantic_out, targets)
         optimizer.zero_grad()

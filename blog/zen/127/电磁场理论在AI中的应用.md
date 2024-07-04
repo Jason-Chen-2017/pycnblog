@@ -42,9 +42,9 @@
 
 $$
 \begin{aligned}
-\nabla \cdot \mathbf{E} &= \frac{\rho}{\epsilon_0} \\
-\nabla \cdot \mathbf{B} &= 0 \\
-\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \\
+\nabla \cdot \mathbf{E} &= \frac{\rho}{\epsilon_0} \
+\nabla \cdot \mathbf{B} &= 0 \
+\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \
 \nabla \times \mathbf{B} &= \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \frac{\partial \mathbf{E}}{\partial t}
 \end{aligned}
 $$
@@ -435,4 +435,4 @@ Accuracy: 0.9804
 
 超材料是通过人工设计材料的电磁特性，实现对电磁波的操控的新型材料。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

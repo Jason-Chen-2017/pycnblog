@@ -1,7 +1,7 @@
 
 # 【AI大数据计算原理与代码实例讲解】事务
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 关键词
@@ -109,7 +109,7 @@
 
 $$
 T = \left\{ \begin{array}{l}
-O_1, O_2, \ldots, O_n \\
+O_1, O_2, \ldots, O_n \
 \end{array} \right.
 $$
 

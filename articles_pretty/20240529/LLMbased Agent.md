@@ -57,9 +57,7 @@ Policy gradient method的目标是找到一个策略 $\\pi(s)$，使得期望的
 
 $$J(\\theta)=\\mathbb{E}_{\\pi}[R],$$
 
-其中 $\\theta$ 表示 policy network 的参数， $R$ 表示单步获得的reward。我们希望增加策略的积分，即$\
-abla_\\theta J(\\theta) = \\mathbb{E}_{\\pi} [\
-abla_\\theta log\\pi(a|s)\\cdot R]$。
+其中 $\\theta$ 表示 policy network 的参数， $R$ 表示单步获得的reward。我们希望增加策略的积分，即$\nabla_\\theta J(\\theta) = \\mathbb{E}_{\\pi} [\nabla_\\theta log\\pi(a|s)\\cdot R]$。
 
 ## 5.项目实è·µ：代码实例和详细解释说明
 

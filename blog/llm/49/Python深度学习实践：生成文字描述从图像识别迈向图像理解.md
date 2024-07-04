@@ -86,11 +86,11 @@ $$
 
 $$
 \begin{aligned}
-f_t &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \\
-i_t &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \\
-\tilde{c}_t &= \tanh(W_c \cdot [h_{t-1}, x_t] + b_c) \\
-c_t &= f_t \odot c_{t-1} + i_t \odot \tilde{c}_t \\
-o_t &= \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) \\
+f_t &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \
+i_t &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \
+\tilde{c}_t &= \tanh(W_c \cdot [h_{t-1}, x_t] + b_c) \
+c_t &= f_t \odot c_{t-1} + i_t \odot \tilde{c}_t \
+o_t &= \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) \
 h_t &= o_t \odot \tanh(c_t)
 \end{aligned}
 $$
@@ -103,8 +103,8 @@ $$
 
 $$
 \begin{aligned}
-\alpha_t &= \text{softmax}(e_t) \\
-e_t &= \text{score}(h_t, v) \\
+\alpha_t &= \text{softmax}(e_t) \
+e_t &= \text{score}(h_t, v) \
 \hat{v}_t &= \sum_j \alpha_{t,j} v_j
 \end{aligned}
 $$
@@ -133,28 +133,28 @@ import torch.nn as nn
 class EncoderCNN(nn.Module):
     def __init__(self, embed_size):
         # ...
-        
+
     def forward(self, images):
         features = self.cnn(images)
         features = features.reshape(features.size(0), -1)
         features = self.embed(features)
         return features
 
-# 解码器: LSTM生成描述 
+# 解码器: LSTM生成描述
 class DecoderLSTM(nn.Module):
     def __init__(self, embed_size, hidden_size, vocab_size):
         # ...
-        
+
     def forward(self, features, captions):
         embeddings = self.embed(captions)
         hidden = self.init_hidden(features)
-        
+
         outputs = []
         for i in range(len(captions)):
             hidden, output = self.lstm(embeddings[i], hidden)
             output = self.linear(output)
             outputs.append(output)
-            
+
         outputs = torch.cat(outputs, 1)
         return outputs
 
@@ -162,25 +162,25 @@ class DecoderLSTM(nn.Module):
 class Attention(nn.Module):
     def __init__(self, hidden_size):
         # ...
-        
+
     def forward(self, features, hidden):
         scores = self.score(hidden, features)
         weights = F.softmax(scores, dim=1)
         context = weights.bmm(features.transpose(0,1))
         return context
-        
+
 # 整体模型
 class Model(nn.Module):
     def __init__(self, embed_size, hidden_size, vocab_size):
         self.encoder = EncoderCNN(embed_size)
         self.decoder = DecoderLSTM(embed_size, hidden_size, vocab_size)
         self.attention = Attention(hidden_size)
-        
+
     def forward(self, images, captions):
         features = self.encoder(images)
         outputs = self.decoder(features, captions)
         return outputs
-        
+
 # 训练
 criterion = nn.CrossEntropyLoss()
 model = Model(embed_size, hidden_size, vocab_size)
@@ -190,24 +190,24 @@ for epoch in range(num_epochs):
     for images, captions in dataloader:
         outputs = model(images, captions)
         loss = criterion(outputs, captions)
-        
+
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-        
+
 # 预测
 model.eval()
 with torch.no_grad():
     features = model.encoder(image)
     outputs = model.decoder(features, start_token)
-    
+
     caption = []
     for output in outputs:
         word = vocab.idx2word[output.argmax()]
         caption.append(word)
         if word == '<end>':
             break
-            
+
     print(' '.join(caption))
 ```
 

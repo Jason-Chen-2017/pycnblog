@@ -51,10 +51,8 @@
 
 1. 初始化策略参数$\\theta$。
 2. 在环境中执行策略$\\pi(\\theta)$，收集经验数据$(s_t, a_t, r_t, s_{t+1})$，其中$s_t$为状态，$a_t$为采取的行动，$r_t$为奖励，$s_{t+1}$为下一个状态。
-3. 利用收集到的经验数据计算策略梯度$\
-abla_{\\theta} J(\\pi(\\theta))$。
-4. 根据策略梯度更新策略参数$\\theta$：$\\theta \\leftarrow \\theta - \\alpha \
-abla_{\\theta} J(\\pi(\\theta))$，其中$\\alpha$为学习率。
+3. 利用收集到的经验数据计算策略梯度$\nabla_{\\theta} J(\\pi(\\theta))$。
+4. 根据策略梯度更新策略参数$\\theta$：$\\theta \\leftarrow \\theta - \\alpha \nabla_{\\theta} J(\\pi(\\theta))$，其中$\\alpha$为学习率。
 5. 重复步骤2-4，直至策略收敛。
 
 ### 3.3 算法优缺点
@@ -86,8 +84,7 @@ abla_{\\theta} J(\\pi(\\theta))$，其中$\\alpha$为学习率。
 
 策略梯度方法的核心是策略梯度公式。假设策略$\\pi(\\theta)$在状态$s$下的动作$a$的概率为$P(a | s; \\theta)$，那么策略梯度公式可以表示为：
 
-$$\
-abla_{\\theta} J(\\pi(\\theta)) = \\mathbb{E}_{s, a \\sim \\pi(\\theta)} \\left[ \\frac{\\partial \\log P(a | s; \\theta)}{\\partial \\theta} R(s, a) \\right]$$
+$$\nabla_{\\theta} J(\\pi(\\theta)) = \\mathbb{E}_{s, a \\sim \\pi(\\theta)} \\left[ \\frac{\\partial \\log P(a | s; \\theta)}{\\partial \\theta} R(s, a) \\right]$$
 
 其中，$J(\\pi(\\theta))$为策略$\\pi(\\theta)$的预期回报，$R(s, a)$为在状态$s$采取行动$a$所获得的奖励。
 
@@ -103,8 +100,7 @@ $$J(\\pi(\\theta)) = \\mathbb{E}_{s, a \\sim \\pi(\\theta)} \\left[ R(s, a) + \\
 
 2. **策略梯度下降算法**：
 
-$$\\theta \\leftarrow \\theta - \\alpha \
-abla_{\\theta} J(\\pi(\\theta))$$
+$$\\theta \\leftarrow \\theta - \\alpha \nabla_{\\theta} J(\\pi(\\theta))$$
 
 将贝尔曼方程代入策略梯度下降算法，得到：
 

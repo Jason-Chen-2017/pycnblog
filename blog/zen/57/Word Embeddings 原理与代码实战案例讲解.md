@@ -9,7 +9,7 @@
 
 ### 1.2 Word Embeddings在自然语言处理中的应用
 #### 1.2.1 文本分类
-#### 1.2.2 情感分析 
+#### 1.2.2 情感分析
 #### 1.2.3 机器翻译
 #### 1.2.4 问答系统
 
@@ -46,7 +46,7 @@ E --> G[蕴含词间语义关系]
 #### 3.1.1 LSA Latent Semantic Analysis
 #### 3.1.2 GloVe Global Vectors for Word Representation
 
-### 3.2 基于神经网络的方法  
+### 3.2 基于神经网络的方法
 #### 3.2.1 NNLM Neural Network Language Model
 #### 3.2.2 RNNLM Recurrent Neural Network Language Model
 #### 3.2.3 Word2Vec
@@ -58,7 +58,7 @@ graph LR
 A[语料库] --> B[构建词典]
 B --> C{选择训练算法}
 C -->|CBOW| D[Continuous Bag-of-Words]
-C -->|Skip-Gram| E[Skip-Gram Model] 
+C -->|Skip-Gram| E[Skip-Gram Model]
 D --> F[优化模型参数]
 E --> F
 F --> G[得到Word Embeddings]
@@ -72,7 +72,7 @@ F --> G[得到Word Embeddings]
 $$J_\theta = \frac{1}{T}\sum^T_{t=1} \log p(w_t | w_{t-c},...,w_{t-1},w_{t+1},...,w_{t+c}) $$
 #### 4.1.3 优化方法
 
-### 4.2 Word2Vec中的Skip-Gram模型 
+### 4.2 Word2Vec中的Skip-Gram模型
 #### 4.2.1 模型结构
 #### 4.2.2 目标函数:
 $$J_\theta = \frac{1}{T}\sum^T_{t=1} \sum_{-c \leq j \leq c, j \neq 0} \log p(w_{t+j}|w_t)$$
@@ -80,7 +80,7 @@ $$J_\theta = \frac{1}{T}\sum^T_{t=1} \sum_{-c \leq j \leq c, j \neq 0} \log p(w_
 
 ### 4.3 GloVe模型
 #### 4.3.1 共现矩阵
-#### 4.3.2 目标函数:  
+#### 4.3.2 目标函数:
 $$J = \sum_{i,j=1}^V f(X_{ij})(w_i^T\tilde w_j+b_i+\tilde b_j-\log X_{ij})^2$$
 #### 4.3.3 优化方法
 

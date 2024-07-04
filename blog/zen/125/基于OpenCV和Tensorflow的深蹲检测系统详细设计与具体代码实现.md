@@ -304,4 +304,4 @@ cv2.destroyAllWindows()
 
 深蹲检测系统的原理可以应用于其他运动动作的识别，例如俯卧撑、引体向上等。只需要对不同的动作进行相应的训练即可。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

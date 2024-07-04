@@ -292,4 +292,4 @@ if rule:
 
 **A:** 可以使用数据脱敏技术、加密技术等方式保护用户的隐私信息。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

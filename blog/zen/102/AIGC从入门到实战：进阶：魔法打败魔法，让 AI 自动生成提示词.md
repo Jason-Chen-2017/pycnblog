@@ -346,7 +346,7 @@ def apg_model():
 model = apg_model()
 
 # 编译模型
-model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=3e-5), 
+model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=3e-5),
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True))
 
 # 定义训练函数

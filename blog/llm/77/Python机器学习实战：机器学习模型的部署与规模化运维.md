@@ -207,13 +207,13 @@ import numpy as np
 class LinearRegression:
     def __init__(self):
         self.weights = None
-    
+
     def fit(self, X, y):
         X_mean = np.mean(X, axis=0)
         y_mean = np.mean(y)
         X_centered = X - X_mean
         self.weights = np.linalg.inv(X_centered.T.dot(X_centered)).dot(X_centered.T).dot(y - y_mean)
-    
+
     def predict(self, X):
         X_centered = X - np.mean(X, axis=0)
         return X_centered.dot(self.weights) + np.mean(y)

@@ -89,19 +89,19 @@ Transformer架构由两大部分组成：编码器和解码器。编码器接收
 
 ### 4.1 数学模型构建
 
-假设输入序列的长度为\\[L\\]，每个位置的输入向量大小为\\[D\\]，多头注意力头的数量为\\[H\\]，每个头的维度为\\[D'/H\\]。
+假设输入序列的长度为$$L$$，每个位置的输入向量大小为$$D$$，多头注意力头的数量为$$H$$，每个头的维度为$$D'/H$$。
 
 编码器模块的主要公式包括：
 
 #### 多头自注意力公式：
 $$
-\\text{MultiHeadAttention}(Q, K, V) = \\text{Concat}(head_1, ..., head_H)W^O
+\text{MultiHeadAttention}(Q, K, V) = \text{Concat}(head_1, ..., head_H)W^O
 $$
-其中，$head_i = \\text{Attention}(QW^Q_i, KW^K_i, VW^V_i)$，$W^Q, W^K, W^V$分别对应查询、键、值的权重矩阵，$W^O$是输出的权重矩阵。
+其中，$head_i = \text{Attention}(QW^Q_i, KW^K_i, VW^V_i)$，$W^Q, W^K, W^V$分别对应查询、键、值的权重矩阵，$W^O$是输出的权重矩阵。
 
 #### 前馈神经网络公式：
 $$
-FFN(x) = \\text{MLP}(xW^1 + b_1, W^2 + b_2)
+FFN(x) = \text{MLP}(xW^1 + b_1, W^2 + b_2)
 $$
 其中，$MLP$表示多层感知机，$W^1, W^2$是全连接层的权重矩阵，$b_1, b_2$是偏置项。
 
@@ -111,31 +111,31 @@ $$
 自注意力机制的计算过程可以分解为查询（Query）、键（Key）和值（Value）三部分的点积，再进行归一化和加权和操作。公式如下：
 
 $$
-\\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
 $$
 
-其中，$d_k$是键的维度，$\\text{softmax}$函数用于计算注意力权重。
+其中，$d_k$是键的维度，$\text{softmax}$函数用于计算注意力权重。
 
 #### 前馈神经网络推导：
 前馈神经网络通常包含两层全连接层，其中第一层应用激活函数，第二层不应用激活函数（或者应用线性变换）。具体公式如下：
 
 $$
-\\text{FFN}(x) = \\text{MLP}(xW^1 + b_1, W^2 + b_2)
+\text{FFN}(x) = \text{MLP}(xW^1 + b_1, W^2 + b_2)
 $$
 
-其中，$W^1$和$W^2$是全连接层的权重矩阵，$b_1$和$b_2$是偏置项，$\\text{MLP}$指的是多层感知机。
+其中，$W^1$和$W^2$是全连接层的权重矩阵，$b_1$和$b_2$是偏置项，$\text{MLP}$指的是多层感知机。
 
 ### 4.3 案例分析与讲解
 
 假设我们有一个简单的编码器模块，用于对文本进行编码。我们使用以下步骤进行案例分析：
 
 #### 输入序列：
-- 序列长度：\\[L = 5\\]
-- 输入向量大小：\\[D = 100\\]
+- 序列长度：$$L = 5$$
+- 输入向量大小：$$D = 100$$
 
 #### 参数设定：
-- 头数：\\[H = 4\\]
-- 每个头的维度：\\[D'/H = 25\\]
+- 头数：$$H = 4$$
+- 每个头的维度：$$D'/H = 25$$
 
 #### 计算过程：
 1. **位置嵌入**：为每个位置生成位置嵌入向量。
@@ -169,7 +169,7 @@ from torch import nn
 from transformers import BertModel
 
 class Encoder(nn.Module):
-    def __init__(self, bert_model_name=\"bert-base-uncased\"):
+    def __init__(self, bert_model_name="bert-base-uncased"):
         super(Encoder, self).__init__()
         self.bert = BertModel.from_pretrained(bert_model_name)
 

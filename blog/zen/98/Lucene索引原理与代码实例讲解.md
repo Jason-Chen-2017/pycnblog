@@ -24,7 +24,7 @@ Lucene 的核心是一个倒排索引结构,用于存储和快速查找文档中
 
 1. 核心概念与联系
 2. 核心算法原理及具体操作步骤
-3. 数学模型和公式详细讲解与案例分析  
+3. 数学模型和公式详细讲解与案例分析
 4. 项目实践:代码实例和详细解释说明
 5. 实际应用场景
 6. 工具和资源推荐
@@ -196,11 +196,11 @@ Lucene 的倒排索引算法可以广泛应用于各种需要全文检索功能�
 $$
 \begin{align*}
 \text{相关性}(Q, D) &= \begin{cases}
-1, & \text{if } Q \cap D \neq \emptyset\\
+1, & \text{if } Q \cap D \neq \emptyset\
 0, & \text{if } Q \cap D = \emptyset
-\end{cases}\\
+\end{cases}\
 &= \begin{cases}
-1, & \text{文档包含查询中的任意一个词条}\\
+1, & \text{文档包含查询中的任意一个词条}\
 0, & \text{文档不包含查询中的任何词条}
 \end{cases}
 \end{align*}

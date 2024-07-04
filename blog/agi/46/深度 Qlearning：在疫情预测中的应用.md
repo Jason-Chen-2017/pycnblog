@@ -134,7 +134,7 @@ class DQN:
         self.action_size = action_size
         self.learning_rate = learning_rate
         self.model = self._build_model()
-        
+
     def _build_model(self):
         model = Sequential([
             Dense(64, input_shape=(self.state_size,), activation='relu'),
@@ -143,7 +143,7 @@ class DQN:
         ])
         model.compile(loss='mse', optimizer=tf.keras.optimizers.Adam(learning_rate=self.learning_rate))
         return model
-    
+
     # 更多方法实现，如训练、预测等
 
 dqn = DQN(state_size=..., action_size=..., learning_rate=...)

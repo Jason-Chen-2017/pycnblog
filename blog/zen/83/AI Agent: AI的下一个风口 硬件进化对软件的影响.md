@@ -173,8 +173,7 @@ $$f(x) = \text{sign}(\sum_{i=1}^m \alpha_i y_i \phi(x_i) + b)$$
 
 随机梯度下降（SGD）是一种常用的优化算法，其数学模型为：
 
-$$\theta_{t+1} = \theta_t - \alpha \
-abla_{\theta} J(\theta_t)$$
+$$\theta_{t+1} = \theta_t - \alpha \nabla_{\theta} J(\theta_t)$$
 
 其中，$\theta$ 是模型参数，$J(\theta)$ 是损失函数，$\alpha$ 是学习率。
 

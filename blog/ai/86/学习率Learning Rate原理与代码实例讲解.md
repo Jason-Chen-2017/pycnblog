@@ -73,20 +73,17 @@
 学习率的数学模型如下：
 
 $$
-\theta_{t+1} = \theta_t - \eta \cdot \
-abla J(\theta_t)
+\theta_{t+1} = \theta_t - \eta \cdot \nabla J(\theta_t)
 $$
 
-其中，$\theta$ 表示模型参数，$\eta$ 表示学习率，$J(\theta)$ 表示损失函数，$\
-abla J(\theta_t)$ 表示在 $\theta_t$ 处的梯度。
+其中，$\theta$ 表示模型参数，$\eta$ 表示学习率，$J(\theta)$ 表示损失函数，$\nabla J(\theta_t)$ 表示在 $\theta_t$ 处的梯度。
 
 ### 4.2 公式推导过程
 
 以下是对学习率公式进行推导的简要说明：
 
 - 梯度下降法的目的是最小化损失函数 $J(\theta)$。
-- 为了达到这个目的，我们需要在参数空间中沿着梯度 $\
-abla J(\theta_t)$ 的方向更新参数 $\theta$。
+- 为了达到这个目的，我们需要在参数空间中沿着梯度 $\nabla J(\theta_t)$ 的方向更新参数 $\theta$。
 - 学习率 $\eta$ 决定了参数更新的幅度。
 
 ### 4.3 案例分析与讲解
@@ -104,13 +101,13 @@ def loss_function(y_true, y_pred):
 def gradient_descent(x, y, learning_rate, epochs):
     m = len(x)
     theta = np.zeros((2, 1))
-    
+
     for _ in range(epochs):
         # 计算梯度
         gradients = 2/m * (x.dot(theta) - y)
         # 更新参数
         theta -= learning_rate * gradients
-    
+
     return theta
 
 # 创建数据集
@@ -181,7 +178,7 @@ class NeuralNetwork(nn.Module):
         self.fc1 = nn.Linear(input_size, hidden_size)
         self.relu = nn.ReLU()
         self.fc2 = nn.Linear(hidden_size, output_size)
-    
+
     def forward(self, x):
         x = self.fc1(x)
         x = self.relu(x)
@@ -212,7 +209,7 @@ for epoch in range(epochs):
         loss = criterion(outputs, y_batch)
         loss.backward()
         optimizer.step()
-        
+
     print(f"Epoch {epoch+1}, Loss: {loss.item()}")
 
 # 输出模型参数

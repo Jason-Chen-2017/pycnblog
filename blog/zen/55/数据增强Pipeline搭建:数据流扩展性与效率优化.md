@@ -30,7 +30,7 @@
 ```mermaid
 graph LR
 A[数据源] --> B[数据增强]
-B --> C[数据汇聚] 
+B --> C[数据汇聚]
 C --> D[数据输出]
 ```
 
@@ -63,7 +63,7 @@ C --> D[数据输出]
 3. 分布式同步:利用分布式协调服务(如ZooKeeper)在集群节点间同步变换结果。
 
 汇聚后的增强数据将写入指定的输出目标,常见的输出方式包括:
-1. 文件写入:将增强数据写入本地文件系统或HDFS等。 
+1. 文件写入:将增强数据写入本地文件系统或HDFS等。
 2. 数据库写入:将增强数据写入关系型数据库、NoSQL数据库、数据仓库等。
 3. 消息发布:将增强数据发布到Kafka等消息队列,供下游消费。
 
@@ -78,18 +78,18 @@ $$
 其中, $R(\theta)$ 为旋转矩阵:
 
 $$
-R(\theta) = 
-\begin{bmatrix} 
+R(\theta) =
+\begin{bmatrix}
 \cos \theta & -\sin \theta \\
-\sin \theta & \cos \theta 
+\sin \theta & \cos \theta
 \end{bmatrix}
 $$
 
 图像平移变换可表示为:
 
 $$
-A' = A + \begin{bmatrix} 
-t_x \\ 
+A' = A + \begin{bmatrix}
+t_x \\
 t_y
 \end{bmatrix}
 $$
@@ -199,7 +199,7 @@ import cv2
 
 def save_images(images, output_dir):
     for i, image in enumerate(images):
-        cv2.imwrite(f"{output_dir}/{i}.jpg", image) 
+        cv2.imwrite(f"{output_dir}/{i}.jpg", image)
 ```
 
 ### 5.5 Pipeline整合

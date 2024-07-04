@@ -122,7 +122,7 @@ $$
 
 $$
 \text{分配策略} = \begin{bmatrix}
-0.4 \\
+0.4 \
 0.6
 \end{bmatrix}
 $$
@@ -131,13 +131,13 @@ $$
 
 $$
 \text{资源分配} = \begin{bmatrix}
-10 \\
+10 \
 100
 \end{bmatrix} \times \begin{bmatrix}
-0.4 \\
+0.4 \
 0.6
 \end{bmatrix} = \begin{bmatrix}
-4 \\
+4 \
 60
 \end{bmatrix}
 $$

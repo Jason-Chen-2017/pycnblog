@@ -67,7 +67,7 @@ VAE 的目标函数是最大化 evidence lower bound (ELBO)：
 
 $$
 \begin{aligned}
-ELBO &= \mathbb{E}_{q(z|x)}[\log p(x|z)] - KL[q(z|x)||p(z)] \\
+ELBO &= \mathbb{E}_{q(z|x)}[\log p(x|z)] - KL[q(z|x)||p(z)] \
 &= \log p(x) - KL[q(z|x)||p(z|x)]
 \end{aligned}
 $$

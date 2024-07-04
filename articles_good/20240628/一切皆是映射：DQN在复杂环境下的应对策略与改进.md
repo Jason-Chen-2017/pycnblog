@@ -82,8 +82,7 @@ DQN的具体步骤如下：
 5. 将经验 $(s, a, r, s', r')$ 存储到经验池 $D$。
 6. 从经验池 $D$ 中随机抽取经验 $(s^i, a^i, r^i, s'^i, r^i)$。
 7. 更新Q值函数参数 $w$：
-   $$ w \leftarrow w + \alpha \
-abla_w [r^i + \gamma \max_w Q(s'^i, w) - Q(s^i, w)] $$
+   $$ w \leftarrow w + \alpha \nabla_w [r^i + \gamma \max_w Q(s'^i, w) - Q(s^i, w)] $$
 8. 迭代重复步骤2-7，直至满足停止条件。
 
 ### 3.3 算法优缺点
@@ -139,8 +138,7 @@ $$ L(w) = \frac{1}{N} \sum_{i=1}^N (Q(s^i, w) - r^i - \gamma \max_{a'} Q(s'^i, w
 5. 将经验 $(s, a, r, s', r')$ 存储到经验池 $D$。
 6. 从经验池 $D$ 中随机抽取经验 $(s^i, a^i, r^i, s'^i, r^i)$。
 7. 更新Q值函数参数 $w$：
-   $$ w \leftarrow w + \alpha \
-abla_w [r^i + \gamma \max_{a'} Q(s'^i, w) - Q(s^i, w)] $$
+   $$ w \leftarrow w + \alpha \nabla_w [r^i + \gamma \max_{a'} Q(s'^i, w) - Q(s^i, w)] $$
 8. 迭代重复步骤2-7，直至满足停止条件。
 
 ### 4.4 常见问题解答

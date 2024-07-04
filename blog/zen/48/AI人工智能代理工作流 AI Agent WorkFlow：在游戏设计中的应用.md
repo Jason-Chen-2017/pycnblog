@@ -160,7 +160,7 @@ class NPCAgent:
         # 目标识别
         if self.state['health'] > 0:
             self.target = self.identify_target()
-        
+
         # 工作流执行
         if self.target:
             self.execute_workflow()

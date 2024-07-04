@@ -65,7 +65,7 @@
 
 $$
 \begin{aligned}
-\text{编码器: } h &= Wx \\
+\text{编码器: } h &= Wx \
 \text{解码器: } \hat{x} &= Wh
 \end{aligned}
 $$
@@ -78,7 +78,7 @@ $$
 
 $$
 \begin{aligned}
-\text{编码器: } h &= f(Wx + b) \\
+\text{编码器: } h &= f(Wx + b) \
 \text{解码器: } \hat{x} &= g(Wh + c)
 \end{aligned}
 $$

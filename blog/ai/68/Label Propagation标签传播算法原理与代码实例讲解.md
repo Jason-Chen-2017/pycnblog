@@ -1,7 +1,7 @@
 
 # Label Propagation标签传播算法原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -107,11 +107,11 @@ $$
 假设节点$y$的邻域节点为$x_1, x_2, \ldots, x_n$，节点$y$与邻域节点之间的权重分别为$W_{y1}^{(t)}, W_{y2}^{(t)}, \ldots, W_{yn}^{(t)}$。则节点$y$的标签分布可以表示为：
 
 $$
-P(y|x) = \left[ \begin{matrix} 
-P(y|x_1) \\ 
-P(y|x_2) \\ 
-\vdots \\ 
-P(y|x_n) 
+P(y|x) = \left[ \begin{matrix}
+P(y|x_1) \\
+P(y|x_2) \\
+\vdots \\
+P(y|x_n)
 \end{matrix} \right]
 $$
 
@@ -130,33 +130,33 @@ $$
 将上述公式代入$P(y|x)$，得到：
 
 $$
-P(y|x) = \left[ \begin{matrix} 
-\frac{P(y)P(x_1|y)}{P(x_1)} \\ 
-\frac{P(y)P(x_2|y)}{P(x_2)} \\ 
-\vdots \\ 
-\frac{P(y)P(x_n|y)}{P(x_n)} 
+P(y|x) = \left[ \begin{matrix}
+\frac{P(y)P(x_1|y)}{P(x_1)} \\
+\frac{P(y)P(x_2|y)}{P(x_2)} \\
+\vdots \\
+\frac{P(y)P(x_n|y)}{P(x_n)}
 \end{matrix} \right]
 $$
 
 由于$P(x_i)$是常数，可以将其合并到权重$W_{yx}^{(t)}$中，得到：
 
 $$
-P(y|x) = \left[ \begin{matrix} 
-\frac{W_{y1}^{(t)}P(y)P(x_1|y)}{W_{y1}^{(t)}P(y)P(x_1|y)} \\ 
-\frac{W_{y2}^{(t)}P(y)P(x_2|y)}{W_{y2}^{(t)}P(y)P(x_2|y)} \\ 
-\vdots \\ 
-\frac{W_{yn}^{(t)}P(y)P(x_n|y)}{W_{yn}^{(t)}P(y)P(x_n|y)} 
+P(y|x) = \left[ \begin{matrix}
+\frac{W_{y1}^{(t)}P(y)P(x_1|y)}{W_{y1}^{(t)}P(y)P(x_1|y)} \\
+\frac{W_{y2}^{(t)}P(y)P(x_2|y)}{W_{y2}^{(t)}P(y)P(x_2|y)} \\
+\vdots \\
+\frac{W_{yn}^{(t)}P(y)P(x_n|y)}{W_{yn}^{(t)}P(y)P(x_n|y)}
 \end{matrix} \right]
 $$
 
 由于$P(y)P(x_i|y)$是常数，可以将其合并到权重$W_{yx}^{(t)}$中，得到：
 
 $$
-P(y|x) = \left[ \begin{matrix} 
-\frac{W_{y1}^{(t)}}{\sum_{y'} W_{y1}^{(t)}} \\ 
-\frac{W_{y2}^{(t)}}{\sum_{y'} W_{y2}^{(t)}} \\ 
-\vdots \\ 
-\frac{W_{yn}^{(t)}}{\sum_{y'} W_{yn}^{(t)}} 
+P(y|x) = \left[ \begin{matrix}
+\frac{W_{y1}^{(t)}}{\sum_{y'} W_{y1}^{(t)}} \\
+\frac{W_{y2}^{(t)}}{\sum_{y'} W_{y2}^{(t)}} \\
+\vdots \\
+\frac{W_{yn}^{(t)}}{\sum_{y'} W_{yn}^{(t)}}
 \end{matrix} \right]
 $$
 

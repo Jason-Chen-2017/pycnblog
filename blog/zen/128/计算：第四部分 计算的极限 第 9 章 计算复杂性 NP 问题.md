@@ -1,6 +1,6 @@
 # 计算：第四部分 计算的极限 第 9 章 计算复杂性 NP 问题
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -294,4 +294,4 @@ plt.show()
 * **如何解决 NP 问题？** 解决 NP 问题通常采用枚举法、近似算法、启发式算法或随机算法。
 * **NP 问题有哪些实际应用？** NP 问题广泛存在于各个领域，例如计算机科学、运筹学、生物学、经济学等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

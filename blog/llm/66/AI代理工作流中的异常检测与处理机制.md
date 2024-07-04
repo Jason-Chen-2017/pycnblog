@@ -93,7 +93,7 @@ AI代理是指具有一定智能的计算机程序，能够在没有人类干预
 
 $$
 \begin{align*}
-z &= \phi_E(X; \theta_E) \\
+z &= \phi_E(X; \theta_E) \
 X' &= \phi_D(z; \theta_D)
 \end{align*}
 $$
@@ -159,7 +159,7 @@ class Autoencoder(nn.Module):
         super(Autoencoder, self).__init__()
         self.encoder = nn.Linear(input_dim, hidden_dim)
         self.decoder = nn.Linear(hidden_dim, input_dim)
-    
+
     def forward(self, x):
         z = torch.relu(self.encoder(x))
         x' = self.decoder(z)

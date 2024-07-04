@@ -48,8 +48,7 @@
 学习率与梯度下降算法密切相关。在梯度下降算法中，模型参数的更新公式为：
 
 $$
-\theta \leftarrow \theta - \eta \
-abla_{\theta} J(\theta)
+\theta \leftarrow \theta - \eta \nabla_{\theta} J(\theta)
 $$
 
 其中，$\theta$ 表示模型参数，$\eta$ 表示学习率，$J(\theta)$ 表示损失函数。
@@ -139,12 +138,10 @@ $$
 梯度下降算法是一种基于梯度的优化算法，其目标是最小化损失函数 $J(\theta)$。在梯度下降算法中，模型参数 $\theta$ 的更新公式为：
 
 $$
-\theta \leftarrow \theta - \eta \
-abla_{\theta} J(\theta)
+\theta \leftarrow \theta - \eta \nabla_{\theta} J(\theta)
 $$
 
-其中，$\eta$ 表示学习率，$\
-abla_{\theta} J(\theta)$ 表示损失函数对参数 $\theta$ 的梯度。
+其中，$\eta$ 表示学习率，$\nabla_{\theta} J(\theta)$ 表示损失函数对参数 $\theta$ 的梯度。
 
 #### 4.1.2 学习率衰减
 

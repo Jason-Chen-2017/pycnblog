@@ -1,6 +1,6 @@
 # Optimization Algorithms 原理与代码实战案例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：Optimization Algorithms, Mathematical Modeling, Algorithmic Techniques, Practical Implementation, Case Studies
 
@@ -48,7 +48,7 @@
 
 1. 初始化参数，选择学习率（步长）。
 2. 计算当前参数下的梯度。
-3. 更新参数：$θ := θ - α \\cdot ∇f(θ)$，其中$α$是学习率。
+3. 更新参数：$θ := θ - α \cdot ∇f(θ)$，其中$α$是学习率。
 4. 重复步骤2和3，直到满足停止条件（如达到预定迭代次数或梯度接近于零）。
 
 ### 3.2 牛顿法
@@ -61,7 +61,7 @@
 
 1. 初始化参数。
 2. 计算当前参数下的梯度和Hessian矩阵。
-3. 更新参数：$θ := θ - H^{-1}(θ) \\cdot ∇f(θ)$。
+3. 更新参数：$θ := θ - H^{-1}(θ) \cdot ∇f(θ)$。
 4. 重复步骤2和3，直到满足停止条件。
 
 ### 3.3 拟牛顿法
@@ -106,24 +106,19 @@
 
 ### 4.1 数学模型构建
 
-以梯度下降法为例，设目标函数为$f(x)$，$x$为参数向量，学习率为$\\alpha$。梯度下降法的更新规则可以表示为：
+以梯度下降法为例，设目标函数为$f(x)$，$x$为参数向量，学习率为$\alpha$。梯度下降法的更新规则可以表示为：
 
-$$x_{new} = x_{old} - \\alpha \\cdot \
-abla f(x_{old})$$
+$$x_{new} = x_{old} - \alpha \cdot \nabla f(x_{old})$$
 
 ### 4.2 公式推导过程
 
-以牛顿法为例，设目标函数$f(x)$的Hessian矩阵为$H(x)$，梯度为$\
-abla f(x)$。牛顿法的更新规则基于二次逼近：
+以牛顿法为例，设目标函数$f(x)$的Hessian矩阵为$H(x)$，梯度为$\nabla f(x)$。牛顿法的更新规则基于二次逼近：
 
-$$x_{new} = x_{old} - H(x_{old})^{-1} \\cdot \
-abla f(x_{old})$$
+$$x_{new} = x_{old} - H(x_{old})^{-1} \cdot \nabla f(x_{old})$$
 
 ### 4.3 案例分析与讲解
 
-考虑最小化函数$f(x) = x^2 + 2x + 1$。对于梯度下降法，计算导数$\
-abla f(x) = 2x + 2$，并设定学习率为0.1，初始点$x_0 = 5$。迭代更新直到满足停止条件（如$\
-abla f(x)$接近于0）。
+考虑最小化函数$f(x) = x^2 + 2x + 1$。对于梯度下降法，计算导数$\nabla f(x) = 2x + 2$，并设定学习率为0.1，初始点$x_0 = 5$。迭代更新直到满足停止条件（如$\nabla f(x)$接近于0）。
 
 ### 4.4 常见问题解答
 

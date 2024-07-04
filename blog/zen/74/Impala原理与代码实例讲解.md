@@ -128,18 +128,18 @@ Impala会自动选择最优的执行策略，例如：
 - **连接Impala**：
   ```python
   from impyla import connect
-  
+
   connection = connect(host='localhost', port=21050, user='hive')
   ```
 
 - **执行查询**：
   ```python
   query = "SELECT * FROM sales WHERE year = 2020 AND month = 1;"
-  
+
   with connection.cursor() as cursor:
       cursor.execute(query)
       results = cursor.fetchall()
-      
+
   print(results)
   ```
 

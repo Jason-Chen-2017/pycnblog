@@ -143,8 +143,7 @@ $$V(s; \theta_{V}) \leftarrow V(s; \theta_{V}) + \alpha [R(s, a, s', r) + \gamma
 
 策略梯度的计算公式为：
 
-$$\
-abla_{\theta_{\pi}} \pi(a|s; \theta_{\pi}) = \sum_{a' \in A} \frac{\partial \pi(a'|s; \theta_{\pi})}{\partial \theta_{\pi}} \cdot (Q(s, a; \theta_{Q}) - V(s; \theta_{V}))$$
+$$\nabla_{\theta_{\pi}} \pi(a|s; \theta_{\pi}) = \sum_{a' \in A} \frac{\partial \pi(a'|s; \theta_{\pi})}{\partial \theta_{\pi}} \cdot (Q(s, a; \theta_{Q}) - V(s; \theta_{V}))$$
 
 ### 4.3 案例分析与讲解
 

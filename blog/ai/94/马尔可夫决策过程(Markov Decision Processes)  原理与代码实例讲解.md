@@ -146,18 +146,18 @@ MDP可以用以下数学模型来描述：
 
 $$
 \begin{align*}
-S &= \{s_1, s_2, ..., s_n\} \quad \text{状态空间} \\
-A &= \{a_1, a_2, ..., a_m\} \quad \text{动作空间} \\
+S &= \{s_1, s_2, ..., s_n\} \quad \text{状态空间} \
+A &= \{a_1, a_2, ..., a_m\} \quad \text{动作空间} \
 P &= \begin{bmatrix}
-P(s_1,a_1) & P(s_1,a_2) & \cdots & P(s_1,a_m) \\
-P(s_2,a_1) & P(s_2,a_2) & \cdots & P(s_2,a_m) \\
-\vdots & \vdots & \ddots & \vdots \\
+P(s_1,a_1) & P(s_1,a_2) & \cdots & P(s_1,a_m) \
+P(s_2,a_1) & P(s_2,a_2) & \cdots & P(s_2,a_m) \
+\vdots & \vdots & \ddots & \vdots \
 P(s_n,a_1) & P(s_n,a_2) & \cdots & P(s_n,a_m)
-\end{bmatrix} \quad \text{状态转移概率矩阵} \\
+\end{bmatrix} \quad \text{状态转移概率矩阵} \
 R &= \begin{bmatrix}
-R(s_1,a_1) & R(s_1,a_2) & \cdots & R(s_1,a_m) \\
-R(s_2,a_1) & R(s_2,a_2) & \cdots & R(s_2,a_m) \\
-\vdots & \vdots & \ddots & \vdots \\
+R(s_1,a_1) & R(s_1,a_2) & \cdots & R(s_1,a_m) \
+R(s_2,a_1) & R(s_2,a_2) & \cdots & R(s_2,a_m) \
+\vdots & \vdots & \ddots & \vdots \
 R(s_n,a_1) & R(s_n,a_2) & \cdots & R(s_n,a_m)
 \end{bmatrix} \quad \text{报酬函数}
 \end{align*}
@@ -209,13 +209,13 @@ $$
 
 $$
 P = \begin{bmatrix}
-1 & 0 \\
-0.5 & 0.5 \\
+1 & 0 \
+0.5 & 0.5 \
 0 & 1
 \end{bmatrix}, \quad
 R = \begin{bmatrix}
-0 & 0 \\
-0 & 0 \\
+0 & 0 \
+0 & 0 \
 100 & 0
 \end{bmatrix}
 $$

@@ -128,7 +128,7 @@ AIGC的数学模型主要包括：
 以NLP中的生成模型为例，其公式如下：
 
 $$
-P(x | y) = \\frac{P(y | x)P(x)}{P(y)}
+P(x | y) = \frac{P(y | x)P(x)}{P(y)}
 $$
 
 其中：
@@ -179,16 +179,16 @@ model = GPT2LMHeadModel.from_pretrained('gpt2')
 
 # 定义一个简单的对话生成函数
 def generate_dialogue(user_input):
-    prompt = f\"对话：\
+    prompt = f"对话：\
 {user_input}\
-\"
+"
     inputs = tokenizer(prompt, return_tensors='pt', max_length=512, truncation=True)
     outputs = model.generate(inputs['input_ids'], max_length=100, num_return_sequences=1)
     dialogue = tokenizer.decode(outputs[0], skip_special_tokens=True)
     return dialogue
 
 # 测试
-user_input = \"你好，我是人工智能助手。\"
+user_input = "你好，我是人工智能助手。"
 print(generate_dialogue(user_input))
 ```
 
@@ -202,7 +202,7 @@ print(generate_dialogue(user_input))
 
 ### 5.4 运行结果展示
 
-当输入 \"你好，我是人工智能助手。\" 时，模型可能生成以下对话：
+当输入 "你好，我是人工智能助手。" 时，模型可能生成以下对话：
 
 ```
 对话：

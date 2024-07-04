@@ -78,17 +78,17 @@ DQN及其变种在诸如游戏、机器人导航、自动驾驶、推荐系统�
 
 DQN的学习过程基于贝尔曼方程和Q学习框架，其核心数学模型可以表示为：
 
-$$ Q(s, a) \\approx \\hat{Q}(s, a) $$
+$$ Q(s, a) \approx \hat{Q}(s, a) $$
 
-其中，$\\hat{Q}(s, a)$ 是通过神经网络预测的状态-动作值。
+其中，$\hat{Q}(s, a)$ 是通过神经网络预测的状态-动作值。
 
 ### 4.2 公式推导过程
 
 DQN的目标是最小化以下损失函数：
 
-$$ \\mathcal{L}(\\theta) = \\mathbb{E}_{(s,a,r,s') \\sim \\mathcal{D}} \\left[ \\left( r + \\gamma \\max_{a'} Q_{\\theta'}(s', a') - \\hat{Q}(s, a) \\right)^2 \\right] $$
+$$ \mathcal{L}(\theta) = \mathbb{E}_{(s,a,r,s') \sim \mathcal{D}} \left[ \left( r + \gamma \max_{a'} Q_{\theta'}(s', a') - \hat{Q}(s, a) \right)^2 \right] $$
 
-其中，$\\theta$ 是预测网络的参数，$\\theta'$ 是目标网络的参数，$\\gamma$ 是折扣因子。
+其中，$\theta$ 是预测网络的参数，$\theta'$ 是目标网络的参数，$\gamma$ 是折扣因子。
 
 ### 4.3 案例分析与讲解
 
@@ -167,7 +167,7 @@ def main():
     agent = DQN(env.state_space, env.action_space, learning_rate=0.001, gamma=0.99, epsilon=0.1, batch_size=32, buffer_size=100000)
     agent.train(env)
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     main()
 ```
 
@@ -238,7 +238,7 @@ DQN的应用场景广泛，包括：
 
 - **Q：** 如何在有限资源下提高DQN的学习效率？
    - **A：** 优化超参数设置，采用自适应学习率策略，以及改进探索策略。
-   
+
 - **Q：** DQN如何在多Agent系统中应用？
    - **A：** 引入协作学习和竞争学习机制，通过策略协调和信息共享提高整体性能。
 

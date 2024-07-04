@@ -105,26 +105,26 @@ class StressTestEnv:
         self.max_users = max_users
         self.max_tps = max_tps
         self.state = 0
-        
+
     def step(self, action):
         # 根据动作施加压力
         users = (action + 1) * self.max_users / 10
         tps = users * 2
-        
+
         # 模拟压力对系统的影响
         cpu_usage = np.random.normal(0.5, 0.1) + tps / self.max_tps
         rt = np.random.normal(50, 10) + users / self.max_users * 100
         error_rate = np.random.normal(0.01, 0.005) + users / self.max_users * 0.05
-        
+
         # 计算奖励值
         reward = -cpu_usage - rt / 100 - error_rate * 10
-        
+
         # 判断是否结束
         if cpu_usage > 0.8 or rt > 200 or error_rate > 0.05:
             done = True
         else:
             done = False
-        
+
         # 返回下一状态、奖励值和是否结束
         self.state = int(cpu_usage * 10)
         return self.state, reward, done
@@ -138,14 +138,14 @@ for episode in range(1000):
     state = env.state
     done = False
     total_reward = 0
-    
+
     while not done:
         action = agent.choose_action(state)
         next_state, reward, done = env.step(action)
         agent.update(state, action, reward, next_state)
         state = next_state
         total_reward += reward
-        
+
     print(f'Episode {episode}: Total Reward = {total_reward}')
 ```
 
@@ -153,7 +153,7 @@ for episode in range(1000):
 ### 6.1 Web应用压力测试
 #### 6.1.1 电商促销活动高并发场景
 #### 6.1.2 在线教育平台的考试场景
-### 6.2 移动应用压力测试 
+### 6.2 移动应用压力测试
 #### 6.2.1 移动支付应用的交易高峰
 #### 6.2.2 移动游戏的版本发布
 ### 6.3 基础设施压力测试
@@ -167,7 +167,7 @@ for episode in range(1000):
 #### 7.1.3 Locust
 ### 7.2 商业压测工具
 #### 7.2.1 LoadRunner
-#### 7.2.2 Silk Performer 
+#### 7.2.2 Silk Performer
 #### 7.2.3 NeoLoad
 ### 7.3 Q-learning算法学习资源
 #### 7.3.1 《Reinforcement Learning: An Introduction》

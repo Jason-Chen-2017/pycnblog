@@ -65,7 +65,7 @@ $$\theta_{t+1,i} = \theta_{t,i} - \frac{\eta}{\sqrt{r_{t,i} + \epsilon}} \cdot g
 AdaGrad优化算法可以用如下数学模型表示:
 
 $$\begin{aligned}
-r_{t,i} &= r_{t-1,i} + g_{t,i}^2 \\
+r_{t,i} &= r_{t-1,i} + g_{t,i}^2 \
 \theta_{t+1,i} &= \theta_{t,i} - \frac{\eta}{\sqrt{r_{t,i} + \epsilon}} \cdot g_{t,i}
 \end{aligned}$$
 
@@ -99,17 +99,17 @@ class AdaGrad:
         self.lr = lr
         self.epsilon = epsilon
         self.r = None
-        
+
     def update(self, params, grads):
         if self.r is None:
             self.r = []
             for param in params:
                 self.r.append(np.zeros_like(param))
-        
+
         for i in range(len(params)):
             self.r[i] += grads[i] ** 2
             params[i] -= self.lr * grads[i] / (np.sqrt(self.r[i]) + self.epsilon)
-        
+
         return params
 ```
 

@@ -162,8 +162,7 @@ DQN的数学模型主要包括以下几个部分：
 
    假设抽取的经验样本为$(s_1, a_1, 10, s_1, \\text{false})$，目标Q值为$Q_{\\theta'}(s_1, a_1) = 10$。则Q网络参数$\\theta$的更新如下：
 
-   $$\\theta \\leftarrow \\theta - \\alpha \
-abla_{\\theta} L(Q_{\\theta}(s_1, a_1))$$
+   $$\\theta \\leftarrow \\theta - \\alpha \nabla_{\\theta} L(Q_{\\theta}(s_1, a_1))$$
 
    其中，$\\alpha$为学习率，$L(Q_{\\theta}(s_1, a_1))$为损失函数。
 

@@ -1,7 +1,7 @@
 
 # 一切皆是映射：GAN在艺术创作中的应用实例
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 关键词：

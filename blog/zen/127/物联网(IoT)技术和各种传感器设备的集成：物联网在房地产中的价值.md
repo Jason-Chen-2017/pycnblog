@@ -329,4 +329,4 @@ print(f'预测能源消耗量: {predicted_consumption[0]} kWh')
 * **楼宇自动化系统利用物联网技术，实现对楼宇的智能化管理，例如，电梯控制、照明控制、空调控制等，提高楼宇的管理效率，降低运营成本。**
 * **保障数据安全和隐私保护需要采取多种措施，例如，使用加密技术、访问控制机制、数据脱敏等。**
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

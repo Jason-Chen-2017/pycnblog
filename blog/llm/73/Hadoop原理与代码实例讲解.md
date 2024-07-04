@@ -193,7 +193,7 @@ public class WordCount {
        extends Reducer<Text,IntWritable,Text,IntWritable> {
     private IntWritable result = new IntWritable();
 
-    public void reduce(Text key, Iterable<IntWritable> values, 
+    public void reduce(Text key, Iterable<IntWritable> values,
                        Context context
                        ) throws IOException, InterruptedException {
       int sum = 0;

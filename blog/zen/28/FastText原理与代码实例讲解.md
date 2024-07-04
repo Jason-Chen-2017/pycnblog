@@ -27,7 +27,7 @@ FastText可以被视为一个深度学习模型的简化版本，它采用了词
 ### FastText的核心组件
 
 - **词向量（Word Vectors）**：对于单个词，FastText使用预训练的词向量，这些向量捕捉了词汇之间的语义关系。预训练词向量通常来源于大型文本语料库，如Word2Vec或GloVe。
-  
+
 - **短语向量（Phrase Vectors）**：对于两个或更多连续词组成的短语，FastText同样为其生成向量表示。短语向量的生成方式类似于词向量，但考虑了词序信息。
 
 - **深层结构**：FastText模型通过线性层（如全连接层）连接词向量和短语向量，从而构建文本的最终表示。这一步骤保留了浅层结构的优点，同时通过词向量和短语向量的组合提高了模型的表达能力。
@@ -35,11 +35,11 @@ FastText可以被视为一个深度学习模型的简化版本，它采用了词
 ### 快速搭建模型框架
 
 - **输入**：文本数据经过预处理，转换为词袋形式，同时计算词频和短语频次。
-  
+
 - **词向量层**：对于每个词和短语，应用预训练的词向量表示。
-  
+
 - **整合层**：将词向量和短语向量进行加权合并，形成文本表示。
-  
+
 - **输出层**：通过一个全连接层，映射到类别数量，应用Sigmoid或Softmax函数进行分类。
 
 ## 3. 核心算法原理与具体操作步骤
@@ -49,13 +49,13 @@ FastText可以被视为一个深度学习模型的简化版本，它采用了词
 FastText的核心在于通过词向量和短语向量来表示文本，利用浅层结构避免了深度学习模型的高计算成本。其算法步骤包括：
 
 1. **文本预处理**：清洗文本，去除停用词，分词等。
-   
+
 2. **特征提取**：构建词袋模型，记录词频和短语频次。
-   
+
 3. **向量化**：为每个词和短语生成词向量和短语向量。
-   
+
 4. **整合**：将词向量和短语向量加权整合，形成文本表示。
-   
+
 5. **分类**：通过线性层映射到类别空间，应用Sigmoid或Softmax进行分类。
 
 ### 3.2 算法步骤详解
@@ -111,15 +111,15 @@ FastText广泛应用于文本分类、情感分析、主题建模、垃圾邮件
 
 对于短语$P = w_ia...w_j$（其中$a, ..., j$是短语中的词索引），可以定义短语向量$V_P$为：
 
-$$V_P = \\sum_{i=a}^{j} W_{w_i}$$
+$$V_P = \sum_{i=a}^{j} W_{w_i}$$
 
 ### 4.2 公式推导过程
 
 文本表示$T_S$可以由词向量和短语向量加权求和得到：
 
-$$T_S = \\sum_{i=1}^{n} \\alpha_i V_{w_i} + \\sum_{P \\in S} \\beta_P V_P$$
+$$T_S = \sum_{i=1}^{n} \alpha_i V_{w_i} + \sum_{P \in S} \beta_P V_P$$
 
-其中，$\\alpha_i$是词$w_i$的权重，$\\beta_P$是短语$P$的权重。权重可以基于词频和短语频次进行调整。
+其中，$\alpha_i$是词$w_i$的权重，$\beta_P$是短语$P$的权重。权重可以基于词频和短语频次进行调整。
 
 ### 4.3 案例分析与讲解
 
@@ -160,7 +160,7 @@ LABEL = Field(sequential=False)
 train_data, test_data = AG_NEWS.splits(TEXT, LABEL)
 
 # 创建词汇表
-TEXT.build_vocab(train_data, max_size=10000, vectors=\"glove.6B.100d\")
+TEXT.build_vocab(train_data, max_size=10000, vectors="glove.6B.100d")
 
 # 创建迭代器
 train_iterator, test_iterator = BucketIterator.splits(
@@ -223,8 +223,8 @@ FastText在多个领域有广泛的应用，包括：
 
 ### 7.3 相关论文推荐
 
-- **\"Supervised Learning with Principal Coefficients\"**：介绍了FastText模型的设计原理和优势。
-- **\"A Simple Baseline for Text Classification\"**：提供了对FastText和其他文本分类方法的比较分析。
+- **"Supervised Learning with Principal Coefficients"**：介绍了FastText模型的设计原理和优势。
+- **"A Simple Baseline for Text Classification"**：提供了对FastText和其他文本分类方法的比较分析。
 
 ### 7.4 其他资源推荐
 

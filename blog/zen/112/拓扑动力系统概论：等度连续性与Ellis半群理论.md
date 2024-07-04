@@ -67,17 +67,17 @@ $$\forall p,q\in E(X), x\in X, (pq)(x)=p(q(x))$$
 对于$p,q\in E(X), x\in X$,证明$(pq)(x)=p(q(x))$定义了$E(X)$上的半群运算:
 
 1. 封闭性:$\forall p,q\in E(X)$,要证$pq\in E(X)$。
-   
+
    $\forall \varepsilon>0$,由$p$的等度连续性,存在$\delta_1>0$,使得$d(x,y)<\delta_1$时,$d(p(x),p(y))<\varepsilon$。
-   
+
    再由$q$的等度连续性,存在$\delta_2>0$,使得$d(x,y)<\delta_2$时,$d(q(x),q(y))<\delta_1$。
-   
+
    取$\delta=\min\{\delta_1,\delta_2\}$,则$d(x,y)<\delta$时,有$d(q(x),q(y))<\delta_1$,进而$d(p(q(x)),p(q(y)))<\varepsilon$。
-   
+
    故$pq$是等度连续的,即$pq\in E(X)$。
 
 2. 结合律:$\forall p,q,r\in E(X),x\in X$,
-   
+
    $((pq)r)(x)=(pq)(r(x))=p(q(r(x)))=p((qr)(x))=(p(qr))(x)$
 
 综上,$(E(X),*)$是一个半群。
@@ -117,7 +117,7 @@ import matplotlib.pyplot as plt
 
 def rotation(alpha):
     """生成旋转映射矩阵"""
-    return np.array([[np.cos(alpha), -np.sin(alpha)], 
+    return np.array([[np.cos(alpha), -np.sin(alpha)],
                     [np.sin(alpha), np.cos(alpha)]])
 
 def visualize_ellis(alpha, n=100):
@@ -126,9 +126,9 @@ def visualize_ellis(alpha, n=100):
     for i in range(n):
         beta = 2*np.pi*i/n
         ellis.append(rotation(beta))
-    
+
     ellis = np.array(ellis)
-    
+
     fig, ax = plt.subplots()
     ax.scatter(ellis[:, 0, 0], ellis[:, 1, 0])
     ax.set_xlim(-1.1, 1.1)

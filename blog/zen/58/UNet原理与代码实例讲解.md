@@ -18,7 +18,7 @@
 
 ### 1.2 UNet的诞生与发展
 
-UNet 由 Olaf Ronneberger, Philipp Fischer, and Thomas Brox 在 2015 年提出，最初用于医学影像分割。UNet 的名字来源于其网络结构的 U 形形状。 
+UNet 由 Olaf Ronneberger, Philipp Fischer, and Thomas Brox 在 2015 年提出，最初用于医学影像分割。UNet 的名字来源于其网络结构的 U 形形状。
 
 UNet 的出现，标志着深度学习在图像分割领域的重大突破。相比于传统的图像分割算法，UNet具有以下优势：
 
@@ -127,8 +127,8 @@ $$
 
 $$
 \begin{bmatrix}
-1 & 0 & -1 \\
-0 & 1 & 0 \\
+1 & 0 & -1 \
+0 & 1 & 0 \
 -1 & 0 & 1
 \end{bmatrix}
 $$

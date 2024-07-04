@@ -1,7 +1,7 @@
 
 # 强化学习Reinforcement Learning在智能制造中的角色与价值
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 ### 1.1 问题的由来
@@ -169,7 +169,7 @@ A：为了提高强化学习算法的收敛速度，可以采用以下方法：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
    ```bash
-   conda create -n rl-env python=3.8 
+   conda create -n rl-env python=3.8
    conda activate rl-env
    ```
 3. 安装TensorFlow和Gym：

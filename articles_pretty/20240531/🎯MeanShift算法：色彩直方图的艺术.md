@@ -50,8 +50,7 @@ Where $\\mu$ is the mean and $\\sigma$ is the standard deviation.
 The gradient of the PDF is calculated as:
 
 $$
-\
-abla f(x) = -\\frac{x-\\mu}{\\sigma^2}f(x)
+\nabla f(x) = -\\frac{x-\\mu}{\\sigma^2}f(x)
 $$
 
 ## 5. Project Practice: Code Examples and Detailed Explanations

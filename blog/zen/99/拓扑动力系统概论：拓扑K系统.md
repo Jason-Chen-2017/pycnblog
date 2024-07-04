@@ -66,7 +66,7 @@
 
 $$
 \begin{cases}
-\frac{dx}{dt} = f(x, y) \\
+\frac{dx}{dt} = f(x, y) \
 \frac{dy}{dt} = g(x, y)
 \end{cases}
 $$

@@ -81,17 +81,17 @@
 预测性维护模型构建通常基于以下步骤：
 
 - **状态空间模型**：描述设备状态随时间变化的数学模型，如：
-  
+
     $$ \dot{x}(t) = f(x(t), u(t), t) + g(x(t), u(t), t)w(t) $$
-    
+
     其中，$x(t)$是状态向量，$u(t)$是输入向量，$w(t)$是随机扰动项。
 
 ### 4.2 公式推导过程
 
 - **故障模式识别**：通过特征提取和分类算法，建立故障模型：
-  
+
     $$ P(failure|features) = \frac{P(features|failure)P(failure)}{P(features)} $$
-    
+
     其中，$P(failure|features)$是故障发生的概率，$P(features|failure)$是在故障情况下特征发生的概率，$P(failure)$是故障发生的先验概率，$P(features)$是特征发生的概率。
 
 ### 4.3 案例分析与讲解

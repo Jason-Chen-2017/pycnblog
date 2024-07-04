@@ -275,5 +275,5 @@ A3: BERTje模型的训练数据来自公开的荷兰语文本数据集，例如�
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

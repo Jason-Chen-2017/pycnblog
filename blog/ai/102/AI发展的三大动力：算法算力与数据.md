@@ -356,4 +356,4 @@ AI是一个充满机遇和挑战的领域，未来需要学术界、工业界和
 
 人工智能是一个快速发展的领域，未来将在更多领域得到应用，并对人类社会产生深远影响。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

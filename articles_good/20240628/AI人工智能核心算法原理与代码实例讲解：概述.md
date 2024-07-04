@@ -213,8 +213,7 @@ $$
 - **梯度下降**：
 
 $$
-\theta \leftarrow \theta - \alpha \
-abla_{\theta}L(\theta)
+\theta \leftarrow \theta - \alpha \nabla_{\theta}L(\theta)
 $$
 
 其中，$\alpha$ 为学习率。
@@ -222,13 +221,11 @@ $$
 - **Adam**：
 
 $$
-m_t = \beta_1 m_{t-1} + (1-\beta_1)(\
-abla_{\theta}L(\theta) - m_{t-1})
+m_t = \beta_1 m_{t-1} + (1-\beta_1)(\nabla_{\theta}L(\theta) - m_{t-1})
 $$
 
 $$
-v_t = \beta_2 v_{t-1} + (1-\beta_2)(\
-abla_{\theta}L(\theta) - v_{t-1})
+v_t = \beta_2 v_{t-1} + (1-\beta_2)(\nabla_{\theta}L(\theta) - v_{t-1})
 $$
 
 $$

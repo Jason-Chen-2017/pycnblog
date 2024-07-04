@@ -91,10 +91,10 @@ Spark 的核心算法基于内存计算和 DAG 调度机制。Spark 通过将数
 ### 4.2 公式推导过程
 
 - **Map 函数**：对于 RDD `A` 的每个元素 `(k, v)`，`map` 函数将 `(k, f(v))` 作为一个新的键值对放入新 RDD `B`。公式表示为：
-  $$ \\forall k, v \\in A, B = \\{ (k, f(v)) \\} $$
-  
+  $$ \forall k, v \in A, B = \{ (k, f(v)) \} $$
+
 - **ReduceByKey 函数**：对于 RDD `A` 中的每个键 `k`，`ReduceByKey` 函数将所有键为 `k` 的值相加。公式表示为：
-  $$ \\forall k \\in \\text{keys}(A), B = \\{ (k, \\sum_{v \\in A[k]} v) \\} $$
+  $$ \forall k \in \text{keys}(A), B = \{ (k, \sum_{v \in A[k]} v) \} $$
 
 ### 4.3 案例分析与讲解
 
@@ -132,26 +132,26 @@ import org.apache.spark.sql.SparkSession
 
 object SparkExample {
   def main(args: Array[String]): Unit = {
-    val conf = new SparkConf().setAppName(\"Spark Example\").setMaster(\"local[*]\")
+    val conf = new SparkConf().setAppName("Spark Example").setMaster("local[*]")
     val spark = SparkSession.builder().config(conf).getOrCreate()
-    
+
     // 加载数据集
-    val data = spark.read.text(\"/path/to/data.csv\")
-    println(\"Loaded data: \" + data.count())
-    
+    val data = spark.read.text("/path/to/data.csv")
+    println("Loaded data: " + data.count())
+
     // 数据清洗
     val cleanedData = data
-      .filter(line => line.contains(\",\"))
-      .map(line => line.split(\",\").map(_.trim))
-      .toDF(\"column1\", \"column2\")
-    
+      .filter(line => line.contains(","))
+      .map(line => line.split(",").map(_.trim))
+      .toDF("column1", "column2")
+
     // 输出清洗后的数据集
     cleanedData.show()
     cleanedData.printSchema()
-    
+
     // 保存清洗后的数据集
-    cleanedData.write.save(\"/path/to/cleaned_data.csv\")
-    
+    cleanedData.write.save("/path/to/cleaned_data.csv")
+
     spark.stop()
   }
 }

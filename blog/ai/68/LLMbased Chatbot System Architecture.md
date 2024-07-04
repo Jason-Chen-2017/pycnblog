@@ -136,7 +136,7 @@ Seq2Seq模型的推导过程如下：
 from transformers import BertForSequenceClassification, BertTokenizer
 
 # 加载预训练模型和分词器
-model = BertForSequenceClassification.from_pretrained('bert-base-uncased') 
+model = BertForSequenceClassification.from_pretrained('bert-base-uncased')
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
 # 对输入文本进行编码
@@ -201,7 +201,7 @@ pip install transformers
 from transformers import BertForSequenceClassification, BertTokenizer
 
 # 加载预训练模型和分词器
-model = BertForSequenceClassification.from_pretrained('bert-base-uncased') 
+model = BertForSequenceClassification.from_pretrained('bert-base-uncased')
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
 def chatbot(input_text):

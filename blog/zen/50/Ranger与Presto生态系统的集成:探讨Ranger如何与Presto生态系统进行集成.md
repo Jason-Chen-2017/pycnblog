@@ -103,8 +103,8 @@ Ranger与Presto的集成过程中，可以使用以下数学模型来描述权�
 1. **数据访问控制模型**：
 
 $$
-\text{Access\_Control}(User, Data, Operation) = 
-\begin{cases} 
+\text{Access\_Control}(User, Data, Operation) =
+\begin{cases}
 \text{ALLOWED}, & \text{如果} \quad User \in \text{Data\_Owner} \quad \text{或} \quad User \in \text{Data\_Owner}'s\_Role \quad \text{或} \quad Operation \in \text{Data\_Owner}'s\_Permission \\
 \text{DENIED}, & \text{其他情况}
 \end{cases}
@@ -115,8 +115,8 @@ $$
 2. **角色权限模型**：
 
 $$
-\text{Role\_Permission}(Role, Permission) = 
-\begin{cases} 
+\text{Role\_Permission}(Role, Permission) =
+\begin{cases}
 \text{ALLOWED}, & \text{如果} \quad Role \in \text{Role\_Owner}'s\_Role \quad \text{或} \quad Permission \in \text{Role\_Owner}'s\_Permission \\
 \text{DENIED}, & \text{其他情况}
 \end{cases}

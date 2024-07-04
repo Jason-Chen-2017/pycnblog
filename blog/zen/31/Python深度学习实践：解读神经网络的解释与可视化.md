@@ -99,13 +99,13 @@
 
 设输入特征向量为$x = (x_1, x_2, ..., x_n)$，模型输出为$f(x)$，则特征重要性$I_i$可以通过梯度的绝对值来衡量：
 
-$$I_i = \\left| \\frac{\\partial f(x)}{\\partial x_i} \\right|$$
+$$I_i = \left| \frac{\partial f(x)}{\partial x_i} \right|$$
 
-其中，$\\frac{\\partial f(x)}{\\partial x_i}$是模型输出关于第$i$个特征的偏导数。
+其中，$\frac{\partial f(x)}{\partial x_i}$是模型输出关于第$i$个特征的偏导数。
 
 #### 激活图可视化：
 
-对于神经网络的第$l$层，如果该层有$m$个单元，则激活映射可以表示为一个$m \\times n$的矩阵$A_l$，其中$a_{ij}$是第$l$层第$j$个单元对第$i$个输入特征的激活响应。
+对于神经网络的第$l$层，如果该层有$m$个单元，则激活映射可以表示为一个$m \times n$的矩阵$A_l$，其中$a_{ij}$是第$l$层第$j$个单元对第$i$个输入特征的激活响应。
 
 ### 4.2 公式推导过程
 
@@ -113,7 +113,7 @@ $$I_i = \\left| \\frac{\\partial f(x)}{\\partial x_i} \\right|$$
 
 考虑一个简单的线性模型$f(x) = w^Tx + b$，其中$w$是权重向量，$b$是偏置项。特征重要性的计算基于梯度的概念：
 
-$$\\frac{\\partial f(x)}{\\partial x_i} = w_i$$
+$$\frac{\partial f(x)}{\partial x_i} = w_i$$
 
 因此，特征重要性的计算简化为：
 
@@ -121,7 +121,7 @@ $$I_i = |w_i|$$
 
 #### 激活图可视化推导：
 
-假设神经网络的第$l$层有$m$个单元，每个单元对输入特征$x_i$的激活响应为$a_{ij}$，那么整个激活映射矩阵$A_l$可以表示为$m \\times n$矩阵，其中$m$是单元数量，$n$是特征数量。
+假设神经网络的第$l$层有$m$个单元，每个单元对输入特征$x_i$的激活响应为$a_{ij}$，那么整个激活映射矩阵$A_l$可以表示为$m \times n$矩阵，其中$m$是单元数量，$n$是特征数量。
 
 ### 4.3 案例分析与讲解
 
@@ -136,7 +136,7 @@ $$I_i = |w_i|$$
 ### 4.4 常见问题解答
 
 - **如何平衡解释的精确性和解释的可解释性？**：在构建解释方法时，需要考虑算法的复杂性与解释的直观性之间的平衡。过于复杂的算法可能提供更精确的解释，但可能难以理解；而过于简单的算法可能易于理解，但解释可能不够精确。
-  
+
 - **解释方法是否适用于所有类型的神经网络？**：不同的神经网络结构（如循环神经网络、长短时记忆网络等）可能需要定制化的解释方法，因为它们的内部工作原理和复杂性不同。
 
 ## 5. 项目实践：代码实例和详细解释说明
@@ -193,8 +193,8 @@ model.fit(train_images.reshape(-1, 28, 28, 1), to_categorical(train_labels), epo
 
 ```python
 loss, accuracy = model.evaluate(test_images.reshape(-1, 28, 28, 1), to_categorical(test_labels))
-print(f\"Test loss: {loss:.4f}\")
-print(f\"Test accuracy: {accuracy:.4f}\")
+print(f"Test loss: {loss:.4f}")
+print(f"Test accuracy: {accuracy:.4f}")
 ```
 
 ### 5.3 代码解读与分析

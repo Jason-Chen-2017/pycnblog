@@ -114,8 +114,7 @@ $$
 通过反向传播算法，根据损失函数进行参数更新：
 
 $$
-\theta \leftarrow \theta - \eta \
-abla_\theta J(\theta)
+\theta \leftarrow \theta - \eta \nabla_\theta J(\theta)
 $$
 
 其中 \( J(\theta) \) 是损失函数：

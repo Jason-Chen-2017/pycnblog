@@ -304,14 +304,14 @@ class SimpleHTTPSRequestHandler(SimpleHTTPRequestHandler):
 def run_server():
     server_address = ('localhost', 4443)
     httpd = HTTPServer(server_address, SimpleHTTPSRequestHandler)
-    
+
     # 创建 SSL 上下文
     context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
     context.load_cert_chain('server.crt', 'server.key')
-    
+
     # 将 SSL 上下文包装到 HTTP 服务器
     httpd.socket = context.wrap_socket(httpd.socket, server_side=True)
-    
+
     print(f"Server running on https://{server_address[0]}:{server_address[1]}")
     httpd.serve_forever()
 
@@ -654,7 +654,7 @@ D --> E{发送数字证书}
 5. **客户端生成密钥**：客户端使用公钥加密一个随机生成的密钥，并发送给服务器。
 
 ```mermaid
-graph 
+graph
 E --> F{验证数字证书}
 F --> G{生成随机密钥}
 G --> H{加密密钥}
@@ -664,21 +664,21 @@ H --> I{发送加密密钥}
 6. **服务器解密密钥**：服务器使用私钥解密客户端发送的加密密钥。
 
 ```mermaid
-graph 
+graph
 I --> J[解密密钥]
 ```
 
 7. **建立会话密钥**：客户端和服务器使用协商好的加密算法和双方生成的密钥，生成会话密钥。
 
 ```mermaid
-graph 
+graph
 J --> K[生成会话密钥]
 ```
 
 8. **数据传输阶段**：使用会话密钥加密和解密数据，确保数据传输的安全性。
 
-```mermaid 
-graph 
+```mermaid
+graph
 K --> L[数据传输阶段]
 ```
 
@@ -712,10 +712,10 @@ HTTPS协议中使用的数学模型主要包括：
 - **对称加密算法**：如AES、DES等，其加密和解密公式如下：
 
 $$
-C = E(K, P) 
+C = E(K, P)
 $$
 $$
-P = D(K, C) 
+P = D(K, C)
 $$
 
 其中，$C$ 为加密后的密文，$P$ 为原始明文，$K$ 为对称密钥，$E$ 为加密函数，$D$ 为解密函数。
@@ -723,10 +723,10 @@ $$
 - **非对称加密算法**：如RSA、ECC等，其加密和解密公式如下：
 
 $$
-C = E(K_{pub}, P) 
+C = E(K_{pub}, P)
 $$
 $$
-P = D(K_{priv}, C) 
+P = D(K_{priv}, C)
 $$
 
 其中，$C$ 为加密后的密文，$P$ 为原始明文，$K_{pub}$ 为公钥，$K_{priv}$ 为私钥，$E$ 为加密函数，$D$ 为解密函数。
@@ -734,7 +734,7 @@ $$
 - **散列函数**：如SHA-256、MD5等，其散列公式如下：
 
 $$
-H(P) 
+H(P)
 $$
 
 其中，$H$ 为散列函数，$P$ 为原始数据。
@@ -744,7 +744,7 @@ $$
 以AES加密算法为例，其加密公式如下：
 
 $$
-C = E(K, P) 
+C = E(K, P)
 $$
 
 其中，$C$ 为加密后的密文，$P$ 为原始明文，$K$ 为对称密钥，$E$ 为加密函数。

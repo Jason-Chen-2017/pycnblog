@@ -113,22 +113,17 @@ $$
 假设目标函数为 $f(\mathbf{x})$，梯度下降的迭代公式为：
 
 $$
-\mathbf{x}_{k+1} = \mathbf{x}_k - \alpha \
-abla f(\mathbf{x}_k)
+\mathbf{x}_{k+1} = \mathbf{x}_k - \alpha \nabla f(\mathbf{x}_k)
 $$
 
-其中，$\mathbf{x}_k$ 为第 $k$ 次迭代的参数，$\alpha$ 为学习率，$\
-abla f(\mathbf{x}_k)$ 为目标函数的梯度。
+其中，$\mathbf{x}_k$ 为第 $k$ 次迭代的参数，$\alpha$ 为学习率，$\nabla f(\mathbf{x}_k)$ 为目标函数的梯度。
 
 **2. 交叉熵损失函数的梯度**
 
 对于交叉熵损失函数，其梯度为：
 
 $$
-\
-abla L = \frac{\partial L}{\partial \mathbf{z}} = -\sum_{i=1}^N t_i \
-abla_{\mathbf{z}} p(y_i | x_i, \mathbf{z}) + (1 - t_i) \
-abla_{\mathbf{z}} p(y_i | x_i, \mathbf{z})
+\nabla L = \frac{\partial L}{\partial \mathbf{z}} = -\sum_{i=1}^N t_i \nabla_{\mathbf{z}} p(y_i | x_i, \mathbf{z}) + (1 - t_i) \nabla_{\mathbf{z}} p(y_i | x_i, \mathbf{z})
 $$
 
 ### 4.3 案例分析与讲解

@@ -120,8 +120,8 @@
 
 $$
 \begin{aligned}
-& \mathcal{D}_S = \{ (x_i^S, y_i^S) \}_{i=1}^{n_S} \\
-& \mathcal{D}_T = \{ (x_i^T, y_i^T) \}_{i=1}^{n_T} \\
+& \mathcal{D}_S = \{ (x_i^S, y_i^S) \}_{i=1}^{n_S} \
+& \mathcal{D}_T = \{ (x_i^T, y_i^T) \}_{i=1}^{n_T} \
 & \mathcal{T}: \mathcal{D}_S \rightarrow \mathcal{D}_T
 \end{aligned}
 $$
@@ -411,4 +411,4 @@ Accuracy: 0.7123000025749207
 - 如何设计更有效的迁移学习模型。
 - 如何保证数据隐私。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

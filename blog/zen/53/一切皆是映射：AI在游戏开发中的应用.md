@@ -13,7 +13,7 @@
 ### 1.2 AI给游戏开发带来的变革
 
 #### 1.2.1 游戏设计的智能化
-#### 1.2.2 游戏开发效率的提升  
+#### 1.2.2 游戏开发效率的提升
 #### 1.2.3 游戏体验的革新
 
 ### 1.3 游戏产业对AI人才的需求
@@ -35,7 +35,7 @@
 ### 2.2 深度学习与游戏AI
 
 #### 2.2.1 卷积神经网络在游戏场景理解中的应用
-#### 2.2.2 循环神经网络在游戏对话系统中的应用  
+#### 2.2.2 循环神经网络在游戏对话系统中的应用
 #### 2.2.3 生成对抗网络在游戏画面生成中的应用
 
 ### 2.3 博弈论与游戏AI
@@ -63,7 +63,7 @@ D[博弈论] --> B
 
 ### 3.2 Deep Q-Network(DQN)算法
 
-#### 3.2.1 Q-Learning算法原理 
+#### 3.2.1 Q-Learning算法原理
 #### 3.2.2 DQN算法原理
 #### 3.2.3 DQN算法的训练过程
 #### 3.2.4 DQN算法在游戏AI中的应用实例
@@ -71,7 +71,7 @@ D[博弈论] --> B
 ### 3.3 Proximal Policy Optimization(PPO)算法
 
 #### 3.3.1 策略梯度算法原理
-#### 3.3.2 PPO算法原理 
+#### 3.3.2 PPO算法原理
 #### 3.3.3 PPO算法的训练过程
 #### 3.3.4 PPO算法在游戏AI中的应用实例
 
@@ -82,7 +82,7 @@ D[博弈论] --> B
 MDP是强化学习的理论基础,可用一个五元组 $\langle S,A,P,R,\gamma \rangle$ 来表示:
 
 - $S$ 是有限状态集
-- $A$ 是有限动作集  
+- $A$ 是有限动作集
 - $P$ 是状态转移概率矩阵
 - $R$ 是奖励函数
 - $\gamma$ 是折扣因子
@@ -93,7 +93,7 @@ $$\pi^* = \arg\max_\pi \mathbb{E}\left[\sum_{t=0}^{\infty} \gamma^t r_t | \pi \r
 
 其中 $r_t$ 表示在时刻 $t$ 采取动作 $a_t$ 后获得的奖励。
 
-### 4.2 Q-Learning 
+### 4.2 Q-Learning
 
 Q-Learning是一种值迭代的时序差分算法,通过不断更新状态-动作值函数 $Q(s,a)$ 来逼近最优策略。
 
@@ -129,13 +129,13 @@ class DQN(nn.Module):
         self.fc1 = nn.Linear(state_size, 64)
         self.fc2 = nn.Linear(64, 64)
         self.fc3 = nn.Linear(64, action_size)
-        
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = torch.relu(self.fc2(x))
         x = self.fc3(x)
         return x
-        
+
 class Agent:
     def __init__(self, state_size, action_size):
         self.state_size = state_size
@@ -148,17 +148,17 @@ class Agent:
         self.learning_rate = 0.001
         self.model = DQN(state_size, action_size)
         self.optimizer = optim.Adam(self.model.parameters(), lr=self.learning_rate)
-        
+
     def remember(self, state, action, reward, next_state, done):
         self.memory.append((state, action, reward, next_state, done))
-        
+
     def act(self, state):
         if np.random.rand() <= self.epsilon:
             return random.randrange(self.action_size)
         state = torch.tensor(state, dtype=torch.float32).unsqueeze(0)
         act_values = self.model(state)
         return torch.argmax(act_values[0]).item()  # returns action
-    
+
     def replay(self, batch_size):
         minibatch = random.sample(self.memory, batch_size)
         for state, action, reward, next_state, done in minibatch:
@@ -257,7 +257,7 @@ class Agent:
 
 ### 9.1 如何入门游戏AI开发?
 ### 9.2 游戏AI和传统游戏脚本有什么区别?
-### 9.3 游戏AI开发需要哪些技术背景? 
+### 9.3 游戏AI开发需要哪些技术背景?
 ### 9.4 目前业界有哪些优秀的游戏AI案例?
 ### 9.5 游戏AI算法在其他领域是否有应用前景?
 

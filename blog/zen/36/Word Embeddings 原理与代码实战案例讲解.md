@@ -134,9 +134,9 @@
 
 #### Word2Vec
 
-$$\\min_{W} \\sum_{i=1}^{N} \\sum_{j=1}^{K} \\mathcal{L}(W, X)$$
+$$\min_{W} \sum_{i=1}^{N} \sum_{j=1}^{K} \mathcal{L}(W, X)$$
 
-其中 $\\mathcal{L}(W, X)$ 是预测失败的概率。
+其中 $\mathcal{L}(W, X)$ 是预测失败的概率。
 
 #### GloVe
 

@@ -1,7 +1,7 @@
 
 # AI人工智能深度学习算法：使用强化学习优化深度学习模型
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -291,10 +291,10 @@ def q_learning(agent, states, actions, rewards, next_states, alpha, gamma):
         reward = rewards[i]
         next_state = next_states[i]
         best_next_action = np.argmax(agent.predict(next_state))
-        
+
         q_value = reward + gamma * agent.predict(next_state)[best_next_action]
         agent.model.layers[0].set_weights(
-            agent.model.layers[0].get_weights()[0] * (1 - alpha) + 
+            agent.model.layers[0].get_weights()[0] * (1 - alpha) +
             np.expand_dims(np.array([action]), axis=0) * alpha * (q_value - agent.predict(state)[action])
         )
 

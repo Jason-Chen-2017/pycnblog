@@ -356,4 +356,4 @@ Lucene 可以通过使用中文分词器来处理中文搜索。中文分词器�
 * **优化查询语句：**使用高效的查询语句，例如 TermQuery、PhraseQuery 等。
 * **优化搜索配置：**调整搜索配置参数，例如缓存大小、线程池大小等。
 
-* **作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+* **作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

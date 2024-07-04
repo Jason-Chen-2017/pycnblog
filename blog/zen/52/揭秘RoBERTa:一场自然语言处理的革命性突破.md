@@ -12,7 +12,7 @@ RoBERTa(Robustly Optimized BERT Pretraining Approach)是BERT的一个改进版�
 
 预训练语言模型的核心思想是在大规模无标注语料上进行自监督学习,通过设计合适的预训练任务,让模型自主学习语言的内在规律和表示。这样训练好的模型可以作为下游NLP任务的通用特征提取器,大大减少了对标注数据的需求。代表模型有ELMo、GPT和BERT等。
 
-### 2.2 Transformer 
+### 2.2 Transformer
 
 Transformer是一种基于自注意力机制(Self-Attention)的神经网络结构。不同于RNN等顺序模型,Transformer可以并行计算,大大提高了训练效率。同时Self-Attention让模型能够捕捉长距离的语义依赖关系。Transformer已成为大多数预训练语言模型的首选架构。
 
@@ -44,7 +44,7 @@ graph LR
 RoBERTa使用了更大规模的预训练语料,包括:
 - BookCorpus(16GB)
 - English Wikipedia(13GB)
-- CC-News(76GB) 
+- CC-News(76GB)
 - OpenWebText(38GB)
 - Stories(31GB)
 
@@ -108,7 +108,7 @@ Self-Attention是Transformer的核心组件。对于输入序列$\mathbf{X}=(\ma
 
 $$
 \mathbf{q}_i = \mathbf{W}^Q\mathbf{x}_i \\
-\mathbf{k}_i = \mathbf{W}^K\mathbf{x}_i \\ 
+\mathbf{k}_i = \mathbf{W}^K\mathbf{x}_i \\
 \mathbf{v}_i = \mathbf{W}^V\mathbf{x}_i
 $$
 

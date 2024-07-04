@@ -104,7 +104,7 @@ Transformer 模型是一种基于注意力机制的神经网络模型，它在�
 
 $$
 \begin{aligned}
-\mathcal{L}(\theta) &= \sum_{i=1}^{N} \mathcal{L}_i(\theta) \\
+\mathcal{L}(\theta) &= \sum_{i=1}^{N} \mathcal{L}_i(\theta) \
 &= \sum_{i=1}^{N} \sum_{j=1}^{M_i} \mathcal{L}_{i,j}(\theta)
 \end{aligned}
 $$
@@ -338,4 +338,4 @@ Accuracy: 86.7%
 
   可以使用分布式训练、模型压缩等技术提高模型的训练效率。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

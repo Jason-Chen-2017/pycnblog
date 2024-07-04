@@ -380,4 +380,4 @@ Few-shot learning可以应用于图像分类、目标检测、自然语言处理
 
 Few-shot learning面临着数据稀疏性、任务复杂性、模型可解释性等挑战。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -1,7 +1,7 @@
 
 # 大语言模型应用指南：Gorilla
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 > 关键词：大语言模型，Gorilla，预训练，微调，自然语言处理，应用指南
 

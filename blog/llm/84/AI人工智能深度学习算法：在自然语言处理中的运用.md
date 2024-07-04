@@ -1,7 +1,7 @@
 
 # AI人工智能深度学习算法：在自然语言处理中的运用
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 关键词：人工智能，深度学习，自然语言处理，深度神经网络，Transformer，BERT，序列标注，文本分类，情感分析
 
@@ -177,7 +177,7 @@ class TextClassification(nn.Module):
     def __init__(self, num_labels):
         super(TextClassification, self).__init__()
         self.bert = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=num_labels)
-    
+
     def forward(self, input_ids, attention_mask):
         return self.bert(input_ids, attention_mask=attention_mask)
 

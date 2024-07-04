@@ -1,4 +1,4 @@
-                 
+
 # 【LangChain编程：从入门到实践】设计并实现一个多模态代理
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -179,16 +179,16 @@ def main():
     # 加载并预处理数据
     train_data, test_data = load_data()
     processed_train, processed_test = preprocess_data(train_data, test_data)
-    
+
     # 创建多模态模型
     model = MultiModalModel()
-    
+
     # 训练模型
     model.train(processed_train)
-    
+
     # 实例化代理
     agent = MultiModalAgent(model=model)
-    
+
     # 测试代理性能
     results = agent.test(processed_test)
     print("测试结果:", results)
@@ -204,7 +204,7 @@ if __name__ == "__main__":
 
 2. **模型集成与训练**：
    - `MultiModalModel` 类封装了深度学习框架（如PyTorch），实现了多模态数据的编码、融合及预测功能。
-   
+
 3. **代理逻辑设计**：
    - `MultiModalAgent` 类继承自 `LangChain` 中的代理基类，定义了如何利用已训练的模型执行特定任务的策略。
 

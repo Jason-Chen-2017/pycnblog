@@ -169,11 +169,11 @@ class SimpleNavAgent(ReactAgent):
         self.memory = self.add_memory("navigation_memory")
         self.memory.add_attribute("position", initial_value=(0, 0))
         self.memory.add_attribute("direction", initial_value=(1, 0))
-    
+
     def update_memory(self, position, direction):
         self.memory.set_attribute("position", position)
         self.memory.set_attribute("direction", direction)
-    
+
     def get_action(self, observations):
         position = self.memory.get_attribute("position")
         direction = self.memory.get_attribute("direction")
@@ -182,7 +182,7 @@ class SimpleNavAgent(ReactAgent):
         else:
             self.update_memory(position, (direction[0] + 1, direction[1]))
         return "move_forward"
-    
+
     def act(self, observations):
         action = self.get_action(observations)
         return action

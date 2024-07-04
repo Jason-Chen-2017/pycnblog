@@ -79,9 +79,7 @@ $$J(\\pi) = \\mathbb{E}_{s,a \\sim \\pi}[\\sum_{t=0}^{\\infty} \\gamma^t r(s_t, 
 
 策略梯度定理给出了一种通过估计策略梯度来优化策略的方法：
 
-$$\
-abla J(\\pi) = \\mathbb{E}_{s,a \\sim \\pi}[\
-abla \\ln \\pi(a|s) \\cdot (\\sum_{t=0}^{\\infty} \\gamma^t r(s_t, a_t) - \\mathbb{V}(s)]$$
+$$\nabla J(\\pi) = \\mathbb{E}_{s,a \\sim \\pi}[\nabla \\ln \\pi(a|s) \\cdot (\\sum_{t=0}^{\\infty} \\gamma^t r(s_t, a_t) - \\mathbb{V}(s)]$$
 
 其中，$\\mathbb{V}(s)$是状态$s$的价值函数。
 

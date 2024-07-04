@@ -79,7 +79,7 @@ LLaMA模型通常基于Transformer架构，核心组件包括：
 给定输入序列$x=[x_1,x_2,...,x_T]$，其中$x_i$表示第$i$个位置的输入向量，Transformer的自注意力机制可以通过以下公式进行推导：
 
 $$
-\\text{Self-Attention}(Q, K, V) = \\text{softmax}(\\frac{QK^T}{\\sqrt{d_k}})V
+\text{Self-Attention}(Q, K, V) = \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V
 $$
 
 其中，$Q$、$K$、$V$分别代表查询(query)、键(key)和值(value)，$d_k$是键和值的维度。
@@ -98,7 +98,7 @@ $$
 
 - **如何选择合适的超参数？**
   超参数的选择取决于任务的性质和数据集大小。通常，可以通过交叉验证和网格搜索来优化超参数。
-  
+
 - **微调阶段需要多少数据？**
   微调数据集的大小取决于任务的复杂性和原LLaMA模型的容量。一般来说，对于较简单的任务，少量数据即可有效微调。
 

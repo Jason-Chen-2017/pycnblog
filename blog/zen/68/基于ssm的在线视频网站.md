@@ -9,7 +9,7 @@
 #### 1.1.2 视频网站的兴起
 #### 1.1.3 视频网站的发展趋势
 
-### 1.2 ssm框架概述  
+### 1.2 ssm框架概述
 #### 1.2.1 Spring框架
 #### 1.2.2 SpringMVC框架
 #### 1.2.3 MyBatis框架
@@ -96,7 +96,7 @@ public class UploadController {
 
     @Autowired
     private UploadService uploadService;
-    
+
     @PostMapping("/upload")
     public Result upload(MultipartFile file, String md5, Integer chunk, Integer chunks) throws IOException {
         if (chunk == null || chunks == null) {
@@ -130,7 +130,7 @@ public class UploadController {
 #### 6.1.2 MOOC学习平台
 #### 6.1.3 教学视频管理系统
 
-### 6.2 娱乐视频网站 
+### 6.2 娱乐视频网站
 #### 6.2.1 影视剧视频网站
 #### 6.2.2 短视频社交平台
 #### 6.2.3 直播平台

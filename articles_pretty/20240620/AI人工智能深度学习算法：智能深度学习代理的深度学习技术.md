@@ -88,8 +88,7 @@
 
 - **策略**：$\\pi(a|s)$，表示在状态$s$下选择动作$a$的概率。
 - **目标函数**：$\\mathbb{E}_{s,a \\sim \\pi}[r(s,a)]$，即期望累积奖励。
-- **梯度**：$\
-abla_\\theta \\mathbb{E}_{s,a \\sim \\pi}[r(s,a)]$
+- **梯度**：$\nabla_\\theta \\mathbb{E}_{s,a \\sim \\pi}[r(s,a)]$
 
 ### 4.3 案例分析与讲解
 

@@ -145,7 +145,7 @@ A2：可以通过奖励归一化、动态调整奖励等方法来缓解稀疏奖
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n q_learning_env python=3.8 
+conda create -n q_learning_env python=3.8
 conda activate q_learning_env
 ```
 3. 安装PyTorch和相关库：

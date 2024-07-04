@@ -1,4 +1,4 @@
-                 
+
 # Exactly-once语义在ApacheHive中的实现
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -97,7 +97,7 @@ Exactly-once语义适用于多种应用场景，包括但不限于：
 目标是定义一个操作序列 $\sigma$，使得对任意两个不同的事件 $e_1, e_2 \in E$，有：
 
 $$\begin{cases}
-f_{\sigma(e_1)} = f_{\sigma(e_2)} \\
+f_{\sigma(e_1)} = f_{\sigma(e_2)} \
 \forall e \in E, \exists! i \in \mathbb{N} | \sigma^i(e) = f_e(e)
 \end{cases}$$
 
@@ -182,7 +182,7 @@ public class ExactlyOnceExample {
         Path outputPath = new Path(outputTable);
         job.setInputPaths(inputPath);
         job.setOutputPath(outputPath);
-        
+
         // 执行SQL脚本以创建并装载表
         job.waitForCompletion(true);
         System.out.println("Successfully loaded data to table: " + outputTable);

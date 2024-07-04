@@ -207,13 +207,13 @@ feature_importance_df = pd.DataFrame({
 print(feature_importance_df.sort_values('importance', ascending=False))
 
 # 展示局部可解释性
-dot_data = tree.export_graphviz(model, out_file=None, 
-                             feature_names=feature_names,  
+dot_data = tree.export_graphviz(model, out_file=None,
+                             feature_names=feature_names,
                              class_names=data.target_names,
-                             filled=True, rounded=True,  
+                             filled=True, rounded=True,
                              special_characters=True)
-graph = pydotplus.graph_from_dot_data(dot_data)  
-plt.figure(figsize=(12,12))  
+graph = pydotplus.graph_from_dot_data(dot_data)
+plt.figure(figsize=(12,12))
 plt.show()
 
 # 展示全局可解释性

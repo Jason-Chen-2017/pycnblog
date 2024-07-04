@@ -170,9 +170,9 @@ DataSet算法广泛应用于以下领域:
 
 $$
 D = \begin{bmatrix}
-    C_{11} & C_{12} & \cdots & C_{1m} \\
-    C_{21} & C_{22} & \cdots & C_{2m} \\
-    \vdots & \vdots & \ddots & \vdots \\
+    C_{11} & C_{12} & \cdots & C_{1m} \
+    C_{21} & C_{22} & \cdots & C_{2m} \
+    \vdots & \vdots & \ddots & \vdots \
     C_{n1} & C_{n2} & \cdots & C_{nm}
 \end{bmatrix}
 $$
@@ -183,9 +183,9 @@ $$
 
 $$
 T_i = \begin{bmatrix}
-    r_{i11} & r_{i12} & \cdots & r_{i1m} \\
-    r_{i21} & r_{i22} & \cdots & r_{i2m} \\
-    \vdots & \vdots & \ddots & \vdots \\
+    r_{i11} & r_{i12} & \cdots & r_{i1m} \
+    r_{i21} & r_{i22} & \cdots & r_{i2m} \
+    \vdots & \vdots & \ddots & \vdots \
     r_{ik_i1} & r_{ik_i2} & \cdots & r_{ik_im}
 \end{bmatrix}
 $$

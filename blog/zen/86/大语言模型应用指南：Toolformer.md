@@ -63,25 +63,25 @@ Toolformer的核心算法可以分为两个主要部分：工具选择和工具�
 def toolformer(input_text):
     # 编码输入
     input_vector = encode(input_text)
-    
+
     # 工具选择
     tool_ids = tool_selector(input_vector)
-    
+
     # 工具应用
     tool_outputs = []
     for tool_id in tool_ids:
         output = apply_tool(tool_id, input_text)
         tool_outputs.append(output)
-    
+
     # 模型推断
     model_output = language_model(input_vector, tool_outputs)
-    
+
     # 结果整合
     final_output = integrate(model_output, tool_outputs)
-    
+
     # 输出解码
     result_text = decode(final_output)
-    
+
     return result_text
 ```
 
@@ -156,9 +156,9 @@ $$P(y|x,T) = \sum_z P(y|z,T)P(z|x)$$
 最终，我们可以计算出：
 
 $$\begin{aligned}
-P(y|x,T) &= P(y|z=\{Search\},T)P(z=\{Search\}|x) \\
-&+ P(y|z=\{Calculator\},T)P(z=\{Calculator\}|x) \\
-&= 0.95 \times 0.9 + 0.05 \times 0.1 \\
+P(y|x,T) &= P(y|z=\{Search\},T)P(z=\{Search\}|x) \
+&+ P(y|z=\{Calculator\},T)P(z=\{Calculator\}|x) \
+&= 0.95 \times 0.9 + 0.05 \times 0.1 \
 &= 0.86
 \end{aligned}$$
 

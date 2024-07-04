@@ -21,7 +21,7 @@
 
 单源最短路径问题是指在一个加权图中,找到从一个指定的源顶点(Source Vertex)到其他所有顶点的最短路径。
 
-### 2.3 所有对最短路径(All-Pairs Shortest Path) 
+### 2.3 所有对最短路径(All-Pairs Shortest Path)
 
 所有对最短路径问题是指在一个加权图中,找到任意两个顶点之间的最短路径。它是单源最短路径问题的扩展,需要计算图中所有顶点对之间的最短路径。
 
@@ -112,7 +112,7 @@ graph LR
 
 $$
 d_{ij} = \begin{cases}
-0 & \text{if } i = j \\
+0 & \text{if } i = j \
 \min\limits_{k}\{d_{ik} + w_{kj}\} & \text{if } i \neq j
 \end{cases}
 $$
@@ -125,7 +125,7 @@ $$
 
 $$
 d_{ij}^{(k)} = \begin{cases}
-d_{ij}^{(k-1)} & \text{if } d_{ij}^{(k-1)} < d_{ik}^{(k-1)} + d_{kj}^{(k-1)} \\
+d_{ij}^{(k-1)} & \text{if } d_{ij}^{(k-1)} < d_{ik}^{(k-1)} + d_{kj}^{(k-1)} \
 d_{ik}^{(k-1)} + d_{kj}^{(k-1)} & \text{otherwise}
 \end{cases}
 $$
@@ -148,7 +148,7 @@ graph LR
     E --- F
     B --- G((G))
     F --- G
-    
+
     style A fill:#f9f,stroke:#333,stroke-width:4px
     style B fill:#ccf,stroke:#333,stroke-width:4px
     style C fill:#ccf,stroke:#333,stroke-width:4px

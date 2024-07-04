@@ -1,4 +1,4 @@
-                 
+
 # Python机器学习实战：自编码器(Autoencoders)在数据压缩中的实践
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -297,7 +297,7 @@ class Node:
         self.children.append(child_node)
 
     def _build_mermaid_graph(self) -> str:
-        graph_str = f"{self.name} [label=\"{self.name}\"]\n"
+        graph_str = f"{self.name} [label="{self.name}"]\n"
         for child in self.children:
             graph_str += f"{child.name} --> {self.name};\n"
             graph_str += child._build_mermaid_graph()

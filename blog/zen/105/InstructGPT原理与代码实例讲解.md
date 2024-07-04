@@ -132,7 +132,7 @@ tokenizer = AutoTokenizer.from_pretrained("openai/instructgpt")
 model = AutoModelWithLMHead.from_pretrained("openai/instructgpt")
 
 # 输入指令
-instruction = "Translate the following English text to French: '{\"text\": \"Hello, world!\"}'"
+instruction = "Translate the following English text to French: '{"text": "Hello, world!"}'"
 
 # 将输入转化为模型需要的格式
 input_ids = tokenizer.encode(instruction, return_tensors="pt")
@@ -157,8 +157,8 @@ print(output_text)
 运行上面的代码，我们可以得到以下输出：
 
 ```bash
-"Translate the following English text to French: '{\"text\": \"Hello, world!\"}'"
-"Translatez le texte anglais suivant en français : '{\"text\": \"Bonjour, monde !\"}'"
+"Translate the following English text to French: '{"text": "Hello, world!"}'"
+"Translatez le texte anglais suivant en français : '{"text": "Bonjour, monde !"}'"
 ```
 
 这个输出表示，模型成功地将输入的英文文本翻译成了法文。

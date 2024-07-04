@@ -363,7 +363,7 @@ A：评估异常检测模型的性能需要考虑以下指标：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n anomaly-detection python=3.8 
+conda create -n anomaly-detection python=3.8
 conda activate anomaly-detection
 ```
 3. 安装PyTorch：

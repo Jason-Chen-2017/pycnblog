@@ -165,8 +165,7 @@ $$
 - **梯度下降（GD）**：
 
 $$
-\theta_{t+1} = \theta_t - \alpha \
-abla_{\theta}J(\theta_t)
+\theta_{t+1} = \theta_t - \alpha \nabla_{\theta}J(\theta_t)
 $$
 
 其中，$\theta$ 为模型参数，$J(\theta)$ 为损失函数，$\alpha$ 为学习率。

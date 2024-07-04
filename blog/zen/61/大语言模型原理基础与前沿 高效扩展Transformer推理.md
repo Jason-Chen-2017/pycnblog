@@ -15,7 +15,7 @@
 
 ### 1.3 大语言模型面临的挑战
 #### 1.3.1 计算资源瓶颈
-#### 1.3.2 数据获取与标注难题  
+#### 1.3.2 数据获取与标注难题
 #### 1.3.3 模型泛化能力不足
 
 ## 2. 核心概念与联系
@@ -30,7 +30,7 @@
 #### 2.2.3 Prompt Learning范式
 
 ### 2.3 知识蒸馏与模型压缩
-#### 2.3.1 知识蒸馏原理 
+#### 2.3.1 知识蒸馏原理
 #### 2.3.2 模型剪枝技术
 #### 2.3.3 低秩分解与量化
 
@@ -40,7 +40,7 @@
 #### 3.1.2 Self-Attention计算
 #### 3.1.3 前馈神经网络
 
-### 3.2 Transformer解码器  
+### 3.2 Transformer解码器
 #### 3.2.1 Masked Self-Attention
 #### 3.2.2 Encoder-Decoder Attention
 #### 3.2.3 输出概率计算
@@ -61,7 +61,7 @@ $$Attention(Q,K,V) = softmax(\frac{QK^T}{\sqrt{d_k}})V$$
 
 #### 4.1.3 Multi-Head Attention
 $$\begin{aligned}
-MultiHead(Q,K,V) &= Concat(head_1,...,head_h)W^O \\
+MultiHead(Q,K,V) &= Concat(head_1,...,head_h)W^O \
 head_i &= Attention(QW^Q_i, KW^K_i, VW^V_i)
 \end{aligned}$$
 
@@ -70,7 +70,7 @@ $$PE_{(pos,2i)} = sin(pos/10000^{2i/d_{model}})$$
 $$PE_{(pos,2i+1)} = cos(pos/10000^{2i/d_{model}})$$
 其中，$pos$是位置，$i$是维度，$d_{model}$是词嵌入维度。
 
-### 4.3 Transformer损失函数 
+### 4.3 Transformer损失函数
 $$\mathcal{L}(\theta) = -\sum_{i=1}^{n}\log P_\theta(y_i|y_{<i},\mathbf{x})$$
 其中，$\theta$是模型参数，$\mathbf{x}$是输入序列，$y_i$是目标输出的第$i$个token，$y_{<i}$是已生成的token序列。
 
@@ -84,26 +84,26 @@ class TransformerEncoder(nn.Module):
             TransformerEncoderLayer(d_model, nhead, dim_feedforward)
             for _ in range(num_layers)
         ])
-        
+
     def forward(self, src, src_mask=None, src_key_padding_mask=None):
         output = src
         for mod in self.layers:
-            output = mod(output, src_mask=src_mask, 
+            output = mod(output, src_mask=src_mask,
                          src_key_padding_mask=src_key_padding_mask)
         return output
 ```
 
 ### 5.2 Transformer解码器的PyTorch实现
-```python  
+```python
 class TransformerDecoder(nn.Module):
     def __init__(self, d_model, nhead, dim_feedforward, num_layers):
         super().__init__()
         self.layers = nn.ModuleList([
-            TransformerDecoderLayer(d_model, nhead, dim_feedforward) 
+            TransformerDecoderLayer(d_model, nhead, dim_feedforward)
             for _ in range(num_layers)
         ])
-        
-    def forward(self, tgt, memory, tgt_mask=None, memory_mask=None, 
+
+    def forward(self, tgt, memory, tgt_mask=None, memory_mask=None,
                 tgt_key_padding_mask=None, memory_key_padding_mask=None):
         output = tgt
         for mod in self.layers:
@@ -119,33 +119,33 @@ class TransformerDecoder(nn.Module):
 def beam_search(model, src, max_len, beam_size, alpha, device):
     src = src.to(device)
     batch_size = src.size(0)
-    
+
     # 编码
     memory = model.encode(src)
-    
+
     # 初始化
-    init_tgt = torch.full((batch_size, 1), BOS_IDX).long().to(device)  
+    init_tgt = torch.full((batch_size, 1), BOS_IDX).long().to(device)
     beam = [Beam(beam_size, n_best=1, cuda=True) for _ in range(batch_size)]
     for i in range(max_len):
         # 解码
         tgt_emb = model.tgt_embed(init_tgt)
         output = model.decode(tgt_emb, memory)
         output = F.log_softmax(output[:, -1], dim=-1)
-        
+
         for j, b in enumerate(beam):
             b.advance(output[j])
-            
+
             # 获取当前beam的最优候选序列
             best_hyps = torch.stack(list(b.get_hyp(k=0) for _ in range(beam_size)))
             init_tgt[j] = best_hyps[:, i+1].unsqueeze(1)
-            
-    # 获取最终翻译结果 
+
+    # 获取最终翻译结果
     final_outputs = []
     for b in beam:
         scores, ks = b.sort_finished(minimum=1)
         hyps = torch.stack([b.get_hyp(k) for k in ks[:1]]).squeeze(0)
         final_outputs.append(hyps[1:]) # 去掉BOS
-        
+
     return final_outputs
 ```
 

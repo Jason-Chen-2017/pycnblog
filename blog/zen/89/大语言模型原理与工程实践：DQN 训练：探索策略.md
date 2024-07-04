@@ -217,7 +217,7 @@ $$
 ```python
 from transformers import AtariPretrainedModel, AtariTokenizer
 
-model = AtariPretrainedModel.from_pretrained('atari-convnet') 
+model = AtariPretrainedModel.from_pretrained('atari-convnet')
 tokenizer = AtariTokenizer.from_pretrained('atari-convnet')
 ```
 
@@ -305,7 +305,7 @@ A: DQN训练过程中，收敛速度是一个重要的指标。为了提高收�
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n dqn-env python=3.8 
+conda create -n dqn-env python=3.8
 conda activate dqn-env
 ```
 3. 安装PyTorch：

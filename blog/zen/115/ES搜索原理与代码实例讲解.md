@@ -152,7 +152,7 @@ client.indices().create(request, new ActionListener<CreateIndexResponse>() {
 
 // 添加文档
 IndexRequest indexRequest = new IndexRequest("my_index", "my_type", "1");
-indexRequest.source("{\"name\":\"John Doe\",\"age\":30}");
+indexRequest.source("{"name":"John Doe","age":30}");
 client.index(indexRequest, new ActionListener<IndexResponse>() {
     @Override
     public void onResponse(IndexResponse response) {

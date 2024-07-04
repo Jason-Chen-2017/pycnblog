@@ -138,7 +138,7 @@ RNN模型的公式如下：
 
 $$
 \begin{aligned}
-h_t &= f(W_{xh} x_t + W_{hh} h_{t-1} + b_h) \\
+h_t &= f(W_{xh} x_t + W_{hh} h_{t-1} + b_h) \
 y_t &= g(W_{hy} h_t + b_y)
 \end{aligned}
 $$
@@ -335,4 +335,4 @@ AI在航空航天领域的应用场景包括飞行控制、导航与制导、故
 AI在航空航天领域面临的挑战包括数据安全、算法可靠性、伦理问题等。
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

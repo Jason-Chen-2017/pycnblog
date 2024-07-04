@@ -346,4 +346,4 @@ AGI与量子引力的研究前景非常广阔，未来可能在以下领域得�
 * **AGI与量子引力的研究面临哪些挑战？**
     * AGI与量子引力的研究面临着巨大的挑战，例如量子计算机的开发、量子算法的设计、量子理论的完善等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

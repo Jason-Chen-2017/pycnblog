@@ -87,8 +87,7 @@ Agent（智能体）是指能够感知环境、做出决策并采取行动以达
 
 在策略梯度方法中，目标是最大化期望累积奖励，可以通过梯度上升法来实现：
 
-$$ \\theta_{t+1} = \\theta_t + \\alpha \\cdot \
-abla_\\theta J(\\theta_t) $$
+$$ \\theta_{t+1} = \\theta_t + \\alpha \\cdot \nabla_\\theta J(\\theta_t) $$
 
 其中，$\\theta$是策略参数，$\\alpha$是学习率，$J(\\theta)$是策略的性能指标（通常为期望累积奖励）。
 

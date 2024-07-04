@@ -55,10 +55,7 @@ $$\\max_{a \\in \\mathcal{A}} Q_\\theta(s, a) = \\mathbb{E}_{\\pi}[R_t + \\gamma
 
 对于DDPG，策略函数π可以通过以下策略梯度算法进行更新：
 
-$$\
-abla_\\theta J(\\theta) = \\mathbb{E}_{s \\sim D, a \\sim \\pi_\\theta} [\
-abla_\\theta \\log \\pi_\\theta(a|s) \\cdot \
-abla_a Q_\\phi(s, a)]$$
+$$\nabla_\\theta J(\\theta) = \\mathbb{E}_{s \\sim D, a \\sim \\pi_\\theta} [\nabla_\\theta \\log \\pi_\\theta(a|s) \\cdot \nabla_a Q_\\phi(s, a)]$$
 
 其中，$J(\\theta)$是策略的性能指标，$D$是经验回放缓冲区。
 

@@ -120,8 +120,7 @@
 
 梯度下降是更新权重的主要方法，通过梯度信息减小损失函数。
 
-- **梯度下降**：$\theta = \theta - \eta \cdot \
-abla_\theta J(\theta)$
+- **梯度下降**：$\theta = \theta - \eta \cdot \nabla_\theta J(\theta)$
 
 ### 公式推导过程
 

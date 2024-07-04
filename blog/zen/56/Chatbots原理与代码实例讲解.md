@@ -26,7 +26,7 @@
 #### 2.1.3 实体抽取
 #### 2.1.4 上下文理解
 
-### 2.2 对话管理(Dialogue Management) 
+### 2.2 对话管理(Dialogue Management)
 #### 2.2.1 对话状态跟踪
 #### 2.2.2 对话策略学习
 #### 2.2.3 对话流程控制
@@ -46,7 +46,7 @@
 graph LR
 A[用户] --> B[自然语言理解 NLU]
 B --> C{对话管理 DM}
-C -->|生成回复| D[自然语言生成 NLG] 
+C -->|生成回复| D[自然语言生成 NLG]
 C -->|查询知识| E[知识库 KB]
 E -->|返回答案| C
 D --> A
@@ -66,7 +66,7 @@ D --> A
 
 ### 3.2 槽位填充算法
 #### 3.2.1 条件随机场(CRF)用于槽位填充
-#### 3.2.2 BiLSTM-CRF用于槽位填充 
+#### 3.2.2 BiLSTM-CRF用于槽位填充
 #### 3.2.3 Transformer用于槽位填充
 
 ### 3.3 对话管理算法
@@ -74,7 +74,7 @@ D --> A
 #### 3.3.2 基于框架的对话管理
 #### 3.3.3 深度强化学习用于对话管理
 ##### 3.3.3.1 Deep Q Network(DQN)
-##### 3.3.3.2 Policy Gradient(PG) 
+##### 3.3.3.2 Policy Gradient(PG)
 ##### 3.3.3.3 Actor-Critic
 
 ### 3.4 自然语言生成算法
@@ -103,7 +103,7 @@ $$
 其中$Q$、$K$、$V$分别为查询向量、键向量和值向量，$d_k$为向量维度。
 #### 4.2.2 Multi-Head Attention
 $$
-\mathrm{MultiHead}(Q, K, V) = \mathrm{Concat}(\mathrm{head_1}, ..., \mathrm{head_h})W^O \\
+\mathrm{MultiHead}(Q, K, V) = \mathrm{Concat}(\mathrm{head_1}, ..., \mathrm{head_h})W^O \
 \mathrm{head_i} = \mathrm{Attention}(QW_i^Q, KW_i^K, VW_i^V)
 $$
 其中$W_i^Q$、$W_i^K$、$W_i^V$为线性变换矩阵，$W^O$为输出线性变换矩阵。
@@ -233,7 +233,7 @@ class Encoder(nn.Module):
         self.hidden_size = hidden_size
         self.embedding = nn.Embedding(input_size, hidden_size)
         self.gru = nn.GRU(hidden_size, hidden_size)
-        
+
     def forward(self, input, hidden):
         embedded = self.embedding(input).view(1, 1, -1)
         output, hidden = self.gru(embedded, hidden)
@@ -249,7 +249,7 @@ class Decoder(nn.Module):
         self.gru = nn.GRU(hidden_size, hidden_size)
         self.out = nn.Linear(hidden_size, output_size)
         self.softmax = nn.LogSoftmax(dim=1)
-        
+
     def forward(self, input, hidden):
         embedded = self.embedding(input).view(1, 1, -1)
         output, hidden = self.gru(embedded, hidden)
@@ -262,35 +262,35 @@ def train(input_tensor, target_tensor, encoder, decoder, encoder_optimizer, deco
     encoder_hidden = encoder.initHidden()
     encoder_optimizer.zero_grad()
     decoder_optimizer.zero_grad()
-    
+
     input_length = input_tensor.size(0)
     target_length = target_tensor.size(0)
-    
+
     encoder_outputs = torch.zeros(max_length, encoder.hidden_size)
-    
+
     loss = 0
-    
+
     for ei in range(input_length):
         encoder_output, encoder_hidden = encoder(input_tensor[ei], encoder_hidden)
         encoder_outputs[ei] = encoder_output[0, 0]
-        
+
     decoder_input = torch.tensor([[SOS_token]])
     decoder_hidden = encoder_hidden
-    
+
     for di in range(target_length):
         decoder_output, decoder_hidden = decoder(decoder_input, decoder_hidden)
         topv, topi = decoder_output.topk(1)
         decoder_input = topi.squeeze().detach()
-        
+
         loss += criterion(decoder_output, target_tensor[di])
         if decoder_input.item() == EOS_token:
             break
-            
+
     loss.backward()
-    
+
     encoder_optimizer.step()
     decoder_optimizer.step()
-    
+
     return loss.item() / target_length
 ```
 
@@ -312,7 +312,7 @@ def train(input_tensor, target_tensor, encoder, decoder, encoder_optimizer, deco
 
 ### 6.4 医疗健康助理
 - 症状初步判断
-- 就医指导与建议  
+- 就医指导与建议
 - 健康知识普及
 
 ### 6.5 金融服务助手

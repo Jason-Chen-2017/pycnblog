@@ -263,18 +263,18 @@ class ChatDataset(Dataset):
         self.labels = labels
         self.tokenizer = tokenizer
         self.max_len = max_len
-        
+
     def __len__(self):
         return len(self.texts)
-    
+
     def __getitem__(self, item):
         text = self.texts[item]
         label = self.labels[item]
-        
+
         encoding = self.tokenizer(text, return_tensors='pt', max_length=self.max_len, truncation=True, padding='max_length')
         input_ids = encoding['input_ids'].squeeze(0)
         attention_mask = encoding['attention_mask'].squeeze(0)
-        
+
         return {'input_ids': input_ids, 'attention_mask': attention_mask, 'labels': label}
 
 # 加载预训练模型和分词器

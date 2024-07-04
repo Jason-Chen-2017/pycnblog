@@ -190,7 +190,7 @@ class QNetwork(nn.Module):
         super(QNetwork, self).__init__()
         self.fc1 = nn.Linear(input_dim, 128)
         self.fc2 = nn.Linear(128, output_dim)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)
@@ -208,12 +208,12 @@ for epoch in range(100):
     for state, action, reward, next_state, done in train_data:
         q_values = q_network(torch.from_numpy(state))
         target_q_values = torch.zeros_like(q_values)
-        
+
         if not done:
             target_q_values[torch.argmax(q_values)] = reward + gamma * torch.max(q_network(torch.from_numpy(next_state)))
         else:
             target_q_values[torch.argmax(q_values)] = reward
-        
+
         loss = loss_function(q_values, target_q_values)
         optimizer.zero_grad()
         loss.backward()

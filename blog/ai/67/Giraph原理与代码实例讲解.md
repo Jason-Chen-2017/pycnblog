@@ -100,13 +100,13 @@ Giraph的核心算法原理是迭代式计算。Giraph将图数据存储在Hadoo
 1. **初始化**：将每个节点的PageRank值初始化为1/N，其中N为节点总数。
 2. **Map步骤**：对于每个节点u，计算其PageRank贡献值：
    $$
-PageRank(u) = \frac{1}{N} \sum_{v \in \text{outEdges}(u)} \frac{PageRank(v)}{|outDegree(v)} 
+PageRank(u) = \frac{1}{N} \sum_{v \in \text{outEdges}(u)} \frac{PageRank(v)}{|outDegree(v)}
 $$
    其中，outEdges(u)表示节点u的出边集合，|outDegree(v)|表示节点v的出度。
 3. **Shuffle步骤**：将每个节点的PageRank贡献值按照其出边信息进行分发。
 4. **Reduce步骤**：对于每个节点v，计算其PageRank值：
    $$
-PageRank(v) = \frac{PageRank(v)}{|outDegree(v)} \sum_{u \in \text{inEdges}(v)} PageRank(u) 
+PageRank(v) = \frac{PageRank(v)}{|outDegree(v)} \sum_{u \in \text{inEdges}(v)} PageRank(u)
 $$
    其中，inEdges(v)表示节点v的入边集合。
 5. **迭代优化**：重复执行Map、Shuffle和Reduce步骤，直到PageRank值收敛。

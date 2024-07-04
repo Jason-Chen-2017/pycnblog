@@ -67,13 +67,11 @@
 ### 3.2 算法步骤详解
 
 1. **初始化参数**：随机初始化参数 $\theta_0$ 或从某个初始值开始，如0或1。
-2. **计算梯度**：在当前参数 $\theta_t$ 下计算目标函数 $f(\theta)$ 的梯度 $\
-abla f(\theta_t)$。
+2. **计算梯度**：在当前参数 $\theta_t$ 下计算目标函数 $f(\theta)$ 的梯度 $\nabla f(\theta_t)$。
 3. **更新参数**：根据梯度和学习率 $\eta$ 更新参数：
 
    $$
-\theta_{t+1} = \theta_t - \eta \
-abla f(\theta_t)
+\theta_{t+1} = \theta_t - \eta \nabla f(\theta_t)
 $$
 
 4. **重复步骤2和3**：不断迭代，直到满足停止条件。
@@ -107,8 +105,7 @@ $$
 梯度下降算法的数学模型如下：
 
 $$
-\theta_{t+1} = \theta_t - \eta \
-abla f(\theta_t)
+\theta_{t+1} = \theta_t - \eta \nabla f(\theta_t)
 $$
 
 其中：
@@ -116,8 +113,7 @@ $$
 - $\theta_t$ 表示第 $t$ 次迭代的参数。
 - $\theta_{t+1}$ 表示第 $t+1$ 次迭代的参数。
 - $\eta$ 表示学习率。
-- $\
-abla f(\theta_t)$ 表示目标函数 $f(\theta)$ 在 $\theta_t$ 处的梯度。
+- $\nabla f(\theta_t)$ 表示目标函数 $f(\theta)$ 在 $\theta_t$ 处的梯度。
 
 ### 4.2 公式推导过程
 
@@ -126,15 +122,13 @@ abla f(\theta_t)$ 表示目标函数 $f(\theta)$ 在 $\theta_t$ 处的梯度。
 假设目标函数为 $f(\theta) = \theta^2$，其梯度为：
 
 $$
-\
-abla f(\theta) = 2\theta
+\nabla f(\theta) = 2\theta
 $$
 
 梯度下降算法的迭代公式为：
 
 $$
-\theta_{t+1} = \theta_t - \eta \
-abla f(\theta_t) = \theta_t - 2\eta \theta_t = (1 - 2\eta)\theta_t
+\theta_{t+1} = \theta_t - \eta \nabla f(\theta_t) = \theta_t - 2\eta \theta_t = (1 - 2\eta)\theta_t
 $$
 
 可以看出，每次迭代后，参数 $\theta$ 都会沿着梯度的反方向更新，逐渐逼近最优解。

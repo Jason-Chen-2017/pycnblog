@@ -1,7 +1,7 @@
 
 # ElasticSearch Shard原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -100,7 +100,7 @@ Shard 算法中的关键数学模型如下：
 假设索引包含 N 个 shard，文档数量为 M，则每个 shard 分配的文档数量为：
 
 $$
- \frac{M}{N} 
+ \frac{M}{N}
 $$
 
 **副本同步**：
@@ -108,7 +108,7 @@ $$
 假设每个 shard 有 R 个副本，则每个 shard 的同步时间为：
 
 $$
- \frac{M}{R} 
+ \frac{M}{R}
 $$
 
 ### 4.3 案例分析与讲解
@@ -118,13 +118,13 @@ $$
 - 每个 shard 分配的文档数量为：
 
 $$
- \frac{10000000}{10} = 1000000 
+ \frac{10000000}{10} = 1000000
 $$
 
 - 每个副本同步的时间为：
 
 $$
- \frac{1000000}{2} = 500000 
+ \frac{1000000}{2} = 500000
 $$
 
 ### 4.4 常见问题解答

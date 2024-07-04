@@ -180,8 +180,7 @@ Q函数和V函数在LLMs中的应用领域主要包括：
 
 - **小批量微调**：
   $$
-  \theta_{t+1} = \theta_t - \eta \
-abla_{\theta_t} L(\theta_t)
+  \theta_{t+1} = \theta_t - \eta \nabla_{\theta_t} L(\theta_t)
   $$
 - **自适应学习率调整**：
   $$
@@ -224,8 +223,7 @@ abla_{\theta_t} L(\theta_t)
 
 - **小批量微调**：
   $$
-  \theta_{t+1} = \theta_t - \eta \
-abla_{\theta_t} L(\theta_t)
+  \theta_{t+1} = \theta_t - \eta \nabla_{\theta_t} L(\theta_t)
   $$
 - **自适应学习率调整**：
   $$

@@ -64,8 +64,7 @@ H --> E{动作}
 Policy Gradients方法通过直接优化策略函数的梯度来更新策略参数，从而实现策略的迭代更新。具体来说，Policy Gradients方法使用梯度上升来最大化累积奖励期望：
 
 $$
-\theta \leftarrow \theta + \alpha \
-abla_{\theta} J(\theta)
+\theta \leftarrow \theta + \alpha \nabla_{\theta} J(\theta)
 $$
 
 其中，$\theta$为策略参数，$J(\theta)$为累积奖励期望，$\alpha$为学习率。
@@ -91,9 +90,7 @@ Policy Gradients方法的算法步骤如下：
 根据累积奖励和策略函数的梯度，计算策略参数的梯度：
 
 $$
-\
-abla_{\theta} J(\theta) = \sum_{t=0}^T \
-abla_{\theta} \pi_{\theta}(a_t|s_t)R_t
+\nabla_{\theta} J(\theta) = \sum_{t=0}^T \nabla_{\theta} \pi_{\theta}(a_t|s_t)R_t
 $$
 
 其中，$T$为序列长度，$R_t$为第$t$步的奖励，$\pi_{\theta}(a_t|s_t)$为策略函数在状态$s_t$下选择动作$a_t$的概率。
@@ -103,8 +100,7 @@ $$
 根据梯度上升公式，更新策略参数：
 
 $$
-\theta \leftarrow \theta + \alpha \
-abla_{\theta} J(\theta)
+\theta \leftarrow \theta + \alpha \nabla_{\theta} J(\theta)
 $$
 
 **Step 6: 迭代**
@@ -188,9 +184,7 @@ $$
 6. 最终得到Policy Gradients的公式：
 
 $$
-\
-abla_{\theta} J(\theta) = \sum_{t=0}^T \
-abla_{\theta} \pi_{\theta}(a_t|s_t)R_t
+\nabla_{\theta} J(\theta) = \sum_{t=0}^T \nabla_{\theta} \pi_{\theta}(a_t|s_t)R_t
 $$
 
 ### 4.3 案例分析与讲解

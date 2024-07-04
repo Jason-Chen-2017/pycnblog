@@ -78,9 +78,9 @@ VAE的数学模型如下：
 
 $$
 \begin{align*}
-\mu &= \mu(z|x) = \phi_\theta(x) \\
-\sigma^2 &= \sigma^2(z|x) = \phi_\theta(x) \\
-x &= q_\phi(z) = \sigma z + \mu \\
+\mu &= \mu(z|x) = \phi_\theta(x) \
+\sigma^2 &= \sigma^2(z|x) = \phi_\theta(x) \
+x &= q_\phi(z) = \sigma z + \mu \
 z &= p(z) = \mathcal{N}(0, I)
 \end{align*}
 $$
@@ -182,7 +182,7 @@ A：VAE的损失函数主要包括两部分：重构损失和KL散度损失。�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n vae-env python=3.8 
+conda create -n vae-env python=3.8
 conda activate vae-env
 ```
 

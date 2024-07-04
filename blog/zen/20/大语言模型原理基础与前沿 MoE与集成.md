@@ -41,7 +41,7 @@ MoE和集成技术在提升大语言模型性能方面相互补充。MoE通过�
 MoE和集成算法的核心在于通过多模型协作来提升性能。MoE通过构建和训练多个专注于特定任务或语境的子模型，从而减少模型在所有任务上的平均学习负担，提高每个任务的性能。集成则是通过将多个模型的预测结果合并，以增强预测的可靠性、准确性或覆盖范围。具体而言：
 
 - **MoE算法**：构建多个子模型，每个子模型针对特定任务或语境进行优化和微调。子模型之间可以共享参数，或者各自独立。在预测时，根据输入特征选择最合适的子模型进行处理。
-  
+
 - **集成算法**：收集多个模型的预测结果，通过加权平均、投票或其它组合方式形成最终预测。集成可以基于模型的性能、多样性和互补性来分配权重。
 
 ### 3.2 算法步骤详解
@@ -90,39 +90,39 @@ MoE和集成技术广泛应用于自然语言处理、计算机视觉、语音�
 
 **MoE模型构建**：
 
-设$\\mathcal{M}_i$为第$i$个子模型，$\\theta_i$为其参数集，$\\mathcal{D}$为训练数据集，则MoE模型可以表示为：
+设$\mathcal{M}_i$为第$i$个子模型，$\theta_i$为其参数集，$\mathcal{D}$为训练数据集，则MoE模型可以表示为：
 
-\\[
-\\hat{f}_{MoE}(x) = \\sum_{i=1}^N \\alpha_i \\cdot \\mathcal{M}_i(x; \\theta_i)
-\\]
+$$
+\hat{f}_{MoE}(x) = \sum_{i=1}^N \alpha_i \cdot \mathcal{M}_i(x; \theta_i)
+$$
 
-其中$\\alpha_i$是第$i$个子模型的权重，$\\hat{f}_{MoE}(x)$是MoE模型的预测。
+其中$\alpha_i$是第$i$个子模型的权重，$\hat{f}_{MoE}(x)$是MoE模型的预测。
 
 **集成模型构建**：
 
-设$\\mathcal{M}_j$为第$j$个模型，$\\hat{f}_{j}(x)$为模型$\\mathcal{M}_j$的预测，$\\omega_j$为模型$\\mathcal{M}_j$的权重，则集成模型可以表示为：
+设$\mathcal{M}_j$为第$j$个模型，$\hat{f}_{j}(x)$为模型$\mathcal{M}_j$的预测，$\omega_j$为模型$\mathcal{M}_j$的权重，则集成模型可以表示为：
 
-\\[
-\\hat{f}_{Ensemble}(x) = \\sum_{j=1}^M \\omega_j \\cdot \\hat{f}_{j}(x)
-\\]
+$$
+\hat{f}_{Ensemble}(x) = \sum_{j=1}^M \omega_j \cdot \hat{f}_{j}(x)
+$$
 
 ### 4.2 公式推导过程
 
 **MoE推导**：
 
-假设我们有$N$个子模型，每个子模型基于不同特征进行优化。对于输入$x$，每个子模型$\\mathcal{M}_i$基于其特定参数$\\theta_i$进行预测，得到预测值$\\mathcal{M}_i(x; \\theta_i)$。MoE模型通过加权和来整合这些预测，权重$\\alpha_i$反映了每个子模型在整体预测中的相对重要性。因此，MoE模型的预测为：
+假设我们有$N$个子模型，每个子模型基于不同特征进行优化。对于输入$x$，每个子模型$\mathcal{M}_i$基于其特定参数$\theta_i$进行预测，得到预测值$\mathcal{M}_i(x; \theta_i)$。MoE模型通过加权和来整合这些预测，权重$\alpha_i$反映了每个子模型在整体预测中的相对重要性。因此，MoE模型的预测为：
 
-\\[
-\\hat{f}_{MoE}(x) = \\sum_{i=1}^N \\alpha_i \\cdot \\mathcal{M}_i(x; \\theta_i)
-\\]
+$$
+\hat{f}_{MoE}(x) = \sum_{i=1}^N \alpha_i \cdot \mathcal{M}_i(x; \theta_i)
+$$
 
 **集成推导**：
 
-对于集成模型，我们有$M$个不同类型的模型$\\mathcal{M}_j$，每个模型基于不同策略或参数进行预测，得到预测值$\\hat{f}_{j}(x)$。集成模型通过加权和来整合这些预测，权重$\\omega_j$反映了每个模型在最终预测中的相对重要性。因此，集成模型的预测为：
+对于集成模型，我们有$M$个不同类型的模型$\mathcal{M}_j$，每个模型基于不同策略或参数进行预测，得到预测值$\hat{f}_{j}(x)$。集成模型通过加权和来整合这些预测，权重$\omega_j$反映了每个模型在最终预测中的相对重要性。因此，集成模型的预测为：
 
-\\[
-\\hat{f}_{Ensemble}(x) = \\sum_{j=1}^M \\omega_j \\cdot \\hat{f}_{j}(x)
-\\]
+$$
+\hat{f}_{Ensemble}(x) = \sum_{j=1}^M \omega_j \cdot \hat{f}_{j}(x)
+$$
 
 ### 4.3 案例分析与讲解
 
@@ -189,19 +189,19 @@ class Gate(nn.Module):
     def forward(self, x):
         return torch.sigmoid(self.fc(x))
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     # 创建基本模型
     base_model = BaseModel(input_size=10, output_size=5)
-    
+
     # 创建门控模型
     gate = Gate(input_size=10, output_size=base_model.num_features)
-    
+
     # 创建MoE模型，假设我们有3个专家
     moe_model = MoEModel(base_model, gate, num_experts=3)
-    
+
     # 输入数据示例
     input_data = torch.randn(1, 10)
-    
+
     # 前向传播
     output = moe_model(input_data)
     print(output)

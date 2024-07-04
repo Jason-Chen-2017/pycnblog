@@ -5,7 +5,7 @@
 ## 1. 背景介绍
 ### 1.1 人工智能的发展历程
 #### 1.1.1 早期人工智能的探索
-#### 1.1.2 机器学习的崛起 
+#### 1.1.2 机器学习的崛起
 #### 1.1.3 深度学习的突破
 
 ### 1.2 Agent技术的兴起
@@ -39,7 +39,7 @@
 ### 3.1 BDI模型
 #### 3.1.1 BDI模型概述
 #### 3.1.2 信念(Belief)
-#### 3.1.3 欲望(Desire)  
+#### 3.1.3 欲望(Desire)
 #### 3.1.4 意图(Intention)
 #### 3.1.5 BDI推理过程
 
@@ -75,7 +75,7 @@ $$V^*(s) = \max_a \sum_{s'} P(s'|s,a)[R(s,a) + \gamma V^*(s')]$$
 ### 4.3 强化学习算法的数学推导
 #### 4.3.1 Q-Learning的更新公式
 $$Q(s_t,a_t) \leftarrow Q(s_t,a_t) + \alpha[r_{t+1} + \gamma \max_a Q(s_{t+1},a) - Q(s_t,a_t)]$$
-#### 4.3.2 Sarsa的更新公式  
+#### 4.3.2 Sarsa的更新公式
 $$Q(s_t,a_t) \leftarrow Q(s_t,a_t) + \alpha[r_{t+1} + \gamma Q(s_{t+1},a_{t+1}) - Q(s_t,a_t)]$$
 #### 4.3.3 DQN的损失函数
 $$L_i(\theta_i) = \mathbb{E}_{(s,a,r,s')\sim U(D)} \left[ \left(r + \gamma \max_{a'} Q(s',a';\theta_i^-) - Q(s,a;\theta_i) \right)^2 \right]$$
@@ -91,51 +91,51 @@ $$L_i(\theta_i) = \mathbb{E}_{(s,a,r,s')\sim U(D)} \left[ \left(r + \gamma \max_
 class Belief:
     def __init__(self):
         self.belief_set = set()
-        
+
     def add_belief(self, belief):
         self.belief_set.add(belief)
-        
+
     def remove_belief(self, belief):
         self.belief_set.discard(belief)
 
 class Desire:
     def __init__(self):
         self.desire_list = []
-        
+
     def add_desire(self, desire):
         self.desire_list.append(desire)
-        
+
     def remove_desire(self, desire):
         self.desire_list.remove(desire)
-        
+
 class Intention:
     def __init__(self):
         self.intention_stack = []
-        
+
     def push_intention(self, intention):
         self.intention_stack.append(intention)
-        
+
     def pop_intention(self):
         return self.intention_stack.pop()
-        
+
 class BDIAgent:
     def __init__(self):
         self.belief = Belief()
-        self.desire = Desire() 
+        self.desire = Desire()
         self.intention = Intention()
-        
+
     def perceive(self, env):
         # 感知环境，更新信念库
         pass
-        
+
     def deliberate(self):
         # 审议欲望，生成意图
         pass
-        
+
     def act(self):
         # 执行意图，与环境交互
         pass
-        
+
     def run(self):
         while True:
             self.perceive(env)
@@ -160,46 +160,46 @@ class QLearningAgent:
         self.discount_factor = discount_factor
         self.epsilon = epsilon
         self.q_table = np.zeros((state_size, action_size))
-        
+
     def select_action(self, state):
         if np.random.uniform() < self.epsilon:
             return np.random.choice(self.action_size)
         else:
             return np.argmax(self.q_table[state])
-        
+
     def update_q_table(self, state, action, reward, next_state):
         old_value = self.q_table[state, action]
         next_max = np.max(self.q_table[next_state])
-        
+
         new_value = (1 - self.learning_rate) * old_value + self.learning_rate * (reward + self.discount_factor * next_max)
         self.q_table[state, action] = new_value
-        
+
     def train(self, env, num_episodes):
         for episode in range(num_episodes):
             state = env.reset()
             done = False
-            
+
             while not done:
                 action = self.select_action(state)
                 next_state, reward, done, _ = env.step(action)
-                
+
                 self.update_q_table(state, action, reward, next_state)
-                
+
                 state = next_state
-                
+
             print(f"Episode: {episode+1}, Reward: {reward}")
-            
+
     def test(self, env):
         state = env.reset()
         done = False
         total_reward = 0
-        
+
         while not done:
-            action = np.argmax(self.q_table[state]) 
+            action = np.argmax(self.q_table[state])
             next_state, reward, done, _ = env.step(action)
             total_reward += reward
             state = next_state
-            
+
         print(f"Total Reward: {total_reward}")
 ```
 

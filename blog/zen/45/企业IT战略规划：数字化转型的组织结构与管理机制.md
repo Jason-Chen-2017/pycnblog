@@ -95,9 +95,9 @@
 数学模型如下：
 
 $$
-\max_{x_1, x_2, \dots, x_n} f(x_1, x_2, \dots, x_n) \\
-s.t. \\
-g_i(x_1, x_2, \dots, x_n) \leq b_i \\
+\max_{x_1, x_2, \dots, x_n} f(x_1, x_2, \dots, x_n) \
+s.t. \
+g_i(x_1, x_2, \dots, x_n) \leq b_i \
 h_j(x_1, x_2, \dots, x_n) = d_j
 $$
 
@@ -126,7 +126,7 @@ $$
 资源需求函数和预算限制可以表示为：
 
 $$
-g_i(x_1, x_2, \dots, x_n) = \sum_{k=1}^m r_{ik} x_k \leq b_i \\
+g_i(x_1, x_2, \dots, x_n) = \sum_{k=1}^m r_{ik} x_k \leq b_i \
 h_j(x_1, x_2, \dots, x_n) = \sum_{k=1}^m q_{jk} x_k = d_j
 $$
 
@@ -150,11 +150,11 @@ $$
 构建线性规划模型如下：
 
 $$
-\max_{x_1, x_2, x_3} f(x_1, x_2, x_3) \\
-s.t. \\
-5x_1 + 10x_2 + 8x_3 \leq 100 \\
-10x_1 + 15x_2 + 12x_3 \leq 150 \\
-8x_1 + 12x_2 \leq 120 \\
+\max_{x_1, x_2, x_3} f(x_1, x_2, x_3) \
+s.t. \
+5x_1 + 10x_2 + 8x_3 \leq 100 \
+10x_1 + 15x_2 + 12x_3 \leq 150 \
+8x_1 + 12x_2 \leq 120 \
 x_1, x_2, x_3 \geq 0
 $$
 

@@ -222,7 +222,7 @@ masks = predictions['masks']
 for i, (box, label, mask) in enumerate(zip(boxes, labels, masks)):
     # 绘制边界框
     cv2.rectangle(image, (int(box[0]), int(box[1])), (int(box[2]), int(box[3])), (0, 255, 0), 2)
-    
+
     # 绘制分割掩码
     mask = mask.squeeze(0)
     mask = mask > 0.5

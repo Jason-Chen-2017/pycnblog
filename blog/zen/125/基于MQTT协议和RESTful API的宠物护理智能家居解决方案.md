@@ -301,4 +301,4 @@ if __name__ == "__main__":
 **Q: 如何降低成本？**
 **A:** 可以使用开源硬件平台，开源软件库，降低开发成本。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

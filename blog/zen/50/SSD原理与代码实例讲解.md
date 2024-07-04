@@ -6,7 +6,7 @@
 
 在计算机视觉领域中,对象检测是一项基础且重要的任务。传统的基于区域提议的目标检测算法如R-CNN系列算法,需要先生成候选区域,再对每个候选区域进行分类,存在着计算量大、速度慢的缺陷。为了解决这一问题,SSD(Single Shot MultiBox Detector)算法应运而生。
 
-### 1.2 研究现状 
+### 1.2 研究现状
 
 SSD算法是由Wei Liu等人在2016年提出的,属于一种基于深度学习的单shot目标检测算法。与基于区域提议的算法不同,SSD算法不需要单独的区域提议网络,而是直接从密集采样的默认矩形框中回归目标边界框和类别,从而极大地提高了检测速度。
 
@@ -22,7 +22,7 @@ SSD算法的提出解决了传统目标检测算法计算量大、速度慢的�
 
 1. 核心概念与联系
 2. 核心算法原理及具体操作步骤
-3. 数学模型和公式详细讲解与案例分析  
+3. 数学模型和公式详细讲解与案例分析
 4. 项目实践:代码实例和详细解释
 5. 实际应用场景
 6. 工具和资源推荐
@@ -143,9 +143,9 @@ SSD算法的数学模型主要包括以下几个部分:
    默认框的生成可以通过以下公式描述:
 
    $$
-   d_k^{cx} = (i + f_k^{cx}) / f_w \\
-   d_k^{cy} = (j + f_k^{cy}) / f_h \\
-   d_k^w = e^{f_k^w} \\
+   d_k^{cx} = (i + f_k^{cx}) / f_w \
+   d_k^{cy} = (j + f_k^{cy}) / f_h \
+   d_k^w = e^{f_k^w} \
    d_k^h = e^{f_k^h}
    $$
 
@@ -174,9 +174,9 @@ SSD算法的数学模型主要包括以下几个部分:
 
    $$
    \begin{aligned}
-   t_x &= (g_x - d_x) / d_w \\
-   t_y &= (g_y - d_y) / d_h \\
-   t_w &= \log(g_w / d_w) \\
+   t_x &= (g_x - d_x) / d_w \
+   t_y &= (g_y - d_y) / d_h \
+   t_w &= \log(g_w / d_w) \
    t_h &= \log(g_h / d_h)
    \end{aligned}
    $$
@@ -196,9 +196,9 @@ SSD算法的数学模型主要包括以下几个部分:
 
    $$
    \begin{aligned}
-   d_k^{cx} &= \frac{i + f_k^{cx}}{f_w} \\
-   d_k^{cy} &= \frac{j + f_k^{cy}}{f_h} \\
-   d_k^w &= f_w \cdot e^{f_k^w} \\
+   d_k^{cx} &= \frac{i + f_k^{cx}}{f_w} \
+   d_k^{cy} &= \frac{j + f_k^{cy}}{f_h} \
+   d_k^w &= f_w \cdot e^{f_k^w} \
    d_k^h &= f_h \cdot e^{f_k^h}
    \end{aligned}
    $$
@@ -226,9 +226,9 @@ SSD算法的数学模型主要包括以下几个部分:
 
    $$
    \begin{aligned}
-   t_x &= (g_x - d_x) / d_w \\
-   t_y &= (g_y - d_y) / d_h \\
-   t_w &= \log(g_w / d_w) \\
+   t_x &= (g_x - d_x) / d_w \
+   t_y &= (g_y - d_y) / d_h \
+   t_w &= \log(g_w / d_w) \
    t_h &= \log(g_h / d_h)
    \end{aligned}
    $$

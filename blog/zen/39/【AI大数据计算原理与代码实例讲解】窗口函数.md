@@ -104,13 +104,13 @@ $$
 以下是一个使用SQL进行窗口函数计算的案例：
 
 ```sql
-SELECT 
+SELECT
   id,
   amount,
   AVG(amount) OVER (PARTITION BY customer_id ORDER BY date) as rolling_avg
-FROM 
+FROM
   transactions
-WHERE 
+WHERE
   customer_id = 1;
 ```
 

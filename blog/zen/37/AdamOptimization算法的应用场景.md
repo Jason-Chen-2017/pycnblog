@@ -46,16 +46,13 @@ AdamOptimization算法的核心思想是利用历史梯度信息来更新模型�
 
 ### 3.2 算法步骤详解
 
-1. **初始化**：设置初始学习率$\\eta$、一阶矩估计$M$和二阶矩估计$V$为0。
-2. **计算梯度**：计算当前参数下的梯度$\
-abla_{\\theta}L(\\theta)$。
-3. **更新一阶矩估计**：$M = \\beta_1 \\times M + (1 - \\beta_1) \\times \
-abla_{\\theta}L(\\theta)$。
-4. **更新二阶矩估计**：$V = \\beta_2 \\times V + (1 - \\beta_2) \\times (\
-abla_{\\theta}L(\\theta))^2$。
-5. **计算偏差修正**：$M_{\\text{corrected}} = \\frac{M}{1 - \\beta_1^t}$，$V_{\\text{corrected}} = \\frac{V}{1 - \\beta_2^t}$。
-6. **计算自适应学习率**：$\\eta_{\\text{t}} = \\frac{\\eta}{\\sqrt{V_{\\text{corrected}}} + \\epsilon}$，其中$\\epsilon$为一个小常数，防止分母为0。
-7. **参数更新**：$\\theta_{\\text{t}} = \\theta_{\\text{t-1}} - \\eta_{\\text{t}} \\times M_{\\text{corrected}}$。
+1. **初始化**：设置初始学习率$\eta$、一阶矩估计$M$和二阶矩估计$V$为0。
+2. **计算梯度**：计算当前参数下的梯度$\nabla_{\theta}L(\theta)$。
+3. **更新一阶矩估计**：$M = \beta_1 \times M + (1 - \beta_1) \times \nabla_{\theta}L(\theta)$。
+4. **更新二阶矩估计**：$V = \beta_2 \times V + (1 - \beta_2) \times (\nabla_{\theta}L(\theta))^2$。
+5. **计算偏差修正**：$M_{\text{corrected}} = \frac{M}{1 - \beta_1^t}$，$V_{\text{corrected}} = \frac{V}{1 - \beta_2^t}$。
+6. **计算自适应学习率**：$\eta_{\text{t}} = \frac{\eta}{\sqrt{V_{\text{corrected}}} + \epsilon}$，其中$\epsilon$为一个小常数，防止分母为0。
+7. **参数更新**：$\theta_{\text{t}} = \theta_{\text{t-1}} - \eta_{\text{t}} \times M_{\text{corrected}}$。
 
 ### 3.3 算法优缺点
 
@@ -80,18 +77,16 @@ AdamOptimization算法适用于各种深度学习模型和任务，如神经网�
 
 AdamOptimization算法的数学模型如下：
 
-$$\\begin{align*}
-M_t &= \\beta_1 \\times M_{t-1} + (1 - \\beta_1) \\times \
-abla_{\\theta}L(\\theta) \\\\
-V_t &= \\beta_2 \\times V_{t-1} + (1 - \\beta_2) \\times (\
-abla_{\\theta}L(\\theta))^2 \\\\
-M_{\\text{corrected}} &= \\frac{M_t}{1 - \\beta_1^t} \\\\
-V_{\\text{corrected}} &= \\frac{V_t}{1 - \\beta_2^t} \\\\
-\\eta_t &= \\frac{\\eta}{\\sqrt{V_{\\text{corrected}}} + \\epsilon} \\\\
-\\theta_t &= \\theta_{t-1} - \\eta_t \\times M_{\\text{corrected}}
-\\end{align*}$$
+$$\begin{align*}
+M_t &= \beta_1 \times M_{t-1} + (1 - \beta_1) \times \nabla_{\theta}L(\theta) \\\
+V_t &= \beta_2 \times V_{t-1} + (1 - \beta_2) \times (\nabla_{\theta}L(\theta))^2 \\\
+M_{\text{corrected}} &= \frac{M_t}{1 - \beta_1^t} \\\
+V_{\text{corrected}} &= \frac{V_t}{1 - \beta_2^t} \\\
+\eta_t &= \frac{\eta}{\sqrt{V_{\text{corrected}}} + \epsilon} \\\
+\theta_t &= \theta_{t-1} - \eta_t \times M_{\text{corrected}}
+\end{align*}$$
 
-其中，$t$表示当前迭代次数，$\\beta_1$和$\\beta_2$分别表示一阶和二阶矩估计的平滑系数，$\\epsilon$表示一个小常数。
+其中，$t$表示当前迭代次数，$\beta_1$和$\beta_2$分别表示一阶和二阶矩估计的平滑系数，$\epsilon$表示一个小常数。
 
 ### 4.2 公式推导过程
 
@@ -99,26 +94,24 @@ V_{\\text{corrected}} &= \\frac{V_t}{1 - \\beta_2^t} \\\\
 
 一阶矩估计是所有历次梯度的平均值，可以通过以下公式计算：
 
-$$M_t = \\beta_1 \\times M_{t-1} + (1 - \\beta_1) \\times \
-abla_{\\theta}L(\\theta)$$
+$$M_t = \beta_1 \times M_{t-1} + (1 - \beta_1) \times \nabla_{\theta}L(\theta)$$
 
-其中，$\\beta_1$表示平滑系数，通常取值为0.9。
+其中，$\beta_1$表示平滑系数，通常取值为0.9。
 
 #### 4.2.2 二阶矩估计
 
 二阶矩估计是所有历次梯度平方的平均值，可以通过以下公式计算：
 
-$$V_t = \\beta_2 \\times V_{t-1} + (1 - \\beta_2) \\times (\
-abla_{\\theta}L(\\theta))^2$$
+$$V_t = \beta_2 \times V_{t-1} + (1 - \beta_2) \times (\nabla_{\theta}L(\theta))^2$$
 
-其中，$\\beta_2$表示平滑系数，通常取值为0.999。
+其中，$\beta_2$表示平滑系数，通常取值为0.999。
 
 #### 4.2.3 偏差修正
 
 为了消除偏置，需要对一阶矩估计和二阶矩估计进行偏差修正：
 
-$$M_{\\text{corrected}} = \\frac{M_t}{1 - \\beta_1^t}$$
-$$V_{\\text{corrected}} = \\frac{V_t}{1 - \\beta_2^t}$$
+$$M_{\text{corrected}} = \frac{M_t}{1 - \beta_1^t}$$
+$$V_{\text{corrected}} = \frac{V_t}{1 - \beta_2^t}$$
 
 其中，$t$表示当前迭代次数。
 
@@ -126,15 +119,15 @@ $$V_{\\text{corrected}} = \\frac{V_t}{1 - \\beta_2^t}$$
 
 自适应学习率可以根据一阶矩估计和二阶矩估计来计算：
 
-$$\\eta_t = \\frac{\\eta}{\\sqrt{V_{\\text{corrected}}} + \\epsilon}$$
+$$\eta_t = \frac{\eta}{\sqrt{V_{\text{corrected}}} + \epsilon}$$
 
-其中，$\\eta$表示初始学习率，$\\epsilon$表示一个小常数，通常取值为1e-8。
+其中，$\eta$表示初始学习率，$\epsilon$表示一个小常数，通常取值为1e-8。
 
 #### 4.2.5 参数更新
 
 最终，利用自适应学习率更新模型参数：
 
-$$\\theta_t = \\theta_{t-1} - \\eta_t \\times M_{\\text{corrected}}$$
+$$\theta_t = \theta_{t-1} - \eta_t \times M_{\text{corrected}}$$
 
 ### 4.3 案例分析与讲解
 
@@ -154,7 +147,7 @@ class SimpleNN(nn.Module):
         self.fc1 = nn.Linear(input_size, hidden_size)
         self.relu = nn.ReLU()
         self.fc2 = nn.Linear(hidden_size, output_size)
-    
+
     def forward(self, x):
         x = self.fc1(x)
         x = self.relu(x)
@@ -178,7 +171,7 @@ for epoch in range(100):
     loss.backward()
     optimizer.step()
     if epoch % 10 == 0:
-        print(f\"Epoch {epoch}, Loss: {loss.item()}\")
+        print(f"Epoch {epoch}, Loss: {loss.item()}")
 ```
 
 在这个案例中，我们使用AdamOptimization算法对神经网络进行了训练。通过多次迭代，模型参数逐渐收敛，最终得到较低的损失值。
@@ -189,9 +182,9 @@ for epoch in range(100):
 
 相比传统梯度下降法，AdamOptimization算法结合了动量和自适应学习率，能够提高模型的收敛速度和稳定性。
 
-#### 4.4.2 如何选择合适的$\\beta_1$和$\\beta_2$？
+#### 4.4.2 如何选择合适的$\beta_1$和$\beta_2$？
 
-$\\beta_1$和$\\beta_2$是AdamOptimization算法中的平滑系数，通常取值为0.9和0.999。在实际应用中，可以根据任务和模型的特点进行调整。
+$\beta_1$和$\beta_2$是AdamOptimization算法中的平滑系数，通常取值为0.9和0.999。在实际应用中，可以根据任务和模型的特点进行调整。
 
 #### 4.4.3 AdamOptimization算法适用于哪些任务？
 
@@ -223,7 +216,7 @@ class SimpleNN(nn.Module):
         self.fc1 = nn.Linear(input_size, hidden_size)
         self.relu = nn.ReLU()
         self.fc2 = nn.Linear(hidden_size, output_size)
-    
+
     def forward(self, x):
         x = self.fc1(x)
         x = self.relu(x)
@@ -247,7 +240,7 @@ for epoch in range(100):
     loss.backward()
     optimizer.step()
     if epoch % 10 == 0:
-        print(f\"Epoch {epoch}, Loss: {loss.item()}\")
+        print(f"Epoch {epoch}, Loss: {loss.item()}")
 ```
 
 ### 5.3 代码解读与分析
@@ -309,8 +302,8 @@ Epoch 90, Loss: 0.0042387300176959
 
 ### 7.3 相关论文推荐
 
-1. \"Adam: A Method for Stochastic Optimization\" - Kingma, D. P., & Ba, J. (2014)
-2. \"On the Convergence of Adam and Beyond\" - Xiao, H., Zhang, H., Lai, K., & Lin, S. (2018)
+1. "Adam: A Method for Stochastic Optimization" - Kingma, D. P., & Ba, J. (2014)
+2. "On the Convergence of Adam and Beyond" - Xiao, H., Zhang, H., Lai, K., & Lin, S. (2018)
 
 ### 7.4 其他资源推荐
 
@@ -345,9 +338,9 @@ AdamOptimization算法是一种结合了动量和自适应学习率的优化算�
 
 相比传统梯度下降法，AdamOptimization算法结合了动量和自适应学习率，能够提高模型的收敛速度和稳定性。
 
-### 9.3 如何选择合适的$\\beta_1$和$\\beta_2$？
+### 9.3 如何选择合适的$\beta_1$和$\beta_2$？
 
-$\\beta_1$和$\\beta_2$是AdamOptimization算法中的平滑系数，通常取值为0.9和0.999。在实际应用中，可以根据任务和模型的特点进行调整。
+$\beta_1$和$\beta_2$是AdamOptimization算法中的平滑系数，通常取值为0.9和0.999。在实际应用中，可以根据任务和模型的特点进行调整。
 
 ### 9.4 AdamOptimization算法适用于哪些任务？
 

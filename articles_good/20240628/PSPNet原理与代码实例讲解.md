@@ -141,8 +141,7 @@ $$
 4. **反向传播**：
 
 $$
-\theta = \theta - \eta \
-abla_{\theta}J(\theta)
+\theta = \theta - \eta \nabla_{\theta}J(\theta)
 $$
 
 其中，$\theta$ 表示模型参数，$J(\theta)$ 表示损失函数，$\eta$ 表示学习率。

@@ -168,10 +168,10 @@ class CAlgebra:
     def __init__(self, zero, one):
         self.zero = zero
         self.one = one
-    
+
     def is_unit(self, element):
         return element * self.one == self.one * element == element
-    
+
     def find_unit(self):
         for element in self.elements:
             if self.is_unit(element):

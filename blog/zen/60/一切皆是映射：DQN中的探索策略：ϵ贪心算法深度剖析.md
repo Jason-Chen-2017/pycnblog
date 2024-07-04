@@ -36,7 +36,7 @@ $$\Delta\theta = \alpha \cdot (r + \gamma \cdot \max_{a'} Q(s',a';\theta^-) - Q(
 
 在ϵ-贪心策略中，行动的选择通过以下方式进行：
 
-$$a = \begin{cases} \text{random action}, & \text{with probability } \epsilon \\ \arg\max_a Q(s,a;\theta), & \text{with probability } 1-\epsilon \end{cases}$$
+$$a = \begin{cases} \text{random action}, & \text{with probability } \epsilon \ \arg\max_a Q(s,a;\theta), & \text{with probability } 1-\epsilon \end{cases}$$
 
 其中，$s$表示当前状态，$\theta$表示Q网络的参数。
 

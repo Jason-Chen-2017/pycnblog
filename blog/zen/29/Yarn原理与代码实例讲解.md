@@ -94,30 +94,30 @@ graph TD
         NM1[NodeManager1]
         NM2[NodeManager2]
         NM3[NodeManager3]
-        
+
         RM --> |Schedules| AM1
         RM --> |Schedules| AM2
-        
+
         AM1 --> |Requests Resources| RM
         AM2 --> |Requests Resources| RM
-        
+
         RM --> |Allocates| NM1
         RM --> |Allocates| NM2
         RM --> |Allocates| NM3
-        
+
         NM1 --> |Manages| C1
         NM1 --> |Manages| C2
         NM2 --> |Manages| C3
         NM3 --> |Manages| C4
         NM3 --> |Manages| C5
-        
+
         C1[Container1]
         C2[Container2]
-        C3[Container3] 
+        C3[Container3]
         C4[Container4]
         C5[Container5]
     end
-    
+
     AM1[ApplicationMaster1]
     AM2[ApplicationMaster2]
 ```

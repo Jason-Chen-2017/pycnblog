@@ -395,4 +395,4 @@ pygame.quit()
 
 **A:** 规划算法可以利用**多智能体规划**技术，例如**博弈论**、**协调机制**等，来处理多智能体问题。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

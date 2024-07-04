@@ -126,9 +126,9 @@ Q-learning是一种无模型、无监督的强化学习方法。它通过学习�
 假设智能体的状态空间为$S$，动作空间为$A$，则Q-table可以表示为：
 
 $$Q(s, a) = \begin{bmatrix}
-Q(s_1, a_1) & Q(s_1, a_2) & \cdots & Q(s_1, a_n) \\
-Q(s_2, a_1) & Q(s_2, a_2) & \cdots & Q(s_2, a_n) \\
-\vdots & \vdots & \ddots & \vdots \\
+Q(s_1, a_1) & Q(s_1, a_2) & \cdots & Q(s_1, a_n) \
+Q(s_2, a_1) & Q(s_2, a_2) & \cdots & Q(s_2, a_n) \
+\vdots & \vdots & \ddots & \vdots \
 Q(s_m, a_1) & Q(s_m, a_2) & \cdots & Q(s_m, a_n)
 \end{bmatrix}$$
 
@@ -162,8 +162,7 @@ $$J = \sum_{t=0}^{\infty} \gamma^t Q(s_t, a_t)$$
 
 通过梯度下降法更新神经网络参数：
 
-$$\theta \leftarrow \theta - \alpha \
-abla_\theta J$$
+$$\theta \leftarrow \theta - \alpha \nabla_\theta J$$
 
 ### 4.3 案例分析与讲解
 

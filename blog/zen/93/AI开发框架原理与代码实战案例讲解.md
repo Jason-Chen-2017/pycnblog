@@ -1,7 +1,7 @@
 
 # AI开发框架原理与代码实战案例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 ### 1.1 问题的由来
@@ -90,7 +90,7 @@ model = tf.keras.Sequential([
 ```
 3. **编译模型**：
 ```python
-model.compile(optimizer='adam', 
+model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 ```
@@ -154,7 +154,7 @@ class NeuralNetwork(nn.Module):
         self.relu = nn.ReLU()
         self.fc2 = nn.Linear(128, 64)
         self.fc3 = nn.Linear(64, num_classes)
-    
+
     def forward(self, x):
         x = self.fc1(x)
         x = self.relu(x)
@@ -217,7 +217,7 @@ model = tf.keras.models.Sequential([
 ```
 5. **编译模型**：
 ```python
-model.compile(optimizer='adam', 
+model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 ```
@@ -286,7 +286,7 @@ class LinearRegression(nn.Module):
     def __init__(self, input_dim, output_dim):
         super(LinearRegression, self).__init__()
         self.linear = nn.Linear(input_dim, output_dim)
-    
+
     def forward(self, x):
         out = self.linear(x)
         return out

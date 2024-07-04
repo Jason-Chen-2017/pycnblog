@@ -146,7 +146,7 @@ $$
 
 $$
 d_i = \begin{cases}
-1, & \text{if } d_i \geq 0 \\
+1, & \text{if } d_i \geq 0 \
 -1, & \text{if } d_i < 0
 \end{cases}
 $$

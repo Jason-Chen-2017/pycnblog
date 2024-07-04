@@ -18,7 +18,7 @@
 - 偏差(Bias):度量了模型预测的平均值与真实值之间的偏离程度,偏差越大,欠拟合风险越高。
 - 方差(Variance):度量了模型预测结果的波动范围,反映了数据扰动导致的输出变化,方差越大,过拟合风险越高。
 
-### 2.2 训练误差与泛化误差  
+### 2.2 训练误差与泛化误差
 - 训练误差:模型在训练集上的误差
 - 泛化误差:模型在新样本(如测试集)上的误差
 - 过拟合的模型通常训练误差很低,但泛化误差很高
@@ -36,7 +36,7 @@
 - 导致参数稀疏化,部分参数正好为0,降低模型复杂度
 - 优化方法:坐标轴下降法、最小角回归法
 
-#### 3.1.2 L2正则化(岭回归) 
+#### 3.1.2 L2正则化(岭回归)
 - 目标函数添加L2范数惩罚项:$J(θ)= MSE(θ)+λ||θ||_2$
 - 参数值整体变小,接近0但不等于0,降低参数数值范围
 - 优化方法:梯度下降法、正规方程解
@@ -50,7 +50,7 @@
 - 每个神经元要学会和随机组合的其他神经元协同工作,不过度依赖某些特征,起到正则化的效果
 - 测试时对所有神经元的输出乘以q,保证数值范围一致
 
-### 3.3 早停法(Early Stopping)  
+### 3.3 早停法(Early Stopping)
 - 在每个epoch后评估模型在验证集上的性能
 - 当连续几个epoch模型性能不再提升,就停止训练
 - 防止模型训练太久,过度拟合训练数据
@@ -84,7 +84,7 @@ $$J(θ)=-\frac{1}{m}\sum^m_{i=1}[y_i\log f(x_i)+(1-y_i)\log(1-f(x_i))]$$
 
 加入L1正则化后的目标函数:
 
-$$J(θ)=-\frac{1}{m}\sum^m_{i=1}[y_i\log f(x_i)+(1-y_i)\log(1-f(x_i))]+\frac{λ}{m}||w||_1$$  
+$$J(θ)=-\frac{1}{m}\sum^m_{i=1}[y_i\log f(x_i)+(1-y_i)\log(1-f(x_i))]+\frac{λ}{m}||w||_1$$
 
 其中$||w||_1=\sum^d_{j=1}|w_j|$为L1范数,超参数$λ>0$控制正则化强度。
 
@@ -136,13 +136,13 @@ Test Score:  0.6662221670168519
 可以看出,岭回归在训练集上达到了94.7%的拟合优度,在测试集上也有66.6%的性能表现,说明模型泛化能力较好。
 
 ### 5.2 Lasso回归
-```python  
+```python
 from sklearn.linear_model import Lasso
 from sklearn.datasets import load_boston
 from sklearn.model_selection import train_test_split
 
 # 加载Boston房价数据集
-boston = load_boston()  
+boston = load_boston()
 X = boston.data
 y = boston.target
 
@@ -150,7 +150,7 @@ y = boston.target
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # 创建Lasso模型,设置正则化强度alpha
-lasso = Lasso(alpha=0.1)  
+lasso = Lasso(alpha=0.1)
 
 # 训练模型
 lasso.fit(X_train, y_train)
@@ -169,7 +169,7 @@ print("Number of features used: ", sum(lasso.coef_ != 0))
 ```
 Lasso Regression:
 Train Score:  0.7645911266164749
-Test Score:  0.6371324269313655  
+Test Score:  0.6371324269313655
 Number of features used:  10
 ```
 
@@ -215,7 +215,7 @@ Number of features used:  10
 ### 9.1 如何判断出现了过拟合?
 主要依据训练集和验证集上的性能差异。如果训练集上loss很低,accuracy很高,而验证集上loss较高,accuracy较低,说明可能过拟合了。
 
-### 9.2 是否模型越简单越好?  
+### 9.2 是否模型越简单越好?
 奥卡姆剃刀原则鼓励在性能相近时选择更简单的模型。但也不能过于简单,以免欠拟合。要权衡模型的表达能力和泛化能力。
 
 ### 9.3 如何选择正则化强度?

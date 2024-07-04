@@ -46,8 +46,7 @@ $$Q(s, a) = Q(s, a) + \\alpha [R + \\gamma \\max_{a'} Q(s', a') - Q(s, a)]$$
 
 ### 4.2 策略梯度公式
 
-$$\\theta_{t+1} = \\theta_{t} - \\eta \
-abla_{\\theta} J(\\theta)$$
+$$\\theta_{t+1} = \\theta_{t} - \\eta \nabla_{\\theta} J(\\theta)$$
 
 其中，θ表示策略参数，η为学习率，J(θ)为策略损失函数。
 

@@ -126,10 +126,10 @@ $$
 
 $$
 \begin{align*}
-x_1 &= \begin{bmatrix} 1 \\ 2 \end{bmatrix} \\
-x_2 &= \begin{bmatrix} 2 \\ 3 \end{bmatrix} \\
-x_3 &= \begin{bmatrix} 3 \\ 4 \end{bmatrix} \\
-x_4 &= \begin{bmatrix} 4 \\ 5 \end{bmatrix}
+x_1 &= \begin{bmatrix} 1 \ 2 \end{bmatrix} \\
+x_2 &= \begin{bmatrix} 2 \ 3 \end{bmatrix} \\
+x_3 &= \begin{bmatrix} 3 \ 4 \end{bmatrix} \\
+x_4 &= \begin{bmatrix} 4 \ 5 \end{bmatrix}
 \end{align*}
 $$
 

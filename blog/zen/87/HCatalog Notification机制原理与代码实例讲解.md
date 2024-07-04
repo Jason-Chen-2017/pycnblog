@@ -128,20 +128,20 @@ public class NotificationConsumer {
     public static void main(String[] args) throws Exception {
         // 初始化 HCatalog 客户端
         HCatalogClient client = HCatalogClient.create(new Configuration());
-        
+
         // 创建订阅者
         Subscription subscription = client.subscribeTable("user_table", new NotificationConsumer());
-        
+
         // 循环监听通知消息
         while (true) {
             // 获取通知消息
             Notification notification = subscription.take();
-            
+
             // 处理通知消息
             processNotification(notification);
         }
     }
-    
+
     private static void processNotification(Notification notification) {
         // 根据通知消息类型进行处理
         switch (notification.getType()) {

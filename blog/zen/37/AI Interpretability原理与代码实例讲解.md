@@ -97,13 +97,13 @@
 
 ### 4.1 数学模型构建
 
-- **特征重要性**：$FeatureImportance = \\frac{\\sum_{i=1}^{n} \\Delta G_i}{\\sum_{j=1}^{m} \\Delta G_j}$，其中$n$是特征数量，$m$是决策树的数量，$\\Delta G_i$是第$i$个特征在所有决策树中被选择的次数。
+- **特征重要性**：$FeatureImportance = \frac{\sum_{i=1}^{n} \Delta G_i}{\sum_{j=1}^{m} \Delta G_j}$，其中$n$是特征数量，$m$是决策树的数量，$\Delta G_i$是第$i$个特征在所有决策树中被选择的次数。
 
 ### 4.2 公式推导过程
 
 #### SHAP值计算
 
-- **公式**：$SHAPValue_i = \\phi(x_i, \\{x_1,...,x_i,...,x_N\\}) - \\phi(x_i, \\{x_1,...,x_{i-1},...,x_N\\})$，其中$x_i$是第$i$个特征，$\\phi$是特征的平均贡献函数。
+- **公式**：$SHAPValue_i = \phi(x_i, \{x_1,...,x_i,...,x_N\}) - \phi(x_i, \{x_1,...,x_{i-1},...,x_N\})$，其中$x_i$是第$i$个特征，$\phi$是特征的平均贡献函数。
 
 ### 4.3 案例分析与讲解
 
@@ -168,8 +168,8 @@ shap_values = explainer(sample_data.reshape(1, -1))
 lime_explanation = lime_explainer.explain_instance(X[0], model.predict)
 
 # 输出解释结果
-print(\"SHAP值：\", shap_values.values)
-print(\"LIME解释：\", lime_explanation.as_map())
+print("SHAP值：", shap_values.values)
+print("LIME解释：", lime_explanation.as_map())
 ```
 
 ### 5.3 代码解读与分析

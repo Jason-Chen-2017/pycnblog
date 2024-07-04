@@ -185,7 +185,7 @@ A：评估深度学习模型的效果可以通过以下指标：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n deep_learning_env python=3.8 
+conda create -n deep_learning_env python=3.8
 conda activate deep_learning_env
 ```
 3. 安装深度学习相关库：

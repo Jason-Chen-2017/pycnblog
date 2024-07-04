@@ -110,23 +110,23 @@ BERT模型的核心是Transformer编码器，其数学公式如下：
 
 - **Query, Key, Value计算**：
   $$
- query = W_Q \cdot [positional\_embeddings + token\_embeddings] 
+ query = W_Q \cdot [positional\_embeddings + token\_embeddings]
 $$
   $$
- key = W_K \cdot [positional\_embeddings + token\_embeddings] 
+ key = W_K \cdot [positional\_embeddings + token\_embeddings]
 $$
   $$
- value = W_V \cdot [positional\_embeddings + token\_embeddings] 
+ value = W_V \cdot [positional\_embeddings + token\_embeddings]
 $$
 
 - **注意力权重计算**：
   $$
- attention\_weights = \mathrm{softmax}(\frac{(query \cdot key)^T}{\sqrt{d_k}}) 
+ attention\_weights = \mathrm{softmax}(\frac{(query \cdot key)^T}{\sqrt{d_k}})
 $$
 
 - **输出计算**：
   $$
- output = \mathrm{softmax}(Attention\_Matrix \cdot value) 
+ output = \mathrm{softmax}(Attention\_Matrix \cdot value)
 $$
 
 其中，$W_Q, W_K, W_V$ 为权重矩阵，$positional\_embeddings, token\_embeddings$ 为位置编码和词嵌入，$\mathrm{softmax}$ 为Softmax函数。

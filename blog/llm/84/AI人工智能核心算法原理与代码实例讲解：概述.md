@@ -213,8 +213,7 @@ $$
 - **梯度下降**：
 
 $$
-\theta \leftarrow \theta - \alpha \
-abla_{\theta}L(\theta)
+\theta \leftarrow \theta - \alpha \nabla_{\theta}L(\theta)
 $$
 
 其中，$\alpha$ 为学习率。
@@ -222,13 +221,11 @@ $$
 - **Adam**：
 
 $$
-m_t = \beta_1 m_{t-1} + (1-\beta_1)(\
-abla_{\theta}L(\theta) - m_{t-1})
+m_t = \beta_1 m_{t-1} + (1-\beta_1)(\nabla_{\theta}L(\theta) - m_{t-1})
 $$
 
 $$
-v_t = \beta_2 v_{t-1} + (1-\beta_2)(\
-abla_{\theta}L(\theta) - v_{t-1})
+v_t = \beta_2 v_{t-1} + (1-\beta_2)(\nabla_{\theta}L(\theta) - v_{t-1})
 $$
 
 $$
@@ -315,7 +312,7 @@ A：可以采用以下方法解决梯度下降算法的缺点：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n ml-env python=3.8 
+conda create -n ml-env python=3.8
 conda activate ml-env
 ```
 3. 安装Python相关库：

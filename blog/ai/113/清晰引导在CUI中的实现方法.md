@@ -171,7 +171,7 @@ import argparse
 def main():
     parser = argparse.ArgumentParser(description="清晰引导示例程序")
     parser.add_argument("file", help="要操作的文件")
-    parser.add_argument("-m", "--mode", choices=["read", "write"], 
+    parser.add_argument("-m", "--mode", choices=["read", "write"],
                         help="操作模式，可选值：read、write")
     args = parser.parse_args()
 
@@ -312,4 +312,4 @@ df = pd.read_csv("data.csv")
 
 **A：**  可以提供一些可选的引导信息，让用户根据自己的需求选择。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

@@ -118,7 +118,7 @@ AI智能体的下一代平台的核心算法主要包括以下几种：
 
 $$
 \begin{aligned}
-R(t) &= R_1(t) + R_2(t) + \ldots + R_n(t) \\
+R(t) &= R_1(t) + R_2(t) + \ldots + R_n(t) \
 R_i(t) &= \frac{X_i(t)}{T_i(t)}
 \end{aligned}
 $$

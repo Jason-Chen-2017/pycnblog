@@ -92,7 +92,7 @@ SVM的目标是在特征空间中找到一个最优超平面,使得两类样本�
 
 $$
 \begin{aligned}
-\min_{w,b} \quad & \frac{1}{2}||w||^2 \\
+\min_{w,b} \quad & \frac{1}{2}||w||^2 \
 s.t. \quad & y_i(w^Tx_i+b) \geq 1, \quad i=1,2,...,N
 \end{aligned}
 $$
@@ -110,8 +110,8 @@ $$
 
 $$
 \begin{aligned}
-\max_{\alpha} \quad & \sum_{i=1}^N \alpha_i - \frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j x_i^T x_j \\
-s.t. \quad & \sum_{i=1}^N \alpha_i y_i = 0 \\
+\max_{\alpha} \quad & \sum_{i=1}^N \alpha_i - \frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j x_i^T x_j \
+s.t. \quad & \sum_{i=1}^N \alpha_i y_i = 0 \
 & \alpha_i \geq 0, \quad i=1,2,...,N
 \end{aligned}
 $$
@@ -120,7 +120,7 @@ $$
 
 $$
 \begin{aligned}
-w^* &= \sum_{i=1}^N \alpha_i^* y_i x_i \\
+w^* &= \sum_{i=1}^N \alpha_i^* y_i x_i \
 b^* &= y_j - \sum_{i=1}^N \alpha_i^* y_i x_i^T x_j
 \end{aligned}
 $$
@@ -131,8 +131,8 @@ $$
 
 $$
 \begin{aligned}
-\max_{\alpha} \quad & \sum_{i=1}^N \alpha_i - \frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j K(x_i,x_j) \\
-s.t. \quad & \sum_{i=1}^N \alpha_i y_i = 0 \\
+\max_{\alpha} \quad & \sum_{i=1}^N \alpha_i - \frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j K(x_i,x_j) \
+s.t. \quad & \sum_{i=1}^N \alpha_i y_i = 0 \
 & 0 \leq \alpha_i \leq C, \quad i=1,2,...,N
 \end{aligned}
 $$

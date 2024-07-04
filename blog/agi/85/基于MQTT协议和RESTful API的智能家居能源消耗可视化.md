@@ -199,10 +199,10 @@ def get_energy_consumption():
 
     # 查询能源消耗数据
     query = """
-        SELECT energy_consumption, timestamp 
-        FROM energy_consumption_data 
-        WHERE device_id = %s 
-          AND timestamp >= %s 
+        SELECT energy_consumption, timestamp
+        FROM energy_consumption_data
+        WHERE device_id = %s
+          AND timestamp >= %s
           AND timestamp <= %s
     """
     cursor.execute(query, (device_id, start_time, end_time))

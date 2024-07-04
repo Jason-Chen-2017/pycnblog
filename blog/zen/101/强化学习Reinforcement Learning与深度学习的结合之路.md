@@ -1,7 +1,7 @@
 
 # 强化学习Reinforcement Learning与深度学习的结合之路
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -145,9 +145,7 @@ $$
 策略梯度表示在给定状态和动作下的梯度。
 
 $$
-\
-abla_{\theta} \pi(a|s) = \
-abla_{\theta} P(a|s)
+\nabla_{\theta} \pi(a|s) = \nabla_{\theta} P(a|s)
 $$
 
 其中，$\theta$ 表示策略函数的参数。
@@ -173,9 +171,7 @@ $$
 2. **计算梯度**：
 
 $$
-\
-abla_{\theta} L(\theta) = \
-abla_{\theta} \sum_{t=0}^{T} (R_{t+1} + \gamma V(s_{t+1}) - V(s_t))^2
+\nabla_{\theta} L(\theta) = \nabla_{\theta} \sum_{t=0}^{T} (R_{t+1} + \gamma V(s_{t+1}) - V(s_t))^2
 $$
 
 3. **简化梯度**：
@@ -183,9 +179,7 @@ $$
 由于 $V(s_{t+1})$ 与 $\theta$ 无关，可以将其视为常数，从而简化梯度为：
 
 $$
-\
-abla_{\theta} L(\theta) = \sum_{t=0}^{T} \
-abla_{\theta} (R_{t+1} + \gamma V(s_{t+1}) - V(s_t))^2
+\nabla_{\theta} L(\theta) = \sum_{t=0}^{T} \nabla_{\theta} (R_{t+1} + \gamma V(s_{t+1}) - V(s_t))^2
 $$
 
 4. **使用反向传播计算梯度**：
@@ -208,7 +202,7 @@ class DQN(nn.Module):
         super(DQN, self).__init__()
         self.fc1 = nn.Linear(input_size, hidden_size)
         self.fc2 = nn.Linear(hidden_size, output_size)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)
@@ -272,7 +266,7 @@ class DQN(nn.Module):
         super(DQN, self).__init__()
         self.fc1 = nn.Linear(input_size, hidden_size)
         self.fc2 = nn.Linear(hidden_size, output_size)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)
@@ -298,13 +292,13 @@ if __name__ == '__main__':
     dqn = DQN(state_dim, hidden_size, action_dim)
     optimizer = optim.Adam(dqn.parameters(), lr=0.001)
     loss_func = nn.MSELoss()
-    
+
     for episode in range(1000):
         state = env.reset()
         state = torch.FloatTensor(state).unsqueeze(0)
         done = False
         total_reward = 0
-        
+
         while not done:
             action = dqn(state).argmax(1).item()
             next_state, reward, done, _ = env.step(action)
@@ -313,10 +307,10 @@ if __name__ == '__main__':
             loss = loss_func(dqn(state), torch.FloatTensor([reward]))
             loss.backward()
             optimizer.step()
-            
+
             state = next_state
             total_reward += reward
-        
+
         print(f"Episode {episode + 1}, Total Reward: {total_reward}")
 ```
 

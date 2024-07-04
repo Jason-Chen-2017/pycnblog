@@ -152,7 +152,7 @@ class Generator(nn.Module):
             nn.Linear(128, img_size * img_size * 3),
             nn.Tanh()
         )
-    
+
     def forward(self, z):
         x = self.net(z)
         x = x.view(-1, 3, img_size, img_size)
@@ -168,7 +168,7 @@ class Discriminator(nn.Module):
             nn.Linear(128, 1),
             nn.Sigmoid()
         )
-    
+
     def forward(self, x):
         x = x.view(-1, img_size * img_size * 3)
         return self.net(x)
@@ -192,7 +192,7 @@ for epoch in range(epochs):
     optimizer_G.zero_grad()
     loss_G.backward()
     optimizer_G.step()
-    
+
     # 训练判别器
     real_images = data_loader.dataset[i]
     loss_D_real = criterion(discriminator(real_images), torch.ones(batches))

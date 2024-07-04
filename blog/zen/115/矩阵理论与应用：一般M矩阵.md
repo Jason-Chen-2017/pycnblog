@@ -197,11 +197,11 @@ print(x)
     * edX: 矩阵分析、数值线性代数
 
 ### 7.2  开发工具推荐
-* **Python:** 
+* **Python:**
     * NumPy: 用于数值计算
     * SciPy: 用于科学计算
     * Matplotlib: 用于数据可视化
-* **MATLAB:** 
+* **MATLAB:**
     * 用于数值计算和建模
 
 ### 7.3  相关论文推荐

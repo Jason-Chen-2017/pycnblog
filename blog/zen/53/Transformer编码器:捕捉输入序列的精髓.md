@@ -3,7 +3,7 @@
 ## 1.背景介绍
 ### 1.1 序列建模的重要性
 在自然语言处理、时间序列预测等领域,序列建模是一项关键任务。传统的序列建模方法如循环神经网络(RNN)和长短期记忆网络(LSTM)虽然取得了不错的效果,但在处理长序列时仍面临梯度消失、并行计算效率低等问题。
-### 1.2 Transformer的诞生 
+### 1.2 Transformer的诞生
 2017年,Google提出了Transformer模型[1],开创性地采用了纯注意力机制来处理序列数据,摒弃了RNN等模型中的循环结构,大幅提升了并行计算效率。Transformer模型在机器翻译、语言建模等任务上取得了显著的性能提升,成为了当前最先进的序列建模方法之一。
 ### 1.3 编码器-解码器结构
 Transformer模型采用了编码器-解码器(Encoder-Decoder)的结构,其中编码器负责将输入序列编码为隐向量表示,解码器则根据编码器的输出生成目标序列。本文将重点探讨Transformer编码器的内部结构和工作原理,揭示其捕捉输入序列精髓的奥秘。
@@ -15,7 +15,7 @@ Transformer模型采用了编码器-解码器(Encoder-Decoder)的结构,其中�
 多头注意力(Multi-Head Attention)是自注意力的扩展,它将输入序列投影到多个不同的子空间,在每个子空间中独立地执行自注意力操作,然后将结果拼接起来。多头注意力允许模型在不同的表示子空间中捕捉不同的特征和模式。
 ### 2.3 位置编码
 由于Transformer编码器不包含循环结构,为了让模型感知输入序列中单词的位置信息,需要引入位置编码(Positional Encoding)。位置编码通过将表示位置的向量与词嵌入向量相加,为每个位置赋予唯一的位置标识。
-### 2.4 残差连接与层归一化  
+### 2.4 残差连接与层归一化
 为了促进梯度的反向传播和模型的训练稳定性,Transformer编码器在每个子层(自注意力层和前馈神经网络层)之后都采用了残差连接(Residual Connection)和层归一化(Layer Normalization)。残差连接能够让原始输入的信息直接传递到后面的层,而层归一化则有助于保持数值稳定性和加速收敛。
 
 ## 3.核心算法原理具体操作步骤
@@ -27,8 +27,8 @@ $$
 ### 3.2 自注意力计算
 对于第 $l$ 层编码器的第 $i$ 个位置,首先通过三个线性变换得到查询向量 $q_i^l$、键向量 $k_i^l$ 和值向量 $v_i^l$:
 $$
-q_i^l = W_q^l h_i^{l-1} \\
-k_i^l = W_k^l h_i^{l-1} \\
+q_i^l = W_q^l h_i^{l-1} \
+k_i^l = W_k^l h_i^{l-1} \
 v_i^l = W_v^l h_i^{l-1}
 $$
 其中 $W_q^l, W_k^l, W_v^l \in \mathbb{R}^{d_{model} \times d_k}$ 为可学习的权重矩阵。
@@ -44,9 +44,9 @@ $$
 ### 3.3 多头注意力
 多头注意力将上述自注意力计算过程独立执行 $h$ 次,每次使用不同的权重矩阵。对于第 $k$ 个头,有:
 $$
-q_i^{l,k} = W_q^{l,k} h_i^{l-1} \\
-k_i^{l,k} = W_k^{l,k} h_i^{l-1} \\
-v_i^{l,k} = W_v^{l,k} h_i^{l-1} \\
+q_i^{l,k} = W_q^{l,k} h_i^{l-1} \
+k_i^{l,k} = W_k^{l,k} h_i^{l-1} \
+v_i^{l,k} = W_v^{l,k} h_i^{l-1} \
 a_i^{l,k} = \sum_{j=1}^n \alpha_{ij}^{l,k} v_j^{l,k}
 $$
 最后,将所有头的输出拼接起来,并通过一个线性变换得到多头注意力的输出:
@@ -63,7 +63,7 @@ $$
 ### 3.5 残差连接与层归一化
 在每个子层(自注意力层和FFN层)之后,Transformer编码器使用残差连接和层归一化:
 $$
-\tilde{m}_i^l = \text{LayerNorm}(m_i^l + h_i^{l-1}) \\
+\tilde{m}_i^l = \text{LayerNorm}(m_i^l + h_i^{l-1}) \
 h_i^l = \text{LayerNorm}(f_i^l + \tilde{m}_i^l)
 $$
 其中 $\text{LayerNorm}(\cdot)$ 表示层归一化操作。
@@ -74,9 +74,9 @@ Transformer编码器通常由多个相同结构的编码器层堆叠而成。每
 ### 4.1 自注意力机制的矩阵计算
 考虑一个由4个词组成的输入序列,词嵌入维度为512。对于第 $l$ 层编码器,假设 $d_k=64$,则自注意力的计算可以表示为:
 $$
-Q^l = H^{l-1} W_q^l \in \mathbb{R}^{4 \times 64} \\
-K^l = H^{l-1} W_k^l \in \mathbb{R}^{4 \times 64} \\
-V^l = H^{l-1} W_v^l \in \mathbb{R}^{4 \times 64} \\
+Q^l = H^{l-1} W_q^l \in \mathbb{R}^{4 \times 64} \
+K^l = H^{l-1} W_k^l \in \mathbb{R}^{4 \times 64} \
+V^l = H^{l-1} W_v^l \in \mathbb{R}^{4 \times 64} \
 A^l = \text{softmax}(\frac{Q^l (K^l)^T}{\sqrt{64}})V^l \in \mathbb{R}^{4 \times 64}
 $$
 其中 $H^{l-1} \in \mathbb{R}^{4 \times 512}$ 为上一层编码器的输出, $W_q^l,W_k^l,W_v^l \in \mathbb{R}^{512 \times 64}$ 为自注意力的权重矩阵。$\text{softmax}(\cdot)$ 对每一行进行softmax归一化。
@@ -104,13 +104,13 @@ class TransformerEncoder(nn.Module):
         super(TransformerEncoder, self).__init__()
         encoder_layer = nn.TransformerEncoderLayer(d_model, nhead, dim_feedforward)
         self.encoder = nn.TransformerEncoder(encoder_layer, num_layers)
-    
+
     def forward(self, src):
         return self.encoder(src)
 
 # 超参数设置
 d_model = 512
-nhead = 8  
+nhead = 8
 dim_feedforward = 2048
 num_layers = 6
 

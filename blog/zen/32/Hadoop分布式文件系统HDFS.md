@@ -1,4 +1,4 @@
-                 
+
 # Hadoop分布式文件系统HDFS
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -149,19 +149,19 @@ public class HdfsExample {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
         FileSystem fs = FileSystem.get(conf);
-        
+
         // 创建目录
         fs.mkdirs(new Path("/user/test"));
-        
+
         // 上传文件
         fs.copyFromLocalFile(true, false, new Path("/local/path/to/file"), new Path("/user/test/file.txt"));
-        
+
         // 下载文件
         fs.copyToLocalFile(false, new Path("/user/test/file.txt"), new Path("/local/path/to/downloaded/file.txt"));
-        
+
         // 删除文件
         fs.delete(new Path("/user/test/file.txt"), true);
-        
+
         fs.close();
     }
 }

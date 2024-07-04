@@ -1,7 +1,7 @@
 
 # AI系统持续部署原理与代码实战案例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -262,7 +262,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // 检出代码仓库
-                checkout scm { 
+                checkout scm {
                     $class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'git-credentials', url: 'git@github.com:your-repo.git']]]
             }
         }

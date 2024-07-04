@@ -106,11 +106,9 @@ MLlib的机器学习算法可以应用于以下领域：
 
 - 模型参数$\theta$的更新公式为：
 
-  $$\theta := \theta - \alpha \
-abla L(\theta)$$
+  $$\theta := \theta - \alpha \nabla L(\theta)$$
 
-  其中，$\alpha$为学习率，$\
-abla L(\theta)$为损失函数的梯度。
+  其中，$\alpha$为学习率，$\nabla L(\theta)$为损失函数的梯度。
 
 ### 4.2 公式推导过程
 

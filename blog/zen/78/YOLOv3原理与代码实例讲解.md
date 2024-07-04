@@ -249,7 +249,7 @@ def data_generator(image_dir, label_path, batch_size=32):
 # 训练模型
 def train_model(model, epochs, batch_size, validation_split=0.2):
     # 数据加载、预处理、划分训练集和验证集
-    history = model.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, 
+    history = model.fit(x_train, y_train, batch_size=batch_size, epochs=epochs,
                         validation_split=validation_split)
     return history
 

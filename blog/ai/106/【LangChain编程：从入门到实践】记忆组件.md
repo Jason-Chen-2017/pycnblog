@@ -1,6 +1,6 @@
 # 【LangChain编程：从入门到实践】记忆组件
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -332,4 +332,4 @@ print(conversation_history)
 * **可视化记忆组件:** 使用图表或其他可视化工具来展示记忆组件中的数据。
 * **提供解释机制:** 提供解释机制，帮助用户理解模型的决策过程。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -108,14 +108,12 @@ $$ \\delta_t = r_t + \\gamma \\cdot \\max_{a'} Q(s_{t+1}, a') - \\hat{Q}(s_t, a_
 
 然后根据梯度下降原则更新Q网络：
 
-$$ \\theta \\leftarrow \\theta - \\alpha \\cdot \
-abla_{\\theta} \\delta_t $$
+$$ \\theta \\leftarrow \\theta - \\alpha \\cdot \nabla_{\\theta} \\delta_t $$
 
 其中：
 
 - \\( \\alpha \\) 是学习率。
-- \\( \
-abla_{\\theta} \\) 是对参数θ的梯度。
+- \\( \nabla_{\\theta} \\) 是对参数θ的梯度。
 
 ### 4.3 案例分析与讲解
 

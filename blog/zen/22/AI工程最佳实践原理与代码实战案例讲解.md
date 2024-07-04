@@ -1,4 +1,4 @@
-                 
+
 # AI工程最佳实践原理与代码实战案例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -132,7 +132,7 @@ $$
 通过梯度下降法更新权重和偏置：
 
 $$
-W_j := W_j - \eta \frac{\partial E}{\partial W_j}, \quad j=1,2 \\
+W_j := W_j - \eta \frac{\partial E}{\partial W_j}, \quad j=1,2 \
 b_j := b_j - \eta \frac{\partial E}{\partial b_j}
 $$
 

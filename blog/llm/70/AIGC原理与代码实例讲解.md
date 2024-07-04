@@ -200,11 +200,11 @@ $$
 3. 判别器分别对真实样本 $y$ 和生成样本 $x$ 进行判断，并更新参数：
    - 判别器损失函数：
      $$
-     L_D(\theta_D) = -\mathbb{E}_{x \sim p(x)}[D(x;\theta_D)] - \mathbb{E}_{z \sim p(z)}[D(G(z;\theta_G))] 
+     L_D(\theta_D) = -\mathbb{E}_{x \sim p(x)}[D(x;\theta_D)] - \mathbb{E}_{z \sim p(z)}[D(G(z;\theta_G))]
      $$
    - 生成器损失函数：
      $$
-     L_G(\theta_G) = \mathbb{E}_{z \sim p(z)}[D(G(z;\theta_G))] 
+     L_G(\theta_G) = \mathbb{E}_{z \sim p(z)}[D(G(z;\theta_G))]
      $$
 4. 重复步骤2-3，直到判别器能够较好地区分真实样本和生成样本。
 

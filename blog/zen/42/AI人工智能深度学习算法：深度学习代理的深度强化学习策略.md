@@ -144,7 +144,7 @@ class DQN:
         self.train_start = 1000
         self.memory = deque(maxlen=10000)
         self.build_model()
-    
+
     def build_model(self):
         self.model = tf.keras.models.Sequential([
             tf.keras.layers.Dense(24, input_shape=(self.state_size,), activation='relu'),
@@ -152,17 +152,17 @@ class DQN:
             tf.keras.layers.Dense(self.action_size, activation='linear')
         ])
         self.model.compile(optimizer=tf.optimizers.Adam(lr=self.learning_rate), loss='mse')
-        
+
     def remember(self, state, action, reward, next_state, done):
         self.memory.append((state, action, reward, next_state, done))
-        
+
     def act(self, state):
         if np.random.rand() <= self.epsilon:
             return env.action_space.sample()
         else:
             state = np.reshape(state, [1, self.state_size])
             return np.argmax(self.model.predict(state)[0])
-        
+
     def replay(self):
         if len(self.memory) < self.train_start:
             return

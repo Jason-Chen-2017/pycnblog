@@ -6,7 +6,7 @@
 #### 1.1.2 Transformer模型的优势
 #### 1.1.3 Transformer模型的应用
 
-### 1.2 BERT模型的诞生  
+### 1.2 BERT模型的诞生
 #### 1.2.1 BERT模型的创新点
 #### 1.2.2 BERT模型的架构
 #### 1.2.3 BERT模型的预训练方法
@@ -34,7 +34,7 @@
 #### 2.3.2 软标签与硬标签
 #### 2.3.3 蒸馏损失函数
 
-### 2.4 DistilBERT模型 
+### 2.4 DistilBERT模型
 #### 2.4.1 DistilBERT的提出背景
 #### 2.4.2 DistilBERT的架构设计
 #### 2.4.3 DistilBERT的蒸馏训练过程
@@ -43,7 +43,7 @@
 graph LR
 A[Transformer模型] --> B[BERT模型]
 A --> C[知识蒸馏]
-B --> D[DistilBERT模型] 
+B --> D[DistilBERT模型]
 C --> D
 ```
 
@@ -69,7 +69,7 @@ $$Attention(Q,K,V) = softmax(\frac{QK^T}{\sqrt{d_k}})V$$
 
 ### 4.2 Transformer的编码器结构
 $$Encoder(x) = LayerNorm(x + MHSelfAttention(x)) \\
-MHSelfAttention(x) = Concat(head_1, ..., head_h)W^O \\  
+MHSelfAttention(x) = Concat(head_1, ..., head_h)W^O \\
 head_i = Attention(xW_i^Q, xW_i^K, xW_i^V)
 $$
 
@@ -98,7 +98,7 @@ tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 ```python
 from transformers import DistilBertConfig, DistilBertForSequenceClassification
 
-student_config = DistilBertConfig(num_labels=2) 
+student_config = DistilBertConfig(num_labels=2)
 student_model = DistilBertForSequenceClassification(student_config)
 ```
 
@@ -106,7 +106,7 @@ student_model = DistilBertForSequenceClassification(student_config)
 ```python
 def distillation_loss(student_logits, teacher_logits, labels, alpha=0.5, T=1.0):
     hard_loss = F.cross_entropy(student_logits, labels)
-    soft_loss = F.kl_div(F.log_softmax(student_logits/T, dim=1), 
+    soft_loss = F.kl_div(F.log_softmax(student_logits/T, dim=1),
                          F.softmax(teacher_logits/T, dim=1))
     return alpha*hard_loss + (1-alpha)*soft_loss
 ```
@@ -123,16 +123,16 @@ for epoch in range(epochs):
         input_ids = batch['input_ids'].to(device)
         attention_mask = batch['attention_mask'].to(device)
         labels = batch['labels'].to(device)
-        
+
         teacher_model.eval()
         with torch.no_grad():
             teacher_outputs = teacher_model(input_ids, attention_mask=attention_mask)
-        
+
         student_model.train()
         student_outputs = student_model(input_ids, attention_mask=attention_mask)
-        
+
         loss = distillation_loss(student_outputs.logits, teacher_outputs.logits, labels)
-        
+
         loss.backward()
         optimizer.step()
         scheduler.step()
@@ -182,7 +182,7 @@ for epoch in range(epochs):
 ### 9.1 DistilBERT相比BERT的优势是什么？
 DistilBERT在保持较高性能的同时，大大减小了模型体积和推理时间，更适合部署在资源受限的环境中。
 
-### 9.2 如何选择合适的教师模型？ 
+### 9.2 如何选择合适的教师模型？
 教师模型的选择需要考虑任务类型、数据领域、模型性能等因素。一般选择在目标任务上表现优异的大模型作为教师。
 
 ### 9.3 蒸馏过程中的超参数如何设置？

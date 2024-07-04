@@ -85,22 +85,17 @@ PPO（Proximal Policy Optimization）是策略梯度方法的一个重要发展�
 
 策略梯度方法的核心是通过梯度上升策略函数来优化期望累积奖励。对于离散动作空间：
 
-$$ \Delta \pi(a) = \alpha \cdot \left( \frac{\
-abla_\pi \log \pi(a|s)}{\mathbb{E}_{\pi}[\
-abla_\pi \log \pi(a|s)]} \cdot \left( \sum_{t=0}^\infty \gamma^t r_t \right) \right) $$
+$$ \Delta \pi(a) = \alpha \cdot \left( \frac{\nabla_\pi \log \pi(a|s)}{\mathbb{E}_{\pi}[\nabla_\pi \log \pi(a|s)]} \cdot \left( \sum_{t=0}^\infty \gamma^t r_t \right) \right) $$
 
 对于连续动作空间：
 
-$$ \Delta \pi(a) = \alpha \cdot \left( \frac{\
-abla_\pi \log \pi(a|s)}{\mathbb{E}_{\pi}[\
-abla_\pi \log \pi(a|s)]} \cdot \mathbb{E}_{\pi}[r] \right) $$
+$$ \Delta \pi(a) = \alpha \cdot \left( \frac{\nabla_\pi \log \pi(a|s)}{\mathbb{E}_{\pi}[\nabla_\pi \log \pi(a|s)]} \cdot \mathbb{E}_{\pi}[r] \right) $$
 
 ### 4.2 公式推导过程
 
 对于离散动作空间，梯度估计通常通过采样轨迹来实现：
 
-$$ \
-abla_\pi \log \pi(a|s) = \frac{\pi(a|s)}{\pi'(a|s)} $$
+$$ \nabla_\pi \log \pi(a|s) = \frac{\pi(a|s)}{\pi'(a|s)} $$
 
 其中 $\pi'(a|s)$ 是动作 $a$ 的替代策略。对于连续动作空间，通常使用高斯分布或其他连续分布来建模策略函数。
 

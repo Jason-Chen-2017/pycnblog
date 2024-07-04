@@ -75,7 +75,7 @@ ELECTRA的核心数学模型构建基于以下假设和目标：
 - **损失函数**：生成器和鉴别器通过共享损失函数进行联合优化。生成器试图最小化$\mathcal{L}_G$，鉴别器试图最小化$\mathcal{L}_D$，其中：
 
 $$
-\mathcal{L}_G = -\mathbb{E}_{x,y}\left[\log D_\phi(y)\right] \\
+\mathcal{L}_G = -\mathbb{E}_{x,y}\left[\log D_\phi(y)\right] \
 \mathcal{L}_D = -\mathbb{E}_{x,y}\left[\log D_\phi(x)\right] - \mathbb{E}_{x,y'}\left[\log (1 - D_\phi(y'))\right]
 $$
 
@@ -166,12 +166,12 @@ for epoch in range(10):  # 假设训练10个周期
     # 前向传播和计算损失
     outputs = model(input_ids, attention_mask=attention_mask, labels=labels_encoded)
     loss = outputs.loss
-    
+
     # 后向传播和优化
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
-    
+
     # 打印损失值
     print(f'Epoch {epoch+1}, Loss: {loss.item()}')
 ```

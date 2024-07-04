@@ -29,7 +29,7 @@
 
 1. 核心概念与联系
 2. 核心算法原理与具体操作步骤
-3. 数学模型和公式详细讲解与案例分析  
+3. 数学模型和公式详细讲解与案例分析
 4. 项目实践:代码实例和详细解释说明
 5. 实际应用场景
 6. 工具和资源推荐
@@ -142,7 +142,7 @@ $$\langle \mathcal{S}, \mathcal{A}, \mathcal{P}, \mathcal{R}, \gamma \rangle$$
 其中:
 
 - $\mathcal{S}$ 是状态集合
-- $\mathcal{A}$ 是行动集合  
+- $\mathcal{A}$ 是行动集合
 - $\mathcal{P}$ 是状态转移概率函数,定义为 $\mathcal{P}(s'|s,a) = \Pr(S_{t+1}=s'|S_t=s, A_t=a)$
 - $\mathcal{R}$ 是奖励函数,定义为 $\mathcal{R}(s,a,s')= \mathbb{E}[R_{t+1}|S_t=s, A_t=a, S_{t+1}=s']$
 - $\gamma \in [0,1)$ 是折现因子,控制未来奖励的重视程度
@@ -180,9 +180,9 @@ $$V^{\pi}(s) = \sum_a \pi(a|s) Q^{\pi}(s,a)$$
 假设状态转移概率为:
 
 $$\mathcal{P}(s'|s,a) = \begin{cases}
-0.8, & \text{if } s' \text{ is the intended state after executing } a \text{ from } s\\
-0.1, & \text{if } s' \text{ is one step clockwise from the intended state}\\
-0.1, & \text{if } s' \text{ is one step counter-clockwise from the intended state}\\
+0.8, & \text{if } s' \text{ is the intended state after executing } a \text{ from } s\
+0.1, & \text{if } s' \text{ is one step clockwise from the intended state}\
+0.1, & \text{if } s' \text{ is one step counter-clockwise from the intended state}\
 0, & \text{otherwise}
 \end{cases}$$
 

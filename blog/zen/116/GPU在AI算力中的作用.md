@@ -41,7 +41,7 @@ GPU加速AI的核心是将算法并行化，充分利用GPU数千个核心同时
 
 ### 3.3 算法优缺点
 GPU并行计算的优点是效率高、可编程性强，能够灵活适应不同的AI算法。但它也有一些局限性，如显存容量有限、CPU与GPU之间的数据传输会带来开销等。此外，GPU编程的学习门槛相对较高，需要开发者掌握CUDA等专门的编程框架。
-### 3.4 算法应用领域 
+### 3.4 算法应用领域
 GPU加速已经成为当前AI尤其是深度学习的"标配"。几乎所有的深度学习框架如TensorFlow、PyTorch等都提供了GPU支持。GPU在计算机视觉、自然语言处理、语音识别、推荐系统等诸多领域得到了广泛应用，极大地推动了AI技术的发展和落地。
 
 ## 4. 数学模型和公式 & 详细讲解 & 举例说明
@@ -83,7 +83,7 @@ $$
 
 **A:** 相比CPU，GPU拥有更多的运算核心(可达数千个)，适合大规模并行计算。AI尤其是深度学习涉及大量的矩阵运算，天然适合在GPU上并行化，因此GPU成为AI的"标配"。相比之下，CPU核心数量较少(一般几个到几十个)，更侧重通用计算和串行处理，难以满足AI的算力需求。
 
-**Q:** 除了GPU，是否有其他类型的AI芯片？ 
+**Q:** 除了GPU，是否有其他类型的AI芯片？
 
 **A:** 除GPU外，还有不少专门针对AI设计的芯片，如TPU(Tensor Processing Unit)、NPU(Neural-network Processing Unit)、FPGA(Field-Programmable Gate Array)等。它们在架构和指令集上进行了优化，更适合AI的计算模式。但从生态和成熟度看，GPU仍是当前AI芯片的主流。
 
@@ -108,16 +108,16 @@ import torch.optim as optim
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
-        self.fc1 = nn.Linear(784, 256) 
+        self.fc1 = nn.Linear(784, 256)
         self.fc2 = nn.Linear(256, 10)
-        
+
     def forward(self, x):
         x = x.view(-1, 784)
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)
         return x
 
-# 初始化网络和优化器    
+# 初始化网络和优化器
 net = Net()
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(net.parameters(), lr=0.01)
@@ -131,11 +131,11 @@ for epoch in range(10):
     for inputs, labels in train_loader:
         # 将数据移动到GPU
         inputs, labels = inputs.to(device), labels.to(device)
-        
+
         # 前向传播
         outputs = net(inputs)
         loss = criterion(outputs, labels)
-        
+
         # 反向传播和优化
         optimizer.zero_grad()
         loss.backward()

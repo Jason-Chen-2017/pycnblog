@@ -202,7 +202,7 @@ class DQN(nn.Module):
         self.fc1 = nn.Linear(input_dim, 24)
         self.fc2 = nn.Linear(24, 24)
         self.fc3 = nn.Linear(24, output_dim)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = torch.relu(self.fc2(x))
@@ -225,12 +225,12 @@ def train(env, model, optimizer, criterion, buffer, episodes=1000):
     for episode in range(episodes):
         state = env.reset()
         done = False
-        
+
         while not done:
             action = model(torch.from_numpy(state).float()).argmax().item()
             next_state, reward, done, _ = env.step(action)
             buffer.append((state, action, reward, next_state, done))
-            
+
             if len(buffer) > 50:
                 batch = random.sample(buffer, 32)
                 states, actions, rewards, next_states, dones = zip(*batch)
@@ -239,21 +239,21 @@ def train(env, model, optimizer, criterion, buffer, episodes=1000):
                 rewards = torch.from_numpy(np.vstack(rewards)).float()
                 next_states = torch.from_numpy(np.vstack(next_states)).float()
                 dones = torch.from_numpy(np.vstack(dones)).float()
-                
+
                 Q_targets = model(next_states).detach()
-                
+
                 Q_targets[dones] = 0.0
                 Q_targets = (rewards + gamma * Q_targets).detach()
-                
+
                 Q_expected = model(states).gather(1, actions.unsqueeze(1))
-                
+
                 loss = criterion(Q_expected, Q_targets)
                 optimizer.zero_grad()
                 loss.backward()
                 optimizer.step()
-            
+
             state = next_state
-    
+
     env.close()
 
 # 训练模型

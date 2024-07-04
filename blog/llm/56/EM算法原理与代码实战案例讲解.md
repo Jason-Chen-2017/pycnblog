@@ -98,8 +98,8 @@ M 步更新参数：
 
 $$
 \begin{aligned}
-\mu_k &= \frac{\sum_{i=1}^N p(z_i = k | x_i, \theta) x_i}{\sum_{i=1}^N p(z_i = k | x_i, \theta)} \\
-\Sigma_k &= \frac{\sum_{i=1}^N p(z_i = k | x_i, \theta) (x_i - \mu_k)(x_i - \mu_k)^T}{\sum_{i=1}^N p(z_i = k | x_i, \theta)} \\
+\mu_k &= \frac{\sum_{i=1}^N p(z_i = k | x_i, \theta) x_i}{\sum_{i=1}^N p(z_i = k | x_i, \theta)} \
+\Sigma_k &= \frac{\sum_{i=1}^N p(z_i = k | x_i, \theta) (x_i - \mu_k)(x_i - \mu_k)^T}{\sum_{i=1}^N p(z_i = k | x_i, \theta)} \
 \pi_k &= \frac{\sum_{i=1}^N p(z_i = k | x_i, \theta)}{N}
 \end{aligned}
 $$

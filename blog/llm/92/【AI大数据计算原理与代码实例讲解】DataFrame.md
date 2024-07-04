@@ -105,9 +105,9 @@ DataFrame的数学模型可以看作是一个二维数组，其中每个元素�
 
 $$
 \begin{matrix}
-A & B & C \\
-1 & 1.1 & 2 \\
-2 & 2.2 & 3 \\
+A & B & C \
+1 & 1.1 & 2 \
+2 & 2.2 & 3 \
 \end{matrix}
 $$
 
@@ -184,7 +184,7 @@ A：可以使用`dropna()`、`fillna()`等函数处理缺失值。`dropna()`函�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pandas-env python=3.8 
+conda create -n pandas-env python=3.8
 conda activate pandas-env
 ```
 

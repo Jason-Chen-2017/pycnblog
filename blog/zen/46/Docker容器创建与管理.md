@@ -102,7 +102,7 @@ Docker 容器创建与管理主要涉及以下数学模型：
 
 $$
 \begin{align*}
-R_{total} &= R_{CPU} + R_{Memory} + R_{Disk} \\
+R_{total} &= R_{CPU} + R_{Memory} + R_{Disk} \
 R_{container} &= \alpha R_{total}
 \end{align*}
 $$

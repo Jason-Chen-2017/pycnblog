@@ -88,11 +88,11 @@ $$
 
 $$
 \begin{aligned}
-&\text{Input} : \{x_t\}_{t=1}^{T} \\
-&\text{State} : h_t \\
-&\text{Output} : o_t \\
-&\text{Transition} : \\
-&h_t = \text{RNNCell}(h_{t-1}, x_t) \\
+&\text{Input} : \{x_t\}_{t=1}^{T} \
+&\text{State} : h_t \
+&\text{Output} : o_t \
+&\text{Transition} : \
+&h_t = \text{RNNCell}(h_{t-1}, x_t) \
 &o_t = \text{OutputLayer}(h_t)
 \end{aligned}
 $$
@@ -115,9 +115,9 @@ RNN的基本公式描述了隐藏状态$h_t$如何从上一时刻的状态$h_{t-
 
 $$
 \begin{aligned}
-&\text{Update gate} : g_t = \sigma(W_g \cdot [\overline{x}_t, \overline{h}_{t-1}] + b_g) \\
-&\text{Reset gate} : r_t = \sigma(W_r \cdot [\overline{x}_t, \overline{h}_{t-1}] + b_r) \\
-&\text{Candidate update} : \tilde{h}_t = \tanh(W_c \cdot [\overline{x}_t, r_t \odot \overline{h}_{t-1}] + b_c) \\
+&\text{Update gate} : g_t = \sigma(W_g \cdot [\overline{x}_t, \overline{h}_{t-1}] + b_g) \
+&\text{Reset gate} : r_t = \sigma(W_r \cdot [\overline{x}_t, \overline{h}_{t-1}] + b_r) \
+&\text{Candidate update} : \tilde{h}_t = \tanh(W_c \cdot [\overline{x}_t, r_t \odot \overline{h}_{t-1}] + b_c) \
 &\text{Hidden state} : h_t = g_t \odot \tilde{h}_t + (1-g_t) \odot \overline{h}_{t-1}
 \end{aligned}
 $$

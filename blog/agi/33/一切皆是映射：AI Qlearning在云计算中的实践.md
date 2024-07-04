@@ -66,12 +66,12 @@ Q-learning的目标是学习一个函数$Q(s, a)$，表示在状态$s$下采取�
 
 Q-learning的学习过程基于以下公式更新Q值：
 
-$$Q(s, a) = Q(s, a) + \\alpha [r + \\gamma \\max_{a'} Q(s', a') - Q(s, a)]$$
+$$Q(s, a) = Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a') - Q(s, a)]$$
 
 其中，
-- $\\alpha$ 是学习率，
+- $\alpha$ 是学习率，
 - $r$ 是即时奖励，
-- $\\gamma$ 是折扣因子，
+- $\gamma$ 是折扣因子，
 - $s'$ 是新状态。
 
 ### 4.3 案例分析与讲解
@@ -80,7 +80,7 @@ $$Q(s, a) = Q(s, a) + \\alpha [r + \\gamma \\max_{a'} Q(s', a') - Q(s, a)]$$
 
 ### 4.4 常见问题解答
 
-- **如何选择学习率？**：学习率$\\alpha$通常从高值开始，随着时间逐渐减小，以确保学习过程既不会过于激进也不会过于保守。
+- **如何选择学习率？**：学习率$\alpha$通常从高值开始，随着时间逐渐减小，以确保学习过程既不会过于激进也不会过于保守。
 - **如何处理探索与利用的平衡？**：通过策略如ε-greedy策略，在一定概率下探索新策略，在其余概率下利用当前策略。
 
 ## 5. 项目实践：代码实例和详细解释说明
@@ -106,7 +106,7 @@ class QLearningAgent:
         self.decay_rate = decay_rate
         self.experience_replay_buffer = []
         self.model = self._build_model()
-    
+
     def _build_model(self):
         model = tf.keras.models.Sequential([
             tf.keras.layers.Dense(24, input_shape=(self.state_size,), activation='relu'),
@@ -114,14 +114,14 @@ class QLearningAgent:
         ])
         model.compile(loss='mse', optimizer=tf.keras.optimizers.Adam(lr=self.learning_rate))
         return model
-    
+
     def choose_action(self, observation):
         if np.random.rand() < self.exploration_rate:
             return np.random.choice(self.action_size)
         else:
             q_values = self.model.predict(observation)
             return np.argmax(q_values)
-    
+
     def learn(self, state, action, reward, next_state, done):
         target = reward
         if not done:
@@ -129,7 +129,7 @@ class QLearningAgent:
         target_f = self.model.predict(state)
         target_f[0][action] = target
         self.model.fit(state, target_f, epochs=1, verbose=0)
-        
+
     def update_exploration_rate(self):
         self.exploration_rate *= self.decay_rate
         self.exploration_rate = max(self.exploration_rate, 0.01)

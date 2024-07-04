@@ -162,15 +162,13 @@ $$
 使用梯度下降法更新网络参数：
 
 $$
-\theta_{t+1} = \theta_t - \alpha \
-abla_\theta L(\theta_t)
+\theta_{t+1} = \theta_t - \alpha \nabla_\theta L(\theta_t)
 $$
 
 其中，
 
 - $\alpha$：学习率
-- $\
-abla_\theta L(\theta_t)$：损失函数关于网络参数$\theta$的梯度
+- $\nabla_\theta L(\theta_t)$：损失函数关于网络参数$\theta$的梯度
 
 ### 4.3 案例分析与讲解
 

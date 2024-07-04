@@ -102,8 +102,8 @@ GAN的数学模型可以表示为：
 
 $$
 \begin{align*}
-\text{Generator}: G(z) &= \mathbb{R}^{D} \rightarrow \mathbb{R}^{N} \\
-\text{Discriminator}: D(x) &= \mathbb{R}^{N} \rightarrow \mathbb{R}^{1} \\
+\text{Generator}: G(z) &= \mathbb{R}^{D} \rightarrow \mathbb{R}^{N} \
+\text{Discriminator}: D(x) &= \mathbb{R}^{N} \rightarrow \mathbb{R}^{1} \
 \text{Loss function}: L &= \frac{1}{2} \left[ \mathbb{E}_{z \sim p_{z}(z)}[\log D(G(z))] + \mathbb{E}_{x \sim p_{data}(x)}[\log (1 - D(x))] \right]
 \end{align*}
 $$

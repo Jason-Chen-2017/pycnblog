@@ -79,7 +79,7 @@ DQN及其变种在自然语言处理中的应用广泛，包括但不限于：
 
 #### Q-Learning公式：
 
-$$Q(s, a) \\leftarrow Q(s, a) + \\alpha [r + \\gamma \\max_{a'} Q(s', a') - Q(s, a)]$$
+$$Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a') - Q(s, a)]$$
 
 其中，
 - α是学习率，
@@ -90,11 +90,11 @@ $$Q(s, a) \\leftarrow Q(s, a) + \\alpha [r + \\gamma \\max_{a'} Q(s', a') - Q(s,
 
 #### DQN中的目标Q值：
 
-$$y_i = r_i + \\gamma \\max_{a'} Q(\\hat{s}_{i+1}, a')$$
+$$y_i = r_i + \gamma \max_{a'} Q(\hat{s}_{i+1}, a')$$
 
 其中，
-- \\(\\hat{s}_{i+1}\\)是下一个状态的估计，
-- \\(a'\\)是在\\(\\hat{s}_{i+1}\\)状态下的最佳动作。
+- \(\hat{s}_{i+1}\)是下一个状态的估计，
+- \(a'\)是在\(\hat{s}_{i+1}\)状态下的最佳动作。
 
 ### 4.3 案例分析与讲解
 
@@ -144,7 +144,7 @@ class DQN:
         self.learning_rate = learning_rate
         self.discount_factor = discount_factor
         self.model = self.build_model()
-        
+
     def build_model(self):
         model = Sequential([
             Flatten(input_shape=(1, self.state_space)),
@@ -154,10 +154,10 @@ class DQN:
         ])
         model.compile(loss='mse', optimizer=Adam(lr=self.learning_rate))
         return model
-    
+
     def predict(self, state):
         return self.model.predict(state.reshape(1, -1))[0]
-    
+
     def train(self, states, actions, rewards, next_states, dones):
         targets = self.model.predict(states)
         for i in range(len(states)):

@@ -33,7 +33,7 @@ Cascade R-CNN采用阶段性训练方式,即每个检测器单独训练,并使�
 ### 3.3 检测器级联
 将RPN输出的ROI依次输入到级联的检测器中:
 1. 对每个ROI进行ROI Pooling,将其映射到固定尺寸的特征图。
-2. 通过检测头(分类和回归)对ROI进行预测,输出类别概率和边界框坐标。 
+2. 通过检测头(分类和回归)对ROI进行预测,输出类别概率和边界框坐标。
 3. 根据IoU阈值对预测结果进行筛选,保留高质量的ROI送入下一级检测器。
 4. 重复步骤1-3,直到最后一级检测器输出最终结果。
 
@@ -81,9 +81,9 @@ $t_i$为预测边界框参数,$t_i^*$为真实边界框参数。$\lambda$为平�
 
 $$
 \begin{aligned}
-t_x &= (G_x - P_x) / P_w \\
-t_y &= (G_y - P_y) / P_h \\
-t_w &= \log(G_w / P_w) \\
+t_x &= (G_x - P_x) / P_w \
+t_y &= (G_y - P_y) / P_h \
+t_w &= \log(G_w / P_w) \
 t_h &= \log(G_h / P_h)
 \end{aligned}
 $$
@@ -100,25 +100,25 @@ class CascadeRCNN(nn.Module):
         super().__init__()
         self.num_classes = num_classes
         self.num_stages = num_stages
-        
+
         # 骨干网络
         self.backbone = resnet50(pretrained=True)
-        
+
         # 区域建议网络
         self.rpn = RegionProposalNetwork()
-        
+
         # R-CNN检测头
         self.heads = nn.ModuleList()
         for i in range(num_stages):
             self.heads.append(RCNNHead(num_classes))
-    
+
     def forward(self, images, targets=None):
         # 特征提取
         features = self.backbone(images)
-        
+
         # 区域建议
         proposals, rpn_loss = self.rpn(features, targets)
-        
+
         # 检测器级联
         detections = proposals
         losses = dict()
@@ -126,7 +126,7 @@ class CascadeRCNN(nn.Module):
             head = self.heads[i]
             detections, head_loss = head(features, detections, targets)
             losses.update(head_loss)
-        
+
         if self.training:
             losses.update(rpn_loss)
             return losses
@@ -146,29 +146,29 @@ class RCNNHead(nn.Module):
     def __init__(self, num_classes):
         super().__init__()
         self.num_classes = num_classes
-        
+
         # ROI Pooling
         self.roi_pool = RoIAlign(output_size=(7,7), sampling_ratio=2)
-        
+
         # 分类和回归
         self.fc1 = nn.Linear(256*7*7, 1024)
         self.fc2 = nn.Linear(1024, 1024)
         self.cls_score = nn.Linear(1024, num_classes)
         self.bbox_pred = nn.Linear(1024, num_classes*4)
-    
+
     def forward(self, features, proposals, targets=None):
         # ROI Pooling
         pooled_features = self.roi_pool(features, proposals)
         x = pooled_features.view(pooled_features.size(0), -1)
-        
+
         # 全连接层
         x = F.relu(self.fc1(x), inplace=True)
         x = F.relu(self.fc2(x), inplace=True)
-        
+
         # 分类和回归
         cls_score = self.cls_score(x)
         bbox_pred = self.bbox_pred(x)
-        
+
         if self.training:
             loss = self.compute_loss(cls_score, bbox_pred, targets)
             return proposals, loss

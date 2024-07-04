@@ -1,7 +1,7 @@
 
 # Active Learning原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -172,7 +172,7 @@ A：Active Learning算法的查询策略主要包括不确定性采样、基于�
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n active_learning_env python=3.8 
+conda create -n active_learning_env python=3.8
 conda activate active_learning_env
 ```
 3. 安装必要的库：

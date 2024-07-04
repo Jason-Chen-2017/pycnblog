@@ -133,13 +133,13 @@ YOLOv8模型主要包含以下几个关键组件：
 YOLOv8模型在每个网格内预测目标的类别、边界框和关键点信息。其中，边界框预测公式如下：
 
 $$
-x_{ij} = x_i + (w_{ij} \cdot x_{w}) \odot \sigma(W_{ij}^T \cdot x_{\text{bbox}}) \\
-y_{ij} = y_i + (h_{ij} \cdot y_{h}) \odot \sigma(W_{ij}^T \cdot y_{\text{bbox}}) \\
-w_{ij} = \sigma(W_{ij}^T \cdot w_{\text{bbox}}) \\
-h_{ij} = \sigma(W_{ij}^T \cdot h_{\text{bbox}}) \\
-conf_{ij} = \sigma(W_{ij}^T \cdot conf_{\text{bbox}}) \\
-cls_{ij} = \text{softmax}(W_{ij}^T \cdot cls_{\text{bbox}}) \\
-box_{ij} = [x_{ij}, y_{ij}, w_{ij}, h_{ij}] \\
+x_{ij} = x_i + (w_{ij} \cdot x_{w}) \odot \sigma(W_{ij}^T \cdot x_{\text{bbox}}) \
+y_{ij} = y_i + (h_{ij} \cdot y_{h}) \odot \sigma(W_{ij}^T \cdot y_{\text{bbox}}) \
+w_{ij} = \sigma(W_{ij}^T \cdot w_{\text{bbox}}) \
+h_{ij} = \sigma(W_{ij}^T \cdot h_{\text{bbox}}) \
+conf_{ij} = \sigma(W_{ij}^T \cdot conf_{\text{bbox}}) \
+cls_{ij} = \text{softmax}(W_{ij}^T \cdot cls_{\text{bbox}}) \
+box_{ij} = [x_{ij}, y_{ij}, w_{ij}, h_{ij}] \
 cls_{ij} = [\text{cls}_1, \text{cls}_2, ..., \text{cls}_{\text{num_classes}}]
 $$
 
@@ -162,11 +162,11 @@ $$
 假设模型在每个网格内预测的边界框参数为 $[x, y, w, h]$，真实边界框参数为 $[x_{\text{true}}, y_{\text{true}}, w_{\text{true}}, h_{\text{true}}]$。则边界框预测公式可以表示为：
 
 $$
-x_{ij} = x_i + (w_i \cdot \frac{x_{\text{true}} - x_i}{w_{\text{true}}} \odot \sigma(W_{ij}^T \cdot x_{\text{bbox}})) \\
-y_{ij} = y_i + (h_i \cdot \frac{y_{\text{true}} - y_i}{h_{\text{true}}} \odot \sigma(W_{ij}^T \cdot y_{\text{bbox}})) \\
-w_{ij} = \sigma(W_{ij}^T \cdot w_{\text{bbox}}) \\
-h_{ij} = \sigma(W_{ij}^T \cdot h_{\text{bbox}}) \\
-conf_{ij} = \sigma(W_{ij}^T \cdot conf_{\text{bbox}}) \\
+x_{ij} = x_i + (w_i \cdot \frac{x_{\text{true}} - x_i}{w_{\text{true}}} \odot \sigma(W_{ij}^T \cdot x_{\text{bbox}})) \
+y_{ij} = y_i + (h_i \cdot \frac{y_{\text{true}} - y_i}{h_{\text{true}}} \odot \sigma(W_{ij}^T \cdot y_{\text{bbox}})) \
+w_{ij} = \sigma(W_{ij}^T \cdot w_{\text{bbox}}) \
+h_{ij} = \sigma(W_{ij}^T \cdot h_{\text{bbox}}) \
+conf_{ij} = \sigma(W_{ij}^T \cdot conf_{\text{bbox}}) \
 cls_{ij} = \text{softmax}(W_{ij}^T \cdot cls_{\text{bbox}})
 $$
 

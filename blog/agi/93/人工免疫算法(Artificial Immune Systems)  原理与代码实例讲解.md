@@ -143,7 +143,7 @@ $$
 
 $$
 x'_i = \begin{cases}
-0 & \text{if } x_i = 1 \\
+0 & \text{if } x_i = 1 \
 1 & \text{if } x_i = 0
 \end{cases}
 $$

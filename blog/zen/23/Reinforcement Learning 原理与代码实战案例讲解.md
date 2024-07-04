@@ -1,4 +1,4 @@
-                 
+
 # Reinforcement Learning 原理与代码实战案例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -154,48 +154,48 @@ q_table = np.zeros(q_table_size)
 episode_rewards = []
 for episode in range(num_episodes):
     total_reward = 0
-    
+
     # 转换观测状态为Q表索引
     state_index = env.encode(state[0], state[1])
-    
+
     while True:
         # 随机决定是否探索还是利用现有知识
         exploration_threshold = random.uniform(0, 1)
-        
+
         if exploration_threshold > exploration_rate:
             action = np.argmax(q_table[state_index])
         else:
             action = env.action_space.sample()
-            
+
         # 执行动作并获得新状态和奖励
         next_state, reward, done, _ = env.step(action)
-        
+
         # 更新状态指数
         next_state_index = env.encode(next_state[0], next_state[1])
-        
+
         # 更新Q表
         q_table[state_index, action] += learning_rate * (
             reward +
             discount_factor * np.max(q_table[next_state_index]) -
             q_table[state_index, action]
         )
-        
+
         # 积累总奖励
         total_reward += reward
-        
+
         # 更新状态
         state = next_state
-        
+
         # 如果达到结束条件，则跳出循环
         if done:
             break
-            
+
     # 减少探索率
     exploration_rate *= exploration_decay_rate
-    
+
     # 添加每集奖励到列表中
     episode_rewards.append(total_reward)
-    
+
 print("训练完成！")
 
 # 绘制奖励曲线

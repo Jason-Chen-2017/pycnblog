@@ -117,7 +117,7 @@ AI相关法律法规的数学模型主要包括以下几种：
 - **逻辑回归公式**：
 
   $$
- P(y=1|x) = \sigma(w_0 + \sum_{i=1}^n w_ix_i) 
+ P(y=1|x) = \sigma(w_0 + \sum_{i=1}^n w_ix_i)
 $$
 
   其中，$ P(y=1|x) $ 表示在输入 $ x $ 的情况下，输出为 1 的概率，$ w_0 $ 为偏置项，$ w_i $ 为权重，$ x_i $ 为特征，$ \sigma $ 为sigmoid函数。
@@ -125,7 +125,7 @@ $$
 - **支持向量机公式**：
 
   $$
- \min_{\boldsymbol{w}, b} \frac{1}{2} ||\boldsymbol{w}||^2 + C\sum_{i=1}^n \xi_i 
+ \min_{\boldsymbol{w}, b} \frac{1}{2} ||\boldsymbol{w}||^2 + C\sum_{i=1}^n \xi_i
 $$
 
   其中，$ ||\boldsymbol{w}|| $ 表示权重向量的范数，$ C $ 为惩罚系数，$ \xi_i $ 为松弛变量。
@@ -133,7 +133,7 @@ $$
 - **决策树公式**：
 
   $$
- h(x) = \prod_{i=1}^m \alpha_i g(x_i) 
+ h(x) = \prod_{i=1}^m \alpha_i g(x_i)
 $$
 
   其中，$ h(x) $ 为决策树模型，$ \alpha_i $ 为参数，$ g(x_i) $ 为分割函数。

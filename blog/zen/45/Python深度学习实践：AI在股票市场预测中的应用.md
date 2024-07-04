@@ -105,10 +105,10 @@ $$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n + \epsilon$$
 
 $$
 \begin{align*}
-i_t &= \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i) \\
-f_t &= \sigma(W_{xf}x_t + W_{hf}h_{t-1} + b_f) \\
-C_t &= f_t \odot C_{t-1} + i_t \odot \sigma(W_{xc}x_t + W_{hc}h_{t-1} + b_c) \\
-o_t &= \sigma(W_{xo}x_t + W_{ho}h_{t-1} + b_o) \\
+i_t &= \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i) \
+f_t &= \sigma(W_{xf}x_t + W_{hf}h_{t-1} + b_f) \
+C_t &= f_t \odot C_{t-1} + i_t \odot \sigma(W_{xc}x_t + W_{hc}h_{t-1} + b_c) \
+o_t &= \sigma(W_{xo}x_t + W_{ho}h_{t-1} + b_o) \
 h_t &= o_t \odot \sigma(C_t)
 \end{align*}
 $$
@@ -121,7 +121,7 @@ $$
 
 $$
 \begin{align*}
-i_t &= \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i) \\
+i_t &= \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i) \
 C_t &= f_t \odot C_{t-1} + i_t \odot \sigma(W_{xc}x_t + W_{hc}h_{t-1} + b_c)
 \end{align*}
 $$
@@ -136,7 +136,7 @@ $$
 
 $$
 \begin{align*}
-o_t &= \sigma(W_{xo}x_t + W_{ho}h_{t-1} + b_o) \\
+o_t &= \sigma(W_{xo}x_t + W_{ho}h_{t-1} + b_o) \
 h_t &= o_t \odot \sigma(C_t)
 \end{align*}
 $$

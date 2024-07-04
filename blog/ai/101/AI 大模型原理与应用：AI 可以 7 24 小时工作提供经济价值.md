@@ -436,4 +436,4 @@ AI 大模型面临着计算资源需求高、数据需求量大和模型可解�
 
 AI 大模型的规模将会继续扩大，模型效率将不断提高，模型可解释性将得到改善。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

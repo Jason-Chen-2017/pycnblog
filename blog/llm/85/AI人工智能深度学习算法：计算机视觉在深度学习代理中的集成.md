@@ -112,7 +112,7 @@ graph LR
 
 $$
 \begin{align*}
-h_{\text{vision}} &= f_{\text{CNN}}(x_{\text{image}}) \\
+h_{\text{vision}} &= f_{\text{CNN}}(x_{\text{image}}) \
 x_{\text{action}} &= g_{\text{action}}(h_{\text{vision}}, h_{\text{other}})
 \end{align*}
 $$

@@ -144,11 +144,11 @@ AI Agent在CRM客户管理中涉及到的数学模型主要包括：
 假设输入层节点为 $x_1, x_2, ..., x_n$，隐藏层节点为 $h_1, h_2, ..., h_m$，输出层节点为 $y_1, y_2, ..., y_p$。则神经网络的前向传播过程可以表示为：
 
 $$
-h_i = f(W^{(1)}_{ij}x_j + b^{(1)}_i) \quad (i=1,2,...,m) 
+h_i = f(W^{(1)}_{ij}x_j + b^{(1)}_i) \quad (i=1,2,...,m)
 $$
 
 $$
-y_j = f(W^{(2)}_{jk}h_k + b^{(2)}_j) \quad (j=1,2,...,p) 
+y_j = f(W^{(2)}_{jk}h_k + b^{(2)}_j) \quad (j=1,2,...,p)
 $$
 
 其中 $W^{(1)}$ 和 $b^{(1)}$ 分别为输入层到隐藏层的权重和偏置，$W^{(2)}$ 和 $b^{(2)}$ 分别为隐藏层到输出层的权重和偏置，$f$ 为激活函数。
@@ -160,19 +160,19 @@ $$
 假设损失函数为 $\mathcal{L}$，则反向传播过程可以表示为：
 
 $$
-\frac{\partial \mathcal{L}}{\partial W^{(2)}} = \frac{\partial \mathcal{L}}{\partial y_j} \frac{\partial y_j}{\partial W^{(2)}_{jk}} 
+\frac{\partial \mathcal{L}}{\partial W^{(2)}} = \frac{\partial \mathcal{L}}{\partial y_j} \frac{\partial y_j}{\partial W^{(2)}_{jk}}
 $$
 
 $$
-\frac{\partial \mathcal{L}}{\partial b^{(2)}} = \frac{\partial \mathcal{L}}{\partial y_j} \frac{\partial y_j}{\partial b^{(2)}_j} 
+\frac{\partial \mathcal{L}}{\partial b^{(2)}} = \frac{\partial \mathcal{L}}{\partial y_j} \frac{\partial y_j}{\partial b^{(2)}_j}
 $$
 
 $$
-\frac{\partial \mathcal{L}}{\partial W^{(1)}} = \frac{\partial \mathcal{L}}{\partial h_k} \frac{\partial h_k}{\partial W^{(1)}_{ij}} 
+\frac{\partial \mathcal{L}}{\partial W^{(1)}} = \frac{\partial \mathcal{L}}{\partial h_k} \frac{\partial h_k}{\partial W^{(1)}_{ij}}
 $$
 
 $$
-\frac{\partial \mathcal{L}}{\partial b^{(1)}} = \frac{\partial \mathcal{L}}{\partial h_k} \frac{\partial h_k}{\partial b^{(1)}_i} 
+\frac{\partial \mathcal{L}}{\partial b^{(1)}} = \frac{\partial \mathcal{L}}{\partial h_k} \frac{\partial h_k}{\partial b^{(1)}_i}
 $$
 
 通过梯度下降算法，根据上述梯度更新权重和偏置，实现神经网络的训练。
@@ -207,7 +207,7 @@ class SentimentAnalysis(nn.Module):
         self.hidden_size = hidden_size
         self.rnn = nn.RNN(input_size, hidden_size, batch_first=True)
         self.fc = nn.Linear(hidden_size, output_size)
-    
+
     def forward(self, x):
         out, _ = self.rnn(x)
         out = self.fc(out[:, -1, :])

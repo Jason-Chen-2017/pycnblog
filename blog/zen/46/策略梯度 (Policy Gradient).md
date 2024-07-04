@@ -93,8 +93,7 @@
 
 策略梯度方法的数学模型可以表示为以下公式：
 
-$$\theta_{t+1} = \theta_t + \alpha \
-abla_{\theta} J(\theta_t)$$
+$$\theta_{t+1} = \theta_t + \alpha \nabla_{\theta} J(\theta_t)$$
 
 其中：
 
@@ -108,8 +107,7 @@ abla_{\theta} J(\theta_t)$$
 
 首先，定义策略梯度为：
 
-$$\
-abla_{\theta} J(\theta) = \frac{\partial J(\theta)}{\partial \theta}$$
+$$\nabla_{\theta} J(\theta) = \frac{\partial J(\theta)}{\partial \theta}$$
 
 然后，使用链式法则对$J(\theta)$求偏导，得到：
 
@@ -125,8 +123,7 @@ $$A(\theta) = \sum_{i=1}^n \pi(a_i | \theta)$$
 
 最后，根据策略梯度的定义，得到：
 
-$$\
-abla_{\theta} J(\theta) = \sum_{i=1}^n \pi(a_i | \theta) \frac{\partial J(\theta)}{\partial A} \frac{\partial A}{\partial \theta}$$
+$$\nabla_{\theta} J(\theta) = \sum_{i=1}^n \pi(a_i | \theta) \frac{\partial J(\theta)}{\partial A} \frac{\partial A}{\partial \theta}$$
 
 ### 4.3 案例分析与讲解
 
@@ -134,17 +131,16 @@ abla_{\theta} J(\theta) = \sum_{i=1}^n \pi(a_i | \theta) \frac{\partial J(\theta
 
 假设我们有一个环境，状态空间为$S$，动作空间为$A$，初始策略$\theta_0$为随机策略。我们使用$\epsilon$-greedy策略来探索未知状态，即：
 
-$$\epsilon-greedy(\theta) = \begin{cases} 
+$$\epsilon-greedy(\theta) = \begin{cases}
 \frac{1}{|\mathcal{A}|} & \text{with probability } 1-\epsilon \\
-\arg\max_{a \in \mathcal{A}} Q(\theta, s, a) & \text{with probability } \epsilon 
+\arg\max_{a \in \mathcal{A}} Q(\theta, s, a) & \text{with probability } \epsilon
 \end{cases}$$
 
 其中，$Q(\theta, s, a)$表示在状态$s$下采取动作$a$的价值。
 
 我们使用以下公式来更新策略参数：
 
-$$\theta_{t+1} = \theta_t + \alpha \
-abla_{\theta} J(\theta_t)$$
+$$\theta_{t+1} = \theta_t + \alpha \nabla_{\theta} J(\theta_t)$$
 
 其中，$J(\theta)$为：
 
@@ -198,7 +194,7 @@ class PolicyNetwork(nn.Module):
     def __init__(self, obs_dim, act_dim):
         super(PolicyNetwork, self).__init__()
         self.fc = nn.Linear(obs_dim, act_dim)
-        
+
     def forward(self, x):
         return self.fc(x)
 
@@ -206,21 +202,21 @@ class PolicyNetwork(nn.Module):
 def policy_gradient(env, policy_network, epochs, alpha):
     optimizer = optim.Adam(policy_network.parameters(), lr=alpha)
     total_reward = 0.0
-    
+
     for _ in range(epochs):
         obs = env.reset()
         done = False
-        
+
         while not done:
             action = policy_network(torch.from_numpy(obs).float()). detach().numpy()
             obs, reward, done, _ = env.step(action)
             total_reward += reward
-            
+
             optimizer.zero_grad()
             loss = -reward
             loss.backward()
             optimizer.step()
-            
+
     return total_reward
 
 # 创建环境

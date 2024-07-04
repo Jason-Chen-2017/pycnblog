@@ -9,7 +9,7 @@
 #### 1.1.2 人才招聘信息系统的功能
 #### 1.1.3 人才招聘信息系统的意义
 
-### 1.2 ASP技术概述  
+### 1.2 ASP技术概述
 #### 1.2.1 ASP技术的定义
 #### 1.2.2 ASP技术的特点
 #### 1.2.3 ASP技术的优势
@@ -57,7 +57,7 @@
 
 ## 4. 数学模型和公式详细讲解举例说明
 
-### 4.1 关键词匹配算法数学模型 
+### 4.1 关键词匹配算法数学模型
 #### 4.1.1 布尔模型
 $$ sim(d,q) = \frac{|d \cap q|}{|q|} $$
 #### 4.1.2 向量空间模型
@@ -89,7 +89,7 @@ $$ r_{ui} = \frac{\sum_{j \in S_i(u)} sim(i,j) \cdot r_{uj}}{\sum_{j \in S_i(u)}
 <%
 '用户注册
 Function UserRegister(username, password, email)
-   sql= "insert into Users(username,password,email) values('"&username&"','"&password&"', '"&email&"')" 
+   sql= "insert into Users(username,password,email) values('"&username&"','"&password&"', '"&email&"')"
    conn.Execute sql
 End Function
 
@@ -112,7 +112,7 @@ End Function
 <%
 '发布招聘信息
 Function PublishJob(title, content, company, city, email)
-   sql= "insert into Jobs(title,content,company,city,email,publishtime) values('"&title&"','"&content&"','"&company&"','"&city&"', '"&email&"', Now())" 
+   sql= "insert into Jobs(title,content,company,city,email,publishtime) values('"&title&"','"&content&"','"&company&"','"&city&"', '"&email&"', Now())"
    conn.Execute sql
 End Function
 
@@ -120,7 +120,7 @@ End Function
 Function ShowJobList()
   sql="select * from Jobs order by publishtime desc"
   Set rs = conn.Execute(sql)
-  
+
   Do While Not rs.EOF
 %>
    <div class="job-item">
@@ -129,10 +129,10 @@ Function ShowJobList()
       <p>公司：<%=rs("company")%> 城市：<%=rs("city")%></p>
       <p class="info">发布时间：<%=rs("publishtime")%>  联系邮箱：<%=rs("email")%></p>
    </div>
-<% 
+<%
     rs.MoveNext
   Loop
-End Function  
+End Function
 %>
 ```
 
@@ -144,8 +144,8 @@ Function ApplyJob(jobid, username, resumefile)
    filesuffix=Mid(resumefile,InstrRev(resumefile, ".")+1)
    newfilename=username & "_" & jobid & "." & filesuffix
    resumefile.SaveAs Server.MapPath("resumefiles/" & newfilename)
-   
-   sql= "insert into Resumes(jobid,username,resumefile) values("&jobid&",'"&username&"','"&newfilename&"')" 
+
+   sql= "insert into Resumes(jobid,username,resumefile) values("&jobid&",'"&username&"','"&newfilename&"')"
    conn.Execute sql
 End Function
 
@@ -153,19 +153,19 @@ End Function
 Function ShowResumeList(jobid)
   sql="select Resumes.*,Users.email from Resumes,Users where Resumes.jobid="&jobid&" and Resumes.username=Users.username"
   Set rs = conn.Execute(sql)
-  
+
   Do While Not rs.EOF
 %>
    <div class="resume-item">
-      <p>投递人：<%=rs("username")%></p>  
+      <p>投递人：<%=rs("username")%></p>
       <p>联系邮箱:<%=rs("email")%></p>
       <p><a href="resumefiles/<%=rs("resumefile")%>">下载简历</a></p>
       <p>投递时间：<%=rs("applyTime")%></p>
    </div>
-<% 
+<%
     rs.MoveNext
   Loop
-End Function  
+End Function
 %>
 ```
 
@@ -181,7 +181,7 @@ End Function
 #### 6.1.2 降低企业招聘成本
 #### 6.1.3 规范企业招聘流程
 
-### 6.2 人才招聘信息系统在求职中的应用  
+### 6.2 人才招聘信息系统在求职中的应用
 #### 6.2.1 提高求职效率
 #### 6.2.2 获取更多就业机会
 #### 6.2.3 展示个人能力
@@ -202,7 +202,7 @@ End Function
 #### 7.2.1 MSDN ASP文档
 #### 7.2.2 W3Schools在线教程
 #### 7.2.3 ASP之家社区
- 
+
 ### 7.3 人才招聘信息系统开源项目推荐
 #### 7.3.1 OpenJobs
 #### 7.3.2 JobPlus
@@ -222,7 +222,7 @@ End Function
 
 ### 8.3 展望人才招聘信息系统的未来
 #### 8.3.1 技术驱动招聘变革
-#### 8.3.2 重塑人力资源管理 
+#### 8.3.2 重塑人力资源管理
 #### 8.3.3 开创就业新时代
 
 ## 9. 附录：常见问题与解答

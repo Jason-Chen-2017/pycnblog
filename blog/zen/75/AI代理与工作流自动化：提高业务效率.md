@@ -1,6 +1,6 @@
 # AI代理与工作流自动化：提高业务效率
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -182,25 +182,25 @@ def agent_loop():
     while True:
         # 获取用户输入的任务
         user_input = input('请输入任务：')
-        
+
         # 对任务进行分类
         encoded_input = tokenizer(user_input, return_tensors='pt')
         output = model(**encoded_input)
         task_probs = torch.softmax(output.logits, dim=1)
         task_idx = torch.argmax(task_probs).item()
         task = tasks[task_idx]
-        
+
         # 选择最优动作
         best_action, best_reward = None, float('-inf')
         for action in actions:
             r = reward(task, action)
             if r > best_reward:
                 best_action, best_reward = action, r
-        
+
         # 执行动作并更新状态
         state = transition(task, best_action)
         print(f'执行动作：{best_action}，进入状态：{state}')
-        
+
         if state == '完成任务':
             print('任务完成！')
             break

@@ -29,7 +29,7 @@ RMSProp(Root Mean Square Propagation)是一种自适应学习率的优化算法,
 为了解决梯度下降法的缺陷,动量优化(Momentum)算法被提出。它在梯度更新中引入了一个动量项,使得参数更新不仅受当前梯度的影响,也受之前累积的速度(动量)的影响。这种方式有助于加速收敛,并且能够更好地逃离局部最小值。
 
 $$
-v_t = \gamma v_{t-1} + \eta \nabla_{\theta} J(\theta)\\
+v_t = \gamma v_{t-1} + \eta \nabla_{\theta} J(\theta)\
 \theta = \theta - v_t
 $$
 
@@ -84,7 +84,7 @@ graph TD
 RMSProp算法的数学模型可以表示为:
 
 $$
-E[g^2]_t = \beta E[g^2]_{t-1} + (1 - \beta)(\nabla_{\theta} J(\theta))^2\\
+E[g^2]_t = \beta E[g^2]_{t-1} + (1 - \beta)(\nabla_{\theta} J(\theta))^2\
 \theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{E[g^2]_t + \epsilon}} \nabla_{\theta} J(\theta)
 $$
 

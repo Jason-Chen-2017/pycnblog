@@ -174,14 +174,14 @@ def matrix_multiplication(matrix1, matrix2):
 def main():
     matrix1 = np.array([[1, 2], [3, 4]])
     matrix2 = np.array([[5, 6], [7, 8]])
-    
+
     langchain = LangChain()
     langchain.add_module("matrix_addition", matrix_addition)
     langchain.add_module("matrix_multiplication", matrix_multiplication)
-    
+
     result_addition = langchain.call_module("matrix_addition", matrix1, matrix2)
     result_multiplication = langchain.call_module("matrix_multiplication", matrix1, matrix2)
-    
+
     print("矩阵相加结果：", result_addition)
     print("矩阵相乘结果：", result_multiplication)
 

@@ -61,12 +61,12 @@ RNN是一种能够处理序列数据的深度学习模型，常用于生成文�
 
 GAN的损失函数用于衡量生成器和判别器的性能。常见的GAN损失函数包括：
 
-* **Minimax损失函数：** 
+* **Minimax损失函数：**
 $$
 \min_G \max_D V(D, G) = \mathbb{E}_{x \sim p_{data}(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log(1 - D(G(z)))]
 $$
 
-* **非饱和博弈损失函数：** 
+* **非饱和博弈损失函数：**
 $$
 \min_G V(D, G) = - \mathbb{E}_{z \sim p_z(z)}[\log D(G(z))]
 $$

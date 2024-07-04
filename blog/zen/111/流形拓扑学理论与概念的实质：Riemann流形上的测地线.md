@@ -135,7 +135,7 @@ from sympy import symbols, Function, Eq, diff
 
 # 定义流形上的度量张量
 def metric_tensor(x):
-    return np.array([[1, 0], [0, np.cos(x)]]) 
+    return np.array([[1, 0], [0, np.cos(x)]])
 
 # 计算测地方程
 def geodesic_equations(x, t, y):

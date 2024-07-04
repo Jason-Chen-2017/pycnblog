@@ -138,8 +138,7 @@ DQN算法的步骤如下：
 
 7. 从经验池中随机采样一批经验，并计算目标Q值 $Q(s',a;\theta^{\text{target}})$。
 
-8. 计算梯度 $\
-abla_{\theta}J(\theta)$。
+8. 计算梯度 $\nabla_{\theta}J(\theta)$。
 
 9. 使用梯度下降算法更新参数 $\theta$。
 

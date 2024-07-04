@@ -100,13 +100,10 @@ $$
 
 #### 梯度计算：
 
-对于深度学习模型，通过自动微分技术计算梯度 $\
-abla_\theta L(\theta)$，以便更新参数 $\theta$：
+对于深度学习模型，通过自动微分技术计算梯度 $\nabla_\theta L(\theta)$，以便更新参数 $\theta$：
 
 $$
-\
-abla_\theta L(\theta) = \
-abla_\theta (w_1 J(\theta) + w_2 E(\theta))
+\nabla_\theta L(\theta) = \nabla_\theta (w_1 J(\theta) + w_2 E(\theta))
 $$
 
 #### 参数更新：
@@ -114,8 +111,7 @@ $$
 基于计算出的梯度，应用优化算法进行参数更新：
 
 $$
-\theta \leftarrow \theta - \alpha \
-abla_\theta L(\theta)
+\theta \leftarrow \theta - \alpha \nabla_\theta L(\theta)
 $$
 
 其中 $\alpha$ 是学习率，控制参数更新的速度。
@@ -163,7 +159,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # 假设环境模型（环境状态和动作）
-env = SimpleEnvironment() 
+env = SimpleEnvironment()
 
 # 定义Q-learning参数
 learning_rate = 0.1
@@ -191,16 +187,16 @@ for episode in range(num_episodes):
     while True:
         # 选择行动，探索或利用策略
         action = choose_action(state)
-        
+
         # 执行行动，获取下一个状态和奖励
         next_state, reward, done = env.step(action)
-        
+
         # 更新Q表
         q_learning_step(state, action, reward, next_state, done)
-        
+
         state = next_state
         episode_rewards.append(reward)
-        
+
         if done:
             break
 

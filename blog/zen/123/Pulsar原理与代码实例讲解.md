@@ -56,7 +56,7 @@ Pulsar采用了Segment-based的存储机制和Consistent Hashing的消息路由�
 Pulsar将消息流切分成多个Segment进行存储,每个Segment是一个追加写的日志文件。Segment的大小可配置,例如128MB。当前Segment写满后,Broker会自动切换到下一个Segment。通过预先分配一系列Segment,可实现无锁的高并发写入。
 
 Segment的具体存储步骤如下:
-1. Broker接收到Producer发来的消息。 
+1. Broker接收到Producer发来的消息。
 2. Broker将消息追加到当前写入的Segment中。
 3. 如果当前Segment已满,则关闭该Segment并打开下一个Segment。
 4. Broker将已写完的Segment持久化到BookKeeper中。
@@ -115,8 +115,8 @@ $$
 
 $$
 \begin{aligned}
-T &= \frac{L}{\lambda} \\
-&= \frac{\frac{\lambda}{\mu-\lambda}}{\lambda} \\
+T &= \frac{L}{\lambda} \
+&= \frac{\frac{\lambda}{\mu-\lambda}}{\lambda} \
 &= \frac{1}{\mu - \lambda}
 \end{aligned}
 $$
@@ -168,19 +168,19 @@ public class PulsarProducerExample {
         PulsarClient client = PulsarClient.builder()
             .serviceUrl("pulsar://localhost:6650")
             .build();
-        
+
         // 创建Producer,指定Topic和消息Schema
         Producer<String> producer = client.newProducer(Schema.STRING)
             .topic("my-topic")
             .create();
-        
+
         // 发送10条消息
         for (int i = 0; i < 10; i++) {
             String message = "message-" + i;
             producer.send(message);
             System.out.println("Sent message: " + message);
         }
-        
+
         // 关闭Producer和客户端
         producer.close();
         client.close();

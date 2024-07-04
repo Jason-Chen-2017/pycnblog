@@ -87,7 +87,7 @@
 3. 计算平均性能：
 
 $$
- \text{Average Performance} = \frac{1}{K} \sum_{i=1}^{K} \text{Performance}(Di) 
+ \text{Average Performance} = \frac{1}{K} \sum_{i=1}^{K} \text{Performance}(Di)
 $$
 
 ### 4.3 案例分析与讲解

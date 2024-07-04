@@ -170,7 +170,7 @@ class DQN(nn.Module):
         super(DQN, self).__init__()
         self.fc1 = nn.Linear(input_shape, 128)
         self.fc2 = nn.Linear(128, action_space)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)
@@ -185,7 +185,7 @@ class DQNTrainer:
         self.memory = memory
         self.gamma = gamma
         self.epsilon = epsilon
-    
+
     def act(self, state):
         if np.random.rand() < self.epsilon:
             return np.random.randint(self.model.action_space)
@@ -194,7 +194,7 @@ class DQNTrainer:
             q_values = self.model(state)
             action = q_values.argmax(1).item()
         return action
-    
+
     def replay(self, batch_size):
         states, actions, rewards, next_states, dones = self.memory.sample(batch_size)
         q_values = self.model(states).gather(1, actions.unsqueeze(1)).squeeze(1)

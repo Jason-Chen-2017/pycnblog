@@ -118,8 +118,8 @@ graph TD
 
 $$
 \begin{align*}
-\hat{y} &= f(\theta; \text{fused\_features}) \\
-\text{fused\_features} &= \text{concat}(\text{CNN\_features}, \text{RNN\_features}) \\
+\hat{y} &= f(\theta; \text{fused\_features}) \
+\text{fused\_features} &= \text{concat}(\text{CNN\_features}, \text{RNN\_features}) \
 \end{align*}
 $$
 
@@ -144,10 +144,10 @@ $$
 
 $$
 \begin{align*}
-\text{CNN\_features} &= \text{CNN}(I) \\
-\text{RNN\_features} &= \text{RNN}(T) \\
-\text{fused\_features} &= \text{concat}(\text{CNN\_features}, \text{RNN\_features}) \\
-\hat{y} &= f(\theta; \text{fused\_features}) \\
+\text{CNN\_features} &= \text{CNN}(I) \
+\text{RNN\_features} &= \text{RNN}(T) \
+\text{fused\_features} &= \text{concat}(\text{CNN\_features}, \text{RNN\_features}) \
+\hat{y} &= f(\theta; \text{fused\_features}) \
 \end{align*}
 $$
 

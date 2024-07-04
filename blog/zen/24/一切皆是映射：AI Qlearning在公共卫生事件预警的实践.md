@@ -1,4 +1,4 @@
-                 
+
 # 一切皆是映射：AI Q-learning在公共卫生事件预警的实践
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -151,15 +151,15 @@ class PandemicEnv:
         self.state_dim = 4
         self.action_space = ['maintain', 'strengthen', 'relax']
         # 初始化其他参数...
-    
+
     def step(self, action):
         # 实现状态转移逻辑...
         pass
-    
+
     def reset(self):
         # 初始化状态...
         pass
-    
+
     def render(self):
         # 显示当前状态...
         pass
@@ -178,20 +178,20 @@ class QLearningAgent:
         self.discount_factor = discount_factor
         self.exploration_rate = exploration_rate
         self.q_table = defaultdict(lambda: np.zeros(len(env.action_space)))
-    
+
     def choose_action(self, state):
         if random.uniform(0, 1) < self.exploration_rate:
             return random.choice(range(len(self.env.action_space)))
         else:
             return np.argmax(self.q_table[state])
-    
+
     def learn(self, state, next_state, reward, action, next_action):
         q_value = self.q_table[state][action]
         max_q_next = np.max(self.q_table[next_state])
         new_q_value = (1 - self.learning_rate) * q_value + \
                       self.learning_rate * (reward + self.discount_factor * max_q_next)
         self.q_table[state][action] = new_q_value
-    
+
     def update_exploration_rate(self):
         self.exploration_rate *= 0.99
 
@@ -209,7 +209,7 @@ for episode in range(1000):  # 迭代次数
         agent.learn(state, next_state, reward, action, next_action)
         state = next_state
 
-agent.update_exploration_rate()  
+agent.update_exploration_rate()
 ```
 
 ### 5.3 代码解读与分析

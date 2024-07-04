@@ -131,8 +131,8 @@ $$
 
 $$
 \begin{cases}
-x' = x'(\alpha, \beta, \gamma) \\
-y' = y'(\alpha, \beta, \gamma) \\
+x' = x'(\alpha, \beta, \gamma) \
+y' = y'(\alpha, \beta, \gamma) \
 z' = z'(\alpha, \beta, \gamma)
 \end{cases}
 $$
@@ -170,29 +170,25 @@ $$
 在笛卡尔坐标系中，温度分布函数的梯度向量为：
 
 $$
-\
-abla T = \left(\frac{\partial T}{\partial x}, \frac{\partial T}{\partial y}, \frac{\partial T}{\partial z}\right)
+\nabla T = \left(\frac{\partial T}{\partial x}, \frac{\partial T}{\partial y}, \frac{\partial T}{\partial z}\right)
 $$
 
 在坐标变换下，梯度向量会发生以下变化：
 
 $$
-\
-abla T' = \left(\frac{\partial T}{\partial x'}, \frac{\partial T}{\partial y'}, \frac{\partial T}{\partial z'}\right)
+\nabla T' = \left(\frac{\partial T}{\partial x'}, \frac{\partial T}{\partial y'}, \frac{\partial T}{\partial z'}\right)
 $$
 
 根据共变张量的性质，我们有：
 
 $$
-\
-abla T' = \left(\frac{\partial T}{\partial x}, \frac{\partial T}{\partial y}, \frac{\partial T}{\partial z}\right)
+\nabla T' = \left(\frac{\partial T}{\partial x}, \frac{\partial T}{\partial y}, \frac{\partial T}{\partial z}\right)
 $$
 
 因此，温度分布函数的梯度向量可以表示为共变张量：
 
 $$
-\
-abla T = \left(\frac{\partial T}{\partial x}, \frac{\partial T}{\partial y}, \frac{\partial T}{\partial z}\right)
+\nabla T = \left(\frac{\partial T}{\partial x}, \frac{\partial T}{\partial y}, \frac{\partial T}{\partial z}\right)
 $$
 
 ### 4.4 常见问题解答

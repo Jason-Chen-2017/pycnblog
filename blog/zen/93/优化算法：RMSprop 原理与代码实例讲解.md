@@ -42,8 +42,7 @@ RMSprop算法的提出，为深度学习优化算法研究提供了新的思路�
 梯度下降算法是一种迭代优化算法，其核心思想是沿着损失函数的梯度方向更新模型参数，使得损失函数逐渐减小。具体来说，每次迭代都根据梯度的大小和方向，更新模型参数，如下所示：
 
 $$
-\theta_{t+1} = \theta_{t} - \alpha \cdot \
-abla_{\theta}J(\theta_{t})
+\theta_{t+1} = \theta_{t} - \alpha \cdot \nabla_{\theta}J(\theta_{t})
 $$
 
 其中，$\theta$ 表示模型参数，$\alpha$ 表示学习率，$J(\theta)$ 表示损失函数。
@@ -71,8 +70,7 @@ $$
 ### 3.2 算法步骤详解
 
 1. 初始化参数：初始化模型参数 $\theta$、学习率 $\alpha$、梯度平方的指数移动平均 $m$ 和正则化参数 $\epsilon$。
-2. 计算梯度：根据损失函数 $J(\theta)$ 计算梯度 $\
-abla_{\theta}J(\theta)$。
+2. 计算梯度：根据损失函数 $J(\theta)$ 计算梯度 $\nabla_{\theta}J(\theta)$。
 3. 更新参数：根据公式 (1) 更新参数 $\theta$。
 4. 更新梯度平方的指数移动平均：根据公式 (2) 更新梯度平方的指数移动平均 $m$。
 5. 返回步骤 2，继续迭代。
@@ -105,8 +103,7 @@ RMSprop算法在许多深度学习任务中取得了显著的效果，包括：
 RMSprop算法的数学模型主要由以下几个部分组成：
 
 - 模型参数 $\theta$
-- 梯度 $\
-abla_{\theta}J(\theta)$
+- 梯度 $\nabla_{\theta}J(\theta)$
 - 学习率 $\alpha$
 - 梯度平方的指数移动平均 $m$
 - 正则化参数 $\epsilon$
@@ -140,8 +137,7 @@ $$
 根据公式 (1)，RMSprop算法更新参数的公式如下：
 
 $$
-\theta_{t+1} = \theta_{t} - \alpha_{t} \cdot \
-abla_{\theta}J(\theta_{t})
+\theta_{t+1} = \theta_{t} - \alpha_{t} \cdot \nabla_{\theta}J(\theta_{t})
 $$
 
 ### 4.3 案例分析与讲解
@@ -151,8 +147,7 @@ $$
 假设我们有一个线性回归模型，参数为 $\theta = [w, b]$，损失函数为 $J(\theta) = \frac{1}{2} \sum_{i=1}^{n}(y_i - \theta^T x_i)^2$。现在我们使用RMSprop算法对该模型进行优化。
 
 1. 初始化参数：$w = [1, 1]$，$b = 1$，$\alpha = 0.01$，$\gamma = 0.9$，$\epsilon = 1e-8$。
-2. 计算梯度：$\
-abla_{\theta}J(\theta) = [2y_1 - 2x_1w - 2x_2b, 2y_2 - 2x_2w - 2x_3b]$。
+2. 计算梯度：$\nabla_{\theta}J(\theta) = [2y_1 - 2x_1w - 2x_2b, 2y_2 - 2x_2w - 2x_3b]$。
 3. 更新参数：$\theta = [w - 0.01(2y_1 - 2x_1w - 2x_2b), b - 0.01(2y_2 - 2x_2w - 2x_3b)]$。
 4. 更新梯度平方的指数移动平均：$m = [0.9 \cdot m_1 + (1-0.9)(2y_1 - 2x_1w - 2x_2b)^2, 0.9 \cdot m_2 + (1-0.9)(2y_2 - 2x_2w - 2x_3b)^2]$。
 5. 返回步骤 2，继续迭代。

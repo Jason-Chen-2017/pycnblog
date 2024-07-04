@@ -1,4 +1,4 @@
-                 
+
 # XLNet原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -232,8 +232,8 @@ print("预测结果:", predictions)
 
 ### 7.3 相关论文推荐
 
-- **"XLNet: Generalized Autoregressive Pretraining for Language Understanding"**  
-  (作者：Sunghwan Kim et al., 发表于ICLR 2019)  
+- **"XLNet: Generalized Autoregressive Pretraining for Language Understanding"**
+  (作者：Sunghwan Kim et al., 发表于ICLR 2019)
   - [链接](https://arxiv.org/abs/1906.08237)
 
 ### 7.4 其他资源推荐

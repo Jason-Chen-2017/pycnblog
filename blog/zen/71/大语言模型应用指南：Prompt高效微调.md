@@ -152,7 +152,7 @@ def fine_tune_model(model_name, data_path, output_dir, epochs=3, batch_size=8):
         greater_is_better=False,
         seed=42
     )
-    
+
     trainer = Trainer(
         model=model,
         args=training_args,
@@ -160,7 +160,7 @@ def fine_tune_model(model_name, data_path, output_dir, epochs=3, batch_size=8):
         eval_dataset=load_data(data_path),
         compute_metrics=lambda p: {"loss": p.metrics["eval_loss"]}
     )
-    
+
     trainer.train()
     return trainer
 ```

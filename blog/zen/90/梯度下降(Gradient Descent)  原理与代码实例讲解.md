@@ -42,12 +42,9 @@
 梯度下降算法的具体步骤如下：
 
 1. 初始化参数$\theta_0$。
-2. 计算目标函数$J(\theta)$关于参数$\theta$的梯度$\
-abla J(\theta)$。
-3. 根据梯度$\
-abla J(\theta)$更新参数$\theta$：
-   $$\theta = \theta - \alpha \
-abla J(\theta)$$
+2. 计算目标函数$J(\theta)$关于参数$\theta$的梯度$\nabla J(\theta)$。
+3. 根据梯度$\nabla J(\theta)$更新参数$\theta$：
+   $$\theta = \theta - \alpha \nabla J(\theta)$$
    其中$\alpha$为学习率。
 4. 重复步骤2和3，直到满足停止条件，如达到最大迭代次数或梯度变化很小。
 
@@ -84,11 +81,9 @@ $$J(\theta) = \sum_{i=1}^m (y_i - \theta^T x_i)^2$$
 
 ### 4.2 公式推导过程
 
-梯度下降算法的核心是计算目标函数$J(\theta)$关于参数$\theta$的梯度$\
-abla J(\theta)$。根据链式法则，我们有：
+梯度下降算法的核心是计算目标函数$J(\theta)$关于参数$\theta$的梯度$\nabla J(\theta)$。根据链式法则，我们有：
 
-$$\
-abla J(\theta) = \frac{\partial J(\theta)}{\partial \theta_1}, \frac{\partial J(\theta)}{\partial \theta_2}, \dots, \frac{\partial J(\theta)}{\partial \theta_n}$$
+$$\nabla J(\theta) = \frac{\partial J(\theta)}{\partial \theta_1}, \frac{\partial J(\theta)}{\partial \theta_2}, \dots, \frac{\partial J(\theta)}{\partial \theta_n}$$
 
 对于目标函数$J(\theta)$，我们可以分别计算每个参数的偏导数：
 
@@ -110,13 +105,11 @@ $$J(\theta) = \sum_{i=1}^m (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i} 
 
 通过计算目标函数的梯度，我们可以得到：
 
-$$\
-abla J(\theta) = \begin{pmatrix} \frac{\partial J(\theta)}{\partial \theta_0} \\ \frac{\partial J(\theta)}{\partial \theta_1} \\ \vdots \\ \frac{\partial J(\theta)}{\partial \theta_n} \end{pmatrix} = \begin{pmatrix} -2 \sum_{i=1}^m (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i} + \dots + \theta_n x_{ni})) \\ -2 \sum_{i=1}^m (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i} + \dots + \theta_n x_{ni})) x_{1i} \\ \vdots \\ -2 \sum_{i=1}^m (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i} + \dots + \theta_n x_{ni})) x_{ni} \end{pmatrix}$$
+$$\nabla J(\theta) = \begin{pmatrix} \frac{\partial J(\theta)}{\partial \theta_0} \ \frac{\partial J(\theta)}{\partial \theta_1} \ \vdots \ \frac{\partial J(\theta)}{\partial \theta_n} \end{pmatrix} = \begin{pmatrix} -2 \sum_{i=1}^m (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i} + \dots + \theta_n x_{ni})) \ -2 \sum_{i=1}^m (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i} + \dots + \theta_n x_{ni})) x_{1i} \ \vdots \ -2 \sum_{i=1}^m (y_i - (\theta_0 + \theta_1 x_{1i} + \theta_2 x_{2i} + \dots + \theta_n x_{ni})) x_{ni} \end{pmatrix}$$
 
 根据梯度下降算法，我们可以得到参数$\theta$的更新公式：
 
-$$\theta = \theta - \alpha \
-abla J(\theta)$$
+$$\theta = \theta - \alpha \nabla J(\theta)$$
 
 其中$\alpha$是学习率。
 

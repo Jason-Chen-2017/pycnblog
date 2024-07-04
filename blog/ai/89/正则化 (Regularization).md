@@ -246,7 +246,7 @@ A：L1正则化对权重的绝对值进行惩罚，而L2正则化对权重的平
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n tensorflow-env python=3.8 
+conda create -n tensorflow-env python=3.8
 conda activate tensorflow-env
 ```
 

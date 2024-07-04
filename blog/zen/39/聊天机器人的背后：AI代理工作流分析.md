@@ -166,13 +166,13 @@ def task_execution(task):
 def workflow(text):
     # 任务分解
     tasks = task_decomposition(text)
-    
+
     # 任务执行
     results = []
     for task in tasks:
         result = task_execution(task)
         results.append(result)
-    
+
     # 结果处理
     final_result = "\
 ".join(results)

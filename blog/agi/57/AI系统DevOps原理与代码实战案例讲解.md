@@ -5,7 +5,7 @@
 ## 1. 背景介绍
 ### 1.1 AI系统开发运维的挑战
 #### 1.1.1 模型开发与部署的复杂性
-#### 1.1.2 数据管理与版本控制的难题  
+#### 1.1.2 数据管理与版本控制的难题
 #### 1.1.3 模型监控与更新的持续性
 
 ### 1.2 DevOps在AI系统中的应用价值
@@ -24,7 +24,7 @@
 #### 2.2.2 基础设施即代码（IaC）
 #### 2.2.3 监控与日志管理
 
-### 2.3 AI系统DevOps的关键要素  
+### 2.3 AI系统DevOps的关键要素
 #### 2.3.1 数据版本控制与管理
 #### 2.3.2 模型版本控制与部署
 #### 2.3.3 自动化测试与验证
@@ -53,7 +53,7 @@ $$x_{std} = \frac{x - \mu}{\sigma}$$
 
 #### 4.1.2 特征缩放与正则化
 $$ x_{scaled} = \frac{x - mean(x)}{std(x)} $$
-$$ L1正则化: \sum_{i=1}^{n} |w_i| $$  
+$$ L1正则化: \sum_{i=1}^{n} |w_i| $$
 $$ L2正则化: \sum_{i=1}^{n} w_i^2 $$
 
 ### 4.2 模型训练中的优化算法
@@ -129,8 +129,8 @@ model.compile(optimizer=Adam(learning_rate=0.001),
               metrics=['accuracy'])
 
 # 训练模型
-model.fit(X_train, y_train, 
-          batch_size=32, epochs=50, 
+model.fit(X_train, y_train,
+          batch_size=32, epochs=50,
           validation_data=(X_val, y_val))
 
 # 评估模型

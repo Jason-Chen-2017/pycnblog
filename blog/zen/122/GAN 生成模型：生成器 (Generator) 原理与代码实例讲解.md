@@ -93,27 +93,27 @@ $$\underset{G}{\operatorname{min}} \, \underset{D}{\operatorname{max}} \, V(D,G)
 ### 3.2 算法步骤详解
 
 1. **初始化生成器$G$和判别器$D$**
-   
+
    初始化两个深度神经网络,分别作为生成器和判别器的参数。通常生成器是一个上采样卷积网络,判别器是一个下采样卷积网络。
-   
+
 2. **生成噪声数据**
-   
+
    从一个简单的噪声分布(如高斯分布或均匀分布)中采样一批随机噪声向量$z$,作为生成器的输入。
-   
+
 3. **生成假样本**
-   
+
    将噪声向量$z$输入到生成器$G$中,得到一批生成的假样本$G(z)$。
-   
+
 4. **训练判别器**
-   
+
    将真实样本$x$和生成的假样本$G(z)$输入到判别器$D$中,计算判别器在真实样本上的损失$\log D(x)$和在生成样本上的损失$\log(1-D(G(z)))$,并对判别器的参数进行梯度更新,使其能够更好地区分真伪样本。
-   
+
 5. **训练生成器**
-   
+
    固定判别器$D$的参数,将噪声向量$z$输入到生成器$G$中,得到生成样本$G(z)$。计算生成器的损失$\log(1-D(G(z)))$,并对生成器的参数进行梯度更新,使其能够生成更加逼真的样本,欺骗判别器。
-   
+
 6. **重复训练**
-   
+
    重复步骤2-5,直到生成器和判别器达到一个动态平衡,生成的样本质量令人满意为止。
 
 ### 3.3 算法优缺点
@@ -148,7 +148,7 @@ GAN及其变体模型已被广泛应用于多个领域:
 在GAN模型中,生成器$G$和判别器$D$的目标函数可以形式化为:
 
 $$\begin{aligned}
-\underset{G}{\operatorname{min}} \, \underset{D}{\operatorname{max}} \, V(D,G) &= \mathbb{E}_{x \sim p_{\text{data}}(x)}\big[\log D(x)\big] + \mathbb{E}_{z \sim p_z(z)}\big[\log(1-D(G(z)))\big] \\
+\underset{G}{\operatorname{min}} \, \underset{D}{\operatorname{max}} \, V(D,G) &= \mathbb{E}_{x \sim p_{\text{data}}(x)}\big[\log D(x)\big] + \mathbb{E}_{z \sim p_z(z)}\big[\log(1-D(G(z)))\big] \
 &= \int_{x} p_{\text{data}}(x) \log D(x) \, dx + \int_{z} p_z(z) \log(1-D(G(z))) \, dz
 \end{aligned}$$
 
@@ -184,6 +184,6 @@ $$\mathbb{E}_{x \sim P}[-\log x] \geq -\log \mathbb{E}_{x \sim P}[x] \geq 0$$
 将上式代入GAN目标函数,可得:
 
 $$\begin{aligned}
-V(D,G) &= \mathbb{E}_{x \sim p_{\text{data}}(x)}\big[\log D(x)\big] + \mathbb{E}_{z \sim p_z(z)}\big[\log(1-D(G(z)))\big] \\
-&= \mathbb{E}_{x \sim p_{\text{data}}(x)}\big[-\log \frac{1}{D(x)}\big] + \mathbb{E}_{z \sim p_z(z)}\big[-\log(1-D(G(z)))\big] \\
+V(D,G) &= \mathbb{E}_{x \sim p_{\text{data}}(x)}\big[\log D(x)\big] + \mathbb{E}_{z \sim p_z(z)}\big[\log(1-D(G(z)))\big] \
+&= \mathbb{E}_{x \sim p_{\text{data}}(x)}\big[-\log \frac{1}{D(x)}\big] + \mathbb{E}_{z \sim p_z(z)}\big[-\log(1-D(G(z)))\big] \
 &\geq -\log \mathbb{E}_{x \sim p_{\text{data}}(x)}\big[\frac{1}{D(x)}\big] - \log(1-\mathbb{E}_{z \sim p_z(z)}[D(G(

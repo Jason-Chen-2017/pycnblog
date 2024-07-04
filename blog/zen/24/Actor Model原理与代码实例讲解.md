@@ -1,4 +1,4 @@
-                 
+
 # Actor Model原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -198,14 +198,14 @@ class SimpleActor(Actor):
 def main():
     actor_system = ActorSystem()
     simple_actor = actor_system.actor_of(SimpleActor(), "simple_actor")
-    
+
     simple_actor.tell("Hello from sender")
-    
+
     for _ in range(5):
         simple_actor.tell(f"Message {_+1}")
-        
+
     print(simple_actor.ask(lambda x: None))  # 查询消息列表
-    
+
     actor_system.shutdown()
 
 if __name__ == "__main__":

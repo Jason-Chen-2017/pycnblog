@@ -82,17 +82,17 @@ DQN的核心在于通过深度神经网络近似Q函数，从而在不完全信�
 
 DQN基于Q-learning算法，通过引入深度神经网络来近似Q函数。Q函数定义为：
 
-$$Q(s, a) = \\mathbb{E}[R_t + \\gamma \\max_{a'} Q(s', a')]$$
+$$Q(s, a) = \mathbb{E}[R_t + \gamma \max_{a'} Q(s', a')]$$
 
-其中，$s$是状态，$a$是动作，$R_t$是即时奖励，$\\gamma$是折扣因子，$s'$是下一个状态，$a'$是下一个状态的最优动作。
+其中，$s$是状态，$a$是动作，$R_t$是即时奖励，$\gamma$是折扣因子，$s'$是下一个状态，$a'$是下一个状态的最优动作。
 
 ### 公式推导过程
 
-DQN通过深度神经网络$\\hat{Q}(s, a; \\theta)$来近似Q函数，其中$\\theta$是网络参数。学习过程的目标是最小化以下损失函数：
+DQN通过深度神经网络$\hat{Q}(s, a; \theta)$来近似Q函数，其中$\theta$是网络参数。学习过程的目标是最小化以下损失函数：
 
-$$L(\\theta) = \\mathbb{E}_{(s, a, r, s') \\sim \\mathcal{D}} \\left[ \\left( r + \\gamma \\max_{a'} \\hat{Q}(s', a'; \\theta) - \\hat{Q}(s, a; \\theta) \\right)^2 \\right]$$
+$$L(\theta) = \mathbb{E}_{(s, a, r, s') \sim \mathcal{D}} \left[ \left( r + \gamma \max_{a'} \hat{Q}(s', a'; \theta) - \hat{Q}(s, a; \theta) \right)^2 \right]$$
 
-其中，$\\mathcal{D}$是经验回放缓冲区。
+其中，$\mathcal{D}$是经验回放缓冲区。
 
 ### 案例分析与讲解
 
@@ -127,67 +127,67 @@ class DQN:
         self.exploration_rate = exploration_rate
         self.batch_size = batch_size
         self.memory = deque(maxlen=memory_size)
-        
+
         # 初始化Q网络和目标网络
         self.init_networks()
-        
+
     def init_networks(self):
         self.input_layer = tf.keras.layers.Input(shape=(env.observation_space.shape))
         self.hidden_layer = tf.keras.layers.Dense(64, activation='relu')(self.input_layer)
         self.output_layer = tf.keras.layers.Dense(env.action_space.n)(self.hidden_layer)
         self.model = tf.keras.models.Model(inputs=self.input_layer, outputs=self.output_layer)
         self.target_model = tf.keras.models.clone_model(self.model)
-        
+
         self.optimizer = tf.keras.optimizers.Adam(learning_rate=self.learning_rate)
         self.loss_fn = tf.keras.losses.MSE
-        
+
     def remember(self, state, action, reward, next_state, done):
         self.memory.append((state, action, reward, next_state, done))
-        
+
     def choose_action(self, state):
         if np.random.rand() <= self.exploration_rate:
             return self.env.action_space.sample()
         else:
             q_values = self.model.predict(state)
             return np.argmax(q_values)
-        
+
     def train(self):
         if len(self.memory) < self.batch_size:
             return
-        
+
         states, actions, rewards, next_states, dones = zip(*np.array(self.memory)[:self.batch_size])
         states = np.array(states)
         actions = np.array(actions)
         rewards = np.array(rewards)
         next_states = np.array(next_states)
         dones = np.array(dones)
-        
+
         with tf.GradientTape() as tape:
             q_values = self.model(states)
             target_q_values = self.target_model(next_states)
             target_q_values[dones] = 0
-            
+
             max_q_values = np.max(target_q_values, axis=1)
             expected_q_values = rewards + self.gamma * max_q_values
-            
+
             loss = self.loss_fn(expected_q_values, q_values[np.arange(self.batch_size), actions])
-            
+
         gradients = tape.gradient(loss, self.model.trainable_variables)
         self.optimizer.apply_gradients(zip(gradients, self.model.trainable_variables))
-        
+
         # 更新目标网络
         self.update_target_network()
-        
+
     def update_target_network(self):
         self.target_model.set_weights(self.model.get_weights())
-        
+
     def run(self, episodes):
         for episode in range(episodes):
             state = self.env.reset()
             state = np.expand_dims(state, axis=0)
             done = False
             total_reward = 0
-            
+
             while not done:
                 action = self.choose_action(state)
                 next_state, reward, done, _ = self.env.step(action)
@@ -196,14 +196,14 @@ class DQN:
                 state = next_state
                 total_reward += reward
                 self.train()
-                
-            print(f\"Episode {episode+1}: Total Reward = {total_reward}\")
-            
+
+            print(f"Episode {episode+1}: Total Reward = {total_reward}")
+
         return self.model
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     import gym
-    env = gym.make(\"CartPole-v1\")
+    env = gym.make("CartPole-v1")
     agent = DQN(env, learning_rate=0.001, gamma=0.95, exploration_rate=0.1, batch_size=32, memory_size=10000)
     agent.run(episodes=1000)
     env.close()

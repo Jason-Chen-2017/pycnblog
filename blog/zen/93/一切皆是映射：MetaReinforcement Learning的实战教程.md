@@ -176,8 +176,8 @@ MRL的数学模型通常包括以下几个部分：
 
 ```latex
 \begin{align*}
-\pi(\theta|s) &= \text{softmax}(\theta W_s) \\
-V(\theta|s) &= \sum_{a \in \mathcal{A}} \pi(\theta|s) Q(\theta|s,a) \\
+\pi(\theta|s) &= \text{softmax}(\theta W_s) \
+V(\theta|s) &= \sum_{a \in \mathcal{A}} \pi(\theta|s) Q(\theta|s,a) \
 Q(\theta|s,a) &= R(s,a) + \gamma V(\theta|s')
 \end{align*}
 ```

@@ -1,6 +1,6 @@
 # Python深度学习实践：基于深度学习的个性化聊天机器人
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：深度学习，个性化，聊天机器人，自然语言处理，对话系统
 
@@ -73,9 +73,9 @@
 
 $$y = f(x)$$
 
-其中$f$可以被表示为一组参数$\\theta$定义的函数：
+其中$f$可以被表示为一组参数$\theta$定义的函数：
 
-$$y = f(x; \\theta)$$
+$$y = f(x; \theta)$$
 
 ### 4.2 公式推导过程
 
@@ -84,26 +84,26 @@ $$y = f(x; \\theta)$$
 **编码器**：
 
 $$
-\\begin{align*}
-& c_t = \\text{LSTMCell}(x_t, h_{t-1}, c_{t-1}) \\\\
-& h_t = \\text{LSTMCell}(c_t, c_{t-1})
-\\end{align*}
+\begin{align*}
+& c_t = \text{LSTMCell}(x_t, h_{t-1}, c_{t-1}) \\\
+& h_t = \text{LSTMCell}(c_t, c_{t-1})
+\end{align*}
 $$
 
 **解码器**：
 
 $$
-\\begin{align*}
-& \\tilde{h}_t = \\text{LSTMCell}(y_{t-1}, c_t, h_{t-1}) \\\\
-& y_t = \\text{OutputLayer}(\\tilde{h}_t)
-\\end{align*}
+\begin{align*}
+& \tilde{h}_t = \text{LSTMCell}(y_{t-1}, c_t, h_{t-1}) \\\
+& y_t = \text{OutputLayer}(\tilde{h}_t)
+\end{align*}
 $$
 
-其中$c_t$和$h_t$分别表示第$t$时刻的细胞状态和隐藏状态，$\\tilde{h}_t$是解码器的隐藏状态。
+其中$c_t$和$h_t$分别表示第$t$时刻的细胞状态和隐藏状态，$\tilde{h}_t$是解码器的隐藏状态。
 
 ### 4.3 案例分析与讲解
 
-以一个简单的个性化推荐系统为例，假设用户历史购买记录为$x = (\\text{book}, \\text{music}, \\text{movie})$，推荐系统的目标是根据用户历史行为预测下一个可能感兴趣的商品类别。使用seq2seq模型，编码器接收$x$并生成表示向量$h$，解码器基于$h$和初始隐藏状态$h_0$生成推荐商品类别序列$y$。
+以一个简单的个性化推荐系统为例，假设用户历史购买记录为$x = (\text{book}, \text{music}, \text{movie})$，推荐系统的目标是根据用户历史行为预测下一个可能感兴趣的商品类别。使用seq2seq模型，编码器接收$x$并生成表示向量$h$，解码器基于$h$和初始隐藏状态$h_0$生成推荐商品类别序列$y$。
 
 ### 4.4 常见问题解答
 

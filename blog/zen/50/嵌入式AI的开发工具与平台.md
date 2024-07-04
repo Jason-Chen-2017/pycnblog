@@ -145,7 +145,7 @@ $$
 
 $$
 \begin{aligned}
-\frac{\partial L}{\partial W} &= \frac{\partial L}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial z} \cdot \frac{\partial z}{\partial W} \\
+\frac{\partial L}{\partial W} &= \frac{\partial L}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial z} \cdot \frac{\partial z}{\partial W} \
 \frac{\partial L}{\partial b} &= \frac{\partial L}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial z} \cdot \frac{\partial z}{\partial b}
 \end{aligned}
 $$
@@ -156,7 +156,7 @@ $$
 
 $$
 \begin{aligned}
-W &\leftarrow W - \eta \frac{\partial L}{\partial W} \\
+W &\leftarrow W - \eta \frac{\partial L}{\partial W} \
 b &\leftarrow b - \eta \frac{\partial L}{\partial b}
 \end{aligned}
 $$

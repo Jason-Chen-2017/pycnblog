@@ -8,7 +8,7 @@
 
 在当今大数据时代,各行各业都产生了大量的结构化和非结构化数据。这些海量数据蕴藏着巨大的商业价值,如何高效地存储、管理和分析这些数据,成为企业面临的一大挑战。传统的数据库系统由于设计的局限性,难以满足大数据场景下的需求。为了解决这一问题,数据仓库(Data Warehouse)应运而生。
 
-### 1.2 研究现状  
+### 1.2 研究现状
 
 数据仓库技术经过多年的发展,已经日趋成熟。主流的数据仓库解决方案包括:
 
@@ -27,13 +27,13 @@
 本文共分为9个部分:
 
 1. 背景介绍
-2. 核心概念与联系  
+2. 核心概念与联系
 3. 核心算法原理与具体步骤
 4. 数学模型和公式详解
 5. 项目实践:代码实例讲解
 6. 实际应用场景
 7. 工具和资源推荐
-8. 总结:未来发展趋势与挑战  
+8. 总结:未来发展趋势与挑战
 9. 附录:常见问题解答
 
 ## 2. 核心概念与联系
@@ -68,7 +68,7 @@ graph TD
 
 这些概念相互关联、环环相扣,共同构建了完整的数据仓库体系架构。
 
-## 3. 核心算法原理与具体操作步骤  
+## 3. 核心算法原理与具体操作步骤
 
 ### 3.1 算法原理概述
 
@@ -83,7 +83,7 @@ graph LR
 
 这种模型直观反映了业务现实,易于理解和查询。同时,通过预先计算和存储事实表中的度量数据,可以极大提高查询性能。
 
-### 3.2 算法步骤详解  
+### 3.2 算法步骤详解
 
 构建数据仓库的一般步骤如下:
 
@@ -102,7 +102,7 @@ graph LR
 - 查询高效,支持快速分析
 - 可扩展性好,易于集成新数据
 
-**缺点**:  
+**缺点**:
 
 - 模型规范,不能很好处理半结构化/非结构化数据
 - 设计和维护工作量大
@@ -113,7 +113,7 @@ graph LR
 多维数据模型广泛应用于各行业的数据分析场景,如:
 
 - 零售行业:分析商品销售情况
-- 金融行业:分析客户贷款情况 
+- 金融行业:分析客户贷款情况
 - 制造业:分析产品生产和库存
 - 电信业:分析用户通话详单
 - 互联网:分析网站/APP用户行为
@@ -148,7 +148,7 @@ $$\sum\limits_{t \in F} \sum\limits_{1 \leq l \leq k} m_l(t)$$
 
 对于给定的维度属性值$d_j^i = a$,我们可以计算满足该条件的所有元组t的度量之和:
 
-$$\sum\limits_{\substack{t \in F \\ d_j^i(t)=a}} \sum\limits_{1 \leq l \leq k} m_l(t)$$
+$$\sum\limits_{\substack{t \in F \ d_j^i(t)=a}} \sum\limits_{1 \leq l \leq k} m_l(t)$$
 
 这就是典型的OLAP分析中的"切片"和"切块"操作。
 
@@ -160,7 +160,7 @@ $$\sum\limits_{\substack{t \in F \\ d_j^i(t)=a}} \sum\limits_{1 \leq l \leq k} m
 
 $$
 \begin{align*}
-SALES = &(sale\_id, date\_id, product\_id, store\_id, customer\_id,\\
+SALES = &(sale\_id, date\_id, product\_id, store\_id, customer\_id,\
         &qty, amount)
 \end{align*}
 $$
@@ -168,13 +168,13 @@ $$
 其中:
 
 - sale_id是销售单据编号
-- qty是销售数量 
+- qty是销售数量
 - amount是销售金额
 
 我们可以查询某个产品在某个时间段内的总销售额:
 
 $$
-\sum\limits_{\substack{t \in SALES \\ date\_id \in [d1, d2] \\ product\_id=p}} amount(t)
+\sum\limits_{\substack{t \in SALES \ date\_id \in [d1, d2] \ product\_id=p}} amount(t)
 $$
 
 通过这种方式,我们可以方便地对数据进行多维度的统计分析。
@@ -219,17 +219,17 @@ class Sales(Base):
     store_id = Column(Integer, ForeignKey('store.id'))
     qty = Column(Integer)
     amount = Column(Integer)
-    
+
 class Date(Base):
     __tablename__ = 'date'
     id = Column(Integer, primary_key=True)
     date = Column(String)
-    
+
 class Product(Base):
-    __tablename__ = 'product' 
+    __tablename__ = 'product'
     id = Column(Integer, primary_key=True)
     name = Column(String)
-    
+
 class Store(Base):
     __tablename__ = 'store'
     id = Column(Integer, primary_key=True)
@@ -249,14 +249,14 @@ store_df = pd.read_csv('store.csv')
 
 3. 数据加载到数据库
 
-```python 
+```python
 from sqlalchemy import create_engine
 
 engine = create_engine('postgresql://user:pwd@localhost:5432/dw')
 Base.metadata.create_all(engine)
 
 sales_df.to_sql('sales', engine, if_exists='replace', index=False)
-date_df.to_sql('date', engine, if_exists='replace', index=False)  
+date_df.to_sql('date', engine, if_exists='replace', index=False)
 product_df.to_sql('product', engine, if_exists='replace', index=False)
 store_df.to_sql('store', engine, if_exists='replace', index=False)
 ```
@@ -270,7 +270,7 @@ conn = engine.connect()
 
 # 查询每个商品的总销售额
 stmt = select([
-    Product.name, 
+    Product.name,
     func.sum(Sales.amount)
 ]).select_from(
     join(Sales, Product, Sales.product_id == Product.id)

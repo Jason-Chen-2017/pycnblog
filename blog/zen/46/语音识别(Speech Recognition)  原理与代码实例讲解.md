@@ -395,13 +395,13 @@ def evaluate(model, dataloader):
 def main():
     # 加载数据集
     dataloader = load_librispeech(data_dir='librispeech', sample_rate=16000, batch_size=32)
-    
+
     # 初始化模型
     model = SpeechRecognitionModel()
-    
+
     # 训练模型
     train(model, dataloader, epochs=10, learning_rate=0.001)
-    
+
     # 评估模型
     accuracy = evaluate(model, dataloader)
     print(f'测试集准确率：{accuracy:.2f}%')

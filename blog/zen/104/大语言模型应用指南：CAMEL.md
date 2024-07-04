@@ -121,7 +121,7 @@ CAMEL架构中涉及的主要数学模型包括以下几种：
   假设有两个模型 $M_1$ 和 $M_2$，其输出分别为 $y_1$ 和 $y_2$。模型融合的目标是得到一个加权平均的输出 $y$：
 
   $$
- y = \alpha y_1 + (1-\alpha) y_2 
+ y = \alpha y_1 + (1-\alpha) y_2
 $$
 
   其中 $\alpha$ 为加权系数，用于平衡两个模型输出。
@@ -131,7 +131,7 @@ $$
   假设预训练模型参数为 $\theta$，任务特定参数为 $\phi$。参数高效微调的目标是找到最优参数 $\theta^*$ 和 $\phi^*$，使得损失函数 $J(\theta, \phi)$ 最小：
 
   $$
- \theta^*, \phi^* = \mathop{\arg\min}_{\theta, \phi} J(\theta, \phi) 
+ \theta^*, \phi^* = \mathop{\arg\min}_{\theta, \phi} J(\theta, \phi)
 $$
 
   其中 $J(\theta, \phi)$ 为损失函数，用于衡量模型预测结果与真实标签之间的差异。
@@ -232,15 +232,15 @@ for epoch in range(10):
     train_attention_mask = train_encodings['attention_mask']
     dev_input_ids = dev_encodings['input_ids']
     dev_attention_mask = dev_encodings['attention_mask']
-    
+
     # 模型融合
     output1 = model1(input_ids=train_input_ids, attention_mask=train_attention_mask)
     output2 = model2(input_ids=train_input_ids, attention_mask=train_attention_mask)
     output = model_fusion(output1, output2, alpha=0.5)
-    
+
     # 参数高效微调
     model = parameter_efficient_finetuning(model, train_input_ids, train_labels)
-    
+
     # 在验证集上评估模型性能
     dev_output = model(input_ids=dev_input_ids, attention_mask=dev_attention_mask)
     dev_loss = F.cross_entropy(dev_output.logits, dev_labels)

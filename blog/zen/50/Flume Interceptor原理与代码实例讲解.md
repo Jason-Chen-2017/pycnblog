@@ -4,7 +4,7 @@
 ### 1.1 问题的由来
 在大数据时代,海量数据的实时采集和传输是一个巨大的挑战。Apache Flume作为分布式的、可靠的、高可用的海量日志采集、聚合和传输的工具,在业界得到了广泛应用。然而,在实际应用中,我们往往需要在数据传输过程中对数据进行自定义加工处理,如何实现这一功能成为了一个关键问题。
 
-### 1.2 研究现状 
+### 1.2 研究现状
 Flume提供了拦截器(Interceptor)机制来实现数据的自定义处理。用户可以通过自定义拦截器,在事件(Event)进入Channel之前对其进行处理,实现诸如过滤、转换等各种操作。目前已有一些常用的拦截器实现,例如Timestamp Interceptor、Host Interceptor、Static Interceptor等,但对于拦截器的内部工作原理,以及如何进行自定义拦截器的开发,相关的系统性资料还比较匮乏。
 
 ### 1.3 研究意义
@@ -21,11 +21,11 @@ Interceptor的接口定义如下:
 public interface Interceptor {
 
   void initialize();
-  
+
   Event intercept(Event event);
-  
+
   List<Event> intercept(List<Event> events);
-  
+
   void close();
 }
 ```
@@ -33,7 +33,7 @@ public interface Interceptor {
 其中,`initialize`和`close`方法用于资源的初始化和清理,`intercept`方法则定义了具体的Event拦截处理逻辑,可以根据需求对Event的属性和内容进行修改。
 
 Flume内置了一些常用的Interceptor实现,包括:
-- Timestamp Interceptor:自动添加时间戳。 
+- Timestamp Interceptor:自动添加时间戳。
 - Host Interceptor:自动添加主机名或IP。
 - Static Interceptor:在Event Header中添加静态Key-Value对。
 - Regex Filtering Interceptor:根据正则表达式过滤Event。
@@ -48,7 +48,7 @@ Interceptor的核心原理可以概括为"责任链模式"。多个Interceptor�
 ### 3.2 算法步骤详解
 Interceptor的处理步骤如下:
 
-1. Source接收到Event后,将其交给Interceptor Chain处理。 
+1. Source接收到Event后,将其交给Interceptor Chain处理。
 2. 链中的第一个Interceptor调用`intercept`方法处理该Event。
 3. 根据处理结果,Interceptor可以选择:
    - 返回null,表示丢弃该Event;
@@ -98,7 +98,7 @@ $$E_0 \overset{f_1}{\rightarrow} E_1 \overset{f_2}{\rightarrow} E_2 \overset{f_3
 ### 4.2 公式推导过程
 对于第i个Interceptor,其处理函数$f_i$可以进一步分解为两部分:转换函数$t_i$和过滤函数$p_i$。$t_i$对Event进行转换处理,$p_i$判断Event是否需要丢弃。因此,$f_i$可以表示为:
 
-$$f_i(x) = \begin{cases} 
+$$f_i(x) = \begin{cases}
 t_i(x) & p_i(x) = true \\
 null & p_i(x) = false
 \end{cases}$$
@@ -127,10 +127,10 @@ $$E_3 = \{header: \{timestamp: "1620620779", host: "localhost"\}, body: "This is
 ### 4.4 常见问题解答
 1. Q:Interceptor的调用顺序是如何确定的?
    A:Interceptor的调用顺序取决于配置文件中的顺序,先配置的Interceptor先调用。
-   
+
 2. Q:如果某个Interceptor抛出异常会怎样?
    A:如果Interceptor抛出异常,该Event将被丢弃,不会传递给下一个Interceptor。可以通过`try-catch`捕获异常避免影响处理链。
-   
+
 3. Q:Interceptor和Channel Selector有什么区别?
    A:Interceptor主要用于Event的转换和过滤,而Channel Selector用于决定Event发送到哪个Channel。它们的应用场景和目的不同。
 

@@ -100,8 +100,7 @@ Actor-Critic算法的数学模型主要包括以下部分：
 
 - **策略网络**：$ \pi(\theta_{\pi}, s)$，其中 $\theta_{\pi}$ 为策略网络参数，$s$ 为当前状态。
 - **价值网络**：$ V(\theta_{v}, s)$，其中 $\theta_{v}$ 为价值网络参数，$s$ 为当前状态。
-- **策略梯度**：$ \
-abla_{\theta_{\pi}} J(\theta_{\pi}, \theta_{v})$，其中 $J(\theta_{\pi}, \theta_{v})$ 为策略损失函数。
+- **策略梯度**：$ \nabla_{\theta_{\pi}} J(\theta_{\pi}, \theta_{v})$，其中 $J(\theta_{\pi}, \theta_{v})$ 为策略损失函数。
 
 ### 4.2 公式推导过程
 
@@ -120,8 +119,7 @@ $$
 策略梯度用于计算策略网络参数的梯度，其公式为：
 
 $$
-\
-abla_{\theta_{\pi}} J(\theta_{\pi}, \theta_{v}) = -\sum_{s \in S, a \in A(s)} \pi(\theta_{\pi}, s) \frac{\partial Q(\theta_{v}, s, a)}{\partial \theta_{\pi}}
+\nabla_{\theta_{\pi}} J(\theta_{\pi}, \theta_{v}) = -\sum_{s \in S, a \in A(s)} \pi(\theta_{\pi}, s) \frac{\partial Q(\theta_{v}, s, a)}{\partial \theta_{\pi}}
 $$
 
 其中，$\frac{\partial Q(\theta_{v}, s, a)}{\partial \theta_{\pi}}$ 为价值函数对策略网络参数的梯度。

@@ -44,7 +44,7 @@ AI代理是一个广义的概念,它与其他AI概念密切相关:
 - 医疗影像分析:利用CV技术分析医学影像,协助诊断
 - 药物发现:通过ML技术发现潜在的新药分子
 
-## 3.核心算法原理具体操作步骤  
+## 3.核心算法原理具体操作步骤
 
 ### 3.1 AI代理的一般工作流程
 
@@ -153,7 +153,7 @@ $$P(D|S,T) = \frac{P(S,T|D)P(D)}{P(S,T)}$$
 接下来,我们可以计算进一步检查和不检查两个行动的期望效用:
 
 $$\begin{align*}
-EU(\text{检查}) &= P(D|S,T)U(\text{正确治疗}) + (1-P(D|S,T))U(\text{避免不必要检查}) - C_\text{检查}\\
+EU(\text{检查}) &= P(D|S,T)U(\text{正确治疗}) + (1-P(D|S,T))U(\text{避免不必要检查}) - C_\text{检查}\
 EU(\text{不检查}) &= P(D|S,T)U(\text{疾病恶化}) + (1-P(D|S,T))U(\text{无事发生})
 \end{align*}$$
 
@@ -190,7 +190,7 @@ def get_advice(symptom):
 
 def main():
     print("欢迎使用虚拟助手!请描述您的症状:")
-    
+
     while True:
         symptom = input("> ")
         if symptom.lower() == "退出":

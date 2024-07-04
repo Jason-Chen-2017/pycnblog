@@ -221,7 +221,7 @@ A：选择合适的智能决策模型需要考虑以下因素：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n iot-env python=3.8 
+conda create -n iot-env python=3.8
 conda activate iot-env
 ```
 3. 安装必要的Python库：

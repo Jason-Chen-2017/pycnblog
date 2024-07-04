@@ -158,7 +158,7 @@ $$
 
 $$
 \begin{aligned}
-Q(s, a) &= \mathbb{E}[R_t + \gamma (R_{t+1} + \gamma R_{t+2} + ...) | S_t = s, A_t = a] \\
+Q(s, a) &= \mathbb{E}[R_t + \gamma (R_{t+1} + \gamma R_{t+2} + ...) | S_t = s, A_t = a] \
 &= \mathbb{E}[R_t + \gamma Q(S_{t+1}, A_{t+1}) | S_t = s, A_t = a]
 \end{aligned}
 $$
@@ -167,7 +167,7 @@ $$
 
 $$
 \begin{aligned}
-\mathbb{E}[R_t + \gamma Q(S_{t+1}, A_{t+1}) | S_t = s, A_t = a] &= \sum_{s'} P_{ss'}^{a} [R(s, a) + \gamma \sum_{a'} \pi(a'|s') Q(s', a')] \\
+\mathbb{E}[R_t + \gamma Q(S_{t+1}, A_{t+1}) | S_t = s, A_t = a] &= \sum_{s'} P_{ss'}^{a} [R(s, a) + \gamma \sum_{a'} \pi(a'|s') Q(s', a')] \
 &= R(s, a) + \gamma \sum_{s'} P_{ss'}^{a} \max_{a'} Q(s', a')
 \end{aligned}
 $$
@@ -657,4 +657,4 @@ Q-Learning 算法有很多变体，例如：
 * **Dueling Q-Learning:**  将 Q 函数分解为状态值函数和动作优势函数，从而提高学习效率。
 * **Prioritized Experience Replay:**  优先回放经验池中重要程度高的经验，从而加速学习过程。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -73,21 +73,21 @@
 
 ### 4.1 数学模型构建
 
-假设数据集 $D = \\{(x_i, y_i)\\}_{i=1}^n$，其中 $x_i$ 是特征向量，$y_i$ 是标签（0或1）。设 $X = \\{x_i\\}_{i=1}^n$ 为所有样本的特征向量集合，$Y = \\{y_i\\}_{i=1}^n$ 为所有样本的标签集合，其中只有部分样本的标签已知。在基于标签传播的半监督学习中，我们使用邻域图来表示样本之间的相似性，通过图论方法来传播标签信息。
+假设数据集 $D = \{(x_i, y_i)\}_{i=1}^n$，其中 $x_i$ 是特征向量，$y_i$ 是标签（0或1）。设 $X = \{x_i\}_{i=1}^n$ 为所有样本的特征向量集合，$Y = \{y_i\}_{i=1}^n$ 为所有样本的标签集合，其中只有部分样本的标签已知。在基于标签传播的半监督学习中，我们使用邻域图来表示样本之间的相似性，通过图论方法来传播标签信息。
 
 ### 4.2 公式推导过程
 
 #### 邻域图构建
 
-- 构建邻接矩阵 $W$，其中 $W_{ij} = w(x_i, x_j)$ 表示 $x_i$ 和 $x_j$ 的相似度，$w(\\cdot)$ 是衡量相似度的函数，例如余弦相似度或高斯核函数。
+- 构建邻接矩阵 $W$，其中 $W_{ij} = w(x_i, x_j)$ 表示 $x_i$ 和 $x_j$ 的相似度，$w(\cdot)$ 是衡量相似度的函数，例如余弦相似度或高斯核函数。
 - 可以将 $W$ 分为两部分：$W_S$ 表示已知标签样本之间的相似度，$W_U$ 表示未标记样本之间的相似度，$W_L$ 表示已知标签样本与未标记样本之间的相似度。
 
 #### 标签传播
 
 - 定义一个向量 $Y_U$ 来表示未标记样本的初始标签估计，初值可以是随机分配或基于某种策略。
 - 设计一个迭代更新规则，例如：
-\\[Y_U^{(t+1)} = \\alpha Y_S + \\beta W_U Y_U^{(t)}\\]
-其中 $\\alpha$ 和 $\\beta$ 是超参数，分别控制已知标签的影响和邻域信息的影响。
+$$Y_U^{(t+1)} = \alpha Y_S + \beta W_U Y_U^{(t)}$$
+其中 $\alpha$ 和 $\beta$ 是超参数，分别控制已知标签的影响和邻域信息的影响。
 
 ### 4.3 案例分析与讲解
 
@@ -119,7 +119,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 
 def build_graph(X, similarity_func):
-    \"\"\"构建邻接矩阵\"\"\"
+    """构建邻接矩阵"""
     # 计算相似度矩阵
     similarity_matrix = np.array([[similarity_func(x1, x2) for x2 in X] for x1 in X])
     # 将对角线元素设为0（排除自身）
@@ -127,7 +127,7 @@ def build_graph(X, similarity_func):
     return similarity_matrix
 
 def propagate_labels(Y_known, Y_unknown, W, alpha, beta):
-    \"\"\"标签传播\"\"\"
+    """标签传播"""
     Y_unknown_prev = Y_unknown.copy()
     for _ in range(10):  # 迭代次数
         Y_unknown = alpha * Y_known + beta * np.dot(W, Y_unknown_prev)
@@ -135,13 +135,13 @@ def propagate_labels(Y_known, Y_unknown, W, alpha, beta):
     return Y_unknown
 
 def label_propagation(X, Y_known, Y_unknown, similarity_func):
-    \"\"\"整合所有步骤\"\"\"
+    """整合所有步骤"""
     W = build_graph(X, similarity_func)
     Y_unknown = propagate_labels(Y_known, Y_unknown, W, alpha=0.5, beta=0.5)
     return Y_unknown
 
 # 示例代码
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     # 假设数据集X和Y已定义
     X, Y = load_data()  # 加载数据集
     X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
@@ -150,7 +150,7 @@ if __name__ == \"__main__\":
     Y_unknown[:len(Y_train)] = Y_train  # 假设Y_train已知
 
     Y_test_pred = label_propagation(X_train, Y_train, Y_unknown, similarity_func)
-    print(\"Accuracy:\", accuracy_score(Y_test, Y_test_pred))
+    print("Accuracy:", accuracy_score(Y_test, Y_test_pred))
 ```
 
 ### 5.3 代码解读与分析

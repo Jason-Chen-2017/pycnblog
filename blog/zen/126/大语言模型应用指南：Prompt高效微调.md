@@ -431,4 +431,4 @@ Prompt Engineering 的研究前景广阔，未来将继续探索以下方向：
 * **更有效的 Prompt 设计**:  将出现更多有效的 Prompt 设计方法，以提高 LLM 的性能。
 * **更智能的 Prompt 自动生成**:  将出现自动生成 Prompt 的工具，以简化 Prompt Engineering 的工作流程。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

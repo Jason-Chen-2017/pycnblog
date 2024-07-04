@@ -100,7 +100,7 @@ DeepSpeed在LLMs训练中具有广泛的应用领域，如：
 
 $$
 \begin{align*}
-\theta^{(t+1)} &= \theta^{(t)} - \alpha \frac{\partial L}{\partial \theta^{(t)}} \\
+\theta^{(t+1)} &= \theta^{(t)} - \alpha \frac{\partial L}{\partial \theta^{(t)}} \
 L &= \frac{1}{N} \sum_{i=1}^{N} L_i(\theta^{(t)})
 \end{align*}
 $$
@@ -111,8 +111,7 @@ $$
 
 混合精度训练的推导过程如下：
 
-1. 将模型参数$\theta$和梯度$\
-abla \theta$分别使用FP32和FP16存储和计算。
+1. 将模型参数$\theta$和梯度$\nabla \theta$分别使用FP32和FP16存储和计算。
 2. 计算梯度累积：
    $$
 \text{cumulative\_gradient} = \theta^{(t)} - \alpha \frac{\partial L}{\partial \theta^{(t)}} \odot \text{cumulative\_gradient}

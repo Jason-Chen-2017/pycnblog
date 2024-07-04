@@ -145,9 +145,9 @@ graph LR
 - **激活函数**：激活函数用于引入非线性，使神经网络能够学习更复杂的特征。常见的激活函数包括ReLU、Sigmoid、Tanh等。
 
 ```latex
-f(x) = \begin{cases} 
+f(x) = \begin{cases}
 0 & \text{if } x \leq 0 \\
-x & \text{if } x > 0 
+x & \text{if } x > 0
 \end{cases}
 ```
 
@@ -333,7 +333,7 @@ A：选择优化算法时需要考虑以下因素：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 

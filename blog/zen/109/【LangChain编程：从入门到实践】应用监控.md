@@ -104,7 +104,7 @@ $$
 假设我们有$n$个监控指标，每个指标$i$的阈值为$T_i$，实际值为$M_i$。异常检测可以通过比较实际值与阈值来实现，公式为：
 
 $$
-\text{Is\_Anomaly} = \begin{cases} 
+\text{Is\_Anomaly} = \begin{cases}
 1 & \text{if } |M_i - T_i| > \delta \\
 0 & \text{otherwise}
 \end{cases}

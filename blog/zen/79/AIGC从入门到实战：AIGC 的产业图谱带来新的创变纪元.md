@@ -110,7 +110,7 @@ AIGC的发展对社会有着深远的意义：
 #### GAN损失函数：
 
 $$
-L_G = E_{z \sim p_z} [\log D(G(z))] \\
+L_G = E_{z \sim p_z} [\log D(G(z))] \
 L_D = E_{x \sim p_x} [\log D(x)] + E_{z \sim p_z} [\log(1 - D(G(z)))]
 $$
 

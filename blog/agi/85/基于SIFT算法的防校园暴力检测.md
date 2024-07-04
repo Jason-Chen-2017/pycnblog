@@ -115,9 +115,9 @@ SIFT算法的数学模型主要包括以下部分：
 
    $$
 \begin{aligned}
-I &= f(x,y) \\
-I_x &= \frac{\partial f}{\partial x} \\
-I_y &= \frac{\partial f}{\partial y} \\
+I &= f(x,y) \
+I_x &= \frac{\partial f}{\partial x} \
+I_y &= \frac{\partial f}{\partial y} \
 \end{aligned}
 $$
 
@@ -125,7 +125,7 @@ $$
 
    $$
 \begin{aligned}
-\sigma &= \sqrt{I_x^2 + I_y^2} \\
+\sigma &= \sqrt{I_x^2 + I_y^2} \
 \theta &= \arctan\left(\frac{I_y}{I_x}\right)
 \end{aligned}
 $$

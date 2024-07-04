@@ -110,9 +110,9 @@ $$
 假设目标变量 $y$ 服从伯努利分布，概率密度函数为：
 
 $$
-P(y|x) = \begin{cases} 
+P(y|x) = \begin{cases}
 \frac{1}{1+e^{-w^T x}} & \text{if } y=1 \\
-1-\frac{1}{1+e^{-w^T x}} & \text{if } y=0 
+1-\frac{1}{1+e^{-w^T x}} & \text{if } y=0
 \end{cases}
 $$
 

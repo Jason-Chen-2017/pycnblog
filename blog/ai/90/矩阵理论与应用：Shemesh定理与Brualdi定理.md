@@ -120,15 +120,15 @@ Shemesh定理和Brualdi定理在以下领域有着广泛的应用：
 
 **案例1**：验证Shemesh定理
 
-给定对称正定矩阵 $A = \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix}$，求其最小特征值 $\lambda_1$。
+给定对称正定矩阵 $A = \begin{bmatrix} 2 & 1 \ 1 & 2 \end{bmatrix}$，求其最小特征值 $\lambda_1$。
 
-解：首先，计算矩阵 $A$ 的特征多项式 $p(\lambda) = \det(A - \lambda I) = \det\begin{bmatrix} 2-\lambda & 1 \\ 1 & 2-\lambda \end{bmatrix} = (\lambda - 3)^2$。因此，矩阵 $A$ 的特征值为 $\lambda_1 = \lambda_2 = 3$。根据Shemesh定理，$A$ 的所有特征值都大于等于 $\lambda_1 = 3$，与计算结果一致。
+解：首先，计算矩阵 $A$ 的特征多项式 $p(\lambda) = \det(A - \lambda I) = \det\begin{bmatrix} 2-\lambda & 1 \ 1 & 2-\lambda \end{bmatrix} = (\lambda - 3)^2$。因此，矩阵 $A$ 的特征值为 $\lambda_1 = \lambda_2 = 3$。根据Shemesh定理，$A$ 的所有特征值都大于等于 $\lambda_1 = 3$，与计算结果一致。
 
 **案例2**：验证Brualdi定理
 
-给定实对称矩阵 $A = \begin{bmatrix} 1 & -1 \\ -1 & 1 \end{bmatrix}$，求其秩。
+给定实对称矩阵 $A = \begin{bmatrix} 1 & -1 \ -1 & 1 \end{bmatrix}$，求其秩。
 
-解：首先，计算矩阵 $A$ 的奇异值分解 $A = B\Lambda B^T$。其中，$B = \begin{bmatrix} \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\ -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \end{bmatrix}$，$\Lambda = \begin{bmatrix} 0 & 0 \\ 0 & 2 \end{bmatrix}$。因此，矩阵 $A$ 的秩为 $rank(A) = rank(\Lambda) = 1$。根据Brualdi定理，$rank(A) = \sigma_1 = 2$，与计算结果一致。
+解：首先，计算矩阵 $A$ 的奇异值分解 $A = B\Lambda B^T$。其中，$B = \begin{bmatrix} \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \ -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \end{bmatrix}$，$\Lambda = \begin{bmatrix} 0 & 0 \ 0 & 2 \end{bmatrix}$。因此，矩阵 $A$ 的秩为 $rank(A) = rank(\Lambda) = 1$。根据Brualdi定理，$rank(A) = \sigma_1 = 2$，与计算结果一致。
 
 ### 4.4 常见问题解答
 

@@ -124,7 +124,7 @@ HBase的数学模型主要包括以下几个方面：
 假设行键为 $x$，Region的数量为 $N$，则行键 $x$ 对应的Region索引为：
 
 $$
-i = \lfloor \frac{hash(x)}{N} \rfloor 
+i = \lfloor \frac{hash(x)}{N} \rfloor
 $$
 
 其中 $\lfloor \cdot \rfloor$ 表示向下取整，$hash(x)$ 表示行键 $x$ 的哈希值。
@@ -270,12 +270,12 @@ public class HBaseExample {
             Result result = table.get(get1);
             byte[] value1 = result.getValue(Bytes.toBytes("f1"), Bytes.toBytes("c1"));
             System.out.println("row1 c1 value: " + Bytes.toString(value1));
-            
+
             Get get2 = new Get(Bytes.toBytes("row2"));
             Result result2 = table.get(get2);
             byte[] value2 = result2.getValue(Bytes.toBytes("f2"), Bytes.toBytes("c1"));
             System.out.println("row2 c1 value: " + Bytes.toString(value2));
-            
+
             table.close();
             connection.close();
         }

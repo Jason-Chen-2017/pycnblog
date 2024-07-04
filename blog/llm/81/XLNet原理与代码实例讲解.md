@@ -28,7 +28,7 @@ XLNet的提出为NLP任务带来了新的视角和突破,它能够更好地捕�
 
 - 核心概念与联系
 - 核心算法原理与具体操作步骤
-- 数学模型和公式详细讲解与案例分析  
+- 数学模型和公式详细讲解与案例分析
 - 项目实践:代码实例和详细解释说明
 - 实际应用场景
 - 工具和资源推荐
@@ -89,7 +89,7 @@ XLNet的核心算法——Permutation Language Modeling(PLM),通过最大化所�
    对于每个排列$z \in \mathcal{Z}_n$,XLNet的目标是最大化该排列序列的似然概率:
 
    $$\begin{aligned}
-   \mathcal{L}(z) &= \sum_{i=1}^n \log P(z_i | z_{<i}, \mathbf{u}_{z^{-1}(i)}) \\
+   \mathcal{L}(z) &= \sum_{i=1}^n \log P(z_i | z_{<i}, \mathbf{u}_{z^{-1}(i)}) \
                   &= \sum_{i=1}^n \log \frac{\exp(h(z_{<i}, \mathbf{u}_{z^{-1}(i)})^\top e(z_i))}{\sum_{x' \in \mathcal{V}} \exp(h(z_{<i}, \mathbf{u}_{z^{-1}(i)})^\top e(x'))}
    \end{aligned}$$
 
@@ -173,5 +173,5 @@ $$P(z_i | z_{<i}, \mathbf{u}_{z^{-1}(i)}) = \frac{\exp(h(z_{<i}, \mathbf{u}_{z^{
 将上式代入目标函数,我们得到:
 
 $$\begin{aligned}
-\mathcal{L} &= \sum_{z \in \mathcal{Z}_n} \sum_{i=1}^n \log \frac{\exp(h(z_{<i}, \mathbf{u}_{z^{-1}(i)})^\top e(z_i))}{\sum_{x' \in \mathcal{V}} \exp(h(z_{<i}, \mathbf{u}_{z^{-1}(i)})^\top e(x'))} \\
+\mathcal{L} &= \sum_{z \in \mathcal{Z}_n} \sum_{i=1}^n \log \frac{\exp(h(z_{<i}, \mathbf{u}_{z^{-1}(i)})^\top e(z_i))}{\sum_{x' \in \mathcal{V}} \exp(h(z_{<i}, \mathbf{u}_{z^{-1}(i)})^\top e(x'))} \
             &= \sum_{z \in \mathcal{Z}_n

@@ -110,13 +110,13 @@
 
 #### 时间序列预测
 
-- **ARIMA模型**：$y_t = \\phi_1 y_{t-1} + \\phi_2 y_{t-2} + \\cdots + \\phi_p y_{t-p} + \\epsilon_t$
-- **GARCH模型**：$\\sigma_t^2 = \\omega + \\alpha_1 \\varepsilon_{t-1}^2 + \\beta_1 \\sigma_{t-1}^2$
+- **ARIMA模型**：$y_t = \phi_1 y_{t-1} + \phi_2 y_{t-2} + \cdots + \phi_p y_{t-p} + \epsilon_t$
+- **GARCH模型**：$\sigma_t^2 = \omega + \alpha_1 \varepsilon_{t-1}^2 + \beta_1 \sigma_{t-1}^2$
 
 #### 深度学习预测
 
-- **LSTM**：$f_t = \\sigma(W_f \\cdot [h_{t-1}, x_t] + b_f)$
-- **CNN**：$f(x) = W \\cdot x + b$
+- **LSTM**：$f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)$
+- **CNN**：$f(x) = W \cdot x + b$
 
 ### 4.3 案例分析与讲解
 
@@ -219,8 +219,8 @@ plt.show()
 
 ### 7.3 相关论文推荐
 
-- **\"Financial Time Series Forecasting Using Deep Learning\"**
-- **\"Market Trend Prediction with LSTM Neural Networks\"**
+- **"Financial Time Series Forecasting Using Deep Learning"**
+- **"Market Trend Prediction with LSTM Neural Networks"**
 
 ### 7.4 其他资源推荐
 

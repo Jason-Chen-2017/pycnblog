@@ -118,20 +118,20 @@ $$
 我们可以将地图上的位置表示为状态空间 $S$，Agent可执行的行为表示为行为空间 $A$。状态转移概率为：
 
 $$
-p(s'|s,a) = 
-\begin{cases} 
+p(s'|s,a) =
+\begin{cases}
 1 & \text{if } s' = s + a \\
-0 & \text{otherwise} 
+0 & \text{otherwise}
 \end{cases}
 $$
 
 奖励函数为：
 
 $$
-r(s') = 
-\begin{cases} 
+r(s') =
+\begin{cases}
 1 & \text{if } s' = \text{终点} \\
--1 & \text{otherwise} 
+-1 & \text{otherwise}
 \end{cases}
 $$
 

@@ -181,7 +181,7 @@ A：可以使用以下方法保证消息队列的Exactly-once语义：
 ```java
 @EnableBinding(Sink.class)
 public class OrderProcessor {
-    
+
     @StreamListener(OrderInputProcessor.SOURCE)
     public void process(Order order) {
         // 处理订单

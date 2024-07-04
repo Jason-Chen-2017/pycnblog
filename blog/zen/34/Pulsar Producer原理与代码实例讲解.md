@@ -92,8 +92,8 @@ Pulsar Producer适用于以下应用场景：
 
 Pulsar Producer的数学模型如下：
 
-- **消息发送模型**：假设消息序列化后的大小为$L$，则消息发送时间为$T_1 = \\frac{L}{B}$，其中$B$为网络带宽。
-- **消息确认模型**：假设确认消息的大小为$C$，则确认消息发送时间为$T_2 = \\frac{C}{B}$。
+- **消息发送模型**：假设消息序列化后的大小为$L$，则消息发送时间为$T_1 = \frac{L}{B}$，其中$B$为网络带宽。
+- **消息确认模型**：假设确认消息的大小为$C$，则确认消息发送时间为$T_2 = \frac{C}{B}$。
 - **消息路由模型**：假设消息路由时间为$T_3$，则消息路由时间为$T_3$。
 - **消息转发模型**：假设消息转发时间为$T_4$，则消息转发时间为$T_4$。
 
@@ -101,27 +101,27 @@ Pulsar Producer的数学模型如下：
 
 **消息发送模型**：
 
-$$T_1 = \\frac{L}{B}$$
+$$T_1 = \frac{L}{B}$$
 
 其中，$L$为消息序列化后的大小，$B$为网络带宽。
 
 **消息确认模型**：
 
-$$T_2 = \\frac{C}{B}$$
+$$T_2 = \frac{C}{B}$$
 
 其中，$C$为确认消息的大小，$B$为网络带宽。
 
 **消息路由模型**：
 
-$$T_3 = T_{\\text{查找Broker}} + T_{\\text{路由消息}}$$
+$$T_3 = T_{\text{查找Broker}} + T_{\text{路由消息}}$$
 
-其中，$T_{\\text{查找Broker}}$为查找Broker所需时间，$T_{\\text{路由消息}}$为路由消息所需时间。
+其中，$T_{\text{查找Broker}}$为查找Broker所需时间，$T_{\text{路由消息}}$为路由消息所需时间。
 
 **消息转发模型**：
 
-$$T_4 = T_{\\text{查找Consumer}} + T_{\\text{转发消息}}$$
+$$T_4 = T_{\text{查找Consumer}} + T_{\text{转发消息}}$$
 
-其中，$T_{\\text{查找Consumer}}$为查找Consumer所需时间，$T_{\\text{转发消息}}$为转发消息所需时间。
+其中，$T_{\text{查找Consumer}}$为查找Consumer所需时间，$T_{\text{转发消息}}$为转发消息所需时间。
 
 ### 4.3 案例分析与讲解
 
@@ -129,12 +129,12 @@ $$T_4 = T_{\\text{查找Consumer}} + T_{\\text{转发消息}}$$
 
 根据上述数学模型，我们可以计算出：
 
-- 消息发送时间$T_1 = \\frac{1000 \\times 1024}{10 \\times 10^6} = 102.4ms$
-- 消息确认时间$T_2 = \\frac{1000 \\times 1024}{10 \\times 10^6} = 102.4ms$
+- 消息发送时间$T_1 = \frac{1000 \times 1024}{10 \times 10^6} = 102.4ms$
+- 消息确认时间$T_2 = \frac{1000 \times 1024}{10 \times 10^6} = 102.4ms$
 - 消息路由时间$T_3 = 10ms + 10ms = 20ms$
 - 消息转发时间$T_4 = 5ms + 5ms = 10ms$
 
-因此，消息从Producer发送到Consumer的总时间为$T_{\\text{total}} = T_1 + T_2 + T_3 + T_4 = 234.4ms$。
+因此，消息从Producer发送到Consumer的总时间为$T_{\text{total}} = T_1 + T_2 + T_3 + T_4 = 234.4ms$。
 
 ### 4.4 常见问题解答
 
@@ -171,17 +171,17 @@ public class PulsarProducerExample {
     public static void main(String[] args) {
         // 创建Pulsar客户端实例
         PulsarClient client = PulsarClient.builder()
-            .serviceUrl(\"pulsar://localhost:6650\")
+            .serviceUrl("pulsar://localhost:6650")
             .build();
 
         // 创建Producer实例
         Producer<String> producer = client.newProducer()
-            .topic(\"topic1\")
+            .topic("topic1")
             .create();
 
         // 发送消息
         for (int i = 0; i < 10; i++) {
-            String message = \"Hello, Pulsar! \" + i;
+            String message = "Hello, Pulsar! " + i;
             producer.send(message);
         }
 

@@ -112,7 +112,7 @@
 
 以下以SLAM算法为例，介绍数学模型的推导过程：
 
-设机器人位姿为 $T=\begin{bmatrix} x \\ y \\ \theta \end{bmatrix}$，其中 $x, y$ 为机器人在地图中的坐标，$\theta$ 为机器人的朝向角度。设机器人当前帧的位姿为 $T_{curr}$，前一帧的位姿为 $T_{prev}$，则 SLAM 算法的目标是最小化位姿估计误差：
+设机器人位姿为 $T=\begin{bmatrix} x \ y \ \theta \end{bmatrix}$，其中 $x, y$ 为机器人在地图中的坐标，$\theta$ 为机器人的朝向角度。设机器人当前帧的位姿为 $T_{curr}$，前一帧的位姿为 $T_{prev}$，则 SLAM 算法的目标是最小化位姿估计误差：
 
 $$
 \min_{T} \sum_{i=1}^n \left\| T_{curr}^{-1} T_i - T_{prev}^{-1} T_i \right\|^2
@@ -165,7 +165,7 @@ A：具身机器人在医疗领域的应用主要面临以下挑战：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n robot-env python=3.8 
+conda create -n robot-env python=3.8
 conda activate robot-env
 ```
 3. 安装必要的库：

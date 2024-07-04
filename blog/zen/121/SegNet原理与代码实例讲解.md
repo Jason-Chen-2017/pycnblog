@@ -215,7 +215,7 @@ class SegNet(nn.Module):
             nn.ReLU(inplace=True),
             nn.MaxPool2d(kernel_size=2, stride=2)
         )
-        
+
         self.decoder = nn.Sequential(
             nn.ConvTranspose2d(256, 128, kernel_size=2, stride=2),
             nn.ReLU(inplace=True),
@@ -229,7 +229,7 @@ class SegNet(nn.Module):
             nn.ReLU(inplace=True),
             nn.Conv2d(64, num_classes, kernel_size=1)
         )
-        
+
     def forward(self, x):
         x = self.encoder(x)
         x = self.decoder(x)
@@ -257,7 +257,7 @@ for epoch in range(epochs):
     # 前向传播
     outputs = model(inputs)
     loss = criterion(outputs, labels)
-    
+
     # 反向传播和参数更新
     optimizer.zero_grad()
     loss.backward()

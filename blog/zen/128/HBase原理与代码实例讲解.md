@@ -213,7 +213,7 @@ $$L_j = \sum_{i \in R_j} \frac{R_i}{C_j}$$
 
 $$
 x_{ij} = \begin{cases}
-1, & \text{if Region $i$ is assigned to RegionServer $j$} \\
+1, & \text{if Region i is assigned to RegionServer j} \\
 0, & \text{otherwise}
 \end{cases}
 $$

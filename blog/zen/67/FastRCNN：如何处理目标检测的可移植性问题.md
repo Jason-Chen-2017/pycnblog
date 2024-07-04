@@ -96,10 +96,10 @@ $$
 假设特征图大小为 $5 \times 5$，RoI 区域为 $(1, 2, 4, 4)$，输出特征图大小为 $2 \times 2$。RoI 池化将 RoI 区域划分为 $2 \times 2$ 的网格，对每个网格内的特征取最大值，得到输出特征图：
 
 $$
-\mathbf{y} = 
+\mathbf{y} =
 \begin{bmatrix}
 \max(\mathbf{x}_{1:2,2:3}) & \max(\mathbf{x}_{1:2,3:4}) \\
-\max(\mathbf{x}_{2:3,2:3}) & \max(\mathbf{x}_{2:3,3:4}) 
+\max(\mathbf{x}_{2:3,2:3}) & \max(\mathbf{x}_{2:3,3:4})
 \end{bmatrix}
 $$
 

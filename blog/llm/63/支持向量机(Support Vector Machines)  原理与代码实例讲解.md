@@ -105,10 +105,8 @@ $$
 
 $$
 \begin{aligned}
-\
-abla_{\theta} L(\theta, \alpha) &= \theta - \sum_{i=1}^N \alpha_i y_i x_i^T = 0 \\
-\
-abla_{\alpha_i} L(\theta, \alpha) &= y_i(\theta^T x_i + b) - 1 = 0
+\nabla_{\theta} L(\theta, \alpha) &= \theta - \sum_{i=1}^N \alpha_i y_i x_i^T = 0 \\
+\nabla_{\alpha_i} L(\theta, \alpha) &= y_i(\theta^T x_i + b) - 1 = 0
 \end{aligned}
 $$
 
@@ -139,11 +137,11 @@ class SVMClassifier:
         self.C = C
         self.weights = None
         self.bias = None
-    
+
     def fit(self, X, y):
         # 使用SVM算法训练模型
         pass
-    
+
     def predict(self, X):
         # 使用训练好的模型进行预测
         pass

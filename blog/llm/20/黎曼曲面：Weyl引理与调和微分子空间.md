@@ -54,13 +54,13 @@ Weyl引理指出，对于任意黎曼流形上的微分形式，存在一组合�
 ## 4. 数学模型和公式
 
 ### 4.1 数学模型构建
-- **黎曼流形上的微分形式**：设$M$为黎曼流形，$\\Omega^k(M)$表示$k$阶微分形式的集合。
-- **拉普拉斯-Beltrami算子**：$\\Delta_f$表示作用于微分形式$f$上的拉普拉斯-Beltrami算子。
+- **黎曼流形上的微分形式**：设$M$为黎曼流形，$\Omega^k(M)$表示$k$阶微分形式的集合。
+- **拉普拉斯-Beltrami算子**：$\Delta_f$表示作用于微分形式$f$上的拉普拉斯-Beltrami算子。
 
 ### 4.2 公式推导过程
 Weyl引理可以通过以下公式直观地表达：
-\\[ \\Delta_f f = 0 \\]
-其中，$\\Delta_f$为拉普拉斯-Beltrami算子，$f$为微分形式。
+$$ \Delta_f f = 0 $$
+其中，$\Delta_f$为拉普拉斯-Beltrami算子，$f$为微分形式。
 
 ### 4.3 案例分析与讲解
 在具体的几何空间中，通过选取适当的坐标变换，可以将非调和形式转换为调和形式。例如，在球面坐标下，通过适当的选择变换矩阵，可以将某个非调和形式映射为调和形式。
@@ -81,21 +81,21 @@ import numpy as np
 from scipy.sparse import diags
 
 def laplace_beltrami(f, metric):
-    \"\"\"
+    """
     计算拉普拉斯-Beltrami算子作用于微分形式f的结果。
     参数：
         f：微分形式，numpy数组形式。
         metric：度量张量，定义了流形上的距离。
     返回：
         拉普拉斯-Beltrami算子作用于f的结果。
-    \"\"\"
+    """
     # 计算度量张量的逆，用于构建拉普拉斯-Beltrami算子的矩阵。
     inv_metric = np.linalg.inv(metric)
     laplacian_matrix = diags([np.sum(inv_metric * f)], offsets=[0])
     return laplacian_matrix @ f
 
 def weyl_transform(form, coordinates, transformation):
-    \"\"\"
+    """
     应用Weyl引理进行坐标变换。
     参数：
         form：待变换的微分形式。
@@ -103,7 +103,7 @@ def weyl_transform(form, coordinates, transformation):
         transformation：变换矩阵。
     返回：
         变换后的调和微分形式。
-    \"\"\"
+    """
     transformed_form = np.einsum('ij,j->i', transformation, form)
     return transformed_form
 
@@ -116,8 +116,8 @@ transformation_matrix = np.array([[cos(theta), -sin(theta)], [sin(theta), cos(th
 new_coordinates = np.einsum('ij,j->i', transformation_matrix, coordinates)
 transformed_form = weyl_transform(form, new_coordinates, transformation_matrix)
 
-print(\"原始形式:\", form)
-print(\"变换后的形式:\", transformed_form)
+print("原始形式:", form)
+print("变换后的形式:", transformed_form)
 ```
 
 ### 5.3 代码解读与分析
@@ -170,7 +170,7 @@ print(\"变换后的形式:\", transformed_form)
 ### 常见问题与解答总结
 - **问**：调和微分形式与Weyl引理之间的关系是什么？
   **答**：Weyl引理指出，对于任意黎曼流形上的微分形式，总能找到一组合适的局部坐标变换，使得在这些坐标系下的形式成为调和的。这意味着调和形式在不同坐标系下具有内在的对称性，Weyl引理为理解这种对称性提供了一种变换方法。
-  
+
 - **问**：调和微分形式在物理中的具体应用有哪些？
   **答**：调和微分形式在物理中的应用包括量子场论中的规范理论、弦理论中的几何结构描述、以及凝聚态物理中的能带理论。它们帮助物理学家描述和预测物质在不同条件下表现的行为。
 

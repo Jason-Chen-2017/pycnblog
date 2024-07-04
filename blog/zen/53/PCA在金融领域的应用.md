@@ -45,7 +45,7 @@ $$z_i = \vec{v}_i^T X, \quad i=1,2,...,n$$
 
 其中$X$是原始数据向量。主成分$z_i$对应于特征值$\lambda_i$,方差为$\lambda_i$。通常,我们选取前$k(k<n)$个主成分,作为降维后的新特征向量。
 
-## 3.核心算法原理具体操作步骤 
+## 3.核心算法原理具体操作步骤
 
 PCA算法的具体步骤如下:
 
@@ -57,7 +57,7 @@ PCA算法的具体步骤如下:
 
 $$Z = P^T X = \begin{bmatrix}
     \vec{v}_1^T\\
-    \vec{v}_2^T\\ 
+    \vec{v}_2^T\\
     \vdots\\
     \vec{v}_k^T
 \end{bmatrix}X$$

@@ -188,7 +188,7 @@ class DQN(nn.Module):
         super(DQN, self).__init__()
         self.fc1 = nn.Linear(input_size, 24)
         self.fc2 = nn.Linear(24, output_size)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)
@@ -206,29 +206,29 @@ def train(q_network, target_q_network, optimizer, memory, batch_size, gamma):
     q_network.train()
     target_q_network.eval()
     states, actions, rewards, next_states, dones = [], [], [], [], []
-    
+
     for _ in range(batch_size):
         state = random.choice(memory)
         action = random.choice(state[0])
         next_state, reward, done = memory[state[0], action]
-        
+
         states.append(state[0])
         actions.append(action)
         rewards.append(reward)
         next_states.append(next_state)
         dones.append(done)
-    
+
     states = torch.stack(states)
     actions = torch.tensor(actions)
     rewards = torch.tensor(rewards, dtype=torch.float32)
     next_states = torch.stack(next_states)
     dones = torch.tensor(dones, dtype=torch.float32)
-    
+
     q_values = q_network(states)
     selected_actions = q_values.gather(1, actions.unsqueeze(1)).squeeze(1)
     next_values = target_q_network(next_states).max(1)[0]
     expected_q_values = rewards + gamma * next_values * (1 - dones)
-    
+
     loss = nn.MSELoss()(selected_actions, expected_q_values)
     optimizer.zero_grad()
     loss.backward()

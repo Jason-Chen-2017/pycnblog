@@ -145,12 +145,10 @@ $$
 梯度下降的更新公式为：
 
 $$
-\mathbf{w} \leftarrow \mathbf{w} - \alpha \
-abla_{\mathbf{w}} \mathcal{L}(\mathbf{w})
+\mathbf{w} \leftarrow \mathbf{w} - \alpha \nabla_{\mathbf{w}} \mathcal{L}(\mathbf{w})
 $$
 
-其中 $\alpha$ 为学习率，$\
-abla_{\mathbf{w}} \mathcal{L}(\mathbf{w})$ 为损失函数对参数 $\mathbf{w}$ 的梯度。
+其中 $\alpha$ 为学习率，$\nabla_{\mathbf{w}} \mathcal{L}(\mathbf{w})$ 为损失函数对参数 $\mathbf{w}$ 的梯度。
 
 ### 4.3 案例分析与讲解
 

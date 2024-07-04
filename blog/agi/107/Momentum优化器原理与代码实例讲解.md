@@ -61,7 +61,7 @@ Momentum 优化器的更新规则如下:
 
 $$
 \begin{aligned}
-v_t &= \gamma v_{t-1} + \eta \nabla_\theta J(\theta_{t-1}) \\
+v_t &= \gamma v_{t-1} + \eta \nabla_\theta J(\theta_{t-1}) \
 \theta_t &= \theta_{t-1} - v_t
 \end{aligned}
 $$
@@ -137,7 +137,7 @@ Momentum 优化器广泛应用于深度学习和机器学习领域,尤其在训�
 
 $$
 \begin{aligned}
-x_{t+1} &= x_t - \eta \frac{\partial f}{\partial x}(x_t, y_t) \\
+x_{t+1} &= x_t - \eta \frac{\partial f}{\partial x}(x_t, y_t) \
 y_{t+1} &= y_t - \eta \frac{\partial f}{\partial y}(x_t, y_t)
 \end{aligned}
 $$
@@ -148,9 +148,9 @@ $$
 
 $$
 \begin{aligned}
-v_{x,t} &= \gamma v_{x,t-1} + \eta \frac{\partial f}{\partial x}(x_t, y_t) \\
-v_{y,t} &= \gamma v_{y,t-1} + \eta \frac{\partial f}{\partial y}(x_t, y_t) \\
-x_{t+1} &= x_t - v_{x,t} \\
+v_{x,t} &= \gamma v_{x,t-1} + \eta \frac{\partial f}{\partial x}(x_t, y_t) \
+v_{y,t} &= \gamma v_{y,t-1} + \eta \frac{\partial f}{\partial y}(x_t, y_t) \
+x_{t+1} &= x_t - v_{x,t} \
 y_{t+1} &= y_t - v_{y,t}
 \end{aligned}
 $$

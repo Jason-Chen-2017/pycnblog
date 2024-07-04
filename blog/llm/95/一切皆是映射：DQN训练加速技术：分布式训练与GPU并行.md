@@ -1,7 +1,7 @@
 
 # 一切皆是映射：DQN训练加速技术：分布式训练与GPU并行
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -204,12 +204,10 @@ $$
 梯度下降的更新公式为：
 
 $$
-\theta \leftarrow \theta - \eta \
-abla_{\theta} L(\theta)
+\theta \leftarrow \theta - \eta \nabla_{\theta} L(\theta)
 $$
 
-其中，$\eta$ 表示学习率，$\
-abla_{\theta} L(\theta)$ 表示损失函数对参数 $\theta$ 的梯度。
+其中，$\eta$ 表示学习率，$\nabla_{\theta} L(\theta)$ 表示损失函数对参数 $\theta$ 的梯度。
 
 ### 4.3 案例分析与讲解
 
@@ -234,7 +232,7 @@ optimizer4 = optimizers.Adam(model4.parameters())
 for epoch in range(epochs):
     # 将数据集划分为4个子集
     train_data1, train_data2, train_data3, train_data4 = split_data(train_data)
-    
+
     for data in [train_data1, train_data2, train_data3, train_data4]:
         # 在每个计算节点上训练模型
         for s, a, r, s' in data:
@@ -242,7 +240,7 @@ for epoch in range(epochs):
             model2.train_step(s, a, r, s')
             model3.train_step(s, a, r, s')
             model4.train_step(s, a, r, s')
-    
+
     # 聚合模型参数
     aggregate_parameters(model1, model2, model3, model4)
 ```

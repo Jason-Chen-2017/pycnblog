@@ -125,7 +125,7 @@ VAE的数学模型如下：
 
 $$
 \begin{align*}
-\mu &= \mu_\theta(x) \\
+\mu &= \mu_\theta(x) \
 \sigma^2 &= \sigma^2_\theta(x)
 \end{align*}
 $$
@@ -242,23 +242,23 @@ class VAE(nn.Module):
         self.fc2 = nn.Linear(20, 1)
         self.fc3 = nn.Linear(20, 1)
         self.fc4 = nn.Linear(20, 784)
-    
+
     def encode(self, x):
         h1 = self.encoder(x)
         mu = self.fc1(h1)
         logvar = self.fc2(h1)
         return mu, logvar
-    
+
     def decode(self, z):
         h1 = self.fc3(z)
         mu = self.fc4(h1)
         return mu
-    
+
     def reparameterize(self, mu, logvar):
         std = torch.exp(0.5*logvar)
         eps = torch.randn_like(std)
         return mu + eps*std
-    
+
     def forward(self, x):
         mu, logvar = self.encode(x)
         z = self.reparameterize(mu, logvar)
@@ -396,23 +396,23 @@ class VAE(nn.Module):
         self.fc2 = nn.Linear(20, 1)
         self.fc3 = nn.Linear(20, 1)
         self.fc4 = nn.Linear(20, 784)
-    
+
     def encode(self, x):
         h1 = self.encoder(x)
         mu = self.fc1(h1)
         logvar = self.fc2(h1)
         return mu, logvar
-    
+
     def decode(self, z):
         h1 = self.fc3(z)
         mu = self.fc4(h1)
         return mu
-    
+
     def reparameterize(self, mu, logvar):
         std = torch.exp(0.5*logvar)
         eps = torch.randn_like(std)
         return mu + eps*std
-    
+
     def forward(self, x):
         mu, logvar = self.encode(x)
         z = self.reparameterize(mu, logvar)

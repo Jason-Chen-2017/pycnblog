@@ -61,7 +61,7 @@
 #### 5.1.3 训练过程的实现
 ### 5.2 基于TensorFlow的GAN实现
 #### 5.2.1 生成器的实现
-#### 5.2.2 判别器的实现 
+#### 5.2.2 判别器的实现
 #### 5.2.3 训练过程的实现
 ### 5.3 GAN的实验结果分析
 #### 5.3.1 生成图像的质量评估
@@ -142,7 +142,7 @@ class Generator(nn.Module):
     def __init__(self, latent_dim, img_shape):
         super(Generator, self).__init__()
         self.img_shape = img_shape
-        
+
         self.model = nn.Sequential(
             nn.Linear(latent_dim, 128),
             nn.LeakyReLU(0.2, inplace=True),
@@ -158,7 +158,7 @@ class Generator(nn.Module):
             nn.Linear(1024, int(np.prod(img_shape))),
             nn.Tanh()
         )
-    
+
     def forward(self, z):
         img = self.model(z)
         img = img.view(img.size(0), *self.img_shape)
@@ -167,7 +167,7 @@ class Generator(nn.Module):
 class Discriminator(nn.Module):
     def __init__(self, img_shape):
         super(Discriminator, self).__init__()
-        
+
         self.model = nn.Sequential(
             nn.Linear(int(np.prod(img_shape)), 512),
             nn.LeakyReLU(0.2, inplace=True),
@@ -176,7 +176,7 @@ class Discriminator(nn.Module):
             nn.Linear(256, 1),
             nn.Sigmoid()
         )
-    
+
     def forward(self, img):
         img_flat = img.view(img.size(0), -1)
         validity = self.model(img_flat)
@@ -192,37 +192,37 @@ discriminator = Discriminator(img_shape)
 
 # 定义损失函数和优化器
 adversarial_loss = nn.BCELoss()
-optimizer_G = torch.optim.Adam(generator.parameters(), lr=lr, betas=(b1, b2)) 
+optimizer_G = torch.optim.Adam(generator.parameters(), lr=lr, betas=(b1, b2))
 optimizer_D = torch.optim.Adam(discriminator.parameters(), lr=lr, betas=(b1, b2))
 
 # 训练循环
 for epoch in range(n_epochs):
     for i, (imgs, _) in enumerate(dataloader):
-        
+
         # 训练判别器
         optimizer_D.zero_grad()
-        
+
         real_imgs = imgs.to(device)
         real_validity = discriminator(real_imgs)
         real_label = torch.ones(real_imgs.size(0), 1, device=device)
         real_loss = adversarial_loss(real_validity, real_label)
-        
+
         z = torch.randn(batch_size, latent_dim, device=device)
         fake_imgs = generator(z)
         fake_validity = discriminator(fake_imgs.detach())
         fake_label = torch.zeros(batch_size, 1, device=device)
         fake_loss = adversarial_loss(fake_validity, fake_label)
-        
+
         d_loss = real_loss + fake_loss
         d_loss.backward()
         optimizer_D.step()
-        
+
         # 训练生成器
         optimizer_G.zero_grad()
-        
+
         fake_validity = discriminator(fake_imgs)
         g_loss = adversarial_loss(fake_validity, real_label)
-        
+
         g_loss.backward()
         optimizer_G.step()
 ```

@@ -1,6 +1,6 @@
 # 【大模型应用开发 动手做AI Agent】语言输出能力
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：语言生成，文本理解，自然语言处理，生成式模型，对话系统，多模态交互
 
@@ -77,10 +77,10 @@
 Transformer模型的核心是多头自注意力机制，其数学表达式可简化为：
 
 $$
-M = \\text{MultiHead}(W_1 \\cdot Q + W_2 \\cdot K + W_3 \\cdot V)
+M = \text{MultiHead}(W_1 \cdot Q + W_2 \cdot K + W_3 \cdot V)
 $$
 
-其中，$M$是多头自注意力输出矩阵，$Q$、$K$、$V$分别代表查询(query)、键(key)和值(value)，$W_1$、$W_2$、$W_3$是权重矩阵，$\\text{MultiHead}$表示多头合并操作。
+其中，$M$是多头自注意力输出矩阵，$Q$、$K$、$V$分别代表查询(query)、键(key)和值(value)，$W_1$、$W_2$、$W_3$是权重矩阵，$\text{MultiHead}$表示多头合并操作。
 
 ### 4.2 公式推导过程
 
@@ -114,7 +114,7 @@ tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 model = GPT2LMHeadModel.from_pretrained('gpt2')
 
 # 输入文本
-input_text = \"I love programming.\"
+input_text = "I love programming."
 
 # 编码输入文本
 input_ids = torch.tensor(tokenizer.encode(input_text)).unsqueeze(0)

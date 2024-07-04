@@ -155,7 +155,7 @@ $$
 决策规则 $R$ 可以表示为以下形式：
 
 $$
-R(X) = \begin{cases} 
+R(X) = \begin{cases}
 A_1 & \text{if } X \in S_1 \\
 A_2 & \text{if } X \in S_2 \\
 \vdots \\

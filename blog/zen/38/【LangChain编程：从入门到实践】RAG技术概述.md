@@ -99,17 +99,17 @@ RAG技术可应用于以下领域：
 
 假设用户查询为$Q$，知识库中包含$N$个文档，第$i$个文档的文本为$D_i$。检索模型的目标是找到与$Q$最相关的文档$D_j$。
 
-$$D_j = \\underset{i}{\\arg\\max} \\text{sim}(Q, D_i)$$
+$$D_j = \underset{i}{\arg\max} \text{sim}(Q, D_i)$$
 
-其中，$\\text{sim}(Q, D_i)$表示$Q$和$D_i$之间的相似度。
+其中，$\text{sim}(Q, D_i)$表示$Q$和$D_i$之间的相似度。
 
 2. **生成模型**：
 
 假设检索到的文档$D_j$的文本为$D_j'$，生成模型的目标是根据$D_j'$和$Q$生成回答$A$。
 
-$$A = \\underset{A'}{\\arg\\max} \\text{sim}(Q, A')$$
+$$A = \underset{A'}{\arg\max} \text{sim}(Q, A')$$
 
-其中，$\\text{sim}(Q, A')$表示$Q$和$A'$之间的相似度。
+其中，$\text{sim}(Q, A')$表示$Q$和$A'$之间的相似度。
 
 ### 4.3 案例分析与讲解
 

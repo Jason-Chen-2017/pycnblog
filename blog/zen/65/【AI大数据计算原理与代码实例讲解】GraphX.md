@@ -111,31 +111,31 @@ PageRank算法的数学模型是一个线性方程组，其中每个方程代表
 
 $$
 \begin{bmatrix}
-PR(A_1) \\
-PR(A_2) \\
-\vdots \\
+PR(A_1) \
+PR(A_2) \
+\vdots \
 PR(A_n)
 \end{bmatrix}
 =
 (1 - d)
 \begin{bmatrix}
-1 \\
-1 \\
-\vdots \\
+1 \
+1 \
+\vdots \
 1
 \end{bmatrix}
 +
 d
 \begin{bmatrix}
-\frac{1}{C(T_{11})} & \frac{1}{C(T_{12})} & \cdots & \frac{1}{C(T_{1n})} \\
-\frac{1}{C(T_{21})} & \frac{1}{C(T_{22})} & \cdots & \frac{1}{C(T_{2n})} \\
-\vdots & \vdots & \ddots & \vdots \\
+\frac{1}{C(T_{11})} & \frac{1}{C(T_{12})} & \cdots & \frac{1}{C(T_{1n})} \
+\frac{1}{C(T_{21})} & \frac{1}{C(T_{22})} & \cdots & \frac{1}{C(T_{2n})} \
+\vdots & \vdots & \ddots & \vdots \
 \frac{1}{C(T_{n1})} & \frac{1}{C(T_{n2})} & \cdots & \frac{1}{C(T_{nn})}
 \end{bmatrix}
 \begin{bmatrix}
-PR(A_1) \\
-PR(A_2) \\
-\vdots \\
+PR(A_1) \
+PR(A_2) \
+\vdots \
 PR(A_n)
 \end{bmatrix}
 $$

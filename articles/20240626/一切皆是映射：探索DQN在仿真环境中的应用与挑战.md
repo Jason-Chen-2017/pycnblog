@@ -166,8 +166,7 @@ $$
 4. 优化目标函数：使用梯度下降法优化目标函数，即
 
 $$
-\theta \leftarrow \theta - \alpha \
-abla_{\theta} L(\theta)
+\theta \leftarrow \theta - \alpha \nabla_{\theta} L(\theta)
 $$
 
 其中，$\alpha$ 表示学习率。

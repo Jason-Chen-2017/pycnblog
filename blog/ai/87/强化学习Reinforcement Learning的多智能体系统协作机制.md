@@ -152,7 +152,7 @@ $$
 - **动作空间**：$A = \{ (x_i', y_i') | x_i', y_i' \in \mathbb{N} \}$
 - **策略空间**：$\Pi = \{ \pi_i(s_i) | s_i \in S, \pi_i(s_i) \in A \}$
 - **奖励函数**：$R(s, a) = \begin{cases} -1, & \text{if } c_i \
-eq 0 \\ -d(s, a), & \text{if } c_i = 0 \end{cases}$
+eq 0 \ -d(s, a), & \text{if } c_i = 0 \end{cases}$
 
 其中，$d(s, a)$ 表示从状态 $s$ 移动到动作 $a$ 的距离。
 
@@ -187,7 +187,7 @@ A: 可以从以下几个方面评估多智能体强化学习协作机制的性�
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n multi-agent-env python=3.8 
+conda create -n multi-agent-env python=3.8
 conda activate multi-agent-env
 ```
 3. 安装PyTorch和Gym：
@@ -216,11 +216,11 @@ class Agent(nn.Module):
         super(Agent, self).__init__()
         self.fc1 = nn.Linear(state_dim, 64)
         self.fc2 = nn.Linear(64, action_dim)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         return self.fc2(x)
-    
+
     def act(self, x, epsilon):
         if np.random.rand() < epsilon:
             return np.random.randint(self.fc2.out_features)
@@ -234,17 +234,17 @@ class MultiAgentEnv(gym.Env):
         self.action_space = gym.spaces.Discrete(4)
         self.observation_space = gym.spaces.Box(low=-np.inf, high=np.inf, shape=(num_agents, 4))
         self.num_agents = num_agents
-    
+
     def step(self, actions):
         # 根据动作更新状态和奖励
         # ...
         return next_state, rewards, done, info
-    
+
     def reset(self):
         # 初始化环境状态
         # ...
         return next_state
-    
+
     def render(self):
         # 渲染环境
         # ...

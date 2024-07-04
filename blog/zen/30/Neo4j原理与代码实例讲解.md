@@ -113,7 +113,7 @@ $$ G = (V, E) $$
 
 在查询优化方面，可以通过权重最小化或最大匹配算法来提高查询效率。例如，使用Dijkstra算法来寻找最短路径：
 
-$$ \\text{Path}(u, v) = \\arg\\min_{P} \\sum_{(i, j) \\in P} w(i, j) $$
+$$ \text{Path}(u, v) = \arg\min_{P} \sum_{(i, j) \in P} w(i, j) $$
 
 其中，$w(i, j)$ 是边 $(i, j)$ 的权重。
 

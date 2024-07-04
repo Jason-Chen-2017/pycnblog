@@ -259,13 +259,13 @@ $$
 对上式进行矩阵运算，可得：
 
 $$
-(X_1, X_2, \cdots, X_t) - \begin{bmatrix} 1 & \phi_1 & \phi_1^2 & \cdots & \phi_1^{t-p} \\ 0 & 1 & \phi_1 & \cdots & \phi_1^{t-p-1} \\ \vdots & \vdots & \vdots & & \vdots \\ 0 & 0 & 0 & \cdots & 1 \end{bmatrix} (X_0, X_1, \cdots, X_{t-p}) = (0, 0, \cdots, 0)
+(X_1, X_2, \cdots, X_t) - \begin{bmatrix} 1 & \phi_1 & \phi_1^2 & \cdots & \phi_1^{t-p} \ 0 & 1 & \phi_1 & \cdots & \phi_1^{t-p-1} \ \vdots & \vdots & \vdots & & \vdots \ 0 & 0 & 0 & \cdots & 1 \end{bmatrix} (X_0, X_1, \cdots, X_{t-p}) = (0, 0, \cdots, 0)
 $$
 
 对上式进行求解，可得：
 
 $$
-X_t = \begin{bmatrix} 1 & \phi_1 & \phi_1^2 & \cdots & \phi_1^{t-p} \\ 0 & 1 & \phi_1 & \cdots & \phi_1^{t-p-1} \\ \vdots & \vdots & \vdots & & \vdots \\ 0 & 0 & 0 & \cdots & 1 \end{bmatrix}^{-1} (X_0, X_1, \cdots, X_{t-p})
+X_t = \begin{bmatrix} 1 & \phi_1 & \phi_1^2 & \cdots & \phi_1^{t-p} \ 0 & 1 & \phi_1 & \cdots & \phi_1^{t-p-1} \ \vdots & \vdots & \vdots & & \vdots \ 0 & 0 & 0 & \cdots & 1 \end{bmatrix}^{-1} (X_0, X_1, \cdots, X_{t-p})
 $$
 
 将上式进行展开，可得：
@@ -311,19 +311,19 @@ $$
 对上式进行移项，可得：
 
 $$
-\begin{bmatrix} \epsilon_{t-1} \\ \epsilon_{t-2} \\ \vdots \\ \epsilon_{t-q} \end{bmatrix} = \begin{bmatrix} 1 & \theta_1 & \theta_1^2 & \cdots & \theta_1^{q-1} \\ 0 & 1 & \theta_1 & \cdots & \theta_1^{q-2} \\ \vdots & \vdots & \vdots & & \vdots \\ 0 & 0 & 0 & \cdots & 1 \end{bmatrix} \begin{bmatrix} X_{t-1} - X_{t-2} \\ X_{t-2} - X_{t-3} \\ \vdots \\ X_{t-q+1} - X_{t-q} \end{bmatrix}
+\begin{bmatrix} \epsilon_{t-1} \ \epsilon_{t-2} \ \vdots \ \epsilon_{t-q} \end{bmatrix} = \begin{bmatrix} 1 & \theta_1 & \theta_1^2 & \cdots & \theta_1^{q-1} \ 0 & 1 & \theta_1 & \cdots & \theta_1^{q-2} \ \vdots & \vdots & \vdots & & \vdots \ 0 & 0 & 0 & \cdots & 1 \end{bmatrix} \begin{bmatrix} X_{t-1} - X_{t-2} \ X_{t-2} - X_{t-3} \ \vdots \ X_{t-q+1} - X_{t-q} \end{bmatrix}
 $$
 
 对上式进行求解，可得：
 
 $$
-\begin{bmatrix} \epsilon_{t-1} \\ \epsilon_{t-2} \\ \vdots \\ \epsilon_{t-q} \end{bmatrix} = \begin{bmatrix} 1 & \theta_1 & \theta_1^2 & \cdots & \theta_1^{q-1} \\ 0 & 1 & \theta_1 & \cdots & \theta_1^{q-2} \\ \vdots & \vdots & \vdots & & \vdots \\ 0 & 0 & 0 & \cdots & 1 \end{bmatrix}^{-1} \begin{bmatrix} X_{t-1} - X_{t-2} \\ X_{t-2} - X_{t-3} \\ \vdots \\ X_{t-q+1} - X_{t-q} \end{bmatrix}
+\begin{bmatrix} \epsilon_{t-1} \ \epsilon_{t-2} \ \vdots \ \epsilon_{t-q} \end{bmatrix} = \begin{bmatrix} 1 & \theta_1 & \theta_1^2 & \cdots & \theta_1^{q-1} \ 0 & 1 & \theta_1 & \cdots & \theta_1^{q-2} \ \vdots & \vdots & \vdots & & \vdots \ 0 & 0 & 0 & \cdots & 1 \end{bmatrix}^{-1} \begin{bmatrix} X_{t-1} - X_{t-2} \ X_{t-2} - X_{t-3} \ \vdots \ X_{t-q+1} - X_{t-q} \end{bmatrix}
 $$
 
 将上式进行展开，可得：
 
 $$
-\begin{bmatrix} \epsilon_{t-1} \\ \epsilon_{t-2} \\ \vdots \\ \epsilon_{t-q} \end{bmatrix} = \begin{bmatrix} 1 & -\theta_1 & \theta_1^2 & \cdots & -\theta_1^{q-1} \\ 0 & 1 & -\theta_1 & \cdots & -\theta_1^{q-2} \\ \vdots & \vdots & \vdots & & \vdots \\ 0 & 0 & 0 & \cdots & 1 \end{bmatrix} \begin{bmatrix} X_{t-1} - X_{t-2} \\ X_{t-2} - X_{t-3} \\ \vdots \\ X_{t-q+1} - X_{t-q} \end{bmatrix}
+\begin{bmatrix} \epsilon_{t-1} \ \epsilon_{t-2} \ \vdots \ \epsilon_{t-q} \end{bmatrix} = \begin{bmatrix} 1 & -\theta_1 & \theta_1^2 & \cdots & -\theta_1^{q-1} \ 0 & 1 & -\theta_1 & \cdots & -\theta_1^{q-2} \ \vdots & \vdots & \vdots & & \vdots \ 0 & 0 & 0 & \cdots & 1 \end{bmatrix} \begin{bmatrix} X_{t-1} - X_{t-2} \ X_{t-2} - X_{t-3} \ \vdots \ X_{t-q+1} - X_{t-q} \end{bmatrix}
 $$
 
 即：

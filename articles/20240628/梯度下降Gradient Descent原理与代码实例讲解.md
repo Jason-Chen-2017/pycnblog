@@ -49,10 +49,8 @@
 梯度下降算法的步骤如下：
 
 1. 初始化参数 $\theta$：随机选择一组参数 $\theta_0$ 作为初始值。
-2. 计算损失函数 $L(\theta)$ 在当前参数 $\theta$ 处的梯度 $\
-abla_{\theta}L(\theta)$。
-3. 根据梯度信息更新参数 $\theta$：$\theta \leftarrow \theta - \alpha \
-abla_{\theta}L(\theta)$，其中 $\alpha$ 为学习率。
+2. 计算损失函数 $L(\theta)$ 在当前参数 $\theta$ 处的梯度 $\nabla_{\theta}L(\theta)$。
+3. 根据梯度信息更新参数 $\theta$：$\theta \leftarrow \theta - \alpha \nabla_{\theta}L(\theta)$，其中 $\alpha$ 为学习率。
 4. 重复步骤2和3，直到满足停止条件（如达到预设的迭代次数或损失值变化小于某个阈值）。
 
 ### 3.3 算法优缺点

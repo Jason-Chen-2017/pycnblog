@@ -8,7 +8,7 @@
 #### 1.1.2 深度学习的兴起
 #### 1.1.3 预训练语言模型的突破
 ### 1.2 GPT模型的诞生
-#### 1.2.1 OpenAI的创新之路  
+#### 1.2.1 OpenAI的创新之路
 #### 1.2.2 GPT模型的版本演进
 #### 1.2.3 GPT在学界和业界的影响力
 
@@ -86,7 +86,7 @@ from torchtext.vocab import build_vocab_from_iterator
 train_iter = WikiText2(split='train')
 tokenizer = get_tokenizer('basic_english')
 vocab = build_vocab_from_iterator(map(tokenizer, train_iter), specials=['<unk>'])
-vocab.set_default_index(vocab['<unk>']) 
+vocab.set_default_index(vocab['<unk>'])
 
 def data_process(raw_text_iter):
   data = [torch.tensor(vocab(tokenizer(item)), dtype=torch.long) for item in raw_text_iter]
@@ -107,7 +107,7 @@ class GPTModel(nn.Module):
         super().__init__()
         self.pos_encoder = PositionalEncoding(d_model, pos_dropout, max_seq_length)
         encoder_layer = nn.TransformerEncoderLayer(d_model, nhead, dim_feedforward, trans_dropout)
-        self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers) 
+        self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers)
         self.embedding = nn.Embedding(vocab_size, d_model)
         self.d_model = d_model
         self.decoder = nn.Linear(d_model, vocab_size)
@@ -221,14 +221,14 @@ def generate_text(model, start_text, num_words):
     model.eval()
     words = start_text.split()
     input_ids = torch.tensor([vocab[word] for word in words], dtype=torch.long).unsqueeze(0)
-    
+
     for _ in range(num_words):
         with torch.no_grad():
             output = model(input_ids)
             pred_id = output.argmax(dim=-1)[-1].item()
             input_ids = torch.cat([input_ids, torch.tensor([[pred_id]], dtype=torch.long)], dim=-1)
             words.append(vocab.lookup_token(pred_id))
-    
+
     return ' '.join(words)
 
 start_text = "The meaning of life is"

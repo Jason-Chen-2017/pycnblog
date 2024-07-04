@@ -16,7 +16,7 @@ Mixup的基本原理非常简单：从训练集中随机选择两个样本 $(x_i
 
 $$
 \begin{aligned}
-\tilde{x} &= \lambda x_i + (1-\lambda) x_j \\
+\tilde{x} &= \lambda x_i + (1-\lambda) x_j \
 \tilde{y} &= \lambda y_i + (1-\lambda) y_j
 \end{aligned}
 $$
@@ -76,7 +76,7 @@ Mixup可以看作是在样本空间中构建了一个线性插值，将两个样
 
 $$
 \begin{aligned}
-\tilde{x} &= 0.3 \times [1, 2] + 0.7 \times [3, 4] = [2.4, 3.4] \\
+\tilde{x} &= 0.3 \times [1, 2] + 0.7 \times [3, 4] = [2.4, 3.4] \
 \tilde{y} &= 0.3 \times 0 + 0.7 \times 1 = 0.7
 \end{aligned}
 $$

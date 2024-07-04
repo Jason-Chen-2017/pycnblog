@@ -269,7 +269,7 @@ class DETR(nn.Module):
         self.bert = BertModel.from_pretrained('bert-base-uncased')
         self.classifier = nn.Linear(hidden_size, num_classes)
         self.positional_encoding = PositionalEncoding(hidden_size)
-        
+
     def forward(self, x):
         x = self.backbone(x)
         x = x.flatten(-1)

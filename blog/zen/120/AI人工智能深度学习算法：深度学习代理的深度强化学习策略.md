@@ -181,7 +181,7 @@
 **DQN算法的核心思想是最大化Q函数，其中Q函数定义为**：
 
 $$
-Q(s,a;\theta) = \mathbb{E}_{\pi^\theta}[R + \gamma \max_a Q(s',a;\theta)] 
+Q(s,a;\theta) = \mathbb{E}_{\pi^\theta}[R + \gamma \max_a Q(s',a;\theta)]
 $$
 
 其中：
@@ -223,19 +223,19 @@ $$
 2. 使用当前Q函数网络计算Q值：
 
    $$
-Q(s,a;\theta) = R + \gamma \max_a Q(s',a;\theta) 
+Q(s,a;\theta) = R + \gamma \max_a Q(s',a;\theta)
 $$
 
 3. 使用目标Q函数网络计算目标Q值：
 
    $$
-Q(s',a;\theta') = \mathbb{E}_{\pi^{\theta'}}[R + \gamma \max_a Q(s'',a;\theta')] 
+Q(s',a;\theta') = \mathbb{E}_{\pi^{\theta'}}[R + \gamma \max_a Q(s'',a;\theta')]
 $$
 
 4. 使用目标Q函数网络更新当前Q函数网络：
 
    $$
-\theta \leftarrow \theta - \alpha \nabla_{\theta} Q(s,a;\theta) 
+\theta \leftarrow \theta - \alpha \nabla_{\theta} Q(s,a;\theta)
 $$
 
 其中 $\alpha$ 为学习率。

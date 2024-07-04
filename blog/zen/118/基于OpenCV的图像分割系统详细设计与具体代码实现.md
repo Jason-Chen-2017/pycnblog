@@ -160,13 +160,13 @@
 
 #### 4.1.1 基于阈值的分割方法
 
-- 阈值分割模型：$f(x) = \begin{cases} 0, & \text{if } x < T \\ 1, & \text{if } x \geq T \end{cases}$
+- 阈值分割模型：$f(x) = \begin{cases} 0, & \text{if } x < T \ 1, & \text{if } x \geq T \end{cases}$
 
 其中，$T$ 为阈值，$x$ 为像素的灰度值或颜色值。
 
 #### 4.1.2 基于区域生长的分割方法
 
-- 区域生长模型：$R = \begin{cases} \{x\}, & \text{if } x \text{ is a seed point} \\ \{x\} \cup R'(x), & \text{if } \text{neighboring pixel } R'(x) \text{ satisfies the condition} \end{cases}$
+- 区域生长模型：$R = \begin{cases} \{x\}, & \text{if } x \text{ is a seed point} \ \{x\} \cup R'(x), & \text{if } \text{neighboring pixel } R'(x) \text{ satisfies the condition} \end{cases}$
 
 其中，$R$ 为连通区域，$x$ 为种子点，$R'(x)$ 为与 $x$ 相邻的像素，$\text{condition}$ 为区域生长条件。
 
@@ -236,7 +236,7 @@ _, contours, hierarchy = cv2.findContours(thresholded, cv2.RETR_TREE, cv2.CHAIN_
 for contour in contours:
     # 计算连通区域面积
     area = cv2.contourArea(contour)
-    
+
     # 如果面积大于阈值，则认为为肿瘤区域
     if area > 100:
         cv2.drawContours(image, [contour], -1, (0, 255, 0), 2)
@@ -336,7 +336,7 @@ def main():
     for contour in contours:
         # 计算连通区域面积
         area = cv2.contourArea(contour)
-        
+
         # 如果面积大于阈值，则认为为前景区域
         if area > 100:
             # 绘制连通区域轮廓

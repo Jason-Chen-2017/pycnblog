@@ -420,4 +420,4 @@ generated_image.save('generated_image.jpg')
 
 **A:** 未来风格迁移技术的研究方向将集中在开发更有效的风格迁移算法、探索新的风格迁移方法以及将风格迁移技术应用到新的领域。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

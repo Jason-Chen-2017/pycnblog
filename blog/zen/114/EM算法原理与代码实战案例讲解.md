@@ -142,7 +142,7 @@ $$
 
 $$
 z = \begin{cases}
-1 & \text{if } x \text{ comes from } \mathcal{N}(x|\mu_1, \sigma_1^2) \\
+1 & \text{if } x \text{ comes from } \mathcal{N}(x|\mu_1, \sigma_1^2) \
 0 & \text{otherwise}
 \end{cases}
 $$

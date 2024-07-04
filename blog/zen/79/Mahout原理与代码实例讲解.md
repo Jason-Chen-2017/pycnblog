@@ -181,13 +181,13 @@ public class CollaborativeFiltering {
     public static void main(String[] args) throws TasteException {
         // 创建用户-物品评分矩阵
         // ...
-        
+
         // 创建相似度计算器
         UserSimilarity similarity = new PearsonCorrelationSimilarity(new NormalizedSquaredEuclideanDistance());
-        
+
         // 创建推荐器
         SimilarityBasedUserBasedRecommender recommender = new KNNUserBasedRecommender(similarity);
-        
+
         // 使用推荐器进行预测
         // ...
     }

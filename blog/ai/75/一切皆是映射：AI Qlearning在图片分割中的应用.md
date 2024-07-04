@@ -1,7 +1,7 @@
 
 # 一切皆是映射：AI Q-learning在图片分割中的应用
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 ### 1.1 问题的由来
@@ -166,7 +166,7 @@ $$ 其中，α为学习率。
 奖励函数为：$$
 r(s,a) = -L(s,a) = -\begin{cases}
 1, & \text{if } a \
-eq s \\
+eq s \
 0, & \text{if } a = s
 \end{cases}
 $$

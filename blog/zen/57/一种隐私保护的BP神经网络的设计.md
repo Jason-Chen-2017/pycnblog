@@ -49,7 +49,7 @@ In this section, we will provide a detailed explanation of the mathematical mode
 
 ### 4.1 Gaussian Mechanism
 
-The Gaussian mechanism is a technique used to add noise to the output of a query. The noise is generated from a Gaussian distribution with mean 0 and variance $\\sigma^2$.
+The Gaussian mechanism is a technique used to add noise to the output of a query. The noise is generated from a Gaussian distribution with mean 0 and variance $\sigma^2$.
 
 ### 4.2 Clipping
 
@@ -157,7 +157,7 @@ Q: What is the privacy budget?
 A: The privacy budget is the maximum amount of privacy loss that is allowed during the training process.
 
 Q: What is the Gaussian mechanism?
-A: The Gaussian mechanism is a technique used to add noise to the output of a query. The noise is generated from a Gaussian distribution with mean 0 and variance $\\sigma^2$.
+A: The Gaussian mechanism is a technique used to add noise to the output of a query. The noise is generated from a Gaussian distribution with mean 0 and variance $\sigma^2$.
 
 Q: What is clipping?
 A: Clipping is a technique used to limit the magnitude of the noise added to the gradients. This is necessary to prevent the noise from becoming too large and causing the network to converge slowly or not at all.

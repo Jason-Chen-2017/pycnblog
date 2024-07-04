@@ -144,9 +144,7 @@
 以下是一些常见的公式和推导过程：
 
 - **Q值函数**：$Q(s, a) = \sum_{s'} P(s'|s, a) [R(s, a) + \gamma \max_{a'} Q(s', a')]$
-- **策略梯度**：$\
-abla_{\theta} J(\theta) = \
-abla_{\theta} \sum_{s, a} \pi(a|s) [R(s, a) + \gamma \max_{a'} Q(s', a') - Q(s, a)]$
+- **策略梯度**：$\nabla_{\theta} J(\theta) = \nabla_{\theta} \sum_{s, a} \pi(a|s) [R(s, a) + \gamma \max_{a'} Q(s', a') - Q(s, a)]$
 
 ### 4.3 案例分析与讲解
 

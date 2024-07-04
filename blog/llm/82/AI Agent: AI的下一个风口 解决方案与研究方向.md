@@ -1,7 +1,7 @@
 
 # AI Agent: AI的下一个风口 解决方案与研究方向
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -194,7 +194,7 @@ AI Agent的数学模型主要包括以下部分：
 
 $$
 \begin{align*}
-P(s'|s,a) &= \text{状态转移概率} \\
+P(s'|s,a) &= \text{状态转移概率} \
 R(s,a) &= \text{奖励函数}
 \end{align*}
 $$
@@ -212,10 +212,10 @@ $$
 $$
 \begin{align*}
 P(s'|s,a) &= \begin{cases}
-(s'_x=s_x+1, s'_y=s_y) & \text{if } a=\text{上} \\
-(s'_x=s_x-1, s'_y=s_y) & \text{if } a=\text{下} \\
-(s'_x=s_x, s'_y=s_y+1) & \text{if } a=\text{左} \\
-(s'_x=s_x, s'_y=s_y-1) & \text{if } a=\text{右} \\
+(s'_x=s_x+1, s'_y=s_y) & \text{if } a=\text{上} \
+(s'_x=s_x-1, s'_y=s_y) & \text{if } a=\text{下} \
+(s'_x=s_x, s'_y=s_y+1) & \text{if } a=\text{左} \
+(s'_x=s_x, s'_y=s_y-1) & \text{if } a=\text{右} \
 \end{cases}
 $$
 
@@ -223,8 +223,8 @@ $$
 
 $$
 R(s,a) = \begin{cases}
-1 & \text{if } a=\text{上} \\
--1 & \text{if } a=\text{下} \\
+1 & \text{if } a=\text{上} \
+-1 & \text{if } a=\text{下} \
 0 & \text{otherwise}
 \end{cases}
 $$
@@ -265,7 +265,7 @@ A：当动作空间过大时，可以采用以下方法：
 2. 创建并激活虚拟环境：
 
 ```bash
-conda create -n rl-env python=3.8 
+conda create -n rl-env python=3.8
 conda activate rl-env
 ```
 

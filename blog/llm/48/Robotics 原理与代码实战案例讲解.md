@@ -113,11 +113,11 @@ $$
 ### 4.3 传感器融合公式
 
 - **卡尔曼滤波**：预测和更新步骤：
-  
+
 $$
-\hat{x}_{k|k-1} = F_k \hat{x}_{k-1|k-1} + B_k u_k \\
-P_{k|k-1} = F_k P_{k-1|k-1} F_k^T + Q_k \\
-\hat{x}_{k|k} = \hat{x}_{k|k-1} + K_k (z_k - H_k \hat{x}_{k|k-1}) \\
+\hat{x}_{k|k-1} = F_k \hat{x}_{k-1|k-1} + B_k u_k \
+P_{k|k-1} = F_k P_{k-1|k-1} F_k^T + Q_k \
+\hat{x}_{k|k} = \hat{x}_{k|k-1} + K_k (z_k - H_k \hat{x}_{k|k-1}) \
 P_{k|k} = (I - K_k H_k) P_{k|k-1}
 $$
 

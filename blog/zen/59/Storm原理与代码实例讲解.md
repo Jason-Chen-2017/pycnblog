@@ -14,7 +14,7 @@
 
 Apache Storm是一个分布式、高容错的实时计算系统,最初由Nathan Marz等人于2011年开发,后来捐赠给Apache软件基金会。Storm可以实时处理大量的持续流数据,并保证每条记录都能得到处理。它具有高可靠性、高可伸缩性、高性能等优势,广泛应用于实时分析、在线机器学习、持续计算等场景。
 
-## 2.核心概念与联系  
+## 2.核心概念与联系
 
 ### 2.1 Topology(拓扑)
 
@@ -66,7 +66,7 @@ Fields Grouping根据Tuple中的某些字段的值,将相同值的Tuple分发给
 builder.setBolt("bolt1", new SampleBolt(), 6).fieldsGrouping("spout1", new Fields("field1", "field2"));
 ```
 
-#### 3.1.3 Global Grouping  
+#### 3.1.3 Global Grouping
 
 Global Grouping将所有的Tuple都发送到同一个Task进行处理,适用于需要对所有数据进行全局操作的场景,如计算全局统计值等。
 
@@ -102,7 +102,7 @@ Storm采用主从架构,支持主节点故障时自动将从节点提升为新�
 
 当下游Bolt无法及时处理上游发送的Tuple时,Storm会自动启动反压力机制,暂停上游的发射,防止下游被淹没。反压力可以在Spout、Bolt、Task和Worker等多个层次生效。
 
-## 4.数学模型和公式详细讲解举例说明  
+## 4.数学模型和公式详细讲解举例说明
 
 ### 4.1 数据分组算法
 
@@ -130,7 +130,7 @@ hashCode = hash(tuple.getValues(fieldIndices));
 
 然后根据`hashCode`计算`targetTask`:
 
-```java 
+```java
 targetTask = Math.abs(hashCode % N);
 ```
 
@@ -150,7 +150,7 @@ Storm的反压力机制通过动态调整发射速率来控制上游的发射量
 
 $$
 T = \begin{cases}
-\frac{1}{R-E} & \text{if } E < R \\
+\frac{1}{R-E} & \text{if } E < R \
 \infty & \text{if } E \geq R
 \end{cases}
 $$
@@ -161,8 +161,8 @@ $$
 
 $$
 E_{new} = E_{old} \times \begin{cases}
-0.8 & \text{if } D > 目标时延 \\
-1.2 & \text{if } D < 目标时延/2 \\
+0.8 & \text{if } D > 目标时延 \
+1.2 & \text{if } D < 目标时延/2 \
 1.0 & \text{其他情况}
 \end{cases}
 $$
@@ -182,7 +182,7 @@ $$
         - java
             - com.mycompany.app
                 - WordCountTopology.java
-                - SentenceSpout.java  
+                - SentenceSpout.java
                 - SplitSentenceBolt.java
                 - WordCountBolt.java
         - resources
@@ -209,11 +209,11 @@ public class SentenceSpout extends BaseRichSpout {
         fileReader = new FileReader("src/main/resources/words.txt");
     }
 
-    @Override 
+    @Override
     public void nextTuple() {
         // 读取下一个句子
         String sentence = fileReader.nextLine();
-        
+
         // 发射句子
         collector.emit(new Values(sentence));
     }
@@ -233,7 +233,7 @@ public class SplitSentenceBolt extends BaseRichBolt {
     @Override
     public void execute(Tuple tuple) {
         String sentence = tuple.getString(0);
-        
+
         // 拆分句子为单词
         String[] words = sentence.split(" ");
         for (String word : words) {
@@ -263,10 +263,10 @@ public class WordCountBolt extends BaseRichBolt {
     @Override
     public void execute(Tuple tuple) {
         String word = tuple.getString(0);
-        
+
         // 更新计数器
         counters.put(word, counters.getOrDefault(word, 0) + 1);
-        
+
         // 输出当前统计结果
         for (Map.Entry<String, Integer> entry : counters.entrySet()) {
             collector.emit(new Values(entry.getKey(), entry.getValue()));
@@ -288,7 +288,7 @@ public class WordCountTopology {
 
         // 设置Spout
         builder.setSpout("sentence-spout", new SentenceSpout(), 1);
-        
+
         // 设置Bolt
         builder.setBolt("split-bolt", new SplitSentenceBolt(), 4)
                 .shuffleGrouping("sentence-spout");

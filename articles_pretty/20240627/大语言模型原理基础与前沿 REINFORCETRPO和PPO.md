@@ -75,8 +75,7 @@ PPO结合了TRPO和REINFORCE的优点，通过“剪枝”机制提高训练效�
 
 ### 4.1 数学模型构建
 
-**REINFORCE**：策略梯度估计公式为 $\theta_{t+1} = \theta_t + \alpha \
-abla_\theta \mathbb{E}[R_t|\pi_\theta(a_t|s_t)]$
+**REINFORCE**：策略梯度估计公式为 $\theta_{t+1} = \theta_t + \alpha \nabla_\theta \mathbb{E}[R_t|\pi_\theta(a_t|s_t)]$
 
 **TRPO**：通过约束策略更新 $\Delta \theta$ 的范数来保证新策略优于旧策略，约束为 $\| \Delta \theta \| \leq \gamma$
 
@@ -86,9 +85,7 @@ abla_\theta \mathbb{E}[R_t|\pi_\theta(a_t|s_t)]$
 
 #### REINFORCE推导
 - **回报估计**：$R_t = \sum_{k=t}^{T} \gamma^{k-t} r_t$
-- **梯度估计**：$\
-abla_\theta \mathbb{E}[R_t|\pi_\theta] = \sum_{s,a,r} \pi_\theta(a|s) \
-abla_\theta \log \pi_\theta(a|s) \cdot r$
+- **梯度估计**：$\nabla_\theta \mathbb{E}[R_t|\pi_\theta] = \sum_{s,a,r} \pi_\theta(a|s) \nabla_\theta \log \pi_\theta(a|s) \cdot r$
 
 #### TRPO推导
 - **约束优化**：$\min_{\Delta \theta} \mathbb{E}[\mathcal{L}_{KL}(\pi_\theta||\pi_{\theta+\Delta \theta})] \text{ s.t. } \|\Delta \theta\| \leq \gamma$

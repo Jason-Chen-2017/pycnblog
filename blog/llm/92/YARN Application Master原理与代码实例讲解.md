@@ -232,19 +232,19 @@ public class ApplicationMaster {
         Configuration conf = new Configuration();
         ResourceTrackerClient resourceTrackerClient = new ResourceTrackerClient(conf);
         resourceTrackerClient.init(conf);
-        
+
         // 获取应用ID
         ApplicationId applicationId = ApplicationId.newInstance(conf.getClusterId(), "application_123456_0001");
-        
+
         // 向资源管理器注册
         RegisterApplicationMasterResponse response = resourceTrackerClient.registerApplicationMaster(
-            applicationId.toString(), 
-            new URI("http://localhost:8080"), 
-            1024, 
-            "hdfs://hadoop1:40010/user/hadoop/yarn/applicationhistory/done", 
-            false, 
+            applicationId.toString(),
+            new URI("http://localhost:8080"),
+            1024,
+            "hdfs://hadoop1:40010/user/hadoop/yarn/applicationhistory/done",
+            false,
             false);
-        
+
         // 获取分配的资源
         List<Container> containers = response.getContainers();
         for (Container container : containers) {
@@ -252,16 +252,16 @@ public class ApplicationMaster {
             TaskLauncher taskLauncher = container.createTaskLauncher();
             // ... ...
         }
-        
+
         // 监控任务执行
         // ... ...
-        
+
         // 结果收集
         // ... ...
-        
+
         // 注销应用
         resourceTrackerClient.unregisterApplicationMaster(
-            ApplicationMasterProtocol.ApplicationMasterAction.FINISHED, 
+            ApplicationMasterProtocol.ApplicationMasterAction.FINISHED,
             "Application finished successfully");
     }
 }

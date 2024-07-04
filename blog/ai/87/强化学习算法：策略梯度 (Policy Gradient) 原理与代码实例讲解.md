@@ -73,9 +73,7 @@
 计算策略函数的梯度是策略梯度算法的关键步骤，用于指导策略参数的更新。策略函数的梯度可以通过以下公式计算：
 
 $$
-\
-abla_\theta J(\theta) = E_{s,a}[\
-abla_\theta\log\pi_\theta(s,a)\cdot R(s,a)]
+\nabla_\theta J(\theta) = E_{s,a}[\nabla_\theta\log\pi_\theta(s,a)\cdot R(s,a)]
 $$
 
 其中，$\pi_\theta(s,a)$ 为策略函数，$R(s,a)$ 为动作 $a$ 在状态 $s$ 上的奖励，$J(\theta)$ 为策略的期望回报。
@@ -127,9 +125,7 @@ $$
 策略梯度算法的核心公式如下：
 
 $$
-\
-abla_\theta J(\theta) = E_{s,a}[\
-abla_\theta\log\pi_\theta(s,a)\cdot R(s,a)]
+\nabla_\theta J(\theta) = E_{s,a}[\nabla_\theta\log\pi_\theta(s,a)\cdot R(s,a)]
 $$
 
 其中，$J(\theta)$ 表示策略函数的期望回报，可以通过以下公式计算：
@@ -212,7 +208,7 @@ class Paddle(nn.Module):
         super(Paddle, self).__init__()
         self.fc1 = nn.Linear(128, 64)
         self.fc2 = nn.Linear(64, 1)
-        
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         return torch.tanh(self.fc2(x))
@@ -221,10 +217,10 @@ class Paddle(nn.Module):
 class PaddleDataset(Dataset):
     def __init__(self, data):
         self.data = data
-        
+
     def __len__(self):
         return len(self.data)
-    
+
     def __getitem__(self, index):
         return self.data[index]
 

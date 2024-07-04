@@ -5,7 +5,7 @@
 ## 1. 背景介绍
 ### 1.1 微信公众号的发展现状
 #### 1.1.1 微信公众号用户规模
-#### 1.1.2 微信公众号功能不断丰富 
+#### 1.1.2 微信公众号功能不断丰富
 #### 1.1.3 微信公众号商业价值凸显
 ### 1.2 微信公众号管理面临的挑战
 #### 1.2.1 内容管理难度大
@@ -49,7 +49,7 @@
 #### 3.4.3 新增永久素材
 #### 3.4.4 获取永久素材
 #### 3.4.5 删除永久素材
-### 3.5 用户管理模块 
+### 3.5 用户管理模块
 #### 3.5.1 用户分组管理
 #### 3.5.2 获取用户列表
 #### 3.5.3 获取用户基本信息
@@ -72,7 +72,7 @@ x_i \leq n, \forall i=1,2,...,m
 $$
 
 $$
-y_i = 
+y_i =
 \begin{cases}
 0 & x_i \leq n \\
 1 & x_i > n
@@ -86,12 +86,12 @@ $$
 用户画像通过给用户打上一系列标签来刻画用户特征。假设有 $m$ 个用户，$n$ 个标签，我们可以定义一个用户-标签矩阵 $A$:
 
 $$
-A = 
-\begin{bmatrix} 
+A =
+\begin{bmatrix}
 a_{11} & a_{12} & \cdots & a_{1n} \\
 a_{21} & a_{22} & \cdots & a_{2n} \\
 \vdots & \vdots & \ddots & \vdots \\
-a_{m1} & a_{m2} & \cdots & a_{mn} 
+a_{m1} & a_{m2} & \cdots & a_{mn}
 \end{bmatrix}
 $$
 
@@ -123,14 +123,14 @@ public class WxController {
 
     @Autowired
     private WxService wxService;
-    
+
     @GetMapping
     public void auth(String signature, String timestamp, String nonce, String echostr) {
         if (wxService.checkSignature(signature, timestamp, nonce)) {
             System.out.println(echostr);
         }
     }
-    
+
     @PostMapping
     public void handleMsg(@RequestBody String requestBody, @RequestParam("signature") String signature,
         @RequestParam("timestamp") String timestamp, @RequestParam("nonce") String nonce) {
@@ -152,7 +152,7 @@ public class WxMenuService {
 
     @Autowired
     private WxMpService wxMpService;
-    
+
     public void createMenu() throws WxErrorException {
         WxMenu wxMenu = new WxMenu();
         // 设置菜单项
@@ -160,15 +160,15 @@ public class WxMenuService {
         button1.setName("菜单1");
         button1.setType(WxConsts.MenuButtonType.CLICK);
         button1.setKey("MENU_1");
-        
+
         WxMenuButton button2 = new WxMenuButton();
         button2.setName("菜单2");
         button2.setType(WxConsts.MenuButtonType.VIEW);
         button2.setUrl("http://www.example.com");
-        
+
         wxMenu.getButtons().add(button1);
         wxMenu.getButtons().add(button2);
-        
+
         // 创建菜单
         wxMpService.getMenuService().menuCreate(wxMenu);
     }
@@ -184,7 +184,7 @@ public class WxMsgService {
 
     @Autowired
     private WxMpService wxMpService;
-    
+
     public void handleTextMsg(WxMpXmlMessage wxMessage) {
         // 获取用户输入内容
         String content = wxMessage.getContent();

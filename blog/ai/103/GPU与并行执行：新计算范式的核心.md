@@ -287,4 +287,4 @@ GPU是游戏开发的核心部件，用于图形渲染、物理引擎、特效�
 * **Q：如何选择合适的GPU？**
 * **A：**需要根据具体的应用场景和需求选择合适的GPU，例如计算能力、内存容量、功耗等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -11,7 +11,7 @@
 针对大模型应用开发中存在的痛点,DeepMind团队在2022年提出了ReAct(Reason+Act)框架[^1],旨在简化和规范化大模型应用开发流程,帮助开发者快速构建和部署AI Agent。本文将详细介绍ReAct框架的原理,并动手实践用ReAct构建一个简单的AI Agent。
 
 ## 2. 核心概念与联系
-### 2.1 大语言模型 
+### 2.1 大语言模型
 大语言模型(Large Language Model)是指在海量文本语料上预训练得到的深度神经网络模型,具有强大的语言理解和生成能力。代表模型有GPT系列、BERT、T5等。大模型通过自监督学习,能够从无标注数据中学习到丰富的语言知识。
 
 ### 2.2 提示学习
@@ -115,7 +115,7 @@ Transformer的自注意力机制可以捕捉输入序列中的长距离依赖关
 思考: 需要查询上海的天气信息。
 行动: search_weather{上海今天的天气}
 行动结果: 上海今天多云,最高温度25℃,最低温度20℃。
-思考: 
+思考:
 ```
 
 GPT-3可以根据上下文,生成下一步的思考内容,如"已经查到了天气信息,任务完成"。
@@ -133,7 +133,7 @@ class WeatherAgent:
         self.functions = {
             "search_weather": self.search_weather
         }
-    
+
     def run(self, task_description):
         prompt = self.prompt_template.format(task_description=task_description)
         while True:
@@ -155,7 +155,7 @@ class WeatherAgent:
                     return f"未知行动: {action_name}"
             else:
                 return output
-    
+
     def search_weather(self, args):
         city, date = args.split(",")
         # 调用天气API查询结果

@@ -1,7 +1,7 @@
 
 # 支持向量机（SVM）的GradientDescent实例
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -65,8 +65,7 @@ $$
 1. 初始化权重向量 $\mathbf{w}$ 和偏置项 $b$。
 2. 计算损失函数对权重向量的梯度。
 3. 根据梯度更新权重向量：$$
-\mathbf{w} \leftarrow \mathbf{w} - \alpha \cdot \
-abla_{\mathbf{w}}\text{Loss}
+\mathbf{w} \leftarrow \mathbf{w} - \alpha \cdot \nabla_{\mathbf{w}}\text{Loss}
 $$
 其中，$\alpha$ 是学习率。
 4. 重复步骤2和3，直到损失函数收敛。
@@ -115,10 +114,8 @@ $$
 
 $$
 \begin{cases}
-\
-abla_{\mathbf{w}}L(\mathbf{w}, b, \alpha) = \mathbf{w} - \sum_{i=1}^{n}\alpha_i y_i \mathbf{x}_i = 0 \\
-\
-abla_{b}L(\mathbf{w}, b, \alpha) = \sum_{i=1}^{n}\alpha_i y_i = 0
+\nabla_{\mathbf{w}}L(\mathbf{w}, b, \alpha) = \mathbf{w} - \sum_{i=1}^{n}\alpha_i y_i \mathbf{x}_i = 0 \\
+\nabla_{b}L(\mathbf{w}, b, \alpha) = \sum_{i=1}^{n}\alpha_i y_i = 0
 \end{cases}
 $$
 

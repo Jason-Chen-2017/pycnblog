@@ -156,7 +156,7 @@ $$C[i, i] = 0 \quad \text{for} \quad i = 1, 2, \dots, n$$
 
 根据服务选择模型，我们可以计算出每个服务的加权性能指标：
 
-$$\mathbf{Q} = \begin{bmatrix} 0.8 \\ 0.9 \\ 0.5 \end{bmatrix}, \quad \mathbf{W} = \begin{bmatrix} 1 & 1 \end{bmatrix}$$
+$$\mathbf{Q} = \begin{bmatrix} 0.8 \ 0.9 \ 0.5 \end{bmatrix}, \quad \mathbf{W} = \begin{bmatrix} 1 & 1 \end{bmatrix}$$
 
 则目标函数为：
 

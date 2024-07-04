@@ -47,12 +47,9 @@ AdamOptimization算法的核心思想是利用历史梯度信息来更新模型�
 ### 3.2 算法步骤详解
 
 1. **初始化**：设置初始学习率$\\eta$、一阶矩估计$M$和二阶矩估计$V$为0。
-2. **计算梯度**：计算当前参数下的梯度$\
-abla_{\\theta}L(\\theta)$。
-3. **更新一阶矩估计**：$M = \\beta_1 \\times M + (1 - \\beta_1) \\times \
-abla_{\\theta}L(\\theta)$。
-4. **更新二阶矩估计**：$V = \\beta_2 \\times V + (1 - \\beta_2) \\times (\
-abla_{\\theta}L(\\theta))^2$。
+2. **计算梯度**：计算当前参数下的梯度$\nabla_{\\theta}L(\\theta)$。
+3. **更新一阶矩估计**：$M = \\beta_1 \\times M + (1 - \\beta_1) \\times \nabla_{\\theta}L(\\theta)$。
+4. **更新二阶矩估计**：$V = \\beta_2 \\times V + (1 - \\beta_2) \\times (\nabla_{\\theta}L(\\theta))^2$。
 5. **计算偏差修正**：$M_{\\text{corrected}} = \\frac{M}{1 - \\beta_1^t}$，$V_{\\text{corrected}} = \\frac{V}{1 - \\beta_2^t}$。
 6. **计算自适应学习率**：$\\eta_{\\text{t}} = \\frac{\\eta}{\\sqrt{V_{\\text{corrected}}} + \\epsilon}$，其中$\\epsilon$为一个小常数，防止分母为0。
 7. **参数更新**：$\\theta_{\\text{t}} = \\theta_{\\text{t-1}} - \\eta_{\\text{t}} \\times M_{\\text{corrected}}$。
@@ -81,10 +78,8 @@ AdamOptimization算法适用于各种深度学习模型和任务，如神经网�
 AdamOptimization算法的数学模型如下：
 
 $$\\begin{align*}
-M_t &= \\beta_1 \\times M_{t-1} + (1 - \\beta_1) \\times \
-abla_{\\theta}L(\\theta) \\\\
-V_t &= \\beta_2 \\times V_{t-1} + (1 - \\beta_2) \\times (\
-abla_{\\theta}L(\\theta))^2 \\\\
+M_t &= \\beta_1 \\times M_{t-1} + (1 - \\beta_1) \\times \nabla_{\\theta}L(\\theta) \\\\
+V_t &= \\beta_2 \\times V_{t-1} + (1 - \\beta_2) \\times (\nabla_{\\theta}L(\\theta))^2 \\\\
 M_{\\text{corrected}} &= \\frac{M_t}{1 - \\beta_1^t} \\\\
 V_{\\text{corrected}} &= \\frac{V_t}{1 - \\beta_2^t} \\\\
 \\eta_t &= \\frac{\\eta}{\\sqrt{V_{\\text{corrected}}} + \\epsilon} \\\\
@@ -99,8 +94,7 @@ V_{\\text{corrected}} &= \\frac{V_t}{1 - \\beta_2^t} \\\\
 
 一阶矩估计是所有历次梯度的平均值，可以通过以下公式计算：
 
-$$M_t = \\beta_1 \\times M_{t-1} + (1 - \\beta_1) \\times \
-abla_{\\theta}L(\\theta)$$
+$$M_t = \\beta_1 \\times M_{t-1} + (1 - \\beta_1) \\times \nabla_{\\theta}L(\\theta)$$
 
 其中，$\\beta_1$表示平滑系数，通常取值为0.9。
 
@@ -108,8 +102,7 @@ abla_{\\theta}L(\\theta)$$
 
 二阶矩估计是所有历次梯度平方的平均值，可以通过以下公式计算：
 
-$$V_t = \\beta_2 \\times V_{t-1} + (1 - \\beta_2) \\times (\
-abla_{\\theta}L(\\theta))^2$$
+$$V_t = \\beta_2 \\times V_{t-1} + (1 - \\beta_2) \\times (\nabla_{\\theta}L(\\theta))^2$$
 
 其中，$\\beta_2$表示平滑系数，通常取值为0.999。
 

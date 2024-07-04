@@ -98,11 +98,9 @@ $$ y = f(x, p) $$
 
 假设模型 $f$ 是一个神经网络，其参数为 $\theta$，通过反向传播学习到的损失函数为 $\mathcal{L}$，则模型参数更新过程可以表示为：
 
-$$ \theta \leftarrow \theta - \eta \cdot \
-abla_\theta \mathcal{L}(f(x, p; \theta)) $$
+$$ \theta \leftarrow \theta - \eta \cdot \nabla_\theta \mathcal{L}(f(x, p; \theta)) $$
 
-其中，$\eta$ 是学习率，$\
-abla_\theta$ 表示关于参数 $\theta$ 的梯度。
+其中，$\eta$ 是学习率，$\nabla_\theta$ 表示关于参数 $\theta$ 的梯度。
 
 ### 4.3 案例分析与讲解
 

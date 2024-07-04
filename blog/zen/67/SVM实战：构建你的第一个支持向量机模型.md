@@ -8,7 +8,7 @@
 #### 1.1.2 SVM的发展历程
 #### 1.1.3 SVM在机器学习领域的地位
 ### 1.2 SVM的优势与应用场景
-#### 1.2.1 SVM的主要优势  
+#### 1.2.1 SVM的主要优势
 #### 1.2.2 SVM适用的问题类型
 #### 1.2.3 SVM在各领域的应用案例
 
@@ -18,7 +18,7 @@
 #### 2.1.2 线性可分问题的判定方法
 #### 2.1.3 非线性可分问题的处理方式
 ### 2.2 最大间隔超平面
-#### 2.2.1 什么是最大间隔超平面  
+#### 2.2.1 什么是最大间隔超平面
 #### 2.2.2 最大间隔超平面的几何意义
 #### 2.2.3 最大间隔超平面的求解方法
 ### 2.3 支持向量
@@ -30,7 +30,7 @@
 #### 2.4.2 常用的核函数类型
 #### 2.4.3 核函数的选择原则
 
-## 3. 核心算法原理与具体操作步骤  
+## 3. 核心算法原理与具体操作步骤
 ### 3.1 线性SVM
 #### 3.1.1 原始问题的表述
 #### 3.1.2 对偶问题的推导
@@ -41,7 +41,7 @@
 #### 3.2.3 非线性SVM的求解算法
 ### 3.3 多分类SVM
 #### 3.3.1 一对一(One-vs-One)策略
-#### 3.3.2 一对多(One-vs-Rest)策略 
+#### 3.3.2 一对多(One-vs-Rest)策略
 #### 3.3.3 有向无环图(DAG)策略
 
 ## 4. 数学模型和公式详细讲解举例说明
@@ -49,20 +49,20 @@
 #### 4.1.1 原始问题的数学表述
 $$
 \begin{aligned}
-\min_{w,b} & \quad \frac{1}{2}\|w\|^2 \\
+\min_{w,b} & \quad \frac{1}{2}\|w\|^2 \
 s.t. & \quad y_i(w^Tx_i+b) \geq 1, \quad i=1,2,\dots,n
 \end{aligned}
 $$
 #### 4.1.2 对偶问题的数学表述
 $$
 \begin{aligned}
-\max_{\alpha} & \quad \sum_{i=1}^n \alpha_i - \frac{1}{2}\sum_{i,j=1}^n \alpha_i \alpha_j y_i y_j \langle x_i, x_j \rangle \\
-s.t. & \quad \sum_{i=1}^n \alpha_i y_i = 0 \\
+\max_{\alpha} & \quad \sum_{i=1}^n \alpha_i - \frac{1}{2}\sum_{i,j=1}^n \alpha_i \alpha_j y_i y_j \langle x_i, x_j \rangle \
+s.t. & \quad \sum_{i=1}^n \alpha_i y_i = 0 \
      & \quad \alpha_i \geq 0, \quad i=1,2,\dots,n
 \end{aligned}
 $$
 #### 4.1.3 KKT条件与最优解的判定
-### 4.2 非线性SVM的数学模型 
+### 4.2 非线性SVM的数学模型
 #### 4.2.1 核函数的数学定义
 设$\mathcal{X}$是输入空间，$\mathcal{H}$为特征空间，如果存在一个从$\mathcal{X}$到$\mathcal{H}$的映射$\phi$:
 $$\phi:\mathcal{X} \rightarrow \mathcal{H}$$
@@ -77,8 +77,8 @@ $$K(x,z)=\langle \phi(x),\phi(z) \rangle$$
 #### 4.2.3 非线性SVM的对偶问题
 $$
 \begin{aligned}
-\max_{\alpha} & \quad \sum_{i=1}^n \alpha_i - \frac{1}{2}\sum_{i,j=1}^n \alpha_i \alpha_j y_i y_j K(x_i,x_j) \\
-s.t. & \quad \sum_{i=1}^n \alpha_i y_i = 0 \\
+\max_{\alpha} & \quad \sum_{i=1}^n \alpha_i - \frac{1}{2}\sum_{i,j=1}^n \alpha_i \alpha_j y_i y_j K(x_i,x_j) \
+s.t. & \quad \sum_{i=1}^n \alpha_i y_i = 0 \
      & \quad 0 \leq \alpha_i \leq C, \quad i=1,2,\dots,n
 \end{aligned}
 $$
@@ -113,7 +113,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 
 y_pred = svm_clf.predict(X_test)
 
-print("Accuracy: ", accuracy_score(y_test, y_pred))  
+print("Accuracy: ", accuracy_score(y_test, y_pred))
 print("Precision: ", precision_score(y_test, y_pred))
 print("Recall: ", recall_score(y_test, y_pred))
 print("F1 score: ", f1_score(y_test, y_pred))

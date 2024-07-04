@@ -83,23 +83,23 @@
 
 随机森林的数学模型构建主要涉及决策树的构建过程。对于每棵树 $T_i$，决策树构建可以表示为：
 
-$$ T_i = \\text{DecisionTree}(S_i, A, \\text{max_depth}, \\text{min_samples_leaf}) $$
+$$ T_i = \text{DecisionTree}(S_i, A, \text{max_depth}, \text{min_samples_leaf}) $$
 
 其中，
 
 - $S_i$ 是第 $i$ 次抽样的数据子集，
 - $A$ 是特征集，
-- $\\text{max_depth}$ 是树的最大深度，
-- $\\text{min_samples_leaf}$ 是叶子节点最小样本数。
+- $\text{max_depth}$ 是树的最大深度，
+- $\text{min_samples_leaf}$ 是叶子节点最小样本数。
 
 ### 4.2 公式推导过程
 
 决策树构建过程中的决策规则可以表示为：
 
-$$ \\text{split}(X_j, \\text{threshold}) = \\begin{cases} 
-      \\text{left child} & \\text{if } X_j \\leq \\text{threshold} \\\\
-      \\text{right child} & \\text{if } X_j > \\text{threshold}
-   \\end{cases} $$
+$$ \text{split}(X_j, \text{threshold}) = \begin{cases}
+      \text{left child} & \text{if } X_j \leq \text{threshold} \\\
+      \text{right child} & \text{if } X_j > \text{threshold}
+   \end{cases} $$
 
 ### 4.3 案例分析与讲解
 
@@ -155,7 +155,7 @@ predictions = rf.predict(X_test)
 
 # 计算准确率
 accuracy = np.mean(predictions == y_test)
-print(f\"Accuracy: {accuracy}\")
+print(f"Accuracy: {accuracy}")
 ```
 
 ### 5.3 代码解读与分析

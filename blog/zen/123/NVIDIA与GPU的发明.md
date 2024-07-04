@@ -273,4 +273,4 @@ NVIDIA与GPU的发明彻底改变了图形处理领域，并为人工智能、�
 * **架构创新:** GPU架构将不断创新，例如采用更先进的并行计算技术、提高内存带宽等。
 * **应用扩展:** GPU将应用于更多领域，例如自动驾驶、医疗影像、金融科技等。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

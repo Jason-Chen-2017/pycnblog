@@ -194,7 +194,7 @@ ChatGPT的源代码主要包含以下几个部分：
     * Udacity
 
 ### 7.2  开发工具推荐
-* **Python:** 
+* **Python:**
 * **PyTorch:** 深度学习框架
 * **TensorFlow:** 深度学习框架
 * **HuggingFace:** 预训练模型库

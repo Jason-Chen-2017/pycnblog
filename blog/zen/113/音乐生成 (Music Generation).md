@@ -112,7 +112,7 @@ graph TB;
 为了训练模型，我们使用交叉熵损失函数作为损失函数：
 
 $$
-L = -\frac{1}{T'} \sum_{t=1}^{T'} \sum_{k=1}^{K} y_t[k] \log p(y_t|X) 
+L = -\frac{1}{T'} \sum_{t=1}^{T'} \sum_{k=1}^{K} y_t[k] \log p(y_t|X)
 $$
 
 其中 $K$ 是输出空间大小（例如音符数量），$p(y_t|X)$ 是给定输入序列 $X$ 的条件下生成音符 $y_t$ 的概率。
@@ -129,12 +129,12 @@ LSTM单元的状态更新和输出计算可以表示为：
 
 $$
 \begin{aligned}
-& \text{输入门} \; i_t = \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i) \\
-& \text{遗忘门} \; f_t = \sigma(W_{xf}x_t + W_{hf}h_{t-1} + b_f) \\
-& \text{细胞状态候选} \; \tilde{c}_t = \tanh(W_{xc}x_t + W_{hc}h_{t-1} + b_c) \\
-& \text{细胞状态} \; c_t = f_t \odot c_{t-1} + i_t \odot \tilde{c}_t \\
-& \text{输出门} \; o_t = \sigma(W_{xo}x_t + W_{ho}h_{t-1} + b_o) \\
-& \text{隐藏状态} \; h_t = o_t \odot \tanh(c_t) \\
+& \text{输入门} \; i_t = \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i) \
+& \text{遗忘门} \; f_t = \sigma(W_{xf}x_t + W_{hf}h_{t-1} + b_f) \
+& \text{细胞状态候选} \; \tilde{c}_t = \tanh(W_{xc}x_t + W_{hc}h_{t-1} + b_c) \
+& \text{细胞状态} \; c_t = f_t \odot c_{t-1} + i_t \odot \tilde{c}_t \
+& \text{输出门} \; o_t = \sigma(W_{xo}x_t + W_{ho}h_{t-1} + b_o) \
+& \text{隐藏状态} \; h_t = o_t \odot \tanh(c_t) \
 \end{aligned}
 $$
 

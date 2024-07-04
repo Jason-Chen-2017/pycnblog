@@ -96,7 +96,7 @@ GANs由生成器（generator）和判别器（discriminator）组成。生成器
 
 $$
 \begin{align*}
-\text{编码器：} & E(x) = \sigma(W_1x + b_1) \\
+\text{编码器：} & E(x) = \sigma(W_1x + b_1) \
 \text{解码器：} & D(z) = \sigma(W_2z + b_2)
 \end{align*}
 $$
@@ -108,7 +108,7 @@ GANs的数学模型涉及两个主要部分：
 
 $$
 \begin{align*}
-\text{生成器：} & G(z) = f(W_gz + b_g) \\
+\text{生成器：} & G(z) = f(W_gz + b_g) \
 \text{判别器：} & D(x) = g(W_dx + b_d)
 \end{align*}
 $$
@@ -122,7 +122,7 @@ $$
 
 $$
 \begin{align*}
-\mathcal{L} &= \frac{1}{N}\sum_{i=1}^{N}\|E(x_i)-D(E(x_i))\|^2 \\
+\mathcal{L} &= \frac{1}{N}\sum_{i=1}^{N}\|E(x_i)-D(E(x_i))\|^2 \
 &= \frac{1}{N}\sum_{i=1}^{N}(E(x_i)-D(E(x_i))) \cdot (E(x_i)-D(E(x_i)))
 \end{align*}
 $$
@@ -134,7 +134,7 @@ GANs的目标是同时最小化生成器和判别器的损失：
 
 $$
 \begin{align*}
-\mathcal{L}_G &= \mathbb{E}_{z \sim p_z} [\log D(G(z))] \\
+\mathcal{L}_G &= \mathbb{E}_{z \sim p_z} [\log D(G(z))] \
 \mathcal{L}_D &= \mathbb{E}_{x \sim p_x} [\log(1 - D(x))] + \mathbb{E}_{z \sim p_z} [\log D(G(z))]
 \end{align*}
 $$

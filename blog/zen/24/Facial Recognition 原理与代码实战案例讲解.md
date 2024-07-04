@@ -1,4 +1,4 @@
-                 
+
 # Facial Recognition 原理与代码实战案例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -97,7 +97,7 @@ faces = detector(gray_image)
 for (i, rect) in enumerate(faces):
     shape = predictor(gray_image, rect)
     shape = face_utils.shape_to_np(shape)
-    
+
     # 在图像上标记特征点
     for (x, y) in shape:
         cv2.circle(image, (x, y), 1, (0, 0, 255), -1)

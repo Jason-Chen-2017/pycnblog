@@ -134,8 +134,7 @@
 **策略梯度算法**：
 
 $$
-\theta_{t+1} = \theta_t + \alpha \
-abla_{\theta_t} J(\theta_t)
+\theta_{t+1} = \theta_t + \alpha \nabla_{\theta_t} J(\theta_t)
 $$
 
 其中，$\theta_t$ 表示第 $t$ 轮迭代的策略参数，$\theta_{t+1}$ 表示下一轮迭代的策略参数，$\alpha$ 表示学习率，$J(\theta)$ 表示策略 $J(\theta)$ 的评价函数。

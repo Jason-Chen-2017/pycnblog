@@ -42,8 +42,7 @@
 
 策略梯度方法通过梯度上升来优化策略，假设策略\\(\\pi_\\theta\\)依赖于参数\\(\\theta\\)：
 
-\\[ \
-abla_\\theta J(\\theta) \\approx \\mathbb{E}_{\\pi_\\theta}[G_t] \\]
+\\[ \nabla_\\theta J(\\theta) \\approx \\mathbb{E}_{\\pi_\\theta}[G_t] \\]
 
 其中\\(G_t\\)是到时间\\(t\\)的累积回报。
 

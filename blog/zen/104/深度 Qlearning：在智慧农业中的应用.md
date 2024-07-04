@@ -177,7 +177,7 @@ class DeepQNetwork(nn.Module):
         self.fc1 = nn.Linear(n_states, 24)
         self.fc2 = nn.Linear(24, 24)
         self.fc3 = nn.Linear(24, n_actions)
-    
+
     def forward(self, x):
         x = torch.relu(self.fc1(x))
         x = torch.relu(self.fc2(x))
@@ -196,7 +196,7 @@ def train(model, optimizer, memory, gamma=0.99, epsilon=0.1, n_episodes=1000):
         state = env.reset()
         done = False
         total_reward = 0
-        
+
         while not done:
             if np.random.rand() < epsilon:
                 action = np.random.randint(n_actions)
@@ -204,15 +204,15 @@ def train(model, optimizer, memory, gamma=0.99, epsilon=0.1, n_episodes=1000):
                 with torch.no_grad():
                     state_tensor = torch.tensor(state, dtype=torch.float32).unsqueeze(0)
                     action = model(state_tensor).argmax().item()
-            
+
             next_state, reward, done, _ = env.step(action)
             total_reward += reward
-            
+
             # 计算目标值
             with torch.no_grad():
                 next_state_tensor = torch.tensor(next_state, dtype=torch.float32).unsqueeze(0)
                 next_value = model(next_state_tensor).max()
-            
+
             # 更新Q值
             target_value = reward + gamma * next_value
             expected_value = model(state_tensor)[action]
@@ -220,12 +220,12 @@ def train(model, optimizer, memory, gamma=0.99, epsilon=0.1, n_episodes=1000):
             loss = nn.MSELoss()(expected_value, target_value)
             loss.backward()
             optimizer.step()
-            
+
             state = next_state
-            
+
         if episode % 100 == 99:
             print(f"Episode {episode+1}, Total Reward: {total_reward}")
-    
+
     env.close()
 
 # 模拟环境

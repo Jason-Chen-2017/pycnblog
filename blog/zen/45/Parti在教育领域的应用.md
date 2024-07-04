@@ -138,11 +138,11 @@ LSTM是一种循环神经网络，其核心公式如下：
 
 $$
 \begin{align*}
-i_t &= \sigma(W_{ix}x_t + W_{ih}h_{t-1} + b_i) \\
-f_t &= \sigma(W_{fx}x_t + W_{fh}h_{t-1} + b_f) \\
-\overline{c}_t &= \tanh(W_{cx}x_t + W_{ch}h_{t-1} + b_c) \\
-o_t &= \sigma(W_{ox}x_t + W_{oh}h_{t-1} + b_o) \\
-c_t &= f_t \odot c_{t-1} + i_t \odot \overline{c}_t \\
+i_t &= \sigma(W_{ix}x_t + W_{ih}h_{t-1} + b_i) \
+f_t &= \sigma(W_{fx}x_t + W_{fh}h_{t-1} + b_f) \
+\overline{c}_t &= \tanh(W_{cx}x_t + W_{ch}h_{t-1} + b_c) \
+o_t &= \sigma(W_{ox}x_t + W_{oh}h_{t-1} + b_o) \
+c_t &= f_t \odot c_{t-1} + i_t \odot \overline{c}_t \
 h_t &= o_t \odot \tanh(c_t)
 \end{align*}
 $$

@@ -229,13 +229,13 @@ $$\forall k \in [0, N), \forall l \in [0, n), h(K) - node(i, j) \leq h(K) - node
 
 首先,我们定义一个函数$f(x)$,表示从$x$顺时针遍历哈希环,找到的第一个虚拟节点:
 
-$$f(x) = \min\limits_{i \in [0, N), j \in [0, n)}\\{node(i, j) | node(i, j) \geq x\\}$$
+$$f(x) = \min\limits_{i \in [0, N), j \in [0, n)}\{node(i, j) | node(i, j) \geq x\}$$
 
 则我们需要找到的$node(i, j)$就是$f(h(K))$。
 
 为了高效地计算$f(x)$,我们可以构建一个有序列表$L$,其中包含所有虚拟节点:
 
-$$L = \\{node(i, j) | i \in [0, N), j \in [0, n)\\}$$
+$$L = \{node(i, j) | i \in [0, N), j \in [0, n)\}$$
 $$L = sort(L)$$
 
 则:

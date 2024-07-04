@@ -123,7 +123,7 @@ $$Q(s, a) \leftarrow Q(s, a) + \alpha [R(s, a, s') + \gamma \max_{a'} Q(s', a')]
 
 - **Q：** 如何避免AI Agent过于依赖过去的经验？
    - **A：** 引入探索策略（如ε-greedy策略），在探索与利用之间寻找平衡。
-   
+
 ## 5. 项目实践：代码实例和详细解释说明
 
 ### 5.1 开发环境搭建
@@ -153,23 +153,23 @@ class QLearningAgent:
         self.learning_rate = learning_rate
         self.discount_factor = discount_factor
         self.model = self.build_model()
-        
+
     def build_model(self):
         # 构建Q-learning模型
         pass
-    
+
     def train(self, states, actions, rewards, next_states, done):
         # 训练模型
         pass
-    
+
     def predict(self, state):
         # 预测动作值
         pass
-    
+
     def choose_action(self, state, epsilon):
         # 选择动作（探索或利用）
         pass
-    
+
 # 示例调用
 agent = QLearningAgent(state_size=4, action_size=2, learning_rate=0.01, discount_factor=0.9)
 ```

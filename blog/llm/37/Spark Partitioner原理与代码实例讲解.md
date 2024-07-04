@@ -156,8 +156,8 @@ $$
 
 $$
 partition(key) = \begin{cases}
-0, & \text{if } key < lowerBound_0\\
-i, & \text{if } lowerBound_i \leq key < upperBound_i\\
+0, & \text{if } key < lowerBound_0\
+i, & \text{if } lowerBound_i \leq key < upperBound_i\
 numPartitions-1, & \text{if } key \geq upperBound_{numPartitions-1}
 \end{cases}
 $$
@@ -218,8 +218,8 @@ $$
 
 $$
 partition(key) = \begin{cases}
-0, & \text{if } key < lowerBound_0\\
-i, & \text{if } lowerBound_i \leq key < upperBound_i\\
+0, & \text{if } key < lowerBound_0\
+i, & \text{if } lowerBound_i \leq key < upperBound_i\
 numPartitions-1, & \text{if } key \geq upperBound_{numPartitions-1}
 \end{cases}
 $$
@@ -230,4 +230,4 @@ $$
 
 为了更好地理解上述数学模型和公式,我们将通过一些具体案例进行分析和讲解。
 
-#### 4.3.1 
+#### 4.3.1

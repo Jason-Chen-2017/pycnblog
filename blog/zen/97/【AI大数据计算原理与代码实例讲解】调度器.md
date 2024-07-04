@@ -1,7 +1,7 @@
 
 # 【AI大数据计算原理与代码实例讲解】调度器
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 ### 1.1 问题的由来
@@ -152,8 +152,8 @@
 
 $$
 \begin{align*}
-\max_{\boldsymbol{x}} & f(\boldsymbol{x}) \\
-\text{subject to} & \sum_{i=1}^n x_i \leq m \\
+\max_{\boldsymbol{x}} & f(\boldsymbol{x}) \
+\text{subject to} & \sum_{i=1}^n x_i \leq m \
 & p_i \geq p_j \quad \forall i < j, x_i \
 eq x_j
 \end{align*}

@@ -206,9 +206,9 @@ public class WordCount {
     private final static IntWritable one = new IntWritable(1);
     private Text word = new Text();
 
-    public void map(Object key, Text value, Context context) 
+    public void map(Object key, Text value, Context context)
             throws IOException, InterruptedException {
-      String[] words = value.toString().split("\\s+");
+      String[] words = value.toString().split("\s+");
       for (String word : words) {
         this.word.set(word);
         context.write(this.word, one);
@@ -220,8 +220,8 @@ public class WordCount {
        extends Reducer<Text,IntWritable,Text,IntWritable> {
     private IntWritable result = new IntWritable();
 
-    public void reduce(Text key, Iterable<IntWritable> values, 
-                       Context context) 
+    public void reduce(Text key, Iterable<IntWritable> values,
+                       Context context)
             throws IOException, InterruptedException {
       int sum = 0;
       for (IntWritable val : values) {
@@ -390,7 +390,7 @@ public class WordCount {
 
     public void map(Object key, Text value, Context context)
             throws IOException, InterruptedException {
-      String[] words = value.toString().split("\\s+");
+      String[] words = value.toString().split("\s+");
       for (String word : words) {
         this.word.set(word);
         context.write(this.word, one);

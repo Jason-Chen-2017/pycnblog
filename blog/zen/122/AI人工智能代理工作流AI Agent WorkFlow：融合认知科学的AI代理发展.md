@@ -1,6 +1,6 @@
 # AI人工智能代理工作流AI Agent WorkFlow：融合认知科学的AI代理发展
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -329,4 +329,4 @@ AI代理工作流仍然面临着一些挑战，例如：
 * **Q: AI代理工作流的未来发展方向有哪些？**
     * **A:** AI代理工作流的未来发展方向包括融合认知科学、开发通用AI代理、解决伦理问题等。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

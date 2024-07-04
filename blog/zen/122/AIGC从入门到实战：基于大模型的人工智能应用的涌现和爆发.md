@@ -255,5 +255,5 @@ AIGC技术广泛应用于内容创作、教育培训、娱乐休闲等领域。
 可以通过学习深度学习、自然语言处理等相关知识，并阅读相关书籍、论文和博客。
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

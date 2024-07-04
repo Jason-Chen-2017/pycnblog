@@ -3,7 +3,7 @@
 ## 1. 背景介绍
 ### 1.1 人工智能的发展历程
 #### 1.1.1 早期的人工智能
-#### 1.1.2 机器学习的兴起 
+#### 1.1.2 机器学习的兴起
 #### 1.1.3 深度学习的突破
 
 ### 1.2 大语言模型的出现
@@ -67,7 +67,7 @@ $$
 
 #### 4.1.2 Multi-Head Attention的计算公式
 $$
-MultiHead(Q,K,V) = Concat(head_1, ..., head_h)W^O \\
+MultiHead(Q,K,V) = Concat(head_1, ..., head_h)W^O \
 head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)
 $$
 其中，$W_i^Q$、$W_i^K$、$W_i^V$、$W^O$为可学习的权重矩阵。
@@ -97,37 +97,37 @@ class SelfAttention(nn.Module):
         self.embed_size = embed_size
         self.heads = heads
         self.head_dim = embed_size // heads
-        
+
         assert (self.head_dim * heads == embed_size), "Embed size needs to be divisible by heads"
-        
+
         self.values = nn.Linear(self.head_dim, self.head_dim, bias=False)
         self.keys = nn.Linear(self.head_dim, self.head_dim, bias=False)
         self.queries = nn.Linear(self.head_dim, self.head_dim, bias=False)
         self.fc_out = nn.Linear(heads * self.head_dim, embed_size)
-    
+
     def forward(self, values, keys, query, mask):
         N = query.shape[0]
         value_len, key_len, query_len = values.shape[1], keys.shape[1], query.shape[1]
-        
+
         values = values.reshape(N, value_len, self.heads, self.head_dim)
         keys = keys.reshape(N, key_len, self.heads, self.head_dim)
         queries = query.reshape(N, query_len, self.heads, self.head_dim)
-        
+
         values = self.values(values)
         keys = self.keys(keys)
         queries = self.queries(queries)
-        
+
         energy = torch.einsum("nqhd,nkhd->nhqk", [queries, keys])
-        
+
         if mask is not None:
             energy = energy.masked_fill(mask == 0, float("-1e20"))
-        
+
         attention = torch.softmax(energy / (self.embed_size ** (1/2)), dim=3)
-        
+
         out = torch.einsum("nhql,nlhd->nqhd", [attention, values]).reshape(
             N, query_len, self.heads * self.head_dim
         )
-        
+
         out = self.fc_out(out)
         return out
 ```
@@ -142,13 +142,13 @@ class PolicyGradientAgent:
         self.state_size = state_size
         self.action_size = action_size
         self.learning_rate = learning_rate
-        
+
         self.gamma = 0.99
         self.states, self.actions, self.rewards = [], [], []
-        
+
         self.model = self.build_model()
         self.optimizer = tf.keras.optimizers.Adam(learning_rate)
-    
+
     def build_model(self):
         model = tf.keras.Sequential([
             tf.keras.layers.Dense(64, activation='relu', input_shape=(self.state_size,)),
@@ -156,41 +156,41 @@ class PolicyGradientAgent:
             tf.keras.layers.Dense(self.action_size, activation='softmax')
         ])
         return model
-    
+
     def remember(self, state, action, reward):
         self.states.append(state)
         self.actions.append(action)
         self.rewards.append(reward)
-    
+
     def act(self, state):
         state = np.reshape(state, (1, self.state_size))
         action_probs = self.model.predict(state)[0]
         action = np.random.choice(self.action_size, p=action_probs)
         return action
-    
+
     def train(self):
         states = np.array(self.states)
         actions = np.array(self.actions)
         rewards = np.array(self.rewards)
-        
+
         discounted_rewards = np.zeros_like(rewards)
         running_add = 0
         for t in reversed(range(len(rewards))):
             running_add = running_add * self.gamma + rewards[t]
             discounted_rewards[t] = running_add
-        
+
         discounted_rewards -= np.mean(discounted_rewards)
         discounted_rewards /= np.std(discounted_rewards)
-        
+
         with tf.GradientTape() as tape:
             action_probs = self.model(states)
             action_mask = tf.one_hot(actions, self.action_size)
             log_probs = tf.math.log(tf.reduce_sum(action_probs * action_mask, axis=1))
             loss = -tf.reduce_sum(log_probs * discounted_rewards)
-        
+
         grads = tape.gradient(loss, self.model.trainable_variables)
         self.optimizer.apply_gradients(zip(grads, self.model.trainable_variables))
-        
+
         self.states, self.actions, self.rewards = [], [], []
 ```
 以上代码实现了Policy Gradient算法，通过构建策略网络，根据状态生成动作概率分布，并使用梯度上升优化策略网络的参数，最大化期望回报。

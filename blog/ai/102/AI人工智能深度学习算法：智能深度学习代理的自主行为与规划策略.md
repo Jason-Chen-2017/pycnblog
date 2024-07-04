@@ -516,4 +516,4 @@ IDLA的研究也面临着一些挑战：
 * **行为安全:** 限制IDLA的行为范围，防止其做出危险的行动。
 * **安全评估:** 对IDLA进行安全评估，确保其安全可靠。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

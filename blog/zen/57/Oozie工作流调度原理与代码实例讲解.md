@@ -78,23 +78,23 @@ In this case, the scheduling algorithm would execute action C first, followed by
 To create a simple workflow in Oozie, you can use the following XML file:
 
 ```xml
-<workflow-app name=\"simple_workflow\" xmlns=\"uri:oozie:workflow:0.4\">
-  <start to=\"action_A\"/>
-  <action name=\"action_A\">
+<workflow-app name="simple_workflow" xmlns="uri:oozie:workflow:0.4">
+  <start to="action_A"/>
+  <action name="action_A">
     <map-reduce>
       <job-tracker>${jobTracker}</job-tracker>
       <name-node>${nameNode}</name-node>
       <jar>${oozie.wf.apps.path}/simple_workflow.jar</jar>
-      <input path=\"${inputDir}\"/>
-      <output path=\"${outputDir}\"/>
+      <input path="${inputDir}"/>
+      <output path="${outputDir}"/>
     </map-reduce>
   </action>
-  <action name=\"action_B\">
+  <action name="action_B">
     <map-reduce>
       <!-- ... -->
     </map-reduce>
   </action>
-  <action name=\"action_C\">
+  <action name="action_C">
     <map-reduce>
       <!-- ... -->
     </map-reduce>

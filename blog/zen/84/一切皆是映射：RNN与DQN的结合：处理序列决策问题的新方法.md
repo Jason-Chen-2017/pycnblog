@@ -125,11 +125,11 @@ graph TD
 
 $$
 \begin{aligned}
-\text{ forget\_gate} &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \\
-\text{input\_gate} &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \\
-\text{cell\_state} &= \text{forget\_gate} \cdot c_{t-1} + \text{input\_gate} \cdot \tanh(W_c \cdot [h_{t-1}, x_t] + b_c) \\
-\text{output\_gate} &= \sigma(W_o \cdot [h_{t-1}, \text{tanh}(c_t)] + b_o) \\
-h_t &= \text{output\_gate} \cdot \tanh(c_t) \\
+\text{ forget\_gate} &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \
+\text{input\_gate} &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \
+\text{cell\_state} &= \text{forget\_gate} \cdot c_{t-1} + \text{input\_gate} \cdot \tanh(W_c \cdot [h_{t-1}, x_t] + b_c) \
+\text{output\_gate} &= \sigma(W_o \cdot [h_{t-1}, \text{tanh}(c_t)] + b_o) \
+h_t &= \text{output\_gate} \cdot \tanh(c_t) \
 y_t &= W_y \cdot h_t + b_y
 \end{aligned}
 $$

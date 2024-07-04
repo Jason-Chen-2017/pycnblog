@@ -140,9 +140,7 @@ MetaGPT适用于多个领域，包括但不限于：
 #### 强化学习模型
 
 - **价值函数**：$V(s, \\pi)$，其中$s$为状态，$\\pi$为策略。
-- **策略更新**：$\\pi' = \\pi + \\alpha \\cdot \
-abla_\\pi J(\\pi)$，其中$\\alpha$为学习率，$\
-abla_\\pi$为梯度，$J(\\pi)$为策略的损失函数。
+- **策略更新**：$\\pi' = \\pi + \\alpha \\cdot \nabla_\\pi J(\\pi)$，其中$\\alpha$为学习率，$\nabla_\\pi$为梯度，$J(\\pi)$为策略的损失函数。
 
 ### 4.2 公式推导过程
 
@@ -167,9 +165,7 @@ $$\\theta' = O(\\theta', R, \\pi)$$
 $$V(s, \\pi) = \\sum_{t=0}^{\\infty} \\gamma^t r_t$$
 其中$r_t$为即时奖励，$\\gamma$为折扣因子。
 
-- **策略更新**：$\\pi' = \\pi + \\alpha \\cdot \
-abla_\\pi J(\\pi)$通过梯度$\
-abla_\\pi$和学习率$\\alpha$更新策略$\\pi$：
+- **策略更新**：$\\pi' = \\pi + \\alpha \\cdot \nabla_\\pi J(\\pi)$通过梯度$\nabla_\\pi$和学习率$\\alpha$更新策略$\\pi$：
 $$J(\\pi) = \\mathbb{E}_{s, a \\sim p(s, a|\\pi)} \\left[\\mathbb{E}_{\\pi'}[\\mathcal{L}(s, a, \\pi')]\\right]$$
 其中$\\mathcal{L}(s, a, \\pi')$为损失函数，衡量当前策略$\\pi$与目标策略$\\pi'$之间的差异。
 

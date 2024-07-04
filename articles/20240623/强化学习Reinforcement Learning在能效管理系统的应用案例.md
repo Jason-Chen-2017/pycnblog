@@ -146,8 +146,7 @@ DQN算法在能效管理系统中的应用领域包括：
 
 3. **梯度下降**：
    - 使用梯度下降法来优化Q网络的参数$\theta$：
-     $$ \theta \leftarrow \theta - \alpha \
-abla_\theta L(\theta) $$
+     $$ \theta \leftarrow \theta - \alpha \nabla_\theta L(\theta) $$
      其中，$\alpha$表示学习率。
 
 ### 4.3 案例分析与讲解

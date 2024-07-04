@@ -185,4 +185,3 @@ def chat():
     # Get the user's input
     input_text = request.json['input']
 
-   

@@ -23,7 +23,7 @@
 自然语言生成(Natural Language Generation, NLG)是NLP的一个重要分支,旨在自动生成可读、流畅的自然语言文本。NLG技术在多个领域都有广泛的应用前景:
 
 - 对话系统和虚拟助手
-- 自动文本摘要和报告生成 
+- 自动文本摘要和报告生成
 - 自动创作(如新闻、故事、诗歌等)
 - 数据到文本的转换
 - 辅助残障人士进行交流
@@ -119,7 +119,7 @@ $$\text{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{softmax}\left(\fr
 其中 $d_k$ 为缩放因子,用于防止点积的方差过大导致梯度下降不稳定。Multi-Head Attention则是将多个Attention头的结果拼接:
 
 $$\begin{aligned}
-\text{MultiHead}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) &= \text{Concat}(\text{head}_1, ..., \text{head}_h)\mathbf{W^O} \\
+\text{MultiHead}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) &= \text{Concat}(\text{head}_1, ..., \text{head}_h)\mathbf{W^O} \
 \text{where } \text{head}_i &= \text{Attention}(\mathbf{Q}\mathbf{W}_i^Q, \mathbf{K}\mathbf{W}_i^K, \mathbf{V}\mathbf{W}_i^V)
 \end{aligned}$$
 

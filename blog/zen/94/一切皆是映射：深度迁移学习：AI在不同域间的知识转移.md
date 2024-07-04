@@ -205,10 +205,10 @@ class TextDataset(Dataset):
         self.labels = labels
         self.tokenizer = tokenizer
         self.max_len = max_len
-        
+
     def __len__(self):
         return len(self.texts)
-    
+
     def __getitem__(self, item):
         text = self.texts[item]
         label = self.labels[item]

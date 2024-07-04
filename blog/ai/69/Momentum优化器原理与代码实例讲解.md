@@ -95,11 +95,11 @@ Momentum优化器在以下领域得到了广泛应用：
 Momentum优化器的数学模型可以表示为：
 
 $$
-\theta_{t+1} = \theta_t + v_{t+1} 
+\theta_{t+1} = \theta_t + v_{t+1}
 $$
 
 $$
-v_{t+1} = \mu v_t - \eta g_t 
+v_{t+1} = \mu v_t - \eta g_t
 $$
 
 其中，$\theta_t$ 为第 $t$ 次迭代的参数，$g_t$ 为第 $t$ 次迭代的梯度，$v_t$ 为第 $t$ 次迭代的动量项，$\mu$ 为动量系数，$\eta$ 为学习率。
@@ -113,13 +113,13 @@ Momentum优化器的推导过程如下：
 根据梯度下降的思想，$t+1$ 次迭代的参数更新公式为：
 
 $$
-\theta_{t+1} = \theta_t - \eta g_t 
+\theta_{t+1} = \theta_t - \eta g_t
 $$
 
 为了引入动量项，我们假设 $t+1$ 次迭代的动量项 $v_{t+1}$ 与 $t$ 次迭代的动量项 $v_t$ 成正比，即：
 
 $$
-v_{t+1} = \mu v_t 
+v_{t+1} = \mu v_t
 $$
 
 其中 $\mu$ 为动量系数，通常取值范围为 $0 < \mu < 1$。
@@ -127,35 +127,35 @@ $$
 将上述公式代入 $t+1$ 次迭代的参数更新公式，得：
 
 $$
-\theta_{t+1} = \theta_t - \eta g_t + \mu \eta g_t 
+\theta_{t+1} = \theta_t - \eta g_t + \mu \eta g_t
 $$
 
 化简得：
 
 $$
-\theta_{t+1} = \theta_t + (\mu - 1) \eta g_t 
+\theta_{t+1} = \theta_t + (\mu - 1) \eta g_t
 $$
 
 为了使 $t+1$ 次迭代的动量项 $v_{t+1}$ 与 $t$ 次迭代的梯度 $g_t$ 成正比，我们令：
 
 $$
-\mu \eta g_t = g_t 
+\mu \eta g_t = g_t
 $$
 
 解得：
 
 $$
-\eta = \frac{1}{\mu} 
+\eta = \frac{1}{\mu}
 $$
 
 因此，Momentum优化器的参数更新公式为：
 
 $$
-\theta_{t+1} = \theta_t - g_t + \mu v_t 
+\theta_{t+1} = \theta_t - g_t + \mu v_t
 $$
 
 $$
-v_{t+1} = \mu v_t - g_t 
+v_{t+1} = \mu v_t - g_t
 $$
 
 ### 4.3 案例分析与讲解

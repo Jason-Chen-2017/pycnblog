@@ -4,7 +4,7 @@
 
 ### 1.1 流处理的发展历程
 #### 1.1.1 传统批处理的局限性
-#### 1.1.2 实时流处理的兴起 
+#### 1.1.2 实时流处理的兴起
 #### 1.1.3 流批一体化趋势
 
 ### 1.2 Apache Flink的崛起
@@ -24,7 +24,7 @@
 #### 2.1.2 动态表与流、关系表的关系
 #### 2.1.3 动态表的特性
 
-### 2.2 连续查询(Continuous Query) 
+### 2.2 连续查询(Continuous Query)
 #### 2.2.1 连续查询的概念
 #### 2.2.2 连续查询的执行模型
 #### 2.2.3 连续查询的优化挑战
@@ -46,7 +46,7 @@
 ```mermaid
 graph LR
   A[Append-only Stream] --> D[Table]
-  B[Retract Stream] --> D[Table] 
+  B[Retract Stream] --> D[Table]
   C[Upsert Stream] --> D[Table]
   D --> E[Append-only Stream]
   D --> F[Retract Stream]
@@ -71,7 +71,7 @@ graph LR
 
 ### 3.3 窗口操作的实现
 #### 3.3.1 滚动窗口(Tumbling Window)
-#### 3.3.2 滑动窗口(Sliding Window) 
+#### 3.3.2 滑动窗口(Sliding Window)
 #### 3.3.3 会话窗口(Session Window)
 
 ### 3.4 时间语义的处理
@@ -89,7 +89,7 @@ graph LR
 ### 4.2 窗口计算公式
 #### 4.2.1 滚动窗口计算
 $$ W_t = [t,t+size) $$
-#### 4.2.2 滑动窗口计算  
+#### 4.2.2 滑动窗口计算
 $$ W_t = [t,t+size) $$
 $$ S_t = [t,t+slide) $$
 #### 4.2.3 会话窗口计算
@@ -139,7 +139,7 @@ Table resultTable = orderTable
   .groupBy($("user_id"), $("item_id"))
   .select($("user_id"), $("item_id"), $("amount").sum().as("total_amount"));
 
-// SQL风格查询  
+// SQL风格查询
 Table resultTable2 = tEnv.sqlQuery(
   "SELECT user_id, item_id, SUM(amount) AS total_amount " +
   "FROM KafkaTable " +
@@ -175,20 +175,20 @@ Table tumbleResult = orderTable
   .groupBy($("user_id"), $("w"))
   .select($("user_id"), $("w").start(), $("w").end(), $("amount").sum());
 
-// Sliding Window  
+// Sliding Window
 Table slideResult = orderTable
   .window(Slide.over(lit(10).minutes())
                .every(lit(5).minutes())
                .on($("order_time"))
                .as("w"))
-  .groupBy($("user_id"), $("w"))  
+  .groupBy($("user_id"), $("w"))
   .select($("user_id"), $("w").start(), $("w").end(), $("amount").sum());
 
 // Session Window
 Table sessionResult = orderTable
   .window(Session.withGap(lit(30).minutes()).on($("order_time")).as("w"))
   .groupBy($("user_id"), $("w"))
-  .select($("user_id"), $("w").start(), $("w").end(), $("amount").sum());  
+  .select($("user_id"), $("w").start(), $("w").end(), $("amount").sum());
 ```
 
 ### 5.4 时间属性使用
@@ -199,7 +199,7 @@ tEnv.executeSql("CREATE TABLE KafkaTable (
   `item_id` BIGINT,
   `behavior` STRING,
   `ts` TIMESTAMP(3),
-  WATERMARK FOR `ts` AS `ts` - INTERVAL '5' SECOND  
+  WATERMARK FOR `ts` AS `ts` - INTERVAL '5' SECOND
 ) WITH (
   'connector' = 'kafka',
   'topic' = 'user_behavior',
@@ -261,7 +261,7 @@ Table eventTimeResult = tEnv.sqlQuery(
 
 ### 8.1 流批一体化
 #### 8.1.1 API层面的统一
-#### 8.1.2 SQL标准的扩展 
+#### 8.1.2 SQL标准的扩展
 #### 8.1.3 状态一致性语义
 
 ### 8.2 云原生

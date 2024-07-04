@@ -25,9 +25,7 @@ $$
 ### 4.2 策略梯度公式
 在强化学习中，策略梯度用于优化智能体的策略：
 $$
-\
-abla J(\\theta) \\approx \\sum_{t=1}^{T} \\gamma^{t-1} \
-abla \\log \\pi (a_t|s_t,\\theta) G_t
+\nabla J(\\theta) \\approx \\sum_{t=1}^{T} \\gamma^{t-1} \nabla \\log \\pi (a_t|s_t,\\theta) G_t
 $$
 其中，$J(\\theta)$是策略性能指标；$\\pi (a_t|s_t,\\theta)$为给定状态$s_t$和参数$\\theta$下选择动作$a_t$的概率。
 

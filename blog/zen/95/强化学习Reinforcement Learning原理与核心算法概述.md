@@ -119,8 +119,7 @@ $$ Q(s,a) \leftarrow Q(s,a) + \alpha [R(s,a) + \gamma Q(s',a') - Q(s,a)] $$
 其中，$a'$ 为在下一个状态 $s'$ 下采取的动作。
 
 - **策略梯度更新公式**：
-$$ \theta \leftarrow \theta - \alpha \
-abla_{\theta} J(\theta) $$
+$$ \theta \leftarrow \theta - \alpha \nabla_{\theta} J(\theta) $$
 其中，$\theta$ 为策略参数，$J(\theta)$ 为策略的期望回报。
 
 ### 4.3 案例分析与讲解

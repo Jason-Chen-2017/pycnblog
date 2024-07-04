@@ -124,9 +124,9 @@
 
 $$
 \begin{aligned}
-&\text{状态空间} \ S = \{s_1, s_2, s_3\} \\
-&\text{动作空间} \ A = \{a_1, a_2\} \\
-&\text{动作-状态转移函数} \ T(s, a) = S' \\
+&\text{状态空间} \ S = \{s_1, s_2, s_3\} \
+&\text{动作空间} \ A = \{a_1, a_2\} \
+&\text{动作-状态转移函数} \ T(s, a) = S' \
 &\text{奖励函数} \ R(s, a) = r
 \end{aligned}
 $$
@@ -208,18 +208,18 @@ class SimpleEnv(gym.Env):
         else:
             # 减速
             state[0] -= 0.1
-        
+
         # 限制状态范围
         state = np.clip(state, 0, 1)
-        
+
         # 计算奖励
         reward = 0
         if state[0] > 0.5:
             reward = 1
-        
+
         # 更新状态
         self.state = state
-        
+
         return np.array(state), reward, False, {}
 
     def reset(self):

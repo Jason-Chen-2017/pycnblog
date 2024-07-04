@@ -90,7 +90,7 @@ $$
 
 其中，α 是学习率，用于控制学习速度。
 
-## 5. 项目实践：代码实例和详细解释说明 
+## 5. 项目实践：代码实例和详细解释说明
 
 ### 5.1 使用 Python 实现 Q-learning
 
@@ -101,33 +101,33 @@ import random
 
 def q_learning(env, num_episodes, alpha, gamma, epsilon):
     q_table = {}  # 初始化 Q 表
-    
+
     for episode in range(num_episodes):
         state = env.reset()  # 重置环境
         done = False
-        
+
         while not done:
             # 根据 ε-greedy 策略选择动作
             if random.uniform(0, 1) < epsilon:
                 action = env.action_space.sample()  # 随机选择动作
             else:
                 action = max(q_table[state], key=q_table[state].get)  # 选择 Q 值最大的动作
-            
+
             next_state, reward, done, _ = env.step(action)  # 执行动作
-            
+
             # 更新 Q 值
             if state not in q_table:
                 q_table[state] = {}  # 初始化状态-动作对的 Q 值
             if action not in q_table[state]:
                 q_table[state][action] = 0  # 初始化动作的 Q 值
-            
+
             old_value = q_table[state][action]
             next_max = max(q_table[next_state].values()) if next_state in q_table else 0
             new_value = (1 - alpha) * old_value + alpha * (reward + gamma * next_max)
             q_table[state][action] = new_value
-            
+
             state = next_state  # 更新状态
-    
+
     return q_table
 ```
 

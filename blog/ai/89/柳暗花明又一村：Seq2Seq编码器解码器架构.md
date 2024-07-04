@@ -89,9 +89,9 @@ Seq2Seq编码器-解码器架构的数学模型如下：
 
 $$
 \begin{aligned}
-\text{Encoder}(x) &= \text{Encoder}(\text{h}_1, \text{h}_2, \ldots, \text{h}_T) \\
-\text{Attention}(y_t, x) &= w_a \text{softmax}(\text{score}(y_t, x_1), \text{score}(y_t, x_2), \ldots, \text{score}(y_t, x_T)) \\
-\text{Decoder}(y_{t-1}, h_t) &= \text{Decoder}(\text{h}_1, \text{h}_2, \ldots, \text{h}_T, y_{t-1}) \\
+\text{Encoder}(x) &= \text{Encoder}(\text{h}_1, \text{h}_2, \ldots, \text{h}_T) \
+\text{Attention}(y_t, x) &= w_a \text{softmax}(\text{score}(y_t, x_1), \text{score}(y_t, x_2), \ldots, \text{score}(y_t, x_T)) \
+\text{Decoder}(y_{t-1}, h_t) &= \text{Decoder}(\text{h}_1, \text{h}_2, \ldots, \text{h}_T, y_{t-1}) \
 y_t &= \text{softmax}(\text{OutputLayer}(\text{Decoder}(y_{t-1}, h_t)))
 \end{aligned}
 $$
@@ -104,8 +104,8 @@ $$
 
 $$
 \begin{aligned}
-\text{score}(y_t, x_i) &= \text{Dot}(y_t, \text{proj}_Q(h_i), \text{proj}_K(h_i), \text{proj}_V(h_i)) \\
-\text{Dot}(y_t, h_i) &= y_t^T h_i \\
+\text{score}(y_t, x_i) &= \text{Dot}(y_t, \text{proj}_Q(h_i), \text{proj}_K(h_i), \text{proj}_V(h_i)) \
+\text{Dot}(y_t, h_i) &= y_t^T h_i \
 \end{aligned}
 $$
 

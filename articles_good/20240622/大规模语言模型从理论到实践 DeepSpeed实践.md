@@ -123,16 +123,14 @@ DeepSpeed中的数学模型主要包括：
 
 假设模型参数为$\\theta$，损失函数为$L(\\theta)$，梯度下降算法的更新公式为：
 
-$$\\theta_{new} = \\theta_{old} - \\alpha \\cdot \
-abla_{\\theta}L(\\theta)$$
+$$\\theta_{new} = \\theta_{old} - \\alpha \\cdot \nabla_{\\theta}L(\\theta)$$
 
 其中，
 
 - $\\theta_{old}$为旧参数，
 - $\\theta_{new}$为新参数，
 - $\\alpha$为学习率，
-- $\
-abla_{\\theta}L(\\theta)$为损失函数关于参数$\\theta$的梯度。
+- $\nabla_{\\theta}L(\\theta)$为损失函数关于参数$\\theta$的梯度。
 
 ### 4.3 案例分析与讲解
 

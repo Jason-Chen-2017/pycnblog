@@ -41,7 +41,7 @@ Samza采用有向无环图(DAG)来描述流处理的拓扑结构。数据在图�
 #### 3.1.2 Operator
 算子,对输入流进行转换操作,如map、filter、join等,并将结果发送到下游。
 
-#### 3.1.3 Sink 
+#### 3.1.3 Sink
 输出节点,将处理后的数据写入外部存储,如Kafka、HDFS、Elasticsearch等。
 
 ### 3.2 任务调度与容错
@@ -143,9 +143,9 @@ Samza的一致性模型保证:
 ```java
 public class WordCountTask implements StreamTask {
   private static final Logger LOG = LoggerFactory.getLogger(WordCountTask.class);
-  
+
   private KeyValueStore<String, Integer> store;
-  
+
   @Override
   public void init(Config config, TaskContext context) {
     this.store = (KeyValueStore<String, Integer>) context.getStore("word-count");
@@ -171,7 +171,7 @@ public class WordCountTask implements StreamTask {
 ### 5.3 作业配置
 创建一个config.properties文件,配置流和任务:
 
-```properties  
+```properties
 # Kafka consumer configs
 systems.kafka.samza.factory=org.apache.samza.system.kafka.KafkaSystemFactory
 systems.kafka.consumer.zookeeper.connect=localhost:2181
@@ -179,7 +179,7 @@ systems.kafka.consumer.auto.offset.reset=earliest
 
 # Kafka producer configs
 systems.kafka.producer.bootstrap.servers=localhost:9092
-  
+
 # Job configs
 job.factory.class=org.apache.samza.job.local.ThreadJobFactory
 job.name=word-count
@@ -195,7 +195,7 @@ task.checkpoint.replication.factor=1
 ```
 
 - 配置了Kafka的消费者和生产者参数。
-- 指定了作业名称和默认的流系统。  
+- 指定了作业名称和默认的流系统。
 - 配置了任务的输入流、窗口大小和检查点参数。
 
 ### 5.4 运行作业

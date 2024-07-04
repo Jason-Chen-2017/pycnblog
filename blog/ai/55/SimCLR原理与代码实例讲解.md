@@ -10,7 +10,7 @@
 #### 1.1.3 发掘数据内在结构和特征
 
 ### 1.2 对比学习的兴起
-#### 1.2.1 对比学习的核心思想 
+#### 1.2.1 对比学习的核心思想
 #### 1.2.2 对比学习的优势
 #### 1.2.3 对比学习的代表算法
 
@@ -50,7 +50,7 @@
 
 ### 3.2 数据增强模块
 #### 3.2.1 随机裁剪
-#### 3.2.2 随机颜色失真 
+#### 3.2.2 随机颜色失真
 #### 3.2.3 高斯模糊
 
 ### 3.3 编码器网络
@@ -251,10 +251,10 @@ def train(net, data_loader, train_optimizer, temperature=0.5, epochs=100):
         feature_1, out_1 = net(pos_1)
         feature_2, out_2 = net(pos_2)
         out = torch.cat([out_1, out_2], dim=0)
-        
+
         logits, labels = info_nce_loss(out, batch_size, temperature)
         loss = criterion(logits, labels)
-        
+
         train_optimizer.zero_grad()
         loss.backward()
         train_optimizer.step()
@@ -273,7 +273,7 @@ import torch
 import torch.optim as optim
 
 # 设置超参数
-batch_size = 256 
+batch_size = 256
 epochs = 100
 temperature = 0.5
 learning_rate = 1e-3
@@ -294,9 +294,9 @@ criterion = nn.CrossEntropyLoss().to(device)
 # 训练模型
 for epoch in range(1, epochs + 1):
     train_loss = train(net, train_loader, optimizer, temperature=temperature, epochs=epochs)
-    
+
 # 保存模型权重
-torch.save(net.state_dict(), 'simclr_model.pth') 
+torch.save(net.state_dict(), 'simclr_model.pth')
 ```
 
 ## 6. 实际应用场景

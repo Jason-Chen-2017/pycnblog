@@ -118,7 +118,7 @@ AI代理工作流技术广泛应用于遥感数据处理的多个环节，包括
 $$
 \hat{x}_i =
 \begin{cases}
-x_i, & \text{if } x_i \text{ is not missing} \\
+x_i, & \text{if } x_i \text{ is not missing} \
 \text{median}(X), & \text{if } x_i \text{ is missing}
 \end{cases}
 $$
@@ -157,7 +157,7 @@ $$
 
 $$
 C = \frac{1}{m-1}\begin{bmatrix}
-\sum_{i=1}^{m}(x_{1i}-\bar{x_1})(x_{1i}-\bar{x_1}) & \sum_{i=1}^{m}(x_{1i}-\bar{x_1})(x_{2i}-\bar{x_2}) \\
+\sum_{i=1}^{m}(x_{1i}-\bar{x_1})(x_{1i}-\bar{x_1}) & \sum_{i=1}^{m}(x_{1i}-\bar{x_1})(x_{2i}-\bar{x_2}) \
 \sum_{i=1}^{m}(x_{2i}-\bar{x_2})(x_{1i}-\bar{x_1}) & \sum_{i=1}^{m}(x_{2i}-\bar{x_2})(x_{2i}-\bar{x_2})
 \end{bmatrix}
 $$

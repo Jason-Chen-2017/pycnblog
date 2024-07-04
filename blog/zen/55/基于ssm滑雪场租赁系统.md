@@ -20,7 +20,7 @@
 SSM框架是Spring、Spring MVC和MyBatis的缩写,是目前主流的Java Web开发框架。
 
 - Spring: 提供了IoC容器和AOP等基础功能,是整个系统的核心。
-- Spring MVC: 基于MVC设计模式的Web框架,负责处理HTTP请求和响应。  
+- Spring MVC: 基于MVC设计模式的Web框架,负责处理HTTP请求和响应。
 - MyBatis: 数据持久化框架,提供了对象关系映射(ORM)和SQL管理功能。
 
 ### 2.2 领域模型
@@ -35,7 +35,7 @@ SSM框架是Spring、Spring MVC和MyBatis的缩写,是目前主流的Java Web开
 
 ```mermaid
 graph LR
-A[用户预订] --> B[现场取装备] 
+A[用户预订] --> B[现场取装备]
 B --> C[装备使用]
 C --> D[装备归还]
 D --> E[订单结算]
@@ -49,7 +49,7 @@ D --> E[订单结算]
 为了提高租赁装备的利用率和用户满意度,系统需要根据用户的身高、体重、滑雪水平等信息,智能推荐合适的装备。
 
 #### 3.1.1 用户画像建模
-#### 3.1.2 装备属性标注  
+#### 3.1.2 装备属性标注
 #### 3.1.3 协同过滤算法
 
 ### 3.2 库存预测算法
@@ -101,7 +101,7 @@ $$x_i(t) = \mu_i + \sum_{k=1}^p \alpha_{ik} x_i(t-k) + \sum_{j=1}^q \beta_{ij}z_
 $$\max \sum_{i=1}^m \sum_{j=1}^n r_{ij}x_{ij}$$
 
 $$s.t. \sum_{i=1}^m x_{ij} \leq s_j, \forall j=1,\ldots,n$$
-     
+
 $$\sum_{j=1}^n x_{ij} \leq 1, \forall i=1,\ldots,m$$
 
 $$x_{ij} \in \{0,1\}, \forall i,j$$
@@ -125,8 +125,8 @@ $$x_{ij} \in \{0,1\}, \forall i,j$$
     <property name="equipmentDAO" ref="equipmentDAO"/>
 </bean>
 
-<!-- 装备Controller -->  
-<bean class="com.ski.controller.EquipmentController">  
+<!-- 装备Controller -->
+<bean class="com.ski.controller.EquipmentController">
     <property name="equipmentService" ref="equipmentService"/>
 </bean>
 ```
@@ -143,10 +143,10 @@ Spring的配置文件定义了装备管理模块的DAO、Service和Controller等
             and name like concat('%',#{name},'%')
         </if>
         <if test="type != null">
-            and type = #{type}  
+            and type = #{type}
         </if>
     </where>
-    order by id 
+    order by id
 </select>
 ```
 
@@ -157,10 +157,10 @@ Spring的配置文件定义了装备管理模块的DAO、Service和Controller等
 ```java
 @Service
 public class EquipmentServiceImpl implements EquipmentService {
-    
+
     @Autowired
     private EquipmentDAO equipmentDAO;
-    
+
     @Override
     public List<Equipment> search(String name, String type) {
         Map<String, Object> param = new HashMap<>();
@@ -168,17 +168,17 @@ public class EquipmentServiceImpl implements EquipmentService {
         param.put("type", type);
         return equipmentDAO.selectByCondition(param);
     }
-    
+
     @Override
     public void rent(int userId, int equipId, Date startDate, Date endDate) {
         // 1.查询装备信息
         Equipment equip = equipmentDAO.selectById(equipId);
-        
+
         // 2.检查库存
         if (equip.getInventory() == 0) {
             throw new NoInventoryException();
         }
-        
+
         // 3.创建订单
         Order order = new Order();
         order.setUserId(userId);
@@ -187,12 +187,12 @@ public class EquipmentServiceImpl implements EquipmentService {
         order.setEndDate(endDate);
         order.setStatus(OrderStatus.RESERVED);
         orderDAO.insert(order);
-        
+
         // 4.冻结库存
         equip.setInventory(equip.getInventory() - 1);
         equip.setFrozen(equip.getFrozen() + 1);
         equipmentDAO.update(equip);
-    }  
+    }
 }
 ```
 
@@ -207,7 +207,7 @@ public class EquipmentServiceImpl implements EquipmentService {
 - 装备推荐,提升满意度
 - 移动支付,便捷快速
 
-### 6.2 装备管理  
+### 6.2 装备管理
 - 实时盘点,掌控库存
 - 自动调配,提高周转
 - 数据分析,优化采购
@@ -220,7 +220,7 @@ public class EquipmentServiceImpl implements EquipmentService {
 ## 7.工具和资源推荐
 
 ### 7.1 开发工具
-- IDE: IntelliJ IDEA、Eclipse  
+- IDE: IntelliJ IDEA、Eclipse
 - 项目管理: Maven、Gradle
 - 版本控制: Git、SVN
 
@@ -229,7 +229,7 @@ public class EquipmentServiceImpl implements EquipmentService {
 - Dubbo: 分布式服务框架
 - Shiro: 安全权限控制
 
-### 7.3 中间件 
+### 7.3 中间件
 - Redis: 分布式缓存
 - RocketMQ: 消息队列
 - Elasticsearch: 搜索引擎
@@ -246,7 +246,7 @@ public class EquipmentServiceImpl implements EquipmentService {
 ### 8.1 智能化
 利用机器学习算法,实现装备推荐、需求预测、动态定价等智能化应用,提高系统的自适应性和用户体验。
 
-### 8.2 数字化  
+### 8.2 数字化
 通过射频识别(RFID)、二维码等数字化标签,实现装备的全生命周期管理和溯源,提高管理效率和安全性。
 
 ### 8.3 平台化
@@ -270,7 +270,7 @@ public class EquipmentServiceImpl implements EquipmentService {
 - 购买装备保险,降低意外损失的风险
 
 ### 9.3 如何选择合适的开发技术和架构?
-- 综合考虑系统的性能、可伸缩性、安全性、成本等因素 
+- 综合考虑系统的性能、可伸缩性、安全性、成本等因素
 - 充分评估团队的技术能力和项目经验
 - 借鉴同行业的最佳实践和成功案例
 - 适当引入新技术,但要谨慎评估其成熟度和风

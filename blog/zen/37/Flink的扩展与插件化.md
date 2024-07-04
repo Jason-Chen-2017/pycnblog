@@ -183,7 +183,7 @@ Flink 的扩展和插件化机制可以应用于多个领域,为用户提供了�
 
 $$
 \begin{aligned}
-&\text{UpperCaseMap} = f(\text{Configuration})\\
+&\text{UpperCaseMap} = f(\text{Configuration})\
 &\text{Configuration} = g(\text{Properties})
 \end{aligned}
 $$
@@ -200,9 +200,9 @@ SPI 是一种动态加载扩展的机制,它允许应用程序在运行时发现
 
 $$
 \begin{aligned}
-&\text{Functions} = \{f_1, f_2, \ldots, f_n\}\\
+&\text{Functions} = \{f_1, f_2, \ldots, f_n\}\
 &f_i \in \text{ServiceLoader.load(Function.class)}
 \end{aligned}
 $$
 
-其中,`Functions` 是一个集合,它包含了所有实现了 `Function` 接口的扩展。`ServiceLoader.load(Function.class)` 
+其中,`Functions` 是一个集合,它包含了所有实现了 `Function` 接口的扩展。`ServiceLoader.load(Function.class)`

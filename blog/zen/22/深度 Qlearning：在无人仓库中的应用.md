@@ -1,4 +1,4 @@
-                 
+
 # 深度 Q-learning：在无人仓库中的应用
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -158,7 +158,7 @@ class DQN:
     def __init__(self, state_size, action_size):
         self.state_size = state_size
         self.action_size = action_size
-        
+
         # Initialize the model architecture with two hidden layers
         self.model = tf.keras.Sequential([
             layers.Dense(256, input_dim=self.state_size),
@@ -167,7 +167,7 @@ class DQN:
             layers.ReLU(),
             layers.Dense(self.action_size)
         ])
-        
+
         # Compile the model with appropriate loss function and optimizer
         self.model.compile(loss='mse', optimizer=tf.optimizers.Adam(lr=0.001))
 
@@ -182,7 +182,7 @@ class DQN:
             else:
                 target = rewards[i]
             targets[i][actions[i]] = target
-            
+
         history = self.model.fit(states, targets, epochs=1, verbose=0)
         return history.history['loss'][0]
 
@@ -273,10 +273,10 @@ for episode in range(num_episodes):
 
 - **问题**：如何平衡探索与利用？
    - **解答**：采用epsilon-greedy策略，在早期阶段增加随机动作的概率促进探索，随着训练进行逐渐减少，最终专注于利用已学知识做出决策。
-   
+
 - **问题**：如何应对过拟合风险？
    - **解答**：使用经验回放缓冲区、正则化技术（如L1/L2正则）、dropout等手段来限制模型复杂度，防止过拟合现象的发生。
-   
+
 - **问题**：深度Q-learning是否适用于所有类型的问题？
    - **解答**：深度Q-learning特别适合于需要学习决策规则、目标导向的任务，但对于高度不确定、非确定性较强的环境，可能需要结合其他方法，如蒙特卡洛树搜索等。
 

@@ -61,8 +61,8 @@ SVM的优化目标是在最大化间隔的同时最小化分类错误。数学�
 
 $$
 \begin{align*}
-\text{minimize} & \quad \frac{1}{2}w^Tw + C\sum_{i=1}^{n}\xi_i \\
-\text{subject to} & \quad y_i(w^Tx_i+b)-1+\xi_i \geq 0, \quad \forall i \\
+\text{minimize} & \quad \frac{1}{2}w^Tw + C\sum_{i=1}^{n}\xi_i \
+\text{subject to} & \quad y_i(w^Tx_i+b)-1+\xi_i \geq 0, \quad \forall i \
 & \quad \xi_i \geq 0, \quad \forall i
 \end{align*}
 $$

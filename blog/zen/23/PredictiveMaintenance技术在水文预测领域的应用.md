@@ -1,4 +1,4 @@
-                 
+
 # Predictive Maintenance 技术在水文预测领域的应用
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -52,7 +52,7 @@
 
 - **数据来源**：气象站、水文观测站、卫星遥感等。
 - **数据清洗**：去除异常值、填补缺失值、标准化/归一化数据。
-  
+
 #### 特征选择与生成
 
 - **时间序列特征**：过去几天的降雨量、水位高度、流速等。
@@ -117,7 +117,7 @@ $$
 通过求偏导数并令其为零得到：
 
 $$
-\frac{\partial}{\partial \beta_0}\sum_{i=1}^n(T_i-(\beta_0+\beta_1t_i))^2=-2\sum_{i=1}^{n}(T_i-(\beta_0+\beta_1t_i))=0 \\
+\frac{\partial}{\partial \beta_0}\sum_{i=1}^n(T_i-(\beta_0+\beta_1t_i))^2=-2\sum_{i=1}^{n}(T_i-(\beta_0+\beta_1t_i))=0 \
 \frac{\partial}{\partial \beta_1}\sum_{i=1}^n(T_i-(\beta_0+\beta_1t_i))^2=-2\sum_{i=1}^{n}(T_i-(\beta_0+\beta_1t_i)t_i)=0
 $$
 
@@ -258,10 +258,10 @@ print(f"Predicted Water Level: {predicted_level}")
 ### 7.3 相关论文推荐
 
 - **水文学领域**：
-  - "A Review of Hydrological Predictive Models and Their Applications in Flood Forecasting" 
+  - "A Review of Hydrological Predictive Models and Their Applications in Flood Forecasting"
 - **机器学习与预测**：
   - "Deep Learning for Time Series Forecasting: A Survey"
-  
+
 ### 7.4 其他资源推荐
 
 - **开源库**：Scikit-Learn, PyTorch, TensorBoard

@@ -53,7 +53,7 @@ K-Means算法广泛应用于各个领域，例如：
 ### 4.1  数学模型构建
 K-Means算法的数学模型可以表示为：
 
-* **目标函数:** 
+* **目标函数:**
 $$
 J(C) = \sum_{i=1}^{K} \sum_{x \in C_i} ||x - c_i||^2
 $$
@@ -184,7 +184,7 @@ print("聚类中心:", centroids)
     * edX上的机器学习课程
 
 ### 7.2  开发工具推荐
-* **Python:** 
+* **Python:**
     * scikit-learn
     * TensorFlow
     * PyTorch
@@ -224,5 +224,5 @@ print("聚类中心:", centroids)
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

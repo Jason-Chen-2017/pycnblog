@@ -330,4 +330,4 @@ mse = mean_squared_error(y_test, y_pred)
 
 **A:** 可以采用数据脱敏、数据加密等方法，保护敏感数据，确保数据安全和用户隐私。还可以采用数据隔离、访问控制等方法，限制对数据的访问权限。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

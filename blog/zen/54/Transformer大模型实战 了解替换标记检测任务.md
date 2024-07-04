@@ -87,7 +87,7 @@ $$
 多头注意力可以看作是$h$个注意力函数的并行：
 
 $$
-\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_h)W^O \\
+\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_h)W^O \
 \text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
 $$
 

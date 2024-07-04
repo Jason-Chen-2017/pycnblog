@@ -8,7 +8,7 @@
 
 ### 1.1 人工智能的发展历程
 #### 1.1.1 早期人工智能
-#### 1.1.2 机器学习时代  
+#### 1.1.2 机器学习时代
 #### 1.1.3 深度学习的崛起
 
 ### 1.2 OpenAI公司简介
@@ -32,7 +32,7 @@
 
 ### 2.3 预训练与微调
 #### 2.3.1 预训练的概念
-#### 2.3.2 微调的概念 
+#### 2.3.2 微调的概念
 #### 2.3.3 预训练和微调的关系
 
 ### 2.4 Few-shot Learning
@@ -62,7 +62,7 @@ D --> E[OpenAI Assistants]
 #### 3.2.2 InstructGPT的训练方法
 #### 3.2.3 InstructGPT的优势
 
-### 3.3 RLHF(Reinforcement Learning from Human Feedback) 
+### 3.3 RLHF(Reinforcement Learning from Human Feedback)
 #### 3.3.1 RLHF的原理
 #### 3.3.2 RLHF的训练流程
 #### 3.3.3 RLHF的应用
@@ -132,7 +132,7 @@ openai.api_key = "your_api_key"
 prompt = "OpenAI is"
 
 response = openai.Completion.create(
-  engine="davinci", 
+  engine="davinci",
   prompt=prompt,
   max_tokens=50,
   n=1,

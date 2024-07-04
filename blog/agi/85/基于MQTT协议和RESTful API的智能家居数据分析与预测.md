@@ -219,7 +219,7 @@ $$
 对损失函数求偏导，并令偏导等于0，可得：
 
 $$
-\beta_0 = \frac{\sum_{i=1}^n (y_i - \sum_{j=1}^m \beta_j x_{ij})}{n} \\
+\beta_0 = \frac{\sum_{i=1}^n (y_i - \sum_{j=1}^m \beta_j x_{ij})}{n} \
 \beta_j = \frac{\sum_{i=1}^n (y_i - \sum_{k=1}^m \beta_k x_{ik}) x_{ij}}{\sum_{i=1}^n x_{ij}^2}
 $$
 
@@ -331,14 +331,14 @@ client.subscribe(MQTT_TOPIC)
 def on_message(client, userdata, message):
     # 解析消息内容
     data = json.loads(message.payload)
-    
+
     # 存储数据
     response = requests.post(DATA_API_URL, json=data)
-    
+
     # 预测温度
     x_predict = np.array([[data['time']]])
     y_predict = model.predict(x_predict)
-    
+
     # 控制空调
     control_air_conditioner(y_predict[0])
 

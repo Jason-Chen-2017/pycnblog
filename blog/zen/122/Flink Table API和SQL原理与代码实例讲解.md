@@ -408,4 +408,4 @@ A：Flink Table API 和 SQL 的未来发展趋势：
 - **云原生化**：支持云原生环境，例如：Kubernetes、Docker 等。
 - **更强大的功能**：提供更强大的功能，例如：支持窗口函数、时间属性等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

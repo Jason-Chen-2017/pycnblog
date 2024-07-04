@@ -106,7 +106,7 @@ Presto-Hive整合涉及到的数据模型主要包括：
 #### SQL语句示例
 
 ```sql
-SELECT * FROM hive_table 
+SELECT * FROM hive_table
 WHERE last_modified > (SELECT MAX(last_modified) FROM hive_table)
 ORDER BY last_modified DESC;
 ```

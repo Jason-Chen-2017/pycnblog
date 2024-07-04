@@ -389,4 +389,4 @@ out.release()
 *   **关注相关技术博客和论坛。**
 *   **参加相关学术会议和技术研讨会。**
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

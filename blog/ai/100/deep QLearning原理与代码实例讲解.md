@@ -151,7 +151,7 @@ $$
 **策略**：
 
 $$
-\pi(a|s) = \begin{cases} 
+\pi(a|s) = \begin{cases}
 \frac{1}{\sum_{a'} Q(s,a')} & \text{if } a \in \arg\max_{a'} Q(s,a') \\
 0 & \text{otherwise}
 \end{cases}

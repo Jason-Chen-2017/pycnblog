@@ -1,4 +1,4 @@
-                 
+
 # 图像处理的AI大模型：重塑视觉技术的未来
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -125,7 +125,7 @@ $$\mathcal{L}(x, x') = \log\left(1 + e^{-D(x, x')}\right)$$
 2. 接着，通过某种方式（如随机遮挡）得到局部改变后的图像$I'$。
 3. 训练模型预测$I'$中被遮挡部分的内容，目标是最小化预测内容与实际内容的距离：
    $$\min_\theta \mathcal{L}(f(I), f(I'))$$
-   
+
 通过上述过程，模型可以学习到图像中的空间关系和上下文信息，提高其对各种视觉任务的性能。
 
 ### 4.4 常见问题解答
@@ -172,7 +172,7 @@ class CustomModel(nn.Module):
         # VGG16模型加载
         self.backbone = models.vgg16(pretrained=True).features
         num_features = self.backbone[-1].in_channels
-        
+
         # 添加自定义层
         self.fc = nn.Linear(num_features * 7 * 7, 1024)  # 示例输出层
 
@@ -191,10 +191,10 @@ optimizer = optim.Adam(model.parameters(), lr=0.001)
 for epoch in range(num_epochs):
     for inputs, _ in dataloader:
         optimizer.zero_grad()
-        
+
         outputs = model(inputs)
         loss = criterion(outputs, inputs)  # 根据任务调整loss计算方式
-        
+
         loss.backward()
         optimizer.step()
 ```

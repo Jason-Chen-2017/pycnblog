@@ -62,26 +62,26 @@ ShuffleNet因其轻量级特性，广泛应用于移动设备上的图像分类�
 ShuffleNet的核心数学模型包括深度可分离卷积和通道混洗操作。深度可分离卷积可以表示为：
 
 $$
-\\text{Depthwise Convolution}(x) = W_d \\ast x,
+\text{Depthwise Convolution}(x) = W_d \ast x,
 $$
 
 $$
-\\text{Pointwise Convolution}(x) = W_p \\cdot \\text{DepthwiseConv}(x),
+\text{Pointwise Convolution}(x) = W_p \cdot \text{DepthwiseConv}(x),
 $$
 
-其中$W_d$是深度卷积权重矩阵，$W_p$是点卷积权重矩阵，$\\ast$表示卷积操作。
+其中$W_d$是深度卷积权重矩阵，$W_p$是点卷积权重矩阵，$\ast$表示卷积操作。
 
 ### 4.2 公式推导过程
 
-- **深度可分离卷积**：$W_d \\in \\mathbb{R}^{C \\times K \\times K \\times I}$，$W_p \\in \\mathbb{R}^{K \\times K \\times O}$，其中$C$是输入通道数，$K$是卷积核大小，$I$是输入深度，$O$是输出通道数。
+- **深度可分离卷积**：$W_d \in \mathbb{R}^{C \times K \times K \times I}$，$W_p \in \mathbb{R}^{K \times K \times O}$，其中$C$是输入通道数，$K$是卷积核大小，$I$是输入深度，$O$是输出通道数。
 - **通道混洗**：通道混洗操作可以看作是特征图的重排列，通常通过指数变换或随机选择来实现，具体公式依赖于具体实现。
 
 ### 4.3 案例分析与讲解
 
 考虑一个简单的ShuffleNet网络结构：
 
-- 输入：$3 \\times 224 \\times 224$
-- 混合操作层：深度可分离卷积和通道混洗交替应用，例如$3 \\times 3$深度卷积，步长为$1$，填充为$1$，点卷积步长为$1$。
+- 输入：$3 \times 224 \times 224$
+- 混合操作层：深度可分离卷积和通道混洗交替应用，例如$3 \times 3$深度卷积，步长为$1$，填充为$1$，点卷积步长为$1$。
 - 池化层：最大池化，步长为$2$，填充为$0$。
 - 输出：经过若干混合操作和池化后，特征图的尺寸会逐渐减少，最终通过全连接层或直接通过全局平均池化（Global Average Pooling）得到分类结果。
 

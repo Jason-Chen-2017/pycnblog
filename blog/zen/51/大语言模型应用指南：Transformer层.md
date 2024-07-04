@@ -141,40 +141,40 @@ class MultiHeadAttention(nn.Module):
         self.d_model = d_model
         self.num_heads = num_heads
         self.head_dim = d_model // num_heads
-        
+
         self.q_linear = nn.Linear(d_model, d_model)
         self.k_linear = nn.Linear(d_model, d_model)
         self.v_linear = nn.Linear(d_model, d_model)
         self.out_linear = nn.Linear(d_model, d_model)
-    
+
     def forward(self, query, key, value, mask=None):
         batch_size = query.size(0)
-        
+
         # 线性变换
         Q = self.q_linear(query)
         K = self.k_linear(key)
         V = self.v_linear(value)
-        
+
         # 分头
         Q = Q.view(batch_size, -1, self.num_heads, self.head_dim).transpose(1, 2)
         K = K.view(batch_size, -1, self.num_heads, self.head_dim).transpose(1, 2)
         V = V.view(batch_size, -1, self.num_heads, self.head_dim).transpose(1, 2)
-        
+
         # 计算注意力得分
         scores = torch.matmul(Q, K.transpose(-2, -1)) / (self.head_dim ** 0.5)
         if mask is not None:
             scores = scores.masked_fill(mask == 0, -1e9)
         attn_weights = nn.functional.softmax(scores, dim=-1)
-        
+
         # 加权求和
         attn_output = torch.matmul(attn_weights, V)
-        
+
         # 合并头
         attn_output = attn_output.transpose(1, 2).contiguous().view(batch_size, -1, self.d_model)
-        
+
         # 线性输出
         output = self.out_linear(attn_output)
-        
+
         return output
 
 class PositionWiseFeedForward(nn.Module):
@@ -182,7 +182,7 @@ class PositionWiseFeedForward(nn.Module):
         super().__init__()
         self.fc1 = nn.Linear(d_model, d_ff)
         self.fc2 = nn.Linear(d_ff, d_model)
-    
+
     def forward(self, x):
         x = self.fc1(x)
         x = nn.functional.relu(x)
@@ -198,22 +198,22 @@ class TransformerLayer(nn.Module):
         self.norm2 = nn.LayerNorm(d_model)
         self.dropout1 = nn.Dropout(dropout)
         self.dropout2 = nn.Dropout(dropout)
-    
+
     def forward(self, x, mask=None):
         # 多头注意力
         attn_output = self.attn(x, x, x, mask)
         attn_output = self.dropout1(attn_output)
-        
+
         # 残差连接和层归一化
         x = self.norm1(x + attn_output)
-        
+
         # 前馈神经网络
         ffn_output = self.ffn(x)
         ffn_output = self.dropout2(ffn_output)
-        
+
         # 残差连接和层归一化
         x = self.norm2(x + ffn_output)
-        
+
         return x
 ```
 

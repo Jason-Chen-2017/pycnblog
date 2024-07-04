@@ -162,7 +162,7 @@ A：AI Agent的执行模型设计取决于硬件设备和任务需求。对于�
 3. 安装其他依赖库：安装图像处理库、语音识别库、控制系统库等。
 
    ```
-   pip install opencv-python 
+   pip install opencv-python
    pip install speech_recognition
    pip install pyserial
    ```

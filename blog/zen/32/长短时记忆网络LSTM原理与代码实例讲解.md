@@ -49,8 +49,8 @@ LSTM的核心在于其门控机制，通过门控来调节信息流。在处理�
 1. **初始化**：设定初始的细胞状态（$c_0$）和隐藏状态（$h_0$）。
 2. **前向传播**：对于每一个时间步$t$，执行以下步骤：
    - 计算输入门向量（$i_t$）、遗忘门向量（$f_t$）、输出门向量（$o_t$）和细胞状态向量（$c_t$）。
-   - 更新细胞状态：$c_t = f_t \\odot c_{t-1} + i_t \\odot \\tanh(W \\cdot [x_t, h_{t-1}] + b)$。
-   - 更新隐藏状态：$h_t = o_t \\odot \\tanh(c_t)$。
+   - 更新细胞状态：$c_t = f_t \odot c_{t-1} + i_t \odot \tanh(W \cdot [x_t, h_{t-1}] + b)$。
+   - 更新隐藏状态：$h_t = o_t \odot \tanh(c_t)$。
 
 ### 3.3 算法优缺点
 
@@ -67,13 +67,13 @@ LSTM广泛应用于自然语言处理、语音识别、时间序列预测、生�
 
 LSTM的门控机制可以表示为以下公式：
 
-- 输入门：$i_t = \\sigma(W_i[x_t, h_{t-1}] + b_i)$
-- 遗忘门：$f_t = \\sigma(W_f[x_t, h_{t-1}] + b_f)$
-- 输出门：$o_t = \\sigma(W_o[x_t, h_{t-1}] + b_o)$
-- 细胞状态更新：$c_t = f_t \\odot c_{t-1} + i_t \\odot \\tanh(W_c[x_t, h_{t-1}] + b_c)$
-- 输出：$h_t = o_t \\odot \\tanh(c_t)$
+- 输入门：$i_t = \sigma(W_i[x_t, h_{t-1}] + b_i)$
+- 遗忘门：$f_t = \sigma(W_f[x_t, h_{t-1}] + b_f)$
+- 输出门：$o_t = \sigma(W_o[x_t, h_{t-1}] + b_o)$
+- 细胞状态更新：$c_t = f_t \odot c_{t-1} + i_t \odot \tanh(W_c[x_t, h_{t-1}] + b_c)$
+- 输出：$h_t = o_t \odot \tanh(c_t)$
 
-其中，$\\sigma$是sigmoid函数，$\\tanh$是双曲正切函数，$W$是权重矩阵，$b$是偏置项。
+其中，$\sigma$是sigmoid函数，$\tanh$是双曲正切函数，$W$是权重矩阵，$b$是偏置项。
 
 ### 4.2 公式推导过程
 
@@ -113,20 +113,20 @@ for t in range(num_time_steps):
     # 计算输入门和遗忘门的输入向量
     forget_input = np.concatenate((X[t], np.array([np.ones(batch_size)])), axis=1)
     forget_output = np.tanh(np.dot(forget_input, Wi) + bf)
-    
+
     # 计算输入门的输入向量
     input_input = np.concatenate((X[t], np.array([forget_output])), axis=1)
     input_output = np.tanh(np.dot(input_input, Wi) + bf)
-    
+
     # 计算输出门的输入向量
     output_input = np.concatenate((input_output, np.array([forget_output])), axis=1)
     output_output = np.tanh(np.dot(output_input, Wo) + bo)
-    
+
     # 更新隐藏状态和输出
     hidden_state = forget_output * output_output
     output = output_output * np.exp(hidden_state)
-    
-    print(f\"Time step {t}: Hidden state = {hidden_state}, Output = {output}\")
+
+    print(f"Time step {t}: Hidden state = {hidden_state}, Output = {output}")
 
 ```
 

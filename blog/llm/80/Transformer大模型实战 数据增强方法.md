@@ -123,9 +123,9 @@ $$
 假设原始词语 $x_i$ 的替换概率为 $p$，则替换后的词语 $r_i(x_i)$ 为：
 
 $$
-r_i(x_i) = \begin{cases} 
+r_i(x_i) = \begin{cases}
 y_i & \text{with probability } p \\
-x_i & \text{with probability } 1-p 
+x_i & \text{with probability } 1-p
 \end{cases}
 $$
 

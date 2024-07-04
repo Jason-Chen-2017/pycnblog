@@ -103,7 +103,7 @@ DQN与GANs的结合，可以实现以下联系：
 - GANs：生成器和判别器的损失函数分别为：
 
   $$
-L_G = -\mathbb{E}_{z \sim p(z)}[D(G(z))] 
+L_G = -\mathbb{E}_{z \sim p(z)}[D(G(z))]
 $$
 
   $$

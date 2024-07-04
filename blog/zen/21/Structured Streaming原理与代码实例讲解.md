@@ -1,4 +1,4 @@
-                 
+
 # Structured Streaming原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -116,8 +116,8 @@ $$processTime(i_j) = \text{当前时间} - \text{事件到达延迟}$$
 我们可以使用以下SQL查询：
 
 ```sql
-SELECT user_id, COUNT(*) AS activity_count 
-FROM messages 
+SELECT user_id, COUNT(*) AS activity_count
+FROM messages
 WHERE event_time >= current_timestamp - INTERVAL '30 minutes'
 GROUP BY user_id;
 ```

@@ -265,21 +265,21 @@ from moviepy.editor import VideoFileClip
 def process_video(video_path):
     # 加载视频
     video = VideoFileClip(video_path)
-    
+
     # 抽取关键帧
     frames = [frame for frame in video.iter_frames()]
     key_frames = [frames[i] for i in range(0, len(frames), 30)]
-    
+
     # 提取音频信息
     audio_path = 'audio.mp3'
     video.audio.write_audiofile(audio_path)
-    
+
     # 将视频数据转换为 CSV 格式
     data = []
     for i, frame in enumerate(key_frames):
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         data.append([frame, i])
-    
+
     df = pd.DataFrame(data)
     df.to_csv('video.csv', index=False)
 

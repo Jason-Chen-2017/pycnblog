@@ -96,12 +96,10 @@ MBGD算法在深度学习中得到了广泛应用，特别是在以下领域：
 MBGD算法的数学模型可以表示为：
 
 $$
-\theta_{t+1} = \theta_t - \alpha \
-abla_{\theta} J(\theta_t, x_t, y_t)
+\theta_{t+1} = \theta_t - \alpha \nabla_{\theta} J(\theta_t, x_t, y_t)
 $$
 
-其中，$\theta$ 为模型参数，$J$ 为目标函数，$x$ 为输入，$y$ 为输出，$\alpha$ 为学习率，$\
-abla_{\theta} J$ 为目标函数关于参数 $\theta$ 的梯度。
+其中，$\theta$ 为模型参数，$J$ 为目标函数，$x$ 为输入，$y$ 为输出，$\alpha$ 为学习率，$\nabla_{\theta} J$ 为目标函数关于参数 $\theta$ 的梯度。
 
 ### 4.2 公式推导过程
 
@@ -134,11 +132,11 @@ $$
 根据MBGD算法的公式，得：
 
 $$
-\theta_{0,t+1} = \theta_{0,t} - \alpha \frac{\partial J}{\partial \theta_0} 
+\theta_{0,t+1} = \theta_{0,t} - \alpha \frac{\partial J}{\partial \theta_0}
 $$
 
 $$
-\theta_{1,t+1} = \theta_{1,t} - \alpha \frac{\partial J}{\partial \theta_1} 
+\theta_{1,t+1} = \theta_{1,t} - \alpha \frac{\partial J}{\partial \theta_1}
 $$
 
 ### 4.3 案例分析与讲解

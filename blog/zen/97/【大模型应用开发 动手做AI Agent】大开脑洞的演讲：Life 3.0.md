@@ -104,8 +104,8 @@ AI Agent的数学模型主要包括以下几部分：
 
 $$
 \begin{align*}
-S_t &\in \mathcal{S} & A_t &\in \mathcal{A} \\
-R_t &\in \mathbb{R} \\
+S_t &\in \mathcal{S} & A_t &\in \mathcal{A} \
+R_t &\in \mathbb{R} \
 S_{t+1} &\in \mathcal{S}
 \end{align*}
 $$

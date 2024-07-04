@@ -76,27 +76,27 @@
 假设源语言文本由长度为$m$的序列$x=(x_1,x_2,...,x_m)$组成，目标语言文本由长度为$n$的序列$y=(y_1,y_2,...,y_n)$组成。对于Transformer模型，可以构建以下数学模型：
 
 - **编码器**：通过多层自注意力机制将源语言文本映射到隐藏空间$H_x$：
-\\[H_x = Encoder(x)\\]
+$$H_x = Encoder(x)$$
 
 - **解码器**：通过多层自注意力和跨注意力机制生成目标语言文本：
-\\[H_y = Decoder(H_x, y)\\]
+$$H_y = Decoder(H_x, y)$$
 
 - **输出**：通过线性变换和Softmax函数得到概率分布：
-\\[P(y|H_x) = \\text{Softmax}(W_y \\cdot Decoder(H_x, y) + b_y)\\]
+$$P(y|H_x) = \text{Softmax}(W_y \cdot Decoder(H_x, y) + b_y)$$
 
 ### 4.2 公式推导过程
 
 #### 自注意力机制：
 
 对于源语言文本$x$，自注意力机制可以表示为：
-\\[Attention(query, key, value) = \\text{Softmax}\\left(\\frac{query \\cdot key^T}{\\sqrt{d_k}}\\right) \\cdot value\\]
+$$Attention(query, key, value) = \text{Softmax}\left(\frac{query \cdot key^T}{\sqrt{d_k}}\right) \cdot value$$
 
 其中，$d_k$是键和查询向量的维度。
 
 #### 解码器：
 
 解码器中的跨注意力模块可以表示为：
-\\[CrossAttention(query, key, value) = \\text{Softmax}\\left(\\frac{query \\cdot key^T}{\\sqrt{d_k}}\\right) \\cdot value\\]
+$$CrossAttention(query, key, value) = \text{Softmax}\left(\frac{query \cdot key^T}{\sqrt{d_k}}\right) \cdot value$$
 
 ### 4.3 案例分析与讲解
 
@@ -133,13 +133,13 @@ class CustomTransformerMT(nn.Module):
         super(CustomTransformerMT, self).__init__()
         self.tokenizer_source = AutoTokenizer.from_pretrained(source_lang)
         self.tokenizer_target = AutoTokenizer.from_pretrained(target_lang)
-        self.model = AutoModelForSeq2SeqLM.from_pretrained(f\"{source_lang}-{target_lang}\")
+        self.model = AutoModelForSeq2SeqLM.from_pretrained(f"{source_lang}-{target_lang}")
 
     def forward(self, source_text, target_text=None):
         # Tokenize input
-        source_tokenized = self.tokenizer_source(source_text, padding=\"max_length\", truncation=True, max_length=512, return_tensors=\"pt\")
+        source_tokenized = self.tokenizer_source(source_text, padding="max_length", truncation=True, max_length=512, return_tensors="pt")
         if target_text is not None:
-            target_tokenized = self.tokenizer_target(target_text, padding=\"max_length\", truncation=True, max_length=512, return_tensors=\"pt\")
+            target_tokenized = self.tokenizer_target(target_text, padding="max_length", truncation=True, max_length=512, return_tensors="pt")
 
         # Forward pass
         if target_text is None:
@@ -160,8 +160,8 @@ class CustomTransformerMT(nn.Module):
 ### 5.4 运行结果展示
 
 ```python
-model = CustomTransformerMT(\"en\", \"zh\")
-source_text = \"I like to watch movies with my family on weekends.\"
+model = CustomTransformerMT("en", "zh")
+source_text = "I like to watch movies with my family on weekends."
 generated_text = model(source_text)
 print(generated_text)
 ```

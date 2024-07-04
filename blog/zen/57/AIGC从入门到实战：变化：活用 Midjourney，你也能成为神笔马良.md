@@ -48,7 +48,7 @@ E --> H[Transformer架构]
 
 ### 3.2 CLIP（Contrastive Language-Image Pre-training）
 #### 3.2.1 视觉编码器
-#### 3.2.2 文本编码器  
+#### 3.2.2 文本编码器
 #### 3.2.3 对比学习目标
 
 ### 3.3 Transformer架构
@@ -60,7 +60,7 @@ E --> H[Transformer架构]
 ### 4.1 扩散模型的数学表示
 #### 4.1.1 前向扩散过程
 $$ q(x_t|x_{t-1}) = \mathcal{N}(x_t; \sqrt{1-\beta_t} x_{t-1}, \beta_t \mathbf{I}) $$
-#### 4.1.2 逆扩散过程 
+#### 4.1.2 逆扩散过程
 $$ p_\theta(x_{t-1}|x_t) = \mathcal{N}(x_{t-1}; \mu_\theta(x_t, t), \Sigma_\theta(x_t, t)) $$
 #### 4.1.3 训练目标
 $$ \mathcal{L}_{vlb} = \mathbb{E}_{q(x_{0:T})} \left[ -\log \frac{p_\theta(x_{0:T})}{q(x_{1:T}|x_0)} \right] $$
@@ -69,7 +69,7 @@ $$ \mathcal{L}_{vlb} = \mathbb{E}_{q(x_{0:T})} \left[ -\log \frac{p_\theta(x_{0:
 #### 4.2.1 视觉编码器
 $$ v = E_v(x) $$
 #### 4.2.2 文本编码器
-$$ t = E_t(y) $$  
+$$ t = E_t(y) $$
 #### 4.2.3 对比学习目标
 $$ \mathcal{L}_{clip} = -\frac{1}{N} \sum_{i=1}^N \log \frac{\exp(v_i \cdot t_i / \tau)}{\sum_{j=1}^N \exp(v_i \cdot t_j / \tau)} $$
 
@@ -85,13 +85,13 @@ $$ \mathcal{L}_{clip} = -\frac{1}{N} \sum_{i=1}^N \log \frac{\exp(v_i \cdot t_i 
 /imagine prompt: A beautiful sunset over the ocean
 ```
 #### 5.2.2 调整图像生成参数
-```  
+```
 /imagine prompt: A beautiful sunset over the ocean --ar 16:9 --q 2 --stylize 1000
 ```
 #### 5.2.3 图像变体和上传图像
 ```
 /imagine prompt: A beautiful sunset over the ocean --seed 1234 --v 4
-/imagine prompt: [uploaded image] A beautiful sunset over the ocean 
+/imagine prompt: [uploaded image] A beautiful sunset over the ocean
 ```
 
 ### 5.3 高级技巧和最佳实践
@@ -105,7 +105,7 @@ $$ \mathcal{L}_{clip} = -\frac{1}{N} \sum_{i=1}^N \log \frac{\exp(v_i \cdot t_i 
 #### 6.1.2 游戏设计和场景生成
 #### 6.1.3 产品设计和原型制作
 
-### 6.2 营销和广告  
+### 6.2 营销和广告
 #### 6.2.1 社交媒体图像和视频
 #### 6.2.2 广告创意和视觉效果
 #### 6.2.3 品牌设计和视觉识别
@@ -118,7 +118,7 @@ $$ \mathcal{L}_{clip} = -\frac{1}{N} \sum_{i=1}^N \log \frac{\exp(v_i \cdot t_i 
 ## 7. 工具和资源推荐
 ### 7.1 Midjourney相关工具
 #### 7.1.1 Midjourney Prompt Generator
-#### 7.1.2 Midjourney Gallery  
+#### 7.1.2 Midjourney Gallery
 #### 7.1.3 Midjourney Community
 
 ### 7.2 其他AIGC工具和平台
@@ -133,7 +133,7 @@ $$ \mathcal{L}_{clip} = -\frac{1}{N} \sum_{i=1}^N \log \frac{\exp(v_i \cdot t_i 
 
 ## 8. 总结：未来发展趋势与挑战
 ### 8.1 AIGC的发展趋势
-#### 8.1.1 多模态生成和跨领域应用  
+#### 8.1.1 多模态生成和跨领域应用
 #### 8.1.2 个性化和交互式生成
 #### 8.1.3 AIGC与传统创作的融合
 
@@ -153,7 +153,7 @@ $$ \mathcal{L}_{clip} = -\frac{1}{N} \sum_{i=1}^N \log \frac{\exp(v_i \cdot t_i 
 #### 9.1.2 Midjourney生成图像的版权归属？
 #### 9.1.3 如何处理Midjourney生成的不适当内容？
 
-### 9.2 AIGC的一般问题 
+### 9.2 AIGC的一般问题
 #### 9.2.1 AIGC会取代人类创作者吗？
 #### 9.2.2 如何平衡AIGC的创新性和伦理性？
 #### 9.2.3 AIGC对创意产业的影响和未来发展？

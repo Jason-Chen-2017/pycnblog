@@ -96,10 +96,8 @@ LoRA适用于多种自然语言处理任务，包括但不限于：
 
 #### 更新规则：
 
-- **梯度更新**：$\theta' = \theta - \alpha \cdot \
-abla_\theta J(\theta, W)$
-- **参数矩阵更新**：$W' = W - \beta \cdot \
-abla_W J(\theta', W)$
+- **梯度更新**：$\theta' = \theta - \alpha \cdot \nabla_\theta J(\theta, W)$
+- **参数矩阵更新**：$W' = W - \beta \cdot \nabla_W J(\theta', W)$
 
 其中，$\alpha$和$\beta$是学习率，$J(\theta, W)$是损失函数。
 

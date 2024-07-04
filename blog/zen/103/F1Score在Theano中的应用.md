@@ -38,7 +38,7 @@
 - 精确率：表示模型预测为正类的样本中，实际为正类的比例。计算公式如下：
 
   $$
- \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}} 
+ \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
 $$
 
   其中，TP为真正例，FP为假正例。
@@ -46,7 +46,7 @@ $$
 - 召回率：表示模型预测为正类的样本中，实际为正类的比例。计算公式如下：
 
   $$
- \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}} 
+ \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
 $$
 
   其中，FN为假反例。
@@ -56,7 +56,7 @@ $$
 F1 Score是精确率和召回率的调和平均数，综合考虑了两个指标。计算公式如下：
 
 $$
- F1 Score = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}} 
+ F1 Score = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
 $$
 
 F1 Score的值介于0和1之间，值越高表示模型性能越好。
@@ -87,31 +87,31 @@ F1 Score与精确率、召回率的关系如下：
    - 真正例（TP）：
 
      $$
- \text{TP} = \text{theano.sum(y \times \hat{y})} 
+ \text{TP} = \text{theano.sum(y \times \hat{y})}
 $$
 
    - 假正例（FP）：
 
      $$
- \text{FP} = \text{theano.sum(\hat{y} \times (1-y))} 
+ \text{FP} = \text{theano.sum(\hat{y} \times (1-y))}
 $$
 
    - 真反例（FN）：
 
      $$
- \text{FN} = \text{theano.sum((1-y) \times y)} 
+ \text{FN} = \text{theano.sum((1-y) \times y)}
 $$
 
    - 假反例（FP）：
 
      $$
- \text{FP} = \text{theano.sum(y \times (1-\hat{y}))} 
+ \text{FP} = \text{theano.sum(y \times (1-\hat{y}))}
 $$
 
 3. **计算F1 Score**：
 
    $$
- F1 Score = 2 \times \frac{\text{TP} \times \text{Recall}}{\text{TP} + \text{FP}} 
+ F1 Score = 2 \times \frac{\text{TP} \times \text{Recall}}{\text{TP} + \text{FP}}
 $$
 
    其中，召回率$Recall = \frac{\text{TP}}{\text{TP} + \text{FN}}$。

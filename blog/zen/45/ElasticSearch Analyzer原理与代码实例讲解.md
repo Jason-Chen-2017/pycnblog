@@ -130,7 +130,7 @@ $$
 $$
 \text{Filter}(t) = \begin{cases}
 t & \text{如果} \ t \
-otin \text{Filter Set} \\
+otin \text{Filter Set} \
 \text{None} & \text{否则}
 \end{cases}
 $$

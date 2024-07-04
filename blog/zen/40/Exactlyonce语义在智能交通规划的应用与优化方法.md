@@ -121,13 +121,13 @@ graph TD
 $$
 \begin{array}{|c|c|}
 \hline
-\text{事务状态} & \text{操作} \\
+\text{事务状态} & \text{操作} \
 \hline
-\text{未提交} & \text{执行消息内容} \\
+\text{未提交} & \text{执行消息内容} \
 \hline
-\text{已提交} & \text{忽略消息} \\
+\text{已提交} & \text{忽略消息} \
 \hline
-\text{已回滚} & \text{忽略消息} \\
+\text{已回滚} & \text{忽略消息} \
 \hline
 \end{array}
 $$
@@ -138,7 +138,7 @@ $$
 
 $$
 \begin{align*}
-\text{事务状态}_{\text{t+1}} &= \text{事务状态}_t \oplus \text{操作结果} \\
+\text{事务状态}_{\text{t+1}} &= \text{事务状态}_t \oplus \text{操作结果} \
 \end{align*}
 $$
 

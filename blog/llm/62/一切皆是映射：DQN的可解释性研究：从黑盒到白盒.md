@@ -1,7 +1,7 @@
 
 # 一切皆是映射：DQN的可解释性研究：从黑盒到白盒
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 关键词：
 
@@ -220,34 +220,34 @@ def train_dqn(model, env, optimizer, loss_function, epochs=1000, batch_size=32):
                 action = env.action_space.sample()
             else:
                 action = np.argmax(model(tf.convert_to_tensor(state, dtype=tf.float32))[0])
-            
+
             # 执行动作并获取奖励
             next_state, reward, done, _ = env.step(action)
-            
+
             # 存储经验
             replay_buffer.append((state, action, reward, next_state, done))
-            
+
             # 如果经验缓冲区达到一定大小，开始训练
             if len(replay_buffer) >= batch_size:
                 # 随机采样一个批次的经验
                 batch = random.sample(replay_buffer, batch_size)
                 states, actions, rewards, next_states, dones = zip(*batch)
-                
+
                 # 计算目标Q值
                 target_q_values = np.max(model(tf.convert_to_tensor(next_states, dtype=tf.float32)), axis=1)
                 target_q_values[dones] = rewards
-                
+
                 # 计算预测Q值
                 q_values = model(tf.convert_to_tensor(states, dtype=tf.float32))
                 q_values = tf.one_hot(actions, depth=action_space.n)
                 q_values = tf.reduce_sum(q_values * q_values, axis=1)
-                
+
                 # 计算损失
                 loss = loss_function(q_values, target_q_values)
-                
+
                 # 更新模型参数
                 optimizer.apply_gradients(zip(model.trainable_variables, loss.gradient(loss, model.trainable_variables)))
-                
+
                 # 清空经验缓冲区
                 replay_buffer = []
     return model

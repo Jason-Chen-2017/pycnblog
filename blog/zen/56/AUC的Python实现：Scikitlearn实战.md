@@ -99,9 +99,9 @@ $$
 
 $$
 \begin{aligned}
-AUC &\approx \frac{1}{2}(0.5-0)(1+0.75) + \frac{1}{2}(0.75-0.5)(0.75+0.5) \\
-    &+ \frac{1}{2}(1-0.75)(0.5+0) \\
-    &= 0.3125 + 0.1875 + 0.0625 \\
+AUC &\approx \frac{1}{2}(0.5-0)(1+0.75) + \frac{1}{2}(0.75-0.5)(0.75+0.5) \
+    &+ \frac{1}{2}(1-0.75)(0.5+0) \
+    &= 0.3125 + 0.1875 + 0.0625 \
     &= 0.5625
 \end{aligned}
 $$
@@ -118,9 +118,9 @@ $$
 
 $$
 \begin{aligned}
-AUC &= \int_0^1 (1 - a\ln(1+e^{-bx}))dx \\
-    &= x - a\left[x\ln(1+e^{-bx}) - \frac{1}{b}\ln(1+e^{-bx})\right]_0^1 \\
-    &= 1 - a\left[\frac{1}{b}\ln(2) - \frac{1}{b}\right] \\
+AUC &= \int_0^1 (1 - a\ln(1+e^{-bx}))dx \
+    &= x - a\left[x\ln(1+e^{-bx}) - \frac{1}{b}\ln(1+e^{-bx})\right]_0^1 \
+    &= 1 - a\left[\frac{1}{b}\ln(2) - \frac{1}{b}\right] \
     &= 1 - \frac{a}{b}\ln(2) + \frac{a}{b}
 \end{aligned}
 $$

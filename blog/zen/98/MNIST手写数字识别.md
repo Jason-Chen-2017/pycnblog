@@ -63,7 +63,7 @@ $$
 假设我们有一个3x3的输入矩阵 $I$ 和一个2x2的卷积核 $K$，它们的值如下：
 
 $$
-I = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{bmatrix}, K = \begin{bmatrix} -1 & 1 \\ 2 & -2 \end{bmatrix}
+I = \begin{bmatrix} 1 & 2 & 3 \ 4 & 5 & 6 \ 7 & 8 & 9 \end{bmatrix}, K = \begin{bmatrix} -1 & 1 \ 2 & -2 \end{bmatrix}
 $$
 
 那么，我们可以计算卷积运算的结果：

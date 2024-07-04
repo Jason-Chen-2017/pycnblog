@@ -1,7 +1,7 @@
 
 # 一切皆是映射：Transformer架构全面解析
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -204,7 +204,7 @@ class MultiHeadAttention(nn.Module):
         self.d_model = d_model
         self.num_heads = num_heads
         self.head_dim = d_model // num_heads
-        
+
         self.query_linear = nn.Linear(d_model, d_model)
         self.key_linear = nn.Linear(d_model, d_model)
         self.value_linear = nn.Linear(d_model, d_model)

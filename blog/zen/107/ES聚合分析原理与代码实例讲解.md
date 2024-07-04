@@ -92,7 +92,7 @@ graph TD
     B --> C2[分片2]
     B --> C3[分片3]
     C1 --> D1[本地聚合结果1]
-    C2 --> D2[本地聚合结果2] 
+    C2 --> D2[本地聚合结果2]
     C3 --> D3[本地聚合结果3]
     D1 --> E[分布式聚合]
     D2 --> E
@@ -198,9 +198,9 @@ $$\operatorname{var}(D) = \frac{1}{|D|}\sum_{d \in D}\left(v(d) - \operatorname{
 将$\operatorname{avg}(D)$代入,我们得到:
 
 $$\begin{aligned}
-\operatorname{var}(D) &= \frac{1}{|D|}\sum_{d \in D}\left(v(d) - \frac{1}{|D|}\sum_{d' \in D}v(d')\right)^2\\
-&= \frac{1}{|D|}\sum_{d \in D}\left(v(d)^2 - \frac{2v(d)}{|D|}\sum_{d' \in D}v(d') + \frac{1}{|D|^2}\left(\sum_{d' \in D}v(d')\right)^2\right)\\
-&= \frac{1}{|D|}\left(\sum_{d \in D}v(d)^2 - \frac{2}{|D|}\left(\sum_{d \in D}v(d)\right)^2 + \frac{1}{|D|}\left(\sum_{d \in D}v(d)\right)^2\right)\\
+\operatorname{var}(D) &= \frac{1}{|D|}\sum_{d \in D}\left(v(d) - \frac{1}{|D|}\sum_{d' \in D}v(d')\right)^2\
+&= \frac{1}{|D|}\sum_{d \in D}\left(v(d)^2 - \frac{2v(d)}{|D|}\sum_{d' \in D}v(d') + \frac{1}{|D|^2}\left(\sum_{d' \in D}v(d')\right)^2\right)\
+&= \frac{1}{|D|}\left(\sum_{d \in D}v(d)^2 - \frac{2}{|D|}\left(\sum_{d \in D}v(d)\right)^2 + \frac{1}{|D|}\left(\sum_{d \in D}v(d)\right)^2\right)\
 &= \frac{1}{|D|}\sum_{d \in D}v(d)^2 - \frac{1}{|D|}\left(\frac{1}{|D|}\sum_{d \in D}v(d)\right)^2
 \end{aligned}$$
 

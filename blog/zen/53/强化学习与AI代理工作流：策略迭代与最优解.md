@@ -39,10 +39,10 @@
 #### 3.4.2 Q-learning算法
 #### 3.4.3 DQN算法
 
-## 4. 数学模型和公式详细讲解举例说明 
+## 4. 数学模型和公式详细讲解举例说明
 ### 4.1 马尔可夫决策过程数学模型
 #### 4.1.1 状态转移概率矩阵
-$$P(s'|s,a) = \begin{bmatrix} 
+$$P(s'|s,a) = \begin{bmatrix}
 p_{11} & p_{12} & \cdots & p_{1n} \\
 p_{21} & p_{22} & \cdots & p_{2n} \\
 \vdots & \vdots & \ddots & \vdots \\
@@ -53,14 +53,14 @@ $R(s,a) = \mathbb{E}[R_t|S_{t-1}=s, A_{t-1}=a]$
 #### 4.1.3 折扣因子
 $\gamma \in [0,1]$
 ### 4.2 价值函数
-#### 4.2.1 状态价值函数 
+#### 4.2.1 状态价值函数
 $V^\pi(s) = \mathbb{E}_\pi[\sum_{k=0}^{\infty}\gamma^k R_{t+k+1}|S_t=s]$
 #### 4.2.2 动作价值函数
 $Q^\pi(s,a) = \mathbb{E}_\pi[\sum_{k=0}^{\infty}\gamma^k R_{t+k+1}|S_t=s, A_t=a]$
 ### 4.3 贝尔曼方程
 #### 4.3.1 状态价值贝尔曼方程
 $V^\pi(s) = \sum_a \pi(a|s) \sum_{s',r} p(s',r|s,a)[r+\gamma V^\pi(s')]$
-#### 4.3.2 动作价值贝尔曼方程  
+#### 4.3.2 动作价值贝尔曼方程
 $Q^\pi(s,a) = \sum_{s',r} p(s',r|s,a)[r+\gamma \sum_{a'} \pi(a'|s') Q^\pi(s',a')]$
 
 ## 5. 项目实践：代码实例和详细解释说明
@@ -157,7 +157,7 @@ graph LR
 A[初始化策略] --> B[策略评估]
 B --> C{策略稳定?}
 C -->|Yes| D[输出最优策略]
-C -->|No| E[策略改进] 
+C -->|No| E[策略改进]
 E --> B
 ```
 

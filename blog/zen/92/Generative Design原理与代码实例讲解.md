@@ -210,9 +210,9 @@ def main():
     stats.register("avg", np.mean)
     stats.register("min", np.min)
     stats.register("max", np.max)
-    
+
     pop, logbook = algorithms.eaSimple(pop, toolbox, cxpb=0.5, mutpb=0.2, ngen=100, stats=stats, halloffame=hof, verbose=True)
-    
+
     best_design = hof[0]
     print(f"Best design: {best_design}")
     print(f"Best fitness: {best_design.fitness.values[0]}")

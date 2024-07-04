@@ -147,7 +147,7 @@ class DQN:
         self.gamma = gamma
         self.batch_size = batch_size
         self.model = self.build_model()
-        
+
     def build_model(self):
         model = tf.keras.Sequential([
             layers.Dense(64, activation='relu', input_shape=(self.state_space,)),
@@ -155,7 +155,7 @@ class DQN:
         ])
         model.compile(loss='mse', optimizer=tf.keras.optimizers.Adam(lr=self.learning_rate))
         return model
-    
+
     def train(self, states, actions, rewards, next_states, dones):
         target_q_values = self.model(states).numpy()
         target_q_values[np.arange(len(actions)), actions] = rewards + self.gamma * np.max(self.model(next_states), axis=1) * (1 - dones)

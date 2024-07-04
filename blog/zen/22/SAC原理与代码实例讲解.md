@@ -46,20 +46,15 @@ SAC算法的目标是最大化策略的期望回报，同时通过引入熵项�
 
 #### 策略更新步骤：
 
-$$ \
-abla_\\pi J(\\theta) = \\mathbb{E}_{s,a \\sim \\pi, q \\sim Q} \\left[ \
-abla_\\theta \\log \\pi(a|s) Q(s,a) \\right] $$
+$$ \nabla_\pi J(\theta) = \mathbb{E}_{s,a \sim \pi, q \sim Q} \left[ \nabla_\theta \log \pi(a|s) Q(s,a) \right] $$
 
 #### 价值函数更新步骤：
 
-$$ \
-abla_Q J(q) = \\mathbb{E}_{s,a,r,s' \\sim \\mathcal{D}} \\left[ r + \\gamma \\min_{q'} Q'(s',a') - q(s,a) \\right] $$
+$$ \nabla_Q J(q) = \mathbb{E}_{s,a,r,s' \sim \mathcal{D}} \left[ r + \gamma \min_{q'} Q'(s',a') - q(s,a) \right] $$
 
 #### 熵正则化步骤：
 
-$$ \
-abla_\\pi J(\\theta) = \\mathbb{E}_{s,a \\sim \\pi} \\left[ \
-abla_\\theta \\log \\pi(a|s) (\\alpha \\log \\pi(a|s) + Q(s,a)) \\right] $$
+$$ \nabla_\pi J(\theta) = \mathbb{E}_{s,a \sim \pi} \left[ \nabla_\theta \log \pi(a|s) (\alpha \log \pi(a|s) + Q(s,a)) \right] $$
 
 ### 3.3 算法优缺点
 
@@ -226,8 +221,8 @@ SAC策略在多个领域具有广泛的应用，包括但不限于：
 
 ### 7.3 相关论文推荐
 
-- **\"Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor\"**（Tuomas Haarnoja等人，2018年）。
-- **\"IMPALA: Scalable Distributed Deep-RL with Importance Weighted Actor-Learner Architectures\"**（Vitchyr Picheny等人，2018年）。
+- **"Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor"**（Tuomas Haarnoja等人，2018年）。
+- **"IMPALA: Scalable Distributed Deep-RL with Importance Weighted Actor-Learner Architectures"**（Vitchyr Picheny等人，2018年）。
 
 ### 7.4 其他资源推荐
 
@@ -258,7 +253,7 @@ SAC策略以其稳定的学习过程、高效的探索策略和广泛的适用�
 
 - **如何调整SAC策略以适应不同的环境和任务？**
   **解答**：调整SAC策略通常涉及到调整学习率、优化器参数、奖励设计、探索策略以及模型架构。环境和任务的特性决定了这些参数的选择和优化策略。
-  
+
 - **SAC策略如何处理多智能体系统中的合作与竞争？**
   **解答**：在多智能体系统中，SAC策略可以通过扩展到多智能体的版本（如M-SAC）来处理合作与竞争。这通常涉及设计合适的通信机制和奖励结构，以激励智能体之间的协同作用或竞争。
 

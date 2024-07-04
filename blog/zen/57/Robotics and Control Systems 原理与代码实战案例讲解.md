@@ -62,7 +62,7 @@ The dynamic equations describe the forces and torques acting on a robot and how 
 
 The PID control formula is given by:
 
-$$u(t) = K_p e(t) + K_i \\int e(t) dt + K_d \\frac{de(t)}{dt}$$
+$$u(t) = K_p e(t) + K_i \int e(t) dt + K_d \frac{de(t)}{dt}$$
 
 where $u(t)$ is the control output, $e(t)$ is the error, $K_p$, $K_i$, and $K_d$ are the proportional, integral, and derivative gains, respectively.
 
@@ -190,4 +190,4 @@ AI --> AK[Motion Planning and Manipulation]
 
 ## Author: Zen and the Art of Computer Programming
 
-This article was written by Zen, the renowned author of the \"The Art of Computer Programming\" series. His expertise in computer science and programming has made him a respected figure in the field.
+This article was written by Zen, the renowned author of the "The Art of Computer Programming" series. His expertise in computer science and programming has made him a respected figure in the field.

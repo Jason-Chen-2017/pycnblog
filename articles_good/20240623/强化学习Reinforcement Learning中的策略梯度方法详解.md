@@ -54,8 +54,7 @@
 
 1. 初始化策略参数$\theta$。
 2. 在环境中进行多次采样，收集样本数据。
-3. 对于每个样本数据，计算策略梯度$\
-abla_{\theta} J(\theta)$。
+3. 对于每个样本数据，计算策略梯度$\nabla_{\theta} J(\theta)$。
 4. 使用梯度下降等优化算法更新策略参数$\theta$。
 5. 重复步骤2-4，直到收敛。
 
@@ -94,9 +93,7 @@ abla_{\theta} J(\theta)$。
 
 策略梯度方法的核心是策略梯度公式：
 
-$$\
-abla_{\theta} J(\theta) = \mathbb{E}_\pi[\
-abla_{\theta} \log \pi(a_t | s_t, \theta) \cdot R_t]$$
+$$\nabla_{\theta} J(\theta) = \mathbb{E}_\pi[\nabla_{\theta} \log \pi(a_t | s_t, \theta) \cdot R_t]$$
 
 其中，
 

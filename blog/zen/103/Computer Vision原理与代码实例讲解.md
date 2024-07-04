@@ -1,7 +1,7 @@
 
 # Computer Vision原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -342,7 +342,7 @@ A：语义分割算法通过解码器将卷积特征解码为像素级别的预�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n cv-env python=3.8 
+conda create -n cv-env python=3.8
 conda activate cv-env
 ```
 

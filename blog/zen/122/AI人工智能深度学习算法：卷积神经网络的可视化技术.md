@@ -1,6 +1,6 @@
 # AI人工智能深度学习算法：卷积神经网络的可视化技术
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 

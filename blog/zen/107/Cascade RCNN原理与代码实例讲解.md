@@ -179,7 +179,7 @@ RPN是Faster R-CNN中提出的一种生成区域候选框的网络结构。它�
 
 $$
 \begin{aligned}
-\text{分数图大小} &= \left(\frac{W}{s}, \frac{H}{s}, 2k\right) \\
+\text{分数图大小} &= \left(\frac{W}{s}, \frac{H}{s}, 2k\right) \
 \text{回归图大小} &= \left(\frac{W}{s}, \frac{H}{s}, 4k\right)
 \end{aligned}
 $$

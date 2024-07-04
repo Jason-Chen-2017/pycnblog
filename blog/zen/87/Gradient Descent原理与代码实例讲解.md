@@ -55,12 +55,10 @@
 3. **更新参数**：根据梯度更新参数，使得损失函数值减小。通常使用以下公式进行参数更新：
 
    $$
- \theta = \theta - \alpha \cdot \
-abla_{\theta} J(\theta) 
+ \theta = \theta - \alpha \cdot \nabla_{\theta} J(\theta)
 $$
 
-   其中，$\theta$ 表示参数，$\alpha$ 表示学习率，$J(\theta)$ 表示损失函数，$\
-abla_{\theta} J(\theta)$ 表示损失函数对参数$\theta$的梯度。
+   其中，$\theta$ 表示参数，$\alpha$ 表示学习率，$J(\theta)$ 表示损失函数，$\nabla_{\theta} J(\theta)$ 表示损失函数对参数$\theta$的梯度。
 
 4. **重复步骤2和3**：重复计算梯度并更新参数，直到满足停止条件，如损失值收敛或达到预设的迭代次数。
 
@@ -91,19 +89,17 @@ abla_{\theta} J(\theta)$ 表示损失函数对参数$\theta$的梯度。
 为了更好地理解梯度下降算法，我们首先需要构建一个数学模型。假设我们有一个模型$ f(\theta) $，其中$\theta$ 是模型参数，$ x $ 是输入数据，$ y $ 是真实标签。损失函数$ J(\theta) $可以表示为：
 
 $$
- J(\theta) = \frac{1}{N} \sum_{i=1}^N (f(\theta; x_i) - y_i)^2 
+ J(\theta) = \frac{1}{N} \sum_{i=1}^N (f(\theta; x_i) - y_i)^2
 $$
 
 其中，$ N $ 是样本数量。
 
 ### 4.2 公式推导过程
 
-在梯度下降算法中，我们需要计算损失函数$ J(\theta) $对参数$\theta$的梯度，即$\
-abla_{\theta} J(\theta)$。根据损失函数的定义，我们可以推导出以下公式：
+在梯度下降算法中，我们需要计算损失函数$ J(\theta) $对参数$\theta$的梯度，即$\nabla_{\theta} J(\theta)$。根据损失函数的定义，我们可以推导出以下公式：
 
 $$
- \
-abla_{\theta} J(\theta) = \frac{1}{N} \sum_{i=1}^N \frac{\partial}{\partial \theta}(f(\theta; x_i) - y_i)^2 
+ \nabla_{\theta} J(\theta) = \frac{1}{N} \sum_{i=1}^N \frac{\partial}{\partial \theta}(f(\theta; x_i) - y_i)^2
 $$
 
 ### 4.3 案例分析与讲解
@@ -111,7 +107,7 @@ $$
 假设我们有一个简单的线性回归模型，用于预测房价。模型参数$\theta$表示房价的线性系数，损失函数为均方误差（Mean Squared Error, MSE）。
 
 $$
- J(\theta) = \frac{1}{N} \sum_{i=1}^N (h(\theta; x_i) - y_i)^2 
+ J(\theta) = \frac{1}{N} \sum_{i=1}^N (h(\theta; x_i) - y_i)^2
 $$
 
 其中，$h(\theta; x_i)$表示模型预测的房价，$y_i$表示真实房价。

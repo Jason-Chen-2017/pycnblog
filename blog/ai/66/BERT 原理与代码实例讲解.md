@@ -1,7 +1,7 @@
 
 # BERT 原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 ### 1.1 问题的由来
@@ -373,7 +373,7 @@ print(f'Accuracy of the model on the test set: {100 * correct / total}%')
            input_ids = input_ids.to(device)
            attention_mask = attention_mask.to(device)
            labels = labels.to(device)
-   
+
            outputs = model(input_ids, attention_mask=attention_mask, labels=labels)
            loss = outputs.loss
            loss.backward()
@@ -398,12 +398,12 @@ print(f'Accuracy of the model on the test set: {100 * correct / total}%')
            input_ids = input_ids.to(device)
            attention_mask = attention_mask.to(device)
            labels = labels.to(device)
-   
+
            outputs = model(input_ids, attention_mask=attention_mask)
            _, preds = torch.max(outputs.logits, 1)
            total += labels.size(0)
            correct += (preds == labels).sum().item()
-   
+
    print(f'Accuracy of the model on the test set: {100 * correct / total}%')
    ```
    这里对模型进行评估，计算准确率。

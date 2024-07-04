@@ -1,4 +1,4 @@
-                 
+
 # 【LangChain编程：从入门到实践】RAG
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -160,13 +160,13 @@ chain = LLMChain(prompt=prompt, llm=llm)
 def ask_question(query):
     # 查询数据库获取相关文档
     result = vectorstore.similarity_search(query)
-    
+
     # 构建增强输入
     enhanced_input = f"Context: {result[0].page_content}\nQuestion: {query}"
-    
+
     # 调用LLMChain生成回答
     response = chain.run({"query": enhanced_input})
-    
+
     return response
 
 # 测试问答回答功能

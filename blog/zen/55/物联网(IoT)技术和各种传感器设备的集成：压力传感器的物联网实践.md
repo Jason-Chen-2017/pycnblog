@@ -120,15 +120,15 @@ client.connect(MQTT_SERVER, MQTT_PORT, 60)
 while True:
     # 读取ADC值
     value = adc.read_adc(0, gain=GAIN)
-    
+
     # 将ADC值转换为压力值(假设转换公式为: pressure = value / 100)
     pressure = value / 100.0
-    
+
     # 发送压力数据到MQTT服务器
     client.publish(MQTT_TOPIC, pressure)
-    
+
     print("Pressure: %.2f kPa" % pressure)
-    
+
     time.sleep(1)
 ```
 

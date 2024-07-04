@@ -79,7 +79,7 @@ STM32 微控制器监测蓄电池的电压和电流，控制太阳能电池板�
 
 $$
 \begin{aligned}
-\alpha &= \arcsin(\sin \delta \sin \phi + \cos \delta \cos \phi \cos \omega) \\
+\alpha &= \arcsin(\sin \delta \sin \phi + \cos \delta \cos \phi \cos \omega) \
 \beta &= \arctan \left( \frac{\sin \omega}{\cos \omega \sin \phi - \tan \delta \cos \phi} \right)
 \end{aligned}
 $$

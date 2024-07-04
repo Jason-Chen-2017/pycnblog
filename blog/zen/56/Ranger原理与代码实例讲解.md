@@ -34,7 +34,7 @@ $$
 
 通过这种残差更新的方式,Ranger算法可以有效地捕获数据中的复杂模式,提高模型的预测精度。
 
-## 3.核心算法原理具体操作步骤 
+## 3.核心算法原理具体操作步骤
 
 Ranger算法的核心步骤如下:
 
@@ -63,21 +63,21 @@ function RangerTrain(D, num_trees):
     f1 = RandomForestTree(D)
     residuals = y - f1(x)
     model = f1
-    
+
     # 构建后续树
     for i in range(2, num_trees+1):
         # 使用残差作为新的响应值
         D_new = (x, residuals)
-        
+
         # 构建新树
         fi = RandomForestTree(D_new)
-        
+
         # 更新残差
         residuals = residuals - fi(x)
-        
+
         # 更新模型
         model = model + fi
-        
+
     return model
 ```
 

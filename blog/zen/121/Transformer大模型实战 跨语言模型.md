@@ -294,19 +294,19 @@ class TranslationDataset(Dataset):
         text = self.texts[item]
         target = self.targets[item]
         source_encoding = self.tokenizer(
-            text, 
-            src_lang=self.source_lang, 
-            tgt_lang=self.target_lang, 
-            max_length=128, 
-            truncation=True, 
+            text,
+            src_lang=self.source_lang,
+            tgt_lang=self.target_lang,
+            max_length=128,
+            truncation=True,
             return_tensors="pt"
         )
         target_encoding = self.tokenizer(
-            target, 
-            src_lang=self.source_lang, 
-            tgt_lang=self.target_lang, 
-            max_length=128, 
-            truncation=True, 
+            target,
+            src_lang=self.source_lang,
+            tgt_lang=self.target_lang,
+            max_length=128,
+            truncation=True,
             return_tensors="pt"
         )
         return {
@@ -329,17 +329,17 @@ def collate_fn(batch):
     }
 
 train_dataset = TranslationDataset(
-    texts=train_texts, 
-    targets=train_targets, 
+    texts=train_texts,
+    targets=train_targets,
     tokenizer=tokenizer,
-    source_lang='en', 
+    source_lang='en',
     target_lang='zh'
 )
 
 train_dataloader = DataLoader(
-    train_dataset, 
-    batch_size=32, 
-    shuffle=True, 
+    train_dataset,
+    batch_size=32,
+    shuffle=True,
     collate_fn=collate_fn
 )
 
@@ -355,11 +355,11 @@ for epoch in range(epochs):
         target_mask = batch['target_mask'].to(device)
 
         outputs = model(
-            input_ids=source_ids, 
-            attention_mask=source_mask, 
-            labels=target_ids, 
-            token_type_ids=None, 
-            output_attentions=False, 
+            input_ids=source_ids,
+            attention_mask=source_mask,
+            labels=target_ids,
+            token_type_ids=None,
+            output_attentions=False,
             return_dict=False
         )
         loss = outputs.loss

@@ -66,15 +66,13 @@ graph LR
 
 **Step 2：计算梯度**
 
-计算当前参数 $\theta$ 的梯度 $\
-abla_{\theta}f(\theta)$，表示函数 $f(\theta)$ 在 $\theta$ 处的局部变化趋势。
+计算当前参数 $\theta$ 的梯度 $\nabla_{\theta}f(\theta)$，表示函数 $f(\theta)$ 在 $\theta$ 处的局部变化趋势。
 
 **Step 3：更新参数**
 
 根据梯度信息和学习率 $\alpha$，更新参数值：
 
-$$\theta_{k+1} = \theta_k - \alpha \cdot \
-abla_{\theta}f(\theta_k)$$
+$$\theta_{k+1} = \theta_k - \alpha \cdot \nabla_{\theta}f(\theta_k)$$
 
 其中 $k$ 为当前迭代次数。
 
@@ -116,16 +114,14 @@ abla_{\theta}f(\theta_k)$$
 
 梯度下降算法的数学模型可以表示为以下公式：
 
-$$\theta_{k+1} = \theta_k - \alpha \cdot \
-abla_{\theta}f(\theta_k)$$
+$$\theta_{k+1} = \theta_k - \alpha \cdot \nabla_{\theta}f(\theta_k)$$
 
 其中：
 
 - $\theta_k$ 表示第 $k$ 次迭代的参数值。
 - $\theta_{k+1}$ 表示第 $k+1$ 次迭代的参数值。
 - $\alpha$ 表示学习率，控制参数更新的步长。
-- $\
-abla_{\theta}f(\theta_k)$ 表示函数 $f(\theta)$ 在 $\theta_k$ 处的梯度。
+- $\nabla_{\theta}f(\theta_k)$ 表示函数 $f(\theta)$ 在 $\theta_k$ 处的梯度。
 
 ### 4.2 公式推导过程
 
@@ -151,13 +147,11 @@ $$L(\theta) = \frac{1}{2} \sum_{i=1}^n (y_i - \theta^T x_i)^2$$
 
 对 $L(\theta)$ 求梯度：
 
-$$\
-abla_{\theta}L(\theta) = \sum_{i=1}^n (y_i - \theta^T x_i) x_i$$
+$$\nabla_{\theta}L(\theta) = \sum_{i=1}^n (y_i - \theta^T x_i) x_i$$
 
 则梯度下降算法的公式为：
 
-$$\theta_{k+1} = \theta_k - \alpha \cdot \
-abla_{\theta}L(\theta_k) = \theta_k - \alpha \cdot \sum_{i=1}^n (y_i - \theta^T x_i) x_i$$
+$$\theta_{k+1} = \theta_k - \alpha \cdot \nabla_{\theta}L(\theta_k) = \theta_k - \alpha \cdot \sum_{i=1}^n (y_i - \theta^T x_i) x_i$$
 
 ### 4.3 案例分析与讲解
 

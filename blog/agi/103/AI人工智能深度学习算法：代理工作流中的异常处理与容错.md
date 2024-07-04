@@ -133,8 +133,8 @@ AI代理工作流是一系列由AI代理执行的自动化任务序列。这些�
 设 $X$ 为AI代理工作流的正常数据分布，$X_{abnormal}$ 为异常数据分布，$x$ 为观测到的数据点。则异常检测与识别的决策函数为：
 
 $$
-\phi(x) = 
-\begin{cases} 
+\phi(x) =
+\begin{cases}
 1 & \text{if } x \in X_{abnormal} \\
 0 & \text{if } x \in X
 \end{cases}

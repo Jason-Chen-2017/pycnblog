@@ -66,12 +66,10 @@ CRF 的训练通常采用梯度上升法或者期望最大化（EM）算法。�
 - 计算训练数据集上的负对数似然函数 \( \ell(\theta) \)。
 
 #### 3. 梯度更新
-- 计算损失函数关于参数 \( \theta \) 的梯度 \( \
-abla \ell(\theta) \)。
+- 计算损失函数关于参数 \( \theta \) 的梯度 \( \nabla \ell(\theta) \)。
 
 #### 4. 参数更新
-- 更新参数 \( \theta \) 的值，通常采用梯度下降法：\( \theta \leftarrow \theta - \alpha \
-abla \ell(\theta) \)，其中 \( \alpha \) 是学习率。
+- 更新参数 \( \theta \) 的值，通常采用梯度下降法：\( \theta \leftarrow \theta - \alpha \nabla \ell(\theta) \)，其中 \( \alpha \) 是学习率。
 
 #### 5. 重复步骤 2 至 4，直到收敛。
 

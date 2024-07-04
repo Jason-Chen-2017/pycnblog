@@ -23,14 +23,14 @@ The Mixup algorithm can be summarized in the following steps:
 2. Linearly interpolate the samples and labels according to a mixing coefficient `λ ∈ [0, 1]`:
 
     $$
-    \\tilde{x} = \\lambda x_i + (1 - \\lambda) x_j
+    \tilde{x} = \lambda x_i + (1 - \lambda) x_j
     $$
 
     $$
-    \\tilde{y} = \\lambda y_i + (1 - \\lambda) y_j
+    \tilde{y} = \lambda y_i + (1 - \lambda) y_j
     $$
 
-3. Pass the interpolated data `(\\tilde{x}, \\tilde{y})` through the neural network and compute the loss.
+3. Pass the interpolated data `(\tilde{x}, \tilde{y})` through the neural network and compute the loss.
 4. Update the network weights using backpropagation.
 
 The mixing coefficient `λ` is typically sampled from a Beta distribution with parameters `α = β = 1` [1]. This ensures that the samples are equally likely to be mixed, and the mixing process is balanced.
@@ -40,7 +40,7 @@ The mixing coefficient `λ` is typically sampled from a Beta distribution with p
 The Mixup algorithm can be mathematically formulated as a minimization problem:
 
 $$
-\\min_{\\theta} \\sum_{i=1}^{N} \\left[ \\lambda_i L(f_\\theta(\\lambda_i x_i + (1 - \\lambda_i) x_j), y_i) + (1 - \\lambda_i) L(f_\\theta(\\lambda_i x_j + (1 - \\lambda_i) x_i), y_j) \\right]
+\min_{\theta} \sum_{i=1}^{N} \left[ \lambda_i L(f_\theta(\lambda_i x_i + (1 - \lambda_i) x_j), y_i) + (1 - \lambda_i) L(f_\theta(\lambda_i x_j + (1 - \lambda_i) x_i), y_j) \right]
 $$
 
 where `N` is the number of samples in the batch, `f_θ` is the neural network parameterized by `θ`, `L` is the loss function, and `λ_i` is the mixing coefficient for the `i`-th sample.

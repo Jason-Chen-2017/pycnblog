@@ -180,17 +180,17 @@ print('Test accuracy:', accuracy)
     * Udacity深度学习课程
 
 ### 7.2  开发工具推荐
-* **Python:** 
-* **TensorFlow:** 
-* **PyTorch:** 
+* **Python:**
+* **TensorFlow:**
+* **PyTorch:**
 
 ### 7.3  相关论文推荐
 * **《Attention Is All You Need》**
 * **《Generative Adversarial Networks》**
 
 ### 7.4  其他资源推荐
-* **Kaggle:** 
-* **GitHub:** 
+* **Kaggle:**
+* **GitHub:**
 
 ## 8. 总结：未来发展趋势与挑战
 ### 8.1  研究成果总结
@@ -212,17 +212,17 @@ print('Test accuracy:', accuracy)
 
 ### 9.1  Q1: 如何选择合适的深度学习框架?
 
-### 9.2  A1: 
+### 9.2  A1:
 
 ### 9.3  Q2: 如何处理天气数据中的异常值?
 
-### 9.4  A2: 
+### 9.4  A2:
 
 ### 9.5  Q3: 如何评估深度学习模型的泛化能力?
 
-### 9.6  A3: 
+### 9.6  A3:
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

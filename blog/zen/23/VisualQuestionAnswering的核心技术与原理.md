@@ -1,4 +1,4 @@
-                 
+
 # VisualQuestionAnswering的核心技术与原理
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -113,9 +113,9 @@ VQA技术主要应用于以下领域：
 
 - **问题解码**:
   利用RNN解码器动态更新状态向量$s_t$，并计算注意力权重$a_t$：
-  $$ s_0 = h(q) \\
+  $$ s_0 = h(q) \
       [s_t, a_t] = RNN(s_{t-1}, F, a_{t-1}) $$
-  
+
   其中$h(\cdot)$表示初始化状态的映射函数，$RNN(\cdot)$代表RNN层的操作。
 
 - **回答生成**:
@@ -183,24 +183,24 @@ def build_vqa_model(input_shape_image, input_shape_text, num_classes):
         conv_layers[-1] = tf.keras.layers.MaxPooling2D((2, 2))(conv_layers[-1])
 
     flattened_image = Flatten()(conv_layers[-1])
-    
+
     # 问题解码部分
     embedded_text = tf.keras.layers.Embedding(len(word_index)+1, embedding_dim)(text_input)
     lstm_output, _ = tf.keras.layers.LSTM(units=256, return_sequences=True)(embedded_text)
-    
+
     # 注意力机制
     attention = tf.keras.layers.Dot(axes=[1, 1])([lstm_output, flattened_image])
     attention = tf.keras.layers.Activation('softmax')(attention)
 
     context_vector = tf.keras.layers.Multiply()([attention, flattened_image])
     context_vector = tf.keras.layers.Flatten()(context_vector)
-    
+
     # 综合决策输出
     combined_output = tf.keras.layers.Concatenate(axis=-1)([context_vector, lstm_output[:, -1]])
     output_layer = Dense(num_classes, activation='softmax')(combined_output)
-    
+
     model = Model(inputs=[image_input, text_input], outputs=output_layer)
-    
+
     return model
 
 # 初始化模型

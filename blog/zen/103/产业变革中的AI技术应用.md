@@ -184,7 +184,7 @@ A：AI技术发展前景广阔，未来将深入渗透到各个领域，推动�
 2. 创建并激活虚拟环境：
 
 ```bash
-conda create -n ai-env python=3.8 
+conda create -n ai-env python=3.8
 conda activate ai-env
 ```
 
@@ -233,7 +233,7 @@ class Net(nn.Module):
         self.conv2 = nn.Conv2d(20, 50, 5)
         self.fc1 = nn.Linear(4*4*50, 500)
         self.fc2 = nn.Linear(500, 10)
-    
+
     def forward(self, x):
         x = self.pool(nn.functional.relu(self.conv1(x)))
         x = self.pool(nn.functional.relu(self.conv2(x)))

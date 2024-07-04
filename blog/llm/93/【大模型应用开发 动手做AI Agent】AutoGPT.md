@@ -116,9 +116,7 @@ AutoGPT的数学模型如下：
 2. **策略**：假设 $\pi(a|s)$ 表示在状态 $s$ 下采取动作 $a$ 的概率。
 3. **Q值函数**：假设 $Q(s,a)$ 表示在状态 $s$ 下执行动作 $a$ 并到达下一个状态 $s'$，然后根据策略 $\pi$ 收到回报的期望。
 4. **贝尔曼方程**：$Q(s,a) = \sum_{s'} P(s'|s,a) \cdot [R + \gamma V(s')]$，其中 $P(s'|s,a)$ 表示在状态 $s$ 下执行动作 $a$ 后转移到状态 $s'$ 的概率，$R$ 表示在状态 $s'$ 收到的即时回报，$\gamma$ 表示折扣因子。
-5. **策略梯度**：$\
-abla_{\pi} J(\pi) = \sum_{s,a} \
-abla_{\pi(a|s)} J(\pi(s,a)) \cdot \pi(a|s)$，其中 $J(\pi)$ 表示策略 $\pi$ 的期望回报。
+5. **策略梯度**：$\nabla_{\pi} J(\pi) = \sum_{s,a} \nabla_{\pi(a|s)} J(\pi(s,a)) \cdot \pi(a|s)$，其中 $J(\pi)$ 表示策略 $\pi$ 的期望回报。
 6. **策略迭代**：通过迭代更新策略，优化策略梯度，直到收敛。
 
 ### 4.3 案例分析与讲解
@@ -165,7 +163,7 @@ A3：评估AI Agent的性能可以从以下方面进行：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n auto_gpt_env python=3.8 
+conda create -n auto_gpt_env python=3.8
 conda activate auto_gpt_env
 ```
 3. 安装必要的库：

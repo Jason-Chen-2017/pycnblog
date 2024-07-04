@@ -173,8 +173,8 @@ $$
 
 $$
 \begin{aligned}
-avg(S, n) &= \frac{sum(S, n)}{count(S, n)} \\
-          &= \frac{\sum_{i=1}^{n} x_i}{\sum_{i=1}^{n} 1} \\
+avg(S, n) &= \frac{sum(S, n)}{count(S, n)} \
+          &= \frac{\sum_{i=1}^{n} x_i}{\sum_{i=1}^{n} 1} \
           &= \frac{\sum_{i=1}^{n} x_i}{n}
 \end{aligned}
 $$
@@ -205,4 +205,4 @@ public class AvgTemperature extends WindowFunction<SensorReading, Tuple3<String,
     @Override
     public void apply(String key, TimeWindow window, Iterable<SensorReading> values, Collector<Tuple3<String, Long, Double>> out) {
         double sum = 0;
-        int count = 
+        int count =

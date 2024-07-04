@@ -1,7 +1,7 @@
 
 # AI人工智能深度学习算法：循环神经网络的理解与使用
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -134,12 +134,12 @@ LSTM由三个门控单元组成：遗忘门（Forget Gate）、输入门（Input
 
 $$
 \begin{align*}
-f_t &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \quad (3) \\
-i_t &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \quad (4) \\
-\c_t &= \tanh(W_c \cdot [h_{t-1}, x_t] + b_c) \quad (5) \\
-o_t &= \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) \quad (6) \\
-c_t &= f_t \odot c_{t-1} + i_t \odot \c_t \quad (7) \\
-h_t &= o_t \odot \tanh(c_t) \quad (8) \\
+f_t &= \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \quad (3) \
+i_t &= \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \quad (4) \
+\c_t &= \tanh(W_c \cdot [h_{t-1}, x_t] + b_c) \quad (5) \
+o_t &= \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) \quad (6) \
+c_t &= f_t \odot c_{t-1} + i_t \odot \c_t \quad (7) \
+h_t &= o_t \odot \tanh(c_t) \quad (8) \
 y_t &= W_y \cdot h_t + b_y \quad (9)
 \end{align*}
 $$
@@ -198,7 +198,7 @@ A：为了缓解梯度消失和梯度爆炸问题，可以采用以下方法：
 1. 安装Anaconda：从官网下载并安装Anaconda，用于创建独立的Python环境。
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 3. 安装PyTorch：根据CUDA版本，从官网获取对应的安装命令。例如：

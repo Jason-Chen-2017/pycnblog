@@ -105,8 +105,7 @@ DQN 主要应用于：
 
 在每个时间步 \\(t\\)，DQN 更新 Q 函数的参数 \\(\\theta\\)：
 
-\\[\\theta \\leftarrow \\theta + \\alpha [y - Q(s,a;\\theta)] \
-abla Q(s,a;\\theta)\\]
+\\[\\theta \\leftarrow \\theta + \\alpha [y - Q(s,a;\\theta)] \nabla Q(s,a;\\theta)\\]
 
 其中，
 - \\(y = r + \\gamma \\max_{a'} Q(s',a';\\theta)\\)，如果 \\(s'\\) 是终止状态，则 \\(y = r\\)；

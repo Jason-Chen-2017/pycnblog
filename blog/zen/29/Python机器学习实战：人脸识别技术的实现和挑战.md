@@ -1,6 +1,6 @@
 # Python机器学习实战：人脸识别技术的实现和挑战
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -28,7 +28,7 @@
 ```mermaid
 graph LR
 A[人脸检测] --> B[人脸对齐]
-B --> C[人脸表示] 
+B --> C[人脸表示]
 C --> D[人脸匹配]
 ```
 
@@ -48,7 +48,7 @@ PCA 特征脸算法主要分为训练和测试两个阶段,具体步骤如下:
    - 选取主成分:按特征值从大到小排序,取前 K 个特征向量构成投影矩阵 $W=[v_1,v_2,...,v_K]$。
    - 投影到特征子空间:$y_i=W^T(x_i-\mu)$,得到样本在特征空间的表示 $y_i$。
 
-2. 测试阶段 
+2. 测试阶段
    - 预处理待识别人脸图像 $x$,计算 $y=W^T(x-\mu)$。
    - 计算 $y$ 与各类样本 $y_i$ 的距离 $d_i$,取距离最小的类别作为识别结果。
 
@@ -67,7 +67,7 @@ PCA 特征脸曾被广泛应用于各类人脸识别场景,如门禁系统、刑
 设训练集有 N 张人脸图像 ${x_1,x_2,...,x_N}$,每张图像表示为 m×n 的像素矩阵,按行展开可得 1×(mn) 的列向量 $x_i$。记 $X=[x_1,x_2,...,x_N]$ 为 mn×N 维样本矩阵。PCA 的目标是找到一个投影矩阵 W,将原始数据映射到低维空间,用少数几个主成分表示原信号。数学上可表示为优化问题:
 
 $$
-\underset{W}{max} \quad tr(W^TXDX^TW) \\
+\underset{W}{max} \quad tr(W^TXDX^TW) \
 s.t. \quad W^TW=I
 $$
 
@@ -109,7 +109,7 @@ A: 可以,常见的相似度度量还有马氏距离、余弦相似度等。不�
 
 ### 5.1 开发环境搭建
 本项目使用 Python 3.7 和相关机器学习库实现,推荐的开发环境配置如下:
-- 操作系统:Windows 10 / Ubuntu 18.04 
+- 操作系统:Windows 10 / Ubuntu 18.04
 - Python:3.7
 - 深度学习框架:TensorFlow 2.x
 - 机器学习库:Scikit-learn 0.22
@@ -137,24 +137,24 @@ class EigenFace:
         self.n_components = n_components
         self.mean = None
         self.eigenvectors = None
-    
+
     def fit(self, X):
         # 计算均值脸
         self.mean = X.mean(axis=0)
         X_centered = X - self.mean
-        
+
         # 计算协方差矩阵的特征值和特征向量
         covariance = np.dot(X_centered.T, X_centered) / X_centered.shape[0]
         eigenvalues, eigenvectors = np.linalg.eigh(covariance)
-        
+
         # 取前 n_components 个最大特征值对应的特征向量
         idx = np.argsort(-eigenvalues)[:self.n_components]
         self.eigenvectors = eigenvectors[:, idx]
-    
+
     def transform(self, X):
         X_centered = X - self.mean
         return np.dot(X_centered, self.eigenvectors)
-    
+
     def predict(self, X):
         X_transformed = self.transform(X)
         dists = np.linalg.norm(X_transformed - self.transform(self.mean), axis=1)

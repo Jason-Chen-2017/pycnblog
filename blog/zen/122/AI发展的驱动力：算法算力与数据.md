@@ -334,4 +334,4 @@ MSE: 2500.0
 * 算法偏见和歧视
 * 人才短缺
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

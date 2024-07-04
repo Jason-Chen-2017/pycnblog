@@ -124,7 +124,7 @@ $$
 最后，通过残差连接和前馈神经网络进行整合：
 
 $$
-\text{Output} = \text{LayerNorm}(x + \text{Self-Attention}(Q, K, V)) \\
+\text{Output} = \text{LayerNorm}(x + \text{Self-Attention}(Q, K, V)) \
 \text{Output} = \text{LayerNorm}(\text{Output} + \text{FFN}(\text{Output}))
 $$
 

@@ -1,4 +1,4 @@
-                 
+
 # GraphX原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -57,7 +57,7 @@ GraphX基于Spark的DAG (Directed Acyclic Graph) 计算模型，实现了高度�
 2. **迭代更新**：
    - 对于每个节点，根据其相邻节点的得分和边的方向更新自身的得分。公式为：$PR(v)=\frac{1-d}{N} + d \sum_{u \in N(v)} \frac{PR(u)}{L(u)}$，其中$PR(v)$是节点$v$的PageRank得分，$d$是随机跳转概率，$N(v)$是$v$的邻居集合，$L(u)$是节点$u$的出度。
    - 使用MapReduce框架实现迭代过程，确保每个节点的得分在多个迭代周期内逐渐收敛到稳定值。
-   
+
 ### 3.3 算法优缺点
 
 优点：GraphX支持高度并行化的图算法，能有效处理海量数据；提供了丰富的API，简化了图数据的操作和分析流程。
@@ -114,7 +114,7 @@ sc = SparkContext(conf=conf)
 
 # 加载图数据
 rdd = sc.textFile("path/to/graph/file")
-lines = rdd.map(lambda l: l.split(' ')) 
+lines = rdd.map(lambda l: l.split(' '))
 vertices = lines.map(lambda v: ("v" + str(int(v[0])), {"attr": float(v[1])}))
 edges = lines.filter(lambda l: len(l) == 3).map(lambda e: ((e[0], "w"), (e[1], None)))
 

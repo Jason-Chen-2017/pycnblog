@@ -76,15 +76,15 @@ ResNet架构不仅适用于图像分类任务，还能扩展至其他领域，�
 
 #### 损失函数
 
-$$L = \\frac{1}{N}\\sum_{i=1}^{N} \\mathcal{L}(y_i, \\hat{y}_i)$$
+$$L = \frac{1}{N}\sum_{i=1}^{N} \mathcal{L}(y_i, \hat{y}_i)$$
 
-其中，$N$是样本数，$\\mathcal{L}$是损失函数，$y_i$是真实标签，$\\hat{y}_i$是预测值。
+其中，$N$是样本数，$\mathcal{L}$是损失函数，$y_i$是真实标签，$\hat{y}_i$是预测值。
 
 #### 梯度下降优化
 
-$$\\theta := \\theta - \\eta \\frac{\\partial L}{\\partial \\theta}$$
+$$\theta := \theta - \eta \frac{\partial L}{\partial \theta}$$
 
-$\\theta$是参数，$\\eta$是学习率。
+$\theta$是参数，$\eta$是学习率。
 
 ### 4.2 公式推导过程
 
@@ -96,7 +96,7 @@ $$H(x) = x + f(x)$$
 
 #### 捷径连接
 
-$$f(x) = \\text{conv}(x, W_f) + b_f$$
+$$f(x) = \text{conv}(x, W_f) + b_f$$
 
 其中，$W_f$是权重矩阵，$b_f$是偏置向量。
 
@@ -221,7 +221,7 @@ def train(model, device, train_loader, optimizer, criterion, epoch):
         loss.backward()
         optimizer.step()
         if batch_idx % 10 == 0:
-            print('Train Epoch: {} [{}/{} ({:.0f}%)]\\tLoss: {:.6f}'.format(
+            print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
                 epoch, batch_idx * len(data), len(train_loader.dataset),
                 100. * batch_idx / len(train_loader), loss.item()))
 
@@ -245,7 +245,7 @@ Test set: Average loss: {:.4f}, Accuracy: {}/{} ({:.0f}%)\
         100. * correct / len(test_loader.dataset)))
 
 def main():
-    device = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = resnet18().to(device)
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.5)
@@ -256,7 +256,7 @@ def main():
         test(model, device, test_loader)
         scheduler.step()
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     main()
 ```
 

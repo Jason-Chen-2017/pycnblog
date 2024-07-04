@@ -1,4 +1,4 @@
-                 
+
 # RNN：递归神经网络的原理与应用
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -158,10 +158,10 @@ from torch.utils.data import Dataset, DataLoader
 class StockDataset(Dataset):
     def __init__(self, data):
         self.data = data
-    
+
     def __len__(self):
         return len(self.data)
-    
+
     def __getitem__(self, idx):
         return torch.tensor(self.data[idx])
 
@@ -169,10 +169,10 @@ class RNN(nn.Module):
     def __init__(self, input_size, hidden_size, output_size):
         super(RNN, self).__init__()
         self.hidden_size = hidden_size
-        
+
         self.i2h = nn.Linear(input_size + hidden_size, hidden_size)
         self.h2o = nn.Linear(hidden_size, output_size)
-    
+
     def forward(self, input, hidden):
         combined = torch.cat((input, hidden), 1)
         hidden = self.i2h(combined)
@@ -191,16 +191,16 @@ def train_model():
         total_loss = 0
         for inputs, targets in dataloader:
             hidden = torch.zeros(1, 1, model.hidden_size)
-            
+
             optimizer.zero_grad()
             outputs, _ = model(inputs.view(-1, 1), hidden)
-            
+
             loss = criterion(outputs, targets)
             loss.backward()
             optimizer.step()
-            
+
             total_loss += loss.item()
-        
+
         print(f'Epoch {epoch}, Loss: {total_loss / len(dataloader)}')
 
 # 在这里加载你的股票价格数据 stock_prices

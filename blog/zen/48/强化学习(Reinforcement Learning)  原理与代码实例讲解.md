@@ -174,22 +174,22 @@ epochs = 1000
 for epoch in range(epochs):
     state = env.reset()
     done = False
-    
+
     while not done:
         # 选择动作
         if np.random.rand() < epsilon:
             action = env.action_space.sample()
         else:
             action = np.argmax(Q_table[state])
-        
+
         # 执行动作并获取奖励
         next_state, reward, done, _ = env.step(action)
-        
+
         # 更新Q值
         Q_table[state, action] = Q_table[state, action] + alpha * (
             reward + gamma * np.max(Q_table[next_state]) - Q_table[state, action]
         )
-        
+
         state = next_state
 
 # 关闭环境

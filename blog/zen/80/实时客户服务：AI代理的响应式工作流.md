@@ -106,7 +106,7 @@ $$
 
 $$
 \begin{align*}
-h_t &= \text{GRU}(x_t, h_{t-1}; \theta) \\
+h_t &= \text{GRU}(x_t, h_{t-1}; \theta) \
 y &= \text{Softmax}(W_h y_{t-1})
 \end{align*}
 $$

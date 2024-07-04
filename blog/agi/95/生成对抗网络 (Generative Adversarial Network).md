@@ -98,8 +98,8 @@ GAN的数学模型可以表示为：
 
 $$
 \begin{align*}
-G(z) &= \text{Generator}(z) \quad \text{其中 } z \sim \mathcal{N}(0,1) \\
-D(x) &= \text{Discriminator}(x) \\
+G(z) &= \text{Generator}(z) \quad \text{其中 } z \sim \mathcal{N}(0,1) \
+D(x) &= \text{Discriminator}(x) \
 D(G(z)) &= \text{Discriminator}(G(z))
 \end{align*}
 $$
@@ -112,8 +112,8 @@ $$
 
 $$
 \begin{align*}
-G(z) &= f_G(z) \\
-D(x) &= f_D(x) \\
+G(z) &= f_G(z) \
+D(x) &= f_D(x) \
 D(G(z)) &= f_D(G(z))
 \end{align*}
 $$
@@ -221,7 +221,7 @@ A2：解决GAN训练不稳定问题的方法有以下几点：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n gan-env python=3.8 
+conda create -n gan-env python=3.8
 conda activate gan-env
 ```
 

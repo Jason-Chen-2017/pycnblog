@@ -131,19 +131,19 @@ K-means算法是一种基于距离的聚类算法。其核心思想是将数据�
 
 #### 4.2.2 公式推导
 
-设数据集为$X = \\{x_1, x_2, \\dots, x_n\\}$，其中$x_i \\in \\mathbb{R}^d$，目标函数为：
+设数据集为$X = \{x_1, x_2, \dots, x_n\}$，其中$x_i \in \mathbb{R}^d$，目标函数为：
 
-$$J(\\mu, \\lambda) = \\sum_{k=1}^K \\sum_{i=1}^n (x_i - \\mu_k)^2$$
+$$J(\mu, \lambda) = \sum_{k=1}^K \sum_{i=1}^n (x_i - \mu_k)^2$$
 
-其中，$\\mu_k$表示第$k$个簇的质心，$\\lambda$表示目标函数的权重。
+其中，$\mu_k$表示第$k$个簇的质心，$\lambda$表示目标函数的权重。
 
 #### 4.2.3 目标函数最小化
 
 为了最小化目标函数，我们需要求解以下优化问题：
 
-$$\\min_{\\mu, \\lambda} J(\\mu, \\lambda)$$
+$$\min_{\mu, \lambda} J(\mu, \lambda)$$
 
-通过求解上述优化问题，可以得到每个簇的质心$\\mu_k$，进而实现聚类。
+通过求解上述优化问题，可以得到每个簇的质心$\mu_k$，进而实现聚类。
 
 ### 4.3 案例分析与讲解
 
@@ -177,15 +177,15 @@ from pyspark.sql import SparkSession
 from pyspark.ml.clustering import KMeans
 from pyspark.sql.functions import col
 
-spark = SparkSession.builder.appName(\"KMeansExample\").getOrCreate()
-data = spark.sql(\"SELECT feature1, feature2 FROM mytable\")
+spark = SparkSession.builder.appName("KMeansExample").getOrCreate()
+data = spark.sql("SELECT feature1, feature2 FROM mytable")
 
-kmeans = KMeans().setK(2).setFeaturesCol(\"features\").setPredictionCol(\"cluster\")
+kmeans = KMeans().setK(2).setFeaturesCol("features").setPredictionCol("cluster")
 model = kmeans.fit(data)
 
 # 输出聚类结果
 predictions = model.transform(data)
-predictions.select(\"feature1\", \"feature2\", \"cluster\").show()
+predictions.select("feature1", "feature2", "cluster").show()
 ```
 
 ### 4.4 常见问题解答
@@ -268,9 +268,9 @@ Sqoop数据分析方法在机器学习模型训练中也有着广泛的应用，
 
 ### 7.3 相关论文推荐
 
-1. **\"Data Integration in the Hadoop Ecosystem\"**: 本文介绍了Hadoop生态系统中数据集成的方法和工具，包括Sqoop。
-2. **\"Big Data Analytics: From Architecture to Applications\"**: 本文介绍了大数据分析的方法和技术，包括Sqoop的应用。
-3. **\"Hive: A Warehouse for Hadoop\"**: 本文介绍了Hive的设计和实现，包括Sqoop与Hive的集成。
+1. **"Data Integration in the Hadoop Ecosystem"**: 本文介绍了Hadoop生态系统中数据集成的方法和工具，包括Sqoop。
+2. **"Big Data Analytics: From Architecture to Applications"**: 本文介绍了大数据分析的方法和技术，包括Sqoop的应用。
+3. **"Hive: A Warehouse for Hadoop"**: 本文介绍了Hive的设计和实现，包括Sqoop与Hive的集成。
 
 ### 7.4 其他资源推荐
 

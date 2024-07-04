@@ -19,7 +19,7 @@
 - 销售预测
 - 自动驾驶(对象检测和分类)
 
-## 2.核心概念与联系  
+## 2.核心概念与联系
 
 ### 2.1 监督学习的核心概念
 
@@ -113,14 +113,14 @@ $$
 2. 计算损失函数关于 $w$ 和 $b$ 的梯度:
    $$
    \begin{aligned}
-   \frac{\partial \mathcal{L}}{\partial w} &= \frac{2}{n}\sum_{i=1}^n(w^Tx_i + b - y_i)x_i \\
+   \frac{\partial \mathcal{L}}{\partial w} &= \frac{2}{n}\sum_{i=1}^n(w^Tx_i + b - y_i)x_i \
    \frac{\partial \mathcal{L}}{\partial b} &= \frac{2}{n}\sum_{i=1}^n(w^Tx_i + b - y_i)
    \end{aligned}
    $$
 3. 更新参数:
    $$
    \begin{aligned}
-   w &\leftarrow w - \eta \frac{\partial \mathcal{L}}{\partial w} \\
+   w &\leftarrow w - \eta \frac{\partial \mathcal{L}}{\partial w} \
    b &\leftarrow b - \eta \frac{\partial \mathcal{L}}{\partial b}
    \end{aligned}
    $$
@@ -228,4 +228,4 @@ Prediction for new data: 42.17
 - **《深度学习》(Ian Goodfellow等)**: 深度学习经典教材,详细介绍了各种深度学习模型和算法。
 - **《模式识别与机器学习》(Christopher M. Bishop)**: 另一本经典教材,内容全面,数学基础扎实。
 
-### 7.4 
+### 7.4

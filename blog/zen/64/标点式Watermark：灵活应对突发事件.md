@@ -211,4 +211,4 @@ print(f'提取的Watermark信息: {extracted_watermark}')
 
 ### 8.3. 标点式Watermark的应用场景有哪些？
 
-标点式Watermark可以应用于版权保护、内容认证、篡改检测等多个领域。 
+标点式Watermark可以应用于版权保护、内容认证、篡改检测等多个领域。

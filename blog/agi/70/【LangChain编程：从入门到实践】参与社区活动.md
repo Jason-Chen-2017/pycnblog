@@ -18,7 +18,7 @@
 
 本文将全面介绍LangChain编程，从核心概念到实践应用，力求为读者提供一个系统全面的指南。全文分为以下几个部分：
 
-1. 背景介绍  
+1. 背景介绍
 2. 核心概念与联系
 3. 核心算法原理&具体操作步骤
 4. 数学模型和公式&详细讲解&举例说明
@@ -119,9 +119,9 @@ $$x=(\mathbf{x}_1,\mathbf{x}_2,\mathbf{x}_3,\mathbf{x}_4,\mathbf{x}_5,\mathbf{x}
 然后，通过自注意力机制计算每个位置与其他位置的相关性，得到注意力权重矩阵：
 
 $$A=\begin{bmatrix}
-\alpha_{11} & \alpha_{12} & \cdots & \alpha_{16} \\
-\alpha_{21} & \alpha_{22} & \cdots & \alpha_{26} \\
-\vdots & \vdots & \ddots & \vdots \\
+\alpha_{11} & \alpha_{12} & \cdots & \alpha_{16} \
+\alpha_{21} & \alpha_{22} & \cdots & \alpha_{26} \
+\vdots & \vdots & \ddots & \vdots \
 \alpha_{61} & \alpha_{62} & \cdots & \alpha_{66}
 \end{bmatrix}$$
 
@@ -193,7 +193,7 @@ print(result)
 假设我们的文本数据中包含以下内容：
 
 ```
-Paris is the capital and most populous city of France, with an estimated population of 2,165,423 residents in 2019 in an area of more than 105 square kilometres. Since the 17th century, Paris has been one of Europe's major centres of finance, diplomacy, commerce, fashion, gastronomy, science, and arts. 
+Paris is the capital and most populous city of France, with an estimated population of 2,165,423 residents in 2019 in an area of more than 105 square kilometres. Since the 17th century, Paris has been one of Europe's major centres of finance, diplomacy, commerce, fashion, gastronomy, science, and arts.
 ```
 
 当我们运行上述代码，并输入问题"What is the capital of France?"时，程序将输出：
@@ -251,4 +251,4 @@ LangChain在许多实际场景中都有广泛应用，包括：
 
 ## 8. 总结：未来发展趋势与挑战
 
-### 
+###

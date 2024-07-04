@@ -108,23 +108,23 @@ episodes = 50000
 for i_episode in range(episodes):
     # 初始化状态
     state = env.reset()
-    
+
     for t in range(100):
         # 选择动作
         if np.random.uniform(0, 1) < epsilon:
             action = env.action_space.sample()
         else:
             action = np.argmax(Q[state, :])
-        
+
         # 执行动作
         next_state, reward, done, info = env.step(action)
-        
+
         # 更新Q表
         Q[state, action] = (1 - alpha) * Q[state, action] + alpha * (reward + gamma * np.max(Q[next_state, :]))
-        
+
         # 更新状态
         state = next_state
-        
+
         if done:
             break
 ```

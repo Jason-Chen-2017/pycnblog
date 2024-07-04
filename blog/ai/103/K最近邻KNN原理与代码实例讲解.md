@@ -409,4 +409,4 @@ A: 处理文本数据的方法有很多种，例如：
 * **Bag-of-words:**  将每个文档表示为一个 vector，其中每个元素表示一个单词在文档中出现的次数。
 * **TF-IDF:**  Term Frequency-Inverse Document Frequency，一种用于评估一个词语对于一个文档集或语料库中的其中一份文档的重要程度的统计方法。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

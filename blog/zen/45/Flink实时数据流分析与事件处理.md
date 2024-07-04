@@ -114,7 +114,7 @@ Flink的流处理算法主要基于以下数学模型：
 
 $$
 F_{w}(t, X) = \begin{cases}
-\sum_{x \in X} w(x) & \text{if } t \in [T_{min}(t), T_{max}(t)] \\
+\sum_{x \in X} w(x) & \text{if } t \in [T_{min}(t), T_{max}(t)] \
 0 & \text{otherwise}
 \end{cases}
 $$

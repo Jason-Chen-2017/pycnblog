@@ -1,6 +1,6 @@
 # 【LangChain编程：从入门到实践】聊天模型
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：LangChain, 聊天模型, 生成式对话, 大型语言模型, NLP, 自然语言处理
 
@@ -43,7 +43,7 @@ LangChain 是一种专为构建聊天模型和对话系统而设计的编程框�
 生成式对话模型通常基于以下几种核心算法：
 
 1. **基于RNN的序列到序列（Seq2Seq）模型**：通过编码器（Encoder）捕获输入序列的信息，解码器（Decoder）生成输出序列，中间可能包含注意力机制来帮助解码器聚焦于输入序列的特定部分。
-   
+
    ![Seq2Seq模型](./images/seq2seq_model.png)
 
 2. **基于Transformer的模型**：利用多头自注意力机制（Multi-Head Attention）来处理序列间的依赖关系，提高模型的并行处理能力和泛化能力。
@@ -57,7 +57,7 @@ LangChain 是一种专为构建聊天模型和对话系统而设计的编程框�
 生成式对话模型的开发通常包括以下步骤：
 
 1. **数据准备**：收集对话数据集，清洗并预处理数据，可能包括文本清洗、分词、去除停用词等。
-   
+
    ```markdown
    Data Preparation:
    - Clean and preprocess data.

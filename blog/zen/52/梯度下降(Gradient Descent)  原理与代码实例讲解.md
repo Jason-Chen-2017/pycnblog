@@ -15,14 +15,14 @@
 梯度是一个向量,指向函数增长最快的方向。在梯度下降中,每次参数更新都沿着梯度的反方向,即损失函数下降最快的方向。
 ### 2.3 学习率(Learning Rate)
 学习率决定了每次参数更新的步长。学习率太小,收敛速度慢;学习率太大,可能错过最小值点。
-### 2.4 批量大小(Batch Size)  
+### 2.4 批量大小(Batch Size)
 批量大小指每次迭代中用于计算梯度的样本数。常见的梯度下降变体如随机梯度下降、小批量梯度下降就是根据批量大小的不同而区分的。
 
 ```mermaid
 graph LR
 A[模型参数] --> B[前向传播]
 B --> C[损失函数]
-C --> D[反向传播求梯度] 
+C --> D[反向传播求梯度]
 D --> E[参数更新]
 E --> A
 ```
@@ -30,7 +30,7 @@ E --> A
 ## 3.核心算法原理具体操作步骤
 ### 3.1 初始化参数
 随机初始化模型参数 $\theta$。
-### 3.2 计算损失函数 
+### 3.2 计算损失函数
 对当前参数 $\theta$,计算损失函数 $J(\theta)$。
 ### 3.3 计算梯度
 计算损失函数 $J(\theta)$ 对参数 $\theta$ 的梯度 $\nabla_\theta J(\theta)$。
@@ -74,7 +74,7 @@ $$
 
 $$
 \begin{aligned}
-\frac{\partial J}{\partial \theta_0} &= \frac{2}{n} \sum_{i=1}^n (\theta_0 + \theta_1 x_i - y_i) \\
+\frac{\partial J}{\partial \theta_0} &= \frac{2}{n} \sum_{i=1}^n (\theta_0 + \theta_1 x_i - y_i) \
 \frac{\partial J}{\partial \theta_1} &= \frac{2}{n} \sum_{i=1}^n (\theta_0 + \theta_1 x_i - y_i) x_i
 \end{aligned}
 $$
@@ -83,7 +83,7 @@ $$
 
 $$
 \begin{aligned}
-\theta_0 &:= \theta_0 - \alpha \frac{\partial J}{\partial \theta_0} \\
+\theta_0 &:= \theta_0 - \alpha \frac{\partial J}{\partial \theta_0} \
 \theta_1 &:= \theta_1 - \alpha \frac{\partial J}{\partial \theta_1}
 \end{aligned}
 $$
@@ -100,7 +100,7 @@ X = np.random.rand(100, 1)
 y = 2 + 3 * X + np.random.rand(100, 1)
 
 # 初始化参数
-theta = np.random.randn(2, 1) 
+theta = np.random.randn(2, 1)
 
 # 超参数
 learning_rate = 0.1
@@ -110,18 +110,18 @@ num_iterations = 1000
 for iteration in range(num_iterations):
     # 计算预测值
     y_pred = np.dot(X, theta[1]) + theta[0]
-    
+
     # 计算损失函数
     loss = (1/2*len(X)) * np.sum((y_pred - y)**2)
-    
+
     # 计算梯度
     grad_theta0 = (1/len(X)) * np.sum(y_pred - y)
     grad_theta1 = (1/len(X)) * np.dot(X.T, (y_pred - y))
-    
+
     # 更新参数
     theta[0] -= learning_rate * grad_theta0
     theta[1] -= learning_rate * grad_theta1
-    
+
     if(iteration % 100 == 0):
         print(f'iteration {iteration}: loss {loss:.4f}')
 
@@ -146,7 +146,7 @@ Final parameters: theta0 = 2.028, theta1 = 2.965
 在这个例子中,我们:
 1. 生成了一组随机的线性数据。
 2. 初始化了模型参数 theta。
-3. 设置了学习率和迭代次数等超参数。 
+3. 设置了学习率和迭代次数等超参数。
 4. 在每次迭代中:
    - 计算当前参数下的预测值。
    - 计算损失函数(均方误差)。

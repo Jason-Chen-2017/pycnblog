@@ -4,7 +4,7 @@
 
 ### 1.1 问题的由来
 
-Stirling公式，又称斯特林近似公式，是数学分析中的一个重要公式，主要用于估算阶乘的值。阶乘函数\\( n! \\)在统计学、概率论、组合数学以及物理等领域有广泛的应用。例如，在组合数学中，阶乘用于计算排列和组合的数量；在概率论中，阶乘用于描述离散随机变量的概率分布。
+Stirling公式，又称斯特林近似公式，是数学分析中的一个重要公式，主要用于估算阶乘的值。阶乘函数\( n! \)在统计学、概率论、组合数学以及物理等领域有广泛的应用。例如，在组合数学中，阶乘用于计算排列和组合的数量；在概率论中，阶乘用于描述离散随机变量的概率分布。
 
 ### 1.2 研究现状
 
@@ -29,13 +29,13 @@ Stirling公式对于简化数学表达、提高计算效率、理解复杂系统
 
 ### 2.1 核心概念概述
 
-Stirling公式给出了\\( n! \\)的一个近似表达式，形式为：
+Stirling公式给出了\( n! \)的一个近似表达式，形式为：
 
 $$
-n! \\approx \\sqrt{2\\pi n} \\left(\\frac{n}{e}\\right)^n
+n! \approx \sqrt{2\pi n} \left(\frac{n}{e}\right)^n
 $$
 
-其中\\( e \\)是自然对数的底数，\\( \\pi \\)是圆周率。这个公式在\\( n \\)接近无限大时特别有用，因为它提供了阶乘的一个良好的近似。
+其中\( e \)是自然对数的底数，\( \pi \)是圆周率。这个公式在\( n \)接近无限大时特别有用，因为它提供了阶乘的一个良好的近似。
 
 ### 2.2 联系
 
@@ -51,15 +51,15 @@ Stirling公式虽然不是一种算法，但它提供了一种计算阶乘近似
 
 #### 步骤1：连续函数的极限性质
 
-考虑函数\\( f(x) = \\frac{\\ln(x)}{x} \\)，其导数为\\( f'(x) = \\frac{1 - \\ln(x)}{x^2} \\)，当\\( x \\)趋近于\\( \\infty \\)时，\\( f'(x) \\)趋近于0，表明\\( f(x) \\)在\\( \\infty \\)处趋近于某个常数。
+考虑函数\( f(x) = \frac{\ln(x)}{x} \)，其导数为\( f'(x) = \frac{1 - \ln(x)}{x^2} \)，当\( x \)趋近于\( \infty \)时，\( f'(x) \)趋近于0，表明\( f(x) \)在\( \infty \)处趋近于某个常数。
 
 #### 步骤2：积分逼近
 
-利用积分逼近，我们可以将\\( \\ln(n!) \\)近似为积分\\( \\int_1^n \\ln(x) dx \\)，并通过积分的性质得到\\( \\ln(n!) \\)的近似值。
+利用积分逼近，我们可以将\( \ln(n!) \)近似为积分\( \int_1^n \ln(x) dx \)，并通过积分的性质得到\( \ln(n!) \)的近似值。
 
 #### 步骤3：引入指数函数
 
-利用\\( e \\)的性质，可以将\\( \\ln(n!) \\)的近似转换为\\( n! \\)的近似表达式。
+利用\( e \)的性质，可以将\( \ln(n!) \)的近似转换为\( n! \)的近似表达式。
 
 ### 3.3 算法优缺点
 
@@ -78,77 +78,77 @@ Stirling公式虽然不是一种算法，但它提供了一种计算阶乘近似
 
 Stirling公式的数学模型基于连续函数的极限性质和积分逼近的思想。具体而言：
 
-设\\( f(x) = \\ln(x)/x \\)，则有：
+设\( f(x) = \ln(x)/x \)，则有：
 
 $$
-\\lim_{x \\to \\infty} f(x) = \\lim_{x \\to \\infty} \\frac{\\ln(x)}{x}
+\lim_{x \to \infty} f(x) = \lim_{x \to \infty} \frac{\ln(x)}{x}
 $$
 
 根据洛必达法则，我们可以对分子和分母进行微分：
 
 $$
-\\lim_{x \\to \\infty} \\frac{f(x)}{g(x)} = \\lim_{x \\to \\infty} \\frac{f'(x)}{g'(x)}
+\lim_{x \to \infty} \frac{f(x)}{g(x)} = \lim_{x \to \infty} \frac{f'(x)}{g'(x)}
 $$
 
 得到：
 
 $$
-\\lim_{x \\to \\infty} \\frac{\\ln(x)}{x} = \\lim_{x \\to \\infty} \\frac{1/x}{1} = 0
+\lim_{x \to \infty} \frac{\ln(x)}{x} = \lim_{x \to \infty} \frac{1/x}{1} = 0
 $$
 
 ### 4.2 公式推导过程
 
-通过积分逼近，我们可以得到\\( \\ln(n!) \\)的近似表达式：
+通过积分逼近，我们可以得到\( \ln(n!) \)的近似表达式：
 
 $$
-\\ln(n!) = \\ln(1) + \\ln(2) + \\ln(3) + ... + \\ln(n)
+\ln(n!) = \ln(1) + \ln(2) + \ln(3) + ... + \ln(n)
 $$
 
 将其近似为积分：
 
 $$
-\\int_1^n \\ln(x) dx
+\int_1^n \ln(x) dx
 $$
 
 利用积分公式：
 
 $$
-\\int \\ln(x) dx = x \\ln(x) - x + C
+\int \ln(x) dx = x \ln(x) - x + C
 $$
 
 代入边界：
 
 $$
-[n \\ln(n) - n] - [1 \\ln(1) - 1] = n \\ln(n) - n + 1
+[n \ln(n) - n] - [1 \ln(1) - 1] = n \ln(n) - n + 1
 $$
 
-考虑到\\( \\ln(1) = 0 \\)，我们有：
+考虑到\( \ln(1) = 0 \)，我们有：
 
 $$
-n \\ln(n) - n + 1 \\approx \\int_1^n \\ln(x) dx
+n \ln(n) - n + 1 \approx \int_1^n \ln(x) dx
 $$
 
 ### 4.3 案例分析与讲解
 
-对于\\( n = 5 \\)，精确计算\\( 5! \\)：
+对于\( n = 5 \)，精确计算\( 5! \)：
 
 $$
-5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120
+5! = 5 \times 4 \times 3 \times 2 \times 1 = 120
 $$
 
 使用Stirling公式近似：
 
 $$
-\\sqrt{2\\pi \\times 5} \\left(\\frac{5}{e}\\right)^5 \\approx \\sqrt{10\\pi} \\times \\left(\\frac{5}{2.718}\\right)^5 \\approx 118.019
+\sqrt{2\pi \times 5} \left(\frac{5}{e}\right)^5 \approx \sqrt{10\pi} \times \left(\frac{5}{2.718}\right)^5 \approx 118.019
 $$
 
 ### 4.4 常见问题解答
 
 Q：为什么在大数值情况下Stirling公式仍然有效？
-A：因为随着\\( n \\)增大，\\( \\frac{\\ln(n)}{n} \\)趋于0，积分逼近的精度提高，近似误差减少。
+A：因为随着\( n \)增大，\( \frac{\ln(n)}{n} \)趋于0，积分逼近的精度提高，近似误差减少。
 
 Q：如何精确衡量Stirling公式的近似误差？
-A：通过比较\\( n! \\)与\\( \\sqrt{2\\pi n} \\left(\\frac{n}{e}\\right)^n \\)的实际值，计算绝对误差或相对误差。
+A：通过比较\( n! \)与\( \sqrt{2\pi n} \left(\frac{n}{e}\right)^n \)的实际值，计算绝对误差或相对误差。
 
 ## 5. 项目实践：代码实例和详细解释说明
 
@@ -163,19 +163,19 @@ import math
 import numpy as np
 
 def stirling_approximation(n):
-    \"\"\"
+    """
     计算Stirling近似公式估计的阶乘值。
-    \"\"\"
+    """
     return math.sqrt(2 * math.pi * n) * (n / math.e) ** n
 
 def check_stirling_accuracy(n, tolerance=1e-6):
-    \"\"\"
+    """
     检查Stirling公式相对于实际阶乘的准确性。
-    \"\"\"
+    """
     actual_factorial = math.factorial(n)
     approximated_factorial = stirling_approximation(n)
     error = abs(actual_factorial - approximated_factorial)
-    print(f\"n = {n}, Stirling approximation = {approximated_factorial:.2f}, Actual factorial = {actual_factorial:.2f}, Error = {error:.6f}\")
+    print(f"n = {n}, Stirling approximation = {approximated_factorial:.2f}, Actual factorial = {actual_factorial:.2f}, Error = {error:.6f}")
 
 # 示例检查点
 check_stirling_accuracy(5)

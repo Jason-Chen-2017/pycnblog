@@ -69,9 +69,9 @@ Transformer模型的输入数据处理方式广泛应用于自然语言处理、
 2. 位置编码：假设我们的序列长度为$n$，那么我们可以通过一个$n \times d$的矩阵$P$来表示位置编码，其中$P_{i,j}$表示第$i$个位置的第$j$个维度的值。在Transformer模型中，$P_{i,j}$的计算公式为：
 
 $$
-P_{i,j} = 
+P_{i,j} =
 \begin{cases}
-\sin(i / 10000^{2j/d}) & \text{if } j \text{ is even} \\
+\sin(i / 10000^{2j/d}) & \text{if } j \text{ is even} \
 \cos(i / 10000^{2j/d}) & \text{if } j \text{ is odd}
 \end{cases}
 $$

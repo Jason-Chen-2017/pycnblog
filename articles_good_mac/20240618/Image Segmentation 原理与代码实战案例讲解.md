@@ -85,12 +85,9 @@ $$ D(\\Omega) = \\sum_{(i,j) \\in \\Omega} \\delta(I(i,j), c) $$
 
 #### 正则项（正则化损失）
 
-$$ R(\\Omega) = \\sum_{(i,j) \\in \\Omega} \\alpha \\left| \
-abla I(i,j) \\cdot \
-abla \\phi(\\Omega) \\right|^2 $$
+$$ R(\\Omega) = \\sum_{(i,j) \\in \\Omega} \\alpha \\left| \nabla I(i,j) \\cdot \nabla \\phi(\\Omega) \\right|^2 $$
 
-其中，$\\alpha$是正则化系数，$\
-abla I(i,j)$是图像梯度，$\\phi(\\Omega)$是分割函数。
+其中，$\\alpha$是正则化系数，$\nabla I(i,j)$是图像梯度，$\\phi(\\Omega)$是分割函数。
 
 ### 4.2 公式推导过程
 

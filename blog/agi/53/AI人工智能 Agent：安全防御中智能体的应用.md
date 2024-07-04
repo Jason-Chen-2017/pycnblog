@@ -77,7 +77,7 @@ $$
 
 $$
 \begin{aligned}
-& \min_{w, b} \frac{1}{2}||w||^2 \\
+& \min_{w, b} \frac{1}{2}||w||^2 \
 & s.t. \ y_i(w^Tx_i + b) \ge 1, \ i = 1, 2, ..., n
 \end{aligned}
 $$

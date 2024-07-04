@@ -77,7 +77,7 @@
 设流形M为具有局部欧几里得结构的拓扑空间，M×M为M与自身的笛卡尔积。对角线D是M×M中的子集，定义为{(x,x)|x∈M}。对角线上定义的微分形式ω可以表示为：
 
 $$
-\omega(x,y) = \begin{cases} 
+\omega(x,y) = \begin{cases}
 f(x) & \text{if } x = y \\
 0 & \text{otherwise}
 \end{cases}

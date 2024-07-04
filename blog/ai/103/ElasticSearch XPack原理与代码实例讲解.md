@@ -114,9 +114,9 @@ X-Pack 中涉及的数学模型主要包括：
 * **权限矩阵：**
     $$
     P = \begin{bmatrix}
-    p_{11} & p_{12} & \cdots & p_{1n} \\
-    p_{21} & p_{22} & \cdots & p_{2n} \\
-    \vdots & \vdots & \ddots & \vdots \\
+    p_{11} & p_{12} & \cdots & p_{1n} \
+    p_{21} & p_{22} & \cdots & p_{2n} \
+    \vdots & \vdots & \ddots & \vdots \
     p_{m1} & p_{m2} & \cdots & p_{mn}
     \end{bmatrix}
     $$
@@ -124,9 +124,9 @@ X-Pack 中涉及的数学模型主要包括：
 * **用户权限：**
     $$
     U = \begin{bmatrix}
-    u_{11} & u_{12} & \cdots & u_{1m} \\
-    u_{21} & u_{22} & \cdots & u_{2m} \\
-    \vdots & \vdots & \ddots & \vdots \\
+    u_{11} & u_{12} & \cdots & u_{1m} \
+    u_{21} & u_{22} & \cdots & u_{2m} \
+    \vdots & \vdots & \ddots & \vdots \
     u_{k1} & u_{k2} & \cdots & u_{km}
     \end{bmatrix}
     $$
@@ -142,9 +142,9 @@ X-Pack 中涉及的数学模型主要包括：
 * **指标阈值：**
     $$
     T = \begin{bmatrix}
-    t_1 \\
-    t_2 \\
-    \vdots \\
+    t_1 \
+    t_2 \
+    \vdots \
     t_n
     \end{bmatrix}
     $$
@@ -152,9 +152,9 @@ X-Pack 中涉及的数学模型主要包括：
 * **指标数据：**
     $$
     D = \begin{bmatrix}
-    d_{11} & d_{12} & \cdots & d_{1n} \\
-    d_{21} & d_{22} & \cdots & d_{2n} \\
-    \vdots & \vdots & \ddots & \vdots \\
+    d_{11} & d_{12} & \cdots & d_{1n} \
+    d_{21} & d_{22} & \cdots & d_{2n} \
+    \vdots & \vdots & \ddots & \vdots \
     d_{m1} & d_{m2} & \cdots & d_{mn}
     \end{bmatrix}
     $$
@@ -162,9 +162,9 @@ X-Pack 中涉及的数学模型主要包括：
 * **告警触发条件：**
     $$
     C = \begin{bmatrix}
-    c_{11} & c_{12} & \cdots & c_{1n} \\
-    c_{21} & c_{22} & \cdots & c_{2n} \\
-    \vdots & \vdots & \ddots & \vdots \\
+    c_{11} & c_{12} & \cdots & c_{1n} \
+    c_{21} & c_{22} & \cdots & c_{2n} \
+    \vdots & \vdots & \ddots & \vdots \
     c_{m1} & c_{m2} & \cdots & c_{mn}
     \end{bmatrix}
     $$
@@ -185,9 +185,9 @@ X-Pack 中涉及的数学模型主要包括：
 * **聚类分析模型：**
     $$
     C = \begin{bmatrix}
-    c_{11} & c_{12} & \cdots & c_{1n} \\
-    c_{21} & c_{22} & \cdots & c_{2n} \\
-    \vdots & \vdots & \ddots & \vdots \\
+    c_{11} & c_{12} & \cdots & c_{1n} \
+    c_{21} & c_{22} & \cdots & c_{2n} \
+    \vdots & \vdots & \ddots & \vdots \
     c_{m1} & c_{m2} & \cdots & c_{mn}
     \end{bmatrix}
     $$
@@ -207,24 +207,24 @@ X-Pack 中涉及的数学模型主要包括：
 * **权限矩阵：**
     $$
     P = \begin{bmatrix}
-    1 & 1 & 1 \\
-    1 & 1 & 0 \\
+    1 & 1 & 1 \
+    1 & 1 & 0 \
     0 & 0 & 0
     \end{bmatrix}
     $$
 * **用户权限：**
     $$
     U = \begin{bmatrix}
-    1 & 0 & 0 \\
-    0 & 1 & 0 \\
+    1 & 0 & 0 \
+    0 & 1 & 0 \
     0 & 0 & 1
     \end{bmatrix}
     $$
 * **用户访问权限：**
     $$
     A = U \times P = \begin{bmatrix}
-    1 & 1 & 1 \\
-    1 & 1 & 0 \\
+    1 & 1 & 1 \
+    1 & 1 & 0 \
     0 & 0 & 0
     \end{bmatrix}
     $$
@@ -241,24 +241,24 @@ X-Pack 中涉及的数学模型主要包括：
 * **指标数据：**
     $$
     D = \begin{bmatrix}
-    70 \\
-    85 \\
+    70 \
+    85 \
     90
     \end{bmatrix}
     $$
 * **告警触发条件：**
     $$
     C = \begin{bmatrix}
-    0 \\
-    1 \\
+    0 \
+    1 \
     1
     \end{bmatrix}
     $$
 * **告警触发：**
     $$
     A = D \times C = \begin{bmatrix}
-    0 \\
-    85 \\
+    0 \
+    85 \
     90
     \end{bmatrix}
     $$
@@ -271,7 +271,7 @@ X-Pack 中涉及的数学模型主要包括：
 * **异常检测模型：**
     $$
     y = f(x) = \begin{cases}
-    1 & \text{if } x > \text{threshold} \\
+    1 & \text{if } x > \text{threshold} \
     0 & \text{otherwise}
     \end{cases}
     $$
@@ -556,4 +556,4 @@ X-Pack 的机器学习功能可以用于进行数据挖掘、预测分析等。�
 * **Q：如何使用 X-Pack 的日志分析功能？**
     * **A：**可以参考本文中的代码示例，创建日志索引、导入日志数据和使用 Kibana 进行日志分析。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

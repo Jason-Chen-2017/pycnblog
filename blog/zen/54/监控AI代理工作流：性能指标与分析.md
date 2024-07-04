@@ -4,7 +4,7 @@
 ### 1.1 AI代理工作流的兴起
 随着人工智能技术的快速发展,AI代理在各行各业中的应用日益广泛。AI代理能够自主完成复杂的任务,提高工作效率和质量。然而,随着AI代理工作流的日益复杂化,如何有效监控其性能,保证其稳定运行,已成为亟待解决的问题。
 
-### 1.2 监控AI代理工作流的重要性  
+### 1.2 监控AI代理工作流的重要性
 监控AI代理工作流的性能指标,对于保证AI系统的稳定运行、优化资源配置、提高工作效率至关重要。通过实时监测AI代理的运行状态,可以及时发现和定位潜在问题,从而快速响应和解决。同时,通过对性能指标的分析,可以洞察AI代理工作流的瓶颈所在,进而优化工作流,提升整体性能。
 
 ### 1.3 本文的主要内容
@@ -22,7 +22,7 @@ AI代理是一种能够感知环境、自主决策和执行任务的智能实体
 AI代理工作流是指在完成特定任务过程中,多个AI代理之间的协作过程。通过将复杂任务分解为多个子任务,并由不同的AI代理负责完成,可以显著提高任务完成的效率和质量。一个典型的AI代理工作流包括以下步骤:
 1. 任务分解:将复杂任务分解为多个可由AI代理完成的子任务
 2. 任务分配:根据AI代理的能力,将子任务分配给适合的代理
-3. 任务执行:AI代理按照工作流的安排,独立完成分配的子任务 
+3. 任务执行:AI代理按照工作流的安排,独立完成分配的子任务
 4. 结果整合:将各个AI代理完成的子任务结果进行整合,得出最终结果
 
 ### 2.3 性能指标的定义与分类
@@ -92,7 +92,7 @@ C --> B
 $$
 f(x)=
 \begin{cases}
-\lambda e^{-\lambda x},& x \geq 0 \\
+\lambda e^{-\lambda x},& x \geq 0 \
 0,& x < 0
 \end{cases}
 $$
@@ -228,12 +228,12 @@ def detect_anomaly(response_times, threshold):
 if __name__ == '__main__':
     file_path = 'log.csv'
     threshold = 500 # 响应时间阈值设为500ms
-    
+
     data = load_data(file_path)
     response_times = extract_response_time(data)
     avg_time, p90_time = calc_metrics(response_times)
     anomalies = detect_anomaly(response_times, threshold)
-    
+
     print(f'Average Response Time: {avg_time:.2f} ms')
     print(f'90% Percentile Response Time: {p90_time:.2f} ms')
     print(f'Number of Anomalies: {len(anomalies)}')

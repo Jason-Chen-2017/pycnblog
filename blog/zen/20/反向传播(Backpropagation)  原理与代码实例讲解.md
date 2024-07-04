@@ -1,6 +1,6 @@
 # 反向传播(Backpropagation) - 原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：反向传播算法，神经网络，误差梯度，链式法则
 
@@ -94,24 +94,24 @@
 
 设神经网络结构为：
 
-\\[ \\mathbf{x} \\rightarrow \\mathbf{W}_1 \\odot \\sigma(\\mathbf{W}_1 \\mathbf{x} + \\mathbf{b}_1) \\rightarrow \\mathbf{W}_2 \\odot \\sigma(\\mathbf{W}_2 (\\sigma(\\mathbf{W}_1 \\mathbf{x} + \\mathbf{b}_1) + \\mathbf{b}_2)) \\rightarrow \\cdots \\rightarrow \\mathbf{W}_L \\odot \\sigma(\\mathbf{W}_L (\\sigma(\\cdots) + \\mathbf{b}_{L-1})) \\]
+$$ \mathbf{x} \rightarrow \mathbf{W}_1 \odot \sigma(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1) \rightarrow \mathbf{W}_2 \odot \sigma(\mathbf{W}_2 (\sigma(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1) + \mathbf{b}_2)) \rightarrow \cdots \rightarrow \mathbf{W}_L \odot \sigma(\mathbf{W}_L (\sigma(\cdots) + \mathbf{b}_{L-1})) $$
 
 其中：
 
-- $\\mathbf{x}$ 是输入向量。
-- $\\mathbf{W}_i$ 和 $\\mathbf{b}_i$ 分别是第$i$层的权重矩阵和偏置向量。
-- $\\sigma$ 是激活函数。
-- $\\odot$ 表示元素乘积。
+- $\mathbf{x}$ 是输入向量。
+- $\mathbf{W}_i$ 和 $\mathbf{b}_i$ 分别是第$i$层的权重矩阵和偏置向量。
+- $\sigma$ 是激活函数。
+- $\odot$ 表示元素乘积。
 
 ### 4.2 公式推导过程
 
-损失函数 $J(\\mathbf{W})$ 通常为均方误差：
+损失函数 $J(\mathbf{W})$ 通常为均方误差：
 
-\\[ J(\\mathbf{W}) = \\frac{1}{2} \\sum_{i=1}^n (y_i - \\hat{y}_i)^2 \\]
+$$ J(\mathbf{W}) = \frac{1}{2} \sum_{i=1}^n (y_i - \hat{y}_i)^2 $$
 
 对于多层网络，损失函数通过链式法则展开：
 
-\\[ \\frac{\\partial J}{\\partial \\mathbf{W}_L} = \\frac{\\partial J}{\\partial \\hat{y}} \\frac{\\partial \\hat{y}}{\\partial z_L} \\frac{\\partial z_L}{\\partial \\mathbf{W}_L} \\]
+$$ \frac{\partial J}{\partial \mathbf{W}_L} = \frac{\partial J}{\partial \hat{y}} \frac{\partial \hat{y}}{\partial z_L} \frac{\partial z_L}{\partial \mathbf{W}_L} $$
 
 继续展开，直至输入层。
 
@@ -119,19 +119,19 @@
 
 考虑一个简单的两层全连接网络：
 
-- 输入层：$\\mathbf{x}$
-- 隐藏层：$\\mathbf{z} = \\mathbf{W}_1 \\mathbf{x} + \\mathbf{b}_1$
-- 输出层：$\\hat{y} = \\mathbf{W}_2 \\sigma(\\mathbf{z})$
+- 输入层：$\mathbf{x}$
+- 隐藏层：$\mathbf{z} = \mathbf{W}_1 \mathbf{x} + \mathbf{b}_1$
+- 输出层：$\hat{y} = \mathbf{W}_2 \sigma(\mathbf{z})$
 
 损失函数为：
 
-\\[ J(\\mathbf{W}_1, \\mathbf{W}_2) = \\frac{1}{2} \\sum_{i=1}^n (y_i - \\hat{y}_i)^2 \\]
+$$ J(\mathbf{W}_1, \mathbf{W}_2) = \frac{1}{2} \sum_{i=1}^n (y_i - \hat{y}_i)^2 $$
 
 对损失函数求导，应用链式法则：
 
-\\[ \\frac{\\partial J}{\\partial \\mathbf{W}_2} = \\frac{\\partial J}{\\partial \\hat{y}} \\frac{\\partial \\hat{y}}{\\partial \\mathbf{z}} \\frac{\\partial \\mathbf{z}}{\\partial \\mathbf{W}_2} \\]
+$$ \frac{\partial J}{\partial \mathbf{W}_2} = \frac{\partial J}{\partial \hat{y}} \frac{\partial \hat{y}}{\partial \mathbf{z}} \frac{\partial \mathbf{z}}{\partial \mathbf{W}_2} $$
 
-\\[ \\frac{\\partial J}{\\partial \\mathbf{W}_1} = \\frac{\\partial J}{\\partial \\hat{y}} \\frac{\\partial \\hat{y}}{\\partial \\mathbf{z}} \\frac{\\partial \\mathbf{z}}{\\partial \\mathbf{W}_1} \\]
+$$ \frac{\partial J}{\partial \mathbf{W}_1} = \frac{\partial J}{\partial \hat{y}} \frac{\partial \hat{y}}{\partial \mathbf{z}} \frac{\partial \mathbf{z}}{\partial \mathbf{W}_1} $$
 
 ### 4.4 常见问题解答
 

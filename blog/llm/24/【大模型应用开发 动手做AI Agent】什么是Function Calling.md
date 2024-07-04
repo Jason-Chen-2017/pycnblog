@@ -86,10 +86,10 @@ console.log(result); // 输出：7
 
 函数调用可以构建为数学模型，其中函数$f(x)$表示为：
 
-$$f(x) = \\begin{cases} 
-x_1 + x_2 & \\text{if } x \\text{ is a sum operation} \\\\
-\\text{other computation} & \\text{otherwise}
-\\end{cases}$$
+$$f(x) = \begin{cases}
+x_1 + x_2 & \text{if } x \text{ is a sum operation} \\\
+\text{other computation} & \text{otherwise}
+\end{cases}$$
 
 ### 4.2 公式推导过程
 
@@ -137,16 +137,16 @@ console.log(result); // 输出：7
 
 ```python
 def calculate_sum(a, b):
-    \"\"\"
+    """
     计算两个数字的和。
-    
+
     参数:
         a (int): 第一个加数。
         b (int): 第二个加数。
-        
+
     返回:
         int: 结果和。
-    \"\"\"
+    """
     return a + b
 
 result = calculate_sum(3, 4)

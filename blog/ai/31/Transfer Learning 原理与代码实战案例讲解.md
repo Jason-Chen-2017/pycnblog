@@ -84,15 +84,15 @@
 
 转移学习的数学模型通常基于以下基本假设：
 
-假设我们有源任务$f_\\theta$和目标任务$f_\\phi$，其中$\\theta$和$\\phi$分别表示两者的参数集。目标是找到$\\phi$的一个估计，以便$f_\\phi$在目标任务上的表现尽可能接近$f_\\theta$在源任务上的表现。
+假设我们有源任务$f_\theta$和目标任务$f_\phi$，其中$\theta$和$\phi$分别表示两者的参数集。目标是找到$\phi$的一个估计，以便$f_\phi$在目标任务上的表现尽可能接近$f_\theta$在源任务上的表现。
 
 ### 4.2 公式推导过程
 
 在实际应用中，转移学习可以通过最小化源任务和目标任务之间的损失差距来实现。假设$L_{source}$和$L_{target}$分别是源任务和目标任务的损失函数，则转移学习的目标可以表述为：
 
-$$ \\min_\\phi \\left( \\lambda \\cdot L_{source}(f_\\theta) + (1-\\lambda) \\cdot L_{target}(f_\\phi) \\right) $$
+$$ \min_\phi \left( \lambda \cdot L_{source}(f_\theta) + (1-\lambda) \cdot L_{target}(f_\phi) \right) $$
 
-其中$\\lambda$是平衡源任务和目标任务损失的权重。
+其中$\lambda$是平衡源任务和目标任务损失的权重。
 
 ### 4.3 案例分析与讲解
 
@@ -146,7 +146,7 @@ for epoch in range(num_epochs):
         loss.backward()
         optimizer.step()
         running_loss += loss.item()
-    print(f\"Epoch {epoch+1}, Loss: {running_loss/len(dataloader)}\")
+    print(f"Epoch {epoch+1}, Loss: {running_loss/len(dataloader)}")
 ```
 
 ### 5.3 代码解读与分析
@@ -177,8 +177,8 @@ for epoch in range(num_epochs):
 
 ### 7.3 相关论文推荐
 
-- **\"Transfer Learning\" by Y. Bengio et al.**
-- **\"Deep Learning Transfer: An Overview\" by M. Ranzato et al.**
+- **"Transfer Learning" by Y. Bengio et al.**
+- **"Deep Learning Transfer: An Overview" by M. Ranzato et al.**
 
 ### 7.4 其他资源推荐
 

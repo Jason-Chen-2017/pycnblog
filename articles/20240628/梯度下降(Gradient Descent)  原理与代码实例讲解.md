@@ -58,8 +58,7 @@ E --> F[梯度下降]
 梯度下降算法的核心思想是通过计算目标函数的梯度，并沿着梯度的反方向更新参数，从而逼近最小值。具体地，假设我们有一个参数向量 $\theta$，目标函数为 $f(\theta)$，梯度下降算法的迭代公式如下：
 
 $$
-\theta_{new} = \theta - \alpha \
-abla_{\theta}f(\theta)
+\theta_{new} = \theta - \alpha \nabla_{\theta}f(\theta)
 $$
 
 其中，$\alpha$ 是学习率，用于控制参数更新的步长。
@@ -69,10 +68,8 @@ $$
 梯度下降算法的步骤如下：
 
 1. 初始化参数 $\theta$ 和学习率 $\alpha$。
-2. 计算目标函数 $f(\theta)$ 的梯度 $\
-abla_{\theta}f(\theta)$。
-3. 使用梯度信息更新参数 $\theta$，即 $\theta_{new} = \theta - \alpha \
-abla_{\theta}f(\theta)$。
+2. 计算目标函数 $f(\theta)$ 的梯度 $\nabla_{\theta}f(\theta)$。
+3. 使用梯度信息更新参数 $\theta$，即 $\theta_{new} = \theta - \alpha \nabla_{\theta}f(\theta)$。
 4. 重复步骤2和3，直到满足停止条件，例如达到预设的迭代次数或损失函数值变化小于阈值。
 
 ### 3.3 算法优缺点
@@ -141,8 +138,7 @@ $$
 对 $\theta$ 求偏导，得到：
 
 $$
-\
-abla_{\theta}L(\theta) = \frac{1}{m} \sum_{i=1}^{m} 2(x_i - \hat{y}_i) = \frac{1}{m} \sum_{i=1}^{m} 2(x_i - \hat{y}_i) = \frac{1}{m} \sum_{i=1}^{m} 2(x_i - \theta^T x_i)
+\nabla_{\theta}L(\theta) = \frac{1}{m} \sum_{i=1}^{m} 2(x_i - \hat{y}_i) = \frac{1}{m} \sum_{i=1}^{m} 2(x_i - \hat{y}_i) = \frac{1}{m} \sum_{i=1}^{m} 2(x_i - \theta^T x_i)
 $$
 
 其中，$\hat{y}_i = \theta^T x_i$。
@@ -150,22 +146,19 @@ $$
 化简得：
 
 $$
-\
-abla_{\theta}L(\theta) = \frac{1}{m} \sum_{i=1}^{m} 2(x_i - \hat{y}_i) = \frac{1}{m} \sum_{i=1}^{m} 2x_i(\theta - \theta^T x_i)
+\nabla_{\theta}L(\theta) = \frac{1}{m} \sum_{i=1}^{m} 2(x_i - \hat{y}_i) = \frac{1}{m} \sum_{i=1}^{m} 2x_i(\theta - \theta^T x_i)
 $$
 
 由于 $\theta^T x_i = \hat{y}_i$，所以：
 
 $$
-\
-abla_{\theta}L(\theta) = \frac{1}{m} \sum_{i=1}^{m} 2x_i(\theta - \hat{y}_i)
+\nabla_{\theta}L(\theta) = \frac{1}{m} \sum_{i=1}^{m} 2x_i(\theta - \hat{y}_i)
 $$
 
 进一步化简得：
 
 $$
-\
-abla_{\theta}L(\theta) = \frac{1}{m} \sum_{i=1}^{m} 2x_i(\theta - \hat{y}_i) = \frac{1}{m} (X^T X)\theta - \frac{1}{m} X^T y
+\nabla_{\theta}L(\theta) = \frac{1}{m} \sum_{i=1}^{m} 2x_i(\theta - \hat{y}_i) = \frac{1}{m} (X^T X)\theta - \frac{1}{m} X^T y
 $$
 
 其中，$X$ 是特征矩阵，$y$ 是标签向量。

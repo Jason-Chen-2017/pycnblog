@@ -60,7 +60,7 @@ class DQN:
     def __init__(self, env):
         self.env = env
         self.memory = deque(maxlen=2000)
-        
+
         self.gamma = 0.85
         self.epsilon = 1.0
         self.epsilon_min = 0.01
@@ -94,7 +94,7 @@ class DQN:
 
     def replay(self):
         batch_size = 32
-        if len(self.memory) < batch_size: 
+        if len(self.memory) < batch_size:
             return
 
         samples = random.sample(self.memory, batch_size)
@@ -137,7 +137,7 @@ def main():
             reward = reward if not done else -20
             new_state = new_state.reshape(1,4)
             dqn_agent.remember(cur_state, action, reward, new_state, done)
-            
+
             dqn_agent.replay()       # internally iterates default (prediction) model
             dqn_agent.target_train() # iterates target model
 

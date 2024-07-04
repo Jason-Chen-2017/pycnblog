@@ -38,7 +38,7 @@ XLNet模型的提出旨在克服传统语言模型的局限性,并在自然语�
 
 - 核心概念与联系
 - 核心算法原理与具体操作步骤
-- 数学模型和公式详细讲解与案例分析  
+- 数学模型和公式详细讲解与案例分析
 - 项目实践:代码实例和详细解释说明
 - 实际应用场景
 - 工具和资源推荐
@@ -87,8 +87,8 @@ XLNet的核心算法是**置换语言模型**(Permutation Language Modeling),它
 算法的核心思想可以用下面的公式表示:
 
 $$\begin{aligned}
-\mathcal{L}_{\theta} &= \sum_{x} \log P_{\theta}(x) \\
-&= \sum_{x} \log \left(\sum_{\underline{z} \in \underline{Z}(x)} P_{\theta}(x, \underline{z})\right) \\
+\mathcal{L}_{\theta} &= \sum_{x} \log P_{\theta}(x) \
+&= \sum_{x} \log \left(\sum_{\underline{z} \in \underline{Z}(x)} P_{\theta}(x, \underline{z})\right) \
 &= \sum_{x} \log \left(\sum_{\underline{z} \in \underline{Z}(x)} \exp\left(f_{\theta}(x, \underline{z})\right)\right)
 \end{aligned}$$
 
@@ -195,7 +195,7 @@ $$\mathrm{Attention}(q, k, v) = \mathrm{softmax}\left(\frac{qk^T}{\sqrt{d_k}}\ri
 多头注意力机制通过将查询、键和值投影到不同的子空间,并对每个子空间的注意力进行并行计算,从而捕获更丰富的依赖关系。具体计算公式如下:
 
 $$\begin{aligned}
-\mathrm{MultiHead}(Q, K, V) &= \mathrm{Concat}(head_1, \dots, head_h)W^O\\
+\mathrm{MultiHead}(Q, K, V) &= \mathrm{Concat}(head_1, \dots, head_h)W^O\
 \text{where}\  head_i &= \mathrm{Attention}(QW_i^Q, KW_i^K, VW_i^V)
 \end{aligned}$$
 

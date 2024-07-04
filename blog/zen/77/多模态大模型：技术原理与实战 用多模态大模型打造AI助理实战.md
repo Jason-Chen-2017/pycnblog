@@ -38,7 +38,7 @@
 
 1. 核心概念与联系
 2. 核心算法原理与具体操作步骤
-3. 数学模型和公式详细讲解与案例分析  
+3. 数学模型和公式详细讲解与案例分析
 4. 项目实践:代码实例和详细解释
 5. 实际应用场景
 6. 工具和资源推荐
@@ -54,7 +54,7 @@
 所谓多模态数据,是指包含多种形式(模态)的数据,常见的模态包括:
 
 - 文本(Text)
-- 语音(Speech) 
+- 语音(Speech)
 - 图像(Image)
 - 视频(Video)
 - 等等
@@ -154,7 +154,7 @@ graph TD
    特征级融合直接将不同模态的表示向量进行拼接或加权求和,得到融合后的多模态表示。
 
    $$\boldsymbol{h}_\text{fused} = \begin{cases}
-   \text{Concat}(\boldsymbol{h}_\text{text}, \boldsymbol{h}_\text{image}) \\
+   \text{Concat}(\boldsymbol{h}_\text{text}, \boldsymbol{h}_\text{image}) \
    \alpha \boldsymbol{h}_\text{text} + \beta \boldsymbol{h}_\text{image}
    \end{cases}$$
 

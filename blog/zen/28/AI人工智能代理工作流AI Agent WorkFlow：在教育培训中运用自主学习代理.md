@@ -1,6 +1,6 @@
 # AI人工智能代理工作流AI Agent WorkFlow：在教育培训中运用自主学习代理
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：教育科技、自主学习代理、AI Agent、工作流、教育培训
 
@@ -113,12 +113,12 @@ AI代理工作流中的数学模型主要涉及：
 ### 4.2 公式推导过程
 
 - **协同过滤**：假设用户对项目的评分可以表示为矩阵$R$，其中$R_{ui}$表示用户$u$对项目$i$的评分。通过寻找用户$u$和用户$v$之间的相似度$s(u,v)$，可以估计未知评分值。
-  
-$$s(u,v) = \\frac{\\sum_{i \\in I_u \\cap I_v}(r_{ui} - \\bar{r_u})(r_{vi} - \\bar{r_v})}{\\sqrt{\\sum_{i \\in I_u}(r_{ui} - \\bar{r_u})^2} \\sqrt{\\sum_{i \\in I_v}(r_{vi} - \\bar{r_v})^2}}$$
+
+$$s(u,v) = \frac{\sum_{i \in I_u \cap I_v}(r_{ui} - \bar{r_u})(r_{vi} - \bar{r_v})}{\sqrt{\sum_{i \in I_u}(r_{ui} - \bar{r_u})^2} \sqrt{\sum_{i \in I_v}(r_{vi} - \bar{r_v})^2}}$$
 
 - **强化学习**：通过动态规划或深度学习方法，学习状态-动作-奖励序列$S,A,R$之间的关系。使用贝尔曼方程来更新策略。
 
-$$V(s) = \\max_a \\{ \\sum_{s', r} p(s', r | s, a) [r + \\gamma V(s')] \\}$$
+$$V(s) = \max_a \{ \sum_{s', r} p(s', r | s, a) [r + \gamma V(s')] \}$$
 
 ### 4.3 案例分析与讲解
 
@@ -128,7 +128,7 @@ $$V(s) = \\max_a \\{ \\sum_{s', r} p(s', r | s, a) [r + \\gamma V(s')] \\}$$
 - **算法**：使用矩阵分解方法，如奇异值分解（SVD）或非负矩阵分解（NMF）。
 - **公式**：矩阵分解的目标是最小化预测误差。
 
-$$\\min_{M,U,V} \\sum_{(i,j) \\in \\Omega} \\left( \\hat{r}_{ij} - \\mu - b_i - b_j - u_i^T v_j \\right)^2$$
+$$\min_{M,U,V} \sum_{(i,j) \in \Omega} \left( \hat{r}_{ij} - \mu - b_i - b_j - u_i^T v_j \right)^2$$
 
 ### 4.4 常见问题解答
 
@@ -270,10 +270,10 @@ print(recommendations)
 
 - **Q：如何平衡推荐的个性化与普适性？**
   - **A：** 通过引入群体特征和个性化特征的权重调整，以及定期评估推荐系统的公平性和满意度，确保个性化推荐的同时兼顾普适性需求。
-  
+
 - **Q：如何处理数据量大且更新频繁的情况？**
   - **A：** 采用增量学习和在线学习策略，实时更新模型，减少对大规模数据集的存储需求和计算压力。
-  
+
 - **Q：如何确保AI代理的可解释性和可控性？**
   - **A：** 通过透明化算法决策过程、提供决策依据和反馈解释，增强用户信任度，同时确保监管机构的合规性审查。
 

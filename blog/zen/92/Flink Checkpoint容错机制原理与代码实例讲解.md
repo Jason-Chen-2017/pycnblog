@@ -109,7 +109,7 @@ Flink Checkpoint机制可以使用以下数学模型进行描述：
 
 $$
 \begin{aligned}
-&\text{状态} \xrightarrow{\text{Checkpoint}} \text{状态快照} \xrightarrow{\text{故障}} \text{状态恢复} \\
+&\text{状态} \xrightarrow{\text{Checkpoint}} \text{状态快照} \xrightarrow{\text{故障}} \text{状态恢复} \
 &\text{状态} = \{S_1, S_2, \ldots, S_n\}
 \end{aligned}
 $$
@@ -187,14 +187,14 @@ public class FlinkCheckpointExample {
     public static void main(String[] args) throws Exception {
         // 创建Flink执行环境
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        
+
         // 设置Checkpoint配置
         env.enableCheckpointing(5000); // 每5秒触发一次Checkpoint
         env.setStateBackend(new FsStateBackend("hdfs://master:9000/flink/checkpoints")); // 设置状态后端为HDFS
-        
+
         // 创建数据源
         DataStream<String> text = env.fromElements("Hello", "World", "Flink", "Checkpoint", "Example");
-        
+
         // 处理数据
         text.map(new MapFunction<String, String>() {
             @Override
@@ -202,7 +202,7 @@ public class FlinkCheckpointExample {
                 return "Flink " + value;
             }
         }).print();
-        
+
         // 执行Flink程序
         env.execute("Flink Checkpoint Example");
     }

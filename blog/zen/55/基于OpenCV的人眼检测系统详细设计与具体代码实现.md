@@ -68,7 +68,7 @@ $$II(x, y) = \sum_{x' \leq x, y' \leq y} I(x', y')$$
 即$II(x, y)$是原始图像$I$中左上角以$(0, 0)$为起点,右下角以$(x, y)$为终点的矩形区域内所有像素值的总和。利用如下递推公式,可以高效地计算出整个积分图像:
 
 $$\begin{aligned}
-II(x, y) &= I(x, y) + II(x-1, y) + II(x, y-1) - II(x-1, y-1) \\
+II(x, y) &= I(x, y) + II(x-1, y) + II(x, y-1) - II(x-1, y-1) \
 II(0, 0) &= 0
 \end{aligned}$$
 
@@ -165,7 +165,7 @@ cv2.destroyAllWindows()
    - `gray`: 输入的灰度图像
    - `1.3`: 每个窗口的缩放比例
    - `5`: 构成检测的最小矩形个数
-   
+
    该函数返回一个包含检测结果的列表,每个检测结果由一个矩形框`(x, y, width, height)`表示。
 
    ```python

@@ -148,14 +148,14 @@ $$
 - 隐藏层：1个隐藏神经元。
 - 输出层：1个输出神经元。
 
-输入数据为$\boldsymbol{x} = [1.0, 2.0]$，权重矩阵为$\boldsymbol{W} = \begin{bmatrix} 0.5 & 0.3 \\ 0.2 & 0.4 \end{bmatrix}$，偏置向量$b = [0.1, 0.2]$。
+输入数据为$\boldsymbol{x} = [1.0, 2.0]$，权重矩阵为$\boldsymbol{W} = \begin{bmatrix} 0.5 & 0.3 \ 0.2 & 0.4 \end{bmatrix}$，偏置向量$b = [0.1, 0.2]$。
 
 #### 4.3.2 模型计算
 
 使用FP8格式对模型进行计算：
 
 1. 量化输入数据：$\boldsymbol{x}_q = \begin{bmatrix} \text{round}(1.0 \times \frac{127}{128}) & \text{round}(2.0 \times \frac{127}{128}) \end{bmatrix} = \begin{bmatrix} 126 & 254 \end{bmatrix}$。
-2. 量化权重矩阵：$\boldsymbol{W}_q = \begin{bmatrix} \text{round}(0.5 \times \frac{127}{128}) & \text{round}(0.3 \times \frac{127}{128}) \\ \text{round}(0.2 \times \frac{127}{128}) & \text{round}(0.4 \times \frac{127}{128}) \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$。
+2. 量化权重矩阵：$\boldsymbol{W}_q = \begin{bmatrix} \text{round}(0.5 \times \frac{127}{128}) & \text{round}(0.3 \times \frac{127}{128}) \ \text{round}(0.2 \times \frac{127}{128}) & \text{round}(0.4 \times \frac{127}{128}) \end{bmatrix} = \begin{bmatrix} 0 & 0 \ 0 & 0 \end{bmatrix}$。
 3. 量化偏置向量：$b_q = \begin{bmatrix} \text{round}(0.1 \times \frac{127}{128}) & \text{round}(0.2 \times \frac{127}{128}) \end{bmatrix} = \begin{bmatrix} 0 & 0 \end{bmatrix}$。
 4. 计算隐藏层输出：$\boldsymbol{h}_q = \boldsymbol{x}_q \boldsymbol{W}_q + b_q = \begin{bmatrix} 0 & 0 \end{bmatrix}$。
 5. 逆量化隐藏层输出：$\boldsymbol{h}_d = DQ(\boldsymbol{h}_q) = \begin{bmatrix} 0.0 & 0.0 \end{bmatrix}$。

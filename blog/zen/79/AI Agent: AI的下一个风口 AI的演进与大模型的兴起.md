@@ -108,9 +108,7 @@ AI Agent是自主决策系统，能够接收环境状态、执行动作、并根
 
 **损失函数**：在强化学习中，损失函数通常表示为 $L(\theta)$，其中 $\theta$ 是模型参数。对于强化学习，损失函数可能包含状态-动作-奖励的序列，通过Bellman方程进行计算。
 
-**优化算法**：常用的优化算法有梯度下降法，其更新规则为 $\theta_{new} = \theta_{old} - \eta \cdot \
-abla_\theta L(\theta)$，其中 $\eta$ 是学习率，$\
-abla_\theta$ 表示对参数 $\theta$ 的梯度。
+**优化算法**：常用的优化算法有梯度下降法，其更新规则为 $\theta_{new} = \theta_{old} - \eta \cdot \nabla_\theta L(\theta)$，其中 $\eta$ 是学习率，$\nabla_\theta$ 表示对参数 $\theta$ 的梯度。
 
 ### 公式推导过程
 

@@ -88,7 +88,7 @@ $$X=\arg\min_X L(X)$$
 
 $$AX+XB=C$$
 
-其中，$A=\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$，$B=\begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}$，$C=\begin{bmatrix} 9 & 10 \\ 11 & 12 \end{bmatrix}$。
+其中，$A=\begin{bmatrix} 1 & 2 \ 3 & 4 \end{bmatrix}$，$B=\begin{bmatrix} 5 & 6 \ 7 & 8 \end{bmatrix}$，$C=\begin{bmatrix} 9 & 10 \ 11 & 12 \end{bmatrix}$。
 
 我们可以通过以上的方法，求解这个矩阵方程。首先，我们将这个矩阵方程转化为等价的向量方程，然后定义一个损失函数，通过最小化这个损失函数，我们可以得到最优的解。
 

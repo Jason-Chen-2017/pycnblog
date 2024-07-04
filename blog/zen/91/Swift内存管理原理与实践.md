@@ -112,7 +112,7 @@ $$
 ```swift
 class Person {
     var name: String
-    
+
     init(name: String) {
         self.name = name
     }
@@ -154,12 +154,12 @@ import Foundation
 
 class Person {
     var name: String
-    
+
     init(name: String) {
         self.name = name
         print("创建Person: \(name)")
     }
-    
+
     deinit {
         print("销毁Person: \(name)")
     }
@@ -167,14 +167,14 @@ class Person {
 
 class Friend {
     weak var person: Person?
-    
+
     init?(name: String) {
         guard let person = Person(name: name) else {
             return nil
         }
         self.person = person
     }
-    
+
     deinit {
         print("销毁Friend: \(String(describing: person))")
     }

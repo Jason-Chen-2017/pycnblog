@@ -40,7 +40,7 @@
 #### 3.1.2 循环神经网络(RNN)
 #### 3.1.3 生成对抗网络(GAN)
 ### 3.2 基于机器学习的物体识别与跟踪算法
-#### 3.2.1 支持向量机(SVM) 
+#### 3.2.1 支持向量机(SVM)
 #### 3.2.2 随机森林(Random Forest)
 #### 3.2.3 卡尔曼滤波(Kalman Filter)
 ### 3.3 基于自然交互的人机交互算法
@@ -49,7 +49,7 @@
 #### 3.3.3 视线追踪算法
 ### 3.4 AI代理的决策与规划算法
 #### 3.4.1 马尔可夫决策过程(MDP)
-#### 3.4.2 蒙特卡洛树搜索(MCTS) 
+#### 3.4.2 蒙特卡洛树搜索(MCTS)
 #### 3.4.3 深度强化学习(DRL)
 
 ## 4. 数学模型和公式详细讲解举例说明
@@ -69,7 +69,7 @@ $$\boldsymbol{H}^{(l)}_{i,j}=\max_{m,n} \boldsymbol{H}^{(l-1)}_{i \times s+m, j 
 ### 4.2 马尔可夫决策过程(MDP)的数学模型
 马尔可夫决策过程可以用一个五元组$\langle \mathcal{S},\mathcal{A},\mathcal{P},\mathcal{R},\gamma \rangle$来表示:
 - $\mathcal{S}$表示状态空间
-- $\mathcal{A}$表示动作空间 
+- $\mathcal{A}$表示动作空间
 - $\mathcal{P}$表示状态转移概率矩阵,其中$\mathcal{P}_{ss'}^a$表示在状态$s$下采取动作$a$转移到状态$s'$的概率
 - $\mathcal{R}$表示奖励函数,其中$\mathcal{R}_s^a$表示在状态$s$下采取动作$a$获得的即时奖励
 - $\gamma \in [0,1]$为折扣因子
@@ -89,15 +89,15 @@ $$\pi^* = \arg\max_{\pi} \mathbb{E}\left[\sum_{t=0}^{\infty} \gamma^t \mathcal{R
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
-        self.conv1 = nn.Conv2d(1, 6, 5) 
-        self.conv2 = nn.Conv2d(6, 16, 5)  
+        self.conv1 = nn.Conv2d(1, 6, 5)
+        self.conv2 = nn.Conv2d(6, 16, 5)
         self.fc1 = nn.Linear(16 * 4 * 4, 120)
         self.fc2 = nn.Linear(120, 84)
         self.fc3 = nn.Linear(84, 10)
 
     def forward(self, x):
         x = F.max_pool2d(F.relu(self.conv1(x)), (2, 2))
-        x = F.max_pool2d(F.relu(self.conv2(x)), 2) 
+        x = F.max_pool2d(F.relu(self.conv2(x)), 2)
         x = x.view(-1, self.num_flat_features(x))
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
@@ -174,7 +174,7 @@ for epoch in range(1, 11):
 #### 6.1.1 AR实景导航
 #### 6.1.2 AI代理辅助路径规划
 #### 6.1.3 AI代理提供语音交互
-### 6.2 AR游戏中的AI代理应用 
+### 6.2 AR游戏中的AI代理应用
 #### 6.2.1 AR游戏中的AI角色
 #### 6.2.2 AI代理控制游戏角色行为
 #### 6.2.3 AI代理生成游戏内容

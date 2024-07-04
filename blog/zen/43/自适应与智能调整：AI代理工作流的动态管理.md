@@ -118,8 +118,8 @@
 
 $$
 \begin{aligned}
-\min_{\pi} \quad & \sum_{i=1}^n \alpha_i \cdot \text{Cost}(T_i, \pi) \\
-\text{s.t.} \quad & \pi(T_i) \in \{1, 2, \dots, k\}, \quad i = 1, 2, \dots, n \\
+\min_{\pi} \quad & \sum_{i=1}^n \alpha_i \cdot \text{Cost}(T_i, \pi) \
+\text{s.t.} \quad & \pi(T_i) \in \{1, 2, \dots, k\}, \quad i = 1, 2, \dots, n \
 & \text{Cost}(T_i, \pi) \text{为任务}T_i\text{在策略} \pi \text{下的执行成本}
 \end{aligned}
 $$
@@ -132,8 +132,8 @@ $$
 
 $$
 \begin{aligned}
-\min_{\lambda} \quad & \sum_{t=1}^T \lambda_t \cdot \text{Cost}(E_t, \lambda_t) \\
-\text{s.t.} \quad & \lambda_t \in \{0, 1\}, \quad t = 1, 2, \dots, T \\
+\min_{\lambda} \quad & \sum_{t=1}^T \lambda_t \cdot \text{Cost}(E_t, \lambda_t) \
+\text{s.t.} \quad & \lambda_t \in \{0, 1\}, \quad t = 1, 2, \dots, T \
 & \text{Cost}(E_t, \lambda_t) \text{为错误}E_t\text{在检测到时间}t\text{的恢复成本}
 \end{aligned}
 $$
@@ -146,7 +146,7 @@ $$
 
 $$
 \begin{aligned}
-\max_{\{p_k\}} \quad & \sum_{i=1}^n \text{Reward}(T_i, \{p_k\}) \\
+\max_{\{p_k\}} \quad & \sum_{i=1}^n \text{Reward}(T_i, \{p_k\}) \
 \text{s.t.} \quad & \sum_{k=1}^k p_k \cdot R_k \geq \text{Resource Requirement}(T_i)
 \end{aligned}
 $$
@@ -315,7 +315,7 @@ print(vm_loads)
 ```
 任务分配结果：
           V1  V2  V3  V4  V5
-task                
+task
 T1       1   0   0   0   0
 T2       1   1   0   0   0
 T3       0   0   1   0   0

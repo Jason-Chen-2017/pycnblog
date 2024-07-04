@@ -109,7 +109,7 @@ AI Agent的数学模型主要基于以下数学工具：
 
 $$
 \begin{aligned}
-\Delta w_{ij} &= -\alpha \frac{\partial J}{\partial w_{ij}} \\
+\Delta w_{ij} &= -\alpha \frac{\partial J}{\partial w_{ij}} \
 J &= \frac{1}{2} \sum_{k=1}^p (y_k - \hat{y}_k)^2
 \end{aligned}
 $$

@@ -1,4 +1,4 @@
-                 
+
 # Kafka消费者数据清洗与数据转换
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -158,7 +158,7 @@ for msg in consumer:
     message = json.loads(msg.value.decode('utf-8'))
     cleaned_message = {key: clean_data(value) for key, value in message.items()}
     converted_message = {key: convert_to_int(value) for key, value in cleaned_message.items() if value is not None}
-    
+
     print(converted_message)
 
 consumer.close()

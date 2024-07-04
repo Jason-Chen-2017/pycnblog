@@ -98,8 +98,7 @@ $$\\min_{\\theta} \\mathbb{E}_{(s,a,r,s') \\sim \\mathcal{D}} \\left[ (\\hat{Q}(
 
 DQN算法的核心公式涉及到损失函数的最小化，该损失函数衡量了预测值$\\hat{Q}(s, a)$与实际回报$r$加上下一个状态的最高Q值$\\max_{a'} \\hat{Q}(s', a')$之间的差距。通过梯度下降法，更新Q网络的参数$\\theta$以最小化此损失：
 
-$$\\theta_{new} = \\theta_{old} - \\alpha \\cdot \
-abla_{\\theta} \\left[ \\frac{1}{|\\mathcal{D}|} \\sum_{(s, a, r, s') \\in \\mathcal{D}} \\left( \\hat{Q}(s, a) - \\left(r + \\gamma \\max_{a'} \\hat{Q}(s', a')\\right) \\right)^2 \\right]$$
+$$\\theta_{new} = \\theta_{old} - \\alpha \\cdot \nabla_{\\theta} \\left[ \\frac{1}{|\\mathcal{D}|} \\sum_{(s, a, r, s') \\in \\mathcal{D}} \\left( \\hat{Q}(s, a) - \\left(r + \\gamma \\max_{a'} \\hat{Q}(s', a')\\right) \\right)^2 \\right]$$
 
 其中，$\\alpha$是学习率。
 

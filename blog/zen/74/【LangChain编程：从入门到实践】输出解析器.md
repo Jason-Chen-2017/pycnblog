@@ -74,7 +74,7 @@ LangChain的模式匹配过程可以构建为一个基于正则表达式或模�
 
 $$
 M(S, P) = \begin{cases}
-true & \text{如果 } P \text{ 匹配 } S \\
+true & \text{如果 } P \text{ 匹配 } S \
 false & \text{否则}
 \end{cases}
 $$
@@ -107,8 +107,8 @@ $$
 
 ```json
 {
-  "pattern": "userId:\\s*(\"|\\')(.*)\\1",
-  "extract": "\\2"
+  "pattern": "userId:\s*("|\')(.*)\1",
+  "extract": "\2"
 }
 ```
 
@@ -118,7 +118,7 @@ $$
 
 #### 如何处理匹配失败的情况？
 - LangChain 支持异常处理机制，当模式匹配失败时，可以抛出异常或者返回默认值。
-  
+
 #### 如何优化匹配性能？
 - 通过缓存匹配结果，对于重复使用的模式和数据，减少重新匹配的次数。
 
@@ -145,10 +145,10 @@ from langchain.output_parsers import CommaSeparatedListOutputParser
 def extract_data_from_response(response_json, pattern):
     # 定义模式匹配规则
     output_parser = CommaSeparatedListOutputParser()
-    
+
     # 示例模式：提取以 "user" 开头的所有键
     pattern = {"pattern": r"user:(\w+)", "output_parser": output_parser}
-    
+
     result = output_parser.parse(pattern, response_json)
     return result
 

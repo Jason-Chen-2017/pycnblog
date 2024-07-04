@@ -39,7 +39,7 @@ SGD的核心思想是在每一步迭代中，选择一个或一小批样本来�
 
 #### 步骤1：初始化参数
 
-- 选择一组初始参数 $\\theta$ 和学习率 $\\eta$。
+- 选择一组初始参数 $\theta$ 和学习率 $\eta$。
 
 #### 步骤2：随机采样
 
@@ -47,12 +47,11 @@ SGD的核心思想是在每一步迭代中，选择一个或一小批样本来�
 
 #### 步骤3：计算梯度
 
-- 使用选定的样本计算损失函数关于参数 $\\theta$ 的梯度。
+- 使用选定的样本计算损失函数关于参数 $\theta$ 的梯度。
 
 #### 步骤4：更新参数
 
-- 根据梯度和学习率更新参数：$\\theta \\leftarrow \\theta - \\eta \\cdot \
-abla_\\theta J(\\theta)$。
+- 根据梯度和学习率更新参数：$\theta \leftarrow \theta - \eta \cdot \nabla_\theta J(\theta)$。
 
 #### 步骤5：重复迭代
 
@@ -79,36 +78,32 @@ abla_\\theta J(\\theta)$。
 
 ### 4.1 数学模型构建
 
-设损失函数为 $J(\\theta)$，其中 $\\theta$ 是模型参数。SGD的目标是最小化 $J(\\theta)$。在第 $t$ 次迭代中，我们使用一个样本或小批量样本 $x_i$ 和其对应的标签 $y_i$ 来更新参数：
+设损失函数为 $J(\theta)$，其中 $\theta$ 是模型参数。SGD的目标是最小化 $J(\theta)$。在第 $t$ 次迭代中，我们使用一个样本或小批量样本 $x_i$ 和其对应的标签 $y_i$ 来更新参数：
 
-$$ \\theta_{t+1} = \\theta_t - \\eta \\cdot \
-abla_\\theta J(\\theta_t; x_i, y_i) $$
+$$ \theta_{t+1} = \theta_t - \eta \cdot \nabla_\theta J(\theta_t; x_i, y_i) $$
 
 其中：
 
-- $\\eta$ 是学习率。
-- $\
-abla_\\theta J(\\theta_t; x_i, y_i)$ 是损失函数关于参数 $\\theta$ 在样本 $(x_i, y_i)$ 上的梯度。
+- $\eta$ 是学习率。
+- $\nabla_\theta J(\theta_t; x_i, y_i)$ 是损失函数关于参数 $\theta$ 在样本 $(x_i, y_i)$ 上的梯度。
 
 ### 4.2 公式推导过程
 
 假设我们有一个简单的线性回归模型：
 
-$$ y = \\theta_0 + \\theta_1 x $$
+$$ y = \theta_0 + \theta_1 x $$
 
 损失函数通常采用均方误差（MSE）：
 
-$$ J(\\theta) = \\frac{1}{n} \\sum_{i=1}^{n} (y_i - (\\theta_0 + \\theta_1 x_i))^2 $$
+$$ J(\theta) = \frac{1}{n} \sum_{i=1}^{n} (y_i - (\theta_0 + \theta_1 x_i))^2 $$
 
 对于单个样本 $(x_i, y_i)$，损失函数的梯度是：
 
-$$ \
-abla_\\theta J(\\theta; x_i, y_i) = \\begin{bmatrix} -2(x_i)(y_i - (\\theta_0 + \\theta_1 x_i)) \\\\ -2(y_i - (\\theta_0 + \\theta_1 x_i)) \\end{bmatrix} $$
+$$ \nabla_\theta J(\theta; x_i, y_i) = \begin{bmatrix} -2(x_i)(y_i - (\theta_0 + \theta_1 x_i)) \\ -2(y_i - (\theta_0 + \theta_1 x_i)) \end{bmatrix} $$
 
 在SGD中，我们使用这个梯度来更新参数：
 
-$$ \\theta_{t+1} = \\theta_t - \\eta \\cdot \
-abla_\\theta J(\\theta_t; x_i, y_i) $$
+$$ \theta_{t+1} = \theta_t - \eta \cdot \nabla_\theta J(\theta_t; x_i, y_i) $$
 
 ### 4.3 案例分析与讲解
 
@@ -118,10 +113,9 @@ abla_\\theta J(\\theta_t; x_i, y_i) $$
 
 #### 步骤：
 
-1. 初始化 $\\theta = \\begin{bmatrix} 0 \\\\ 0 \\end{bmatrix}$。
+1. 初始化 $\theta = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$。
 2. 选择一个样本 $(x, y)$，并计算损失函数的梯度。
-3. 使用梯度更新参数：$\\theta \\leftarrow \\theta - \\eta \\cdot \
-abla_\\theta J(\\theta)$。
+3. 使用梯度更新参数：$\theta \leftarrow \theta - \eta \cdot \nabla_\theta J(\theta)$。
 4. 重复步骤2和步骤3直到达到预定的迭代次数或损失函数收敛。
 
 ### 4.4 常见问题解答
@@ -148,11 +142,11 @@ pip install numpy
 import numpy as np
 
 def sigmoid(z):
-    \"\"\"Sigmoid activation function.\"\"\"
+    """Sigmoid activation function."""
     return 1 / (1 + np.exp(-z))
 
 def compute_cost(X, y, theta, learning_rate):
-    \"\"\"Compute the cost using sigmoid cross entropy.\"\"\"
+    """Compute the cost using sigmoid cross entropy."""
     m = len(y)
     z = np.dot(X, theta)
     h = sigmoid(z)
@@ -162,7 +156,7 @@ def compute_cost(X, y, theta, learning_rate):
     return cost
 
 def gradient_descent(X, y, theta, learning_rate, iterations):
-    \"\"\"Perform SGD on logistic regression.\"\"\"
+    """Perform SGD on logistic regression."""
     m, n = X.shape
     costs = []
     for _ in range(iterations):
@@ -190,8 +184,8 @@ iterations = 1000
 # 调用函数
 theta_opt, costs = gradient_descent(X, y, theta, learning_rate, iterations)
 
-print(\"Optimized theta:\", theta_opt)
-print(\"Costs:\", costs)
+print("Optimized theta:", theta_opt)
+print("Costs:", costs)
 ```
 
 ### 5.3 代码解读与分析

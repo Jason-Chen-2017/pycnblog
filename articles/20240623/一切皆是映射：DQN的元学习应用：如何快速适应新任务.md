@@ -90,9 +90,7 @@ DQN的元学习应用主要适用于以下领域：
 DQN的元学习应用主要基于以下数学模型：
 
 1. **Q值函数**：$Q(s, a) = \sum_{s' \in S} (R(s, a) + \gamma \max_{a' \in A} Q(s', a') \cdot P(s' | s, a))$
-2. **策略梯度**：$\
-abla_{\theta} J(\theta) = \
-abla_{\theta} \sum_{t=0}^{T-1} \gamma^t R_{t+1}$
+2. **策略梯度**：$\nabla_{\theta} J(\theta) = \nabla_{\theta} \sum_{t=0}^{T-1} \gamma^t R_{t+1}$
 3. **损失函数**：$L(\theta) = \sum_{t=0}^{T-1} \gamma^t (Q(s_t, \theta) - Y_t)^2$
 
 ### 4.2 公式推导过程

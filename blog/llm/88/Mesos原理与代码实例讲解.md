@@ -243,9 +243,9 @@ from mesosTotask import MarathonTask
 if __name__ == '__main__':
     master = Master("127.0.0.1:5050", DEFAULT{})
     framework_id = master.register_framework(
-        name="my_framework", 
-        user="root", 
-        role="master", 
+        name="my_framework",
+        user="root",
+        role="master",
         framework_info=FrameworkInfo(
             name="my_framework",
             disk_info=[DiskInfo(10, "dfs", "local")],

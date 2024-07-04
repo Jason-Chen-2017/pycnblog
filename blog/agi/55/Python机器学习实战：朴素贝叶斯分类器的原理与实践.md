@@ -139,9 +139,9 @@ $$
 
 $$
 \begin{aligned}
-P(垃圾邮件|免费, Viagra, 论文) &= \frac{P(免费, Viagra, 论文|垃圾邮件)P(垃圾邮件)}{P(免费, Viagra, 论文)} \\
-&= \frac{P(免费|垃圾邮件)P(Viagra|垃圾邮件)P(论文|垃圾邮件)P(垃圾邮件)}{P(免费, Viagra, 论文)} \\
-&= \frac{(1/2)(1/2)(0/2)(0.5)}{P(免费, Viagra, 论文)} \\
+P(垃圾邮件|免费, Viagra, 论文) &= \frac{P(免费, Viagra, 论文|垃圾邮件)P(垃圾邮件)}{P(免费, Viagra, 论文)} \
+&= \frac{P(免费|垃圾邮件)P(Viagra|垃圾邮件)P(论文|垃圾邮件)P(垃圾邮件)}{P(免费, Viagra, 论文)} \
+&= \frac{(1/2)(1/2)(0/2)(0.5)}{P(免费, Viagra, 论文)} \
 &= 0
 \end{aligned}
 $$
@@ -150,9 +150,9 @@ $$
 
 $$
 \begin{aligned}
-P(非垃圾邮件|免费, Viagra, 论文) &= \frac{P(免费, Viagra, 论文|非垃圾邮件)P(非垃圾邮件)}{P(免费, Viagra, 论文)} \\
-&= \frac{P(免费|非垃圾邮件)P(Viagra|非垃圾邮件)P(论文|非垃圾邮件)P(非垃圾邮件)}{P(免费, Viagra, 论文)} \\
-&= \frac{(0/2)(0/2)(1/2)(0.5)}{P(免费, Viagra, 论文)} \\
+P(非垃圾邮件|免费, Viagra, 论文) &= \frac{P(免费, Viagra, 论文|非垃圾邮件)P(非垃圾邮件)}{P(免费, Viagra, 论文)} \
+&= \frac{P(免费|非垃圾邮件)P(Viagra|非垃圾邮件)P(论文|非垃圾邮件)P(非垃圾邮件)}{P(免费, Viagra, 论文)} \
+&= \frac{(0/2)(0/2)(1/2)(0.5)}{P(免费, Viagra, 论文)} \
 &= 0
 \end{aligned}
 $$

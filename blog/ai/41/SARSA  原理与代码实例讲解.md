@@ -65,8 +65,8 @@ graph TD
 ε-贪婪策略是指在随机选择动作和选择最优动作之间进行权衡，其中ε表示随机选择的概率：
 
 $$
-\text{action} = 
-\begin{cases} 
+\text{action} =
+\begin{cases}
 \text{argmax}_a Q(s, a) & \text{with probability } 1-\epsilon \\
 \text{random action} & \text{with probability } \epsilon
 \end{cases}
@@ -142,7 +142,7 @@ $$
 4. **策略函数**：表示在给定状态s下，选择动作a的概率。
 
 $$
-\pi(s, a) = \text{probability} = \begin{cases} 
+\pi(s, a) = \text{probability} = \begin{cases}
 1 & \text{if } \pi(s, a) = \text{argmax}_a Q(s, a) \\
 \frac{1}{|\mathcal{A}|} & \text{otherwise}
 \end{cases}

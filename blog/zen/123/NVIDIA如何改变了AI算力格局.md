@@ -286,4 +286,4 @@ NVIDIA 将继续引领 AI 算力技术的发展，为 AI 研究和应用提供�
 
 答：是的，NVIDIA GPU 支持所有主流的云计算平台，例如 Amazon Web Services (AWS)、Microsoft Azure、Google Cloud Platform (GCP) 等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

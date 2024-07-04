@@ -92,39 +92,39 @@ $$
 假设输入数据是二维向量 $x = [x_1, x_2]^T$，线性自动编码器的编码器矩阵为：
 
 $$
-W = \begin{bmatrix} 
+W = \begin{bmatrix}
 0.5 & 0.5 \\
-0.2 & 0.8 
+0.2 & 0.8
 \end{bmatrix}
 $$
 
 则潜在空间的表示为：
 
 $$
-z = Wx = \begin{bmatrix} 
+z = Wx = \begin{bmatrix}
 0.5 & 0.5 \\
-0.2 & 0.8 
-\end{bmatrix} \begin{bmatrix} 
+0.2 & 0.8
+\end{bmatrix} \begin{bmatrix}
 x_1 \\
-x_2 
-\end{bmatrix} = \begin{bmatrix} 
+x_2
+\end{bmatrix} = \begin{bmatrix}
 0.5x_1 + 0.5x_2 \\
-0.2x_1 + 0.8x_2 
+0.2x_1 + 0.8x_2
 \end{bmatrix}
 $$
 
 解码器矩阵为 $W^T$，则重构数据为：
 
 $$
-\hat{x} = W^Tz = \begin{bmatrix} 
+\hat{x} = W^Tz = \begin{bmatrix}
 0.5 & 0.2 \\
-0.5 & 0.8 
-\end{bmatrix} \begin{bmatrix} 
+0.5 & 0.8
+\end{bmatrix} \begin{bmatrix}
 0.5x_1 + 0.5x_2 \\
-0.2x_1 + 0.8x_2 
-\end{bmatrix} = \begin{bmatrix} 
+0.2x_1 + 0.8x_2
+\end{bmatrix} = \begin{bmatrix}
 0.35x_1 + 0.55x_2 \\
-0.45x_1 + 0.65x_2 
+0.45x_1 + 0.65x_2
 \end{bmatrix}
 $$
 

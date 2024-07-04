@@ -276,5 +276,5 @@ Q-learning 算法可以用于构建个性化推荐系统，例如：
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

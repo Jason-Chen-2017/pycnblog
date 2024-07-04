@@ -67,10 +67,10 @@ Transformer模型通过编码器-解码器架构，实现了对输入序列的�
 #### 自注意力机制
 
 $$
-\\text{Attention}(Q, K, V) = \\text{Softmax}(\\frac{QK^T}{\\sqrt{d_k}})V
+\text{Attention}(Q, K, V) = \text{Softmax}(\frac{QK^T}{\sqrt{d_k}})V
 $$
 
-其中，\\(Q\\)、\\(K\\)、\\(V\\)分别表示查询(query)、键(key)、值(value)，\\(d_k\\)是键和值向量的维度。
+其中，\(Q\)、\(K\)、\(V\)分别表示查询(query)、键(key)、值(value)，\(d_k\)是键和值向量的维度。
 
 ### 4.2 公式推导过程
 

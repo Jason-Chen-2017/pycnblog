@@ -16,7 +16,7 @@
 本文将从以下几个方面来探讨环与代数中的极小条件、极大条件、Artin环、Noether环：
 - 核心概念与联系
 - 核心定理原理及证明
-- 重要性质与判定方法 
+- 重要性质与判定方法
 - 在代数几何、数论等领域的应用
 - 与计算机科学的结合
 
@@ -27,7 +27,7 @@ Noether环和Artin环有许多良好的性质，在环论中占有重要地位�
 
 ```mermaid
 graph LR
-A[Artin环] --> B[Noether环] 
+A[Artin环] --> B[Noether环]
 B --> C[域]
 B --> D[主理想整环]
 B --> E[有限生成代数]
@@ -82,7 +82,7 @@ $$l(M)=\sum_{i=0}^{n-1} i \cdot n_i$$
 **Q**: Noether环一定是Artin环吗？
 **A**: 不一定。比如，多项式环 $k[x_1,x_2,\ldots]$ 是Noether环，但不是Artin环。事实上，Artin环一定是Noether环，但反之不成立。
 
-**Q**: 域上的有限维代数一定是Artin环吗？ 
+**Q**: 域上的有限维代数一定是Artin环吗？
 **A**: 是的。设 $A$ 是域 $k$ 上的有限维代数，则 $\dim_k(A)<\infty$，因此 $A$ 作为 $k$-模是Artinian的，从而 $A$ 是Artin环。
 
 ## 5. 项目实践：代码实例和详细解释说明
@@ -96,7 +96,7 @@ pip install sympy
 下面我们用sympy来构造一个商环 $\mathbb{Q}[x,y]/(x^2,xy)$，并验证它是Artin环。
 
 ```python
-from sympy import * 
+from sympy import *
 
 # 构造多项式环
 R = QQ.poly_ring(x, y)
@@ -154,7 +154,7 @@ Artin环和Noether环在代数几何中有重要应用。代数几何将多项�
 
 ### 7.3  相关论文推荐
 - On the concept of length for modules over Artinian rings (1972)
-- Gröbner bases and primary decomposition of polynomial ideals (1988) 
+- Gröbner bases and primary decomposition of polynomial ideals (1988)
 - Computing in quotients of Noetherian and non-Noetherian rings (2018)
 
 ### 7.4  其他资源推荐

@@ -98,9 +98,9 @@ BYOL算法的数学模型如下：
 
 $$
 \begin{aligned}
-\text{Enc}(\text{image}) &= \mathbf{z} \\
-\text{ProjHead}(\mathbf{z}) &= \mathbf{y}_\text{a} \\
-\text{ProjHead}(\text{Enc}(\text{image}_\text{q})) &= \mathbf{y}_\text{q} \\
+\text{Enc}(\text{image}) &= \mathbf{z} \
+\text{ProjHead}(\mathbf{z}) &= \mathbf{y}_\text{a} \
+\text{ProjHead}(\text{Enc}(\text{image}_\text{q})) &= \mathbf{y}_\text{q} \
 \text{Loss} &= -\log \frac{\exp(\text{Sim}(\mathbf{y}_\text{a}, \mathbf{y}_\text{q}))}{\exp(\text{Sim}(\mathbf{y}_\text{a}, \mathbf{y}_\text{q})) + T-1}
 \end{aligned}
 $$

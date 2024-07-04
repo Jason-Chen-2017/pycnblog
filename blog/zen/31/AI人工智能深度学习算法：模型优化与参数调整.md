@@ -80,18 +80,18 @@
 
 ### 4.1 数学模型构建
 
-- **损失函数**：$L = \\frac{1}{N}\\sum_{i=1}^{N}l(y_i, \\hat{y}_i)$，其中$l$是损失函数，$y_i$是真实值，$\\hat{y}_i$是预测值。
-- **正则化**：$R = \\lambda \\sum_{w \\in W}||w||^2$，$\\lambda$是正则化系数。
+- **损失函数**：$L = \frac{1}{N}\sum_{i=1}^{N}l(y_i, \hat{y}_i)$，其中$l$是损失函数，$y_i$是真实值，$\hat{y}_i$是预测值。
+- **正则化**：$R = \lambda \sum_{w \in W}||w||^2$，$\lambda$是正则化系数。
 
 ### 4.2 公式推导过程
 
 #### 梯度下降
 
-- 更新规则：$w := w - \\eta \\frac{\\partial L}{\\partial w}$，$\\eta$是学习率。
+- 更新规则：$w := w - \eta \frac{\partial L}{\partial w}$，$\eta$是学习率。
 
 #### 动量法
 
-- $v := \\beta v + (1-\\beta) \\frac{\\partial L}{\\partial w}$，$w := w - \\alpha v$，$\\beta$是动量系数，$\\alpha$是学习率。
+- $v := \beta v + (1-\beta) \frac{\partial L}{\partial w}$，$w := w - \alpha v$，$\beta$是动量系数，$\alpha$是学习率。
 
 ### 4.3 案例分析与讲解
 

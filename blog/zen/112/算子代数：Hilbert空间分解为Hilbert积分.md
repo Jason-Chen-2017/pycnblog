@@ -7,7 +7,7 @@
 在现代数学和物理学中,算子代数和Hilbert空间理论扮演着至关重要的角色。特别是在量子力学的数学基础——量子算符代数中,Hilbert空间上的线性算子及其谱理论是核心研究对象。深入理解Hilbert空间的分解,对于刻画量子系统的性质至关重要。
 ### 1.2  研究现状
 目前,对于有界自伴算子谱定理已有比较完善的理论。但对于一般线性算子,特别是无界线性算子的谱表示,仍有许多问题有待进一步探索。Hilbert积分作为将Hilbert空间分解为不可约表示直和的重要工具,在算子代数表示论中有着广泛应用。
-### 1.3  研究意义  
+### 1.3  研究意义
 深入研究Hilbert空间分解为Hilbert积分,对于揭示量子系统的内禀结构,完善量子算符代数的理论基础,具有重要的理论意义。同时,相关理论也为量子信息处理、量子控制等应用领域提供了坚实的数学工具。
 ### 1.4  本文结构
 本文将首先介绍Hilbert空间和线性算子的基本概念,然后给出算子谱分解的数学模型。在此基础上,重点研究Hilbert积分的构造方法,并用谱定理刻画其性质。最后,讨论Hilbert积分在量子算符代数表示论中的应用。
@@ -32,7 +32,7 @@ D --> E(Hilbert积分)
 Hilbert积分的构造基于谱定理,通过将线性算子谱分解为投影算子值测度的积分来实现。其核心是将Hilbert空间分解为不可约表示的直和,每个不可约表示对应谱的一个点测度。
 ### 3.2  算法步骤详解
 1. 对于Hilbert空间H上的线性算子A,构造其谱测度E。
-2. 对于谱测度E的每个点测度E({λ}),构造不可约表示空间H_λ。 
+2. 对于谱测度E的每个点测度E({λ}),构造不可约表示空间H_λ。
 3. 将H分解为不可约表示的直积分∫⊕H_λ dE(λ)。
 4. 算子A可表示为Hilbert积分∫⊕λ dE(λ)。
 ### 3.3  算法优缺点
@@ -40,7 +40,7 @@ Hilbert积分的构造基于谱定理,通过将线性算子谱分解为投影算
 - 适用于一般线性算子,包括无界线性算子。
 - 将Hilbert空间完全分解为不可约表示,揭示了量子系统的内禀结构。
 
-缺点: 
+缺点:
 - 对于具体算子,谱测度的构造可能比较复杂。
 - 对无界线性算子,Hilbert积分的定义需要引入黎曼-斯蒂尔特积分。
 ### 3.4  算法应用领域
@@ -93,10 +93,10 @@ from scipy.linalg import eigh
 def spectral_decomposition(A):
     """
     计算有界自伴算子A的谱分解
-    
+
     Args:
         A: n*n Hermitian matrix
-        
+
     Returns:
         evals: eigenvalues
         evecs: eigenvectors
@@ -107,10 +107,10 @@ def spectral_decomposition(A):
 def hilbert_integral(A):
     """
     计算有界自伴算子A的Hilbert积分
-    
+
     Args:
         A: n*n Hermitian matrix
-        
+
     Returns:
         evals: eigenvalues
         evecs: eigenvectors
@@ -132,17 +132,17 @@ A = np.array([[1, 1-2j], [1+2j, 3]])
 evals, evecs, proj = hilbert_integral(A)
 
 print(f"Eigenvalues: {evals}")
-print(f"Eigenvectors: \n{evecs}")  
+print(f"Eigenvectors: \n{evecs}")
 print(f"Projections: \n{proj[0]}\n{proj[1]}")
 ```
 
 运行结果:
 ```
 Eigenvalues: [-0.56155281  4.56155281]
-Eigenvectors: 
+Eigenvectors:
 [[-0.87192821+0.j          0.48963374+0.j        ]
  [-0.13816986-0.42522113j -0.13816986+0.42522113j]]
-Projections: 
+Projections:
 [[0.76025794+0.j         0.24010506-0.36981781j]
  [0.24010506+0.36981781j 0.23974206+0.j        ]]
 [[0.23974206+0.j         -0.24010506+0.36981781j]

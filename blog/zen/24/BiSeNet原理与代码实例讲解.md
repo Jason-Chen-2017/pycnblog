@@ -1,4 +1,4 @@
-                 
+
 # BiSeNet原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -174,10 +174,10 @@ from torch import nn
 
 class BiSeNet(nn.Module):
     # 构建BiSeNet的基本框架...
-    
+
     def forward(self, input_image):
         # 执行前向传播逻辑...
-        
+
 if __name__ == '__main__':
     net = BiSeNet()
     input_tensor = torch.rand(1, 3, 512, 512)  # 示例输入

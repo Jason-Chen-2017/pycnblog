@@ -1,6 +1,6 @@
 # 一切皆是映射：跟踪AI元学习（Meta-learning）的最新进展
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -137,9 +137,9 @@
 
 $$
 \begin{aligned}
-&\text{元训练目标函数：} \mathcal{L}(\theta) = \frac{1}{N} \sum_{i=1}^N L_i(\theta_i) \\
-&\text{其中，} \theta_i = \theta - \alpha \nabla_\theta L_i(\theta) \\
-&\text{元测试目标函数：} L_{new}(\theta_{new}) \\
+&\text{元训练目标函数：} \mathcal{L}(\theta) = \frac{1}{N} \sum_{i=1}^N L_i(\theta_i) \
+&\text{其中，} \theta_i = \theta - \alpha \nabla_\theta L_i(\theta) \
+&\text{元测试目标函数：} L_{new}(\theta_{new}) \
 &\text{其中，} \theta_{new} = \theta - \alpha \nabla_\theta L_{new}(\theta)
 \end{aligned}
 $$

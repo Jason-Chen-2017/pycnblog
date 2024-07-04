@@ -257,13 +257,13 @@ A：提高地震预测精度的方法包括：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n deepenv python=3.8 
+conda create -n deepenv python=3.8
 conda activate deepenv
 ```
 
 3. 安装深度学习框架和工具包：
 ```bash
-conda install pytorch torchvision torchaudio -c pytorch 
+conda install pytorch torchvision torchaudio -c pytorch
 conda install numpy pandas scikit-learn matplotlib seaborn
 ```
 
@@ -289,7 +289,7 @@ class CNN(nn.Module):
         self.pool = nn.MaxPool1d(kernel_size=2, stride=2, padding=0)
         self.fc1 = nn.Linear(16, 32)
         self.fc2 = nn.Linear(32, 1)
-        
+
     def forward(self, x):
         x = self.conv1(x)
         x = self.relu(x)

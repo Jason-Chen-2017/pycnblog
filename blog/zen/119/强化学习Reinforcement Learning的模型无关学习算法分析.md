@@ -1,7 +1,7 @@
 
 # 强化学习Reinforcement Learning的模型无关学习算法分析
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -236,46 +236,46 @@ class DQN:
         self.learning_rate = learning_rate
         self.gamma = gamma
         self.epsilon = epsilon
-        
+
         self.model = tf.keras.Sequential([
             tf.keras.layers.Dense(24, activation='relu', input_dim=state_dim),
             tf.keras.layers.Dense(24, activation='relu'),
             tf.keras.layers.Dense(action_dim, activation='linear')
         ])
-        
+
         self.target_model = tf.keras.Sequential([
             tf.keras.layers.Dense(24, activation='relu', input_dim=state_dim),
             tf.keras.layers.Dense(24, activation='relu'),
             tf.keras.layers.Dense(action_dim, activation='linear')
         ])
-        
+
         self.update_target_model()
-        
+
         self.optimizer = tf.keras.optimizers.Adam(learning_rate=self.learning_rate)
-        
+
     def update_target_model(self):
         self.target_model.set_weights(self.model.get_weights())
-        
+
     def predict(self, state):
         if np.random.rand() < self.epsilon:
             return random.randrange(self.action_dim)
         act_values = self.model.predict(state)
         return np.argmax(act_values[0])
-    
+
     def train(self, state, action, reward, next_state, done):
         target = reward
-        
+
         if not done:
             target = (reward + self.gamma * np.amax(self.target_model.predict(next_state)[0]))
-        
+
         target_f = self.target_model.predict(state)
         target_f[0][action] = target
-        
+
         self.model.fit(state, target_f, epochs=1, verbose=0)
-        
+
     def load(self, name):
         self.model.load_weights(name)
-        
+
     def save(self, name):
         self.model.save_weights(name)
 
@@ -286,11 +286,11 @@ if __name__ == '__main__':
     learning_rate = 0.01
     gamma = 0.95
     epsilon = 1.0
-    
+
     dqn = DQN(state_dim, action_dim, learning_rate, gamma, epsilon)
-    
+
     # ...（此处省略数据收集和训练过程）
-    
+
     dqn.save('dqn.h5')
 ```
 

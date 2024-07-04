@@ -174,7 +174,7 @@ public class WordCountWithState {
                 .flatMap(new FlatMapFunction<String, Tuple2<String, Integer>>() {
                     @Override
                     public void flatMap(String value, Collector<Tuple2<String, Integer>> out) throws Exception {
-                        String[] words = value.split("\\s+");
+                        String[] words = value.split("\s+");
                         for (String word : words) {
                             out.collect(new Tuple2<>(word, 1));
                         }
@@ -307,4 +307,4 @@ Flink 的有状态流处理和容错机制是其核心优势之一，它能够�
 - **如何提高 Flink 的性能？** 可以通过优化数据结构、使用异步操作、减少状态信息量等方式提高 Flink 的性能。
 - **如何调试 Flink 程序？** Flink 提供了丰富的调试工具，例如日志分析、断点调试等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

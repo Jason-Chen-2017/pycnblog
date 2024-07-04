@@ -42,8 +42,8 @@ VAE的目标是学习数据分布$P(X)$的近似，其中$X$是输入数据。�
 ### 3.2 算法步骤详解
 
 1. **编码过程**：输入数据$x$经过编码器网络，得到潜在变量$z$的估计$q(z|x)$。
-2. **重建过程**：潜在变量$z$通过解码器网络生成重建数据$\\hat{x}$。
-3. **损失函数**：损失函数$L$由两部分组成：重建损失$-\\mathbb{E}_{q(z|x)}[\\log p(x|z)]$和KL散度$D_{KL}(q(z|x)||p(z))$。前者衡量重建数据与真实数据之间的差距，后者衡量$q(z|x)$与$p(z)$之间的差异。
+2. **重建过程**：潜在变量$z$通过解码器网络生成重建数据$\hat{x}$。
+3. **损失函数**：损失函数$L$由两部分组成：重建损失$-\mathbb{E}_{q(z|x)}[\log p(x|z)]$和KL散度$D_{KL}(q(z|x)||p(z))$。前者衡量重建数据与真实数据之间的差距，后者衡量$q(z|x)$与$p(z)$之间的差异。
 
 ### 3.3 算法优缺点
 
@@ -69,11 +69,11 @@ VAE的目标是学习数据分布$P(X)$的近似，其中$X$是输入数据。�
 
 模型的目标是学习$p(Z)$的近似$q(Z|X)$，使得$q(Z|X)$尽可能接近$p(Z)$。这可通过最小化以下目标函数实现：
 
-$$L = -\\mathbb{E}_{x \\sim P(X)}[\\mathbb{E}_{z \\sim q(Z|X)}[\\log p(x|z)] + D_{KL}(q(Z|X)||p(Z))]$$
+$$L = -\mathbb{E}_{x \sim P(X)}[\mathbb{E}_{z \sim q(Z|X)}[\log p(x|z)] + D_{KL}(q(Z|X)||p(Z))]$$
 
 ### 4.2 公式推导过程
 
-- **重建损失**：$-\\mathbb{E}_{x \\sim P(X)}[\\log p(x|z)]$确保解码后的数据与原输入接近。
+- **重建损失**：$-\mathbb{E}_{x \sim P(X)}[\log p(x|z)]$确保解码后的数据与原输入接近。
 - **KL散度**：$D_{KL}(q(Z|X)||p(Z))$鼓励$q(Z|X)$接近$p(Z)$，防止过度拟合。
 
 ### 4.3 案例分析与讲解
@@ -175,13 +175,13 @@ def plot_generated_images(vae, num_images=5):
         plt.imshow(test_imgs[i].reshape(28, 28), cmap='gray')
         ax.get_xaxis().set_visible(False)
         ax.get_yaxis().set_visible(False)
-        ax.set_title(f\"Original Image\")
-        
+        ax.set_title(f"Original Image")
+
         ax = plt.subplot(1, num_images, i + 1 + num_images)
         plt.imshow(generated_imgs[i].reshape(28, 28), cmap='gray')
         ax.get_xaxis().set_visible(False)
         ax.get_yaxis().set_visible(False)
-        ax.set_title(f\"Generated Image\")
+        ax.set_title(f"Generated Image")
     plt.show()
 
 plot_generated_images(vae)
@@ -204,8 +204,8 @@ plot_generated_images(vae)
 - **Keras**：简化模型构建和训练流程。
 
 ### 7.3 相关论文推荐
-- **\"Auto-Encoding Variational Bayes\"** by Diederik P. Kingma and Max Welling, 2013.
-- **\"Learning Deep Representations by Joint Estimation of Coding and Decoding Networks\"** by Yoshua Bengio, 2009.
+- **"Auto-Encoding Variational Bayes"** by Diederik P. Kingma and Max Welling, 2013.
+- **"Learning Deep Representations by Joint Estimation of Coding and Decoding Networks"** by Yoshua Bengio, 2009.
 
 ### 7.4 其他资源推荐
 - **GitHub仓库**：寻找开源VAE实现和案例。

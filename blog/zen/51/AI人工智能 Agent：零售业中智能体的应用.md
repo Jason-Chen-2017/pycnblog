@@ -18,7 +18,7 @@
 
 其中,智能客户服务和个性化推荐系统是人工智能代理(AI Agent)在零售业中最为突出的应用场景。
 
-## 2.核心概念与联系  
+## 2.核心概念与联系
 
 ### 2.1 人工智能代理(AI Agent)
 
@@ -51,8 +51,8 @@ Agent通过感知器获取环境信息,通过执行器对环境施加影响。�
 
 $$
 \begin{aligned}
-\text{Agent与环境进行交互} \\
-\text{Agent获得奖励信号,调整策略} \\
+\text{Agent与环境进行交互} \
+\text{Agent获得奖励信号,调整策略} \
 \text{最大化预期的长期累积奖励}
 \end{aligned}
 $$
@@ -66,7 +66,7 @@ $$
 马尔可夫决策过程是强化学习的数学基础模型,由以下5个要素组成:
 
 - 状态集合 $\mathcal{S}$
-- 行为集合 $\mathcal{A}$  
+- 行为集合 $\mathcal{A}$
 - 转移概率 $\mathcal{P}_{ss'}^a = \Pr(s' \,|\, s, a)$
 - 奖励函数 $\mathcal{R}_s^a$
 - 折扣因子 $\gamma \in [0, 1)$
@@ -195,31 +195,31 @@ class DQNAgent:
     def update(self):
         if len(self.replay_buffer) < self.batch_size:
             return
-        
+
         transitions = random.sample(self.replay_buffer, self.batch_size)
         state_batch, action_batch, reward_batch, next_state_batch = zip(*transitions)
-        
+
         state_batch = torch.tensor(state_batch, dtype=torch.float32)
         action_batch = torch.tensor(action_batch, dtype=torch.int64)
         reward_batch = torch.tensor(reward_batch, dtype=torch.float32)
         next_state_batch = torch.tensor(next_state_batch, dtype=torch.float32)
-        
+
         q_values = self.q_net(state_batch).gather(1, action_batch.unsqueeze(1)).squeeze()
         next_q_values = self.target_q_net(next_state_batch).max(1)[0]
         expected_q_values = reward_batch + self.gamma * next_q_values
-        
+
         loss = self.loss_fn(q_values, expected_q_values)
         self.optimizer.zero_grad()
         loss.backward()
         self.optimizer.step()
-        
+
         if len(self.replay_buffer) > self.buffer_size:
             self.replay_buffer.pop(0)
-        
+
         # 更新目标网络
         if episode % 10 == 0:
             self.target_q_net.load_state_dict(self.q_net.state_dict())
-            
+
 # 训练循环
 env = GridWorld()
 agent = DQNAgent(state_dim, action_dim)

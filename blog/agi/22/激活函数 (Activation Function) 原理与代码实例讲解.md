@@ -38,17 +38,17 @@
 
 以ReLU函数为例，其定义如下：
 
-$$ f(x) = \\begin{cases} 
-0 & \\text{if } x < 0 \\\\
-x & \\text{if } x \\geq 0 
-\\end{cases} $$
+$$ f(x) = \begin{cases}
+0 & \text{if } x < 0 \\\
+x & \text{if } x \geq 0
+\end{cases} $$
 
 这个函数将所有负数映射为0，而所有非负数保持不变。
 
 ### 3.3 算法优缺点
 
 - **优点**：ReLU函数简单快速，减少了训练过程中的梯度消失问题。同时，它对于正向传播和反向传播都非常高效。
-  
+
 - **缺点**：ReLU函数在零点附近梯度为零，可能导致“死神经”现象，即输入为负时神经元永远不激活，这会影响网络的学习能力。
 
 ### 3.4 算法应用领域
@@ -63,15 +63,15 @@ x & \\text{if } x \\geq 0
 
 - **Sigmoid函数**：
 
-$$ f(x) = \\frac{1}{1 + e^{-x}} $$
+$$ f(x) = \frac{1}{1 + e^{-x}} $$
 
 - **Tanh函数**：
 
-$$ f(x) = \\frac{e^x - e^{-x}}{e^x + e^{-x}} $$
+$$ f(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}} $$
 
 - **ReLU函数**：
 
-$$ f(x) = \\max(0, x) $$
+$$ f(x) = \max(0, x) $$
 
 ### 4.2 公式推导过程
 
@@ -146,8 +146,8 @@ model.fit(X, y, epochs=10)
 
 ### 7.3 相关论文推荐
 
-- **\"Rectifier Neural Networks\"**：介绍ReLU及其变体。
-- **\"Understanding the Difficulty of Training Deep Feedforward Neural Networks\"**：讨论深度网络训练中的挑战和解决方法。
+- **"Rectifier Neural Networks"**：介绍ReLU及其变体。
+- **"Understanding the Difficulty of Training Deep Feedforward Neural Networks"**：讨论深度网络训练中的挑战和解决方法。
 
 ### 7.4 其他资源推荐
 
@@ -178,7 +178,7 @@ model.fit(X, y, epochs=10)
 
 - **为什么选择激活函数？**
   激活函数是神经网络不可或缺的部分，它们使得神经网络能够学习和表示复杂的非线性关系，是提升模型性能的关键因素。
-  
+
 - **如何选择合适的激活函数？**
   选择激活函数应考虑模型的类型、任务的性质以及训练过程中的具体需求。例如，对于分类任务，Sigmoid或Softmax可能是合适的选择；对于回归任务，可能更适合使用Relu或Leaky ReLU等。
 

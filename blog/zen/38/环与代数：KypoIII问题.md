@@ -107,7 +107,7 @@ $$f(\lambda) = \text{det}(A - \lambda I)$$
 
 其中，$A - \lambda I$是一个$n \times n$的矩阵，其元素为：
 
-$$A_{ij} - \lambda = \begin{cases} 
+$$A_{ij} - \lambda = \begin{cases}
 1, & \text{如果顶点i和顶点j之间有边} \\
 -1, & \text{如果顶点i和顶点j之间没有边} \\
 0, & \text{其他情况}

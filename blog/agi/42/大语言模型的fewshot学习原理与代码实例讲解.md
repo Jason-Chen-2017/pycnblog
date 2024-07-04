@@ -83,27 +83,27 @@ few-shot 学习的核心在于模型如何利用少量数据来捕捉任务之�
 - **损失函数**：在 few-shot 学习中，损失函数通常用于衡量模型预测值与真实值之间的差距。对于分类任务，常用的损失函数为交叉熵损失。
 - **相似性度量**：常用的方法是计算特征向量之间的余弦相似度，公式为：
 $$
-similarity(x, y) = \\frac{x \\cdot y}{||x|| \\times ||y||}
+similarity(x, y) = \frac{x \cdot y}{||x|| \times ||y||}
 $$
 
 ### 4.2 公式推导过程
 
 #### 微调过程的数学推导：
-假设我们有一个预训练的大型语言模型 \\(M\\)，并希望使用少量样本进行微调以适应新任务。设 \\(x\\) 表示新任务的数据，\\(y\\) 表示预训练数据，\\(f\\) 是模型的前向传播函数，\\(L\\) 是损失函数。
+假设我们有一个预训练的大型语言模型 \(M\)，并希望使用少量样本进行微调以适应新任务。设 \(x\) 表示新任务的数据，\(y\) 表示预训练数据，\(f\) 是模型的前向传播函数，\(L\) 是损失函数。
 
-微调过程的目标是寻找一个参数更新 \\(\\Delta \\theta\\)，使得模型能够更好地适应新任务：
+微调过程的目标是寻找一个参数更新 \(\Delta \theta\)，使得模型能够更好地适应新任务：
 
 $$
-\\theta_{new} = \\theta_{old} + \\Delta \\theta
+\theta_{new} = \theta_{old} + \Delta \theta
 $$
 
 微调的具体步骤可以是梯度下降法：
 
 $$
-\\Delta \\theta = -\\eta \\frac{\\partial L}{\\partial \\theta}
+\Delta \theta = -\eta \frac{\partial L}{\partial \theta}
 $$
 
-其中 \\(\\eta\\) 是学习率。
+其中 \(\eta\) 是学习率。
 
 ### 4.3 案例分析与讲解
 
@@ -154,14 +154,14 @@ for epoch in range(5):
         inputs = tokenizer(text, padding=True, truncation=True, return_tensors='pt')
         inputs = inputs.to(device)
         labels = torch.tensor(label).unsqueeze(0).to(device)
-        
+
         model.train()
         outputs = model(**inputs, labels=labels)
         loss = outputs.loss
         loss.backward()
         optimizer.step()
         optimizer.zero_grad()
-        
+
     print(f'Epoch {epoch+1}, Loss: {loss.item()}')
 
 # 测试阶段
@@ -210,8 +210,8 @@ print('Predicted label:', predicted_label.item())
 
 ### 7.3 相关论文推荐
 
-- **\"A Few-Shot Learning Framework for Text Classification\"**
-- **\"Few-Shot Learning with ProtoNets\"**
+- **"A Few-Shot Learning Framework for Text Classification"**
+- **"Few-Shot Learning with ProtoNets"**
 
 ### 7.4 其他资源推荐
 

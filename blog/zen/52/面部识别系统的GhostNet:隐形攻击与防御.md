@@ -120,20 +120,20 @@ delta = np.random.uniform(-0.3, 0.3, orig_img.shape)
 for i in range(100):
     delta.requires_grad = True
     adv_img = orig_img + delta
-    
+
     # 前向传播
     bboxes = mtcnn(adv_img)
-    
+
     # 计算损失函数
     loss = -bboxes.sum()
-    
+
     # 反向传播
     loss.backward()
-    
+
     # 更新扰动
     delta = delta + 0.01 * delta.grad.sign()
     delta = torch.clamp(delta, -0.3, 0.3)
-    
+
 # 生成对抗性样本
 adv_img = orig_img + delta
 ```
@@ -161,31 +161,31 @@ def ghostnet_attack(orig_img, label, epsilon=0.3, alpha=0.01, iters=100):
     # 将图像转换为PyTorch张量
     orig_img = torch.from_numpy(orig_img).permute(2, 0, 1).unsqueeze(0).float()
     label = torch.tensor([label])
-    
+
     # 初始化随机扰动
     delta = torch.rand_like(orig_img, requires_grad=True) * 2 * epsilon - epsilon
-    
+
     for i in range(iters):
         # 生成对抗性样本
         adv_img = orig_img + delta
-        
+
         # 前向传播
         outputs = mtcnn(adv_img)
-        
+
         # 计算损失函数
         loss = loss_fn(outputs, label)
-        
+
         # 反向传播
         loss.backward()
-        
+
         # 更新扰动
         delta.data = delta.data + alpha * delta.grad.sign()
         delta.data = torch.clamp(delta.data, -epsilon, epsilon)
         delta.grad.zero_()
-        
+
     # 生成对抗性样本
     adv_img = (orig_img + delta).permute(0, 2, 3, 1).squeeze().detach().numpy()
-    
+
     return adv_img
 
 # 使用示例

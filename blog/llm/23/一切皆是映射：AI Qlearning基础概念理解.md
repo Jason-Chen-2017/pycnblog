@@ -34,8 +34,8 @@ Q-learning算法的基本思想是通过迭代更新Q函数的值，使得Q函�
 2. 在每个时间步，智能体根据当前状态选择一个动作（可能为随机选择，取决于ε-greedy策略）。
 3. 执行该动作后，观察下一个状态和收到的即时奖励。
 4. 更新Q-table，根据Q-learning的Q-value更新公式：
-   $$ Q(s,a) \\leftarrow Q(s,a) + \\alpha [r + \\gamma \\max_{a'} Q(s',a') - Q(s,a)] $$
-   其中，$s$是当前状态，$a$是选择的动作，$r$是即时奖励，$s'$是下一个状态，$\\alpha$是学习率，$\\gamma$是折扣因子，$a'$是下一个状态的可能动作。
+   $$ Q(s,a) \leftarrow Q(s,a) + \alpha [r + \gamma \max_{a'} Q(s',a') - Q(s,a)] $$
+   其中，$s$是当前状态，$a$是选择的动作，$r$是即时奖励，$s'$是下一个状态，$\alpha$是学习率，$\gamma$是折扣因子，$a'$是下一个状态的可能动作。
 5. 移动到下一个状态，重复步骤2至4，直到满足终止条件。
 
 ### 3.3 算法优缺点
@@ -62,23 +62,23 @@ Q-learning广泛应用于各种场景，包括但不限于：
 ### 4.1 数学模型构建
 
 Q-learning的核心在于构建Q函数，该函数定义为：
-$$ Q(s, a) = \\mathbb{E}[R_t + \\gamma \\max_{a'} Q(s', a')] $$
+$$ Q(s, a) = \mathbb{E}[R_t + \gamma \max_{a'} Q(s', a')] $$
 其中，
 - $s$表示状态，
 - $a$表示动作，
 - $R_t$是时间步$t$的即时奖励，
-- $\\gamma$是折扣因子（$0 \\leq \\gamma < 1$），用于平衡即时奖励和未来奖励的重要性，
-- $\\max_{a'} Q(s', a')$表示下一个状态$s'$下所有可能动作$a'$的最大Q值。
+- $\gamma$是折扣因子（$0 \leq \gamma < 1$），用于平衡即时奖励和未来奖励的重要性，
+- $\max_{a'} Q(s', a')$表示下一个状态$s'$下所有可能动作$a'$的最大Q值。
 
 ### 4.2 公式推导过程
 
 Q-learning的Q-value更新公式基于Bellman方程，可以表示为：
-$$ Q(s, a) \\leftarrow Q(s, a) + \\alpha [r + \\gamma \\max_{a'} Q(s', a') - Q(s, a)] $$
+$$ Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a') - Q(s, a)] $$
 其中，
-- $\\alpha$是学习率，控制学习速度，
+- $\alpha$是学习率，控制学习速度，
 - $r$是即时奖励，
-- $\\gamma$是折扣因子，
-- $\\max_{a'} Q(s', a')$是下一个状态$s'$下所有可能动作$a'$的最大Q值。
+- $\gamma$是折扣因子，
+- $\max_{a'} Q(s', a')$是下一个状态$s'$下所有可能动作$a'$的最大Q值。
 
 ### 4.3 案例分析与讲解
 
@@ -134,7 +134,7 @@ for episode in range(1000):
         state = next_state
 
 # 打印Q-table
-print(\"Q-table:\")
+print("Q-table:")
 print(Q_table)
 ```
 
@@ -173,8 +173,8 @@ Q-learning在实际应用中的成功案例包括：
 
 ### 7.3 相关论文推荐
 
-- **Q-learning**：Watkins, C.J.C.H., \"Learning from delayed rewards,\" Ph.D. thesis, Cambridge University, UK, 1989.
-- **Deep Q-Learning**：Mnih, V., et al., \"Playing atari with deep reinforcement learning,\" arXiv preprint arXiv:1312.5602, 2013.
+- **Q-learning**：Watkins, C.J.C.H., "Learning from delayed rewards," Ph.D. thesis, Cambridge University, UK, 1989.
+- **Deep Q-Learning**：Mnih, V., et al., "Playing atari with deep reinforcement learning," arXiv preprint arXiv:1312.5602, 2013.
 
 ### 7.4 其他资源推荐
 

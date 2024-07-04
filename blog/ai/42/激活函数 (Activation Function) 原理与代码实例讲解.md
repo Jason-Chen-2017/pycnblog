@@ -92,9 +92,9 @@ $$f(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}$$
 
 4. **Leaky ReLU函数**：
 
-$$f(x) = \begin{cases} 
+$$f(x) = \begin{cases}
 x & \text{if } x \geq 0 \\
-\alpha x & \text{if } x < 0 
+\alpha x & \text{if } x < 0
 \end{cases}$$
 
 其中，$\alpha$为漏值系数。

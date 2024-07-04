@@ -93,9 +93,9 @@ YOLOv3算法的数学模型可以概括为以下公式：
 
 $$
 \begin{aligned}
-\text{output} &= \text{Darknet-53}(\text{input}) \\
-\text{feature\_map} &= \text{upsample}(\text{output}) \\
-\text{prediction} &= \text{YOLO\_layer}(\text{feature\_map}) \\
+\text{output} &= \text{Darknet-53}(\text{input}) \
+\text{feature\_map} &= \text{upsample}(\text{output}) \
+\text{prediction} &= \text{YOLO\_layer}(\text{feature\_map}) \
 \end{aligned}
 $$
 

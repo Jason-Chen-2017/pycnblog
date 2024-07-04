@@ -160,9 +160,9 @@ Spark Executor需要合理地分配CPU和内存资源,以确保应用程序的�
 
 $$
 \begin{aligned}
-\max \quad & U(R_c, R_m) \\
-\text{s.t.} \quad & R_c \leq C_c \\
-& R_m \leq C_m \\
+\max \quad & U(R_c, R_m) \
+\text{s.t.} \quad & R_c \leq C_c \
+& R_m \leq C_m \
 & R_c, R_m \geq 0
 \end{aligned}
 $$
@@ -181,9 +181,9 @@ Spark Executor需要合理地调度任务,以提高数据本地性和负载均�
 
 $$
 \begin{aligned}
-\min \quad & \sum_{i=1}^{n} \sum_{j=1}^{m} c_{ij} x_{ij} \\
-\text{s.t.} \quad & \sum_{j=1}^{m} x_{ij} = 1, \quad \forall i \\
-& \sum_{i=1}^{n} x_{ij} \leq k_j, \quad \forall j \\
+\min \quad & \sum_{i=1}^{n} \sum_{j=1}^{m} c_{ij} x_{ij} \
+\text{s.t.} \quad & \sum_{j=1}^{m} x_{ij} = 1, \quad \forall i \
+& \sum_{i=1}^{n} x_{ij} \leq k_j, \quad \forall j \
 & x_{ij} \in \{0, 1\}, \quad \forall i, j
 \end{aligned}
 $$

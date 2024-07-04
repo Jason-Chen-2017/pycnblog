@@ -137,8 +137,8 @@
 
 $$
 DFS(v) = \begin{cases}
-\text{访问顶点v}\\
-\text{对于v的每个未访问邻接顶点u，执行DFS(u)}\\
+\text{访问顶点v}\
+\text{对于v的每个未访问邻接顶点u，执行DFS(u)}\
 \end{cases}
 $$
 
@@ -148,11 +148,11 @@ $$
 
 $$
 BFS(v) = \begin{cases}
-\text{将顶点v入队}\\
-\text{当队列不为空时，执行以下步骤}\\
-\quad \text{将队列头元素出队}\\
-\quad \text{对于顶点v的每个未访问邻接顶点u，执行以下步骤}\\
-\quad \quad \text{将顶点u入队}\\
+\text{将顶点v入队}\
+\text{当队列不为空时，执行以下步骤}\
+\quad \text{将队列头元素出队}\
+\quad \text{对于顶点v的每个未访问邻接顶点u，执行以下步骤}\
+\quad \quad \text{将顶点u入队}\
 \end{cases}
 $$
 

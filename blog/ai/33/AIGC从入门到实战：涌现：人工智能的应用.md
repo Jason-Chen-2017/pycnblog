@@ -93,12 +93,12 @@ AI生成内容的应用广泛，包括但不限于：
 #### 文本生成：
 
 - **语言模型**：使用交叉熵来衡量模型预测和真实分布之间的差异：
-  $$ H(p, q) = - \\sum_x p(x) \\log q(x) $$
-  
+  $$ H(p, q) = - \sum_x p(x) \log q(x) $$
+
 #### 图像生成：
 
 - **GANs损失函数**：定义生成器和判别器之间的博弈，最小化生成器欺骗判别器的能力：
-  $$ \\min_G \\max_D V(D, G) = \\mathbb{E}_{x \\sim p_{data}(x)}[\\log D(x)] + \\mathbb{E}_{z \\sim p_z(z)}[\\log(1 - D(G(z)))] $$
+  $$ \min_G \max_D V(D, G) = \mathbb{E}_{x \sim p_{data}(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log(1 - D(G(z)))] $$
 
 ### 4.3 案例分析与讲解
 
@@ -145,8 +145,8 @@ from transformers import GPT2Tokenizer, GPT2LMHeadModel
 tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 model = GPT2LMHeadModel.from_pretrained('gpt2')
 
-prompt = \"Once upon a time\"
-inputs = tokenizer(prompt, return_tensors=\"pt\")
+prompt = "Once upon a time"
+inputs = tokenizer(prompt, return_tensors="pt")
 outputs = model(**inputs, max_length=100)
 
 generated_text = tokenizer.decode(outputs[0])

@@ -1,6 +1,6 @@
 # 强化学习Reinforcement Learning在能效管理系统的应用案例
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 关键词：
 
@@ -99,9 +99,9 @@
 
 以DQN为例，其核心公式为：
 
-$$ Q(s, a) = \\theta_w \\cdot \\phi(s, a) $$
+$$ Q(s, a) = \theta_w \cdot \phi(s, a) $$
 
-其中，$Q(s, a)$ 是动作$a$在状态$s$下的Q值，$\\theta_w$ 是神经网络的权重，$\\phi(s, a)$ 是特征向量，表示状态$s$和动作$a$的特征。
+其中，$Q(s, a)$ 是动作$a$在状态$s$下的Q值，$\theta_w$ 是神经网络的权重，$\phi(s, a)$ 是特征向量，表示状态$s$和动作$a$的特征。
 
 ### 4.3 案例分析与讲解
 

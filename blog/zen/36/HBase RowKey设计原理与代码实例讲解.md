@@ -70,7 +70,7 @@ HBase 行键设计广泛应用于实时数据分析、大规模数据存储和�
 
 哈希函数 `H(key)` 可用于生成哈希值，用于定位数据存储位置：
 
-$$ H(key) = \\sum_{i=1}^{n} w_i \\cdot key_i \\mod M $$
+$$ H(key) = \sum_{i=1}^{n} w_i \cdot key_i \mod M $$
 
 其中，`wi` 是权重系数，`M` 是哈希表大小。
 
@@ -102,7 +102,7 @@ public class Order {
     }
 
     public String getKey() {
-        return String.format(\"%s:%s\", customerID, orderDate.toString());
+        return String.format("%s:%s", customerID, orderDate.toString());
     }
 }
 
@@ -110,16 +110,16 @@ public class HBaseClient {
     public static void main(String[] args) throws Exception {
         // 初始化 HBase 连接
         Configuration conf = HBaseConfiguration.create();
-        conf.set(\"hbase.zookeeper.quorum\", \"localhost\");
+        conf.set("hbase.zookeeper.quorum", "localhost");
         Connection connection = ConnectionFactory.createConnection(conf);
-        Table table = connection.getTable(TableName.valueOf(\"orders\"));
+        Table table = connection.getTable(TableName.valueOf("orders"));
 
         // 插入数据
-        Put put = new Put(Bytes.toBytes(\"abc\"));
-        put.addColumn(Bytes.toBytes(\"meta\"), Bytes.toBytes(\"name\"), \"John Doe\");
-        put.addColumn(Bytes.toBytes(\"meta\"), Bytes.toBytes(\"email\"), \"john@example.com\");
-        put.addColumn(Bytes.toBytes(\"details\"), Bytes.toBytes(\"customerID\"), \"abc\");
-        put.addColumn(Bytes.toBytes(\"details\"), Bytes.toBytes(\"orderDate\"), \"2023-04-01\");
+        Put put = new Put(Bytes.toBytes("abc"));
+        put.addColumn(Bytes.toBytes("meta"), Bytes.toBytes("name"), "John Doe");
+        put.addColumn(Bytes.toBytes("meta"), Bytes.toBytes("email"), "john@example.com");
+        put.addColumn(Bytes.toBytes("details"), Bytes.toBytes("customerID"), "abc");
+        put.addColumn(Bytes.toBytes("details"), Bytes.toBytes("orderDate"), "2023-04-01");
         table.put(put);
 
         // 关闭连接

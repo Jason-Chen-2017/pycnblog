@@ -113,11 +113,11 @@ public class LuceneDemo {
     public static void main(String[] args) throws Exception {
         // 创建分词器
         Analyzer analyzer = new SmartChineseAnalyzer(Version.LUCENE_4_10_4);
-        
+
         // 分词
         String text = "Java编程语言是一种面向对象的编程语言，具有良好的跨平台性。";
         String[] words = analyzer.tokenStream("text", new StringReader(text)).toString().split(" ");
-        
+
         // 输出分词结果
         for (String word : words) {
             System.out.println(word);
@@ -210,29 +210,29 @@ public class LuceneDemo {
     public static void main(String[] args) throws Exception {
         // 创建分词器
         Analyzer analyzer = new SmartChineseAnalyzer(Version.LUCENE_4_10_4);
-        
+
         // 创建内存索引
         Directory directory = new RAMDirectory();
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
         IndexWriter writer = new IndexWriter(directory, config);
-        
+
         // 添加文档
         Document doc = new Document();
         doc.add(new Field("content", "Java编程语言是一种面向对象的编程语言，具有良好的跨平台性。", Field.Store.YES));
         writer.addDocument(doc);
         writer.close();
-        
+
         // 搜索
         Query query = new QueryParser("content", analyzer).parse("Java");
         IndexSearcher searcher = new IndexSearcher(DirectoryReader.open(directory));
         TopDocs topDocs = searcher.search(query, 10);
-        
+
         // 输出搜索结果
         for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
             Document result = searcher.doc(scoreDoc.doc);
             System.out.println(result.get("content"));
         }
-        
+
         // 关闭索引
         searcher.close();
         directory.close();

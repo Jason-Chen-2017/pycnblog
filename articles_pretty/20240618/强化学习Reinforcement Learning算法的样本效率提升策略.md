@@ -76,9 +76,7 @@
 
 ### 4.2 公式推导过程
 
-- **策略梯度方法**：\\(\
-abla J(\\theta) = \\mathbb{E}_{\\tau \\sim \\pi(\\theta)} [\
-abla \\log \\pi(A_t|S_t;\\theta) G_t]\\)，其中\\(G_t = \\sum_{k=0}^\\infty \\gamma^k R_{t+k+1}\\)，\\(\\gamma\\)是折扣因子。
+- **策略梯度方法**：\\(\nabla J(\\theta) = \\mathbb{E}_{\\tau \\sim \\pi(\\theta)} [\nabla \\log \\pi(A_t|S_t;\\theta) G_t]\\)，其中\\(G_t = \\sum_{k=0}^\\infty \\gamma^k R_{t+k+1}\\)，\\(\\gamma\\)是折扣因子。
 - **DQN**：\\(Q(s, a)\\)通过深度神经网络近似，\\(Q(s, a)\\) = \\(W_a \\cdot \\phi(s)\\)，其中\\(W_a\\)是网络权重，\\(\\phi(s)\\)是特征映射。
 
 ### 4.3 案例分析与讲解

@@ -67,13 +67,13 @@
 
 ### 数学模型构建
 
-- **语言模型**：$P(\\mathbf{x}) = \\prod_{i=1}^{n} P(x_i|\\mathbf{x}_{<i})$
-- **决策制定**：基于贝叶斯决策论，$P(\\mathbf{a}|\\mathbf{x}) = \\frac{P(\\mathbf{x}|\\mathbf{a})P(\\mathbf{a})}{P(\\mathbf{x})}$
+- **语言模型**：$P(\mathbf{x}) = \prod_{i=1}^{n} P(x_i|\mathbf{x}_{<i})$
+- **决策制定**：基于贝叶斯决策论，$P(\mathbf{a}|\mathbf{x}) = \frac{P(\mathbf{x}|\mathbf{a})P(\mathbf{a})}{P(\mathbf{x})}$
 
 ### 公式推导过程
 
 - **语言模型**：通过统计历史数据计算每个词汇出现的概率，构建连续的条件概率分布。
-- **决策制定**：利用贝叶斯定理计算在给定信息$\\mathbf{x}$下采取行动$\\mathbf{a}$的最优概率，最大化预期收益或最小化损失。
+- **决策制定**：利用贝叶斯定理计算在给定信息$\mathbf{x}$下采取行动$\mathbf{a}$的最优概率，最大化预期收益或最小化损失。
 
 ### 案例分析与讲解
 
@@ -101,18 +101,18 @@
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-model_name = \"YOUR_MODEL_NAME\"
+model_name = "YOUR_MODEL_NAME"
 model = AutoModelForCausalLM.from_pretrained(model_name)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 def generate_response(input_text):
-    input_ids = tokenizer.encode(input_text, return_tensors=\"pt\")
+    input_ids = tokenizer.encode(input_text, return_tensors="pt")
     output = model.generate(input_ids, max_length=100)
     response = tokenizer.decode(output[0])
     return response
 
 # 使用示例
-input_text = \"我想要了解关于人工智能的最新发展情况\"
+input_text = "我想要了解关于人工智能的最新发展情况"
 response = generate_response(input_text)
 print(response)
 ```
@@ -127,7 +127,7 @@ print(response)
 
 ### 运行结果展示
 
-- **输入**：\"我想要了解关于人工智能的最新发展情况\"
+- **输入**："我想要了解关于人工智能的最新发展情况"
 - **输出**：经过模型处理后的自然语言响应，可能包括新闻摘要、专家观点等。
 
 ## 6. 实际应用场景

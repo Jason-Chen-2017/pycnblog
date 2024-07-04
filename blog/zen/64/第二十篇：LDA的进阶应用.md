@@ -89,8 +89,8 @@ LDA模型假设每个文档 $d$ 是主题的混合，每个主题 $k$ 是单词�
 
 $$
 \begin{aligned}
-\theta_d &\sim Dirichlet(\alpha) \\
-z_{d,n} &\sim Categorical(\theta_d) \\
+\theta_d &\sim Dirichlet(\alpha) \
+z_{d,n} &\sim Categorical(\theta_d) \
 w_{d,n} &\sim Categorical(\phi_{z_{d,n}})
 \end{aligned}
 $$

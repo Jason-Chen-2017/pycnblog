@@ -264,7 +264,7 @@ A：选择合适的神经网络模型需要考虑以下因素：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 
@@ -307,8 +307,8 @@ def load_data():
 
     tokenizer = BertTokenizer.from_pretrained('bert-base-chinese')
     encodings = tokenizer(texts, truncation=True, padding=True, return_tensors='pt')
-    input_ids = encodings['input_ids'].to(torch.device('cuda')) 
-    attention_mask = encodings['attention_mask'].to(torch.device('cuda')) 
+    input_ids = encodings['input_ids'].to(torch.device('cuda'))
+    attention_mask = encodings['attention_mask'].to(torch.device('cuda'))
     labels = torch.tensor(labels).to(torch.device('cuda'))
 
     return input_ids, attention_mask, labels

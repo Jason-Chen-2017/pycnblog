@@ -85,7 +85,7 @@ CNPs可以应用于以下领域：
 假设输入条件为 $C$，内部表示为 $Z$，推理结果为 $R$。则CNPs的数学模型可以表示为：
 
 $$
-Z = f_C(C) \\
+Z = f_C(C) \
 R = g_Z(Z)
 $$
 
@@ -96,7 +96,7 @@ $$
 假设条件编码器为 $f_C: \mathbb{R}^n \rightarrow \mathbb{R}^m$，推理器/决策器为 $g_Z: \mathbb{R}^m \rightarrow \mathbb{R}^l$。则：
 
 $$
-Z = f_C(C) = \sigma(W_1C + b_1) \\
+Z = f_C(C) = \sigma(W_1C + b_1) \
 R = g_Z(Z) = \sigma(W_2Z + b_2)
 $$
 
@@ -140,7 +140,7 @@ A：CNPs的应用前景十分广阔，可以应用于智能问答、智能推荐
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n cnps-env python=3.8 
+conda create -n cnps-env python=3.8
 conda activate cnps-env
 ```
 
@@ -175,7 +175,7 @@ class ConditionalEncoder(nn.Module):
         self.embedding = nn.Embedding(vocab_size, embedding_dim)
         self.gru = nn.GRU(embedding_dim, hidden_dim, num_layers, dropout=dropout, bidirectional=True)
         self.fc = nn.Linear(hidden_dim * 2, hidden_dim)
-        
+
     def forward(self, x, hidden):
         x = self.embedding(x)
         out, hidden = self.gru(x, hidden)
@@ -188,7 +188,7 @@ class InferenceModule(nn.Module):
         super(InferenceModule, self).__init__()
         self.fc1 = nn.Linear(hidden_dim, hidden_dim)
         self.fc2 = nn.Linear(hidden_dim, 1)
-        
+
     def forward(self, hidden):
         out = torch.tanh(self.fc1(hidden))
         out = self.fc2(out)

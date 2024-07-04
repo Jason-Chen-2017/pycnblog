@@ -169,10 +169,10 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 public class FlinkStreamExample {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        
+
         // 读取 Kafka 数据源
         DataStream<String> input = env.readTextFile("kafka-input-topic");
-        
+
         // 解析日志数据，提取错误信息
         DataStream<String> errorStream = input.map(new MapFunction<String, String>() {
             @Override
@@ -182,7 +182,7 @@ public class FlinkStreamExample {
                 return errorInfo;
             }
         });
-        
+
         // 滚动窗口计算每分钟错误数量的平均值
         DataStream<String> result = errorStream
                 .map(new MapFunction<String, Long>() {
@@ -221,10 +221,10 @@ public class FlinkStreamExample {
                         return String.valueOf(value);
                     }
                 });
-        
+
         // 输出结果到 Kafka
         result.addSink(new KafkaSink<>(...));
-        
+
         // 执行任务
         env.execute("Flink Stream Example");
     }

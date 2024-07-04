@@ -96,7 +96,7 @@ LangChain的核心数学模型是语言模型。常见的语言模型包括：
 - **n-gram模型**：
 
 $$
-P(w_n | w_{n-1}, w_{n-2}, ..., w_1) = \frac{N(w_{n-1}, w_n)}{N(w_{n-1})} 
+P(w_n | w_{n-1}, w_{n-2}, ..., w_1) = \frac{N(w_{n-1}, w_n)}{N(w_{n-1})}
 $$
 
 其中，$w_n$ 表示第n个词，$N(w_{n-1}, w_n)$ 表示$w_{n-1}$和$w_n$同时出现的次数，$N(w_{n-1})$ 表示$w_{n-1}$出现的次数。
@@ -104,7 +104,7 @@ $$
 - **RNN**：
 
 $$
-h_t = \tanh(W_h h_{t-1} + W_x x_t + b_h) 
+h_t = \tanh(W_h h_{t-1} + W_x x_t + b_h)
 $$
 
 其中，$h_t$ 表示第t个隐藏状态，$W_h$、$W_x$、$b_h$ 分别为权重和偏置。
@@ -112,7 +112,7 @@ $$
 - **Transformer**：
 
 $$
-\text{Attention}(Q, K, V) = \frac{(QK^T)}{\sqrt{d_k}}W_VV 
+\text{Attention}(Q, K, V) = \frac{(QK^T)}{\sqrt{d_k}}W_VV
 $$
 
 其中，$Q$、$K$、$V$ 分别为查询、键和值向量，$d_k$ 为键的维度。

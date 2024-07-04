@@ -423,4 +423,4 @@ RNN 可以用于分析文本的情感，如正面、负面或中性。
 
 可以使用标准的 NLP 评估指标来评估大模型的性能，如 BLEU、ROUGE、METEOR 等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -277,7 +277,7 @@ LLM Agent OS的应用可能引发一些伦理问题，例如：
 
 解决这些伦理问题需要多方共同努力，包括研究者、开发者、监管机构和社会公众。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 

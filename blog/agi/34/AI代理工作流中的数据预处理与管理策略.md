@@ -58,11 +58,11 @@
 
 数据预处理通常涉及统计学和概率论基础，例如：
 
-- **均值替换缺失值**：$X_{cleaned} = \\begin{cases} X_i & \\text{if } X_i \\text{ is not missing} \\\\ \\bar{X} & \\text{if } X_i \\text{ is missing} \\end{cases}$，其中$\\bar{X}$是$X$的平均值。
+- **均值替换缺失值**：$X_{cleaned} = \begin{cases} X_i & \text{if } X_i \text{ is not missing} \\ \bar{X} & \text{if } X_i \text{ is missing} \end{cases}$，其中$\bar{X}$是$X$的平均值。
 
 ### 4.2 公式推导过程
 
-- **特征缩放**：标准化变换$z$-score公式为$z_i = \\frac{x_i - \\mu}{\\sigma}$，其中$\\mu$是均值，$\\sigma$是标准差。
+- **特征缩放**：标准化变换$z$-score公式为$z_i = \frac{x_i - \mu}{\sigma}$，其中$\mu$是均值，$\sigma$是标准差。
 
 ### 4.3 案例分析与讲解
 
@@ -109,14 +109,14 @@ scaled_data = scaler.fit_transform(df[relevant_features])
 def preprocess_data(df, features, scaler=None):
     # 数据清洗
     df.dropna(inplace=True)
-    
+
     # 特征选择
     selected_features = df[features]
-    
+
     # 数据转换（使用MinMaxScaler进行归一化）
     if scaler is not None:
         selected_features = pd.DataFrame(scaler.fit_transform(selected_features.values), columns=selected_features.columns)
-    
+
     return selected_features
 ```
 

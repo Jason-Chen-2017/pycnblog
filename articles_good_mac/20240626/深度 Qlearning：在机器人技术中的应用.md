@@ -85,8 +85,7 @@ $$
 使用梯度下降法或其他优化算法更新 Q-network 的参数：
 
 $$
-\theta_{Q} \leftarrow \theta_{Q} - \alpha \
-abla_{\theta_{Q}} L
+\theta_{Q} \leftarrow \theta_{Q} - \alpha \nabla_{\theta_{Q}} L
 $$
 
 #### 7. 更新 target network

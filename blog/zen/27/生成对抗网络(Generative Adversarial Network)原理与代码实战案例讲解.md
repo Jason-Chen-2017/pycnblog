@@ -1,6 +1,6 @@
 # 生成对抗网络(Generative Adversarial Network)原理与代码实战案例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 关键词：生成对抗网络（GAN）、深度学习、图像生成、文本生成、数据增强、模式学习
 
@@ -98,12 +98,12 @@
 #### 生成器（G）
 
 - **目标**：学习从噪声空间到数据空间的映射。
-- **损失函数**：$$L_G = -\\mathbb{E}_{z \\sim p_z}(D(G(z)))$$，其中$p_z$是噪声分布。
+- **损失函数**：$$L_G = -\mathbb{E}_{z \sim p_z}(D(G(z)))$$，其中$p_z$是噪声分布。
 
 #### 判别器（D）
 
 - **目标**：区分真实样本和生成样本。
-- **损失函数**：$$L_D = -[\\mathbb{E}_{x \\sim p_x}(log(D(x))) + \\mathbb{E}_{z \\sim p_z}(log(1-D(G(z))))]$$，其中$p_x$是真实数据分布。
+- **损失函数**：$$L_D = -[\mathbb{E}_{x \sim p_x}(log(D(x))) + \mathbb{E}_{z \sim p_z}(log(1-D(G(z))))]$$，其中$p_x$是真实数据分布。
 
 ### 4.2 公式推导过程
 
@@ -207,13 +207,13 @@ def train(g, d, data_loader, epochs, device):
             g_optimizer.step()
 
             if batch_idx % 100 == 0:
-                print(f\"Epoch {epoch}: Loss D = {d_loss.item()}, Loss G = {g_loss.item()}\")
+                print(f"Epoch {epoch}: Loss D = {d_loss.item()}, Loss G = {g_loss.item()}")
 ```
 
 #### 执行代码
 
 ```python
-device = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 g = Generator(100, 256, 784).to(device)
 d = Discriminator(784, 256, 1).to(device)
 
@@ -288,7 +288,7 @@ train(g, d, data_loader, epochs=100, device=device)
 
 - **Q**：GAN为什么难以训练？
   **A**：GAN训练难度主要来源于生成器和判别器之间的相互博弈，需要精确平衡二者的能力。解决策略包括使用对抗性训练、增加数据量、引入额外的损失函数等。
-  
+
 - **Q**：如何避免GAN过拟合？
   **A**：通过增加数据集多样性、使用正则化技术（如Dropout）、限制模型复杂度、定期清理生成样本等方式，可以减少过拟合的风险。
 

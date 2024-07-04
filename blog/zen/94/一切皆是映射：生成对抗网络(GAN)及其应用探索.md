@@ -112,8 +112,8 @@ GAN的数学模型可以概括为以下公式：
 
 $$
 \begin{aligned}
-\text{Generator: } & G(z) = \mathcal{D}^{(G)}(z) \\
-\text{Discriminator: } & D(x) = \mathcal{D}^{(D)}(x) \\
+\text{Generator: } & G(z) = \mathcal{D}^{(G)}(z) \
+\text{Discriminator: } & D(x) = \mathcal{D}^{(D)}(x) \
 \text{Loss Function: } & L(G,D) = \mathbb{E}_{z \sim p_{z}(z)}[ \log(D(G(z))] + \log(1-D(x))]
 \end{aligned}
 $$

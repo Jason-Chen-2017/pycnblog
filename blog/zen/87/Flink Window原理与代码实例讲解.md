@@ -102,7 +102,7 @@ Flink的窗口算法可以建模为一个有限状态机。每个窗口状态表
 
 以时间窗口为例，假设数据流中的数据元素为$\{x_1, x_2, \dots, x_n\}$，窗口的起始时间为$T_0$，窗口长度为$L$，则状态转移函数可以表示为：
 
-$$f(x_i) = \begin{cases} 
+$$f(x_i) = \begin{cases}
 \text{窗口分配} & \text{if } T_i \in [T_0, T_0 + L) \\
 \text{无操作} & \text{otherwise}
 \end{cases}$$

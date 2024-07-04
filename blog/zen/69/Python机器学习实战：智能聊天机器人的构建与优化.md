@@ -29,7 +29,7 @@
 #### 2.2.2 监督学习与非监督学习
 #### 2.2.3 机器学习在聊天机器人中的应用
 
-### 2.3 深度学习(Deep Learning) 
+### 2.3 深度学习(Deep Learning)
 #### 2.3.1 深度学习的概念与特点
 #### 2.3.2 神经网络与卷积神经网络
 #### 2.3.3 深度学习在聊天机器人中的应用
@@ -47,7 +47,7 @@
 
 ### 3.3 意图识别与槽位填充
 #### 3.3.1 意图识别的概念与方法
-#### 3.3.2 槽位填充的概念与方法 
+#### 3.3.2 槽位填充的概念与方法
 #### 3.3.3 联合意图识别与槽位填充
 
 ### 3.4 对话管理与上下文理解
@@ -98,7 +98,7 @@ $$y_t = g(W_{hy} h_t + b_y)$$
 import re
 
 def clean_text(text):
-    text = re.sub(r"[^A-Za-z0-9(),!?@\'\`\"\_\n]", " ", text)
+    text = re.sub(r"[^A-Za-z0-9(),!?@\'\`"\_\n]", " ", text)
     text = re.sub(r"@", "at", text)
     text = re.sub(r"\'s", " \'s", text)
     text = re.sub(r"\'ve", " have", text)
@@ -168,7 +168,7 @@ intent_classifier.fit(X_train, y_train)
 ```python
 from sklearn_crfsuite import CRF
 
-slot_tagger = CRF(algorithm='lbfgs', c1=0.1, c2=0.1, max_iterations=100)  
+slot_tagger = CRF(algorithm='lbfgs', c1=0.1, c2=0.1, max_iterations=100)
 slot_tagger.fit(X_train, y_train)
 ```
 #### 5.4.3 模型评估与优化

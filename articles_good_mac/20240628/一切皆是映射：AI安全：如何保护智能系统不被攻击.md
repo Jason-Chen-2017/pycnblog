@@ -112,15 +112,13 @@ $$
 例如，使用FGSM算法生成对抗样本，其公式如下：
 
 $$
-\epsilon = \eta \cdot \text{sign}(\
-abla_x f(x, y))
+\epsilon = \eta \cdot \text{sign}(\nabla_x f(x, y))
 $$
 
 其中：
 
 * $\eta$ 是学习率。
-* $\
-abla_x f(x, y)$ 是模型$f(x)$关于输入$x$的梯度，计算在真实标签$y$下。
+* $\nabla_x f(x, y)$ 是模型$f(x)$关于输入$x$的梯度，计算在真实标签$y$下。
 
 FGSM算法通过计算模型梯度，并沿着梯度方向添加一个小的扰动，从而生成对抗样本。
 

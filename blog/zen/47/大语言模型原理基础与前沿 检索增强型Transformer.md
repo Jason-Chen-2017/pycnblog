@@ -150,21 +150,21 @@ def search_knowledge(query):
 def retrieval_enhanced_transformer(query):
     # 编码查询
     inputs = tokenizer(query, return_tensors='pt', max_length=512, truncation=True)
-    
+
     # 检索知识
     knowledge = search_knowledge(query)
     knowledge_inputs = tokenizer(knowledge, return_tensors='pt', max_length=512, truncation=True)
-    
+
     # 融合知识和查询
     inputs['input_ids'] = torch.cat([inputs['input_ids'], knowledge_inputs['input_ids']])
-    
+
     # 生成输出
     outputs = model(inputs)
     output = outputs.last_hidden_state
-    
+
     # 解码输出
     # ...（此处省略解码过程）
-    
+
     return output
 
 # 输入查询

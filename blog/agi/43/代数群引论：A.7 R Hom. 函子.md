@@ -87,7 +87,7 @@ $R$ Hom 函子的数学模型可以构建在以下结构上：
 
 设$G$和$H$是代数群，$R$是环，$Rep_R(G)$和$Rep_R(H)$分别是$G$和$H$在环$R$上的所有$R$ 表组成的集合。则$R$ Hom 函子$Hom_R(G,H)$可以定义为：
 
-\[Hom_R(G,H) := \{ \phi : Rep_R(G) \to Rep_R(H) \mid \phi \text{ is an } R-\text{homomorphism}\}\]
+$$Hom_R(G,H) := \{ \phi : Rep_R(G) \to Rep_R(H) \mid \phi \text{ is an } R-\text{homomorphism}\}$$
 
 其中，$\phi$是映射，$\phi$在$Rep_R(G)$和$Rep_R(H)$之间，且保持群结构的相容性。
 

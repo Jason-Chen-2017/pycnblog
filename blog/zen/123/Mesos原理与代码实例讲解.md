@@ -375,4 +375,4 @@ Mesos的未来研究方向包括：
 
 * **A:** Mesos可以与其他框架集成，例如Hadoop、Spark、Storm等，实现资源共享和任务协作。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

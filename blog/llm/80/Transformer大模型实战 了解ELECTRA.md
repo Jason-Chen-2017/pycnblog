@@ -170,7 +170,7 @@ A3：ELECTRA模型可以部署到各种平台和设备中，如服务器、云�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n electra-env python=3.8 
+conda create -n electra-env python=3.8
 conda activate electra-env
 ```
 
@@ -200,7 +200,7 @@ pip install numpy pandas scikit-learn matplotlib tqdm jupyter notebook ipython
 ```python
 from transformers import ElectraForSequenceClassification, ElectraTokenizer
 
-model = ElectraForSequenceClassification.from_pretrained('google/electra-base-discriminator') 
+model = ElectraForSequenceClassification.from_pretrained('google/electra-base-discriminator')
 tokenizer = ElectraTokenizer.from_pretrained('google/electra-base-discriminator')
 ```
 
@@ -214,7 +214,7 @@ def encode_data(texts, labels, tokenizer, max_len=128):
         dataset.append((encodings['input_ids'][i], encodings['attention_mask'][i], labels[i]))
     return dataset
 
-train_dataset = encode_data(train_texts, train_labels, tokenizer) 
+train_dataset = encode_data(train_texts, train_labels, tokenizer)
 dev_dataset = encode_data(dev_texts, dev_labels, tokenizer)
 test_dataset = encode_data(test_texts, test_labels, tokenizer)
 ```
@@ -251,7 +251,7 @@ def evaluate(model, dataset, batch_size):
         for batch in tqdm(dataloader):
             input_ids, attention_mask, batch_labels = [t.to(device) for t in batch]
             outputs = model(input_ids, attention_mask=attention_mask)
-            preds.extend(outputs.logits.argmax(dim=1).tolist()) 
+            preds.extend(outputs.logits.argmax(dim=1).tolist())
             labels.extend(batch_labels.tolist())
     return accuracy_score(labels, preds)
 ```
@@ -266,7 +266,7 @@ optimizer = AdamW(model.parameters(), lr=2e-5)
 for epoch in range(epochs):
     loss = train_epoch(model, train_dataset, batch_size, optimizer)
     print(f"Epoch {epoch+1}, train loss: {loss:.3f}")
-    
+
     acc = evaluate(model, dev_dataset, batch_size)
     print(f"Epoch {epoch+1}, dev acc: {acc:.3f}")
 ```

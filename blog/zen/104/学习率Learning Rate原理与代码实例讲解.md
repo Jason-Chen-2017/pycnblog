@@ -109,15 +109,13 @@
 学习率调整可以通过以下数学模型进行描述：
 
 $$
-\theta_{t+1} = \theta_t - \alpha_t \cdot \
-abla L(\theta_t)
+\theta_{t+1} = \theta_t - \alpha_t \cdot \nabla L(\theta_t)
 $$
 
 其中：
 
 - $\theta$ 表示模型参数。
-- $\
-abla L(\theta)$ 表示损失函数 $L$ 对参数 $\theta$ 的梯度。
+- $\nabla L(\theta)$ 表示损失函数 $L$ 对参数 $\theta$ 的梯度。
 - $\alpha_t$ 表示第 $t$ 个时刻的学习率。
 
 ### 4.2 公式推导过程
@@ -133,16 +131,14 @@ $$
 - 梯度下降算法通过计算损失函数的梯度来更新模型参数，即：
 
 $$
-\theta_{t+1} = \theta_t - \alpha_t \cdot \
-abla L(\theta_t)
+\theta_{t+1} = \theta_t - \alpha_t \cdot \nabla L(\theta_t)
 $$
 
 其中：
 
 - $\theta_t$ 表示第 $t$ 个时刻的模型参数。
 - $\alpha_t$ 表示第 $t$ 个时刻的学习率。
-- $\
-abla L(\theta_t)$ 表示损失函数 $L$ 对参数 $\theta$ 在第 $t$ 个时刻的梯度。
+- $\nabla L(\theta_t)$ 表示损失函数 $L$ 对参数 $\theta$ 在第 $t$ 个时刻的梯度。
 
 ### 4.3 案例分析与讲解
 

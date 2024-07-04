@@ -1,4 +1,4 @@
-                 
+
 # 大语言模型原理基础与前沿 更快、更小的Transformer
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -170,7 +170,7 @@ from torch import nn
 class MiniTransformerLayer(nn.Module):
     def __init__(self, input_dim=768, num_heads=8, dropout_rate=0.1):
         super(MiniTransformerLayer, self).__init__()
-        
+
         self.multi_head_attention = MultiHeadAttention(input_dim=input_dim,
                                                        num_heads=num_heads,
                                                        dropout_rate=dropout_rate)
@@ -185,13 +185,13 @@ class MiniTransformerLayer(nn.Module):
         x = self.multi_head_attention(x)
         x = self.dropout(x)
         x += inputs
-        
+
         # Layer normalization after multi-head attention
         y = self.layer_norm_2(x)
         y = self.feed_forward_network(y)
         y = self.dropout(y)
         y += x
-        
+
         return y
 ```
 
@@ -214,7 +214,7 @@ class MiniTransformerLayer(nn.Module):
 - **《深度学习》** by Ian Goodfellow, Yoshua Bengio, Aaron Courville
 - **《自然语言处理入门》** by O'Reilly Media
 - **Hugging Face 官方文档**：[https://huggingface.co/docs/transformers/](https://huggingface.co/docs/transformers/)
-  
+
 ### 7.2 开发工具推荐
 
 - **PyTorch**：灵活且高效的深度学习框架。

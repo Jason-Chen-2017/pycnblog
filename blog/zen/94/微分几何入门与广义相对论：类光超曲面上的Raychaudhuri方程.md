@@ -172,11 +172,11 @@ def raychaudhuri_equation(a, b, c, d, e, f, g):
 def main():
     # 定义初始参数
     a, b, c, d, e, f, g = 1, 2, 3, 4, 5, 6, 7
-    
+
     # 生成数据
     x = np.linspace(0, 10, 100)
     y = raychaudhuri_equation(a, b, c, d, e, f, g)
-    
+
     # 绘制图像
     plt.plot(x, y)
     plt.xlabel('x')

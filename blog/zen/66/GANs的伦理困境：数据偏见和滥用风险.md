@@ -9,7 +9,7 @@
 #### 1.1.3 GANs的应用前景
 
 ### 1.2 AI伦理问题的兴起
-#### 1.2.1 AI伦理的概念与内涵  
+#### 1.2.1 AI伦理的概念与内涵
 #### 1.2.2 AI伦理问题的现实意义
 #### 1.2.3 GANs伦理问题的特殊性
 
@@ -24,7 +24,7 @@
 #### 2.2.2 GANs中常见的数据偏见类型
 #### 2.2.3 数据偏见产生的原因分析
 
-### 2.3 GANs的滥用风险  
+### 2.3 GANs的滥用风险
 #### 2.3.1 DeepFakes的伦理争议
 #### 2.3.2 GANs生成假数据的安全隐患
 #### 2.3.3 基于GANs的恶意攻击
@@ -35,7 +35,7 @@
 #### 3.1.2 生成器前向传播
 #### 3.1.3 判别器前向传播
 #### 3.1.4 判别器损失计算
-#### 3.1.5 生成器损失计算 
+#### 3.1.5 生成器损失计算
 #### 3.1.6 判别器反向传播与更新
 #### 3.1.7 生成器反向传播与更新
 
@@ -49,7 +49,7 @@
 $$ \mathop{\mathbb{E}}_{x \sim p_\text{data}(x)} \log D(x) + \mathop{\mathbb{E}}_{z \sim p_z(z)} (1-\log D(G(z)) $$
 判别器的目标是最大化来自真实数据的概率，最小化生成数据被判定为真的概率。
 
-### 4.2 生成器的损失函数  
+### 4.2 生成器的损失函数
 $$ \mathop{\mathbb{E}}_{z \sim p_z(z)} \log (1-D(G(z))) $$
 生成器的目标是最大化生成数据被判别器判定为真实的概率，骗过判别器。
 
@@ -71,7 +71,7 @@ class Discriminator(nn.Module):
             nn.Conv2d(64, 128, 4, 2, 1, bias=False),
             nn.BatchNorm2d(128),
             nn.LeakyReLU(0.2, inplace=True),
-            nn.Conv2d(128, 256, 4, 2, 1, bias=False), 
+            nn.Conv2d(128, 256, 4, 2, 1, bias=False),
             nn.BatchNorm2d(256),
             nn.LeakyReLU(0.2, inplace=True),
             nn.Conv2d(256, 1, 4, 1, 0, bias=False),
@@ -80,11 +80,11 @@ class Discriminator(nn.Module):
     def forward(self, img):
         return self.model(img)
 
-# 生成器 
+# 生成器
 class Generator(nn.Module):
     def __init__(self):
         super().__init__()
-        # 定义生成器网络结构  
+        # 定义生成器网络结构
         self.model = nn.Sequential(
             nn.ConvTranspose2d(100, 256, 4, 1, 0, bias=False),
             nn.BatchNorm2d(256),
@@ -107,12 +107,12 @@ DCGAN在原始GAN的基础上使用了深度卷积网络作为生成器和判别
 Pix2Pix是一种条件GAN，可以实现图像到图像的转换。给定一张语义分割图，Pix2Pix可以生成对应的逼真图像。
 ```python
 # 定义生成器
-unet = UNet(3, 3)  
+unet = UNet(3, 3)
 # 定义判别器
 disc = Discriminator(6)
 
 # 定义损失函数
-l1_loss = nn.L1Loss() 
+l1_loss = nn.L1Loss()
 bce_loss = nn.BCEWithLogitsLoss()
 
 # 训练循环
@@ -120,25 +120,25 @@ for epoch in range(epochs):
     for i, data in enumerate(dataloader):
         real_image = data['B']
         sketch = data['A']
-        
+
         # 训练判别器
-        fake_image = unet(sketch) 
+        fake_image = unet(sketch)
         d_real = disc(torch.cat((real_image, sketch), 1))
-        d_fake = disc(torch.cat((fake_image, sketch), 1)) 
+        d_fake = disc(torch.cat((fake_image, sketch), 1))
         d_real_loss = bce_loss(d_real, torch.ones_like(d_real))
         d_fake_loss = bce_loss(d_fake, torch.zeros_like(d_fake))
         d_loss = d_real_loss + d_fake_loss
         d_optimizer.zero_grad()
         d_loss.backward()
         d_optimizer.step()
-        
-        # 训练生成器  
+
+        # 训练生成器
         fake_image = unet(sketch)
-        g_out = disc(torch.cat((fake_image, sketch), 1)) 
+        g_out = disc(torch.cat((fake_image, sketch), 1))
         g_bce_loss = bce_loss(g_out, torch.ones_like(g_out))
-        g_l1_loss = l1_loss(fake_image, real_image) 
+        g_l1_loss = l1_loss(fake_image, real_image)
         g_loss = g_bce_loss + lamb * g_l1_loss
-        
+
         unet.zero_grad()
         g_loss.backward()
         g_optimizer.step()
@@ -151,10 +151,10 @@ Pix2Pix在生成损失中加入了L1 loss，使生成图像更加接近ground tr
 #### 6.1.2 FaceSwap等换脸应用的伦理风险
 #### 6.1.3 如何规避人脸生成和换脸的负面影响
 
-### 6.2 图像翻译与风格迁移 
+### 6.2 图像翻译与风格迁移
 #### 6.2.1 CycleGAN实现无配对图像翻译
 #### 6.2.2 CartoonGAN生成个性化卡通画像
-#### 6.2.3 艺术风格迁移中的版权问题 
+#### 6.2.3 艺术风格迁移中的版权问题
 
 ### 6.3 数据增强与异常检测
 #### 6.3.1 GANs扩充小样本数据集
@@ -168,7 +168,7 @@ Pix2Pix在生成损失中加入了L1 loss，使生成图像更加接近ground tr
 #### 7.1.3 GAN代码收录库
 
 ### 7.2 GAN相关数据集
-#### 7.2.1 人脸数据集：CelebA与FFHQ  
+#### 7.2.1 人脸数据集：CelebA与FFHQ
 #### 7.2.2 通用图像生成：CIFAR-10与LSUN
 #### 7.2.3 行业应用数据集
 
@@ -180,7 +180,7 @@ Pix2Pix在生成损失中加入了L1 loss，使生成图像更加接近ground tr
 ## 8. 总结：未来发展趋势与挑战
 ### 8.1 GANs技术的发展趋势
 #### 8.1.1 更大规模与多样化的网络结构
-#### 8.1.2 attention机制的引入 
+#### 8.1.2 attention机制的引入
 #### 8.1.3 融合知识图谱等先验信息
 
 ### 8.2 提升GANs的可解释性与可控性
@@ -200,7 +200,7 @@ Pix2Pix在生成损失中加入了L1 loss，使生成图像更加接近ground tr
 ### 9.2 GANs容易出现训练不稳定的问题，有哪些改进方法？
 WGAN、SNGAN、BigGAN等目前流行的GAN变体通过改进网络结构、损失函数、归一化方法、正则化策略等方式提升训练稳定性。梯度惩罚、谱归一化是常用的技巧。
 
-### 9.3 如何在GANs生成过程中融入更多约束？ 
+### 9.3 如何在GANs生成过程中融入更多约束？
 目前的研究方向包括将物理规律、句法规则等作为先验知识融入到生成过程，引导GAN生成更符合人类认知的结果。条件GAN、CycleGAN等也在这一方向进行了有益尝试。
 
 由于篇幅所限，无法覆盖GANs的方方面面。GANs作为近年来人工智能领域最引人注目的发明之一，在促进技术进步的同时，也给伦理道德和社会规范带来了新的挑战。只有多方携手，在发展GAN技术的同时，构建相应的伦理规范与监管制度，才能最终实现"负责任的AI"的美好愿景。让我们共同努力，开创一个人工智能造福人类的美好未来。

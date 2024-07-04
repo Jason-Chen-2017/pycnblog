@@ -94,7 +94,7 @@ Phoenix二级索引算法的核心思想是：将多个一级索引组合成一�
 $$
 I(X) = \left\{
 \begin{array}{ll}
-\text{B树索引} & \text{当 } |X| < k \\
+\text{B树索引} & \text{当 } |X| < k \
 \text{哈希索引} & \text{当 } |X| \geq k
 \end{array}
 \right.

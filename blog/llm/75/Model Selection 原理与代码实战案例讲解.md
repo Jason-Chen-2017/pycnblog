@@ -119,9 +119,9 @@
 
 $$
 \begin{cases}
-\frac{\partial L}{\partial \beta_0} = 0 \\
-\frac{\partial L}{\partial \beta_1} = 0 \\
-\vdots \\
+\frac{\partial L}{\partial \beta_0} = 0 \
+\frac{\partial L}{\partial \beta_1} = 0 \
+\vdots \
 \frac{\partial L}{\partial \beta_n} = 0
 \end{cases}
 $$
@@ -183,7 +183,7 @@ A：模型选择的方法包括基于模型性能的方法、基于模型复杂�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n ml-env python=3.8 
+conda create -n ml-env python=3.8
 conda activate ml-env
 ```
 

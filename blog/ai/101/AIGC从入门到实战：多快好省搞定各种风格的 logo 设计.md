@@ -379,4 +379,4 @@ A：AIGC 生成的 logo 是否会侵犯设计师的创作权利是一个复杂�
 
 A：AIGC 在 logo 设计领域的应用前景非常广阔，随着 AIGC 技术的不断发展，其在 logo 设计领域的应用将会更加广泛和深入，为 logo 设计领域带来新的变革。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

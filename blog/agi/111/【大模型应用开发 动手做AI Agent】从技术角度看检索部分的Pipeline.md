@@ -245,15 +245,15 @@ def calculate_similarity(query, documents):
   # 文本预处理
   query = preprocess_text(query)
   documents = [preprocess_text(doc) for doc in documents]
-  
+
   # 文本表示学习
   vectorizer = CountVectorizer()
   query_vector = vectorizer.fit_transform([query])
   document_vectors = vectorizer.transform(documents)
-  
+
   # 检索算法
   similarities = cosine_similarity(query_vector, document_vectors)
-  
+
   return similarities
 
 # 示例数据

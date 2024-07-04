@@ -42,26 +42,26 @@ $$
 ```mermaid
 graph LR
     subgraph 输入层
-        x1((x1)) 
+        x1((x1))
         x2((x2))
         x3((x3))
     end
     subgraph 隐藏层
         h1((h1))
-        h2((h2)) 
+        h2((h2))
     end
     subgraph 输出层
         o1((o1))
         o2((o2))
     end
-    
+
     x1 --> h1
     x1 --> h2
     x2 --> h1
     x2 --> h2
     x3 --> h1
     x3 --> h2
-    
+
     h1 --> o1
     h1 --> o2
     h2 --> o1
@@ -85,7 +85,7 @@ $$
 前向传播是指将输入信号从输入层传递到输出层的过程。具体步骤如下:
 
 1. 输入层接收外界输入信号并传递到隐藏层
-2. 隐藏层神经元接收来自输入层的信号,计算加权和并通过激活函数产生输出,传递到输出层 
+2. 隐藏层神经元接收来自输入层的信号,计算加权和并通过激活函数产生输出,传递到输出层
 3. 输出层神经元接收来自隐藏层的信号,计算输出
 
 可以用下列公式表示第l层第j个神经元的输出:
@@ -115,7 +115,7 @@ $$
 w_{ji}^l := w_{ji}^l - \alpha \frac{\partial E}{\partial w_{ji}^l} = w_{ji}^l - \alpha a_i^{l-1} \delta_j^l
 $$
 $$
-b_j^l := b_j^l - \alpha \frac{\partial E}{\partial b_j^l} = b_j^l - \alpha \delta_j^l  
+b_j^l := b_j^l - \alpha \frac{\partial E}{\partial b_j^l} = b_j^l - \alpha \delta_j^l
 $$
 
 其中,α是学习率。
@@ -147,7 +147,7 @@ $$
 其导数为:
 
 $$
-f'(x) = f(x)(1 - f(x))  
+f'(x) = f(x)(1 - f(x))
 $$
 
 假设隐藏层到输出层的权重为v,输入层到隐藏层的权重为w,隐藏层的阈值为γ,输出层的阈值为θ。
@@ -197,7 +197,7 @@ $$
 \begin{aligned}
 v_1 &:= v_1 - \alpha \cdot \delta \cdot h_1 \\
 v_2 &:= v_2 - \alpha \cdot \delta \cdot h_2 \\
-w_{11} &:= w_{11} - \alpha \cdot \epsilon_1 \cdot x_1 \\ 
+w_{11} &:= w_{11} - \alpha \cdot \epsilon_1 \cdot x_1 \\
 w_{21} &:= w_{21} - \alpha \cdot \epsilon_1 \cdot x_2 \\
 w_{12} &:= w_{12} - \alpha \cdot \epsilon_2 \cdot x_1 \\
 w_{22} &:= w_{22} - \alpha \cdot \epsilon_2 \cdot x_2 \\
@@ -231,7 +231,7 @@ expected_output = np.array([[0], [1], [1], [0]])
 # 超参数
 epochs = 10000
 learning_rate = 0.1
-hidden_neurons = 2  
+hidden_neurons = 2
 
 # 权重和偏置初始化
 hidden_weights = np.random.uniform(size=(2, hidden_neurons))
@@ -256,7 +256,7 @@ for _ in range(epochs):
     # 反向传播
     error = expected_output - predicted_output
     d_predicted_output = error * sigmoid_derivative(predicted_output)
-    
+
     error_hidden_layer = d_predicted_output.dot(output_weights.T)
     d_hidden_layer = error_hidden_layer * sigmoid_derivative(hidden_layer_output)
 
@@ -283,7 +283,7 @@ plt.show()
 
 代码说明:
 
-1. 首先定义了sigmoid激活函数及其导数。 
+1. 首先定义了sigmoid激活函数及其导数。
 2. 然后准备了异或问题的训练集,并设置了一些超参数,如训练轮数epochs、学习率learning_rate、隐藏层神经元数hidden_neurons等。
 3. 接着随机初始化了各层权重和偏置。
 4. 在训练过程中,先进行前向传播,计算各层的激活值和输出;然后进行反向传播,计算输出层和隐藏层的误差,并据此更新权重和偏置。

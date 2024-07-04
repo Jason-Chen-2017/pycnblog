@@ -113,10 +113,10 @@ $$
 
 $$
 \begin{aligned}
-& visit(v) \\
-& for \ each \ neighbor \ u \ of \ v: \\
-& \ \ \ if \ u \ is \ not \ visited: \\
-& \ \ \ \ \ DFS(u) \\
+& visit(v) \
+& for \ each \ neighbor \ u \ of \ v: \
+& \ \ \ if \ u \ is \ not \ visited: \
+& \ \ \ \ \ DFS(u) \
 \end{aligned}
 $$
 
@@ -144,7 +144,7 @@ DFS 算法的公式推导过程如下：
 
 1. **初始化:** 将所有节点标记为未访问。
 2. **选择一个未访问的节点作为起点:** 选择节点 $A$ 作为起点，并将其标记为已访问。
-3. **递归遍历:** 
+3. **递归遍历:**
     * 遍历节点 $A$ 的邻居节点 $B$ 和 $C$，并将它们标记为已访问。
     * 递归遍历节点 $B$ 的邻居节点 $D$，并将 $D$ 标记为已访问。
     * 递归遍历节点 $C$ 的邻居节点 $E$，并将 $E$ 标记为已访问。
@@ -364,4 +364,4 @@ print(connected_components)
 
 **答:** DFS 算法可以处理图中的重边。当 DFS 算法遇到一个已经访问过的节点时，它会停止遍历该节点，并继续探索其他路径。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -173,7 +173,7 @@ graph TD
 缩放点积注意力是Transformer中自注意力机制的核心,它可以计算出Query和Key的注意力权重,然后将Value加权求和作为输出。具体计算过程如下:
 
 $$\begin{aligned}
-\text{Attention}(Q, K, V) &= \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V \\
+\text{Attention}(Q, K, V) &= \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V \
 \text{head}_i &= \text{Attention}\left(QW_i^Q, KW_i^K, VW_i^V\right)
 \end{aligned}$$
 

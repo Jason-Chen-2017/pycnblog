@@ -125,30 +125,30 @@ G-函数的公式可以通过矩阵的行列式展开得到。
 
 $$
 \begin{aligned}
-G(z) &= \det(zI - A) \\
+G(z) &= \det(zI - A) \
 &= \det
 \begin{pmatrix}
-z - a_{11} & -a_{12} & \cdots & -a_{1n} \\
--a_{21} & z - a_{22} & \cdots & -a_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
+z - a_{11} & -a_{12} & \cdots & -a_{1n} \
+-a_{21} & z - a_{22} & \cdots & -a_{2n} \
+\vdots & \vdots & \ddots & \vdots \
 -a_{n1} & -a_{n2} & \cdots & z - a_{nn}
-\end{pmatrix} \\
+\end{pmatrix} \
 &= (z - a_{11}) \det
 \begin{pmatrix}
-z - a_{22} & \cdots & -a_{2n} \\
-\vdots & \ddots & \vdots \\
+z - a_{22} & \cdots & -a_{2n} \
+\vdots & \ddots & \vdots \
 -a_{n2} & \cdots & z - a_{nn}
 \end{pmatrix}
 - a_{12} \det
 \begin{pmatrix}
--a_{21} & \cdots & -a_{2n} \\
-\vdots & \ddots & \vdots \\
+-a_{21} & \cdots & -a_{2n} \
+\vdots & \ddots & \vdots \
 -a_{n1} & \cdots & z - a_{nn}
 \end{pmatrix}
 + \cdots + (-1)^{n+1} a_{1n} \det
 \begin{pmatrix}
--a_{21} & \cdots & z - a_{2n} \\
-\vdots & \ddots & \vdots \\
+-a_{21} & \cdots & z - a_{2n} \
+\vdots & \ddots & \vdots \
 -a_{n1} & \cdots & -a_{n2}
 \end{pmatrix}
 \end{aligned}
@@ -161,7 +161,7 @@ $$
 $$
 A =
 \begin{pmatrix}
-2 & 1 \\
+2 & 1 \
 1 & 2
 \end{pmatrix}
 $$
@@ -170,13 +170,13 @@ $$
 
 $$
 \begin{aligned}
-G(z) &= \det(zI - A) \\
+G(z) &= \det(zI - A) \
 &= \det
 \begin{pmatrix}
-z - 2 & -1 \\
+z - 2 & -1 \
 -1 & z - 2
-\end{pmatrix} \\
-&= (z - 2)^2 - 1 \\
+\end{pmatrix} \
+&= (z - 2)^2 - 1 \
 &= z^2 - 4z + 3
 \end{aligned}
 $$
@@ -185,9 +185,9 @@ $$
 
 $$
 \begin{aligned}
-G(z) &= 0 \\
-z^2 - 4z + 3 &= 0 \\
-(z - 1)(z - 3) &= 0 \\
+G(z) &= 0 \
+z^2 - 4z + 3 &= 0 \
+(z - 1)(z - 3) &= 0 \
 z &= 1, 3
 \end{aligned}
 $$
@@ -200,17 +200,17 @@ $$
 \begin{aligned}
 A^{-1} &= \frac{1}{\det(A)}
 \begin{pmatrix}
-a_{22} & -a_{12} \\
+a_{22} & -a_{12} \
 -a_{21} & a_{11}
-\end{pmatrix} \\
+\end{pmatrix} \
 &= \frac{1}{3}
 \begin{pmatrix}
-2 & -1 \\
+2 & -1 \
 -1 & 2
-\end{pmatrix} \\
+\end{pmatrix} \
 &=
 \begin{pmatrix}
-2/3 & -1/3 \\
+2/3 & -1/3 \
 -1/3 & 2/3
 \end{pmatrix}
 \end{aligned}
@@ -353,9 +353,9 @@ if is_nonsingular(A):
 $$
 A =
 \begin{pmatrix}
-0 & 1 & 1 & 0 \\
-1 & 0 & 0 & 1 \\
-1 & 0 & 0 & 1 \\
+0 & 1 & 1 & 0 \
+1 & 0 & 0 & 1 \
+1 & 0 & 0 & 1 \
 0 & 1 & 1 & 0
 \end{pmatrix}
 $$
@@ -377,8 +377,8 @@ $$
 $$
 A =
 \begin{pmatrix}
-1 & 2 & 0 \\
-2 & 0 & 1 \\
+1 & 2 & 0 \
+2 & 0 & 1 \
 0 & 1 & 1
 \end{pmatrix}
 $$
@@ -393,7 +393,7 @@ $$
 
 $$
 \begin{aligned}
-2x + y &= 5 \\
+2x + y &= 5 \
 x + 2y &= 4
 \end{aligned}
 $$
@@ -403,7 +403,7 @@ $$
 $$
 A =
 \begin{pmatrix}
-2 & 1 \\
+2 & 1 \
 1 & 2
 \end{pmatrix}
 $$
@@ -498,4 +498,4 @@ G-函数在非奇异M-矩阵应用中也面临着一些挑战：
 
 **解答**: 可以通过阅读相关书籍和论文来学习G-函数。推荐书籍《线性代数及其应用》和《矩阵论》，推荐论文《G-函数在非奇异M-矩阵研究中的应用》。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

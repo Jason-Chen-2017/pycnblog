@@ -218,14 +218,14 @@ class Agent:
         self.action_shape = action_shape
         self.q_function = build_q_function(state_shape, action_shape)
         self.q_function.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.01), loss=tf.keras.losses.MeanSquaredError())
-    
+
     def choose_action(self, state, epsilon=0.1):
         if np.random.rand() < epsilon:
             return np.random.randint(self.action_shape)
         else:
             q_values = self.q_function(state)
             return np.argmax(q_values)
-    
+
     def update(self, state, action, reward, new_state):
         q_values = self.q_function(state)
         q_values[0, action] = reward + 0.99 * np.max(self.q_function(new_state))
@@ -236,7 +236,7 @@ class Environment:
     def __init__(self):
         self.state = 0
         self.action_space = [0, 1]
-    
+
     def step(self, action):
         self.state = (self.state + action) % 2
         reward = 1 if self.state == 0 else 0

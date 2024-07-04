@@ -420,4 +420,4 @@ def generate_energy_saving_suggestions(y_pred):
 
 系统可以进行远程维护和更新，用户可以通过手机APP或网页，进行系统升级和维护。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

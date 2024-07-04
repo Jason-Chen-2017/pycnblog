@@ -1,7 +1,7 @@
 
 # 变分自编码器VAE原理与代码实例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -127,7 +127,7 @@ VAE的数学模型如下：
 
 $$
 \begin{align*}
-q(z|x) &= \mathcal{N}(z|x; \mu, \sigma^2) \\
+q(z|x) &= \mathcal{N}(z|x; \mu, \sigma^2) \
 p(x|z) &= \mathcal{N}(x; \mu(z), \sigma(z)^2)
 \end{align*}
 $$
@@ -140,12 +140,12 @@ $$
 
 $$
 \begin{align*}
-D_{KL}(q(z|x) \parallel p(z)) &= \int q(z|x) \log \frac{q(z|x)}{p(z)} dz \\
-&= \int q(z|x) \log \frac{q(z|x)}{p(z)} dz \\
-&= \int q(z|x) \log \frac{\mathcal{N}(z|x; \mu, \sigma^2)}{\mathcal{N}(z; \mu_0, \sigma_0^2)} dz \\
-&= \int q(z|x) \log \frac{\exp(\frac{-(z-\mu)^2}{2\sigma^2}) \exp(\frac{-(z-\mu_0)^2}{2\sigma_0^2})}{\exp(\frac{-(z-\mu_0)^2}{2\sigma_0^2})} dz \\
-&= \int q(z|x) \left[ \log \frac{\sigma_0^2}{\sigma^2} + \frac{1}{2} \left( \frac{(z-\mu)^2}{\sigma^2} - \frac{(z-\mu_0)^2}{\sigma_0^2} \right) \right] dz \\
-&= \frac{1}{2} \left( \log \frac{\sigma_0^2}{\sigma^2} + \frac{\sigma_0^2}{\sigma^2} + \frac{\sigma^2}{\sigma_0^2} \right) \\
+D_{KL}(q(z|x) \parallel p(z)) &= \int q(z|x) \log \frac{q(z|x)}{p(z)} dz \
+&= \int q(z|x) \log \frac{q(z|x)}{p(z)} dz \
+&= \int q(z|x) \log \frac{\mathcal{N}(z|x; \mu, \sigma^2)}{\mathcal{N}(z; \mu_0, \sigma_0^2)} dz \
+&= \int q(z|x) \log \frac{\exp(\frac{-(z-\mu)^2}{2\sigma^2}) \exp(\frac{-(z-\mu_0)^2}{2\sigma_0^2})}{\exp(\frac{-(z-\mu_0)^2}{2\sigma_0^2})} dz \
+&= \int q(z|x) \left[ \log \frac{\sigma_0^2}{\sigma^2} + \frac{1}{2} \left( \frac{(z-\mu)^2}{\sigma^2} - \frac{(z-\mu_0)^2}{\sigma_0^2} \right) \right] dz \
+&= \frac{1}{2} \left( \log \frac{\sigma_0^2}{\sigma^2} + \frac{\sigma_0^2}{\sigma^2} + \frac{\sigma^2}{\sigma_0^2} \right) \
 &= \frac{1}{2} \left( \log \frac{\sigma_0^2}{\sigma^2} + 2 \right)
 \end{align*}
 $$

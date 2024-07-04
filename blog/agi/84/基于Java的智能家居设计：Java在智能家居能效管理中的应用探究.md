@@ -245,7 +245,7 @@ public class EnergyManagementSystem {
     public static void main(String[] args) {
         // 初始化数据库连接
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/energy_db", "username", "password");
-        
+
         // 创建能耗监测数据表
         try {
             Statement statement = connection.createStatement();
@@ -257,7 +257,7 @@ public class EnergyManagementSystem {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        
+
         // 采集能耗数据
         EnergySensor energySensor = new EnergySensor();
         energySensor.start();
@@ -269,7 +269,7 @@ class EnergySensor extends Thread {
         while (true) {
             // 采集能耗数据
             double power = ...;
-            
+
             // 将能耗数据存储到数据库
             try {
                 Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/energy_db", "username", "password");
@@ -280,7 +280,7 @@ class EnergySensor extends Thread {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            
+
             // 休眠一段时间
             try {
                 Thread.sleep(1000);

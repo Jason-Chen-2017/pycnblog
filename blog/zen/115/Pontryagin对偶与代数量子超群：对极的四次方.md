@@ -10,7 +10,7 @@ Pontryagin对偶理论作为一种强大的数学工具，在优化问题、控�
 ### 1.3  研究意义
 将Pontryagin对偶理论应用于量子计算具有重要的理论意义和实际应用价值。
 
-* **理论意义:** 
+* **理论意义:**
     * 深入探索量子计算的数学基础，为量子算法设计提供新的思路和方法。
     * 推动Pontryagin对偶理论在新的领域中的应用，丰富其理论体系。
 * **实际应用价值:**
@@ -73,7 +73,7 @@ Pontryagin对偶理论表明，原问题的最优解和对偶问题的最优解�
 ### 4.1  数学模型构建
 假设我们有一个量子计算问题，其目标函数为 $f(x)$，其中 $x$ 是量子比特的状态向量。
 
-* **原问题:**  
+* **原问题:**
     $$\min_{x} f(x)$$
     $$s.t.  g_i(x) \leq 0, i = 1, 2, ..., m$$
 * **拉格朗日函数:**
@@ -223,5 +223,5 @@ qc = create_quantum_circuit(n_qubits)
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

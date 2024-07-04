@@ -1,4 +1,4 @@
-                 
+
 # 语义分割(Semantic Segmentation)原理与代码实战案例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -38,8 +38,8 @@
 U-Net是一种自编码器架构，特别适用于图像分割任务。它采用反向金字塔的结构，上半部分用于特征提取，下半部分负责重建像素级别的输出。这种设计允许模型在保持上下文信息的同时进行精确的边界预测。
 
 $$ \text{U-Net} = \begin{cases}
-\text{Encoder (Feature Extraction)} \\
-\text{Decoder (Reconstruction)} \\
+\text{Encoder (Feature Extraction)} \
+\text{Decoder (Reconstruction)} \
 \end{cases} $$
 
 #### Mask R-CNN
@@ -128,7 +128,7 @@ class UNet(nn.Module):
 
     def forward(self, x):
         # 定义前向传播逻辑...
-        
+
 # 数据预处理和加载数据集略
 
 # 创建模型实例
@@ -273,7 +273,7 @@ class UNet(nn.Module):
 #### 常见问题：
 - **如何选择合适的超参数？**
   - 使用网格搜索、随机搜索或贝叶斯优化等方法来尝试不同的超参数组合，找到最优配置。
-  
+
 - **如何处理数据不平衡问题？**
   - 可以通过过采样少数类、欠采样多数类、合成新样本等方式调整数据分布，保证模型对各类别都能有较好的泛化能力。
 

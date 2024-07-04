@@ -105,7 +105,7 @@
 
 $$
 \begin{aligned}
-& x_t = \sqrt{1-\beta_t}x_{t-1} + \sqrt{\beta_t} \epsilon_t \quad (前向扩散过程) \\
+& x_t = \sqrt{1-\beta_t}x_{t-1} + \sqrt{\beta_t} \epsilon_t \quad (前向扩散过程) \
 & x_{t-1} = \frac{1}{\sqrt{1-\beta_t}}(x_t - \sqrt{\beta_t} \epsilon_t) \quad (反向扩散过程)
 \end{aligned}
 $$
@@ -580,4 +580,4 @@ with torch.no_grad():
 * 训练时间长。
 * 模型可解释性。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

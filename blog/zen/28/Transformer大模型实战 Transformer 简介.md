@@ -81,9 +81,9 @@ Transformer模型广泛应用于自然语言处理的多个领域，包括但不
 
 假设输入序列$x$长度为$n$，每个元素维度为$d$，则多头自注意力层可以表示为：
 
-- **查询**：$Q = W_Q \\cdot x$
-- **键**：$K = W_K \\cdot x$
-- **值**：$V = W_V \\cdot x$
+- **查询**：$Q = W_Q \cdot x$
+- **键**：$K = W_K \cdot x$
+- **值**：$V = W_V \cdot x$
 
 其中，$W_Q$、$W_K$、$W_V$是权重矩阵，分别对应查询、键和值的线性变换。
 
@@ -91,7 +91,7 @@ Transformer模型广泛应用于自然语言处理的多个领域，包括但不
 
 自注意力机制的公式可以表示为：
 
-$$A = softmax\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V$$
+$$A = softmax\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
 
 其中，$A$是注意力权重矩阵，$d_k$是键和值向量的维度。
 
@@ -103,7 +103,7 @@ $$A = softmax\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V$$
 
 - **为什么需要多头？**
   多头自注意力增加了模型的并行性和表达能力，每个头专注于捕捉不同的特征，从而提高了模型的整体性能。
-  
+
 - **为什么引入位置编码？**
   位置编码为序列中的每个元素添加位置信息，帮助模型理解元素之间的相对位置，这对于处理序列数据至关重要。
 
@@ -121,16 +121,16 @@ $$A = softmax\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V$$
 import torch
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
-model_name = \"t5-base\"
+model_name = "t5-base"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
-input_text = \"Translate this sentence to French: Hello, world!\"
-input_ids = tokenizer.encode(input_text, return_tensors=\"pt\")
+input_text = "Translate this sentence to French: Hello, world!"
+input_ids = tokenizer.encode(input_text, return_tensors="pt")
 output = model.generate(input_ids)
 translated_text = tokenizer.decode(output[0], skip_special_tokens=True)
 
-print(f\"Translated text: {translated_text}\")
+print(f"Translated text: {translated_text}")
 ```
 
 ### 5.3 代码解读与分析

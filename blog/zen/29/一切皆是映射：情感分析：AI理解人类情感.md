@@ -1,4 +1,4 @@
-                 
+
 # 一切皆是映射：情感分析：AI理解人类情感
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -64,7 +64,7 @@
 - **优点**：
   - 能够处理大规模数据，自动学习特征，适用于复杂情境下的情感分析。
   - 模型泛化能力强，能够在未见过的具体上下文中作出有效判断。
-  
+
 - **缺点**：
   - 对于小规模数据集，可能存在过拟合风险。
   - 解释性较差，难以完全理解模型作出决策的过程。
@@ -168,7 +168,7 @@ def train_step(inputs):
     with tf.GradientTape() as tape:
         outputs = model(input_ids=input_ids, attention_mask=attention_mask)
         loss = outputs[0]
-    
+
     gradients = tape.gradient(loss, model.trainable_variables)
     optimizer.apply_gradients(zip(gradients, model.trainable_variables))
 

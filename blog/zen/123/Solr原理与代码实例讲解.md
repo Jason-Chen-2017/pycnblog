@@ -367,4 +367,4 @@ Solr和Elasticsearch都是基于Lucene的开源搜索引擎，但它们在架构
 - 使用Solr的安全配置功能，例如身份验证、授权等。
 - 使用SSL/TLS加密通信，保障数据安全。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

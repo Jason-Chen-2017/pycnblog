@@ -99,8 +99,7 @@ graph LR
 - 更新 Q 函数参数 $\theta$，使用以下公式：
 
 $$
-\theta \leftarrow \theta - \alpha \
-abla_{\theta} J(\theta) 
+\theta \leftarrow \theta - \alpha \nabla_{\theta} J(\theta) 
 $$
 
 其中 $\alpha$ 为学习率，$J(\theta)$ 为损失函数，定义为：
@@ -200,8 +199,7 @@ $$
 **梯度下降**：
 
 $$
-\theta \leftarrow \theta - \alpha \
-abla_{\theta} L(\theta)
+\theta \leftarrow \theta - \alpha \nabla_{\theta} L(\theta)
 $$
 
 其中 $\alpha$ 为学习率。

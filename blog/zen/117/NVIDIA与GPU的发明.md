@@ -53,12 +53,12 @@ GPU采用了大量简单的处理核心,通过并行执行多个线程来实现�
 
 GPU并行计算的优点在于可以显著提升计算性能,加速计算密集型任务的执行。但其缺点是编程复杂度较高,不是所有任务都适合用GPU加速。
 
-### 3.4 算法应用领域 
+### 3.4 算法应用领域
 
 目前GPU并行计算已经在以下领域得到广泛应用:
 
 - 计算机图形学与游戏
-- 科学计算与模拟仿真  
+- 科学计算与模拟仿真
 - 机器学习与深度学习
 - 大数据分析
 - 密码学与区块链
@@ -125,7 +125,7 @@ for (int i = 0; i < 1000; i++) {
 ```cpp
 __global__ void vecAdd(float* A, float* B, float* C) {
     int i = threadIdx.x;
-    C[i] = A[i] + B[i]; 
+    C[i] = A[i] + B[i];
 }
 
 // 主函数
@@ -167,9 +167,9 @@ __global__ void convolution_2d(float *in, float *out, int dataSizeX, int dataSiz
 
     int halfKernel_x = kernelSizeX / 2;
     int halfKernel_y = kernelSizeY / 2;
-    
+
     float sum = 0;
-    
+
     for (int j = -halfKernel_y; j <= halfKernel_y; j++) {
         for (int i = -halfKernel_x; i <= halfKernel_x; i++) {
             int y = row + j;

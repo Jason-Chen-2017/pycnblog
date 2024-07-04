@@ -90,11 +90,11 @@ Q-learning算法通过迭代更新Q值，使智能体在给定状态下选择最
 2. **选择动作**：
    - 对于当前状态 $s$，根据以下公式计算动作值：
      $$
-     V(s) = \max_{a \in A} Q(s,a) 
+     V(s) = \max_{a \in A} Q(s,a)
      $$
    - 根据以下公式计算探索概率 $\epsilon$：
      $$
-     \epsilon = \frac{1}{\sqrt{T}} 
+     \epsilon = \frac{1}{\sqrt{T}}
      $$
      其中 $T$ 为当前迭代次数。
    - 如果 $\epsilon > 0$，则以 $\epsilon$ 的概率随机选择动作 $a$；否则，选择使 $V(s)$ 最大的动作 $a$。
@@ -225,7 +225,7 @@ A：状态空间爆炸是Q-learning算法面临的一个主要挑战。可以采
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n qlearning-env python=3.8 
+conda create -n qlearning-env python=3.8
 conda activate qlearning-env
 ```
 

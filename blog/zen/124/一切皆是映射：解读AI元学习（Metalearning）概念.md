@@ -265,18 +265,18 @@ for epoch in range(10):
         # 从元训练集中采样一个任务
         learner = maml.clone()
         task = batch
-        
+
         # 在任务上进行少量梯度更新
         for i in range(5):
             support_data, support_labels, query_data, query_labels = task
             support_predictions = learner(support_data)
             loss = nn.CrossEntropyLoss()(support_predictions, support_labels)
             learner.adapt(loss)
-        
+
         # 使用更新后的模型参数在任务上计算损失函数
         query_predictions = learner(query_data)
         loss = nn.CrossEntropyLoss()(query_predictions, query_labels)
-        
+
         # 更新模型参数
         opt.zero_grad()
         loss.backward()
@@ -292,14 +292,14 @@ for batch in test_loader:
     # 从元测试集中采样一个任务
     learner = maml.clone()
     task = batch
-    
+
     # 在任务上进行少量梯度更新
     for i in range(5):
         support_data, support_labels, query_data, query_labels = task
         support_predictions = learner(support_data)
         loss = nn.CrossEntropyLoss()(support_predictions, support_labels)
         learner.adapt(loss)
-    
+
     # 使用更新后的模型参数在任务上计算准确率
     query_predictions = learner(query_data)
     accuracy += torch.eq(query_predictions.argmax(dim=1), query_labels).sum().item()
@@ -407,4 +407,4 @@ print('Accuracy:', accuracy)
 元学习是一个充满挑战和机遇的研究领域。相信随着研究的深入，元学习将会在人工智能领域发挥越来越重要的作用。
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

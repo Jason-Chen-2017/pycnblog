@@ -115,8 +115,7 @@
 
 #### 随机梯度下降（Stochastic Gradient Descent）
 
-- **公式**：$\\theta := \\theta - \\eta \\cdot \
-abla_\\theta L(\\theta)$，其中$\\theta$是参数向量，$\\eta$是学习率，$L(\\theta)$是损失函数。
+- **公式**：$\\theta := \\theta - \\eta \\cdot \nabla_\\theta L(\\theta)$，其中$\\theta$是参数向量，$\\eta$是学习率，$L(\\theta)$是损失函数。
 
 ### 4.2 公式推导过程
 

@@ -60,7 +60,7 @@ Andrew Ng最著名的贡献之一是在深度学习领域。他与其团队提�
 稀疏自编码器在普通自编码器的基础上,增加了一个稀疏性约束。即在学习过程中,使得低维向量中的大部分元素为零或接近零,只有少数元素具有较大的值。这迫使自编码器学习数据中最本质的特征。其主要步骤如下:
 
 1. 随机初始化编码器和解码器的权重矩阵。
-2. 将输入数据X传入编码器,计算低维表示a=f(W1X+b1),其中f为激活函数(如sigmoid),W1和b1为编码器的权重和偏置。 
+2. 将输入数据X传入编码器,计算低维表示a=f(W1X+b1),其中f为激活函数(如sigmoid),W1和b1为编码器的权重和偏置。
 3. 将a传入解码器,重构出数据X'=f(W2a+b2),W2和b2为解码器的权重和偏置。
 4. 计算重构误差loss=||X-X'||^2,以及稀疏性惩罚项,如KL散度。
 5. 通过反向传播算法,计算loss关于W1、b1、W2、b2的梯度,并更新它们的值。
@@ -99,7 +99,7 @@ Andrew Ng将稀疏自编码器应用于大规模深度网络的训练中,使得�
 为了更好地理解稀疏自编码器,我们需要给出其数学模型。设输入数据为$x \in R^n$,编码结果为$a \in R^m(m<n)$,重构结果为$\hat{x} \in R^n$,则有:
 
 $$
-a = f(W_1x+b_1) \\
+a = f(W_1x+b_1) \
 \hat{x} = f(W_2a+b_2)
 $$
 
@@ -118,7 +118,7 @@ $$
 稀疏性惩罚通过KL散度来度量编码层激活值$a$的平均激活度与目标稀疏度$\rho$之间的差异:
 
 $$
-L_{sparse} = \sum_{j=1}^{m} KL(\rho||\hat{\rho}_j) \\
+L_{sparse} = \sum_{j=1}^{m} KL(\rho||\hat{\rho}_j) \
 KL(\rho||\hat{\rho}_j) = \rho \log \frac{\rho}{\hat{\rho}_j} + (1-\rho)\log \frac{1-\rho}{1-\hat{\rho}_j}
 $$
 
@@ -145,7 +145,7 @@ $$
 在训练过程中,通过不断迭代更新参数,使得$L$最小化:
 
 $$
-W := W - \alpha \frac{\partial L}{\partial W} \\
+W := W - \alpha \frac{\partial L}{\partial W} \
 b := b - \alpha \frac{\partial L}{\partial b}
 $$
 
@@ -166,45 +166,45 @@ def sigmoid(x):
 def sparse_autoencoder_cost(theta, visible_size, hidden_size, lambda_, sparsity_param, beta, data):
     visible_size = data.shape[1]
     hidden_size = hidden_size
-    
+
     # 从theta中抽取权重和偏置
     W1 = theta[0:hidden_size * visible_size].reshape(hidden_size, visible_size)
     W2 = theta[hidden_size * visible_size:2 * hidden_size * visible_size].reshape(visible_size, hidden_size)
     b1 = theta[2 * hidden_size * visible_size:2 * hidden_size * visible_size + hidden_size]
     b2 = theta[2 * hidden_size * visible_size + hidden_size:]
-    
+
     m = data.shape[0]
-    
+
     # 前向传播
     a1 = data
-    z2 = a1 @ W1.T + b1  
+    z2 = a1 @ W1.T + b1
     a2 = sigmoid(z2)
     z3 = a2 @ W2.T + b2
     a3 = sigmoid(z3)
-    
+
     # 计算cost
-    cost = np.sum((a3 - data)**2) / (2*m)  
-    
+    cost = np.sum((a3 - data)**2) / (2*m)
+
     # 计算稀疏惩罚项
     rho_hat = np.sum(a2, axis=0) / m
-    sparse_cost = beta * np.sum(sparsity_param * np.log(sparsity_param / rho_hat) + 
+    sparse_cost = beta * np.sum(sparsity_param * np.log(sparsity_param / rho_hat) +
                                 (1 - sparsity_param) * np.log((1 - sparsity_param) / (1 - rho_hat)))
-    
+
     # 加上L2正则化项
-    reg_cost = (lambda_/2) * (np.sum(W1**2) + np.sum(W2**2)) 
-    
+    reg_cost = (lambda_/2) * (np.sum(W1**2) + np.sum(W2**2))
+
     total_cost = cost + sparse_cost + reg_cost
-    
+
     # 反向传播计算梯度
-    delta3 = -(data - a3) * a3 * (1-a3) 
+    delta3 = -(data - a3) * a3 * (1-a3)
     delta2 = (delta3 @ W2 + beta * (-sparsity_param / rho_hat + (1 - sparsity_param) / (1 - rho_hat))) * a2 * (1-a2)
     W1_grad = delta2.T @ a1 / m + lambda_ * W1
     W2_grad = delta3.T @ a2 / m + lambda_ * W2
     b1_grad = np.sum(delta2, axis=0) / m
     b2_grad = np.sum(delta3, axis=0) / m
-    
+
     grad = np.concatenate((W1_grad.ravel(), W2_grad.ravel(), b1_grad.ravel(), b2_grad.ravel()))
-    
+
     return total_cost, grad
 ```
 

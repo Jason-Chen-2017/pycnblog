@@ -213,5 +213,5 @@ AI技术在环境监测与保护领域的应用也面临一些挑战，例如：
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

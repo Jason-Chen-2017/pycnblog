@@ -95,13 +95,13 @@ import numpy as np
 def softmax(z):
     # 指数变换
     exp_z = np.exp(z)
-    
+
     # 求和
     sum_exp_z = np.sum(exp_z)
-    
+
     # 归一化
     softmax_z = exp_z / sum_exp_z
-    
+
     return softmax_z
 ```
 

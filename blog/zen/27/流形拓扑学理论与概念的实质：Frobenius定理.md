@@ -38,7 +38,7 @@ Frobenius定理实际上是一个拓扑定理，其核心思想在于考察流�
 
 #### 步骤1：定义闭形式
 
-在流形M上，闭形式是一个k阶张量场，满足对任意k个相容的切向量场v_1, ..., v_k，其外微分满足$d\\omega(v_1, ..., v_k) = 0$。这里的d表示拉普拉斯-德拉姆微分算子。
+在流形M上，闭形式是一个k阶张量场，满足对任意k个相容的切向量场v_1, ..., v_k，其外微分满足$d\omega(v_1, ..., v_k) = 0$。这里的d表示拉普拉斯-德拉姆微分算子。
 
 #### 步骤2：寻找嵌入流形
 
@@ -66,11 +66,11 @@ Frobenius定理的应用范围广泛，包括但不限于：
 
 ### 4.1 数学模型构建
 
-设流形M的坐标系统为$(U_i, \\phi_i)$，其中$U_i$是M上的开集，$\\phi_i: U_i \\to \\mathbb{R}^n$是局部坐标变换。对于$k$阶闭形式$\\omega$，在坐标下可表示为：
+设流形M的坐标系统为$(U_i, \phi_i)$，其中$U_i$是M上的开集，$\phi_i: U_i \to \mathbb{R}^n$是局部坐标变换。对于$k$阶闭形式$\omega$，在坐标下可表示为：
 
-$$\\omega = \\sum_{|\\alpha|=k} \\omega_\\alpha dx^\\alpha$$
+$$\omega = \sum_{|\alpha|=k} \omega_\alpha dx^\alpha$$
 
-其中$\\omega_\\alpha$是标量函数，$dx^\\alpha$是微分形式基。
+其中$\omega_\alpha$是标量函数，$dx^\alpha$是微分形式基。
 
 ### 4.2 公式推导过程
 
@@ -78,23 +78,23 @@ Frobenius定理的基本步骤如下：
 
 #### 步骤1：闭形式的定义
 
-闭形式$\\omega$满足$\\forall v_1, ..., v_k \\in TM$，有$d\\omega(v_1, ..., v_k) = 0$。
+闭形式$\omega$满足$\forall v_1, ..., v_k \in TM$，有$d\omega(v_1, ..., v_k) = 0$。
 
 #### 步骤2：寻找嵌入流形
 
-存在嵌入流形N和嵌入函数$\\varphi: N \\to M$，使得$\\omega|_{N}$可积。
+存在嵌入流形N和嵌入函数$\varphi: N \to M$，使得$\omega|_{N}$可积。
 
 #### 步骤3：验证可积性
 
-$\\int_N \\omega = \\int_M \\varphi^*\\omega$
+$\int_N \omega = \int_M \varphi^*\omega$
 
-其中$\\varphi^*$表示拉回运算，$\\int_N$和$\\int_M$分别表示在N和M上的积分。
+其中$\varphi^*$表示拉回运算，$\int_N$和$\int_M$分别表示在N和M上的积分。
 
 ### 4.3 案例分析与讲解
 
 #### 示例：电磁场理论中的应用
 
-在电磁场理论中，考虑磁感应强度B和电场强度E的闭形式。通过引入磁路定律和电荷守恒定律，可以构造闭形式$\\omega_B$和$\\omega_E$，并通过Frobenius定理验证这两个形式在任何合适的嵌入流形上是否可积。这有助于理解电磁场的拓扑性质，比如磁单极子的存在性。
+在电磁场理论中，考虑磁感应强度B和电场强度E的闭形式。通过引入磁路定律和电荷守恒定律，可以构造闭形式$\omega_B$和$\omega_E$，并通过Frobenius定理验证这两个形式在任何合适的嵌入流形上是否可积。这有助于理解电磁场的拓扑性质，比如磁单极子的存在性。
 
 ### 4.4 常见问题解答
 
@@ -123,7 +123,7 @@ omega = sp.diff(x**2*y, x)*sp.diff(x, y) - sp.diff(x, x)*sp.diff(x**2*y, y)
 
 # 检查闭形式
 is_closed_form = omega.diff(x).diff(y) - omega.diff(y).diff(x) == 0
-print(\"闭形式:\", is_closed_form)
+print("闭形式:", is_closed_form)
 
 # 假设的嵌入流形N的坐标变换
 N_coords = sp.Matrix([x, y])
@@ -131,7 +131,7 @@ M_coords = sp.Matrix([x, y])
 
 # 计算嵌入流形上的闭形式
 embedded_omega = omega.subs({x: N_coords[0], y: N_coords[1]})
-print(\"嵌入后的闭形式:\", embedded_omega)
+print("嵌入后的闭形式:", embedded_omega)
 ```
 
 ### 5.2 源代码详细实现
@@ -140,11 +140,11 @@ print(\"嵌入后的闭形式:\", embedded_omega)
 
 ### 5.3 代码解读与分析
 
-这段代码首先定义了坐标变量和闭形式$\\omega$，接着检查了$\\omega$是否为闭形式。然后，假设了一个嵌入流形N的坐标变换，并将$\\omega$转换到N的坐标系下。这展示了如何使用Python进行拓扑学计算的基本步骤。
+这段代码首先定义了坐标变量和闭形式$\omega$，接着检查了$\omega$是否为闭形式。然后，假设了一个嵌入流形N的坐标变换，并将$\omega$转换到N的坐标系下。这展示了如何使用Python进行拓扑学计算的基本步骤。
 
 ### 5.4 运行结果展示
 
-运行上述代码将输出闭形式$\\omega$的闭性验证结果以及嵌入流形后的形式。结果将揭示$\\omega$是否满足闭形式的定义，并显示其在嵌入流形上的表现。
+运行上述代码将输出闭形式$\omega$的闭性验证结果以及嵌入流形后的形式。结果将揭示$\omega$是否满足闭形式的定义，并显示其在嵌入流形上的表现。
 
 ## 6. 实际应用场景
 

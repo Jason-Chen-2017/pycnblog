@@ -72,7 +72,7 @@ graph LR
     C3 --> D
 ```
 
-## 3.核心算法原理具体操作步骤  
+## 3.核心算法原理具体操作步骤
 
 ### 3.1 图分区与数据布局
 
@@ -120,7 +120,7 @@ graph TD
     E --> F2[分区2']
     E --> F3[分区3']
     F1 --> G1[本地连接]
-    F2 --> G2[本地连接] 
+    F2 --> G2[本地连接]
     F3 --> G3[本地连接]
     G1 --> H[结果合并]
     G2 --> H
@@ -157,7 +157,7 @@ graph BT
 
 $$
 \begin{aligned}
-\pi: V &\rightarrow \{0, 1, \ldots, k-1\} \\
+\pi: V &\rightarrow \{0, 1, \ldots, k-1\} \
 (u, v) &\in E, \pi(u) \neq \pi(v) \Rightarrow (u, v) \in E_{\text{cross}}
 \end{aligned}
 $$
@@ -184,8 +184,8 @@ $$
 
 $$
 \begin{aligned}
-\pi_1: V_1 &\rightarrow \{0, 1, \ldots, k-1\} \\
-\pi_2: V_2 &\rightarrow \{0, 1, \ldots, k-1\} \\
+\pi_1: V_1 &\rightarrow \{0, 1, \ldots, k-1\} \
+\pi_2: V_2 &\rightarrow \{0, 1, \ldots, k-1\} \
 \pi_1(u) &= \pi_2(v) \iff f(u) = f(v)
 \end{aligned}
 $$

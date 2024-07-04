@@ -1,4 +1,4 @@
-                 
+
 # Python深度学习实践：时空网络在交通预测中的应用
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -172,22 +172,22 @@ from tensorflow.keras.layers import Input, Dense, LSTM, Multiply, Add
 
 def spatiotemporal_network(input_shape):
     inputs = Input(shape=input_shape)
-    
+
     # Time domain processing
     time_output = LSTM(64)(inputs)
-    
+
     # Space domain processing
     space_output = Dense(64, activation='relu')(inputs)
     space_output = Dense(1)(space_output)
-    
+
     # Combine time and space outputs using attention mechanism
     combined = Multiply()([time_output, space_output])
     combined = Add()([combined, time_output])
-    
+
     output = Dense(1)(combined)
-    
+
     model = Model(inputs=inputs, outputs=output)
-    
+
     return model
 
 model = spatiotemporal_network((num_features,))

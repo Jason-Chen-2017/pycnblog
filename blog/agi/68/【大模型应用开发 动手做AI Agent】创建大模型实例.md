@@ -108,7 +108,7 @@ Transformers是一个开源的NLP工具库，提供了大量预训练模型和�
 假设预训练模型为 $M_{\theta}$，其中 $\theta$ 为预训练得到的模型参数。给定下游任务 $T$ 的标注数据集 $D=\{(x_i, y_i)\}_{i=1}^N$，微调的目标是找到新的模型参数 $\hat{\theta}$，使得：
 
 $$
-\hat{\theta}=\mathop{\arg\min}_{\theta} \mathcal{L}(M_{\theta},D) 
+\hat{\theta}=\mathop{\arg\min}_{\theta} \mathcal{L}(M_{\theta},D)
 $$
 
 其中 $\mathcal{L}$ 为针对任务 $T$ 设计的损失函数，用于衡量模型预测输出与真实标签之间的差异。
@@ -124,7 +124,7 @@ $$
 将其代入经验风险公式，得：
 
 $$
-\mathcal{L}(\theta) = -\frac{1}{N}\sum_{i=1}^N [y_i\log M_{\theta}(x_i)+(1-y_i)\log(1-M_{\theta}(x_i))] 
+\mathcal{L}(\theta) = -\frac{1}{N}\sum_{i=1}^N [y_i\log M_{\theta}(x_i)+(1-y_i)\log(1-M_{\theta}(x_i))]
 $$
 
 根据链式法则，损失函数对参数 $\theta_k$ 的梯度为：
@@ -186,7 +186,7 @@ for epoch in range(3):
         input_ids = train_input_ids[batch].to(device)
         attention_mask = train_attention_mask[batch].to(device)
         labels = train_labels[batch].to(device)
-        
+
         model.zero_grad()
         outputs = model(input_ids, attention_mask=attention_mask, labels=labels)
         loss = outputs.loss
@@ -205,7 +205,7 @@ with torch.no_grad():
         input_ids = dev_input_ids[batch].to(device)
         attention_mask = dev_attention_mask[batch].to(device)
         labels = dev_labels[batch].to(device)
-        
+
         outputs = model(input_ids, attention_mask=attention_mask, labels=labels)
         _, predicted = torch.max(outputs.logits, 1)
         total += labels.size(0)

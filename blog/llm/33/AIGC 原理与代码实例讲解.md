@@ -96,14 +96,14 @@ AIGC算法的核心在于通过学习数据分布，生成与之相似的新数�
 
 #### Transformer模型中的自注意力机制
 
-- **能量函数**：$E(Q,K,V) = \\frac{QK^T}{\\sqrt{d_k}}$
-- **规范化**：$Z = \\frac{QK^T}{\\sqrt{d_k}}$
-- **加权和**：$VZ = \\sum_{i=1}^{n} Z_i V_i$
+- **能量函数**：$E(Q,K,V) = \frac{QK^T}{\sqrt{d_k}}$
+- **规范化**：$Z = \frac{QK^T}{\sqrt{d_k}}$
+- **加权和**：$VZ = \sum_{i=1}^{n} Z_i V_i$
 
 #### GANs中的损失函数
 
-- **生成器损失**：$L_G = -\\mathbb{E}_{z \\sim p_z}(log(D(G(z)))$
-- **判别器损失**：$L_D = -[\\mathbb{E}_{x \\sim p_x}(log(D(x))) + \\mathbb{E}_{z \\sim p_z}(log(1-D(G(z))))]$
+- **生成器损失**：$L_G = -\mathbb{E}_{z \sim p_z}(log(D(G(z)))$
+- **判别器损失**：$L_D = -[\mathbb{E}_{x \sim p_x}(log(D(x))) + \mathbb{E}_{z \sim p_z}(log(1-D(G(z))))]$
 
 ### 4.3 案例分析与讲解
 

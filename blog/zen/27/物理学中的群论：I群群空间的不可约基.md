@@ -93,9 +93,9 @@ I群通常指的是无限维的希尔伯特空间，它是量子力学中的基�
 
 在推导群作用下的不变子空间公式时，常用到以下步骤：
 $$
-\\forall g \\in G, \\psi \\in V \\implies g\\psi \\in W \\iff W \\text{ 是 } G \\text{ 的不变子空间}
+\forall g \in G, \psi \in V \implies g\psi \in W \iff W \text{ 是 } G \text{ 的不变子空间}
 $$
-其中，$G$ 是群，$V$ 是I群群空间，$W \\subset V$ 是某个子空间。
+其中，$G$ 是群，$V$ 是I群群空间，$W \subset V$ 是某个子空间。
 
 ### 4.3 案例分析与讲解
 
@@ -121,14 +121,14 @@ $$
 import numpy as np
 
 def find_invariant_subspace(group_action, space):
-    \"\"\"
+    """
     寻找群作用下的不变子空间。
     参数:
         group_action: 群作用的函数定义。
         space: I群群空间。
     返回:
         不变子空间。
-    \"\"\"
+    """
     invariant_subspace = []
     for state in space:
         if all([group_action(g, state) in space for g in group]):
@@ -136,25 +136,25 @@ def find_invariant_subspace(group_action, space):
     return invariant_subspace
 
 def construct_orthonormal_base(invariant_subspace):
-    \"\"\"
+    """
     构建正交基。
     参数:
         invariant_subspace: 不变子空间。
     返回:
         正交基。
-    \"\"\"
+    """
     # 应用正交化过程，确保基的正交性。
     pass
 
 def check_completeness(base, space):
-    \"\"\"
+    """
     检查基的完备性。
     参数:
         base: 基。
         space: I群群空间。
     返回:
         是否完备。
-    \"\"\"
+    """
     pass
 
 # 示例代码

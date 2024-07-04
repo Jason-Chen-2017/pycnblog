@@ -347,30 +347,30 @@ def genetic_algorithm():
     population = np.random.randint(-10, 10, size=(population_size, 1))
     best_fitness = np.inf
     best_individual = None
-    
+
     for _ in range(generation):
         fitness_values = np.apply_along_axis(fitness, 1, population)
-        
+
         for i in range(population_size):
             if fitness_values[i] < best_fitness:
                 best_fitness = fitness_values[i]
                 best_individual = population[i]
-        
+
         # 选择操作
         selected_indices = np.argsort(fitness_values)[:int(0.2 * population_size)]
         selected_population = population[selected_indices]
-        
+
         # 交叉操作
         for i in range(int(0.5 * population_size)):
             parent1 = selected_population[i]
             parent2 = selected_population[i + int(0.5 * population_size)]
             child = crossover(parent1, parent2)
             population[i] = child
-        
+
         # 变异操作
         for i in range(population_size):
             population[i] = mutation(population[i])
-    
+
     return best_individual, best_fitness
 
 # 运行遗传算法

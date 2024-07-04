@@ -192,7 +192,7 @@ class Expert(nn.Module):
         super(Expert, self).__init__()
         self.fc1 = nn.Linear(input_dim, hidden_dim)
         self.fc2 = nn.Linear(hidden_dim, output_dim)
-    
+
     def forward(self, x):
         x = F.relu(self.fc1(x))
         x = self.fc2(x)
@@ -203,7 +203,7 @@ class MoE(nn.Module):
         super(MoE, self).__init__()
         self.experts = nn.ModuleList([Expert(input_dim, hidden_dim, output_dim) for _ in range(num_experts)])
         self.fc = nn.Linear(input_dim, num_experts)
-    
+
     def forward(self, x):
         experts_output = [expert(x) for expert in self.experts]
         experts_scores = self.fc(x)
@@ -222,7 +222,7 @@ class MoE(nn.Module):
         super(MoE, self).__init__()
         self.experts = nn.ModuleList([Expert(input_dim, hidden_dim, output_dim) for _ in range(num_experts)])
         self.fc = nn.Linear(input_dim, num_experts)
-    
+
     def forward(self, x):
         experts_output = [expert(x) for expert in self.experts]
         experts_scores = self.fc(x)

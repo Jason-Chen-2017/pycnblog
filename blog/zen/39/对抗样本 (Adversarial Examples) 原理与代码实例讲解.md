@@ -57,10 +57,8 @@
 以下以FGSM算法为例，详细讲解对抗样本的生成步骤：
 
 1. 初始化对抗样本$X^*$和扰动$\delta$，其中$X$为原始输入数据，$\epsilon$为扰动幅值。
-2. 计算梯度$\
-abla J(X, Y; \theta)$，其中$J$为损失函数，$Y$为真实标签，$\theta$为模型参数。
-3. 计算扰动$\delta = \epsilon \cdot \
-abla J(X, Y; \theta)$。
+2. 计算梯度$\nabla J(X, Y; \theta)$，其中$J$为损失函数，$Y$为真实标签，$\theta$为模型参数。
+3. 计算扰动$\delta = \epsilon \cdot \nabla J(X, Y; \theta)$。
 4. 计算对抗样本$X^* = X + \delta$。
 5. 重复步骤2-4，直至达到一定的迭代次数或满足其他停止条件。
 
@@ -95,15 +93,11 @@ $$J(X, Y; \theta) = L(Y, \hat{Y}(X; \theta))$$
 
 2. 对损失函数进行梯度下降：
 
-$$\
-abla J(X, Y; \theta) = \
-abla L(Y, \hat{Y}(X; \theta))$$
+$$\nabla J(X, Y; \theta) = \nabla L(Y, \hat{Y}(X; \theta))$$
 
-3. 计算梯度$\
-abla L(Y, \hat{Y}(X; \theta))$。
+3. 计算梯度$\nabla L(Y, \hat{Y}(X; \theta))$。
 
-4. 计算扰动$\delta = \epsilon \cdot \
-abla L(Y, \hat{Y}(X; \theta))$。
+4. 计算扰动$\delta = \epsilon \cdot \nabla L(Y, \hat{Y}(X; \theta))$。
 
 5. 计算对抗样本$X^* = X + \delta$。
 

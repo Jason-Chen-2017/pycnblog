@@ -129,7 +129,7 @@
 
 - 数据清洗公式：$D_{clean} = D - R$，其中$D$为原始数据集，$R$为不符合要求的数据。
 - 数据排序公式：冒泡排序的交换操作：$a[i], a[i+1] = a[i+1], a[i]$。
-- 数据计算公式：求和公式：$S = \\sum_{i=1}^n a_i$，平均值公式：$\\bar{a} = \\frac{1}{n} \\sum_{i=1}^n a_i$。
+- 数据计算公式：求和公式：$S = \sum_{i=1}^n a_i$，平均值公式：$\bar{a} = \frac{1}{n} \sum_{i=1}^n a_i$。
 
 ### 4.3 案例分析与讲解
 
@@ -168,12 +168,12 @@ min_score = min(d['score'] for d in data_sorted)
 
 # 结果输出
 with open('result.txt', 'w') as file:
-    file.write(f\"平均分：{average_score}\
-\")
-    file.write(f\"最高分：{max_score}\
-\")
-    file.write(f\"最低分：{min_score}\
-\")
+    file.write(f"平均分：{average_score}\
+")
+    file.write(f"最高分：{max_score}\
+")
+    file.write(f"最低分：{min_score}\
+")
 ```
 
 ### 4.4 常见问题解答
@@ -215,9 +215,9 @@ max_age = data['age'].max()
 min_age = data['age'].min()
 
 # 结果输出
-print(f\"平均年龄：{average_age}\")
-print(f\"最高年龄：{max_age}\")
-print(f\"最低年龄：{min_age}\")
+print(f"平均年龄：{average_age}")
+print(f"最高年龄：{max_age}")
+print(f"最低年龄：{min_age}")
 
 # 可视化
 plt.figure(figsize=(10, 6))
@@ -290,10 +290,10 @@ plt.show()
 
 ### 7.3 相关论文推荐
 
-1. **\"MapReduce: Simplified Data Processing on Large Clusters\"**: 作者：Jeffrey Dean, Sanjay Ghemawat
-2. **\"Spark: Spark: A Brief Technical Overview\"**: 作者：Matei Zaharia et al.
-3. **\"Flink: Dataflow Engine for Apache Flink\"**: 作者：Volker Tannen
-4. **\"Alluxio: A Petabyte-Scale Distributed File System\"**: 作者：Bin Fan, et al.
+1. **"MapReduce: Simplified Data Processing on Large Clusters"**: 作者：Jeffrey Dean, Sanjay Ghemawat
+2. **"Spark: Spark: A Brief Technical Overview"**: 作者：Matei Zaharia et al.
+3. **"Flink: Dataflow Engine for Apache Flink"**: 作者：Volker Tannen
+4. **"Alluxio: A Petabyte-Scale Distributed File System"**: 作者：Bin Fan, et al.
 
 ### 7.4 其他资源推荐
 

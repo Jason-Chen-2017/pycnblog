@@ -8,7 +8,7 @@
 
 量子理论和广义相对论是20世纪科学最伟大的成就,但它们在微观和宏观尺度上的描述存在根本冲突。寻求一种统一的量子引力理论来协调这两大理论已成为当代物理学的终极目标。同时,人工通用智能(AGI)的发展也日新月异,有望在量子引力等前沿科学领域发挥重要作用。
 
-### 1.2 研究现状  
+### 1.2 研究现状
 
 目前,主流的量子引力理论有:
 
@@ -22,7 +22,7 @@
 
 量子引力理论的建立将彻底改变我们对时空和宇宙本质的认识。AGI在此过程中可发挥独特优势:
 
-1. 处理复杂数学和物理问题的能力 
+1. 处理复杂数学和物理问题的能力
 2. 发现隐藏规律和新颖见解的潜力
 3. 高效模拟和可视化理论模型
 
@@ -59,7 +59,7 @@ AGI在量子引力中的应用主要基于以下几种核心算法:
 1. **机器学习算法**
     - 通过训练数据自动发现量子引力规律
     - 包括监督学习、非监督学习、强化学习等
-2. **启发式搜索算法** 
+2. **启发式搜索算法**
     - 高效探索复杂的解空间
     - 如蒙特卡洛树搜索、模拟退火等
 3. **量子计算算法**
@@ -150,8 +150,8 @@ $$
 
 $$
 \begin{align}
-S &= \sum_\Delta A_\Delta \epsilon_\Delta \\
-  &= \sum_\Delta A_\Delta \left( \pi - \sum_\alpha \theta_\alpha^\Delta \right) \\
+S &= \sum_\Delta A_\Delta \epsilon_\Delta \
+  &= \sum_\Delta A_\Delta \left( \pi - \sum_\alpha \theta_\alpha^\Delta \right) \
   &= \sum_h A_h \left( \pi - \sum_\alpha \phi_{h\alpha} \right)
 \end{align}
 $$
@@ -201,12 +201,12 @@ graph LR
 
 - NumPy: 科学计算库
 - SciPy: 数学算法库
-- NetworkX: 图与网络计算库 
+- NetworkX: 图与网络计算库
 - TensorFlow: 机器学习框架
 
 可使用Anaconda等工具方便地安装相关依赖包。
 
-### 5.2 源代码详细实现 
+### 5.2 源代码详细实现
 
 以Spin Network模型为例,我们可以如下实现:
 
@@ -217,13 +217,13 @@ import networkx as nx
 class SpinNetwork:
     def __init__(self):
         self.graph = nx.Graph()
-        
+
     def add_node(self, node, data):
         self.graph.add_node(node, data=data)
-        
+
     def add_edge(self, node1, node2, data):
         self.graph.add_edge(node1, node2, data=data)
-        
+
     def compute_geometry(self):
         # 遍历图,根据节点和边的数据计算几何量
         areas = {}
@@ -231,7 +231,7 @@ class SpinNetwork:
         for node in self.graph.nodes():
             ...
         return areas, volumes
-        
+
 # 创建一个简单的Spin Network
 net = SpinNetwork()
 net.add_node(1, data={'type': 'node', 'spin': 1/2})
@@ -250,7 +250,7 @@ areas, volumes = net.compute_geometry()
 
 - `__init__`方法初始化一个空图
 - `add_node`方法添加节点及其数据
-- `add_edge`方法添加边及其数据 
+- `add_edge`方法添加边及其数据
 - `compute_geometry`方法遍历图,根据节点和边的数据计算几何量
 
 这种面向对象的设计使代码模块化,易于扩展和维护。

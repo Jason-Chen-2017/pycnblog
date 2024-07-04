@@ -36,7 +36,7 @@ graph TD
     Spark(Apache Spark)
     Spark --> SparkCore(Spark Core)
     Spark --> SparkSQL(Spark SQL)
-    Spark --> SparkStreaming(Spark Streaming) 
+    Spark --> SparkStreaming(Spark Streaming)
     Spark --> MLlib(MLlib)
     Spark --> GraphX(GraphX)
 

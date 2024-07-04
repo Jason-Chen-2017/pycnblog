@@ -212,7 +212,7 @@ for episode in range(10000):
         loss = criterion(q_value, target_value)
         loss.backward()
         optimizer.step()
-        
+
         state = next_state
 ```
 

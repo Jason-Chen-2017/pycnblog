@@ -1,6 +1,6 @@
 ## AI Agent: AI的下一个风口 什么是智能体
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 **关键词：** AI Agent，智能体，强化学习，深度学习，自主代理，多智能体系统，游戏AI，虚拟助手，机器人，元宇宙
 
@@ -126,7 +126,7 @@ MDP 的数学公式如下：
 
 $$
 \begin{aligned}
-&V(s) = \max_{a \in A} \left[ R(s,a) + \gamma \sum_{s' \in S} P(s'|s,a) V(s') \right] \\
+&V(s) = \max_{a \in A} \left[ R(s,a) + \gamma \sum_{s' \in S} P(s'|s,a) V(s') \right] \
 &\pi(s) = \arg \max_{a \in A} \left[ R(s,a) + \gamma \sum_{s' \in S} P(s'|s,a) V(s') \right]
 \end{aligned}
 $$

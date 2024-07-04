@@ -381,7 +381,7 @@ Hive是一个数据仓库工具，它将SQL查询转换为MapReduce作业，然�
 在Presto中连接MySQL数据库，需要使用MySQL连接器。首先，需要在Presto配置文件中添加MySQL连接器的配置信息，然后执行以下命令：
 
 ```sql
-CREATE CONNECTOR "mysql" TYPE "mysql" VERSION "8.0" 
+CREATE CONNECTOR "mysql" TYPE "mysql" VERSION "8.0"
 WITH Properties (
   "host" = "localhost",
   "port" = "3306",

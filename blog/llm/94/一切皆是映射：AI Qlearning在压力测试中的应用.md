@@ -1,7 +1,7 @@
 
 # 一切皆是映射：AI Q-learning在压力测试中的应用
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 ### 1.1 问题的由来
@@ -50,7 +50,7 @@ Q-learning是一种基于值函数的强化学习算法。它通过学习策略�
 Q-learning的核心思想是：
 
 $$
-Q(s,a) = \sum_{s'} \gamma \pi(a'|s') R(s,a) + \max_a Q(s',a) 
+Q(s,a) = \sum_{s'} \gamma \pi(a'|s') R(s,a) + \max_a Q(s',a)
 $$
 
 其中：
@@ -96,7 +96,7 @@ Q-learning算法主要包括以下步骤：
 4. **更新Q值**：根据新的状态、奖励和Q值表更新Q值。更新公式如下：
 
 $$
-Q(s,a) \leftarrow Q(s,a) + \alpha [R(s,a) + \gamma \max_{a'}Q(s',a') - Q(s,a)] 
+Q(s,a) \leftarrow Q(s,a) + \alpha [R(s,a) + \gamma \max_{a'}Q(s',a') - Q(s,a)]
 $$
 
 其中 $\alpha$ 为学习率，用于调整Q值更新的程度。
@@ -134,7 +134,7 @@ Q-learning算法在以下领域具有广泛的应用：
 Q-learning的数学模型可以表示为：
 
 $$
-Q(s,a) = \sum_{s'} \gamma \pi(a'|s') R(s,a) + \max_{a'} Q(s',a') 
+Q(s,a) = \sum_{s'} \gamma \pi(a'|s') R(s,a) + \max_{a'} Q(s',a')
 $$
 
 其中：
@@ -320,7 +320,7 @@ for _ in range(num_iterations):
     action = np.random.randint(num_actions)
     next_state = np.random.choice(num_states, p=transition_probabilities[state, action])
     reward = rewards[state, action]
-    
+
     # 更新Q值
     Q[state, action] = Q[state, action] + alpha * (reward + gamma * np.max(Q[next_state, :]) - Q[state, action])
 

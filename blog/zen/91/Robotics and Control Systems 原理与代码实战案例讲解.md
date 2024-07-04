@@ -1,7 +1,7 @@
 
 # Robotics and Control Systems 原理与代码实战案例讲解
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -151,11 +151,11 @@ E --> B
 
 $$
 \begin{align*}
-x(t) &= x_0 + v_xt + \frac{1}{2}a_x t^2 \\
-y(t) &= y_0 + v_yt + \frac{1}{2}a_y t^2 \\
-z(t) &= z_0 + v_zt + \frac{1}{2}a_z t^2 \\
-\theta_x(t) &= \theta_{0x} + \omega_x t \\
-\theta_y(t) &= \theta_{0y} + \omega_y t \\
+x(t) &= x_0 + v_xt + \frac{1}{2}a_x t^2 \
+y(t) &= y_0 + v_yt + \frac{1}{2}a_y t^2 \
+z(t) &= z_0 + v_zt + \frac{1}{2}a_z t^2 \
+\theta_x(t) &= \theta_{0x} + \omega_x t \
+\theta_y(t) &= \theta_{0y} + \omega_y t \
 \theta_z(t) &= \theta_{0z} + \omega_z t
 \end{align*}
 $$
@@ -172,8 +172,8 @@ $$
    - 解方程组：
      $$
      \begin{align*}
-     x_t &= x_0 + v_xt t + \frac{1}{2}a_xt^2 \\
-     y_t &= y_0 + v_yt t + \frac{1}{2}a_yt^2 \\
+     x_t &= x_0 + v_xt t + \frac{1}{2}a_xt^2 \
+     y_t &= y_0 + v_yt t + \frac{1}{2}a_yt^2 \
      z_t &= z_0 + v_zt t + \frac{1}{2}a_zt^2
      \end{align*}
      $$
@@ -182,8 +182,8 @@ $$
    - 解方程组：
      $$
      \begin{align*}
-     \theta_x(t) &= \theta_{0x} + \omega_x t \\
-     \theta_y(t) &= \theta_{0y} + \omega_y t \\
+     \theta_x(t) &= \theta_{0x} + \omega_x t \
+     \theta_y(t) &= \theta_{0y} + \omega_y t \
      \theta_z(t) &= \theta_{0z} + \omega_z t
      \end{align*}
      $$

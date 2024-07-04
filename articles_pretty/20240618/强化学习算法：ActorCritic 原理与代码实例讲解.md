@@ -98,8 +98,7 @@ G --> A
 
 **策略更新**：
 
-- **策略梯度**：$\
-abla_\\theta J(\\theta) = \\mathbb{E}_{s,a \\sim \\pi_\\theta}[Q(s,a)]$
+- **策略梯度**：$\nabla_\\theta J(\\theta) = \\mathbb{E}_{s,a \\sim \\pi_\\theta}[Q(s,a)]$
   
 **价值函数更新**：
 

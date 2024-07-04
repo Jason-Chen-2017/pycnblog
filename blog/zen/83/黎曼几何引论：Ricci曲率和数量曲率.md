@@ -50,9 +50,7 @@ $$
 计算Ricci曲率和数量曲率的算法原理是基于黎曼几何的基本公式和定理。具体来说，Ricci曲率可以通过以下公式计算：
 
 $$
-R(X, Y) = \text{tr}(\
-abla_X \
-abla_Y g)
+R(X, Y) = \text{tr}(\nabla_X \nabla_Y g)
 $$
 
 其中，$X$和$Y$是流形上的向量场，$g$是黎曼度量。
@@ -116,9 +114,7 @@ $$
 2. **Ricci曲率**：Ricci曲率是流形在局部区域的平均曲率，它可以通过以下公式计算：
 
 $$
-R(X, Y) = \text{tr}(\
-abla_X \
-abla_Y g)
+R(X, Y) = \text{tr}(\nabla_X \nabla_Y g)
 $$
 
 3. **数量曲率**：数量曲率是流形在局部区域的局部曲率，它可以通过以下公式计算：
@@ -137,7 +133,7 @@ $$
 
 $$
 g = \begin{pmatrix}
-1 & 0 \\
+1 & 0 \
 0 & 1
 \end{pmatrix}
 $$

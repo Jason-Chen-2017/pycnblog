@@ -6,7 +6,7 @@
 
 在大数据时代，数据量的快速增长使得传统的数据库系统难以满足实时分析的需求。为了解决这一问题,Apache Impala应运而生。Impala是一种分析型大规模并行处理(Massively Parallel Processing,MPP)的SQL查询引擎,旨在提供低延迟和高吞吐量的大数据分析能力。
 
-### 1.2 研究现状 
+### 1.2 研究现状
 
 目前,Impala已经被广泛应用于各种大数据分析场景,如交互式商业智能(BI)、数据探索和数据仓库等。它基于Google的Dremel项目,并针对Apache Hadoop生态系统进行了优化。与Apache Hive等其他大数据查询引擎相比,Impala具有更低的延迟、更高的并行度和更好的性能。
 
@@ -195,12 +195,12 @@ $$
 
 $$
 \begin{aligned}
-R &= 10^8 \\
-row\_size &= 100 \text{ bytes} \\
-cpu\_cost &= 10 \text{ ns} \\
-Cost_{scan} &= R \times (row\_size + cpu\_cost) \\
-           &= 10^8 \times (100 \text{ bytes} + 10 \text{ ns}) \\
-           &= 10^{10} \text{ bytes} + 10^9 \text{ ns} \\
+R &= 10^8 \
+row\_size &= 100 \text{ bytes} \
+cpu\_cost &= 10 \text{ ns} \
+Cost_{scan} &= R \times (row\_size + cpu\_cost) \
+           &= 10^8 \times (100 \text{ bytes} + 10 \text{ ns}) \
+           &= 10^{10} \text{ bytes} + 10^9 \text{ ns} \
            &\approx 9.54 \text{ GB} + 1 \text{ s}
 \end{aligned}
 $$

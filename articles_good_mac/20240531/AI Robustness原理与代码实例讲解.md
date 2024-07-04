@@ -57,11 +57,9 @@ $$ L(w) = \\frac{1}{n}\\sum_{i=1}^{n}l(\\hat{y}_i, y_i) + \\lambda R(w) $$
 
 对抗样本可以通过在原始样本上添加微小的扰动来生成：
 
-$$ x_{adv} = x + \\epsilon \\cdot sign(\
-abla_x L(\\mathbf{x}, y)) $$
+$$ x_{adv} = x + \\epsilon \\cdot sign(\nabla_x L(\\mathbf{x}, y)) $$
 
-其中，$x$ 是原始样本，$\\epsilon$ 是扰动的幅度，$L(\\mathbf{x}, y)$ 是损失函数，$\
-abla_x L(\\mathbf{x}, y)$ 是损失函数关于输入$x$的梯度。
+其中，$x$ 是原始样本，$\\epsilon$ 是扰动的幅度，$L(\\mathbf{x}, y)$ 是损失函数，$\nabla_x L(\\mathbf{x}, y)$ 是损失函数关于输入$x$的梯度。
 
 ## 5.项目实践：代码实例和详细解释说明
 

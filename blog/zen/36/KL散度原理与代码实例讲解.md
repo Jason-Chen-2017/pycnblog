@@ -24,7 +24,7 @@
 
 KL散度（Kullback-Leibler divergence）是衡量两个概率分布之间的非对称距离的度量，定义为：
 
-$$D_{KL}(P||Q) = \\sum_{x \\in X} P(x) \\log \\frac{P(x)}{Q(x)}$$
+$$D_{KL}(P||Q) = \sum_{x \in X} P(x) \log \frac{P(x)}{Q(x)}$$
 
 其中，$P$和$Q$是两个概率分布，$P(x)$和$Q(x)$分别是$x$在$P$和$Q$上的概率密度。这个公式表明，KL散度总是非负的，且仅在$P$和$Q$完全相同时为零。
 
@@ -32,7 +32,7 @@ $$D_{KL}(P||Q) = \\sum_{x \\in X} P(x) \\log \\frac{P(x)}{Q(x)}$$
 
 - **非对称性**：KL散度是不对称的，即$D_{KL}(P||Q) \
 eq D_{KL}(Q||P)$。
-- **非负性**：$D_{KL}(P||Q) \\geq 0$，且仅当$P=Q$时取等号。
+- **非负性**：$D_{KL}(P||Q) \geq 0$，且仅当$P=Q$时取等号。
 - **连续性**：对于可积的$P$和$Q$，KL散度是连续的。
 
 ### 应用领域
@@ -55,12 +55,12 @@ KL散度的计算依赖于两个概率分布$P$和$Q$的定义域上的积分或
 
 #### 步骤2：计算KL散度
 
-- 对于离散分布：$D_{KL}(P||Q) = \\sum_x P(x) \\log \\frac{P(x)}{Q(x)}$
-- 对于连续分布：$D_{KL}(P||Q) = \\int_{-\\infty}^{\\infty} P(x) \\log \\frac{P(x)}{Q(x)} dx$
+- 对于离散分布：$D_{KL}(P||Q) = \sum_x P(x) \log \frac{P(x)}{Q(x)}$
+- 对于连续分布：$D_{KL}(P||Q) = \int_{-\infty}^{\infty} P(x) \log \frac{P(x)}{Q(x)} dx$
 
 #### 步骤3：实现计算
 
-- 利用编程语言（如Python）实现上述公式，确保处理边界情况（如$Q(x)=0$时的$\\log(0)$问题）。
+- 利用编程语言（如Python）实现上述公式，确保处理边界情况（如$Q(x)=0$时的$\log(0)$问题）。
 
 ## 4. 数学模型和公式 & 详细讲解 & 举例说明
 
@@ -79,13 +79,13 @@ KL散度模型本质上是两个概率分布之间的比较，其中$P$是真实
 
 假设$P$是抛硬币得到正面的概率为$0.5$，而$Q$是抛两次硬币恰好一次正面的概率为$0.5$。计算$D_{KL}(P||Q)$：
 
-$$D_{KL}(P||Q) = \\sum_{x \\in \\{H,T\\}} P(x) \\log \\frac{P(x)}{Q(x)} = \\frac{1}{2} \\log \\frac{1}{0.5} + \\frac{1}{2} \\log \\frac{1}{0.5} = \\log 2$$
+$$D_{KL}(P||Q) = \sum_{x \in \{H,T\}} P(x) \log \frac{P(x)}{Q(x)} = \frac{1}{2} \log \frac{1}{0.5} + \frac{1}{2} \log \frac{1}{0.5} = \log 2$$
 
 #### 示例2：连续分布
 
 考虑正态分布$P$和$Q$，其中$P$的均值为$0$，标准差为$1$，而$Q$的均值为$0$，标准差为$0.5$。计算$D_{KL}(P||Q)$：
 
-$$D_{KL}(P||Q) = \\int_{-\\infty}^{\\infty} \\frac{1}{\\sqrt{2\\pi}} e^{-x^2/2} \\log \\frac{e^{-x^2/2}}{e^{-2x^2}} dx = \\int_{-\\infty}^{\\infty} \\frac{1}{\\sqrt{2\\pi}} \\frac{x^2}{2} dx = \\frac{1}{2}$$
+$$D_{KL}(P||Q) = \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} e^{-x^2/2} \log \frac{e^{-x^2/2}}{e^{-2x^2}} dx = \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} \frac{x^2}{2} dx = \frac{1}{2}$$
 
 ### 常见问题解答
 
@@ -108,34 +108,34 @@ from scipy.integrate import quad
 import matplotlib.pyplot as plt
 
 def kl_divergence(P, Q):
-    \"\"\"计算KL散度\"\"\"
+    """计算KL散度"""
     if not all([isinstance(P, dict), isinstance(Q, dict)]):
-        raise ValueError(\"Both distributions must be dictionaries.\")
-    
+        raise ValueError("Both distributions must be dictionaries.")
+
     kl_sum = 0
     for x in P.keys():
         if x in Q.keys():
             kl_sum += P[x] * np.log(P[x] / Q[x])
         else:
-            raise ValueError(f\"Key {x} not found in distribution Q.\")
+            raise ValueError(f"Key {x} not found in distribution Q.")
     return kl_sum
 
 def kl_continuous(P, Q, x_min=-np.inf, x_max=np.inf):
-    \"\"\"计算连续分布的KL散度\"\"\"
+    """计算连续分布的KL散度"""
     def integrand(x):
         return P(x) * np.log(P(x) / Q(x))
     result, _ = quad(integrand, x_min, x_max)
     return result
 
-def plot_distributions(P, Q, title=\"KL Divergence Example\"):
-    \"\"\"绘制分布和KL散度示例\"\"\"
+def plot_distributions(P, Q, title="KL Divergence Example"):
+    """绘制分布和KL散度示例"""
     plt.figure(figsize=(12, 6))
     plt.subplot(1, 2, 1)
     plt.bar(P.keys(), P.values(), label='Distribution P')
     plt.bar(Q.keys(), Q.values(), label='Distribution Q', alpha=0.5)
     plt.title(title)
     plt.legend()
-    
+
     plt.subplot(1, 2, 2)
     plt.plot(list(P.keys()), [kl_divergence(P, Q), kl_continuous(P, Q)])
     plt.xlabel('Distribution Keys')

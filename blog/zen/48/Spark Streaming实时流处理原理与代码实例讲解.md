@@ -193,4 +193,4 @@ $$S = \{\langle e_1, e_2, e_3, \dots\rangle\}$$
 
 滑动窗口(Sliding Window)是一种常见的窗口化模型,它定义了三个参数:
 
-- $w$: 
+- $w$:

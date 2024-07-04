@@ -335,4 +335,4 @@ Accuracy: 0.9875
 * **计算机视觉技术的未来发展方向是什么？**
     * 未来，计算机视觉技术将朝着更强大、更智能、更安全的方向发展。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

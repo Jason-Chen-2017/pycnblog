@@ -80,7 +80,7 @@
 地图投影是将地球表面上的点映射到平面上的方法。高铁运行地图通常采用墨卡托投影，墨卡托投影的公式如下：
 
 $$
-x = R \cdot \lambda \\
+x = R \cdot \lambda \
 y = R \cdot \ln[\tan(\frac{\pi}{4} + \frac{\phi}{2})]
 $$
 

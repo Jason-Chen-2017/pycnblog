@@ -54,7 +54,7 @@ qq_network = nx.Graph()
 qq_network.add_nodes_from(['user1', 'user2', 'user3', 'user4', 'user5'])
 
 # 添加边
-qq_network.add_edges_from([('user1', 'user2'), ('user2', 'user3'), 
+qq_network.add_edges_from([('user1', 'user2'), ('user2', 'user3'),
                            ('user3', 'user4'), ('user4', 'user5')])
 ```
 
@@ -143,7 +143,7 @@ $$
 
 高PageRank值的节点在网络中更加重要和有影响力。
 
-## 5. 项目实践: 代码实例和详细解释说明 
+## 5. 项目实践: 代码实例和详细解释说明
 
 在这一部分,我们将使用Python中的NetworkX库对一个真实的QQ社交网络数据集进行分析,并编写代码实现前面介绍的各种算法和模型。
 

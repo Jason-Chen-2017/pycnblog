@@ -119,10 +119,10 @@
 
 $$
 \begin{aligned}
-\min_{T_1,T_2,\ldots,T_N} & \quad \sum_{i=1}^N \lambda_i(T_i) + \mu_i(T_i) \\
-\text{s.t.} & \quad T_i \geq t_i, \quad \forall i=1,2,\ldots,N \\
-& \quad \sum_{i=1}^N T_i \leq T_{max}, \\
-& \quad D_i \leq C_i(T_i), \quad \forall i=1,2,\ldots,N \\
+\min_{T_1,T_2,\ldots,T_N} & \quad \sum_{i=1}^N \lambda_i(T_i) + \mu_i(T_i) \
+\text{s.t.} & \quad T_i \geq t_i, \quad \forall i=1,2,\ldots,N \
+& \quad \sum_{i=1}^N T_i \leq T_{max}, \
+& \quad D_i \leq C_i(T_i), \quad \forall i=1,2,\ldots,N \
 \end{aligned}
 $$
 
@@ -189,7 +189,7 @@ A：智能体可以采用以下方式处理不同类型的数据：
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n public-transport-env python=3.8 
+conda create -n public-transport-env python=3.8
 conda activate public-transport-env
 ```
 

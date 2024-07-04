@@ -72,7 +72,7 @@ AIGC指的是通过人工智能技术生成新的内容或数据，这个过程�
 
 ### 4.1 数学模型构建
 #### 文本生成模型：
-- **公式**：$P(x|y) = \\frac{P(y|x)P(x)}{P(y)}$，表示生成文本$x$给定上下文$y$的概率。
+- **公式**：$P(x|y) = \frac{P(y|x)P(x)}{P(y)}$，表示生成文本$x$给定上下文$y$的概率。
 - **例子**：使用Transformer模型进行文本生成时，$P(x|y)$可以通过自注意力机制计算得到，该机制允许模型在生成文本时考虑到全局上下文信息。
 
 #### 图像创作模型：
@@ -121,7 +121,7 @@ tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 model = GPT2LMHeadModel.from_pretrained('gpt2')
 
 # 输入文本和上下文
-prompt = \"Once upon a time\"
+prompt = "Once upon a time"
 input_ids = tokenizer.encode(prompt, return_tensors='pt')
 
 # 生成过程
@@ -217,8 +217,8 @@ class Generator(nn.Module):
 - **文本处理库**：NLTK、spaCy、Hugging Face Transformers。
 
 ### 7.3 相关论文推荐
-- **GANs**：\"Generative Adversarial Networks\" by Ian Goodfellow等。
-- **文本生成**：\"Language Models are Unsupervised Multitask Learners\" by Peter J. Liu等。
+- **GANs**："Generative Adversarial Networks" by Ian Goodfellow等。
+- **文本生成**："Language Models are Unsupervised Multitask Learners" by Peter J. Liu等。
 
 ### 7.4 其他资源推荐
 - **开源项目**：Hugging Face的模型库、GitHub上的AI创意项目。

@@ -101,8 +101,7 @@ $$ L(Q) = \\frac{1}{|B|^2} \\sum_{(s, a, r, s') \\in B} \\left[ r + \\gamma \\ma
 
 2. **梯度下降**：使用梯度下降法最小化损失函数，更新Q函数的参数：
 
-$$ \\theta \\leftarrow \\theta - \\eta \
-abla_\\theta J(\\theta) $$
+$$ \\theta \\leftarrow \\theta - \\eta \nabla_\\theta J(\\theta) $$
 
 其中，θ是Q函数的参数，η是学习率。
 

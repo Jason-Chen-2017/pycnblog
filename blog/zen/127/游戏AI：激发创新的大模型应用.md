@@ -134,9 +134,9 @@ $$
 其中，$y_t$ 是目标 Q 值，计算公式为：
 
 $$
-y_t = 
+y_t =
 \begin{cases}
-R(s_t, a_t) & \text{if episode terminates at } t+1 \\
+R(s_t, a_t) & \text{if episode terminates at } t+1 \
 R(s_t, a_t) + \gamma \max_{a'} Q(s_{t+1}, a'; \theta^-) & \text{otherwise}
 \end{cases}
 $$
@@ -399,4 +399,4 @@ env.close()
 
 答：大模型在游戏AI中的应用面临着计算资源消耗大、数据需求量大、可解释性差等挑战。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

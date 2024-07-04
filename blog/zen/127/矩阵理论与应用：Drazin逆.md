@@ -74,9 +74,9 @@ Drazin逆的计算方法主要基于矩阵的Jordan标准型。对于任意方�
 
 $$
 J = P^{-1} A P = \begin{bmatrix}
-J_1 & 0 & \cdots & 0 \\
-0 & J_2 & \cdots & 0 \\
-\vdots & \vdots & \ddots & \vdots \\
+J_1 & 0 & \cdots & 0 \
+0 & J_2 & \cdots & 0 \
+\vdots & \vdots & \ddots & \vdots \
 0 & 0 & \cdots & J_m
 \end{bmatrix}
 $$
@@ -109,9 +109,9 @@ Drazin逆的计算步骤如下：
 
 $$
 J^D = \begin{bmatrix}
-J_1^D & 0 & \cdots & 0 \\
-0 & J_2^D & \cdots & 0 \\
-\vdots & \vdots & \ddots & \vdots \\
+J_1^D & 0 & \cdots & 0 \
+0 & J_2^D & \cdots & 0 \
+\vdots & \vdots & \ddots & \vdots \
 0 & 0 & \cdots & J_m^D
 \end{bmatrix}
 $$
@@ -169,9 +169,9 @@ Drazin逆的公式推导过程如下：
 
 $$
 J = P^{-1} A P = \begin{bmatrix}
-J_1 & 0 & \cdots & 0 \\
-0 & J_2 & \cdots & 0 \\
-\vdots & \vdots & \ddots & \vdots \\
+J_1 & 0 & \cdots & 0 \
+0 & J_2 & \cdots & 0 \
+\vdots & \vdots & \ddots & \vdots \
 0 & 0 & \cdots & J_m
 \end{bmatrix}
 $$
@@ -190,9 +190,9 @@ $$
 
 $$
 J^D = \begin{bmatrix}
-J_1^D & 0 & \cdots & 0 \\
-0 & J_2^D & \cdots & 0 \\
-\vdots & \vdots & \ddots & \vdots \\
+J_1^D & 0 & \cdots & 0 \
+0 & J_2^D & \cdots & 0 \
+\vdots & \vdots & \ddots & \vdots \
 0 & 0 & \cdots & J_m^D
 \end{bmatrix}
 $$
@@ -202,7 +202,7 @@ $$
 ### 4.3 案例分析与讲解
 
 **例1**: 计算矩阵 $A = \begin{bmatrix}
-1 & 1 \\
+1 & 1 \
 0 & 1
 \end{bmatrix}$ 的Drazin逆。
 
@@ -211,55 +211,55 @@ $$
 1. **求解矩阵 $A$ 的Jordan标准型**:
 
     矩阵 $A$ 的特征值为 $\lambda_1 = 1$，特征向量为 $v_1 = \begin{bmatrix}
-    1 \\
+    1 \
     0
     \end{bmatrix}$。
 
     因此，$A$ 的Jordan标准型为 $J = \begin{bmatrix}
-    1 & 1 \\
+    1 & 1 \
     0 & 1
     \end{bmatrix}$，可逆矩阵 $P = \begin{bmatrix}
-    1 & 1 \\
+    1 & 1 \
     0 & 1
     \end{bmatrix}$。
 
 2. **计算每个Jordan块的Drazin逆**:
 
     $J$ 只有一个Jordan块 $J_1 = \begin{bmatrix}
-    1 & 1 \\
+    1 & 1 \
     0 & 1
     \end{bmatrix}$，其指数 $k_1 = 1$。
 
     因此，$J_1^D = J_1^{k_1-1} = J_1^0 = \begin{bmatrix}
-    1 & 0 \\
+    1 & 0 \
     0 & 1
     \end{bmatrix}$。
 
 3. **构建 $J$ 的Drazin逆**:
 
     $J^D = \begin{bmatrix}
-    1 & 0 \\
+    1 & 0 \
     0 & 1
     \end{bmatrix}$。
 
 4. **计算 $A$ 的Drazin逆**:
 
     $A^D = P J^D P^{-1} = \begin{bmatrix}
-    1 & 1 \\
+    1 & 1 \
     0 & 1
     \end{bmatrix} \begin{bmatrix}
-    1 & 0 \\
+    1 & 0 \
     0 & 1
     \end{bmatrix} \begin{bmatrix}
-    1 & -1 \\
+    1 & -1 \
     0 & 1
     \end{bmatrix} = \begin{bmatrix}
-    1 & 0 \\
+    1 & 0 \
     0 & 1
     \end{bmatrix}$。
 
 因此，矩阵 $A$ 的Drazin逆为 $A^D = \begin{bmatrix}
-1 & 0 \\
+1 & 0 \
 0 & 1
 \end{bmatrix}$。
 
@@ -453,4 +453,4 @@ Drazin逆在机器学习、深度学习等领域也展现出了巨大的潜力�
 * Drazin逆的计算方法将更加高效和稳定。
 * Drazin逆的理论研究将更加深入，例如，Drazin逆的推广和应用。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

@@ -6,7 +6,7 @@
 
 在当今大数据时代,海量数据的实时处理和分析已经成为各行业的迫切需求。传统的批处理系统已经无法满足实时性和低延迟的要求,而流式计算应运而生。Apache Flink作为新一代分布式流处理框架,凭借其低延迟、高吞吐量、精确一次语义和事件时间语义等优势,在实时计算领域占据重要地位。
 
-### 1.2 研究现状  
+### 1.2 研究现状
 
 近年来,Flink生态系统不断发展壮大,涌现出诸多优秀的流处理应用案例,如实时数据分析、实时机器学习、实时监控预警等。越来越多的企业开始将Flink应用到核心业务场景中,以提升业务效率和决策能力。然而,Flink的应用实践仍面临诸多挑战,如系统性能调优、状态管理、容错机制等,需要持续探索和创新。
 
@@ -26,29 +26,29 @@ Apache Flink是一个分布式、有状态的流处理框架,它将流处理作�
 graph TD
     A[Flink核心概念] --> B(流Stream)
     A --> C(转换Transformation)
-    A --> D(窗口Window) 
+    A --> D(窗口Window)
     A --> E(状态State)
     A --> F(时间Time)
-    
+
     B --> B1[有界流<br>Bounded Stream]
     B --> B2[无界流<br>Unbounded Stream]
-    
+
     C --> C1[Map]
     C --> C2[FlatMap]
     C --> C3[Filter]
     C --> C4[KeyBy]
     C --> C5[Window]
     C --> C6[...其他]
-    
+
     D --> D1[时间窗口<br>Time Window]
     D --> D2[计数窗口<br>Count Window]
     D1 --> D1a[滚动窗口<br>Tumbling Window]
     D1 --> D1b[滑动窗口<br>Sliding Window]
     D1 --> D1c[会话窗口<br>Session Window]
-    
+
     E --> E1[键控状态<br>Keyed State]
     E --> E2[算子状态<br>Operator State]
-    
+
     F --> F1[事件时间<br>Event Time]
     F --> F2[处理时间<br>Processing Time]
     F --> F3[注入时间<br>Ingestion Time]

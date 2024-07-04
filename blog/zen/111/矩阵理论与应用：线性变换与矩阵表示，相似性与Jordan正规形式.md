@@ -120,15 +120,15 @@ Jordan正规形式是一种特殊的矩阵形式，它将一个矩阵分解为�
 
 #### 特征值和特征向量案例：
 
-假设矩阵$A = \begin{bmatrix} 2 & 1 \\ 0 & 2 \end{bmatrix}$，求其特征值和特征向量。
+假设矩阵$A = \begin{bmatrix} 2 & 1 \ 0 & 2 \end{bmatrix}$，求其特征值和特征向量。
 
 - **特征多项式**：$\det(A - \lambda I) = (2-\lambda)^2 - 0 = \lambda^2 - 4\lambda + 4$。
 - **特征值**：$\lambda^2 - 4\lambda + 4 = 0$，解得$\lambda = 2$（重根）。
-- **特征向量**：解方程$(A - 2I)\mathbf{v} = \mathbf{0}$，得到$\mathbf{v} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$。
+- **特征向量**：解方程$(A - 2I)\mathbf{v} = \mathbf{0}$，得到$\mathbf{v} = \begin{bmatrix} 1 \ 0 \end{bmatrix}$。
 
 #### Jordan正规形式案例：
 
-考虑矩阵$A = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$，其特征值为$\lambda = 1$（重根）。因为特征向量$\mathbf{v} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$仅能产生一个Jordan块，故$A$的Jordan正规形式为$J = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$。
+考虑矩阵$A = \begin{bmatrix} 1 & 1 \ 0 & 1 \end{bmatrix}$，其特征值为$\lambda = 1$（重根）。因为特征向量$\mathbf{v} = \begin{bmatrix} 1 \ 0 \end{bmatrix}$仅能产生一个Jordan块，故$A$的Jordan正规形式为$J = \begin{bmatrix} 1 & 1 \ 0 & 1 \end{bmatrix}$。
 
 ### 4.4 常见问题解答
 

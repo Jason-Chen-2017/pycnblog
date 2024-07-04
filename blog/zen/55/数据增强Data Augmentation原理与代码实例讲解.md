@@ -56,19 +56,19 @@
 
 $$
 \begin{bmatrix}
-x' \\
-y' \\
+x' \
+y' \
 1
 \end{bmatrix}
 =
 \begin{bmatrix}
-a_{11} & a_{12} & t_x \\
-a_{21} & a_{22} & t_y \\
+a_{11} & a_{12} & t_x \
+a_{21} & a_{22} & t_y \
 0 & 0 & 1
 \end{bmatrix}
 \begin{bmatrix}
-x \\
-y \\
+x \
+y \
 1
 \end{bmatrix}
 $$
@@ -111,8 +111,8 @@ $$
 
 $$
 P(x) = \begin{cases}
-p_a, & x=a \\
-p_b, & x=b \\
+p_a, & x=a \
+p_b, & x=b \
 1-p_a-p_b, & \text{otherwise}
 \end{cases}
 $$

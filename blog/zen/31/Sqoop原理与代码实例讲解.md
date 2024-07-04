@@ -26,7 +26,7 @@ Sqoop的核心概念包括：
 - Connector：连接器，Sqoop使用Connector与外部存储系统交互，如JDBC Connector。
 - Driver：数据库驱动，用于与关系型数据库建立连接，如MySQL Driver。
 - Map Task：将导入导出任务拆分为多个Map Task并行执行，提高传输效率。
-- Import：数据导入，将RDBMS数据导入到HDFS、Hive、HBase等。  
+- Import：数据导入，将RDBMS数据导入到HDFS、Hive、HBase等。
 - Export：数据导出，将HDFS、Hive、HBase等数据导出到RDBMS。
 
 下图展示了Sqoop的核心组件及其关系：
@@ -37,7 +37,7 @@ A[Sqoop Client] --> B[Sqoop Server]
 B --> C[Map Task 1]
 B --> D[Map Task 2]
 B --> E[Map Task 3]
-C --> F[RDBMS] 
+C --> F[RDBMS]
 C --> G[HDFS/Hive/HBase]
 D --> F
 D --> G
@@ -195,7 +195,7 @@ hadoop fs -du -s -h /data/user
 Sqoop在电商、金融、物流、制造等行业获得广泛应用，一些实际案例包括：
 
 - 电商公司每天将TB级交易数据从Oracle导入Hive，用于报表分析、数据挖掘等离线处理。
-- 金融机构将历史交易记录从DB2批量导入HDFS，进行风控模型训练和实时反欺诈。  
+- 金融机构将历史交易记录从DB2批量导入HDFS，进行风控模型训练和实时反欺诈。
 - 物流公司将HDFS中的路径规划结果数据导出到PostgreSQL，用于配送调度和线路优化。
 
 ### 6.4 未来应用展望

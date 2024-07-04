@@ -292,4 +292,4 @@ AI 技术在企业数字化转型中的应用前景非常广阔，未来将会�
 * **AI 技术会取代人类工作吗？** AI 技术不会完全取代人类工作，而是会改变工作方式，例如提高效率、降低成本、创造新的工作岗位等。
 * **如何学习 AI 技术？** 可以通过在线课程、书籍、社区等方式学习 AI 技术。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

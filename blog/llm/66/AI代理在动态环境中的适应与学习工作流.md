@@ -142,7 +142,7 @@ $$
 设奖励函数为 $R(S, A)$，则奖励函数可以表示为：
 
 $$
-R(S, A) = \begin{cases} 
+R(S, A) = \begin{cases}
 r & \text{if } S' \text{ is desirable} \\
 -r & \text{if } S' \text{ is undesirable}
 \end{cases}

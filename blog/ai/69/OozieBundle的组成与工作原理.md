@@ -119,9 +119,9 @@ OozieBundle的工作原理主要基于以下数学模型：
 假设Oozie协调器在t时刻需要调度作业，作业执行时间为T，则作业调度模型为：
 
 $$
-f(t) = \begin{cases} 
+f(t) = \begin{cases}
 0, & \text{if } t < t_0 \\
-T, & \text{if } t_0 \leq t < t_0 + T 
+T, & \text{if } t_0 \leq t < t_0 + T
 \end{cases}
 $$
 
@@ -196,7 +196,7 @@ A：OozieBundle提供了多种异常处理策略，如重试、跳过、通知�
 
 ```java
 public class MyOozieCoordinator extends OozieCoordinator {
-  
+
   @Override
   public void execute() throws OozieException {
     // 创建作业实例

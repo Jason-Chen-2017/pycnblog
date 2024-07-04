@@ -76,10 +76,10 @@ ShuffleNet的数学模型可以表示为：
 
 $$
 \begin{align*}
-\text{Input}: & x \\
-\text{Depthwise Convolution}: & \text{DWConv}(x) \\
-\text{Pointwise Convolution}: & \text{PWConv}(\text{DWConv}(x)) \\
-\text{Channel Shuffle}: & \text{Shuffle}(\text{PWConv}(x)) \\
+\text{Input}: & x \
+\text{Depthwise Convolution}: & \text{DWConv}(x) \
+\text{Pointwise Convolution}: & \text{PWConv}(\text{DWConv}(x)) \
+\text{Channel Shuffle}: & \text{Shuffle}(\text{PWConv}(x)) \
 \text{Output}: & \text{Shuffle}(\text{PWConv}(x))
 \end{align*}
 $$

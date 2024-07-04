@@ -167,8 +167,8 @@ def build_model(input_shape):
 model = build_model((28, 28, 1))
 
 # 编译模型
-model.compile(optimizer='adam', 
-              loss='sparse_categorical_crossentropy', 
+model.compile(optimizer='adam',
+              loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 
 # 模型训练

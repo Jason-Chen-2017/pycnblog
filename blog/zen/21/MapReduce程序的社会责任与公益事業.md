@@ -1,4 +1,4 @@
-                 
+
 # MapReduce程序的社会责任与公益事業
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM
@@ -160,7 +160,7 @@ print(f"Estimated R (Reduce tasks): {r_estimate}")
 ```java
 public class WordCount extends Reducer<Text, IntWritable, Text, IntWritable> {
     private final static IntWritable ONE = new IntWritable(1);
-    
+
     public void reduce(Text key, Iterable<IntWritable> values,
                        Context context)
             throws IOException, InterruptedException {

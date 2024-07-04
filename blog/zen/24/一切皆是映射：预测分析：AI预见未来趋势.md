@@ -1,4 +1,4 @@
-                 
+
 # 一切皆是映射：预测分析：AI预见未来趋势
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming / TextGenWebUILLM

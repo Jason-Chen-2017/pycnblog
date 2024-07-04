@@ -97,9 +97,9 @@
 
 假设权重矩阵W，量化级数为Q，量化步长为Δ，则量化后的权重矩阵W_q可以通过以下公式计算：
 
-$$ W_q = \\Delta \\cdot \\left\\lfloor \\frac{W}{\\Delta} \\cdot Q \\right\\rfloor $$
+$$ W_q = \Delta \cdot \left\lfloor \frac{W}{\Delta} \cdot Q \right\rfloor $$
 
-其中，$\\lfloor x \\rfloor$表示取整函数。
+其中，$\lfloor x \rfloor$表示取整函数。
 
 ### 4.2 公式推导过程
 
@@ -119,7 +119,7 @@ $$ W_q = \\Delta \\cdot \\left\\lfloor \\frac{W}{\\Delta} \\cdot Q \\right\\rflo
 
 - **如何选择量化级数？**
   - 根据硬件资源和性能需求来决定。通常，更少的量化级数意味着更小的模型和更快的运行速度，但可能带来性能损失。
-  
+
 - **量化后如何评估性能损失？**
   - 使用验证集上的模型预测结果来比较量化前后模型的性能。通常通过计算准确率、精确率、召回率等指标来评估。
 
@@ -184,8 +184,8 @@ quantize_model.save('path_to_quantized_model')
 
 ### 7.3 相关论文推荐
 
-- **\"Quantization and Knowledge Distillation for Accelerating Neural Networks\"**
-- **\"Pruning Deep Neural Networks for Resource-Constrained Devices\"**
+- **"Quantization and Knowledge Distillation for Accelerating Neural Networks"**
+- **"Pruning Deep Neural Networks for Resource-Constrained Devices"**
 
 ### 7.4 其他资源推荐
 

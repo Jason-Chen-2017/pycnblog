@@ -28,7 +28,7 @@
 
 1. 核心概念与联系
 2. 核心算法原理及具体操作步骤
-3. 数学模型和公式详细讲解及案例分析  
+3. 数学模型和公式详细讲解及案例分析
 4. 项目实践:代码实例和详细解释
 5. 实际应用场景
 6. 工具和资源推荐
@@ -67,7 +67,7 @@ AI在艺术领域的应用主要可以分为两大类:生成式AI和分析型AI�
 
 ## 3. 核心算法原理及具体操作步骤
 
-### 3.1 算法原理概述  
+### 3.1 算法原理概述
 
 AI在艺术领域的应用主要基于以下几种核心算法:
 
@@ -172,5 +172,5 @@ $$\max\limits_D V(D,G) = \mathbb{E}_{x\sim p_{\text{data}}(x)}[\log D(x)] + \mat
 由于对数函数是凸函数,根据Jensen不等式,我们有:
 
 \begin{align*}
-\mathbb{E}_{x\sim p_{\text{data}}(x)}[\log D(x)] &\leq \log\left(\mathbb{E}_{x\sim p_{\text{data}}(x)}[D(x)]\right) \\
+\mathbb{E}_{x\sim p_{\text{data}}(x)}[\log D(x)] &\leq \log\left(\mathbb{E}_{x\sim p_{\text{data}}(x)}[D(x)]\right) \
 \mathbb{E}_{z\sim p_z(z)}[\log(1-D(G(z)))] &\leq \log\left(1-\mathbb{E}_{z\sim p_

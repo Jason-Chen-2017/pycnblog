@@ -1,4 +1,4 @@
-                 
+
 # 【LangChain编程：从入门到实践】代码实践
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -105,9 +105,9 @@ LangChain库广泛应用于自然语言处理、对话系统、文本生成、�
 假设我们有一个自然语言理解任务，需要解析用户提出的问题，并根据问题的内容从数据库中检索相关信息。
 
 - **问题表示**：$P = (p_1, p_2, ..., p_n)$，其中$p_i$代表问题中的各个组成部分。
-  
+
 - **查询生成**：$\text{Query} = \text{ParseQuestion}(P)$，这里$\text{ParseQuestion}$函数负责将原始问题转换为适用于数据库搜索的标准格式。
-  
+
 - **数据库检索**：$R = \text{SearchDatabase}(Query)$，这个过程通常涉及SQL查询或其他相关数据库操作。
 
 ### 4.2 公式推导过程

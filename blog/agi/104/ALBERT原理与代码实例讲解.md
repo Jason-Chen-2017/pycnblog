@@ -99,7 +99,7 @@ ALBERT的数学模型主要基于Transformer和自监督学习任务。以下分
 **1. 掩码语言模型（MLM）**：
 
 $$
-L_{MLM} = -\sum_{i=1}^n \sum_{k=1}^m \log P_{MLM}(t_k|x_{<i},\tilde{x}_i) 
+L_{MLM} = -\sum_{i=1}^n \sum_{k=1}^m \log P_{MLM}(t_k|x_{<i},\tilde{x}_i)
 $$
 
 其中，$x_{<i}$ 为除第 $i$ 个token外的所有token，$\tilde{x}_i$ 为第 $i$ 个token的掩码版本，$P_{MLM}$ 为MLM模型的预测概率。
@@ -107,7 +107,7 @@ $$
 **2. 下一句预测（NSP）**：
 
 $$
-L_{NSP} = -\sum_{i=1}^n \log P_{NSP}(y_i|x_{<i}, x_i) 
+L_{NSP} = -\sum_{i=1}^n \log P_{NSP}(y_i|x_{<i}, x_i)
 $$
 
 其中，$y_i$ 为第 $i$ 个句子是否是下一个句子的标签，$P_{NSP}$ 为NSP模型的预测概率。
@@ -121,7 +121,7 @@ MLM和NSP的目标函数可以通过交叉熵损失函数进行计算。
 以文本分类任务为例，ALBERT在微调过程中，将文本输入到预训练模型中，提取文本特征，并使用分类层进行分类。以下为ALBERT在文本分类任务中的目标函数：
 
 $$
-L = \frac{1}{N} \sum_{i=1}^N \ell(M(x_i,y_i)) 
+L = \frac{1}{N} \sum_{i=1}^N \ell(M(x_i,y_i))
 $$
 
 其中，$x_i$ 为输入文本，$y_i$ 为对应的标签，$\ell$ 为交叉熵损失函数。

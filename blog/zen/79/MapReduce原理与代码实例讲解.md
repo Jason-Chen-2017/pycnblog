@@ -95,7 +95,7 @@ MapReduce算法可以抽象为以下数学模型：
 
 MapReduce算法可以表示为：
 
-\[ D \xrightarrow{Map} \{ (k_i, v_i) \} \xrightarrow{Shuffle} \{ \{ (k_i, v_i) \} \} \xrightarrow{Reduce} \{ r_i \} \]
+$$ D \xrightarrow{Map} \{ (k_i, v_i) \} \xrightarrow{Shuffle} \{ \{ (k_i, v_i) \} \} \xrightarrow{Reduce} \{ r_i \} $$
 
 ### 4.3 案例分析与讲解
 
@@ -161,7 +161,7 @@ public class WordCount extends Configured implements Mapper<LongWritable, Text, 
 
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String line = value.toString();
-        String[] words = line.split("\\W+");
+        String[] words = line.split("\W+");
         for (String w : words) {
             word.set(w);
             context.write(word, one);

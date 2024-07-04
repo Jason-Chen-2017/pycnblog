@@ -1,4 +1,4 @@
-                 
+
 # 生成对抗网络 (GAN) 原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

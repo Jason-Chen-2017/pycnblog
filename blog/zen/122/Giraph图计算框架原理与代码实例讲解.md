@@ -409,4 +409,4 @@ Giraph 框架采用分布式一致性协议，例如 Paxos 或 Raft，来维护�
 
 Giraph 框架提供了一套数据安全保障机制，例如数据加密、访问控制等。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

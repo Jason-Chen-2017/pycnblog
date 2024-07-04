@@ -108,7 +108,7 @@ in-context学习在以下领域具有广泛的应用：
 假设预训练模型为 $M_{\theta}$，其中 $\theta$ 为模型参数。给定任务 $T$ 的in-context学习数据 $D=\{(x_i, y_i)\}_{i=1}^N$，in-context学习的目标是最小化损失函数：
 
 $$
-\mathcal{L}(\theta) = \frac{1}{N} \sum_{i=1}^N \ell(M_{\theta}(x_i),y_i) 
+\mathcal{L}(\theta) = \frac{1}{N} \sum_{i=1}^N \ell(M_{\theta}(x_i),y_i)
 $$
 
 其中，$\ell$ 为损失函数，$x_i$ 为输入数据，$y_i$ 为目标标签。

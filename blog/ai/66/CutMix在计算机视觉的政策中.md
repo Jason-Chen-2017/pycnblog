@@ -185,17 +185,17 @@ def cutmix(image, target):
     img1, img2 = image[0], image[1]
     x1, y1, x2, y2 = torch.randint(0, img1.size[0], (1, 4))
     x1p, y1p, x2p, y2p = torch.randint(0, img2.size[0], (1, 4))
-    
+
     # 裁剪图像块
     patch1 = img1.crop((x1, y1, x2, y2))
     patch2 = img2.crop((x1p, y1p, x2p, y2p))
-    
+
     # 粘贴图像块
     img1_patch = Image.new("RGB", (img1.size[0], img1.size[1]))
     img1_patch.paste(patch2, (x1, y1))
     img2_patch = Image.new("RGB", (img2.size[0], img2.size[1]))
     img2_patch.paste(patch1, (x1p, y1p))
-    
+
     return img1_patch, img2_patch, target
 ```
 

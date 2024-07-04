@@ -154,13 +154,13 @@ class Model(torch.nn.Module):
         super(Model, self).__init__()
         self.fc1 = torch.nn.Linear(784, 128)
         self.fc2 = torch.nn.Linear(128, 10)
-        
+
     def forward(self, x):
         x = torch.nn.functional.relu(self.fc1(x))
         x = self.fc2(x)
         return x
 
-# 初始化模型参数    
+# 初始化模型参数
 model = Model()
 model.share(alice, bob, charlie)
 
@@ -169,21 +169,21 @@ def train(model, data, target, worker):
     model.send(worker)
     data = data.send(worker)
     target = target.send(worker)
-    
+
     optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
     criterion = torch.nn.CrossEntropyLoss()
-    
+
     for epoch in range(10):
         optimizer.zero_grad()
         output = model(data)
         loss = criterion(output, target)
         loss.backward()
         optimizer.step()
-        
+
     model.get()
     data.get()
     target.get()
-    
+
     return model
 
 # 各参与者在本地数据上训练模型

@@ -143,11 +143,11 @@ num_epochs = 100
 for epoch in range(num_epochs):
     outputs = model(inputs)
     loss = criterion(outputs, inputs[-1])
-    
+
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
-    
+
     if (epoch+1) % 10 == 0:
         print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
 ```

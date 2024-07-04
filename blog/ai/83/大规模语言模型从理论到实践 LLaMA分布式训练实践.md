@@ -143,8 +143,7 @@ $$
 2. **梯度下降**：使用梯度下降算法更新LLM的参数：
 
 $$
-\theta \leftarrow \theta - \eta \
-abla_{\theta}\mathcal{L}(\theta)
+\theta \leftarrow \theta - \eta \nabla_{\theta}\mathcal{L}(\theta)
 $$
 
 其中，$\eta$ 表示学习率。
@@ -254,11 +253,11 @@ def train(rank, world_size, train_loader, model, optimizer, device):
 def main():
     # 数据加载
     train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
-    
+
     # 模型和优化器
     model = LLaMA().to("cuda")
     optimizer = optim.Adam(model.parameters(), lr=0.001)
-    
+
     # 启动分布式训练
     dist.init_process_group("nccl", rank=0, world_size=2)
     train(0, 2, train_loader, model, optimizer, "cuda")

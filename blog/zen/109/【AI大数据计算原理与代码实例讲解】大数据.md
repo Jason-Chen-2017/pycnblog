@@ -118,7 +118,7 @@ $$ V = \bigcup_{k \in K} g(k, \text{values associated with } k) $$
 假设我们有一张名为orders的表，其中包含订单ID、客户ID、订单日期和金额字段。我们想要找出每个月的总销售额。
 
 ```sql
-SELECT 
+SELECT
     DATE_FORMAT(order_date, 'YYYY-MM') AS month,
     SUM(amount) AS total_sales
 FROM orders

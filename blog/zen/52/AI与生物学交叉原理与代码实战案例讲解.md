@@ -21,7 +21,7 @@ AI与生物学的交叉融合具有重要意义:
 ### 2.1 机器学习
 机器学习是AI的核心,它使计算机能够在没有明确编程的情况下学习和改进。常见的机器学习任务包括分类、回归、聚类等。在生物学中,机器学习被广泛用于生物数据的分析和预测。
 
-### 2.2 深度学习 
+### 2.2 深度学习
 深度学习是机器学习的一个分支,它模仿人脑的结构和功能,使用多层神经网络从数据中学习高层次的特征表示。深度学习在计算机视觉、自然语言处理等领域取得了突破性进展,也正在重塑生物学研究。
 
 ### 2.3 生物信息学
@@ -36,7 +36,7 @@ graph TD
 A[人工智能] --> B[机器学习]
 A[人工智能] --> C[深度学习]
 B[机器学习] --> D[生物信息学]
-C[深度学习] --> D[生物信息学] 
+C[深度学习] --> D[生物信息学]
 C[深度学习] --> E[医学影像]
 A[人工智能] --> F[合成生物学]
 ```
@@ -78,12 +78,12 @@ $$(I*K)(i,j)=\sum_m\sum_nI(i-m,j-n)K(m,n)$$
 假设有一个3x3的图像$I$和一个2x2的卷积核$K$:
 
 $$I=\begin{bmatrix}
-1 & 2 & 3\\
-4 & 5 & 6\\
+1 & 2 & 3\
+4 & 5 & 6\
 7 & 8 & 9
 \end{bmatrix},
 K=\begin{bmatrix}
-1 & 0\\
+1 & 0\
 0 & 1
 \end{bmatrix}$$
 
@@ -96,7 +96,7 @@ $$(I*K)(1,1)=5\times1+6\times0+8\times0+9\times1=14$$
 
 卷积结果为:
 $$\begin{bmatrix}
-6 & 8\\
+6 & 8\
 12 & 14
 \end{bmatrix}$$
 
@@ -110,7 +110,7 @@ $$\begin{bmatrix}
 首先,我们需要准备肺结节CT图像数据集,这里使用LUNA16数据集。将数据集划分为训练集和测试集,并进行标注。
 
 ```python
-import numpy as np 
+import numpy as np
 from sklearn.model_selection import train_test_split
 
 # 读取数据并划分训练集和测试集
@@ -165,13 +165,13 @@ model.compile(optimizer='adam',
 ```python
 # 训练模型
 history = model.fit_generator(datagen.flow(X_train, y_train, batch_size=32),
-                              steps_per_epoch=len(X_train) / 32, 
+                              steps_per_epoch=len(X_train) / 32,
                               epochs=50,
                               validation_data=(X_test, y_test))
 
-# 评估模型 
+# 评估模型
 score = model.evaluate(X_test, y_test)
-print('Test loss:', score[0]) 
+print('Test loss:', score[0])
 print('Test accuracy:', score[1])
 ```
 
@@ -223,7 +223,7 @@ AI在合成生物学中的应用包括:
 - LUNA16:肺结节CT图像数据集
 
 ### 7.2 工具包
-- BioPython:Python生物信息学工具包  
+- BioPython:Python生物信息学工具包
 - Keras:基于Python的深度学习库
 - TensorFlow:谷歌开源的机器学习框架
 - PyTorch:Facebook开源的深度学习框架
@@ -242,6 +242,6 @@ AI在合成生物学中的应用包括:
 - 强化学习:利用强化学习优化治疗决策,实现个性化、精准化治疗
 
 ### 8.2 面临的挑战
-- 数据质量:生物医学数据的质量参差不齐,数据清洗和标准化面临挑战 
+- 数据质量:生物医学数据的质量参差不齐,数据清洗和标准化面临挑战
 - 数据隐私:如何在保护患者隐私的同时实现数据共享是一大挑战
 - 模型解释性:深度学习模型的"黑箱"特性,导致其决策过程难以解释,临床应

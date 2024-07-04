@@ -1,7 +1,7 @@
 
 # 【大模型应用开发 动手做AI Agent】从用户角度看RAG流程
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 > 关键词：大模型应用，RAG，检索增强生成，检索式问答，AI Agent，用户视角
 

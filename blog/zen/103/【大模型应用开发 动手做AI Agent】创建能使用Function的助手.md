@@ -108,7 +108,7 @@ Function是指能够接收输入并返回输出的可执行代码。在AI Agent�
 本文采用Transformer模型作为大模型，其数学模型如下：
 
 $$
-y = M_{\theta}(x) 
+y = M_{\theta}(x)
 $$
 
 其中，$x$ 为输入文本，$y$ 为模型输出的文本，$M_{\theta}$ 为预训练的Transformer模型，$\theta$ 为模型参数。

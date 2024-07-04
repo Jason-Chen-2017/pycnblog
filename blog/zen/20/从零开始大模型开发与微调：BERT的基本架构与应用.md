@@ -74,24 +74,24 @@ Bert的基本框架包括两个主要组件：掩码语言模型（Masked Langua
 BERT的核心是Transformer架构，其基本单元是多头自注意力（Multi-head Self-Attention）模块和前馈神经网络（Feed-forward Neural Network）模块。以下是一个简化的多头自注意力模块的公式：
 
 $$
-\\text{MultiHead}(Q, K, V) = \\text{Concat}(\\text{head}_1, ..., \\text{head}_k)W^O
+\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_k)W^O
 $$
 
 其中，
 
-- \\(Q\\)、\\(K\\)、\\(V\\)分别代表查询(query)、键(key)、值(value)，它们通过线性变换得到。
-- \\(W^O\\)是输出矩阵。
-- \\(\\text{head}_i\\)是第i个头的输出。
+- \(Q\)、\(K\)、\(V\)分别代表查询(query)、键(key)、值(value)，它们通过线性变换得到。
+- \(W^O\)是输出矩阵。
+- \(\text{head}_i\)是第i个头的输出。
 
 ### 4.2 公式推导过程
 
 在Bert中，对于每个输入序列，每个位置都会产生一个表示向量。这可以通过以下公式来实现：
 
 $$
-\\text{Positional Encoding}(x, i) = x + \\text{Sin}(i \\cdot \\frac{1}{\\sqrt{d}} \\cdot \\text{Positional Encodings})
+\text{Positional Encoding}(x, i) = x + \text{Sin}(i \cdot \frac{1}{\sqrt{d}} \cdot \text{Positional Encodings})
 $$
 
-其中，\\(x\\)是输入向量，\\(i\\)是位置索引，\\(d\\)是向量维度，\\(\\text{Positional Encodings}\\)是预先定义的位置编码向量。
+其中，\(x\)是输入向量，\(i\)是位置索引，\(d\)是向量维度，\(\text{Positional Encodings}\)是预先定义的位置编码向量。
 
 ### 4.3 案例分析与讲解
 

@@ -234,12 +234,12 @@ executor.execute()
 
 ```
 Agent started.
-> <ipython console> 1 
+> <ipython console> 1
 <ipython console> 2 agent = MyAgent()
 <ipython console> 3 executor = AgentExecutor(agent)
 <ipython console> 4 executor.execute()
 Agent started.
-> <ipython console> 5 
+> <ipython console> 5
 ```
 
 此时，开发者可以使用pdb提供的命令查看变量的值、执行路径等：

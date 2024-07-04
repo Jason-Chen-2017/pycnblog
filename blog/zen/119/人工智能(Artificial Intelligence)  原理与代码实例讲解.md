@@ -241,7 +241,7 @@ A: 可以使用均方误差（MSE）、均方根误差（RMSE）和R平方值（
 2. 创建并激活虚拟环境：
 
 ```bash
-conda create -n ai-env python=3.8 
+conda create -n ai-env python=3.8
 conda activate ai-env
 ```
 

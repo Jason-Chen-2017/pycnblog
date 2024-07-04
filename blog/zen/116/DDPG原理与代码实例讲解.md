@@ -74,7 +74,7 @@ DDPG 算法在以下领域具有广泛的应用前景:
 ### 4.1  数学模型构建
 DDPG 算法的核心数学模型包括策略网络、动作值函数网络和目标网络。
 
-* **策略网络:**  
+* **策略网络:**
     $$ \pi_{\theta}(a|s) $$
     其中，$\theta$ 是策略网络的参数，$a$ 是动作，$s$ 是状态。策略网络输出动作的概率分布。
 * **动作值函数网络:**
@@ -269,5 +269,5 @@ DDPG 算法的实现细节包括:
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

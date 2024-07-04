@@ -172,7 +172,7 @@ $$
 假设室内温度为 $t$，设定值为 $t_{set}$，则有：
 
 $$
-z = \begin{cases} 
+z = \begin{cases}
 \text{开启暖气} & \text{if } t < t_{set} \\
 \text{关闭暖气} & \text{if } t \geq t_{set}
 \end{cases}
@@ -225,20 +225,20 @@ public class EnergyManagementSystem {
     public static void main(String[] args) {
         // 初始化数据库连接
         // ...
-        
+
         // 初始化传感器数据采集模块
         // ...
-        
+
         // 初始化决策模块
         DecisionModule decisionModule = new DecisionModule();
-        
+
         // 循环处理传感器数据
         while (true) {
             double temperature = getTemperature();
-            
+
             // 判断是否需要开启或关闭暖气
             boolean needHeating = decisionModule.needsHeating(temperature);
-            
+
             // 控制暖气设备
             if (needHeating) {
                 turnOnHeating();
@@ -247,24 +247,24 @@ public class EnergyManagementSystem {
             }
         }
     }
-    
+
     private static double getTemperature() {
         // 从传感器获取温度数据
         // ...
         return temperature;
     }
-    
+
     private static boolean needsHeating(double temperature) {
         // 根据决策模型判断是否需要开启暖气
         // ...
         return needHeating;
     }
-    
+
     private static void turnOnHeating() {
         // 控制暖气设备开启
         // ...
     }
-    
+
     private static void turnOffHeating() {
         // 控制暖气设备关闭
         // ...

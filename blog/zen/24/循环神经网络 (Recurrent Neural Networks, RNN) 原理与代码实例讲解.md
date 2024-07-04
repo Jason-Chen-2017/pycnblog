@@ -1,4 +1,4 @@
-                 
+
 # 循环神经网络 (Recurrent Neural Networks, RNN) 原理与代码实例讲解
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -153,18 +153,18 @@ biases = {
 
 def RNN(x, weights, biases):
     x = tf.reshape(x, [-1, input_size])
-    
+
     # 输入层到隐藏层
     # 重塑输入以便在前向传播中进行操作
     x_in = tf.matmul(x, weights['in']) + biases['in']
     x_in = tf.reshape(x_in, [-1, num_steps, hidden_size])
-    
+
     # 创建 LSTM 单元
     lstm_cell = tf.keras.layers.LSTMCell(hidden_size)
     initial_state = lstm_cell.get_initial_state(batch_size=batch_size, dtype=tf.float32)
-    
+
     outputs, states = tf.nn.dynamic_rnn(lstm_cell, x_in, initial_state=initial_state, time_major=False)
-    
+
     # 最后一层的输出即为 RNN 的输出
     return tf.matmul(outputs[:, -1, :], weights['out']) + biases['out']
 

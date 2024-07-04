@@ -110,8 +110,8 @@ P*算法在以下领域有广泛的应用：
 P*算法的数学模型可以用以下公式表示：
 
 $$
-P^*(\varphi) = 
-\begin{cases} 
+P^*(\varphi) =
+\begin{cases}
 \top & \text{如果 } \varphi \text{ 为真} \\
 \bot & \text{如果 } \varphi \text{ 为假} \\
 \phi_1 \wedge \phi_2 & \text{如果 } \varphi = \phi_1 \wedge \phi_2 \\

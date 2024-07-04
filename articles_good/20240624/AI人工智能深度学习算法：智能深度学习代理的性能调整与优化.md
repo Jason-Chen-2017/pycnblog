@@ -177,12 +177,10 @@ $$
 梯度下降算法的更新公式为：
 
 $$
-\theta = \theta - \alpha \
-abla_{\theta}L(\theta)
+\theta = \theta - \alpha \nabla_{\theta}L(\theta)
 $$
 
-其中，$\alpha$为学习率，$\
-abla_{\theta}L(\theta)$为损失函数的梯度。
+其中，$\alpha$为学习率，$\nabla_{\theta}L(\theta)$为损失函数的梯度。
 
 ## 5. 项目实践：代码实例与详细解释说明
 

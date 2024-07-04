@@ -238,7 +238,7 @@ session.execute("""
 
 # 插入数据
 session.execute("""
-    INSERT INTO mykeyspace.users (user_id, username, email) 
+    INSERT INTO mykeyspace.users (user_id, username, email)
     VALUES (uuid4(), 'zen', 'zen@example.com');
 """)
 ```

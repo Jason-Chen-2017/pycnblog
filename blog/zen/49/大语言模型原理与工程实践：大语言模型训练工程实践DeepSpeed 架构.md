@@ -97,27 +97,23 @@ $$L(\theta) = \frac{1}{N} \sum_{i=1}^N \mathcal{L}(y_i, \hat{y}_i)$$
 
 梯度计算：
 
-$$\
-abla_\theta L(\theta) = \frac{\partial L(\theta)}{\partial \theta}$$
+$$\nabla_\theta L(\theta) = \frac{\partial L(\theta)}{\partial \theta}$$
 
 其中，
 
-- $\
-abla_\theta L(\theta)$为损失函数关于参数$\theta$的梯度，
+- $\nabla_\theta L(\theta)$为损失函数关于参数$\theta$的梯度，
 - $\partial L(\theta)$为损失函数对参数$\theta$的偏导数。
 
 优化器更新：
 
-$$\theta_{t+1} = \theta_t - \alpha \cdot \
-abla_\theta L(\theta_t)$$
+$$\theta_{t+1} = \theta_t - \alpha \cdot \nabla_\theta L(\theta_t)$$
 
 其中，
 
 - $\theta_{t+1}$为更新后的参数，
 - $\theta_t$为当前参数，
 - $\alpha$为学习率，
-- $\
-abla_\theta L(\theta_t)$为当前梯度。
+- $\nabla_\theta L(\theta_t)$为当前梯度。
 
 ### 4.3 案例分析与讲解
 

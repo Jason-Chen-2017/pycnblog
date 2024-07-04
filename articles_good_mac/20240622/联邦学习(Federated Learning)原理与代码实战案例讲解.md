@@ -95,8 +95,7 @@
 
 设参与者$i$的本地损失函数为$L_i(w)$，其中$w$是模型参数，$\\eta$是学习率，则参与者$i$的梯度更新规则为：
 
-$$ \\Delta w_i = -\\eta \\cdot \
-abla L_i(w) $$
+$$ \\Delta w_i = -\\eta \\cdot \nabla L_i(w) $$
 
 ### 4.2 公式推导过程
 
@@ -108,10 +107,7 @@ $$ w_{global} = \\frac{\\sum_{i=1}^N w_i + \\Delta w_i}{N} $$
 
 假设我们有一个包含三个参与者的联邦学习场景，参与者分别拥有不同的数据集。中央服务器收到的参数更新为：
 
-$$ \\Delta w_1 = -\\eta \\cdot \
-abla L_1(w), \\quad \\Delta w_2 = -\\eta \\cdot \
-abla L_2(w), \\quad \\Delta w_3 = -\\eta \\cdot \
-abla L_3(w) $$
+$$ \\Delta w_1 = -\\eta \\cdot \nabla L_1(w), \\quad \\Delta w_2 = -\\eta \\cdot \nabla L_2(w), \\quad \\Delta w_3 = -\\eta \\cdot \nabla L_3(w) $$
 
 中央服务器将这些参数进行加权平均：
 

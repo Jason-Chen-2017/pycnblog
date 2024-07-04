@@ -88,14 +88,14 @@ class DQN(nn.Module):
         self.conv3 = nn.Conv2d(64, 64, kernel_size=3, stride=1)
         self.fc1 = nn.Linear(self.feature_size(input_shape), 512)
         self.fc2 = nn.Linear(512, num_actions)
-        
+
     def feature_size(self, input_shape):
         x = Variable(torch.zeros(1, *input_shape))
         x = F.relu(self.conv1(x))
         x = F.relu(self.conv2(x))
         x = F.relu(self.conv3(x))
         return x.view(1, -1).size(1)
-    
+
     def forward(self, x):
         x = F.relu(self.conv1(x))
         x = F.relu(self.conv2(x))
@@ -111,7 +111,7 @@ for episode in range(num_episodes):
     state = env.reset()
     done = False
     total_reward = 0
-    
+
     while not done:
         epsilon = max(epsilon_final, epsilon_start - episode / epsilon_decay)
         action = agent.get_action(state, epsilon)
@@ -119,10 +119,10 @@ for episode in range(num_episodes):
         agent.memory.push(state, action, reward, next_state, done)
         state = next_state
         total_reward += reward
-        
+
         if len(agent.memory) >= batch_size:
             agent.update(batch_size)
-            
+
     if episode % 100 == 0:
         print(f'Episode: {episode}, Total Reward: {total_reward}, Epsilon: {epsilon}')
 ```

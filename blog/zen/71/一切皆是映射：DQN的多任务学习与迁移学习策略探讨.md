@@ -178,7 +178,7 @@ class MultiTaskDQN:
         self.shared_layers = shared_layers
         self.task_specific_layers = task_specific_layers
         self.build_model()
-        
+
     def build_model(self):
         # 构建共享层和任务特定层
         ...
@@ -186,7 +186,7 @@ class MultiTaskDQN:
     def train(self, episodes):
         for _ in range(episodes):
             ...
-            
+
     def evaluate(self):
         ...
 ```

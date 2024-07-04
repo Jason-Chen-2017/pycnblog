@@ -42,7 +42,7 @@ Giraph使用"分割边"的方式将图数据分布到不同的工作节点上。
 ### 3.3 消息传递机制
 顶点之间通过消息进行通信。在一个超步中,每个顶点可以给其他顶点发送任意数量的消息。消息会在下一个超步中被目标顶点接收和处理。Giraph采用"组合器"(Combiner)机制对发往同一目标顶点的消息进行本地聚合,减少网络传输开销。
 
-### 3.4 同步与终止条件  
+### 3.4 同步与终止条件
 BSP模型要求所有顶点在每个超步结束时进行同步。只有当所有顶点都完成了当前超步的计算,系统才能进入下一个超步。同步由Giraph框架自动完成,用户无需关心。
 
 当满足以下条件之一时,Giraph作业终止:
@@ -57,7 +57,7 @@ BSP模型要求所有顶点在每个超步结束时进行同步。只有当所�
 
 邻接矩阵A是一个n×n的方阵(n为顶点数),定义如下:
 
-$A_{ij} = \begin{cases} 1, & \text{if } (i,j) \in E \\ 0, & \text{otherwise} \end{cases}$
+$A_{ij} = \begin{cases} 1, & \text{if } (i,j) \in E \ 0, & \text{otherwise} \end{cases}$
 
 邻接表则使用链表数组来表示图。对于每个顶点i,邻接表存储其所有邻接顶点的列表。
 
@@ -129,7 +129,7 @@ public class SSSPRunner {
         conf.set(GiraphConstants.EDGE_VALUE_CLASS, DoubleWritable.class);
         conf.set(GiraphConstants.MESSAGE_VALUE_CLASS, DoubleWritable.class);
         conf.set(GiraphConstants.SOURCE_VERTEX, "1");
-        
+
         GiraphRunner.run(conf, args);
     }
 }

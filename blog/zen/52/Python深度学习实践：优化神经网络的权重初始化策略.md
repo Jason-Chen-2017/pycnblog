@@ -14,7 +14,7 @@
 ### 2.1 神经网络的基本组成
 神经网络由大量的神经元组成,通过这些神经元的连接和信息传递来实现学习。每个神经元接收来自上一层神经元的加权输入,经过非线性变换后输出到下一层。因此,网络权重的初始值直接决定了信息在网络中的流动。
 
-### 2.2 前向传播与反向传播 
+### 2.2 前向传播与反向传播
 - 前向传播：输入数据经过逐层的加权变换和非线性映射,得到网络的预测输出。
 - 反向传播：根据预测输出和真实标签的差异,计算损失函数对各层权重的梯度,并用梯度下降等优化算法更新权重。
 
@@ -36,7 +36,7 @@ A[神经网络] --> B[前向传播]
 A --> C[反向传播]
 B --> D[权重初始化]
 C --> D
-D --> E[梯度消失] 
+D --> E[梯度消失]
 D --> F[梯度爆炸]
 D --> G[激活函数]
 ```
@@ -56,7 +56,7 @@ $$
 为了使 $Var(a_{l+1}) = Var(a_l)$,可得:
 
 $$
-n_l \cdot Var(w_l) = 1 \quad\Rightarrow\quad Var(w_l) = \frac{1}{n_l} 
+n_l \cdot Var(w_l) = 1 \quad\Rightarrow\quad Var(w_l) = \frac{1}{n_l}
 $$
 
 类似地,在反向传播中,为了使梯度的方差保持稳定,可推导出:
@@ -90,7 +90,7 @@ $$
 类似可推导出,在反向传播中:
 
 $$
-Var(w_l) = \frac{2}{n_{l+1}} 
+Var(w_l) = \frac{2}{n_{l+1}}
 $$
 
 He初始化取前向和反向传播的均值,得到权重方差:
@@ -99,7 +99,7 @@ $$
 Var(w_l) = \frac{2}{n_l}
 $$
 
-#### 3.2.3 初始化步骤 
+#### 3.2.3 初始化步骤
 1. 确定每层权重张量的形状 $(n_l, n_{l+1})$。
 2. 从均值为0、方差为 $\frac{2}{n_l}$ 的高斯分布或均匀分布中采样得到初始权重值。
 3. 对网络的每一层权重执行步骤1和2。
@@ -110,7 +110,7 @@ $$
 
 - 均匀分布 $U(a,b)$:
 $$
-f(x) = \begin{cases} 
+f(x) = \begin{cases}
 \frac{1}{b-a}, & a \leq x \leq b \\
 0, & \text{otherwise}
 \end{cases}
@@ -182,7 +182,7 @@ model = Sequential([
 
 ### 5.2 He初始化示例
 ```python
-from tensorflow.keras.layers import Dense 
+from tensorflow.keras.layers import Dense
 from tensorflow.keras.initializers import HeNormal
 
 model = Sequential([

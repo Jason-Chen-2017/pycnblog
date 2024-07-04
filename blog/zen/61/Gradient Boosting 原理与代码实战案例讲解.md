@@ -7,14 +7,14 @@
 #### 1.1.1 Bagging与Boosting的区别
 #### 1.1.2 Boosting的思想与优势
 #### 1.1.3 Boosting算法的发展历程
-### 1.2 Gradient Boosting的起源与发展 
+### 1.2 Gradient Boosting的起源与发展
 #### 1.2.1 Gradient Boosting的提出
 #### 1.2.2 Gradient Boosting的早期应用
 #### 1.2.3 Gradient Boosting的后续改进
 
 ## 2. 核心概念与联系
 ### 2.1 Gradient Boosting的基本原理
-#### 2.1.1 加法模型与前向分步算法  
+#### 2.1.1 加法模型与前向分步算法
 #### 2.1.2 负梯度拟合的思想
 #### 2.1.3 Gradient Boosting的损失函数
 ### 2.2 决策树在Gradient Boosting中的应用
@@ -31,9 +31,9 @@
 #### 3.1.1 回归问题的提出与损失函数选择
 #### 3.1.2 回归算法的具体步骤
 #### 3.1.3 回归树的拟合与优化
-### 3.2 Gradient Boosting分类算法 
+### 3.2 Gradient Boosting分类算法
 #### 3.2.1 分类问题的提出与损失函数选择
-#### 3.2.2 分类算法的具体步骤 
+#### 3.2.2 分类算法的具体步骤
 #### 3.2.3 分类树的拟合与优化
 ### 3.3 Gradient Boosting的重要参数与调优
 #### 3.3.1 树的数量、深度与学习率
@@ -120,7 +120,7 @@ dtest = xgb.DMatrix(X_test, label=y_test)
 
 params = {
     'objective': 'binary:logistic',
-    'max_depth': 3, 
+    'max_depth': 3,
     'learning_rate': 0.1,
     'n_estimators': 100,
     'subsample': 0.8,
@@ -137,13 +137,13 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 y_pred = model.predict(dtest)
 y_pred = [1 if y > 0.5 else 0 for y in y_pred]
 
-acc = accuracy_score(y_test, y_pred) 
+acc = accuracy_score(y_test, y_pred)
 precision = precision_score(y_test, y_pred)
 recall = recall_score(y_test, y_pred)
 f1 = f1_score(y_test, y_pred)
 
 print(f"Accuracy: {acc:.4f}")
-print(f"Precision: {precision:.4f}") 
+print(f"Precision: {precision:.4f}")
 print(f"Recall: {recall:.4f}")
 print(f"F1-score: {f1:.4f}")
 
@@ -158,13 +158,13 @@ plt.show()
 #### 6.1.1 信用评分卡模型
 #### 6.1.2 反欺诈模型
 #### 6.1.3 贷款违约预测
-### 6.2 Gradient Boosting在推荐系统领域的应用  
+### 6.2 Gradient Boosting在推荐系统领域的应用
 #### 6.2.1 点击率预估模型
 #### 6.2.2 用户购买预测模型
 #### 6.2.3 个性化推荐排序模型
 ### 6.3 Gradient Boosting在医疗健康领域的应用
 #### 6.3.1 疾病诊断预测模型
-#### 6.3.2 药物疗效预测模型 
+#### 6.3.2 药物疗效预测模型
 #### 6.3.3 医疗费用预测模型
 
 ## 7. 工具和资源推荐

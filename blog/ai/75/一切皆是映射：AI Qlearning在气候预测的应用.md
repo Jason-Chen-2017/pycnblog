@@ -184,7 +184,7 @@ class Environment:
     def __init__(self, maze):
         self.maze = maze
         self.position = [0, 0]
-    
+
     def step(self, action):
         x, y = self.position
         if action == 0:  # 上
@@ -197,17 +197,17 @@ class Environment:
             y += 1
         else:
             raise ValueError("Invalid action")
-        
+
         if x < 0 or y < 0 or x >= len(self.maze) or y >= len(self.maze[0]):
             raise ValueError("Out of bounds")
-        
+
         reward = -1
         if self.position == [len(self.maze) - 1, len(self.maze[0]) - 1]:
             reward = 10
-        
+
         self.position = [x, y]
         return self.position, reward
-    
+
     def reset(self):
         self.position = [0, 0]
         return self.position
@@ -220,7 +220,7 @@ class QLearning:
         self.alpha = alpha
         self.gamma = gamma
         self.q_table = np.zeros((num_states, num_actions))
-    
+
     def choose_action(self, state):
         epsilon = random.random()
         if epsilon > 0.9:
@@ -228,7 +228,7 @@ class QLearning:
         else:
             action = np.argmax(self.q_table[state])
         return action
-    
+
     def update(self, state, action, reward, next_state):
         next_max = np.max(self.q_table[next_state])
         self.q_table[state][action] += self.alpha * (reward + self.gamma * next_max - self.q_table[state][action])

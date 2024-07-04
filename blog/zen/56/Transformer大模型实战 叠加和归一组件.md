@@ -22,7 +22,7 @@ Transformer大模型是一种基于自注意力机制的深度学习模型，由
 自注意力机制是 Transformer 大模型的核心，它允许模型在计算期间自动选择重要的输入信息。自注意力机制可以通过计算每个输入的权重来实现，这些权重反映了输入之间的相关性。
 
 $$
-\\text{Attention}(Q, K, V) = \\text{softmax}(\\frac{QK^T}{\\sqrt{d_k}})V
+\text{Attention}(Q, K, V) = \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V
 $$
 
 其中，$Q$ 是查询向量，$K$ 是键向量，$V$ 是值向量，$d_k$ 是键向量的维度。
@@ -32,10 +32,10 @@ $$
 位置编码是一种用于表示输入序列位置信息的方法，它可以帮助模型在计算期间更好地理解输入序列的位置信息。位置编码可以通过计算 sin 和 cos 函数来实现，如下所示：
 
 $$
-\\text{pos\\_encoding}(pos, 2i) = \\sin(pos/10000^{2i/d})
+\text{pos\_encoding}(pos, 2i) = \sin(pos/10000^{2i/d})
 $$
 $$
-\\text{pos\\_encoding}(pos, 2i+1) = \\cos(pos/10000^{2i/d})
+\text{pos\_encoding}(pos, 2i+1) = \cos(pos/10000^{2i/d})
 $$
 
 其中，$pos$ 是位置编码的位置，$i$ 是编码的维度。
@@ -45,10 +45,10 @@ $$
 多头自注意力机制是一种用于提高 Transformer 大模型的性能的方法，它允许模型同时计算多个自注意力向量。多头自注意力机制可以通过计算多个查询、键和值向量来实现，如下所示：
 
 $$
-\\text{MultiHead}(Q, K, V) = \\text{Concat}(h_1, h_2, ..., h_h)W^O
+\text{MultiHead}(Q, K, V) = \text{Concat}(h_1, h_2, ..., h_h)W^O
 $$
 $$
-h_i = \\text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
+h_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
 $$
 
 其中，$h_i$ 是第 $i$ 个头的自注意力向量，$h$ 是所有头的自注意力向量的concatenation，$W_i^Q, W_i^K, W_i^V$ 是第 $i$ 个头的查询、键和值权重矩阵，$W^O$ 是输出权重矩阵。

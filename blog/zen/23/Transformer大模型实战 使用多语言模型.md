@@ -1,4 +1,4 @@
-                 
+
 # Transformer大模型实战 使用多语言模型
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -104,8 +104,8 @@ $$
 1. **线性变换**：输入$x$经过两次全连接层得到Q、K、V三组输出。
 
 $$
-Q = W^Q * x \\
-K = W^K * x \\
+Q = W^Q * x \
+K = W^K * x \
 V = W^V * x
 $$
 

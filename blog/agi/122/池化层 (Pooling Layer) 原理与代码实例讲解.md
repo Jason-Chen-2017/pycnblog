@@ -163,7 +163,7 @@ A：最大池化只保留窗口内的最大值，而平均池化则是取窗口�
 
 2. 创建并激活虚拟环境：
 ```bash
-conda create -n pytorch-env python=3.8 
+conda create -n pytorch-env python=3.8
 conda activate pytorch-env
 ```
 

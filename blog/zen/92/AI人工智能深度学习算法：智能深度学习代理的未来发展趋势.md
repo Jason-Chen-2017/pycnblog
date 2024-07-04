@@ -122,9 +122,9 @@ graph LR
 
 $$
 \begin{align*}
-f(x) & = \text{特征提取模型}(x) \\
-Q(s, a) & = \text{决策模型}(s, f(x)) \\
-R(s, a) & = \text{奖励函数}(s, a) \\
+f(x) & = \text{特征提取模型}(x) \
+Q(s, a) & = \text{决策模型}(s, f(x)) \
+R(s, a) & = \text{奖励函数}(s, a) \
 \end{align*}
 $$
 

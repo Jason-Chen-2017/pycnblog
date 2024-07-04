@@ -291,5 +291,5 @@ public class SceneController {
 
 <end_of_turn>
 <end_of_turn>
-    
+
 <end_of_turn>

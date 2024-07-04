@@ -101,13 +101,13 @@ def loss(t, a):
 def objective(params):
     # 更新元学习模型的参数
     meta_model.set_weights(params)
-    
+
     # 计算总损失
     total_loss = 0
     for t in tasks:
         a = meta_model.predict(t)
         total_loss += loss(t, a)
-    
+
     return total_loss
 
 # 使用优化算法进行搜索

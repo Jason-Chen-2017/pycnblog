@@ -161,7 +161,7 @@ export PATH=$PATH:$HIVE_HOME/bin
 4. 启动Hive服务：执行以下命令启动Hive服务：
 
 ```bash
-hive --service metastore & 
+hive --service metastore &
 hive --service hiveserver2 &
 ```
 

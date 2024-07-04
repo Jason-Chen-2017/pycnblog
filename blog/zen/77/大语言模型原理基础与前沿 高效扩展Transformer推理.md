@@ -42,7 +42,7 @@ Transformer是一种革命性的序列到序列(Seq2Seq)模型架构,它完全�
 
 - 核心概念与联系
 - 核心算法原理与具体操作步骤
-- 数学模型和公式详细讲解与案例分析  
+- 数学模型和公式详细讲解与案例分析
 - 项目实践:代码实例和详细解释
 - 实际应用场景分析
 - 工具和资源推荐
@@ -120,8 +120,8 @@ Transformer模型的核心算法是**自注意力机制(Self-Attention)**,它能
 
    $$
    \begin{aligned}
-   Q &= [q_1, q_2, q_3, q_4] = X \cdot W_Q \\
-   K &= [k_1, k_2, k_3, k_4] = X \cdot W_K \\
+   Q &= [q_1, q_2, q_3, q_4] = X \cdot W_Q \
+   K &= [k_1, k_2, k_3, k_4] = X \cdot W_K \
    V &= [v_1, v_2, v_3, v_4] = X \cdot W_V
    \end{aligned}
    $$

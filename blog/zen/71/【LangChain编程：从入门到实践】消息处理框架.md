@@ -94,19 +94,19 @@ LangChain LMF通过以下数学模型构建：
 
 设$M$为消息队列，$m_i$为第$i$个消息，$W$为等待时间，$T$为处理时间，则消息队列中的消息处理过程可以表示为：
 
-\[ W = \begin{cases} 
+$$ W = \begin{cases}
       \text{队列空} & \text{如果没有新消息到达} \\
       \text{消息到达时间} + \text{处理时间} & \text{如果消息到达并被处理}
-   \end{cases} \]
+   \end{cases} $$
 
 #### 消息确认模型
 
 设$C$为消息确认，$S$为消息状态，则消息确认过程可以表示为：
 
-\[ C = \begin{cases} 
+$$ C = \begin{cases}
       \text{失败} & \text{如果消息处理失败} \\
       \text{成功} & \text{如果消息处理成功并被确认}
-   \end{cases} \]
+   \end{cases} $$
 
 ### 4.2 公式推导过程
 
@@ -114,7 +114,7 @@ LangChain LMF通过以下数学模型构建：
 
 设$N$为消息队列长度，$L$为平均处理速率，则消息队列长度$N$随时间$t$的变化可以表示为：
 
-\[ N(t) = \frac{L \cdot t}{\lambda} \]
+$$ N(t) = \frac{L \cdot t}{\lambda} $$
 
 其中，$\lambda$为消息到达率。
 
@@ -122,7 +122,7 @@ LangChain LMF通过以下数学模型构建：
 
 设$P$为消息确认率，则消息确认次数$C$随消息处理次数$m$的变化可以表示为：
 
-\[ C(m) = P \cdot m \]
+$$ C(m) = P \cdot m $$
 
 ### 4.3 案例分析与讲解
 

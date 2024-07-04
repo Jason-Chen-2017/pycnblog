@@ -180,8 +180,8 @@ $$
 
 $$
  r(s,a) = \begin{cases}
-  1, & \text{if win} \\
-  -1, & \text{if lose} \\
+  1, & \text{if win} \
+  -1, & \text{if lose} \
   0, & \text{otherwise}
 \end{cases}
 $$

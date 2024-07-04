@@ -162,7 +162,7 @@ A3：Pig支持自定义函数，但需要编写Java代码。
 ```python
 -- 定义输入和输出数据格式
 A = load 'data.txt' using PigStorage('\t');
-B = foreach A generate flatten(TOKENIZE(regexp_replace($0, '\\W+', ' '))) as word;
+B = foreach A generate flatten(TOKENIZE(regexp_replace($0, '\W+', ' '))) as word;
 C = group B by word;
 D = foreach C generate group, count(B) as count;
 dump D;

@@ -96,7 +96,7 @@ $$ \frac{\partial z^{[l]}}{\partial W^{[l]}} = a^{[l-1]} \cdot (1 - a^{[l-1]}) $
 
 对于激活函数ReLU：
 
-$$ \frac{\partial z^{[l]}}{\partial W^{[l]}} = \begin{cases} 
+$$ \frac{\partial z^{[l]}}{\partial W^{[l]}} = \begin{cases}
 a^{[l-1]} & \text{if } a^{[l-1]} > 0 \\
 0 & \text{otherwise}
 \end{cases} $$

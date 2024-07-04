@@ -110,12 +110,12 @@ HBase适用于以下应用领域：
 HBase的数据模型可以构建为一个多维数组，其中行键、列族、列限定符和单元格构成数组的索引。
 
 $$
-HBase = \\begin{pmatrix}
-    \\text{单元格1} & \\text{单元格2} & \\cdots & \\text{单元格n} \\\\
-    \\text{单元格1} & \\text{单元格2} & \\cdots & \\text{单元格n} \\\\
-    \\vdots & \\vdots & \\ddots & \\vdots \\\\
-    \\text{单元格1} & \\text{单元格2} & \\cdots & \\text{单元格n}
-\\end{pmatrix}
+HBase = \begin{pmatrix}
+    \text{单元格1} & \text{单元格2} & \cdots & \text{单元格n} \\\
+    \text{单元格1} & \text{单元格2} & \cdots & \text{单元格n} \\\
+    \vdots & \vdots & \ddots & \vdots \\\
+    \text{单元格1} & \text{单元格2} & \cdots & \text{单元格n}
+\end{pmatrix}
 $$
 
 其中，每个单元格可以存储一个值，以及对应的版本信息。
@@ -193,29 +193,29 @@ public class HBaseExample {
     public static void main(String[] args) throws IOException {
         // 配置HBase连接
         Configuration config = HBaseConfiguration.create();
-        config.set(\"hbase.zookeeper.quorum\", \"localhost\");
-        config.set(\"hbase.zookeeper.property.clientPort\", \"2181\");
+        config.set("hbase.zookeeper.quorum", "localhost");
+        config.set("hbase.zookeeper.property.clientPort", "2181");
 
         // 获取HBase连接
         try (Connection connection = ConnectionFactory.createConnection(config)) {
             // 获取表对象
-            Table table = connection.getTable(TableName.valueOf(\"User\"));
+            Table table = connection.getTable(TableName.valueOf("User"));
 
             // 创建Get对象
-            Get get = new Get(\"user1\".getBytes());
+            Get get = new Get("user1".getBytes());
 
             // 添加列限定符
-            get.addColumn(\"基本信息\".getBytes(), \"姓名\".getBytes());
+            get.addColumn("基本信息".getBytes(), "姓名".getBytes());
 
             // 执行查询
             Result result = table.get(get);
 
             // 获取值
-            byte[] value = result.getValue(\"基本信息\".getBytes(), \"姓名\".getBytes());
+            byte[] value = result.getValue("基本信息".getBytes(), "姓名".getBytes());
             String name = new String(value);
 
             // 输出结果
-            System.out.println(\"Name: \" + name);
+            System.out.println("Name: " + name);
 
             // 关闭表对象
             table.close();
@@ -287,9 +287,9 @@ HBase适用于关键业务场景，例如：
 
 ### 7.3 相关论文推荐
 
-1. \"HBase: The Definitive Guide\"：作者：Lars George,larsgeorge
+1. "HBase: The Definitive Guide"：作者：Lars George,larsgeorge
    - 这篇论文详细介绍了HBase的设计和实现，是了解HBase原理的重要文献。
-2. \"The HBase Storage Model\"：作者：The Apache HBase Project
+2. "The HBase Storage Model"：作者：The Apache HBase Project
    - 这篇论文探讨了HBase的存储模型，包括数据结构、索引和查询优化等。
 
 ### 7.4 其他资源推荐

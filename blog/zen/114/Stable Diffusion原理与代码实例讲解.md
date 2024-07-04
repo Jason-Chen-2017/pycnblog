@@ -49,7 +49,7 @@ Stable Diffusion的核心概念主要包括:
 
 这些概念相互关联、相辅相成,共同构建了Stable Diffusion强大的生成能力。
 
-## 3. 核心算法原理及具体操作步骤  
+## 3. 核心算法原理及具体操作步骤
 
 ### 3.1 算法原理概述
 
@@ -59,7 +59,7 @@ Stable Diffusion算法的核心思想是通过学习从纯噪声到真实图像�
 2. **反向扩散过程**: 从纯噪声开始,通过学习的去噪模型(如U-Net)逐步去噪,最终生成图像。
 3. **引导过程**: 在反向扩散过程中,通过注入人工噪声(Classifier-Free Guidance),使生成图像更符合用户意图。
 
-### 3.2 算法步骤详解 
+### 3.2 算法步骤详解
 
 1. **正向扩散过程**:
    - 输入真实图像 $x_0$
@@ -89,7 +89,7 @@ Stable Diffusion算法的核心思想是通过学习从纯噪声到真实图像�
 **优点**:
 
 - 生成图像质量高、细节丰富
-- 生成过程稳定,结果多样性好  
+- 生成过程稳定,结果多样性好
 - 支持文本描述等条件信息引导生成
 - 训练相对简单,无需对抗训练
 
@@ -105,7 +105,7 @@ Stable Diffusion算法的核心思想是通过学习从纯噪声到真实图像�
 Stable Diffusion可以应用于以下领域:
 
 - 艺术创作: 辅助艺术家创作插画、概念画等
-- 视觉设计: 生成logo、图标、界面元素等设计素材 
+- 视觉设计: 生成logo、图标、界面元素等设计素材
 - 游戏开发: 生成游戏角色、场景等资源
 - 科研可视化: 生成科学实验、理论模型的可视化图像
 - 教育辅助: 生成教学素材,增强教学体验
@@ -119,7 +119,7 @@ Stable Diffusion的核心是学习从噪声 $x_T$ 到图像 $x_0$ 的映射 $p_\
 
 $$
 \begin{aligned}
-\log p_\theta(x_0) &\geq \mathbb{E}_{q(x_{1:T}|x_0,x_T)}\left[\log\frac{p_\theta(x_{0:T})}{q(x_{1:T}|x_0,x_T)}\right] \\
+\log p_\theta(x_0) &\geq \mathbb{E}_{q(x_{1:T}|x_0,x_T)}\left[\log\frac{p_\theta(x_{0:T})}{q(x_{1:T}|x_0,x_T)}\right] \
 &= \mathbb{E}_{q(x_{1:T}|x_0,x_T)}\left[\sum_{t=2}^T\log\frac{p_\theta(x_{t-1}|x_t)p_\theta(x_T)}{q(x_t|x_{t-1},x_T)}\right]
 \end{aligned}
 $$
@@ -150,7 +150,7 @@ $$
 
 $$
 \begin{aligned}
-q(x_{t}|x_{t-1}) &= \mathcal{N}(x_t; \sqrt{\bar{\alpha}_{t-1}}x_{t-1}, (1-\bar{\alpha}_{t-1})\mathbf{I}) \\
+q(x_{t}|x_{t-1}) &= \mathcal{N}(x_t; \sqrt{\bar{\alpha}_{t-1}}x_{t-1}, (1-\bar{\alpha}_{t-1})\mathbf{I}) \
 &= \mathcal{N}(x_t; \sqrt{\alpha_t}\sqrt{\bar{\alpha}_{t-1}}x_0 + \sqrt{1-\alpha_t}\sqrt{\bar{\alpha}_{t-1}}\epsilon_{t-1}, (1-\bar{\alpha}_{t-1})\mathbf{I})
 \end{aligned}
 $$
@@ -161,8 +161,8 @@ $$
 
 $$
 \begin{aligned}
-\mu_\theta(x_t, t) &= \mathbb{E}_{p_\theta(x_{t-1}|x_t)}[x_{t-1}] \\
-&= \mathbb{E}_{p_\theta(x_{t-1}|x_t)}\left[\frac{x_t - \sqrt{1-\alpha_t}\epsilon_t}{\sqrt{\alpha_t}}\right] \\
+\mu_\theta(x_t, t) &= \mathbb{E}_{p_\theta(x_{t-1}|x_t)}[x_{t-1}] \
+&= \mathbb{E}_{p_\theta(x_{t-1}|x_t)}\left[\frac{x_t - \sqrt{1-\alpha_t}\epsilon_t}{\sqrt{\alpha_t}}\right] \
 &= \frac{1}{\sqrt{\alpha_t}}(x_t - \sqrt{1-\alpha_t}\epsilon_\theta(x_t, t))
 \end{aligned}
 $$
@@ -200,10 +200,10 @@ from diffusers import StableDiffusionPipeline
 pipe = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5")
 
 # 设置guidance scale
-pipe.scheduler.set_guidance_scale(7.5)  
+pipe.scheduler.set_guidance_scale(7.5)
 
 # 生成图像
-image = pipe("a cute puppy playing on the grass")["sample"][0]  
+image = pipe("a cute puppy playing on the grass")["sample"][0]
 
 # 保存图像
 image.save("puppy.png")

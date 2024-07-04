@@ -1,7 +1,7 @@
 
 # AI代理与工作流自动化：提高业务效率
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 关键词
@@ -192,7 +192,7 @@ class LinearRegression(nn.Module):
     def __init__(self, input_size, output_size):
         super(LinearRegression, self).__init__()
         self.linear = nn.Linear(input_size, output_size)
-    
+
     def forward(self, x):
         out = self.linear(x)
         return out
@@ -206,7 +206,7 @@ for epoch in range(100):
     # 前向传播
     output = model(x)
     loss = nn.MSELoss()(output, y)
-    
+
     # 反向传播和优化
     optimizer.zero_grad()
     loss.backward()
@@ -232,7 +232,7 @@ class CNN(nn.Module):
         self.conv2 = nn.Conv2d(10, 20, kernel_size=5)
         self.fc1 = nn.Linear(320, 50)
         self.fc2 = nn.Linear(50, 10)
-    
+
     def forward(self, x):
         x = nn.functional.relu(self.conv1(x))
         x = nn.functional.max_pool2d(x, 2)

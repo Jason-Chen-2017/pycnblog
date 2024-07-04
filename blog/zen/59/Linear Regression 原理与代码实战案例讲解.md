@@ -142,7 +142,7 @@ $$X = \begin{bmatrix}
 1 & 60 \\
 1 & 70 \\
 1 & 80 \\
-1 & 90 
+1 & 90
 \end{bmatrix}, Y = \begin{bmatrix}
 100 \\
 120 \\

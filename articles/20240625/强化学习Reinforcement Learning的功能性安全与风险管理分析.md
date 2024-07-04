@@ -162,8 +162,7 @@ $$
 4. **梯度下降**：
 
 $$
-\theta = \theta - \alpha \cdot \
-abla_{\theta}L
+\theta = \theta - \alpha \cdot \nabla_{\theta}L
 $$
 
 其中，$\theta$ 表示神经网络参数，$\alpha$ 表示学习率。

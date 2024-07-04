@@ -272,5 +272,5 @@ AIGC技术应用场景非常广泛，包括内容创作、教育、娱乐、营�
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

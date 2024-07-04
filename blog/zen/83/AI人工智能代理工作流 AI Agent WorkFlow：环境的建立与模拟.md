@@ -218,12 +218,12 @@ class Agent:
     def __init__(self):
         # 初始化神经网络模型
         self.model = ...
-    
+
     def sense(self, observation):
         # 处理感知信息
         ...
         return processed_observation
-    
+
     def decide(self, observation):
         # 根据观察结果进行决策
         processed_observation = self.sense(observation)
@@ -235,7 +235,7 @@ class TaskDecomposition:
     def __init__(self):
         # 初始化任务分解规则
         self.rules = ...
-    
+
     def decompose(self, task):
         # 根据任务分解规则进行分解
         ...
@@ -245,7 +245,7 @@ class TaskDecomposition:
 class WorkflowManager:
     def __init__(self, tasks):
         self.tasks = tasks
-    
+
     def execute(self):
         for task in self.tasks:
             # 执行任务

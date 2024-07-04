@@ -1,6 +1,6 @@
 # AI工程学：大模型应用开发实战：AI Agent代理
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 ## 1. 背景介绍
 
@@ -361,4 +361,4 @@ AI Agent 技术也面临着一些挑战，例如：
 * **Q: AI Agent 的未来发展方向是什么？**
 * **A:** AI Agent 的未来发展方向是更加智能化、更加自主化、更加适应环境变化、更加人性化。
 
-**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming** 
+**作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming**

@@ -116,11 +116,11 @@ $$ T'^{ij} = \sum_{k=1}^n \sum_{l=1}^n A^i_k A^j_l T^{kl} $$
 
 假设两个二阶共变张量`T`和`S`在标准坐标系下的表示分别为：
 
-$$ T = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}, \quad S = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix} $$
+$$ T = \begin{pmatrix} 1 & 2 \ 3 & 4 \end{pmatrix}, \quad S = \begin{pmatrix} 5 & 6 \ 7 & 8 \end{pmatrix} $$
 
 它们的加法运算结果为：
 
-$$ T + S = \begin{pmatrix} 6 & 8 \\ 10 & 12 \end{pmatrix} $$
+$$ T + S = \begin{pmatrix} 6 & 8 \ 10 & 12 \end{pmatrix} $$
 
 #### 常见问题解答
 

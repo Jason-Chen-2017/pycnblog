@@ -49,7 +49,7 @@ Gibbs采样的算法步骤如下：
 
 $$
 \Sigma = \begin{bmatrix}
-1 & 0.5 \\
+1 & 0.5 \
 0.5 & 1
 \end{bmatrix}
 $$

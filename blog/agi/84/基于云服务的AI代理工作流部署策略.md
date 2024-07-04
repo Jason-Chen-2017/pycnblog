@@ -141,9 +141,9 @@ $$
 
 $$
 \begin{align*}
-\max_{r_i, b_i, s_i} & \quad \text{部署效率} \\
-\text{s.t.} & \quad r_i \leq R \\
-& \quad b_i \leq B \\
+\max_{r_i, b_i, s_i} & \quad \text{部署效率} \
+\text{s.t.} & \quad r_i \leq R \
+& \quad b_i \leq B \
 & \quad s_i \leq S
 \end{align*}
 $$
@@ -198,15 +198,15 @@ $$
 
 $$
 \begin{align*}
-\max_{r_i, b_i, s_i} & \quad \text{部署效率} \\
-\text{s.t.} & \quad r_1 \leq 10 \\
-& \quad b_1 \leq 8 \\
-& \quad s_1 \leq 6 \\
-& \quad r_2 \leq 10 \\
-& \quad b_2 \leq 8 \\
-& \quad s_2 \leq 6 \\
-& \quad r_3 \leq 10 \\
-& \quad b_3 \leq 8 \\
+\max_{r_i, b_i, s_i} & \quad \text{部署效率} \
+\text{s.t.} & \quad r_1 \leq 10 \
+& \quad b_1 \leq 8 \
+& \quad s_1 \leq 6 \
+& \quad r_2 \leq 10 \
+& \quad b_2 \leq 8 \
+& \quad s_2 \leq 6 \
+& \quad r_3 \leq 10 \
+& \quad b_3 \leq 8 \
 & \quad s_3 \leq 6
 \end{align*}
 $$

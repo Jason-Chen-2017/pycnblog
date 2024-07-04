@@ -150,11 +150,11 @@ LSTM和GRU的数学模型如下：
 
 $$
 \begin{align*}
-i_t & = \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i) \\
-f_t & = \sigma(W_{xf}x_t + W_{hf}h_{t-1} + b_f) \\
-\tilde{C}_t & = \tanh(W_{xc}x_t + W_{hc}h_{t-1} + b_c) \\
-C_t & = f_t \circ C_{t-1} + i_t \circ \tilde{C}_t \\
-o_t & = \sigma(W_{xo}x_t + W_{ho}h_{t-1} + b_o) \\
+i_t & = \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i) \
+f_t & = \sigma(W_{xf}x_t + W_{hf}h_{t-1} + b_f) \
+\tilde{C}_t & = \tanh(W_{xc}x_t + W_{hc}h_{t-1} + b_c) \
+C_t & = f_t \circ C_{t-1} + i_t \circ \tilde{C}_t \
+o_t & = \sigma(W_{xo}x_t + W_{ho}h_{t-1} + b_o) \
 h_t & = o_t \circ \tanh(C_t)
 \end{align*}
 $$
@@ -165,8 +165,8 @@ $$
 
 $$
 \begin{align*}
-z_t & = \sigma(W_{xz}x_t + W_{hz}h_{t-1} + b_z) \\
-r_t & = \sigma(W_{xr}x_t + W_{hr}h_{t-1} + b_r) \\
+z_t & = \sigma(W_{xz}x_t + W_{hz}h_{t-1} + b_z) \
+r_t & = \sigma(W_{xr}x_t + W_{hr}h_{t-1} + b_r) \
 h_t & = (1 - z_t) \circ h_{t-1} + z_t \circ \tanh(W_{xc}x_t + r_t \circ W_{hc}h_{t-1} + b_c)
 \end{align*}
 $$

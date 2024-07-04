@@ -28,7 +28,7 @@
 #### 3.1.1 正则表达式解析
 #### 3.1.2 Grok解析
 #### 3.1.3 代码示例
-### 3.2 日志异常检测算法 
+### 3.2 日志异常检测算法
 #### 3.2.1 统计与阈值检测
 #### 3.2.2 机器学习异常检测
 #### 3.2.3 代码示例
@@ -43,8 +43,8 @@ $$ P(x)=\frac{1}{\sigma \sqrt{2 \pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}} $$
 
 $$
 \begin{aligned}
-\min_{\mathbf{w},\xi,\rho} \quad & \frac{1}{2}\lVert \mathbf{w} \rVert^2 + \frac{1}{\nu n} \sum_{i=1}^n \xi_i - \rho \\
-\textrm{s.t.} \quad & (\mathbf{w} \cdot \Phi(\mathbf{x}_i)) \geq \rho - \xi_i,\\
+\min_{\mathbf{w},\xi,\rho} \quad & \frac{1}{2}\lVert \mathbf{w} \rVert^2 + \frac{1}{\nu n} \sum_{i=1}^n \xi_i - \rho \
+\textrm{s.t.} \quad & (\mathbf{w} \cdot \Phi(\mathbf{x}_i)) \geq \rho - \xi_i,\
 & \xi_i \geq 0, i=1,\ldots,n
 \end{aligned}
 $$
@@ -57,7 +57,7 @@ $$
 ```mermaid
 graph LR
 A[日志源] --> B[Logstash]
-B --> C[Elasticsearch] 
+B --> C[Elasticsearch]
 C --> D[Kibana]
 ```
 #### 5.1.2 Logstash配置详解
@@ -67,7 +67,7 @@ C --> D[Kibana]
 ```mermaid
 graph LR
 A[日志源] --> B[Fluentd]
-B --> C[Kafka] 
+B --> C[Kafka]
 C --> D[ClickHouse]
 D --> E[Grafana]
 ```
@@ -83,7 +83,7 @@ D --> E[Grafana]
 ## 7. 工具和资源推荐
 ### 7.1 日志收集工具
 #### 7.1.1 Fluentd
-#### 7.1.2 Logstash 
+#### 7.1.2 Logstash
 #### 7.1.3 Filebeat
 ### 7.2 日志存储与分析
 #### 7.2.1 Elasticsearch
@@ -105,7 +105,7 @@ D --> E[Grafana]
 
 ## 9. 附录：常见问题与解答
 ### 9.1 如何选择合适的日志收集工具？
-### 9.2 日志存储应该选择关系型数据库还是NoSQL? 
+### 9.2 日志存储应该选择关系型数据库还是NoSQL?
 ### 9.3 结构化与非结构化日志该如何平衡？
 ### 9.4 如何避免过多的无效日志对存储和分析性能的影响？
 

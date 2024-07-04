@@ -155,18 +155,15 @@ AI工程中的数学模型主要包括：
 
 梯度下降法是一种优化算法，用于求解最优化问题。其基本公式如下：
 
-$$\theta_{t+1} = \theta_t - \alpha \cdot \
-abla f(\theta_t)$$
+$$\theta_{t+1} = \theta_t - \alpha \cdot \nabla f(\theta_t)$$
 
-其中，$\theta$是模型参数，$\alpha$是学习率，$f(\theta)$是目标函数，$\
-abla$是梯度。
+其中，$\theta$是模型参数，$\alpha$是学习率，$f(\theta)$是目标函数，$\nabla$是梯度。
 
 #### 4.2.2 随机梯度下降法（SGD）
 
 随机梯度下降法是梯度下降法的一种改进，它使用每个样本的梯度进行更新。其基本公式如下：
 
-$$\theta_{t+1} = \theta_t - \alpha \cdot \
-abla_{x_i} f(\theta_t)$$
+$$\theta_{t+1} = \theta_t - \alpha \cdot \nabla_{x_i} f(\theta_t)$$
 
 其中，$x_i$是当前样本。
 

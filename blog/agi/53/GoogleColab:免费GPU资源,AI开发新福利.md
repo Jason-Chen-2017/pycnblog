@@ -10,7 +10,7 @@
 #### 1.1.3 人工智能的应用领域
 
 ### 1.2 深度学习的崛起
-#### 1.2.1 深度学习的概念与特点 
+#### 1.2.1 深度学习的概念与特点
 #### 1.2.2 深度学习的发展历程
 #### 1.2.3 深度学习的主要模型
 
@@ -83,7 +83,7 @@ $$
 对于时间步$t$，输入$\mathbf{x}_t$，隐藏状态$\mathbf{h}_t$，输出$\mathbf{y}_t$，基本RNN模型可以表示为：
 $$
 \begin{aligned}
-\mathbf{h}_t &= f(\mathbf{W}_{hx}\mathbf{x}_t+\mathbf{W}_{hh}\mathbf{h}_{t-1}+\mathbf{b}_h)\\
+\mathbf{h}_t &= f(\mathbf{W}_{hx}\mathbf{x}_t+\mathbf{W}_{hh}\mathbf{h}_{t-1}+\mathbf{b}_h)\
 \mathbf{y}_t &= g(\mathbf{W}_{yh}\mathbf{h}_t+\mathbf{b}_y)
 \end{aligned}
 $$
@@ -92,11 +92,11 @@ $$
 长短期记忆网络（LSTM）引入了门控机制来缓解RNN的梯度消失问题。LSTM的前向传播公式为：
 $$
 \begin{aligned}
-\mathbf{f}_t &= \sigma(\mathbf{W}_f\cdot[\mathbf{h}_{t-1},\mathbf{x}_t]+\mathbf{b}_f)\\
-\mathbf{i}_t &= \sigma(\mathbf{W}_i\cdot[\mathbf{h}_{t-1},\mathbf{x}_t]+\mathbf{b}_i)\\
-\tilde{\mathbf{C}}_t &= \tanh(\mathbf{W}_C\cdot[\mathbf{h}_{t-1},\mathbf{x}_t]+\mathbf{b}_C)\\
-\mathbf{C}_t &= \mathbf{f}_t*\mathbf{C}_{t-1}+\mathbf{i}_t*\tilde{\mathbf{C}}_t\\
-\mathbf{o}_t &= \sigma(\mathbf{W}_o\cdot[\mathbf{h}_{t-1},\mathbf{x}_t]+\mathbf{b}_o)\\
+\mathbf{f}_t &= \sigma(\mathbf{W}_f\cdot[\mathbf{h}_{t-1},\mathbf{x}_t]+\mathbf{b}_f)\
+\mathbf{i}_t &= \sigma(\mathbf{W}_i\cdot[\mathbf{h}_{t-1},\mathbf{x}_t]+\mathbf{b}_i)\
+\tilde{\mathbf{C}}_t &= \tanh(\mathbf{W}_C\cdot[\mathbf{h}_{t-1},\mathbf{x}_t]+\mathbf{b}_C)\
+\mathbf{C}_t &= \mathbf{f}_t*\mathbf{C}_{t-1}+\mathbf{i}_t*\tilde{\mathbf{C}}_t\
+\mathbf{o}_t &= \sigma(\mathbf{W}_o\cdot[\mathbf{h}_{t-1},\mathbf{x}_t]+\mathbf{b}_o)\
 \mathbf{h}_t &= \mathbf{o}_t*\tanh(\mathbf{C}_t)
 \end{aligned}
 $$

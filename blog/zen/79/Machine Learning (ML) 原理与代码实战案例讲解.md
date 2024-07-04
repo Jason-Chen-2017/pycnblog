@@ -74,7 +74,7 @@ graph TD
 
    监督学习的目标是从已标注的训练数据中学习出一个模型,然后应用于对未知数据进行预测或分类。常见算法包括线性回归、逻辑回归、决策树、支持向量机等。
 
-2. **无监督学习(Unsupervised Learning)** 
+2. **无监督学习(Unsupervised Learning)**
 
    无监督学习的目标是从未标注的数据中发现潜在的模式或规律。常见算法包括聚类算法(如K-Means)、关联规则挖掘、降维算法(如PCA)等。
 
@@ -160,7 +160,7 @@ $$J(w) = \frac{1}{2m}\sum_{i=1}^m(y^{(i)} - (w_0 + w_1x_1^{(i)} + ... + w_nx_n^{
 我们需要找到$w$使$J(w)$最小。通过对$w_j$求偏导数并令其等于0,可以得到Normal方程组:
 
 $$\begin{cases}
-\frac{\partial J(w)}{\partial w_0} = \frac{1}{m}\sum_{i=1}^m(y^{(i)} - (w_0 + w_1x_1^{(i)} + ... + w_nx_n^{(i)})) = 0\\
+\frac{\partial J(w)}{\partial w_0} = \frac{1}{m}\sum_{i=1}^m(y^{(i)} - (w_0 + w_1x_1^{(i)} + ... + w_nx_n^{(i)})) = 0\
 \frac{\partial J(w)}{\partial w_j} = \frac{1}{m}\sum_{i=1}^m(y^{(i)} - (w_0 + w_1x_1^{(i)} + ... + w_nx_n^{(i)}))(-x_j^{(i)}) = 0 \quad (j = 1, 2, ..., n)
 \end{cases}$$
 

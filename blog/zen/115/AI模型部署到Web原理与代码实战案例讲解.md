@@ -220,20 +220,20 @@ AI模型可以实现文本或语音的自动翻译，例如：
     * Udacity
 
 ### 7.2  开发工具推荐
-* **Python:** 
+* **Python:**
 
     * Anaconda
     * PyCharm
 
-* **Flask:** 
+* **Flask:**
 
     * Flask官方文档
 
-* **TensorFlow:** 
+* **TensorFlow:**
 
     * TensorFlow官方文档
 
-* **PyTorch:** 
+* **PyTorch:**
 
     * PyTorch官方文档
 
@@ -243,11 +243,11 @@ AI模型可以实现文本或语音的自动翻译，例如：
 * **《BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding》**
 
 ### 7.4  其他资源推荐
-* **GitHub:** 
+* **GitHub:**
 
     * AI模型开源项目
 
-* **Kaggle:** 
+* **Kaggle:**
 
     * 数据科学竞赛平台
 
@@ -285,5 +285,5 @@ AI模型部署到Web环境仍然面临一些挑战：
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

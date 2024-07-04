@@ -92,8 +92,8 @@ BPE算法的数学模型可以通过以下公式表示：
 
 $$
 \begin{aligned}
-\text{token\_pair}(x) &= \text{pair}(x) \\
-\text{merge\_token\_pair}(x, y) &= \text{pair}(x, y) \\
+\text{token\_pair}(x) &= \text{pair}(x) \
+\text{merge\_token\_pair}(x, y) &= \text{pair}(x, y) \
 \text{unmerge\_token\_pair}(x, y) &= \text{pair}(x, y)
 \end{aligned}
 $$

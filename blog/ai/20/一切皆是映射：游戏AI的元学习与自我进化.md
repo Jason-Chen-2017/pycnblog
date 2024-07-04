@@ -99,38 +99,38 @@
 
 **强化学习的基本框架**可以用以下公式表示：
 
-$$ Q(s, a) = \\mathbb{E}[R_t + \\gamma \\cdot Q(s', a')] $$
+$$ Q(s, a) = \mathbb{E}[R_t + \gamma \cdot Q(s', a')] $$
 
 其中：
-- \\(Q(s, a)\\) 是状态\\(s\\)和行动\\(a\\)的即时回报的期望值。
-- \\(R_t\\) 是在时间\\(t\\)收到的即时回报。
-- \\(\\gamma\\) 是折扣因子，衡量未来回报的即时价值。
-- \\(s'\\) 和 \\(a'\\) 分别是下一个状态和下一个行动。
+- \(Q(s, a)\) 是状态\(s\)和行动\(a\)的即时回报的期望值。
+- \(R_t\) 是在时间\(t\)收到的即时回报。
+- \(\gamma\) 是折扣因子，衡量未来回报的即时价值。
+- \(s'\) 和 \(a'\) 分别是下一个状态和下一个行动。
 
 **元学习**可以通过引入元参数来调整基本的强化学习算法：
 
-$$ \\theta^{meta} = \\arg \\min_{\\theta} \\sum_{task_i} \\mathcal{L}(Q_{\\theta}, \\pi_{\\theta}; task_i) $$
+$$ \theta^{meta} = \arg \min_{\theta} \sum_{task_i} \mathcal{L}(Q_{\theta}, \pi_{\theta}; task_i) $$
 
 其中：
-- \\(\\theta^{meta}\\) 是元参数，用于调整基本学习算法的参数。
-- \\(Q_{\\theta}\\) 和 \\(\\pi_{\\theta}\\) 分别是基于策略的Q函数和策略本身。
-- \\(\\mathcal{L}\\) 是损失函数，衡量策略在任务上的性能。
+- \(\theta^{meta}\) 是元参数，用于调整基本学习算法的参数。
+- \(Q_{\theta}\) 和 \(\pi_{\theta}\) 分别是基于策略的Q函数和策略本身。
+- \(\mathcal{L}\) 是损失函数，衡量策略在任务上的性能。
 
 ### 4.2 公式推导过程
 
 **强化学习**中的**Q学习**算法通常用于直接学习状态-行动价值函数：
 
-$$ Q(s, a) = Q(s, a) + \\alpha [r + \\gamma \\max_{a'} Q(s', a') - Q(s, a)] $$
+$$ Q(s, a) = Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a') - Q(s, a)] $$
 
 其中：
-- \\(\\alpha\\) 是学习率，控制更新速度。
-- \\(r\\) 是即时回报。
+- \(\alpha\) 是学习率，控制更新速度。
+- \(r\) 是即时回报。
 
 **元学习**引入**元学习算法**，通过优化元参数来提高学习效率：
 
-$$ \\theta^{meta} = \\arg \\min_{\\theta} \\sum_{task_i} \\mathcal{L}(Q_{\\theta}, \\pi_{\\theta}; task_i) $$
+$$ \theta^{meta} = \arg \min_{\theta} \sum_{task_i} \mathcal{L}(Q_{\theta}, \pi_{\theta}; task_i) $$
 
-这里的目标是找到一组元参数\\(\\theta^{meta}\\)，使得在所有任务上的总损失最小。
+这里的目标是找到一组元参数\(\theta^{meta}\)，使得在所有任务上的总损失最小。
 
 ### 4.3 案例分析与讲解
 
@@ -144,7 +144,7 @@ $$ \\theta^{meta} = \\arg \\min_{\\theta} \\sum_{task_i} \\mathcal{L}(Q_{\\theta
 ### 4.4 常见问题解答
 
 - **Q:** 如何平衡探索与利用？
-- **A:** 使用**ε-greedy**策略，根据探索率\\(\\epsilon\\)决定是否采取探索还是利用当前策略。
+- **A:** 使用**ε-greedy**策略，根据探索率\(\epsilon\)决定是否采取探索还是利用当前策略。
 
 ## 5. 项目实践：代码实例和详细解释说明
 
@@ -235,8 +235,8 @@ if __name__ == '__main__':
 
 ### 7.3 相关论文推荐
 
-- **\"IMPALA: Scalable Distributed Deep-RL with Importance Weighted Actor-Learners\"**
-- **\"DQN-Meta: Meta-Learning for Reinforcement Learning\"**
+- **"IMPALA: Scalable Distributed Deep-RL with Importance Weighted Actor-Learners"**
+- **"DQN-Meta: Meta-Learning for Reinforcement Learning"**
 
 ### 7.4 其他资源推荐
 

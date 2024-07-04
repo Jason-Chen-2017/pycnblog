@@ -126,8 +126,7 @@ $$
 **更新规则**：
 
 $$
-\theta \leftarrow \theta + \alpha \left( y_i - Q(s_i, a_i) \right) \
-abla Q(s_i, a_i)
+\theta \leftarrow \theta + \alpha \left( y_i - Q(s_i, a_i) \right) \nabla Q(s_i, a_i)
 $$
 
 ### 4.3 案例分析与讲解

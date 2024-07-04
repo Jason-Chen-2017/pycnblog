@@ -277,13 +277,13 @@ Oozie Bundle 的发展也面临着一些挑战：
 
 ## 9. 附录：常见问题与解答
 ### 9.1  问题1: 如何创建 Oozie Bundle？
-### 9.2  解答1: 
+### 9.2  解答1:
 ### 9.3  问题2: 如何提交 Oozie Bundle？
-### 9.4  解答2: 
+### 9.4  解答2:
 ### 9.5  问题3: 如何监控 Oozie Bundle 的执行状态？
-### 9.6  解答3: 
+### 9.6  解答3:
 
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 <end_of_turn>

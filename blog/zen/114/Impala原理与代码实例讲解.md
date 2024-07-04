@@ -1,6 +1,6 @@
 # Impala原理与代码实例讲解
 
-## 1. 背景介绍  
+## 1. 背景介绍
 ### 1.1 问题的由来
 随着大数据时代的到来,海量数据的实时分析和处理成为了企业面临的重大挑战。传统的数据仓库和 OLAP 系统难以满足实时、低延迟的查询分析需求。为了解决这一难题,Cloudera 公司推出了 Impala 这一革命性的大数据实时查询引擎。
 
@@ -43,7 +43,7 @@ Impala SQL 查询执行的主要步骤如下:
 3. 逻辑计划生成:将查询块转换为逻辑执行计划书。
 4. 物理计划生成:根据数据的物理分布和存储格式,优化逻辑计划并生成物理执行计划(DAG)。
 5. 代码生成:即时编译生成本地代码,加速查询执行。
-6. 任务调度:DAG 划分为多个任务,分发到集群的 Impala Daemon 上执行。 
+6. 任务调度:DAG 划分为多个任务,分发到集群的 Impala Daemon 上执行。
 7. 结果合并:各个Impala Daemon 执行完任务后,协调节点收集结果并返回给客户端。
 
 ### 3.3 算法优缺点
@@ -53,7 +53,7 @@ Impala 基于 MPP 的并行执行框架,可以实现几乎线性的查询加速�
 Impala 主要应用于以下领域:
 
 - 海量结构化数据的实时 OLAP 分析
-- 数据仓库的 Ad-hoc 查询 
+- 数据仓库的 Ad-hoc 查询
 - 机器学习特征工程
 - 交互式数据探索和可视化分析
 
@@ -112,7 +112,7 @@ graph LR
 ### 4.4 常见问题解答
 1. 如何避免 Impala 查询的数据倾斜?
    - 尽量使用 DISTRIBUTE BY 语句对数据进行重分布,打散热点数据。
-   - 开启动态分区裁剪,避免读取不必要的数据。 
+   - 开启动态分区裁剪,避免读取不必要的数据。
    - 必要时可以手动拆分热点分区。
 
 2. 如何选择 Impala 表的存储格式?
@@ -120,7 +120,7 @@ graph LR
    - 对于频繁更新的表,建议使用 Kudu 存储,支持单行级别的更新。
    - 对于 Hive 表,Impala 支持 ORC 和 Avro 格式,性能略低于 Parquet。
 
-3. Impala 查询经常出现内存不足?  
+3. Impala 查询经常出现内存不足?
    - 增加 Impala Daemon 的内存限制。
    - 开启 SPILL 机制,允许中间结果溢出到磁盘。
    - 减少查询的并发度,避免内存争用。
@@ -150,7 +150,7 @@ public class ImpalaJdbcExample {
     Connection conn = null;
     Statement stmt = null;
     ResultSet rs = null;
-    
+
     try {
       Class.forName("com.cloudera.impala.jdbc.Driver");
       conn = DriverManager.getConnection("jdbc:impala://localhost:21050/default");
@@ -203,11 +203,11 @@ Impala 在实际生产环境中有广泛的应用,典型场景包括:
 随着 5G、人工智能等新技术的发展,Impala 有望在更多领域发挥重要作用:
 
 - 智慧城市:对交通、环境等海量数据进行实时分析,辅助城市管理决策。
-- 工业互联网:对设备运行数据进行实时分析,优化生产调度,提升产品质量。 
+- 工业互联网:对设备运行数据进行实时分析,优化生产调度,提升产品质量。
 - 金融风控:对交易、行为数据进行实时分析,及时发现异常,防范金融风险。
 
 ## 7. 工具和资源推荐
 ### 7.1 学习资源推荐
 - 书籍:《Hadoop: The Definitive Guide》、《Impala: The Definitive Guide》、《数据密集型应用系统设计》
 - 官方文档:Impala 官方网站 https://impala.apache.org/,提供了完善的文档和教程。
-- 视频教程:Cloudera 官方 YouTube 频道,O'Reilly 的 
+- 视频教程:Cloudera 官方 YouTube 频道,O'Reilly 的

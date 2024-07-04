@@ -94,8 +94,8 @@ Transformer是当前主流的大模型架构,其核心是自注意力(Self-Atten
 Transformer模型的核心是多头自注意力机制,其数学表达式如下:
 
 $$\begin{aligned}
-\text{MultiHead}(Q, K, V) &= \text{Concat}(\text{head}_1, \ldots, \text{head}_h)W^O\\
-\text{where\ head}_i &= \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)\\
+\text{MultiHead}(Q, K, V) &= \text{Concat}(\text{head}_1, \ldots, \text{head}_h)W^O\
+\text{where\ head}_i &= \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)\
 \text{Attention}(Q, K, V) &= \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V
 \end{aligned}$$
 

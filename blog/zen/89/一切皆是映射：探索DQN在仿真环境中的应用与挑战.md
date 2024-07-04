@@ -243,24 +243,24 @@ def train(dqn, optimizer, env, episodes, gamma, epsilon, batch_size):
             next_state, reward, done, _ = env.step(action)
             next_state = torch.from_numpy(next_state).float().unsqueeze(0)
             reward = torch.tensor([reward], dtype=torch.float32)
-            
+
             # 经验回放
             if np.random.rand() < epsilon:
                 action = np.random.randint(0, output_dim)
             else:
                 action = dqn(state).argmax().item()
-            
+
             # 计算目标Q值
             target = reward + (1 - done) * gamma * dqn(next_state).max()
-            
+
             # 更新DQN网络
             optimizer.zero_grad()
             loss = criterion(dqn(state), target)
             loss.backward()
             optimizer.step()
-            
+
             state = next_state
-            
+
             if done:
                 break
 

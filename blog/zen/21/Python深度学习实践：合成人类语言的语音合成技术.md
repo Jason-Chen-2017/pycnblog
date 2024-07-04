@@ -1,4 +1,4 @@
-                 
+
 # Python深度学习实践：合成人类语言的语音合成技术
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -175,16 +175,16 @@ $$ y_{out} = \sigma(W \ast x + b) $$
 
 1. 输入门 (`i_t`) 的计算：
    $$ i_t = \sigma(W_{xi}x_t + W_{hi}h_{t-1} + b_i) $$
-   
+
 2. 遗忘门 (`f_t`) 的计算：
    $$ f_t = \sigma(W_{xf}x_t + W_{hf}h_{t-1} + b_f) $$
-   
+
 3. 更新门 (`c_t`) 的计算：
    $$ c_t = \tanh(W_{xc}x_t + W_{hc}h_{t-1} + b_c) $$
-   
+
 4. 输出门 (`o_t`) 的计算：
    $$ o_t = \sigma(W_{xo}x_t + W_{ho}h_{t-1} + b_o) $$
-   
+
 然后通过这些门控制信息流，得到新的隐藏状态 `h_t`。
 
 #### HiFiGAN中的流型匹配：
@@ -244,7 +244,7 @@ import librosa
 # 定义WaveNet模型结构
 def create_wavenet():
     # 创建模型框架...
-    
+
 # 使用训练数据集进行模型训练...
 # 训练过程...
 

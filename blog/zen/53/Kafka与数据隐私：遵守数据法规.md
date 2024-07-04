@@ -7,7 +7,7 @@
 
 ### 1.1 数据隐私法规概览
 #### 1.1.1 GDPR
-#### 1.1.2 CCPA  
+#### 1.1.2 CCPA
 #### 1.1.3 其他地区法规
 
 ### 1.2 企业面临的数据隐私挑战
@@ -56,7 +56,7 @@ F --> G[合规的数据处理]
 #### 3.2.3 基于策略的访问控制
 
 ### 3.3 数据留存与删除
-#### 3.3.1 数据保留期设置  
+#### 3.3.1 数据保留期设置
 #### 3.3.2 定期数据删除
 #### 3.3.3 用户请求数据删除
 
@@ -72,7 +72,7 @@ $$H(x)=y$$
 $$E_k(x)=y, D_k(y)=x$$
 其中$E_k$为加密函数,$D_k$为解密函数,$k$为密钥。
 
-### 4.2 访问控制模型 
+### 4.2 访问控制模型
 #### 4.2.1 RBAC
 基于角色的访问控制(RBAC)通过用户与角色、角色与权限的关联实现:
 $$User \rightarrow Role \rightarrow Permission$$
@@ -108,7 +108,7 @@ public class MaskField<R extends ConnectRecord<R>> implements Transformation<R> 
     @Override
     public R apply(R record) {
         final String value = (String) record.value();
-        String maskedValue = value.replaceAll("\\d{4}", "****");
+        String maskedValue = value.replaceAll("\d{4}", "****");
         return record.newRecord(record.topic(), record.kafkaPartition(), record.keySchema(), record.key(),
                 record.valueSchema(), maskedValue, record.timestamp());
     }
@@ -129,7 +129,7 @@ public class MaskField<R extends ConnectRecord<R>> implements Transformation<R> 
 
 ### 6.3 电商平台
 #### 6.3.1 用户行为数据脱敏
-#### 6.3.2 订单信息加密处理  
+#### 6.3.2 订单信息加密处理
 #### 6.3.3 物流信息隐私保护
 
 ## 7.工具和资源推荐
@@ -142,7 +142,7 @@ public class MaskField<R extends ConnectRecord<R>> implements Transformation<R> 
 - [Informatica Data Privacy Management](https://www.informatica.com/products/data-security/data-privacy-management.html)
 
 ### 7.3 Kafka第三方安全组件
-- [Confluent Security Plugins](https://docs.confluent.io/platform/current/security/overview.html)  
+- [Confluent Security Plugins](https://docs.confluent.io/platform/current/security/overview.html)
 - [StreamSets Data Collector](https://streamsets.com/products/dataops-platform/data-collector/)
 
 ## 8.总结：未来发展趋势与挑战

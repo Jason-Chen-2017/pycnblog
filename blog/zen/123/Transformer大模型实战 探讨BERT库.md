@@ -359,4 +359,4 @@ BERT 模型也面临着一些挑战：
 A: BERT 和 GPT 都是基于 Transformer 的预训练语言模型，但它们在预训练任务和模型结构上有所不同。BERT 使用了掩码语言模型和下一句预测任务进行预训练，而 GPT 使用了自回归语言模型进行预训练。BERT 使用了 Transformer 的编码器结构，而 GPT 使用了 Transformer 的解码器结构。
 
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

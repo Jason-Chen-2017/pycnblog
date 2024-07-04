@@ -341,4 +341,4 @@ Seq2Seq模型可以使用多任务学习方法，将多个任务的训练数据�
 
 Seq2Seq模型可以使用模型压缩技术，例如量化、剪枝等，来减小模型的大小和计算量。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

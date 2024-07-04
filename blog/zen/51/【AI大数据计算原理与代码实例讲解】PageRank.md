@@ -102,10 +102,10 @@ graph LR
 
 $$
 \begin{aligned}
-PR(A) &= (1-0.85) + 0.85 \left(\frac{PR(D)}{2} + \frac{PR(E)}{3}\right)\\
-PR(B) &= (1-0.85) + 0.85 \left(\frac{PR(A)}{2} + \frac{PR(E)}{3}\right)\\
-PR(C) &= (1-0.85) + 0.85 \left(\frac{PR(A)}{2} + \frac{PR(B)}{1} + \frac{PR(D)}{2}\right)\\
-PR(D) &= (1-0.85) + 0.85 \left(\frac{PR(E)}{3}\right)\\
+PR(A) &= (1-0.85) + 0.85 \left(\frac{PR(D)}{2} + \frac{PR(E)}{3}\right)\
+PR(B) &= (1-0.85) + 0.85 \left(\frac{PR(A)}{2} + \frac{PR(E)}{3}\right)\
+PR(C) &= (1-0.85) + 0.85 \left(\frac{PR(A)}{2} + \frac{PR(B)}{1} + \frac{PR(D)}{2}\right)\
+PR(D) &= (1-0.85) + 0.85 \left(\frac{PR(E)}{3}\right)\
 PR(E) &= (1-0.85) + 0.85 \left(0\right)
 \end{aligned}
 $$
@@ -116,10 +116,10 @@ $$
 
 $$
 \begin{aligned}
-PR(A) &\approx 0.23\\
-PR(B) &\approx 0.18\\
-PR(C) &\approx 0.31\\
-PR(D) &\approx 0.08\\
+PR(A) &\approx 0.23\
+PR(B) &\approx 0.18\
+PR(C) &\approx 0.31\
+PR(D) &\approx 0.08\
 PR(E) &\approx 0.20
 \end{aligned}
 $$
@@ -181,23 +181,23 @@ def page_rank(links, damping_factor=0.85, max_iterations=100, tolerance=1e-6):
 
     for iteration in range(max_iterations):
         new_pr_values = {}
-        
+
         for page in pr_values:
             new_pr = (1 - damping_factor) / N
-            
+
             for linking_page in links:
                 if page in links[linking_page]:
                     new_pr += damping_factor * pr_values[linking_page] / outlink_counts[linking_page]
-            
+
             new_pr_values[page] = new_pr
-        
+
         # 检查是否收敛
         diff = max(abs(new_pr_values[page] - pr_values[page]) for page in pr_values)
         if diff < tolerance:
             break
-        
+
         pr_values = new_pr_values.copy()
-    
+
     return pr_values
 ```
 

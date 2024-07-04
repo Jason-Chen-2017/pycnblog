@@ -55,12 +55,10 @@ $$
 梯度下降是最常用的优化方法，用于更新权重以减少损失函数：
 
 $$
-w_{new} = w_{old} - \\eta \\cdot \
-abla_w L(w_{old})
+w_{new} = w_{old} - \\eta \\cdot \nabla_w L(w_{old})
 $$
 
-其中 $\\eta$ 是学习率，$\
-abla_w L(w_{old})$ 是损失函数关于权重 $w$ 的梯度。
+其中 $\\eta$ 是学习率，$\nabla_w L(w_{old})$ 是损失函数关于权重 $w$ 的梯度。
 
 ## 项目实践：代码实例和详细解释说明
 

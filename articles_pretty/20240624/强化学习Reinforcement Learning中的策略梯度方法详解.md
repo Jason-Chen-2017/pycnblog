@@ -97,9 +97,7 @@
 
 自然策略梯度中的梯度估计公式为：
 
-\[ \
-abla_\theta J(\theta) \approx \mathbb{E}_{\pi_\theta(s)}\left[\
-abla_\theta \log \pi_\theta(a|s) \cdot \mathbb{E}_{\pi_\theta}\left[\sum_{t'=t}^\tau R(s_t,a_t)\right]\right] \]
+\[ \nabla_\theta J(\theta) \approx \mathbb{E}_{\pi_\theta(s)}\left[\nabla_\theta \log \pi_\theta(a|s) \cdot \mathbb{E}_{\pi_\theta}\left[\sum_{t'=t}^\tau R(s_t,a_t)\right]\right] \]
 
 ### 4.3 案例分析与讲解
 

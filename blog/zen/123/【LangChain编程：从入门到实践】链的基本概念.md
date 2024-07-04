@@ -117,7 +117,7 @@ template = """
 
 问题: {question}
 
-答案: 
+答案:
 """
 prompt = PromptTemplate(
     input_variables=["question"],
@@ -238,7 +238,7 @@ template = """
 
 问题: {question}
 
-答案: 
+答案:
 """
 prompt = PromptTemplate(
     input_variables=["question"],
@@ -368,4 +368,4 @@ A: 您可以通过 LangChain 的 GitHub 仓库提交代码贡献。
 
 A: 是的，LangChain 有一个活跃的社区，您可以在 LangChain 的 Discord 服务器上寻求帮助或分享您的经验。
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming

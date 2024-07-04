@@ -1,4 +1,4 @@
-                 
+
 # 【LangChain编程：从入门到实践】模型I/O模块
 
 作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
@@ -145,9 +145,9 @@ def classify_sentiment(text):
     url = "https://example-langchain-api.com/model/predict"
     headers = {"Content-Type": "application/json"}
     data = {"input_text": text}
-    
+
     response = requests.post(url, json=data, headers=headers)
-    
+
     if response.status_code == 200:
         result = response.json()
         sentiment = result['sentiment']
@@ -194,10 +194,10 @@ class TextAnalyzer:
         payload = {
             'input_text': text,
         }
-        
+
         response = requests.post(self.api_url, json=payload)
         response.raise_for_status()  # 检查HTTP状态码是否为2xx
-        
+
         result = response.json()
         return result['sentiment']
 

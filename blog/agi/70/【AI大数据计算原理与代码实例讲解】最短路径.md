@@ -239,7 +239,7 @@ def dijkstra(graph, source):
         distance[v] = float("inf")
     distance[source] = 0
     pre[source] = None
-    
+
     # 扩展节点
     for _ in range(len(graph.vertices()) - 1):
         # 选择未访问节点中距离最短的节点
@@ -250,7 +250,7 @@ def dijkstra(graph, source):
             if distance[v] > distance[u] + graph.get_edge_property("weight", e):
                 distance[v] = distance[u] + graph.get_edge_property("weight", e)
                 pre[v] = u
-    
+
     return distance, pre
 
 # 创建图

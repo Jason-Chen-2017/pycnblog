@@ -71,15 +71,13 @@ Where:
 
 Policy gradient methods directly optimize the policy function to maximize the expected cumulative reward.
 
-$$\\theta \\leftarrow \\theta + \\alpha \
-abla_\\theta J(\\theta)$$
+$$\\theta \\leftarrow \\theta + \\alpha \nabla_\\theta J(\\theta)$$
 
 Where:
 - $\\theta$ is the policy parameters.
 - $\\alpha$ is the learning rate.
 - $J(\\theta)$ is the expected cumulative reward under policy $\\theta$.
-- $\
-abla_\\theta J(\\theta)$ is the gradient of $J(\\theta)$ with respect to $\\theta$.
+- $\nabla_\\theta J(\\theta)$ is the gradient of $J(\\theta)$ with respect to $\\theta$.
 
 ## 5. Project Practice: Code Examples and Detailed Explanations
 

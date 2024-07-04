@@ -1,7 +1,7 @@
 
 # 强化学习Reinforcement Learning研究中的不确定性建模探究
 
-作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming 
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
 
 ## 1. 背景介绍
@@ -272,8 +272,8 @@ $$
 
 $$
 Q(s,a) = \begin{cases}
-10 & \text{if } (s=(3,4)) \\
--1 & \text{if } (s=(0,0),s=(0,1),s=(1,0),s=(1,1)) \\
+10 & \text{if } (s=(3,4)) \
+-1 & \text{if } (s=(0,0),s=(0,1),s=(1,0),s=(1,1)) \
 0 & \text{otherwise}
 \end{cases}
 $$

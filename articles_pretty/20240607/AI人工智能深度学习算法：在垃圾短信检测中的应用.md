@@ -68,11 +68,9 @@
 
 常用的优化算法有梯度下降（Gradient Descent）和它的变种，如随机梯度下降（SGD）和Adam：
 
-\\[ \\theta := \\theta - \\alpha \\cdot \
-abla J(\\theta) \\]
+\\[ \\theta := \\theta - \\alpha \\cdot \nabla J(\\theta) \\]
 
-其中，\\(\\theta\\) 是参数，\\(\\alpha\\) 是学习率，\\(\
-abla J(\\theta)\\) 是损失函数关于参数的梯度。
+其中，\\(\\theta\\) 是参数，\\(\\alpha\\) 是学习率，\\(\nabla J(\\theta)\\) 是损失函数关于参数的梯度。
 
 ## 项目实践：代码实例和详细解释说明
 
