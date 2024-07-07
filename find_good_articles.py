@@ -32,7 +32,7 @@ def is_good_content(content):
         "核心算法原理",
         "数学模型和公式",
         "项目实践",
-        "实际应用场景",
+        # "实际应用场景",
         # "工具和资源",
     ]
 
@@ -44,7 +44,7 @@ def is_good_content(content):
         "Core Algorithm",
         "Mathematical Model",
         "Project Practice",
-        "Practical Application",
+        # "Practical Application",
         # "Tools and Resources",
     ]
 
