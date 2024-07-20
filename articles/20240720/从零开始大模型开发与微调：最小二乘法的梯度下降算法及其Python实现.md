@@ -1,28 +1,29 @@
                  
 
-# 大语言模型应用指南：GPT商店介绍
+# 从零开始大模型开发与微调：最小二乘法的梯度下降算法及其Python实现
 
 ## 1. 背景介绍
 
 ### 1.1 问题由来
 
-近年来，随着深度学习技术的快速发展，大语言模型（Large Language Models, LLMs）在自然语言处理（Natural Language Processing, NLP）领域取得了巨大的突破。这些大语言模型通过在大规模无标签文本数据上进行预训练，学习到了丰富的语言知识和常识，可以通过少量的有标签样本在下游任务上进行微调，获得优异的性能。其中最具代表性的大语言模型包括OpenAI的GPT系列模型、Google的BERT、T5等。
+近年来，随着深度学习技术的快速发展，大规模语言模型（Large Language Models, LLMs）在自然语言处理（Natural Language Processing, NLP）领域取得了巨大的突破。这些大语言模型通过在海量无标签文本数据上进行预训练，学习到了丰富的语言知识和常识，可以通过少量的有标签样本在下游任务上进行微调，获得优异的性能。其中最具代表性的大语言模型包括OpenAI的GPT系列模型、Google的BERT、T5等。
 
-然而，由于预训练语料的广泛性和泛化能力的不足，这些通用的大语言模型在特定领域应用时，效果往往难以达到实际应用的要求。因此，如何针对特定任务进行大模型微调，提升模型性能，成为了当前大语言模型研究和应用的一个热点问题。
+然而，由于预训练语料的广泛性和泛化能力的不足，这些通用的大语言模型在特定领域应用时，效果往往难以达到实际应用的要求。因此，如何针对特定任务进行大模型微调，提升模型性能，成为了当前大语言模型研究和应用的一个热点问题。本文聚焦于基于监督学习的微调方法，但同时也会兼顾参数高效微调和提示学习等前沿技术，以期对大语言模型微调实践提供更全面的指导。
 
 ### 1.2 问题核心关键点
 
-目前，大语言模型微调的主流范式是基于监督学习的微调方法。即收集该任务的少量标注数据，将预训练模型当作初始化参数，通过有监督地训练来优化模型在该任务上的性能。这种微调范式简单高效，可以显著提升模型在特定任务上的表现。
+目前，基于监督学习的微调方法是大语言模型应用的主流范式。其核心思想是：将预训练的大语言模型视作一个强大的"特征提取器"，通过在下游任务的少量标注数据上进行有监督地训练来优化模型在该任务上的性能。这种微调范式简单高效，可以显著提升模型在特定任务上的表现。
 
 微调的关键在于如何避免过拟合，同时最大程度发挥预训练模型学到的知识。目前主流的做法包括：
+
 - 选择合适的学习率。相比从头训练，微调通常需要更小的学习率，以免破坏预训练的权重。
 - 应用正则化技术。如L2正则、Dropout、Early Stopping等，防止模型过度适应小规模训练集。
 - 保留预训练的部分层。如Transformer的底层，只微调顶层，减少需优化的参数。
 - 数据增强。通过对训练样本改写、回译等方式丰富训练集多样性。
 - 对抗训练。加入对抗样本，提高模型鲁棒性。
-- 提示学习。通过在输入文本中添加提示模板（Prompt Template），引导大语言模型进行特定任务的推理和生成。可以在不更新模型参数的情况下，实现零样本或少样本学习。
+- 提示学习。通过在输入文本中添加提示模板，引导模型按期望方式输出，减少微调参数。
 
-目前，基于大模型微调的方法已经在问答、对话、摘要、翻译、情感分析等诸多NLP任务上取得了优异的效果，成为NLP技术落地应用的重要手段。
+目前，基于大模型微调的监督学习范式已经在问答、对话、摘要、翻译、情感分析等诸多NLP任务上取得了优异的效果，成为NLP技术落地应用的重要手段。
 
 ### 1.3 问题研究意义
 
@@ -44,7 +45,7 @@
 
 - 预训练（Pre-training）：指在大规模无标签文本语料上，通过自监督学习任务训练通用语言模型的过程。常见的预训练任务包括言语建模、遮挡语言模型等。预训练使得模型学习到语言的通用表示。
 
-- 微调（Fine-tuning）：指在预训练模型的基础上，使用下游任务的少量标注数据，通过有监督学习优化模型在特定任务上的性能。通常只需要调整顶层分类器或解码器，并以较小的学习率更新全部或部分的模型参数。
+- 微调（Fine-tuning）：指在预训练模型的基础上，使用下游任务的少量标注数据，通过有监督地训练来优化模型在该任务上的性能。通常只需要调整顶层分类器或解码器，并以较小的学习率更新全部或部分的模型参数。
 
 - 迁移学习（Transfer Learning）：指将一个领域学习到的知识，迁移应用到另一个不同但相关的领域的学习范式。大模型的预训练-微调过程即是一种典型的迁移学习方式。
 
@@ -81,7 +82,7 @@ graph TB
 
 1. 大语言模型通过预训练获得基础能力。
 2. 微调是对预训练模型进行任务特定的优化，可以分为全参数微调和参数高效微调（PEFT）。
-3. 提示学习是一种不更新模型参数的方法，可以实现少样本学习和零样本学习。
+3. 提示学习是一种不更新模型参数的方法，可以实现零样本和少样本学习。
 4. 迁移学习是连接预训练模型与下游任务的桥梁，可以通过微调或提示学习来实现。
 5. 持续学习旨在使模型能够不断学习新知识，同时避免遗忘旧知识。
 
@@ -89,7 +90,7 @@ graph TB
 
 ### 2.2 概念间的关系
 
-这些核心概念之间存在着紧密的联系，形成了大语言模型微调的完整生态系统。下面我通过几个Mermaid流程图来展示这些概念之间的关系。
+这些核心概念之间存在着紧密的联系，形成了大语言模型微调的完整生态系统。下面我们通过几个Mermaid流程图来展示这些概念之间的关系。
 
 #### 2.2.1 大语言模型的学习范式
 
@@ -184,9 +185,10 @@ graph TB
 这个综合流程图展示了从预训练到微调，再到持续学习的完整过程。大语言模型首先在大规模文本数据上进行预训练，然后通过微调（包括全参数微调和参数高效微调）或提示学习（包括零样本和少样本学习）来适应下游任务。最后，通过持续学习技术，模型可以不断更新和适应新的任务和数据。 通过这些流程图，我们可以更清晰地理解大语言模型微调过程中各个核心概念的关系和作用，为后续深入讨论具体的微调方法和技术奠定基础。
 
 ## 3. 核心算法原理 & 具体操作步骤
+
 ### 3.1 算法原理概述
 
-基于监督学习的大语言模型微调，本质上是一个有监督的细粒度迁移学习过程。其核心思想是：将预训练的大语言模型视作一个强大的"特征提取器"，通过在下游任务的少量标注数据上进行有监督的训练来优化模型在该任务上的性能。
+基于监督学习的大语言模型微调，本质上是一个有监督的细粒度迁移学习过程。其核心思想是：将预训练的大语言模型视作一个强大的"特征提取器"，通过在下游任务的少量标注数据上进行有监督地训练来优化模型在该任务上的性能。
 
 形式化地，假设预训练模型为 $M_{\theta}$，其中 $\theta$ 为预训练得到的模型参数。给定下游任务 $T$ 的标注数据集 $D=\{(x_i, y_i)\}_{i=1}^N$，微调的目标是找到新的模型参数 $\hat{\theta}$，使得：
 
@@ -203,7 +205,7 @@ $$
 基于监督学习的大语言模型微调一般包括以下几个关键步骤：
 
 **Step 1: 准备预训练模型和数据集**
-- 选择合适的预训练语言模型 $M_{\theta}$ 作为初始化参数，如 BERT、GPT等。
+- 选择合适的预训练语言模型 $M_{\theta}$ 作为初始化参数，如 BERT、GPT 等。
 - 准备下游任务 $T$ 的标注数据集 $D$，划分为训练集、验证集和测试集。一般要求标注数据与预训练数据的分布不要差异过大。
 
 **Step 2: 添加任务适配层**
@@ -232,12 +234,14 @@ $$
 ### 3.3 算法优缺点
 
 基于监督学习的大语言模型微调方法具有以下优点：
+
 1. 简单高效。只需准备少量标注数据，即可对预训练模型进行快速适配，获得较大的性能提升。
 2. 通用适用。适用于各种NLP下游任务，包括分类、匹配、生成等，设计简单的任务适配层即可实现微调。
 3. 参数高效。利用参数高效微调技术，在固定大部分预训练参数的情况下，仍可取得不错的提升。
 4. 效果显著。在学术界和工业界的诸多任务上，基于微调的方法已经刷新了最先进的性能指标。
 
 同时，该方法也存在一定的局限性：
+
 1. 依赖标注数据。微调的效果很大程度上取决于标注数据的质量和数量，获取高质量标注数据的成本较高。
 2. 迁移能力有限。当目标任务与预训练数据的分布差异较大时，微调的性能提升有限。
 3. 负面效果传递。预训练模型的固有偏见、有害信息等，可能通过微调传递到下游任务，造成负面影响。
@@ -259,12 +263,13 @@ $$
 
 除了上述这些经典任务外，大语言模型微调也被创新性地应用到更多场景中，如可控文本生成、常识推理、代码生成、数据增强等，为NLP技术带来了全新的突破。随着预训练模型和微调方法的不断进步，相信NLP技术将在更广阔的应用领域大放异彩。
 
-## 4. 数学模型和公式 & 详细讲解
+## 4. 数学模型和公式 & 详细讲解 & 举例说明
+
 ### 4.1 数学模型构建
 
 本节将使用数学语言对基于监督学习的大语言模型微调过程进行更加严格的刻画。
 
-记预训练语言模型为 $M_{\theta}:\mathcal{X} \rightarrow \mathcal{Y}$，其中 $\mathcal{X}$ 为输入空间，$\mathcal{Y}$ 为输出空间，$\theta \in \mathbb{R}^d$ 为模型参数。假设微调任务的训练集为 $D=\{(x_i,y_i)\}_{i=1}^N, x_i \in \mathcal{X}, y_i \in \mathcal{Y}$。
+记预训练语言模型为 $M_{\theta}$，其中 $\mathcal{X}$ 为输入空间，$\mathcal{Y}$ 为输出空间，$\theta \in \mathbb{R}^d$ 为模型参数。假设微调任务的训练集为 $D=\{(x_i,y_i)\}_{i=1}^N, x_i \in \mathcal{X}, y_i \in \mathbb{R}$。
 
 定义模型 $M_{\theta}$ 在数据样本 $(x,y)$ 上的损失函数为 $\ell(M_{\theta}(x),y)$，则在数据集 $D$ 上的经验风险为：
 
@@ -312,7 +317,46 @@ $$
 
 在得到损失函数的梯度后，即可带入参数更新公式，完成模型的迭代优化。重复上述过程直至收敛，最终得到适应下游任务的最优模型参数 $\theta^*$。
 
+### 4.3 案例分析与讲解
+
+在二分类任务中，假设我们有如下数据集：
+
+| 文本         | 标签 |
+| ------------ | ---- |
+| "I like NLP"  | 1    |
+| "I hate NLP"  | 0    |
+| "NLP is great" | 1    |
+| "NLP is bad"  | 0    |
+
+我们使用BERT作为预训练模型，并在其之上添加一个简单的二分类头，计算损失函数及梯度：
+
+| 输入                | BERT输出 | 损失 | 梯度       |
+| ------------------- | -------- | ---- | ---------- |
+| "I like NLP"         | [0.9, 0.1] | 0    | [0.1, -0.9] |
+| "I hate NLP"         | [0.1, 0.9] | 0    | [0.9, -0.1] |
+| "NLP is great"       | [0.9, 0.1] | 0    | [0.1, -0.9] |
+| "NLP is bad"         | [0.1, 0.9] | 0    | [0.9, -0.1] |
+
+假设模型输出层权重为 $[1,1]$，偏置项为 $[0,0]$。我们可以计算得到：
+
+$$
+\mathcal{L} = \frac{1}{4} [1 \log 0.9 + 0 \log 0.1 + 0 \log 0.9 + 1 \log 0.1] = 0.15
+$$
+
+$$
+\frac{\partial \mathcal{L}}{\partial \theta_k} = \frac{1}{4} [\frac{1}{0.9} - \frac{1}{0.1} + \frac{0}{0.9} - \frac{1}{0.1}] = -0.7
+$$
+
+更新参数：
+
+$$
+\theta_k \leftarrow \theta_k - 0.1 \times (-0.7) - 0.1 \times 0.15 = \theta_k + 0.07 - 0.015 = \theta_k + 0.055
+$$
+
+通过反复迭代，直到损失收敛。可以看到，通过微调，模型逐渐适应数据分布，输出逐渐逼近真实标签，实现分类任务的目标。
+
 ## 5. 项目实践：代码实例和详细解释说明
+
 ### 5.1 开发环境搭建
 
 在进行微调实践前，我们需要准备好开发环境。以下是使用Python进行PyTorch开发的环境配置流程：
@@ -373,72 +417,5 @@ class NERDataset(Dataset):
         
         # 对token-wise的标签进行编码
         encoded_tags = [tag2id[tag] for tag in tags] 
-        encoded_tags.extend([tag2id['O']] * (self.max_len - len(encoded_tags)))
-        labels = torch.tensor(encoded_tags, dtype=torch.long)
         
-        return {'input_ids': input_ids, 
-                'attention_mask': attention_mask,
-                'labels': labels}
-
-# 标签与id的映射
-tag2id = {'O': 0, 'B-PER': 1, 'I-PER': 2, 'B-ORG': 3, 'I-ORG': 4, 'B-LOC': 5, 'I-LOC': 6}
-id2tag = {v: k for k, v in tag2id.items()}
-
-# 创建dataset
-tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
-
-train_dataset = NERDataset(train_texts, train_tags, tokenizer)
-dev_dataset = NERDataset(dev_texts, dev_tags, tokenizer)
-test_dataset = NERDataset(test_texts, test_tags, tokenizer)
-```
-
-然后，定义模型和优化器：
-
-```python
-from transformers import BertForTokenClassification, AdamW
-
-model = BertForTokenClassification.from_pretrained('bert-base-cased', num_labels=len(tag2id))
-
-optimizer = AdamW(model.parameters(), lr=2e-5)
-```
-
-接着，定义训练和评估函数：
-
-```python
-from torch.utils.data import DataLoader
-from tqdm import tqdm
-from sklearn.metrics import classification_report
-
-device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
-model.to(device)
-
-def train_epoch(model, dataset, batch_size, optimizer):
-    dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
-    model.train()
-    epoch_loss = 0
-    for batch in tqdm(dataloader, desc='Training'):
-        input_ids = batch['input_ids'].to(device)
-        attention_mask = batch['attention_mask'].to(device)
-        labels = batch['labels'].to(device)
-        model.zero_grad()
-        outputs = model(input_ids, attention_mask=attention_mask, labels=labels)
-        loss = outputs.loss
-        epoch_loss += loss.item()
-        loss.backward()
-        optimizer.step()
-    return epoch_loss / len(dataloader)
-
-def evaluate(model, dataset, batch_size):
-    dataloader = DataLoader(dataset, batch_size=batch_size)
-    model.eval()
-    preds, labels = [], []
-    with torch.no_grad():
-        for batch in tqdm(dataloader, desc='Evaluating'):
-            input_ids = batch['input_ids'].to(device)
-            attention_mask = batch['attention_mask'].to(device)
-            batch_labels = batch['labels']
-            outputs = model(input_ids, attention_mask=attention_mask)
-            batch_preds = outputs.logits.argmax(dim=2).to('cpu').tolist()
-            batch_labels = batch_labels.to('cpu').tolist()
-            for pred_tokens, label
 
