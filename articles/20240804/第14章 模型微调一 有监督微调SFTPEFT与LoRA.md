@@ -1,75 +1,225 @@
                  
 
+# 第14章 模型微调一 有监督微调SFT、PEFT与LoRA
+
+> 关键词：模型微调，监督学习，模型高效，LoRA
+
 ## 1. 背景介绍
 
-在过去几十年中，传统软件架构经历了多次革新，从单体应用、SOA服务导向架构、微服务架构，到现代架构师倡导的DevOps、AIOps等。随着人工智能，尤其是大规模语言模型(LLM)的出现，传统软件架构再次面临前所未有的挑战和革新。
+在深度学习的迅猛发展下，深度学习模型已广泛应用于各个领域，从图像识别、语音识别、自然语言处理(NLP)到医疗诊断等，深度学习模型的能力令人瞩目。其中，预训练模型以其强大的泛化能力和丰富的语义表示能力，在自然语言处理任务上展现出显著优势。然而，预训练模型往往需要消耗巨大的计算资源，且在大规模数据上预训练得到的模型难以直接应用到具体任务上。因此，预训练模型如何在特定任务上进行微调(Fine-tuning)成为了重要的研究方向。
 
-### 1.1 传统软件架构背景
+### 1.1 问题由来
 
-传统软件架构主要包括单体应用架构、SOA架构、微服务架构等，它们的演进脉络如下：
+模型微调是指在预训练模型的基础上，使用特定任务的数据集对其进行有监督的学习，优化模型在特定任务上的性能。模型微调分为有监督微调和无监督微调两类，其中，有监督微调(Supervised Fine-tuning, SFT)是当前最为常用的一种微调方式，通过任务数据集进行有监督训练，使模型能够适应特定的应用场景。然而，在大规模预训练模型上进行的微调面临着计算资源不足、过拟合等挑战，模型高效性问题亟需解决。
 
-- **单体应用架构**：将所有功能模块都集成在一个单一的应用中，结构简单但难以维护。
-- **SOA架构**：将应用拆分为一系列独立的服务，服务之间通过标准化的接口通信，便于系统的维护和扩展。
-- **微服务架构**：进一步拆分服务，使得每个服务聚焦于单一业务能力，支持细粒度的功能复用和扩展。
+近年来，随着研究者对模型微调的深入探索，出现了参数高效微调(Parameter-Efficient Fine-tuning, PEFT)和LoRA等技术。这些技术在降低微调过程中的计算资源消耗、提升模型性能等方面取得了显著成果。
 
-### 1.2 大语言模型出现
+### 1.2 问题核心关键点
 
-大规模语言模型(LLM)的出现，是人工智能领域的一场革命。LLM通过大规模语料训练，具备了高度的语言理解和生成能力。其核心技术包括自回归神经网络(如GPT)、自编码器(如BERT)等。这些模型通过预训练和微调，能够解决自然语言处理(NLP)领域的诸多问题。
+模型微调的核心问题包括以下几个方面：
+- 如何选择合适的微调策略，如全参数微调、参数高效微调、零样本学习等？
+- 如何在微调过程中避免过拟合？
+- 如何利用预训练模型的知识，在微调过程中更高效地进行任务适配？
+- 如何通过LoRA等技术，进一步提升模型在微调过程中的计算效率和表现？
 
-### 1.3 融合大语言模型
-
-随着LLM技术的发展，它被越来越多地融合到传统软件架构中，带来了一系列新的挑战和机遇。LLM的出现，使得软件系统具备了以下新的特点：
-
-- **智能化决策**：LLM能够自动理解用户意图，提供智能化的决策支持。
-- **弹性伸缩**：LLM的计算需求可以根据任务负载动态调整，提高了系统的弹性。
-- **语义理解**：LLM具备语义理解能力，能够自动解析和生成自然语言，提高了系统的交互能力。
-- **数据驱动**：LLM能够自动学习和分析用户数据，提供更精准的业务洞察。
+通过解答以上问题，可以全面了解模型微调的技术细节和应用场景，为后续研究提供依据。
 
 ## 2. 核心概念与联系
 
 ### 2.1 核心概念概述
 
-为了理解LLM对传统软件架构的挑战与革新，我们需要先了解几个核心概念：
+模型微调是深度学习领域中的重要研究方向，用于在特定任务上提升模型的性能。其核心思想是在预训练模型基础上，利用特定任务的数据集对其进行有监督学习，从而优化模型在特定任务上的表现。
 
-- **大规模语言模型(LLM)**：如GPT-3、BERT等，通过大规模无标签语料预训练，学习到丰富的语言知识和表征。
-- **微调(Fine-Tuning)**：通过有标签数据，对预训练模型进行优化，使其适应特定任务。
-- **服务化架构(Service-Oriented Architecture, SOA)**：将应用拆分为独立的服务，通过API接口进行通信。
-- **微服务架构(Microservices Architecture)**：进一步细粒度地拆分服务，每个服务聚焦于单一功能，便于扩展和维护。
-- **DevOps**：融合软件开发和运维，提升软件交付的速度和质量。
-- **AIOps**：结合人工智能和运维，自动化处理运维任务。
-
-这些概念之间存在紧密的联系，LLM的融入对传统软件架构提出了新的要求和挑战，同时也提供了新的优化和提升的可能性。
+预训练模型是通过在大规模无标签数据上进行的自监督学习得到的模型，具有强大的泛化能力和丰富的语义表示。而模型微调则是在预训练模型的基础上，进一步利用特定任务的数据集对其进行有监督学习，从而优化模型在特定任务上的性能。
 
 ### 2.2 核心概念原理和架构的 Mermaid 流程图
 
 ```mermaid
 graph TB
-    A[大规模语言模型, LLM] --> B[微调]
-    A --> C[服务化架构]
-    C --> D[微服务架构]
-    D --> E[DevOps]
-    E --> F[AIOps]
-    F --> G[智能决策]
-    G --> H[弹性伸缩]
-    G --> I[语义理解]
-    G --> J[数据驱动]
+    A[预训练模型] --> B[模型微调]
+    B --> C[全参数微调(SFT)]
+    B --> D[参数高效微调(PEFT)]
+    B --> E[零样本学习]
+    B --> F[LoRA]
+    B --> G[模型高效]
 ```
 
-这个流程图展示了LLM与传统软件架构之间的联系：
-
-1. 大规模语言模型通过微调获得特定任务能力。
-2. 微调后的模型部署到服务化架构中，提供服务接口。
-3. 服务化架构通过微服务架构进一步细粒度拆分服务，提升系统扩展性和维护性。
-4. DevOps和AIOps融合，提升系统交付和运维效率。
-5. LLM的应用促进了系统的智能化决策、弹性伸缩、语义理解和数据驱动。
+上述流程图示意了预训练模型与模型微调之间的关系。其中，A代表预训练模型，B代表模型微调过程，C、D、E、F、G分别代表全参数微调、参数高效微调、零样本学习、LoRA和模型高效等概念。
 
 ## 3. 核心算法原理 & 具体操作步骤
 
 ### 3.1 算法原理概述
 
-LLM通过大规模语料预训练，学习到丰富的语言知识和表征。在实际应用中，通过微调方法，将预训练模型适配到特定任务，获得针对该任务优化的模型。微调的目标是最小化模型在新数据上的损失函数，使得模型能够更好地预测和生成任务相关的输出。
+模型微调的算法原理主要包括：
+- 全参数微调(Supervised Fine-tuning, SFT)：在预训练模型的基础上，使用特定任务的数据集进行有监督学习，优化模型在特定任务上的性能。
+- 参数高效微调(Parameter-Efficient Fine-tuning, PEFT)：在微调过程中，只更新模型的部分参数，而固定大部分预训练参数，以降低计算资源消耗。
+- LoRA：一种基于线性关系的低秩调整方法，在微调过程中只调整部分低秩矩阵，实现高效低秩微调。
 
-形式化地，假设预训练模型为 $M_{\theta}$，其中 $\theta$ 为预训练得到的模型参数。给定下游任务 $T$ 的标注数据集 $D=\{(x_i, y_i)\}_{i=1}^N$，微调的目标是找到新的模型参数 $\hat{\theta}$，使得：
+### 3.2 算法步骤详解
+
+#### 3.2.1 全参数微调(SFT)
+
+全参数微调是指在预训练模型的基础上，使用特定任务的数据集进行有监督学习，优化模型在特定任务上的性能。全参数微调的步骤如下：
+1. 准备预训练模型和数据集。
+2. 添加任务适配层，如分类层或回归层。
+3. 设置微调超参数，如学习率、批大小等。
+4. 使用优化器进行梯度下降训练。
+5. 在验证集上评估模型性能，防止过拟合。
+6. 保存最优模型。
+
+具体实现代码如下：
+
+```python
+import torch
+import torch.nn as nn
+from transformers import BertForSequenceClassification, AdamW
+
+model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=2)
+optimizer = AdamW(model.parameters(), lr=2e-5)
+loss_fn = nn.CrossEntropyLoss()
+
+for epoch in range(10):
+    model.train()
+    for batch in dataloader:
+        inputs, labels = batch
+        outputs = model(inputs)
+        loss = loss_fn(outputs, labels)
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+    model.eval()
+    acc = accuracy(model, test_loader)
+    print(f'Epoch {epoch+1}, acc: {acc:.2f}')
+```
+
+#### 3.2.2 参数高效微调(PEFT)
+
+参数高效微调是指在微调过程中，只更新模型的部分参数，而固定大部分预训练参数，以降低计算资源消耗。常用的参数高效微调方法包括Adapt和SIMOC。
+
+Adapt方法的具体步骤为：
+1. 准备预训练模型和数据集。
+2. 在模型顶部添加任务适配层。
+3. 设置微调超参数，如学习率、批大小等。
+4. 使用优化器进行梯度下降训练。
+5. 在验证集上评估模型性能，防止过拟合。
+6. 保存最优模型。
+
+具体实现代码如下：
+
+```python
+import torch
+import torch.nn as nn
+from transformers import BertForSequenceClassification, AdamW
+from adapt import Adapt
+
+model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=2)
+optimizer = Adapt(model.parameters(), lr=2e-5)
+loss_fn = nn.CrossEntropyLoss()
+
+for epoch in range(10):
+    model.train()
+    for batch in dataloader:
+        inputs, labels = batch
+        outputs = model(inputs)
+        loss = loss_fn(outputs, labels)
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+    model.eval()
+    acc = accuracy(model, test_loader)
+    print(f'Epoch {epoch+1}, acc: {acc:.2f}')
+```
+
+#### 3.2.3 LoRA
+
+LoRA是一种基于线性关系的低秩调整方法，在微调过程中只调整部分低秩矩阵，实现高效低秩微调。LoRA的具体步骤为：
+1. 准备预训练模型和数据集。
+2. 在模型顶部添加LoRA层。
+3. 设置微调超参数，如学习率、批大小等。
+4. 使用优化器进行梯度下降训练。
+5. 在验证集上评估模型性能，防止过拟合。
+6. 保存最优模型。
+
+具体实现代码如下：
+
+```python
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from transformers import BertForSequenceClassification, AdamW
+from laufe import Laufe
+
+model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=2)
+optimizer = AdamW(model.parameters(), lr=2e-5)
+loss_fn = nn.CrossEntropyLoss()
+
+lao = Laufe(model, num_classes=2, loss_fn=loss_fn, reg=0.1, betas=(0.3, 0.2))
+
+for epoch in range(10):
+    model.train()
+    for batch in dataloader:
+        inputs, labels = batch
+        outputs = model(inputs)
+        loss = lao(outputs, labels)
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+    model.eval()
+    acc = accuracy(model, test_loader)
+    print(f'Epoch {epoch+1}, acc: {acc:.2f}')
+```
+
+### 3.3 算法优缺点
+
+#### 3.3.1 全参数微调(SFT)
+
+**优点**：
+- 可充分利用预训练模型所学习的泛化能力。
+- 可以直接优化模型在特定任务上的性能。
+
+**缺点**：
+- 需要消耗大量计算资源，包括时间和空间。
+- 在微调过程中容易出现过拟合。
+
+#### 3.3.2 参数高效微调(PEFT)
+
+**优点**：
+- 只更新部分参数，减少计算资源消耗。
+- 可以防止过拟合，提升模型泛化能力。
+
+**缺点**：
+- 需要引入额外的层或模块，增加了模型的复杂度。
+- 可能影响模型性能。
+
+#### 3.3.3 LoRA
+
+**优点**：
+- 仅调整部分低秩矩阵，计算效率高。
+- 模型结构和计算复杂度较低。
+
+**缺点**：
+- 难以处理高维度的任务。
+- 需要计算低秩矩阵的逆矩阵，增加了计算复杂度。
+
+### 3.4 算法应用领域
+
+模型微调在多个领域得到了广泛应用，例如：
+- 文本分类：如情感分析、主题分类、意图识别等。
+- 命名实体识别：识别文本中的人名、地名、机构名等特定实体。
+- 关系抽取：从文本中抽取实体之间的语义关系。
+- 问答系统：对自然语言问题给出答案。
+- 机器翻译：将源语言文本翻译成目标语言。
+- 文本摘要：将长文本压缩成简短摘要。
+- 对话系统：使机器能够与人自然对话。
+
+## 4. 数学模型和公式 & 详细讲解 & 举例说明
+
+### 4.1 数学模型构建
+
+假设预训练模型为 $M_{\theta}$，其中 $\theta$ 为预训练得到的模型参数。给定下游任务 $T$ 的标注数据集 $D=\{(x_i,y_i)\}_{i=1}^N$，微调的目标是找到新的模型参数 $\hat{\theta}$，使得：
 
 $$
 \hat{\theta}=\mathop{\arg\min}_{\theta} \mathcal{L}(M_{\theta},D)
@@ -77,78 +227,9 @@ $$
 
 其中 $\mathcal{L}$ 为针对任务 $T$ 设计的损失函数，用于衡量模型预测输出与真实标签之间的差异。
 
-### 3.2 算法步骤详解
-
-基于LLM的微调一般包括以下关键步骤：
-
-**Step 1: 准备预训练模型和数据集**
-- 选择合适的预训练语言模型 $M_{\theta}$ 作为初始化参数，如 GPT、BERT 等。
-- 准备下游任务 $T$ 的标注数据集 $D$，划分为训练集、验证集和测试集。一般要求标注数据与预训练数据的分布不要差异过大。
-
-**Step 2: 添加任务适配层**
-- 根据任务类型，在预训练模型顶层设计合适的输出层和损失函数。
-- 对于分类任务，通常在顶层添加线性分类器和交叉熵损失函数。
-- 对于生成任务，通常使用语言模型的解码器输出概率分布，并以负对数似然为损失函数。
-
-**Step 3: 设置微调超参数**
-- 选择合适的优化算法及其参数，如 AdamW、SGD 等，设置学习率、批大小、迭代轮数等。
-- 设置正则化技术及强度，包括权重衰减、Dropout、Early Stopping 等。
-- 确定冻结预训练参数的策略，如仅微调顶层，或全部参数都参与微调。
-
-**Step 4: 执行梯度训练**
-- 将训练集数据分批次输入模型，前向传播计算损失函数。
-- 反向传播计算参数梯度，根据设定的优化算法和学习率更新模型参数。
-- 周期性在验证集上评估模型性能，根据性能指标决定是否触发 Early Stopping。
-- 重复上述步骤直到满足预设的迭代轮数或 Early Stopping 条件。
-
-**Step 5: 测试和部署**
-- 在测试集上评估微调后模型 $M_{\hat{\theta}}$ 的性能，对比微调前后的精度提升。
-- 使用微调后的模型对新样本进行推理预测，集成到实际的应用系统中。
-- 持续收集新的数据，定期重新微调模型，以适应数据分布的变化。
-
-### 3.3 算法优缺点
-
-LLM微调方法的优点包括：
-
-- 简单高效。只需准备少量标注数据，即可对预训练模型进行快速适配，获得较大的性能提升。
-- 通用适用。适用于各种NLP下游任务，包括分类、匹配、生成等，设计简单的任务适配层即可实现微调。
-- 参数高效。利用参数高效微调技术，在固定大部分预训练参数的情况下，仍可取得不错的微调效果。
-- 效果显著。在学术界和工业界的诸多任务上，基于微调的方法已经刷新了最先进的性能指标。
-
-但同时，该方法也存在一些局限性：
-
-- 依赖标注数据。微调的效果很大程度上取决于标注数据的质量和数量，获取高质量标注数据的成本较高。
-- 迁移能力有限。当目标任务与预训练数据的分布差异较大时，微调的性能提升有限。
-- 负面效果传递。预训练模型的固有偏见、有害信息等，可能通过微调传递到下游任务，造成负面影响。
-- 可解释性不足。微调模型的决策过程通常缺乏可解释性，难以对其推理逻辑进行分析和调试。
-
-### 3.4 算法应用领域
-
-LLM微调方法在NLP领域已经得到了广泛的应用，覆盖了几乎所有常见任务，例如：
-
-- 文本分类：如情感分析、主题分类、意图识别等。通过微调使模型学习文本-标签映射。
-- 命名实体识别：识别文本中的人名、地名、机构名等特定实体。通过微调使模型掌握实体边界和类型。
-- 关系抽取：从文本中抽取实体之间的语义关系。通过微调使模型学习实体-关系三元组。
-- 问答系统：对自然语言问题给出答案。将问题-答案对作为微调数据，训练模型学习匹配答案。
-- 机器翻译：将源语言文本翻译成目标语言。通过微调使模型学习语言-语言映射。
-- 文本摘要：将长文本压缩成简短摘要。将文章-摘要对作为微调数据，使模型学习抓取要点。
-- 对话系统：使机器能够与人自然对话。将多轮对话历史作为上下文，微调模型进行回复生成。
-
-此外，LLM微调也被创新性地应用到更多场景中，如可控文本生成、常识推理、代码生成、数据增强等，为NLP技术带来了全新的突破。随着预训练模型和微调方法的不断进步，相信NLP技术将在更广阔的应用领域大放异彩。
-
-## 4. 数学模型和公式 & 详细讲解 & 举例说明
-
-### 4.1 数学模型构建
-
-假设预训练语言模型为 $M_{\theta}$，其中 $\theta$ 为预训练得到的模型参数。给定下游任务 $T$ 的标注数据集 $D=\{(x_i, y_i)\}_{i=1}^N$，其中 $x_i$ 为输入文本，$y_i$ 为对应标签。微调的目标是找到最优参数 $\hat{\theta}$，使得模型在新数据上的表现最优。
-
-定义模型 $M_{\theta}$ 在输入 $x$ 上的输出为 $\hat{y}=M_{\theta}(x)$，表示模型对输入的预测输出。微调的优化目标是最小化损失函数 $\mathcal{L}(\theta)$，其中 $\mathcal{L}$ 为针对任务 $T$ 设计的损失函数，用于衡量模型预测输出与真实标签之间的差异。
-
 ### 4.2 公式推导过程
 
-以二分类任务为例，推导交叉熵损失函数及其梯度的计算公式。
-
-假设模型 $M_{\theta}$ 在输入 $x$ 上的输出为 $\hat{y}=M_{\theta}(x) \in [0,1]$，表示样本属于正类的概率。真实标签 $y \in \{0,1\}$。则二分类交叉熵损失函数定义为：
+以分类任务为例，假设模型 $M_{\theta}$ 在输入 $x$ 上的输出为 $\hat{y}=M_{\theta}(x)$，表示样本属于正类的概率。真实标签 $y \in \{0,1\}$。则二分类交叉熵损失函数定义为：
 
 $$
 \ell(M_{\theta}(x),y) = -[y\log \hat{y} + (1-y)\log (1-\hat{y})]
@@ -170,28 +251,39 @@ $$
 
 ### 4.3 案例分析与讲解
 
-**案例一：文本分类**
-假设任务为情感分析，模型输入为一条短文本，输出为情感标签。通过微调使模型学习文本-标签映射。
+以BERT模型为例，假设我们在进行二分类任务微调，具体步骤如下：
+1. 准备预训练模型和数据集。
+2. 在模型顶部添加线性分类器，并使用交叉熵损失函数。
+3. 设置微调超参数，如学习率、批大小等。
+4. 使用优化器进行梯度下降训练。
+5. 在验证集上评估模型性能，防止过拟合。
+6. 保存最优模型。
 
-- 微调模型为BERT，其预训练任务为掩码语言模型。
-- 微调任务为情感分类，将情感标注数据作为监督数据。
-- 微调后的模型输出概率分布，选择最大概率对应的情感标签作为预测结果。
+具体实现代码如下：
 
-**案例二：命名实体识别**
-假设任务为识别文本中的特定实体，模型输入为一条长文本，输出为实体类型和实体边界。
+```python
+import torch
+import torch.nn as nn
+from transformers import BertForSequenceClassification, AdamW
 
-- 微调模型为BERT，其预训练任务为掩码语言模型和下一句预测任务。
-- 微调任务为命名实体识别，将命名实体标注数据作为监督数据。
-- 微调后的模型通过上下文理解，预测文本中每个词对应的实体类型和边界。
+model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=2)
+optimizer = AdamW(model.parameters(), lr=2e-5)
+loss_fn = nn.CrossEntropyLoss()
 
-**案例三：对话系统**
-假设任务为构建智能对话系统，模型输入为对话历史和当前用户输入，输出为回复内容。
+for epoch in range(10):
+    model.train()
+    for batch in dataloader:
+        inputs, labels = batch
+        outputs = model(inputs)
+        loss = loss_fn(outputs, labels)
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
 
-- 微调模型为GPT，其预训练任务为自回归语言模型。
-- 微调任务为对话生成，将对话历史和标签对作为监督数据。
-- 微调后的模型通过自回归生成，预测下一个回复内容。
-
-通过这些案例，可以看出，微调方法能够灵活地将预训练模型适配到各种NLP任务中，提升模型在特定任务上的性能。
+    model.eval()
+    acc = accuracy(model, test_loader)
+    print(f'Epoch {epoch+1}, acc: {acc:.2f}')
+```
 
 ## 5. 项目实践：代码实例和详细解释说明
 
@@ -226,19 +318,19 @@ pip install numpy pandas scikit-learn matplotlib tqdm jupyter notebook ipython
 
 ### 5.2 源代码详细实现
 
-这里我们以命名实体识别(NER)任务为例，给出使用Transformers库对BERT模型进行微调的PyTorch代码实现。
+下面我们以文本分类任务为例，给出使用Transformers库对BERT模型进行微调的PyTorch代码实现。
 
-首先，定义NER任务的数据处理函数：
+首先，定义文本分类任务的数据处理函数：
 
 ```python
 from transformers import BertTokenizer
 from torch.utils.data import Dataset
 import torch
 
-class NERDataset(Dataset):
-    def __init__(self, texts, tags, tokenizer, max_len=128):
+class TextClassificationDataset(Dataset):
+    def __init__(self, texts, labels, tokenizer, max_len=128):
         self.texts = texts
-        self.tags = tags
+        self.labels = labels
         self.tokenizer = tokenizer
         self.max_len = max_len
         
@@ -247,39 +339,37 @@ class NERDataset(Dataset):
     
     def __getitem__(self, item):
         text = self.texts[item]
-        tags = self.tags[item]
+        label = self.labels[item]
         
         encoding = self.tokenizer(text, return_tensors='pt', max_length=self.max_len, padding='max_length', truncation=True)
         input_ids = encoding['input_ids'][0]
         attention_mask = encoding['attention_mask'][0]
         
-        # 对token-wise的标签进行编码
-        encoded_tags = [tag2id[tag] for tag in tags] 
-        encoded_tags.extend([tag2id['O']] * (self.max_len - len(encoded_tags)))
-        labels = torch.tensor(encoded_tags, dtype=torch.long)
+        # 对label进行one-hot编码
+        label = torch.tensor([[label]], dtype=torch.long)
         
         return {'input_ids': input_ids, 
                 'attention_mask': attention_mask,
-                'labels': labels}
+                'labels': label}
 
 # 标签与id的映射
-tag2id = {'O': 0, 'B-PER': 1, 'I-PER': 2, 'B-ORG': 3, 'I-ORG': 4, 'B-LOC': 5, 'I-LOC': 6}
-id2tag = {v: k for k, v in tag2id.items()}
+label2id = {0: 'neg', 1: 'pos'}
+id2label = {v: k for k, v in label2id.items()}
 
 # 创建dataset
-tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
-train_dataset = NERDataset(train_texts, train_tags, tokenizer)
-dev_dataset = NERDataset(dev_texts, dev_tags, tokenizer)
-test_dataset = NERDataset(test_texts, test_tags, tokenizer)
+train_dataset = TextClassificationDataset(train_texts, train_labels, tokenizer)
+dev_dataset = TextClassificationDataset(dev_texts, dev_labels, tokenizer)
+test_dataset = TextClassificationDataset(test_texts, test_labels, tokenizer)
 ```
 
 然后，定义模型和优化器：
 
 ```python
-from transformers import BertForTokenClassification, AdamW
+from transformers import BertForSequenceClassification, AdamW
 
-model = BertForTokenClassification.from_pretrained('bert-base-cased', num_labels=len(tag2id))
+model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=len(label2id))
 
 optimizer = AdamW(model.parameters(), lr=2e-5)
 ```
@@ -289,7 +379,7 @@ optimizer = AdamW(model.parameters(), lr=2e-5)
 ```python
 from torch.utils.data import DataLoader
 from tqdm import tqdm
-from sklearn.metrics import classification_report
+from sklearn.metrics import accuracy_score
 
 device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 model.to(device)
@@ -320,15 +410,13 @@ def evaluate(model, dataset, batch_size):
             attention_mask = batch['attention_mask'].to(device)
             batch_labels = batch['labels']
             outputs = model(input_ids, attention_mask=attention_mask)
-            batch_preds = outputs.logits.argmax(dim=2).to('cpu').tolist()
+            batch_preds = outputs.logits.argmax(dim=1).to('cpu').tolist()
             batch_labels = batch_labels.to('cpu').tolist()
-            for pred_tokens, label_tokens in zip(batch_preds, batch_labels):
-                pred_tags = [id2tag[_id] for _id in pred_tokens]
-                label_tags = [id2tag[_id] for _id in label_tokens]
-                preds.append(pred_tags[:len(label_tags)])
-                labels.append(label_tags)
+            for pred, label in zip(batch_preds, batch_labels):
+                preds.append(pred)
+                labels.append(label)
                 
-    print(classification_report(labels, preds))
+    print(f'Accuracy: {accuracy_score(labels, preds):.2f}')
 ```
 
 最后，启动训练流程并在测试集上评估：
@@ -339,38 +427,38 @@ batch_size = 16
 
 for epoch in range(epochs):
     loss = train_epoch(model, train_dataset, batch_size, optimizer)
-    print(f"Epoch {epoch+1}, train loss: {loss:.3f}")
+    print(f'Epoch {epoch+1}, train loss: {loss:.3f}')
     
-    print(f"Epoch {epoch+1}, dev results:")
+    print(f'Epoch {epoch+1}, dev results:')
     evaluate(model, dev_dataset, batch_size)
     
-print("Test results:")
+print('Test results:')
 evaluate(model, test_dataset, batch_size)
 ```
 
-以上就是使用PyTorch对BERT进行命名实体识别任务微调的完整代码实现。可以看到，得益于Transformers库的强大封装，我们可以用相对简洁的代码完成BERT模型的加载和微调。
+以上就是使用PyTorch对BERT进行文本分类任务微调的完整代码实现。可以看到，得益于Transformers库的强大封装，我们可以用相对简洁的代码完成BERT模型的加载和微调。
 
 ### 5.3 代码解读与分析
 
 让我们再详细解读一下关键代码的实现细节：
 
-**NERDataset类**：
+**TextClassificationDataset类**：
 - `__init__`方法：初始化文本、标签、分词器等关键组件。
 - `__len__`方法：返回数据集的样本数量。
 - `__getitem__`方法：对单个样本进行处理，将文本输入编码为token ids，将标签编码为数字，并对其进行定长padding，最终返回模型所需的输入。
 
-**tag2id和id2tag字典**：
-- 定义了标签与数字id之间的映射关系，用于将token-wise的预测结果解码回真实的标签。
+**label2id和id2label字典**：
+- 定义了标签与数字id之间的映射关系，用于将模型的输出结果解码为具体的标签。
 
 **训练和评估函数**：
 - 使用PyTorch的DataLoader对数据集进行批次化加载，供模型训练和推理使用。
 - 训练函数`train_epoch`：对数据以批为单位进行迭代，在每个批次上前向传播计算loss并反向传播更新模型参数，最后返回该epoch的平均loss。
-- 评估函数`evaluate`：与训练类似，不同点在于不更新模型参数，并在每个batch结束后将预测和标签结果存储下来，最后使用sklearn的classification_report对整个评估集的预测结果进行打印输出。
+- 评估函数`evaluate`：与训练类似，不同点在于不更新模型参数，并在每个batch结束后将预测和标签结果存储下来，最后使用sklearn的accuracy_score函数计算准确率。
 
 **训练流程**：
 - 定义总的epoch数和batch size，开始循环迭代
 - 每个epoch内，先在训练集上训练，输出平均loss
-- 在验证集上评估，输出分类指标
+- 在验证集上评估，输出准确率
 - 所有epoch结束后，在测试集上评估，给出最终测试结果
 
 可以看到，PyTorch配合Transformers库使得BERT微调的代码实现变得简洁高效。开发者可以将更多精力放在数据处理、模型改进等高层逻辑上，而不必过多关注底层的实现细节。
@@ -399,7 +487,7 @@ evaluate(model, test_dataset, batch_size)
 
 ### 6.4 未来应用展望
 
-随着大语言模型和微调方法的不断发展，基于微调范式将在更多领域得到应用，为传统行业带来变革性影响。
+随着大语言模型微调技术的发展，基于微调范式将在更多领域得到应用，为传统行业带来变革性影响。
 
 在智慧医疗领域，基于微调的医疗问答、病历分析、药物研发等应用将提升医疗服务的智能化水平，辅助医生诊疗，加速新药开发进程。
 
@@ -407,7 +495,7 @@ evaluate(model, test_dataset, batch_size)
 
 在智慧城市治理中，微调模型可应用于城市事件监测、舆情分析、应急指挥等环节，提高城市管理的自动化和智能化水平，构建更安全、高效的未来城市。
 
-此外，在企业生产、社会治理、文娱传媒等众多领域，基于大模型微调的人工智能应用也将不断涌现，为经济社会发展注入新的动力。相信随着技术的日益成熟，微调方法将成为人工智能落地应用的重要范式，推动人工智能技术在垂直行业的规模化落地。总之，微调需要开发者根据具体任务，不断迭代和优化模型、数据和算法，方能得到理想的效果。
+此外，在企业生产、社会治理、文娱传媒等众多领域，基于大模型微调的人工智能应用也将不断涌现，为经济社会发展注入新的动力。相信随着技术的日益成熟，微调方法将成为人工智能落地应用的重要范式，推动人工智能向更广阔的领域加速渗透。
 
 ## 7. 工具和资源推荐
 
@@ -466,7 +554,7 @@ evaluate(model, test_dataset, batch_size)
 
 本文对基于监督学习的大语言模型微调方法进行了全面系统的介绍。首先阐述了大语言模型和微调技术的研究背景和意义，明确了微调在拓展预训练模型应用、提升下游任务性能方面的独特价值。其次，从原理到实践，详细讲解了监督微调的数学原理和关键步骤，给出了微调任务开发的完整代码实例。同时，本文还广泛探讨了微调方法在智能客服、金融舆情、个性化推荐等多个行业领域的应用前景，展示了微调范式的巨大潜力。此外，本文精选了微调技术的各类学习资源，力求为读者提供全方位的技术指引。
 
-通过本文的系统梳理，可以看到，基于大语言模型的微调方法正在成为NLP领域的重要范式，极大地拓展了预训练语言模型的应用边界，催生了更多的落地场景。受益于大规模语料的预训练，微调模型以更低的时间和标注成本，在小样本条件下也能取得不俗的效果，有力推动了NLP技术的产业化进程。未来，伴随预训练语言模型和微调方法的不断进步，相信NLP技术将在更广阔的应用领域大放异彩，深刻影响人类的生产生活方式。
+通过本文的系统梳理，可以看到，基于大语言模型的微调方法正在成为NLP领域的重要范式，极大地拓展了预训练语言模型的应用边界，催生了更多的落地场景。受益于大规模语料的预训练，微调模型以更低的时间和标注成本，在小样本条件下也能取得理想的微调效果，有力推动了NLP技术的产业化进程。未来，伴随预训练语言模型和微调方法的持续演进，相信NLP技术将在更广阔的应用领域大放异彩，深刻影响人类的生产生活方式。
 
 ### 8.2 未来发展趋势
 
@@ -540,7 +628,7 @@ A: 目前主流的预训练大模型动辄以亿计的参数规模，对算力�
 
 A: 过拟合是微调面临的主要挑战，尤其是在标注数据不足的情况下。常见的缓解策略包括：
 1. 数据增强：通过回译、近义替换等方式扩充训练集
-2. 正则化：使用L2正则、Dropout、Early Stopping 等避免过拟合
+2. 正则化：使用L2正则、Dropout、Early Stopping等避免过拟合
 3. 对抗训练：引入对抗样本，提高模型鲁棒性
 4. 参数高效微调：只调整少量参数(如Adapter、Prefix等)，减小过拟合风险
 5. 多模型集成：训练多个微调模型，取平均输出，抑制过拟合
@@ -558,4 +646,8 @@ A: 将微调模型转化为实际应用，还需要考虑以下因素：
 6. 安全防护：采用访问鉴权、数据脱敏等措施，保障数据和模型安全
 
 大语言模型微调为NLP应用开启了广阔的想象空间，但如何将强大的性能转化为稳定、高效、安全的业务价值，还需要工程实践的不断打磨。唯有从数据、算法、工程、业务等多个维度协同发力，才能真正实现人工智能技术在垂直行业的规模化落地。总之，微调需要开发者根据具体任务，不断迭代和优化模型、数据和算法，方能得到理想的效果。
+
+---
+
+作者：禅与计算机程序设计艺术 / Zen and the Art of Computer Programming
 
