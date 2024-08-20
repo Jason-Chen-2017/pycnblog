@@ -53,10 +53,32 @@ def copy_blog(src, n, dst, start):
 
 if __name__ == '__main__':
 
-    # src = '/Users/bytedance/ai/pycnblog/articles_good/20240802'
-    # dst = '/Users/bytedance/ai/pycnblog/blog/zen'
-    # copy_blog(src, 100, dst, 617)
+    # 20240819
 
-    src = '/Users/bytedance/ai/pycnblog/articles_good_mac/20240802'
-    dst = '/Users/bytedance/ai/pycnblog/blog/agi'
-    copy_blog(src, 15, dst, 244)
+    # src = '/Users/bytedance/ai/pycnblog/articles_good/20240816'
+    # dst = '/Users/bytedance/ai/pycnblog/blog/zen'
+    # copy_blog(src, 100, dst, 918)
+
+    # src = '/Users/bytedance/ai/pycnblog/articles_good/20240817'
+    # dst = '/Users/bytedance/ai/pycnblog/blog/agi'
+    # copy_blog(src, 15, dst, 254)
+
+    # src = '/Users/bytedance/ai/pycnblog/articles_good/20240818'
+    # dst = '/Users/bytedance/ai/pycnblog/blog/ai'
+    # copy_blog(src, 15, dst, 307)
+
+    # src = '/Users/bytedance/ai/pycnblog/articles_good/20240819'
+    # dst = '/Users/bytedance/ai/pycnblog/blog/llm'
+    # copy_blog(src, 15, dst, 227)
+
+    # src = '/Users/bytedance/ai/pycnblog/articles_good_mac/20240809'
+    # dst = '/Users/bytedance/ai/pycnblog/blog/agi'
+    # copy_blog(src, 15, dst, 496)
+
+    # src = '/Users/bytedance/ai/pycnblog/articles_good_mac/20240814'
+    # dst = '/Users/bytedance/ai/pycnblog/blog/ai'
+    # copy_blog(src, 15, dst, 523)
+
+    src = '/Users/bytedance/ai/pycnblog/articles_good_mac/20240819'
+    dst = '/Users/bytedance/ai/pycnblog/blog/llm'
+    copy_blog(src, 15, dst, 426)
