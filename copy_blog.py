@@ -53,9 +53,9 @@ def copy_blog(src, n, dst, start):
 
 if __name__ == '__main__':
 
-    src = '/Users/bytedance/ai/pycnblog/articles_good/20240803'
+    src = '/Users/bytedance/ai/pycnblog/articles_good/20240810'
     dst = '/Users/bytedance/ai/pycnblog/blog/zen'
-    copy_blog(src, 100, dst, 617)
+    copy_blog(src, 100, dst, 780)
 
     # src = '/Users/bytedance/ai/pycnblog/articles_good_mac/20240802'
     # dst = '/Users/bytedance/ai/pycnblog/blog/agi'
