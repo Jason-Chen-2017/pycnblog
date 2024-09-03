@@ -7,6 +7,9 @@ fc:
 m:
 	./curl_md.sh
 
+mb:
+	./curl_md_book.sh
+
 mc:
 	./curl_md_mac.sh
 
@@ -53,6 +56,9 @@ t:
 
 a:
 	./auto_make.sh &
+
+amb:
+	./auto_make_book.sh &
 
 amc:
 	./auto_make_mc.sh &
