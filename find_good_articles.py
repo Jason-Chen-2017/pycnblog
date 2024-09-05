@@ -73,8 +73,11 @@ def process_file(file_path, target_good_directory, target_draft_directory):
 
         length = len(content)
         line_count = len(cleaned_lines)
-        short_lines_count_ration = len(
-            [line for line in cleaned_lines if len(line) < 30 and line.startswith('##')]) / line_count
+        
+        short_lines_count_ration = 0
+        
+        if line_count>0:
+            short_lines_count_ration = len([line for line in cleaned_lines if len(line) < 30 and line.startswith('##')]) / line_count
 
         print(f'{short_lines_count_ration} {length} {line_count} {file_path}')
 
@@ -82,8 +85,7 @@ def process_file(file_path, target_good_directory, target_draft_directory):
     # target_good_directory
     if (length >= 2000 and
             line_count >= 80 and
-            short_lines_count_ration < 0.6 and
-            is_good_content(content)):
+            short_lines_count_ration < 0.6):
         file_name = os.path.basename(file_path)
         target_good_directory = os.path.join(target_good_directory, file_name)
         shutil.copy(file_path, target_good_directory)
@@ -92,8 +94,7 @@ def process_file(file_path, target_good_directory, target_draft_directory):
     # target_draft_directory
     if (1000 < length < 2000 and
             70 < line_count < 80 and
-            short_lines_count_ration < 0.6 and
-            is_good_content(content)):
+            short_lines_count_ration < 0.6):
         file_name = os.path.basename(file_path)
         target_draft_directory = os.path.join(target_draft_directory, file_name)
         shutil.copy(file_path, target_draft_directory)
