@@ -1,260 +1,466 @@
                  
 
-### 《李开复：苹果发布AI应用的产业》——相关领域面试题与算法编程题解析
-
-#### 1. 什么是人工智能（AI）？
-
-**题目：** 请简要解释人工智能（AI）的概念，并列举其两种应用领域。
-
-**答案：** 人工智能是指使计算机系统能够模拟人类智能行为的技术。两种常见应用领域包括：
-
-- **机器学习（Machine Learning）：** 通过训练模型来使计算机自动从数据中学习，并做出预测或决策。
-- **自然语言处理（Natural Language Processing, NLP）：** 使计算机能够理解和处理人类语言，包括语音识别、机器翻译等。
-
-#### 2. 什么是深度学习（Deep Learning）？
-
-**题目：** 请简要描述深度学习（Deep Learning）的概念，并解释其与机器学习的区别。
-
-**答案：** 深度学习是机器学习的一种特殊形式，它使用多层神经网络（Neural Networks）来提取数据中的特征。与传统的机器学习相比，深度学习能够自动发现更加复杂的特征，并提高模型的准确性。
-
-**区别：** 传统机器学习需要手动提取特征，而深度学习能够自动从数据中学习特征，从而减少人工干预。
-
-#### 3. 什么是神经网络（Neural Networks）？
-
-**题目：** 请简要解释神经网络（Neural Networks）的概念，并说明其基本结构。
-
-**答案：** 神经网络是一种由大量神经元（类似生物神经元）组成的计算模型。其基本结构包括：
-
-- **输入层（Input Layer）：** 接收输入数据。
-- **隐藏层（Hidden Layers）：** 提取和转换输入数据，可以有一个或多个。
-- **输出层（Output Layer）：** 输出模型的预测结果。
-
-#### 4. 什么是卷积神经网络（Convolutional Neural Networks, CNN）？
-
-**题目：** 请简要描述卷积神经网络（CNN）的概念，并说明其在图像识别中的应用。
-
-**答案：** 卷积神经网络是一种特殊类型的神经网络，主要用于处理具有网格结构的数据，如图像。它通过卷积操作提取图像中的局部特征，然后通过多层卷积和池化操作逐渐将特征组合成全局特征。
-
-**应用：** CNN在图像识别、图像分类、目标检测等任务中具有广泛的应用。
-
-#### 5. 什么是强化学习（Reinforcement Learning）？
-
-**题目：** 请简要解释强化学习（Reinforcement Learning）的概念，并说明其与监督学习和无监督学习的区别。
-
-**答案：** 强化学习是一种机器学习方法，通过智能体（agent）与环境（environment）的交互来学习策略。智能体通过尝试不同的行动并获得奖励或惩罚来优化其策略。
-
-**区别：**
-
-- **监督学习（Supervised Learning）：** 有明确的标签数据，目标是预测标签。
-- **无监督学习（Unsupervised Learning）：** 没有标签数据，目标是发现数据中的结构。
-- **强化学习（Reinforcement Learning）：** 智能体通过与环境交互来学习策略，目标是最大化累积奖励。
-
-#### 6. 什么是生成对抗网络（Generative Adversarial Networks, GAN）？
-
-**题目：** 请简要描述生成对抗网络（GAN）的概念，并说明其在图像生成中的应用。
-
-**答案：** 生成对抗网络是一种由两个神经网络组成的模型：生成器（Generator）和判别器（Discriminator）。生成器试图生成逼真的数据，而判别器试图区分生成器和真实数据。通过这种对抗过程，生成器逐渐提高其生成数据的质量。
-
-**应用：** GAN在图像生成、图像修复、风格迁移等任务中具有广泛的应用。
-
-#### 7. 什么是迁移学习（Transfer Learning）？
-
-**题目：** 请简要解释迁移学习（Transfer Learning）的概念，并说明其在模型训练中的应用。
-
-**答案：** 迁移学习是指将一个任务上学到的知识应用于另一个相关任务上的技术。在迁移学习中，已经训练好的模型（通常称为基础模型）被应用于新任务上，以减少训练时间并提高模型性能。
-
-**应用：** 迁移学习在计算机视觉、自然语言处理等领域中广泛应用，特别是在数据稀缺的情况下。
-
-#### 8. 什么是数据增强（Data Augmentation）？
-
-**题目：** 请简要描述数据增强（Data Augmentation）的概念，并说明其在模型训练中的应用。
-
-**答案：** 数据增强是指通过应用一系列变换来增加训练数据集的多样性，从而提高模型的泛化能力。这些变换包括旋转、缩放、裁剪、颜色调整等。
-
-**应用：** 数据增强在模型训练中非常重要，尤其是在数据量有限的情况下，可以有效提高模型的准确性。
-
-#### 9. 什么是支持向量机（Support Vector Machines, SVM）？
-
-**题目：** 请简要解释支持向量机（SVM）的概念，并说明其在分类任务中的应用。
-
-**答案：** 支持向量机是一种监督学习模型，用于分类和回归任务。它通过找到一个最佳的超平面，将数据集划分为不同的类别。
-
-**应用：** SVM在文本分类、图像分类、生物信息学等领域中具有广泛的应用。
-
-#### 10. 什么是交叉验证（Cross-Validation）？
-
-**题目：** 请简要描述交叉验证（Cross-Validation）的概念，并说明其在模型评估中的应用。
-
-**答案：** 交叉验证是一种评估模型性能的方法，通过将数据集划分为多个子集（或称为折），并在每个子集上训练和评估模型。
-
-**应用：** 交叉验证可以帮助我们更准确地评估模型的泛化能力，避免过拟合。
-
-#### 11. 什么是卷积操作（Convolution）？
-
-**题目：** 请简要解释卷积操作（Convolution）的概念，并说明其在图像处理中的应用。
-
-**答案：** 卷积操作是指将一个滤波器（或称为卷积核）与图像进行逐点相乘并求和的操作。
-
-**应用：** 卷积操作在图像处理中用于提取图像中的局部特征，如边缘、纹理等。
-
-#### 12. 什么是池化操作（Pooling）？
-
-**题目：** 请简要描述池化操作（Pooling）的概念，并说明其在图像处理中的应用。
-
-**答案：** 池化操作是一种用于减小数据维度和减少参数数量的操作，通常在卷积操作之后使用。
-
-**应用：** 池化操作在图像处理中用于提取图像中的关键特征，同时减少计算量和参数数量。
-
-#### 13. 什么是过拟合（Overfitting）？
-
-**题目：** 请简要解释过拟合（Overfitting）的概念，并说明其如何影响模型性能。
-
-**答案：** 过拟合是指模型在训练数据上表现得非常好，但在新的测试数据上表现不佳的现象。
-
-**影响：** 过拟合会导致模型对训练数据的依赖性过强，从而降低模型的泛化能力。
-
-#### 14. 什么是正则化（Regularization）？
-
-**题目：** 请简要解释正则化（Regularization）的概念，并说明其在模型训练中的应用。
-
-**答案：** 正则化是一种在损失函数中添加额外的项，以减少模型复杂度和防止过拟合的方法。
-
-**应用：** 正则化在模型训练中用于防止模型参数过大，从而提高模型的泛化能力。
-
-#### 15. 什么是交叉熵（Cross-Entropy）？
-
-**题目：** 请简要解释交叉熵（Cross-Entropy）的概念，并说明其在分类任务中的应用。
-
-**答案：** 交叉熵是一种衡量两个概率分布差异的指标，通常用于分类任务的损失函数。
-
-**应用：** 交叉熵在分类任务中用于计算实际输出和预期输出之间的差异，以指导模型优化。
-
-#### 16. 什么是反向传播（Backpropagation）？
-
-**题目：** 请简要描述反向传播（Backpropagation）的概念，并说明其在神经网络训练中的应用。
-
-**答案：** 反向传播是一种用于训练神经网络的算法，它通过计算网络输出与预期输出之间的误差，并反向传播误差到每个神经元的权重和偏置。
-
-**应用：** 反向传播在神经网络训练中用于更新模型参数，以最小化损失函数。
-
-#### 17. 什么是优化器（Optimizer）？
-
-**题目：** 请简要解释优化器（Optimizer）的概念，并说明其在模型训练中的应用。
-
-**答案：** 优化器是一种用于更新模型参数的算法，以最小化损失函数。
-
-**应用：** 优化器在模型训练中用于指导模型参数的更新，以提高模型性能。
-
-#### 18. 什么是梯度下降（Gradient Descent）？
-
-**题目：** 请简要描述梯度下降（Gradient Descent）的概念，并说明其在模型训练中的应用。
-
-**答案：** 梯度下降是一种用于优化模型参数的算法，它通过沿着损失函数的梯度方向逐步更新模型参数，以最小化损失函数。
-
-**应用：** 梯度下降在模型训练中用于更新模型参数，以提高模型性能。
-
-#### 19. 什么是随机梯度下降（Stochastic Gradient Descent, SGD）？
-
-**题目：** 请简要描述随机梯度下降（Stochastic Gradient Descent, SGD）的概念，并说明其在模型训练中的应用。
-
-**答案：** 随机梯度下降是一种特殊的梯度下降算法，它每次更新模型参数时使用的是整个数据集的一个随机子集。
-
-**应用：** 随机梯度下降在模型训练中用于加速收敛和提高模型的泛化能力。
-
-#### 20. 什么是批量梯度下降（Batch Gradient Descent）？
-
-**题目：** 请简要描述批量梯度下降（Batch Gradient Descent）的概念，并说明其在模型训练中的应用。
-
-**答案：** 批量梯度下降是一种特殊的梯度下降算法，它每次更新模型参数时使用的是整个数据集。
-
-**应用：** 批量梯度下降在模型训练中用于确保模型的泛化能力，但可能需要更多时间来收敛。
-
-#### 21. 什么是卷积神经网络（Convolutional Neural Networks, CNN）？
-
-**题目：** 请简要描述卷积神经网络（Convolutional Neural Networks, CNN）的概念，并说明其在图像识别中的应用。
-
-**答案：** 卷积神经网络是一种特殊的神经网络，它使用卷积层来提取图像的特征。在图像识别任务中，CNN通过卷积层和池化层提取图像的特征，然后通过全连接层进行分类。
-
-**应用：** CNN在图像识别、图像分类、目标检测等任务中具有广泛的应用。
-
-#### 22. 什么是循环神经网络（Recurrent Neural Networks, RNN）？
-
-**题目：** 请简要描述循环神经网络（Recurrent Neural Networks, RNN）的概念，并说明其在序列数据处理中的应用。
-
-**答案：** 循环神经网络是一种特殊的神经网络，它能够处理序列数据。在RNN中，每个时间步的输出不仅依赖于当前输入，还依赖于前一个时间步的输出。
-
-**应用：** RNN在自然语言处理、语音识别、时间序列分析等任务中具有广泛的应用。
-
-#### 23. 什么是长短时记忆网络（Long Short-Term Memory, LSTM）？
-
-**题目：** 请简要描述长短时记忆网络（Long Short-Term Memory, LSTM）的概念，并说明其在序列数据处理中的应用。
-
-**答案：** 长短时记忆网络是一种特殊的循环神经网络，它能够处理长序列数据。LSTM通过引入门控机制来控制信息的流动，从而有效地避免梯度消失和梯度爆炸问题。
-
-**应用：** LSTM在自然语言处理、语音识别、时间序列分析等任务中具有广泛的应用。
-
-#### 24. 什么是注意力机制（Attention Mechanism）？
-
-**题目：** 请简要描述注意力机制（Attention Mechanism）的概念，并说明其在序列数据处理中的应用。
-
-**答案：** 注意力机制是一种用于序列数据处理的方法，它通过为不同的序列元素分配不同的注意力权重来提高模型的性能。
-
-**应用：** 注意力机制在自然语言处理、图像识别、序列建模等任务中具有广泛的应用。
-
-#### 25. 什么是迁移学习（Transfer Learning）？
-
-**题目：** 请简要描述迁移学习（Transfer Learning）的概念，并说明其在模型训练中的应用。
-
-**答案：** 迁移学习是指将一个任务上学到的知识应用于另一个相关任务上的技术。在迁移学习中，已经训练好的模型（通常称为基础模型）被应用于新任务上，以减少训练时间并提高模型性能。
-
-**应用：** 迁移学习在计算机视觉、自然语言处理等领域中广泛应用，特别是在数据稀缺的情况下。
-
-#### 26. 什么是生成对抗网络（Generative Adversarial Networks, GAN）？
-
-**题目：** 请简要描述生成对抗网络（Generative Adversarial Networks, GAN）的概念，并说明其在图像生成中的应用。
-
-**答案：** 生成对抗网络是一种由两个神经网络组成的模型：生成器（Generator）和判别器（Discriminator）。生成器试图生成逼真的数据，而判别器试图区分生成器和真实数据。通过这种对抗过程，生成器逐渐提高其生成数据的质量。
-
-**应用：** GAN在图像生成、图像修复、风格迁移等任务中具有广泛的应用。
-
-#### 27. 什么是卷积神经网络（Convolutional Neural Networks, CNN）？
-
-**题目：** 请简要描述卷积神经网络（Convolutional Neural Networks, CNN）的概念，并说明其在图像识别中的应用。
-
-**答案：** 卷积神经网络是一种特殊的神经网络，它使用卷积层来提取图像的特征。在图像识别任务中，CNN通过卷积层和池化层提取图像的特征，然后通过全连接层进行分类。
-
-**应用：** CNN在图像识别、图像分类、目标检测等任务中具有广泛的应用。
-
-#### 28. 什么是循环神经网络（Recurrent Neural Networks, RNN）？
-
-**题目：** 请简要描述循环神经网络（Recurrent Neural Networks, RNN）的概念，并说明其在序列数据处理中的应用。
-
-**答案：** 循环神经网络是一种特殊的神经网络，它能够处理序列数据。在RNN中，每个时间步的输出不仅依赖于当前输入，还依赖于前一个时间步的输出。
-
-**应用：** RNN在自然语言处理、语音识别、时间序列分析等任务中具有广泛的应用。
-
-#### 29. 什么是长短时记忆网络（Long Short-Term Memory, LSTM）？
-
-**题目：** 请简要描述长短时记忆网络（Long Short-Term Memory, LSTM）的概念，并说明其在序列数据处理中的应用。
-
-**答案：** 长短时记忆网络是一种特殊的循环神经网络，它能够处理长序列数据。LSTM通过引入门控机制来控制信息的流动，从而有效地避免梯度消失和梯度爆炸问题。
-
-**应用：** LSTM在自然语言处理、语音识别、时间序列分析等任务中具有广泛的应用。
-
-#### 30. 什么是注意力机制（Attention Mechanism）？
-
-**题目：** 请简要描述注意力机制（Attention Mechanism）的概念，并说明其在序列数据处理中的应用。
-
-**答案：** 注意力机制是一种用于序列数据处理的方法，它通过为不同的序列元素分配不同的注意力权重来提高模型的性能。
-
-**应用：** 注意力机制在自然语言处理、图像识别、序列建模等任务中具有广泛的应用。
-
-
-### **总结**
-
-通过以上对人工智能领域常见问题的解析，我们能够更好地理解相关概念和技术，为在面试和笔试中取得优异成绩奠定坚实基础。在实际应用中，这些技术和算法将为我们的项目带来更高的效率和准确性。
-
----
-
-**提示：** 如需进一步了解每个问题的详细解析和源代码实例，请参考相关资料或查阅开源项目。在实战中不断学习和提升，将为你在人工智能领域的职业生涯助力！
+## 国内头部一线大厂高频面试题库及解答
+
+### 1. 数据结构与算法
+
+#### 1.1 单链表反转
+
+**题目：** 实现一个函数，反转单链表。
+
+**答案：**
+
+```go
+func reverseList(head *ListNode) *ListNode {
+    var prev *ListNode = nil
+    cur := head
+    for cur != nil {
+        nextTemp := cur.Next
+        cur.Next = prev
+        prev = cur
+        cur = nextTemp
+    }
+    return prev
+}
+```
+
+**解析：** 使用头插法，将原链表反转。
+
+### 2. 并发编程
+
+#### 2.1 利用 WaitGroup 实现并发任务控制
+
+**题目：** 使用 `sync.WaitGroup` 实现 10 个 goroutine 同时执行任务，并在主线程等待所有任务完成。
+
+**答案：**
+
+```go
+var wg sync.WaitGroup
+wg.Add(10)  // 预期会启动 10 个 goroutine
+
+for i := 0; i < 10; i++ {
+    go func() {
+        // 执行任务
+        time.Sleep(time.Millisecond * 100)
+        fmt.Println("goroutine", i, "完成")
+        wg.Done()
+    }()
+}
+
+wg.Wait()  // 等待所有 goroutine 完成
+fmt.Println("所有任务完成")
+```
+
+**解析：** `wg.Add(10)` 设置等待的 goroutine 数量。每个 goroutine 执行任务后调用 `wg.Done()`，主线程通过 `wg.Wait()` 等待所有任务完成。
+
+### 3. 设计模式
+
+#### 3.1 策略模式实现不同排序算法
+
+**题目：** 使用策略模式实现冒泡排序、选择排序和插入排序。
+
+**答案：**
+
+```go
+type Sorter interface {
+    Sort(arr []int)
+}
+
+type BubbleSort struct{}
+func (bs BubbleSort) Sort(arr []int) {
+    n := len(arr)
+    for i := 0; i < n; i++ {
+        for j := 0; j < n-i-1; j++ {
+            if arr[j] > arr[j+1] {
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+            }
+        }
+    }
+}
+
+type SelectionSort struct{}
+func (ss SelectionSort) Sort(arr []int) {
+    n := len(arr)
+    for i := 0; i < n; i++ {
+        minIndex := i
+        for j := i+1; j < n; j++ {
+            if arr[j] < arr[minIndex] {
+                minIndex = j
+            }
+        }
+        arr[i], arr[minIndex] = arr[minIndex], arr[i]
+    }
+}
+
+type InsertionSort struct{}
+func (is InsertionSort) Sort(arr []int) {
+    n := len(arr)
+    for i := 1; i < n; i++ {
+        key := arr[i]
+        j := i - 1
+        for j >= 0 && arr[j] > key {
+            arr[j+1] = arr[j]
+            j--
+        }
+        arr[j+1] = key
+    }
+}
+
+func main() {
+    arr := []int{5, 2, 9, 1, 5, 6}
+    sorter := BubbleSort{}
+    sorter.Sort(arr)
+    fmt.Println("BubbleSort:", arr)
+
+    sorter = SelectionSort{}
+    sorter.Sort(arr)
+    fmt.Println("SelectionSort:", arr)
+
+    sorter = InsertionSort{}
+    sorter.Sort(arr)
+    fmt.Println("InsertionSort:", arr)
+}
+```
+
+**解析：** 定义一个 `Sorter` 接口，实现不同排序算法的结构体。主函数中使用不同的排序算法对象来对数组进行排序。
+
+### 4. 网络编程
+
+#### 4.1 TCP 网络通信
+
+**题目：** 使用 Go 语言实现一个简单的 TCP 服务器和客户端。
+
+**答案：**
+
+**服务器端：**
+
+```go
+package main
+
+import (
+    "fmt"
+    "net"
+)
+
+func main() {
+    ln, err := net.Listen("tcp", ":8080")
+    if err != nil {
+        panic(err)
+    }
+    defer ln.Close()
+
+    fmt.Println("Server is listening on port 8080...")
+    for {
+        conn, err := ln.Accept()
+        if err != nil {
+            panic(err)
+        }
+        go handleRequest(conn)
+    }
+}
+
+func handleRequest(conn net.Conn) {
+    buffer := make([]byte, 1024)
+    n, err := conn.Read(buffer)
+    if err != nil {
+        panic(err)
+    }
+    msg := string(buffer[:n])
+    fmt.Println("Received message:", msg)
+
+    _, err = conn.Write([]byte("Hello from server!"))
+    if err != nil {
+        panic(err)
+    }
+    conn.Close()
+}
+```
+
+**客户端：**
+
+```go
+package main
+
+import (
+    "fmt"
+    "net"
+)
+
+func main() {
+    conn, err := net.Dial("tcp", "localhost:8080")
+    if err != nil {
+        panic(err)
+    }
+    defer conn.Close()
+
+    msg := "Hello from client!"
+    _, err = conn.Write([]byte(msg))
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println("Message sent:", msg)
+
+    buffer := make([]byte, 1024)
+    n, err := conn.Read(buffer)
+    if err != nil {
+        panic(err)
+    }
+    response := string(buffer[:n])
+    fmt.Println("Response from server:", response)
+}
+```
+
+**解析：** 服务器端在端口 8080 监听 TCP 连接，客户端连接服务器并发送消息，服务器端接收消息并回送响应。
+
+### 5. 测试
+
+#### 5.1 单元测试
+
+**题目：** 使用 Go 语言实现一个简单的函数，并编写单元测试。
+
+**答案：**
+
+**main.go：**
+
+```go
+package main
+
+func sum(a, b int) int {
+    return a + b
+}
+```
+
+**sum_test.go：**
+
+```go
+package main
+
+import "testing"
+
+func TestSum(t *testing.T) {
+    tests := []struct {
+        a int
+        b int
+        want int
+    }{
+        {1, 2, 3},
+        {5, 6, 11},
+        {-1, -2, -3},
+    }
+
+    for _, tt := range tests {
+        t.Run(fmt.Sprintf("%d + %d", tt.a, tt.b), func(t *testing.T) {
+            got := sum(tt.a, tt.b)
+            if got != tt.want {
+                t.Errorf("sum(%d, %d) = %d; want %d", tt.a, tt.b, got, tt.want)
+            }
+        })
+    }
+}
+```
+
+**解析：** 使用 `testing` 包编写单元测试，执行 `go test` 命令运行测试。
+
+### 6. 其他
+
+#### 6.1 JSON 解析
+
+**题目：** 使用 Go 语言实现一个 JSON 解析器，解析 JSON 字符串并获取数据。
+
+**答案：**
+
+```go
+package main
+
+import (
+    "encoding/json"
+    "fmt"
+)
+
+type Person struct {
+    Name    string `json:"name"`
+    Age     int    `json:"age"`
+    Jobs    []string `json:"jobs"`
+}
+
+func main() {
+    jsonStr := `{"name": "John", "age": 30, "jobs": ["developer", "teacher"]}`
+    var p Person
+    err := json.Unmarshal([]byte(jsonStr), &p)
+    if err != nil {
+        panic(err)
+    }
+    fmt.Printf("%+v\n", p)
+}
+```
+
+**解析：** 使用 `encoding/json` 包的 `Unmarshal` 函数解析 JSON 字符串，并获取结构体数据。
+
+### 7. 面试题解析
+
+#### 7.1 阿里巴巴面试题：数组中出现次数超过一半的数字
+
+**题目：** 找出数组中次数超过一半的数字，时间复杂度为 O(n)，空间复杂度为 O(1)。
+
+**答案：**
+
+```go
+func majorityElement(nums []int) int {
+    candidate := nums[0]
+    count := 1
+    for i := 1; i < len(nums); i++ {
+        if count == 0 {
+            candidate = nums[i]
+            count = 1
+        } else if nums[i] == candidate {
+            count++
+        } else {
+            count--
+        }
+    }
+    return candidate
+}
+```
+
+**解析：** 使用投票算法，时间复杂度为 O(n)，空间复杂度为 O(1)。
+
+#### 7.2 腾讯面试题：最长公共子序列
+
+**题目：** 给定两个字符串，求它们的最长公共子序列。
+
+**答案：**
+
+```go
+func longestCommonSubsequence(s1 string, s2 string) int {
+    dp := make([][]int, len(s1)+1)
+    for i := range dp {
+        dp[i] = make([]int, len(s2)+1)
+    }
+    for i := 1; i <= len(s1); i++ {
+        for j := 1; j <= len(s2); j++ {
+            if s1[i-1] == s2[j-1] {
+                dp[i][j] = dp[i-1][j-1] + 1
+            } else {
+                dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+            }
+        }
+    }
+    return dp[len(s1)][len(s2)]
+}
+
+func max(a, b int) int {
+    if a > b {
+        return a
+    }
+    return b
+}
+```
+
+**解析：** 使用动态规划求解最长公共子序列，时间复杂度为 O(m*n)，空间复杂度为 O(m*n)。
+
+### 8. 算法编程题库
+
+#### 8.1 字符串匹配算法
+
+**题目：** 实现一个字符串匹配算法，给定一个文本字符串和一个模式字符串，找出文本字符串中模式字符串的所有出现位置。
+
+**答案：**
+
+```go
+func search(s, p string) []int {
+    n, m := len(s), len(p)
+    if m == 0 {
+        return []int{0}
+    }
+    next := make([]int, m)
+    j := -1
+    for i := 1; i < m; i++ {
+        for j >= 0 && p[i] != p[j+1] {
+            j = next[j]
+        }
+        if p[i] == p[j+1] {
+            j++
+        }
+        next[i] = j
+    }
+    i, j = 0, 0
+    ans := []int{}
+    for i < n {
+        for j >= 0 && s[i] != p[j] {
+            j = next[j]
+        }
+        if s[i] == p[j] {
+            i++
+            j++
+        }
+        if j == m {
+            ans = append(ans, i-m)
+            j = next[j]
+        }
+    }
+    return ans
+}
+```
+
+**解析：** 使用 KMP 算法进行字符串匹配，时间复杂度为 O(n+m)。
+
+#### 8.2 二分查找
+
+**题目：** 给定一个排序后的数组，找到目标值的位置。
+
+**答案：**
+
+```go
+func search(nums []int, target int) int {
+    left, right := 0, len(nums)-1
+    for left <= right {
+        mid := (left + right) / 2
+        if nums[mid] == target {
+            return mid
+        } else if nums[mid] < target {
+            left = mid + 1
+        } else {
+            right = mid - 1
+        }
+    }
+    return -1
+}
+```
+
+**解析：** 使用二分查找算法，时间复杂度为 O(logn)。
+
+#### 8.3 动态规划
+
+**题目：** 给定一个数组，找出最长递增子序列的长度。
+
+**答案：**
+
+```go
+func lengthOfLIS(nums []int) int {
+    n := len(nums)
+    dp := make([]int, n)
+    for i := 0; i < n; i++ {
+        dp[i] = 1
+        for j := 0; j < i; j++ {
+            if nums[i] > nums[j] {
+                dp[i] = max(dp[i], dp[j]+1)
+            }
+        }
+    }
+    ans := 0
+    for i := 0; i < n; i++ {
+        ans = max(ans, dp[i])
+    }
+    return ans
+}
+
+func max(a, b int) int {
+    if a > b {
+        return a
+    }
+    return b
+}
+```
+
+**解析：** 使用动态规划求解最长递增子序列的长度，时间复杂度为 O(n^2)。
 
