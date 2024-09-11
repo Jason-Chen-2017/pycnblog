@@ -164,4 +164,45 @@ df = pd.DataFrame(data)
 behavior_data = {
     'user_id': [1, 2, 3, 4, 5],
     'searches': [['laptop', 'smartphone'], ['handbag', 'travel'], ['running shoes', 'watch'], ['game console', 'smartphone'], ['restaurant', 'hotel']],
-    'p
+    'purchases': [['laptop'], ['handbag'], ['running shoes'], ['game console'], ['restaurant']]
+}
+
+behavior_df = pd.DataFrame(behavior_data)
+
+# 生成用户画像特征数据
+feature_data = {
+    'user_id': [1, 2, 3, 4, 5],
+    'gender': [0, 1],
+    'age': [20, 30, 25, 35, 40],
+    'income': [30000, 50000, 40000, 60000, 70000],
+    'interests': [[1, 0], [0, 1], [0, 1], [1, 0], [1, 0]]
+}
+
+feature_df = pd.DataFrame(feature_data)
+
+# 生成用户行为偏好特征数据
+behavior_feature_data = {
+    'user_id': [1, 2, 3, 4, 5],
+    'searches': [[0, 1], [1, 0], [0, 0], [1, 1], [0, 1]],
+    'purchases': [[1, 0], [0, 1], [0, 1], [1, 0], [0, 1]]
+}
+
+behavior_feature_df = pd.DataFrame(behavior_feature_data)
+
+# 分割数据集
+X_train, X_test, y_train, y_test = train_test_split(feature_df, behavior_feature_df, test_size=0.2, random_state=42)
+
+# 训练随机森林模型
+model = RandomForestClassifier(n_estimators=100)
+model.fit(X_train, y_train)
+
+# 预测用户行为偏好
+predictions = model.predict(X_test)
+
+# 评估模型效果
+accuracy = accuracy_score(y_test, predictions)
+print("Accuracy:", accuracy)
+```
+
+这个示例使用Python和scikit-learn库，生成用户画像和用户行为偏好数据，并使用随机森林模型进行预测。在实际应用中，可以根据具体情况调整模型参数和数据预处理方法。此外，还可以尝试其他机器学习算法（如决策树、支持向量机、神经网络等），以获得更好的预测效果。
+
