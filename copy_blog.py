@@ -83,6 +83,6 @@ if __name__ == '__main__':
     # dst = '/Users/bytedance/ai/pycnblog/blog/llm'
     # copy_blog(src, 15, dst, 426)
 
-    src = '/Users/bytedance/ai/pycnblog/articles_good/20240906'
-    dst = '/Users/bytedance/ai/pycnblog/blog/offer'
-    copy_blog(src, 80, dst, 1)
+    src = '/Users/bytedance/ai/pycnblog/articles_good/20240915'
+    dst = '/Users/bytedance/ai/pycnblog/blog/zen'
+    copy_blog(src, 80, dst, 1019)
