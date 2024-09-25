@@ -77,7 +77,7 @@ Strategic partnerships are alliances between two or more businesses that work to
 2.5 战略合作伙伴关系  
 战略合作伙伴关系是两个或多个企业之间为了实现共同目标而形成的联盟。这些合作伙伴关系可以帮助企业进入新市场、利用互补资源并增强其竞争优势。通过建立战略合作伙伴关系，企业可以创建更强的市场存在感并实现长期稳定。
 
-```markdown
+ 
 ## 3. 核心算法原理 & 具体操作步骤 Core Algorithm Principles and Specific Operational Steps
 
 ### 3.1 算法概述 Overview of the Algorithm
@@ -321,7 +321,7 @@ plt.show()
 
 运行上述代码后，我们将看到一幅图，展示出四个簇和它们的质心。每个簇内的样本点颜色相同，而簇的质心用黄色正方形标记。
 
-![K-means结果图](https://i.imgur.com/X6wv5yo.png)
+ 
 
 **5.5 代码性能分析**
 
