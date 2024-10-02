@@ -22,43 +22,44 @@ def check_similarity(text):
 
 
 def is_good_content(content):
-    # 包含关键字：$$ 表示有公式，```表示有代码
-    keywords = [
-        "$",
-        "```",
-        "背景介绍",
-        "核心概念与联系",
-        "核心算法原理",
-        "数学模型和公式",
-        "项目实践",
-        "实际应用场景",
-        "工具和资源",
-    ]
-
-    keywords2 = [
-        "$",
-        "```",
-        "Background Introduction",
-        "Core Concepts",
-        "Core Algorithm",
-        "Mathematical Model",
-        "Project Practice",
-        "Practical Application",
-        "Tools and Resources",
-    ]
-
-    flag1 = True
-    flag2 = True
-
-    for keyword in keywords:
-        if keyword not in content:
-            flag1 = False
-
-    for keyword in keywords2:
-        if keyword not in content:
-            flag2 = False
-
-    return flag1 or flag2
+    return True
+    # # 包含关键字：$$ 表示有公式，```表示有代码
+    # keywords = [
+    #     "$",
+    #     "```",
+    #     "背景介绍",
+    #     "核心概念与联系",
+    #     "核心算法原理",
+    #     "数学模型和公式",
+    #     "项目实践",
+    #     "实际应用场景",
+    #     "工具和资源",
+    # ]
+    #
+    # keywords2 = [
+    #     "$",
+    #     "```",
+    #     "Background Introduction",
+    #     "Core Concepts",
+    #     "Core Algorithm",
+    #     "Mathematical Model",
+    #     "Project Practice",
+    #     "Practical Application",
+    #     "Tools and Resources",
+    # ]
+    #
+    # flag1 = True
+    # flag2 = True
+    #
+    # for keyword in keywords:
+    #     if keyword not in content:
+    #         flag1 = False
+    #
+    # for keyword in keywords2:
+    #     if keyword not in content:
+    #         flag2 = False
+    #
+    # return flag1 or flag2
 
 
 def process_file(file_path, target_good_directory, target_draft_directory):
@@ -85,7 +86,7 @@ def process_file(file_path, target_good_directory, target_draft_directory):
         file_name = os.path.basename(file_path)
         target_good_directory = os.path.join(target_good_directory, file_name)
         shutil.copy(file_path, target_good_directory)
-        # print("process_good_file:", target_good_directory)
+        print("process_good_file:", target_good_directory, file_path)
 
     # target_draft_directory
     if (1200 < length < 2500 and
@@ -95,7 +96,7 @@ def process_file(file_path, target_good_directory, target_draft_directory):
         file_name = os.path.basename(file_path)
         target_draft_directory = os.path.join(target_draft_directory, file_name)
         shutil.copy(file_path, target_draft_directory)
-        # print("process_draft_file:", target_draft_directory)
+        print("process_draft_file:", target_draft_directory, file_path)
 
 
 def find_articles(date):
