@@ -19,6 +19,7 @@ import os
 import shutil
 
 
+
 def copy_blog(src, n, dst, start):
     """
     分组复制文件到目标目录。
@@ -45,7 +46,7 @@ def copy_blog(src, n, dst, start):
         group_dir = os.path.join(dst, str(group_number))
         if not os.path.exists(group_dir):
             os.makedirs(group_dir)
-
+        
         # 复制文件到组号命名的子目录
         for file in files[i:i + n]:
             shutil.copy(os.path.join(src, file), group_dir)
@@ -55,9 +56,9 @@ if __name__ == '__main__':
 
     dst = '/home/me/tools/pycnblog/blog/agent'
 
-    src = '/home/me/tools/pycnblog/articles_good/20241212'
+    src = '/home/me/tools/pycnblog/articles_good/20241213'
 
-    copy_blog(src, 80, dst, 0)
+    copy_blog(src, 60, dst, 0)
 
     # src = '/Users/bytedance/ai/pycnblog/articles_good/20240929'
     # dst = '/Users/bytedance/ai/pycnblog/blog/agi'
