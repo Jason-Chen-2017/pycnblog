@@ -36,7 +36,7 @@ def copy_blog(src, n, dst, start):
 
     # 读取源目录下的文件列表
     files = [f for f in os.listdir(src) if os.path.isfile(os.path.join(src, f))]
-    files.sort()  # 对文件列表进行排序，确保顺序
+    # files.sort()  # 对文件列表进行排序，确保顺序
 
     # 分组复制文件
     for i in range(0, len(files), n):
