@@ -4,411 +4,438 @@
 
 # 强化学习在AI Agent决策中的应用
 
-## 关键词
-强化学习, AI Agent, 决策过程, 状态-动作-奖励-转移（SART）、马尔可夫决策过程（MDP）、Q-learning算法、Deep Q-Networks、策略梯度方法
+> 关键词：强化学习，AI Agent，决策系统，马尔可夫决策过程，Q-learning，深度强化学习
 
-## 摘要
-本文系统地探讨了强化学习在AI Agent决策中的应用，从基础概念到核心算法，再到实际应用，层层深入。首先，介绍了强化学习的基本概念和其在AI Agent中的作用。接着，详细讲解了强化学习的数学模型，如马尔可夫决策过程（MDP）、贝尔曼方程以及Q-learning算法。然后，通过实际案例分析了强化学习在系统中的应用，并给出了系统架构设计。最后，通过项目实战展示了如何实现强化学习算法，并总结了最佳实践和未来发展方向。
+> 摘要：本文详细探讨了强化学习在AI Agent决策中的应用，从基础概念到高级算法，结合实际案例，深入分析了强化学习的核心原理、系统架构设计和项目实现细节，帮助读者全面掌握强化学习在AI Agent中的应用。
 
 ---
 
-# 第1章 强化学习的基本概念
+# 第1章 强化学习与AI Agent概述
 
-## 1.1 强化学习的定义与特点
+## 1.1 强化学习的基本概念
 
-### 1.1.1 什么是强化学习
-强化学习（Reinforcement Learning, RL）是一种机器学习范式，通过智能体与环境的交互，以最大化累积奖励为目标，学习最优策略。与监督学习不同，强化学习没有明确的标签数据，而是通过奖励信号来指导学习过程。
+### 1.1.1 强化学习的定义
 
-### 1.1.2 强化学习的核心特点
-- **试错学习**：智能体通过不断尝试动作，从经验中学习。
-- **延迟奖励**：奖励可能在多个动作之后才给出。
-- **策略优化**：目标是找到最优策略，使累积奖励最大化。
+强化学习（Reinforcement Learning，RL）是一种机器学习范式，通过智能体与环境的交互，学习如何采取行动以最大化累计奖励。智能体会在环境中执行动作，获得奖励或惩罚，并根据这些反馈调整策略，以优化长期目标的实现。
 
-### 1.1.3 强化学习与监督学习的区别
-| 特性 | 监督学习 | 强化学习 |
-|------|----------|----------|
-| 数据 | 标签数据 | 奖励信号 |
-| 目标 | 预测目标 | 最大化奖励 |
-| 交互 | 无 | 有 |
+### 1.1.2 AI Agent的定义与特点
 
-## 1.2 AI Agent与强化学习的关系
+AI Agent（人工智能代理）是指能够感知环境、自主决策并采取行动的智能实体。AI Agent的核心特点包括自主性、反应性、目标导向和学习能力。强化学习为AI Agent提供了决策的框架和方法。
 
-### 1.2.1 AI Agent的定义
-AI Agent是一个能够感知环境并采取行动以实现目标的实体。它可以是一个软件程序、机器人或其他智能系统。
+### 1.1.3 强化学习在AI Agent中的作用
 
-### 1.2.2 强化学习在AI Agent中的作用
-强化学习为AI Agent提供了一种通过试错学习最优决策的方法，使其能够在动态环境中做出高效决策。
+强化学习通过与环境的交互，帮助AI Agent学习最优策略，从而在动态和不确定的环境中做出高效决策。强化学习为AI Agent提供了自适应和自优化的能力，使其能够应对复杂问题。
 
-### 1.2.3 强化学习与AI Agent的结合
-- 强化学习帮助AI Agent在没有明确规则的情况下，通过经验学习最优策略。
-- AI Agent通过与环境交互，不断更新策略以适应环境变化。
+---
 
-## 1.3 强化学习在决策中的应用
+## 1.2 强化学习的核心概念
 
-### 1.3.1 决策问题的定义
-决策问题是指智能体在给定状态下选择一个动作，以实现目标的过程。
+### 1.2.1 状态、动作与奖励的定义
 
-### 1.3.2 强化学习在决策中的优势
-- 适用于动态和不确定环境。
-- 能够处理高维状态空间和动作空间。
+- **状态（State）**：环境在某一时刻的信息表示，例如在迷宫中，智能体的位置和周围的墙分布。
+- **动作（Action）**：智能体在给定状态下采取的行动，例如“向上移动”或“向右移动”。
+- **奖励（Reward）**：智能体执行动作后获得的反馈，用于指导学习策略，例如到达目标位置后获得奖励+1。
 
-### 1.3.3 典型应用案例分析
-- 游戏AI：如AlphaGo。
-- 自动驾驶：路径规划和决策。
-- 机器人控制：动作选择和优化。
+### 1.2.2 策略与价值函数的对比
+
+- **策略（Policy）**：定义智能体在给定状态下选择动作的概率分布，分为确定性策略和概率性策略。
+- **价值函数（Value Function）**：衡量一个状态或动作的好坏，帮助智能体评估当前状态的价值。
+
+### 1.2.3 马尔可夫决策过程（MDP）的介绍
+
+马尔可夫决策过程描述了强化学习问题的基本结构，包括状态空间、动作空间、转移概率和奖励函数。MDP假设环境具有马尔可夫性质，即当前状态足以决定未来的决策。
+
+---
+
+## 1.3 强化学习的应用场景
+
+### 1.3.1 游戏AI的实现
+
+强化学习广泛应用于游戏AI，例如AlphaGo和OpenAI Gym中的AI代理，通过与环境的交互学习最优策略。
+
+### 1.3.2 机器人控制
+
+强化学习用于机器人导航和路径规划，帮助机器人在动态环境中做出最优决策。
+
+### 1.3.3 自动驾驶中的决策问题
+
+强化学习在自动驾驶中用于决策路径选择和避障策略，提升车辆的自主决策能力。
+
+---
 
 ## 1.4 本章小结
-本章介绍了强化学习的基本概念、特点及其在AI Agent中的作用。强化学习通过试错学习，帮助AI Agent在动态环境中做出最优决策。
+
+本章介绍了强化学习的基本概念和AI Agent的特点，探讨了强化学习在AI Agent中的作用，并通过具体案例说明了强化学习的应用场景。
 
 ---
 
-# 第2章 强化学习的数学模型
+# 第2章 强化学习的核心原理
 
-## 2.1 马尔可夫决策过程（MDP）
+## 2.1 马尔可夫决策过程（MDP）详解
 
-### 2.1.1 状态空间
-状态空间是所有可能状态的集合，表示环境的状况。
+### 2.1.1 状态空间的定义
 
-### 2.1.2 动作空间
-动作空间是所有可能动作的集合，表示智能体可以采取的行动。
+状态空间是智能体所有可能状态的集合，例如在迷宫中，智能体的每个位置都是一个状态。
 
-### 2.1.3 奖励函数
-奖励函数定义了智能体在特定状态下采取某个动作后的奖励值。
+### 2.1.2 动作空间的定义
 
-### 2.1.4 转移概率
-转移概率描述了智能体在某个状态下采取某个动作后转移到下一个状态的概率。
+动作空间是智能体在给定状态下所有可能动作的集合，例如在二维空间中，智能体可以向上、向下、向左或向右移动。
 
-### 2.1.5 例子
-在迷宫导航问题中，智能体在每个状态（位置）选择一个动作（移动方向），并根据是否到达终点获得奖励。
+### 2.1.3 奖励函数的设计
 
-## 2.2 策略与价值函数
-
-### 2.2.1 策略的定义
-策略是智能体在每个状态下选择动作的概率分布。
-
-### 2.2.2 价值函数的定义
-价值函数表示智能体在某个状态下采取某个动作后的期望累积奖励。
-
-### 2.2.3 Bellman方程
-贝尔曼方程描述了价值函数的递归性质：
-
-$$ V(s) = \max_a [r(s,a) + \gamma \sum_{s'} P(s'|s,a) V(s') ] $$
-
-其中，$r(s,a)$是奖励函数，$\gamma$是折扣因子，$P(s'|s,a)$是转移概率。
-
-## 2.3 强化学习的核心公式
-
-### 2.3.1 Q-learning公式
-Q-learning算法通过更新Q值函数来逼近最优策略：
-
-$$ Q(s,a) = Q(s,a) + \alpha (r + \gamma \max Q(s',a') - Q(s,a)) $$
-
-其中，$\alpha$是学习率。
+奖励函数定义了智能体在执行动作后的反馈，例如到达目标位置后获得奖励+1，碰撞障碍物后获得奖励-1。
 
 ---
 
-# 第3章 强化学习的核心算法
+## 2.2 策略与价值函数的数学模型
 
-## 3.1 Q-learning算法
+### 2.2.1 策略的定义与分类
 
-### 3.1.1 算法原理
-Q-learning通过维护Q表，记录每个状态-动作对的值，并通过经验更新Q表。
+- **确定性策略（Deterministic Policy）**：给定状态，策略唯一确定一个动作。
+- **概率性策略（Stochastic Policy）**：给定状态，策略给出动作的概率分布。
 
-### 3.1.2 算法步骤
-1. 初始化Q表为零。
-2. 在每个步骤中，智能体选择一个动作。
-3. 计算奖励并更新Q表。
+### 2.2.2 价值函数的定义与计算
 
-### 3.1.3 代码实现
-```python
-import numpy as np
-
-# 初始化Q表
-Q = np.zeros((状态空间大小, 动作空间大小))
-
-# 算法步骤
-for episode in range(训练次数):
-    状态 = 初始化状态
-    while not 终止条件:
-        动作 = 选择动作（探索与利用）
-        新状态, 奖励 = 与环境交互
-        Q[当前状态][动作] += 学习率 * (奖励 + γ * np.max(Q[新状态]) - Q[当前状态][动作])
-        当前状态 = 新状态
-```
-
-## 3.2 Deep Q-Networks（DQN）算法
-
-### 3.2.1 算法原理
-DQN使用神经网络近似Q值函数，通过经验回放和目标网络来稳定训练。
-
-### 3.2.2 算法步骤
-1. 经验回放：存储交互经验。
-2. 更新目标网络：定期更新目标网络权重。
-
-### 3.2.3 代码实现
-```python
-import torch
-
-# 定义神经网络结构
-class DQN(torch.nn.Module):
-    def __init__(self, 输入维度, 输出维度):
-        super(DQN, self).__init__()
-        self.fc1 = torch.nn.Linear(输入维度, 32)
-        self.fc2 = torch.nn.Linear(32, 输出维度)
-    
-    def forward(self, x):
-        x = torch.relu(self.fc1(x))
-        x = self.fc2(x)
-        return x
-
-# 初始化
-主网络 = DQN(输入维度, 输出维度)
-目标网络 = DQN(输入维度, 输出维度)
-目标网络.load_state_dict(主网络.state_dict())
-```
-
-## 3.3 策略梯度方法
-
-### 3.3.1 算法原理
-策略梯度方法直接优化策略，通过梯度上升最大化累积奖励。
-
-### 3.3.2 算法步骤
-1. 采样动作：根据当前策略选择动作。
-2. 计算梯度：更新策略参数以最大化奖励。
-
-### 3.3.3 代码实现
-```python
-import torch
-
-# 定义策略网络
-class PolicyNetwork(torch.nn.Module):
-    def __init__(self, 输入维度, 输出维度):
-        super(PolicyNetwork, self).__init__()
-        self.fc1 = torch.nn.Linear(输入维度, 32)
-        self.fc2 = torch.nn.Linear(32, 输出维度)
-    
-    def forward(self, x):
-        x = torch.relu(self.fc1(x))
-        x = torch.softmax(self.fc2(x), dim=-1)
-        return x
-
-# 策略梯度算法
-策略网络 = PolicyNetwork(输入维度, 输出维度)
-优化器 = torch.optim.Adam(策略网络.parameters(), lr=学习率)
-
-for episode in range(训练次数):
-    状态 = 初始化状态
-    while not 终止条件:
-        动作概率 = 策略网络(当前状态)
-        动作 = 采样动作（动作概率）
-        新状态, 奖励 = 与环境交互
-        # 计算梯度并更新
-        loss = -torch.mean(torch.log(动作概率) * 奖励)
-        loss.backward()
-        优化器.step()
-```
+价值函数衡量一个状态或动作的好坏，常用Q值函数（Q-learning）和V值函数（Value Iteration）来表示。
 
 ---
 
-# 第4章 强化学习在系统中的应用
+## 2.3 强化学习的算法分类
 
-## 4.1 系统功能设计
+### 2.3.1 基于值函数的方法
 
-### 4.1.1 领域模型
-使用Mermaid类图描述领域模型：
+- Q-learning：通过更新Q值函数，学习状态-动作对的最优值。
 
-```mermaid
-classDiagram
-    class 状态空间 {
-        状态1
-        状态2
-        ...
-    }
-    class 动作空间 {
-        动作1
-        动作2
-        ...
-    }
-    class 奖励函数 {
-        奖励1
-        奖励2
-        ...
-    }
-    class 转移概率 {
-        转移规则1
-        转移规则2
-        ...
-    }
-```
+### 2.3.2 基于策略梯度的方法
+
+- 政策梯度法：直接优化策略参数，通过梯度上升方法最大化奖励。
+
+### 2.3.3 基于Actor-Critic架构的方法
+
+- Actor-Critic：同时维护策略（Actor）和价值函数（Critic），通过策略调整和价值评估相互配合。
+
+---
+
+## 2.4 本章小结
+
+本章详细介绍了强化学习的核心原理，包括马尔可夫决策过程、策略与价值函数的数学模型，以及常见的强化学习算法分类。
+
+---
+
+# 第3章 强化学习算法的数学模型与公式
+
+## 3.1 Q-learning算法的数学推导
+
+### 3.1.1 Q值的更新公式
+
+$$ Q(s, a) \leftarrow Q(s, a) + \alpha \left( r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right) $$
+
+其中，$\alpha$是学习率，$\gamma$是折扣因子，$s$是当前状态，$a$是当前动作，$s'$是下一个状态。
+
+---
+
+## 3.2 Deep Q-Networks（DQN）的实现
+
+### 3.2.1 神经网络的输入输出结构
+
+神经网络输入为状态$s$，输出为动作$a$的概率分布。
+
+### 3.2.2 经验回放机制的数学模型
+
+经验回放机制通过存储$(s, a, r, s')$的元组，随机采样来训练网络，减少相关样本的依赖。
+
+---
+
+## 3.3 Actor-Critic算法的数学模型
+
+### 3.3.1 Actor网络的策略更新
+
+通过梯度上升方法，优化策略参数，最大化奖励函数。
+
+### 3.3.2 Critic网络的价值评估
+
+通过评估当前策略的价值，指导Actor网络的优化。
+
+---
+
+## 3.4 本章小结
+
+本章通过数学公式详细推导了Q-learning算法和DQN算法的实现过程，并介绍了Actor-Critic算法的基本原理。
+
+---
+
+# 第4章 强化学习的系统分析与架构设计
+
+## 4.1 系统分析与需求定义
+
+### 4.1.1 问题场景的描述
+
+以迷宫导航为例，描述智能体在迷宫中导航的过程。
+
+### 4.1.2 系统功能的定义
+
+包括状态感知、动作选择、奖励计算和策略更新等功能。
+
+### 4.1.3 系统性能指标的设定
+
+包括学习效率、决策准确率和响应时间等指标。
+
+---
 
 ## 4.2 系统架构设计
 
-### 4.2.1 系统架构图
-使用Mermaid架构图展示系统架构：
+### 4.2.1 领域模型的构建（Mermaid类图）
 
 ```mermaid
-architecture
-    客户端 --> 网关
-    网关 --> AI Agent
-    AI Agent --> 环境
-    环境 --> 数据库
+classDiagram
+    class State {
+        position
+        obstacle
+    }
+    class Action {
+        moveDirection
+    }
+    class Reward {
+        value
+    }
+    class QValue {
+        value
+    }
+    State --> Action
+    Action --> Reward
+    Reward --> QValue
 ```
 
-## 4.3 接口设计
+### 4.2.2 系统架构的分层设计（Mermaid架构图）
 
-### 4.3.1 接口定义
-- 输入接口：接收状态和动作。
-- 输出接口：返回新状态和奖励。
+```mermaid
+    participant Environment
+    participant Agent
+    participant Q-Network
+    Agent -> Environment: send action
+    Environment -> Agent: return reward and next state
+    Agent -> Q-Network: update Q-values
+```
 
-### 4.3.2 交互序列图
-使用Mermaid序列图展示交互流程：
+---
+
+## 4.3 系统交互
+
+### 4.3.1 系统交互流程（Mermaid序列图）
 
 ```mermaid
 sequenceDiagram
-    客户端 -> 网关: 请求
-    网关 -> AI Agent: 处理请求
-    AI Agent -> 环境: 执行动作
-    环境 -> AI Agent: 返回新状态和奖励
-    AI Agent -> 网关: 返回结果
-    网关 -> 客户端: 响应
+    Agent -> Environment: send action
+    Environment -> Agent: return reward and next state
+    Agent -> Q-Network: update Q-values
 ```
-
-## 4.4 交互设计
-
-### 4.4.1 交互流程
-- 智能体接收当前状态。
-- 选择动作并执行。
-- 更新Q表或策略参数。
-- 返回新状态和奖励。
 
 ---
 
-# 第5章 项目实战
+## 4.4 本章小结
 
-## 5.1 环境安装
+本章通过系统分析与架构设计，详细描述了AI Agent的实现过程，包括领域模型和系统架构的设计。
 
-### 5.1.1 安装依赖
-```bash
-pip install numpy torch gym
-```
+---
 
-## 5.2 系统核心实现
+# 第5章 强化学习的项目实战
 
-### 5.2.1 环境定义
-使用OpenAI Gym定义环境：
+## 5.1 项目背景与目标
+
+以OpenAI Gym环境中的迷宫导航为例，目标是训练一个智能体在迷宫中找到出口。
+
+---
+
+## 5.2 项目核心实现
+
+### 5.2.1 环境配置
 
 ```python
 import gym
-
-env = gym.make('CartPole-v0')
-env.seed(42)
+env = gym.make('迷宫导航-v0')
+env.reset()
 ```
 
-### 5.2.2 策略实现
-实现Q-learning算法：
+### 5.2.2 神经网络实现
 
 ```python
-class QLearner:
-    def __init__(self, 状态空间大小, 动作空间大小):
-        self.Q = np.zeros((状态空间大小, 动作空间大小))
+import torch
+import torch.nn as nn
+
+class QNetwork(nn.Module):
+    def __init__(self, state_size, action_size):
+        super(QNetwork, self).__init__()
+        self.fc1 = nn.Linear(state_size, 64)
+        self.fc2 = nn.Linear(64, action_size)
     
-    def choose_action(self, 状态, ε=0.1):
-        if np.random.random() < ε:
-            return np.random.randint(动作空间大小)
-        else:
-            return np.argmax(self.Q[状态])
-    
-    def update_Q(self, 当前状态, 动作, 奖励, 新状态, γ=0.99):
-        self.Q[当前状态][动作] += 0.1 * (奖励 + γ * np.max(self.Q[新状态]) - self.Q[当前状态][动作])
+    def forward(self, x):
+        x = torch.relu(self.fc1(x))
+        x = torch.relu(self.fc2(x))
+        return x
 ```
 
-## 5.3 代码实现
+### 5.2.3 算法实现
 
-### 5.3.1 训练过程
 ```python
-learner = QLearner(env.observation_space.shape[0], env.action_space.n)
-for episode in range(1000):
-    状态 = env.reset()
-    总奖励 = 0
-    while True:
-        动作 = learner.choose_action(状态)
-        新状态, 奖励, 终止标志, _ = env.step(动作)
-        learner.update_Q(状态, 动作, 奖励, 新状态)
-        总奖励 += 奖励
-        状态 = 新状态
-        if 终止标志:
-            break
+import torch.optim as optim
+
+def train(q_network, optimizer, memory, batch_size, gamma):
+    if len(memory) < batch_size:
+        return
+    minibatch = random.sample(memory, batch_size)
+    states = torch.stack([minibatch[i][0] for i in range(batch_size)])
+    actions = torch.tensor([minibatch[i][1] for i in range(batch_size)])
+    rewards = torch.tensor([minibatch[i][2] for i in range(batch_size)])
+    next_states = torch.stack([minibatch[i][3] for i in range(batch_size)])
+    
+    current_q_values = q_network(states).gather(1, actions)
+    next_q_values = q_network(next_states).max(1)[0].detach()
+    target_q_values = rewards + gamma * next_q_values
+    
+    loss = F.mse_loss(current_q_values, target_q_values)
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
 ```
-
-## 5.4 案例分析
-
-### 5.4.1 训练结果
-随着训练的进行，智能体能够稳定地控制杆保持平衡。
-
-### 5.4.2 比较分析
-与随机策略相比，Q-learning算法能够更快地找到最优策略。
-
-## 5.5 项目总结
-通过实现Q-learning算法，验证了强化学习在简单任务中的有效性，为后续复杂任务提供了参考。
 
 ---
 
-# 第6章 最佳实践与总结
+## 5.3 项目小结
 
-## 6.1 最佳实践
+本章通过OpenAI Gym环境的实战，详细展示了强化学习在AI Agent中的具体实现，包括环境配置、神经网络实现和算法实现。
 
-### 6.1.1 参数调优
-合理设置学习率和折扣因子，避免训练不稳定。
+---
 
-### 6.1.2 探索与利用平衡
-通过ε-greedy策略平衡探索新动作和利用已知最优动作。
+# 第6章 强化学习的未来发展趋势
 
-### 6.1.3 复杂环境处理
-对于高维状态空间，优先考虑使用深度强化学习方法。
+## 6.1 强化学习的未来研究方向
 
-## 6.2 小结
+### 6.1.1 分布式强化学习
 
-### 6.2.1 强化学习的核心概念
-- 状态、动作、奖励、转移。
-- Q值函数、贝尔曼方程。
+通过分布式计算，提升强化学习的训练效率和扩展性。
 
-### 6.2.2 算法选择
-- Q-learning：适合简单任务。
-- DQN：适合高维状态。
-- 策略梯度：适合复杂任务。
+### 6.1.2 多智能体协作
 
-### 6.2.3 系统设计
-- 明确系统架构和接口设计。
-- 使用流程图和类图辅助设计。
+研究多个智能体之间的协作与竞争，提升整体决策能力。
 
-## 6.3 注意事项
+### 6.1.3 强化学习与深度学习的结合
 
-### 6.3.1 训练时间
-强化学习训练时间较长，需耐心优化。
+通过深度学习的强大表征能力，提升强化学习的性能和泛化能力。
 
-### 6.3.2 环境建模
-准确建模环境，确保智能体能够正确交互。
+---
 
-### 6.3.3 算法收敛性
-关注算法收敛性，避免陷入局部最优。
+## 6.2 本章小结
 
-## 6.4 拓展阅读
+本章探讨了强化学习的未来发展趋势，包括分布式强化学习、多智能体协作和强化学习与深度学习的结合。
 
-### 6.4.1 推荐书籍
-- 《强化学习》（李航）
-- 《深度强化学习》（唐宇迪）
+---
 
-### 6.4.2 推荐论文
-- 策略梯度方法论文。
-- DQN论文。
+# 附录
+
+## 附录A 强化学习算法代码示例
+
+```python
+import gym
+import torch
+import torch.nn as nn
+import torch.optim as optim
+import random
+import numpy as np
+
+class QNetwork(nn.Module):
+    def __init__(self, state_size, action_size):
+        super(QNetwork, self).__init__()
+        self.fc1 = nn.Linear(state_size, 64)
+        self.fc2 = nn.Linear(64, action_size)
+    
+    def forward(self, x):
+        x = torch.relu(self.fc1(x))
+        x = torch.relu(self.fc2(x))
+        return x
+
+def train(q_network, optimizer, memory, batch_size, gamma):
+    if len(memory) < batch_size:
+        return
+    minibatch = random.sample(memory, batch_size)
+    states = torch.stack([minibatch[i][0] for i in range(batch_size)])
+    actions = torch.tensor([minibatch[i][1] for i in range(batch_size)])
+    rewards = torch.tensor([minibatch[i][2] for i in range(batch_size)])
+    next_states = torch.stack([minibatch[i][3] for i in range(batch_size)])
+    
+    current_q_values = q_network(states).gather(1, actions)
+    next_q_values = q_network(next_states).max(1)[0].detach()
+    target_q_values = rewards + gamma * next_q_values
+    
+    loss = F.mse_loss(current_q_values, target_q_values)
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+
+def main():
+    env = gym.make('迷宫导航-v0')
+    state_size = env.observation_space.shape[0]
+    action_size = env.action_space.n
+    q_network = QNetwork(state_size, action_size)
+    optimizer = optim.Adam(q_network.parameters())
+    memory = []
+    gamma = 0.99
+    batch_size = 32
+    
+    for episode in range(1000):
+        state = env.reset()
+        while True:
+            # 策略选择动作
+            if random.random() < 0.9:  # 探索策略
+                action = env.action_space.sample()
+            else:  # 利用策略
+                with torch.no_grad():
+                    q_values = q_network(torch.FloatTensor(state))
+                    action = torch.argmax(q_values).item()
+            
+            # 执行动作并获取反馈
+            next_state, reward, done, _ = env.step(action)
+            
+            # 存储经验
+            memory.append((state, action, reward, next_state))
+            
+            # 训练网络
+            train(q_network, optimizer, memory, batch_size, gamma)
+            
+            # 更新状态
+            state = next_state
+            
+            if done:
+                break
+
+if __name__ == "__main__":
+    main()
+```
+
+---
+
+## 附录B 强化学习相关数学公式汇总
+
+- Q值更新公式：
+$$ Q(s, a) \leftarrow Q(s, a) + \alpha \left( r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right) $$
+
+- 梯度上升公式：
+$$ \theta \leftarrow \theta + \alpha \nabla_\theta J(\theta) $$
+
+---
+
+# 参考文献
+
+[1] Sutton, R. S., & Barto, A. G. (2018). Reinforcement learning: An introduction. MIT Press.
+
+[2] Mnih, V., et al. (2015). Human-level control through deep reinforcement learning. Nature, 518(7537), 529-533.
 
 ---
 
 # 作者
 
-**作者：AI天才研究院/AI Genius Institute & 禅与计算机程序设计艺术 /Zen And The Art of Computer Programming**
+作者：AI天才研究院/AI Genius Institute & 禅与计算机程序设计艺术/Zen And The Art of Computer Programming
 
 ---
 
-通过以上内容，我们系统地探讨了强化学习在AI Agent决策中的应用，从基本概念到核心算法，再到实际应用，层层深入。希望读者能够通过本文，掌握强化学习的核心思想，并将其应用到实际项目中。
+本文详细探讨了强化学习在AI Agent决策中的应用，从基础概念到高级算法，结合实际案例，深入分析了强化学习的核心原理、系统架构设计和项目实现细节，帮助读者全面掌握强化学习在AI Agent中的应用。
 
