@@ -79,12 +79,12 @@ def process_file(file_path, target_good_directory, target_draft_directory):
         if line_count>0:
             short_lines_count_ration = len([line for line in cleaned_lines if len(line) < 30 and line.startswith('##')]) / line_count
 
-        print(f'{short_lines_count_ration} {length} {line_count} {file_path}')
+        print(f'short_lines_count_ration:{short_lines_count_ration}\tlength:{length}\tline_count:{line_count}\t{file_path}')
 
 
     # target_good_directory
-    if (length >= 6000 and
-            line_count >= 200 and
+    if (length >= 3000 and
+            line_count >= 150 and
             short_lines_count_ration < 0.6):
         file_name = os.path.basename(file_path)
         target_good_directory = os.path.join(target_good_directory, file_name)
@@ -92,8 +92,8 @@ def process_file(file_path, target_good_directory, target_draft_directory):
         # print("process_good_file:", target_good_directory)
 
     # target_draft_directory
-    if (1000 < length < 6000 and
-            100 < line_count < 200 and
+    if (1000 < length < 3000 and
+            100 < line_count < 150 and
             short_lines_count_ration < 0.6):
         file_name = os.path.basename(file_path)
         target_draft_directory = os.path.join(target_draft_directory, file_name)
