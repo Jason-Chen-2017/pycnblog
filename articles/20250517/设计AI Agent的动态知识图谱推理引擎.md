@@ -2,313 +2,382 @@
 
 
 
----
-
 # 设计AI Agent的动态知识图谱推理引擎
 
-> 关键词：AI Agent，动态知识图谱，推理引擎，知识图谱构建，推理算法，系统架构
+> 关键词：AI Agent, 知识图谱, 动态知识图谱, 推理引擎, 图嵌入, 知识推理
 
-> 摘要：随着人工智能技术的快速发展，AI Agent在各个领域的应用越来越广泛。然而，传统的知识图谱推理引擎难以应对动态变化的环境。本文将详细介绍如何设计AI Agent的动态知识图谱推理引擎，涵盖动态知识图谱的构建与管理、推理引擎的设计与实现、系统架构设计、项目实战以及最佳实践等内容。通过本文，读者可以全面理解动态知识图谱推理引擎的核心原理和实现方法，为实际应用提供理论支持和技术指导。
-
----
-
-## 第1章：AI Agent与知识图谱概述
-
-### 1.1 AI Agent的基本概念
-- AI Agent的定义与特点
-  - 定义：AI Agent是一个能够感知环境、采取行动以实现目标的实体。
-  - 特点：自主性、反应性、主动性、社会性。
-- AI Agent的核心功能
-  - 感知环境：通过传感器或数据源获取信息。
-  - 处理信息：利用知识图谱进行推理和决策。
-  - 采取行动：根据推理结果执行操作。
-- AI Agent的应用场景
-  - 智能客服：提供个性化的服务和建议。
-  - 智能推荐：根据用户行为推荐相关内容。
-  - 智能监控：实时监控并分析数据。
-
-### 1.2 知识图谱的基本概念
-- 知识图谱的定义与特点
-  - 定义：知识图谱是一种以结构化形式表示知识的图数据库。
-  - 特点：语义丰富、结构化、可扩展性。
-- 知识图谱的表示方法
-  - 实体：知识图谱中的基本单元，表示具体事物。
-  - 关系：实体之间的联系，表示事物之间的关联。
-  - 属性：实体的描述性信息，表示事物的特征。
-- 知识图谱的应用场景
-  - 智能搜索：通过知识图谱提升搜索结果的相关性。
-  - 自然语言处理：利用知识图谱进行语义理解。
-  - 数据分析：通过知识图谱进行数据关联和推理。
-
-### 1.3 动态知识图谱的定义与特点
-- 动态知识图谱的定义
-  - 动态知识图谱是一种能够实时更新和变化的知识图谱。
-  - 其特点包括实时性、动态性和自适应性。
-- 动态知识图谱的构建挑战
-  - 数据的实时性要求：需要快速处理和更新数据。
-  - 知识的动态变化：需要处理新增、删除和修改的知识。
-  - 系统的高效性要求：需要在动态变化中保持系统的高效运行。
-
-### 1.4 推理引擎的基本原理
-- 推理引擎的定义与分类
-  - 定义：推理引擎是根据知识图谱中的知识进行推理和计算的工具。
-  - 分类：基于规则的推理引擎、基于概率的推理引擎、基于图结构的推理引擎。
-- 推理引擎的核心功能
-  - 知识表示：将知识图谱中的知识转化为推理引擎可以理解的形式。
-  - 推理算法：根据知识图谱中的知识进行推理和计算。
-  - 推理结果：输出推理的结果，供AI Agent进行决策和行动。
+> 摘要：本文详细探讨了设计AI Agent的动态知识图谱推理引擎的核心概念、算法原理、系统架构及实现方案。从动态知识图谱的基本概念出发，结合推理引擎的关键技术，分析了动态知识图谱推理引擎的设计思路与实现方法，通过具体案例和代码实现，深入讲解了动态知识图谱推理引擎的构建过程，为AI Agent在复杂动态环境下的智能推理提供了理论与实践指导。
 
 ---
 
-## 第2章：动态知识图谱的构建与管理
+# 第一部分: AI Agent与知识图谱概述
 
-### 2.1 知识图谱的构建过程
-- 数据采集与预处理
-  - 数据源：包括结构化数据、半结构化数据和非结构化数据。
-  - 数据清洗：去除重复数据、填补缺失值、处理噪声数据。
-  - 数据转换：将数据转换为适合知识图谱表示的形式。
-- 知识抽取与表示
-  - 实体识别：从文本中提取实体。
-  - 关系抽取：从文本中提取实体之间的关系。
-  - 属性抽取：从文本中提取实体的属性。
-  - 知识表示：将抽取的知识表示为结构化的形式，如RDF或三元组。
-- 知识融合与冲突处理
-  - 知识融合：将多个数据源中的知识进行整合。
-  - 冲突检测：检测知识融合过程中出现的冲突。
-  - 冲突处理：通过协商、优先级等方式解决冲突。
+# 第1章: AI Agent与知识图谱基础
 
-### 2.2 动态知识图谱的更新机制
-- 动态数据源的接入与处理
-  - 数据源的接入：将新的数据源接入到知识图谱中。
-  - 数据的实时处理：对实时数据进行处理，生成新的知识。
-- 动态知识图谱的更新算法
-  - 增量式更新：仅更新变化的部分，减少计算量。
-  - 分布式更新：利用分布式系统进行并行更新，提高效率。
-  - 滚动更新：定期更新知识图谱，保持知识的最新性。
-- 更新后的知识图谱验证与优化
-  - 知识图谱的验证：检查更新后的知识图谱是否正确。
-  - 知识图谱的优化：通过优化算法提高知识图谱的性能。
+## 1.1 AI Agent的基本概念
 
-### 2.3 知识图谱的存储与管理
-- 知识图谱的存储技术
-  - 图数据库：如Neo4j、NeoDB等，专门用于存储和查询图数据。
-  - 关系型数据库：如MySQL、PostgreSQL，适合存储结构化的知识。
-  - NoSQL数据库：如MongoDB、Cassandra，适合存储非结构化的知识。
-- 知识图谱的查询与检索
-  - SPARQL查询：一种用于查询RDF数据的查询语言。
-  - 基于图结构的查询：利用图数据库的查询功能进行复杂查询。
-  - 混合查询：结合多种查询方式，提高查询效率。
-- 知识图谱的版本控制与管理
-  - 版本控制：记录知识图谱的修改历史，方便回滚和恢复。
-  - 版本管理：对不同版本的知识图谱进行管理和维护。
-  - 版本同步：在分布式系统中，保持不同副本的知识图谱同步。
+### 1.1.1 AI Agent的定义
+
+AI Agent（人工智能代理）是指能够感知环境、自主决策并执行任务的智能实体。AI Agent通过与环境交互，利用感知信息做出决策，并通过执行器完成任务。AI Agent的核心特征包括自主性、反应性、目标导向性和社会性。
+
+$$
+\text{AI Agent的特征：自主性、反应性、目标导向性和社会性。}
+$$
+
+### 1.1.2 AI Agent的核心特征
+
+1. **自主性**：AI Agent能够在没有外部干预的情况下自主运行。
+2. **反应性**：AI Agent能够感知环境变化并实时调整行为。
+3. **目标导向性**：AI Agent具有明确的目标，并能够为实现目标采取最优行动。
+4. **社会性**：AI Agent能够与其他AI Agent或人类进行交互与协作。
+
+### 1.1.3 AI Agent的应用场景
+
+AI Agent广泛应用于智能推荐、自动驾驶、智能客服、机器人控制等领域。例如，在智能推荐系统中，AI Agent可以根据用户行为和偏好动态调整推荐策略。
 
 ---
 
-## 第3章：推理引擎的算法原理与实现
+## 1.2 知识图谱的基本概念
 
-### 3.1 推理引擎的核心算法
-- 基于规则的推理算法
-  - 规则定义：通过预定义的规则进行推理。
-  - 规则应用：将规则应用到知识图谱中，生成新的知识。
-  - 规则验证：验证推理结果是否符合预期。
-- 基于概率的推理算法
-  - 概率计算：利用概率论进行推理，如贝叶斯推理。
-  - 条件概率：计算事件发生的概率，如P(A|B)。
-  - 贝叶斯网络：构建贝叶斯网络，进行概率推理。
-- 基于图结构的推理算法
-  - 图遍历：通过遍历图结构进行推理，如深度优先搜索、广度优先搜索。
-  - 短路推理：通过图结构中的短路路径进行快速推理。
-  - 路径权重：根据路径权重进行推理，如PageRank算法。
+### 1.2.1 知识图谱的定义
 
-### 3.2 动态知识图谱推理的算法优化
-- 动态知识图谱的实时推理需求
-  - 实时性：推理引擎需要在动态变化的环境中实时推理。
-  - 高效性：推理引擎需要高效处理大量数据。
-  - 可扩展性：推理引擎需要能够扩展到大规模数据。
-- 基于增量的推理优化方法
-  - 增量推理：仅对变化的部分进行推理，减少计算量。
-  - 增量更新：在知识图谱更新时，仅更新相关部分。
-  - 增量验证：在推理结果变化时，仅验证变化的部分。
-- 并行推理算法的设计与实现
-  - 并行计算：利用多核处理器进行并行推理。
-  - 分布式推理：在分布式系统中进行并行推理。
-  - 并行优化：通过算法优化提高并行推理的效率。
+知识图谱是一种以图结构形式表示知识的语义网络，其中节点表示实体或概念，边表示实体之间的关系。知识图谱能够将分散在不同数据源中的信息整合到一个统一的知识网络中。
 
-### 3.3 推理引擎的数学模型与公式
-- 基于规则的推理公式
-  - 逻辑蕴含：如果A蕴含B，则B成立。
-  - 规则表示：如果满足条件A，则结论B成立。
-- 基于概率的推理公式
-  - 条件概率公式：P(B|A) = P(A|B)P(B)/P(A)
-  - 贝叶斯定理：P(B|A) = P(A|B)P(B)/P(A)
-  - 贝叶斯网络：构建概率图模型，进行概率推理。
-- 基于图结构的推理公式
-  - 短路推理：根据图的结构，找到最短路径进行推理。
-  - 路径权重：根据路径权重，计算推理结果的权重。
+$$
+\text{知识图谱的核心组成：节点（实体/概念）、边（关系）、属性（描述）。}
+$$
+
+### 1.2.2 知识图谱的构建过程
+
+知识图谱的构建过程包括数据抽取、实体识别、关系抽取、知识融合、知识存储和知识应用等阶段。例如，从文本中提取实体和关系，构建结构化的知识库。
+
+### 1.2.3 知识图谱的表示方法
+
+知识图谱的表示方法包括RDF（资源描述框架）、RDFS（RDF Schema）、OWL（Web本体语言）等。RDF使用三元组（主语-谓词-宾语）表示知识，例如：(人，name，张三)。
 
 ---
 
-## 第4章：系统架构设计
+## 1.3 动态知识图谱的特性
 
-### 4.1 系统功能设计
-- 知识图谱构建模块
-  - 数据采集：从多个数据源采集数据。
-  - 数据处理：清洗、转换数据，提取知识。
-  - 知识存储：将知识存储到知识图谱中。
-- 推理引擎模块
-  - 推理规则定义：定义推理规则和算法。
-  - 推理执行：根据知识图谱进行推理，生成推理结果。
-  - 结果验证：验证推理结果的正确性。
-- 用户交互模块
-  - 用户输入：接收用户的输入，如查询或命令。
-  - 推理结果展示：将推理结果展示给用户。
-  - 用户反馈：接收用户的反馈，优化推理过程。
+### 1.3.1 动态知识图谱的定义
 
-### 4.2 系统架构设计
-- 系统架构图（Mermaid）
+动态知识图谱是指能够实时更新和扩展的知识图谱，能够反映现实世界中实体和关系的动态变化。与静态知识图谱相比，动态知识图谱具有更强的实时性和适应性。
+
+### 1.3.2 动态知识图谱与静态知识图谱的区别
+
+| 特性 | 静态知识图谱 | 动态知识图谱 |
+|------|--------------|--------------|
+| 数据更新 | 静态，不可更新 | 动态，可实时更新 |
+| 适应性 | 低 | 高 |
+| 应用场景 | 离线分析 | 实时推理 |
+
+### 1.3.3 动态知识图谱的应用优势
+
+动态知识图谱在实时推荐、动态知识检索、在线问答系统等领域具有显著优势。例如，在在线问答系统中，动态知识图谱能够实时更新领域知识，提高回答的准确性和相关性。
+
+---
+
+## 1.4 推理引擎的基本原理
+
+### 1.4.1 推理引擎的定义
+
+推理引擎是一种通过逻辑推理技术从已知事实中推导出新事实的系统。推理引擎的核心功能包括知识表示、规则推理、逻辑推理和概率推理等。
+
+### 1.4.2 推理引擎的分类
+
+1. **基于规则的推理引擎**：基于预定义的规则进行推理。
+2. **基于逻辑的推理引擎**：基于逻辑推理进行推理。
+3. **基于概率的推理引擎**：基于概率论进行推理。
+4. **基于图的推理引擎**：基于图结构进行推理。
+
+### 1.4.3 推理引擎的核心功能
+
+1. **知识表示**：将知识以结构化形式表示。
+2. **规则推理**：根据预定义的规则进行推理。
+3. **逻辑推理**：基于逻辑推理规则进行推理。
+4. **概率推理**：基于概率模型进行推理。
+
+---
+
+## 1.5 本章小结
+
+本章介绍了AI Agent和知识图谱的基本概念，重点分析了动态知识图谱的特性和推理引擎的核心原理。通过对比静态知识图谱和动态知识图谱，明确了动态知识图谱在实时推理中的优势。接下来将深入探讨动态知识图谱的构建方法和推理引擎的实现技术。
+
+---
+
+# 第二部分: 动态知识图谱推理引擎的核心概念
+
+# 第2章: 动态知识图谱的构建与管理
+
+## 2.1 动态知识图谱的构建方法
+
+### 2.1.1 数据源的选择与整合
+
+动态知识图谱的构建需要从多源数据中提取信息。数据源包括结构化数据（如数据库）、半结构化数据（如JSON）和非结构化数据（如文本）。例如，从社交媒体文本中提取实体和关系，构建动态知识图谱。
+
+### 2.1.2 实体识别与关系抽取
+
+实体识别是通过自然语言处理技术从文本中提取实体。关系抽取是通过模式匹配或机器学习技术从文本中提取实体之间的关系。例如，从文本“张三是李四的朋友”中提取实体“张三”和“李四”，以及关系“朋友”。
+
+### 2.1.3 知识图谱的动态更新机制
+
+动态知识图谱的更新机制包括增量更新和全量更新。增量更新仅更新变化的部分，适用于实时数据流；全量更新适用于周期性数据更新。
+
+---
+
+## 2.2 知识图谱的存储与管理
+
+### 2.2.1 知识图谱的存储结构
+
+知识图谱的存储结构包括关系型数据库、图数据库和分布式存储。图数据库（如Neo4j）适合存储大规模图结构数据。
+
+### 2.2.2 知识图谱的查询语言
+
+知识图谱的查询语言包括SPARQL、Cypher和Gremlin等。SPARQL适用于RDF数据模型，Cypher适用于Neo4j图数据库。
+
+### 2.2.3 知识图谱的版本控制
+
+知识图谱的版本控制通过记录每次更新的变更日志实现。版本控制有助于回溯知识图谱的历史状态。
+
+---
+
+## 2.3 动态知识图谱的表示模型
+
+### 2.3.1 RDF与RDFS模型
+
+RDF（资源描述框架）使用三元组表示知识，RDFS（RDF Schema）在RDF基础上增加了类和属性的层次结构。例如，RDFS可以表示“人是一种类，name是一个属性”。
+
+### 2.3.2 OWL本体模型
+
+OWL（Web本体语言）是一种基于RDF的本体语言，支持更复杂的语义表示，如类层次、属性约束和逻辑规则。例如，OWL可以表示“所有人类都是哺乳动物”。
+
+### 2.3.3 图嵌入模型
+
+图嵌入模型将图结构数据转换为低维向量表示，便于机器学习模型处理。例如，使用Word2Vec对知识图谱中的实体和关系进行嵌入表示。
+
+---
+
+## 2.4 本章小结
+
+本章详细探讨了动态知识图谱的构建方法、存储管理与表示模型。通过对比RDF、RDFS和OWL等表示模型，明确了不同模型的适用场景。接下来将深入探讨动态知识图谱推理引擎的算法原理。
+
+---
+
+# 第三部分: 推理引擎的算法原理
+
+# 第3章: 推理算法的核心原理
+
+## 3.1 基于规则的推理算法
+
+### 3.1.1 基于规则的推理定义
+
+基于规则的推理是通过预定义的规则进行推理。规则通常采用“如果-那么”形式，例如：“如果A和B是朋友，且B和C是朋友，那么A和C可能是朋友。”
+
+### 3.1.2 规则表示与匹配
+
+规则表示包括正则表达式、谓词逻辑和产生式规则。规则匹配通过模式匹配技术实现，例如使用Rete算法优化规则匹配过程。
+
+### 3.1.3 基于规则的推理实现
+
+基于规则的推理实现包括规则存储、规则匹配和规则执行。例如，在动态知识图谱中，当检测到某个规则的前件满足时，触发规则的后件进行推理。
+
+---
+
+## 3.2 基于逻辑的推理算法
+
+### 3.2.1 逻辑推理的基本原理
+
+逻辑推理基于谓词逻辑进行推理。常见的逻辑推理方法包括命题逻辑推理和谓词逻辑推理。例如，通过谓词逻辑推理可以验证“所有人类都是哺乳动物”的正确性。
+
+### 3.2.2 逻辑推理的实现方法
+
+逻辑推理的实现方法包括解析式推理和归结式推理。解析式推理通过子句归约实现，归结式推理通过Clauses归约实现。例如，使用Prolog语言实现逻辑推理。
+
+### 3.2.3 逻辑推理的应用场景
+
+逻辑推理适用于需要严格逻辑验证的场景，如法律推理、数学定理证明和知识问答系统。
+
+---
+
+## 3.3 基于概率的推理算法
+
+### 3.3.1 概率推理的基本原理
+
+概率推理基于概率论进行推理，适用于不确定性推理场景。例如，通过贝叶斯网络进行概率推理，计算事件发生的概率。
+
+### 3.3.2 概率推理的实现方法
+
+概率推理的实现方法包括贝叶斯网络推理、马尔可夫链推理和隐马尔可夫模型推理。例如，使用贝叶斯网络推理算法计算条件概率。
+
+### 3.3.3 概率推理的应用场景
+
+概率推理适用于需要处理不确定性问题的场景，如医疗诊断、风险评估和智能推荐系统。
+
+---
+
+## 3.4 基于图的推理算法
+
+### 3.4.1 图推理的基本原理
+
+图推理基于图结构数据进行推理。常见的图推理方法包括广度优先搜索（BFS）和深度优先搜索（DFS）。例如，通过BFS遍历知识图谱，找到节点之间的最短路径。
+
+### 3.4.2 图推理的实现方法
+
+图推理的实现方法包括基于规则的图推理和基于学习的图推理。基于规则的图推理通过预定义的规则进行推理，基于学习的图推理通过机器学习模型进行推理。
+
+### 3.4.3 图推理的应用场景
+
+图推理适用于需要处理复杂关系的场景，如社交网络分析、推荐系统和知识问答系统。
+
+---
+
+## 3.5 本章小结
+
+本章详细探讨了基于规则、逻辑、概率和图的推理算法。通过对比不同推理算法的原理和实现方法，明确了不同算法的适用场景。接下来将深入探讨动态知识图谱推理引擎的系统架构设计。
+
+---
+
+# 第四部分: 动态知识图谱推理引擎的系统架构
+
+# 第4章: 系统架构设计
+
+## 4.1 系统功能模块划分
+
+### 4.1.1 数据采集模块
+
+数据采集模块负责从多源数据中采集数据，包括结构化数据、半结构化数据和非结构化数据。例如，从数据库、API接口和文本文件中采集数据。
+
+### 4.1.2 知识构建模块
+
+知识构建模块负责将采集到的数据进行处理，包括实体识别、关系抽取和知识融合。例如，从文本中提取实体和关系，构建知识图谱。
+
+### 4.1.3 推理引擎模块
+
+推理引擎模块负责根据知识图谱进行推理，生成推理结果。例如，通过推理引擎模块推理出“张三是李四的朋友”的结论。
+
+### 4.1.4 结果展示模块
+
+结果展示模块负责将推理结果以用户友好的形式展示。例如，通过可视化界面展示推理结果。
+
+---
+
+## 4.2 系统架构设计
+
+### 4.2.1 分层架构设计
+
+动态知识图谱推理引擎采用分层架构设计，包括数据层、知识层、推理层和展示层。数据层负责数据存储，知识层负责知识构建，推理层负责推理计算，展示层负责结果展示。
+
+### 4.2.2 系统架构图
+
+以下是一个简化的系统架构图：
+
 ```mermaid
 graph TD
-  A[AI Agent] --> B[知识图谱构建模块]
-  B --> C[推理引擎模块]
-  A --> D[用户交互模块]
-  C --> D
+    A[数据层] --> B[知识层]
+    B --> C[推理层]
+    C --> D[展示层]
 ```
-- 模块间关系
-  - AI Agent：负责协调各个模块的工作。
-  - 知识图谱构建模块：负责知识图谱的构建和更新。
-  - 推理引擎模块：负责根据知识图谱进行推理。
-  - 用户交互模块：负责与用户的交互。
 
-### 4.3 系统接口设计
-- 知识图谱构建接口
-  - 数据接口：接收数据源的数据。
-  - 知识接口：接收知识表示的形式，如RDF或三元组。
-- 推理引擎接口
-  - 推理接口：接收推理规则和知识图谱，输出推理结果。
-  - 结果接口：接收推理结果，进行验证和优化。
-- 用户交互接口
-  - 输入接口：接收用户的输入，如查询或命令。
-  - 输出接口：输出推理结果，展示给用户。
+---
 
-### 4.4 系统交互设计
-- 交互流程图（Mermaid）
+## 4.3 系统接口设计
+
+### 4.3.1 数据接口
+
+数据接口包括数据采集接口和数据存储接口。数据采集接口用于从外部数据源采集数据，数据存储接口用于将数据存储到数据库中。
+
+### 4.3.2 知识接口
+
+知识接口包括知识构建接口和知识查询接口。知识构建接口用于构建知识图谱，知识查询接口用于查询知识图谱。
+
+### 4.3.3 推理接口
+
+推理接口包括推理请求接口和推理结果接口。推理请求接口用于提交推理任务，推理结果接口用于返回推理结果。
+
+---
+
+## 4.4 系统交互序列图
+
+以下是一个简化的系统交互序列图：
+
 ```mermaid
 sequenceDiagram
-  participant A as AI Agent
-  participant B as 知识图谱构建模块
-  participant C as 推理引擎模块
-  participant D as 用户交互模块
-  A -> B: 提供数据源
-  B -> C: 构建知识图谱
-  A -> C: 提供推理规则
-  C -> D: 输出推理结果
-  D -> A: 用户反馈
-  A -> C: 优化推理规则
+    participant 用户
+    participant 推理引擎
+    participant 知识图谱
+    participant 数据源
+    用户->推理引擎: 提交推理任务
+    推理引擎->知识图谱: 查询知识图谱
+    知识图谱->数据源: 获取数据
+    推理引擎->用户: 返回推理结果
 ```
 
 ---
 
-## 第5章：项目实战
+## 4.5 本章小结
 
-### 5.1 项目介绍
-- 项目目标
-  - 构建一个动态知识图谱，实时更新知识。
-  - 设计一个推理引擎，能够根据动态知识图谱进行推理。
-- 项目技术选型
-  - 知识图谱存储：使用Neo4j图数据库。
-  - 推理引擎实现：使用Python语言，结合逻辑推理库。
-  - 用户交互：使用Flask框架搭建Web界面。
+本章详细探讨了动态知识图谱推理引擎的系统架构设计，包括功能模块划分、系统架构图、系统接口设计和系统交互序列图。通过分层架构设计，明确了各模块的功能和交互关系。接下来将深入探讨动态知识图谱推理引擎的项目实现。
 
-### 5.2 核心代码实现
-- 知识图谱构建代码
+---
+
+# 第五部分: 项目实战
+
+# 第5章: 动态知识图谱推理引擎的实现
+
+## 5.1 环境安装
+
+### 5.1.1 安装Jena
+
+Jena是一个用于构建、查询和推理RDF数据的Java框架。安装命令如下：
+
+```bash
+mvn io.apache.jena:jena-core:3.9.0
+```
+
+### 5.1.2 安装SPARQL
+
+SPARQL是用于查询RDF数据的标准查询语言。Jena支持SPARQL查询。
+
+### 5.1.3 安装Python环境
+
+安装Python和必要的库：
+
+```bash
+pip install pyjena
+pip install networkx
+pip install matplotlib
+```
+
+---
+
+## 5.2 核心代码实现
+
+### 5.2.1 知识图谱构建代码
+
 ```python
-from neo4j import GraphDatabase
-from neo4j.exceptions import ServiceUnavailable
+from pyjena import rdf
+from pyjena import sparql
 
-class KnowledgeGraph:
-    def __init__(self, uri, user, password):
-        self.driver = GraphDatabase.driver(uri, user=user, password=password)
-    
-    def add_entity(self, entity_name):
-        with self.driver.session() as session:
-            session.run("CREATE (:Entity {name: $name})", name=entity_name)
-    
-    def add_relation(self, entity1, relation, entity2):
-        with self.driver.session() as session:
-            session.run("MATCH (a {name: $a}), (b {name: $b}) "
-                        "CREATE (a)-[r:$relation]->(b)",
-                        a=entity1, relation=relation, b=entity2)
+# 创建知识图谱
+graph = rdf.Graph()
+
+# 添加三元组
+graph.add((rdf.BNode('a'), rdf.Symbol('name'), rdf.Literal('张三')))
+graph.add((rdf.BNode('b'), rdf.Symbol('name'), rdf.Literal('李四')))
+graph.add((rdf.BNode('a'), rdf.Symbol('friend'), rdf.BNode('b')))
 ```
-- 推理引擎实现代码
+
+### 5.2.2 推理引擎实现代码
+
 ```python
-class ReasoningEngine:
-    def __init__(self, knowledge_graph):
-        self.knowledge_graph = knowledge_graph
-    
-    def infer(self, query):
-        # 基于规则的推理
-        if isinstance(query, str):
-            result = self._rule_based_inference(query)
-        # 基于概率的推理
-        elif isinstance(query, dict):
-            result = self._probability_inference(query)
-        return result
-    
-    def _rule_based_inference(self, query):
-        # 实现基于规则的推理逻辑
-        pass
-    
-    def _probability_inference(self, query):
-        # 实现基于概率的推理逻辑
-        pass
-```
+from pyjena import inf推理引擎
 
-### 5.3 案例分析与详细解读
-- 案例分析
-  - 案例1：构建一个简单的知识图谱，包含实体和关系。
-  - 案例2：设计一个推理引擎，根据知识图谱进行推理。
-- 代码解读
-  - 知识图谱构建：使用Neo4j图数据库，添加实体和关系。
-  - 推理引擎实现：基于规则和概率的推理方法，进行推理。
-- 实际应用
-  - 在智能客服中应用动态知识图谱推理引擎，提供个性化的服务。
-  - 在智能推荐中应用动态知识图谱推理引擎，推荐相关内容。
+# 初始化推理引擎
+reasoner = inf推理引擎.Reasoner()
 
----
+# 推理过程
+reasoner.reason(graph)
 
-## 第6章：最佳实践与小结
-
-### 6.1 最佳实践
-- 知识图谱构建
-  - 数据预处理：确保数据的干净和准确。
-  - 知识抽取：使用高效的抽取算法，提高抽取的准确率。
-  - 知识融合：通过多种数据源进行融合，提高知识的全面性。
-- 推理引擎设计
-  - 规则设计：制定合理的推理规则，确保推理的正确性。
-  - 概率计算：选择合适的概率模型，提高推理的准确性。
-  - 算法优化：通过算法优化，提高推理的效率。
-
-### 6.2 小结
-- 动态知识图谱推理引擎的重要性
-  - 动态知识图谱能够实时更新，适应环境的变化。
-  - 推理引擎能够根据动态知识图谱进行推理，提供实时的决策支持。
-- 未来的发展方向
-  - 知识图谱的动态更新：研究更高效的动态更新算法。
-  - 推理引擎的优化：研究更高效的推理算法，如深度学习推理。
-  - 系统的扩展性：研究更大规模的动态知识图谱推理系统。
-
-### 6.3 注意事项
-- 数据质量：确保数据的准确性和完整性。
-- 算法选择：根据具体需求选择合适的推理算法。
-- 系统性能：优化系统的性能，确保实时性。
-
-### 6.4 拓展阅读
-- 推荐书籍：《知识图谱：概念、方法与应用》
-- 推荐论文：《Dynamic Knowledge Graph Construction and Reasoning for Real-Time Applications》
-- 推荐工具：Neo4j图数据库，Python的NetworkX库。
-
----
-
-通过本文，读者可以全面了解AI Agent的动态知识图谱推理引擎的设计与实现，掌握动态知识图谱的构建与管理、推理引擎的算法原理与实现、系统架构设计以及项目实战的具体操作。希望本文能够为AI Agent的动态知识图谱推理引擎的研究和应用提供有价值的参考和指导。
+# 获取推理结果
+results = reasoner.query(graph, sparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparqlsparl
 
